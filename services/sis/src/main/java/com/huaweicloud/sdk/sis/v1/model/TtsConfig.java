@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 语音合成配置数据结构。 */
+/**
+ * 语音合成配置数据结构。
+ */
 public class TtsConfig {
 
-    /** 语音格式头：wav、mp3、pcm。 默认：wav */
+    /**
+     * 语音格式头：wav、mp3、pcm。 默认：wav
+     */
     public static final class AudioFormatEnum {
 
-        /** Enum WAV for value: "wav" */
+        /**
+         * Enum WAV for value: "wav"
+         */
         public static final AudioFormatEnum WAV = new AudioFormatEnum("wav");
 
-        /** Enum MP3 for value: "mp3" */
+        /**
+         * Enum MP3 for value: "mp3"
+         */
         public static final AudioFormatEnum MP3 = new AudioFormatEnum("mp3");
 
-        /** Enum PCM for value: "pcm" */
+        /**
+         * Enum PCM for value: "pcm"
+         */
         public static final AudioFormatEnum PCM = new AudioFormatEnum("pcm");
 
         private static final Map<String, AudioFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -93,13 +103,19 @@ public class TtsConfig {
 
     private AudioFormatEnum audioFormat;
 
-    /** 采样率：16000、8000 默认：8000 */
+    /**
+     * 采样率：16000、8000 默认：8000
+     */
     public static final class SampleRateEnum {
 
-        /** Enum _16000 for value: "16000" */
+        /**
+         * Enum _16000 for value: "16000"
+         */
         public static final SampleRateEnum _16000 = new SampleRateEnum("16000");
 
-        /** Enum _8000 for value: "8000" */
+        /**
+         * Enum _8000 for value: "8000"
+         */
         public static final SampleRateEnum _8000 = new SampleRateEnum("8000");
 
         private static final Map<String, SampleRateEnum> STATIC_FIELDS = createStaticFields();
@@ -169,93 +185,134 @@ public class TtsConfig {
 
     private SampleRateEnum sampleRate;
 
-    /** 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。 普通发音人每100字计一次调用，取值范围如下：
-     * chinese_xiaoqi_common 小琪，标准女声发音人。 chinese_xiaoyu_common 小宇，标准男声发音人。 chinese_xiaoyan_common 小燕，温柔女声发音人。
-     * chinese_xiaowang_common 小王，童声发音人。 chinese_xiaowen_common 小雯，柔美女声发音人。 chinese_xiaojing_common 小婧，俏皮女声发音人。
-     * chinese_xiaosong_common 小宋，激昂男声发音人。 chinese_xiaoxia_common 小夏，热情女声发音人。 chinese_xiaodai_common 小呆，呆萌童声发音人。
-     * chinese_xiaoqian_common 小倩，成熟女声发音人。 english_cameal_common cameal，柔美女声英文发音人。
-     * 精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下： chinese_huaxiaoxia_common 华小夏，热情女声发音人。
-     * chinese_huaxiaogang_common 华晓刚，利落男声发音人。 chinese_huaxiaolu_common 华小璐，知性女声发音人。 chinese_huaxiaoshu_common
-     * 华小舒，舒缓女声发音人。 chinese_huaxiaowei_common 华小唯，嗲柔女声发音人。 chinese_huaxiaoliang_common 华小靓，嘹亮女声发音人。
-     * chinese_huaxiaodong_common 华晓东，成熟男声发音人。 chinese_huaxiaoyan_common 华小颜，严厉女声发音人。 chinese_huaxiaoxuan_common
-     * 华小萱，台湾女声发音人。 chinese_huaxiaowen_common 华小雯，柔美女声发音人。 chinese_huaxiaoyang_common 华晓阳，朝气男声发音人。
-     * chinese_huaxiaomin_common 华小闽，闽南女声发音人。 chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。
-     * chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。 默认：chinese_xiaoyan_common */
+    /**
+     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  默认：chinese_xiaoyan_common
+     */
     public static final class PropertyEnum {
 
-        /** Enum CHINESE_XIAOQI_COMMON for value: "chinese_xiaoqi_common" */
+        /**
+         * Enum CHINESE_XIAOQI_COMMON for value: "chinese_xiaoqi_common"
+         */
         public static final PropertyEnum CHINESE_XIAOQI_COMMON = new PropertyEnum("chinese_xiaoqi_common");
 
-        /** Enum CHINESE_XIAOYU_COMMON for value: "chinese_xiaoyu_common" */
+        /**
+         * Enum CHINESE_XIAOYU_COMMON for value: "chinese_xiaoyu_common"
+         */
         public static final PropertyEnum CHINESE_XIAOYU_COMMON = new PropertyEnum("chinese_xiaoyu_common");
 
-        /** Enum CHINESE_XIAOYAN_COMMON for value: "chinese_xiaoyan_common" */
+        /**
+         * Enum CHINESE_XIAOYAN_COMMON for value: "chinese_xiaoyan_common"
+         */
         public static final PropertyEnum CHINESE_XIAOYAN_COMMON = new PropertyEnum("chinese_xiaoyan_common");
 
-        /** Enum CHINESE_XIAOXIA_COMMON for value: "chinese_xiaoxia_common" */
+        /**
+         * Enum CHINESE_XIAOXIA_COMMON for value: "chinese_xiaoxia_common"
+         */
         public static final PropertyEnum CHINESE_XIAOXIA_COMMON = new PropertyEnum("chinese_xiaoxia_common");
 
-        /** Enum CHINESE_XIAODAI_COMMON for value: "chinese_xiaodai_common" */
+        /**
+         * Enum CHINESE_XIAODAI_COMMON for value: "chinese_xiaodai_common"
+         */
         public static final PropertyEnum CHINESE_XIAODAI_COMMON = new PropertyEnum("chinese_xiaodai_common");
 
-        /** Enum CHINESE_XIAOQIAN_COMMON for value: "chinese_xiaoqian_common" */
+        /**
+         * Enum CHINESE_XIAOQIAN_COMMON for value: "chinese_xiaoqian_common"
+         */
         public static final PropertyEnum CHINESE_XIAOQIAN_COMMON = new PropertyEnum("chinese_xiaoqian_common");
 
-        /** Enum CHINESE_XIAOWANG_COMMON for value: "chinese_xiaowang_common" */
+        /**
+         * Enum CHINESE_XIAOWANG_COMMON for value: "chinese_xiaowang_common"
+         */
         public static final PropertyEnum CHINESE_XIAOWANG_COMMON = new PropertyEnum("chinese_xiaowang_common");
 
-        /** Enum CHINESE_XIAOWEN_COMMON for value: "chinese_xiaowen_common" */
+        /**
+         * Enum CHINESE_XIAOWEN_COMMON for value: "chinese_xiaowen_common"
+         */
         public static final PropertyEnum CHINESE_XIAOWEN_COMMON = new PropertyEnum("chinese_xiaowen_common");
 
-        /** Enum CHINESE_XIAOJING_COMMON for value: "chinese_xiaojing_common" */
+        /**
+         * Enum CHINESE_XIAOJING_COMMON for value: "chinese_xiaojing_common"
+         */
         public static final PropertyEnum CHINESE_XIAOJING_COMMON = new PropertyEnum("chinese_xiaojing_common");
 
-        /** Enum CHINESE_XIAOSONG_COMMON for value: "chinese_xiaosong_common" */
+        /**
+         * Enum CHINESE_XIAOSONG_COMMON for value: "chinese_xiaosong_common"
+         */
         public static final PropertyEnum CHINESE_XIAOSONG_COMMON = new PropertyEnum("chinese_xiaosong_common");
 
-        /** Enum ENGLISH_CAMEAL_COMMON for value: "english_cameal_common" */
+        /**
+         * Enum ENGLISH_CAMEAL_COMMON for value: "english_cameal_common"
+         */
         public static final PropertyEnum ENGLISH_CAMEAL_COMMON = new PropertyEnum("english_cameal_common");
 
-        /** Enum CHINESE_HUAXIAOXIA_COMMON for value: "chinese_huaxiaoxia_common" */
+        /**
+         * Enum CHINESE_HUAXIAOXIA_COMMON for value: "chinese_huaxiaoxia_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOXIA_COMMON = new PropertyEnum("chinese_huaxiaoxia_common");
 
-        /** Enum CHINESE_HUAXIAOGANG_COMMON for value: "chinese_huaxiaogang_common" */
+        /**
+         * Enum CHINESE_HUAXIAOGANG_COMMON for value: "chinese_huaxiaogang_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOGANG_COMMON = new PropertyEnum("chinese_huaxiaogang_common");
 
-        /** Enum CHINESE_HUAXIAOLU_COMMON for value: "chinese_huaxiaolu_common" */
+        /**
+         * Enum CHINESE_HUAXIAOLU_COMMON for value: "chinese_huaxiaolu_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOLU_COMMON = new PropertyEnum("chinese_huaxiaolu_common");
 
-        /** Enum CHINESE_HUAXIAOSHU_COMMON for value: "chinese_huaxiaoshu_common" */
+        /**
+         * Enum CHINESE_HUAXIAOSHU_COMMON for value: "chinese_huaxiaoshu_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOSHU_COMMON = new PropertyEnum("chinese_huaxiaoshu_common");
 
-        /** Enum CHINESE_HUAXIAOWEI_COMMON for value: "chinese_huaxiaowei_common" */
+        /**
+         * Enum CHINESE_HUAXIAOWEI_COMMON for value: "chinese_huaxiaowei_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOWEI_COMMON = new PropertyEnum("chinese_huaxiaowei_common");
 
-        /** Enum CHINESE_HUAXIAOLIANG_COMMON for value: "chinese_huaxiaoliang_common" */
+        /**
+         * Enum CHINESE_HUAXIAOLIANG_COMMON for value: "chinese_huaxiaoliang_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOLIANG_COMMON = new PropertyEnum("chinese_huaxiaoliang_common");
 
-        /** Enum CHINESE_HUAXIAODONG_COMMON for value: "chinese_huaxiaodong_common" */
+        /**
+         * Enum CHINESE_HUAXIAODONG_COMMON for value: "chinese_huaxiaodong_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAODONG_COMMON = new PropertyEnum("chinese_huaxiaodong_common");
 
-        /** Enum CHINESE_HUAXIAOYAN_COMMON for value: "chinese_huaxiaoyan_common" */
+        /**
+         * Enum CHINESE_HUAXIAOYAN_COMMON for value: "chinese_huaxiaoyan_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOYAN_COMMON = new PropertyEnum("chinese_huaxiaoyan_common");
 
-        /** Enum CHINESE_HUAXIAOXUAN_COMMON for value: "chinese_huaxiaoxuan_common" */
+        /**
+         * Enum CHINESE_HUAXIAOXUAN_COMMON for value: "chinese_huaxiaoxuan_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOXUAN_COMMON = new PropertyEnum("chinese_huaxiaoxuan_common");
 
-        /** Enum CHINESE_HUAXIAOWEN_COMMON for value: "chinese_huaxiaowen_common" */
+        /**
+         * Enum CHINESE_HUAXIAOWEN_COMMON for value: "chinese_huaxiaowen_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOWEN_COMMON = new PropertyEnum("chinese_huaxiaowen_common");
 
-        /** Enum CHINESE_HUAXIAOYANG_COMMON for value: "chinese_huaxiaoyang_common" */
+        /**
+         * Enum CHINESE_HUAXIAOYANG_COMMON for value: "chinese_huaxiaoyang_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOYANG_COMMON = new PropertyEnum("chinese_huaxiaoyang_common");
 
-        /** Enum CHINESE_HUAXIAOMIN_COMMON for value: "chinese_huaxiaomin_common" */
+        /**
+         * Enum CHINESE_HUAXIAOMIN_COMMON for value: "chinese_huaxiaomin_common"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOMIN_COMMON = new PropertyEnum("chinese_huaxiaomin_common");
 
-        /** Enum CHINESE_HUANVXIA_LITERATURE for value: "chinese_huanvxia_literature" */
+        /**
+         * Enum CHINESE_HUANVXIA_LITERATURE for value: "chinese_huanvxia_literature"
+         */
         public static final PropertyEnum CHINESE_HUANVXIA_LITERATURE = new PropertyEnum("chinese_huanvxia_literature");
 
-        /** Enum CHINESE_HUAXIAOXUAN_LITERATURE for value: "chinese_huaxiaoxuan_literature" */
+        /**
+         * Enum CHINESE_HUAXIAOXUAN_LITERATURE for value: "chinese_huaxiaoxuan_literature"
+         */
         public static final PropertyEnum CHINESE_HUAXIAOXUAN_LITERATURE =
             new PropertyEnum("chinese_huaxiaoxuan_literature");
 
@@ -369,9 +426,10 @@ public class TtsConfig {
         return this;
     }
 
-    /** 语音格式头：wav、mp3、pcm。 默认：wav
-     * 
-     * @return audioFormat */
+    /**
+     * 语音格式头：wav、mp3、pcm。 默认：wav
+     * @return audioFormat
+     */
     public AudioFormatEnum getAudioFormat() {
         return audioFormat;
     }
@@ -385,9 +443,10 @@ public class TtsConfig {
         return this;
     }
 
-    /** 采样率：16000、8000 默认：8000
-     * 
-     * @return sampleRate */
+    /**
+     * 采样率：16000、8000 默认：8000
+     * @return sampleRate
+     */
     public SampleRateEnum getSampleRate() {
         return sampleRate;
     }
@@ -401,20 +460,10 @@ public class TtsConfig {
         return this;
     }
 
-    /** 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。 普通发音人每100字计一次调用，取值范围如下：
-     * chinese_xiaoqi_common 小琪，标准女声发音人。 chinese_xiaoyu_common 小宇，标准男声发音人。 chinese_xiaoyan_common 小燕，温柔女声发音人。
-     * chinese_xiaowang_common 小王，童声发音人。 chinese_xiaowen_common 小雯，柔美女声发音人。 chinese_xiaojing_common 小婧，俏皮女声发音人。
-     * chinese_xiaosong_common 小宋，激昂男声发音人。 chinese_xiaoxia_common 小夏，热情女声发音人。 chinese_xiaodai_common 小呆，呆萌童声发音人。
-     * chinese_xiaoqian_common 小倩，成熟女声发音人。 english_cameal_common cameal，柔美女声英文发音人。
-     * 精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下： chinese_huaxiaoxia_common 华小夏，热情女声发音人。
-     * chinese_huaxiaogang_common 华晓刚，利落男声发音人。 chinese_huaxiaolu_common 华小璐，知性女声发音人。 chinese_huaxiaoshu_common
-     * 华小舒，舒缓女声发音人。 chinese_huaxiaowei_common 华小唯，嗲柔女声发音人。 chinese_huaxiaoliang_common 华小靓，嘹亮女声发音人。
-     * chinese_huaxiaodong_common 华晓东，成熟男声发音人。 chinese_huaxiaoyan_common 华小颜，严厉女声发音人。 chinese_huaxiaoxuan_common
-     * 华小萱，台湾女声发音人。 chinese_huaxiaowen_common 华小雯，柔美女声发音人。 chinese_huaxiaoyang_common 华晓阳，朝气男声发音人。
-     * chinese_huaxiaomin_common 华小闽，闽南女声发音人。 chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。
-     * chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。 默认：chinese_xiaoyan_common
-     * 
-     * @return property */
+    /**
+     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  默认：chinese_xiaoyan_common
+     * @return property
+     */
     public PropertyEnum getProperty() {
         return property;
     }
@@ -428,9 +477,12 @@ public class TtsConfig {
         return this;
     }
 
-    /** 语速。 取值范围：[-500,500] 默认值：0 minimum: -500 maximum: 500
-     * 
-     * @return speed */
+    /**
+     * 语速。 取值范围：[-500,500]  默认值：0
+     * minimum: -500
+     * maximum: 500
+     * @return speed
+     */
     public Integer getSpeed() {
         return speed;
     }
@@ -444,9 +496,12 @@ public class TtsConfig {
         return this;
     }
 
-    /** 音高。 取值范围： [-500,500] 默认值：0 minimum: -500 maximum: 500
-     * 
-     * @return pitch */
+    /**
+     * 音高。 取值范围： [-500,500]  默认值：0
+     * minimum: -500
+     * maximum: 500
+     * @return pitch
+     */
     public Integer getPitch() {
         return pitch;
     }
@@ -460,9 +515,12 @@ public class TtsConfig {
         return this;
     }
 
-    /** 音量。 取值范围：[0, 100] 默认值：50 minimum: 0 maximum: 100
-     * 
-     * @return volume */
+    /**
+     * 音量。 取值范围：[0, 100]  默认值：50
+     * minimum: 0
+     * maximum: 100
+     * @return volume
+     */
     public Integer getVolume() {
         return volume;
     }
@@ -505,7 +563,10 @@ public class TtsConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTestCaseDetailV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,9 +82,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例唯一标识
-     * 
-     * @return testcaseId */
+    /**
+     * 测试用例唯一标识
+     * @return testcaseId
+     */
     public String getTestcaseId() {
         return testcaseId;
     }
@@ -96,9 +99,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 软开云项目唯一标识
-     * 
-     * @return projectId */
+    /**
+     * 软开云项目唯一标识
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -112,9 +116,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 注册测试类型服务接口返回的服务id
-     * 
-     * @return serviceId */
+    /**
+     * 注册测试类型服务接口返回的服务id
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -128,9 +133,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例名称
-     * 
-     * @return name */
+    /**
+     * 测试用例名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -144,9 +150,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例编号
-     * 
-     * @return testcaseNumber */
+    /**
+     * 测试用例编号
+     * @return testcaseNumber
+     */
     public String getTestcaseNumber() {
         return testcaseNumber;
     }
@@ -160,9 +167,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例等级
-     * 
-     * @return rankId */
+    /**
+     * 测试用例等级
+     * @return rankId
+     */
     public String getRankId() {
         return rankId;
     }
@@ -176,9 +184,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例状态
-     * 
-     * @return statusId */
+    /**
+     * 测试用例状态
+     * @return statusId
+     */
     public String getStatusId() {
         return statusId;
     }
@@ -201,9 +210,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get assignedUser
-     * 
-     * @return assignedUser */
+    /**
+     * Get assignedUser
+     * @return assignedUser
+     */
     public AssignedUserInfo getAssignedUser() {
         return assignedUser;
     }
@@ -217,9 +227,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例执行次数
-     * 
-     * @return executeCount */
+    /**
+     * 测试用例执行次数
+     * @return executeCount
+     */
     public Integer getExecuteCount() {
         return executeCount;
     }
@@ -233,9 +244,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试用例执行结果
-     * 
-     * @return resultId */
+    /**
+     * 测试用例执行结果
+     * @return resultId
+     */
     public String getResultId() {
         return resultId;
     }
@@ -258,9 +270,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get extendInfo
-     * 
-     * @return extendInfo */
+    /**
+     * Get extendInfo
+     * @return extendInfo
+     */
     public ExtendInfo getExtendInfo() {
         return extendInfo;
     }
@@ -274,9 +287,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 接口调用失败错误码
-     * 
-     * @return errorCode */
+    /**
+     * 接口调用失败错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -290,9 +304,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return this;
     }
 
-    /** 接口调用失败错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 接口调用失败错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -363,7 +378,10 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

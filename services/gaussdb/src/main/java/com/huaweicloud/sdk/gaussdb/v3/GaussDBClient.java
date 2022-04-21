@@ -19,7 +19,11 @@ public class GaussDBClient {
 
     /**
      * 批量添加或删除标签
+     *
      * 批量添加或删除指定实例的标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagActionRequest 请求对象
      * @return BatchTagActionResponse
@@ -30,7 +34,11 @@ public class GaussDBClient {
 
     /**
      * 批量添加或删除标签
+     *
      * 批量添加或删除指定实例的标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagActionRequest 请求对象
      * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
@@ -41,7 +49,11 @@ public class GaussDBClient {
 
     /**
      * 变更实例规格
+     *
      * 变更数据库实例的规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return ChangeGaussMySqlInstanceSpecificationResponse
@@ -52,7 +64,11 @@ public class GaussDBClient {
 
     /**
      * 变更实例规格
+     *
      * 变更数据库实例的规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>
@@ -63,7 +79,11 @@ public class GaussDBClient {
 
     /**
      * 创建手动备份
+     *
      * 创建手动备份
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlBackupRequest 请求对象
      * @return CreateGaussMySqlBackupResponse
@@ -74,7 +94,11 @@ public class GaussDBClient {
 
     /**
      * 创建手动备份
+     *
      * 创建手动备份
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlBackupRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>
@@ -85,7 +109,11 @@ public class GaussDBClient {
 
     /**
      * 创建数据库实例
+     *
      * 创建云数据库 GaussDB(for MySQL)实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlInstanceRequest 请求对象
      * @return CreateGaussMySqlInstanceResponse
@@ -96,7 +124,11 @@ public class GaussDBClient {
 
     /**
      * 创建数据库实例
+     *
      * 创建云数据库 GaussDB(for MySQL)实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlInstanceRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>
@@ -107,7 +139,11 @@ public class GaussDBClient {
 
     /**
      * 开启数据库代理
+     *
      * 开启数据库代理，只支持ELB模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlProxyRequest 请求对象
      * @return CreateGaussMySqlProxyResponse
@@ -118,7 +154,11 @@ public class GaussDBClient {
 
     /**
      * 开启数据库代理
+     *
      * 开启数据库代理，只支持ELB模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>
@@ -129,7 +169,11 @@ public class GaussDBClient {
 
     /**
      * 创建只读节点
+     *
      * 创建只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return CreateGaussMySqlReadonlyNodeResponse
@@ -140,7 +184,11 @@ public class GaussDBClient {
 
     /**
      * 创建只读节点
+     *
      * 创建只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>
@@ -151,7 +199,11 @@ public class GaussDBClient {
 
     /**
      * 删除实例
+     *
      * 删除数据库实例，不支持删除包周期实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlInstanceRequest 请求对象
      * @return DeleteGaussMySqlInstanceResponse
@@ -162,7 +214,11 @@ public class GaussDBClient {
 
     /**
      * 删除实例
+     *
      * 删除数据库实例，不支持删除包周期实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlInstanceRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>
@@ -173,7 +229,11 @@ public class GaussDBClient {
 
     /**
      * 关闭数据库代理
+     *
      * 关闭数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlProxyRequest 请求对象
      * @return DeleteGaussMySqlProxyResponse
@@ -184,7 +244,11 @@ public class GaussDBClient {
 
     /**
      * 关闭数据库代理
+     *
      * 关闭数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>
@@ -195,7 +259,11 @@ public class GaussDBClient {
 
     /**
      * 删除只读节点
+     *
      * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return DeleteGaussMySqlReadonlyNodeResponse
@@ -206,7 +274,11 @@ public class GaussDBClient {
 
     /**
      * 删除只读节点
+     *
      * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>
@@ -217,7 +289,11 @@ public class GaussDBClient {
 
     /**
      * 包周期存储扩容
+     *
      * 包周期存储扩容
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return ExpandGaussMySqlInstanceVolumeResponse
@@ -228,7 +304,11 @@ public class GaussDBClient {
 
     /**
      * 包周期存储扩容
+     *
      * 包周期存储扩容
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>
@@ -239,7 +319,12 @@ public class GaussDBClient {
 
     /**
      * 扩容数据库代理节点的数量
-     * 扩容数据库代理节点的数量。 DeC专属云账号暂不支持数据库代理。
+     *
+     * 扩容数据库代理节点的数量。
+     * DeC专属云账号暂不支持数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExpandGaussMySqlProxyRequest 请求对象
      * @return ExpandGaussMySqlProxyResponse
@@ -250,7 +335,12 @@ public class GaussDBClient {
 
     /**
      * 扩容数据库代理节点的数量
-     * 扩容数据库代理节点的数量。 DeC专属云账号暂不支持数据库代理。
+     *
+     * 扩容数据库代理节点的数量。
+     * DeC专属云账号暂不支持数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExpandGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>
@@ -261,7 +351,11 @@ public class GaussDBClient {
 
     /**
      * 查询参数模板
+     *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlConfigurationsRequest 请求对象
      * @return ListGaussMySqlConfigurationsResponse
@@ -272,7 +366,11 @@ public class GaussDBClient {
 
     /**
      * 查询参数模板
+     *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlConfigurationsRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>
@@ -283,7 +381,11 @@ public class GaussDBClient {
 
     /**
      * 查询专属资源池列表
+     *
      * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return ListGaussMySqlDedicatedResourcesResponse
@@ -294,7 +396,11 @@ public class GaussDBClient {
 
     /**
      * 查询专属资源池列表
+     *
      * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>
@@ -305,7 +411,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库错误日志
+     *
      * 查询数据库错误日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlErrorLogRequest 请求对象
      * @return ListGaussMySqlErrorLogResponse
@@ -316,7 +426,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库错误日志
+     *
      * 查询数据库错误日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlErrorLogRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse>
@@ -327,7 +441,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例列表
+     *
      * 根据指定条件查询实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlInstancesRequest 请求对象
      * @return ListGaussMySqlInstancesResponse
@@ -338,7 +456,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例列表
+     *
      * 根据指定条件查询实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlInstancesRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
@@ -349,7 +471,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库慢日志
+     *
      * 查询数据库慢日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlSlowLogRequest 请求对象
      * @return ListGaussMySqlSlowLogResponse
@@ -360,7 +486,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库慢日志
+     *
      * 查询数据库慢日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGaussMySqlSlowLogRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse>
@@ -371,7 +501,11 @@ public class GaussDBClient {
 
     /**
      * 查询资源标签
+     *
      * 查询指定实例的标签信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstanceTagsRequest 请求对象
      * @return ListInstanceTagsResponse
@@ -382,7 +516,11 @@ public class GaussDBClient {
 
     /**
      * 查询资源标签
+     *
      * 查询指定实例的标签信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
@@ -393,7 +531,11 @@ public class GaussDBClient {
 
     /**
      * 查询项目标签
+     *
      * 查询指定project ID下实例的所有标签集合。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
@@ -404,7 +546,11 @@ public class GaussDBClient {
 
     /**
      * 查询项目标签
+     *
      * 查询指定project ID下实例的所有标签集合。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -415,7 +561,11 @@ public class GaussDBClient {
 
     /**
      * 重置数据库密码
+     *
      * 重置数据库密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetGaussMySqlPasswordRequest 请求对象
      * @return ResetGaussMySqlPasswordResponse
@@ -426,7 +576,11 @@ public class GaussDBClient {
 
     /**
      * 重置数据库密码
+     *
      * 重置数据库密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetGaussMySqlPasswordRequest 请求对象
      * @return SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>
@@ -437,7 +591,11 @@ public class GaussDBClient {
 
     /**
      * 设置租户基于企业项目的资源配额
+     *
      * 设置指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetGaussMySqlQuotasRequest 请求对象
      * @return SetGaussMySqlQuotasResponse
@@ -448,7 +606,11 @@ public class GaussDBClient {
 
     /**
      * 设置租户基于企业项目的资源配额
+     *
      * 设置指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>
@@ -459,7 +621,11 @@ public class GaussDBClient {
 
     /**
      * 查询审计日志开关状态
+     *
      * 查询审计日志开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditLogRequest 请求对象
      * @return ShowAuditLogResponse
@@ -470,7 +636,11 @@ public class GaussDBClient {
 
     /**
      * 查询审计日志开关状态
+     *
      * 查询审计日志开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditLogRequest 请求对象
      * @return SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>
@@ -481,7 +651,11 @@ public class GaussDBClient {
 
     /**
      * 查询备份列表
+     *
      * 查询备份列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlBackupListRequest 请求对象
      * @return ShowGaussMySqlBackupListResponse
@@ -492,7 +666,11 @@ public class GaussDBClient {
 
     /**
      * 查询备份列表
+     *
      * 查询备份列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlBackupListRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>
@@ -503,7 +681,11 @@ public class GaussDBClient {
 
     /**
      * 查询自动备份策略
+     *
      * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlBackupPolicyRequest 请求对象
      * @return ShowGaussMySqlBackupPolicyResponse
@@ -514,7 +696,11 @@ public class GaussDBClient {
 
     /**
      * 查询自动备份策略
+     *
      * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>
@@ -525,7 +711,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库引擎的版本
+     *
      * 获取指定数据库引擎对应的数据库版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlEngineVersionRequest 请求对象
      * @return ShowGaussMySqlEngineVersionResponse
@@ -536,7 +726,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库引擎的版本
+     *
      * 获取指定数据库引擎对应的数据库版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlEngineVersionRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>
@@ -547,7 +741,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库规格
+     *
      * 获取指定数据库引擎版本对应的规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlFlavorsRequest 请求对象
      * @return ShowGaussMySqlFlavorsResponse
@@ -558,7 +756,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库规格
+     *
      * 获取指定数据库引擎版本对应的规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlFlavorsRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>
@@ -569,7 +771,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例详情信息
+     *
      * 查询实例详情信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return ShowGaussMySqlInstanceInfoResponse
@@ -580,7 +786,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例详情信息
+     *
      * 查询实例详情信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
@@ -591,7 +801,11 @@ public class GaussDBClient {
 
     /**
      * 获取指定ID的任务信息
+     *
      * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlJobInfoRequest 请求对象
      * @return ShowGaussMySqlJobInfoResponse
@@ -602,7 +816,11 @@ public class GaussDBClient {
 
     /**
      * 获取指定ID的任务信息
+     *
      * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlJobInfoRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>
@@ -613,7 +831,11 @@ public class GaussDBClient {
 
     /**
      * 查询租户的实例配额
+     *
      * 获取指定租户的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProjectQuotasRequest 请求对象
      * @return ShowGaussMySqlProjectQuotasResponse
@@ -624,7 +846,11 @@ public class GaussDBClient {
 
     /**
      * 查询租户的实例配额
+     *
      * 获取指定租户的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProjectQuotasRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>
@@ -635,7 +861,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库代理信息
+     *
      * 查询数据库代理信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProxyRequest 请求对象
      * @return ShowGaussMySqlProxyResponse
@@ -646,7 +876,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库代理信息
+     *
      * 查询数据库代理信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse>
@@ -657,7 +891,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库代理规格信息
+     *
      * 查询数据库代理规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
      * @return ShowGaussMySqlProxyFlavorsResponse
@@ -668,7 +906,11 @@ public class GaussDBClient {
 
     /**
      * 查询数据库代理规格信息
+     *
      * 查询数据库代理规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>
@@ -679,7 +921,11 @@ public class GaussDBClient {
 
     /**
      * 查询租户基于企业项目的资源配额
+     *
      * 获取指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlQuotasRequest 请求对象
      * @return ShowGaussMySqlQuotasResponse
@@ -690,7 +936,11 @@ public class GaussDBClient {
 
     /**
      * 查询租户基于企业项目的资源配额
+     *
      * 获取指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>
@@ -701,7 +951,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例秒级监控频率
+     *
      * 查询实例秒级监控频率。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceMonitorExtendRequest 请求对象
      * @return ShowInstanceMonitorExtendResponse
@@ -712,7 +966,11 @@ public class GaussDBClient {
 
     /**
      * 查询实例秒级监控频率
+     *
      * 查询实例秒级监控频率。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceMonitorExtendRequest 请求对象
      * @return SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>
@@ -723,7 +981,11 @@ public class GaussDBClient {
 
     /**
      * 开启或者关闭审计日志
+     *
      * 开启或者关闭审计日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAuditLogRequest 请求对象
      * @return UpdateAuditLogResponse
@@ -734,7 +996,11 @@ public class GaussDBClient {
 
     /**
      * 开启或者关闭审计日志
+     *
      * 开启或者关闭审计日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAuditLogRequest 请求对象
      * @return SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>
@@ -745,7 +1011,11 @@ public class GaussDBClient {
 
     /**
      * 修改备份策略
+     *
      * 修改备份策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return UpdateGaussMySqlBackupPolicyResponse
@@ -756,7 +1026,11 @@ public class GaussDBClient {
 
     /**
      * 修改备份策略
+     *
      * 修改备份策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>
@@ -767,7 +1041,11 @@ public class GaussDBClient {
 
     /**
      * 修改实例名称
+     *
      * 修改实例名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return UpdateGaussMySqlInstanceNameResponse
@@ -778,7 +1056,11 @@ public class GaussDBClient {
 
     /**
      * 修改实例名称
+     *
      * 修改实例名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>
@@ -789,7 +1071,11 @@ public class GaussDBClient {
 
     /**
      * 修改租户基于企业项目的资源配额
+     *
      * 修改指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlQuotasRequest 请求对象
      * @return UpdateGaussMySqlQuotasResponse
@@ -800,7 +1086,11 @@ public class GaussDBClient {
 
     /**
      * 修改租户基于企业项目的资源配额
+     *
      * 修改指定企业项目的资源配额。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>
@@ -811,7 +1101,11 @@ public class GaussDBClient {
 
     /**
      * 修改实例秒级监控频率
+     *
      * 打开/关闭/修改实例秒级监控。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceMonitorRequest 请求对象
      * @return UpdateInstanceMonitorResponse
@@ -822,7 +1116,11 @@ public class GaussDBClient {
 
     /**
      * 修改实例秒级监控频率
+     *
      * 打开/关闭/修改实例秒级监控。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceMonitorRequest 请求对象
      * @return SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>

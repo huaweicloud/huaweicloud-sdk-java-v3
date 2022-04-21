@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AnalysisInfoResult */
+/**
+ * AnalysisInfoResult
+ */
 public class AnalysisInfoResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AnalysisInfoResult {
         return this;
     }
 
-    /** 角色类型, 目前仅支持 AGENT(座席), USER(用户)。
-     * 
-     * @return role */
+    /**
+     * 角色类型, 目前仅支持 AGENT(座席), USER(用户)。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -44,9 +47,10 @@ public class AnalysisInfoResult {
         return this;
     }
 
-    /** 情绪类型，目前支持NORMAL(正常)，ANGRY(愤怒)，UNKNOWN(未知)。 在识别配置中emotion为true时存在。
-     * 
-     * @return emotion */
+    /**
+     * 情绪类型，目前支持NORMAL(正常)，ANGRY(愤怒)，UNKNOWN(未知)。 在识别配置中emotion为true时存在。
+     * @return emotion
+     */
     public String getEmotion() {
         return emotion;
     }
@@ -60,9 +64,10 @@ public class AnalysisInfoResult {
         return this;
     }
 
-    /** 语速信息，单位是\"每秒字数\"。 在识别配置中speed为true时存在。
-     * 
-     * @return speed */
+    /**
+     * 语速信息，单位是\"每秒字数\"。 在识别配置中speed为true时存在。
+     * @return speed
+     */
     public Float getSpeed() {
         return speed;
     }
@@ -101,7 +106,10 @@ public class AnalysisInfoResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

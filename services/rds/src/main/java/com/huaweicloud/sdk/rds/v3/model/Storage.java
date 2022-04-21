@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例磁盘类型信息。 */
+/**
+ * 实例磁盘类型信息。
+ */
 public class Storage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class Storage {
         return this;
     }
 
-    /** 磁盘类型名称，可能取值如下： - ULTRAHIGH：表示SSD。 - LOCALSSD：表示本地SSD。 - CLOUDSSD：表示SSD云盘，仅支持通用型和独享型规格实例。 -
-     * ESSD：表示极速型SSD，仅支持独享型规格实例。
-     * 
-     * @return name */
+    /**
+     * 磁盘类型名称，可能取值如下： - ULTRAHIGH：表示SSD。 - LOCALSSD：表示本地SSD。 - CLOUDSSD：表示SSD云盘，仅支持通用型和独享型规格实例。 - ESSD：表示极速型SSD，仅支持独享型规格实例。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -66,9 +68,10 @@ public class Storage {
         return this;
     }
 
-    /** 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
-     * 
-     * @return azStatus */
+    /**
+     * 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
+     * @return azStatus
+     */
     public Map<String, String> getAzStatus() {
         return azStatus;
     }
@@ -98,11 +101,10 @@ public class Storage {
         return this;
     }
 
-    /** 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 -
-     * armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。 -
-     * bigmen：超大内存型。
-     * 
-     * @return supportComputeGroupType */
+    /**
+     * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。 - bigmen：超大内存型。
+     * @return supportComputeGroupType
+     */
     public List<String> getSupportComputeGroupType() {
         return supportComputeGroupType;
     }
@@ -140,7 +142,10 @@ public class Storage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 具体插件版本信息 */
+/**
+ * 具体插件版本信息
+ */
 public class Versions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class Versions {
         return this;
     }
 
-    /** 插件版本号
-     * 
-     * @return version */
+    /**
+     * 插件版本号
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -68,9 +71,10 @@ public class Versions {
         return this;
     }
 
-    /** 插件安装参数
-     * 
-     * @return input */
+    /**
+     * 插件安装参数
+     * @return input
+     */
     public Object getInput() {
         return input;
     }
@@ -84,9 +88,10 @@ public class Versions {
         return this;
     }
 
-    /** 是否为稳定版本
-     * 
-     * @return stable */
+    /**
+     * 是否为稳定版本
+     * @return stable
+     */
     public Boolean getStable() {
         return stable;
     }
@@ -100,9 +105,10 @@ public class Versions {
         return this;
     }
 
-    /** 供界面使用的翻译信息
-     * 
-     * @return translate */
+    /**
+     * 供界面使用的翻译信息
+     * @return translate
+     */
     public Object getTranslate() {
         return translate;
     }
@@ -132,9 +138,10 @@ public class Versions {
         return this;
     }
 
-    /** 支持集群版本号
-     * 
-     * @return supportVersions */
+    /**
+     * 支持集群版本号
+     * @return supportVersions
+     */
     public List<SupportVersions> getSupportVersions() {
         return supportVersions;
     }
@@ -148,9 +155,10 @@ public class Versions {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return creationTimestamp */
+    /**
+     * 创建时间
+     * @return creationTimestamp
+     */
     public LocalDate getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -164,9 +172,10 @@ public class Versions {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTimestamp */
+    /**
+     * 更新时间
+     * @return updateTimestamp
+     */
     public LocalDate getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -211,7 +220,10 @@ public class Versions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

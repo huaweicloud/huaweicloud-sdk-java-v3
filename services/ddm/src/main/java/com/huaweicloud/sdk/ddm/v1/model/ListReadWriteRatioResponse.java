@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListReadWriteRatioResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListReadWriteRatioResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM读写比例监控信息条数。
-     * 
-     * @return totalRecord */
+    /**
+     * DDM读写比例监控信息条数。
+     * @return totalRecord
+     */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -60,9 +63,10 @@ public class ListReadWriteRatioResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例读写次数信息列表的集合。
-     * 
-     * @return readWriteRatioList */
+    /**
+     * DDM实例读写次数信息列表的集合。
+     * @return readWriteRatioList
+     */
     public List<ReadWriteRatioList> getReadWriteRatioList() {
         return readWriteRatioList;
     }
@@ -99,7 +103,10 @@ public class ListReadWriteRatioResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

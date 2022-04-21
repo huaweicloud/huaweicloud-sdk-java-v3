@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcHistoryQualityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -67,9 +70,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -85,9 +89,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -103,9 +108,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -135,14 +141,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 查询的数据类型 - JoinSuccessRate：加入房间成功率 - JoinSuccess5SecsRate：5秒加入成功率 - VideoFreezeRate：视频卡顿率 - AudioFreezeRate：音频卡顿率
-     * - FirstVideoRecvTime：首帧视频接收耗时 - FirstAudioRecvTime：首帧音频接收耗时 - PullStreamSuccessRate：拉流成功率 -
-     * PushStreamSuccessRate：推流成功率 - VideoUpstreamExcellentTransRate：客户端视频上行优质传输率 -
-     * AudioUpstreamExcellentTransRate：客户端音频上行优质传输率 - VideoExcellentTransRate：端到端视频优质传输率 -
-     * AudioExcellentTransRate：端到端音频优质传输率 - VideoTransDelay：端到端视频网络时，单位为毫秒，取当天所有用户网络延迟的中位数 -
-     * AudioTransDelay：端到端音频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数
-     * 
-     * @return metric */
+    /**
+     * 查询的数据类型 - JoinSuccessRate：加入房间成功率 - JoinSuccess5SecsRate：5秒加入成功率 - VideoFreezeRate：视频卡顿率 - AudioFreezeRate：音频卡顿率 - FirstVideoRecvTime：首帧视频接收耗时 - FirstAudioRecvTime：首帧音频接收耗时 - PullStreamSuccessRate：拉流成功率 - PushStreamSuccessRate：推流成功率 - VideoUpstreamExcellentTransRate：客户端视频上行优质传输率 - AudioUpstreamExcellentTransRate：客户端音频上行优质传输率 - VideoExcellentTransRate：端到端视频优质传输率 - AudioExcellentTransRate：端到端音频优质传输率 - VideoTransDelay：端到端视频网络时，单位为毫秒，取当天所有用户网络延迟的中位数 - AudioTransDelay：端到端音频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数 
+     * @return metric
+     */
     public List<String> getMetric() {
         return metric;
     }
@@ -156,9 +158,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23，不写默认读取过去1天数据数据。
-     * 
-     * @return startDate */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23，不写默认读取过去1天数据数据。 
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -172,9 +175,10 @@ public class ListRtcHistoryQualityRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23
-     * 
-     * @return endDate */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23 
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -221,7 +225,10 @@ public class ListRtcHistoryQualityRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

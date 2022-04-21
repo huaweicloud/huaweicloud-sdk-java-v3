@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReadWriteRatioList */
+/**
+ * ReadWriteRatioList
+ */
 public class ReadWriteRatioList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 逻辑库名称。
-     * 
-     * @return schema */
+    /**
+     * 逻辑库名称。
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -59,9 +62,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 逻辑表名称。
-     * 
-     * @return table */
+    /**
+     * 逻辑表名称。
+     * @return table
+     */
     public String getTable() {
         return table;
     }
@@ -75,9 +79,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 读次数。
-     * 
-     * @return readCount */
+    /**
+     * 读次数。
+     * @return readCount
+     */
     public String getReadCount() {
         return readCount;
     }
@@ -91,9 +96,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 写次数。
-     * 
-     * @return writeCount */
+    /**
+     * 写次数。
+     * @return writeCount
+     */
     public String getWriteCount() {
         return writeCount;
     }
@@ -107,9 +113,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 关联表。
-     * 
-     * @return relationTables */
+    /**
+     * 关联表。
+     * @return relationTables
+     */
     public String getRelationTables() {
         return relationTables;
     }
@@ -123,9 +130,10 @@ public class ReadWriteRatioList {
         return this;
     }
 
-    /** 最后执行时间。
-     * 
-     * @return lastUpdated */
+    /**
+     * 最后执行时间。
+     * @return lastUpdated
+     */
     public String getLastUpdated() {
         return lastUpdated;
     }
@@ -170,7 +178,10 @@ public class ReadWriteRatioList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

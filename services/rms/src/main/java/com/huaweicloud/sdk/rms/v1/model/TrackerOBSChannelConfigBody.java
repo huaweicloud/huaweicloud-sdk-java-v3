@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OBS设置对象 */
+/**
+ * OBS设置对象
+ */
 public class TrackerOBSChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TrackerOBSChannelConfigBody {
         return this;
     }
 
-    /** OBS桶名称
-     * 
-     * @return bucketName */
+    /**
+     * OBS桶名称
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -39,9 +42,10 @@ public class TrackerOBSChannelConfigBody {
         return this;
     }
 
-    /** region id
-     * 
-     * @return regionId */
+    /**
+     * region id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -78,7 +82,10 @@ public class TrackerOBSChannelConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

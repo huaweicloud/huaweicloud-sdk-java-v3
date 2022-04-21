@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateTaskRulesetItem */
+/**
+ * UpdateTaskRulesetItem
+ */
 public class UpdateTaskRulesetItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class UpdateTaskRulesetItem {
         return this;
     }
 
-    /** 规则集语言
-     * 
-     * @return language */
+    /**
+     * 规则集语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -49,9 +52,10 @@ public class UpdateTaskRulesetItem {
         return this;
     }
 
-    /** 规则集ID
-     * 
-     * @return ruleSetId */
+    /**
+     * 规则集ID
+     * @return ruleSetId
+     */
     public String getRuleSetId() {
         return ruleSetId;
     }
@@ -65,9 +69,10 @@ public class UpdateTaskRulesetItem {
         return this;
     }
 
-    /** 任务语言和规则集的关系是否启用，1是启用，0是未启用
-     * 
-     * @return ifUse */
+    /**
+     * 任务语言和规则集的关系是否启用，1是启用，0是未启用
+     * @return ifUse
+     */
     public String getIfUse() {
         return ifUse;
     }
@@ -81,9 +86,10 @@ public class UpdateTaskRulesetItem {
         return this;
     }
 
-    /** 新/老数据表示，默认1
-     * 
-     * @return status */
+    /**
+     * 新/老数据表示，默认1
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -124,7 +130,10 @@ public class UpdateTaskRulesetItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

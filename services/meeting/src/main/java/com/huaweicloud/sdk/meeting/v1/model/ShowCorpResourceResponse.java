@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCorpResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,9 +123,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get te1080pHardCount
-     * 
-     * @return te1080pHardCount */
+    /**
+     * Get te1080pHardCount
+     * @return te1080pHardCount
+     */
     public ResDetailDTO getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -146,9 +149,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get te720pHardCount
-     * 
-     * @return te720pHardCount */
+    /**
+     * Get te720pHardCount
+     * @return te720pHardCount
+     */
     public ResDetailDTO getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -171,9 +175,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get teSoftCount
-     * 
-     * @return teSoftCount */
+    /**
+     * Get teSoftCount
+     * @return teSoftCount
+     */
     public ResDetailDTO getTeSoftCount() {
         return teSoftCount;
     }
@@ -196,9 +201,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get roomCount
-     * 
-     * @return roomCount */
+    /**
+     * Get roomCount
+     * @return roomCount
+     */
     public ResDetailDTO getRoomCount() {
         return roomCount;
     }
@@ -221,9 +227,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get recordCapability
-     * 
-     * @return recordCapability */
+    /**
+     * Get recordCapability
+     * @return recordCapability
+     */
     public ResDetailDTO getRecordCapability() {
         return recordCapability;
     }
@@ -246,9 +253,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get confCallCount
-     * 
-     * @return confCallCount */
+    /**
+     * Get confCallCount
+     * @return confCallCount
+     */
     public ResDetailDTO getConfCallCount() {
         return confCallCount;
     }
@@ -271,9 +279,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get liveCount
-     * 
-     * @return liveCount */
+    /**
+     * Get liveCount
+     * @return liveCount
+     */
     public ResDetailDTO getLiveCount() {
         return liveCount;
     }
@@ -296,9 +305,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get thirdPartyHardCount
-     * 
-     * @return thirdPartyHardCount */
+    /**
+     * Get thirdPartyHardCount
+     * @return thirdPartyHardCount
+     */
     public ResDetailDTO getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -321,9 +331,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get hwVisionCount
-     * 
-     * @return hwVisionCount */
+    /**
+     * Get hwVisionCount
+     * @return hwVisionCount
+     */
     public ResDetailDTO getHwVisionCount() {
         return hwVisionCount;
     }
@@ -346,9 +357,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ideaHubCount
-     * 
-     * @return ideaHubCount */
+    /**
+     * Get ideaHubCount
+     * @return ideaHubCount
+     */
     public ResDetailDTO getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -378,9 +390,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询云会议室套餐包分配数量结果。
-     * 
-     * @return vmr */
+    /**
+     * 查询云会议室套餐包分配数量结果。
+     * @return vmr
+     */
     public List<QueryVmrPkgResResultDTO> getVmr() {
         return vmr;
     }
@@ -394,9 +407,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 在创建企业的时候设置的pstn权限开关
-     * 
-     * @return enablePstn */
+    /**
+     * 在创建企业的时候设置的pstn权限开关
+     * @return enablePstn
+     */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -410,9 +424,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 在创建企业的时候设置的短信权限开关
-     * 
-     * @return enableSMS */
+    /**
+     * 在创建企业的时候设置的短信权限开关
+     * @return enableSMS
+     */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -426,9 +441,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业是否开启混合云模式
-     * 
-     * @return enableHybridCloud */
+    /**
+     * 企业是否开启混合云模式
+     * @return enableHybridCloud
+     */
     public Boolean getEnableHybridCloud() {
         return enableHybridCloud;
     }
@@ -442,9 +458,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启云盘
-     * 
-     * @return enableCloudDisk */
+    /**
+     * 是否开启云盘
+     * @return enableCloudDisk
+     */
     public Boolean getEnableCloudDisk() {
         return enableCloudDisk;
     }
@@ -458,9 +475,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启UC功能
-     * 
-     * @return enableUc */
+    /**
+     * 是否开启UC功能
+     * @return enableUc
+     */
     public Boolean getEnableUc() {
         return enableUc;
     }
@@ -474,9 +492,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启Ai会议纪要
-     * 
-     * @return enableAiMinutes */
+    /**
+     * 是否开启Ai会议纪要
+     * @return enableAiMinutes
+     */
     public Boolean getEnableAiMinutes() {
         return enableAiMinutes;
     }
@@ -490,9 +509,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 单会议并发呼叫数
-     * 
-     * @return singleConfCallCount */
+    /**
+     * 单会议并发呼叫数
+     * @return singleConfCallCount
+     */
     public Integer getSingleConfCallCount() {
         return singleConfCallCount;
     }
@@ -506,9 +526,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议时长
-     * 
-     * @return confLength */
+    /**
+     * 会议时长
+     * @return confLength
+     */
     public Integer getConfLength() {
         return confLength;
     }
@@ -597,7 +618,10 @@ public class ShowCorpResourceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

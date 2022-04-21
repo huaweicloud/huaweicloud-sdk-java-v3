@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateRedislogRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateRedislogRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class CreateRedislogRequest {
         return this;
     }
 
-    /** 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。最大支持0-7。
-     * 
-     * @return queryTime */
+    /**
+     * 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。最大支持0-7。
+     * @return queryTime
+     */
     public Integer getQueryTime() {
         return queryTime;
     }
@@ -65,9 +69,10 @@ public class CreateRedislogRequest {
         return this;
     }
 
-    /** 返回日志的类型，当前仅支持Redis运行日志，类型为run
-     * 
-     * @return logType */
+    /**
+     * 返回日志的类型，当前仅支持Redis运行日志，类型为run
+     * @return logType
+     */
     public String getLogType() {
         return logType;
     }
@@ -81,9 +86,10 @@ public class CreateRedislogRequest {
         return this;
     }
 
-    /** 副本ID，可以从分片与副本中查询对应节点的副本ID
-     * 
-     * @return replicationId */
+    /**
+     * 副本ID，可以从分片与副本中查询对应节点的副本ID
+     * @return replicationId
+     */
     public String getReplicationId() {
         return replicationId;
     }
@@ -124,7 +130,10 @@ public class CreateRedislogRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

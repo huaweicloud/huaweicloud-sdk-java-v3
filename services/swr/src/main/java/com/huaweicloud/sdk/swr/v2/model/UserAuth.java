@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UserAuth */
+/**
+ * UserAuth
+ */
 public class UserAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class UserAuth {
 
     private String userName;
 
-    /** 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限 */
+    /**
+     * 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限
+     */
     public static final class AuthEnum {
 
-        /** Enum NUMBER_7 for value: 7l */
+        /**
+         * Enum NUMBER_7 for value: 7l
+         */
         public static final AuthEnum NUMBER_7 = new AuthEnum(7l);
 
-        /** Enum NUMBER_3 for value: 3l */
+        /**
+         * Enum NUMBER_3 for value: 3l
+         */
         public static final AuthEnum NUMBER_3 = new AuthEnum(3l);
 
-        /** Enum NUMBER_1 for value: 1l */
+        /**
+         * Enum NUMBER_1 for value: 1l
+         */
         public static final AuthEnum NUMBER_1 = new AuthEnum(1l);
 
         private static final Map<Long, AuthEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class UserAuth {
         return this;
     }
 
-    /** 用户id，需要从IAM服务获取
-     * 
-     * @return userId */
+    /**
+     * 用户id，需要从IAM服务获取
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -124,9 +135,10 @@ public class UserAuth {
         return this;
     }
 
-    /** 用户名，需要从IAM服务获取
-     * 
-     * @return userName */
+    /**
+     * 用户名，需要从IAM服务获取
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -140,9 +152,10 @@ public class UserAuth {
         return this;
     }
 
-    /** 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限
-     * 
-     * @return auth */
+    /**
+     * 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限
+     * @return auth
+     */
     public AuthEnum getAuth() {
         return auth;
     }
@@ -180,7 +193,10 @@ public class UserAuth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

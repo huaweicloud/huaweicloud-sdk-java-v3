@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CouponMaxUseQuantity */
+/**
+ * CouponMaxUseQuantity
+ */
 public class CouponMaxUseQuantity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CouponMaxUseQuantity {
         return this;
     }
 
-    /** 优惠券类型。 1：代金券2：折扣券3：产品券4：现金券
-     * 
-     * @return couponType */
+    /**
+     * 优惠券类型。 1：代金券2：折扣券3：产品券4：现金券
+     * @return couponType
+     */
     public Integer getCouponType() {
         return couponType;
     }
@@ -44,9 +47,10 @@ public class CouponMaxUseQuantity {
         return this;
     }
 
-    /** 优惠券分组。 1：云市场发放的券2：华为云券-1024-专用代金券3：华为云券-使用限制-抵扣硬件的券0：华为云服务券（排除上述取值之外的券）
-     * 
-     * @return couponGroup */
+    /**
+     * 优惠券分组。 1：云市场发放的券2：华为云券-1024-专用代金券3：华为云券-使用限制-抵扣硬件的券0：华为云服务券（排除上述取值之外的券）
+     * @return couponGroup
+     */
     public Integer getCouponGroup() {
         return couponGroup;
     }
@@ -60,9 +64,10 @@ public class CouponMaxUseQuantity {
         return this;
     }
 
-    /** 优惠券使用数量。
-     * 
-     * @return useQuantityValue */
+    /**
+     * 优惠券使用数量。
+     * @return useQuantityValue
+     */
     public Integer getUseQuantityValue() {
         return useQuantityValue;
     }
@@ -101,7 +106,10 @@ public class CouponMaxUseQuantity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

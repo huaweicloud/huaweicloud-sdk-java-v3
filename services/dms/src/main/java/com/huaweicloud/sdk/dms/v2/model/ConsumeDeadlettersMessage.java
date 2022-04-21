@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ConsumeDeadlettersMessage */
+/**
+ * ConsumeDeadlettersMessage
+ */
 public class ConsumeDeadlettersMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ConsumeDeadlettersMessage {
         return this;
     }
 
-    /** Get message
-     * 
-     * @return message */
+    /**
+     * Get message
+     * @return message
+     */
     public ConsumeDeadlettersMessageMessage getMessage() {
         return message;
     }
@@ -49,9 +52,10 @@ public class ConsumeDeadlettersMessage {
         return this;
     }
 
-    /** 消息handler。
-     * 
-     * @return handler */
+    /**
+     * 消息handler。
+     * @return handler
+     */
     public String getHandler() {
         return handler;
     }
@@ -88,7 +92,10 @@ public class ConsumeDeadlettersMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

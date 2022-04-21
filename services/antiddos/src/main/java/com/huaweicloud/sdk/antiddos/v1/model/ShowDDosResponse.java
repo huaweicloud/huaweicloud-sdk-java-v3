@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDDosResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启L7层防护
-     * 
-     * @return enableL7 */
+    /**
+     * 是否开启L7层防护
+     * @return enableL7
+     */
     public Boolean getEnableL7() {
         return enableL7;
     }
@@ -55,9 +58,10 @@ public class ShowDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 流量分段ID，取值范围：1～9
-     * 
-     * @return trafficPosId */
+    /**
+     * 流量分段ID，取值范围：1～9
+     * @return trafficPosId
+     */
     public Long getTrafficPosId() {
         return trafficPosId;
     }
@@ -71,9 +75,10 @@ public class ShowDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** HTTP请求数分段ID，取值范围：1～15
-     * 
-     * @return httpRequestPosId */
+    /**
+     * HTTP请求数分段ID，取值范围：1～15
+     * @return httpRequestPosId
+     */
     public Long getHttpRequestPosId() {
         return httpRequestPosId;
     }
@@ -87,9 +92,10 @@ public class ShowDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 清洗时访问限制分段ID，取值范围：1～8
-     * 
-     * @return cleaningAccessPosId */
+    /**
+     * 清洗时访问限制分段ID，取值范围：1～8
+     * @return cleaningAccessPosId
+     */
     public Long getCleaningAccessPosId() {
         return cleaningAccessPosId;
     }
@@ -103,9 +109,10 @@ public class ShowDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用类型ID，可选取值： - 0 - 1
-     * 
-     * @return appTypeId */
+    /**
+     * 应用类型ID，可选取值： - 0 - 1
+     * @return appTypeId
+     */
     public Long getAppTypeId() {
         return appTypeId;
     }
@@ -148,7 +155,10 @@ public class ShowDDosResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

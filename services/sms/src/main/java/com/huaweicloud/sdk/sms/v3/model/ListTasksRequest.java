@@ -10,40 +10,64 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTasksRequest {
 
-    /** 迁移任务状态 */
+    /**
+     * 迁移任务状态
+     */
     public static final class StateEnum {
 
-        /** Enum READY for value: "READY" */
+        /**
+         * Enum READY for value: "READY"
+         */
         public static final StateEnum READY = new StateEnum("READY");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum SYNCING for value: "SYNCING" */
+        /**
+         * Enum SYNCING for value: "SYNCING"
+         */
         public static final StateEnum SYNCING = new StateEnum("SYNCING");
 
-        /** Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS" */
+        /**
+         * Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS"
+         */
         public static final StateEnum MIGRATE_SUCCESS = new StateEnum("MIGRATE_SUCCESS");
 
-        /** Enum MIGRATE_FAIL for value: "MIGRATE_FAIL" */
+        /**
+         * Enum MIGRATE_FAIL for value: "MIGRATE_FAIL"
+         */
         public static final StateEnum MIGRATE_FAIL = new StateEnum("MIGRATE_FAIL");
 
-        /** Enum ABORTING for value: "ABORTING" */
+        /**
+         * Enum ABORTING for value: "ABORTING"
+         */
         public static final StateEnum ABORTING = new StateEnum("ABORTING");
 
-        /** Enum ABORT for value: "ABORT" */
+        /**
+         * Enum ABORT for value: "ABORT"
+         */
         public static final StateEnum ABORT = new StateEnum("ABORT");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StateEnum DELETING = new StateEnum("DELETING");
 
-        /** Enum SYNC_F_ROLLBACKING for value: "SYNC_F_ROLLBACKING" */
+        /**
+         * Enum SYNC_F_ROLLBACKING for value: "SYNC_F_ROLLBACKING"
+         */
         public static final StateEnum SYNC_F_ROLLBACKING = new StateEnum("SYNC_F_ROLLBACKING");
 
-        /** Enum SYNC_F_ROLLBACK_SUCCESS for value: "SYNC_F_ROLLBACK_SUCCESS" */
+        /**
+         * Enum SYNC_F_ROLLBACK_SUCCESS for value: "SYNC_F_ROLLBACK_SUCCESS"
+         */
         public static final StateEnum SYNC_F_ROLLBACK_SUCCESS = new StateEnum("SYNC_F_ROLLBACK_SUCCESS");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -156,9 +180,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 迁移任务状态
-     * 
-     * @return state */
+    /**
+     * 迁移任务状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -172,9 +197,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务的名称
-     * 
-     * @return name */
+    /**
+     * 任务的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -188,9 +214,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务的ID
-     * 
-     * @return id */
+    /**
+     * 任务的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -204,9 +231,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 源端服务器的ID
-     * 
-     * @return sourceServerId */
+    /**
+     * 源端服务器的ID
+     * @return sourceServerId
+     */
     public String getSourceServerId() {
         return sourceServerId;
     }
@@ -220,9 +248,12 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 每一页记录的任务数量 minimum: 0 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 每一页记录的任务数量
+     * minimum: 0
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -236,9 +267,12 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 偏移量 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 偏移量
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -252,9 +286,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 需要查询的企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 需要查询的企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -300,7 +335,10 @@ public class ListTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

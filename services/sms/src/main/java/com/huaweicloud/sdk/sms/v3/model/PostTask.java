@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建任务的参数 */
+/**
+ * 创建任务的参数
+ */
 public class PostTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class PostTask {
 
     private String name;
 
-    /** 任务类型 */
+    /**
+     * 任务类型
+     */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
-        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -160,9 +168,10 @@ public class PostTask {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -176,9 +185,10 @@ public class PostTask {
         return this;
     }
 
-    /** 任务类型
-     * 
-     * @return type */
+    /**
+     * 任务类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -192,9 +202,10 @@ public class PostTask {
         return this;
     }
 
-    /** 迁移后是否启动目的端虚拟机
-     * 
-     * @return startTargetServer */
+    /**
+     * 迁移后是否启动目的端虚拟机
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -208,9 +219,10 @@ public class PostTask {
         return this;
     }
 
-    /** 操作系统类型
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -233,9 +245,10 @@ public class PostTask {
         return this;
     }
 
-    /** Get sourceServer
-     * 
-     * @return sourceServer */
+    /**
+     * Get sourceServer
+     * @return sourceServer
+     */
     public SourceServerByTask getSourceServer() {
         return sourceServer;
     }
@@ -258,9 +271,10 @@ public class PostTask {
         return this;
     }
 
-    /** Get targetServer
-     * 
-     * @return targetServer */
+    /**
+     * Get targetServer
+     * @return targetServer
+     */
     public TargetServerByTask getTargetServer() {
         return targetServer;
     }
@@ -274,9 +288,10 @@ public class PostTask {
         return this;
     }
 
-    /** 迁移ip，如果是自动创建虚拟机，不需要此参数
-     * 
-     * @return migrationIp */
+    /**
+     * 迁移ip，如果是自动创建虚拟机，不需要此参数
+     * @return migrationIp
+     */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -290,9 +305,10 @@ public class PostTask {
         return this;
     }
 
-    /** region的名称
-     * 
-     * @return regionName */
+    /**
+     * region的名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -306,9 +322,10 @@ public class PostTask {
         return this;
     }
 
-    /** region id
-     * 
-     * @return regionId */
+    /**
+     * region id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -322,9 +339,10 @@ public class PostTask {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -338,9 +356,10 @@ public class PostTask {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -354,9 +373,10 @@ public class PostTask {
         return this;
     }
 
-    /** 自动创建虚拟机使用模板
-     * 
-     * @return vmTemplateId */
+    /**
+     * 自动创建虚拟机使用模板
+     * @return vmTemplateId
+     */
     public String getVmTemplateId() {
         return vmTemplateId;
     }
@@ -370,9 +390,10 @@ public class PostTask {
         return this;
     }
 
-    /** 是否使用公网ip
-     * 
-     * @return usePublicIp */
+    /**
+     * 是否使用公网ip
+     * @return usePublicIp
+     */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -386,9 +407,10 @@ public class PostTask {
         return this;
     }
 
-    /** 复制或者同步后是否会继续持续同步，不添加则默认是false
-     * 
-     * @return syncing */
+    /**
+     * 复制或者同步后是否会继续持续同步，不添加则默认是false
+     * @return syncing
+     */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -458,7 +480,10 @@ public class PostTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

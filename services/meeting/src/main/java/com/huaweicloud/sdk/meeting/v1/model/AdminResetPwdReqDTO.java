@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AdminResetPwdReqDTO */
+/**
+ * AdminResetPwdReqDTO
+ */
 public class AdminResetPwdReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AdminResetPwdReqDTO {
         return this;
     }
 
-    /** 被修改密码的用户账号 maxLength：255 minLength：1
-     * 
-     * @return account */
+    /**
+     * 被修改密码的用户账号 maxLength：255 minLength：1 
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -55,7 +58,10 @@ public class AdminResetPwdReqDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

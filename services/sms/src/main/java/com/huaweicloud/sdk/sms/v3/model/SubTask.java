@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改任务进度 */
+/**
+ * 修改任务进度
+ */
 public class SubTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SubTask {
         return this;
     }
 
-    /** 子任务名称
-     * 
-     * @return name */
+    /**
+     * 子任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,12 @@ public class SubTask {
         return this;
     }
 
-    /** 子任务的进度，取值为0-100之间的整数 minimum: 0 maximum: 100
-     * 
-     * @return progress */
+    /**
+     * 子任务的进度，取值为0-100之间的整数
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -80,9 +86,12 @@ public class SubTask {
         return this;
     }
 
-    /** 子任务开始时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return startDate */
+    /**
+     * 子任务开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return startDate
+     */
     public Long getStartDate() {
         return startDate;
     }
@@ -96,9 +105,12 @@ public class SubTask {
         return this;
     }
 
-    /** 子任务结束时间（如果子任务还没有结束，则为空） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return endDate */
+    /**
+     * 子任务结束时间（如果子任务还没有结束，则为空）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return endDate
+     */
     public Long getEndDate() {
         return endDate;
     }
@@ -112,9 +124,12 @@ public class SubTask {
         return this;
     }
 
-    /** 迁移速率，Mbit/s minimum: 0 maximum: 1E+4
-     * 
-     * @return migrateSpeed */
+    /**
+     * 迁移速率，Mbit/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return migrateSpeed
+     */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -128,9 +143,10 @@ public class SubTask {
         return this;
     }
 
-    /** 触发子任务的用户操作名称
-     * 
-     * @return userOp */
+    /**
+     * 触发子任务的用户操作名称
+     * @return userOp
+     */
     public String getUserOp() {
         return userOp;
     }
@@ -144,9 +160,10 @@ public class SubTask {
         return this;
     }
 
-    /** 迁移或同步时，具体的迁移详情
-     * 
-     * @return processTrace */
+    /**
+     * 迁移或同步时，具体的迁移详情
+     * @return processTrace
+     */
     public String getProcessTrace() {
         return processTrace;
     }
@@ -190,7 +207,10 @@ public class SubTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

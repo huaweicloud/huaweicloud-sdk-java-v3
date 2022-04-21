@@ -7,16 +7,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 应用组件类型包括：Webapp、MicroService、Common。 */
+/**
+ * 应用组件类型包括：Webapp、MicroService、Common。
+ */
 public class ComponentCategory {
 
-    /** Enum WEBAPP for value: "Webapp" */
+    /**
+     * Enum WEBAPP for value: "Webapp"
+     */
     public static final ComponentCategory WEBAPP = new ComponentCategory("Webapp");
 
-    /** Enum MICROSERVICE for value: "MicroService" */
+    /**
+     * Enum MICROSERVICE for value: "MicroService"
+     */
     public static final ComponentCategory MICROSERVICE = new ComponentCategory("MicroService");
 
-    /** Enum COMMON for value: "Common" */
+    /**
+     * Enum COMMON for value: "Common"
+     */
     public static final ComponentCategory COMMON = new ComponentCategory("Common");
 
     private static final Map<String, ComponentCategory> STATIC_FIELDS = createStaticFields();

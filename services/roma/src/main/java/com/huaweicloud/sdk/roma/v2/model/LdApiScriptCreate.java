@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LdApiScriptCreate */
+/**
+ * LdApiScriptCreate
+ */
 public class LdApiScriptCreate {
 
-    /** API类型 - data：数据API - function：函数API */
+    /**
+     * API类型 - data：数据API - function：函数API 
+     */
     public static final class ApiTypeEnum {
 
-        /** Enum DATA for value: "data" */
+        /**
+         * Enum DATA for value: "data"
+         */
         public static final ApiTypeEnum DATA = new ApiTypeEnum("data");
 
-        /** Enum FUNCTION for value: "function" */
+        /**
+         * Enum FUNCTION for value: "function"
+         */
         public static final ApiTypeEnum FUNCTION = new ApiTypeEnum("function");
 
         private static final Map<String, ApiTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class LdApiScriptCreate {
         return this;
     }
 
-    /** API类型 - data：数据API - function：函数API
-     * 
-     * @return apiType */
+    /**
+     * API类型 - data：数据API - function：函数API 
+     * @return apiType
+     */
     public ApiTypeEnum getApiType() {
         return apiType;
     }
@@ -134,9 +143,10 @@ public class LdApiScriptCreate {
         return this;
     }
 
-    /** API脚本信息列表
-     * 
-     * @return scripts */
+    /**
+     * API脚本信息列表
+     * @return scripts
+     */
     public List<LdApiScriptBase> getScripts() {
         return scripts;
     }
@@ -173,7 +183,10 @@ public class LdApiScriptCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** security_groups数据结构说明 */
+/**
+ * security_groups数据结构说明
+ */
 public class SecurityGroupsList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SecurityGroupsList {
         return this;
     }
 
-    /** 安全组名称或者UUID
-     * 
-     * @return name */
+    /**
+     * 安全组名称或者UUID
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class SecurityGroupsList {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return id */
+    /**
+     * 安全组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,7 +81,10 @@ public class SecurityGroupsList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

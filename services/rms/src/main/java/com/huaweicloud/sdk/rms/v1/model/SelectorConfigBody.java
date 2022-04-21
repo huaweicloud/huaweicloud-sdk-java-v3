@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** tracker选择器 */
+/**
+ * tracker选择器
+ */
 public class SelectorConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class SelectorConfigBody {
         return this;
     }
 
-    /** 是否选择所有支持的资源
-     * 
-     * @return allSupported */
+    /**
+     * 是否选择所有支持的资源
+     * @return allSupported
+     */
     public Boolean getAllSupported() {
         return allSupported;
     }
@@ -58,9 +61,10 @@ public class SelectorConfigBody {
         return this;
     }
 
-    /** 资源类型列表
-     * 
-     * @return resourceTypes */
+    /**
+     * 资源类型列表
+     * @return resourceTypes
+     */
     public List<String> getResourceTypes() {
         return resourceTypes;
     }
@@ -97,7 +101,10 @@ public class SelectorConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

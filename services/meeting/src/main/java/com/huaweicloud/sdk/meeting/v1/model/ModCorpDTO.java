@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ModCorpDTO */
+/**
+ * ModCorpDTO
+ */
 public class ModCorpDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ModCorpDTO {
         return this;
     }
 
-    /** Get basicInfo
-     * 
-     * @return basicInfo */
+    /**
+     * Get basicInfo
+     * @return basicInfo
+     */
     public ModCorpBasicDTO getBasicInfo() {
         return basicInfo;
     }
@@ -70,9 +73,10 @@ public class ModCorpDTO {
         return this;
     }
 
-    /** Get adminInfo
-     * 
-     * @return adminInfo */
+    /**
+     * Get adminInfo
+     * @return adminInfo
+     */
     public ModAdminDTO getAdminInfo() {
         return adminInfo;
     }
@@ -86,9 +90,10 @@ public class ModCorpDTO {
         return this;
     }
 
-    /** 媒体接入（包括SBC和MCU）分组id, 可通过企业资源管理下的SP管理员查询资源信息接口获取。
-     * 
-     * @return groupId */
+    /**
+     * 媒体接入（包括SBC和MCU）分组id, 可通过企业资源管理下的SP管理员查询资源信息接口获取。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -118,9 +123,10 @@ public class ModCorpDTO {
         return this;
     }
 
-    /** 可配置项信息。
-     * 
-     * @return propertyInfo */
+    /**
+     * 可配置项信息。
+     * @return propertyInfo
+     */
     public List<OrgPropertyDTO> getPropertyInfo() {
         return propertyInfo;
     }
@@ -160,7 +166,10 @@ public class ModCorpDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

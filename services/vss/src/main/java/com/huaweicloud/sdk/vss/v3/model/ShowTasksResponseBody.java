@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowTasksResponseBody */
+/**
+ * ShowTasksResponseBody
+ */
 public class ShowTasksResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class ShowTasksResponseBody {
 
     private String url;
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务 */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final TaskTypeEnum NORMAL = new TaskTypeEnum("normal");
 
-        /** Enum MONITOR for value: "monitor" */
+        /**
+         * Enum MONITOR for value: "monitor"
+         */
         public static final TaskTypeEnum MONITOR = new TaskTypeEnum("monitor");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -130,22 +138,34 @@ public class ShowTasksResponseBody {
 
     private String endTime;
 
-    /** 任务状态: * running - 正在运行 * success - 成功 * canceled - 已取消 * waiting - 正在等待 * failure - 失败 */
+    /**
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     */
     public static final class TaskStatusEnum {
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final TaskStatusEnum RUNNING = new TaskStatusEnum("running");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final TaskStatusEnum SUCCESS = new TaskStatusEnum("success");
 
-        /** Enum CANCELED for value: "canceled" */
+        /**
+         * Enum CANCELED for value: "canceled"
+         */
         public static final TaskStatusEnum CANCELED = new TaskStatusEnum("canceled");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final TaskStatusEnum WAITING = new TaskStatusEnum("waiting");
 
-        /** Enum FAILURE for value: "failure" */
+        /**
+         * Enum FAILURE for value: "failure"
+         */
         public static final TaskStatusEnum FAILURE = new TaskStatusEnum("failure");
 
         private static final Map<String, TaskStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -218,16 +238,24 @@ public class ShowTasksResponseBody {
 
     private TaskStatusEnum taskStatus;
 
-    /** 监测任务状态: * running - 正在运行 * waiting - 正在等待 * finished - 已完成 */
+    /**
+     * 监测任务状态:   * running - 正在运行   * waiting - 正在等待   * finished - 已完成 
+     */
     public static final class ScheduleStatusEnum {
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final ScheduleStatusEnum RUNNING = new ScheduleStatusEnum("running");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final ScheduleStatusEnum WAITING = new ScheduleStatusEnum("waiting");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final ScheduleStatusEnum FINISHED = new ScheduleStatusEnum("finished");
 
         private static final Map<String, ScheduleStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -318,16 +346,24 @@ public class ShowTasksResponseBody {
 
     private Integer score;
 
-    /** 安全等级: * - safety : 安全 * - average : 中风险 * - highrisk: 高风险 */
+    /**
+     * 安全等级:   * - safety  : 安全   * - average : 中风险   * - highrisk: 高风险 
+     */
     public static final class SafeLevelEnum {
 
-        /** Enum SAFETY for value: "safety" */
+        /**
+         * Enum SAFETY for value: "safety"
+         */
         public static final SafeLevelEnum SAFETY = new SafeLevelEnum("safety");
 
-        /** Enum AVERAGE for value: "average" */
+        /**
+         * Enum AVERAGE for value: "average"
+         */
         public static final SafeLevelEnum AVERAGE = new SafeLevelEnum("average");
 
-        /** Enum HIGHRISK for value: "highrisk" */
+        /**
+         * Enum HIGHRISK for value: "highrisk"
+         */
         public static final SafeLevelEnum HIGHRISK = new SafeLevelEnum("highrisk");
 
         private static final Map<String, SafeLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -408,9 +444,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -424,9 +461,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 待扫描的目标网址
-     * 
-     * @return url */
+    /**
+     * 待扫描的目标网址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -440,9 +478,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务
-     * 
-     * @return taskType */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -456,9 +495,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -472,9 +512,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -497,9 +538,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** Get taskSettings
-     * 
-     * @return taskSettings */
+    /**
+     * Get taskSettings
+     * @return taskSettings
+     */
     public TaskSettings getTaskSettings() {
         return taskSettings;
     }
@@ -513,9 +555,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 创建任务的时间
-     * 
-     * @return createTime */
+    /**
+     * 创建任务的时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -529,9 +572,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务启动的时间
-     * 
-     * @return startTime */
+    /**
+     * 任务启动的时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -545,9 +589,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务结束的时间
-     * 
-     * @return endTime */
+    /**
+     * 任务结束的时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -561,9 +606,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务状态: * running - 正在运行 * success - 成功 * canceled - 已取消 * waiting - 正在等待 * failure - 失败
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * @return taskStatus
+     */
     public TaskStatusEnum getTaskStatus() {
         return taskStatus;
     }
@@ -577,9 +623,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 监测任务状态: * running - 正在运行 * waiting - 正在等待 * finished - 已完成
-     * 
-     * @return scheduleStatus */
+    /**
+     * 监测任务状态:   * running - 正在运行   * waiting - 正在等待   * finished - 已完成 
+     * @return scheduleStatus
+     */
     public ScheduleStatusEnum getScheduleStatus() {
         return scheduleStatus;
     }
@@ -593,9 +640,12 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务进度 minimum: 0 maximum: 100
-     * 
-     * @return progress */
+    /**
+     * 任务进度
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -609,9 +659,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 任务状态描述
-     * 
-     * @return reason */
+    /**
+     * 任务状态描述
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -625,9 +676,12 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 包总数 minimum: 0 maximum: 100000
-     * 
-     * @return packNum */
+    /**
+     * 包总数
+     * minimum: 0
+     * maximum: 100000
+     * @return packNum
+     */
     public Long getPackNum() {
         return packNum;
     }
@@ -641,9 +695,12 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 安全分数 minimum: 0 maximum: 100
-     * 
-     * @return score */
+    /**
+     * 安全分数
+     * minimum: 0
+     * maximum: 100
+     * @return score
+     */
     public Integer getScore() {
         return score;
     }
@@ -657,9 +714,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** 安全等级: * - safety : 安全 * - average : 中风险 * - highrisk: 高风险
-     * 
-     * @return safeLevel */
+    /**
+     * 安全等级:   * - safety  : 安全   * - average : 中风险   * - highrisk: 高风险 
+     * @return safeLevel
+     */
     public SafeLevelEnum getSafeLevel() {
         return safeLevel;
     }
@@ -682,9 +740,10 @@ public class ShowTasksResponseBody {
         return this;
     }
 
-    /** Get statistics
-     * 
-     * @return statistics */
+    /**
+     * Get statistics
+     * @return statistics
+     */
     public VulnsLevel getStatistics() {
         return statistics;
     }
@@ -767,7 +826,10 @@ public class ShowTasksResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

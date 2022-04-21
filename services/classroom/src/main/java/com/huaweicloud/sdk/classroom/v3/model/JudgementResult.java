@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 任务执行结果 */
+/**
+ * 任务执行结果
+ */
 public class JudgementResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 标准类型输出结果
-     * 
-     * @return output */
+    /**
+     * 标准类型输出结果
+     * @return output
+     */
     public String getOutput() {
         return output;
     }
@@ -62,9 +65,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 文件形式输出的文件id，可根据文件id下载详情
-     * 
-     * @return fileId */
+    /**
+     * 文件形式输出的文件id，可根据文件id下载详情
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -78,9 +82,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 图片形式输出的图片id，可根据图片id下载详情
-     * 
-     * @return imageId */
+    /**
+     * 图片形式输出的图片id，可根据图片id下载详情
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -94,9 +99,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 用例形式输出的用例总个数
-     * 
-     * @return caseCount */
+    /**
+     * 用例形式输出的用例总个数
+     * @return caseCount
+     */
     public Integer getCaseCount() {
         return caseCount;
     }
@@ -110,9 +116,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 用例形式输出的已执行用例的个数
-     * 
-     * @return executedCount */
+    /**
+     * 用例形式输出的已执行用例的个数
+     * @return executedCount
+     */
     public Integer getExecutedCount() {
         return executedCount;
     }
@@ -142,9 +149,10 @@ public class JudgementResult {
         return this;
     }
 
-    /** 用例形式输出的已执行用例的结果
-     * 
-     * @return testcases */
+    /**
+     * 用例形式输出的已执行用例的结果
+     * @return testcases
+     */
     public List<JudgementCaseResult> getTestcases() {
         return testcases;
     }
@@ -189,7 +197,10 @@ public class JudgementResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

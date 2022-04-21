@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 容灾演练虚拟机数据结构 */
+/**
+ * 容灾演练虚拟机数据结构
+ */
 public class DrillServerParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DrillServerParams {
         return this;
     }
 
-    /** 演练云服务器对应的保护实例ID。
-     * 
-     * @return protectedInstance */
+    /**
+     * 演练云服务器对应的保护实例ID。
+     * @return protectedInstance
+     */
     public String getProtectedInstance() {
         return protectedInstance;
     }
@@ -39,9 +42,10 @@ public class DrillServerParams {
         return this;
     }
 
-    /** 演练云服务器ID。
-     * 
-     * @return drillServerId */
+    /**
+     * 演练云服务器ID。
+     * @return drillServerId
+     */
     public String getDrillServerId() {
         return drillServerId;
     }
@@ -78,7 +82,10 @@ public class DrillServerParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Remediation */
+/**
+ * Remediation
+ */
 public class Remediation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Remediation {
         return this;
     }
 
-    /** 处理建议，最长512个字符。
-     * 
-     * @return recommendation */
+    /**
+     * 处理建议，最长512个字符。
+     * @return recommendation
+     */
     public String getRecommendation() {
         return recommendation;
     }
@@ -39,9 +42,10 @@ public class Remediation {
         return this;
     }
 
-    /** 链接，指向该事件的一般修复信息。该URL必须可以从公网访问，不需要提供凭证。
-     * 
-     * @return url */
+    /**
+     * 链接，指向该事件的一般修复信息。该URL必须可以从公网访问，不需要提供凭证。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -78,7 +82,10 @@ public class Remediation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

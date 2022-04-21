@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 指标分子过滤条件 */
+/**
+ * 指标分子过滤条件
+ */
 public class MetricRequestV2Dividend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class MetricRequestV2Dividend {
         return this;
     }
 
-    /** 自定义类型过滤条件
-     * 
-     * @return customFields */
+    /**
+     * 自定义类型过滤条件
+     * @return customFields
+     */
     public List<MetricRequestV2DividendCustomFields> getCustomFields() {
         return customFields;
     }
@@ -75,7 +78,10 @@ public class MetricRequestV2Dividend {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

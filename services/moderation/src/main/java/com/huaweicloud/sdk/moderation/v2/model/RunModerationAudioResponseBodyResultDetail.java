@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 审核结果列表，text为语音转文本后审核结果，audio为音频审核结果。 */
+/**
+ * 审核结果列表，text为语音转文本后审核结果，audio为音频审核结果。 
+ */
 public class RunModerationAudioResponseBodyResultDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class RunModerationAudioResponseBodyResultDetail {
         return this;
     }
 
-    /** 返回的语音转文本后审核结果详细信息： ● politics：涉政敏感词列表。 ● porn：涉黄敏感词列表。 ● ad：广告敏感词列表。 ● abuse：辱骂敏感词列表。 ● contraband：违禁品敏感词列表
-     * 
-     * @return text */
+    /**
+     * 返回的语音转文本后审核结果详细信息： ● politics：涉政敏感词列表。 ● porn：涉黄敏感词列表。 ● ad：广告敏感词列表。 ● abuse：辱骂敏感词列表。 ● contraband：违禁品敏感词列表 
+     * @return text
+     */
     public Object getText() {
         return text;
     }
@@ -50,9 +53,10 @@ public class RunModerationAudioResponseBodyResultDetail {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public RunModerationAudioResponseBodyResultDetailAudio getAudio() {
         return audio;
     }
@@ -90,7 +94,10 @@ public class RunModerationAudioResponseBodyResultDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

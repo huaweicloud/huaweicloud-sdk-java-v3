@@ -7,13 +7,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 */
+/**
+ * 运行平台类型。  应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 
+ */
 public class InstancePlatformType {
 
-    /** Enum CCE for value: "cce" */
+    /**
+     * Enum CCE for value: "cce"
+     */
     public static final InstancePlatformType CCE = new InstancePlatformType("cce");
 
-    /** Enum VMAPP for value: "vmapp" */
+    /**
+     * Enum VMAPP for value: "vmapp"
+     */
     public static final InstancePlatformType VMAPP = new InstancePlatformType("vmapp");
 
     private static final Map<String, InstancePlatformType> STATIC_FIELDS = createStaticFields();

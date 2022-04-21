@@ -20,9 +20,10 @@ public class PrePaidServerSecurityGroup {
         return this;
     }
 
-    /** 可以为空，待创建云服务器的安全组，会对创建云服务器中配置的网卡生效。需要指定已有安全组的ID，UUID格式；若不传值，底层会按照空处理，不会创建安全组。
-     * 
-     * @return id */
+    /**
+     * 可以为空，待创建云服务器的安全组，会对创建云服务器中配置的网卡生效。需要指定已有安全组的ID，UUID格式；若不传值，底层会按照空处理，不会创建安全组。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,7 +58,10 @@ public class PrePaidServerSecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

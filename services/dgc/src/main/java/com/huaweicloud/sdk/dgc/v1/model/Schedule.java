@@ -11,19 +11,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Schedule */
+/**
+ * Schedule
+ */
 public class Schedule {
 
-    /** Gets or Sets scheType */
+    /**
+     * Gets or Sets scheType
+     */
     public static final class ScheTypeEnum {
 
-        /** Enum EXECUTE_ONCE for value: "EXECUTE_ONCE" */
+        /**
+         * Enum EXECUTE_ONCE for value: "EXECUTE_ONCE"
+         */
         public static final ScheTypeEnum EXECUTE_ONCE = new ScheTypeEnum("EXECUTE_ONCE");
 
-        /** Enum CRON for value: "CRON" */
+        /**
+         * Enum CRON for value: "CRON"
+         */
         public static final ScheTypeEnum CRON = new ScheTypeEnum("CRON");
 
-        /** Enum EVENT for value: "EVENT" */
+        /**
+         * Enum EVENT for value: "EVENT"
+         */
         public static final ScheTypeEnum EVENT = new ScheTypeEnum("EVENT");
 
         private static final Map<String, ScheTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +119,10 @@ public class Schedule {
         return this;
     }
 
-    /** Get scheType
-     * 
-     * @return scheType */
+    /**
+     * Get scheType
+     * @return scheType
+     */
     public ScheTypeEnum getScheType() {
         return scheType;
     }
@@ -134,9 +145,10 @@ public class Schedule {
         return this;
     }
 
-    /** Get cron
-     * 
-     * @return cron */
+    /**
+     * Get cron
+     * @return cron
+     */
     public Cron getCron() {
         return cron;
     }
@@ -159,9 +171,10 @@ public class Schedule {
         return this;
     }
 
-    /** Get event
-     * 
-     * @return event */
+    /**
+     * Get event
+     * @return event
+     */
     public Event getEvent() {
         return event;
     }
@@ -199,7 +212,10 @@ public class Schedule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

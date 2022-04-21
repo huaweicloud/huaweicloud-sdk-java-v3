@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowOpenApiCalledRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,12 @@ public class ShowOpenApiCalledRecordsRequest {
         return this;
     }
 
-    /** 分页大小，默认1000，最大2000。 minimum: 1 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 分页大小，默认1000，最大2000。
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -54,9 +59,10 @@ public class ShowOpenApiCalledRecordsRequest {
         return this;
     }
 
-    /** 需要查询调用记录的URL，例如：/v1/{project_id}/sdg/database/watermark/embed。
-     * 
-     * @return calledUrl */
+    /**
+     * 需要查询调用记录的URL，例如：/v1/{project_id}/sdg/database/watermark/embed。
+     * @return calledUrl
+     */
     public String getCalledUrl() {
         return calledUrl;
     }
@@ -70,9 +76,10 @@ public class ShowOpenApiCalledRecordsRequest {
         return this;
     }
 
-    /** 开始时间（Unix timestamp），单位：毫秒，例如：0
-     * 
-     * @return startTime */
+    /**
+     * 开始时间（Unix timestamp），单位：毫秒，例如：0
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -86,9 +93,10 @@ public class ShowOpenApiCalledRecordsRequest {
         return this;
     }
 
-    /** 结束时间（Unix timestamp），单位：毫秒，例如：1638515803572
-     * 
-     * @return endTime */
+    /**
+     * 结束时间（Unix timestamp），单位：毫秒，例如：1638515803572
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -102,9 +110,10 @@ public class ShowOpenApiCalledRecordsRequest {
         return this;
     }
 
-    /** 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
-     * 
-     * @return marker */
+    /**
+     * 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -147,7 +156,10 @@ public class ShowOpenApiCalledRecordsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

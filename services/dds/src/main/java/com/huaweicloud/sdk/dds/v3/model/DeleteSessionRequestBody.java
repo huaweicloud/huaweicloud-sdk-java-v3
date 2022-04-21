@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DeleteSessionRequestBody */
+/**
+ * DeleteSessionRequestBody
+ */
 public class DeleteSessionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteSessionRequestBody {
         return this;
     }
 
-    /** 需要终结的会话ID列表。
-     * 
-     * @return sessions */
+    /**
+     * 需要终结的会话ID列表。
+     * @return sessions
+     */
     public List<String> getSessions() {
         return sessions;
     }
@@ -74,7 +77,10 @@ public class DeleteSessionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

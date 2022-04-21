@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Keypairs */
+/**
+ * Keypairs
+ */
 public class Keypairs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Keypairs {
         return this;
     }
 
-    /** Get keypair
-     * 
-     * @return keypair */
+    /**
+     * Get keypair
+     * @return keypair
+     */
     public Keypair getKeypair() {
         return keypair;
     }
@@ -65,7 +68,10 @@ public class Keypairs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

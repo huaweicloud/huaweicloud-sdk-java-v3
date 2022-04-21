@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDetailsOfGatewayResponseTypeV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,51 +30,81 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
 
     private String responseId;
 
-    /** 错误类型 */
+    /**
+     * 错误类型
+     */
     public static final class ResponseTypeEnum {
 
-        /** Enum AUTH_FAILURE for value: "AUTH_FAILURE" */
+        /**
+         * Enum AUTH_FAILURE for value: "AUTH_FAILURE"
+         */
         public static final ResponseTypeEnum AUTH_FAILURE = new ResponseTypeEnum("AUTH_FAILURE");
 
-        /** Enum AUTH_HEADER_MISSING for value: "AUTH_HEADER_MISSING" */
+        /**
+         * Enum AUTH_HEADER_MISSING for value: "AUTH_HEADER_MISSING"
+         */
         public static final ResponseTypeEnum AUTH_HEADER_MISSING = new ResponseTypeEnum("AUTH_HEADER_MISSING");
 
-        /** Enum AUTHORIZER_FAILURE for value: "AUTHORIZER_FAILURE" */
+        /**
+         * Enum AUTHORIZER_FAILURE for value: "AUTHORIZER_FAILURE"
+         */
         public static final ResponseTypeEnum AUTHORIZER_FAILURE = new ResponseTypeEnum("AUTHORIZER_FAILURE");
 
-        /** Enum AUTHORIZER_CONF_FAILURE for value: "AUTHORIZER_CONF_FAILURE" */
+        /**
+         * Enum AUTHORIZER_CONF_FAILURE for value: "AUTHORIZER_CONF_FAILURE"
+         */
         public static final ResponseTypeEnum AUTHORIZER_CONF_FAILURE = new ResponseTypeEnum("AUTHORIZER_CONF_FAILURE");
 
-        /** Enum AUTHORIZER_IDENTITIES_FAILURE for value: "AUTHORIZER_IDENTITIES_FAILURE" */
+        /**
+         * Enum AUTHORIZER_IDENTITIES_FAILURE for value: "AUTHORIZER_IDENTITIES_FAILURE"
+         */
         public static final ResponseTypeEnum AUTHORIZER_IDENTITIES_FAILURE =
             new ResponseTypeEnum("AUTHORIZER_IDENTITIES_FAILURE");
 
-        /** Enum BACKEND_UNAVAILABLE for value: "BACKEND_UNAVAILABLE" */
+        /**
+         * Enum BACKEND_UNAVAILABLE for value: "BACKEND_UNAVAILABLE"
+         */
         public static final ResponseTypeEnum BACKEND_UNAVAILABLE = new ResponseTypeEnum("BACKEND_UNAVAILABLE");
 
-        /** Enum BACKEND_TIMEOUT for value: "BACKEND_TIMEOUT" */
+        /**
+         * Enum BACKEND_TIMEOUT for value: "BACKEND_TIMEOUT"
+         */
         public static final ResponseTypeEnum BACKEND_TIMEOUT = new ResponseTypeEnum("BACKEND_TIMEOUT");
 
-        /** Enum THROTTLED for value: "THROTTLED" */
+        /**
+         * Enum THROTTLED for value: "THROTTLED"
+         */
         public static final ResponseTypeEnum THROTTLED = new ResponseTypeEnum("THROTTLED");
 
-        /** Enum UNAUTHORIZED for value: "UNAUTHORIZED" */
+        /**
+         * Enum UNAUTHORIZED for value: "UNAUTHORIZED"
+         */
         public static final ResponseTypeEnum UNAUTHORIZED = new ResponseTypeEnum("UNAUTHORIZED");
 
-        /** Enum ACCESS_DENIED for value: "ACCESS_DENIED" */
+        /**
+         * Enum ACCESS_DENIED for value: "ACCESS_DENIED"
+         */
         public static final ResponseTypeEnum ACCESS_DENIED = new ResponseTypeEnum("ACCESS_DENIED");
 
-        /** Enum NOT_FOUND for value: "NOT_FOUND" */
+        /**
+         * Enum NOT_FOUND for value: "NOT_FOUND"
+         */
         public static final ResponseTypeEnum NOT_FOUND = new ResponseTypeEnum("NOT_FOUND");
 
-        /** Enum REQUEST_PARAMETERS_FAILURE for value: "REQUEST_PARAMETERS_FAILURE" */
+        /**
+         * Enum REQUEST_PARAMETERS_FAILURE for value: "REQUEST_PARAMETERS_FAILURE"
+         */
         public static final ResponseTypeEnum REQUEST_PARAMETERS_FAILURE =
             new ResponseTypeEnum("REQUEST_PARAMETERS_FAILURE");
 
-        /** Enum DEFAULT_4XX for value: "DEFAULT_4XX" */
+        /**
+         * Enum DEFAULT_4XX for value: "DEFAULT_4XX"
+         */
         public static final ResponseTypeEnum DEFAULT_4XX = new ResponseTypeEnum("DEFAULT_4XX");
 
-        /** Enum DEFAULT_5XX for value: "DEFAULT_5XX" */
+        /**
+         * Enum DEFAULT_5XX for value: "DEFAULT_5XX"
+         */
         public static final ResponseTypeEnum DEFAULT_5XX = new ResponseTypeEnum("DEFAULT_5XX");
 
         private static final Map<String, ResponseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -159,9 +191,10 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -175,9 +208,10 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
         return this;
     }
 
-    /** 分组的编号
-     * 
-     * @return groupId */
+    /**
+     * 分组的编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -191,9 +225,10 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
         return this;
     }
 
-    /** 响应编号
-     * 
-     * @return responseId */
+    /**
+     * 响应编号
+     * @return responseId
+     */
     public String getResponseId() {
         return responseId;
     }
@@ -207,9 +242,10 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
         return this;
     }
 
-    /** 错误类型
-     * 
-     * @return responseType */
+    /**
+     * 错误类型
+     * @return responseType
+     */
     public ResponseTypeEnum getResponseType() {
         return responseType;
     }
@@ -251,7 +287,10 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

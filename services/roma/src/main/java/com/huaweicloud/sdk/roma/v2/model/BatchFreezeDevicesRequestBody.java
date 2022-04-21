@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchFreezeDevicesRequestBody */
+/**
+ * BatchFreezeDevicesRequestBody
+ */
 public class BatchFreezeDevicesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchFreezeDevicesRequestBody {
         return this;
     }
 
-    /** 设备ID列表，自动向下取整
-     * 
-     * @return deviceIds */
+    /**
+     * 设备ID列表，自动向下取整
+     * @return deviceIds
+     */
     public List<Integer> getDeviceIds() {
         return deviceIds;
     }
@@ -74,7 +77,10 @@ public class BatchFreezeDevicesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

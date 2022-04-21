@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProPricePlansResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,12 @@ public class ListProPricePlansResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页的记录数 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页的记录数
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -53,9 +58,12 @@ public class ListProPricePlansResponse extends SdkResponse {
         return this;
     }
 
-    /** 页码，最小值是1，最大值为1000000。默认值是1. minimum: 1 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 页码，最小值是1，最大值为1000000。默认值是1.
+     * minimum: 1
+     * maximum: 1000000
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -69,9 +77,11 @@ public class ListProPricePlansResponse extends SdkResponse {
         return this;
     }
 
-    /** 记录总数 minimum: 0
-     * 
-     * @return count */
+    /**
+     * 记录总数
+     * minimum: 0
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -101,9 +111,10 @@ public class ListProPricePlansResponse extends SdkResponse {
         return this;
     }
 
-    /** 套餐列表
-     * 
-     * @return pricePlans */
+    /**
+     * 套餐列表
+     * @return pricePlans
+     */
     public List<ProPricePlanVo> getPricePlans() {
         return pricePlans;
     }
@@ -144,7 +155,10 @@ public class ListProPricePlansResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

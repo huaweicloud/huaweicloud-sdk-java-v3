@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResetReplicaReqPartitions */
+/**
+ * ResetReplicaReqPartitions
+ */
 public class ResetReplicaReqPartitions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ResetReplicaReqPartitions {
         return this;
     }
 
-    /** 分区ID。
-     * 
-     * @return partition */
+    /**
+     * 分区ID。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -58,9 +61,10 @@ public class ResetReplicaReqPartitions {
         return this;
     }
 
-    /** 副本期望所在的broker ID。其中Array首位为leader副本，所有分区需要有同样数量的副本，副本数不能大于总broker的数量。
-     * 
-     * @return replicas */
+    /**
+     * 副本期望所在的broker ID。其中Array首位为leader副本，所有分区需要有同样数量的副本，副本数不能大于总broker的数量。
+     * @return replicas
+     */
     public List<Integer> getReplicas() {
         return replicas;
     }
@@ -97,7 +101,10 @@ public class ResetReplicaReqPartitions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

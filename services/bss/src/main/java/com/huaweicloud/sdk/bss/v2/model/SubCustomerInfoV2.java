@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubCustomerInfoV2 */
+/**
+ * SubCustomerInfoV2
+ */
 public class SubCustomerInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 企业子账号的客户ID。
-     * 
-     * @return id */
+    /**
+     * 企业子账号的客户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 企业子账号的用户名。
-     * 
-     * @return name */
+    /**
+     * 企业子账号的用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 企业子账号的显示名称。 不限制特殊字符。
-     * 
-     * @return displayName */
+    /**
+     * 企业子账号的显示名称。 不限制特殊字符。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -91,9 +96,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 子账号状态： 1：正常2：创建中3：关闭中4：已关闭101：子账号注册中102：子账号待激活
-     * 
-     * @return status */
+    /**
+     * 子账号状态： 1：正常2：创建中3：关闭中4：已关闭101：子账号注册中102：子账号待激活
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -107,9 +113,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 子账号归属的组织单元ID。
-     * 
-     * @return orgId */
+    /**
+     * 子账号归属的组织单元ID。
+     * @return orgId
+     */
     public String getOrgId() {
         return orgId;
     }
@@ -123,9 +130,10 @@ public class SubCustomerInfoV2 {
         return this;
     }
 
-    /** 子账号归属的组织单元名称。 说明： 当子账号归属的组织是企业组织根节点时，本属性可能为空。
-     * 
-     * @return orgName */
+    /**
+     * 子账号归属的组织单元名称。  说明： 当子账号归属的组织是企业组织根节点时，本属性可能为空。
+     * @return orgName
+     */
     public String getOrgName() {
         return orgName;
     }
@@ -169,7 +177,10 @@ public class SubCustomerInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

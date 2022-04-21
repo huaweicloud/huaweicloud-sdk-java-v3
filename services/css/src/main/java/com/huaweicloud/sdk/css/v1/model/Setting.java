@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Setting */
+/**
+ * Setting
+ */
 public class Setting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class Setting {
         return this;
     }
 
-    /** 并行执行管道的Filters+Outputs阶段的工作线程数，默认值为CPU核数。
-     * 
-     * @return workers */
+    /**
+     * 并行执行管道的Filters+Outputs阶段的工作线程数，默认值为CPU核数。
+     * @return workers
+     */
     public Integer getWorkers() {
         return workers;
     }
@@ -59,9 +62,10 @@ public class Setting {
         return this;
     }
 
-    /** 单个工作线程在尝试执行其Filters和Outputs之前将从inputs收集的最大事件数，该值较大通常更有效，但会增加内存开销，默认为125。
-     * 
-     * @return batchSize */
+    /**
+     * 单个工作线程在尝试执行其Filters和Outputs之前将从inputs收集的最大事件数，该值较大通常更有效，但会增加内存开销，默认为125。
+     * @return batchSize
+     */
     public Integer getBatchSize() {
         return batchSize;
     }
@@ -75,9 +79,10 @@ public class Setting {
         return this;
     }
 
-    /** 每个event被pipeline调度等待的最小时间。 单位毫秒。
-     * 
-     * @return batchDelayMs */
+    /**
+     * 每个event被pipeline调度等待的最小时间。 单位毫秒。
+     * @return batchDelayMs
+     */
     public Integer getBatchDelayMs() {
         return batchDelayMs;
     }
@@ -91,9 +96,10 @@ public class Setting {
         return this;
     }
 
-    /** 用于事件缓冲的内部队列模型。memory 为基于内存的传统队列，persisted为基于磁盘的ACKed持久化队列，默认值为memory。
-     * 
-     * @return queueType */
+    /**
+     * 用于事件缓冲的内部队列模型。memory 为基于内存的传统队列，persisted为基于磁盘的ACKed持久化队列，默认值为memory。
+     * @return queueType
+     */
     public String getQueueType() {
         return queueType;
     }
@@ -107,9 +113,10 @@ public class Setting {
         return this;
     }
 
-    /** 如果使用持久化队列，则表示强制执行检查点之前写入的最大事件数，默认值为1024。
-     * 
-     * @return queueCheckPointWrites */
+    /**
+     * 如果使用持久化队列，则表示强制执行检查点之前写入的最大事件数，默认值为1024。
+     * @return queueCheckPointWrites
+     */
     public Integer getQueueCheckPointWrites() {
         return queueCheckPointWrites;
     }
@@ -123,9 +130,10 @@ public class Setting {
         return this;
     }
 
-    /** 如果使用持久化队列，则表示持久化队列的总容量（以兆字节MB为单位），确保磁盘的容量大于该值，默认值为1024。
-     * 
-     * @return queueMaxBytesMb */
+    /**
+     * 如果使用持久化队列，则表示持久化队列的总容量（以兆字节MB为单位），确保磁盘的容量大于该值，默认值为1024。
+     * @return queueMaxBytesMb
+     */
     public Integer getQueueMaxBytesMb() {
         return queueMaxBytesMb;
     }
@@ -169,7 +177,10 @@ public class Setting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

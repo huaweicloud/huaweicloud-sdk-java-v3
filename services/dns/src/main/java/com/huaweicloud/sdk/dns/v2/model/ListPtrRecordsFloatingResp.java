@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListPtrRecordsFloatingResp */
+/**
+ * ListPtrRecordsFloatingResp
+ */
 public class ListPtrRecordsFloatingResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** PTR记录的ID，格式形如{region}:{floatingip_id}。
-     * 
-     * @return id */
+    /**
+     * PTR记录的ID，格式形如{region}:{floatingip_id}。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -82,9 +85,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** PTR记录对应的域名。
-     * 
-     * @return ptrdname */
+    /**
+     * PTR记录对应的域名。
+     * @return ptrdname
+     */
     public String getPtrdname() {
         return ptrdname;
     }
@@ -98,9 +102,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 对PTR记录的描述。
-     * 
-     * @return description */
+    /**
+     * 对PTR记录的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -114,9 +119,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -130,9 +136,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 弹性IP的IP地址。
-     * 
-     * @return address */
+    /**
+     * 弹性IP的IP地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -146,9 +153,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -162,9 +170,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 对该资源的当前操作。 取值范围：CREATE，UPDATE，DELETE，NONE。 CREATE：表示创建，UPDATE：表示更新，DELETE：表示删除，NONE：表示无操作
-     * 
-     * @return action */
+    /**
+     * 对该资源的当前操作。  取值范围：CREATE，UPDATE，DELETE，NONE。 CREATE：表示创建，UPDATE：表示更新，DELETE：表示删除，NONE：表示无操作
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -187,9 +196,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -219,9 +229,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -235,9 +246,10 @@ public class ListPtrRecordsFloatingResp {
         return this;
     }
 
-    /** 反向解析关联的企业项目ID，长度不超过36个字符。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 反向解析关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -290,7 +302,10 @@ public class ListPtrRecordsFloatingResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

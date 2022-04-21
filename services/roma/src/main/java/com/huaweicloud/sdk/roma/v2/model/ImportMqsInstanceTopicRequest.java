@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ImportMqsInstanceTopicRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class ImportMqsInstanceTopicRequest {
 
     private String instanceId;
 
-    /** 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。 默认为AddNew模式。 */
+    /**
+     * 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。  默认为AddNew模式。
+     */
     public static final class ModeEnum {
 
-        /** Enum ADDNEW for value: "AddNew" */
+        /**
+         * Enum ADDNEW for value: "AddNew"
+         */
         public static final ModeEnum ADDNEW = new ModeEnum("AddNew");
 
-        /** Enum MERGE for value: "Merge" */
+        /**
+         * Enum MERGE for value: "Merge"
+         */
         public static final ModeEnum MERGE = new ModeEnum("Merge");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class ImportMqsInstanceTopicRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -126,9 +135,10 @@ public class ImportMqsInstanceTopicRequest {
         return this;
     }
 
-    /** 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。 默认为AddNew模式。
-     * 
-     * @return mode */
+    /**
+     * 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。  默认为AddNew模式。
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -142,9 +152,10 @@ public class ImportMqsInstanceTopicRequest {
         return this;
     }
 
-    /** App应用的前缀。 若加上前缀，导入Topic时会拼接前缀和已有的App应用，形成新的App应用名称，再根据新的App应用名称导入Topic。
-     * 
-     * @return prefix */
+    /**
+     * App应用的前缀。  若加上前缀，导入Topic时会拼接前缀和已有的App应用，形成新的App应用名称，再根据新的App应用名称导入Topic。
+     * @return prefix
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -167,9 +178,10 @@ public class ImportMqsInstanceTopicRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public ImportMqsInstanceTopicRequestBody getBody() {
         return body;
     }
@@ -210,7 +222,10 @@ public class ImportMqsInstanceTopicRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

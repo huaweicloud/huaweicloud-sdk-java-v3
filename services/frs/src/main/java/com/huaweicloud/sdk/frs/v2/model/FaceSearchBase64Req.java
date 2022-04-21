@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FaceSearchBase64Req */
+/**
+ * FaceSearchBase64Req
+ */
 public class FaceSearchBase64Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
-     * 
-     * @return filter */
+    /**
+     * 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -63,9 +66,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 返回查询到的最相似的N张人脸，N默认为10。
-     * 
-     * @return topN */
+    /**
+     * 返回查询到的最相似的N张人脸，N默认为10。
+     * @return topN
+     */
     public Integer getTopN() {
         return topN;
     }
@@ -79,9 +83,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于MB。 • 图片为JPG/JPEG/BMP/PNG格式。
-     * 
-     * @return imageBase64 */
+    /**
+     * 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于MB。 • 图片为JPG/JPEG/BMP/PNG格式。
+     * @return imageBase64
+     */
     public String getImageBase64() {
         return imageBase64;
     }
@@ -111,9 +116,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 指定返回的自定义字段。
-     * 
-     * @return returnFields */
+    /**
+     * 指定返回的自定义字段。
+     * @return returnFields
+     */
     public List<String> getReturnFields() {
         return returnFields;
     }
@@ -127,9 +133,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。
-     * 
-     * @return threshold */
+    /**
+     * 人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。
+     * @return threshold
+     */
     public Double getThreshold() {
         return threshold;
     }
@@ -159,9 +166,10 @@ public class FaceSearchBase64Req {
         return this;
     }
 
-    /** 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
-     * 
-     * @return sort */
+    /**
+     * 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
+     * @return sort
+     */
     public List<Map<String, String>> getSort() {
         return sort;
     }
@@ -206,7 +214,10 @@ public class FaceSearchBase64Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

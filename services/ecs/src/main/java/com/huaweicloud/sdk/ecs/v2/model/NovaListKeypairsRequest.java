@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NovaListKeypairsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class NovaListKeypairsRequest {
         return this;
     }
 
-    /** 查询返回秘钥数量限制。 在微版本2.35后支持
-     * 
-     * @return limit */
+    /**
+     * 查询返回秘钥数量限制。  在微版本2.35后支持
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -44,9 +47,10 @@ public class NovaListKeypairsRequest {
         return this;
     }
 
-    /** 从marker指定的keypair的名称的下一条数据开始查询。 在微版本2.35后支持。
-     * 
-     * @return marker */
+    /**
+     * 从marker指定的keypair的名称的下一条数据开始查询。  在微版本2.35后支持。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -60,9 +64,10 @@ public class NovaListKeypairsRequest {
         return this;
     }
 
-    /** 微版本头
-     * 
-     * @return openStackAPIVersion */
+    /**
+     * 微版本头
+     * @return openStackAPIVersion
+     */
     public String getOpenStackAPIVersion() {
         return openStackAPIVersion;
     }
@@ -101,7 +106,10 @@ public class NovaListKeypairsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

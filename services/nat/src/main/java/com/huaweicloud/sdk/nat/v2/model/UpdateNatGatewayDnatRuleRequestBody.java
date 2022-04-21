@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新DNAT规则的响应体。 */
+/**
+ * 更新DNAT规则的响应体。
+ */
 public class UpdateNatGatewayDnatRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateNatGatewayDnatRuleRequestBody {
         return this;
     }
 
-    /** Get dnatRule
-     * 
-     * @return dnatRule */
+    /**
+     * Get dnatRule
+     * @return dnatRule
+     */
     public UpdateNatGatewayDnatRuleOption getDnatRule() {
         return dnatRule;
     }
@@ -66,7 +69,10 @@ public class UpdateNatGatewayDnatRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

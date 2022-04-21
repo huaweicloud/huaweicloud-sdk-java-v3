@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 调用成功表示识别结果，调用失败时无此字段。 */
+/**
+ * 调用成功表示识别结果，调用失败时无此字段。
+ */
 public class CustomResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CustomResult {
         return this;
     }
 
-    /** 语音数据， Base64编码格式返回。
-     * 
-     * @return data */
+    /**
+     * 语音数据， Base64编码格式返回。
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -55,7 +58,10 @@ public class CustomResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

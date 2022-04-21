@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** 涉黄场景审核结果 */
+/**
+ * 涉黄场景审核结果
+ */
 public class PornModerationResultDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class PornModerationResultDetail {
         return this;
     }
 
-    /** 置信度，取值范围 0-1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围 0-1。
+     * @return confidence
+     */
     public BigDecimal getConfidence() {
         return confidence;
     }
@@ -40,9 +43,10 @@ public class PornModerationResultDetail {
         return this;
     }
 
-    /** 当前支持label列表如下： - normal：正常 - porn：色情
-     * 
-     * @return label */
+    /**
+     * 当前支持label列表如下： - normal：正常 - porn：色情 
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -79,7 +83,10 @@ public class PornModerationResultDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 优化器参数 */
+/**
+ * 优化器参数
+ */
 public class Optimizer {
 
-    /** 优化器类型。 */
+    /**
+     * 优化器类型。
+     */
     public static final class TypeEnum {
 
-        /** Enum ADAM for value: "adam" */
+        /**
+         * Enum ADAM for value: "adam"
+         */
         public static final TypeEnum ADAM = new TypeEnum("adam");
 
-        /** Enum ADAGRAD for value: "adagrad" */
+        /**
+         * Enum ADAGRAD for value: "adagrad"
+         */
         public static final TypeEnum ADAGRAD = new TypeEnum("adagrad");
 
-        /** Enum FTRL for value: "ftrl" */
+        /**
+         * Enum FTRL for value: "ftrl"
+         */
         public static final TypeEnum FTRL = new TypeEnum("ftrl");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +143,10 @@ public class Optimizer {
         return this;
     }
 
-    /** 优化器类型。
-     * 
-     * @return type */
+    /**
+     * 优化器类型。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -149,9 +160,12 @@ public class Optimizer {
         return this;
     }
 
-    /** 学习率。 minimum: 0 maximum: 1
-     * 
-     * @return learningRate */
+    /**
+     * 学习率。
+     * minimum: 0
+     * maximum: 1
+     * @return learningRate
+     */
     public Double getLearningRate() {
         return learningRate;
     }
@@ -165,9 +179,12 @@ public class Optimizer {
         return this;
     }
 
-    /** 初始梯度累加和。 minimum: 0 maximum: 1
-     * 
-     * @return initialAccumulatorValue */
+    /**
+     * 初始梯度累加和。
+     * minimum: 0
+     * maximum: 1
+     * @return initialAccumulatorValue
+     */
     public Double getInitialAccumulatorValue() {
         return initialAccumulatorValue;
     }
@@ -181,9 +198,12 @@ public class Optimizer {
         return this;
     }
 
-    /** L1正则项系数。 minimum: 0 maximum: 1
-     * 
-     * @return lambda1 */
+    /**
+     * L1正则项系数。
+     * minimum: 0
+     * maximum: 1
+     * @return lambda1
+     */
     public Double getLambda1() {
         return lambda1;
     }
@@ -197,9 +217,12 @@ public class Optimizer {
         return this;
     }
 
-    /** L2正则项系数。 minimum: 0 maximum: 1
-     * 
-     * @return lambda2 */
+    /**
+     * L2正则项系数。
+     * minimum: 0
+     * maximum: 1
+     * @return lambda2
+     */
     public Double getLambda2() {
         return lambda2;
     }
@@ -213,9 +236,12 @@ public class Optimizer {
         return this;
     }
 
-    /** 数值稳定常量。 minimum: 0 maximum: 1
-     * 
-     * @return epsilon */
+    /**
+     * 数值稳定常量。
+     * minimum: 0
+     * maximum: 1
+     * @return epsilon
+     */
     public Double getEpsilon() {
         return epsilon;
     }
@@ -229,9 +255,12 @@ public class Optimizer {
         return this;
     }
 
-    /** 衰减因子。 minimum: 0 maximum: 1
-     * 
-     * @return decayRate */
+    /**
+     * 衰减因子。
+     * minimum: 0
+     * maximum: 1
+     * @return decayRate
+     */
     public Double getDecayRate() {
         return decayRate;
     }
@@ -245,9 +274,11 @@ public class Optimizer {
         return this;
     }
 
-    /** 衰减步长。 minimum: 1
-     * 
-     * @return decaySteps */
+    /**
+     * 衰减步长。
+     * minimum: 1
+     * @return decaySteps
+     */
     public Double getDecaySteps() {
         return decaySteps;
     }
@@ -294,7 +325,10 @@ public class Optimizer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

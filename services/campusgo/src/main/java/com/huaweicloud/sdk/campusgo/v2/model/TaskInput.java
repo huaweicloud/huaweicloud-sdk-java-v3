@@ -13,28 +13,44 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 作业的输入配置 */
+/**
+ * 作业的输入配置
+ */
 public class TaskInput {
 
-    /** 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。 */
+    /**
+     * 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。
+     */
     public static final class TypeEnum {
 
-        /** Enum OBS for value: "obs" */
+        /**
+         * Enum OBS for value: "obs"
+         */
         public static final TypeEnum OBS = new TypeEnum("obs");
 
-        /** Enum VIS for value: "vis" */
+        /**
+         * Enum VIS for value: "vis"
+         */
         public static final TypeEnum VIS = new TypeEnum("vis");
 
-        /** Enum URL for value: "url" */
+        /**
+         * Enum URL for value: "url"
+         */
         public static final TypeEnum URL = new TypeEnum("url");
 
-        /** Enum EDGECAMERA for value: "edgecamera" */
+        /**
+         * Enum EDGECAMERA for value: "edgecamera"
+         */
         public static final TypeEnum EDGECAMERA = new TypeEnum("edgecamera");
 
-        /** Enum EDGERESTFUL for value: "edgerestful" */
+        /**
+         * Enum EDGERESTFUL for value: "edgerestful"
+         */
         public static final TypeEnum EDGERESTFUL = new TypeEnum("edgerestful");
 
-        /** Enum VCN for value: "vcn" */
+        /**
+         * Enum VCN for value: "vcn"
+         */
         public static final TypeEnum VCN = new TypeEnum("vcn");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +139,10 @@ public class TaskInput {
         return this;
     }
 
-    /** 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。
-     * 
-     * @return type */
+    /**
+     * 作业的输入类型，必填。可选类型有obs（对象存储服务存储的文件），vis（视频接入服务的视频流），url（指定的文件地址或取流地址），edgecamera（绑定在IEF的边缘摄像头），edgerestful（从自定义的流媒体服务器通过Restful接口获取取流地址），vcn（VCN设备）。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -155,9 +172,10 @@ public class TaskInput {
         return this;
     }
 
-    /** 作业的输入详情，针对不同的输入类型有不同的配置。创建时允许填写多路输入，但更新时，obs以外其余的输入类型只允许填写一路输入
-     * 
-     * @return data */
+    /**
+     * 作业的输入详情，针对不同的输入类型有不同的配置。创建时允许填写多路输入，但更新时，obs以外其余的输入类型只允许填写一路输入
+     * @return data
+     */
     public List<TaskInputData> getData() {
         return data;
     }
@@ -180,9 +198,10 @@ public class TaskInput {
         return this;
     }
 
-    /** Get vcn
-     * 
-     * @return vcn */
+    /**
+     * Get vcn
+     * @return vcn
+     */
     public TaskInputVcn getVcn() {
         return vcn;
     }
@@ -220,7 +239,10 @@ public class TaskInput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

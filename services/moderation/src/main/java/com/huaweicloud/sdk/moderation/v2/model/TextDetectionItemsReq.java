@@ -25,9 +25,10 @@ public class TextDetectionItemsReq {
         return this;
     }
 
-    /** 待检测文本，编码格式为“utf-8”，限定5000个字符以内，文本长度超过5000个字符时，只检测前5000个字符。
-     * 
-     * @return text */
+    /**
+     * 待检测文本，编码格式为“utf-8”，限定5000个字符以内，文本长度超过5000个字符时，只检测前5000个字符。
+     * @return text
+     */
     public String getText() {
         return text;
     }
@@ -41,9 +42,10 @@ public class TextDetectionItemsReq {
         return this;
     }
 
-    /** 文本类型，默认为“content”，即正文内容，当前只支持“content”类型，未来会扩大支持类型范围。
-     * 
-     * @return type */
+    /**
+     * 文本类型，默认为“content”，即正文内容，当前只支持“content”类型，未来会扩大支持类型范围。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -80,7 +82,10 @@ public class TextDetectionItemsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -50,9 +50,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 同一字符连续出现的最大次数，取值范围[0,32]。
-     * 
-     * @return maximumConsecutiveIdenticalChars */
+    /**
+     * 同一字符连续出现的最大次数，取值范围[0,32]。
+     * @return maximumConsecutiveIdenticalChars
+     */
     public Integer getMaximumConsecutiveIdenticalChars() {
         return maximumConsecutiveIdenticalChars;
     }
@@ -66,9 +67,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 密码最短使用时间(分钟)，取值范围[0,1440]。
-     * 
-     * @return minimumPasswordAge */
+    /**
+     * 密码最短使用时间(分钟)，取值范围[0,1440]。
+     * @return minimumPasswordAge
+     */
     public Integer getMinimumPasswordAge() {
         return minimumPasswordAge;
     }
@@ -82,9 +84,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 密码最小字符数，取值范围[6,32]。
-     * 
-     * @return minimumPasswordLength */
+    /**
+     * 密码最小字符数，取值范围[6,32]。
+     * @return minimumPasswordLength
+     */
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
@@ -98,9 +101,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 密码不能与历史密码重复次数，取值范围[0,10]。
-     * 
-     * @return numberOfRecentPasswordsDisallowed */
+    /**
+     * 密码不能与历史密码重复次数，取值范围[0,10]。
+     * @return numberOfRecentPasswordsDisallowed
+     */
     public Integer getNumberOfRecentPasswordsDisallowed() {
         return numberOfRecentPasswordsDisallowed;
     }
@@ -114,9 +118,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 密码是否可以是用户名或用户名的反序。
-     * 
-     * @return passwordNotUsernameOrInvert */
+    /**
+     * 密码是否可以是用户名或用户名的反序。
+     * @return passwordNotUsernameOrInvert
+     */
     public Boolean getPasswordNotUsernameOrInvert() {
         return passwordNotUsernameOrInvert;
     }
@@ -130,9 +135,10 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 密码有效期（天），取值范围[0,180]，设置0表示关闭该策略。
-     * 
-     * @return passwordValidityPeriod */
+    /**
+     * 密码有效期（天），取值范围[0,180]，设置0表示关闭该策略。
+     * @return passwordValidityPeriod
+     */
     public Integer getPasswordValidityPeriod() {
         return passwordValidityPeriod;
     }
@@ -146,9 +152,12 @@ public class PasswordPolicyOption {
         return this;
     }
 
-    /** 至少包含字符种类的个数，取值区间[2,4]。 minimum: 2 maximum: 4
-     * 
-     * @return passwordCharCombination */
+    /**
+     * 至少包含字符种类的个数，取值区间[2,4]。
+     * minimum: 2
+     * maximum: 4
+     * @return passwordCharCombination
+     */
     public Integer getPasswordCharCombination() {
         return passwordCharCombination;
     }
@@ -209,7 +218,10 @@ public class PasswordPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

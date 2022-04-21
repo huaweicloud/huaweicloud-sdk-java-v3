@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流水线资源信息 */
+/**
+ * 流水线资源信息
+ */
 public class PipelineCreationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,22 +26,34 @@ public class PipelineCreationResult {
 
     private String taskId;
 
-    /** 任务状态, success:成功,failed:失败,creating:创建中,cancel:取消,pending:等待创建 */
+    /**
+     * 任务状态, success:成功,failed:失败,creating:创建中,cancel:取消,pending:等待创建
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum CANCEL for value: "cancel" */
+        /**
+         * Enum CANCEL for value: "cancel"
+         */
         public static final StatusEnum CANCEL = new StatusEnum("cancel");
 
-        /** Enum PENDING for value: "pending" */
+        /**
+         * Enum PENDING for value: "pending"
+         */
         public static final StatusEnum PENDING = new StatusEnum("pending");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +145,10 @@ public class PipelineCreationResult {
         return this;
     }
 
-    /** Get pipeline
-     * 
-     * @return pipeline */
+    /**
+     * Get pipeline
+     * @return pipeline
+     */
     public PipelineBasic getPipeline() {
         return pipeline;
     }
@@ -147,9 +162,10 @@ public class PipelineCreationResult {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskId */
+    /**
+     * 任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -163,9 +179,10 @@ public class PipelineCreationResult {
         return this;
     }
 
-    /** 任务状态, success:成功,failed:失败,creating:创建中,cancel:取消,pending:等待创建
-     * 
-     * @return status */
+    /**
+     * 任务状态, success:成功,failed:失败,creating:创建中,cancel:取消,pending:等待创建
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -179,9 +196,10 @@ public class PipelineCreationResult {
         return this;
     }
 
-    /** 失败原因
-     * 
-     * @return failureReason */
+    /**
+     * 失败原因
+     * @return failureReason
+     */
     public String getFailureReason() {
         return failureReason;
     }
@@ -222,7 +240,10 @@ public class PipelineCreationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

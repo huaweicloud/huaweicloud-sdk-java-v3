@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建裸金属服务器的extendparam字段数据结构说明 */
+/**
+ * 创建裸金属服务器的extendparam字段数据结构说明
+ */
 public class ExtendParam {
 
-    /** 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。 */
+    /**
+     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum PREPAID for value: "prePaid" */
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -90,13 +96,19 @@ public class ExtendParam {
 
     private String regionID;
 
-    /** 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。 */
+    /**
+     * 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
+     */
     public static final class PeriodTypeEnum {
 
-        /** Enum MONTH for value: "month" */
+        /**
+         * Enum MONTH for value: "month"
+         */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
 
-        /** Enum YEAR for value: "year" */
+        /**
+         * Enum YEAR for value: "year"
+         */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
 
         private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -191,9 +203,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -207,9 +220,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 裸金属服务器所在区域ID。请参考地区和终端节点获取。
-     * 
-     * @return regionID */
+    /**
+     * 裸金属服务器所在区域ID。请参考地区和终端节点获取。
+     * @return regionID
+     */
     public String getRegionID() {
         return regionID;
     }
@@ -223,9 +237,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
-     * 
-     * @return periodType */
+    /**
+     * 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
+     * @return periodType
+     */
     public PeriodTypeEnum getPeriodType() {
         return periodType;
     }
@@ -239,9 +254,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 订购周期数。取值范围：periodType=month（周期类型为月）时，取值为[1-9]。periodType=year（周期类型为年）时，取值为1。 说明：chargingMode为prePaid时生效，且为必选值。
-     * 
-     * @return periodNum */
+    /**
+     * 订购周期数。取值范围：periodType=month（周期类型为月）时，取值为[1-9]。periodType=year（周期类型为年）时，取值为1。 说明：chargingMode为prePaid时生效，且为必选值。
+     * @return periodNum
+     */
     public Integer getPeriodNum() {
         return periodNum;
     }
@@ -255,9 +271,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 是否自动续订。true：自动续订false：不自动续订 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为不自动续订。
-     * 
-     * @return isAutoRenew */
+    /**
+     * 是否自动续订。true：自动续订false：不自动续订 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为不自动续订。
+     * @return isAutoRenew
+     */
     public String getIsAutoRenew() {
         return isAutoRenew;
     }
@@ -271,10 +288,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 下单订购后，是否自动从客户的帐户中支付，而不需要客户手动去支付。true：是（自动支付）false：否（需要客户手动支付）
-     * 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为客户手动支付。
-     * 
-     * @return isAutoPay */
+    /**
+     * 下单订购后，是否自动从客户的帐户中支付，而不需要客户手动去支付。true：是（自动支付）false：否（需要客户手动支付） 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为客户手动支付。
+     * @return isAutoPay
+     */
     public String getIsAutoPay() {
         return isAutoPay;
     }
@@ -288,9 +305,10 @@ public class ExtendParam {
         return this;
     }
 
-    /** 企业项目ID。该字段不传（或传为字符串“0”），则将资源绑定给默认企业项目。 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理API参考》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。该字段不传（或传为字符串“0”），则将资源绑定给默认企业项目。 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理API参考》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -337,7 +355,10 @@ public class ExtendParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

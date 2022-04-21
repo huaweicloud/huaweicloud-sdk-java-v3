@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量操作弹性伸缩策略 */
+/**
+ * 批量操作弹性伸缩策略
+ */
 public class BatchResumeScalingPoliciesOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class BatchResumeScalingPoliciesOption {
 
     private List<String> scalingPolicyId = null;
 
-    /** 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。 */
+    /**
+    * 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。
+    */
     public static final class ForceDeleteEnum {
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final ForceDeleteEnum NO = new ForceDeleteEnum("no");
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final ForceDeleteEnum YES = new ForceDeleteEnum("yes");
 
         private static final Map<String, ForceDeleteEnum> STATIC_FIELDS = createStaticFields();
@@ -97,10 +105,14 @@ public class BatchResumeScalingPoliciesOption {
 
     private ForceDeleteEnum forceDelete;
 
-    /** 批量操作伸缩策略action标识：删除：delete。启用：resume。停止：pause。 */
+    /**
+     * 批量操作伸缩策略action标识：删除：delete。启用：resume。停止：pause。
+     */
     public static final class ActionEnum {
 
-        /** Enum RESUME for value: "resume" */
+        /**
+         * Enum RESUME for value: "resume"
+         */
         public static final ActionEnum RESUME = new ActionEnum("resume");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -195,9 +207,10 @@ public class BatchResumeScalingPoliciesOption {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public List<String> getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -211,9 +224,10 @@ public class BatchResumeScalingPoliciesOption {
         return this;
     }
 
-    /** 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。
-     * 
-     * @return forceDelete */
+    /**
+     * 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。
+     * @return forceDelete
+     */
     public ForceDeleteEnum getForceDelete() {
         return forceDelete;
     }
@@ -227,9 +241,10 @@ public class BatchResumeScalingPoliciesOption {
         return this;
     }
 
-    /** 批量操作伸缩策略action标识：删除：delete。启用：resume。停止：pause。
-     * 
-     * @return action */
+    /**
+     * 批量操作伸缩策略action标识：删除：delete。启用：resume。停止：pause。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -243,9 +258,10 @@ public class BatchResumeScalingPoliciesOption {
         return this;
     }
 
-    /** 是否删除告警策略使用的告警规则。可选值为yes或no，默认为no。 只有action为delete时，该字段才生效。
-     * 
-     * @return deleteAlarm */
+    /**
+     * 是否删除告警策略使用的告警规则。可选值为yes或no，默认为no。  只有action为delete时，该字段才生效。
+     * @return deleteAlarm
+     */
     public String getDeleteAlarm() {
         return deleteAlarm;
     }
@@ -286,7 +302,10 @@ public class BatchResumeScalingPoliciesOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

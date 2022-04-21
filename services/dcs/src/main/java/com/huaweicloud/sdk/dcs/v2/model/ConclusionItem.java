@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 诊断结论 */
+/**
+ * 诊断结论
+ */
 public class ConclusionItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ConclusionItem {
         return this;
     }
 
-    /** 结论id
-     * 
-     * @return id */
+    /**
+     * 结论id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -58,9 +61,10 @@ public class ConclusionItem {
         return this;
     }
 
-    /** 结论参数
-     * 
-     * @return params */
+    /**
+     * 结论参数
+     * @return params
+     */
     public Map<String, String> getParams() {
         return params;
     }
@@ -96,7 +100,10 @@ public class ConclusionItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

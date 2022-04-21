@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateWhiteblackipRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,9 +58,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -71,9 +75,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 黑白名单地址
-     * 
-     * @return addr */
+    /**
+     * 黑白名单地址
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -87,9 +92,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 黑白名单规则描述
-     * 
-     * @return description */
+    /**
+     * 黑白名单规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -103,9 +109,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护动作： - 0 拦截 - 1 放行 - 2 仅记录
-     * 
-     * @return white */
+    /**
+     * 防护动作：  - 0 拦截  - 1 放行  - 2 仅记录
+     * @return white
+     */
     public Integer getWhite() {
         return white;
     }
@@ -148,7 +155,10 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

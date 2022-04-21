@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDependenciesRequest {
 
-    /** 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。 */
+    /**
+     * 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
+     */
     public static final class DependencyTypeEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final DependencyTypeEnum PUBLIC = new DependencyTypeEnum("public");
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final DependencyTypeEnum PRIVATE = new DependencyTypeEnum("private");
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final DependencyTypeEnum ALL = new DependencyTypeEnum("all");
 
         private static final Map<String, DependencyTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -93,55 +103,89 @@ public class ListDependenciesRequest {
 
     private DependencyTypeEnum dependencyType;
 
-    /** 运行时语言 Java11、Nodejs14.18、Python3.9在type为v2时支持 */
+    /**
+     * 运行时语言 Java11、Nodejs14.18、Python3.9在type为v2时支持
+     */
     public static final class RuntimeEnum {
 
-        /** Enum JAVA8 for value: "Java8" */
+        /**
+         * Enum JAVA8 for value: "Java8"
+         */
         public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
 
-        /** Enum JAVA11 for value: "Java11" */
+        /**
+         * Enum JAVA11 for value: "Java11"
+         */
         public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
 
-        /** Enum NODE_JS6_10 for value: "Node.js6.10" */
+        /**
+         * Enum NODE_JS6_10 for value: "Node.js6.10"
+         */
         public static final RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
 
-        /** Enum NODE_JS8_10 for value: "Node.js8.10" */
+        /**
+         * Enum NODE_JS8_10 for value: "Node.js8.10"
+         */
         public static final RuntimeEnum NODE_JS8_10 = new RuntimeEnum("Node.js8.10");
 
-        /** Enum NODE_JS10_16 for value: "Node.js10.16" */
+        /**
+         * Enum NODE_JS10_16 for value: "Node.js10.16"
+         */
         public static final RuntimeEnum NODE_JS10_16 = new RuntimeEnum("Node.js10.16");
 
-        /** Enum NODE_JS12_13 for value: "Node.js12.13" */
+        /**
+         * Enum NODE_JS12_13 for value: "Node.js12.13"
+         */
         public static final RuntimeEnum NODE_JS12_13 = new RuntimeEnum("Node.js12.13");
 
-        /** Enum NODE_JS14_18 for value: "Node.js14.18" */
+        /**
+         * Enum NODE_JS14_18 for value: "Node.js14.18"
+         */
         public static final RuntimeEnum NODE_JS14_18 = new RuntimeEnum("Node.js14.18");
 
-        /** Enum PYTHON2_7 for value: "Python2.7" */
+        /**
+         * Enum PYTHON2_7 for value: "Python2.7"
+         */
         public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
 
-        /** Enum PYTHON3_6 for value: "Python3.6" */
+        /**
+         * Enum PYTHON3_6 for value: "Python3.6"
+         */
         public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
 
-        /** Enum PYTHON3_9 for value: "Python3.9" */
+        /**
+         * Enum PYTHON3_9 for value: "Python3.9"
+         */
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
-        /** Enum GO1_8 for value: "Go1.8" */
+        /**
+         * Enum GO1_8 for value: "Go1.8"
+         */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
 
-        /** Enum GO1_X for value: "Go1.x" */
+        /**
+         * Enum GO1_X for value: "Go1.x"
+         */
         public static final RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
 
-        /** Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)" */
+        /**
+         * Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)"
+         */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
 
-        /** Enum C_NET_CORE_2_1_ for value: "C#(.NET Core 2.1)" */
+        /**
+         * Enum C_NET_CORE_2_1_ for value: "C#(.NET Core 2.1)"
+         */
         public static final RuntimeEnum C_NET_CORE_2_1_ = new RuntimeEnum("C#(.NET Core 2.1)");
 
-        /** Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)" */
+        /**
+         * Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)"
+         */
         public static final RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
 
-        /** Enum PHP7_3 for value: "PHP7.3" */
+        /**
+         * Enum PHP7_3 for value: "PHP7.3"
+         */
         public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
@@ -245,9 +289,10 @@ public class ListDependenciesRequest {
         return this;
     }
 
-    /** 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
-     * 
-     * @return dependencyType */
+    /**
+     * 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
+     * @return dependencyType
+     */
     public DependencyTypeEnum getDependencyType() {
         return dependencyType;
     }
@@ -261,9 +306,10 @@ public class ListDependenciesRequest {
         return this;
     }
 
-    /** 运行时语言 Java11、Nodejs14.18、Python3.9在type为v2时支持
-     * 
-     * @return runtime */
+    /**
+     * 运行时语言 Java11、Nodejs14.18、Python3.9在type为v2时支持
+     * @return runtime
+     */
     public RuntimeEnum getRuntime() {
         return runtime;
     }
@@ -277,9 +323,10 @@ public class ListDependenciesRequest {
         return this;
     }
 
-    /** 依赖包名称。
-     * 
-     * @return name */
+    /**
+     * 依赖包名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -293,9 +340,10 @@ public class ListDependenciesRequest {
         return this;
     }
 
-    /** 上一次查询依赖包的最后记录位置，默认为\"0\"。
-     * 
-     * @return marker */
+    /**
+     * 上一次查询依赖包的最后记录位置，默认为\"0\"。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -309,9 +357,10 @@ public class ListDependenciesRequest {
         return this;
     }
 
-    /** 本次查询可获取的依赖包的最大数目，默认为\"400\"。
-     * 
-     * @return limit */
+    /**
+     * 本次查询可获取的依赖包的最大数目，默认为\"400\"。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -354,7 +403,10 @@ public class ListDependenciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

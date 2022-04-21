@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群的节点信息 */
+/**
+ * 集群的节点信息
+ */
 public class ClusterInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ClusterInstance {
         return this;
     }
 
-    /** 节点的虚拟机ID。
-     * 
-     * @return id */
+    /**
+     * 节点的虚拟机ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class ClusterInstance {
         return this;
     }
 
-    /** 节点的虚拟机名称。
-     * 
-     * @return name */
+    /**
+     * 节点的虚拟机名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class ClusterInstance {
         return this;
     }
 
-    /** 节点类型，只支持一种类型“cdm”。
-     * 
-     * @return type */
+    /**
+     * 节点类型，只支持一种类型“cdm”。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -81,9 +86,10 @@ public class ClusterInstance {
         return this;
     }
 
-    /** 分片ID
-     * 
-     * @return shardId */
+    /**
+     * 分片ID
+     * @return shardId
+     */
     public String getShardId() {
         return shardId;
     }
@@ -122,7 +128,10 @@ public class ClusterInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

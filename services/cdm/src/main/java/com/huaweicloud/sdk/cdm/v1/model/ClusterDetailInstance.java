@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ClusterDetailInstance */
+/**
+ * ClusterDetailInstance
+ */
 public class ClusterDetailInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -135,9 +137,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public ClusterDetailInstanceFlavor getFlavor() {
         return flavor;
     }
@@ -160,9 +163,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public ClusterDetailInstanceVolume getVolume() {
         return volume;
     }
@@ -176,9 +180,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点状态： - 100：创建中。 - 200：正常。 - 300：失败。 - 303：创建失败。 - 400：已删除。 - 800：冻结。
-     * 
-     * @return status */
+    /**
+     * 节点状态： - 100：创建中。 - 200：正常。 - 300：失败。 - 303：创建失败。 - 400：已删除。 - 800：冻结。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -208,9 +213,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点操作状态列表： - REBOOTING：重启中。 - RESTORING：恢复中。 - REBOOT_FAILURE：重启失败。
-     * 
-     * @return actions */
+    /**
+     * 节点操作状态列表： - REBOOTING：重启中。 - RESTORING：恢复中。 - REBOOT_FAILURE：重启失败。
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -224,9 +230,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点类型，只支持一种类型“cdm”。
-     * 
-     * @return type */
+    /**
+     * 节点类型，只支持一种类型“cdm”。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -240,9 +247,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点的虚拟机ID。
-     * 
-     * @return id */
+    /**
+     * 节点的虚拟机ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -256,9 +264,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点的虚拟机名称。
-     * 
-     * @return name */
+    /**
+     * 节点的虚拟机名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -272,9 +281,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点是否冻结：0：否。1：是。
-     * 
-     * @return isFrozen */
+    /**
+     * 节点是否冻结：0：否。1：是。
+     * @return isFrozen
+     */
     public String getIsFrozen() {
         return isFrozen;
     }
@@ -288,9 +298,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 组件
-     * 
-     * @return components */
+    /**
+     * 组件
+     * @return components
+     */
     public String getComponents() {
         return components;
     }
@@ -304,9 +315,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 节点配置状态（查询集群列表时为null）： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败。
-     * 
-     * @return configStatus */
+    /**
+     * 节点配置状态（查询集群列表时为null）： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败。
+     * @return configStatus
+     */
     public String getConfigStatus() {
         return configStatus;
     }
@@ -320,9 +332,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 实例角色
-     * 
-     * @return role */
+    /**
+     * 实例角色
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -336,9 +349,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 分组
-     * 
-     * @return group */
+    /**
+     * 分组
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -368,9 +382,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 链接信息（查询集群列表时返回值为null）
-     * 
-     * @return links */
+    /**
+     * 链接信息（查询集群列表时返回值为null）
+     * @return links
+     */
     public List<ClusterLinks> getLinks() {
         return links;
     }
@@ -384,9 +399,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 组件分组id
-     * 
-     * @return paramsGroupId */
+    /**
+     * 组件分组id
+     * @return paramsGroupId
+     */
     public String getParamsGroupId() {
         return paramsGroupId;
     }
@@ -400,9 +416,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 公网ip
-     * 
-     * @return publicIp */
+    /**
+     * 公网ip
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -416,9 +433,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 管理ip
-     * 
-     * @return manageIp */
+    /**
+     * 管理ip
+     * @return manageIp
+     */
     public String getManageIp() {
         return manageIp;
     }
@@ -432,9 +450,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 流量ip
-     * 
-     * @return trafficIp */
+    /**
+     * 流量ip
+     * @return trafficIp
+     */
     public String getTrafficIp() {
         return trafficIp;
     }
@@ -448,9 +467,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 分片id
-     * 
-     * @return shardId */
+    /**
+     * 分片id
+     * @return shardId
+     */
     public String getShardId() {
         return shardId;
     }
@@ -464,9 +484,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 管理修复ip
-     * 
-     * @return manageFixIp */
+    /**
+     * 管理修复ip
+     * @return manageFixIp
+     */
     public String getManageFixIp() {
         return manageFixIp;
     }
@@ -480,9 +501,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 私有ip
-     * 
-     * @return privateIp */
+    /**
+     * 私有ip
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -496,9 +518,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 内部ip
-     * 
-     * @return internalIp */
+    /**
+     * 内部ip
+     * @return internalIp
+     */
     public String getInternalIp() {
         return internalIp;
     }
@@ -528,9 +551,10 @@ public class ClusterDetailInstance {
         return this;
     }
 
-    /** 资源信息（查询集群列表时返回值为null）
-     * 
-     * @return resource */
+    /**
+     * 资源信息（查询集群列表时返回值为null）
+     * @return resource
+     */
     public List<Resource> getResource() {
         return resource;
     }
@@ -628,7 +652,10 @@ public class ClusterDetailInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OrderLineItemV3 */
+/**
+ * OrderLineItemV3
+ */
 public class OrderLineItemV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** 可使用相同折扣的订单项合并后的订单项ID列表。 相同产品、相同规格（对于线性产品）、相同最终价格（例如，严选产品改价）的订单项将进行合并。
-     * 
-     * @return orderLineItemIds */
+    /**
+     * 可使用相同折扣的订单项合并后的订单项ID列表。 相同产品、相同规格（对于线性产品）、相同最终价格（例如，严选产品改价）的订单项将进行合并。
+     * @return orderLineItemIds
+     */
     public List<String> getOrderLineItemIds() {
         return orderLineItemIds;
     }
@@ -68,9 +71,10 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** 订单可用折扣的模式 。 0：折扣1：一口价2：满减
-     * 
-     * @return discountMode */
+    /**
+     * 订单可用折扣的模式 。 0：折扣1：一口价2：满减
+     * @return discountMode
+     */
     public Integer getDiscountMode() {
         return discountMode;
     }
@@ -84,9 +88,10 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** 订单可用的折扣金额（即减免金额）。
-     * 
-     * @return discountAmount */
+    /**
+     * 订单可用的折扣金额（即减免金额）。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -100,9 +105,10 @@ public class OrderLineItemV3 {
         return this;
     }
 
-    /** 订单可用的折扣比例。
-     * 
-     * @return discountRatio */
+    /**
+     * 订单可用的折扣比例。
+     * @return discountRatio
+     */
     public Double getDiscountRatio() {
         return discountRatio;
     }
@@ -143,7 +149,10 @@ public class OrderLineItemV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

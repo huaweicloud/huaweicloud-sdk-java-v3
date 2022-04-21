@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规则有效时间段 */
+/**
+ * 规则有效时间段
+ */
 public class TimeRange {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TimeRange {
         return this;
     }
 
-    /** **参数说明**：规则条件触发的开始时间，格式：HH:mm。
-     * 
-     * @return startTime */
+    /**
+     * **参数说明**：规则条件触发的开始时间，格式：HH:mm。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -44,9 +47,10 @@ public class TimeRange {
         return this;
     }
 
-    /** **参数说明**：规则条件触发的结束时间，格式：HH:mm。若结束时间与开始时间一致，则时间为全天。
-     * 
-     * @return endTime */
+    /**
+     * **参数说明**：规则条件触发的结束时间，格式：HH:mm。若结束时间与开始时间一致，则时间为全天。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -60,9 +64,10 @@ public class TimeRange {
         return this;
     }
 
-    /** **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。星期列表中的日期为开始时间的日期。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
-     * 
-     * @return daysOfWeek */
+    /**
+     * **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。星期列表中的日期为开始时间的日期。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
+     * @return daysOfWeek
+     */
     public String getDaysOfWeek() {
         return daysOfWeek;
     }
@@ -100,7 +105,10 @@ public class TimeRange {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

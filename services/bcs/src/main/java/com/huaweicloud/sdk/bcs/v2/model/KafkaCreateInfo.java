@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** kafka实例创建信息 */
+/**
+ * kafka实例创建信息
+ */
 public class KafkaCreateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class KafkaCreateInfo {
         return this;
     }
 
-    /** kafka实例规格，可选：mini：基准带宽100MB/s，small：基准带宽300MB/s，middle：基准带宽600MB/s，high：基准带宽1200MB/s
-     * 
-     * @return spec */
+    /**
+     * kafka实例规格，可选：mini：基准带宽100MB/s，small：基准带宽300MB/s，middle：基准带宽600MB/s，high：基准带宽1200MB/s
+     * @return spec
+     */
     public String getSpec() {
         return spec;
     }
@@ -44,9 +47,10 @@ public class KafkaCreateInfo {
         return this;
     }
 
-    /** 存储空间(单位：GB），至多9000，mini版至少300，small至少1200，middle至少2400，high至少4800
-     * 
-     * @return storage */
+    /**
+     * 存储空间(单位：GB），至多9000，mini版至少300，small至少1200，middle至少2400，high至少4800
+     * @return storage
+     */
     public Long getStorage() {
         return storage;
     }
@@ -60,9 +64,10 @@ public class KafkaCreateInfo {
         return this;
     }
 
-    /** kafka实例可用区
-     * 
-     * @return az */
+    /**
+     * kafka实例可用区
+     * @return az
+     */
     public String getAz() {
         return az;
     }
@@ -100,7 +105,10 @@ public class KafkaCreateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

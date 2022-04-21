@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CheckpointCreate */
+/**
+ * CheckpointCreate
+ */
 public class CheckpointCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,25 +31,39 @@ public class CheckpointCreate {
 
     private String projectId;
 
-    /** 状态:available,deleting,protecting,deleted,error-deleting,error */
+    /**
+     * 状态:available,deleting,protecting,deleted,error-deleting,error
+     */
     public static final class StatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum PROTECTING for value: "protecting" */
+        /**
+         * Enum PROTECTING for value: "protecting"
+         */
         public static final StatusEnum PROTECTING = new StatusEnum("protecting");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum ERROR_DELETING for value: "error-deleting" */
+        /**
+         * Enum ERROR_DELETING for value: "error-deleting"
+         */
         public static final StatusEnum ERROR_DELETING = new StatusEnum("error-deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StatusEnum ERROR = new StatusEnum("error");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +152,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** 创建时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -152,9 +169,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** 还原点ID
-     * 
-     * @return id */
+    /**
+     * 还原点ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -168,9 +186,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -184,9 +203,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** 状态:available,deleting,protecting,deleted,error-deleting,error
-     * 
-     * @return status */
+    /**
+     * 状态:available,deleting,protecting,deleted,error-deleting,error
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -209,9 +229,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** Get vault
-     * 
-     * @return vault */
+    /**
+     * Get vault
+     * @return vault
+     */
     public CheckpointPlanCreate getVault() {
         return vault;
     }
@@ -234,9 +255,10 @@ public class CheckpointCreate {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public CheckpointExtraInfoResp getExtraInfo() {
         return extraInfo;
     }
@@ -281,7 +303,10 @@ public class CheckpointCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

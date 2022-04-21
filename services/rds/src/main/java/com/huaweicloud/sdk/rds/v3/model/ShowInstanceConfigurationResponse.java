@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceConfigurationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,16 +24,24 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
 
     private String datastoreVersionName;
 
-    /** 引擎名。 */
+    /**
+     * 引擎名。
+     */
     public static final class DatastoreNameEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final DatastoreNameEnum MYSQL = new DatastoreNameEnum("mysql");
 
-        /** Enum POSTGRESQL for value: "postgresql" */
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
         public static final DatastoreNameEnum POSTGRESQL = new DatastoreNameEnum("postgresql");
 
-        /** Enum SQLSERVER for value: "sqlserver" */
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
 
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +132,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎版本。
-     * 
-     * @return datastoreVersionName */
+    /**
+     * 引擎版本。
+     * @return datastoreVersionName
+     */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -138,9 +149,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎名。
-     * 
-     * @return datastoreName */
+    /**
+     * 引擎名。
+     * @return datastoreName
+     */
     public DatastoreNameEnum getDatastoreName() {
         return datastoreName;
     }
@@ -154,9 +166,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -170,9 +183,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -205,9 +219,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数对象，用户基于默认参数模板自定义的参数配置。
-     * 
-     * @return configurationParameters */
+    /**
+     * 参数对象，用户基于默认参数模板自定义的参数配置。
+     * @return configurationParameters
+     */
     public List<ConfigurationParameter> getConfigurationParameters() {
         return configurationParameters;
     }
@@ -250,7 +265,10 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

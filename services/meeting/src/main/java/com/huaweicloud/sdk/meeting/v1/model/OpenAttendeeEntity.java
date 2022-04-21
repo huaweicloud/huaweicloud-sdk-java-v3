@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会嘉宾列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。 */
+/**
+ * 与会嘉宾列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
+ */
 public class OpenAttendeeEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** App ID，应用标识，一个应用只需创建一次。必填字段
-     * 
-     * @return appId */
+    /**
+     * App ID，应用标识，一个应用只需创建一次。必填字段
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -69,9 +72,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 与会者的账号ID。如果是账号/密码鉴权场景，表示华为云会议帐号ID。如果是APP ID鉴权场景，表示第三方的User ID。必填字段
-     * 
-     * @return userAccount */
+    /**
+     * 与会者的账号ID。如果是账号/密码鉴权场景，表示华为云会议帐号ID。如果是APP ID鉴权场景，表示第三方的User ID。必填字段
+     * @return userAccount
+     */
     public String getUserAccount() {
         return userAccount;
     }
@@ -85,9 +89,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 与会者名称或昵称。长度限制为96个字符
-     * 
-     * @return userName */
+    /**
+     * 与会者名称或昵称。长度限制为96个字符
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -101,9 +106,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -117,9 +123,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 号码（可支持SIP、TEL号码格式）。最大不超过127个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return phone */
+    /**
+     * 号码（可支持SIP、TEL号码格式）。最大不超过127个字符。phone、email和sms三者需至少填写一个。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -133,9 +140,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个（用于预定、修改、取消会议的信息通知）。
-     * 
-     * @return email */
+    /**
+     * 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个（用于预定、修改、取消会议的信息通知）。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -149,9 +157,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。（用于预定、修改、取消会议的信息通知）。
-     * 
-     * @return sms */
+    /**
+     * 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。（用于预定、修改、取消会议的信息通知）。
+     * @return sms
+     */
     public String getSms() {
         return sms;
     }
@@ -165,9 +174,10 @@ public class OpenAttendeeEntity {
         return this;
     }
 
-    /** 是否硬终端（会议室或硬终端）。
-     * 
-     * @return isHardTerminal */
+    /**
+     * 是否硬终端（会议室或硬终端）。
+     * @return isHardTerminal
+     */
     public Boolean getIsHardTerminal() {
         return isHardTerminal;
     }
@@ -215,7 +225,10 @@ public class OpenAttendeeEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

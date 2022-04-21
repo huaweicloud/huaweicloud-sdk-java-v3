@@ -13,28 +13,44 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SMNAction */
+/**
+ * SMNAction
+ */
 public class SMNAction {
 
-    /** 通知类型 */
+    /**
+     * 通知类型
+     */
     public static final class TypeEnum {
 
-        /** Enum NOTIFICATION for value: "notification" */
+        /**
+         * Enum NOTIFICATION for value: "notification"
+         */
         public static final TypeEnum NOTIFICATION = new TypeEnum("notification");
 
-        /** Enum AUTOSCALING for value: "autoscaling" */
+        /**
+         * Enum AUTOSCALING for value: "autoscaling"
+         */
         public static final TypeEnum AUTOSCALING = new TypeEnum("autoscaling");
 
-        /** Enum GROUPWATCH for value: "groupwatch" */
+        /**
+         * Enum GROUPWATCH for value: "groupwatch"
+         */
         public static final TypeEnum GROUPWATCH = new TypeEnum("groupwatch");
 
-        /** Enum ECSRECOVERY for value: "ecsRecovery" */
+        /**
+         * Enum ECSRECOVERY for value: "ecsRecovery"
+         */
         public static final TypeEnum ECSRECOVERY = new TypeEnum("ecsRecovery");
 
-        /** Enum CONTACT for value: "contact" */
+        /**
+         * Enum CONTACT for value: "contact"
+         */
         public static final TypeEnum CONTACT = new TypeEnum("contact");
 
-        /** Enum CONTACTGROUP for value: "contactGroup" */
+        /**
+         * Enum CONTACTGROUP for value: "contactGroup"
+         */
         public static final TypeEnum CONTACTGROUP = new TypeEnum("contactGroup");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +134,10 @@ public class SMNAction {
         return this;
     }
 
-    /** 通知类型
-     * 
-     * @return type */
+    /**
+     * 通知类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -150,10 +167,10 @@ public class SMNAction {
         return this;
     }
 
-    /** 告警状态发生变化时，被通知对象的列表。通知对象ID最多可以配置5个。topicUrn可从SMN获取，具体操作请参考查询Topic列表。当type为notification时，notificationList列表不能为空；当type为autoscaling时，列表必须为[]。
-     * 说明：若alarm_action_enabled为true，对应的alarm_actions、insufficientdata_actions（该参数已废弃，建议无需配置）、ok_actions至少有一个不能为空。若alarm_actions、insufficientdata_actions（该参数已废弃，建议无需配置）、ok_actions同时存在时，notificationList值保持一致。
-     * 
-     * @return notificationList */
+    /**
+     * 告警状态发生变化时，被通知对象的列表。通知对象ID最多可以配置5个。topicUrn可从SMN获取，具体操作请参考查询Topic列表。当type为notification时，notificationList列表不能为空；当type为autoscaling时，列表必须为[]。 说明：若alarm_action_enabled为true，对应的alarm_actions、insufficientdata_actions（该参数已废弃，建议无需配置）、ok_actions至少有一个不能为空。若alarm_actions、insufficientdata_actions（该参数已废弃，建议无需配置）、ok_actions同时存在时，notificationList值保持一致。
+     * @return notificationList
+     */
     public List<String> getNotificationList() {
         return notificationList;
     }
@@ -190,7 +207,10 @@ public class SMNAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

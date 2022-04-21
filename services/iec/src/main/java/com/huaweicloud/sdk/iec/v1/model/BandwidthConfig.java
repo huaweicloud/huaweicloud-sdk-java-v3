@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 带宽配置 */
+/**
+ * 带宽配置
+ */
 public class BandwidthConfig {
 
-    /** 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。 */
+    /**
+     * 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
+     */
     public static final class SharetypeEnum {
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
 
         private static final Map<String, SharetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -95,9 +101,10 @@ public class BandwidthConfig {
         return this;
     }
 
-    /** 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
-     * 
-     * @return sharetype */
+    /**
+     * 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
+     * @return sharetype
+     */
     public SharetypeEnum getSharetype() {
         return sharetype;
     }
@@ -111,9 +118,10 @@ public class BandwidthConfig {
         return this;
     }
 
-    /** 带宽（Mbit/s）。
-     * 
-     * @return size */
+    /**
+     * 带宽（Mbit/s）。 
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -150,7 +158,10 @@ public class BandwidthConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

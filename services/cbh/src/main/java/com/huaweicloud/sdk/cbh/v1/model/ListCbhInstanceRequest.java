@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.cbh.v1.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCbhInstanceRequest {
 
     @Override

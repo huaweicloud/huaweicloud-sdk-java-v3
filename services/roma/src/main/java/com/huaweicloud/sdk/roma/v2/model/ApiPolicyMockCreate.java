@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiPolicyMockCreate */
+/**
+ * ApiPolicyMockCreate
+ */
 public class ApiPolicyMockCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,141 +23,214 @@ public class ApiPolicyMockCreate {
 
     private String resultContent;
 
-    /** mock后端自定义状态码： \"200\": \"OK\", \"201\": \"Created\", \"202\": \"Accepted\", \"203\":
-     * \"NonAuthoritativeInformation\", \"204\": \"NoContent\", \"205\": \"ResetContent\", \"206\": \"PartialContent\",
-     * \"300\": \"MultipleChoices\", \"301\": \"MovedPermanently\", \"302\": \"Found\", \"303\": \"SeeOther\", \"304\":
-     * \"NotModified\", \"305\": \"UseProxy\", \"306\": \"Unused\", \"307\": \"TemporaryRedirect\", \"400\":
-     * \"BadRequest\", \"401\": \"Unauthorized\", \"402\": \"PaymentRequired\", \"403\": \"Forbidden\", \"404\":
-     * \"NotFound\", \"405\": \"MethodNotAllowed\", \"406\": \"NotAcceptable\", \"407\":
-     * \"ProxyAuthenticationRequired\", \"408\": \"RequestTimeout\", \"409\": \"Conflict\", \"410\": \"Gone\", \"411\":
-     * \"LengthRequired\", \"412\": \"PreconditionFailed\", \"413\": \"RequestEntityTooLarge\", \"414\":
-     * \"RequestURITooLong\", \"415\": \"UnsupportedMediaType\", \"416\": \"RequestedRangeNotSatisfiable\", \"417\":
-     * \"ExpectationFailed\", \"450\": \"ParameterRequried\", \"451\": \"MethodConnectException\", \"500\":
-     * \"InternalServerError\", \"501\": \"NotImplemented\", \"502\": \"BadGateway\", \"503\": \"ServiceUnavailable\",
-     * \"504\": \"GatewayTimeout\", \"505\": \"HTTPVersionNotSupported\", */
+    /**
+     * mock后端自定义状态码： \"200\": \"OK\", \"201\": \"Created\", \"202\": \"Accepted\", \"203\": \"NonAuthoritativeInformation\", \"204\": \"NoContent\", \"205\": \"ResetContent\", \"206\": \"PartialContent\", \"300\": \"MultipleChoices\", \"301\": \"MovedPermanently\", \"302\": \"Found\", \"303\": \"SeeOther\", \"304\": \"NotModified\", \"305\": \"UseProxy\", \"306\": \"Unused\", \"307\": \"TemporaryRedirect\", \"400\": \"BadRequest\", \"401\": \"Unauthorized\", \"402\": \"PaymentRequired\", \"403\": \"Forbidden\", \"404\": \"NotFound\", \"405\": \"MethodNotAllowed\", \"406\": \"NotAcceptable\", \"407\": \"ProxyAuthenticationRequired\", \"408\": \"RequestTimeout\", \"409\": \"Conflict\", \"410\": \"Gone\", \"411\": \"LengthRequired\", \"412\": \"PreconditionFailed\", \"413\": \"RequestEntityTooLarge\", \"414\": \"RequestURITooLong\", \"415\": \"UnsupportedMediaType\", \"416\": \"RequestedRangeNotSatisfiable\", \"417\": \"ExpectationFailed\", \"450\": \"ParameterRequried\", \"451\": \"MethodConnectException\", \"500\": \"InternalServerError\", \"501\": \"NotImplemented\", \"502\": \"BadGateway\", \"503\": \"ServiceUnavailable\", \"504\": \"GatewayTimeout\", \"505\": \"HTTPVersionNotSupported\",
+     */
     public static final class StatusCodeEnum {
 
-        /** Enum NUMBER_200 for value: 200 */
+        /**
+         * Enum NUMBER_200 for value: 200
+         */
         public static final StatusCodeEnum NUMBER_200 = new StatusCodeEnum(200);
 
-        /** Enum NUMBER_201 for value: 201 */
+        /**
+         * Enum NUMBER_201 for value: 201
+         */
         public static final StatusCodeEnum NUMBER_201 = new StatusCodeEnum(201);
 
-        /** Enum NUMBER_202 for value: 202 */
+        /**
+         * Enum NUMBER_202 for value: 202
+         */
         public static final StatusCodeEnum NUMBER_202 = new StatusCodeEnum(202);
 
-        /** Enum NUMBER_203 for value: 203 */
+        /**
+         * Enum NUMBER_203 for value: 203
+         */
         public static final StatusCodeEnum NUMBER_203 = new StatusCodeEnum(203);
 
-        /** Enum NUMBER_204 for value: 204 */
+        /**
+         * Enum NUMBER_204 for value: 204
+         */
         public static final StatusCodeEnum NUMBER_204 = new StatusCodeEnum(204);
 
-        /** Enum NUMBER_205 for value: 205 */
+        /**
+         * Enum NUMBER_205 for value: 205
+         */
         public static final StatusCodeEnum NUMBER_205 = new StatusCodeEnum(205);
 
-        /** Enum NUMBER_206 for value: 206 */
+        /**
+         * Enum NUMBER_206 for value: 206
+         */
         public static final StatusCodeEnum NUMBER_206 = new StatusCodeEnum(206);
 
-        /** Enum NUMBER_300 for value: 300 */
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
         public static final StatusCodeEnum NUMBER_300 = new StatusCodeEnum(300);
 
-        /** Enum NUMBER_301 for value: 301 */
+        /**
+         * Enum NUMBER_301 for value: 301
+         */
         public static final StatusCodeEnum NUMBER_301 = new StatusCodeEnum(301);
 
-        /** Enum NUMBER_302 for value: 302 */
+        /**
+         * Enum NUMBER_302 for value: 302
+         */
         public static final StatusCodeEnum NUMBER_302 = new StatusCodeEnum(302);
 
-        /** Enum NUMBER_303 for value: 303 */
+        /**
+         * Enum NUMBER_303 for value: 303
+         */
         public static final StatusCodeEnum NUMBER_303 = new StatusCodeEnum(303);
 
-        /** Enum NUMBER_304 for value: 304 */
+        /**
+         * Enum NUMBER_304 for value: 304
+         */
         public static final StatusCodeEnum NUMBER_304 = new StatusCodeEnum(304);
 
-        /** Enum NUMBER_305 for value: 305 */
+        /**
+         * Enum NUMBER_305 for value: 305
+         */
         public static final StatusCodeEnum NUMBER_305 = new StatusCodeEnum(305);
 
-        /** Enum NUMBER_306 for value: 306 */
+        /**
+         * Enum NUMBER_306 for value: 306
+         */
         public static final StatusCodeEnum NUMBER_306 = new StatusCodeEnum(306);
 
-        /** Enum NUMBER_307 for value: 307 */
+        /**
+         * Enum NUMBER_307 for value: 307
+         */
         public static final StatusCodeEnum NUMBER_307 = new StatusCodeEnum(307);
 
-        /** Enum NUMBER_400 for value: 400 */
+        /**
+         * Enum NUMBER_400 for value: 400
+         */
         public static final StatusCodeEnum NUMBER_400 = new StatusCodeEnum(400);
 
-        /** Enum NUMBER_401 for value: 401 */
+        /**
+         * Enum NUMBER_401 for value: 401
+         */
         public static final StatusCodeEnum NUMBER_401 = new StatusCodeEnum(401);
 
-        /** Enum NUMBER_402 for value: 402 */
+        /**
+         * Enum NUMBER_402 for value: 402
+         */
         public static final StatusCodeEnum NUMBER_402 = new StatusCodeEnum(402);
 
-        /** Enum NUMBER_403 for value: 403 */
+        /**
+         * Enum NUMBER_403 for value: 403
+         */
         public static final StatusCodeEnum NUMBER_403 = new StatusCodeEnum(403);
 
-        /** Enum NUMBER_404 for value: 404 */
+        /**
+         * Enum NUMBER_404 for value: 404
+         */
         public static final StatusCodeEnum NUMBER_404 = new StatusCodeEnum(404);
 
-        /** Enum NUMBER_405 for value: 405 */
+        /**
+         * Enum NUMBER_405 for value: 405
+         */
         public static final StatusCodeEnum NUMBER_405 = new StatusCodeEnum(405);
 
-        /** Enum NUMBER_406 for value: 406 */
+        /**
+         * Enum NUMBER_406 for value: 406
+         */
         public static final StatusCodeEnum NUMBER_406 = new StatusCodeEnum(406);
 
-        /** Enum NUMBER_407 for value: 407 */
+        /**
+         * Enum NUMBER_407 for value: 407
+         */
         public static final StatusCodeEnum NUMBER_407 = new StatusCodeEnum(407);
 
-        /** Enum NUMBER_408 for value: 408 */
+        /**
+         * Enum NUMBER_408 for value: 408
+         */
         public static final StatusCodeEnum NUMBER_408 = new StatusCodeEnum(408);
 
-        /** Enum NUMBER_409 for value: 409 */
+        /**
+         * Enum NUMBER_409 for value: 409
+         */
         public static final StatusCodeEnum NUMBER_409 = new StatusCodeEnum(409);
 
-        /** Enum NUMBER_410 for value: 410 */
+        /**
+         * Enum NUMBER_410 for value: 410
+         */
         public static final StatusCodeEnum NUMBER_410 = new StatusCodeEnum(410);
 
-        /** Enum NUMBER_411 for value: 411 */
+        /**
+         * Enum NUMBER_411 for value: 411
+         */
         public static final StatusCodeEnum NUMBER_411 = new StatusCodeEnum(411);
 
-        /** Enum NUMBER_412 for value: 412 */
+        /**
+         * Enum NUMBER_412 for value: 412
+         */
         public static final StatusCodeEnum NUMBER_412 = new StatusCodeEnum(412);
 
-        /** Enum NUMBER_413 for value: 413 */
+        /**
+         * Enum NUMBER_413 for value: 413
+         */
         public static final StatusCodeEnum NUMBER_413 = new StatusCodeEnum(413);
 
-        /** Enum NUMBER_414 for value: 414 */
+        /**
+         * Enum NUMBER_414 for value: 414
+         */
         public static final StatusCodeEnum NUMBER_414 = new StatusCodeEnum(414);
 
-        /** Enum NUMBER_415 for value: 415 */
+        /**
+         * Enum NUMBER_415 for value: 415
+         */
         public static final StatusCodeEnum NUMBER_415 = new StatusCodeEnum(415);
 
-        /** Enum NUMBER_416 for value: 416 */
+        /**
+         * Enum NUMBER_416 for value: 416
+         */
         public static final StatusCodeEnum NUMBER_416 = new StatusCodeEnum(416);
 
-        /** Enum NUMBER_417 for value: 417 */
+        /**
+         * Enum NUMBER_417 for value: 417
+         */
         public static final StatusCodeEnum NUMBER_417 = new StatusCodeEnum(417);
 
-        /** Enum NUMBER_450 for value: 450 */
+        /**
+         * Enum NUMBER_450 for value: 450
+         */
         public static final StatusCodeEnum NUMBER_450 = new StatusCodeEnum(450);
 
-        /** Enum NUMBER_451 for value: 451 */
+        /**
+         * Enum NUMBER_451 for value: 451
+         */
         public static final StatusCodeEnum NUMBER_451 = new StatusCodeEnum(451);
 
-        /** Enum NUMBER_500 for value: 500 */
+        /**
+         * Enum NUMBER_500 for value: 500
+         */
         public static final StatusCodeEnum NUMBER_500 = new StatusCodeEnum(500);
 
-        /** Enum NUMBER_501 for value: 501 */
+        /**
+         * Enum NUMBER_501 for value: 501
+         */
         public static final StatusCodeEnum NUMBER_501 = new StatusCodeEnum(501);
 
-        /** Enum NUMBER_502 for value: 502 */
+        /**
+         * Enum NUMBER_502 for value: 502
+         */
         public static final StatusCodeEnum NUMBER_502 = new StatusCodeEnum(502);
 
-        /** Enum NUMBER_503 for value: 503 */
+        /**
+         * Enum NUMBER_503 for value: 503
+         */
         public static final StatusCodeEnum NUMBER_503 = new StatusCodeEnum(503);
 
-        /** Enum NUMBER_504 for value: 504 */
+        /**
+         * Enum NUMBER_504 for value: 504
+         */
         public static final StatusCodeEnum NUMBER_504 = new StatusCodeEnum(504);
 
-        /** Enum NUMBER_505 for value: 505 */
+        /**
+         * Enum NUMBER_505 for value: 505
+         */
         public static final StatusCodeEnum NUMBER_505 = new StatusCodeEnum(505);
 
         private static final Map<Integer, StatusCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -269,13 +344,19 @@ public class ApiPolicyMockCreate {
 
     private List<MockApiBaseInfoHeader> header = null;
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
+    /**
+    * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+    */
     public static final class EffectModeEnum {
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
@@ -370,9 +451,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 返回结果
-     * 
-     * @return resultContent */
+    /**
+     * 返回结果
+     * @return resultContent
+     */
     public String getResultContent() {
         return resultContent;
     }
@@ -386,20 +468,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** mock后端自定义状态码： \"200\": \"OK\", \"201\": \"Created\", \"202\": \"Accepted\", \"203\":
-     * \"NonAuthoritativeInformation\", \"204\": \"NoContent\", \"205\": \"ResetContent\", \"206\": \"PartialContent\",
-     * \"300\": \"MultipleChoices\", \"301\": \"MovedPermanently\", \"302\": \"Found\", \"303\": \"SeeOther\", \"304\":
-     * \"NotModified\", \"305\": \"UseProxy\", \"306\": \"Unused\", \"307\": \"TemporaryRedirect\", \"400\":
-     * \"BadRequest\", \"401\": \"Unauthorized\", \"402\": \"PaymentRequired\", \"403\": \"Forbidden\", \"404\":
-     * \"NotFound\", \"405\": \"MethodNotAllowed\", \"406\": \"NotAcceptable\", \"407\":
-     * \"ProxyAuthenticationRequired\", \"408\": \"RequestTimeout\", \"409\": \"Conflict\", \"410\": \"Gone\", \"411\":
-     * \"LengthRequired\", \"412\": \"PreconditionFailed\", \"413\": \"RequestEntityTooLarge\", \"414\":
-     * \"RequestURITooLong\", \"415\": \"UnsupportedMediaType\", \"416\": \"RequestedRangeNotSatisfiable\", \"417\":
-     * \"ExpectationFailed\", \"450\": \"ParameterRequried\", \"451\": \"MethodConnectException\", \"500\":
-     * \"InternalServerError\", \"501\": \"NotImplemented\", \"502\": \"BadGateway\", \"503\": \"ServiceUnavailable\",
-     * \"504\": \"GatewayTimeout\", \"505\": \"HTTPVersionNotSupported\",
-     * 
-     * @return statusCode */
+    /**
+     * mock后端自定义状态码： \"200\": \"OK\", \"201\": \"Created\", \"202\": \"Accepted\", \"203\": \"NonAuthoritativeInformation\", \"204\": \"NoContent\", \"205\": \"ResetContent\", \"206\": \"PartialContent\", \"300\": \"MultipleChoices\", \"301\": \"MovedPermanently\", \"302\": \"Found\", \"303\": \"SeeOther\", \"304\": \"NotModified\", \"305\": \"UseProxy\", \"306\": \"Unused\", \"307\": \"TemporaryRedirect\", \"400\": \"BadRequest\", \"401\": \"Unauthorized\", \"402\": \"PaymentRequired\", \"403\": \"Forbidden\", \"404\": \"NotFound\", \"405\": \"MethodNotAllowed\", \"406\": \"NotAcceptable\", \"407\": \"ProxyAuthenticationRequired\", \"408\": \"RequestTimeout\", \"409\": \"Conflict\", \"410\": \"Gone\", \"411\": \"LengthRequired\", \"412\": \"PreconditionFailed\", \"413\": \"RequestEntityTooLarge\", \"414\": \"RequestURITooLong\", \"415\": \"UnsupportedMediaType\", \"416\": \"RequestedRangeNotSatisfiable\", \"417\": \"ExpectationFailed\", \"450\": \"ParameterRequried\", \"451\": \"MethodConnectException\", \"500\": \"InternalServerError\", \"501\": \"NotImplemented\", \"502\": \"BadGateway\", \"503\": \"ServiceUnavailable\", \"504\": \"GatewayTimeout\", \"505\": \"HTTPVersionNotSupported\",
+     * @return statusCode
+     */
     public StatusCodeEnum getStatusCode() {
         return statusCode;
     }
@@ -429,9 +501,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** mock后端自定义响应头header
-     * 
-     * @return header */
+    /**
+     * mock后端自定义响应头header
+     * @return header
+     */
     public List<MockApiBaseInfoHeader> getHeader() {
         return header;
     }
@@ -445,9 +518,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * 
-     * @return effectMode */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
+     */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -461,9 +535,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * 
-     * @return name */
+    /**
+     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -493,9 +568,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * 后端参数列表
+     * @return backendParams
+     */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -525,9 +601,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 策略条件列表
-     * 
-     * @return conditions */
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
     public List<ApiConditionCreate> getConditions() {
         return conditions;
     }
@@ -541,9 +618,10 @@ public class ApiPolicyMockCreate {
         return this;
     }
 
-    /** 后端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -593,7 +671,10 @@ public class ApiPolicyMockCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

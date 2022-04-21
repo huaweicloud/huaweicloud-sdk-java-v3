@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Rule */
+/**
+ * Rule
+ */
 public class Rule {
 
-    /** 回收类型，date_rule、tag_rule */
+    /**
+     * 回收类型，date_rule、tag_rule
+     */
     public static final class TemplateEnum {
 
-        /** Enum DATE_RULE for value: "date_rule" */
+        /**
+         * Enum DATE_RULE for value: "date_rule"
+         */
         public static final TemplateEnum DATE_RULE = new TemplateEnum("date_rule");
 
-        /** Enum TAG_RULE for value: "tag_rule" */
+        /**
+         * Enum TAG_RULE for value: "tag_rule"
+         */
         public static final TemplateEnum TAG_RULE = new TemplateEnum("tag_rule");
 
         private static final Map<String, TemplateEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +115,10 @@ public class Rule {
         return this;
     }
 
-    /** 回收类型，date_rule、tag_rule
-     * 
-     * @return template */
+    /**
+     * 回收类型，date_rule、tag_rule
+     * @return template
+     */
     public TemplateEnum getTemplate() {
         return template;
     }
@@ -123,9 +132,10 @@ public class Rule {
         return this;
     }
 
-    /** template是date_rule时，设置params为{\"days\": \"xxx\"} template是tag_rule时，设置params为{\"num\": \"xxx\"}
-     * 
-     * @return params */
+    /**
+     * template是date_rule时，设置params为{\"days\": \"xxx\"} template是tag_rule时，设置params为{\"num\": \"xxx\"} 
+     * @return params
+     */
     public Object getParams() {
         return params;
     }
@@ -155,9 +165,10 @@ public class Rule {
         return this;
     }
 
-    /** 例外镜像
-     * 
-     * @return tagSelectors */
+    /**
+     * 例外镜像
+     * @return tagSelectors
+     */
     public List<TagSelector> getTagSelectors() {
         return tagSelectors;
     }
@@ -195,7 +206,10 @@ public class Rule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

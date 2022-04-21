@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器 */
+/**
+ * 负载均衡器
+ */
 public class ModifyLb {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ModifyLb {
         return this;
     }
 
-    /** Get lbaasListener
-     * 
-     * @return lbaasListener */
+    /**
+     * Get lbaasListener
+     * @return lbaasListener
+     */
     public LbaasListener getLbaasListener() {
         return lbaasListener;
     }
@@ -59,9 +62,10 @@ public class ModifyLb {
         return this;
     }
 
-    /** 经典型负载均衡器信息
-     * 
-     * @return listener */
+    /**
+     * 经典型负载均衡器信息
+     * @return listener
+     */
     public String getListener() {
         return listener;
     }
@@ -75,9 +79,10 @@ public class ModifyLb {
         return this;
     }
 
-    /** 负载均衡器迁移失败原因。
-     * 
-     * @return failedReason */
+    /**
+     * 负载均衡器迁移失败原因。
+     * @return failedReason
+     */
     public String getFailedReason() {
         return failedReason;
     }
@@ -91,9 +96,10 @@ public class ModifyLb {
         return this;
     }
 
-    /** 负载均衡器迁移失败详情。
-     * 
-     * @return failedDetails */
+    /**
+     * 负载均衡器迁移失败详情。
+     * @return failedDetails
+     */
     public String getFailedDetails() {
         return failedDetails;
     }
@@ -134,7 +140,10 @@ public class ModifyLb {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

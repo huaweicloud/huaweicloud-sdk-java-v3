@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InterfaceAttachableQuantity */
+/**
+ * InterfaceAttachableQuantity
+ */
 public class InterfaceAttachableQuantity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class InterfaceAttachableQuantity {
         return this;
     }
 
-    /** 云服务器剩余可挂载网卡数量
-     * 
-     * @return freeNic */
+    /**
+     * 云服务器剩余可挂载网卡数量
+     * @return freeNic
+     */
     public Integer getFreeNic() {
         return freeNic;
     }
@@ -55,7 +58,10 @@ public class InterfaceAttachableQuantity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

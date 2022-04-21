@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 输出映射 */
+/**
+ * 输出映射
+ */
 public class OutputWithModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class OutputWithModel {
         return this;
     }
 
-    /** 输出参数名称,formulas中定义的name
-     * 
-     * @return name */
+    /**
+     * 输出参数名称,formulas中定义的name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class OutputWithModel {
         return this;
     }
 
-    /** 输出模型ID，如果输出到本模型可以不携带；使用导入模型和导出模型接口时，该字段无效
-     * 
-     * @return outputAssetModelId */
+    /**
+     * 输出模型ID，如果输出到本模型可以不携带；使用导入模型和导出模型接口时，该字段无效
+     * @return outputAssetModelId
+     */
     public String getOutputAssetModelId() {
         return outputAssetModelId;
     }
@@ -65,9 +69,10 @@ public class OutputWithModel {
         return this;
     }
 
-    /** 输出模型名称，请求中携带该字段时可以不携带output_asset_model_id
-     * 
-     * @return outputAssetModelName */
+    /**
+     * 输出模型名称，请求中携带该字段时可以不携带output_asset_model_id
+     * @return outputAssetModelName
+     */
     public String getOutputAssetModelName() {
         return outputAssetModelName;
     }
@@ -81,9 +86,10 @@ public class OutputWithModel {
         return this;
     }
 
-    /** 输出属性名
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -124,7 +130,10 @@ public class OutputWithModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

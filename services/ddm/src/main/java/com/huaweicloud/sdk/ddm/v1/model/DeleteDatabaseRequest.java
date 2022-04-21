@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class DeleteDatabaseRequest {
 
     private String ddmDbname;
 
-    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。 */
+    /**
+     * 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。
+     */
     public static final class DeleteRdsDataEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteRdsDataEnum TRUE = new DeleteRdsDataEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteRdsDataEnum FALSE = new DeleteRdsDataEnum("false");
 
         private static final Map<String, DeleteRdsDataEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class DeleteDatabaseRequest {
         return this;
     }
 
-    /** DDM实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * DDM实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -120,9 +129,10 @@ public class DeleteDatabaseRequest {
         return this;
     }
 
-    /** 需要查询的逻辑库名称，不区分大小写。
-     * 
-     * @return ddmDbname */
+    /**
+     * 需要查询的逻辑库名称，不区分大小写。
+     * @return ddmDbname
+     */
     public String getDdmDbname() {
         return ddmDbname;
     }
@@ -136,9 +146,10 @@ public class DeleteDatabaseRequest {
         return this;
     }
 
-    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。
-     * 
-     * @return deleteRdsData */
+    /**
+     * 是否同时删除关联后端数据库实例上存储的数据。 - 取值为“true”：删除。 - 取值为空或“false”：不删除。 默认值为空。
+     * @return deleteRdsData
+     */
     public DeleteRdsDataEnum getDeleteRdsData() {
         return deleteRdsData;
     }
@@ -177,7 +188,10 @@ public class DeleteDatabaseRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

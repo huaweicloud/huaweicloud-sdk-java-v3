@@ -20,9 +20,10 @@ public class NeutronRemoveFirewallRuleRequestBody {
         return this;
     }
 
-    /** 功能说明：待移除的ACL规则ID
-     * 
-     * @return firewallRuleId */
+    /**
+     * 功能说明：待移除的ACL规则ID
+     * @return firewallRuleId
+     */
     public String getFirewallRuleId() {
         return firewallRuleId;
     }
@@ -58,7 +59,10 @@ public class NeutronRemoveFirewallRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

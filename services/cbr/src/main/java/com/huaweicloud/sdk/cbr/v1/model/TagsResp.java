@@ -25,9 +25,10 @@ public class TagsResp {
         return this;
     }
 
-    /** 键。 key最大长度36个字符。 key不能为空字符串。 key只能由中文，字母，数字，“-”，“_”组成。
-     * 
-     * @return key */
+    /**
+     * 键。  key最大长度36个字符。  key不能为空字符串。  key只能由中文，字母，数字，“-”，“_”组成。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class TagsResp {
         return this;
     }
 
-    /** 值列表。 value最大长度43个字符。 value可以为空字符串。 key只能由中文，字母，数字，“-”，“_”组成。
-     * 
-     * @return values */
+    /**
+     * 值列表。  value最大长度43个字符。  value可以为空字符串。  key只能由中文，字母，数字，“-”，“_”组成。
+     * @return values
+     */
     public String getValues() {
         return values;
     }
@@ -79,7 +81,10 @@ public class TagsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

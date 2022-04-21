@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IssuedCouponQuota */
+/**
+ * IssuedCouponQuota
+ */
 public class IssuedCouponQuota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +98,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 已发放的代金券额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 已发放的代金券额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -112,9 +115,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 额度类型： 0：代金券额度
-     * 
-     * @return quotaType */
+    /**
+     * 额度类型： 0：代金券额度
+     * @return quotaType
+     */
     public Integer getQuotaType() {
         return quotaType;
     }
@@ -128,9 +132,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -144,9 +149,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 最后一次更新时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return lastUpdateTime */
+    /**
+     * 最后一次更新时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return lastUpdateTime
+     */
     public String getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -160,9 +166,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 代金券额度的值，精确到小数点后2位。
-     * 
-     * @return quotaValue */
+    /**
+     * 代金券额度的值，精确到小数点后2位。
+     * @return quotaValue
+     */
     public Double getQuotaValue() {
         return quotaValue;
     }
@@ -176,9 +183,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 代金券额度的状态： 0：正常3：失效（包括过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）5：冻结6：回收
-     * 
-     * @return quotaStatus */
+    /**
+     * 代金券额度的状态： 0：正常3：失效（包括过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）5：冻结6：回收
+     * @return quotaStatus
+     */
     public Integer getQuotaStatus() {
         return quotaStatus;
     }
@@ -192,9 +200,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 剩余的代金券额度，精确到小数点后2位。
-     * 
-     * @return balance */
+    /**
+     * 剩余的代金券额度，精确到小数点后2位。
+     * @return balance
+     */
     public Double getBalance() {
         return balance;
     }
@@ -208,9 +217,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 代金券额度的单位。 1：元。
-     * 
-     * @return measureId */
+    /**
+     * 代金券额度的单位。 1：元。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -224,9 +234,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 币种。 CNY：人民币
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -240,9 +251,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -256,9 +268,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -288,9 +301,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 代金券额度上的限制属性，具体参见表3。
-     * 
-     * @return limitInfos */
+    /**
+     * 代金券额度上的限制属性，具体参见表3。
+     * @return limitInfos
+     */
     public List<QuotaLimitInfo> getLimitInfos() {
         return limitInfos;
     }
@@ -304,9 +318,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 精英服务商ID。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -320,9 +335,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 精英服务商账号名。
-     * 
-     * @return indirectPartnerAccountName */
+    /**
+     * 精英服务商账号名。
+     * @return indirectPartnerAccountName
+     */
     public String getIndirectPartnerAccountName() {
         return indirectPartnerAccountName;
     }
@@ -336,9 +352,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 精英服务商名称。
-     * 
-     * @return indirectPartnerName */
+    /**
+     * 精英服务商名称。
+     * @return indirectPartnerName
+     */
     public String getIndirectPartnerName() {
         return indirectPartnerName;
     }
@@ -352,9 +369,10 @@ public class IssuedCouponQuota {
         return this;
     }
 
-    /** 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
-     * 
-     * @return parentQuotaId */
+    /**
+     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
+     * @return parentQuotaId
+     */
     public String getParentQuotaId() {
         return parentQuotaId;
     }
@@ -434,7 +452,10 @@ public class IssuedCouponQuota {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

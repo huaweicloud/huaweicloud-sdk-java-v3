@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNewConfigsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListNewConfigsResponse extends SdkResponse {
         return this;
     }
 
-    /** 流量限制列表
-     * 
-     * @return trafficLimitedList */
+    /**
+     * 流量限制列表
+     * @return trafficLimitedList
+     */
     public List<TriggerBpsDict> getTrafficLimitedList() {
         return trafficLimitedList;
     }
@@ -85,9 +88,10 @@ public class ListNewConfigsResponse extends SdkResponse {
         return this;
     }
 
-    /** HTTP限制列表
-     * 
-     * @return httpLimitedList */
+    /**
+     * HTTP限制列表
+     * @return httpLimitedList
+     */
     public List<TriggerQpsDict> getHttpLimitedList() {
         return httpLimitedList;
     }
@@ -118,9 +122,10 @@ public class ListNewConfigsResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接数限制列表
-     * 
-     * @return connectionLimitedList */
+    /**
+     * 连接数限制列表
+     * @return connectionLimitedList
+     */
     public List<CleanLimitDict> getConnectionLimitedList() {
         return connectionLimitedList;
     }
@@ -150,9 +155,10 @@ public class ListNewConfigsResponse extends SdkResponse {
         return this;
     }
 
-    /** 扩展配置列表
-     * 
-     * @return extendDdosConfig */
+    /**
+     * 扩展配置列表
+     * @return extendDdosConfig
+     */
     public List<ExtendDDoSSet> getExtendDdosConfig() {
         return extendDdosConfig;
     }
@@ -193,7 +199,10 @@ public class ListNewConfigsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

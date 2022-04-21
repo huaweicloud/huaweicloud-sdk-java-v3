@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设置IP白名单结构体 */
+/**
+ * 设置IP白名单结构体
+ */
 public class ModifyIpWhitelistBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ModifyIpWhitelistBody {
         return this;
     }
 
-    /** 是否启用白名单（true/false）。
-     * 
-     * @return enableWhitelist */
+    /**
+     * 是否启用白名单（true/false）。
+     * @return enableWhitelist
+     */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -58,9 +61,10 @@ public class ModifyIpWhitelistBody {
         return this;
     }
 
-    /** IP白名单分组列表。
-     * 
-     * @return whitelist */
+    /**
+     * IP白名单分组列表。
+     * @return whitelist
+     */
     public List<Whitelist> getWhitelist() {
         return whitelist;
     }
@@ -97,7 +101,10 @@ public class ModifyIpWhitelistBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

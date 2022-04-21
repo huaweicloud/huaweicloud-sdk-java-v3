@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子画面信息 */
+/**
+ * 子画面信息
+ */
 public class SubscriberInPic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class SubscriberInPic {
         return this;
     }
 
-    /** 多画面中每个画面的编号。编号从1开始。 默认值为1。
-     * 
-     * @return index */
+    /**
+     * 多画面中每个画面的编号。编号从1开始。 默认值为1。
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -63,9 +66,10 @@ public class SubscriberInPic {
         return this;
     }
 
-    /** 每个画面中与会者标识列表。
-     * 
-     * @return subscriber */
+    /**
+     * 每个画面中与会者标识列表。
+     * @return subscriber
+     */
     public List<String> getSubscriber() {
         return subscriber;
     }
@@ -79,9 +83,10 @@ public class SubscriberInPic {
         return this;
     }
 
-    /** 是否为辅流。默认值为0。 - 0: 不是辅流。 - 1: 是辅流。
-     * 
-     * @return isAssistStream */
+    /**
+     * 是否为辅流。默认值为0。 - 0: 不是辅流。 - 1: 是辅流。
+     * @return isAssistStream
+     */
     public Integer getIsAssistStream() {
         return isAssistStream;
     }
@@ -120,7 +125,10 @@ public class SubscriberInPic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

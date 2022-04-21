@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteDeployKeyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class DeleteDeployKeyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public Error getError() {
         return error;
     }
@@ -55,9 +58,10 @@ public class DeleteDeployKeyResponse extends SdkResponse {
         return this;
     }
 
-    /** 响应结果
-     * 
-     * @return result */
+    /**
+     * 响应结果
+     * @return result
+     */
     public Boolean getResult() {
         return result;
     }
@@ -71,9 +75,10 @@ public class DeleteDeployKeyResponse extends SdkResponse {
         return this;
     }
 
-    /** 响应状态
-     * 
-     * @return status */
+    /**
+     * 响应状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -112,7 +117,10 @@ public class DeleteDeployKeyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

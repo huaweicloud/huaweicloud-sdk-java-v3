@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DeleteFacesBatchReq */
+/**
+ * DeleteFacesBatchReq
+ */
 public class DeleteFacesBatchReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteFacesBatchReq {
         return this;
     }
 
-    /** 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
-     * 
-     * @return filter */
+    /**
+     * 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -55,7 +58,10 @@ public class DeleteFacesBatchReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

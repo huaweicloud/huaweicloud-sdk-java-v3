@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 连接终端节点列表请求结构体 */
+/**
+ * 连接终端节点列表请求结构体
+ */
 public class AcceptOrRejectEndpointRequestBody {
 
-    /** 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。 */
+    /**
+     * 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+     */
     public static final class ActionEnum {
 
-        /** Enum RECEIVE for value: "receive" */
+        /**
+         * Enum RECEIVE for value: "receive"
+         */
         public static final ActionEnum RECEIVE = new ActionEnum("receive");
 
-        /** Enum REJECT for value: "reject" */
+        /**
+         * Enum REJECT for value: "reject"
+         */
         public static final ActionEnum REJECT = new ActionEnum("reject");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class AcceptOrRejectEndpointRequestBody {
         return this;
     }
 
-    /** 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
-     * 
-     * @return action */
+    /**
+     * 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -134,9 +143,10 @@ public class AcceptOrRejectEndpointRequestBody {
         return this;
     }
 
-    /** 终端节点ID列表。 每次请求目前支持单条endpoint的 接受或拒绝。
-     * 
-     * @return endpoints */
+    /**
+     * 终端节点ID列表。 每次请求目前支持单条endpoint的 接受或拒绝。
+     * @return endpoints
+     */
     public List<String> getEndpoints() {
         return endpoints;
     }
@@ -173,7 +183,10 @@ public class AcceptOrRejectEndpointRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

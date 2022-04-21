@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 生命周期挂钩 */
+/**
+ * 生命周期挂钩
+ */
 public class LifecycleHookList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,14 +20,20 @@ public class LifecycleHookList {
 
     private String lifecycleHookName;
 
-    /** 生命周期挂钩类型。INSTANCE_TERMINATING；INSTANCE_LAUNCHING。 */
+    /**
+     * 生命周期挂钩类型。INSTANCE_TERMINATING；INSTANCE_LAUNCHING。
+     */
     public static final class LifecycleHookTypeEnum {
 
-        /** Enum INSTANCE_TERMINATING for value: "INSTANCE_TERMINATING" */
+        /**
+         * Enum INSTANCE_TERMINATING for value: "INSTANCE_TERMINATING"
+         */
         public static final LifecycleHookTypeEnum INSTANCE_TERMINATING =
             new LifecycleHookTypeEnum("INSTANCE_TERMINATING");
 
-        /** Enum INSTANCE_LAUNCHING for value: "INSTANCE_LAUNCHING" */
+        /**
+         * Enum INSTANCE_LAUNCHING for value: "INSTANCE_LAUNCHING"
+         */
         public static final LifecycleHookTypeEnum INSTANCE_LAUNCHING = new LifecycleHookTypeEnum("INSTANCE_LAUNCHING");
 
         private static final Map<String, LifecycleHookTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -95,13 +103,19 @@ public class LifecycleHookList {
 
     private LifecycleHookTypeEnum lifecycleHookType;
 
-    /** 生命周期挂钩默认回调操作。ABANDON;CONTINUE。 */
+    /**
+     * 生命周期挂钩默认回调操作。ABANDON;CONTINUE。
+     */
     public static final class DefaultResultEnum {
 
-        /** Enum ABANDON for value: "ABANDON" */
+        /**
+         * Enum ABANDON for value: "ABANDON"
+         */
         public static final DefaultResultEnum ABANDON = new DefaultResultEnum("ABANDON");
 
-        /** Enum CONTINUE for value: "CONTINUE" */
+        /**
+         * Enum CONTINUE for value: "CONTINUE"
+         */
         public static final DefaultResultEnum CONTINUE = new DefaultResultEnum("CONTINUE");
 
         private static final Map<String, DefaultResultEnum> STATIC_FIELDS = createStaticFields();
@@ -201,9 +215,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 生命周期挂钩名称。
-     * 
-     * @return lifecycleHookName */
+    /**
+     * 生命周期挂钩名称。
+     * @return lifecycleHookName
+     */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -217,9 +232,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 生命周期挂钩类型。INSTANCE_TERMINATING；INSTANCE_LAUNCHING。
-     * 
-     * @return lifecycleHookType */
+    /**
+     * 生命周期挂钩类型。INSTANCE_TERMINATING；INSTANCE_LAUNCHING。
+     * @return lifecycleHookType
+     */
     public LifecycleHookTypeEnum getLifecycleHookType() {
         return lifecycleHookType;
     }
@@ -233,9 +249,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 生命周期挂钩默认回调操作。ABANDON;CONTINUE。
-     * 
-     * @return defaultResult */
+    /**
+     * 生命周期挂钩默认回调操作。ABANDON;CONTINUE。
+     * @return defaultResult
+     */
     public DefaultResultEnum getDefaultResult() {
         return defaultResult;
     }
@@ -249,9 +266,12 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 生命周期挂钩超时时间，单位秒。 minimum: 300 maximum: 86400
-     * 
-     * @return defaultTimeout */
+    /**
+     * 生命周期挂钩超时时间，单位秒。
+     * minimum: 300
+     * maximum: 86400
+     * @return defaultTimeout
+     */
     public Integer getDefaultTimeout() {
         return defaultTimeout;
     }
@@ -265,9 +285,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** SMN服务中Topic的唯一的资源标识。
-     * 
-     * @return notificationTopicUrn */
+    /**
+     * SMN服务中Topic的唯一的资源标识。
+     * @return notificationTopicUrn
+     */
     public String getNotificationTopicUrn() {
         return notificationTopicUrn;
     }
@@ -281,9 +302,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** SMN服务中Topic的资源名称。
-     * 
-     * @return notificationTopicName */
+    /**
+     * SMN服务中Topic的资源名称。
+     * @return notificationTopicName
+     */
     public String getNotificationTopicName() {
         return notificationTopicName;
     }
@@ -297,9 +319,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 自定义通知消息。
-     * 
-     * @return notificationMetadata */
+    /**
+     * 自定义通知消息。
+     * @return notificationMetadata
+     */
     public String getNotificationMetadata() {
         return notificationMetadata;
     }
@@ -313,9 +336,10 @@ public class LifecycleHookList {
         return this;
     }
 
-    /** 创建生命周期挂钩时间，遵循UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建生命周期挂钩时间，遵循UTC时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -371,7 +395,10 @@ public class LifecycleHookList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

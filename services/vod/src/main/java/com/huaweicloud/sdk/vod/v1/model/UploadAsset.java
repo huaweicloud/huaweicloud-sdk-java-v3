@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UploadAsset */
+/**
+ * UploadAsset
+ */
 public class UploadAsset {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class UploadAsset {
         return this;
     }
 
-    /** 媒资所在url
-     * 
-     * @return url */
+    /**
+     * 媒资所在url 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -49,9 +52,10 @@ public class UploadAsset {
         return this;
     }
 
-    /** 新创建媒资的媒资id
-     * 
-     * @return assetId */
+    /**
+     * 新创建媒资的媒资id 
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -65,9 +69,10 @@ public class UploadAsset {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class UploadAsset {
         return this;
     }
 
-    /** 错误描述。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误描述。 
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -123,7 +129,10 @@ public class UploadAsset {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -18,13 +18,19 @@ import java.util.function.Consumer;
  */
 public class NodePoolSpec {
 
-    /** 节点池类型。不填写时默认为vm。 - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical */
+    /**
+     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+     */
     public static final class TypeEnum {
 
-        /** Enum VM for value: "vm" */
+        /**
+         * Enum VM for value: "vm"
+         */
         public static final TypeEnum VM = new TypeEnum("vm");
 
-        /** Enum ELASTICBMS for value: "ElasticBMS" */
+        /**
+         * Enum ELASTICBMS for value: "ElasticBMS"
+         */
         public static final TypeEnum ELASTICBMS = new TypeEnum("ElasticBMS");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +130,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** 节点池类型。不填写时默认为vm。 - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical
-     * 
-     * @return type */
+    /**
+     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -149,9 +156,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** Get nodeTemplate
-     * 
-     * @return nodeTemplate */
+    /**
+     * Get nodeTemplate
+     * @return nodeTemplate
+     */
     public NodeSpec getNodeTemplate() {
         return nodeTemplate;
     }
@@ -165,9 +173,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** 节点池初始化节点个数。查询时为节点池目标节点数量。
-     * 
-     * @return initialNodeCount */
+    /**
+     * 节点池初始化节点个数。查询时为节点池目标节点数量。
+     * @return initialNodeCount
+     */
     public Integer getInitialNodeCount() {
         return initialNodeCount;
     }
@@ -190,9 +199,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** Get autoscaling
-     * 
-     * @return autoscaling */
+    /**
+     * Get autoscaling
+     * @return autoscaling
+     */
     public NodePoolNodeAutoscaling getAutoscaling() {
         return autoscaling;
     }
@@ -215,9 +225,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** Get nodeManagement
-     * 
-     * @return nodeManagement */
+    /**
+     * Get nodeManagement
+     * @return nodeManagement
+     */
     public NodeManagement getNodeManagement() {
         return nodeManagement;
     }
@@ -247,9 +258,10 @@ public class NodePoolSpec {
         return this;
     }
 
-    /** 1.21版本集群节点池支持绑定安全组，最多五个。
-     * 
-     * @return podSecurityGroups */
+    /**
+     * 1.21版本集群节点池支持绑定安全组，最多五个。
+     * @return podSecurityGroups
+     */
     public List<SecurityID> getPodSecurityGroups() {
         return podSecurityGroups;
     }
@@ -294,7 +306,10 @@ public class NodePoolSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

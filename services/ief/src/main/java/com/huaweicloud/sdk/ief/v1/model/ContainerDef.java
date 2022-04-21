@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ContainerDef */
+/**
+ * ContainerDef
+ */
 public class ContainerDef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾
-     * 
-     * @return name */
+    /**
+     * 容器名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -97,9 +100,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器镜像URL
-     * 
-     * @return imageUrl */
+    /**
+     * 容器镜像URL
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -129,9 +133,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器启动参数，字符总长度最大为65536
-     * 
-     * @return args */
+    /**
+     * 容器启动参数，字符总长度最大为65536
+     * @return args
+     */
     public List<String> getArgs() {
         return args;
     }
@@ -161,9 +166,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器启动命令，字符总长度最大为65536。 command支持使用数组定义多条命令，但在IEF控制台界面只会显示第一条命令。
-     * 
-     * @return command */
+    /**
+     * 容器启动命令，字符总长度最大为65536。 command支持使用数组定义多条命令，但在IEF控制台界面只会显示第一条命令。
+     * @return command
+     */
     public List<String> getCommand() {
         return command;
     }
@@ -186,9 +192,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** Get resources
-     * 
-     * @return resources */
+    /**
+     * Get resources
+     * @return resources
+     */
     public DeploymentResources getResources() {
         return resources;
     }
@@ -218,9 +225,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 环境变量
-     * 
-     * @return envs */
+    /**
+     * 环境变量
+     * @return envs
+     */
     public List<Env> getEnvs() {
         return envs;
     }
@@ -250,9 +258,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器端口映射值
-     * 
-     * @return ports */
+    /**
+     * 容器端口映射值
+     * @return ports
+     */
     public List<HostContainerPortMapping> getPorts() {
         return ports;
     }
@@ -266,9 +275,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 是否启用特权容器,默认值false
-     * 
-     * @return privileged */
+    /**
+     * 是否启用特权容器,默认值false
+     * @return privileged
+     */
     public Boolean getPrivileged() {
         return privileged;
     }
@@ -291,9 +301,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** Get readinessProbe
-     * 
-     * @return readinessProbe */
+    /**
+     * Get readinessProbe
+     * @return readinessProbe
+     */
     public Probe getReadinessProbe() {
         return readinessProbe;
     }
@@ -316,9 +327,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** Get livenessProbe
-     * 
-     * @return livenessProbe */
+    /**
+     * Get livenessProbe
+     * @return livenessProbe
+     */
     public Probe getLivenessProbe() {
         return livenessProbe;
     }
@@ -332,9 +344,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 容器镜像版本
-     * 
-     * @return version */
+    /**
+     * 容器镜像版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -364,9 +377,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** 卷配置
-     * 
-     * @return volumes */
+    /**
+     * 卷配置
+     * @return volumes
+     */
     public List<Volumes> getVolumes() {
         return volumes;
     }
@@ -380,9 +394,10 @@ public class ContainerDef {
         return this;
     }
 
-    /** npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
-     * 
-     * @return npuType */
+    /**
+     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * @return npuType
+     */
     public String getNpuType() {
         return npuType;
     }
@@ -449,7 +464,10 @@ public class ContainerDef {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

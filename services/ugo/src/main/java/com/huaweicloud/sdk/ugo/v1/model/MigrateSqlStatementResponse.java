@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class MigrateSqlStatementResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class MigrateSqlStatementResponse extends SdkResponse {
         return this;
     }
 
-    /** 输入SQL语句从源端到目标端的转换结果
-     * 
-     * @return statement */
+    /**
+     * 输入SQL语句从源端到目标端的转换结果
+     * @return statement
+     */
     public String getStatement() {
         return statement;
     }
@@ -59,9 +62,10 @@ public class MigrateSqlStatementResponse extends SdkResponse {
         return this;
     }
 
-    /** Get unsupportedItems
-     * 
-     * @return unsupportedItems */
+    /**
+     * Get unsupportedItems
+     * @return unsupportedItems
+     */
     public List<UnSupportedItem> getUnsupportedItems() {
         return unsupportedItems;
     }
@@ -98,7 +102,10 @@ public class MigrateSqlStatementResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

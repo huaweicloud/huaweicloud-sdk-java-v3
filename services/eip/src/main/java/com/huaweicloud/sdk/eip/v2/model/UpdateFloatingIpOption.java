@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新floatingip对象 */
+/**
+ * 更新floatingip对象
+ */
 public class UpdateFloatingIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateFloatingIpOption {
         return this;
     }
 
-    /** 端口id。
-     * 
-     * @return portId */
+    /**
+     * 端口id。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -55,7 +58,10 @@ public class UpdateFloatingIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

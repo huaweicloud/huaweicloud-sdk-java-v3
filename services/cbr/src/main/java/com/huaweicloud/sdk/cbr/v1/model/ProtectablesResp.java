@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProtectablesResp */
+/**
+ * ProtectablesResp
+ */
 public class ProtectablesResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,16 +48,24 @@ public class ProtectablesResp {
 
     private Integer size;
 
-    /** 资源状态 */
+    /**
+     * 资源状态
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StatusEnum ERROR = new StatusEnum("error");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -152,9 +162,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 子资源
-     * 
-     * @return children */
+    /**
+     * 子资源
+     * @return children
+     */
     public List<Object> getChildren() {
         return children;
     }
@@ -168,9 +179,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 资源详情
-     * 
-     * @return detail */
+    /**
+     * 资源详情
+     * @return detail
+     */
     public Object getDetail() {
         return detail;
     }
@@ -184,9 +196,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -200,9 +213,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -225,9 +239,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** Get protectable
-     * 
-     * @return protectable */
+    /**
+     * Get protectable
+     * @return protectable
+     */
     public ProtectableResult getProtectable() {
         return protectable;
     }
@@ -241,9 +256,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 大小，单位GB
-     * 
-     * @return size */
+    /**
+     * 大小，单位GB
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -257,9 +273,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 资源状态
-     * 
-     * @return status */
+    /**
+     * 资源状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -273,10 +290,10 @@ public class ProtectablesResp {
         return this;
     }
 
-    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
-     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * 
-     * @return type */
+    /**
+     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -323,7 +340,10 @@ public class ProtectablesResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

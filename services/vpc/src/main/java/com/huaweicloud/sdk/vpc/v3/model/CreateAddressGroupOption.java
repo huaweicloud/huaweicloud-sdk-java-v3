@@ -38,9 +38,10 @@ public class CreateAddressGroupOption {
         return this;
     }
 
-    /** 功能说明：地址组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 功能说明：地址组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +55,10 @@ public class CreateAddressGroupOption {
         return this;
     }
 
-    /** 功能说明：地址组描述信息 取值范围：0-255个字符，不能包含“<”和“>”。
-     * 
-     * @return description */
+    /**
+     * 功能说明：地址组描述信息 取值范围：0-255个字符，不能包含“<”和“>”。 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -70,9 +72,10 @@ public class CreateAddressGroupOption {
         return this;
     }
 
-    /** 功能说明：地址组ip版本 取值范围：4, 表示ipv4地址组；6，表示ipv6地址组
-     * 
-     * @return ipVersion */
+    /**
+     * 功能说明：地址组ip版本 取值范围：4, 表示ipv4地址组；6，表示ipv6地址组
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -102,9 +105,10 @@ public class CreateAddressGroupOption {
         return this;
     }
 
-    /** 功能说明：地址组可包含地址集 取值范围：可以是单个ip地址，ip地址范围，ip地址cidr 约束：当前一个地址组ip_set数量限制默认值为20，即配置的ip地址、ip地址范围或ip地址cidr的总数默认限制20
-     * 
-     * @return ipSet */
+    /**
+     * 功能说明：地址组可包含地址集 取值范围：可以是单个ip地址，ip地址范围，ip地址cidr 约束：当前一个地址组ip_set数量限制默认值为20，即配置的ip地址、ip地址范围或ip地址cidr的总数默认限制20
+     * @return ipSet
+     */
     public List<String> getIpSet() {
         return ipSet;
     }
@@ -145,7 +149,10 @@ public class CreateAddressGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 租户需求 */
+/**
+ * 租户需求
+ */
 public class Demand {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Demand {
         return this;
     }
 
-    /** 所属运营商。
-     * 
-     * @return operator */
+    /**
+     * 所属运营商。
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -44,9 +47,12 @@ public class Demand {
         return this;
     }
 
-    /** 站点需要发放的资源(组)总数。 > 实际发放实例数量为count*demand_count。 minimum: 1 maximum: 10
-     * 
-     * @return demandCount */
+    /**
+     * 站点需要发放的资源(组)总数。  > 实际发放实例数量为count*demand_count。
+     * minimum: 1
+     * maximum: 10
+     * @return demandCount
+     */
     public Integer getDemandCount() {
         return demandCount;
     }
@@ -60,9 +66,10 @@ public class Demand {
         return this;
     }
 
-    /** 线路ID。 多线路场景下，将在该线路下创建弹性公网IP。 > 覆盖规则为省级/大区时不支持指定线路ID创建边缘业务。
-     * 
-     * @return poolId */
+    /**
+     * 线路ID。 多线路场景下，将在该线路下创建弹性公网IP。 > 覆盖规则为省级/大区时不支持指定线路ID创建边缘业务。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -100,7 +107,10 @@ public class Demand {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

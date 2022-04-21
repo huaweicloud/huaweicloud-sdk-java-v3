@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateDataStoreResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储 ID
-     * 
-     * @return dataStoreId */
+    /**
+     * 存储 ID
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -73,9 +76,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储名称
-     * 
-     * @return name */
+    /**
+     * 存储名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -89,9 +93,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储 ID
-     * 
-     * @return groupId */
+    /**
+     * 存储 ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -121,9 +126,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return tags */
+    /**
+     * 标签
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -153,9 +159,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 指标
-     * 
-     * @return metrics */
+    /**
+     * 指标
+     * @return metrics
+     */
     public List<Metric> getMetrics() {
         return metrics;
     }
@@ -185,9 +192,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 属性
-     * 
-     * @return properties */
+    /**
+     * 属性
+     * @return properties
+     */
     public List<Property> getProperties() {
         return properties;
     }
@@ -201,9 +209,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -217,9 +226,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 更新时间
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -268,7 +278,10 @@ public class UpdateDataStoreResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

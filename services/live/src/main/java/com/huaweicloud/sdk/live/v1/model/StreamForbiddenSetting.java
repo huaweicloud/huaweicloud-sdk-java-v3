@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** StreamForbiddenSetting */
+/**
+ * StreamForbiddenSetting
+ */
 public class StreamForbiddenSetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class StreamForbiddenSetting {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -50,9 +53,10 @@ public class StreamForbiddenSetting {
         return this;
     }
 
-    /** 流应用名称
-     * 
-     * @return appName */
+    /**
+     * 流应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -66,9 +70,10 @@ public class StreamForbiddenSetting {
         return this;
     }
 
-    /** 流名称
-     * 
-     * @return streamName */
+    /**
+     * 流名称
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -82,9 +87,10 @@ public class StreamForbiddenSetting {
         return this;
     }
 
-    /** 恢复流时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间，不指定则默认7天，最大禁推为90天
-     * 
-     * @return resumeTime */
+    /**
+     * 恢复流时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间，不指定则默认7天，最大禁推为90天
+     * @return resumeTime
+     */
     public OffsetDateTime getResumeTime() {
         return resumeTime;
     }
@@ -125,7 +131,10 @@ public class StreamForbiddenSetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PolicyTriggerResp */
+/**
+ * PolicyTriggerResp
+ */
 public class PolicyTriggerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +31,14 @@ public class PolicyTriggerResp {
 
     private PolicyTriggerPropertiesResp properties;
 
-    /** 调度器类型,目前只支持 time: 定时调度。 */
+    /**
+     * 调度器类型,目前只支持 time: 定时调度。
+     */
     public static final class TypeEnum {
 
-        /** Enum TIME for value: "time" */
+        /**
+         * Enum TIME for value: "time"
+         */
         public static final TypeEnum TIME = new TypeEnum("time");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -106,9 +112,10 @@ public class PolicyTriggerResp {
         return this;
     }
 
-    /** 调度器id
-     * 
-     * @return id */
+    /**
+     * 调度器id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -122,9 +129,10 @@ public class PolicyTriggerResp {
         return this;
     }
 
-    /** 调度器名称
-     * 
-     * @return name */
+    /**
+     * 调度器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -147,9 +155,10 @@ public class PolicyTriggerResp {
         return this;
     }
 
-    /** Get properties
-     * 
-     * @return properties */
+    /**
+     * Get properties
+     * @return properties
+     */
     public PolicyTriggerPropertiesResp getProperties() {
         return properties;
     }
@@ -163,9 +172,10 @@ public class PolicyTriggerResp {
         return this;
     }
 
-    /** 调度器类型,目前只支持 time: 定时调度。
-     * 
-     * @return type */
+    /**
+     * 调度器类型,目前只支持 time: 定时调度。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -205,7 +215,10 @@ public class PolicyTriggerResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

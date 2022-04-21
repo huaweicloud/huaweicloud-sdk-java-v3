@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAssetListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,58 +33,94 @@ public class ListAssetListRequest {
 
     private List<String> assetId = null;
 
-    /** Gets or Sets status */
+    /**
+    * Gets or Sets status
+    */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "CREATING" */
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum CREATED for value: "CREATED" */
+        /**
+         * Enum CREATED for value: "CREATED"
+         */
         public static final StatusEnum CREATED = new StatusEnum("CREATED");
 
-        /** Enum PUBLISHED for value: "PUBLISHED" */
+        /**
+         * Enum PUBLISHED for value: "PUBLISHED"
+         */
         public static final StatusEnum PUBLISHED = new StatusEnum("PUBLISHED");
 
-        /** Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE" */
+        /**
+         * Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE"
+         */
         public static final StatusEnum WAITING_TRANSCODE = new StatusEnum("WAITING_TRANSCODE");
 
-        /** Enum TRANSCODING for value: "TRANSCODING" */
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
         public static final StatusEnum TRANSCODING = new StatusEnum("TRANSCODING");
 
-        /** Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED" */
+        /**
+         * Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED"
+         */
         public static final StatusEnum TRANSCODE_SUCCEED = new StatusEnum("TRANSCODE_SUCCEED");
 
-        /** Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED" */
+        /**
+         * Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED"
+         */
         public static final StatusEnum TRANSCODE_FAILED = new StatusEnum("TRANSCODE_FAILED");
 
-        /** Enum THUMBNAILING for value: "THUMBNAILING" */
+        /**
+         * Enum THUMBNAILING for value: "THUMBNAILING"
+         */
         public static final StatusEnum THUMBNAILING = new StatusEnum("THUMBNAILING");
 
-        /** Enum THUMBNAIL_SUCCEED for value: "THUMBNAIL_SUCCEED" */
+        /**
+         * Enum THUMBNAIL_SUCCEED for value: "THUMBNAIL_SUCCEED"
+         */
         public static final StatusEnum THUMBNAIL_SUCCEED = new StatusEnum("THUMBNAIL_SUCCEED");
 
-        /** Enum THUMBNAIL_FAILED for value: "THUMBNAIL_FAILED" */
+        /**
+         * Enum THUMBNAIL_FAILED for value: "THUMBNAIL_FAILED"
+         */
         public static final StatusEnum THUMBNAIL_FAILED = new StatusEnum("THUMBNAIL_FAILED");
 
-        /** Enum UN_REVIEW for value: "UN_REVIEW" */
+        /**
+         * Enum UN_REVIEW for value: "UN_REVIEW"
+         */
         public static final StatusEnum UN_REVIEW = new StatusEnum("UN_REVIEW");
 
-        /** Enum REVIEWING for value: "REVIEWING" */
+        /**
+         * Enum REVIEWING for value: "REVIEWING"
+         */
         public static final StatusEnum REVIEWING = new StatusEnum("REVIEWING");
 
-        /** Enum REVIEW_SUSPICIOUS for value: "REVIEW_SUSPICIOUS" */
+        /**
+         * Enum REVIEW_SUSPICIOUS for value: "REVIEW_SUSPICIOUS"
+         */
         public static final StatusEnum REVIEW_SUSPICIOUS = new StatusEnum("REVIEW_SUSPICIOUS");
 
-        /** Enum REVIEW_PASSED for value: "REVIEW_PASSED" */
+        /**
+         * Enum REVIEW_PASSED for value: "REVIEW_PASSED"
+         */
         public static final StatusEnum REVIEW_PASSED = new StatusEnum("REVIEW_PASSED");
 
-        /** Enum REVIEW_FAILED for value: "REVIEW_FAILED" */
+        /**
+         * Enum REVIEW_FAILED for value: "REVIEW_FAILED"
+         */
         public static final StatusEnum REVIEW_FAILED = new StatusEnum("REVIEW_FAILED");
 
-        /** Enum REVIEW_BLOCKED for value: "REVIEW_BLOCKED" */
+        /**
+         * Enum REVIEW_BLOCKED for value: "REVIEW_BLOCKED"
+         */
         public static final StatusEnum REVIEW_BLOCKED = new StatusEnum("REVIEW_BLOCKED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -207,13 +245,19 @@ public class ListAssetListRequest {
 
     private Integer size;
 
-    /** 查询顺序，按createTime顺序还是倒序 */
+    /**
+     * 查询顺序，按createTime顺序还是倒序
+     */
     public static final class OrderEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -288,9 +332,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -304,9 +349,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -338,9 +384,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 媒资ID，最多同时查询10个。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID，最多同时查询10个。
+     * @return assetId
+     */
     public List<String> getAssetId() {
         return assetId;
     }
@@ -370,12 +417,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 媒资状态，同时查询多个状态的媒资。 取值如下： - CREATING：上传中 - FAILED：上传失败 - CREATED：上传成功 - PUBLISHED：已发布 - TRANSCODING：转码中 -
-     * TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 -
-     * THUMBNAIL_FAILED：截图失败 - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS ：审核不过，待人工复审 - REVIEW_PASSED：审核通过 -
-     * REVIEW_FAILED：审核任务失败 - REVIEW_BLOCKED：已屏蔽
-     * 
-     * @return status */
+    /**
+     * 媒资状态，同时查询多个状态的媒资。  取值如下： - CREATING：上传中 - FAILED：上传失败 - CREATED：上传成功 - PUBLISHED：已发布 - TRANSCODING：转码中 - TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败 - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS ：审核不过，待人工复审 - REVIEW_PASSED：审核通过 - REVIEW_FAILED：审核任务失败 - REVIEW_BLOCKED：已屏蔽
+     * @return status
+     */
     public List<StatusEnum> getStatus() {
         return status;
     }
@@ -389,9 +434,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 起始时间。 格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。  格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -405,9 +451,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 结束时间。 格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。  格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -421,9 +468,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 分类ID。
-     * 
-     * @return categoryId */
+    /**
+     * 分类ID。
+     * @return categoryId
+     */
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -437,9 +485,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 媒资标签。 单个标签不超过16个字节， 最多不超过16 个标签。 多个用英文逗号分隔，UTF8编码。
-     * 
-     * @return tags */
+    /**
+     * 媒资标签。 单个标签不超过16个字节， 最多不超过16 个标签。 多个用英文逗号分隔，UTF8编码。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -453,9 +502,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 在媒资标题、 描述、分类名称中模糊查询的字符串。
-     * 
-     * @return queryString */
+    /**
+     * 在媒资标题、 描述、分类名称中模糊查询的字符串。
+     * @return queryString
+     */
     public String getQueryString() {
         return queryString;
     }
@@ -485,10 +535,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 音视频文件的格式，支持多格式查询，最多不超过20个。 取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG -
-     * 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
-     * 
-     * @return mediaType */
+    /**
+     * 音视频文件的格式，支持多格式查询，最多不超过20个。  取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG - 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
+     * @return mediaType
+     */
     public List<String> getMediaType() {
         return mediaType;
     }
@@ -502,9 +552,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 分页编号。 默认值：0。
-     * 
-     * @return page */
+    /**
+     * 分页编号。  默认值：0。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -518,9 +569,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 每页记录数。 取值范围：[1,100]。 默认值：10。
-     * 
-     * @return size */
+    /**
+     * 每页记录数。  取值范围：[1,100]。  默认值：10。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -534,9 +586,10 @@ public class ListAssetListRequest {
         return this;
     }
 
-    /** 查询顺序，按createTime顺序还是倒序
-     * 
-     * @return order */
+    /**
+     * 查询顺序，按createTime顺序还是倒序
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -607,7 +660,10 @@ public class ListAssetListRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

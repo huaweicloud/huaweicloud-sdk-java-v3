@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 凭据状态。 */
+/**
+ * 凭据状态。
+ */
 public class Stage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Stage {
         return this;
     }
 
-    /** 凭据的版本状态名称。 约束：最小长度1，最大长度64。
-     * 
-     * @return name */
+    /**
+     * 凭据的版本状态名称。  约束：最小长度1，最大长度64。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,12 @@ public class Stage {
         return this;
     }
 
-    /** 凭据的版本状态更新的时间戳，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 13
-     * 
-     * @return updateTime */
+    /**
+     * 凭据的版本状态更新的时间戳，时间戳，即从1970年1月1日至该时间的总秒数。
+     * minimum: 0
+     * maximum: 13
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -65,9 +71,10 @@ public class Stage {
         return this;
     }
 
-    /** 凭据的资源标识符。
-     * 
-     * @return secretId */
+    /**
+     * 凭据的资源标识符。
+     * @return secretId
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -81,9 +88,10 @@ public class Stage {
         return this;
     }
 
-    /** 凭据的版本号标识符。
-     * 
-     * @return versionId */
+    /**
+     * 凭据的版本号标识符。 
+     * @return versionId
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -122,7 +130,10 @@ public class Stage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

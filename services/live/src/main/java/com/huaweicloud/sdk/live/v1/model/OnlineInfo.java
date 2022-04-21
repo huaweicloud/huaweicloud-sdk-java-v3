@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OnlineInfo */
+/**
+ * OnlineInfo
+ */
 public class OnlineInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class OnlineInfo {
 
     private String stream;
 
-    /** 视频编码方式 - H264 - H265 */
+    /**
+     * 视频编码方式 - H264 - H265 
+     */
     public static final class VideoCodecEnum {
 
-        /** Enum H264 for value: "H264" */
+        /**
+         * Enum H264 for value: "H264"
+         */
         public static final VideoCodecEnum H264 = new VideoCodecEnum("H264");
 
-        /** Enum H265 for value: "H265" */
+        /**
+         * Enum H265 for value: "H265"
+         */
         public static final VideoCodecEnum H265 = new VideoCodecEnum("H265");
 
         private static final Map<String, VideoCodecEnum> STATIC_FIELDS = createStaticFields();
@@ -104,10 +112,14 @@ public class OnlineInfo {
 
     private VideoCodecEnum videoCodec;
 
-    /** 音频编码方式 - AAC */
+    /**
+     * 音频编码方式 - AAC 
+     */
     public static final class AudioCodecEnum {
 
-        /** Enum AAC for value: "AAC" */
+        /**
+         * Enum AAC for value: "AAC"
+         */
         public static final AudioCodecEnum AAC = new AudioCodecEnum("AAC");
 
         private static final Map<String, AudioCodecEnum> STATIC_FIELDS = createStaticFields();
@@ -216,9 +228,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return publishDomain */
+    /**
+     * 域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -232,9 +245,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return app */
+    /**
+     * 应用名
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -248,9 +262,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 流名
-     * 
-     * @return stream */
+    /**
+     * 流名
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -264,9 +279,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 视频编码方式 - H264 - H265
-     * 
-     * @return videoCodec */
+    /**
+     * 视频编码方式 - H264 - H265 
+     * @return videoCodec
+     */
     public VideoCodecEnum getVideoCodec() {
         return videoCodec;
     }
@@ -280,9 +296,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 音频编码方式 - AAC
-     * 
-     * @return audioCodec */
+    /**
+     * 音频编码方式 - AAC 
+     * @return audioCodec
+     */
     public AudioCodecEnum getAudioCodec() {
         return audioCodec;
     }
@@ -296,9 +313,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 视频帧率
-     * 
-     * @return videoFrameRate */
+    /**
+     * 视频帧率
+     * @return videoFrameRate
+     */
     public Long getVideoFrameRate() {
         return videoFrameRate;
     }
@@ -312,9 +330,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 音频帧率
-     * 
-     * @return audioFrameRate */
+    /**
+     * 音频帧率
+     * @return audioFrameRate
+     */
     public Long getAudioFrameRate() {
         return audioFrameRate;
     }
@@ -328,9 +347,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 视频码率
-     * 
-     * @return videoBitrate */
+    /**
+     * 视频码率
+     * @return videoBitrate
+     */
     public Long getVideoBitrate() {
         return videoBitrate;
     }
@@ -344,9 +364,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 音频码率
-     * 
-     * @return audioBitrate */
+    /**
+     * 音频码率
+     * @return audioBitrate
+     */
     public Long getAudioBitrate() {
         return audioBitrate;
     }
@@ -360,9 +381,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 视频分辨率
-     * 
-     * @return resolution */
+    /**
+     * 视频分辨率
+     * @return resolution
+     */
     public String getResolution() {
         return resolution;
     }
@@ -376,9 +398,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 推流设备的ip
-     * 
-     * @return clientIp */
+    /**
+     * 推流设备的ip
+     * @return clientIp
+     */
     public String getClientIp() {
         return clientIp;
     }
@@ -392,9 +415,10 @@ public class OnlineInfo {
         return this;
     }
 
-    /** 开始推流时刻 UTC格式 2006-01-02T15:04:05Z
-     * 
-     * @return startTime */
+    /**
+     * 开始推流时刻 UTC格式 2006-01-02T15:04:05Z
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -460,7 +484,10 @@ public class OnlineInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

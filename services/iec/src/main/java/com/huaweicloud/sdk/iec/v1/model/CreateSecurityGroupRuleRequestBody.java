@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建安全组规则请求体。 */
+/**
+ * 创建安全组规则请求体。
+ */
 public class CreateSecurityGroupRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateSecurityGroupRuleRequestBody {
         return this;
     }
 
-    /** Get securityGroupRule
-     * 
-     * @return securityGroupRule */
+    /**
+     * Get securityGroupRule
+     * @return securityGroupRule
+     */
     public CreateSecurityGroupRuleOption getSecurityGroupRule() {
         return securityGroupRule;
     }
@@ -66,7 +69,10 @@ public class CreateSecurityGroupRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

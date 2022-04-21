@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AddShardingNodeVolumeOption */
+/**
+ * AddShardingNodeVolumeOption
+ */
 public class AddShardingNodeVolumeOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AddShardingNodeVolumeOption {
         return this;
     }
 
-    /** 指定新增的所有shard组的磁盘容量。取值范围：10GB~2000GB。
-     * 
-     * @return size */
+    /**
+     * 指定新增的所有shard组的磁盘容量。取值范围：10GB~2000GB。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -55,7 +58,10 @@ public class AddShardingNodeVolumeOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

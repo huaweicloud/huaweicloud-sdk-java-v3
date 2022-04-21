@@ -45,9 +45,10 @@ public class LoginTokenUser {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public LoginTokenDomain getDomain() {
         return domain;
     }
@@ -61,9 +62,10 @@ public class LoginTokenUser {
         return this;
     }
 
-    /** 被委托方用户名。
-     * 
-     * @return name */
+    /**
+     * 被委托方用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,9 +79,10 @@ public class LoginTokenUser {
         return this;
     }
 
-    /** 被委托方用户的密码过期时间。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 被委托方用户的密码过期时间。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -93,9 +96,10 @@ public class LoginTokenUser {
         return this;
     }
 
-    /** 被委托方用户ID。
-     * 
-     * @return id */
+    /**
+     * 被委托方用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -135,7 +139,10 @@ public class LoginTokenUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCorpResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowCorpResponse extends SdkResponse {
         return this;
     }
 
-    /** Get basicInfo
-     * 
-     * @return basicInfo */
+    /**
+     * Get basicInfo
+     * @return basicInfo
+     */
     public QueryCorpBasicResultDTO getBasicInfo() {
         return basicInfo;
     }
@@ -74,9 +77,10 @@ public class ShowCorpResponse extends SdkResponse {
         return this;
     }
 
-    /** Get adminInfo
-     * 
-     * @return adminInfo */
+    /**
+     * Get adminInfo
+     * @return adminInfo
+     */
     public QueryAdminResultDTO getAdminInfo() {
         return adminInfo;
     }
@@ -99,9 +103,10 @@ public class ShowCorpResponse extends SdkResponse {
         return this;
     }
 
-    /** Get resInfo
-     * 
-     * @return resInfo */
+    /**
+     * Get resInfo
+     * @return resInfo
+     */
     public QueryCorpResResultDTO getResInfo() {
         return resInfo;
     }
@@ -124,9 +129,10 @@ public class ShowCorpResponse extends SdkResponse {
         return this;
     }
 
-    /** Get groupDTO
-     * 
-     * @return groupDTO */
+    /**
+     * Get groupDTO
+     * @return groupDTO
+     */
     public OrgGroupDTO getGroupDTO() {
         return groupDTO;
     }
@@ -140,9 +146,10 @@ public class ShowCorpResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return id */
+    /**
+     * 企业id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -184,7 +191,10 @@ public class ShowCorpResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

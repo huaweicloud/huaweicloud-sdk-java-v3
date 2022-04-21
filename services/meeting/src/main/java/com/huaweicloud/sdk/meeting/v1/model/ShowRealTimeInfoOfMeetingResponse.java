@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    /** 所有参加会议的与会者列表，包括未入会的以及在线的与会者信息。
-     * 
-     * @return attendees */
+    /**
+     * 所有参加会议的与会者列表，包括未入会的以及在线的与会者信息。
+     * @return attendees
+     */
     public List<RealTimeAttendee> getAttendees() {
         return attendees;
     }
@@ -80,9 +83,10 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    /** 在线会场列表，包括已进入会议、呼叫中、正在加入会议的与会者列表等。
-     * 
-     * @return participants */
+    /**
+     * 在线会场列表，包括已进入会议、呼叫中、正在加入会议的与会者列表等。
+     * @return participants
+     */
     public List<RealTimeParticipant> getParticipants() {
         return participants;
     }
@@ -105,9 +109,10 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    /** Get confInfo
-     * 
-     * @return confInfo */
+    /**
+     * Get confInfo
+     * @return confInfo
+     */
     public RealTimeConfInfo getConfInfo() {
         return confInfo;
     }
@@ -146,7 +151,10 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

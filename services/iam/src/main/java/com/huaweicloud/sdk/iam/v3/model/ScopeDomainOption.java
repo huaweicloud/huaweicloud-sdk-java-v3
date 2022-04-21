@@ -25,9 +25,10 @@ public class ScopeDomainOption {
         return this;
     }
 
-    /** 账号ID，id与name二选一即可。
-     * 
-     * @return id */
+    /**
+     * 账号ID，id与name二选一即可。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -41,9 +42,10 @@ public class ScopeDomainOption {
         return this;
     }
 
-    /** 账号名，id与name二选一即可。
-     * 
-     * @return name */
+    /**
+     * 账号名，id与name二选一即可。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,7 +81,10 @@ public class ScopeDomainOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

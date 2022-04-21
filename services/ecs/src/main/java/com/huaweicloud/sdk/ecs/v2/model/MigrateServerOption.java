@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 冷迁移云服务器请求结构 */
+/**
+ * 冷迁移云服务器请求结构
+ */
 public class MigrateServerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class MigrateServerOption {
         return this;
     }
 
-    /** 专属主机ID。 当弹性云服务器从公共资源池迁移至专属主机上，或者弹性云服务器在专属主机之间迁移时，该字段生效。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。 当弹性云服务器从公共资源池迁移至专属主机上，或者弹性云服务器在专属主机之间迁移时，该字段生效。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -55,7 +58,10 @@ public class MigrateServerOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

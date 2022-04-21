@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SendSlideVerifyCodeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 抠出图形后的原背景图。通过“data:url”方式来定义图片。
-     * 
-     * @return shadowImage */
+    /**
+     * 抠出图形后的原背景图。通过“data:url”方式来定义图片。
+     * @return shadowImage
+     */
     public String getShadowImage() {
         return shadowImage;
     }
@@ -55,9 +58,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 抠出的图形。
-     * 
-     * @return cutImage */
+    /**
+     * 抠出的图形。
+     * @return cutImage
+     */
     public String getCutImage() {
         return cutImage;
     }
@@ -71,9 +75,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 抠出图形的Y轴座标。
-     * 
-     * @return pointY */
+    /**
+     * 抠出图形的Y轴座标。
+     * @return pointY
+     */
     public Integer getPointY() {
         return pointY;
     }
@@ -87,9 +92,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 验证码token字符串。
-     * 
-     * @return token */
+    /**
+     * 验证码token字符串。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -103,9 +109,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 验证码有效时间，单位：秒。
-     * 
-     * @return expire */
+    /**
+     * 验证码有效时间，单位：秒。
+     * @return expire
+     */
     public Integer getExpire() {
         return expire;
     }
@@ -148,7 +155,10 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

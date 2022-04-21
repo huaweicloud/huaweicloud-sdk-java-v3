@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** resource字段数据结构说明 */
+/**
+ * resource字段数据结构说明
+ */
 public class ShowImageByTagsResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ShowImageByTagsResource {
         return this;
     }
 
-    /** 镜像ID
-     * 
-     * @return resourceId */
+    /**
+     * 镜像ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -61,9 +64,10 @@ public class ShowImageByTagsResource {
         return this;
     }
 
-    /** Get resourceDetail
-     * 
-     * @return resourceDetail */
+    /**
+     * Get resourceDetail
+     * @return resourceDetail
+     */
     public QueryImageByTagsResourceDetail getResourceDetail() {
         return resourceDetail;
     }
@@ -93,9 +97,10 @@ public class ShowImageByTagsResource {
         return this;
     }
 
-    /** 镜像的标签列表
-     * 
-     * @return tags */
+    /**
+     * 镜像的标签列表
+     * @return tags
+     */
     public List<TagKeyValue> getTags() {
         return tags;
     }
@@ -109,9 +114,10 @@ public class ShowImageByTagsResource {
         return this;
     }
 
-    /** 镜像名称
-     * 
-     * @return resourceName */
+    /**
+     * 镜像名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -152,7 +158,10 @@ public class ShowImageByTagsResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 容器网络网段，指定cidrs字段使用时必填。 */
+/**
+ * 容器网络网段，指定cidrs字段使用时必填。
+ */
 public class ContainerCIDR {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ContainerCIDR {
         return this;
     }
 
-    /** 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19。
-     * 
-     * @return cidr */
+    /**
+     * 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19。
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -55,7 +58,10 @@ public class ContainerCIDR {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

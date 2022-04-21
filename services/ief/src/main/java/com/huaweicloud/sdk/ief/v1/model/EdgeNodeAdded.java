@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 要加入的节点详情 */
+/**
+ * 要加入的节点详情
+ */
 public class EdgeNodeAdded {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class EdgeNodeAdded {
         return this;
     }
 
-    /** 终端设备和节点关系的名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64
-     * 
-     * @return relation */
+    /**
+     * 终端设备和节点关系的名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64
+     * @return relation
+     */
     public String getRelation() {
         return relation;
     }
@@ -47,9 +50,10 @@ public class EdgeNodeAdded {
         return this;
     }
 
-    /** 终端设备和节点关系的描述，最大长度64，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return comment */
+    /**
+     * 终端设备和节点关系的描述，最大长度64，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -79,9 +83,10 @@ public class EdgeNodeAdded {
         return this;
     }
 
-    /** 节点ID列表，一个设备只可以被绑定于一个边缘节点。
-     * 
-     * @return nodeIds */
+    /**
+     * 节点ID列表，一个设备只可以被绑定于一个边缘节点。
+     * @return nodeIds
+     */
     public List<String> getNodeIds() {
         return nodeIds;
     }
@@ -120,7 +125,10 @@ public class EdgeNodeAdded {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

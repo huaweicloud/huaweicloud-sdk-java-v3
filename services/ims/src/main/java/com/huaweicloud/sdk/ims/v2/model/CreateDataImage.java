@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 数据盘信息 */
+/**
+ * 数据盘信息
+ */
 public class CreateDataImage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreateDataImage {
         return this;
     }
 
-    /** 数据盘镜像名称。
-     * 
-     * @return name */
+    /**
+     * 数据盘镜像名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class CreateDataImage {
         return this;
     }
 
-    /** 数据盘ID。
-     * 
-     * @return volumeId */
+    /**
+     * 数据盘ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -68,9 +72,10 @@ public class CreateDataImage {
         return this;
     }
 
-    /** 数据盘描述。
-     * 
-     * @return description */
+    /**
+     * 数据盘描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,9 +105,10 @@ public class CreateDataImage {
         return this;
     }
 
-    /** 数据盘镜像标签。
-     * 
-     * @return tags */
+    /**
+     * 数据盘镜像标签。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -143,7 +149,10 @@ public class CreateDataImage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

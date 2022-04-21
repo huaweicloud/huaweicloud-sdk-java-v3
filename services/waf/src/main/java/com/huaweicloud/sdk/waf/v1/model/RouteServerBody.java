@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 类型 */
+/**
+ * 类型
+ */
 public class RouteServerBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RouteServerBody {
         return this;
     }
 
-    /** 后端协议
-     * 
-     * @return backProtocol */
+    /**
+     * 后端协议
+     * @return backProtocol
+     */
     public String getBackProtocol() {
         return backProtocol;
     }
@@ -44,9 +47,10 @@ public class RouteServerBody {
         return this;
     }
 
-    /** 后端ip地址
-     * 
-     * @return address */
+    /**
+     * 后端ip地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -60,9 +64,10 @@ public class RouteServerBody {
         return this;
     }
 
-    /** 端口信息
-     * 
-     * @return port */
+    /**
+     * 端口信息
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -100,7 +105,10 @@ public class RouteServerBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

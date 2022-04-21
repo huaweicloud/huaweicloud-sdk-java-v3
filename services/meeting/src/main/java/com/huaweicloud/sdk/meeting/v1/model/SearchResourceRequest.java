@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchResourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -86,9 +89,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -102,9 +106,11 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -118,9 +124,12 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -134,9 +143,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 搜索条件
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -150,9 +160,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -166,9 +177,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之后的资源项
-     * 
-     * @return startExpireDate */
+    /**
+     * 查询过期时间在该时间戳之后的资源项
+     * @return startExpireDate
+     */
     public Long getStartExpireDate() {
         return startExpireDate;
     }
@@ -182,9 +194,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之前的资源项
-     * 
-     * @return endExpireDate */
+    /**
+     * 查询过期时间在该时间戳之前的资源项
+     * @return endExpireDate
+     */
     public Long getEndExpireDate() {
         return endExpireDate;
     }
@@ -198,9 +211,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return type */
+    /**
+     * 资源类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -214,9 +228,10 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
-     * 
-     * @return typeId */
+    /**
+     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
+     * @return typeId
+     */
     public String getTypeId() {
         return typeId;
     }
@@ -230,9 +245,12 @@ public class SearchResourceRequest {
         return this;
     }
 
-    /** 订单状态: - 0：正常 - 1：到期，仅查询时返回 - 2：停用 minimum: 0 maximum: 2
-     * 
-     * @return status */
+    /**
+     * 订单状态: - 0：正常 - 1：到期，仅查询时返回 - 2：停用
+     * minimum: 0
+     * maximum: 2
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -297,7 +315,10 @@ public class SearchResourceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

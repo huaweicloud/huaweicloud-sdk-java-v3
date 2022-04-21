@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 联盟成员 */
+/**
+ * 联盟成员
+ */
 public class Member {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class Member {
         return this;
     }
 
-    /** 是否支持可信
-     * 
-     * @return tcsNeed */
+    /**
+     * 是否支持可信
+     * @return tcsNeed
+     */
     public Boolean getTcsNeed() {
         return tcsNeed;
     }
@@ -57,9 +60,10 @@ public class Member {
         return this;
     }
 
-    /** 通道名称
-     * 
-     * @return channelName */
+    /**
+     * 通道名称
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -89,9 +93,10 @@ public class Member {
         return this;
     }
 
-    /** 被邀请的组织
-     * 
-     * @return invitedOrgs */
+    /**
+     * 被邀请的组织
+     * @return invitedOrgs
+     */
     public List<OrganizationV2> getInvitedOrgs() {
         return invitedOrgs;
     }
@@ -114,9 +119,10 @@ public class Member {
         return this;
     }
 
-    /** Get invitorInfo
-     * 
-     * @return invitorInfo */
+    /**
+     * Get invitorInfo
+     * @return invitorInfo
+     */
     public MemberInvitor getInvitorInfo() {
         return invitorInfo;
     }
@@ -139,9 +145,10 @@ public class Member {
         return this;
     }
 
-    /** Get inviteeInfo
-     * 
-     * @return inviteeInfo */
+    /**
+     * Get inviteeInfo
+     * @return inviteeInfo
+     */
     public MemberInvitee getInviteeInfo() {
         return inviteeInfo;
     }
@@ -183,7 +190,10 @@ public class Member {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

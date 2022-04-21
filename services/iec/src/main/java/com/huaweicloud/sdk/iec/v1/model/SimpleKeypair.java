@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 秘钥对对象 */
+/**
+ * 秘钥对对象
+ */
 public class SimpleKeypair {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SimpleKeypair {
         return this;
     }
 
-    /** 密钥名称。
-     * 
-     * @return name */
+    /**
+     * 密钥名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class SimpleKeypair {
         return this;
     }
 
-    /** 密钥对应publicKey信息。
-     * 
-     * @return publicKey */
+    /**
+     *   密钥对应publicKey信息。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -65,9 +69,10 @@ public class SimpleKeypair {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -81,9 +86,10 @@ public class SimpleKeypair {
         return this;
     }
 
-    /** 密钥对应指纹信息。
-     * 
-     * @return fingerprint */
+    /**
+     *   密钥对应指纹信息。
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -123,7 +129,10 @@ public class SimpleKeypair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

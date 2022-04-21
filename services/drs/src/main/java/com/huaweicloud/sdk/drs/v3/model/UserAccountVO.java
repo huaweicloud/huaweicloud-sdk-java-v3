@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 用户信息 */
+/**
+ * 用户信息
+ */
 public class UserAccountVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 用户账户ID。
-     * 
-     * @return id */
+    /**
+     * 用户账户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +80,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 用户
-     * 
-     * @return account */
+    /**
+     * 用户
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -93,9 +97,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 说明
-     * 
-     * @return comment */
+    /**
+     * 说明
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -109,9 +114,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 是否支持迁移
-     * 
-     * @return isTransfer */
+    /**
+     * 是否支持迁移
+     * @return isTransfer
+     */
     public Boolean getIsTransfer() {
         return isTransfer;
     }
@@ -141,9 +147,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 权限列表
-     * 
-     * @return privileges */
+    /**
+     * 权限列表
+     * @return privileges
+     */
     public List<String> getPrivileges() {
         return privileges;
     }
@@ -157,9 +164,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 密码
-     * 
-     * @return password */
+    /**
+     * 密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -173,9 +181,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 是否重置密码。
-     * 
-     * @return isSetPassword */
+    /**
+     * 是否重置密码。
+     * @return isSetPassword
+     */
     public Boolean getIsSetPassword() {
         return isSetPassword;
     }
@@ -205,9 +214,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 角色
-     * 
-     * @return roles */
+    /**
+     * 角色
+     * @return roles
+     */
     public List<String> getRoles() {
         return roles;
     }
@@ -221,9 +231,10 @@ public class UserAccountVO {
         return this;
     }
 
-    /** 是否选择。
-     * 
-     * @return selected */
+    /**
+     * 是否选择。
+     * @return selected
+     */
     public Boolean getSelected() {
         return selected;
     }
@@ -272,7 +283,10 @@ public class UserAccountVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResetDeviceSecret */
+/**
+ * ResetDeviceSecret
+ */
 public class ResetDeviceSecret {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResetDeviceSecret {
         return this;
     }
 
-    /** **参数说明**：设备密钥，设置该字段时平台将设备密钥重置为指定值，若不设置则由平台自动生成。 **取值范围**：长度不低于8不超过32，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return secret */
+    /**
+     * **参数说明**：设备密钥，设置该字段时平台将设备密钥重置为指定值，若不设置则由平台自动生成。 **取值范围**：长度不低于8不超过32，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -39,9 +42,10 @@ public class ResetDeviceSecret {
         return this;
     }
 
-    /** **参数说明**：是否强制断开设备的连接，当前仅限长连接。默认值false。
-     * 
-     * @return forceDisconnect */
+    /**
+     * **参数说明**：是否强制断开设备的连接，当前仅限长连接。默认值false。
+     * @return forceDisconnect
+     */
     public Boolean getForceDisconnect() {
         return forceDisconnect;
     }
@@ -78,7 +82,10 @@ public class ResetDeviceSecret {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

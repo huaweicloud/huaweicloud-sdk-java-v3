@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecretsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 每页返回的个数。 默认值：50。
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。  默认值：50。 
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -39,9 +42,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源id，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源id，为空时为查询第一页 
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -78,7 +82,10 @@ public class ListSecretsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

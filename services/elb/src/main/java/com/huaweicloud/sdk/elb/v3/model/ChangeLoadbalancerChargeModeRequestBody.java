@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class ChangeLoadbalancerChargeModeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,10 +23,14 @@ public class ChangeLoadbalancerChargeModeRequestBody {
 
     private List<String> loadbalancerIds = null;
 
-    /** 计费模式。取值： - prepaid：包周期计费。 */
+    /**
+    * 计费模式。取值： - prepaid：包周期计费。
+    */
     public static final class ChargeModeEnum {
 
-        /** Enum PREPAID for value: "prepaid" */
+        /**
+         * Enum PREPAID for value: "prepaid"
+         */
         public static final ChargeModeEnum PREPAID = new ChargeModeEnum("prepaid");
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +125,10 @@ public class ChangeLoadbalancerChargeModeRequestBody {
         return this;
     }
 
-    /** 需要修改计费类型的负载均衡器ID列表。
-     * 
-     * @return loadbalancerIds */
+    /**
+     * 需要修改计费类型的负载均衡器ID列表。
+     * @return loadbalancerIds
+     */
     public List<String> getLoadbalancerIds() {
         return loadbalancerIds;
     }
@@ -135,9 +142,10 @@ public class ChangeLoadbalancerChargeModeRequestBody {
         return this;
     }
 
-    /** 计费模式。取值： - prepaid：包周期计费。
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。取值： - prepaid：包周期计费。
+     * @return chargeMode
+     */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -161,9 +169,10 @@ public class ChangeLoadbalancerChargeModeRequestBody {
         return this;
     }
 
-    /** Get prepaidOptions
-     * 
-     * @return prepaidOptions */
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
     public PrepaidChangeChargeModeOption getPrepaidOptions() {
         return prepaidOptions;
     }
@@ -203,7 +212,10 @@ public class ChangeLoadbalancerChargeModeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

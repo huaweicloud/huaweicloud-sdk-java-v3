@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 克隆服务器类 */
+/**
+ * 克隆服务器类
+ */
 public class CloneServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CloneServer {
         return this;
     }
 
-    /** 克隆服务器ID
-     * 
-     * @return vmId */
+    /**
+     * 克隆服务器ID
+     * @return vmId
+     */
     public String getVmId() {
         return vmId;
     }
@@ -54,9 +57,10 @@ public class CloneServer {
         return this;
     }
 
-    /** 克隆虚拟机的名称
-     * 
-     * @return name */
+    /**
+     * 克隆虚拟机的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class CloneServer {
         return this;
     }
 
-    /** 克隆错误信息
-     * 
-     * @return cloneError */
+    /**
+     * 克隆错误信息
+     * @return cloneError
+     */
     public String getCloneError() {
         return cloneError;
     }
@@ -86,9 +91,10 @@ public class CloneServer {
         return this;
     }
 
-    /** 克隆状态
-     * 
-     * @return cloneState */
+    /**
+     * 克隆状态
+     * @return cloneState
+     */
     public String getCloneState() {
         return cloneState;
     }
@@ -102,9 +108,10 @@ public class CloneServer {
         return this;
     }
 
-    /** 克隆错误信息描述
-     * 
-     * @return errorMsg */
+    /**
+     * 克隆错误信息描述
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -146,7 +153,10 @@ public class CloneServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowHistoryDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 构建任务名称
-     * 
-     * @return jobName */
+    /**
+     * 构建任务名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -65,9 +68,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 构建编号
-     * 
-     * @return buildNumber */
+    /**
+     * 构建编号
+     * @return buildNumber
+     */
     public Integer getBuildNumber() {
         return buildNumber;
     }
@@ -81,9 +85,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 构建任务所在项目的ID
-     * 
-     * @return projectId */
+    /**
+     * 构建任务所在项目的ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -97,9 +102,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 构建任务所在项目的名称
-     * 
-     * @return projectName */
+    /**
+     * 构建任务所在项目的名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -129,9 +135,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次构建的参数，Map类型，敏感参数值返回*号
-     * 
-     * @return parameters */
+    /**
+     * 本次构建的参数，Map类型，敏感参数值返回*号
+     * @return parameters
+     */
     public Map<String, String> getParameters() {
         return parameters;
     }
@@ -161,9 +168,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次任务的构建步骤详情，返回的步骤为页面可见步骤
-     * 
-     * @return buildSteps */
+    /**
+     * 本次任务的构建步骤详情，返回的步骤为页面可见步骤
+     * @return buildSteps
+     */
     public List<BuildStep> getBuildSteps() {
         return buildSteps;
     }
@@ -208,7 +216,10 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

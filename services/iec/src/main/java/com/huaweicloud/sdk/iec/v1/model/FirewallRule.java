@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 网络ACL规则。 */
+/**
+ * 网络ACL规则。
+ */
 public class FirewallRule {
 
-    /** 策略是否允许 取值范围：allow，deny，reject */
+    /**
+     * 策略是否允许  取值范围：allow，deny，reject
+     */
     public static final class ActionEnum {
 
-        /** Enum ALLOW for value: "allow" */
+        /**
+         * Enum ALLOW for value: "allow"
+         */
         public static final ActionEnum ALLOW = new ActionEnum("allow");
 
-        /** Enum DENY for value: "deny" */
+        /**
+         * Enum DENY for value: "deny"
+         */
         public static final ActionEnum DENY = new ActionEnum("deny");
 
-        /** Enum REJECT for value: "reject" */
+        /**
+         * Enum REJECT for value: "reject"
+         */
         public static final ActionEnum REJECT = new ActionEnum("reject");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -128,17 +138,24 @@ public class FirewallRule {
 
     private String name;
 
-    /** 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。
-     * 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。 */
+    /**
+     * 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
+     */
     public static final class OperateTypeEnum {
 
-        /** Enum ADD for value: "add" */
+        /**
+         * Enum ADD for value: "add"
+         */
         public static final OperateTypeEnum ADD = new OperateTypeEnum("add");
 
-        /** Enum MODIFY for value: "modify" */
+        /**
+         * Enum MODIFY for value: "modify"
+         */
         public static final OperateTypeEnum MODIFY = new OperateTypeEnum("modify");
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final OperateTypeEnum DELETE = new OperateTypeEnum("delete");
 
         private static final Map<String, OperateTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -209,19 +226,29 @@ public class FirewallRule {
 
     private OperateTypeEnum operateType;
 
-    /** IP协议，为any时代表所有协议 取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any */
+    /**
+     * IP协议，为any时代表所有协议  取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any 
+     */
     public static final class ProtocolEnum {
 
-        /** Enum ICMP for value: "icmp" */
+        /**
+         * Enum ICMP for value: "icmp"
+         */
         public static final ProtocolEnum ICMP = new ProtocolEnum("icmp");
 
-        /** Enum TCP for value: "tcp" */
+        /**
+         * Enum TCP for value: "tcp"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("tcp");
 
-        /** Enum UDP for value: "udp" */
+        /**
+         * Enum UDP for value: "udp"
+         */
         public static final ProtocolEnum UDP = new ProtocolEnum("udp");
 
-        /** Enum ANY_ for value: "any " */
+        /**
+         * Enum ANY_ for value: "any "
+         */
         public static final ProtocolEnum ANY_ = new ProtocolEnum("any ");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -308,9 +335,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 策略是否允许 取值范围：allow，deny，reject
-     * 
-     * @return action */
+    /**
+     * 策略是否允许  取值范围：allow，deny，reject
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -324,9 +352,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 网络ACL规则描述。
-     * 
-     * @return description */
+    /**
+     * 网络ACL规则描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -340,9 +369,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 目的地IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
-     * 
-     * @return destinationIpAddress */
+    /**
+     * 目的地IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * @return destinationIpAddress
+     */
     public String getDestinationIpAddress() {
         return destinationIpAddress;
     }
@@ -356,9 +386,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 目的地端口范围 取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
-     * 
-     * @return destinationPort */
+    /**
+     * 目的地端口范围  取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
+     * @return destinationPort
+     */
     public String getDestinationPort() {
         return destinationPort;
     }
@@ -372,9 +403,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 网络ACL规则使能开关。 取值范围：true，false
-     * 
-     * @return enabled */
+    /**
+     * 网络ACL规则使能开关。  取值范围：true，false
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -388,9 +420,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 网络ACL规则ID。 进行更新规则时，如果operate_type为add，则该值为空。
-     * 
-     * @return id */
+    /**
+     * 网络ACL规则ID。  进行更新规则时，如果operate_type为add，则该值为空。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -404,9 +437,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** IP协议版本 取值范围：4[、6](tag:hide)
-     * 
-     * @return ipVersion */
+    /**
+     * IP协议版本  取值范围：4[、6](tag:hide)
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -420,9 +454,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 网络ACL规则名称。
-     * 
-     * @return name */
+    /**
+     * 网络ACL规则名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -436,9 +471,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
-     * 
-     * @return operateType */
+    /**
+     * 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
+     * @return operateType
+     */
     public OperateTypeEnum getOperateType() {
         return operateType;
     }
@@ -452,9 +488,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** IP协议，为any时代表所有协议 取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any
-     * 
-     * @return protocol */
+    /**
+     * IP协议，为any时代表所有协议  取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any 
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -468,9 +505,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 源IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
-     * 
-     * @return sourceIpAddress */
+    /**
+     * 源IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * @return sourceIpAddress
+     */
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
@@ -484,9 +522,10 @@ public class FirewallRule {
         return this;
     }
 
-    /** 源地端口范围 取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
-     * 
-     * @return sourcePort */
+    /**
+     * 源地端口范围  取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
+     * @return sourcePort
+     */
     public String getSourcePort() {
         return sourcePort;
     }
@@ -552,7 +591,10 @@ public class FirewallRule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

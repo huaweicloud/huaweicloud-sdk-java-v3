@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFunctionVersionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListFunctionVersionsRequest {
         return this;
     }
 
-    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -44,9 +47,10 @@ public class ListFunctionVersionsRequest {
         return this;
     }
 
-    /** 上一次查询到的最后的记录位置。
-     * 
-     * @return marker */
+    /**
+     * 上一次查询到的最后的记录位置。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -60,9 +64,10 @@ public class ListFunctionVersionsRequest {
         return this;
     }
 
-    /** 每次查询获取的最大函数记录数量。
-     * 
-     * @return maxitems */
+    /**
+     * 每次查询获取的最大函数记录数量。
+     * @return maxitems
+     */
     public String getMaxitems() {
         return maxitems;
     }
@@ -101,7 +106,10 @@ public class ListFunctionVersionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecretVersionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListSecretVersionsRequest {
         return this;
     }
 
-    /** 凭据名称。
-     * 
-     * @return secretName */
+    /**
+     * 凭据名称。
+     * @return secretName
+     */
     public String getSecretName() {
         return secretName;
     }
@@ -44,9 +47,10 @@ public class ListSecretVersionsRequest {
         return this;
     }
 
-    /** 分页参数，取值为上一页数据的最后一条记录的版本号。
-     * 
-     * @return marker */
+    /**
+     * 分页参数，取值为上一页数据的最后一条记录的版本号。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -60,9 +64,12 @@ public class ListSecretVersionsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量。默认值50。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。默认值50。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,7 +108,10 @@ public class ListSecretVersionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

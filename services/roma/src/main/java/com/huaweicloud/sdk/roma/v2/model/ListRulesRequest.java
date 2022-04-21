@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,12 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -70,9 +76,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -86,9 +93,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 规则名称
-     * 
-     * @return name */
+    /**
+     * 规则名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +110,12 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -145,7 +156,10 @@ public class ListRulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

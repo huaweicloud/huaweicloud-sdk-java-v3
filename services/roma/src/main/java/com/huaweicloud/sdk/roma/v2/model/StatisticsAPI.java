@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** StatisticsAPI */
+/**
+ * StatisticsAPI
+ */
 public class StatisticsAPI {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,16 +86,24 @@ public class StatisticsAPI {
 
     private Long currentMinute;
 
-    /** 查询统计周期 */
+    /**
+     * 查询统计周期
+     */
     public static final class CycleEnum {
 
-        /** Enum MINUTE for value: "MINUTE" */
+        /**
+         * Enum MINUTE for value: "MINUTE"
+         */
         public static final CycleEnum MINUTE = new CycleEnum("MINUTE");
 
-        /** Enum HOUR for value: "HOUR" */
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
         public static final CycleEnum HOUR = new CycleEnum("HOUR");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final CycleEnum DAY = new CycleEnum("DAY");
 
         private static final Map<String, CycleEnum> STATIC_FIELDS = createStaticFields();
@@ -189,13 +199,19 @@ public class StatisticsAPI {
 
     private OffsetDateTime registerTime;
 
-    /** 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES 预留字段，暂不支持 */
+    /**
+     * 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES  预留字段，暂不支持
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -270,9 +286,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 最大延时
-     * 
-     * @return maxLatency */
+    /**
+     * 最大延时
+     * @return maxLatency
+     */
     public Integer getMaxLatency() {
         return maxLatency;
     }
@@ -286,9 +303,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 平均延时
-     * 
-     * @return avgLatency */
+    /**
+     * 平均延时
+     * @return avgLatency
+     */
     public Float getAvgLatency() {
         return avgLatency;
     }
@@ -302,9 +320,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 请求总次数
-     * 
-     * @return reqCount */
+    /**
+     * 请求总次数
+     * @return reqCount
+     */
     public Integer getReqCount() {
         return reqCount;
     }
@@ -318,9 +337,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 2xx响应码总次数
-     * 
-     * @return reqCount2xx */
+    /**
+     * 2xx响应码总次数
+     * @return reqCount2xx
+     */
     public Integer getReqCount2xx() {
         return reqCount2xx;
     }
@@ -334,9 +354,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 4xx响应码总次数
-     * 
-     * @return reqCount4xx */
+    /**
+     * 4xx响应码总次数
+     * @return reqCount4xx
+     */
     public Integer getReqCount4xx() {
         return reqCount4xx;
     }
@@ -350,9 +371,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 5xx响应码总次数
-     * 
-     * @return reqCount5xx */
+    /**
+     * 5xx响应码总次数
+     * @return reqCount5xx
+     */
     public Integer getReqCount5xx() {
         return reqCount5xx;
     }
@@ -366,9 +388,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 错误次数
-     * 
-     * @return reqCountError */
+    /**
+     * 错误次数
+     * @return reqCountError
+     */
     public Integer getReqCountError() {
         return reqCountError;
     }
@@ -382,9 +405,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 最大网关内部延时
-     * 
-     * @return maxInnerLatency */
+    /**
+     * 最大网关内部延时
+     * @return maxInnerLatency
+     */
     public Integer getMaxInnerLatency() {
         return maxInnerLatency;
     }
@@ -398,9 +422,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 平均网关内部延时
-     * 
-     * @return avgInnerLatency */
+    /**
+     * 平均网关内部延时
+     * @return avgInnerLatency
+     */
     public Float getAvgInnerLatency() {
         return avgInnerLatency;
     }
@@ -414,9 +439,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 最大后端延时
-     * 
-     * @return maxBackendLatency */
+    /**
+     * 最大后端延时
+     * @return maxBackendLatency
+     */
     public Integer getMaxBackendLatency() {
         return maxBackendLatency;
     }
@@ -430,9 +456,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 平均后端延时
-     * 
-     * @return avgBackendLatency */
+    /**
+     * 平均后端延时
+     * @return avgBackendLatency
+     */
     public Float getAvgBackendLatency() {
         return avgBackendLatency;
     }
@@ -446,9 +473,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 下行吞吐量（byte）
-     * 
-     * @return outputThroughput */
+    /**
+     * 下行吞吐量（byte）
+     * @return outputThroughput
+     */
     public Long getOutputThroughput() {
         return outputThroughput;
     }
@@ -462,9 +490,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 上行吞吐量（byte）
-     * 
-     * @return inputThroughput */
+    /**
+     * 上行吞吐量（byte）
+     * @return inputThroughput
+     */
     public Long getInputThroughput() {
         return inputThroughput;
     }
@@ -478,9 +507,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** API访问的UTC时间戳
-     * 
-     * @return currentMinute */
+    /**
+     * API访问的UTC时间戳
+     * @return currentMinute
+     */
     public Long getCurrentMinute() {
         return currentMinute;
     }
@@ -494,9 +524,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 查询统计周期
-     * 
-     * @return cycle */
+    /**
+     * 查询统计周期
+     * @return cycle
+     */
     public CycleEnum getCycle() {
         return cycle;
     }
@@ -510,9 +541,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -526,9 +558,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** API分组编号
-     * 
-     * @return groupId */
+    /**
+     * API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -542,9 +575,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** API拥有者
-     * 
-     * @return provider */
+    /**
+     * API拥有者
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -558,9 +592,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** API请求时间
-     * 
-     * @return reqTime */
+    /**
+     * API请求时间
+     * @return reqTime
+     */
     public OffsetDateTime getReqTime() {
         return reqTime;
     }
@@ -574,9 +609,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 记录时间
-     * 
-     * @return registerTime */
+    /**
+     * 记录时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -590,9 +626,10 @@ public class StatisticsAPI {
         return this;
     }
 
-    /** 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES 预留字段，暂不支持
-     * 
-     * @return status */
+    /**
+     * 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES  预留字段，暂不支持
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -686,7 +723,10 @@ public class StatisticsAPI {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

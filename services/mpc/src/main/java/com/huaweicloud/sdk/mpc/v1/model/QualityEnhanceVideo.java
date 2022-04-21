@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QualityEnhanceVideo */
+/**
+ * QualityEnhanceVideo
+ */
 public class QualityEnhanceVideo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoDenoise
-     * 
-     * @return videoDenoise */
+    /**
+     * Get videoDenoise
+     * @return videoDenoise
+     */
     public VideoDenoise getVideoDenoise() {
         return videoDenoise;
     }
@@ -78,9 +81,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoSharp
-     * 
-     * @return videoSharp */
+    /**
+     * Get videoSharp
+     * @return videoSharp
+     */
     public VideoSharp getVideoSharp() {
         return videoSharp;
     }
@@ -103,9 +107,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoContrast
-     * 
-     * @return videoContrast */
+    /**
+     * Get videoContrast
+     * @return videoContrast
+     */
     public VideoContrast getVideoContrast() {
         return videoContrast;
     }
@@ -128,9 +133,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoSuperresolution
-     * 
-     * @return videoSuperresolution */
+    /**
+     * Get videoSuperresolution
+     * @return videoSuperresolution
+     */
     public VideoSuperresolution getVideoSuperresolution() {
         return videoSuperresolution;
     }
@@ -153,9 +159,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoDeblock
-     * 
-     * @return videoDeblock */
+    /**
+     * Get videoDeblock
+     * @return videoDeblock
+     */
     public VideoDeblock getVideoDeblock() {
         return videoDeblock;
     }
@@ -178,9 +185,10 @@ public class QualityEnhanceVideo {
         return this;
     }
 
-    /** Get videoSaturation
-     * 
-     * @return videoSaturation */
+    /**
+     * Get videoSaturation
+     * @return videoSaturation
+     */
     public VideoSaturation getVideoSaturation() {
         return videoSaturation;
     }
@@ -226,7 +234,10 @@ public class QualityEnhanceVideo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

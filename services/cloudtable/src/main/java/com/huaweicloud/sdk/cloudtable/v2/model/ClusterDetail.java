@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群详情信息对象。 */
+/**
+ * 集群详情信息对象。
+ */
 public class ClusterDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,9 +102,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -132,9 +135,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群操作记录
-     * 
-     * @return actions */
+    /**
+     * 集群操作记录
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -148,9 +152,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 是否开启IAM权限认证。 - false：不开启 - true：开启
-     * 
-     * @return authMode */
+    /**
+     * 是否开启IAM权限认证。 - false：不开启 - true：开启
+     * @return authMode
+     */
     public String getAuthMode() {
         return authMode;
     }
@@ -164,9 +169,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群所在的可用区（AZ)。
-     * 
-     * @return azCode */
+    /**
+     * 集群所在的可用区（AZ)。
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -180,9 +186,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群ID，集群唯一标识。
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID，集群唯一标识。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -196,9 +203,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** CloudTable集群名称。
-     * 
-     * @return clusterName */
+    /**
+     * CloudTable集群名称。
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -212,9 +220,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群创建时间。
-     * 
-     * @return created */
+    /**
+     * 集群创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -228,9 +237,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 是否开启DFV。 - false：不开启 - true：开启
-     * 
-     * @return enableDfv */
+    /**
+     * 是否开启DFV。 - false：不开启 - true：开启
+     * @return enableDfv
+     */
     public String getEnableDfv() {
         return enableDfv;
     }
@@ -244,9 +254,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群是否免费。 - false：不免费 - true：免费
-     * 
-     * @return enableFree */
+    /**
+     * 集群是否免费。 - false：不免费 - true：免费
+     * @return enableFree
+     */
     public String getEnableFree() {
         return enableFree;
     }
@@ -260,9 +271,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 是否开启Lemon。 - false：不开启 - true：开启
-     * 
-     * @return enableLemon */
+    /**
+     * 是否开启Lemon。 - false：不开启 - true：开启
+     * @return enableLemon
+     */
     public String getEnableLemon() {
         return enableLemon;
     }
@@ -276,9 +288,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 是否开启OpenTSDB。 - false：不开启 - true：开启
-     * 
-     * @return enableOpenTSDB */
+    /**
+     * 是否开启OpenTSDB。 - false：不开启 - true：开启
+     * @return enableOpenTSDB
+     */
     public String getEnableOpenTSDB() {
         return enableOpenTSDB;
     }
@@ -292,9 +305,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群状态： - 200：集群正常 - 300：集群异常 - 303：集群创建失败 - 400：集群已删除
-     * 
-     * @return status */
+    /**
+     * 集群状态： - 200：集群正常 - 300：集群异常 - 303：集群创建失败 - 400：集群已删除
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -308,9 +322,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群标识符。
-     * 
-     * @return tags */
+    /**
+     * 集群标识符。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -324,9 +339,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** 集群版本号。
-     * 
-     * @return version */
+    /**
+     * 集群版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -340,9 +356,10 @@ public class ClusterDetail {
         return this;
     }
 
-    /** CloudTable集群ZooKeeper的链接地址。例如：cloudtable-3058-zk3-Dqcwuh6R.mycloudtable.com:2181,cloudtable-3058-zk2-TCwkZEie.mycloudtable.com:2181,cloudtable-3058-zk1-TBELUFOK.mycloudtable.com:2181
-     * 
-     * @return zookeeperLink */
+    /**
+     * CloudTable集群ZooKeeper的链接地址。例如：cloudtable-3058-zk3-Dqcwuh6R.mycloudtable.com:2181,cloudtable-3058-zk2-TCwkZEie.mycloudtable.com:2181,cloudtable-3058-zk1-TBELUFOK.mycloudtable.com:2181
+     * @return zookeeperLink
+     */
     public String getZookeeperLink() {
         return zookeeperLink;
     }
@@ -418,7 +435,10 @@ public class ClusterDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

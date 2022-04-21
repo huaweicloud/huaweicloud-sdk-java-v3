@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 策略执行动作包含的具体任务 */
+/**
+ * 策略执行动作包含的具体任务
+ */
 public class JobRecords {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class JobRecords {
 
     private String jobName;
 
-    /** 记录类型。API：接口调用类型。MEG：消息类型。 */
+    /**
+     * 记录类型。API：接口调用类型。MEG：消息类型。
+     */
     public static final class RecordTypeEnum {
 
-        /** Enum API for value: "API" */
+        /**
+         * Enum API for value: "API"
+         */
         public static final RecordTypeEnum API = new RecordTypeEnum("API");
 
-        /** Enum MEG for value: "MEG" */
+        /**
+         * Enum MEG for value: "MEG"
+         */
         public static final RecordTypeEnum MEG = new RecordTypeEnum("MEG");
 
         private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +127,19 @@ public class JobRecords {
 
     private String message;
 
-    /** job执行状态：SUCCESS：成功。FAIL：失败。 */
+    /**
+     * job执行状态：SUCCESS：成功。FAIL：失败。
+     */
     public static final class JobStatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final JobStatusEnum SUCCESS = new JobStatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final JobStatusEnum FAIL = new JobStatusEnum("FAIL");
 
         private static final Map<String, JobStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +214,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return jobName */
+    /**
+     * 任务名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -216,9 +231,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 记录类型。API：接口调用类型。MEG：消息类型。
-     * 
-     * @return recordType */
+    /**
+     * 记录类型。API：接口调用类型。MEG：消息类型。
+     * @return recordType
+     */
     public RecordTypeEnum getRecordType() {
         return recordType;
     }
@@ -232,9 +248,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 记录时间。
-     * 
-     * @return recordTime */
+    /**
+     * 记录时间。
+     * @return recordTime
+     */
     public String getRecordTime() {
         return recordTime;
     }
@@ -248,9 +265,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 请求体，仅当record_type为API时有效
-     * 
-     * @return request */
+    /**
+     * 请求体，仅当record_type为API时有效
+     * @return request
+     */
     public String getRequest() {
         return request;
     }
@@ -264,9 +282,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 返回体，仅当record_type为API时有效
-     * 
-     * @return response */
+    /**
+     * 返回体，仅当record_type为API时有效
+     * @return response
+     */
     public String getResponse() {
         return response;
     }
@@ -280,9 +299,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 返回码，仅当record_type为API时有效
-     * 
-     * @return code */
+    /**
+     * 返回码，仅当record_type为API时有效
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -296,9 +316,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 消息，仅当record_type为MEG时有效
-     * 
-     * @return message */
+    /**
+     * 消息，仅当record_type为MEG时有效
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -312,9 +333,10 @@ public class JobRecords {
         return this;
     }
 
-    /** job执行状态：SUCCESS：成功。FAIL：失败。
-     * 
-     * @return jobStatus */
+    /**
+     * job执行状态：SUCCESS：成功。FAIL：失败。
+     * @return jobStatus
+     */
     public JobStatusEnum getJobStatus() {
         return jobStatus;
     }
@@ -361,7 +383,10 @@ public class JobRecords {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

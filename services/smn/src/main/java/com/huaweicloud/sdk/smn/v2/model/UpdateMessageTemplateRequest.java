@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateMessageTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdateMessageTemplateRequest {
         return this;
     }
 
-    /** 模板唯一的资源标识，可通过查询[消息模板列表](https://support.huaweicloud.com/api-smn/ListMessageTemplates.html)获取该标识。
-     * 
-     * @return messageTemplateId */
+    /**
+     * 模板唯一的资源标识，可通过查询[消息模板列表](https://support.huaweicloud.com/api-smn/ListMessageTemplates.html)获取该标识。
+     * @return messageTemplateId
+     */
     public String getMessageTemplateId() {
         return messageTemplateId;
     }
@@ -49,9 +52,10 @@ public class UpdateMessageTemplateRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateMessageTemplateRequestBody getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class UpdateMessageTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 边缘实例关联的安全组 */
+/**
+ * 边缘实例关联的安全组
+ */
 public class InstanceSecurityGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class InstanceSecurityGroup {
         return this;
     }
 
-    /** 安全组名称或者UUID。
-     * 
-     * @return name */
+    /**
+     * 安全组名称或者UUID。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class InstanceSecurityGroup {
         return this;
     }
 
-    /** 实例使用安全组规则的ID。
-     * 
-     * @return id */
+    /**
+     * 实例使用安全组规则的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,7 +82,10 @@ public class InstanceSecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

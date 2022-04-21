@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Metedata */
+/**
+ * Metedata
+ */
 public class Metedata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class Metedata {
         return this;
     }
 
-    /** 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
-     * 
-     * @return totalCount */
+    /**
+     * 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -55,7 +58,10 @@ public class Metedata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

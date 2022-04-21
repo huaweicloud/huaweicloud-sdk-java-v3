@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneShowSecurityComplianceByOptionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,14 +20,19 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
 
     private String domainId;
 
-    /** 查询条件。该字段内容为：password_regex或password_regex_description。
-     * password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。 */
+    /**
+     * 查询条件。该字段内容为：password_regex或password_regex_description。  password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
+     */
     public static final class OptionEnum {
 
-        /** Enum PASSWORD_REGEX for value: "password_regex" */
+        /**
+         * Enum PASSWORD_REGEX for value: "password_regex"
+         */
         public static final OptionEnum PASSWORD_REGEX = new OptionEnum("password_regex");
 
-        /** Enum PASSWORD_REGEX_DESCRIPTION for value: "password_regex_description" */
+        /**
+         * Enum PASSWORD_REGEX_DESCRIPTION for value: "password_regex_description"
+         */
         public static final OptionEnum PASSWORD_REGEX_DESCRIPTION = new OptionEnum("password_regex_description");
 
         private static final Map<String, OptionEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +107,10 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
         return this;
     }
 
-    /** 待查询的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * 待查询的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -116,10 +124,10 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
         return this;
     }
 
-    /** 查询条件。该字段内容为：password_regex或password_regex_description。
-     * password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
-     * 
-     * @return option */
+    /**
+     * 查询条件。该字段内容为：password_regex或password_regex_description。  password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
+     * @return option
+     */
     public OptionEnum getOption() {
         return option;
     }
@@ -157,7 +165,10 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -66,9 +66,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户密码状态。true：需要修改密码，false：正常。
-     * 
-     * @return pwdStatus */
+    /**
+     * IAM用户密码状态。true：需要修改密码，false：正常。
+     * @return pwdStatus
+     */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -82,9 +83,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * IAM用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -98,9 +100,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户退出系统前，在控制台最后访问的项目ID。
-     * 
-     * @return lastProjectId */
+    /**
+     * IAM用户退出系统前，在控制台最后访问的项目ID。
+     * @return lastProjectId
+     */
     public String getLastProjectId() {
         return lastProjectId;
     }
@@ -114,9 +117,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户名。
-     * 
-     * @return name */
+    /**
+     * IAM用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -130,9 +134,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户描述信息。
-     * 
-     * @return description */
+    /**
+     * IAM用户描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -146,9 +151,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户密码过期时间（UTC时间），“null”表示密码不过期。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * IAM用户密码过期时间（UTC时间），“null”表示密码不过期。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -171,9 +177,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -187,9 +194,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return id */
+    /**
+     * IAM用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -203,9 +211,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** IAM用户是否启用。true表示启用，false表示停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * IAM用户是否启用。true表示启用，false表示停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -228,9 +237,10 @@ public class KeystoneUpdateUserByAdminResult {
         return this;
     }
 
-    /** Get extra
-     * 
-     * @return extra */
+    /**
+     * Get extra
+     * @return extra
+     */
     public KeystoneUserResultExtra getExtra() {
         return extra;
     }
@@ -284,7 +294,10 @@ public class KeystoneUpdateUserByAdminResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

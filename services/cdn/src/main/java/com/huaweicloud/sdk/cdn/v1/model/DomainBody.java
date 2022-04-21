@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建域名Body */
+/**
+ * 创建域名Body
+ */
 public class DomainBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,19 +23,29 @@ public class DomainBody {
 
     private String domainName;
 
-    /** 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。 */
+    /**
+     * 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。
+     */
     public static final class BusinessTypeEnum {
 
-        /** Enum WEB for value: "web" */
+        /**
+         * Enum WEB for value: "web"
+         */
         public static final BusinessTypeEnum WEB = new BusinessTypeEnum("web");
 
-        /** Enum DOWNLOAD for value: "download" */
+        /**
+         * Enum DOWNLOAD for value: "download"
+         */
         public static final BusinessTypeEnum DOWNLOAD = new BusinessTypeEnum("download");
 
-        /** Enum VIDEO for value: "video" */
+        /**
+         * Enum VIDEO for value: "video"
+         */
         public static final BusinessTypeEnum VIDEO = new BusinessTypeEnum("video");
 
-        /** Enum WHOLESITE for value: "wholeSite" */
+        /**
+         * Enum WHOLESITE for value: "wholeSite"
+         */
         public static final BusinessTypeEnum WHOLESITE = new BusinessTypeEnum("wholeSite");
 
         private static final Map<String, BusinessTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,16 +122,24 @@ public class DomainBody {
 
     private List<Sources> sources = null;
 
-    /** 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。 */
+    /**
+    * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
+    */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /** Enum GLOBAL for value: "global" */
+        /**
+         * Enum GLOBAL for value: "global"
+         */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +220,10 @@ public class DomainBody {
         return this;
     }
 
-    /** 加速域名。（ 国际英文域名：域名用字母（A-Z，a-z，大小写等价）、数字（0-9）和连接符（-）组成，各级域名之间用实点（.）连接，国际域名75个字符。注意连接符（-）不能作为域名的开头或结尾字符。）
-     * 
-     * @return domainName */
+    /**
+     * 加速域名。（ 国际英文域名：域名用字母（A-Z，a-z，大小写等价）、数字（0-9）和连接符（-）组成，各级域名之间用实点（.）连接，国际域名75个字符。注意连接符（-）不能作为域名的开头或结尾字符。）
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -216,9 +237,10 @@ public class DomainBody {
         return this;
     }
 
-    /** 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。
-     * 
-     * @return businessType */
+    /**
+     * 域名业务类型，若为web，则表示类型为网页加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示业务类型为全站加速。
+     * @return businessType
+     */
     public BusinessTypeEnum getBusinessType() {
         return businessType;
     }
@@ -248,9 +270,10 @@ public class DomainBody {
         return this;
     }
 
-    /** 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
-     * 
-     * @return sources */
+    /**
+     * 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+     * @return sources
+     */
     public List<Sources> getSources() {
         return sources;
     }
@@ -264,9 +287,10 @@ public class DomainBody {
         return this;
     }
 
-    /** 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
-     * 
-     * @return serviceArea */
+    /**
+     * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -280,9 +304,10 @@ public class DomainBody {
         return this;
     }
 
-    /** 企业项目ID，创建域名归属的项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，创建域名归属的项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -325,7 +350,10 @@ public class DomainBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

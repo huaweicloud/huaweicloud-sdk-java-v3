@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AssociateDomainV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,19 +26,29 @@ public class AssociateDomainV2Response extends SdkResponse {
 
     private String id;
 
-    /** CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败 */
+    /**
+     * CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final StatusEnum NUMBER_3 = new StatusEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final StatusEnum NUMBER_4 = new StatusEnum(4);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +130,10 @@ public class AssociateDomainV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义域名
-     * 
-     * @return urlDomain */
+    /**
+     * 自定义域名
+     * @return urlDomain
+     */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -134,9 +147,10 @@ public class AssociateDomainV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义域名的编号
-     * 
-     * @return id */
+    /**
+     * 自定义域名的编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -150,9 +164,10 @@ public class AssociateDomainV2Response extends SdkResponse {
         return this;
     }
 
-    /** CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
-     * 
-     * @return status */
+    /**
+     * CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -166,9 +181,10 @@ public class AssociateDomainV2Response extends SdkResponse {
         return this;
     }
 
-    /** 支持的最小SSL版本
-     * 
-     * @return minSslVersion */
+    /**
+     * 支持的最小SSL版本
+     * @return minSslVersion
+     */
     public String getMinSslVersion() {
         return minSslVersion;
     }
@@ -209,7 +225,10 @@ public class AssociateDomainV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

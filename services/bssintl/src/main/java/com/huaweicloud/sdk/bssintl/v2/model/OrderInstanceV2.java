@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OrderInstanceV2 */
+/**
+ * OrderInstanceV2
+ */
 public class OrderInstanceV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 标识要开通资源的内部ID，资源开通以后生成的ID为resource_id。
-     * 
-     * @return id */
+    /**
+     * 标识要开通资源的内部ID，资源开通以后生成的ID为resource_id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -114,9 +117,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -130,9 +134,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源实例名。
-     * 
-     * @return resourceName */
+    /**
+     * 资源实例名。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -146,9 +151,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -162,9 +168,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -178,9 +185,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -194,9 +202,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -210,9 +219,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -226,9 +236,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
-     * 
-     * @return resourceSpecCode */
+    /**
+     * 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
+     * @return resourceSpecCode
+     */
     public String getResourceSpecCode() {
         return resourceSpecCode;
     }
@@ -242,9 +253,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 资源项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -258,9 +270,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -274,9 +287,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 父资源ID。
-     * 
-     * @return parentResourceId */
+    /**
+     * 父资源ID。
+     * @return parentResourceId
+     */
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -290,9 +304,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 是否是主资源。 0：非主资源1：主资源
-     * 
-     * @return isMainResource */
+    /**
+     * 是否是主资源。 0：非主资源1：主资源
+     * @return isMainResource
+     */
     public Integer getIsMainResource() {
         return isMainResource;
     }
@@ -306,9 +321,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源状态。 2：使用中3：已关闭（页面不展示这个状态）4：已冻结5：已过期
-     * 
-     * @return status */
+    /**
+     * 资源状态。 2：使用中3：已关闭（页面不展示这个状态）4：已冻结5：已过期
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -322,9 +338,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return effectiveTime */
+    /**
+     * 资源生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -338,9 +355,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源过期时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 资源过期时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -354,10 +372,10 @@ public class OrderInstanceV2 {
         return this;
     }
 
-    /** 资源到期后的扣费策略： 0：到期进入宽限期1：到期转按需2：到期后自动删除（从生效中直接删除）3：到期后自动续费4：到期后冻结5：到期后删除（从保留期删除） 说明：
-     * 只有“3”表示该资源是自动续订，其他情况下，都是非自动续订下的到期策略。
-     * 
-     * @return expirePolicy */
+    /**
+     * 资源到期后的扣费策略： 0：到期进入宽限期1：到期转按需2：到期后自动删除（从生效中直接删除）3：到期后自动续费4：到期后冻结5：到期后删除（从保留期删除）  说明： 只有“3”表示该资源是自动续订，其他情况下，都是非自动续订下的到期策略。
+     * @return expirePolicy
+     */
     public Integer getExpirePolicy() {
         return expirePolicy;
     }
@@ -440,7 +458,10 @@ public class OrderInstanceV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

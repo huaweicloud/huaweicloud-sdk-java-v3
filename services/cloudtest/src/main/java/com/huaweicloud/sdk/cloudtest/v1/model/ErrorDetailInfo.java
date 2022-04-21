@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ErrorDetailInfo */
+/**
+ * ErrorDetailInfo
+ */
 public class ErrorDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ErrorDetailInfo {
         return this;
     }
 
-    /** 批量操作失败的资源的详情信息
-     * 
-     * @return failed */
+    /**
+     * 批量操作失败的资源的详情信息
+     * @return failed
+     */
     public List<ErrorCaseInfoBean> getFailed() {
         return failed;
     }
@@ -74,7 +77,10 @@ public class ErrorDetailInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

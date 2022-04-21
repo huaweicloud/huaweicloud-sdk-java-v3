@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVaultRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListVaultRequest {
 
     private Integer offset;
 
-    /** 云类型 */
+    /**
+     * 云类型
+     */
     public static final class CloudTypeEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
-        /** Enum HYBRID for value: "hybrid" */
+        /**
+         * Enum HYBRID for value: "hybrid"
+         */
         public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,13 +112,19 @@ public class ListVaultRequest {
 
     private CloudTypeEnum cloudType;
 
-    /** 保护类型 */
+    /**
+     * 保护类型
+     */
     public static final class ProtectTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final ProtectTypeEnum BACKUP = new ProtectTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ProtectTypeEnum REPLICATION = new ProtectTypeEnum("replication");
 
         private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -215,9 +229,12 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 每页显示条目数，正整数 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数，正整数
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -231,9 +248,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 存储库名称
-     * 
-     * @return name */
+    /**
+     * 存储库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -247,9 +265,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 偏移值,正整数
-     * 
-     * @return offset */
+    /**
+     * 偏移值,正整数
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -263,9 +282,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 云类型
-     * 
-     * @return cloudType */
+    /**
+     * 云类型
+     * @return cloudType
+     */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -279,9 +299,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 保护类型
-     * 
-     * @return protectType */
+    /**
+     * 保护类型
+     * @return protectType
+     */
     public ProtectTypeEnum getProtectType() {
         return protectType;
     }
@@ -295,9 +316,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return objectType */
+    /**
+     * 资源类型
+     * @return objectType
+     */
     public String getObjectType() {
         return objectType;
     }
@@ -311,9 +333,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -327,9 +350,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return id */
+    /**
+     * 存储库ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -343,9 +367,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 策略ID
-     * 
-     * @return policyId */
+    /**
+     * 策略ID
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -359,9 +384,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -375,9 +401,10 @@ public class ListVaultRequest {
         return this;
     }
 
-    /** 资源id
-     * 
-     * @return resourceIds */
+    /**
+     * 资源id
+     * @return resourceIds
+     */
     public String getResourceIds() {
         return resourceIds;
     }
@@ -440,7 +467,10 @@ public class ListVaultRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

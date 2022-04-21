@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowClusterDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -192,9 +194,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群绑定的EIP
-     * 
-     * @return publicEndpoint */
+    /**
+     * 集群绑定的EIP
+     * @return publicEndpoint
+     */
     public String getPublicEndpoint() {
         return publicEndpoint;
     }
@@ -224,9 +227,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群的节点信息，请参见instances参数说明
-     * 
-     * @return instances */
+    /**
+     * 集群的节点信息，请参见instances参数说明
+     * @return instances
+     */
     public List<ClusterDetailInstance> getInstances() {
         return instances;
     }
@@ -240,9 +244,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 安全组id
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组id
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -256,9 +261,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网id
-     * 
-     * @return subnetId */
+    /**
+     * 子网id
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -272,9 +278,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -297,9 +304,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get customerConfig
-     * 
-     * @return customerConfig */
+    /**
+     * Get customerConfig
+     * @return customerConfig
+     */
     public CustomerConfig getCustomerConfig() {
         return customerConfig;
     }
@@ -322,9 +330,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -338,9 +347,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 自动关机
-     * 
-     * @return isAutoOff */
+    /**
+     * 自动关机
+     * @return isAutoOff
+     */
     public Boolean getIsAutoOff() {
         return isAutoOff;
     }
@@ -354,9 +364,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群绑定的EIP域名
-     * 
-     * @return publicEndpointDomainName */
+    /**
+     * 集群绑定的EIP域名
+     * @return publicEndpointDomainName
+     */
     public String getPublicEndpointDomainName() {
         return publicEndpointDomainName;
     }
@@ -370,9 +381,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return bakExpectedStartTime */
+    /**
+     * 开始时间
+     * @return bakExpectedStartTime
+     */
     public String getBakExpectedStartTime() {
         return bakExpectedStartTime;
     }
@@ -386,9 +398,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 保留时间
-     * 
-     * @return bakKeepDay */
+    /**
+     * 保留时间
+     * @return bakKeepDay
+     */
     public Integer getBakKeepDay() {
         return bakKeepDay;
     }
@@ -412,9 +425,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get maintainWindow
-     * 
-     * @return maintainWindow */
+    /**
+     * Get maintainWindow
+     * @return maintainWindow
+     */
     public CdmQueryClusterDetailsRepsonseMaintainWindow getMaintainWindow() {
         return maintainWindow;
     }
@@ -428,9 +442,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 事件数
-     * 
-     * @return recentEvent */
+    /**
+     * 事件数
+     * @return recentEvent
+     */
     public Integer getRecentEvent() {
         return recentEvent;
     }
@@ -444,9 +459,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 规格名称
-     * 
-     * @return flavorName */
+    /**
+     * 规格名称
+     * @return flavorName
+     */
     public String getFlavorName() {
         return flavorName;
     }
@@ -460,9 +476,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** az名称
-     * 
-     * @return azName */
+    /**
+     * az名称
+     * @return azName
+     */
     public String getAzName() {
         return azName;
     }
@@ -476,9 +493,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 对端域名
-     * 
-     * @return endpointDomainName */
+    /**
+     * 对端域名
+     * @return endpointDomainName
+     */
     public String getEndpointDomainName() {
         return endpointDomainName;
     }
@@ -503,9 +521,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get publicEndpointStatus
-     * 
-     * @return publicEndpointStatus */
+    /**
+     * Get publicEndpointStatus
+     * @return publicEndpointStatus
+     */
     public CdmQueryClusterDetailsRepsonsePublicEndpointStatus getPublicEndpointStatus() {
         return publicEndpointStatus;
     }
@@ -519,9 +538,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
-     * 
-     * @return isScheduleBootOff */
+    /**
+     * 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
+     * @return isScheduleBootOff
+     */
     public Boolean getIsScheduleBootOff() {
         return isScheduleBootOff;
     }
@@ -535,9 +555,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespace */
+    /**
+     * 命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -551,9 +572,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性ip id
-     * 
-     * @return eipId */
+    /**
+     * 弹性ip id
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -576,9 +598,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get failedReasons
-     * 
-     * @return failedReasons */
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
     public FailedReasons getFailedReasons() {
         return failedReasons;
     }
@@ -592,9 +615,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库用户
-     * 
-     * @return dbuser */
+    /**
+     * 数据库用户
+     * @return dbuser
+     */
     public String getDbuser() {
         return dbuser;
     }
@@ -624,9 +648,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public List<ClusterLinks> getLinks() {
         return links;
     }
@@ -640,9 +665,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群模式：sharding(分片集群)
-     * 
-     * @return clusterMode */
+    /**
+     * 集群模式：sharding(分片集群)
+     * @return clusterMode
+     */
     public String getClusterMode() {
         return clusterMode;
     }
@@ -665,9 +691,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get task
-     * 
-     * @return task */
+    /**
+     * Get task
+     * @return task
+     */
     public ClusterTask getTask() {
         return task;
     }
@@ -681,9 +708,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return created */
+    /**
+     * 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -697,9 +725,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群状态描述：Normal（正常）
-     * 
-     * @return statusDetail */
+    /**
+     * 集群状态描述：Normal（正常）
+     * @return statusDetail
+     */
     public String getStatusDetail() {
         return statusDetail;
     }
@@ -713,9 +742,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群配置状态： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败
-     * 
-     * @return configStatus */
+    /**
+     * 集群配置状态： - In-Sync：配置已同步。 - Applying：配置中。 - Sync-Failure：配置失败
+     * @return configStatus
+     */
     public String getConfigStatus() {
         return configStatus;
     }
@@ -738,9 +768,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -754,9 +785,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return name */
+    /**
+     * 集群名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -770,9 +802,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return id */
+    /**
+     * 集群ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -786,9 +819,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群是否冻结：0：否1：是
-     * 
-     * @return isFrozen */
+    /**
+     * 集群是否冻结：0：否1：是
+     * @return isFrozen
+     */
     public String getIsFrozen() {
         return isFrozen;
     }
@@ -818,9 +852,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群配置状态：In-Sync：配置已同步。Applying：配置中。Sync-Failure：配置失败
-     * 
-     * @return actions */
+    /**
+     * 集群配置状态：In-Sync：配置已同步。Applying：配置中。Sync-Failure：配置失败
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -834,9 +869,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群更新时间，格式为 ISO8601：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return updated */
+    /**
+     * 集群更新时间，格式为 ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -850,9 +886,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
-     * 
-     * @return status */
+    /**
+     * 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -989,7 +1026,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

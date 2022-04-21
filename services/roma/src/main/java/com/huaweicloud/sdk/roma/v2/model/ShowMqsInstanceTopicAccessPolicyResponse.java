@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,9 +80,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略列表。
-     * 
-     * @return policies */
+    /**
+     * 策略列表。
+     * @return policies
+     */
     public List<ShowMqsInstanceTopicAccessPolicyRespPolicies> getPolicies() {
         return policies;
     }
@@ -93,9 +97,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 权限策略的总数。
-     * 
-     * @return total */
+    /**
+     * 权限策略的总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -109,9 +114,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询权限策略的数量。
-     * 
-     * @return size */
+    /**
+     * 查询权限策略的数量。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -125,9 +131,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return operation */
+    /**
+     * topic名称。
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -171,7 +178,10 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Jobs */
+/**
+ * Jobs
+ */
 public class Jobs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,9 +81,10 @@ public class Jobs {
         return this;
     }
 
-    /** 类别。
-     * 
-     * @return category */
+    /**
+     * 类别。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -95,9 +98,10 @@ public class Jobs {
         return this;
     }
 
-    /** 配置信息。
-     * 
-     * @return configInfo */
+    /**
+     * 配置信息。
+     * @return configInfo
+     */
     public String getConfigInfo() {
         return configInfo;
     }
@@ -111,9 +115,10 @@ public class Jobs {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -127,9 +132,10 @@ public class Jobs {
         return this;
     }
 
-    /** 作业id。
-     * 
-     * @return jobId */
+    /**
+     * 作业id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -143,9 +149,10 @@ public class Jobs {
         return this;
     }
 
-    /** 作业名称。
-     * 
-     * @return jobName */
+    /**
+     * 作业名称。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -159,9 +166,10 @@ public class Jobs {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -175,9 +183,10 @@ public class Jobs {
         return this;
     }
 
-    /** 下次调度时间。
-     * 
-     * @return nextScheduleTime */
+    /**
+     * 下次调度时间。
+     * @return nextScheduleTime
+     */
     public Integer getNextScheduleTime() {
         return nextScheduleTime;
     }
@@ -191,9 +200,10 @@ public class Jobs {
         return this;
     }
 
-    /** 平台。
-     * 
-     * @return platform */
+    /**
+     * 平台。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -207,9 +217,10 @@ public class Jobs {
         return this;
     }
 
-    /** 资源id。
-     * 
-     * @return resourceId */
+    /**
+     * 资源id。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -223,9 +234,10 @@ public class Jobs {
         return this;
     }
 
-    /** 调度参数。
-     * 
-     * @return schedule */
+    /**
+     * 调度参数。
+     * @return schedule
+     */
     public String getSchedule() {
         return schedule;
     }
@@ -239,9 +251,10 @@ public class Jobs {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -255,9 +268,10 @@ public class Jobs {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -280,9 +294,10 @@ public class Jobs {
         return this;
     }
 
-    /** Get jobConfig
-     * 
-     * @return jobConfig */
+    /**
+     * Get jobConfig
+     * @return jobConfig
+     */
     public JobConfig getJobConfig() {
         return jobConfig;
     }
@@ -347,7 +362,10 @@ public class Jobs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

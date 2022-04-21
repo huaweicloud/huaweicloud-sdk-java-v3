@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建自定义告警模板请求参数。 */
+/**
+ * 创建自定义告警模板请求参数。
+ */
 public class CreateAlarmTemplateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreateAlarmTemplateRequestBody {
         return this;
     }
 
-    /** 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字，长度为1-128。。
-     * 
-     * @return templateName */
+    /**
+     * 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字，长度为1-128。。
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -57,9 +60,10 @@ public class CreateAlarmTemplateRequestBody {
         return this;
     }
 
-    /** 自定义告警模板详细描述，长度为0-256。
-     * 
-     * @return templateDescription */
+    /**
+     * 自定义告警模板详细描述，长度为0-256。
+     * @return templateDescription
+     */
     public String getTemplateDescription() {
         return templateDescription;
     }
@@ -73,9 +77,10 @@ public class CreateAlarmTemplateRequestBody {
         return this;
     }
 
-    /** 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return namespace */
+    /**
+     * 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -89,9 +94,10 @@ public class CreateAlarmTemplateRequestBody {
         return this;
     }
 
-    /** 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dimensionName */
+    /**
+     * 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dimensionName
+     */
     public String getDimensionName() {
         return dimensionName;
     }
@@ -121,9 +127,10 @@ public class CreateAlarmTemplateRequestBody {
         return this;
     }
 
-    /** 创建自定义告警模板添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
-     * 
-     * @return templateItems */
+    /**
+     * 创建自定义告警模板添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
+     * @return templateItems
+     */
     public List<TemplateItem> getTemplateItems() {
         return templateItems;
     }
@@ -166,7 +173,10 @@ public class CreateAlarmTemplateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListWhitelistsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,12 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 分页查询中每页的白名单个数 minimum: 0 maximum: -1
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的白名单个数
+     * minimum: 0
+     * maximum: -1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -64,9 +69,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的白名单的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的白名单的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -80,9 +86,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -96,9 +103,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 白名单ID。
-     * 
-     * @return id */
+    /**
+     * 白名单ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -112,9 +120,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 是否开启访问控制开关。true：打开false：关闭
-     * 
-     * @return enableWhitelist */
+    /**
+     * 是否开启访问控制开关。true：打开false：关闭
+     * @return enableWhitelist
+     */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -128,9 +137,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 白名单关联的监听器ID。
-     * 
-     * @return listenerId */
+    /**
+     * 白名单关联的监听器ID。
+     * @return listenerId
+     */
     public String getListenerId() {
         return listenerId;
     }
@@ -144,9 +154,10 @@ public class ListWhitelistsRequest {
         return this;
     }
 
-    /** 白名单IP的字符串。
-     * 
-     * @return whitelist */
+    /**
+     * 白名单IP的字符串。
+     * @return whitelist
+     */
     public String getWhitelist() {
         return whitelist;
     }
@@ -193,7 +204,10 @@ public class ListWhitelistsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

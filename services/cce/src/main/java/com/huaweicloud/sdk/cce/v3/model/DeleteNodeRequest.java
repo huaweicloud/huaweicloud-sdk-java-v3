@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,14 @@ public class DeleteNodeRequest {
 
     private String nodeId;
 
-    /** 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数 */
+    /**
+     * 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
+     */
     public static final class NodepoolScaleDownEnum {
 
-        /** Enum NOSCALEDOWN for value: "NoScaleDown" */
+        /**
+         * Enum NOSCALEDOWN for value: "NoScaleDown"
+         */
         public static final NodepoolScaleDownEnum NOSCALEDOWN = new NodepoolScaleDownEnum("NoScaleDown");
 
         private static final Map<String, NodepoolScaleDownEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +106,10 @@ public class DeleteNodeRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -116,9 +123,10 @@ public class DeleteNodeRequest {
         return this;
     }
 
-    /** 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -132,9 +140,10 @@ public class DeleteNodeRequest {
         return this;
     }
 
-    /** 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
-     * 
-     * @return nodepoolScaleDown */
+    /**
+     * 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
+     * @return nodepoolScaleDown
+     */
     public NodepoolScaleDownEnum getNodepoolScaleDown() {
         return nodepoolScaleDown;
     }
@@ -173,7 +182,10 @@ public class DeleteNodeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

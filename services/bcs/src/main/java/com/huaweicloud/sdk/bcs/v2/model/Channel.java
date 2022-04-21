@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Channel */
+/**
+ * Channel
+ */
 public class Channel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class Channel {
         return this;
     }
 
-    /** 通道名
-     * 
-     * @return name */
+    /**
+     * 通道名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -63,9 +66,10 @@ public class Channel {
         return this;
     }
 
-    /** 通道细节描述
-     * 
-     * @return description */
+    /**
+     * 通道细节描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -79,9 +83,10 @@ public class Channel {
         return this;
     }
 
-    /** 通道创建时间
-     * 
-     * @return createTime */
+    /**
+     * 通道创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -95,9 +100,10 @@ public class Channel {
         return this;
     }
 
-    /** 共识策略
-     * 
-     * @return consensus */
+    /**
+     * 共识策略
+     * @return consensus
+     */
     public String getConsensus() {
         return consensus;
     }
@@ -127,9 +133,10 @@ public class Channel {
         return this;
     }
 
-    /** key:组织名，value:节点名称列表
-     * 
-     * @return peers */
+    /**
+     * key:组织名，value:节点名称列表
+     * @return peers
+     */
     public Map<String, List<String>> getPeers() {
         return peers;
     }
@@ -159,9 +166,10 @@ public class Channel {
         return this;
     }
 
-    /** key:组织名，value:节点名称列表
-     * 
-     * @return consensusNodes */
+    /**
+     * key:组织名，value:节点名称列表
+     * @return consensusNodes
+     */
     public Map<String, List<String>> getConsensusNodes() {
         return consensusNodes;
     }
@@ -203,7 +211,10 @@ public class Channel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

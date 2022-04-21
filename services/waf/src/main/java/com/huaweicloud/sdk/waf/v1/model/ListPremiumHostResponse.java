@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPremiumHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListPremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 全部防护域名的数量
-     * 
-     * @return total */
+    /**
+     * 全部防护域名的数量
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +62,10 @@ public class ListPremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 详细的防护域名信息
-     * 
-     * @return items */
+    /**
+     * 详细的防护域名信息
+     * @return items
+     */
     public List<SimplePremiumWafHost> getItems() {
         return items;
     }
@@ -98,7 +102,10 @@ public class ListPremiumHostResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

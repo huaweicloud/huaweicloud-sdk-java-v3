@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 上报设备告警消息结构 */
+/**
+ * 上报设备告警消息结构
+ */
 public class ActionDeviceAlarm {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ActionDeviceAlarm {
         return this;
     }
 
-    /** **参数说明**：告警名称。
-     * 
-     * @return name */
+    /**
+     * **参数说明**：告警名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class ActionDeviceAlarm {
         return this;
     }
 
-    /** **参数说明**：告警状态。 **取值范围**： - fault：上报告警。 - recovery：恢复告警。
-     * 
-     * @return alarmStatus */
+    /**
+     * **参数说明**：告警状态。 **取值范围**： - fault：上报告警。 - recovery：恢复告警。
+     * @return alarmStatus
+     */
     public String getAlarmStatus() {
         return alarmStatus;
     }
@@ -65,9 +69,10 @@ public class ActionDeviceAlarm {
         return this;
     }
 
-    /** **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
-     * 
-     * @return severity */
+    /**
+     * **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
+     * @return severity
+     */
     public String getSeverity() {
         return severity;
     }
@@ -81,9 +86,10 @@ public class ActionDeviceAlarm {
         return this;
     }
 
-    /** **参数说明**：告警的描述信息。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：告警的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -124,7 +130,10 @@ public class ActionDeviceAlarm {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建安全组规则参数 */
+/**
+ * 创建安全组规则参数
+ */
 public class CreateSecurityGroupRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CreateSecurityGroupRuleOption {
 
     private String securityGroupId;
 
-    /** 出入控制方向。 取值范围： - egress：出方向 - ingress：入方向 */
+    /**
+     * 出入控制方向。  取值范围：  - egress：出方向  - ingress：入方向
+     */
     public static final class DirectionEnum {
 
-        /** Enum INGRESS for value: "ingress" */
+        /**
+         * Enum INGRESS for value: "ingress"
+         */
         public static final DirectionEnum INGRESS = new DirectionEnum("ingress");
 
-        /** Enum EGRESS for value: "egress" */
+        /**
+         * Enum EGRESS for value: "egress"
+         */
         public static final DirectionEnum EGRESS = new DirectionEnum("egress");
 
         private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -99,10 +107,14 @@ public class CreateSecurityGroupRuleOption {
 
     private DirectionEnum direction;
 
-    /** IP协议类型。 取值范围：IPv4[,IPv6](tag:hide) */
+    /**
+     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
+     */
     public static final class EthertypeEnum {
 
-        /** Enum IPV4 for value: "IPv4" */
+        /**
+         * Enum IPV4 for value: "IPv4"
+         */
         public static final EthertypeEnum IPV4 = new EthertypeEnum("IPv4");
 
         private static final Map<String, EthertypeEnum> STATIC_FIELDS = createStaticFields();
@@ -211,9 +223,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 安全组规则描述信息。
-     * 
-     * @return description */
+    /**
+     * 安全组规则描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -227,9 +240,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -243,9 +257,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 出入控制方向。 取值范围： - egress：出方向 - ingress：入方向
-     * 
-     * @return direction */
+    /**
+     * 出入控制方向。  取值范围：  - egress：出方向  - ingress：入方向
+     * @return direction
+     */
     public DirectionEnum getDirection() {
         return direction;
     }
@@ -259,9 +274,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** IP协议类型。 取值范围：IPv4[,IPv6](tag:hide)
-     * 
-     * @return ethertype */
+    /**
+     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
+     * @return ethertype
+     */
     public EthertypeEnum getEthertype() {
         return ethertype;
     }
@@ -275,9 +291,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 协议类型。 取值范围：icmp、tcp、udp等 约束：为空表示支持所有协议
-     * 
-     * @return protocol */
+    /**
+     * 协议类型。  取值范围：icmp、tcp、udp等  约束：为空表示支持所有协议
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -291,9 +308,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 起始端口值。 取值范围：1~65535 约束：取值不能大于port_range_max的值，为空表示所有端口。
-     * 
-     * @return portRangeMin */
+    /**
+     * 起始端口值。  取值范围：1~65535  约束：取值不能大于port_range_max的值，为空表示所有端口。 
+     * @return portRangeMin
+     */
     public Integer getPortRangeMin() {
         return portRangeMin;
     }
@@ -307,9 +325,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 结束端口值。 取值范围：1~65535 约束：取值不能小于port_range_min的值，为空表示所有端口。
-     * 
-     * @return portRangeMax */
+    /**
+     * 结束端口值。  取值范围：1~65535  约束：取值不能小于port_range_min的值，为空表示所有端口。 
+     * @return portRangeMax
+     */
     public Integer getPortRangeMax() {
         return portRangeMax;
     }
@@ -323,9 +342,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 对端安全组id。 约束：和remote_ip_prefix互斥
-     * 
-     * @return remoteGroupId */
+    /**
+     * 对端安全组id。  约束：和remote_ip_prefix互斥 
+     * @return remoteGroupId
+     */
     public String getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -339,9 +359,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址。 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
-     * 
-     * @return remoteIpPrefix */
+    /**
+     * 远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址。  取值范围：IP地址，或者cidr格式  约束：和remote_group_id互斥
+     * @return remoteIpPrefix
+     */
     public String getRemoteIpPrefix() {
         return remoteIpPrefix;
     }
@@ -355,9 +376,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 安全组规则生效策略 取值范围：allow 允许，deny 拒绝 约束：默认值为allow
-     * 
-     * @return action */
+    /**
+     * 安全组规则生效策略 取值范围：allow 允许，deny 拒绝  约束：默认值为allow
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -371,9 +393,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 规则在安全组中的优先级 取值范围：1~100，1代表最高优先级 约束：默认值为1
-     * 
-     * @return priority */
+    /**
+     * 规则在安全组中的优先级  取值范围：1~100，1代表最高优先级  约束：默认值为1
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -438,7 +461,10 @@ public class CreateSecurityGroupRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

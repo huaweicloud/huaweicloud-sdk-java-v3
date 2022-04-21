@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowStructTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 结构化字段
-     * 
-     * @return demoFields */
+    /**
+     * 结构化字段
+     * @return demoFields
+     */
     public List<StructFieldInfoReturn> getDemoFields() {
         return demoFields;
     }
@@ -125,9 +128,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词详细信息
-     * 
-     * @return tagFields */
+    /**
+     * 关键词详细信息
+     * @return tagFields
+     */
     public List<TagFieldsInfo> getTagFields() {
         return tagFields;
     }
@@ -141,9 +145,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 示例日志
-     * 
-     * @return demoLog */
+    /**
+     * 示例日志
+     * @return demoLog
+     */
     public String getDemoLog() {
         return demoLog;
     }
@@ -157,9 +162,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return demoLabel */
+    /**
+     * 测试
+     * @return demoLabel
+     */
     public String getDemoLabel() {
         return demoLabel;
     }
@@ -173,9 +179,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -189,9 +196,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -214,9 +222,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** Get rule
-     * 
-     * @return rule */
+    /**
+     * Get rule
+     * @return rule
+     */
     public ShowStructTemplateRule getRule() {
         return rule;
     }
@@ -239,9 +248,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** Get clusterInfo
-     * 
-     * @return clusterInfo */
+    /**
+     * Get clusterInfo
+     * @return clusterInfo
+     */
     public ShowStructTemplateclusterInfo getClusterInfo() {
         return clusterInfo;
     }
@@ -255,9 +265,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -271,9 +282,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -287,9 +299,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return templateName */
+    /**
+     * 测试
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -303,9 +316,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 为了兼容前台数据格式
-     * 
-     * @return regex */
+    /**
+     * 为了兼容前台数据格式
+     * @return regex
+     */
     public String getRegex() {
         return regex;
     }
@@ -373,7 +387,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDomainItemLocationDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -64,9 +67,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 查询开始时间戳，必须设为5分钟整时刻点
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间戳，必须设为5分钟整时刻点
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -80,9 +84,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 查询结束时间戳，必须设为5分钟整时刻点
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间戳，必须设为5分钟整时刻点
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -96,9 +101,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com，all表示查询名下全部域名
-     * 
-     * @return domainName */
+    /**
+     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com，all表示查询名下全部域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -112,11 +118,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 指标类型列表 网络资源消耗：bw（带宽），flux（流量），ipv6_bw(ipv6带宽)，ipv6_flux(ipv6流量), https_bw(https带宽)，https_flux(https流量)
-     * 访问情况：req_num（请求总数），hit_num（请求命中次数），req_time(请求时长)
-     * HTTP状态码（组合指标）：status_code_2xx(状态码2xx)，status_code_3xx(状态码3xx)，status_code_4xx(状态码4xx)，status_code_5xx(状态码5xx)
-     * 
-     * @return statType */
+    /**
+     * 指标类型列表 网络资源消耗：bw（带宽），flux（流量），ipv6_bw(ipv6带宽)，ipv6_flux(ipv6流量), https_bw(https带宽)，https_flux(https流量) 访问情况：req_num（请求总数），hit_num（请求命中次数），req_time(请求时长) HTTP状态码（组合指标）：status_code_2xx(状态码2xx)，status_code_3xx(状态码3xx)，status_code_4xx(状态码4xx)，status_code_5xx(状态码5xx)
+     * @return statType
+     */
     public String getStatType() {
         return statType;
     }
@@ -130,9 +135,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 区域列表，以逗号分隔，all表示查询全部区域
-     * 
-     * @return region */
+    /**
+     * 区域列表，以逗号分隔，all表示查询全部区域
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -146,9 +152,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return this;
     }
 
-    /** 运营商列表，以逗号分隔，all表示查询全部运营商
-     * 
-     * @return isp */
+    /**
+     * 运营商列表，以逗号分隔，all表示查询全部运营商
+     * @return isp
+     */
     public String getIsp() {
         return isp;
     }
@@ -196,7 +203,10 @@ public class ShowDomainItemLocationDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DevstarRepoInfo */
+/**
+ * DevstarRepoInfo
+ */
 public class DevstarRepoInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库的uuid
-     * 
-     * @return uuid */
+    /**
+     * 仓库的uuid
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -59,9 +62,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库ID
-     * 
-     * @return repoId */
+    /**
+     * 仓库ID
+     * @return repoId
+     */
     public String getRepoId() {
         return repoId;
     }
@@ -75,9 +79,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return repoName */
+    /**
+     * 仓库名称
+     * @return repoName
+     */
     public String getRepoName() {
         return repoName;
     }
@@ -91,9 +96,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库SSH地址
-     * 
-     * @return sshUrl */
+    /**
+     * 仓库SSH地址
+     * @return sshUrl
+     */
     public String getSshUrl() {
         return sshUrl;
     }
@@ -107,9 +113,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库HTTPS地址
-     * 
-     * @return codeUrl */
+    /**
+     * 仓库HTTPS地址
+     * @return codeUrl
+     */
     public String getCodeUrl() {
         return codeUrl;
     }
@@ -123,9 +130,10 @@ public class DevstarRepoInfo {
         return this;
     }
 
-    /** 仓库预览地址
-     * 
-     * @return detailUrl */
+    /**
+     * 仓库预览地址
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -169,7 +177,10 @@ public class DevstarRepoInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowIpInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowIpInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** IP归属信息列表。
-     * 
-     * @return cdnIps */
+    /**
+     * IP归属信息列表。
+     * @return cdnIps
+     */
     public List<CdnIps> getCdnIps() {
         return cdnIps;
     }
@@ -75,7 +78,10 @@ public class ShowIpInfoResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

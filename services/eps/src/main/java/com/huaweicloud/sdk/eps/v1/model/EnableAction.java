@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 停用启用企业项目操作 */
+/**
+ * 停用启用企业项目操作
+ */
 public class EnableAction {
 
-    /** 启用操作 */
+    /**
+     * 启用操作
+     */
     public static final class ActionEnum {
 
-        /** Enum ENABLE for value: "enable" */
+        /**
+         * Enum ENABLE for value: "enable"
+         */
         public static final ActionEnum ENABLE = new ActionEnum("enable");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class EnableAction {
         return this;
     }
 
-    /** 启用操作
-     * 
-     * @return action */
+    /**
+     * 启用操作
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -127,7 +134,10 @@ public class EnableAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

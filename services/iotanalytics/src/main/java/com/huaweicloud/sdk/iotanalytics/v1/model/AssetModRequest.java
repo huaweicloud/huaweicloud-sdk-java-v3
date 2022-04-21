@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AssetModRequest */
+/**
+ * AssetModRequest
+ */
 public class AssetModRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class AssetModRequest {
         return this;
     }
 
-    /** 资产名称，修改资产时，null或不携带代表不修改，正则：\"^[a-zA-Z][a-zA-Z0-9_-]{0,63}$\"
-     * 
-     * @return name */
+    /**
+     * 资产名称，修改资产时，null或不携带代表不修改，正则：\"^[a-zA-Z][a-zA-Z0-9_-]{0,63}$\"
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,9 +60,10 @@ public class AssetModRequest {
         return this;
     }
 
-    /** 资产显示名称，修改资产时，\"\"代表配置为空、null或不携带代表不修改，正则：\"^[\\\\u4E00-\\\\u9FA5A-Za-z0-9_@#.-]{0,64}$\"
-     * 
-     * @return displayName */
+    /**
+     * 资产显示名称，修改资产时，\"\"代表配置为空、null或不携带代表不修改，正则：\"^[\\\\u4E00-\\\\u9FA5A-Za-z0-9_@#.-]{0,64}$\"
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -73,9 +77,10 @@ public class AssetModRequest {
         return this;
     }
 
-    /** 父资产ID，根资产的父资产ID为null，修改资产时，null或不携带代表不修改
-     * 
-     * @return parent */
+    /**
+     * 父资产ID，根资产的父资产ID为null，修改资产时，null或不携带代表不修改
+     * @return parent
+     */
     public String getParent() {
         return parent;
     }
@@ -105,9 +110,10 @@ public class AssetModRequest {
         return this;
     }
 
-    /** 属性集，最多200个
-     * 
-     * @return properties */
+    /**
+     * 属性集，最多200个
+     * @return properties
+     */
     public List<PropertyRequest> getProperties() {
         return properties;
     }
@@ -137,9 +143,10 @@ public class AssetModRequest {
         return this;
     }
 
-    /** 分析任务集，最多50个
-     * 
-     * @return analyses */
+    /**
+     * 分析任务集，最多50个
+     * @return analyses
+     */
     public List<AnalysisRequest> getAnalyses() {
         return analyses;
     }
@@ -182,7 +189,10 @@ public class AssetModRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新负载均衡器的请求体 */
+/**
+ * 更新负载均衡器的请求体
+ */
 public class UpdateLoadbalancerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class UpdateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的描述信息
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class UpdateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -101,7 +106,10 @@ public class UpdateLoadbalancerReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

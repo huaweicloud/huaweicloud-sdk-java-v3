@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSsoConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -104,9 +106,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启SSO登录
-     * 
-     * @return enableSSO */
+    /**
+     * 是否开启SSO登录
+     * @return enableSSO
+     */
     public Boolean getEnableSSO() {
         return enableSSO;
     }
@@ -120,9 +123,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业域名
-     * 
-     * @return domain */
+    /**
+     * 企业域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -136,9 +140,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Oauth2授权地址
-     * 
-     * @return authorizeUrl */
+    /**
+     * Oauth2授权地址
+     * @return authorizeUrl
+     */
     public String getAuthorizeUrl() {
         return authorizeUrl;
     }
@@ -152,9 +157,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取Token URL
-     * 
-     * @return getTokenUrl */
+    /**
+     * 获取Token URL
+     * @return getTokenUrl
+     */
     public String getGetTokenUrl() {
         return getTokenUrl;
     }
@@ -168,9 +174,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** APPID
-     * 
-     * @return clientId */
+    /**
+     * APPID
+     * @return clientId
+     */
     public String getClientId() {
         return clientId;
     }
@@ -184,9 +191,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** APP秘钥
-     * 
-     * @return clientSecret */
+    /**
+     * APP秘钥
+     * @return clientSecret
+     */
     public String getClientSecret() {
         return clientSecret;
     }
@@ -200,9 +208,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权范围，OAuth2.0的OIDC取值为“openid”
-     * 
-     * @return scope */
+    /**
+     * 授权范围，OAuth2.0的OIDC取值为“openid”
+     * @return scope
+     */
     public String getScope() {
         return scope;
     }
@@ -216,9 +225,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方账号的字段名称
-     * 
-     * @return accFieldName */
+    /**
+     * 第三方账号的字段名称
+     * @return accFieldName
+     */
     public String getAccFieldName() {
         return accFieldName;
     }
@@ -232,9 +242,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户信息查询URL
-     * 
-     * @return getUserInfoUrl */
+    /**
+     * 用户信息查询URL
+     * @return getUserInfoUrl
+     */
     public String getGetUserInfoUrl() {
         return getUserInfoUrl;
     }
@@ -248,9 +259,12 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 鉴权类型。OAuth2.0鉴权时取0 minimum: 0 maximum: 255
-     * 
-     * @return oauth2ServerType */
+    /**
+     * 鉴权类型。OAuth2.0鉴权时取0
+     * minimum: 0
+     * maximum: 255
+     * @return oauth2ServerType
+     */
     public Integer getOauth2ServerType() {
         return oauth2ServerType;
     }
@@ -264,9 +278,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 拉起PC端终端的schema
-     * 
-     * @return pcSchemaUrl */
+    /**
+     * 拉起PC端终端的schema
+     * @return pcSchemaUrl
+     */
     public String getPcSchemaUrl() {
         return pcSchemaUrl;
     }
@@ -280,9 +295,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 拉起安卓端终端的schema
-     * 
-     * @return androidSchemaUrl */
+    /**
+     * 拉起安卓端终端的schema
+     * @return androidSchemaUrl
+     */
     public String getAndroidSchemaUrl() {
         return androidSchemaUrl;
     }
@@ -296,9 +312,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 拉起ios端终端的schema
-     * 
-     * @return iosSchemaUrl */
+    /**
+     * 拉起ios端终端的schema
+     * @return iosSchemaUrl
+     */
     public String getIosSchemaUrl() {
         return iosSchemaUrl;
     }
@@ -312,9 +329,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方姓名的字段名称
-     * 
-     * @return thirdName */
+    /**
+     * 第三方姓名的字段名称
+     * @return thirdName
+     */
     public String getThirdName() {
         return thirdName;
     }
@@ -328,9 +346,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方邮箱的字段名称
-     * 
-     * @return thirdEmail */
+    /**
+     * 第三方邮箱的字段名称
+     * @return thirdEmail
+     */
     public String getThirdEmail() {
         return thirdEmail;
     }
@@ -344,9 +363,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方手机号的字段名称
-     * 
-     * @return thirdMobile */
+    /**
+     * 第三方手机号的字段名称
+     * @return thirdMobile
+     */
     public String getThirdMobile() {
         return thirdMobile;
     }
@@ -360,9 +380,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方accessToken的字段名称
-     * 
-     * @return thirdAccessToken */
+    /**
+     * 第三方accessToken的字段名称
+     * @return thirdAccessToken
+     */
     public String getThirdAccessToken() {
         return thirdAccessToken;
     }
@@ -376,9 +397,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方头像链接的字段名称
-     * 
-     * @return thirdHeadImgUrl */
+    /**
+     * 第三方头像链接的字段名称
+     * @return thirdHeadImgUrl
+     */
     public String getThirdHeadImgUrl() {
         return thirdHeadImgUrl;
     }
@@ -464,7 +486,10 @@ public class ShowSsoConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

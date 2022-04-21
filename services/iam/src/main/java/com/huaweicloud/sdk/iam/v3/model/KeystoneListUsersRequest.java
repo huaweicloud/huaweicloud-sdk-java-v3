@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneListUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class KeystoneListUsersRequest {
         return this;
     }
 
-    /** IAM用户所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * IAM用户所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -49,9 +52,10 @@ public class KeystoneListUsersRequest {
         return this;
     }
 
-    /** 是否启IAM用户，true为启用，false为停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * 是否启IAM用户，true为启用，false为停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -65,9 +69,10 @@ public class KeystoneListUsersRequest {
         return this;
     }
 
-    /** IAM用户名。
-     * 
-     * @return name */
+    /**
+     * IAM用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,12 +86,10 @@ public class KeystoneListUsersRequest {
         return this;
     }
 
-    /** 密码过期时间，格式为：password_expires_at={operator}:{timestamp}。timestamp格式为：YYYY-MM-DDTHH:mm:ssZ。示例： ```
-     * password_expires_at=lt:2016-12-08T22:02:00Z ``` > - operator取值范围：lt，lte，gt，gte，eq，neq。 > - lt：过期时间小于timestamp。 >
-     * - lte：过期时间小于等于timestamp。 > - gt：过期时间大于timestamp。 > - gte：过期时间大于等于timestamp。 > - eq：过期时间等于timestamp。 > -
-     * neq：过期时间不等于timestamp。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 密码过期时间，格式为：password_expires_at={operator}:{timestamp}。timestamp格式为：YYYY-MM-DDTHH:mm:ssZ。示例：  ``` password_expires_at=lt:2016-12-08T22:02:00Z ``` > - operator取值范围：lt，lte，gt，gte，eq，neq。 > - lt：过期时间小于timestamp。 > - lte：过期时间小于等于timestamp。 > - gt：过期时间大于timestamp。 > - gte：过期时间大于等于timestamp。 > - eq：过期时间等于timestamp。 > - neq：过期时间不等于timestamp。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -127,7 +130,10 @@ public class KeystoneListUsersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

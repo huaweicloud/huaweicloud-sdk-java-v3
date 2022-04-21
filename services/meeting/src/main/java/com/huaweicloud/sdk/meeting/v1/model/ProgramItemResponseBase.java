@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节目素材信息响应 */
+/**
+ * 节目素材信息响应
+ */
 public class ProgramItemResponseBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ProgramItemResponseBase {
         return this;
     }
 
-    /** 素材ID
-     * 
-     * @return materialId */
+    /**
+     * 素材ID
+     * @return materialId
+     */
     public String getMaterialId() {
         return materialId;
     }
@@ -49,9 +52,10 @@ public class ProgramItemResponseBase {
         return this;
     }
 
-    /** 素材名称
-     * 
-     * @return materialName */
+    /**
+     * 素材名称
+     * @return materialName
+     */
     public String getMaterialName() {
         return materialName;
     }
@@ -65,9 +69,10 @@ public class ProgramItemResponseBase {
         return this;
     }
 
-    /** 素材云盘文件下载路径
-     * 
-     * @return filePath */
+    /**
+     * 素材云盘文件下载路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -81,9 +86,10 @@ public class ProgramItemResponseBase {
         return this;
     }
 
-    /** 播放时长
-     * 
-     * @return playTime */
+    /**
+     * 播放时长
+     * @return playTime
+     */
     public Integer getPlayTime() {
         return playTime;
     }
@@ -124,7 +130,10 @@ public class ProgramItemResponseBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TrackerResponseBody */
+/**
+ * TrackerResponseBody
+ */
 public class TrackerResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,13 +41,19 @@ public class TrackerResponseBody {
 
     private Lts lts;
 
-    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。 */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
+     */
     public static final class TrackerTypeEnum {
 
-        /** Enum SYSTEM for value: "system" */
+        /**
+         * Enum SYSTEM for value: "system"
+         */
         public static final TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
 
-        /** Enum DATA for value: "data" */
+        /**
+         * Enum DATA for value: "data"
+         */
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
 
         private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -130,13 +138,19 @@ public class TrackerResponseBody {
 
     private String trackerName;
 
-    /** 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。 */
+    /**
+     * 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
+     */
     public static final class StatusEnum {
 
-        /** Enum ENABLED for value: "enabled" */
+        /**
+         * Enum ENABLED for value: "enabled"
+         */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
 
-        /** Enum DISABLED for value: "disabled" */
+        /**
+         * Enum DISABLED for value: "disabled"
+         */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -231,9 +245,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 追踪器唯一标识。
-     * 
-     * @return id */
+    /**
+     * 追踪器唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -247,9 +262,12 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 追踪器创建时间戳。 minimum: 946656000000 maximum: 4102416000000
-     * 
-     * @return createTime */
+    /**
+     * 追踪器创建时间戳。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -263,9 +281,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"和\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
-     * 
-     * @return kmsId */
+    /**
+     * 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"和\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
+     * @return kmsId
+     */
     public String getKmsId() {
         return kmsId;
     }
@@ -279,9 +298,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 是否打开事件文件校验。当前环境仅\"tracker_type\"参数值为\"system\"时支持该功能。
-     * 
-     * @return isSupportValidate */
+    /**
+     * 是否打开事件文件校验。当前环境仅\"tracker_type\"参数值为\"system\"时支持该功能。
+     * @return isSupportValidate
+     */
     public Boolean getIsSupportValidate() {
         return isSupportValidate;
     }
@@ -304,9 +324,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** Get lts
-     * 
-     * @return lts */
+    /**
+     * Get lts
+     * @return lts
+     */
     public Lts getLts() {
         return lts;
     }
@@ -320,9 +341,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
-     * 
-     * @return trackerType */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
+     * @return trackerType
+     */
     public TrackerTypeEnum getTrackerType() {
         return trackerType;
     }
@@ -336,9 +358,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
-     * 
-     * @return domainId */
+    /**
+     * 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -352,9 +375,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -368,9 +392,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 标识追踪器名称，当前版本默认为“system”。
-     * 
-     * @return trackerName */
+    /**
+     * 标识追踪器名称，当前版本默认为“system”。
+     * @return trackerName
+     */
     public String getTrackerName() {
         return trackerName;
     }
@@ -384,9 +409,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
-     * 
-     * @return status */
+    /**
+     * 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -400,9 +426,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 该参数仅在追踪器状态异常时返回，用于标识追踪器异常的原因，包括桶策略异常（bucketPolicyError），桶不存在（noBucket）和欠费或冻结（arrears）三种原因。
-     * 
-     * @return detail */
+    /**
+     * 该参数仅在追踪器状态异常时返回，用于标识追踪器异常的原因，包括桶策略异常（bucketPolicyError），桶不存在（noBucket）和欠费或冻结（arrears）三种原因。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -416,9 +443,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** 事件文件转储加密功能开关。 该参数必须与kms_id参数同时使用。 当前环境仅\"tracker_type\"参数值为\"system\"时支持该功能。
-     * 
-     * @return isSupportTraceFilesEncryption */
+    /**
+     * 事件文件转储加密功能开关。 该参数必须与kms_id参数同时使用。 当前环境仅\"tracker_type\"参数值为\"system\"时支持该功能。
+     * @return isSupportTraceFilesEncryption
+     */
     public Boolean getIsSupportTraceFilesEncryption() {
         return isSupportTraceFilesEncryption;
     }
@@ -441,9 +469,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** Get obsInfo
-     * 
-     * @return obsInfo */
+    /**
+     * Get obsInfo
+     * @return obsInfo
+     */
     public ObsInfo getObsInfo() {
         return obsInfo;
     }
@@ -466,9 +495,10 @@ public class TrackerResponseBody {
         return this;
     }
 
-    /** Get dataBucket
-     * 
-     * @return dataBucket */
+    /**
+     * Get dataBucket
+     * @return dataBucket
+     */
     public DataBucketQuery getDataBucket() {
         return dataBucket;
     }
@@ -544,7 +574,10 @@ public class TrackerResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

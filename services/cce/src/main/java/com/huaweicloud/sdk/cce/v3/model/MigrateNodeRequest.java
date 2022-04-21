@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class MigrateNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class MigrateNodeRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -45,9 +48,10 @@ public class MigrateNodeRequest {
         return this;
     }
 
-    /** 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return targetClusterId */
+    /**
+     * 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return targetClusterId
+     */
     public String getTargetClusterId() {
         return targetClusterId;
     }
@@ -70,9 +74,10 @@ public class MigrateNodeRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public MigrateNodesTask getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class MigrateNodeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

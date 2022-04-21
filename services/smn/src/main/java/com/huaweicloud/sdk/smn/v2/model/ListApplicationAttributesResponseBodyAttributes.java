@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListApplicationAttributesResponseBodyAttributes */
+/**
+ * ListApplicationAttributesResponseBodyAttributes
+ */
 public class ListApplicationAttributesResponseBodyAttributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListApplicationAttributesResponseBodyAttributes {
         return this;
     }
 
-    /** 应用平台是否启用。
-     * 
-     * @return enabled */
+    /**
+     * 应用平台是否启用。
+     * @return enabled
+     */
     public String getEnabled() {
         return enabled;
     }
@@ -40,9 +43,10 @@ public class ListApplicationAttributesResponseBodyAttributes {
         return this;
     }
 
-    /** 苹果证书过期时间，APNS、APNS_SANDBOX平台特有属性 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return appleCertificateExpirationDate */
+    /**
+     * 苹果证书过期时间，APNS、APNS_SANDBOX平台特有属性 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return appleCertificateExpirationDate
+     */
     public String getAppleCertificateExpirationDate() {
         return appleCertificateExpirationDate;
     }
@@ -83,7 +87,10 @@ public class ListApplicationAttributesResponseBodyAttributes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

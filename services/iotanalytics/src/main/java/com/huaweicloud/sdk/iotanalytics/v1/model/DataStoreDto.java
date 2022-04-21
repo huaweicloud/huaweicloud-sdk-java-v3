@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 存储信息 */
+/**
+ * 存储信息
+ */
 public class DataStoreDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DataStoreDto {
         return this;
     }
 
-    /** 存储ID
-     * 
-     * @return dataStoreId */
+    /**
+     * 存储ID
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -44,9 +47,10 @@ public class DataStoreDto {
         return this;
     }
 
-    /** 存储组ID
-     * 
-     * @return dataStoreGroupId */
+    /**
+     * 存储组ID
+     * @return dataStoreGroupId
+     */
     public String getDataStoreGroupId() {
         return dataStoreGroupId;
     }
@@ -60,9 +64,10 @@ public class DataStoreDto {
         return this;
     }
 
-    /** 产品ID
-     * 
-     * @return productId */
+    /**
+     * 产品ID
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -101,7 +106,10 @@ public class DataStoreDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VideoContrast */
+/**
+ * VideoContrast
+ */
 public class VideoContrast {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class VideoContrast {
         return this;
     }
 
-    /** 对比度算法名称\"hw-contrast\"。
-     * 
-     * @return name */
+    /**
+     * 对比度算法名称\"hw-contrast\"。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,12 @@ public class VideoContrast {
         return this;
     }
 
-    /** 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 minimum: 0 maximum: 2147483647
-     * 
-     * @return executionOrder */
+    /**
+     * 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return executionOrder
+     */
     public Integer getExecutionOrder() {
         return executionOrder;
     }
@@ -65,9 +71,10 @@ public class VideoContrast {
         return this;
     }
 
-    /** 对比度调节的程度， 值越大， 对比度越高。
-     * 
-     * @return contrast */
+    /**
+     * 对比度调节的程度， 值越大， 对比度越高。 
+     * @return contrast
+     */
     public String getContrast() {
         return contrast;
     }
@@ -81,9 +88,10 @@ public class VideoContrast {
         return this;
     }
 
-    /** 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。
-     * 
-     * @return brightness */
+    /**
+     * 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 
+     * @return brightness
+     */
     public String getBrightness() {
         return brightness;
     }
@@ -124,7 +132,10 @@ public class VideoContrast {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

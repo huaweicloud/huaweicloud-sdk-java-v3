@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListL7rulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,12 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 分页查询中每页的转发规则个数 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的转发规则个数
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -89,9 +94,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的转发规则的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的转发规则的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -105,9 +111,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -121,9 +128,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发策略id
-     * 
-     * @return l7policyId */
+    /**
+     * 转发策略id
+     * @return l7policyId
+     */
     public String getL7policyId() {
         return l7policyId;
     }
@@ -137,9 +145,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发规则ID。
-     * 
-     * @return id */
+    /**
+     * 转发规则ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -153,9 +162,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发规则的管理状态；取值范围： true/false。该字段为预留字段，暂未启用。默认为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发规则的管理状态；取值范围： true/false。该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -169,9 +179,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发规则的匹配类型。取值范围：HOST_NAME：匹配请求中的域名；PATH：匹配请求中的路径；同一个转发策略下转发规则的type不能重复。
-     * 
-     * @return type */
+    /**
+     * 转发规则的匹配类型。取值范围：HOST_NAME：匹配请求中的域名；PATH：匹配请求中的路径；同一个转发策略下转发规则的type不能重复。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -185,9 +196,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发匹配方式： type为HOST_NAME时，取值范围：EQUAL_TO：精确匹配； type为PATH时，取值范围：REGEX：正则匹配；STARTS_WITH：前缀匹配；EQUAL_TO：精确匹配。
-     * 
-     * @return compareType */
+    /**
+     * 转发匹配方式： type为HOST_NAME时，取值范围：EQUAL_TO：精确匹配； type为PATH时，取值范围：REGEX：正则匹配；STARTS_WITH：前缀匹配；EQUAL_TO：精确匹配。
+     * @return compareType
+     */
     public String getCompareType() {
         return compareType;
     }
@@ -201,9 +213,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
-     * 
-     * @return invert */
+    /**
+     * 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
+     * @return invert
+     */
     public Boolean getInvert() {
         return invert;
     }
@@ -217,9 +230,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 匹配内容的键值。默认为null。该字段为预留字段，暂未启用。
-     * 
-     * @return key */
+    /**
+     * 匹配内容的键值。默认为null。该字段为预留字段，暂未启用。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -233,10 +247,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 匹配内容的值。 当type为HOST_NAME时，取值范围：String (100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。 当type为PATH时，取值范围：String
-     * (128)。当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
-     * 
-     * @return value */
+    /**
+     * 匹配内容的值。 当type为HOST_NAME时，取值范围：String (100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。 当type为PATH时，取值范围：String (128)。当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -250,9 +264,10 @@ public class ListL7rulesRequest {
         return this;
     }
 
-    /** 转发规则的配置状态，可以为ACTIVE、PENDING_CREATE 或者ERROR。默认值：ACTIVE；该字段为预留字段，暂未启用。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 转发规则的配置状态，可以为ACTIVE、PENDING_CREATE 或者ERROR。默认值：ACTIVE；该字段为预留字段，暂未启用。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -319,7 +334,10 @@ public class ListL7rulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

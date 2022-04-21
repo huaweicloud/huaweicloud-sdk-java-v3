@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目工作项概览信息 */
+/**
+ * 项目工作项概览信息
+ */
 public class IssueCompletionRateResponseV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IssueCompletionRateResponseV4 {
         return this;
     }
 
-    /** Get issueStatus
-     * 
-     * @return issueStatus */
+    /**
+     * Get issueStatus
+     * @return issueStatus
+     */
     public IssueStatusResponseV4 getIssueStatus() {
         return issueStatus;
     }
@@ -49,9 +52,10 @@ public class IssueCompletionRateResponseV4 {
         return this;
     }
 
-    /** 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
-     * 
-     * @return trackerId */
+    /**
+     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * @return trackerId
+     */
     public Integer getTrackerId() {
         return trackerId;
     }
@@ -88,7 +92,10 @@ public class IssueCompletionRateResponseV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

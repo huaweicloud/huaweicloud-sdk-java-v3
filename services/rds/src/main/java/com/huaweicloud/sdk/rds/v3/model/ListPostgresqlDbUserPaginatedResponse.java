@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
         return this;
     }
 
-    /** 列表中每个元素表示一个数据库用户。
-     * 
-     * @return users */
+    /**
+     * 列表中每个元素表示一个数据库用户。
+     * @return users
+     */
     public List<PostgresqlUserForList> getUsers() {
         return users;
     }
@@ -59,9 +62,10 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库用户总数。
-     * 
-     * @return totalCount */
+    /**
+     * 数据库用户总数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -99,7 +103,10 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

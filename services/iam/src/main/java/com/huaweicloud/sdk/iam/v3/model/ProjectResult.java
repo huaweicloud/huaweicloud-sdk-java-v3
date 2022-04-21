@@ -56,9 +56,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** false.
-     * 
-     * @return isDomain */
+    /**
+     * false.
+     * @return isDomain
+     */
     public Boolean getIsDomain() {
         return isDomain;
     }
@@ -72,9 +73,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 项目描述信息。
-     * 
-     * @return description */
+    /**
+     * 项目描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -97,9 +99,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -113,9 +116,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 项目是否可用。
-     * 
-     * @return enabled */
+    /**
+     * 项目是否可用。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -129,9 +133,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return id */
+    /**
+     * 项目ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -145,9 +150,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 如果查询自己创建的项目，则此处返回所属区域的项目ID。 如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
-     * 
-     * @return parentId */
+    /**
+     * 如果查询自己创建的项目，则此处返回所属区域的项目ID。  如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -161,9 +167,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 项目所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 项目所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -177,9 +184,10 @@ public class ProjectResult {
         return this;
     }
 
-    /** 项目名称。
-     * 
-     * @return name */
+    /**
+     * 项目名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -225,7 +233,10 @@ public class ProjectResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

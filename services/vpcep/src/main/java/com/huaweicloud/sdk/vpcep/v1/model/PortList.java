@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 服务开放的端口映射列表 */
+/**
+ * 服务开放的端口映射列表
+ */
 public class PortList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,14 @@ public class PortList {
 
     private Integer serverPort;
 
-    /** 端口映射协议，支持TCP。 */
+    /**
+     * 端口映射协议，支持TCP。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +106,10 @@ public class PortList {
         return this;
     }
 
-    /** 终端节点访问的端口。 终端节点提供给用户，作为访问终端节 点服务的端口，范围1-65535。
-     * 
-     * @return clientPort */
+    /**
+     * 终端节点访问的端口。 终端节点提供给用户，作为访问终端节 点服务的端口，范围1-65535。
+     * @return clientPort
+     */
     public Integer getClientPort() {
         return clientPort;
     }
@@ -116,9 +123,10 @@ public class PortList {
         return this;
     }
 
-    /** 终端节点服务的端口。 终端节点服务绑定了后端资源，作为提 供服务的端口，范围1-65535。
-     * 
-     * @return serverPort */
+    /**
+     * 终端节点服务的端口。 终端节点服务绑定了后端资源，作为提 供服务的端口，范围1-65535。
+     * @return serverPort
+     */
     public Integer getServerPort() {
         return serverPort;
     }
@@ -132,9 +140,10 @@ public class PortList {
         return this;
     }
 
-    /** 端口映射协议，支持TCP。
-     * 
-     * @return protocol */
+    /**
+     * 端口映射协议，支持TCP。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -172,7 +181,10 @@ public class PortList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

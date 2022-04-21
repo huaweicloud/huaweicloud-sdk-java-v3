@@ -43,9 +43,10 @@ public class NearLineRecallParam {
         return this;
     }
 
-    /** 时间过滤。
-     * 
-     * @return timeLimit */
+    /**
+     * 时间过滤。
+     * @return timeLimit
+     */
     public Boolean getTimeLimit() {
         return timeLimit;
     }
@@ -59,9 +60,10 @@ public class NearLineRecallParam {
         return this;
     }
 
-    /** 时间特征。
-     * 
-     * @return timeFeature */
+    /**
+     * 时间特征。
+     * @return timeFeature
+     */
     public String getTimeFeature() {
         return timeFeature;
     }
@@ -75,9 +77,10 @@ public class NearLineRecallParam {
         return this;
     }
 
-    /** 保留期(天)。
-     * 
-     * @return retainDays */
+    /**
+     * 保留期(天)。
+     * @return retainDays
+     */
     public Integer getRetainDays() {
         return retainDays;
     }
@@ -107,9 +110,10 @@ public class NearLineRecallParam {
         return this;
     }
 
-    /** 召回字段。
-     * 
-     * @return recallFileds */
+    /**
+     * 召回字段。
+     * @return recallFileds
+     */
     public List<RecallFiled> getRecallFileds() {
         return recallFileds;
     }
@@ -123,9 +127,10 @@ public class NearLineRecallParam {
         return this;
     }
 
-    /** 物品协同过滤作业名称。
-     * 
-     * @return itemCFJobName */
+    /**
+     * 物品协同过滤作业名称。
+     * @return itemCFJobName
+     */
     public String getItemCFJobName() {
         return itemCFJobName;
     }
@@ -168,7 +173,10 @@ public class NearLineRecallParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

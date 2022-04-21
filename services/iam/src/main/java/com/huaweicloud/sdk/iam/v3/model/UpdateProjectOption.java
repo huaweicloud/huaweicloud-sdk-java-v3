@@ -15,14 +15,19 @@ import java.util.Objects;
  */
 public class UpdateProjectOption {
 
-    /** 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 -
-     * status值为\"normal\"时，会将项目设置为正常（解冻）状态。 */
+    /**
+     * 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 - status值为\"normal\"时，会将项目设置为正常（解冻）状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUSPENDED for value: "suspended" */
+        /**
+         * Enum SUSPENDED for value: "suspended"
+         */
         public static final StatusEnum SUSPENDED = new StatusEnum("suspended");
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final StatusEnum NORMAL = new StatusEnum("normal");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -97,10 +102,10 @@ public class UpdateProjectOption {
         return this;
     }
 
-    /** 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 -
-     * status值为\"normal\"时，会将项目设置为正常（解冻）状态。
-     * 
-     * @return status */
+    /**
+     * 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 - status值为\"normal\"时，会将项目设置为正常（解冻）状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -135,7 +140,10 @@ public class UpdateProjectOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群对象。 */
+/**
+ * 集群对象。
+ */
 public class CreateClusterBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 集群名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头。
-     * 
-     * @return name */
+    /**
+     * 集群名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -111,9 +114,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public CreateClusterBackupStrategyBody getBackupStrategy() {
         return backupStrategy;
     }
@@ -143,9 +147,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get roles
-     * 
-     * @return roles */
+    /**
+     * Get roles
+     * @return roles
+     */
     public List<CreateClusterRolesBody> getRoles() {
         return roles;
     }
@@ -168,9 +173,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get nics
-     * 
-     * @return nics */
+    /**
+     * Get nics
+     * @return nics
+     */
     public CreateClusterInstanceNicsBody getNics() {
         return nics;
     }
@@ -184,10 +190,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 企业项目ID。创建集群时，给集群绑定企业项目ID。最大长度36个字符，带\"-\"连字符的UUID格式，或者是字符串\"0\"。\"0\"表示默认企业项目。
-     * 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理服务用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。创建集群时，给集群绑定企业项目ID。最大长度36个字符，带\"-\"连字符的UUID格式，或者是字符串\"0\"。\"0\"表示默认企业项目。 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理服务用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -217,9 +223,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 集群标签。 关于标签特性的详细信息，请参见[《标签管理产品介绍》](https://support.huaweicloud.com/productdesc-tms/zh-cn_topic_0071335169.html)。
-     * 
-     * @return tags */
+    /**
+     * 集群标签。   关于标签特性的详细信息，请参见[《标签管理产品介绍》](https://support.huaweicloud.com/productdesc-tms/zh-cn_topic_0071335169.html)。
+     * @return tags
+     */
     public List<CreateClusterTagsBody> getTags() {
         return tags;
     }
@@ -233,9 +240,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -258,9 +266,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public CreateClusterDatastoreBody getDatastore() {
         return datastore;
     }
@@ -274,10 +283,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
-     * 此参数只有6.5.4及之后版本支持。
-     * 
-     * @return authorityEnable */
+    /**
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。  - true：表示集群开启认证。 - false：表示集群不开启认证。  此参数只有6.5.4及之后版本支持。
+     * @return authorityEnable
+     */
     public Boolean getAuthorityEnable() {
         return authorityEnable;
     }
@@ -291,10 +300,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 设置是否进行通信加密。取值范围为true或false。默认关闭通信加密功能。当httpsEnable设置为true时，authorityEnable字段需要设置为true。 - true：表示集群进行通信加密。 -
-     * false：表示集群不进行通信加密。 此参数只有6.5.4及之后版本支持。
-     * 
-     * @return httpsEnable */
+    /**
+     * 设置是否进行通信加密。取值范围为true或false。默认关闭通信加密功能。当httpsEnable设置为true时，authorityEnable字段需要设置为true。  - true：表示集群进行通信加密。 - false：表示集群不进行通信加密。  此参数只有6.5.4及之后版本支持。
+     * @return httpsEnable
+     */
     public Boolean getHttpsEnable() {
         return httpsEnable;
     }
@@ -308,9 +317,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 安全模式下集群管理员admin的密码，只有当authorityEnable设置为true时需要设置此参数。
-     * 
-     * @return adminPwd */
+    /**
+     * 安全模式下集群管理员admin的密码，只有当authorityEnable设置为true时需要设置此参数。
+     * @return adminPwd
+     */
     public String getAdminPwd() {
         return adminPwd;
     }
@@ -333,9 +343,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get publicIPReq
-     * 
-     * @return publicIPReq */
+    /**
+     * Get publicIPReq
+     * @return publicIPReq
+     */
     public CreateClusterPublicIpReq getPublicIPReq() {
         return publicIPReq;
     }
@@ -358,9 +369,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get loadBalance
-     * 
-     * @return loadBalance */
+    /**
+     * Get loadBalance
+     * @return loadBalance
+     */
     public CreateClusterLoadBalance getLoadBalance() {
         return loadBalance;
     }
@@ -383,9 +395,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get publicKibanaReq
-     * 
-     * @return publicKibanaReq */
+    /**
+     * Get publicKibanaReq
+     * @return publicKibanaReq
+     */
     public CreateClusterPublicKibanaReq getPublicKibanaReq() {
         return publicKibanaReq;
     }
@@ -458,7 +471,10 @@ public class CreateClusterBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

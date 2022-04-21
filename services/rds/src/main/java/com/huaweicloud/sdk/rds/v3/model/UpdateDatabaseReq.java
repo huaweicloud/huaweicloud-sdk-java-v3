@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateDatabaseReq */
+/**
+ * UpdateDatabaseReq
+ */
 public class UpdateDatabaseReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateDatabaseReq {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return name */
+    /**
+     * 数据库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateDatabaseReq {
         return this;
     }
 
-    /** 数据库备注。
-     * 
-     * @return comment */
+    /**
+     * 数据库备注。
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -78,7 +82,10 @@ public class UpdateDatabaseReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

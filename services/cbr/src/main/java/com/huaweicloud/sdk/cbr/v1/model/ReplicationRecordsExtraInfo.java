@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 复制记录额外信息 */
+/**
+ * 复制记录额外信息
+ */
 public class ReplicationRecordsExtraInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ReplicationRecordsExtraInfo {
         return this;
     }
 
-    /** 复制进度
-     * 
-     * @return progress */
+    /**
+     * 复制进度
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -54,9 +57,10 @@ public class ReplicationRecordsExtraInfo {
         return this;
     }
 
-    /** 失败错误码，成功时为空
-     * 
-     * @return failCode */
+    /**
+     * 失败错误码，成功时为空
+     * @return failCode
+     */
     public String getFailCode() {
         return failCode;
     }
@@ -70,9 +74,10 @@ public class ReplicationRecordsExtraInfo {
         return this;
     }
 
-    /** 错误原因
-     * 
-     * @return failReason */
+    /**
+     * 错误原因
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -86,9 +91,10 @@ public class ReplicationRecordsExtraInfo {
         return this;
     }
 
-    /** 是否为自动调度复制
-     * 
-     * @return autoTrigger */
+    /**
+     * 是否为自动调度复制
+     * @return autoTrigger
+     */
     public Boolean getAutoTrigger() {
         return autoTrigger;
     }
@@ -102,9 +108,10 @@ public class ReplicationRecordsExtraInfo {
         return this;
     }
 
-    /** 目标端的存储库id
-     * 
-     * @return destinatioVaultId */
+    /**
+     * 目标端的存储库id
+     * @return destinatioVaultId
+     */
     public String getDestinatioVaultId() {
         return destinatioVaultId;
     }
@@ -147,7 +154,10 @@ public class ReplicationRecordsExtraInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

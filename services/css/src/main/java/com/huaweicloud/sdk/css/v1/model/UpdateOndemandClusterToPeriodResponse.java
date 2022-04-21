@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateOndemandClusterToPeriodResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class UpdateOndemandClusterToPeriodResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单ID（此订单类型为“新购”）。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID（此订单类型为“新购”）。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -57,7 +60,10 @@ public class UpdateOndemandClusterToPeriodResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

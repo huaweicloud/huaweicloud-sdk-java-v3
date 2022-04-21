@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IefInfo */
+/**
+ * IefInfo
+ */
 public class IefInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class IefInfo {
         return this;
     }
 
-    /** BCS服务边缘节点部署模式，分为：随机模式（0），绑定模式（1）
-     * 
-     * @return deployMode */
+    /**
+     * BCS服务边缘节点部署模式，分为：随机模式（0），绑定模式（1）
+     * @return deployMode
+     */
     public Long getDeployMode() {
         return deployMode;
     }
@@ -55,7 +58,10 @@ public class IefInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRecordCallbackConfigsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListRecordCallbackConfigsRequest {
         return this;
     }
 
-    /** 直播推流域名
-     * 
-     * @return publishDomain */
+    /**
+     * 直播推流域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -49,9 +52,10 @@ public class ListRecordCallbackConfigsRequest {
         return this;
     }
 
-    /** 流应用名称
-     * 
-     * @return app */
+    /**
+     * 流应用名称
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -65,9 +69,12 @@ public class ListRecordCallbackConfigsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 4096
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * maximum: 4096
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -81,9 +88,12 @@ public class ListRecordCallbackConfigsRequest {
         return this;
     }
 
-    /** 每页记录数，取值范围[1,100]，默认值10 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页记录数，取值范围[1,100]，默认值10
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +134,10 @@ public class ListRecordCallbackConfigsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class CreateVpcPeeringRequestBody {
         return this;
     }
 
-    /** Get peering
-     * 
-     * @return peering */
+    /**
+     * Get peering
+     * @return peering
+     */
     public CreateVpcPeeringOption getPeering() {
         return peering;
     }
@@ -67,7 +68,10 @@ public class CreateVpcPeeringRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

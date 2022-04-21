@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowPreheatingAssetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowPreheatingAssetRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -44,9 +47,10 @@ public class ShowPreheatingAssetRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -62,9 +66,10 @@ public class ShowPreheatingAssetRequest {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -103,7 +108,10 @@ public class ShowPreheatingAssetRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

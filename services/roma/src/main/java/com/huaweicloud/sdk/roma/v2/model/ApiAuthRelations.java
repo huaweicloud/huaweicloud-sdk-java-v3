@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiAuthRelations */
+/**
+ * ApiAuthRelations
+ */
 public class ApiAuthRelations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,13 +44,19 @@ public class ApiAuthRelations {
 
     private String appId;
 
-    /** 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权 */
+    /**
+     * 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
+     */
     public static final class AuthRoleEnum {
 
-        /** Enum PROVIDER for value: "PROVIDER" */
+        /**
+         * Enum PROVIDER for value: "PROVIDER"
+         */
         public static final AuthRoleEnum PROVIDER = new AuthRoleEnum("PROVIDER");
 
-        /** Enum CONSUMER for value: "CONSUMER" */
+        /**
+         * Enum CONSUMER for value: "CONSUMER"
+         */
         public static final AuthRoleEnum CONSUMER = new AuthRoleEnum("CONSUMER");
 
         private static final Map<String, AuthRoleEnum> STATIC_FIELDS = createStaticFields();
@@ -143,9 +151,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -168,9 +177,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** Get authResult
-     * 
-     * @return authResult */
+    /**
+     * Get authResult
+     * @return authResult
+     */
     public AuthResult getAuthResult() {
         return authResult;
     }
@@ -184,9 +194,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权时间
-     * 
-     * @return authTime */
+    /**
+     * 授权时间
+     * @return authTime
+     */
     public OffsetDateTime getAuthTime() {
         return authTime;
     }
@@ -200,9 +211,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权关系编号
-     * 
-     * @return id */
+    /**
+     * 授权关系编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -216,9 +228,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** APP编号
-     * 
-     * @return appId */
+    /**
+     * APP编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -232,9 +245,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
-     * 
-     * @return authRole */
+    /**
+     * 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
+     * @return authRole
+     */
     public AuthRoleEnum getAuthRole() {
         return authRole;
     }
@@ -248,9 +262,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权通道类型： - GREEN：绿色通道 - NORMAL：非绿色通道 此字段不填默认为不使用绿色通道
-     * 
-     * @return authTunnel */
+    /**
+     * 授权通道类型： - GREEN：绿色通道 - NORMAL：非绿色通道  此字段不填默认为不使用绿色通道
+     * @return authTunnel
+     */
     public String getAuthTunnel() {
         return authTunnel;
     }
@@ -280,9 +295,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 绿色通道授权白名单。 允许白名单中的IP不使用认证信息访问
-     * 
-     * @return authWhitelist */
+    /**
+     * 绿色通道授权白名单。  允许白名单中的IP不使用认证信息访问
+     * @return authWhitelist
+     */
     public List<String> getAuthWhitelist() {
         return authWhitelist;
     }
@@ -312,9 +328,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 绿色通道授权黑名单
-     * 
-     * @return authBlacklist */
+    /**
+     * 绿色通道授权黑名单
+     * @return authBlacklist
+     */
     public List<String> getAuthBlacklist() {
         return authBlacklist;
     }
@@ -328,9 +345,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 访问参数。
-     * 
-     * @return visitParams */
+    /**
+     * 访问参数。
+     * @return visitParams
+     */
     public String getVisitParams() {
         return visitParams;
     }
@@ -391,7 +409,10 @@ public class ApiAuthRelations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

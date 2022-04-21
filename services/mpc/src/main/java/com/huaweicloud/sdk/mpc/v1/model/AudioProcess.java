@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AudioProcess */
+/**
+ * AudioProcess
+ */
 public class AudioProcess {
 
-    /** 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 */
+    /**
+     * 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 
+     */
     public static final class VolumeEnum {
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final VolumeEnum AUTO = new VolumeEnum("auto");
 
-        /** Enum DYNAMIC for value: "dynamic" */
+        /**
+         * Enum DYNAMIC for value: "dynamic"
+         */
         public static final VolumeEnum DYNAMIC = new VolumeEnum("dynamic");
 
-        /** Enum ORIGINAL for value: "original" */
+        /**
+         * Enum ORIGINAL for value: "original"
+         */
         public static final VolumeEnum ORIGINAL = new VolumeEnum("original");
 
         private static final Map<String, VolumeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class AudioProcess {
         return this;
     }
 
-    /** 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。
-     * 
-     * @return volume */
+    /**
+     * 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 
+     * @return volume
+     */
     public VolumeEnum getVolume() {
         return volume;
     }
@@ -119,9 +130,12 @@ public class AudioProcess {
         return this;
     }
 
-    /** 音量调整幅值，需指定volume为dynamic。 取值范围：[-15,15] 单位：dB minimum: -15 maximum: 15
-     * 
-     * @return volumeExpr */
+    /**
+     * 音量调整幅值，需指定volume为dynamic。  取值范围：[-15,15]  单位：dB 
+     * minimum: -15
+     * maximum: 15
+     * @return volumeExpr
+     */
     public Integer getVolumeExpr() {
         return volumeExpr;
     }
@@ -158,7 +172,10 @@ public class AudioProcess {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

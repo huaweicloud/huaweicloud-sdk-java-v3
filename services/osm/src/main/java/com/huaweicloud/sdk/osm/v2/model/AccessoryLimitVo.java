@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AccessoryLimitVo */
+/**
+ * AccessoryLimitVo
+ */
 public class AccessoryLimitVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AccessoryLimitVo {
         return this;
     }
 
-    /** 限制文件数量
-     * 
-     * @return limitCount */
+    /**
+     * 限制文件数量
+     * @return limitCount
+     */
     public String getLimitCount() {
         return limitCount;
     }
@@ -44,9 +47,10 @@ public class AccessoryLimitVo {
         return this;
     }
 
-    /** 限制文件大小，单位是M
-     * 
-     * @return limitSize */
+    /**
+     * 限制文件大小，单位是M
+     * @return limitSize
+     */
     public String getLimitSize() {
         return limitSize;
     }
@@ -60,9 +64,10 @@ public class AccessoryLimitVo {
         return this;
     }
 
-    /** 限制文件类型
-     * 
-     * @return limitFileType */
+    /**
+     * 限制文件类型
+     * @return limitFileType
+     */
     public String getLimitFileType() {
         return limitFileType;
     }
@@ -101,7 +106,10 @@ public class AccessoryLimitVo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规则条件结构体 */
+/**
+ * 规则条件结构体
+ */
 public class RuleCondition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,25 +31,15 @@ public class RuleCondition {
 
     private DailyTimerType dailyTimerCondition;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "device_message_condition")
-
-    private DeviceMessageCondition deviceMessageCondition;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "device_status_condition")
-
-    private DeviceStatusCondition deviceStatusCondition;
-
     public RuleCondition withType(String type) {
         this.type = type;
         return this;
     }
 
-    /** **参数说明**：规则条件的类型。 **取值范围**： - DEVICE_DATA：设备数据类型条件。 - SIMPLE_TIMER：简单定时类型条件。 - DAILY_TIMER：每日定时类型条件。 -
-     * DEVICE_STATUS：设备状态类型条件。 - DEVICE_LIFE_CYCLE：设备生命周期类型条件。 - DEVICE_MESSAGE：设备消息条件。 - MESSAGE_RESULTS：下行消息结果条件。
-     * 
-     * @return type */
+    /**
+     * **参数说明**：规则条件的类型。 **取值范围**： - DEVICE_DATA：设备数据类型条件。 - SIMPLE_TIMER：简单定时类型条件。 - DAILY_TIMER：每日定时类型条件。 - DEVICE_STATUS：设备状态类型条件。 - DEVICE_LIFE_CYCLE：设备生命周期类型条件。 - DEVICE_MESSAGE：设备消息条件。 - MESSAGE_RESULTS：下行消息结果条件。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,9 +62,10 @@ public class RuleCondition {
         return this;
     }
 
-    /** Get devicePropertyCondition
-     * 
-     * @return devicePropertyCondition */
+    /**
+     * Get devicePropertyCondition
+     * @return devicePropertyCondition
+     */
     public DeviceDataCondition getDevicePropertyCondition() {
         return devicePropertyCondition;
     }
@@ -95,9 +88,10 @@ public class RuleCondition {
         return this;
     }
 
-    /** Get simpleTimerCondition
-     * 
-     * @return simpleTimerCondition */
+    /**
+     * Get simpleTimerCondition
+     * @return simpleTimerCondition
+     */
     public SimpleTimerType getSimpleTimerCondition() {
         return simpleTimerCondition;
     }
@@ -120,65 +114,16 @@ public class RuleCondition {
         return this;
     }
 
-    /** Get dailyTimerCondition
-     * 
-     * @return dailyTimerCondition */
+    /**
+     * Get dailyTimerCondition
+     * @return dailyTimerCondition
+     */
     public DailyTimerType getDailyTimerCondition() {
         return dailyTimerCondition;
     }
 
     public void setDailyTimerCondition(DailyTimerType dailyTimerCondition) {
         this.dailyTimerCondition = dailyTimerCondition;
-    }
-
-    public RuleCondition withDeviceMessageCondition(DeviceMessageCondition deviceMessageCondition) {
-        this.deviceMessageCondition = deviceMessageCondition;
-        return this;
-    }
-
-    public RuleCondition withDeviceMessageCondition(Consumer<DeviceMessageCondition> deviceMessageConditionSetter) {
-        if (this.deviceMessageCondition == null) {
-            this.deviceMessageCondition = new DeviceMessageCondition();
-            deviceMessageConditionSetter.accept(this.deviceMessageCondition);
-        }
-
-        return this;
-    }
-
-    /** Get deviceMessageCondition
-     * 
-     * @return deviceMessageCondition */
-    public DeviceMessageCondition getDeviceMessageCondition() {
-        return deviceMessageCondition;
-    }
-
-    public void setDeviceMessageCondition(DeviceMessageCondition deviceMessageCondition) {
-        this.deviceMessageCondition = deviceMessageCondition;
-    }
-
-    public RuleCondition withDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
-        this.deviceStatusCondition = deviceStatusCondition;
-        return this;
-    }
-
-    public RuleCondition withDeviceStatusCondition(Consumer<DeviceStatusCondition> deviceStatusConditionSetter) {
-        if (this.deviceStatusCondition == null) {
-            this.deviceStatusCondition = new DeviceStatusCondition();
-            deviceStatusConditionSetter.accept(this.deviceStatusCondition);
-        }
-
-        return this;
-    }
-
-    /** Get deviceStatusCondition
-     * 
-     * @return deviceStatusCondition */
-    public DeviceStatusCondition getDeviceStatusCondition() {
-        return deviceStatusCondition;
-    }
-
-    public void setDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
-        this.deviceStatusCondition = deviceStatusCondition;
     }
 
     @Override
@@ -193,19 +138,12 @@ public class RuleCondition {
         return Objects.equals(this.type, ruleCondition.type)
             && Objects.equals(this.devicePropertyCondition, ruleCondition.devicePropertyCondition)
             && Objects.equals(this.simpleTimerCondition, ruleCondition.simpleTimerCondition)
-            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition)
-            && Objects.equals(this.deviceMessageCondition, ruleCondition.deviceMessageCondition)
-            && Objects.equals(this.deviceStatusCondition, ruleCondition.deviceStatusCondition);
+            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type,
-            devicePropertyCondition,
-            simpleTimerCondition,
-            dailyTimerCondition,
-            deviceMessageCondition,
-            deviceStatusCondition);
+        return Objects.hash(type, devicePropertyCondition, simpleTimerCondition, dailyTimerCondition);
     }
 
     @Override
@@ -216,13 +154,14 @@ public class RuleCondition {
         sb.append("    devicePropertyCondition: ").append(toIndentedString(devicePropertyCondition)).append("\n");
         sb.append("    simpleTimerCondition: ").append(toIndentedString(simpleTimerCondition)).append("\n");
         sb.append("    dailyTimerCondition: ").append(toIndentedString(dailyTimerCondition)).append("\n");
-        sb.append("    deviceMessageCondition: ").append(toIndentedString(deviceMessageCondition)).append("\n");
-        sb.append("    deviceStatusCondition: ").append(toIndentedString(deviceStatusCondition)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

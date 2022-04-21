@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署参数配置 */
+/**
+ * 部署参数配置
+ */
 public class CreateAppsInDeploymentV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateAppsInDeploymentV3 {
         return this;
     }
 
-    /** 副本数量
-     * 
-     * @return replicas */
+    /**
+     * 副本数量
+     * @return replicas
+     */
     public Integer getReplicas() {
         return replicas;
     }
@@ -54,9 +57,10 @@ public class CreateAppsInDeploymentV3 {
         return this;
     }
 
-    /** Get template
-     * 
-     * @return template */
+    /**
+     * Get template
+     * @return template
+     */
     public PodRequest getTemplate() {
         return template;
     }
@@ -79,9 +83,10 @@ public class CreateAppsInDeploymentV3 {
         return this;
     }
 
-    /** Get annotations
-     * 
-     * @return annotations */
+    /**
+     * Get annotations
+     * @return annotations
+     */
     public Annotations getAnnotations() {
         return annotations;
     }
@@ -120,7 +125,10 @@ public class CreateAppsInDeploymentV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

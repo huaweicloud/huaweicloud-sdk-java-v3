@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateStreamingJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class CreateStreamingJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -59,9 +62,10 @@ public class CreateStreamingJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业错误详情
-     * 
-     * @return checkInfo */
+    /**
+     * 作业错误详情
+     * @return checkInfo
+     */
     public Map<String, Object> getCheckInfo() {
         return checkInfo;
     }
@@ -98,7 +102,10 @@ public class CreateStreamingJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

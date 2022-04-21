@@ -7,7 +7,9 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 测试计划详情 */
+/**
+ * 测试计划详情
+ */
 public class TestPlanDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,9 +87,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 测试计划id
-     * 
-     * @return planId */
+    /**
+     * 测试计划id
+     * @return planId
+     */
     public String getPlanId() {
         return planId;
     }
@@ -101,9 +104,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 测试计划名称
-     * 
-     * @return name */
+    /**
+     * 测试计划名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -117,9 +121,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 测试计划开始时间
-     * 
-     * @return startDate */
+    /**
+     * 测试计划开始时间
+     * @return startDate
+     */
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -133,9 +138,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 测试计划截止时间
-     * 
-     * @return endDate */
+    /**
+     * 测试计划截止时间
+     * @return endDate
+     */
     public LocalDate getEndDate() {
         return endDate;
     }
@@ -149,9 +155,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 测试计划实际完成时间（测试计划实际完成指测试计划下所有测试用例处于完成状态）
-     * 
-     * @return finishDate */
+    /**
+     * 测试计划实际完成时间（测试计划实际完成指测试计划下所有测试用例处于完成状态）
+     * @return finishDate
+     */
     public LocalDate getFinishDate() {
         return finishDate;
     }
@@ -165,9 +172,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -181,9 +189,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 当前测试计划所处的阶段
-     * 
-     * @return currentStage */
+    /**
+     * 当前测试计划所处的阶段
+     * @return currentStage
+     */
     public String getCurrentStage() {
         return currentStage;
     }
@@ -197,9 +206,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** 获取超期时间,正值表示已超期
-     * 
-     * @return expireDay */
+    /**
+     * 获取超期时间,正值表示已超期
+     * @return expireDay
+     */
     public String getExpireDay() {
         return expireDay;
     }
@@ -222,9 +232,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get creator
-     * 
-     * @return creator */
+    /**
+     * Get creator
+     * @return creator
+     */
     public TestPlanDetailCreator getCreator() {
         return creator;
     }
@@ -247,9 +258,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get owner
-     * 
-     * @return owner */
+    /**
+     * Get owner
+     * @return owner
+     */
     public TestPlanDetailOwner getOwner() {
         return owner;
     }
@@ -272,9 +284,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get designStage
-     * 
-     * @return designStage */
+    /**
+     * Get designStage
+     * @return designStage
+     */
     public TestPlanDetailDesignStage getDesignStage() {
         return designStage;
     }
@@ -297,9 +310,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get executeStage
-     * 
-     * @return executeStage */
+    /**
+     * Get executeStage
+     * @return executeStage
+     */
     public TestPlanDetailExecuteStage getExecuteStage() {
         return executeStage;
     }
@@ -322,9 +336,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get reportStage
-     * 
-     * @return reportStage */
+    /**
+     * Get reportStage
+     * @return reportStage
+     */
     public TestPlanDetailReportStage getReportStage() {
         return reportStage;
     }
@@ -347,9 +362,10 @@ public class TestPlanDetail {
         return this;
     }
 
-    /** Get iteration
-     * 
-     * @return iteration */
+    /**
+     * Get iteration
+     * @return iteration
+     */
     public NameAndId getIteration() {
         return iteration;
     }
@@ -421,7 +437,10 @@ public class TestPlanDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

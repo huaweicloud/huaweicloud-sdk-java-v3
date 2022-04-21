@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateDatabaseRoleRequestBody */
+/**
+ * CreateDatabaseRoleRequestBody
+ */
 public class CreateDatabaseRoleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CreateDatabaseRoleRequestBody {
         return this;
     }
 
-    /** 创建角色名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
-     * 
-     * @return roleName */
+    /**
+     * 创建角色名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
+     * @return roleName
+     */
     public String getRoleName() {
         return roleName;
     }
@@ -47,9 +50,10 @@ public class CreateDatabaseRoleRequestBody {
         return this;
     }
 
-    /** 角色所在的数据库名称，默认admin。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
-     * 
-     * @return dbName */
+    /**
+     * 角色所在的数据库名称，默认admin。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -79,9 +83,10 @@ public class CreateDatabaseRoleRequestBody {
         return this;
     }
 
-    /** 新用户所拥有的角色。
-     * 
-     * @return roles */
+    /**
+     * 新用户所拥有的角色。
+     * @return roles
+     */
     public List<RolesOption> getRoles() {
         return roles;
     }
@@ -120,7 +125,10 @@ public class CreateDatabaseRoleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

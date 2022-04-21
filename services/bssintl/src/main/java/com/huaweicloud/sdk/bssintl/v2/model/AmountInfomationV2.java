@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AmountInfomationV2 */
+/**
+ * AmountInfomationV2
+ */
 public class AmountInfomationV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 费用项。 具体请参见表7。
-     * 
-     * @return discounts */
+    /**
+     * 费用项。 具体请参见表7。
+     * @return discounts
+     */
     public List<DiscountItemV2> getDiscounts() {
         return discounts;
     }
@@ -78,9 +81,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 现金券金额，预留。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券金额，预留。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -94,9 +98,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 代金券金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -110,9 +115,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 储值卡金额，预留。
-     * 
-     * @return storedCardAmount */
+    /**
+     * 储值卡金额，预留。
+     * @return storedCardAmount
+     */
     public Double getStoredCardAmount() {
         return storedCardAmount;
     }
@@ -126,9 +132,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 手续费（仅退订订单存在）。
-     * 
-     * @return commissionAmount */
+    /**
+     * 手续费（仅退订订单存在）。
+     * @return commissionAmount
+     */
     public Double getCommissionAmount() {
         return commissionAmount;
     }
@@ -142,9 +149,10 @@ public class AmountInfomationV2 {
         return this;
     }
 
-    /** 消费金额（仅退订订单存在）。
-     * 
-     * @return consumedAmount */
+    /**
+     * 消费金额（仅退订订单存在）。
+     * @return consumedAmount
+     */
     public Double getConsumedAmount() {
         return consumedAmount;
     }
@@ -194,7 +202,10 @@ public class AmountInfomationV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

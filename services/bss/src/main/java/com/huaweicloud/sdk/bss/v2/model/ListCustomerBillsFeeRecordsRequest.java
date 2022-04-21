@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCustomerBillsFeeRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,9 +105,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** |zh_CN：中文 en_US：英文。默认为zh_CN：中文。|
-     * 
-     * @return xLanguage */
+    /**
+     * |zh_CN：中文 en_US：英文。默认为zh_CN：中文。|
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -121,9 +124,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 查询的流水账单所在账期，格式为YYYY-MM。
-     * 
-     * @return billCycle */
+    /**
+     * 查询的流水账单所在账期，格式为YYYY-MM。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -137,9 +141,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 服务商。1：华为云2：云市场为空时查询包含华为云和云市场在内的全部服务商。 minimum: 1 maximum: 2
-     * 
-     * @return providerType */
+    /**
+     * 服务商。1：华为云2：云市场为空时查询包含华为云和云市场在内的全部服务商。
+     * minimum: 1
+     * maximum: 2
+     * @return providerType
+     */
     public Integer getProviderType() {
         return providerType;
     }
@@ -153,9 +160,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -169,9 +177,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -185,9 +194,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -201,9 +211,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 计费模式：1 : 包年/包月3：按需10：预留实例 minimum: 1 maximum: 10
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式：1 : 包年/包月3：按需10：预留实例
+     * minimum: 1
+     * maximum: 10
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -217,10 +230,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 minimum: 1
+    /**
+     * 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * minimum: 1
      * maximum: 20
-     * 
-     * @return billType */
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -234,9 +249,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 订单ID或交易ID。账单类型为1、2、3、4和8时此处为订单ID。账单类型为其它场景时此处为交易ID，为扣费维度的唯一标识。例如非月末扣费时为应收ID；月末扣费时为账单ID。
-     * 
-     * @return tradeId */
+    /**
+     * 订单ID或交易ID。账单类型为1、2、3、4和8时此处为订单ID。账单类型为其它场景时此处为交易ID，为扣费维度的唯一标识。例如非月末扣费时为应收ID；月末扣费时为账单ID。
+     * @return tradeId
+     */
     public String getTradeId() {
         return tradeId;
     }
@@ -250,9 +266,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -266,9 +283,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 返回是否包含应付金额为0的记录。true：包含false：不包含
-     * 
-     * @return includeZeroRecord */
+    /**
+     * 返回是否包含应付金额为0的记录。true：包含false：不包含
+     * @return includeZeroRecord
+     */
     public Boolean getIncludeZeroRecord() {
         return includeZeroRecord;
     }
@@ -282,9 +300,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 支付状态。1：已支付2：未结清3：未出账 minimum: 1 maximum: 3
-     * 
-     * @return status */
+    /**
+     * 支付状态。1：已支付2：未结清3：未出账
+     * minimum: 1
+     * maximum: 3
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -298,9 +319,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 查询流水账单的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的流水账单。
-     * 
-     * @return method */
+    /**
+     * 查询流水账单的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的流水账单。
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -314,9 +336,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
-     * 
-     * @return subCustomerId */
+    /**
+     * 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
+     * @return subCustomerId
+     */
     public String getSubCustomerId() {
         return subCustomerId;
     }
@@ -330,11 +353,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -348,9 +372,12 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 页面大小。默认值为10。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 页面大小。默认值为10。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -364,10 +391,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 查询的流水账单的开始日期，格式为YYYY-MM-DD。 说明：
-     * 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
-     * 
-     * @return billDateBegin */
+    /**
+     * 查询的流水账单的开始日期，格式为YYYY-MM-DD。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * @return billDateBegin
+     */
     public String getBillDateBegin() {
         return billDateBegin;
     }
@@ -381,10 +408,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return this;
     }
 
-    /** 查询的流水账单的结束日期，格式为YYYY-MM-DD。 说明：
-     * 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
-     * 
-     * @return billDateEnd */
+    /**
+     * 查询的流水账单的结束日期，格式为YYYY-MM-DD。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * @return billDateEnd
+     */
     public String getBillDateEnd() {
         return billDateEnd;
     }
@@ -470,7 +497,10 @@ public class ListCustomerBillsFeeRecordsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

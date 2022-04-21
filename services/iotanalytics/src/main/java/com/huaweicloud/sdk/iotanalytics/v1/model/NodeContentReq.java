@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点数据源请求内容 */
+/**
+ * 节点数据源请求内容
+ */
 public class NodeContentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class NodeContentReq {
         return this;
     }
 
-    /** 节点实例ID
-     * 
-     * @return siteId */
+    /**
+     * 节点实例ID
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -58,9 +61,10 @@ public class NodeContentReq {
         return this;
     }
 
-    /** SQL列表，将指定边缘平台节点的数字孪生模型实例数据转发到中心平台节点。
-     * 
-     * @return sqllist */
+    /**
+     * SQL列表，将指定边缘平台节点的数字孪生模型实例数据转发到中心平台节点。
+     * @return sqllist
+     */
     public List<String> getSqllist() {
         return sqllist;
     }
@@ -97,7 +101,10 @@ public class NodeContentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

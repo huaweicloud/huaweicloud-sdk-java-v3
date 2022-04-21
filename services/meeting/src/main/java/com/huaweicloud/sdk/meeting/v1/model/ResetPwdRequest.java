@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ResetPwdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ResetPwdRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestID */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestID
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-ID")
     public String getXRequestID() {
@@ -47,9 +50,10 @@ public class ResetPwdRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -72,9 +76,10 @@ public class ResetPwdRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public ResetPwdReqDTOV1 getBody() {
         return body;
     }
@@ -113,7 +118,10 @@ public class ResetPwdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

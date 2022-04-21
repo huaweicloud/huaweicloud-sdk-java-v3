@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 整体流利度打分 */
+/**
+ * 整体流利度打分
+ */
 public class Fluency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Fluency {
         return this;
     }
 
-    /** 流利度综合得分 0-100
-     * 
-     * @return score */
+    /**
+     * 流利度综合得分 0-100
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -44,9 +47,10 @@ public class Fluency {
         return this;
     }
 
-    /** 韵律得分 0-100 韵律指音素在单词和句子中的发音长度是否得当
-     * 
-     * @return rhythm */
+    /**
+     * 韵律得分 0-100 韵律指音素在单词和句子中的发音长度是否得当
+     * @return rhythm
+     */
     public Float getRhythm() {
         return rhythm;
     }
@@ -60,9 +64,10 @@ public class Fluency {
         return this;
     }
 
-    /** 连贯性得分 0-100
-     * 
-     * @return cohesion */
+    /**
+     * 连贯性得分 0-100
+     * @return cohesion
+     */
     public Float getCohesion() {
         return cohesion;
     }
@@ -100,7 +105,10 @@ public class Fluency {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

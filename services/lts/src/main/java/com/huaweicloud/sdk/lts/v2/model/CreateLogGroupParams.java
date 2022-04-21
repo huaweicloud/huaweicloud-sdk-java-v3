@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建日志组参数。 */
+/**
+ * 创建日志组参数。
+ */
 public class CreateLogGroupParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateLogGroupParams {
         return this;
     }
 
-    /** 需要创建的日志组名称。
-     * 
-     * @return logGroupName */
+    /**
+     * 需要创建的日志组名称。
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -39,9 +42,12 @@ public class CreateLogGroupParams {
         return this;
     }
 
-    /** 日志存储时间（天），取值范围：1-30。 minimum: 1 maximum: 30
-     * 
-     * @return ttlInDays */
+    /**
+     * 日志存储时间（天），取值范围：1-30。
+     * minimum: 1
+     * maximum: 30
+     * @return ttlInDays
+     */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -78,7 +84,10 @@ public class CreateLogGroupParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

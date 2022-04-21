@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Submission */
+/**
+ * Submission
+ */
 public class Submission {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -114,9 +116,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业是否为增量迁移
-     * 
-     * @return isIncrementing */
+    /**
+     * 作业是否为增量迁移
+     * @return isIncrementing
+     */
     public Boolean getIsIncrementing() {
         return isIncrementing;
     }
@@ -130,9 +133,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return jobName */
+    /**
+     * 作业名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -155,9 +159,10 @@ public class Submission {
         return this;
     }
 
-    /** Get counters
-     * 
-     * @return counters */
+    /**
+     * Get counters
+     * @return counters
+     */
     public Counters getCounters() {
         return counters;
     }
@@ -171,9 +176,10 @@ public class Submission {
         return this;
     }
 
-    /** 是否停止增量迁移
-     * 
-     * @return isStopingIncrement */
+    /**
+     * 是否停止增量迁移
+     * @return isStopingIncrement
+     */
     public String getIsStopingIncrement() {
         return isStopingIncrement;
     }
@@ -187,9 +193,10 @@ public class Submission {
         return this;
     }
 
-    /** 是否定时执行作业
-     * 
-     * @return isExecuteAuto */
+    /**
+     * 是否定时执行作业
+     * @return isExecuteAuto
+     */
     public Boolean getIsExecuteAuto() {
         return isExecuteAuto;
     }
@@ -203,9 +210,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业最后更新时间
-     * 
-     * @return lastUpdateDate */
+    /**
+     * 作业最后更新时间
+     * @return lastUpdateDate
+     */
     public Long getLastUpdateDate() {
         return lastUpdateDate;
     }
@@ -219,9 +227,10 @@ public class Submission {
         return this;
     }
 
-    /** 最后更新作业状态的用户
-     * 
-     * @return lastUdpateUser */
+    /**
+     * 最后更新作业状态的用户
+     * @return lastUdpateUser
+     */
     public String getLastUdpateUser() {
         return lastUdpateUser;
     }
@@ -235,9 +244,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业执行完成后是否删除
-     * 
-     * @return isDeleteJob */
+    /**
+     * 作业执行完成后是否删除
+     * @return isDeleteJob
+     */
     public Boolean getIsDeleteJob() {
         return isDeleteJob;
     }
@@ -251,9 +261,10 @@ public class Submission {
         return this;
     }
 
-    /** 创建用户
-     * 
-     * @return creationUser */
+    /**
+     * 创建用户
+     * @return creationUser
+     */
     public String getCreationUser() {
         return creationUser;
     }
@@ -267,9 +278,10 @@ public class Submission {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return creationDate */
+    /**
+     * 创建时间
+     * @return creationDate
+     */
     public Long getCreationDate() {
         return creationDate;
     }
@@ -283,9 +295,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return externalId */
+    /**
+     * 作业ID
+     * @return externalId
+     */
     public String getExternalId() {
         return externalId;
     }
@@ -299,9 +312,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业进度，失败时为“-1”，其它情况为0～100
-     * 
-     * @return progress */
+    /**
+     * 作业进度，失败时为“-1”，其它情况为0～100
+     * @return progress
+     */
     public Float getProgress() {
         return progress;
     }
@@ -315,9 +329,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业提交id
-     * 
-     * @return submissionId */
+    /**
+     * 作业提交id
+     * @return submissionId
+     */
     public Integer getSubmissionId() {
         return submissionId;
     }
@@ -331,9 +346,10 @@ public class Submission {
         return this;
     }
 
-    /** 删除数据行数
-     * 
-     * @return deleteRows */
+    /**
+     * 删除数据行数
+     * @return deleteRows
+     */
     public Integer getDeleteRows() {
         return deleteRows;
     }
@@ -347,9 +363,10 @@ public class Submission {
         return this;
     }
 
-    /** 更新数据行数
-     * 
-     * @return updateRows */
+    /**
+     * 更新数据行数
+     * @return updateRows
+     */
     public Integer getUpdateRows() {
         return updateRows;
     }
@@ -363,9 +380,10 @@ public class Submission {
         return this;
     }
 
-    /** 写入数据行数
-     * 
-     * @return writeRows */
+    /**
+     * 写入数据行数
+     * @return writeRows
+     */
     public Integer getWriteRows() {
         return writeRows;
     }
@@ -379,9 +397,10 @@ public class Submission {
         return this;
     }
 
-    /** 执行时间
-     * 
-     * @return executeDate */
+    /**
+     * 执行时间
+     * @return executeDate
+     */
     public Long getExecuteDate() {
         return executeDate;
     }
@@ -395,10 +414,10 @@ public class Submission {
         return this;
     }
 
-    /** 作业状态： - BOOTING：启动中。 - FAILURE_ON_SUBMIT：提交失败。 - RUNNING：运行中。 - SUCCEEDED：成功。 - FAILED：失败。 - UNKNOWN：未知。 -
-     * NEVER_EXECUTED：未被执行
-     * 
-     * @return status */
+    /**
+     * 作业状态： - BOOTING：启动中。 - FAILURE_ON_SUBMIT：提交失败。 - RUNNING：运行中。 - SUCCEEDED：成功。 - FAILED：失败。 - UNKNOWN：未知。 - NEVER_EXECUTED：未被执行
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -412,9 +431,10 @@ public class Submission {
         return this;
     }
 
-    /** 错误详情，当“status”为“FAILED”时才有此字段。
-     * 
-     * @return errorDetails */
+    /**
+     * 错误详情，当“status”为“FAILED”时才有此字段。
+     * @return errorDetails
+     */
     public String getErrorDetails() {
         return errorDetails;
     }
@@ -428,9 +448,10 @@ public class Submission {
         return this;
     }
 
-    /** 错误总结，当“status”为“FAILED”时才有此字段。
-     * 
-     * @return errorSummary */
+    /**
+     * 错误总结，当“status”为“FAILED”时才有此字段。
+     * @return errorSummary
+     */
     public String getErrorSummary() {
         return errorSummary;
     }
@@ -521,7 +542,10 @@ public class Submission {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

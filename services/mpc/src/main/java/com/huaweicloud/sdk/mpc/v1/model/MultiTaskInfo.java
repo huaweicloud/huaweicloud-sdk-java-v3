@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskInfo */
+/**
+ * MultiTaskInfo
+ */
 public class MultiTaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,12 @@ public class MultiTaskInfo {
         return this;
     }
 
-    /** 转码模板ID。 minimum: 0 maximum: 2147483647
-     * 
-     * @return templateId */
+    /**
+     * 转码模板ID。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -54,9 +59,10 @@ public class MultiTaskInfo {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public ErrorResponse getError() {
         return error;
     }
@@ -79,9 +85,10 @@ public class MultiTaskInfo {
         return this;
     }
 
-    /** Get outputFile
-     * 
-     * @return outputFile */
+    /**
+     * Get outputFile
+     * @return outputFile
+     */
     public SourceInfo getOutputFile() {
         return outputFile;
     }
@@ -120,7 +127,10 @@ public class MultiTaskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BoundingBox */
+/**
+ * BoundingBox
+ */
 public class BoundingBox {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class BoundingBox {
         return this;
     }
 
-    /** 矩形框宽度。
-     * 
-     * @return width */
+    /**
+     * 矩形框宽度。
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -49,9 +52,10 @@ public class BoundingBox {
         return this;
     }
 
-    /** 矩形框左上角纵坐标。
-     * 
-     * @return topLeftY */
+    /**
+     * 矩形框左上角纵坐标。
+     * @return topLeftY
+     */
     public Integer getTopLeftY() {
         return topLeftY;
     }
@@ -65,9 +69,10 @@ public class BoundingBox {
         return this;
     }
 
-    /** 矩形框左上角横坐标。
-     * 
-     * @return topLeftX */
+    /**
+     * 矩形框左上角横坐标。
+     * @return topLeftX
+     */
     public Integer getTopLeftX() {
         return topLeftX;
     }
@@ -81,9 +86,10 @@ public class BoundingBox {
         return this;
     }
 
-    /** 矩形框高度。
-     * 
-     * @return height */
+    /**
+     * 矩形框高度。
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -122,7 +128,10 @@ public class BoundingBox {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListResourcesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get total
-     * 
-     * @return total */
+    /**
+     * Get total
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +62,10 @@ public class ListResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get resources
-     * 
-     * @return resources */
+    /**
+     * Get resources
+     * @return resources
+     */
     public List<ResourceInfo> getResources() {
         return resources;
     }
@@ -98,7 +102,10 @@ public class ListResourcesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class NovaSecurityGroupCommonGroup {
         return this;
     }
 
-    /** 对端安全组的名称
-     * 
-     * @return name */
+    /**
+     * 对端安全组的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -41,9 +42,10 @@ public class NovaSecurityGroupCommonGroup {
         return this;
     }
 
-    /** 对端安全组所属租户的租户ID
-     * 
-     * @return tenantId */
+    /**
+     * 对端安全组所属租户的租户ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -80,7 +82,10 @@ public class NovaSecurityGroupCommonGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

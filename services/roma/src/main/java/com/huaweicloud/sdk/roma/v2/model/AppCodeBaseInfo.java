@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** AppCodeBaseInfo */
+/**
+ * AppCodeBaseInfo
+ */
 public class AppCodeBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class AppCodeBaseInfo {
         return this;
     }
 
-    /** App Code值 支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
-     * 
-     * @return appCode */
+    /**
+     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
+     * @return appCode
+     */
     public String getAppCode() {
         return appCode;
     }
@@ -50,9 +53,10 @@ public class AppCodeBaseInfo {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -66,9 +70,10 @@ public class AppCodeBaseInfo {
         return this;
     }
 
-    /** 应用编号
-     * 
-     * @return appId */
+    /**
+     * 应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -82,9 +87,10 @@ public class AppCodeBaseInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -124,7 +130,10 @@ public class AppCodeBaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

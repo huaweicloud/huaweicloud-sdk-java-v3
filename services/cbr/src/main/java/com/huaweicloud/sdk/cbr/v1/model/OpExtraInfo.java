@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OpExtraInfo */
+/**
+ * OpExtraInfo
+ */
 public class OpExtraInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get backup
-     * 
-     * @return backup */
+    /**
+     * Get backup
+     * @return backup
+     */
     public OpExtendInfoBckup getBackup() {
         return backup;
     }
@@ -93,9 +96,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public OpExtendInfoCommon getCommon() {
         return common;
     }
@@ -118,9 +122,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get delete
-     * 
-     * @return delete */
+    /**
+     * Get delete
+     * @return delete
+     */
     public OpExtendInfoDelete getDelete() {
         return delete;
     }
@@ -143,9 +148,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get sync
-     * 
-     * @return sync */
+    /**
+     * Get sync
+     * @return sync
+     */
     public OpExtendInfoSync getSync() {
         return sync;
     }
@@ -168,9 +174,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get removeResources
-     * 
-     * @return removeResources */
+    /**
+     * Get removeResources
+     * @return removeResources
+     */
     public OpExtendInfoRemoveResources getRemoveResources() {
         return removeResources;
     }
@@ -193,9 +200,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get replication
-     * 
-     * @return replication */
+    /**
+     * Get replication
+     * @return replication
+     */
     public OpExtendInfoReplication getReplication() {
         return replication;
     }
@@ -218,9 +226,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get resource
-     * 
-     * @return resource */
+    /**
+     * Get resource
+     * @return resource
+     */
     public Resource getResource() {
         return resource;
     }
@@ -243,9 +252,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get restore
-     * 
-     * @return restore */
+    /**
+     * Get restore
+     * @return restore
+     */
     public OpExtendInfoRestore getRestore() {
         return restore;
     }
@@ -268,9 +278,10 @@ public class OpExtraInfo {
         return this;
     }
 
-    /** Get vaultDelete
-     * 
-     * @return vaultDelete */
+    /**
+     * Get vaultDelete
+     * @return vaultDelete
+     */
     public OpExtendInfoVaultDelete getVaultDelete() {
         return vaultDelete;
     }
@@ -318,7 +329,10 @@ public class OpExtraInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AppConfigModifyRequestV2 */
+/**
+ * AppConfigModifyRequestV2
+ */
 public class AppConfigModifyRequestV2 {
 
-    /** 应用配置类型： - variable：模板变量 - password：密码 - certificate：证书 */
+    /**
+     * 应用配置类型： - variable：模板变量 - password：密码 - certificate：证书
+     */
     public static final class ConfigTypeEnum {
 
-        /** Enum VARIABLE for value: "variable" */
+        /**
+         * Enum VARIABLE for value: "variable"
+         */
         public static final ConfigTypeEnum VARIABLE = new ConfigTypeEnum("variable");
 
-        /** Enum PASSWORD for value: "password" */
+        /**
+         * Enum PASSWORD for value: "password"
+         */
         public static final ConfigTypeEnum PASSWORD = new ConfigTypeEnum("password");
 
-        /** Enum CERTIFICATE for value: "certificate" */
+        /**
+         * Enum CERTIFICATE for value: "certificate"
+         */
         public static final ConfigTypeEnum CERTIFICATE = new ConfigTypeEnum("certificate");
 
         private static final Map<String, ConfigTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class AppConfigModifyRequestV2 {
         return this;
     }
 
-    /** 应用配置类型： - variable：模板变量 - password：密码 - certificate：证书
-     * 
-     * @return configType */
+    /**
+     * 应用配置类型： - variable：模板变量 - password：密码 - certificate：证书
+     * @return configType
+     */
     public ConfigTypeEnum getConfigType() {
         return configType;
     }
@@ -124,11 +135,10 @@ public class AppConfigModifyRequestV2 {
         return this;
     }
 
-    /** 应用配置值： - config_type = variable：config_value为模板变量的值 - config_type = password：config_value为密码值 - config_type =
-     * certificate：config_value需要包含证书public_key（必填），私钥private_key（必填）和密码passphrase（非必填），格式如：\"{\\\\\"public_key\\\\\":
-     * \\\"\\,\\\\\"private_key\\\\\":\\\\\"\\\\\",\\\\\"passphrase\\\\\":\\\\\"\\\\\"}\"
-     * 
-     * @return configValue */
+    /**
+     * 应用配置值： - config_type = variable：config_value为模板变量的值 - config_type = password：config_value为密码值 - config_type = certificate：config_value需要包含证书public_key（必填），私钥private_key（必填）和密码passphrase（非必填），格式如：\"{\\\\\"public_key\\\\\": \\\"\\,\\\\\"private_key\\\\\":\\\\\"\\\\\",\\\\\"passphrase\\\\\":\\\\\"\\\\\"}\"
+     * @return configValue
+     */
     public String getConfigValue() {
         return configValue;
     }
@@ -142,9 +152,10 @@ public class AppConfigModifyRequestV2 {
         return this;
     }
 
-    /** 应用配置描述
-     * 
-     * @return description */
+    /**
+     * 应用配置描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -183,7 +194,10 @@ public class AppConfigModifyRequestV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

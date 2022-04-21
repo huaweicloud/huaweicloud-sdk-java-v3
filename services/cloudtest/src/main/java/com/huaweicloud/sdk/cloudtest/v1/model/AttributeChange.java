@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 对象，包括编号与名称 */
+/**
+ * 对象，包括编号与名称
+ */
 public class AttributeChange {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AttributeChange {
         return this;
     }
 
-    /** 变更后的取值
-     * 
-     * @return newValue */
+    /**
+     * 变更后的取值
+     * @return newValue
+     */
     public String getNewValue() {
         return newValue;
     }
@@ -44,9 +47,10 @@ public class AttributeChange {
         return this;
     }
 
-    /** 变更前的取值
-     * 
-     * @return oldValue */
+    /**
+     * 变更前的取值
+     * @return oldValue
+     */
     public String getOldValue() {
         return oldValue;
     }
@@ -60,9 +64,10 @@ public class AttributeChange {
         return this;
     }
 
-    /** 发生变更的测试计划属性
-     * 
-     * @return attributeType */
+    /**
+     * 发生变更的测试计划属性
+     * @return attributeType
+     */
     public String getAttributeType() {
         return attributeType;
     }
@@ -101,7 +106,10 @@ public class AttributeChange {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

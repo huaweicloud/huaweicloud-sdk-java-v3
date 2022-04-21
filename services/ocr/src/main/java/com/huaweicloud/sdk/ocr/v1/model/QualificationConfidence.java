@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QualificationConfidence */
+/**
+ * QualificationConfidence
+ */
 public class QualificationConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 身份证号置信度。
-     * 
-     * @return idNumber */
+    /**
+     * 身份证号置信度。 
+     * @return idNumber
+     */
     public Float getIdNumber() {
         return idNumber;
     }
@@ -122,9 +125,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 考核时间置信度。
-     * 
-     * @return assessmentDate */
+    /**
+     * 考核时间置信度。 
+     * @return assessmentDate
+     */
     public Float getAssessmentDate() {
         return assessmentDate;
     }
@@ -138,9 +142,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 从业资格证号置信度。
-     * 
-     * @return certificateNumber */
+    /**
+     * 从业资格证号置信度。 
+     * @return certificateNumber
+     */
     public Float getCertificateNumber() {
         return certificateNumber;
     }
@@ -154,9 +159,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 档案号置信度。
-     * 
-     * @return fileNumber */
+    /**
+     * 档案号置信度。 
+     * @return fileNumber
+     */
     public Float getFileNumber() {
         return fileNumber;
     }
@@ -170,9 +176,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 福路通号置信度。
-     * 
-     * @return unionCardNumber */
+    /**
+     * 福路通号置信度。 
+     * @return unionCardNumber
+     */
     public Float getUnionCardNumber() {
         return unionCardNumber;
     }
@@ -186,9 +193,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 继续教育信息置信度。
-     * 
-     * @return continuingEducationInfo */
+    /**
+     * 继续教育信息置信度。 
+     * @return continuingEducationInfo
+     */
     public Float getContinuingEducationInfo() {
         return continuingEducationInfo;
     }
@@ -202,9 +210,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 性别置信度。
-     * 
-     * @return sex */
+    /**
+     * 性别置信度。 
+     * @return sex
+     */
     public Float getSex() {
         return sex;
     }
@@ -218,9 +227,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 联系电话置信度。
-     * 
-     * @return phoneNumber */
+    /**
+     * 联系电话置信度。 
+     * @return phoneNumber
+     */
     public Float getPhoneNumber() {
         return phoneNumber;
     }
@@ -234,9 +244,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 登记时间置信度。
-     * 
-     * @return registrationDate */
+    /**
+     * 登记时间置信度。 
+     * @return registrationDate
+     */
     public Float getRegistrationDate() {
         return registrationDate;
     }
@@ -250,9 +261,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 单位置信度。
-     * 
-     * @return workUnit */
+    /**
+     * 单位置信度。 
+     * @return workUnit
+     */
     public Float getWorkUnit() {
         return workUnit;
     }
@@ -266,9 +278,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 诚信考核信息置信度。
-     * 
-     * @return integrityAssessmentInfo */
+    /**
+     * 诚信考核信息置信度。 
+     * @return integrityAssessmentInfo
+     */
     public Float getIntegrityAssessmentInfo() {
         return integrityAssessmentInfo;
     }
@@ -282,9 +295,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 国籍置信度。
-     * 
-     * @return nationality */
+    /**
+     * 国籍置信度。 
+     * @return nationality
+     */
     public Float getNationality() {
         return nationality;
     }
@@ -298,9 +312,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 姓名置信度。
-     * 
-     * @return name */
+    /**
+     * 姓名置信度。 
+     * @return name
+     */
     public Float getName() {
         return name;
     }
@@ -314,9 +329,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 住址置信度。
-     * 
-     * @return address */
+    /**
+     * 住址置信度。 
+     * @return address
+     */
     public Float getAddress() {
         return address;
     }
@@ -330,9 +346,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 准驾车型置信度。
-     * 
-     * @return drivingClass */
+    /**
+     * 准驾车型置信度。 
+     * @return drivingClass
+     */
     public Float getDrivingClass() {
         return drivingClass;
     }
@@ -346,9 +363,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 发证机关置信度。
-     * 
-     * @return issuingAuthority */
+    /**
+     * 发证机关置信度。 
+     * @return issuingAuthority
+     */
     public Float getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -362,9 +380,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 出生日期置信度。
-     * 
-     * @return birthDate */
+    /**
+     * 出生日期置信度。 
+     * @return birthDate
+     */
     public Float getBirthDate() {
         return birthDate;
     }
@@ -397,9 +416,10 @@ public class QualificationConfidence {
         return this;
     }
 
-    /** 从业资格列表置信度。
-     * 
-     * @return qualificationCategoryList */
+    /**
+     * 从业资格列表置信度。 
+     * @return qualificationCategoryList
+     */
     public List<QualificationCategoryConfidence> getQualificationCategoryList() {
         return qualificationCategoryList;
     }
@@ -485,7 +505,10 @@ public class QualificationConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

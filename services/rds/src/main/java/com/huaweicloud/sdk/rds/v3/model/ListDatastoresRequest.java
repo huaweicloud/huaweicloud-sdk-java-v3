@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatastoresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class ListDatastoresRequest {
 
     private String xLanguage;
 
-    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer */
+    /**
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     */
     public static final class DatabaseNameEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final DatabaseNameEnum MYSQL = new DatabaseNameEnum("MySQL");
 
-        /** Enum POSTGRESQL for value: "PostgreSQL" */
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
         public static final DatabaseNameEnum POSTGRESQL = new DatabaseNameEnum("PostgreSQL");
 
-        /** Enum SQLSERVER for value: "SQLServer" */
+        /**
+         * Enum SQLSERVER for value: "SQLServer"
+         */
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
 
         private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class ListDatastoresRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -121,9 +132,10 @@ public class ListDatastoresRequest {
         return this;
     }
 
-    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     * 
-     * @return databaseName */
+    /**
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     * @return databaseName
+     */
     public DatabaseNameEnum getDatabaseName() {
         return databaseName;
     }
@@ -160,7 +172,10 @@ public class ListDatastoresRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

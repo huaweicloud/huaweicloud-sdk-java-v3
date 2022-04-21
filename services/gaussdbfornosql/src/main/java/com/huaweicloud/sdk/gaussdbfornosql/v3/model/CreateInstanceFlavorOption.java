@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例规格详情。 */
+/**
+ * 实例规格详情。
+ */
 public class CreateInstanceFlavorOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class CreateInstanceFlavorOption {
         return this;
     }
 
-    /** 节点数量。 - GaussDB(for Cassandra)实例的节点数量可取3~12。 - GaussDB(for Mongo)4.0版本副本集实例的节点数量可取3。 - GaussDB(for
-     * Influx)实例的节点数量可取3~16。
-     * 
-     * @return num */
+    /**
+     * 节点数量。   - GaussDB(for Cassandra)实例的节点数量可取3~12。   - GaussDB(for Mongo)4.0版本副本集实例的节点数量可取3。   - GaussDB(for Influx)实例的节点数量可取3~16。
+     * @return num
+     */
     public String getNum() {
         return num;
     }
@@ -50,9 +52,10 @@ public class CreateInstanceFlavorOption {
         return this;
     }
 
-    /** 磁盘类型。 取值为“ULTRAHIGH”，表示SSD盘。
-     * 
-     * @return storage */
+    /**
+     * 磁盘类型。 取值为“ULTRAHIGH”，表示SSD盘。
+     * @return storage
+     */
     public String getStorage() {
         return storage;
     }
@@ -66,9 +69,10 @@ public class CreateInstanceFlavorOption {
         return this;
     }
 
-    /** 磁盘大小。必须为10的整数倍。单位为GB。最小磁盘容量100GB，最大磁盘容量与实例的性能规格有关，详见数据库实例规格。
-     * 
-     * @return size */
+    /**
+     * 磁盘大小。必须为10的整数倍。单位为GB。最小磁盘容量100GB，最大磁盘容量与实例的性能规格有关，详见数据库实例规格。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -82,9 +86,10 @@ public class CreateInstanceFlavorOption {
         return this;
     }
 
-    /** 资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“spec_code”的值。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“spec_code”的值。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -125,7 +130,10 @@ public class CreateInstanceFlavorOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

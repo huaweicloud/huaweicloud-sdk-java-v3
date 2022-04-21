@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 。 */
+/**
+ * 。
+ */
 public class TaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,19 +50,29 @@ public class TaskInfo {
 
     private String taskName;
 
-    /** 任务状态。 */
+    /**
+     * 任务状态。
+     */
     public static final class TaskStatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final TaskStatusEnum RUNNING = new TaskStatusEnum("RUNNING");
 
-        /** Enum SKIPPED for value: "SKIPPED" */
+        /**
+         * Enum SKIPPED for value: "SKIPPED"
+         */
         public static final TaskStatusEnum SKIPPED = new TaskStatusEnum("SKIPPED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final TaskStatusEnum FAILED = new TaskStatusEnum("FAILED");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final TaskStatusEnum SUCCEEDED = new TaskStatusEnum("SUCCEEDED");
 
         private static final Map<String, TaskStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -142,9 +154,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -158,9 +171,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 健康检查时间。
-     * 
-     * @return lastHealthCheck */
+    /**
+     * 健康检查时间。
+     * @return lastHealthCheck
+     */
     public String getLastHealthCheck() {
         return lastHealthCheck;
     }
@@ -174,9 +188,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 消息。
-     * 
-     * @return messages */
+    /**
+     * 消息。
+     * @return messages
+     */
     public String getMessages() {
         return messages;
     }
@@ -190,9 +205,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 创建用户ID。
-     * 
-     * @return ownerId */
+    /**
+     * 创建用户ID。
+     * @return ownerId
+     */
     public String getOwnerId() {
         return ownerId;
     }
@@ -206,9 +222,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -222,9 +239,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 任务序号。
-     * 
-     * @return taskIndex */
+    /**
+     * 任务序号。
+     * @return taskIndex
+     */
     public Integer getTaskIndex() {
         return taskIndex;
     }
@@ -238,9 +256,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -254,9 +273,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态。
+     * @return taskStatus
+     */
     public TaskStatusEnum getTaskStatus() {
         return taskStatus;
     }
@@ -270,9 +290,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 任务类型。
-     * 
-     * @return taskType */
+    /**
+     * 任务类型。
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -321,7 +342,10 @@ public class TaskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

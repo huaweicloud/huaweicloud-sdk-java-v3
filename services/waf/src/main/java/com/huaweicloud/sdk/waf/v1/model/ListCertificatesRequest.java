@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -59,9 +62,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
-     * 
-     * @return page */
+    /**
+     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -75,9 +79,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
-     * 
-     * @return pagesize */
+    /**
+     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * @return pagesize
+     */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -91,9 +96,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书名称
-     * 
-     * @return name */
+    /**
+     * 证书名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 是否获取证书关联的域名，默认为false -true:获取已关联域名的证书 -false:获取未关联域名的证书
-     * 
-     * @return host */
+    /**
+     * 是否获取证书关联的域名，默认为false   -true:获取已关联域名的证书   -false:获取未关联域名的证书
+     * @return host
+     */
     public Boolean getHost() {
         return host;
     }
@@ -123,9 +130,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书过期状态，0-未过期，1-已过期，2-即将过期（证书将在一个月内过期）
-     * 
-     * @return expStatus */
+    /**
+     * 证书过期状态，0-未过期，1-已过期，2-即将过期（证书将在一个月内过期）
+     * @return expStatus
+     */
     public Integer getExpStatus() {
         return expStatus;
     }
@@ -170,7 +178,10 @@ public class ListCertificatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

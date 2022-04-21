@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OpExtendInfoBckup */
+/**
+ * OpExtendInfoBckup
+ */
 public class OpExtendInfoBckup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class OpExtendInfoBckup {
 
     private String appConsistencyErrorMessage;
 
-    /** 应用一致性备份状态；0:非应用一致性，1：应用一致性备份 */
+    /**
+     * 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
+     */
     public static final class AppConsistencyStatusEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final AppConsistencyStatusEnum _0 = new AppConsistencyStatusEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final AppConsistencyStatusEnum _1 = new AppConsistencyStatusEnum("1");
 
         private static final Map<String, AppConsistencyStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +117,19 @@ public class OpExtendInfoBckup {
 
     private String backupName;
 
-    /** 是否增备 */
+    /**
+     * 是否增备
+     */
     public static final class IncrementalEnum {
 
-        /** Enum _TRUE_ for value: "\"true\"" */
+        /**
+         * Enum _TRUE_ for value: "\"true\""
+         */
         public static final IncrementalEnum _TRUE_ = new IncrementalEnum("\"true\"");
 
-        /** Enum _FALSE_ for value: "\"false\"" */
+        /**
+         * Enum _FALSE_ for value: "\"false\""
+         */
         public static final IncrementalEnum _FALSE_ = new IncrementalEnum("\"false\"");
 
         private static final Map<String, IncrementalEnum> STATIC_FIELDS = createStaticFields();
@@ -190,9 +204,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 应用一致性备份失败错误码。请参见[错误码](ErrorCode.xml)。
-     * 
-     * @return appConsistencyErrorCode */
+    /**
+     * 应用一致性备份失败错误码。请参见[错误码](ErrorCode.xml)。
+     * @return appConsistencyErrorCode
+     */
     public String getAppConsistencyErrorCode() {
         return appConsistencyErrorCode;
     }
@@ -206,9 +221,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 应用一致性备份错误信息
-     * 
-     * @return appConsistencyErrorMessage */
+    /**
+     * 应用一致性备份错误信息
+     * @return appConsistencyErrorMessage
+     */
     public String getAppConsistencyErrorMessage() {
         return appConsistencyErrorMessage;
     }
@@ -222,9 +238,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
-     * 
-     * @return appConsistencyStatus */
+    /**
+     * 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
+     * @return appConsistencyStatus
+     */
     public AppConsistencyStatusEnum getAppConsistencyStatus() {
         return appConsistencyStatus;
     }
@@ -238,9 +255,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 备份副本ID
-     * 
-     * @return backupId */
+    /**
+     * 备份副本ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -254,9 +272,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return backupName */
+    /**
+     * 备份名称
+     * @return backupName
+     */
     public String getBackupName() {
         return backupName;
     }
@@ -270,9 +289,10 @@ public class OpExtendInfoBckup {
         return this;
     }
 
-    /** 是否增备
-     * 
-     * @return incremental */
+    /**
+     * 是否增备
+     * @return incremental
+     */
     public IncrementalEnum getIncremental() {
         return incremental;
     }
@@ -322,7 +342,10 @@ public class OpExtendInfoBckup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

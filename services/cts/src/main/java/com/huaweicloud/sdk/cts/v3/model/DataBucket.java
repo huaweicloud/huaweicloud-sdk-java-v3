@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DataBucket */
+/**
+ * DataBucket
+ */
 public class DataBucket {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class DataBucket {
 
     private String dataBucketName;
 
-    /** Gets or Sets dataEvent */
+    /**
+     * Gets or Sets dataEvent
+     */
     public static final class DataEventEnum {
 
-        /** Enum WRITE for value: "WRITE" */
+        /**
+         * Enum WRITE for value: "WRITE"
+         */
         public static final DataEventEnum WRITE = new DataEventEnum("WRITE");
 
-        /** Enum READ for value: "READ" */
+        /**
+         * Enum READ for value: "READ"
+         */
         public static final DataEventEnum READ = new DataEventEnum("READ");
 
         private static final Map<String, DataEventEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class DataBucket {
         return this;
     }
 
-    /** 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
-     * 
-     * @return dataBucketName */
+    /**
+     * 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
+     * @return dataBucketName
+     */
     public String getDataBucketName() {
         return dataBucketName;
     }
@@ -134,9 +143,10 @@ public class DataBucket {
         return this;
     }
 
-    /** 数据类追踪器追踪的操作类型。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。
-     * 
-     * @return dataEvent */
+    /**
+     * 数据类追踪器追踪的操作类型。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。
+     * @return dataEvent
+     */
     public List<DataEventEnum> getDataEvent() {
         return dataEvent;
     }
@@ -173,7 +183,10 @@ public class DataBucket {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

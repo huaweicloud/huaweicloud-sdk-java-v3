@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVpcRoutesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,14 @@ public class ListVpcRoutesRequest {
 
     private String id;
 
-    /** 功能说明：按照路由类型过滤查询 取值范围：peering */
+    /**
+     * 功能说明：按照路由类型过滤查询  取值范围：peering
+     */
     public static final class TypeEnum {
 
-        /** Enum PEERING for value: "peering" */
+        /**
+         * Enum PEERING for value: "peering"
+         */
         public static final TypeEnum PEERING = new TypeEnum("peering");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +126,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -136,9 +143,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -152,9 +160,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 按照routes_id过滤查询
-     * 
-     * @return id */
+    /**
+     * 按照routes_id过滤查询
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -168,9 +177,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 功能说明：按照路由类型过滤查询 取值范围：peering
-     * 
-     * @return type */
+    /**
+     * 功能说明：按照路由类型过滤查询  取值范围：peering
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -184,9 +194,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 按照vpc_id过滤查询
-     * 
-     * @return vpcId */
+    /**
+     * 按照vpc_id过滤查询
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -200,9 +211,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 按照路由目的地址CIDR过滤查询
-     * 
-     * @return destination */
+    /**
+     * 按照路由目的地址CIDR过滤查询
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -216,9 +228,10 @@ public class ListVpcRoutesRequest {
         return this;
     }
 
-    /** 按照项目ID过滤查询
-     * 
-     * @return tenantId */
+    /**
+     * 按照项目ID过滤查询
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -264,7 +277,10 @@ public class ListVpcRoutesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

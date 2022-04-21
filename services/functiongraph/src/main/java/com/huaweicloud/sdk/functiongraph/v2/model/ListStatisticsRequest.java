@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStatisticsRequest {
 
-    /** 参数过滤器。 */
+    /**
+     * 参数过滤器。
+     */
     public static final class FilterEnum {
 
-        /** Enum MONITOR_DATA for value: "monitor_data" */
+        /**
+         * Enum MONITOR_DATA for value: "monitor_data"
+         */
         public static final FilterEnum MONITOR_DATA = new FilterEnum("monitor_data");
 
-        /** Enum MONTHLY_REPORT for value: "monthly_report" */
+        /**
+         * Enum MONTHLY_REPORT for value: "monthly_report"
+         */
         public static final FilterEnum MONTHLY_REPORT = new FilterEnum("monthly_report");
 
         private static final Map<String, FilterEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 参数过滤器。
-     * 
-     * @return filter */
+    /**
+     * 参数过滤器。
+     * @return filter
+     */
     public FilterEnum getFilter() {
         return filter;
     }
@@ -115,9 +124,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 时间段单位为分钟，与filter参数配合使用。
-     * 
-     * @return period */
+    /**
+     * 时间段单位为分钟，与filter参数配合使用。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -154,7 +164,10 @@ public class ListStatisticsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

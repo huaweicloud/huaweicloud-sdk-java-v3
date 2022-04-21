@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 版本对象。 */
+/**
+ * 版本对象。
+ */
 public class ValuesItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ValuesItem {
         return this;
     }
 
-    /** 所有版本列表。
-     * 
-     * @return values */
+    /**
+     * 所有版本列表。
+     * @return values
+     */
     public List<ListApiVersionsItem> getValues() {
         return values;
     }
@@ -74,7 +77,10 @@ public class ValuesItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

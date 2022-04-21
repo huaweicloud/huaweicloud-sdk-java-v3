@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiPolicyFunctionCreate */
+/**
+ * ApiPolicyFunctionCreate
+ */
 public class ApiPolicyFunctionCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class ApiPolicyFunctionCreate {
 
     private String functionUrn;
 
-    /** 调用类型 - async： 异步 - sync：同步 */
+    /**
+     * 调用类型 - async： 异步 - sync：同步
+     */
     public static final class InvocationTypeEnum {
 
-        /** Enum ASYNC for value: "async" */
+        /**
+         * Enum ASYNC for value: "async"
+         */
         public static final InvocationTypeEnum ASYNC = new InvocationTypeEnum("async");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
 
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,13 +115,19 @@ public class ApiPolicyFunctionCreate {
 
     private String version;
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     */
     public static final class EffectModeEnum {
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
@@ -208,9 +222,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 函数URN
-     * 
-     * @return functionUrn */
+    /**
+     * 函数URN
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -224,9 +239,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 调用类型 - async： 异步 - sync：同步
-     * 
-     * @return invocationType */
+    /**
+     * 调用类型 - async： 异步 - sync：同步
+     * @return invocationType
+     */
     public InvocationTypeEnum getInvocationType() {
         return invocationType;
     }
@@ -240,9 +256,11 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000 单位：毫秒。 minimum: 1
-     * 
-     * @return timeout */
+    /**
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
+     * minimum: 1
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -256,9 +274,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 版本。字符长度不超过64
-     * 
-     * @return version */
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -272,9 +291,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * 
-     * @return effectMode */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
+     */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -288,9 +308,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * 
-     * @return name */
+    /**
+     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -320,9 +341,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * 后端参数列表
+     * @return backendParams
+     */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -352,9 +374,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 策略条件列表
-     * 
-     * @return conditions */
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
     public List<ApiConditionCreate> getConditions() {
         return conditions;
     }
@@ -368,9 +391,10 @@ public class ApiPolicyFunctionCreate {
         return this;
     }
 
-    /** 后端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -429,7 +453,10 @@ public class ApiPolicyFunctionCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

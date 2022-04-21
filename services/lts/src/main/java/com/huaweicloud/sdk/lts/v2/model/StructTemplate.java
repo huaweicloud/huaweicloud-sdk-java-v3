@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 结构化模板实体 */
+/**
+ * 结构化模板实体
+ */
 public class StructTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,19 +28,29 @@ public class StructTemplate {
 
     private String templateName;
 
-    /** 模板类型，regex,json,split,nginx */
+    /**
+     * 模板类型，regex,json,split,nginx
+     */
     public static final class TemplateTypeEnum {
 
-        /** Enum REGEX for value: "regex" */
+        /**
+         * Enum REGEX for value: "regex"
+         */
         public static final TemplateTypeEnum REGEX = new TemplateTypeEnum("regex");
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final TemplateTypeEnum JSON = new TemplateTypeEnum("json");
 
-        /** Enum SPLIT for value: "split" */
+        /**
+         * Enum SPLIT for value: "split"
+         */
         public static final TemplateTypeEnum SPLIT = new TemplateTypeEnum("split");
 
-        /** Enum NGINX for value: "nginx" */
+        /**
+         * Enum NGINX for value: "nginx"
+         */
         public static final TemplateTypeEnum NGINX = new TemplateTypeEnum("nginx");
 
         private static final Map<String, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -145,9 +157,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -161,9 +174,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return templateName */
+    /**
+     * 模板名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -177,9 +191,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 模板类型，regex,json,split,nginx
-     * 
-     * @return templateType */
+    /**
+     * 模板类型，regex,json,split,nginx
+     * @return templateType
+     */
     public TemplateTypeEnum getTemplateType() {
         return templateType;
     }
@@ -193,9 +208,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 示例日志
-     * 
-     * @return demoLog */
+    /**
+     * 示例日志
+     * @return demoLog
+     */
     public String getDemoLog() {
         return demoLog;
     }
@@ -225,9 +241,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 示例字段数组
-     * 
-     * @return demoFields */
+    /**
+     * 示例字段数组
+     * @return demoFields
+     */
     public List<DemoField> getDemoFields() {
         return demoFields;
     }
@@ -257,9 +274,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** Tag字段数组
-     * 
-     * @return tagFields */
+    /**
+     * Tag字段数组
+     * @return tagFields
+     */
     public List<TagFieldNew> getTagFields() {
         return tagFields;
     }
@@ -282,9 +300,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** Get rule
-     * 
-     * @return rule */
+    /**
+     * Get rule
+     * @return rule
+     */
     public TemplateRule getRule() {
         return rule;
     }
@@ -298,9 +317,10 @@ public class StructTemplate {
         return this;
     }
 
-    /** 示例日志标签
-     * 
-     * @return demoLabel */
+    /**
+     * 示例日志标签
+     * @return demoLabel
+     */
     public String getDemoLabel() {
         return demoLabel;
     }
@@ -314,9 +334,12 @@ public class StructTemplate {
         return this;
     }
 
-    /** 创建时间 minimum: 0 maximum: 20000000000000
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 20000000000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -368,7 +391,10 @@ public class StructTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

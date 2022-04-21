@@ -25,9 +25,10 @@ public class SecurityCompliance {
         return this;
     }
 
-    /** 密码强度策略的正则表达式。
-     * 
-     * @return passwordRegex */
+    /**
+     * 密码强度策略的正则表达式。
+     * @return passwordRegex
+     */
     public String getPasswordRegex() {
         return passwordRegex;
     }
@@ -41,9 +42,10 @@ public class SecurityCompliance {
         return this;
     }
 
-    /** 密码强度策略的描述。
-     * 
-     * @return passwordRegexDescription */
+    /**
+     * 密码强度策略的描述。
+     * @return passwordRegexDescription
+     */
     public String getPasswordRegexDescription() {
         return passwordRegexDescription;
     }
@@ -80,7 +82,10 @@ public class SecurityCompliance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

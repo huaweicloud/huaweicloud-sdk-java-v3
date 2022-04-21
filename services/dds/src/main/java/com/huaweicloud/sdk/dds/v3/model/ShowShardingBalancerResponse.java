@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowShardingBalancerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群均衡是否打开。
-     * 
-     * @return isOpen */
+    /**
+     * 集群均衡是否打开。
+     * @return isOpen
+     */
     public Boolean getIsOpen() {
         return isOpen;
     }
@@ -50,9 +53,10 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** Get activeWindow
-     * 
-     * @return activeWindow */
+    /**
+     * Get activeWindow
+     * @return activeWindow
+     */
     public BalancerActiveWindow getActiveWindow() {
         return activeWindow;
     }
@@ -89,7 +93,10 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

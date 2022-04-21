@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSimPricePlansRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,11 @@ public class ListSimPricePlansRequest {
         return this;
     }
 
-    /** SIM卡标识，可通过[查询SIM卡列表接口](https://support.huaweicloud.com/api-ocgsl/gsl_07_0008.html)获取 minimum: 0
-     * 
-     * @return simCardId */
+    /**
+     * SIM卡标识，可通过[查询SIM卡列表接口](https://support.huaweicloud.com/api-ocgsl/gsl_07_0008.html)获取
+     * minimum: 0
+     * @return simCardId
+     */
     public Long getSimCardId() {
         return simCardId;
     }
@@ -49,9 +53,10 @@ public class ListSimPricePlansRequest {
         return this;
     }
 
-    /** 是否查实时流量
-     * 
-     * @return realTime */
+    /**
+     * 是否查实时流量
+     * @return realTime
+     */
     public Boolean getRealTime() {
         return realTime;
     }
@@ -65,9 +70,12 @@ public class ListSimPricePlansRequest {
         return this;
     }
 
-    /** 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -81,9 +89,12 @@ public class ListSimPricePlansRequest {
         return this;
     }
 
-    /** 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数 minimum: 1 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数
+     * minimum: 1
+     * maximum: 1000000
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -124,7 +135,10 @@ public class ListSimPricePlansRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

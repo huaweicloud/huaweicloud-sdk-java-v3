@@ -23,13 +23,19 @@ public class BatchStopServersOption {
 
     private List<ServerId> servers = null;
 
-    /** 关机类型，默认为SOFT： - SOFT：普通关机（默认）。 - HARD：强制关机。 */
+    /**
+    * 关机类型，默认为SOFT：  - SOFT：普通关机（默认）。 - HARD：强制关机。
+    */
     public static final class TypeEnum {
 
-        /** Enum SOFT for value: "SOFT" */
+        /**
+         * Enum SOFT for value: "SOFT"
+         */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
 
-        /** Enum HARD for value: "HARD" */
+        /**
+         * Enum HARD for value: "HARD"
+         */
         public static final TypeEnum HARD = new TypeEnum("HARD");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +126,10 @@ public class BatchStopServersOption {
         return this;
     }
 
-    /** 标记为启动云服务器操作。
-     * 
-     * @return servers */
+    /**
+     * 标记为启动云服务器操作。
+     * @return servers
+     */
     public List<ServerId> getServers() {
         return servers;
     }
@@ -136,9 +143,10 @@ public class BatchStopServersOption {
         return this;
     }
 
-    /** 关机类型，默认为SOFT： - SOFT：普通关机（默认）。 - HARD：强制关机。
-     * 
-     * @return type */
+    /**
+     * 关机类型，默认为SOFT：  - SOFT：普通关机（默认）。 - HARD：强制关机。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -175,7 +183,10 @@ public class BatchStopServersOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

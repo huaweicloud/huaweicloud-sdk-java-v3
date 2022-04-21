@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlowlogDownloadRequest */
+/**
+ * SlowlogDownloadRequest
+ */
 public class SlowlogDownloadRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class SlowlogDownloadRequest {
         return this;
     }
 
-    /** - 需要下载的文件的文件名, 当引擎为SQL Server时为必选。
-     * 
-     * @return fileName */
+    /**
+     * - 需要下载的文件的文件名, 当引擎为SQL Server时为必选。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -55,7 +58,10 @@ public class SlowlogDownloadRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

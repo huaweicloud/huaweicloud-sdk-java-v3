@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SignApiBindingInfo */
+/**
+ * SignApiBindingInfo
+ */
 public class SignApiBindingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,21 +86,29 @@ public class SignApiBindingInfo {
 
     private String signSecret;
 
-    /** 签名密钥类型： - hmac - basic - public_key - aes basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
-     * public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIG特性”，如确认实例不存在public_key配置可联系技术工程师开启。
-     * aes类型需要实例升级到对应版本，若不存在可联系技术工程师升级。 */
+    /**
+     * 签名密钥类型： - hmac - basic - public_key - aes  basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。  public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIG特性”，如确认实例不存在public_key配置可联系技术工程师开启。  aes类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
+     */
     public static final class SignTypeEnum {
 
-        /** Enum HMAC for value: "hmac" */
+        /**
+         * Enum HMAC for value: "hmac"
+         */
         public static final SignTypeEnum HMAC = new SignTypeEnum("hmac");
 
-        /** Enum BASIC for value: "basic" */
+        /**
+         * Enum BASIC for value: "basic"
+         */
         public static final SignTypeEnum BASIC = new SignTypeEnum("basic");
 
-        /** Enum PUBLIC_KEY for value: "public_key" */
+        /**
+         * Enum PUBLIC_KEY for value: "public_key"
+         */
         public static final SignTypeEnum PUBLIC_KEY = new SignTypeEnum("public_key");
 
-        /** Enum AES for value: "aes" */
+        /**
+         * Enum AES for value: "aes"
+         */
         public static final SignTypeEnum AES = new SignTypeEnum("aes");
 
         private static final Map<String, SignTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -175,9 +185,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API的发布编号
-     * 
-     * @return publishId */
+    /**
+     * API的发布编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -191,9 +202,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -207,9 +219,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -223,9 +236,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return bindingTime */
+    /**
+     * 绑定时间
+     * @return bindingTime
+     */
     public OffsetDateTime getBindingTime() {
         return bindingTime;
     }
@@ -239,9 +253,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API所属环境的编号
-     * 
-     * @return envId */
+    /**
+     * API所属环境的编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -255,9 +270,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API所属环境的名称
-     * 
-     * @return envName */
+    /**
+     * API所属环境的名称
+     * @return envName
+     */
     public String getEnvName() {
         return envName;
     }
@@ -271,9 +287,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return apiType */
+    /**
+     * API类型
+     * @return apiType
+     */
     public Integer getApiType() {
         return apiType;
     }
@@ -287,9 +304,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -303,9 +321,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 绑定关系的ID
-     * 
-     * @return id */
+    /**
+     * 绑定关系的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -319,9 +338,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return apiRemark */
+    /**
+     * API描述
+     * @return apiRemark
+     */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -335,9 +355,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 签名密钥的编号
-     * 
-     * @return signId */
+    /**
+     * 签名密钥的编号
+     * @return signId
+     */
     public String getSignId() {
         return signId;
     }
@@ -351,9 +372,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return signName */
+    /**
+     * 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return signName
+     */
     public String getSignName() {
         return signName;
     }
@@ -367,12 +389,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 签名密钥的key。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母或数字开头，8 ~ 32字符。未填写时后台自动生成。 -
-     * basic类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母开头，4 ~ 32字符。未填写时后台自动生成。 -
-     * public_key类型的签名密钥key：支持英文，数字，下划线，中划线，+，/，=，可以英文字母，数字，+，/开头，8 ~ 512字符。未填写时后台自动生成。 -
-     * aes类型的签名秘钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，签名算法为aes-128-cfb时为16个字符，签名算法为aes-256-cfb时为32个字符。未填写时后台自动生成。
-     * 
-     * @return signKey */
+    /**
+     * 签名密钥的key。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母或数字开头，8 ~ 32字符。未填写时后台自动生成。 - basic类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母开头，4 ~ 32字符。未填写时后台自动生成。 - public_key类型的签名密钥key：支持英文，数字，下划线，中划线，+，/，=，可以英文字母，数字，+，/开头，8 ~ 512字符。未填写时后台自动生成。 - aes类型的签名秘钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，签名算法为aes-128-cfb时为16个字符，签名算法为aes-256-cfb时为32个字符。未填写时后台自动生成。
+     * @return signKey
+     */
     public String getSignKey() {
         return signKey;
     }
@@ -386,12 +406,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 签名密钥的密钥。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，16 ~ 64字符。未填写时后台自动生成。 -
-     * basic类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，8 ~ 64字符。未填写时后台自动生成。 -
-     * public_key类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，15 ~ 2048字符。未填写时后台自动生成。 -
-     * aes类型签名秘钥使用的向量：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，16个字符。未填写时后台自动生成。
-     * 
-     * @return signSecret */
+    /**
+     * 签名密钥的密钥。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，16 ~ 64字符。未填写时后台自动生成。 - basic类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，8 ~ 64字符。未填写时后台自动生成。 - public_key类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，15 ~ 2048字符。未填写时后台自动生成。 - aes类型签名秘钥使用的向量：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，16个字符。未填写时后台自动生成。
+     * @return signSecret
+     */
     public String getSignSecret() {
         return signSecret;
     }
@@ -405,11 +423,10 @@ public class SignApiBindingInfo {
         return this;
     }
 
-    /** 签名密钥类型： - hmac - basic - public_key - aes basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
-     * public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIG特性”，如确认实例不存在public_key配置可联系技术工程师开启。
-     * aes类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
-     * 
-     * @return signType */
+    /**
+     * 签名密钥类型： - hmac - basic - public_key - aes  basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。  public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIG特性”，如确认实例不存在public_key配置可联系技术工程师开启。  aes类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
+     * @return signType
+     */
     public SignTypeEnum getSignType() {
         return signType;
     }
@@ -486,7 +503,10 @@ public class SignApiBindingInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

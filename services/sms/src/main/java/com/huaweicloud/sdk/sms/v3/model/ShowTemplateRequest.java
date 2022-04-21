@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ShowTemplateRequest {
         return this;
     }
 
-    /** 需要查询的模板信息的id
-     * 
-     * @return id */
+    /**
+     * 需要查询的模板信息的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,7 +58,10 @@ public class ShowTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

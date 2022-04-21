@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCommitsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return xRepoAuth */
+    /**
+     * 授权名称。
+     * @return xRepoAuth
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
@@ -51,9 +54,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 组织ID。
-     * 
-     * @return namespace */
+    /**
+     * 组织ID。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -67,9 +71,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * 
-     * @return project */
+    /**
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * @return project
+     */
     public String getProject() {
         return project;
     }
@@ -83,9 +88,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 分支名称或者tag名称，如果没有提供，使用默认分支。
-     * 
-     * @return ref */
+    /**
+     * 分支名称或者tag名称，如果没有提供，使用默认分支。
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -126,7 +132,10 @@ public class ListCommitsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

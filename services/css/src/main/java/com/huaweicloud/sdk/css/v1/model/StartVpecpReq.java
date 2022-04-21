@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StartVpecpReq */
+/**
+ * StartVpecpReq
+ */
 public class StartVpecpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class StartVpecpReq {
         return this;
     }
 
-    /** 内网域名。
-     * 
-     * @return endpointWithDnsName */
+    /**
+     * 内网域名。
+     * @return endpointWithDnsName
+     */
     public String getEndpointWithDnsName() {
         return endpointWithDnsName;
     }
@@ -55,7 +58,10 @@ public class StartVpecpReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

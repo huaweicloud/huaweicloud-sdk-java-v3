@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteApplicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteApplicationRequest {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return applicationId */
+    /**
+     * 应用ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -55,7 +58,10 @@ public class DeleteApplicationRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

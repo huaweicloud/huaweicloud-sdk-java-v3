@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDomainSettingsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return domainId */
+    /**
+     * 域名id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -73,9 +76,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 网站需要登录时，设置登录页面
-     * 
-     * @return loginUrl */
+    /**
+     * 网站需要登录时，设置登录页面
+     * @return loginUrl
+     */
     public String getLoginUrl() {
         return loginUrl;
     }
@@ -89,9 +93,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 网站需要登录时，设置登录用户名
-     * 
-     * @return loginUsername */
+    /**
+     * 网站需要登录时，设置登录用户名
+     * @return loginUsername
+     */
     public String getLoginUsername() {
         return loginUsername;
     }
@@ -105,9 +110,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 网站需要登录时，设置登录密码
-     * 
-     * @return loginPassword */
+    /**
+     * 网站需要登录时，设置登录密码
+     * @return loginPassword
+     */
     public String getLoginPassword() {
         return loginPassword;
     }
@@ -121,9 +127,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 网站需要登录时，设置登录cookie
-     * 
-     * @return loginCookies */
+    /**
+     * 网站需要登录时，设置登录cookie
+     * @return loginCookies
+     */
     public String getLoginCookies() {
         return loginCookies;
     }
@@ -137,9 +144,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 设置用于验证登录是否成功的网址
-     * 
-     * @return verifyUrl */
+    /**
+     * 设置用于验证登录是否成功的网址
+     * @return verifyUrl
+     */
     public String getVerifyUrl() {
         return verifyUrl;
     }
@@ -169,9 +177,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 设置自定义HTTP请求头
-     * 
-     * @return httpHeaders */
+    /**
+     * 设置自定义HTTP请求头
+     * @return httpHeaders
+     */
     public Map<String, String> getHttpHeaders() {
         return httpHeaders;
     }
@@ -185,9 +194,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -237,7 +247,10 @@ public class ShowDomainSettingsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

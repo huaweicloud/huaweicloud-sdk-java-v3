@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 终端节点服务列表 */
+/**
+ * 终端节点服务列表
+ */
 public class EndpointService {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,14 +30,19 @@ public class EndpointService {
 
     private String serviceName;
 
-    /** 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建， 用户可直接使用。
-     * 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。 */
+    /**
+     * 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     */
     public static final class ServiceTypeEnum {
 
-        /** Enum INTERFACE for value: "interface" */
+        /**
+         * Enum INTERFACE for value: "interface"
+         */
         public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
 
-        /** Enum GATEWAY for value: "gateway" */
+        /**
+         * Enum GATEWAY for value: "gateway"
+         */
         public static final ServiceTypeEnum GATEWAY = new ServiceTypeEnum("gateway");
 
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +127,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 公共终端节点服务的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 公共终端节点服务的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -136,9 +144,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 终端节点服务的所有者。
-     * 
-     * @return owner */
+    /**
+     * 终端节点服务的所有者。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -152,9 +161,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 公共终端节点服务的名称。
-     * 
-     * @return serviceName */
+    /**
+     * 公共终端节点服务的名称。
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -168,10 +178,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建， 用户可直接使用。
-     * 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
-     * 
-     * @return serviceType */
+    /**
+     * 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * @return serviceType
+     */
     public ServiceTypeEnum getServiceType() {
         return serviceType;
     }
@@ -185,9 +195,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYYMM-DDTHH:MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYYMM-DDTHH:MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -201,9 +212,10 @@ public class EndpointService {
         return this;
     }
 
-    /** 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
-     * 
-     * @return isCharge */
+    /**
+     * 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
+     * @return isCharge
+     */
     public Boolean getIsCharge() {
         return isCharge;
     }
@@ -247,7 +259,10 @@ public class EndpointService {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

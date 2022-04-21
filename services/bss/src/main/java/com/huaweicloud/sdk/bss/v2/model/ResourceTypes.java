@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResourceTypes */
+/**
+ * ResourceTypes
+ */
 public class ResourceTypes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ResourceTypes {
         return this;
     }
 
-    /** 资源类型的编码。例如ECS的VM为“hws.resource.type.vm”。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型的编码。例如ECS的VM为“hws.resource.type.vm”。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -49,9 +52,10 @@ public class ResourceTypes {
         return this;
     }
 
-    /** 资源类型的名称。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型的名称。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -65,9 +69,10 @@ public class ResourceTypes {
         return this;
     }
 
-    /** 资源类型的描述。
-     * 
-     * @return resourceTypeDesc */
+    /**
+     * 资源类型的描述。
+     * @return resourceTypeDesc
+     */
     public String getResourceTypeDesc() {
         return resourceTypeDesc;
     }
@@ -81,9 +86,10 @@ public class ResourceTypes {
         return this;
     }
 
-    /** 资源类型归属的服务类型编码。例如：hws.service.type.offline。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 资源类型归属的服务类型编码。例如：hws.service.type.offline。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -124,7 +130,10 @@ public class ResourceTypes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

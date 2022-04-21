@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 组织信息 */
+/**
+ * 组织信息
+ */
 public class OrganizationV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class OrganizationV2 {
         return this;
     }
 
-    /** 组织名称
-     * 
-     * @return name */
+    /**
+     * 组织名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class OrganizationV2 {
         return this;
     }
 
-    /** 组织hash
-     * 
-     * @return nameHash */
+    /**
+     * 组织hash
+     * @return nameHash
+     */
     public String getNameHash() {
         return nameHash;
     }
@@ -70,9 +74,10 @@ public class OrganizationV2 {
         return this;
     }
 
-    /** 组织节点
-     * 
-     * @return nodeCount */
+    /**
+     * 组织节点
+     * @return nodeCount
+     */
     public String getNodeCount() {
         return nodeCount;
     }
@@ -86,9 +91,10 @@ public class OrganizationV2 {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -102,9 +108,10 @@ public class OrganizationV2 {
         return this;
     }
 
-    /** 状态描述
-     * 
-     * @return statusDetail */
+    /**
+     * 状态描述
+     * @return statusDetail
+     */
     public String getStatusDetail() {
         return statusDetail;
     }
@@ -146,7 +153,10 @@ public class OrganizationV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

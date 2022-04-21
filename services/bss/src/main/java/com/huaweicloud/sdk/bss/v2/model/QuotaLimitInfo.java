@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QuotaLimitInfo */
+/**
+ * QuotaLimitInfo
+ */
 public class QuotaLimitInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class QuotaLimitInfo {
         return this;
     }
 
-    /** 属性key值。
-     * 
-     * @return limitKey */
+    /**
+     * 属性key值。
+     * @return limitKey
+     */
     public String getLimitKey() {
         return limitKey;
     }
@@ -58,9 +61,10 @@ public class QuotaLimitInfo {
         return this;
     }
 
-    /** 属性值，具体参见表3。
-     * 
-     * @return limitValues */
+    /**
+     * 属性值，具体参见表3。
+     * @return limitValues
+     */
     public List<LimitValue> getLimitValues() {
         return limitValues;
     }
@@ -97,7 +101,10 @@ public class QuotaLimitInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

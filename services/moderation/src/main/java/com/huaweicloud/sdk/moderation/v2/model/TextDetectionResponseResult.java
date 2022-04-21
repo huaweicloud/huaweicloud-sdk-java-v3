@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 调用成功时表示调用结果。 调用失败时无此字段。 */
+/**
+ * 调用成功时表示调用结果。  调用失败时无此字段。
+ */
 public class TextDetectionResponseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TextDetectionResponseResult {
         return this;
     }
 
-    /** 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查。
-     * 
-     * @return suggestion */
+    /**
+     * 检测结果是否通过。  block：包含敏感信息，不通过。  pass：不包含敏感信息，通过。  review：需要人工复查。
+     * @return suggestion
+     */
     public String getSuggestion() {
         return suggestion;
     }
@@ -39,10 +42,10 @@ public class TextDetectionResponseResult {
         return this;
     }
 
-    /** 返回的相关检测结果详细信息： - politics：涉政敏感词列表。 - porn：涉黄敏感词列表。 - ad：广告敏感词列表。 - abuse：辱骂敏感词列表。 - contraband：违禁品敏感词列表。 -
-     * flood：灌水文本。 > - 灌水文本最多显示200个字符。 > - 每个场景的返回结果的详细信息是指命中词，不是返回全部文本。
-     * 
-     * @return detail */
+    /**
+     * 返回的相关检测结果详细信息：  - politics：涉政敏感词列表。  - porn：涉黄敏感词列表。  - ad：广告敏感词列表。  - abuse：辱骂敏感词列表。  - contraband：违禁品敏感词列表。  - flood：灌水文本。  > - 灌水文本最多显示200个字符。 > - 每个场景的返回结果的详细信息是指命中词，不是返回全部文本。
+     * @return detail
+     */
     public Object getDetail() {
         return detail;
     }
@@ -79,7 +82,10 @@ public class TextDetectionResponseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

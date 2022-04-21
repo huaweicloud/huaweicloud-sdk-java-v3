@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateTriggerRequestBody */
+/**
+ * UpdateTriggerRequestBody
+ */
 public class UpdateTriggerRequestBody {
 
-    /** 触发器状态 */
+    /**
+     * 触发器状态
+     */
     public static final class TriggerStatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
-        /** Enum DISABLED for value: "DISABLED" */
+        /**
+         * Enum DISABLED for value: "DISABLED"
+         */
         public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
 
         private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class UpdateTriggerRequestBody {
         return this;
     }
 
-    /** 触发器状态
-     * 
-     * @return triggerStatus */
+    /**
+     * 触发器状态
+     * @return triggerStatus
+     */
     public TriggerStatusEnum getTriggerStatus() {
         return triggerStatus;
     }
@@ -131,7 +140,10 @@ public class UpdateTriggerRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

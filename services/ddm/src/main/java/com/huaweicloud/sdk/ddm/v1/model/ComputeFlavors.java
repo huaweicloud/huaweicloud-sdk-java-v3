@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ComputeFlavors */
+/**
+ * ComputeFlavors
+ */
 public class ComputeFlavors {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 规格id。
-     * 
-     * @return id */
+    /**
+     * 规格id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -99,9 +102,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 资源类型编码。
-     * 
-     * @return typeCode */
+    /**
+     * 资源类型编码。
+     * @return typeCode
+     */
     public String getTypeCode() {
         return typeCode;
     }
@@ -115,9 +119,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** DDM内部记录的虚机规格类型。
-     * 
-     * @return code */
+    /**
+     * DDM内部记录的虚机规格类型。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -131,9 +136,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** iaas记录的虚机规格类型。
-     * 
-     * @return iaasCode */
+    /**
+     * iaas记录的虚机规格类型。
+     * @return iaasCode
+     */
     public String getIaasCode() {
         return iaasCode;
     }
@@ -147,9 +153,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** cpu核数。
-     * 
-     * @return cpu */
+    /**
+     * cpu核数。
+     * @return cpu
+     */
     public String getCpu() {
         return cpu;
     }
@@ -163,9 +170,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 内存大小,单位:G。
-     * 
-     * @return mem */
+    /**
+     * 内存大小,单位:G。
+     * @return mem
+     */
     public String getMem() {
         return mem;
     }
@@ -179,9 +187,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 最大连接数。
-     * 
-     * @return maxConnections */
+    /**
+     * 最大连接数。
+     * @return maxConnections
+     */
     public String getMaxConnections() {
         return maxConnections;
     }
@@ -195,9 +204,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 计算资源服务类型。
-     * 
-     * @return serverType */
+    /**
+     * 计算资源服务类型。
+     * @return serverType
+     */
     public String getServerType() {
         return serverType;
     }
@@ -211,9 +221,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 计算资源架构类型，目前分X86和ARM两种。
-     * 
-     * @return architecture */
+    /**
+     * 计算资源架构类型，目前分X86和ARM两种。
+     * @return architecture
+     */
     public String getArchitecture() {
         return architecture;
     }
@@ -227,9 +238,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 可用区状态。
-     * 
-     * @return azStatus */
+    /**
+     * 可用区状态。
+     * @return azStatus
+     */
     public Object getAzStatus() {
         return azStatus;
     }
@@ -243,9 +255,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 局点状态。
-     * 
-     * @return regionStatus */
+    /**
+     * 局点状态。
+     * @return regionStatus
+     */
     public String getRegionStatus() {
         return regionStatus;
     }
@@ -259,9 +272,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 计算资源架构类型，目前分X86和ARM两种。
-     * 
-     * @return groupType */
+    /**
+     * 计算资源架构类型，目前分X86和ARM两种。
+     * @return groupType
+     */
     public String getGroupType() {
         return groupType;
     }
@@ -275,9 +289,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 服务引擎类型。
-     * 
-     * @return dbType */
+    /**
+     * 服务引擎类型。
+     * @return dbType
+     */
     public String getDbType() {
         return dbType;
     }
@@ -291,9 +306,10 @@ public class ComputeFlavors {
         return this;
     }
 
-    /** 扩展字段，目前存储可用区相关信息。
-     * 
-     * @return extendFields */
+    /**
+     * 扩展字段，目前存储可用区相关信息。
+     * @return extendFields
+     */
     public Object getExtendFields() {
         return extendFields;
     }
@@ -364,7 +380,10 @@ public class ComputeFlavors {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

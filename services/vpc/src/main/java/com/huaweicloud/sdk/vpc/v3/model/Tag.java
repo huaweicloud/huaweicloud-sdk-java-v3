@@ -25,9 +25,10 @@ public class Tag {
         return this;
     }
 
-    /** 1.功能说明：标签键 2.取值范围：最大长度36个unicode字符。 key不能为空。不能包含非打印字符ASCII(0-31)，*,<,>,\\,=
-     * 
-     * @return key */
+    /**
+     * 1.功能说明：标签键 2.取值范围：最大长度36个unicode字符。 key不能为空。不能包含非打印字符ASCII(0-31)，*,<,>,\\,=
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class Tag {
         return this;
     }
 
-    /** 1. 功能描述：标签值 2. 取值范围：每个值最大长度43个unicode字符，可以为空字符串。 不能包含非打印字符ASCII(0-31)，*,<,>,\\,=
-     * 
-     * @return value */
+    /**
+     * 1. 功能描述：标签值 2. 取值范围：每个值最大长度43个unicode字符，可以为空字符串。 不能包含非打印字符ASCII(0-31)，*,<,>,\\,=
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class Tag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

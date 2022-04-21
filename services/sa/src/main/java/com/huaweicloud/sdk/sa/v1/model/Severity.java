@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Severity */
+/**
+ * Severity
+ */
 public class Severity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class Severity {
         return this;
     }
 
-    /** 严重性等级取值范围：TIPS、LOW、MEDIUM、HIGH、FATAL。 TIPS：未发现任何问题。 LOW：无需针对问题执行任何操作。 MEDIUM：问题需要处理，但不紧急。 HIGH：问题必须优先处理。
-     * FATAL：问题必须立即处理，以防止产生进一步的损害。
-     * 
-     * @return label */
+    /**
+     * 严重性等级取值范围：TIPS、LOW、MEDIUM、HIGH、FATAL。 TIPS：未发现任何问题。 LOW：无需针对问题执行任何操作。 MEDIUM：问题需要处理，但不紧急。 HIGH：问题必须优先处理。 FATAL：问题必须立即处理，以防止产生进一步的损害。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -45,9 +47,12 @@ public class Severity {
         return this;
     }
 
-    /** 严重性评分取值范围：0-100； 与严重性等级的对应关系： TIPS 0； LOW 1-39； MEDIUM 40-69； HIGH 70-89； FATAL 90-100。 minimum: 0 maximum: 100
-     * 
-     * @return normalizeScore */
+    /**
+     * 严重性评分取值范围：0-100； 与严重性等级的对应关系： TIPS 0； LOW 1-39； MEDIUM 40-69； HIGH 70-89； FATAL 90-100。
+     * minimum: 0
+     * maximum: 100
+     * @return normalizeScore
+     */
     public Integer getNormalizeScore() {
         return normalizeScore;
     }
@@ -61,9 +66,12 @@ public class Severity {
         return this;
     }
 
-    /** 严重性原始评分，指在数据源产品中的评分。 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return originalScore */
+    /**
+     * 严重性原始评分，指在数据源产品中的评分。
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return originalScore
+     */
     public Integer getOriginalScore() {
         return originalScore;
     }
@@ -102,7 +110,10 @@ public class Severity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

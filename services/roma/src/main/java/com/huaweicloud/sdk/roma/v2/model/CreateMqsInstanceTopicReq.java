@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateMqsInstanceTopicReq */
+/**
+ * CreateMqsInstanceTopicReq
+ */
 public class CreateMqsInstanceTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,16 +35,24 @@ public class CreateMqsInstanceTopicReq {
 
     private Integer replication;
 
-    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅 */
+    /**
+     * 权限类型。   - all：发布+订阅   - pub：发布   - sub：订阅
+     */
     public static final class AccessPolicyEnum {
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final AccessPolicyEnum ALL = new AccessPolicyEnum("all");
 
-        /** Enum PUB for value: "pub" */
+        /**
+         * Enum PUB for value: "pub"
+         */
         public static final AccessPolicyEnum PUB = new AccessPolicyEnum("pub");
 
-        /** Enum SUB for value: "sub" */
+        /**
+         * Enum SUB for value: "sub"
+         */
         public static final AccessPolicyEnum SUB = new AccessPolicyEnum("sub");
 
         private static final Map<String, AccessPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -148,9 +158,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** topic名称，以字母开头，仅能包含数字,字母,下划线(_)，中划线（-）,长度3-200字符。
-     * 
-     * @return name */
+    /**
+     * topic名称，以字母开头，仅能包含数字,字母,下划线(_)，中划线（-）,长度3-200字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -164,9 +175,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 集成应用key。
-     * 
-     * @return appId */
+    /**
+     * 集成应用key。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -180,9 +192,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。 取值范围：1-50。 默认值：3。
-     * 
-     * @return partition */
+    /**
+     * topic分区数，设置消费的并发数。  取值范围：1-50。  默认值：3。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -196,9 +209,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 副本数，配置数据的可靠性。 取值范围：1-3。 默认值：3。 > 体验版实例的副本数只能为1。
-     * 
-     * @return replication */
+    /**
+     * 副本数，配置数据的可靠性。  取值范围：1-3。  默认值：3。  > 体验版实例的副本数只能为1。
+     * @return replication
+     */
     public Integer getReplication() {
         return replication;
     }
@@ -212,9 +226,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
-     * 
-     * @return accessPolicy */
+    /**
+     * 权限类型。   - all：发布+订阅   - pub：发布   - sub：订阅
+     * @return accessPolicy
+     */
     public AccessPolicyEnum getAccessPolicy() {
         return accessPolicy;
     }
@@ -228,9 +243,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -244,9 +260,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -260,9 +277,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 消息老化时间。默认值为72。取值范围1~720，单位小时。
-     * 
-     * @return retentionTime */
+    /**
+     * 消息老化时间。默认值为72。取值范围1~720，单位小时。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -276,9 +294,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 权限类型对应的标签。 当权限类型是all时，发布和订阅的标签用符号“&”隔开。 当有多个标签时，标签用符号“||”隔开。
-     * 
-     * @return tag */
+    /**
+     * 权限类型对应的标签。  当权限类型是all时，发布和订阅的标签用符号“&”隔开。  当有多个标签时，标签用符号“||”隔开。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -292,9 +311,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 描述。长度0-1000字符。
-     * 
-     * @return description */
+    /**
+     * 描述。长度0-1000字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -308,9 +328,10 @@ public class CreateMqsInstanceTopicReq {
         return this;
     }
 
-    /** 敏感字段。 当有多个敏感字段时，敏感字段用符号“||”隔开。
-     * 
-     * @return sensitiveWord */
+    /**
+     * 敏感字段。  当有多个敏感字段时，敏感字段用符号“||”隔开。
+     * @return sensitiveWord
+     */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -375,7 +396,10 @@ public class CreateMqsInstanceTopicReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

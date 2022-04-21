@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署参数配置 */
+/**
+ * 部署参数配置
+ */
 public class Deployment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class Deployment {
         return this;
     }
 
-    /** 部署名称
-     * 
-     * @return name */
+    /**
+     * 部署名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class Deployment {
         return this;
     }
 
-    /** 部署描述
-     * 
-     * @return description */
+    /**
+     * 部署描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -83,9 +87,10 @@ public class Deployment {
         return this;
     }
 
-    /** 应用部署来源: 边缘市场(iem) or 自定义(userdefined)
-     * 
-     * @return source */
+    /**
+     * 应用部署来源: 边缘市场(iem) or 自定义(userdefined)
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -99,9 +104,10 @@ public class Deployment {
         return this;
     }
 
-    /** 应用部署到指定节点组，与node_ids二选一
-     * 
-     * @return groupId */
+    /**
+     * 应用部署到指定节点组，与node_ids二选一
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -131,9 +137,10 @@ public class Deployment {
         return this;
     }
 
-    /** 应用部署到指定节点，当前只支持一个边缘节点
-     * 
-     * @return nodeIds */
+    /**
+     * 应用部署到指定节点，当前只支持一个边缘节点
+     * @return nodeIds
+     */
     public List<String> getNodeIds() {
         return nodeIds;
     }
@@ -163,9 +170,10 @@ public class Deployment {
         return this;
     }
 
-    /** 节点属性
-     * 
-     * @return tags */
+    /**
+     * 节点属性
+     * @return tags
+     */
     public List<Attributes> getTags() {
         return tags;
     }
@@ -188,9 +196,10 @@ public class Deployment {
         return this;
     }
 
-    /** Get deployment
-     * 
-     * @return deployment */
+    /**
+     * Get deployment
+     * @return deployment
+     */
     public CreateAppsInDeploymentV3 getDeployment() {
         return deployment;
     }
@@ -234,7 +243,10 @@ public class Deployment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

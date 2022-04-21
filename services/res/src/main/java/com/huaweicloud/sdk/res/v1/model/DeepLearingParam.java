@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 深度学习作业通用参数 */
+/**
+ * 深度学习作业通用参数
+ */
 public class DeepLearingParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** Get initialParameters
-     * 
-     * @return initialParameters */
+    /**
+     * Get initialParameters
+     * @return initialParameters
+     */
     public Initial getInitialParameters() {
         return initialParameters;
     }
@@ -88,9 +91,10 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** Get optimizeParameters
-     * 
-     * @return optimizeParameters */
+    /**
+     * Get optimizeParameters
+     * @return optimizeParameters
+     */
     public Optimizer getOptimizeParameters() {
         return optimizeParameters;
     }
@@ -113,9 +117,10 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** Get regularParameters
-     * 
-     * @return regularParameters */
+    /**
+     * Get regularParameters
+     * @return regularParameters
+     */
     public Regular getRegularParameters() {
         return regularParameters;
     }
@@ -129,9 +134,12 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** 最大迭代轮数。 minimum: 1 maximum: 1000
-     * 
-     * @return maxIterations */
+    /**
+     * 最大迭代轮数。
+     * minimum: 1
+     * maximum: 1000
+     * @return maxIterations
+     */
     public Integer getMaxIterations() {
         return maxIterations;
     }
@@ -145,9 +153,12 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** 提前终止训练轮数。 minimum: 1 maximum: 1000
-     * 
-     * @return earlyStopIterations */
+    /**
+     * 提前终止训练轮数。
+     * minimum: 1
+     * maximum: 1000
+     * @return earlyStopIterations
+     */
     public Integer getEarlyStopIterations() {
         return earlyStopIterations;
     }
@@ -161,9 +172,11 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** 批量大小。 minimum: 1
-     * 
-     * @return batchSize */
+    /**
+     * 批量大小。
+     * minimum: 1
+     * @return batchSize
+     */
     public Integer getBatchSize() {
         return batchSize;
     }
@@ -177,9 +190,12 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** 训练数据集切分数量。 minimum: 1 maximum: 10
-     * 
-     * @return datasetSplitParts */
+    /**
+     * 训练数据集切分数量。
+     * minimum: 1
+     * maximum: 10
+     * @return datasetSplitParts
+     */
     public Integer getDatasetSplitParts() {
         return datasetSplitParts;
     }
@@ -193,9 +209,10 @@ public class DeepLearingParam {
         return this;
     }
 
-    /** 重新训练。
-     * 
-     * @return restartTrain */
+    /**
+     * 重新训练。
+     * @return restartTrain
+     */
     public Boolean getRestartTrain() {
         return restartTrain;
     }
@@ -251,7 +268,10 @@ public class DeepLearingParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

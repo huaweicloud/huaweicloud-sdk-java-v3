@@ -30,9 +30,10 @@ public class UpdateProjectStatusRequestBody {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public UpdateProjectOption getProject() {
         return project;
     }
@@ -67,7 +68,10 @@ public class UpdateProjectStatusRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 攻击类型 */
+/**
+ * 攻击类型
+ */
 public class ListEventItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,9 +111,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 事件id
-     * 
-     * @return id */
+    /**
+     * 事件id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -125,9 +128,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 次数
-     * 
-     * @return time */
+    /**
+     * 次数
+     * @return time
+     */
     public Long getTime() {
         return time;
     }
@@ -141,9 +145,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -157,9 +162,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 源ip
-     * 
-     * @return sip */
+    /**
+     * 源ip
+     * @return sip
+     */
     public String getSip() {
         return sip;
     }
@@ -173,9 +179,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return host */
+    /**
+     * 域名
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -189,9 +196,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 攻击的url链接
-     * 
-     * @return url */
+    /**
+     * 攻击的url链接
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -205,11 +213,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 攻击类型: - vuln：其它攻击类型 - sqli： sql注入攻击 - lfi： 本地文件包含 - cmdi：命令注入攻击 - xss：XSS攻击 - robot：恶意爬虫 - rfi：远程文件包含 -
-     * custom_custom：精准防护 - webshell：网站木马 - custom_whiteblackip：黑白名单拦截 - custom_geoip：地理访问控制拦截 - antitamper：防篡改 -
-     * anticrawler：反爬虫 - leakage：网站信息防泄漏 - illegal：非法请求
-     * 
-     * @return attack */
+    /**
+     * 攻击类型:   - vuln：其它攻击类型   - sqli： sql注入攻击   - lfi： 本地文件包含  - cmdi：命令注入攻击   - xss：XSS攻击   - robot：恶意爬虫   - rfi：远程文件包含   - custom_custom：精准防护   - webshell：网站木马   - custom_whiteblackip：黑白名单拦截   - custom_geoip：地理访问控制拦截   - antitamper：防篡改   - anticrawler：反爬虫    - leakage：网站信息防泄漏   - illegal：非法请求 
+     * @return attack
+     */
     public String getAttack() {
         return attack;
     }
@@ -223,9 +230,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 命中的规则id
-     * 
-     * @return rule */
+    /**
+     * 命中的规则id
+     * @return rule
+     */
     public String getRule() {
         return rule;
     }
@@ -239,9 +247,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 命中的载荷
-     * 
-     * @return payload */
+    /**
+     * 命中的载荷
+     * @return payload
+     */
     public String getPayload() {
         return payload;
     }
@@ -255,9 +264,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 防护动作
-     * 
-     * @return action */
+    /**
+     * 防护动作
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -271,9 +281,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 请求方法和路径
-     * 
-     * @return requestLine */
+    /**
+     * 请求方法和路径
+     * @return requestLine
+     */
     public String getRequestLine() {
         return requestLine;
     }
@@ -296,9 +307,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** Get headers
-     * 
-     * @return headers */
+    /**
+     * Get headers
+     * @return headers
+     */
     public ListEventItemsHeaders getHeaders() {
         return headers;
     }
@@ -312,9 +324,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 请求cookie
-     * 
-     * @return cookie */
+    /**
+     * 请求cookie
+     * @return cookie
+     */
     public String getCookie() {
         return cookie;
     }
@@ -328,9 +341,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 响应码状态
-     * 
-     * @return status */
+    /**
+     * 响应码状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -344,9 +358,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 区域
-     * 
-     * @return region */
+    /**
+     * 区域
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -360,9 +375,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return hostId */
+    /**
+     * 域名id
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -376,9 +392,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 响应时长
-     * 
-     * @return responseTime */
+    /**
+     * 响应时长
+     * @return responseTime
+     */
     public Long getResponseTime() {
         return responseTime;
     }
@@ -392,9 +409,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 响应体大小
-     * 
-     * @return responseSize */
+    /**
+     * 响应体大小
+     * @return responseSize
+     */
     public Integer getResponseSize() {
         return responseSize;
     }
@@ -408,9 +426,10 @@ public class ListEventItems {
         return this;
     }
 
-    /** 响应体
-     * 
-     * @return responseBody */
+    /**
+     * 响应体
+     * @return responseBody
+     */
     public String getResponseBody() {
         return responseBody;
     }
@@ -493,7 +512,10 @@ public class ListEventItems {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

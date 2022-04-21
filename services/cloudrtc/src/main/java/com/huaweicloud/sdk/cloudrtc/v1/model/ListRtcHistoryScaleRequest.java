@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcHistoryScaleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -67,9 +70,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -85,9 +89,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -103,9 +108,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -135,11 +141,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 查询的数据类型 - UserCount：通话人数，不同频道中的相同用户ID计为多人; - SessionCount：通话人次，用户每次加入频道计为一个通话人次; -
-     * RoomCount：房间数，从有用户加入房间到所有用户离开房间计为一个通话房间; - MaxOnlineUserCount：最大同时在线人数; - MaxOnlineRoomCount：最大同时在线房间数; -
-     * CommunicationDuration：音视频通话总时长; - VideoCommunicationDuration：视频通话总时长; - AudioCommunicationDuration：音频通话总时长;
-     * 
-     * @return metric */
+    /**
+     * 查询的数据类型 - UserCount：通话人数，不同频道中的相同用户ID计为多人; - SessionCount：通话人次，用户每次加入频道计为一个通话人次; - RoomCount：房间数，从有用户加入房间到所有用户离开房间计为一个通话房间; - MaxOnlineUserCount：最大同时在线人数; - MaxOnlineRoomCount：最大同时在线房间数; - CommunicationDuration：音视频通话总时长; - VideoCommunicationDuration：视频通话总时长; - AudioCommunicationDuration：音频通话总时长; 
+     * @return metric
+     */
     public List<String> getMetric() {
         return metric;
     }
@@ -153,9 +158,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23，不写默认读取过去1天数据数据。
-     * 
-     * @return startDate */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23，不写默认读取过去1天数据数据。 
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -169,9 +175,10 @@ public class ListRtcHistoryScaleRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23
-     * 
-     * @return endDate */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DD，如2020-04-23 
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -218,7 +225,10 @@ public class ListRtcHistoryScaleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateDeviceRequestBody */
+/**
+ * CreateDeviceRequestBody
+ */
 public class CreateDeviceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,13 +48,19 @@ public class CreateDeviceRequestBody {
 
     private String appId;
 
-    /** 设备状态 0启用 1禁用，不填时默认为0启用 */
+    /**
+     * 设备状态 0启用 1禁用，不填时默认为0启用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +145,12 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 父设备ID，无父设备时不填写，自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return parentDeviceId */
+    /**
+     * 父设备ID，无父设备时不填写，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return parentDeviceId
+     */
     public Integer getParentDeviceId() {
         return parentDeviceId;
     }
@@ -162,9 +173,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** Get product
-     * 
-     * @return product */
+    /**
+     * Get product
+     * @return product
+     */
     public ProductReferer getProduct() {
         return product;
     }
@@ -178,9 +190,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 设备密码，输入要求：至少1数字，1大写字母，1小写字母，1特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
-     * 
-     * @return password */
+    /**
+     * 设备密码，输入要求：至少1数字，1大写字母，1小写字母，1特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -194,9 +207,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -210,9 +224,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
-     * 
-     * @return nodeId */
+    /**
+     * 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -226,9 +241,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -242,9 +258,12 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 设备状态 0启用 1禁用，不填时默认为0启用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 设备状态 0启用 1禁用，不填时默认为0启用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -258,9 +277,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return description */
+    /**
+     * 备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -290,9 +310,10 @@ public class CreateDeviceRequestBody {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return tags */
+    /**
+     * 标签
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -343,7 +364,10 @@ public class CreateDeviceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

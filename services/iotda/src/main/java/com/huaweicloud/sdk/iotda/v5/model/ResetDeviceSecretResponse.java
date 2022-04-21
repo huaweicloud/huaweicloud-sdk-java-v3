@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ResetDeviceSecretResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ResetDeviceSecretResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -40,9 +43,10 @@ public class ResetDeviceSecretResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备密钥。
-     * 
-     * @return secret */
+    /**
+     * 设备密钥。
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -79,7 +83,10 @@ public class ResetDeviceSecretResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListIgnoreRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListIgnoreRuleRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -49,9 +52,10 @@ public class ListIgnoreRuleRequest {
         return this;
     }
 
-    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
-     * 
-     * @return policyId */
+    /**
+     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -65,9 +69,10 @@ public class ListIgnoreRuleRequest {
         return this;
     }
 
-    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
-     * 
-     * @return page */
+    /**
+     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -81,9 +86,10 @@ public class ListIgnoreRuleRequest {
         return this;
     }
 
-    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
-     * 
-     * @return pagesize */
+    /**
+     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * @return pagesize
+     */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -124,7 +130,10 @@ public class ListIgnoreRuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

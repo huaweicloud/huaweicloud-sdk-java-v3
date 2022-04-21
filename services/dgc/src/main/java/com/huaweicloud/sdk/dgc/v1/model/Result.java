@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Result */
+/**
+ * Result
+ */
 public class Result {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Result {
         return this;
     }
 
-    /** Get message
-     * 
-     * @return message */
+    /**
+     * Get message
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -49,9 +52,10 @@ public class Result {
         return this;
     }
 
-    /** Get rowCount
-     * 
-     * @return rowCount */
+    /**
+     * Get rowCount
+     * @return rowCount
+     */
     public Integer getRowCount() {
         return rowCount;
     }
@@ -65,9 +69,10 @@ public class Result {
         return this;
     }
 
-    /** Get rows
-     * 
-     * @return rows */
+    /**
+     * Get rows
+     * @return rows
+     */
     public String getRows() {
         return rows;
     }
@@ -81,9 +86,10 @@ public class Result {
         return this;
     }
 
-    /** Get schema
-     * 
-     * @return schema */
+    /**
+     * Get schema
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -122,7 +128,10 @@ public class Result {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

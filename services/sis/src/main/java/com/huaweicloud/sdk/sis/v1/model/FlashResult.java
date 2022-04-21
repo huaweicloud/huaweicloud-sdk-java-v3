@@ -28,9 +28,10 @@ public class FlashResult {
         return this;
     }
 
-    /** 音频声道id
-     * 
-     * @return channelId */
+    /**
+     * 音频声道id
+     * @return channelId
+     */
     public Integer getChannelId() {
         return channelId;
     }
@@ -60,9 +61,10 @@ public class FlashResult {
         return this;
     }
 
-    /** 分句结果
-     * 
-     * @return sentences */
+    /**
+     * 分句结果
+     * @return sentences
+     */
     public List<Sentences> getSentences() {
         return sentences;
     }
@@ -99,7 +101,10 @@ public class FlashResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

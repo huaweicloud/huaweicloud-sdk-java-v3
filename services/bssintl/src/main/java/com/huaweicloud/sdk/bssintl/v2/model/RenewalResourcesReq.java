@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RenewalResourcesReq */
+/**
+ * RenewalResourcesReq
+ */
 public class RenewalResourcesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** 资源ID列表。 只支持传入主资源ID，最多100个资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
-     * 
-     * @return resourceIds */
+    /**
+     * 资源ID列表。 只支持传入主资源ID，最多100个资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
+     * @return resourceIds
+     */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -73,9 +76,12 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** 周期类型： 2：月3：年 minimum: 2 maximum: 3
-     * 
-     * @return periodType */
+    /**
+     * 周期类型： 2：月3：年
+     * minimum: 2
+     * maximum: 3
+     * @return periodType
+     */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -89,9 +95,12 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** 周期数目： 如果是月，目前支持1-11如果是年，目前支持1-3 minimum: 1 maximum: 11
-     * 
-     * @return periodNum */
+    /**
+     * 周期数目： 如果是月，目前支持1-11如果是年，目前支持1-3
+     * minimum: 1
+     * maximum: 11
+     * @return periodNum
+     */
     public Integer getPeriodNum() {
         return periodNum;
     }
@@ -105,9 +114,12 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** 到期策略： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订 minimum: 0 maximum: 3
-     * 
-     * @return expirePolicy */
+    /**
+     * 到期策略： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订
+     * minimum: 0
+     * maximum: 3
+     * @return expirePolicy
+     */
     public Integer getExpirePolicy() {
         return expirePolicy;
     }
@@ -121,9 +133,12 @@ public class RenewalResourcesReq {
         return this;
     }
 
-    /** 是否自动支付。 0：否1：是 不填写的话，默认值是0，不自动支付。 minimum: 0 maximum: 1
-     * 
-     * @return isAutoPay */
+    /**
+     * 是否自动支付。 0：否1：是 不填写的话，默认值是0，不自动支付。
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoPay
+     */
     public Integer getIsAutoPay() {
         return isAutoPay;
     }
@@ -166,7 +181,10 @@ public class RenewalResourcesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PrivateNameServer */
+/**
+ * PrivateNameServer
+ */
 public class PrivateNameServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PrivateNameServer {
         return this;
     }
 
-    /** 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
-     * 
-     * @return priority */
+    /**
+     * 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -39,9 +42,10 @@ public class PrivateNameServer {
         return this;
     }
 
-    /** DNS服务器地址。
-     * 
-     * @return address */
+    /**
+     * DNS服务器地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -78,7 +82,10 @@ public class PrivateNameServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

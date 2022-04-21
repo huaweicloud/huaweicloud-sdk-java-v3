@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEndpointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -59,9 +62,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 端点名称
-     * 
-     * @return name */
+    /**
+     * 端点名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 端点类型 枚举值： - dis - servicebus - apigw
-     * 
-     * @return type */
+    /**
+     * 端点类型 枚举值： - dis - servicebus - apigw
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -91,9 +96,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 端点是否共享
-     * 
-     * @return isShared */
+    /**
+     * 端点是否共享
+     * @return isShared
+     */
     public String getIsShared() {
         return isShared;
     }
@@ -107,9 +113,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 查询返回记录的数量限制
-     * 
-     * @return limit */
+    /**
+     * 查询返回记录的数量限制
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -123,9 +130,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 偏移量，表示查询该偏移量后面的记录
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示查询该偏移量后面的记录
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -170,7 +178,10 @@ public class ListEndpointsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

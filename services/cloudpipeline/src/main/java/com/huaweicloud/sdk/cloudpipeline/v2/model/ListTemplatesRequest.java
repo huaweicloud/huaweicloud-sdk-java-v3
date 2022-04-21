@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -71,9 +74,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return templateType */
+    /**
+     * 模板类型
+     * @return templateType
+     */
     public String getTemplateType() {
         return templateType;
     }
@@ -87,9 +91,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 是否内置模板
-     * 
-     * @return isBuildIn */
+    /**
+     * 是否内置模板
+     * @return isBuildIn
+     */
     public String getIsBuildIn() {
         return isBuildIn;
     }
@@ -103,9 +108,12 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0 maximum: 100
-     * 
-     * @return offset */
+    /**
+     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * minimum: 0
+     * maximum: 100
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -119,9 +127,12 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -135,9 +146,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 模板名称，匹配规则为模糊匹配
-     * 
-     * @return name */
+    /**
+     * 模板名称，匹配规则为模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -151,9 +163,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 排序字段
-     * 
-     * @return sort */
+    /**
+     * 排序字段
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -167,9 +180,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 是否正序
-     * 
-     * @return asc */
+    /**
+     * 是否正序
+     * @return asc
+     */
     public String getAsc() {
         return asc;
     }
@@ -218,7 +232,10 @@ public class ListTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

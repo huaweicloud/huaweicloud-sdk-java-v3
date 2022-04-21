@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建云服务器组请求返回对象 */
+/**
+ * 创建云服务器组请求返回对象
+ */
 public class Pool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的管理状态，只支持设置为true。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器组的管理状态，只支持设置为true。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -107,9 +110,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的描述信息。
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +127,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组关联的健康检查的ID。
-     * 
-     * @return healthmonitorId */
+    /**
+     * 后端云服务器组关联的健康检查的ID。
+     * @return healthmonitorId
+     */
     public String getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -139,9 +144,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的ID。
-     * 
-     * @return id */
+    /**
+     * 后端云服务器组的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -155,10 +161,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法。 取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。
-     * 使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+     * @return lbAlgorithm
+     */
     public String getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -188,9 +194,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组关联的监听器ID列表。实际上只会有一个关联的监听器ID。
-     * 
-     * @return listeners */
+    /**
+     * 后端云服务器组关联的监听器ID列表。实际上只会有一个关联的监听器ID。
+     * @return listeners
+     */
     public List<ListenerRef> getListeners() {
         return listeners;
     }
@@ -220,9 +227,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组关联的负载均衡器ID列表。实际只会有一个关联的负载均衡器ID。
-     * 
-     * @return loadbalancers */
+    /**
+     * 后端云服务器组关联的负载均衡器ID列表。实际只会有一个关联的负载均衡器ID。
+     * @return loadbalancers
+     */
     public List<LoadBalancerRef> getLoadbalancers() {
         return loadbalancers;
     }
@@ -252,9 +260,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组中的后端云服务器ID列表。
-     * 
-     * @return members */
+    /**
+     * 后端云服务器组中的后端云服务器ID列表。
+     * @return members
+     */
     public List<MemberRef> getMembers() {
         return members;
     }
@@ -268,9 +277,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -284,9 +294,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 后端云服务器组所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -300,11 +311,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组的后端协议。 取值：TCP、UDP、HTTP、HTTPS和QUIC。 使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； -
-     * listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 -
-     * listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
-     * 
-     * @return protocol */
+    /**
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -327,9 +337,10 @@ public class Pool {
         return this;
     }
 
-    /** Get sessionPersistence
-     * 
-     * @return sessionPersistence */
+    /**
+     * Get sessionPersistence
+     * @return sessionPersistence
+     */
     public SessionPersistence getSessionPersistence() {
         return sessionPersistence;
     }
@@ -343,12 +354,10 @@ public class Pool {
         return this;
     }
 
-    /** 后端云服务器组支持的IP版本。[取值： [共享型：默认为v4；](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [独享型：取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)
-     * [不支持IPv6，只会返回v4。](tag:dt,dt_test)
-     * 
-     * @return ipVersion */
+    /**
+     * 后端云服务器组支持的IP版本。[取值：  [共享型：默认为v4；](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [独享型：取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * @return ipVersion
+     */
     public String getIpVersion() {
         return ipVersion;
     }
@@ -371,9 +380,10 @@ public class Pool {
         return this;
     }
 
-    /** Get slowStart
-     * 
-     * @return slowStart */
+    /**
+     * Get slowStart
+     * @return slowStart
+     */
     public SlowStart getSlowStart() {
         return slowStart;
     }
@@ -387,9 +397,10 @@ public class Pool {
         return this;
     }
 
-    /** 是否开启误删保护。取值：false不开启，true开启。 > 退场时需要先关闭所有资源的删除保护开关。
-     * 
-     * @return memberDeletionProtectionEnable */
+    /**
+     * 是否开启误删保护。取值：false不开启，true开启。  > 退场时需要先关闭所有资源的删除保护开关。
+     * @return memberDeletionProtectionEnable
+     */
     public Boolean getMemberDeletionProtectionEnable() {
         return memberDeletionProtectionEnable;
     }
@@ -463,7 +474,10 @@ public class Pool {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

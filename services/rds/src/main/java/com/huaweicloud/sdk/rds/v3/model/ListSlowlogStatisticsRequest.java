@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSlowlogStatisticsRequest {
 
-    /** 语言 */
+    /**
+     * 语言
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -114,25 +122,39 @@ public class ListSlowlogStatisticsRequest {
 
     private String endDate;
 
-    /** 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL */
+    /**
+     * 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL
+     */
     public static final class TypeEnum {
 
-        /** Enum INSERT for value: "INSERT" */
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
         public static final TypeEnum INSERT = new TypeEnum("INSERT");
 
-        /** Enum UPDATE for value: "UPDATE" */
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
         public static final TypeEnum UPDATE = new TypeEnum("UPDATE");
 
-        /** Enum SELECT for value: "SELECT" */
+        /**
+         * Enum SELECT for value: "SELECT"
+         */
         public static final TypeEnum SELECT = new TypeEnum("SELECT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final TypeEnum DELETE = new TypeEnum("DELETE");
 
-        /** Enum CREATE for value: "CREATE" */
+        /**
+         * Enum CREATE for value: "CREATE"
+         */
         public static final TypeEnum CREATE = new TypeEnum("CREATE");
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final TypeEnum ALL = new TypeEnum("ALL");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -216,9 +238,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -234,9 +257,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -250,9 +274,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 当前页号
-     * 
-     * @return curPage */
+    /**
+     * 当前页号
+     * @return curPage
+     */
     public Integer getCurPage() {
         return curPage;
     }
@@ -266,9 +291,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 每页多少条记录，取值范围0~100
-     * 
-     * @return perPage */
+    /**
+     * 每页多少条记录，取值范围0~100
+     * @return perPage
+     */
     public Integer getPerPage() {
         return perPage;
     }
@@ -282,9 +308,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return startDate */
+    /**
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -298,9 +325,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return endDate */
+    /**
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -314,9 +342,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL
-     * 
-     * @return type */
+    /**
+     * 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -330,9 +359,10 @@ public class ListSlowlogStatisticsRequest {
         return this;
     }
 
-    /** 取值范围：\"executeTime\",表示按执行时间降序排序，不传或者传其他表示按执行次数降序排序
-     * 
-     * @return sort */
+    /**
+     * 取值范围：\"executeTime\",表示按执行时间降序排序，不传或者传其他表示按执行次数降序排序
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -381,7 +411,10 @@ public class ListSlowlogStatisticsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AssociateAppsForAppQuotaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class AssociateAppsForAppQuotaResponse extends SdkResponse {
         return this;
     }
 
-    /** 客户端应用与客户端配额绑定列表
-     * 
-     * @return applies */
+    /**
+     * 客户端应用与客户端配额绑定列表
+     * @return applies
+     */
     public List<AppQuotaAppBinding> getApplies() {
         return applies;
     }
@@ -75,7 +78,10 @@ public class AssociateAppsForAppQuotaResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

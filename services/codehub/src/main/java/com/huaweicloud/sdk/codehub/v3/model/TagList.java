@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TagList */
+/**
+ * TagList
+ */
 public class TagList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class TagList {
         return this;
     }
 
-    /** 指定仓库的标签列表
-     * 
-     * @return tags */
+    /**
+     * 指定仓库的标签列表
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -58,9 +61,10 @@ public class TagList {
         return this;
     }
 
-    /** 指定仓库的标签总数
-     * 
-     * @return total */
+    /**
+     * 指定仓库的标签总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -96,7 +100,10 @@ public class TagList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ENI网络配置，创建集群指定使用云原生网络2.0网络模式时必填subnets和eniSubnetId其中一个字段(eniSubnetCIDR可选，若填写了会校验是否合法)，1.19.10及新版本集群使用subnets字段，1.19.8及老版本若使用subnets字段，则取值subnets数组中的第一个子网ID作为容器地址使用的子网ID。 */
+/**
+ * ENI网络配置，创建集群指定使用云原生网络2.0网络模式时必填subnets和eniSubnetId其中一个字段(eniSubnetCIDR可选，若填写了会校验是否合法)，1.19.10及新版本集群使用subnets字段，1.19.8及老版本若使用subnets字段，则取值subnets数组中的第一个子网ID作为容器地址使用的子网ID。
+ */
 public class EniNetwork {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,12 +33,10 @@ public class EniNetwork {
         return this;
     }
 
-    /** 用于创建控制节点的subnet的IPv4网络ID(暂不支持IPv6,废弃中)。获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找IPv4子网ID。 -
-     * 方法2：通过虚拟私有云服务的查询子网列表接口查询。
-     * [链接请参见[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)](tag:hws)
-     * [链接请参见[查询子网列表](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_subnet01_0003.html)](tag:hws_hk)
-     * 
-     * @return eniSubnetId */
+    /**
+     * 用于创建控制节点的subnet的IPv4网络ID(暂不支持IPv6,废弃中)。获取方法如下：  - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找IPv4子网ID。 - 方法2：通过虚拟私有云服务的查询子网列表接口查询。   [链接请参见[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)](tag:hws)   [链接请参见[查询子网列表](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_subnet01_0003.html)](tag:hws_hk)
+     * @return eniSubnetId
+     */
     public String getEniSubnetId() {
         return eniSubnetId;
     }
@@ -50,9 +50,10 @@ public class EniNetwork {
         return this;
     }
 
-    /** ENI子网CIDR(废弃中)
-     * 
-     * @return eniSubnetCIDR */
+    /**
+     * ENI子网CIDR(废弃中)
+     * @return eniSubnetCIDR
+     */
     public String getEniSubnetCIDR() {
         return eniSubnetCIDR;
     }
@@ -82,9 +83,10 @@ public class EniNetwork {
         return this;
     }
 
-    /** IPv4子网ID列表
-     * 
-     * @return subnets */
+    /**
+     * IPv4子网ID列表
+     * @return subnets
+     */
     public List<NetworkSubnet> getSubnets() {
         return subnets;
     }
@@ -123,7 +125,10 @@ public class EniNetwork {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

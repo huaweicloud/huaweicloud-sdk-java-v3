@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子网对象。 */
+/**
+ * 子网对象。
+ */
 public class Subnet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,16 +58,24 @@ public class Subnet {
 
     private String secondaryDns;
 
-    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障 */
+    /**
+     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -166,9 +176,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网的ID。
-     * 
-     * @return id */
+    /**
+     * 子网的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -182,9 +193,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 子网名称  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -198,9 +210,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
-     * 
-     * @return cidr */
+    /**
+     * 子网的网段  取值范围：必须在vpc对应cidr范围内  约束：必须是cidr格式。掩码长度不能大于28
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -230,9 +243,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网dns服务器地址列表
-     * 
-     * @return dnsList */
+    /**
+     * 子网dns服务器地址列表
+     * @return dnsList
+     */
     public List<String> getDnsList() {
         return dnsList;
     }
@@ -246,9 +260,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
-     * 
-     * @return gatewayIp */
+    /**
+     * 子网的网关  取值范围：子网网段中的IP地址  约束：必须是ip格式
+     * @return gatewayIp
+     */
     public String getGatewayIp() {
         return gatewayIp;
     }
@@ -262,9 +277,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网是否开启dhcp功能
-     * 
-     * @return dhcpEnable */
+    /**
+     * 子网是否开启dhcp功能
+     * @return dhcpEnable
+     */
     public Boolean getDhcpEnable() {
         return dhcpEnable;
     }
@@ -278,9 +294,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网dns服务器地址1
-     * 
-     * @return primaryDns */
+    /**
+     * 子网dns服务器地址1
+     * @return primaryDns
+     */
     public String getPrimaryDns() {
         return primaryDns;
     }
@@ -294,9 +311,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网dns服务器地址2
-     * 
-     * @return secondaryDns */
+    /**
+     * 子网dns服务器地址2
+     * @return secondaryDns
+     */
     public String getSecondaryDns() {
         return secondaryDns;
     }
@@ -310,9 +328,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     * 
-     * @return status */
+    /**
+     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -326,9 +345,10 @@ public class Subnet {
         return this;
     }
 
-    /** 虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -342,9 +362,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网所属的站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 子网所属的站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -358,9 +379,10 @@ public class Subnet {
         return this;
     }
 
-    /** 子网所属的站点信息。
-     * 
-     * @return siteInfo */
+    /**
+     * 子网所属的站点信息。
+     * @return siteInfo
+     */
     public String getSiteInfo() {
         return siteInfo;
     }
@@ -374,9 +396,10 @@ public class Subnet {
         return this;
     }
 
-    /** 对应网络（OpenStack Neutron接口） id。
-     * 
-     * @return neutronNetworkId */
+    /**
+     * 对应网络（OpenStack Neutron接口） id。
+     * @return neutronNetworkId
+     */
     public String getNeutronNetworkId() {
         return neutronNetworkId;
     }
@@ -390,9 +413,10 @@ public class Subnet {
         return this;
     }
 
-    /** 对应子网（OpenStack Neutron接口） id。
-     * 
-     * @return neutronSubnetId */
+    /**
+     * 对应子网（OpenStack Neutron接口） id。
+     * @return neutronSubnetId
+     */
     public String getNeutronSubnetId() {
         return neutronSubnetId;
     }
@@ -461,7 +485,10 @@ public class Subnet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

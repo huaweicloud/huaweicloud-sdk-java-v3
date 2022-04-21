@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 弹性公网IP字典对象 */
+/**
+ * 弹性公网IP字典对象
+ */
 public class PublicIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,9 +91,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性公网IP唯一标识。
-     * 
-     * @return id */
+    /**
+     * 弹性公网IP唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -105,9 +108,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性公网IP的状态。
-     * 
-     * @return status */
+    /**
+     * 弹性公网IP的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -121,9 +125,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 端口的ID。
-     * 
-     * @return portId */
+    /**
+     * 端口的ID。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -137,9 +142,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性公网IP的地址。
-     * 
-     * @return publicIpAddress */
+    /**
+     * 弹性公网IP的地址。
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -153,9 +159,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 绑定弹性公网IP的私有IP地址。
-     * 
-     * @return privateIpAddress */
+    /**
+     * 绑定弹性公网IP的私有IP地址。
+     * @return privateIpAddress
+     */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -169,9 +176,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -185,9 +193,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 带宽的ID。
-     * 
-     * @return bandwidthId */
+    /**
+     * 带宽的ID。
+     * @return bandwidthId
+     */
     public String getBandwidthId() {
         return bandwidthId;
     }
@@ -201,9 +210,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 带宽的名称。
-     * 
-     * @return bandwidthName */
+    /**
+     * 带宽的名称。
+     * @return bandwidthName
+     */
     public String getBandwidthName() {
         return bandwidthName;
     }
@@ -217,9 +227,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 带宽的类型。
-     * 
-     * @return bandwidthShareType */
+    /**
+     * 带宽的类型。
+     * @return bandwidthShareType
+     */
     public String getBandwidthShareType() {
         return bandwidthShareType;
     }
@@ -233,9 +244,12 @@ public class PublicIp {
         return this;
     }
 
-    /** 带宽的大小。 minimum: 300 maximum: 2000
-     * 
-     * @return bandwidthSize */
+    /**
+     * 带宽的大小。
+     * minimum: 300
+     * maximum: 2000
+     * @return bandwidthSize
+     */
     public Integer getBandwidthSize() {
         return bandwidthSize;
     }
@@ -249,9 +263,10 @@ public class PublicIp {
         return this;
     }
 
-    /** IP版本的信息。
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本的信息。
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -265,9 +280,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 子网所属的站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 子网所属的站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -281,9 +297,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 子网所属的站点信息。
-     * 
-     * @return siteInfo */
+    /**
+     * 子网所属的站点信息。
+     * @return siteInfo
+     */
     public String getSiteInfo() {
         return siteInfo;
     }
@@ -306,9 +323,10 @@ public class PublicIp {
         return this;
     }
 
-    /** Get operator
-     * 
-     * @return operator */
+    /**
+     * Get operator
+     * @return operator
+     */
     public Operator getOperator() {
         return operator;
     }
@@ -322,9 +340,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性公网IP的类型。
-     * 
-     * @return type */
+    /**
+     * 弹性公网IP的类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -398,7 +417,10 @@ public class PublicIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

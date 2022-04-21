@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 切换操作系统的参数 */
+/**
+ * 切换操作系统的参数
+ */
 public class ChangeOsOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ChangeOsOption {
         return this;
     }
 
-    /** 切换系统所使用的新镜像的ID。
-     * 
-     * @return imageId */
+    /**
+     * 切换系统所使用的新镜像的ID。
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -54,9 +57,10 @@ public class ChangeOsOption {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public ChangeOsMetadata getMetadata() {
         return metadata;
     }
@@ -70,9 +74,10 @@ public class ChangeOsOption {
         return this;
     }
 
-    /** 密钥对名称。 如果需要使用SSH密钥方式登录边缘实例，请指定已创建密钥的名称。
-     * 
-     * @return keyName */
+    /**
+     * 密钥对名称。 如果需要使用SSH密钥方式登录边缘实例，请指定已创建密钥的名称。
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -111,7 +116,10 @@ public class ChangeOsOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

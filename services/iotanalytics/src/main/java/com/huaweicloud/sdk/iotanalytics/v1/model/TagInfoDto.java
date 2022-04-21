@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 标签信息 */
+/**
+ * 标签信息
+ */
 public class TagInfoDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TagInfoDto {
         return this;
     }
 
-    /** 算子Id
-     * 
-     * @return operatorId */
+    /**
+     * 算子Id
+     * @return operatorId
+     */
     public String getOperatorId() {
         return operatorId;
     }
@@ -44,9 +47,10 @@ public class TagInfoDto {
         return this;
     }
 
-    /** 存储ID
-     * 
-     * @return dataStoreId */
+    /**
+     * 存储ID
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -60,9 +64,10 @@ public class TagInfoDto {
         return this;
     }
 
-    /** 标签信息
-     * 
-     * @return tag */
+    /**
+     * 标签信息
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -100,7 +105,10 @@ public class TagInfoDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

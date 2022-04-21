@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplateJobInfo */
+/**
+ * TemplateJobInfo
+ */
 public class TemplateJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return applicationName */
+    /**
+     * 应用名称
+     * @return applicationName
+     */
     public String getApplicationName() {
         return applicationName;
     }
@@ -67,9 +70,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 任务依赖的模板id
-     * 
-     * @return templateId */
+    /**
+     * 任务依赖的模板id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -83,9 +87,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return projectName */
+    /**
+     * 应用名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -99,9 +104,12 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 应用代码生成后的地址类型，目前支持0：codehub地址和1：压缩包下载地址 minimum: 0 maximum: 3
-     * 
-     * @return repoType */
+    /**
+     * 应用代码生成后的地址类型，目前支持0：codehub地址和1：压缩包下载地址
+     * minimum: 0
+     * maximum: 3
+     * @return repoType
+     */
     public Integer getRepoType() {
         return repoType;
     }
@@ -115,9 +123,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 应用的动态参数json
-     * 
-     * @return properties */
+    /**
+     * 应用的动态参数json
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -147,9 +156,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** 模板 dependency ID 集合
-     * 
-     * @return templateDependencies */
+    /**
+     * 模板 dependency ID 集合
+     * @return templateDependencies
+     */
     public List<String> getTemplateDependencies() {
         return templateDependencies;
     }
@@ -172,9 +182,10 @@ public class TemplateJobInfo {
         return this;
     }
 
-    /** Get repoInfo
-     * 
-     * @return repoInfo */
+    /**
+     * Get repoInfo
+     * @return repoInfo
+     */
     public RepositoryInfo getRepoInfo() {
         return repoInfo;
     }
@@ -222,7 +233,10 @@ public class TemplateJobInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -35,9 +35,10 @@ public class TokenSocpeOption {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public ScopeDomainOption getDomain() {
         return domain;
     }
@@ -60,9 +61,10 @@ public class TokenSocpeOption {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public ScopeProjectOption getProject() {
         return project;
     }
@@ -99,7 +101,10 @@ public class TokenSocpeOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

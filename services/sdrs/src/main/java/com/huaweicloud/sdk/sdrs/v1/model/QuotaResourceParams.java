@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 配额资源数据结构 */
+/**
+ * 配额资源数据结构
+ */
 public class QuotaResourceParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class QuotaResourceParams {
         return this;
     }
 
-    /** 资源类型server_groups：表示保护组资源类型。replications：表示复制对资源类型。
-     * 
-     * @return type */
+    /**
+     * 资源类型server_groups：表示保护组资源类型。replications：表示复制对资源类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -54,9 +57,10 @@ public class QuotaResourceParams {
         return this;
     }
 
-    /** 已经使用的资源个数。
-     * 
-     * @return used */
+    /**
+     * 已经使用的资源个数。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -70,9 +74,10 @@ public class QuotaResourceParams {
         return this;
     }
 
-    /** 资源配额。-1：表示无穷大。
-     * 
-     * @return quota */
+    /**
+     * 资源配额。-1：表示无穷大。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -86,9 +91,10 @@ public class QuotaResourceParams {
         return this;
     }
 
-    /** 设置该资源配额允许的最小值。
-     * 
-     * @return min */
+    /**
+     * 设置该资源配额允许的最小值。
+     * @return min
+     */
     public Integer getMin() {
         return min;
     }
@@ -102,9 +108,10 @@ public class QuotaResourceParams {
         return this;
     }
 
-    /** 设置该资源配额允许的最大值。-1：表示无穷大。
-     * 
-     * @return max */
+    /**
+     * 设置该资源配额允许的最大值。-1：表示无穷大。
+     * @return max
+     */
     public Integer getMax() {
         return max;
     }
@@ -146,7 +153,10 @@ public class QuotaResourceParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SearchFaceByFileRequestBody */
+/**
+ * SearchFaceByFileRequestBody
+ */
 public class SearchFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
@@ -48,9 +50,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 本地图片文件，图片不能超过8MB,建议小于1MB。上传文件时，请求格式为multipart。 必选，与image_url、image_base64、face_id四选一。
-     * 
-     * @return imageFile */
+    /**
+     * 本地图片文件，图片不能超过8MB,建议小于1MB。上传文件时，请求格式为multipart。  必选，与image_url、image_base64、face_id四选一。
+     * @return imageFile
+     */
     public FormDataFilePart getImageFile() {
         return imageFile;
     }
@@ -64,9 +67,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 返回查询到的最相似的N张人脸，N默认为10。
-     * 
-     * @return topN */
+    /**
+     * 返回查询到的最相似的N张人脸，N默认为10。
+     * @return topN
+     */
     public Integer getTopN() {
         return topN;
     }
@@ -80,9 +84,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。
-     * 
-     * @return threshold */
+    /**
+     * 人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。
+     * @return threshold
+     */
     public Double getThreshold() {
         return threshold;
     }
@@ -96,9 +101,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
-     * 
-     * @return sort */
+    /**
+     * 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -112,9 +118,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
-     * 
-     * @return filter */
+    /**
+     * 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -128,9 +135,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 指定返回的自定义字段。
-     * 
-     * @return returnFields */
+    /**
+     * 指定返回的自定义字段。
+     * @return returnFields
+     */
     public String getReturnFields() {
         return returnFields;
     }
@@ -216,7 +224,10 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

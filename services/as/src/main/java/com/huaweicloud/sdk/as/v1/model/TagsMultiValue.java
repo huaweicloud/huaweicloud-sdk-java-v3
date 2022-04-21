@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TagsMultiValue */
+/**
+ * TagsMultiValue
+ */
 public class TagsMultiValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class TagsMultiValue {
         return this;
     }
 
-    /** 资源标签键。最大长度127个unicode字符。key不能为空。（搜索时不对此参数做校验）。最多为10个，不能为空或者空字符串。且不能重复。
-     * 
-     * @return key */
+    /**
+     * 资源标签键。最大长度127个unicode字符。key不能为空。（搜索时不对此参数做校验）。最多为10个，不能为空或者空字符串。且不能重复。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class TagsMultiValue {
         return this;
     }
 
-    /** 资源标签值列表。每个值最大长度255个unicode字符，每个key下最多为10个，同一个key中values不能重复。
-     * 
-     * @return values */
+    /**
+     * 资源标签值列表。每个值最大长度255个unicode字符，每个key下最多为10个，同一个key中values不能重复。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class TagsMultiValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateRecordRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,13 +34,19 @@ public class CreateRecordRuleResponse extends SdkResponse {
 
     private RecordObsFileAddr obsAddr;
 
-    /** Gets or Sets recordFormats */
+    /**
+     * Gets or Sets recordFormats
+     */
     public static final class RecordFormatsEnum {
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final RecordFormatsEnum HLS = new RecordFormatsEnum("HLS");
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final RecordFormatsEnum MP4 = new RecordFormatsEnum("MP4");
 
         private static final Map<String, RecordFormatsEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +146,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则id，由服务端返回。创建或修改规则的时候不携带
-     * 
-     * @return ruleId */
+    /**
+     * 规则id，由服务端返回。创建或修改规则的时候不携带
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -154,9 +163,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -179,9 +189,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get obsAddr
-     * 
-     * @return obsAddr */
+    /**
+     * Get obsAddr
+     * @return obsAddr
+     */
     public RecordObsFileAddr getObsAddr() {
         return obsAddr;
     }
@@ -211,9 +222,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制格式：hls格式或者mp4格式
-     * 
-     * @return recordFormats */
+    /**
+     * 录制格式：hls格式或者mp4格式
+     * @return recordFormats
+     */
     public List<RecordFormatsEnum> getRecordFormats() {
         return recordFormats;
     }
@@ -236,9 +248,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get hlsConfig
-     * 
-     * @return hlsConfig */
+    /**
+     * Get hlsConfig
+     * @return hlsConfig
+     */
     public HLSRecordConfig getHlsConfig() {
         return hlsConfig;
     }
@@ -261,9 +274,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get mp4Config
-     * 
-     * @return mp4Config */
+    /**
+     * Get mp4Config
+     * @return mp4Config
+     */
     public MP4RecordConfig getMp4Config() {
         return mp4Config;
     }
@@ -277,9 +291,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -293,9 +308,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -309,9 +325,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
     public String getXRequestId() {
@@ -365,7 +382,10 @@ public class CreateRecordRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

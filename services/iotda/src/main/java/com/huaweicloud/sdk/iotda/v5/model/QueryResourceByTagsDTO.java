@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 按标签查询资源请求结构体。 */
+/**
+ * 按标签查询资源请求结构体。
+ */
 public class QueryResourceByTagsDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class QueryResourceByTagsDTO {
         return this;
     }
 
-    /** **参数说明**：要查询的资源类型，当前支持设备（device）。
-     * 
-     * @return resourceType */
+    /**
+     * **参数说明**：要查询的资源类型，当前支持设备（device）。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -58,9 +61,10 @@ public class QueryResourceByTagsDTO {
         return this;
     }
 
-    /** **参数说明**：标签列表，支持按照标签key和value组合查询，传入的多个标签之间是或的关系。
-     * 
-     * @return tags */
+    /**
+     * **参数说明**：标签列表，支持按照标签key和value组合查询，传入的多个标签之间是或的关系。
+     * @return tags
+     */
     public List<TagV5DTO> getTags() {
         return tags;
     }
@@ -97,7 +101,10 @@ public class QueryResourceByTagsDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteCloudPersistentVolumeClaimsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 需要删除的PersistentVolumClaim的名称。
-     * 
-     * @return name */
+    /**
+     * 需要删除的PersistentVolumClaim的名称。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 指定PersistentVolumeClaim所在的命名空间。
-     * 
-     * @return namespace */
+    /**
+     * 指定PersistentVolumeClaim所在的命名空间。 
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -70,9 +74,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。
-     * 
-     * @return deleteVolume */
+    /**
+     * 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。 
+     * @return deleteVolume
+     */
     public String getDeleteVolume() {
         return deleteVolume;
     }
@@ -86,11 +91,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。
-     * 云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。 - bs：EVS云硬盘存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS
-     * Turbo极速文件存储
-     * 
-     * @return storageType */
+    /**
+     * 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。 云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。     - bs：EVS云硬盘存储     - nfs：SFS弹性文件存储     - obs：OBS对象存储     - efs：SFS Turbo极速文件存储 
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -104,9 +108,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return xClusterID */
+    /**
+     * 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 
+     * @return xClusterID
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Cluster-ID")
     public String getXClusterID() {
@@ -152,7 +157,10 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

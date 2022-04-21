@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 存储组信息 */
+/**
+ * 存储组信息
+ */
 public class GetGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 存储组 ID
-     * 
-     * @return groupId */
+    /**
+     * 存储组 ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -84,9 +87,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 存储组名称
-     * 
-     * @return name */
+    /**
+     * 存储组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,9 +104,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -116,9 +121,12 @@ public class GetGroup {
         return this;
     }
 
-    /** 温数据存储用量 minimum: 0 maximum: 1099511627776
-     * 
-     * @return warmDataUsage */
+    /**
+     * 温数据存储用量
+     * minimum: 0
+     * maximum: 1099511627776
+     * @return warmDataUsage
+     */
     public Long getWarmDataUsage() {
         return warmDataUsage;
     }
@@ -132,9 +140,12 @@ public class GetGroup {
         return this;
     }
 
-    /** 此存储组下存储实例的个数 minimum: 0 maximum: 1024
-     * 
-     * @return dataStoreCount */
+    /**
+     * 此存储组下存储实例的个数
+     * minimum: 0
+     * maximum: 1024
+     * @return dataStoreCount
+     */
     public Long getDataStoreCount() {
         return dataStoreCount;
     }
@@ -148,9 +159,12 @@ public class GetGroup {
         return this;
     }
 
-    /** 冷数据存储用量 minimum: 0 maximum: 1099511627776
-     * 
-     * @return coldDataUsage */
+    /**
+     * 冷数据存储用量
+     * minimum: 0
+     * maximum: 1099511627776
+     * @return coldDataUsage
+     */
     public Long getColdDataUsage() {
         return coldDataUsage;
     }
@@ -164,9 +178,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 温数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
-     * 
-     * @return warmDataRetentionPolicy */
+    /**
+     * 温数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
+     * @return warmDataRetentionPolicy
+     */
     public String getWarmDataRetentionPolicy() {
         return warmDataRetentionPolicy;
     }
@@ -180,9 +195,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 冷数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
-     * 
-     * @return coldDataRetentionPolicy */
+    /**
+     * 冷数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
+     * @return coldDataRetentionPolicy
+     */
     public String getColdDataRetentionPolicy() {
         return coldDataRetentionPolicy;
     }
@@ -196,9 +212,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -212,9 +229,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -228,9 +246,10 @@ public class GetGroup {
         return this;
     }
 
-    /** 存储类型，有资产存储(取值:AssetStorage)、设备存储(取值:DeviceStorage)两种类型
-     * 
-     * @return type */
+    /**
+     * 存储类型，有资产存储(取值:AssetStorage)、设备存储(取值:DeviceStorage)两种类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -293,7 +312,10 @@ public class GetGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

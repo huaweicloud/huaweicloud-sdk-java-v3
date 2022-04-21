@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新设备组请求结构体 */
+/**
+ * 更新设备组请求结构体
+ */
 public class UpdateDeviceGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateDeviceGroupDTO {
         return this;
     }
 
-    /** **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
-     * 
-     * @return name */
+    /**
+     * **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateDeviceGroupDTO {
         return this;
     }
 
-    /** **参数说明**：设备组描述。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：设备组描述。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class UpdateDeviceGroupDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

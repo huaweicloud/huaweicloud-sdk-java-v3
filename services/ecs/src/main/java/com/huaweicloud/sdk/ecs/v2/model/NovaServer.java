@@ -28,51 +28,79 @@ public class NovaServer {
 
     private String id;
 
-    /** 云服务器当前状态信息。 取值范围： ACTIVE，
-     * BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。 */
+    /**
+     * 云服务器当前状态信息。  取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum _BUILD for value: " BUILD" */
+        /**
+         * Enum _BUILD for value: " BUILD"
+         */
         public static final StatusEnum _BUILD = new StatusEnum(" BUILD");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum HARD_REBOOT for value: "HARD_REBOOT" */
+        /**
+         * Enum HARD_REBOOT for value: "HARD_REBOOT"
+         */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
 
-        /** Enum MIGRATING for value: "MIGRATING" */
+        /**
+         * Enum MIGRATING for value: "MIGRATING"
+         */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
 
-        /** Enum REBOOT for value: "REBOOT" */
+        /**
+         * Enum REBOOT for value: "REBOOT"
+         */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
 
-        /** Enum RESIZE for value: "RESIZE" */
+        /**
+         * Enum RESIZE for value: "RESIZE"
+         */
         public static final StatusEnum RESIZE = new StatusEnum("RESIZE");
 
-        /** Enum REVERT_RESIZE for value: "REVERT_RESIZE" */
+        /**
+         * Enum REVERT_RESIZE for value: "REVERT_RESIZE"
+         */
         public static final StatusEnum REVERT_RESIZE = new StatusEnum("REVERT_RESIZE");
 
-        /** Enum SHELVED for value: "SHELVED" */
+        /**
+         * Enum SHELVED for value: "SHELVED"
+         */
         public static final StatusEnum SHELVED = new StatusEnum("SHELVED");
 
-        /** Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED" */
+        /**
+         * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
+         */
         public static final StatusEnum SHELVED_OFFLOADED = new StatusEnum("SHELVED_OFFLOADED");
 
-        /** Enum SHUTOFF for value: "SHUTOFF" */
+        /**
+         * Enum SHUTOFF for value: "SHUTOFF"
+         */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
-        /** Enum VERIFY_RESIZE for value: "VERIFY_RESIZE" */
+        /**
+         * Enum VERIFY_RESIZE for value: "VERIFY_RESIZE"
+         */
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -214,14 +242,19 @@ public class NovaServer {
 
     private List<NovaLink> links = null;
 
-    /** 扩展属性，磁盘配置方式。对镜像启动云服务器生效。 取值范围： - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 -
-     * MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。 */
+    /**
+    * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
+    */
     public static final class OsDCFDiskConfigEnum {
 
-        /** Enum AUTO for value: "AUTO" */
+        /**
+         * Enum AUTO for value: "AUTO"
+         */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
 
         private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
@@ -316,51 +349,79 @@ public class NovaServer {
 
     private Integer osEXTSTSPowerState;
 
-    /** 扩展属性，云服务器任务状态。 取值范围： SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED,
-     * RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
-     * 取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。 */
+    /**
+     * 扩展属性，云服务器任务状态。  取值范围：  SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED, RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
+     */
     public static final class OsEXTSTSTaskStateEnum {
 
-        /** Enum SHOUTOFF for value: "SHOUTOFF" */
+        /**
+         * Enum SHOUTOFF for value: "SHOUTOFF"
+         */
         public static final OsEXTSTSTaskStateEnum SHOUTOFF = new OsEXTSTSTaskStateEnum("SHOUTOFF");
 
-        /** Enum _RESIZE for value: " RESIZE" */
+        /**
+         * Enum _RESIZE for value: " RESIZE"
+         */
         public static final OsEXTSTSTaskStateEnum _RESIZE = new OsEXTSTSTaskStateEnum(" RESIZE");
 
-        /** Enum _REBUILD for value: " REBUILD" */
+        /**
+         * Enum _REBUILD for value: " REBUILD"
+         */
         public static final OsEXTSTSTaskStateEnum _REBUILD = new OsEXTSTSTaskStateEnum(" REBUILD");
 
-        /** Enum _VERIFY_RESIZE for value: " VERIFY_RESIZE" */
+        /**
+         * Enum _VERIFY_RESIZE for value: " VERIFY_RESIZE"
+         */
         public static final OsEXTSTSTaskStateEnum _VERIFY_RESIZE = new OsEXTSTSTaskStateEnum(" VERIFY_RESIZE");
 
-        /** Enum _REVERT_RESIZE for value: " REVERT_RESIZE" */
+        /**
+         * Enum _REVERT_RESIZE for value: " REVERT_RESIZE"
+         */
         public static final OsEXTSTSTaskStateEnum _REVERT_RESIZE = new OsEXTSTSTaskStateEnum(" REVERT_RESIZE");
 
-        /** Enum _PAUSED for value: " PAUSED" */
+        /**
+         * Enum _PAUSED for value: " PAUSED"
+         */
         public static final OsEXTSTSTaskStateEnum _PAUSED = new OsEXTSTSTaskStateEnum(" PAUSED");
 
-        /** Enum _MIGRATING for value: " MIGRATING" */
+        /**
+         * Enum _MIGRATING for value: " MIGRATING"
+         */
         public static final OsEXTSTSTaskStateEnum _MIGRATING = new OsEXTSTSTaskStateEnum(" MIGRATING");
 
-        /** Enum _SUSPENDED for value: " SUSPENDED" */
+        /**
+         * Enum _SUSPENDED for value: " SUSPENDED"
+         */
         public static final OsEXTSTSTaskStateEnum _SUSPENDED = new OsEXTSTSTaskStateEnum(" SUSPENDED");
 
-        /** Enum _RESCUE for value: " RESCUE" */
+        /**
+         * Enum _RESCUE for value: " RESCUE"
+         */
         public static final OsEXTSTSTaskStateEnum _RESCUE = new OsEXTSTSTaskStateEnum(" RESCUE");
 
-        /** Enum _ERROR for value: " ERROR" */
+        /**
+         * Enum _ERROR for value: " ERROR"
+         */
         public static final OsEXTSTSTaskStateEnum _ERROR = new OsEXTSTSTaskStateEnum(" ERROR");
 
-        /** Enum _DELETED for value: " DELETED" */
+        /**
+         * Enum _DELETED for value: " DELETED"
+         */
         public static final OsEXTSTSTaskStateEnum _DELETED = new OsEXTSTSTaskStateEnum(" DELETED");
 
-        /** Enum SOFT_DELETED for value: "SOFT_DELETED" */
+        /**
+         * Enum SOFT_DELETED for value: "SOFT_DELETED"
+         */
         public static final OsEXTSTSTaskStateEnum SOFT_DELETED = new OsEXTSTSTaskStateEnum("SOFT_DELETED");
 
-        /** Enum SHELVED for value: "SHELVED" */
+        /**
+         * Enum SHELVED for value: "SHELVED"
+         */
         public static final OsEXTSTSTaskStateEnum SHELVED = new OsEXTSTSTaskStateEnum("SHELVED");
 
-        /** Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED" */
+        /**
+         * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
+         */
         public static final OsEXTSTSTaskStateEnum SHELVED_OFFLOADED = new OsEXTSTSTaskStateEnum("SHELVED_OFFLOADED");
 
         private static final Map<String, OsEXTSTSTaskStateEnum> STATIC_FIELDS = createStaticFields();
@@ -442,45 +503,69 @@ public class NovaServer {
 
     private OsEXTSTSTaskStateEnum osEXTSTSTaskState;
 
-    /** 扩展属性，云服务器状态。 取值范围：
-     * ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。 */
+    /**
+     * 扩展属性，云服务器状态。  取值范围：  ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     */
     public static final class OsEXTSTSVmStateEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final OsEXTSTSVmStateEnum ACTIVE = new OsEXTSTSVmStateEnum("ACTIVE");
 
-        /** Enum BUILDING for value: "BUILDING" */
+        /**
+         * Enum BUILDING for value: "BUILDING"
+         */
         public static final OsEXTSTSVmStateEnum BUILDING = new OsEXTSTSVmStateEnum("BUILDING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final OsEXTSTSVmStateEnum STOPPED = new OsEXTSTSVmStateEnum("STOPPED");
 
-        /** Enum RESIZED for value: "RESIZED" */
+        /**
+         * Enum RESIZED for value: "RESIZED"
+         */
         public static final OsEXTSTSVmStateEnum RESIZED = new OsEXTSTSVmStateEnum("RESIZED");
 
-        /** Enum PAUSED for value: "PAUSED" */
+        /**
+         * Enum PAUSED for value: "PAUSED"
+         */
         public static final OsEXTSTSVmStateEnum PAUSED = new OsEXTSTSVmStateEnum("PAUSED");
 
-        /** Enum SUSPENDED for value: "SUSPENDED" */
+        /**
+         * Enum SUSPENDED for value: "SUSPENDED"
+         */
         public static final OsEXTSTSVmStateEnum SUSPENDED = new OsEXTSTSVmStateEnum("SUSPENDED");
 
-        /** Enum RESCUED for value: "RESCUED" */
+        /**
+         * Enum RESCUED for value: "RESCUED"
+         */
         public static final OsEXTSTSVmStateEnum RESCUED = new OsEXTSTSVmStateEnum("RESCUED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final OsEXTSTSVmStateEnum ERROR = new OsEXTSTSVmStateEnum("ERROR");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final OsEXTSTSVmStateEnum DELETED = new OsEXTSTSVmStateEnum("DELETED");
 
-        /** Enum SOFT_DELETED for value: "SOFT_DELETED" */
+        /**
+         * Enum SOFT_DELETED for value: "SOFT_DELETED"
+         */
         public static final OsEXTSTSVmStateEnum SOFT_DELETED = new OsEXTSTSVmStateEnum("SOFT_DELETED");
 
-        /** Enum SHELVED for value: "SHELVED" */
+        /**
+         * Enum SHELVED for value: "SHELVED"
+         */
         public static final OsEXTSTSVmStateEnum SHELVED = new OsEXTSTSVmStateEnum("SHELVED");
 
-        /** Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED" */
+        /**
+         * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
+         */
         public static final OsEXTSTSVmStateEnum SHELVED_OFFLOADED = new OsEXTSTSVmStateEnum("SHELVED_OFFLOADED");
 
         private static final Map<String, OsEXTSTSVmStateEnum> STATIC_FIELDS = createStaticFields();
@@ -585,19 +670,29 @@ public class NovaServer {
 
     private String description;
 
-    /** nova-compute状态。 - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息 */
+    /**
+     * nova-compute状态。  - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
+     */
     public static final class HostStatusEnum {
 
-        /** Enum UP for value: "UP" */
+        /**
+         * Enum UP for value: "UP"
+         */
         public static final HostStatusEnum UP = new HostStatusEnum("UP");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final HostStatusEnum UNKNOWN = new HostStatusEnum("UNKNOWN");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final HostStatusEnum DOWN = new HostStatusEnum("DOWN");
 
-        /** Enum MAINTENANCE for value: "MAINTENANCE" */
+        /**
+         * Enum MAINTENANCE for value: "MAINTENANCE"
+         */
         public static final HostStatusEnum MAINTENANCE = new HostStatusEnum("MAINTENANCE");
 
         private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -744,9 +839,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -760,9 +856,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器唯一标识。
-     * 
-     * @return id */
+    /**
+     * 云服务器唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -776,11 +873,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器当前状态信息。 取值范围： ACTIVE，
-     * BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
-     * 
-     * @return status */
+    /**
+     * 云服务器当前状态信息。  取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -794,9 +890,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器创建时间。 时间格式例如：2019-05-22T07:48:53Z
-     * 
-     * @return created */
+    /**
+     * 云服务器创建时间。 时间格式例如：2019-05-22T07:48:53Z
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -810,9 +907,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器上一次更新时间。时间格式例如：2019-05-22T07:48:53Z
-     * 
-     * @return updated */
+    /**
+     * 云服务器上一次更新时间。时间格式例如：2019-05-22T07:48:53Z
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -835,9 +933,10 @@ public class NovaServer {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public NovaServerFlavor getFlavor() {
         return flavor;
     }
@@ -860,9 +959,10 @@ public class NovaServer {
         return this;
     }
 
-    /** Get image
-     * 
-     * @return image */
+    /**
+     * Get image
+     * @return image
+     */
     public NovaServerImage getImage() {
         return image;
     }
@@ -876,9 +976,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器所属租户ID。即项目id，与project_id表示相同的概念。
-     * 
-     * @return tenantId */
+    /**
+     * 云服务器所属租户ID。即项目id，与project_id表示相同的概念。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -892,9 +993,10 @@ public class NovaServer {
         return this;
     }
 
-    /** SSH密钥名称。
-     * 
-     * @return keyName */
+    /**
+     * SSH密钥名称。
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -908,9 +1010,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器所属用户ID。
-     * 
-     * @return userId */
+    /**
+     * 云服务器所属用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -940,9 +1043,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器元数据。
-     * 
-     * @return metadata */
+    /**
+     * 云服务器元数据。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -956,9 +1060,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器对应的主机ID。
-     * 
-     * @return hostId */
+    /**
+     * 云服务器对应的主机ID。
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -988,9 +1093,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器对应的网络地址信息。
-     * 
-     * @return addresses */
+    /**
+     * 云服务器对应的网络地址信息。
+     * @return addresses
+     */
     public Map<String, List<NovaNetwork>> getAddresses() {
         return addresses;
     }
@@ -1020,9 +1126,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器所属安全组列表。
-     * 
-     * @return securityGroups */
+    /**
+     * 云服务器所属安全组列表。
+     * @return securityGroups
+     */
     public List<NovaServerSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -1052,9 +1159,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器相关标记快捷链接信息。
-     * 
-     * @return links */
+    /**
+     * 云服务器相关标记快捷链接信息。
+     * @return links
+     */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -1068,10 +1176,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，磁盘配置方式。对镜像启动云服务器生效。 取值范围： - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 -
-     * MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
-     * 
-     * @return osDCFDiskConfig */
+    /**
+     * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
+     * @return osDCFDiskConfig
+     */
     public OsDCFDiskConfigEnum getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -1085,9 +1193,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，可用分区编码。
-     * 
-     * @return osEXTAZAvailabilityZone */
+    /**
+     * 扩展属性，可用分区编码。
+     * @return osEXTAZAvailabilityZone
+     */
     public String getOsEXTAZAvailabilityZone() {
         return osEXTAZAvailabilityZone;
     }
@@ -1101,9 +1210,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，与主机宿主名称。
-     * 
-     * @return osEXTSRVATTRHost */
+    /**
+     * 扩展属性，与主机宿主名称。
+     * @return osEXTSRVATTRHost
+     */
     public String getOsEXTSRVATTRHost() {
         return osEXTSRVATTRHost;
     }
@@ -1117,9 +1227,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，hypervisor主机名。
-     * 
-     * @return osEXTSRVATTRHypervisorHostname */
+    /**
+     * 扩展属性，hypervisor主机名。
+     * @return osEXTSRVATTRHypervisorHostname
+     */
     public String getOsEXTSRVATTRHypervisorHostname() {
         return osEXTSRVATTRHypervisorHostname;
     }
@@ -1133,9 +1244,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器实例ID。
-     * 
-     * @return osEXTSRVATTRInstanceName */
+    /**
+     * 扩展属性，云服务器实例ID。
+     * @return osEXTSRVATTRInstanceName
+     */
     public String getOsEXTSRVATTRInstanceName() {
         return osEXTSRVATTRInstanceName;
     }
@@ -1149,10 +1261,12 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器电源状态。 取值范围：0，1，2，3，4 - 0 : pending - 1 : running - 2 : paused - 3 : shutdown - 4 : crashed minimum: 0
+    /**
+     * 扩展属性，云服务器电源状态。  取值范围：0，1，2，3，4  - 0 : pending - 1 : running - 2 : paused - 3 : shutdown - 4 : crashed
+     * minimum: 0
      * maximum: 4
-     * 
-     * @return osEXTSTSPowerState */
+     * @return osEXTSTSPowerState
+     */
     public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
@@ -1166,11 +1280,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器任务状态。 取值范围： SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED,
-     * RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
-     * 取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
-     * 
-     * @return osEXTSTSTaskState */
+    /**
+     * 扩展属性，云服务器任务状态。  取值范围：  SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED, RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
+     * @return osEXTSTSTaskState
+     */
     public OsEXTSTSTaskStateEnum getOsEXTSTSTaskState() {
         return osEXTSTSTaskState;
     }
@@ -1184,11 +1297,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器状态。 取值范围：
-     * ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
-     * 
-     * @return osEXTSTSVmState */
+    /**
+     * 扩展属性，云服务器状态。  取值范围：  ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     * @return osEXTSTSVmState
+     */
     public OsEXTSTSVmStateEnum getOsEXTSTSVmState() {
         return osEXTSTSVmState;
     }
@@ -1202,9 +1314,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器启动时间。时间格式例如：2019-05-22T07:48:19.000000
-     * 
-     * @return osSRVUSGLaunchedAt */
+    /**
+     * 扩展属性，云服务器启动时间。时间格式例如：2019-05-22T07:48:19.000000
+     * @return osSRVUSGLaunchedAt
+     */
     public String getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
@@ -1218,9 +1331,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 扩展属性，云服务器关闭时间。 时间格式例如：2019-05-22T07:48:19.000000
-     * 
-     * @return osSRVUSGTerminatedAt */
+    /**
+     * 扩展属性，云服务器关闭时间。  时间格式例如：2019-05-22T07:48:19.000000
+     * @return osSRVUSGTerminatedAt
+     */
     public String getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
@@ -1251,9 +1365,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器挂载的云磁盘信息。
-     * 
-     * @return osExtendedVolumesVolumesAttached */
+    /**
+     * 云服务器挂载的云磁盘信息。
+     * @return osExtendedVolumesVolumesAttached
+     */
     public List<NovaServerVolume> getOsExtendedVolumesVolumesAttached() {
         return osExtendedVolumesVolumesAttached;
     }
@@ -1276,9 +1391,10 @@ public class NovaServer {
         return this;
     }
 
-    /** Get fault
-     * 
-     * @return fault */
+    /**
+     * Get fault
+     * @return fault
+     */
     public NovaServerFault getFault() {
         return fault;
     }
@@ -1292,9 +1408,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 弹性云服务器的描述信息。 微版本2.19后支持
-     * 
-     * @return description */
+    /**
+     * 弹性云服务器的描述信息。  微版本2.19后支持
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -1308,9 +1425,10 @@ public class NovaServer {
         return this;
     }
 
-    /** nova-compute状态。 - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
-     * 
-     * @return hostStatus */
+    /**
+     * nova-compute状态。  - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
+     * @return hostStatus
+     */
     public HostStatusEnum getHostStatus() {
         return hostStatus;
     }
@@ -1324,9 +1442,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 弹性云服务器的主机名。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRHostname */
+    /**
+     * 弹性云服务器的主机名。  微版本2.3后支持
+     * @return osEXTSRVATTRHostname
+     */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -1340,9 +1459,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 批量创建场景，弹性云服务器的预留ID。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRReservationId */
+    /**
+     * 批量创建场景，弹性云服务器的预留ID。  微版本2.3后支持
+     * @return osEXTSRVATTRReservationId
+     */
     public String getOsEXTSRVATTRReservationId() {
         return osEXTSRVATTRReservationId;
     }
@@ -1356,9 +1476,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 批量创建场景，弹性云服务器的启动顺序。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRLaunchIndex */
+    /**
+     * 批量创建场景，弹性云服务器的启动顺序。  微版本2.3后支持
+     * @return osEXTSRVATTRLaunchIndex
+     */
     public Integer getOsEXTSRVATTRLaunchIndex() {
         return osEXTSRVATTRLaunchIndex;
     }
@@ -1372,9 +1493,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRKernelId */
+    /**
+     * 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。  微版本2.3后支持
+     * @return osEXTSRVATTRKernelId
+     */
     public String getOsEXTSRVATTRKernelId() {
         return osEXTSRVATTRKernelId;
     }
@@ -1388,9 +1510,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRRamdiskId */
+    /**
+     * 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。  微版本2.3后支持
+     * @return osEXTSRVATTRRamdiskId
+     */
     public String getOsEXTSRVATTRRamdiskId() {
         return osEXTSRVATTRRamdiskId;
     }
@@ -1404,9 +1527,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 弹性云服务器系统盘的设备名称。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRRootDeviceName */
+    /**
+     * 弹性云服务器系统盘的设备名称。  微版本2.3后支持
+     * @return osEXTSRVATTRRootDeviceName
+     */
     public String getOsEXTSRVATTRRootDeviceName() {
         return osEXTSRVATTRRootDeviceName;
     }
@@ -1420,9 +1544,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 创建弹性云服务器时指定的user_data。 微版本2.3后支持
-     * 
-     * @return osEXTSRVATTRUserData */
+    /**
+     * 创建弹性云服务器时指定的user_data。  微版本2.3后支持
+     * @return osEXTSRVATTRUserData
+     */
     public String getOsEXTSRVATTRUserData() {
         return osEXTSRVATTRUserData;
     }
@@ -1452,9 +1577,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 云服务器的标签列表。 系统近期对标签功能进行了升级，升级后，返回的tag值遵循如下规则： - key与value使用“=”连接，如“key=value”。 - 如果value为空字符串，则仅返回key。
-     * 
-     * @return tags */
+    /**
+     * 云服务器的标签列表。  系统近期对标签功能进行了升级，升级后，返回的tag值遵循如下规则：  - key与value使用“=”连接，如“key=value”。 - 如果value为空字符串，则仅返回key。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -1468,9 +1594,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 当云服务器被锁时为True，否则为False。 微版本2.9后支持
-     * 
-     * @return locked */
+    /**
+     * 当云服务器被锁时为True，否则为False。  微版本2.9后支持
+     * @return locked
+     */
     public Boolean getLocked() {
         return locked;
     }
@@ -1484,9 +1611,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv4 */
+    /**
+     * 预留属性。
+     * @return accessIPv4
+     */
     public String getAccessIPv4() {
         return accessIPv4;
     }
@@ -1500,9 +1628,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv6 */
+    /**
+     * 预留属性。
+     * @return accessIPv6
+     */
     public String getAccessIPv6() {
         return accessIPv6;
     }
@@ -1516,9 +1645,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return configDrive */
+    /**
+     * 预留属性。
+     * @return configDrive
+     */
     public String getConfigDrive() {
         return configDrive;
     }
@@ -1532,9 +1662,10 @@ public class NovaServer {
         return this;
     }
 
-    /** 预留属性
-     * 
-     * @return progress */
+    /**
+     * 预留属性
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -1557,9 +1688,10 @@ public class NovaServer {
         return this;
     }
 
-    /** Get osSchedulerHints
-     * 
-     * @return osSchedulerHints */
+    /**
+     * Get osSchedulerHints
+     * @return osSchedulerHints
+     */
     public NovaServerSchedulerHints getOsSchedulerHints() {
         return osSchedulerHints;
     }
@@ -1716,7 +1848,10 @@ public class NovaServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

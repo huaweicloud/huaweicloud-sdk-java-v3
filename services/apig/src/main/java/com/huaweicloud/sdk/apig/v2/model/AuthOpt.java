@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 认证方式参数 */
+/**
+ * 认证方式参数
+ */
 public class AuthOpt {
 
-    /** AppCode简易认证类型，仅在auth_type为APP时生效，默认为DISABLE： - DISABLE：不开启简易认证 - HEADER：开启简易认证且AppCode位置在HEADER */
+    /**
+     * AppCode简易认证类型，仅在auth_type为APP时生效，默认为DISABLE： - DISABLE：不开启简易认证 - HEADER：开启简易认证且AppCode位置在HEADER
+     */
     public static final class AppCodeAuthTypeEnum {
 
-        /** Enum DISABLE for value: "DISABLE" */
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
         public static final AppCodeAuthTypeEnum DISABLE = new AppCodeAuthTypeEnum("DISABLE");
 
-        /** Enum HEADER for value: "HEADER" */
+        /**
+         * Enum HEADER for value: "HEADER"
+         */
         public static final AppCodeAuthTypeEnum HEADER = new AppCodeAuthTypeEnum("HEADER");
 
         private static final Map<String, AppCodeAuthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class AuthOpt {
         return this;
     }
 
-    /** AppCode简易认证类型，仅在auth_type为APP时生效，默认为DISABLE： - DISABLE：不开启简易认证 - HEADER：开启简易认证且AppCode位置在HEADER
-     * 
-     * @return appCodeAuthType */
+    /**
+     * AppCode简易认证类型，仅在auth_type为APP时生效，默认为DISABLE： - DISABLE：不开启简易认证 - HEADER：开启简易认证且AppCode位置在HEADER
+     * @return appCodeAuthType
+     */
     public AppCodeAuthTypeEnum getAppCodeAuthType() {
         return appCodeAuthType;
     }
@@ -131,7 +140,10 @@ public class AuthOpt {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

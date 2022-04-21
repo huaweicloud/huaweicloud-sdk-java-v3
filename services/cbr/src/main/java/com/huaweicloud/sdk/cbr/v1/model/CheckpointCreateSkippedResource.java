@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 备份时跳过的资源 */
+/**
+ * 备份时跳过的资源
+ */
 public class CheckpointCreateSkippedResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CheckpointCreateSkippedResource {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return id */
+    /**
+     * 资源ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class CheckpointCreateSkippedResource {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return type */
+    /**
+     * 资源类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,9 +74,10 @@ public class CheckpointCreateSkippedResource {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return name */
+    /**
+     * 资源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +91,10 @@ public class CheckpointCreateSkippedResource {
         return this;
     }
 
-    /** 请参见[错误码](ErrorCode.xml)。
-     * 
-     * @return code */
+    /**
+     * 请参见[错误码](ErrorCode.xml)。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -102,9 +108,10 @@ public class CheckpointCreateSkippedResource {
         return this;
     }
 
-    /** 跳过原因，例如：该资源正在备份中。
-     * 
-     * @return reason */
+    /**
+     * 跳过原因，例如：该资源正在备份中。
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -147,7 +154,10 @@ public class CheckpointCreateSkippedResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

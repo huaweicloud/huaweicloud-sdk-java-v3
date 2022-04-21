@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateCloudPersistentVolumeClaimsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +31,10 @@ public class CreateCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。以小写字母开头，由小写字母、数字、中划线（-）组成，且不能以中划线（-）结尾。 使用namespace有如下约束： -
-     * 用户自定义的namespace，使用前必须先[创建Namespace](cce_02_0050.xml) - 系统自带的namespace：default - 不能使用kube-system与kube-public
-     * 
-     * @return namespace */
+    /**
+     * Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。以小写字母开头，由小写字母、数字、中划线（-）组成，且不能以中划线（-）结尾。  使用namespace有如下约束：  - 用户自定义的namespace，使用前必须先[创建Namespace](cce_02_0050.xml)  - 系统自带的namespace：default  - 不能使用kube-system与kube-public 
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -46,9 +48,10 @@ public class CreateCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return xClusterID */
+    /**
+     * 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 
+     * @return xClusterID
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Cluster-ID")
     public String getXClusterID() {
@@ -73,9 +76,10 @@ public class CreateCloudPersistentVolumeClaimsRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public PersistentVolumeClaim getBody() {
         return body;
     }
@@ -115,7 +119,10 @@ public class CreateCloudPersistentVolumeClaimsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

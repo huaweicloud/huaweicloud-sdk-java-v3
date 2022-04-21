@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Environment */
+/**
+ * Environment
+ */
 public class Environment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境ID。
-     * 
-     * @return id */
+    /**
+     * 环境ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -97,9 +100,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境名称。
-     * 
-     * @return name */
+    /**
+     * 环境名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -113,9 +117,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境别名。
-     * 
-     * @return alias */
+    /**
+     * 环境别名。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -129,9 +134,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境描述。
-     * 
-     * @return description */
+    /**
+     * 环境描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -145,9 +151,10 @@ public class Environment {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -161,9 +168,10 @@ public class Environment {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -177,9 +185,10 @@ public class Environment {
         return this;
     }
 
-    /** 收费模式。
-     * 
-     * @return chargeMode */
+    /**
+     * 收费模式。
+     * @return chargeMode
+     */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -193,9 +202,10 @@ public class Environment {
         return this;
     }
 
-    /** 虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -225,9 +235,10 @@ public class Environment {
         return this;
     }
 
-    /** 基础资源。
-     * 
-     * @return baseResources */
+    /**
+     * 基础资源。
+     * @return baseResources
+     */
     public List<Resource> getBaseResources() {
         return baseResources;
     }
@@ -257,9 +268,10 @@ public class Environment {
         return this;
     }
 
-    /** 可选资源。
-     * 
-     * @return optionalResources */
+    /**
+     * 可选资源。
+     * @return optionalResources
+     */
     public List<Resource> getOptionalResources() {
         return optionalResources;
     }
@@ -273,9 +285,10 @@ public class Environment {
         return this;
     }
 
-    /** 创建人。
-     * 
-     * @return creator */
+    /**
+     * 创建人。
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -289,9 +302,10 @@ public class Environment {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -305,9 +319,10 @@ public class Environment {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -376,7 +391,10 @@ public class Environment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

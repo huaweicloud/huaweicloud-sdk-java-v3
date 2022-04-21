@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 公网IP绑定的带宽信息 */
+/**
+ * 公网IP绑定的带宽信息
+ */
 public class BandwidthInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class BandwidthInfoResp {
 
     private Integer bandwidthNumber;
 
-    /** 带宽类型 */
+    /**
+     * 带宽类型
+     */
     public static final class BandwidthTypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final BandwidthTypeEnum PER = new BandwidthTypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final BandwidthTypeEnum WHOLE = new BandwidthTypeEnum("WHOLE");
 
         private static final Map<String, BandwidthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class BandwidthInfoResp {
         return this;
     }
 
-    /** 带宽名称
-     * 
-     * @return bandwidthName */
+    /**
+     * 带宽名称
+     * @return bandwidthName
+     */
     public String getBandwidthName() {
         return bandwidthName;
     }
@@ -125,9 +134,12 @@ public class BandwidthInfoResp {
         return this;
     }
 
-    /** 带宽大小 minimum: 0 maximum: 99999
-     * 
-     * @return bandwidthNumber */
+    /**
+     * 带宽大小
+     * minimum: 0
+     * maximum: 99999
+     * @return bandwidthNumber
+     */
     public Integer getBandwidthNumber() {
         return bandwidthNumber;
     }
@@ -141,9 +153,10 @@ public class BandwidthInfoResp {
         return this;
     }
 
-    /** 带宽类型
-     * 
-     * @return bandwidthType */
+    /**
+     * 带宽类型
+     * @return bandwidthType
+     */
     public BandwidthTypeEnum getBandwidthType() {
         return bandwidthType;
     }
@@ -157,9 +170,10 @@ public class BandwidthInfoResp {
         return this;
     }
 
-    /** 带宽id
-     * 
-     * @return bandwidthId */
+    /**
+     * 带宽id
+     * @return bandwidthId
+     */
     public String getBandwidthId() {
         return bandwidthId;
     }
@@ -200,7 +214,10 @@ public class BandwidthInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** V2BandwidthData */
+/**
+ * V2BandwidthData
+ */
 public class V2BandwidthData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class V2BandwidthData {
         return this;
     }
 
-    /** 带宽值，单位为bps。 minimum: 0 maximum: -1
-     * 
-     * @return value */
+    /**
+     * 带宽值，单位为bps。
+     * minimum: 0
+     * maximum: -1
+     * @return value
+     */
     public Long getValue() {
         return value;
     }
@@ -39,9 +44,10 @@ public class V2BandwidthData {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return time */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -77,7 +83,10 @@ public class V2BandwidthData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

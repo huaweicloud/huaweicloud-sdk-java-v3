@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BackupRestoreServerMapping */
+/**
+ * BackupRestoreServerMapping
+ */
 public class BackupRestoreServerMapping {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BackupRestoreServerMapping {
         return this;
     }
 
-    /** 卷备份ID，可以通过控制台或者“查询指定备份”接口获取。
-     * 
-     * @return backupId */
+    /**
+     * 卷备份ID，可以通过控制台或者“查询指定备份”接口获取。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -39,9 +42,10 @@ public class BackupRestoreServerMapping {
         return this;
     }
 
-    /** 待恢复目标卷ID
-     * 
-     * @return volumeId */
+    /**
+     * 待恢复目标卷ID
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -78,7 +82,10 @@ public class BackupRestoreServerMapping {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 操作参数，scale和rollback时提供。 */
+/**
+ * 操作参数，scale和rollback时提供。
+ */
 public class InstanceActionParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class InstanceActionParameters {
         return this;
     }
 
-    /** 实例数，在scale操作时提供。
-     * 
-     * @return replica */
+    /**
+     * 实例数，在scale操作时提供。
+     * @return replica
+     */
     public Integer getReplica() {
         return replica;
     }
@@ -63,9 +66,10 @@ public class InstanceActionParameters {
         return this;
     }
 
-    /** ECS ID列表，指定虚机扩容时部署的ECS主机。
-     * 
-     * @return hosts */
+    /**
+     * ECS ID列表，指定虚机扩容时部署的ECS主机。
+     * @return hosts
+     */
     public List<String> getHosts() {
         return hosts;
     }
@@ -79,9 +83,10 @@ public class InstanceActionParameters {
         return this;
     }
 
-    /** 版本号，在rollback操作时提供，通过查询快照接口获取。
-     * 
-     * @return version */
+    /**
+     * 版本号，在rollback操作时提供，通过查询快照接口获取。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -120,7 +125,10 @@ public class InstanceActionParameters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApplyConfigurationResponseApplyResults */
+/**
+ * ApplyConfigurationResponseApplyResults
+ */
 public class ApplyConfigurationResponseApplyResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ApplyConfigurationResponseApplyResults {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ApplyConfigurationResponseApplyResults {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -65,9 +69,10 @@ public class ApplyConfigurationResponseApplyResults {
         return this;
     }
 
-    /** 实例是否需要重启。 - “true”需要重启。 - “false”不需要重启。
-     * 
-     * @return restartRequired */
+    /**
+     * 实例是否需要重启。  - “true”需要重启。 - “false”不需要重启。
+     * @return restartRequired
+     */
     public Boolean getRestartRequired() {
         return restartRequired;
     }
@@ -81,9 +86,10 @@ public class ApplyConfigurationResponseApplyResults {
         return this;
     }
 
-    /** 参数模板是否应用成功。 - “true”表示参数模板应用成功。 - “false”表示参数模板应用失败。
-     * 
-     * @return success */
+    /**
+     * 参数模板是否应用成功。  - “true”表示参数模板应用成功。 - “false”表示参数模板应用失败。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -125,7 +131,10 @@ public class ApplyConfigurationResponseApplyResults {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

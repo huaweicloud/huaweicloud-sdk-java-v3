@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WeeklyTop10 */
+/**
+ * WeeklyTop10
+ */
 public class WeeklyTop10 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class WeeklyTop10 {
         return this;
     }
 
-    /** 弹性IP地址
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 弹性IP地址
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -39,9 +42,10 @@ public class WeeklyTop10 {
         return this;
     }
 
-    /** DDoS拦截次数，包括清洗和黑洞
-     * 
-     * @return times */
+    /**
+     * DDoS拦截次数，包括清洗和黑洞
+     * @return times
+     */
     public Integer getTimes() {
         return times;
     }
@@ -78,7 +82,10 @@ public class WeeklyTop10 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

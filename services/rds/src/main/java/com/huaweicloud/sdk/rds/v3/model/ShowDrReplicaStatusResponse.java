@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDrReplicaStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 同步状态，取值范围是0或-1，0表示正常，-1表示异常。
-     * 
-     * @return replicaState */
+    /**
+     * 同步状态，取值范围是0或-1，0表示正常，-1表示异常。
+     * @return replicaState
+     */
     public String getReplicaState() {
         return replicaState;
     }
@@ -50,9 +53,10 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 发送延迟大小（MB），即主实例当前wal日志写入位点与灾备实例当前接收wal日志位点的差值。
-     * 
-     * @return walWriteReceiveDelayInMb */
+    /**
+     * 发送延迟大小（MB），即主实例当前wal日志写入位点与灾备实例当前接收wal日志位点的差值。
+     * @return walWriteReceiveDelayInMb
+     */
     public String getWalWriteReceiveDelayInMb() {
         return walWriteReceiveDelayInMb;
     }
@@ -66,9 +70,10 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 端到端延迟大小（MB），即主实例当前wal日志写入位点与灾备实例当前回放wal日志位点的差值。
-     * 
-     * @return walWriteReplayDelayInMb */
+    /**
+     * 端到端延迟大小（MB），即主实例当前wal日志写入位点与灾备实例当前回放wal日志位点的差值。
+     * @return walWriteReplayDelayInMb
+     */
     public String getWalWriteReplayDelayInMb() {
         return walWriteReplayDelayInMb;
     }
@@ -82,9 +87,10 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 回放延迟时间（ms），即数据在灾备上回放的延迟时间。
-     * 
-     * @return walReceiveReplayDelayInMs */
+    /**
+     * 回放延迟时间（ms），即数据在灾备上回放的延迟时间。
+     * @return walReceiveReplayDelayInMs
+     */
     public String getWalReceiveReplayDelayInMs() {
         return walReceiveReplayDelayInMs;
     }
@@ -125,7 +131,10 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

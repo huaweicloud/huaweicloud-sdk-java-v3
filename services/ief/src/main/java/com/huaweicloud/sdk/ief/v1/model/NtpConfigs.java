@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ntp配置 */
+/**
+ * ntp配置
+ */
 public class NtpConfigs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class NtpConfigs {
         return this;
     }
 
-    /** ntp服务是否开启
-     * 
-     * @return ntpEnabled */
+    /**
+     * ntp服务是否开启
+     * @return ntpEnabled
+     */
     public Boolean getNtpEnabled() {
         return ntpEnabled;
     }
@@ -58,9 +61,10 @@ public class NtpConfigs {
         return this;
     }
 
-    /** ntp server地址
-     * 
-     * @return ntpservers */
+    /**
+     * ntp server地址
+     * @return ntpservers
+     */
     public List<String> getNtpservers() {
         return ntpservers;
     }
@@ -97,7 +101,10 @@ public class NtpConfigs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

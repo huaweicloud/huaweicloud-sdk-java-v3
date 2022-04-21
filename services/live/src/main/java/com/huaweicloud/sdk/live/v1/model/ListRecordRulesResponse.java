@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRecordRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,12 @@ public class ListRecordRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询结果的总元素数量 minimum: 0 maximum: 1024000
-     * 
-     * @return total */
+    /**
+     * 查询结果的总元素数量
+     * minimum: 0
+     * maximum: 1024000
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +64,10 @@ public class ListRecordRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制配置数组
-     * 
-     * @return recordConfig */
+    /**
+     * 录制配置数组
+     * @return recordConfig
+     */
     public List<RecordRule> getRecordConfig() {
         return recordConfig;
     }
@@ -98,7 +104,10 @@ public class ListRecordRulesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

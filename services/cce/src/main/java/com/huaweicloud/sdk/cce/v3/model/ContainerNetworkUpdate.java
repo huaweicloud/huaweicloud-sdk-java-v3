@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ContainerNetworkUpdate */
+/**
+ * ContainerNetworkUpdate
+ */
 public class ContainerNetworkUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ContainerNetworkUpdate {
         return this;
     }
 
-    /** 容器网络网段列表。1.21及新版本集群，当集群网络类型为vpc-router时，支持增量添加容器网段。 此参数在集群更新后不可更改，请谨慎选择。
-     * 
-     * @return cidrs */
+    /**
+     * 容器网络网段列表。1.21及新版本集群，当集群网络类型为vpc-router时，支持增量添加容器网段。  此参数在集群更新后不可更改，请谨慎选择。
+     * @return cidrs
+     */
     public List<ContainerCIDR> getCidrs() {
         return cidrs;
     }
@@ -74,7 +77,10 @@ public class ContainerNetworkUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

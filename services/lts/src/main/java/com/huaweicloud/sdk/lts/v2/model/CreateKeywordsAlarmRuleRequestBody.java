@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateKeywordsAlarmRuleRequestBody */
+/**
+ * CreateKeywordsAlarmRuleRequestBody
+ */
 public class CreateKeywordsAlarmRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,19 +38,29 @@ public class CreateKeywordsAlarmRuleRequestBody {
 
     private Frequency frequency;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class KeywordsAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final KeywordsAlarmLevelEnum INFO = new KeywordsAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final KeywordsAlarmLevelEnum MINOR = new KeywordsAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final KeywordsAlarmLevelEnum MAJOR = new KeywordsAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "CRITICAL" */
+        /**
+         * Enum CRITICAL for value: "CRITICAL"
+         */
         public static final KeywordsAlarmLevelEnum CRITICAL = new KeywordsAlarmLevelEnum("CRITICAL");
 
         private static final Map<String, KeywordsAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -140,9 +152,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词告警名称
-     * 
-     * @return keywordsAlarmRuleName */
+    /**
+     * 关键词告警名称
+     * @return keywordsAlarmRuleName
+     */
     public String getKeywordsAlarmRuleName() {
         return keywordsAlarmRuleName;
     }
@@ -156,9 +169,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词告警信息描述
-     * 
-     * @return keywordsAlarmRuleDescription */
+    /**
+     * 关键词告警信息描述
+     * @return keywordsAlarmRuleDescription
+     */
     public String getKeywordsAlarmRuleDescription() {
         return keywordsAlarmRuleDescription;
     }
@@ -189,9 +203,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词详细信息
-     * 
-     * @return keywordsRequests */
+    /**
+     * 关键词详细信息
+     * @return keywordsRequests
+     */
     public List<KeywordsRequest> getKeywordsRequests() {
         return keywordsRequests;
     }
@@ -214,9 +229,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** Get frequency
-     * 
-     * @return frequency */
+    /**
+     * Get frequency
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -230,9 +246,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return keywordsAlarmLevel */
+    /**
+     * 告警级别
+     * @return keywordsAlarmLevel
+     */
     public KeywordsAlarmLevelEnum getKeywordsAlarmLevel() {
         return keywordsAlarmLevel;
     }
@@ -246,9 +263,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return keywordsAlarmSend */
+    /**
+     * 是否发送
+     * @return keywordsAlarmSend
+     */
     public Boolean getKeywordsAlarmSend() {
         return keywordsAlarmSend;
     }
@@ -262,9 +280,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -288,9 +307,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 通知主题
-     * 
-     * @return notificationSaveRule */
+    /**
+     * 通知主题
+     * @return notificationSaveRule
+     */
     public NotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
@@ -349,7 +369,10 @@ public class CreateKeywordsAlarmRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

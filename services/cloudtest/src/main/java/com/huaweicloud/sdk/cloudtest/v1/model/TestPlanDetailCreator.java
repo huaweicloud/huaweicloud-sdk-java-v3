@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 测试计划创建者信息 */
+/**
+ * 测试计划创建者信息
+ */
 public class TestPlanDetailCreator {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TestPlanDetailCreator {
         return this;
     }
 
-    /** 测试计划创建者id
-     * 
-     * @return id */
+    /**
+     * 测试计划创建者id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class TestPlanDetailCreator {
         return this;
     }
 
-    /** 测试计划创建者的昵称，当用户未设置昵称时不返回该字段
-     * 
-     * @return nickName */
+    /**
+     * 测试计划创建者的昵称，当用户未设置昵称时不返回该字段
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -60,9 +64,10 @@ public class TestPlanDetailCreator {
         return this;
     }
 
-    /** 测试计划创建者的用户名称
-     * 
-     * @return userName */
+    /**
+     * 测试计划创建者的用户名称
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -101,7 +106,10 @@ public class TestPlanDetailCreator {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

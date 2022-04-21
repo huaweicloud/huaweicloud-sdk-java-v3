@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVersionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListVersionRequest {
         return this;
     }
 
-    /** 待查询版本号。当前仅支持v2。
-     * 
-     * @return apiVersion */
+    /**
+     * 待查询版本号。当前仅支持v2。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -55,7 +58,10 @@ public class ListVersionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

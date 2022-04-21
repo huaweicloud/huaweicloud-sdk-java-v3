@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowContentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class ShowContentResponse extends SdkResponse {
 
     private String sha;
 
-    /** 编码方式：base64或者text/plain。 */
+    /**
+     * 编码方式：base64或者text/plain。
+     */
     public static final class EncodingEnum {
 
-        /** Enum BASE64 for value: "base64" */
+        /**
+         * Enum BASE64 for value: "base64"
+         */
         public static final EncodingEnum BASE64 = new EncodingEnum("base64");
 
-        /** Enum TEXT_PLAIN for value: "text/plain" */
+        /**
+         * Enum TEXT_PLAIN for value: "text/plain"
+         */
         public static final EncodingEnum TEXT_PLAIN = new EncodingEnum("text/plain");
 
         private static final Map<String, EncodingEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class ShowContentResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件路径。
-     * 
-     * @return path */
+    /**
+     * 文件路径。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -126,9 +135,10 @@ public class ShowContentResponse extends SdkResponse {
         return this;
     }
 
-    /** commit 哈希。
-     * 
-     * @return sha */
+    /**
+     * commit 哈希。
+     * @return sha
+     */
     public String getSha() {
         return sha;
     }
@@ -142,9 +152,10 @@ public class ShowContentResponse extends SdkResponse {
         return this;
     }
 
-    /** 编码方式：base64或者text/plain。
-     * 
-     * @return encoding */
+    /**
+     * 编码方式：base64或者text/plain。
+     * @return encoding
+     */
     public EncodingEnum getEncoding() {
         return encoding;
     }
@@ -158,9 +169,10 @@ public class ShowContentResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件内容。
-     * 
-     * @return content */
+    /**
+     * 文件内容。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -200,7 +212,10 @@ public class ShowContentResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

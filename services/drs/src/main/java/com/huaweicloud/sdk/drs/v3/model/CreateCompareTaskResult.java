@@ -30,9 +30,10 @@ public class CreateCompareTaskResult {
         return this;
     }
 
-    /** 对比任务创建成功后，返回对比任务的id，用于查询该对比任务的结果。
-     * 
-     * @return compareTaskId */
+    /**
+     * 对比任务创建成功后，返回对比任务的id，用于查询该对比任务的结果。
+     * @return compareTaskId
+     */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -46,9 +47,10 @@ public class CreateCompareTaskResult {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -62,9 +64,10 @@ public class CreateCompareTaskResult {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -103,7 +106,10 @@ public class CreateCompareTaskResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

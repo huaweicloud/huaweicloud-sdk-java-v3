@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** kafka连接信息。购买kafka时，SASL_SSL是否配置，如果有，则需要填写账号密码 */
+/**
+ * kafka连接信息。购买kafka时，SASL_SSL是否配置，如果有，则需要填写账号密码
+ */
 public class RegisterDmsKafkaInstanceRequestBodyConnectInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RegisterDmsKafkaInstanceRequestBodyConnectInfo {
         return this;
     }
 
-    /** 账号
-     * 
-     * @return userName */
+    /**
+     * 账号
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -39,9 +42,10 @@ public class RegisterDmsKafkaInstanceRequestBodyConnectInfo {
         return this;
     }
 
-    /** 密码
-     * 
-     * @return pwd */
+    /**
+     * 密码
+     * @return pwd
+     */
     public String getPwd() {
         return pwd;
     }
@@ -79,7 +83,10 @@ public class RegisterDmsKafkaInstanceRequestBodyConnectInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

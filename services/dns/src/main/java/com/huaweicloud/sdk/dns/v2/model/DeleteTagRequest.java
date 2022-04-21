@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteTagRequest {
         return this;
     }
 
-    /** 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
-     * 
-     * @return resourceType */
+    /**
+     * 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。  
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -44,9 +47,10 @@ public class DeleteTagRequest {
         return this;
     }
 
-    /** 资源id。
-     * 
-     * @return resourceId */
+    /**
+     * 资源id。  
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -60,9 +64,10 @@ public class DeleteTagRequest {
         return this;
     }
 
-    /** 标签key。 标签key不能为空或者空字符串。
-     * 
-     * @return key */
+    /**
+     * 标签key。  标签key不能为空或者空字符串。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -101,7 +106,10 @@ public class DeleteTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

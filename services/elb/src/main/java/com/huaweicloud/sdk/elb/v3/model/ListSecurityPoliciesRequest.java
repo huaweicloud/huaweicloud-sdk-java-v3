@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecurityPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -72,9 +75,12 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -88,9 +94,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明：必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -120,9 +127,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 自定义安全策略的ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
-     * 
-     * @return id */
+    /**
+     * 自定义安全策略的ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -152,9 +160,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 自定义安全策略的名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
-     * 
-     * @return name */
+    /**
+     * 自定义安全策略的名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -184,9 +193,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 自定义安全策略的描述信息。 支持多值查询，查询条件格式：*description=xxx&description=xxx*。
-     * 
-     * @return description */
+    /**
+     * 自定义安全策略的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -216,9 +226,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 空格分隔的自定义安全策略的TLS协议。 支持多值查询，查询条件格式：*protocols=xxx&protocols=xxx*。
-     * 
-     * @return protocols */
+    /**
+     * 空格分隔的自定义安全策略的TLS协议。  支持多值查询，查询条件格式：*protocols=xxx&protocols=xxx*。
+     * @return protocols
+     */
     public List<String> getProtocols() {
         return protocols;
     }
@@ -248,9 +259,10 @@ public class ListSecurityPoliciesRequest {
         return this;
     }
 
-    /** 冒号分隔的自定义安全策略的加密套件。 支持多值查询，查询条件格式：*ciphers=xxx&ciphers=xxx*。
-     * 
-     * @return ciphers */
+    /**
+     * 冒号分隔的自定义安全策略的加密套件。  支持多值查询，查询条件格式：*ciphers=xxx&ciphers=xxx*。
+     * @return ciphers
+     */
     public List<String> getCiphers() {
         return ciphers;
     }
@@ -299,7 +311,10 @@ public class ListSecurityPoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

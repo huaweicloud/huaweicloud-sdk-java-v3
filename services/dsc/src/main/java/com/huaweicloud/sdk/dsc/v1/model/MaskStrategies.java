@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 脱敏策略列表，每个策略对应一个字段，脱敏策略数最多100个。详情见“动态脱敏策略配置”。 */
+/**
+ * 脱敏策略列表，每个策略对应一个字段，脱敏策略数最多100个。详情见“动态脱敏策略配置”。
+ */
 public class MaskStrategies {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,37 +21,59 @@ public class MaskStrategies {
 
     private String name;
 
-    /** 脱敏算法名称，详情见附录\"动态脱敏策略配置\"。 */
+    /**
+     * 脱敏算法名称，详情见附录\"动态脱敏策略配置\"。
+     */
     public static final class AlgorithmEnum {
 
-        /** Enum SHA256 for value: "SHA256" */
+        /**
+         * Enum SHA256 for value: "SHA256"
+         */
         public static final AlgorithmEnum SHA256 = new AlgorithmEnum("SHA256");
 
-        /** Enum SHA512 for value: "SHA512" */
+        /**
+         * Enum SHA512 for value: "SHA512"
+         */
         public static final AlgorithmEnum SHA512 = new AlgorithmEnum("SHA512");
 
-        /** Enum AES for value: "AES" */
+        /**
+         * Enum AES for value: "AES"
+         */
         public static final AlgorithmEnum AES = new AlgorithmEnum("AES");
 
-        /** Enum PRESNM for value: "PRESNM" */
+        /**
+         * Enum PRESNM for value: "PRESNM"
+         */
         public static final AlgorithmEnum PRESNM = new AlgorithmEnum("PRESNM");
 
-        /** Enum MASKNM for value: "MASKNM" */
+        /**
+         * Enum MASKNM for value: "MASKNM"
+         */
         public static final AlgorithmEnum MASKNM = new AlgorithmEnum("MASKNM");
 
-        /** Enum PRESXY for value: "PRESXY" */
+        /**
+         * Enum PRESXY for value: "PRESXY"
+         */
         public static final AlgorithmEnum PRESXY = new AlgorithmEnum("PRESXY");
 
-        /** Enum MASKXY for value: "MASKXY" */
+        /**
+         * Enum MASKXY for value: "MASKXY"
+         */
         public static final AlgorithmEnum MASKXY = new AlgorithmEnum("MASKXY");
 
-        /** Enum SYMBOL for value: "SYMBOL" */
+        /**
+         * Enum SYMBOL for value: "SYMBOL"
+         */
         public static final AlgorithmEnum SYMBOL = new AlgorithmEnum("SYMBOL");
 
-        /** Enum KEYWORD for value: "KEYWORD" */
+        /**
+         * Enum KEYWORD for value: "KEYWORD"
+         */
         public static final AlgorithmEnum KEYWORD = new AlgorithmEnum("KEYWORD");
 
-        /** Enum NUMERIC for value: "NUMERIC" */
+        /**
+         * Enum NUMERIC for value: "NUMERIC"
+         */
         public static final AlgorithmEnum NUMERIC = new AlgorithmEnum("NUMERIC");
 
         private static final Map<String, AlgorithmEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +161,10 @@ public class MaskStrategies {
         return this;
     }
 
-    /** 需要脱敏的字段名称，最大支持长度256。
-     * 
-     * @return name */
+    /**
+     * 需要脱敏的字段名称，最大支持长度256。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -153,9 +178,10 @@ public class MaskStrategies {
         return this;
     }
 
-    /** 脱敏算法名称，详情见附录\"动态脱敏策略配置\"。
-     * 
-     * @return algorithm */
+    /**
+     * 脱敏算法名称，详情见附录\"动态脱敏策略配置\"。
+     * @return algorithm
+     */
     public AlgorithmEnum getAlgorithm() {
         return algorithm;
     }
@@ -185,9 +211,10 @@ public class MaskStrategies {
         return this;
     }
 
-    /** 脱敏算法参数，详情见附录\"动态脱敏策略配置\"。
-     * 
-     * @return parameters */
+    /**
+     * 脱敏算法参数，详情见附录\"动态脱敏策略配置\"。
+     * @return parameters
+     */
     public Map<String, Object> getParameters() {
         return parameters;
     }
@@ -226,7 +253,10 @@ public class MaskStrategies {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

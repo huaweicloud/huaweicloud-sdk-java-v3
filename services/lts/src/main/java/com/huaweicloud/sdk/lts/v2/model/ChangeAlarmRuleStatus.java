@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 改变告警规则状态 */
+/**
+ * 改变告警规则状态
+ */
 public class ChangeAlarmRuleStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ChangeAlarmRuleStatus {
         return this;
     }
 
-    /** 告警规则ID
-     * 
-     * @return alarmRuleId */
+    /**
+     * 告警规则ID
+     * @return alarmRuleId
+     */
     public String getAlarmRuleId() {
         return alarmRuleId;
     }
@@ -44,9 +47,10 @@ public class ChangeAlarmRuleStatus {
         return this;
     }
 
-    /** 状态（RUNNING/STOPPING）
-     * 
-     * @return status */
+    /**
+     * 状态（RUNNING/STOPPING）
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -60,9 +64,10 @@ public class ChangeAlarmRuleStatus {
         return this;
     }
 
-    /** 类型
-     * 
-     * @return type */
+    /**
+     * 类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -101,7 +106,10 @@ public class ChangeAlarmRuleStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

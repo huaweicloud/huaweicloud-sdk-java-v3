@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NeutronListFloatingIpsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,12 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,9 +84,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
-     * 
-     * @return marker */
+    /**
+     * 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -95,9 +101,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** False/True，是否设置分页的顺序。
-     * 
-     * @return pageReverse */
+    /**
+     * False/True，是否设置分页的顺序。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -111,9 +118,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 浮动IP的id。
-     * 
-     * @return id */
+    /**
+     * 浮动IP的id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -127,9 +135,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 浮动IP地址。
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 浮动IP地址。
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -143,9 +152,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 所属路由器id。
-     * 
-     * @return routerId */
+    /**
+     * 所属路由器id。
+     * @return routerId
+     */
     public String getRouterId() {
         return routerId;
     }
@@ -159,9 +169,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 端口id。
-     * 
-     * @return portId */
+    /**
+     * 端口id。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -175,9 +186,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 关联端口的私有IP地址。
-     * 
-     * @return fixedIpAddress */
+    /**
+     * 关联端口的私有IP地址。
+     * @return fixedIpAddress
+     */
     public String getFixedIpAddress() {
         return fixedIpAddress;
     }
@@ -191,9 +203,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -207,10 +220,10 @@ public class NeutronListFloatingIpsRequest {
         return this;
     }
 
-    /** 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET
-     * /v2.0/networks?name={floating_network}或neutron net-external-list方式查询
-     * 
-     * @return floatingNetworkId */
+    /**
+     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询
+     * @return floatingNetworkId
+     */
     public String getFloatingNetworkId() {
         return floatingNetworkId;
     }
@@ -272,7 +285,10 @@ public class NeutronListFloatingIpsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一 */
+/**
+ * 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
+ */
 public class DictionaryName {
 
     @Override

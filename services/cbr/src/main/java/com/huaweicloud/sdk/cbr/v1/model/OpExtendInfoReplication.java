@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpExtendInfoReplication */
+/**
+ * OpExtendInfoReplication
+ */
 public class OpExtendInfoReplication {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 目标副本ID
-     * 
-     * @return destinationBackupId */
+    /**
+     * 目标副本ID
+     * @return destinationBackupId
+     */
     public String getDestinationBackupId() {
         return destinationBackupId;
     }
@@ -79,9 +82,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 目标还原点ID
-     * 
-     * @return destinationCheckpointId */
+    /**
+     * 目标还原点ID
+     * @return destinationCheckpointId
+     */
     public String getDestinationCheckpointId() {
         return destinationCheckpointId;
     }
@@ -95,9 +99,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 目标project_id
-     * 
-     * @return destinationProjectId */
+    /**
+     * 目标project_id
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -111,9 +116,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 目标区域
-     * 
-     * @return destinationRegion */
+    /**
+     * 目标区域
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -127,9 +133,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 源副本ID
-     * 
-     * @return sourceBackupId */
+    /**
+     * 源副本ID
+     * @return sourceBackupId
+     */
     public String getSourceBackupId() {
         return sourceBackupId;
     }
@@ -143,9 +150,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 源还原点ID
-     * 
-     * @return sourceCheckpointId */
+    /**
+     * 源还原点ID
+     * @return sourceCheckpointId
+     */
     public String getSourceCheckpointId() {
         return sourceCheckpointId;
     }
@@ -159,9 +167,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 源project_id
-     * 
-     * @return sourceProjectId */
+    /**
+     * 源project_id
+     * @return sourceProjectId
+     */
     public String getSourceProjectId() {
         return sourceProjectId;
     }
@@ -175,9 +184,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 源区域
-     * 
-     * @return sourceRegion */
+    /**
+     * 源区域
+     * @return sourceRegion
+     */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -191,9 +201,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 源备份名称
-     * 
-     * @return sourceBackupName */
+    /**
+     * 源备份名称
+     * @return sourceBackupName
+     */
     public String getSourceBackupName() {
         return sourceBackupName;
     }
@@ -207,9 +218,10 @@ public class OpExtendInfoReplication {
         return this;
     }
 
-    /** 目标备份名称
-     * 
-     * @return destinationBackupName */
+    /**
+     * 目标备份名称
+     * @return destinationBackupName
+     */
     public String getDestinationBackupName() {
         return destinationBackupName;
     }
@@ -271,7 +283,10 @@ public class OpExtendInfoReplication {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

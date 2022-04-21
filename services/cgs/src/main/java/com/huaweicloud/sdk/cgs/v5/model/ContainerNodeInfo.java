@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点（服务器）状态列表 */
+/**
+ * 节点（服务器）状态列表
+ */
 public class ContainerNodeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ContainerNodeInfo {
         return this;
     }
 
-    /** 节点id
-     * 
-     * @return hostId */
+    /**
+     * 节点id
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -54,9 +57,10 @@ public class ContainerNodeInfo {
         return this;
     }
 
-    /** 节点（服务器）名称
-     * 
-     * @return hostName */
+    /**
+     * 节点（服务器）名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -70,9 +74,10 @@ public class ContainerNodeInfo {
         return this;
     }
 
-    /** 服务器状态，包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。
-     * 
-     * @return hostStatus */
+    /**
+     * 服务器状态，包含如下4种。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * @return hostStatus
+     */
     public String getHostStatus() {
         return hostStatus;
     }
@@ -86,9 +91,10 @@ public class ContainerNodeInfo {
         return this;
     }
 
-    /** Agent状态，包含如下3种。 - not_register ：未注册。 - online ：在线。 - offline ：离线。
-     * 
-     * @return agentStatus */
+    /**
+     * Agent状态，包含如下3种。   - not_register ：未注册。   - online ：在线。   - offline ：离线。
+     * @return agentStatus
+     */
     public String getAgentStatus() {
         return agentStatus;
     }
@@ -102,9 +108,10 @@ public class ContainerNodeInfo {
         return this;
     }
 
-    /** 防护状态，包含如下2种。 - closed ：关闭。 - opened ：开启。
-     * 
-     * @return protectStatus */
+    /**
+     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+     * @return protectStatus
+     */
     public String getProtectStatus() {
         return protectStatus;
     }
@@ -147,7 +154,10 @@ public class ContainerNodeInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

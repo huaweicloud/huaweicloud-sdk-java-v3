@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRefundOrderDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ShowRefundOrderDetailsRequest {
         return this;
     }
 
-    /** 退订订单或者降配订单的ID。
-     * 
-     * @return orderId */
+    /**
+     * 退订订单或者降配订单的ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -55,7 +58,10 @@ public class ShowRefundOrderDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

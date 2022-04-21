@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 丢包率阈值设置请求体 */
+/**
+ * 丢包率阈值设置请求体
+ */
 public class SetPacketThresholdData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class SetPacketThresholdData {
         return this;
     }
 
-    /** 接收方向阈值设定值，单位为百分比(%)。 取值范围：0 - 100。 minimum: 0 maximum: 100
-     * 
-     * @return receiving */
+    /**
+     * 接收方向阈值设定值，单位为百分比(%)。 取值范围：0 - 100。
+     * minimum: 0
+     * maximum: 100
+     * @return receiving
+     */
     public Integer getReceiving() {
         return receiving;
     }
@@ -39,9 +44,12 @@ public class SetPacketThresholdData {
         return this;
     }
 
-    /** 发送方向阈值设定值，单位为百分比(%)。 取值范围：0 - 100。 minimum: 0 maximum: 100
-     * 
-     * @return sending */
+    /**
+     * 发送方向阈值设定值，单位为百分比(%)。 取值范围：0 - 100。
+     * minimum: 0
+     * maximum: 100
+     * @return sending
+     */
     public Integer getSending() {
         return sending;
     }
@@ -78,7 +86,10 @@ public class SetPacketThresholdData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowOnlineMeetingDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -74,9 +77,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 指定返回的记录索引。该值必须大于等于0； 默认为0。
-     * 
-     * @return offset */
+    /**
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -90,9 +94,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 指定返回的记录数。
-     * 
-     * @return limit */
+    /**
+     * 指定返回的记录数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -106,9 +111,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 用来作关键词查询的字符串。
-     * 
-     * @return searchKey */
+    /**
+     * 用来作关键词查询的字符串。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -122,9 +128,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 用户的UUID（已在USG注册过的）。
-     * 
-     * @return userUUID */
+    /**
+     * 用户的UUID（已在USG注册过的）。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -138,9 +145,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
-     * 
-     * @return xType */
+    /**
+     * 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
+     * @return xType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Type")
     public String getXType() {
@@ -156,9 +164,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 当X-Type为2时，该字段有效。默认值为0。 - 0: 查询与会人。 - 1: 查询终端。
-     * 
-     * @return xQueryType */
+    /**
+     * 当X-Type为2时，该字段有效。默认值为0。 - 0: 查询与会人。 - 1: 查询终端。
+     * @return xQueryType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Query-Type")
     public String getXQueryType() {
@@ -174,9 +183,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求。
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求。
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -192,9 +202,10 @@ public class ShowOnlineMeetingDetailRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -248,7 +259,10 @@ public class ShowOnlineMeetingDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

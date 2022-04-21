@@ -20,9 +20,10 @@ public class NovaRemoveSecurityGroupOption {
         return this;
     }
 
-    /** 弹性云服务器移除的安全组名称，会对云服务器中配置的网卡生效。
-     * 
-     * @return name */
+    /**
+     * 弹性云服务器移除的安全组名称，会对云服务器中配置的网卡生效。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,7 +58,10 @@ public class NovaRemoveSecurityGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

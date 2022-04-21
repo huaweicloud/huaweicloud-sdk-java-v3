@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自动备份策略。 */
+/**
+ * 自动备份策略。
+ */
 public class BackupStrategyForItemResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BackupStrategyForItemResponse {
         return this;
     }
 
-    /** 备份时间段。自动备份将在该时间段内触发。当前时间指UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 备份时间段。自动备份将在该时间段内触发。当前时间指UTC时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -39,9 +42,10 @@ public class BackupStrategyForItemResponse {
         return this;
     }
 
-    /** 已生成备份文件可以保存的天数。取值范围：0~732。
-     * 
-     * @return keepDays */
+    /**
+     * 已生成备份文件可以保存的天数。取值范围：0~732。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -78,7 +82,10 @@ public class BackupStrategyForItemResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

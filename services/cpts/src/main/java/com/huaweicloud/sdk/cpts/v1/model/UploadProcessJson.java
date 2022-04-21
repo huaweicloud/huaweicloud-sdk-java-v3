@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** json */
+/**
+ * json
+ */
 public class UploadProcessJson {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class UploadProcessJson {
         return this;
     }
 
-    /** details
-     * 
-     * @return details */
+    /**
+     * details
+     * @return details
+     */
     public List<UploadProcessJsonDetail> getDetails() {
         return details;
     }
@@ -58,9 +61,12 @@ public class UploadProcessJson {
         return this;
     }
 
-    /** process_status minimum: 0 maximum: 2147483647
-     * 
-     * @return processStatus */
+    /**
+     * process_status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return processStatus
+     */
     public Integer getProcessStatus() {
         return processStatus;
     }
@@ -97,7 +103,10 @@ public class UploadProcessJson {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

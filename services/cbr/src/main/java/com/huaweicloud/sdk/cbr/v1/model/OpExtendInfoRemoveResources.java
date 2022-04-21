@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OpExtendInfoRemoveResources */
+/**
+ * OpExtendInfoRemoveResources
+ */
 public class OpExtendInfoRemoveResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class OpExtendInfoRemoveResources {
         return this;
     }
 
-    /** 删除失败的资源数量
-     * 
-     * @return failCount */
+    /**
+     * 删除失败的资源数量
+     * @return failCount
+     */
     public Integer getFailCount() {
         return failCount;
     }
@@ -47,9 +50,10 @@ public class OpExtendInfoRemoveResources {
         return this;
     }
 
-    /** 删除的备份数量
-     * 
-     * @return totalCount */
+    /**
+     * 删除的备份数量
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -79,7 +83,10 @@ public class OpExtendInfoRemoveResources {
         return this;
     }
 
-    /** @return resources */
+    /**
+     * 
+     * @return resources
+     */
     public List<Resource> getResources() {
         return resources;
     }
@@ -118,7 +125,10 @@ public class OpExtendInfoRemoveResources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

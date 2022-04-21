@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConfigurationParameter */
+/**
+ * ConfigurationParameter
+ */
 public class ConfigurationParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,22 +40,34 @@ public class ConfigurationParameter {
 
     private String valueRange;
 
-    /** 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。 */
+    /**
+     * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+     */
     public static final class TypeEnum {
 
-        /** Enum STRING for value: "string" */
+        /**
+         * Enum STRING for value: "string"
+         */
         public static final TypeEnum STRING = new TypeEnum("string");
 
-        /** Enum INTEGER for value: "integer" */
+        /**
+         * Enum INTEGER for value: "integer"
+         */
         public static final TypeEnum INTEGER = new TypeEnum("integer");
 
-        /** Enum BOOLEAN for value: "boolean" */
+        /**
+         * Enum BOOLEAN for value: "boolean"
+         */
         public static final TypeEnum BOOLEAN = new TypeEnum("boolean");
 
-        /** Enum LIST for value: "list" */
+        /**
+         * Enum LIST for value: "list"
+         */
         public static final TypeEnum LIST = new TypeEnum("list");
 
-        /** Enum FLOAT for value: "float" */
+        /**
+         * Enum FLOAT for value: "float"
+         */
         public static final TypeEnum FLOAT = new TypeEnum("float");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +150,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 参数名称。
-     * 
-     * @return name */
+    /**
+     * 参数名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -152,9 +167,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 参数值。
-     * 
-     * @return value */
+    /**
+     * 参数值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -168,9 +184,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 修改该参数是否需要重启实例。
-     * 
-     * @return restartRequired */
+    /**
+     * 修改该参数是否需要重启实例。
+     * @return restartRequired
+     */
     public Boolean getRestartRequired() {
         return restartRequired;
     }
@@ -184,9 +201,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 该参数是否只读。
-     * 
-     * @return readonly */
+    /**
+     * 该参数是否只读。
+     * @return readonly
+     */
     public Boolean getReadonly() {
         return readonly;
     }
@@ -200,9 +218,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 参数取值范围。
-     * 
-     * @return valueRange */
+    /**
+     * 参数取值范围。
+     * @return valueRange
+     */
     public String getValueRange() {
         return valueRange;
     }
@@ -216,9 +235,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
-     * 
-     * @return type */
+    /**
+     * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -232,9 +252,10 @@ public class ConfigurationParameter {
         return this;
     }
 
-    /** 参数描述。
-     * 
-     * @return description */
+    /**
+     * 参数描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -281,7 +302,10 @@ public class ConfigurationParameter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

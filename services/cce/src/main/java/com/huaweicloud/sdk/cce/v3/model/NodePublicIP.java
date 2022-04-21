@@ -49,9 +49,10 @@ public class NodePublicIP {
         return this;
     }
 
-    /** 已有的弹性IP的ID列表。数量不得大于待创建节点数 > 若已配置ids参数，则无需配置count和eip参数
-     * 
-     * @return ids */
+    /**
+     * 已有的弹性IP的ID列表。数量不得大于待创建节点数 > 若已配置ids参数，则无需配置count和eip参数
+     * @return ids
+     */
     public List<String> getIds() {
         return ids;
     }
@@ -65,9 +66,10 @@ public class NodePublicIP {
         return this;
     }
 
-    /** 要动态创建的弹性IP个数。 > count参数与eip参数必须同时配置。
-     * 
-     * @return count */
+    /**
+     * 要动态创建的弹性IP个数。 > count参数与eip参数必须同时配置。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -90,9 +92,10 @@ public class NodePublicIP {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public NodeEIPSpec getEip() {
         return eip;
     }
@@ -130,7 +133,10 @@ public class NodePublicIP {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

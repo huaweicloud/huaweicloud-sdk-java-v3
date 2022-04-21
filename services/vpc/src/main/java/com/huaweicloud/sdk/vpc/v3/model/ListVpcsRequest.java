@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVpcsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 功能说明：每页返回的个数 取值范围：0-2000
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回的个数 取值范围：0-2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -62,9 +65,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -94,9 +98,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** VPC资源ID。可以使用该字段过滤VPC
-     * 
-     * @return id */
+    /**
+     * VPC资源ID。可以使用该字段过滤VPC
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -126,9 +131,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** VPC的name信息，可以使用该字段过滤VPC
-     * 
-     * @return name */
+    /**
+     * VPC的name信息，可以使用该字段过滤VPC
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -158,9 +164,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** VPC的描述信息。可以使用该字段过滤VPC
-     * 
-     * @return description */
+    /**
+     * VPC的描述信息。可以使用该字段过滤VPC
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -190,9 +197,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** VPC的CIDR。可以使用该字段过滤VPC
-     * 
-     * @return cidr */
+    /**
+     * VPC的CIDR。可以使用该字段过滤VPC
+     * @return cidr
+     */
     public List<String> getCidr() {
         return cidr;
     }
@@ -235,7 +243,10 @@ public class ListVpcsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Dependent */
+/**
+ * Dependent
+ */
 public class Dependent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Dependent {
         return this;
     }
 
-    /** 部署方式。
-     * 
-     * @return name */
+    /**
+     * 部署方式。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class Dependent {
         return this;
     }
 
-    /** 依赖云资源信息
-     * 
-     * @return dependentServices */
+    /**
+     * 依赖云资源信息
+     * @return dependentServices
+     */
     public List<ResouceInfo> getDependentServices() {
         return dependentServices;
     }
@@ -97,7 +101,10 @@ public class Dependent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

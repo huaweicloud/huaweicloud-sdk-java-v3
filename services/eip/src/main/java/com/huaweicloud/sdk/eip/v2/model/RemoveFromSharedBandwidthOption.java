@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 带宽对象 */
+/**
+ * 带宽对象
+ */
 public class RemoveFromSharedBandwidthOption {
 
-    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic） */
+    /**
+     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
+     */
     public static final class ChargeModeEnum {
 
-        /** Enum BANDWIDTH for value: "bandwidth" */
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
         public static final ChargeModeEnum BANDWIDTH = new ChargeModeEnum("bandwidth");
 
-        /** Enum TRAFFIC for value: "traffic" */
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +115,10 @@ public class RemoveFromSharedBandwidthOption {
         return this;
     }
 
-    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
-     * 
-     * @return chargeMode */
+    /**
+     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
+     * @return chargeMode
+     */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -139,9 +148,10 @@ public class RemoveFromSharedBandwidthOption {
         return this;
     }
 
-    /** 功能说明：要从共享带宽中移除的弹性公网IP或者IPv6端口信息 约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
-     * 
-     * @return publicipInfo */
+    /**
+     * 功能说明：要从共享带宽中移除的弹性公网IP或者IPv6端口信息  约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
+     * @return publicipInfo
+     */
     public List<RemovePublicipInfo> getPublicipInfo() {
         return publicipInfo;
     }
@@ -155,10 +165,10 @@ public class RemoveFromSharedBandwidthOption {
         return this;
     }
 
-    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的带宽大小。（M）取值范围：默认为1~2000Mbit/s.
-     * 可能因为局点配置不同而不同。也跟带宽的计费模式（bandwidth/traffic）相关。
-     * 
-     * @return size */
+    /**
+     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的带宽大小。（M）取值范围：默认为1~2000Mbit/s. 可能因为局点配置不同而不同。也跟带宽的计费模式（bandwidth/traffic）相关。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -197,7 +207,10 @@ public class RemoveFromSharedBandwidthOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

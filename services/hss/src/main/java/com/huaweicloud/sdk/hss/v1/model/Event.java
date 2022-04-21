@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Event */
+/**
+ * Event
+ */
 public class Event {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class Event {
         return this;
     }
 
-    /** 云主机id
-     * 
-     * @return hostId */
+    /**
+     * 云主机id
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -69,9 +72,10 @@ public class Event {
         return this;
     }
 
-    /** 云主机名称
-     * 
-     * @return hostName */
+    /**
+     * 云主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -85,12 +89,10 @@ public class Event {
         return this;
     }
 
-    /** 事件类型，包含如下: - Abnormal Login : 账户异常登录 - Invalid System Account : 风险账号 - Brute Force Cracking : 账号暴力破解 - System
-     * Start Script Change : 自启动检测 - Process Abnormal Activity : 进程异常行为 - Process Privilege Escalation : 进程提权操作 - File
-     * Privilege Escalation : 文件提权操作 - General Malware : 恶意程序（云查杀） - Abnormal Shell : 异常shell - Reverse Shell : 反弹Shell
-     * - High-Risk Command Execution : 高危命令执行 - Key File Change : 关键文件变更 - Webshell : 网站后门
-     * 
-     * @return eventType */
+    /**
+     * 事件类型，包含如下:   - Abnormal Login : 账户异常登录   - Invalid System Account : 风险账号   - Brute Force Cracking : 账号暴力破解   - System Start Script Change : 自启动检测   - Process Abnormal Activity : 进程异常行为   - Process Privilege Escalation : 进程提权操作   - File Privilege Escalation : 文件提权操作   - General Malware : 恶意程序（云查杀）   - Abnormal Shell : 异常shell   - Reverse Shell : 反弹Shell   - High-Risk Command Execution : 高危命令执行   - Key File Change : 关键文件变更   - Webshell : 网站后门
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -104,9 +106,12 @@ public class Event {
         return this;
     }
 
-    /** 发生时间，毫秒 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return occurTime */
+    /**
+     * 发生时间，毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return occurTime
+     */
     public Long getOccurTime() {
         return occurTime;
     }
@@ -120,9 +125,12 @@ public class Event {
         return this;
     }
 
-    /** 处理时间，毫秒 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return handleTime */
+    /**
+     * 处理时间，毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return handleTime
+     */
     public Long getHandleTime() {
         return handleTime;
     }
@@ -136,9 +144,10 @@ public class Event {
         return this;
     }
 
-    /** 处理状态，包含如下类型： - \"unhandled\"：未处理 - \"handled\"：已处理
-     * 
-     * @return handleStatus */
+    /**
+     * 处理状态，包含如下类型：   - \"unhandled\"：未处理   - \"handled\"：已处理
+     * @return handleStatus
+     */
     public String getHandleStatus() {
         return handleStatus;
     }
@@ -152,10 +161,10 @@ public class Event {
         return this;
     }
 
-    /** 处理方式，包含如下类型： - \"mark_as_handled\" ： 手动处理 - \"ignore\" ： 忽略 - \"add_to_alarm_whitelist\" ：加入告警白名单 -
-     * \"add_to_login_whitelist\" ：加入登录白名单 - \"isolate_and_kill\" ：隔离查杀
-     * 
-     * @return handleMethod */
+    /**
+     * 处理方式，包含如下类型：   - \"mark_as_handled\" ： 手动处理   - \"ignore\" ： 忽略   - \"add_to_alarm_whitelist\" ：加入告警白名单   - \"add_to_login_whitelist\" ：加入登录白名单   - \"isolate_and_kill\" ：隔离查杀
+     * @return handleMethod
+     */
     public String getHandleMethod() {
         return handleMethod;
     }
@@ -169,9 +178,10 @@ public class Event {
         return this;
     }
 
-    /** 事件详细信息，json格式
-     * 
-     * @return appendInfo */
+    /**
+     * 事件详细信息，json格式
+     * @return appendInfo
+     */
     public Object getAppendInfo() {
         return appendInfo;
     }
@@ -218,7 +228,10 @@ public class Event {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -76,22 +76,34 @@ public class ReplicationRecordGet {
 
     private String sourceRegion;
 
-    /** 复制的状态 */
+    /**
+     * 复制的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum REPLICATING for value: "replicating" */
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
         public static final StatusEnum REPLICATING = new StatusEnum("replicating");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAIL for value: "fail" */
+        /**
+         * Enum FAIL for value: "fail"
+         */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final StatusEnum SKIP = new StatusEnum("skip");
 
-        /** Enum WAITING_REPLICATE for value: "waiting_replicate" */
+        /**
+         * Enum WAITING_REPLICATE for value: "waiting_replicate"
+         */
         public static final StatusEnum WAITING_REPLICATE = new StatusEnum("waiting_replicate");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -174,9 +186,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的开始时间
-     * 
-     * @return createdAt */
+    /**
+     * 复制的开始时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -190,9 +203,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的目的备份ID
-     * 
-     * @return destinationBackupId */
+    /**
+     * 复制的目的备份ID
+     * @return destinationBackupId
+     */
     public String getDestinationBackupId() {
         return destinationBackupId;
     }
@@ -206,9 +220,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的目的备份记录ID
-     * 
-     * @return destinationCheckpointId */
+    /**
+     * 复制的目的备份记录ID
+     * @return destinationCheckpointId
+     */
     public String getDestinationCheckpointId() {
         return destinationCheckpointId;
     }
@@ -222,9 +237,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的目标项目ID
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -238,9 +254,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的目标区域
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -254,9 +271,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 目标存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -279,9 +297,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public ReplicationRecordsExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -295,9 +314,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制记录ID
-     * 
-     * @return id */
+    /**
+     * 复制记录ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -311,9 +331,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的源备份ID
-     * 
-     * @return sourceBackupId */
+    /**
+     * 复制的源备份ID
+     * @return sourceBackupId
+     */
     public String getSourceBackupId() {
         return sourceBackupId;
     }
@@ -327,9 +348,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的源备份记录ID
-     * 
-     * @return sourceCheckpointId */
+    /**
+     * 复制的源备份记录ID
+     * @return sourceCheckpointId
+     */
     public String getSourceCheckpointId() {
         return sourceCheckpointId;
     }
@@ -343,9 +365,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的源项目ID
-     * 
-     * @return sourceProjectId */
+    /**
+     * 复制的源项目ID
+     * @return sourceProjectId
+     */
     public String getSourceProjectId() {
         return sourceProjectId;
     }
@@ -359,9 +382,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的源区域
-     * 
-     * @return sourceRegion */
+    /**
+     * 复制的源区域
+     * @return sourceRegion
+     */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -375,9 +399,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 复制的状态
-     * 
-     * @return status */
+    /**
+     * 复制的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -391,9 +416,10 @@ public class ReplicationRecordGet {
         return this;
     }
 
-    /** 备份所在的存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 备份所在的存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -467,7 +493,10 @@ public class ReplicationRecordGet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

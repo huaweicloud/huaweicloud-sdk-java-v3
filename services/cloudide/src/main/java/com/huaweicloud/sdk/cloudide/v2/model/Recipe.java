@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Recipe */
+/**
+ * Recipe
+ */
 public class Recipe {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Recipe {
         return this;
     }
 
-    /** 镜像内容
-     * 
-     * @return content */
+    /**
+     * 镜像内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -39,9 +42,10 @@ public class Recipe {
         return this;
     }
 
-    /** 镜像类型
-     * 
-     * @return type */
+    /**
+     * 镜像类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -77,7 +81,10 @@ public class Recipe {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

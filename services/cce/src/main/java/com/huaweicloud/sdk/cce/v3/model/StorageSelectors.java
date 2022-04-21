@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StorageSelectors */
+/**
+ * StorageSelectors
+ */
 public class StorageSelectors {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class StorageSelectors {
         return this;
     }
 
-    /** selector的名字，作为storageGroup中selectorNames的索引，因此各个selector间的名字不能重复。
-     * 
-     * @return name */
+    /**
+     * selector的名字，作为storageGroup中selectorNames的索引，因此各个selector间的名字不能重复。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -45,9 +48,10 @@ public class StorageSelectors {
         return this;
     }
 
-    /** 存储类型，当前仅支持evs（云硬盘）或local（本地盘）；local存储类型不支持磁盘选择，所有本地盘将被组成一个VG，因此也仅允许只有一个local类型的storageSelector。
-     * 
-     * @return storageType */
+    /**
+     * 存储类型，当前仅支持evs（云硬盘）或local（本地盘）；local存储类型不支持磁盘选择，所有本地盘将被组成一个VG，因此也仅允许只有一个local类型的storageSelector。
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -70,9 +74,10 @@ public class StorageSelectors {
         return this;
     }
 
-    /** Get matchLabels
-     * 
-     * @return matchLabels */
+    /**
+     * Get matchLabels
+     * @return matchLabels
+     */
     public StorageSelectorsMatchLabels getMatchLabels() {
         return matchLabels;
     }
@@ -111,7 +116,10 @@ public class StorageSelectors {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

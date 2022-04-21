@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RtcUser */
+/**
+ * RtcUser
+ */
 public class RtcUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,16 +40,24 @@ public class RtcUser {
 
     private String session;
 
-    /** 用户状态 - FAIL： 加入失败 - ONLINE：在线 - OFFLINE：离开 */
+    /**
+     * 用户状态   - FAIL： 加入失败   - ONLINE：在线   - OFFLINE：离开 
+     */
     public static final class StateEnum {
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StateEnum FAIL = new StateEnum("FAIL");
 
-        /** Enum ONLINE for value: "ONLINE" */
+        /**
+         * Enum ONLINE for value: "ONLINE"
+         */
         public static final StateEnum ONLINE = new StateEnum("ONLINE");
 
-        /** Enum OFFLINE for value: "OFFLINE" */
+        /**
+         * Enum OFFLINE for value: "OFFLINE"
+         */
         public static final StateEnum OFFLINE = new StateEnum("OFFLINE");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -168,9 +178,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domain */
+    /**
+     * 域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -184,9 +195,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -200,9 +212,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -216,9 +229,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return uid */
+    /**
+     * 用户id
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -232,9 +246,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 会话id
-     * 
-     * @return session */
+    /**
+     * 会话id
+     * @return session
+     */
     public String getSession() {
         return session;
     }
@@ -248,9 +263,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户状态 - FAIL： 加入失败 - ONLINE：在线 - OFFLINE：离开
-     * 
-     * @return state */
+    /**
+     * 用户状态   - FAIL： 加入失败   - ONLINE：在线   - OFFLINE：离开 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -264,9 +280,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickName */
+    /**
+     * 用户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -280,9 +297,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户接入IP
-     * 
-     * @return ip */
+    /**
+     * 用户接入IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -296,9 +314,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户接入IP所在省份
-     * 
-     * @return region */
+    /**
+     * 用户接入IP所在省份
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -312,9 +331,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户接入IP所在运营商
-     * 
-     * @return isp */
+    /**
+     * 用户接入IP所在运营商
+     * @return isp
+     */
     public String getIsp() {
         return isp;
     }
@@ -328,9 +348,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户设备型号
-     * 
-     * @return deviceModel */
+    /**
+     * 用户设备型号
+     * @return deviceModel
+     */
     public String getDeviceModel() {
         return deviceModel;
     }
@@ -344,9 +365,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户设备平台
-     * 
-     * @return platform */
+    /**
+     * 用户设备平台
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -360,9 +382,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户sdk版本
-     * 
-     * @return sdk */
+    /**
+     * 用户sdk版本
+     * @return sdk
+     */
     public String getSdk() {
         return sdk;
     }
@@ -376,9 +399,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户加入房间时间。格式为：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return joinTime */
+    /**
+     * 用户加入房间时间。格式为：YYYY-MM-DDThh:mm:ssZ 
+     * @return joinTime
+     */
     public String getJoinTime() {
         return joinTime;
     }
@@ -392,9 +416,10 @@ public class RtcUser {
         return this;
     }
 
-    /** 用户离开房间时间。格式为：YYYY-MM-DDThh:mm:ssZ，若用户未离开，则返回 “-”
-     * 
-     * @return leaveTime */
+    /**
+     * 用户离开房间时间。格式为：YYYY-MM-DDThh:mm:ssZ，若用户未离开，则返回 “-” 
+     * @return leaveTime
+     */
     public String getLeaveTime() {
         return leaveTime;
     }
@@ -464,7 +489,10 @@ public class RtcUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

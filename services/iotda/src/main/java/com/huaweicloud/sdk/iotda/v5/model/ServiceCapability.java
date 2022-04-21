@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ServiceCapability结构体。 */
+/**
+ * ServiceCapability结构体。
+ */
 public class ServiceCapability {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备的服务ID。注：产品内不允许重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
-     * 
-     * @return serviceId */
+    /**
+     * **参数说明**：设备的服务ID。注：产品内不允许重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -67,9 +70,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备的服务类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
-     * 
-     * @return serviceType */
+    /**
+     * **参数说明**：设备的服务类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -99,9 +103,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的属性列表。 **取值范围**：数组长度大小不超过500。
-     * 
-     * @return properties */
+    /**
+     * **参数说明**：设备服务支持的属性列表。 **取值范围**：数组长度大小不超过500。
+     * @return properties
+     */
     public List<ServiceProperty> getProperties() {
         return properties;
     }
@@ -131,9 +136,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的命令列表。 **取值范围**：数组长度大小不超过500。
-     * 
-     * @return commands */
+    /**
+     * **参数说明**：设备服务支持的命令列表。 **取值范围**：数组长度大小不超过500。
+     * @return commands
+     */
     public List<ServiceCommand> getCommands() {
         return commands;
     }
@@ -163,9 +169,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务支持的事件列表。 **取值范围**：数组长度大小不超过500。
-     * 
-     * @return events */
+    /**
+     * **参数说明**：设备服务支持的事件列表。 **取值范围**：数组长度大小不超过500。
+     * @return events
+     */
     public List<ServiceEvent> getEvents() {
         return events;
     }
@@ -179,9 +186,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：设备服务的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：设备服务的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -195,9 +203,10 @@ public class ServiceCapability {
         return this;
     }
 
-    /** **参数说明**：指定设备服务是否必选。目前本字段为非功能性字段，仅起到标识作用。 **取值范围**： - Master：主服务 - Mandatory：必选服务 - Optional：可选服务 默认值为Optional。
-     * 
-     * @return option */
+    /**
+     * **参数说明**：指定设备服务是否必选。目前本字段为非功能性字段，仅起到标识作用。 **取值范围**： - Master：主服务 - Mandatory：必选服务 - Optional：可选服务 默认值为Optional。
+     * @return option
+     */
     public String getOption() {
         return option;
     }
@@ -244,7 +253,10 @@ public class ServiceCapability {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

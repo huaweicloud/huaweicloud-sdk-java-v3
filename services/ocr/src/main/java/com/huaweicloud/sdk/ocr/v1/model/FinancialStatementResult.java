@@ -38,9 +38,10 @@ public class FinancialStatementResult {
         return this;
     }
 
-    /** 识别出来的表格、文本区域个数。
-     * 
-     * @return wordsRegionCount */
+    /**
+     * 识别出来的表格、文本区域个数。 
+     * @return wordsRegionCount
+     */
     public Integer getWordsRegionCount() {
         return wordsRegionCount;
     }
@@ -71,9 +72,10 @@ public class FinancialStatementResult {
         return this;
     }
 
-    /** 返回的表格、文本区域列表。输出顺序从左到右，从上到下。
-     * 
-     * @return wordsRegionList */
+    /**
+     * 返回的表格、文本区域列表。输出顺序从左到右，从上到下。 
+     * @return wordsRegionList
+     */
     public List<FinancialStatementWordsRegionList> getWordsRegionList() {
         return wordsRegionList;
     }
@@ -87,9 +89,10 @@ public class FinancialStatementResult {
         return this;
     }
 
-    /** 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel，可编辑。对返回的excel编码，可用base64.b64decode解码并保存为xlsx文件。
-     * 
-     * @return excel */
+    /**
+     * 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel，可编辑。对返回的excel编码，可用base64.b64decode解码并保存为xlsx文件。 
+     * @return excel
+     */
     public String getExcel() {
         return excel;
     }
@@ -112,9 +115,10 @@ public class FinancialStatementResult {
         return this;
     }
 
-    /** Get imageSize
-     * 
-     * @return imageSize */
+    /**
+     * Get imageSize
+     * @return imageSize
+     */
     public FinancialStatementResultImageSize getImageSize() {
         return imageSize;
     }
@@ -155,7 +159,10 @@ public class FinancialStatementResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

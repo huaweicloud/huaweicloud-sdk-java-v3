@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 下发设备命令消息结构 */
+/**
+ * 下发设备命令消息结构
+ */
 public class ActionDeviceCommand {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,10 +26,10 @@ public class ActionDeviceCommand {
         return this;
     }
 
-    /** **参数说明**：下发命令的设备ID。当创建设备数据规则时，若device_id为空，则命令下发给触发条件的设备。当创建定时规则时，不允许为空。
-     * **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return deviceId */
+    /**
+     * **参数说明**：下发命令的设备ID。当创建设备数据规则时，若device_id为空，则命令下发给触发条件的设备。当创建定时规则时，不允许为空。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -50,9 +52,10 @@ public class ActionDeviceCommand {
         return this;
     }
 
-    /** Get cmd
-     * 
-     * @return cmd */
+    /**
+     * Get cmd
+     * @return cmd
+     */
     public Cmd getCmd() {
         return cmd;
     }
@@ -89,7 +92,10 @@ public class ActionDeviceCommand {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

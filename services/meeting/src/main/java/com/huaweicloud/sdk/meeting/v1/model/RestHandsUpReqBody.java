@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会场举手请求消息 */
+/**
+ * 会场举手请求消息
+ */
 public class RestHandsUpReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestHandsUpReqBody {
         return this;
     }
 
-    /** - 0: 放下手。 - 1: 举手。
-     * 
-     * @return handsState */
+    /**
+     * - 0: 放下手。 - 1: 举手。
+     * @return handsState
+     */
     public Integer getHandsState() {
         return handsState;
     }
@@ -55,7 +58,10 @@ public class RestHandsUpReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

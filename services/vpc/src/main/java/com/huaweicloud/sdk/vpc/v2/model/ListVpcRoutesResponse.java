@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListVpcRoutesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListVpcRoutesResponse extends SdkResponse {
         return this;
     }
 
-    /** route对象列表
-     * 
-     * @return routes */
+    /**
+     * route对象列表
+     * @return routes
+     */
     public List<VpcRoute> getRoutes() {
         return routes;
     }
@@ -75,9 +78,10 @@ public class ListVpcRoutesResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页信息
-     * 
-     * @return routesLinks */
+    /**
+     * 分页信息
+     * @return routesLinks
+     */
     public List<NeutronPageLink> getRoutesLinks() {
         return routesLinks;
     }
@@ -114,7 +118,10 @@ public class ListVpcRoutesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

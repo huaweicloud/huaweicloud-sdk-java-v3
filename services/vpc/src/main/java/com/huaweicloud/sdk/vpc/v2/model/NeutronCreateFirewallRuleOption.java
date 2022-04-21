@@ -30,13 +30,19 @@ public class NeutronCreateFirewallRuleOption {
 
     private String protocol;
 
-    /** 功能说明：对通过网络ACL的流量执行的操作 取值范围：DENY（拒绝）/ALLOW（允许） */
+    /**
+     * 功能说明：对通过网络ACL的流量执行的操作 取值范围：DENY（拒绝）/ALLOW（允许）
+     */
     public static final class ActionEnum {
 
-        /** Enum DENY for value: "DENY" */
+        /**
+         * Enum DENY for value: "DENY"
+         */
         public static final ActionEnum DENY = new ActionEnum("DENY");
 
-        /** Enum ALLOW for value: "ALLOW" */
+        /**
+         * Enum ALLOW for value: "ALLOW"
+         */
         public static final ActionEnum ALLOW = new ActionEnum("ALLOW");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +147,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：网络ACL规则名称 取值范围：0-255个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：网络ACL规则名称 取值范围：0-255个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,9 +164,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：网络ACL规则描述 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：网络ACL规则描述 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +181,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：IP协议 取值范围：支持TCP,UDP,ICMP, ICMPV6或者ip协议号（0-255）
-     * 
-     * @return protocol */
+    /**
+     * 功能说明：IP协议 取值范围：支持TCP,UDP,ICMP, ICMPV6或者ip协议号（0-255）
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -189,9 +198,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：对通过网络ACL的流量执行的操作 取值范围：DENY（拒绝）/ALLOW（允许）
-     * 
-     * @return action */
+    /**
+     * 功能说明：对通过网络ACL的流量执行的操作 取值范围：DENY（拒绝）/ALLOW（允许）
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -205,9 +215,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：IP协议版本
-     * 
-     * @return ipVersion */
+    /**
+     * 功能说明：IP协议版本
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -221,9 +232,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：目的地址或者CIDR
-     * 
-     * @return destinationIpAddress */
+    /**
+     * 功能说明：目的地址或者CIDR
+     * @return destinationIpAddress
+     */
     public String getDestinationIpAddress() {
         return destinationIpAddress;
     }
@@ -237,9 +249,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：目的端口号或者一段端口范围
-     * 
-     * @return destinationPort */
+    /**
+     * 功能说明：目的端口号或者一段端口范围
+     * @return destinationPort
+     */
     public String getDestinationPort() {
         return destinationPort;
     }
@@ -253,9 +266,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：源地址或者CIDR
-     * 
-     * @return sourceIpAddress */
+    /**
+     * 功能说明：源地址或者CIDR
+     * @return sourceIpAddress
+     */
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
@@ -269,9 +283,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：源端口号或者一段端口范围
-     * 
-     * @return sourcePort */
+    /**
+     * 功能说明：源端口号或者一段端口范围
+     * @return sourcePort
+     */
     public String getSourcePort() {
         return sourcePort;
     }
@@ -285,9 +300,10 @@ public class NeutronCreateFirewallRuleOption {
         return this;
     }
 
-    /** 功能说明：是否使能网络ACL防火墙规则。
-     * 
-     * @return enabled */
+    /**
+     * 功能说明：是否使能网络ACL防火墙规则。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -349,7 +365,10 @@ public class NeutronCreateFirewallRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

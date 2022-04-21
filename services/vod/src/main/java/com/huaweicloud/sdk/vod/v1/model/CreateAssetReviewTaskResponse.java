@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateAssetReviewTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资ID
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -50,9 +53,10 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get review
-     * 
-     * @return review */
+    /**
+     * Get review
+     * @return review
+     */
     public Review getReview() {
         return review;
     }
@@ -89,7 +93,10 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

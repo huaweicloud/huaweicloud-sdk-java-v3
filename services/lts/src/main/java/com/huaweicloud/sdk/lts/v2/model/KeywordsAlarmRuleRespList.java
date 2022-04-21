@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** KeywordsAlarmRuleRespList */
+/**
+ * KeywordsAlarmRuleRespList
+ */
 public class KeywordsAlarmRuleRespList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,19 +53,29 @@ public class KeywordsAlarmRuleRespList {
 
     private Frequency frequency;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class KeywordsAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final KeywordsAlarmLevelEnum INFO = new KeywordsAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final KeywordsAlarmLevelEnum MINOR = new KeywordsAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final KeywordsAlarmLevelEnum MAJOR = new KeywordsAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final KeywordsAlarmLevelEnum CRITICAL = new KeywordsAlarmLevelEnum("Critical");
 
         private static final Map<String, KeywordsAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -165,13 +177,19 @@ public class KeywordsAlarmRuleRespList {
 
     private String templateName;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -246,9 +264,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -262,9 +281,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 关键词告警id
-     * 
-     * @return keywordsAlarmRuleId */
+    /**
+     * 关键词告警id
+     * @return keywordsAlarmRuleId
+     */
     public String getKeywordsAlarmRuleId() {
         return keywordsAlarmRuleId;
     }
@@ -278,9 +298,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 关键词告警名称
-     * 
-     * @return keywordsAlarmRuleName */
+    /**
+     * 关键词告警名称
+     * @return keywordsAlarmRuleName
+     */
     public String getKeywordsAlarmRuleName() {
         return keywordsAlarmRuleName;
     }
@@ -294,9 +315,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 关键词告警信息描述
-     * 
-     * @return keywordsAlarmRuleDescription */
+    /**
+     * 关键词告警信息描述
+     * @return keywordsAlarmRuleDescription
+     */
     public String getKeywordsAlarmRuleDescription() {
         return keywordsAlarmRuleDescription;
     }
@@ -310,9 +332,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 条件
-     * 
-     * @return conditionExpression */
+    /**
+     * 条件
+     * @return conditionExpression
+     */
     public String getConditionExpression() {
         return conditionExpression;
     }
@@ -342,9 +365,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 关键词详细信息
-     * 
-     * @return keywordsRequests */
+    /**
+     * 关键词详细信息
+     * @return keywordsRequests
+     */
     public List<KeywordsRequest> getKeywordsRequests() {
         return keywordsRequests;
     }
@@ -367,9 +391,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 告警统计周期
-     * 
-     * @return frequency */
+    /**
+     * 告警统计周期
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -383,9 +408,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return keywordsAlarmLevel */
+    /**
+     * 告警级别
+     * @return keywordsAlarmLevel
+     */
     public KeywordsAlarmLevelEnum getKeywordsAlarmLevel() {
         return keywordsAlarmLevel;
     }
@@ -399,9 +425,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return keywordsAlarmSend */
+    /**
+     * 是否发送
+     * @return keywordsAlarmSend
+     */
     public Boolean getKeywordsAlarmSend() {
         return keywordsAlarmSend;
     }
@@ -415,9 +442,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -431,9 +459,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
-     * 
-     * @return createTime */
+    /**
+     * 创建时间(毫秒时间戳)
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -447,9 +476,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间(毫秒时间戳)
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -479,9 +509,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** 主题
-     * 
-     * @return topics */
+    /**
+     * 主题
+     * @return topics
+     */
     public List<Topics> getTopics() {
         return topics;
     }
@@ -495,9 +526,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** Get templateName
-     * 
-     * @return templateName */
+    /**
+     * Get templateName
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -511,9 +543,10 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -592,7 +625,10 @@ public class KeywordsAlarmRuleRespList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

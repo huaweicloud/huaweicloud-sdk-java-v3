@@ -13,22 +13,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 计划任务的配置项，选填。计划任务不支持obs输入，对于url输入则仅支持rtmp和rtsp两种形式。 */
+/**
+ * 计划任务的配置项，选填。计划任务不支持obs输入，对于url输入则仅支持rtmp和rtsp两种形式。
+ */
 public class TaskTiming {
 
-    /** 计划任务的类型，使用计划任务时必填。可选类型分别为once（仅执行一次），daily（每日执行），weekly（每周执行），monthly（每月执行）。 */
+    /**
+     * 计划任务的类型，使用计划任务时必填。可选类型分别为once（仅执行一次），daily（每日执行），weekly（每周执行），monthly（每月执行）。
+     */
     public static final class TypeEnum {
 
-        /** Enum ONCE for value: "once" */
+        /**
+         * Enum ONCE for value: "once"
+         */
         public static final TypeEnum ONCE = new TypeEnum("once");
 
-        /** Enum DAILY for value: "daily" */
+        /**
+         * Enum DAILY for value: "daily"
+         */
         public static final TypeEnum DAILY = new TypeEnum("daily");
 
-        /** Enum WEEKLY for value: "weekly" */
+        /**
+         * Enum WEEKLY for value: "weekly"
+         */
         public static final TypeEnum WEEKLY = new TypeEnum("weekly");
 
-        /** Enum MONTHLY for value: "monthly" */
+        /**
+         * Enum MONTHLY for value: "monthly"
+         */
         public static final TypeEnum MONTHLY = new TypeEnum("monthly");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -135,9 +147,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 计划任务的类型，使用计划任务时必填。可选类型分别为once（仅执行一次），daily（每日执行），weekly（每周执行），monthly（每月执行）。
-     * 
-     * @return type */
+    /**
+     * 计划任务的类型，使用计划任务时必填。可选类型分别为once（仅执行一次），daily（每日执行），weekly（每周执行），monthly（每月执行）。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -151,9 +164,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 用户所处的时区，使用计划任务时必填。精确到分钟。
-     * 
-     * @return timezone */
+    /**
+     * 用户所处的时区，使用计划任务时必填。精确到分钟。
+     * @return timezone
+     */
     public String getTimezone() {
         return timezone;
     }
@@ -183,9 +197,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 作业会在一周的哪几天执行，当且仅当计划任务类型为weekly时，该字段需填且必填。1~7分别指代星期一至星期日。
-     * 
-     * @return daysOfWeek */
+    /**
+     * 作业会在一周的哪几天执行，当且仅当计划任务类型为weekly时，该字段需填且必填。1~7分别指代星期一至星期日。
+     * @return daysOfWeek
+     */
     public List<Integer> getDaysOfWeek() {
         return daysOfWeek;
     }
@@ -215,9 +230,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 作业会在一个月的哪几天执行，当且仅当计划任务类型为monthly时，该字段需填且必填。1~31分别指代一个月中的1日至31日。
-     * 
-     * @return daysOfMonth */
+    /**
+     * 作业会在一个月的哪几天执行，当且仅当计划任务类型为monthly时，该字段需填且必填。1~31分别指代一个月中的1日至31日。
+     * @return daysOfMonth
+     */
     public List<Integer> getDaysOfMonth() {
         return daysOfMonth;
     }
@@ -231,9 +247,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 作业的执行日。当且仅当计划任务类型为once且为频率模式时，该字段需填且必填。格式形如yyyy-MM-dd。
-     * 
-     * @return date */
+    /**
+     * 作业的执行日。当且仅当计划任务类型为once且为频率模式时，该字段需填且必填。格式形如yyyy-MM-dd。
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -263,9 +280,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** 时间段模式配置。和frequency字段二选一，不可共存。时间段模式下，至少需指定一个时间段。
-     * 
-     * @return periods */
+    /**
+     * 时间段模式配置。和frequency字段二选一，不可共存。时间段模式下，至少需指定一个时间段。
+     * @return periods
+     */
     public List<TaskTimingPeriods> getPeriods() {
         return periods;
     }
@@ -288,9 +306,10 @@ public class TaskTiming {
         return this;
     }
 
-    /** Get frequency
-     * 
-     * @return frequency */
+    /**
+     * Get frequency
+     * @return frequency
+     */
     public TaskTimingFrequency getFrequency() {
         return frequency;
     }
@@ -334,7 +353,10 @@ public class TaskTiming {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

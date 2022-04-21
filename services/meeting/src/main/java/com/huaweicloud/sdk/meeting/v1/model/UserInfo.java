@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户鉴权信息。 */
+/**
+ * 用户鉴权信息。
+ */
 public class UserInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,9 +155,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -169,9 +172,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户UC帐号
-     * 
-     * @return ucloginAccount */
+    /**
+     * 用户UC帐号
+     * @return ucloginAccount
+     */
     public String getUcloginAccount() {
         return ucloginAccount;
     }
@@ -185,9 +189,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户关联的号码，sip格式。 登录类型不一样获取到的号码也不同，如软终端和硬终端客户端登录获取的号码不同。若未关联号码，则为空。 例如：sip:+8675590121000@domain5.huawei.com
-     * 
-     * @return serviceAccount */
+    /**
+     * 用户关联的号码，sip格式。 登录类型不一样获取到的号码也不同，如软终端和硬终端客户端登录获取的号码不同。若未关联号码，则为空。 例如：sip:+8675590121000@domain5.huawei.com 
+     * @return serviceAccount
+     */
     public String getServiceAccount() {
         return serviceAccount;
     }
@@ -201,9 +206,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 号码对应的HA1
-     * 
-     * @return numberHA1 */
+    /**
+     * 号码对应的HA1
+     * @return numberHA1
+     */
     public String getNumberHA1() {
         return numberHA1;
     }
@@ -217,9 +223,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户别名1
-     * 
-     * @return alias1 */
+    /**
+     * 用户别名1
+     * @return alias1
+     */
     public String getAlias1() {
         return alias1;
     }
@@ -233,9 +240,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 企业ID
-     * 
-     * @return companyId */
+    /**
+     * 企业ID
+     * @return companyId
+     */
     public String getCompanyId() {
         return companyId;
     }
@@ -249,9 +257,10 @@ public class UserInfo {
         return this;
     }
 
-    /** SP ID
-     * 
-     * @return spId */
+    /**
+     * SP ID
+     * @return spId
+     */
     public String getSpId() {
         return spId;
     }
@@ -265,9 +274,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 企业域名
-     * 
-     * @return companyDomain */
+    /**
+     * 企业域名
+     * @return companyDomain
+     */
     public String getCompanyDomain() {
         return companyDomain;
     }
@@ -281,9 +291,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 本地鉴权：realm
-     * 
-     * @return realm */
+    /**
+     * 本地鉴权：realm
+     * @return realm
+     */
     public String getRealm() {
         return realm;
     }
@@ -297,9 +308,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户类型。 * 0：系统管理用户 * 1：SP管理用户 * 2：企业用户 * 3：upath用户 * 4：硬终端默认用户 * 5：TE终端用户 * 6：顾客用户 * 7：公共设备用户 * 8：集群群组用户 * 9：USM用户
-     * 
-     * @return userType */
+    /**
+     * 用户类型。 * 0：系统管理用户 * 1：SP管理用户 * 2：企业用户 * 3：upath用户 * 4：硬终端默认用户 * 5：TE终端用户 * 6：顾客用户 * 7：公共设备用户 * 8：集群群组用户 * 9：USM用户 
+     * @return userType
+     */
     public Integer getUserType() {
         return userType;
     }
@@ -313,9 +325,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 管理员类型： * 0：默认管理员 * 1：普通管理员 * 2：非管理员，即普通企业成员，USERTYPE为2时有效
-     * 
-     * @return adminType */
+    /**
+     * 管理员类型： * 0：默认管理员 * 1：普通管理员 * 2：非管理员，即普通企业成员，USERTYPE为2时有效 
+     * @return adminType
+     */
     public Integer getAdminType() {
         return adminType;
     }
@@ -329,9 +342,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户姓名
-     * 
-     * @return name */
+    /**
+     * 用户姓名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -345,9 +359,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户英文姓名
-     * 
-     * @return nameEn */
+    /**
+     * 用户英文姓名
+     * @return nameEn
+     */
     public String getNameEn() {
         return nameEn;
     }
@@ -361,9 +376,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 标识是否绑定手机
-     * 
-     * @return isBindPhone */
+    /**
+     * 标识是否绑定手机
+     * @return isBindPhone
+     */
     public Boolean getIsBindPhone() {
         return isBindPhone;
     }
@@ -377,9 +393,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 标识是否是免费试用用户
-     * 
-     * @return freeUser */
+    /**
+     * 标识是否是免费试用用户
+     * @return freeUser
+     */
     public Boolean getFreeUser() {
         return freeUser;
     }
@@ -393,9 +410,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户的第三方账号，例如华为账号登录时获取到的union_id
-     * 
-     * @return thirdAccount */
+    /**
+     * 用户的第三方账号，例如华为账号登录时获取到的union_id
+     * @return thirdAccount
+     */
     public String getThirdAccount() {
         return thirdAccount;
     }
@@ -409,9 +427,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 智慧屏设备id
-     * 
-     * @return visionAccount */
+    /**
+     * 智慧屏设备id
+     * @return visionAccount
+     */
     public String getVisionAccount() {
         return visionAccount;
     }
@@ -425,9 +444,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 头像链接
-     * 
-     * @return headPictureUrl */
+    /**
+     * 头像链接
+     * @return headPictureUrl
+     */
     public String getHeadPictureUrl() {
         return headPictureUrl;
     }
@@ -441,9 +461,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 机机密码，用于智慧屏登录
-     * 
-     * @return password */
+    /**
+     * 机机密码，用于智慧屏登录
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -457,9 +478,12 @@ public class UserInfo {
         return this;
     }
 
-    /** 用户状态。 * 0：正常 * 1：停用 minimum: 0 maximum: 7
-     * 
-     * @return status */
+    /**
+     * 用户状态。 * 0：正常 * 1：停用 
+     * minimum: 0
+     * maximum: 7
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -473,9 +497,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 付费用户机机账号，用于智慧屏登录
-     * 
-     * @return paidAccount */
+    /**
+     * 付费用户机机账号，用于智慧屏登录
+     * @return paidAccount
+     */
     public String getPaidAccount() {
         return paidAccount;
     }
@@ -489,9 +514,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 付费用户机机密码，用于智慧屏登录
-     * 
-     * @return paidPassword */
+    /**
+     * 付费用户机机密码，用于智慧屏登录
+     * @return paidPassword
+     */
     public String getPaidPassword() {
         return paidPassword;
     }
@@ -505,9 +531,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 标识是否是WeLink用户
-     * 
-     * @return weLinkUser */
+    /**
+     * 标识是否是WeLink用户
+     * @return weLinkUser
+     */
     public Boolean getWeLinkUser() {
         return weLinkUser;
     }
@@ -521,9 +548,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -537,9 +565,10 @@ public class UserInfo {
         return this;
     }
 
-    /** tr069帐号
-     * 
-     * @return tr069Account */
+    /**
+     * tr069帐号
+     * @return tr069Account
+     */
     public String getTr069Account() {
         return tr069Account;
     }
@@ -553,10 +582,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 企业类型。 * 0：企业版 * 1：公共企业，手机、邮箱注册时会放到该企业内 * 2：公共企业，智慧屏用户自动开户时会放到该企业内 * 3：公共企业，大屏用户自动开户时会放到该企业内 * 4：公共TOC消费者企业 *
-     * 5：免费版 * 6：专业版
-     * 
-     * @return corpType */
+    /**
+     * 企业类型。 * 0：企业版 * 1：公共企业，手机、邮箱注册时会放到该企业内 * 2：公共企业，智慧屏用户自动开户时会放到该企业内 * 3：公共企业，大屏用户自动开户时会放到该企业内 * 4：公共TOC消费者企业 * 5：免费版 * 6：专业版 
+     * @return corpType
+     */
     public Integer getCorpType() {
         return corpType;
     }
@@ -570,9 +599,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 华为云账号ID
-     * 
-     * @return cloudUserId */
+    /**
+     * 华为云账号ID
+     * @return cloudUserId
+     */
     public String getCloudUserId() {
         return cloudUserId;
     }
@@ -586,9 +616,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 标识是否是灰度用户
-     * 
-     * @return grayUser */
+    /**
+     * 标识是否是灰度用户
+     * @return grayUser
+     */
     public Boolean getGrayUser() {
         return grayUser;
     }
@@ -697,7 +728,10 @@ public class UserInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

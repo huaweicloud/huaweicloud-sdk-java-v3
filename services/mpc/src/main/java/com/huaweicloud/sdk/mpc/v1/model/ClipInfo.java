@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ClipInfo */
+/**
+ * ClipInfo
+ */
 public class ClipInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ClipInfo {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -54,9 +57,10 @@ public class ClipInfo {
         return this;
     }
 
-    /** 剪切开始时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。
-     * 
-     * @return timelineStart */
+    /**
+     * 剪切开始时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。 
+     * @return timelineStart
+     */
     public String getTimelineStart() {
         return timelineStart;
     }
@@ -70,9 +74,10 @@ public class ClipInfo {
         return this;
     }
 
-    /** 剪切结束时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。
-     * 
-     * @return timelineEnd */
+    /**
+     * 剪切结束时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。 
+     * @return timelineEnd
+     */
     public String getTimelineEnd() {
         return timelineEnd;
     }
@@ -110,7 +115,10 @@ public class ClipInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

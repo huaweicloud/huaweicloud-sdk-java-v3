@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** GetLogBackupReq */
+/**
+ * GetLogBackupReq
+ */
 public class GetLogBackupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class GetLogBackupReq {
         return this;
     }
 
-    /** 节点名称
-     * 
-     * @return instanceName */
+    /**
+     * 节点名称
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -44,9 +47,10 @@ public class GetLogBackupReq {
         return this;
     }
 
-    /** 日志级别。可查询的日志级别为：INFO，ERROR，DEBUG，WARN。
-     * 
-     * @return level */
+    /**
+     * 日志级别。可查询的日志级别为：INFO，ERROR，DEBUG，WARN。
+     * @return level
+     */
     public String getLevel() {
         return level;
     }
@@ -60,9 +64,10 @@ public class GetLogBackupReq {
         return this;
     }
 
-    /** 日志类型。可查询的日志类型为：deprecation，indexingSlow，searchSlow， instance。
-     * 
-     * @return logType */
+    /**
+     * 日志类型。可查询的日志类型为：deprecation，indexingSlow，searchSlow， instance。
+     * @return logType
+     */
     public String getLogType() {
         return logType;
     }
@@ -101,7 +106,10 @@ public class GetLogBackupReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

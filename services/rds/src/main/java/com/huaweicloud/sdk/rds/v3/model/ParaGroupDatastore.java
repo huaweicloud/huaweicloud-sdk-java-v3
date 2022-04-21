@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ParaGroupDatastore */
+/**
+ * ParaGroupDatastore
+ */
 public class ParaGroupDatastore {
 
-    /** 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer */
+    /**
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     */
     public static final class TypeEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final TypeEnum MYSQL = new TypeEnum("MySQL");
 
-        /** Enum POSTGRESQL for value: "PostgreSQL" */
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
         public static final TypeEnum POSTGRESQL = new TypeEnum("PostgreSQL");
 
-        /** Enum SQLSERVER for value: "SQLServer" */
+        /**
+         * Enum SQLSERVER for value: "SQLServer"
+         */
         public static final TypeEnum SQLSERVER = new TypeEnum("SQLServer");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class ParaGroupDatastore {
         return this;
     }
 
-    /** 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
-     * 
-     * @return type */
+    /**
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -119,12 +130,10 @@ public class ParaGroupDatastore {
         return this;
     }
 
-    /** 数据库版本。 - MySQL引擎支持5.6、5.7、8.0版本。取值示例：5.7。具有相应权限的用户才可使用8.0，您可联系华为云客服人员申请。 -
-     * PostgreSQL引擎支持9.5、9.6、10、11版本。取值示例：9.6。 - Microsoft SQL Server：仅支持2017 企业版、2017 标准版、2017 web版、2014 标准版、2014
-     * 企业版、2016 标准版、2016 企业版、2012 企业版、2012 标准版、2012 web版、2008 R2 企业版、2008 R2 web版、2014 web版、2016 web版。取值示例2014_SE。
-     * 例如：2017标准版可填写2017_SE，2017企业版可填写2017_EE，2017web版可以填写2017_WEB
-     * 
-     * @return version */
+    /**
+     * 数据库版本。  - MySQL引擎支持5.6、5.7、8.0版本。取值示例：5.7。具有相应权限的用户才可使用8.0，您可联系华为云客服人员申请。 - PostgreSQL引擎支持9.5、9.6、10、11版本。取值示例：9.6。 - Microsoft SQL Server：仅支持2017 企业版、2017 标准版、2017 web版、2014 标准版、2014 企业版、2016 标准版、2016 企业版、2012 企业版、2012 标准版、2012 web版、2008 R2 企业版、2008 R2 web版、2014 web版、2016 web版。取值示例2014_SE。 例如：2017标准版可填写2017_SE，2017企业版可填写2017_EE，2017web版可以填写2017_WEB
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -161,7 +170,10 @@ public class ParaGroupDatastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

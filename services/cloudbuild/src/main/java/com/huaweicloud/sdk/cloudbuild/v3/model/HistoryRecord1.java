@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HistoryRecord1 */
+/**
+ * HistoryRecord1
+ */
 public class HistoryRecord1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 构建记录id--唯一key
-     * 
-     * @return recordId */
+    /**
+     * 构建记录id--唯一key
+     * @return recordId
+     */
     public String getRecordId() {
         return recordId;
     }
@@ -84,9 +87,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -100,9 +104,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 构建编号
-     * 
-     * @return buildNumber */
+    /**
+     * 构建编号
+     * @return buildNumber
+     */
     public Integer getBuildNumber() {
         return buildNumber;
     }
@@ -116,9 +121,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 构建开始时间
-     * 
-     * @return startTime */
+    /**
+     * 构建开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -132,9 +138,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 构建结束时间
-     * 
-     * @return endTime */
+    /**
+     * 构建结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -148,9 +155,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 构建结果
-     * 
-     * @return result */
+    /**
+     * 构建结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -164,9 +172,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 代码分支
-     * 
-     * @return branch */
+    /**
+     * 代码分支
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -180,9 +189,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 代码提交的commit id
-     * 
-     * @return commitId */
+    /**
+     * 代码提交的commit id
+     * @return commitId
+     */
     public String getCommitId() {
         return commitId;
     }
@@ -196,9 +206,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 代码提交时用户输入的提交信息，只有使用codehub仓库时有值
-     * 
-     * @return commitMessage */
+    /**
+     * 代码提交时用户输入的提交信息，只有使用codehub仓库时有值
+     * @return commitMessage
+     */
     public String getCommitMessage() {
         return commitMessage;
     }
@@ -212,9 +223,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 执行构建任务的用户的用户名
-     * 
-     * @return executor */
+    /**
+     * 执行构建任务的用户的用户名
+     * @return executor
+     */
     public String getExecutor() {
         return executor;
     }
@@ -228,9 +240,10 @@ public class HistoryRecord1 {
         return this;
     }
 
-    /** 触发方式，可选值：手工触发，定时触发，代码更新触发，流水线触发
-     * 
-     * @return triggerType */
+    /**
+     * 触发方式，可选值：手工触发，定时触发，代码更新触发，流水线触发
+     * @return triggerType
+     */
     public String getTriggerType() {
         return triggerType;
     }
@@ -294,7 +307,10 @@ public class HistoryRecord1 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

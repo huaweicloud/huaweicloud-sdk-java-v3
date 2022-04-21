@@ -9,7 +9,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** image字段数据结构说明 */
+/**
+ * image字段数据结构说明
+ */
 public class Image {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class Image {
         return this;
     }
 
-    /** 裸金属服务器镜像ID
-     * 
-     * @return id */
+    /**
+     * 裸金属服务器镜像ID
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class Image {
         return this;
     }
 
-    /** 裸金属服务器镜像相关快捷链接信息
-     * 
-     * @return links */
+    /**
+     * 裸金属服务器镜像相关快捷链接信息
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -97,7 +101,10 @@ public class Image {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

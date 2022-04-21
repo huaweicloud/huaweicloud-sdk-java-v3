@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Counter */
+/**
+ * Counter
+ */
 public class Counter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class Counter {
         return this;
     }
 
-    /** 写入的字节数
-     * 
-     * @return bytesWritten */
+    /**
+     * 写入的字节数
+     * @return bytesWritten
+     */
     public Long getBytesWritten() {
         return bytesWritten;
     }
@@ -79,9 +82,10 @@ public class Counter {
         return this;
     }
 
-    /** 总文件数
-     * 
-     * @return totalFiles */
+    /**
+     * 总文件数
+     * @return totalFiles
+     */
     public Integer getTotalFiles() {
         return totalFiles;
     }
@@ -95,9 +99,10 @@ public class Counter {
         return this;
     }
 
-    /** 读取的行数
-     * 
-     * @return rowsRead */
+    /**
+     * 读取的行数
+     * @return rowsRead
+     */
     public Long getRowsRead() {
         return rowsRead;
     }
@@ -111,9 +116,10 @@ public class Counter {
         return this;
     }
 
-    /** 读取的字节数
-     * 
-     * @return bytesRead */
+    /**
+     * 读取的字节数
+     * @return bytesRead
+     */
     public Long getBytesRead() {
         return bytesRead;
     }
@@ -127,9 +133,10 @@ public class Counter {
         return this;
     }
 
-    /** 写入的行数
-     * 
-     * @return rowsWritten */
+    /**
+     * 写入的行数
+     * @return rowsWritten
+     */
     public Long getRowsWritten() {
         return rowsWritten;
     }
@@ -143,9 +150,10 @@ public class Counter {
         return this;
     }
 
-    /** 写入的文件数
-     * 
-     * @return filesWritten */
+    /**
+     * 写入的文件数
+     * @return filesWritten
+     */
     public Integer getFilesWritten() {
         return filesWritten;
     }
@@ -159,9 +167,10 @@ public class Counter {
         return this;
     }
 
-    /** 读取的文件数
-     * 
-     * @return filesRead */
+    /**
+     * 读取的文件数
+     * @return filesRead
+     */
     public Integer getFilesRead() {
         return filesRead;
     }
@@ -175,9 +184,10 @@ public class Counter {
         return this;
     }
 
-    /** 总字节数
-     * 
-     * @return totalSize */
+    /**
+     * 总字节数
+     * @return totalSize
+     */
     public Long getTotalSize() {
         return totalSize;
     }
@@ -191,9 +201,10 @@ public class Counter {
         return this;
     }
 
-    /** 跳过的文件数
-     * 
-     * @return filesSkipped */
+    /**
+     * 跳过的文件数
+     * @return filesSkipped
+     */
     public Integer getFilesSkipped() {
         return filesSkipped;
     }
@@ -207,9 +218,10 @@ public class Counter {
         return this;
     }
 
-    /** 跳过的行数
-     * 
-     * @return rowsWrittenSkipped */
+    /**
+     * 跳过的行数
+     * @return rowsWrittenSkipped
+     */
     public Long getRowsWrittenSkipped() {
         return rowsWrittenSkipped;
     }
@@ -269,7 +281,10 @@ public class Counter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

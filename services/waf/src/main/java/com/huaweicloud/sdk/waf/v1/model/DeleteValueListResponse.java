@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteValueListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class DeleteValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表id
-     * 
-     * @return id */
+    /**
+     * 引用表id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class DeleteValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表名称
-     * 
-     * @return name */
+    /**
+     * 引用表名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -66,9 +70,10 @@ public class DeleteValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表类型
-     * 
-     * @return type */
+    /**
+     * 引用表类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -82,9 +87,10 @@ public class DeleteValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 删除引用表的时间，时间为13位毫秒时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 删除引用表的时间，时间为13位毫秒时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -125,7 +131,10 @@ public class DeleteValueListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowL7RuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowL7RuleRequest {
         return this;
     }
 
-    /** 7层转发策略。
-     * 
-     * @return l7policyId */
+    /**
+     * 7层转发策略。
+     * @return l7policyId
+     */
     public String getL7policyId() {
         return l7policyId;
     }
@@ -39,9 +42,10 @@ public class ShowL7RuleRequest {
         return this;
     }
 
-    /** 7层转发规则。
-     * 
-     * @return l7ruleId */
+    /**
+     * 7层转发规则。
+     * @return l7ruleId
+     */
     public String getL7ruleId() {
         return l7ruleId;
     }
@@ -78,7 +82,10 @@ public class ShowL7RuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

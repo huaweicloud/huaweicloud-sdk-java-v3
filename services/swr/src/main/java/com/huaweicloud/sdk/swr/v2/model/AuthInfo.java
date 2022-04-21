@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AuthInfo */
+/**
+ * AuthInfo
+ */
 public class AuthInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AuthInfo {
         return this;
     }
 
-    /** Base64加密的认证信息
-     * 
-     * @return auth */
+    /**
+     * Base64加密的认证信息
+     * @return auth
+     */
     public String getAuth() {
         return auth;
     }
@@ -55,7 +58,10 @@ public class AuthInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

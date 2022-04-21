@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return name */
+    /**
+     * 模板名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 可用区
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -70,9 +74,10 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** Region ID
-     * 
-     * @return region */
+    /**
+     * Region ID
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -86,9 +91,12 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 分页大小，不传值默认为50 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 分页大小，不传值默认为50
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,9 +110,12 @@ public class ListTemplatesRequest {
         return this;
     }
 
-    /** 偏移量，不传值默认为0 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 偏移量，不传值默认为0
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -147,7 +158,10 @@ public class ListTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

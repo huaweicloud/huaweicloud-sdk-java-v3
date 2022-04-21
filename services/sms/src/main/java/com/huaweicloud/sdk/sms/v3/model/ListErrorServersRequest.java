@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListErrorServersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class ListErrorServersRequest {
         return this;
     }
 
-    /** 每一页记录的错误数量 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每一页记录的错误数量
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,9 +54,12 @@ public class ListErrorServersRequest {
         return this;
     }
 
-    /** 偏移量 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 偏移量
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -65,9 +73,10 @@ public class ListErrorServersRequest {
         return this;
     }
 
-    /** 需要查询的迁移项目id，添加此字段将只查询对应id下的迁移任务报错信息
-     * 
-     * @return migproject */
+    /**
+     * 需要查询的迁移项目id，添加此字段将只查询对应id下的迁移任务报错信息
+     * @return migproject
+     */
     public String getMigproject() {
         return migproject;
     }
@@ -81,9 +90,10 @@ public class ListErrorServersRequest {
         return this;
     }
 
-    /** 需要查询的企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 需要查询的企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -124,7 +134,10 @@ public class ListErrorServersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

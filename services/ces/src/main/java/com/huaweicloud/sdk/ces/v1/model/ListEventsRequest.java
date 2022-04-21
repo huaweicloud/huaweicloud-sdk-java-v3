@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEventsRequest {
 
-    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。 */
+    /**
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     */
     public static final class EventTypeEnum {
 
-        /** Enum EVENT_SYS for value: "EVENT.SYS" */
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
         public static final EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
 
-        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
         public static final EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
 
         private static final Map<String, EventTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
-     * 
-     * @return eventType */
+    /**
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * @return eventType
+     */
     public EventTypeEnum getEventType() {
         return eventType;
     }
@@ -135,9 +144,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
-     * 
-     * @return eventName */
+    /**
+     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+     * @return eventName
+     */
     public String getEventName() {
         return eventName;
     }
@@ -151,9 +161,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
-     * 
-     * @return from */
+    /**
+     * 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
+     * @return from
+     */
     public Long getFrom() {
         return from;
     }
@@ -167,9 +178,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
-     * 
-     * @return to */
+    /**
+     * 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
+     * @return to
+     */
     public Long getTo() {
         return to;
     }
@@ -183,9 +195,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 分页起始值，类型为integer，默认值为0。
-     * 
-     * @return start */
+    /**
+     * 分页起始值，类型为integer，默认值为0。
+     * @return start
+     */
     public Integer getStart() {
         return start;
     }
@@ -199,9 +212,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
-     * 
-     * @return limit */
+    /**
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -245,7 +259,10 @@ public class ListEventsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

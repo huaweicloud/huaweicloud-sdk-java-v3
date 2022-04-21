@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuotaRecord */
+/**
+ * QuotaRecord
+ */
 public class QuotaRecord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 记录ID。
-     * 
-     * @return id */
+    /**
+     * 记录ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -89,9 +92,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 操作员的账号名称。
-     * 
-     * @return operator */
+    /**
+     * 操作员的账号名称。
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -105,9 +109,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 操作类型。 10：发放额度11：回收额度
-     * 
-     * @return operationType */
+    /**
+     * 操作类型。 10：发放额度11：回收额度
+     * @return operationType
+     */
     public String getOperationType() {
         return operationType;
     }
@@ -121,9 +126,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 精英服务商的代金券额度ID。 即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 精英服务商的代金券额度ID。 即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -137,9 +143,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 父额度ID。 这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
-     * 
-     * @return parentQuotaId */
+    /**
+     * 父额度ID。 这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
+     * @return parentQuotaId
+     */
     public String getParentQuotaId() {
         return parentQuotaId;
     }
@@ -153,9 +160,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 发放回收的金额。 取值大于0且精确到小数点后2位，单位：元。
-     * 
-     * @return amount */
+    /**
+     * 发放回收的金额。 取值大于0且精确到小数点后2位，单位：元。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -169,9 +177,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 操作时间，UTC时间，UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return operationTime */
+    /**
+     * 操作时间，UTC时间，UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return operationTime
+     */
     public String getOperationTime() {
         return operationTime;
     }
@@ -185,9 +194,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 操作结果。 0：成功-1：失败
-     * 
-     * @return result */
+    /**
+     * 操作结果。 0：成功-1：失败
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -201,9 +211,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 精英服务商的账号名。
-     * 
-     * @return indirectPartnerAccountName */
+    /**
+     * 精英服务商的账号名。
+     * @return indirectPartnerAccountName
+     */
     public String getIndirectPartnerAccountName() {
         return indirectPartnerAccountName;
     }
@@ -217,9 +228,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 精英服务商ID。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -233,9 +245,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 精英服务商的公司名称。
-     * 
-     * @return indirectPartnerName */
+    /**
+     * 精英服务商的公司名称。
+     * @return indirectPartnerName
+     */
     public String getIndirectPartnerName() {
         return indirectPartnerName;
     }
@@ -249,9 +262,10 @@ public class QuotaRecord {
         return this;
     }
 
-    /** 备注。
-     * 
-     * @return remark */
+    /**
+     * 备注。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -318,7 +332,10 @@ public class QuotaRecord {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

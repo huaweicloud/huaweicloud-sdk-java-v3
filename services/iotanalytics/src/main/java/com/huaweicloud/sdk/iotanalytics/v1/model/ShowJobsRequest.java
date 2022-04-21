@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowJobsRequest {
 
-    /** 接收数据类型，支持两种接收数据类型：“管道数据”、“资产数据”。管道数据：“实时分析”使用来自“数据管道”的数据进行分析，并可将数据输出到其他云服务。资产数据：“实时分析”使用来自“资产模型”的数据进行分析，并将分析后的结果返回给“资产模型”，丰富资产模型。 */
+    /**
+     * 接收数据类型，支持两种接收数据类型：“管道数据”、“资产数据”。管道数据：“实时分析”使用来自“数据管道”的数据进行分析，并可将数据输出到其他云服务。资产数据：“实时分析”使用来自“资产模型”的数据进行分析，并将分析后的结果返回给“资产模型”，丰富资产模型。
+     */
     public static final class JobInputTypeEnum {
 
-        /** Enum ASSET_DATA for value: "ASSET_DATA" */
+        /**
+         * Enum ASSET_DATA for value: "ASSET_DATA"
+         */
         public static final JobInputTypeEnum ASSET_DATA = new JobInputTypeEnum("ASSET_DATA");
 
-        /** Enum OLD_DATA for value: "OLD_DATA" */
+        /**
+         * Enum OLD_DATA for value: "OLD_DATA"
+         */
         public static final JobInputTypeEnum OLD_DATA = new JobInputTypeEnum("OLD_DATA");
 
         private static final Map<String, JobInputTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 接收数据类型，支持两种接收数据类型：“管道数据”、“资产数据”。管道数据：“实时分析”使用来自“数据管道”的数据进行分析，并可将数据输出到其他云服务。资产数据：“实时分析”使用来自“资产模型”的数据进行分析，并将分析后的结果返回给“资产模型”，丰富资产模型。
-     * 
-     * @return jobInputType */
+    /**
+     * 接收数据类型，支持两种接收数据类型：“管道数据”、“资产数据”。管道数据：“实时分析”使用来自“数据管道”的数据进行分析，并可将数据输出到其他云服务。资产数据：“实时分析”使用来自“资产模型”的数据进行分析，并将分析后的结果返回给“资产模型”，丰富资产模型。
+     * @return jobInputType
+     */
     public JobInputTypeEnum getJobInputType() {
         return jobInputType;
     }
@@ -125,9 +134,12 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -141,9 +153,12 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -157,9 +172,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 立即同步作业状态，默认是false
-     * 
-     * @return syncStatus */
+    /**
+     * 立即同步作业状态，默认是false
+     * @return syncStatus
+     */
     public Boolean getSyncStatus() {
         return syncStatus;
     }
@@ -199,7 +215,10 @@ public class ShowJobsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

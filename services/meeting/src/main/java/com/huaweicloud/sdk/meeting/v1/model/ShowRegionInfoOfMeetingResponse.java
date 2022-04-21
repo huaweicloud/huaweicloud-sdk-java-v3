@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议所在区域的公网IP地址。
-     * 
-     * @return regionIP */
+    /**
+     * 会议所在区域的公网IP地址。
+     * @return regionIP
+     */
     public String getRegionIP() {
         return regionIP;
     }
@@ -40,9 +43,10 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议所在区域的公网域名。
-     * 
-     * @return regionUrl */
+    /**
+     * 会议所在区域的公网域名。
+     * @return regionUrl
+     */
     public String getRegionUrl() {
         return regionUrl;
     }
@@ -79,7 +83,10 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

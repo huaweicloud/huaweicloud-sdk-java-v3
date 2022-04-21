@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InsuranceItem */
+/**
+ * InsuranceItem
+ */
 public class InsuranceItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get insuranceName
-     * 
-     * @return insuranceName */
+    /**
+     * Get insuranceName
+     * @return insuranceName
+     */
     public InsurancePolicyDetail getInsuranceName() {
         return insuranceName;
     }
@@ -78,9 +81,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get insurancePeriod
-     * 
-     * @return insurancePeriod */
+    /**
+     * Get insurancePeriod
+     * @return insurancePeriod
+     */
     public InsurancePolicyDetail getInsurancePeriod() {
         return insurancePeriod;
     }
@@ -103,9 +107,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get insuranceAmount
-     * 
-     * @return insuranceAmount */
+    /**
+     * Get insuranceAmount
+     * @return insuranceAmount
+     */
     public InsurancePolicyDetail getInsuranceAmount() {
         return insuranceAmount;
     }
@@ -128,9 +133,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get paymentFrequency
-     * 
-     * @return paymentFrequency */
+    /**
+     * Get paymentFrequency
+     * @return paymentFrequency
+     */
     public InsurancePolicyDetail getPaymentFrequency() {
         return paymentFrequency;
     }
@@ -153,9 +159,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get paymentPeriod
-     * 
-     * @return paymentPeriod */
+    /**
+     * Get paymentPeriod
+     * @return paymentPeriod
+     */
     public InsurancePolicyDetail getPaymentPeriod() {
         return paymentPeriod;
     }
@@ -178,9 +185,10 @@ public class InsuranceItem {
         return this;
     }
 
-    /** Get paymentAmount
-     * 
-     * @return paymentAmount */
+    /**
+     * Get paymentAmount
+     * @return paymentAmount
+     */
     public InsurancePolicyDetail getPaymentAmount() {
         return paymentAmount;
     }
@@ -226,7 +234,10 @@ public class InsuranceItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

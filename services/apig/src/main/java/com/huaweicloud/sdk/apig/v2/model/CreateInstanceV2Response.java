@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateInstanceV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateInstanceV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -40,9 +43,10 @@ public class CreateInstanceV2Response extends SdkResponse {
         return this;
     }
 
-    /** 创建实例任务信息
-     * 
-     * @return message */
+    /**
+     * 创建实例任务信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -79,7 +83,10 @@ public class CreateInstanceV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

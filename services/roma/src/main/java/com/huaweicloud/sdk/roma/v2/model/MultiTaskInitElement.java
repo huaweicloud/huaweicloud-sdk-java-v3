@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskInitElement */
+/**
+ * MultiTaskInitElement
+ */
 public class MultiTaskInitElement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,9 +117,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** Get extInfo
-     * 
-     * @return extInfo */
+    /**
+     * Get extInfo
+     * @return extInfo
+     */
     public MultiTaskInitElementExtInfo getExtInfo() {
         return extInfo;
     }
@@ -131,9 +134,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -147,9 +151,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -163,9 +168,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -179,9 +185,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端组
-     * 
-     * @return sourceGroup */
+    /**
+     * 源端组
+     * @return sourceGroup
+     */
     public String getSourceGroup() {
         return sourceGroup;
     }
@@ -195,9 +202,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端组
-     * 
-     * @return targetGroup */
+    /**
+     * 目标端组
+     * @return targetGroup
+     */
     public String getTargetGroup() {
         return targetGroup;
     }
@@ -211,9 +219,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDsId */
+    /**
+     * 源端数据源ID
+     * @return sourceDsId
+     */
     public String getSourceDsId() {
         return sourceDsId;
     }
@@ -227,9 +236,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDsId */
+    /**
+     * 目标端数据源ID
+     * @return targetDsId
+     */
     public String getTargetDsId() {
         return targetDsId;
     }
@@ -243,9 +253,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端实例ID
-     * 
-     * @return sourceInstanceId */
+    /**
+     * 源端实例ID
+     * @return sourceInstanceId
+     */
     public String getSourceInstanceId() {
         return sourceInstanceId;
     }
@@ -259,9 +270,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端实例ID
-     * 
-     * @return targetInstanceId */
+    /**
+     * 目标端实例ID
+     * @return targetInstanceId
+     */
     public String getTargetInstanceId() {
         return targetInstanceId;
     }
@@ -275,9 +287,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端数据源所属集成应用ID
-     * 
-     * @return sourceAppId */
+    /**
+     * 源端数据源所属集成应用ID
+     * @return sourceAppId
+     */
     public String getSourceAppId() {
         return sourceAppId;
     }
@@ -291,9 +304,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端数据源所属集成应用ID
-     * 
-     * @return targetAppId */
+    /**
+     * 目标端数据源所属集成应用ID
+     * @return targetAppId
+     */
     public String getTargetAppId() {
         return targetAppId;
     }
@@ -307,9 +321,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端数据源的名称
-     * 
-     * @return sourceDatasourceName */
+    /**
+     * 源端数据源的名称
+     * @return sourceDatasourceName
+     */
     public String getSourceDatasourceName() {
         return sourceDatasourceName;
     }
@@ -323,9 +338,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端数据源的名称
-     * 
-     * @return targetDatasourceName */
+    /**
+     * 目标端数据源的名称
+     * @return targetDatasourceName
+     */
     public String getTargetDatasourceName() {
         return targetDatasourceName;
     }
@@ -339,9 +355,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 源端数据源的类型
-     * 
-     * @return sourceDatasourceType */
+    /**
+     * 源端数据源的类型
+     * @return sourceDatasourceType
+     */
     public String getSourceDatasourceType() {
         return sourceDatasourceType;
     }
@@ -355,9 +372,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 目标端数据源的类型
-     * 
-     * @return targetDatasourceType */
+    /**
+     * 目标端数据源的类型
+     * @return targetDatasourceType
+     */
     public String getTargetDatasourceType() {
         return targetDatasourceType;
     }
@@ -387,9 +405,10 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 映射关系列表，只返回前10条
-     * 
-     * @return mappings */
+    /**
+     * 映射关系列表，只返回前10条
+     * @return mappings
+     */
     public List<MultiTaskMappingElement> getMappings() {
         return mappings;
     }
@@ -403,9 +422,12 @@ public class MultiTaskInitElement {
         return this;
     }
 
-    /** 映射关系总数 minimum: 0 maximum: 1000000
-     * 
-     * @return mappingsTotalCount */
+    /**
+     * 映射关系总数
+     * minimum: 0
+     * maximum: 1000000
+     * @return mappingsTotalCount
+     */
     public Long getMappingsTotalCount() {
         return mappingsTotalCount;
     }
@@ -491,7 +513,10 @@ public class MultiTaskInitElement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Network */
+/**
+ * Network
+ */
 public class Network {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class Network {
         return this;
     }
 
-    /** 方向，取值范围：IN、OUT。
-     * 
-     * @return direction */
+    /**
+     * 方向，取值范围：IN、OUT。
+     * @return direction
+     */
     public String getDirection() {
         return direction;
     }
@@ -80,9 +83,10 @@ public class Network {
         return this;
     }
 
-    /** 协议。
-     * 
-     * @return protocol */
+    /**
+     * 协议。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -96,9 +100,10 @@ public class Network {
         return this;
     }
 
-    /** 源IP地址。
-     * 
-     * @return srcIp */
+    /**
+     * 源IP地址。
+     * @return srcIp
+     */
     public String getSrcIp() {
         return srcIp;
     }
@@ -112,9 +117,12 @@ public class Network {
         return this;
     }
 
-    /** 源端口，0–65535。 minimum: 0 maximum: 65535
-     * 
-     * @return srcPort */
+    /**
+     * 源端口，0–65535。
+     * minimum: 0
+     * maximum: 65535
+     * @return srcPort
+     */
     public Integer getSrcPort() {
         return srcPort;
     }
@@ -128,9 +136,10 @@ public class Network {
         return this;
     }
 
-    /** 源域名，最大128个字符。
-     * 
-     * @return srcDomain */
+    /**
+     * 源域名，最大128个字符。
+     * @return srcDomain
+     */
     public String getSrcDomain() {
         return srcDomain;
     }
@@ -153,9 +162,10 @@ public class Network {
         return this;
     }
 
-    /** Get srcGeo
-     * 
-     * @return srcGeo */
+    /**
+     * Get srcGeo
+     * @return srcGeo
+     */
     public Geo getSrcGeo() {
         return srcGeo;
     }
@@ -169,9 +179,10 @@ public class Network {
         return this;
     }
 
-    /** 目标IP地址。
-     * 
-     * @return destcIp */
+    /**
+     * 目标IP地址。
+     * @return destcIp
+     */
     public String getDestcIp() {
         return destcIp;
     }
@@ -185,9 +196,12 @@ public class Network {
         return this;
     }
 
-    /** 目标端口，0–65535。 minimum: 0 maximum: 65535
-     * 
-     * @return destPort */
+    /**
+     * 目标端口，0–65535。
+     * minimum: 0
+     * maximum: 65535
+     * @return destPort
+     */
     public Integer getDestPort() {
         return destPort;
     }
@@ -201,9 +215,10 @@ public class Network {
         return this;
     }
 
-    /** 目标域名，最大128个字符。
-     * 
-     * @return destDomain */
+    /**
+     * 目标域名，最大128个字符。
+     * @return destDomain
+     */
     public String getDestDomain() {
         return destDomain;
     }
@@ -226,9 +241,10 @@ public class Network {
         return this;
     }
 
-    /** Get destGeo
-     * 
-     * @return destGeo */
+    /**
+     * Get destGeo
+     * @return destGeo
+     */
     public Geo getDestGeo() {
         return destGeo;
     }
@@ -277,7 +293,10 @@ public class Network {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

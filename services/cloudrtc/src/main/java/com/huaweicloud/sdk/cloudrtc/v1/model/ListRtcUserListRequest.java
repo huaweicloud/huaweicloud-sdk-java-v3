@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcUserListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,13 +88,19 @@ public class ListRtcUserListRequest {
 
     private Integer offset;
 
-    /** 查询模式，取值如下： - detail：会话级 - summary：用户级（默认） */
+    /**
+     * 查询模式，取值如下： - detail：会话级 - summary：用户级（默认） 
+     */
     public static final class TypeEnum {
 
-        /** Enum DETAIL for value: "detail" */
+        /**
+         * Enum DETAIL for value: "detail"
+         */
         public static final TypeEnum DETAIL = new TypeEnum("detail");
 
-        /** Enum SUMMARY for value: "summary" */
+        /**
+         * Enum SUMMARY for value: "summary"
+         */
         public static final TypeEnum SUMMARY = new TypeEnum("summary");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -167,9 +175,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -183,9 +192,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -201,9 +211,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -219,9 +230,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return app */
+    /**
+     * 应用id 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -235,9 +247,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 房间id
-     * 
-     * @return roomId */
+    /**
+     * 房间id 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -251,9 +264,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return uid */
+    /**
+     * 用户id 
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -267,9 +281,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickname */
+    /**
+     * 用户昵称 
+     * @return nickname
+     */
     public String getNickname() {
         return nickname;
     }
@@ -299,9 +314,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 用户省份，支持省份名或缩写，如广东或者GD
-     * 
-     * @return region */
+    /**
+     * 用户省份，支持省份名或缩写，如广东或者GD 
+     * @return region
+     */
     public List<String> getRegion() {
         return region;
     }
@@ -331,9 +347,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 用户接入运营商
-     * 
-     * @return isp */
+    /**
+     * 用户接入运营商 
+     * @return isp
+     */
     public List<String> getIsp() {
         return isp;
     }
@@ -363,9 +380,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 用户状态，取值如下： - FAIL：加入失败 - ONLINE：在线 - OFFLINE：离开
-     * 
-     * @return state */
+    /**
+     * 用户状态，取值如下： - FAIL：加入失败 - ONLINE：在线 - OFFLINE：离开 
+     * @return state
+     */
     public List<String> getState() {
         return state;
     }
@@ -379,9 +397,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -395,9 +414,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认为当前时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认为当前时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -411,9 +431,12 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 查询结果限制 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询结果限制 
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -427,9 +450,12 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 1844674407
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量 
+     * minimum: 0
+     * maximum: 1844674407
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -443,9 +469,10 @@ public class ListRtcUserListRequest {
         return this;
     }
 
-    /** 查询模式，取值如下： - detail：会话级 - summary：用户级（默认）
-     * 
-     * @return type */
+    /**
+     * 查询模式，取值如下： - detail：会话级 - summary：用户级（默认） 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -522,7 +549,10 @@ public class ListRtcUserListRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

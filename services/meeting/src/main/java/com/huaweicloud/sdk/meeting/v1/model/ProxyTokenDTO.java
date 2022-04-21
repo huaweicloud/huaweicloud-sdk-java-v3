@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 代理鉴权信息 */
+/**
+ * 代理鉴权信息
+ */
 public class ProxyTokenDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** 代理鉴权服务器的短token字符串
-     * 
-     * @return accessToken */
+    /**
+     * 代理鉴权服务器的短token字符串
+     * @return accessToken
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -59,9 +62,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** 代理鉴权服务器的长token字符串
-     * 
-     * @return longAccessToken */
+    /**
+     * 代理鉴权服务器的长token字符串
+     * @return longAccessToken
+     */
     public String getLongAccessToken() {
         return longAccessToken;
     }
@@ -75,9 +79,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** token有效时长，单位：秒。
-     * 
-     * @return validPeriod */
+    /**
+     * token有效时长，单位：秒。
+     * @return validPeriod
+     */
     public Long getValidPeriod() {
         return validPeriod;
     }
@@ -91,9 +96,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** 中台地址。
-     * 
-     * @return middleEndUrl */
+    /**
+     * 中台地址。
+     * @return middleEndUrl
+     */
     public String getMiddleEndUrl() {
         return middleEndUrl;
     }
@@ -107,9 +113,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** 中台内网地址
-     * 
-     * @return middleEndInnerUrl */
+    /**
+     * 中台内网地址
+     * @return middleEndInnerUrl
+     */
     public String getMiddleEndInnerUrl() {
         return middleEndInnerUrl;
     }
@@ -123,9 +130,10 @@ public class ProxyTokenDTO {
         return this;
     }
 
-    /** 是否开启二次路由
-     * 
-     * @return enableRerouting */
+    /**
+     * 是否开启二次路由
+     * @return enableRerouting
+     */
     public Boolean getEnableRerouting() {
         return enableRerouting;
     }
@@ -171,7 +179,10 @@ public class ProxyTokenDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

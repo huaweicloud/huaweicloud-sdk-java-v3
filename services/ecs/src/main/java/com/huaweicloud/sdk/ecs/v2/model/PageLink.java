@@ -25,9 +25,10 @@ public class PageLink {
         return this;
     }
 
-    /** 相应资源的链接。
-     * 
-     * @return href */
+    /**
+     * 相应资源的链接。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -41,9 +42,10 @@ public class PageLink {
         return this;
     }
 
-    /** 对应快捷链接。
-     * 
-     * @return rel */
+    /**
+     * 对应快捷链接。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -79,7 +81,10 @@ public class PageLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

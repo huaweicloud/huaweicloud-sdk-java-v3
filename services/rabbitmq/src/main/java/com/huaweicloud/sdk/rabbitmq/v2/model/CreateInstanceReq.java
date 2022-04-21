@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建实例请求体。 */
+/**
+ * 创建实例请求体。
+ */
 public class CreateInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,10 +28,14 @@ public class CreateInstanceReq {
 
     private String description;
 
-    /** 消息引擎：rabbitmq。 */
+    /**
+     * 消息引擎：rabbitmq。
+     */
     public static final class EngineEnum {
 
-        /** Enum RABBITMQ for value: "rabbitmq" */
+        /**
+         * Enum RABBITMQ for value: "rabbitmq"
+         */
         public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
@@ -98,10 +104,14 @@ public class CreateInstanceReq {
 
     private EngineEnum engine;
 
-    /** 消息引擎的版本。 - RabbitMQ版本有：3.7.17 */
+    /**
+     * 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+     */
     public static final class EngineVersionEnum {
 
-        /** Enum _3_7_17 for value: "3.7.17" */
+        /**
+         * Enum _3_7_17 for value: "3.7.17"
+         */
         public static final EngineVersionEnum _3_7_17 = new EngineVersionEnum("3.7.17");
 
         private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -235,18 +245,26 @@ public class CreateInstanceReq {
 
     private Boolean sslEnable;
 
-    /** 存储IO规格。 取值范围： - dms.physical.storage.normal： - dms.physical.storage.high - dms.physical.storage.ultra */
+    /**
+     * 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+     */
     public static final class StorageSpecCodeEnum {
 
-        /** Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_NORMAL =
             new StorageSpecCodeEnum("dms.physical.storage.normal");
 
-        /** Enum DMS_PHYSICAL_STORAGE_HIGH for value: "dms.physical.storage.high" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_HIGH for value: "dms.physical.storage.high"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH =
             new StorageSpecCodeEnum("dms.physical.storage.high");
 
-        /** Enum DMS_PHYSICAL_STORAGE_ULTRA for value: "dms.physical.storage.ultra" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_ULTRA for value: "dms.physical.storage.ultra"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA =
             new StorageSpecCodeEnum("dms.physical.storage.ultra");
 
@@ -333,9 +351,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 实例名称。 由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
-     * 
-     * @return name */
+    /**
+     * 实例名称。  由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -349,9 +368,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 实例的描述信息。 长度不超过1024的字符串。 > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
-     * 
-     * @return description */
+    /**
+     * 实例的描述信息。  长度不超过1024的字符串。  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -365,9 +385,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 消息引擎：rabbitmq。
-     * 
-     * @return engine */
+    /**
+     * 消息引擎：rabbitmq。
+     * @return engine
+     */
     public EngineEnum getEngine() {
         return engine;
     }
@@ -381,9 +402,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 消息引擎的版本。 - RabbitMQ版本有：3.7.17
-     * 
-     * @return engineVersion */
+    /**
+     * 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+     * @return engineVersion
+     */
     public EngineVersionEnum getEngineVersion() {
         return engineVersion;
     }
@@ -397,10 +419,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 消息存储空间，单位GB。 - 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。 -
-     * 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。
-     * 
-     * @return storageSpace */
+    /**
+     * 消息存储空间，单位GB。   - 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。   - 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。 
+     * @return storageSpace
+     */
     public Integer getStorageSpace() {
         return storageSpace;
     }
@@ -414,9 +436,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
-     * 
-     * @return accessUser */
+    /**
+     * 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * @return accessUser
+     */
     public String getAccessUser() {
         return accessUser;
     }
@@ -430,10 +453,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 实例的认证密码。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合： - 小写字母 - 大写字母 - 数字 -
-     * 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
-     * 
-     * @return password */
+    /**
+     * 实例的认证密码。  复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -447,9 +470,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 租户VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 租户VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -463,9 +487,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 租户安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 租户安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -479,9 +504,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -511,9 +537,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。
-     * 
-     * @return availableZones */
+    /**
+     * 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -527,9 +554,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 产品标识。
-     * 
-     * @return productId */
+    /**
+     * 产品标识。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -543,10 +571,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 -
-     * 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
-     * 
-     * @return maintainBegin */
+    /**
+     * 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -560,10 +588,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 -
-     * 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
-     * 
-     * @return maintainEnd */
+    /**
+     * 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -577,9 +605,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** RabbitMQ实例是否开启公网访问功能。 - true：开启 - false：不开启
-     * 
-     * @return enablePublicip */
+    /**
+     * RabbitMQ实例是否开启公网访问功能。 - true：开启 - false：不开启
+     * @return enablePublicip
+     */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -593,9 +622,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** RabbitMQ实例绑定的弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
-     * 
-     * @return publicipId */
+    /**
+     * RabbitMQ实例绑定的弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -609,9 +639,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
-     * 
-     * @return sslEnable */
+    /**
+     * 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
+     * @return sslEnable
+     */
     public Boolean getSslEnable() {
         return sslEnable;
     }
@@ -625,9 +656,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 存储IO规格。 取值范围： - dms.physical.storage.normal： - dms.physical.storage.high - dms.physical.storage.ultra
-     * 
-     * @return storageSpecCode */
+    /**
+     * 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+     * @return storageSpecCode
+     */
     public StorageSpecCodeEnum getStorageSpecCode() {
         return storageSpecCode;
     }
@@ -641,9 +673,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 企业项目ID。若为企业项目帐号，该参数必填。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。若为企业项目帐号，该参数必填。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -673,9 +706,10 @@ public class CreateInstanceReq {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<TagEntity> getTags() {
         return tags;
     }
@@ -767,7 +801,10 @@ public class CreateInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

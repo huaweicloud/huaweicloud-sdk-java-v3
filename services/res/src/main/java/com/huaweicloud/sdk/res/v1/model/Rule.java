@@ -30,9 +30,10 @@ public class Rule {
         return this;
     }
 
-    /** 候选集表名。
-     * 
-     * @return tableName */
+    /**
+     * 候选集表名。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -46,9 +47,12 @@ public class Rule {
         return this;
     }
 
-    /** 规则占比。 minimum: 1 maximum: 100
-     * 
-     * @return ruleRatio */
+    /**
+     * 规则占比。
+     * minimum: 1
+     * maximum: 100
+     * @return ruleRatio
+     */
     public Integer getRuleRatio() {
         return ruleRatio;
     }
@@ -62,9 +66,12 @@ public class Rule {
         return this;
     }
 
-    /** 优先级。 minimum: 1 maximum: 10
-     * 
-     * @return priority */
+    /**
+     * 优先级。
+     * minimum: 1
+     * maximum: 10
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -102,7 +109,10 @@ public class Rule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

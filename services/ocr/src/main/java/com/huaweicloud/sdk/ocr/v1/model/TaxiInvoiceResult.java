@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaxiInvoiceResult */
+/**
+ * TaxiInvoiceResult
+ */
 public class TaxiInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,9 +120,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 归属地区。
-     * 
-     * @return location */
+    /**
+     * 归属地区。 
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -134,9 +137,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 发票代码。
-     * 
-     * @return code */
+    /**
+     * 发票代码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -150,9 +154,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return number */
+    /**
+     * 发票号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -166,9 +171,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 电话（包括电话、监督电话）。
-     * 
-     * @return phoneNumber */
+    /**
+     * 电话（包括电话、监督电话）。 
+     * @return phoneNumber
+     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -182,9 +188,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 单位。
-     * 
-     * @return company */
+    /**
+     * 单位。 
+     * @return company
+     */
     public String getCompany() {
         return company;
     }
@@ -198,9 +205,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 车号。
-     * 
-     * @return taxiNumber */
+    /**
+     * 车号。 
+     * @return taxiNumber
+     */
     public String getTaxiNumber() {
         return taxiNumber;
     }
@@ -214,9 +222,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 证号。
-     * 
-     * @return certificateNumber */
+    /**
+     * 证号。 
+     * @return certificateNumber
+     */
     public String getCertificateNumber() {
         return certificateNumber;
     }
@@ -230,9 +239,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 识别编号。
-     * 
-     * @return identificationNumber */
+    /**
+     * 识别编号。 
+     * @return identificationNumber
+     */
     public String getIdentificationNumber() {
         return identificationNumber;
     }
@@ -246,9 +256,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 开票日期。
-     * 
-     * @return date */
+    /**
+     * 开票日期。 
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -262,9 +273,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 上车时间。
-     * 
-     * @return boardingTime */
+    /**
+     * 上车时间。 
+     * @return boardingTime
+     */
     public String getBoardingTime() {
         return boardingTime;
     }
@@ -278,9 +290,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 下车时间。
-     * 
-     * @return alightingTime */
+    /**
+     * 下车时间。 
+     * @return alightingTime
+     */
     public String getAlightingTime() {
         return alightingTime;
     }
@@ -294,9 +307,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 时间(起止时间、上下车时间)。
-     * 
-     * @return time */
+    /**
+     * 时间(起止时间、上下车时间)。 
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -310,9 +324,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 单价。
-     * 
-     * @return unitPrice */
+    /**
+     * 单价。 
+     * @return unitPrice
+     */
     public String getUnitPrice() {
         return unitPrice;
     }
@@ -326,9 +341,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 总里程。
-     * 
-     * @return distance */
+    /**
+     * 总里程。 
+     * @return distance
+     */
     public String getDistance() {
         return distance;
     }
@@ -342,9 +358,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 等候时间。
-     * 
-     * @return waitingTime */
+    /**
+     * 等候时间。 
+     * @return waitingTime
+     */
     public String getWaitingTime() {
         return waitingTime;
     }
@@ -358,9 +375,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 金额。
-     * 
-     * @return fare */
+    /**
+     * 金额。 
+     * @return fare
+     */
     public String getFare() {
         return fare;
     }
@@ -374,9 +392,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 燃油附加费。
-     * 
-     * @return fuelOilSurcharge */
+    /**
+     * 燃油附加费。 
+     * @return fuelOilSurcharge
+     */
     public String getFuelOilSurcharge() {
         return fuelOilSurcharge;
     }
@@ -390,9 +409,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 电调费（预约费）。
-     * 
-     * @return callServiceSurcharge */
+    /**
+     * 电调费（预约费）。 
+     * @return callServiceSurcharge
+     */
     public String getCallServiceSurcharge() {
         return callServiceSurcharge;
     }
@@ -406,9 +426,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 实收金额。
-     * 
-     * @return total */
+    /**
+     * 实收金额。 
+     * @return total
+     */
     public String getTotal() {
         return total;
     }
@@ -422,9 +443,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -438,9 +460,10 @@ public class TaxiInvoiceResult {
         return this;
     }
 
-    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return textLocation */
+    /**
+     * 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -535,7 +558,10 @@ public class TaxiInvoiceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

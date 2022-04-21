@@ -25,9 +25,10 @@ public class NovaServerVolume {
         return this;
     }
 
-    /** 云磁盘ID。
-     * 
-     * @return id */
+    /**
+     * 云磁盘ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -41,9 +42,10 @@ public class NovaServerVolume {
         return this;
     }
 
-    /** 一个标志，指示在删除服务器时是否删除附加的卷。、 默认情况下，这是False 微版本2.3后支持
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 一个标志，指示在删除服务器时是否删除附加的卷。、  默认情况下，这是False  微版本2.3后支持
+     * @return deleteOnTermination
+     */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -80,7 +82,10 @@ public class NovaServerVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

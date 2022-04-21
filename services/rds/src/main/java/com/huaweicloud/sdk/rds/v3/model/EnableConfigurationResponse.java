@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class EnableConfigurationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class EnableConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组ID。
-     * 
-     * @return configurationId */
+    /**
+     * 参数组ID。
+     * @return configurationId
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -53,9 +56,10 @@ public class EnableConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组名称。
-     * 
-     * @return configurationName */
+    /**
+     * 参数组名称。
+     * @return configurationName
+     */
     public String getConfigurationName() {
         return configurationName;
     }
@@ -69,9 +73,10 @@ public class EnableConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数模板是否都应用成功。 - “true”表示参数模板都应用成功。 - “false”表示存在应用失败的参数模板。
-     * 
-     * @return success */
+    /**
+     * 参数模板是否都应用成功。  - “true”表示参数模板都应用成功。 - “false”表示存在应用失败的参数模板。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -102,9 +107,10 @@ public class EnableConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 对每个实例的应用结果。
-     * 
-     * @return applyResults */
+    /**
+     * 对每个实例的应用结果。
+     * @return applyResults
+     */
     public List<ApplyConfigurationResponseApplyResults> getApplyResults() {
         return applyResults;
     }
@@ -145,7 +151,10 @@ public class EnableConfigurationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

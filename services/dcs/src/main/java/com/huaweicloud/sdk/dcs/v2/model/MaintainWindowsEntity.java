@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 维护时间窗结构体 */
+/**
+ * 维护时间窗结构体
+ */
 public class MaintainWindowsEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class MaintainWindowsEntity {
         return this;
     }
 
-    /** 序号。
-     * 
-     * @return seq */
+    /**
+     * 序号。
+     * @return seq
+     */
     public Integer getSeq() {
         return seq;
     }
@@ -49,9 +52,10 @@ public class MaintainWindowsEntity {
         return this;
     }
 
-    /** 是否为默认时间段。
-     * 
-     * @return _default */
+    /**
+     * 是否为默认时间段。
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -65,9 +69,10 @@ public class MaintainWindowsEntity {
         return this;
     }
 
-    /** 维护时间窗开始时间
-     * 
-     * @return begin */
+    /**
+     * 维护时间窗开始时间
+     * @return begin
+     */
     public String getBegin() {
         return begin;
     }
@@ -81,9 +86,10 @@ public class MaintainWindowsEntity {
         return this;
     }
 
-    /** 维护时间窗结束时间。
-     * 
-     * @return end */
+    /**
+     * 维护时间窗结束时间。
+     * @return end
+     */
     public String getEnd() {
         return end;
     }
@@ -124,7 +130,10 @@ public class MaintainWindowsEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

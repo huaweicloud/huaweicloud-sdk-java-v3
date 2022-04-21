@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ExportOpenApiReq */
+/**
+ * ExportOpenApiReq
+ */
 public class ExportOpenApiReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,20 +28,29 @@ public class ExportOpenApiReq {
 
     private String groupId;
 
-    /** 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 -
-     * dev：开发定义，包括未发布的api的前后端定义 */
+    /**
+     * 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 - dev：开发定义，包括未发布的api的前后端定义
+     */
     public static final class DefineEnum {
 
-        /** Enum SPEC for value: "spec" */
+        /**
+         * Enum SPEC for value: "spec"
+         */
         public static final DefineEnum SPEC = new DefineEnum("spec");
 
-        /** Enum PROXY for value: "proxy" */
+        /**
+         * Enum PROXY for value: "proxy"
+         */
         public static final DefineEnum PROXY = new DefineEnum("proxy");
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final DefineEnum ALL = new DefineEnum("all");
 
-        /** Enum DEV for value: "dev" */
+        /**
+         * Enum DEV for value: "dev"
+         */
         public static final DefineEnum DEV = new DefineEnum("dev");
 
         private static final Map<String, DefineEnum> STATIC_FIELDS = createStaticFields();
@@ -111,16 +122,24 @@ public class ExportOpenApiReq {
 
     private DefineEnum define;
 
-    /** 导出的API定义的格式 */
+    /**
+     * 导出的API定义的格式
+     */
     public static final class TypeEnum {
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final TypeEnum JSON = new TypeEnum("json");
 
-        /** Enum YAML for value: "yaml" */
+        /**
+         * Enum YAML for value: "yaml"
+         */
         public static final TypeEnum YAML = new TypeEnum("yaml");
 
-        /** Enum YML for value: "yml" */
+        /**
+         * Enum YML for value: "yml"
+         */
         public static final TypeEnum YML = new TypeEnum("yml");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -206,9 +225,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** API分组发布的环境ID
-     * 
-     * @return envId */
+    /**
+     * API分组发布的环境ID
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -222,9 +242,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** API分组ID
-     * 
-     * @return groupId */
+    /**
+     * API分组ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -238,10 +259,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 -
-     * dev：开发定义，包括未发布的api的前后端定义
-     * 
-     * @return define */
+    /**
+     * 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 - dev：开发定义，包括未发布的api的前后端定义
+     * @return define
+     */
     public DefineEnum getDefine() {
         return define;
     }
@@ -255,9 +276,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** 导出的API定义的格式
-     * 
-     * @return type */
+    /**
+     * 导出的API定义的格式
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -271,9 +293,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** 导出的API定义版本，默认为当前时间
-     * 
-     * @return version */
+    /**
+     * 导出的API定义版本，默认为当前时间
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -303,9 +326,10 @@ public class ExportOpenApiReq {
         return this;
     }
 
-    /** 导出的API ID列表
-     * 
-     * @return apis */
+    /**
+     * 导出的API ID列表
+     * @return apis
+     */
     public List<String> getApis() {
         return apis;
     }
@@ -349,7 +373,10 @@ public class ExportOpenApiReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

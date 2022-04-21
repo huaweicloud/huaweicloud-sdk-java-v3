@@ -13,19 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 诊断维度 */
+/**
+ * 诊断维度
+ */
 public class DiagnosisDimension {
 
-    /** 诊断维度名称 */
+    /**
+     * 诊断维度名称
+     */
     public static final class NameEnum {
 
-        /** Enum NETWORK for value: "network" */
+        /**
+         * Enum NETWORK for value: "network"
+         */
         public static final NameEnum NETWORK = new NameEnum("network");
 
-        /** Enum STORAGE for value: "storage" */
+        /**
+         * Enum STORAGE for value: "storage"
+         */
         public static final NameEnum STORAGE = new NameEnum("storage");
 
-        /** Enum LOAD for value: "load" */
+        /**
+         * Enum LOAD for value: "load"
+         */
         public static final NameEnum LOAD = new NameEnum("load");
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +126,10 @@ public class DiagnosisDimension {
         return this;
     }
 
-    /** 诊断维度名称
-     * 
-     * @return name */
+    /**
+     * 诊断维度名称
+     * @return name
+     */
     public NameEnum getName() {
         return name;
     }
@@ -132,9 +143,10 @@ public class DiagnosisDimension {
         return this;
     }
 
-    /** 诊断结果为异常的诊断项总数
-     * 
-     * @return abnormalNum */
+    /**
+     * 诊断结果为异常的诊断项总数
+     * @return abnormalNum
+     */
     public Integer getAbnormalNum() {
         return abnormalNum;
     }
@@ -148,9 +160,10 @@ public class DiagnosisDimension {
         return this;
     }
 
-    /** 诊断失败的诊断项总数
-     * 
-     * @return failedNum */
+    /**
+     * 诊断失败的诊断项总数
+     * @return failedNum
+     */
     public Integer getFailedNum() {
         return failedNum;
     }
@@ -180,9 +193,10 @@ public class DiagnosisDimension {
         return this;
     }
 
-    /** 诊断项列表
-     * 
-     * @return diagnosisItemList */
+    /**
+     * 诊断项列表
+     * @return diagnosisItemList
+     */
     public List<DiagnosisItem> getDiagnosisItemList() {
         return diagnosisItemList;
     }
@@ -223,7 +237,10 @@ public class DiagnosisDimension {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

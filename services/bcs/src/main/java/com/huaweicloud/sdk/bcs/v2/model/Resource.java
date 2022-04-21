@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Resource */
+/**
+ * Resource
+ */
 public class Resource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源类型，包含instance（服务实例数）
-     * 
-     * @return type */
+    /**
+     * 资源类型，包含instance（服务实例数）
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -64,9 +67,10 @@ public class Resource {
         return this;
     }
 
-    /** 单位
-     * 
-     * @return unit */
+    /**
+     * 单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -80,9 +84,10 @@ public class Resource {
         return this;
     }
 
-    /** 最小值
-     * 
-     * @return min */
+    /**
+     * 最小值
+     * @return min
+     */
     public Long getMin() {
         return min;
     }
@@ -96,9 +101,10 @@ public class Resource {
         return this;
     }
 
-    /** 最大值
-     * 
-     * @return max */
+    /**
+     * 最大值
+     * @return max
+     */
     public Long getMax() {
         return max;
     }
@@ -112,9 +118,10 @@ public class Resource {
         return this;
     }
 
-    /** 配额
-     * 
-     * @return quota */
+    /**
+     * 配额
+     * @return quota
+     */
     public Long getQuota() {
         return quota;
     }
@@ -128,9 +135,10 @@ public class Resource {
         return this;
     }
 
-    /** 已使用配额
-     * 
-     * @return used */
+    /**
+     * 已使用配额
+     * @return used
+     */
     public Long getUsed() {
         return used;
     }
@@ -144,9 +152,10 @@ public class Resource {
         return this;
     }
 
-    /** 剩余配额
-     * 
-     * @return free */
+    /**
+     * 剩余配额
+     * @return free
+     */
     public Long getFree() {
         return free;
     }
@@ -190,7 +199,10 @@ public class Resource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

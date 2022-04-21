@@ -25,9 +25,10 @@ public class AllowIpRangesResult {
         return this;
     }
 
-    /** 描述信息。
-     * 
-     * @return description */
+    /**
+     * 描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -41,9 +42,10 @@ public class AllowIpRangesResult {
         return this;
     }
 
-    /** IP地址区间，例如：0.0.0.0-255.255.255.255。
-     * 
-     * @return ipRange */
+    /**
+     * IP地址区间，例如：0.0.0.0-255.255.255.255。
+     * @return ipRange
+     */
     public String getIpRange() {
         return ipRange;
     }
@@ -80,7 +82,10 @@ public class AllowIpRangesResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建路由表请求体 */
+/**
+ * 创建路由表请求体
+ */
 public class CreateRoutetableOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateRoutetableOption {
         return this;
     }
 
-    /** 路由表名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 路由表名称  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class CreateRoutetableOption {
         return this;
     }
 
-    /** 路由表所在的虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 路由表所在的虚拟私有云ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -60,9 +64,10 @@ public class CreateRoutetableOption {
         return this;
     }
 
-    /** 路由表描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 路由表描述信息  取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class CreateRoutetableOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

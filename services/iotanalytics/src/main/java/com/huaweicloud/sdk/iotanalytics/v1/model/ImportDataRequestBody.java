@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ImportDataRequestBody */
+/**
+ * ImportDataRequestBody
+ */
 public class ImportDataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 导入的数据路径（当前仅支持导入OBS上的数据，且OBS路径须以s3a开头）。必须先把该OBS桶添加到离线数据源。
-     * 
-     * @return dataPath */
+    /**
+     * 导入的数据路径（当前仅支持导入OBS上的数据，且OBS路径须以s3a开头）。必须先把该OBS桶添加到离线数据源。
+     * @return dataPath
+     */
     public String getDataPath() {
         return dataPath;
     }
@@ -84,9 +87,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 导入的数据类型（当前支持csv、parquet、orc、json、avro数据类型）。
-     * 
-     * @return dataType */
+    /**
+     * 导入的数据类型（当前支持csv、parquet、orc、json、avro数据类型）。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -100,9 +104,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 表ID。
-     * 
-     * @return tableId */
+    /**
+     * 表ID。
+     * @return tableId
+     */
     public String getTableId() {
         return tableId;
     }
@@ -116,9 +121,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 导入数据中的第一行数据是否包括列名，即表头。默认为“false”，表示不包括列名。导入CSV类型数据时可指定。
-     * 
-     * @return withColumnHeader */
+    /**
+     * 导入数据中的第一行数据是否包括列名，即表头。默认为“false”，表示不包括列名。导入CSV类型数据时可指定。
+     * @return withColumnHeader
+     */
     public String getWithColumnHeader() {
         return withColumnHeader;
     }
@@ -132,9 +138,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 用户自定义数据分隔符，默认为逗号。导入CSV类型数据时可指定。
-     * 
-     * @return delimiter */
+    /**
+     * 用户自定义数据分隔符，默认为逗号。导入CSV类型数据时可指定。
+     * @return delimiter
+     */
     public String getDelimiter() {
         return delimiter;
     }
@@ -148,9 +155,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 用户自定义引用字符，默认为双引号。导入CSV类型数据时可指定。
-     * 
-     * @return quoteChar */
+    /**
+     * 用户自定义引用字符，默认为双引号。导入CSV类型数据时可指定。
+     * @return quoteChar
+     */
     public String getQuoteChar() {
         return quoteChar;
     }
@@ -164,9 +172,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 用户自定义转义字符，默认为反斜杠。导入CSV类型数据时可指定。
-     * 
-     * @return escapeChar */
+    /**
+     * 用户自定义转义字符，默认为反斜杠。导入CSV类型数据时可指定。
+     * @return escapeChar
+     */
     public String getEscapeChar() {
         return escapeChar;
     }
@@ -180,9 +189,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 指定特定的日期格式，默认为“yyyy-MM-dd”。日期格式字符定义详见表3。导入CSV及JSON类型数据时可指定。
-     * 
-     * @return dateFormat */
+    /**
+     * 指定特定的日期格式，默认为“yyyy-MM-dd”。日期格式字符定义详见表3。导入CSV及JSON类型数据时可指定。
+     * @return dateFormat
+     */
     public String getDateFormat() {
         return dateFormat;
     }
@@ -196,9 +206,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 作业执行过程中的bad records存储目录。设置该配置项后，bad records不会导入到目标表。
-     * 
-     * @return badRecordsPath */
+    /**
+     * 作业执行过程中的bad records存储目录。设置该配置项后，bad records不会导入到目标表。
+     * @return badRecordsPath
+     */
     public String getBadRecordsPath() {
         return badRecordsPath;
     }
@@ -212,9 +223,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 指定特定的时间格式，默认为“yyyy-MM-dd HH:mm:ss”。时间格式字符定义详见表3。导入CSV及JSON类型数据时可指定。
-     * 
-     * @return timestampFormat */
+    /**
+     * 指定特定的时间格式，默认为“yyyy-MM-dd HH:mm:ss”。时间格式字符定义详见表3。导入CSV及JSON类型数据时可指定。
+     * @return timestampFormat
+     */
     public String getTimestampFormat() {
         return timestampFormat;
     }
@@ -228,9 +240,10 @@ public class ImportDataRequestBody {
         return this;
     }
 
-    /** 计算资源ID。
-     * 
-     * @return computingResourceId */
+    /**
+     * 计算资源ID。
+     * @return computingResourceId
+     */
     public String getComputingResourceId() {
         return computingResourceId;
     }
@@ -295,7 +308,10 @@ public class ImportDataRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

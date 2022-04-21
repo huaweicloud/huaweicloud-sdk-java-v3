@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** InstanceConfig */
+/**
+ * InstanceConfig
+ */
 public class InstanceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,10 +21,14 @@ public class InstanceConfig {
 
     private String configId;
 
-    /** 配额名称 */
+    /**
+     * 配额名称
+     */
     public static final class ConfigNameEnum {
 
-        /** Enum INSTANCE_NUM_LIMIT for value: "INSTANCE_NUM_LIMIT" */
+        /**
+         * Enum INSTANCE_NUM_LIMIT for value: "INSTANCE_NUM_LIMIT"
+         */
         public static final ConfigNameEnum INSTANCE_NUM_LIMIT = new ConfigNameEnum("INSTANCE_NUM_LIMIT");
 
         private static final Map<String, ConfigNameEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +117,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 配额编号
-     * 
-     * @return configId */
+    /**
+     * 配额编号
+     * @return configId
+     */
     public String getConfigId() {
         return configId;
     }
@@ -127,9 +134,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 配额名称
-     * 
-     * @return configName */
+    /**
+     * 配额名称
+     * @return configName
+     */
     public ConfigNameEnum getConfigName() {
         return configName;
     }
@@ -143,9 +151,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 配额值 当前实例所在租户该配额对应的数量
-     * 
-     * @return configValue */
+    /**
+     * 配额值  当前实例所在租户该配额对应的数量
+     * @return configValue
+     */
     public String getConfigValue() {
         return configValue;
     }
@@ -159,9 +168,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 配额创建时间
-     * 
-     * @return configTime */
+    /**
+     * 配额创建时间
+     * @return configTime
+     */
     public OffsetDateTime getConfigTime() {
         return configTime;
     }
@@ -175,9 +185,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 配额描述 - INSTANCE_NUM_LIMIT：租户可以创建的实例个数限制
-     * 
-     * @return remark */
+    /**
+     * 配额描述 - INSTANCE_NUM_LIMIT：租户可以创建的实例个数限制
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -220,7 +231,10 @@ public class InstanceConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowSecretStageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowSecretStageRequest {
         return this;
     }
 
-    /** 凭据名称。
-     * 
-     * @return secretName */
+    /**
+     * 凭据名称。
+     * @return secretName
+     */
     public String getSecretName() {
         return secretName;
     }
@@ -39,9 +42,10 @@ public class ShowSecretStageRequest {
         return this;
     }
 
-    /** 凭据版本状态的名称。
-     * 
-     * @return stageName */
+    /**
+     * 凭据版本状态的名称。
+     * @return stageName
+     */
     public String getStageName() {
         return stageName;
     }
@@ -78,7 +82,10 @@ public class ShowSecretStageRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

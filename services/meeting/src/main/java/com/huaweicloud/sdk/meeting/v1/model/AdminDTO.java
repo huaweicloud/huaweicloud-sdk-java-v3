@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 管理员信息 */
+/**
+ * 管理员信息
+ */
 public class AdminDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 用户账号，帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号
-     * 
-     * @return account */
+    /**
+     * 用户账号，帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -59,9 +62,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,10 +79,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 若携带则以前台携带为准，否则后台默认生成,密码必须满足: - 1、6-32位 - 2、不能和账号的正序和倒序一致 - 3、至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * (
-     * ) - _ = + \\ | [ { } ] ; : \\\" ,' < . > / ?
-     * 
-     * @return pwd */
+    /**
+     * 若携带则以前台携带为准，否则后台默认生成,密码必须满足: - 1、6-32位 - 2、不能和账号的正序和倒序一致 - 3、至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * ( ) - _ = + \\ | [ { } ] ; : \\\" ,' < . > / ?
+     * @return pwd
+     */
     public String getPwd() {
         return pwd;
     }
@@ -92,9 +96,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 邮箱，管理员手机和邮箱必填其一，否则无法重置密码。如果企业短信开关关闭，则邮箱必填。格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)
-     * 
-     * @return email */
+    /**
+     * 邮箱，管理员手机和邮箱必填其一，否则无法重置密码。如果企业短信开关关闭，则邮箱必填。格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -108,9 +113,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时 “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
-     * 
-     * @return phone */
+    /**
+     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时 “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -124,10 +130,10 @@ public class AdminDTO {
         return this;
     }
 
-    /** 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR
-     * 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html
-     * 
-     * @return country */
+    /**
+     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -169,7 +175,10 @@ public class AdminDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

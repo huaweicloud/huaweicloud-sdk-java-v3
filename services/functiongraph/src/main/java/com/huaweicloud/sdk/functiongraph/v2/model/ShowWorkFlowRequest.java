@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowWorkFlowRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ShowWorkFlowRequest {
         return this;
     }
 
-    /** 函数工作流ID
-     * 
-     * @return workflowId */
+    /**
+     * 函数工作流ID
+     * @return workflowId
+     */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -55,7 +58,10 @@ public class ShowWorkFlowRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

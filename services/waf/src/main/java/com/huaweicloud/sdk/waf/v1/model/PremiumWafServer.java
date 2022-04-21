@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 服务器配置 */
+/**
+ * 服务器配置
+ */
 public class PremiumWafServer {
 
-    /** 对外协议 */
+    /**
+     * 对外协议
+     */
     public static final class FrontProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final FrontProtocolEnum HTTP = new FrontProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final FrontProtocolEnum HTTPS = new FrontProtocolEnum("HTTPS");
 
         private static final Map<String, FrontProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -89,13 +97,19 @@ public class PremiumWafServer {
 
     private FrontProtocolEnum frontProtocol;
 
-    /** 源站协议 */
+    /**
+     * 源站协议
+     */
     public static final class BackProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final BackProtocolEnum HTTP = new BackProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final BackProtocolEnum HTTPS = new BackProtocolEnum("HTTPS");
 
         private static final Map<String, BackProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -175,13 +189,19 @@ public class PremiumWafServer {
 
     private Integer port;
 
-    /** 源站地址为ipv4或ipv6 */
+    /**
+     * 源站地址为ipv4或ipv6
+     */
     public static final class TypeEnum {
 
-        /** Enum IPV4 for value: "ipv4" */
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
         public static final TypeEnum IPV4 = new TypeEnum("ipv4");
 
-        /** Enum IPV6 for value: "ipv6" */
+        /**
+         * Enum IPV6 for value: "ipv6"
+         */
         public static final TypeEnum IPV6 = new TypeEnum("ipv6");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -261,9 +281,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 对外协议
-     * 
-     * @return frontProtocol */
+    /**
+     * 对外协议
+     * @return frontProtocol
+     */
     public FrontProtocolEnum getFrontProtocol() {
         return frontProtocol;
     }
@@ -277,9 +298,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 源站协议
-     * 
-     * @return backProtocol */
+    /**
+     * 源站协议
+     * @return backProtocol
+     */
     public BackProtocolEnum getBackProtocol() {
         return backProtocol;
     }
@@ -293,9 +315,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 源站地址
-     * 
-     * @return address */
+    /**
+     * 源站地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -309,9 +332,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 源站端口
-     * 
-     * @return port */
+    /**
+     * 源站端口
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -325,9 +349,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** 源站地址为ipv4或ipv6
-     * 
-     * @return type */
+    /**
+     * 源站地址为ipv4或ipv6
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -341,10 +366,10 @@ public class PremiumWafServer {
         return this;
     }
 
-    /** VPC id,通过以下步骤获取VPC id： \\n 1.找到独享引擎所在的虚拟私有云名称，VPC\\子网这一列就是VPC的名称：登录WAF的控制台->单击系统管理->独享引擎->VPC\\子网 \\n 2.登录虚拟私有云
-     * VPC控制台->虚拟私有云->单击虚拟私有云的名称->基本信息的ID
-     * 
-     * @return vpcId */
+    /**
+     * VPC id,通过以下步骤获取VPC id： \\n 1.找到独享引擎所在的虚拟私有云名称，VPC\\子网这一列就是VPC的名称：登录WAF的控制台->单击系统管理->独享引擎->VPC\\子网 \\n 2.登录虚拟私有云 VPC控制台->虚拟私有云->单击虚拟私有云的名称->基本信息的ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -388,7 +413,10 @@ public class PremiumWafServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

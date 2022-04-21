@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 数据库用户信息。 */
+/**
+ * 数据库用户信息。
+ */
 public class PostgresqlUserForList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class PostgresqlUserForList {
         return this;
     }
 
-    /** 帐号名。
-     * 
-     * @return name */
+    /**
+     * 帐号名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class PostgresqlUserForList {
         return this;
     }
 
-    /** 用户的权限属性。
-     * 
-     * @return attributes */
+    /**
+     * 用户的权限属性。
+     * @return attributes
+     */
     public Object getAttributes() {
         return attributes;
     }
@@ -79,9 +83,10 @@ public class PostgresqlUserForList {
         return this;
     }
 
-    /** 用户的默认权限。
-     * 
-     * @return memberof */
+    /**
+     * 用户的默认权限。
+     * @return memberof
+     */
     public List<String> getMemberof() {
         return memberof;
     }
@@ -120,7 +125,10 @@ public class PostgresqlUserForList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

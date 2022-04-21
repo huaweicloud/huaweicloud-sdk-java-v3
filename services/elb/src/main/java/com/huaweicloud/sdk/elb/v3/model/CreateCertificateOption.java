@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建证书请求参数。 */
+/**
+ * 创建证书请求参数。
+ */
 public class CreateCertificateOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,13 +50,19 @@ public class CreateCertificateOption {
 
     private String projectId;
 
-    /** SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server */
+    /**
+     * SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
+     */
     public static final class TypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final TypeEnum SERVER = new TypeEnum("server");
 
-        /** Enum CLIENT for value: "client" */
+        /**
+         * Enum CLIENT for value: "client"
+         */
         public static final TypeEnum CLIENT = new TypeEnum("client");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +152,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 证书的管理状态。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 证书的管理状态。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -160,9 +169,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的证书内容。 如果type为server_sm时，该字段填写SM签名证书内容。 取值范围：PEM编码格式。
-     * 
-     * @return certificate */
+    /**
+     * HTTPS协议使用的证书内容。 如果type为server_sm时，该字段填写SM签名证书内容。 取值范围：PEM编码格式。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -176,9 +186,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 证书的描述。
-     * 
-     * @return description */
+    /**
+     * 证书的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -192,11 +203,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 服务器证书所签域名。该字段仅type为server或server_sm时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。
-     * 普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；
-     * 泛域名：在普通域名的基础上仅允许首字母为\"\"。例：.test.com
-     * 
-     * @return domain */
+    /**
+     * 服务器证书所签域名。该字段仅type为server或server_sm时有效。  总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\"。例：.test.com
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -210,9 +220,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 证书的名称。
-     * 
-     * @return name */
+    /**
+     * 证书的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -226,9 +237,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的私钥。仅type为server或server_sm时有效。type为server或server_sm时必选。 如果type为server_sm时，该字段填写SM签名证书的私钥。 取值范围：PEM编码格式。
-     * 
-     * @return privateKey */
+    /**
+     * HTTPS协议使用的私钥。仅type为server或server_sm时有效。type为server或server_sm时必选。 如果type为server_sm时，该字段填写SM签名证书的私钥。 取值范围：PEM编码格式。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -242,9 +254,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 证书所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 证书所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -258,9 +271,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
-     * 
-     * @return type */
+    /**
+     * SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -274,9 +288,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** 证书所属的企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 证书所属的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -290,9 +305,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明： - 仅type为server_sm时有效且必选。
-     * 
-     * @return encCertificate */
+    /**
+     * HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效且必选。
+     * @return encCertificate
+     */
     public String getEncCertificate() {
         return encCertificate;
     }
@@ -306,9 +322,10 @@ public class CreateCertificateOption {
         return this;
     }
 
-    /** HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 使用说明： - 仅type为server_sm时有效且必选。
-     * 
-     * @return encPrivateKey */
+    /**
+     * HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效且必选。
+     * @return encPrivateKey
+     */
     public String getEncPrivateKey() {
         return encPrivateKey;
     }
@@ -373,7 +390,10 @@ public class CreateCertificateOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

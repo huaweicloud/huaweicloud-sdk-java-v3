@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 注册的数据库用户信息 */
+/**
+ * 注册的数据库用户信息
+ */
 public class DbUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DbUser {
         return this;
     }
 
-    /** 数据库用户ID
-     * 
-     * @return dbUserId */
+    /**
+     * 数据库用户ID
+     * @return dbUserId
+     */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -39,9 +42,10 @@ public class DbUser {
         return this;
     }
 
-    /** 数据库用户名称
-     * 
-     * @return dbUsername */
+    /**
+     * 数据库用户名称
+     * @return dbUsername
+     */
     public String getDbUsername() {
         return dbUsername;
     }
@@ -77,7 +81,10 @@ public class DbUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

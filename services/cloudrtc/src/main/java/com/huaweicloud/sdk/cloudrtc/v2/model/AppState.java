@@ -10,22 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** app状态信息 */
+/**
+ * app状态信息
+ */
 public class AppState {
 
-    /** 状态 - ACTIVATION：开启 - DEACTIVATION：停用 - ARREARS：欠费 - DELETED：已删除 */
+    /**
+     * 状态 - ACTIVATION：开启 - DEACTIVATION：停用 - ARREARS：欠费 - DELETED：已删除 
+     */
     public static final class StateEnum {
 
-        /** Enum ACTIVATION for value: "ACTIVATION" */
+        /**
+         * Enum ACTIVATION for value: "ACTIVATION"
+         */
         public static final StateEnum ACTIVATION = new StateEnum("ACTIVATION");
 
-        /** Enum DEACTIVATION for value: "DEACTIVATION" */
+        /**
+         * Enum DEACTIVATION for value: "DEACTIVATION"
+         */
         public static final StateEnum DEACTIVATION = new StateEnum("DEACTIVATION");
 
-        /** Enum ARREARS for value: "ARREARS" */
+        /**
+         * Enum ARREARS for value: "ARREARS"
+         */
         public static final StateEnum ARREARS = new StateEnum("ARREARS");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StateEnum DELETED = new StateEnum("DELETED");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +119,10 @@ public class AppState {
         return this;
     }
 
-    /** 状态 - ACTIVATION：开启 - DEACTIVATION：停用 - ARREARS：欠费 - DELETED：已删除
-     * 
-     * @return state */
+    /**
+     * 状态 - ACTIVATION：开启 - DEACTIVATION：停用 - ARREARS：欠费 - DELETED：已删除 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -123,9 +136,10 @@ public class AppState {
         return this;
     }
 
-    /** app鉴权的更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return updateTime */
+    /**
+     * app鉴权的更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -161,7 +175,10 @@ public class AppState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

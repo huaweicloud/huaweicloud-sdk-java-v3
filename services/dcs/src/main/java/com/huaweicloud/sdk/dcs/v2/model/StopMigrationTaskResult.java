@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** StopMigrationTaskResult */
+/**
+ * StopMigrationTaskResult
+ */
 public class StopMigrationTaskResult {
 
-    /** 下发停止迁移任务操作结果。 */
+    /**
+     * 下发停止迁移任务操作结果。
+     */
     public static final class ResultEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final ResultEnum SUCCESS = new ResultEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final ResultEnum FAILED = new ResultEnum("failed");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class StopMigrationTaskResult {
         return this;
     }
 
-    /** 下发停止迁移任务操作结果。
-     * 
-     * @return result */
+    /**
+     * 下发停止迁移任务操作结果。
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -115,9 +124,10 @@ public class StopMigrationTaskResult {
         return this;
     }
 
-    /** 数据迁移任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 数据迁移任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -154,7 +164,10 @@ public class StopMigrationTaskResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

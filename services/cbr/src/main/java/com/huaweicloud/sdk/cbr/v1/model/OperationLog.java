@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OperationLog */
+/**
+ * OperationLog
+ */
 public class OperationLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,31 +46,49 @@ public class OperationLog {
 
     private String id;
 
-    /** 任务类型 */
+    /**
+     * 任务类型
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
 
-        /** Enum COPY for value: "copy" */
+        /**
+         * Enum COPY for value: "copy"
+         */
         public static final OperationTypeEnum COPY = new OperationTypeEnum("copy");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
 
-        /** Enum RESTORE for value: "restore" */
+        /**
+         * Enum RESTORE for value: "restore"
+         */
         public static final OperationTypeEnum RESTORE = new OperationTypeEnum("restore");
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final OperationTypeEnum DELETE = new OperationTypeEnum("delete");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final OperationTypeEnum SYNC = new OperationTypeEnum("sync");
 
-        /** Enum VAULT_DELETE for value: "vault_delete" */
+        /**
+         * Enum VAULT_DELETE for value: "vault_delete"
+         */
         public static final OperationTypeEnum VAULT_DELETE = new OperationTypeEnum("vault_delete");
 
-        /** Enum REMOVE_RESOURCE for value: "remove_resource" */
+        /**
+         * Enum REMOVE_RESOURCE for value: "remove_resource"
+         */
         public static final OperationTypeEnum REMOVE_RESOURCE = new OperationTypeEnum("remove_resource");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -164,25 +184,39 @@ public class OperationLog {
 
     private String startedAt;
 
-    /** 任务状态 */
+    /**
+     * 任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum SKIPPED for value: "skipped" */
+        /**
+         * Enum SKIPPED for value: "skipped"
+         */
         public static final StatusEnum SKIPPED = new StatusEnum("skipped");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum TIMEOUT for value: "timeout" */
+        /**
+         * Enum TIMEOUT for value: "timeout"
+         */
         public static final StatusEnum TIMEOUT = new StatusEnum("timeout");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -276,9 +310,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 备份记录id
-     * 
-     * @return checkpointId */
+    /**
+     * 备份记录id
+     * @return checkpointId
+     */
     public String getCheckpointId() {
         return checkpointId;
     }
@@ -292,9 +327,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 创建时间,例如: \"2020-02-23T01:00:32Z\"
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间,例如: \"2020-02-23T01:00:32Z\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -308,9 +344,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务结束时间,例如: \"2020-02-23T01:00:32Z\"
-     * 
-     * @return endedAt */
+    /**
+     * 任务结束时间,例如: \"2020-02-23T01:00:32Z\"
+     * @return endedAt
+     */
     public String getEndedAt() {
         return endedAt;
     }
@@ -333,9 +370,10 @@ public class OperationLog {
         return this;
     }
 
-    /** Get errorInfo
-     * 
-     * @return errorInfo */
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
     public OpErrorInfo getErrorInfo() {
         return errorInfo;
     }
@@ -358,9 +396,10 @@ public class OperationLog {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public OpExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -374,9 +413,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -390,9 +430,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务类型
-     * 
-     * @return operationType */
+    /**
+     * 任务类型
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -406,9 +447,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 策略ID
-     * 
-     * @return policyId */
+    /**
+     * 策略ID
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -422,9 +464,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -438,9 +481,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 备份提供商ID。用于区分备份对象。
-     * 
-     * @return providerId */
+    /**
+     * 备份提供商ID。用于区分备份对象。
+     * @return providerId
+     */
     public String getProviderId() {
         return providerId;
     }
@@ -454,9 +498,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务开始时间,例如: \"2020-02-23T01:00:32Z\"
-     * 
-     * @return startedAt */
+    /**
+     * 任务开始时间,例如: \"2020-02-23T01:00:32Z\"
+     * @return startedAt
+     */
     public String getStartedAt() {
         return startedAt;
     }
@@ -470,9 +515,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -486,9 +532,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 修改时间,例如: \"2020-02-23T01:00:32Z\"
-     * 
-     * @return updatedAt */
+    /**
+     * 修改时间,例如: \"2020-02-23T01:00:32Z\"
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -502,9 +549,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务操作资源所属存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 任务操作资源所属存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -518,9 +566,10 @@ public class OperationLog {
         return this;
     }
 
-    /** 任务操作资源所属存储库名称
-     * 
-     * @return vaultName */
+    /**
+     * 任务操作资源所属存储库名称
+     * @return vaultName
+     */
     public String getVaultName() {
         return vaultName;
     }
@@ -596,7 +645,10 @@ public class OperationLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NeutronListFirewallGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -67,9 +70,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -99,9 +103,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 使用id过滤网络ACL组
-     * 
-     * @return id */
+    /**
+     * 使用id过滤网络ACL组
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -131,9 +136,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 使用name过滤ACL组
-     * 
-     * @return name */
+    /**
+     * 使用name过滤ACL组
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -163,9 +169,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 使用description过滤ACL组
-     * 
-     * @return description */
+    /**
+     * 使用description过滤ACL组
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -179,9 +186,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 使用入方向的网络ACL策略ID过滤网络ACL组
-     * 
-     * @return ingressFirewallPolicyId */
+    /**
+     * 使用入方向的网络ACL策略ID过滤网络ACL组
+     * @return ingressFirewallPolicyId
+     */
     public String getIngressFirewallPolicyId() {
         return ingressFirewallPolicyId;
     }
@@ -195,9 +203,10 @@ public class NeutronListFirewallGroupsRequest {
         return this;
     }
 
-    /** 使用出方向的网络ACL策略过滤查询网络ACL组
-     * 
-     * @return egressFirewallPolicyId */
+    /**
+     * 使用出方向的网络ACL策略过滤查询网络ACL组
+     * @return egressFirewallPolicyId
+     */
     public String getEgressFirewallPolicyId() {
         return egressFirewallPolicyId;
     }
@@ -244,7 +253,10 @@ public class NeutronListFirewallGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

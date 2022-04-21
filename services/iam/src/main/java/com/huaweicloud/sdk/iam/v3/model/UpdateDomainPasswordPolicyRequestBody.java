@@ -31,9 +31,10 @@ public class UpdateDomainPasswordPolicyRequestBody {
         return this;
     }
 
-    /** Get passwordPolicy
-     * 
-     * @return passwordPolicy */
+    /**
+     * Get passwordPolicy
+     * @return passwordPolicy
+     */
     public PasswordPolicyOption getPasswordPolicy() {
         return passwordPolicy;
     }
@@ -69,7 +70,10 @@ public class UpdateDomainPasswordPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

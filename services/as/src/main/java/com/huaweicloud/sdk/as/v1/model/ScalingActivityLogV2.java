@@ -14,19 +14,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 伸缩活动日志列表。 */
+/**
+ * 伸缩活动日志列表。
+ */
 public class ScalingActivityLogV2 {
 
-    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。 */
+    /**
+     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum DING for value: "DING" */
+        /**
+         * Enum DING for value: "DING"
+         */
         public static final StatusEnum DING = new StatusEnum("DING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -187,9 +197,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
-     * 
-     * @return status */
+    /**
+     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -203,9 +214,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动触发时间，遵循UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 伸缩活动触发时间，遵循UTC时间。
+     * @return startTime
+     */
     public OffsetDateTime getStartTime() {
         return startTime;
     }
@@ -219,9 +231,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动结束时间，遵循UTC时间。
-     * 
-     * @return endTime */
+    /**
+     * 伸缩活动结束时间，遵循UTC时间。
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -235,9 +248,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动日志ID。
-     * 
-     * @return id */
+    /**
+     * 伸缩活动日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -267,9 +281,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务信息之间以逗号分隔。
-     * 
-     * @return instanceRemovedList */
+    /**
+     * 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务信息之间以逗号分隔。
+     * @return instanceRemovedList
+     */
     public List<ScalingInstance> getInstanceRemovedList() {
         return instanceRemovedList;
     }
@@ -299,9 +314,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器信息之间以逗号分隔。
-     * 
-     * @return instanceDeletedList */
+    /**
+     * 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器信息之间以逗号分隔。
+     * @return instanceDeletedList
+     */
     public List<ScalingInstance> getInstanceDeletedList() {
         return instanceDeletedList;
     }
@@ -331,9 +347,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器信息之间以逗号分割。
-     * 
-     * @return instanceAddedList */
+    /**
+     * 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器信息之间以逗号分割。
+     * @return instanceAddedList
+     */
     public List<ScalingInstance> getInstanceAddedList() {
         return instanceAddedList;
     }
@@ -363,9 +380,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 弹性伸缩组中伸缩活动失败的云服务器列表。
-     * 
-     * @return instanceFailedList */
+    /**
+     * 弹性伸缩组中伸缩活动失败的云服务器列表。
+     * @return instanceFailedList
+     */
     public List<ScalingInstance> getInstanceFailedList() {
         return instanceFailedList;
     }
@@ -395,9 +413,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 完成伸缩活动且被转入/移出备用状态的云服务器列表
-     * 
-     * @return instanceStandbyList */
+    /**
+     * 完成伸缩活动且被转入/移出备用状态的云服务器列表
+     * @return instanceStandbyList
+     */
     public List<ScalingInstance> getInstanceStandbyList() {
         return instanceStandbyList;
     }
@@ -411,9 +430,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动中变化（增加或减少）的云服务器数量。
-     * 
-     * @return scalingValue */
+    /**
+     * 伸缩活动中变化（增加或减少）的云服务器数量。
+     * @return scalingValue
+     */
     public String getScalingValue() {
         return scalingValue;
     }
@@ -427,9 +447,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动的描述信息。
-     * 
-     * @return description */
+    /**
+     * 伸缩活动的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -443,9 +464,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩组当前instance值。
-     * 
-     * @return instanceValue */
+    /**
+     * 伸缩组当前instance值。
+     * @return instanceValue
+     */
     public Integer getInstanceValue() {
         return instanceValue;
     }
@@ -459,9 +481,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩活动最终desire值。
-     * 
-     * @return desireValue */
+    /**
+     * 伸缩活动最终desire值。
+     * @return desireValue
+     */
     public Integer getDesireValue() {
         return desireValue;
     }
@@ -491,9 +514,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 绑定成功的负载均衡器列表。
-     * 
-     * @return lbBindSuccessList */
+    /**
+     * 绑定成功的负载均衡器列表。
+     * @return lbBindSuccessList
+     */
     public List<ModifyLb> getLbBindSuccessList() {
         return lbBindSuccessList;
     }
@@ -523,9 +547,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 绑定失败的负载均衡器列表。
-     * 
-     * @return lbBindFailedList */
+    /**
+     * 绑定失败的负载均衡器列表。
+     * @return lbBindFailedList
+     */
     public List<ModifyLb> getLbBindFailedList() {
         return lbBindFailedList;
     }
@@ -555,9 +580,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 解绑成功的负载均衡器列表。
-     * 
-     * @return lbUnbindSuccessList */
+    /**
+     * 解绑成功的负载均衡器列表。
+     * @return lbUnbindSuccessList
+     */
     public List<ModifyLb> getLbUnbindSuccessList() {
         return lbUnbindSuccessList;
     }
@@ -587,9 +613,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 解绑失败的负载均衡器列表。
-     * 
-     * @return lbUnbindFailedList */
+    /**
+     * 解绑失败的负载均衡器列表。
+     * @return lbUnbindFailedList
+     */
     public List<ModifyLb> getLbUnbindFailedList() {
         return lbUnbindFailedList;
     }
@@ -603,9 +630,10 @@ public class ScalingActivityLogV2 {
         return this;
     }
 
-    /** 伸缩组活动类型
-     * 
-     * @return type */
+    /**
+     * 伸缩组活动类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -691,7 +719,10 @@ public class ScalingActivityLogV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

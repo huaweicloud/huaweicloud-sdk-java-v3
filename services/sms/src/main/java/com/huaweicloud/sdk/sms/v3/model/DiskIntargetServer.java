@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 目的端服务器关联磁盘 */
+/**
+ * 目的端服务器关联磁盘
+ */
 public class DiskIntargetServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class DiskIntargetServer {
 
     private Long size;
 
-    /** 磁盘的作用 */
+    /**
+     * 磁盘的作用 
+     */
     public static final class DeviceUseEnum {
 
-        /** Enum BOOT for value: "BOOT" */
+        /**
+         * Enum BOOT for value: "BOOT"
+         */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
 
-        /** Enum OS for value: "OS" */
+        /**
+         * Enum OS for value: "OS"
+         */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class DiskIntargetServer {
         return this;
     }
 
-    /** 磁盘名称
-     * 
-     * @return name */
+    /**
+     * 磁盘名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,9 +135,12 @@ public class DiskIntargetServer {
         return this;
     }
 
-    /** 磁盘大小，单位：字节 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 磁盘大小，单位：字节
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -140,9 +154,10 @@ public class DiskIntargetServer {
         return this;
     }
 
-    /** 磁盘的作用
-     * 
-     * @return deviceUse */
+    /**
+     * 磁盘的作用 
+     * @return deviceUse
+     */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -180,7 +195,10 @@ public class DiskIntargetServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

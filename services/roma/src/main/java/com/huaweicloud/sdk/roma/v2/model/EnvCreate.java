@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EnvCreate */
+/**
+ * EnvCreate
+ */
 public class EnvCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class EnvCreate {
         return this;
     }
 
-    /** 环境的名称，支持英文，数字，下划线，且只能以英文字母开头。
-     * 
-     * @return name */
+    /**
+     * 环境的名称，支持英文，数字，下划线，且只能以英文字母开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class EnvCreate {
         return this;
     }
 
-    /** 描述信息 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述信息 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -77,7 +81,10 @@ public class EnvCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

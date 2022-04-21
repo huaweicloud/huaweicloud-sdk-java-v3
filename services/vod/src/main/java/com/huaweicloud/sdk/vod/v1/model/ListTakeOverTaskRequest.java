@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTakeOverTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -59,9 +62,10 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -77,9 +81,10 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return status */
+    /**
+     * 任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -93,9 +98,10 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -109,9 +115,11 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 分页编号，默认为0。 minimum: 0
-     * 
-     * @return page */
+    /**
+     * 分页编号，默认为0。
+     * minimum: 0
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -125,9 +133,12 @@ public class ListTakeOverTaskRequest {
         return this;
     }
 
-    /** 每页记录数。 默认10，范围[1,100]，指定task_id时该参数无效。 minimum: 1 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 每页记录数。  默认10，范围[1,100]，指定task_id时该参数无效。
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -172,7 +183,10 @@ public class ListTakeOverTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

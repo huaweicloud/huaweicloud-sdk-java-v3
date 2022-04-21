@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowResourceRelationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ShowResourceRelationsRequest {
 
     private String resourceId;
 
-    /** 资源关系的指向 */
+    /**
+     * 资源关系的指向
+     */
     public static final class DirectionEnum {
 
-        /** Enum IN for value: "in" */
+        /**
+         * Enum IN for value: "in"
+         */
         public static final DirectionEnum IN = new DirectionEnum("in");
 
-        /** Enum OUT for value: "out" */
+        /**
+         * Enum OUT for value: "out"
+         */
         public static final DirectionEnum OUT = new DirectionEnum("out");
 
         private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ShowResourceRelationsRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -125,9 +134,10 @@ public class ShowResourceRelationsRequest {
         return this;
     }
 
-    /** 资源关系的指向
-     * 
-     * @return direction */
+    /**
+     * 资源关系的指向
+     * @return direction
+     */
     public DirectionEnum getDirection() {
         return direction;
     }
@@ -141,9 +151,12 @@ public class ShowResourceRelationsRequest {
         return this;
     }
 
-    /** 最大的返回数量 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 最大的返回数量
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -157,9 +170,10 @@ public class ShowResourceRelationsRequest {
         return this;
     }
 
-    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * 
-     * @return marker */
+    /**
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -200,7 +214,10 @@ public class ShowResourceRelationsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

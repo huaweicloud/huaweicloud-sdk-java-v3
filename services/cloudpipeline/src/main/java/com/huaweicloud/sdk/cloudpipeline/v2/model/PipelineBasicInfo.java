@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PipelineBasicInfo */
+/**
+ * PipelineBasicInfo
+ */
 public class PipelineBasicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** devCloud项目id
-     * 
-     * @return projectId */
+    /**
+     * devCloud项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -84,9 +87,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** devCloud项目名字
-     * 
-     * @return projectName */
+    /**
+     * devCloud项目名字
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -100,9 +104,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线id
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线id
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -116,9 +121,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线名字
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名字
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -132,9 +138,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线创建人id
-     * 
-     * @return creatorId */
+    /**
+     * 流水线创建人id
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -148,9 +155,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线创建人名字
-     * 
-     * @return creatorName */
+    /**
+     * 流水线创建人名字
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -164,9 +172,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线创建人id
-     * 
-     * @return executorId */
+    /**
+     * 流水线创建人id
+     * @return executorId
+     */
     public String getExecutorId() {
         return executorId;
     }
@@ -180,9 +189,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 流水线执行人名字
-     * 
-     * @return executorName */
+    /**
+     * 流水线执行人名字
+     * @return executorName
+     */
     public String getExecutorName() {
         return executorName;
     }
@@ -196,9 +206,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 启动时间
-     * 
-     * @return startTime */
+    /**
+     * 启动时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -212,9 +223,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -228,9 +240,10 @@ public class PipelineBasicInfo {
         return this;
     }
 
-    /** 用户是否关注流水线：true（关注），false（未关注）
-     * 
-     * @return watched */
+    /**
+     * 用户是否关注流水线：true（关注），false（未关注）
+     * @return watched
+     */
     public String getWatched() {
         return watched;
     }
@@ -295,7 +308,10 @@ public class PipelineBasicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

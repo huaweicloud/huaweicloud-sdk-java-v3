@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** API的url地址 */
+/**
+ * API的url地址
+ */
 public class Link {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Link {
         return this;
     }
 
-    /** 当前API版本的引用地址。
-     * 
-     * @return href */
+    /**
+     * 当前API版本的引用地址。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -44,9 +47,10 @@ public class Link {
         return this;
     }
 
-    /** 发送的实体的MIME类型，取值为application/json。
-     * 
-     * @return type */
+    /**
+     * 发送的实体的MIME类型，取值为application/json。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -60,9 +64,10 @@ public class Link {
         return this;
     }
 
-    /** 当前API版本和被引用地址的关系。
-     * 
-     * @return rel */
+    /**
+     * 当前API版本和被引用地址的关系。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -100,7 +105,10 @@ public class Link {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

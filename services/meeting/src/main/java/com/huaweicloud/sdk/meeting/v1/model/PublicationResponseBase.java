@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 发布响应信息 */
+/**
+ * 发布响应信息
+ */
 public class PublicationResponseBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,16 +55,24 @@ public class PublicationResponseBase {
 
     private Long endTime;
 
-    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线 */
+    /**
+     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     */
     public static final class PublishStatusEnum {
 
-        /** Enum NOT_ONLINE for value: "NOT_ONLINE" */
+        /**
+         * Enum NOT_ONLINE for value: "NOT_ONLINE"
+         */
         public static final PublishStatusEnum NOT_ONLINE = new PublishStatusEnum("NOT_ONLINE");
 
-        /** Enum PUBLISHING for value: "PUBLISHING" */
+        /**
+         * Enum PUBLISHING for value: "PUBLISHING"
+         */
         public static final PublishStatusEnum PUBLISHING = new PublishStatusEnum("PUBLISHING");
 
-        /** Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE" */
+        /**
+         * Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE"
+         */
         public static final PublishStatusEnum ALREADY_OFFLINE = new PublishStatusEnum("ALREADY_OFFLINE");
 
         private static final Map<String, PublishStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +148,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 发布ID
-     * 
-     * @return id */
+    /**
+     * 发布ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -154,9 +165,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 更新者
-     * 
-     * @return lastUpdatedBy */
+    /**
+     * 更新者
+     * @return lastUpdatedBy
+     */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -170,9 +182,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -186,9 +199,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -202,9 +216,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 发布名称
-     * 
-     * @return publishName */
+    /**
+     * 发布名称
+     * @return publishName
+     */
     public String getPublishName() {
         return publishName;
     }
@@ -218,9 +233,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 发布范围
-     * 
-     * @return publishScope */
+    /**
+     * 发布范围
+     * @return publishScope
+     */
     public String getPublishScope() {
         return publishScope;
     }
@@ -234,9 +250,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -250,9 +267,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -266,9 +284,10 @@ public class PublicationResponseBase {
         return this;
     }
 
-    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
-     * 
-     * @return publishStatus */
+    /**
+     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * @return publishStatus
+     */
     public PublishStatusEnum getPublishStatus() {
         return publishStatus;
     }
@@ -327,7 +346,10 @@ public class PublicationResponseBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

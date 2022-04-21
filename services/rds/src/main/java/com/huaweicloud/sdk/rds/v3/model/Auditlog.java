@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 审计日志信息。 */
+/**
+ * 审计日志信息。
+ */
 public class Auditlog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Auditlog {
         return this;
     }
 
-    /** 审计日志ID。
-     * 
-     * @return id */
+    /**
+     * 审计日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class Auditlog {
         return this;
     }
 
-    /** 审计日志文件名。
-     * 
-     * @return name */
+    /**
+     * 审计日志文件名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class Auditlog {
         return this;
     }
 
-    /** 审计日志大小，单位：KB。
-     * 
-     * @return size */
+    /**
+     * 审计日志大小，单位：KB。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -86,9 +91,10 @@ public class Auditlog {
         return this;
     }
 
-    /** 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return beginTime */
+    /**
+     * 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -102,9 +108,10 @@ public class Auditlog {
         return this;
     }
 
-    /** 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return endTime */
+    /**
+     * 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -145,7 +152,10 @@ public class Auditlog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

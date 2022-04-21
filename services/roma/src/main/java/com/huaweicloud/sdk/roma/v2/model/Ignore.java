@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Ignore */
+/**
+ * Ignore
+ */
 public class Ignore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Ignore {
         return this;
     }
 
-    /** API请求方法
-     * 
-     * @return method */
+    /**
+     * API请求方法
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -39,9 +42,10 @@ public class Ignore {
         return this;
     }
 
-    /** API请求路径
-     * 
-     * @return path */
+    /**
+     * API请求路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -77,7 +81,10 @@ public class Ignore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

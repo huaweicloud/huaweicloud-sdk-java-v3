@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 列表文件配置。 */
+/**
+ * 列表文件配置。
+ */
 public class ListFile {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListFile {
         return this;
     }
 
-    /** 对象列表文件或URL列表文件对象名。
-     * 
-     * @return listFileKey */
+    /**
+     * 对象列表文件或URL列表文件对象名。
+     * @return listFileKey
+     */
     public String getListFileKey() {
         return listFileKey;
     }
@@ -39,9 +42,10 @@ public class ListFile {
         return this;
     }
 
-    /** 存放对象列表文件的OBS桶名。 请确保与目的端桶处于同一区域，否则将导致任务创建失败。
-     * 
-     * @return obsBucket */
+    /**
+     * 存放对象列表文件的OBS桶名。  请确保与目的端桶处于同一区域，否则将导致任务创建失败。
+     * @return obsBucket
+     */
     public String getObsBucket() {
         return obsBucket;
     }
@@ -78,7 +82,10 @@ public class ListFile {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

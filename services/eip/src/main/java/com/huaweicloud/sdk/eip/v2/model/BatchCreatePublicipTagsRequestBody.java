@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量操作资源标签的请求体 */
+/**
+ * 批量操作资源标签的请求体
+ */
 public class BatchCreatePublicipTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,10 +23,14 @@ public class BatchCreatePublicipTagsRequestBody {
 
     private List<ResourceTagOption> tags = null;
 
-    /** 操作标识 create：创建 action为create时，tag的value必选 */
+    /**
+    * 操作标识  create：创建  action为create时，tag的value必选
+    */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +120,10 @@ public class BatchCreatePublicipTagsRequestBody {
         return this;
     }
 
-    /** 标签列表
-     * 
-     * @return tags */
+    /**
+     * 标签列表
+     * @return tags
+     */
     public List<ResourceTagOption> getTags() {
         return tags;
     }
@@ -130,9 +137,10 @@ public class BatchCreatePublicipTagsRequestBody {
         return this;
     }
 
-    /** 操作标识 create：创建 action为create时，tag的value必选
-     * 
-     * @return action */
+    /**
+     * 操作标识  create：创建  action为create时，tag的value必选
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -169,7 +177,10 @@ public class BatchCreatePublicipTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建公网NAT网关实例的请求体。 */
+/**
+ * 创建公网NAT网关实例的请求体。
+ */
 public class CreateNatGatewayOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,19 +35,29 @@ public class CreateNatGatewayOption {
 
     private String description;
 
-    /** 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 */
+    /**
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     */
     public static final class SpecEnum {
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final SpecEnum _1 = new SpecEnum("1");
 
-        /** Enum _2 for value: "2" */
+        /**
+         * Enum _2 for value: "2"
+         */
         public static final SpecEnum _2 = new SpecEnum("2");
 
-        /** Enum _3 for value: "3" */
+        /**
+         * Enum _3 for value: "3"
+         */
         public static final SpecEnum _3 = new SpecEnum("3");
 
-        /** Enum _4 for value: "4" */
+        /**
+         * Enum _4 for value: "4"
+         */
         public static final SpecEnum _4 = new SpecEnum("4");
 
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +139,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。
-     * 
-     * @return name */
+    /**
+     * 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -143,9 +156,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** VPC的id。
-     * 
-     * @return routerId */
+    /**
+     * VPC的id。
+     * @return routerId
+     */
     public String getRouterId() {
         return routerId;
     }
@@ -159,9 +173,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关下行口（DVR的下一跳）所属的network id。
-     * 
-     * @return internalNetworkId */
+    /**
+     * 公网NAT网关下行口（DVR的下一跳）所属的network id。
+     * @return internalNetworkId
+     */
     public String getInternalNetworkId() {
         return internalNetworkId;
     }
@@ -175,9 +190,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关实例的描述，长度限制为255。
-     * 
-     * @return description */
+    /**
+     * 公网NAT网关实例的描述，长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -191,9 +207,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000
-     * 
-     * @return spec */
+    /**
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     * @return spec
+     */
     public SpecEnum getSpec() {
         return spec;
     }
@@ -207,9 +224,10 @@ public class CreateNatGatewayOption {
         return this;
     }
 
-    /** 企业项目ID 创建公网NAT网关实例时，关联的企业项目ID。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID 创建公网NAT网关实例时，关联的企业项目ID。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -254,7 +272,10 @@ public class CreateNatGatewayOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** TasksObject */
+/**
+ * TasksObject
+ */
 public class TasksObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class TasksObject {
 
     private String id;
 
-    /** 任务的类型， 其值可以为refresh或preheating。 */
+    /**
+     * 任务的类型， 其值可以为refresh或preheating。
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum REFRESH for value: "refresh" */
+        /**
+         * Enum REFRESH for value: "refresh"
+         */
         public static final TaskTypeEnum REFRESH = new TaskTypeEnum("refresh");
 
-        /** Enum PREHEATING for value: "preheating" */
+        /**
+         * Enum PREHEATING for value: "preheating"
+         */
         public static final TaskTypeEnum PREHEATING = new TaskTypeEnum("preheating");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,13 +132,19 @@ public class TasksObject {
 
     private Long createTime;
 
-    /** 默认是文件file。file：文件,directory：目录。 */
+    /**
+     * 默认是文件file。file：文件,directory：目录。
+     */
     public static final class FileTypeEnum {
 
-        /** Enum FILE for value: "file" */
+        /**
+         * Enum FILE for value: "file"
+         */
         public static final FileTypeEnum FILE = new FileTypeEnum("file");
 
-        /** Enum DIRECTORY for value: "directory" */
+        /**
+         * Enum DIRECTORY for value: "directory"
+         */
         public static final FileTypeEnum DIRECTORY = new FileTypeEnum("directory");
 
         private static final Map<String, FileTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -205,9 +219,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return id */
+    /**
+     * 任务id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -221,9 +236,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 任务的类型， 其值可以为refresh或preheating。
-     * 
-     * @return taskType */
+    /**
+     * 任务的类型， 其值可以为refresh或preheating。
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -237,9 +253,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 刷新结果。task_done表示刷新成功 ，task_inprocess表示刷新中。
-     * 
-     * @return status */
+    /**
+     * 刷新结果。task_done表示刷新成功  ，task_inprocess表示刷新中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -253,9 +270,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 处理中的url个数。
-     * 
-     * @return processing */
+    /**
+     * 处理中的url个数。
+     * @return processing
+     */
     public Integer getProcessing() {
         return processing;
     }
@@ -269,9 +287,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 成功处理的url个数。
-     * 
-     * @return succeed */
+    /**
+     * 成功处理的url个数。
+     * @return succeed
+     */
     public Integer getSucceed() {
         return succeed;
     }
@@ -285,9 +304,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 处理失败的url个数。
-     * 
-     * @return failed */
+    /**
+     * 处理失败的url个数。
+     * @return failed
+     */
     public Integer getFailed() {
         return failed;
     }
@@ -301,9 +321,10 @@ public class TasksObject {
         return this;
     }
 
-    /** url总数。
-     * 
-     * @return total */
+    /**
+     * url总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -317,9 +338,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 任务的创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return createTime */
+    /**
+     * 任务的创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -333,9 +355,10 @@ public class TasksObject {
         return this;
     }
 
-    /** 默认是文件file。file：文件,directory：目录。
-     * 
-     * @return fileType */
+    /**
+     * 默认是文件file。file：文件,directory：目录。
+     * @return fileType
+     */
     public FileTypeEnum getFileType() {
         return fileType;
     }
@@ -383,7 +406,10 @@ public class TasksObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

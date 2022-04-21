@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TranscodeSpecCount */
+/**
+ * TranscodeSpecCount
+ */
 public class TranscodeSpecCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,11 +25,10 @@ public class TranscodeSpecCount {
         return this;
     }
 
-    /** 转码规格，具体格式如下： - 若未开启高清低码，则格式为：编码格式_分辨率档位。 - 若已开启高清低码，则格式为：编码格式_PVC_分辨率档位。 其中，编码格式包括H264、H265，分辨率档位包括： - 4K：3840 x
-     * 2160及以下 - 2K：2560 x 1440及以下 - FHD：1920 x 1080及以下 - HD：1280 x 720及以下 - SD：640 x 480及以下
-     * 示例：若编码格式为H264，分辨率档位为FHD，则转码规格为H264_FHD。
-     * 
-     * @return type */
+    /**
+     * 转码规格，具体格式如下： - 若未开启高清低码，则格式为：编码格式_分辨率档位。 - 若已开启高清低码，则格式为：编码格式_PVC_分辨率档位。  其中，编码格式包括H264、H265，分辨率档位包括： - 4K：3840 x 2160及以下 - 2K：2560 x 1440及以下 - FHD：1920 x 1080及以下 - HD：1280 x 720及以下 - SD：640 x 480及以下  示例：若编码格式为H264，分辨率档位为FHD，则转码规格为H264_FHD。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -41,9 +42,12 @@ public class TranscodeSpecCount {
         return this;
     }
 
-    /** 采样时间点转码任务数。 minimum: 0 maximum: 1844674407
-     * 
-     * @return count */
+    /**
+     * 采样时间点转码任务数。
+     * minimum: 0
+     * maximum: 1844674407
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -80,7 +84,10 @@ public class TranscodeSpecCount {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

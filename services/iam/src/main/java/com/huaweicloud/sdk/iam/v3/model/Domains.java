@@ -41,9 +41,10 @@ public class Domains {
         return this;
     }
 
-    /** 是否启用账号，true为启用，false为停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * 是否启用账号，true为启用，false为停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -57,9 +58,10 @@ public class Domains {
         return this;
     }
 
-    /** 账号ID。
-     * 
-     * @return id */
+    /**
+     * 账号ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -73,9 +75,10 @@ public class Domains {
         return this;
     }
 
-    /** 账号名。
-     * 
-     * @return name */
+    /**
+     * 账号名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -98,9 +101,10 @@ public class Domains {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -114,9 +118,10 @@ public class Domains {
         return this;
     }
 
-    /** 账号的描述信息。
-     * 
-     * @return description */
+    /**
+     * 账号的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -157,7 +162,10 @@ public class Domains {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

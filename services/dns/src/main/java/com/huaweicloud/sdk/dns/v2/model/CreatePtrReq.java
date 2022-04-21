@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreatePtrReq */
+/**
+ * CreatePtrReq
+ */
 public class CreatePtrReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreatePtrReq {
         return this;
     }
 
-    /** PTR记录对应的域名。
-     * 
-     * @return ptrdname */
+    /**
+     * PTR记录对应的域名。
+     * @return ptrdname
+     */
     public String getPtrdname() {
         return ptrdname;
     }
@@ -57,9 +60,10 @@ public class CreatePtrReq {
         return this;
     }
 
-    /** 对PTR记录的描述。
-     * 
-     * @return description */
+    /**
+     * 对PTR记录的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -73,9 +77,10 @@ public class CreatePtrReq {
         return this;
     }
 
-    /** PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
-     * 
-     * @return ttl */
+    /**
+     * PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -89,9 +94,10 @@ public class CreatePtrReq {
         return this;
     }
 
-    /** 反向解析关联的企业项目ID，长度不超过36个字符。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 反向解析关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -121,9 +127,10 @@ public class CreatePtrReq {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -165,7 +172,10 @@ public class CreatePtrReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

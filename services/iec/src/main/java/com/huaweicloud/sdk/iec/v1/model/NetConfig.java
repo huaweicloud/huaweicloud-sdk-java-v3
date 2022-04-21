@@ -25,9 +25,10 @@ public class NetConfig {
         return this;
     }
 
-    /** 边缘网络ID。 约束： - 创建边缘业务仅支持使用系统规划的虚拟私有云。
-     * 
-     * @return vpcId */
+    /**
+     * 边缘网络ID。  约束： - 创建边缘业务仅支持使用系统规划的虚拟私有云。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -41,9 +42,12 @@ public class NetConfig {
         return this;
     }
 
-    /** 边缘实例绑定的网卡数量。 约束：一台边缘实例最少绑定一张网卡，最多绑定8张网卡。 minimum: 1 maximum: 8
-     * 
-     * @return nicNum */
+    /**
+     * 边缘实例绑定的网卡数量。  约束：一台边缘实例最少绑定一张网卡，最多绑定8张网卡。
+     * minimum: 1
+     * maximum: 8
+     * @return nicNum
+     */
     public Integer getNicNum() {
         return nicNum;
     }
@@ -79,7 +83,10 @@ public class NetConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

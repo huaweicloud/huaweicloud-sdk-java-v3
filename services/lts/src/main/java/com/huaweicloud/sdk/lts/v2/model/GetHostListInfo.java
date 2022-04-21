@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 主机详细信息 */
+/**
+ * 主机详细信息
+ */
 public class GetHostListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,51 +30,79 @@ public class GetHostListInfo {
 
     private String hostName;
 
-    /** 主机状态。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败
-     * upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中
-     * uninstalling-transient:卸载中 authentication error:鉴权失败 */
+    /**
+     * 主机状态。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
+     */
     public static final class HostStatusEnum {
 
-        /** Enum UNINSTALL for value: "uninstall" */
+        /**
+         * Enum UNINSTALL for value: "uninstall"
+         */
         public static final HostStatusEnum UNINSTALL = new HostStatusEnum("uninstall");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final HostStatusEnum RUNNING = new HostStatusEnum("running");
 
-        /** Enum OFFLINE for value: "offline" */
+        /**
+         * Enum OFFLINE for value: "offline"
+         */
         public static final HostStatusEnum OFFLINE = new HostStatusEnum("offline");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final HostStatusEnum ERROR = new HostStatusEnum("error");
 
-        /** Enum PLUGIN_ERROR for value: "plugin error" */
+        /**
+         * Enum PLUGIN_ERROR for value: "plugin error"
+         */
         public static final HostStatusEnum PLUGIN_ERROR = new HostStatusEnum("plugin error");
 
-        /** Enum INSTALLING for value: "installing" */
+        /**
+         * Enum INSTALLING for value: "installing"
+         */
         public static final HostStatusEnum INSTALLING = new HostStatusEnum("installing");
 
-        /** Enum INSTALL_FAIL for value: "install-fail" */
+        /**
+         * Enum INSTALL_FAIL for value: "install-fail"
+         */
         public static final HostStatusEnum INSTALL_FAIL = new HostStatusEnum("install-fail");
 
-        /** Enum UPGRADING for value: "upgrading" */
+        /**
+         * Enum UPGRADING for value: "upgrading"
+         */
         public static final HostStatusEnum UPGRADING = new HostStatusEnum("upgrading");
 
-        /** Enum UPGRADING_TRANSIENT for value: "upgrading-transient" */
+        /**
+         * Enum UPGRADING_TRANSIENT for value: "upgrading-transient"
+         */
         public static final HostStatusEnum UPGRADING_TRANSIENT = new HostStatusEnum("upgrading-transient");
 
-        /** Enum UPGRADE_FAILED for value: "upgrade failed" */
+        /**
+         * Enum UPGRADE_FAILED for value: "upgrade failed"
+         */
         public static final HostStatusEnum UPGRADE_FAILED = new HostStatusEnum("upgrade failed");
 
-        /** Enum UPGRADE_FAIL for value: "upgrade-fail" */
+        /**
+         * Enum UPGRADE_FAIL for value: "upgrade-fail"
+         */
         public static final HostStatusEnum UPGRADE_FAIL = new HostStatusEnum("upgrade-fail");
 
-        /** Enum UNINSTALLING for value: "uninstalling" */
+        /**
+         * Enum UNINSTALLING for value: "uninstalling"
+         */
         public static final HostStatusEnum UNINSTALLING = new HostStatusEnum("uninstalling");
 
-        /** Enum UNINSTALLING_TRANSIENT for value: "uninstalling-transient" */
+        /**
+         * Enum UNINSTALLING_TRANSIENT for value: "uninstalling-transient"
+         */
         public static final HostStatusEnum UNINSTALLING_TRANSIENT = new HostStatusEnum("uninstalling-transient");
 
-        /** Enum AUTHENTICATION_ERROR for value: "authentication error" */
+        /**
+         * Enum AUTHENTICATION_ERROR for value: "authentication error"
+         */
         public static final HostStatusEnum AUTHENTICATION_ERROR = new HostStatusEnum("authentication error");
 
         private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -154,13 +184,19 @@ public class GetHostListInfo {
 
     private HostStatusEnum hostStatus;
 
-    /** 主机类型。linux:linux类型,windows:windows类型 */
+    /**
+     * 主机类型。linux:linux类型,windows:windows类型
+     */
     public static final class HostTypeEnum {
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final HostTypeEnum LINUX = new HostTypeEnum("linux");
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final HostTypeEnum WINDOWS = new HostTypeEnum("windows");
 
         private static final Map<String, HostTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -245,9 +281,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机ID
-     * 
-     * @return hostId */
+    /**
+     * 主机ID
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -261,9 +298,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机IP
-     * 
-     * @return hostIp */
+    /**
+     * 主机IP
+     * @return hostIp
+     */
     public String getHostIp() {
         return hostIp;
     }
@@ -277,9 +315,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机名称
-     * 
-     * @return hostName */
+    /**
+     * 主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -293,11 +332,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机状态。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败
-     * upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中
-     * uninstalling-transient:卸载中 authentication error:鉴权失败
-     * 
-     * @return hostStatus */
+    /**
+     * 主机状态。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
+     * @return hostStatus
+     */
     public HostStatusEnum getHostStatus() {
         return hostStatus;
     }
@@ -311,9 +349,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机类型。linux:linux类型,windows:windows类型
-     * 
-     * @return hostType */
+    /**
+     * 主机类型。linux:linux类型,windows:windows类型
+     * @return hostType
+     */
     public HostTypeEnum getHostType() {
         return hostType;
     }
@@ -327,9 +366,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 主机版本
-     * 
-     * @return hostVersion */
+    /**
+     * 主机版本
+     * @return hostVersion
+     */
     public String getHostVersion() {
         return hostVersion;
     }
@@ -343,9 +383,10 @@ public class GetHostListInfo {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -392,7 +433,10 @@ public class GetHostListInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

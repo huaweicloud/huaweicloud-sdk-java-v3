@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 日志格式 */
+/**
+ * 日志格式
+ */
 public class AccessConfigFormat {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AccessConfigFormat {
         return this;
     }
 
-    /** Get single
-     * 
-     * @return single */
+    /**
+     * Get single
+     * @return single
+     */
     public AccessConfigFormatSingle getSingle() {
         return single;
     }
@@ -58,9 +61,10 @@ public class AccessConfigFormat {
         return this;
     }
 
-    /** Get multi
-     * 
-     * @return multi */
+    /**
+     * Get multi
+     * @return multi
+     */
     public AccessConfigFormatMutil getMulti() {
         return multi;
     }
@@ -97,7 +101,10 @@ public class AccessConfigFormat {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

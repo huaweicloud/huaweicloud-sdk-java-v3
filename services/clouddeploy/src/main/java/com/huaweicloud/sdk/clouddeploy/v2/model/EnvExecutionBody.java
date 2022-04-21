@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署任务启动参数 */
+/**
+ * 部署任务启动参数
+ */
 public class EnvExecutionBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class EnvExecutionBody {
         return this;
     }
 
-    /** 部署任务执行时传递的参数
-     * 
-     * @return params */
+    /**
+     * 部署任务执行时传递的参数
+     * @return params
+     */
     public List<DynamicConfigInfo> getParams() {
         return params;
     }
@@ -58,9 +61,10 @@ public class EnvExecutionBody {
         return this;
     }
 
-    /** 部署任务的执行id，可通过record_id回滚至之前的部署状态。选中部署历史执行记录，在URL中获取。
-     * 
-     * @return recordId */
+    /**
+     * 部署任务的执行id，可通过record_id回滚至之前的部署状态。选中部署历史执行记录，在URL中获取。
+     * @return recordId
+     */
     public String getRecordId() {
         return recordId;
     }
@@ -97,7 +101,10 @@ public class EnvExecutionBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

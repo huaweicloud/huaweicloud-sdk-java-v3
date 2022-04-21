@@ -39,10 +39,10 @@ public class AgencyPolicyResource {
         return this;
     }
 
-    /** 委托资源的URI，长度不超过128。格式为：/iam/agencies/委托ID。例： ``` \"uri\": [\"/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\"]
-     * ```
-     * 
-     * @return uri */
+    /**
+     * 委托资源的URI，长度不超过128。格式为：/iam/agencies/委托ID。例： ``` \"uri\": [\"/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\"] ```
+     * @return uri
+     */
     public List<String> getUri() {
         return uri;
     }
@@ -77,7 +77,10 @@ public class AgencyPolicyResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

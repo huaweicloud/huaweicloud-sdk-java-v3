@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMetadataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** Metadata的ID。
-     * 
-     * @return id */
+    /**
+     * Metadata的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 身份提供商ID。
-     * 
-     * @return idpId */
+    /**
+     * 身份提供商ID。
+     * @return idpId
+     */
     public String getIdpId() {
         return idpId;
     }
@@ -86,9 +90,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** Metadata文件中的entityID字段。
-     * 
-     * @return entityId */
+    /**
+     * Metadata文件中的entityID字段。
+     * @return entityId
+     */
     public String getEntityId() {
         return entityId;
     }
@@ -102,9 +107,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 协议ID。
-     * 
-     * @return protocolId */
+    /**
+     * 协议ID。
+     * @return protocolId
+     */
     public String getProtocolId() {
         return protocolId;
     }
@@ -118,9 +124,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -134,9 +141,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 账号来源，默认为空。
-     * 
-     * @return xaccountType */
+    /**
+     * 账号来源，默认为空。
+     * @return xaccountType
+     */
     public String getXaccountType() {
         return xaccountType;
     }
@@ -150,9 +158,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 导入或更新Metadata文件的时间。
-     * 
-     * @return updateTime */
+    /**
+     * 导入或更新Metadata文件的时间。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -166,9 +175,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** Metadata文件的内容。
-     * 
-     * @return data */
+    /**
+     * Metadata文件的内容。
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -217,7 +227,10 @@ public class ShowMetadataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

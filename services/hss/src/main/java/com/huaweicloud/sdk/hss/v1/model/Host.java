@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Host */
+/**
+ * Host
+ */
 public class Host {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -128,9 +130,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机id
-     * 
-     * @return agentId */
+    /**
+     * 云主机id
+     * @return agentId
+     */
     public String getAgentId() {
         return agentId;
     }
@@ -144,9 +147,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机id
-     * 
-     * @return hostId */
+    /**
+     * 云主机id
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -160,9 +164,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机名称
-     * 
-     * @return hostName */
+    /**
+     * 云主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -176,9 +181,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机私有IP
-     * 
-     * @return hostIp */
+    /**
+     * 云主机私有IP
+     * @return hostIp
+     */
     public String getHostIp() {
         return hostIp;
     }
@@ -192,9 +198,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机公网IP
-     * 
-     * @return publicIp */
+    /**
+     * 云主机公网IP
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -208,9 +215,10 @@ public class Host {
         return this;
     }
 
-    /** 所属企业项目名称
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 所属企业项目名称
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -224,9 +232,10 @@ public class Host {
         return this;
     }
 
-    /** 服务器组名称
-     * 
-     * @return groupName */
+    /**
+     * 服务器组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -240,9 +249,12 @@ public class Host {
         return this;
     }
 
-    /** 服务到期时间 minimum: 0 maximum: 3857960855552
-     * 
-     * @return expireTime */
+    /**
+     * 服务到期时间
+     * minimum: 0
+     * maximum: 3857960855552
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -256,9 +268,10 @@ public class Host {
         return this;
     }
 
-    /** 策略组名称
-     * 
-     * @return policyGroupName */
+    /**
+     * 策略组名称
+     * @return policyGroupName
+     */
     public String getPolicyGroupName() {
         return policyGroupName;
     }
@@ -272,9 +285,10 @@ public class Host {
         return this;
     }
 
-    /** Agent状态，包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。
-     * 
-     * @return hostStatus */
+    /**
+     * Agent状态，包含如下4种。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * @return hostStatus
+     */
     public String getHostStatus() {
         return hostStatus;
     }
@@ -288,9 +302,10 @@ public class Host {
         return this;
     }
 
-    /** Agent状态，包含如下3种。 - uninstall ：未注册。 - online ：在线。 - offline ：离线。
-     * 
-     * @return agentStatus */
+    /**
+     * Agent状态，包含如下3种。   - uninstall ：未注册。   - online ：在线。   - offline ：离线。
+     * @return agentStatus
+     */
     public String getAgentStatus() {
         return agentStatus;
     }
@@ -304,10 +319,10 @@ public class Host {
         return this;
     }
 
-    /** 主机开通的版本，包含如下5种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.enterprise ：企业版。 -
-     * hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。
-     * 
-     * @return version */
+    /**
+     * 主机开通的版本，包含如下5种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -321,9 +336,10 @@ public class Host {
         return this;
     }
 
-    /** 防护状态，包含如下2种。 - closed ：关闭。 - opened ：开启。
-     * 
-     * @return protectStatus */
+    /**
+     * 防护状态，包含如下2种。 - closed ：关闭。 - opened ：开启。
+     * @return protectStatus
+     */
     public String getProtectStatus() {
         return protectStatus;
     }
@@ -337,9 +353,10 @@ public class Host {
         return this;
     }
 
-    /** 系统镜像
-     * 
-     * @return osImage */
+    /**
+     * 系统镜像
+     * @return osImage
+     */
     public String getOsImage() {
         return osImage;
     }
@@ -353,9 +370,10 @@ public class Host {
         return this;
     }
 
-    /** 系统类型
-     * 
-     * @return osType */
+    /**
+     * 系统类型
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -369,9 +387,10 @@ public class Host {
         return this;
     }
 
-    /** 操作系统位数
-     * 
-     * @return osBit */
+    /**
+     * 操作系统位数
+     * @return osBit
+     */
     public String getOsBit() {
         return osBit;
     }
@@ -385,9 +404,10 @@ public class Host {
         return this;
     }
 
-    /** 云主机安全检测结果，包含如下3种。 - undetect ：未检测。 - clean ：无风险。 - risk ：有风险。
-     * 
-     * @return detectResult */
+    /**
+     * 云主机安全检测结果，包含如下3种。 - undetect ：未检测。 - clean ：无风险。 - risk ：有风险。
+     * @return detectResult
+     */
     public String getDetectResult() {
         return detectResult;
     }
@@ -401,9 +421,12 @@ public class Host {
         return this;
     }
 
-    /** 资产风险个数 minimum: 0 maximum: 2097152
-     * 
-     * @return riskPortNum */
+    /**
+     * 资产风险个数
+     * minimum: 0
+     * maximum: 2097152
+     * @return riskPortNum
+     */
     public Integer getRiskPortNum() {
         return riskPortNum;
     }
@@ -417,9 +440,12 @@ public class Host {
         return this;
     }
 
-    /** 漏洞风险个数 minimum: 0 maximum: 2097152
-     * 
-     * @return riskVulNum */
+    /**
+     * 漏洞风险个数
+     * minimum: 0
+     * maximum: 2097152
+     * @return riskVulNum
+     */
     public Integer getRiskVulNum() {
         return riskVulNum;
     }
@@ -433,9 +459,12 @@ public class Host {
         return this;
     }
 
-    /** 入侵风险个数 minimum: 0 maximum: 2097152
-     * 
-     * @return riskIntrusionNum */
+    /**
+     * 入侵风险个数
+     * minimum: 0
+     * maximum: 2097152
+     * @return riskIntrusionNum
+     */
     public Integer getRiskIntrusionNum() {
         return riskIntrusionNum;
     }
@@ -449,9 +478,12 @@ public class Host {
         return this;
     }
 
-    /** 基线风险个数 minimum: 0 maximum: 2097152
-     * 
-     * @return riskBaselineNum */
+    /**
+     * 基线风险个数
+     * minimum: 0
+     * maximum: 2097152
+     * @return riskBaselineNum
+     */
     public Integer getRiskBaselineNum() {
         return riskBaselineNum;
     }
@@ -465,9 +497,10 @@ public class Host {
         return this;
     }
 
-    /** 收费模式，包含如下2种。 - packet_cycle ：包年/包月。 - on_demand ：按需。
-     * 
-     * @return chargingMode */
+    /**
+     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * @return chargingMode
+     */
     public String getChargingMode() {
         return chargingMode;
     }
@@ -481,9 +514,10 @@ public class Host {
         return this;
     }
 
-    /** 云服务资源实例ID（UUID）
-     * 
-     * @return resourceId */
+    /**
+     * 云服务资源实例ID（UUID）
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -575,7 +609,10 @@ public class Host {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 快速通道创建镜像的请求体 */
+/**
+ * 快速通道创建镜像的请求体
+ */
 public class QuickImportImageByFileRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,16 +48,24 @@ public class QuickImportImageByFileRequestBody {
 
     private List<String> tags = null;
 
-    /** 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选. */
+    /**
+    * 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
+    */
     public static final class TypeEnum {
 
-        /** Enum ECS for value: "ECS" */
+        /**
+         * Enum ECS for value: "ECS"
+         */
         public static final TypeEnum ECS = new TypeEnum("ECS");
 
-        /** Enum BMS for value: "BMS" */
+        /**
+         * Enum BMS for value: "BMS"
+         */
         public static final TypeEnum BMS = new TypeEnum("BMS");
 
-        /** Enum DATAIMAGE for value: "DataImage" */
+        /**
+         * Enum DATAIMAGE for value: "DataImage"
+         */
         public static final TypeEnum DATAIMAGE = new TypeEnum("DataImage");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -131,13 +141,19 @@ public class QuickImportImageByFileRequestBody {
 
     private String enterpriseProjectId;
 
-    /** 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 */
+    /**
+     * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
+     */
     public static final class ArchitectureEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
 
         private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
@@ -207,13 +223,19 @@ public class QuickImportImageByFileRequestBody {
 
     private ArchitectureEnum architecture;
 
-    /** 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。 */
+    /**
+     * 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -293,9 +315,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 镜像名称
-     * 
-     * @return name */
+    /**
+     * 镜像名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -309,9 +332,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * 
-     * @return description */
+    /**
+     * 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -325,9 +349,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 操作系统版本。使用上传至OBS桶中的外部镜像文件制作镜像时生效
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本。使用上传至OBS桶中的外部镜像文件制作镜像时生效
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -341,9 +366,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** OBS桶中外部镜像文件地址。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。格式为<OBS桶名>:<OBS镜像文件名称>。注意：此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
-     * 
-     * @return imageUrl */
+    /**
+     * OBS桶中外部镜像文件地址。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。格式为<OBS桶名>:<OBS镜像文件名称>。注意：此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -357,9 +383,12 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 最小系统盘大小。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。取值为1至1024GB。 minimum: 1 maximum: 1024
-     * 
-     * @return minDisk */
+    /**
+     * 最小系统盘大小。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。取值为1至1024GB。
+     * minimum: 1
+     * maximum: 1024
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -389,9 +418,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
-     * 
-     * @return tags */
+    /**
+     * 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -405,9 +435,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
-     * 
-     * @return type */
+    /**
+     * 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -421,9 +452,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -437,9 +469,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
-     * 
-     * @return architecture */
+    /**
+     * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
+     * @return architecture
+     */
     public ArchitectureEnum getArchitecture() {
         return architecture;
     }
@@ -453,9 +486,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
-     * 
-     * @return osType */
+    /**
+     * 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -485,9 +519,10 @@ public class QuickImportImageByFileRequestBody {
         return this;
     }
 
-    /** 新规范的镜像标签列表。默认为空。 tags和image_tags只能使用一个。
-     * 
-     * @return imageTags */
+    /**
+     * 新规范的镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+     * @return imageTags
+     */
     public List<ResourceTag> getImageTags() {
         return imageTags;
     }
@@ -552,7 +587,10 @@ public class QuickImportImageByFileRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

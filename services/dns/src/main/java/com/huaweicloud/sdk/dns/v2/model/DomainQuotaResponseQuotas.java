@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DomainQuotaResponseQuotas */
+/**
+ * DomainQuotaResponseQuotas
+ */
 public class DomainQuotaResponseQuotas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** 资源类型。
-     * 
-     * @return quotaKey */
+    /**
+     * 资源类型。
+     * @return quotaKey
+     */
     public String getQuotaKey() {
         return quotaKey;
     }
@@ -49,9 +52,10 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** 资源配额的最大值。
-     * 
-     * @return quotaLimit */
+    /**
+     * 资源配额的最大值。
+     * @return quotaLimit
+     */
     public Integer getQuotaLimit() {
         return quotaLimit;
     }
@@ -65,9 +69,10 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** 配额已使用数量。
-     * 
-     * @return used */
+    /**
+     * 配额已使用数量。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -81,9 +86,10 @@ public class DomainQuotaResponseQuotas {
         return this;
     }
 
-    /** 配额统计单位，取固定值“count”。
-     * 
-     * @return unit */
+    /**
+     * 配额统计单位，取固定值“count”。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -124,7 +130,10 @@ public class DomainQuotaResponseQuotas {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

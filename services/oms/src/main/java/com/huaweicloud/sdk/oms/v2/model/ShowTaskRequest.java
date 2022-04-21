@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class ShowTaskRequest {
         return this;
     }
 
-    /** 任务ID minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return taskId
+     */
     public Long getTaskId() {
         return taskId;
     }
@@ -55,7 +60,10 @@ public class ShowTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

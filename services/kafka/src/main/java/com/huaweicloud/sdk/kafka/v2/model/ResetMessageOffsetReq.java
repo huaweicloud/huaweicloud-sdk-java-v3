@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResetMessageOffsetReq */
+/**
+ * ResetMessageOffsetReq
+ */
 public class ResetMessageOffsetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ResetMessageOffsetReq {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -49,9 +52,10 @@ public class ResetMessageOffsetReq {
         return this;
     }
 
-    /** 分区编号，默认值为-1，若传入值为-1，则重置所有分区。
-     * 
-     * @return partition */
+    /**
+     * 分区编号，默认值为-1，若传入值为-1，则重置所有分区。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -65,10 +69,10 @@ public class ResetMessageOffsetReq {
         return this;
     }
 
-    /** 重置的消费进度到指定偏移量。 如果传入offset小于当前最小的offset，则重置到最小的offset。 如果大于最大的offset，则重置到最大的offset。
-     * message_offset、timestamp二者必选其一。
-     * 
-     * @return messageOffset */
+    /**
+     * 重置的消费进度到指定偏移量。 如果传入offset小于当前最小的offset，则重置到最小的offset。 如果大于最大的offset，则重置到最大的offset。 message_offset、timestamp二者必选其一。 
+     * @return messageOffset
+     */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -82,10 +86,10 @@ public class ResetMessageOffsetReq {
         return this;
     }
 
-    /** 重置的消费进度到指定时间，格式为unix时间戳，单位为毫秒。 如果传入timestamp早于当前最早的timestamp，则重置到最早的timestamp。
-     * 如果晚于最晚的timestamp，则重置到最晚的timestamp。 message_offset、timestamp二者必选其一。
-     * 
-     * @return timestamp */
+    /**
+     * 重置的消费进度到指定时间，格式为unix时间戳，单位为毫秒。 如果传入timestamp早于当前最早的timestamp，则重置到最早的timestamp。 如果晚于最晚的timestamp，则重置到最晚的timestamp。 message_offset、timestamp二者必选其一。 
+     * @return timestamp
+     */
     public Integer getTimestamp() {
         return timestamp;
     }
@@ -126,7 +130,10 @@ public class ResetMessageOffsetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

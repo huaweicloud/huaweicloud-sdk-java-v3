@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 快照列表信息。 */
+/**
+ * 快照列表信息。
+ */
 public class SnapshotList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照ID。
-     * 
-     * @return id */
+    /**
+     * 云硬盘快照ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +105,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照的状态。
-     * 
-     * @return status */
+    /**
+     * 云硬盘快照的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -118,9 +122,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照名称。
-     * 
-     * @return name */
+    /**
+     * 云硬盘快照名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -134,9 +139,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照描述信息。
-     * 
-     * @return description */
+    /**
+     * 云硬盘快照描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -150,9 +156,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 云硬盘快照创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -166,9 +173,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 云硬盘快照更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -198,9 +206,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照的元数据信息。
-     * 
-     * @return metadata */
+    /**
+     * 云硬盘快照的元数据信息。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -214,9 +223,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 快照所属的云硬盘。
-     * 
-     * @return volumeId */
+    /**
+     * 快照所属的云硬盘。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -230,9 +240,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 云硬盘快照大小。
-     * 
-     * @return size */
+    /**
+     * 云硬盘快照大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -246,9 +257,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return osExtendedSnapshotAttributesProjectId */
+    /**
+     * 项目ID。
+     * @return osExtendedSnapshotAttributesProjectId
+     */
     public String getOsExtendedSnapshotAttributesProjectId() {
         return osExtendedSnapshotAttributesProjectId;
     }
@@ -262,9 +274,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 快照进度。
-     * 
-     * @return osExtendedSnapshotAttributesProgress */
+    /**
+     * 快照进度。
+     * @return osExtendedSnapshotAttributesProgress
+     */
     public String getOsExtendedSnapshotAttributesProgress() {
         return osExtendedSnapshotAttributesProgress;
     }
@@ -278,9 +291,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 专属存储ID。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 专属存储ID。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -294,9 +308,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 专属存储名称。
-     * 
-     * @return dedicatedStorageName */
+    /**
+     * 专属存储名称。
+     * @return dedicatedStorageName
+     */
     public String getDedicatedStorageName() {
         return dedicatedStorageName;
     }
@@ -310,9 +325,10 @@ public class SnapshotList {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -390,7 +406,10 @@ public class SnapshotList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

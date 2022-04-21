@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ImUnreadV2 */
+/**
+ * ImUnreadV2
+ */
 public class ImUnreadV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class ImUnreadV2 {
         return this;
     }
 
-    /** 状态 minimum: 0 maximum: 20
-     * 
-     * @return status */
+    /**
+     * 状态
+     * minimum: 0
+     * maximum: 20
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -44,9 +49,10 @@ public class ImUnreadV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -60,9 +66,12 @@ public class ImUnreadV2 {
         return this;
     }
 
-    /** 未读数量 minimum: 0 maximum: 65535
-     * 
-     * @return unreadNum */
+    /**
+     * 未读数量
+     * minimum: 0
+     * maximum: 65535
+     * @return unreadNum
+     */
     public Integer getUnreadNum() {
         return unreadNum;
     }
@@ -100,7 +109,10 @@ public class ImUnreadV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

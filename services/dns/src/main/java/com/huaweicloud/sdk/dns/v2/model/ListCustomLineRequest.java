@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCustomLineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListCustomLineRequest {
         return this;
     }
 
-    /** 解析线路ID。
-     * 
-     * @return lineId */
+    /**
+     * 解析线路ID。
+     * @return lineId
+     */
     public String getLineId() {
         return lineId;
     }
@@ -54,9 +57,10 @@ public class ListCustomLineRequest {
         return this;
     }
 
-    /** 解析线路名称。
-     * 
-     * @return name */
+    /**
+     * 解析线路名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class ListCustomLineRequest {
         return this;
     }
 
-    /** 每页返回的资源个数。取值范围为0~100。
-     * 
-     * @return limit */
+    /**
+     * 每页返回的资源个数。取值范围为0~100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ListCustomLineRequest {
         return this;
     }
 
-    /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。
-     * 
-     * @return offset */
+    /**
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +108,10 @@ public class ListCustomLineRequest {
         return this;
     }
 
-    /** 是否查询详细信息。 取值范围： true：是，查询详细信息。 false：否，不查询详细信息。 默认为true。
-     * 
-     * @return showDetail */
+    /**
+     * 是否查询详细信息。  取值范围：  true：是，查询详细信息。 false：否，不查询详细信息。 默认为true。
+     * @return showDetail
+     */
     public Boolean getShowDetail() {
         return showDetail;
     }
@@ -147,7 +154,10 @@ public class ListCustomLineRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

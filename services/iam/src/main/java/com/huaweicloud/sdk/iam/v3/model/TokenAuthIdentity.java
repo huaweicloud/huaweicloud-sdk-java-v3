@@ -18,10 +18,14 @@ import java.util.function.Consumer;
  */
 public class TokenAuthIdentity {
 
-    /** Gets or Sets methods */
+    /**
+     * Gets or Sets methods
+     */
     public static final class MethodsEnum {
 
-        /** Enum TOKEN for value: "token" */
+        /**
+         * Enum TOKEN for value: "token"
+         */
         public static final MethodsEnum TOKEN = new MethodsEnum("token");
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +125,10 @@ public class TokenAuthIdentity {
         return this;
     }
 
-    /** 认证方法，该字段内容为[\"token\"]。
-     * 
-     * @return methods */
+    /**
+     * 认证方法，该字段内容为[\"token\"]。
+     * @return methods
+     */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -146,9 +151,10 @@ public class TokenAuthIdentity {
         return this;
     }
 
-    /** Get token
-     * 
-     * @return token */
+    /**
+     * Get token
+     * @return token
+     */
     public IdentityToken getToken() {
         return token;
     }
@@ -171,9 +177,10 @@ public class TokenAuthIdentity {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public ServicePolicy getPolicy() {
         return policy;
     }
@@ -212,7 +219,10 @@ public class TokenAuthIdentity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

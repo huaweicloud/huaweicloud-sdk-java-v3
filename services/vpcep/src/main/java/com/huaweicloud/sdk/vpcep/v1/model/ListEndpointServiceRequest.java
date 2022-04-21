@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEndpointServiceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class ListEndpointServiceRequest {
 
     private String id;
 
-    /** 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中 */
+    /**
+     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -107,13 +119,19 @@ public class ListEndpointServiceRequest {
 
     private StatusEnum status;
 
-    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。 */
+    /**
+     * 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum CREATE_AT for value: "create_at" */
+        /**
+         * Enum CREATE_AT for value: "create_at"
+         */
         public static final SortKeyEnum CREATE_AT = new SortKeyEnum("create_at");
 
-        /** Enum UPDATE_AT for value: "update_at" */
+        /**
+         * Enum UPDATE_AT for value: "update_at"
+         */
         public static final SortKeyEnum UPDATE_AT = new SortKeyEnum("update_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -183,13 +201,19 @@ public class ListEndpointServiceRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。 */
+    /**
+     * 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -274,9 +298,10 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 终端节点服务的名称，支持大小写，前后模糊匹配。
-     * 
-     * @return endpointServiceName */
+    /**
+     * 终端节点服务的名称，支持大小写，前后模糊匹配。
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -290,9 +315,10 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 终端节点服务的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点服务的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -306,9 +332,10 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
-     * 
-     * @return status */
+    /**
+     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -322,9 +349,10 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
-     * 
-     * @return sortKey */
+    /**
+     * 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -338,9 +366,10 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
-     * 
-     * @return sortDir */
+    /**
+     * 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -354,9 +383,11 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 查询返回的终端节点服务数量限制，即每页返回的终端节点服务的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。 minimum: 1
-     * 
-     * @return limit */
+    /**
+     * 查询返回的终端节点服务数量限制，即每页返回的终端节点服务的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
+     * minimum: 1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -370,9 +401,11 @@ public class ListEndpointServiceRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -419,7 +452,10 @@ public class ListEndpointServiceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

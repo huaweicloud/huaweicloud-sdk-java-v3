@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListServicePermissionsDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** permission列表。
-     * 
-     * @return permissions */
+    /**
+     * permission列表。
+     * @return permissions
+     */
     public List<Permission> getPermissions() {
         return permissions;
     }
@@ -59,9 +62,10 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的终端节点服务的白名单总条数，不受分页（即limit、offset参数）影响。
-     * 
-     * @return totalCount */
+    /**
+     * 满足查询条件的终端节点服务的白名单总条数，不受分页（即limit、offset参数）影响。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -99,7 +103,10 @@ public class ListServicePermissionsDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

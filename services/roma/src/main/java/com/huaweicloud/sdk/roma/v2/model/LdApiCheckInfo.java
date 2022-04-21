@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** LdApiCheckInfo */
+/**
+ * LdApiCheckInfo
+ */
 public class LdApiCheckInfo {
 
-    /** 校验类型： - path：路径类型 - name：名称类型 */
+    /**
+     * 校验类型：   - path：路径类型   - name：名称类型
+     */
     public static final class TypeEnum {
 
-        /** Enum PATH for value: "path" */
+        /**
+         * Enum PATH for value: "path"
+         */
         public static final TypeEnum PATH = new TypeEnum("path");
 
-        /** Enum NAME for value: "name" */
+        /**
+         * Enum NAME for value: "name"
+         */
         public static final TypeEnum NAME = new TypeEnum("name");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,19 +102,29 @@ public class LdApiCheckInfo {
 
     private String ldApiName;
 
-    /** 自定义后端API请求方式。 type = path时必填 */
+    /**
+     * 自定义后端API请求方式。  type = path时必填
+     */
     public static final class LdApiMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final LdApiMethodEnum GET = new LdApiMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final LdApiMethodEnum POST = new LdApiMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final LdApiMethodEnum PUT = new LdApiMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final LdApiMethodEnum DELETE = new LdApiMethodEnum("DELETE");
 
         private static final Map<String, LdApiMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -193,9 +211,10 @@ public class LdApiCheckInfo {
         return this;
     }
 
-    /** 校验类型： - path：路径类型 - name：名称类型
-     * 
-     * @return type */
+    /**
+     * 校验类型：   - path：路径类型   - name：名称类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -209,9 +228,10 @@ public class LdApiCheckInfo {
         return this;
     }
 
-    /** 自定义后端API名称。 type = name时必填
-     * 
-     * @return ldApiName */
+    /**
+     * 自定义后端API名称。  type = name时必填
+     * @return ldApiName
+     */
     public String getLdApiName() {
         return ldApiName;
     }
@@ -225,9 +245,10 @@ public class LdApiCheckInfo {
         return this;
     }
 
-    /** 自定义后端API请求方式。 type = path时必填
-     * 
-     * @return ldApiMethod */
+    /**
+     * 自定义后端API请求方式。  type = path时必填
+     * @return ldApiMethod
+     */
     public LdApiMethodEnum getLdApiMethod() {
         return ldApiMethod;
     }
@@ -241,9 +262,10 @@ public class LdApiCheckInfo {
         return this;
     }
 
-    /** 自定义后端API的访问地址。 type = path时必填
-     * 
-     * @return ldApiPath */
+    /**
+     * 自定义后端API的访问地址。  type = path时必填
+     * @return ldApiPath
+     */
     public String getLdApiPath() {
         return ldApiPath;
     }
@@ -257,9 +279,10 @@ public class LdApiCheckInfo {
         return this;
     }
 
-    /** 集成应用ID。 校验应用下后端API定义是否重复时必填
-     * 
-     * @return romaAppId */
+    /**
+     * 集成应用ID。  校验应用下后端API定义是否重复时必填
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -302,7 +325,10 @@ public class LdApiCheckInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

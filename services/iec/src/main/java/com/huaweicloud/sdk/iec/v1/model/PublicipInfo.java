@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性公网IP信息 */
+/**
+ * 弹性公网IP信息
+ */
 public class PublicipInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PublicipInfo {
         return this;
     }
 
-    /** IP版本的信息
-     * 
-     * @return ipVersion */
+    /**
+     *   IP版本的信息
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -49,9 +52,10 @@ public class PublicipInfo {
         return this;
     }
 
-    /** 弹性公网IP
-     * 
-     * @return publicipAddress */
+    /**
+     * 弹性公网IP
+     * @return publicipAddress
+     */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -65,9 +69,10 @@ public class PublicipInfo {
         return this;
     }
 
-    /** 弹性公网IP的ID。
-     * 
-     * @return publicipId */
+    /**
+     * 弹性公网IP的ID。
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -81,9 +86,10 @@ public class PublicipInfo {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的类型
-     * 
-     * @return publicipType */
+    /**
+     * 功能说明：弹性公网IP的类型
+     * @return publicipType
+     */
     public String getPublicipType() {
         return publicipType;
     }
@@ -124,7 +130,10 @@ public class PublicipInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

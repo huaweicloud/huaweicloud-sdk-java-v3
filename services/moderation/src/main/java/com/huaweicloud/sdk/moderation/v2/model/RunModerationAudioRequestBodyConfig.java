@@ -10,43 +10,69 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 语音文件配置信息 */
+/**
+ * 语音文件配置信息
+ */
 public class RunModerationAudioRequestBodyConfig {
 
-    /** 支持的语音格式 */
+    /**
+     * 支持的语音格式
+     */
     public static final class FormatEnum {
 
-        /** Enum PCM16K16BIT for value: "pcm16k16bit" */
+        /**
+         * Enum PCM16K16BIT for value: "pcm16k16bit"
+         */
         public static final FormatEnum PCM16K16BIT = new FormatEnum("pcm16k16bit");
 
-        /** Enum PCM8K16BIT for value: "pcm8k16bit" */
+        /**
+         * Enum PCM8K16BIT for value: "pcm8k16bit"
+         */
         public static final FormatEnum PCM8K16BIT = new FormatEnum("pcm8k16bit");
 
-        /** Enum ULAW16K8BIT for value: "ulaw16k8bit" */
+        /**
+         * Enum ULAW16K8BIT for value: "ulaw16k8bit"
+         */
         public static final FormatEnum ULAW16K8BIT = new FormatEnum("ulaw16k8bit");
 
-        /** Enum ULAW8K8BIT for value: "ulaw8k8bit" */
+        /**
+         * Enum ULAW8K8BIT for value: "ulaw8k8bit"
+         */
         public static final FormatEnum ULAW8K8BIT = new FormatEnum("ulaw8k8bit");
 
-        /** Enum ALAW16K8BIT for value: "alaw16k8bit" */
+        /**
+         * Enum ALAW16K8BIT for value: "alaw16k8bit"
+         */
         public static final FormatEnum ALAW16K8BIT = new FormatEnum("alaw16k8bit");
 
-        /** Enum ALAW8K8BIT for value: "alaw8k8bit" */
+        /**
+         * Enum ALAW8K8BIT for value: "alaw8k8bit"
+         */
         public static final FormatEnum ALAW8K8BIT = new FormatEnum("alaw8k8bit");
 
-        /** Enum MP3 for value: "mp3" */
+        /**
+         * Enum MP3 for value: "mp3"
+         */
         public static final FormatEnum MP3 = new FormatEnum("mp3");
 
-        /** Enum AAC for value: "aac" */
+        /**
+         * Enum AAC for value: "aac"
+         */
         public static final FormatEnum AAC = new FormatEnum("aac");
 
-        /** Enum WAV for value: "wav" */
+        /**
+         * Enum WAV for value: "wav"
+         */
         public static final FormatEnum WAV = new FormatEnum("wav");
 
-        /** Enum AMR for value: "amr" */
+        /**
+         * Enum AMR for value: "amr"
+         */
         public static final FormatEnum AMR = new FormatEnum("amr");
 
-        /** Enum AMRWB for value: "amrwb" */
+        /**
+         * Enum AMRWB for value: "amrwb"
+         */
         public static final FormatEnum AMRWB = new FormatEnum("amrwb");
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
@@ -125,13 +151,19 @@ public class RunModerationAudioRequestBodyConfig {
 
     private FormatEnum format;
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串：   chinese_8k_common   chinese_16k_common 
+     */
     public static final class PropertyEnum {
 
-        /** Enum CHINESE_8K_COMMON for value: "chinese_8k_common" */
+        /**
+         * Enum CHINESE_8K_COMMON for value: "chinese_8k_common"
+         */
         public static final PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
 
-        /** Enum CHINESE_16K_COMMON for value: "chinese_16k_common" */
+        /**
+         * Enum CHINESE_16K_COMMON for value: "chinese_16k_common"
+         */
         public static final PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
 
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
@@ -206,9 +238,10 @@ public class RunModerationAudioRequestBodyConfig {
         return this;
     }
 
-    /** 支持的语音格式
-     * 
-     * @return format */
+    /**
+     * 支持的语音格式
+     * @return format
+     */
     public FormatEnum getFormat() {
         return format;
     }
@@ -222,9 +255,10 @@ public class RunModerationAudioRequestBodyConfig {
         return this;
     }
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
-     * 
-     * @return property */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串：   chinese_8k_common   chinese_16k_common 
+     * @return property
+     */
     public PropertyEnum getProperty() {
         return property;
     }
@@ -262,7 +296,10 @@ public class RunModerationAudioRequestBodyConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

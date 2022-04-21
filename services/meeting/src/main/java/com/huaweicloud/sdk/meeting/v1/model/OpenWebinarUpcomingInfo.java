@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 即将召开研讨会议信息 */
+/**
+ * 即将召开研讨会议信息
+ */
 public class OpenWebinarUpcomingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 会议ID。长度限制为32个字符。
-     * 
-     * @return conferenceId */
+    /**
+     * 会议ID。长度限制为32个字符。
+     * @return conferenceId
+     */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -114,9 +117,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -130,9 +134,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 主题
-     * 
-     * @return subject */
+    /**
+     * 主题
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -146,9 +151,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -162,9 +168,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -178,9 +185,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 时长，单位分钟
-     * 
-     * @return duration */
+    /**
+     * 时长，单位分钟
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -194,9 +202,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 时区ID
-     * 
-     * @return timeZoneId */
+    /**
+     * 时区ID
+     * @return timeZoneId
+     */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -210,9 +219,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 会议预订者ID
-     * 
-     * @return scheduserId */
+    /**
+     * 会议预订者ID
+     * @return scheduserId
+     */
     public String getScheduserId() {
         return scheduserId;
     }
@@ -226,9 +236,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 预订人部门
-     * 
-     * @return deptName */
+    /**
+     * 预订人部门
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -242,9 +253,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 会议预订者帐号名称。长度最大限制为96个字符。
-     * 
-     * @return scheduserName */
+    /**
+     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -258,9 +270,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 网络研讨会资源名
-     * 
-     * @return vmrPkgName */
+    /**
+     * 网络研讨会资源名
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -274,9 +287,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 主持人入会地址。
-     * 
-     * @return chairJoinUri */
+    /**
+     * 主持人入会地址。
+     * @return chairJoinUri
+     */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -290,9 +304,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 主持人密码。
-     * 
-     * @return chairPasswd */
+    /**
+     * 主持人密码。
+     * @return chairPasswd
+     */
     public String getChairPasswd() {
         return chairPasswd;
     }
@@ -306,9 +321,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 嘉宾入会地址。
-     * 
-     * @return guestJoinUri */
+    /**
+     * 嘉宾入会地址。
+     * @return guestJoinUri
+     */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -322,9 +338,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 嘉宾密码。
-     * 
-     * @return guestPasswd */
+    /**
+     * 嘉宾密码。
+     * @return guestPasswd
+     */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -338,9 +355,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 观众入会地址。
-     * 
-     * @return audienceJoinUri */
+    /**
+     * 观众入会地址。
+     * @return audienceJoinUri
+     */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -354,9 +372,10 @@ public class OpenWebinarUpcomingInfo {
         return this;
     }
 
-    /** 观众密码。
-     * 
-     * @return audiencePasswd */
+    /**
+     * 观众密码。
+     * @return audiencePasswd
+     */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -439,7 +458,10 @@ public class OpenWebinarUpcomingInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

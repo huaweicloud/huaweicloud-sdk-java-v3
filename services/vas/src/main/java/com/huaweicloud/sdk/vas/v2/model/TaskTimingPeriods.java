@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaskTimingPeriods */
+/**
+ * TaskTimingPeriods
+ */
 public class TaskTimingPeriods {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TaskTimingPeriods {
         return this;
     }
 
-    /** 单个时间段执行的起始时间，和end_at需成对出现。计划任务类型为once时，格式为yyyy-MM-ddThh:mm:ss，其余计划任务类型时，格式为hh:mm:ss。
-     * 
-     * @return beginAt */
+    /**
+     * 单个时间段执行的起始时间，和end_at需成对出现。计划任务类型为once时，格式为yyyy-MM-ddThh:mm:ss，其余计划任务类型时，格式为hh:mm:ss。
+     * @return beginAt
+     */
     public String getBeginAt() {
         return beginAt;
     }
@@ -39,9 +42,10 @@ public class TaskTimingPeriods {
         return this;
     }
 
-    /** 单个时间段执行的结束时间，和begin_at需成对出现。计划任务类型为once时，格式为yyyy-MM-ddThh:mm:ss，其余计划任务类型时，格式为hh:mm:ss。
-     * 
-     * @return endAt */
+    /**
+     * 单个时间段执行的结束时间，和begin_at需成对出现。计划任务类型为once时，格式为yyyy-MM-ddThh:mm:ss，其余计划任务类型时，格式为hh:mm:ss。
+     * @return endAt
+     */
     public String getEndAt() {
         return endAt;
     }
@@ -78,7 +82,10 @@ public class TaskTimingPeriods {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

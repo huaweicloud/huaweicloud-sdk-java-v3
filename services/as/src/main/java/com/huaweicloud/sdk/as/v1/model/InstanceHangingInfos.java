@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 挂钩实例信息 */
+/**
+ * 挂钩实例信息
+ */
 public class InstanceHangingInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,16 +35,24 @@ public class InstanceHangingInfos {
 
     private String scalingGroupId;
 
-    /** 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。 */
+    /**
+     * 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
+     */
     public static final class LifecycleHookStatusEnum {
 
-        /** Enum HANGING for value: "HANGING" */
+        /**
+         * Enum HANGING for value: "HANGING"
+         */
         public static final LifecycleHookStatusEnum HANGING = new LifecycleHookStatusEnum("HANGING");
 
-        /** Enum CONTINUE for value: "CONTINUE" */
+        /**
+         * Enum CONTINUE for value: "CONTINUE"
+         */
         public static final LifecycleHookStatusEnum CONTINUE = new LifecycleHookStatusEnum("CONTINUE");
 
-        /** Enum ABANDON for value: "ABANDON" */
+        /**
+         * Enum ABANDON for value: "ABANDON"
+         */
         public static final LifecycleHookStatusEnum ABANDON = new LifecycleHookStatusEnum("ABANDON");
 
         private static final Map<String, LifecycleHookStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -128,9 +138,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 生命周期挂钩名称。
-     * 
-     * @return lifecycleHookName */
+    /**
+     * 生命周期挂钩名称。
+     * @return lifecycleHookName
+     */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -144,9 +155,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 生命周期操作令牌，用于指定生命周期回调对象。
-     * 
-     * @return lifecycleActionKey */
+    /**
+     * 生命周期操作令牌，用于指定生命周期回调对象。
+     * @return lifecycleActionKey
+     */
     public String getLifecycleActionKey() {
         return lifecycleActionKey;
     }
@@ -160,9 +172,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 伸缩实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 伸缩实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -176,9 +189,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -192,9 +206,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
-     * 
-     * @return lifecycleHookStatus */
+    /**
+     * 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
+     * @return lifecycleHookStatus
+     */
     public LifecycleHookStatusEnum getLifecycleHookStatus() {
         return lifecycleHookStatus;
     }
@@ -208,9 +223,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
-     * 
-     * @return timeout */
+    /**
+     * 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
+     * @return timeout
+     */
     public String getTimeout() {
         return timeout;
     }
@@ -224,9 +240,10 @@ public class InstanceHangingInfos {
         return this;
     }
 
-    /** 生命周期挂钩默认回调操作。
-     * 
-     * @return defaultResult */
+    /**
+     * 生命周期挂钩默认回调操作。
+     * @return defaultResult
+     */
     public String getDefaultResult() {
         return defaultResult;
     }
@@ -279,7 +296,10 @@ public class InstanceHangingInfos {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

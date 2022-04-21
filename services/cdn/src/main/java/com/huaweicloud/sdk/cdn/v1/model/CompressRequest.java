@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CompressRequest */
+/**
+ * CompressRequest
+ */
 public class CompressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CompressRequest {
         return this;
     }
 
-    /** GZIP压缩开关。0关闭。1打开
-     * 
-     * @return compressSwitch */
+    /**
+     * GZIP压缩开关。0关闭。1打开
+     * @return compressSwitch
+     */
     public Integer getCompressSwitch() {
         return compressSwitch;
     }
@@ -55,7 +58,10 @@ public class CompressRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

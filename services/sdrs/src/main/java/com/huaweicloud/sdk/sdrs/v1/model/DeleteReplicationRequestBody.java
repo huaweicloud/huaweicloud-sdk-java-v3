@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 删除复制对请求体 */
+/**
+ * 删除复制对请求体
+ */
 public class DeleteReplicationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteReplicationRequestBody {
         return this;
     }
 
-    /** Get replication
-     * 
-     * @return replication */
+    /**
+     * Get replication
+     * @return replication
+     */
     public DeleteReplicationRequestParams getReplication() {
         return replication;
     }
@@ -65,7 +68,10 @@ public class DeleteReplicationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

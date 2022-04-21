@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
-     * 
-     * @return policyPara */
+    /**
+     * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+     * @return policyPara
+     */
     public List<GetOffSiteBackupPolicy> getPolicyPara() {
         return policyPara;
     }
@@ -75,7 +78,10 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

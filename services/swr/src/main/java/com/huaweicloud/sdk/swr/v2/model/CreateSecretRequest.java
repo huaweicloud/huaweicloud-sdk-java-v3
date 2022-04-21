@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateSecretRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreateSecretRequest {
         return this;
     }
 
-    /** 项目名称，缺省值默认为区域名称，例如：cn-north-1。
-     * 
-     * @return projectname */
+    /**
+     * 项目名称，缺省值默认为区域名称，例如：cn-north-1。 
+     * @return projectname
+     */
     public String getProjectname() {
         return projectname;
     }
@@ -55,7 +58,10 @@ public class CreateSecretRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

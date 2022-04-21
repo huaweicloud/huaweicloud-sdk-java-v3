@@ -25,9 +25,10 @@ public class IdentityprovidersLinks {
         return this;
     }
 
-    /** 身份提供商的资源链接地址。
-     * 
-     * @return self */
+    /**
+     * 身份提供商的资源链接地址。
+     * @return self
+     */
     public String getSelf() {
         return self;
     }
@@ -41,9 +42,10 @@ public class IdentityprovidersLinks {
         return this;
     }
 
-    /** 协议的资源链接地址。
-     * 
-     * @return protocols */
+    /**
+     * 协议的资源链接地址。
+     * @return protocols
+     */
     public String getProtocols() {
         return protocols;
     }
@@ -80,7 +82,10 @@ public class IdentityprovidersLinks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

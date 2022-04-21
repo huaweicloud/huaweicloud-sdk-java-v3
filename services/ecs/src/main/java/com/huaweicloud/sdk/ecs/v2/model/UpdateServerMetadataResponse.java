@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateServerMetadataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateServerMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户自定义metadata键值对。
-     * 
-     * @return metadata */
+    /**
+     * 用户自定义metadata键值对。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -75,7 +78,10 @@ public class UpdateServerMetadataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,19 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 图片审核结果 */
+/**
+ * 图片审核结果
+ */
 public class PictureReviewRet {
 
-    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 */
+    /**
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     */
     public static final class SuggestionEnum {
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final SuggestionEnum BLOCK = new SuggestionEnum("block");
 
-        /** Enum PASS for value: "pass" */
+        /**
+         * Enum PASS for value: "pass"
+         */
         public static final SuggestionEnum PASS = new SuggestionEnum("pass");
 
-        /** Enum REVIEW for value: "review" */
+        /**
+         * Enum REVIEW for value: "review"
+         */
         public static final SuggestionEnum REVIEW = new SuggestionEnum("review");
 
         private static final Map<String, SuggestionEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +136,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     * 
-     * @return suggestion */
+    /**
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * @return suggestion
+     */
     public SuggestionEnum getSuggestion() {
         return suggestion;
     }
@@ -142,9 +153,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 截图在视频中的时间偏移值。封面不涉及此字段 单位：秒。
-     * 
-     * @return offset */
+    /**
+     * 截图在视频中的时间偏移值。封面不涉及此字段  单位：秒。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -158,9 +170,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 对应截图/封面的访问URL。
-     * 
-     * @return url */
+    /**
+     * 对应截图/封面的访问URL。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -190,9 +203,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 政治因素审核结果。
-     * 
-     * @return politics */
+    /**
+     * 政治因素审核结果。
+     * @return politics
+     */
     public List<ReviewDetail> getPolitics() {
         return politics;
     }
@@ -222,9 +236,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 暴恐元素审核结果。
-     * 
-     * @return terrorism */
+    /**
+     * 暴恐元素审核结果。
+     * @return terrorism
+     */
     public List<ReviewDetail> getTerrorism() {
         return terrorism;
     }
@@ -254,9 +269,10 @@ public class PictureReviewRet {
         return this;
     }
 
-    /** 涉黄内容审核结果。
-     * 
-     * @return porn */
+    /**
+     * 涉黄内容审核结果。
+     * @return porn
+     */
     public List<ReviewDetail> getPorn() {
         return porn;
     }
@@ -300,7 +316,10 @@ public class PictureReviewRet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

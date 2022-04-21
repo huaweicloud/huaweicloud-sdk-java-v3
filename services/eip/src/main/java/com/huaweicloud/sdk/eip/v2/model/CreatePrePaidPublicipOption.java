@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 申请包周期弹性公网IP的publicip对象 */
+/**
+ * 申请包周期弹性公网IP的publicip对象
+ */
 public class CreatePrePaidPublicipOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class CreatePrePaidPublicipOption {
 
     private String type;
 
-    /** 功能说明：弹性公网IP的版本 取值范围：4、6，分别表示创建ipv4和ipv6 约束：必须是系统具体支持的类型 不填或空字符串时，默认创建ipv4 */
+    /**
+     * 功能说明：弹性公网IP的版本  取值范围：4、6，分别表示创建ipv4和ipv6  约束：必须是系统具体支持的类型  不填或空字符串时，默认创建ipv4
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -104,12 +112,10 @@ public class CreatePrePaidPublicipOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的类型 取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6 东北-大连：5_telcom、5_union
-     * 华南-广州：5_bgp、5_sbgp 华东-上海二：5_bgp、5_sbgp 华北-北京一：5_bgp、5_sbgp、5_ipv6 亚太-香港：5_bgp 亚太-曼谷：5_bgp 亚太-新加坡：5_bgp
-     * 非洲-约翰内斯堡：5_bgp 西南-贵阳一：5_bgp、5_sbgp 华北-北京四：5_bgp、5_sbgp
-     * 约束：必须是系统具体支持的类型publicip_id为IPv4端口，所以\"publicip_type\"字段未给定时，默认为5_bgp。
-     * 
-     * @return type */
+    /**
+     * 功能说明：弹性公网IP的类型  取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6  东北-大连：5_telcom、5_union  华南-广州：5_bgp、5_sbgp  华东-上海二：5_bgp、5_sbgp  华北-北京一：5_bgp、5_sbgp、5_ipv6  亚太-香港：5_bgp  亚太-曼谷：5_bgp  亚太-新加坡：5_bgp  非洲-约翰内斯堡：5_bgp  西南-贵阳一：5_bgp、5_sbgp  华北-北京四：5_bgp、5_sbgp  约束：必须是系统具体支持的类型publicip_id为IPv4端口，所以\"publicip_type\"字段未给定时，默认为5_bgp。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -123,9 +129,10 @@ public class CreatePrePaidPublicipOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的版本 取值范围：4、6，分别表示创建ipv4和ipv6 约束：必须是系统具体支持的类型 不填或空字符串时，默认创建ipv4
-     * 
-     * @return ipVersion */
+    /**
+     * 功能说明：弹性公网IP的版本  取值范围：4、6，分别表示创建ipv4和ipv6  约束：必须是系统具体支持的类型  不填或空字符串时，默认创建ipv4
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -139,9 +146,10 @@ public class CreatePrePaidPublicipOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return alias */
+    /**
+     * 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -180,7 +188,10 @@ public class CreatePrePaidPublicipOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点重装场景服务器配置 */
+/**
+ * 节点重装场景服务器配置
+ */
 public class ReinstallServerConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ReinstallServerConfig {
         return this;
     }
 
-    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
-     * 
-     * @return userTags */
+    /**
+     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
+     * @return userTags
+     */
     public List<UserTag> getUserTags() {
         return userTags;
     }
@@ -67,9 +70,10 @@ public class ReinstallServerConfig {
         return this;
     }
 
-    /** Get rootVolume
-     * 
-     * @return rootVolume */
+    /**
+     * Get rootVolume
+     * @return rootVolume
+     */
     public ReinstallVolumeSpec getRootVolume() {
         return rootVolume;
     }
@@ -106,7 +110,10 @@ public class ReinstallServerConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

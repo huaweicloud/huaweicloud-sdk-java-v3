@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQueuesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListQueuesRequest {
         return this;
     }
 
-    /** 是否包含死信信息。 支持的值如下： - true：包含死信消息。 - false：不包含死信消息。 默认值为：false。 Kafka队列没有死信功能，该参数对于Kafka队列无效。
-     * 
-     * @return includeDeadletter */
+    /**
+     * 是否包含死信信息。  支持的值如下：  - true：包含死信消息。 - false：不包含死信消息。  默认值为：false。  Kafka队列没有死信功能，该参数对于Kafka队列无效。
+     * @return includeDeadletter
+     */
     public Boolean getIncludeDeadletter() {
         return includeDeadletter;
     }
@@ -55,7 +58,10 @@ public class ListQueuesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

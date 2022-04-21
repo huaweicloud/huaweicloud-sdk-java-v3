@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量挂断会场消息体。 */
+/**
+ * 批量挂断会场消息体。
+ */
 public class RestBulkHangUpReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class RestBulkHangUpReqBody {
         return this;
     }
 
-    /** 批量挂断会场列表，列表元素为与会者标识。
-     * 
-     * @return bulkHangUpParticipants */
+    /**
+     * 批量挂断会场列表，列表元素为与会者标识。
+     * @return bulkHangUpParticipants
+     */
     public List<String> getBulkHangUpParticipants() {
         return bulkHangUpParticipants;
     }
@@ -74,7 +77,10 @@ public class RestBulkHangUpReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

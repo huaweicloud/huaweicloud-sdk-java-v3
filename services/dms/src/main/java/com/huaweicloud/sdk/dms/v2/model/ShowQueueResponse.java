@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowQueueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,19 +36,29 @@ public class ShowQueueResponse extends SdkResponse {
 
     private String description;
 
-    /** 队列类型。 */
+    /**
+     * 队列类型。
+     */
     public static final class QueueModeEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final QueueModeEnum NORMAL = new QueueModeEnum("NORMAL");
 
-        /** Enum FIFO for value: "FIFO" */
+        /**
+         * Enum FIFO for value: "FIFO"
+         */
         public static final QueueModeEnum FIFO = new QueueModeEnum("FIFO");
 
-        /** Enum KAFKA_HA for value: "KAFKA_HA" */
+        /**
+         * Enum KAFKA_HA for value: "KAFKA_HA"
+         */
         public static final QueueModeEnum KAFKA_HA = new QueueModeEnum("KAFKA_HA");
 
-        /** Enum KAFKA_HT for value: "KAFKA_HT" */
+        /**
+         * Enum KAFKA_HT for value: "KAFKA_HT"
+         */
         public static final QueueModeEnum KAFKA_HT = new QueueModeEnum("KAFKA_HT");
 
         private static final Map<String, QueueModeEnum> STATIC_FIELDS = createStaticFields();
@@ -133,13 +145,19 @@ public class ShowQueueResponse extends SdkResponse {
 
     private Integer producedMessages;
 
-    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。 */
+    /**
+     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+     */
     public static final class RedrivePolicyEnum {
 
-        /** Enum ENABLE for value: "enable" */
+        /**
+         * Enum ENABLE for value: "enable"
+         */
         public static final RedrivePolicyEnum ENABLE = new RedrivePolicyEnum("enable");
 
-        /** Enum DISABLE for value: "disable" */
+        /**
+         * Enum DISABLE for value: "disable"
+         */
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
 
         private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +252,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列ID。
-     * 
-     * @return id */
+    /**
+     * 队列ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -250,9 +269,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列的名称。
-     * 
-     * @return name */
+    /**
+     * 队列的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -266,9 +286,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建队列的时间。
-     * 
-     * @return created */
+    /**
+     * 创建队列的时间。
+     * @return created
+     */
     public Long getCreated() {
         return created;
     }
@@ -282,9 +303,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列的描述信息。
-     * 
-     * @return description */
+    /**
+     * 队列的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -298,9 +320,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列类型。
-     * 
-     * @return queueMode */
+    /**
+     * 队列类型。
+     * @return queueMode
+     */
     public QueueModeEnum getQueueMode() {
         return queueMode;
     }
@@ -314,9 +337,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息在队列中允许保留的时长（单位分钟）。
-     * 
-     * @return reservation */
+    /**
+     * 消息在队列中允许保留的时长（单位分钟）。
+     * @return reservation
+     */
     public Integer getReservation() {
         return reservation;
     }
@@ -330,9 +354,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列中允许的最大消息大小（单位Byte）。
-     * 
-     * @return maxMsgSizeByte */
+    /**
+     * 队列中允许的最大消息大小（单位Byte）。
+     * @return maxMsgSizeByte
+     */
     public Integer getMaxMsgSizeByte() {
         return maxMsgSizeByte;
     }
@@ -346,9 +371,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列的消息总数。
-     * 
-     * @return producedMessages */
+    /**
+     * 队列的消息总数。
+     * @return producedMessages
+     */
     public Integer getProducedMessages() {
         return producedMessages;
     }
@@ -362,9 +388,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
-     * 
-     * @return redrivePolicy */
+    /**
+     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+     * @return redrivePolicy
+     */
     public RedrivePolicyEnum getRedrivePolicy() {
         return redrivePolicy;
     }
@@ -378,9 +405,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 最大确认消费失败的次数，当达到最大确认失败次数后，DMS会将该条消息转存到死信队列中。 仅当include_deadletter为true时，才有该响应参数。
-     * 
-     * @return maxConsumeCount */
+    /**
+     * 最大确认消费失败的次数，当达到最大确认失败次数后，DMS会将该条消息转存到死信队列中。 仅当include_deadletter为true时，才有该响应参数。
+     * @return maxConsumeCount
+     */
     public Integer getMaxConsumeCount() {
         return maxConsumeCount;
     }
@@ -394,9 +422,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 该队列下的消费组数量。
-     * 
-     * @return groupCount */
+    /**
+     * 该队列下的消费组数量。
+     * @return groupCount
+     */
     public Integer getGroupCount() {
         return groupCount;
     }
@@ -410,9 +439,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅Kafka队列才有该参数。
-     * 
-     * @return kafkaTopic */
+    /**
+     * 仅Kafka队列才有该参数。
+     * @return kafkaTopic
+     */
     public String getKafkaTopic() {
         return kafkaTopic;
     }
@@ -426,9 +456,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建队列的时间。
-     * 
-     * @return effDate */
+    /**
+     * 创建队列的时间。
+     * @return effDate
+     */
     public Long getEffDate() {
         return effDate;
     }
@@ -498,7 +529,10 @@ public class ShowQueueResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

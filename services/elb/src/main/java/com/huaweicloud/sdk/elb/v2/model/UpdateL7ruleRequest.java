@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateL7ruleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateL7ruleRequest {
         return this;
     }
 
-    /** 待更新的转发规则所在的转发策略id
-     * 
-     * @return l7policyId */
+    /**
+     * 待更新的转发规则所在的转发策略id
+     * @return l7policyId
+     */
     public String getL7policyId() {
         return l7policyId;
     }
@@ -45,9 +48,10 @@ public class UpdateL7ruleRequest {
         return this;
     }
 
-    /** 待更新的转发规则id
-     * 
-     * @return l7ruleId */
+    /**
+     * 待更新的转发规则id
+     * @return l7ruleId
+     */
     public String getL7ruleId() {
         return l7ruleId;
     }
@@ -70,9 +74,10 @@ public class UpdateL7ruleRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateL7ruleRequestBody getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class UpdateL7ruleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

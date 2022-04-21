@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApplicationCreate */
+/**
+ * ApplicationCreate
+ */
 public class ApplicationCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ApplicationCreate {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return name */
+    /**
+     * 应用名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class ApplicationCreate {
         return this;
     }
 
-    /** 应用描述。
-     * 
-     * @return description */
+    /**
+     * 应用描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class ApplicationCreate {
         return this;
     }
 
-    /** 企业项目ID。默认值为0。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。默认值为0。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -101,7 +106,10 @@ public class ApplicationCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

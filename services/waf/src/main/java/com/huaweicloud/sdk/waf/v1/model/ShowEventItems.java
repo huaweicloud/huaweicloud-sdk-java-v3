@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 攻击类型 */
+/**
+ * 攻击类型
+ */
 public class ShowEventItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击发生时的时间戳（毫秒）
-     * 
-     * @return time */
+    /**
+     * 攻击发生时的时间戳（毫秒）
+     * @return time
+     */
     public Long getTime() {
         return time;
     }
@@ -124,9 +127,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -140,9 +144,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 源ip
-     * 
-     * @return sip */
+    /**
+     * 源ip
+     * @return sip
+     */
     public String getSip() {
         return sip;
     }
@@ -156,9 +161,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return host */
+    /**
+     * 域名
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -172,9 +178,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击的url链接
-     * 
-     * @return url */
+    /**
+     * 攻击的url链接
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -188,9 +195,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击类型
-     * 
-     * @return attack */
+    /**
+     * 攻击类型
+     * @return attack
+     */
     public String getAttack() {
         return attack;
     }
@@ -204,9 +212,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 命中的规则id
-     * 
-     * @return rule */
+    /**
+     * 命中的规则id
+     * @return rule
+     */
     public String getRule() {
         return rule;
     }
@@ -220,9 +229,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 防护动作
-     * 
-     * @return action */
+    /**
+     * 防护动作
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -236,9 +246,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击请求的cookie
-     * 
-     * @return cookie */
+    /**
+     * 攻击请求的cookie
+     * @return cookie
+     */
     public String getCookie() {
         return cookie;
     }
@@ -252,9 +263,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击请求的headers
-     * 
-     * @return headers */
+    /**
+     * 攻击请求的headers
+     * @return headers
+     */
     public String getHeaders() {
         return headers;
     }
@@ -268,9 +280,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 被攻击的域名id
-     * 
-     * @return hostId */
+    /**
+     * 被攻击的域名id
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -284,9 +297,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击请求的id
-     * 
-     * @return id */
+    /**
+     * 攻击请求的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -300,9 +314,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 恶意负载
-     * 
-     * @return payload */
+    /**
+     * 恶意负载
+     * @return payload
+     */
     public String getPayload() {
         return payload;
     }
@@ -316,9 +331,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 恶意负载位置
-     * 
-     * @return payloadLocation */
+    /**
+     * 恶意负载位置
+     * @return payloadLocation
+     */
     public String getPayloadLocation() {
         return payloadLocation;
     }
@@ -332,9 +348,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 源ip地理位置
-     * 
-     * @return region */
+    /**
+     * 源ip地理位置
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -348,9 +365,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 攻击请求的请求行
-     * 
-     * @return requestLine */
+    /**
+     * 攻击请求的请求行
+     * @return requestLine
+     */
     public String getRequestLine() {
         return requestLine;
     }
@@ -364,9 +382,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 返回大小（字节）
-     * 
-     * @return responseSize */
+    /**
+     * 返回大小（字节）
+     * @return responseSize
+     */
     public String getResponseSize() {
         return responseSize;
     }
@@ -380,9 +399,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 响应时间（毫秒）
-     * 
-     * @return responseTime */
+    /**
+     * 响应时间（毫秒）
+     * @return responseTime
+     */
     public String getResponseTime() {
         return responseTime;
     }
@@ -396,9 +416,10 @@ public class ShowEventItems {
         return this;
     }
 
-    /** 响应码
-     * 
-     * @return status */
+    /**
+     * 响应码
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -482,7 +503,10 @@ public class ShowEventItems {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

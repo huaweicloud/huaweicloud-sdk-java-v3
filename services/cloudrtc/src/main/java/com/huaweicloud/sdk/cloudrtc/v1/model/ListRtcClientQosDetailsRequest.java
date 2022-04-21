@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcClientQosDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,81 +65,124 @@ public class ListRtcClientQosDetailsRequest {
 
     private String direction;
 
-    /** 需查询的指标，填all则返回所有指标。多个指标使用','分割 - appcpu：端侧APP CPU使用率（appCpu） - syscpu：端侧系统 CPU使用率（deviceCpu） -
-     * abit：端侧音频码率kpbs（bitrate） - vbit：端侧视频码率kbps（bitRate） - dbit：端侧辅流码率kbps（bitRate） - vfps：端侧视频帧率fps（actFrameRate） -
-     * dfps：端侧辅流帧率fps（actFrameRate） - vblock：端侧视频卡顿率（统计大于等于600ms视频卡顿） - dblock：端侧辅流卡顿率（统计大于等于600ms辅流卡顿） -
-     * aloss：端侧音频丢包率（pktLoss） - vloss：端侧视频丢包率（pktLoss） - dloss：端侧辅流丢包率（pktLoss） - vwidth：端侧视频分辨率宽（actPicW） -
-     * vheight：端侧视频分辨率高（actPicH） - dwidth：端侧辅流分辨率宽（actPicW） - dheight：端侧辅流分辨率高（actPicH） - ajitter：端侧音频抖动率（jitter） -
-     * artt：端侧音频时延（rtt） - vjitter：端侧视频抖动率（jitter） - vrtt：端侧视频时延（rtt） - djitter：端侧辅流抖动率（jitter） - drtt：端侧辅流时延（rtt） */
+    /**
+     * 需查询的指标，填all则返回所有指标。多个指标使用','分割 - appcpu：端侧APP CPU使用率（appCpu） - syscpu：端侧系统 CPU使用率（deviceCpu） - abit：端侧音频码率kpbs（bitrate） - vbit：端侧视频码率kbps（bitRate） - dbit：端侧辅流码率kbps（bitRate） - vfps：端侧视频帧率fps（actFrameRate） - dfps：端侧辅流帧率fps（actFrameRate） - vblock：端侧视频卡顿率（统计大于等于600ms视频卡顿） - dblock：端侧辅流卡顿率（统计大于等于600ms辅流卡顿） - aloss：端侧音频丢包率（pktLoss） - vloss：端侧视频丢包率（pktLoss） - dloss：端侧辅流丢包率（pktLoss） - vwidth：端侧视频分辨率宽（actPicW） - vheight：端侧视频分辨率高（actPicH） - dwidth：端侧辅流分辨率宽（actPicW） - dheight：端侧辅流分辨率高（actPicH） - ajitter：端侧音频抖动率（jitter） - artt：端侧音频时延（rtt） - vjitter：端侧视频抖动率（jitter） - vrtt：端侧视频时延（rtt） - djitter：端侧辅流抖动率（jitter） - drtt：端侧辅流时延（rtt） 
+     */
     public static final class MidEnum {
 
-        /** Enum APPCPU for value: "appcpu" */
+        /**
+         * Enum APPCPU for value: "appcpu"
+         */
         public static final MidEnum APPCPU = new MidEnum("appcpu");
 
-        /** Enum SYSCPU for value: "syscpu" */
+        /**
+         * Enum SYSCPU for value: "syscpu"
+         */
         public static final MidEnum SYSCPU = new MidEnum("syscpu");
 
-        /** Enum ABIT for value: "abit" */
+        /**
+         * Enum ABIT for value: "abit"
+         */
         public static final MidEnum ABIT = new MidEnum("abit");
 
-        /** Enum ABLOCK for value: "ablock" */
+        /**
+         * Enum ABLOCK for value: "ablock"
+         */
         public static final MidEnum ABLOCK = new MidEnum("ablock");
 
-        /** Enum VBIT for value: "vbit" */
+        /**
+         * Enum VBIT for value: "vbit"
+         */
         public static final MidEnum VBIT = new MidEnum("vbit");
 
-        /** Enum DBIT for value: "dbit" */
+        /**
+         * Enum DBIT for value: "dbit"
+         */
         public static final MidEnum DBIT = new MidEnum("dbit");
 
-        /** Enum VFPS for value: "vfps" */
+        /**
+         * Enum VFPS for value: "vfps"
+         */
         public static final MidEnum VFPS = new MidEnum("vfps");
 
-        /** Enum DFPS for value: "dfps" */
+        /**
+         * Enum DFPS for value: "dfps"
+         */
         public static final MidEnum DFPS = new MidEnum("dfps");
 
-        /** Enum VBLOCK for value: "vblock" */
+        /**
+         * Enum VBLOCK for value: "vblock"
+         */
         public static final MidEnum VBLOCK = new MidEnum("vblock");
 
-        /** Enum DBLOCK for value: "dblock" */
+        /**
+         * Enum DBLOCK for value: "dblock"
+         */
         public static final MidEnum DBLOCK = new MidEnum("dblock");
 
-        /** Enum ALOSS for value: "aloss" */
+        /**
+         * Enum ALOSS for value: "aloss"
+         */
         public static final MidEnum ALOSS = new MidEnum("aloss");
 
-        /** Enum VLOSS for value: "vloss" */
+        /**
+         * Enum VLOSS for value: "vloss"
+         */
         public static final MidEnum VLOSS = new MidEnum("vloss");
 
-        /** Enum DLOSS for value: "dloss" */
+        /**
+         * Enum DLOSS for value: "dloss"
+         */
         public static final MidEnum DLOSS = new MidEnum("dloss");
 
-        /** Enum VWIDTH for value: "vwidth" */
+        /**
+         * Enum VWIDTH for value: "vwidth"
+         */
         public static final MidEnum VWIDTH = new MidEnum("vwidth");
 
-        /** Enum VHEIGHT for value: "vheight" */
+        /**
+         * Enum VHEIGHT for value: "vheight"
+         */
         public static final MidEnum VHEIGHT = new MidEnum("vheight");
 
-        /** Enum DWIDTH for value: "dwidth" */
+        /**
+         * Enum DWIDTH for value: "dwidth"
+         */
         public static final MidEnum DWIDTH = new MidEnum("dwidth");
 
-        /** Enum DHEIGHT for value: "dheight" */
+        /**
+         * Enum DHEIGHT for value: "dheight"
+         */
         public static final MidEnum DHEIGHT = new MidEnum("dheight");
 
-        /** Enum AJITTER for value: "ajitter" */
+        /**
+         * Enum AJITTER for value: "ajitter"
+         */
         public static final MidEnum AJITTER = new MidEnum("ajitter");
 
-        /** Enum ARTT for value: "artt" */
+        /**
+         * Enum ARTT for value: "artt"
+         */
         public static final MidEnum ARTT = new MidEnum("artt");
 
-        /** Enum VJITTER for value: "vjitter" */
+        /**
+         * Enum VJITTER for value: "vjitter"
+         */
         public static final MidEnum VJITTER = new MidEnum("vjitter");
 
-        /** Enum VRTT for value: "vrtt" */
+        /**
+         * Enum VRTT for value: "vrtt"
+         */
         public static final MidEnum VRTT = new MidEnum("vrtt");
 
-        /** Enum DJITTER for value: "djitter" */
+        /**
+         * Enum DJITTER for value: "djitter"
+         */
         public static final MidEnum DJITTER = new MidEnum("djitter");
 
-        /** Enum DRTT for value: "drtt" */
+        /**
+         * Enum DRTT for value: "drtt"
+         */
         public static final MidEnum DRTT = new MidEnum("drtt");
 
         private static final Map<String, MidEnum> STATIC_FIELDS = createStaticFields();
@@ -258,9 +303,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -274,9 +320,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -292,9 +339,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -310,9 +358,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domain */
+    /**
+     * 域名 
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -326,9 +375,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id 
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -342,9 +392,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -358,9 +409,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 发送端用户
-     * 
-     * @return userId */
+    /**
+     * 发送端用户 
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -374,9 +426,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 需查询接收端用户id
-     * 
-     * @return peerId */
+    /**
+     * 需查询接收端用户id 
+     * @return peerId
+     */
     public String getPeerId() {
         return peerId;
     }
@@ -390,9 +443,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 流号
-     * 
-     * @return streamId */
+    /**
+     * 流号 
+     * @return streamId
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -406,9 +460,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 判断上下行数据
-     * 
-     * @return direction */
+    /**
+     * 判断上下行数据 
+     * @return direction
+     */
     public String getDirection() {
         return direction;
     }
@@ -422,14 +477,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 需查询的指标，填all则返回所有指标。多个指标使用','分割 - appcpu：端侧APP CPU使用率（appCpu） - syscpu：端侧系统 CPU使用率（deviceCpu） -
-     * abit：端侧音频码率kpbs（bitrate） - vbit：端侧视频码率kbps（bitRate） - dbit：端侧辅流码率kbps（bitRate） - vfps：端侧视频帧率fps（actFrameRate） -
-     * dfps：端侧辅流帧率fps（actFrameRate） - vblock：端侧视频卡顿率（统计大于等于600ms视频卡顿） - dblock：端侧辅流卡顿率（统计大于等于600ms辅流卡顿） -
-     * aloss：端侧音频丢包率（pktLoss） - vloss：端侧视频丢包率（pktLoss） - dloss：端侧辅流丢包率（pktLoss） - vwidth：端侧视频分辨率宽（actPicW） -
-     * vheight：端侧视频分辨率高（actPicH） - dwidth：端侧辅流分辨率宽（actPicW） - dheight：端侧辅流分辨率高（actPicH） - ajitter：端侧音频抖动率（jitter） -
-     * artt：端侧音频时延（rtt） - vjitter：端侧视频抖动率（jitter） - vrtt：端侧视频时延（rtt） - djitter：端侧辅流抖动率（jitter） - drtt：端侧辅流时延（rtt）
-     * 
-     * @return mid */
+    /**
+     * 需查询的指标，填all则返回所有指标。多个指标使用','分割 - appcpu：端侧APP CPU使用率（appCpu） - syscpu：端侧系统 CPU使用率（deviceCpu） - abit：端侧音频码率kpbs（bitrate） - vbit：端侧视频码率kbps（bitRate） - dbit：端侧辅流码率kbps（bitRate） - vfps：端侧视频帧率fps（actFrameRate） - dfps：端侧辅流帧率fps（actFrameRate） - vblock：端侧视频卡顿率（统计大于等于600ms视频卡顿） - dblock：端侧辅流卡顿率（统计大于等于600ms辅流卡顿） - aloss：端侧音频丢包率（pktLoss） - vloss：端侧视频丢包率（pktLoss） - dloss：端侧辅流丢包率（pktLoss） - vwidth：端侧视频分辨率宽（actPicW） - vheight：端侧视频分辨率高（actPicH） - dwidth：端侧辅流分辨率宽（actPicW） - dheight：端侧辅流分辨率高（actPicH） - ajitter：端侧音频抖动率（jitter） - artt：端侧音频时延（rtt） - vjitter：端侧视频抖动率（jitter） - vrtt：端侧视频时延（rtt） - djitter：端侧辅流抖动率（jitter） - drtt：端侧辅流时延（rtt） 
+     * @return mid
+     */
     public MidEnum getMid() {
         return mid;
     }
@@ -443,9 +494,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：yyyy-mm-ddThh:mm:ssZ，如2020-04-23T06:00:00Z
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：yyyy-mm-ddThh:mm:ssZ，如2020-04-23T06:00:00Z 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -459,9 +511,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：yyyy-mm-ddThh:mm:ssZ，如2020-04-23T07:00:00Z
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：yyyy-mm-ddThh:mm:ssZ，如2020-04-23T07:00:00Z 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -475,9 +528,10 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 查询的时间类型取值：stime 数据库打点时间，不填默认ctime查询
-     * 
-     * @return timeType */
+    /**
+     * 查询的时间类型取值：stime 数据库打点时间，不填默认ctime查询
+     * @return timeType
+     */
     public String getTimeType() {
         return timeType;
     }
@@ -491,9 +545,12 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 查询结果限制 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询结果限制 
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -507,9 +564,12 @@ public class ListRtcClientQosDetailsRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 1844674407
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量 
+     * minimum: 0
+     * maximum: 1844674407
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -589,7 +649,10 @@ public class ListRtcClientQosDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

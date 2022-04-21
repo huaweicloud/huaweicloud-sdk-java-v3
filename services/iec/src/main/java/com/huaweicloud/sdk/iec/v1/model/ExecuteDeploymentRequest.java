@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ExecuteDeploymentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ExecuteDeploymentRequest {
         return this;
     }
 
-    /** 部署计划ID。 约束： - 该接口只能执行指定名称（name）创建的部署计划。
-     * 
-     * @return deploymentId */
+    /**
+     * 部署计划ID。  约束： - 该接口只能执行指定名称（name）创建的部署计划。
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -55,7 +58,10 @@ public class ExecuteDeploymentRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

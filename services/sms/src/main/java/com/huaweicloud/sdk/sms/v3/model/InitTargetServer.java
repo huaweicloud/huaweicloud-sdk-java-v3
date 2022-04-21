@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 推荐的目的端服务器配置 */
+/**
+ * 推荐的目的端服务器配置
+ */
 public class InitTargetServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class InitTargetServer {
         return this;
     }
 
-    /** 推荐的目的端服务器的磁盘信息
-     * 
-     * @return disks */
+    /**
+     * 推荐的目的端服务器的磁盘信息
+     * @return disks
+     */
     public List<DiskIntargetServer> getDisks() {
         return disks;
     }
@@ -74,7 +77,10 @@ public class InitTargetServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

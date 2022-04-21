@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NewCustomerV2 */
+/**
+ * NewCustomerV2
+ */
 public class NewCustomerV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class NewCustomerV2 {
         return this;
     }
 
-    /** 企业子账号登录名。
-     * 
-     * @return customerName */
+    /**
+     * 企业子账号登录名。
+     * @return customerName
+     */
     public String getCustomerName() {
         return customerName;
     }
@@ -54,9 +57,10 @@ public class NewCustomerV2 {
         return this;
     }
 
-    /** 企业管理员的手机号码。如果use_pri_mobile_phone取值为Y，则这个参数无效，否则必选。
-     * 
-     * @return mobilePhone */
+    /**
+     * 企业管理员的手机号码。如果use_pri_mobile_phone取值为Y，则这个参数无效，否则必选。
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -70,9 +74,10 @@ public class NewCustomerV2 {
         return this;
     }
 
-    /** 是否使用企业主账号手机号码作为子账号手机号码： Y：是N：否（默认值） 当为Y时，mobile_phone输入无效。
-     * 
-     * @return usePriMobilePhone */
+    /**
+     * 是否使用企业主账号手机号码作为子账号手机号码： Y：是N：否（默认值） 当为Y时，mobile_phone输入无效。
+     * @return usePriMobilePhone
+     */
     public String getUsePriMobilePhone() {
         return usePriMobilePhone;
     }
@@ -86,9 +91,10 @@ public class NewCustomerV2 {
         return this;
     }
 
-    /** 企业子账号的登录密码。
-     * 
-     * @return password */
+    /**
+     * 企业子账号的登录密码。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -102,9 +108,10 @@ public class NewCustomerV2 {
         return this;
     }
 
-    /** 验证码，只有输入企业子账号的手机号的情况下，才需要填写该字段。 具体请参见发送短信验证码。
-     * 
-     * @return verificationCode */
+    /**
+     * 验证码，只有输入企业子账号的手机号的情况下，才需要填写该字段。 具体请参见发送短信验证码。
+     * @return verificationCode
+     */
     public String getVerificationCode() {
         return verificationCode;
     }
@@ -147,7 +154,10 @@ public class NewCustomerV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

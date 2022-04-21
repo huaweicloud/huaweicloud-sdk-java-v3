@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneValidateTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class KeystoneValidateTokenRequest {
         return this;
     }
 
-    /** 待校验的token。
-     * 
-     * @return xSubjectToken */
+    /**
+     * 待校验的token。
+     * @return xSubjectToken
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Subject-Token")
     public String getXSubjectToken() {
@@ -41,9 +44,10 @@ public class KeystoneValidateTokenRequest {
         return this;
     }
 
-    /** 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
-     * 
-     * @return nocatalog */
+    /**
+     * 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
+     * @return nocatalog
+     */
     public String getNocatalog() {
         return nocatalog;
     }
@@ -80,7 +84,10 @@ public class KeystoneValidateTokenRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SMN通道设置对象 */
+/**
+ * SMN通道设置对象
+ */
 public class TrackerSMNChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TrackerSMNChannelConfigBody {
         return this;
     }
 
-    /** region id
-     * 
-     * @return regionId */
+    /**
+     * region id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -44,9 +47,10 @@ public class TrackerSMNChannelConfigBody {
         return this;
     }
 
-    /** project id
-     * 
-     * @return projectId */
+    /**
+     * project id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -60,9 +64,10 @@ public class TrackerSMNChannelConfigBody {
         return this;
     }
 
-    /** SMN 主题urn
-     * 
-     * @return topicUrn */
+    /**
+     * SMN 主题urn
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -101,7 +106,10 @@ public class TrackerSMNChannelConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTopUrlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ShowTopUrlRequest {
 
     private String domainName;
 
-    /** mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。 */
+    /**
+     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +117,19 @@ public class ShowTopUrlRequest {
 
     private ServiceAreaEnum serviceArea;
 
-    /** 参数类型支持：flux(流量),req_num(请求总数)。 */
+    /**
+     * 参数类型支持：flux(流量),req_num(请求总数)。
+     */
     public static final class StatTypeEnum {
 
-        /** Enum FLUX for value: "flux" */
+        /**
+         * Enum FLUX for value: "flux"
+         */
         public static final StatTypeEnum FLUX = new StatTypeEnum("flux");
 
-        /** Enum REQ_NUM for value: "req_num" */
+        /**
+         * Enum REQ_NUM for value: "req_num"
+         */
         public static final StatTypeEnum REQ_NUM = new StatTypeEnum("req_num");
 
         private static final Map<String, StatTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -190,9 +204,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -206,9 +221,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** 查询起始时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -222,9 +238,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** 查询结束时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -238,9 +255,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com ，ALL表示查询名下全部域名。
-     * 
-     * @return domainName */
+    /**
+     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com ，ALL表示查询名下全部域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -254,9 +272,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
-     * 
-     * @return serviceArea */
+    /**
+     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -270,9 +289,10 @@ public class ShowTopUrlRequest {
         return this;
     }
 
-    /** 参数类型支持：flux(流量),req_num(请求总数)。
-     * 
-     * @return statType */
+    /**
+     * 参数类型支持：flux(流量),req_num(请求总数)。
+     * @return statType
+     */
     public StatTypeEnum getStatType() {
         return statType;
     }
@@ -317,7 +337,10 @@ public class ShowTopUrlRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

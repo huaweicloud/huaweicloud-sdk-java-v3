@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCompetitionWorksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListCompetitionWorksRequest {
 
     private String readTime;
 
-    /** 查询的时间范围。day表示以read_time作为结束时间,前一天内作为查询范围,hour表示以read_time作为结束时间,前一小内时作为查询范围。 */
+    /**
+     * 查询的时间范围。day表示以read_time作为结束时间,前一天内作为查询范围,hour表示以read_time作为结束时间,前一小内时作为查询范围。
+     */
     public static final class TimeUnitEnum {
 
-        /** Enum DAY for value: "day" */
+        /**
+         * Enum DAY for value: "day"
+         */
         public static final TimeUnitEnum DAY = new TimeUnitEnum("day");
 
-        /** Enum HOUR for value: "hour" */
+        /**
+         * Enum HOUR for value: "hour"
+         */
         public static final TimeUnitEnum HOUR = new TimeUnitEnum("hour");
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +127,19 @@ public class ListCompetitionWorksRequest {
 
     private String sortKey;
 
-    /** 排序类型，支持asc|desc，默认为asc升序 */
+    /**
+     * 排序类型，支持asc|desc，默认为asc升序
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +214,12 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 要查询的大赛ID，由大赛平台提供 minimum: 1 maximum: 2147483647
-     * 
-     * @return competitionId */
+    /**
+     * 要查询的大赛ID，由大赛平台提供
+     * minimum: 1
+     * maximum: 2147483647
+     * @return competitionId
+     */
     public Integer getCompetitionId() {
         return competitionId;
     }
@@ -216,9 +233,12 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 要查询的大赛阶段ID，由大赛平台提供 minimum: 1 maximum: 2147483647
-     * 
-     * @return stageId */
+    /**
+     * 要查询的大赛阶段ID，由大赛平台提供
+     * minimum: 1
+     * maximum: 2147483647
+     * @return stageId
+     */
     public Integer getStageId() {
         return stageId;
     }
@@ -232,9 +252,10 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 查询的截止时间
-     * 
-     * @return readTime */
+    /**
+     * 查询的截止时间
+     * @return readTime
+     */
     public String getReadTime() {
         return readTime;
     }
@@ -248,9 +269,10 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 查询的时间范围。day表示以read_time作为结束时间,前一天内作为查询范围,hour表示以read_time作为结束时间,前一小内时作为查询范围。
-     * 
-     * @return timeUnit */
+    /**
+     * 查询的时间范围。day表示以read_time作为结束时间,前一天内作为查询范围,hour表示以read_time作为结束时间,前一小内时作为查询范围。
+     * @return timeUnit
+     */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -264,9 +286,12 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 作品记录的起始编号,如果不传默认从0开始,offset为0时表示从第一条记录开始 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 作品记录的起始编号,如果不传默认从0开始,offset为0时表示从第一条记录开始
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -280,9 +305,12 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 每页包含的作品记录数,如果不传默认返回100条，并且返回最大条数为100 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页包含的作品记录数,如果不传默认返回100条，并且返回最大条数为100
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -296,9 +324,10 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 需要排序的字段，只支持works_id字段,如果不传则不进行排序
-     * 
-     * @return sortKey */
+    /**
+     * 需要排序的字段，只支持works_id字段,如果不传则不进行排序
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -312,9 +341,10 @@ public class ListCompetitionWorksRequest {
         return this;
     }
 
-    /** 排序类型，支持asc|desc，默认为asc升序
-     * 
-     * @return sortDir */
+    /**
+     * 排序类型，支持asc|desc，默认为asc升序
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -363,7 +393,10 @@ public class ListCompetitionWorksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

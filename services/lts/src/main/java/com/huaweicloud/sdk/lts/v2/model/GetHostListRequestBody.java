@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询主机信息请求体 */
+/**
+ * 查询主机信息请求体
+ */
 public class GetHostListRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class GetHostListRequestBody {
         return this;
     }
 
-    /** 主机ID列表。可以根据主机ID列表进行批量过滤
-     * 
-     * @return hostIdList */
+    /**
+     * 主机ID列表。可以根据主机ID列表进行批量过滤
+     * @return hostIdList
+     */
     public List<String> getHostIdList() {
         return hostIdList;
     }
@@ -67,9 +70,10 @@ public class GetHostListRequestBody {
         return this;
     }
 
-    /** Get filter
-     * 
-     * @return filter */
+    /**
+     * Get filter
+     * @return filter
+     */
     public GetHostListFilter getFilter() {
         return filter;
     }
@@ -106,7 +110,10 @@ public class GetHostListRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

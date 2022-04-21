@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 主持人邀请开启、关闭摄像头的请求body */
+/**
+ * 主持人邀请开启、关闭摄像头的请求body
+ */
 public class RestVideoBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class RestVideoBody {
         return this;
     }
 
-    /** 1：关闭视频 0：开启视频 minimum: 0 maximum: 1
-     * 
-     * @return status */
+    /**
+     * 1：关闭视频 0：开启视频
+     * minimum: 0
+     * maximum: 1
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -55,7 +60,10 @@ public class RestVideoBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

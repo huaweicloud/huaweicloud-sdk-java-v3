@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RegisterImeiReq */
+/**
+ * RegisterImeiReq
+ */
 public class RegisterImeiReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class RegisterImeiReq {
         return this;
     }
 
-    /** 绑定类型(1:普通机卡重绑，2：固定机卡重绑) minimum: 1 maximum: 2
-     * 
-     * @return bindType */
+    /**
+     * 绑定类型(1:普通机卡重绑，2：固定机卡重绑)
+     * minimum: 1
+     * maximum: 2
+     * @return bindType
+     */
     public Integer getBindType() {
         return bindType;
     }
@@ -39,9 +44,10 @@ public class RegisterImeiReq {
         return this;
     }
 
-    /** 设备IMEI,84584xxxxxx
-     * 
-     * @return imei */
+    /**
+     * 设备IMEI,84584xxxxxx
+     * @return imei
+     */
     public String getImei() {
         return imei;
     }
@@ -78,7 +84,10 @@ public class RegisterImeiReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

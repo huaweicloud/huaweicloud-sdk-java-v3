@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SQL作业运行响应。 */
+/**
+ * SQL作业运行响应。
+ */
 public class SqlJobRunResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SqlJobRunResponseBody {
         return this;
     }
 
-    /** 作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT.
-     * 
-     * @return sqlType */
+    /**
+     * 作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT.
+     * @return sqlType
+     */
     public String getSqlType() {
         return sqlType;
     }
@@ -68,9 +71,10 @@ public class SqlJobRunResponseBody {
         return this;
     }
 
-    /** 当语句类型为DDL时，返回其结果的列名称及类型。
-     * 
-     * @return schema */
+    /**
+     * 当语句类型为DDL时，返回其结果的列名称及类型。
+     * @return schema
+     */
     public List<Object> getSchema() {
         return schema;
     }
@@ -100,9 +104,10 @@ public class SqlJobRunResponseBody {
         return this;
     }
 
-    /** 当语句类型为DDL时，直接返回其执行结果。
-     * 
-     * @return rows */
+    /**
+     * 当语句类型为DDL时，直接返回其执行结果。
+     * @return rows
+     */
     public List<Object> getRows() {
         return rows;
     }
@@ -116,9 +121,10 @@ public class SqlJobRunResponseBody {
         return this;
     }
 
-    /** 作业执行模式：async: 异步; sync: 同步。
-     * 
-     * @return jobMode */
+    /**
+     * 作业执行模式：async: 异步; sync: 同步。
+     * @return jobMode
+     */
     public String getJobMode() {
         return jobMode;
     }
@@ -159,7 +165,10 @@ public class SqlJobRunResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

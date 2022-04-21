@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEdgeNodeCertsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点上已关联的应用证书和设备证书的数目
-     * 
-     * @return count */
+    /**
+     * 节点上已关联的应用证书和设备证书的数目
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点上的证书列表
-     * 
-     * @return nodeCerts */
+    /**
+     * 节点上的证书列表
+     * @return nodeCerts
+     */
     public List<NodeCert> getNodeCerts() {
         return nodeCerts;
     }
@@ -98,7 +102,10 @@ public class ListEdgeNodeCertsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

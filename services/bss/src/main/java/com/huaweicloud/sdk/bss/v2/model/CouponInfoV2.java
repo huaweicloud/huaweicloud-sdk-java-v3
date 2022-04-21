@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CouponInfoV2 */
+/**
+ * CouponInfoV2
+ */
 public class CouponInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,9 +113,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券实例ID。
-     * 
-     * @return couponId */
+    /**
+     * 优惠券实例ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -127,9 +130,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券编码。
-     * 
-     * @return couponCode */
+    /**
+     * 优惠券编码。
+     * @return couponCode
+     */
     public String getCouponCode() {
         return couponCode;
     }
@@ -143,9 +147,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券状态： 1：未激活2：待使用
-     * 
-     * @return status */
+    /**
+     * 优惠券状态： 1：未激活2：待使用
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -159,9 +164,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券类型。 1：代金券2：折扣券3：产品券4：现金券
-     * 
-     * @return couponType */
+    /**
+     * 优惠券类型。 1：代金券2：折扣券3：产品券4：现金券
+     * @return couponType
+     */
     public Integer getCouponType() {
         return couponType;
     }
@@ -175,9 +181,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 面额单位： 1：元。
-     * 
-     * @return measureId */
+    /**
+     * 面额单位： 1：元。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -191,9 +198,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 面值。
-     * 
-     * @return faceValue */
+    /**
+     * 面值。
+     * @return faceValue
+     */
     public Double getFaceValue() {
         return faceValue;
     }
@@ -207,9 +215,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -223,9 +232,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -239,9 +249,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 促销计划名称。
-     * 
-     * @return planName */
+    /**
+     * 促销计划名称。
+     * @return planName
+     */
     public String getPlanName() {
         return planName;
     }
@@ -255,9 +266,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 促销计划描述。
-     * 
-     * @return planDesc */
+    /**
+     * 促销计划描述。
+     * @return planDesc
+     */
     public String getPlanDesc() {
         return planDesc;
     }
@@ -287,9 +299,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券限制。 具体请参见表3。
-     * 
-     * @return useLimits */
+    /**
+     * 优惠券限制。 具体请参见表3。
+     * @return useLimits
+     */
     public List<LimitInfoV2> getUseLimits() {
         return useLimits;
     }
@@ -303,9 +316,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 激活时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return activeTime */
+    /**
+     * 激活时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return activeTime
+     */
     public String getActiveTime() {
         return activeTime;
     }
@@ -319,9 +333,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 上一次使用时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return lastUsedTime */
+    /**
+     * 上一次使用时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return lastUsedTime
+     */
     public String getLastUsedTime() {
         return lastUsedTime;
     }
@@ -335,9 +350,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -351,9 +367,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券版本。 1：老版本（包含三种：代金券、折扣券和奖金券）2：新版本（只有代金券）
-     * 
-     * @return couponVersion */
+    /**
+     * 优惠券版本。 1：老版本（包含三种：代金券、折扣券和奖金券）2：新版本（只有代金券）
+     * @return couponVersion
+     */
     public Integer getCouponVersion() {
         return couponVersion;
     }
@@ -367,9 +384,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 余额。
-     * 
-     * @return balance */
+    /**
+     * 余额。
+     * @return balance
+     */
     public Double getBalance() {
         return balance;
     }
@@ -383,9 +401,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 使用优惠券的订单ID。表示有订单正在使用这个优惠券，优惠券已被锁定，只有锁定优惠券的订单才能使用这个优惠券，其他订单不能使用该优惠券。
-     * 
-     * @return usedByOrderId */
+    /**
+     * 使用优惠券的订单ID。表示有订单正在使用这个优惠券，优惠券已被锁定，只有锁定优惠券的订单才能使用这个优惠券，其他订单不能使用该优惠券。
+     * @return usedByOrderId
+     */
     public String getUsedByOrderId() {
         return usedByOrderId;
     }
@@ -399,9 +418,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券用途。
-     * 
-     * @return couponUsage */
+    /**
+     * 优惠券用途。
+     * @return couponUsage
+     */
     public String getCouponUsage() {
         return couponUsage;
     }
@@ -415,9 +435,10 @@ public class CouponInfoV2 {
         return this;
     }
 
-    /** 优惠券分组。 1：云市场发放的券2：华为云券-1024-专用代金券3：华为云券-使用限制-抵扣硬件的券0：华为云服务券（排除上述取值之外的券）
-     * 
-     * @return couponGroup */
+    /**
+     * 优惠券分组。 1：云市场发放的券2：华为云券-1024-专用代金券3：华为云券-使用限制-抵扣硬件的券0：华为云服务券（排除上述取值之外的券）
+     * @return couponGroup
+     */
     public Integer getCouponGroup() {
         return couponGroup;
     }
@@ -506,7 +527,10 @@ public class CouponInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

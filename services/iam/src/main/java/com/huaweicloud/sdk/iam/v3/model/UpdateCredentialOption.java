@@ -15,13 +15,19 @@ import java.util.Objects;
  */
 public class UpdateCredentialOption {
 
-    /** 访问密钥状态。取值为：“active”（启用）或者 “inactive”（停用）。status与description至少填写一个。 */
+    /**
+     * 访问密钥状态。取值为：“active”（启用）或者 “inactive”（停用）。status与description至少填写一个。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
-        /** Enum INACTIVE for value: "inactive" */
+        /**
+         * Enum INACTIVE for value: "inactive"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("inactive");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -101,9 +107,10 @@ public class UpdateCredentialOption {
         return this;
     }
 
-    /** 访问密钥状态。取值为：“active”（启用）或者 “inactive”（停用）。status与description至少填写一个。
-     * 
-     * @return status */
+    /**
+     * 访问密钥状态。取值为：“active”（启用）或者 “inactive”（停用）。status与description至少填写一个。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -117,9 +124,10 @@ public class UpdateCredentialOption {
         return this;
     }
 
-    /** 访问密钥描述信息。status与description至少填写一个。
-     * 
-     * @return description */
+    /**
+     * 访问密钥描述信息。status与description至少填写一个。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -156,7 +164,10 @@ public class UpdateCredentialOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -63,6 +63,108 @@ public class CloudDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDeployTaskHistoryByDateRequest, ListDeployTaskHistoryByDateResponse> listDeployTaskHistoryByDate =
+        genForlistDeployTaskHistoryByDate();
+
+    private static HttpRequestDef<ListDeployTaskHistoryByDateRequest, ListDeployTaskHistoryByDateResponse> genForlistDeployTaskHistoryByDate() {
+        // basic
+        HttpRequestDef.Builder<ListDeployTaskHistoryByDateRequest, ListDeployTaskHistoryByDateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDeployTaskHistoryByDateRequest.class,
+                    ListDeployTaskHistoryByDateResponse.class)
+                .withName("ListDeployTaskHistoryByDate")
+                .withUri("/v2/{project_id}/task/{id}/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+        builder.<String>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeployTaskHistoryByDateRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeployTasksRequest, ListDeployTasksResponse> listDeployTasks =
+        genForlistDeployTasks();
+
+    private static HttpRequestDef<ListDeployTasksRequest, ListDeployTasksResponse> genForlistDeployTasks() {
+        // basic
+        HttpRequestDef.Builder<ListDeployTasksRequest, ListDeployTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDeployTasksRequest.class, ListDeployTasksResponse.class)
+                .withName("ListDeployTasks")
+                .withUri("/v2/{project_id}/tasks/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeployTasksRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeployTasksRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeployTasksRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeployTaskDetailRequest, ShowDeployTaskDetailResponse> showDeployTaskDetail =
         genForshowDeployTaskDetail();
 
@@ -506,6 +608,77 @@ public class CloudDeployMeta {
             TypeCasts.uncheckedConversion(DeploymentGroupUpdateRequest.class),
             f -> f.withMarshaller(UpdateDeploymentGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskSuccessRateRequest, ListTaskSuccessRateResponse> listTaskSuccessRate =
+        genForlistTaskSuccessRate();
+
+    private static HttpRequestDef<ListTaskSuccessRateRequest, ListTaskSuccessRateResponse> genForlistTaskSuccessRate() {
+        // basic
+        HttpRequestDef.Builder<ListTaskSuccessRateRequest, ListTaskSuccessRateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTaskSuccessRateRequest.class, ListTaskSuccessRateResponse.class)
+                .withName("ListTaskSuccessRate")
+                .withUri("/v2/{project_id}/tasks/metrics/success-rate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskSuccessRateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<TasksSuccessRateQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(TasksSuccessRateQuery.class),
+            f -> f.withMarshaller(ListTaskSuccessRateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse> showProjectSuccessRate =
+        genForshowProjectSuccessRate();
+
+    private static HttpRequestDef<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse> genForshowProjectSuccessRate() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowProjectSuccessRateRequest.class, ShowProjectSuccessRateResponse.class)
+            .withName("ShowProjectSuccessRate")
+            .withUri("/v2/{project_id}/metrics/success-rate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectSuccessRateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectSuccessRateRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectSuccessRateRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
             }));
 
         // response

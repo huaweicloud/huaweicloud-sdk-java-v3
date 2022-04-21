@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListWatermarkTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,12 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 水印模板总数。 minimum: 0 maximum: 2147483647
-     * 
-     * @return total */
+    /**
+     * 水印模板总数。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +64,10 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 水印模板
-     * 
-     * @return templates */
+    /**
+     * 水印模板
+     * @return templates
+     */
     public List<WatermarkTemplate> getTemplates() {
         return templates;
     }
@@ -98,7 +104,10 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

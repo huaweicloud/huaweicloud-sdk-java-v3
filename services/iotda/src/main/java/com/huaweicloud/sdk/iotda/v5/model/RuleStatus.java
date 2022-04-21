@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规则状态 */
+/**
+ * 规则状态
+ */
 public class RuleStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RuleStatus {
         return this;
     }
 
-    /** **参数说明**：规则的激活状态。 **取值范围**： - active：激活。 - inactive：未激活。
-     * 
-     * @return status */
+    /**
+     * **参数说明**：规则的激活状态。 **取值范围**： - active：激活。 - inactive：未激活。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -55,7 +58,10 @@ public class RuleStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

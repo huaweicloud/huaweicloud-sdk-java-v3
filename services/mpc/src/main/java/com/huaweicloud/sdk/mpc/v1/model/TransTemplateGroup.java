@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TransTemplateGroup */
+/**
+ * TransTemplateGroup
+ */
 public class TransTemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class TransTemplateGroup {
         return this;
     }
 
-    /** 模板组名称
-     * 
-     * @return name */
+    /**
+     * 模板组名称 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -73,9 +76,10 @@ public class TransTemplateGroup {
         return this;
     }
 
-    /** 视频信息列表
-     * 
-     * @return videos */
+    /**
+     * 视频信息列表 
+     * @return videos
+     */
     public List<VideoObj> getVideos() {
         return videos;
     }
@@ -98,9 +102,10 @@ public class TransTemplateGroup {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public Audio getAudio() {
         return audio;
     }
@@ -123,9 +128,10 @@ public class TransTemplateGroup {
         return this;
     }
 
-    /** Get videoCommon
-     * 
-     * @return videoCommon */
+    /**
+     * Get videoCommon
+     * @return videoCommon
+     */
     public VideoCommon getVideoCommon() {
         return videoCommon;
     }
@@ -148,9 +154,10 @@ public class TransTemplateGroup {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public Common getCommon() {
         return common;
     }
@@ -193,7 +200,10 @@ public class TransTemplateGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

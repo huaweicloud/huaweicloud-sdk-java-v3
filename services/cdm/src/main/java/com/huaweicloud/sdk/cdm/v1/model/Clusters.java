@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Clusters */
+/**
+ * Clusters
+ */
 public class Clusters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -145,9 +147,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get customerConfig
-     * 
-     * @return customerConfig */
+    /**
+     * Get customerConfig
+     * @return customerConfig
+     */
     public CustomerConfig getCustomerConfig() {
         return customerConfig;
     }
@@ -170,9 +173,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -202,9 +206,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群的节点信息，请参见instances参数说明
-     * 
-     * @return instances */
+    /**
+     * 集群的节点信息，请参见instances参数说明
+     * @return instances
+     */
     public List<ClusterDetailInstance> getInstances() {
         return instances;
     }
@@ -218,9 +223,10 @@ public class Clusters {
         return this;
     }
 
-    /** az名称
-     * 
-     * @return azName */
+    /**
+     * az名称
+     * @return azName
+     */
     public String getAzName() {
         return azName;
     }
@@ -234,9 +240,10 @@ public class Clusters {
         return this;
     }
 
-    /** 数据库用户
-     * 
-     * @return dbuser */
+    /**
+     * 数据库用户
+     * @return dbuser
+     */
     public String getDbuser() {
         return dbuser;
     }
@@ -250,9 +257,10 @@ public class Clusters {
         return this;
     }
 
-    /** 规格名称
-     * 
-     * @return flavorName */
+    /**
+     * 规格名称
+     * @return flavorName
+     */
     public String getFlavorName() {
         return flavorName;
     }
@@ -266,9 +274,10 @@ public class Clusters {
         return this;
     }
 
-    /** 事件数
-     * 
-     * @return recentEvent */
+    /**
+     * 事件数
+     * @return recentEvent
+     */
     public Integer getRecentEvent() {
         return recentEvent;
     }
@@ -282,9 +291,10 @@ public class Clusters {
         return this;
     }
 
-    /** 自动关机
-     * 
-     * @return isAutoOff */
+    /**
+     * 自动关机
+     * @return isAutoOff
+     */
     public Boolean getIsAutoOff() {
         return isAutoOff;
     }
@@ -298,9 +308,10 @@ public class Clusters {
         return this;
     }
 
-    /** 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
-     * 
-     * @return isScheduleBootOff */
+    /**
+     * 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
+     * @return isScheduleBootOff
+     */
     public Boolean getIsScheduleBootOff() {
         return isScheduleBootOff;
     }
@@ -314,9 +325,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群模式：sharding(分片集群)
-     * 
-     * @return clusterMode */
+    /**
+     * 集群模式：sharding(分片集群)
+     * @return clusterMode
+     */
     public String getClusterMode() {
         return clusterMode;
     }
@@ -330,9 +342,10 @@ public class Clusters {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespace */
+    /**
+     * 命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -355,9 +368,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get task
-     * 
-     * @return task */
+    /**
+     * Get task
+     * @return task
+     */
     public ClusterTask getTask() {
         return task;
     }
@@ -371,9 +385,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群绑定的EIP
-     * 
-     * @return publicEndpoint */
+    /**
+     * 集群绑定的EIP
+     * @return publicEndpoint
+     */
     public String getPublicEndpoint() {
         return publicEndpoint;
     }
@@ -396,9 +411,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -412,9 +428,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return created */
+    /**
+     * 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -428,9 +445,10 @@ public class Clusters {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return bakExpectedStartTime */
+    /**
+     * 开始时间
+     * @return bakExpectedStartTime
+     */
     public String getBakExpectedStartTime() {
         return bakExpectedStartTime;
     }
@@ -444,9 +462,10 @@ public class Clusters {
         return this;
     }
 
-    /** 保留时间
-     * 
-     * @return bakKeepDay */
+    /**
+     * 保留时间
+     * @return bakKeepDay
+     */
     public Integer getBakKeepDay() {
         return bakKeepDay;
     }
@@ -460,9 +479,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return name */
+    /**
+     * 集群名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -476,9 +496,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群状态描述：Normal（正常）
-     * 
-     * @return statusDetail */
+    /**
+     * 集群状态描述：Normal（正常）
+     * @return statusDetail
+     */
     public String getStatusDetail() {
         return statusDetail;
     }
@@ -492,9 +513,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return id */
+    /**
+     * 集群ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -508,9 +530,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群是否冻结：0：否 1：是
-     * 
-     * @return isFrozen */
+    /**
+     * 集群是否冻结：0：否 1：是
+     * @return isFrozen
+     */
     public String getIsFrozen() {
         return isFrozen;
     }
@@ -524,9 +547,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群更新时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return updated */
+    /**
+     * 集群更新时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -540,9 +564,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 500：重启中 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
-     * 
-     * @return status */
+    /**
+     * 集群状态： - 100：创建中 - 200：正常 - 300：失败 - 303：创建失败 - 500：重启中 - 800：冻结 - 900：已关机 - 910：正在关机 - 920：正在开机
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -565,9 +590,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get failedReasons
-     * 
-     * @return failedReasons */
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
     public FailedReasons getFailedReasons() {
         return failedReasons;
     }
@@ -665,7 +691,10 @@ public class Clusters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

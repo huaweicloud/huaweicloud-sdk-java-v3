@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPostalAddressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class ListPostalAddressRequest {
         return this;
     }
 
-    /** 偏移量。默认值为0。 minimum: 0 maximum: 21474836476
-     * 
-     * @return offset */
+    /**
+     * 偏移量。默认值为0。
+     * minimum: 0
+     * maximum: 21474836476
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -39,9 +44,12 @@ public class ListPostalAddressRequest {
         return this;
     }
 
-    /** 每次查询的个数。默认值为10。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次查询的个数。默认值为10。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -78,7 +86,10 @@ public class ListPostalAddressRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

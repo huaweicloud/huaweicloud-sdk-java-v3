@@ -12,22 +12,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobResponse extends SdkResponse {
 
-    /** 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。 */
+    /**
+     * 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +151,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
-     * 
-     * @return status */
+    /**
+     * 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -155,9 +168,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -171,9 +185,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务类型。
-     * 
-     * @return jobType */
+    /**
+     * 任务类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -187,9 +202,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务开始执行时间。格式为UTC时间。
-     * 
-     * @return beginTime */
+    /**
+     * 任务开始执行时间。格式为UTC时间。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -203,9 +219,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结束时间。格式为UTC时间。
-     * 
-     * @return endTime */
+    /**
+     * 任务结束时间。格式为UTC时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -219,9 +236,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -235,9 +253,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 失败原因。
-     * 
-     * @return failReason */
+    /**
+     * 失败原因。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -260,9 +279,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get entities
-     * 
-     * @return entities */
+    /**
+     * Get entities
+     * @return entities
+     */
     public JobEntities getEntities() {
         return entities;
     }
@@ -310,7 +330,10 @@ public class ShowJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

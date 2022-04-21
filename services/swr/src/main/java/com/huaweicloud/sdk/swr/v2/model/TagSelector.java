@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TagSelector */
+/**
+ * TagSelector
+ */
 public class TagSelector {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TagSelector {
         return this;
     }
 
-    /** 匹配规则，label、regexp
-     * 
-     * @return kind */
+    /**
+     * 匹配规则，label、regexp
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -39,9 +42,10 @@ public class TagSelector {
         return this;
     }
 
-    /** kind是label时，设置为镜像版本,kind是regexp时，设置为正则表达式
-     * 
-     * @return pattern */
+    /**
+     * kind是label时，设置为镜像版本,kind是regexp时，设置为正则表达式
+     * @return pattern
+     */
     public String getPattern() {
         return pattern;
     }
@@ -77,7 +81,10 @@ public class TagSelector {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

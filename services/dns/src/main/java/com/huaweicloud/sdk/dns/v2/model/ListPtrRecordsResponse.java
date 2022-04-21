@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPtrRecordsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ListPtrRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -66,9 +69,10 @@ public class ListPtrRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public Metedata getMetadata() {
         return metadata;
     }
@@ -98,9 +102,10 @@ public class ListPtrRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get floatingips
-     * 
-     * @return floatingips */
+    /**
+     * Get floatingips
+     * @return floatingips
+     */
     public List<ListPtrRecordsFloatingResp> getFloatingips() {
         return floatingips;
     }
@@ -139,7 +144,10 @@ public class ListPtrRecordsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

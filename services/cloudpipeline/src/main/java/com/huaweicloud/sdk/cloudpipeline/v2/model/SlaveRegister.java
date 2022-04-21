@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页查询对象Query */
+/**
+ * 分页查询对象Query
+ */
 public class SlaveRegister {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** cluster ID
-     * 
-     * @return clusterId */
+    /**
+     * cluster ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -64,9 +67,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** Slave名称
-     * 
-     * @return slaveName */
+    /**
+     * Slave名称
+     * @return slaveName
+     */
     public String getSlaveName() {
         return slaveName;
     }
@@ -80,9 +84,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** Slave工作空间
-     * 
-     * @return workDir */
+    /**
+     * Slave工作空间
+     * @return workDir
+     */
     public String getWorkDir() {
         return workDir;
     }
@@ -96,9 +101,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** Slave label
-     * 
-     * @return label */
+    /**
+     * Slave label
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -112,9 +118,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** agent版本
-     * 
-     * @return version */
+    /**
+     * agent版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -128,9 +135,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** 是否重试
-     * 
-     * @return retry */
+    /**
+     * 是否重试
+     * @return retry
+     */
     public Boolean getRetry() {
         return retry;
     }
@@ -144,9 +152,10 @@ public class SlaveRegister {
         return this;
     }
 
-    /** Slave ownerType
-     * 
-     * @return ownerType */
+    /**
+     * Slave ownerType
+     * @return ownerType
+     */
     public String getOwnerType() {
         return ownerType;
     }
@@ -191,7 +200,10 @@ public class SlaveRegister {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

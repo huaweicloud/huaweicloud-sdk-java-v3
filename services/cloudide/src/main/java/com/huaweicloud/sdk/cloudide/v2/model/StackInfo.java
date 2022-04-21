@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StackInfo */
+/**
+ * StackInfo
+ */
 public class StackInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,9 +113,10 @@ public class StackInfo {
         return this;
     }
 
-    /** Get armConfig
-     * 
-     * @return armConfig */
+    /**
+     * Get armConfig
+     * @return armConfig
+     */
     public StacksConfig getArmConfig() {
         return armConfig;
     }
@@ -127,9 +130,10 @@ public class StackInfo {
         return this;
     }
 
-    /** bundleUrl
-     * 
-     * @return bundleUrl */
+    /**
+     * bundleUrl
+     * @return bundleUrl
+     */
     public String getBundleUrl() {
         return bundleUrl;
     }
@@ -152,9 +156,10 @@ public class StackInfo {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public StacksConfig getConfig() {
         return config;
     }
@@ -168,9 +173,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
@@ -184,9 +190,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 是否删除
-     * 
-     * @return delete */
+    /**
+     * 是否删除
+     * @return delete
+     */
     public Boolean getDelete() {
         return delete;
     }
@@ -200,9 +207,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -216,9 +224,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 是否可用
-     * 
-     * @return disable */
+    /**
+     * 是否可用
+     * @return disable
+     */
     public Boolean getDisable() {
         return disable;
     }
@@ -232,9 +241,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 显示名称
-     * 
-     * @return displayName */
+    /**
+     * 显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -248,9 +258,10 @@ public class StackInfo {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -264,9 +275,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return label */
+    /**
+     * 标签
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -280,9 +292,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 图标
-     * 
-     * @return logo */
+    /**
+     * 图标
+     * @return logo
+     */
     public String getLogo() {
         return logo;
     }
@@ -296,9 +309,10 @@ public class StackInfo {
         return this;
     }
 
-    /** region
-     * 
-     * @return region */
+    /**
+     * region
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -312,9 +326,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 是否显示
-     * 
-     * @return show */
+    /**
+     * 是否显示
+     * @return show
+     */
     public Boolean getShow() {
         return show;
     }
@@ -328,9 +343,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 技术栈名称
-     * 
-     * @return stackName */
+    /**
+     * 技术栈名称
+     * @return stackName
+     */
     public String getStackName() {
         return stackName;
     }
@@ -360,9 +376,10 @@ public class StackInfo {
         return this;
     }
 
-    /** tags
-     * 
-     * @return tags */
+    /**
+     * tags
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -376,9 +393,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updatedTime */
+    /**
+     * 修改时间
+     * @return updatedTime
+     */
     public OffsetDateTime getUpdatedTime() {
         return updatedTime;
     }
@@ -408,9 +426,10 @@ public class StackInfo {
         return this;
     }
 
-    /** 使用者
-     * 
-     * @return users */
+    /**
+     * 使用者
+     * @return users
+     */
     public List<String> getUsers() {
         return users;
     }
@@ -486,7 +505,10 @@ public class StackInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

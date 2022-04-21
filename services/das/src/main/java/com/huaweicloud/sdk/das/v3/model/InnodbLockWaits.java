@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InnodbLockWaits */
+/**
+ * InnodbLockWaits
+ */
 public class InnodbLockWaits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class InnodbLockWaits {
         return this;
     }
 
-    /** 申请锁资源的事务ID
-     * 
-     * @return requestingTrxId */
+    /**
+     * 申请锁资源的事务ID
+     * @return requestingTrxId
+     */
     public String getRequestingTrxId() {
         return requestingTrxId;
     }
@@ -49,9 +52,10 @@ public class InnodbLockWaits {
         return this;
     }
 
-    /** 申请的锁的ID
-     * 
-     * @return requestedLockId */
+    /**
+     * 申请的锁的ID
+     * @return requestedLockId
+     */
     public String getRequestedLockId() {
         return requestedLockId;
     }
@@ -65,9 +69,10 @@ public class InnodbLockWaits {
         return this;
     }
 
-    /** 阻塞的事务ID
-     * 
-     * @return blockingTrxId */
+    /**
+     * 阻塞的事务ID
+     * @return blockingTrxId
+     */
     public String getBlockingTrxId() {
         return blockingTrxId;
     }
@@ -81,9 +86,10 @@ public class InnodbLockWaits {
         return this;
     }
 
-    /** 阻塞的锁的ID
-     * 
-     * @return blockingLockId */
+    /**
+     * 阻塞的锁的ID
+     * @return blockingLockId
+     */
     public String getBlockingLockId() {
         return blockingLockId;
     }
@@ -124,7 +130,10 @@ public class InnodbLockWaits {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowSinkTaskDetailRespPartitions */
+/**
+ * ShowSinkTaskDetailRespPartitions
+ */
 public class ShowSinkTaskDetailRespPartitions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return this;
     }
 
-    /** 分区ID。
-     * 
-     * @return partitionId */
+    /**
+     * 分区ID。
+     * @return partitionId
+     */
     public String getPartitionId() {
         return partitionId;
     }
@@ -54,9 +57,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return this;
     }
 
-    /** 运行状态。
-     * 
-     * @return status */
+    /**
+     * 运行状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -70,9 +74,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return this;
     }
 
-    /** 已转储的消息偏移量。
-     * 
-     * @return lastTransferOffset */
+    /**
+     * 已转储的消息偏移量。
+     * @return lastTransferOffset
+     */
     public String getLastTransferOffset() {
         return lastTransferOffset;
     }
@@ -86,9 +91,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return this;
     }
 
-    /** 消息偏移量。
-     * 
-     * @return logEndOffset */
+    /**
+     * 消息偏移量。
+     * @return logEndOffset
+     */
     public String getLogEndOffset() {
         return logEndOffset;
     }
@@ -102,9 +108,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return this;
     }
 
-    /** 积压的消息数。
-     * 
-     * @return lag */
+    /**
+     * 积压的消息数。
+     * @return lag
+     */
     public String getLag() {
         return lag;
     }
@@ -147,7 +154,10 @@ public class ShowSinkTaskDetailRespPartitions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -38,9 +38,10 @@ public class UpdatePortOption {
         return this;
     }
 
-    /** 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线）
-     * 
-     * @return name */
+    /**
+     * 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +71,10 @@ public class UpdatePortOption {
         return this;
     }
 
-    /** 安全组的ID列表
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组的ID列表
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -102,10 +104,10 @@ public class UpdatePortOption {
         return this;
     }
 
-    /** 功能说明：IP/Mac对列表 约束： - IP地址不允许为 “0.0.0.0”。 - 如果配置地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。 -
-     * 为虚拟IP配置后端ECS场景，allowed_address_pairs中配置的IP地址，必须为ECS网卡已有的IP地址，否则可能会导致虚拟IP通信异常。
-     * 
-     * @return allowedAddressPairs */
+    /**
+     * 功能说明：IP/Mac对列表 约束： - IP地址不允许为 “0.0.0.0”。 - 如果配置地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。 - 为虚拟IP配置后端ECS场景，allowed_address_pairs中配置的IP地址，必须为ECS网卡已有的IP地址，否则可能会导致虚拟IP通信异常。
+     * @return allowedAddressPairs
+     */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
         return allowedAddressPairs;
     }
@@ -135,9 +137,10 @@ public class UpdatePortOption {
         return this;
     }
 
-    /** 功能说明：DHCP的扩展Option(扩展属性)
-     * 
-     * @return extraDhcpOpts */
+    /**
+     * 功能说明：DHCP的扩展Option(扩展属性)
+     * @return extraDhcpOpts
+     */
     public List<ExtraDhcpOpt> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -178,7 +181,10 @@ public class UpdatePortOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

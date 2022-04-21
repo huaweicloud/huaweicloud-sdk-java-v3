@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 备份共享更新信息 */
+/**
+ * 备份共享更新信息
+ */
 public class UpdateMember {
 
-    /** 备份共享状态 */
+    /**
+     * 备份共享状态
+     */
     public static final class StatusEnum {
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
 
-        /** Enum PENDING for value: "pending" */
+        /**
+         * Enum PENDING for value: "pending"
+         */
         public static final StatusEnum PENDING = new StatusEnum("pending");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class UpdateMember {
         return this;
     }
 
-    /** 备份共享状态
-     * 
-     * @return status */
+    /**
+     * 备份共享状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -119,9 +130,10 @@ public class UpdateMember {
         return this;
     }
 
-    /** 共享的备份将存入的存储库，仅支持uuid 更新member状态的时候，如果是接受，必须传入vault_id，如果是拒绝，则无需
-     * 
-     * @return vaultId */
+    /**
+     * 共享的备份将存入的存储库，仅支持uuid 更新member状态的时候，如果是接受，必须传入vault_id，如果是拒绝，则无需
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -157,7 +169,10 @@ public class UpdateMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源分组信息 */
+/**
+ * 资源分组信息
+ */
 public class ResourceGroupInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** 资源分组的名称，如：ResourceGroup-Test01。
-     * 
-     * @return groupName */
+    /**
+     * 资源分组的名称，如：ResourceGroup-Test01。
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -60,9 +63,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** 资源分组的ID，如：rg1603786526428bWbVmk4rP。
-     * 
-     * @return groupId */
+    /**
+     * 资源分组的ID，如：rg1603786526428bWbVmk4rP。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -76,9 +80,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。
-     * 
-     * @return createTime */
+    /**
+     * 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -101,9 +106,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** Get instanceStatistics
-     * 
-     * @return instanceStatistics */
+    /**
+     * Get instanceStatistics
+     * @return instanceStatistics
+     */
     public InstanceStatistics getInstanceStatistics() {
         return instanceStatistics;
     }
@@ -117,9 +123,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
-     * 
-     * @return status */
+    /**
+     * 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -133,9 +140,10 @@ public class ResourceGroupInfo {
         return this;
     }
 
-    /** 创建资源分组时关联的企业项目，默认值为0，表示企业项目为default。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 创建资源分组时关联的企业项目，默认值为0，表示企业项目为default。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -180,7 +188,10 @@ public class ResourceGroupInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RuleConfig */
+/**
+ * RuleConfig
+ */
 public class RuleConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 规则配置ID
-     * 
-     * @return id */
+    /**
+     * 规则配置ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return ruleId */
+    /**
+     * 规则ID
+     * @return ruleId
+     */
     public Integer getRuleId() {
         return ruleId;
     }
@@ -85,9 +89,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 默认值
-     * 
-     * @return defaultValue */
+    /**
+     * 默认值
+     * @return defaultValue
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -101,9 +106,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 当前
-     * 
-     * @return optionValue */
+    /**
+     * 当前
+     * @return optionValue
+     */
     public String getOptionValue() {
         return optionValue;
     }
@@ -117,9 +123,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 当前规则配置项key
-     * 
-     * @return optionKey */
+    /**
+     * 当前规则配置项key
+     * @return optionKey
+     */
     public String getOptionKey() {
         return optionKey;
     }
@@ -133,9 +140,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 当前规则配置项名称
-     * 
-     * @return optionName */
+    /**
+     * 当前规则配置项名称
+     * @return optionName
+     */
     public String getOptionName() {
         return optionName;
     }
@@ -149,9 +157,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 规则集id
-     * 
-     * @return templateId */
+    /**
+     * 规则集id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -165,9 +174,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -215,7 +225,10 @@ public class RuleConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

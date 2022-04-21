@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 安全组数据对象 */
+/**
+ * 安全组数据对象
+ */
 public class SecurityGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组的ID。UUID
-     * 
-     * @return id */
+    /**
+     * 安全组的ID。UUID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -52,9 +55,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组的名称。
-     * 
-     * @return name */
+    /**
+     * 安全组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +72,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组的描述。
-     * 
-     * @return description */
+    /**
+     * 安全组的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,9 +105,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组规则列表。
-     * 
-     * @return securityGroupRules */
+    /**
+     * 安全组规则列表。
+     * @return securityGroupRules
+     */
     public List<SecurityGroupRule> getSecurityGroupRules() {
         return securityGroupRules;
     }
@@ -142,7 +148,10 @@ public class SecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

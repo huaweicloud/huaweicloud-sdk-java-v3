@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建KMS资源标签请求体。 */
+/**
+ * 创建KMS资源标签请求体。
+ */
 public class CreateKmsTagRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateKmsTagRequestBody {
         return this;
     }
 
-    /** Get tag
-     * 
-     * @return tag */
+    /**
+     * Get tag
+     * @return tag
+     */
     public TagItem getTag() {
         return tag;
     }
@@ -49,9 +52,10 @@ public class CreateKmsTagRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -88,7 +92,10 @@ public class CreateKmsTagRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

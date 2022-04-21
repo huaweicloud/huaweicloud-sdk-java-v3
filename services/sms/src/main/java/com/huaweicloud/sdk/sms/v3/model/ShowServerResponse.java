@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowServerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,43 +64,69 @@ public class ShowServerResponse extends SdkResponse {
 
     private Boolean oemSystem;
 
-    /** 当前源端服务器状态 */
+    /**
+     * 当前源端服务器状态
+     */
     public static final class StateEnum {
 
-        /** Enum UNAVAILABLE for value: "unavailable" */
+        /**
+         * Enum UNAVAILABLE for value: "unavailable"
+         */
         public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StateEnum WAITING = new StateEnum("waiting");
 
-        /** Enum INITIALIZE for value: "initialize" */
+        /**
+         * Enum INITIALIZE for value: "initialize"
+         */
         public static final StateEnum INITIALIZE = new StateEnum("initialize");
 
-        /** Enum REPLICATE for value: "replicate" */
+        /**
+         * Enum REPLICATE for value: "replicate"
+         */
         public static final StateEnum REPLICATE = new StateEnum("replicate");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final StateEnum SYNCING = new StateEnum("syncing");
 
-        /** Enum STOPPING for value: "stopping" */
+        /**
+         * Enum STOPPING for value: "stopping"
+         */
         public static final StateEnum STOPPING = new StateEnum("stopping");
 
-        /** Enum STOPPED for value: "stopped" */
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StateEnum DELETING = new StateEnum("deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StateEnum ERROR = new StateEnum("error");
 
-        /** Enum CLONING for value: "cloning" */
+        /**
+         * Enum CLONING for value: "cloning"
+         */
         public static final StateEnum CLONING = new StateEnum("cloning");
 
-        /** Enum TESTING for value: "testing" */
+        /**
+         * Enum TESTING for value: "testing"
+         */
         public static final StateEnum TESTING = new StateEnum("testing");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -183,13 +211,19 @@ public class ShowServerResponse extends SdkResponse {
 
     private Boolean connected;
 
-    /** 源端服务器启动类型，如BIOS或者UEFI */
+    /**
+     * 源端服务器启动类型，如BIOS或者UEFI
+     */
     public static final class FirmwareEnum {
 
-        /** Enum BIOS for value: "BIOS" */
+        /**
+         * Enum BIOS for value: "BIOS"
+         */
         public static final FirmwareEnum BIOS = new FirmwareEnum("BIOS");
 
-        /** Enum UEFI for value: "UEFI" */
+        /**
+         * Enum UEFI for value: "UEFI"
+         */
         public static final FirmwareEnum UEFI = new FirmwareEnum("UEFI");
 
         private static final Map<String, FirmwareEnum> STATIC_FIELDS = createStaticFields();
@@ -304,25 +338,39 @@ public class ShowServerResponse extends SdkResponse {
 
     private List<EnvironmentCheck> checks = null;
 
-    /** 迁移周期 */
+    /**
+    * 迁移周期
+    */
     public static final class MigrationCycleEnum {
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
 
-        /** Enum CUTOVERED for value: "cutovered" */
+        /**
+         * Enum CUTOVERED for value: "cutovered"
+         */
         public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
 
-        /** Enum CHECKING for value: "checking" */
+        /**
+         * Enum CHECKING for value: "checking"
+         */
         public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
 
-        /** Enum SETTING for value: "setting" */
+        /**
+         * Enum SETTING for value: "setting"
+         */
         public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
 
-        /** Enum REPLICATING for value: "replicating" */
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
         public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
 
         private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
@@ -431,9 +479,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器id
-     * 
-     * @return id */
+    /**
+     * 源端服务器id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -447,9 +496,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器的ip
-     * 
-     * @return ip */
+    /**
+     * 源端服务器的ip
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -463,9 +513,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 用来区分不同源端服务器的名称
-     * 
-     * @return name */
+    /**
+     * 用来区分不同源端服务器的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -479,9 +530,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端主机名，注册源端必选，更新非必选
-     * 
-     * @return hostname */
+    /**
+     * 源端主机名，注册源端必选，更新非必选
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -495,9 +547,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -511,9 +564,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器注册的时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return addDate */
+    /**
+     * 源端服务器注册的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return addDate
+     */
     public Long getAddDate() {
         return addDate;
     }
@@ -527,9 +583,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * 
-     * @return osType */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -543,9 +600,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作系统版本，注册必选，更新非必选
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本，注册必选，更新非必选
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -559,9 +617,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否是OEM操作系统(Windows)
-     * 
-     * @return oemSystem */
+    /**
+     * 是否是OEM操作系统(Windows)
+     * @return oemSystem
+     */
     public Boolean getOemSystem() {
         return oemSystem;
     }
@@ -575,9 +634,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前源端服务器状态
-     * 
-     * @return state */
+    /**
+     * 当前源端服务器状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -591,9 +651,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 与Agent连接状态
-     * 
-     * @return connected */
+    /**
+     * 与Agent连接状态
+     * @return connected
+     */
     public Boolean getConnected() {
         return connected;
     }
@@ -607,9 +668,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器启动类型，如BIOS或者UEFI
-     * 
-     * @return firmware */
+    /**
+     * 源端服务器启动类型，如BIOS或者UEFI
+     * @return firmware
+     */
     public FirmwareEnum getFirmware() {
         return firmware;
     }
@@ -632,9 +694,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** Get initTargetServer
-     * 
-     * @return initTargetServer */
+    /**
+     * Get initTargetServer
+     * @return initTargetServer
+     */
     public InitTargetServer getInitTargetServer() {
         return initTargetServer;
     }
@@ -648,9 +711,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端CPU核心数 minimum: 0 maximum: 65535
-     * 
-     * @return cpuQuantity */
+    /**
+     * 源端CPU核心数
+     * minimum: 0
+     * maximum: 65535
+     * @return cpuQuantity
+     */
     public Integer getCpuQuantity() {
         return cpuQuantity;
     }
@@ -664,9 +730,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器物理内存大小，单位MB minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return memory */
+    /**
+     * 源端服务器物理内存大小，单位MB
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return memory
+     */
     public Long getMemory() {
         return memory;
     }
@@ -689,9 +758,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** Get currentTask
-     * 
-     * @return currentTask */
+    /**
+     * Get currentTask
+     * @return currentTask
+     */
     public TaskByServerSource getCurrentTask() {
         return currentTask;
     }
@@ -721,9 +791,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器磁盘信息
-     * 
-     * @return disks */
+    /**
+     * 源端服务器磁盘信息
+     * @return disks
+     */
     public List<ServerDisk> getDisks() {
         return disks;
     }
@@ -753,9 +824,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器的卷组信息，Linux必选，如果没有卷组，输入[]
-     * 
-     * @return volumeGroups */
+    /**
+     * 源端服务器的卷组信息，Linux必选，如果没有卷组，输入[]
+     * @return volumeGroups
+     */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -785,9 +857,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
-     * 
-     * @return btrfsList */
+    /**
+     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * @return btrfsList
+     */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -817,9 +890,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端服务器的网卡信息
-     * 
-     * @return networks */
+    /**
+     * 源端服务器的网卡信息
+     * @return networks
+     */
     public List<NetWork> getNetworks() {
         return networks;
     }
@@ -849,9 +923,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端环境校验信息
-     * 
-     * @return checks */
+    /**
+     * 源端环境校验信息
+     * @return checks
+     */
     public List<EnvironmentCheck> getChecks() {
         return checks;
     }
@@ -865,9 +940,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移周期
-     * 
-     * @return migrationCycle */
+    /**
+     * 迁移周期
+     * @return migrationCycle
+     */
     public MigrationCycleEnum getMigrationCycle() {
         return migrationCycle;
     }
@@ -881,9 +957,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 源端状态（state）上次发生变化的时间戳 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return stateActionTime */
+    /**
+     * 源端状态（state）上次发生变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return stateActionTime
+     */
     public Long getStateActionTime() {
         return stateActionTime;
     }
@@ -897,9 +976,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 已经完成迁移的大小（B） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return replicatesize */
+    /**
+     * 已经完成迁移的大小（B）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return replicatesize
+     */
     public Long getReplicatesize() {
         return replicatesize;
     }
@@ -913,9 +995,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 需要迁移的数据量总大小（B） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return totalsize */
+    /**
+     * 需要迁移的数据量总大小（B）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return totalsize
+     */
     public Long getTotalsize() {
         return totalsize;
     }
@@ -929,9 +1014,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** agent上一次连接状态发生变化的时间戳 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return lastVisitTime */
+    /**
+     * agent上一次连接状态发生变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return lastVisitTime
+     */
     public Long getLastVisitTime() {
         return lastVisitTime;
     }
@@ -945,9 +1033,12 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移周期（migration_cycle）上一次变化的时间戳 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return stageActionTime */
+    /**
+     * 迁移周期（migration_cycle）上一次变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return stageActionTime
+     */
     public Long getStageActionTime() {
         return stageActionTime;
     }
@@ -961,9 +1052,10 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    /** Agent版本信息
-     * 
-     * @return agentVersion */
+    /**
+     * Agent版本信息
+     * @return agentVersion
+     */
     public String getAgentVersion() {
         return agentVersion;
     }
@@ -1078,7 +1170,10 @@ public class ShowServerResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

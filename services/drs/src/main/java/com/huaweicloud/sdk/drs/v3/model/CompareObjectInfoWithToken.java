@@ -28,9 +28,10 @@ public class CompareObjectInfoWithToken {
         return this;
     }
 
-    /** 库名。
-     * 
-     * @return dbName */
+    /**
+     * 库名。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -61,9 +62,10 @@ public class CompareObjectInfoWithToken {
         return this;
     }
 
-    /** 该库下的表信息列表（带token）。
-     * 
-     * @return tableNameWithToken */
+    /**
+     * 该库下的表信息列表（带token）。
+     * @return tableNameWithToken
+     */
     public List<CompareTableInfoWithToken> getTableNameWithToken() {
         return tableNameWithToken;
     }
@@ -100,7 +102,10 @@ public class CompareObjectInfoWithToken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

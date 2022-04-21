@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSystemTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,16 +44,24 @@ public class ListSystemTasksResponse extends SdkResponse {
 
     private String lastUpdate;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCESSFUL for value: "SUCCESSFUL" */
+        /**
+         * Enum SUCCESSFUL for value: "SUCCESSFUL"
+         */
         public static final StatusEnum SUCCESSFUL = new StatusEnum("SUCCESSFUL");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +147,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get id
-     * 
-     * @return id */
+    /**
+     * Get id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -153,9 +164,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -169,9 +181,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -185,9 +198,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -201,9 +215,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lastUpdate
-     * 
-     * @return lastUpdate */
+    /**
+     * Get lastUpdate
+     * @return lastUpdate
+     */
     public String getLastUpdate() {
         return lastUpdate;
     }
@@ -217,9 +232,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -233,9 +249,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get message
-     * 
-     * @return message */
+    /**
+     * Get message
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -265,9 +282,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get subTasks
-     * 
-     * @return subTasks */
+    /**
+     * Get subTasks
+     * @return subTasks
+     */
     public List<SubTaskStatus> getSubTasks() {
         return subTasks;
     }
@@ -316,7 +334,10 @@ public class ListSystemTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

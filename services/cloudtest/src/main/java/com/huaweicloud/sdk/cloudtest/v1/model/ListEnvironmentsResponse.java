@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEnvironmentsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 环境分组列表
-     * 
-     * @return environments */
+    /**
+     * 环境分组列表
+     * @return environments
+     */
     public List<Environment> getEnvironments() {
         return environments;
     }
@@ -69,9 +72,12 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * maximum: 999
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -85,9 +91,12 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页显示的条目数量,最大支持200条 minimum: 1 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量,最大支持200条
+     * minimum: 1
+     * maximum: 200
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -101,9 +110,12 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 环境分组总条数 minimum: 0 maximum: 100
-     * 
-     * @return totalCount */
+    /**
+     * 环境分组总条数
+     * minimum: 0
+     * maximum: 100
+     * @return totalCount
+     */
     public Long getTotalCount() {
         return totalCount;
     }
@@ -144,7 +156,10 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

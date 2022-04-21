@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiAudio */
+/**
+ * MultiAudio
+ */
 public class MultiAudio {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class MultiAudio {
         return this;
     }
 
-    /** 音轨信息
-     * 
-     * @return tracksInfo */
+    /**
+     * 音轨信息
+     * @return tracksInfo
+     */
     public List<TracksInfo> getTracksInfo() {
         return tracksInfo;
     }
@@ -79,9 +82,10 @@ public class MultiAudio {
         return this;
     }
 
-    /** 音频文件
-     * 
-     * @return audioFiles */
+    /**
+     * 音频文件
+     * @return audioFiles
+     */
     public List<AudioFile> getAudioFiles() {
         return audioFiles;
     }
@@ -95,9 +99,10 @@ public class MultiAudio {
         return this;
     }
 
-    /** 默认语言
-     * 
-     * @return defaultLanguage */
+    /**
+     * 默认语言
+     * @return defaultLanguage
+     */
     public String getDefaultLanguage() {
         return defaultLanguage;
     }
@@ -136,7 +141,10 @@ public class MultiAudio {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDisasterRecoveryDrillsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -59,9 +62,10 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 容灾演练的名称。支持模糊查询。
-     * 
-     * @return name */
+    /**
+     * 容灾演练的名称。支持模糊查询。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 容灾演练的状态。
-     * 
-     * @return status */
+    /**
+     * 容灾演练的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -91,9 +96,10 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 演练虚拟私有云ID。
-     * 
-     * @return drillVpcId */
+    /**
+     * 演练虚拟私有云ID。
+     * @return drillVpcId
+     */
     public String getDrillVpcId() {
         return drillVpcId;
     }
@@ -107,9 +113,12 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -123,9 +132,11 @@ public class ListDisasterRecoveryDrillsRequest {
         return this;
     }
 
-    /** 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -170,7 +181,10 @@ public class ListDisasterRecoveryDrillsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

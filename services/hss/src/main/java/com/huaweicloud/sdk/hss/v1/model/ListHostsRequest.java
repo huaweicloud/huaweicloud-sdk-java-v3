@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,10 +75,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 主机开通的版本，包含如下5种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.enterprise ：企业版。 -
-     * hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。
-     * 
-     * @return version */
+    /**
+     * 主机开通的版本，包含如下5种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -90,9 +92,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** Agent状态，包含如下3种。 - not_register ：未注册。 - online ：在线。 - offline ：离线。
-     * 
-     * @return agentStatus */
+    /**
+     * Agent状态，包含如下3种。   - not_register ：未注册。   - online ：在线。   - offline ：离线。
+     * @return agentStatus
+     */
     public String getAgentStatus() {
         return agentStatus;
     }
@@ -106,9 +109,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** Agent状态，包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。
-     * 
-     * @return hostStatus */
+    /**
+     * Agent状态，包含如下4种。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * @return hostStatus
+     */
     public String getHostStatus() {
         return hostStatus;
     }
@@ -122,9 +126,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 防护状态，包含如下2种。 - closed ：关闭。 - opened ：开启。
-     * 
-     * @return protectStatus */
+    /**
+     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+     * @return protectStatus
+     */
     public String getProtectStatus() {
         return protectStatus;
     }
@@ -138,9 +143,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 防护状态，包含如下3种。 - undetect ：未检测。 - clean ：无风险。 - risk ：有风险。
-     * 
-     * @return detectResult */
+    /**
+     * 防护状态，包含如下3种。   - undetect ：未检测。   - clean ：无风险。   - risk ：有风险。
+     * @return detectResult
+     */
     public String getDetectResult() {
         return detectResult;
     }
@@ -154,9 +160,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 云主机名称
-     * 
-     * @return hostName */
+    /**
+     * 云主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -170,9 +177,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 云主机私有IP
-     * 
-     * @return hostIp */
+    /**
+     * 云主机私有IP
+     * @return hostIp
+     */
     public String getHostIp() {
         return hostIp;
     }
@@ -186,9 +194,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 云主机公网IP
-     * 
-     * @return publicIp */
+    /**
+     * 云主机公网IP
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -202,9 +211,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 操作系统类型
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -218,9 +228,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 收费模式，包含如下2种。 - packet_cycle ：包年/包月。 - on_demand ：按需。
-     * 
-     * @return chargingMode */
+    /**
+     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * @return chargingMode
+     */
     public String getChargingMode() {
         return chargingMode;
     }
@@ -234,9 +245,12 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 默认10 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 默认10
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -250,9 +264,12 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 默认0 minimum: 0 maximum: 100000
-     * 
-     * @return offset */
+    /**
+     * 默认0
+     * minimum: 0
+     * maximum: 100000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -320,7 +337,10 @@ public class ListHostsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

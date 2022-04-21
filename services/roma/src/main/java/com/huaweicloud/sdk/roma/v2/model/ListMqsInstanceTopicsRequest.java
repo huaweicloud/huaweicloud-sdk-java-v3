@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMqsInstanceTopicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class ListMqsInstanceTopicsRequest {
 
     private String name;
 
-    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅 */
+    /**
+     * 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
+     */
     public static final class AccessPolicyEnum {
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final AccessPolicyEnum ALL = new AccessPolicyEnum("all");
 
-        /** Enum PUB for value: "pub" */
+        /**
+         * Enum PUB for value: "pub"
+         */
         public static final AccessPolicyEnum PUB = new AccessPolicyEnum("pub");
 
-        /** Enum SUB for value: "sub" */
+        /**
+         * Enum SUB for value: "sub"
+         */
         public static final AccessPolicyEnum SUB = new AccessPolicyEnum("sub");
 
         private static final Map<String, AccessPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -139,9 +150,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return appName */
+    /**
+     * 应用名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -155,9 +167,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** Topic名称。
-     * 
-     * @return name */
+    /**
+     * Topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -171,9 +184,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
-     * 
-     * @return accessPolicy */
+    /**
+     * 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
+     * @return accessPolicy
+     */
     public AccessPolicyEnum getAccessPolicy() {
         return accessPolicy;
     }
@@ -187,9 +201,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** 分页查询大小。默认查询所有的topic。
-     * 
-     * @return limit */
+    /**
+     * 分页查询大小。默认查询所有的topic。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -203,9 +218,10 @@ public class ListMqsInstanceTopicsRequest {
         return this;
     }
 
-    /** 分页查询的偏移量。默认值是0。
-     * 
-     * @return offset */
+    /**
+     * 分页查询的偏移量。默认值是0。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -250,7 +266,10 @@ public class ListMqsInstanceTopicsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

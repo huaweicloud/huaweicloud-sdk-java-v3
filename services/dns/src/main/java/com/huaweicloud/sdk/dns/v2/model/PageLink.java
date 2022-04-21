@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页信息 */
+/**
+ * 分页信息
+ */
 public class PageLink {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PageLink {
         return this;
     }
 
-    /** 当前资源的链接。
-     * 
-     * @return self */
+    /**
+     * 当前资源的链接。
+     * @return self
+     */
     public String getSelf() {
         return self;
     }
@@ -39,9 +42,10 @@ public class PageLink {
         return this;
     }
 
-    /** 下一页资源的链接。
-     * 
-     * @return next */
+    /**
+     * 下一页资源的链接。
+     * @return next
+     */
     public String getNext() {
         return next;
     }
@@ -77,7 +81,10 @@ public class PageLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProjectTemplatesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListProjectTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板列表
-     * 
-     * @return templates */
+    /**
+     * 模板列表
+     * @return templates
+     */
     public List<ProjectTemplates> getTemplates() {
         return templates;
     }
@@ -59,9 +62,10 @@ public class ListProjectTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -98,7 +102,10 @@ public class ListProjectTemplatesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

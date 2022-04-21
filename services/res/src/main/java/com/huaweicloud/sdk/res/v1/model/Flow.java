@@ -98,9 +98,10 @@ public class Flow {
         return this;
     }
 
-    /** 流程id。
-     * 
-     * @return flowId */
+    /**
+     * 流程id。
+     * @return flowId
+     */
     public String getFlowId() {
         return flowId;
     }
@@ -130,9 +131,10 @@ public class Flow {
         return this;
     }
 
-    /** 属性对过滤。
-     * 
-     * @return attrPairRulesFilter */
+    /**
+     * 属性对过滤。
+     * @return attrPairRulesFilter
+     */
     public List<AttrPairRules> getAttrPairRulesFilter() {
         return attrPairRulesFilter;
     }
@@ -162,9 +164,10 @@ public class Flow {
         return this;
     }
 
-    /** 属性对保留。
-     * 
-     * @return attrPairRulesReserve */
+    /**
+     * 属性对保留。
+     * @return attrPairRulesReserve
+     */
     public List<AttrPairRules> getAttrPairRulesReserve() {
         return attrPairRulesReserve;
     }
@@ -194,9 +197,10 @@ public class Flow {
         return this;
     }
 
-    /** 属性去重。
-     * 
-     * @return deduplicationList */
+    /**
+     * 属性去重。
+     * @return deduplicationList
+     */
     public List<Deduplication> getDeduplicationList() {
         return deduplicationList;
     }
@@ -219,9 +223,10 @@ public class Flow {
         return this;
     }
 
-    /** Get attributeInfo
-     * 
-     * @return attributeInfo */
+    /**
+     * Get attributeInfo
+     * @return attributeInfo
+     */
     public AttributeInfo getAttributeInfo() {
         return attributeInfo;
     }
@@ -244,9 +249,10 @@ public class Flow {
         return this;
     }
 
-    /** Get bloomFilterConf
-     * 
-     * @return bloomFilterConf */
+    /**
+     * Get bloomFilterConf
+     * @return bloomFilterConf
+     */
     public BloomFilterConf getBloomFilterConf() {
         return bloomFilterConf;
     }
@@ -260,9 +266,10 @@ public class Flow {
         return this;
     }
 
-    /** 分组打散属性。
-     * 
-     * @return groupAttr */
+    /**
+     * 分组打散属性。
+     * @return groupAttr
+     */
     public String getGroupAttr() {
         return groupAttr;
     }
@@ -276,9 +283,10 @@ public class Flow {
         return this;
     }
 
-    /** 在排序前去重。
-     * 
-     * @return preDeal */
+    /**
+     * 在排序前去重。
+     * @return preDeal
+     */
     public Boolean getPreDeal() {
         return preDeal;
     }
@@ -292,9 +300,10 @@ public class Flow {
         return this;
     }
 
-    /** 排序配置信息。
-     * 
-     * @return rankSetting */
+    /**
+     * 排序配置信息。
+     * @return rankSetting
+     */
     public String getRankSetting() {
         return rankSetting;
     }
@@ -317,9 +326,10 @@ public class Flow {
         return this;
     }
 
-    /** Get rules
-     * 
-     * @return rules */
+    /**
+     * Get rules
+     * @return rules
+     */
     public Rule getRules() {
         return rules;
     }
@@ -349,9 +359,10 @@ public class Flow {
         return this;
     }
 
-    /** 过滤配置信息。
-     * 
-     * @return filterSets */
+    /**
+     * 过滤配置信息。
+     * @return filterSets
+     */
     public List<String> getFilterSets() {
         return filterSets;
     }
@@ -381,9 +392,10 @@ public class Flow {
         return this;
     }
 
-    /** 属性值过滤。
-     * 
-     * @return attrValueRulesFilter */
+    /**
+     * 属性值过滤。
+     * @return attrValueRulesFilter
+     */
     public List<AttrValueRules> getAttrValueRulesFilter() {
         return attrValueRulesFilter;
     }
@@ -413,9 +425,10 @@ public class Flow {
         return this;
     }
 
-    /** 属性值保留。
-     * 
-     * @return attrValueRulesReserve */
+    /**
+     * 属性值保留。
+     * @return attrValueRulesReserve
+     */
     public List<AttrValueRules> getAttrValueRulesReserve() {
         return attrValueRulesReserve;
     }
@@ -429,9 +442,10 @@ public class Flow {
         return this;
     }
 
-    /** 排序作业（使用点击率预估时需要提供此参数）。
-     * 
-     * @return ctrJob */
+    /**
+     * 排序作业（使用点击率预估时需要提供此参数）。
+     * @return ctrJob
+     */
     public String getCtrJob() {
         return ctrJob;
     }
@@ -445,9 +459,12 @@ public class Flow {
         return this;
     }
 
-    /** 流量占比。 minimum: 1 maximum: 100
-     * 
-     * @return ratio */
+    /**
+     * 流量占比。
+     * minimum: 1
+     * maximum: 100
+     * @return ratio
+     */
     public Integer getRatio() {
         return ratio;
     }
@@ -477,9 +494,10 @@ public class Flow {
         return this;
     }
 
-    /** 需要置顶的候选集列表。
-     * 
-     * @return toppings */
+    /**
+     * 需要置顶的候选集列表。
+     * @return toppings
+     */
     public List<String> getToppings() {
         return toppings;
     }
@@ -556,7 +574,10 @@ public class Flow {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

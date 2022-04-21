@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库schema信息。 */
+/**
+ * 数据库schema信息。
+ */
 public class PostgresqlDatabaseForListSchema {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PostgresqlDatabaseForListSchema {
         return this;
     }
 
-    /** schema名称。
-     * 
-     * @return schemaName */
+    /**
+     * schema名称。
+     * @return schemaName
+     */
     public String getSchemaName() {
         return schemaName;
     }
@@ -39,9 +42,10 @@ public class PostgresqlDatabaseForListSchema {
         return this;
     }
 
-    /** schema所属用户。
-     * 
-     * @return owner */
+    /**
+     * schema所属用户。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -78,7 +82,10 @@ public class PostgresqlDatabaseForListSchema {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

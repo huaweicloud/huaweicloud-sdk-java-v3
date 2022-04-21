@@ -10,34 +10,54 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 模板视频信息 */
+/**
+ * 模板视频信息
+ */
 public class VideoTemplateInfo {
 
-    /** 画质。 */
+    /**
+     * 画质。
+     */
     public static final class QualityEnum {
 
-        /** Enum FULL_HD for value: "FULL_HD" */
+        /**
+         * Enum FULL_HD for value: "FULL_HD"
+         */
         public static final QualityEnum FULL_HD = new QualityEnum("FULL_HD");
 
-        /** Enum HD for value: "HD" */
+        /**
+         * Enum HD for value: "HD"
+         */
         public static final QualityEnum HD = new QualityEnum("HD");
 
-        /** Enum SD for value: "SD" */
+        /**
+         * Enum SD for value: "SD"
+         */
         public static final QualityEnum SD = new QualityEnum("SD");
 
-        /** Enum FLUENT for value: "FLUENT" */
+        /**
+         * Enum FLUENT for value: "FLUENT"
+         */
         public static final QualityEnum FLUENT = new QualityEnum("FLUENT");
 
-        /** Enum AD for value: "AD" */
+        /**
+         * Enum AD for value: "AD"
+         */
         public static final QualityEnum AD = new QualityEnum("AD");
 
-        /** Enum _2K for value: "2K" */
+        /**
+         * Enum _2K for value: "2K"
+         */
         public static final QualityEnum _2K = new QualityEnum("2K");
 
-        /** Enum _4K for value: "4K" */
+        /**
+         * Enum _4K for value: "4K"
+         */
         public static final QualityEnum _4K = new QualityEnum("4K");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final QualityEnum UNKNOW = new QualityEnum("UNKNOW");
 
         private static final Map<String, QualityEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +158,10 @@ public class VideoTemplateInfo {
         return this;
     }
 
-    /** 画质。
-     * 
-     * @return quality */
+    /**
+     * 画质。
+     * @return quality
+     */
     public QualityEnum getQuality() {
         return quality;
     }
@@ -154,9 +175,10 @@ public class VideoTemplateInfo {
         return this;
     }
 
-    /** 视频宽度。
-     * 
-     * @return width */
+    /**
+     * 视频宽度。
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -170,9 +192,10 @@ public class VideoTemplateInfo {
         return this;
     }
 
-    /** 视频高度。
-     * 
-     * @return height */
+    /**
+     * 视频高度。
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -186,9 +209,10 @@ public class VideoTemplateInfo {
         return this;
     }
 
-    /** 码率。
-     * 
-     * @return bitrate */
+    /**
+     * 码率。
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -202,9 +226,10 @@ public class VideoTemplateInfo {
         return this;
     }
 
-    /** 帧率（默认为1，1代表自适应，单位是帧每秒）。
-     * 
-     * @return frameRate */
+    /**
+     * 帧率（默认为1，1代表自适应，单位是帧每秒）。
+     * @return frameRate
+     */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -247,7 +272,10 @@ public class VideoTemplateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

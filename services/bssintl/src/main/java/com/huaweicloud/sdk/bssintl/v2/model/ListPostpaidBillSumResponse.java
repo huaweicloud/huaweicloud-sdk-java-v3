@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPostpaidBillSumResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单所归属的月份。只有成功才返回这个参数。 格式：YYYY-MM
-     * 
-     * @return billCycle */
+    /**
+     * 账单所归属的月份。只有成功才返回这个参数。 格式：YYYY-MM
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -65,9 +68,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单中的应还金额（含税）。 应还金额（包含销项税）=消费金额+退款金额+调账金额
-     * 
-     * @return initialAmountDue */
+    /**
+     * 账单中的应还金额（含税）。 应还金额（包含销项税）=消费金额+退款金额+调账金额
+     * @return initialAmountDue
+     */
     public Double getInitialAmountDue() {
         return initialAmountDue;
     }
@@ -81,9 +85,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单中的消费金额。
-     * 
-     * @return consumeAmount */
+    /**
+     * 账单中的消费金额。
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -97,9 +102,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单中的退款金额。
-     * 
-     * @return refunds */
+    /**
+     * 账单中的退款金额。
+     * @return refunds
+     */
     public Double getRefunds() {
         return refunds;
     }
@@ -113,9 +119,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单中的调账金额，即伙伴在账期内的调账信息如：欠款核销金额等。
-     * 
-     * @return adjustments */
+    /**
+     * 账单中的调账金额，即伙伴在账期内的调账信息如：欠款核销金额等。
+     * @return adjustments
+     */
     public Double getAdjustments() {
         return adjustments;
     }
@@ -129,9 +136,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单中的销项税金额，销项税不计入应还金额。
-     * 
-     * @return taxAmount */
+    /**
+     * 账单中的销项税金额，销项税不计入应还金额。
+     * @return taxAmount
+     */
     public Double getTaxAmount() {
         return taxAmount;
     }
@@ -145,9 +153,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    /** 只有成功才返回这个参数。 美金：USD
-     * 
-     * @return currency */
+    /**
+     * 只有成功才返回这个参数。 美金：USD
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -194,7 +203,10 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

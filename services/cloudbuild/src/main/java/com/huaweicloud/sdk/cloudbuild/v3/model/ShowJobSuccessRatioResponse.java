@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobSuccessRatioResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ShowJobSuccessRatioResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务成功构建次数
-     * 
-     * @return successCount */
+    /**
+     * 任务成功构建次数
+     * @return successCount
+     */
     public Integer getSuccessCount() {
         return successCount;
     }
@@ -45,9 +48,10 @@ public class ShowJobSuccessRatioResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务构建总次数
-     * 
-     * @return totalCount */
+    /**
+     * 任务构建总次数
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -61,9 +65,10 @@ public class ShowJobSuccessRatioResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务成功率,精确到小数点后两位
-     * 
-     * @return successRatio */
+    /**
+     * 任务成功率,精确到小数点后两位
+     * @return successRatio
+     */
     public Double getSuccessRatio() {
         return successRatio;
     }
@@ -102,7 +107,10 @@ public class ShowJobSuccessRatioResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

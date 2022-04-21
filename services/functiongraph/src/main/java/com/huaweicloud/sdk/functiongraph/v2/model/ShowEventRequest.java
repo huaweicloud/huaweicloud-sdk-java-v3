@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowEventRequest {
         return this;
     }
 
-    /** 事件ID。
-     * 
-     * @return eventId */
+    /**
+     * 事件ID。
+     * @return eventId
+     */
     public String getEventId() {
         return eventId;
     }
@@ -39,9 +42,10 @@ public class ShowEventRequest {
         return this;
     }
 
-    /** 函数的URN（Uniform Resource Name），唯一标识函数。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -78,7 +82,10 @@ public class ShowEventRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

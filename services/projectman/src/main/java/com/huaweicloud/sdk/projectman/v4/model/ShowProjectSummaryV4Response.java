@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowProjectSummaryV4Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         return this;
     }
 
-    /** bug统计列表
-     * 
-     * @return bugStatistics */
+    /**
+     * bug统计列表
+     * @return bugStatistics
+     */
     public List<BugStatisticResponseV4> getBugStatistics() {
         return bugStatistics;
     }
@@ -86,9 +89,10 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         return this;
     }
 
-    /** 按模块统计列表
-     * 
-     * @return demandStatistics */
+    /**
+     * 按模块统计列表
+     * @return demandStatistics
+     */
     public List<DemandStatisticResponseV4> getDemandStatistics() {
         return demandStatistics;
     }
@@ -121,9 +125,10 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         return this;
     }
 
-    /** 按工作项类型统计列表
-     * 
-     * @return issueCompletionRates */
+    /**
+     * 按工作项类型统计列表
+     * @return issueCompletionRates
+     */
     public List<IssueCompletionRateResponseV4> getIssueCompletionRates() {
         return issueCompletionRates;
     }
@@ -137,9 +142,10 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -180,7 +186,10 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

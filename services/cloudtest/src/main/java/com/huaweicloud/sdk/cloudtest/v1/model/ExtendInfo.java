@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 用例其他扩展信息 */
+/**
+ * 用例其他扩展信息
+ */
 public class ExtendInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,9 +87,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get author
-     * 
-     * @return author */
+    /**
+     * Get author
+     * @return author
+     */
     public ExtendAuthorInfo getAuthor() {
         return author;
     }
@@ -110,9 +113,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get updator
-     * 
-     * @return updator */
+    /**
+     * Get updator
+     * @return updator
+     */
     public ExtendAuthorInfo getUpdator() {
         return updator;
     }
@@ -135,9 +139,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public AssignedUserInfo getDomain() {
         return domain;
     }
@@ -151,9 +156,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -167,9 +173,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 前置条件
-     * 
-     * @return preparation */
+    /**
+     * 前置条件
+     * @return preparation
+     */
     public String getPreparation() {
         return preparation;
     }
@@ -199,9 +206,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 测试步骤，数组长度小于10
-     * 
-     * @return steps */
+    /**
+     * 测试步骤，数组长度小于10
+     * @return steps
+     */
     public List<ExternalServiceCaseStep> getSteps() {
         return steps;
     }
@@ -231,9 +239,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 标签信息
-     * 
-     * @return labelList */
+    /**
+     * 标签信息
+     * @return labelList
+     */
     public List<AssignedUserInfo> getLabelList() {
         return labelList;
     }
@@ -263,9 +272,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 缺陷信息
-     * 
-     * @return defectList */
+    /**
+     * 缺陷信息
+     * @return defectList
+     */
     public List<AssignedUserInfo> getDefectList() {
         return defectList;
     }
@@ -288,9 +298,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get module
-     * 
-     * @return module */
+    /**
+     * Get module
+     * @return module
+     */
     public AssignedUserInfo getModule() {
         return module;
     }
@@ -313,9 +324,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get issue
-     * 
-     * @return issue */
+    /**
+     * Get issue
+     * @return issue
+     */
     public AssignedUserInfo getIssue() {
         return issue;
     }
@@ -329,9 +341,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** 测试版本号
-     * 
-     * @return testVersionId */
+    /**
+     * 测试版本号
+     * @return testVersionId
+     */
     public String getTestVersionId() {
         return testVersionId;
     }
@@ -354,9 +367,10 @@ public class ExtendInfo {
         return this;
     }
 
-    /** Get fixedVersion
-     * 
-     * @return fixedVersion */
+    /**
+     * Get fixedVersion
+     * @return fixedVersion
+     */
     public AssignedUserInfo getFixedVersion() {
         return fixedVersion;
     }
@@ -421,7 +435,10 @@ public class ExtendInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

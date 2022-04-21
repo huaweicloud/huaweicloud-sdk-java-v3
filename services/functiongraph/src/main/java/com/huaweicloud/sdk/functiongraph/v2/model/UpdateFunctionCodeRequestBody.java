@@ -13,22 +13,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateFunctionCodeRequestBody */
+/**
+ * UpdateFunctionCodeRequestBody
+ */
 public class UpdateFunctionCodeRequestBody {
 
-    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 */
+    /**
+     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     */
     public static final class CodeTypeEnum {
 
-        /** Enum INLINE for value: "inline" */
+        /**
+         * Enum INLINE for value: "inline"
+         */
         public static final CodeTypeEnum INLINE = new CodeTypeEnum("inline");
 
-        /** Enum ZIP for value: "zip" */
+        /**
+         * Enum ZIP for value: "zip"
+         */
         public static final CodeTypeEnum ZIP = new CodeTypeEnum("zip");
 
-        /** Enum OBS for value: "obs" */
+        /**
+         * Enum OBS for value: "obs"
+         */
         public static final CodeTypeEnum OBS = new CodeTypeEnum("obs");
 
-        /** Enum JAR for value: "jar" */
+        /**
+         * Enum JAR for value: "jar"
+         */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -125,9 +137,10 @@ public class UpdateFunctionCodeRequestBody {
         return this;
     }
 
-    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
-     * 
-     * @return codeType */
+    /**
+     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * @return codeType
+     */
     public CodeTypeEnum getCodeType() {
         return codeType;
     }
@@ -141,9 +154,10 @@ public class UpdateFunctionCodeRequestBody {
         return this;
     }
 
-    /** 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
-     * 
-     * @return codeUrl */
+    /**
+     * 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
+     * @return codeUrl
+     */
     public String getCodeUrl() {
         return codeUrl;
     }
@@ -157,9 +171,10 @@ public class UpdateFunctionCodeRequestBody {
         return this;
     }
 
-    /** 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
-     * 
-     * @return codeFilename */
+    /**
+     * 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
+     * @return codeFilename
+     */
     public String getCodeFilename() {
         return codeFilename;
     }
@@ -182,9 +197,10 @@ public class UpdateFunctionCodeRequestBody {
         return this;
     }
 
-    /** Get funcCode
-     * 
-     * @return funcCode */
+    /**
+     * Get funcCode
+     * @return funcCode
+     */
     public FuncCode getFuncCode() {
         return funcCode;
     }
@@ -214,9 +230,10 @@ public class UpdateFunctionCodeRequestBody {
         return this;
     }
 
-    /** 依赖id列表
-     * 
-     * @return dependList */
+    /**
+     * 依赖id列表
+     * @return dependList
+     */
     public List<String> getDependList() {
         return dependList;
     }
@@ -259,7 +276,10 @@ public class UpdateFunctionCodeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

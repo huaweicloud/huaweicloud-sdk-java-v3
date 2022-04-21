@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 历史记录 */
+/**
+ * 历史记录
+ */
 public class IssueRecordV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class IssueRecordV4 {
         return this;
     }
 
-    /** 操作记录id
-     * 
-     * @return id */
+    /**
+     * 操作记录id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -52,9 +55,10 @@ public class IssueRecordV4 {
         return this;
     }
 
-    /** 操作记录创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 操作记录创建时间
+     * @return createdTime
+     */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -77,9 +81,10 @@ public class IssueRecordV4 {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public IssueRecordV4User getUser() {
         return user;
     }
@@ -109,9 +114,10 @@ public class IssueRecordV4 {
         return this;
     }
 
-    /** 操作的记录
-     * 
-     * @return details */
+    /**
+     * 操作的记录
+     * @return details
+     */
     public List<IssueRecordV4Details> getDetails() {
         return details;
     }
@@ -150,7 +156,10 @@ public class IssueRecordV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 执行命令检查，与http_get二选一 */
+/**
+ * 执行命令检查，与http_get二选一
+ */
 public class ProbeExec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ProbeExec {
         return this;
     }
 
-    /** 探针执行命令，最大长度10240个字符
-     * 
-     * @return command */
+    /**
+     * 探针执行命令，最大长度10240个字符
+     * @return command
+     */
     public String getCommand() {
         return command;
     }
@@ -55,7 +58,10 @@ public class ProbeExec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

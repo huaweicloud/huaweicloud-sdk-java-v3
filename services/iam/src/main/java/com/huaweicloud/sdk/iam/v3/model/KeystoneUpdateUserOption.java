@@ -45,9 +45,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** IAM用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * IAM用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -61,9 +62,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** IAM用户新用户名，长度5~32之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
-     * 
-     * @return name */
+    /**
+     * IAM用户新用户名，长度5~32之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,10 +79,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** IAM用户密码。 - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。 - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。 - 不能包含手机号和邮箱。 -
-     * 必须满足账户设置中密码策略的要求。 - 新密码不能与当前密码相同。
-     * 
-     * @return password */
+    /**
+     * IAM用户密码。 - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。 - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。 - 不能包含手机号和邮箱。 - 必须满足账户设置中密码策略的要求。 - 新密码不能与当前密码相同。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -94,9 +96,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** 是否启用IAM用户。true为启用，false为停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * 是否启用IAM用户。true为启用，false为停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -110,9 +113,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** IAM用户新描述信息。
-     * 
-     * @return description */
+    /**
+     * IAM用户新描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -126,9 +130,10 @@ public class KeystoneUpdateUserOption {
         return this;
     }
 
-    /** IAM用户密码状态。true:需要修改密码,false:正常。
-     * 
-     * @return pwdStatus */
+    /**
+     * IAM用户密码状态。true:需要修改密码,false:正常。
+     * @return pwdStatus
+     */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -173,7 +178,10 @@ public class KeystoneUpdateUserOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

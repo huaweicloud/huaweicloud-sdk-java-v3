@@ -28,9 +28,10 @@ public class SysTags {
         return this;
     }
 
-    /** 键。 系统标签的key，从白名单中取，不能随意定义。 目前仅支持 _sys_enterprise_project_id字段，对应 的value为企业项目ID。
-     * 
-     * @return key */
+    /**
+     * 键。  系统标签的key，从白名单中取，不能随意定义。 目前仅支持 _sys_enterprise_project_id字段，对应 的value为企业项目ID。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -60,9 +61,10 @@ public class SysTags {
         return this;
     }
 
-    /** 值列表。 目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
-     * 
-     * @return values */
+    /**
+     * 值列表。  目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -98,7 +100,10 @@ public class SysTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

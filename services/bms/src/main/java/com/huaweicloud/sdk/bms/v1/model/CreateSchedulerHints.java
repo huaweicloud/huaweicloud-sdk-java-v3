@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** schedulerHints字段数据结构说明 */
+/**
+ * schedulerHints字段数据结构说明
+ */
 public class CreateSchedulerHints {
 
-    /** 是否在专属云中创建裸金属服务器，参数值为share或dedicate。约束：该值不传时默认为share。在专属云中创建裸金属服务器时，必须指定该字段为dedicate。 */
+    /**
+     * 是否在专属云中创建裸金属服务器，参数值为share或dedicate。约束：该值不传时默认为share。在专属云中创建裸金属服务器时，必须指定该字段为dedicate。
+     */
     public static final class DecBaremetalEnum {
 
-        /** Enum SHARE for value: "share" */
+        /**
+         * Enum SHARE for value: "share"
+         */
         public static final DecBaremetalEnum SHARE = new DecBaremetalEnum("share");
 
-        /** Enum DEDICATE for value: "dedicate" */
+        /**
+         * Enum DEDICATE for value: "dedicate"
+         */
         public static final DecBaremetalEnum DEDICATE = new DecBaremetalEnum("dedicate");
 
         private static final Map<String, DecBaremetalEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class CreateSchedulerHints {
         return this;
     }
 
-    /** 是否在专属云中创建裸金属服务器，参数值为share或dedicate。约束：该值不传时默认为share。在专属云中创建裸金属服务器时，必须指定该字段为dedicate。
-     * 
-     * @return decBaremetal */
+    /**
+     * 是否在专属云中创建裸金属服务器，参数值为share或dedicate。约束：该值不传时默认为share。在专属云中创建裸金属服务器时，必须指定该字段为dedicate。
+     * @return decBaremetal
+     */
     public DecBaremetalEnum getDecBaremetal() {
         return decBaremetal;
     }
@@ -131,7 +140,10 @@ public class CreateSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

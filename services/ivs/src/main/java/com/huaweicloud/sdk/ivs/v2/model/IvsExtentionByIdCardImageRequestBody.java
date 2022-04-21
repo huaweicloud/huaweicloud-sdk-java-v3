@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IvsExtentionByIdCardImageRequestBody */
+/**
+ * IvsExtentionByIdCardImageRequestBody
+ */
 public class IvsExtentionByIdCardImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IvsExtentionByIdCardImageRequestBody {
         return this;
     }
 
-    /** Get meta
-     * 
-     * @return meta */
+    /**
+     * Get meta
+     * @return meta
+     */
     public Meta getMeta() {
         return meta;
     }
@@ -59,9 +62,10 @@ public class IvsExtentionByIdCardImageRequestBody {
         return this;
     }
 
-    /** Get data
-     * 
-     * @return data */
+    /**
+     * Get data
+     * @return data
+     */
     public IvsExtentionByIdCardImageRequestBodyData getData() {
         return data;
     }
@@ -99,7 +103,10 @@ public class IvsExtentionByIdCardImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

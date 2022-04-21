@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StacksAttribute */
+/**
+ * StacksAttribute
+ */
 public class StacksAttribute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class StacksAttribute {
         return this;
     }
 
-    /** 规格列表
-     * 
-     * @return specs */
+    /**
+     * 规格列表
+     * @return specs
+     */
     public List<String> getSpecs() {
         return specs;
     }
@@ -68,9 +71,10 @@ public class StacksAttribute {
         return this;
     }
 
-    /** 提示id
-     * 
-     * @return suggest */
+    /**
+     * 提示id
+     * @return suggest
+     */
     public String getSuggest() {
         return suggest;
     }
@@ -84,9 +88,10 @@ public class StacksAttribute {
         return this;
     }
 
-    /** 提示信息
-     * 
-     * @return suggestTitle */
+    /**
+     * 提示信息
+     * @return suggestTitle
+     */
     public String getSuggestTitle() {
         return suggestTitle;
     }
@@ -116,9 +121,10 @@ public class StacksAttribute {
         return this;
     }
 
-    /** 卷容量列表
-     * 
-     * @return volumes */
+    /**
+     * 卷容量列表
+     * @return volumes
+     */
     public List<String> getVolumes() {
         return volumes;
     }
@@ -159,7 +165,10 @@ public class StacksAttribute {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

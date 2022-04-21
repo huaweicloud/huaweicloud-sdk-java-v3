@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowIssueCompletionRateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ShowIssueCompletionRateResponse extends SdkResponse {
         return this;
     }
 
-    /** 不同类型的工作项完成率
-     * 
-     * @return issueCompletionRates */
+    /**
+     * 不同类型的工作项完成率
+     * @return issueCompletionRates
+     */
     public List<IssueCompletionRateV4IssueCompletionRates> getIssueCompletionRates() {
         return issueCompletionRates;
     }
@@ -62,9 +65,10 @@ public class ShowIssueCompletionRateResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数
-     * 
-     * @return total */
+    /**
+     * 总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -101,7 +105,10 @@ public class ShowIssueCompletionRateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

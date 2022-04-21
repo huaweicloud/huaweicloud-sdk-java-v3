@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowResourceByIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +94,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源id
-     * 
-     * @return id */
+    /**
+     * 资源id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -108,9 +111,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return name */
+    /**
+     * 资源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,9 +128,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 云服务名称
-     * 
-     * @return provider */
+    /**
+     * 云服务名称
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -140,9 +145,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return type */
+    /**
+     * 资源类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -156,9 +162,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** region id
-     * 
-     * @return regionId */
+    /**
+     * region id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -172,9 +179,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Openstack中的project id
-     * 
-     * @return projectId */
+    /**
+     * Openstack中的project id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -188,9 +196,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Openstack中的project名称
-     * 
-     * @return projectName */
+    /**
+     * Openstack中的project名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -204,9 +213,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return epId */
+    /**
+     * 企业项目id
+     * @return epId
+     */
     public String getEpId() {
         return epId;
     }
@@ -220,9 +230,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目名称
-     * 
-     * @return epName */
+    /**
+     * 企业项目名称
+     * @return epName
+     */
     public String getEpName() {
         return epName;
     }
@@ -236,9 +247,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源详情校验码
-     * 
-     * @return checksum */
+    /**
+     * 资源详情校验码
+     * @return checksum
+     */
     public String getChecksum() {
         return checksum;
     }
@@ -252,9 +264,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源创建时间
-     * 
-     * @return created */
+    /**
+     * 资源创建时间
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -268,9 +281,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源更新时间
-     * 
-     * @return updated */
+    /**
+     * 资源更新时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -284,9 +298,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源操作状态
-     * 
-     * @return provisioningState */
+    /**
+     * 资源操作状态
+     * @return provisioningState
+     */
     public String getProvisioningState() {
         return provisioningState;
     }
@@ -316,9 +331,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源Tag
-     * 
-     * @return tags */
+    /**
+     * 资源Tag
+     * @return tags
+     */
     public Map<String, String> getTags() {
         return tags;
     }
@@ -348,9 +364,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源详细属性
-     * 
-     * @return properties */
+    /**
+     * 资源详细属性
+     * @return properties
+     */
     public Map<String, Object> getProperties() {
         return properties;
     }
@@ -427,7 +444,10 @@ public class ShowResourceByIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

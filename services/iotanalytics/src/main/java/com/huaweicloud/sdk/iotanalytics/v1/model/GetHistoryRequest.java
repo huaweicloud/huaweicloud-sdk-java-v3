@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询历史值请求 */
+/**
+ * 查询历史值请求
+ */
 public class GetHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class GetHistoryRequest {
         return this;
     }
 
-    /** Get timeSpan
-     * 
-     * @return timeSpan */
+    /**
+     * Get timeSpan
+     * @return timeSpan
+     */
     public TimeSpan getTimeSpan() {
         return timeSpan;
     }
@@ -79,9 +82,10 @@ public class GetHistoryRequest {
         return this;
     }
 
-    /** 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
-     * 
-     * @return tags */
+    /**
+     * 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
+     * @return tags
+     */
     public Map<String, String> getTags() {
         return tags;
     }
@@ -111,9 +115,10 @@ public class GetHistoryRequest {
         return this;
     }
 
-    /** 查询的属性列表
-     * 
-     * @return propertyNames */
+    /**
+     * 查询的属性列表
+     * @return propertyNames
+     */
     public List<String> getPropertyNames() {
         return propertyNames;
     }
@@ -127,9 +132,12 @@ public class GetHistoryRequest {
         return this;
     }
 
-    /** 返回值个数限制 minimum: 1 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 返回值个数限制
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -170,7 +178,10 @@ public class GetHistoryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

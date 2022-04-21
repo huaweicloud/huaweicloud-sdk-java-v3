@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VaultRemoveResourceReq */
+/**
+ * VaultRemoveResourceReq
+ */
 public class VaultRemoveResourceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class VaultRemoveResourceReq {
         return this;
     }
 
-    /** 要移除的资源ID列表
-     * 
-     * @return resourceIds */
+    /**
+     * 要移除的资源ID列表
+     * @return resourceIds
+     */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -74,7 +77,10 @@ public class VaultRemoveResourceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcRoomListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class ListRtcRoomListRequest {
 
     private String roomId;
 
-    /** 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭 */
+    /**
+     * 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭 
+     */
     public static final class StateEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum CLOSED for value: "CLOSED" */
+        /**
+         * Enum CLOSED for value: "CLOSED"
+         */
         public static final StateEnum CLOSED = new StateEnum("CLOSED");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +147,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -155,9 +164,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -173,9 +183,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -191,9 +202,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -207,9 +219,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 房间id
-     * 
-     * @return roomId */
+    /**
+     * 房间id 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -223,9 +236,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭
-     * 
-     * @return state */
+    /**
+     * 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -239,9 +253,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -255,9 +270,10 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不写默认为当前时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不写默认为当前时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -271,9 +287,12 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 查询结果条数 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询结果条数 
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -287,9 +306,12 @@ public class ListRtcRoomListRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 1844674407
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量 
+     * minimum: 0
+     * maximum: 1844674407
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -342,7 +364,10 @@ public class ListRtcRoomListRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

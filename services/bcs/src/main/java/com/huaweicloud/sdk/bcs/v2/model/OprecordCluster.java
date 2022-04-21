@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群信息 */
+/**
+ * 集群信息
+ */
 public class OprecordCluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class OprecordCluster {
         return this;
     }
 
-    /** 集群类型
-     * 
-     * @return clusterType */
+    /**
+     * 集群类型
+     * @return clusterType
+     */
     public String getClusterType() {
         return clusterType;
     }
@@ -52,9 +55,10 @@ public class OprecordCluster {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return name */
+    /**
+     * 集群名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +72,10 @@ public class OprecordCluster {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -100,9 +105,10 @@ public class OprecordCluster {
         return this;
     }
 
-    /** 节点信息
-     * 
-     * @return nodeInfos */
+    /**
+     * 节点信息
+     * @return nodeInfos
+     */
     public List<NodeInfo> getNodeInfos() {
         return nodeInfos;
     }
@@ -143,7 +149,10 @@ public class OprecordCluster {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

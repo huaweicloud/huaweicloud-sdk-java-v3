@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListClustersDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListClustersDetailsRequest {
         return this;
     }
 
-    /** 指定查询起始值，默认值为1，即从第1个集群开始查询。
-     * 
-     * @return start */
+    /**
+     * 指定查询起始值，默认值为1，即从第1个集群开始查询。
+     * @return start
+     */
     public Integer getStart() {
         return start;
     }
@@ -39,9 +42,10 @@ public class ListClustersDetailsRequest {
         return this;
     }
 
-    /** 指定查询个数，默认值为10，即一次查询10个集群信息。
-     * 
-     * @return limit */
+    /**
+     * 指定查询个数，默认值为10，即一次查询10个集群信息。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -78,7 +82,10 @@ public class ListClustersDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

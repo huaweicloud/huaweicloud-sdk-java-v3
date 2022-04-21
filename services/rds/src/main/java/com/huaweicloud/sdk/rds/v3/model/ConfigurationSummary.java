@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 参数模板信息。 */
+/**
+ * 参数模板信息。
+ */
 public class ConfigurationSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,16 +35,24 @@ public class ConfigurationSummary {
 
     private String datastoreVersionName;
 
-    /** 引擎名。 */
+    /**
+     * 引擎名。
+     */
     public static final class DatastoreNameEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final DatastoreNameEnum MYSQL = new DatastoreNameEnum("mysql");
 
-        /** Enum POSTGRESQL for value: "postgresql" */
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
         public static final DatastoreNameEnum POSTGRESQL = new DatastoreNameEnum("postgresql");
 
-        /** Enum SQLSERVER for value: "sqlserver" */
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
 
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +143,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 参数组ID。
-     * 
-     * @return id */
+    /**
+     * 参数组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -149,9 +160,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 参数组名称。
-     * 
-     * @return name */
+    /**
+     * 参数组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -165,9 +177,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 参数组描述。
-     * 
-     * @return description */
+    /**
+     * 参数组描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -181,9 +194,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 引擎版本。
-     * 
-     * @return datastoreVersionName */
+    /**
+     * 引擎版本。
+     * @return datastoreVersionName
+     */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -197,9 +211,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 引擎名。
-     * 
-     * @return datastoreName */
+    /**
+     * 引擎名。
+     * @return datastoreName
+     */
     public DatastoreNameEnum getDatastoreName() {
         return datastoreName;
     }
@@ -213,9 +228,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -229,9 +245,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -245,9 +262,10 @@ public class ConfigurationSummary {
         return this;
     }
 
-    /** 是否是用户自定义参数模板： - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
-     * 
-     * @return userDefined */
+    /**
+     * 是否是用户自定义参数模板：  - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
+     * @return userDefined
+     */
     public Boolean getUserDefined() {
         return userDefined;
     }
@@ -295,7 +313,10 @@ public class ConfigurationSummary {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

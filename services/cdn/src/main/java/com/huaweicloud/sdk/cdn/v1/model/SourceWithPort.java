@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 源站信息 */
+/**
+ * 源站信息
+ */
 public class SourceWithPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class SourceWithPort {
 
     private String ipOrDomain;
 
-    /** 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"） */
+    /**
+     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
+     */
     public static final class OriginTypeEnum {
 
-        /** Enum IPADDR for value: "ipaddr" */
+        /**
+         * Enum IPADDR for value: "ipaddr"
+         */
         public static final OriginTypeEnum IPADDR = new OriginTypeEnum("ipaddr");
 
-        /** Enum DOMAIN for value: "domain" */
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
         public static final OriginTypeEnum DOMAIN = new OriginTypeEnum("domain");
 
-        /** Enum OBS_BUCKET for value: "obs_bucket" */
+        /**
+         * Enum OBS_BUCKET for value: "obs_bucket"
+         */
         public static final OriginTypeEnum OBS_BUCKET = new OriginTypeEnum("obs_bucket");
 
         private static final Map<String, OriginTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** 源站IP（非内网IP）或者域名。
-     * 
-     * @return ipOrDomain */
+    /**
+     * 源站IP（非内网IP）或者域名。
+     * @return ipOrDomain
+     */
     public String getIpOrDomain() {
         return ipOrDomain;
     }
@@ -139,9 +150,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
-     * 
-     * @return originType */
+    /**
+     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
+     * @return originType
+     */
     public OriginTypeEnum getOriginType() {
         return originType;
     }
@@ -155,9 +167,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
-     * 
-     * @return activeStandby */
+    /**
+     * 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
+     * @return activeStandby
+     */
     public Integer getActiveStandby() {
         return activeStandby;
     }
@@ -171,9 +184,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
-     * 
-     * @return enableObsWebHosting */
+    /**
+     * 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
+     * @return enableObsWebHosting
+     */
     public Integer getEnableObsWebHosting() {
         return enableObsWebHosting;
     }
@@ -187,9 +201,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** HTTP端口，默认80
-     * 
-     * @return httpPort */
+    /**
+     * HTTP端口，默认80
+     * @return httpPort
+     */
     public Integer getHttpPort() {
         return httpPort;
     }
@@ -203,9 +218,10 @@ public class SourceWithPort {
         return this;
     }
 
-    /** HTTPS端口，默认443
-     * 
-     * @return httpsPort */
+    /**
+     * HTTPS端口，默认443
+     * @return httpsPort
+     */
     public Integer getHttpsPort() {
         return httpsPort;
     }
@@ -250,7 +266,10 @@ public class SourceWithPort {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除IP地址组中的IP。 */
+/**
+ * 批量删除IP地址组中的IP。
+ */
 public class BatchDeleteIpListOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteIpListOption {
         return this;
     }
 
-    /** IP列表。
-     * 
-     * @return ipList */
+    /**
+     * IP列表。
+     * @return ipList
+     */
     public List<IpGroupIp> getIpList() {
         return ipList;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteIpListOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

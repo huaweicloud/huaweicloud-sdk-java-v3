@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Quotas */
+/**
+ * Quotas
+ */
 public class Quotas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Quotas {
         return this;
     }
 
-    /** 资源配额列表，详情请参见**Resources**字段数据结构说明。
-     * 
-     * @return resources */
+    /**
+     * 资源配额列表，详情请参见**Resources**字段数据结构说明。
+     * @return resources
+     */
     public List<Resources> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class Quotas {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

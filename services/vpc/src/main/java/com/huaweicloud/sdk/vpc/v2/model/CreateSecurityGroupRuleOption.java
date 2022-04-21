@@ -60,9 +60,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 安全组ID
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -76,9 +77,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：安全组规则描述 取值范围：0-255个字符，支持数字、字母、中文字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组规则描述 取值范围：0-255个字符，支持数字、字母、中文字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -92,9 +94,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：出入控制方向 取值范围： - egress：出方向 - ingress：入方向
-     * 
-     * @return direction */
+    /**
+     * 功能说明：出入控制方向 取值范围： - egress：出方向 - ingress：入方向
+     * @return direction
+     */
     public String getDirection() {
         return direction;
     }
@@ -108,9 +111,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：IP地址协议类型 取值范围：IPv4,IPv6 约束：默认值为IPv4
-     * 
-     * @return ethertype */
+    /**
+     * 功能说明：IP地址协议类型 取值范围：IPv4,IPv6 约束：默认值为IPv4
+     * @return ethertype
+     */
     public String getEthertype() {
         return ethertype;
     }
@@ -124,9 +128,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：协议类型 取值范围：tcp、udp、icmp或IP协议编号（0~255） 约束：为空表示支持所有协议
-     * 
-     * @return protocol */
+    /**
+     * 功能说明：协议类型 取值范围：tcp、udp、icmp或IP协议编号（0~255） 约束：为空表示支持所有协议
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -140,10 +145,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：起始端口值 取值范围：1~65535 约束：不能大于port_range_max的值，为空表示所有端口，如果协议是icmp类型，取值范围请参见
-     * [安全组规则icmp协议名称对应关系表](https://support.huaweicloud.com/api-vpc/vpc_api_0009.html)
-     * 
-     * @return portRangeMin */
+    /**
+     * 功能说明：起始端口值 取值范围：1~65535 约束：不能大于port_range_max的值，为空表示所有端口，如果协议是icmp类型，取值范围请参见 [安全组规则icmp协议名称对应关系表](https://support.huaweicloud.com/api-vpc/vpc_api_0009.html)
+     * @return portRangeMin
+     */
     public Integer getPortRangeMin() {
         return portRangeMin;
     }
@@ -157,10 +162,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：结束端口值 取值范围：1~65535 约束：协议不为icmp时，取值不能小于port_range_min的值，为空表示所有端口，如果协议是icmp类型，取值范围请参见
-     * [安全组规则icmp协议名称对应关系表](https://support.huaweicloud.com/api-vpc/vpc_api_0009.html)
-     * 
-     * @return portRangeMax */
+    /**
+     * 功能说明：结束端口值 取值范围：1~65535 约束：协议不为icmp时，取值不能小于port_range_min的值，为空表示所有端口，如果协议是icmp类型，取值范围请参见 [安全组规则icmp协议名称对应关系表](https://support.huaweicloud.com/api-vpc/vpc_api_0009.html)
+     * @return portRangeMax
+     */
     public Integer getPortRangeMax() {
         return portRangeMax;
     }
@@ -174,9 +179,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
-     * 
-     * @return remoteIpPrefix */
+    /**
+     * 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
+     * @return remoteIpPrefix
+     */
     public String getRemoteIpPrefix() {
         return remoteIpPrefix;
     }
@@ -190,9 +196,10 @@ public class CreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：对端安全组ID 约束：和remote_ip_prefix互斥
-     * 
-     * @return remoteGroupId */
+    /**
+     * 功能说明：对端安全组ID 约束：和remote_ip_prefix互斥
+     * @return remoteGroupId
+     */
     public String getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -251,7 +258,10 @@ public class CreateSecurityGroupRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AddMemberRequestV4 */
+/**
+ * AddMemberRequestV4
+ */
 public class AddMemberRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AddMemberRequestV4 {
         return this;
     }
 
-    /** 租户名称（跨租户添加用户时，填写正确的租户名称，可将未授权的租户主动授权，将用户添加为项目成员）
-     * 
-     * @return domainName */
+    /**
+     * 租户名称（跨租户添加用户时，填写正确的租户名称，可将未授权的租户主动授权，将用户添加为项目成员）
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -49,9 +52,10 @@ public class AddMemberRequestV4 {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainId */
+    /**
+     * 租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -65,9 +69,10 @@ public class AddMemberRequestV4 {
         return this;
     }
 
-    /** '用户在项目中的角色ID' 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
-     * 
-     * @return roleId */
+    /**
+     * '用户在项目中的角色ID' 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
+     * @return roleId
+     */
     public Integer getRoleId() {
         return roleId;
     }
@@ -81,9 +86,10 @@ public class AddMemberRequestV4 {
         return this;
     }
 
-    /** 用户32位uuid
-     * 
-     * @return userId */
+    /**
+     * 用户32位uuid
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -124,7 +130,10 @@ public class AddMemberRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

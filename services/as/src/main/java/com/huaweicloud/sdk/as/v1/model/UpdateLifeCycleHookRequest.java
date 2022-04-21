@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateLifeCycleHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateLifeCycleHookRequest {
         return this;
     }
 
-    /** 伸缩组标识。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组标识。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -45,9 +48,10 @@ public class UpdateLifeCycleHookRequest {
         return this;
     }
 
-    /** 生命周期挂钩标识。
-     * 
-     * @return lifecycleHookName */
+    /**
+     * 生命周期挂钩标识。
+     * @return lifecycleHookName
+     */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -70,9 +74,10 @@ public class UpdateLifeCycleHookRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateLifeCycleHookOption getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class UpdateLifeCycleHookRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

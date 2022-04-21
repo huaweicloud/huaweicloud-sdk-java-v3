@@ -38,9 +38,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：虚拟私有云名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：如果名称不为空，则同一个租户下的VPC不允许重名。
-     * 
-     * @return name */
+    /**
+     * 功能说明：虚拟私有云名称  取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  约束：如果名称不为空，则同一个租户下的VPC不允许重名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +55,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：虚拟私有云的描述 取值范围：0-255个字符，不能包含“<”和“>”。
-     * 
-     * @return description */
+    /**
+     * 功能说明：虚拟私有云的描述  取值范围：0-255个字符，不能包含“<”和“>”。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -70,10 +72,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：虚拟私有云下可用子网的范围 取值范围： - 10.0.0.0/8 ~ 10.255.255.240/28 - 172.16.0.0/12 ~ 172.31.255.240/28 - 192.168.0.0/16 ~
-     * 192.168.255.240/28 约束：必须是ipv4 cidr格式，例如：192.168.0.0/16
-     * 
-     * @return cidr */
+    /**
+     * 功能说明：虚拟私有云下可用子网的范围  取值范围：  - 10.0.0.0/8 ~ 10.255.255.240/28 - 172.16.0.0/12 ~ 172.31.255.240/28 - 192.168.0.0/16 ~ 192.168.255.240/28  约束：必须是ipv4 cidr格式，例如：192.168.0.0/16
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -103,9 +105,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：路由信息列表，详情参见route对象
-     * 
-     * @return routes */
+    /**
+     * 功能说明：路由信息列表，详情参见route对象
+     * @return routes
+     */
     public List<Route> getRoutes() {
         return routes;
     }
@@ -145,7 +148,10 @@ public class UpdateVpcOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

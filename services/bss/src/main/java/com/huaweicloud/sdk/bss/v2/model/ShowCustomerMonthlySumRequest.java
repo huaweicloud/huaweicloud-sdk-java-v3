@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowCustomerMonthlySumRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 查询消费汇总数据所在的账期，格式为YYYY-MM。
-     * 
-     * @return billCycle */
+    /**
+     * 查询消费汇总数据所在的账期，格式为YYYY-MM。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -64,9 +67,10 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -80,9 +84,10 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -96,11 +101,12 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -114,9 +120,12 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 每次查询的数量。默认值为10。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数量。默认值为10。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -130,9 +139,10 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 查询方式。oneself：自身sub_customer：企业子客户all：自己和企业子客户默认为all，如果没有企业子客户，all的时候也是查询自己的。
-     * 
-     * @return method */
+    /**
+     * 查询方式。oneself：自身sub_customer：企业子客户all：自己和企业子客户默认为all，如果没有企业子客户，all的时候也是查询自己的。
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -146,9 +156,10 @@ public class ShowCustomerMonthlySumRequest {
         return this;
     }
 
-    /** 企业子客户的账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
-     * 
-     * @return subCustomerId */
+    /**
+     * 企业子客户的账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
+     * @return subCustomerId
+     */
     public String getSubCustomerId() {
         return subCustomerId;
     }
@@ -195,7 +206,10 @@ public class ShowCustomerMonthlySumRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

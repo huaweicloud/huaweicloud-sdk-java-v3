@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return id */
+    /**
+     * 任务id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -83,9 +86,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务的类型， 其值可以为refresh或preheating。
-     * 
-     * @return taskType */
+    /**
+     * 任务的类型， 其值可以为refresh或preheating。
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -99,9 +103,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务执行结果。task_done表示成功，task_inprocess表示处理中。
-     * 
-     * @return status */
+    /**
+     * 任务执行结果。task_done表示成功，task_inprocess表示处理中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -131,9 +136,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次提交的url列表。
-     * 
-     * @return urls */
+    /**
+     * 本次提交的url列表。
+     * @return urls
+     */
     public List<UrlObject> getUrls() {
         return urls;
     }
@@ -147,9 +153,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -163,9 +170,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 处理中的url个数。
-     * 
-     * @return processing */
+    /**
+     * 处理中的url个数。
+     * @return processing
+     */
     public Integer getProcessing() {
         return processing;
     }
@@ -179,9 +187,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 成功处理的url个数。
-     * 
-     * @return succeed */
+    /**
+     * 成功处理的url个数。
+     * @return succeed
+     */
     public Integer getSucceed() {
         return succeed;
     }
@@ -195,9 +204,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 处理失败的url个数。
-     * 
-     * @return failed */
+    /**
+     * 处理失败的url个数。
+     * @return failed
+     */
     public Integer getFailed() {
         return failed;
     }
@@ -211,9 +221,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 历史任务的url个数。
-     * 
-     * @return total */
+    /**
+     * 历史任务的url个数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -227,9 +238,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 默认是文件file,file：文件,directory：目录。
-     * 
-     * @return fileType */
+    /**
+     * 默认是文件file,file：文件,directory：目录。
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -282,7 +294,10 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

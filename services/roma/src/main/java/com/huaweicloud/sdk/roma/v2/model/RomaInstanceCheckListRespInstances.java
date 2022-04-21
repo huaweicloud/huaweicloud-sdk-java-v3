@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RomaInstanceCheckListRespInstances */
+/**
+ * RomaInstanceCheckListRespInstances
+ */
 public class RomaInstanceCheckListRespInstances {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,13 +43,19 @@ public class RomaInstanceCheckListRespInstances {
 
     private String flavorType;
 
-    /** CPU架构类型，取值如下： - x86_64: x86架构 - aarch64: arm架构 */
+    /**
+     * CPU架构类型，取值如下： - x86_64: x86架构 - aarch64: arm架构 
+     */
     public static final class CpuArchEnum {
 
-        /** Enum X86_64 for value: "x86_64" */
+        /**
+         * Enum X86_64 for value: "x86_64"
+         */
         public static final CpuArchEnum X86_64 = new CpuArchEnum("x86_64");
 
-        /** Enum AARCH64 for value: "aarch64" */
+        /**
+         * Enum AARCH64 for value: "aarch64"
+         */
         public static final CpuArchEnum AARCH64 = new CpuArchEnum("aarch64");
 
         private static final Map<String, CpuArchEnum> STATIC_FIELDS = createStaticFields();
@@ -147,31 +155,49 @@ public class RomaInstanceCheckListRespInstances {
 
     private String publicipAddress;
 
-    /** 实例运行状态 */
+    /**
+     * 实例运行状态
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "CREATING" */
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
 
-        /** Enum CREATE_FAILED for value: "CREATE_FAILED" */
+        /**
+         * Enum CREATE_FAILED for value: "CREATE_FAILED"
+         */
         public static final StatusEnum CREATE_FAILED = new StatusEnum("CREATE_FAILED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FREEZING for value: "FREEZING" */
+        /**
+         * Enum FREEZING for value: "FREEZING"
+         */
         public static final StatusEnum FREEZING = new StatusEnum("FREEZING");
 
-        /** Enum FROZEN for value: "FROZEN" */
+        /**
+         * Enum FROZEN for value: "FROZEN"
+         */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
 
-        /** Enum DELETE_FALIED for value: "DELETE_FALIED" */
+        /**
+         * Enum DELETE_FALIED for value: "DELETE_FALIED"
+         */
         public static final StatusEnum DELETE_FALIED = new StatusEnum("DELETE_FALIED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -257,13 +283,19 @@ public class RomaInstanceCheckListRespInstances {
 
     private String errorMsg;
 
-    /** 实例计费模式 */
+    /**
+     * 实例计费模式
+     */
     public static final class ChargeTypeEnum {
 
-        /** Enum PREPAID for value: "prePaid" */
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
         public static final ChargeTypeEnum PREPAID = new ChargeTypeEnum("prePaid");
 
-        /** Enum POSTPAID for value: "postPaid" */
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
         public static final ChargeTypeEnum POSTPAID = new ChargeTypeEnum("postPaid");
 
         private static final Map<String, ChargeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -373,9 +405,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return id */
+    /**
+     * 实例ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -389,9 +422,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return name */
+    /**
+     * 实例名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -405,9 +439,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例描述
-     * 
-     * @return description */
+    /**
+     * 实例描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -421,9 +456,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例规格ID
-     * 
-     * @return flavorId */
+    /**
+     * 实例规格ID
+     * @return flavorId
+     */
     public String getFlavorId() {
         return flavorId;
     }
@@ -437,9 +473,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例规格类型
-     * 
-     * @return flavorType */
+    /**
+     * 实例规格类型
+     * @return flavorType
+     */
     public String getFlavorType() {
         return flavorType;
     }
@@ -453,9 +490,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** CPU架构类型，取值如下： - x86_64: x86架构 - aarch64: arm架构
-     * 
-     * @return cpuArch */
+    /**
+     * CPU架构类型，取值如下： - x86_64: x86架构 - aarch64: arm架构 
+     * @return cpuArch
+     */
     public CpuArchEnum getCpuArch() {
         return cpuArch;
     }
@@ -469,9 +507,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例指定虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 实例指定虚拟私有云ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -485,9 +524,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例指定虚拟私有云子网ID
-     * 
-     * @return subnetId */
+    /**
+     * 实例指定虚拟私有云子网ID
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -501,9 +541,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例指定安全组ID
-     * 
-     * @return securityGroupId */
+    /**
+     * 实例指定安全组ID
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -517,9 +558,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 是否开启公网访问，开启时publicip_id字段必填。
-     * 
-     * @return publicipEnable */
+    /**
+     * 是否开启公网访问，开启时publicip_id字段必填。 
+     * @return publicipEnable
+     */
     public Boolean getPublicipEnable() {
         return publicipEnable;
     }
@@ -533,9 +575,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例绑定的弹性公网地址ID
-     * 
-     * @return publicipId */
+    /**
+     * 实例绑定的弹性公网地址ID
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -549,9 +592,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例绑定的弹性公网地址
-     * 
-     * @return publicipAddress */
+    /**
+     * 实例绑定的弹性公网地址
+     * @return publicipAddress
+     */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -565,9 +609,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例运行状态
-     * 
-     * @return status */
+    /**
+     * 实例运行状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -581,9 +626,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -597,9 +643,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 错误消息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误消息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -613,9 +660,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例计费模式
-     * 
-     * @return chargeType */
+    /**
+     * 实例计费模式
+     * @return chargeType
+     */
     public ChargeTypeEnum getChargeType() {
         return chargeType;
     }
@@ -629,9 +677,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 租户项目ID
-     * 
-     * @return projectId */
+    /**
+     * 租户项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -645,9 +694,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -661,9 +711,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -677,9 +728,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 运维开始时间
-     * 
-     * @return maintainBegin */
+    /**
+     * 运维开始时间
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -693,9 +745,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 运维结束时间
-     * 
-     * @return maintainEnd */
+    /**
+     * 运维结束时间
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -725,9 +778,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 创实例使用的可用区列表
-     * 
-     * @return availableZoneIds */
+    /**
+     * 创实例使用的可用区列表
+     * @return availableZoneIds
+     */
     public List<String> getAvailableZoneIds() {
         return availableZoneIds;
     }
@@ -741,9 +795,10 @@ public class RomaInstanceCheckListRespInstances {
         return this;
     }
 
-    /** 实例所属企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 实例所属企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -844,7 +899,10 @@ public class RomaInstanceCheckListRespInstances {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

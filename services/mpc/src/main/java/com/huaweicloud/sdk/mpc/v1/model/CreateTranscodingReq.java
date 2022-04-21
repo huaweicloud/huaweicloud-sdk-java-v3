@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTranscodingReq */
+/**
+ * CreateTranscodingReq
+ */
 public class CreateTranscodingReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,9 +107,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -130,9 +133,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -162,10 +166,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 转码模板ID，没带av_parameter参数时，必须带该参数，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。 多个转码模板中如下参数可变，其他都必须一致： -
-     * 视频bitrate，height，width。
-     * 
-     * @return transTemplateId */
+    /**
+     * 转码模板ID，没带av_parameter参数时，必须带该参数，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。  多个转码模板中如下参数可变，其他都必须一致：  - 视频bitrate，height，width。 
+     * @return transTemplateId
+     */
     public List<Integer> getTransTemplateId() {
         return transTemplateId;
     }
@@ -195,9 +199,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 转码参数。 若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。
-     * 
-     * @return avParameters */
+    /**
+     * 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。 
+     * @return avParameters
+     */
     public List<AvParameters> getAvParameters() {
         return avParameters;
     }
@@ -227,9 +232,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。 - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。
-     * 
-     * @return outputFilenames */
+    /**
+     * 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。  - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。 
+     * @return outputFilenames
+     */
     public List<String> getOutputFilenames() {
         return outputFilenames;
     }
@@ -243,9 +249,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 用户自定义数据，该字段可在查询接口或消息通知中按原内容透传给用户。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据，该字段可在查询接口或消息通知中按原内容透传给用户。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -275,9 +282,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 图片水印参数，数组，最多支持20个成员。
-     * 
-     * @return watermarks */
+    /**
+     * 图片水印参数，数组，最多支持20个成员。 
+     * @return watermarks
+     */
     public List<WatermarkRequest> getWatermarks() {
         return watermarks;
     }
@@ -300,9 +308,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get thumbnail
-     * 
-     * @return thumbnail */
+    /**
+     * Get thumbnail
+     * @return thumbnail
+     */
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
@@ -316,9 +325,12 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。 暂时只支持6和9。 minimum: 0 maximum: 9
-     * 
-     * @return priority */
+    /**
+     * 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。  暂时只支持6和9。 
+     * minimum: 0
+     * maximum: 9
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -341,9 +353,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get subtitle
-     * 
-     * @return subtitle */
+    /**
+     * Get subtitle
+     * @return subtitle
+     */
     public Subtitle getSubtitle() {
         return subtitle;
     }
@@ -366,9 +379,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get encryption
-     * 
-     * @return encryption */
+    /**
+     * Get encryption
+     * @return encryption
+     */
     public Encryption getEncryption() {
         return encryption;
     }
@@ -391,9 +405,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get crop
-     * 
-     * @return crop */
+    /**
+     * Get crop
+     * @return crop
+     */
     public Crop getCrop() {
         return crop;
     }
@@ -416,9 +431,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get audioTrack
-     * 
-     * @return audioTrack */
+    /**
+     * Get audioTrack
+     * @return audioTrack
+     */
     public AudioTrack getAudioTrack() {
         return audioTrack;
     }
@@ -441,9 +457,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get multiAudio
-     * 
-     * @return multiAudio */
+    /**
+     * Get multiAudio
+     * @return multiAudio
+     */
     public MultiAudio getMultiAudio() {
         return multiAudio;
     }
@@ -466,9 +483,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get videoProcess
-     * 
-     * @return videoProcess */
+    /**
+     * Get videoProcess
+     * @return videoProcess
+     */
     public VideoProcess getVideoProcess() {
         return videoProcess;
     }
@@ -491,9 +509,10 @@ public class CreateTranscodingReq {
         return this;
     }
 
-    /** Get audioProcess
-     * 
-     * @return audioProcess */
+    /**
+     * Get audioProcess
+     * @return audioProcess
+     */
     public AudioProcess getAudioProcess() {
         return audioProcess;
     }
@@ -573,7 +592,10 @@ public class CreateTranscodingReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

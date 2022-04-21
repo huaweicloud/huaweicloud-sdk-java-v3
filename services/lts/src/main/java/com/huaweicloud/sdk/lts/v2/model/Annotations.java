@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Annotations */
+/**
+ * Annotations
+ */
 public class Annotations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Annotations {
         return this;
     }
 
-    /** 告警列表详情
-     * 
-     * @return message */
+    /**
+     * 告警列表详情
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -49,9 +52,10 @@ public class Annotations {
         return this;
     }
 
-    /** 日志组/流id,名称
-     * 
-     * @return logInfo */
+    /**
+     * 日志组/流id,名称
+     * @return logInfo
+     */
     public String getLogInfo() {
         return logInfo;
     }
@@ -65,9 +69,10 @@ public class Annotations {
         return this;
     }
 
-    /** 当前值
-     * 
-     * @return currentValue */
+    /**
+     * 当前值
+     * @return currentValue
+     */
     public String getCurrentValue() {
         return currentValue;
     }
@@ -81,9 +86,10 @@ public class Annotations {
         return this;
     }
 
-    /** (sql/关键词)告警详情原始数据
-     * 
-     * @return oldAnnotations */
+    /**
+     * (sql/关键词)告警详情原始数据
+     * @return oldAnnotations
+     */
     public String getOldAnnotations() {
         return oldAnnotations;
     }
@@ -123,7 +129,10 @@ public class Annotations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

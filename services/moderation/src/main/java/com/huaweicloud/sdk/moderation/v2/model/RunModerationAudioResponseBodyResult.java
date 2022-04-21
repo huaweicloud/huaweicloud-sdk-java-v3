@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 调用成功时表示调用结果。 调用失败时无此字段。 */
+/**
+ * 调用成功时表示调用结果。 调用失败时无此字段。 
+ */
 public class RunModerationAudioResponseBodyResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class RunModerationAudioResponseBodyResult {
         return this;
     }
 
-    /** Get detail
-     * 
-     * @return detail */
+    /**
+     * Get detail
+     * @return detail
+     */
     public RunModerationAudioResponseBodyResultDetail getDetail() {
         return detail;
     }
@@ -50,9 +53,10 @@ public class RunModerationAudioResponseBodyResult {
         return this;
     }
 
-    /** 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查
-     * 
-     * @return suggestion */
+    /**
+     * 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查 
+     * @return suggestion
+     */
     public String getSuggestion() {
         return suggestion;
     }
@@ -90,7 +94,10 @@ public class RunModerationAudioResponseBodyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

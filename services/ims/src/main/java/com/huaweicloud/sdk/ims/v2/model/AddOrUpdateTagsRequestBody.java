@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求参数 */
+/**
+ * 请求参数
+ */
 public class AddOrUpdateTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class AddOrUpdateTagsRequestBody {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return imageId */
+    /**
+     * 镜像ID。
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -45,9 +48,10 @@ public class AddOrUpdateTagsRequestBody {
         return this;
     }
 
-    /** 标签数据。 tag和image_tag只能使用一个。
-     * 
-     * @return tag */
+    /**
+     * 标签数据。 tag和image_tag只能使用一个。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -70,9 +74,10 @@ public class AddOrUpdateTagsRequestBody {
         return this;
     }
 
-    /** Get imageTag
-     * 
-     * @return imageTag */
+    /**
+     * Get imageTag
+     * @return imageTag
+     */
     public ResourceTag getImageTag() {
         return imageTag;
     }
@@ -111,7 +116,10 @@ public class AddOrUpdateTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

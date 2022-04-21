@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EditAudioInfo */
+/**
+ * EditAudioInfo
+ */
 public class EditAudioInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class EditAudioInfo {
         return this;
     }
 
-    /** 音频编码格式,取值有：[AAC, HEAAC, MP3]。
-     * 
-     * @return codec */
+    /**
+     * 音频编码格式,取值有：[AAC, HEAAC, MP3]。
+     * @return codec
+     */
     public String getCodec() {
         return codec;
     }
@@ -49,9 +52,12 @@ public class EditAudioInfo {
         return this;
     }
 
-    /** 视频码率，单位: bit/s minimum: 0 maximum: 20000000
-     * 
-     * @return bitrate */
+    /**
+     * 视频码率，单位: bit/s 
+     * minimum: 0
+     * maximum: 20000000
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -65,9 +71,12 @@ public class EditAudioInfo {
         return this;
     }
 
-    /** 采样率, 单位: HZ minimum: 0 maximum: 96000
-     * 
-     * @return sample */
+    /**
+     * 采样率, 单位: HZ 
+     * minimum: 0
+     * maximum: 96000
+     * @return sample
+     */
     public Integer getSample() {
         return sample;
     }
@@ -81,9 +90,10 @@ public class EditAudioInfo {
         return this;
     }
 
-    /** 声道数。
-     * 
-     * @return channels */
+    /**
+     * 声道数。
+     * @return channels
+     */
     public String getChannels() {
         return channels;
     }
@@ -123,7 +133,10 @@ public class EditAudioInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

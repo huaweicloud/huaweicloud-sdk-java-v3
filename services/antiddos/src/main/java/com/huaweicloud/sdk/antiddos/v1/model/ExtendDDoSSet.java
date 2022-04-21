@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 扩展配置列表 */
+/**
+ * 扩展配置列表
+ */
 public class ExtendDDoSSet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 配置分段ID
-     * 
-     * @return setID */
+    /**
+     * 配置分段ID
+     * @return setID
+     */
     public Long getSetID() {
         return setID;
     }
@@ -59,9 +62,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 单一源IP新建连接个数
-     * 
-     * @return newConnectionLimited */
+    /**
+     * 单一源IP新建连接个数
+     * @return newConnectionLimited
+     */
     public Long getNewConnectionLimited() {
         return newConnectionLimited;
     }
@@ -75,9 +79,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 单一源IP连接数总个数
-     * 
-     * @return totalConnectionLimited */
+    /**
+     * 单一源IP连接数总个数
+     * @return totalConnectionLimited
+     */
     public Long getTotalConnectionLimited() {
         return totalConnectionLimited;
     }
@@ -91,9 +96,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 每秒HTTP请求数（个/s）阈值
-     * 
-     * @return httpPacketPerSecond */
+    /**
+     * 每秒HTTP请求数（个/s）阈值
+     * @return httpPacketPerSecond
+     */
     public Long getHttpPacketPerSecond() {
         return httpPacketPerSecond;
     }
@@ -107,9 +113,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 每秒流量（Mbit/s）阈值
-     * 
-     * @return trafficPerSecond */
+    /**
+     * 每秒流量（Mbit/s）阈值
+     * @return trafficPerSecond
+     */
     public Long getTrafficPerSecond() {
         return trafficPerSecond;
     }
@@ -123,9 +130,10 @@ public class ExtendDDoSSet {
         return this;
     }
 
-    /** 每秒报文数（个/s）阈值
-     * 
-     * @return packetPerSecond */
+    /**
+     * 每秒报文数（个/s）阈值
+     * @return packetPerSecond
+     */
     public Long getPacketPerSecond() {
         return packetPerSecond;
     }
@@ -175,7 +183,10 @@ public class ExtendDDoSSet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

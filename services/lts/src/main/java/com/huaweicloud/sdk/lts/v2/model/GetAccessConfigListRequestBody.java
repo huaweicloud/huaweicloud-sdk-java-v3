@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询日志接入列表请求体 */
+/**
+ * 查询日志接入列表请求体
+ */
 public class GetAccessConfigListRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class GetAccessConfigListRequestBody {
         return this;
     }
 
-    /** 接入配置名称列表
-     * 
-     * @return accessConfigNameList */
+    /**
+     * 接入配置名称列表
+     * @return accessConfigNameList
+     */
     public List<String> getAccessConfigNameList() {
         return accessConfigNameList;
     }
@@ -89,9 +92,10 @@ public class GetAccessConfigListRequestBody {
         return this;
     }
 
-    /** 主机组名称列表
-     * 
-     * @return hostGroupNameList */
+    /**
+     * 主机组名称列表
+     * @return hostGroupNameList
+     */
     public List<String> getHostGroupNameList() {
         return hostGroupNameList;
     }
@@ -121,9 +125,10 @@ public class GetAccessConfigListRequestBody {
         return this;
     }
 
-    /** 日志组名称列表
-     * 
-     * @return logGroupNameList */
+    /**
+     * 日志组名称列表
+     * @return logGroupNameList
+     */
     public List<String> getLogGroupNameList() {
         return logGroupNameList;
     }
@@ -153,9 +158,10 @@ public class GetAccessConfigListRequestBody {
         return this;
     }
 
-    /** 日志流名称列表
-     * 
-     * @return logStreamNameList */
+    /**
+     * 日志流名称列表
+     * @return logStreamNameList
+     */
     public List<String> getLogStreamNameList() {
         return logStreamNameList;
     }
@@ -186,9 +192,10 @@ public class GetAccessConfigListRequestBody {
         return this;
     }
 
-    /** Get accessConfigTagList
-     * 
-     * @return accessConfigTagList */
+    /**
+     * Get accessConfigTagList
+     * @return accessConfigTagList
+     */
     public List<AccessConfigTag> getAccessConfigTagList() {
         return accessConfigTagList;
     }
@@ -232,7 +239,10 @@ public class GetAccessConfigListRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

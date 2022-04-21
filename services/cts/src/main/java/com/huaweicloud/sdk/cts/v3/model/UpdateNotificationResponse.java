@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateNotificationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,14 +24,19 @@ public class UpdateNotificationResponse extends SdkResponse {
 
     private String notificationName;
 
-    /** 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。
-     * 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。 */
+    /**
+     * 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum CUSTOMIZED for value: "customized" */
+        /**
+         * Enum CUSTOMIZED for value: "customized"
+         */
         public static final OperationTypeEnum CUSTOMIZED = new OperationTypeEnum("customized");
 
-        /** Enum COMPLETE for value: "complete" */
+        /**
+         * Enum COMPLETE for value: "complete"
+         */
         public static final OperationTypeEnum COMPLETE = new OperationTypeEnum("complete");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +116,19 @@ public class UpdateNotificationResponse extends SdkResponse {
 
     private List<NotificationUsers> notifyUserList = null;
 
-    /** 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。 */
+    /**
+    * 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
+    */
     public static final class StatusEnum {
 
-        /** Enum ENABLED for value: "enabled" */
+        /**
+         * Enum ENABLED for value: "enabled"
+         */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
 
-        /** Enum DISABLED for value: "disabled" */
+        /**
+         * Enum DISABLED for value: "disabled"
+         */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -195,13 +208,19 @@ public class UpdateNotificationResponse extends SdkResponse {
 
     private String notificationId;
 
-    /** 关键操作通知类型，根据topic_id区分为消息通知服务(smn)和函数工作流(fun)。 */
+    /**
+     * 关键操作通知类型，根据topic_id区分为消息通知服务(smn)和函数工作流(fun)。
+     */
     public static final class NotificationTypeEnum {
 
-        /** Enum SMN for value: "smn" */
+        /**
+         * Enum SMN for value: "smn"
+         */
         public static final NotificationTypeEnum SMN = new NotificationTypeEnum("smn");
 
-        /** Enum FUN for value: "fun" */
+        /**
+         * Enum FUN for value: "fun"
+         */
         public static final NotificationTypeEnum FUN = new NotificationTypeEnum("fun");
 
         private static final Map<String, NotificationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -286,9 +305,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识关键操作名称。
-     * 
-     * @return notificationName */
+    /**
+     * 标识关键操作名称。
+     * @return notificationName
+     */
     public String getNotificationName() {
         return notificationName;
     }
@@ -302,10 +322,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。
-     * 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
-     * 
-     * @return operationType */
+    /**
+     * 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -335,9 +355,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作事件列表。
-     * 
-     * @return operations */
+    /**
+     * 操作事件列表。
+     * @return operations
+     */
     public List<Operations> getOperations() {
         return operations;
     }
@@ -367,9 +388,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
-     * 
-     * @return notifyUserList */
+    /**
+     * 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
+     * @return notifyUserList
+     */
     public List<NotificationUsers> getNotifyUserList() {
         return notifyUserList;
     }
@@ -383,9 +405,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
-     * 
-     * @return status */
+    /**
+     * 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -399,11 +422,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息通知服务的topic_urn或者函数工作流的func_urn。 -
-     * 消息通知服务的topic_urn可以通过消息通知服务的查询主题列表API获取，示例：urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2。 -
-     * 函数工作流的func_urn可以通过函数工作流的获取函数列表API获取，示例：urn:fss:xxxxxxxxx:7aad83af3e8d42e99ac194e8419e2c9b:function:default:test。
-     * 
-     * @return topicId */
+    /**
+     * 消息通知服务的topic_urn或者函数工作流的func_urn。 - 消息通知服务的topic_urn可以通过消息通知服务的查询主题列表API获取，示例：urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2。 - 函数工作流的func_urn可以通过函数工作流的获取函数列表API获取，示例：urn:fss:xxxxxxxxx:7aad83af3e8d42e99ac194e8419e2c9b:function:default:test。
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -417,9 +439,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键操作通知的唯一标识。
-     * 
-     * @return notificationId */
+    /**
+     * 关键操作通知的唯一标识。
+     * @return notificationId
+     */
     public String getNotificationId() {
         return notificationId;
     }
@@ -433,9 +456,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键操作通知类型，根据topic_id区分为消息通知服务(smn)和函数工作流(fun)。
-     * 
-     * @return notificationType */
+    /**
+     * 关键操作通知类型，根据topic_id区分为消息通知服务(smn)和函数工作流(fun)。
+     * @return notificationType
+     */
     public NotificationTypeEnum getNotificationType() {
         return notificationType;
     }
@@ -449,9 +473,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -465,9 +490,12 @@ public class UpdateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键操作通知创建时间戳。 minimum: 946656000000 maximum: 4102416000000
-     * 
-     * @return createTime */
+    /**
+     * 关键操作通知创建时间戳。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -529,7 +557,10 @@ public class UpdateNotificationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

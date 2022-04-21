@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主机组详情响应体 */
+/**
+ * 主机组详情响应体
+ */
 public class DeploymentGroupDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,9 +96,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 主机组id
-     * 
-     * @return groupId */
+    /**
+     * 主机组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -110,9 +113,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -126,9 +130,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updatedTime */
+    /**
+     * 修改时间
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -142,9 +147,12 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 组内主机数量，一个主机组内最多可添加200台主机 minimum: 0 maximum: 200
-     * 
-     * @return hostCount */
+    /**
+     * 组内主机数量，一个主机组内最多可添加200台主机
+     * minimum: 0
+     * maximum: 200
+     * @return hostCount
+     */
     public Integer getHostCount() {
         return hostCount;
     }
@@ -158,9 +166,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** devcloud项目名称
-     * 
-     * @return projectName */
+    /**
+     * devcloud项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -174,9 +183,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 主机组名
-     * 
-     * @return name */
+    /**
+     * 主机组名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -190,9 +200,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 局点信息
-     * 
-     * @return regionName */
+    /**
+     * 局点信息
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -206,9 +217,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** devcloud项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -222,9 +234,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 操作系统：windows|linux
-     * 
-     * @return os */
+    /**
+     * 操作系统：windows|linux
+     * @return os
+     */
     public String getOs() {
         return os;
     }
@@ -238,9 +251,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 自动连通性验证 0不执行 1每日 2每周
-     * 
-     * @return autoConnectionTestSwitch */
+    /**
+     * 自动连通性验证 0不执行 1每日 2每周
+     * @return autoConnectionTestSwitch
+     */
     public Integer getAutoConnectionTestSwitch() {
         return autoConnectionTestSwitch;
     }
@@ -254,9 +268,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
-     * 
-     * @return slaveClusterId */
+    /**
+     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * @return slaveClusterId
+     */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -270,9 +285,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickName */
+    /**
+     * 用户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -295,9 +311,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** Get createdBy
-     * 
-     * @return createdBy */
+    /**
+     * Get createdBy
+     * @return createdBy
+     */
     public UserInfo getCreatedBy() {
         return createdBy;
     }
@@ -320,9 +337,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** Get updateBy
-     * 
-     * @return updateBy */
+    /**
+     * Get updateBy
+     * @return updateBy
+     */
     public UserInfo getUpdateBy() {
         return updateBy;
     }
@@ -336,9 +354,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -361,9 +380,10 @@ public class DeploymentGroupDetail {
         return this;
     }
 
-    /** Get permission
-     * 
-     * @return permission */
+    /**
+     * Get permission
+     * @return permission
+     */
     public PermissionGroupDetail getPermission() {
         return permission;
     }
@@ -443,7 +463,10 @@ public class DeploymentGroupDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

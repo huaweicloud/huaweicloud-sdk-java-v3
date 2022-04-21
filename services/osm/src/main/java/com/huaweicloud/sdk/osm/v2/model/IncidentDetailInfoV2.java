@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IncidentDetailInfoV2 */
+/**
+ * IncidentDetailInfoV2
+ */
 public class IncidentDetailInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,9 +114,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return xcustomerId */
+    /**
+     * 子用户id
+     * @return xcustomerId
+     */
     public String getXcustomerId() {
         return xcustomerId;
     }
@@ -128,9 +131,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 子用户名称
-     * 
-     * @return xcustomerName */
+    /**
+     * 子用户名称
+     * @return xcustomerName
+     */
     public String getXcustomerName() {
         return xcustomerName;
     }
@@ -144,9 +148,12 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
-     * 
-     * @return status */
+    /**
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
+     * minimum: 0
+     * maximum: 20
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -160,9 +167,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 评价内容
-     * 
-     * @return judgement */
+    /**
+     * 评价内容
+     * @return judgement
+     */
     public String getJudgement() {
         return judgement;
     }
@@ -176,9 +184,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -192,9 +201,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 问题类型名称
-     * 
-     * @return businessTypeName */
+    /**
+     * 问题类型名称
+     * @return businessTypeName
+     */
     public String getBusinessTypeName() {
         return businessTypeName;
     }
@@ -208,9 +218,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 工单类型名称
-     * 
-     * @return incidentTypeName */
+    /**
+     * 工单类型名称
+     * @return incidentTypeName
+     */
     public String getIncidentTypeName() {
         return incidentTypeName;
     }
@@ -224,9 +235,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -240,9 +252,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return dcName */
+    /**
+     * 区域名称
+     * @return dcName
+     */
     public String getDcName() {
         return dcName;
     }
@@ -256,9 +269,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 简要描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 简要描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -272,9 +286,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 来源名称
-     * 
-     * @return sourceName */
+    /**
+     * 来源名称
+     * @return sourceName
+     */
     public String getSourceName() {
         return sourceName;
     }
@@ -288,9 +303,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -320,9 +336,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 留言列表
-     * 
-     * @return messageList */
+    /**
+     * 留言列表
+     * @return messageList
+     */
     public List<IncidentMessageV2> getMessageList() {
         return messageList;
     }
@@ -353,9 +370,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 满意度列表
-     * 
-     * @return incidentSatisfaction */
+    /**
+     * 满意度列表
+     * @return incidentSatisfaction
+     */
     public List<IncidentSatisfactionV2Do> getIncidentSatisfaction() {
         return incidentSatisfaction;
     }
@@ -369,9 +387,12 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 是否授权 minimum: 0 maximum: 1
-     * 
-     * @return isAuthorized */
+    /**
+     * 是否授权
+     * minimum: 0
+     * maximum: 1
+     * @return isAuthorized
+     */
     public Integer getIsAuthorized() {
         return isAuthorized;
     }
@@ -385,9 +406,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 严重性名称
-     * 
-     * @return severityName */
+    /**
+     * 严重性名称
+     * @return severityName
+     */
     public String getSeverityName() {
         return severityName;
     }
@@ -401,9 +423,12 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 业务归属 0华为云 1BP伙伴 2ISV minimum: 0 maximum: 2
-     * 
-     * @return businessOwnership */
+    /**
+     * 业务归属 0华为云 1BP伙伴 2ISV
+     * minimum: 0
+     * maximum: 2
+     * @return businessOwnership
+     */
     public Integer getBusinessOwnership() {
         return businessOwnership;
     }
@@ -417,9 +442,12 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** 解决时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return resolveTime */
+    /**
+     * 解决时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return resolveTime
+     */
     public Long getResolveTime() {
         return resolveTime;
     }
@@ -442,9 +470,10 @@ public class IncidentDetailInfoV2 {
         return this;
     }
 
-    /** Get extInfo
-     * 
-     * @return extInfo */
+    /**
+     * Get extInfo
+     * @return extInfo
+     */
     public IncidentDetailExtInfoV2 getExtInfo() {
         return extInfo;
     }
@@ -533,7 +562,10 @@ public class IncidentDetailInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

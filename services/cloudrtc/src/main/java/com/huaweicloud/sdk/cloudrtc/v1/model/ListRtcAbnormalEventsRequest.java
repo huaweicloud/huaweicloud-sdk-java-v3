@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcAbnormalEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return app */
+    /**
+     * 应用ID 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -64,9 +67,10 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -80,9 +84,10 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return uid */
+    /**
+     * 用户ID 
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -96,9 +101,10 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不填写则默认读取过去1小时数据数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不填写则默认读取过去1小时数据数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -112,9 +118,10 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不填写则默认为当前时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不填写则默认为当前时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -128,9 +135,12 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 查询结果条数 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询结果条数 
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -144,9 +154,12 @@ public class ListRtcAbnormalEventsRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 1844674407
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量 
+     * minimum: 0
+     * maximum: 1844674407
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -193,7 +206,10 @@ public class ListRtcAbnormalEventsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

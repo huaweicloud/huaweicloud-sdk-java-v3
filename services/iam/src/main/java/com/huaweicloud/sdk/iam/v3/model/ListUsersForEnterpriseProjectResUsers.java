@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListUsersForEnterpriseProjectResUsers */
+/**
+ * ListUsersForEnterpriseProjectResUsers
+ */
 public class ListUsersForEnterpriseProjectResUsers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 授权用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -64,9 +67,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户ID。
-     * 
-     * @return id */
+    /**
+     * 授权用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,9 +84,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户名。
-     * 
-     * @return name */
+    /**
+     * 授权用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +101,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户是否启用，true表示启用，false表示停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * 授权用户是否启用，true表示启用，false表示停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -112,9 +118,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户描述信息。
-     * 
-     * @return description */
+    /**
+     * 授权用户描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -128,9 +135,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 授权用户的策略数。
-     * 
-     * @return policyNum */
+    /**
+     * 授权用户的策略数。
+     * @return policyNum
+     */
     public Integer getPolicyNum() {
         return policyNum;
     }
@@ -144,9 +152,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return this;
     }
 
-    /** 用户最近与企业项目关联策略的时间（毫秒）。
-     * 
-     * @return lastestPolicyTime */
+    /**
+     * 用户最近与企业项目关联策略的时间（毫秒）。
+     * @return lastestPolicyTime
+     */
     public Long getLastestPolicyTime() {
         return lastestPolicyTime;
     }
@@ -194,7 +203,10 @@ public class ListUsersForEnterpriseProjectResUsers {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

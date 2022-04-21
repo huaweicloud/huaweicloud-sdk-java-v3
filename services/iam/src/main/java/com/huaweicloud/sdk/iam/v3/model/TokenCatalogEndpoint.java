@@ -40,9 +40,10 @@ public class TokenCatalogEndpoint {
         return this;
     }
 
-    /** 终端节点的URL。
-     * 
-     * @return url */
+    /**
+     * 终端节点的URL。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -56,9 +57,10 @@ public class TokenCatalogEndpoint {
         return this;
     }
 
-    /** 终端节点所属区域。
-     * 
-     * @return region */
+    /**
+     * 终端节点所属区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -72,9 +74,10 @@ public class TokenCatalogEndpoint {
         return this;
     }
 
-    /** 终端节点所属区域ID。
-     * 
-     * @return regionId */
+    /**
+     * 终端节点所属区域ID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -88,9 +91,10 @@ public class TokenCatalogEndpoint {
         return this;
     }
 
-    /** 接口类型，描述接口在该终端节点的可见性。值为“public”，表示该接口为公开接口。
-     * 
-     * @return _interface */
+    /**
+     * 接口类型，描述接口在该终端节点的可见性。值为“public”，表示该接口为公开接口。
+     * @return _interface
+     */
     public String getInterface() {
         return _interface;
     }
@@ -104,9 +108,10 @@ public class TokenCatalogEndpoint {
         return this;
     }
 
-    /** 终端节点ID。
-     * 
-     * @return id */
+    /**
+     * 终端节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -149,7 +154,10 @@ public class TokenCatalogEndpoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

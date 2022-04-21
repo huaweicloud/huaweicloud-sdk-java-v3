@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 当北向接口报错时，按此格式返回到body体中 */
+/**
+ * 当北向接口报错时，按此格式返回到body体中
+ */
 public class ErrRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ErrRsp {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public ErrMsg getError() {
         return error;
     }
@@ -65,7 +68,10 @@ public class ErrRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

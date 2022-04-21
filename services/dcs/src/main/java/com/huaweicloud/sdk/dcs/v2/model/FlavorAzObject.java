@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FlavorAzObject */
+/**
+ * FlavorAzObject
+ */
 public class FlavorAzObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class FlavorAzObject {
         return this;
     }
 
-    /** 缓存容量（G Byte）。
-     * 
-     * @return capacity */
+    /**
+     * 缓存容量（G Byte）。
+     * @return capacity
+     */
     public String getCapacity() {
         return capacity;
     }
@@ -58,9 +61,10 @@ public class FlavorAzObject {
         return this;
     }
 
-    /** 有资源的可用区编码。
-     * 
-     * @return azCodes */
+    /**
+     * 有资源的可用区编码。
+     * @return azCodes
+     */
     public List<String> getAzCodes() {
         return azCodes;
     }
@@ -97,7 +101,10 @@ public class FlavorAzObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

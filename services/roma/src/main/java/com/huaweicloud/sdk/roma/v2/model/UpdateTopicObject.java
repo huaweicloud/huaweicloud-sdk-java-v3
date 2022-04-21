@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateTopicObject */
+/**
+ * UpdateTopicObject
+ */
 public class UpdateTopicObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -59,9 +62,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** 消息老化时间。默认值为72。取值范围1~720，单位小时。
-     * 
-     * @return retentionTime */
+    /**
+     * 消息老化时间。默认值为72。取值范围1~720，单位小时。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -75,9 +79,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** 是否开启同步复制。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否开启同步复制。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -91,9 +96,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** 是否使用同步落盘。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否使用同步落盘。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -107,9 +113,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +130,10 @@ public class UpdateTopicObject {
         return this;
     }
 
-    /** 敏感字段。
-     * 
-     * @return sensitiveWord */
+    /**
+     * 敏感字段。
+     * @return sensitiveWord
+     */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -170,7 +178,10 @@ public class UpdateTopicObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

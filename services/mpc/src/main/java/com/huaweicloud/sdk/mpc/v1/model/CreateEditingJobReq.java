@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建剪辑任务 */
+/**
+ * 创建剪辑任务
+ */
 public class CreateEditingJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\",\"CONCATS\",\"MIX\"。
-     * 
-     * @return editType */
+    /**
+     * 剪辑任务类型。取值如下：\"CLIP\",\"CONCAT\",\"CONCATS\",\"MIX\"。
+     * @return editType
+     */
     public List<String> getEditType() {
         return editType;
     }
@@ -114,9 +117,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 剪切信息
-     * 
-     * @return clips */
+    /**
+     * 剪切信息
+     * @return clips
+     */
     public List<ClipInfo> getClips() {
         return clips;
     }
@@ -146,9 +150,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 多拼接任务信息，支持多个拼接输出，与concat参数只能二选一。
-     * 
-     * @return concats */
+    /**
+     * 多拼接任务信息，支持多个拼接输出，与concat参数只能二选一。 
+     * @return concats
+     */
     public List<MultiConcatInfo> getConcats() {
         return concats;
     }
@@ -171,9 +176,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** Get concat
-     * 
-     * @return concat */
+    /**
+     * Get concat
+     * @return concat
+     */
     public ConcatInfo getConcat() {
         return concat;
     }
@@ -196,9 +202,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** Get mix
-     * 
-     * @return mix */
+    /**
+     * Get mix
+     * @return mix
+     */
     public MixInfo getMix() {
         return mix;
     }
@@ -221,9 +228,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -246,9 +254,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** Get outputSetting
-     * 
-     * @return outputSetting */
+    /**
+     * Get outputSetting
+     * @return outputSetting
+     */
     public OutputSetting getOutputSetting() {
         return outputSetting;
     }
@@ -279,9 +288,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 水印信息。
-     * 
-     * @return imageWatermarkSettings */
+    /**
+     * 水印信息。
+     * @return imageWatermarkSettings
+     */
     public List<ImageWatermarkSetting> getImageWatermarkSettings() {
         return imageWatermarkSettings;
     }
@@ -311,9 +321,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 媒体处理配置，当edit_type为空时该参数生效。会根据该参数配置，对input参数指定的源文件进行处理
-     * 
-     * @return editSettings */
+    /**
+     * 媒体处理配置，当edit_type为空时该参数生效。会根据该参数配置，对input参数指定的源文件进行处理 
+     * @return editSettings
+     */
     public List<EditSetting> getEditSettings() {
         return editSettings;
     }
@@ -327,9 +338,10 @@ public class CreateEditingJobReq {
         return this;
     }
 
-    /** 用户自定义数据。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -391,7 +403,10 @@ public class CreateEditingJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

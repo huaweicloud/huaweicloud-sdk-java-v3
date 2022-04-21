@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性云服务器元数据。 */
+/**
+ * 弹性云服务器元数据。
+ */
 public class RespMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RespMetadata {
         return this;
     }
 
-    /** 弹性云服务器系统类型。
-     * 
-     * @return osType */
+    /**
+     * 弹性云服务器系统类型。
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -55,7 +58,10 @@ public class RespMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目标签列表。 */
+/**
+ * 项目标签列表。
+ */
 public class ProjectTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,10 +28,10 @@ public class ProjectTag {
         return this;
     }
 
-    /** 键。 - 最大长度36个unicode字符。 - 只能包含数字、字母、中划线“-”、下划线“_”。 - 字符集：A-Z，a-z ， 0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。 -
-     * 不能包含以下ASCII非打印字符：“=”,“*”,“<”,“>”,“\\”,“|”,“/”,“,”。 - 标签的键必须唯一且输入不能为空。
-     * 
-     * @return key */
+    /**
+     * 键。  - 最大长度36个unicode字符。  - 只能包含数字、字母、中划线“-”、下划线“_”。  - 字符集：A-Z，a-z ， 0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。  - 不能包含以下ASCII非打印字符：“=”,“*”,“<”,“>”,“\\”,“|”,“/”,“,”。  - 标签的键必须唯一且输入不能为空。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -59,10 +61,10 @@ public class ProjectTag {
         return this;
     }
 
-    /** 值。 - 每个值最大长度43个unicode字符。 - 可以为空字符串。 - 只能包含数字、字母、中划线“-”、下划线“_”。 - 字符集：A-Z，a-z ，
-     * 0-9，‘.’，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。 - 不能包含以下ASCII非打印字符：“=”,“*”,“<”,“>”,“\\”,“|”,“/”,“,”。
-     * 
-     * @return values */
+    /**
+     * 值。  - 每个值最大长度43个unicode字符。  - 可以为空字符串。  - 只能包含数字、字母、中划线“-”、下划线“_”。  - 字符集：A-Z，a-z ， 0-9，‘.’，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。  - 不能包含以下ASCII非打印字符：“=”,“*”,“<”,“>”,“\\”,“|”,“/”,“,”。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -98,7 +100,10 @@ public class ProjectTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

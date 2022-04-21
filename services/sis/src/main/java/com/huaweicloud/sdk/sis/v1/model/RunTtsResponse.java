@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RunTtsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class RunTtsResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务内部的令牌，可用于在日志中追溯具体流程。 在某些错误情况下可能没有此令牌字符串。
-     * 
-     * @return traceId */
+    /**
+     * 服务内部的令牌，可用于在日志中追溯具体流程。  在某些错误情况下可能没有此令牌字符串。
+     * @return traceId
+     */
     public String getTraceId() {
         return traceId;
     }
@@ -50,9 +53,10 @@ public class RunTtsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get result
-     * 
-     * @return result */
+    /**
+     * Get result
+     * @return result
+     */
     public CustomResult getResult() {
         return result;
     }
@@ -89,7 +93,10 @@ public class RunTtsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

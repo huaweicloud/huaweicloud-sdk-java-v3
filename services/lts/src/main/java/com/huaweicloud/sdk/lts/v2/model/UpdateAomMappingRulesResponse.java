@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateAomMappingRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -51,9 +54,10 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 接入规则名称
-     * 
-     * @return ruleName */
+    /**
+     * 接入规则名称
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -67,9 +71,10 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 接入规则id
-     * 
-     * @return ruleId */
+    /**
+     * 接入规则id
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -92,9 +97,10 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ruleInfo
-     * 
-     * @return ruleInfo */
+    /**
+     * Get ruleInfo
+     * @return ruleInfo
+     */
     public AomMappingRuleInfo getRuleInfo() {
         return ruleInfo;
     }
@@ -135,7 +141,10 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

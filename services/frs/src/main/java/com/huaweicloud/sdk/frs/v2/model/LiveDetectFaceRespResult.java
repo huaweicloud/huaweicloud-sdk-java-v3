@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 静默活体检测结果，LivelessDetectResult结构见表[结构格式说明表](https://support.huaweicloud.com/api-face/face_02_0102.html#face_02_0102__table112325301714)。
- * 调用失败时无此字段。 */
+/**
+ * 静默活体检测结果，LivelessDetectResult结构见表[结构格式说明表](https://support.huaweicloud.com/api-face/face_02_0102.html#face_02_0102__table112325301714)。 调用失败时无此字段。
+ */
 public class LiveDetectFaceRespResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +30,10 @@ public class LiveDetectFaceRespResult {
         return this;
     }
 
-    /** 是否是活体。
-     * 
-     * @return alive */
+    /**
+     * 是否是活体。
+     * @return alive
+     */
     public Boolean getAlive() {
         return alive;
     }
@@ -45,9 +47,10 @@ public class LiveDetectFaceRespResult {
         return this;
     }
 
-    /** 置信度，取值范围0～1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围0～1。
+     * @return confidence
+     */
     public Double getConfidence() {
         return confidence;
     }
@@ -61,9 +64,10 @@ public class LiveDetectFaceRespResult {
         return this;
     }
 
-    /** 检测出最大人脸的图片base64字符串。
-     * 
-     * @return picture */
+    /**
+     * 检测出最大人脸的图片base64字符串。
+     * @return picture
+     */
     public String getPicture() {
         return picture;
     }
@@ -102,7 +106,10 @@ public class LiveDetectFaceRespResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

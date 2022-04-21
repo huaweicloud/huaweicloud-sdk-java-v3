@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CaseRealtionInfo */
+/**
+ * CaseRealtionInfo
+ */
 public class CaseRealtionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CaseRealtionInfo {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return caseId */
+    /**
+     * 工单id
+     * @return caseId
+     */
     public String getCaseId() {
         return caseId;
     }
@@ -44,9 +47,10 @@ public class CaseRealtionInfo {
         return this;
     }
 
-    /** 简要描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 简要描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -60,9 +64,10 @@ public class CaseRealtionInfo {
         return this;
     }
 
-    /** 提交人，即用户名称
-     * 
-     * @return userName */
+    /**
+     * 提交人，即用户名称
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -101,7 +106,10 @@ public class CaseRealtionInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

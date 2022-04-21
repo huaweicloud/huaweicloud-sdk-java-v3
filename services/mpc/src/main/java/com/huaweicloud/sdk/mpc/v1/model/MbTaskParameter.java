@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MbTaskParameter */
+/**
+ * MbTaskParameter
+ */
 public class MbTaskParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class MbTaskParameter {
         return this;
     }
 
-    /** 具体状态描述，FAILED时可用于分析问题。
-     * 
-     * @return statusDescription */
+    /**
+     * 具体状态描述，FAILED时可用于分析问题。 
+     * @return statusDescription
+     */
     public String getStatusDescription() {
         return statusDescription;
     }
@@ -45,9 +48,10 @@ public class MbTaskParameter {
         return this;
     }
 
-    /** 输出文件名称。
-     * 
-     * @return outputFilename */
+    /**
+     * 输出文件名称。 
+     * @return outputFilename
+     */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -70,9 +74,10 @@ public class MbTaskParameter {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -111,7 +116,10 @@ public class MbTaskParameter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

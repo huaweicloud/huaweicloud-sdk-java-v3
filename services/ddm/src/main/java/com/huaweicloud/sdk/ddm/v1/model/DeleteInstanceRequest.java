@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class DeleteInstanceRequest {
 
     private String instanceId;
 
-    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为空或“true”：删除。 - 取值为“false”：不删除。 默认值为空。 */
+    /**
+     * 是否同时删除关联后端数据库实例上存储的数据。  - 取值为空或“true”：删除。 - 取值为“false”：不删除。 默认值为空。
+     */
     public static final class DeleteRdsDataEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteRdsDataEnum TRUE = new DeleteRdsDataEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteRdsDataEnum FALSE = new DeleteRdsDataEnum("false");
 
         private static final Map<String, DeleteRdsDataEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class DeleteInstanceRequest {
         return this;
     }
 
-    /** DDM实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * DDM实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -115,9 +124,10 @@ public class DeleteInstanceRequest {
         return this;
     }
 
-    /** 是否同时删除关联后端数据库实例上存储的数据。 - 取值为空或“true”：删除。 - 取值为“false”：不删除。 默认值为空。
-     * 
-     * @return deleteRdsData */
+    /**
+     * 是否同时删除关联后端数据库实例上存储的数据。  - 取值为空或“true”：删除。 - 取值为“false”：不删除。 默认值为空。
+     * @return deleteRdsData
+     */
     public DeleteRdsDataEnum getDeleteRdsData() {
         return deleteRdsData;
     }
@@ -154,7 +164,10 @@ public class DeleteInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

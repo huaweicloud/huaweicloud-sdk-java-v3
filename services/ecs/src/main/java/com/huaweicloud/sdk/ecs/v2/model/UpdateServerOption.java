@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新云服务器Body体。 */
+/**
+ * 更新云服务器Body体。
+ */
 public class UpdateServerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateServerOption {
         return this;
     }
 
-    /** 修改后的云服务器名称。 只能由中文字符、英文字母、数字及“_”、“-”、“.”组成，且长度为[1-64]个字符。
-     * 
-     * @return name */
+    /**
+     * 修改后的云服务器名称。  只能由中文字符、英文字母、数字及“_”、“-”、“.”组成，且长度为[1-64]个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class UpdateServerOption {
         return this;
     }
 
-    /** 对弹性云服务器的任意描述。 不能包含“<”,“>”，且长度范围为[0-85]个字符。
-     * 
-     * @return description */
+    /**
+     * 对弹性云服务器的任意描述。  不能包含“<”,“>”，且长度范围为[0-85]个字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,10 +64,10 @@ public class UpdateServerOption {
         return this;
     }
 
-    /** 修改云服务hostname。 命令规范：长度为 [1-64]
-     * 个字符，允许使用点号(.)分隔字符成多段，每段允许使用大小写字母、数字或连字符(-)，但不能连续使用点号(.)或连字符(-),不能以点号(.)或连字符(-)开头或结尾，不能出现（.-）和（-.）。
-     * 
-     * @return hostname */
+    /**
+     * 修改云服务hostname。  命令规范：长度为 [1-64] 个字符，允许使用点号(.)分隔字符成多段，每段允许使用大小写字母、数字或连字符(-)，但不能连续使用点号(.)或连字符(-),不能以点号(.)或连字符(-)开头或结尾，不能出现（.-）和（-.）。
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -102,7 +106,10 @@ public class UpdateServerOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

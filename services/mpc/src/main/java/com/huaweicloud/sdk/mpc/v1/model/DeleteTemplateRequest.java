@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class DeleteTemplateRequest {
         return this;
     }
 
-    /** 自定义转码模板ID minimum: 0 maximum: 2147483647
-     * 
-     * @return templateId */
+    /**
+     * 自定义转码模板ID 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return templateId
+     */
     public Long getTemplateId() {
         return templateId;
     }
@@ -55,7 +60,10 @@ public class DeleteTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

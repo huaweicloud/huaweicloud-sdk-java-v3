@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户基础对象 */
+/**
+ * 用户基础对象
+ */
 public class BaseUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 用户名称
-     * 
-     * @return name */
+    /**
+     * 用户名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 后台自动识别是手机还是邮箱,若为手机号，则要求和国家码匹配
-     * 
-     * @return contact */
+    /**
+     * 后台自动识别是手机还是邮箱,若为手机号，则要求和国家码匹配
+     * @return contact
+     */
     public String getContact() {
         return contact;
     }
@@ -80,9 +84,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 国家码。 国家和国家码的对应关系请参考:https://support.huaweicloud.com/api-meeting/meeting_21_0109.html
-     * 
-     * @return country */
+    /**
+     * 国家码。 国家和国家码的对应关系请参考:https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -96,9 +101,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 部门编号，若不携带则默认根部门
-     * 
-     * @return deptCode */
+    /**
+     * 部门编号，若不携带则默认根部门
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -112,9 +118,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 职位
-     * 
-     * @return title */
+    /**
+     * 职位
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -128,9 +135,12 @@ public class BaseUser {
         return this;
     }
 
-    /** 通讯录排序等级，序号越低优先级越高 minimum: 1 maximum: 10000
-     * 
-     * @return sortLevel */
+    /**
+     * 通讯录排序等级，序号越低优先级越高
+     * minimum: 1
+     * maximum: 10000
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -144,9 +154,10 @@ public class BaseUser {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return desc */
+    /**
+     * 备注
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -190,7 +201,10 @@ public class BaseUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

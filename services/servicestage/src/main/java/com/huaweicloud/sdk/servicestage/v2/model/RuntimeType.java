@@ -7,28 +7,44 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 运行时类型。 */
+/**
+ * 运行时类型。
+ */
 public class RuntimeType {
 
-    /** Enum TOMCAT8 for value: "Tomcat8" */
+    /**
+     * Enum TOMCAT8 for value: "Tomcat8"
+     */
     public static final RuntimeType TOMCAT8 = new RuntimeType("Tomcat8");
 
-    /** Enum JAVA8 for value: "Java8" */
+    /**
+     * Enum JAVA8 for value: "Java8"
+     */
     public static final RuntimeType JAVA8 = new RuntimeType("Java8");
 
-    /** Enum PHP7 for value: "Php7" */
+    /**
+     * Enum PHP7 for value: "Php7"
+     */
     public static final RuntimeType PHP7 = new RuntimeType("Php7");
 
-    /** Enum NODEJS8 for value: "Nodejs8" */
+    /**
+     * Enum NODEJS8 for value: "Nodejs8"
+     */
     public static final RuntimeType NODEJS8 = new RuntimeType("Nodejs8");
 
-    /** Enum DOCKER for value: "Docker" */
+    /**
+     * Enum DOCKER for value: "Docker"
+     */
     public static final RuntimeType DOCKER = new RuntimeType("Docker");
 
-    /** Enum PYTHON3 for value: "Python3" */
+    /**
+     * Enum PYTHON3 for value: "Python3"
+     */
     public static final RuntimeType PYTHON3 = new RuntimeType("Python3");
 
-    /** Enum CUSTOM for value: "Custom" */
+    /**
+     * Enum CUSTOM for value: "Custom"
+     */
     public static final RuntimeType CUSTOM = new RuntimeType("Custom");
 
     private static final Map<String, RuntimeType> STATIC_FIELDS = createStaticFields();

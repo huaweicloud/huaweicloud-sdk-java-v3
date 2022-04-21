@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 媒资总览 */
+/**
+ * 媒资总览
+ */
 public class AssetSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,22 +63,34 @@ public class AssetSummary {
 
     private String createTime;
 
-    /** 媒资状态。 取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。 */
+    /**
+     * 媒资状态。  取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。
+     */
     public static final class AssetStatusEnum {
 
-        /** Enum CREATING for value: "CREATING" */
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
         public static final AssetStatusEnum CREATING = new AssetStatusEnum("CREATING");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final AssetStatusEnum FAILED = new AssetStatusEnum("FAILED");
 
-        /** Enum CREATED for value: "CREATED" */
+        /**
+         * Enum CREATED for value: "CREATED"
+         */
         public static final AssetStatusEnum CREATED = new AssetStatusEnum("CREATED");
 
-        /** Enum PUBLISHED for value: "PUBLISHED" */
+        /**
+         * Enum PUBLISHED for value: "PUBLISHED"
+         */
         public static final AssetStatusEnum PUBLISHED = new AssetStatusEnum("PUBLISHED");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final AssetStatusEnum DELETED = new AssetStatusEnum("DELETED");
 
         private static final Map<String, AssetStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -149,23 +163,34 @@ public class AssetSummary {
 
     private AssetStatusEnum assetStatus;
 
-    /** 转码状态。 取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 -
-     * TRANSCODE_FAILED：转码失败。 */
+    /**
+     * 转码状态。  取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 - TRANSCODE_FAILED：转码失败。
+     */
     public static final class TranscodeStatusEnum {
 
-        /** Enum UN_TRANSCODE for value: "UN_TRANSCODE" */
+        /**
+         * Enum UN_TRANSCODE for value: "UN_TRANSCODE"
+         */
         public static final TranscodeStatusEnum UN_TRANSCODE = new TranscodeStatusEnum("UN_TRANSCODE");
 
-        /** Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE" */
+        /**
+         * Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE"
+         */
         public static final TranscodeStatusEnum WAITING_TRANSCODE = new TranscodeStatusEnum("WAITING_TRANSCODE");
 
-        /** Enum TRANSCODING for value: "TRANSCODING" */
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
         public static final TranscodeStatusEnum TRANSCODING = new TranscodeStatusEnum("TRANSCODING");
 
-        /** Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED" */
+        /**
+         * Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED"
+         */
         public static final TranscodeStatusEnum TRANSCODE_SUCCEED = new TranscodeStatusEnum("TRANSCODE_SUCCEED");
 
-        /** Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED" */
+        /**
+         * Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED"
+         */
         public static final TranscodeStatusEnum TRANSCODE_FAILED = new TranscodeStatusEnum("TRANSCODE_FAILED");
 
         private static final Map<String, TranscodeStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -238,19 +263,29 @@ public class AssetSummary {
 
     private TranscodeStatusEnum transcodeStatus;
 
-    /** 截图状态。 取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。 */
+    /**
+     * 截图状态。  取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。
+     */
     public static final class ThumbnailStatusEnum {
 
-        /** Enum UN_THUMBNAIL for value: "UN_THUMBNAIL" */
+        /**
+         * Enum UN_THUMBNAIL for value: "UN_THUMBNAIL"
+         */
         public static final ThumbnailStatusEnum UN_THUMBNAIL = new ThumbnailStatusEnum("UN_THUMBNAIL");
 
-        /** Enum THUMBNAILING for value: "THUMBNAILING" */
+        /**
+         * Enum THUMBNAILING for value: "THUMBNAILING"
+         */
         public static final ThumbnailStatusEnum THUMBNAILING = new ThumbnailStatusEnum("THUMBNAILING");
 
-        /** Enum THUMBNAIL_SUCCEED for value: "THUMBNAIL_SUCCEED" */
+        /**
+         * Enum THUMBNAIL_SUCCEED for value: "THUMBNAIL_SUCCEED"
+         */
         public static final ThumbnailStatusEnum THUMBNAIL_SUCCEED = new ThumbnailStatusEnum("THUMBNAIL_SUCCEED");
 
-        /** Enum THUMBNAIL_FAILED for value: "THUMBNAIL_FAILED" */
+        /**
+         * Enum THUMBNAIL_FAILED for value: "THUMBNAIL_FAILED"
+         */
         public static final ThumbnailStatusEnum THUMBNAIL_FAILED = new ThumbnailStatusEnum("THUMBNAIL_FAILED");
 
         private static final Map<String, ThumbnailStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -322,26 +357,39 @@ public class AssetSummary {
 
     private ThumbnailStatusEnum thumbnailStatus;
 
-    /** 内容审核状态 取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 -
-     * REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。 */
+    /**
+     * 内容审核状态  取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
+     */
     public static final class ReviewStatusEnum {
 
-        /** Enum UN_REVIEW for value: "UN_REVIEW" */
+        /**
+         * Enum UN_REVIEW for value: "UN_REVIEW"
+         */
         public static final ReviewStatusEnum UN_REVIEW = new ReviewStatusEnum("UN_REVIEW");
 
-        /** Enum REVIEWING for value: "REVIEWING" */
+        /**
+         * Enum REVIEWING for value: "REVIEWING"
+         */
         public static final ReviewStatusEnum REVIEWING = new ReviewStatusEnum("REVIEWING");
 
-        /** Enum REVIEW_SUSPICIOUS for value: "REVIEW_SUSPICIOUS" */
+        /**
+         * Enum REVIEW_SUSPICIOUS for value: "REVIEW_SUSPICIOUS"
+         */
         public static final ReviewStatusEnum REVIEW_SUSPICIOUS = new ReviewStatusEnum("REVIEW_SUSPICIOUS");
 
-        /** Enum REVIEW_PASSED for value: "REVIEW_PASSED" */
+        /**
+         * Enum REVIEW_PASSED for value: "REVIEW_PASSED"
+         */
         public static final ReviewStatusEnum REVIEW_PASSED = new ReviewStatusEnum("REVIEW_PASSED");
 
-        /** Enum REVIEW_FAILED for value: "REVIEW_FAILED" */
+        /**
+         * Enum REVIEW_FAILED for value: "REVIEW_FAILED"
+         */
         public static final ReviewStatusEnum REVIEW_FAILED = new ReviewStatusEnum("REVIEW_FAILED");
 
-        /** Enum REVIEW_BLOCKED for value: "REVIEW_BLOCKED" */
+        /**
+         * Enum REVIEW_BLOCKED for value: "REVIEW_BLOCKED"
+         */
         public static final ReviewStatusEnum REVIEW_BLOCKED = new ReviewStatusEnum("REVIEW_BLOCKED");
 
         private static final Map<String, ReviewStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -430,9 +478,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -446,9 +495,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资标题。长度不超过128个字节，UTF-8编码。
-     * 
-     * @return title */
+    /**
+     * 媒资标题。长度不超过128个字节，UTF-8编码。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -462,9 +512,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资描述。长度不超过1024个字节。
-     * 
-     * @return description */
+    /**
+     * 媒资描述。长度不超过1024个字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -478,9 +529,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资时长。 单位：秒。
-     * 
-     * @return duration */
+    /**
+     * 媒资时长。  单位：秒。
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -494,9 +546,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资大小。 单位：字节。
-     * 
-     * @return size */
+    /**
+     * 媒资大小。  单位：字节。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -510,9 +563,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 原始播放url。
-     * 
-     * @return originalUrl */
+    /**
+     * 原始播放url。
+     * @return originalUrl
+     */
     public String getOriginalUrl() {
         return originalUrl;
     }
@@ -526,9 +580,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资分类名称。
-     * 
-     * @return category */
+    /**
+     * 媒资分类名称。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -558,9 +613,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 封面信息。
-     * 
-     * @return covers */
+    /**
+     * 封面信息。
+     * @return covers
+     */
     public List<CoverInfo> getCovers() {
         return covers;
     }
@@ -574,9 +630,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资创建时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 媒资创建时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -590,9 +647,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资状态。 取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。
-     * 
-     * @return assetStatus */
+    /**
+     * 媒资状态。  取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。
+     * @return assetStatus
+     */
     public AssetStatusEnum getAssetStatus() {
         return assetStatus;
     }
@@ -606,10 +664,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 转码状态。 取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 -
-     * TRANSCODE_FAILED：转码失败。
-     * 
-     * @return transcodeStatus */
+    /**
+     * 转码状态。  取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 - TRANSCODE_FAILED：转码失败。
+     * @return transcodeStatus
+     */
     public TranscodeStatusEnum getTranscodeStatus() {
         return transcodeStatus;
     }
@@ -623,9 +681,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 截图状态。 取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。
-     * 
-     * @return thumbnailStatus */
+    /**
+     * 截图状态。  取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。
+     * @return thumbnailStatus
+     */
     public ThumbnailStatusEnum getThumbnailStatus() {
         return thumbnailStatus;
     }
@@ -639,10 +698,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 内容审核状态 取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 -
-     * REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
-     * 
-     * @return reviewStatus */
+    /**
+     * 内容审核状态  取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
+     * @return reviewStatus
+     */
     public ReviewStatusEnum getReviewStatus() {
         return reviewStatus;
     }
@@ -656,11 +715,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 媒资的任务执行描述汇总。 示例： - asset_exec_desc: upload success，媒资任务执行描述信息。 - transcode_exec_desc: transcode
-     * success，转码任务执行描述信息。 - thumbnail_exec_desc: thumbnail failed，截图任务执行描述信息。 - review_exec_desc: review
-     * pass，审核任务执行描述信息。
-     * 
-     * @return execDesc */
+    /**
+     * 媒资的任务执行描述汇总。  示例： - asset_exec_desc: upload success，媒资任务执行描述信息。 - transcode_exec_desc: transcode success，转码任务执行描述信息。 - thumbnail_exec_desc: thumbnail failed，截图任务执行描述信息。 - review_exec_desc: review pass，审核任务执行描述信息。
+     * @return execDesc
+     */
     public String getExecDesc() {
         return execDesc;
     }
@@ -674,10 +732,10 @@ public class AssetSummary {
         return this;
     }
 
-    /** 音视频文件的格式。 取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG -
-     * 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
-     * 
-     * @return mediaType */
+    /**
+     * 音视频文件的格式。  取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG - 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
+     * @return mediaType
+     */
     public String getMediaType() {
         return mediaType;
     }
@@ -751,7 +809,10 @@ public class AssetSummary {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

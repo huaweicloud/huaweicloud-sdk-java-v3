@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自定义CPU选项。 */
+/**
+ * 自定义CPU选项。
+ */
 public class CpuOptions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CpuOptions {
         return this;
     }
 
-    /** CPU超线程数， 决定CPU是否开启超线程
-     * 
-     * @return hwCpuThreads */
+    /**
+     * CPU超线程数， 决定CPU是否开启超线程
+     * @return hwCpuThreads
+     */
     public Integer getHwCpuThreads() {
         return hwCpuThreads;
     }
@@ -55,7 +58,10 @@ public class CpuOptions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

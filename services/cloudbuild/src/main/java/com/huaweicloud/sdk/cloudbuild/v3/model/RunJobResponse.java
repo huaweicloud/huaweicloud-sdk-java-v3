@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RunJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class RunJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 临时任务名称
-     * 
-     * @return octopusJobName */
+    /**
+     * 临时任务名称
+     * @return octopusJobName
+     */
     public String getOctopusJobName() {
         return octopusJobName;
     }
@@ -45,9 +48,10 @@ public class RunJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 实际构建次数
-     * 
-     * @return actualBuildNumber */
+    /**
+     * 实际构建次数
+     * @return actualBuildNumber
+     */
     public String getActualBuildNumber() {
         return actualBuildNumber;
     }
@@ -61,9 +65,10 @@ public class RunJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 构建每日编号
-     * 
-     * @return dailyBuildNumber */
+    /**
+     * 构建每日编号
+     * @return dailyBuildNumber
+     */
     public String getDailyBuildNumber() {
         return dailyBuildNumber;
     }
@@ -102,7 +107,10 @@ public class RunJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

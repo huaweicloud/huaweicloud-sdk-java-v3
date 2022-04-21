@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 键值对标签。 */
+/**
+ * 键值对标签。
+ */
 public class TagDelWithKeyValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TagDelWithKeyValue {
         return this;
     }
 
-    /** 标签键。最大长度127个unicode字符。 key不能为空，不能为空字符串。
-     * 
-     * @return key */
+    /**
+     * 标签键。最大长度127个unicode字符。 key不能为空，不能为空字符串。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class TagDelWithKeyValue {
         return this;
     }
 
-    /** 标签值。每个值最大长度255个unicode字符。 删除说明如下： - 如果“value”有值，按照“key”/“value”删除。 - 如果“value”没值，则按照“key”删除。
-     * 
-     * @return value */
+    /**
+     * 标签值。每个值最大长度255个unicode字符。 删除说明如下： - 如果“value”有值，按照“key”/“value”删除。 - 如果“value”没值，则按照“key”删除。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class TagDelWithKeyValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

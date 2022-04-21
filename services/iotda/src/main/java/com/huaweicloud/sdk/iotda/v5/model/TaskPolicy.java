@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaskPolicy */
+/**
+ * TaskPolicy
+ */
 public class TaskPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TaskPolicy {
         return this;
     }
 
-    /** **参数说明**：批量任务指定执行时间。 **取值范围**：7天内，不传入此参数表示立即执行，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return scheduleTime */
+    /**
+     * **参数说明**：批量任务指定执行时间。 **取值范围**：7天内，不传入此参数表示立即执行，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return scheduleTime
+     */
     public String getScheduleTime() {
         return scheduleTime;
     }
@@ -44,9 +47,12 @@ public class TaskPolicy {
         return this;
     }
 
-    /** **参数说明**：批量任务子任务自动重试次数。 **取值范围**：如果传入retry_interval参数，则需传入该参数，最大支持重试5次。 minimum: 1 maximum: 5
-     * 
-     * @return retryCount */
+    /**
+     * **参数说明**：批量任务子任务自动重试次数。 **取值范围**：如果传入retry_interval参数，则需传入该参数，最大支持重试5次。
+     * minimum: 1
+     * maximum: 5
+     * @return retryCount
+     */
     public Integer getRetryCount() {
         return retryCount;
     }
@@ -60,10 +66,12 @@ public class TaskPolicy {
         return this;
     }
 
-    /** **参数说明**：批量任务子任务失败后，自动重试时间间隔，单位：分钟。 **取值范围**：最大1440(24小时)，不传入此参数表示不重试，如果传入retry_count参数则需要传入该参数。 minimum: 0
+    /**
+     * **参数说明**：批量任务子任务失败后，自动重试时间间隔，单位：分钟。 **取值范围**：最大1440(24小时)，不传入此参数表示不重试，如果传入retry_count参数则需要传入该参数。
+     * minimum: 0
      * maximum: 1440
-     * 
-     * @return retryInterval */
+     * @return retryInterval
+     */
     public Integer getRetryInterval() {
         return retryInterval;
     }
@@ -102,7 +110,10 @@ public class TaskPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

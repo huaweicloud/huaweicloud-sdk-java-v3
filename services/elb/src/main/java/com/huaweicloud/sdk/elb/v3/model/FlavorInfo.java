@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规格内容信息。 */
+/**
+ * 规格内容信息。
+ */
 public class FlavorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 并发数。
-     * 
-     * @return connection */
+    /**
+     * 并发数。
+     * @return connection
+     */
     public Integer getConnection() {
         return connection;
     }
@@ -59,9 +62,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 新建数。
-     * 
-     * @return cps */
+    /**
+     * 新建数。
+     * @return cps
+     */
     public Integer getCps() {
         return cps;
     }
@@ -75,9 +79,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 7层每秒查询数。
-     * 
-     * @return qps */
+    /**
+     * 7层每秒查询数。
+     * @return qps
+     */
     public Integer getQps() {
         return qps;
     }
@@ -91,9 +96,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 带宽。
-     * 
-     * @return bandwidth */
+    /**
+     * 带宽。
+     * @return bandwidth
+     */
     public Integer getBandwidth() {
         return bandwidth;
     }
@@ -107,9 +113,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 当前flavor对应的lcu数量。LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
-     * 
-     * @return lcu */
+    /**
+     * 当前flavor对应的lcu数量。LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
+     * @return lcu
+     */
     public Integer getLcu() {
         return lcu;
     }
@@ -123,9 +130,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** https新建连接数。
-     * 
-     * @return httpsCps */
+    /**
+     * https新建连接数。
+     * @return httpsCps
+     */
     public Integer getHttpsCps() {
         return httpsCps;
     }
@@ -167,7 +175,10 @@ public class FlavorInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

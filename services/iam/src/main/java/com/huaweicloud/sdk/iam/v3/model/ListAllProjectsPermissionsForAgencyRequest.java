@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAllProjectsPermissionsForAgencyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListAllProjectsPermissionsForAgencyRequest {
         return this;
     }
 
-    /** 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return agencyId */
+    /**
+     * 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return agencyId
+     */
     public String getAgencyId() {
         return agencyId;
     }
@@ -39,9 +42,10 @@ public class ListAllProjectsPermissionsForAgencyRequest {
         return this;
     }
 
-    /** 账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * 账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -79,7 +83,10 @@ public class ListAllProjectsPermissionsForAgencyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

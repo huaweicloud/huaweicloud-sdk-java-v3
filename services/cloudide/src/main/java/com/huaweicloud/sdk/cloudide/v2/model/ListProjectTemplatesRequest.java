@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListProjectTemplatesRequest {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public String getArch() {
         return arch;
     }
@@ -39,9 +42,10 @@ public class ListProjectTemplatesRequest {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
-     * 
-     * @return stackId */
+    /**
+     * 技术栈ID，通过技术栈管理ListStacks接口获取。
+     * @return stackId
+     */
     public String getStackId() {
         return stackId;
     }
@@ -78,7 +82,10 @@ public class ListProjectTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

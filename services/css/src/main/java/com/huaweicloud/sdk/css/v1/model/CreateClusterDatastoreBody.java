@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据搜索引擎类型。 */
+/**
+ * 数据搜索引擎类型。
+ */
 public class CreateClusterDatastoreBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateClusterDatastoreBody {
         return this;
     }
 
-    /** 引擎版本号，支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2和7.9.3，默认为5.5.1。
-     * 
-     * @return version */
+    /**
+     * 引擎版本号，支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2和7.9.3，默认为5.5.1。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -39,9 +42,10 @@ public class CreateClusterDatastoreBody {
         return this;
     }
 
-    /** 引擎类型，默认为elasticsearch。目前只支持elasticsearch。
-     * 
-     * @return type */
+    /**
+     * 引擎类型，默认为elasticsearch。目前只支持elasticsearch。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -78,7 +82,10 @@ public class CreateClusterDatastoreBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

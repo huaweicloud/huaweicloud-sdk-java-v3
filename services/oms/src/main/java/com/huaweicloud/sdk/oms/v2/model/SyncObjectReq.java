@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 同步事件请求体 */
+/**
+ * 同步事件请求体
+ */
 public class SyncObjectReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class SyncObjectReq {
         return this;
     }
 
-    /** 待同步对象的列表,其中待同步对象最大数量为10,列表中object_key为URL编码处理后的结果
-     * 
-     * @return objectKeys */
+    /**
+     * 待同步对象的列表,其中待同步对象最大数量为10,列表中object_key为URL编码处理后的结果
+     * @return objectKeys
+     */
     public List<String> getObjectKeys() {
         return objectKeys;
     }
@@ -74,7 +77,10 @@ public class SyncObjectReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

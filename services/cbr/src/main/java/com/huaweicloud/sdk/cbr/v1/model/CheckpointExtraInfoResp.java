@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckpointExtraInfoResp */
+/**
+ * CheckpointExtraInfoResp
+ */
 public class CheckpointExtraInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CheckpointExtraInfoResp {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return name */
+    /**
+     * 备份名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class CheckpointExtraInfoResp {
         return this;
     }
 
-    /** 备份描述
-     * 
-     * @return description */
+    /**
+     * 备份描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class CheckpointExtraInfoResp {
         return this;
     }
 
-    /** 备份保留天数
-     * 
-     * @return retentionDuration */
+    /**
+     * 备份保留天数
+     * @return retentionDuration
+     */
     public Integer getRetentionDuration() {
         return retentionDuration;
     }
@@ -101,7 +106,10 @@ public class CheckpointExtraInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

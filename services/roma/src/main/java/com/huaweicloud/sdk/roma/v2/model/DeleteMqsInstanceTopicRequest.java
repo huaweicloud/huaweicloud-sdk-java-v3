@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteMqsInstanceTopicRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteMqsInstanceTopicRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -39,9 +42,10 @@ public class DeleteMqsInstanceTopicRequest {
         return this;
     }
 
-    /** 待删除的topic，多个topic以“,”分割。
-     * 
-     * @return name */
+    /**
+     * 待删除的topic，多个topic以“,”分割。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +82,10 @@ public class DeleteMqsInstanceTopicRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

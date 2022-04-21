@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListOpRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class ListOpRecordRequest {
 
     private String blockchainId;
 
-    /** 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断） */
+    /**
+     * 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断）
+     */
     public static final class OperationStatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final OperationStatusEnum WAITING = new OperationStatusEnum("waiting");
 
-        /** Enum PROCESSING for value: "processing" */
+        /**
+         * Enum PROCESSING for value: "processing"
+         */
         public static final OperationStatusEnum PROCESSING = new OperationStatusEnum("processing");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final OperationStatusEnum FINISHED = new OperationStatusEnum("finished");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final OperationStatusEnum FAILED = new OperationStatusEnum("failed");
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final OperationStatusEnum STOP = new OperationStatusEnum("stop");
 
         private static final Map<String, OperationStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -106,23 +120,34 @@ public class ListOpRecordRequest {
 
     private OperationStatusEnum operationStatus;
 
-    /** 资源类型,
-     * 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作） */
+    /**
+     * 资源类型, 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作）
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum BCSSVC01 for value: "BCSSVC01" */
+        /**
+         * Enum BCSSVC01 for value: "BCSSVC01"
+         */
         public static final ResourceTypeEnum BCSSVC01 = new ResourceTypeEnum("BCSSVC01");
 
-        /** Enum BCSSVC02 for value: "BCSSVC02" */
+        /**
+         * Enum BCSSVC02 for value: "BCSSVC02"
+         */
         public static final ResourceTypeEnum BCSSVC02 = new ResourceTypeEnum("BCSSVC02");
 
-        /** Enum PLUGIN01 for value: "PLUGIN01" */
+        /**
+         * Enum PLUGIN01 for value: "PLUGIN01"
+         */
         public static final ResourceTypeEnum PLUGIN01 = new ResourceTypeEnum("PLUGIN01");
 
-        /** Enum PLUGIN02 for value: "PLUGIN02" */
+        /**
+         * Enum PLUGIN02 for value: "PLUGIN02"
+         */
         public static final ResourceTypeEnum PLUGIN02 = new ResourceTypeEnum("PLUGIN02");
 
-        /** Enum PLUGIN03 for value: "PLUGIN03" */
+        /**
+         * Enum PLUGIN03 for value: "PLUGIN03"
+         */
         public static final ResourceTypeEnum PLUGIN03 = new ResourceTypeEnum("PLUGIN03");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -195,32 +220,49 @@ public class ListOpRecordRequest {
 
     private ResourceTypeEnum resourceType;
 
-    /** 操作类型,
-     * 可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion） */
+    /**
+     * 操作类型,  可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion）
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum _99 for value: "99" */
+        /**
+         * Enum _99 for value: "99"
+         */
         public static final OperationTypeEnum _99 = new OperationTypeEnum("99");
 
-        /** Enum _00 for value: "00" */
+        /**
+         * Enum _00 for value: "00"
+         */
         public static final OperationTypeEnum _00 = new OperationTypeEnum("00");
 
-        /** Enum _01 for value: "01" */
+        /**
+         * Enum _01 for value: "01"
+         */
         public static final OperationTypeEnum _01 = new OperationTypeEnum("01");
 
-        /** Enum _91 for value: "91" */
+        /**
+         * Enum _91 for value: "91"
+         */
         public static final OperationTypeEnum _91 = new OperationTypeEnum("91");
 
-        /** Enum _02 for value: "02" */
+        /**
+         * Enum _02 for value: "02"
+         */
         public static final OperationTypeEnum _02 = new OperationTypeEnum("02");
 
-        /** Enum _03 for value: "03" */
+        /**
+         * Enum _03 for value: "03"
+         */
         public static final OperationTypeEnum _03 = new OperationTypeEnum("03");
 
-        /** Enum _04 for value: "04" */
+        /**
+         * Enum _04 for value: "04"
+         */
         public static final OperationTypeEnum _04 = new OperationTypeEnum("04");
 
-        /** Enum _05 for value: "05" */
+        /**
+         * Enum _05 for value: "05"
+         */
         public static final OperationTypeEnum _05 = new OperationTypeEnum("05");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -306,9 +348,10 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 区块链ID
-     * 
-     * @return blockchainId */
+    /**
+     * 区块链ID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -322,9 +365,10 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断）
-     * 
-     * @return operationStatus */
+    /**
+     * 操作状态, 可选数值如下（括号中为该数值对应的操作类型含义）：waiting(等待执行)，processing（处理中），finished（操作完成，成功），failed（操作失败），stop（操作中断）
+     * @return operationStatus
+     */
     public OperationStatusEnum getOperationStatus() {
         return operationStatus;
     }
@@ -338,10 +382,10 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 资源类型,
-     * 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作）
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型, 可选数值如下（括号中为该数值对应的操作类型含义）：BCSSVC01（BCS变更操作），BCSSVC02（UGBaaS变更操作），PLUGIN01（RestAPI插件变更操作），PLUGIN02（TC3插件变更操作），PLUGIN03（轻节点插件变更操作）
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -355,10 +399,10 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 操作类型,
-     * 可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion）
-     * 
-     * @return operationType */
+    /**
+     * 操作类型,  可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion）
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -372,9 +416,10 @@ public class ListOpRecordRequest {
         return this;
     }
 
-    /** 操作记录ID
-     * 
-     * @return operationId */
+    /**
+     * 操作记录ID
+     * @return operationId
+     */
     public String getOperationId() {
         return operationId;
     }
@@ -417,7 +462,10 @@ public class ListOpRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 生成测试套的请求信息 */
+/**
+ * 生成测试套的请求信息
+ */
 public class CreateTestSuitByRepoFileInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateTestSuitByRepoFileInfo {
         return this;
     }
 
-    /** 要生成的测试套名称
-     * 
-     * @return testsuiteName */
+    /**
+     * 要生成的测试套名称
+     * @return testsuiteName
+     */
     public String getTestsuiteName() {
         return testsuiteName;
     }
@@ -49,9 +52,10 @@ public class CreateTestSuitByRepoFileInfo {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库id
+     * @return repositoryId
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -65,9 +69,10 @@ public class CreateTestSuitByRepoFileInfo {
         return this;
     }
 
-    /** 仓库分支
-     * 
-     * @return repositoryBranch */
+    /**
+     * 仓库分支
+     * @return repositoryBranch
+     */
     public String getRepositoryBranch() {
         return repositoryBranch;
     }
@@ -81,9 +86,10 @@ public class CreateTestSuitByRepoFileInfo {
         return this;
     }
 
-    /** 仓库中yaml或json文件的相对路径，仅支持swagger 2.0版本的yaml和json文件
-     * 
-     * @return filePath */
+    /**
+     * 仓库中yaml或json文件的相对路径，仅支持swagger 2.0版本的yaml和json文件
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -124,7 +130,10 @@ public class CreateTestSuitByRepoFileInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

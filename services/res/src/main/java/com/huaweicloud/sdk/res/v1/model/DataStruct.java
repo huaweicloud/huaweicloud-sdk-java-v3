@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DataStruct */
+/**
+ * DataStruct
+ */
 public class DataStruct {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class DataStruct {
         return this;
     }
 
-    /** Get behaviors
-     * 
-     * @return behaviors */
+    /**
+     * Get behaviors
+     * @return behaviors
+     */
     public BehaviorsConfig getBehaviors() {
         return behaviors;
     }
@@ -77,9 +80,10 @@ public class DataStruct {
         return this;
     }
 
-    /** 物品参数。
-     * 
-     * @return itemAttrs */
+    /**
+     * 物品参数。
+     * @return itemAttrs
+     */
     public List<ItemAttrs> getItemAttrs() {
         return itemAttrs;
     }
@@ -109,9 +113,10 @@ public class DataStruct {
         return this;
     }
 
-    /** 用户参数。
-     * 
-     * @return userAttrs */
+    /**
+     * 用户参数。
+     * @return userAttrs
+     */
     public List<UserAttrs> getUserAttrs() {
         return userAttrs;
     }
@@ -134,9 +139,10 @@ public class DataStruct {
         return this;
     }
 
-    /** Get userDynamicAttr
-     * 
-     * @return userDynamicAttr */
+    /**
+     * Get userDynamicAttr
+     * @return userDynamicAttr
+     */
     public UserDynamicAttr getUserDynamicAttr() {
         return userDynamicAttr;
     }
@@ -177,7 +183,10 @@ public class DataStruct {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

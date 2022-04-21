@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TransTemplate */
+/**
+ * TransTemplate
+ */
 public class TransTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class TransTemplate {
         return this;
     }
 
-    /** 转码模板名称。
-     * 
-     * @return templateName */
+    /**
+     * 转码模板名称。 
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -59,9 +62,10 @@ public class TransTemplate {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public Video getVideo() {
         return video;
     }
@@ -84,9 +88,10 @@ public class TransTemplate {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public Audio getAudio() {
         return audio;
     }
@@ -109,9 +114,10 @@ public class TransTemplate {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public Common getCommon() {
         return common;
     }
@@ -151,7 +157,10 @@ public class TransTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

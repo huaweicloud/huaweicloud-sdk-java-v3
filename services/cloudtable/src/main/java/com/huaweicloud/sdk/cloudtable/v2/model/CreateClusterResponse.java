@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateClusterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群唯一标识，新建集群的ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群唯一标识，新建集群的ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -56,7 +59,10 @@ public class CreateClusterResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

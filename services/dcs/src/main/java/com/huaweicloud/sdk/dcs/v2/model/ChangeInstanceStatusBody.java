@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 重启、清空实例数据的请求体 */
+/**
+ * 重启、清空实例数据的请求体
+ */
 public class ChangeInstanceStatusBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ChangeInstanceStatusBody {
         return this;
     }
 
-    /** 实例的ID列表。
-     * 
-     * @return instances */
+    /**
+     * 实例的ID列表。
+     * @return instances
+     */
     public List<String> getInstances() {
         return instances;
     }
@@ -58,9 +61,10 @@ public class ChangeInstanceStatusBody {
         return this;
     }
 
-    /** 对实例的操作： restart: 强制重启 soft_restart: 软重启，只重启进程 flush: 清空数据 > 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。
-     * 
-     * @return action */
+    /**
+     * 对实例的操作：  restart: 强制重启  soft_restart: 软重启，只重启进程  flush: 清空数据 > 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。 
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -97,7 +101,10 @@ public class ChangeInstanceStatusBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

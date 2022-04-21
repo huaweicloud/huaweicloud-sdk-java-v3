@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Org */
+/**
+ * Org
+ */
 public class Org {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Org {
         return this;
     }
 
-    /** 组织MSP标识
-     * 
-     * @return orgMspId */
+    /**
+     * 组织MSP标识
+     * @return orgMspId
+     */
     public String getOrgMspId() {
         return orgMspId;
     }
@@ -47,9 +50,10 @@ public class Org {
         return this;
     }
 
-    /** 组织域名
-     * 
-     * @return orgDomain */
+    /**
+     * 组织域名
+     * @return orgDomain
+     */
     public String getOrgDomain() {
         return orgDomain;
     }
@@ -79,9 +83,10 @@ public class Org {
         return this;
     }
 
-    /** key:节点名称，value：节点详细信息
-     * 
-     * @return peers */
+    /**
+     * key:节点名称，value：节点详细信息
+     * @return peers
+     */
     public Map<String, Node> getPeers() {
         return peers;
     }
@@ -119,7 +124,10 @@ public class Org {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

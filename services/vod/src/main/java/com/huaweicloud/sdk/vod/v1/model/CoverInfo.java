@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 封面信息。 */
+/**
+ * 封面信息。
+ */
 public class CoverInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CoverInfo {
         return this;
     }
 
-    /** 封面文件的下载地址。
-     * 
-     * @return coverUrl */
+    /**
+     * 封面文件的下载地址。
+     * @return coverUrl
+     */
     public String getCoverUrl() {
         return coverUrl;
     }
@@ -55,7 +58,10 @@ public class CoverInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

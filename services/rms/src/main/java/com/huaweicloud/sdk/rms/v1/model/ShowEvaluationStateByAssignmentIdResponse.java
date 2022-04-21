@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return policyAssignmentId */
+    /**
+     * 规则ID
+     * @return policyAssignmentId
+     */
     public String getPolicyAssignmentId() {
         return policyAssignmentId;
     }
@@ -55,9 +58,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 评估任务执行状态
-     * 
-     * @return state */
+    /**
+     * 评估任务执行状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -71,9 +75,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 评估任务开始时间
-     * 
-     * @return startTime */
+    /**
+     * 评估任务开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -87,9 +92,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 评估任务结束时间
-     * 
-     * @return endTime */
+    /**
+     * 评估任务结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -103,9 +109,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 评估任务失败信息
-     * 
-     * @return errorMessage */
+    /**
+     * 评估任务失败信息
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -149,7 +156,10 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

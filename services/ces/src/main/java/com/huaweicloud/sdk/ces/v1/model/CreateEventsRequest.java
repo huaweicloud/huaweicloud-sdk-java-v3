@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class CreateEventsRequest {
         return this;
     }
 
-    /** 上报自定义事件。请求参数。
-     * 
-     * @return body */
+    /**
+     * 上报自定义事件。请求参数。
+     * @return body
+     */
     public List<EventItem> getBody() {
         return body;
     }
@@ -74,7 +77,10 @@ public class CreateEventsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

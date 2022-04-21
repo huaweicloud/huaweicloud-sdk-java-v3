@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePremiumHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -76,9 +80,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return hostname */
+    /**
+     * 域名id
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -92,9 +97,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainid */
+    /**
+     * 租户id
+     * @return domainid
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -108,9 +114,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目projectid
-     * 
-     * @return projectid */
+    /**
+     * 项目projectid
+     * @return projectid
+     */
     public String getProjectid() {
         return projectid;
     }
@@ -124,9 +131,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return this;
     }
 
-    /** http协议
-     * 
-     * @return protocol */
+    /**
+     * http协议
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -171,7 +179,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RestCancelSingleRecordCycleConfListReqBody */
+/**
+ * RestCancelSingleRecordCycleConfListReqBody
+ */
 public class RestCancelSingleRecordCycleConfListReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RestCancelSingleRecordCycleConfListReqBody {
         return this;
     }
 
-    /** 待删除的子会议标识列表
-     * 
-     * @return cycleSubConfIDs */
+    /**
+     * 待删除的子会议标识列表
+     * @return cycleSubConfIDs
+     */
     public List<String> getCycleSubConfIDs() {
         return cycleSubConfIDs;
     }
@@ -76,7 +79,10 @@ public class RestCancelSingleRecordCycleConfListReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

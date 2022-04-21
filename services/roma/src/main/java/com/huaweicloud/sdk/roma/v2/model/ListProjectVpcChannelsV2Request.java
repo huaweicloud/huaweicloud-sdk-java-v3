@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectVpcChannelsV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -79,9 +82,12 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -95,9 +101,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** VPC通道的编号
-     * 
-     * @return id */
+    /**
+     * VPC通道的编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -111,9 +118,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** VPC通道的名称
-     * 
-     * @return name */
+    /**
+     * VPC通道的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -127,9 +135,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 目前支持name，member_group_name。
-     * 
-     * @return preciseSearch */
+    /**
+     * 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。  目前支持name，member_group_name。
+     * @return preciseSearch
+     */
     public String getPreciseSearch() {
         return preciseSearch;
     }
@@ -143,9 +152,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 后端服务地址。默认精确查询，不支持模糊查询。
-     * 
-     * @return memberHost */
+    /**
+     * 后端服务地址。默认精确查询，不支持模糊查询。
+     * @return memberHost
+     */
     public String getMemberHost() {
         return memberHost;
     }
@@ -159,9 +169,12 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 后端服务器端口 minimum: 0 maximum: 65535
-     * 
-     * @return memberPort */
+    /**
+     * 后端服务器端口
+     * minimum: 0
+     * maximum: 65535
+     * @return memberPort
+     */
     public Integer getMemberPort() {
         return memberPort;
     }
@@ -175,9 +188,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 后端服务器组名称
-     * 
-     * @return memberGroupName */
+    /**
+     * 后端服务器组名称
+     * @return memberGroupName
+     */
     public String getMemberGroupName() {
         return memberGroupName;
     }
@@ -191,9 +205,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 后端服务器组编号
-     * 
-     * @return memberGroupId */
+    /**
+     * 后端服务器组编号
+     * @return memberGroupId
+     */
     public String getMemberGroupId() {
         return memberGroupId;
     }
@@ -207,9 +222,10 @@ public class ListProjectVpcChannelsV2Request {
         return this;
     }
 
-    /** 是否返回后端实例列表
-     * 
-     * @return membersReturn */
+    /**
+     * 是否返回后端实例列表
+     * @return membersReturn
+     */
     public Boolean getMembersReturn() {
         return membersReturn;
     }
@@ -271,7 +287,10 @@ public class ListProjectVpcChannelsV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

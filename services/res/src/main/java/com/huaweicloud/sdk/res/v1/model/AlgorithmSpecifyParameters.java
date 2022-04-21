@@ -28,16 +28,24 @@ public class AlgorithmSpecifyParameters {
 
     private List<Integer> architecture = null;
 
-    /** 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。 */
+    /**
+    * 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
+    */
     public static final class ActiveFunctionEnum {
 
-        /** Enum RELU for value: "relu" */
+        /**
+         * Enum RELU for value: "relu"
+         */
         public static final ActiveFunctionEnum RELU = new ActiveFunctionEnum("relu");
 
-        /** Enum SIGMOID for value: "sigmoid" */
+        /**
+         * Enum SIGMOID for value: "sigmoid"
+         */
         public static final ActiveFunctionEnum SIGMOID = new ActiveFunctionEnum("sigmoid");
 
-        /** Enum TANH for value: "tanh" */
+        /**
+         * Enum TANH for value: "tanh"
+         */
         public static final ActiveFunctionEnum TANH = new ActiveFunctionEnum("tanh");
 
         private static final Map<String, ActiveFunctionEnum> STATIC_FIELDS = createStaticFields();
@@ -163,9 +171,12 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 隐向量长度(DEEPFM需要提供此参数)。 minimum: 1 maximum: 100
-     * 
-     * @return latentVectorLength */
+    /**
+     * 隐向量长度(DEEPFM需要提供此参数)。
+     * minimum: 1
+     * maximum: 100
+     * @return latentVectorLength
+     */
     public Integer getLatentVectorLength() {
         return latentVectorLength;
     }
@@ -195,9 +206,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 神经网络结构(DEEPFM需要提供此参数)。
-     * 
-     * @return architecture */
+    /**
+     * 神经网络结构(DEEPFM需要提供此参数)。
+     * @return architecture
+     */
     public List<Integer> getArchitecture() {
         return architecture;
     }
@@ -211,9 +223,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
-     * 
-     * @return activeFunction */
+    /**
+     * 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
+     * @return activeFunction
+     */
     public ActiveFunctionEnum getActiveFunction() {
         return activeFunction;
     }
@@ -227,9 +240,12 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 神经元值保留概率(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。 minimum: 0 maximum: 1
-     * 
-     * @return valueKeepProbability */
+    /**
+     * 神经元值保留概率(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
+     * minimum: 0
+     * maximum: 1
+     * @return valueKeepProbability
+     */
     public Double getValueKeepProbability() {
         return valueKeepProbability;
     }
@@ -259,9 +275,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 各阶隐向量长度(AutoGroup需要提供此参数)。
-     * 
-     * @return embedSize */
+    /**
+     * 各阶隐向量长度(AutoGroup需要提供此参数)。
+     * @return embedSize
+     */
     public List<Integer> getEmbedSize() {
         return embedSize;
     }
@@ -291,9 +308,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 神经网络结构(AutoGroup需要提供此参数)。
-     * 
-     * @return mlpArchitecture */
+    /**
+     * 神经网络结构(AutoGroup需要提供此参数)。
+     * @return mlpArchitecture
+     */
     public List<Integer> getMlpArchitecture() {
         return mlpArchitecture;
     }
@@ -307,9 +325,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 最大交互阶数(AutoGroup需要提供此参数)。
-     * 
-     * @return maxOrder */
+    /**
+     * 最大交互阶数(AutoGroup需要提供此参数)。
+     * @return maxOrder
+     */
     public Integer getMaxOrder() {
         return maxOrder;
     }
@@ -339,9 +358,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 哈希长度(AutoGroup需要提供此参数)。
-     * 
-     * @return hashSizes */
+    /**
+     * 哈希长度(AutoGroup需要提供此参数)。
+     * @return hashSizes
+     */
     public List<Integer> getHashSizes() {
         return hashSizes;
     }
@@ -371,9 +391,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 特征交互层惩罚项系数(AutoGroup需要提供此参数)。
-     * 
-     * @return hashCompensation */
+    /**
+     * 特征交互层惩罚项系数(AutoGroup需要提供此参数)。
+     * @return hashCompensation
+     */
     public List<Double> getHashCompensation() {
         return hashCompensation;
     }
@@ -387,9 +408,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 使用线性部分(AutoGroup需要提供此参数)。
-     * 
-     * @return useWidePart */
+    /**
+     * 使用线性部分(AutoGroup需要提供此参数)。
+     * @return useWidePart
+     */
     public Boolean getUseWidePart() {
         return useWidePart;
     }
@@ -412,9 +434,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** Get structureOptimizer
-     * 
-     * @return structureOptimizer */
+    /**
+     * Get structureOptimizer
+     * @return structureOptimizer
+     */
     public Optimizer getStructureOptimizer() {
         return structureOptimizer;
     }
@@ -428,9 +451,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 融合多值特征(AutoGroup需要提供此参数)。
-     * 
-     * @return mergeMultiHot */
+    /**
+     * 融合多值特征(AutoGroup需要提供此参数)。
+     * @return mergeMultiHot
+     */
     public Boolean getMergeMultiHot() {
         return mergeMultiHot;
     }
@@ -444,9 +468,10 @@ public class AlgorithmSpecifyParameters {
         return this;
     }
 
-    /** 固定哈希结构(AutoGroup需要提供此参数)。
-     * 
-     * @return fixStructure */
+    /**
+     * 固定哈希结构(AutoGroup需要提供此参数)。
+     * @return fixStructure
+     */
     public Boolean getFixStructure() {
         return fixStructure;
     }
@@ -517,7 +542,10 @@ public class AlgorithmSpecifyParameters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 通过模板创建部署任务请求体 */
+/**
+ * 通过模板创建部署任务请求体
+ */
 public class TemplateTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** devcloud创建的项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud创建的项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -62,9 +65,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** devcloud创建的项目名称
-     * 
-     * @return projectName */
+    /**
+     * devcloud创建的项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -78,9 +82,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** 部署模板id
-     * 
-     * @return templateId */
+    /**
+     * 部署模板id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -94,9 +99,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** 部署任务名称
-     * 
-     * @return taskName */
+    /**
+     * 部署任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -110,9 +116,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** 自定义slave资源池id
-     * 
-     * @return slaveClusterId */
+    /**
+     * 自定义slave资源池id
+     * @return slaveClusterId
+     */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -142,9 +149,10 @@ public class TemplateTaskRequestBody {
         return this;
     }
 
-    /** 部署参数类
-     * 
-     * @return configs */
+    /**
+     * 部署参数类
+     * @return configs
+     */
     public List<ConfigInfoDO> getConfigs() {
         return configs;
     }
@@ -189,7 +197,10 @@ public class TemplateTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

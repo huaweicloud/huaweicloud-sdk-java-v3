@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 企业项目 */
+/**
+ * 企业项目
+ */
 public class EnterpriseProject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class EnterpriseProject {
         return this;
     }
 
-    /** 只能由中文字符、英文字母（a~zA~Z）、数字（0~9）、下划线（_）、中划线（-）组成，且长度为[1-64]个字符。名称不能为大小写混合的default，且在租户账号内唯一。
-     * 
-     * @return name */
+    /**
+     * 只能由中文字符、英文字母（a~zA~Z）、数字（0~9）、下划线（_）、中划线（-）组成，且长度为[1-64]个字符。名称不能为大小写混合的default，且在租户账号内唯一。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class EnterpriseProject {
         return this;
     }
 
-    /** 最大长度512个字符。
-     * 
-     * @return description */
+    /**
+     * 最大长度512个字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class EnterpriseProject {
         return this;
     }
 
-    /** 企业项目类型
-     * 
-     * @return type */
+    /**
+     * 企业项目类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -101,7 +106,10 @@ public class EnterpriseProject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

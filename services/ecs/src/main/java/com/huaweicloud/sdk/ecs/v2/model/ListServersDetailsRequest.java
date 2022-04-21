@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServersDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 查询绑定某个企业项目的弹性云服务器。 若需要查询当前用户所有企业项目绑定的弹性云服务，请传参all_granted_eps。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 查询绑定某个企业项目的弹性云服务器。  若需要查询当前用户所有企业项目绑定的弹性云服务，请传参all_granted_eps。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -84,9 +87,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器规格ID,已上线的规格请参见《弹性云服务器用户指南》的“实例和应用场景”章节。
-     * 
-     * @return flavor */
+    /**
+     * 云服务器规格ID,已上线的规格请参见《弹性云服务器用户指南》的“实例和应用场景”章节。
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -100,9 +104,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** IPv4地址过滤结果，匹配规则为模糊匹配。
-     * 
-     * @return ip */
+    /**
+     * IPv4地址过滤结果，匹配规则为模糊匹配。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -116,9 +121,12 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 查询返回云服务器当前页面的大小。每页最多返回1000台云服务器的信息。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询返回云服务器当前页面的大小。每页最多返回1000台云服务器的信息。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -132,9 +140,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器名称，匹配规则为模糊匹配。
-     * 
-     * @return name */
+    /**
+     * 云服务器名称，匹配规则为模糊匹配。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -148,9 +157,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 查询tag字段中不包含该值的云服务器。
-     * 
-     * @return notTags */
+    /**
+     * 查询tag字段中不包含该值的云服务器。
+     * @return notTags
+     */
     public String getNotTags() {
         return notTags;
     }
@@ -164,9 +174,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 页码。 当前页面数，默认为1。 取值大于等于0，取值为0时返回第1页。
-     * 
-     * @return offset */
+    /**
+     * 页码。 当前页面数，默认为1。  取值大于等于0，取值为0时返回第1页。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -180,9 +191,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
-     * 
-     * @return reservationId */
+    /**
+     * 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
+     * @return reservationId
+     */
     public String getReservationId() {
         return reservationId;
     }
@@ -196,12 +208,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器状态。 取值范围： ACTIVE，
-     * BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
-     * 只有管理员可以使用“deleted”状态过滤查询已经删除的弹性云服务器。
-     * 弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
-     * 
-     * @return status */
+    /**
+     * 云服务器状态。  取值范围：  ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  只有管理员可以使用“deleted”状态过滤查询已经删除的弹性云服务器。  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -215,9 +225,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** 查询tag字段中包含该值的云服务器。
-     * 
-     * @return tags */
+    /**
+     * 查询tag字段中包含该值的云服务器。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -231,9 +242,10 @@ public class ListServersDetailsRequest {
         return this;
     }
 
-    /** IPv4地址过滤结果，匹配规则为精确匹配。
-     * 
-     * @return ipEq */
+    /**
+     * IPv4地址过滤结果，匹配规则为精确匹配。
+     * @return ipEq
+     */
     public String getIpEq() {
         return ipEq;
     }
@@ -289,7 +301,10 @@ public class ListServersDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

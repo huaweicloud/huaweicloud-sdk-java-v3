@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 迁移资源 */
+/**
+ * 迁移资源
+ */
 public class MigrateResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class MigrateResource {
         return this;
     }
 
-    /** 项目ID。resource_type为region级别服务时为必选项。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。resource_type为region级别服务时为必选项。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -49,9 +52,10 @@ public class MigrateResource {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -65,9 +69,10 @@ public class MigrateResource {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -81,9 +86,10 @@ public class MigrateResource {
         return this;
     }
 
-    /** 是否关联迁移。目前仅支持ECS关联资源EVS、EIP迁移。
-     * 
-     * @return associated */
+    /**
+     * 是否关联迁移。目前仅支持ECS关联资源EVS、EIP迁移。
+     * @return associated
+     */
     public Boolean getAssociated() {
         return associated;
     }
@@ -124,7 +130,10 @@ public class MigrateResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

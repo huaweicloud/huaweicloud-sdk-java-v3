@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,22 +23,34 @@ public class ListEventRequest {
 
     private String enterpriseProjectId;
 
-    /** 查询日志的时间范围,(不能和from、to同时使用) */
+    /**
+     * 查询日志的时间范围,(不能和from、to同时使用)
+     */
     public static final class RecentEnum {
 
-        /** Enum YESTERDAY for value: "yesterday" */
+        /**
+         * Enum YESTERDAY for value: "yesterday"
+         */
         public static final RecentEnum YESTERDAY = new RecentEnum("yesterday");
 
-        /** Enum TODAY for value: "today" */
+        /**
+         * Enum TODAY for value: "today"
+         */
         public static final RecentEnum TODAY = new RecentEnum("today");
 
-        /** Enum _3DAYS for value: "3days" */
+        /**
+         * Enum _3DAYS for value: "3days"
+         */
         public static final RecentEnum _3DAYS = new RecentEnum("3days");
 
-        /** Enum _1WEEK for value: "1week" */
+        /**
+         * Enum _1WEEK for value: "1week"
+         */
         public static final RecentEnum _1WEEK = new RecentEnum("1week");
 
-        /** Enum _1MONTH for value: "1month" */
+        /**
+         * Enum _1MONTH for value: "1month"
+         */
         public static final RecentEnum _1MONTH = new RecentEnum("1month");
 
         private static final Map<String, RecentEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +158,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -160,9 +175,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 查询日志的时间范围,(不能和from、to同时使用)
-     * 
-     * @return recent */
+    /**
+     * 查询日志的时间范围,(不能和from、to同时使用)
+     * @return recent
+     */
     public RecentEnum getRecent() {
         return recent;
     }
@@ -192,11 +208,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 攻击类型: - vuln：其它攻击类型 - sqli： sql注入攻击 - lfi： 本地文件包含 - cmdi：命令注入攻击 - xss：XSS攻击 - robot：恶意爬虫 - rfi：远程文件包含 -
-     * custom_custom：精准防护 - cc: cc攻击 - webshell：网站木马 - custom_whiteblackip：黑白名单拦截 - custom_geoip：地理访问控制拦截 -
-     * antitamper：防篡改 - anticrawler：反爬虫 - leakage：网站信息防泄漏 - illegal：非法请求
-     * 
-     * @return attacks */
+    /**
+     * 攻击类型:   - vuln：其它攻击类型   - sqli： sql注入攻击   - lfi： 本地文件包含  - cmdi：命令注入攻击   - xss：XSS攻击   - robot：恶意爬虫   - rfi：远程文件包含   - custom_custom：精准防护   - cc: cc攻击   - webshell：网站木马   - custom_whiteblackip：黑白名单拦截   - custom_geoip：地理访问控制拦截   - antitamper：防篡改   - anticrawler：反爬虫    - leakage：网站信息防泄漏   - illegal：非法请求 
+     * @return attacks
+     */
     public List<String> getAttacks() {
         return attacks;
     }
@@ -210,9 +225,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 起始时间(13位时间戳)，需要和to同时使用，不能和recent参数同时使用
-     * 
-     * @return from */
+    /**
+     * 起始时间(13位时间戳)，需要和to同时使用，不能和recent参数同时使用
+     * @return from
+     */
     public Long getFrom() {
         return from;
     }
@@ -226,9 +242,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 结束时间(13位时间戳)，需要和from同时使用，不能和recent参数同时使用
-     * 
-     * @return to */
+    /**
+     * 结束时间(13位时间戳)，需要和from同时使用，不能和recent参数同时使用
+     * @return to
+     */
     public Long getTo() {
         return to;
     }
@@ -258,9 +275,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 域名id，从获取防护网站列表（ListHost）接口获取域名id
-     * 
-     * @return hosts */
+    /**
+     * 域名id，从获取防护网站列表（ListHost）接口获取域名id
+     * @return hosts
+     */
     public List<String> getHosts() {
         return hosts;
     }
@@ -274,9 +292,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
-     * 
-     * @return page */
+    /**
+     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -290,9 +309,10 @@ public class ListEventRequest {
         return this;
     }
 
-    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
-     * 
-     * @return pagesize */
+    /**
+     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * @return pagesize
+     */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -339,7 +359,10 @@ public class ListEventRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

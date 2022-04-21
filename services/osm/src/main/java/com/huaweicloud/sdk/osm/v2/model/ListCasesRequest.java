@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCasesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,9 +114,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 关键字查询，支持多个空格隔开
-     * 
-     * @return searchKey */
+    /**
+     * 关键字查询，支持多个空格隔开
+     * @return searchKey
+     */
     public List<String> getSearchKey() {
         return searchKey;
     }
@@ -144,9 +147,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 标签列表，最多支持5个
-     * 
-     * @return labelIdList */
+    /**
+     * 标签列表，最多支持5个
+     * @return labelIdList
+     */
     public List<String> getLabelIdList() {
         return labelIdList;
     }
@@ -160,9 +164,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** app关键字查询
-     * 
-     * @return appKey */
+    /**
+     * app关键字查询
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -176,9 +181,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -192,9 +198,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 查询开始时间
-     * 
-     * @return queryStartTime */
+    /**
+     * 查询开始时间
+     * @return queryStartTime
+     */
     public String getQueryStartTime() {
         return queryStartTime;
     }
@@ -208,9 +215,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 查询结束时间
-     * 
-     * @return queryEndTime */
+    /**
+     * 查询结束时间
+     * @return queryEndTime
+     */
     public String getQueryEndTime() {
         return queryEndTime;
     }
@@ -224,9 +232,12 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
-     * 
-     * @return status */
+    /**
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
+     * minimum: 0
+     * maximum: 20
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -240,9 +251,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 状态列表
-     * 
-     * @return incidentStatus */
+    /**
+     * 状态列表
+     * @return incidentStatus
+     */
     public String getIncidentStatus() {
         return incidentStatus;
     }
@@ -256,9 +268,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return xCustomerId */
+    /**
+     * 子用户id
+     * @return xCustomerId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_id")
     public String getXCustomerId() {
@@ -274,9 +287,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 子用户名称
-     * 
-     * @return xCustomerName */
+    /**
+     * 子用户名称
+     * @return xCustomerName
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_name")
     public String getXCustomerName() {
@@ -292,9 +306,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -308,9 +323,12 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -324,9 +342,12 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 查询限制数量 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询限制数量
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -340,9 +361,12 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
-     * 
-     * @return xSite */
+    /**
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
+     * minimum: 0
+     * maximum: 1
+     * @return xSite
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
     public Integer getXSite() {
@@ -358,9 +382,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * 
-     * @return xLanguage */
+    /**
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -376,9 +401,10 @@ public class ListCasesRequest {
         return this;
     }
 
-    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
-     * 
-     * @return xTimeZone */
+    /**
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
+     * @return xTimeZone
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
@@ -459,7 +485,10 @@ public class ListCasesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

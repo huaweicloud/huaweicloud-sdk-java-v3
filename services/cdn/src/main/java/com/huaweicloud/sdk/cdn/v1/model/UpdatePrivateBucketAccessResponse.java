@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdatePrivateBucketAccessResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
         return this;
     }
 
-    /** 桶开启关闭状态（true：开启；false：关闭）
-     * 
-     * @return status */
+    /**
+     * 桶开启关闭状态（true：开启；false：关闭）
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -56,7 +59,10 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

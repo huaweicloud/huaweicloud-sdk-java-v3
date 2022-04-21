@@ -44,9 +44,10 @@ public class BatchQueryParamReq {
         return this;
     }
 
-    /** 查询任务ID集合。
-     * 
-     * @return jobs */
+    /**
+     * 查询任务ID集合。
+     * @return jobs
+     */
     public List<String> getJobs() {
         return jobs;
     }
@@ -60,9 +61,10 @@ public class BatchQueryParamReq {
         return this;
     }
 
-    /** 是否重新获取数据库参数，1代表是，0代表否（从缓存中获取），第一次调用时请设置为1。
-     * 
-     * @return refresh */
+    /**
+     * 是否重新获取数据库参数，1代表是，0代表否（从缓存中获取），第一次调用时请设置为1。
+     * @return refresh
+     */
     public String getRefresh() {
         return refresh;
     }
@@ -99,7 +101,10 @@ public class BatchQueryParamReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

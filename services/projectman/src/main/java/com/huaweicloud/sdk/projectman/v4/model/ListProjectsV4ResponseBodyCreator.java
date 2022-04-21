@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建者信息 */
+/**
+ * 创建者信息
+ */
 public class ListProjectsV4ResponseBodyCreator {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人numId
-     * 
-     * @return userNumId */
+    /**
+     * 创建人numId
+     * @return userNumId
+     */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -59,9 +62,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人id
-     * 
-     * @return userId */
+    /**
+     * 创建人id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -75,9 +79,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人姓名
-     * 
-     * @return userName */
+    /**
+     * 创建人姓名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -91,9 +96,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人租户id
-     * 
-     * @return domainId */
+    /**
+     * 创建人租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -107,9 +113,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人租户名称
-     * 
-     * @return domainName */
+    /**
+     * 创建人租户名称
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -123,9 +130,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return this;
     }
 
-    /** 创建人租户昵称
-     * 
-     * @return nickName */
+    /**
+     * 创建人租户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -170,7 +178,10 @@ public class ListProjectsV4ResponseBodyCreator {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

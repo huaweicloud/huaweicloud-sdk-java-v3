@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTemplateFileResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件内容（返回的文件内容为encoding指定的编码格式编码后的内容）。
-     * 
-     * @return content */
+    /**
+     * 文件内容（返回的文件内容为encoding指定的编码格式编码后的内容）。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -55,9 +58,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 内容编码格式(固定base64)。
-     * 
-     * @return encoding */
+    /**
+     * 内容编码格式(固定base64)。
+     * @return encoding
+     */
     public String getEncoding() {
         return encoding;
     }
@@ -71,9 +75,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件名。
-     * 
-     * @return fileName */
+    /**
+     * 文件名。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -87,9 +92,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件相对路径。
-     * 
-     * @return filePath */
+    /**
+     * 文件相对路径。
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -103,9 +109,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件类型。
-     * 
-     * @return fileType */
+    /**
+     * 文件类型。
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -148,7 +155,10 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

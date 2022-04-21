@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群对象。 */
+/**
+ * 集群对象。
+ */
 public class CreateClusterBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 集群名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头。
-     * 
-     * @return name */
+    /**
+     * 集群名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +84,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public CreateClusterBackupStrategyBody getBackupStrategy() {
         return backupStrategy;
     }
@@ -97,9 +101,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 集群实例个数，取值范围为1~32。
-     * 
-     * @return instanceNum */
+    /**
+     * 集群实例个数，取值范围为1~32。
+     * @return instanceNum
+     */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -122,9 +127,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get instance
-     * 
-     * @return instance */
+    /**
+     * Get instance
+     * @return instance
+     */
     public CreateClusterInstanceBody getInstance() {
         return instance;
     }
@@ -138,10 +144,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 企业项目ID。创建集群时，给集群绑定企业项目ID。最大长度36个字符，带\"-\"连字符的UUID格式，或者是字符串\"0\"。\"0\"表示默认企业项目。
-     * 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理服务用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。创建集群时，给集群绑定企业项目ID。最大长度36个字符，带\"-\"连字符的UUID格式，或者是字符串\"0\"。\"0\"表示默认企业项目。  说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理服务用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -171,9 +177,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** 集群标签。 关于标签特性的详细信息，请参见[《标签管理产品介绍》](https://support.huaweicloud.com/productdesc-tms/zh-cn_topic_0071335169.html)。
-     * 
-     * @return tags */
+    /**
+     * 集群标签。 关于标签特性的详细信息，请参见[《标签管理产品介绍》](https://support.huaweicloud.com/productdesc-tms/zh-cn_topic_0071335169.html)。
+     * @return tags
+     */
     public List<CreateClusterTagsBody> getTags() {
         return tags;
     }
@@ -196,9 +203,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public CreateClusterDatastoreBody getDatastore() {
         return datastore;
     }
@@ -221,9 +229,10 @@ public class CreateClusterBody {
         return this;
     }
 
-    /** Get payInfo
-     * 
-     * @return payInfo */
+    /**
+     * Get payInfo
+     * @return payInfo
+     */
     public PayInfoBody getPayInfo() {
         return payInfo;
     }
@@ -272,7 +281,10 @@ public class CreateClusterBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建或修改规则条件时，指定资源及其范围 */
+/**
+ * 创建或修改规则条件时，指定资源及其范围
+ */
 public class RoutingRuleSubject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,11 +25,10 @@ public class RoutingRuleSubject {
         return this;
     }
 
-    /** **参数说明**：资源名称。 **取值范围**： - device：设备。 - device.property：设备属性。 - device.message：设备消息。 -
-     * device.message.status：设备消息状态。 - device.status：设备状态。 - batchtask：批量任务。 - product：产品。 -
-     * device.command.status：设备异步命令状态。
-     * 
-     * @return resource */
+    /**
+     * **参数说明**：资源名称。 **取值范围**： - device：设备。 - device.property：设备属性。 - device.message：设备消息。 - device.message.status：设备消息状态。 - device.status：设备状态。 - batchtask：批量任务。 - product：产品。 - device.command.status：设备异步命令状态。
+     * @return resource
+     */
     public String getResource() {
         return resource;
     }
@@ -41,12 +42,10 @@ public class RoutingRuleSubject {
         return this;
     }
 
-    /** **参数说明**：资源事件。 **取值范围**：与资源有关，不同的资源，事件不同。event需要与resource关联使用，具体的“resource：event”映射关系如下： - device：create（设备添加） -
-     * device：delete（设备删除） - device：update（设备更新） - device.status：update （设备状态变更） - device.property：report（设备属性上报） -
-     * device.message：report（设备消息上报） - device.message.status：update（设备消息状态变更） - batchtask：update （批量任务状态变更） -
-     * product：create（产品添加） - product：delete（产品删除） - product：update（产品更新） - device.command.status：update（设备异步命令状态更新）
-     * 
-     * @return event */
+    /**
+     * **参数说明**：资源事件。 **取值范围**：与资源有关，不同的资源，事件不同。event需要与resource关联使用，具体的“resource：event”映射关系如下： - device：create（设备添加） - device：delete（设备删除） - device：update（设备更新） - device.status：update （设备状态变更） - device.property：report（设备属性上报） - device.message：report（设备消息上报） - device.message.status：update（设备消息状态变更） - batchtask：update （批量任务状态变更） - product：create（产品添加） - product：delete（产品删除） - product：update（产品更新） - device.command.status：update（设备异步命令状态更新）
+     * @return event
+     */
     public String getEvent() {
         return event;
     }
@@ -83,7 +82,10 @@ public class RoutingRuleSubject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

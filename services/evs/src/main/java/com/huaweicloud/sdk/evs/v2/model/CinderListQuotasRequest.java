@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CinderListQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,14 @@ public class CinderListQuotasRequest {
 
     private String targetProjectId;
 
-    /** 是否查询配额详细信息。当前只支持传true。 */
+    /**
+     * 是否查询配额详细信息。当前只支持传true。
+     */
     public static final class UsageEnum {
 
-        /** Enum TRUE for value: "True" */
+        /**
+         * Enum TRUE for value: "True"
+         */
         public static final UsageEnum TRUE = new UsageEnum("True");
 
         private static final Map<String, UsageEnum> STATIC_FIELDS = createStaticFields();
@@ -95,9 +101,10 @@ public class CinderListQuotasRequest {
         return this;
     }
 
-    /** 目标的项目ID。与project_id保持一致即可。
-     * 
-     * @return targetProjectId */
+    /**
+     * 目标的项目ID。与project_id保持一致即可。
+     * @return targetProjectId
+     */
     public String getTargetProjectId() {
         return targetProjectId;
     }
@@ -111,9 +118,10 @@ public class CinderListQuotasRequest {
         return this;
     }
 
-    /** 是否查询配额详细信息。当前只支持传true。
-     * 
-     * @return usage */
+    /**
+     * 是否查询配额详细信息。当前只支持传true。
+     * @return usage
+     */
     public UsageEnum getUsage() {
         return usage;
     }
@@ -150,7 +158,10 @@ public class CinderListQuotasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiGroupCommonInfo */
+/**
+ * ApiGroupCommonInfo
+ */
 public class ApiGroupCommonInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,10 +29,14 @@ public class ApiGroupCommonInfo {
 
     private String name;
 
-    /** 状态 - 1： 有效 */
+    /**
+     * 状态   - 1： 有效
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +135,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -145,9 +152,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** API分组名称
-     * 
-     * @return name */
+    /**
+     * API分组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -161,9 +169,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * 状态   - 1： 有效
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -177,9 +186,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 系统默认分配的子域名
-     * 
-     * @return slDomain */
+    /**
+     * 系统默认分配的子域名
+     * @return slDomain
+     */
     public String getSlDomain() {
         return slDomain;
     }
@@ -193,9 +203,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return registerTime */
+    /**
+     * 创建时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -209,9 +220,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 最近修改时间
-     * 
-     * @return updateTime */
+    /**
+     * 最近修改时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -225,9 +237,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中 ROMAConnect暂未对接云市场，此字段默认返回2
-     * 
-     * @return onSellStatus */
+    /**
+     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中  ROMAConnect暂未对接云市场，此字段默认返回2
+     * @return onSellStatus
+     */
     public Integer getOnSellStatus() {
         return onSellStatus;
     }
@@ -257,9 +270,10 @@ public class ApiGroupCommonInfo {
         return this;
     }
 
-    /** 分组上绑定的独立域名列表
-     * 
-     * @return urlDomains */
+    /**
+     * 分组上绑定的独立域名列表
+     * @return urlDomains
+     */
     public List<UrlDomain> getUrlDomains() {
         return urlDomains;
     }
@@ -307,7 +321,10 @@ public class ApiGroupCommonInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

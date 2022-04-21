@@ -35,9 +35,10 @@ public class Resource {
         return this;
     }
 
-    /** 配额类型。 枚举值说明： alarm，告警规则
-     * 
-     * @return type */
+    /**
+     * 配额类型。  枚举值说明：  alarm，告警规则
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -51,9 +52,10 @@ public class Resource {
         return this;
     }
 
-    /** 已使用配额数。
-     * 
-     * @return used */
+    /**
+     * 已使用配额数。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -67,9 +69,10 @@ public class Resource {
         return this;
     }
 
-    /** 单位。
-     * 
-     * @return unit */
+    /**
+     * 单位。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -83,9 +86,10 @@ public class Resource {
         return this;
     }
 
-    /** 配额总数。
-     * 
-     * @return quota */
+    /**
+     * 配额总数。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -124,7 +128,10 @@ public class Resource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

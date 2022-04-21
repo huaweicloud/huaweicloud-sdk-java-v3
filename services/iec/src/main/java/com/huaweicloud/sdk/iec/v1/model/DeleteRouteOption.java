@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 删除路由对象 */
+/**
+ * 删除路由对象
+ */
 public class DeleteRouteOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteRouteOption {
         return this;
     }
 
-    /** 功能说明：路由的目的网段 约束：合法的CIDR格式
-     * 
-     * @return destination */
+    /**
+     * 功能说明：路由的目的网段  约束：合法的CIDR格式
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -55,7 +58,10 @@ public class DeleteRouteOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

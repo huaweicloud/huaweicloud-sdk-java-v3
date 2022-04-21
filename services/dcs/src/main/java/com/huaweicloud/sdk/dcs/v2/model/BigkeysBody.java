@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 大key记录结构体 */
+/**
+ * 大key记录结构体
+ */
 public class BigkeysBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class BigkeysBody {
 
     private String name;
 
-    /** key类型 */
+    /**
+     * key类型
+     */
     public static final class TypeEnum {
 
-        /** Enum STRING for value: "string" */
+        /**
+         * Enum STRING for value: "string"
+         */
         public static final TypeEnum STRING = new TypeEnum("string");
 
-        /** Enum LIST for value: "list" */
+        /**
+         * Enum LIST for value: "list"
+         */
         public static final TypeEnum LIST = new TypeEnum("list");
 
-        /** Enum SET for value: "set" */
+        /**
+         * Enum SET for value: "set"
+         */
         public static final TypeEnum SET = new TypeEnum("set");
 
-        /** Enum ZSET for value: "zset" */
+        /**
+         * Enum ZSET for value: "zset"
+         */
         public static final TypeEnum ZSET = new TypeEnum("zset");
 
-        /** Enum HASH for value: "hash" */
+        /**
+         * Enum HASH for value: "hash"
+         */
         public static final TypeEnum HASH = new TypeEnum("hash");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +145,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** key名称
-     * 
-     * @return name */
+    /**
+     * key名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -147,9 +162,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** key类型
-     * 
-     * @return type */
+    /**
+     * key类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -163,9 +179,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
-     * 
-     * @return shard */
+    /**
+     * 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
+     * @return shard
+     */
     public String getShard() {
         return shard;
     }
@@ -179,9 +196,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** 大key所在的db
-     * 
-     * @return db */
+    /**
+     * 大key所在的db
+     * @return db
+     */
     public Integer getDb() {
         return db;
     }
@@ -195,9 +213,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** key的value大小。
-     * 
-     * @return size */
+    /**
+     * key的value大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -211,9 +230,10 @@ public class BigkeysBody {
         return this;
     }
 
-    /** key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
-     * 
-     * @return unit */
+    /**
+     * key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -255,7 +275,10 @@ public class BigkeysBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

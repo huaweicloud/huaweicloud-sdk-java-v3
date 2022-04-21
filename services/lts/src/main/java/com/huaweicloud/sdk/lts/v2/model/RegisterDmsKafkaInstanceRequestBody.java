@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RegisterDmsKafkaInstanceRequestBody */
+/**
+ * RegisterDmsKafkaInstanceRequestBody
+ */
 public class RegisterDmsKafkaInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class RegisterDmsKafkaInstanceRequestBody {
         return this;
     }
 
-    /** kafka ID
-     * 
-     * @return instanceId */
+    /**
+     * kafka ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -45,9 +48,10 @@ public class RegisterDmsKafkaInstanceRequestBody {
         return this;
     }
 
-    /** kafka 名称
-     * 
-     * @return kafkaName */
+    /**
+     * kafka 名称
+     * @return kafkaName
+     */
     public String getKafkaName() {
         return kafkaName;
     }
@@ -72,9 +76,10 @@ public class RegisterDmsKafkaInstanceRequestBody {
         return this;
     }
 
-    /** Get connectInfo
-     * 
-     * @return connectInfo */
+    /**
+     * Get connectInfo
+     * @return connectInfo
+     */
     public RegisterDmsKafkaInstanceRequestBodyConnectInfo getConnectInfo() {
         return connectInfo;
     }
@@ -114,7 +119,10 @@ public class RegisterDmsKafkaInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 审核结果 */
+/**
+ * 审核结果
+ */
 public class ReviewDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ReviewDetail {
         return this;
     }
 
-    /** 置信度。 取值范围：[0,1]。
-     * 
-     * @return confidence */
+    /**
+     * 置信度。  取值范围：[0,1]。
+     * @return confidence
+     */
     public String getConfidence() {
         return confidence;
     }
@@ -39,10 +42,10 @@ public class ReviewDetail {
         return this;
     }
 
-    /** 每个检测结果的标签化说明。 - politics场景：label为对应的政治人物信息。 - terrorism场景： label为对应的暴恐元素（枪支、刀具、火灾等） 信息。 -
-     * porn场景：label为对应的涉黄元素（涉黄、性感等）信息。
-     * 
-     * @return label */
+    /**
+     * 每个检测结果的标签化说明。 - politics场景：label为对应的政治人物信息。 - terrorism场景： label为对应的暴恐元素（枪支、刀具、火灾等） 信息。 - porn场景：label为对应的涉黄元素（涉黄、性感等）信息。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -79,7 +82,10 @@ public class ReviewDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

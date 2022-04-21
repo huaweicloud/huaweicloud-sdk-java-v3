@@ -49,9 +49,10 @@ public class EtlBasicParameter {
         return this;
     }
 
-    /** 用户特征。
-     * 
-     * @return userFeatures */
+    /**
+     * 用户特征。
+     * @return userFeatures
+     */
     public List<FeatureTransformation> getUserFeatures() {
         return userFeatures;
     }
@@ -81,9 +82,10 @@ public class EtlBasicParameter {
         return this;
     }
 
-    /** 物品特征。
-     * 
-     * @return itemFeatures */
+    /**
+     * 物品特征。
+     * @return itemFeatures
+     */
     public List<FeatureTransformation> getItemFeatures() {
         return itemFeatures;
     }
@@ -106,9 +108,10 @@ public class EtlBasicParameter {
         return this;
     }
 
-    /** Get rankEtlFilter
-     * 
-     * @return rankEtlFilter */
+    /**
+     * Get rankEtlFilter
+     * @return rankEtlFilter
+     */
     public RankETLFilter getRankEtlFilter() {
         return rankEtlFilter;
     }
@@ -147,7 +150,10 @@ public class EtlBasicParameter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

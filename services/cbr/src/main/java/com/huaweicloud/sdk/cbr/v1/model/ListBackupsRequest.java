@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBackupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListBackupsRequest {
 
     private String endTime;
 
-    /** 备份类型 */
+    /**
+     * 备份类型
+     */
     public static final class ImageTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final ImageTypeEnum BACKUP = new ImageTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ImageTypeEnum REPLICATION = new ImageTypeEnum("replication");
 
         private static final Map<String, ImageTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -139,13 +147,19 @@ public class ListBackupsRequest {
 
     private String resourceName;
 
-    /** 资源类型 */
+    /**
+     * 资源类型
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume" */
+        /**
+         * Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume"
+         */
         public static final ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
 
-        /** Enum OS_NOVA_SERVER for value: "OS::Nova::Server" */
+        /**
+         * Enum OS_NOVA_SERVER for value: "OS::Nova::Server"
+         */
         public static final ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -225,31 +239,49 @@ public class ListBackupsRequest {
 
     private String startTime;
 
-    /** 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error */
+    /**
+     * 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error
+     */
     public static final class StatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum PROTECTING for value: "protecting" */
+        /**
+         * Enum PROTECTING for value: "protecting"
+         */
         public static final StatusEnum PROTECTING = new StatusEnum("protecting");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum RESTORING for value: "restoring" */
+        /**
+         * Enum RESTORING for value: "restoring"
+         */
         public static final StatusEnum RESTORING = new StatusEnum("restoring");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StatusEnum ERROR = new StatusEnum("error");
 
-        /** Enum WAITING_PROTECT for value: "waiting_protect" */
+        /**
+         * Enum WAITING_PROTECT for value: "waiting_protect"
+         */
         public static final StatusEnum WAITING_PROTECT = new StatusEnum("waiting_protect");
 
-        /** Enum WAITING_DELETE for value: "waiting_delete" */
+        /**
+         * Enum WAITING_DELETE for value: "waiting_delete"
+         */
         public static final StatusEnum WAITING_DELETE = new StatusEnum("waiting_delete");
 
-        /** Enum WAITING_RESTORE for value: "waiting_restore" */
+        /**
+         * Enum WAITING_RESTORE for value: "waiting_restore"
+         */
         public static final StatusEnum WAITING_RESTORE = new StatusEnum("waiting_restore");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -335,16 +367,24 @@ public class ListBackupsRequest {
 
     private String enterpriseProjectId;
 
-    /** 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。 */
+    /**
+     * 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
+     */
     public static final class OwnTypeEnum {
 
-        /** Enum ALL_GRANTED for value: "all_granted" */
+        /**
+         * Enum ALL_GRANTED for value: "all_granted"
+         */
         public static final OwnTypeEnum ALL_GRANTED = new OwnTypeEnum("all_granted");
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final OwnTypeEnum PRIVATE = new OwnTypeEnum("private");
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final OwnTypeEnum SHARED = new OwnTypeEnum("shared");
 
         private static final Map<String, OwnTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -415,16 +455,24 @@ public class ListBackupsRequest {
 
     private OwnTypeEnum ownType;
 
-    /** 共享状态 */
+    /**
+     * 共享状态
+     */
     public static final class MemberStatusEnum {
 
-        /** Enum PENDING for value: "pending" */
+        /**
+         * Enum PENDING for value: "pending"
+         */
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final MemberStatusEnum ACCEPTED = new MemberStatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final MemberStatusEnum REJECTED = new MemberStatusEnum("rejected");
 
         private static final Map<String, MemberStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -515,9 +563,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 还原点ID
-     * 
-     * @return checkpointId */
+    /**
+     * 还原点ID
+     * @return checkpointId
+     */
     public String getCheckpointId() {
         return checkpointId;
     }
@@ -531,9 +580,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 专属云
-     * 
-     * @return dec */
+    /**
+     * 专属云
+     * @return dec
+     */
     public Boolean getDec() {
         return dec;
     }
@@ -547,9 +597,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 备份产生时间范围的结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
-     * 
-     * @return endTime */
+    /**
+     * 备份产生时间范围的结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -563,9 +614,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 备份类型
-     * 
-     * @return imageType */
+    /**
+     * 备份类型
+     * @return imageType
+     */
     public ImageTypeEnum getImageType() {
         return imageType;
     }
@@ -579,9 +631,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，正整数
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，正整数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -595,9 +648,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 上一次查询最后一条的id
-     * 
-     * @return marker */
+    /**
+     * 上一次查询最后一条的id
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -611,9 +665,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -627,9 +682,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 偏移值，正整数
-     * 
-     * @return offset */
+    /**
+     * 偏移值，正整数
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -643,9 +699,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 支持按az来过滤
-     * 
-     * @return resourceAz */
+    /**
+     * 支持按az来过滤
+     * @return resourceAz
+     */
     public String getResourceAz() {
         return resourceAz;
     }
@@ -659,9 +716,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -675,9 +733,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -691,9 +750,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -707,10 +767,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc
-     * (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。key取值范围:[created_at，updated_at，name，status，protected_at，id]
-     * 
-     * @return sort */
+    /**
+     * sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。key取值范围:[created_at，updated_at，name，status，protected_at，id]
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -724,9 +784,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 备份产生时间范围的开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
-     * 
-     * @return startTime */
+    /**
+     * 备份产生时间范围的开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -740,9 +801,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error
-     * 
-     * @return status */
+    /**
+     * 状态。 调用API时，支持通过传多个status值进行过滤。例如：status=available&status=error
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -756,9 +818,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -772,9 +835,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -788,9 +852,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
-     * 
-     * @return ownType */
+    /**
+     * 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
+     * @return ownType
+     */
     public OwnTypeEnum getOwnType() {
         return ownType;
     }
@@ -804,9 +869,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 共享状态
-     * 
-     * @return memberStatus */
+    /**
+     * 共享状态
+     * @return memberStatus
+     */
     public MemberStatusEnum getMemberStatus() {
         return memberStatus;
     }
@@ -820,9 +886,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 父备份ID
-     * 
-     * @return parentId */
+    /**
+     * 父备份ID
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -836,9 +903,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 根据存储库使用率过滤备份，取值范围 [1, 100]，含1和100。例如，used_percent=80，表示筛选所属存储库使用率大于等于80%的所有备份。
-     * 
-     * @return usedPercent */
+    /**
+     * 根据存储库使用率过滤备份，取值范围 [1, 100]，含1和100。例如，used_percent=80，表示筛选所属存储库使用率大于等于80%的所有备份。
+     * @return usedPercent
+     */
     public String getUsedPercent() {
         return usedPercent;
     }
@@ -852,9 +920,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 是否返回复制记录
-     * 
-     * @return showReplication */
+    /**
+     * 是否返回复制记录
+     * @return showReplication
+     */
     public Boolean getShowReplication() {
         return showReplication;
     }
@@ -952,7 +1021,10 @@ public class ListBackupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

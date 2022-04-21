@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiGroupInfoPage */
+/**
+ * ApiGroupInfoPage
+ */
 public class ApiGroupInfoPage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ApiGroupInfoPage {
         return this;
     }
 
-    /** 本次返回的列表长度
-     * 
-     * @return size */
+    /**
+     * 本次返回的列表长度
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -47,9 +50,10 @@ public class ApiGroupInfoPage {
         return this;
     }
 
-    /** 满足条件的记录数
-     * 
-     * @return total */
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -79,9 +83,10 @@ public class ApiGroupInfoPage {
         return this;
     }
 
-    /** 分组列表
-     * 
-     * @return groups */
+    /**
+     * 分组列表
+     * @return groups
+     */
     public List<ApiGroupInfoPage> getGroups() {
         return groups;
     }
@@ -119,7 +124,10 @@ public class ApiGroupInfoPage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

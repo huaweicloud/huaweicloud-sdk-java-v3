@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 校验信息。仅在输入参数return_verification为true时，返回该字段，该字段包含valid_number、valid_birth、valid_sex和valid_date的校验信息。 */
+/**
+ * 校验信息。仅在输入参数return_verification为true时，返回该字段，该字段包含valid_number、valid_birth、valid_sex和valid_date的校验信息。
+ */
 public class IdcardVerificationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IdcardVerificationResult {
         return this;
     }
 
-    /** 身份证号规则校验是否通过。“true”表示身份证号规则校验通过，“false”表示身份证号规则校验不通过。当身份证图片是国徽面时，默认是false。仅在输入参数return_verification为true时，返回该字段。
-     * 
-     * @return validNumber */
+    /**
+     * 身份证号规则校验是否通过。“true”表示身份证号规则校验通过，“false”表示身份证号规则校验不通过。当身份证图片是国徽面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+     * @return validNumber
+     */
     public Boolean getValidNumber() {
         return validNumber;
     }
@@ -49,9 +52,10 @@ public class IdcardVerificationResult {
         return this;
     }
 
-    /** 出生日期与身份证号所表示的出生日期是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。
-     * 
-     * @return validBirth */
+    /**
+     * 出生日期与身份证号所表示的出生日期是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+     * @return validBirth
+     */
     public Boolean getValidBirth() {
         return validBirth;
     }
@@ -65,9 +69,10 @@ public class IdcardVerificationResult {
         return this;
     }
 
-    /** 性别与身份证号所表示的性别信息是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。
-     * 
-     * @return validSex */
+    /**
+     * 性别与身份证号所表示的性别信息是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+     * @return validSex
+     */
     public Boolean getValidSex() {
         return validSex;
     }
@@ -81,9 +86,10 @@ public class IdcardVerificationResult {
         return this;
     }
 
-    /** 当前日期是否在有效期内。“true”表示当前日期在有效期内，“false”表示当前日期不在有效期内。当身份证图片是人像面时，默认是false。仅在输入参数return_verification为true时，返回该字段。
-     * 
-     * @return validDate */
+    /**
+     * 当前日期是否在有效期内。“true”表示当前日期在有效期内，“false”表示当前日期不在有效期内。当身份证图片是人像面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+     * @return validDate
+     */
     public Boolean getValidDate() {
         return validDate;
     }
@@ -124,7 +130,10 @@ public class IdcardVerificationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

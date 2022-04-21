@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowResJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowResJobRequest {
         return this;
     }
 
-    /** 工作空间id
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -44,9 +47,10 @@ public class ShowResJobRequest {
         return this;
     }
 
-    /** 资源id（数据源id 或 场景id）
-     * 
-     * @return resourceId */
+    /**
+     * 资源id（数据源id 或 场景id）
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -60,9 +64,10 @@ public class ShowResJobRequest {
         return this;
     }
 
-    /** 类别： - RECALL，召回作业 - DATASOURCE，数据源作业 - FILTER，过滤作业 - SORTING，排序作业 - EVALUATE，效果评估作业
-     * 
-     * @return category */
+    /**
+     * 类别： - RECALL，召回作业 - DATASOURCE，数据源作业 - FILTER，过滤作业 - SORTING，排序作业 - EVALUATE，效果评估作业
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -101,7 +106,10 @@ public class ShowResJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

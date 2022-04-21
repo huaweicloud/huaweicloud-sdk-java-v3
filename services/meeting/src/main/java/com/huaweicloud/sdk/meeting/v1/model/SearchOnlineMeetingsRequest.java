@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchOnlineMeetingsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 用户UUID。 仅管理员有权限查询权限范围内的所有帐号，普通帐号仅能查询自己的。
-     * 
-     * @return userUUID */
+    /**
+     * 用户UUID。 仅管理员有权限查询权限范围内的所有帐号，普通帐号仅能查询自己的。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -64,9 +67,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 指定返回的记录索引。该值必须大于等于0； 默认为0。
-     * 
-     * @return offset */
+    /**
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -80,9 +84,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 指定返回的记录数。默认是20，最大值为500。
-     * 
-     * @return limit */
+    /**
+     * 指定返回的记录数。默认是20，最大值为500。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -96,9 +101,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 指定是否查询企业下所有用户的会议记录。 如果登录帐号不是企业管理员，则该字段无效。 如果该字段为true，则userUUID字段无效。 default : false
-     * 
-     * @return queryAll */
+    /**
+     * 指定是否查询企业下所有用户的会议记录。 如果登录帐号不是企业管理员，则该字段无效。 如果该字段为true，则userUUID字段无效。 default : false
+     * @return queryAll
+     */
     public Boolean getQueryAll() {
         return queryAll;
     }
@@ -112,9 +118,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 查询用来当作关键词的字符串。会议主题、会议预约人和会议ID等可作为搜索内容。
-     * 
-     * @return searchKey */
+    /**
+     * 查询用来当作关键词的字符串。会议主题、会议预约人和会议ID等可作为搜索内容。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -128,9 +135,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求。
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求。
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -146,9 +154,10 @@ public class SearchOnlineMeetingsRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -197,7 +206,10 @@ public class SearchOnlineMeetingsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

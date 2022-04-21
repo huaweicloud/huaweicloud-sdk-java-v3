@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源详情 */
+/**
+ * 资源详情
+ */
 public class ResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,22 +31,34 @@ public class ResourceResp {
 
     private String name;
 
-    /** 保护状态 */
+    /**
+     * 保护状态
+     */
     public static final class ProtectStatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final ProtectStatusEnum AVAILABLE = new ProtectStatusEnum("available");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final ProtectStatusEnum ERROR = new ProtectStatusEnum("error");
 
-        /** Enum PROTECTING for value: "protecting" */
+        /**
+         * Enum PROTECTING for value: "protecting"
+         */
         public static final ProtectStatusEnum PROTECTING = new ProtectStatusEnum("protecting");
 
-        /** Enum RESTORING for value: "restoring" */
+        /**
+         * Enum RESTORING for value: "restoring"
+         */
         public static final ProtectStatusEnum RESTORING = new ProtectStatusEnum("restoring");
 
-        /** Enum REMOVING for value: "removing" */
+        /**
+         * Enum REMOVING for value: "removing"
+         */
         public static final ProtectStatusEnum REMOVING = new ProtectStatusEnum("removing");
 
         private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -156,9 +170,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public ResourceExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -172,9 +187,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 待备份资源id
-     * 
-     * @return id */
+    /**
+     * 待备份资源id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -188,9 +204,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 待备份资源名称
-     * 
-     * @return name */
+    /**
+     * 待备份资源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -204,9 +221,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 保护状态
-     * 
-     * @return protectStatus */
+    /**
+     * 保护状态
+     * @return protectStatus
+     */
     public ProtectStatusEnum getProtectStatus() {
         return protectStatus;
     }
@@ -220,9 +238,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 资源已分配容量,单位为GB
-     * 
-     * @return size */
+    /**
+     * 资源已分配容量,单位为GB
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -236,10 +255,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
-     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * 
-     * @return type */
+    /**
+     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -253,9 +272,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 副本大小
-     * 
-     * @return backupSize */
+    /**
+     * 副本大小
+     * @return backupSize
+     */
     public Integer getBackupSize() {
         return backupSize;
     }
@@ -269,9 +289,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 副本数量
-     * 
-     * @return backupCount */
+    /**
+     * 副本数量
+     * @return backupCount
+     */
     public Integer getBackupCount() {
         return backupCount;
     }
@@ -285,9 +306,10 @@ public class ResourceResp {
         return this;
     }
 
-    /** 是否跟随存储库自动备份策略进行备份
-     * 
-     * @return autoProtect */
+    /**
+     * 是否跟随存储库自动备份策略进行备份
+     * @return autoProtect
+     */
     public Boolean getAutoProtect() {
         return autoProtect;
     }
@@ -336,7 +358,10 @@ public class ResourceResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

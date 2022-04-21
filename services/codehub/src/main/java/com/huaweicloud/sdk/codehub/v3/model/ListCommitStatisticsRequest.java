@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCommitStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListCommitStatisticsRequest {
         return this;
     }
 
-    /** 分支名
-     * 
-     * @return branchName */
+    /**
+     * 分支名
+     * @return branchName
+     */
     public String getBranchName() {
         return branchName;
     }
@@ -39,9 +42,10 @@ public class ListCommitStatisticsRequest {
         return this;
     }
 
-    /** 仓库的主键id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库的主键id
+     * @return repositoryId
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -78,7 +82,10 @@ public class ListCommitStatisticsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

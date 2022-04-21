@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OfficialWebsiteRatingResult */
+/**
+ * OfficialWebsiteRatingResult
+ */
 public class OfficialWebsiteRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class OfficialWebsiteRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 包年/包月产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -57,9 +60,10 @@ public class OfficialWebsiteRatingResult {
         return this;
     }
 
-    /** 分期金额的官网价。 说明： 暂只支持IES产品。
-     * 
-     * @return installmentOfficialWebsiteAmount */
+    /**
+     * 分期金额的官网价。  说明： 暂只支持IES产品。
+     * @return installmentOfficialWebsiteAmount
+     */
     public String getInstallmentOfficialWebsiteAmount() {
         return installmentOfficialWebsiteAmount;
     }
@@ -73,9 +77,10 @@ public class OfficialWebsiteRatingResult {
         return this;
     }
 
-    /** 分期付款的周期类型。 2：月 说明： 暂只支持IES产品。
-     * 
-     * @return installmentPeriodType */
+    /**
+     * 分期付款的周期类型。 2：月  说明： 暂只支持IES产品。
+     * @return installmentPeriodType
+     */
     public Integer getInstallmentPeriodType() {
         return installmentPeriodType;
     }
@@ -89,9 +94,10 @@ public class OfficialWebsiteRatingResult {
         return this;
     }
 
-    /** 价格度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 价格度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -124,9 +130,10 @@ public class OfficialWebsiteRatingResult {
         return this;
     }
 
-    /** 产品询价结果，具体参见表5。
-     * 
-     * @return productRatingResults */
+    /**
+     * 产品询价结果，具体参见表5。
+     * @return productRatingResults
+     */
     public List<PeriodProductOfficialRatingResult> getProductRatingResults() {
         return productRatingResults;
     }
@@ -176,7 +183,10 @@ public class OfficialWebsiteRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

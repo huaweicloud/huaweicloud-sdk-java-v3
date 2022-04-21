@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowEventDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowEventDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 配置信息列表。如果不存在对应的配置信息，则datapoints为空数组[]。
-     * 
-     * @return datapoints */
+    /**
+     * 配置信息列表。如果不存在对应的配置信息，则datapoints为空数组[]。
+     * @return datapoints
+     */
     public List<EventDataInfo> getDatapoints() {
         return datapoints;
     }
@@ -75,7 +78,10 @@ public class ShowEventDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

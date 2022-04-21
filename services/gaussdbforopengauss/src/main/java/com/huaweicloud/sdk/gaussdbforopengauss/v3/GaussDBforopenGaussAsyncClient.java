@@ -21,7 +21,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 创建数据库实例
+     *
      * 创建数据库企业版和集中式实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -32,7 +36,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 创建数据库实例
+     *
      * 创建数据库企业版和集中式实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -43,7 +51,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 删除实例
+     *
      * 删除数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -54,7 +66,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 删除实例
+     *
      * 删除数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -65,7 +81,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 获取参数模板列表
+     *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse>
@@ -76,7 +96,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 获取参数模板列表
+     *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -87,7 +111,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库引擎的版本
+     *
      * 查询指定数据库引擎对应的版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return CompletableFuture<ListDatastoresResponse>
@@ -98,7 +126,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库引擎的版本
+     *
      * 查询指定数据库引擎对应的版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
@@ -109,7 +141,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库规格
+     *
      * 查询数据库的规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -120,7 +156,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库规格
+     *
      * 查询数据库的规格信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -131,7 +171,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库实例列表/查询实例详情
+     *
      * 查询数据库实例列表/查询实例详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -142,7 +186,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库实例列表/查询实例详情
+     *
      * 查询数据库实例列表/查询实例详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -153,7 +201,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库磁盘类型
+     *
      * 查询指定数据库引擎对应的磁盘类型。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
      * @return CompletableFuture<ListStorageTypesResponse>
@@ -164,7 +216,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 查询数据库磁盘类型
+     *
      * 查询指定数据库引擎对应的磁盘类型。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
      * @return AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
@@ -175,7 +231,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 重置数据库密码。
+     *
      * 重置数据库密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return CompletableFuture<ResetPwdResponse>
@@ -186,7 +246,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 重置数据库密码。
+     *
      * 重置数据库密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return AsyncInvoker<ResetPwdRequest, ResetPwdResponse>
@@ -197,7 +261,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 重启数据库实例
+     *
      * 重启数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return CompletableFuture<RestartInstanceResponse>
@@ -208,7 +276,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 重启数据库实例
+     *
      * 重启数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
@@ -219,7 +291,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * CN横向扩容/DN分片扩容/磁盘扩容
+     *
      * CN横向扩容/DN分片扩容/磁盘扩容
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunInstanceActionRequest 请求对象
      * @return CompletableFuture<RunInstanceActionResponse>
@@ -230,7 +306,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * CN横向扩容/DN分片扩容/磁盘扩容
+     *
      * CN横向扩容/DN分片扩容/磁盘扩容
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunInstanceActionRequest 请求对象
      * @return AsyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse>
@@ -241,7 +321,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 设置自动备份策略。
+     *
      * 设置自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return CompletableFuture<SetBackupPolicyResponse>
@@ -252,7 +336,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 设置自动备份策略。
+     *
      * 设置自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
@@ -263,7 +351,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 获取指定实例的参数模板
+     *
      * 获取指定实例的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<ShowInstanceConfigurationResponse>
@@ -274,7 +366,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 获取指定实例的参数模板
+     *
      * 获取指定实例的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
@@ -285,7 +381,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 修改指定实例的参数
+     *
      * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateInstanceConfigurationResponse>
@@ -296,7 +396,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 修改指定实例的参数
+     *
      * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
@@ -307,7 +411,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 修改实例名称
+     *
      * 修改实例名称。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateInstanceNameResponse>
@@ -318,7 +426,11 @@ public class GaussDBforopenGaussAsyncClient {
 
     /**
      * 修改实例名称
+     *
      * 修改实例名称。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>

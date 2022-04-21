@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDate;
 import java.util.Objects;
 
-/** 业务数据结构 */
+/**
+ * 业务数据结构
+ */
 public class BusinessNodeModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 默认业务
-     * 
-     * @return _default */
+    /**
+     * 默认业务
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -75,9 +78,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 业务展示名称
-     * 
-     * @return displayName */
+    /**
+     * 业务展示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -91,9 +95,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 企业项目的id
-     * 
-     * @return epsId */
+    /**
+     * 企业项目的id
+     * @return epsId
+     */
     public String getEpsId() {
         return epsId;
     }
@@ -107,9 +112,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return gmtCreate */
+    /**
+     * 创建时间
+     * @return gmtCreate
+     */
     public LocalDate getGmtCreate() {
         return gmtCreate;
     }
@@ -123,9 +129,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return gmtModify */
+    /**
+     * 修改时间
+     * @return gmtModify
+     */
     public LocalDate getGmtModify() {
         return gmtModify;
     }
@@ -139,9 +146,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 业务id
-     * 
-     * @return id */
+    /**
+     * 业务id
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -155,9 +163,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 内部租户id
-     * 
-     * @return innerDomainId */
+    /**
+     * 内部租户id
+     * @return innerDomainId
+     */
     public Integer getInnerDomainId() {
         return innerDomainId;
     }
@@ -171,9 +180,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 是否是默认的业务
-     * 
-     * @return isDefault */
+    /**
+     * 是否是默认的业务
+     * @return isDefault
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -187,9 +197,10 @@ public class BusinessNodeModel {
         return this;
     }
 
-    /** 业务的英文名称
-     * 
-     * @return name */
+    /**
+     * 业务的英文名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -240,7 +251,10 @@ public class BusinessNodeModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

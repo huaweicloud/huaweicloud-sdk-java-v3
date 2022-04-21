@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 代码仓的名称
-     * 
-     * @return name */
+    /**
+     * 代码仓的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +73,12 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 提交数量 minimum: 0 maximum: 2147483647
-     * 
-     * @return commitNumber */
+    /**
+     * 提交数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return commitNumber
+     */
     public Integer getCommitNumber() {
         return commitNumber;
     }
@@ -86,9 +92,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** Git库容量
-     * 
-     * @return gitRepoCap */
+    /**
+     * Git库容量
+     * @return gitRepoCap
+     */
     public String getGitRepoCap() {
         return gitRepoCap;
     }
@@ -102,9 +109,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 近一次提交时间
-     * 
-     * @return lastCommitTime */
+    /**
+     * 近一次提交时间
+     * @return lastCommitTime
+     */
     public String getLastCommitTime() {
         return lastCommitTime;
     }
@@ -118,9 +126,12 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 代码行数 minimum: 0 maximum: 2147483647
-     * 
-     * @return codeLines */
+    /**
+     * 代码行数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return codeLines
+     */
     public Integer getCodeLines() {
         return codeLines;
     }
@@ -134,9 +145,12 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分支数量 minimum: 0 maximum: 2147483647
-     * 
-     * @return branchNumber */
+    /**
+     * 分支数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return branchNumber
+     */
     public Integer getBranchNumber() {
         return branchNumber;
     }
@@ -150,9 +164,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 代码仓路径url
-     * 
-     * @return detailUrl */
+    /**
+     * 代码仓路径url
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -166,9 +181,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return this;
     }
 
-    /** 代码仓下载url
-     * 
-     * @return downloadUrl */
+    /**
+     * 代码仓下载url
+     * @return downloadUrl
+     */
     public String getDownloadUrl() {
         return downloadUrl;
     }
@@ -219,7 +235,10 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

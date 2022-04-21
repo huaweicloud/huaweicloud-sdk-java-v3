@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 诊断结果为异常的诊断项总数
-     * 
-     * @return abnormalItemSum */
+    /**
+     * 诊断结果为异常的诊断项总数
+     * @return abnormalItemSum
+     */
     public Integer getAbnormalItemSum() {
         return abnormalItemSum;
     }
@@ -48,9 +51,10 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 诊断失败的诊断项总数
-     * 
-     * @return failedItemSum */
+    /**
+     * 诊断失败的诊断项总数
+     * @return failedItemSum
+     */
     public Integer getFailedItemSum() {
         return failedItemSum;
     }
@@ -83,9 +87,10 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点诊断报告列表
-     * 
-     * @return diagnosisNodeReportList */
+    /**
+     * 节点诊断报告列表
+     * @return diagnosisNodeReportList
+     */
     public List<DiagnosisNodeReport> getDiagnosisNodeReportList() {
         return diagnosisNodeReportList;
     }
@@ -124,7 +129,10 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

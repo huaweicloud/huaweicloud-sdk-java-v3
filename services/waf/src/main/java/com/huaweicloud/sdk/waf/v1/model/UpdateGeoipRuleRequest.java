@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateGeoipRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateGeoipRuleRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -50,9 +53,10 @@ public class UpdateGeoipRuleRequest {
         return this;
     }
 
-    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id，响应体的id字段
-     * 
-     * @return policyId */
+    /**
+     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id，响应体的id字段
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -66,9 +70,10 @@ public class UpdateGeoipRuleRequest {
         return this;
     }
 
-    /** 规则id，规则id从查询地理位置规则列表（ListGeoipRule）接口获取，响应体的id字段
-     * 
-     * @return ruleId */
+    /**
+     * 规则id，规则id从查询地理位置规则列表（ListGeoipRule）接口获取，响应体的id字段
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -91,9 +96,10 @@ public class UpdateGeoipRuleRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateGeoipRuleRequestBody getBody() {
         return body;
     }
@@ -134,7 +140,10 @@ public class UpdateGeoipRuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

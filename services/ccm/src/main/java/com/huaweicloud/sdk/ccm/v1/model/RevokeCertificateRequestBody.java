@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RevokeCertificateRequestBody */
+/**
+ * RevokeCertificateRequestBody
+ */
 public class RevokeCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RevokeCertificateRequestBody {
         return this;
     }
 
-    /** 吊销理由。 > 当不想填写吊销理由时，请求body体请置为\"{}\"，否则将会报错。
-     * 
-     * @return reason */
+    /**
+     * 吊销理由。 > 当不想填写吊销理由时，请求body体请置为\"{}\"，否则将会报错。
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -55,7 +58,10 @@ public class RevokeCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

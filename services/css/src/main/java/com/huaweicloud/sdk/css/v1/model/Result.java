@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Result */
+/**
+ * Result
+ */
 public class Result {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Result {
         return this;
     }
 
-    /** IP地址或域名。
-     * 
-     * @return address */
+    /**
+     * IP地址或域名。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -44,9 +47,10 @@ public class Result {
         return this;
     }
 
-    /** 端口号。
-     * 
-     * @return port */
+    /**
+     * 端口号。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -60,9 +64,10 @@ public class Result {
         return this;
     }
 
-    /** 测试结果。1表示连接成功，0表示地址不可达，2表示端口不可达，3表示域名无法解析，-2表示位置错误。
-     * 
-     * @return status */
+    /**
+     * 测试结果。1表示连接成功，0表示地址不可达，2表示端口不可达，3表示域名无法解析，-2表示位置错误。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -100,7 +105,10 @@ public class Result {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

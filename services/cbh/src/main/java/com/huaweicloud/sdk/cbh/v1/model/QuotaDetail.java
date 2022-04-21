@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 当前租户CBH的配额信息 */
+/**
+ * 当前租户CBH的配额信息
+ */
 public class QuotaDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class QuotaDetail {
         return this;
     }
 
-    /** 中文配额描述
-     * 
-     * @return zhCn */
+    /**
+     * 中文配额描述
+     * @return zhCn
+     */
     public String getZhCn() {
         return zhCn;
     }
@@ -44,9 +47,10 @@ public class QuotaDetail {
         return this;
     }
 
-    /** 英文配额描述
-     * 
-     * @return enUs */
+    /**
+     * 英文配额描述
+     * @return enUs
+     */
     public String getEnUs() {
         return enUs;
     }
@@ -60,9 +64,12 @@ public class QuotaDetail {
         return this;
     }
 
-    /** 租户剩余配额数量 minimum: 0 maximum: 100
-     * 
-     * @return remaining */
+    /**
+     * 租户剩余配额数量
+     * minimum: 0
+     * maximum: 100
+     * @return remaining
+     */
     public Integer getRemaining() {
         return remaining;
     }
@@ -100,7 +107,10 @@ public class QuotaDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 下发判题任务请求参数 */
+/**
+ * 下发判题任务请求参数
+ */
 public class JudgementTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,10 +23,14 @@ public class JudgementTaskRequestBody {
 
     private String notifyUrl;
 
-    /** 代码来源：inline（源代码） */
+    /**
+     * 代码来源：inline（源代码）
+     */
     public static final class CodeTypeEnum {
 
-        /** Enum INLINE for value: "inline" */
+        /**
+         * Enum INLINE for value: "inline"
+         */
         public static final CodeTypeEnum INLINE = new CodeTypeEnum("inline");
 
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,19 +109,29 @@ public class JudgementTaskRequestBody {
 
     private String description;
 
-    /** 支持语言类型：java、c、cpp、python */
+    /**
+     * 支持语言类型：java、c、cpp、python
+     */
     public static final class RuntimeTypeEnum {
 
-        /** Enum JAVA for value: "java" */
+        /**
+         * Enum JAVA for value: "java"
+         */
         public static final RuntimeTypeEnum JAVA = new RuntimeTypeEnum("java");
 
-        /** Enum C for value: "c" */
+        /**
+         * Enum C for value: "c"
+         */
         public static final RuntimeTypeEnum C = new RuntimeTypeEnum("c");
 
-        /** Enum CPP for value: "cpp" */
+        /**
+         * Enum CPP for value: "cpp"
+         */
         public static final RuntimeTypeEnum CPP = new RuntimeTypeEnum("cpp");
 
-        /** Enum PYTHON for value: "python" */
+        /**
+         * Enum PYTHON for value: "python"
+         */
         public static final RuntimeTypeEnum PYTHON = new RuntimeTypeEnum("python");
 
         private static final Map<String, RuntimeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -192,22 +208,34 @@ public class JudgementTaskRequestBody {
 
     private Integer timeout;
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回） */
+    /**
+     * 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
+     */
     public static final class OutputTypeEnum {
 
-        /** Enum SYSOUT for value: "sysout" */
+        /**
+         * Enum SYSOUT for value: "sysout"
+         */
         public static final OutputTypeEnum SYSOUT = new OutputTypeEnum("sysout");
 
-        /** Enum FILEOUT for value: "fileout" */
+        /**
+         * Enum FILEOUT for value: "fileout"
+         */
         public static final OutputTypeEnum FILEOUT = new OutputTypeEnum("fileout");
 
-        /** Enum IMGOUT for value: "imgout" */
+        /**
+         * Enum IMGOUT for value: "imgout"
+         */
         public static final OutputTypeEnum IMGOUT = new OutputTypeEnum("imgout");
 
-        /** Enum CASEOUT for value: "caseout" */
+        /**
+         * Enum CASEOUT for value: "caseout"
+         */
         public static final OutputTypeEnum CASEOUT = new OutputTypeEnum("caseout");
 
-        /** Enum JUDGEOUT for value: "judgeout" */
+        /**
+         * Enum JUDGEOUT for value: "judgeout"
+         */
         public static final OutputTypeEnum JUDGEOUT = new OutputTypeEnum("judgeout");
 
         private static final Map<String, OutputTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -290,9 +318,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 第三方指定的判题结果回调url，取值来源于伙伴通道“判题管理配置”-“接口管理”中设置的回调地址相同
-     * 
-     * @return notifyUrl */
+    /**
+     * 第三方指定的判题结果回调url，取值来源于伙伴通道“判题管理配置”-“接口管理”中设置的回调地址相同
+     * @return notifyUrl
+     */
     public String getNotifyUrl() {
         return notifyUrl;
     }
@@ -306,9 +335,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 代码来源：inline（源代码）
-     * 
-     * @return codeType */
+    /**
+     * 代码来源：inline（源代码）
+     * @return codeType
+     */
     public CodeTypeEnum getCodeType() {
         return codeType;
     }
@@ -322,9 +352,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 源代码，需Base64编码
-     * 
-     * @return sourceCode */
+    /**
+     * 源代码，需Base64编码
+     * @return sourceCode
+     */
     public String getSourceCode() {
         return sourceCode;
     }
@@ -338,9 +369,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 任务描述
-     * 
-     * @return description */
+    /**
+     * 任务描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -354,9 +386,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 支持语言类型：java、c、cpp、python
-     * 
-     * @return runtimeType */
+    /**
+     * 支持语言类型：java、c、cpp、python
+     * @return runtimeType
+     */
     public RuntimeTypeEnum getRuntimeType() {
         return runtimeType;
     }
@@ -370,9 +403,12 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 代码运行超时时间，单位为秒 minimum: 1 maximum: 60
-     * 
-     * @return timeout */
+    /**
+     * 代码运行超时时间，单位为秒
+     * minimum: 1
+     * maximum: 60
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -386,9 +422,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
-     * 
-     * @return outputType */
+    /**
+     * 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
+     * @return outputType
+     */
     public OutputTypeEnum getOutputType() {
         return outputType;
     }
@@ -418,9 +455,10 @@ public class JudgementTaskRequestBody {
         return this;
     }
 
-    /** 当判题结果类型是caseout和judgeout类型才需要传的字段，表示用例数据
-     * 
-     * @return testcases */
+    /**
+     * 当判题结果类型是caseout和judgeout类型才需要传的字段，表示用例数据
+     * @return testcases
+     */
     public List<JudgementCaseInfo> getTestcases() {
         return testcases;
     }
@@ -469,7 +507,10 @@ public class JudgementTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

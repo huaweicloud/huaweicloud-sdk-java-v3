@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTemplateRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -64,9 +67,10 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 规则集ID
-     * 
-     * @return rulesetId */
+    /**
+     * 规则集ID
+     * @return rulesetId
+     */
     public String getRulesetId() {
         return rulesetId;
     }
@@ -80,9 +84,10 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 规则状态 '1查询全部，2已启动，3未启用'
-     * 
-     * @return types */
+    /**
+     * 规则状态  '1查询全部，2已启动，3未启用'
+     * @return types
+     */
     public String getTypes() {
         return types;
     }
@@ -96,9 +101,10 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 规则语言
-     * 
-     * @return languages */
+    /**
+     * 规则语言
+     * @return languages
+     */
     public String getLanguages() {
         return languages;
     }
@@ -112,9 +118,10 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 规则所属标签
-     * 
-     * @return tags */
+    /**
+     * 规则所属标签
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -128,9 +135,11 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 分页索引，偏移量 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -144,9 +153,12 @@ public class ListTemplateRulesRequest {
         return this;
     }
 
-    /** 每页显示的数量 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -193,7 +205,10 @@ public class ListTemplateRulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

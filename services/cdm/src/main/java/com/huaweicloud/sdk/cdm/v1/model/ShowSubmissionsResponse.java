@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSubmissionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ShowSubmissionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业运行信息，详见submissions参数说明。
-     * 
-     * @return submissions */
+    /**
+     * 作业运行信息，详见submissions参数说明。
+     * @return submissions
+     */
     public List<Submission> getSubmissions() {
         return submissions;
     }
@@ -69,9 +72,10 @@ public class ShowSubmissionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询该作业总的历史记录数。
-     * 
-     * @return total */
+    /**
+     * 查询该作业总的历史记录数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -85,9 +89,10 @@ public class ShowSubmissionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询作业记录时，分页数。
-     * 
-     * @return pageNo */
+    /**
+     * 查询作业记录时，分页数。
+     * @return pageNo
+     */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -101,9 +106,10 @@ public class ShowSubmissionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页查询，每页返回的记录数。默认值：10。
-     * 
-     * @return pageSize */
+    /**
+     * 分页查询，每页返回的记录数。默认值：10。
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -144,7 +150,10 @@ public class ShowSubmissionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

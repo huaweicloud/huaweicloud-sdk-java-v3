@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 标签属性 */
+/**
+ * 标签属性
+ */
 public class ResourceTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 键。最大长度36个unicode字符。 不能为空，只能包含大小写字母，数字，中划线“-”，下划线“_”。
-     * 
-     * @return key */
+    /**
+     * 键。最大长度36个unicode字符。 不能为空，只能包含大小写字母，数字，中划线“-”，下划线“_”。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 值。每个值最大长度43个unicode字符，删除时如果value有值按照key/value删除，如果value没值，则按照key删除。 不能为空，只能包含大小写字母，数字，中划线“-”，下划线“_”。
-     * 
-     * @return value */
+    /**
+     * 值。每个值最大长度43个unicode字符，删除时如果value有值按照key/value删除，如果value没值，则按照key删除。 不能为空，只能包含大小写字母，数字，中划线“-”，下划线“_”。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

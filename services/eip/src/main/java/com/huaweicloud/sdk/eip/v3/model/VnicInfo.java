@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 公网IP中的vnic对象，存储绑定PORT的相关信息 */
+/**
+ * 公网IP中的vnic对象，存储绑定PORT的相关信息
+ */
 public class VnicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：私网IP地址
-     * 
-     * @return privateIpAddress */
+    /**
+     * 功能说明：私网IP地址
+     * @return privateIpAddress
+     */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -84,9 +87,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口所属设备ID 约束：不支持设置和更新,由系统自动维护
-     * 
-     * @return deviceId */
+    /**
+     * 功能说明：端口所属设备ID 约束：不支持设置和更新,由系统自动维护
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -100,11 +104,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：设备所属
-     * 取值范围：合法设备所属,如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat
-     * 约束：不支持设置和更新,由系统自动维护
-     * 
-     * @return deviceOwner */
+    /**
+     * 功能说明：设备所属 取值范围：合法设备所属,如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新,由系统自动维护
+     * @return deviceOwner
+     */
     public String getDeviceOwner() {
         return deviceOwner;
     }
@@ -118,9 +121,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 功能说明：虚拟私有云ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -134,9 +138,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口ID
-     * 
-     * @return portId */
+    /**
+     * 功能说明：端口ID
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -150,9 +155,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口profile信息
-     * 
-     * @return portProfile */
+    /**
+     * 功能说明：端口profile信息
+     * @return portProfile
+     */
     public String getPortProfile() {
         return portProfile;
     }
@@ -166,9 +172,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口MAC地址 约束：由系统分配,不支持指定
-     * 
-     * @return mac */
+    /**
+     * 功能说明：端口MAC地址 约束：由系统分配,不支持指定
+     * @return mac
+     */
     public String getMac() {
         return mac;
     }
@@ -182,9 +189,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：VTEP IP
-     * 
-     * @return vtep */
+    /**
+     * 功能说明：VTEP IP
+     * @return vtep
+     */
     public String getVtep() {
         return vtep;
     }
@@ -198,9 +206,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：VXLAN ID
-     * 
-     * @return vni */
+    /**
+     * 功能说明：VXLAN ID
+     * @return vni
+     */
     public String getVni() {
         return vni;
     }
@@ -214,9 +223,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口所属实例ID,例如RDS实例ID 约束：不支持设置和更新,由系统自动维护
-     * 
-     * @return instanceId */
+    /**
+     * 功能说明：端口所属实例ID,例如RDS实例ID 约束：不支持设置和更新,由系统自动维护
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -230,9 +240,10 @@ public class VnicInfo {
         return this;
     }
 
-    /** 功能说明：端口所属实例类型,例如“RDS” 约束：不支持设置和更新,由系统自动维护
-     * 
-     * @return instanceType */
+    /**
+     * 功能说明：端口所属实例类型,例如“RDS” 约束：不支持设置和更新,由系统自动维护
+     * @return instanceType
+     */
     public String getInstanceType() {
         return instanceType;
     }
@@ -293,7 +304,10 @@ public class VnicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CPU阈值设置请求体 */
+/**
+ * CPU阈值设置请求体
+ */
 public class SetCPUThresholdData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class SetCPUThresholdData {
         return this;
     }
 
-    /** CPU阈值设定值，单位为百分比(%)。 取值范围：0 - 100。 minimum: 0 maximum: 100
-     * 
-     * @return cpu */
+    /**
+     * CPU阈值设定值，单位为百分比(%)。 取值范围：0 - 100。
+     * minimum: 0
+     * maximum: 100
+     * @return cpu
+     */
     public Integer getCpu() {
         return cpu;
     }
@@ -55,7 +60,10 @@ public class SetCPUThresholdData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

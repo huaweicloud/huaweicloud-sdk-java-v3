@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 专属主机上创建的云服务器规格。 */
+/**
+ * 专属主机上创建的云服务器规格。
+ */
 public class RespInstanceCapacity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RespInstanceCapacity {
         return this;
     }
 
-    /** 支持创建的云服务器规格。
-     * 
-     * @return flavor */
+    /**
+     * 支持创建的云服务器规格。
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -55,7 +58,10 @@ public class RespInstanceCapacity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

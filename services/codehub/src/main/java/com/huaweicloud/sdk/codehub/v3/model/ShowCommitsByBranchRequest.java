@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowCommitsByBranchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowCommitsByBranchRequest {
         return this;
     }
 
-    /** 仓库组名
-     * 
-     * @return groupName */
+    /**
+     * 仓库组名
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -54,9 +57,10 @@ public class ShowCommitsByBranchRequest {
         return this;
     }
 
-    /** 分页索引
-     * 
-     * @return pageIndex */
+    /**
+     * 分页索引
+     * @return pageIndex
+     */
     public Integer getPageIndex() {
         return pageIndex;
     }
@@ -70,9 +74,10 @@ public class ShowCommitsByBranchRequest {
         return this;
     }
 
-    /** 分页索引
-     * 
-     * @return pageSize */
+    /**
+     * 分页索引
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -86,9 +91,10 @@ public class ShowCommitsByBranchRequest {
         return this;
     }
 
-    /** 分支或标签名，支持SHA格式
-     * 
-     * @return refName */
+    /**
+     * 分支或标签名，支持SHA格式
+     * @return refName
+     */
     public String getRefName() {
         return refName;
     }
@@ -102,9 +108,10 @@ public class ShowCommitsByBranchRequest {
         return this;
     }
 
-    /** 仓库名
-     * 
-     * @return repositoryName */
+    /**
+     * 仓库名
+     * @return repositoryName
+     */
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -147,7 +154,10 @@ public class ShowCommitsByBranchRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

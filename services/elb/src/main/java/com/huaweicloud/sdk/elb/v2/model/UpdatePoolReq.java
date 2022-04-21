@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新后端云服务器组的请求体 */
+/**
+ * 更新后端云服务器组的请求体
+ */
 public class UpdatePoolReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class UpdatePoolReq {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法；当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法；当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     * @return lbAlgorithm
+     */
     public String getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -55,9 +58,10 @@ public class UpdatePoolReq {
         return this;
     }
 
-    /** 后端云服务器组的名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -71,9 +75,10 @@ public class UpdatePoolReq {
         return this;
     }
 
-    /** 后端云服务器组的描述信息
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -87,9 +92,10 @@ public class UpdatePoolReq {
         return this;
     }
 
-    /** 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -112,9 +118,10 @@ public class UpdatePoolReq {
         return this;
     }
 
-    /** Get sessionPersistence
-     * 
-     * @return sessionPersistence */
+    /**
+     * Get sessionPersistence
+     * @return sessionPersistence
+     */
     public SessionPersistence getSessionPersistence() {
         return sessionPersistence;
     }
@@ -157,7 +164,10 @@ public class UpdatePoolReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

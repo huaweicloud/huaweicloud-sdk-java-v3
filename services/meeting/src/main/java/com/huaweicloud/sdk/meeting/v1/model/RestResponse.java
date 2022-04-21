@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Rest请求的响应结果body */
+/**
+ * Rest请求的响应结果body
+ */
 public class RestResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class RestResponse {
         return this;
     }
 
-    /** 结果码 minimum: 0 maximum: 2147483647
-     * 
-     * @return returnCode */
+    /**
+     * 结果码
+     * minimum: 0
+     * maximum: 2147483647
+     * @return returnCode
+     */
     public Integer getReturnCode() {
         return returnCode;
     }
@@ -39,9 +44,10 @@ public class RestResponse {
         return this;
     }
 
-    /** 结果描述
-     * 
-     * @return returnDesc */
+    /**
+     * 结果描述
+     * @return returnDesc
+     */
     public String getReturnDesc() {
         return returnDesc;
     }
@@ -78,7 +84,10 @@ public class RestResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

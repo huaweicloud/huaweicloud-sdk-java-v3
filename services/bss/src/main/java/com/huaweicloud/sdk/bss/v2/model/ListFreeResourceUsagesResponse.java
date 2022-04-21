@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListFreeResourceUsagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListFreeResourceUsagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源套餐内的资源项信息（资源项ID级的详情），具体参见表2。
-     * 
-     * @return freeResources */
+    /**
+     * 资源套餐内的资源项信息（资源项ID级的详情），具体参见表2。
+     * @return freeResources
+     */
     public List<FreeResourceDetail> getFreeResources() {
         return freeResources;
     }
@@ -75,7 +78,10 @@ public class ListFreeResourceUsagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

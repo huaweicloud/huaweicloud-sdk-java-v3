@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShadowService */
+/**
+ * ShadowService
+ */
 public class ShadowService {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,12 @@ public class ShadowService {
         return this;
     }
 
-    /** 服务ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -47,9 +52,10 @@ public class ShadowService {
         return this;
     }
 
-    /** 服务名称
-     * 
-     * @return serviceName */
+    /**
+     * 服务名称
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -79,9 +85,10 @@ public class ShadowService {
         return this;
     }
 
-    /** 影子值
-     * 
-     * @return properties */
+    /**
+     * 影子值
+     * @return properties
+     */
     public List<ShadowValue> getProperties() {
         return properties;
     }
@@ -120,7 +127,10 @@ public class ShadowService {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

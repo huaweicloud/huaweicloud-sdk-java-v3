@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DomainOriginHost */
+/**
+ * DomainOriginHost
+ */
 public class DomainOriginHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DomainOriginHost {
         return this;
     }
 
-    /** 域名ID。获取方法请参见查询加速域名。
-     * 
-     * @return domainId */
+    /**
+     * 域名ID。获取方法请参见查询加速域名。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -44,9 +47,10 @@ public class DomainOriginHost {
         return this;
     }
 
-    /** 回源host的类型。
-     * 
-     * @return originHostType */
+    /**
+     * 回源host的类型。
+     * @return originHostType
+     */
     public String getOriginHostType() {
         return originHostType;
     }
@@ -60,9 +64,10 @@ public class DomainOriginHost {
         return this;
     }
 
-    /** 自定义回源host域名。
-     * 
-     * @return customizeDomain */
+    /**
+     * 自定义回源host域名。
+     * @return customizeDomain
+     */
     public String getCustomizeDomain() {
         return customizeDomain;
     }
@@ -101,7 +106,10 @@ public class DomainOriginHost {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

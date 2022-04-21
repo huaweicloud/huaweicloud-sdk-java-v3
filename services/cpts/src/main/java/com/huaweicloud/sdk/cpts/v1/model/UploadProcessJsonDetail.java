@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UploadProcessJsonDetail */
+/**
+ * UploadProcessJsonDetail
+ */
 public class UploadProcessJsonDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class UploadProcessJsonDetail {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -49,9 +54,10 @@ public class UploadProcessJsonDetail {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +71,12 @@ public class UploadProcessJsonDetail {
         return this;
     }
 
-    /** status minimum: 0 maximum: 2147483647
-     * 
-     * @return status */
+    /**
+     * status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -81,9 +90,10 @@ public class UploadProcessJsonDetail {
         return this;
     }
 
-    /** cause
-     * 
-     * @return cause */
+    /**
+     * cause
+     * @return cause
+     */
     public String getCause() {
         return cause;
     }
@@ -124,7 +134,10 @@ public class UploadProcessJsonDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

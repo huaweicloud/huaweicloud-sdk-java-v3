@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建应用请求体 */
+/**
+ * 创建应用请求体
+ */
 public class AppReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AppReq {
         return this;
     }
 
-    /** app名称，仅支持填入utf8格式内容
-     * 
-     * @return appName */
+    /**
+     * app名称，仅支持填入utf8格式内容
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -55,7 +58,10 @@ public class AppReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

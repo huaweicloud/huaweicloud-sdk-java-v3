@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 媒资基本信息。 */
+/**
+ * 媒资基本信息。
+ */
 public class BaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资标题。 长度不超过128个字节，UTF8编码。
-     * 
-     * @return title */
+    /**
+     * 媒资标题。  长度不超过128个字节，UTF8编码。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -107,9 +110,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资文件名。
-     * 
-     * @return videoName */
+    /**
+     * 媒资文件名。
+     * @return videoName
+     */
     public String getVideoName() {
         return videoName;
     }
@@ -123,9 +127,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资描述。 长度不超过1024个字节。
-     * 
-     * @return description */
+    /**
+     * 媒资描述。  长度不超过1024个字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -139,9 +144,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资分类id。
-     * 
-     * @return categoryId */
+    /**
+     * 媒资分类id。
+     * @return categoryId
+     */
     public Long getCategoryId() {
         return categoryId;
     }
@@ -155,9 +161,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资分类名称。
-     * 
-     * @return categoryName */
+    /**
+     * 媒资分类名称。
+     * @return categoryName
+     */
     public String getCategoryName() {
         return categoryName;
     }
@@ -171,9 +178,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资创建时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 媒资创建时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -187,9 +195,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资最近修改时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
-     * 
-     * @return lastModified */
+    /**
+     * 媒资最近修改时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * @return lastModified
+     */
     public String getLastModified() {
         return lastModified;
     }
@@ -203,10 +212,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 音视频文件类型。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV。 -
-     * 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2。
-     * 
-     * @return videoType */
+    /**
+     * 音视频文件类型。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV。 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2。
+     * @return videoType
+     */
     public String getVideoType() {
         return videoType;
     }
@@ -220,9 +229,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
-     * 
-     * @return tags */
+    /**
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -245,9 +255,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -261,9 +272,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 原始视频文件的访问地址。
-     * 
-     * @return videoUrl */
+    /**
+     * 原始视频文件的访问地址。
+     * @return videoUrl
+     */
     public String getVideoUrl() {
         return videoUrl;
     }
@@ -293,9 +305,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 封面信息。
-     * 
-     * @return coverInfoArray */
+    /**
+     * 封面信息。
+     * @return coverInfoArray
+     */
     public List<CoverInfo> getCoverInfoArray() {
         return coverInfoArray;
     }
@@ -325,9 +338,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** 字幕信息数组
-     * 
-     * @return subtitleInfo */
+    /**
+     * 字幕信息数组
+     * @return subtitleInfo
+     */
     public List<SubtitleInfo> getSubtitleInfo() {
         return subtitleInfo;
     }
@@ -350,9 +364,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** Get sourcePath
-     * 
-     * @return sourcePath */
+    /**
+     * Get sourcePath
+     * @return sourcePath
+     */
     public FileAddr getSourcePath() {
         return sourcePath;
     }
@@ -375,9 +390,10 @@ public class BaseInfo {
         return this;
     }
 
-    /** Get outputPath
-     * 
-     * @return outputPath */
+    /**
+     * Get outputPath
+     * @return outputPath
+     */
     public FileAddr getOutputPath() {
         return outputPath;
     }
@@ -451,7 +467,10 @@ public class BaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

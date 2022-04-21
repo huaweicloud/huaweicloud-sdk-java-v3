@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ObsBuckets */
+/**
+ * ObsBuckets
+ */
 public class ObsBuckets {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ObsBuckets {
         return this;
     }
 
-    /** 桶名称。
-     * 
-     * @return bucketName */
+    /**
+     * 桶名称。
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -39,9 +42,10 @@ public class ObsBuckets {
         return this;
     }
 
-    /** 创建时间,格式为时间戳（毫秒级）。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间,格式为时间戳（毫秒级）。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -78,7 +82,10 @@ public class ObsBuckets {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowMqsInstanceTopicAccessPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topicName */
+    /**
+     * topic名称。
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -65,9 +69,10 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
         return this;
     }
 
-    /** 分页查询偏移量。
-     * 
-     * @return offset */
+    /**
+     * 分页查询偏移量。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -81,9 +86,10 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
         return this;
     }
 
-    /** 分页查询大小。
-     * 
-     * @return limit */
+    /**
+     * 分页查询大小。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -125,7 +131,10 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

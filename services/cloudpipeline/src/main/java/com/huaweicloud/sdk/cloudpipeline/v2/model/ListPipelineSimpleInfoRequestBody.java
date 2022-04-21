@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询流水线信息对象 */
+/**
+ * 查询流水线信息对象
+ */
 public class ListPipelineSimpleInfoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 流水线名字。参数存在，则进行模糊匹配
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名字。参数存在，则进行模糊匹配
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -84,9 +87,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** devCloud项目ids。该参数存在，则获取对应项目下的流水线列表，逗号分隔，id个数取值[0,10]；如果不存在，则获取调用方所属租户的流水线列表
-     * 
-     * @return projectIds */
+    /**
+     * devCloud项目ids。该参数存在，则获取对应项目下的流水线列表，逗号分隔，id个数取值[0,10]；如果不存在，则获取调用方所属租户的流水线列表
+     * @return projectIds
+     */
     public String getProjectIds() {
         return projectIds;
     }
@@ -100,9 +104,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 创建人id。该参数存在，逗号分隔，id个数取值[0,10]
-     * 
-     * @return creatorIds */
+    /**
+     * 创建人id。该参数存在，逗号分隔，id个数取值[0,10]
+     * @return creatorIds
+     */
     public String getCreatorIds() {
         return creatorIds;
     }
@@ -116,9 +121,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 执行人id。该参数存在，逗号分隔，id个数取值[0,10]；
-     * 
-     * @return executorIds */
+    /**
+     * 执行人id。该参数存在，逗号分隔，id个数取值[0,10]；
+     * @return executorIds
+     */
     public String getExecutorIds() {
         return executorIds;
     }
@@ -132,9 +138,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 流水线运行状态。取值范围：waiting,running,verifying,handling,suspending,completed
-     * 
-     * @return status */
+    /**
+     * 流水线运行状态。取值范围：waiting,running,verifying,handling,suspending,completed
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -148,9 +155,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 流水线结果，标记流水线。error、success、aborted
-     * 
-     * @return outcome */
+    /**
+     * 流水线结果，标记流水线。error、success、aborted
+     * @return outcome
+     */
     public String getOutcome() {
         return outcome;
     }
@@ -164,9 +172,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 用于排序的字段。取值为：pipeline_name,create_time,start_time
-     * 
-     * @return sortKey */
+    /**
+     * 用于排序的字段。取值为：pipeline_name,create_time,start_time
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -180,9 +189,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 排序类型。asc按排序字段升序，desc按排序字段降序
-     * 
-     * @return sortDir */
+    /**
+     * 排序类型。asc按排序字段升序，desc按排序字段降序
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -196,9 +206,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** codehub搜索链接：git@codehub.XXX.git；gitee搜索链接：git@gitee.com.XXX.git；github搜索链接：git@github.com.XXX.git等
-     * 
-     * @return gitUrl */
+    /**
+     * codehub搜索链接：git@codehub.XXX.git；gitee搜索链接：git@gitee.com.XXX.git；github搜索链接：git@github.com.XXX.git等
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -212,9 +223,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 偏移量。表示从此偏移量开始查询，offset大于等于0，默认取值为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量。表示从此偏移量开始查询，offset大于等于0，默认取值为0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -228,9 +240,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return this;
     }
 
-    /** 每次查询的条目数量。取值[10-50]，默认取值为10
-     * 
-     * @return limit */
+    /**
+     * 每次查询的条目数量。取值[10-50]，默认取值为10
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -295,7 +308,10 @@ public class ListPipelineSimpleInfoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

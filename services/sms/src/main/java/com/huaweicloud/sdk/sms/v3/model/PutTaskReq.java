@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询指定迁移任务的返回体 */
+/**
+ * 查询指定迁移任务的返回体
+ */
 public class PutTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class PutTaskReq {
 
     private String name;
 
-    /** 任务类型，创建时必选，更新时可选 */
+    /**
+     * 任务类型，创建时必选，更新时可选 
+     */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
-        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -97,13 +105,19 @@ public class PutTaskReq {
 
     private TypeEnum type;
 
-    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选 */
+    /**
+     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -178,16 +192,24 @@ public class PutTaskReq {
 
     private String id;
 
-    /** 进程优先级 0：低 1：标准（默认） 2：高 */
+    /**
+     * 进程优先级  0：低  1：标准（默认）  2：高 
+     */
     public static final class PriorityEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PriorityEnum NUMBER_0 = new PriorityEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PriorityEnum NUMBER_1 = new PriorityEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final PriorityEnum NUMBER_2 = new PriorityEnum(2);
 
         private static final Map<Integer, PriorityEnum> STATIC_FIELDS = createStaticFields();
@@ -383,9 +405,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务名称（用户自定义）
-     * 
-     * @return name */
+    /**
+     * 任务名称（用户自定义）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -399,9 +422,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务类型，创建时必选，更新时可选
-     * 
-     * @return type */
+    /**
+     * 任务类型，创建时必选，更新时可选 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -415,9 +439,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -431,9 +456,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 迁移任务id
-     * 
-     * @return id */
+    /**
+     * 迁移任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -447,9 +473,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 进程优先级 0：低 1：标准（默认） 2：高 minimum: 0 maximum: 2
-     * 
-     * @return priority */
+    /**
+     * 进程优先级  0：低  1：标准（默认）  2：高 
+     * minimum: 0
+     * maximum: 2
+     * @return priority
+     */
     public PriorityEnum getPriority() {
         return priority;
     }
@@ -463,9 +492,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端服务器的区域ID
-     * 
-     * @return regionId */
+    /**
+     * 目的端服务器的区域ID
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -479,9 +509,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 迁移完成后是否启动目的端服务器 true：启动 false：停止
-     * 
-     * @return startTargetServer */
+    /**
+     * 迁移完成后是否启动目的端服务器  true：启动  false：停止 
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -495,9 +526,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -511,9 +543,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
-     * 
-     * @return migrationIp */
+    /**
+     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址 
+     * @return migrationIp
+     */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -527,9 +560,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端服务器的区域名称
-     * 
-     * @return regionName */
+    /**
+     * 目的端服务器的区域名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -543,9 +577,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端服务器所在项目名称
-     * 
-     * @return projectName */
+    /**
+     * 目的端服务器所在项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -559,9 +594,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端服务器所在项目ID
-     * 
-     * @return projectId */
+    /**
+     * 目的端服务器所在项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -575,9 +611,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 模板ID
-     * 
-     * @return vmTemplateId */
+    /**
+     * 模板ID
+     * @return vmTemplateId
+     */
     public String getVmTemplateId() {
         return vmTemplateId;
     }
@@ -600,9 +637,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** Get sourceServer
-     * 
-     * @return sourceServer */
+    /**
+     * Get sourceServer
+     * @return sourceServer
+     */
     public PostSourceServerBody getSourceServer() {
         return sourceServer;
     }
@@ -625,9 +663,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** Get targetServer
-     * 
-     * @return targetServer */
+    /**
+     * Get targetServer
+     * @return targetServer
+     */
     public TargetServer getTargetServer() {
         return targetServer;
     }
@@ -641,9 +680,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return state */
+    /**
+     * 任务状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -657,9 +697,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 预估完成时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return estimateCompleteTime */
+    /**
+     * 预估完成时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return estimateCompleteTime
+     */
     public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
@@ -673,9 +716,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 连接状态
-     * 
-     * @return connected */
+    /**
+     * 连接状态
+     * @return connected
+     */
     public Boolean getConnected() {
         return connected;
     }
@@ -689,9 +733,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务创建时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return createDate */
+    /**
+     * 任务创建时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createDate
+     */
     public Long getCreateDate() {
         return createDate;
     }
@@ -705,9 +752,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务开始时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return startDate */
+    /**
+     * 任务开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return startDate
+     */
     public Long getStartDate() {
         return startDate;
     }
@@ -721,9 +771,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务结束时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return finishDate */
+    /**
+     * 任务结束时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return finishDate
+     */
     public Long getFinishDate() {
         return finishDate;
     }
@@ -737,9 +790,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 迁移速率，单位：MB/S minimum: 0 maximum: 1E+4
-     * 
-     * @return migrateSpeed */
+    /**
+     * 迁移速率，单位：MB/S
+     * minimum: 0
+     * maximum: 1E+4
+     * @return migrateSpeed
+     */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -753,9 +809,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorJson */
+    /**
+     * 错误信息
+     * @return errorJson
+     */
     public String getErrorJson() {
         return errorJson;
     }
@@ -769,9 +826,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务总耗时 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return totalTime */
+    /**
+     * 任务总耗时
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return totalTime
+     */
     public Long getTotalTime() {
         return totalTime;
     }
@@ -785,9 +845,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 暂时保留float,兼容现网老版本的SMS-Agent
-     * 
-     * @return floatIp */
+    /**
+     * 暂时保留float,兼容现网老版本的SMS-Agent
+     * @return floatIp
+     */
     public String getFloatIp() {
         return floatIp;
     }
@@ -801,9 +862,12 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 迁移剩余时间（秒） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return remainSeconds */
+    /**
+     * 迁移剩余时间（秒）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return remainSeconds
+     */
     public Long getRemainSeconds() {
         return remainSeconds;
     }
@@ -817,9 +881,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 目的端的快照id
-     * 
-     * @return targetSnapshotId */
+    /**
+     * 目的端的快照id
+     * @return targetSnapshotId
+     */
     public String getTargetSnapshotId() {
         return targetSnapshotId;
     }
@@ -842,9 +907,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** Get cloneServer
-     * 
-     * @return cloneServer */
+    /**
+     * Get cloneServer
+     * @return cloneServer
+     */
     public CloneServer getCloneServer() {
         return cloneServer;
     }
@@ -874,9 +940,10 @@ public class PutTaskReq {
         return this;
     }
 
-    /** 任务包含的子任务列表
-     * 
-     * @return subTasks */
+    /**
+     * 任务包含的子任务列表
+     * @return subTasks
+     */
     public List<SubTask> getSubTasks() {
         return subTasks;
     }
@@ -991,7 +1058,10 @@ public class PutTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 带宽信息 */
+/**
+ * 带宽信息
+ */
 public class CreateLoadBalancerBandwidthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,14 +25,19 @@ public class CreateLoadBalancerBandwidthOption {
 
     private Integer size;
 
-    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明： - 当id字段为null时，charge_mode是必须的。 */
+    /**
+     * 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：   - 当id字段为null时，charge_mode是必须的。
+     */
     public static final class ChargeModeEnum {
 
-        /** Enum BANDWIDTH for value: "bandwidth" */
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
         public static final ChargeModeEnum BANDWIDTH = new ChargeModeEnum("bandwidth");
 
-        /** Enum TRAFFIC for value: "traffic" */
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,14 +107,19 @@ public class CreateLoadBalancerBandwidthOption {
 
     private ChargeModeEnum chargeMode;
 
-    /** 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。 使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。
-     * - IPv6的EIP不支持WHOLE类型带宽。 */
+    /**
+     * 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
+     */
     public static final class ShareTypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final ShareTypeEnum PER = new ShareTypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
 
         private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -192,9 +204,10 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 带宽名称。取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
-     * 
-     * @return name */
+    /**
+     * 带宽名称。取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -208,11 +221,12 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 带宽大小 取值范围:默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。 注意：调整带宽时的最小单位会根据带宽范围不同存在差异。
-     * 小于等于300Mbit/s:默认最小单位为1Mbit/s。 300Mbit/s~1000Mbit/s:默认最小单位为50Mbit/s。 大于1000Mbit/s:默认最小单位为500Mbit/s。 使用说明： -
-     * 当id字段为null时，size是必须的。 minimum: 0 maximum: 99999
-     * 
-     * @return size */
+    /**
+     * 带宽大小 取值范围:默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。  注意：调整带宽时的最小单位会根据带宽范围不同存在差异。 小于等于300Mbit/s:默认最小单位为1Mbit/s。 300Mbit/s~1000Mbit/s:默认最小单位为50Mbit/s。 大于1000Mbit/s:默认最小单位为500Mbit/s。  使用说明： - 当id字段为null时，size是必须的。
+     * minimum: 0
+     * maximum: 99999
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -226,10 +240,10 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明： - 当id字段为null时，charge_mode是必须的。
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：   - 当id字段为null时，charge_mode是必须的。
+     * @return chargeMode
+     */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -243,10 +257,10 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。 使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。
-     * - IPv6的EIP不支持WHOLE类型带宽。
-     * 
-     * @return shareType */
+    /**
+     * 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
+     * @return shareType
+     */
     public ShareTypeEnum getShareType() {
         return shareType;
     }
@@ -260,9 +274,10 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 预留资源账单信息，默认为空表示按需计费，非空为包周期。 不支持该字段，请勿使用。
-     * 
-     * @return billingInfo */
+    /**
+     * 预留资源账单信息，默认为空表示按需计费，非空为包周期。 不支持该字段，请勿使用。
+     * @return billingInfo
+     */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -276,9 +291,10 @@ public class CreateLoadBalancerBandwidthOption {
         return this;
     }
 
-    /** 功能说明：使用已有的共享带宽创建IP 取值范围：共享带宽ID 使用说明： - WHOLE类型的带宽ID； - 在预付费的情况下，不填该值。该字段取空字符串时，会被忽略。
-     * 
-     * @return id */
+    /**
+     * 功能说明：使用已有的共享带宽创建IP 取值范围：共享带宽ID  使用说明： - WHOLE类型的带宽ID； - 在预付费的情况下，不填该值。该字段取空字符串时，会被忽略。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -323,7 +339,10 @@ public class CreateLoadBalancerBandwidthOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

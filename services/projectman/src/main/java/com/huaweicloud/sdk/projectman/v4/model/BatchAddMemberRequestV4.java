@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BatchAddMemberRequestV4 */
+/**
+ * BatchAddMemberRequestV4
+ */
 public class BatchAddMemberRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BatchAddMemberRequestV4 {
         return this;
     }
 
-    /** 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
-     * 
-     * @return roleId */
+    /**
+     * 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
+     * @return roleId
+     */
     public Integer getRoleId() {
         return roleId;
     }
@@ -39,9 +42,10 @@ public class BatchAddMemberRequestV4 {
         return this;
     }
 
-    /** 用户32位uuid
-     * 
-     * @return userId */
+    /**
+     * 用户32位uuid
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -78,7 +82,10 @@ public class BatchAddMemberRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

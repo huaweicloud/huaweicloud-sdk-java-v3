@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckAssetJobStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,13 +24,19 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
     private String id;
 
-    /** 作业类型 */
+    /**
+     * 作业类型
+     */
     public static final class TypeEnum {
 
-        /** Enum IMPORTASSET for value: "importAsset" */
+        /**
+         * Enum IMPORTASSET for value: "importAsset"
+         */
         public static final TypeEnum IMPORTASSET = new TypeEnum("importAsset");
 
-        /** Enum EXPORTASSET for value: "exportAsset" */
+        /**
+         * Enum EXPORTASSET for value: "exportAsset"
+         */
         public static final TypeEnum EXPORTASSET = new TypeEnum("exportAsset");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -98,17 +106,24 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
     private TypeEnum type;
 
-    /** 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED :
-     * 作业执行失败，通过reason字段查看具体错误原因 */
+    /**
+     * 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED : 作业执行失败，通过reason字段查看具体错误原因
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +224,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return id */
+    /**
+     * 作业ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -225,9 +241,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业类型
-     * 
-     * @return type */
+    /**
+     * 作业类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -241,9 +258,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED : 作业执行失败，通过reason字段查看具体错误原因
-     * 
-     * @return status */
+    /**
+     * 作业状态 - RUNNING : 作业正在执行 - SUCCEEDED : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - FAILED : 作业执行失败，通过reason字段查看具体错误原因
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -273,9 +291,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 导致作业失败的错误原因
-     * 
-     * @return reasons */
+    /**
+     * 导致作业失败的错误原因
+     * @return reasons
+     */
     public List<AssetJobReason> getReasons() {
         return reasons;
     }
@@ -289,9 +308,12 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业进度百分比 minimum: 0 maximum: 1
-     * 
-     * @return progressPercent */
+    /**
+     * 作业进度百分比
+     * minimum: 0
+     * maximum: 1
+     * @return progressPercent
+     */
     public Float getProgressPercent() {
         return progressPercent;
     }
@@ -305,9 +327,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 导出作业成功时，供下载的资产包ID
-     * 
-     * @return archiveId */
+    /**
+     * 导出作业成功时，供下载的资产包ID
+     * @return archiveId
+     */
     public String getArchiveId() {
         return archiveId;
     }
@@ -321,9 +344,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业开始时间
-     * 
-     * @return beginTime */
+    /**
+     * 作业开始时间
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -337,9 +361,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业结束时间
-     * 
-     * @return endTime */
+    /**
+     * 作业结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -388,7 +413,10 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

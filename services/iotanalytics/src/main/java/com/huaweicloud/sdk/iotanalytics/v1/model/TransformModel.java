@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转换计算 */
+/**
+ * 转换计算
+ */
 public class TransformModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class TransformModel {
         return this;
     }
 
-    /** 输入参数，最多支持10个
-     * 
-     * @return inputs */
+    /**
+     * 输入参数，最多支持10个
+     * @return inputs
+     */
     public List<InputModel> getInputs() {
         return inputs;
     }
@@ -77,9 +80,10 @@ public class TransformModel {
         return this;
     }
 
-    /** Get expression
-     * 
-     * @return expression */
+    /**
+     * Get expression
+     * @return expression
+     */
     public Formula getExpression() {
         return expression;
     }
@@ -93,9 +97,10 @@ public class TransformModel {
         return this;
     }
 
-    /** 输出属性名(分析任务单输出场景，配合expression的formula使用)
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名(分析任务单输出场景，配合expression的formula使用)
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -125,9 +130,10 @@ public class TransformModel {
         return this;
     }
 
-    /** 输出属性，最多支持10个
-     * 
-     * @return outputs */
+    /**
+     * 输出属性，最多支持10个
+     * @return outputs
+     */
     public List<OutputWithModel> getOutputs() {
         return outputs;
     }
@@ -168,7 +174,10 @@ public class TransformModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

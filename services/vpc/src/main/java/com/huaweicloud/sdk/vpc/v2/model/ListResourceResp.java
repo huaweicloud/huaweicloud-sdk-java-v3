@@ -38,9 +38,10 @@ public class ListResourceResp {
         return this;
     }
 
-    /** 资源详情。 资源对象，用于扩展。默认为空
-     * 
-     * @return resouceDetail */
+    /**
+     * 资源详情。 资源对象，用于扩展。默认为空
+     * @return resouceDetail
+     */
     public Object getResouceDetail() {
         return resouceDetail;
     }
@@ -54,9 +55,10 @@ public class ListResourceResp {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -70,9 +72,10 @@ public class ListResourceResp {
         return this;
     }
 
-    /** 资源名称，没有默认为空字符串
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称，没有默认为空字符串
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -102,9 +105,10 @@ public class ListResourceResp {
         return this;
     }
 
-    /** 标签列表，没有标签默认为空数组
-     * 
-     * @return tags */
+    /**
+     * 标签列表，没有标签默认为空数组
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -145,7 +149,10 @@ public class ListResourceResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

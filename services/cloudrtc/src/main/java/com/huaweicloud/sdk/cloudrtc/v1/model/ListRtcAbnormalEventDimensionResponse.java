@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRtcAbnormalEventDimensionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ListRtcAbnormalEventDimensionResponse extends SdkResponse {
         return this;
     }
 
-    /** 异常体验列表
-     * 
-     * @return dimensions */
+    /**
+     * 异常体验列表
+     * @return dimensions
+     */
     public List<AbnormalEventDimensionValue> getDimensions() {
         return dimensions;
     }
@@ -60,9 +63,10 @@ public class ListRtcAbnormalEventDimensionResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -102,7 +106,10 @@ public class ListRtcAbnormalEventDimensionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

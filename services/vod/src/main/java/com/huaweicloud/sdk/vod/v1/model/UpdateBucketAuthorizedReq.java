@@ -25,9 +25,10 @@ public class UpdateBucketAuthorizedReq {
         return this;
     }
 
-    /** OBS桶名称。
-     * 
-     * @return bucket */
+    /**
+     * OBS桶名称。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -41,9 +42,10 @@ public class UpdateBucketAuthorizedReq {
         return this;
     }
 
-    /** 是否进行桶授权。 取值如下： - 0：取消授权。 - 1：授权。
-     * 
-     * @return operation */
+    /**
+     * 是否进行桶授权。  取值如下： - 0：取消授权。 - 1：授权。
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -80,7 +82,10 @@ public class UpdateBucketAuthorizedReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

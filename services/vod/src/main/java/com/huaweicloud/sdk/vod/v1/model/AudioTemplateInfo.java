@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 模板音频信息 */
+/**
+ * 模板音频信息
+ */
 public class AudioTemplateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class AudioTemplateInfo {
         return this;
     }
 
-    /** 音频采样率(有效值范围) - 1：AUDIO_SAMPLE_AUTO - 2：AUDIO_SAMPLE_22050 - 3：AUDIO_SAMPLE_32000 - 4：AUDIO_SAMPLE_44100 -
-     * 5：AUDIO_SAMPLE_48000 - 6：AUDIO_SAMPLE_96000 默认值为1。
-     * 
-     * @return sampleRate */
+    /**
+     * 音频采样率(有效值范围) - 1：AUDIO_SAMPLE_AUTO - 2：AUDIO_SAMPLE_22050 - 3：AUDIO_SAMPLE_32000 - 4：AUDIO_SAMPLE_44100 - 5：AUDIO_SAMPLE_48000 - 6：AUDIO_SAMPLE_96000  默认值为1。
+     * @return sampleRate
+     */
     public Integer getSampleRate() {
         return sampleRate;
     }
@@ -45,9 +47,10 @@ public class AudioTemplateInfo {
         return this;
     }
 
-    /** 音频码率（单位：Kbps）。
-     * 
-     * @return bitrate */
+    /**
+     * 音频码率（单位：Kbps）。
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -61,9 +64,10 @@ public class AudioTemplateInfo {
         return this;
     }
 
-    /** 声道数(有效值范围) - 1：AUDIO_CHANNELS_1 - 2：AUDIO_CHANNELS_2
-     * 
-     * @return channels */
+    /**
+     * 声道数(有效值范围) - 1：AUDIO_CHANNELS_1 - 2：AUDIO_CHANNELS_2
+     * @return channels
+     */
     public Integer getChannels() {
         return channels;
     }
@@ -102,7 +106,10 @@ public class AudioTemplateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

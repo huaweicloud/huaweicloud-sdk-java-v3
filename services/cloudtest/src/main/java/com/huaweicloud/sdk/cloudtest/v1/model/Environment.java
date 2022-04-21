@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Environment */
+/**
+ * Environment
+ */
 public class Environment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境分组id
-     * 
-     * @return environmentId */
+    /**
+     * 环境分组id
+     * @return environmentId
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -49,9 +52,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境分组名
-     * 
-     * @return environmentName */
+    /**
+     * 环境分组名
+     * @return environmentName
+     */
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -65,9 +69,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境分组描述
-     * 
-     * @return environmentDescription */
+    /**
+     * 环境分组描述
+     * @return environmentDescription
+     */
     public String getEnvironmentDescription() {
         return environmentDescription;
     }
@@ -81,9 +86,10 @@ public class Environment {
         return this;
     }
 
-    /** 是否是默认环境
-     * 
-     * @return isDefault */
+    /**
+     * 是否是默认环境
+     * @return isDefault
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -124,7 +130,10 @@ public class Environment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

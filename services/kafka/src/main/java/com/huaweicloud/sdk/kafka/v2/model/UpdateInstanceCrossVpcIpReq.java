@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateInstanceCrossVpcIpReq */
+/**
+ * UpdateInstanceCrossVpcIpReq
+ */
 public class UpdateInstanceCrossVpcIpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateInstanceCrossVpcIpReq {
         return this;
     }
 
-    /** 用户自定义的advertised_ip_contents键值对。 键是listeners IP。 值是advertised.listeners IP，或者域名。 > IP修改未修改项也需填上。
-     * 
-     * @return advertisedIpContents */
+    /**
+     * 用户自定义的advertised_ip_contents键值对。  键是listeners IP。  值是advertised.listeners IP，或者域名。  > IP修改未修改项也需填上。
+     * @return advertisedIpContents
+     */
     public Map<String, String> getAdvertisedIpContents() {
         return advertisedIpContents;
     }
@@ -75,7 +78,10 @@ public class UpdateInstanceCrossVpcIpReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

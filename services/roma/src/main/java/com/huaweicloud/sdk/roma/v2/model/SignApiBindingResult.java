@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SignApiBindingResult */
+/**
+ * SignApiBindingResult
+ */
 public class SignApiBindingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class SignApiBindingResult {
         return this;
     }
 
-    /** API与签名密钥的绑定关系列表
-     * 
-     * @return bindings */
+    /**
+     * API与签名密钥的绑定关系列表
+     * @return bindings
+     */
     public List<SignApiBindingInfo> getBindings() {
         return bindings;
     }
@@ -74,7 +77,10 @@ public class SignApiBindingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

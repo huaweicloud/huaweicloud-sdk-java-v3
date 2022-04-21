@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 版本信息描述 */
+/**
+ * 版本信息描述
+ */
 public class VersionDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class VersionDetails {
 
     private String version;
 
-    /** 版本的状态 */
+    /**
+     * 版本的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORTED for value: "SUPPORTED" */
+        /**
+         * Enum SUPPORTED for value: "SUPPORTED"
+         */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class VersionDetails {
         return this;
     }
 
-    /** 版本ID
-     * 
-     * @return id */
+    /**
+     * 版本ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -134,9 +145,10 @@ public class VersionDetails {
         return this;
     }
 
-    /** 版本详情
-     * 
-     * @return links */
+    /**
+     * 版本详情
+     * @return links
+     */
     public String getLinks() {
         return links;
     }
@@ -150,9 +162,10 @@ public class VersionDetails {
         return this;
     }
 
-    /** 该版本API的微版本信息
-     * 
-     * @return version */
+    /**
+     * 该版本API的微版本信息
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -166,9 +179,10 @@ public class VersionDetails {
         return this;
     }
 
-    /** 版本的状态
-     * 
-     * @return status */
+    /**
+     * 版本的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -182,9 +196,10 @@ public class VersionDetails {
         return this;
     }
 
-    /** 版本更新时间
-     * 
-     * @return updated */
+    /**
+     * 版本更新时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -226,7 +241,10 @@ public class VersionDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

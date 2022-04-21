@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 通过标签过滤弹性公网IP的请求体 */
+/**
+ * 通过标签过滤弹性公网IP的请求体
+ */
 public class ListPublicipsByTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,13 +33,19 @@ public class ListPublicipsByTagsRequestBody {
 
     private Integer offset;
 
-    /** 操作标识： filter分页查询 count查询总数 */
+    /**
+     * 操作标识：  filter分页查询  count查询总数
+     */
     public static final class ActionEnum {
 
-        /** Enum FILTER for value: "filter" */
+        /**
+         * Enum FILTER for value: "filter"
+         */
         public static final ActionEnum FILTER = new ActionEnum("filter");
 
-        /** Enum COUNT for value: "count" */
+        /**
+         * Enum COUNT for value: "count"
+         */
         public static final ActionEnum COUNT = new ActionEnum("count");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +141,10 @@ public class ListPublicipsByTagsRequestBody {
         return this;
     }
 
-    /** 包含标签，最多包含10个key。 每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。 Key不能重复，同一个key中values不能重复。
-     * 
-     * @return tags */
+    /**
+     * 包含标签，最多包含10个key。  每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。  Key不能重复，同一个key中values不能重复。
+     * @return tags
+     */
     public List<TagReq> getTags() {
         return tags;
     }
@@ -149,9 +158,12 @@ public class ListPublicipsByTagsRequestBody {
         return this;
     }
 
-    /** 查询记录数（action为count时无此参数） minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询记录数（action为count时无此参数）
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -165,9 +177,11 @@ public class ListPublicipsByTagsRequestBody {
         return this;
     }
 
-    /** 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数） minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数）
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -181,9 +195,10 @@ public class ListPublicipsByTagsRequestBody {
         return this;
     }
 
-    /** 操作标识： filter分页查询 count查询总数
-     * 
-     * @return action */
+    /**
+     * 操作标识：  filter分页查询  count查询总数
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -213,9 +228,10 @@ public class ListPublicipsByTagsRequestBody {
         return this;
     }
 
-    /** 搜索字段，key为要匹配的字段，当前仅支持resource_name。value为匹配的值。此字段为固定字典值。
-     * 
-     * @return matches */
+    /**
+     * 搜索字段，key为要匹配的字段，当前仅支持resource_name。value为匹配的值。此字段为固定字典值。
+     * @return matches
+     */
     public List<MatchReq> getMatches() {
         return matches;
     }
@@ -258,7 +274,10 @@ public class ListPublicipsByTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

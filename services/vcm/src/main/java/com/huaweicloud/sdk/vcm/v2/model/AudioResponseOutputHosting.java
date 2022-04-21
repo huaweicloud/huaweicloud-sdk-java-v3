@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 托管输出位置 */
+/**
+ * 托管输出位置
+ */
 public class AudioResponseOutputHosting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class AudioResponseOutputHosting {
         return this;
     }
 
-    /** 结果文件result.json的OBS信息。
-     * 
-     * @return obs */
+    /**
+     * 结果文件result.json的OBS信息。
+     * @return obs
+     */
     public List<AudioOutputHostingObs> getObs() {
         return obs;
     }
@@ -63,9 +66,10 @@ public class AudioResponseOutputHosting {
         return this;
     }
 
-    /** 托管文件result.json的过期日期，文件默认保存48小时。 result.json文件生成且未过期时，会有这个字段。
-     * 
-     * @return resultJsonOverdueAt */
+    /**
+     * 托管文件result.json的过期日期，文件默认保存48小时。  result.json文件生成且未过期时，会有这个字段。 
+     * @return resultJsonOverdueAt
+     */
     public String getResultJsonOverdueAt() {
         return resultJsonOverdueAt;
     }
@@ -79,9 +83,10 @@ public class AudioResponseOutputHosting {
         return this;
     }
 
-    /** True表示校验obs。
-     * 
-     * @return checkObsAfterEndState */
+    /**
+     * True表示校验obs。
+     * @return checkObsAfterEndState
+     */
     public Boolean getCheckObsAfterEndState() {
         return checkObsAfterEndState;
     }
@@ -120,7 +125,10 @@ public class AudioResponseOutputHosting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

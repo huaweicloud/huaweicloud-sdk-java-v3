@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ListKeysRequestBody */
+/**
+ * ListKeysRequestBody
+ */
 public class ListKeysRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,35 +30,54 @@ public class ListKeysRequestBody {
 
     private String keyState;
 
-    /** 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。 - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 -
-     * EC_P384 - SM2 - ALL */
+    /**
+     * 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。  - AES_256  - SM4  - RSA_2048  - RSA_3072  - RSA_4096  - EC_P256  - EC_P384  - SM2  - ALL
+     */
     public static final class KeySpecEnum {
 
-        /** Enum AES_256 for value: "AES_256" */
+        /**
+         * Enum AES_256 for value: "AES_256"
+         */
         public static final KeySpecEnum AES_256 = new KeySpecEnum("AES_256");
 
-        /** Enum SM4 for value: "SM4" */
+        /**
+         * Enum SM4 for value: "SM4"
+         */
         public static final KeySpecEnum SM4 = new KeySpecEnum("SM4");
 
-        /** Enum RSA_2048 for value: "RSA_2048" */
+        /**
+         * Enum RSA_2048 for value: "RSA_2048"
+         */
         public static final KeySpecEnum RSA_2048 = new KeySpecEnum("RSA_2048");
 
-        /** Enum RSA_3072 for value: "RSA_3072" */
+        /**
+         * Enum RSA_3072 for value: "RSA_3072"
+         */
         public static final KeySpecEnum RSA_3072 = new KeySpecEnum("RSA_3072");
 
-        /** Enum RSA_4096 for value: "RSA_4096" */
+        /**
+         * Enum RSA_4096 for value: "RSA_4096"
+         */
         public static final KeySpecEnum RSA_4096 = new KeySpecEnum("RSA_4096");
 
-        /** Enum EC_P256 for value: "EC_P256" */
+        /**
+         * Enum EC_P256 for value: "EC_P256"
+         */
         public static final KeySpecEnum EC_P256 = new KeySpecEnum("EC_P256");
 
-        /** Enum EC_P384 for value: "EC_P384" */
+        /**
+         * Enum EC_P384 for value: "EC_P384"
+         */
         public static final KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
 
-        /** Enum SM2 for value: "SM2" */
+        /**
+         * Enum SM2 for value: "SM2"
+         */
         public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final KeySpecEnum ALL = new KeySpecEnum("ALL");
 
         private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
@@ -143,9 +164,10 @@ public class ListKeysRequestBody {
         return this;
     }
 
-    /** 指定查询返回记录条数，如果指定查询记录条数小于存在的条数，响应参数“truncated”将返回“true”，表示存在分页。取值在密钥最大个数范围以内。例如：100
-     * 
-     * @return limit */
+    /**
+     * 指定查询返回记录条数，如果指定查询记录条数小于存在的条数，响应参数“truncated”将返回“true”，表示存在分页。取值在密钥最大个数范围以内。例如：100
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -159,9 +181,10 @@ public class ListKeysRequestBody {
         return this;
     }
 
-    /** 分页查询起始位置标识。分页查询收到的响应参数“truncated”为“true”时，可以发送连续的请求获取更多的记录条数，“marker”设置为响应的next_marker的值。例如：10
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始位置标识。分页查询收到的响应参数“truncated”为“true”时，可以发送连续的请求获取更多的记录条数，“marker”设置为响应的next_marker的值。例如：10
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -175,9 +198,10 @@ public class ListKeysRequestBody {
         return this;
     }
 
-    /** 密钥状态，满足正则匹配“^[1-5]{1}$”，枚举如下： - “1”表示待激活状态 - “2”表示启用状态 - “3”表示禁用状态 - “4”表示计划删除状态 - “5”表示等待导入状态
-     * 
-     * @return keyState */
+    /**
+     * 密钥状态，满足正则匹配“^[1-5]{1}$”，枚举如下：  - “1”表示待激活状态  - “2”表示启用状态  - “3”表示禁用状态  - “4”表示计划删除状态  - “5”表示等待导入状态
+     * @return keyState
+     */
     public String getKeyState() {
         return keyState;
     }
@@ -191,10 +215,10 @@ public class ListKeysRequestBody {
         return this;
     }
 
-    /** 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。 - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 -
-     * EC_P384 - SM2 - ALL
-     * 
-     * @return keySpec */
+    /**
+     * 密钥生成算法，默认为“AES_256”。查询所有（包含非对称）密钥需要指定参数“ALL”。  - AES_256  - SM4  - RSA_2048  - RSA_3072  - RSA_4096  - EC_P256  - EC_P384  - SM2  - ALL
+     * @return keySpec
+     */
     public KeySpecEnum getKeySpec() {
         return keySpec;
     }
@@ -208,9 +232,10 @@ public class ListKeysRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -253,7 +278,10 @@ public class ListKeysRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 添加保护实例标签请求体 */
+/**
+ * 添加保护实例标签请求体
+ */
 public class ProtectedInstanceAddTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ProtectedInstanceAddTagsRequestBody {
         return this;
     }
 
-    /** Get tag
-     * 
-     * @return tag */
+    /**
+     * Get tag
+     * @return tag
+     */
     public ResourceTag getTag() {
         return tag;
     }
@@ -66,7 +69,10 @@ public class ProtectedInstanceAddTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

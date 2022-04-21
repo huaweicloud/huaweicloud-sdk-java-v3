@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateServerAutoTerminateTimeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateServerAutoTerminateTimeRequestBody {
         return this;
     }
 
-    /** 销毁时间
-     * 
-     * @return autoTerminateTime */
+    /**
+     * 销毁时间
+     * @return autoTerminateTime
+     */
     public String getAutoTerminateTime() {
         return autoTerminateTime;
     }
@@ -56,7 +59,10 @@ public class UpdateServerAutoTerminateTimeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

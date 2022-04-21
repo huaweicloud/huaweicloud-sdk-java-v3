@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResScene */
+/**
+ * ResScene
+ */
 public class ResScene {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,9 +76,10 @@ public class ResScene {
         return this;
     }
 
-    /** 类型。
-     * 
-     * @return category */
+    /**
+     * 类型。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -90,9 +93,10 @@ public class ResScene {
         return this;
     }
 
-    /** 数据源id。
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源id。
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -115,9 +119,10 @@ public class ResScene {
         return this;
     }
 
-    /** Get dsConfig
-     * 
-     * @return dsConfig */
+    /**
+     * Get dsConfig
+     * @return dsConfig
+     */
     public DataConfig getDsConfig() {
         return dsConfig;
     }
@@ -131,9 +136,10 @@ public class ResScene {
         return this;
     }
 
-    /** 场景id。
-     * 
-     * @return sceneId */
+    /**
+     * 场景id。
+     * @return sceneId
+     */
     public String getSceneId() {
         return sceneId;
     }
@@ -147,9 +153,10 @@ public class ResScene {
         return this;
     }
 
-    /** 场景名称。
-     * 
-     * @return sceneName */
+    /**
+     * 场景名称。
+     * @return sceneName
+     */
     public String getSceneName() {
         return sceneName;
     }
@@ -163,9 +170,10 @@ public class ResScene {
         return this;
     }
 
-    /** 场景类型。
-     * 
-     * @return type */
+    /**
+     * 场景类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -179,9 +187,10 @@ public class ResScene {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -195,9 +204,10 @@ public class ResScene {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -211,9 +221,10 @@ public class ResScene {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -227,9 +238,10 @@ public class ResScene {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public Integer getCreatedAt() {
         return createdAt;
     }
@@ -243,9 +255,10 @@ public class ResScene {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -268,9 +281,10 @@ public class ResScene {
         return this;
     }
 
-    /** Get specsConfig
-     * 
-     * @return specsConfig */
+    /**
+     * Get specsConfig
+     * @return specsConfig
+     */
     public SpecsConfig getSpecsConfig() {
         return specsConfig;
     }
@@ -334,7 +348,10 @@ public class ResScene {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

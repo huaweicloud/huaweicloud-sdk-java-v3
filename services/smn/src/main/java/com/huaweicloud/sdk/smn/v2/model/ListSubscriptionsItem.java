@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListSubscriptionsItem */
+/**
+ * ListSubscriptionsItem
+ */
 public class ListSubscriptionsItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** Topic的唯一的资源标识。
-     * 
-     * @return topicUrn */
+    /**
+     * Topic的唯一的资源标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -64,11 +67,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** 不同协议对应不同的endpoint（接受消息的接入点）。目前支持的协议包括： \"default\": 默认协议。 “email”：邮件传输协议，endpoint为邮箱地址。
-     * “sms”：短信传输协议，endpoint为手机号码。 “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。
-     * “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。
-     * 
-     * @return protocol */
+    /**
+     * 不同协议对应不同的endpoint（接受消息的接入点）。目前支持的协议包括：  \"default\": 默认协议。  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -82,9 +84,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** 订阅者的唯一资源标识。
-     * 
-     * @return subscriptionUrn */
+    /**
+     * 订阅者的唯一资源标识。
+     * @return subscriptionUrn
+     */
     public String getSubscriptionUrn() {
         return subscriptionUrn;
     }
@@ -98,9 +101,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** Topic创建者的项目ID。
-     * 
-     * @return owner */
+    /**
+     * Topic创建者的项目ID。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -114,9 +118,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** 接受消息的接入点。
-     * 
-     * @return endpoint */
+    /**
+     * 接受消息的接入点。
+     * @return endpoint
+     */
     public String getEndpoint() {
         return endpoint;
     }
@@ -130,9 +135,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** 备注。
-     * 
-     * @return remark */
+    /**
+     * 备注。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -146,9 +152,10 @@ public class ListSubscriptionsItem {
         return this;
     }
 
-    /** 订阅者状态：0表示订阅还未确认，1表示已经确认，3表示已经取消确认。
-     * 
-     * @return status */
+    /**
+     * 订阅者状态：0表示订阅还未确认，1表示已经确认，3表示已经取消确认。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -195,7 +202,10 @@ public class ListSubscriptionsItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

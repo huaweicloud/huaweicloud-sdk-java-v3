@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPublicipPoolRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时为查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -89,9 +92,12 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -105,10 +111,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 显示，形式为\"fields=id&fields=name&...\"
-     * 支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
-     * 
-     * @return fields */
+    /**
+     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
+     * @return fields
+     */
     public String getFields() {
         return fields;
     }
@@ -122,9 +128,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 排序，形式为\"sort_key=id&sort_dir=asc\" 支持字段：id/name/created_at/updated_at/public_border_group
-     * 
-     * @return sortKey */
+    /**
+     * 排序，形式为\"sort_key=id&sort_dir=asc\"  支持字段：id/name/created_at/updated_at/public_border_group
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -138,9 +145,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 排序方向 取值范围：asc、desc
-     * 
-     * @return sortDir */
+    /**
+     * 排序方向  取值范围：asc、desc
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -154,9 +162,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据id过滤
-     * 
-     * @return id */
+    /**
+     * 根据id过滤
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -170,9 +179,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据name过滤
-     * 
-     * @return name */
+    /**
+     * 根据name过滤
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -186,9 +196,12 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据size过滤 minimum: 0 maximum: 999999
-     * 
-     * @return size */
+    /**
+     * 根据size过滤
+     * minimum: 0
+     * maximum: 999999
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -202,9 +215,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据status过滤
-     * 
-     * @return status */
+    /**
+     * 根据status过滤
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -218,9 +232,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据type过滤
-     * 
-     * @return type */
+    /**
+     * 根据type过滤
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -234,9 +249,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据description过滤
-     * 
-     * @return description */
+    /**
+     * 根据description过滤
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -250,9 +266,10 @@ public class ListPublicipPoolRequest {
         return this;
     }
 
-    /** 根据public_border_group过滤
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 根据public_border_group过滤
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -320,7 +337,10 @@ public class ListPublicipPoolRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ModifyTransTemplateReq */
+/**
+ * ModifyTransTemplateReq
+ */
 public class ModifyTransTemplateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,12 @@ public class ModifyTransTemplateReq {
         return this;
     }
 
-    /** 转码模板ID minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return templateId */
+    /**
+     * 转码模板ID 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return templateId
+     */
     public Long getTemplateId() {
         return templateId;
     }
@@ -55,9 +60,10 @@ public class ModifyTransTemplateReq {
         return this;
     }
 
-    /** 转码模板名称。
-     * 
-     * @return templateName */
+    /**
+     * 转码模板名称。 
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -80,9 +86,10 @@ public class ModifyTransTemplateReq {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public Video getVideo() {
         return video;
     }
@@ -105,9 +112,10 @@ public class ModifyTransTemplateReq {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public Audio getAudio() {
         return audio;
     }
@@ -130,9 +138,10 @@ public class ModifyTransTemplateReq {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public Common getCommon() {
         return common;
     }
@@ -175,7 +184,10 @@ public class ModifyTransTemplateReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

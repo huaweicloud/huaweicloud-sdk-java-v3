@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryRecordSetWithLineAndTagsResp */
+/**
+ * QueryRecordSetWithLineAndTagsResp
+ */
 public class QueryRecordSetWithLineAndTagsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,9 +113,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** Record Set的ID。
-     * 
-     * @return id */
+    /**
+     * Record Set的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -127,9 +130,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** Record Set的名称。
-     * 
-     * @return name */
+    /**
+     * Record Set的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -143,9 +147,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** Record Set的描述信息。
-     * 
-     * @return description */
+    /**
+     * Record Set的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -159,9 +164,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 托管该记录的zone_id。
-     * 
-     * @return zoneId */
+    /**
+     * 托管该记录的zone_id。
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -175,9 +181,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 托管该记录的zone_name。
-     * 
-     * @return zoneName */
+    /**
+     * 托管该记录的zone_name。
+     * @return zoneName
+     */
     public String getZoneName() {
         return zoneName;
     }
@@ -191,9 +198,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 记录类型。
-     * 
-     * @return type */
+    /**
+     * 记录类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -207,9 +215,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -239,9 +248,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 域名解析后的值。
-     * 
-     * @return records */
+    /**
+     * 域名解析后的值。
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -255,9 +265,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -271,9 +282,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -287,9 +299,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -303,9 +316,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
-     * 
-     * @return _default */
+    /**
+     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -319,9 +333,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 该Record Set所属的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 该Record Set所属的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -344,9 +359,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -376,9 +392,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -392,9 +409,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 解析线路ID。
-     * 
-     * @return line */
+    /**
+     * 解析线路ID。
+     * @return line
+     */
     public String getLine() {
         return line;
     }
@@ -408,9 +426,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 解析记录的权重。
-     * 
-     * @return weight */
+    /**
+     * 解析记录的权重。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -424,9 +443,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** 健康检查ID。
-     * 
-     * @return healthCheckId */
+    /**
+     * 健康检查ID。
+     * @return healthCheckId
+     */
     public String getHealthCheckId() {
         return healthCheckId;
     }
@@ -449,9 +469,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return this;
     }
 
-    /** Get aliasTarget
-     * 
-     * @return aliasTarget */
+    /**
+     * Get aliasTarget
+     * @return aliasTarget
+     */
     public AliasTarget getAliasTarget() {
         return aliasTarget;
     }
@@ -540,7 +561,10 @@ public class QueryRecordSetWithLineAndTagsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

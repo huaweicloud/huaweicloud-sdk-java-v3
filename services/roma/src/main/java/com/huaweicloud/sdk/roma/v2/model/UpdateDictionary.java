@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateDictionary */
+/**
+ * UpdateDictionary
+ */
 public class UpdateDictionary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateDictionary {
         return this;
     }
 
-    /** 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class UpdateDictionary {
         return this;
     }
 
-    /** 字典描述
-     * 
-     * @return remark */
+    /**
+     * 字典描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -70,9 +74,12 @@ public class UpdateDictionary {
         return this;
     }
 
-    /** 字典排序，值越小顺序越靠前 minimum: 1 maximum: 100
-     * 
-     * @return order */
+    /**
+     * 字典排序，值越小顺序越靠前
+     * minimum: 1
+     * maximum: 100
+     * @return order
+     */
     public Integer getOrder() {
         return order;
     }
@@ -86,9 +93,10 @@ public class UpdateDictionary {
         return this;
     }
 
-    /** 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
-     * 
-     * @return extendOne */
+    /**
+     * 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
+     * @return extendOne
+     */
     public String getExtendOne() {
         return extendOne;
     }
@@ -102,9 +110,10 @@ public class UpdateDictionary {
         return this;
     }
 
-    /** 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
-     * 
-     * @return extendTwo */
+    /**
+     * 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
+     * @return extendTwo
+     */
     public String getExtendTwo() {
         return extendTwo;
     }
@@ -146,7 +155,10 @@ public class UpdateDictionary {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

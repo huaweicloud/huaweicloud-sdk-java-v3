@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class NeutronAddFirewallRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略ID
-     * 
-     * @return id */
+    /**
+     * 功能说明：网络ACL策略ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -73,9 +76,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略名称
-     * 
-     * @return name */
+    /**
+     * 功能说明：网络ACL策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -89,9 +93,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略的描述信息 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：网络ACL策略的描述信息 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -121,9 +126,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略关联的规则的ID列表
-     * 
-     * @return firewallRules */
+    /**
+     * 功能说明：网络ACL策略关联的规则的ID列表
+     * @return firewallRules
+     */
     public List<String> getFirewallRules() {
         return firewallRules;
     }
@@ -137,9 +143,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：每次policy或者它相关的rule有变动，该参数将会被置为False
-     * 
-     * @return audited */
+    /**
+     * 功能说明：每次policy或者它相关的rule有变动，该参数将会被置为False
+     * @return audited
+     */
     public Boolean getAudited() {
         return audited;
     }
@@ -153,9 +160,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略是否对其他网络ACL策略可见 取值范围：true(可见)、false(不可见)
-     * 
-     * @return _public */
+    /**
+     * 功能说明：网络ACL策略是否对其他网络ACL策略可见 取值范围：true(可见)、false(不可见)
+     * @return _public
+     */
     public Boolean getPublic() {
         return _public;
     }
@@ -169,9 +177,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略所属项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 功能说明：网络ACL策略所属项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -185,9 +194,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：网络ACL策略所属项目ID
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：网络ACL策略所属项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -236,7 +246,10 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

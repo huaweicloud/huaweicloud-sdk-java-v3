@@ -19,36 +19,64 @@ public class SaAsyncClient {
         return new ClientBuilder<>(SaAsyncClient::new);
     }
 
-    /** 检查心跳健康 SA提供心跳接口，集成产品定时（例如：每五分钟）发送心跳报文到SA，用来确认集成产品与SA之间的通路是否健康。
+    /**
+     * 检查心跳健康
+     *
+     * SA提供心跳接口，集成产品定时（例如：每五分钟）发送心跳报文到SA，用来确认集成产品与SA之间的通路是否健康。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckProductHealthyRequest 请求对象
-     * @return CompletableFuture<CheckProductHealthyResponse> */
+     * @return CompletableFuture<CheckProductHealthyResponse>
+     */
     public CompletableFuture<CheckProductHealthyResponse> checkProductHealthyAsync(CheckProductHealthyRequest request) {
         return hcClient.asyncInvokeHttp(request, SaMeta.checkProductHealthy);
     }
 
-    /** 检查心跳健康 SA提供心跳接口，集成产品定时（例如：每五分钟）发送心跳报文到SA，用来确认集成产品与SA之间的通路是否健康。
+    /**
+     * 检查心跳健康
+     *
+     * SA提供心跳接口，集成产品定时（例如：每五分钟）发送心跳报文到SA，用来确认集成产品与SA之间的通路是否健康。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckProductHealthyRequest 请求对象
-     * @return AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse> */
+     * @return AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>
+     */
     public AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse> checkProductHealthyAsyncInvoker(
         CheckProductHealthyRequest request) {
         return new AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>(request,
             SaMeta.checkProductHealthy, hcClient);
     }
 
-    /** 上报安全产品数据(V2) 批量数据上报，每批次最多不超过50条。
+    /**
+     * 上报安全产品数据(V2)
+     *
+     * 批量数据上报，每批次最多不超过50条。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportEventsRequest 请求对象
-     * @return CompletableFuture<ImportEventsResponse> */
+     * @return CompletableFuture<ImportEventsResponse>
+     */
     public CompletableFuture<ImportEventsResponse> importEventsAsync(ImportEventsRequest request) {
         return hcClient.asyncInvokeHttp(request, SaMeta.importEvents);
     }
 
-    /** 上报安全产品数据(V2) 批量数据上报，每批次最多不超过50条。
+    /**
+     * 上报安全产品数据(V2)
+     *
+     * 批量数据上报，每批次最多不超过50条。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportEventsRequest 请求对象
-     * @return AsyncInvoker<ImportEventsRequest, ImportEventsResponse> */
+     * @return AsyncInvoker<ImportEventsRequest, ImportEventsResponse>
+     */
     public AsyncInvoker<ImportEventsRequest, ImportEventsResponse> importEventsAsyncInvoker(
         ImportEventsRequest request) {
         return new AsyncInvoker<ImportEventsRequest, ImportEventsResponse>(request, SaMeta.importEvents, hcClient);

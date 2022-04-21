@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingPolicyExecuteLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ListScalingPolicyExecuteLogsRequest {
 
     private String logId;
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
+     */
     public static final class ScalingResourceTypeEnum {
 
-        /** Enum SCALING_GROUP for value: "SCALING_GROUP" */
+        /**
+         * Enum SCALING_GROUP for value: "SCALING_GROUP"
+         */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
 
-        /** Enum BANDWIDTH for value: "BANDWIDTH" */
+        /**
+         * Enum BANDWIDTH for value: "BANDWIDTH"
+         */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
 
         private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,19 +112,29 @@ public class ListScalingPolicyExecuteLogsRequest {
 
     private String scalingResourceId;
 
-    /** 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。 */
+    /**
+     * 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
+     */
     public static final class ExecuteTypeEnum {
 
-        /** Enum SCHEDULED for value: "SCHEDULED" */
+        /**
+         * Enum SCHEDULED for value: "SCHEDULED"
+         */
         public static final ExecuteTypeEnum SCHEDULED = new ExecuteTypeEnum("SCHEDULED");
 
-        /** Enum RECURRENCE for value: "RECURRENCE" */
+        /**
+         * Enum RECURRENCE for value: "RECURRENCE"
+         */
         public static final ExecuteTypeEnum RECURRENCE = new ExecuteTypeEnum("RECURRENCE");
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ExecuteTypeEnum ALARM = new ExecuteTypeEnum("ALARM");
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final ExecuteTypeEnum MANUAL = new ExecuteTypeEnum("MANUAL");
 
         private static final Map<String, ExecuteTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -213,9 +231,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -229,9 +248,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 日志ID。
-     * 
-     * @return logId */
+    /**
+     * 日志ID。
+     * @return logId
+     */
     public String getLogId() {
         return logId;
     }
@@ -245,9 +265,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
-     * 
-     * @return scalingResourceType */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
+     * @return scalingResourceType
+     */
     public ScalingResourceTypeEnum getScalingResourceType() {
         return scalingResourceType;
     }
@@ -261,9 +282,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 伸缩资源ID。
-     * 
-     * @return scalingResourceId */
+    /**
+     * 伸缩资源ID。
+     * @return scalingResourceId
+     */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -277,9 +299,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
-     * 
-     * @return executeType */
+    /**
+     * 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
+     * @return executeType
+     */
     public ExecuteTypeEnum getExecuteType() {
         return executeType;
     }
@@ -293,9 +316,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return startTime */
+    /**
+     * 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -309,9 +333,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return endTime */
+    /**
+     * 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -325,9 +350,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -341,9 +367,11 @@ public class ListScalingPolicyExecuteLogsRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -403,7 +431,10 @@ public class ListScalingPolicyExecuteLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateApplicationRequestBody */
+/**
+ * UpdateApplicationRequestBody
+ */
 public class UpdateApplicationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateApplicationRequestBody {
         return this;
     }
 
-    /** 对于HMS平台是APP ID，只能包含英文字母和数字，最大20个字符。 对于苹果APNS、APNS_SandBox平台是推送证书，大小不超过8K，且是Base64编码。
-     * 
-     * @return platformPrincipal */
+    /**
+     * 对于HMS平台是APP ID，只能包含英文字母和数字，最大20个字符。  对于苹果APNS、APNS_SandBox平台是推送证书，大小不超过8K，且是Base64编码。
+     * @return platformPrincipal
+     */
     public String getPlatformPrincipal() {
         return platformPrincipal;
     }
@@ -39,9 +42,10 @@ public class UpdateApplicationRequestBody {
         return this;
     }
 
-    /** 对于HMS平台是APP SECRET， 只能包含英文字母和数字，32到64个字符。 对于苹果APNS、APNS_SandBox平台是推送证书的私钥（private key）， 大小不超过8K，且是Base64编码。
-     * 
-     * @return platformCredential */
+    /**
+     * 对于HMS平台是APP SECRET， 只能包含英文字母和数字，32到64个字符。  对于苹果APNS、APNS_SandBox平台是推送证书的私钥（private key）， 大小不超过8K，且是Base64编码。
+     * @return platformCredential
+     */
     public String getPlatformCredential() {
         return platformCredential;
     }
@@ -78,7 +82,10 @@ public class UpdateApplicationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowProtectableRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ShowProtectableRequest {
 
     private String instanceId;
 
-    /** 可保护性类型 */
+    /**
+     * 可保护性类型
+     */
     public static final class ProtectableTypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final ProtectableTypeEnum SERVER = new ProtectableTypeEnum("server");
 
-        /** Enum DISK for value: "disk" */
+        /**
+         * Enum DISK for value: "disk"
+         */
         public static final ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
         private static final Map<String, ProtectableTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ShowProtectableRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return instanceId */
+    /**
+     * 资源ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -115,9 +124,10 @@ public class ShowProtectableRequest {
         return this;
     }
 
-    /** 可保护性类型
-     * 
-     * @return protectableType */
+    /**
+     * 可保护性类型
+     * @return protectableType
+     */
     public ProtectableTypeEnum getProtectableType() {
         return protectableType;
     }
@@ -154,7 +164,10 @@ public class ShowProtectableRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

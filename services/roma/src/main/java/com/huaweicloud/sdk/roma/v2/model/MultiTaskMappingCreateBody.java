@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskMappingCreateBody */
+/**
+ * MultiTaskMappingCreateBody
+ */
 public class MultiTaskMappingCreateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,9 +67,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** Get extInfo
-     * 
-     * @return extInfo */
+    /**
+     * Get extInfo
+     * @return extInfo
+     */
     public MultiTaskInitElementExtInfo getExtInfo() {
         return extInfo;
     }
@@ -81,9 +84,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -97,9 +101,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -129,9 +134,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 源端字段列表
-     * 
-     * @return sourceColumns */
+    /**
+     * 源端字段列表
+     * @return sourceColumns
+     */
     public List<MultiTaskColumnInfo> getSourceColumns() {
         return sourceColumns;
     }
@@ -161,9 +167,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 目标端字段列表
-     * 
-     * @return targetColumns */
+    /**
+     * 目标端字段列表
+     * @return targetColumns
+     */
     public List<MultiTaskColumnInfo> getTargetColumns() {
         return targetColumns;
     }
@@ -177,9 +184,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 源表名
-     * 
-     * @return sourceTable */
+    /**
+     * 源表名
+     * @return sourceTable
+     */
     public String getSourceTable() {
         return sourceTable;
     }
@@ -193,9 +201,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 目标表名
-     * 
-     * @return targetTable */
+    /**
+     * 目标表名
+     * @return targetTable
+     */
     public String getTargetTable() {
         return targetTable;
     }
@@ -225,9 +234,10 @@ public class MultiTaskMappingCreateBody {
         return this;
     }
 
-    /** 字段映射列表
-     * 
-     * @return mappingColumns */
+    /**
+     * 字段映射列表
+     * @return mappingColumns
+     */
     public List<MappingInfo> getMappingColumns() {
         return mappingColumns;
     }
@@ -283,7 +293,10 @@ public class MultiTaskMappingCreateBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

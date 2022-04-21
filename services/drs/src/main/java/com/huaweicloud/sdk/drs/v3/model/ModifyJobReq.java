@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改任务描述信息、名称，设置异常通知信息、限速等。 */
+/**
+ * 修改任务描述信息、名称，设置异常通知信息、限速等。
+ */
 public class ModifyJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,16 +38,24 @@ public class ModifyJobReq {
 
     private AlarmNotifyInfo alarmNotify;
 
-    /** 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。 */
+    /**
+     * 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum FULL_TRANS for value: "FULL_TRANS" */
+        /**
+         * Enum FULL_TRANS for value: "FULL_TRANS"
+         */
         public static final TaskTypeEnum FULL_TRANS = new TaskTypeEnum("FULL_TRANS");
 
-        /** Enum INCR_TRANS for value: "INCR_TRANS" */
+        /**
+         * Enum INCR_TRANS for value: "INCR_TRANS"
+         */
         public static final TaskTypeEnum INCR_TRANS = new TaskTypeEnum("INCR_TRANS");
 
-        /** Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS" */
+        /**
+         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
+         */
         public static final TaskTypeEnum FULL_INCR_TRANS = new TaskTypeEnum("FULL_INCR_TRANS");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -126,10 +136,14 @@ public class ModifyJobReq {
 
     private Endpoint targetEndpoint;
 
-    /** node规格类型，测试连接之后修改调用时必填。 */
+    /**
+     * node规格类型，测试连接之后修改调用时必填。
+     */
     public static final class NodeTypeEnum {
 
-        /** Enum HIGH for value: "high" */
+        /**
+         * Enum HIGH for value: "high"
+         */
         public static final NodeTypeEnum HIGH = new NodeTypeEnum("high");
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -198,16 +212,24 @@ public class ModifyJobReq {
 
     private NodeTypeEnum nodeType;
 
-    /** 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用 */
+    /**
+     * 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
+     */
     public static final class EngineTypeEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
 
-        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
+        /**
+         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -278,16 +300,24 @@ public class ModifyJobReq {
 
     private EngineTypeEnum engineType;
 
-    /** 网络类型，测试连接之后修改调用时必填。 */
+    /**
+     * 网络类型，测试连接之后修改调用时必填。
+     */
     public static final class NetTypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
 
-        /** Enum EIP for value: "eip" */
+        /**
+         * Enum EIP for value: "eip"
+         */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -368,16 +398,24 @@ public class ModifyJobReq {
 
     private Boolean isRecreate;
 
-    /** 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建 */
+    /**
+     * 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP for value: "up" */
+        /**
+         * Enum UP for value: "up"
+         */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
 
-        /** Enum DOWN for value: "down" */
+        /**
+         * Enum DOWN for value: "down"
+         */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
-        /** Enum NON_DBS for value: "non-dbs" */
+        /**
+         * Enum NON_DBS for value: "non-dbs"
+         */
         public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -463,16 +501,24 @@ public class ModifyJobReq {
 
     private List<ResourceTag> tags = null;
 
-    /** 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备 */
+    /**
+    * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+    */
     public static final class DbUseTypeEnum {
 
-        /** Enum MIGRATION for value: "migration" */
+        /**
+         * Enum MIGRATION for value: "migration"
+         */
         public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
 
-        /** Enum CLOUDDATAGUARD for value: "cloudDataGuard" */
+        /**
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
+         */
         public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -553,9 +599,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -569,9 +616,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 任务描述，修改任务描述时必填。
-     * 
-     * @return description */
+    /**
+     * 任务描述，修改任务描述时必填。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -585,9 +633,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 任务名称，修改任务名称时必填
-     * 
-     * @return name */
+    /**
+     * 任务名称，修改任务名称时必填
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -610,9 +659,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** Get alarmNotify
-     * 
-     * @return alarmNotify */
+    /**
+     * Get alarmNotify
+     * @return alarmNotify
+     */
     public AlarmNotifyInfo getAlarmNotify() {
         return alarmNotify;
     }
@@ -626,9 +676,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
-     * 
-     * @return taskType */
+    /**
+     * 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -651,9 +702,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** Get sourceEndpoint
-     * 
-     * @return sourceEndpoint */
+    /**
+     * Get sourceEndpoint
+     * @return sourceEndpoint
+     */
     public Endpoint getSourceEndpoint() {
         return sourceEndpoint;
     }
@@ -676,9 +728,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** Get targetEndpoint
-     * 
-     * @return targetEndpoint */
+    /**
+     * Get targetEndpoint
+     * @return targetEndpoint
+     */
     public Endpoint getTargetEndpoint() {
         return targetEndpoint;
     }
@@ -692,9 +745,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** node规格类型，测试连接之后修改调用时必填。
-     * 
-     * @return nodeType */
+    /**
+     * node规格类型，测试连接之后修改调用时必填。
+     * @return nodeType
+     */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -708,9 +762,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
-     * 
-     * @return engineType */
+    /**
+     * 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
+     * @return engineType
+     */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -724,9 +779,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 网络类型，测试连接之后修改调用时必填。
-     * 
-     * @return netType */
+    /**
+     * 网络类型，测试连接之后修改调用时必填。
+     * @return netType
+     */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -740,9 +796,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 保存数据库信息，测试连接之后修改调用时必填为true。
-     * 
-     * @return storeDbInfo */
+    /**
+     * 保存数据库信息，测试连接之后修改调用时必填为true。
+     * @return storeDbInfo
+     */
     public Boolean getStoreDbInfo() {
         return storeDbInfo;
     }
@@ -756,9 +813,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 是否为重建任务。
-     * 
-     * @return isRecreate */
+    /**
+     * 是否为重建任务。
+     * @return isRecreate
+     */
     public Boolean getIsRecreate() {
         return isRecreate;
     }
@@ -772,9 +830,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
-     * 
-     * @return jobDirection */
+    /**
+     * 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -788,9 +847,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 目标实例是否限制为只读。
-     * 
-     * @return isTargetReadonly */
+    /**
+     * 目标实例是否限制为只读。
+     * @return isTargetReadonly
+     */
     public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
@@ -804,10 +864,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 所有Definer是否迁移到该用户下，MySQL数据库支持该设置，测试连接之后修改调用时必填。 - true：迁移后，所有源数据库对象的Definer都会迁移至该用户下，其他用户需要授权后才具有数据库对象权限 -
-     * false：迁移后，将保持源数据库对象Definer定义不变，选择此选项，需要配合下一步用户权限迁移功能，将源数据库的用户全部迁移，这样才能保持源数据库的权限体系完全不变。
-     * 
-     * @return replaceDefiner */
+    /**
+     * 所有Definer是否迁移到该用户下，MySQL数据库支持该设置，测试连接之后修改调用时必填。 - true：迁移后，所有源数据库对象的Definer都会迁移至该用户下，其他用户需要授权后才具有数据库对象权限 - false：迁移后，将保持源数据库对象Definer定义不变，选择此选项，需要配合下一步用户权限迁移功能，将源数据库的用户全部迁移，这样才能保持源数据库的权限体系完全不变。
+     * @return replaceDefiner
+     */
     public Boolean getReplaceDefiner() {
         return replaceDefiner;
     }
@@ -837,9 +897,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 标签信息
-     * 
-     * @return tags */
+    /**
+     * 标签信息
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -853,9 +914,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
-     * 
-     * @return dbUseType */
+    /**
+     * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     * @return dbUseType
+     */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -869,9 +931,10 @@ public class ModifyJobReq {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -956,7 +1019,10 @@ public class ModifyJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

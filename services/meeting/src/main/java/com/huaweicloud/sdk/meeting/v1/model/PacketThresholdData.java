@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 丢包率阈值查询结果结构体 */
+/**
+ * 丢包率阈值查询结果结构体
+ */
 public class PacketThresholdData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class PacketThresholdData {
         return this;
     }
 
-    /** 自定义接收方向阈值，单位为百分比(%) minimum: 0 maximum: 100
-     * 
-     * @return receiving */
+    /**
+     * 自定义接收方向阈值，单位为百分比(%)
+     * minimum: 0
+     * maximum: 100
+     * @return receiving
+     */
     public Integer getReceiving() {
         return receiving;
     }
@@ -49,9 +54,12 @@ public class PacketThresholdData {
         return this;
     }
 
-    /** 默认接收方向阈值，单位为百分比(%) minimum: 0 maximum: 100
-     * 
-     * @return receivingDefault */
+    /**
+     * 默认接收方向阈值，单位为百分比(%)
+     * minimum: 0
+     * maximum: 100
+     * @return receivingDefault
+     */
     public Integer getReceivingDefault() {
         return receivingDefault;
     }
@@ -65,9 +73,12 @@ public class PacketThresholdData {
         return this;
     }
 
-    /** 自定义发送方向阈值，单位为百分比(%) minimum: 0 maximum: 100
-     * 
-     * @return sending */
+    /**
+     * 自定义发送方向阈值，单位为百分比(%)
+     * minimum: 0
+     * maximum: 100
+     * @return sending
+     */
     public Integer getSending() {
         return sending;
     }
@@ -81,9 +92,12 @@ public class PacketThresholdData {
         return this;
     }
 
-    /** 默认发送方向阈值，单位为百分比(%) minimum: 0 maximum: 100
-     * 
-     * @return sendingDefault */
+    /**
+     * 默认发送方向阈值，单位为百分比(%)
+     * minimum: 0
+     * maximum: 100
+     * @return sendingDefault
+     */
     public Integer getSendingDefault() {
         return sendingDefault;
     }
@@ -124,7 +138,10 @@ public class PacketThresholdData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

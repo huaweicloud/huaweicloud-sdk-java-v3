@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchQosParticipantDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class SearchQosParticipantDetailRequest {
 
     private String confUUID;
 
-    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。 */
+    /**
+     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     */
     public static final class ConfTypeEnum {
 
-        /** Enum ONLINE for value: "online" */
+        /**
+         * Enum ONLINE for value: "online"
+         */
         public static final ConfTypeEnum ONLINE = new ConfTypeEnum("online");
 
-        /** Enum HISTORY for value: "history" */
+        /**
+         * Enum HISTORY for value: "history"
+         */
         public static final ConfTypeEnum HISTORY = new ConfTypeEnum("history");
 
         private static final Map<String, ConfTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,19 +107,29 @@ public class SearchQosParticipantDetailRequest {
 
     private String participantID;
 
-    /** Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。 */
+    /**
+     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
+     */
     public static final class QosTypeEnum {
 
-        /** Enum AUDIO for value: "audio" */
+        /**
+         * Enum AUDIO for value: "audio"
+         */
         public static final QosTypeEnum AUDIO = new QosTypeEnum("audio");
 
-        /** Enum VIDEO for value: "video" */
+        /**
+         * Enum VIDEO for value: "video"
+         */
         public static final QosTypeEnum VIDEO = new QosTypeEnum("video");
 
-        /** Enum SCREEN for value: "screen" */
+        /**
+         * Enum SCREEN for value: "screen"
+         */
         public static final QosTypeEnum SCREEN = new QosTypeEnum("screen");
 
-        /** Enum CPU for value: "cpu" */
+        /**
+         * Enum CPU for value: "cpu"
+         */
         public static final QosTypeEnum CPU = new QosTypeEnum("cpu");
 
         private static final Map<String, QosTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -188,9 +206,10 @@ public class SearchQosParticipantDetailRequest {
         return this;
     }
 
-    /** 会议UUID。最大不超过64个字节。
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID。最大不超过64个字节。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -204,9 +223,10 @@ public class SearchQosParticipantDetailRequest {
         return this;
     }
 
-    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     * 
-     * @return confType */
+    /**
+     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * @return confType
+     */
     public ConfTypeEnum getConfType() {
         return confType;
     }
@@ -220,9 +240,10 @@ public class SearchQosParticipantDetailRequest {
         return this;
     }
 
-    /** 与会者ID。最大不超过64个字节。
-     * 
-     * @return participantID */
+    /**
+     * 与会者ID。最大不超过64个字节。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -236,9 +257,10 @@ public class SearchQosParticipantDetailRequest {
         return this;
     }
 
-    /** Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
-     * 
-     * @return qosType */
+    /**
+     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
+     * @return qosType
+     */
     public QosTypeEnum getQosType() {
         return qosType;
     }
@@ -279,7 +301,10 @@ public class SearchQosParticipantDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

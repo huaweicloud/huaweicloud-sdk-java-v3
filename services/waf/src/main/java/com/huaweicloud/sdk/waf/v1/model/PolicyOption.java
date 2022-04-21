@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 选项 */
+/**
+ * 选项
+ */
 public class PolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,9 +105,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 基础防护是否开启
-     * 
-     * @return webattack */
+    /**
+     * 基础防护是否开启
+     * @return webattack
+     */
     public Boolean getWebattack() {
         return webattack;
     }
@@ -119,9 +122,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 常规检测是否开启
-     * 
-     * @return common */
+    /**
+     * 常规检测是否开启
+     * @return common
+     */
     public Boolean getCommon() {
         return common;
     }
@@ -135,9 +139,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 反爬虫是否开启
-     * 
-     * @return crawler */
+    /**
+     * 反爬虫是否开启
+     * @return crawler
+     */
     public Boolean getCrawler() {
         return crawler;
     }
@@ -151,9 +156,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 搜索engine是否开启
-     * 
-     * @return crawlerEngine */
+    /**
+     * 搜索engine是否开启
+     * @return crawlerEngine
+     */
     public Boolean getCrawlerEngine() {
         return crawlerEngine;
     }
@@ -167,9 +173,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 反爬虫检测是否开启
-     * 
-     * @return crawlerScanner */
+    /**
+     * 反爬虫检测是否开启
+     * @return crawlerScanner
+     */
     public Boolean getCrawlerScanner() {
         return crawlerScanner;
     }
@@ -183,9 +190,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 脚本反爬虫是否开启
-     * 
-     * @return crawlerScript */
+    /**
+     * 脚本反爬虫是否开启
+     * @return crawlerScript
+     */
     public Boolean getCrawlerScript() {
         return crawlerScript;
     }
@@ -199,9 +207,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 其他爬虫是否开启
-     * 
-     * @return crawlerOther */
+    /**
+     * 其他爬虫是否开启
+     * @return crawlerOther
+     */
     public Boolean getCrawlerOther() {
         return crawlerOther;
     }
@@ -215,9 +224,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** Webshell检测是否开启
-     * 
-     * @return webshell */
+    /**
+     * Webshell检测是否开启
+     * @return webshell
+     */
     public Boolean getWebshell() {
         return webshell;
     }
@@ -231,9 +241,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** cc规则是否开启
-     * 
-     * @return cc */
+    /**
+     * cc规则是否开启
+     * @return cc
+     */
     public Boolean getCc() {
         return cc;
     }
@@ -247,9 +258,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 精准防护是否开启
-     * 
-     * @return custom */
+    /**
+     * 精准防护是否开启
+     * @return custom
+     */
     public Boolean getCustom() {
         return custom;
     }
@@ -263,9 +275,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 黑白名单防护是否开启
-     * 
-     * @return whiteblackip */
+    /**
+     * 黑白名单防护是否开启
+     * @return whiteblackip
+     */
     public Boolean getWhiteblackip() {
         return whiteblackip;
     }
@@ -279,9 +292,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 地理位置访问控制规则是否开启
-     * 
-     * @return geoip */
+    /**
+     * 地理位置访问控制规则是否开启
+     * @return geoip
+     */
     public Boolean getGeoip() {
         return geoip;
     }
@@ -295,9 +309,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 误报屏蔽是否开启
-     * 
-     * @return ignore */
+    /**
+     * 误报屏蔽是否开启
+     * @return ignore
+     */
     public Boolean getIgnore() {
         return ignore;
     }
@@ -311,9 +326,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 隐私屏蔽是否开启
-     * 
-     * @return privacy */
+    /**
+     * 隐私屏蔽是否开启
+     * @return privacy
+     */
     public Boolean getPrivacy() {
         return privacy;
     }
@@ -327,9 +343,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 网页防篡改规则是否开启
-     * 
-     * @return antitamper */
+    /**
+     * 网页防篡改规则是否开启
+     * @return antitamper
+     */
     public Boolean getAntitamper() {
         return antitamper;
     }
@@ -343,9 +360,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 防敏感信息泄露规则是否开启
-     * 
-     * @return antileakage */
+    /**
+     * 防敏感信息泄露规则是否开启
+     * @return antileakage
+     */
     public Boolean getAntileakage() {
         return antileakage;
     }
@@ -359,9 +377,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** 防网络机器人攻击是否开启
-     * 
-     * @return botEnable */
+    /**
+     * 防网络机器人攻击是否开启
+     * @return botEnable
+     */
     public Boolean getBotEnable() {
         return botEnable;
     }
@@ -375,9 +394,10 @@ public class PolicyOption {
         return this;
     }
 
-    /** modulex智能cc防护是否开启，该特性是公测特性，在公测期间，只支持仅记录模式。
-     * 
-     * @return modulexEnabled */
+    /**
+     * modulex智能cc防护是否开启，该特性是公测特性，在公测期间，只支持仅记录模式。
+     * @return modulexEnabled
+     */
     public Boolean getModulexEnabled() {
         return modulexEnabled;
     }
@@ -460,7 +480,10 @@ public class PolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** mock后端详情 */
+/**
+ * mock后端详情
+ */
 public class ApiMock {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -70,9 +73,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 返回结果
-     * 
-     * @return resultContent */
+    /**
+     * 返回结果
+     * @return resultContent
+     */
     public String getResultContent() {
         return resultContent;
     }
@@ -86,9 +90,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 版本。字符长度不超过64
-     * 
-     * @return version */
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -102,9 +107,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 后端自定义认证ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -118,9 +124,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -134,9 +141,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 注册时间
-     * 
-     * @return registerTime */
+    /**
+     * 注册时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -150,9 +158,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 后端状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * 后端状态   - 1： 有效
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -166,9 +175,10 @@ public class ApiMock {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -213,7 +223,10 @@ public class ApiMock {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

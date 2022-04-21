@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Kafka Server地址 */
+/**
+ * Kafka Server地址
+ */
 public class KafkaBrokerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class KafkaBrokerInfo {
         return this;
     }
 
-    /** IP
-     * 
-     * @return ip */
+    /**
+     * IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -39,9 +42,12 @@ public class KafkaBrokerInfo {
         return this;
     }
 
-    /** Port minimum: 0 maximum: 65536
-     * 
-     * @return port */
+    /**
+     * Port
+     * minimum: 0
+     * maximum: 65536
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -77,7 +83,10 @@ public class KafkaBrokerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

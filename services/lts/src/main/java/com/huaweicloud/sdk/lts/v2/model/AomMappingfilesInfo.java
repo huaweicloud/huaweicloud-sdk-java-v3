@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AomMappingfilesInfo */
+/**
+ * AomMappingfilesInfo
+ */
 public class AomMappingfilesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class AomMappingfilesInfo {
         return this;
     }
 
-    /** 路径名
-     * 
-     * @return fileName */
+    /**
+     * 路径名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -49,9 +52,10 @@ public class AomMappingfilesInfo {
         return this;
     }
 
-    /** Get logStreamInfo
-     * 
-     * @return logStreamInfo */
+    /**
+     * Get logStreamInfo
+     * @return logStreamInfo
+     */
     public AomMappingLogStreamInfo getLogStreamInfo() {
         return logStreamInfo;
     }
@@ -88,7 +92,10 @@ public class AomMappingfilesInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

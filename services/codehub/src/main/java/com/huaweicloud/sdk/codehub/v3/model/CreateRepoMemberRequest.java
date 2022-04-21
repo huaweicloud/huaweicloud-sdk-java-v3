@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateRepoMemberRequest */
+/**
+ * CreateRepoMemberRequest
+ */
 public class CreateRepoMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class CreateRepoMemberRequest {
         return this;
     }
 
-    /** 添加用户的信息列表
-     * 
-     * @return users */
+    /**
+     * 添加用户的信息列表
+     * @return users
+     */
     public List<RepoMemberInfo> getUsers() {
         return users;
     }
@@ -74,7 +77,10 @@ public class CreateRepoMemberRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

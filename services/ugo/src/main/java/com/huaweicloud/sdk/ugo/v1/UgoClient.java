@@ -17,54 +17,96 @@ public class UgoClient {
         return new ClientBuilder<>(UgoClient::new);
     }
 
-    /** 查询当前支持的API版本信息列表 查询当前支持的API版本信息列表。
+    /**
+     * 查询当前支持的API版本信息列表
+     *
+     * 查询当前支持的API版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
-     * @return ListApiVersionsResponse */
+     * @return ListApiVersionsResponse
+     */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, UgoMeta.listApiVersions);
     }
 
-    /** 查询当前支持的API版本信息列表 查询当前支持的API版本信息列表。
+    /**
+     * 查询当前支持的API版本信息列表
+     *
+     * 查询当前支持的API版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
-     * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> */
+     * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
         return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, UgoMeta.listApiVersions,
             hcClient);
     }
 
-    /** 查询指定API版本信息 查询指定API版本信息。
+    /**
+     * 查询指定API版本信息
+     *
+     * 查询指定API版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
-     * @return ShowApiVersionResponse */
+     * @return ShowApiVersionResponse
+     */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, UgoMeta.showApiVersion);
     }
 
-    /** 查询指定API版本信息 查询指定API版本信息。
+    /**
+     * 查询指定API版本信息
+     *
+     * 查询指定API版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
-     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> */
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
         return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, UgoMeta.showApiVersion,
             hcClient);
     }
 
-    /** SQL翻译接口 实现源库与目标数据之间SQL语句的自动翻译
+    /**
+     * SQL翻译接口
+     *
+     * 实现源库与目标数据之间SQL语句的自动翻译
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param MigrateSqlStatementRequest 请求对象
-     * @return MigrateSqlStatementResponse */
+     * @return MigrateSqlStatementResponse
+     */
     public MigrateSqlStatementResponse migrateSqlStatement(MigrateSqlStatementRequest request) {
         return hcClient.syncInvokeHttp(request, UgoMeta.migrateSqlStatement);
     }
 
-    /** SQL翻译接口 实现源库与目标数据之间SQL语句的自动翻译
+    /**
+     * SQL翻译接口
+     *
+     * 实现源库与目标数据之间SQL语句的自动翻译
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param MigrateSqlStatementRequest 请求对象
-     * @return SyncInvoker<MigrateSqlStatementRequest, MigrateSqlStatementResponse> */
+     * @return SyncInvoker<MigrateSqlStatementRequest, MigrateSqlStatementResponse>
+     */
     public SyncInvoker<MigrateSqlStatementRequest, MigrateSqlStatementResponse> migrateSqlStatementInvoker(
         MigrateSqlStatementRequest request) {
         return new SyncInvoker<MigrateSqlStatementRequest, MigrateSqlStatementResponse>(request,

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 对象选择返回体 */
+/**
+ * 对象选择返回体
+ */
 public class DatabaseObjectResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DatabaseObjectResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -49,9 +52,10 @@ public class DatabaseObjectResp {
         return this;
     }
 
-    /** 选择对象任务成功标志
-     * 
-     * @return status */
+    /**
+     * 选择对象任务成功标志
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -65,9 +69,10 @@ public class DatabaseObjectResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class DatabaseObjectResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -124,7 +130,10 @@ public class DatabaseObjectResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

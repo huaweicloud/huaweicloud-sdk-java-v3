@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RemoveNodesTask */
+/**
+ * RemoveNodesTask
+ */
 public class RemoveNodesTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class RemoveNodesTask {
         return this;
     }
 
-    /** API版本，固定值“v3”。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -50,9 +53,10 @@ public class RemoveNodesTask {
         return this;
     }
 
-    /** API类型，固定值“RemoveNodesTask”。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“RemoveNodesTask”。
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -75,9 +79,10 @@ public class RemoveNodesTask {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public RemoveNodesSpec getSpec() {
         return spec;
     }
@@ -100,9 +105,10 @@ public class RemoveNodesTask {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public TaskStatus getStatus() {
         return status;
     }
@@ -142,7 +148,10 @@ public class RemoveNodesTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

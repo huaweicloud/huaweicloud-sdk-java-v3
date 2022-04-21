@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 连接信息。 */
+/**
+ * 连接信息。
+ */
 public class Connections {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Connections {
         return this;
     }
 
-    /** 终端节点ID。
-     * 
-     * @return id */
+    /**
+     * 终端节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class Connections {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +84,10 @@ public class Connections {
         return this;
     }
 
-    /** 最大连接数。
-     * 
-     * @return maxSession */
+    /**
+     * 最大连接数。
+     * @return maxSession
+     */
     public String getMaxSession() {
         return maxSession;
     }
@@ -96,9 +101,10 @@ public class Connections {
         return this;
     }
 
-    /** 终端节点名称。
-     * 
-     * @return specificationName */
+    /**
+     * 终端节点名称。
+     * @return specificationName
+     */
     public String getSpecificationName() {
         return specificationName;
     }
@@ -112,9 +118,10 @@ public class Connections {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -128,9 +135,10 @@ public class Connections {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -144,9 +152,10 @@ public class Connections {
         return this;
     }
 
-    /** 拥有者。
-     * 
-     * @return domainId */
+    /**
+     * 拥有者。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -192,7 +201,10 @@ public class Connections {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApplicationBaseV3 */
+/**
+ * ApplicationBaseV3
+ */
 public class ApplicationBaseV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return id */
+    /**
+     * 应用id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return name */
+    /**
+     * 应用名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return description */
+    /**
+     * 应用描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,9 +106,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -117,9 +123,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return regionName */
+    /**
+     * 区域名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -133,9 +140,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 所属项目id
-     * 
-     * @return projectId */
+    /**
+     * 所属项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -149,9 +157,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -165,9 +174,10 @@ public class ApplicationBaseV3 {
         return this;
     }
 
-    /** 应用图标
-     * 
-     * @return icon */
+    /**
+     * 应用图标
+     * @return icon
+     */
     public String getIcon() {
         return icon;
     }
@@ -215,7 +225,10 @@ public class ApplicationBaseV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

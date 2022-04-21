@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 历史召开研讨会议信息 */
+/**
+ * 历史召开研讨会议信息
+ */
 public class OpenWebinarHistoryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议id
-     * 
-     * @return conferenceId */
+    /**
+     * 会议id
+     * @return conferenceId
+     */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -124,9 +127,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议UUID
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -140,9 +144,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 主题
-     * 
-     * @return subject */
+    /**
+     * 主题
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -156,9 +161,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议订阅者
-     * 
-     * @return scheduserName */
+    /**
+     * 会议订阅者
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -172,9 +178,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议主持人
-     * 
-     * @return moderator */
+    /**
+     * 会议主持人
+     * @return moderator
+     */
     public String getModerator() {
         return moderator;
     }
@@ -188,9 +195,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -204,9 +212,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 时区ID
-     * 
-     * @return timeZoneId */
+    /**
+     * 时区ID
+     * @return timeZoneId
+     */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -220,9 +229,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议预约时间
-     * 
-     * @return startTime */
+    /**
+     * 会议预约时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -236,9 +246,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 预约会议时长，单位分钟
-     * 
-     * @return duration */
+    /**
+     * 预约会议时长，单位分钟
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -252,9 +263,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议开始时间
-     * 
-     * @return actualStartTime */
+    /**
+     * 会议开始时间
+     * @return actualStartTime
+     */
     public String getActualStartTime() {
         return actualStartTime;
     }
@@ -268,9 +280,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 会议结束时间
-     * 
-     * @return endTime */
+    /**
+     * 会议结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -284,9 +297,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 实际会议时长，单位分钟
-     * 
-     * @return actualDuration */
+    /**
+     * 实际会议时长，单位分钟
+     * @return actualDuration
+     */
     public Integer getActualDuration() {
         return actualDuration;
     }
@@ -300,9 +314,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 与会人数
-     * 
-     * @return attendeeCount */
+    /**
+     * 与会人数
+     * @return attendeeCount
+     */
     public Integer getAttendeeCount() {
         return attendeeCount;
     }
@@ -316,9 +331,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 主持人人数
-     * 
-     * @return chairCount */
+    /**
+     * 主持人人数
+     * @return chairCount
+     */
     public Integer getChairCount() {
         return chairCount;
     }
@@ -332,9 +348,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 嘉宾人数
-     * 
-     * @return guestCount */
+    /**
+     * 嘉宾人数
+     * @return guestCount
+     */
     public Integer getGuestCount() {
         return guestCount;
     }
@@ -348,9 +365,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 观众人数
-     * 
-     * @return audienceCount */
+    /**
+     * 观众人数
+     * @return audienceCount
+     */
     public Integer getAudienceCount() {
         return audienceCount;
     }
@@ -364,9 +382,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** VMR ID
-     * 
-     * @return vmrId */
+    /**
+     * VMR ID
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -380,9 +399,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** VMR资源规格-最大观众数
-     * 
-     * @return vmrPkgAudienceParties */
+    /**
+     * VMR资源规格-最大观众数
+     * @return vmrPkgAudienceParties
+     */
     public Integer getVmrPkgAudienceParties() {
         return vmrPkgAudienceParties;
     }
@@ -396,9 +416,10 @@ public class OpenWebinarHistoryInfo {
         return this;
     }
 
-    /** 网络研讨会资源名
-     * 
-     * @return vmrPkgName */
+    /**
+     * 网络研讨会资源名
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -487,7 +508,10 @@ public class OpenWebinarHistoryInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

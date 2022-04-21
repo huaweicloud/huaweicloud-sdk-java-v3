@@ -35,9 +35,10 @@ public class SpecsConfig {
         return this;
     }
 
-    /** 离线计算规格。
-     * 
-     * @return offline */
+    /**
+     * 离线计算规格。
+     * @return offline
+     */
     public String getOffline() {
         return offline;
     }
@@ -51,9 +52,10 @@ public class SpecsConfig {
         return this;
     }
 
-    /** 实时计算规格。
-     * 
-     * @return nearline */
+    /**
+     * 实时计算规格。
+     * @return nearline
+     */
     public String getNearline() {
         return nearline;
     }
@@ -67,9 +69,10 @@ public class SpecsConfig {
         return this;
     }
 
-    /** 深度学习计算规格。
-     * 
-     * @return rank */
+    /**
+     * 深度学习计算规格。
+     * @return rank
+     */
     public String getRank() {
         return rank;
     }
@@ -83,9 +86,10 @@ public class SpecsConfig {
         return this;
     }
 
-    /** 在线服务最大并发数。
-     * 
-     * @return onlineTps */
+    /**
+     * 在线服务最大并发数。
+     * @return onlineTps
+     */
     public Integer getOnlineTps() {
         return onlineTps;
     }
@@ -124,7 +128,10 @@ public class SpecsConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

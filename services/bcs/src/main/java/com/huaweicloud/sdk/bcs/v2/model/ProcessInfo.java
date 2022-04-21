@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 操作进度信息 */
+/**
+ * 操作进度信息
+ */
 public class ProcessInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ProcessInfo {
         return this;
     }
 
-    /** 操作名
-     * 
-     * @return stepName */
+    /**
+     * 操作名
+     * @return stepName
+     */
     public String getStepName() {
         return stepName;
     }
@@ -57,9 +60,10 @@ public class ProcessInfo {
         return this;
     }
 
-    /** 操作状态
-     * 
-     * @return status */
+    /**
+     * 操作状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -73,9 +77,10 @@ public class ProcessInfo {
         return this;
     }
 
-    /** 操作详情
-     * 
-     * @return detail */
+    /**
+     * 操作详情
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -105,9 +110,10 @@ public class ProcessInfo {
         return this;
     }
 
-    /** 子操作, \"map[string][SubDetail] key:子操作名 value:子操作结果\"
-     * 
-     * @return subSteps */
+    /**
+     * 子操作, \"map[string][SubDetail] key:子操作名 value:子操作结果\"
+     * @return subSteps
+     */
     public Map<String, SubDetail> getSubSteps() {
         return subSteps;
     }
@@ -121,9 +127,10 @@ public class ProcessInfo {
         return this;
     }
 
-    /** 序列号
-     * 
-     * @return serialNum */
+    /**
+     * 序列号
+     * @return serialNum
+     */
     public Long getSerialNum() {
         return serialNum;
     }
@@ -164,7 +171,10 @@ public class ProcessInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

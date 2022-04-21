@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QueryConnectionsResponse */
+/**
+ * QueryConnectionsResponse
+ */
 public class QueryConnectionsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class QueryConnectionsResponse {
         return this;
     }
 
-    /** 连接到该实例或节点的客户端IP地址。
-     * 
-     * @return clientIp */
+    /**
+     * 连接到该实例或节点的客户端IP地址。
+     * @return clientIp
+     */
     public String getClientIp() {
         return clientIp;
     }
@@ -39,9 +42,10 @@ public class QueryConnectionsResponse {
         return this;
     }
 
-    /** 该IP对应的连接数。
-     * 
-     * @return count */
+    /**
+     * 该IP对应的连接数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -78,7 +82,10 @@ public class QueryConnectionsResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

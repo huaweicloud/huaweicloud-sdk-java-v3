@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 此参数在请求实体中，采用json字符串格式 */
+/**
+ * 此参数在请求实体中，采用json字符串格式
+ */
 public class QueryLtsStructLogParamsNew {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class QueryLtsStructLogParamsNew {
         return this;
     }
 
-    /** sql语句字符串。
-     * 
-     * @return query */
+    /**
+     * sql语句字符串。
+     * @return query
+     */
     public String getQuery() {
         return query;
     }
@@ -45,9 +48,10 @@ public class QueryLtsStructLogParamsNew {
         return this;
     }
 
-    /** 查询结果格式。当前仅支持：\"k-v\"。
-     * 
-     * @return format */
+    /**
+     * 查询结果格式。当前仅支持：\"k-v\"。
+     * @return format
+     */
     public String getFormat() {
         return format;
     }
@@ -70,9 +74,10 @@ public class QueryLtsStructLogParamsNew {
         return this;
     }
 
-    /** Get timeRange
-     * 
-     * @return timeRange */
+    /**
+     * Get timeRange
+     * @return timeRange
+     */
     public TimeRange getTimeRange() {
         return timeRange;
     }
@@ -111,7 +116,10 @@ public class QueryLtsStructLogParamsNew {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

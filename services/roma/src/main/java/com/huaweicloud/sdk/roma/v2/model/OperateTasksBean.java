@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OperateTasksBean */
+/**
+ * OperateTasksBean
+ */
 public class OperateTasksBean {
 
-    /** 操作类型 - start (启动) - stop (停止) */
+    /**
+     * 操作类型 - start (启动) - stop (停止)
+     */
     public static final class ActionIdEnum {
 
-        /** Enum START for value: "start" */
+        /**
+         * Enum START for value: "start"
+         */
         public static final ActionIdEnum START = new ActionIdEnum("start");
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final ActionIdEnum STOP = new ActionIdEnum("stop");
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class OperateTasksBean {
         return this;
     }
 
-    /** 操作类型 - start (启动) - stop (停止)
-     * 
-     * @return actionId */
+    /**
+     * 操作类型 - start (启动) - stop (停止)
+     * @return actionId
+     */
     public ActionIdEnum getActionId() {
         return actionId;
     }
@@ -134,9 +143,10 @@ public class OperateTasksBean {
         return this;
     }
 
-    /** 需要启动或者停止的任务ID列表
-     * 
-     * @return list */
+    /**
+     * 需要启动或者停止的任务ID列表
+     * @return list
+     */
     public List<TaskBean> getList() {
         return list;
     }
@@ -173,7 +183,10 @@ public class OperateTasksBean {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

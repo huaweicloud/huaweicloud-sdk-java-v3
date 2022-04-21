@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 添加节点和添加组织，添加组织是需要提供pvc_name */
+/**
+ * 添加节点和添加组织，添加组织是需要提供pvc_name
+ */
 public class UpdateInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class UpdateInstanceRequestBody {
         return this;
     }
 
-    /** 添加节点的组织列表
-     * 
-     * @return nodeOrgs */
+    /**
+     * 添加节点的组织列表
+     * @return nodeOrgs
+     */
     public List<NodeOrgs> getNodeOrgs() {
         return nodeOrgs;
     }
@@ -79,9 +82,10 @@ public class UpdateInstanceRequestBody {
         return this;
     }
 
-    /** ief添加组织时，ief节点信息。绑定模式的IEF服务，新增组织时，该字段必填
-     * 
-     * @return publicips */
+    /**
+     * ief添加组织时，ief节点信息。绑定模式的IEF服务，新增组织时，该字段必填
+     * @return publicips
+     */
     public List<IefNodeinfo> getPublicips() {
         return publicips;
     }
@@ -95,9 +99,10 @@ public class UpdateInstanceRequestBody {
         return this;
     }
 
-    /** 是否是删除组织
-     * 
-     * @return isDeleteOrg */
+    /**
+     * 是否是删除组织
+     * @return isDeleteOrg
+     */
     public Boolean getIsDeleteOrg() {
         return isDeleteOrg;
     }
@@ -136,7 +141,10 @@ public class UpdateInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

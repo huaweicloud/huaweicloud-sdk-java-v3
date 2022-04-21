@@ -45,9 +45,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** 创建访问密钥时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建访问密钥时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -61,9 +62,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** 创建的AK。
-     * 
-     * @return access */
+    /**
+     * 创建的AK。
+     * @return access
+     */
     public String getAccess() {
         return access;
     }
@@ -77,9 +79,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** 创建的SK。
-     * 
-     * @return secret */
+    /**
+     * 创建的SK。
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -93,9 +96,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** 访问密钥状态。
-     * 
-     * @return status */
+    /**
+     * 访问密钥状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -109,9 +113,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -125,9 +130,10 @@ public class CreateCredentialResult {
         return this;
     }
 
-    /** 访问密钥描述信息。
-     * 
-     * @return description */
+    /**
+     * 访问密钥描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -172,7 +178,10 @@ public class CreateCredentialResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

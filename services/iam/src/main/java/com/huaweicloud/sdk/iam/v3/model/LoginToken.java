@@ -61,9 +61,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -77,9 +78,10 @@ public class LoginToken {
         return this;
     }
 
-    /** logintoken的过期时间，默认10min。
-     * 
-     * @return expiresAt */
+    /**
+     * logintoken的过期时间，默认10min。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -93,9 +95,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 认证方法。当认证用户为华为云用户时，该字段内容为“token”，当认证用户为自定义代理用户时，该字段内容为“federation_proxy”。
-     * 
-     * @return method */
+    /**
+     * 认证方法。当认证用户为华为云用户时，该字段内容为“token”，当认证用户为自定义代理用户时，该字段内容为“federation_proxy”。
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -109,9 +112,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -125,9 +129,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -141,9 +146,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 会话ID。
-     * 
-     * @return sessionId */
+    /**
+     * 会话ID。
+     * @return sessionId
+     */
     public String getSessionId() {
         return sessionId;
     }
@@ -157,9 +163,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 自定义代理用户ID。
-     * 
-     * @return sessionUserId */
+    /**
+     * 自定义代理用户ID。
+     * @return sessionUserId
+     */
     public String getSessionUserId() {
         return sessionUserId;
     }
@@ -173,10 +180,10 @@ public class LoginToken {
         return this;
     }
 
-    /** 自定义代理用户名。 > -
-     * [通过委托获取临时访问密钥和securitytoken](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=CreateTemporaryAccessKeyByAgency)且请求体中填写session_user.name参数时，会返回该字段。该字段的值即为session_user.name所填写的值。
-     * 
-     * @return sessionName */
+    /**
+     * 自定义代理用户名。 > - [通过委托获取临时访问密钥和securitytoken](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=CreateTemporaryAccessKeyByAgency)且请求体中填写session_user.name参数时，会返回该字段。该字段的值即为session_user.name所填写的值。
+     * @return sessionName
+     */
     public String getSessionName() {
         return sessionName;
     }
@@ -199,9 +206,10 @@ public class LoginToken {
         return this;
     }
 
-    /** Get assumedBy
-     * 
-     * @return assumedBy */
+    /**
+     * Get assumedBy
+     * @return assumedBy
+     */
     public LoginTokenAssumedBy getAssumedBy() {
         return assumedBy;
     }
@@ -251,7 +259,10 @@ public class LoginToken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

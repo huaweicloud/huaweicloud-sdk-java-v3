@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新路由表请求体 */
+/**
+ * 更新路由表请求体
+ */
 public class UpdateRoutetableRequesBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateRoutetableRequesBody {
         return this;
     }
 
-    /** Get routetable
-     * 
-     * @return routetable */
+    /**
+     * Get routetable
+     * @return routetable
+     */
     public UpdateRoutetableOption getRoutetable() {
         return routetable;
     }
@@ -65,7 +68,10 @@ public class UpdateRoutetableRequesBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

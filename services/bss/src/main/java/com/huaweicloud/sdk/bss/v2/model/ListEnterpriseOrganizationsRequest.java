@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEnterpriseOrganizationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class ListEnterpriseOrganizationsRequest {
         return this;
     }
 
-    /** 是否递归查询。0：不递归（默认）1：递归如果不递归，只返回起始节点的直接子节点。 minimum: 0 maximum: 1
-     * 
-     * @return recursiveQuery */
+    /**
+     * 是否递归查询。0：不递归（默认）1：递归如果不递归，只返回起始节点的直接子节点。
+     * minimum: 0
+     * maximum: 1
+     * @return recursiveQuery
+     */
     public Integer getRecursiveQuery() {
         return recursiveQuery;
     }
@@ -39,9 +44,10 @@ public class ListEnterpriseOrganizationsRequest {
         return this;
     }
 
-    /** 指定的节点ID。为空则从根节点查起。
-     * 
-     * @return parentId */
+    /**
+     * 指定的节点ID。为空则从根节点查起。
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -78,7 +84,10 @@ public class ListEnterpriseOrganizationsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

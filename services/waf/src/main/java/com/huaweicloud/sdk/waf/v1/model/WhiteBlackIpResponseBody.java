@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WhiteBlackIpResponseBody */
+/**
+ * WhiteBlackIpResponseBody
+ */
 public class WhiteBlackIpResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -80,9 +84,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 创建规则的时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 创建规则的时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -96,9 +101,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -112,9 +118,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 规则状态，0：关闭，1：开启
-     * 
-     * @return status */
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -128,9 +135,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 黑白名单
-     * 
-     * @return addr */
+    /**
+     * 黑白名单
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -144,9 +152,10 @@ public class WhiteBlackIpResponseBody {
         return this;
     }
 
-    /** 防护动作： - 0拦截 - 1放行 - 2仅记录
-     * 
-     * @return white */
+    /**
+     * 防护动作：  - 0拦截  - 1放行  - 2仅记录
+     * @return white
+     */
     public Integer getWhite() {
         return white;
     }
@@ -193,7 +202,10 @@ public class WhiteBlackIpResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

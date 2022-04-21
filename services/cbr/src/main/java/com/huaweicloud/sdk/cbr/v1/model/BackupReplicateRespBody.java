@@ -55,9 +55,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 待复制的备份ID
-     * 
-     * @return backupId */
+    /**
+     * 待复制的备份ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -71,9 +72,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 复制的目标项目ID
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -87,9 +89,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 复制的目标区域
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -103,9 +106,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 复制的目标区域存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 复制的目标区域存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -119,9 +123,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 执行复制的项目ID
-     * 
-     * @return projectId */
+    /**
+     * 执行复制的项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -135,9 +140,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 资源类型id
-     * 
-     * @return providerId */
+    /**
+     * 资源类型id
+     * @return providerId
+     */
     public String getProviderId() {
         return providerId;
     }
@@ -151,9 +157,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 复制记录ID
-     * 
-     * @return replicationRecordId */
+    /**
+     * 复制记录ID
+     * @return replicationRecordId
+     */
     public String getReplicationRecordId() {
         return replicationRecordId;
     }
@@ -167,9 +174,10 @@ public class BackupReplicateRespBody {
         return this;
     }
 
-    /** 复制的源区域
-     * 
-     * @return sourceRegion */
+    /**
+     * 复制的源区域
+     * @return sourceRegion
+     */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -225,7 +233,10 @@ public class BackupReplicateRespBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

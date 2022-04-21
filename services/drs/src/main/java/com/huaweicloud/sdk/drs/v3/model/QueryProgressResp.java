@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 获取指定任务迁移进度响应体 */
+/**
+ * 获取指定任务迁移进度响应体
+ */
 public class QueryProgressResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,16 +31,24 @@ public class QueryProgressResp {
 
     private String increTransDelay;
 
-    /** 迁移模式 */
+    /**
+     * 迁移模式
+     */
     public static final class TaskModeEnum {
 
-        /** Enum FULL_TRANS_ for value: "FULL_TRANS: 全量" */
+        /**
+         * Enum FULL_TRANS_ for value: "FULL_TRANS: 全量"
+         */
         public static final TaskModeEnum FULL_TRANS_ = new TaskModeEnum("FULL_TRANS: 全量");
 
-        /** Enum INCR_TRANS_ for value: "INCR_TRANS: 增量" */
+        /**
+         * Enum INCR_TRANS_ for value: "INCR_TRANS: 增量"
+         */
         public static final TaskModeEnum INCR_TRANS_ = new TaskModeEnum("INCR_TRANS: 增量");
 
-        /** Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS: 全量+增量" */
+        /**
+         * Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS: 全量+增量"
+         */
         public static final TaskModeEnum FULL_INCR_TRANS_ = new TaskModeEnum("FULL_INCR_TRANS: 全量+增量");
 
         private static final Map<String, TaskModeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +154,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 任务Id
-     * 
-     * @return jobId */
+    /**
+     * 任务Id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -160,9 +171,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 迁移百分比
-     * 
-     * @return progress */
+    /**
+     * 迁移百分比
+     * @return progress
+     */
     public String getProgress() {
         return progress;
     }
@@ -176,9 +188,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 增量迁移时延
-     * 
-     * @return increTransDelay */
+    /**
+     * 增量迁移时延
+     * @return increTransDelay
+     */
     public String getIncreTransDelay() {
         return increTransDelay;
     }
@@ -192,9 +205,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 迁移模式
-     * 
-     * @return taskMode */
+    /**
+     * 迁移模式
+     * @return taskMode
+     */
     public TaskModeEnum getTaskMode() {
         return taskMode;
     }
@@ -208,9 +222,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return transferStatus */
+    /**
+     * 任务状态
+     * @return transferStatus
+     */
     public String getTransferStatus() {
         return transferStatus;
     }
@@ -224,9 +239,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 迁移时间，时间戳
-     * 
-     * @return processTime */
+    /**
+     * 迁移时间，时间戳
+     * @return processTime
+     */
     public String getProcessTime() {
         return processTime;
     }
@@ -240,9 +256,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 预计剩余时间
-     * 
-     * @return remainingTime */
+    /**
+     * 预计剩余时间
+     * @return remainingTime
+     */
     public String getRemainingTime() {
         return remainingTime;
     }
@@ -272,9 +289,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 数据，结构，索引迁移进度信息体
-     * 
-     * @return progressMap */
+    /**
+     * 数据，结构，索引迁移进度信息体
+     * @return progressMap
+     */
     public Map<String, ProgressInfo> getProgressMap() {
         return progressMap;
     }
@@ -288,9 +306,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -304,9 +323,10 @@ public class QueryProgressResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -368,7 +388,10 @@ public class QueryProgressResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

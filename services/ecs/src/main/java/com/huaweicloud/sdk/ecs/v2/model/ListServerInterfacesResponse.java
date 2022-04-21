@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListServerInterfacesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListServerInterfacesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get attachableQuantity
-     * 
-     * @return attachableQuantity */
+    /**
+     * Get attachableQuantity
+     * @return attachableQuantity
+     */
     public InterfaceAttachableQuantity getAttachableQuantity() {
         return attachableQuantity;
     }
@@ -70,9 +73,10 @@ public class ListServerInterfacesResponse extends SdkResponse {
         return this;
     }
 
-    /** 云服务器网卡信息列表
-     * 
-     * @return interfaceAttachments */
+    /**
+     * 云服务器网卡信息列表
+     * @return interfaceAttachments
+     */
     public List<InterfaceAttachment> getInterfaceAttachments() {
         return interfaceAttachments;
     }
@@ -109,7 +113,10 @@ public class ListServerInterfacesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

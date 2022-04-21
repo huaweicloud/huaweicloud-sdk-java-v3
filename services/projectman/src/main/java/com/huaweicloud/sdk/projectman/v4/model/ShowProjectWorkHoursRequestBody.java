@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowProjectWorkHoursRequestBody */
+/**
+ * ShowProjectWorkHoursRequestBody
+ */
 public class ShowProjectWorkHoursRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 查询的用户id列表
-     * 
-     * @return userIds */
+    /**
+     * 查询的用户id列表
+     * @return userIds
+     */
     public List<String> getUserIds() {
         return userIds;
     }
@@ -83,9 +86,10 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 工时类型，以逗号分隔,21:研发设计,22:后端开发,23:前端开发(Web),24:前端开发(小程序),25:前端开发(App),26:测试验证,27:缺陷修复,28:UI设计,29:会议,30:公共事务,31:培训,32:研究,33:其它,34:调休请假
-     * 
-     * @return workHoursTypes */
+    /**
+     * 工时类型，以逗号分隔,21:研发设计,22:后端开发,23:前端开发(Web),24:前端开发(小程序),25:前端开发(App),26:测试验证,27:缺陷修复,28:UI设计,29:会议,30:公共事务,31:培训,32:研究,33:其它,34:调休请假
+     * @return workHoursTypes
+     */
     public String getWorkHoursTypes() {
         return workHoursTypes;
     }
@@ -99,9 +103,10 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 工时日期，以逗号分隔，年-月-日
-     * 
-     * @return workHoursDates */
+    /**
+     * 工时日期，以逗号分隔，年-月-日
+     * @return workHoursDates
+     */
     public String getWorkHoursDates() {
         return workHoursDates;
     }
@@ -115,9 +120,10 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 工时开始日期，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 工时开始日期，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -131,9 +137,10 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 工时结束日期，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 工时结束日期，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -147,9 +154,11 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 偏移量,offset是limit的整数倍，limit=10,offset=0,10,20... minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -163,9 +172,12 @@ public class ShowProjectWorkHoursRequestBody {
         return this;
     }
 
-    /** 每页显示数量，每页最多显示100条 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示数量，每页最多显示100条
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -212,7 +224,10 @@ public class ShowProjectWorkHoursRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

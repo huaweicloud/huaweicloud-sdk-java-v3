@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会者信息 */
+/**
+ * 与会者信息
+ */
 public class Attendee {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class Attendee {
         return this;
     }
 
-    /** 与会者的用户UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 与会者的用户UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -89,9 +92,10 @@ public class Attendee {
         return this;
     }
 
-    /** 与会者帐号，兼容终端老版本。如果没有携带userUUID，就通过accountId查询用户信息。
-     * 
-     * @return accountId */
+    /**
+     * 与会者帐号，兼容终端老版本。如果没有携带userUUID，就通过accountId查询用户信息。
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -105,9 +109,10 @@ public class Attendee {
         return this;
     }
 
-    /** 与会者名称或昵称，长度限制为96个字符。
-     * 
-     * @return name */
+    /**
+     * 与会者名称或昵称，长度限制为96个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +126,12 @@ public class Attendee {
         return this;
     }
 
-    /** 会议中的角色。 - 0: 普通与会者。 - 1: 会议主席。 - 2: 预留字段，暂不对外开放。 default: 0 minimum: 0 maximum: 2
-     * 
-     * @return role */
+    /**
+     * 会议中的角色。 - 0: 普通与会者。 - 1: 会议主席。 - 2: 预留字段，暂不对外开放。 default: 0
+     * minimum: 0
+     * maximum: 2
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -137,9 +145,10 @@ public class Attendee {
         return this;
     }
 
-    /** 电话号码(可支持SIP、TEL号码格式)。最大不超过127个字符。phone、email和sms三者需至少填写一个。当type为telepresence时，且设备为三屏智真，则该字段填写中屏号码。
-     * 
-     * @return phone */
+    /**
+     * 电话号码(可支持SIP、TEL号码格式)。最大不超过127个字符。phone、email和sms三者需至少填写一个。当type为telepresence时，且设备为三屏智真，则该字段填写中屏号码。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -153,9 +162,10 @@ public class Attendee {
         return this;
     }
 
-    /** 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写左屏号码
-     * 
-     * @return phone2 */
+    /**
+     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写左屏号码
+     * @return phone2
+     */
     public String getPhone2() {
         return phone2;
     }
@@ -169,9 +179,10 @@ public class Attendee {
         return this;
     }
 
-    /** 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写右屏号码
-     * 
-     * @return phone3 */
+    /**
+     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写右屏号码
+     * @return phone3
+     */
     public String getPhone3() {
         return phone3;
     }
@@ -185,9 +196,10 @@ public class Attendee {
         return this;
     }
 
-    /** 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return email */
+    /**
+     * 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -201,9 +213,10 @@ public class Attendee {
         return this;
     }
 
-    /** 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return sms */
+    /**
+     * 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。
+     * @return sms
+     */
     public String getSms() {
         return sms;
     }
@@ -217,10 +230,10 @@ public class Attendee {
         return this;
     }
 
-    /** 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。
-     * - mobile: 用户手机号码。 - telephone: 软终端用户固定电话，暂不使用。
-     * 
-     * @return type */
+    /**
+     * 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 软终端用户固定电话，暂不使用。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -234,9 +247,10 @@ public class Attendee {
         return this;
     }
 
-    /** 部门ID。最大不超过64个字符。
-     * 
-     * @return deptUUID */
+    /**
+     * 部门ID。最大不超过64个字符。
+     * @return deptUUID
+     */
     public String getDeptUUID() {
         return deptUUID;
     }
@@ -250,9 +264,10 @@ public class Attendee {
         return this;
     }
 
-    /** 部门名称。最大不超过128个字符。
-     * 
-     * @return deptName */
+    /**
+     * 部门名称。最大不超过128个字符。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -304,7 +319,10 @@ public class Attendee {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

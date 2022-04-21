@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 负载均衡器信息 */
+/**
+ * 负载均衡器信息
+ */
 public class LoadBalancerRef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class LoadBalancerRef {
         return this;
     }
 
-    /** 负载均衡器ID。
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,7 +58,10 @@ public class LoadBalancerRef {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

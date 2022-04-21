@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UsageType */
+/**
+ * UsageType
+ */
 public class UsageType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UsageType {
         return this;
     }
 
-    /** 使用量类型编码。如：reqNumber。
-     * 
-     * @return code */
+    /**
+     * 使用量类型编码。如：reqNumber。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -59,9 +62,10 @@ public class UsageType {
         return this;
     }
 
-    /** 使用量类型名称。如：调用次数。
-     * 
-     * @return name */
+    /**
+     * 使用量类型名称。如：调用次数。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class UsageType {
         return this;
     }
 
-    /** 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -91,9 +96,10 @@ public class UsageType {
         return this;
     }
 
-    /** 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -107,9 +113,10 @@ public class UsageType {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -123,9 +130,10 @@ public class UsageType {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -169,7 +177,10 @@ public class UsageType {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CompareFaceByFileRequestBody */
+/**
+ * CompareFaceByFileRequestBody
+ */
 public class CompareFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image1_file", access = JsonProperty.Access.WRITE_ONLY)
@@ -26,9 +28,10 @@ public class CompareFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
-     * 
-     * @return image1File */
+    /**
+     * 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
+     * @return image1File
+     */
     public FormDataFilePart getImage1File() {
         return image1File;
     }
@@ -42,9 +45,10 @@ public class CompareFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
-     * 
-     * @return image2File */
+    /**
+     * 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
+     * @return image2File
+     */
     public FormDataFilePart getImage2File() {
         return image2File;
     }
@@ -124,7 +128,10 @@ public class CompareFaceByFileRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

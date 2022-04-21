@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** [函数工作流后端详情](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site) */
+/**
+ * [函数工作流后端详情](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site)
+ */
 public class ApiFuncCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ApiFuncCreate {
 
     private String remark;
 
-    /** 调用类型 - async： 异步 - sync：同步 */
+    /**
+     * 调用类型 - async： 异步 - sync：同步
+     */
     public static final class InvocationTypeEnum {
 
-        /** Enum ASYNC for value: "async" */
+        /**
+         * Enum ASYNC for value: "async"
+         */
         public static final InvocationTypeEnum ASYNC = new InvocationTypeEnum("async");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
 
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** 函数URN
-     * 
-     * @return functionUrn */
+    /**
+     * 函数URN
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -135,9 +144,10 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -151,9 +161,10 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** 调用类型 - async： 异步 - sync：同步
-     * 
-     * @return invocationType */
+    /**
+     * 调用类型 - async： 异步 - sync：同步
+     * @return invocationType
+     */
     public InvocationTypeEnum getInvocationType() {
         return invocationType;
     }
@@ -167,9 +178,10 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** 版本。
-     * 
-     * @return version */
+    /**
+     * 版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -183,9 +195,11 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000 单位：毫秒。 minimum: 1
-     * 
-     * @return timeout */
+    /**
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
+     * minimum: 1
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -199,9 +213,10 @@ public class ApiFuncCreate {
         return this;
     }
 
-    /** 后端自定义认证ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -246,7 +261,10 @@ public class ApiFuncCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

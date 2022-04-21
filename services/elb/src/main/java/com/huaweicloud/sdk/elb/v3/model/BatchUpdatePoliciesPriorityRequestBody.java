@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchUpdatePoliciesPriorityRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BatchUpdatePoliciesPriorityRequestBody {
         return this;
     }
 
-    /** 转发策略的结构体
-     * 
-     * @return l7policies */
+    /**
+     * 转发策略的结构体
+     * @return l7policies
+     */
     public List<BatchUpdatePriorityRequestBody> getL7policies() {
         return l7policies;
     }
@@ -76,7 +79,10 @@ public class BatchUpdatePoliciesPriorityRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

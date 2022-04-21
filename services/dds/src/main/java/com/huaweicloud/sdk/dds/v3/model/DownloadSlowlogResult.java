@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DownloadSlowlogResult */
+/**
+ * DownloadSlowlogResult
+ */
 public class DownloadSlowlogResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return nodeName */
+    /**
+     * 节点名称。
+     * @return nodeName
+     */
     public String getNodeName() {
         return nodeName;
     }
@@ -59,9 +62,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 生成的下载文件名。
-     * 
-     * @return fileName */
+    /**
+     * 生成的下载文件名。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -75,9 +79,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 当前链接的生成状态。 - SUCCESS，表示下载链接已经生成完成。 - EXPORTING，表示正在生成文件，准备下载链接。 - FAILED，表示存在日志文件准备失败。
-     * 
-     * @return status */
+    /**
+     * 当前链接的生成状态。 - SUCCESS，表示下载链接已经生成完成。 - EXPORTING，表示正在生成文件，准备下载链接。 - FAILED，表示存在日志文件准备失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -91,9 +96,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 文件大小，单位为 KB。
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小，单位为 KB。
+     * @return fileSize
+     */
     public String getFileSize() {
         return fileSize;
     }
@@ -107,9 +113,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 下载链接。注意：下载链接在更新时间的 15分钟内有效，超出时间会重新获取。
-     * 
-     * @return fileLink */
+    /**
+     * 下载链接。注意：下载链接在更新时间的 15分钟内有效，超出时间会重新获取。
+     * @return fileLink
+     */
     public String getFileLink() {
         return fileLink;
     }
@@ -123,9 +130,10 @@ public class DownloadSlowlogResult {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -170,7 +178,10 @@ public class DownloadSlowlogResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

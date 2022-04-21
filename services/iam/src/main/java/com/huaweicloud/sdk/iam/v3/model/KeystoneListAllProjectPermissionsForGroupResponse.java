@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -73,9 +76,10 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         return this;
     }
 
-    /** 权限信息列表。
-     * 
-     * @return roles */
+    /**
+     * 权限信息列表。
+     * @return roles
+     */
     public List<RoleResult> getRoles() {
         return roles;
     }
@@ -89,9 +93,10 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         return this;
     }
 
-    /** 在查询参数存在domain_id时，返回自定义策略总数
-     * 
-     * @return totalNumber */
+    /**
+     * 在查询参数存在domain_id时，返回自定义策略总数
+     * @return totalNumber
+     */
     public Integer getTotalNumber() {
         return totalNumber;
     }
@@ -131,7 +136,10 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

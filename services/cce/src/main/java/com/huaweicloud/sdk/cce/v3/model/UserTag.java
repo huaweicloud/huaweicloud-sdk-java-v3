@@ -25,9 +25,10 @@ public class UserTag {
         return this;
     }
 
-    /** 云服务器标签的键。不得以\"CCE-\"或\"__type_baremetal\"开头
-     * 
-     * @return key */
+    /**
+     * 云服务器标签的键。不得以\"CCE-\"或\"__type_baremetal\"开头
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class UserTag {
         return this;
     }
 
-    /** 云服务器标签的值
-     * 
-     * @return value */
+    /**
+     * 云服务器标签的值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class UserTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

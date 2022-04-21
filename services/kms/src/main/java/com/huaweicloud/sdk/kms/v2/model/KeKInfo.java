@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 密钥详细信息。 */
+/**
+ * 密钥详细信息。
+ */
 public class KeKInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class KeKInfo {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -39,9 +42,10 @@ public class KeKInfo {
         return this;
     }
 
-    /** 用户域ID。
-     * 
-     * @return domainId */
+    /**
+     * 用户域ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -77,7 +81,10 @@ public class KeKInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

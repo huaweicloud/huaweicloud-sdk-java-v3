@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateTranscodingTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,12 @@ public class CreateTranscodingTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。 minimum: 0 maximum: 2147483647
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return taskId
+     */
     public Integer getTaskId() {
         return taskId;
     }
@@ -56,7 +61,10 @@ public class CreateTranscodingTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

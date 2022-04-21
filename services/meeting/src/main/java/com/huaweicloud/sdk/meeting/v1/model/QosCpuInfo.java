@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 会议与会者CPU QoS数据，当qosType &#x3D; cpu 时有效。 */
+/**
+ * 会议与会者CPU QoS数据，当qosType &#x3D; cpu 时有效。
+ */
 public class QosCpuInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class QosCpuInfo {
         return this;
     }
 
-    /** 华为云会议最大CPU使用率。
-     * 
-     * @return clientCpuMax */
+    /**
+     * 华为云会议最大CPU使用率。
+     * @return clientCpuMax
+     */
     public List<QosDataElement> getClientCpuMax() {
         return clientCpuMax;
     }
@@ -74,9 +77,10 @@ public class QosCpuInfo {
         return this;
     }
 
-    /** 系统最大CPU使用率。
-     * 
-     * @return systemCpuMax */
+    /**
+     * 系统最大CPU使用率。
+     * @return systemCpuMax
+     */
     public List<QosDataElement> getSystemCpuMax() {
         return systemCpuMax;
     }
@@ -113,7 +117,10 @@ public class QosCpuInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

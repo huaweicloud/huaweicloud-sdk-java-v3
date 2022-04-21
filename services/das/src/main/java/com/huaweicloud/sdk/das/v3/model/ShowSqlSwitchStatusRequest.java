@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowSqlSwitchStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ShowSqlSwitchStatusRequest {
 
     private String datastoreType;
 
-    /** 请求语言类型。 */
+    /**
+     * 请求语言类型。
+     */
     public static final class XLanguageEnum {
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ShowSqlSwitchStatusRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -125,9 +134,10 @@ public class ShowSqlSwitchStatusRequest {
         return this;
     }
 
-    /** 开关类型。取值DAS SQL Explorer和DAS Slow Query Log，分别表示DAS收集全量SQL开关和DAS收集慢SQL开关。
-     * 
-     * @return type */
+    /**
+     * 开关类型。取值DAS SQL Explorer和DAS Slow Query Log，分别表示DAS收集全量SQL开关和DAS收集慢SQL开关。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -141,9 +151,10 @@ public class ShowSqlSwitchStatusRequest {
         return this;
     }
 
-    /** 数据库类型。当前全量SQL支持的数据库类型包括MySQL和GaussDB(for MySQL)，慢SQL支持的类型：MySQL、GaussDB(for MySQL)、PostgreSQL。
-     * 
-     * @return datastoreType */
+    /**
+     * 数据库类型。当前全量SQL支持的数据库类型包括MySQL和GaussDB(for MySQL)，慢SQL支持的类型：MySQL、GaussDB(for MySQL)、PostgreSQL。
+     * @return datastoreType
+     */
     public String getDatastoreType() {
         return datastoreType;
     }
@@ -157,9 +168,10 @@ public class ShowSqlSwitchStatusRequest {
         return this;
     }
 
-    /** 请求语言类型。
-     * 
-     * @return xLanguage */
+    /**
+     * 请求语言类型。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -202,7 +214,10 @@ public class ShowSqlSwitchStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

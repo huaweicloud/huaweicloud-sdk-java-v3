@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RecognizeAutoClassificationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RecognizeAutoClassificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功时表示调用结果。 调用失败时无此字段。
-     * 
-     * @return result */
+    /**
+     * 调用成功时表示调用结果。  调用失败时无此字段。 
+     * @return result
+     */
     public List<AutoClassificationResult> getResult() {
         return result;
     }
@@ -76,7 +79,10 @@ public class RecognizeAutoClassificationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

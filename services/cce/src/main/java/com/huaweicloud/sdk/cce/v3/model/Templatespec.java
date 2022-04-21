@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 插件模板详细信息 */
+/**
+ * 插件模板详细信息
+ */
 public class Templatespec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 模板类型（helm，static）
-     * 
-     * @return type */
+    /**
+     * 模板类型（helm，static）
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -67,9 +70,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 是否为必安装插件
-     * 
-     * @return require */
+    /**
+     * 是否为必安装插件
+     * @return require
+     */
     public Boolean getRequire() {
         return require;
     }
@@ -99,9 +103,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 模板所属分组
-     * 
-     * @return labels */
+    /**
+     * 模板所属分组
+     * @return labels
+     */
     public List<String> getLabels() {
         return labels;
     }
@@ -115,9 +120,10 @@ public class Templatespec {
         return this;
     }
 
-    /** Logo图片地址
-     * 
-     * @return logoURL */
+    /**
+     * Logo图片地址
+     * @return logoURL
+     */
     public String getLogoURL() {
         return logoURL;
     }
@@ -131,9 +137,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 插件详情描述及使用说明
-     * 
-     * @return readmeURL */
+    /**
+     * 插件详情描述及使用说明
+     * @return readmeURL
+     */
     public String getReadmeURL() {
         return readmeURL;
     }
@@ -147,9 +154,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 模板描述
-     * 
-     * @return description */
+    /**
+     * 模板描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -179,9 +187,10 @@ public class Templatespec {
         return this;
     }
 
-    /** 模板具体版本详情
-     * 
-     * @return versions */
+    /**
+     * 模板具体版本详情
+     * @return versions
+     */
     public List<Versions> getVersions() {
         return versions;
     }
@@ -226,7 +235,10 @@ public class Templatespec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

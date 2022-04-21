@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ActionsList */
+/**
+ * ActionsList
+ */
 public class ActionsList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ActionsList {
         return this;
     }
 
-    /** 置信度，取值范围0～1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围0～1。
+     * @return confidence
+     */
     public Double getConfidence() {
         return confidence;
     }
@@ -39,9 +42,10 @@ public class ActionsList {
         return this;
     }
 
-    /** 动作编号，取值范围：[1,2,3,4]，其中： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作
-     * 
-     * @return action */
+    /**
+     * 动作编号，取值范围：[1,2,3,4]，其中： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作
+     * @return action
+     */
     public Integer getAction() {
         return action;
     }
@@ -78,7 +82,10 @@ public class ActionsList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

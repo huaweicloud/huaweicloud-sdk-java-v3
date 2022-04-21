@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数执行节点信息 */
+/**
+ * 函数执行节点信息
+ */
 public class OperationState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class OperationState {
 
     private String name;
 
-    /** 节点类型 */
+    /**
+     * 节点类型
+     */
     public static final class TypeEnum {
 
-        /** Enum OPERATION for value: "Operation" */
+        /**
+         * Enum OPERATION for value: "Operation"
+         */
         public static final TypeEnum OPERATION = new TypeEnum("Operation");
 
-        /** Enum SLEEP for value: "Sleep" */
+        /**
+         * Enum SLEEP for value: "Sleep"
+         */
         public static final TypeEnum SLEEP = new TypeEnum("Sleep");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -117,13 +125,19 @@ public class OperationState {
 
     private StateDataFilter stateDataFilter;
 
-    /** Action执行模式，支持串行，并行两种模式，默认串行 */
+    /**
+     * Action执行模式，支持串行，并行两种模式，默认串行
+     */
     public static final class ActionModeEnum {
 
-        /** Enum SEQUENTIAL for value: "sequential" */
+        /**
+         * Enum SEQUENTIAL for value: "sequential"
+         */
         public static final ActionModeEnum SEQUENTIAL = new ActionModeEnum("sequential");
 
-        /** Enum PARALLEL for value: "parallel" */
+        /**
+         * Enum PARALLEL for value: "parallel"
+         */
         public static final ActionModeEnum PARALLEL = new ActionModeEnum("parallel");
 
         private static final Map<String, ActionModeEnum> STATIC_FIELDS = createStaticFields();
@@ -208,9 +222,10 @@ public class OperationState {
         return this;
     }
 
-    /** 节点ID，需要在当前工作流中唯一
-     * 
-     * @return id */
+    /**
+     * 节点ID，需要在当前工作流中唯一
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -224,9 +239,10 @@ public class OperationState {
         return this;
     }
 
-    /** 节点名称
-     * 
-     * @return name */
+    /**
+     * 节点名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -240,9 +256,10 @@ public class OperationState {
         return this;
     }
 
-    /** 节点类型
-     * 
-     * @return type */
+    /**
+     * 节点类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -256,9 +273,10 @@ public class OperationState {
         return this;
     }
 
-    /** 是否是结束节点
-     * 
-     * @return end */
+    /**
+     * 是否是结束节点
+     * @return end
+     */
     public Boolean getEnd() {
         return end;
     }
@@ -272,9 +290,10 @@ public class OperationState {
         return this;
     }
 
-    /** 下一步骤节点ID
-     * 
-     * @return transition */
+    /**
+     * 下一步骤节点ID
+     * @return transition
+     */
     public String getTransition() {
         return transition;
     }
@@ -297,9 +316,10 @@ public class OperationState {
         return this;
     }
 
-    /** Get stateDataFilter
-     * 
-     * @return stateDataFilter */
+    /**
+     * Get stateDataFilter
+     * @return stateDataFilter
+     */
     public StateDataFilter getStateDataFilter() {
         return stateDataFilter;
     }
@@ -313,9 +333,10 @@ public class OperationState {
         return this;
     }
 
-    /** Action执行模式，支持串行，并行两种模式，默认串行
-     * 
-     * @return actionMode */
+    /**
+     * Action执行模式，支持串行，并行两种模式，默认串行
+     * @return actionMode
+     */
     public ActionModeEnum getActionMode() {
         return actionMode;
     }
@@ -345,9 +366,10 @@ public class OperationState {
         return this;
     }
 
-    /** 节点中要执行的操作列表
-     * 
-     * @return actions */
+    /**
+     * 节点中要执行的操作列表
+     * @return actions
+     */
     public List<Action> getActions() {
         return actions;
     }
@@ -377,9 +399,10 @@ public class OperationState {
         return this;
     }
 
-    /** 错误处理策略
-     * 
-     * @return onErrors */
+    /**
+     * 错误处理策略
+     * @return onErrors
+     */
     public List<OnError> getOnErrors() {
         return onErrors;
     }
@@ -428,7 +451,10 @@ public class OperationState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主网卡的描述信息。 */
+/**
+ * 主网卡的描述信息。  
+ */
 public class NicSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class NicSpec {
         return this;
     }
 
-    /** 网卡所在子网的ID。
-     * 
-     * @return subnetId */
+    /**
+     * 网卡所在子网的ID。  
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -63,9 +66,10 @@ public class NicSpec {
         return this;
     }
 
-    /** 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
-     * 
-     * @return fixedIps */
+    /**
+     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
+     * @return fixedIps
+     */
     public List<String> getFixedIps() {
         return fixedIps;
     }
@@ -79,9 +83,10 @@ public class NicSpec {
         return this;
     }
 
-    /** IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
-     * 
-     * @return ipBlock */
+    /**
+     * IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
+     * @return ipBlock
+     */
     public String getIpBlock() {
         return ipBlock;
     }
@@ -119,7 +124,10 @@ public class NicSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

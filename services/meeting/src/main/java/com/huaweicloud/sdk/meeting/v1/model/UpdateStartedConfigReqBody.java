@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会中修改配置项 */
+/**
+ * 会中修改配置项
+ */
 public class UpdateStartedConfigReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class UpdateStartedConfigReqBody {
         return this;
     }
 
-    /** 锁定共享标志位 0:不锁定 1:锁定 minimum: 0 maximum: 1
-     * 
-     * @return lockSharing */
+    /**
+     * 锁定共享标志位 0:不锁定  1:锁定
+     * minimum: 0
+     * maximum: 1
+     * @return lockSharing
+     */
     public Integer getLockSharing() {
         return lockSharing;
     }
@@ -39,9 +44,12 @@ public class UpdateStartedConfigReqBody {
         return this;
     }
 
-    /** 允许呼入的范围 0：所有用户 2：企业内用户 3：被邀请用户 minimum: 0 maximum: 3
-     * 
-     * @return callInRestriction */
+    /**
+     * 允许呼入的范围 0：所有用户  2：企业内用户  3：被邀请用户
+     * minimum: 0
+     * maximum: 3
+     * @return callInRestriction
+     */
     public Integer getCallInRestriction() {
         return callInRestriction;
     }
@@ -78,7 +86,10 @@ public class UpdateStartedConfigReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

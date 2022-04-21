@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowVersionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowVersionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述version 相关对象的列表，详情请参见 versions字段数据结构说明。
-     * 
-     * @return versions */
+    /**
+     * 描述version 相关对象的列表，详情请参见 versions字段数据结构说明。
+     * @return versions
+     */
     public List<ApiVersionDetail> getVersions() {
         return versions;
     }
@@ -75,7 +78,10 @@ public class ShowVersionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

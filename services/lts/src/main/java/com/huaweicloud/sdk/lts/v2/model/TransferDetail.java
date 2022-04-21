@@ -10,31 +10,49 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 日志转储详细信息 */
+/**
+ * 日志转储详细信息
+ */
 public class TransferDetail {
 
-    /** OBS转储时间 */
+    /**
+     * OBS转储时间
+     */
     public static final class ObsPeriodEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ObsPeriodEnum NUMBER_1 = new ObsPeriodEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ObsPeriodEnum NUMBER_2 = new ObsPeriodEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final ObsPeriodEnum NUMBER_3 = new ObsPeriodEnum(3);
 
-        /** Enum NUMBER_5 for value: 5 */
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
         public static final ObsPeriodEnum NUMBER_5 = new ObsPeriodEnum(5);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final ObsPeriodEnum NUMBER_6 = new ObsPeriodEnum(6);
 
-        /** Enum NUMBER_12 for value: 12 */
+        /**
+         * Enum NUMBER_12 for value: 12
+         */
         public static final ObsPeriodEnum NUMBER_12 = new ObsPeriodEnum(12);
 
-        /** Enum NUMBER_30 for value: 30 */
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
         public static final ObsPeriodEnum NUMBER_30 = new ObsPeriodEnum(30);
 
         private static final Map<Integer, ObsPeriodEnum> STATIC_FIELDS = createStaticFields();
@@ -184,9 +202,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储时间
-     * 
-     * @return obsPeriod */
+    /**
+     * OBS转储时间
+     * @return obsPeriod
+     */
     public ObsPeriodEnum getObsPeriod() {
         return obsPeriod;
     }
@@ -200,9 +219,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储KMS秘钥ID。若OBS转储未加密则不返回此字段
-     * 
-     * @return obsEncryptedId */
+    /**
+     * OBS转储KMS秘钥ID。若OBS转储未加密则不返回此字段
+     * @return obsEncryptedId
+     */
     public String getObsEncryptedId() {
         return obsEncryptedId;
     }
@@ -216,9 +236,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储日志文件前缀
-     * 
-     * @return obsPrefixName */
+    /**
+     * OBS转储日志文件前缀
+     * @return obsPrefixName
+     */
     public String getObsPrefixName() {
         return obsPrefixName;
     }
@@ -232,9 +253,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储单位
-     * 
-     * @return obsPeriodUnit */
+    /**
+     * OBS转储单位
+     * @return obsPeriodUnit
+     */
     public String getObsPeriodUnit() {
         return obsPeriodUnit;
     }
@@ -248,9 +270,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储路径，指OBS日志桶中的路径
-     * 
-     * @return obsTransferPath */
+    /**
+     * OBS转储路径，指OBS日志桶中的路径
+     * @return obsTransferPath
+     */
     public String getObsTransferPath() {
         return obsTransferPath;
     }
@@ -264,9 +287,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS企业项目ID
-     * 
-     * @return obsEpsId */
+    /**
+     * OBS企业项目ID
+     * @return obsEpsId
+     */
     public String getObsEpsId() {
         return obsEpsId;
     }
@@ -280,9 +304,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS日志桶名称
-     * 
-     * @return obsBucketName */
+    /**
+     * OBS日志桶名称
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -296,9 +321,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS是否开启加密。
-     * 
-     * @return obsEncryptedEnable */
+    /**
+     * OBS是否开启加密。
+     * @return obsEncryptedEnable
+     */
     public Boolean getObsEncryptedEnable() {
         return obsEncryptedEnable;
     }
@@ -312,9 +338,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储自定义转储路径
-     * 
-     * @return obsDirPreFixName */
+    /**
+     * OBS转储自定义转储路径
+     * @return obsDirPreFixName
+     */
     public String getObsDirPreFixName() {
         return obsDirPreFixName;
     }
@@ -328,9 +355,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** DIS转储通道ID
-     * 
-     * @return disId */
+    /**
+     * DIS转储通道ID
+     * @return disId
+     */
     public String getDisId() {
         return disId;
     }
@@ -344,9 +372,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** DIS转储通道名称
-     * 
-     * @return disName */
+    /**
+     * DIS转储通道名称
+     * @return disName
+     */
     public String getDisName() {
         return disName;
     }
@@ -360,9 +389,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** DMS转储kafka ID
-     * 
-     * @return kafkaId */
+    /**
+     * DMS转储kafka ID
+     * @return kafkaId
+     */
     public String getKafkaId() {
         return kafkaId;
     }
@@ -376,9 +406,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** DMS转储kafka topic
-     * 
-     * @return kafkaTopic */
+    /**
+     * DMS转储kafka topic
+     * @return kafkaTopic
+     */
     public String getKafkaTopic() {
         return kafkaTopic;
     }
@@ -392,9 +423,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储时区。如果选择该参数，则必须选择obs_time_zone_id。
-     * 
-     * @return obsTimeZone */
+    /**
+     * OBS转储时区。如果选择该参数，则必须选择obs_time_zone_id。
+     * @return obsTimeZone
+     */
     public String getObsTimeZone() {
         return obsTimeZone;
     }
@@ -408,9 +440,10 @@ public class TransferDetail {
         return this;
     }
 
-    /** OBS转储时区ID。参数选择参考OBS转储时区表。如果选择该参数，则必须选择obs_time_zone。
-     * 
-     * @return obsTimeZoneId */
+    /**
+     * OBS转储时区ID。参数选择参考OBS转储时区表。如果选择该参数，则必须选择obs_time_zone。
+     * @return obsTimeZoneId
+     */
     public String getObsTimeZoneId() {
         return obsTimeZoneId;
     }
@@ -486,7 +519,10 @@ public class TransferDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

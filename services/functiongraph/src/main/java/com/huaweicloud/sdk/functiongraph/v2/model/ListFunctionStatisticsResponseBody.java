@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数指标 */
+/**
+ * 函数指标
+ */
 public class ListFunctionStatisticsResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 调用次数
-     * 
-     * @return count */
+    /**
+     * 调用次数
+     * @return count
+     */
     public List<SlaReportsValue> getCount() {
         return count;
     }
@@ -94,9 +97,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 平均时延，单位毫秒
-     * 
-     * @return duration */
+    /**
+     * 平均时延，单位毫秒
+     * @return duration
+     */
     public List<SlaReportsValue> getDuration() {
         return duration;
     }
@@ -126,9 +130,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 错误次数
-     * 
-     * @return failCount */
+    /**
+     * 错误次数
+     * @return failCount
+     */
     public List<SlaReportsValue> getFailCount() {
         return failCount;
     }
@@ -158,9 +163,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 最大时延，单位毫秒
-     * 
-     * @return maxDuration */
+    /**
+     * 最大时延，单位毫秒
+     * @return maxDuration
+     */
     public List<SlaReportsValue> getMaxDuration() {
         return maxDuration;
     }
@@ -190,9 +196,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 最小时延，单位毫秒
-     * 
-     * @return minDuration */
+    /**
+     * 最小时延，单位毫秒
+     * @return minDuration
+     */
     public List<SlaReportsValue> getMinDuration() {
         return minDuration;
     }
@@ -222,9 +229,10 @@ public class ListFunctionStatisticsResponseBody {
         return this;
     }
 
-    /** 被拒绝次数
-     * 
-     * @return rejectCount */
+    /**
+     * 被拒绝次数
+     * @return rejectCount
+     */
     public List<SlaReportsValue> getRejectCount() {
         return rejectCount;
     }
@@ -269,7 +277,10 @@ public class ListFunctionStatisticsResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

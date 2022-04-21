@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 单个录制文件下载链接信息 */
+/**
+ * 单个录制文件下载链接信息
+ */
 public class RecordDownloadUrlDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RecordDownloadUrlDO {
         return this;
     }
 
-    /** 下载鉴权token
-     * 
-     * @return token */
+    /**
+     * 下载鉴权token
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -44,9 +47,10 @@ public class RecordDownloadUrlDO {
         return this;
     }
 
-    /** 文件类型
-     * 
-     * @return fileType */
+    /**
+     * 文件类型
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -60,9 +64,10 @@ public class RecordDownloadUrlDO {
         return this;
     }
 
-    /** 录制文件下载URL
-     * 
-     * @return url */
+    /**
+     * 录制文件下载URL
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -101,7 +106,10 @@ public class RecordDownloadUrlDO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

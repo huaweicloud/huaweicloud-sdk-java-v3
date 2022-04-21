@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改的topic列表。 */
+/**
+ * 修改的topic列表。
+ */
 public class UpdateInstanceTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateInstanceTopicReq {
         return this;
     }
 
-    /** 修改的topic列表。
-     * 
-     * @return topics */
+    /**
+     * 修改的topic列表。
+     * @return topics
+     */
     public List<UpdateInstanceTopicReqTopics> getTopics() {
         return topics;
     }
@@ -74,7 +77,10 @@ public class UpdateInstanceTopicReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

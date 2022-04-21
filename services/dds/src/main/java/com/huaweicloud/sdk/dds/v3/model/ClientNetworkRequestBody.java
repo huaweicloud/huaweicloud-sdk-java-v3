@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ClientNetworkRequestBody */
+/**
+ * ClientNetworkRequestBody
+ */
 public class ClientNetworkRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,11 +39,10 @@ public class ClientNetworkRequestBody {
         return this;
     }
 
-    /** 客户端所在网段。
-     * 跨网段访问配置只有在客户端与副本集实例部署在不同网段的情况下才需要配置，例如访问副本集的客户端所在网段为192.168.0.0/16，副本集所在的网段为172.16.0.0/24，则需要添加跨网段配置192.168.0.0/16才能正常访问。只有副本集有该功能。
-     * 注意：源端ECS连接实例的前提是与实例节点网络通信正常，如果网络不通，可以参考对等连接进行相关配置。
-     * 
-     * @return clientNetworkRanges */
+    /**
+     * 客户端所在网段。 跨网段访问配置只有在客户端与副本集实例部署在不同网段的情况下才需要配置，例如访问副本集的客户端所在网段为192.168.0.0/16，副本集所在的网段为172.16.0.0/24，则需要添加跨网段配置192.168.0.0/16才能正常访问。只有副本集有该功能。 注意：源端ECS连接实例的前提是与实例节点网络通信正常，如果网络不通，可以参考对等连接进行相关配置。
+     * @return clientNetworkRanges
+     */
     public List<String> getClientNetworkRanges() {
         return clientNetworkRanges;
     }
@@ -76,7 +77,10 @@ public class ClientNetworkRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

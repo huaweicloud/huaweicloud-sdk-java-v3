@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 服务的动态属性 */
+/**
+ * 服务的动态属性
+ */
 public class SvcSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 虚拟服务IP地址
-     * 
-     * @return clusterIp */
+    /**
+     * 虚拟服务IP地址
+     * @return clusterIp
+     */
     public String getClusterIp() {
         return clusterIp;
     }
@@ -80,9 +83,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 外部IP列表 --- 暂不支持
-     * 
-     * @return externalIps */
+    /**
+     * 外部IP列表 --- 暂不支持
+     * @return externalIps
+     */
     public List<String> getExternalIps() {
         return externalIps;
     }
@@ -96,9 +100,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 外部域名 --- 暂不支持
-     * 
-     * @return externalName */
+    /**
+     * 外部域名 --- 暂不支持
+     * @return externalName
+     */
     public String getExternalName() {
         return externalName;
     }
@@ -128,9 +133,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 服务需要暴露的端口列表
-     * 
-     * @return ports */
+    /**
+     * 服务需要暴露的端口列表
+     * @return ports
+     */
     public List<SvcPort> getPorts() {
         return ports;
     }
@@ -160,9 +166,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 标签选择器，将选择具有指定Label标签的Pod作为管理范围
-     * 
-     * @return selector */
+    /**
+     * 标签选择器，将选择具有指定Label标签的Pod作为管理范围
+     * @return selector
+     */
     public Map<String, String> getSelector() {
         return selector;
     }
@@ -176,9 +183,10 @@ public class SvcSpec {
         return this;
     }
 
-    /** 服务的类型
-     * 
-     * @return type */
+    /**
+     * 服务的类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -221,7 +229,10 @@ public class SvcSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

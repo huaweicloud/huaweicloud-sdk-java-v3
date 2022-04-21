@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CdmRandomCreateAndStartJobJsonReq */
+/**
+ * CdmRandomCreateAndStartJobJsonReq
+ */
 public class CdmRandomCreateAndStartJobJsonReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CdmRandomCreateAndStartJobJsonReq {
         return this;
     }
 
-    /** 作业列表，请参见jobs数据结构说明。
-     * 
-     * @return jobs */
+    /**
+     * 作业列表，请参见jobs数据结构说明。
+     * @return jobs
+     */
     public List<Job> getJobs() {
         return jobs;
     }
@@ -74,9 +77,10 @@ public class CdmRandomCreateAndStartJobJsonReq {
         return this;
     }
 
-    /** CDM集群ID列表，系统会从里面随机选择一个开机状态的集群，在该集群中创建作业并执行作业。
-     * 
-     * @return clusters */
+    /**
+     * CDM集群ID列表，系统会从里面随机选择一个开机状态的集群，在该集群中创建作业并执行作业。
+     * @return clusters
+     */
     public List<String> getClusters() {
         return clusters;
     }
@@ -113,7 +117,10 @@ public class CdmRandomCreateAndStartJobJsonReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

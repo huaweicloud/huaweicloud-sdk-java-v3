@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPipelineLastStatusV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流水线id
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线id
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -88,9 +91,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流水线名称
-     * 
-     * @return name */
+    /**
+     * 流水线名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -104,9 +108,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 执行状态
-     * 
-     * @return status */
+    /**
+     * 执行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -120,9 +125,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 执行结果
-     * 
-     * @return result */
+    /**
+     * 执行结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -136,9 +142,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 执行人
-     * 
-     * @return executor */
+    /**
+     * 执行人
+     * @return executor
+     */
     public String getExecutor() {
         return executor;
     }
@@ -152,9 +159,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 启动时间
-     * 
-     * @return startTime */
+    /**
+     * 启动时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -168,9 +176,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return finishTime */
+    /**
+     * 结束时间
+     * @return finishTime
+     */
     public String getFinishTime() {
         return finishTime;
     }
@@ -184,9 +193,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 运行详情链接
-     * 
-     * @return detailUrl */
+    /**
+     * 运行详情链接
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -200,9 +210,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 编辑链接
-     * 
-     * @return modifyUrl */
+    /**
+     * 编辑链接
+     * @return modifyUrl
+     */
     public String getModifyUrl() {
         return modifyUrl;
     }
@@ -216,9 +227,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流水线执行序号
-     * 
-     * @return buildId */
+    /**
+     * 流水线执行序号
+     * @return buildId
+     */
     public String getBuildId() {
         return buildId;
     }
@@ -248,9 +260,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return this;
     }
 
-    /** 阶段信息
-     * 
-     * @return stages */
+    /**
+     * 阶段信息
+     * @return stages
+     */
     public List<PipelineStageResp> getStages() {
         return stages;
     }
@@ -315,7 +328,10 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

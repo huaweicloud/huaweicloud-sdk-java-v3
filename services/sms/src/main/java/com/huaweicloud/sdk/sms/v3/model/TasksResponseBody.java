@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量查询任务时返回体重返回的任务信息。 */
+/**
+ * 批量查询任务时返回体重返回的任务信息。
+ */
 public class TasksResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class TasksResponseBody {
 
     private String name;
 
-    /** 任务类型，创建迁移任务时必选，更新迁移任务时可选 */
+    /**
+     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
+     */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
-        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,13 +110,19 @@ public class TasksResponseBody {
 
     private TypeEnum type;
 
-    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选 */
+    /**
+     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -193,16 +207,24 @@ public class TasksResponseBody {
 
     private Long createDate;
 
-    /** 进程优先级 0：低 1：标准 2：高 */
+    /**
+     * 进程优先级 0：低 1：标准 2：高
+     */
     public static final class PriorityEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PriorityEnum NUMBER_0 = new PriorityEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PriorityEnum NUMBER_1 = new PriorityEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final PriorityEnum NUMBER_2 = new PriorityEnum(2);
 
         private static final Map<Integer, PriorityEnum> STATIC_FIELDS = createStaticFields();
@@ -328,42 +350,64 @@ public class TasksResponseBody {
 
     private TargetServerAssociatedWithTask targetServer;
 
-    /** 日志收集状态 */
+    /**
+     * 日志收集状态
+     */
     public static final class LogCollectStatusEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final LogCollectStatusEnum INIT = new LogCollectStatusEnum("INIT");
 
-        /** Enum TELL_AGENT_TO_COLLECT for value: "TELL_AGENT_TO_COLLECT" */
+        /**
+         * Enum TELL_AGENT_TO_COLLECT for value: "TELL_AGENT_TO_COLLECT"
+         */
         public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT =
             new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT");
 
-        /** Enum WAIT_AGENT_COLLECT_ACK for value: "WAIT_AGENT_COLLECT_ACK" */
+        /**
+         * Enum WAIT_AGENT_COLLECT_ACK for value: "WAIT_AGENT_COLLECT_ACK"
+         */
         public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK =
             new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK");
 
-        /** Enum AGENT_COLLECT_FAIL for value: "AGENT_COLLECT_FAIL" */
+        /**
+         * Enum AGENT_COLLECT_FAIL for value: "AGENT_COLLECT_FAIL"
+         */
         public static final LogCollectStatusEnum AGENT_COLLECT_FAIL = new LogCollectStatusEnum("AGENT_COLLECT_FAIL");
 
-        /** Enum AGENT_COLLECT_SUCCESS for value: "AGENT_COLLECT_SUCCESS" */
+        /**
+         * Enum AGENT_COLLECT_SUCCESS for value: "AGENT_COLLECT_SUCCESS"
+         */
         public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS =
             new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS");
 
-        /** Enum WAIT_SERVER_COLLECT for value: "WAIT_SERVER_COLLECT" */
+        /**
+         * Enum WAIT_SERVER_COLLECT for value: "WAIT_SERVER_COLLECT"
+         */
         public static final LogCollectStatusEnum WAIT_SERVER_COLLECT = new LogCollectStatusEnum("WAIT_SERVER_COLLECT");
 
-        /** Enum SERVER_COLLECT_FAIL for value: "SERVER_COLLECT_FAIL" */
+        /**
+         * Enum SERVER_COLLECT_FAIL for value: "SERVER_COLLECT_FAIL"
+         */
         public static final LogCollectStatusEnum SERVER_COLLECT_FAIL = new LogCollectStatusEnum("SERVER_COLLECT_FAIL");
 
-        /** Enum SERVER_COLLECT_SUCCESS for value: "SERVER_COLLECT_SUCCESS" */
+        /**
+         * Enum SERVER_COLLECT_SUCCESS for value: "SERVER_COLLECT_SUCCESS"
+         */
         public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS =
             new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS");
 
-        /** Enum TELL_AGENT_RESET_ACL for value: "TELL_AGENT_RESET_ACL" */
+        /**
+         * Enum TELL_AGENT_RESET_ACL for value: "TELL_AGENT_RESET_ACL"
+         */
         public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL =
             new LogCollectStatusEnum("TELL_AGENT_RESET_ACL");
 
-        /** Enum WAIT_AGENT_RESET_ACL_ACK for value: "WAIT_AGENT_RESET_ACL_ACK" */
+        /**
+         * Enum WAIT_AGENT_RESET_ACL_ACK for value: "WAIT_AGENT_RESET_ACL_ACK"
+         */
         public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK =
             new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK");
 
@@ -457,9 +501,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 迁移任务id
-     * 
-     * @return id */
+    /**
+     * 迁移任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -473,9 +518,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务名称（用户自定义）
-     * 
-     * @return name */
+    /**
+     * 任务名称（用户自定义）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -489,9 +535,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务类型，创建迁移任务时必选，更新迁移任务时可选
-     * 
-     * @return type */
+    /**
+     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -505,9 +552,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -521,9 +569,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return state */
+    /**
+     * 任务状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -537,9 +586,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 预估完成时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return estimateCompleteTime */
+    /**
+     * 预估完成时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return estimateCompleteTime
+     */
     public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
@@ -553,9 +605,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务创建时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return createDate */
+    /**
+     * 任务创建时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createDate
+     */
     public Long getCreateDate() {
         return createDate;
     }
@@ -569,9 +624,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 进程优先级 0：低 1：标准 2：高 minimum: 0 maximum: 2
-     * 
-     * @return priority */
+    /**
+     * 进程优先级 0：低 1：标准 2：高
+     * minimum: 0
+     * maximum: 2
+     * @return priority
+     */
     public PriorityEnum getPriority() {
         return priority;
     }
@@ -585,9 +643,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 迁移限速
-     * 
-     * @return speedLimit */
+    /**
+     * 迁移限速
+     * @return speedLimit
+     */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -601,9 +660,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 迁移速率，单位：MB/S minimum: 0 maximum: 1E+4
-     * 
-     * @return migrateSpeed */
+    /**
+     * 迁移速率，单位：MB/S
+     * minimum: 0
+     * maximum: 1E+4
+     * @return migrateSpeed
+     */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -617,9 +679,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 压缩率 minimum: 0 maximum: 1E+4
-     * 
-     * @return compressRate */
+    /**
+     * 压缩率
+     * minimum: 0
+     * maximum: 1E+4
+     * @return compressRate
+     */
     public Double getCompressRate() {
         return compressRate;
     }
@@ -633,9 +698,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 迁移完成后是否启动目的端服务器 true：启动 false：停止
-     * 
-     * @return startTargetServer */
+    /**
+     * 迁移完成后是否启动目的端服务器 true：启动 false：停止
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -649,9 +715,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorJson */
+    /**
+     * 错误信息
+     * @return errorJson
+     */
     public String getErrorJson() {
         return errorJson;
     }
@@ -665,9 +732,12 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务总耗时 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return totalTime */
+    /**
+     * 任务总耗时
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return totalTime
+     */
     public Long getTotalTime() {
         return totalTime;
     }
@@ -681,9 +751,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
-     * 
-     * @return migrationIp */
+    /**
+     * 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
+     * @return migrationIp
+     */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -713,9 +784,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 任务关联的子任务信息
-     * 
-     * @return subTasks */
+    /**
+     * 任务关联的子任务信息
+     * @return subTasks
+     */
     public List<SubTaskAssociatedWithTask> getSubTasks() {
         return subTasks;
     }
@@ -738,9 +810,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** Get sourceServer
-     * 
-     * @return sourceServer */
+    /**
+     * Get sourceServer
+     * @return sourceServer
+     */
     public SourceServerAssociatedWithTask getSourceServer() {
         return sourceServer;
     }
@@ -754,9 +827,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 迁移项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 迁移项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -779,9 +853,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** Get targetServer
-     * 
-     * @return targetServer */
+    /**
+     * Get targetServer
+     * @return targetServer
+     */
     public TargetServerAssociatedWithTask getTargetServer() {
         return targetServer;
     }
@@ -795,9 +870,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 日志收集状态
-     * 
-     * @return logCollectStatus */
+    /**
+     * 日志收集状态
+     * @return logCollectStatus
+     */
     public LogCollectStatusEnum getLogCollectStatus() {
         return logCollectStatus;
     }
@@ -820,9 +896,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** Get cloneServer
-     * 
-     * @return cloneServer */
+    /**
+     * Get cloneServer
+     * @return cloneServer
+     */
     public CloneServerBrief getCloneServer() {
         return cloneServer;
     }
@@ -836,9 +913,10 @@ public class TasksResponseBody {
         return this;
     }
 
-    /** 是否同步
-     * 
-     * @return syncing */
+    /**
+     * 是否同步
+     * @return syncing
+     */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -935,7 +1013,10 @@ public class TasksResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

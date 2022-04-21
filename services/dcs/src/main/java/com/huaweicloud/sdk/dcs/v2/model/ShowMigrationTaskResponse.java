@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMigrationTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,19 +32,29 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     private String description;
 
-    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。 */
+    /**
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum MIGRATING for value: "MIGRATING" */
+        /**
+         * Enum MIGRATING for value: "MIGRATING"
+         */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
 
-        /** Enum TERMINATED for value: "TERMINATED" */
+        /**
+         * Enum TERMINATED for value: "TERMINATED"
+         */
         public static final StatusEnum TERMINATED = new StatusEnum("TERMINATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -114,13 +126,19 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     private StatusEnum status;
 
-    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。 */
+    /**
+     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+     */
     public static final class MigrationTypeEnum {
 
-        /** Enum BACKUPFILE_IMPORT for value: "backupfile_import" */
+        /**
+         * Enum BACKUPFILE_IMPORT for value: "backupfile_import"
+         */
         public static final MigrationTypeEnum BACKUPFILE_IMPORT = new MigrationTypeEnum("backupfile_import");
 
-        /** Enum ONLINE_MIGRATION for value: "online_migration" */
+        /**
+         * Enum ONLINE_MIGRATION for value: "online_migration"
+         */
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
 
         private static final Map<String, MigrationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -190,14 +208,20 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     private MigrationTypeEnum migrationType;
 
-    /** 迁移方式，包括全量迁移和增量迁移两种类型。 */
+    /**
+     * 迁移方式，包括全量迁移和增量迁移两种类型。
+     */
     public static final class MigrationMethodEnum {
 
-        /** Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration" */
+        /**
+         * Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration"
+         */
         public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION =
             new MigrationMethodEnum("full_amount_migration");
 
-        /** Enum INCREMENTAL_MIGRATION for value: "incremental_migration" */
+        /**
+         * Enum INCREMENTAL_MIGRATION for value: "incremental_migration"
+         */
         public static final MigrationMethodEnum INCREMENTAL_MIGRATION =
             new MigrationMethodEnum("incremental_migration");
 
@@ -278,13 +302,19 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     private BackupFilesBody backupFiles;
 
-    /** 网络类型，包括vpc和vpn两种类型。 */
+    /**
+     * 网络类型，包括vpc和vpn两种类型。
+     */
     public static final class NetworkTypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetworkTypeEnum VPC = new NetworkTypeEnum("vpc");
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetworkTypeEnum VPN = new NetworkTypeEnum("vpn");
 
         private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -379,9 +409,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 迁移任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -395,9 +426,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 迁移任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -411,9 +443,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务描述。
-     * 
-     * @return description */
+    /**
+     * 迁移任务描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -427,9 +460,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。
-     * 
-     * @return status */
+    /**
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -443,9 +477,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。
-     * 
-     * @return migrationType */
+    /**
+     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+     * @return migrationType
+     */
     public MigrationTypeEnum getMigrationType() {
         return migrationType;
     }
@@ -459,9 +494,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移方式，包括全量迁移和增量迁移两种类型。
-     * 
-     * @return migrationMethod */
+    /**
+     * 迁移方式，包括全量迁移和增量迁移两种类型。
+     * @return migrationMethod
+     */
     public MigrationMethodEnum getMigrationMethod() {
         return migrationMethod;
     }
@@ -475,9 +511,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
-     * 
-     * @return ecsTenantPrivateIp */
+    /**
+     * 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+     * @return ecsTenantPrivateIp
+     */
     public String getEcsTenantPrivateIp() {
         return ecsTenantPrivateIp;
     }
@@ -500,9 +537,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get backupFiles
-     * 
-     * @return backupFiles */
+    /**
+     * Get backupFiles
+     * @return backupFiles
+     */
     public BackupFilesBody getBackupFiles() {
         return backupFiles;
     }
@@ -516,9 +554,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 网络类型，包括vpc和vpn两种类型。
-     * 
-     * @return networkType */
+    /**
+     * 网络类型，包括vpc和vpn两种类型。
+     * @return networkType
+     */
     public NetworkTypeEnum getNetworkType() {
         return networkType;
     }
@@ -541,9 +580,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get sourceInstance
-     * 
-     * @return sourceInstance */
+    /**
+     * Get sourceInstance
+     * @return sourceInstance
+     */
     public SourceInstanceBody getSourceInstance() {
         return sourceInstance;
     }
@@ -566,9 +606,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get targetInstance
-     * 
-     * @return targetInstance */
+    /**
+     * Get targetInstance
+     * @return targetInstance
+     */
     public TargetInstanceBody getTargetInstance() {
         return targetInstance;
     }
@@ -582,9 +623,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 迁移任务创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -598,9 +640,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务完成时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 迁移任务完成时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -671,7 +714,10 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

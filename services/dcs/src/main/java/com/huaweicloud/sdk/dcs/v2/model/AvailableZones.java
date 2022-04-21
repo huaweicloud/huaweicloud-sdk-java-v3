@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 可用分区结构体 */
+/**
+ * 可用分区结构体
+ */
 public class AvailableZones {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class AvailableZones {
 
     private String id;
 
-    /** 分区上是否还有可用资源。 - true：还有资源。 - false：资源已售罄。 */
+    /**
+     * 分区上是否还有可用资源。 - true：还有资源。 - false：资源已售罄。 
+     */
     public static final class ResourceAvailabilityEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final ResourceAvailabilityEnum TRUE = new ResourceAvailabilityEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final ResourceAvailabilityEnum FALSE = new ResourceAvailabilityEnum("false");
 
         private static final Map<String, ResourceAvailabilityEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class AvailableZones {
         return this;
     }
 
-    /** 可用区编码。
-     * 
-     * @return code */
+    /**
+     * 可用区编码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -130,9 +139,10 @@ public class AvailableZones {
         return this;
     }
 
-    /** 可用区端口号。
-     * 
-     * @return port */
+    /**
+     * 可用区端口号。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -146,9 +156,10 @@ public class AvailableZones {
         return this;
     }
 
-    /** 可用区名称。
-     * 
-     * @return name */
+    /**
+     * 可用区名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -162,9 +173,10 @@ public class AvailableZones {
         return this;
     }
 
-    /** 可用区ID。
-     * 
-     * @return id */
+    /**
+     * 可用区ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -178,9 +190,10 @@ public class AvailableZones {
         return this;
     }
 
-    /** 分区上是否还有可用资源。 - true：还有资源。 - false：资源已售罄。
-     * 
-     * @return resourceAvailability */
+    /**
+     * 分区上是否还有可用资源。 - true：还有资源。 - false：资源已售罄。 
+     * @return resourceAvailability
+     */
     public ResourceAvailabilityEnum getResourceAvailability() {
         return resourceAvailability;
     }
@@ -221,7 +234,10 @@ public class AvailableZones {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowLtsLogDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return groupId */
+    /**
+     * 日志组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -45,9 +48,10 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志流id
-     * 
-     * @return streamId */
+    /**
+     * 日志流id
+     * @return streamId
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -61,9 +65,10 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return streamName */
+    /**
+     * 日志流名称
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -102,7 +107,10 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

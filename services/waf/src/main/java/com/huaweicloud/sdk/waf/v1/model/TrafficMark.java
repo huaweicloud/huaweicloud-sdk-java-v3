@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流量标识（用于攻击惩罚） */
+/**
+ * 流量标识（用于攻击惩罚）
+ */
 public class TrafficMark {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class TrafficMark {
         return this;
     }
 
-    /** 惩罚ip
-     * 
-     * @return sip */
+    /**
+     * 惩罚ip
+     * @return sip
+     */
     public List<String> getSip() {
         return sip;
     }
@@ -63,9 +66,10 @@ public class TrafficMark {
         return this;
     }
 
-    /** cookie
-     * 
-     * @return cookie */
+    /**
+     * cookie
+     * @return cookie
+     */
     public String getCookie() {
         return cookie;
     }
@@ -79,9 +83,10 @@ public class TrafficMark {
         return this;
     }
 
-    /** 参数
-     * 
-     * @return params */
+    /**
+     * 参数
+     * @return params
+     */
     public String getParams() {
         return params;
     }
@@ -119,7 +124,10 @@ public class TrafficMark {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

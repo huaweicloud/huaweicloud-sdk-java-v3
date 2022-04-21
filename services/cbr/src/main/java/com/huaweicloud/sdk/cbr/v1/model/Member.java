@@ -15,16 +15,24 @@ import java.util.Objects;
  */
 public class Member {
 
-    /** 共享状态 */
+    /**
+     * 共享状态
+     */
     public static final class StatusEnum {
 
-        /** Enum PENDING for value: "pending" */
+        /**
+         * Enum PENDING for value: "pending"
+         */
         public static final StatusEnum PENDING = new StatusEnum("pending");
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -135,9 +143,10 @@ public class Member {
         return this;
     }
 
-    /** 共享状态
-     * 
-     * @return status */
+    /**
+     * 共享状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -151,9 +160,10 @@ public class Member {
         return this;
     }
 
-    /** 共享时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return createdAt */
+    /**
+     * 共享时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -167,9 +177,10 @@ public class Member {
         return this;
     }
 
-    /** 更新时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -183,9 +194,10 @@ public class Member {
         return this;
     }
 
-    /** 备份副本id
-     * 
-     * @return backupId */
+    /**
+     * 备份副本id
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -199,9 +211,10 @@ public class Member {
         return this;
     }
 
-    /** 接受的共享备份副本注册的镜像id
-     * 
-     * @return imageId */
+    /**
+     * 接受的共享备份副本注册的镜像id
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -215,9 +228,10 @@ public class Member {
         return this;
     }
 
-    /** 接受备份共享的项目id
-     * 
-     * @return destProjectId */
+    /**
+     * 接受备份共享的项目id
+     * @return destProjectId
+     */
     public String getDestProjectId() {
         return destProjectId;
     }
@@ -231,9 +245,10 @@ public class Member {
         return this;
     }
 
-    /** 目标端接受共享备份的存储库id
-     * 
-     * @return vaultId */
+    /**
+     * 目标端接受共享备份的存储库id
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -247,9 +262,10 @@ public class Member {
         return this;
     }
 
-    /** 共享记录id
-     * 
-     * @return id */
+    /**
+     * 共享记录id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -294,7 +310,10 @@ public class Member {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

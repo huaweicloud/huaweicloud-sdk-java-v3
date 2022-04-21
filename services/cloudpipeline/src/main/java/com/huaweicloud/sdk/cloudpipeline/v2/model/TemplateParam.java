@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流水线参数 */
+/**
+ * 流水线参数
+ */
 public class TemplateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 是否必须
-     * 
-     * @return required */
+    /**
+     * 是否必须
+     * @return required
+     */
     public String getRequired() {
         return required;
     }
@@ -92,9 +95,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 是否可见
-     * 
-     * @return visible */
+    /**
+     * 是否可见
+     * @return visible
+     */
     public String getVisible() {
         return visible;
     }
@@ -108,9 +112,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数名字
-     * 
-     * @return name */
+    /**
+     * 流水线参数名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,9 +129,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数值
-     * 
-     * @return value */
+    /**
+     * 流水线参数值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -140,9 +146,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数描述
-     * 
-     * @return description */
+    /**
+     * 流水线参数描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -156,9 +163,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数类型
-     * 
-     * @return paramtype */
+    /**
+     * 流水线参数类型
+     * @return paramtype
+     */
     public String getParamtype() {
         return paramtype;
     }
@@ -172,9 +180,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数展示类型
-     * 
-     * @return displayType */
+    /**
+     * 流水线参数展示类型
+     * @return displayType
+     */
     public String getDisplayType() {
         return displayType;
     }
@@ -188,9 +197,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 流水线参数展示名字
-     * 
-     * @return displayName */
+    /**
+     * 流水线参数展示名字
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -204,9 +214,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 是否静态参数
-     * 
-     * @return isStatic */
+    /**
+     * 是否静态参数
+     * @return isStatic
+     */
     public Boolean getIsStatic() {
         return isStatic;
     }
@@ -220,9 +231,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** 是否默认参数
-     * 
-     * @return isDefault */
+    /**
+     * 是否默认参数
+     * @return isDefault
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -252,9 +264,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** array类型数据
-     * 
-     * @return limits */
+    /**
+     * array类型数据
+     * @return limits
+     */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -284,9 +297,10 @@ public class TemplateParam {
         return this;
     }
 
-    /** array类型数据
-     * 
-     * @return constraints */
+    /**
+     * array类型数据
+     * @return constraints
+     */
     public List<Constraint> getConstraints() {
         return constraints;
     }
@@ -353,7 +367,10 @@ public class TemplateParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

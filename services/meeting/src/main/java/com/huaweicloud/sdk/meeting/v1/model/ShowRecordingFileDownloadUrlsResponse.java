@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRecordingFileDownloadUrlsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowRecordingFileDownloadUrlsResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制文件下载URL
-     * 
-     * @return recordUrls */
+    /**
+     * 录制文件下载URL
+     * @return recordUrls
+     */
     public List<RecordDownloadInfoBO> getRecordUrls() {
         return recordUrls;
     }
@@ -76,7 +79,10 @@ public class ShowRecordingFileDownloadUrlsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 部署任务和应用组件对应关系 */
+/**
+ * 部署任务和应用组件对应关系
+ */
 public class AppComponentDao {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 部署任务id
-     * 
-     * @return taskId */
+    /**
+     * 部署任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -69,9 +72,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -85,9 +89,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -101,9 +106,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 组件id
-     * 
-     * @return compId */
+    /**
+     * 组件id
+     * @return compId
+     */
     public String getCompId() {
         return compId;
     }
@@ -117,9 +123,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 组件名称
-     * 
-     * @return compName */
+    /**
+     * 组件名称
+     * @return compName
+     */
     public String getCompName() {
         return compName;
     }
@@ -133,9 +140,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainId */
+    /**
+     * 租户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -149,9 +157,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 局点信息
-     * 
-     * @return region */
+    /**
+     * 局点信息
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -165,9 +174,10 @@ public class AppComponentDao {
         return this;
     }
 
-    /** 组件是否生效，0表示初始化，1表示执行成功，已生效
-     * 
-     * @return state */
+    /**
+     * 组件是否生效，0表示初始化，1表示执行成功，已生效
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -214,7 +224,10 @@ public class AppComponentDao {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

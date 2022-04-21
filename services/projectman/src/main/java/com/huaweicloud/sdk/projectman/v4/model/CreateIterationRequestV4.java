@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateIterationRequestV4 */
+/**
+ * CreateIterationRequestV4
+ */
 public class CreateIterationRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateIterationRequestV4 {
         return this;
     }
 
-    /** 开始时间，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -49,9 +52,10 @@ public class CreateIterationRequestV4 {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -65,9 +69,10 @@ public class CreateIterationRequestV4 {
         return this;
     }
 
-    /** 结束时间，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -81,9 +86,10 @@ public class CreateIterationRequestV4 {
         return this;
     }
 
-    /** 标题
-     * 
-     * @return name */
+    /**
+     * 标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,7 +130,10 @@ public class CreateIterationRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

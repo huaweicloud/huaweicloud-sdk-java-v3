@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 执行http探测 */
+/**
+ * 执行http探测
+ */
 public class InstancesLivenessProbeHttpGet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class InstancesLivenessProbeHttpGet {
         return this;
     }
 
-    /** 必须要以/开头，构造结果为：协议类型://主机地址:端口路径
-     * 
-     * @return path */
+    /**
+     * 必须要以/开头，构造结果为：协议类型://主机地址:端口路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -49,9 +52,10 @@ public class InstancesLivenessProbeHttpGet {
         return this;
     }
 
-    /** 探测的http端口，1到65535之间的整数
-     * 
-     * @return port */
+    /**
+     * 探测的http端口，1到65535之间的整数
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -65,9 +69,10 @@ public class InstancesLivenessProbeHttpGet {
         return this;
     }
 
-    /** 请求的主机地址，默认为容器IP
-     * 
-     * @return host */
+    /**
+     * 请求的主机地址，默认为容器IP
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -81,9 +86,10 @@ public class InstancesLivenessProbeHttpGet {
         return this;
     }
 
-    /** 协议类型，HTTP或HTTPS，默认HTTP
-     * 
-     * @return scheme */
+    /**
+     * 协议类型，HTTP或HTTPS，默认HTTP
+     * @return scheme
+     */
     public String getScheme() {
         return scheme;
     }
@@ -124,7 +130,10 @@ public class InstancesLivenessProbeHttpGet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 健康检查响应体 */
+/**
+ * 健康检查响应体
+ */
 public class HealthmonitorResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,16 +53,24 @@ public class HealthmonitorResp {
 
     private Integer timeout;
 
-    /** 健康检查类型 */
+    /**
+     * 健康检查类型
+     */
     public static final class TypeEnum {
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final TypeEnum TCP = new TypeEnum("TCP");
 
-        /** Enum UDP_CONNECT for value: "UDP_CONNECT" */
+        /**
+         * Enum UDP_CONNECT for value: "UDP_CONNECT"
+         */
         public static final TypeEnum UDP_CONNECT = new TypeEnum("UDP_CONNECT");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final TypeEnum HTTP = new TypeEnum("HTTP");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -171,9 +181,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查ID
-     * 
-     * @return id */
+    /**
+     * 健康检查ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -187,9 +198,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 健康检查所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -203,9 +215,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 健康检查所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -219,9 +232,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查名称。
-     * 
-     * @return name */
+    /**
+     * 健康检查名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -235,9 +249,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
-     * 
-     * @return adminStateUp */
+    /**
+     * 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -251,9 +266,12 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查端口号。默认为空，表示使用后端云服务器组的端口。 minimum: 1 maximum: 65535
-     * 
-     * @return monitorPort */
+    /**
+     * 健康检查端口号。默认为空，表示使用后端云服务器组的端口。
+     * minimum: 1
+     * maximum: 65535
+     * @return monitorPort
+     */
     public Integer getMonitorPort() {
         return monitorPort;
     }
@@ -267,9 +285,12 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查的超时时间。建议该值小于delay的值。 minimum: 1 maximum: 50
-     * 
-     * @return timeout */
+    /**
+     * 健康检查的超时时间。建议该值小于delay的值。
+     * minimum: 1
+     * maximum: 50
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -283,9 +304,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查类型
-     * 
-     * @return type */
+    /**
+     * 健康检查类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -299,9 +321,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * 
-     * @return expectedCodes */
+    /**
+     * 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * @return expectedCodes
+     */
     public String getExpectedCodes() {
         return expectedCodes;
     }
@@ -315,9 +338,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
-     * 
-     * @return domainName */
+    /**
+     * 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -331,9 +355,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * 
-     * @return urlPath */
+    /**
+     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * @return urlPath
+     */
     public String getUrlPath() {
         return urlPath;
     }
@@ -347,9 +372,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * 
-     * @return httpMethod */
+    /**
+     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * @return httpMethod
+     */
     public String getHttpMethod() {
         return httpMethod;
     }
@@ -363,9 +389,12 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查间隔，单位秒 minimum: 1 maximum: 50
-     * 
-     * @return delay */
+    /**
+     * 健康检查间隔，单位秒
+     * minimum: 1
+     * maximum: 50
+     * @return delay
+     */
     public Integer getDelay() {
         return delay;
     }
@@ -379,9 +408,12 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 最大重试次数 minimum: 1 maximum: 10
-     * 
-     * @return maxRetries */
+    /**
+     * 最大重试次数
+     * minimum: 1
+     * maximum: 10
+     * @return maxRetries
+     */
     public Integer getMaxRetries() {
         return maxRetries;
     }
@@ -411,9 +443,10 @@ public class HealthmonitorResp {
         return this;
     }
 
-    /** 健康检查关联的后端云服务器组列表
-     * 
-     * @return pools */
+    /**
+     * 健康检查关联的后端云服务器组列表
+     * @return pools
+     */
     public List<ResourceList> getPools() {
         return pools;
     }
@@ -490,7 +523,10 @@ public class HealthmonitorResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

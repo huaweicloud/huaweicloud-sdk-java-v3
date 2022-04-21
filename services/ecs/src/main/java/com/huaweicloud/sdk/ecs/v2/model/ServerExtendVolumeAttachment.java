@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 挂载到弹性云服务器上的磁盘。 */
+/**
+ * 挂载到弹性云服务器上的磁盘。
+ */
 public class ServerExtendVolumeAttachment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ServerExtendVolumeAttachment {
         return this;
     }
 
-    /** 磁盘ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 磁盘ID，格式为UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class ServerExtendVolumeAttachment {
         return this;
     }
 
-    /** 删弹性云服务器时是否一并删除该磁盘。 - true：是 - false：否 微版本2.3及以上版本支持。
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 删弹性云服务器时是否一并删除该磁盘。  - true：是 - false：否 微版本2.3及以上版本支持。
+     * @return deleteOnTermination
+     */
     public String getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -65,9 +69,10 @@ public class ServerExtendVolumeAttachment {
         return this;
     }
 
-    /** 启动标识，“0”代表启动盘，“-1“代表非启动盘。
-     * 
-     * @return bootIndex */
+    /**
+     * 启动标识，“0”代表启动盘，“-1“代表非启动盘。
+     * @return bootIndex
+     */
     public String getBootIndex() {
         return bootIndex;
     }
@@ -81,9 +86,10 @@ public class ServerExtendVolumeAttachment {
         return this;
     }
 
-    /** 云硬盘挂载盘符，即磁盘挂载点。
-     * 
-     * @return device */
+    /**
+     * 云硬盘挂载盘符，即磁盘挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -124,7 +130,10 @@ public class ServerExtendVolumeAttachment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

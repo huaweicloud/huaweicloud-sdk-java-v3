@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListChartsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListChartsRequest {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -49,9 +52,10 @@ public class ListChartsRequest {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -65,9 +69,12 @@ public class ListChartsRequest {
         return this;
     }
 
-    /** 查询游标，初始传入0，后续从上一次的返回值中获取 minimum: 0 maximum: 1024
-     * 
-     * @return offset */
+    /**
+     * 查询游标，初始传入0，后续从上一次的返回值中获取
+     * minimum: 0
+     * maximum: 1024
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -81,9 +88,12 @@ public class ListChartsRequest {
         return this;
     }
 
-    /** 每页数据量，最大值为100 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页数据量，最大值为100
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +134,10 @@ public class ListChartsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HandleNotificationInvitor */
+/**
+ * HandleNotificationInvitor
+ */
 public class HandleNotificationInvitor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方实例id
-     * 
-     * @return invitorBcsId */
+    /**
+     * 邀请方实例id
+     * @return invitorBcsId
+     */
     public String getInvitorBcsId() {
         return invitorBcsId;
     }
@@ -49,9 +52,10 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方实例名称
-     * 
-     * @return invitorBcsName */
+    /**
+     * 邀请方实例名称
+     * @return invitorBcsName
+     */
     public String getInvitorBcsName() {
         return invitorBcsName;
     }
@@ -65,9 +69,10 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方project id
-     * 
-     * @return invitorProjectId */
+    /**
+     * 邀请方project id
+     * @return invitorProjectId
+     */
     public String getInvitorProjectId() {
         return invitorProjectId;
     }
@@ -81,9 +86,10 @@ public class HandleNotificationInvitor {
         return this;
     }
 
-    /** 邀请方租户id
-     * 
-     * @return invitorUserId */
+    /**
+     * 邀请方租户id
+     * @return invitorUserId
+     */
     public String getInvitorUserId() {
         return invitorUserId;
     }
@@ -124,7 +130,10 @@ public class HandleNotificationInvitor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

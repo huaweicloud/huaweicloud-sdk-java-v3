@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ServiceTypes */
+/**
+ * ServiceTypes
+ */
 public class ServiceTypes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ServiceTypes {
         return this;
     }
 
-    /** 云服务类型的名称。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型的名称。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -44,9 +47,10 @@ public class ServiceTypes {
         return this;
     }
 
-    /** 云服务类型的编码。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型的编码。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -60,9 +64,10 @@ public class ServiceTypes {
         return this;
     }
 
-    /** 云服务类型的缩写。
-     * 
-     * @return abbreviation */
+    /**
+     * 云服务类型的缩写。
+     * @return abbreviation
+     */
     public String getAbbreviation() {
         return abbreviation;
     }
@@ -101,7 +106,10 @@ public class ServiceTypes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

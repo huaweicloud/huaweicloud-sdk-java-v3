@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDevicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListDevicesRequest {
         return this;
     }
 
-    /** 查询的起始位置，取值范围为非负整数，默认为0
-     * 
-     * @return offset */
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -44,9 +47,10 @@ public class ListDevicesRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，取值范围1~100，默认为100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，取值范围1~100，默认为100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class ListDevicesRequest {
         return this;
     }
 
-    /** 设备名称，模糊匹配，只允许中英文、数字、下划线、中划线，长度1-60
-     * 
-     * @return name */
+    /**
+     * 设备名称，模糊匹配，只允许中英文、数字、下划线、中划线，长度1-60
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,7 +106,10 @@ public class ListDevicesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

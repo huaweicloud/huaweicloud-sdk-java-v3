@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EIP防护流量响应体 */
+/**
+ * EIP防护流量响应体
+ */
 public class DailyData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class DailyData {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return periodStart */
+    /**
+     * 开始时间
+     * @return periodStart
+     */
     public Long getPeriodStart() {
         return periodStart;
     }
@@ -64,9 +67,10 @@ public class DailyData {
         return this;
     }
 
-    /** 入流量（bit/s）
-     * 
-     * @return bpsIn */
+    /**
+     * 入流量（bit/s）
+     * @return bpsIn
+     */
     public Integer getBpsIn() {
         return bpsIn;
     }
@@ -80,9 +84,10 @@ public class DailyData {
         return this;
     }
 
-    /** 攻击流量（bit/s）
-     * 
-     * @return bpsAttack */
+    /**
+     * 攻击流量（bit/s）
+     * @return bpsAttack
+     */
     public Long getBpsAttack() {
         return bpsAttack;
     }
@@ -96,9 +101,10 @@ public class DailyData {
         return this;
     }
 
-    /** 总流量
-     * 
-     * @return totalBps */
+    /**
+     * 总流量
+     * @return totalBps
+     */
     public Long getTotalBps() {
         return totalBps;
     }
@@ -112,9 +118,10 @@ public class DailyData {
         return this;
     }
 
-    /** 入报文速率（个/s）
-     * 
-     * @return ppsIn */
+    /**
+     * 入报文速率（个/s）
+     * @return ppsIn
+     */
     public Long getPpsIn() {
         return ppsIn;
     }
@@ -128,9 +135,10 @@ public class DailyData {
         return this;
     }
 
-    /** 攻击文速率（个/s）
-     * 
-     * @return ppsAttack */
+    /**
+     * 攻击文速率（个/s）
+     * @return ppsAttack
+     */
     public Long getPpsAttack() {
         return ppsAttack;
     }
@@ -144,9 +152,10 @@ public class DailyData {
         return this;
     }
 
-    /** 总报文速率
-     * 
-     * @return totalPps */
+    /**
+     * 总报文速率
+     * @return totalPps
+     */
     public Long getTotalPps() {
         return totalPps;
     }
@@ -190,7 +199,10 @@ public class DailyData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

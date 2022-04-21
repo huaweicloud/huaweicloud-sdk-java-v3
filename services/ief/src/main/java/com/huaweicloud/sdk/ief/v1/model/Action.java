@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点 */
+/**
+ * 节点
+ */
 public class Action {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class Action {
         return this;
     }
 
-    /** 启用，停用边缘节点，支持start/stop
-     * 
-     * @return action */
+    /**
+     * 启用，停用边缘节点，支持start/stop
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -55,7 +58,10 @@ public class Action {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

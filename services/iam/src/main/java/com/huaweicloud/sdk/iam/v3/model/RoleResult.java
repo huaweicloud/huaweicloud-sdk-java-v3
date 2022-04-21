@@ -81,9 +81,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 权限所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -97,9 +98,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 该参数值为fine_grained时，标识此权限为系统内置的策略。
-     * 
-     * @return flag */
+    /**
+     * 该参数值为fine_grained时，标识此权限为系统内置的策略。
+     * @return flag
+     */
     public String getFlag() {
         return flag;
     }
@@ -113,9 +115,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限的中文描述信息。
-     * 
-     * @return descriptionCn */
+    /**
+     * 权限的中文描述信息。
+     * @return descriptionCn
+     */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -129,9 +132,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限所在目录。
-     * 
-     * @return catalog */
+    /**
+     * 权限所在目录。
+     * @return catalog
+     */
     public String getCatalog() {
         return catalog;
     }
@@ -145,9 +149,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限名。携带在用户的token中，云服务根据该名称来判断用户是否有权限访问。
-     * 
-     * @return name */
+    /**
+     * 权限名。携带在用户的token中，云服务根据该名称来判断用户是否有权限访问。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -161,9 +166,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限描述信息。
-     * 
-     * @return description */
+    /**
+     * 权限描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -186,9 +192,10 @@ public class RoleResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -202,9 +209,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限ID。
-     * 
-     * @return id */
+    /**
+     * 权限ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -218,9 +226,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限展示名。
-     * 
-     * @return displayName */
+    /**
+     * 权限展示名。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -234,10 +243,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - AA表示在domain和project层均显示。 > - XX表示在domain和project层均不显示。 > -
-     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * 
-     * @return type */
+    /**
+     * 权限的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - AA表示在domain和project层均显示。 > - XX表示在domain和project层均不显示。 > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -260,9 +269,10 @@ public class RoleResult {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public RolePolicy getPolicy() {
         return policy;
     }
@@ -276,9 +286,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限更新时间。
-     * 
-     * @return updatedTime */
+    /**
+     * 权限更新时间。
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -292,9 +303,10 @@ public class RoleResult {
         return this;
     }
 
-    /** 权限创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 权限创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -360,7 +372,10 @@ public class RoleResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

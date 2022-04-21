@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 证书属性配置 */
+/**
+ * 证书属性配置
+ */
 public class Cert {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Cert {
         return this;
     }
 
-    /** 证书名称
-     * 
-     * @return name */
+    /**
+     * 证书名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class Cert {
         return this;
     }
 
-    /** 证书描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 证书描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class Cert {
         return this;
     }
 
-    /** 证书类型，包含： - application：应用证书 - device：设备证书
-     * 
-     * @return type */
+    /**
+     * 证书类型，包含： - application：应用证书 - device：设备证书
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -100,7 +105,10 @@ public class Cert {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

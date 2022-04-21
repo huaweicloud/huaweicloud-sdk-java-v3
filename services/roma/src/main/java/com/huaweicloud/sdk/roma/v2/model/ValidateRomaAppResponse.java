@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ValidateRomaAppResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ValidateRomaAppResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return id */
+    /**
+     * 应用ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -45,9 +48,10 @@ public class ValidateRomaAppResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -61,9 +65,10 @@ public class ValidateRomaAppResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return remark */
+    /**
+     * 应用描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -102,7 +107,10 @@ public class ValidateRomaAppResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

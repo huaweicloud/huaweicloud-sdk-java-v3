@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 媒体接入(包括SBC和MCU)分组信息 */
+/**
+ * 媒体接入(包括SBC和MCU)分组信息
+ */
 public class OrgGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OrgGroupDTO {
         return this;
     }
 
-    /** 分组Id
-     * 
-     * @return groupId */
+    /**
+     * 分组Id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -39,9 +42,10 @@ public class OrgGroupDTO {
         return this;
     }
 
-    /** 分组名称
-     * 
-     * @return groupName */
+    /**
+     * 分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -78,7 +82,10 @@ public class OrgGroupDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

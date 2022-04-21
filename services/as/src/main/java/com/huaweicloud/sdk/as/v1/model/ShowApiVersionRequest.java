@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowApiVersionRequest {
 
-    /** API版本ID。 */
+    /**
+     * API版本ID。
+     */
     public static final class ApiVersionEnum {
 
-        /** Enum V1 for value: "v1" */
+        /**
+         * Enum V1 for value: "v1"
+         */
         public static final ApiVersionEnum V1 = new ApiVersionEnum("v1");
 
-        /** Enum V2 for value: "v2" */
+        /**
+         * Enum V2 for value: "v2"
+         */
         public static final ApiVersionEnum V2 = new ApiVersionEnum("v2");
 
         private static final Map<String, ApiVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ShowApiVersionRequest {
         return this;
     }
 
-    /** API版本ID。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本ID。
+     * @return apiVersion
+     */
     public ApiVersionEnum getApiVersion() {
         return apiVersion;
     }
@@ -131,7 +140,10 @@ public class ShowApiVersionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

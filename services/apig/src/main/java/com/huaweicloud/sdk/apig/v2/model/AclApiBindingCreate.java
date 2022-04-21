@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AclApiBindingCreate */
+/**
+ * AclApiBindingCreate
+ */
 public class AclApiBindingCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AclApiBindingCreate {
         return this;
     }
 
-    /** ACL策略编号
-     * 
-     * @return aclId */
+    /**
+     * ACL策略编号
+     * @return aclId
+     */
     public String getAclId() {
         return aclId;
     }
@@ -58,9 +61,10 @@ public class AclApiBindingCreate {
         return this;
     }
 
-    /** API发布记录编号
-     * 
-     * @return publishIds */
+    /**
+     * API发布记录编号
+     * @return publishIds
+     */
     public List<String> getPublishIds() {
         return publishIds;
     }
@@ -97,7 +101,10 @@ public class AclApiBindingCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

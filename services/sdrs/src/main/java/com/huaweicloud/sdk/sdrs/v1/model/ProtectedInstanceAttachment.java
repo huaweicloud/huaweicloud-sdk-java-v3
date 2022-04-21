@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 保护实例挂载信息结构 */
+/**
+ * 保护实例挂载信息结构
+ */
 public class ProtectedInstanceAttachment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ProtectedInstanceAttachment {
         return this;
     }
 
-    /** 复制对ID。
-     * 
-     * @return replication */
+    /**
+     * 复制对ID。
+     * @return replication
+     */
     public String getReplication() {
         return replication;
     }
@@ -39,9 +42,10 @@ public class ProtectedInstanceAttachment {
         return this;
     }
 
-    /** 挂载点。
-     * 
-     * @return device */
+    /**
+     * 挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -78,7 +82,10 @@ public class ProtectedInstanceAttachment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

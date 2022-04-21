@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ThrottleSpecialCreate */
+/**
+ * ThrottleSpecialCreate
+ */
 public class ThrottleSpecialCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ThrottleSpecialCreate {
 
     private String objectId;
 
-    /** 特殊对象类型 */
+    /**
+     * 特殊对象类型
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum APP for value: "APP" */
+        /**
+         * Enum APP for value: "APP"
+         */
         public static final ObjectTypeEnum APP = new ObjectTypeEnum("APP");
 
-        /** Enum USER for value: "USER" */
+        /**
+         * Enum USER for value: "USER"
+         */
         public static final ObjectTypeEnum USER = new ObjectTypeEnum("USER");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,11 @@ public class ThrottleSpecialCreate {
         return this;
     }
 
-    /** 流控时间内特殊对象能够访问API的最大次数限制 minimum: 1
-     * 
-     * @return callLimits */
+    /**
+     * 流控时间内特殊对象能够访问API的最大次数限制
+     * minimum: 1
+     * @return callLimits
+     */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -120,9 +130,10 @@ public class ThrottleSpecialCreate {
         return this;
     }
 
-    /** 特殊APP的编号[或特殊租户的帐号ID](tag:hws;hws_hk;hcs;fcs;g42;)
-     * 
-     * @return objectId */
+    /**
+     * 特殊APP的编号[或特殊租户的帐号ID](tag:hws;hws_hk;hcs;fcs;g42;)
+     * @return objectId
+     */
     public String getObjectId() {
         return objectId;
     }
@@ -136,9 +147,10 @@ public class ThrottleSpecialCreate {
         return this;
     }
 
-    /** 特殊对象类型
-     * 
-     * @return objectType */
+    /**
+     * 特殊对象类型
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -177,7 +189,10 @@ public class ThrottleSpecialCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

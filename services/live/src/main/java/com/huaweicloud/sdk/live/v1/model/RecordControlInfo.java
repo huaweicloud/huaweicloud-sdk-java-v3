@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RecordControlInfo */
+/**
+ * RecordControlInfo
+ */
 public class RecordControlInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RecordControlInfo {
         return this;
     }
 
-    /** 直播推流域名
-     * 
-     * @return publishDomain */
+    /**
+     * 直播推流域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -44,9 +47,10 @@ public class RecordControlInfo {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return app */
+    /**
+     * 应用名
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -60,9 +64,10 @@ public class RecordControlInfo {
         return this;
     }
 
-    /** 待启动或停止录制的流名
-     * 
-     * @return stream */
+    /**
+     * 待启动或停止录制的流名
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -100,7 +105,10 @@ public class RecordControlInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 任务关联的目的端信息 */
+/**
+ * 任务关联的目的端信息
+ */
 public class TargetServerAssociatedWithTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class TargetServerAssociatedWithTask {
 
     private String ip;
 
-    /** 目的端服务器的OS类型 */
+    /**
+     * 目的端服务器的OS类型
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 目的端在SMS数据库中的ID
-     * 
-     * @return id */
+    /**
+     * 目的端在SMS数据库中的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -135,9 +144,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 目的端虚机id
-     * 
-     * @return vmId */
+    /**
+     * 目的端虚机id
+     * @return vmId
+     */
     public String getVmId() {
         return vmId;
     }
@@ -151,9 +161,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 目的端服务器名称
-     * 
-     * @return name */
+    /**
+     * 目的端服务器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -167,9 +178,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 目的端服务器ip
-     * 
-     * @return ip */
+    /**
+     * 目的端服务器ip
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -183,9 +195,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 目的端服务器的OS类型
-     * 
-     * @return osType */
+    /**
+     * 目的端服务器的OS类型
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -199,9 +212,10 @@ public class TargetServerAssociatedWithTask {
         return this;
     }
 
-    /** 操作系统版本
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -246,7 +260,10 @@ public class TargetServerAssociatedWithTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

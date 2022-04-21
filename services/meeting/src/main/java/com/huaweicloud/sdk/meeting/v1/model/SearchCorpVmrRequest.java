@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchCorpVmrRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -66,9 +69,10 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -82,9 +86,11 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -98,9 +104,12 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -114,9 +123,10 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -130,9 +140,12 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** VMR模式，不填则默认为公共云会议室。 - 1：云会议室 - 2：网络研讨会。 minimum: 1 maximum: 2
-     * 
-     * @return vmrMode */
+    /**
+     * VMR模式，不填则默认为公共云会议室。 - 1：云会议室 - 2：网络研讨会。 
+     * minimum: 1
+     * maximum: 2
+     * @return vmrMode
+     */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -146,9 +159,12 @@ public class SearchCorpVmrRequest {
         return this;
     }
 
-    /** 云会议室状态，为null则查询是所有 * 0、正常 * 1、停用 * 2、未分配 minimum: 0 maximum: 2
-     * 
-     * @return status */
+    /**
+     * 云会议室状态，为null则查询是所有 * 0、正常 * 1、停用 * 2、未分配 
+     * minimum: 0
+     * maximum: 2
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -195,7 +211,10 @@ public class SearchCorpVmrRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

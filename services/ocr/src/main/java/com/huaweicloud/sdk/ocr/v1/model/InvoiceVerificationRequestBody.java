@@ -40,9 +40,10 @@ public class InvoiceVerificationRequestBody {
         return this;
     }
 
-    /** 发票代码
-     * 
-     * @return code */
+    /**
+     * 发票代码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -56,9 +57,10 @@ public class InvoiceVerificationRequestBody {
         return this;
     }
 
-    /** 发票号码
-     * 
-     * @return number */
+    /**
+     * 发票号码
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -72,9 +74,10 @@ public class InvoiceVerificationRequestBody {
         return this;
     }
 
-    /** 发票日期格式YYYY-MM-DD
-     * 
-     * @return issueDate */
+    /**
+     * 发票日期格式YYYY-MM-DD
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -88,9 +91,10 @@ public class InvoiceVerificationRequestBody {
         return this;
     }
 
-    /** 校验码后六位 发票种类为增值税普通发票、增值税电子普通发票、增值税普通发票（卷式）、增值税电子普通发票（通行费）、区块链电子发票时此项不可为空（区块链电子发票验真时，填写的是5位校验码）
-     * 
-     * @return checkCode */
+    /**
+     * 校验码后六位  发票种类为增值税普通发票、增值税电子普通发票、增值税普通发票（卷式）、增值税电子普通发票（通行费）、区块链电子发票时此项不可为空（区块链电子发票验真时，填写的是5位校验码） 
+     * @return checkCode
+     */
     public String getCheckCode() {
         return checkCode;
     }
@@ -104,10 +108,10 @@ public class InvoiceVerificationRequestBody {
         return this;
     }
 
-    /** 合计金额（不含税） 1.发票种类为增值税专用发票、增值税电子专用发票、机动车销售统一发票、二手车销售统一发票、区块链电子发票时不可为空；
-     * 2.增值税专用发票、增值税电子专用发票、机动车销售统一发票、区块链电子发票填写发票合计金额（不含税），二手车发票填写发票车价合计
-     * 
-     * @return subtotalAmount */
+    /**
+     * 合计金额（不含税）  1.发票种类为增值税专用发票、增值税电子专用发票、机动车销售统一发票、二手车销售统一发票、区块链电子发票时不可为空； 2.增值税专用发票、增值税电子专用发票、机动车销售统一发票、区块链电子发票填写发票合计金额（不含税），二手车发票填写发票车价合计 
+     * @return subtotalAmount
+     */
     public String getSubtotalAmount() {
         return subtotalAmount;
     }
@@ -150,7 +154,10 @@ public class InvoiceVerificationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

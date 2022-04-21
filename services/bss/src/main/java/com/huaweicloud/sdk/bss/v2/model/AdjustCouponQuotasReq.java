@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AdjustCouponQuotasReq */
+/**
+ * AdjustCouponQuotasReq
+ */
 public class AdjustCouponQuotasReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class AdjustCouponQuotasReq {
         return this;
     }
 
-    /** 华为云伙伴能力中心发放的代金券额度的ID。获取方法请参见查询优惠券额度。
-     * 
-     * @return quotaId */
+    /**
+     * 华为云伙伴能力中心发放的代金券额度的ID。获取方法请参见查询优惠券额度。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -63,9 +66,10 @@ public class AdjustCouponQuotasReq {
         return this;
     }
 
-    /** 精英服务商ID列表。
-     * 
-     * @return indirectPartnerIds */
+    /**
+     * 精英服务商ID列表。
+     * @return indirectPartnerIds
+     */
     public List<String> getIndirectPartnerIds() {
         return indirectPartnerIds;
     }
@@ -79,9 +83,12 @@ public class AdjustCouponQuotasReq {
         return this;
     }
 
-    /** 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0.01 maximum: 1E+8
-     * 
-     * @return quotaAmount */
+    /**
+     * 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。
+     * minimum: 0.01
+     * maximum: 1E+8
+     * @return quotaAmount
+     */
     public Double getQuotaAmount() {
         return quotaAmount;
     }
@@ -120,7 +127,10 @@ public class AdjustCouponQuotasReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

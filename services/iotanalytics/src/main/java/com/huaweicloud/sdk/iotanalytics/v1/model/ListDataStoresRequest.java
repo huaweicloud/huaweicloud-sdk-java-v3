@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDataStoresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListDataStoresRequest {
         return this;
     }
 
-    /** 存储组 ID
-     * 
-     * @return groupId */
+    /**
+     * 存储组 ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -54,9 +57,10 @@ public class ListDataStoresRequest {
         return this;
     }
 
-    /** 存储 ID
-     * 
-     * @return dataStoreId */
+    /**
+     * 存储 ID
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -70,9 +74,10 @@ public class ListDataStoresRequest {
         return this;
     }
 
-    /** 存储名称
-     * 
-     * @return name */
+    /**
+     * 存储名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +91,12 @@ public class ListDataStoresRequest {
         return this;
     }
 
-    /** 页码 minimum: 0 maximum: 0
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * minimum: 0
+     * maximum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +110,12 @@ public class ListDataStoresRequest {
         return this;
     }
 
-    /** 返回条数限制 minimum: 200 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 返回条数限制
+     * minimum: 200
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +158,10 @@ public class ListDataStoresRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

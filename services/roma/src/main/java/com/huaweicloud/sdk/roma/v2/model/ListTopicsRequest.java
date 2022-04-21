@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTopicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -69,9 +72,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 设备ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return deviceId
+     */
     public Integer getDeviceId() {
         return deviceId;
     }
@@ -85,9 +91,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,9 +110,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -117,9 +129,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** topic名称
-     * 
-     * @return name */
+    /**
+     * topic名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -133,9 +146,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** topic权限，0为发布，1为订阅 minimum: 0 maximum: 1
-     * 
-     * @return topicPermission */
+    /**
+     * topic权限，0为发布，1为订阅
+     * minimum: 0
+     * maximum: 1
+     * @return topicPermission
+     */
     public Integer getTopicPermission() {
         return topicPermission;
     }
@@ -149,9 +165,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** topic类型，0为设备类topic，1为产品类topic minimum: 0 maximum: 1
-     * 
-     * @return topicType */
+    /**
+     * topic类型，0为设备类topic，1为产品类topic
+     * minimum: 0
+     * maximum: 1
+     * @return topicType
+     */
     public Integer getTopicType() {
         return topicType;
     }
@@ -165,9 +184,12 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** topic是否为自定义，0为基础topic，1为自定义topic minimum: 0 maximum: 1
-     * 
-     * @return isPrivate */
+    /**
+     * topic是否为自定义，0为基础topic，1为自定义topic
+     * minimum: 0
+     * maximum: 1
+     * @return isPrivate
+     */
     public Integer getIsPrivate() {
         return isPrivate;
     }
@@ -216,7 +238,10 @@ public class ListTopicsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

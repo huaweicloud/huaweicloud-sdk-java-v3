@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ModifyInstancePasswordBody */
+/**
+ * ModifyInstancePasswordBody
+ */
 public class ModifyInstancePasswordBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ModifyInstancePasswordBody {
         return this;
     }
 
-    /** 旧密码
-     * 
-     * @return oldPassword */
+    /**
+     * 旧密码
+     * @return oldPassword
+     */
     public String getOldPassword() {
         return oldPassword;
     }
@@ -39,9 +42,10 @@ public class ModifyInstancePasswordBody {
         return this;
     }
 
-    /** 新密码
-     * 
-     * @return newPassword */
+    /**
+     * 新密码
+     * @return newPassword
+     */
     public String getNewPassword() {
         return newPassword;
     }
@@ -78,7 +82,10 @@ public class ModifyInstancePasswordBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

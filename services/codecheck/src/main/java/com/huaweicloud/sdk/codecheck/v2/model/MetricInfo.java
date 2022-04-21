@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 度量项 */
+/**
+ * 度量项
+ */
 public class MetricInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -228,9 +230,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 代码规模
-     * 
-     * @return codeSize */
+    /**
+     * 代码规模
+     * @return codeSize
+     */
     public String getCodeSize() {
         return codeSize;
     }
@@ -244,9 +247,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 原始代码行数
-     * 
-     * @return rawLines */
+    /**
+     * 原始代码行数
+     * @return rawLines
+     */
     public String getRawLines() {
         return rawLines;
     }
@@ -260,9 +264,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 函数总数
-     * 
-     * @return methodsTotal */
+    /**
+     * 函数总数
+     * @return methodsTotal
+     */
     public String getMethodsTotal() {
         return methodsTotal;
     }
@@ -276,9 +281,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 圈复杂度总数
-     * 
-     * @return cyclomaticComplexityTotal */
+    /**
+     * 圈复杂度总数
+     * @return cyclomaticComplexityTotal
+     */
     public String getCyclomaticComplexityTotal() {
         return cyclomaticComplexityTotal;
     }
@@ -292,9 +298,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 平均圈复杂度
-     * 
-     * @return cyclomaticComplexityPerMethod */
+    /**
+     * 平均圈复杂度
+     * @return cyclomaticComplexityPerMethod
+     */
     public String getCyclomaticComplexityPerMethod() {
         return cyclomaticComplexityPerMethod;
     }
@@ -308,9 +315,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 最大圈复杂度
-     * 
-     * @return maximumCyclomaticComplexity */
+    /**
+     * 最大圈复杂度
+     * @return maximumCyclomaticComplexity
+     */
     public String getMaximumCyclomaticComplexity() {
         return maximumCyclomaticComplexity;
     }
@@ -324,9 +332,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大圈复杂度数
-     * 
-     * @return hugeCyclomaticComplexityTotal */
+    /**
+     * 超大圈复杂度数
+     * @return hugeCyclomaticComplexityTotal
+     */
     public String getHugeCyclomaticComplexityTotal() {
         return hugeCyclomaticComplexityTotal;
     }
@@ -340,9 +349,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大圈复杂度比例
-     * 
-     * @return hugeCyclomaticComplexityRatio */
+    /**
+     * 超大圈复杂度比例
+     * @return hugeCyclomaticComplexityRatio
+     */
     public String getHugeCyclomaticComplexityRatio() {
         return hugeCyclomaticComplexityRatio;
     }
@@ -356,9 +366,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** cca圈复杂度总数
-     * 
-     * @return ccaCyclomaticComplexityTotal */
+    /**
+     * cca圈复杂度总数
+     * @return ccaCyclomaticComplexityTotal
+     */
     public String getCcaCyclomaticComplexityTotal() {
         return ccaCyclomaticComplexityTotal;
     }
@@ -372,9 +383,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** cca平均圈复杂度
-     * 
-     * @return ccaCyclomaticComplexityPerMethod */
+    /**
+     * cca平均圈复杂度
+     * @return ccaCyclomaticComplexityPerMethod
+     */
     public String getCcaCyclomaticComplexityPerMethod() {
         return ccaCyclomaticComplexityPerMethod;
     }
@@ -388,9 +400,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** cca最大圈复杂度
-     * 
-     * @return maximumCcaCyclomaticComplexity */
+    /**
+     * cca最大圈复杂度
+     * @return maximumCcaCyclomaticComplexity
+     */
     public String getMaximumCcaCyclomaticComplexity() {
         return maximumCcaCyclomaticComplexity;
     }
@@ -404,9 +417,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大圈复杂度函数总数
-     * 
-     * @return hugeCcaCyclomaticComplexityTotal */
+    /**
+     * 超大圈复杂度函数总数
+     * @return hugeCcaCyclomaticComplexityTotal
+     */
     public String getHugeCcaCyclomaticComplexityTotal() {
         return hugeCcaCyclomaticComplexityTotal;
     }
@@ -420,9 +434,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 圈复杂度满足度
-     * 
-     * @return cyclomaticComplexityAdequacy */
+    /**
+     * 圈复杂度满足度
+     * @return cyclomaticComplexityAdequacy
+     */
     public String getCyclomaticComplexityAdequacy() {
         return cyclomaticComplexityAdequacy;
     }
@@ -436,9 +451,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 最大深度
-     * 
-     * @return maximumDepth */
+    /**
+     * 最大深度
+     * @return maximumDepth
+     */
     public String getMaximumDepth() {
         return maximumDepth;
     }
@@ -452,9 +468,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大深度数
-     * 
-     * @return hugeDepthTotal */
+    /**
+     * 超大深度数
+     * @return hugeDepthTotal
+     */
     public String getHugeDepthTotal() {
         return hugeDepthTotal;
     }
@@ -468,9 +485,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大深度占比
-     * 
-     * @return hugeDepthRatio */
+    /**
+     * 超大深度占比
+     * @return hugeDepthRatio
+     */
     public String getHugeDepthRatio() {
         return hugeDepthRatio;
     }
@@ -484,9 +502,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 函数总行数
-     * 
-     * @return methodLines */
+    /**
+     * 函数总行数
+     * @return methodLines
+     */
     public String getMethodLines() {
         return methodLines;
     }
@@ -500,9 +519,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 函数平均代码行
-     * 
-     * @return linesPerMethod */
+    /**
+     * 函数平均代码行
+     * @return linesPerMethod
+     */
     public String getLinesPerMethod() {
         return linesPerMethod;
     }
@@ -516,9 +536,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大函数数
-     * 
-     * @return hugeMethodTotal */
+    /**
+     * 超大函数数
+     * @return hugeMethodTotal
+     */
     public String getHugeMethodTotal() {
         return hugeMethodTotal;
     }
@@ -532,9 +553,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大函数占比
-     * 
-     * @return hugeMethodRatio */
+    /**
+     * 超大函数占比
+     * @return hugeMethodRatio
+     */
     public String getHugeMethodRatio() {
         return hugeMethodRatio;
     }
@@ -548,9 +570,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 文件总数
-     * 
-     * @return filesTotal */
+    /**
+     * 文件总数
+     * @return filesTotal
+     */
     public String getFilesTotal() {
         return filesTotal;
     }
@@ -564,9 +587,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 目录总数
-     * 
-     * @return foldersTotal */
+    /**
+     * 目录总数
+     * @return foldersTotal
+     */
     public String getFoldersTotal() {
         return foldersTotal;
     }
@@ -580,9 +604,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 文件平均代码行
-     * 
-     * @return linesPerFile */
+    /**
+     * 文件平均代码行
+     * @return linesPerFile
+     */
     public String getLinesPerFile() {
         return linesPerFile;
     }
@@ -596,9 +621,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大头文件数
-     * 
-     * @return hugeHeaderfileTotal */
+    /**
+     * 超大头文件数
+     * @return hugeHeaderfileTotal
+     */
     public String getHugeHeaderfileTotal() {
         return hugeHeaderfileTotal;
     }
@@ -612,9 +638,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大头文件占比
-     * 
-     * @return hugeHeaderfileRatio */
+    /**
+     * 超大头文件占比
+     * @return hugeHeaderfileRatio
+     */
     public String getHugeHeaderfileRatio() {
         return hugeHeaderfileRatio;
     }
@@ -628,9 +655,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大源文件数
-     * 
-     * @return hugeNonHeaderfileTotal */
+    /**
+     * 超大源文件数
+     * @return hugeNonHeaderfileTotal
+     */
     public String getHugeNonHeaderfileTotal() {
         return hugeNonHeaderfileTotal;
     }
@@ -644,9 +672,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大源文件占比
-     * 
-     * @return hugeNonHeaderfileRatio */
+    /**
+     * 超大源文件占比
+     * @return hugeNonHeaderfileRatio
+     */
     public String getHugeNonHeaderfileRatio() {
         return hugeNonHeaderfileRatio;
     }
@@ -660,9 +689,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大目录数
-     * 
-     * @return hugeFolderTotal */
+    /**
+     * 超大目录数
+     * @return hugeFolderTotal
+     */
     public String getHugeFolderTotal() {
         return hugeFolderTotal;
     }
@@ -676,9 +706,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 超大目录占比
-     * 
-     * @return hugeFolderRatio */
+    /**
+     * 超大目录占比
+     * @return hugeFolderRatio
+     */
     public String getHugeFolderRatio() {
         return hugeFolderRatio;
     }
@@ -692,9 +723,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 重复文件数
-     * 
-     * @return fileDuplicationTotal */
+    /**
+     * 重复文件数
+     * @return fileDuplicationTotal
+     */
     public String getFileDuplicationTotal() {
         return fileDuplicationTotal;
     }
@@ -708,9 +740,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 文件重复率
-     * 
-     * @return fileDuplicationRatio */
+    /**
+     * 文件重复率
+     * @return fileDuplicationRatio
+     */
     public String getFileDuplicationRatio() {
         return fileDuplicationRatio;
     }
@@ -724,9 +757,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 重复源文件数
-     * 
-     * @return nonHfileDuplicationTotal */
+    /**
+     * 重复源文件数
+     * @return nonHfileDuplicationTotal
+     */
     public String getNonHfileDuplicationTotal() {
         return nonHfileDuplicationTotal;
     }
@@ -740,9 +774,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 源文件重复率
-     * 
-     * @return nonHfileDuplicationRatio */
+    /**
+     * 源文件重复率
+     * @return nonHfileDuplicationRatio
+     */
     public String getNonHfileDuplicationRatio() {
         return nonHfileDuplicationRatio;
     }
@@ -756,9 +791,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 代码重复数
-     * 
-     * @return codeDuplicationTotal */
+    /**
+     * 代码重复数
+     * @return codeDuplicationTotal
+     */
     public String getCodeDuplicationTotal() {
         return codeDuplicationTotal;
     }
@@ -772,9 +808,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 代码重复率
-     * 
-     * @return codeDuplicationRatio */
+    /**
+     * 代码重复率
+     * @return codeDuplicationRatio
+     */
     public String getCodeDuplicationRatio() {
         return codeDuplicationRatio;
     }
@@ -788,9 +825,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 源文件代码重复数
-     * 
-     * @return nonHfileCodeDuplicationTotal */
+    /**
+     * 源文件代码重复数
+     * @return nonHfileCodeDuplicationTotal
+     */
     public String getNonHfileCodeDuplicationTotal() {
         return nonHfileCodeDuplicationTotal;
     }
@@ -804,9 +842,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 源文件代码重复率
-     * 
-     * @return nonHfileCodeDuplicationRatio */
+    /**
+     * 源文件代码重复率
+     * @return nonHfileCodeDuplicationRatio
+     */
     public String getNonHfileCodeDuplicationRatio() {
         return nonHfileCodeDuplicationRatio;
     }
@@ -820,9 +859,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 危险函数总数
-     * 
-     * @return unsafeFunctionsTotal */
+    /**
+     * 危险函数总数
+     * @return unsafeFunctionsTotal
+     */
     public String getUnsafeFunctionsTotal() {
         return unsafeFunctionsTotal;
     }
@@ -836,9 +876,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 危险函数密度
-     * 
-     * @return unsafeFunctionsKloc */
+    /**
+     * 危险函数密度
+     * @return unsafeFunctionsKloc
+     */
     public String getUnsafeFunctionsKloc() {
         return unsafeFunctionsKloc;
     }
@@ -852,9 +893,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 冗余代码数
-     * 
-     * @return redundantCodeTotal */
+    /**
+     * 冗余代码数
+     * @return redundantCodeTotal
+     */
     public String getRedundantCodeTotal() {
         return redundantCodeTotal;
     }
@@ -868,9 +910,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 冗余代码块密度
-     * 
-     * @return redundantCodeKloc */
+    /**
+     * 冗余代码块密度
+     * @return redundantCodeKloc
+     */
     public String getRedundantCodeKloc() {
         return redundantCodeKloc;
     }
@@ -884,9 +927,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 抑制告警数
-     * 
-     * @return warningSuppressionTotal */
+    /**
+     * 抑制告警数
+     * @return warningSuppressionTotal
+     */
     public String getWarningSuppressionTotal() {
         return warningSuppressionTotal;
     }
@@ -900,9 +944,10 @@ public class MetricInfo {
         return this;
     }
 
-    /** 抑制告警密度
-     * 
-     * @return warningSuppressionKloc */
+    /**
+     * 抑制告警密度
+     * @return warningSuppressionKloc
+     */
     public String getWarningSuppressionKloc() {
         return warningSuppressionKloc;
     }
@@ -1084,7 +1129,10 @@ public class MetricInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

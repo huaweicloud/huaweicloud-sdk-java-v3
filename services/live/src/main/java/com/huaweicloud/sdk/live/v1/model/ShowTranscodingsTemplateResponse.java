@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTranscodingsTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,11 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询结果的总元素数量 minimum: 0
-     * 
-     * @return total */
+    /**
+     * 查询结果的总元素数量
+     * minimum: 0
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -48,9 +52,10 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 播放域名
-     * 
-     * @return domain */
+    /**
+     * 播放域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -80,9 +85,10 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 转码模板
-     * 
-     * @return templates */
+    /**
+     * 转码模板
+     * @return templates
+     */
     public List<AppQualityInfo> getTemplates() {
         return templates;
     }
@@ -121,7 +127,10 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

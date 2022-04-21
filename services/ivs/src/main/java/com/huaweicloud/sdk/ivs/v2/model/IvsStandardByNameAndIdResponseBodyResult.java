@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 调用返回结果。 */
+/**
+ * 调用返回结果。
+ */
 public class IvsStandardByNameAndIdResponseBodyResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class IvsStandardByNameAndIdResponseBodyResult {
         return this;
     }
 
-    /** 子服务名称。
-     * 
-     * @return serviceName */
+    /**
+     * 子服务名称。
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -47,9 +50,10 @@ public class IvsStandardByNameAndIdResponseBodyResult {
         return this;
     }
 
-    /** 成功的结果数量，与resp_data字段对应。
-     * 
-     * @return count */
+    /**
+     * 成功的结果数量，与resp_data字段对应。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -80,9 +84,10 @@ public class IvsStandardByNameAndIdResponseBodyResult {
         return this;
     }
 
-    /** 请求列表，用于支持批量调用。目前暂时只支持单个数据查询。
-     * 
-     * @return respData */
+    /**
+     * 请求列表，用于支持批量调用。目前暂时只支持单个数据查询。
+     * @return respData
+     */
     public List<StandardRespDataByNameAndId> getRespData() {
         return respData;
     }
@@ -122,7 +127,10 @@ public class IvsStandardByNameAndIdResponseBodyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

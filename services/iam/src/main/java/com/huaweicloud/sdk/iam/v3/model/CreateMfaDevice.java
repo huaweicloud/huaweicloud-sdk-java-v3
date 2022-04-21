@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** { \&quot;virtual_mfa_device\&quot;: { \&quot;name\&quot;: \&quot;{divice_name}\&quot;, \&quot;user_id\&quot;:
- * \&quot;{user_id}\&quot; } } */
+/**
+ * {  \&quot;virtual_mfa_device\&quot;: {   \&quot;name\&quot;: \&quot;{divice_name}\&quot;,   \&quot;user_id\&quot;: \&quot;{user_id}\&quot;  } }
+ */
 public class CreateMfaDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +25,10 @@ public class CreateMfaDevice {
         return this;
     }
 
-    /** 设备名称。
-     * 
-     * @return name */
+    /**
+     * 设备名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -40,9 +42,10 @@ public class CreateMfaDevice {
         return this;
     }
 
-    /** 创建MFA设备的IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * 创建MFA设备的IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -78,7 +81,10 @@ public class CreateMfaDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

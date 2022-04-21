@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskInitBody */
+/**
+ * MultiTaskInitBody
+ */
 public class MultiTaskInitBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class MultiTaskInitBody {
         return this;
     }
 
-    /** Get extInfo
-     * 
-     * @return extInfo */
+    /**
+     * Get extInfo
+     * @return extInfo
+     */
     public MultiTaskInitBodyExtInfo getExtInfo() {
         return extInfo;
     }
@@ -64,9 +67,10 @@ public class MultiTaskInitBody {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -80,9 +84,10 @@ public class MultiTaskInitBody {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -96,9 +101,10 @@ public class MultiTaskInitBody {
         return this;
     }
 
-    /** 任务ID，可以为空，为空时自动分配任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID，可以为空，为空时自动分配任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -112,9 +118,10 @@ public class MultiTaskInitBody {
         return this;
     }
 
-    /** 是否自动建立源端到目标端映射
-     * 
-     * @return autoMapping */
+    /**
+     * 是否自动建立源端到目标端映射
+     * @return autoMapping
+     */
     public Boolean getAutoMapping() {
         return autoMapping;
     }
@@ -157,7 +164,10 @@ public class MultiTaskInitBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

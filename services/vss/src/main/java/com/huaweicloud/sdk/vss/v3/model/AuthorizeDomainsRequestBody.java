@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AuthorizeDomainsRequestBody */
+/**
+ * AuthorizeDomainsRequestBody
+ */
 public class AuthorizeDomainsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class AuthorizeDomainsRequestBody {
 
     private String domainName;
 
-    /** 认证方式: * file - 文件认证 * auto - 一键认证 */
+    /**
+     * 认证方式:   * file - 文件认证   * auto - 一键认证 
+     */
     public static final class AuthModeEnum {
 
-        /** Enum FILE for value: "file" */
+        /**
+         * Enum FILE for value: "file"
+         */
         public static final AuthModeEnum FILE = new AuthModeEnum("file");
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final AuthModeEnum AUTO = new AuthModeEnum("auto");
 
         private static final Map<String, AuthModeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class AuthorizeDomainsRequestBody {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -115,9 +124,10 @@ public class AuthorizeDomainsRequestBody {
         return this;
     }
 
-    /** 认证方式: * file - 文件认证 * auto - 一键认证
-     * 
-     * @return authMode */
+    /**
+     * 认证方式:   * file - 文件认证   * auto - 一键认证 
+     * @return authMode
+     */
     public AuthModeEnum getAuthMode() {
         return authMode;
     }
@@ -154,7 +164,10 @@ public class AuthorizeDomainsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DetailDataInfo */
+/**
+ * DetailDataInfo
+ */
 public class DetailDataInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -303,9 +305,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 平均响应时间
-     * 
-     * @return averageRespTime */
+    /**
+     * 平均响应时间
+     * @return averageRespTime
+     */
     public Double getAverageRespTime() {
         return averageRespTime;
     }
@@ -319,9 +322,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 平均接收字节数
-     * 
-     * @return avgRecBytes */
+    /**
+     * 平均接收字节数
+     * @return avgRecBytes
+     */
     public Double getAvgRecBytes() {
         return avgRecBytes;
     }
@@ -335,9 +339,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 平均发送字节数
-     * 
-     * @return avgSentBytes */
+    /**
+     * 平均发送字节数
+     * @return avgSentBytes
+     */
     public Double getAvgSentBytes() {
         return avgSentBytes;
     }
@@ -351,9 +356,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务平均响应时间
-     * 
-     * @return avgTranRespTime */
+    /**
+     * 事务平均响应时间
+     * @return avgTranRespTime
+     */
     public Double getAvgTranRespTime() {
         return avgTranRespTime;
     }
@@ -367,9 +373,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 用例Uri
-     * 
-     * @return caseUri */
+    /**
+     * 用例Uri
+     * @return caseUri
+     */
     public String getCaseUri() {
         return caseUri;
     }
@@ -383,9 +390,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -399,9 +407,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最大并发数
-     * 
-     * @return currentThreadNum */
+    /**
+     * 最大并发数
+     * @return currentThreadNum
+     */
     public Double getCurrentThreadNum() {
         return currentThreadNum;
     }
@@ -415,9 +424,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 详情id
-     * 
-     * @return detailId */
+    /**
+     * 详情id
+     * @return detailId
+     */
     public String getDetailId() {
         return detailId;
     }
@@ -431,9 +441,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -447,9 +458,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 失败请求数
-     * 
-     * @return errorCount */
+    /**
+     * 失败请求数
+     * @return errorCount
+     */
     public Double getErrorCount() {
         return errorCount;
     }
@@ -463,9 +475,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** ERROR级别的事件个数
-     * 
-     * @return errorEventsCount */
+    /**
+     * ERROR级别的事件个数
+     * @return errorEventsCount
+     */
     public Double getErrorEventsCount() {
         return errorEventsCount;
     }
@@ -479,9 +492,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 断言失败
-     * 
-     * @return failedAssert */
+    /**
+     * 断言失败
+     * @return failedAssert
+     */
     public Double getFailedAssert() {
         return failedAssert;
     }
@@ -495,9 +509,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 其他失败
-     * 
-     * @return failedOthers */
+    /**
+     * 其他失败
+     * @return failedOthers
+     */
     public Double getFailedOthers() {
         return failedOthers;
     }
@@ -511,9 +526,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 解析失败
-     * 
-     * @return failedParsed */
+    /**
+     * 解析失败
+     * @return failedParsed
+     */
     public Double getFailedParsed() {
         return failedParsed;
     }
@@ -527,9 +543,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 连接被拒
-     * 
-     * @return failedRefused */
+    /**
+     * 连接被拒
+     * @return failedRefused
+     */
     public Double getFailedRefused() {
         return failedRefused;
     }
@@ -543,9 +560,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 超时失败
-     * 
-     * @return failedTimeout */
+    /**
+     * 超时失败
+     * @return failedTimeout
+     */
     public Double getFailedTimeout() {
         return failedTimeout;
     }
@@ -559,9 +577,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -575,9 +594,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 是否aw
-     * 
-     * @return isAW */
+    /**
+     * 是否aw
+     * @return isAW
+     */
     public Boolean getIsAW() {
         return isAW;
     }
@@ -591,9 +611,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最大响应时间
-     * 
-     * @return max */
+    /**
+     * 最大响应时间
+     * @return max
+     */
     public Double getMax() {
         return max;
     }
@@ -607,9 +628,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最大接收字节数
-     * 
-     * @return maxRecBytes */
+    /**
+     * 最大接收字节数
+     * @return maxRecBytes
+     */
     public Double getMaxRecBytes() {
         return maxRecBytes;
     }
@@ -623,9 +645,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 探底最大响应时间
-     * 
-     * @return maxRespTime */
+    /**
+     * 探底最大响应时间
+     * @return maxRespTime
+     */
     public Double getMaxRespTime() {
         return maxRespTime;
     }
@@ -639,9 +662,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最大发送字节数
-     * 
-     * @return maxSentBytes */
+    /**
+     * 最大发送字节数
+     * @return maxSentBytes
+     */
     public Double getMaxSentBytes() {
         return maxSentBytes;
     }
@@ -655,9 +679,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务最大响应时间
-     * 
-     * @return maxTranRespTime */
+    /**
+     * 事务最大响应时间
+     * @return maxTranRespTime
+     */
     public Double getMaxTranRespTime() {
         return maxTranRespTime;
     }
@@ -671,9 +696,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最小响应时间
-     * 
-     * @return min */
+    /**
+     * 最小响应时间
+     * @return min
+     */
     public Double getMin() {
         return min;
     }
@@ -687,9 +713,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最小带宽
-     * 
-     * @return minNetworkTraffic */
+    /**
+     * 最小带宽
+     * @return minNetworkTraffic
+     */
     public Double getMinNetworkTraffic() {
         return minNetworkTraffic;
     }
@@ -703,9 +730,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 名字
-     * 
-     * @return name */
+    /**
+     * 名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -719,9 +747,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 请求数
-     * 
-     * @return requests */
+    /**
+     * 请求数
+     * @return requests
+     */
     public Double getRequests() {
         return requests;
     }
@@ -735,9 +764,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** aw执行结果
-     * 
-     * @return result */
+    /**
+     * aw执行结果
+     * @return result
+     */
     public Double getResult() {
         return result;
     }
@@ -751,9 +781,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -767,9 +798,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 用例状态
-     * 
-     * @return status */
+    /**
+     * 用例状态
+     * @return status
+     */
     public Double getStatus() {
         return status;
     }
@@ -783,9 +815,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 成功请求数
-     * 
-     * @return successCount */
+    /**
+     * 成功请求数
+     * @return successCount
+     */
     public Double getSuccessCount() {
         return successCount;
     }
@@ -799,9 +832,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 成功率
-     * 
-     * @return successRate */
+    /**
+     * 成功率
+     * @return successRate
+     */
     public Double getSuccessRate() {
         return successRate;
     }
@@ -815,9 +849,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 1xx请求数
-     * 
-     * @return sum1xx */
+    /**
+     * 1xx请求数
+     * @return sum1xx
+     */
     public Double getSum1xx() {
         return sum1xx;
     }
@@ -831,9 +866,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 2xx请求数
-     * 
-     * @return sum2xx */
+    /**
+     * 2xx请求数
+     * @return sum2xx
+     */
     public Double getSum2xx() {
         return sum2xx;
     }
@@ -847,9 +883,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 3xx请求数
-     * 
-     * @return sum3xx */
+    /**
+     * 3xx请求数
+     * @return sum3xx
+     */
     public Double getSum3xx() {
         return sum3xx;
     }
@@ -863,9 +900,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 4xx请求数
-     * 
-     * @return sum4xx */
+    /**
+     * 4xx请求数
+     * @return sum4xx
+     */
     public Double getSum4xx() {
         return sum4xx;
     }
@@ -879,9 +917,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 5xx请求数
-     * 
-     * @return sum5xx */
+    /**
+     * 5xx请求数
+     * @return sum5xx
+     */
     public Double getSum5xx() {
         return sum5xx;
     }
@@ -895,9 +934,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 任务id_轮次
-     * 
-     * @return taskId */
+    /**
+     * 任务id_轮次
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -911,9 +951,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskProjectId */
+    /**
+     * 任务id
+     * @return taskProjectId
+     */
     public String getTaskProjectId() {
         return taskProjectId;
     }
@@ -927,9 +968,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态
+     * @return taskStatus
+     */
     public Double getTaskStatus() {
         return taskStatus;
     }
@@ -943,9 +985,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 用例uri
-     * 
-     * @return testCaseUri */
+    /**
+     * 用例uri
+     * @return testCaseUri
+     */
     public String getTestCaseUri() {
         return testCaseUri;
     }
@@ -959,9 +1002,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tp50
-     * 
-     * @return tp50 */
+    /**
+     * tp50
+     * @return tp50
+     */
     public Double getTp50() {
         return tp50;
     }
@@ -975,9 +1019,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tp75
-     * 
-     * @return tp75 */
+    /**
+     * tp75
+     * @return tp75
+     */
     public Double getTp75() {
         return tp75;
     }
@@ -991,9 +1036,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tp90
-     * 
-     * @return tp90 */
+    /**
+     * tp90
+     * @return tp90
+     */
     public Double getTp90() {
         return tp90;
     }
@@ -1007,9 +1053,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tp95
-     * 
-     * @return tp95 */
+    /**
+     * tp95
+     * @return tp95
+     */
     public Double getTp95() {
         return tp95;
     }
@@ -1023,9 +1070,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tp99
-     * 
-     * @return tp99 */
+    /**
+     * tp99
+     * @return tp99
+     */
     public Double getTp99() {
         return tp99;
     }
@@ -1039,9 +1087,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** tps
-     * 
-     * @return tps */
+    /**
+     * tps
+     * @return tps
+     */
     public Double getTps() {
         return tps;
     }
@@ -1055,9 +1104,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务tps
-     * 
-     * @return tranTPS */
+    /**
+     * 事务tps
+     * @return tranTPS
+     */
     public Double getTranTPS() {
         return tranTPS;
     }
@@ -1071,9 +1121,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务id
-     * 
-     * @return transactionId */
+    /**
+     * 事务id
+     * @return transactionId
+     */
     public String getTransactionId() {
         return transactionId;
     }
@@ -1087,9 +1138,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务成功率
-     * 
-     * @return transactionSuccess */
+    /**
+     * 事务成功率
+     * @return transactionSuccess
+     */
     public Double getTransactionSuccess() {
         return transactionSuccess;
     }
@@ -1103,9 +1155,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务成功率
-     * 
-     * @return transactionalSuccessRate */
+    /**
+     * 事务成功率
+     * @return transactionalSuccessRate
+     */
     public Double getTransactionalSuccessRate() {
         return transactionalSuccessRate;
     }
@@ -1119,9 +1172,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 自定义事务tps
-     * 
-     * @return transactionalTps */
+    /**
+     * 自定义事务tps
+     * @return transactionalTps
+     */
     public Double getTransactionalTps() {
         return transactionalTps;
     }
@@ -1135,9 +1189,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 自定义事务成功率
-     * 
-     * @return transactionalTpsSuccess */
+    /**
+     * 自定义事务成功率
+     * @return transactionalTpsSuccess
+     */
     public Double getTransactionalTpsSuccess() {
         return transactionalTpsSuccess;
     }
@@ -1151,9 +1206,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 事务数
-     * 
-     * @return transactions */
+    /**
+     * 事务数
+     * @return transactions
+     */
     public Double getTransactions() {
         return transactions;
     }
@@ -1167,9 +1223,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -1183,9 +1240,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 分钟*并发数
-     * 
-     * @return vum */
+    /**
+     * 分钟*并发数
+     * @return vum
+     */
     public Double getVum() {
         return vum;
     }
@@ -1199,9 +1257,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 平均带宽
-     * 
-     * @return avgNetworkTraffic */
+    /**
+     * 平均带宽
+     * @return avgNetworkTraffic
+     */
     public Double getAvgNetworkTraffic() {
         return avgNetworkTraffic;
     }
@@ -1215,9 +1274,10 @@ public class DetailDataInfo {
         return this;
     }
 
-    /** 最大带宽
-     * 
-     * @return maxNetworkTraffic */
+    /**
+     * 最大带宽
+     * @return maxNetworkTraffic
+     */
     public Double getMaxNetworkTraffic() {
         return maxNetworkTraffic;
     }
@@ -1415,7 +1475,10 @@ public class DetailDataInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

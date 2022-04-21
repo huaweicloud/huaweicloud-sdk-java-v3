@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListFlowBySimCardsReq */
+/**
+ * ListFlowBySimCardsReq
+ */
 public class ListFlowBySimCardsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListFlowBySimCardsReq {
         return this;
     }
 
-    /** ICCID列表,最大支持50
-     * 
-     * @return iccids */
+    /**
+     * ICCID列表,最大支持50
+     * @return iccids
+     */
     public List<String> getIccids() {
         return iccids;
     }
@@ -74,7 +77,10 @@ public class ListFlowBySimCardsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

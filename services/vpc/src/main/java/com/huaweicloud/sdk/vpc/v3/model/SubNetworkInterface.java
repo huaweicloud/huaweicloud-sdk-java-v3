@@ -89,9 +89,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的唯一标识 取值范围：带(-)的标准UUID
-     * 
-     * @return id */
+    /**
+     * 功能说明：辅助弹性网卡的唯一标识 取值范围：带(-)的标准UUID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -105,9 +106,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：虚拟子网ID 取值范围：标准UUID
-     * 
-     * @return virsubnetId */
+    /**
+     * 功能说明：虚拟子网ID 取值范围：标准UUID
+     * @return virsubnetId
+     */
     public String getVirsubnetId() {
         return virsubnetId;
     }
@@ -121,9 +123,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的私有IPv4地址 取值范围：必须在虚拟子网的网段内，不填则随机在虚拟子网网段内随机分配
-     * 
-     * @return privateIpAddress */
+    /**
+     * 功能说明：辅助弹性网卡的私有IPv4地址 取值范围：必须在虚拟子网的网段内，不填则随机在虚拟子网网段内随机分配
+     * @return privateIpAddress
+     */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -137,9 +140,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的IPv6地址
-     * 
-     * @return ipv6IpAddress */
+    /**
+     * 功能说明：辅助弹性网卡的IPv6地址
+     * @return ipv6IpAddress
+     */
     public String getIpv6IpAddress() {
         return ipv6IpAddress;
     }
@@ -153,9 +157,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的mac地址 取值范围：合法的mac地址，系统随机分配
-     * 
-     * @return macAddress */
+    /**
+     * 功能说明：辅助弹性网卡的mac地址 取值范围：合法的mac地址，系统随机分配
+     * @return macAddress
+     */
     public String getMacAddress() {
         return macAddress;
     }
@@ -169,9 +174,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：设备ID 取值范围：标准UUID
-     * 
-     * @return parentDeviceId */
+    /**
+     * 功能说明：设备ID 取值范围：标准UUID 
+     * @return parentDeviceId
+     */
     public String getParentDeviceId() {
         return parentDeviceId;
     }
@@ -185,9 +191,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：宿主网络接口的ID 取值范围：标准UUID
-     * 
-     * @return parentId */
+    /**
+     * 功能说明：宿主网络接口的ID 取值范围：标准UUID
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -201,9 +208,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -217,9 +225,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡所属的VPC_ID 取值范围：标准UUID
-     * 
-     * @return vpcId */
+    /**
+     * 功能说明：辅助弹性网卡所属的VPC_ID 取值范围：标准UUID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -233,9 +242,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的VLAN ID 取值范围：1-4094 约束：同一个宿主网络接口下唯一
-     * 
-     * @return vlanId */
+    /**
+     * 功能说明：辅助弹性网卡的VLAN ID 取值范围：1-4094 约束：同一个宿主网络接口下唯一
+     * @return vlanId
+     */
     public Integer getVlanId() {
         return vlanId;
     }
@@ -265,9 +275,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
-     * 
-     * @return securityGroups */
+    /**
+     * 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -297,9 +308,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的标签列表
-     * 
-     * @return tags */
+    /**
+     * 功能说明：辅助弹性网卡的标签列表
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -313,9 +325,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡所属项目ID
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：辅助弹性网卡所属项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -329,9 +342,10 @@ public class SubNetworkInterface {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：辅助弹性网卡的创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -405,7 +419,10 @@ public class SubNetworkInterface {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

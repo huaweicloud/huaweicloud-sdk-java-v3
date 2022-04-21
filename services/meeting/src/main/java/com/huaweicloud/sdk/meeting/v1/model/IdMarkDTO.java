@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IdMarkDTO */
+/**
+ * IdMarkDTO
+ */
 public class IdMarkDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class IdMarkDTO {
         return this;
     }
 
-    /** 唯一标识。
-     * 
-     * @return id */
+    /**
+     * 唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class IdMarkDTO {
         return this;
     }
 
-    /** id对应的回显描述，一般为名称等。
-     * 
-     * @return mark */
+    /**
+     * id对应的回显描述，一般为名称等。
+     * @return mark
+     */
     public String getMark() {
         return mark;
     }
@@ -77,7 +81,10 @@ public class IdMarkDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

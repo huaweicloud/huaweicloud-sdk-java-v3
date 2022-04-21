@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVolumesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,9 +105,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 通过云硬盘ID进行分页查询。默认为查询第一页数据。
-     * 
-     * @return marker */
+    /**
+     * 通过云硬盘ID进行分页查询。默认为查询第一页数据。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -119,9 +122,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 磁盘名称。
-     * 
-     * @return name */
+    /**
+     * 磁盘名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -135,9 +139,12 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 返回结果个数限制。默认值为1000。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 返回结果个数限制。默认值为1000。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -151,9 +158,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 返回结果按该关键字排序，支持id，status，size，created_at等关键字，默认为“created_at”。
-     * 
-     * @return sortKey */
+    /**
+     * 返回结果按该关键字排序，支持id，status，size，created_at等关键字，默认为“created_at”。
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -167,9 +175,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 偏移量（偏移量为一个大于0小于磁盘总个数的整数，表示查询该偏移量后面的所有的磁盘）。
-     * 
-     * @return offset */
+    /**
+     * 偏移量（偏移量为一个大于0小于磁盘总个数的整数，表示查询该偏移量后面的所有的磁盘）。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -183,9 +192,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 返回结果按照降序或升序排列，默认为“desc”。 降序：desc 升序：asc
-     * 
-     * @return sortDir */
+    /**
+     * 返回结果按照降序或升序排列，默认为“desc”。 降序：desc 升序：asc
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -199,9 +209,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云硬盘状态，取值可参考：\"[云硬盘状态](https://support.huaweicloud.com/api-evs/evs_04_0040.html)\"。
-     * 
-     * @return status */
+    /**
+     * 云硬盘状态，取值可参考：\"[云硬盘状态](https://support.huaweicloud.com/api-evs/evs_04_0040.html)\"。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -215,9 +226,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云硬盘元数据。
-     * 
-     * @return metadata */
+    /**
+     * 云硬盘元数据。
+     * @return metadata
+     */
     public String getMetadata() {
         return metadata;
     }
@@ -231,9 +243,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 可用区信息。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区信息。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -247,9 +260,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 是否为共享云硬盘。 true：表示为共享云硬盘。 false：表示为非共享云硬盘。
-     * 
-     * @return multiattach */
+    /**
+     * 是否为共享云硬盘。 true：表示为共享云硬盘。 false：表示为非共享云硬盘。
+     * @return multiattach
+     */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -263,9 +277,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 服务类型，仅支持EVS、DSS、DESS。
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型，仅支持EVS、DSS、DESS。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -279,9 +294,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 专属存储池ID，可过滤出该专属存储池下的所有云硬盘，必须精确匹配。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 专属存储池ID，可过滤出该专属存储池下的所有云硬盘，必须精确匹配。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -295,9 +311,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 专属存储池的名字，可过滤出该专属存储池下的所有云硬盘，支持模糊匹配。
-     * 
-     * @return dedicatedStorageName */
+    /**
+     * 专属存储池的名字，可过滤出该专属存储池下的所有云硬盘，支持模糊匹配。
+     * @return dedicatedStorageName
+     */
     public String getDedicatedStorageName() {
         return dedicatedStorageName;
     }
@@ -311,10 +328,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云硬盘类型id。
-     * 通过\"[查询云硬盘类型列表](https://support.huaweicloud.com/api-evs/evs_04_3035.html)\"可以查到，即volume_types参数说明表格中的“id”
-     * 
-     * @return volumeTypeId */
+    /**
+     * 云硬盘类型id。 通过\"[查询云硬盘类型列表](https://support.huaweicloud.com/api-evs/evs_04_3035.html)\"可以查到，即volume_types参数说明表格中的“id”
+     * @return volumeTypeId
+     */
     public String getVolumeTypeId() {
         return volumeTypeId;
     }
@@ -328,9 +345,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云硬盘ID。
-     * 
-     * @return id */
+    /**
+     * 云硬盘ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -344,10 +362,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云硬盘id列表，格式为ids=['id1','id2',...,'idx']，返回“ids”中有效id的云硬盘详情，无效的id会被忽略。 支持查询最多60个id对应的云硬盘详情。
-     * 如果“id”和“ids”查询参数同时存在，“id”会被忽略。
-     * 
-     * @return ids */
+    /**
+     * 云硬盘id列表，格式为ids=['id1','id2',...,'idx']，返回“ids”中有效id的云硬盘详情，无效的id会被忽略。 支持查询最多60个id对应的云硬盘详情。 如果“id”和“ids”查询参数同时存在，“id”会被忽略。
+     * @return ids
+     */
     public String getIds() {
         return ids;
     }
@@ -361,10 +379,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 > 说明： > >
-     * 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 > 说明： >  > 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -378,9 +396,10 @@ public class ListVolumesRequest {
         return this;
     }
 
-    /** 云服务器id。
-     * 
-     * @return serverId */
+    /**
+     * 云服务器id。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -465,7 +484,10 @@ public class ListVolumesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

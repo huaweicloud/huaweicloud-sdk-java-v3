@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CdmCreateClusterReq */
+/**
+ * CdmCreateClusterReq
+ */
 public class CdmCreateClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CdmCreateClusterReq {
         return this;
     }
 
-    /** Get cluster
-     * 
-     * @return cluster */
+    /**
+     * Get cluster
+     * @return cluster
+     */
     public CdmCreateClusterReqCluster getCluster() {
         return cluster;
     }
@@ -59,9 +62,10 @@ public class CdmCreateClusterReq {
         return this;
     }
 
-    /** 选择是否开启消息通知。开启后，支持配置5个手机号码或邮箱，作业（目前仅支持表/文件迁移的作业）失败时、EIP异常时会发送短信或邮件通知用户
-     * 
-     * @return autoRemind */
+    /**
+     * 选择是否开启消息通知。开启后，支持配置5个手机号码或邮箱，作业（目前仅支持表/文件迁移的作业）失败时、EIP异常时会发送短信或邮件通知用户
+     * @return autoRemind
+     */
     public Boolean getAutoRemind() {
         return autoRemind;
     }
@@ -75,9 +79,10 @@ public class CdmCreateClusterReq {
         return this;
     }
 
-    /** 接收消息通知的手机号码
-     * 
-     * @return phoneNum */
+    /**
+     * 接收消息通知的手机号码
+     * @return phoneNum
+     */
     public String getPhoneNum() {
         return phoneNum;
     }
@@ -91,9 +96,10 @@ public class CdmCreateClusterReq {
         return this;
     }
 
-    /** 接收消息通知的邮箱
-     * 
-     * @return email */
+    /**
+     * 接收消息通知的邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -134,7 +140,10 @@ public class CdmCreateClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

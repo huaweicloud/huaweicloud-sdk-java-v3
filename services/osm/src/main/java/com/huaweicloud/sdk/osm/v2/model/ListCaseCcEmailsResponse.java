@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCaseCcEmailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ccEmailInfo
-     * 
-     * @return ccEmailInfo */
+    /**
+     * Get ccEmailInfo
+     * @return ccEmailInfo
+     */
     public IncidentOrderCCEmailInfoV2 getCcEmailInfo() {
         return ccEmailInfo;
     }
@@ -68,9 +71,10 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 抄送邮箱信息
-     * 
-     * @return mcEmailInfos */
+    /**
+     * 抄送邮箱信息
+     * @return mcEmailInfos
+     */
     public List<String> getMcEmailInfos() {
         return mcEmailInfos;
     }
@@ -107,7 +111,10 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

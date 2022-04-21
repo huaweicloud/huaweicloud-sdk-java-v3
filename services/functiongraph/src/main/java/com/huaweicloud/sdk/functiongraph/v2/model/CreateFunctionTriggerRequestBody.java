@@ -10,39 +10,59 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateFunctionTriggerRequestBody */
+/**
+ * CreateFunctionTriggerRequestBody
+ */
 public class CreateFunctionTriggerRequestBody {
 
-    /** 触发器类型。 - TIMER: 定时触发器。 - APIG: APIGW触发器。 - CTS: 云审计触发器，需要先开通云审计服务。 - DDS: 文档数据库触发器，需要开启函数vpc。 - DMS:
-     * 分布式消息服务触发器，需要配置dms委托。 - DIS: 数据接入服务触发器，需要配置dis委托。 - LTS: 云审计日志服务触发器，需要配置lts委托。 - OBS: 对象存储服务触发器。 - KAFKA:
-     * 专享版本kafka触发器。 */
+    /**
+     * 触发器类型。  - TIMER: 定时触发器。 - APIG: APIGW触发器。 - CTS: 云审计触发器，需要先开通云审计服务。 - DDS: 文档数据库触发器，需要开启函数vpc。 - DMS: 分布式消息服务触发器，需要配置dms委托。 - DIS: 数据接入服务触发器，需要配置dis委托。 - LTS: 云审计日志服务触发器，需要配置lts委托。 - OBS: 对象存储服务触发器。 - KAFKA: 专享版本kafka触发器。
+     */
     public static final class TriggerTypeCodeEnum {
 
-        /** Enum TIMER for value: "TIMER" */
+        /**
+         * Enum TIMER for value: "TIMER"
+         */
         public static final TriggerTypeCodeEnum TIMER = new TriggerTypeCodeEnum("TIMER");
 
-        /** Enum APIG for value: "APIG" */
+        /**
+         * Enum APIG for value: "APIG"
+         */
         public static final TriggerTypeCodeEnum APIG = new TriggerTypeCodeEnum("APIG");
 
-        /** Enum CTS for value: "CTS" */
+        /**
+         * Enum CTS for value: "CTS"
+         */
         public static final TriggerTypeCodeEnum CTS = new TriggerTypeCodeEnum("CTS");
 
-        /** Enum DDS for value: "DDS" */
+        /**
+         * Enum DDS for value: "DDS"
+         */
         public static final TriggerTypeCodeEnum DDS = new TriggerTypeCodeEnum("DDS");
 
-        /** Enum DMS for value: "DMS" */
+        /**
+         * Enum DMS for value: "DMS"
+         */
         public static final TriggerTypeCodeEnum DMS = new TriggerTypeCodeEnum("DMS");
 
-        /** Enum DIS for value: "DIS" */
+        /**
+         * Enum DIS for value: "DIS"
+         */
         public static final TriggerTypeCodeEnum DIS = new TriggerTypeCodeEnum("DIS");
 
-        /** Enum LTS for value: "LTS" */
+        /**
+         * Enum LTS for value: "LTS"
+         */
         public static final TriggerTypeCodeEnum LTS = new TriggerTypeCodeEnum("LTS");
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
 
-        /** Enum KAFKA for value: "KAFKA" */
+        /**
+         * Enum KAFKA for value: "KAFKA"
+         */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +139,19 @@ public class CreateFunctionTriggerRequestBody {
 
     private TriggerTypeCodeEnum triggerTypeCode;
 
-    /** 触发器状态，取值为ACTIVE,DISABLED。 */
+    /**
+     * 触发器状态，取值为ACTIVE,DISABLED。
+     */
     public static final class TriggerStatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
-        /** Enum DISABLED for value: "DISABLED" */
+        /**
+         * Enum DISABLED for value: "DISABLED"
+         */
         public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
 
         private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -210,11 +236,10 @@ public class CreateFunctionTriggerRequestBody {
         return this;
     }
 
-    /** 触发器类型。 - TIMER: 定时触发器。 - APIG: APIGW触发器。 - CTS: 云审计触发器，需要先开通云审计服务。 - DDS: 文档数据库触发器，需要开启函数vpc。 - DMS:
-     * 分布式消息服务触发器，需要配置dms委托。 - DIS: 数据接入服务触发器，需要配置dis委托。 - LTS: 云审计日志服务触发器，需要配置lts委托。 - OBS: 对象存储服务触发器。 - KAFKA:
-     * 专享版本kafka触发器。
-     * 
-     * @return triggerTypeCode */
+    /**
+     * 触发器类型。  - TIMER: 定时触发器。 - APIG: APIGW触发器。 - CTS: 云审计触发器，需要先开通云审计服务。 - DDS: 文档数据库触发器，需要开启函数vpc。 - DMS: 分布式消息服务触发器，需要配置dms委托。 - DIS: 数据接入服务触发器，需要配置dis委托。 - LTS: 云审计日志服务触发器，需要配置lts委托。 - OBS: 对象存储服务触发器。 - KAFKA: 专享版本kafka触发器。
+     * @return triggerTypeCode
+     */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
         return triggerTypeCode;
     }
@@ -228,9 +253,10 @@ public class CreateFunctionTriggerRequestBody {
         return this;
     }
 
-    /** 触发器状态，取值为ACTIVE,DISABLED。
-     * 
-     * @return triggerStatus */
+    /**
+     * 触发器状态，取值为ACTIVE,DISABLED。
+     * @return triggerStatus
+     */
     public TriggerStatusEnum getTriggerStatus() {
         return triggerStatus;
     }
@@ -244,9 +270,10 @@ public class CreateFunctionTriggerRequestBody {
         return this;
     }
 
-    /** 消息代码。
-     * 
-     * @return eventTypeCode */
+    /**
+     * 消息代码。
+     * @return eventTypeCode
+     */
     public String getEventTypeCode() {
         return eventTypeCode;
     }
@@ -260,9 +287,10 @@ public class CreateFunctionTriggerRequestBody {
         return this;
     }
 
-    /** 事件结构体。
-     * 
-     * @return eventData */
+    /**
+     * 事件结构体。
+     * @return eventData
+     */
     public Object getEventData() {
         return eventData;
     }
@@ -303,7 +331,10 @@ public class CreateFunctionTriggerRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

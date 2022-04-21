@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建标签请求结构体。 */
+/**
+ * 创建标签请求结构体。
+ */
 public class BindTagsDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class BindTagsDTO {
         return this;
     }
 
-    /** **参数说明**：要绑定标签的资源类型。 **取值范围**： - device：设备。
-     * 
-     * @return resourceType */
+    /**
+     * **参数说明**：要绑定标签的资源类型。 **取值范围**： - device：设备。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -47,9 +50,10 @@ public class BindTagsDTO {
         return this;
     }
 
-    /** **参数说明**：要绑定标签的资源id。例如，资源类型为device，那么对应的资源id就是device_id。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return resourceId */
+    /**
+     * **参数说明**：要绑定标签的资源id。例如，资源类型为device，那么对应的资源id就是device_id。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -79,9 +83,10 @@ public class BindTagsDTO {
         return this;
     }
 
-    /** **参数说明**：要绑定到指定资源的标签列表，标签列表中各项标签键值之间不允许重复，一个资源最多可以绑定10个标签。
-     * 
-     * @return tags */
+    /**
+     * **参数说明**：要绑定到指定资源的标签列表，标签列表中各项标签键值之间不允许重复，一个资源最多可以绑定10个标签。
+     * @return tags
+     */
     public List<TagV5DTO> getTags() {
         return tags;
     }
@@ -119,7 +124,10 @@ public class BindTagsDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

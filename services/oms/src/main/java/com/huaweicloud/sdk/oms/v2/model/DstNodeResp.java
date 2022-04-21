@@ -30,9 +30,10 @@ public class DstNodeResp {
         return this;
     }
 
-    /** 目的端桶的名称。
-     * 
-     * @return bucket */
+    /**
+     * 目的端桶的名称。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -46,9 +47,10 @@ public class DstNodeResp {
         return this;
     }
 
-    /** 目的端桶所处的区域。 请与Endpoint对应的区域保持一致。
-     * 
-     * @return region */
+    /**
+     * 目的端桶所处的区域。  请与Endpoint对应的区域保持一致。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -62,9 +64,10 @@ public class DstNodeResp {
         return this;
     }
 
-    /** 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
-     * 
-     * @return savePrefix */
+    /**
+     * 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
+     * @return savePrefix
+     */
     public String getSavePrefix() {
         return savePrefix;
     }
@@ -102,7 +105,10 @@ public class DstNodeResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

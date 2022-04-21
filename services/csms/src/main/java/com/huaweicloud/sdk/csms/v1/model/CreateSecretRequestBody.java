@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建凭据请求消息体。 */
+/**
+ * 创建凭据请求消息体。
+ */
 public class CreateSecretRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateSecretRequestBody {
         return this;
     }
 
-    /** 凭据名称。 约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。
-     * 
-     * @return name */
+    /**
+     * 凭据名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class CreateSecretRequestBody {
         return this;
     }
 
-    /** 用于加密保护凭据值的KMS主密钥ID，如果您未指定此参数，凭据管理服务将默认使用名为csms/default的默认主密钥，用于加密您账号在本项目中创建的凭据值。如果用户账号下不存在该名称的主密钥，则凭据管理服务自动为您创建该名称的密钥。
-     * 
-     * @return kmsKeyId */
+    /**
+     * 用于加密保护凭据值的KMS主密钥ID，如果您未指定此参数，凭据管理服务将默认使用名为csms/default的默认主密钥，用于加密您账号在本项目中创建的凭据值。如果用户账号下不存在该名称的主密钥，则凭据管理服务自动为您创建该名称的密钥。
+     * @return kmsKeyId
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -70,9 +74,10 @@ public class CreateSecretRequestBody {
         return this;
     }
 
-    /** 凭据的描述信息。 约束：2048字节。
-     * 
-     * @return description */
+    /**
+     * 凭据的描述信息。  约束：2048字节。 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +91,10 @@ public class CreateSecretRequestBody {
         return this;
     }
 
-    /** 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。 类型：base64编码的二进制数据对象。 约束：secret_binary和secret_string必须且只能设置一个，最大32K。
-     * 
-     * @return secretBinary */
+    /**
+     * 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  类型：base64编码的二进制数据对象。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。 
+     * @return secretBinary
+     */
     public String getSecretBinary() {
         return secretBinary;
     }
@@ -102,9 +108,10 @@ public class CreateSecretRequestBody {
         return this;
     }
 
-    /** 文本类型凭据的明文，凭据管理服务将其加密后，存入凭据的初始版本中。 约束：secret_binary和secret_string必须且只能设置一个，最大32K。
-     * 
-     * @return secretString */
+    /**
+     * 文本类型凭据的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。 
+     * @return secretString
+     */
     public String getSecretString() {
         return secretString;
     }
@@ -147,7 +154,10 @@ public class CreateSecretRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

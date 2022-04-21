@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListWatermarkTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ListWatermarkTemplateRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -57,9 +60,10 @@ public class ListWatermarkTemplateRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -91,9 +95,10 @@ public class ListWatermarkTemplateRequest {
         return this;
     }
 
-    /** 水印模板配置id，一次最多10个。
-     * 
-     * @return id */
+    /**
+     * 水印模板配置id，一次最多10个。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -107,9 +112,10 @@ public class ListWatermarkTemplateRequest {
         return this;
     }
 
-    /** 分页编号。 默认为0。指定id时该参数无效。
-     * 
-     * @return page */
+    /**
+     * 分页编号。  默认为0。指定id时该参数无效。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -123,9 +129,10 @@ public class ListWatermarkTemplateRequest {
         return this;
     }
 
-    /** 每页记录数。 默认为10，范围[1,100]。指定id时该参数无效。
-     * 
-     * @return size */
+    /**
+     * 每页记录数。  默认为10，范围[1,100]。指定id时该参数无效。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -168,7 +175,10 @@ public class ListWatermarkTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

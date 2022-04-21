@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTemplateDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowTemplateDetailRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -51,9 +54,10 @@ public class ShowTemplateDetailRequest {
         return this;
     }
 
-    /** 模板ID
-     * 
-     * @return templateId */
+    /**
+     * 模板ID
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -67,9 +71,10 @@ public class ShowTemplateDetailRequest {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return templateType */
+    /**
+     * 模板类型
+     * @return templateType
+     */
     public String getTemplateType() {
         return templateType;
     }
@@ -83,9 +88,10 @@ public class ShowTemplateDetailRequest {
         return this;
     }
 
-    /** 接口调用方
-     * 
-     * @return source */
+    /**
+     * 接口调用方
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -126,7 +132,10 @@ public class ShowTemplateDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

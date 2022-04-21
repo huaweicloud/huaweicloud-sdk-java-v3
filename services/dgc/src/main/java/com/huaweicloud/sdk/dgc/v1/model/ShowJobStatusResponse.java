@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,22 +24,34 @@ public class ShowJobStatusResponse extends SdkResponse {
 
     private String name;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum STARTTING for value: "STARTTING" */
+        /**
+         * Enum STARTTING for value: "STARTTING"
+         */
         public static final StatusEnum STARTTING = new StatusEnum("STARTTING");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
 
-        /** Enum EXCEPTION for value: "EXCEPTION" */
+        /**
+         * Enum EXCEPTION for value: "EXCEPTION"
+         */
         public static final StatusEnum EXCEPTION = new StatusEnum("EXCEPTION");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -135,9 +149,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -151,9 +166,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -167,9 +183,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get starttime
-     * 
-     * @return starttime */
+    /**
+     * Get starttime
+     * @return starttime
+     */
     public String getStarttime() {
         return starttime;
     }
@@ -183,9 +200,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -199,9 +217,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态最后更新时间
-     * 
-     * @return lastUpdateTime */
+    /**
+     * 状态最后更新时间
+     * @return lastUpdateTime
+     */
     public String getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -231,9 +250,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get nodes
-     * 
-     * @return nodes */
+    /**
+     * Get nodes
+     * @return nodes
+     */
     public List<RealTimeNodeStatus> getNodes() {
         return nodes;
     }
@@ -278,7 +298,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

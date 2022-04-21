@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 包周期扩容计费策略参数。 */
+/**
+ * 包周期扩容计费策略参数。
+ */
 public class BssParamForResizeVolume {
 
-    /** 功能说明：是否立即支付。该参数只有在云硬盘为包周期的情况下有意义。默认值为false 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 */
+    /**
+     * 功能说明：是否立即支付。该参数只有在云硬盘为包周期的情况下有意义。默认值为false 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 
+     */
     public static final class IsAutoPayEnum {
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IsAutoPayEnum TRUE = new IsAutoPayEnum("true");
 
         private static final Map<String, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class BssParamForResizeVolume {
         return this;
     }
 
-    /** 功能说明：是否立即支付。该参数只有在云硬盘为包周期的情况下有意义。默认值为false 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付
-     * 
-     * @return isAutoPay */
+    /**
+     * 功能说明：是否立即支付。该参数只有在云硬盘为包周期的情况下有意义。默认值为false 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 
+     * @return isAutoPay
+     */
     public IsAutoPayEnum getIsAutoPay() {
         return isAutoPay;
     }
@@ -131,7 +140,10 @@ public class BssParamForResizeVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

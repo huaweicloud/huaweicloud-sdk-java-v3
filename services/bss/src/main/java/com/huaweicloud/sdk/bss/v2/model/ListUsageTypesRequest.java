@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListUsageTypesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** 语言。中文：zh_CN英文：en_US缺省为zh_CN。
-     * 
-     * @return xLanguage */
+    /**
+     * 语言。中文：zh_CN英文：en_US缺省为zh_CN。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -51,9 +54,10 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -67,11 +71,12 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -85,9 +90,12 @@ public class ListUsageTypesRequest {
         return this;
     }
 
-    /** 每次查询的数量，默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数量，默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -128,7 +136,10 @@ public class ListUsageTypesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

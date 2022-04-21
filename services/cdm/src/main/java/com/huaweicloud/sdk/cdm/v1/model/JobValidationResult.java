@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 失败原因 */
+/**
+ * 失败原因
+ */
 public class JobValidationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class JobValidationResult {
 
     private String message;
 
-    /** ERROR,WARNING */
+    /**
+     * ERROR,WARNING
+     */
     public static final class StatusEnum {
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum WARNING for value: "WARNING" */
+        /**
+         * Enum WARNING for value: "WARNING"
+         */
         public static final StatusEnum WARNING = new StatusEnum("WARNING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class JobValidationResult {
         return this;
     }
 
-    /** 错误描述
-     * 
-     * @return message */
+    /**
+     * 错误描述
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -115,9 +124,10 @@ public class JobValidationResult {
         return this;
     }
 
-    /** ERROR,WARNING
-     * 
-     * @return status */
+    /**
+     * ERROR,WARNING
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -154,7 +164,10 @@ public class JobValidationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

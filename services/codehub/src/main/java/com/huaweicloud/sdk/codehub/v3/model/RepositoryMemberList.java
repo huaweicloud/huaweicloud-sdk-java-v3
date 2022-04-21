@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RepositoryMemberList */
+/**
+ * RepositoryMemberList
+ */
 public class RepositoryMemberList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class RepositoryMemberList {
         return this;
     }
 
-    /** 仓库成员总数
-     * 
-     * @return total */
+    /**
+     * 仓库成员总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -58,9 +61,10 @@ public class RepositoryMemberList {
         return this;
     }
 
-    /** 仓库成员列表
-     * 
-     * @return users */
+    /**
+     * 仓库成员列表
+     * @return users
+     */
     public List<RepositoryMember> getUsers() {
         return users;
     }
@@ -97,7 +101,10 @@ public class RepositoryMemberList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

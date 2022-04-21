@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateVolumeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateVolumeRequestBody {
         return this;
     }
 
-    /** Get bssParam
-     * 
-     * @return bssParam */
+    /**
+     * Get bssParam
+     * @return bssParam
+     */
     public BssParamForCreateVolume getBssParam() {
         return bssParam;
     }
@@ -68,9 +71,10 @@ public class CreateVolumeRequestBody {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public CreateVolumeOption getVolume() {
         return volume;
     }
@@ -84,9 +88,10 @@ public class CreateVolumeRequestBody {
         return this;
     }
 
-    /** 创建云硬盘并挂载到目标虚拟机。 创建的云硬盘的计费模式会与虚拟机的计费模式保持一致。 目前只支持ECS服务的虚拟机，暂不支持BMS的裸金属服务器。
-     * 
-     * @return serverId */
+    /**
+     * 创建云硬盘并挂载到目标虚拟机。 创建的云硬盘的计费模式会与虚拟机的计费模式保持一致。 目前只支持ECS服务的虚拟机，暂不支持BMS的裸金属服务器。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -110,9 +115,10 @@ public class CreateVolumeRequestBody {
         return this;
     }
 
-    /** Get osSCHHNTSchedulerHints
-     * 
-     * @return osSCHHNTSchedulerHints */
+    /**
+     * Get osSCHHNTSchedulerHints
+     * @return osSCHHNTSchedulerHints
+     */
     public CreateVolumeSchedulerHints getOsSCHHNTSchedulerHints() {
         return osSCHHNTSchedulerHints;
     }
@@ -153,7 +159,10 @@ public class CreateVolumeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,31 +25,47 @@ public class ContentCompareResultOverview {
 
     private String targetDbName;
 
-    /** 对比结果。 */
+    /**
+     * 对比结果。
+     */
     public static final class ContentCompareResultEnum {
 
-        /** Enum CONSISTENT_ for value: "CONSISTENT-一致" */
+        /**
+         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         */
         public static final ContentCompareResultEnum CONSISTENT_ = new ContentCompareResultEnum("CONSISTENT-一致");
 
-        /** Enum INCONSISTENT_ for value: "INCONSISTENT-不一致" */
+        /**
+         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         */
         public static final ContentCompareResultEnum INCONSISTENT_ = new ContentCompareResultEnum("INCONSISTENT-不一致");
 
-        /** Enum COMPARING_ for value: "COMPARING-正在对比" */
+        /**
+         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         */
         public static final ContentCompareResultEnum COMPARING_ = new ContentCompareResultEnum("COMPARING-正在对比");
 
-        /** Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比" */
+        /**
+         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         */
         public static final ContentCompareResultEnum WAITING_FOR_COMPARISON_ =
             new ContentCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
 
-        /** Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败" */
+        /**
+         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         */
         public static final ContentCompareResultEnum FAILED_TO_COMPARE_ =
             new ContentCompareResultEnum("FAILED_TO_COMPARE-对比失败");
 
-        /** Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在" */
+        /**
+         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         */
         public static final ContentCompareResultEnum TARGET_DB_NOT_EXIT_ =
             new ContentCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
 
-        /** Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比" */
+        /**
+         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         */
         public static final ContentCompareResultEnum CAN_NOT_COMPARE_ =
             new ContentCompareResultEnum("CAN_NOT_COMPARE-无法对比");
 
@@ -130,9 +146,10 @@ public class ContentCompareResultOverview {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -146,9 +163,10 @@ public class ContentCompareResultOverview {
         return this;
     }
 
-    /** 目标库名称。
-     * 
-     * @return targetDbName */
+    /**
+     * 目标库名称。
+     * @return targetDbName
+     */
     public String getTargetDbName() {
         return targetDbName;
     }
@@ -162,9 +180,10 @@ public class ContentCompareResultOverview {
         return this;
     }
 
-    /** 对比结果。
-     * 
-     * @return contentCompareResult */
+    /**
+     * 对比结果。
+     * @return contentCompareResult
+     */
     public ContentCompareResultEnum getContentCompareResult() {
         return contentCompareResult;
     }
@@ -203,7 +222,10 @@ public class ContentCompareResultOverview {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

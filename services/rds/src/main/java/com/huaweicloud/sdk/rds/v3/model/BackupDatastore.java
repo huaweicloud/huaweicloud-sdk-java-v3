@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** BackupDatastore */
+/**
+ * BackupDatastore
+ */
 public class BackupDatastore {
 
-    /** 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer */
+    /**
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     */
     public static final class TypeEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final TypeEnum MYSQL = new TypeEnum("MySQL");
 
-        /** Enum POSTGRESQL for value: "PostgreSQL" */
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
         public static final TypeEnum POSTGRESQL = new TypeEnum("PostgreSQL");
 
-        /** Enum SQLSERVER for value: "SQLServer" */
+        /**
+         * Enum SQLSERVER for value: "SQLServer"
+         */
         public static final TypeEnum SQLSERVER = new TypeEnum("SQLServer");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class BackupDatastore {
         return this;
     }
 
-    /** 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
-     * 
-     * @return type */
+    /**
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -119,9 +130,10 @@ public class BackupDatastore {
         return this;
     }
 
-    /** 数据库版本。
-     * 
-     * @return version */
+    /**
+     * 数据库版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -157,7 +169,10 @@ public class BackupDatastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

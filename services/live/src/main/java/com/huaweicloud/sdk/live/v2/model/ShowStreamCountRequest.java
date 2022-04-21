@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowStreamCountRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ShowStreamCountRequest {
         return this;
     }
 
-    /** 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。
-     * 
-     * @return publishDomains */
+    /**
+     * 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。 
+     * @return publishDomains
+     */
     public List<String> getPublishDomains() {
         return publishDomains;
     }
@@ -63,9 +66,10 @@ public class ShowStreamCountRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期1年。 若参数为空，默认查询7天数据。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期1年。  若参数为空，默认查询7天数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -79,9 +83,10 @@ public class ShowStreamCountRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间，最大查询跨度31天， 最大查询跨度31天，最大查询周期1年。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间，最大查询跨度31天， 最大查询跨度31天，最大查询周期1年。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -120,7 +125,10 @@ public class ShowStreamCountRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

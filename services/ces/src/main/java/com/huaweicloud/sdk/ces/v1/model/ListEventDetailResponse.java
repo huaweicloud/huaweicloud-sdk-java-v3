@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEventDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,13 +24,19 @@ public class ListEventDetailResponse extends SdkResponse {
 
     private String eventName;
 
-    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。 */
+    /**
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     */
     public static final class EventTypeEnum {
 
-        /** Enum EVENT_SYS for value: "EVENT.SYS" */
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
         public static final EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
 
-        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
         public static final EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
 
         private static final Map<String, EventTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +131,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
-     * 
-     * @return eventName */
+    /**
+     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+     * @return eventName
+     */
     public String getEventName() {
         return eventName;
     }
@@ -139,9 +148,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
-     * 
-     * @return eventType */
+    /**
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * @return eventType
+     */
     public EventTypeEnum getEventType() {
         return eventType;
     }
@@ -171,9 +181,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 上报事件时用户的名称，也可能为projectID。
-     * 
-     * @return eventUsers */
+    /**
+     * 上报事件时用户的名称，也可能为projectID。
+     * @return eventUsers
+     */
     public List<String> getEventUsers() {
         return eventUsers;
     }
@@ -203,9 +214,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
-     * 
-     * @return eventSources */
+    /**
+     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+     * @return eventSources
+     */
     public List<String> getEventSources() {
         return eventSources;
     }
@@ -235,9 +247,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 一条或者多条事件详细信息。
-     * 
-     * @return eventInfo */
+    /**
+     * 一条或者多条事件详细信息。
+     * @return eventInfo
+     */
     public List<EventInfoDetail> getEventInfo() {
         return eventInfo;
     }
@@ -260,9 +273,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public TotalMetaData getMetaData() {
         return metaData;
     }
@@ -307,7 +321,10 @@ public class ListEventDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

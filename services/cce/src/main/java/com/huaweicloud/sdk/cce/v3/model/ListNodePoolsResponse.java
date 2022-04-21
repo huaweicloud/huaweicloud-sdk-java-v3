@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNodePoolsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListNodePoolsResponse extends SdkResponse {
         return this;
     }
 
-    /** API type. The value is fixed to List.
-     * 
-     * @return kind */
+    /**
+     * API type. The value is fixed to List.
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -48,9 +51,10 @@ public class ListNodePoolsResponse extends SdkResponse {
         return this;
     }
 
-    /** API version. The value is fixed to v3.
-     * 
-     * @return apiVersion */
+    /**
+     * API version. The value is fixed to v3.
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -80,9 +84,10 @@ public class ListNodePoolsResponse extends SdkResponse {
         return this;
     }
 
-    /** /
-     * 
-     * @return items */
+    /**
+     * /
+     * @return items
+     */
     public List<NodePool> getItems() {
         return items;
     }
@@ -121,7 +126,10 @@ public class ListNodePoolsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

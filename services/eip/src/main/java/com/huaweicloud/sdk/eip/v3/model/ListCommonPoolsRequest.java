@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCommonPoolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class ListCommonPoolsRequest {
         return this;
     }
 
-    /** 显示，形式为\"fields=id&fields=name&...\"
-     * 支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group
-     * 
-     * @return fields */
+    /**
+     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group
+     * @return fields
+     */
     public String getFields() {
         return fields;
     }
@@ -45,9 +47,10 @@ public class ListCommonPoolsRequest {
         return this;
     }
 
-    /** 公共池名称
-     * 
-     * @return name */
+    /**
+     * 公共池名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -61,9 +64,10 @@ public class ListCommonPoolsRequest {
         return this;
     }
 
-    /** 公共池位于中心还是边缘
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 公共池位于中心还是边缘
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -102,7 +106,10 @@ public class ListCommonPoolsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

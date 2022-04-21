@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** GetParametersForImportRequestBody */
+/**
+ * GetParametersForImportRequestBody
+ */
 public class GetParametersForImportRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class GetParametersForImportRequestBody {
 
     private String keyId;
 
-    /** 密钥材料加密算法，枚举如下： - RSAES_PKCS1_V1_5 - RSAES_OAEP_SHA_1 - RSAES_OAEP_SHA_256 */
+    /**
+     * 密钥材料加密算法，枚举如下：  - RSAES_PKCS1_V1_5  - RSAES_OAEP_SHA_1  - RSAES_OAEP_SHA_256
+     */
     public static final class WrappingAlgorithmEnum {
 
-        /** Enum RSAES_PKCS1_V1_5 for value: "RSAES_PKCS1_V1_5" */
+        /**
+         * Enum RSAES_PKCS1_V1_5 for value: "RSAES_PKCS1_V1_5"
+         */
         public static final WrappingAlgorithmEnum RSAES_PKCS1_V1_5 = new WrappingAlgorithmEnum("RSAES_PKCS1_V1_5");
 
-        /** Enum RSAES_OAEP_SHA_1 for value: "RSAES_OAEP_SHA_1" */
+        /**
+         * Enum RSAES_OAEP_SHA_1 for value: "RSAES_OAEP_SHA_1"
+         */
         public static final WrappingAlgorithmEnum RSAES_OAEP_SHA_1 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_1");
 
-        /** Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256" */
+        /**
+         * Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256"
+         */
         public static final WrappingAlgorithmEnum RSAES_OAEP_SHA_256 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_256");
 
         private static final Map<String, WrappingAlgorithmEnum> STATIC_FIELDS = createStaticFields();
@@ -108,10 +118,10 @@ public class GetParametersForImportRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -125,9 +135,10 @@ public class GetParametersForImportRequestBody {
         return this;
     }
 
-    /** 密钥材料加密算法，枚举如下： - RSAES_PKCS1_V1_5 - RSAES_OAEP_SHA_1 - RSAES_OAEP_SHA_256
-     * 
-     * @return wrappingAlgorithm */
+    /**
+     * 密钥材料加密算法，枚举如下：  - RSAES_PKCS1_V1_5  - RSAES_OAEP_SHA_1  - RSAES_OAEP_SHA_256
+     * @return wrappingAlgorithm
+     */
     public WrappingAlgorithmEnum getWrappingAlgorithm() {
         return wrappingAlgorithm;
     }
@@ -141,9 +152,10 @@ public class GetParametersForImportRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -182,7 +194,10 @@ public class GetParametersForImportRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

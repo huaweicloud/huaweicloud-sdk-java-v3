@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会者信息 */
+/**
+ * 与会者信息
+ */
 public class RestAttendeeDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 与会者的用户UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 与会者的用户UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -109,9 +112,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 与会者的账号ID。 如果是账号/密码鉴权场景，选填，表示华为云会议帐号ID。 如果是APPID鉴权场景，必填，表示第三方的User ID，同时需要携带appid参数。
-     * 
-     * @return accountId */
+    /**
+     * 与会者的账号ID。 如果是账号/密码鉴权场景，选填，表示华为云会议帐号ID。 如果是APPID鉴权场景，必填，表示第三方的User ID，同时需要携带appid参数。
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -125,9 +129,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 与会者名称或昵称，长度限制为96个字符。
-     * 
-     * @return name */
+    /**
+     * 与会者名称或昵称，长度限制为96个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -141,9 +146,12 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 会议中的角色。默认为普通与会者。 - 0: 普通与会者。 - 1: 会议主席。 - 2: 预留字段，暂不对外开放。 minimum: 0 maximum: 2
-     * 
-     * @return role */
+    /**
+     * 会议中的角色。默认为普通与会者。 - 0: 普通与会者。 - 1: 会议主席。 - 2: 预留字段，暂不对外开放。
+     * minimum: 0
+     * maximum: 2
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -157,9 +165,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 如果是账号/密码鉴权场景，必填，号码（可支持SIP、TEL号码格式）。 如果是APP ID鉴权场景，选填。 最大不超过127个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return phone */
+    /**
+     * 如果是账号/密码鉴权场景，必填，号码（可支持SIP、TEL号码格式）。 如果是APP ID鉴权场景，选填。 最大不超过127个字符。phone、email和sms三者需至少填写一个。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -173,9 +182,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 预留字段，取值类型同phone。
-     * 
-     * @return phone2 */
+    /**
+     * 预留字段，取值类型同phone。
+     * @return phone2
+     */
     public String getPhone2() {
         return phone2;
     }
@@ -189,9 +199,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 预留字段，取值类型同phone。
-     * 
-     * @return phone3 */
+    /**
+     * 预留字段，取值类型同phone。
+     * @return phone3
+     */
     public String getPhone3() {
         return phone3;
     }
@@ -205,9 +216,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return email */
+    /**
+     * 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -221,9 +233,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。
-     * 
-     * @return sms */
+    /**
+     * 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。
+     * @return sms
+     */
     public String getSms() {
         return sms;
     }
@@ -237,9 +250,12 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 用户入会时是否需要自动静音。默认不静音。 - 0: 不需要静音。 - 1: 需要静音。 minimum: 0 maximum: 1
-     * 
-     * @return isMute */
+    /**
+     * 用户入会时是否需要自动静音。默认不静音。 - 0: 不需要静音。 - 1: 需要静音。
+     * minimum: 0
+     * maximum: 1
+     * @return isMute
+     */
     public Integer getIsMute() {
         return isMute;
     }
@@ -253,9 +269,12 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 会议开始时是否自动邀请该与会者。默认值由企业级配置决定。 - 0: 不自动邀请 - 1: 自动邀请 minimum: 0 maximum: 1
-     * 
-     * @return isAutoInvite */
+    /**
+     * 会议开始时是否自动邀请该与会者。默认值由企业级配置决定。 - 0: 不自动邀请 - 1: 自动邀请
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoInvite
+     */
     public Integer getIsAutoInvite() {
         return isAutoInvite;
     }
@@ -269,10 +288,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。
-     * - mobile: 用户手机号码。 - telephone: 软终端用户固定电话，暂不使用。
-     * 
-     * @return type */
+    /**
+     * 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 软终端用户固定电话，暂不使用。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -286,9 +305,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 终端所在会议室信息。（预留字段）
-     * 
-     * @return address */
+    /**
+     * 终端所在会议室信息。（预留字段）
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -302,9 +322,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 部门ID。最大不超过64个字符。
-     * 
-     * @return deptUUID */
+    /**
+     * 部门ID。最大不超过64个字符。
+     * @return deptUUID
+     */
     public String getDeptUUID() {
         return deptUUID;
     }
@@ -318,9 +339,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** 部门名称。最大不超过128个字符。
-     * 
-     * @return deptName */
+    /**
+     * 部门名称。最大不超过128个字符。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -334,9 +356,10 @@ public class RestAttendeeDTO {
         return this;
     }
 
-    /** App ID，应用标识，一个应用只需创建一次。如果是APP ID鉴权场景，此项必填。
-     * 
-     * @return appId */
+    /**
+     * App ID，应用标识，一个应用只需创建一次。如果是APP ID鉴权场景，此项必填。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -411,7 +434,10 @@ public class RestAttendeeDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 请求头 */
+/**
+ * 请求头
+ */
 public class ListEventItemsHeaders {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListEventItemsHeaders {
         return this;
     }
 
-    /** 请求长度
-     * 
-     * @return contentLength */
+    /**
+     * 请求长度
+     * @return contentLength
+     */
     public String getContentLength() {
         return contentLength;
     }
@@ -54,9 +57,10 @@ public class ListEventItemsHeaders {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return host */
+    /**
+     * 域名
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -70,9 +74,10 @@ public class ListEventItemsHeaders {
         return this;
     }
 
-    /** 内容类型
-     * 
-     * @return contentType */
+    /**
+     * 内容类型
+     * @return contentType
+     */
     public String getContentType() {
         return contentType;
     }
@@ -86,9 +91,10 @@ public class ListEventItemsHeaders {
         return this;
     }
 
-    /** 代理
-     * 
-     * @return userAgent */
+    /**
+     * 代理
+     * @return userAgent
+     */
     public String getUserAgent() {
         return userAgent;
     }
@@ -102,9 +108,10 @@ public class ListEventItemsHeaders {
         return this;
     }
 
-    /** 接收内容类型
-     * 
-     * @return accept */
+    /**
+     * 接收内容类型
+     * @return accept
+     */
     public String getAccept() {
         return accept;
     }
@@ -147,7 +154,10 @@ public class ListEventItemsHeaders {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

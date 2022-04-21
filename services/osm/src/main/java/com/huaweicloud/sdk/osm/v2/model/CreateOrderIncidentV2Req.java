@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateOrderIncidentV2Req */
+/**
+ * CreateOrderIncidentV2Req
+ */
 public class CreateOrderIncidentV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 工单子类
-     * 
-     * @return incidentSubTypeId */
+    /**
+     * 工单子类
+     * @return incidentSubTypeId
+     */
     public String getIncidentSubTypeId() {
         return incidentSubTypeId;
     }
@@ -124,9 +127,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 工单产品类型
-     * 
-     * @return productCategoryId */
+    /**
+     * 工单产品类型
+     * @return productCategoryId
+     */
     public String getProductCategoryId() {
         return productCategoryId;
     }
@@ -140,9 +144,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 工单问题类型
-     * 
-     * @return businessTypeId */
+    /**
+     * 工单问题类型
+     * @return businessTypeId
+     */
     public String getBusinessTypeId() {
         return businessTypeId;
     }
@@ -156,9 +161,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 区域ID
-     * 
-     * @return regionId */
+    /**
+     * 区域ID
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -172,9 +178,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 问题描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 问题描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -188,9 +195,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 工单来源，当前固定为83aeb0f2834c4df49826c781d32a963e
-     * 
-     * @return sourceId */
+    /**
+     * 工单来源，当前固定为83aeb0f2834c4df49826c781d32a963e
+     * @return sourceId
+     */
     public String getSourceId() {
         return sourceId;
     }
@@ -204,9 +212,12 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 是否授权 minimum: 0 maximum: 1
-     * 
-     * @return isAuthorized */
+    /**
+     * 是否授权
+     * minimum: 0
+     * maximum: 1
+     * @return isAuthorized
+     */
     public Integer getIsAuthorized() {
         return isAuthorized;
     }
@@ -220,9 +231,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 机密信息内容
-     * 
-     * @return authorizationContent */
+    /**
+     * 机密信息内容
+     * @return authorizationContent
+     */
     public String getAuthorizationContent() {
         return authorizationContent;
     }
@@ -236,9 +248,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 提醒手机号
-     * 
-     * @return remindMobile */
+    /**
+     * 提醒手机号
+     * @return remindMobile
+     */
     public String getRemindMobile() {
         return remindMobile;
     }
@@ -252,9 +265,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 提醒邮箱
-     * 
-     * @return remindMail */
+    /**
+     * 提醒邮箱
+     * @return remindMail
+     */
     public String getRemindMail() {
         return remindMail;
     }
@@ -268,9 +282,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 提醒时间，如果是任意时间传0，如果是指定时间，传客户首选项对应时区的时间，比如09:00-18:00
-     * 
-     * @return remindTime */
+    /**
+     * 提醒时间，如果是任意时间传0，如果是指定时间，传客户首选项对应时区的时间，比如09:00-18:00
+     * @return remindTime
+     */
     public String getRemindTime() {
         return remindTime;
     }
@@ -284,9 +299,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -316,9 +332,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 附件id列表
-     * 
-     * @return accessoryIds */
+    /**
+     * 附件id列表
+     * @return accessoryIds
+     */
     public List<String> getAccessoryIds() {
         return accessoryIds;
     }
@@ -348,9 +365,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 附加参数
-     * 
-     * @return extendsMap */
+    /**
+     * 附加参数
+     * @return extendsMap
+     */
     public Map<String, Object> getExtendsMap() {
         return extendsMap;
     }
@@ -380,9 +398,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 扩展参数
-     * 
-     * @return extensionMap */
+    /**
+     * 扩展参数
+     * @return extensionMap
+     */
     public Map<String, Object> getExtensionMap() {
         return extensionMap;
     }
@@ -396,9 +415,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 严重性id
-     * 
-     * @return severityId */
+    /**
+     * 严重性id
+     * @return severityId
+     */
     public String getSeverityId() {
         return severityId;
     }
@@ -412,9 +432,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 验证码
-     * 
-     * @return verifyCode */
+    /**
+     * 验证码
+     * @return verifyCode
+     */
     public String getVerifyCode() {
         return verifyCode;
     }
@@ -428,9 +449,10 @@ public class CreateOrderIncidentV2Req {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -516,7 +538,10 @@ public class CreateOrderIncidentV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

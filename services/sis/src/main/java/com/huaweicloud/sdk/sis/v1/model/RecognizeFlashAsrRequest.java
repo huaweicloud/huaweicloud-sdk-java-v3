@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RecognizeFlashAsrRequest {
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+     */
     public static final class PropertyEnum {
 
-        /** Enum CHINESE_8K_COMMON for value: "chinese_8k_common" */
+        /**
+         * Enum CHINESE_8K_COMMON for value: "chinese_8k_common"
+         */
         public static final PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
 
-        /** Enum CHINESE_16K_COMMON for value: "chinese_16k_common" */
+        /**
+         * Enum CHINESE_16K_COMMON for value: "chinese_16k_common"
+         */
         public static final PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
 
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
@@ -89,22 +97,34 @@ public class RecognizeFlashAsrRequest {
 
     private PropertyEnum property;
 
-    /** 音频格式，audio_format取值范围： wav,mp3,m4a,aac,opus */
+    /**
+     * 音频格式，audio_format取值范围： wav,mp3,m4a,aac,opus
+     */
     public static final class AudioFormatEnum {
 
-        /** Enum WAV for value: "wav" */
+        /**
+         * Enum WAV for value: "wav"
+         */
         public static final AudioFormatEnum WAV = new AudioFormatEnum("wav");
 
-        /** Enum MP3 for value: "mp3" */
+        /**
+         * Enum MP3 for value: "mp3"
+         */
         public static final AudioFormatEnum MP3 = new AudioFormatEnum("mp3");
 
-        /** Enum M4A for value: "m4a" */
+        /**
+         * Enum M4A for value: "m4a"
+         */
         public static final AudioFormatEnum M4A = new AudioFormatEnum("m4a");
 
-        /** Enum AAC for value: "aac" */
+        /**
+         * Enum AAC for value: "aac"
+         */
         public static final AudioFormatEnum AAC = new AudioFormatEnum("aac");
 
-        /** Enum OPUS for value: "opus" */
+        /**
+         * Enum OPUS for value: "opus"
+         */
         public static final AudioFormatEnum OPUS = new AudioFormatEnum("opus");
 
         private static final Map<String, AudioFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -177,13 +197,19 @@ public class RecognizeFlashAsrRequest {
 
     private AudioFormatEnum audioFormat;
 
-    /** 是否加标点， 可以为 yes, 默认no */
+    /**
+     * 是否加标点， 可以为 yes, 默认no
+     */
     public static final class AddPuncEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final AddPuncEnum YES = new AddPuncEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final AddPuncEnum NO = new AddPuncEnum("no");
 
         private static final Map<String, AddPuncEnum> STATIC_FIELDS = createStaticFields();
@@ -253,13 +279,19 @@ public class RecognizeFlashAsrRequest {
 
     private AddPuncEnum addPunc;
 
-    /** 是否将音频中的数字使用阿拉伯数字的形式呈现，取值为yes，no，默认为yes */
+    /**
+     * 是否将音频中的数字使用阿拉伯数字的形式呈现，取值为yes，no，默认为yes
+     */
     public static final class DigitNormEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final DigitNormEnum YES = new DigitNormEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final DigitNormEnum NO = new DigitNormEnum("no");
 
         private static final Map<String, DigitNormEnum> STATIC_FIELDS = createStaticFields();
@@ -329,13 +361,19 @@ public class RecognizeFlashAsrRequest {
 
     private DigitNormEnum digitNorm;
 
-    /** 表示是否在识别结果中输出分词结果信息，取值为yes，no，默认no */
+    /**
+     * 表示是否在识别结果中输出分词结果信息，取值为yes，no，默认no
+     */
     public static final class NeedWordInfoEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final NeedWordInfoEnum YES = new NeedWordInfoEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final NeedWordInfoEnum NO = new NeedWordInfoEnum("no");
 
         private static final Map<String, NeedWordInfoEnum> STATIC_FIELDS = createStaticFields();
@@ -420,13 +458,19 @@ public class RecognizeFlashAsrRequest {
 
     private String obsObjectKey;
 
-    /** 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。 */
+    /**
+     * 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
+     */
     public static final class FirstChannelOnlyEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final FirstChannelOnlyEnum YES = new FirstChannelOnlyEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final FirstChannelOnlyEnum NO = new FirstChannelOnlyEnum("no");
 
         private static final Map<String, FirstChannelOnlyEnum> STATIC_FIELDS = createStaticFields();
@@ -501,9 +545,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
-     * 
-     * @return property */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+     * @return property
+     */
     public PropertyEnum getProperty() {
         return property;
     }
@@ -517,9 +562,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 音频格式，audio_format取值范围： wav,mp3,m4a,aac,opus
-     * 
-     * @return audioFormat */
+    /**
+     * 音频格式，audio_format取值范围： wav,mp3,m4a,aac,opus
+     * @return audioFormat
+     */
     public AudioFormatEnum getAudioFormat() {
         return audioFormat;
     }
@@ -533,9 +579,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 是否加标点， 可以为 yes, 默认no
-     * 
-     * @return addPunc */
+    /**
+     * 是否加标点， 可以为 yes, 默认no
+     * @return addPunc
+     */
     public AddPuncEnum getAddPunc() {
         return addPunc;
     }
@@ -549,9 +596,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 是否将音频中的数字使用阿拉伯数字的形式呈现，取值为yes，no，默认为yes
-     * 
-     * @return digitNorm */
+    /**
+     * 是否将音频中的数字使用阿拉伯数字的形式呈现，取值为yes，no，默认为yes
+     * @return digitNorm
+     */
     public DigitNormEnum getDigitNorm() {
         return digitNorm;
     }
@@ -565,9 +613,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 表示是否在识别结果中输出分词结果信息，取值为yes，no，默认no
-     * 
-     * @return needWordInfo */
+    /**
+     * 表示是否在识别结果中输出分词结果信息，取值为yes，no，默认no
+     * @return needWordInfo
+     */
     public NeedWordInfoEnum getNeedWordInfo() {
         return needWordInfo;
     }
@@ -581,9 +630,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 热词表id
-     * 
-     * @return vocabularyId */
+    /**
+     * 热词表id
+     * @return vocabularyId
+     */
     public String getVocabularyId() {
         return vocabularyId;
     }
@@ -597,9 +647,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** obs桶名
-     * 
-     * @return obsBucketName */
+    /**
+     * obs桶名
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -613,9 +664,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** obs对象key，经过urlencode编码，长度不超过1024个字符
-     * 
-     * @return obsObjectKey */
+    /**
+     * obs对象key，经过urlencode编码，长度不超过1024个字符
+     * @return obsObjectKey
+     */
     public String getObsObjectKey() {
         return obsObjectKey;
     }
@@ -629,9 +681,10 @@ public class RecognizeFlashAsrRequest {
         return this;
     }
 
-    /** 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
-     * 
-     * @return firstChannelOnly */
+    /**
+     * 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
+     * @return firstChannelOnly
+     */
     public FirstChannelOnlyEnum getFirstChannelOnly() {
         return firstChannelOnly;
     }
@@ -690,7 +743,10 @@ public class RecognizeFlashAsrRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

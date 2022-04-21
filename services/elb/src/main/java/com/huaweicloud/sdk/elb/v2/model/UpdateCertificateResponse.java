@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,13 +41,19 @@ public class UpdateCertificateResponse extends SdkResponse {
 
     private String description;
 
-    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。 */
+    /**
+     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
+     */
     public static final class TypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final TypeEnum SERVER = new TypeEnum("server");
 
-        /** Enum CLIENT for value: "client" */
+        /**
+         * Enum CLIENT for value: "client"
+         */
         public static final TypeEnum CLIENT = new TypeEnum("client");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -150,9 +158,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书id
-     * 
-     * @return id */
+    /**
+     * SSL证书id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -166,9 +175,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书所在的项目ID
-     * 
-     * @return tenantId */
+    /**
+     * SSL证书所在的项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -182,9 +192,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的管理状态；暂不支持
-     * 
-     * @return adminStateUp */
+    /**
+     * SSL证书的管理状态；暂不支持
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -198,9 +209,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的名称。
-     * 
-     * @return name */
+    /**
+     * SSL证书的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -214,9 +226,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的描述。
-     * 
-     * @return description */
+    /**
+     * SSL证书的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -230,9 +243,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。
-     * 
-     * @return type */
+    /**
+     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -246,9 +260,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务器证书所签域名。该字段仅type为server时有效。
-     * 
-     * @return domain */
+    /**
+     * 服务器证书所签域名。该字段仅type为server时有效。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -262,9 +277,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务器证书的私钥。仅type为server时有效。type为server时必选。
-     * 
-     * @return privateKey */
+    /**
+     * 服务器证书的私钥。仅type为server时有效。type为server时必选。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -278,9 +294,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 当type为server时，表示服务器证书的公钥；当type为client时，表示用于认证客户端证书的CA证书。
-     * 
-     * @return certificate */
+    /**
+     * 当type为server时，表示服务器证书的公钥；当type为client时，表示用于认证客户端证书的CA证书。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -294,9 +311,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的过期时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * 
-     * @return expireTime */
+    /**
+     * SSL证书的过期时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -310,9 +328,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的创建时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * 
-     * @return createTime */
+    /**
+     * SSL证书的创建时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -326,9 +345,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL证书的更新时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * 
-     * @return updateTime */
+    /**
+     * SSL证书的更新时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -396,7 +416,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

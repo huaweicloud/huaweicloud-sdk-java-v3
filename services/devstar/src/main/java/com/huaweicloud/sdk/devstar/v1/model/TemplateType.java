@@ -7,31 +7,49 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Gets or Sets TemplateType */
+/**
+ * Gets or Sets TemplateType
+ */
 public class TemplateType {
 
-    /** Enum MOBILE for value: "mobile" */
+    /**
+     * Enum MOBILE for value: "mobile"
+     */
     public static final TemplateType MOBILE = new TemplateType("mobile");
 
-    /** Enum MICROSERVICE for value: "microservice" */
+    /**
+     * Enum MICROSERVICE for value: "microservice"
+     */
     public static final TemplateType MICROSERVICE = new TemplateType("microservice");
 
-    /** Enum WEB for value: "web" */
+    /**
+     * Enum WEB for value: "web"
+     */
     public static final TemplateType WEB = new TemplateType("web");
 
-    /** Enum FUNCTION for value: "function" */
+    /**
+     * Enum FUNCTION for value: "function"
+     */
     public static final TemplateType FUNCTION = new TemplateType("function");
 
-    /** Enum IOT for value: "iot" */
+    /**
+     * Enum IOT for value: "iot"
+     */
     public static final TemplateType IOT = new TemplateType("iot");
 
-    /** Enum AI for value: "ai" */
+    /**
+     * Enum AI for value: "ai"
+     */
     public static final TemplateType AI = new TemplateType("ai");
 
-    /** Enum OTHERS for value: "others" */
+    /**
+     * Enum OTHERS for value: "others"
+     */
     public static final TemplateType OTHERS = new TemplateType("others");
 
-    /** Enum NONE for value: "none" */
+    /**
+     * Enum NONE for value: "none"
+     */
     public static final TemplateType NONE = new TemplateType("none");
 
     private static final Map<String, TemplateType> STATIC_FIELDS = createStaticFields();

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateL7ruleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateL7ruleRequestBody {
         return this;
     }
 
-    /** Get rule
-     * 
-     * @return rule */
+    /**
+     * Get rule
+     * @return rule
+     */
     public CreateL7ruleReq getRule() {
         return rule;
     }
@@ -65,7 +68,10 @@ public class CreateL7ruleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

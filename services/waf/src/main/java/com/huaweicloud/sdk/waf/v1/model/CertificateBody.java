@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CertificateBody */
+/**
+ * CertificateBody
+ */
 public class CertificateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书id
-     * 
-     * @return id */
+    /**
+     * 证书id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -72,9 +75,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书名
-     * 
-     * @return name */
+    /**
+     * 证书名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -88,9 +92,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书文件，PEM编码
-     * 
-     * @return content */
+    /**
+     * 证书文件，PEM编码
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -104,9 +109,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书私钥，PEM编码
-     * 
-     * @return key */
+    /**
+     * 证书私钥，PEM编码
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -120,9 +126,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书过期时间戳
-     * 
-     * @return expireTime */
+    /**
+     * 证书过期时间戳
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -136,9 +143,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书过期状态，0-未过期，1-已过期，2-即将过期（一个月内即将过期）
-     * 
-     * @return expStatus */
+    /**
+     * 证书过期状态，0-未过期，1-已过期，2-即将过期（一个月内即将过期）
+     * @return expStatus
+     */
     public Integer getExpStatus() {
         return expStatus;
     }
@@ -152,9 +160,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书上传时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 证书上传时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -184,9 +193,10 @@ public class CertificateBody {
         return this;
     }
 
-    /** 证书关联的域名信息
-     * 
-     * @return bindHost */
+    /**
+     * 证书关联的域名信息
+     * @return bindHost
+     */
     public List<BindHost> getBindHost() {
         return bindHost;
     }
@@ -233,7 +243,10 @@ public class CertificateBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

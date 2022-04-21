@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TemplateProductExt */
+/**
+ * TemplateProductExt
+ */
 public class TemplateProductExt {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** 产品id。
-     * 
-     * @return id */
+    /**
+     * 产品id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** 产品短名。
-     * 
-     * @return productshort */
+    /**
+     * 产品短名。
+     * @return productshort
+     */
     public String getProductshort() {
         return productshort;
     }
@@ -85,9 +89,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** 产品名。
-     * 
-     * @return productName */
+    /**
+     * 产品名。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -101,9 +106,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** 首页链接。
-     * 
-     * @return homeLink */
+    /**
+     * 首页链接。
+     * @return homeLink
+     */
     public String getHomeLink() {
         return homeLink;
     }
@@ -117,9 +123,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** api调试链接。
-     * 
-     * @return apiLink */
+    /**
+     * api调试链接。
+     * @return apiLink
+     */
     public String getApiLink() {
         return apiLink;
     }
@@ -133,9 +140,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** sdk下载链接。
-     * 
-     * @return sdkLink */
+    /**
+     * sdk下载链接。
+     * @return sdkLink
+     */
     public String getSdkLink() {
         return sdkLink;
     }
@@ -149,9 +157,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** 文档链接。
-     * 
-     * @return docLink */
+    /**
+     * 文档链接。
+     * @return docLink
+     */
     public String getDocLink() {
         return docLink;
     }
@@ -165,9 +174,10 @@ public class TemplateProductExt {
         return this;
     }
 
-    /** logo链接。
-     * 
-     * @return logoLink */
+    /**
+     * logo链接。
+     * @return logoLink
+     */
     public String getLogoLink() {
         return logoLink;
     }
@@ -216,7 +226,10 @@ public class TemplateProductExt {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

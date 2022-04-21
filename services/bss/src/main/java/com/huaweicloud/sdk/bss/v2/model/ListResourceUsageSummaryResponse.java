@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListResourceUsageSummaryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListResourceUsageSummaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数。
-     * 
-     * @return totalCount */
+    /**
+     * 总条数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -60,9 +63,10 @@ public class ListResourceUsageSummaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 统计值，按照资源ID维度返回的月度统计结果。具体请参见表3。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则只返回资源ID。
-     * 
-     * @return summaryUsageInfoList */
+    /**
+     * 统计值，按照资源ID维度返回的月度统计结果。具体请参见表3。  说明： 每月2日20点后可查询上月数据；若查询当月数据，则只返回资源ID。
+     * @return summaryUsageInfoList
+     */
     public List<StatUsageSummaryInfo> getSummaryUsageInfoList() {
         return summaryUsageInfoList;
     }
@@ -99,7 +103,10 @@ public class ListResourceUsageSummaryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

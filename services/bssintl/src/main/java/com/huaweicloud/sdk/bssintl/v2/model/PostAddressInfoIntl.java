@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PostAddressInfoIntl */
+/**
+ * PostAddressInfoIntl
+ */
 public class PostAddressInfoIntl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PostAddressInfoIntl {
         return this;
     }
 
-    /** 收件人地址。
-     * 
-     * @return address */
+    /**
+     * 收件人地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -49,9 +52,10 @@ public class PostAddressInfoIntl {
         return this;
     }
 
-    /** 收件人。
-     * 
-     * @return recipients */
+    /**
+     * 收件人。
+     * @return recipients
+     */
     public String getRecipients() {
         return recipients;
     }
@@ -65,9 +69,10 @@ public class PostAddressInfoIntl {
         return this;
     }
 
-    /** 收件所在地邮政编码。
-     * 
-     * @return zipCode */
+    /**
+     * 收件所在地邮政编码。
+     * @return zipCode
+     */
     public String getZipCode() {
         return zipCode;
     }
@@ -81,9 +86,10 @@ public class PostAddressInfoIntl {
         return this;
     }
 
-    /** 收件人手机号码。
-     * 
-     * @return mobilePhone */
+    /**
+     * 收件人手机号码。
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -124,7 +130,10 @@ public class PostAddressInfoIntl {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

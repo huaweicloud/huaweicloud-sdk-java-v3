@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例配置项 */
+/**
+ * 实例配置项
+ */
 public class QueryRedisConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数值。
-     * 
-     * @return paramValue */
+    /**
+     * 配置参数值。
+     * @return paramValue
+     */
     public String getParamValue() {
         return paramValue;
     }
@@ -64,9 +67,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数的值类型。
-     * 
-     * @return valueType */
+    /**
+     * 配置参数的值类型。
+     * @return valueType
+     */
     public String getValueType() {
         return valueType;
     }
@@ -80,9 +84,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数的取值范围。
-     * 
-     * @return valueRange */
+    /**
+     * 配置参数的取值范围。
+     * @return valueRange
+     */
     public String getValueRange() {
         return valueRange;
     }
@@ -96,9 +101,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置项的描述。
-     * 
-     * @return description */
+    /**
+     * 配置项的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -112,9 +118,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数的默认值。
-     * 
-     * @return defaultValue */
+    /**
+     * 配置参数的默认值。
+     * @return defaultValue
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -128,9 +135,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数名称。
-     * 
-     * @return paramName */
+    /**
+     * 配置参数名称。
+     * @return paramName
+     */
     public String getParamName() {
         return paramName;
     }
@@ -144,9 +152,10 @@ public class QueryRedisConfig {
         return this;
     }
 
-    /** 配置参数ID。
-     * 
-     * @return paramId */
+    /**
+     * 配置参数ID。
+     * @return paramId
+     */
     public String getParamId() {
         return paramId;
     }
@@ -193,7 +202,10 @@ public class QueryRedisConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

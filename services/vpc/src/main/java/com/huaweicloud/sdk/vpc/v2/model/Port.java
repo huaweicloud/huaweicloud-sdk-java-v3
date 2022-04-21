@@ -53,22 +53,30 @@ public class Port {
 
     private String deviceId;
 
-    /** 功能说明：设备所属
-     * 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat
-     * 约束：不支持设置和更新，由系统自动维护 */
+    /**
+     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
+     */
     public static final class DeviceOwnerEnum {
 
-        /** Enum NETWORK_DHCP for value: "network:dhcp" */
+        /**
+         * Enum NETWORK_DHCP for value: "network:dhcp"
+         */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
 
-        /** Enum NETWORK_VIP_PORT for value: "network:VIP_PORT" */
+        /**
+         * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
+         */
         public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
 
-        /** Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed" */
+        /**
+         * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
+         */
         public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED =
             new DeviceOwnerEnum("network:router_interface_distributed");
 
-        /** Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat" */
+        /**
+         * Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat"
+         */
         public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT =
             new DeviceOwnerEnum("network:router_centralized_snat");
 
@@ -146,16 +154,24 @@ public class Port {
 
     private String tenantId;
 
-    /** 功能说明：端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN */
+    /**
+     * 功能说明：端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum BUILD for value: "BUILD" */
+        /**
+         * Enum BUILD for value: "BUILD"
+         */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -291,9 +307,10 @@ public class Port {
         return this;
     }
 
-    /** 端口ID
-     * 
-     * @return id */
+    /**
+     * 端口ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -307,9 +324,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线）
-     * 
-     * @return name */
+    /**
+     * 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -323,9 +341,10 @@ public class Port {
         return this;
     }
 
-    /** 端口所属网络的ID
-     * 
-     * @return networkId */
+    /**
+     * 端口所属网络的ID
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -339,9 +358,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：管理状态 约束：只支持true，默认为true
-     * 
-     * @return adminStateUp */
+    /**
+     * 功能说明：管理状态 约束：只支持true，默认为true 
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -355,9 +375,10 @@ public class Port {
         return this;
     }
 
-    /** 功能描述：端口MAC地址 约束：由系统分配，不支持指定
-     * 
-     * @return macAddress */
+    /**
+     * 功能描述：端口MAC地址 约束：由系统分配，不支持指定
+     * @return macAddress
+     */
     public String getMacAddress() {
         return macAddress;
     }
@@ -387,10 +408,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口IP 例如：\"fixed_ips\": [{\"subnet_id\": \"4dc70db6-cb7f-4200-9790-a6a910776bba\", \"ip_address\":
-     * \"192.169.25.79\"}] 约束：一个端口只支持一个fixed_ip，且不支持更新。
-     * 
-     * @return fixedIps */
+    /**
+     * 功能说明：端口IP 例如：\"fixed_ips\": [{\"subnet_id\": \"4dc70db6-cb7f-4200-9790-a6a910776bba\", \"ip_address\": \"192.169.25.79\"}] 约束：一个端口只支持一个fixed_ip，且不支持更新。
+     * @return fixedIps
+     */
     public List<FixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -404,9 +425,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口所属设备ID 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return deviceId */
+    /**
+     * 功能说明：端口所属设备ID 约束：不支持设置和更新，由系统自动维护
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -420,11 +442,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：设备所属
-     * 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat
-     * 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return deviceOwner */
+    /**
+     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
+     * @return deviceOwner
+     */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -438,9 +459,10 @@ public class Port {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -454,9 +476,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN
-     * 
-     * @return status */
+    /**
+     * 功能说明：端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -486,9 +509,10 @@ public class Port {
         return this;
     }
 
-    /** 安全组的ID列表
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组的ID列表
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -518,9 +542,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：IP/Mac对列表 约束：IP地址不允许为 “0.0.0.0” 如果配置地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。
-     * 
-     * @return allowedAddressPairs */
+    /**
+     * 功能说明：IP/Mac对列表 约束：IP地址不允许为 “0.0.0.0” 如果配置地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。
+     * @return allowedAddressPairs
+     */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
         return allowedAddressPairs;
     }
@@ -550,9 +575,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：DHCP的扩展Option(扩展属性)
-     * 
-     * @return extraDhcpOpts */
+    /**
+     * 功能说明：DHCP的扩展Option(扩展属性)
+     * @return extraDhcpOpts
+     */
     public List<ExtraDhcpOpt> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -566,9 +592,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：绑定的vNIC类型 取值范围： - normal（软交换） - direct: SRIOV硬直通（不支持）
-     * 
-     * @return bindingVnicType */
+    /**
+     * 功能说明：绑定的vNIC类型 取值范围：  - normal（软交换）  - direct: SRIOV硬直通（不支持） 
+     * @return bindingVnicType
+     */
     public String getBindingVnicType() {
         return bindingVnicType;
     }
@@ -598,9 +625,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：主网卡默认内网域名信息 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return dnsAssignment */
+    /**
+     * 功能说明：主网卡默认内网域名信息 约束：不支持设置和更新，由系统自动维护
+     * @return dnsAssignment
+     */
     public List<DnsAssignMent> getDnsAssignment() {
         return dnsAssignment;
     }
@@ -614,9 +642,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：主网卡默认内网DNS名称 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return dnsName */
+    /**
+     * 功能说明：主网卡默认内网DNS名称 约束：不支持设置和更新，由系统自动维护
+     * @return dnsName
+     */
     public String getDnsName() {
         return dnsName;
     }
@@ -639,9 +668,10 @@ public class Port {
         return this;
     }
 
-    /** Get bindingVifDetails
-     * 
-     * @return bindingVifDetails */
+    /**
+     * Get bindingVifDetails
+     * @return bindingVifDetails
+     */
     public BindingVifDetails getBindingVifDetails() {
         return bindingVifDetails;
     }
@@ -655,9 +685,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：提供用户设置自定义信息(扩展属性)
-     * 
-     * @return bindingProfile */
+    /**
+     * 功能说明：提供用户设置自定义信息(扩展属性)
+     * @return bindingProfile
+     */
     public Object getBindingProfile() {
         return bindingProfile;
     }
@@ -671,9 +702,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口所属实例ID，例如RDS实例ID 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return instanceId */
+    /**
+     * 功能说明：端口所属实例ID，例如RDS实例ID 约束：不支持设置和更新，由系统自动维护
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -687,9 +719,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口所属实例类型，例如“RDS” 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return instanceType */
+    /**
+     * 功能说明：端口所属实例类型，例如“RDS” 约束：不支持设置和更新，由系统自动维护
+     * @return instanceType
+     */
     public String getInstanceType() {
         return instanceType;
     }
@@ -703,9 +736,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 取值范围：启用（true）或禁用（false）
-     * 
-     * @return portSecurityEnabled */
+    /**
+     * 功能说明：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 取值范围：启用（true）或禁用（false）
+     * @return portSecurityEnabled
+     */
     public Boolean getPortSecurityEnabled() {
         return portSecurityEnabled;
     }
@@ -719,9 +753,10 @@ public class Port {
         return this;
     }
 
-    /** 功能说明：port所属的可用分区
-     * 
-     * @return zoneId */
+    /**
+     * 功能说明：port所属的可用分区
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -812,7 +847,10 @@ public class Port {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 镜像导出请求体 */
+/**
+ * 镜像导出请求体
+ */
 public class ExportImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class ExportImageRequestBody {
 
     private String bucketUrl;
 
-    /** 文件格式，支持qcow2、vhd、zvhd和vmdk。 */
+    /**
+     * 文件格式，支持qcow2、vhd、zvhd和vmdk。
+     */
     public static final class FileFormatEnum {
 
-        /** Enum QCOW2 for value: "qcow2" */
+        /**
+         * Enum QCOW2 for value: "qcow2"
+         */
         public static final FileFormatEnum QCOW2 = new FileFormatEnum("qcow2");
 
-        /** Enum VHD for value: "vhd" */
+        /**
+         * Enum VHD for value: "vhd"
+         */
         public static final FileFormatEnum VHD = new FileFormatEnum("vhd");
 
-        /** Enum ZVHD for value: "zvhd" */
+        /**
+         * Enum ZVHD for value: "zvhd"
+         */
         public static final FileFormatEnum ZVHD = new FileFormatEnum("zvhd");
 
-        /** Enum VMDK for value: "vmdk" */
+        /**
+         * Enum VMDK for value: "vmdk"
+         */
         public static final FileFormatEnum VMDK = new FileFormatEnum("vmdk");
 
         private static final Map<String, FileFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +124,10 @@ public class ExportImageRequestBody {
         return this;
     }
 
-    /** 目的文件的URL，格式：<bucket>:<file>。 说明：此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
-     * 
-     * @return bucketUrl */
+    /**
+     * 目的文件的URL，格式：<bucket>:<file>。 说明：此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
+     * @return bucketUrl
+     */
     public String getBucketUrl() {
         return bucketUrl;
     }
@@ -128,9 +141,10 @@ public class ExportImageRequestBody {
         return this;
     }
 
-    /** 文件格式，支持qcow2、vhd、zvhd和vmdk。
-     * 
-     * @return fileFormat */
+    /**
+     * 文件格式，支持qcow2、vhd、zvhd和vmdk。
+     * @return fileFormat
+     */
     public FileFormatEnum getFileFormat() {
         return fileFormat;
     }
@@ -144,9 +158,10 @@ public class ExportImageRequestBody {
         return this;
     }
 
-    /** 是否使用快速导出，取值为true或者false。 说明：若使用快速导出，则无法指定file_format参数。
-     * 
-     * @return isQuickExport */
+    /**
+     * 是否使用快速导出，取值为true或者false。 说明：若使用快速导出，则无法指定file_format参数。
+     * @return isQuickExport
+     */
     public Boolean getIsQuickExport() {
         return isQuickExport;
     }
@@ -185,7 +200,10 @@ public class ExportImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

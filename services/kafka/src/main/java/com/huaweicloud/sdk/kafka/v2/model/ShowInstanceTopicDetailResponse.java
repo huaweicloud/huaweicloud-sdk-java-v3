@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceTopicDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -65,9 +68,10 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 分区列表。
-     * 
-     * @return partitions */
+    /**
+     * 分区列表。
+     * @return partitions
+     */
     public List<ShowInstanceTopicDetailRespPartitions> getPartitions() {
         return partitions;
     }
@@ -97,9 +101,10 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅该topic的消费组名称列表。
-     * 
-     * @return groupSubscribed */
+    /**
+     * 订阅该topic的消费组名称列表。
+     * @return groupSubscribed
+     */
     public List<String> getGroupSubscribed() {
         return groupSubscribed;
     }
@@ -138,7 +143,10 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

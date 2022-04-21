@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListApplicationEndpointsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的唯一标识ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -48,9 +51,10 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有下一页标识。
-     * 
-     * @return nextPageFlag */
+    /**
+     * 是否有下一页标识。
+     * @return nextPageFlag
+     */
     public Boolean getNextPageFlag() {
         return nextPageFlag;
     }
@@ -80,9 +84,10 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         return this;
     }
 
-    /** Application_endpoint结构体数。
-     * 
-     * @return endpoints */
+    /**
+     * Application_endpoint结构体数。
+     * @return endpoints
+     */
     public List<ApplicationEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -121,7 +126,10 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

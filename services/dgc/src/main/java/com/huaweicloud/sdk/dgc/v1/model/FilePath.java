@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FilePath */
+/**
+ * FilePath
+ */
 public class FilePath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class FilePath {
         return this;
     }
 
-    /** 文件在OBS上的路径
-     * 
-     * @return path */
+    /**
+     * 文件在OBS上的路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -55,7 +58,10 @@ public class FilePath {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

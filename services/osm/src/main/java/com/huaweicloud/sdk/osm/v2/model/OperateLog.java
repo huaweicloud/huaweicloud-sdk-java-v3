@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OperateLog */
+/**
+ * OperateLog
+ */
 public class OperateLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OperateLog {
         return this;
     }
 
-    /** 操作指令
-     * 
-     * @return oper */
+    /**
+     * 操作指令
+     * @return oper
+     */
     public String getOper() {
         return oper;
     }
@@ -39,9 +42,10 @@ public class OperateLog {
         return this;
     }
 
-    /** 操作时间
-     * 
-     * @return operateTime */
+    /**
+     * 操作时间
+     * @return operateTime
+     */
     public String getOperateTime() {
         return operateTime;
     }
@@ -77,7 +81,10 @@ public class OperateLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

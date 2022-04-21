@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 更新子网响应对象 */
+/**
+ * 更新子网响应对象
+ */
 public class UpdateSubnetResponseObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class UpdateSubnetResponseObject {
 
     private String id;
 
-    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障 */
+    /**
+     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
-        /** Enum ERROR_ for value: "ERROR " */
+        /**
+         * Enum ERROR_ for value: "ERROR  "
+         */
         public static final StatusEnum ERROR_ = new StatusEnum("ERROR  ");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class UpdateSubnetResponseObject {
         return this;
     }
 
-    /** 子网ID
-     * 
-     * @return id */
+    /**
+     * 子网ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -119,9 +130,10 @@ public class UpdateSubnetResponseObject {
         return this;
     }
 
-    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     * 
-     * @return status */
+    /**
+     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,7 +170,10 @@ public class UpdateSubnetResponseObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

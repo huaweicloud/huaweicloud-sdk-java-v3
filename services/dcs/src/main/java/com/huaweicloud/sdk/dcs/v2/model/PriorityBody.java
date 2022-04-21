@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PriorityBody */
+/**
+ * PriorityBody
+ */
 public class PriorityBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class PriorityBody {
         return this;
     }
 
-    /** 副本优先级，取值范围是0到100，0为默认禁止倒换。
-     * 
-     * @return slavePriorityWeight */
+    /**
+     * 副本优先级，取值范围是0到100，0为默认禁止倒换。
+     * @return slavePriorityWeight
+     */
     public Integer getSlavePriorityWeight() {
         return slavePriorityWeight;
     }
@@ -55,7 +58,10 @@ public class PriorityBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

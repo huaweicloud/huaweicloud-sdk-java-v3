@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 启停录制消息体。 */
+/**
+ * 启停录制消息体。
+ */
 public class RestSetRecordReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestSetRecordReqBody {
         return this;
     }
 
-    /** 默认值为0。 - 0: 停止会议录制。 - 1: 启动会议录制。
-     * 
-     * @return isRecord */
+    /**
+     * 默认值为0。 - 0: 停止会议录制。 - 1: 启动会议录制。
+     * @return isRecord
+     */
     public Integer getIsRecord() {
         return isRecord;
     }
@@ -55,7 +58,10 @@ public class RestSetRecordReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

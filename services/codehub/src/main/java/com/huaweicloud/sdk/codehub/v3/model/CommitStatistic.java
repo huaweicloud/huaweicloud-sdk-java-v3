@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CommitStatistic */
+/**
+ * CommitStatistic
+ */
 public class CommitStatistic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CommitStatistic {
         return this;
     }
 
-    /** 增加的行数
-     * 
-     * @return additions */
+    /**
+     * 增加的行数
+     * @return additions
+     */
     public Integer getAdditions() {
         return additions;
     }
@@ -39,9 +42,10 @@ public class CommitStatistic {
         return this;
     }
 
-    /** 删除的行数
-     * 
-     * @return deletions */
+    /**
+     * 删除的行数
+     * @return deletions
+     */
     public Integer getDeletions() {
         return deletions;
     }
@@ -78,7 +82,10 @@ public class CommitStatistic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

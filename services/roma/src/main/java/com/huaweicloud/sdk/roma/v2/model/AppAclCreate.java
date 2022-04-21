@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AppAclCreate */
+/**
+ * AppAclCreate
+ */
 public class AppAclCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AppAclCreate {
         return this;
     }
 
-    /** 类型 - PERMIT (白名单类型) - DENY (黑名单类型)
-     * 
-     * @return appAclType */
+    /**
+     * 类型 -  PERMIT (白名单类型) -  DENY (黑名单类型)
+     * @return appAclType
+     */
     public String getAppAclType() {
         return appAclType;
     }
@@ -58,9 +61,10 @@ public class AppAclCreate {
         return this;
     }
 
-    /** ACL策略值，支持IP、IP范围和CIDR方式。IP范围以英文中划线分隔。
-     * 
-     * @return appAclValues */
+    /**
+     * ACL策略值，支持IP、IP范围和CIDR方式。IP范围以英文中划线分隔。
+     * @return appAclValues
+     */
     public List<String> getAppAclValues() {
         return appAclValues;
     }
@@ -97,7 +101,10 @@ public class AppAclCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

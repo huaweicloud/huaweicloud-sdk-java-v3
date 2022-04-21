@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListLogStreamsResponseBody1LogStreams */
+/**
+ * ListLogStreamsResponseBody1LogStreams
+ */
 public class ListLogStreamsResponseBody1LogStreams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,12 @@ public class ListLogStreamsResponseBody1LogStreams {
         return this;
     }
 
-    /** 日志流创建时间 minimum: 1577808000000 maximum: 4102416000000
-     * 
-     * @return creationTime */
+    /**
+     * 日志流创建时间
+     * minimum: 1577808000000
+     * maximum: 4102416000000
+     * @return creationTime
+     */
     public Long getCreationTime() {
         return creationTime;
     }
@@ -57,9 +62,10 @@ public class ListLogStreamsResponseBody1LogStreams {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -73,9 +79,10 @@ public class ListLogStreamsResponseBody1LogStreams {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -105,9 +112,10 @@ public class ListLogStreamsResponseBody1LogStreams {
         return this;
     }
 
-    /** 日志流所属标签
-     * 
-     * @return tag */
+    /**
+     * 日志流所属标签
+     * @return tag
+     */
     public Map<String, String> getTag() {
         return tag;
     }
@@ -121,9 +129,12 @@ public class ListLogStreamsResponseBody1LogStreams {
         return this;
     }
 
-    /** 过滤器个数 minimum: 0 maximum: 5
-     * 
-     * @return filterCount */
+    /**
+     * 过滤器个数
+     * minimum: 0
+     * maximum: 5
+     * @return filterCount
+     */
     public Integer getFilterCount() {
         return filterCount;
     }
@@ -167,7 +178,10 @@ public class ListLogStreamsResponseBody1LogStreams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

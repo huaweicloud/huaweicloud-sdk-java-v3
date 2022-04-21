@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateLoadBalancerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** Get loadbalancer
-     * 
-     * @return loadbalancer */
+    /**
+     * Get loadbalancer
+     * @return loadbalancer
+     */
     public LoadBalancer getLoadbalancer() {
         return loadbalancer;
     }
@@ -60,9 +63,10 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** 负载均衡器的id（包周期场景返回该字段）
-     * 
-     * @return loadbalancerId */
+    /**
+     * 负载均衡器的id（包周期场景返回该字段）
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -76,9 +80,10 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单号（包周期场景返回该字段）
-     * 
-     * @return orderId */
+    /**
+     * 订单号（包周期场景返回该字段）
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -92,9 +97,10 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID。 注：自动生成 。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。  注：自动生成 。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -135,7 +141,10 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

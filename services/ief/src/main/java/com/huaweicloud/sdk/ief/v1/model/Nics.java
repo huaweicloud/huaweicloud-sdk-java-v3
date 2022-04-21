@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Nics */
+/**
+ * Nics
+ */
 public class Nics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Nics {
         return this;
     }
 
-    /** 边缘节点网卡名称
-     * 
-     * @return _interface */
+    /**
+     * 边缘节点网卡名称
+     * @return _interface
+     */
     public String getInterface() {
         return _interface;
     }
@@ -39,9 +42,10 @@ public class Nics {
         return this;
     }
 
-    /** 上述网卡对应的IPv4地址
-     * 
-     * @return ip */
+    /**
+     * 上述网卡对应的IPv4地址
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -77,7 +81,10 @@ public class Nics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

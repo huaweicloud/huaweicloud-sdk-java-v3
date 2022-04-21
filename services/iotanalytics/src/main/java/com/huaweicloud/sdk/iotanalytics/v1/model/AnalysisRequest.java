@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 分析任务 */
+/**
+ * 分析任务
+ */
 public class AnalysisRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class AnalysisRequest {
         return this;
     }
 
-    /** 分析任务名，必须是模型中已存在的
-     * 
-     * @return name */
+    /**
+     * 分析任务名，必须是模型中已存在的
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -59,9 +62,10 @@ public class AnalysisRequest {
         return this;
     }
 
-    /** Get transform
-     * 
-     * @return transform */
+    /**
+     * Get transform
+     * @return transform
+     */
     public DTTransformRequest getTransform() {
         return transform;
     }
@@ -84,9 +88,10 @@ public class AnalysisRequest {
         return this;
     }
 
-    /** Get aggregate
-     * 
-     * @return aggregate */
+    /**
+     * Get aggregate
+     * @return aggregate
+     */
     public DTAggregateRequest getAggregate() {
         return aggregate;
     }
@@ -109,9 +114,10 @@ public class AnalysisRequest {
         return this;
     }
 
-    /** Get stream
-     * 
-     * @return stream */
+    /**
+     * Get stream
+     * @return stream
+     */
     public DTStreamRequest getStream() {
         return stream;
     }
@@ -152,7 +158,10 @@ public class AnalysisRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

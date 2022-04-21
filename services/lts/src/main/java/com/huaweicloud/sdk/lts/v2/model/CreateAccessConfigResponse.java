@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateAccessConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,10 +29,14 @@ public class CreateAccessConfigResponse extends SdkResponse {
 
     private String accessConfigName;
 
-    /** 日志接入类型。AGENT：主机接入 */
+    /**
+     * 日志接入类型。AGENT：主机接入
+     */
     public static final class AccessConfigTypeEnum {
 
-        /** Enum AGENT for value: "AGENT" */
+        /**
+         * Enum AGENT for value: "AGENT"
+         */
         public static final AccessConfigTypeEnum AGENT = new AccessConfigTypeEnum("AGENT");
 
         private static final Map<String, AccessConfigTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +135,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志接入ID
-     * 
-     * @return accessConfigId */
+    /**
+     * 日志接入ID
+     * @return accessConfigId
+     */
     public String getAccessConfigId() {
         return accessConfigId;
     }
@@ -145,9 +152,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志接入名称
-     * 
-     * @return accessConfigName */
+    /**
+     * 日志接入名称
+     * @return accessConfigName
+     */
     public String getAccessConfigName() {
         return accessConfigName;
     }
@@ -161,9 +169,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志接入类型。AGENT：主机接入
-     * 
-     * @return accessConfigType */
+    /**
+     * 日志接入类型。AGENT：主机接入
+     * @return accessConfigType
+     */
     public AccessConfigTypeEnum getAccessConfigType() {
         return accessConfigType;
     }
@@ -177,9 +186,12 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间 minimum: 1 maximum: 9999999999999
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -202,9 +214,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get accessConfigDetail
-     * 
-     * @return accessConfigDetail */
+    /**
+     * Get accessConfigDetail
+     * @return accessConfigDetail
+     */
     public AccessConfigDeatil getAccessConfigDetail() {
         return accessConfigDetail;
     }
@@ -227,9 +240,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get logInfo
-     * 
-     * @return logInfo */
+    /**
+     * Get logInfo
+     * @return logInfo
+     */
     public AccessConfigQueryLogInfo getLogInfo() {
         return logInfo;
     }
@@ -252,9 +266,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get hostGroupInfo
-     * 
-     * @return hostGroupInfo */
+    /**
+     * Get hostGroupInfo
+     * @return hostGroupInfo
+     */
     public AccessConfigHostGroupIdList getHostGroupInfo() {
         return hostGroupInfo;
     }
@@ -284,9 +299,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get accessConfigTag
-     * 
-     * @return accessConfigTag */
+    /**
+     * Get accessConfigTag
+     * @return accessConfigTag
+     */
     public List<AccessConfigTag> getAccessConfigTag() {
         return accessConfigTag;
     }
@@ -342,7 +358,10 @@ public class CreateAccessConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

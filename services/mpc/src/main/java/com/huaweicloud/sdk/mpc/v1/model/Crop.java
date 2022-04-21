@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Crop */
+/**
+ * Crop
+ */
 public class Crop {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class Crop {
         return this;
     }
 
-    /** 截取的视频时长。 单位：秒 从0秒开始算起 minimum: 0 maximum: 2147483647
-     * 
-     * @return duration */
+    /**
+     * 截取的视频时长。  单位：秒  从0秒开始算起 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -55,7 +60,10 @@ public class Crop {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RespInstanceBase */
+/**
+ * RespInstanceBase
+ */
 public class RespInstanceBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,115 +30,179 @@ public class RespInstanceBase {
 
     private String instanceName;
 
-    /** 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 -
-     * InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 -
-     * UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 -
-     * DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 -
-     * RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 -
-     * UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 -
-     * Unhealthy：实例异常 - RestartTimeout：重启超时 */
+    /**
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "Creating" */
+        /**
+         * Enum CREATING for value: "Creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("Creating");
 
-        /** Enum CREATESUCCESS for value: "CreateSuccess" */
+        /**
+         * Enum CREATESUCCESS for value: "CreateSuccess"
+         */
         public static final StatusEnum CREATESUCCESS = new StatusEnum("CreateSuccess");
 
-        /** Enum CREATEFAIL for value: "CreateFail" */
+        /**
+         * Enum CREATEFAIL for value: "CreateFail"
+         */
         public static final StatusEnum CREATEFAIL = new StatusEnum("CreateFail");
 
-        /** Enum INITING for value: "Initing" */
+        /**
+         * Enum INITING for value: "Initing"
+         */
         public static final StatusEnum INITING = new StatusEnum("Initing");
 
-        /** Enum REGISTERING for value: "Registering" */
+        /**
+         * Enum REGISTERING for value: "Registering"
+         */
         public static final StatusEnum REGISTERING = new StatusEnum("Registering");
 
-        /** Enum RUNNING for value: "Running" */
+        /**
+         * Enum RUNNING for value: "Running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
 
-        /** Enum INITINGFAILED for value: "InitingFailed" */
+        /**
+         * Enum INITINGFAILED for value: "InitingFailed"
+         */
         public static final StatusEnum INITINGFAILED = new StatusEnum("InitingFailed");
 
-        /** Enum REGISTERFAILED for value: "RegisterFailed" */
+        /**
+         * Enum REGISTERFAILED for value: "RegisterFailed"
+         */
         public static final StatusEnum REGISTERFAILED = new StatusEnum("RegisterFailed");
 
-        /** Enum INSTALLING for value: "Installing" */
+        /**
+         * Enum INSTALLING for value: "Installing"
+         */
         public static final StatusEnum INSTALLING = new StatusEnum("Installing");
 
-        /** Enum INSTALLFAILED for value: "InstallFailed" */
+        /**
+         * Enum INSTALLFAILED for value: "InstallFailed"
+         */
         public static final StatusEnum INSTALLFAILED = new StatusEnum("InstallFailed");
 
-        /** Enum UPDATING for value: "Updating" */
+        /**
+         * Enum UPDATING for value: "Updating"
+         */
         public static final StatusEnum UPDATING = new StatusEnum("Updating");
 
-        /** Enum UPDATEFAILED for value: "UpdateFailed" */
+        /**
+         * Enum UPDATEFAILED for value: "UpdateFailed"
+         */
         public static final StatusEnum UPDATEFAILED = new StatusEnum("UpdateFailed");
 
-        /** Enum ROLLBACKING for value: "Rollbacking" */
+        /**
+         * Enum ROLLBACKING for value: "Rollbacking"
+         */
         public static final StatusEnum ROLLBACKING = new StatusEnum("Rollbacking");
 
-        /** Enum ROLLBACKSUCCESS for value: "RollbackSuccess" */
+        /**
+         * Enum ROLLBACKSUCCESS for value: "RollbackSuccess"
+         */
         public static final StatusEnum ROLLBACKSUCCESS = new StatusEnum("RollbackSuccess");
 
-        /** Enum ROLLBACKFAILED for value: "RollbackFailed" */
+        /**
+         * Enum ROLLBACKFAILED for value: "RollbackFailed"
+         */
         public static final StatusEnum ROLLBACKFAILED = new StatusEnum("RollbackFailed");
 
-        /** Enum DELETING for value: "Deleting" */
+        /**
+         * Enum DELETING for value: "Deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("Deleting");
 
-        /** Enum DELETEFAILED for value: "DeleteFailed" */
+        /**
+         * Enum DELETEFAILED for value: "DeleteFailed"
+         */
         public static final StatusEnum DELETEFAILED = new StatusEnum("DeleteFailed");
 
-        /** Enum UNREGISTERING for value: "Unregistering" */
+        /**
+         * Enum UNREGISTERING for value: "Unregistering"
+         */
         public static final StatusEnum UNREGISTERING = new StatusEnum("Unregistering");
 
-        /** Enum UNREGISTERFAILED for value: "UnRegisterFailed" */
+        /**
+         * Enum UNREGISTERFAILED for value: "UnRegisterFailed"
+         */
         public static final StatusEnum UNREGISTERFAILED = new StatusEnum("UnRegisterFailed");
 
-        /** Enum CREATETIMEOUT for value: "CreateTimeout" */
+        /**
+         * Enum CREATETIMEOUT for value: "CreateTimeout"
+         */
         public static final StatusEnum CREATETIMEOUT = new StatusEnum("CreateTimeout");
 
-        /** Enum INITTIMEOUT for value: "InitTimeout" */
+        /**
+         * Enum INITTIMEOUT for value: "InitTimeout"
+         */
         public static final StatusEnum INITTIMEOUT = new StatusEnum("InitTimeout");
 
-        /** Enum REGISTERTIMEOUT for value: "RegisterTimeout" */
+        /**
+         * Enum REGISTERTIMEOUT for value: "RegisterTimeout"
+         */
         public static final StatusEnum REGISTERTIMEOUT = new StatusEnum("RegisterTimeout");
 
-        /** Enum INSTALLTIMEOUT for value: "InstallTimeout" */
+        /**
+         * Enum INSTALLTIMEOUT for value: "InstallTimeout"
+         */
         public static final StatusEnum INSTALLTIMEOUT = new StatusEnum("InstallTimeout");
 
-        /** Enum UPDATETIMEOUT for value: "UpdateTimeout" */
+        /**
+         * Enum UPDATETIMEOUT for value: "UpdateTimeout"
+         */
         public static final StatusEnum UPDATETIMEOUT = new StatusEnum("UpdateTimeout");
 
-        /** Enum ROLLBACKTIMEOUT for value: "RollbackTimeout" */
+        /**
+         * Enum ROLLBACKTIMEOUT for value: "RollbackTimeout"
+         */
         public static final StatusEnum ROLLBACKTIMEOUT = new StatusEnum("RollbackTimeout");
 
-        /** Enum DELETETIMEOUT for value: "DeleteTimeout" */
+        /**
+         * Enum DELETETIMEOUT for value: "DeleteTimeout"
+         */
         public static final StatusEnum DELETETIMEOUT = new StatusEnum("DeleteTimeout");
 
-        /** Enum UNREGISTERTIMEOUT for value: "UnregisterTimeout" */
+        /**
+         * Enum UNREGISTERTIMEOUT for value: "UnregisterTimeout"
+         */
         public static final StatusEnum UNREGISTERTIMEOUT = new StatusEnum("UnregisterTimeout");
 
-        /** Enum STARTING for value: "Starting" */
+        /**
+         * Enum STARTING for value: "Starting"
+         */
         public static final StatusEnum STARTING = new StatusEnum("Starting");
 
-        /** Enum FREEZING for value: "Freezing" */
+        /**
+         * Enum FREEZING for value: "Freezing"
+         */
         public static final StatusEnum FREEZING = new StatusEnum("Freezing");
 
-        /** Enum FROZEN for value: "Frozen" */
+        /**
+         * Enum FROZEN for value: "Frozen"
+         */
         public static final StatusEnum FROZEN = new StatusEnum("Frozen");
 
-        /** Enum RESTARTING for value: "Restarting" */
+        /**
+         * Enum RESTARTING for value: "Restarting"
+         */
         public static final StatusEnum RESTARTING = new StatusEnum("Restarting");
 
-        /** Enum RESTARTFAIL for value: "RestartFail" */
+        /**
+         * Enum RESTARTFAIL for value: "RestartFail"
+         */
         public static final StatusEnum RESTARTFAIL = new StatusEnum("RestartFail");
 
-        /** Enum UNHEALTHY for value: "Unhealthy" */
+        /**
+         * Enum UNHEALTHY for value: "Unhealthy"
+         */
         public static final StatusEnum UNHEALTHY = new StatusEnum("Unhealthy");
 
-        /** Enum RESTARTTIMEOUT for value: "RestartTimeout" */
+        /**
+         * Enum RESTARTTIMEOUT for value: "RestartTimeout"
+         */
         public static final StatusEnum RESTARTTIMEOUT = new StatusEnum("RestartTimeout");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -238,112 +304,179 @@ public class RespInstanceBase {
 
     private StatusEnum status;
 
-    /** 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 -
-     * 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 -
-     * 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 -
-     * 41：重启超时 */
+    /**
+     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
+     */
     public static final class InstanceStatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final InstanceStatusEnum NUMBER_1 = new InstanceStatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final InstanceStatusEnum NUMBER_2 = new InstanceStatusEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final InstanceStatusEnum NUMBER_3 = new InstanceStatusEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final InstanceStatusEnum NUMBER_4 = new InstanceStatusEnum(4);
 
-        /** Enum NUMBER_5 for value: 5 */
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
         public static final InstanceStatusEnum NUMBER_5 = new InstanceStatusEnum(5);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final InstanceStatusEnum NUMBER_6 = new InstanceStatusEnum(6);
 
-        /** Enum NUMBER_7 for value: 7 */
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
         public static final InstanceStatusEnum NUMBER_7 = new InstanceStatusEnum(7);
 
-        /** Enum NUMBER_8 for value: 8 */
+        /**
+         * Enum NUMBER_8 for value: 8
+         */
         public static final InstanceStatusEnum NUMBER_8 = new InstanceStatusEnum(8);
 
-        /** Enum NUMBER_10 for value: 10 */
+        /**
+         * Enum NUMBER_10 for value: 10
+         */
         public static final InstanceStatusEnum NUMBER_10 = new InstanceStatusEnum(10);
 
-        /** Enum NUMBER_11 for value: 11 */
+        /**
+         * Enum NUMBER_11 for value: 11
+         */
         public static final InstanceStatusEnum NUMBER_11 = new InstanceStatusEnum(11);
 
-        /** Enum NUMBER_12 for value: 12 */
+        /**
+         * Enum NUMBER_12 for value: 12
+         */
         public static final InstanceStatusEnum NUMBER_12 = new InstanceStatusEnum(12);
 
-        /** Enum NUMBER_13 for value: 13 */
+        /**
+         * Enum NUMBER_13 for value: 13
+         */
         public static final InstanceStatusEnum NUMBER_13 = new InstanceStatusEnum(13);
 
-        /** Enum NUMBER_20 for value: 20 */
+        /**
+         * Enum NUMBER_20 for value: 20
+         */
         public static final InstanceStatusEnum NUMBER_20 = new InstanceStatusEnum(20);
 
-        /** Enum NUMBER_21 for value: 21 */
+        /**
+         * Enum NUMBER_21 for value: 21
+         */
         public static final InstanceStatusEnum NUMBER_21 = new InstanceStatusEnum(21);
 
-        /** Enum NUMBER_22 for value: 22 */
+        /**
+         * Enum NUMBER_22 for value: 22
+         */
         public static final InstanceStatusEnum NUMBER_22 = new InstanceStatusEnum(22);
 
-        /** Enum NUMBER_23 for value: 23 */
+        /**
+         * Enum NUMBER_23 for value: 23
+         */
         public static final InstanceStatusEnum NUMBER_23 = new InstanceStatusEnum(23);
 
-        /** Enum NUMBER_24 for value: 24 */
+        /**
+         * Enum NUMBER_24 for value: 24
+         */
         public static final InstanceStatusEnum NUMBER_24 = new InstanceStatusEnum(24);
 
-        /** Enum NUMBER_25 for value: 25 */
+        /**
+         * Enum NUMBER_25 for value: 25
+         */
         public static final InstanceStatusEnum NUMBER_25 = new InstanceStatusEnum(25);
 
-        /** Enum NUMBER_26 for value: 26 */
+        /**
+         * Enum NUMBER_26 for value: 26
+         */
         public static final InstanceStatusEnum NUMBER_26 = new InstanceStatusEnum(26);
 
-        /** Enum NUMBER_27 for value: 27 */
+        /**
+         * Enum NUMBER_27 for value: 27
+         */
         public static final InstanceStatusEnum NUMBER_27 = new InstanceStatusEnum(27);
 
-        /** Enum NUMBER_28 for value: 28 */
+        /**
+         * Enum NUMBER_28 for value: 28
+         */
         public static final InstanceStatusEnum NUMBER_28 = new InstanceStatusEnum(28);
 
-        /** Enum NUMBER_29 for value: 29 */
+        /**
+         * Enum NUMBER_29 for value: 29
+         */
         public static final InstanceStatusEnum NUMBER_29 = new InstanceStatusEnum(29);
 
-        /** Enum NUMBER_30 for value: 30 */
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
         public static final InstanceStatusEnum NUMBER_30 = new InstanceStatusEnum(30);
 
-        /** Enum NUMBER_31 for value: 31 */
+        /**
+         * Enum NUMBER_31 for value: 31
+         */
         public static final InstanceStatusEnum NUMBER_31 = new InstanceStatusEnum(31);
 
-        /** Enum NUMBER_32 for value: 32 */
+        /**
+         * Enum NUMBER_32 for value: 32
+         */
         public static final InstanceStatusEnum NUMBER_32 = new InstanceStatusEnum(32);
 
-        /** Enum NUMBER_33 for value: 33 */
+        /**
+         * Enum NUMBER_33 for value: 33
+         */
         public static final InstanceStatusEnum NUMBER_33 = new InstanceStatusEnum(33);
 
-        /** Enum NUMBER_34 for value: 34 */
+        /**
+         * Enum NUMBER_34 for value: 34
+         */
         public static final InstanceStatusEnum NUMBER_34 = new InstanceStatusEnum(34);
 
-        /** Enum NUMBER_35 for value: 35 */
+        /**
+         * Enum NUMBER_35 for value: 35
+         */
         public static final InstanceStatusEnum NUMBER_35 = new InstanceStatusEnum(35);
 
-        /** Enum NUMBER_36 for value: 36 */
+        /**
+         * Enum NUMBER_36 for value: 36
+         */
         public static final InstanceStatusEnum NUMBER_36 = new InstanceStatusEnum(36);
 
-        /** Enum NUMBER_37 for value: 37 */
+        /**
+         * Enum NUMBER_37 for value: 37
+         */
         public static final InstanceStatusEnum NUMBER_37 = new InstanceStatusEnum(37);
 
-        /** Enum NUMBER_38 for value: 38 */
+        /**
+         * Enum NUMBER_38 for value: 38
+         */
         public static final InstanceStatusEnum NUMBER_38 = new InstanceStatusEnum(38);
 
-        /** Enum NUMBER_39 for value: 39 */
+        /**
+         * Enum NUMBER_39 for value: 39
+         */
         public static final InstanceStatusEnum NUMBER_39 = new InstanceStatusEnum(39);
 
-        /** Enum NUMBER_40 for value: 40 */
+        /**
+         * Enum NUMBER_40 for value: 40
+         */
         public static final InstanceStatusEnum NUMBER_40 = new InstanceStatusEnum(40);
 
-        /** Enum NUMBER_41 for value: 41 */
+        /**
+         * Enum NUMBER_41 for value: 41
+         */
         public static final InstanceStatusEnum NUMBER_41 = new InstanceStatusEnum(41);
 
         private static final Map<Integer, InstanceStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -450,32 +583,49 @@ public class RespInstanceBase {
 
     private String type;
 
-    /** 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 -
-     * PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 */
+    /**
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     */
     public static final class SpecEnum {
 
-        /** Enum BASIC for value: "BASIC" */
+        /**
+         * Enum BASIC for value: "BASIC"
+         */
         public static final SpecEnum BASIC = new SpecEnum("BASIC");
 
-        /** Enum PROFESSIONAL for value: "PROFESSIONAL" */
+        /**
+         * Enum PROFESSIONAL for value: "PROFESSIONAL"
+         */
         public static final SpecEnum PROFESSIONAL = new SpecEnum("PROFESSIONAL");
 
-        /** Enum ENTERPRISE for value: "ENTERPRISE" */
+        /**
+         * Enum ENTERPRISE for value: "ENTERPRISE"
+         */
         public static final SpecEnum ENTERPRISE = new SpecEnum("ENTERPRISE");
 
-        /** Enum PLATINUM for value: "PLATINUM" */
+        /**
+         * Enum PLATINUM for value: "PLATINUM"
+         */
         public static final SpecEnum PLATINUM = new SpecEnum("PLATINUM");
 
-        /** Enum BASIC_IPV6 for value: "BASIC_IPV6" */
+        /**
+         * Enum BASIC_IPV6 for value: "BASIC_IPV6"
+         */
         public static final SpecEnum BASIC_IPV6 = new SpecEnum("BASIC_IPV6");
 
-        /** Enum PROFESSIONAL_IPV6 for value: "PROFESSIONAL_IPV6" */
+        /**
+         * Enum PROFESSIONAL_IPV6 for value: "PROFESSIONAL_IPV6"
+         */
         public static final SpecEnum PROFESSIONAL_IPV6 = new SpecEnum("PROFESSIONAL_IPV6");
 
-        /** Enum ENTERPRISE_IPV6 for value: "ENTERPRISE_IPV6" */
+        /**
+         * Enum ENTERPRISE_IPV6 for value: "ENTERPRISE_IPV6"
+         */
         public static final SpecEnum ENTERPRISE_IPV6 = new SpecEnum("ENTERPRISE_IPV6");
 
-        /** Enum PLATINUM_IPV6 for value: "PLATINUM_IPV6" */
+        /**
+         * Enum PLATINUM_IPV6 for value: "PLATINUM_IPV6"
+         */
         public static final SpecEnum PLATINUM_IPV6 = new SpecEnum("PLATINUM_IPV6");
 
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
@@ -566,13 +716,19 @@ public class RespInstanceBase {
 
     private String eipAddress;
 
-    /** 实例计费方式： - 0：按需计费 - 1：包周期计费 */
+    /**
+     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ChargingModeEnum NUMBER_0 = new ChargingModeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ChargingModeEnum NUMBER_1 = new ChargingModeEnum(1);
 
         private static final Map<Integer, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -652,9 +808,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return id */
+    /**
+     * 实例ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -668,9 +825,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例所属租户ID
-     * 
-     * @return projectId */
+    /**
+     * 实例所属租户ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -684,9 +842,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -700,15 +859,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 -
-     * InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 -
-     * UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 -
-     * DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 -
-     * RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 -
-     * UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 -
-     * Unhealthy：实例异常 - RestartTimeout：重启超时
-     * 
-     * @return status */
+    /**
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -722,11 +876,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 -
-     * 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 -
-     * 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
-     * 
-     * @return instanceStatus */
+    /**
+     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
+     * @return instanceStatus
+     */
     public InstanceStatusEnum getInstanceStatus() {
         return instanceStatus;
     }
@@ -740,9 +893,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例类型 默认apig
-     * 
-     * @return type */
+    /**
+     * 实例类型  默认apig
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -756,10 +910,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 -
-     * PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
-     * 
-     * @return spec */
+    /**
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     * @return spec
+     */
     public SpecEnum getSpec() {
         return spec;
     }
@@ -773,9 +927,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例创建时间。unix时间戳格式。
-     * 
-     * @return createTime */
+    /**
+     * 实例创建时间。unix时间戳格式。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -789,9 +944,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 企业项目ID，企业帐号必填
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，企业帐号必填
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -805,9 +961,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例绑定的弹性IP地址
-     * 
-     * @return eipAddress */
+    /**
+     * 实例绑定的弹性IP地址
+     * @return eipAddress
+     */
     public String getEipAddress() {
         return eipAddress;
     }
@@ -821,9 +978,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 实例计费方式： - 0：按需计费 - 1：包周期计费
-     * 
-     * @return chargingMode */
+    /**
+     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -837,9 +995,10 @@ public class RespInstanceBase {
         return this;
     }
 
-    /** 包周期计费订单编号
-     * 
-     * @return cbcMetadata */
+    /**
+     * 包周期计费订单编号
+     * @return cbcMetadata
+     */
     public String getCbcMetadata() {
         return cbcMetadata;
     }
@@ -906,7 +1065,10 @@ public class RespInstanceBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

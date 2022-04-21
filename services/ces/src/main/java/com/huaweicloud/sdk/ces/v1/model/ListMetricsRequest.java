@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMetricsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,13 +45,19 @@ public class ListMetricsRequest {
 
     private String namespace;
 
-    /** 用于标识结果排序方法。 取值说明，默认为desc： asc，升序 desc，降序 */
+    /**
+     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
+     */
     public static final class OrderEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -129,10 +137,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。
-     * 例如：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dim0 */
+    /**
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dim0
+     */
     public String getDim0() {
         return dim0;
     }
@@ -146,10 +154,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。
-     * 例如：dim.1=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dim1 */
+    /**
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.1=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dim1
+     */
     public String getDim1() {
         return dim1;
     }
@@ -163,10 +171,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。
-     * 例如：dim.2=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dim2 */
+    /**
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.2=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dim2
+     */
     public String getDim2() {
         return dim2;
     }
@@ -180,9 +188,12 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 取值范围(0,1000]，默认值为1000。 用于限制结果数据条数。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 取值范围(0,1000]，默认值为1000。  用于限制结果数据条数。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -196,9 +207,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return metricName */
+    /**
+     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -212,9 +224,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return namespace */
+    /**
+     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -228,9 +241,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 用于标识结果排序方法。 取值说明，默认为desc： asc，升序 desc，降序
-     * 
-     * @return order */
+    /**
+     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -244,10 +258,10 @@ public class ListMetricsRequest {
         return this;
     }
 
-    /** 分页起始值，格式为：namespace.metric_name.key:value
-     * 例如：start=SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d
-     * 
-     * @return start */
+    /**
+     * 分页起始值，格式为：namespace.metric_name.key:value 例如：start=SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d
+     * @return start
+     */
     public String getStart() {
         return start;
     }
@@ -295,7 +309,10 @@ public class ListMetricsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

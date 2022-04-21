@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改配置参数请求体 */
+/**
+ * 修改配置参数请求体
+ */
 public class ModifyRedisConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ModifyRedisConfigBody {
         return this;
     }
 
-    /** 实例配置项数组。
-     * 
-     * @return redisConfig */
+    /**
+     * 实例配置项数组。
+     * @return redisConfig
+     */
     public List<RedisConfig> getRedisConfig() {
         return redisConfig;
     }
@@ -74,7 +77,10 @@ public class ModifyRedisConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

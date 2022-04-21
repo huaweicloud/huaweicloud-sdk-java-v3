@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 未读消息列表
-     * 
-     * @return imunread */
+    /**
+     * 未读消息列表
+     * @return imunread
+     */
     public List<ImUnreadV2> getImunread() {
         return imunread;
     }
@@ -76,7 +79,10 @@ public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

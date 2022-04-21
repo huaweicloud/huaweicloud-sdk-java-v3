@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 公网IP元数据, EIP服务内部使用，不对外开放 */
+/**
+ * 公网IP元数据, EIP服务内部使用，不对外开放
+ */
 public class ProfileInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,22 +26,34 @@ public class ProfileInfo {
 
     private Boolean standalone;
 
-    /** 云服务标识公网IP创建进度, EIP服务内部使用。 */
+    /**
+     * 云服务标识公网IP创建进度, EIP服务内部使用。
+     */
     public static final class NotifyStatusEnum {
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final NotifyStatusEnum PENDING_CREATE = new NotifyStatusEnum("PENDING_CREATE");
 
-        /** Enum PENDING_UPDATE for value: "PENDING_UPDATE" */
+        /**
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
+         */
         public static final NotifyStatusEnum PENDING_UPDATE = new NotifyStatusEnum("PENDING_UPDATE");
 
-        /** Enum NOTIFYING for value: "NOTIFYING" */
+        /**
+         * Enum NOTIFYING for value: "NOTIFYING"
+         */
         public static final NotifyStatusEnum NOTIFYING = new NotifyStatusEnum("NOTIFYING");
 
-        /** Enum NOTIFYED for value: "NOTIFYED" */
+        /**
+         * Enum NOTIFYED for value: "NOTIFYED"
+         */
         public static final NotifyStatusEnum NOTIFYED = new NotifyStatusEnum("NOTIFYED");
 
-        /** Enum NOTIFY_DELETE for value: "NOTIFY_DELETE" */
+        /**
+         * Enum NOTIFY_DELETE for value: "NOTIFY_DELETE"
+         */
         public static final NotifyStatusEnum NOTIFY_DELETE = new NotifyStatusEnum("NOTIFY_DELETE");
 
         private static final Map<String, NotifyStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -122,10 +136,14 @@ public class ProfileInfo {
 
     private Boolean fakeNetworkType;
 
-    /** 标识IP是和哪类资源一起购买的 */
+    /**
+     * 标识IP是和哪类资源一起购买的
+     */
     public static final class CreateSourceEnum {
 
-        /** Enum ECS for value: "ecs" */
+        /**
+         * Enum ECS for value: "ecs"
+         */
         public static final CreateSourceEnum ECS = new CreateSourceEnum("ecs");
 
         private static final Map<String, CreateSourceEnum> STATIC_FIELDS = createStaticFields();
@@ -204,13 +222,19 @@ public class ProfileInfo {
 
     private String lockStatus;
 
-    /** 公网IP冻结状态。 */
+    /**
+     * 公网IP冻结状态。
+     */
     public static final class FreezedStatusEnum {
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final FreezedStatusEnum FREEZED = new FreezedStatusEnum("FREEZED");
 
-        /** Enum UNFREEZED for value: "UNFREEZED" */
+        /**
+         * Enum UNFREEZED for value: "UNFREEZED"
+         */
         public static final FreezedStatusEnum UNFREEZED = new FreezedStatusEnum("UNFREEZED");
 
         private static final Map<String, FreezedStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -290,9 +314,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 公网IP附属的5_xxx网络（如5_bgp）中的port_id
-     * 
-     * @return localNetworkPort */
+    /**
+     * 公网IP附属的5_xxx网络（如5_bgp）中的port_id
+     * @return localNetworkPort
+     */
     public String getLocalNetworkPort() {
         return localNetworkPort;
     }
@@ -306,9 +331,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 标识公网IP是否是和虚机一起创建的。true-独立创建；false-和虚机一起创建
-     * 
-     * @return standalone */
+    /**
+     * 标识公网IP是否是和虚机一起创建的。true-独立创建；false-和虚机一起创建
+     * @return standalone
+     */
     public Boolean getStandalone() {
         return standalone;
     }
@@ -322,9 +348,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 云服务标识公网IP创建进度, EIP服务内部使用。
-     * 
-     * @return notifyStatus */
+    /**
+     * 云服务标识公网IP创建进度, EIP服务内部使用。
+     * @return notifyStatus
+     */
     public NotifyStatusEnum getNotifyStatus() {
         return notifyStatus;
     }
@@ -338,9 +365,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 公网IP创建时间
-     * 
-     * @return createTime */
+    /**
+     * 公网IP创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -354,9 +382,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 该字段仅仅用于表示eip的bgp类型是否是真实的静态sbgp * 1. 如果为true，则该eip可以切换bgp类型 * 2. 如果为false，则该eip不可以切换bgp类型
-     * 
-     * @return fakeNetworkType */
+    /**
+     * 该字段仅仅用于表示eip的bgp类型是否是真实的静态sbgp * 1. 如果为true，则该eip可以切换bgp类型 * 2. 如果为false，则该eip不可以切换bgp类型
+     * @return fakeNetworkType
+     */
     public Boolean getFakeNetworkType() {
         return fakeNetworkType;
     }
@@ -370,9 +399,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 标识IP是和哪类资源一起购买的
-     * 
-     * @return createSource */
+    /**
+     * 标识IP是和哪类资源一起购买的
+     * @return createSource
+     */
     public CreateSourceEnum getCreateSource() {
         return createSource;
     }
@@ -386,9 +416,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 标识和公网IP一起购买的ecs的id
-     * 
-     * @return ecsId */
+    /**
+     * 标识和公网IP一起购买的ecs的id
+     * @return ecsId
+     */
     public String getEcsId() {
         return ecsId;
     }
@@ -402,9 +433,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 公网IP加锁状态, eg:\"POLICE,LOCKED\"。POLICE-公安冻结；LOCKED-普通冻结；普通冻结细分状态：ARREAR-欠费；DELABLE-可删除；
-     * 
-     * @return lockStatus */
+    /**
+     * 公网IP加锁状态, eg:\"POLICE,LOCKED\"。POLICE-公安冻结；LOCKED-普通冻结；普通冻结细分状态：ARREAR-欠费；DELABLE-可删除；
+     * @return lockStatus
+     */
     public String getLockStatus() {
         return lockStatus;
     }
@@ -418,9 +450,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** 公网IP冻结状态。
-     * 
-     * @return freezedStatus */
+    /**
+     * 公网IP冻结状态。
+     * @return freezedStatus
+     */
     public FreezedStatusEnum getFreezedStatus() {
         return freezedStatus;
     }
@@ -443,9 +476,10 @@ public class ProfileInfo {
         return this;
     }
 
-    /** Get bandwithInfo
-     * 
-     * @return bandwithInfo */
+    /**
+     * Get bandwithInfo
+     * @return bandwithInfo
+     */
     public BandwidthInfoResp getBandwithInfo() {
         return bandwithInfo;
     }
@@ -506,7 +540,10 @@ public class ProfileInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

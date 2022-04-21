@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IoTDA数据源详细配置内容 */
+/**
+ * IoTDA数据源详细配置内容
+ */
 public class IotdaContentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class IotdaContentReq {
         return this;
     }
 
-    /** IoTDA实例Id
-     * 
-     * @return iotdaInstanceId */
+    /**
+     * IoTDA实例Id
+     * @return iotdaInstanceId
+     */
     public String getIotdaInstanceId() {
         return iotdaInstanceId;
     }
@@ -58,9 +61,10 @@ public class IotdaContentReq {
         return this;
     }
 
-    /** 在IoTDA实例中要配置转发规则推送数据的资源空间和产品列表
-     * 
-     * @return rules */
+    /**
+     * 在IoTDA实例中要配置转发规则推送数据的资源空间和产品列表
+     * @return rules
+     */
     public List<IotdaContentRuleReq> getRules() {
         return rules;
     }
@@ -97,7 +101,10 @@ public class IotdaContentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

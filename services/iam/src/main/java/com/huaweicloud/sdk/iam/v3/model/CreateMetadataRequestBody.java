@@ -30,9 +30,10 @@ public class CreateMetadataRequestBody {
         return this;
     }
 
-    /** 用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -46,9 +47,10 @@ public class CreateMetadataRequestBody {
         return this;
     }
 
-    /** 该字段为标识租户来源字段，默认为空。
-     * 
-     * @return xaccountType */
+    /**
+     * 该字段为标识租户来源字段，默认为空。
+     * @return xaccountType
+     */
     public String getXaccountType() {
         return xaccountType;
     }
@@ -62,9 +64,10 @@ public class CreateMetadataRequestBody {
         return this;
     }
 
-    /** 该字段为用户IdP服务器的Metadata文件的内容。
-     * 
-     * @return metadata */
+    /**
+     * 该字段为用户IdP服务器的Metadata文件的内容。
+     * @return metadata
+     */
     public String getMetadata() {
         return metadata;
     }
@@ -103,7 +106,10 @@ public class CreateMetadataRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

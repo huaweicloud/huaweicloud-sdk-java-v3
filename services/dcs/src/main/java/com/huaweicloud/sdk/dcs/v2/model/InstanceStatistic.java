@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例的统计信息。 */
+/**
+ * 实例的统计信息。
+ */
 public class InstanceStatistic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存实例网络入流量，单位：Kbps。
-     * 
-     * @return inputKbps */
+    /**
+     * 缓存实例网络入流量，单位：Kbps。
+     * @return inputKbps
+     */
     public String getInputKbps() {
         return inputKbps;
     }
@@ -74,9 +77,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存实例网络出流量，单位：Kbps。
-     * 
-     * @return outputKbps */
+    /**
+     * 缓存实例网络出流量，单位：Kbps。
+     * @return outputKbps
+     */
     public String getOutputKbps() {
         return outputKbps;
     }
@@ -90,9 +94,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -106,9 +111,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存存储的数据条数。
-     * 
-     * @return keys */
+    /**
+     * 缓存存储的数据条数。
+     * @return keys
+     */
     public Long getKeys() {
         return keys;
     }
@@ -122,9 +128,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存已经使用内存，单位：MB。
-     * 
-     * @return usedMemory */
+    /**
+     * 缓存已经使用内存，单位：MB。
+     * @return usedMemory
+     */
     public Long getUsedMemory() {
         return usedMemory;
     }
@@ -138,9 +145,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存的总内存，单位：MB。
-     * 
-     * @return maxMemory */
+    /**
+     * 缓存的总内存，单位：MB。
+     * @return maxMemory
+     */
     public Long getMaxMemory() {
         return maxMemory;
     }
@@ -154,9 +162,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存get命令被调用次数。
-     * 
-     * @return cmdGetCount */
+    /**
+     * 缓存get命令被调用次数。
+     * @return cmdGetCount
+     */
     public Long getCmdGetCount() {
         return cmdGetCount;
     }
@@ -170,9 +179,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** 缓存set命令被调用次数。
-     * 
-     * @return cmdSetCount */
+    /**
+     * 缓存set命令被调用次数。
+     * @return cmdSetCount
+     */
     public Long getCmdSetCount() {
         return cmdSetCount;
     }
@@ -186,9 +196,10 @@ public class InstanceStatistic {
         return this;
     }
 
-    /** CPU使用率，单位：百分比。
-     * 
-     * @return usedCpu */
+    /**
+     * CPU使用率，单位：百分比。
+     * @return usedCpu
+     */
     public String getUsedCpu() {
         return usedCpu;
     }
@@ -240,7 +251,10 @@ public class InstanceStatistic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

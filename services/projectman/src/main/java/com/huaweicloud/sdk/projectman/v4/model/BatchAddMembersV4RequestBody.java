@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchAddMembersV4RequestBody */
+/**
+ * BatchAddMembersV4RequestBody
+ */
 public class BatchAddMembersV4RequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchAddMembersV4RequestBody {
         return this;
     }
 
-    /** 添加的用户信息
-     * 
-     * @return users */
+    /**
+     * 添加的用户信息
+     * @return users
+     */
     public List<BatchAddMemberRequestV4> getUsers() {
         return users;
     }
@@ -74,7 +77,10 @@ public class BatchAddMembersV4RequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowListHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class ShowListHistoryRequest {
         return this;
     }
 
-    /** 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)；
-     * 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
-     * 
-     * @return jobId */
+    /**
+     * 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)； 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -50,9 +52,11 @@ public class ShowListHistoryRequest {
         return this;
     }
 
-    /** 分页页码， 表示从此页开始查询， offset大于等于0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页页码， 表示从此页开始查询， offset大于等于0
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -66,9 +70,12 @@ public class ShowListHistoryRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，limit小于等于100 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，limit小于等于100
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -82,9 +89,12 @@ public class ShowListHistoryRequest {
         return this;
     }
 
-    /** 距今天的时间区间（单位：天），interval小于等于30 minimum: 0 maximum: 30
-     * 
-     * @return interval */
+    /**
+     * 距今天的时间区间（单位：天），interval小于等于30
+     * minimum: 0
+     * maximum: 30
+     * @return interval
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -125,7 +135,10 @@ public class ShowListHistoryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

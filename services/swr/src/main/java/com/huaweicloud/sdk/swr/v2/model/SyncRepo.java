@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SyncRepo */
+/**
+ * SyncRepo
+ */
 public class SyncRepo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -84,9 +87,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainID */
+    /**
+     * 租户ID
+     * @return domainID
+     */
     public String getDomainID() {
         return domainID;
     }
@@ -100,9 +104,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -116,9 +121,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** ID
-     * 
-     * @return id */
+    /**
+     * ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -132,9 +138,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 组织名
-     * 
-     * @return namespace */
+    /**
+     * 组织名
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -148,9 +155,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 是否覆盖
-     * 
-     * @return override */
+    /**
+     * 是否覆盖
+     * @return override
+     */
     public Boolean getOverride() {
         return override;
     }
@@ -164,9 +172,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 目的组织
-     * 
-     * @return remoteNamespace */
+    /**
+     * 目的组织
+     * @return remoteNamespace
+     */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -180,9 +189,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 目的region
-     * 
-     * @return remoteRegionId */
+    /**
+     * 目的region
+     * @return remoteRegionId
+     */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -196,9 +206,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 仓库名
-     * 
-     * @return repoName */
+    /**
+     * 仓库名
+     * @return repoName
+     */
     public String getRepoName() {
         return repoName;
     }
@@ -212,9 +223,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 自动同步
-     * 
-     * @return syncAuto */
+    /**
+     * 自动同步
+     * @return syncAuto
+     */
     public Boolean getSyncAuto() {
         return syncAuto;
     }
@@ -228,9 +240,10 @@ public class SyncRepo {
         return this;
     }
 
-    /** 更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -291,7 +304,10 @@ public class SyncRepo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

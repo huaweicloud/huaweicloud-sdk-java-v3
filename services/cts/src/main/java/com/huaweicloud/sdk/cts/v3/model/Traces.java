@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Traces */
+/**
+ * Traces
+ */
 public class Traces {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,16 +26,24 @@ public class Traces {
 
     private String traceName;
 
-    /** 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。 */
+    /**
+     * 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
+     */
     public static final class TraceRatingEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final TraceRatingEnum NORMAL = new TraceRatingEnum("normal");
 
-        /** Enum WARNING for value: "warning" */
+        /**
+         * Enum WARNING for value: "warning"
+         */
         public static final TraceRatingEnum WARNING = new TraceRatingEnum("warning");
 
-        /** Enum INCIDENT for value: "incident" */
+        /**
+         * Enum INCIDENT for value: "incident"
+         */
         public static final TraceRatingEnum INCIDENT = new TraceRatingEnum("incident");
 
         private static final Map<String, TraceRatingEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +209,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件对应的云服务资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 标识事件对应的云服务资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -215,9 +226,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识查询事件列表对应的事件名称。由0-9,a-z,A-Z,'-','.','_',组成，长度为1～64个字符，且以首字符必须为字母。
-     * 
-     * @return traceName */
+    /**
+     * 标识查询事件列表对应的事件名称。由0-9,a-z,A-Z,'-','.','_',组成，长度为1～64个字符，且以首字符必须为字母。
+     * @return traceName
+     */
     public String getTraceName() {
         return traceName;
     }
@@ -231,9 +243,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
-     * 
-     * @return traceRating */
+    /**
+     * 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
+     * @return traceRating
+     */
     public TraceRatingEnum getTraceRating() {
         return traceRating;
     }
@@ -247,9 +260,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件发生源头类型，管理类事件主要包括API调用（ApiCall），Console页面调用（ConsoleAction）和系统间调用（SystemAction）。 数据类事件主要包括ObsSDK，ObsAPI。
-     * 
-     * @return traceType */
+    /**
+     * 标识事件发生源头类型，管理类事件主要包括API调用（ApiCall），Console页面调用（ConsoleAction）和系统间调用（SystemAction）。 数据类事件主要包括ObsSDK，ObsAPI。
+     * @return traceType
+     */
     public String getTraceType() {
         return traceType;
     }
@@ -263,9 +277,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件对应接口请求内容，即资源操作请求体。
-     * 
-     * @return request */
+    /**
+     * 标识事件对应接口请求内容，即资源操作请求体。
+     * @return request
+     */
     public String getRequest() {
         return request;
     }
@@ -279,9 +294,10 @@ public class Traces {
         return this;
     }
 
-    /** 记录用户请求的响应，标识事件对应接口响应内容，即资源操作结果返回体。
-     * 
-     * @return response */
+    /**
+     * 记录用户请求的响应，标识事件对应接口响应内容，即资源操作结果返回体。
+     * @return response
+     */
     public String getResponse() {
         return response;
     }
@@ -295,9 +311,10 @@ public class Traces {
         return this;
     }
 
-    /** 记录用户请求的响应，标识事件对应接口返回的HTTP状态码。
-     * 
-     * @return code */
+    /**
+     * 记录用户请求的响应，标识事件对应接口返回的HTTP状态码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -311,9 +328,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件对应的云服务接口版本。
-     * 
-     * @return apiVersion */
+    /**
+     * 标识事件对应的云服务接口版本。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -327,9 +345,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识其他云服务为此条事件添加的备注信息。
-     * 
-     * @return message */
+    /**
+     * 标识其他云服务为此条事件添加的备注信息。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -343,9 +362,12 @@ public class Traces {
         return this;
     }
 
-    /** 标识云审计服务记录本次事件的时间戳。 minimum: 946656000000 maximum: 4102416000000
-     * 
-     * @return recordTime */
+    /**
+     * 标识云审计服务记录本次事件的时间戳。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return recordTime
+     */
     public Long getRecordTime() {
         return recordTime;
     }
@@ -359,9 +381,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件的ID，由系统生成的UUID。
-     * 
-     * @return traceId */
+    /**
+     * 标识事件的ID，由系统生成的UUID。
+     * @return traceId
+     */
     public String getTraceId() {
         return traceId;
     }
@@ -375,9 +398,12 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件产生的时间戳。 minimum: 946656000000 maximum: 4102416000000
-     * 
-     * @return time */
+    /**
+     * 标识事件产生的时间戳。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return time
+     */
     public Long getTime() {
         return time;
     }
@@ -400,9 +426,10 @@ public class Traces {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public UserInfo getUser() {
         return user;
     }
@@ -416,9 +443,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。
-     * 
-     * @return serviceType */
+    /**
+     * 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -432,9 +460,10 @@ public class Traces {
         return this;
     }
 
-    /** 查询事件列表对应的资源类型。
-     * 
-     * @return resourceType */
+    /**
+     * 查询事件列表对应的资源类型。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -448,9 +477,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识触发事件的租户IP。
-     * 
-     * @return sourceIp */
+    /**
+     * 标识触发事件的租户IP。
+     * @return sourceIp
+     */
     public String getSourceIp() {
         return sourceIp;
     }
@@ -464,9 +494,10 @@ public class Traces {
         return this;
     }
 
-    /** 标识事件对应的资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 标识事件对应的资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -480,9 +511,10 @@ public class Traces {
         return this;
     }
 
-    /** 记录本次请求的request id
-     * 
-     * @return requestId */
+    /**
+     * 记录本次请求的request id
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -496,9 +528,10 @@ public class Traces {
         return this;
     }
 
-    /** 记录本次请求出错后，问题定位所需要的辅助信息。
-     * 
-     * @return locationInfo */
+    /**
+     * 记录本次请求出错后，问题定位所需要的辅助信息。
+     * @return locationInfo
+     */
     public String getLocationInfo() {
         return locationInfo;
     }
@@ -512,9 +545,10 @@ public class Traces {
         return this;
     }
 
-    /** 云资源的详情页面
-     * 
-     * @return endpoint */
+    /**
+     * 云资源的详情页面
+     * @return endpoint
+     */
     public String getEndpoint() {
         return endpoint;
     }
@@ -528,9 +562,10 @@ public class Traces {
         return this;
     }
 
-    /** 云资源的详情页面的访问链接（不含endpoint）
-     * 
-     * @return resourceUrl */
+    /**
+     * 云资源的详情页面的访问链接（不含endpoint）
+     * @return resourceUrl
+     */
     public String getResourceUrl() {
         return resourceUrl;
     }
@@ -616,7 +651,10 @@ public class Traces {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

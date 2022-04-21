@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 任务监控信息 */
+/**
+ * 任务监控信息
+ */
 public class TaskMonitorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class TaskMonitorInfo {
 
     private String taskName;
 
-    /** 任务类型, 只允许两种类型:TIMING-定时任务, REALTIME-实时任务 */
+    /**
+     * 任务类型, 只允许两种类型:TIMING-定时任务, REALTIME-实时任务
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum TIMING for value: "TIMING" */
+        /**
+         * Enum TIMING for value: "TIMING"
+         */
         public static final TaskTypeEnum TIMING = new TaskTypeEnum("TIMING");
 
-        /** Enum REALTIME for value: "REALTIME" */
+        /**
+         * Enum REALTIME for value: "REALTIME"
+         */
         public static final TaskTypeEnum REALTIME = new TaskTypeEnum("REALTIME");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class TaskMonitorInfo {
 
     private TaskTypeEnum taskType;
 
-    /** 任务状态, 只允许两种类型:0-停止, 1-运行中 */
+    /**
+     * 任务状态, 只允许两种类型:0-停止, 1-运行中
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -190,22 +204,34 @@ public class TaskMonitorInfo {
 
     private String cron;
 
-    /** 调度周期的单位，如天，小时等，只有定时任务且use_quartz_cron为false时才有该属性，当前仅允许如下类型：MIN-分钟, HOUR-小时, DAY-天, WEEK-周, MON-月 */
+    /**
+     * 调度周期的单位，如天，小时等，只有定时任务且use_quartz_cron为false时才有该属性，当前仅允许如下类型：MIN-分钟, HOUR-小时, DAY-天, WEEK-周, MON-月
+     */
     public static final class PeriodEnum {
 
-        /** Enum MIN for value: "MIN" */
+        /**
+         * Enum MIN for value: "MIN"
+         */
         public static final PeriodEnum MIN = new PeriodEnum("MIN");
 
-        /** Enum HOUR for value: "HOUR" */
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
         public static final PeriodEnum HOUR = new PeriodEnum("HOUR");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final PeriodEnum DAY = new PeriodEnum("DAY");
 
-        /** Enum WEEK for value: "WEEK" */
+        /**
+         * Enum WEEK for value: "WEEK"
+         */
         public static final PeriodEnum WEEK = new PeriodEnum("WEEK");
 
-        /** Enum MON for value: "MON" */
+        /**
+         * Enum MON for value: "MON"
+         */
         public static final PeriodEnum MON = new PeriodEnum("MON");
 
         private static final Map<String, PeriodEnum> STATIC_FIELDS = createStaticFields();
@@ -283,16 +309,24 @@ public class TaskMonitorInfo {
 
     private Integer dispatchInterval;
 
-    /** 标识最近一次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作 */
+    /**
+     * 标识最近一次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
+     */
     public static final class PositionEnum {
 
-        /** Enum ADAPTER for value: "ADAPTER" */
+        /**
+         * Enum ADAPTER for value: "ADAPTER"
+         */
         public static final PositionEnum ADAPTER = new PositionEnum("ADAPTER");
 
-        /** Enum READER for value: "READER" */
+        /**
+         * Enum READER for value: "READER"
+         */
         public static final PositionEnum READER = new PositionEnum("READER");
 
-        /** Enum WRITER for value: "WRITER" */
+        /**
+         * Enum WRITER for value: "WRITER"
+         */
         public static final PositionEnum WRITER = new PositionEnum("WRITER");
 
         private static final Map<String, PositionEnum> STATIC_FIELDS = createStaticFields();
@@ -363,25 +397,39 @@ public class TaskMonitorInfo {
 
     private PositionEnum position;
 
-    /** 任务最近一次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常 */
+    /**
+     * 任务最近一次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
+     */
     public static final class ExecuteStatusEnum {
 
-        /** Enum UNSTARTED for value: "UNSTARTED" */
+        /**
+         * Enum UNSTARTED for value: "UNSTARTED"
+         */
         public static final ExecuteStatusEnum UNSTARTED = new ExecuteStatusEnum("UNSTARTED");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final ExecuteStatusEnum WAITING = new ExecuteStatusEnum("WAITING");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final ExecuteStatusEnum RUNNING = new ExecuteStatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final ExecuteStatusEnum SUCCESS = new ExecuteStatusEnum("SUCCESS");
 
-        /** Enum CANCELLED for value: "CANCELLED" */
+        /**
+         * Enum CANCELLED for value: "CANCELLED"
+         */
         public static final ExecuteStatusEnum CANCELLED = new ExecuteStatusEnum("CANCELLED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ExecuteStatusEnum ERROR = new ExecuteStatusEnum("ERROR");
 
         private static final Map<String, ExecuteStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -485,10 +533,14 @@ public class TaskMonitorInfo {
 
     private String targetInstanceId;
 
-    /** 任务扩展类型，当前如果是CDC组合任务，该字段为CDC，否则为null */
+    /**
+     * 任务扩展类型，当前如果是CDC组合任务，该字段为CDC，否则为null
+     */
     public static final class ExtTypeEnum {
 
-        /** Enum CDC for value: "CDC" */
+        /**
+         * Enum CDC for value: "CDC"
+         */
         public static final ExtTypeEnum CDC = new ExtTypeEnum("CDC");
 
         private static final Map<String, ExtTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -572,9 +624,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -588,9 +641,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -604,9 +658,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务类型, 只允许两种类型:TIMING-定时任务, REALTIME-实时任务
-     * 
-     * @return taskType */
+    /**
+     * 任务类型, 只允许两种类型:TIMING-定时任务, REALTIME-实时任务
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -620,9 +675,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务状态, 只允许两种类型:0-停止, 1-运行中
-     * 
-     * @return status */
+    /**
+     * 任务状态, 只允许两种类型:0-停止, 1-运行中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -636,9 +692,12 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务最近一次执行时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastExecuteTime */
+    /**
+     * 任务最近一次执行时间，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastExecuteTime
+     */
     public Long getLastExecuteTime() {
         return lastExecuteTime;
     }
@@ -652,9 +711,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务是否使用Quartz表达式，只有定时任务才有该属性
-     * 
-     * @return useQuartzCron */
+    /**
+     * 任务是否使用Quartz表达式，只有定时任务才有该属性
+     * @return useQuartzCron
+     */
     public Boolean getUseQuartzCron() {
         return useQuartzCron;
     }
@@ -668,9 +728,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** CRON表达式，只有定时任务且use_quartz_cron为true时才有该属性
-     * 
-     * @return cron */
+    /**
+     * CRON表达式，只有定时任务且use_quartz_cron为true时才有该属性
+     * @return cron
+     */
     public String getCron() {
         return cron;
     }
@@ -684,9 +745,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 调度周期的单位，如天，小时等，只有定时任务且use_quartz_cron为false时才有该属性，当前仅允许如下类型：MIN-分钟, HOUR-小时, DAY-天, WEEK-周, MON-月
-     * 
-     * @return period */
+    /**
+     * 调度周期的单位，如天，小时等，只有定时任务且use_quartz_cron为false时才有该属性，当前仅允许如下类型：MIN-分钟, HOUR-小时, DAY-天, WEEK-周, MON-月
+     * @return period
+     */
     public PeriodEnum getPeriod() {
         return period;
     }
@@ -700,9 +762,12 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 调度周期，和period字段一起可以确定每隔多长时间调度一次，只有定时任务且use_quartz_cron为false时才有该属性 minimum: 1 maximum: 60
-     * 
-     * @return dispatchInterval */
+    /**
+     * 调度周期，和period字段一起可以确定每隔多长时间调度一次，只有定时任务且use_quartz_cron为false时才有该属性
+     * minimum: 1
+     * maximum: 60
+     * @return dispatchInterval
+     */
     public Integer getDispatchInterval() {
         return dispatchInterval;
     }
@@ -716,9 +781,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 标识最近一次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
-     * 
-     * @return position */
+    /**
+     * 标识最近一次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
+     * @return position
+     */
     public PositionEnum getPosition() {
         return position;
     }
@@ -732,9 +798,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务最近一次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
-     * 
-     * @return executeStatus */
+    /**
+     * 任务最近一次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
+     * @return executeStatus
+     */
     public ExecuteStatusEnum getExecuteStatus() {
         return executeStatus;
     }
@@ -748,9 +815,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务源端数据源所属应用ID
-     * 
-     * @return sourceAppId */
+    /**
+     * 任务源端数据源所属应用ID
+     * @return sourceAppId
+     */
     public String getSourceAppId() {
         return sourceAppId;
     }
@@ -764,9 +832,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务源端数据源所属应用名称
-     * 
-     * @return sourceAppName */
+    /**
+     * 任务源端数据源所属应用名称
+     * @return sourceAppName
+     */
     public String getSourceAppName() {
         return sourceAppName;
     }
@@ -780,9 +849,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务源端数据源所属实例ID
-     * 
-     * @return sourceInstanceId */
+    /**
+     * 任务源端数据源所属实例ID
+     * @return sourceInstanceId
+     */
     public String getSourceInstanceId() {
         return sourceInstanceId;
     }
@@ -796,9 +866,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务目标端数据源所属应用ID
-     * 
-     * @return targetAppId */
+    /**
+     * 任务目标端数据源所属应用ID
+     * @return targetAppId
+     */
     public String getTargetAppId() {
         return targetAppId;
     }
@@ -812,9 +883,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务目标端数据源所属应用名称
-     * 
-     * @return targetAppName */
+    /**
+     * 任务目标端数据源所属应用名称
+     * @return targetAppName
+     */
     public String getTargetAppName() {
         return targetAppName;
     }
@@ -828,9 +900,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务目标端数据源所属实例ID
-     * 
-     * @return targetInstanceId */
+    /**
+     * 任务目标端数据源所属实例ID
+     * @return targetInstanceId
+     */
     public String getTargetInstanceId() {
         return targetInstanceId;
     }
@@ -844,9 +917,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务扩展类型，当前如果是CDC组合任务，该字段为CDC，否则为null
-     * 
-     * @return extType */
+    /**
+     * 任务扩展类型，当前如果是CDC组合任务，该字段为CDC，否则为null
+     * @return extType
+     */
     public ExtTypeEnum getExtType() {
         return extType;
     }
@@ -860,9 +934,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务所属企业项目ID，默认为0
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 任务所属企业项目ID，默认为0
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -876,9 +951,10 @@ public class TaskMonitorInfo {
         return this;
     }
 
-    /** 任务标签
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -969,7 +1045,10 @@ public class TaskMonitorInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

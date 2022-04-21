@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VersionItem */
+/**
+ * VersionItem
+ */
 public class VersionItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class VersionItem {
         return this;
     }
 
-    /** 版本ID（版本号），如v2。
-     * 
-     * @return id */
+    /**
+     * 版本ID（版本号），如v2。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -62,9 +65,10 @@ public class VersionItem {
         return this;
     }
 
-    /** 若该版本API支持微版本，则返回支持的最小微版本号；若不支持微版本，则返回空。
-     * 
-     * @return minVersion */
+    /**
+     * 若该版本API支持微版本，则返回支持的最小微版本号；若不支持微版本，则返回空。
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -78,9 +82,10 @@ public class VersionItem {
         return this;
     }
 
-    /** 版本状态，为如下3种： CURRENT：表示该版本为主推版本。 SUPPORTED：表示为老版本，但是现在还继续支持。 DEPRECATED：表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态，为如下3种：  CURRENT：表示该版本为主推版本。  SUPPORTED：表示为老版本，但是现在还继续支持。  DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -94,9 +99,10 @@ public class VersionItem {
         return this;
     }
 
-    /** 版本发布时间，要求用UTC时间格式表示。如v2发布的时间2014-06-28T12:20:21Z。
-     * 
-     * @return updated */
+    /**
+     * 版本发布时间，要求用UTC时间格式表示。如v2发布的时间2014-06-28T12:20:21Z。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -110,9 +116,10 @@ public class VersionItem {
         return this;
     }
 
-    /** 若该版本API支持微版本，则返回支持的最大微版本号；若不支持微版本，则返回空。
-     * 
-     * @return version */
+    /**
+     * 若该版本API支持微版本，则返回支持的最大微版本号；若不支持微版本，则返回空。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -142,9 +149,10 @@ public class VersionItem {
         return this;
     }
 
-    /** API的URL地址。
-     * 
-     * @return links */
+    /**
+     * API的URL地址。
+     * @return links
+     */
     public List<LinksItem> getLinks() {
         return links;
     }
@@ -186,7 +194,10 @@ public class VersionItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

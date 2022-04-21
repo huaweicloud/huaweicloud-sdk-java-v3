@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListWorkflowsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListWorkflowsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回所有满足条件的对象个数 minimum: 0 maximum: 1000000
-     * 
-     * @return total */
+    /**
+     * 返回所有满足条件的对象个数
+     * minimum: 0
+     * maximum: 1000000
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class ListWorkflowsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回对象的大小 minimum: 0 maximum: 200
-     * 
-     * @return size */
+    /**
+     * 返回对象的大小
+     * minimum: 0
+     * maximum: 200
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -80,9 +88,10 @@ public class ListWorkflowsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的实体对象
-     * 
-     * @return workflows */
+    /**
+     * 返回的实体对象
+     * @return workflows
+     */
     public List<ListWorkflowsResult> getWorkflows() {
         return workflows;
     }
@@ -121,7 +130,10 @@ public class ListWorkflowsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

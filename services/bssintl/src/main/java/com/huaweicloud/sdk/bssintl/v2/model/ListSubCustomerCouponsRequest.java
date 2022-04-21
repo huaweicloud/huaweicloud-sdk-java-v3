@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSubCustomerCouponsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 优惠券ID。
-     * 
-     * @return couponId */
+    /**
+     * 优惠券ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -79,9 +82,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -95,9 +99,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 促销计划ID。
-     * 
-     * @return promotionPlanId */
+    /**
+     * 促销计划ID。
+     * @return promotionPlanId
+     */
     public String getPromotionPlanId() {
         return promotionPlanId;
     }
@@ -111,9 +116,12 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 优惠券类型：1：代金券2：折扣券（预留）3：产品券（预留）4：现金券（预留） minimum: 1 maximum: 4
-     * 
-     * @return couponType */
+    /**
+     * 优惠券类型：1：代金券2：折扣券（预留）3：产品券（预留）4：现金券（预留）
+     * minimum: 1
+     * maximum: 4
+     * @return couponType
+     */
     public Integer getCouponType() {
         return couponType;
     }
@@ -127,9 +135,12 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期 minimum: 1 maximum: 4
-     * 
-     * @return status */
+    /**
+     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期
+     * minimum: 1
+     * maximum: 4
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -143,9 +154,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return activeStartTime */
+    /**
+     * 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return activeStartTime
+     */
     public String getActiveStartTime() {
         return activeStartTime;
     }
@@ -159,9 +171,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return activeEndTime */
+    /**
+     * 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return activeEndTime
+     */
     public String getActiveEndTime() {
         return activeEndTime;
     }
@@ -175,11 +188,12 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -193,9 +207,12 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 查询的优惠券数量，默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询的优惠券数量，默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -209,9 +226,10 @@ public class ListSubCustomerCouponsRequest {
         return this;
     }
 
-    /** 发券来源，如果是合作伙伴发送的券，此处为伙伴ID。如果需要查询某个伙伴发放的券，可以在此处输入该伙伴ID。
-     * 
-     * @return sourceId */
+    /**
+     * 发券来源，如果是合作伙伴发送的券，此处为伙伴ID。如果需要查询某个伙伴发放的券，可以在此处输入该伙伴ID。
+     * @return sourceId
+     */
     public String getSourceId() {
         return sourceId;
     }
@@ -273,7 +291,10 @@ public class ListSubCustomerCouponsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

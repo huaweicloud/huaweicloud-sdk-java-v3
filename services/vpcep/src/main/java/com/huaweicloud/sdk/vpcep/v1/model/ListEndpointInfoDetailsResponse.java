@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,14 +24,19 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private String id;
 
-    /** 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置
-     * 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。 */
+    /**
+     * 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
+     */
     public static final class ServiceTypeEnum {
 
-        /** Enum INTERFACE for value: "interface" */
+        /**
+         * Enum INTERFACE for value: "interface"
+         */
         public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
 
-        /** Enum GATEWAY for value: "gateway" */
+        /**
+         * Enum GATEWAY for value: "gateway"
+         */
         public static final ServiceTypeEnum GATEWAY = new ServiceTypeEnum("gateway");
 
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,25 +106,39 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private ServiceTypeEnum serviceType;
 
-    /** 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败 */
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+     */
     public static final class StatusEnum {
 
-        /** Enum PENDINGACCEPTANCE for value: "pendingAcceptance" */
+        /**
+         * Enum PENDINGACCEPTANCE for value: "pendingAcceptance"
+         */
         public static final StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -196,13 +217,19 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private List<String> activeStatus = null;
 
-    /** 终端节点是否可用。 ● enable：启用 ● disable：不启用 */
+    /**
+    * 终端节点是否可用。 ● enable：启用 ● disable：不启用
+    */
     public static final class EnableStatusEnum {
 
-        /** Enum ENABLE for value: "enable" */
+        /**
+         * Enum ENABLE for value: "enable"
+         */
         public static final EnableStatusEnum ENABLE = new EnableStatusEnum("enable");
 
-        /** Enum DISABLE for value: "disable" */
+        /**
+         * Enum DISABLE for value: "disable"
+         */
         public static final EnableStatusEnum DISABLE = new EnableStatusEnum("disable");
 
         private static final Map<String, EnableStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -362,9 +389,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -378,10 +406,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置
-     * 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
-     * 
-     * @return serviceType */
+    /**
+     * 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
+     * @return serviceType
+     */
     public ServiceTypeEnum getServiceType() {
         return serviceType;
     }
@@ -395,9 +423,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
-     * 
-     * @return status */
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -427,9 +456,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 帐号状态。 ● frozen：冻结 ● active：解冻
-     * 
-     * @return activeStatus */
+    /**
+     * 帐号状态。 ● frozen：冻结 ● active：解冻
+     * @return activeStatus
+     */
     public List<String> getActiveStatus() {
         return activeStatus;
     }
@@ -443,9 +473,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点是否可用。 ● enable：启用 ● disable：不启用
-     * 
-     * @return enableStatus */
+    /**
+     * 终端节点是否可用。 ● enable：启用 ● disable：不启用
+     * @return enableStatus
+     */
     public EnableStatusEnum getEnableStatus() {
         return enableStatus;
     }
@@ -459,9 +490,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务规格的名称。
-     * 
-     * @return specificationName */
+    /**
+     * 终端节点服务规格的名称。
+     * @return specificationName
+     */
     public String getSpecificationName() {
         return specificationName;
     }
@@ -475,9 +507,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务的名称。
-     * 
-     * @return endpointServiceName */
+    /**
+     * 终端节点服务的名称。
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -491,9 +524,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点的报文标识。
-     * 
-     * @return markerId */
+    /**
+     * 终端节点的报文标识。
+     * @return markerId
+     */
     public Integer getMarkerId() {
         return markerId;
     }
@@ -507,9 +541,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务的ID。
-     * 
-     * @return endpointServiceId */
+    /**
+     * 终端节点服务的ID。
+     * @return endpointServiceId
+     */
     public String getEndpointServiceId() {
         return endpointServiceId;
     }
@@ -523,9 +558,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服 务的终端节点时，“enable_dns”设 置为true或者false，均不创建域名。
-     * 
-     * @return enableDns */
+    /**
+     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服 务的终端节点时，“enable_dns”设 置为true或者false，均不创建域名。
+     * @return enableDns
+     */
     public Boolean getEnableDns() {
         return enableDns;
     }
@@ -555,9 +591,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问所连接的终端节点服务的域 名。 当“enable_dns”为true时，该 参数可见。
-     * 
-     * @return dnsNames */
+    /**
+     * 访问所连接的终端节点服务的域 名。 当“enable_dns”为true时，该 参数可见。
+     * @return dnsNames
+     */
     public List<String> getDnsNames() {
         return dnsNames;
     }
@@ -571,10 +608,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终 端节点时。 ● 终端节点服务启用“连接审批”功能，且已 经“接受”连接审批。
-     * “status”可以是“accepted”或者 “rejected（仅支持“接受”连接审批后再 “拒绝”的情况）”。
-     * 
-     * @return ip */
+    /**
+     * 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终 端节点时。 ● 终端节点服务启用“连接审批”功能，且已 经“接受”连接审批。 “status”可以是“accepted”或者 “rejected（仅支持“接受”连接审批后再 “拒绝”的情况）”。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -588,9 +625,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点所在的VPC的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 终端节点所在的VPC的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -604,9 +642,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
-     * 
-     * @return subnetId */
+    /**
+     * vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -620,9 +659,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -636,9 +676,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return updatedAt */
+    /**
+     * 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -652,9 +693,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID，获取方法请参见获取项 目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID，获取方法请参见获取项 目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -684,9 +726,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签列表，没有标签默认为空数组。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，没有标签默认为空数组。
+     * @return tags
+     */
     public List<TagList> getTags() {
         return tags;
     }
@@ -709,9 +752,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public QueryError getError() {
         return error;
     }
@@ -741,9 +785,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
-     * 
-     * @return whitelist */
+    /**
+     * 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * @return whitelist
+     */
     public List<String> getWhitelist() {
         return whitelist;
     }
@@ -757,9 +802,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
-     * 
-     * @return enableWhitelist */
+    /**
+     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * @return enableWhitelist
+     */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -789,9 +835,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 路由表ID列表。 若未指定，返回默认VPC下路由表 ID。 创建连接Gateway类型终端节点 服务的终端节点时，显示此参 数。
-     * 
-     * @return routetables */
+    /**
+     * 路由表ID列表。 若未指定，返回默认VPC下路由表 ID。 创建连接Gateway类型终端节点 服务的终端节点时，显示此参 数。
+     * @return routetables
+     */
     public List<String> getRoutetables() {
         return routetables;
     }
@@ -889,7 +936,10 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

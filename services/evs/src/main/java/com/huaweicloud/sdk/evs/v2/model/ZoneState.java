@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 可用分区的状态。 */
+/**
+ * 可用分区的状态。
+ */
 public class ZoneState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ZoneState {
         return this;
     }
 
-    /** 可用分区是否可用。
-     * 
-     * @return available */
+    /**
+     * 可用分区是否可用。
+     * @return available
+     */
     public Boolean getAvailable() {
         return available;
     }
@@ -55,7 +58,10 @@ public class ZoneState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

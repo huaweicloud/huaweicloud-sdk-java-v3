@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FuncCode结构返回体。 */
+/**
+ * FuncCode结构返回体。
+ */
 public class FuncCode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class FuncCode {
         return this;
     }
 
-    /** 函数代码，当CodeTye为inline/zip/jar时必选，且代码必须要进行base64编码。
-     * 
-     * @return file */
+    /**
+     * 函数代码，当CodeTye为inline/zip/jar时必选，且代码必须要进行base64编码。
+     * @return file
+     */
     public String getFile() {
         return file;
     }
@@ -39,9 +42,10 @@ public class FuncCode {
         return this;
     }
 
-    /** 函数代码链接。
-     * 
-     * @return link */
+    /**
+     * 函数代码链接。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -77,7 +81,10 @@ public class FuncCode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

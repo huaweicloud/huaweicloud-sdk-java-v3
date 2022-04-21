@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例分布对象 */
+/**
+ * 实例分布对象
+ */
 public class Distribution {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class Distribution {
         return this;
     }
 
-    /** 所在大区名称。
-     * 
-     * @return area */
+    /**
+     * 所在大区名称。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -69,9 +72,10 @@ public class Distribution {
         return this;
     }
 
-    /** 所在城市名称。
-     * 
-     * @return city */
+    /**
+     * 所在城市名称。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -85,9 +89,10 @@ public class Distribution {
         return this;
     }
 
-    /** 所属运营商名称。
-     * 
-     * @return operator */
+    /**
+     * 所属运营商名称。
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -101,9 +106,10 @@ public class Distribution {
         return this;
     }
 
-    /** 所属省份名称。
-     * 
-     * @return province */
+    /**
+     * 所属省份名称。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -117,9 +123,10 @@ public class Distribution {
         return this;
     }
 
-    /** 站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -133,9 +140,10 @@ public class Distribution {
         return this;
     }
 
-    /** 线路ID。多线路场景下，将在该线路下创建弹性公网IP。
-     * 
-     * @return poolId */
+    /**
+     * 线路ID。多线路场景下，将在该线路下创建弹性公网IP。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -149,9 +157,10 @@ public class Distribution {
         return this;
     }
 
-    /** 资源组配置模板数目
-     * 
-     * @return stackCount */
+    /**
+     * 资源组配置模板数目
+     * @return stackCount
+     */
     public Integer getStackCount() {
         return stackCount;
     }
@@ -165,9 +174,10 @@ public class Distribution {
         return this;
     }
 
-    /** 城市简称。
-     * 
-     * @return cityShortName */
+    /**
+     * 城市简称。
+     * @return cityShortName
+     */
     public String getCityShortName() {
         return cityShortName;
     }
@@ -214,7 +224,10 @@ public class Distribution {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

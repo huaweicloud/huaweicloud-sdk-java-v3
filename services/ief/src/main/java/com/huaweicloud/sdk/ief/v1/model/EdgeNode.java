@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘节点参数 */
+/**
+ * 边缘节点参数
+ */
 public class EdgeNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64 Name为必填字段，且本帐号中唯一。
-     * 
-     * @return name */
+    /**
+     * 边缘节点名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64 Name为必填字段，且本帐号中唯一。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -87,9 +90,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -103,9 +107,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点是否开启GPU，默认为false
-     * 
-     * @return enableGpu */
+    /**
+     * 边缘节点是否开启GPU，默认为false
+     * @return enableGpu
+     */
     public Boolean getEnableGpu() {
         return enableGpu;
     }
@@ -135,9 +140,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点日志配置
-     * 
-     * @return logConfigs */
+    /**
+     * 边缘节点日志配置
+     * @return logConfigs
+     */
     public List<LogConfigs> getLogConfigs() {
         return logConfigs;
     }
@@ -167,9 +173,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 关联设备信息
-     * 
-     * @return deviceInfos */
+    /**
+     * 关联设备信息
+     * @return deviceInfos
+     */
     public List<DeviceInfos> getDeviceInfos() {
         return deviceInfos;
     }
@@ -183,9 +190,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点是否开启NPU，true表示开启，false表示不开启，默认为false
-     * 
-     * @return enableNpu */
+    /**
+     * 边缘节点是否开启NPU，true表示开启，false表示不开启，默认为false
+     * @return enableNpu
+     */
     public Boolean getEnableNpu() {
         return enableNpu;
     }
@@ -199,9 +207,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
-     * 
-     * @return npuType */
+    /**
+     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * @return npuType
+     */
     public String getNpuType() {
         return npuType;
     }
@@ -231,9 +240,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点属性，关联属性个数最多为32个
-     * 
-     * @return attributes */
+    /**
+     * 边缘节点属性，关联属性个数最多为32个
+     * @return attributes
+     */
     public List<Attributes> getAttributes() {
         return attributes;
     }
@@ -247,9 +257,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点启用Docker，默认为true
-     * 
-     * @return enableDocker */
+    /**
+     * 边缘节点启用Docker，默认为true
+     * @return enableDocker
+     */
     public Boolean getEnableDocker() {
         return enableDocker;
     }
@@ -279,9 +290,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** 边缘节点标签，标签个数最多为20个
-     * 
-     * @return tags */
+    /**
+     * 边缘节点标签，标签个数最多为20个
+     * @return tags
+     */
     public List<NodeResTag> getTags() {
         return tags;
     }
@@ -304,9 +316,10 @@ public class EdgeNode {
         return this;
     }
 
-    /** Get mqttConfig
-     * 
-     * @return mqttConfig */
+    /**
+     * Get mqttConfig
+     * @return mqttConfig
+     */
     public EdgeNodeMqttConfig getMqttConfig() {
         return mqttConfig;
     }
@@ -368,7 +381,10 @@ public class EdgeNode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,25 +7,39 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 资源规格。 */
+/**
+ * 资源规格。
+ */
 public class FlavorId {
 
-    /** Enum MICRO_5G_0_5C_1G for value: "MICRO-5G:0.5C:1G" */
+    /**
+     * Enum MICRO_5G_0_5C_1G for value: "MICRO-5G:0.5C:1G"
+     */
     public static final FlavorId MICRO_5G_0_5C_1G = new FlavorId("MICRO-5G:0.5C:1G");
 
-    /** Enum SMALL_10G_1_0C_2G for value: "SMALL-10G:1.0C:2G" */
+    /**
+     * Enum SMALL_10G_1_0C_2G for value: "SMALL-10G:1.0C:2G"
+     */
     public static final FlavorId SMALL_10G_1_0C_2G = new FlavorId("SMALL-10G:1.0C:2G");
 
-    /** Enum STANDARD_30G_2_0C_4G for value: "STANDARD-30G:2.0C:4G" */
+    /**
+     * Enum STANDARD_30G_2_0C_4G for value: "STANDARD-30G:2.0C:4G"
+     */
     public static final FlavorId STANDARD_30G_2_0C_4G = new FlavorId("STANDARD-30G:2.0C:4G");
 
-    /** Enum LARGE_50G_4_0C_8G for value: "LARGE-50G:4.0C:8G" */
+    /**
+     * Enum LARGE_50G_4_0C_8G for value: "LARGE-50G:4.0C:8G"
+     */
     public static final FlavorId LARGE_50G_4_0C_8G = new FlavorId("LARGE-50G:4.0C:8G");
 
-    /** Enum XLARGE_100G_4_0C_16G for value: "XLARGE-100G:4.0C:16G" */
+    /**
+     * Enum XLARGE_100G_4_0C_16G for value: "XLARGE-100G:4.0C:16G"
+     */
     public static final FlavorId XLARGE_100G_4_0C_16G = new FlavorId("XLARGE-100G:4.0C:16G");
 
-    /** Enum CUSTOM_XG_X_X_X_X for value: "CUSTOM-XG:X-X:X-X" */
+    /**
+     * Enum CUSTOM_XG_X_X_X_X for value: "CUSTOM-XG:X-X:X-X"
+     */
     public static final FlavorId CUSTOM_XG_X_X_X_X = new FlavorId("CUSTOM-XG:X-X:X-X");
 
     private static final Map<String, FlavorId> STATIC_FIELDS = createStaticFields();

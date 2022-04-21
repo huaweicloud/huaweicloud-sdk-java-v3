@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 参数服务对象。 */
+/**
+ * 参数服务对象。
+ */
 public class ServiceCommandPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return paraName */
+    /**
+     * **参数说明**：参数的名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return paraName
+     */
     public String getParaName() {
         return paraName;
     }
@@ -82,9 +85,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
-     * 
-     * @return dataType */
+    /**
+     * **参数说明**：参数的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -98,9 +102,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数是否必选。默认为false。
-     * 
-     * @return required */
+    /**
+     * **参数说明**：参数是否必选。默认为false。
+     * @return required
+     */
     public Boolean getRequired() {
         return required;
     }
@@ -130,9 +135,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的枚举值列表。
-     * 
-     * @return enumList */
+    /**
+     * **参数说明**：参数的枚举值列表。
+     * @return enumList
+     */
     public List<String> getEnumList() {
         return enumList;
     }
@@ -146,9 +152,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的最小值。 **取值范围**：长度1-16。
-     * 
-     * @return min */
+    /**
+     * **参数说明**：参数的最小值。 **取值范围**：长度1-16。
+     * @return min
+     */
     public String getMin() {
         return min;
     }
@@ -162,9 +169,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的最大值。 **取值范围**：长度1-16。
-     * 
-     * @return max */
+    /**
+     * **参数说明**：参数的最大值。 **取值范围**：长度1-16。
+     * @return max
+     */
     public String getMax() {
         return max;
     }
@@ -178,9 +186,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的最大长度。
-     * 
-     * @return maxLength */
+    /**
+     * **参数说明**：参数的最大长度。
+     * @return maxLength
+     */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -194,9 +203,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的步长。
-     * 
-     * @return step */
+    /**
+     * **参数说明**：参数的步长。
+     * @return step
+     */
     public Double getStep() {
         return step;
     }
@@ -210,9 +220,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的单位。 **取值范围**：长度不超过16。
-     * 
-     * @return unit */
+    /**
+     * **参数说明**：参数的单位。 **取值范围**：长度不超过16。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -226,9 +237,10 @@ public class ServiceCommandPara {
         return this;
     }
 
-    /** **参数说明**：参数的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：参数的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -279,7 +291,10 @@ public class ServiceCommandPara {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

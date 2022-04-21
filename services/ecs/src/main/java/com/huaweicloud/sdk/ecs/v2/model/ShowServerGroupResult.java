@@ -45,9 +45,10 @@ public class ShowServerGroupResult {
         return this;
     }
 
-    /** 云服务器组UUID。
-     * 
-     * @return id */
+    /**
+     * 云服务器组UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +78,10 @@ public class ShowServerGroupResult {
         return this;
     }
 
-    /** 云服务器组中包含的云服务器列表。
-     * 
-     * @return members */
+    /**
+     * 云服务器组中包含的云服务器列表。
+     * @return members
+     */
     public List<String> getMembers() {
         return members;
     }
@@ -109,9 +111,10 @@ public class ShowServerGroupResult {
         return this;
     }
 
-    /** 云服务器组元数据。
-     * 
-     * @return metadata */
+    /**
+     * 云服务器组元数据。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -125,9 +128,10 @@ public class ShowServerGroupResult {
         return this;
     }
 
-    /** 云服务器组名称。
-     * 
-     * @return name */
+    /**
+     * 云服务器组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,11 +161,10 @@ public class ShowServerGroupResult {
         return this;
     }
 
-    /** 与服务器组关联的策略名称列表。当前有效的策略名称为: anti-affinity -此组中的服务器必须安排到不同的主机； affinity -此组中的服务器必须安排在同一主机上; soft-anti-affinity
-     * –如果可能, 应将此组中的服务器安排到不同的主机, 但如果无法实现, 则仍应安排它们, 而不是导致生成失败; soft-affinity -如果可能, 应将此组中的服务器安排在同一主机上, 但如果无法实现, 则仍应安排它们,
-     * 而不是导致生成失败。
-     * 
-     * @return policies */
+    /**
+     * 与服务器组关联的策略名称列表。当前有效的策略名称为:  anti-affinity -此组中的服务器必须安排到不同的主机；  affinity -此组中的服务器必须安排在同一主机上;  soft-anti-affinity –如果可能, 应将此组中的服务器安排到不同的主机, 但如果无法实现, 则仍应安排它们, 而不是导致生成失败;  soft-affinity -如果可能, 应将此组中的服务器安排在同一主机上, 但如果无法实现, 则仍应安排它们, 而不是导致生成失败。
+     * @return policies
+     */
     public List<String> getPolicies() {
         return policies;
     }
@@ -204,7 +207,10 @@ public class ShowServerGroupResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

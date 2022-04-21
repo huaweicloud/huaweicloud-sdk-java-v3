@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群批量测试连接任务请求体 */
+/**
+ * 集群批量测试连接任务请求体
+ */
 public class BatchSpecialTestConnectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchSpecialTestConnectionReq {
         return this;
     }
 
-    /** 集群批量测试连接任务请求列表
-     * 
-     * @return jobs */
+    /**
+     * 集群批量测试连接任务请求列表
+     * @return jobs
+     */
     public List<BatchJobActionReq> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class BatchSpecialTestConnectionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

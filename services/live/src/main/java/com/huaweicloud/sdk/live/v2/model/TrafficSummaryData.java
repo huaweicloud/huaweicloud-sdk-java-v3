@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TrafficSummaryData */
+/**
+ * TrafficSummaryData
+ */
 public class TrafficSummaryData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class TrafficSummaryData {
         return this;
     }
 
-    /** 流量，单位为byte。 minimum: 0 maximum: -1
-     * 
-     * @return value */
+    /**
+     * 流量，单位为byte。
+     * minimum: 0
+     * maximum: -1
+     * @return value
+     */
     public Long getValue() {
         return value;
     }
@@ -39,9 +44,10 @@ public class TrafficSummaryData {
         return this;
     }
 
-    /** 域名。
-     * 
-     * @return domain */
+    /**
+     * 域名。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -78,7 +84,10 @@ public class TrafficSummaryData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

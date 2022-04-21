@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTranscodeDataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListTranscodeDataRequest {
         return this;
     }
 
-    /** 推流域名。
-     * 
-     * @return publishDomain */
+    /**
+     * 推流域名。 
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -49,9 +52,10 @@ public class ListTranscodeDataRequest {
         return this;
     }
 
-    /** 流名。
-     * 
-     * @return stream */
+    /**
+     * 流名。 
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -65,10 +69,10 @@ public class ListTranscodeDataRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 非整点时间按小时取整，若start_time为2020-08-18T07:20:40Z，则实际查询起始时间为2020-08-18T07:00:00Z。 若start_time为空，则默认查询最近24小时数据。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  非整点时间按小时取整，若start_time为2020-08-18T07:20:40Z，则实际查询起始时间为2020-08-18T07:00:00Z。  若start_time为空，则默认查询最近24小时数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -82,10 +86,10 @@ public class ListTranscodeDataRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 非整点时间按小时取整，若end_time为2020-08-18T08:20:40Z，则实际查询起始时间为2020-08-18T08:00:00Z。 若参数为空，默认为当前时间。结束时间需大于起始时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  非整点时间按小时取整，若end_time为2020-08-18T08:20:40Z，则实际查询起始时间为2020-08-18T08:00:00Z。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -126,7 +130,10 @@ public class ListTranscodeDataRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

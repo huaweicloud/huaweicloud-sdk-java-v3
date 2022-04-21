@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AbnormalEvent */
+/**
+ * AbnormalEvent
+ */
 public class AbnormalEvent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return time */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DDThh:mm:ssZ
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -79,9 +82,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 出现异常的用户ID
-     * 
-     * @return uid */
+    /**
+     * 出现异常的用户ID
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -95,9 +99,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 出现异常的房间ID
-     * 
-     * @return roomId */
+    /**
+     * 出现异常的房间ID
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -111,9 +116,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 出现异常的环节 - join_room：加入房间 - communication：通话中
-     * 
-     * @return stage */
+    /**
+     * 出现异常的环节 - join_room：加入房间 - communication：通话中 
+     * @return stage
+     */
     public String getStage() {
         return stage;
     }
@@ -127,9 +133,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 事件发生位置 - local：事件发生在客户端本地 - remote：事件发生在远端
-     * 
-     * @return location */
+    /**
+     * 事件发生位置 - local：事件发生在客户端本地 - remote：事件发生在远端 
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -143,9 +150,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 如果根因来自远端用户，则peerid为远端用户的用户ID。如果根因来自自身，则peerid为空字符串
-     * 
-     * @return peerUid */
+    /**
+     * 如果根因来自远端用户，则peerid为远端用户的用户ID。如果根因来自自身，则peerid为空字符串
+     * @return peerUid
+     */
     public String getPeerUid() {
         return peerUid;
     }
@@ -159,9 +167,12 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 异常类型： - 1：进房慢(5s加入房间失败) - 2：视频卡顿 - 3：音频卡顿 minimum: 0 maximum: 15
-     * 
-     * @return abnormalType */
+    /**
+     * 异常类型： - 1：进房慢(5s加入房间失败) - 2：视频卡顿 - 3：音频卡顿 
+     * minimum: 0
+     * maximum: 15
+     * @return abnormalType
+     */
     public Integer getAbnormalType() {
         return abnormalType;
     }
@@ -175,9 +186,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 异常类型描述与异常类型对应，支持国际化，取值范围为： - 进房慢(5s加入房间失败) - 视频卡顿 - 音频卡顿
-     * 
-     * @return abnormalTypeDesc */
+    /**
+     * 异常类型描述与异常类型对应，支持国际化，取值范围为： - 进房慢(5s加入房间失败) - 视频卡顿 - 音频卡顿 
+     * @return abnormalTypeDesc
+     */
     public String getAbnormalTypeDesc() {
         return abnormalTypeDesc;
     }
@@ -191,14 +203,12 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 异常因素 当异常类型为1时，异常因素取值范围为： - 1：建链失败 - 2：房间非空闲 - 3：服务器异常 - 4：服务器反馈503 - 5：鉴权失败 - 6：鉴权重试 - 7：时钟同步失败 - 8：url错误 -
-     * 9：终端内部异常 - 90000004：SDK发出的加入房间信令响应超时 - 90100009：web侧没有收到MSP下发的配置信息 - 90100008：websocket链路建链失败 -
-     * 10000001：服务侧返回的异常信息 - 31000003：服务侧返回的异常信息 - 32000030：服务侧返回的异常信息 - 15：浏览器设置sdp异常 当异常类型为2或者3时，异常因素取值范围为： -
-     * 1：系统CPU占用高 - 2：App CPU占用高 - 3：音频上行网络延时 - 4：音频上行网络抖动 - 5：视频上行网络延时 - 6：视频上行网络抖动 - 7：音频下行网络延时 - 8：音频下行网络抖动 -
-     * 9：视频下行网络延时 - 10：视频下行网络抖动 - 11：上行音频丢包 - 12：上行视频丢包 - 13：下行音频丢包 - 14：下行视频丢包 - 15：下行音频无声音 - 16：其他 - 17：对端用户离线 -
-     * 18：对端用户无码流 - 19：对端用户无帧率 - 20：本端服务器下行无码流 - 21：本端服务器下行无帧率 minimum: 0 maximum: 15
-     * 
-     * @return abnormalFactor */
+    /**
+     * 异常因素 当异常类型为1时，异常因素取值范围为： - 1：建链失败 - 2：房间非空闲 - 3：服务器异常 - 4：服务器反馈503 - 5：鉴权失败 - 6：鉴权重试 - 7：时钟同步失败 - 8：url错误 - 9：终端内部异常 - 90000004：SDK发出的加入房间信令响应超时 - 90100009：web侧没有收到MSP下发的配置信息 - 90100008：websocket链路建链失败 - 10000001：服务侧返回的异常信息 - 31000003：服务侧返回的异常信息 - 32000030：服务侧返回的异常信息 - 15：浏览器设置sdp异常 当异常类型为2或者3时，异常因素取值范围为： - 1：系统CPU占用高 - 2：App CPU占用高 - 3：音频上行网络延时 - 4：音频上行网络抖动 - 5：视频上行网络延时 - 6：视频上行网络抖动 - 7：音频下行网络延时 - 8：音频下行网络抖动 - 9：视频下行网络延时 - 10：视频下行网络抖动 - 11：上行音频丢包 - 12：上行视频丢包 - 13：下行音频丢包 - 14：下行视频丢包 - 15：下行音频无声音 - 16：其他 - 17：对端用户离线 - 18：对端用户无码流 - 19：对端用户无帧率 - 20：本端服务器下行无码流 - 21：本端服务器下行无帧率 
+     * minimum: 0
+     * maximum: 15
+     * @return abnormalFactor
+     */
     public Integer getAbnormalFactor() {
         return abnormalFactor;
     }
@@ -212,13 +222,10 @@ public class AbnormalEvent {
         return this;
     }
 
-    /** 异常因素描述，支持国际化 当异常类型为1时，异常因素描述与异常因素对应，取值范围为： - 建链失败 - 房间非空闲 - 服务器异常 - 服务器反馈503 - 鉴权失败 - 鉴权重试 - 时钟同步失败 - url错误 -
-     * 终端内部异常 - SDK发出的加入房间信令响应超时 - web侧没有收到MSP下发的配置信息 - websocket链路建链失败 - 服务侧返回的异常信息 - 服务侧返回的异常信息 - 服务侧返回的异常信息 -
-     * 浏览器设置sdp异常 当异常类型为2或者3时，异常因素描述与异常因素对应，取值范围为： - 系统CPU占用高 - App CPU占用高 - 音频上行网络延时 - 音频上行网络抖动 - 视频上行网络延时 - 视频上行网络抖动 -
-     * 音频下行网络延时 - 音频下行网络抖动 - 视频下行网络延时 - 视频下行网络抖动 - 上行音频丢包 - 上行视频丢包 - 下行音频丢包 - 下行视频丢包 - 下行音频无声音 - 其他 - 对端用户离线 - 对端用户无码流 -
-     * 对端用户无帧率 - 本端服务器下行无码流 - 本端服务器下行无帧率 其他情况，异常因素描述为：其他
-     * 
-     * @return abnormalFactorDesc */
+    /**
+     * 异常因素描述，支持国际化 当异常类型为1时，异常因素描述与异常因素对应，取值范围为： - 建链失败 - 房间非空闲 - 服务器异常 - 服务器反馈503 - 鉴权失败 - 鉴权重试 - 时钟同步失败 - url错误 - 终端内部异常 - SDK发出的加入房间信令响应超时 - web侧没有收到MSP下发的配置信息 - websocket链路建链失败 - 服务侧返回的异常信息 - 服务侧返回的异常信息 - 服务侧返回的异常信息 - 浏览器设置sdp异常 当异常类型为2或者3时，异常因素描述与异常因素对应，取值范围为： - 系统CPU占用高 - App CPU占用高 - 音频上行网络延时 - 音频上行网络抖动 - 视频上行网络延时 - 视频上行网络抖动 - 音频下行网络延时 - 音频下行网络抖动 - 视频下行网络延时 - 视频下行网络抖动 - 上行音频丢包 - 上行视频丢包 - 下行音频丢包 - 下行视频丢包 - 下行音频无声音 - 其他 - 对端用户离线 - 对端用户无码流 - 对端用户无帧率 - 本端服务器下行无码流 - 本端服务器下行无帧率 其他情况，异常因素描述为：其他 
+     * @return abnormalFactorDesc
+     */
     public String getAbnormalFactorDesc() {
         return abnormalFactorDesc;
     }
@@ -278,7 +285,10 @@ public class AbnormalEvent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

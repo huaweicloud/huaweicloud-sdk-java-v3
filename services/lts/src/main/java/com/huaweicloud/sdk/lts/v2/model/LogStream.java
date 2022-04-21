@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 返回的日志流信息 */
+/**
+ * 返回的日志流信息
+ */
 public class LogStream {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class LogStream {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return creationTime */
+    /**
+     * 创建时间 
+     * @return creationTime
+     */
     public Long getCreationTime() {
         return creationTime;
     }
@@ -57,9 +60,10 @@ public class LogStream {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称 
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -73,9 +77,10 @@ public class LogStream {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID 
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -89,9 +94,12 @@ public class LogStream {
         return this;
     }
 
-    /** 过滤器个数 minimum: 0 maximum: 5
-     * 
-     * @return filterCount */
+    /**
+     * 过滤器个数 
+     * minimum: 0
+     * maximum: 5
+     * @return filterCount
+     */
     public Integer getFilterCount() {
         return filterCount;
     }
@@ -121,9 +129,10 @@ public class LogStream {
         return this;
     }
 
-    /** 日志流所属标签
-     * 
-     * @return tag */
+    /**
+     * 日志流所属标签
+     * @return tag
+     */
     public Map<String, String> getTag() {
         return tag;
     }
@@ -165,7 +174,10 @@ public class LogStream {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

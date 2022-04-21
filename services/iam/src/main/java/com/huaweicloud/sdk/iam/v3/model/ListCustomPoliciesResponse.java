@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCustomPoliciesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -73,9 +76,10 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 自定义策略信息列表。
-     * 
-     * @return roles */
+    /**
+     * 自定义策略信息列表。
+     * @return roles
+     */
     public List<PolicyRoleResult> getRoles() {
         return roles;
     }
@@ -89,9 +93,10 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回自定义策略的总条数
-     * 
-     * @return totalNumber */
+    /**
+     * 返回自定义策略的总条数
+     * @return totalNumber
+     */
     public Integer getTotalNumber() {
         return totalNumber;
     }
@@ -130,7 +135,10 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

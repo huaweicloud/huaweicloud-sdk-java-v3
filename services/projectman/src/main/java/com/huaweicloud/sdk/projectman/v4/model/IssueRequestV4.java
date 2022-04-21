@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 工作项属性 */
+/**
+ * 工作项属性
+ */
 public class IssueRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 实际工时
-     * 
-     * @return actualWorkHours */
+    /**
+     * 实际工时
+     * @return actualWorkHours
+     */
     public Double getActualWorkHours() {
         return actualWorkHours;
     }
@@ -114,9 +117,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 处理人id,对应用户信息的数字id
-     * 
-     * @return assignedId */
+    /**
+     * 处理人id,对应用户信息的数字id
+     * @return assignedId
+     */
     public Integer getAssignedId() {
         return assignedId;
     }
@@ -130,9 +134,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 开始时间，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -146,9 +151,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -162,9 +168,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 开发者id,对应用户信息的数字id
-     * 
-     * @return developerId */
+    /**
+     * 开发者id,对应用户信息的数字id
+     * @return developerId
+     */
     public Integer getDeveloperId() {
         return developerId;
     }
@@ -178,9 +185,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 领域id
-     * 
-     * @return domainId */
+    /**
+     * 领域id
+     * @return domainId
+     */
     public Integer getDomainId() {
         return domainId;
     }
@@ -194,9 +202,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 工作项进度值
-     * 
-     * @return doneRatio */
+    /**
+     * 工作项进度值
+     * @return doneRatio
+     */
     public Integer getDoneRatio() {
         return doneRatio;
     }
@@ -210,9 +219,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 结束时间，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -226,9 +236,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 预计工时
-     * 
-     * @return expectedWorkHours */
+    /**
+     * 预计工时
+     * @return expectedWorkHours
+     */
     public Double getExpectedWorkHours() {
         return expectedWorkHours;
     }
@@ -242,9 +253,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return iterationId */
+    /**
+     * 迭代id
+     * @return iterationId
+     */
     public Integer getIterationId() {
         return iterationId;
     }
@@ -258,9 +270,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 模块id
-     * 
-     * @return moduleId */
+    /**
+     * 模块id
+     * @return moduleId
+     */
     public Integer getModuleId() {
         return moduleId;
     }
@@ -274,9 +287,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 标题
-     * 
-     * @return name */
+    /**
+     * 标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -290,9 +304,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 父工作项的id
-     * 
-     * @return parentIssueId */
+    /**
+     * 父工作项的id
+     * @return parentIssueId
+     */
     public Integer getParentIssueId() {
         return parentIssueId;
     }
@@ -306,9 +321,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 优先级, 1 低, 2 中, 3 高,
-     * 
-     * @return priorityId */
+    /**
+     * 优先级,   1 低,   2 中,   3 高,
+     * @return priorityId
+     */
     public Integer getPriorityId() {
         return priorityId;
     }
@@ -322,9 +338,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 重要程度, 10 关键, 11 重要, 12 一般, 13 提示,
-     * 
-     * @return severityId */
+    /**
+     * 重要程度,   10 关键,   11 重要,   12 一般,   13 提示,
+     * @return severityId
+     */
     public Integer getSeverityId() {
         return severityId;
     }
@@ -338,9 +355,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 状态 id, 开始 1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
-     * 
-     * @return statusId */
+    /**
+     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
+     * @return statusId
+     */
     public Integer getStatusId() {
         return statusId;
     }
@@ -354,9 +372,10 @@ public class IssueRequestV4 {
         return this;
     }
 
-    /** 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
-     * 
-     * @return trackerId */
+    /**
+     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * @return trackerId
+     */
     public Integer getTrackerId() {
         return trackerId;
     }
@@ -438,7 +457,10 @@ public class IssueRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

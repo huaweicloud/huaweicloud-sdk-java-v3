@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProtectableResult */
+/**
+ * ProtectableResult
+ */
 public class ProtectableResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ProtectableResult {
         return this;
     }
 
-    /** 不支持备份的错误码
-     * 
-     * @return code */
+    /**
+     * 不支持备份的错误码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -55,9 +58,10 @@ public class ProtectableResult {
         return this;
     }
 
-    /** 不支持备份的原因
-     * 
-     * @return reason */
+    /**
+     * 不支持备份的原因
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -71,9 +75,10 @@ public class ProtectableResult {
         return this;
     }
 
-    /** 是否可备份
-     * 
-     * @return result */
+    /**
+     * 是否可备份
+     * @return result
+     */
     public Boolean getResult() {
         return result;
     }
@@ -96,9 +101,10 @@ public class ProtectableResult {
         return this;
     }
 
-    /** Get vault
-     * 
-     * @return vault */
+    /**
+     * Get vault
+     * @return vault
+     */
     public VaultGet getVault() {
         return vault;
     }
@@ -112,9 +118,10 @@ public class ProtectableResult {
         return this;
     }
 
-    /** 资源不可备份的原因信息，当资源可保护性检验失败时才有该字段。
-     * 
-     * @return message */
+    /**
+     * 资源不可备份的原因信息，当资源可保护性检验失败时才有该字段。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -157,7 +164,10 @@ public class ProtectableResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

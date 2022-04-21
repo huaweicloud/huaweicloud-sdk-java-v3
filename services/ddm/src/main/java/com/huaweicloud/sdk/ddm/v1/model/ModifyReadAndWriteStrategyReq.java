@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto read_weight Body Object */
+/**
+ * This is a auto read_weight Body Object
+ */
 public class ModifyReadAndWriteStrategyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ModifyReadAndWriteStrategyReq {
         return this;
     }
 
-    /** 主数据库实例与只读数据库实例的读权重集合。
-     * 
-     * @return readWeight */
+    /**
+     * 主数据库实例与只读数据库实例的读权重集合。
+     * @return readWeight
+     */
     public Object getReadWeight() {
         return readWeight;
     }
@@ -55,7 +58,10 @@ public class ModifyReadAndWriteStrategyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

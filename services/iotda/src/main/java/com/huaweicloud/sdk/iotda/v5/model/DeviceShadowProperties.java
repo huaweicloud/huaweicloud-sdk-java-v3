@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设备影子数据属性结构体。 */
+/**
+ * 设备影子数据属性结构体。
+ */
 public class DeviceShadowProperties {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class DeviceShadowProperties {
         return this;
     }
 
-    /** 设备影子的属性数据，Json格式，里面是一个个键值对，每个键都是产品模型中属性的参数名(property_name)，目前如样例所示只支持一层结构。
-     * **注意**：JSON结构的key当前不支持特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00),key为以上特殊字符无法正常刷新设备影子
-     * 
-     * @return properties */
+    /**
+     * 设备影子的属性数据，Json格式，里面是一个个键值对，每个键都是产品模型中属性的参数名(property_name)，目前如样例所示只支持一层结构。 **注意**：JSON结构的key当前不支持特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00),key为以上特殊字符无法正常刷新设备影子
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -40,9 +42,10 @@ public class DeviceShadowProperties {
         return this;
     }
 
-    /** 事件操作时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return eventTime */
+    /**
+     * 事件操作时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return eventTime
+     */
     public String getEventTime() {
         return eventTime;
     }
@@ -79,7 +82,10 @@ public class DeviceShadowProperties {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

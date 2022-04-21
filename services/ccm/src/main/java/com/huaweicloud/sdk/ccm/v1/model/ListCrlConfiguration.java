@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListCrlConfiguration */
+/**
+ * ListCrlConfiguration
+ */
 public class ListCrlConfiguration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListCrlConfiguration {
         return this;
     }
 
-    /** 是否启用CRL发布功能。 - **true** - **false**
-     * 
-     * @return enabled */
+    /**
+     * 是否启用CRL发布功能。 - **true** - **false**
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -54,9 +57,10 @@ public class ListCrlConfiguration {
         return this;
     }
 
-    /** 吊销列表文件名称。 > 若用户不指定，系统将默认采用当前证书的父CA ID。
-     * 
-     * @return crlName */
+    /**
+     * 吊销列表文件名称。 > 若用户不指定，系统将默认采用当前证书的父CA ID。
+     * @return crlName
+     */
     public String getCrlName() {
         return crlName;
     }
@@ -70,9 +74,10 @@ public class ListCrlConfiguration {
         return this;
     }
 
-    /** OBS桶名称。
-     * 
-     * @return obsBucketName */
+    /**
+     * OBS桶名称。
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -86,9 +91,12 @@ public class ListCrlConfiguration {
         return this;
     }
 
-    /** CRL更新周期，单位为\"天\"。当启用CRL发布功能，为必填项。 minimum: 7 maximum: 30
-     * 
-     * @return validDays */
+    /**
+     * CRL更新周期，单位为\"天\"。当启用CRL发布功能，为必填项。
+     * minimum: 7
+     * maximum: 30
+     * @return validDays
+     */
     public Integer getValidDays() {
         return validDays;
     }
@@ -102,9 +110,10 @@ public class ListCrlConfiguration {
         return this;
     }
 
-    /** 吊销列表分发地址，即对应的OBS桶中的CRL文件地址。 > 本参数由程序根据crl_name、obs_bucket_name以及OBS地址进行拼接而成。
-     * 
-     * @return crlDisPoint */
+    /**
+     * 吊销列表分发地址，即对应的OBS桶中的CRL文件地址。 > 本参数由程序根据crl_name、obs_bucket_name以及OBS地址进行拼接而成。
+     * @return crlDisPoint
+     */
     public String getCrlDisPoint() {
         return crlDisPoint;
     }
@@ -147,7 +156,10 @@ public class ListCrlConfiguration {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

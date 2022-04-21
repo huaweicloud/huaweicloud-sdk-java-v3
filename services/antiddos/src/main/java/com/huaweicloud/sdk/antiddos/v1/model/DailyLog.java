@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EIP异常事件响应体 */
+/**
+ * EIP异常事件响应体
+ */
 public class DailyLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -59,9 +62,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -75,9 +79,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 防护状态，可选范围： - 1：表示清洗 - 2：表示黑洞
-     * 
-     * @return status */
+    /**
+     * 防护状态，可选范围： - 1：表示清洗 - 2：表示黑洞
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -91,9 +96,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 触发时流量
-     * 
-     * @return triggerBps */
+    /**
+     * 触发时流量
+     * @return triggerBps
+     */
     public Integer getTriggerBps() {
         return triggerBps;
     }
@@ -107,9 +113,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 触发时报文速率
-     * 
-     * @return triggerPps */
+    /**
+     * 触发时报文速率
+     * @return triggerPps
+     */
     public Integer getTriggerPps() {
         return triggerPps;
     }
@@ -123,9 +130,10 @@ public class DailyLog {
         return this;
     }
 
-    /** 触发时HTTP请求速率
-     * 
-     * @return triggerHttpPps */
+    /**
+     * 触发时HTTP请求速率
+     * @return triggerHttpPps
+     */
     public Integer getTriggerHttpPps() {
         return triggerHttpPps;
     }
@@ -168,7 +176,10 @@ public class DailyLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

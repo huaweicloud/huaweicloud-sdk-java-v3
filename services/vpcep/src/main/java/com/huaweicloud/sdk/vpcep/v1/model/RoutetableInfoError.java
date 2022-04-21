@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 当修改终端节点子网路由表失败 时，返回错误提示信息 */
+/**
+ * 当修改终端节点子网路由表失败 时，返回错误提示信息
+ */
 public class RoutetableInfoError {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class RoutetableInfoError {
         return this;
     }
 
-    /** 绑定终端节点子网路由表失败信息。
-     * 
-     * @return bindFailed */
+    /**
+     * 绑定终端节点子网路由表失败信息。
+     * @return bindFailed
+     */
     public List<RoutetableInfoErrorDetial> getBindFailed() {
         return bindFailed;
     }
@@ -74,9 +77,10 @@ public class RoutetableInfoError {
         return this;
     }
 
-    /** 解绑终端节点子网路由表失败信息。
-     * 
-     * @return unbindFailed */
+    /**
+     * 解绑终端节点子网路由表失败信息。
+     * @return unbindFailed
+     */
     public List<RoutetableInfoErrorDetial> getUnbindFailed() {
         return unbindFailed;
     }
@@ -113,7 +117,10 @@ public class RoutetableInfoError {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

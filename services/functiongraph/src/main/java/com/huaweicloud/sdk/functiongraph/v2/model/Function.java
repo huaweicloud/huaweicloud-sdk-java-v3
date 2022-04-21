@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数信息 */
+/**
+ * 函数信息
+ */
 public class Function {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Function {
         return this;
     }
 
-    /** 函数名称，在单个流程中，名称需要唯一
-     * 
-     * @return name */
+    /**
+     * 函数名称，在单个流程中，名称需要唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class Function {
         return this;
     }
 
-    /** 函数调用URN
-     * 
-     * @return operation */
+    /**
+     * 函数调用URN
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -60,9 +64,10 @@ public class Function {
         return this;
     }
 
-    /** 函数扩展属性，由用户自己定制
-     * 
-     * @return metadata */
+    /**
+     * 函数扩展属性，由用户自己定制
+     * @return metadata
+     */
     public Object getMetadata() {
         return metadata;
     }
@@ -100,7 +105,10 @@ public class Function {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

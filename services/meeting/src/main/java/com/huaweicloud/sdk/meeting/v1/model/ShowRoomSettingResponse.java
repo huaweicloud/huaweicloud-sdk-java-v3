@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRoomSettingResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播介绍, 最大不超过500个字符
-     * 
-     * @return roomIntroduce */
+    /**
+     * 直播介绍, 最大不超过500个字符
+     * @return roomIntroduce
+     */
     public String getRoomIntroduce() {
         return roomIntroduce;
     }
@@ -65,9 +68,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业Logo（文件id）,不超过32字符
-     * 
-     * @return cropLogoId */
+    /**
+     * 企业Logo（文件id）,不超过32字符
+     * @return cropLogoId
+     */
     public String getCropLogoId() {
         return cropLogoId;
     }
@@ -81,9 +85,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 封面内容(文件id)，不超过32字符
-     * 
-     * @return coverPictureId */
+    /**
+     * 封面内容(文件id)，不超过32字符
+     * @return coverPictureId
+     */
     public String getCoverPictureId() {
         return coverPictureId;
     }
@@ -97,9 +102,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 显示观众人数的模式。默认值为real_time - none:不显示 - real_time:实时显示
-     * 
-     * @return showAudienceMode */
+    /**
+     * 显示观众人数的模式。默认值为real_time - none:不显示 - real_time:实时显示 
+     * @return showAudienceMode
+     */
     public String getShowAudienceMode() {
         return showAudienceMode;
     }
@@ -113,9 +119,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 智能倍增开关。默认值为Y - Y 开启智能倍增 - N 关闭智能倍增
-     * 
-     * @return isRedoubleOpen */
+    /**
+     * 智能倍增开关。默认值为Y - Y 开启智能倍增 - N 关闭智能倍增 
+     * @return isRedoubleOpen
+     */
     public String getIsRedoubleOpen() {
         return isRedoubleOpen;
     }
@@ -129,9 +136,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 基础设置人数(直播间没人时显示的人数). 取值范围为[0, 10000]。默认值为0
-     * 
-     * @return baseAudienceCount */
+    /**
+     * 基础设置人数(直播间没人时显示的人数). 取值范围为[0, 10000]。默认值为0
+     * @return baseAudienceCount
+     */
     public Integer getBaseAudienceCount() {
         return baseAudienceCount;
     }
@@ -145,9 +153,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    /** 设置倍数(基础人数+真实人数*倍数). 取值范围为[0, 10]，取1位小数。默认值为1.0
-     * 
-     * @return multiple */
+    /**
+     * 设置倍数(基础人数+真实人数*倍数). 取值范围为[0, 10]，取1位小数。默认值为1.0
+     * @return multiple
+     */
     public Double getMultiple() {
         return multiple;
     }
@@ -200,7 +209,10 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

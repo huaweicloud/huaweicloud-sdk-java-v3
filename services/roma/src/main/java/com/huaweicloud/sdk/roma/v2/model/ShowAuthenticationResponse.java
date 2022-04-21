@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAuthenticationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowAuthenticationResponse extends SdkResponse {
         return this;
     }
 
-    /** 一型一密/一机一密的用户名
-     * 
-     * @return userName */
+    /**
+     * 一型一密/一机一密的用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -40,9 +43,10 @@ public class ShowAuthenticationResponse extends SdkResponse {
         return this;
     }
 
-    /** 一型一密/一机一密的密码，输入要求：至少1个数字，1个大写字母，1个小写字母，1个特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
-     * 
-     * @return password */
+    /**
+     * 一型一密/一机一密的密码，输入要求：至少1个数字，1个大写字母，1个小写字母，1个特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -79,7 +83,10 @@ public class ShowAuthenticationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

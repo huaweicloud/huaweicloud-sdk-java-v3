@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteScalingInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class DeleteScalingInstanceRequest {
 
     private String instanceId;
 
-    /** 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。 */
+    /**
+     * 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
+     */
     public static final class InstanceDeleteEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final InstanceDeleteEnum YES = new InstanceDeleteEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final InstanceDeleteEnum NO = new InstanceDeleteEnum("no");
 
         private static final Map<String, InstanceDeleteEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class DeleteScalingInstanceRequest {
         return this;
     }
 
-    /** 实例ID，可参考[查询弹性伸缩组中的实例列表](https://support.huaweicloud.com/api-as/as_06_0301.html)获取。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可参考[查询弹性伸缩组中的实例列表](https://support.huaweicloud.com/api-as/as_06_0301.html)获取。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -115,9 +124,10 @@ public class DeleteScalingInstanceRequest {
         return this;
     }
 
-    /** 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
-     * 
-     * @return instanceDelete */
+    /**
+     * 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
+     * @return instanceDelete
+     */
     public InstanceDeleteEnum getInstanceDelete() {
         return instanceDelete;
     }
@@ -154,7 +164,10 @@ public class DeleteScalingInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

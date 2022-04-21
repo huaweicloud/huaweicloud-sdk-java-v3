@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 工作项操作的用户 */
+/**
+ * 工作项操作的用户
+ */
 public class IssueRecordV4User {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IssueRecordV4User {
         return this;
     }
 
-    /** 用户数字id
-     * 
-     * @return userNumId */
+    /**
+     * 用户数字id
+     * @return userNumId
+     */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -49,9 +52,10 @@ public class IssueRecordV4User {
         return this;
     }
 
-    /** 登录名
-     * 
-     * @return userName */
+    /**
+     * 登录名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -65,9 +69,10 @@ public class IssueRecordV4User {
         return this;
     }
 
-    /** 昵称
-     * 
-     * @return nickName */
+    /**
+     * 昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -81,9 +86,10 @@ public class IssueRecordV4User {
         return this;
     }
 
-    /** 用户32位的uuid
-     * 
-     * @return userId */
+    /**
+     * 用户32位的uuid
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -124,7 +130,10 @@ public class IssueRecordV4User {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AddDeviceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,9 +91,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端名称。
-     * 
-     * @return name */
+    /**
+     * 终端名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -105,9 +108,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端类型，区分自研和第三方终端。
-     * 
-     * @return type */
+    /**
+     * 终端类型，区分自研和第三方终端。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -121,9 +125,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
-     * 
-     * @return model */
+    /**
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -137,9 +142,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端SN号，仅可包含数字、字母和下划线。
-     * 
-     * @return sn */
+    /**
+     * 终端SN号，仅可包含数字、字母和下划线。
+     * @return sn
+     */
     public String getSn() {
         return sn;
     }
@@ -153,9 +159,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 硬终端对应的内置账号。
-     * 
-     * @return account */
+    /**
+     * 硬终端对应的内置账号。
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -169,9 +176,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端绑定的号码
-     * 
-     * @return number */
+    /**
+     * 终端绑定的号码
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -185,9 +193,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂
-     * 
-     * @return prjCodeMode */
+    /**
+     * 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂 
+     * @return prjCodeMode
+     */
     public Integer getPrjCodeMode() {
         return prjCodeMode;
     }
@@ -201,9 +210,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门编号
-     * 
-     * @return deptCode */
+    /**
+     * 部门编号
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -217,9 +227,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -233,9 +244,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门名称路径
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门名称路径
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -249,9 +261,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 手机号
-     * 
-     * @return phone */
+    /**
+     * 手机号
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -265,9 +278,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 手机号所属的国家
-     * 
-     * @return country */
+    /**
+     * 手机号所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -281,9 +295,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 邮箱
-     * 
-     * @return email */
+    /**
+     * 邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -297,9 +312,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端描述
-     * 
-     * @return description */
+    /**
+     * 终端描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -313,9 +329,10 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端状态 * 0、正常 * 1、停用\"
-     * 
-     * @return status */
+    /**
+     * 终端状态 * 0、正常 * 1、停用\" 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -390,7 +407,10 @@ public class AddDeviceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

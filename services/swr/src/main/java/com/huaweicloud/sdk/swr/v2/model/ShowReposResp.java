@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowReposResp */
+/**
+ * ShowReposResp
+ */
 public class ShowReposResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return name */
+    /**
+     * 仓库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -122,9 +125,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库类型（计划改造，每个镜像会有多个lable标示）
-     * 
-     * @return category */
+    /**
+     * 仓库类型（计划改造，每个镜像会有多个lable标示）
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -138,9 +142,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库描述信息
-     * 
-     * @return description */
+    /**
+     * 仓库描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -154,9 +159,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库大小
-     * 
-     * @return size */
+    /**
+     * 仓库大小 
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -170,9 +176,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库是否为公共仓库，值为true或false
-     * 
-     * @return isPublic */
+    /**
+     * 仓库是否为公共仓库，值为true或false
+     * @return isPublic
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -186,9 +193,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库中镜像个数，0 ~ 9223372036854775807
-     * 
-     * @return numImages */
+    /**
+     * 仓库中镜像个数，0 ~ 9223372036854775807
+     * @return numImages
+     */
     public Long getNumImages() {
         return numImages;
     }
@@ -202,9 +210,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库下载次数
-     * 
-     * @return numDownload */
+    /**
+     * 仓库下载次数
+     * @return numDownload
+     */
     public Long getNumDownload() {
         return numDownload;
     }
@@ -218,9 +227,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return createdAt */
+    /**
+     * 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -234,9 +244,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return updatedAt */
+    /**
+     * 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -250,9 +261,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库logo地址（暂时未用）
-     * 
-     * @return logo */
+    /**
+     * 仓库logo地址（暂时未用）
+     * @return logo
+     */
     public String getLogo() {
         return logo;
     }
@@ -266,9 +278,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 仓库logo图片的URL，URL格式。（暂时未用）
-     * 
-     * @return url */
+    /**
+     * 仓库logo图片的URL，URL格式。（暂时未用）
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -282,9 +295,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
-     * 
-     * @return path */
+    /**
+     * 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -298,9 +312,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
-     * 
-     * @return internalPath */
+    /**
+     * 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
+     * @return internalPath
+     */
     public String getInternalPath() {
         return internalPath;
     }
@@ -314,9 +329,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -330,9 +346,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 租户的命名空间名称
-     * 
-     * @return namespace */
+    /**
+     * 租户的命名空间名称
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -362,9 +379,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 镜像版本列表
-     * 
-     * @return tags */
+    /**
+     * 镜像版本列表
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -378,9 +396,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 查询他人共享镜像：共享是否过期 查询我共享的镜像：默认为false,无意义
-     * 
-     * @return status */
+    /**
+     * 查询他人共享镜像：共享是否过期 查询我共享的镜像：默认为false,无意义
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -394,9 +413,10 @@ public class ShowReposResp {
         return this;
     }
 
-    /** 总记录条数
-     * 
-     * @return totalRange */
+    /**
+     * 总记录条数
+     * @return totalRange
+     */
     public Long getTotalRange() {
         return totalRange;
     }
@@ -477,7 +497,10 @@ public class ShowReposResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

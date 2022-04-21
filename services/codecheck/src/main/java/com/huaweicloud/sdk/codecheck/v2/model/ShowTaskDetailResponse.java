@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTaskDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,9 +152,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskId */
+    /**
+     * 任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -166,9 +169,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务名字
-     * 
-     * @return taskName */
+    /**
+     * 任务名字
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -182,9 +186,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建者id
-     * 
-     * @return creatorId */
+    /**
+     * 创建者id
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -198,9 +203,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓地址
-     * 
-     * @return gitUrl */
+    /**
+     * 代码仓地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -214,9 +220,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓分支,如果是MR模式，为源分支
-     * 
-     * @return gitBranch */
+    /**
+     * 代码仓分支,如果是MR模式，为源分支
+     * @return gitBranch
+     */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -230,9 +237,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 上一次检查时间
-     * 
-     * @return lastCheckTime */
+    /**
+     * 上一次检查时间
+     * @return lastCheckTime
+     */
     public String getLastCheckTime() {
         return lastCheckTime;
     }
@@ -246,9 +254,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码总行数
-     * 
-     * @return codeLineTotal */
+    /**
+     * 代码总行数
+     * @return codeLineTotal
+     */
     public Integer getCodeLineTotal() {
         return codeLineTotal;
     }
@@ -262,9 +271,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码有效行数
-     * 
-     * @return codeLine */
+    /**
+     * 代码有效行数
+     * @return codeLine
+     */
     public Integer getCodeLine() {
         return codeLine;
     }
@@ -278,9 +288,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码质量
-     * 
-     * @return codeQuality */
+    /**
+     * 代码质量
+     * @return codeQuality
+     */
     public BigDecimal getCodeQuality() {
         return codeQuality;
     }
@@ -294,9 +305,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 问题数
-     * 
-     * @return issueCount */
+    /**
+     * 问题数
+     * @return issueCount
+     */
     public Integer getIssueCount() {
         return issueCount;
     }
@@ -310,9 +322,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 危险系数
-     * 
-     * @return riskCoefficient */
+    /**
+     * 危险系数
+     * @return riskCoefficient
+     */
     public BigDecimal getRiskCoefficient() {
         return riskCoefficient;
     }
@@ -326,9 +339,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 重复比例
-     * 
-     * @return duplicationRatio */
+    /**
+     * 重复比例
+     * @return duplicationRatio
+     */
     public String getDuplicationRatio() {
         return duplicationRatio;
     }
@@ -342,9 +356,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 复杂度
-     * 
-     * @return complexityCount */
+    /**
+     * 复杂度
+     * @return complexityCount
+     */
     public Integer getComplexityCount() {
         return complexityCount;
     }
@@ -358,9 +373,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 重复行数
-     * 
-     * @return duplicatedLines */
+    /**
+     * 重复行数
+     * @return duplicatedLines
+     */
     public Integer getDuplicatedLines() {
         return duplicatedLines;
     }
@@ -374,9 +390,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 注释行数
-     * 
-     * @return commentLines */
+    /**
+     * 注释行数
+     * @return commentLines
+     */
     public Integer getCommentLines() {
         return commentLines;
     }
@@ -390,9 +407,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 注释比例
-     * 
-     * @return commentRatio */
+    /**
+     * 注释比例
+     * @return commentRatio
+     */
     public String getCommentRatio() {
         return commentRatio;
     }
@@ -406,9 +424,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 重复块
-     * 
-     * @return duplicatedBlocks */
+    /**
+     * 重复块
+     * @return duplicatedBlocks
+     */
     public Integer getDuplicatedBlocks() {
         return duplicatedBlocks;
     }
@@ -422,9 +441,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 上次执行时间
-     * 
-     * @return lastExecTime */
+    /**
+     * 上次执行时间
+     * @return lastExecTime
+     */
     public String getLastExecTime() {
         return lastExecTime;
     }
@@ -438,9 +458,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 检查类型
-     * 
-     * @return checkType */
+    /**
+     * 检查类型
+     * @return checkType
+     */
     public String getCheckType() {
         return checkType;
     }
@@ -454,9 +475,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -470,9 +492,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码平均复杂度
-     * 
-     * @return cyclomaticComplexityPerMethod */
+    /**
+     * 代码平均复杂度
+     * @return cyclomaticComplexityPerMethod
+     */
     public String getCyclomaticComplexityPerMethod() {
         return cyclomaticComplexityPerMethod;
     }
@@ -486,9 +509,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 致命问题数
-     * 
-     * @return criticalCount */
+    /**
+     * 致命问题数
+     * @return criticalCount
+     */
     public String getCriticalCount() {
         return criticalCount;
     }
@@ -502,9 +526,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 严重问题数
-     * 
-     * @return majorCount */
+    /**
+     * 严重问题数
+     * @return majorCount
+     */
     public String getMajorCount() {
         return majorCount;
     }
@@ -518,9 +543,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 一般问题数
-     * 
-     * @return minorCount */
+    /**
+     * 一般问题数
+     * @return minorCount
+     */
     public String getMinorCount() {
         return minorCount;
     }
@@ -534,9 +560,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 提示问题数
-     * 
-     * @return suggestionCount */
+    /**
+     * 提示问题数
+     * @return suggestionCount
+     */
     public String getSuggestionCount() {
         return suggestionCount;
     }
@@ -550,9 +577,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 门禁质量是否通过
-     * 
-     * @return isAccess */
+    /**
+     * 门禁质量是否通过
+     * @return isAccess
+     */
     public String getIsAccess() {
         return isAccess;
     }
@@ -566,9 +594,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务触发方式
-     * 
-     * @return triggerType */
+    /**
+     * 任务触发方式
+     * @return triggerType
+     */
     public String getTriggerType() {
         return triggerType;
     }
@@ -683,7 +712,10 @@ public class ShowTaskDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

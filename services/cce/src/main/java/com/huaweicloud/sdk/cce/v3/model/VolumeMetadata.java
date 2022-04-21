@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云硬盘加密信息，仅在创建节点系统盘或数据盘需加密时须填写。 */
+/**
+ * 云硬盘加密信息，仅在创建节点系统盘或数据盘需加密时须填写。
+ */
 public class VolumeMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class VolumeMetadata {
         return this;
     }
 
-    /** 表示云硬盘加密功能的字段，'0'代表不加密，'1'代表加密。 该字段不存在时，云硬盘默认为不加密。
-     * 
-     * @return systemEncrypted */
+    /**
+     * 表示云硬盘加密功能的字段，'0'代表不加密，'1'代表加密。  该字段不存在时，云硬盘默认为不加密。
+     * @return systemEncrypted
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__encrypted")
     public String getSystemEncrypted() {
@@ -41,9 +44,10 @@ public class VolumeMetadata {
         return this;
     }
 
-    /** 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。
-     * 
-     * @return systemCmkid */
+    /**
+     * 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。
+     * @return systemCmkid
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__cmkid")
     public String getSystemCmkid() {
@@ -82,7 +86,10 @@ public class VolumeMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

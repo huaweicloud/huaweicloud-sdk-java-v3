@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 公网IP绑定的带宽信息 */
+/**
+ * 公网IP绑定的带宽信息
+ */
 public class PublicipBandwidthInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 带宽ID
-     * 
-     * @return id */
+    /**
+     * 带宽ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,12 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 功能描述：带宽大小 取值范围：默认5Mbit/s~2000Mbit/s minimum: 0 maximum: 99999
-     * 
-     * @return size */
+    /**
+     * 功能描述：带宽大小 取值范围：默认5Mbit/s~2000Mbit/s
+     * minimum: 0
+     * maximum: 99999
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -75,9 +81,10 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 功能说明：带宽类型,标识是否是共享带宽 取值范围：PER，WHOLE。 PER：独享带宽 WHOLE：共享带宽 约束：其中IPv6暂不支持WHOLE类型带宽。
-     * 
-     * @return shareType */
+    /**
+     * 功能说明：带宽类型,标识是否是共享带宽 取值范围：PER，WHOLE。   PER：独享带宽   WHOLE：共享带宽 约束：其中IPv6暂不支持WHOLE类型带宽。
+     * @return shareType
+     */
     public String getShareType() {
         return shareType;
     }
@@ -91,9 +98,10 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 功能说明：按流量计费还是按带宽计费 取值范围： bandwidth：按带宽计费 traffic：按流量计费 95peak_plus：按增强型95计费
-     * 
-     * @return chargeMode */
+    /**
+     * 功能说明：按流量计费还是按带宽计费 取值范围： bandwidth：按带宽计费 traffic：按流量计费 95peak_plus：按增强型95计费
+     * @return chargeMode
+     */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -107,9 +115,10 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 功能说明：带宽名称 取值范围：1-64个字符,支持数字、字母、中文、_(下划线)、-(中划线)、.(点)
-     * 
-     * @return name */
+    /**
+     * 功能说明：带宽名称 取值范围：1-64个字符,支持数字、字母、中文、_(下划线)、-(中划线)、.(点)
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -123,9 +132,10 @@ public class PublicipBandwidthInfo {
         return this;
     }
 
-    /** 功能说明：账单信息。如果billinginfo不为空，说明是包周期的带宽
-     * 
-     * @return billingInfo */
+    /**
+     * 功能说明：账单信息。如果billinginfo不为空，说明是包周期的带宽
+     * @return billingInfo
+     */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -170,7 +180,10 @@ public class PublicipBandwidthInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryCouponQuotasReqExt */
+/**
+ * QueryCouponQuotasReqExt
+ */
 public class QueryCouponQuotasReqExt {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +94,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 优惠券额度ID列表。
-     * 
-     * @return quotaIds */
+    /**
+     * 优惠券额度ID列表。
+     * @return quotaIds
+     */
     public List<String> getQuotaIds() {
         return quotaIds;
     }
@@ -124,9 +127,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 优惠券额度状态列表。 0：正常3：失效（过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放优惠券）5：冻结
-     * 
-     * @return quotaStatusList */
+    /**
+     * 优惠券额度状态列表。 0：正常3：失效（过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放优惠券）5：冻结
+     * @return quotaStatusList
+     */
     public List<Integer> getQuotaStatusList() {
         return quotaStatusList;
     }
@@ -140,9 +144,12 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 优惠券额度的类型： 0：代金券额度1：现金券额度 minimum: 0 maximum: 1
-     * 
-     * @return quotaType */
+    /**
+     * 优惠券额度的类型： 0：代金券额度1：现金券额度
+     * minimum: 0
+     * maximum: 1
+     * @return quotaType
+     */
     public Integer getQuotaType() {
         return quotaType;
     }
@@ -156,10 +163,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 创建时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出创建时间大于这个时间的记录。
-     * 
-     * @return createTimeBegin */
+    /**
+     * 创建时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出创建时间大于这个时间的记录。
+     * @return createTimeBegin
+     */
     public String getCreateTimeBegin() {
         return createTimeBegin;
     }
@@ -173,10 +180,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 创建时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出创建时间小于这个时间的记录。
-     * 
-     * @return createTimeEnd */
+    /**
+     * 创建时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出创建时间小于这个时间的记录。
+     * @return createTimeEnd
+     */
     public String getCreateTimeEnd() {
         return createTimeEnd;
     }
@@ -190,10 +197,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 生效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出生效时间大于这个时间的记录。
-     * 
-     * @return effectiveTimeBegin */
+    /**
+     * 生效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出生效时间大于这个时间的记录。
+     * @return effectiveTimeBegin
+     */
     public String getEffectiveTimeBegin() {
         return effectiveTimeBegin;
     }
@@ -207,10 +214,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 生效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出生效时间小于这个时间的记录。
-     * 
-     * @return effectiveTimeEnd */
+    /**
+     * 生效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出生效时间小于这个时间的记录。
+     * @return effectiveTimeEnd
+     */
     public String getEffectiveTimeEnd() {
         return effectiveTimeEnd;
     }
@@ -224,10 +231,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 失效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出失效时间大于这个时间的记录。
-     * 
-     * @return expireTimeBegin */
+    /**
+     * 失效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出失效时间大于这个时间的记录。
+     * @return expireTimeBegin
+     */
     public String getExpireTimeBegin() {
         return expireTimeBegin;
     }
@@ -241,10 +248,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 失效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 输入这个条件，会查询出失效时间小于这个时间的记录。
-     * 
-     * @return expireTimeEnd */
+    /**
+     * 失效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出失效时间小于这个时间的记录。
+     * @return expireTimeEnd
+     */
     public String getExpireTimeEnd() {
         return expireTimeEnd;
     }
@@ -258,10 +265,12 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
-     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 2147483646
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。  说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483646
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -275,9 +284,12 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 每次查询记录数。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询记录数。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -291,9 +303,10 @@ public class QueryCouponQuotasReqExt {
         return this;
     }
 
-    /** 精英服务商（二级经销商）ID。 华为云伙伴能力中心（一级经销商）查询精英服务商的优惠券额度时，需要携带该参数；否则只能查询自己的优惠券额度。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商（二级经销商）ID。 华为云伙伴能力中心（一级经销商）查询精英服务商的优惠券额度时，需要携带该参数；否则只能查询自己的优惠券额度。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -361,7 +374,10 @@ public class QueryCouponQuotasReqExt {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListAvailableZonesRespAvailableZones */
+/**
+ * ListAvailableZonesRespAvailableZones
+ */
 public class ListAvailableZonesRespAvailableZones {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 是否售罄。
-     * 
-     * @return soldOut */
+    /**
+     * 是否售罄。
+     * @return soldOut
+     */
     public Boolean getSoldOut() {
         return soldOut;
     }
@@ -74,9 +77,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 可用区ID。
-     * 
-     * @return id */
+    /**
+     * 可用区ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -90,9 +94,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 可用区编码。
-     * 
-     * @return code */
+    /**
+     * 可用区编码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -106,9 +111,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 可用区名称。
-     * 
-     * @return name */
+    /**
+     * 可用区名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -122,9 +128,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 可用区端口号。
-     * 
-     * @return port */
+    /**
+     * 可用区端口号。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -138,9 +145,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 分区上是否还有可用资源。
-     * 
-     * @return resourceAvailability */
+    /**
+     * 分区上是否还有可用资源。
+     * @return resourceAvailability
+     */
     public String getResourceAvailability() {
         return resourceAvailability;
     }
@@ -154,9 +162,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 是否为默认可用区。
-     * 
-     * @return defaultAz */
+    /**
+     * 是否为默认可用区。
+     * @return defaultAz
+     */
     public Boolean getDefaultAz() {
         return defaultAz;
     }
@@ -170,9 +179,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 剩余时间。
-     * 
-     * @return remainTime */
+    /**
+     * 剩余时间。
+     * @return remainTime
+     */
     public Long getRemainTime() {
         return remainTime;
     }
@@ -186,9 +196,10 @@ public class ListAvailableZonesRespAvailableZones {
         return this;
     }
 
-    /** 是否支持IPv6。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 是否支持IPv6。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -240,7 +251,10 @@ public class ListAvailableZonesRespAvailableZones {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

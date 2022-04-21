@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** NodeCert */
+/**
+ * NodeCert
+ */
 public class NodeCert {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书id
-     * 
-     * @return id */
+    /**
+     * 证书id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -65,9 +68,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书名称
-     * 
-     * @return name */
+    /**
+     * 证书名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +85,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书的描述
-     * 
-     * @return description */
+    /**
+     * 证书的描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -97,9 +102,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书的创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 证书的创建时间
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -113,9 +119,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 节点id
-     * 
-     * @return nodeId */
+    /**
+     * 节点id
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -129,9 +136,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书类型，包含： - system：创建节点时会默认创建一套系统证书； - application：应用证书； - device：设备证书；
-     * 
-     * @return type */
+    /**
+     * 证书类型，包含： - system：创建节点时会默认创建一套系统证书； - application：应用证书； - device：设备证书；
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -145,9 +153,10 @@ public class NodeCert {
         return this;
     }
 
-    /** 证书序列号
-     * 
-     * @return serialNum */
+    /**
+     * 证书序列号
+     * @return serialNum
+     */
     public String getSerialNum() {
         return serialNum;
     }
@@ -191,7 +200,10 @@ public class NodeCert {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

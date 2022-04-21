@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShadowValue */
+/**
+ * ShadowValue
+ */
 public class ShadowValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShadowValue {
         return this;
     }
 
-    /** 属性名称
-     * 
-     * @return propertyName */
+    /**
+     * 属性名称
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -44,9 +47,10 @@ public class ShadowValue {
         return this;
     }
 
-    /** 属性最后一次上报值
-     * 
-     * @return propertyValue */
+    /**
+     * 属性最后一次上报值
+     * @return propertyValue
+     */
     public String getPropertyValue() {
         return propertyValue;
     }
@@ -60,9 +64,12 @@ public class ShadowValue {
         return this;
     }
 
-    /** 属性最后一次上报时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return propertyUpdatedDate */
+    /**
+     * 属性最后一次上报时间，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return propertyUpdatedDate
+     */
     public Long getPropertyUpdatedDate() {
         return propertyUpdatedDate;
     }
@@ -101,7 +108,10 @@ public class ShadowValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

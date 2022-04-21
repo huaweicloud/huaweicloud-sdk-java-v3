@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流计算 */
+/**
+ * 流计算
+ */
 public class DTStreamRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DTStreamRequest {
         return this;
     }
 
-    /** 输入参数，最多支持10个
-     * 
-     * @return inputs */
+    /**
+     * 输入参数，最多支持10个
+     * @return inputs
+     */
     public List<InputRequest> getInputs() {
         return inputs;
     }
@@ -74,7 +77,10 @@ public class DTStreamRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

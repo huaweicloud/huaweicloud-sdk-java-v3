@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FilesResponseInfo */
+/**
+ * FilesResponseInfo
+ */
 public class FilesResponseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件名称
-     * 
-     * @return fileName */
+    /**
+     * 文件名称
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -69,9 +72,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return filePath */
+    /**
+     * 文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -85,9 +89,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件大小
-     * 
-     * @return size */
+    /**
+     * 文件大小
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -101,9 +106,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 编码类型
-     * 
-     * @return encoding */
+    /**
+     * 编码类型
+     * @return encoding
+     */
     public String getEncoding() {
         return encoding;
     }
@@ -117,9 +123,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 分支名称
-     * 
-     * @return ref */
+    /**
+     * 分支名称
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -133,9 +140,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件块id
-     * 
-     * @return blobId */
+    /**
+     * 文件块id
+     * @return blobId
+     */
     public String getBlobId() {
         return blobId;
     }
@@ -149,9 +157,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件类型
-     * 
-     * @return fileType */
+    /**
+     * 文件类型
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -165,9 +174,10 @@ public class FilesResponseInfo {
         return this;
     }
 
-    /** 文件内容
-     * 
-     * @return content */
+    /**
+     * 文件内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -215,7 +225,10 @@ public class FilesResponseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

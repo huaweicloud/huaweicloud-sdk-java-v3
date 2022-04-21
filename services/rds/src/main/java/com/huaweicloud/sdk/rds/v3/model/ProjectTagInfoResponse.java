@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目标签信息。 */
+/**
+ * 项目标签信息。
+ */
 public class ProjectTagInfoResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ProjectTagInfoResponse {
         return this;
     }
 
-    /** 标签键。
-     * 
-     * @return key */
+    /**
+     * 标签键。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class ProjectTagInfoResponse {
         return this;
     }
 
-    /** 标签值列表。
-     * 
-     * @return values */
+    /**
+     * 标签值列表。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -97,7 +101,10 @@ public class ProjectTagInfoResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

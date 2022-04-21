@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 切换会议显示策略请求体 */
+/**
+ * 切换会议显示策略请求体
+ */
 public class RestCustomMultiPictureBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,12 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** 是否为手工设置多画面： 0： 系统自动多画面 1： 手工设置多画面 minimum: 0 maximum: 1
-     * 
-     * @return manualSet */
+    /**
+     * 是否为手工设置多画面： 0： 系统自动多画面 1： 手工设置多画面
+     * minimum: 0
+     * maximum: 1
+     * @return manualSet
+     */
     public Integer getManualSet() {
         return manualSet;
     }
@@ -71,9 +76,10 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** Get picLayoutInfo
-     * 
-     * @return picLayoutInfo */
+    /**
+     * Get picLayoutInfo
+     * @return picLayoutInfo
+     */
     public PicLayoutInfo getPicLayoutInfo() {
         return picLayoutInfo;
     }
@@ -87,9 +93,10 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** 画面类型
-     * 
-     * @return imageType */
+    /**
+     * 画面类型
+     * @return imageType
+     */
     public String getImageType() {
         return imageType;
     }
@@ -119,9 +126,10 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** 子画面列表
-     * 
-     * @return subscriberInPics */
+    /**
+     * 子画面列表
+     * @return subscriberInPics
+     */
     public List<RestSubscriberInPic> getSubscriberInPics() {
         return subscriberInPics;
     }
@@ -135,9 +143,12 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** 表示轮询间隔，单位：秒。 当同一个子画面中包含有多个视频源时，此参数有效 minimum: 10 maximum: 120
-     * 
-     * @return switchTime */
+    /**
+     * 表示轮询间隔，单位：秒。 当同一个子画面中包含有多个视频源时，此参数有效
+     * minimum: 10
+     * maximum: 120
+     * @return switchTime
+     */
     public Integer getSwitchTime() {
         return switchTime;
     }
@@ -151,9 +162,10 @@ public class RestCustomMultiPictureBody {
         return this;
     }
 
-    /** 多画面仅保存
-     * 
-     * @return multiPicSaveOnly */
+    /**
+     * 多画面仅保存
+     * @return multiPicSaveOnly
+     */
     public Boolean getMultiPicSaveOnly() {
         return multiPicSaveOnly;
     }
@@ -198,7 +210,10 @@ public class RestCustomMultiPictureBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单元格内文字段列表。 */
+/**
+ * 单元格内文字段列表。 
+ */
 public class WordsListIem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class WordsListIem {
         return this;
     }
 
-    /** 文字块识别结果。
-     * 
-     * @return words */
+    /**
+     * 文字块识别结果。 
+     * @return words
+     */
     public String getWords() {
         return words;
     }
@@ -47,9 +50,10 @@ public class WordsListIem {
         return this;
     }
 
-    /** 字段的平均置信度，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 字段的平均置信度，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -79,9 +83,10 @@ public class WordsListIem {
         return this;
     }
 
-    /** 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
+    /**
+     * 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -120,7 +125,10 @@ public class WordsListIem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

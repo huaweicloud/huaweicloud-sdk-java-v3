@@ -54,9 +54,10 @@ public class CompareTaskListResult {
         return this;
     }
 
-    /** 对比任务列表。
-     * 
-     * @return compareTaskList */
+    /**
+     * 对比任务列表。
+     * @return compareTaskList
+     */
     public List<CompareTaskList> getCompareTaskList() {
         return compareTaskList;
     }
@@ -70,9 +71,10 @@ public class CompareTaskListResult {
         return this;
     }
 
-    /** 对比任务列表总数。
-     * 
-     * @return compareTaskListCount */
+    /**
+     * 对比任务列表总数。
+     * @return compareTaskListCount
+     */
     public Integer getCompareTaskListCount() {
         return compareTaskListCount;
     }
@@ -86,9 +88,10 @@ public class CompareTaskListResult {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -102,9 +105,10 @@ public class CompareTaskListResult {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -145,7 +149,10 @@ public class CompareTaskListResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,21 +11,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-/** data_volumes字段数据结构说明 */
+/**
+ * data_volumes字段数据结构说明
+ */
 public class DataVolumes {
 
-    /** 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型约束：在专属云中申请裸金属服务器时，须使用专属企业存储，此时该字段前缀必须是DESS_
-     * 。枚举值如下：DESS_SAS_ISCSI：普通I/O企业存储DESS_SAS_FC：普通I/O企业存储（低延时）DESS_MIX_ISCSI：高I/O企业存储DESS_MIX_FC：高I/O企业存储（低延时）DESS_SSD_ISCSI：超高I/O企业存储DESS_SSD_FC：超高I/O企业存储（低延时）所有用户，包年包月场景下，不能挂载DESS卷。
-     * 说明：企业存储支持的存储类型说明可以从管理控制台或参考《专属企业存储服务用户指南》的“申请专属企业存储”“申请专属企业存储”章节获取。 */
+    /**
+     * 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型约束：在专属云中申请裸金属服务器时，须使用专属企业存储，此时该字段前缀必须是DESS_ 。枚举值如下：DESS_SAS_ISCSI：普通I/O企业存储DESS_SAS_FC：普通I/O企业存储（低延时）DESS_MIX_ISCSI：高I/O企业存储DESS_MIX_FC：高I/O企业存储（低延时）DESS_SSD_ISCSI：超高I/O企业存储DESS_SSD_FC：超高I/O企业存储（低延时）所有用户，包年包月场景下，不能挂载DESS卷。 说明：企业存储支持的存储类型说明可以从管理控制台或参考《专属企业存储服务用户指南》的“申请专属企业存储”“申请专属企业存储”章节获取。
+     */
     public static final class VolumetypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,11 +119,14 @@ public class DataVolumes {
 
     private UUID clusterId;
 
-    /** 裸金属服务器数据盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。
-     * 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。 */
+    /**
+     * 裸金属服务器数据盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
+     */
     public static final class ClusterTypeEnum {
 
-        /** Enum DSS for value: "DSS" */
+        /**
+         * Enum DSS for value: "DSS"
+         */
         public static final ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
 
         private static final Map<String, ClusterTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -189,11 +200,10 @@ public class DataVolumes {
         return this;
     }
 
-    /** 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型约束：在专属云中申请裸金属服务器时，须使用专属企业存储，此时该字段前缀必须是DESS_
-     * 。枚举值如下：DESS_SAS_ISCSI：普通I/O企业存储DESS_SAS_FC：普通I/O企业存储（低延时）DESS_MIX_ISCSI：高I/O企业存储DESS_MIX_FC：高I/O企业存储（低延时）DESS_SSD_ISCSI：超高I/O企业存储DESS_SSD_FC：超高I/O企业存储（低延时）所有用户，包年包月场景下，不能挂载DESS卷。
-     * 说明：企业存储支持的存储类型说明可以从管理控制台或参考《专属企业存储服务用户指南》的“申请专属企业存储”“申请专属企业存储”章节获取。
-     * 
-     * @return volumetype */
+    /**
+     * 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型约束：在专属云中申请裸金属服务器时，须使用专属企业存储，此时该字段前缀必须是DESS_ 。枚举值如下：DESS_SAS_ISCSI：普通I/O企业存储DESS_SAS_FC：普通I/O企业存储（低延时）DESS_MIX_ISCSI：高I/O企业存储DESS_MIX_FC：高I/O企业存储（低延时）DESS_SSD_ISCSI：超高I/O企业存储DESS_SSD_FC：超高I/O企业存储（低延时）所有用户，包年包月场景下，不能挂载DESS卷。 说明：企业存储支持的存储类型说明可以从管理控制台或参考《专属企业存储服务用户指南》的“申请专属企业存储”“申请专属企业存储”章节获取。
+     * @return volumetype
+     */
     public VolumetypeEnum getVolumetype() {
         return volumetype;
     }
@@ -207,9 +217,10 @@ public class DataVolumes {
         return this;
     }
 
-    /** 数据盘大小，容量单位为GB，输入大小范围为[10-32768]。
-     * 
-     * @return size */
+    /**
+     * 数据盘大小，容量单位为GB，输入大小范围为[10-32768]。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -223,9 +234,10 @@ public class DataVolumes {
         return this;
     }
 
-    /** 是否为共享磁盘。true为共享盘，false为普通云硬盘
-     * 
-     * @return shareable */
+    /**
+     * 是否为共享磁盘。true为共享盘，false为普通云硬盘
+     * @return shareable
+     */
     public Boolean getShareable() {
         return shareable;
     }
@@ -239,9 +251,10 @@ public class DataVolumes {
         return this;
     }
 
-    /** 裸金属服务器数据盘对应的存储池ID。 说明：使用专属分布式存储时需要该字段。存储池ID可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
-     * 
-     * @return clusterId */
+    /**
+     * 裸金属服务器数据盘对应的存储池ID。 说明：使用专属分布式存储时需要该字段。存储池ID可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
+     * @return clusterId
+     */
     public UUID getClusterId() {
         return clusterId;
     }
@@ -255,10 +268,10 @@ public class DataVolumes {
         return this;
     }
 
-    /** 裸金属服务器数据盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。
-     * 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
-     * 
-     * @return clusterType */
+    /**
+     * 裸金属服务器数据盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
+     * @return clusterType
+     */
     public ClusterTypeEnum getClusterType() {
         return clusterType;
     }
@@ -300,7 +313,10 @@ public class DataVolumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

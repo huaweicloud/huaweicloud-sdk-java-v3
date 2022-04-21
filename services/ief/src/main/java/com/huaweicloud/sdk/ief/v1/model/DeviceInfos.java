@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 关联设备信息 */
+/**
+ * 关联设备信息
+ */
 public class DeviceInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class DeviceInfos {
         return this;
     }
 
-    /** 设备和节点关系的名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64
-     * 
-     * @return relation */
+    /**
+     * 设备和节点关系的名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64
+     * @return relation
+     */
     public String getRelation() {
         return relation;
     }
@@ -47,9 +50,10 @@ public class DeviceInfos {
         return this;
     }
 
-    /** 设备和节点关系的描述，最大长度64，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return comment */
+    /**
+     * 设备和节点关系的描述，最大长度64，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -79,9 +83,10 @@ public class DeviceInfos {
         return this;
     }
 
-    /** 设备ID列表
-     * 
-     * @return deviceIds */
+    /**
+     * 设备ID列表
+     * @return deviceIds
+     */
     public List<String> getDeviceIds() {
         return deviceIds;
     }
@@ -119,7 +124,10 @@ public class DeviceInfos {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

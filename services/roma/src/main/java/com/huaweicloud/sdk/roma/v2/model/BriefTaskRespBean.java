@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 查询任务列表返回的对象 */
+/**
+ * 查询任务列表返回的对象
+ */
 public class BriefTaskRespBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class BriefTaskRespBean {
 
     private String taskName;
 
-    /** 任务类型 - REALTIME (实时) - TIMING (定时) */
+    /**
+     * 任务类型 - REALTIME (实时) - TIMING (定时)
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum REALTIME for value: "REALTIME" */
+        /**
+         * Enum REALTIME for value: "REALTIME"
+         */
         public static final TaskTypeEnum REALTIME = new TaskTypeEnum("REALTIME");
 
-        /** Enum TIMING for value: "TIMING" */
+        /**
+         * Enum TIMING for value: "TIMING"
+         */
         public static final TaskTypeEnum TIMING = new TaskTypeEnum("TIMING");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,13 +108,19 @@ public class BriefTaskRespBean {
 
     private TaskTypeEnum taskType;
 
-    /** 任务状态 - 0 (停止/未启动) - 1 (运行中) */
+    /**
+     * 任务状态 - 0 (停止/未启动) - 1 (运行中)
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -236,9 +250,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -252,9 +267,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -268,9 +284,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务类型 - REALTIME (实时) - TIMING (定时)
-     * 
-     * @return taskType */
+    /**
+     * 任务类型 - REALTIME (实时) - TIMING (定时)
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -284,9 +301,12 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务状态 - 0 (停止/未启动) - 1 (运行中) minimum: 0 maximum: 1
-     * 
-     * @return status */
+    /**
+     * 任务状态 - 0 (停止/未启动) - 1 (运行中)
+     * minimum: 0
+     * maximum: 1
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -300,9 +320,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdDate */
+    /**
+     * 创建时间
+     * @return createdDate
+     */
     public LocalDate getCreatedDate() {
         return createdDate;
     }
@@ -316,9 +337,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务的版本
-     * 
-     * @return version */
+    /**
+     * 任务的版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -332,9 +354,12 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 上次修改时间 minimum: 1 maximum: -8446744073709551617
-     * 
-     * @return lastModifiedTime */
+    /**
+     * 上次修改时间
+     * minimum: 1
+     * maximum: -8446744073709551617
+     * @return lastModifiedTime
+     */
     public Long getLastModifiedTime() {
         return lastModifiedTime;
     }
@@ -348,9 +373,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务执行状态 - UNSTARTED (未启动) - WAITING (等待执行) - RUNNING (执行中) - SUCCESS (执行成功) - CANCELLED (任务取消) - ERROR (执行异常)
-     * 
-     * @return executeStatus */
+    /**
+     * 任务执行状态  - UNSTARTED (未启动)  - WAITING (等待执行)  - RUNNING (执行中)  - SUCCESS (执行成功)  - CANCELLED (任务取消)  - ERROR (执行异常)
+     * @return executeStatus
+     */
     public String getExecuteStatus() {
         return executeStatus;
     }
@@ -364,9 +390,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 源端数据源所属应用ID
-     * 
-     * @return sourceAppId */
+    /**
+     * 源端数据源所属应用ID
+     * @return sourceAppId
+     */
     public String getSourceAppId() {
         return sourceAppId;
     }
@@ -380,9 +407,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 目标端数据源所属应用ID
-     * 
-     * @return targetAppId */
+    /**
+     * 目标端数据源所属应用ID
+     * @return targetAppId
+     */
     public String getTargetAppId() {
         return targetAppId;
     }
@@ -396,9 +424,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 源端实例ID
-     * 
-     * @return sourceInstanceId */
+    /**
+     * 源端实例ID
+     * @return sourceInstanceId
+     */
     public String getSourceInstanceId() {
         return sourceInstanceId;
     }
@@ -412,9 +441,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 目标端实例ID
-     * 
-     * @return targetInstanceId */
+    /**
+     * 目标端实例ID
+     * @return targetInstanceId
+     */
     public String getTargetInstanceId() {
         return targetInstanceId;
     }
@@ -428,9 +458,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 组合任务类型, 可为空
-     * 
-     * @return extType */
+    /**
+     * 组合任务类型, 可为空
+     * @return extType
+     */
     public String getExtType() {
         return extType;
     }
@@ -444,9 +475,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -460,9 +492,10 @@ public class BriefTaskRespBean {
         return this;
     }
 
-    /** 任务标签
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -539,7 +572,10 @@ public class BriefTaskRespBean {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

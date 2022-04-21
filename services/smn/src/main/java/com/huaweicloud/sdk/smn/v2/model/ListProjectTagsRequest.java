@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListProjectTagsRequest {
         return this;
     }
 
-    /** 资源类型 目前有: smn_topic，主题 smn_sms，短信 smn_application，移动推送
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型 目前有: smn_topic，主题 smn_sms，短信 smn_application，移动推送
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -55,7 +58,10 @@ public class ListProjectTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

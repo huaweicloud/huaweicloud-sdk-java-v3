@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建负载均衡器的请求体 */
+/**
+ * 创建负载均衡器的请求体
+ */
 public class CreateLoadbalancerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,10 +40,14 @@ public class CreateLoadbalancerReq {
 
     private String vipAddress;
 
-    /** 负载均衡器的供应者名称。只支持vlb */
+    /**
+     * 负载均衡器的供应者名称。只支持vlb
+     */
     public static final class ProviderEnum {
 
-        /** Enum VLB for value: "vlb" */
+        /**
+         * Enum VLB for value: "vlb"
+         */
         public static final ProviderEnum VLB = new ProviderEnum("vlb");
 
         private static final Map<String, ProviderEnum> STATIC_FIELDS = createStaticFields();
@@ -125,9 +131,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 负载均衡器所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -141,9 +148,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,9 +165,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的描述信息
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +182,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器所在的子网ID
-     * 
-     * @return vipSubnetId */
+    /**
+     * 负载均衡器所在的子网ID
+     * @return vipSubnetId
+     */
     public String getVipSubnetId() {
         return vipSubnetId;
     }
@@ -189,9 +199,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的虚拟IP。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的虚拟IP。
+     * @return vipAddress
+     */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -205,9 +216,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的供应者名称。只支持vlb
-     * 
-     * @return provider */
+    /**
+     * 负载均衡器的供应者名称。只支持vlb
+     * @return provider
+     */
     public ProviderEnum getProvider() {
         return provider;
     }
@@ -221,9 +233,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -237,10 +250,10 @@ public class CreateLoadbalancerReq {
         return this;
     }
 
-    /** 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -290,7 +303,10 @@ public class CreateLoadbalancerReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

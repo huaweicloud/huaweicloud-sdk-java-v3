@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TempDetailInfo */
+/**
+ * TempDetailInfo
+ */
 public class TempDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -59,9 +62,12 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -75,9 +81,10 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** 是否被引用
-     * 
-     * @return isQuoted */
+    /**
+     * 是否被引用
+     * @return isQuoted
+     */
     public Boolean getIsQuoted() {
         return isQuoted;
     }
@@ -91,9 +98,10 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +115,12 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** temp_type minimum: 0 maximum: 2147483647
-     * 
-     * @return tempType */
+    /**
+     * temp_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return tempType
+     */
     public Integer getTempType() {
         return tempType;
     }
@@ -123,9 +134,10 @@ public class TempDetailInfo {
         return this;
     }
 
-    /** update_time
-     * 
-     * @return updateTime */
+    /**
+     * update_time
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -168,7 +180,10 @@ public class TempDetailInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

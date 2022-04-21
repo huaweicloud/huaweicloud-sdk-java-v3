@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RpoAndRTO信息体 */
+/**
+ * RpoAndRTO信息体
+ */
 public class RpoAndRtoInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class RpoAndRtoInfo {
         return this;
     }
 
-    /** 检查点
-     * 
-     * @return checkPoint */
+    /**
+     * 检查点
+     * @return checkPoint
+     */
     public String getCheckPoint() {
         return checkPoint;
     }
@@ -49,9 +52,10 @@ public class RpoAndRtoInfo {
         return this;
     }
 
-    /** 延迟
-     * 
-     * @return delay */
+    /**
+     * 延迟
+     * @return delay
+     */
     public String getDelay() {
         return delay;
     }
@@ -65,9 +69,10 @@ public class RpoAndRtoInfo {
         return this;
     }
 
-    /** gtid集合
-     * 
-     * @return gtidSet */
+    /**
+     * gtid集合
+     * @return gtidSet
+     */
     public String getGtidSet() {
         return gtidSet;
     }
@@ -81,9 +86,10 @@ public class RpoAndRtoInfo {
         return this;
     }
 
-    /** 当前时间 ，格式为“yyyy-MM-dd HH:mm:ss”
-     * 
-     * @return time */
+    /**
+     * 当前时间 ，格式为“yyyy-MM-dd HH:mm:ss”
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -123,7 +129,10 @@ public class RpoAndRtoInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

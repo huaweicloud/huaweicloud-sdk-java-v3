@@ -35,9 +35,10 @@ public class PostTranscriberJobs {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public TranscriberConfig getConfig() {
         return config;
     }
@@ -51,9 +52,10 @@ public class PostTranscriberJobs {
         return this;
     }
 
-    /** 存放在OBS的音频文件路径。OBS的region要和请求服务的region保持一致，region不一致则OBS不可用，即使obs是公开访问权限。
-     * 
-     * @return dataUrl */
+    /**
+     * 存放在OBS的音频文件路径。OBS的region要和请求服务的region保持一致，region不一致则OBS不可用，即使obs是公开访问权限。
+     * @return dataUrl
+     */
     public String getDataUrl() {
         return dataUrl;
     }
@@ -90,7 +92,10 @@ public class PostTranscriberJobs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

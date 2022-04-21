@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** metadata参数详情 */
+/**
+ * metadata参数详情
+ */
 public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Metadata {
         return this;
     }
 
-    /** 要创加密文件系统，该字段传KMS服务专业版密钥的ID。
-     * 
-     * @return cryptKeyId */
+    /**
+     * 要创加密文件系统，该字段传KMS服务专业版密钥的ID。
+     * @return cryptKeyId
+     */
     public String getCryptKeyId() {
         return cryptKeyId;
     }
@@ -49,9 +52,10 @@ public class Metadata {
         return this;
     }
 
-    /** 创专属文件系统，要创建的虚拟机的规格。
-     * 
-     * @return dedicatedFlavor */
+    /**
+     * 创专属文件系统，要创建的虚拟机的规格。
+     * @return dedicatedFlavor
+     */
     public String getDedicatedFlavor() {
         return dedicatedFlavor;
     }
@@ -65,9 +69,10 @@ public class Metadata {
         return this;
     }
 
-    /** 创专属文件系统，要指定一个专属分布式存储的ID。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 创专属文件系统，要指定一个专属分布式存储的ID。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -81,9 +86,10 @@ public class Metadata {
         return this;
     }
 
-    /** 扩展类型。当前有效值为bandwidth，即创建增强型的文件系统。
-     * 
-     * @return expandType */
+    /**
+     * 扩展类型。当前有效值为bandwidth，即创建增强型的文件系统。
+     * @return expandType
+     */
     public String getExpandType() {
         return expandType;
     }
@@ -124,7 +130,10 @@ public class Metadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

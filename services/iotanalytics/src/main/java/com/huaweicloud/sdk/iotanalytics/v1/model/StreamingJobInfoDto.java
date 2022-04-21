@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实时分析作业基础信息，包括：实时分析作业ID、实时分析作业名称、作业类型等。 */
+/**
+ * 实时分析作业基础信息，包括：实时分析作业ID、实时分析作业名称、作业类型等。
+ */
 public class StreamingJobInfoDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -84,9 +87,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return jobName */
+    /**
+     * 作业名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -100,9 +104,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 接收数据类型
-     * 
-     * @return jobInputType */
+    /**
+     * 接收数据类型
+     * @return jobInputType
+     */
     public String getJobInputType() {
         return jobInputType;
     }
@@ -116,9 +121,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 作业描述
-     * 
-     * @return jobDescription */
+    /**
+     * 作业描述
+     * @return jobDescription
+     */
     public String getJobDescription() {
         return jobDescription;
     }
@@ -132,9 +138,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 作业状态
-     * 
-     * @return jobState */
+    /**
+     * 作业状态
+     * @return jobState
+     */
     public String getJobState() {
         return jobState;
     }
@@ -148,9 +155,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 操作状态
-     * 
-     * @return status */
+    /**
+     * 操作状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -164,9 +172,12 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 运行作业的RTU个数 minimum: 0 maximum: 1000
-     * 
-     * @return rtu */
+    /**
+     * 运行作业的RTU个数
+     * minimum: 0
+     * maximum: 1000
+     * @return rtu
+     */
     public Integer getRtu() {
         return rtu;
     }
@@ -180,9 +191,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -196,9 +208,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -212,9 +225,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -228,9 +242,10 @@ public class StreamingJobInfoDto {
         return this;
     }
 
-    /** 已停止作业是否有历史缓存数据
-     * 
-     * @return hasSavepoint */
+    /**
+     * 已停止作业是否有历史缓存数据
+     * @return hasSavepoint
+     */
     public Boolean getHasSavepoint() {
         return hasSavepoint;
     }
@@ -295,7 +310,10 @@ public class StreamingJobInfoDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

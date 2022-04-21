@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用实例亲和性规则，仅铂金版支持 */
+/**
+ * 应用实例亲和性规则，仅铂金版支持
+ */
 public class Affinity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Affinity {
         return this;
     }
 
-    /** Get nodeAffinity
-     * 
-     * @return nodeAffinity */
+    /**
+     * Get nodeAffinity
+     * @return nodeAffinity
+     */
     public AffinityNodeAffinity getNodeAffinity() {
         return nodeAffinity;
     }
@@ -63,9 +66,10 @@ public class Affinity {
         return this;
     }
 
-    /** Get podAffinity
-     * 
-     * @return podAffinity */
+    /**
+     * Get podAffinity
+     * @return podAffinity
+     */
     public AffinityPodAffinity getPodAffinity() {
         return podAffinity;
     }
@@ -88,9 +92,10 @@ public class Affinity {
         return this;
     }
 
-    /** Get podAntiAffinity
-     * 
-     * @return podAntiAffinity */
+    /**
+     * Get podAntiAffinity
+     * @return podAntiAffinity
+     */
     public AffinityPodAntiAffinity getPodAntiAffinity() {
         return podAntiAffinity;
     }
@@ -129,7 +134,10 @@ public class Affinity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

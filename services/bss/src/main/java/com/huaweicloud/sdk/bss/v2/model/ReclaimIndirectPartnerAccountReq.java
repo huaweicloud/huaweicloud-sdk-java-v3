@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReclaimIndirectPartnerAccountReq */
+/**
+ * ReclaimIndirectPartnerAccountReq
+ */
 public class ReclaimIndirectPartnerAccountReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ReclaimIndirectPartnerAccountReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -39,9 +42,12 @@ public class ReclaimIndirectPartnerAccountReq {
         return this;
     }
 
-    /** 回收金额。 华为云伙伴能力中心回收的精英服务商的账户金额。 说明： 回收金额不能大于精英服务商的账户余额。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0.01 maximum: 999999999999
-     * 
-     * @return amount */
+    /**
+     * 回收金额。 华为云伙伴能力中心回收的精英服务商的账户金额。  说明： 回收金额不能大于精英服务商的账户余额。 单位：元。取值大于0且精确到小数点后2位。
+     * minimum: 0.01
+     * maximum: 999999999999
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -78,7 +84,10 @@ public class ReclaimIndirectPartnerAccountReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 容灾监控数据响应体 */
+/**
+ * 容灾监控数据响应体
+ */
 public class QueryDataGuardMonitorResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 带宽。
-     * 
-     * @return bandwidth */
+    /**
+     * 带宽。
+     * @return bandwidth
+     */
     public String getBandwidth() {
         return bandwidth;
     }
@@ -124,9 +127,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** cpu百分比。
-     * 
-     * @return cpuUsedPercent */
+    /**
+     * cpu百分比。
+     * @return cpuUsedPercent
+     */
     public String getCpuUsedPercent() {
         return cpuUsedPercent;
     }
@@ -140,9 +144,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 目标库时延。
-     * 
-     * @return dstDelay */
+    /**
+     * 目标库时延。
+     * @return dstDelay
+     */
     public Long getDstDelay() {
         return dstDelay;
     }
@@ -156,9 +161,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 目标io。
-     * 
-     * @return dstIo */
+    /**
+     * 目标io。
+     * @return dstIo
+     */
     public String getDstIo() {
         return dstIo;
     }
@@ -172,9 +178,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 目标库连接状态。
-     * 
-     * @return dstNormal */
+    /**
+     * 目标库连接状态。
+     * @return dstNormal
+     */
     public Boolean getDstNormal() {
         return dstNormal;
     }
@@ -188,9 +195,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 目标库offSet位点。
-     * 
-     * @return dstOffset */
+    /**
+     * 目标库offSet位点。
+     * @return dstOffset
+     */
     public String getDstOffset() {
         return dstOffset;
     }
@@ -204,9 +212,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 目标rps。
-     * 
-     * @return dstRps */
+    /**
+     * 目标rps。
+     * @return dstRps
+     */
     public String getDstRps() {
         return dstRps;
     }
@@ -220,9 +229,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 内存使用。
-     * 
-     * @return memUsedInMB */
+    /**
+     * 内存使用。
+     * @return memUsedInMB
+     */
     public String getMemUsedInMB() {
         return memUsedInMB;
     }
@@ -236,9 +246,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** node内存总大小。
-     * 
-     * @return nodeMemInMB */
+    /**
+     * node内存总大小。
+     * @return nodeMemInMB
+     */
     public Long getNodeMemInMB() {
         return nodeMemInMB;
     }
@@ -252,9 +263,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 迁移实例offSet位点。
-     * 
-     * @return nodeOffset */
+    /**
+     * 迁移实例offSet位点。
+     * @return nodeOffset
+     */
     public String getNodeOffset() {
         return nodeOffset;
     }
@@ -268,9 +280,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** node磁盘总大小。
-     * 
-     * @return nodeVolumeInGB */
+    /**
+     * node磁盘总大小。
+     * @return nodeVolumeInGB
+     */
     public Long getNodeVolumeInGB() {
         return nodeVolumeInGB;
     }
@@ -284,9 +297,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 源库时延。
-     * 
-     * @return srDelay */
+    /**
+     * 源库时延。
+     * @return srDelay
+     */
     public Long getSrDelay() {
         return srDelay;
     }
@@ -300,9 +314,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 源库offSet位点。
-     * 
-     * @return srOffset */
+    /**
+     * 源库offSet位点。
+     * @return srOffset
+     */
     public String getSrOffset() {
         return srOffset;
     }
@@ -316,9 +331,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 源io。
-     * 
-     * @return srcIo */
+    /**
+     * 源io。
+     * @return srcIo
+     */
     public String getSrcIo() {
         return srcIo;
     }
@@ -332,9 +348,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 源库连接状态。
-     * 
-     * @return srcNormal */
+    /**
+     * 源库连接状态。
+     * @return srcNormal
+     */
     public Boolean getSrcNormal() {
         return srcNormal;
     }
@@ -348,9 +365,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 源rps。
-     * 
-     * @return srcRps */
+    /**
+     * 源rps。
+     * @return srcRps
+     */
     public String getSrcRps() {
         return srcRps;
     }
@@ -364,9 +382,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 迁移数据量。
-     * 
-     * @return transInMB */
+    /**
+     * 迁移数据量。
+     * @return transInMB
+     */
     public String getTransInMB() {
         return transInMB;
     }
@@ -380,9 +399,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 迁移数据行数。
-     * 
-     * @return transLines */
+    /**
+     * 迁移数据行数。
+     * @return transLines
+     */
     public String getTransLines() {
         return transLines;
     }
@@ -396,9 +416,10 @@ public class QueryDataGuardMonitorResponse {
         return this;
     }
 
-    /** 磁盘使用。
-     * 
-     * @return volumeUsedInGB */
+    /**
+     * 磁盘使用。
+     * @return volumeUsedInGB
+     */
     public String getVolumeUsedInGB() {
         return volumeUsedInGB;
     }
@@ -487,7 +508,10 @@ public class QueryDataGuardMonitorResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

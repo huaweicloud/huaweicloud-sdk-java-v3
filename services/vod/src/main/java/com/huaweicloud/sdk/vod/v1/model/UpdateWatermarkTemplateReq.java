@@ -35,20 +35,29 @@ public class UpdateWatermarkTemplateReq {
 
     private String dy;
 
-    /** 水印的位置<br/>
+    /**
+     * 水印的位置<br/>
      */
     public static final class PositionEnum {
 
-        /** Enum TOPRIGHT for value: "TOPRIGHT" */
+        /**
+         * Enum TOPRIGHT for value: "TOPRIGHT"
+         */
         public static final PositionEnum TOPRIGHT = new PositionEnum("TOPRIGHT");
 
-        /** Enum TOPLEFT for value: "TOPLEFT" */
+        /**
+         * Enum TOPLEFT for value: "TOPLEFT"
+         */
         public static final PositionEnum TOPLEFT = new PositionEnum("TOPLEFT");
 
-        /** Enum BOTTOMRIGHT for value: "BOTTOMRIGHT" */
+        /**
+         * Enum BOTTOMRIGHT for value: "BOTTOMRIGHT"
+         */
         public static final PositionEnum BOTTOMRIGHT = new PositionEnum("BOTTOMRIGHT");
 
-        /** Enum BOTTOMLEFT for value: "BOTTOMLEFT" */
+        /**
+         * Enum BOTTOMLEFT for value: "BOTTOMLEFT"
+         */
         public static final PositionEnum BOTTOMLEFT = new PositionEnum("BOTTOMLEFT");
 
         private static final Map<String, PositionEnum> STATIC_FIELDS = createStaticFields();
@@ -130,14 +139,19 @@ public class UpdateWatermarkTemplateReq {
 
     private String height;
 
-    /** 水印类型，当前只支持Image（图片水印）<br/>
+    /**
+     * 水印类型，当前只支持Image（图片水印）<br/>
      */
     public static final class WatermarkTypeEnum {
 
-        /** Enum IMAGE for value: "IMAGE" */
+        /**
+         * Enum IMAGE for value: "IMAGE"
+         */
         public static final WatermarkTypeEnum IMAGE = new WatermarkTypeEnum("IMAGE");
 
-        /** Enum TEXT for value: "TEXT" */
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
         public static final WatermarkTypeEnum TEXT = new WatermarkTypeEnum("TEXT");
 
         private static final Map<String, WatermarkTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -207,16 +221,24 @@ public class UpdateWatermarkTemplateReq {
 
     private WatermarkTypeEnum watermarkType;
 
-    /** type设置为Image时有效。 目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰 */
+    /**
+     * type设置为Image时有效。  目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
+     */
     public static final class ImageProcessEnum {
 
-        /** Enum ORIGINAL for value: "ORIGINAL" */
+        /**
+         * Enum ORIGINAL for value: "ORIGINAL"
+         */
         public static final ImageProcessEnum ORIGINAL = new ImageProcessEnum("ORIGINAL");
 
-        /** Enum TRANSPARENT for value: "TRANSPARENT" */
+        /**
+         * Enum TRANSPARENT for value: "TRANSPARENT"
+         */
         public static final ImageProcessEnum TRANSPARENT = new ImageProcessEnum("TRANSPARENT");
 
-        /** Enum GRAYED for value: "GRAYED" */
+        /**
+         * Enum GRAYED for value: "GRAYED"
+         */
         public static final ImageProcessEnum GRAYED = new ImageProcessEnum("GRAYED");
 
         private static final Map<String, ImageProcessEnum> STATIC_FIELDS = createStaticFields();
@@ -302,9 +324,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印模板配置id<br/>
-     * 
-     * @return id */
+    /**
+     * 水印模板配置id<br/>
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -318,9 +341,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印模板名称<br/>
-     * 
-     * @return name */
+    /**
+     * 水印模板名称<br/>
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -334,9 +358,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印图片相对输出视频的水平偏移量，默认值是0<br/>
-     * 
-     * @return dx */
+    /**
+     * 水印图片相对输出视频的水平偏移量，默认值是0<br/>
+     * @return dx
+     */
     public String getDx() {
         return dx;
     }
@@ -350,9 +375,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印图片相对输出视频的垂直偏移量，默认值是0<br/>
-     * 
-     * @return dy */
+    /**
+     * 水印图片相对输出视频的垂直偏移量，默认值是0<br/>
+     * @return dy
+     */
     public String getDy() {
         return dy;
     }
@@ -366,9 +392,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印的位置<br/>
-     * 
-     * @return position */
+    /**
+     * 水印的位置<br/>
+     * @return position
+     */
     public PositionEnum getPosition() {
         return position;
     }
@@ -382,9 +409,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印图片宽<br/>
-     * 
-     * @return width */
+    /**
+     * 水印图片宽<br/>
+     * @return width
+     */
     public String getWidth() {
         return width;
     }
@@ -398,9 +426,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印图片高<br/>
-     * 
-     * @return height */
+    /**
+     * 水印图片高<br/>
+     * @return height
+     */
     public String getHeight() {
         return height;
     }
@@ -414,9 +443,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印类型，当前只支持Image（图片水印）<br/>
-     * 
-     * @return watermarkType */
+    /**
+     * 水印类型，当前只支持Image（图片水印）<br/>
+     * @return watermarkType
+     */
     public WatermarkTypeEnum getWatermarkType() {
         return watermarkType;
     }
@@ -430,9 +460,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** type设置为Image时有效。 目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
-     * 
-     * @return imageProcess */
+    /**
+     * type设置为Image时有效。  目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
+     * @return imageProcess
+     */
     public ImageProcessEnum getImageProcess() {
         return imageProcess;
     }
@@ -446,9 +477,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印开始时间<br/>
-     * 
-     * @return timelineStart */
+    /**
+     * 水印开始时间<br/>
+     * @return timelineStart
+     */
     public String getTimelineStart() {
         return timelineStart;
     }
@@ -462,9 +494,10 @@ public class UpdateWatermarkTemplateReq {
         return this;
     }
 
-    /** 水印持续时间<br/>
-     * 
-     * @return timelineDuration */
+    /**
+     * 水印持续时间<br/>
+     * @return timelineDuration
+     */
     public String getTimelineDuration() {
         return timelineDuration;
     }
@@ -529,7 +562,10 @@ public class UpdateWatermarkTemplateReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

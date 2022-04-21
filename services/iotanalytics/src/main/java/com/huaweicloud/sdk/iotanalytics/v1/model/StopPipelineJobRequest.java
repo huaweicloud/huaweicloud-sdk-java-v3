@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class StopPipelineJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StopPipelineJobRequest {
         return this;
     }
 
-    /** 管道ID
-     * 
-     * @return pipelineId */
+    /**
+     * 管道ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -39,9 +42,10 @@ public class StopPipelineJobRequest {
         return this;
     }
 
-    /** 停止管道作业触发savepoint
-     * 
-     * @return triggerSavepoint */
+    /**
+     * 停止管道作业触发savepoint
+     * @return triggerSavepoint
+     */
     public Boolean getTriggerSavepoint() {
         return triggerSavepoint;
     }
@@ -78,7 +82,10 @@ public class StopPipelineJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

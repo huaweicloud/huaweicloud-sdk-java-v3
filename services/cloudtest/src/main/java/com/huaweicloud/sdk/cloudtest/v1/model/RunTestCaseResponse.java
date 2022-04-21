@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RunTestCaseResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,9 +32,10 @@ public class RunTestCaseResponse extends SdkResponse {
         return this;
     }
 
-    /** 接口调用失败错误码
-     * 
-     * @return errorCode */
+    /**
+     * 接口调用失败错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -46,9 +49,10 @@ public class RunTestCaseResponse extends SdkResponse {
         return this;
     }
 
-    /** 接口调用失败错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 接口调用失败错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -71,9 +75,10 @@ public class RunTestCaseResponse extends SdkResponse {
         return this;
     }
 
-    /** Get errorDetail
-     * 
-     * @return errorDetail */
+    /**
+     * Get errorDetail
+     * @return errorDetail
+     */
     public ErrorDetailInfo getErrorDetail() {
         return errorDetail;
     }
@@ -112,7 +117,10 @@ public class RunTestCaseResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

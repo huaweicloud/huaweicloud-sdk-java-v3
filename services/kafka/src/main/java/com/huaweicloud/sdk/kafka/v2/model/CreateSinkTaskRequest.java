@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateSinkTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateSinkTaskRequest {
         return this;
     }
 
-    /** 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
-     * 
-     * @return connectorId */
+    /**
+     * 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
+     * @return connectorId
+     */
     public String getConnectorId() {
         return connectorId;
     }
@@ -49,9 +52,10 @@ public class CreateSinkTaskRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public CreateSinkTaskReq getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class CreateSinkTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 命令耗时统计 */
+/**
+ * 命令耗时统计
+ */
 public class CommandTimeTaken {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CommandTimeTaken {
         return this;
     }
 
-    /** 调用次数
-     * 
-     * @return callsSum */
+    /**
+     * 调用次数
+     * @return callsSum
+     */
     public Integer getCallsSum() {
         return callsSum;
     }
@@ -54,9 +57,10 @@ public class CommandTimeTaken {
         return this;
     }
 
-    /** 耗时总数
-     * 
-     * @return usecSum */
+    /**
+     * 耗时总数
+     * @return usecSum
+     */
     public Double getUsecSum() {
         return usecSum;
     }
@@ -70,9 +74,10 @@ public class CommandTimeTaken {
         return this;
     }
 
-    /** 命令名称
-     * 
-     * @return commandName */
+    /**
+     * 命令名称
+     * @return commandName
+     */
     public String getCommandName() {
         return commandName;
     }
@@ -86,9 +91,10 @@ public class CommandTimeTaken {
         return this;
     }
 
-    /** 耗时占比
-     * 
-     * @return perUsec */
+    /**
+     * 耗时占比
+     * @return perUsec
+     */
     public String getPerUsec() {
         return perUsec;
     }
@@ -102,9 +108,10 @@ public class CommandTimeTaken {
         return this;
     }
 
-    /** 每次调用平均耗时
-     * 
-     * @return averageUsec */
+    /**
+     * 每次调用平均耗时
+     * @return averageUsec
+     */
     public Double getAverageUsec() {
         return averageUsec;
     }
@@ -147,7 +154,10 @@ public class CommandTimeTaken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

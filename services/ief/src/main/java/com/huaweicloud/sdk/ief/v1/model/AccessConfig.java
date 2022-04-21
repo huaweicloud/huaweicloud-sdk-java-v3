@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 访问配置，与access_protocol直接关联 */
+/**
+ * 访问配置，与access_protocol直接关联
+ */
 public class AccessConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,9 +120,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get protocolType
-     * 
-     * @return protocolType */
+    /**
+     * Get protocolType
+     * @return protocolType
+     */
     public AccessConfigProtocolType getProtocolType() {
         return protocolType;
     }
@@ -143,9 +146,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get protocolName
-     * 
-     * @return protocolName */
+    /**
+     * Get protocolName
+     * @return protocolName
+     */
     public AccessConfigProtocolName getProtocolName() {
         return protocolName;
     }
@@ -168,9 +172,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get slaveId
-     * 
-     * @return slaveId */
+    /**
+     * Get slaveId
+     * @return slaveId
+     */
     public AccessConfigSlaveId getSlaveId() {
         return slaveId;
     }
@@ -193,9 +198,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get ip
-     * 
-     * @return ip */
+    /**
+     * Get ip
+     * @return ip
+     */
     public AccessConfigIp getIp() {
         return ip;
     }
@@ -218,9 +224,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get port
-     * 
-     * @return port */
+    /**
+     * Get port
+     * @return port
+     */
     public AccessConfigPort getPort() {
         return port;
     }
@@ -243,9 +250,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get serialPort
-     * 
-     * @return serialPort */
+    /**
+     * Get serialPort
+     * @return serialPort
+     */
     public AccessConfigSerialPort getSerialPort() {
         return serialPort;
     }
@@ -268,9 +276,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get baudRate
-     * 
-     * @return baudRate */
+    /**
+     * Get baudRate
+     * @return baudRate
+     */
     public AccessConfigBaudRate getBaudRate() {
         return baudRate;
     }
@@ -293,9 +302,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get dataBits
-     * 
-     * @return dataBits */
+    /**
+     * Get dataBits
+     * @return dataBits
+     */
     public AccessConfigDataBits getDataBits() {
         return dataBits;
     }
@@ -318,9 +328,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get stopBits
-     * 
-     * @return stopBits */
+    /**
+     * Get stopBits
+     * @return stopBits
+     */
     public AccessConfigStopBits getStopBits() {
         return stopBits;
     }
@@ -343,9 +354,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get parityBits
-     * 
-     * @return parityBits */
+    /**
+     * Get parityBits
+     * @return parityBits
+     */
     public AccessConfigParityBits getParityBits() {
         return parityBits;
     }
@@ -368,9 +380,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get url
-     * 
-     * @return url */
+    /**
+     * Get url
+     * @return url
+     */
     public AccessConfigUrl getUrl() {
         return url;
     }
@@ -393,9 +406,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get secMode
-     * 
-     * @return secMode */
+    /**
+     * Get secMode
+     * @return secMode
+     */
     public AccessConfigSecMode getSecMode() {
         return secMode;
     }
@@ -418,9 +432,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get secPolicy
-     * 
-     * @return secPolicy */
+    /**
+     * Get secPolicy
+     * @return secPolicy
+     */
     public AccessConfigSecPolicy getSecPolicy() {
         return secPolicy;
     }
@@ -443,9 +458,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get authType
-     * 
-     * @return authType */
+    /**
+     * Get authType
+     * @return authType
+     */
     public AccessConfigAuthType getAuthType() {
         return authType;
     }
@@ -468,9 +484,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get username
-     * 
-     * @return username */
+    /**
+     * Get username
+     * @return username
+     */
     public AccessConfigUsername getUsername() {
         return username;
     }
@@ -493,9 +510,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get password
-     * 
-     * @return password */
+    /**
+     * Get password
+     * @return password
+     */
     public AccessConfigPassword getPassword() {
         return password;
     }
@@ -518,9 +536,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get privateKey
-     * 
-     * @return privateKey */
+    /**
+     * Get privateKey
+     * @return privateKey
+     */
     public AccessConfigPrivateKey getPrivateKey() {
         return privateKey;
     }
@@ -543,9 +562,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get certificate
-     * 
-     * @return certificate */
+    /**
+     * Get certificate
+     * @return certificate
+     */
     public AccessConfigCertificate getCertificate() {
         return certificate;
     }
@@ -568,9 +588,10 @@ public class AccessConfig {
         return this;
     }
 
-    /** Get timeout
-     * 
-     * @return timeout */
+    /**
+     * Get timeout
+     * @return timeout
+     */
     public AccessConfigTimeout getTimeout() {
         return timeout;
     }
@@ -656,7 +677,10 @@ public class AccessConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

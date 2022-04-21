@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EnlargeVolume */
+/**
+ * EnlargeVolume
+ */
 public class EnlargeVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class EnlargeVolume {
         return this;
     }
 
-    /** Get enlargeVolume
-     * 
-     * @return enlargeVolume */
+    /**
+     * Get enlargeVolume
+     * @return enlargeVolume
+     */
     public EnlargeVolumeObject getEnlargeVolume() {
         return enlargeVolume;
     }
@@ -65,7 +68,10 @@ public class EnlargeVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateExtractTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID 
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -66,9 +69,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -82,9 +86,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务创建时间
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -107,9 +112,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -123,9 +129,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 解析文件名称
-     * 
-     * @return outputFileName */
+    /**
+     * 解析文件名称
+     * @return outputFileName
+     */
     public String getOutputFileName() {
         return outputFileName;
     }
@@ -139,9 +146,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务描述，如当任务异常时，此字段为异常的具体信息
-     * 
-     * @return description */
+    /**
+     * 任务描述，如当任务异常时，此字段为异常的具体信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -164,9 +172,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -213,7 +222,10 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

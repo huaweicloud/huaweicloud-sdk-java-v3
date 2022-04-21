@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 待删除会场信息 */
+/**
+ * 待删除会场信息
+ */
 public class DelAttendInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DelAttendInfo {
         return this;
     }
 
-    /** 会场呼叫号码。
-     * 
-     * @return number */
+    /**
+     * 会场呼叫号码。
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -39,9 +42,10 @@ public class DelAttendInfo {
         return this;
     }
 
-    /** 与会者标识，已入会的必须填写该字段。
-     * 
-     * @return participantID */
+    /**
+     * 与会者标识，已入会的必须填写该字段。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -78,7 +82,10 @@ public class DelAttendInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

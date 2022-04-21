@@ -30,9 +30,10 @@ public class RankETLFilter {
         return this;
     }
 
-    /** 行为去重方式： - abs_weight，权重绝对值 - date，日期
-     * 
-     * @return filterType */
+    /**
+     * 行为去重方式： - abs_weight，权重绝对值 - date，日期
+     * @return filterType
+     */
     public String getFilterType() {
         return filterType;
     }
@@ -46,9 +47,10 @@ public class RankETLFilter {
         return this;
     }
 
-    /** 时间类型： - day，天 - week，周 - month，月
-     * 
-     * @return timeType */
+    /**
+     * 时间类型： - day，天 - week，周 - month，月 
+     * @return timeType
+     */
     public String getTimeType() {
         return timeType;
     }
@@ -62,9 +64,10 @@ public class RankETLFilter {
         return this;
     }
 
-    /** 周一是否是第一天。
-     * 
-     * @return isMondayFirst */
+    /**
+     * 周一是否是第一天。
+     * @return isMondayFirst
+     */
     public Boolean getIsMondayFirst() {
         return isMondayFirst;
     }
@@ -103,7 +106,10 @@ public class RankETLFilter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

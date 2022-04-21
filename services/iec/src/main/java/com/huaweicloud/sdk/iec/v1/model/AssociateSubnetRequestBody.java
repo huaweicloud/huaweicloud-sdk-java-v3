@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 路由表关联子网请求体 */
+/**
+ * 路由表关联子网请求体
+ */
 public class AssociateSubnetRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AssociateSubnetRequestBody {
         return this;
     }
 
-    /** 子网ID
-     * 
-     * @return subnetIds */
+    /**
+     * 子网ID
+     * @return subnetIds
+     */
     public List<String> getSubnetIds() {
         return subnetIds;
     }
@@ -74,7 +77,10 @@ public class AssociateSubnetRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

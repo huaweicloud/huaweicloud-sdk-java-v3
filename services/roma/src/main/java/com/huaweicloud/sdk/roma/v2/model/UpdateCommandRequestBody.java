@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateCommandRequestBody */
+/**
+ * UpdateCommandRequestBody
+ */
 public class UpdateCommandRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateCommandRequestBody {
         return this;
     }
 
-    /** 服务命令名称，支持大小写字母，数字，中划线及下划线，长度2-50
-     * 
-     * @return name */
+    /**
+     * 服务命令名称，支持大小写字母，数字，中划线及下划线，长度2-50
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateCommandRequestBody {
         return this;
     }
 
-    /** 服务命令描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 服务命令描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class UpdateCommandRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UrlDomainModify */
+/**
+ * UrlDomainModify
+ */
 public class UrlDomainModify {
 
-    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2 */
+    /**
+     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
+     */
     public static final class MinSslVersionEnum {
 
-        /** Enum TLSV1_1 for value: "TLSv1.1" */
+        /**
+         * Enum TLSV1_1 for value: "TLSv1.1"
+         */
         public static final MinSslVersionEnum TLSV1_1 = new MinSslVersionEnum("TLSv1.1");
 
-        /** Enum TLSV1_2 for value: "TLSv1.2" */
+        /**
+         * Enum TLSV1_2 for value: "TLSv1.2"
+         */
         public static final MinSslVersionEnum TLSV1_2 = new MinSslVersionEnum("TLSv1.2");
 
         private static final Map<String, MinSslVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class UrlDomainModify {
         return this;
     }
 
-    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
-     * 
-     * @return minSslVersion */
+    /**
+     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
+     * @return minSslVersion
+     */
     public MinSslVersionEnum getMinSslVersion() {
         return minSslVersion;
     }
@@ -131,7 +140,10 @@ public class UrlDomainModify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

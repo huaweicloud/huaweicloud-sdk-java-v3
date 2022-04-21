@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RemoveNodesSpec */
+/**
+ * RemoveNodesSpec
+ */
 public class RemoveNodesSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class RemoveNodesSpec {
         return this;
     }
 
-    /** Get login
-     * 
-     * @return login */
+    /**
+     * Get login
+     * @return login
+     */
     public Login getLogin() {
         return login;
     }
@@ -67,9 +70,10 @@ public class RemoveNodesSpec {
         return this;
     }
 
-    /** 待操作节点列表
-     * 
-     * @return nodes */
+    /**
+     * 待操作节点列表
+     * @return nodes
+     */
     public List<NodeItem> getNodes() {
         return nodes;
     }
@@ -105,7 +109,10 @@ public class RemoveNodesSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

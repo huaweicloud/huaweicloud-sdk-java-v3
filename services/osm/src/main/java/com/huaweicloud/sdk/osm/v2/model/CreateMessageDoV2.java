@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateMessageDoV2 */
+/**
+ * CreateMessageDoV2
+ */
 public class CreateMessageDoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreateMessageDoV2 {
         return this;
     }
 
-    /** 留言内容
-     * 
-     * @return content */
+    /**
+     * 留言内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -52,9 +55,12 @@ public class CreateMessageDoV2 {
         return this;
     }
 
-    /** 是否授权 minimum: 0 maximum: 1
-     * 
-     * @return isAuthorized */
+    /**
+     * 是否授权
+     * minimum: 0
+     * maximum: 1
+     * @return isAuthorized
+     */
     public Integer getIsAuthorized() {
         return isAuthorized;
     }
@@ -68,9 +74,10 @@ public class CreateMessageDoV2 {
         return this;
     }
 
-    /** 机密信息
-     * 
-     * @return authorizationContent */
+    /**
+     * 机密信息
+     * @return authorizationContent
+     */
     public String getAuthorizationContent() {
         return authorizationContent;
     }
@@ -100,9 +107,10 @@ public class CreateMessageDoV2 {
         return this;
     }
 
-    /** 附件id
-     * 
-     * @return accessoryIds */
+    /**
+     * 附件id
+     * @return accessoryIds
+     */
     public List<String> getAccessoryIds() {
         return accessoryIds;
     }
@@ -143,7 +151,10 @@ public class CreateMessageDoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

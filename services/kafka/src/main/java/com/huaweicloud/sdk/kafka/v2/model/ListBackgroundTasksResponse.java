@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListBackgroundTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListBackgroundTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务数量。
-     * 
-     * @return taskCount */
+    /**
+     * 任务数量。
+     * @return taskCount
+     */
     public String getTaskCount() {
         return taskCount;
     }
@@ -59,9 +62,10 @@ public class ListBackgroundTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务列表。
-     * 
-     * @return tasks */
+    /**
+     * 任务列表。
+     * @return tasks
+     */
     public List<ListBackgroundTasksRespTasks> getTasks() {
         return tasks;
     }
@@ -98,7 +102,10 @@ public class ListBackgroundTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

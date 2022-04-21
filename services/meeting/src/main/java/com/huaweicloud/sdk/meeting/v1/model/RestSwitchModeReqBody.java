@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 切换多画面模式消息体。 */
+/**
+ * 切换多画面模式消息体。
+ */
 public class RestSwitchModeReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RestSwitchModeReqBody {
         return this;
     }
 
-    /** 会议显示策略。 - Fixed: 固定广播与会者。 - VAS: 声控切换。
-     * 
-     * @return switchMode */
+    /**
+     * 会议显示策略。 - Fixed: 固定广播与会者。 - VAS: 声控切换。
+     * @return switchMode
+     */
     public String getSwitchMode() {
         return switchMode;
     }
@@ -39,9 +42,10 @@ public class RestSwitchModeReqBody {
         return this;
     }
 
-    /** 画面类型。单画面设置只针对声控模式。 - 0: 单画面。 - 1: 多画面。
-     * 
-     * @return imageType */
+    /**
+     * 画面类型。单画面设置只针对声控模式。 - 0: 单画面。 - 1: 多画面。
+     * @return imageType
+     */
     public Integer getImageType() {
         return imageType;
     }
@@ -78,7 +82,10 @@ public class RestSwitchModeReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

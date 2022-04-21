@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMigrationTaskStatsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 全量迁移进度百分比。
-     * 
-     * @return fullMigrationProgress */
+    /**
+     * 全量迁移进度百分比。
+     * @return fullMigrationProgress
+     */
     public String getFullMigrationProgress() {
         return fullMigrationProgress;
     }
@@ -65,9 +68,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 增量迁移偏移量。
-     * 
-     * @return offset */
+    /**
+     * 增量迁移偏移量。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -81,9 +85,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 源redis键数量
-     * 
-     * @return sourceDbsize */
+    /**
+     * 源redis键数量
+     * @return sourceDbsize
+     */
     public String getSourceDbsize() {
         return sourceDbsize;
     }
@@ -97,9 +102,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 目标redis键数量
-     * 
-     * @return targetDbsize */
+    /**
+     * 目标redis键数量
+     * @return targetDbsize
+     */
     public String getTargetDbsize() {
         return targetDbsize;
     }
@@ -113,9 +119,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 目标redis键写入流量，单位KB/s
-     * 
-     * @return targetInputKbps */
+    /**
+     * 目标redis键写入流量，单位KB/s
+     * @return targetInputKbps
+     */
     public String getTargetInputKbps() {
         return targetInputKbps;
     }
@@ -129,9 +136,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 目标redis每秒并发操作数
-     * 
-     * @return targetOps */
+    /**
+     * 目标redis每秒并发操作数
+     * @return targetOps
+     */
     public String getTargetOps() {
         return targetOps;
     }
@@ -145,9 +153,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务是否在进行
-     * 
-     * @return isMigrating */
+    /**
+     * 迁移任务是否在进行
+     * @return isMigrating
+     */
     public Boolean getIsMigrating() {
         return isMigrating;
     }
@@ -195,7 +204,10 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplateInfo */
+/**
+ * TemplateInfo
+ */
 public class TemplateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -206,9 +208,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板id。
-     * 
-     * @return id */
+    /**
+     * 模板id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -222,9 +225,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板名。
-     * 
-     * @return title */
+    /**
+     * 模板名。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -238,9 +242,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板描述。
-     * 
-     * @return description */
+    /**
+     * 模板描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -270,9 +275,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板关联的所有云服务（产品短名）。
-     * 
-     * @return productshorts */
+    /**
+     * 模板关联的所有云服务（产品短名）。
+     * @return productshorts
+     */
     public List<String> getProductshorts() {
         return productshorts;
     }
@@ -302,9 +308,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板关联的云产品。
-     * 
-     * @return products */
+    /**
+     * 模板关联的云产品。
+     * @return products
+     */
     public List<TemplateProductExt> getProducts() {
         return products;
     }
@@ -334,9 +341,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板标签。
-     * 
-     * @return topic */
+    /**
+     * 模板标签。
+     * @return topic
+     */
     public List<TopicCategory> getTopic() {
         return topic;
     }
@@ -350,9 +358,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板创建者id。
-     * 
-     * @return creatorId */
+    /**
+     * 模板创建者id。
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -366,9 +375,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板创建者,有别名返回别名。
-     * 
-     * @return creator */
+    /**
+     * 模板创建者,有别名返回别名。
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -382,9 +392,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板创建者,有别名返回别名。
-     * 
-     * @return nickname */
+    /**
+     * 模板创建者,有别名返回别名。
+     * @return nickname
+     */
     public String getNickname() {
         return nickname;
     }
@@ -398,9 +409,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板评分（点赞数）。 minimum: 1 maximum: 99999
-     * 
-     * @return score */
+    /**
+     * 模板评分（点赞数）。
+     * minimum: 1
+     * maximum: 99999
+     * @return score
+     */
     public Integer getScore() {
         return score;
     }
@@ -414,9 +428,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板标签（new、hot等）。
-     * 
-     * @return label */
+    /**
+     * 模板标签（new、hot等）。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -430,9 +445,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 代码存储位置。 minimum: 0 maximum: 9
-     * 
-     * @return store */
+    /**
+     * 代码存储位置。
+     * minimum: 0
+     * maximum: 9
+     * @return store
+     */
     public Integer getStore() {
         return store;
     }
@@ -446,9 +464,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 获取代码模版所需的信息。
-     * 
-     * @return storeInfo */
+    /**
+     * 获取代码模版所需的信息。
+     * @return storeInfo
+     */
     public String getStoreInfo() {
         return storeInfo;
     }
@@ -462,9 +481,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 minimum: 0 maximum: 5
-     * 
-     * @return status */
+    /**
+     * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
+     * minimum: 0
+     * maximum: 5
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -478,9 +500,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 访问量。 minimum: 1 maximum: 99999
-     * 
-     * @return viewCount */
+    /**
+     * 访问量。
+     * minimum: 1
+     * maximum: 99999
+     * @return viewCount
+     */
     public Integer getViewCount() {
         return viewCount;
     }
@@ -494,9 +519,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 引用量。 minimum: 1 maximum: 99999
-     * 
-     * @return usageCount */
+    /**
+     * 引用量。
+     * minimum: 1
+     * maximum: 99999
+     * @return usageCount
+     */
     public Integer getUsageCount() {
         return usageCount;
     }
@@ -510,9 +538,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -526,9 +555,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -542,9 +572,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板上架时间。
-     * 
-     * @return publishedAt */
+    /**
+     * 模板上架时间。
+     * @return publishedAt
+     */
     public String getPublishedAt() {
         return publishedAt;
     }
@@ -558,9 +589,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 点赞状态： - 1：点赞 - 0：未点赞 minimum: 0 maximum: 1
-     * 
-     * @return favoriteState */
+    /**
+     * 点赞状态： - 1：点赞 - 0：未点赞 
+     * minimum: 0
+     * maximum: 1
+     * @return favoriteState
+     */
     public Integer getFavoriteState() {
         return favoriteState;
     }
@@ -590,9 +624,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板标签。
-     * 
-     * @return tags */
+    /**
+     * 模板标签。
+     * @return tags
+     */
     public List<TagInfo> getTags() {
         return tags;
     }
@@ -606,9 +641,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 minimum: 0 maximum: 3
-     * 
-     * @return type */
+    /**
+     * 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 
+     * minimum: 0
+     * maximum: 3
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -622,9 +660,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample minimum: 0 maximum: 1
-     * 
-     * @return isStatic */
+    /**
+     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
+     * minimum: 0
+     * maximum: 1
+     * @return isStatic
+     */
     public Integer getIsStatic() {
         return isStatic;
     }
@@ -654,9 +695,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板相关联的所有维护人账号名称。
-     * 
-     * @return maintainers */
+    /**
+     * 模板相关联的所有维护人账号名称。
+     * @return maintainers
+     */
     public List<String> getMaintainers() {
         return maintainers;
     }
@@ -679,9 +721,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** Get pipelineTemplate
-     * 
-     * @return pipelineTemplate */
+    /**
+     * Get pipelineTemplate
+     * @return pipelineTemplate
+     */
     public PipelineTemplateInfo getPipelineTemplate() {
         return pipelineTemplate;
     }
@@ -695,9 +738,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 平台来源： - 0：codelabs - 1：devstar minimum: 0 maximum: 1
-     * 
-     * @return platformSource */
+    /**
+     * 平台来源： - 0：codelabs - 1：devstar 
+     * minimum: 0
+     * maximum: 1
+     * @return platformSource
+     */
     public Integer getPlatformSource() {
         return platformSource;
     }
@@ -727,9 +773,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 相关文档，示例，帖子。
-     * 
-     * @return references */
+    /**
+     * 相关文档，示例，帖子。
+     * @return references
+     */
     public List<Reference> getReferences() {
         return references;
     }
@@ -743,9 +790,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板自定义参数列表。
-     * 
-     * @return properties */
+    /**
+     * 模板自定义参数列表。
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -775,9 +823,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** dependency信息。
-     * 
-     * @return dependencies */
+    /**
+     * dependency信息。
+     * @return dependencies
+     */
     public List<Object> getDependencies() {
         return dependencies;
     }
@@ -791,9 +840,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** dependency类型。
-     * 
-     * @return dependencyType */
+    /**
+     * dependency类型。
+     * @return dependencyType
+     */
     public String getDependencyType() {
         return dependencyType;
     }
@@ -807,9 +857,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 关联论坛板块id。 minimum: 0 maximum: 100000
-     * 
-     * @return forumId */
+    /**
+     * 关联论坛板块id。
+     * minimum: 0
+     * maximum: 100000
+     * @return forumId
+     */
     public Integer getForumId() {
         return forumId;
     }
@@ -823,9 +876,12 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板文件解压缩之后的大小(单位:KB)。 minimum: 0 maximum: 2147483647
-     * 
-     * @return fileSize */
+    /**
+     * 模板文件解压缩之后的大小(单位:KB)。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return fileSize
+     */
     public Integer getFileSize() {
         return fileSize;
     }
@@ -839,9 +895,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 部署信息。
-     * 
-     * @return deployment */
+    /**
+     * 部署信息。
+     * @return deployment
+     */
     public Object getDeployment() {
         return deployment;
     }
@@ -855,9 +912,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板关联更新态Id。
-     * 
-     * @return updateId */
+    /**
+     * 模板关联更新态Id。
+     * @return updateId
+     */
     public String getUpdateId() {
         return updateId;
     }
@@ -871,9 +929,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 是否支持使用CloudIDE运行源码。
-     * 
-     * @return isSupportCloudide */
+    /**
+     * 是否支持使用CloudIDE运行源码。
+     * @return isSupportCloudide
+     */
     public Boolean getIsSupportCloudide() {
         return isSupportCloudide;
     }
@@ -887,9 +946,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 是否有消息
-     * 
-     * @return hasNotices */
+    /**
+     * 是否有消息
+     * @return hasNotices
+     */
     public Boolean getHasNotices() {
         return hasNotices;
     }
@@ -919,9 +979,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板部署方式依赖信息
-     * 
-     * @return dependents */
+    /**
+     * 模板部署方式依赖信息
+     * @return dependents
+     */
     public List<Dependent> getDependents() {
         return dependents;
     }
@@ -935,9 +996,10 @@ public class TemplateInfo {
         return this;
     }
 
-    /** 模板关联云服务。
-     * 
-     * @return dependentServices */
+    /**
+     * 模板关联云服务。
+     * @return dependentServices
+     */
     public String getDependentServices() {
         return dependentServices;
     }
@@ -1078,7 +1140,10 @@ public class TemplateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowReposTagResp */
+/**
+ * ShowReposTagResp
+ */
 public class ShowReposTagResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** tag编号
-     * 
-     * @return id */
+    /**
+     * tag编号
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -114,9 +117,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 仓库编号
-     * 
-     * @return repoId */
+    /**
+     * 仓库编号
+     * @return repoId
+     */
     public Long getRepoId() {
         return repoId;
     }
@@ -130,9 +134,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** Tag版本名称
-     * 
-     * @return tag */
+    /**
+     * Tag版本名称
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -146,9 +151,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像id
-     * 
-     * @return imageId */
+    /**
+     * 镜像id
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -162,9 +168,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像manifest
-     * 
-     * @return manifest */
+    /**
+     * 镜像manifest
+     * @return manifest
+     */
     public String getManifest() {
         return manifest;
     }
@@ -178,9 +185,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像hash值
-     * 
-     * @return digest */
+    /**
+     * 镜像hash值
+     * @return digest
+     */
     public String getDigest() {
         return digest;
     }
@@ -194,9 +202,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** docker协议版本，值为1或2
-     * 
-     * @return schema */
+    /**
+     * docker协议版本，值为1或2
+     * @return schema
+     */
     public Long getSchema() {
         return schema;
     }
@@ -210,9 +219,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像pull地址，格式为swr.cn-north-1.myhuaweicloud.com/namespace/repository:tag
-     * 
-     * @return path */
+    /**
+     * 镜像pull地址，格式为swr.cn-north-1.myhuaweicloud.com/namespace/repository:tag
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -226,9 +236,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** cce集群内镜像pull路径，格式为 10.125.0.198:20202/namespace/repository:tag
-     * 
-     * @return internalPath */
+    /**
+     * cce集群内镜像pull路径，格式为 10.125.0.198:20202/namespace/repository:tag
+     * @return internalPath
+     */
     public String getInternalPath() {
         return internalPath;
     }
@@ -242,9 +253,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像大小，0 ~ 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 镜像大小，0 ~ 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -258,9 +270,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 默认值为false
-     * 
-     * @return isTrusted */
+    /**
+     * 默认值为false
+     * @return isTrusted
+     */
     public Boolean getIsTrusted() {
         return isTrusted;
     }
@@ -274,9 +287,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像创建时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return created */
+    /**
+     * 镜像创建时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -290,9 +304,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像更新时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return updated */
+    /**
+     * 镜像更新时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -306,9 +321,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像删除时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return deleted */
+    /**
+     * 镜像删除时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return deleted
+     */
     public String getDeleted() {
         return deleted;
     }
@@ -322,9 +338,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 帐号ID
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -338,9 +355,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 镜像是否被扫描过
-     * 
-     * @return scanned */
+    /**
+     * 镜像是否被扫描过
+     * @return scanned
+     */
     public Boolean getScanned() {
         return scanned;
     }
@@ -354,9 +372,10 @@ public class ShowReposTagResp {
         return this;
     }
 
-    /** 0：manifest类型；1：manifest list类型
-     * 
-     * @return tagType */
+    /**
+     * 0：manifest类型；1：manifest list类型
+     * @return tagType
+     */
     public Long getTagType() {
         return tagType;
     }
@@ -436,7 +455,10 @@ public class ShowReposTagResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

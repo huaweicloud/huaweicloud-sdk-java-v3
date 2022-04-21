@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** links字段数据结构说明 */
+/**
+ * links字段数据结构说明
+ */
 public class LinksInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class LinksInfo {
         return this;
     }
 
-    /** 快捷链接标记名称。取值为：self：包含版本号的资源链接，需要立即跟踪时使用此类链接。bookmark：提供了适合长期存储的资源链接。
-     * 
-     * @return rel */
+    /**
+     * 快捷链接标记名称。取值为：self：包含版本号的资源链接，需要立即跟踪时使用此类链接。bookmark：提供了适合长期存储的资源链接。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -44,9 +47,10 @@ public class LinksInfo {
         return this;
     }
 
-    /** 对应快捷链接
-     * 
-     * @return href */
+    /**
+     * 对应快捷链接
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -60,9 +64,10 @@ public class LinksInfo {
         return this;
     }
 
-    /** 快捷链接类型
-     * 
-     * @return type */
+    /**
+     * 快捷链接类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -100,7 +105,10 @@ public class LinksInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAgenciesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,12 @@ public class ListAgenciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数 minimum: 0 maximum: 65535
-     * 
-     * @return totalCount */
+    /**
+     * 总数
+     * minimum: 0
+     * maximum: 65535
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -59,9 +64,10 @@ public class ListAgenciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 委托列表
-     * 
-     * @return agencyList */
+    /**
+     * 委托列表
+     * @return agencyList
+     */
     public List<AgencyV2> getAgencyList() {
         return agencyList;
     }
@@ -98,7 +104,10 @@ public class ListAgenciesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

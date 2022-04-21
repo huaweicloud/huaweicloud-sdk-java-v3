@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** API版本详细信息列表。 */
+/**
+ * API版本详细信息列表。
+ */
 public class ApiVersion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ApiVersion {
         return this;
     }
 
-    /** API版本号，如v3。
-     * 
-     * @return id */
+    /**
+     * API版本号，如v3。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class ApiVersion {
         return this;
     }
 
-    /** 版本状态。 取值“CURRENT”，表示该版本为主推版本。取值“SUPPORTED”，表示为老版本，但是现在还继续支持。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态。 取值“CURRENT”，表示该版本为主推版本。取值“SUPPORTED”，表示为老版本，但是现在还继续支持。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -65,9 +69,10 @@ public class ApiVersion {
         return this;
     }
 
-    /** 版本发布时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指UTC时间。
-     * 
-     * @return updated */
+    /**
+     * 版本发布时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指UTC时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -81,9 +86,10 @@ public class ApiVersion {
         return this;
     }
 
-    /** API的微版本，如果不支持微版本，则为空
-     * 
-     * @return version */
+    /**
+     * API的微版本，如果不支持微版本，则为空
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -122,7 +128,10 @@ public class ApiVersion {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

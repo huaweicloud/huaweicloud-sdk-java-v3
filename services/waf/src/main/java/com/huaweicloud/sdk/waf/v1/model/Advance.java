@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 高级配置 */
+/**
+ * 高级配置
+ */
 public class Advance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Advance {
         return this;
     }
 
-    /** 索引（参数：params，会话cookie：cookie，header字段：header，body字段：body，多种组合：multipart）
-     * 
-     * @return index */
+    /**
+     * 索引（参数：params，会话cookie：cookie，header字段：header，body字段：body，多种组合：multipart）
+     * @return index
+     */
     public String getIndex() {
         return index;
     }
@@ -58,9 +61,10 @@ public class Advance {
         return this;
     }
 
-    /** 指定字段（仅在param，cookie，header模式下可以使用）
-     * 
-     * @return contents */
+    /**
+     * 指定字段（仅在param，cookie，header模式下可以使用）
+     * @return contents
+     */
     public List<String> getContents() {
         return contents;
     }
@@ -96,7 +100,10 @@ public class Advance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

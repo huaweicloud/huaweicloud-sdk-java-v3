@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateServiceRequestBody */
+/**
+ * CreateServiceRequestBody
+ */
 public class CreateServiceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class CreateServiceRequestBody {
 
     private String description;
 
-    /** 服务状态 0-启用 1-停用 */
+    /**
+     * 服务状态 0-启用 1-停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,12 @@ public class CreateServiceRequestBody {
         return this;
     }
 
-    /** 服务归属的产品模板ID，产品模板ID和产品ID二选一必填，自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productTemplateId */
+    /**
+     * 服务归属的产品模板ID，产品模板ID和产品ID二选一必填，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productTemplateId
+     */
     public Integer getProductTemplateId() {
         return productTemplateId;
     }
@@ -130,9 +141,12 @@ public class CreateServiceRequestBody {
         return this;
     }
 
-    /** 服务归属的产品ID，产品模板ID和产品ID二选一必填，自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productId */
+    /**
+     * 服务归属的产品ID，产品模板ID和产品ID二选一必填，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -146,9 +160,10 @@ public class CreateServiceRequestBody {
         return this;
     }
 
-    /** 服务名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
-     * 
-     * @return serviceName */
+    /**
+     * 服务名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -162,9 +177,10 @@ public class CreateServiceRequestBody {
         return this;
     }
 
-    /** 服务描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 服务描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -178,9 +194,12 @@ public class CreateServiceRequestBody {
         return this;
     }
 
-    /** 服务状态 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 服务状态 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -223,7 +242,10 @@ public class CreateServiceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

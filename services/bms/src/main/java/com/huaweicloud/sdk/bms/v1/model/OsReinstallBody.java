@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 重装裸金属服务器操作系统接口请求结构体 */
+/**
+ * 重装裸金属服务器操作系统接口请求结构体
+ */
 public class OsReinstallBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OsReinstallBody {
         return this;
     }
 
-    /** Get osReinstall
-     * 
-     * @return osReinstall */
+    /**
+     * Get osReinstall
+     * @return osReinstall
+     */
     public OsReinstall getOsReinstall() {
         return osReinstall;
     }
@@ -65,7 +68,10 @@ public class OsReinstallBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

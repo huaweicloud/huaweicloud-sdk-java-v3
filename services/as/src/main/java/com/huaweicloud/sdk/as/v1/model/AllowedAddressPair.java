@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 是否开启源/目的检查开关。 */
+/**
+ * 是否开启源/目的检查开关。
+ */
 public class AllowedAddressPair {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AllowedAddressPair {
         return this;
     }
 
-    /** 是否开启源/目的检查开关。 默认是开启，不允许置空。 关闭：1.1.1.1/0 开启：除“1.1.1.1/0”以外的其余值均按开启处理
-     * 
-     * @return ipAddress */
+    /**
+     * 是否开启源/目的检查开关。  默认是开启，不允许置空。  关闭：1.1.1.1/0 开启：除“1.1.1.1/0”以外的其余值均按开启处理
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -55,7 +58,10 @@ public class AllowedAddressPair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

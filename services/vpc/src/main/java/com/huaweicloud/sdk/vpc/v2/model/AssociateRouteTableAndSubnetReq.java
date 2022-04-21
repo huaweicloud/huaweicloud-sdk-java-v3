@@ -44,9 +44,10 @@ public class AssociateRouteTableAndSubnetReq {
         return this;
     }
 
-    /** 路由表关联子网ID列表
-     * 
-     * @return associate */
+    /**
+     * 路由表关联子网ID列表 
+     * @return associate
+     */
     public List<String> getAssociate() {
         return associate;
     }
@@ -76,9 +77,10 @@ public class AssociateRouteTableAndSubnetReq {
         return this;
     }
 
-    /** 路由表解除关联子网ID列表
-     * 
-     * @return disassociate */
+    /**
+     * 路由表解除关联子网ID列表
+     * @return disassociate
+     */
     public List<String> getDisassociate() {
         return disassociate;
     }
@@ -115,7 +117,10 @@ public class AssociateRouteTableAndSubnetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

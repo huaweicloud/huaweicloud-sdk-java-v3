@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RestorePtrRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class RestorePtrRecordRequest {
         return this;
     }
 
-    /** Get region
-     * 
-     * @return region */
+    /**
+     * Get region
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -45,9 +48,10 @@ public class RestorePtrRecordRequest {
         return this;
     }
 
-    /** Get floatingipId
-     * 
-     * @return floatingipId */
+    /**
+     * Get floatingipId
+     * @return floatingipId
+     */
     public String getFloatingipId() {
         return floatingipId;
     }
@@ -70,9 +74,10 @@ public class RestorePtrRecordRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public RestorePtrReq getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class RestorePtrRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

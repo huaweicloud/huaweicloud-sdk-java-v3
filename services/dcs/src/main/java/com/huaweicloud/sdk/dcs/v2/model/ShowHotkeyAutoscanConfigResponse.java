@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -53,9 +56,10 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启自动分析
-     * 
-     * @return enableAutoScan */
+    /**
+     * 是否开启自动分析
+     * @return enableAutoScan
+     */
     public Boolean getEnableAutoScan() {
         return enableAutoScan;
     }
@@ -85,9 +89,10 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 每日分析时间，时间格式为21:00
-     * 
-     * @return scheduleAt */
+    /**
+     * 每日分析时间，时间格式为21:00
+     * @return scheduleAt
+     */
     public List<String> getScheduleAt() {
         return scheduleAt;
     }
@@ -101,9 +106,10 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 配置更新时间，时间格式为2020-06-15T02:21:18.669Z
-     * 
-     * @return updatedAt */
+    /**
+     * 配置更新时间，时间格式为2020-06-15T02:21:18.669Z
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -144,7 +150,10 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateInstanceUserReq */
+/**
+ * CreateInstanceUserReq
+ */
 public class CreateInstanceUserReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateInstanceUserReq {
         return this;
     }
 
-    /** 用户名称。
-     * 
-     * @return userName */
+    /**
+     * 用户名称。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -39,10 +42,10 @@ public class CreateInstanceUserReq {
         return this;
     }
 
-    /** 用户密码。 密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合： - 小写字母 - 大写字母 - 数字 -
-     * 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
-     * 
-     * @return userPasswd */
+    /**
+     * 用户密码。  密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * @return userPasswd
+     */
     public String getUserPasswd() {
         return userPasswd;
     }
@@ -79,7 +82,10 @@ public class CreateInstanceUserReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

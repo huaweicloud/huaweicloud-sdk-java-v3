@@ -10,71 +10,114 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 视频的元数据信息。 经过视频解析后产生，包括封装格式、大小、分辨率、码率、帧率。 */
+/**
+ * 视频的元数据信息。  经过视频解析后产生，包括封装格式、大小、分辨率、码率、帧率。
+ */
 public class MetaData {
 
-    /** 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA
-     * - PCM - ADPCM - WavPack */
+    /**
+     * 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
+     */
     public static final class CodecEnum {
 
-        /** Enum MPEG_2 for value: "MPEG-2" */
+        /**
+         * Enum MPEG_2 for value: "MPEG-2"
+         */
         public static final CodecEnum MPEG_2 = new CodecEnum("MPEG-2");
 
-        /** Enum MPEG_4 for value: "MPEG-4" */
+        /**
+         * Enum MPEG_4 for value: "MPEG-4"
+         */
         public static final CodecEnum MPEG_4 = new CodecEnum("MPEG-4");
 
-        /** Enum H_264 for value: "H.264" */
+        /**
+         * Enum H_264 for value: "H.264"
+         */
         public static final CodecEnum H_264 = new CodecEnum("H.264");
 
-        /** Enum H_265 for value: "H.265" */
+        /**
+         * Enum H_265 for value: "H.265"
+         */
         public static final CodecEnum H_265 = new CodecEnum("H.265");
 
-        /** Enum WMV for value: "WMV" */
+        /**
+         * Enum WMV for value: "WMV"
+         */
         public static final CodecEnum WMV = new CodecEnum("WMV");
 
-        /** Enum VORBIS for value: "Vorbis" */
+        /**
+         * Enum VORBIS for value: "Vorbis"
+         */
         public static final CodecEnum VORBIS = new CodecEnum("Vorbis");
 
-        /** Enum AAC for value: "AAC" */
+        /**
+         * Enum AAC for value: "AAC"
+         */
         public static final CodecEnum AAC = new CodecEnum("AAC");
 
-        /** Enum EAC_3 for value: "EAC-3" */
+        /**
+         * Enum EAC_3 for value: "EAC-3"
+         */
         public static final CodecEnum EAC_3 = new CodecEnum("EAC-3");
 
-        /** Enum AC_3 for value: "AC-3" */
+        /**
+         * Enum AC_3 for value: "AC-3"
+         */
         public static final CodecEnum AC_3 = new CodecEnum("AC-3");
 
-        /** Enum AMR for value: "AMR" */
+        /**
+         * Enum AMR for value: "AMR"
+         */
         public static final CodecEnum AMR = new CodecEnum("AMR");
 
-        /** Enum APE for value: "APE" */
+        /**
+         * Enum APE for value: "APE"
+         */
         public static final CodecEnum APE = new CodecEnum("APE");
 
-        /** Enum FLAC for value: "FLAC" */
+        /**
+         * Enum FLAC for value: "FLAC"
+         */
         public static final CodecEnum FLAC = new CodecEnum("FLAC");
 
-        /** Enum MP3 for value: "MP3" */
+        /**
+         * Enum MP3 for value: "MP3"
+         */
         public static final CodecEnum MP3 = new CodecEnum("MP3");
 
-        /** Enum MP2 for value: "MP2" */
+        /**
+         * Enum MP2 for value: "MP2"
+         */
         public static final CodecEnum MP2 = new CodecEnum("MP2");
 
-        /** Enum WMA for value: "WMA" */
+        /**
+         * Enum WMA for value: "WMA"
+         */
         public static final CodecEnum WMA = new CodecEnum("WMA");
 
-        /** Enum PCM for value: "PCM" */
+        /**
+         * Enum PCM for value: "PCM"
+         */
         public static final CodecEnum PCM = new CodecEnum("PCM");
 
-        /** Enum ADPCM for value: "ADPCM" */
+        /**
+         * Enum ADPCM for value: "ADPCM"
+         */
         public static final CodecEnum ADPCM = new CodecEnum("ADPCM");
 
-        /** Enum WAVPACK for value: "WavPack" */
+        /**
+         * Enum WAVPACK for value: "WavPack"
+         */
         public static final CodecEnum WAVPACK = new CodecEnum("WavPack");
 
-        /** Enum HEAAC for value: "HEAAC" */
+        /**
+         * Enum HEAAC for value: "HEAAC"
+         */
         public static final CodecEnum HEAAC = new CodecEnum("HEAAC");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final CodecEnum UNKNOWN = new CodecEnum("UNKNOWN");
 
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
@@ -207,10 +250,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA
-     * - PCM - ADPCM - WavPack
-     * 
-     * @return codec */
+    /**
+     * 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
+     * @return codec
+     */
     public CodecEnum getCodec() {
         return codec;
     }
@@ -224,9 +267,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频时长。 若视频的原时长为非整数，则该字段值为原时长的向上取整。
-     * 
-     * @return duration */
+    /**
+     * 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向上取整。
+     * @return duration
+     */
     public Long getDuration() {
         return duration;
     }
@@ -240,9 +284,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频文件大小。 单位：字节。
-     * 
-     * @return videoSize */
+    /**
+     * 视频文件大小。  单位：字节。
+     * @return videoSize
+     */
     public Long getVideoSize() {
         return videoSize;
     }
@@ -256,9 +301,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频宽度（单位：像素）。 - 编码为H.264的取值范围：[32,3840]之间2的倍数。 - 编码为H.265的取值范围：[320,3840]之间4的倍数。
-     * 
-     * @return width */
+    /**
+     * 视频宽度（单位：像素）。 - 编码为H.264的取值范围：[32,3840]之间2的倍数。 - 编码为H.265的取值范围：[320,3840]之间4的倍数。
+     * @return width
+     */
     public Long getWidth() {
         return width;
     }
@@ -272,9 +318,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
-     * 
-     * @return hight */
+    /**
+     * 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+     * @return hight
+     */
     public Long getHight() {
         return hight;
     }
@@ -288,9 +335,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频平均码率。
-     * 
-     * @return bitRate */
+    /**
+     * 视频平均码率。
+     * @return bitRate
+     */
     public Long getBitRate() {
         return bitRate;
     }
@@ -304,11 +352,10 @@ public class MetaData {
         return this;
     }
 
-    /** 帧率（单位：帧每秒）。 取值如下： - FRAMERATE_AUTO = 1, - FRAMERATE_10 = 2, - FRAMERATE_15 = 3, - FRAMERATE_2397 = 4, // 23.97
-     * fps - FRAMERATE_24 = 5, - FRAMERATE_25 = 6, - FRAMERATE_2997 = 7, // 29.97 fps - FRAMERATE_30 = 8, - FRAMERATE_50
-     * = 9, - FRAMERATE_60 = 10 默认值：1。 单位：帧每秒。
-     * 
-     * @return frameRate */
+    /**
+     * 帧率（单位：帧每秒）。  取值如下： - FRAMERATE_AUTO = 1, - FRAMERATE_10 = 2, - FRAMERATE_15 = 3, - FRAMERATE_2397 = 4, // 23.97 fps - FRAMERATE_24 = 5, - FRAMERATE_25 = 6, - FRAMERATE_2997 = 7, // 29.97 fps - FRAMERATE_30 = 8, - FRAMERATE_50 = 9, - FRAMERATE_60 = 10  默认值：1。  单位：帧每秒。
+     * @return frameRate
+     */
     public Long getFrameRate() {
         return frameRate;
     }
@@ -322,9 +369,10 @@ public class MetaData {
         return this;
     }
 
-    /** 清晰度。 取值如下： - FULL_HD：超高清 - HD：高清 - SD：标清 - FLUENT：流畅 - AD：自适应 - 2K - 4K
-     * 
-     * @return quality */
+    /**
+     * 清晰度。  取值如下： - FULL_HD：超高清 - HD：高清 - SD：标清 - FLUENT：流畅 - AD：自适应 - 2K - 4K
+     * @return quality
+     */
     public String getQuality() {
         return quality;
     }
@@ -338,9 +386,10 @@ public class MetaData {
         return this;
     }
 
-    /** 音频的声道数。
-     * 
-     * @return audioChannels */
+    /**
+     * 音频的声道数。
+     * @return audioChannels
+     */
     public Integer getAudioChannels() {
         return audioChannels;
     }
@@ -387,7 +436,10 @@ public class MetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

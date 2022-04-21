@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 邀请者的信息 */
+/**
+ * 邀请者的信息
+ */
 public class InvitorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方用户id
-     * 
-     * @return invitorId */
+    /**
+     * 邀请方用户id
+     * @return invitorId
+     */
     public String getInvitorId() {
         return invitorId;
     }
@@ -89,9 +92,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方用户名
-     * 
-     * @return invitorName */
+    /**
+     * 邀请方用户名
+     * @return invitorName
+     */
     public String getInvitorName() {
         return invitorName;
     }
@@ -105,9 +109,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的服务id
-     * 
-     * @return invitorBcsId */
+    /**
+     * 邀请方的服务id
+     * @return invitorBcsId
+     */
     public String getInvitorBcsId() {
         return invitorBcsId;
     }
@@ -121,9 +126,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的服务名
-     * 
-     * @return invitorBcsName */
+    /**
+     * 邀请方的服务名
+     * @return invitorBcsName
+     */
     public String getInvitorBcsName() {
         return invitorBcsName;
     }
@@ -137,9 +143,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的共识
-     * 
-     * @return invitorConsensus */
+    /**
+     * 邀请方的共识
+     * @return invitorConsensus
+     */
     public String getInvitorConsensus() {
         return invitorConsensus;
     }
@@ -153,9 +160,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的projectID
-     * 
-     * @return invitorProjectId */
+    /**
+     * 邀请方的projectID
+     * @return invitorProjectId
+     */
     public String getInvitorProjectId() {
         return invitorProjectId;
     }
@@ -169,9 +177,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的集群类型
-     * 
-     * @return invitorClusterType */
+    /**
+     * 邀请方的集群类型
+     * @return invitorClusterType
+     */
     public String getInvitorClusterType() {
         return invitorClusterType;
     }
@@ -185,9 +194,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方数据库类型
-     * 
-     * @return invitorDatabaseType */
+    /**
+     * 邀请方数据库类型
+     * @return invitorDatabaseType
+     */
     public String getInvitorDatabaseType() {
         return invitorDatabaseType;
     }
@@ -201,9 +211,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的签名算法
-     * 
-     * @return invitorSignatureAlgorithm */
+    /**
+     * 邀请方的签名算法
+     * @return invitorSignatureAlgorithm
+     */
     public String getInvitorSignatureAlgorithm() {
         return invitorSignatureAlgorithm;
     }
@@ -217,9 +228,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 邀请方的fabric版本
-     * 
-     * @return invitorFabricVersion */
+    /**
+     * 邀请方的fabric版本
+     * @return invitorFabricVersion
+     */
     public String getInvitorFabricVersion() {
         return invitorFabricVersion;
     }
@@ -233,9 +245,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** 是否允许order老化
-     * 
-     * @return orderFadeEnabled */
+    /**
+     * 是否允许order老化
+     * @return orderFadeEnabled
+     */
     public Boolean getOrderFadeEnabled() {
         return orderFadeEnabled;
     }
@@ -249,9 +262,10 @@ public class InvitorInfo {
         return this;
     }
 
-    /** order老化阈值
-     * 
-     * @return orderFadeCache */
+    /**
+     * order老化阈值
+     * @return orderFadeCache
+     */
     public Long getOrderFadeCache() {
         return orderFadeCache;
     }
@@ -319,7 +333,10 @@ public class InvitorInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AcceptVpcPeeringResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,22 +28,34 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
 
     private String name;
 
-    /** 功能说明：对等连接状态 取值范围： - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。 */
+    /**
+     * 功能说明：对等连接状态 取值范围： - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
+     */
     public static final class StatusEnum {
 
-        /** Enum PENDING_ACCEPTANCE for value: "PENDING_ACCEPTANCE" */
+        /**
+         * Enum PENDING_ACCEPTANCE for value: "PENDING_ACCEPTANCE"
+         */
         public static final StatusEnum PENDING_ACCEPTANCE = new StatusEnum("PENDING_ACCEPTANCE");
 
-        /** Enum REJECTED for value: "REJECTED" */
+        /**
+         * Enum REJECTED for value: "REJECTED"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("REJECTED");
 
-        /** Enum EXPIRED for value: "EXPIRED" */
+        /**
+         * Enum EXPIRED for value: "EXPIRED"
+         */
         public static final StatusEnum EXPIRED = new StatusEnum("EXPIRED");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +158,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 对等连接ID
-     * 
-     * @return id */
+    /**
+     * 对等连接ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -160,9 +175,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：对等连接名称 取值范围：支持1~64个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：对等连接名称 取值范围：支持1~64个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -176,9 +192,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：对等连接状态 取值范围： - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
-     * 
-     * @return status */
+    /**
+     * 功能说明：对等连接状态 取值范围： - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -201,9 +218,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** Get requestVpcInfo
-     * 
-     * @return requestVpcInfo */
+    /**
+     * Get requestVpcInfo
+     * @return requestVpcInfo
+     */
     public VpcInfo getRequestVpcInfo() {
         return requestVpcInfo;
     }
@@ -226,9 +244,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** Get acceptVpcInfo
-     * 
-     * @return acceptVpcInfo */
+    /**
+     * Get acceptVpcInfo
+     * @return acceptVpcInfo
+     */
     public VpcInfo getAcceptVpcInfo() {
         return acceptVpcInfo;
     }
@@ -242,9 +261,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -258,9 +278,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return updatedAt */
+    /**
+     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -274,9 +295,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return this;
     }
 
-    /** 对等连接描述
-     * 
-     * @return description */
+    /**
+     * 对等连接描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -325,7 +347,10 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

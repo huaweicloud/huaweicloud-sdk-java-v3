@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 权限实体。 */
+/**
+ * 权限实体。
+ */
 public class AccessPolicyTopicEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AccessPolicyTopicEntity {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class AccessPolicyTopicEntity {
         return this;
     }
 
-    /** 权限列表。
-     * 
-     * @return policies */
+    /**
+     * 权限列表。
+     * @return policies
+     */
     public List<AccessPolicyEntity> getPolicies() {
         return policies;
     }
@@ -97,7 +101,10 @@ public class AccessPolicyTopicEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

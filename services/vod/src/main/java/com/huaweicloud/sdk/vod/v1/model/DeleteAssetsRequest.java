@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteAssetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class DeleteAssetsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -52,9 +55,10 @@ public class DeleteAssetsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -86,9 +90,10 @@ public class DeleteAssetsRequest {
         return this;
     }
 
-    /** 媒资ID，支持一次删除多个媒资，批量删除时以逗号分隔。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID，支持一次删除多个媒资，批量删除时以逗号分隔。
+     * @return assetId
+     */
     public List<String> getAssetId() {
         return assetId;
     }
@@ -102,9 +107,10 @@ public class DeleteAssetsRequest {
         return this;
     }
 
-    /** 删除类型，当值为origin时只删除源文件，保留转码后文件。
-     * 
-     * @return deleteType */
+    /**
+     * 删除类型，当值为origin时只删除源文件，保留转码后文件。
+     * @return deleteType
+     */
     public String getDeleteType() {
         return deleteType;
     }
@@ -145,7 +151,10 @@ public class DeleteAssetsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

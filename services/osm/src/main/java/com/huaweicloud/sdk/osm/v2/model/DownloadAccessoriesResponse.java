@@ -4,7 +4,9 @@ import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DownloadAccessoriesResponse extends SdkStreamResponse {
 
     @Override

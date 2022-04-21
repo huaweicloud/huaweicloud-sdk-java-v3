@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 网络信息 */
+/**
+ * 网络信息
+ */
 public class Networks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class Networks {
         return this;
     }
 
-    /** 子网的网络id。
-     * 
-     * @return id */
+    /**
+     * 子网的网络id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -52,9 +55,10 @@ public class Networks {
         return this;
     }
 
-    /** 是否启用IPv6。取值为true时，标识此网卡已启用IPv6。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 是否启用IPv6。取值为true时，标识此网卡已启用IPv6。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -77,9 +81,10 @@ public class Networks {
         return this;
     }
 
-    /** Get ipv6Bandwidth
-     * 
-     * @return ipv6Bandwidth */
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
     public Ipv6Bandwidth getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -109,9 +114,10 @@ public class Networks {
         return this;
     }
 
-    /** 是否开启源/目的检查开关。
-     * 
-     * @return allowedAddressPairs */
+    /**
+     * 是否开启源/目的检查开关。
+     * @return allowedAddressPairs
+     */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
         return allowedAddressPairs;
     }
@@ -151,7 +157,10 @@ public class Networks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

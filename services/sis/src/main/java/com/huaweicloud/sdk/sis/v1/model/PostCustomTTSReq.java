@@ -26,9 +26,10 @@ public class PostCustomTTSReq {
         return this;
     }
 
-    /** 待合成的文本，文本长度限制小于500字符。
-     * 
-     * @return text */
+    /**
+     * 待合成的文本，文本长度限制小于500字符。
+     * @return text
+     */
     public String getText() {
         return text;
     }
@@ -51,9 +52,10 @@ public class PostCustomTTSReq {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public TtsConfig getConfig() {
         return config;
     }
@@ -89,7 +91,10 @@ public class PostCustomTTSReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

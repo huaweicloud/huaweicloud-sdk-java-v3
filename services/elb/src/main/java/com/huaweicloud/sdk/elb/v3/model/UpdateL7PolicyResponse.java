@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateL7PolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class UpdateL7PolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID。 注：自动生成 。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。  注：自动生成 。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -50,9 +53,10 @@ public class UpdateL7PolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get l7policy
-     * 
-     * @return l7policy */
+    /**
+     * Get l7policy
+     * @return l7policy
+     */
     public L7Policy getL7policy() {
         return l7policy;
     }
@@ -89,7 +93,10 @@ public class UpdateL7PolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -37,9 +37,10 @@ public class ResExecConfig {
         return this;
     }
 
-    /** Get sparkCalcSpec
-     * 
-     * @return sparkCalcSpec */
+    /**
+     * Get sparkCalcSpec
+     * @return sparkCalcSpec
+     */
     public SparkCalcSpec getSparkCalcSpec() {
         return sparkCalcSpec;
     }
@@ -69,9 +70,10 @@ public class ResExecConfig {
         return this;
     }
 
-    /** spark可选配置项
-     * 
-     * @return sparkOptionConfs */
+    /**
+     * spark可选配置项
+     * @return sparkOptionConfs
+     */
     public List<SparkOptionConf> getSparkOptionConfs() {
         return sparkOptionConfs;
     }
@@ -108,7 +110,10 @@ public class ResExecConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

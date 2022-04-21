@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchDeleteServerNicsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteServerNicsRequestBody {
         return this;
     }
 
-    /** 需要删除的网卡列表信息。 说明： 主网卡是弹性云服务器上配置了路由规则的网卡，不可删除。
-     * 
-     * @return nics */
+    /**
+     * 需要删除的网卡列表信息。  说明： 主网卡是弹性云服务器上配置了路由规则的网卡，不可删除。
+     * @return nics
+     */
     public List<BatchDeleteServerNicOption> getNics() {
         return nics;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteServerNicsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

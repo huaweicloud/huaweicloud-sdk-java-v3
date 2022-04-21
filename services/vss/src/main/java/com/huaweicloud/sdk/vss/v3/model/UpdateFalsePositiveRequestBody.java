@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateFalsePositiveRequestBody */
+/**
+ * UpdateFalsePositiveRequestBody
+ */
 public class UpdateFalsePositiveRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class UpdateFalsePositiveRequestBody {
 
     private String reason;
 
-    /** 对漏洞的操作: * false_report - 更新漏洞状态为误报，并忽略 * repairing - 更新漏洞状态未修复 */
+    /**
+     * 对漏洞的操作:   * false_report - 更新漏洞状态为误报，并忽略   * repairing - 更新漏洞状态未修复 
+     */
     public static final class VulnStatusEnum {
 
-        /** Enum FALSE_REPORT for value: "false_report" */
+        /**
+         * Enum FALSE_REPORT for value: "false_report"
+         */
         public static final VulnStatusEnum FALSE_REPORT = new VulnStatusEnum("false_report");
 
-        /** Enum REPAIRING for value: "repairing" */
+        /**
+         * Enum REPAIRING for value: "repairing"
+         */
         public static final VulnStatusEnum REPAIRING = new VulnStatusEnum("repairing");
 
         private static final Map<String, VulnStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class UpdateFalsePositiveRequestBody {
         return this;
     }
 
-    /** 漏洞ID
-     * 
-     * @return vulnId */
+    /**
+     * 漏洞ID
+     * @return vulnId
+     */
     public String getVulnId() {
         return vulnId;
     }
@@ -125,9 +134,10 @@ public class UpdateFalsePositiveRequestBody {
         return this;
     }
 
-    /** 误报确认人
-     * 
-     * @return provider */
+    /**
+     * 误报确认人
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -141,9 +151,10 @@ public class UpdateFalsePositiveRequestBody {
         return this;
     }
 
-    /** 误报确认理由
-     * 
-     * @return reason */
+    /**
+     * 误报确认理由
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -157,9 +168,10 @@ public class UpdateFalsePositiveRequestBody {
         return this;
     }
 
-    /** 对漏洞的操作: * false_report - 更新漏洞状态为误报，并忽略 * repairing - 更新漏洞状态未修复
-     * 
-     * @return vulnStatus */
+    /**
+     * 对漏洞的操作:   * false_report - 更新漏洞状态为误报，并忽略   * repairing - 更新漏洞状态未修复 
+     * @return vulnStatus
+     */
     public VulnStatusEnum getVulnStatus() {
         return vulnStatus;
     }
@@ -200,7 +212,10 @@ public class UpdateFalsePositiveRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

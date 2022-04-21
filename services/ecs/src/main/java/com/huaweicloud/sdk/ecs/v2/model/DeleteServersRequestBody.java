@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class DeleteServersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,10 +33,10 @@ public class DeleteServersRequestBody {
         return this;
     }
 
-    /** 配置删除云服务器是否删除云服务器绑定的弹性IP。如果选择不删除，则系统仅做解绑定操作，保留弹性IP资源。 取值为true或false，默认为false。 - true：删除云服务器时会同时删除绑定在云服务器上的弹性IP。 -
-     * false：删除云服务器时，仅解绑定在云服务器上的弹性IP，不删除弹性IP
-     * 
-     * @return deletePublicip */
+    /**
+     * 配置删除云服务器是否删除云服务器绑定的弹性IP。如果选择不删除，则系统仅做解绑定操作，保留弹性IP资源。 取值为true或false，默认为false。   - true：删除云服务器时会同时删除绑定在云服务器上的弹性IP。  - false：删除云服务器时，仅解绑定在云服务器上的弹性IP，不删除弹性IP
+     * @return deletePublicip
+     */
     public Boolean getDeletePublicip() {
         return deletePublicip;
     }
@@ -48,10 +50,10 @@ public class DeleteServersRequestBody {
         return this;
     }
 
-    /** 配置删除云服务器是否删除云服务器对应的数据盘，如果选择不删除，则系统仅做解绑定操作，保留云磁盘资源。 取值为false或true，默认为false。 - true：删除云服务器时会同时删除挂载在云服务器上的数据盘。 -
-     * false：删除云服务器时，仅卸载云服务器上挂载的数据盘，不删除该数据盘。
-     * 
-     * @return deleteVolume */
+    /**
+     * 配置删除云服务器是否删除云服务器对应的数据盘，如果选择不删除，则系统仅做解绑定操作，保留云磁盘资源。 取值为false或true，默认为false。  - true：删除云服务器时会同时删除挂载在云服务器上的数据盘。 - false：删除云服务器时，仅卸载云服务器上挂载的数据盘，不删除该数据盘。
+     * @return deleteVolume
+     */
     public Boolean getDeleteVolume() {
         return deleteVolume;
     }
@@ -81,9 +83,10 @@ public class DeleteServersRequestBody {
         return this;
     }
 
-    /** 所需要删除的云服务器列表。
-     * 
-     * @return servers */
+    /**
+     * 所需要删除的云服务器列表。
+     * @return servers
+     */
     public List<ServerId> getServers() {
         return servers;
     }
@@ -122,7 +125,10 @@ public class DeleteServersRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

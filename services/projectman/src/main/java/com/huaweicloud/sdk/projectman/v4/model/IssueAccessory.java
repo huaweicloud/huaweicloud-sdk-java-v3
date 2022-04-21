@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IssueAccessory */
+/**
+ * IssueAccessory
+ */
 public class IssueAccessory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件id
-     * 
-     * @return attachmentId */
+    /**
+     * 附件id
+     * @return attachmentId
+     */
     public Integer getAttachmentId() {
         return attachmentId;
     }
@@ -79,9 +82,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 工作鞋ID
-     * 
-     * @return issueId */
+    /**
+     * 工作鞋ID
+     * @return issueId
+     */
     public Integer getIssueId() {
         return issueId;
     }
@@ -95,9 +99,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 创建者数字ID
-     * 
-     * @return creatorNumId */
+    /**
+     * 创建者数字ID
+     * @return creatorNumId
+     */
     public Integer getCreatorNumId() {
         return creatorNumId;
     }
@@ -111,9 +116,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件创建时间
-     * 
-     * @return createdDate */
+    /**
+     * 附件创建时间
+     * @return createdDate
+     */
     public String getCreatedDate() {
         return createdDate;
     }
@@ -127,9 +133,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 上传时文件名
-     * 
-     * @return fileName */
+    /**
+     * 上传时文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -143,9 +150,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件id
-     * 
-     * @return containerType */
+    /**
+     * 附件id
+     * @return containerType
+     */
     public String getContainerType() {
         return containerType;
     }
@@ -159,9 +167,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件名称
-     * 
-     * @return diskFileName */
+    /**
+     * 附件名称
+     * @return diskFileName
+     */
     public String getDiskFileName() {
         return diskFileName;
     }
@@ -175,9 +184,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件id
-     * 
-     * @return digest */
+    /**
+     * 附件id
+     * @return digest
+     */
     public String getDigest() {
         return digest;
     }
@@ -191,9 +201,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 附件路径
-     * 
-     * @return diskDirectory */
+    /**
+     * 附件路径
+     * @return diskDirectory
+     */
     public String getDiskDirectory() {
         return diskDirectory;
     }
@@ -207,9 +218,10 @@ public class IssueAccessory {
         return this;
     }
 
-    /** 创建这用户uuid
-     * 
-     * @return creatorId */
+    /**
+     * 创建这用户uuid
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -271,7 +283,10 @@ public class IssueAccessory {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

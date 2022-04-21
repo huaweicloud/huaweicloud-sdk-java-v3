@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowHistoryTaskDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -64,9 +67,10 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** 刷新任务ID。
-     * 
-     * @return historyTasksId */
+    /**
+     * 刷新任务ID。
+     * @return historyTasksId
+     */
     public String getHistoryTasksId() {
         return historyTasksId;
     }
@@ -80,9 +84,12 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** 刷新预热的urls所显示单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。 minimum: 1 maximum: 10000
-     * 
-     * @return pageSize */
+    /**
+     * 刷新预热的urls所显示单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
+     * minimum: 1
+     * maximum: 10000
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -96,9 +103,12 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** 刷新预热的urls当前查询为第几页，取值范围为1-65535。默认值1。 minimum: 1 maximum: 65535
-     * 
-     * @return pageNumber */
+    /**
+     * 刷新预热的urls当前查询为第几页，取值范围为1-65535。默认值1。
+     * minimum: 1
+     * maximum: 65535
+     * @return pageNumber
+     */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -112,9 +122,10 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
-     * 
-     * @return status */
+    /**
+     * url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -128,9 +139,10 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** url的地址。
-     * 
-     * @return url */
+    /**
+     * url的地址。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -144,9 +156,10 @@ public class ShowHistoryTaskDetailsRequest {
         return this;
     }
 
-    /** 刷新预热任务的创建时间。不传参默认为查询7天内的任务。最长可查询15天内数据。
-     * 
-     * @return createTime */
+    /**
+     * 刷新预热任务的创建时间。不传参默认为查询7天内的任务。最长可查询15天内数据。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -193,7 +206,10 @@ public class ShowHistoryTaskDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

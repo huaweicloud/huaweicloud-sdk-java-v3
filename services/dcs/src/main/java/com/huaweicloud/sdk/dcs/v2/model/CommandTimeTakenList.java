@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 命令耗时统计列表 */
+/**
+ * 命令耗时统计列表
+ */
 public class CommandTimeTakenList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class CommandTimeTakenList {
 
     private Double totalUsecSum;
 
-    /** 命令耗时统计结果 */
+    /**
+     * 命令耗时统计结果
+     */
     public static final class ResultEnum {
 
-        /** Enum SUCCEED for value: "succeed" */
+        /**
+         * Enum SUCCEED for value: "succeed"
+         */
         public static final ResultEnum SUCCEED = new ResultEnum("succeed");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final ResultEnum FAILED = new ResultEnum("failed");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class CommandTimeTakenList {
         return this;
     }
 
-    /** 执行命令的总次数
-     * 
-     * @return totalNum */
+    /**
+     * 执行命令的总次数
+     * @return totalNum
+     */
     public Integer getTotalNum() {
         return totalNum;
     }
@@ -128,9 +137,10 @@ public class CommandTimeTakenList {
         return this;
     }
 
-    /** 执行命令的总耗时
-     * 
-     * @return totalUsecSum */
+    /**
+     * 执行命令的总耗时
+     * @return totalUsecSum
+     */
     public Double getTotalUsecSum() {
         return totalUsecSum;
     }
@@ -144,9 +154,10 @@ public class CommandTimeTakenList {
         return this;
     }
 
-    /** 命令耗时统计结果
-     * 
-     * @return result */
+    /**
+     * 命令耗时统计结果
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -176,9 +187,10 @@ public class CommandTimeTakenList {
         return this;
     }
 
-    /** 命令耗时统计
-     * 
-     * @return commandList */
+    /**
+     * 命令耗时统计
+     * @return commandList
+     */
     public List<CommandTimeTaken> getCommandList() {
         return commandList;
     }
@@ -219,7 +231,10 @@ public class CommandTimeTakenList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

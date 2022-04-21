@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -77,9 +80,12 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -93,9 +99,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明： - 必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -125,9 +132,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
-     * 
-     * @return id */
+    /**
+     * 证书ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -157,9 +165,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书的名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
-     * 
-     * @return name */
+    /**
+     * 证书的名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -189,9 +198,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书的描述。 支持多值查询，查询条件格式：*description=xxx&description=xxx*。
-     * 
-     * @return description */
+    /**
+     * 证书的描述。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -205,9 +215,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书的管理状态。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 证书的管理状态。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -237,9 +248,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 服务器证书所签域名。该字段仅type为server时有效。 支持多值查询，查询条件格式：domain=xxx&domain=xxx。
-     * 
-     * @return domain */
+    /**
+     * 服务器证书所签域名。该字段仅type为server时有效。  支持多值查询，查询条件格式：domain=xxx&domain=xxx。
+     * @return domain
+     */
     public List<String> getDomain() {
         return domain;
     }
@@ -269,9 +281,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书的类型。分为服务器证书(server)和CA证书(client)。 支持多值查询，查询条件格式：type=xxx&type=xxx。
-     * 
-     * @return type */
+    /**
+     * 证书的类型。分为服务器证书(server)和CA证书(client)。  支持多值查询，查询条件格式：type=xxx&type=xxx。
+     * @return type
+     */
     public List<String> getType() {
         return type;
     }
@@ -322,7 +335,10 @@ public class ListCertificatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

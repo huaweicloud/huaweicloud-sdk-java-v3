@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 匹配规则表达式 */
+/**
+ * 匹配规则表达式
+ */
 public class MatchExpressions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class MatchExpressions {
         return this;
     }
 
-    /** 匹配规则表达式
-     * 
-     * @return matchExpressions */
+    /**
+     * 匹配规则表达式
+     * @return matchExpressions
+     */
     public List<MatchExpression> getMatchExpressions() {
         return matchExpressions;
     }
@@ -74,7 +77,10 @@ public class MatchExpressions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

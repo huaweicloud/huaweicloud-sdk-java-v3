@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListKeywordsAlarmRulesRequest {
 
     @Override

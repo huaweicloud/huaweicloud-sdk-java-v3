@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBackgroundTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListBackgroundTasksRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,10 @@ public class ListBackgroundTasksRequest {
         return this;
     }
 
-    /** 开启查询的任务编号。
-     * 
-     * @return start */
+    /**
+     * 开启查询的任务编号。
+     * @return start
+     */
     public Integer getStart() {
         return start;
     }
@@ -70,9 +74,10 @@ public class ListBackgroundTasksRequest {
         return this;
     }
 
-    /** 查询的任务个数。
-     * 
-     * @return limit */
+    /**
+     * 查询的任务个数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ListBackgroundTasksRequest {
         return this;
     }
 
-    /** 查询任务的最小时间，格式为YYYYMMDDHHmmss。
-     * 
-     * @return beginTime */
+    /**
+     * 查询任务的最小时间，格式为YYYYMMDDHHmmss。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -102,9 +108,10 @@ public class ListBackgroundTasksRequest {
         return this;
     }
 
-    /** 查询任务的最大时间，格式为YYYYMMDDHHmmss。
-     * 
-     * @return endTime */
+    /**
+     * 查询任务的最大时间，格式为YYYYMMDDHHmmss。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -147,7 +154,10 @@ public class ListBackgroundTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

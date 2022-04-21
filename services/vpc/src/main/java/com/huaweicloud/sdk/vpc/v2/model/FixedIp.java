@@ -25,10 +25,10 @@ public class FixedIp {
         return this;
     }
 
-    /** 功能说明：端口IP地址,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。
-     * 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
-     * 
-     * @return ipAddress */
+    /**
+     * 功能说明：端口IP地址,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -42,10 +42,10 @@ public class FixedIp {
         return this;
     }
 
-    /** 功能说明：端口所属子网ID,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。
-     * 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
-     * 
-     * @return subnetId */
+    /**
+     * 功能说明：端口所属子网ID,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -81,7 +81,10 @@ public class FixedIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

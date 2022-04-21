@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -54,9 +57,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 起始时间(13位时间戳)，需要和to同时使用
-     * 
-     * @return from */
+    /**
+     * 起始时间(13位时间戳)，需要和to同时使用
+     * @return from
+     */
     public Long getFrom() {
         return from;
     }
@@ -70,9 +74,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 结束时间(13位时间戳),需要和from同时使用
-     * 
-     * @return to */
+    /**
+     * 结束时间(13位时间戳),需要和from同时使用
+     * @return to
+     */
     public Long getTo() {
         return to;
     }
@@ -86,9 +91,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 要查询域名列表
-     * 
-     * @return hosts */
+    /**
+     * 要查询域名列表
+     * @return hosts
+     */
     public String getHosts() {
         return hosts;
     }
@@ -102,9 +108,10 @@ public class ListStatisticsRequest {
         return this;
     }
 
-    /** 要查询实例列表
-     * 
-     * @return instances */
+    /**
+     * 要查询实例列表
+     * @return instances
+     */
     public String getInstances() {
         return instances;
     }
@@ -147,7 +154,10 @@ public class ListStatisticsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

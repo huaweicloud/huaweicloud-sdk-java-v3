@@ -28,13 +28,19 @@ public class BulkCreateAndDeleteVaultTagsReq {
 
     private List<SysTag> sysTags = null;
 
-    /** 操作标识：仅限于create（创建）、delete（删除） */
+    /**
+    * 操作标识：仅限于create（创建）、delete（删除）
+    */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
-        /** Enum _DELETE for value: " delete" */
+        /**
+         * Enum _DELETE for value: " delete"
+         */
         public static final ActionEnum _DELETE = new ActionEnum(" delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -125,9 +131,10 @@ public class BulkCreateAndDeleteVaultTagsReq {
         return this;
     }
 
-    /** 标签列表。 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -157,10 +164,10 @@ public class BulkCreateAndDeleteVaultTagsReq {
         return this;
     }
 
-    /** 系统标签列表。 op_service权限可以访问，和tags二选一。 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id。
-     * value是UUID或0,value为0表示默认企业项目。 现在仅支持create操作。
-     * 
-     * @return sysTags */
+    /**
+     * 系统标签列表。  op_service权限可以访问，和tags二选一。  目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id。  value是UUID或0,value为0表示默认企业项目。  现在仅支持create操作。
+     * @return sysTags
+     */
     public List<SysTag> getSysTags() {
         return sysTags;
     }
@@ -174,9 +181,10 @@ public class BulkCreateAndDeleteVaultTagsReq {
         return this;
     }
 
-    /** 操作标识：仅限于create（创建）、delete（删除）
-     * 
-     * @return action */
+    /**
+     * 操作标识：仅限于create（创建）、delete（删除）
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -215,7 +223,10 @@ public class BulkCreateAndDeleteVaultTagsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

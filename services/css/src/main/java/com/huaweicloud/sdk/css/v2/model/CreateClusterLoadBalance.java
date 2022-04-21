@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群负载均衡信息。 */
+/**
+ * 集群负载均衡信息。
+ */
 public class CreateClusterLoadBalance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CreateClusterLoadBalance {
         return this;
     }
 
-    /** 是否开启内网域名。
-     * 
-     * @return endpointWithDnsName */
+    /**
+     * 是否开启内网域名。
+     * @return endpointWithDnsName
+     */
     public Boolean getEndpointWithDnsName() {
         return endpointWithDnsName;
     }
@@ -58,9 +61,10 @@ public class CreateClusterLoadBalance {
         return this;
     }
 
-    /** 访问控制。
-     * 
-     * @return vpcPermisssions */
+    /**
+     * 访问控制。
+     * @return vpcPermisssions
+     */
     public List<String> getVpcPermisssions() {
         return vpcPermisssions;
     }
@@ -97,7 +101,10 @@ public class CreateClusterLoadBalance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowMultiAccountTransferAmountRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowMultiAccountTransferAmountRequest {
         return this;
     }
 
-    /** 账户类型：BALANCE_TYPE_DEBIT：余额账户BALANCE_TYPE_CREDIT：信用账户
-     * 
-     * @return balanceType */
+    /**
+     * 账户类型：BALANCE_TYPE_DEBIT：余额账户BALANCE_TYPE_CREDIT：信用账户
+     * @return balanceType
+     */
     public String getBalanceType() {
         return balanceType;
     }
@@ -44,9 +47,12 @@ public class ShowMultiAccountTransferAmountRequest {
         return this;
     }
 
-    /** 偏移量，默认值为0。只有信用账户有效。 minimum: 0 maximum: 21474836476
-     * 
-     * @return offset */
+    /**
+     * 偏移量，默认值为0。只有信用账户有效。
+     * minimum: 0
+     * maximum: 21474836476
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +66,12 @@ public class ShowMultiAccountTransferAmountRequest {
         return this;
     }
 
-    /** 每次查询条数，默认值为10。只有信用账户有效。 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询条数，默认值为10。只有信用账户有效。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,7 +111,10 @@ public class ShowMultiAccountTransferAmountRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

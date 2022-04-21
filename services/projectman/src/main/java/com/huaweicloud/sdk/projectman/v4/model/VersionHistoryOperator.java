@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 变更操作人 */
+/**
+ * 变更操作人
+ */
 public class VersionHistoryOperator {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class VersionHistoryOperator {
         return this;
     }
 
-    /** 用户uuid
-     * 
-     * @return userId */
+    /**
+     * 用户uuid
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -54,9 +57,10 @@ public class VersionHistoryOperator {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -70,9 +74,10 @@ public class VersionHistoryOperator {
         return this;
     }
 
-    /** 昵称
-     * 
-     * @return nickName */
+    /**
+     * 昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -86,9 +91,10 @@ public class VersionHistoryOperator {
         return this;
     }
 
-    /** 租户uuid
-     * 
-     * @return domainId */
+    /**
+     * 租户uuid
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -102,9 +108,10 @@ public class VersionHistoryOperator {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -147,7 +154,10 @@ public class VersionHistoryOperator {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

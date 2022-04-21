@@ -10,25 +10,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 节点执行详情 */
+/**
+ * 节点执行详情
+ */
 public class NodeExecution {
 
-    /** 流程节点执行状态 */
+    /**
+     * 流程节点执行状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAIL for value: "fail" */
+        /**
+         * Enum FAIL for value: "fail"
+         */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum TIMEOUT for value: "timeout" */
+        /**
+         * Enum TIMEOUT for value: "timeout"
+         */
         public static final StatusEnum TIMEOUT = new StatusEnum("timeout");
 
-        /** Enum CANCEL for value: "cancel" */
+        /**
+         * Enum CANCEL for value: "cancel"
+         */
         public static final StatusEnum CANCEL = new StatusEnum("cancel");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +145,10 @@ public class NodeExecution {
         return this;
     }
 
-    /** 流程节点执行状态
-     * 
-     * @return status */
+    /**
+     * 流程节点执行状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -147,9 +162,10 @@ public class NodeExecution {
         return this;
     }
 
-    /** 函数执行时的入参
-     * 
-     * @return input */
+    /**
+     * 函数执行时的入参
+     * @return input
+     */
     public Object getInput() {
         return input;
     }
@@ -163,9 +179,10 @@ public class NodeExecution {
         return this;
     }
 
-    /** 函数执行结果
-     * 
-     * @return output */
+    /**
+     * 函数执行结果
+     * @return output
+     */
     public Object getOutput() {
         return output;
     }
@@ -179,9 +196,12 @@ public class NodeExecution {
         return this;
     }
 
-    /** 节点启动时间，UTC毫秒时间戳格式 minimum: 0 maximum: 99999999999999999
-     * 
-     * @return beginTime */
+    /**
+     * 节点启动时间，UTC毫秒时间戳格式
+     * minimum: 0
+     * maximum: 99999999999999999
+     * @return beginTime
+     */
     public Long getBeginTime() {
         return beginTime;
     }
@@ -195,9 +215,12 @@ public class NodeExecution {
         return this;
     }
 
-    /** 节点结束时间，UTC毫秒时间戳格式 minimum: 0 maximum: 99999999999999999
-     * 
-     * @return endTime */
+    /**
+     * 节点结束时间，UTC毫秒时间戳格式
+     * minimum: 0
+     * maximum: 99999999999999999
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -211,9 +234,10 @@ public class NodeExecution {
         return this;
     }
 
-    /** 节点错误信息，仅在节点出错时非空
-     * 
-     * @return errorMessage */
+    /**
+     * 节点错误信息，仅在节点出错时非空
+     * @return errorMessage
+     */
     public Object getErrorMessage() {
         return errorMessage;
     }
@@ -257,7 +281,10 @@ public class NodeExecution {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

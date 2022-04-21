@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PodResp */
+/**
+ * PodResp
+ */
 public class PodResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例uuid
-     * 
-     * @return id */
+    /**
+     * 应用实例uuid
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +105,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例名称
-     * 
-     * @return name */
+    /**
+     * 应用实例名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -127,9 +131,10 @@ public class PodResp {
         return this;
     }
 
-    /** Get configs
-     * 
-     * @return configs */
+    /**
+     * Get configs
+     * @return configs
+     */
     public PodConfigs getConfigs() {
         return configs;
     }
@@ -152,9 +157,10 @@ public class PodResp {
         return this;
     }
 
-    /** Get affinity
-     * 
-     * @return affinity */
+    /**
+     * Get affinity
+     * @return affinity
+     */
     public Affinity getAffinity() {
         return affinity;
     }
@@ -184,9 +190,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例init容器
-     * 
-     * @return initContainers */
+    /**
+     * 应用实例init容器
+     * @return initContainers
+     */
     public List<ContainerResp> getInitContainers() {
         return initContainers;
     }
@@ -216,9 +223,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例业务容器
-     * 
-     * @return containers */
+    /**
+     * 应用实例业务容器
+     * @return containers
+     */
     public List<ContainerResp> getContainers() {
         return containers;
     }
@@ -232,9 +240,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例所在节点
-     * 
-     * @return nodeId */
+    /**
+     * 应用实例所在节点
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -248,9 +257,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return deploymentId */
+    /**
+     * 应用ID
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -264,9 +274,10 @@ public class PodResp {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -280,9 +291,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例故障原因
-     * 
-     * @return reason */
+    /**
+     * 应用实例故障原因
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -296,9 +308,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例故障详情
-     * 
-     * @return message */
+    /**
+     * 应用实例故障详情
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -312,9 +325,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 应用实例创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -328,9 +342,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 应用实例更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -344,9 +359,10 @@ public class PodResp {
         return this;
     }
 
-    /** 应用实例状态
-     * 
-     * @return state */
+    /**
+     * 应用实例状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -414,7 +430,10 @@ public class PodResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

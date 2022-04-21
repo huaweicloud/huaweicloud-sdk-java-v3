@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateProjectV4RequestBody */
+/**
+ * CreateProjectV4RequestBody
+ */
 public class CreateProjectV4RequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -59,9 +62,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 项目描述
-     * 
-     * @return description */
+    /**
+     * 项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -75,9 +79,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 项目来源
-     * 
-     * @return source */
+    /**
+     * 项目来源
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -91,9 +96,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 项目类型 scrum, xboard(看板项目), basic, phoenix(凤凰项目)
-     * 
-     * @return projectType */
+    /**
+     * 项目类型 scrum, xboard(看板项目), basic, phoenix(凤凰项目)
+     * @return projectType
+     */
     public String getProjectType() {
         return projectType;
     }
@@ -107,9 +113,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 项目要绑定的企业项目ID
-     * 
-     * @return enterpriseId */
+    /**
+     * 项目要绑定的企业项目ID
+     * @return enterpriseId
+     */
     public String getEnterpriseId() {
         return enterpriseId;
     }
@@ -123,9 +130,10 @@ public class CreateProjectV4RequestBody {
         return this;
     }
 
-    /** 用户创建的项目模板id
-     * 
-     * @return templateId */
+    /**
+     * 用户创建的项目模板id
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -170,7 +178,10 @@ public class CreateProjectV4RequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

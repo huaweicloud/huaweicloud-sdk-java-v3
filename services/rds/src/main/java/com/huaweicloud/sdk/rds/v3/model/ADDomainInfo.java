@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 域信息，加域实例单转主备时必填，非加域实例不需要填写 */
+/**
+ * 域信息，加域实例单转主备时必填，非加域实例不需要填写
+ */
 public class ADDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ADDomainInfo {
         return this;
     }
 
-    /** 域管理员账号名
-     * 
-     * @return domainAdminAccountName */
+    /**
+     * 域管理员账号名
+     * @return domainAdminAccountName
+     */
     public String getDomainAdminAccountName() {
         return domainAdminAccountName;
     }
@@ -39,9 +42,10 @@ public class ADDomainInfo {
         return this;
     }
 
-    /** 域管理员密码
-     * 
-     * @return domainAdminPwd */
+    /**
+     * 域管理员密码
+     * @return domainAdminPwd
+     */
     public String getDomainAdminPwd() {
         return domainAdminPwd;
     }
@@ -78,7 +82,10 @@ public class ADDomainInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

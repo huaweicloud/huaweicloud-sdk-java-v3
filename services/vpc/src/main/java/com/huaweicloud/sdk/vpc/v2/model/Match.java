@@ -25,9 +25,10 @@ public class Match {
         return this;
     }
 
-    /** 键。当前仅限定为resource_name
-     * 
-     * @return key */
+    /**
+     * 键。当前仅限定为resource_name
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class Match {
         return this;
     }
 
-    /** 值。每个值最大长度255个unicode字符，不能包含$ - . /等特殊字符。
-     * 
-     * @return value */
+    /**
+     * 值。每个值最大长度255个unicode字符，不能包含$ - . /等特殊字符。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class Match {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

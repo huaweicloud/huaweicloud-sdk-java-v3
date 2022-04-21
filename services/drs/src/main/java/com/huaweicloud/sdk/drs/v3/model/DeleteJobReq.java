@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 删除在线迁移任务请求体 */
+/**
+ * 删除在线迁移任务请求体
+ */
 public class DeleteJobReq {
 
-    /** terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务 */
+    /**
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+     */
     public static final class DeleteTypeEnum {
 
-        /** Enum TERMINATE for value: "terminate" */
+        /**
+         * Enum TERMINATE for value: "terminate"
+         */
         public static final DeleteTypeEnum TERMINATE = new DeleteTypeEnum("terminate");
 
-        /** Enum FORCE_TERMINATE for value: "force_terminate" */
+        /**
+         * Enum FORCE_TERMINATE for value: "force_terminate"
+         */
         public static final DeleteTypeEnum FORCE_TERMINATE = new DeleteTypeEnum("force_terminate");
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final DeleteTypeEnum DELETE = new DeleteTypeEnum("delete");
 
         private static final Map<String, DeleteTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class DeleteJobReq {
         return this;
     }
 
-    /** terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
-     * 
-     * @return deleteType */
+    /**
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+     * @return deleteType
+     */
     public DeleteTypeEnum getDeleteType() {
         return deleteType;
     }
@@ -119,9 +130,10 @@ public class DeleteJobReq {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -158,7 +170,10 @@ public class DeleteJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

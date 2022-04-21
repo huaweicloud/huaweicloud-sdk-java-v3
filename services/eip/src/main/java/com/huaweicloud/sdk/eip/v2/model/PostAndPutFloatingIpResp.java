@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** floatingip对象 */
+/**
+ * floatingip对象
+ */
 public class PostAndPutFloatingIpResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,16 +45,24 @@ public class PostAndPutFloatingIpResp {
 
     private String routerId;
 
-    /** 网络状态，可以为ACTIVE， DOWN或ERROR。 DOWN：未绑定 ACTIVE：绑定 ERROR：异常 */
+    /**
+     * 网络状态，可以为ACTIVE， DOWN或ERROR。  DOWN：未绑定  ACTIVE：绑定  ERROR：异常
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -143,9 +153,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 关联端口的私有IP地址。
-     * 
-     * @return fixedIpAddress */
+    /**
+     * 关联端口的私有IP地址。
+     * @return fixedIpAddress
+     */
     public String getFixedIpAddress() {
         return fixedIpAddress;
     }
@@ -159,9 +170,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 浮动IP地址。
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 浮动IP地址。
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -175,10 +187,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET
-     * /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
-     * 
-     * @return floatingNetworkId */
+    /**
+     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
+     * @return floatingNetworkId
+     */
     public String getFloatingNetworkId() {
         return floatingNetworkId;
     }
@@ -192,9 +204,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 浮动IP地址的id。
-     * 
-     * @return id */
+    /**
+     * 浮动IP地址的id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -208,9 +221,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 端口id。
-     * 
-     * @return portId */
+    /**
+     * 端口id。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -224,9 +238,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 所属路由器id。
-     * 
-     * @return routerId */
+    /**
+     * 所属路由器id。
+     * @return routerId
+     */
     public String getRouterId() {
         return routerId;
     }
@@ -240,9 +255,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 网络状态，可以为ACTIVE， DOWN或ERROR。 DOWN：未绑定 ACTIVE：绑定 ERROR：异常
-     * 
-     * @return status */
+    /**
+     * 网络状态，可以为ACTIVE， DOWN或ERROR。  DOWN：未绑定  ACTIVE：绑定  ERROR：异常
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -256,9 +272,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** 项目id。
-     * 
-     * @return tenantId */
+    /**
+     * 项目id。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -272,9 +289,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** DNS名称(目前仅广州局点支持)
-     * 
-     * @return dnsName */
+    /**
+     * DNS名称(目前仅广州局点支持)
+     * @return dnsName
+     */
     public String getDnsName() {
         return dnsName;
     }
@@ -288,9 +306,10 @@ public class PostAndPutFloatingIpResp {
         return this;
     }
 
-    /** DNS域地址(目前仅广州局点支持)
-     * 
-     * @return dnsDomain */
+    /**
+     * DNS域地址(目前仅广州局点支持)
+     * @return dnsDomain
+     */
     public String getDnsDomain() {
         return dnsDomain;
     }
@@ -352,7 +371,10 @@ public class PostAndPutFloatingIpResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

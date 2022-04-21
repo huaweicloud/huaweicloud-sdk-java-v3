@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateProductTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,13 +32,19 @@ public class UpdateProductTemplateResponse extends SdkResponse {
 
     private String description;
 
-    /** 产品模板状态 0-启用 1-停用 */
+    /**
+     * 产品模板状态 0-启用 1-停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +139,12 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品模板ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return id */
+    /**
+     * 产品模板ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -147,9 +158,10 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品模板名称
-     * 
-     * @return name */
+    /**
+     * 产品模板名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -163,9 +175,10 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品模板描述
-     * 
-     * @return description */
+    /**
+     * 产品模板描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -179,9 +192,12 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品模板状态 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 产品模板状态 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -204,9 +220,10 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** Get createdUser
-     * 
-     * @return createdUser */
+    /**
+     * Get createdUser
+     * @return createdUser
+     */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -229,9 +246,10 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lastUpdatedUser
-     * 
-     * @return lastUpdatedUser */
+    /**
+     * Get lastUpdatedUser
+     * @return lastUpdatedUser
+     */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -245,9 +263,12 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return createdDatetime */
+    /**
+     * 创建时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return createdDatetime
+     */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -261,9 +282,12 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后修改时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastUpdatedDatetime */
+    /**
+     * 最后修改时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastUpdatedDatetime
+     */
     public Long getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -313,7 +337,10 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

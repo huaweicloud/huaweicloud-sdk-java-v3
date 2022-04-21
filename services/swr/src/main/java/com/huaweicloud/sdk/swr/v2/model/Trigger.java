@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Trigger */
+/**
+ * Trigger
+ */
 public class Trigger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发动作，update
-     * 
-     * @return action */
+    /**
+     * 触发动作，update
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -107,9 +110,10 @@ public class Trigger {
         return this;
     }
 
-    /** 应用类型，deployments、statefulsets
-     * 
-     * @return appType */
+    /**
+     * 应用类型，deployments、statefulsets
+     * @return appType
+     */
     public String getAppType() {
         return appType;
     }
@@ -123,9 +127,10 @@ public class Trigger {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return application */
+    /**
+     * 应用名
+     * @return application
+     */
     public String getApplication() {
         return application;
     }
@@ -139,9 +144,10 @@ public class Trigger {
         return this;
     }
 
-    /** 集群ID（cci时为空）
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID（cci时为空）
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -155,9 +161,10 @@ public class Trigger {
         return this;
     }
 
-    /** 集群名（cci时为空）
-     * 
-     * @return clusterName */
+    /**
+     * 集群名（cci时为空）
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -171,9 +178,10 @@ public class Trigger {
         return this;
     }
 
-    /** 应用名所在的namespace
-     * 
-     * @return clusterNs */
+    /**
+     * 应用名所在的namespace
+     * @return clusterNs
+     */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -187,9 +195,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * 
-     * @return condition */
+    /**
+     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * @return condition
+     */
     public String getCondition() {
         return condition;
     }
@@ -203,9 +212,10 @@ public class Trigger {
         return this;
     }
 
-    /** 需更新的container名，默认为所有container
-     * 
-     * @return container */
+    /**
+     * 需更新的container名，默认为所有container
+     * @return container
+     */
     public String getContainer() {
         return container;
     }
@@ -219,9 +229,10 @@ public class Trigger {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -235,9 +246,10 @@ public class Trigger {
         return this;
     }
 
-    /** 创建人
-     * 
-     * @return creatorName */
+    /**
+     * 创建人
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -251,9 +263,10 @@ public class Trigger {
         return this;
     }
 
-    /** 是否生效
-     * 
-     * @return enable */
+    /**
+     * 是否生效
+     * @return enable
+     */
     public String getEnable() {
         return enable;
     }
@@ -267,9 +280,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发器名
-     * 
-     * @return name */
+    /**
+     * 触发器名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -299,9 +313,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发器历史
-     * 
-     * @return triggerHistory */
+    /**
+     * 触发器历史
+     * @return triggerHistory
+     */
     public List<TriggerHistories> getTriggerHistory() {
         return triggerHistory;
     }
@@ -315,9 +330,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发器类型，cce、cci
-     * 
-     * @return triggerMode */
+    /**
+     * 触发器类型，cce、cci
+     * @return triggerMode
+     */
     public String getTriggerMode() {
         return triggerMode;
     }
@@ -331,9 +347,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发条件，all、tag、regular
-     * 
-     * @return triggerType */
+    /**
+     * 触发条件，all、tag、regular
+     * @return triggerType
+     */
     public String getTriggerType() {
         return triggerType;
     }
@@ -405,7 +422,10 @@ public class Trigger {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

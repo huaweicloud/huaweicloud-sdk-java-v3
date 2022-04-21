@@ -40,9 +40,10 @@ public class ObjectCompareResultDetails {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -56,9 +57,10 @@ public class ObjectCompareResultDetails {
         return this;
     }
 
-    /** 目标库名称。
-     * 
-     * @return targetDbName */
+    /**
+     * 目标库名称。
+     * @return targetDbName
+     */
     public String getTargetDbName() {
         return targetDbName;
     }
@@ -72,9 +74,10 @@ public class ObjectCompareResultDetails {
         return this;
     }
 
-    /** 在源库的值。
-     * 
-     * @return sourceDbValue */
+    /**
+     * 在源库的值。
+     * @return sourceDbValue
+     */
     public String getSourceDbValue() {
         return sourceDbValue;
     }
@@ -88,9 +91,10 @@ public class ObjectCompareResultDetails {
         return this;
     }
 
-    /** 在目标库的值。
-     * 
-     * @return targetDbValue */
+    /**
+     * 在目标库的值。
+     * @return targetDbValue
+     */
     public String getTargetDbValue() {
         return targetDbValue;
     }
@@ -104,9 +108,10 @@ public class ObjectCompareResultDetails {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -149,7 +154,10 @@ public class ObjectCompareResultDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

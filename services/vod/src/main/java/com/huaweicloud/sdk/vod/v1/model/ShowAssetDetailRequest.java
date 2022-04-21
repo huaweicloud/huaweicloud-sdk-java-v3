@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowAssetDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,19 +33,29 @@ public class ShowAssetDetailRequest {
 
     private String assetId;
 
-    /** Gets or Sets categories */
+    /**
+     * Gets or Sets categories
+     */
     public static final class CategoriesEnum {
 
-        /** Enum BASE_INFO for value: "base_info" */
+        /**
+         * Enum BASE_INFO for value: "base_info"
+         */
         public static final CategoriesEnum BASE_INFO = new CategoriesEnum("base_info");
 
-        /** Enum TRANSCODE_INFO for value: "transcode_info" */
+        /**
+         * Enum TRANSCODE_INFO for value: "transcode_info"
+         */
         public static final CategoriesEnum TRANSCODE_INFO = new CategoriesEnum("transcode_info");
 
-        /** Enum THUMBNAIL_INFO for value: "thumbnail_info" */
+        /**
+         * Enum THUMBNAIL_INFO for value: "thumbnail_info"
+         */
         public static final CategoriesEnum THUMBNAIL_INFO = new CategoriesEnum("thumbnail_info");
 
-        /** Enum REVIEW_INFO for value: "review_info" */
+        /**
+         * Enum REVIEW_INFO for value: "review_info"
+         */
         public static final CategoriesEnum REVIEW_INFO = new CategoriesEnum("review_info");
 
         private static final Map<String, CategoriesEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +132,10 @@ public class ShowAssetDetailRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -136,9 +149,10 @@ public class ShowAssetDetailRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -154,9 +168,10 @@ public class ShowAssetDetailRequest {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -186,10 +201,10 @@ public class ShowAssetDetailRequest {
         return this;
     }
 
-    /** 查询的信息类型。 - 为空时表示查询所有信息。 - 不为空时支持同时查询一个或者多个类型的信息，取值如下： - - base_info：媒资基本信息。 - - transcode_info：转码结果信息。 - -
-     * thumbnail_info：截图结果信息。 - - review_info：审核结果信息。
-     * 
-     * @return categories */
+    /**
+     * 查询的信息类型。 - 为空时表示查询所有信息。 - 不为空时支持同时查询一个或者多个类型的信息，取值如下： - - base_info：媒资基本信息。 - - transcode_info：转码结果信息。 - - thumbnail_info：截图结果信息。 - - review_info：审核结果信息。
+     * @return categories
+     */
     public List<CategoriesEnum> getCategories() {
         return categories;
     }
@@ -230,7 +245,10 @@ public class ShowAssetDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,13 +7,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 协议。 */
+/**
+ * 协议。
+ */
 public class ExternalAccessProtocol {
 
-    /** Enum HTTP for value: "HTTP" */
+    /**
+     * Enum HTTP for value: "HTTP"
+     */
     public static final ExternalAccessProtocol HTTP = new ExternalAccessProtocol("HTTP");
 
-    /** Enum HTTPS for value: "HTTPS" */
+    /**
+     * Enum HTTPS for value: "HTTPS"
+     */
     public static final ExternalAccessProtocol HTTPS = new ExternalAccessProtocol("HTTPS");
 
     private static final Map<String, ExternalAccessProtocol> STATIC_FIELDS = createStaticFields();

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目id */
+/**
+ * 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目id
+ */
 public class PutSourceServerBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class PutSourceServerBody {
         return this;
     }
 
-    /** 源端服务器修改后的名字
-     * 
-     * @return name */
+    /**
+     * 源端服务器修改后的名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class PutSourceServerBody {
         return this;
     }
 
-    /** 源端服务器修改后所属的迁移项目id
-     * 
-     * @return migprojectid */
+    /**
+     * 源端服务器修改后所属的迁移项目id
+     * @return migprojectid
+     */
     public String getMigprojectid() {
         return migprojectid;
     }
@@ -84,9 +88,10 @@ public class PutSourceServerBody {
         return this;
     }
 
-    /** 磁盘
-     * 
-     * @return disks */
+    /**
+     * 磁盘
+     * @return disks
+     */
     public List<PutDisk> getDisks() {
         return disks;
     }
@@ -116,9 +121,10 @@ public class PutSourceServerBody {
         return this;
     }
 
-    /** 卷组
-     * 
-     * @return volumeGroups */
+    /**
+     * 卷组
+     * @return volumeGroups
+     */
     public List<PutVolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -159,7 +165,10 @@ public class PutSourceServerBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

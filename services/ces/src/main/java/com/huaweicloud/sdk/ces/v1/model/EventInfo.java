@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 一条事件监控信息 */
+/**
+ * 一条事件监控信息
+ */
 public class EventInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class EventInfo {
         return this;
     }
 
-    /** 事件名称。
-     * 
-     * @return eventName */
+    /**
+     * 事件名称。
+     * @return eventName
+     */
     public String getEventName() {
         return eventName;
     }
@@ -54,9 +57,10 @@ public class EventInfo {
         return this;
     }
 
-    /** 事件类型。
-     * 
-     * @return eventType */
+    /**
+     * 事件类型。
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -70,9 +74,10 @@ public class EventInfo {
         return this;
     }
 
-    /** 选择查询的时间范围内，此事件发生的数量。
-     * 
-     * @return eventCount */
+    /**
+     * 选择查询的时间范围内，此事件发生的数量。
+     * @return eventCount
+     */
     public Integer getEventCount() {
         return eventCount;
     }
@@ -86,9 +91,10 @@ public class EventInfo {
         return this;
     }
 
-    /** 此事件最近一次发生的时间。
-     * 
-     * @return latestOccurTime */
+    /**
+     * 此事件最近一次发生的时间。
+     * @return latestOccurTime
+     */
     public Long getLatestOccurTime() {
         return latestOccurTime;
     }
@@ -102,9 +108,10 @@ public class EventInfo {
         return this;
     }
 
-    /** 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
-     * 
-     * @return latestEventSource */
+    /**
+     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+     * @return latestEventSource
+     */
     public String getLatestEventSource() {
         return latestEventSource;
     }
@@ -147,7 +154,10 @@ public class EventInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

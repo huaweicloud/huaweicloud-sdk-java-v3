@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IdCount */
+/**
+ * IdCount
+ */
 public class IdCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class IdCount {
         return this;
     }
 
-    /** 问卷ID
-     * 
-     * @return paperId */
+    /**
+     * 问卷ID
+     * @return paperId
+     */
     public String getPaperId() {
         return paperId;
     }
@@ -39,9 +42,10 @@ public class IdCount {
         return this;
     }
 
-    /** 回收数量
-     * 
-     * @return count */
+    /**
+     * 回收数量
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -77,7 +81,10 @@ public class IdCount {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

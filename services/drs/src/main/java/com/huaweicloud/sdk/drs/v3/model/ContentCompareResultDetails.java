@@ -43,9 +43,10 @@ public class ContentCompareResultDetails {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -76,9 +77,10 @@ public class ContentCompareResultDetails {
         return this;
     }
 
-    /** 该库的表的内容对比详情。
-     * 
-     * @return contentCompareDetail */
+    /**
+     * 该库的表的内容对比详情。
+     * @return contentCompareDetail
+     */
     public List<ContentCompareDetail> getContentCompareDetail() {
         return contentCompareDetail;
     }
@@ -92,9 +94,10 @@ public class ContentCompareResultDetails {
         return this;
     }
 
-    /** 内容对比结果详情总数。
-     * 
-     * @return contentCompareDetailCount */
+    /**
+     * 内容对比结果详情总数。
+     * @return contentCompareDetailCount
+     */
     public Integer getContentCompareDetailCount() {
         return contentCompareDetailCount;
     }
@@ -125,9 +128,10 @@ public class ContentCompareResultDetails {
         return this;
     }
 
-    /** 该库的表的内容对比详情(无法对比的表)。
-     * 
-     * @return contentUncompareDetail */
+    /**
+     * 该库的表的内容对比详情(无法对比的表)。
+     * @return contentUncompareDetail
+     */
     public List<ContentCompareDetail> getContentUncompareDetail() {
         return contentUncompareDetail;
     }
@@ -141,9 +145,10 @@ public class ContentCompareResultDetails {
         return this;
     }
 
-    /** 内容对比结果详情总数(无法对比的表)。
-     * 
-     * @return contentUncompareDetailCount */
+    /**
+     * 内容对比结果详情总数(无法对比的表)。
+     * @return contentUncompareDetailCount
+     */
     public Integer getContentUncompareDetailCount() {
         return contentUncompareDetailCount;
     }
@@ -193,7 +198,10 @@ public class ContentCompareResultDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

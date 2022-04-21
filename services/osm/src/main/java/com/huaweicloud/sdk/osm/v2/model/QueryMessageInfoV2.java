@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryMessageInfoV2 */
+/**
+ * QueryMessageInfoV2
+ */
 public class QueryMessageInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,12 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 类型，0客户留言 1华为工程师留言 minimum: 0 maximum: 1
-     * 
-     * @return type */
+    /**
+     * 类型，0客户留言 1华为工程师留言
+     * minimum: 0
+     * maximum: 1
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -78,9 +83,12 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 回复人类型，0客户留言 1华为工程师留言 2第三方留言 minimum: 0 maximum: 3
-     * 
-     * @return replierType */
+    /**
+     * 回复人类型，0客户留言 1华为工程师留言 2第三方留言
+     * minimum: 0
+     * maximum: 3
+     * @return replierType
+     */
     public Integer getReplierType() {
         return replierType;
     }
@@ -94,9 +102,10 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 回复人id
-     * 
-     * @return replier */
+    /**
+     * 回复人id
+     * @return replier
+     */
     public String getReplier() {
         return replier;
     }
@@ -110,9 +119,10 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 留言内容
-     * 
-     * @return content */
+    /**
+     * 留言内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -126,9 +136,10 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -142,9 +153,10 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 回复人名称
-     * 
-     * @return replierName */
+    /**
+     * 回复人名称
+     * @return replierName
+     */
     public String getReplierName() {
         return replierName;
     }
@@ -158,9 +170,12 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 是否是第一条留言 minimum: 0 maximum: 1
-     * 
-     * @return isFirstMessage */
+    /**
+     * 是否是第一条留言
+     * minimum: 0
+     * maximum: 1
+     * @return isFirstMessage
+     */
     public Integer getIsFirstMessage() {
         return isFirstMessage;
     }
@@ -174,9 +189,12 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 子用户类型 minimum: 0 maximum: 3
-     * 
-     * @return iamUserType */
+    /**
+     * 子用户类型
+     * minimum: 0
+     * maximum: 3
+     * @return iamUserType
+     */
     public Integer getIamUserType() {
         return iamUserType;
     }
@@ -206,9 +224,10 @@ public class QueryMessageInfoV2 {
         return this;
     }
 
-    /** 附件列表
-     * 
-     * @return accessoryList */
+    /**
+     * 附件列表
+     * @return accessoryList
+     */
     public List<SimpleAccessoryV2> getAccessoryList() {
         return accessoryList;
     }
@@ -267,7 +286,10 @@ public class QueryMessageInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

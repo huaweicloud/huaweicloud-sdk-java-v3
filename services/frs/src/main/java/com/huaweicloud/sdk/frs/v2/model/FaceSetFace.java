@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FaceSetFace */
+/**
+ * FaceSetFace
+ */
 public class FaceSetFace {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class FaceSetFace {
         return this;
     }
 
-    /** Get boundingBox
-     * 
-     * @return boundingBox */
+    /**
+     * Get boundingBox
+     * @return boundingBox
+     */
     public BoundingBox getBoundingBox() {
         return boundingBox;
     }
@@ -59,9 +62,10 @@ public class FaceSetFace {
         return this;
     }
 
-    /** 用户添加的额外字段。
-     * 
-     * @return externalFields */
+    /**
+     * 用户添加的额外字段。
+     * @return externalFields
+     */
     public Object getExternalFields() {
         return externalFields;
     }
@@ -75,9 +79,10 @@ public class FaceSetFace {
         return this;
     }
 
-    /** 人脸所在的外部图片ID。
-     * 
-     * @return externalImageId */
+    /**
+     * 人脸所在的外部图片ID。
+     * @return externalImageId
+     */
     public String getExternalImageId() {
         return externalImageId;
     }
@@ -91,9 +96,10 @@ public class FaceSetFace {
         return this;
     }
 
-    /** 人脸ID，由系统内部生成的唯一ID。
-     * 
-     * @return faceId */
+    /**
+     * 人脸ID，由系统内部生成的唯一ID。
+     * @return faceId
+     */
     public String getFaceId() {
         return faceId;
     }
@@ -134,7 +140,10 @@ public class FaceSetFace {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

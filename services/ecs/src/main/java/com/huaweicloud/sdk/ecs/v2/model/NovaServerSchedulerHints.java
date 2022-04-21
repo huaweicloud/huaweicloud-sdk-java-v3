@@ -23,10 +23,14 @@ public class NovaServerSchedulerHints {
      */
     public static final class TenancyEnum {
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final TenancyEnum SHARED = new TenancyEnum("shared");
 
-        /** Enum DEDICATED for value: "dedicated" */
+        /**
+         * Enum DEDICATED for value: "dedicated"
+         */
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
 
         private static final Map<String, TenancyEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +126,10 @@ public class NovaServerSchedulerHints {
         return this;
     }
 
-    /** 在指定的专属主机或者共享主机上创建弹性云服务器。 参数值为shared或者dedicated。
-     * 
-     * @return tenancy */
+    /**
+     * 在指定的专属主机或者共享主机上创建弹性云服务器。 参数值为shared或者dedicated。
+     * @return tenancy
+     */
     public List<TenancyEnum> getTenancy() {
         return tenancy;
     }
@@ -154,9 +159,10 @@ public class NovaServerSchedulerHints {
         return this;
     }
 
-    /** 专属主机ID。 此属性仅在tenancy值为dedicated时有效。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。 此属性仅在tenancy值为dedicated时有效。
+     * @return dedicatedHostId
+     */
     public List<String> getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -193,7 +199,10 @@ public class NovaServerSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

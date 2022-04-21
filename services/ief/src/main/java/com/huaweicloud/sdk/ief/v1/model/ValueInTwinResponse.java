@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备静态属性信息 */
+/**
+ * 终端设备静态属性信息
+ */
 public class ValueInTwinResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ValueInTwinResponse {
         return this;
     }
 
-    /** Get excepted
-     * 
-     * @return excepted */
+    /**
+     * Get excepted
+     * @return excepted
+     */
     public ValueInTwinResponseExcepted getExcepted() {
         return excepted;
     }
@@ -68,9 +71,10 @@ public class ValueInTwinResponse {
         return this;
     }
 
-    /** Get actual
-     * 
-     * @return actual */
+    /**
+     * Get actual
+     * @return actual
+     */
     public ValueInTwinResponseActual getActual() {
         return actual;
     }
@@ -93,9 +97,10 @@ public class ValueInTwinResponse {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public ValueInTwinResponseMetadata getMetadata() {
         return metadata;
     }
@@ -109,9 +114,10 @@ public class ValueInTwinResponse {
         return this;
     }
 
-    /** 标识属性是否可选，默认为true，继承模板的属性默认为false
-     * 
-     * @return optional */
+    /**
+     * 标识属性是否可选，默认为true，继承模板的属性默认为false
+     * @return optional
+     */
     public Boolean getOptional() {
         return optional;
     }
@@ -152,7 +158,10 @@ public class ValueInTwinResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** marker分页结构 */
+/**
+ * marker分页结构
+ */
 public class Pager {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Pager {
 
     private String href;
 
-    /** next:下一页 previous:前一页 */
+    /**
+     * next:下一页  previous:前一页
+     */
     public static final class RelEnum {
 
-        /** Enum NEXT for value: "next" */
+        /**
+         * Enum NEXT for value: "next"
+         */
         public static final RelEnum NEXT = new RelEnum("next");
 
-        /** Enum PREVIOUS for value: "previous" */
+        /**
+         * Enum PREVIOUS for value: "previous"
+         */
         public static final RelEnum PREVIOUS = new RelEnum("previous");
 
         private static final Map<String, RelEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class Pager {
         return this;
     }
 
-    /** 页码url
-     * 
-     * @return href */
+    /**
+     * 页码url
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -115,9 +124,10 @@ public class Pager {
         return this;
     }
 
-    /** next:下一页 previous:前一页
-     * 
-     * @return rel */
+    /**
+     * next:下一页  previous:前一页
+     * @return rel
+     */
     public RelEnum getRel() {
         return rel;
     }
@@ -153,7 +163,10 @@ public class Pager {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

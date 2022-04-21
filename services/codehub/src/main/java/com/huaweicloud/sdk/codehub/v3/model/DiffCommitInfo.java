@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DiffCommitInfo */
+/**
+ * DiffCommitInfo
+ */
 public class DiffCommitInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 变更前文件路径
-     * 
-     * @return oldPath */
+    /**
+     * 变更前文件路径
+     * @return oldPath
+     */
     public String getOldPath() {
         return oldPath;
     }
@@ -69,9 +72,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 变更后文件路径
-     * 
-     * @return newPath */
+    /**
+     * 变更后文件路径
+     * @return newPath
+     */
     public String getNewPath() {
         return newPath;
     }
@@ -85,9 +89,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 变更前文件模式
-     * 
-     * @return aMode */
+    /**
+     * 变更前文件模式
+     * @return aMode
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "a_mode")
     public String getAMode() {
@@ -103,9 +108,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 变更后文件模式
-     * 
-     * @return bMode */
+    /**
+     * 变更后文件模式
+     * @return bMode
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "b_mode")
     public String getBMode() {
@@ -121,9 +127,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 此次变更是否新增文件
-     * 
-     * @return newFile */
+    /**
+     * 此次变更是否新增文件
+     * @return newFile
+     */
     public Boolean getNewFile() {
         return newFile;
     }
@@ -137,9 +144,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 此次变更是否重命名文件
-     * 
-     * @return renamedFile */
+    /**
+     * 此次变更是否重命名文件
+     * @return renamedFile
+     */
     public Boolean getRenamedFile() {
         return renamedFile;
     }
@@ -153,9 +161,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 此次变更是否删除文件
-     * 
-     * @return deletedFile */
+    /**
+     * 此次变更是否删除文件
+     * @return deletedFile
+     */
     public Boolean getDeletedFile() {
         return deletedFile;
     }
@@ -169,9 +178,10 @@ public class DiffCommitInfo {
         return this;
     }
 
-    /** 差异信息
-     * 
-     * @return diff */
+    /**
+     * 差异信息
+     * @return diff
+     */
     public Boolean getDiff() {
         return diff;
     }
@@ -218,7 +228,10 @@ public class DiffCommitInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

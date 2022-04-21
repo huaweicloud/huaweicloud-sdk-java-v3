@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 插件支持升级的集群版本 */
+/**
+ * 插件支持升级的集群版本
+ */
 public class SupportVersions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class SupportVersions {
         return this;
     }
 
-    /** 支持的集群类型
-     * 
-     * @return clusterType */
+    /**
+     * 支持的集群类型
+     * @return clusterType
+     */
     public String getClusterType() {
         return clusterType;
     }
@@ -58,9 +61,10 @@ public class SupportVersions {
         return this;
     }
 
-    /** 支持的集群版本（正则表达式）
-     * 
-     * @return clusterVersion */
+    /**
+     * 支持的集群版本（正则表达式）
+     * @return clusterVersion
+     */
     public List<String> getClusterVersion() {
         return clusterVersion;
     }
@@ -97,7 +101,10 @@ public class SupportVersions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

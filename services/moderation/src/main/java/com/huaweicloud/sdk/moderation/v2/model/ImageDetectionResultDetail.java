@@ -54,9 +54,10 @@ public class ImageDetectionResultDetail {
         return this;
     }
 
-    /** 涉政敏感人物检测结果。
-     * 
-     * @return politics */
+    /**
+     * 涉政敏感人物检测结果。
+     * @return politics
+     */
     public List<ImageDetectionResultDetailPolitics> getPolitics() {
         return politics;
     }
@@ -86,9 +87,10 @@ public class ImageDetectionResultDetail {
         return this;
     }
 
-    /** 涉黄检测结果。
-     * 
-     * @return porn */
+    /**
+     * 涉黄检测结果。
+     * @return porn
+     */
     public List<ImageDetectionResultSimpleDetail> getPorn() {
         return porn;
     }
@@ -118,9 +120,10 @@ public class ImageDetectionResultDetail {
         return this;
     }
 
-    /** 涉政、暴恐检测结果。
-     * 
-     * @return terrorism */
+    /**
+     * 涉政、暴恐检测结果。
+     * @return terrorism
+     */
     public List<ImageDetectionResultSimpleDetail> getTerrorism() {
         return terrorism;
     }
@@ -150,9 +153,10 @@ public class ImageDetectionResultDetail {
         return this;
     }
 
-    /** 广告检测结果。
-     * 
-     * @return ad */
+    /**
+     * 广告检测结果。
+     * @return ad
+     */
     public List<ImageDetectionResultAdDetail> getAd() {
         return ad;
     }
@@ -193,7 +197,10 @@ public class ImageDetectionResultDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

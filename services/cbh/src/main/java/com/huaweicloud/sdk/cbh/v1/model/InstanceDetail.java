@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CBH实例详情 */
+/**
+ * CBH实例详情
+ */
 public class InstanceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -173,9 +175,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 弹性ip
-     * 
-     * @return publicip */
+    /**
+     * 弹性ip
+     * @return publicip
+     */
     public String getPublicip() {
         return publicip;
     }
@@ -189,9 +192,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 过期时间
-     * 
-     * @return expTime */
+    /**
+     * 过期时间
+     * @return expTime
+     */
     public String getExpTime() {
         return expTime;
     }
@@ -205,9 +209,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -221,9 +226,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -237,9 +243,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 释放时间
-     * 
-     * @return releaseTime */
+    /**
+     * 释放时间
+     * @return releaseTime
+     */
     public String getReleaseTime() {
         return releaseTime;
     }
@@ -253,9 +260,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return name */
+    /**
+     * 实例名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -269,9 +277,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例的server id
-     * 
-     * @return instanceId */
+    /**
+     * 实例的server id
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -285,9 +294,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例私有ip
-     * 
-     * @return privateIp */
+    /**
+     * 实例私有ip
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -301,9 +311,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例当前的任务状态
-     * 
-     * @return taskStatus */
+    /**
+     * 实例当前的任务状态
+     * @return taskStatus
+     */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -317,9 +328,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例状态
-     * 
-     * @return status */
+    /**
+     * 实例状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -333,9 +345,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例创建时间
-     * 
-     * @return created */
+    /**
+     * 实例创建时间
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -349,9 +362,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所在region
-     * 
-     * @return region */
+    /**
+     * 实例所在region
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -365,9 +379,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所在可用区id
-     * 
-     * @return zone */
+    /**
+     * 实例所在可用区id
+     * @return zone
+     */
     public String getZone() {
         return zone;
     }
@@ -381,9 +396,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所在可用区名称
-     * 
-     * @return availabilityZoneDisplay */
+    /**
+     * 实例所在可用区名称
+     * @return availabilityZoneDisplay
+     */
     public String getAvailabilityZoneDisplay() {
         return availabilityZoneDisplay;
     }
@@ -397,9 +413,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所在vpc的id
-     * 
-     * @return vpcId */
+    /**
+     * 实例所在vpc的id
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -413,9 +430,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所在子网的id
-     * 
-     * @return subnetId */
+    /**
+     * 实例所在子网的id
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -429,9 +447,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例所属的安全组的id
-     * 
-     * @return securityGroupId */
+    /**
+     * 实例所属的安全组的id
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -445,9 +464,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例规格
-     * 
-     * @return specification */
+    /**
+     * 实例规格
+     * @return specification
+     */
     public String getSpecification() {
         return specification;
     }
@@ -461,9 +481,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例镜像是否可以升级
-     * 
-     * @return update */
+    /**
+     * 实例镜像是否可以升级
+     * @return update
+     */
     public String getUpdate() {
         return update;
     }
@@ -477,9 +498,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 在创建实例过程中的过程状态信息
-     * 
-     * @return createinstanceStatus */
+    /**
+     * 在创建实例过程中的过程状态信息
+     * @return createinstanceStatus
+     */
     public String getCreateinstanceStatus() {
         return createinstanceStatus;
     }
@@ -493,9 +515,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 创建实例失败原因
-     * 
-     * @return failReason */
+    /**
+     * 创建实例失败原因
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -509,9 +532,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceKey */
+    /**
+     * 实例ID
+     * @return instanceKey
+     */
     public String getInstanceKey() {
         return instanceKey;
     }
@@ -525,9 +549,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 订单id
-     * 
-     * @return orderId */
+    /**
+     * 订单id
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -541,9 +566,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 租户购买的时长
-     * 
-     * @return periodNum */
+    /**
+     * 租户购买的时长
+     * @return periodNum
+     */
     public String getPeriodNum() {
         return periodNum;
     }
@@ -557,9 +583,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例的资源id
-     * 
-     * @return resourceId */
+    /**
+     * 实例的资源id
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -573,9 +600,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 堡垒机类型
-     * 
-     * @return bastionType */
+    /**
+     * 堡垒机类型
+     * @return bastionType
+     */
     public String getBastionType() {
         return bastionType;
     }
@@ -589,9 +617,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例绑定的弹性IP的id
-     * 
-     * @return publicId */
+    /**
+     * 实例绑定的弹性IP的id
+     * @return publicId
+     */
     public String getPublicId() {
         return publicId;
     }
@@ -605,9 +634,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 前端是否显示扩容按钮
-     * 
-     * @return alterPermit */
+    /**
+     * 前端是否显示扩容按钮
+     * @return alterPermit
+     */
     public String getAlterPermit() {
         return alterPermit;
     }
@@ -621,9 +651,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例镜像当前版本号
-     * 
-     * @return bastionVersion */
+    /**
+     * 实例镜像当前版本号
+     * @return bastionVersion
+     */
     public String getBastionVersion() {
         return bastionVersion;
     }
@@ -637,9 +668,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例镜像最新版本号
-     * 
-     * @return newBastionVersion */
+    /**
+     * 实例镜像最新版本号
+     * @return newBastionVersion
+     */
     public String getNewBastionVersion() {
         return newBastionVersion;
     }
@@ -653,9 +685,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例状态
-     * 
-     * @return instanceStatus */
+    /**
+     * 实例状态
+     * @return instanceStatus
+     */
     public String getInstanceStatus() {
         return instanceStatus;
     }
@@ -669,9 +702,10 @@ public class InstanceDetail {
         return this;
     }
 
-    /** 实例描述
-     * 
-     * @return instanceDescription */
+    /**
+     * 实例描述
+     * @return instanceDescription
+     */
     public String getInstanceDescription() {
         return instanceDescription;
     }
@@ -798,7 +832,10 @@ public class InstanceDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

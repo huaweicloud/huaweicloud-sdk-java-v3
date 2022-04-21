@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProductTemplatesCalculation */
+/**
+ * ProductTemplatesCalculation
+ */
 public class ProductTemplatesCalculation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class ProductTemplatesCalculation {
         return this;
     }
 
-    /** 产品模板数量 minimum: 0 maximum: 999999999
-     * 
-     * @return productTemplatesNumbers */
+    /**
+     * 产品模板数量
+     * minimum: 0
+     * maximum: 999999999
+     * @return productTemplatesNumbers
+     */
     public Integer getProductTemplatesNumbers() {
         return productTemplatesNumbers;
     }
@@ -55,7 +60,10 @@ public class ProductTemplatesCalculation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

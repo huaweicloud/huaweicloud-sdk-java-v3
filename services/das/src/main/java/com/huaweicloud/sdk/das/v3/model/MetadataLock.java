@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 元数据锁 */
+/**
+ * 元数据锁
+ */
 public class MetadataLock {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,9 +103,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 会话ID
-     * 
-     * @return threadId */
+    /**
+     * 会话ID
+     * @return threadId
+     */
     public String getThreadId() {
         return threadId;
     }
@@ -117,9 +120,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 锁状态，取值为PENDING和GRANTED，分别表示等待锁和持有锁。
-     * 
-     * @return lockStatus */
+    /**
+     * 锁状态，取值为PENDING和GRANTED，分别表示等待锁和持有锁。
+     * @return lockStatus
+     */
     public String getLockStatus() {
         return lockStatus;
     }
@@ -133,9 +137,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 加锁模式，取值为MDL_SHARED 、MDL_EXCLUSIVE 、MDL_SHARED_READ、MDL_SHARED_WRITE等。
-     * 
-     * @return lockMode */
+    /**
+     * 加锁模式，取值为MDL_SHARED 、MDL_EXCLUSIVE 、MDL_SHARED_READ、MDL_SHARED_WRITE等。
+     * @return lockMode
+     */
     public String getLockMode() {
         return lockMode;
     }
@@ -149,9 +154,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 锁类型，取值为Table metadata lock、Schema metadata lock、Tablespace lock、Global read lock，分别表示表元数据锁、库元数据锁、表空间锁、全局读锁。
-     * 
-     * @return lockType */
+    /**
+     * 锁类型，取值为Table metadata lock、Schema metadata lock、Tablespace lock、Global read lock，分别表示表元数据锁、库元数据锁、表空间锁、全局读锁。
+     * @return lockType
+     */
     public String getLockType() {
         return lockType;
     }
@@ -165,9 +171,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 锁范围，取值为MDL_STATEMENT、MDL_TRANSACTION、MDL_EXPLICIT，分别表示语句级别、事务级别、global级别
-     * 
-     * @return lockDuration */
+    /**
+     * 锁范围，取值为MDL_STATEMENT、MDL_TRANSACTION、MDL_EXPLICIT，分别表示语句级别、事务级别、global级别
+     * @return lockDuration
+     */
     public String getLockDuration() {
         return lockDuration;
     }
@@ -181,9 +188,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 锁所在的数据库，对于部分Global read lock级别的元数据锁，该值为空。
-     * 
-     * @return tableSchema */
+    /**
+     * 锁所在的数据库，对于部分Global read lock级别的元数据锁，该值为空。
+     * @return tableSchema
+     */
     public String getTableSchema() {
         return tableSchema;
     }
@@ -197,9 +205,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 表名
-     * 
-     * @return tableName */
+    /**
+     * 表名
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -213,9 +222,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 用户
-     * 
-     * @return user */
+    /**
+     * 用户
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -229,9 +239,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 时间
-     * 
-     * @return time */
+    /**
+     * 时间
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -245,9 +256,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 主机
-     * 
-     * @return host */
+    /**
+     * 主机
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -261,9 +273,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 会话所在的数据库
-     * 
-     * @return database */
+    /**
+     * 会话所在的数据库
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -277,9 +290,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 命令
-     * 
-     * @return command */
+    /**
+     * 命令
+     * @return command
+     */
     public String getCommand() {
         return command;
     }
@@ -293,9 +307,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return state */
+    /**
+     * 状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -309,9 +324,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** SQL语句
-     * 
-     * @return sql */
+    /**
+     * SQL语句
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -325,9 +341,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 事务执行时间
-     * 
-     * @return trxExecTime */
+    /**
+     * 事务执行时间
+     * @return trxExecTime
+     */
     public String getTrxExecTime() {
         return trxExecTime;
     }
@@ -357,9 +374,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 阻塞会话列表
-     * 
-     * @return blockProcess */
+    /**
+     * 阻塞会话列表
+     * @return blockProcess
+     */
     public List<Process> getBlockProcess() {
         return blockProcess;
     }
@@ -389,9 +407,10 @@ public class MetadataLock {
         return this;
     }
 
-    /** 等待会话列表
-     * 
-     * @return waitProcess */
+    /**
+     * 等待会话列表
+     * @return waitProcess
+     */
     public List<Process> getWaitProcess() {
         return waitProcess;
     }
@@ -470,7 +489,10 @@ public class MetadataLock {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

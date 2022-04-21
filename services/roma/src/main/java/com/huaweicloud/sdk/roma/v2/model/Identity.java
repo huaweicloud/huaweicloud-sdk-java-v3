@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Identity */
+/**
+ * Identity
+ */
 public class Identity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Identity {
 
     private String name;
 
-    /** 参数位置 */
+    /**
+     * 参数位置
+     */
     public static final class LocationEnum {
 
-        /** Enum HEADER for value: "HEADER" */
+        /**
+         * Enum HEADER for value: "HEADER"
+         */
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
 
-        /** Enum QUERY for value: "QUERY" */
+        /**
+         * Enum QUERY for value: "QUERY"
+         */
         public static final LocationEnum QUERY = new LocationEnum("QUERY");
 
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class Identity {
         return this;
     }
 
-    /** 参数名称。 支持数字，英文，下划线，中划线，点，且只能以数字或英文开头。
-     * 
-     * @return name */
+    /**
+     * 参数名称。  支持数字，英文，下划线，中划线，点，且只能以数字或英文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -120,9 +129,10 @@ public class Identity {
         return this;
     }
 
-    /** 参数位置
-     * 
-     * @return location */
+    /**
+     * 参数位置
+     * @return location
+     */
     public LocationEnum getLocation() {
         return location;
     }
@@ -136,9 +146,10 @@ public class Identity {
         return this;
     }
 
-    /** 参数校验表达式，默认为null，不做校验
-     * 
-     * @return validation */
+    /**
+     * 参数校验表达式，默认为null，不做校验
+     * @return validation
+     */
     public String getValidation() {
         return validation;
     }
@@ -176,7 +187,10 @@ public class Identity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

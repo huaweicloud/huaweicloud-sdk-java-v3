@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpErrorInfo */
+/**
+ * OpErrorInfo
+ */
 public class OpErrorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OpErrorInfo {
         return this;
     }
 
-    /** 请参见[错误码](ErrorCode.xml)。
-     * 
-     * @return code */
+    /**
+     * 请参见[错误码](ErrorCode.xml)。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -39,9 +42,10 @@ public class OpErrorInfo {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return message */
+    /**
+     * 错误信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -77,7 +81,10 @@ public class OpErrorInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

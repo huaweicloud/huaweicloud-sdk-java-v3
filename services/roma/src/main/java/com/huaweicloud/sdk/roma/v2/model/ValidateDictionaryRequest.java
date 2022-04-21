@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ValidateDictionaryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ValidateDictionaryRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -44,9 +47,10 @@ public class ValidateDictionaryRequest {
         return this;
     }
 
-    /** 待校验是否重复的字典名称，精确匹配
-     * 
-     * @return name */
+    /**
+     * 待校验是否重复的字典名称，精确匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class ValidateDictionaryRequest {
         return this;
     }
 
-    /** 待校验是否重复的字典编码，精确匹配
-     * 
-     * @return code */
+    /**
+     * 待校验是否重复的字典编码，精确匹配
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -101,7 +106,10 @@ public class ValidateDictionaryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

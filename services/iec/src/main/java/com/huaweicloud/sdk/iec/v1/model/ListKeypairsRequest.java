@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListKeypairsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListKeypairsRequest {
         return this;
     }
 
-    /** 查询返回keypair列表当前页面的数量。 取值范围：0~1000。
-     * 
-     * @return limit */
+    /**
+     * 查询返回keypair列表当前页面的数量。 取值范围：0~1000。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -44,9 +47,10 @@ public class ListKeypairsRequest {
         return this;
     }
 
-    /** 偏移量。 当前偏移量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 当前偏移量，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +64,10 @@ public class ListKeypairsRequest {
         return this;
     }
 
-    /** 根据名称查询keypair列表。
-     * 
-     * @return name */
+    /**
+     * 根据名称查询keypair列表。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,7 +106,10 @@ public class ListKeypairsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

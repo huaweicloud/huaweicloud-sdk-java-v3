@@ -33,25 +33,34 @@ public class NodePoolStatus {
 
     private Integer deletingNode;
 
-    /** 节点池状态。 - 空值：可用（节点池当前节点数已达到预期，且无伸缩中的节点） - Synchronizing：伸缩中（节点池当前节点数未达到预期，且无伸缩中的节点） -
-     * Synchronized：伸缩等待中（节点池当前节点数未达到预期，或者存在伸缩中的节点） - SoldOut：节点池当前不可扩容（兼容字段，标记节点池资源售罄、资源配额不足等不可扩容状态） >
-     * 上述节点池状态已废弃，仅兼容保留，不建议使用，替代感知方式如下： > - 节点池扩缩状态：可通过currentNode/creatingNode/deletingNode节点状态统计信息，精确感知当前节点池扩缩状态。 > -
-     * 节点池可扩容状态：可通过conditions感知节点池详细状态，其中\"Scalable\"可替代SoldOut语义。 - Deleting：删除中 - Error：错误 */
+    /**
+     * 节点池状态。 - 空值：可用（节点池当前节点数已达到预期，且无伸缩中的节点） - Synchronizing：伸缩中（节点池当前节点数未达到预期，且无伸缩中的节点） - Synchronized：伸缩等待中（节点池当前节点数未达到预期，或者存在伸缩中的节点） - SoldOut：节点池当前不可扩容（兼容字段，标记节点池资源售罄、资源配额不足等不可扩容状态） > 上述节点池状态已废弃，仅兼容保留，不建议使用，替代感知方式如下： > - 节点池扩缩状态：可通过currentNode/creatingNode/deletingNode节点状态统计信息，精确感知当前节点池扩缩状态。 > - 节点池可扩容状态：可通过conditions感知节点池详细状态，其中\"Scalable\"可替代SoldOut语义。 - Deleting：删除中 - Error：错误 
+     */
     public static final class PhaseEnum {
 
-        /** Enum SYNCHRONIZING for value: "Synchronizing" */
+        /**
+         * Enum SYNCHRONIZING for value: "Synchronizing"
+         */
         public static final PhaseEnum SYNCHRONIZING = new PhaseEnum("Synchronizing");
 
-        /** Enum SYNCHRONIZED for value: "Synchronized" */
+        /**
+         * Enum SYNCHRONIZED for value: "Synchronized"
+         */
         public static final PhaseEnum SYNCHRONIZED = new PhaseEnum("Synchronized");
 
-        /** Enum SOLDOUT for value: "SoldOut" */
+        /**
+         * Enum SOLDOUT for value: "SoldOut"
+         */
         public static final PhaseEnum SOLDOUT = new PhaseEnum("SoldOut");
 
-        /** Enum DELETING for value: "Deleting" */
+        /**
+         * Enum DELETING for value: "Deleting"
+         */
         public static final PhaseEnum DELETING = new PhaseEnum("Deleting");
 
-        /** Enum ERROR for value: "Error" */
+        /**
+         * Enum ERROR for value: "Error"
+         */
         public static final PhaseEnum ERROR = new PhaseEnum("Error");
 
         private static final Map<String, PhaseEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +148,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 当前节点池中所有节点数量（不含删除中的节点）。
-     * 
-     * @return currentNode */
+    /**
+     * 当前节点池中所有节点数量（不含删除中的节点）。
+     * @return currentNode
+     */
     public Integer getCurrentNode() {
         return currentNode;
     }
@@ -155,9 +165,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 当前节点池中处于创建流程中的节点数量。
-     * 
-     * @return creatingNode */
+    /**
+     * 当前节点池中处于创建流程中的节点数量。
+     * @return creatingNode
+     */
     public Integer getCreatingNode() {
         return creatingNode;
     }
@@ -171,9 +182,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 当前节点池中删除中的节点数量。
-     * 
-     * @return deletingNode */
+    /**
+     * 当前节点池中删除中的节点数量。
+     * @return deletingNode
+     */
     public Integer getDeletingNode() {
         return deletingNode;
     }
@@ -187,12 +199,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 节点池状态。 - 空值：可用（节点池当前节点数已达到预期，且无伸缩中的节点） - Synchronizing：伸缩中（节点池当前节点数未达到预期，且无伸缩中的节点） -
-     * Synchronized：伸缩等待中（节点池当前节点数未达到预期，或者存在伸缩中的节点） - SoldOut：节点池当前不可扩容（兼容字段，标记节点池资源售罄、资源配额不足等不可扩容状态） >
-     * 上述节点池状态已废弃，仅兼容保留，不建议使用，替代感知方式如下： > - 节点池扩缩状态：可通过currentNode/creatingNode/deletingNode节点状态统计信息，精确感知当前节点池扩缩状态。 > -
-     * 节点池可扩容状态：可通过conditions感知节点池详细状态，其中\"Scalable\"可替代SoldOut语义。 - Deleting：删除中 - Error：错误
-     * 
-     * @return phase */
+    /**
+     * 节点池状态。 - 空值：可用（节点池当前节点数已达到预期，且无伸缩中的节点） - Synchronizing：伸缩中（节点池当前节点数未达到预期，且无伸缩中的节点） - Synchronized：伸缩等待中（节点池当前节点数未达到预期，或者存在伸缩中的节点） - SoldOut：节点池当前不可扩容（兼容字段，标记节点池资源售罄、资源配额不足等不可扩容状态） > 上述节点池状态已废弃，仅兼容保留，不建议使用，替代感知方式如下： > - 节点池扩缩状态：可通过currentNode/creatingNode/deletingNode节点状态统计信息，精确感知当前节点池扩缩状态。 > - 节点池可扩容状态：可通过conditions感知节点池详细状态，其中\"Scalable\"可替代SoldOut语义。 - Deleting：删除中 - Error：错误 
+     * @return phase
+     */
     public PhaseEnum getPhase() {
         return phase;
     }
@@ -206,9 +216,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 对节点池执行操作时的 JobID。
-     * 
-     * @return jobId */
+    /**
+     * 对节点池执行操作时的 JobID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -238,9 +249,10 @@ public class NodePoolStatus {
         return this;
     }
 
-    /** 节点池当前详细状态列表，详情参见Condition类型定义。
-     * 
-     * @return conditions */
+    /**
+     * 节点池当前详细状态列表，详情参见Condition类型定义。 
+     * @return conditions
+     */
     public List<NodePoolCondition> getConditions() {
         return conditions;
     }
@@ -284,7 +296,10 @@ public class NodePoolStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

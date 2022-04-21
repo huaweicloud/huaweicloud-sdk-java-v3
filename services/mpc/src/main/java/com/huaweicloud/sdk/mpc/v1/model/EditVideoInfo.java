@@ -10,23 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** EditVideoInfo */
+/**
+ * EditVideoInfo
+ */
 public class EditVideoInfo {
 
-    /** 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 -
-     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。 */
+    /**
+     * 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 - CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。
+     */
     public static final class ReferenceEnum {
 
-        /** Enum MAX for value: "MAX" */
+        /**
+         * Enum MAX for value: "MAX"
+         */
         public static final ReferenceEnum MAX = new ReferenceEnum("MAX");
 
-        /** Enum MIN for value: "MIN" */
+        /**
+         * Enum MIN for value: "MIN"
+         */
         public static final ReferenceEnum MIN = new ReferenceEnum("MIN");
 
-        /** Enum CUSTOM for value: "CUSTOM" */
+        /**
+         * Enum CUSTOM for value: "CUSTOM"
+         */
         public static final ReferenceEnum CUSTOM = new ReferenceEnum("CUSTOM");
 
-        /** Enum SHORT_HEIGHT_SHORT_WIDTH for value: "SHORT_HEIGHT_SHORT_WIDTH" */
+        /**
+         * Enum SHORT_HEIGHT_SHORT_WIDTH for value: "SHORT_HEIGHT_SHORT_WIDTH"
+         */
         public static final ReferenceEnum SHORT_HEIGHT_SHORT_WIDTH = new ReferenceEnum("SHORT_HEIGHT_SHORT_WIDTH");
 
         private static final Map<String, ReferenceEnum> STATIC_FIELDS = createStaticFields();
@@ -108,13 +119,19 @@ public class EditVideoInfo {
 
     private Integer height;
 
-    /** 视频频编码格式。 */
+    /**
+     * 视频频编码格式。
+     */
     public static final class CodecEnum {
 
-        /** Enum H264 for value: "H264" */
+        /**
+         * Enum H264 for value: "H264"
+         */
         public static final CodecEnum H264 = new CodecEnum("H264");
 
-        /** Enum H265 for value: "H265" */
+        /**
+         * Enum H265 for value: "H265"
+         */
         public static final CodecEnum H265 = new CodecEnum("H265");
 
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
@@ -199,10 +216,10 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 -
-     * CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。
-     * 
-     * @return reference */
+    /**
+     * 剪辑输出视频参数的参照物。取值如下： - MAX，以输入片源中最大分辨率的视频参数作为输出参照。 - MIN，以输入片源中最小分辨率的视频参数作为输出参照。 - CUSTOM，自定义视频输出参数，使用该参数时，所有视频参数必填。- SHORT_HEIGHT_SHORT_WIDTH，当edit_type为MIX时，只能使用该值。
+     * @return reference
+     */
     public ReferenceEnum getReference() {
         return reference;
     }
@@ -216,9 +233,12 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 视频宽度。 minimum: 0 maximum: 3840
-     * 
-     * @return width */
+    /**
+     * 视频宽度。
+     * minimum: 0
+     * maximum: 3840
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -232,9 +252,12 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 视频高度。 minimum: 0 maximum: 2160
-     * 
-     * @return height */
+    /**
+     * 视频高度。
+     * minimum: 0
+     * maximum: 2160
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -248,9 +271,10 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 视频频编码格式。
-     * 
-     * @return codec */
+    /**
+     * 视频频编码格式。
+     * @return codec
+     */
     public CodecEnum getCodec() {
         return codec;
     }
@@ -264,9 +288,12 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 视频码率，单位: bit/s minimum: 0 maximum: 20000000
-     * 
-     * @return bitrate */
+    /**
+     * 视频码率，单位: bit/s 
+     * minimum: 0
+     * maximum: 20000000
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -280,9 +307,12 @@ public class EditVideoInfo {
         return this;
     }
 
-    /** 帧率。 minimum: 0 maximum: 60
-     * 
-     * @return frameRate */
+    /**
+     * 帧率。 
+     * minimum: 0
+     * maximum: 60
+     * @return frameRate
+     */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -325,7 +355,10 @@ public class EditVideoInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

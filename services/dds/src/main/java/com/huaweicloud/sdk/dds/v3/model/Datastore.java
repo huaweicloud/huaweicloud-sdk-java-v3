@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class Datastore {
 
-    /** 数据库版本类型。取值“DDS-Community”。 */
+    /**
+     * 数据库版本类型。取值“DDS-Community”。
+     */
     public static final class TypeEnum {
 
-        /** Enum DDS_COMMUNITY for value: "DDS-Community" */
+        /**
+         * Enum DDS_COMMUNITY for value: "DDS-Community"
+         */
         public static final TypeEnum DDS_COMMUNITY = new TypeEnum("DDS-Community");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -90,13 +96,19 @@ public class Datastore {
 
     private String version;
 
-    /** 存储引擎。支持WiredTiger存储引擎。取值为“wiredTiger”。 */
+    /**
+     * 存储引擎。支持WiredTiger存储引擎。取值为“wiredTiger”。
+     */
     public static final class StorageEngineEnum {
 
-        /** Enum WIREDTIGER for value: "wiredTiger" */
+        /**
+         * Enum WIREDTIGER for value: "wiredTiger"
+         */
         public static final StorageEngineEnum WIREDTIGER = new StorageEngineEnum("wiredTiger");
 
-        /** Enum ROCKSDB for value: "rocksDB" */
+        /**
+         * Enum ROCKSDB for value: "rocksDB"
+         */
         public static final StorageEngineEnum ROCKSDB = new StorageEngineEnum("rocksDB");
 
         private static final Map<String, StorageEngineEnum> STATIC_FIELDS = createStaticFields();
@@ -171,9 +183,10 @@ public class Datastore {
         return this;
     }
 
-    /** 数据库版本类型。取值“DDS-Community”。
-     * 
-     * @return type */
+    /**
+     * 数据库版本类型。取值“DDS-Community”。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -187,9 +200,10 @@ public class Datastore {
         return this;
     }
 
-    /** 数据库版本。支持3.4、3.2和4.0版本。取值为“3.4”、“3.2”或“4.0”。
-     * 
-     * @return version */
+    /**
+     * 数据库版本。支持3.4、3.2和4.0版本。取值为“3.4”、“3.2”或“4.0”。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -203,9 +217,10 @@ public class Datastore {
         return this;
     }
 
-    /** 存储引擎。支持WiredTiger存储引擎。取值为“wiredTiger”。
-     * 
-     * @return storageEngine */
+    /**
+     * 存储引擎。支持WiredTiger存储引擎。取值为“wiredTiger”。
+     * @return storageEngine
+     */
     public StorageEngineEnum getStorageEngine() {
         return storageEngine;
     }
@@ -243,7 +258,10 @@ public class Datastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

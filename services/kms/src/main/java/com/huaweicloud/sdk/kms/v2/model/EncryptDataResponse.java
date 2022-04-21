@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class EncryptDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class EncryptDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -40,9 +43,10 @@ public class EncryptDataResponse extends SdkResponse {
         return this;
     }
 
-    /** DEK密文16进制，两位表示1byte。
-     * 
-     * @return cipherText */
+    /**
+     * DEK密文16进制，两位表示1byte。
+     * @return cipherText
+     */
     public String getCipherText() {
         return cipherText;
     }
@@ -79,7 +83,10 @@ public class EncryptDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

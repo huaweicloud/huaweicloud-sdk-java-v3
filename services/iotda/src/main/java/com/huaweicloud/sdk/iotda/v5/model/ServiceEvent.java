@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 事件服务对象。 */
+/**
+ * 事件服务对象。
+ */
 public class ServiceEvent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ServiceEvent {
         return this;
     }
 
-    /** **参数说明**：设备事件类型。注：设备服务内不允许重复。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return eventType */
+    /**
+     * **参数说明**：设备事件类型。注：设备服务内不允许重复。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -58,9 +61,10 @@ public class ServiceEvent {
         return this;
     }
 
-    /** **参数说明**：设备事件的参数列表。
-     * 
-     * @return paras */
+    /**
+     * **参数说明**：设备事件的参数列表。
+     * @return paras
+     */
     public List<ServiceCommandPara> getParas() {
         return paras;
     }
@@ -96,7 +100,10 @@ public class ServiceEvent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,22 +11,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OutputSetting */
+/**
+ * OutputSetting
+ */
 public class OutputSetting {
 
-    /** 剪切或拼接的输出封装格式。 */
+    /**
+     * 剪切或拼接的输出封装格式。
+     */
     public static final class FormatEnum {
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final FormatEnum MP4 = new FormatEnum("MP4");
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final FormatEnum HLS = new FormatEnum("HLS");
 
-        /** Enum TS for value: "TS" */
+        /**
+         * Enum TS for value: "TS"
+         */
         public static final FormatEnum TS = new FormatEnum("TS");
 
-        /** Enum FLV for value: "FLV" */
+        /**
+         * Enum FLV for value: "FLV"
+         */
         public static final FormatEnum FLV = new FormatEnum("FLV");
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +135,10 @@ public class OutputSetting {
         return this;
     }
 
-    /** 剪切或拼接的输出封装格式。
-     * 
-     * @return format */
+    /**
+     * 剪切或拼接的输出封装格式。
+     * @return format
+     */
     public FormatEnum getFormat() {
         return format;
     }
@@ -148,9 +161,10 @@ public class OutputSetting {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public EditVideoInfo getVideo() {
         return video;
     }
@@ -173,9 +187,10 @@ public class OutputSetting {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public EditAudioInfo getAudio() {
         return audio;
     }
@@ -198,9 +213,10 @@ public class OutputSetting {
         return this;
     }
 
-    /** Get hls
-     * 
-     * @return hls */
+    /**
+     * Get hls
+     * @return hls
+     */
     public EditHlsInfo getHls() {
         return hls;
     }
@@ -223,9 +239,10 @@ public class OutputSetting {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -266,7 +283,10 @@ public class OutputSetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

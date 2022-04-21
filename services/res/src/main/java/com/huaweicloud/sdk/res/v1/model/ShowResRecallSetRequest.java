@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowResRecallSetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowResRecallSetRequest {
         return this;
     }
 
-    /** 工作空间id
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -44,9 +47,10 @@ public class ShowResRecallSetRequest {
         return this;
     }
 
-    /** 资源id
-     * 
-     * @return resourceId */
+    /**
+     * 资源id
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -60,9 +64,10 @@ public class ShowResRecallSetRequest {
         return this;
     }
 
-    /** 使用类型： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
-     * 
-     * @return useType */
+    /**
+     * 使用类型： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
+     * @return useType
+     */
     public String getUseType() {
         return useType;
     }
@@ -101,7 +106,10 @@ public class ShowResRecallSetRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

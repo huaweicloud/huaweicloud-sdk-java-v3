@@ -11,13 +11,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListResourceInstancesRequest {
 
-    /** 资源类型，枚举类：SCALING_GROUP_TAG。 */
+    /**
+     * 资源类型，枚举类：SCALING_GROUP_TAG。
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum SCALING_GROUP_TAG for value: "scaling_group_tag" */
+        /**
+         * Enum SCALING_GROUP_TAG for value: "scaling_group_tag"
+         */
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -96,9 +102,10 @@ public class ListResourceInstancesRequest {
         return this;
     }
 
-    /** 资源类型，枚举类：SCALING_GROUP_TAG。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型，枚举类：SCALING_GROUP_TAG。
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -121,9 +128,10 @@ public class ListResourceInstancesRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public QueryTagsOption getBody() {
         return body;
     }
@@ -160,7 +168,10 @@ public class ListResourceInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

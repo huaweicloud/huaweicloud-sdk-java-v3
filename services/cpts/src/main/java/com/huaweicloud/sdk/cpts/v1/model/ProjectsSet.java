@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProjectsSet */
+/**
+ * ProjectsSet
+ */
 public class ProjectsSet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -73,9 +76,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -89,9 +93,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -105,9 +110,12 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 工程id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * 工程id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -121,9 +129,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 工程名字
-     * 
-     * @return name */
+    /**
+     * 工程名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -137,9 +146,12 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 工程状态 minimum: 0 maximum: 2147483647
-     * 
-     * @return status */
+    /**
+     * 工程状态
+     * minimum: 0
+     * maximum: 2147483647
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -153,9 +165,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 外部参数
-     * 
-     * @return externalParams */
+    /**
+     * 外部参数
+     * @return externalParams
+     */
     public Object getExternalParams() {
         return externalParams;
     }
@@ -185,9 +198,10 @@ public class ProjectsSet {
         return this;
     }
 
-    /** 文件变量
-     * 
-     * @return variablesNoFile */
+    /**
+     * 文件变量
+     * @return variablesNoFile
+     */
     public List<String> getVariablesNoFile() {
         return variablesNoFile;
     }
@@ -234,7 +248,10 @@ public class ProjectsSet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

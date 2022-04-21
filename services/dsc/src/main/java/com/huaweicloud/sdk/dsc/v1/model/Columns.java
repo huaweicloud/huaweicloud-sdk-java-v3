@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 字段类型列表，最大长度100 */
+/**
+ * 字段类型列表，最大长度100
+ */
 public class Columns {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class Columns {
 
     private String name;
 
-    /** 数据的字段类型 */
+    /**
+     * 数据的字段类型
+     */
     public static final class TypeEnum {
 
-        /** Enum INTEGER for value: "INTEGER" */
+        /**
+         * Enum INTEGER for value: "INTEGER"
+         */
         public static final TypeEnum INTEGER = new TypeEnum("INTEGER");
 
-        /** Enum STRING for value: "STRING" */
+        /**
+         * Enum STRING for value: "STRING"
+         */
         public static final TypeEnum STRING = new TypeEnum("STRING");
 
-        /** Enum DOUBLE for value: "DOUBLE" */
+        /**
+         * Enum DOUBLE for value: "DOUBLE"
+         */
         public static final TypeEnum DOUBLE = new TypeEnum("DOUBLE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class Columns {
         return this;
     }
 
-    /** 数据的字段名称，最大支持长度256
-     * 
-     * @return name */
+    /**
+     * 数据的字段名称，最大支持长度256
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,9 +135,10 @@ public class Columns {
         return this;
     }
 
-    /** 数据的字段类型
-     * 
-     * @return type */
+    /**
+     * 数据的字段类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -140,9 +152,10 @@ public class Columns {
         return this;
     }
 
-    /** 标记该字段是否为主键。true为主键，表示用来定位水印位置；false为非主键，将在该列嵌入/提取水印内容。字段类型列表中可同时包含多个为true或为false的字段
-     * 
-     * @return primaryKey */
+    /**
+     * 标记该字段是否为主键。true为主键，表示用来定位水印位置；false为非主键，将在该列嵌入/提取水印内容。字段类型列表中可同时包含多个为true或为false的字段
+     * @return primaryKey
+     */
     public Boolean getPrimaryKey() {
         return primaryKey;
     }
@@ -180,7 +193,10 @@ public class Columns {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdatePasswordResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,19 +21,29 @@ public class UpdatePasswordResponse extends SdkResponse {
 
     private String lockTime;
 
-    /** 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 */
+    /**
+     * 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 
+     */
     public static final class ResultEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final ResultEnum SUCCESS = new ResultEnum("success");
 
-        /** Enum PASSWORDFAILED for value: "passwordFailed" */
+        /**
+         * Enum PASSWORDFAILED for value: "passwordFailed"
+         */
         public static final ResultEnum PASSWORDFAILED = new ResultEnum("passwordFailed");
 
-        /** Enum LOCKED for value: "locked" */
+        /**
+         * Enum LOCKED for value: "locked"
+         */
         public static final ResultEnum LOCKED = new ResultEnum("locked");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final ResultEnum FAILED = new ResultEnum("failed");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +135,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** 锁定时间。验证失败时和锁定时该参数返回不为null
-     * 
-     * @return lockTime */
+    /**
+     * 锁定时间。验证失败时和锁定时该参数返回不为null
+     * @return lockTime
+     */
     public String getLockTime() {
         return lockTime;
     }
@@ -139,9 +152,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。
-     * 
-     * @return result */
+    /**
+     * 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -155,9 +169,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** 锁定剩余时间。锁定时该参数返回不为null
-     * 
-     * @return lockTimeLeft */
+    /**
+     * 锁定剩余时间。锁定时该参数返回不为null
+     * @return lockTimeLeft
+     */
     public String getLockTimeLeft() {
         return lockTimeLeft;
     }
@@ -171,9 +186,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** 密码验证剩余次数。验证失败时该参数返回不为null
-     * 
-     * @return retryTimesLeft */
+    /**
+     * 密码验证剩余次数。验证失败时该参数返回不为null
+     * @return retryTimesLeft
+     */
     public String getRetryTimesLeft() {
         return retryTimesLeft;
     }
@@ -187,9 +203,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改结果。
-     * 
-     * @return message */
+    /**
+     * 修改结果。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -232,7 +249,10 @@ public class UpdatePasswordResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

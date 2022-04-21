@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPublicBorderGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListPublicBorderGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：公共池分组对象
-     * 
-     * @return publicBorderGroups */
+    /**
+     * 功能说明：公共池分组对象
+     * @return publicBorderGroups
+     */
     public List<CommonPoolsWithBorderGroupDict> getPublicBorderGroups() {
         return publicBorderGroups;
     }
@@ -62,9 +65,10 @@ public class ListPublicBorderGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次请求的编号
-     * 
-     * @return requestId */
+    /**
+     * 本次请求的编号
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -101,7 +105,10 @@ public class ListPublicBorderGroupsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

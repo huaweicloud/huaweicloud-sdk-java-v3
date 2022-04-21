@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchListMetricDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BatchListMetricDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 监控指标。
-     * 
-     * @return metrics */
+    /**
+     * 监控指标。
+     * @return metrics
+     */
     public List<BatchMetricData> getMetrics() {
         return metrics;
     }
@@ -75,7 +78,10 @@ public class BatchListMetricDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

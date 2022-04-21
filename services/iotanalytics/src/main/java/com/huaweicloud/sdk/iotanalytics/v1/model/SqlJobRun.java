@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SQL作业运行。 */
+/**
+ * SQL作业运行。
+ */
 public class SqlJobRun {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class SqlJobRun {
         return this;
     }
 
-    /** 作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT.
-     * 
-     * @return sqlType */
+    /**
+     * 作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT.
+     * @return sqlType
+     */
     public String getSqlType() {
         return sqlType;
     }
@@ -55,7 +58,10 @@ public class SqlJobRun {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

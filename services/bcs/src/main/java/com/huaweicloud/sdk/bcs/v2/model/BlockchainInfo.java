@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BlockchainInfo */
+/**
+ * BlockchainInfo
+ */
 public class BlockchainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BlockchainInfo {
         return this;
     }
 
-    /** 服务实例ID
-     * 
-     * @return id */
+    /**
+     * 服务实例ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class BlockchainInfo {
         return this;
     }
 
-    /** 服务实例名
-     * 
-     * @return name */
+    /**
+     * 服务实例名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,7 +81,10 @@ public class BlockchainInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

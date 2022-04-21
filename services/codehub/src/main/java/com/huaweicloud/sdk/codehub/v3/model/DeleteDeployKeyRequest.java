@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteDeployKeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteDeployKeyRequest {
         return this;
     }
 
-    /** 部署密钥id
-     * 
-     * @return keyId */
+    /**
+     * 部署密钥id
+     * @return keyId
+     */
     public Integer getKeyId() {
         return keyId;
     }
@@ -39,9 +42,10 @@ public class DeleteDeployKeyRequest {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库短id
+     * @return repositoryId
+     */
     public Integer getRepositoryId() {
         return repositoryId;
     }
@@ -78,7 +82,10 @@ public class DeleteDeployKeyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

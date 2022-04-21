@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 备份文件列表的结构体 */
+/**
+ * 备份文件列表的结构体
+ */
 public class BackupFilesBody {
 
-    /** 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。 */
+    /**
+     * 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
+     */
     public static final class FileSourceEnum {
 
-        /** Enum SELF_BUILD_OBS for value: "self_build_obs" */
+        /**
+         * Enum SELF_BUILD_OBS for value: "self_build_obs"
+         */
         public static final FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
 
         private static final Map<String, FileSourceEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +114,10 @@ public class BackupFilesBody {
         return this;
     }
 
-    /** 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
-     * 
-     * @return fileSource */
+    /**
+     * 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
+     * @return fileSource
+     */
     public FileSourceEnum getFileSource() {
         return fileSource;
     }
@@ -124,9 +131,10 @@ public class BackupFilesBody {
         return this;
     }
 
-    /** OBS桶名。
-     * 
-     * @return bucketName */
+    /**
+     * OBS桶名。
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -156,9 +164,10 @@ public class BackupFilesBody {
         return this;
     }
 
-    /** 导入的备份文件文件列表。
-     * 
-     * @return files */
+    /**
+     * 导入的备份文件文件列表。
+     * @return files
+     */
     public List<Files> getFiles() {
         return files;
     }
@@ -172,9 +181,10 @@ public class BackupFilesBody {
         return this;
     }
 
-    /** 备份记录ID，数据来源为备份记录时必须填写
-     * 
-     * @return backupId */
+    /**
+     * 备份记录ID，数据来源为备份记录时必须填写
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -215,7 +225,10 @@ public class BackupFilesBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

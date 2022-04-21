@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例相关信息的集合 */
+/**
+ * 实例相关信息的集合
+ */
 public class CreateInstanceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** DDM实例名称，命名要求如下。 - 长度为4-64个字符。 - 必须以字母开头。 - 可以包含字母、数字、中划线，不能包含其它特殊字符。
-     * 
-     * @return name */
+    /**
+     * DDM实例名称，命名要求如下。 - 长度为4-64个字符。 - 必须以字母开头。 - 可以包含字母、数字、中划线，不能包含其它特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -87,9 +90,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 规格ID。
-     * 
-     * @return flavorId */
+    /**
+     * 规格ID。
+     * @return flavorId
+     */
     public String getFlavorId() {
         return flavorId;
     }
@@ -103,9 +107,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 节点个数。
-     * 
-     * @return nodeNum */
+    /**
+     * 节点个数。
+     * @return nodeNum
+     */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -119,9 +124,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 引擎ID。
-     * 
-     * @return engineId */
+    /**
+     * 引擎ID。
+     * @return engineId
+     */
     public String getEngineId() {
         return engineId;
     }
@@ -135,9 +141,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -167,9 +174,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 可用区code。取值非空，请参见地区和终端节点(https://developer.huaweicloud.com/endpoint?DDM)。
-     * 
-     * @return availableZones */
+    /**
+     * 可用区code。取值非空，请参见地区和终端节点(https://developer.huaweicloud.com/endpoint?DDM)。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -183,9 +191,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 虚拟私有云的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -199,9 +208,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -215,9 +225,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -231,9 +242,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** 参数组ID.
-     * 
-     * @return paramGroupId */
+    /**
+     * 参数组ID.
+     * @return paramGroupId
+     */
     public String getParamGroupId() {
         return paramGroupId;
     }
@@ -247,12 +259,10 @@ public class CreateInstanceDetail {
         return this;
     }
 
-    /** UTC时区。默认为UTC。取值范围：\"UTC\",\"UTC-12:00\",\"UTC-11:00\",\"UTC-10:00\",\"UTC-09:00\", \"UTC-08:00\", \"UTC-07:00\",
-     * \"UTC-06:00\", \"UTC-05:00\", \"UTC-04:00\", \"UTC-03:00\", \"UTC-02:00\", \"UTC-01:00\", \"UTC+01:00\",
-     * \"UTC+02:00\", \"UTC+03:00\", \"UTC+04:00\", \"UTC+05:00\", \"UTC+06:00\", \"UTC+07:00\", \"UTC+08:00\",
-     * \"UTC+09:00\", \"UTC+10:00\", \"UTC+11:00\", \"UTC+12:00\"
-     * 
-     * @return timeZone */
+    /**
+     * UTC时区。默认为UTC。取值范围：\"UTC\",\"UTC-12:00\",\"UTC-11:00\",\"UTC-10:00\",\"UTC-09:00\", \"UTC-08:00\", \"UTC-07:00\", \"UTC-06:00\", \"UTC-05:00\", \"UTC-04:00\", \"UTC-03:00\", \"UTC-02:00\", \"UTC-01:00\", \"UTC+01:00\", \"UTC+02:00\", \"UTC+03:00\", \"UTC+04:00\", \"UTC+05:00\", \"UTC+06:00\", \"UTC+07:00\", \"UTC+08:00\", \"UTC+09:00\", \"UTC+10:00\", \"UTC+11:00\", \"UTC+12:00\"
+     * @return timeZone
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -317,7 +327,10 @@ public class CreateInstanceDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

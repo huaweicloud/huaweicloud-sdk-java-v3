@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 将弹性公网IP插入共享带宽的请求体 */
+/**
+ * 将弹性公网IP插入共享带宽的请求体
+ */
 public class AddPublicipsIntoSharedBandwidthRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class AddPublicipsIntoSharedBandwidthRequestBody {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public AddPublicipsIntoSharedBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -67,7 +70,10 @@ public class AddPublicipsIntoSharedBandwidthRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

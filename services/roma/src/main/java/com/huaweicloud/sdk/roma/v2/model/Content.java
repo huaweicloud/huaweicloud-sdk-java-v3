@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Content */
+/**
+ * Content
+ */
 public class Content {
 
-    /** gauss100的版本号 - V100R003C20 - V300R001C00 */
+    /**
+     * gauss100的版本号 - V100R003C20 - V300R001C00
+     */
     public static final class Gauss100VersionEnum {
 
-        /** Enum V100R003C20 for value: "V100R003C20" */
+        /**
+         * Enum V100R003C20 for value: "V100R003C20"
+         */
         public static final Gauss100VersionEnum V100R003C20 = new Gauss100VersionEnum("V100R003C20");
 
-        /** Enum V300R001C00 for value: "V300R001C00" */
+        /**
+         * Enum V300R001C00 for value: "V300R001C00"
+         */
         public static final Gauss100VersionEnum V300R001C00 = new Gauss100VersionEnum("V300R001C00");
 
         private static final Map<String, Gauss100VersionEnum> STATIC_FIELDS = createStaticFields();
@@ -122,18 +130,24 @@ public class Content {
 
     private String password;
 
-    /** 数据源连接模式 - 数据源为DWS、MONGODB、REDIS、HANA时配置默认， -
-     * 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL、HIVE时配置（default,professional）， -
-     * 数据源为ORACLE时配置专有的模式multiAddress - default (默认模式) - professional (专业模式) - multiAddress (多地址) */
+    /**
+     * 数据源连接模式 - 数据源为DWS、MONGODB、REDIS、HANA时配置默认， - 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL、HIVE时配置（default,professional）， - 数据源为ORACLE时配置专有的模式multiAddress - default (默认模式) - professional (专业模式) - multiAddress (多地址)
+     */
     public static final class ModeEnum {
 
-        /** Enum DEFAULT for value: "default" */
+        /**
+         * Enum DEFAULT for value: "default"
+         */
         public static final ModeEnum DEFAULT = new ModeEnum("default");
 
-        /** Enum PROFESSIONAL for value: "professional" */
+        /**
+         * Enum PROFESSIONAL for value: "professional"
+         */
         public static final ModeEnum PROFESSIONAL = new ModeEnum("professional");
 
-        /** Enum MULTIADDRESS for value: "multiAddress" */
+        /**
+         * Enum MULTIADDRESS for value: "multiAddress"
+         */
         public static final ModeEnum MULTIADDRESS = new ModeEnum("multiAddress");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -204,13 +218,19 @@ public class Content {
 
     private ModeEnum mode;
 
-    /** cdc模式，只有组合任务使用 */
+    /**
+     * cdc模式，只有组合任务使用
+     */
     public static final class CdcModeEnum {
 
-        /** Enum XSTREAM for value: "xstream" */
+        /**
+         * Enum XSTREAM for value: "xstream"
+         */
         public static final CdcModeEnum XSTREAM = new CdcModeEnum("xstream");
 
-        /** Enum LOGMINER for value: "logminer" */
+        /**
+         * Enum LOGMINER for value: "logminer"
+         */
         public static final CdcModeEnum LOGMINER = new CdcModeEnum("logminer");
 
         private static final Map<String, CdcModeEnum> STATIC_FIELDS = createStaticFields();
@@ -290,13 +310,19 @@ public class Content {
 
     private String oracleServiceName;
 
-    /** 访问FTP服务的连接模式 - active (主动模式) - passive (被动模式) */
+    /**
+     * 访问FTP服务的连接模式 - active (主动模式) - passive (被动模式)
+     */
     public static final class FtpConnectModeEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final FtpConnectModeEnum ACTIVE = new FtpConnectModeEnum("active");
 
-        /** Enum PASSIVE for value: "passive" */
+        /**
+         * Enum PASSIVE for value: "passive"
+         */
         public static final FtpConnectModeEnum PASSIVE = new FtpConnectModeEnum("passive");
 
         private static final Map<String, FtpConnectModeEnum> STATIC_FIELDS = createStaticFields();
@@ -366,13 +392,19 @@ public class Content {
 
     private FtpConnectModeEnum ftpConnectMode;
 
-    /** 访问FTP服务协议类型 - sftp - ftp */
+    /**
+     * 访问FTP服务协议类型 - sftp - ftp
+     */
     public static final class FtpProtocolEnum {
 
-        /** Enum SFTP for value: "sftp" */
+        /**
+         * Enum SFTP for value: "sftp"
+         */
         public static final FtpProtocolEnum SFTP = new FtpProtocolEnum("sftp");
 
-        /** Enum FTP for value: "ftp" */
+        /**
+         * Enum FTP for value: "ftp"
+         */
         public static final FtpProtocolEnum FTP = new FtpProtocolEnum("ftp");
 
         private static final Map<String, FtpProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -472,22 +504,34 @@ public class Content {
 
     private String url;
 
-    /** 访问API请求方式 - POST - PUT - DELETE - PATCH - GET */
+    /**
+     * 访问API请求方式 - POST - PUT - DELETE - PATCH - GET
+     */
     public static final class ApiMethodEnum {
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ApiMethodEnum POST = new ApiMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ApiMethodEnum PUT = new ApiMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ApiMethodEnum DELETE = new ApiMethodEnum("DELETE");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ApiMethodEnum PATCH = new ApiMethodEnum("PATCH");
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ApiMethodEnum GET = new ApiMethodEnum("GET");
 
         private static final Map<String, ApiMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -560,13 +604,19 @@ public class Content {
 
     private ApiMethodEnum apiMethod;
 
-    /** 访问WEBSOCKET服务的认证方式 - none - basicauth */
+    /**
+     * 访问WEBSOCKET服务的认证方式 - none - basicauth
+     */
     public static final class AuthMethodEnum {
 
-        /** Enum NONE for value: "none" */
+        /**
+         * Enum NONE for value: "none"
+         */
         public static final AuthMethodEnum NONE = new AuthMethodEnum("none");
 
-        /** Enum BASICAUTH for value: "basicauth" */
+        /**
+         * Enum BASICAUTH for value: "basicauth"
+         */
         public static final AuthMethodEnum BASICAUTH = new AuthMethodEnum("basicauth");
 
         private static final Map<String, AuthMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -676,127 +726,209 @@ public class Content {
 
     private String mongodbReplicaSet;
 
-    /** 编码格式 - 数据源为GAUSS200、GAUSS100、POSTGRESQL类型时配置\"big5\"， - 数据源为MYSQL、TAURUS类型且mode为default时配置 */
+    /**
+     * 编码格式 - 数据源为GAUSS200、GAUSS100、POSTGRESQL类型时配置\"big5\"， - 数据源为MYSQL、TAURUS类型且mode为default时配置
+     */
     public static final class EncodingEnum {
 
-        /** Enum BIG5 for value: "big5" */
+        /**
+         * Enum BIG5 for value: "big5"
+         */
         public static final EncodingEnum BIG5 = new EncodingEnum("big5");
 
-        /** Enum DEC8 for value: "dec8" */
+        /**
+         * Enum DEC8 for value: "dec8"
+         */
         public static final EncodingEnum DEC8 = new EncodingEnum("dec8");
 
-        /** Enum CP850 for value: "cp850" */
+        /**
+         * Enum CP850 for value: "cp850"
+         */
         public static final EncodingEnum CP850 = new EncodingEnum("cp850");
 
-        /** Enum HP8 for value: "hp8" */
+        /**
+         * Enum HP8 for value: "hp8"
+         */
         public static final EncodingEnum HP8 = new EncodingEnum("hp8");
 
-        /** Enum KOI8R for value: "koi8r" */
+        /**
+         * Enum KOI8R for value: "koi8r"
+         */
         public static final EncodingEnum KOI8R = new EncodingEnum("koi8r");
 
-        /** Enum LATIN1 for value: "latin1" */
+        /**
+         * Enum LATIN1 for value: "latin1"
+         */
         public static final EncodingEnum LATIN1 = new EncodingEnum("latin1");
 
-        /** Enum LATIN2 for value: "latin2" */
+        /**
+         * Enum LATIN2 for value: "latin2"
+         */
         public static final EncodingEnum LATIN2 = new EncodingEnum("latin2");
 
-        /** Enum SWE7 for value: "swe7" */
+        /**
+         * Enum SWE7 for value: "swe7"
+         */
         public static final EncodingEnum SWE7 = new EncodingEnum("swe7");
 
-        /** Enum ASCII for value: "ascii" */
+        /**
+         * Enum ASCII for value: "ascii"
+         */
         public static final EncodingEnum ASCII = new EncodingEnum("ascii");
 
-        /** Enum UJIS for value: "ujis" */
+        /**
+         * Enum UJIS for value: "ujis"
+         */
         public static final EncodingEnum UJIS = new EncodingEnum("ujis");
 
-        /** Enum SJIS for value: "sjis" */
+        /**
+         * Enum SJIS for value: "sjis"
+         */
         public static final EncodingEnum SJIS = new EncodingEnum("sjis");
 
-        /** Enum HEBREW for value: "hebrew" */
+        /**
+         * Enum HEBREW for value: "hebrew"
+         */
         public static final EncodingEnum HEBREW = new EncodingEnum("hebrew");
 
-        /** Enum TIS620 for value: "tis620" */
+        /**
+         * Enum TIS620 for value: "tis620"
+         */
         public static final EncodingEnum TIS620 = new EncodingEnum("tis620");
 
-        /** Enum KOI8U for value: "koi8u" */
+        /**
+         * Enum KOI8U for value: "koi8u"
+         */
         public static final EncodingEnum KOI8U = new EncodingEnum("koi8u");
 
-        /** Enum GB2312 for value: "gb2312" */
+        /**
+         * Enum GB2312 for value: "gb2312"
+         */
         public static final EncodingEnum GB2312 = new EncodingEnum("gb2312");
 
-        /** Enum GREEK for value: "greek" */
+        /**
+         * Enum GREEK for value: "greek"
+         */
         public static final EncodingEnum GREEK = new EncodingEnum("greek");
 
-        /** Enum CP1250 for value: "cp1250" */
+        /**
+         * Enum CP1250 for value: "cp1250"
+         */
         public static final EncodingEnum CP1250 = new EncodingEnum("cp1250");
 
-        /** Enum GBK for value: "gbk" */
+        /**
+         * Enum GBK for value: "gbk"
+         */
         public static final EncodingEnum GBK = new EncodingEnum("gbk");
 
-        /** Enum LATIN5 for value: "latin5" */
+        /**
+         * Enum LATIN5 for value: "latin5"
+         */
         public static final EncodingEnum LATIN5 = new EncodingEnum("latin5");
 
-        /** Enum ARMSCII8 for value: "armscii8" */
+        /**
+         * Enum ARMSCII8 for value: "armscii8"
+         */
         public static final EncodingEnum ARMSCII8 = new EncodingEnum("armscii8");
 
-        /** Enum UTF8 for value: "utf8" */
+        /**
+         * Enum UTF8 for value: "utf8"
+         */
         public static final EncodingEnum UTF8 = new EncodingEnum("utf8");
 
-        /** Enum UCS2 for value: "ucs2" */
+        /**
+         * Enum UCS2 for value: "ucs2"
+         */
         public static final EncodingEnum UCS2 = new EncodingEnum("ucs2");
 
-        /** Enum CP866 for value: "cp866" */
+        /**
+         * Enum CP866 for value: "cp866"
+         */
         public static final EncodingEnum CP866 = new EncodingEnum("cp866");
 
-        /** Enum KEYBCS2 for value: "keybcs2" */
+        /**
+         * Enum KEYBCS2 for value: "keybcs2"
+         */
         public static final EncodingEnum KEYBCS2 = new EncodingEnum("keybcs2");
 
-        /** Enum MACCE for value: "macce" */
+        /**
+         * Enum MACCE for value: "macce"
+         */
         public static final EncodingEnum MACCE = new EncodingEnum("macce");
 
-        /** Enum MACROMAN for value: "macroman" */
+        /**
+         * Enum MACROMAN for value: "macroman"
+         */
         public static final EncodingEnum MACROMAN = new EncodingEnum("macroman");
 
-        /** Enum CP852 for value: "cp852" */
+        /**
+         * Enum CP852 for value: "cp852"
+         */
         public static final EncodingEnum CP852 = new EncodingEnum("cp852");
 
-        /** Enum LATIN7 for value: "latin7" */
+        /**
+         * Enum LATIN7 for value: "latin7"
+         */
         public static final EncodingEnum LATIN7 = new EncodingEnum("latin7");
 
-        /** Enum UTF8MB4 for value: "utf8mb4" */
+        /**
+         * Enum UTF8MB4 for value: "utf8mb4"
+         */
         public static final EncodingEnum UTF8MB4 = new EncodingEnum("utf8mb4");
 
-        /** Enum CP1251 for value: "cp1251" */
+        /**
+         * Enum CP1251 for value: "cp1251"
+         */
         public static final EncodingEnum CP1251 = new EncodingEnum("cp1251");
 
-        /** Enum UTF16 for value: "utf16" */
+        /**
+         * Enum UTF16 for value: "utf16"
+         */
         public static final EncodingEnum UTF16 = new EncodingEnum("utf16");
 
-        /** Enum UTF16LE for value: "utf16le" */
+        /**
+         * Enum UTF16LE for value: "utf16le"
+         */
         public static final EncodingEnum UTF16LE = new EncodingEnum("utf16le");
 
-        /** Enum CP1256 for value: "cp1256" */
+        /**
+         * Enum CP1256 for value: "cp1256"
+         */
         public static final EncodingEnum CP1256 = new EncodingEnum("cp1256");
 
-        /** Enum CP1257 for value: "cp1257" */
+        /**
+         * Enum CP1257 for value: "cp1257"
+         */
         public static final EncodingEnum CP1257 = new EncodingEnum("cp1257");
 
-        /** Enum UTF32 for value: "utf32" */
+        /**
+         * Enum UTF32 for value: "utf32"
+         */
         public static final EncodingEnum UTF32 = new EncodingEnum("utf32");
 
-        /** Enum BINARY for value: "binary" */
+        /**
+         * Enum BINARY for value: "binary"
+         */
         public static final EncodingEnum BINARY = new EncodingEnum("binary");
 
-        /** Enum GEOSTD8 for value: "geostd8" */
+        /**
+         * Enum GEOSTD8 for value: "geostd8"
+         */
         public static final EncodingEnum GEOSTD8 = new EncodingEnum("geostd8");
 
-        /** Enum CP932 for value: "cp932" */
+        /**
+         * Enum CP932 for value: "cp932"
+         */
         public static final EncodingEnum CP932 = new EncodingEnum("cp932");
 
-        /** Enum EUCJPMS for value: "eucjpms" */
+        /**
+         * Enum EUCJPMS for value: "eucjpms"
+         */
         public static final EncodingEnum EUCJPMS = new EncodingEnum("eucjpms");
 
-        /** Enum GB18030 for value: "gb18030" */
+        /**
+         * Enum GB18030 for value: "gb18030"
+         */
         public static final EncodingEnum GB18030 = new EncodingEnum("gb18030");
 
         private static final Map<String, EncodingEnum> STATIC_FIELDS = createStaticFields();
@@ -919,14 +1051,19 @@ public class Content {
 
     private String trustStore;
 
-    /** - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 -
-     * 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码 */
+    /**
+     * - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 - 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码
+     */
     public static final class TrustStoreFileTypeEnum {
 
-        /** Enum JKS for value: "jks" */
+        /**
+         * Enum JKS for value: "jks"
+         */
         public static final TrustStoreFileTypeEnum JKS = new TrustStoreFileTypeEnum("jks");
 
-        /** Enum TS for value: "ts" */
+        /**
+         * Enum TS for value: "ts"
+         */
         public static final TrustStoreFileTypeEnum TS = new TrustStoreFileTypeEnum("ts");
 
         private static final Map<String, TrustStoreFileTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -996,13 +1133,19 @@ public class Content {
 
     private TrustStoreFileTypeEnum trustStoreFileType;
 
-    /** 数据源类型为ACTIVEMQ、ARTEMISMQ且开启SSL认证时需要配置 - one-way (单向认证) - two-way (双向认证) */
+    /**
+     * 数据源类型为ACTIVEMQ、ARTEMISMQ且开启SSL认证时需要配置 - one-way (单向认证) - two-way (双向认证)
+     */
     public static final class SslAuthMethodEnum {
 
-        /** Enum ONE_WAY for value: "one-way" */
+        /**
+         * Enum ONE_WAY for value: "one-way"
+         */
         public static final SslAuthMethodEnum ONE_WAY = new SslAuthMethodEnum("one-way");
 
-        /** Enum TWO_WAY for value: "two-way" */
+        /**
+         * Enum TWO_WAY for value: "two-way"
+         */
         public static final SslAuthMethodEnum TWO_WAY = new SslAuthMethodEnum("two-way");
 
         private static final Map<String, SslAuthMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -1077,13 +1220,19 @@ public class Content {
 
     private String keyStore;
 
-    /** 私钥库文件类型 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 */
+    /**
+     * 私钥库文件类型 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置
+     */
     public static final class KeyStoreFileTypeEnum {
 
-        /** Enum KS for value: "ks" */
+        /**
+         * Enum KS for value: "ks"
+         */
         public static final KeyStoreFileTypeEnum KS = new KeyStoreFileTypeEnum("ks");
 
-        /** Enum JKS for value: "jks" */
+        /**
+         * Enum JKS for value: "jks"
+         */
         public static final KeyStoreFileTypeEnum JKS = new KeyStoreFileTypeEnum("jks");
 
         private static final Map<String, KeyStoreFileTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1168,10 +1317,14 @@ public class Content {
 
     private String disTunnelName;
 
-    /** DIS数据类别 - JSON */
+    /**
+     * DIS数据类别 - JSON
+     */
     public static final class DisDataTypeEnum {
 
-        /** Enum JSON for value: "JSON" */
+        /**
+         * Enum JSON for value: "JSON"
+         */
         public static final DisDataTypeEnum JSON = new DisDataTypeEnum("JSON");
 
         private static final Map<String, DisDataTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1240,13 +1393,19 @@ public class Content {
 
     private DisDataTypeEnum disDataType;
 
-    /** DIS配置类别 - senior (高级) - basic (基础) */
+    /**
+     * DIS配置类别 - senior (高级) - basic (基础)
+     */
     public static final class DisSettingTypeEnum {
 
-        /** Enum BASIC for value: "basic" */
+        /**
+         * Enum BASIC for value: "basic"
+         */
         public static final DisSettingTypeEnum BASIC = new DisSettingTypeEnum("basic");
 
-        /** Enum SENIOR for value: "senior" */
+        /**
+         * Enum SENIOR for value: "senior"
+         */
         public static final DisSettingTypeEnum SENIOR = new DisSettingTypeEnum("senior");
 
         private static final Map<String, DisSettingTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1331,13 +1490,19 @@ public class Content {
 
     private String disSourceProjectId;
 
-    /** HL7数据源方向 - source (源端) - target (目标端) */
+    /**
+     * HL7数据源方向 - source (源端) - target (目标端)
+     */
     public static final class Hl7PositionEnum {
 
-        /** Enum SOURCE for value: "source" */
+        /**
+         * Enum SOURCE for value: "source"
+         */
         public static final Hl7PositionEnum SOURCE = new Hl7PositionEnum("source");
 
-        /** Enum TARGET for value: "target" */
+        /**
+         * Enum TARGET for value: "target"
+         */
         public static final Hl7PositionEnum TARGET = new Hl7PositionEnum("target");
 
         private static final Map<String, Hl7PositionEnum> STATIC_FIELDS = createStaticFields();
@@ -1417,13 +1582,19 @@ public class Content {
 
     private String hl7Whitelist;
 
-    /** LDAP安全认证类型 */
+    /**
+     * LDAP安全认证类型
+     */
     public static final class LdapSecurityAuthTypeEnum {
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final LdapSecurityAuthTypeEnum NO = new LdapSecurityAuthTypeEnum("no");
 
-        /** Enum SIMPLE for value: "simple" */
+        /**
+         * Enum SIMPLE for value: "simple"
+         */
         public static final LdapSecurityAuthTypeEnum SIMPLE = new LdapSecurityAuthTypeEnum("simple");
 
         private static final Map<String, LdapSecurityAuthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1498,10 +1669,14 @@ public class Content {
 
     private String rabbitmqVirtualHost;
 
-    /** RABBITMQ SSL认证协议 - TLS */
+    /**
+     * RABBITMQ SSL认证协议 - TLS
+     */
     public static final class RabbitmqSslProtocolEnum {
 
-        /** Enum TLS for value: "TLS" */
+        /**
+         * Enum TLS for value: "TLS"
+         */
         public static final RabbitmqSslProtocolEnum TLS = new RabbitmqSslProtocolEnum("TLS");
 
         private static final Map<String, RabbitmqSslProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -1580,13 +1755,19 @@ public class Content {
 
     private String sapSysnr;
 
-    /** SNMP网络协议 - udp - tcp */
+    /**
+     * SNMP网络协议 - udp - tcp
+     */
     public static final class SnmpNetworkProtocolEnum {
 
-        /** Enum UDP for value: "udp" */
+        /**
+         * Enum UDP for value: "udp"
+         */
         public static final SnmpNetworkProtocolEnum UDP = new SnmpNetworkProtocolEnum("udp");
 
-        /** Enum TCP for value: "tcp" */
+        /**
+         * Enum TCP for value: "tcp"
+         */
         public static final SnmpNetworkProtocolEnum TCP = new SnmpNetworkProtocolEnum("tcp");
 
         private static final Map<String, SnmpNetworkProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -1656,16 +1837,24 @@ public class Content {
 
     private SnmpNetworkProtocolEnum snmpNetworkProtocol;
 
-    /** SNMP版本号 */
+    /**
+     * SNMP版本号
+     */
     public static final class SnmpVersionEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final SnmpVersionEnum NUMBER_0 = new SnmpVersionEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final SnmpVersionEnum NUMBER_1 = new SnmpVersionEnum(1);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final SnmpVersionEnum NUMBER_3 = new SnmpVersionEnum(3);
 
         private static final Map<Integer, SnmpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -1796,9 +1985,10 @@ public class Content {
         return this;
     }
 
-    /** gauss100的版本号 - V100R003C20 - V300R001C00
-     * 
-     * @return gauss100Version */
+    /**
+     * gauss100的版本号 - V100R003C20 - V300R001C00
+     * @return gauss100Version
+     */
     public Gauss100VersionEnum getGauss100Version() {
         return gauss100Version;
     }
@@ -1812,11 +2002,10 @@ public class Content {
         return this;
     }
 
-    /** 主机IP地址 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ类型时需要配置。 -
-     * 数据源为MYSQL、ORACLE、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置。 -
-     * 数据源为HL7类型且作为目标端（position为target）时需要配置。 - 初始值为空，配置任务启动后生成host
-     * 
-     * @return host */
+    /**
+     * 主机IP地址 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ类型时需要配置。 - 数据源为MYSQL、ORACLE、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置。 - 数据源为HL7类型且作为目标端（position为target）时需要配置。 - 初始值为空，配置任务启动后生成host
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -1830,11 +2019,10 @@ public class Content {
         return this;
     }
 
-    /** 端口，端口号为0到65535 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ，obs类型时需要配置， -
-     * 数据源为MYSQL、ORACLE、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置， -
-     * 数据源为HL7类型且作为目标端（position为target）时需要配置
-     * 
-     * @return port */
+    /**
+     * 端口，端口号为0到65535 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ，obs类型时需要配置， - 数据源为MYSQL、ORACLE、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置， - 数据源为HL7类型且作为目标端（position为target）时需要配置
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -1848,11 +2036,10 @@ public class Content {
         return this;
     }
 
-    /** 数据库名称 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ，obs类型时需要配置， -
-     * 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置， -
-     * 数据源为ORACLE类型且mode为（default、multiAddress）时需要配置
-     * 
-     * @return databaseName */
+    /**
+     * 数据库名称 - 数据源为DWS、HANA、RABBITMQ、SAP、SNMP、IBMMQ，obs类型时需要配置， - 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ARTEMISMQ、POSTGRESQL、HIVE类型且mode为default时需要配置， - 数据源为ORACLE类型且mode为（default、multiAddress）时需要配置
+     * @return databaseName
+     */
     public String getDatabaseName() {
         return databaseName;
     }
@@ -1866,9 +2053,10 @@ public class Content {
         return this;
     }
 
-    /** REDIS数据源类型配置，数据库编号, 纯数字编码
-     * 
-     * @return redisDatabase */
+    /**
+     * REDIS数据源类型配置，数据库编号, 纯数字编码
+     * @return redisDatabase
+     */
     public String getRedisDatabase() {
         return redisDatabase;
     }
@@ -1882,11 +2070,10 @@ public class Content {
         return this;
     }
 
-    /** 访问服务的用户名 -
-     * 数据源为MYSQL、DWS、FTP、ORACLE、MONGODB、HANA、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ACTIVEMQ、ARTEMISMQ、POSTGRESQL、RABBITMQ、SAP、IBMMQ、HIVE类型时需要配置
-     * - 数据源为WEBSOCKET类型，认证方式（basicauth）时需要配置 - 数据源为LDAP，安全认证类型（security_auth_type）为simple时需要配置
-     * 
-     * @return userName */
+    /**
+     * 访问服务的用户名 - 数据源为MYSQL、DWS、FTP、ORACLE、MONGODB、HANA、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ACTIVEMQ、ARTEMISMQ、POSTGRESQL、RABBITMQ、SAP、IBMMQ、HIVE类型时需要配置 - 数据源为WEBSOCKET类型，认证方式（basicauth）时需要配置 - 数据源为LDAP，安全认证类型（security_auth_type）为simple时需要配置
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -1900,11 +2087,10 @@ public class Content {
         return this;
     }
 
-    /** 访问服务的密码 -
-     * 数据源为MYSQL、DWS、FTP、ORACLE、MONGODB、HANA、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ACTIVEMQ、ARTEMISMQ、POSTGRESQL、RABBITMQ、SAP、IBMMQ、HIVE类型时需要配置
-     * - 数据源为WEBSOCKET，且认证方式（basicauth）时需要配置 - 数据源为LDAP，且安全认证类型（security_auth_type）为simple时需要配置
-     * 
-     * @return password */
+    /**
+     * 访问服务的密码 - 数据源为MYSQL、DWS、FTP、ORACLE、MONGODB、HANA、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、ACTIVEMQ、ARTEMISMQ、POSTGRESQL、RABBITMQ、SAP、IBMMQ、HIVE类型时需要配置 - 数据源为WEBSOCKET，且认证方式（basicauth）时需要配置 - 数据源为LDAP，且安全认证类型（security_auth_type）为simple时需要配置
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -1918,11 +2104,10 @@ public class Content {
         return this;
     }
 
-    /** 数据源连接模式 - 数据源为DWS、MONGODB、REDIS、HANA时配置默认， -
-     * 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL、HIVE时配置（default,professional）， -
-     * 数据源为ORACLE时配置专有的模式multiAddress - default (默认模式) - professional (专业模式) - multiAddress (多地址)
-     * 
-     * @return mode */
+    /**
+     * 数据源连接模式 - 数据源为DWS、MONGODB、REDIS、HANA时配置默认， - 数据源为MYSQL、SQLSERVER、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL、HIVE时配置（default,professional）， - 数据源为ORACLE时配置专有的模式multiAddress - default (默认模式) - professional (专业模式) - multiAddress (多地址)
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -1936,9 +2121,10 @@ public class Content {
         return this;
     }
 
-    /** cdc模式，只有组合任务使用
-     * 
-     * @return cdcMode */
+    /**
+     * cdc模式，只有组合任务使用
+     * @return cdcMode
+     */
     public CdcModeEnum getCdcMode() {
         return cdcMode;
     }
@@ -1968,9 +2154,10 @@ public class Content {
         return this;
     }
 
-    /** ORACLE集群地址，当mode为multiAddress时需要配置
-     * 
-     * @return multiOracleAddress */
+    /**
+     * ORACLE集群地址，当mode为multiAddress时需要配置
+     * @return multiOracleAddress
+     */
     public List<MultiOracleAddress> getMultiOracleAddress() {
         return multiOracleAddress;
     }
@@ -1984,9 +2171,10 @@ public class Content {
         return this;
     }
 
-    /** ORACLE集群服务名
-     * 
-     * @return oracleServiceName */
+    /**
+     * ORACLE集群服务名
+     * @return oracleServiceName
+     */
     public String getOracleServiceName() {
         return oracleServiceName;
     }
@@ -2000,9 +2188,10 @@ public class Content {
         return this;
     }
 
-    /** 访问FTP服务的连接模式 - active (主动模式) - passive (被动模式)
-     * 
-     * @return ftpConnectMode */
+    /**
+     * 访问FTP服务的连接模式 - active (主动模式) - passive (被动模式)
+     * @return ftpConnectMode
+     */
     public FtpConnectModeEnum getFtpConnectMode() {
         return ftpConnectMode;
     }
@@ -2016,9 +2205,10 @@ public class Content {
         return this;
     }
 
-    /** 访问FTP服务协议类型 - sftp - ftp
-     * 
-     * @return ftpProtocol */
+    /**
+     * 访问FTP服务协议类型 - sftp - ftp
+     * @return ftpProtocol
+     */
     public FtpProtocolEnum getFtpProtocol() {
         return ftpProtocol;
     }
@@ -2032,10 +2222,10 @@ public class Content {
         return this;
     }
 
-    /** 地址 - OBS (obs远端地址，obs数据源使用) - MONGODB (MONGODB数据源类型主机IP地址，多个IP:PORT, 使用\",\"隔开) - REDIS (redis服务地址，多个IP:PORT,
-     * 使用\",\"隔开)
-     * 
-     * @return address */
+    /**
+     * 地址 - OBS (obs远端地址，obs数据源使用) - MONGODB (MONGODB数据源类型主机IP地址，多个IP:PORT, 使用\",\"隔开) - REDIS (redis服务地址，多个IP:PORT, 使用\",\"隔开)
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -2049,9 +2239,10 @@ public class Content {
         return this;
     }
 
-    /** Access Key ID - 数据源为OBS，DIS类型时需要配置
-     * 
-     * @return ak */
+    /**
+     * Access Key ID - 数据源为OBS，DIS类型时需要配置
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -2065,9 +2256,10 @@ public class Content {
         return this;
     }
 
-    /** Secret Access Key - 数据源为OBS，DIS类型时需要配置
-     * 
-     * @return sk */
+    /**
+     * Secret Access Key - 数据源为OBS，DIS类型时需要配置
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -2081,9 +2273,10 @@ public class Content {
         return this;
     }
 
-    /** 桶名称，数据源为OBS时需要配置
-     * 
-     * @return bucketName */
+    /**
+     * 桶名称，数据源为OBS时需要配置
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -2097,9 +2290,10 @@ public class Content {
         return this;
     }
 
-    /** 是否使用https, 数据源为OBS时需要配置，一般默认使用
-     * 
-     * @return https */
+    /**
+     * 是否使用https, 数据源为OBS时需要配置，一般默认使用
+     * @return https
+     */
     public Boolean getHttps() {
         return https;
     }
@@ -2113,10 +2307,10 @@ public class Content {
         return this;
     }
 
-    /** 连接字符串，访问url - 数据源为API、LDAP、WEBSOCKE类型时需要配置， -
-     * 数据源为MYSQL、ORACLE、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL，且mode配置为professional专业时需要配置
-     * 
-     * @return url */
+    /**
+     * 连接字符串，访问url - 数据源为API、LDAP、WEBSOCKE类型时需要配置， - 数据源为MYSQL、ORACLE、DB2、GAUSS200、GAUSS100、TAURUS、POSTGRESQL，且mode配置为professional专业时需要配置
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -2130,9 +2324,10 @@ public class Content {
         return this;
     }
 
-    /** 访问API请求方式 - POST - PUT - DELETE - PATCH - GET
-     * 
-     * @return apiMethod */
+    /**
+     * 访问API请求方式 - POST - PUT - DELETE - PATCH - GET
+     * @return apiMethod
+     */
     public ApiMethodEnum getApiMethod() {
         return apiMethod;
     }
@@ -2146,9 +2341,10 @@ public class Content {
         return this;
     }
 
-    /** 访问WEBSOCKET服务的认证方式 - none - basicauth
-     * 
-     * @return authMethod */
+    /**
+     * 访问WEBSOCKET服务的认证方式 - none - basicauth
+     * @return authMethod
+     */
     public AuthMethodEnum getAuthMethod() {
         return authMethod;
     }
@@ -2171,9 +2367,10 @@ public class Content {
         return this;
     }
 
-    /** Get apiAuthDetail
-     * 
-     * @return apiAuthDetail */
+    /**
+     * Get apiAuthDetail
+     * @return apiAuthDetail
+     */
     public ApiAuthDetail getApiAuthDetail() {
         return apiAuthDetail;
     }
@@ -2187,9 +2384,10 @@ public class Content {
         return this;
     }
 
-    /** KAFKA、ACTIVEMQ的服务器地址，多个IP:PORT, 使用\",\"分隔
-     * 
-     * @return broker */
+    /**
+     * KAFKA、ACTIVEMQ的服务器地址，多个IP:PORT, 使用\",\"分隔
+     * @return broker
+     */
     public String getBroker() {
         return broker;
     }
@@ -2203,10 +2401,10 @@ public class Content {
         return this;
     }
 
-    /** 是否开启SSL认证 - 数据源为KAFKA时需要配置，连接MQS内网地址时，若MQS同时开启了SSL与VPC内网明文访问，请选择“否” -
-     * 数据源为ARTEMISMQ、ACTIVEMQ、RABBITMQ、IBMMQ时需要配置， - 数据源为HL7时且作为源端时需要配置
-     * 
-     * @return sslEnable */
+    /**
+     * 是否开启SSL认证 - 数据源为KAFKA时需要配置，连接MQS内网地址时，若MQS同时开启了SSL与VPC内网明文访问，请选择“否” - 数据源为ARTEMISMQ、ACTIVEMQ、RABBITMQ、IBMMQ时需要配置， - 数据源为HL7时且作为源端时需要配置
+     * @return sslEnable
+     */
     public Boolean getSslEnable() {
         return sslEnable;
     }
@@ -2220,9 +2418,10 @@ public class Content {
         return this;
     }
 
-    /** SSL用户名/应用Key - 数据源为KAFKA且开启SSL认证时需要配置
-     * 
-     * @return sslUsername */
+    /**
+     * SSL用户名/应用Key - 数据源为KAFKA且开启SSL认证时需要配置
+     * @return sslUsername
+     */
     public String getSslUsername() {
         return sslUsername;
     }
@@ -2236,9 +2435,10 @@ public class Content {
         return this;
     }
 
-    /** SSL密码/应用Secret - 数据源为KAFKA且开启SSL认证时需要配置
-     * 
-     * @return sslPassword */
+    /**
+     * SSL密码/应用Secret - 数据源为KAFKA且开启SSL认证时需要配置
+     * @return sslPassword
+     */
     public String getSslPassword() {
         return sslPassword;
     }
@@ -2252,9 +2452,10 @@ public class Content {
         return this;
     }
 
-    /** MONGODB认证源
-     * 
-     * @return mongodbAuthSource */
+    /**
+     * MONGODB认证源
+     * @return mongodbAuthSource
+     */
     public String getMongodbAuthSource() {
         return mongodbAuthSource;
     }
@@ -2268,9 +2469,10 @@ public class Content {
         return this;
     }
 
-    /** MONGODB集群模式 - true (集群模式) - false （非集群模式）
-     * 
-     * @return mongodbClusterEnable */
+    /**
+     * MONGODB集群模式 - true (集群模式) - false （非集群模式）
+     * @return mongodbClusterEnable
+     */
     public Boolean getMongodbClusterEnable() {
         return mongodbClusterEnable;
     }
@@ -2284,9 +2486,10 @@ public class Content {
         return this;
     }
 
-    /** MONGODB副本集 当MONGODB为非集群模式时配置
-     * 
-     * @return mongodbReplicaSet */
+    /**
+     * MONGODB副本集 当MONGODB为非集群模式时配置
+     * @return mongodbReplicaSet
+     */
     public String getMongodbReplicaSet() {
         return mongodbReplicaSet;
     }
@@ -2300,9 +2503,10 @@ public class Content {
         return this;
     }
 
-    /** 编码格式 - 数据源为GAUSS200、GAUSS100、POSTGRESQL类型时配置\"big5\"， - 数据源为MYSQL、TAURUS类型且mode为default时配置
-     * 
-     * @return encoding */
+    /**
+     * 编码格式 - 数据源为GAUSS200、GAUSS100、POSTGRESQL类型时配置\"big5\"， - 数据源为MYSQL、TAURUS类型且mode为default时配置
+     * @return encoding
+     */
     public EncodingEnum getEncoding() {
         return encoding;
     }
@@ -2316,9 +2520,12 @@ public class Content {
         return this;
     }
 
-    /** MYSQL连接超时时间（秒） minimum: 1 maximum: 20000
-     * 
-     * @return mysqlTimeout */
+    /**
+     * MYSQL连接超时时间（秒）
+     * minimum: 1
+     * maximum: 20000
+     * @return mysqlTimeout
+     */
     public Integer getMysqlTimeout() {
         return mysqlTimeout;
     }
@@ -2332,9 +2539,10 @@ public class Content {
         return this;
     }
 
-    /** 公钥库密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置 - 数据源类为HL7且HL7为目标端（position为target）时，并且开启SSL认证时需要配置
-     * 
-     * @return trustStorePassword */
+    /**
+     * 公钥库密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置 - 数据源类为HL7且HL7为目标端（position为target）时，并且开启SSL认证时需要配置
+     * @return trustStorePassword
+     */
     public String getTrustStorePassword() {
         return trustStorePassword;
     }
@@ -2348,10 +2556,10 @@ public class Content {
         return this;
     }
 
-    /** - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 -
-     * 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码
-     * 
-     * @return trustStore */
+    /**
+     * - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 - 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码
+     * @return trustStore
+     */
     public String getTrustStore() {
         return trustStore;
     }
@@ -2365,10 +2573,10 @@ public class Content {
         return this;
     }
 
-    /** - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 -
-     * 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码
-     * 
-     * @return trustStoreFileType */
+    /**
+     * - 数据源类型为ACTIVEMQ、ARTEMISMQ、RABBITMQ、IBMMQ且开启SSL认证时需要配置，公钥库密码 - 数据源类型为HL7且为目标端（position为target），并且开启SSL认证时需要配置，公钥库密码
+     * @return trustStoreFileType
+     */
     public TrustStoreFileTypeEnum getTrustStoreFileType() {
         return trustStoreFileType;
     }
@@ -2382,9 +2590,10 @@ public class Content {
         return this;
     }
 
-    /** 数据源类型为ACTIVEMQ、ARTEMISMQ且开启SSL认证时需要配置 - one-way (单向认证) - two-way (双向认证)
-     * 
-     * @return sslAuthMethod */
+    /**
+     * 数据源类型为ACTIVEMQ、ARTEMISMQ且开启SSL认证时需要配置 - one-way (单向认证) - two-way (双向认证)
+     * @return sslAuthMethod
+     */
     public SslAuthMethodEnum getSslAuthMethod() {
         return sslAuthMethod;
     }
@@ -2398,9 +2607,10 @@ public class Content {
         return this;
     }
 
-    /** 私钥库文件内容， - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源类型HL7且为源端（position为source），并且开启SSL认证时需要配置
-     * 
-     * @return keyStore */
+    /**
+     * 私钥库文件内容， - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源类型HL7且为源端（position为source），并且开启SSL认证时需要配置
+     * @return keyStore
+     */
     public String getKeyStore() {
         return keyStore;
     }
@@ -2414,9 +2624,10 @@ public class Content {
         return this;
     }
 
-    /** 私钥库文件类型 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置
-     * 
-     * @return keyStoreFileType */
+    /**
+     * 私钥库文件类型 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置
+     * @return keyStoreFileType
+     */
     public KeyStoreFileTypeEnum getKeyStoreFileType() {
         return keyStoreFileType;
     }
@@ -2430,9 +2641,10 @@ public class Content {
         return this;
     }
 
-    /** 私钥库密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源为HL7类型，为源端（position为source）并且开启SSL认证时需要配置
-     * 
-     * @return keyStorePassword */
+    /**
+     * 私钥库密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源为HL7类型，为源端（position为source）并且开启SSL认证时需要配置
+     * @return keyStorePassword
+     */
     public String getKeyStorePassword() {
         return keyStorePassword;
     }
@@ -2446,9 +2658,10 @@ public class Content {
         return this;
     }
 
-    /** 私钥库私钥密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源为HL7类型，为源端（position为source）并且开启SSL认证时需要配置
-     * 
-     * @return keyStoreKeyPassword */
+    /**
+     * 私钥库私钥密码 - 数据源类型为ACTIVEMQ、ARTEMISMQ，开启SSL认证并且认证方式是two-way时需要配置 - 数据源为HL7类型，为源端（position为source）并且开启SSL认证时需要配置
+     * @return keyStoreKeyPassword
+     */
     public String getKeyStoreKeyPassword() {
         return keyStoreKeyPassword;
     }
@@ -2462,9 +2675,10 @@ public class Content {
         return this;
     }
 
-    /** DIS通道名称
-     * 
-     * @return disTunnelName */
+    /**
+     * DIS通道名称
+     * @return disTunnelName
+     */
     public String getDisTunnelName() {
         return disTunnelName;
     }
@@ -2478,9 +2692,10 @@ public class Content {
         return this;
     }
 
-    /** DIS数据类别 - JSON
-     * 
-     * @return disDataType */
+    /**
+     * DIS数据类别 - JSON
+     * @return disDataType
+     */
     public DisDataTypeEnum getDisDataType() {
         return disDataType;
     }
@@ -2494,9 +2709,10 @@ public class Content {
         return this;
     }
 
-    /** DIS配置类别 - senior (高级) - basic (基础)
-     * 
-     * @return disSettingType */
+    /**
+     * DIS配置类别 - senior (高级) - basic (基础)
+     * @return disSettingType
+     */
     public DisSettingTypeEnum getDisSettingType() {
         return disSettingType;
     }
@@ -2510,9 +2726,10 @@ public class Content {
         return this;
     }
 
-    /** DIS Endpoint，当setting_type为senior时填写
-     * 
-     * @return disEndpoint */
+    /**
+     * DIS Endpoint，当setting_type为senior时填写
+     * @return disEndpoint
+     */
     public String getDisEndpoint() {
         return disEndpoint;
     }
@@ -2526,9 +2743,10 @@ public class Content {
         return this;
     }
 
-    /** DIS Region，当setting_type为senior时填写
-     * 
-     * @return disRegion */
+    /**
+     * DIS Region，当setting_type为senior时填写
+     * @return disRegion
+     */
     public String getDisRegion() {
         return disRegion;
     }
@@ -2542,9 +2760,10 @@ public class Content {
         return this;
     }
 
-    /** DIS源端项目id，当setting_type为senior时填写
-     * 
-     * @return disSourceProjectId */
+    /**
+     * DIS源端项目id，当setting_type为senior时填写
+     * @return disSourceProjectId
+     */
     public String getDisSourceProjectId() {
         return disSourceProjectId;
     }
@@ -2558,9 +2777,10 @@ public class Content {
         return this;
     }
 
-    /** HL7数据源方向 - source (源端) - target (目标端)
-     * 
-     * @return hl7Position */
+    /**
+     * HL7数据源方向 - source (源端) - target (目标端)
+     * @return hl7Position
+     */
     public Hl7PositionEnum getHl7Position() {
         return hl7Position;
     }
@@ -2574,9 +2794,10 @@ public class Content {
         return this;
     }
 
-    /** HL7是否开启白名单设置
-     * 
-     * @return hl7WhitelistEnable */
+    /**
+     * HL7是否开启白名单设置
+     * @return hl7WhitelistEnable
+     */
     public Boolean getHl7WhitelistEnable() {
         return hl7WhitelistEnable;
     }
@@ -2590,9 +2811,10 @@ public class Content {
         return this;
     }
 
-    /** HL7白名单 - 允许同步数据到源端HL7的服务器地址，当HL7为源端（position为source）并且开启白名单设置(open_whitelist为true)时填写
-     * 
-     * @return hl7Whitelist */
+    /**
+     * HL7白名单 - 允许同步数据到源端HL7的服务器地址，当HL7为源端（position为source）并且开启白名单设置(open_whitelist为true)时填写
+     * @return hl7Whitelist
+     */
     public String getHl7Whitelist() {
         return hl7Whitelist;
     }
@@ -2606,9 +2828,10 @@ public class Content {
         return this;
     }
 
-    /** LDAP安全认证类型
-     * 
-     * @return ldapSecurityAuthType */
+    /**
+     * LDAP安全认证类型
+     * @return ldapSecurityAuthType
+     */
     public LdapSecurityAuthTypeEnum getLdapSecurityAuthType() {
         return ldapSecurityAuthType;
     }
@@ -2622,9 +2845,10 @@ public class Content {
         return this;
     }
 
-    /** RABBITMQ虚拟主机
-     * 
-     * @return rabbitmqVirtualHost */
+    /**
+     * RABBITMQ虚拟主机
+     * @return rabbitmqVirtualHost
+     */
     public String getRabbitmqVirtualHost() {
         return rabbitmqVirtualHost;
     }
@@ -2638,9 +2862,10 @@ public class Content {
         return this;
     }
 
-    /** RABBITMQ SSL认证协议 - TLS
-     * 
-     * @return rabbitmqSslProtocol */
+    /**
+     * RABBITMQ SSL认证协议 - TLS
+     * @return rabbitmqSslProtocol
+     */
     public RabbitmqSslProtocolEnum getRabbitmqSslProtocol() {
         return rabbitmqSslProtocol;
     }
@@ -2654,9 +2879,10 @@ public class Content {
         return this;
     }
 
-    /** SAP客户端号
-     * 
-     * @return sapClient */
+    /**
+     * SAP客户端号
+     * @return sapClient
+     */
     public String getSapClient() {
         return sapClient;
     }
@@ -2670,9 +2896,10 @@ public class Content {
         return this;
     }
 
-    /** SAP实例编号
-     * 
-     * @return sapSysnr */
+    /**
+     * SAP实例编号
+     * @return sapSysnr
+     */
     public String getSapSysnr() {
         return sapSysnr;
     }
@@ -2686,9 +2913,10 @@ public class Content {
         return this;
     }
 
-    /** SNMP网络协议 - udp - tcp
-     * 
-     * @return snmpNetworkProtocol */
+    /**
+     * SNMP网络协议 - udp - tcp
+     * @return snmpNetworkProtocol
+     */
     public SnmpNetworkProtocolEnum getSnmpNetworkProtocol() {
         return snmpNetworkProtocol;
     }
@@ -2702,9 +2930,12 @@ public class Content {
         return this;
     }
 
-    /** SNMP版本号 minimum: 0 maximum: 3
-     * 
-     * @return snmpVersion */
+    /**
+     * SNMP版本号
+     * minimum: 0
+     * maximum: 3
+     * @return snmpVersion
+     */
     public SnmpVersionEnum getSnmpVersion() {
         return snmpVersion;
     }
@@ -2718,9 +2949,10 @@ public class Content {
         return this;
     }
 
-    /** SNMP团体名，用于访问SNMP管理代理的身份认证，相当于访问密码
-     * 
-     * @return snmpCommunity */
+    /**
+     * SNMP团体名，用于访问SNMP管理代理的身份认证，相当于访问密码
+     * @return snmpCommunity
+     */
     public String getSnmpCommunity() {
         return snmpCommunity;
     }
@@ -2734,9 +2966,10 @@ public class Content {
         return this;
     }
 
-    /** IBMMQ字符集标识
-     * 
-     * @return ibmmqCcsId */
+    /**
+     * IBMMQ字符集标识
+     * @return ibmmqCcsId
+     */
     public String getIbmmqCcsId() {
         return ibmmqCcsId;
     }
@@ -2750,9 +2983,10 @@ public class Content {
         return this;
     }
 
-    /** IBMMQ队列管理器
-     * 
-     * @return ibmmqQueueManager */
+    /**
+     * IBMMQ队列管理器
+     * @return ibmmqQueueManager
+     */
     public String getIbmmqQueueManager() {
         return ibmmqQueueManager;
     }
@@ -2766,9 +3000,10 @@ public class Content {
         return this;
     }
 
-    /** IBMMQ通道名称
-     * 
-     * @return ibmmqChannel */
+    /**
+     * IBMMQ通道名称
+     * @return ibmmqChannel
+     */
     public String getIbmmqChannel() {
         return ibmmqChannel;
     }
@@ -2782,9 +3017,10 @@ public class Content {
         return this;
     }
 
-    /** IBMMQ密钥算法套件
-     * 
-     * @return ibmmqCipherSuite */
+    /**
+     * IBMMQ密钥算法套件
+     * @return ibmmqCipherSuite
+     */
     public String getIbmmqCipherSuite() {
         return ibmmqCipherSuite;
     }
@@ -2798,9 +3034,10 @@ public class Content {
         return this;
     }
 
-    /** HDFS URL - 数据源为MRSHIVE、MRSHDFS、FIHDFS、FIHIVE类型时配置 - fihadfs (/fdi/autotest)
-     * 
-     * @return hdfsPath */
+    /**
+     * HDFS URL - 数据源为MRSHIVE、MRSHDFS、FIHDFS、FIHIVE类型时配置 - fihadfs (/fdi/autotest)
+     * @return hdfsPath
+     */
     public String getHdfsPath() {
         return hdfsPath;
     }
@@ -2814,9 +3051,10 @@ public class Content {
         return this;
     }
 
-    /** 机机交互用户名 - 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
-     * 
-     * @return principalName */
+    /**
+     * 机机交互用户名 - 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
+     * @return principalName
+     */
     public String getPrincipalName() {
         return principalName;
     }
@@ -2830,11 +3068,10 @@ public class Content {
         return this;
     }
 
-    /** - 用户认证文件，文件获取方式参考《ROMA Connect API参考》的“附录>获取数据源配置文件”章节 -
-     * 将获取到的文件打包成zip文件，文件名配置在config_file_name中，内容以BASE64编码形式放到config_file_content。 -
-     * 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
-     * 
-     * @return configFileName */
+    /**
+     * - 用户认证文件，文件获取方式参考《ROMA Connect API参考》的“附录>获取数据源配置文件”章节 - 将获取到的文件打包成zip文件，文件名配置在config_file_name中，内容以BASE64编码形式放到config_file_content。 - 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
+     * @return configFileName
+     */
     public String getConfigFileName() {
         return configFileName;
     }
@@ -2848,9 +3085,10 @@ public class Content {
         return this;
     }
 
-    /** - 用户认证文件内容，config_file_name对应的文件内容BASE64编码 - 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
-     * 
-     * @return configFileContent */
+    /**
+     * - 用户认证文件内容，config_file_name对应的文件内容BASE64编码 - 数据源为MRSHIVE、MRSHDFS、MRSHBASE、MRSKAFKA、FIHDFS、FIHIVE、FIKAFKA类型时配置
+     * @return configFileContent
+     */
     public String getConfigFileContent() {
         return configFileContent;
     }
@@ -2864,9 +3102,10 @@ public class Content {
         return this;
     }
 
-    /** 连接器实例ID，连接器发布后对应的实例ID
-     * 
-     * @return connectionInstanceId */
+    /**
+     * 连接器实例ID，连接器发布后对应的实例ID
+     * @return connectionInstanceId
+     */
     public String getConnectionInstanceId() {
         return connectionInstanceId;
     }
@@ -2880,9 +3119,10 @@ public class Content {
         return this;
     }
 
-    /** 连接器对应的数据源参数，值按实际填写
-     * 
-     * @return connectorParams */
+    /**
+     * 连接器对应的数据源参数，值按实际填写
+     * @return connectorParams
+     */
     public Object getConnectorParams() {
         return connectorParams;
     }
@@ -3102,7 +3342,10 @@ public class Content {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

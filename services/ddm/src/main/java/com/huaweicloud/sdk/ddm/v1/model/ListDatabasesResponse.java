@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDatabasesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListDatabasesResponse extends SdkResponse {
         return this;
     }
 
-    /** 逻辑库相关信息的集合
-     * 
-     * @return databases */
+    /**
+     * 逻辑库相关信息的集合
+     * @return databases
+     */
     public List<GetDatabaseInfo> getDatabases() {
         return databases;
     }
@@ -59,9 +62,10 @@ public class ListDatabasesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数
-     * 
-     * @return total */
+    /**
+     * 总条数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -98,7 +102,10 @@ public class ListDatabasesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

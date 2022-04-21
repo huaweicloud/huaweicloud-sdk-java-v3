@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PipelineTemplate */
+/**
+ * PipelineTemplate
+ */
 public class PipelineTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PipelineTemplate {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return name */
+    /**
+     * 模板名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class PipelineTemplate {
         return this;
     }
 
-    /** 模板id
-     * 
-     * @return id */
+    /**
+     * 模板id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +74,10 @@ public class PipelineTemplate {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +91,10 @@ public class PipelineTemplate {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -102,9 +108,10 @@ public class PipelineTemplate {
         return this;
     }
 
-    /** 预览链接
-     * 
-     * @return url */
+    /**
+     * 预览链接
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -146,7 +153,10 @@ public class PipelineTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ApiBindAclInfo */
+/**
+ * ApiBindAclInfo
+ */
 public class ApiBindAclInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class ApiBindAclInfo {
 
     private String aclName;
 
-    /** ACL策略作用的对象类型 */
+    /**
+     * ACL策略作用的对象类型
+     */
     public static final class EntityTypeEnum {
 
-        /** Enum IP for value: "IP" */
+        /**
+         * Enum IP for value: "IP"
+         */
         public static final EntityTypeEnum IP = new EntityTypeEnum("IP");
 
-        /** Enum DOMAIN for value: "DOMAIN" */
+        /**
+         * Enum DOMAIN for value: "DOMAIN"
+         */
         public static final EntityTypeEnum DOMAIN = new EntityTypeEnum("DOMAIN");
 
         private static final Map<String, EntityTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,13 +108,19 @@ public class ApiBindAclInfo {
 
     private EntityTypeEnum entityType;
 
-    /** ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型 */
+    /**
+     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
+     */
     public static final class AclTypeEnum {
 
-        /** Enum PERMIT for value: "PERMIT" */
+        /**
+         * Enum PERMIT for value: "PERMIT"
+         */
         public static final AclTypeEnum PERMIT = new AclTypeEnum("PERMIT");
 
-        /** Enum DENY for value: "DENY" */
+        /**
+         * Enum DENY for value: "DENY"
+         */
         public static final AclTypeEnum DENY = new AclTypeEnum("DENY");
 
         private static final Map<String, AclTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -206,9 +220,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** ACL策略编号
-     * 
-     * @return aclId */
+    /**
+     * ACL策略编号
+     * @return aclId
+     */
     public String getAclId() {
         return aclId;
     }
@@ -222,9 +237,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** ACL策略名称
-     * 
-     * @return aclName */
+    /**
+     * ACL策略名称
+     * @return aclName
+     */
     public String getAclName() {
         return aclName;
     }
@@ -238,9 +254,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** ACL策略作用的对象类型
-     * 
-     * @return entityType */
+    /**
+     * ACL策略作用的对象类型
+     * @return entityType
+     */
     public EntityTypeEnum getEntityType() {
         return entityType;
     }
@@ -254,9 +271,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
-     * 
-     * @return aclType */
+    /**
+     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
+     * @return aclType
+     */
     public AclTypeEnum getAclType() {
         return aclType;
     }
@@ -270,9 +288,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** ACL策略值
-     * 
-     * @return aclValue */
+    /**
+     * ACL策略值
+     * @return aclValue
+     */
     public String getAclValue() {
         return aclValue;
     }
@@ -286,9 +305,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** 生效的环境编号
-     * 
-     * @return envId */
+    /**
+     * 生效的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -302,9 +322,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** 生效的环境名称
-     * 
-     * @return envName */
+    /**
+     * 生效的环境名称
+     * @return envName
+     */
     public String getEnvName() {
         return envName;
     }
@@ -318,9 +339,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** 绑定关系编号
-     * 
-     * @return bindId */
+    /**
+     * 绑定关系编号
+     * @return bindId
+     */
     public String getBindId() {
         return bindId;
     }
@@ -334,9 +356,10 @@ public class ApiBindAclInfo {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return bindTime */
+    /**
+     * 绑定时间
+     * @return bindTime
+     */
     public OffsetDateTime getBindTime() {
         return bindTime;
     }
@@ -385,7 +408,10 @@ public class ApiBindAclInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

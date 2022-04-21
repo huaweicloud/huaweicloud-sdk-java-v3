@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自定义公式 */
+/**
+ * 自定义公式
+ */
 public class CustomizeFormula {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CustomizeFormula {
         return this;
     }
 
-    /** 别名。
-     * 
-     * @return alias */
+    /**
+     * 别名。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -39,9 +42,10 @@ public class CustomizeFormula {
         return this;
     }
 
-    /** 公式。
-     * 
-     * @return formula */
+    /**
+     * 公式。
+     * @return formula
+     */
     public String getFormula() {
         return formula;
     }
@@ -78,7 +82,10 @@ public class CustomizeFormula {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

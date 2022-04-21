@@ -14,16 +14,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VersionInfo */
+/**
+ * VersionInfo
+ */
 public class VersionInfo {
 
-    /** API版本ID。 */
+    /**
+     * API版本ID。
+     */
     public static final class IdEnum {
 
-        /** Enum V1 for value: "v1" */
+        /**
+         * Enum V1 for value: "v1"
+         */
         public static final IdEnum V1 = new IdEnum("v1");
 
-        /** Enum V2 for value: "v2" */
+        /**
+         * Enum V2 for value: "v2"
+         */
         public static final IdEnum V2 = new IdEnum("v2");
 
         private static final Map<String, IdEnum> STATIC_FIELDS = createStaticFields();
@@ -103,16 +111,24 @@ public class VersionInfo {
 
     private String minVersion;
 
-    /** 版本状态，为如下3种：CURRENT：表示该版本为主推版本；SUPPORT：表示为老版本，但是现在还继续支持；DEPRECATED：表示为废弃版本，存在后续删除的可能。 */
+    /**
+     * 版本状态，为如下3种：CURRENT：表示该版本为主推版本；SUPPORT：表示为老版本，但是现在还继续支持；DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORT for value: "SUPPORT" */
+        /**
+         * Enum SUPPORT for value: "SUPPORT"
+         */
         public static final StatusEnum SUPPORT = new StatusEnum("SUPPORT");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -198,9 +214,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** API版本ID。
-     * 
-     * @return id */
+    /**
+     * API版本ID。
+     * @return id
+     */
     public IdEnum getId() {
         return id;
     }
@@ -230,9 +247,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** API的URL相关信息。
-     * 
-     * @return links */
+    /**
+     * API的URL相关信息。
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -246,9 +264,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** 该版本API支持的最小微版本号。
-     * 
-     * @return minVersion */
+    /**
+     * 该版本API支持的最小微版本号。
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -262,9 +281,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** 版本状态，为如下3种：CURRENT：表示该版本为主推版本；SUPPORT：表示为老版本，但是现在还继续支持；DEPRECATED：表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态，为如下3种：CURRENT：表示该版本为主推版本；SUPPORT：表示为老版本，但是现在还继续支持；DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -278,9 +298,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** 版本发布时间，使用UTC时间。
-     * 
-     * @return update */
+    /**
+     * 版本发布时间，使用UTC时间。
+     * @return update
+     */
     public OffsetDateTime getUpdate() {
         return update;
     }
@@ -294,9 +315,10 @@ public class VersionInfo {
         return this;
     }
 
-    /** 该版本API支持的最大微版本号。
-     * 
-     * @return version */
+    /**
+     * 该版本API支持的最大微版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -339,7 +361,10 @@ public class VersionInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

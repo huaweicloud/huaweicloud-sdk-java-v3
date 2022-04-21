@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProtectableReplicationCapabilitiesRespRegion */
+/**
+ * ProtectableReplicationCapabilitiesRespRegion
+ */
 public class ProtectableReplicationCapabilitiesRespRegion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ProtectableReplicationCapabilitiesRespRegion {
         return this;
     }
 
-    /** 云服务所在的区域
-     * 
-     * @return name */
+    /**
+     * 云服务所在的区域
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -61,9 +64,10 @@ public class ProtectableReplicationCapabilitiesRespRegion {
         return this;
     }
 
-    /** 支持复制的目标区域列表
-     * 
-     * @return replicationDestinations */
+    /**
+     * 支持复制的目标区域列表
+     * @return replicationDestinations
+     */
     public List<String> getReplicationDestinations() {
         return replicationDestinations;
     }
@@ -101,7 +105,10 @@ public class ProtectableReplicationCapabilitiesRespRegion {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

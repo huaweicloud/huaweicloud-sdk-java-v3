@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LogsTree */
+/**
+ * LogsTree
+ */
 public class LogsTree {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class LogsTree {
         return this;
     }
 
-    /** 存储块id
-     * 
-     * @return blobId */
+    /**
+     * 存储块id
+     * @return blobId
+     */
     public String getBlobId() {
         return blobId;
     }
@@ -69,9 +72,10 @@ public class LogsTree {
         return this;
     }
 
-    /** Get commit
-     * 
-     * @return commit */
+    /**
+     * Get commit
+     * @return commit
+     */
     public Commit getCommit() {
         return commit;
     }
@@ -85,9 +89,10 @@ public class LogsTree {
         return this;
     }
 
-    /** 文件名称
-     * 
-     * @return fileName */
+    /**
+     * 文件名称
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -101,9 +106,10 @@ public class LogsTree {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return filePath */
+    /**
+     * 文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -117,9 +123,10 @@ public class LogsTree {
         return this;
     }
 
-    /** MD5
-     * 
-     * @return md5 */
+    /**
+     * MD5
+     * @return md5
+     */
     public String getMd5() {
         return md5;
     }
@@ -133,9 +140,10 @@ public class LogsTree {
         return this;
     }
 
-    /** 存储类型
-     * 
-     * @return type */
+    /**
+     * 存储类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -177,7 +185,10 @@ public class LogsTree {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

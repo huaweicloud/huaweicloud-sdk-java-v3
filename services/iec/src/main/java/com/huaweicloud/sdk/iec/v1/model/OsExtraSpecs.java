@@ -65,9 +65,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 此参数是Region级配置，某个AZ没有在cond:operation:az参数中配置时默认使用此参数的取值。不配置或无此参数时等同于“normal”。
-     * 
-     * @return condOperationStatus */
+    /**
+     * 此参数是Region级配置，某个AZ没有在cond:operation:az参数中配置时默认使用此参数的取值。不配置或无此参数时等同于“normal”。
+     * @return condOperationStatus
+     */
     public String getCondOperationStatus() {
         return condOperationStatus;
     }
@@ -81,9 +82,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 边缘实例类型的代数。
-     * 
-     * @return ecsGeneration */
+    /**
+     * 边缘实例类型的代数。
+     * @return ecsGeneration
+     */
     public String getEcsGeneration() {
         return ecsGeneration;
     }
@@ -97,9 +99,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 边缘实例规格的分类。
-     * 
-     * @return ecsPerformanceType */
+    /**
+     * 边缘实例规格的分类。
+     * @return ecsPerformanceType
+     */
     public String getEcsPerformanceType() {
         return ecsPerformanceType;
     }
@@ -113,9 +116,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 虚拟化类型。
-     * 
-     * @return ecsVirtualizationEnvTypes */
+    /**
+     * 虚拟化类型。
+     * @return ecsVirtualizationEnvTypes
+     */
     public String getEcsVirtualizationEnvTypes() {
         return ecsVirtualizationEnvTypes;
     }
@@ -129,9 +133,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 此参数是规格的CPU详细信息。
-     * 
-     * @return infoCpuName */
+    /**
+     * 此参数是规格的CPU详细信息。
+     * @return infoCpuName
+     */
     public String getInfoCpuName() {
         return infoCpuName;
     }
@@ -145,9 +150,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 此参数是规格的GPU详细信息。
-     * 
-     * @return infoGpuName */
+    /**
+     * 此参数是规格的GPU详细信息。
+     * @return infoGpuName
+     */
     public String getInfoGpuName() {
         return infoGpuName;
     }
@@ -161,9 +167,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** P1型本地直通GPU的型号和数量，参数值可设置为“nvidia-p100:1”，表示使用该规格创建的边缘实例将占用1张NVIDIA P100显卡。
-     * 
-     * @return pciPassthroughAlias */
+    /**
+     * P1型本地直通GPU的型号和数量，参数值可设置为“nvidia-p100:1”，表示使用该规格创建的边缘实例将占用1张NVIDIA P100显卡。
+     * @return pciPassthroughAlias
+     */
     public String getPciPassthroughAlias() {
         return pciPassthroughAlias;
     }
@@ -177,9 +184,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 显卡是否直通。 值为“true”，表示GPU直通。
-     * 
-     * @return pciPassthroughEnableGpu */
+    /**
+     * 显卡是否直通。 值为“true”，表示GPU直通。
+     * @return pciPassthroughEnableGpu
+     */
     public String getPciPassthroughEnableGpu() {
         return pciPassthroughEnableGpu;
     }
@@ -193,9 +201,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** G1型和G2型边缘实例应用的技术，包括GPU虚拟化和GPU直通。
-     * 
-     * @return pciPassthroughGpuSpecs */
+    /**
+     * G1型和G2型边缘实例应用的技术，包括GPU虚拟化和GPU直通。
+     * @return pciPassthroughGpuSpecs
+     */
     public String getPciPassthroughGpuSpecs() {
         return pciPassthroughGpuSpecs;
     }
@@ -209,9 +218,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 资源类型，resource_type是为了区分边缘实例的物理主机类型。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型，resource_type是为了区分边缘实例的物理主机类型。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -273,7 +283,10 @@ public class OsExtraSpecs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

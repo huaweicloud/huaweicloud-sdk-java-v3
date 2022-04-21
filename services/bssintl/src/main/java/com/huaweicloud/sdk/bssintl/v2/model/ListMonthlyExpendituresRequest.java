@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMonthlyExpendituresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListMonthlyExpendituresRequest {
         return this;
     }
 
-    /** 查询消费汇总账单所在的账期，格式为YYYY-MM。
-     * 
-     * @return cycle */
+    /**
+     * 查询消费汇总账单所在的账期，格式为YYYY-MM。
+     * @return cycle
+     */
     public String getCycle() {
         return cycle;
     }
@@ -49,9 +52,10 @@ public class ListMonthlyExpendituresRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。当不传递此参数时，查询的账单是以云服务类型为维度的月度消费账单。当传递此参数时，查询的账单是该云服务类型下以资源类型为维度的月度消费账单。
-     * 
-     * @return cloudServiceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。当不传递此参数时，查询的账单是以云服务类型为维度的月度消费账单。当传递此参数时，查询的账单是该云服务类型下以资源类型为维度的月度消费账单。
+     * @return cloudServiceTypeCode
+     */
     public String getCloudServiceTypeCode() {
         return cloudServiceTypeCode;
     }
@@ -65,9 +69,10 @@ public class ListMonthlyExpendituresRequest {
         return this;
     }
 
-    /** 0：华为云账户 1：伙伴设置预算账户，仅当客户关联合作伙伴且关联类型为转售模式时，才会存在伙伴拨款设置预算账户。不传此参数默认查询华为云账户下的消费汇总。
-     * 
-     * @return type */
+    /**
+     * 0：华为云账户 1：伙伴设置预算账户，仅当客户关联合作伙伴且关联类型为转售模式时，才会存在伙伴拨款设置预算账户。不传此参数默认查询华为云账户下的消费汇总。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -81,9 +86,10 @@ public class ListMonthlyExpendituresRequest {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -124,7 +130,10 @@ public class ListMonthlyExpendituresRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

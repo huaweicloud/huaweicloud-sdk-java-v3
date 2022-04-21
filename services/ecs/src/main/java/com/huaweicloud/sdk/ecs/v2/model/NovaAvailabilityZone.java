@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 可用域信息 */
+/**
+ * 可用域信息
+ */
 public class NovaAvailabilityZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class NovaAvailabilityZone {
         return this;
     }
 
-    /** 该字段的值为null。
-     * 
-     * @return hosts */
+    /**
+     * 该字段的值为null。
+     * @return hosts
+     */
     public List<String> getHosts() {
         return hosts;
     }
@@ -63,9 +66,10 @@ public class NovaAvailabilityZone {
         return this;
     }
 
-    /** 可用域的名称。
-     * 
-     * @return zoneName */
+    /**
+     * 可用域的名称。
+     * @return zoneName
+     */
     public String getZoneName() {
         return zoneName;
     }
@@ -88,9 +92,10 @@ public class NovaAvailabilityZone {
         return this;
     }
 
-    /** Get zoneState
-     * 
-     * @return zoneState */
+    /**
+     * Get zoneState
+     * @return zoneState
+     */
     public NovaAvailabilityZoneState getZoneState() {
         return zoneState;
     }
@@ -129,7 +134,10 @@ public class NovaAvailabilityZone {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

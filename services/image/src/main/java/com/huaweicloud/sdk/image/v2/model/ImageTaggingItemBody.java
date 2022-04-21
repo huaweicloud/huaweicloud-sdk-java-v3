@@ -48,9 +48,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** 置信度，将Float型置信度转为String类型返回,取值范围：0-100。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，将Float型置信度转为String类型返回,取值范围：0-100。
+     * @return confidence
+     */
     public String getConfidence() {
         return confidence;
     }
@@ -64,9 +65,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** 标签的类别。返回的标签类型，包含二十多种大类，具体可以参考[图像标签](http://support.huaweicloud.com/image_faq/image_01_0037.html)。
-     * 
-     * @return type */
+    /**
+     * 标签的类别。返回的标签类型，包含二十多种大类，具体可以参考[图像标签](http://support.huaweicloud.com/image_faq/image_01_0037.html)。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -80,9 +82,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** 标签名称。
-     * 
-     * @return tag */
+    /**
+     * 标签名称。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -105,9 +108,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** Get i18nTag
-     * 
-     * @return i18nTag */
+    /**
+     * Get i18nTag
+     * @return i18nTag
+     */
     public ImageTaggingItemBodyI18nTag getI18nTag() {
         return i18nTag;
     }
@@ -130,9 +134,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** Get i18nType
-     * 
-     * @return i18nType */
+    /**
+     * Get i18nType
+     * @return i18nType
+     */
     public ImageTaggingItemBodyI18nType getI18nType() {
         return i18nType;
     }
@@ -162,9 +167,10 @@ public class ImageTaggingItemBody {
         return this;
     }
 
-    /** 目标检测框信息，为空则表示没有目标检测框。
-     * 
-     * @return instances */
+    /**
+     * 目标检测框信息，为空则表示没有目标检测框。
+     * @return instances
+     */
     public List<ImageTaggingInstance> getInstances() {
         return instances;
     }
@@ -209,7 +215,10 @@ public class ImageTaggingItemBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class BatchRemoveOrgsFromChannelRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class BatchRemoveOrgsFromChannelRequest {
         return this;
     }
 
-    /** 区块链服务id。
-     * 
-     * @return blockchainId */
+    /**
+     * 区块链服务id。
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -45,9 +48,10 @@ public class BatchRemoveOrgsFromChannelRequest {
         return this;
     }
 
-    /** 区块链通道名称。
-     * 
-     * @return channelId */
+    /**
+     * 区块链通道名称。
+     * @return channelId
+     */
     public String getChannelId() {
         return channelId;
     }
@@ -70,9 +74,10 @@ public class BatchRemoveOrgsFromChannelRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public BatchRemoveOrgsFromChannelRequestBody getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class BatchRemoveOrgsFromChannelRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

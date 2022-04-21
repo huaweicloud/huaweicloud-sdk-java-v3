@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。 */
+/**
+ * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+ */
 public class OffSiteBackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class OffSiteBackupPolicy {
         return this;
     }
 
-    /** 指定备份的类型。 SQL Server仅支持设置为“all”。 取值如下： - auto：自动全量备份。 - incremental：自动增量备份。 - all：同时设置所有备份类型。 -
-     * MySQL：同时设置自动全量和自动增量备份。 - SQL Server：同时设置自动全量、自动增量备份和手动备份。
-     * 
-     * @return backupType */
+    /**
+     * 指定备份的类型。  SQL Server仅支持设置为“all”。  取值如下：  - auto：自动全量备份。 - incremental：自动增量备份。 - all：同时设置所有备份类型。   - MySQL：同时设置自动全量和自动增量备份。   - SQL Server：同时设置自动全量、自动增量备份和手动备份。
+     * @return backupType
+     */
     public String getBackupType() {
         return backupType;
     }
@@ -50,9 +52,10 @@ public class OffSiteBackupPolicy {
         return this;
     }
 
-    /** 备份文件可以保存的天数。
-     * 
-     * @return keepDays */
+    /**
+     * 备份文件可以保存的天数。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -66,9 +69,10 @@ public class OffSiteBackupPolicy {
         return this;
     }
 
-    /** 设置跨区域备份策略的目标区域ID。
-     * 
-     * @return destinationRegion */
+    /**
+     * 设置跨区域备份策略的目标区域ID。
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -82,9 +86,10 @@ public class OffSiteBackupPolicy {
         return this;
     }
 
-    /** 设置跨区域备份策略的目标project ID。
-     * 
-     * @return destinationProjectId */
+    /**
+     * 设置跨区域备份策略的目标project ID。
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -125,7 +130,10 @@ public class OffSiteBackupPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

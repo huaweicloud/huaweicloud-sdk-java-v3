@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CdmDeleteClusterReq */
+/**
+ * CdmDeleteClusterReq
+ */
 public class CdmDeleteClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CdmDeleteClusterReq {
         return this;
     }
 
-    /** 日志备份数，填写为默认填0即可。
-     * 
-     * @return keepLastManualBackup */
+    /**
+     * 日志备份数，填写为默认填0即可。
+     * @return keepLastManualBackup
+     */
     public Integer getKeepLastManualBackup() {
         return keepLastManualBackup;
     }
@@ -55,7 +58,10 @@ public class CdmDeleteClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

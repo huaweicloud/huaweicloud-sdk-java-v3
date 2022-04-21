@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -73,9 +76,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get planTime
-     * 
-     * @return planTime */
+    /**
+     * Get planTime
+     * @return planTime
+     */
     public Integer getPlanTime() {
         return planTime;
     }
@@ -89,9 +93,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -105,9 +110,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -121,9 +127,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get executeTime
-     * 
-     * @return executeTime */
+    /**
+     * Get executeTime
+     * @return executeTime
+     */
     public Integer getExecuteTime() {
         return executeTime;
     }
@@ -137,9 +144,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get instancesId
-     * 
-     * @return instancesId */
+    /**
+     * Get instancesId
+     * @return instancesId
+     */
     public String getInstancesId() {
         return instancesId;
     }
@@ -153,9 +161,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get total
-     * 
-     * @return total */
+    /**
+     * Get total
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -185,9 +194,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get nodes
-     * 
-     * @return nodes */
+    /**
+     * Get nodes
+     * @return nodes
+     */
     public List<NodeInstance> getNodes() {
         return nodes;
     }
@@ -236,7 +246,10 @@ public class ShowJobInstanceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

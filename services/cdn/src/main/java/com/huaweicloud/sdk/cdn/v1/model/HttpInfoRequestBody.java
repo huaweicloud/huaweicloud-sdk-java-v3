@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** HttpInfoRequestBody */
+/**
+ * HttpInfoRequestBody
+ */
 public class HttpInfoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 证书名字。（长度限制为3-32字符）。
-     * 
-     * @return certName */
+    /**
+     * 证书名字。（长度限制为3-32字符）。
+     * @return certName
+     */
     public String getCertName() {
         return certName;
     }
@@ -70,9 +73,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源；3：启用HTTPS加速并HTTPS回源，首次配置证书需要传递证书及私钥，如已有证书可不用传证书及私钥。
-     * 
-     * @return httpsStatus */
+    /**
+     * HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源；3：启用HTTPS加速并HTTPS回源，首次配置证书需要传递证书及私钥，如已有证书可不用传证书及私钥。
+     * @return httpsStatus
+     */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -86,9 +90,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
-     * 
-     * @return certificate */
+    /**
+     * 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -102,9 +107,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
-     * 
-     * @return privateKey */
+    /**
+     * 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -118,9 +124,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 是否使用HTTP2.0。（1：是，0：否。）
-     * 
-     * @return http2 */
+    /**
+     * 是否使用HTTP2.0。（1：是，0：否。）
+     * @return http2
+     */
     public Integer getHttp2() {
         return http2;
     }
@@ -134,9 +141,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 证书类型。1：代表华为云托管证书；0：表示自有证书。 默认值0。
-     * 
-     * @return certificateType */
+    /**
+     * 证书类型。1：代表华为云托管证书；0：表示自有证书。 默认值0。
+     * @return certificateType
+     */
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -150,9 +158,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
-     * 
-     * @return forceRedirectHttps */
+    /**
+     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * @return forceRedirectHttps
+     */
     public Integer getForceRedirectHttps() {
         return forceRedirectHttps;
     }
@@ -175,9 +184,10 @@ public class HttpInfoRequestBody {
         return this;
     }
 
-    /** Get forceRedirectConfig
-     * 
-     * @return forceRedirectConfig */
+    /**
+     * Get forceRedirectConfig
+     * @return forceRedirectConfig
+     */
     public ForceRedirect getForceRedirectConfig() {
         return forceRedirectConfig;
     }
@@ -233,7 +243,10 @@ public class HttpInfoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 静音会场消息体。 */
+/**
+ * 静音会场消息体。
+ */
 public class RestMuteParticipantReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestMuteParticipantReqBody {
         return this;
     }
 
-    /** - 0: 取消静音。 - 1: 静音。
-     * 
-     * @return isMute */
+    /**
+     * - 0: 取消静音。 - 1: 静音。
+     * @return isMute
+     */
     public Integer getIsMute() {
         return isMute;
     }
@@ -55,7 +58,10 @@ public class RestMuteParticipantReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

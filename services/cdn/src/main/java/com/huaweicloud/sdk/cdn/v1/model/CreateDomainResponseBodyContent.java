@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建域名返回信息 */
+/**
+ * 创建域名返回信息
+ */
 public class CreateDomainResponseBodyContent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 加速域名ID。
-     * 
-     * @return id */
+    /**
+     * 加速域名ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -122,9 +125,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 加速域名。
-     * 
-     * @return domainName */
+    /**
+     * 加速域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -138,9 +142,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名业务类型：-web：网站加速；-download：文件下载加速；-video：点播加速；-wholeSite：全站加速。
-     * 
-     * @return businessType */
+    /**
+     * 域名业务类型：-web：网站加速；-download：文件下载加速；-video：点播加速；-wholeSite：全站加速。
+     * @return businessType
+     */
     public String getBusinessType() {
         return businessType;
     }
@@ -154,9 +159,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
-     * 
-     * @return serviceArea */
+    /**
+     * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
+     * @return serviceArea
+     */
     public String getServiceArea() {
         return serviceArea;
     }
@@ -170,9 +176,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名所属用户的domain_id。
-     * 
-     * @return userDomainId */
+    /**
+     * 域名所属用户的domain_id。
+     * @return userDomainId
+     */
     public String getUserDomainId() {
         return userDomainId;
     }
@@ -186,9 +193,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 加速域名状态。取值意义：online表示“已开启”、offline表示“已停用”、configuring表示“配置中”、configure_failed表示“配置失败”、checking表示“审核中”、check_failed表示“审核未通过”、deleting表示“删除中”。
-     * 
-     * @return domainStatus */
+    /**
+     * 加速域名状态。取值意义：online表示“已开启”、offline表示“已停用”、configuring表示“配置中”、configure_failed表示“配置失败”、checking表示“审核中”、check_failed表示“审核未通过”、deleting表示“删除中”。
+     * @return domainStatus
+     */
     public String getDomainStatus() {
         return domainStatus;
     }
@@ -202,9 +210,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 加速域名对应的CNAME。
-     * 
-     * @return cname */
+    /**
+     * 加速域名对应的CNAME。
+     * @return cname
+     */
     public String getCname() {
         return cname;
     }
@@ -234,9 +243,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 源站信息
-     * 
-     * @return sources */
+    /**
+     * 源站信息
+     * @return sources
+     */
     public List<Sources> getSources() {
         return sources;
     }
@@ -259,9 +269,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** Get domainOriginHost
-     * 
-     * @return domainOriginHost */
+    /**
+     * Get domainOriginHost
+     * @return domainOriginHost
+     */
     public DomainOriginHost getDomainOriginHost() {
         return domainOriginHost;
     }
@@ -275,9 +286,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 是否开启HTTPS加速。
-     * 
-     * @return httpsStatus */
+    /**
+     * 是否开启HTTPS加速。
+     * @return httpsStatus
+     */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -291,9 +303,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return createTime */
+    /**
+     * 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -307,9 +320,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return modifyTime */
+    /**
+     * 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return modifyTime
+     */
     public Long getModifyTime() {
         return modifyTime;
     }
@@ -323,9 +337,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 封禁状态（0代表未禁用；1代表禁用）。
-     * 
-     * @return disabled */
+    /**
+     * 封禁状态（0代表未禁用；1代表禁用）。
+     * @return disabled
+     */
     public Integer getDisabled() {
         return disabled;
     }
@@ -339,9 +354,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 锁定状态（0代表未锁定；1代表锁定）。
-     * 
-     * @return locked */
+    /**
+     * 锁定状态（0代表未锁定；1代表锁定）。
+     * @return locked
+     */
     public Integer getLocked() {
         return locked;
     }
@@ -355,9 +371,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** range状态（\"off\"/\"on\"）。
-     * 
-     * @return rangeStatus */
+    /**
+     * range状态（\"off\"/\"on\"）。
+     * @return rangeStatus
+     */
     public String getRangeStatus() {
         return rangeStatus;
     }
@@ -371,9 +388,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** follow302状态（\"off\"/\"on\"）。
-     * 
-     * @return followStatus */
+    /**
+     * follow302状态（\"off\"/\"on\"）。
+     * @return followStatus
+     */
     public String getFollowStatus() {
         return followStatus;
     }
@@ -387,9 +405,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 是否暂停源站回源。
-     * 
-     * @return originStatus */
+    /**
+     * 是否暂停源站回源。
+     * @return originStatus
+     */
     public String getOriginStatus() {
         return originStatus;
     }
@@ -403,9 +422,10 @@ public class CreateDomainResponseBodyContent {
         return this;
     }
 
-    /** 自动刷新预热（0代表关闭；1代表打开）
-     * 
-     * @return autoRefreshPreheat */
+    /**
+     * 自动刷新预热（0代表关闭；1代表打开）
+     * @return autoRefreshPreheat
+     */
     public Integer getAutoRefreshPreheat() {
         return autoRefreshPreheat;
     }
@@ -491,7 +511,10 @@ public class CreateDomainResponseBodyContent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

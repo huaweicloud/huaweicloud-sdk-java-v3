@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateClusterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return name */
+    /**
+     * 集群名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return id */
+    /**
+     * 集群ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -83,9 +87,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** Get task
-     * 
-     * @return task */
+    /**
+     * Get task
+     * @return task
+     */
     public Task getTask() {
         return task;
     }
@@ -108,9 +113,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -140,9 +146,10 @@ public class CreateClusterResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群的节点信息
-     * 
-     * @return instances */
+    /**
+     * 集群的节点信息
+     * @return instances
+     */
     public List<ClusterInstance> getInstances() {
         return instances;
     }
@@ -185,7 +192,10 @@ public class CreateClusterResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

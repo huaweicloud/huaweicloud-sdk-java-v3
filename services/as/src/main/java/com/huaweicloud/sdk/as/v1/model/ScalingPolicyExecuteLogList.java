@@ -13,19 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 伸缩策略执行日志列表 */
+/**
+ * 伸缩策略执行日志列表
+ */
 public class ScalingPolicyExecuteLogList {
 
-    /** 策略执行状态：SUCCESS：成功。FAIL：失败。EXECUTING：执行中 */
+    /**
+     * 策略执行状态：SUCCESS：成功。FAIL：失败。EXECUTING：执行中
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum EXECUTING for value: "EXECUTING" */
+        /**
+         * Enum EXECUTING for value: "EXECUTING"
+         */
         public static final StatusEnum EXECUTING = new StatusEnum("EXECUTING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -101,19 +111,29 @@ public class ScalingPolicyExecuteLogList {
 
     private String failedReason;
 
-    /** 策略执行类型：SCHEDULE：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动警告（告警）。MANUAL：手动触发 */
+    /**
+     * 策略执行类型：SCHEDULE：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动警告（告警）。MANUAL：手动触发
+     */
     public static final class ExecuteTypeEnum {
 
-        /** Enum SCHEDULE for value: "SCHEDULE" */
+        /**
+         * Enum SCHEDULE for value: "SCHEDULE"
+         */
         public static final ExecuteTypeEnum SCHEDULE = new ExecuteTypeEnum("SCHEDULE");
 
-        /** Enum RECURRENCE for value: "RECURRENCE" */
+        /**
+         * Enum RECURRENCE for value: "RECURRENCE"
+         */
         public static final ExecuteTypeEnum RECURRENCE = new ExecuteTypeEnum("RECURRENCE");
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ExecuteTypeEnum ALARM = new ExecuteTypeEnum("ALARM");
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final ExecuteTypeEnum MANUAL = new ExecuteTypeEnum("MANUAL");
 
         private static final Map<String, ExecuteTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -205,13 +225,19 @@ public class ScalingPolicyExecuteLogList {
 
     private String scalingPolicyId;
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP 带宽：BANDWIDTH */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP 带宽：BANDWIDTH
+     */
     public static final class ScalingResourceTypeEnum {
 
-        /** Enum SCALING_GROUP for value: "SCALING_GROUP" */
+        /**
+         * Enum SCALING_GROUP for value: "SCALING_GROUP"
+         */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
 
-        /** Enum BANDWIDTH for value: "BANDWIDTH" */
+        /**
+         * Enum BANDWIDTH for value: "BANDWIDTH"
+         */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
 
         private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -301,16 +327,24 @@ public class ScalingPolicyExecuteLogList {
 
     private String limitValue;
 
-    /** 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为 */
+    /**
+     * 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
+     */
     public static final class TypeEnum {
 
-        /** Enum ADD for value: "ADD" */
+        /**
+         * Enum ADD for value: "ADD"
+         */
         public static final TypeEnum ADD = new TypeEnum("ADD");
 
-        /** Enum REMOVE for value: "REMOVE" */
+        /**
+         * Enum REMOVE for value: "REMOVE"
+         */
         public static final TypeEnum REMOVE = new TypeEnum("REMOVE");
 
-        /** Enum SET for value: "SET" */
+        /**
+         * Enum SET for value: "SET"
+         */
         public static final TypeEnum SET = new TypeEnum("SET");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -396,9 +430,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行状态：SUCCESS：成功。FAIL：失败。EXECUTING：执行中
-     * 
-     * @return status */
+    /**
+     * 策略执行状态：SUCCESS：成功。FAIL：失败。EXECUTING：执行中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -412,9 +447,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行失败原因。
-     * 
-     * @return failedReason */
+    /**
+     * 策略执行失败原因。
+     * @return failedReason
+     */
     public String getFailedReason() {
         return failedReason;
     }
@@ -428,9 +464,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行类型：SCHEDULE：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动警告（告警）。MANUAL：手动触发
-     * 
-     * @return executeType */
+    /**
+     * 策略执行类型：SCHEDULE：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动警告（告警）。MANUAL：手动触发
+     * @return executeType
+     */
     public ExecuteTypeEnum getExecuteType() {
         return executeType;
     }
@@ -444,9 +481,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行时间，遵循UTC时间。
-     * 
-     * @return executeTime */
+    /**
+     * 策略执行时间，遵循UTC时间。
+     * @return executeTime
+     */
     public String getExecuteTime() {
         return executeTime;
     }
@@ -460,9 +498,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行日志ID。
-     * 
-     * @return id */
+    /**
+     * 策略执行日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -476,9 +515,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 租户id。
-     * 
-     * @return tenantId */
+    /**
+     * 租户id。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -492,9 +532,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -508,9 +549,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP 带宽：BANDWIDTH
-     * 
-     * @return scalingResourceType */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP 带宽：BANDWIDTH
+     * @return scalingResourceType
+     */
     public ScalingResourceTypeEnum getScalingResourceType() {
         return scalingResourceType;
     }
@@ -524,9 +566,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 伸缩资源ID。
-     * 
-     * @return scalingResourceId */
+    /**
+     * 伸缩资源ID。
+     * @return scalingResourceId
+     */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -540,9 +583,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 伸缩原始值。
-     * 
-     * @return oldValue */
+    /**
+     * 伸缩原始值。
+     * @return oldValue
+     */
     public String getOldValue() {
         return oldValue;
     }
@@ -556,9 +600,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 伸缩目标值。
-     * 
-     * @return desireValue */
+    /**
+     * 伸缩目标值。
+     * @return desireValue
+     */
     public String getDesireValue() {
         return desireValue;
     }
@@ -572,9 +617,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 操作限制。当scaling_resource_type为BANDWIDTH时，且operation不为SET时，limit_value生效，单位为Mbit/s。此时，当operation为ADD时，limit_value表示最高带宽限制；当operation为REDUCE时，limit_value表示最低带宽限制。
-     * 
-     * @return limitValue */
+    /**
+     * 操作限制。当scaling_resource_type为BANDWIDTH时，且operation不为SET时，limit_value生效，单位为Mbit/s。此时，当operation为ADD时，limit_value表示最高带宽限制；当operation为REDUCE时，limit_value表示最低带宽限制。
+     * @return limitValue
+     */
     public String getLimitValue() {
         return limitValue;
     }
@@ -588,9 +634,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
-     * 
-     * @return type */
+    /**
+     * 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -620,9 +667,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** 策略执行动作包含的具体任务
-     * 
-     * @return jobRecords */
+    /**
+     * 策略执行动作包含的具体任务
+     * @return jobRecords
+     */
     public List<JobRecords> getJobRecords() {
         return jobRecords;
     }
@@ -645,9 +693,10 @@ public class ScalingPolicyExecuteLogList {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public EipMetaData getMetaData() {
         return metaData;
     }
@@ -724,7 +773,10 @@ public class ScalingPolicyExecuteLogList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

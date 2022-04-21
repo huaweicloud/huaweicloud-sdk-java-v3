@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新peering对象 */
+/**
+ * 更新peering对象
+ */
 public class UpdateVpcPeeringOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateVpcPeeringOption {
         return this;
     }
 
-    /** 功能说明：对等连接名称 取值范围：支持1~64个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：对等连接名称 取值范围：支持1~64个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateVpcPeeringOption {
         return this;
     }
 
-    /** 功能说明：对等连接描述 取值范围：0-255个字符，支持数字、字母、中文字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：对等连接描述 取值范围：0-255个字符，支持数字、字母、中文字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class UpdateVpcPeeringOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

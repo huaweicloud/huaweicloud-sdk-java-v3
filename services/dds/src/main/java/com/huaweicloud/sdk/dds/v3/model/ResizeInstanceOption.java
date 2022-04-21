@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ResizeInstanceOption */
+/**
+ * ResizeInstanceOption
+ */
 public class ResizeInstanceOption {
 
-    /** 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。 */
+    /**
+     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+     */
     public static final class TargetTypeEnum {
 
-        /** Enum MONGOS for value: "mongos" */
+        /**
+         * Enum MONGOS for value: "mongos"
+         */
         public static final TargetTypeEnum MONGOS = new TargetTypeEnum("mongos");
 
-        /** Enum SHARD for value: "shard" */
+        /**
+         * Enum SHARD for value: "shard"
+         */
         public static final TargetTypeEnum SHARD = new TargetTypeEnum("shard");
 
         private static final Map<String, TargetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class ResizeInstanceOption {
         return this;
     }
 
-    /** 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
-     * 
-     * @return targetType */
+    /**
+     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+     * @return targetType
+     */
     public TargetTypeEnum getTargetType() {
         return targetType;
     }
@@ -120,10 +129,10 @@ public class ResizeInstanceOption {
         return this;
     }
 
-    /** 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 -
-     * 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更shard组规格时，取值为shard组ID。 - 对于副本集实例，取值为相应的实例ID。 - 对于单节点实例，取值为相应的实例ID。
-     * 
-     * @return targetId */
+    /**
+     * 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更shard组规格时，取值为shard组ID。 - 对于副本集实例，取值为相应的实例ID。 - 对于单节点实例，取值为相应的实例ID。
+     * @return targetId
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -137,9 +146,10 @@ public class ResizeInstanceOption {
         return this;
     }
 
-    /** 变更至新规格的资源规格编码。
-     * 
-     * @return targetSpecCode */
+    /**
+     * 变更至新规格的资源规格编码。
+     * @return targetSpecCode
+     */
     public String getTargetSpecCode() {
         return targetSpecCode;
     }
@@ -178,7 +188,10 @@ public class ResizeInstanceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

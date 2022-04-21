@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 删除复制对请求数据结构 */
+/**
+ * 删除复制对请求数据结构
+ */
 public class DeleteReplicationRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteReplicationRequestParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -39,9 +42,10 @@ public class DeleteReplicationRequestParams {
         return this;
     }
 
-    /** 是否删除容灾站点磁盘，默认值为false。
-     * 
-     * @return deleteTargetVolume */
+    /**
+     * 是否删除容灾站点磁盘，默认值为false。
+     * @return deleteTargetVolume
+     */
     public Boolean getDeleteTargetVolume() {
         return deleteTargetVolume;
     }
@@ -78,7 +82,10 @@ public class DeleteReplicationRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

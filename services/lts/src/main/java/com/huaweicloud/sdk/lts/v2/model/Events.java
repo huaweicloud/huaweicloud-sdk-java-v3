@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Events */
+/**
+ * Events
+ */
 public class Events {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class Events {
         return this;
     }
 
-    /** Get annotations
-     * 
-     * @return annotations */
+    /**
+     * Get annotations
+     * @return annotations
+     */
     public Annotations getAnnotations() {
         return annotations;
     }
@@ -88,9 +91,10 @@ public class Events {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public Metadata getMetadata() {
         return metadata;
     }
@@ -104,9 +108,10 @@ public class Events {
         return this;
     }
 
-    /** 到达时间(时间戳)
-     * 
-     * @return arrivesAt */
+    /**
+     * 到达时间(时间戳)
+     * @return arrivesAt
+     */
     public Long getArrivesAt() {
         return arrivesAt;
     }
@@ -120,9 +125,10 @@ public class Events {
         return this;
     }
 
-    /** 告警清除时间(时间戳)
-     * 
-     * @return endsAt */
+    /**
+     * 告警清除时间(时间戳)
+     * @return endsAt
+     */
     public Long getEndsAt() {
         return endsAt;
     }
@@ -136,9 +142,10 @@ public class Events {
         return this;
     }
 
-    /** 告警id
-     * 
-     * @return id */
+    /**
+     * 告警id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -152,9 +159,10 @@ public class Events {
         return this;
     }
 
-    /** 告警产生时间(时间戳)
-     * 
-     * @return startsAt */
+    /**
+     * 告警产生时间(时间戳)
+     * @return startsAt
+     */
     public Long getStartsAt() {
         return startsAt;
     }
@@ -168,9 +176,10 @@ public class Events {
         return this;
     }
 
-    /** 告警自动清除时间(时间戳)
-     * 
-     * @return timeout */
+    /**
+     * 告警自动清除时间(时间戳)
+     * @return timeout
+     */
     public Long getTimeout() {
         return timeout;
     }
@@ -184,9 +193,10 @@ public class Events {
         return this;
     }
 
-    /** 告警规则类型(SQL/关键词)
-     * 
-     * @return type */
+    /**
+     * 告警规则类型(SQL/关键词)
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -231,7 +241,10 @@ public class Events {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

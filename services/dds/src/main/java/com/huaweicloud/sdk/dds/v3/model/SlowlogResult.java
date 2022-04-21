@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlowlogResult */
+/**
+ * SlowlogResult
+ */
 public class SlowlogResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return nodeName */
+    /**
+     * 节点名称。
+     * @return nodeName
+     */
     public String getNodeName() {
         return nodeName;
     }
@@ -74,9 +77,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 执行语法。
-     * 
-     * @return querySample */
+    /**
+     * 执行语法。
+     * @return querySample
+     */
     public String getQuerySample() {
         return querySample;
     }
@@ -90,9 +94,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 语句类型。
-     * 
-     * @return type */
+    /**
+     * 语句类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -106,9 +111,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 执行时间。
-     * 
-     * @return time */
+    /**
+     * 执行时间。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -122,9 +128,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 等待锁时间。
-     * 
-     * @return lockTime */
+    /**
+     * 等待锁时间。
+     * @return lockTime
+     */
     public String getLockTime() {
         return lockTime;
     }
@@ -138,9 +145,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 角色所在数据库名称。
-     * 
-     * @return rowsSent */
+    /**
+     * 角色所在数据库名称。
+     * @return rowsSent
+     */
     public String getRowsSent() {
         return rowsSent;
     }
@@ -154,9 +162,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 扫描的行数量。
-     * 
-     * @return rowsExamined */
+    /**
+     * 扫描的行数量。
+     * @return rowsExamined
+     */
     public String getRowsExamined() {
         return rowsExamined;
     }
@@ -170,9 +179,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 所属数据库。
-     * 
-     * @return database */
+    /**
+     * 所属数据库。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -186,9 +196,10 @@ public class SlowlogResult {
         return this;
     }
 
-    /** 发生时间，UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 发生时间，UTC时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -238,7 +249,10 @@ public class SlowlogResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListLoadBalancersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -176,9 +178,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -192,9 +195,12 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -208,9 +214,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明： - 必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -240,9 +247,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -272,9 +280,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -304,9 +313,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的描述信息。 支持多值查询，查询条件格式：*description=xxx&description=xxx*。
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -320,9 +330,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的管理状态。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -352,10 +363,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
-     * 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。  支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
+     * @return provisioningStatus
+     */
     public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -385,9 +396,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的操作状态。取值： - ONLINE：正常运行。 - FROZEN：已冻结。 支持多值查询，查询条件格式：*operating_status=xxx&operating_status=xxx*。
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态。取值： - ONLINE：正常运行。 - FROZEN：已冻结。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=xxx*。
+     * @return operatingStatus
+     */
     public List<String> getOperatingStatus() {
         return operatingStatus;
     }
@@ -401,9 +413,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 是否独享型LB，取值： - false：共享型 - true：独享型
-     * 
-     * @return guaranteed */
+    /**
+     * 是否独享型LB，取值： - false：共享型 - true：独享型
+     * @return guaranteed
+     */
     public Boolean getGuaranteed() {
         return guaranteed;
     }
@@ -433,9 +446,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所在的VPC ID。 支持多值查询，查询条件格式：*vpc_id=xxx&vpc_id=xxx*。
-     * 
-     * @return vpcId */
+    /**
+     * 负载均衡器所在的VPC ID。  支持多值查询，查询条件格式：*vpc_id=xxx&vpc_id=xxx*。
+     * @return vpcId
+     */
     public List<String> getVpcId() {
         return vpcId;
     }
@@ -465,9 +479,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的IPv4对应的port ID。 支持多值查询，查询条件格式：*vip_port_id=xxx&vip_port_id=xxx*。
-     * 
-     * @return vipPortId */
+    /**
+     * 负载均衡器的IPv4对应的port ID。  支持多值查询，查询条件格式：*vip_port_id=xxx&vip_port_id=xxx*。
+     * @return vipPortId
+     */
     public List<String> getVipPortId() {
         return vipPortId;
     }
@@ -497,9 +512,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的IPv4虚拟IP地址。 支持多值查询，查询条件格式：*vip_address=xxx&vip_address=xxx*。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的IPv4虚拟IP地址。  支持多值查询，查询条件格式：*vip_address=xxx&vip_address=xxx*。
+     * @return vipAddress
+     */
     public List<String> getVipAddress() {
         return vipAddress;
     }
@@ -529,9 +545,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所在子网的IPv4子网ID。 支持多值查询，查询条件格式：*vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。
-     * 
-     * @return vipSubnetCidrId */
+    /**
+     * 负载均衡器所在子网的IPv4子网ID。  支持多值查询，查询条件格式：*vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。
+     * @return vipSubnetCidrId
+     */
     public List<String> getVipSubnetCidrId() {
         return vipSubnetCidrId;
     }
@@ -561,10 +578,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 双栈类型负载均衡器的IPv6对应的port ID。 支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。
-     * [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipPortId */
+    /**
+     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipPortId
+     */
     public List<String> getIpv6VipPortId() {
         return ipv6VipPortId;
     }
@@ -594,9 +611,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。 [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipAddress */
+    /**
+     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipAddress
+     */
     public List<String> getIpv6VipAddress() {
         return ipv6VipAddress;
     }
@@ -626,10 +644,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 双栈类型负载均衡器所在的子网IPv6网络ID。 支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。
-     * [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipVirsubnetId */
+    /**
+     * 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipVirsubnetId
+     */
     public List<String> getIpv6VipVirsubnetId() {
         return ipv6VipVirsubnetId;
     }
@@ -659,12 +677,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器绑定的EIP ID。示例如下： \"eips\": [ { \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\", \"eip_address\":
-     * \"88.88.14.122\", \"ip_version\": 4 } ] 支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 -
-     * eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 -
-     * ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。 注：该字段与publicips字段一致。
-     * 
-     * @return eips */
+    /**
+     * 负载均衡器绑定的EIP ID。示例如下： \"eips\": [             {                 \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",                 \"eip_address\": \"88.88.14.122\",                 \"ip_version\": 4             }         ]  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。  注：该字段与publicips字段一致。
+     * @return eips
+     */
     public List<String> getEips() {
         return eips;
     }
@@ -694,13 +710,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器绑定的公网IP。示例如下： \"publicips\": [ { \"publicip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",
-     * \"publicip_address\": \"88.88.14.122\", \"ip_version\": 4 } ] 支持多值查询，查询条件格式： -
-     * publicip_id作为查询条件：*publicips=publicip_id=xxx&publicips=publicip_id=xxx*。 -
-     * publicip_address作为查询条件：*publicips=publicip_address=xxx&publicips=publicip_address=xxx*。 -
-     * ip_version作为查询条件：*publicips=ip_version=xxx&publicips=ip_version=xxx*。 注：该字段与eips字段一致。
-     * 
-     * @return publicips */
+    /**
+     * 负载均衡器绑定的公网IP。示例如下：  \"publicips\": [                 {                     \"publicip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",                     \"publicip_address\": \"88.88.14.122\",                     \"ip_version\": 4                 }             ]  支持多值查询，查询条件格式： - publicip_id作为查询条件：*publicips=publicip_id=xxx&publicips=publicip_id=xxx*。 - publicip_address作为查询条件：*publicips=publicip_address=xxx&publicips=publicip_address=xxx*。 - ip_version作为查询条件：*publicips=ip_version=xxx&publicips=ip_version=xxx*。  注：该字段与eips字段一致。
+     * @return publicips
+     */
     public List<String> getPublicips() {
         return publicips;
     }
@@ -730,9 +743,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所在可用区列表。 支持多值查询，查询条件格式：*availability_zone_list=xxx&availability_zone_list=xxx*。
-     * 
-     * @return availabilityZoneList */
+    /**
+     * 负载均衡器所在可用区列表。  支持多值查询，查询条件格式：*availability_zone_list=xxx&availability_zone_list=xxx*。
+     * @return availabilityZoneList
+     */
     public List<String> getAvailabilityZoneList() {
         return availabilityZoneList;
     }
@@ -762,9 +776,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 四层Flavor ID。 支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。
-     * 
-     * @return l4FlavorId */
+    /**
+     * 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。
+     * @return l4FlavorId
+     */
     public List<String> getL4FlavorId() {
         return l4FlavorId;
     }
@@ -794,9 +809,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 四层弹性Flavor ID。 支持多值查询，查询条件格式：*l4_scale_flavor_id=xxx&l4_scale_flavor_id=xxx*。 不支持该字段，请勿使用。
-     * 
-     * @return l4ScaleFlavorId */
+    /**
+     * 四层弹性Flavor ID。  支持多值查询，查询条件格式：*l4_scale_flavor_id=xxx&l4_scale_flavor_id=xxx*。  不支持该字段，请勿使用。
+     * @return l4ScaleFlavorId
+     */
     public List<String> getL4ScaleFlavorId() {
         return l4ScaleFlavorId;
     }
@@ -826,9 +842,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 七层Flavor ID。 支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。
-     * 
-     * @return l7FlavorId */
+    /**
+     * 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。
+     * @return l7FlavorId
+     */
     public List<String> getL7FlavorId() {
         return l7FlavorId;
     }
@@ -858,9 +875,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 七层弹性Flavor ID。 支持多值查询，查询条件格式：*l7_scale_flavor_id=xxx&l7_scale_flavor_id=xxx*。 不支持该字段，请勿使用。
-     * 
-     * @return l7ScaleFlavorId */
+    /**
+     * 七层弹性Flavor ID。  支持多值查询，查询条件格式：*l7_scale_flavor_id=xxx&l7_scale_flavor_id=xxx*。  不支持该字段，请勿使用。
+     * @return l7ScaleFlavorId
+     */
     public List<String> getL7ScaleFlavorId() {
         return l7ScaleFlavorId;
     }
@@ -890,9 +908,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 资源账单信息。admin权限才能更新此字段。 支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return billingInfo */
+    /**
+     * 资源账单信息。admin权限才能更新此字段。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * @return billingInfo
+     */
     public List<String> getBillingInfo() {
         return billingInfo;
     }
@@ -922,9 +941,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器中的后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
-     * 
-     * @return memberDeviceId */
+    /**
+     * 负载均衡器中的后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * @return memberDeviceId
+     */
     public List<String> getMemberDeviceId() {
         return memberDeviceId;
     }
@@ -954,9 +974,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器中的后端云服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
-     * 
-     * @return memberAddress */
+    /**
+     * 负载均衡器中的后端云服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * @return memberAddress
+     */
     public List<String> getMemberAddress() {
         return memberAddress;
     }
@@ -986,10 +1007,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
-     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 负载均衡器所属的企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1019,9 +1040,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** IP版本信息。 取值：4代表IPv4，6代表IPv6。 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本信息。 取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。   [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * @return ipVersion
+     */
     public List<Integer> getIpVersion() {
         return ipVersion;
     }
@@ -1035,9 +1057,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 是否开启删除保护，false不开启，true开启。
-     * 
-     * @return deletionProtectionEnable */
+    /**
+     * 是否开启删除保护，false不开启，true开启。
+     * @return deletionProtectionEnable
+     */
     public Boolean getDeletionProtectionEnable() {
         return deletionProtectionEnable;
     }
@@ -1067,9 +1090,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 下联面子网类型。取值： - ipv4：ipv4。 - dualstack：双栈。 支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。
-     * 
-     * @return elbVirsubnetType */
+    /**
+     * 下联面子网类型。取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。
+     * @return elbVirsubnetType
+     */
     public List<String> getElbVirsubnetType() {
         return elbVirsubnetType;
     }
@@ -1099,10 +1123,10 @@ public class ListLoadBalancersRequest {
         return this;
     }
 
-    /** 是否开启弹性扩缩容。示例如下： \"autoscaling\": { \"enable\": \"true\" } 支持多值查询，查询条件格式：
-     * *autoscaling=enable=true&autoscaling=enable=false*。
-     * 
-     * @return autoscaling */
+    /**
+     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。
+     * @return autoscaling
+     */
     public List<String> getAutoscaling() {
         return autoscaling;
     }
@@ -1230,7 +1254,10 @@ public class ListLoadBalancersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

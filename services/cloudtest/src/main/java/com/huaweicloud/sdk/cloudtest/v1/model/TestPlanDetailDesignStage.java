@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 测试计划设计阶段信息 */
+/**
+ * 测试计划设计阶段信息
+ */
 public class TestPlanDetailDesignStage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TestPlanDetailDesignStage {
         return this;
     }
 
-    /** 用例个数
-     * 
-     * @return caseCount */
+    /**
+     * 用例个数
+     * @return caseCount
+     */
     public Integer getCaseCount() {
         return caseCount;
     }
@@ -44,9 +47,10 @@ public class TestPlanDetailDesignStage {
         return this;
     }
 
-    /** 需求个数
-     * 
-     * @return issueCount */
+    /**
+     * 需求个数
+     * @return issueCount
+     */
     public Integer getIssueCount() {
         return issueCount;
     }
@@ -60,9 +64,10 @@ public class TestPlanDetailDesignStage {
         return this;
     }
 
-    /** 已被用例关联的需求个数
-     * 
-     * @return issueCoveredCount */
+    /**
+     * 已被用例关联的需求个数
+     * @return issueCoveredCount
+     */
     public String getIssueCoveredCount() {
         return issueCoveredCount;
     }
@@ -101,7 +106,10 @@ public class TestPlanDetailDesignStage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

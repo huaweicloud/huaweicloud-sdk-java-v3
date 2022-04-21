@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateTransTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,12 @@ public class CreateTransTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 自定义转码模板编号。 minimum: 0 maximum: 2147483647
-     * 
-     * @return templateId */
+    /**
+     * 自定义转码模板编号。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -56,7 +61,10 @@ public class CreateTransTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -19,7 +19,11 @@ public class AomClient {
 
     /**
      * 添加阈值规则
+     *
      * 该接口用于添加一条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddAlarmRuleRequest 请求对象
      * @return AddAlarmRuleResponse
@@ -30,7 +34,11 @@ public class AomClient {
 
     /**
      * 添加阈值规则
+     *
      * 该接口用于添加一条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddAlarmRuleRequest 请求对象
      * @return SyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>
@@ -41,7 +49,11 @@ public class AomClient {
 
     /**
      * 添加监控数据
+     *
      * 该接口用于向服务端添加一条或多条监控数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddMetricDataRequest 请求对象
      * @return AddMetricDataResponse
@@ -52,7 +64,11 @@ public class AomClient {
 
     /**
      * 添加监控数据
+     *
      * 该接口用于向服务端添加一条或多条监控数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddMetricDataRequest 请求对象
      * @return SyncInvoker<AddMetricDataRequest, AddMetricDataResponse>
@@ -63,7 +79,11 @@ public class AomClient {
 
     /**
      * 添加或修改服务发现规则
+     *
      * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return AddOrUpdateServiceDiscoveryRulesResponse
@@ -74,7 +94,11 @@ public class AomClient {
 
     /**
      * 添加或修改服务发现规则
+     *
      * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>
@@ -85,7 +109,11 @@ public class AomClient {
 
     /**
      * 统计事件告警信息
+     *
      * 该接口用于分段统计指定条件下的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CountEventsRequest 请求对象
      * @return CountEventsResponse
@@ -96,7 +124,11 @@ public class AomClient {
 
     /**
      * 统计事件告警信息
+     *
      * 该接口用于分段统计指定条件下的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CountEventsRequest 请求对象
      * @return SyncInvoker<CountEventsRequest, CountEventsResponse>
@@ -107,7 +139,11 @@ public class AomClient {
 
     /**
      * 删除阈值规则
+     *
      * 该接口用于删除阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleRequest 请求对象
      * @return DeleteAlarmRuleResponse
@@ -118,7 +154,11 @@ public class AomClient {
 
     /**
      * 删除阈值规则
+     *
      * 该接口用于删除阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>
@@ -129,7 +169,11 @@ public class AomClient {
 
     /**
      * 批量删除阈值规则
+     *
      * 批量删除阈值规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAlarmRulesRequest 请求对象
      * @return DeleteAlarmRulesResponse
@@ -140,7 +184,11 @@ public class AomClient {
 
     /**
      * 批量删除阈值规则
+     *
      * 批量删除阈值规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAlarmRulesRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>
@@ -151,7 +199,11 @@ public class AomClient {
 
     /**
      * 删除服务发现规则
+     *
      * 该接口用于删除服务发现规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return DeleteserviceDiscoveryRulesResponse
@@ -162,7 +214,11 @@ public class AomClient {
 
     /**
      * 删除服务发现规则
+     *
      * 该接口用于删除服务发现规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>
@@ -173,7 +229,11 @@ public class AomClient {
 
     /**
      * 查询阈值规则列表
+     *
      * 该接口用于查询阈值规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAlarmRuleRequest 请求对象
      * @return ListAlarmRuleResponse
@@ -184,7 +244,11 @@ public class AomClient {
 
     /**
      * 查询阈值规则列表
+     *
      * 该接口用于查询阈值规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAlarmRuleRequest 请求对象
      * @return SyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>
@@ -195,7 +259,11 @@ public class AomClient {
 
     /**
      * 查询事件告警信息
+     *
      * 该接口用于查询对应用户的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return ListEventsResponse
@@ -206,7 +274,11 @@ public class AomClient {
 
     /**
      * 查询事件告警信息
+     *
      * 该接口用于查询对应用户的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -217,7 +289,11 @@ public class AomClient {
 
     /**
      * 查询日志
+     *
      * 该接口用于查询不同维度(例如集群、IP、应用等)下的日志内容，支持分页查询。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLogItemsRequest 请求对象
      * @return ListLogItemsResponse
@@ -228,7 +304,11 @@ public class AomClient {
 
     /**
      * 查询日志
+     *
      * 该接口用于查询不同维度(例如集群、IP、应用等)下的日志内容，支持分页查询。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLogItemsRequest 请求对象
      * @return SyncInvoker<ListLogItemsRequest, ListLogItemsResponse>
@@ -239,7 +319,11 @@ public class AomClient {
 
     /**
      * 查询指标
+     *
      * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMetricItemsRequest 请求对象
      * @return ListMetricItemsResponse
@@ -250,7 +334,11 @@ public class AomClient {
 
     /**
      * 查询指标
+     *
      * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMetricItemsRequest 请求对象
      * @return SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>
@@ -261,7 +349,11 @@ public class AomClient {
 
     /**
      * 查询时序数据
+     *
      * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSampleRequest 请求对象
      * @return ListSampleResponse
@@ -272,7 +364,11 @@ public class AomClient {
 
     /**
      * 查询时序数据
+     *
      * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSampleRequest 请求对象
      * @return SyncInvoker<ListSampleRequest, ListSampleResponse>
@@ -283,7 +379,11 @@ public class AomClient {
 
     /**
      * 查询时间序列
+     *
      * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSeriesRequest 请求对象
      * @return ListSeriesResponse
@@ -294,7 +394,11 @@ public class AomClient {
 
     /**
      * 查询时间序列
+     *
      * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSeriesRequest 请求对象
      * @return SyncInvoker<ListSeriesRequest, ListSeriesResponse>
@@ -305,7 +409,11 @@ public class AomClient {
 
     /**
      * 查询系统中已有服务发现规则
+     *
      * 该接口用于查询系统当前已存在的服务发现规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return ListServiceDiscoveryRulesResponse
@@ -316,7 +424,11 @@ public class AomClient {
 
     /**
      * 查询系统中已有服务发现规则
+     *
      * 该接口用于查询系统当前已存在的服务发现规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>
@@ -327,7 +439,11 @@ public class AomClient {
 
     /**
      * 上报事件告警信息
+     *
      * 该接口用于上报对应用户的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param PushEventsRequest 请求对象
      * @return PushEventsResponse
@@ -338,7 +454,11 @@ public class AomClient {
 
     /**
      * 上报事件告警信息
+     *
      * 该接口用于上报对应用户的事件、告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param PushEventsRequest 请求对象
      * @return SyncInvoker<PushEventsRequest, PushEventsResponse>
@@ -349,7 +469,11 @@ public class AomClient {
 
     /**
      * 查询单条阈值规则
+     *
      * 该接口用于查询单条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAlarmRuleRequest 请求对象
      * @return ShowAlarmRuleResponse
@@ -360,7 +484,11 @@ public class AomClient {
 
     /**
      * 查询单条阈值规则
+     *
      * 该接口用于查询单条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAlarmRuleRequest 请求对象
      * @return SyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>
@@ -371,7 +499,11 @@ public class AomClient {
 
     /**
      * 查询监控数据
+     *
      * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMetricsDataRequest 请求对象
      * @return ShowMetricsDataResponse
@@ -382,7 +514,11 @@ public class AomClient {
 
     /**
      * 查询监控数据
+     *
      * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMetricsDataRequest 请求对象
      * @return SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>
@@ -393,7 +529,11 @@ public class AomClient {
 
     /**
      * 修改阈值规则
+     *
      * 该接口用于修改一条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleRequest 请求对象
      * @return UpdateAlarmRuleResponse
@@ -404,7 +544,11 @@ public class AomClient {
 
     /**
      * 修改阈值规则
+     *
      * 该接口用于修改一条阈值规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>
@@ -415,7 +559,11 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return ListInstantQueryAomPromGetResponse
@@ -426,7 +574,11 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
@@ -437,7 +589,11 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return ListInstantQueryAomPromPostResponse
@@ -448,7 +604,11 @@ public class AomClient {
 
     /**
      * 瞬时数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>
@@ -459,7 +619,11 @@ public class AomClient {
 
     /**
      * 查询标签值
+     *
      * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return ListLabelValuesAomPromGetResponse
@@ -470,7 +634,11 @@ public class AomClient {
 
     /**
      * 查询标签值
+     *
      * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
@@ -481,7 +649,11 @@ public class AomClient {
 
     /**
      * 获取标签名列表
+     *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return ListLabelsAomPromGetResponse
@@ -492,7 +664,11 @@ public class AomClient {
 
     /**
      * 获取标签名列表
+     *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
@@ -503,7 +679,11 @@ public class AomClient {
 
     /**
      * 获取标签名列表
+     *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return ListLabelsAomPromPostResponse
@@ -514,7 +694,11 @@ public class AomClient {
 
     /**
      * 获取标签名列表
+     *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
@@ -525,7 +709,11 @@ public class AomClient {
 
     /**
      * 元数据查询
+     *
      * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return ListMetadataAomPromGetResponse
@@ -536,7 +724,11 @@ public class AomClient {
 
     /**
      * 元数据查询
+     *
      * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
@@ -547,7 +739,11 @@ public class AomClient {
 
     /**
      * 区间数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return ListRangeQueryAomPromGetResponse
@@ -558,7 +754,11 @@ public class AomClient {
 
     /**
      * 区间数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
@@ -569,7 +769,11 @@ public class AomClient {
 
     /**
      * 区间数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return ListRangeQueryAomPromPostResponse
@@ -580,7 +784,11 @@ public class AomClient {
 
     /**
      * 区间数据查询
+     *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>

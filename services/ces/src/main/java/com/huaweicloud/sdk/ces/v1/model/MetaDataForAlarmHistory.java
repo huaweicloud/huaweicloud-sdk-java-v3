@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询告警历史返回的总条数。 */
+/**
+ * 查询告警历史返回的总条数。
+ */
 public class MetaDataForAlarmHistory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class MetaDataForAlarmHistory {
         return this;
     }
 
-    /** 查询告警历史返回的总条数。
-     * 
-     * @return total */
+    /**
+     * 查询告警历史返回的总条数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -55,7 +58,10 @@ public class MetaDataForAlarmHistory {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

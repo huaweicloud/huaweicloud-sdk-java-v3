@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 日志关键词统计请求体。 */
+/**
+ * 日志关键词统计请求体。
+ */
 public class QueryLogKeyWordCountRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -59,9 +62,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -75,9 +79,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 步长间隔
-     * 
-     * @return stepInterval */
+    /**
+     * 步长间隔
+     * @return stepInterval
+     */
     public Long getStepInterval() {
         return stepInterval;
     }
@@ -91,9 +96,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return groupId */
+    /**
+     * 日志组ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -107,9 +113,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return streamId */
+    /**
+     * 日志流ID
+     * @return streamId
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -123,9 +130,10 @@ public class QueryLogKeyWordCountRequestBody {
         return this;
     }
 
-    /** 关键词
-     * 
-     * @return keyWord */
+    /**
+     * 关键词
+     * @return keyWord
+     */
     public String getKeyWord() {
         return keyWord;
     }
@@ -170,7 +178,10 @@ public class QueryLogKeyWordCountRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

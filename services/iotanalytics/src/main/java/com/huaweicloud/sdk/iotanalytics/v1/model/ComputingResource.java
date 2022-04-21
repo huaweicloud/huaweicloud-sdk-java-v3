@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ComputingResource */
+/**
+ * ComputingResource
+ */
 public class ComputingResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源ID。
-     * 
-     * @return computingResourceId */
+    /**
+     * 计算资源ID。
+     * @return computingResourceId
+     */
     public String getComputingResourceId() {
         return computingResourceId;
     }
@@ -74,9 +77,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源名称。
-     * 
-     * @return computingResourceName */
+    /**
+     * 计算资源名称。
+     * @return computingResourceName
+     */
     public String getComputingResourceName() {
         return computingResourceName;
     }
@@ -90,9 +94,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源描述信息。
-     * 
-     * @return description */
+    /**
+     * 计算资源描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -106,9 +111,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 创建计算资源的用户。
-     * 
-     * @return owner */
+    /**
+     * 创建计算资源的用户。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -122,9 +128,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 创建计算资源的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return createdTime */
+    /**
+     * 创建计算资源的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -138,9 +145,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源的类型,。目前支持：sql
-     * 
-     * @return computingResourceType */
+    /**
+     * 计算资源的类型,。目前支持：sql
+     * @return computingResourceType
+     */
     public String getComputingResourceType() {
         return computingResourceType;
     }
@@ -154,9 +162,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 与该计算资源绑定的计算单元数。设置值当前只支持16，64，256。
-     * 
-     * @return cuCount */
+    /**
+     * 与该计算资源绑定的计算单元数。设置值当前只支持16，64，256。
+     * @return cuCount
+     */
     public Integer getCuCount() {
         return cuCount;
     }
@@ -170,9 +179,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源的收费模式。“1”表示按照CU时收费。“2”表示按照包年包月收费。
-     * 
-     * @return chargingMode */
+    /**
+     * 计算资源的收费模式。“1”表示按照CU时收费。“2”表示按照包年包月收费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -186,9 +196,10 @@ public class ComputingResource {
         return this;
     }
 
-    /** 计算资源类型。0：共享资源 1：专属资源
-     * 
-     * @return resourceMode */
+    /**
+     * 计算资源类型。0：共享资源 1：专属资源
+     * @return resourceMode
+     */
     public Integer getResourceMode() {
         return resourceMode;
     }
@@ -247,7 +258,10 @@ public class ComputingResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

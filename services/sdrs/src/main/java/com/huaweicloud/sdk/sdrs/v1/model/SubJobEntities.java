@@ -45,9 +45,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 复制对ID
-     * 
-     * @return replicationPairId */
+    /**
+     * 复制对ID
+     * @return replicationPairId
+     */
     public String getReplicationPairId() {
         return replicationPairId;
     }
@@ -61,9 +62,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 组成复制对的云硬盘ID
-     * 
-     * @return volumeIds */
+    /**
+     * 组成复制对的云硬盘ID
+     * @return volumeIds
+     */
     public String getVolumeIds() {
         return volumeIds;
     }
@@ -77,9 +79,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 保护组ID
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组ID
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -93,9 +96,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 保护实例ID
-     * 
-     * @return protectedInstanceId */
+    /**
+     * 保护实例ID
+     * @return protectedInstanceId
+     */
     public String getProtectedInstanceId() {
         return protectedInstanceId;
     }
@@ -109,9 +113,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 容灾站点服务器ID
-     * 
-     * @return nativeServerId */
+    /**
+     * 容灾站点服务器ID
+     * @return nativeServerId
+     */
     public String getNativeServerId() {
         return nativeServerId;
     }
@@ -125,9 +130,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 网卡ID
-     * 
-     * @return nicId */
+    /**
+     * 网卡ID
+     * @return nicId
+     */
     public String getNicId() {
         return nicId;
     }
@@ -172,7 +178,10 @@ public class SubJobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

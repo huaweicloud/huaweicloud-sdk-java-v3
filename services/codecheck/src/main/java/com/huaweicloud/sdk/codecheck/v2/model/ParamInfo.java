@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 任务详情 */
+/**
+ * 任务详情
+ */
 public class ParamInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 仓库地址
-     * 
-     * @return url */
+    /**
+     * 仓库地址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -64,9 +67,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 仓库分支
-     * 
-     * @return branch */
+    /**
+     * 仓库分支
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -80,9 +84,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 仓库语言
-     * 
-     * @return language */
+    /**
+     * 仓库语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -96,9 +101,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 排除的目录
-     * 
-     * @return excludeDir */
+    /**
+     * 排除的目录
+     * @return excludeDir
+     */
     public String getExcludeDir() {
         return excludeDir;
     }
@@ -112,9 +118,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 编码格式
-     * 
-     * @return encode */
+    /**
+     * 编码格式
+     * @return encode
+     */
     public String getEncode() {
         return encode;
     }
@@ -128,9 +135,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** 编译配置信息
-     * 
-     * @return compileConfig */
+    /**
+     * 编译配置信息
+     * @return compileConfig
+     */
     public String getCompileConfig() {
         return compileConfig;
     }
@@ -144,9 +152,10 @@ public class ParamInfo {
         return this;
     }
 
-    /** g规则集名称
-     * 
-     * @return ruleTemplate */
+    /**
+     * g规则集名称
+     * @return ruleTemplate
+     */
     public String getRuleTemplate() {
         return ruleTemplate;
     }
@@ -191,7 +200,10 @@ public class ParamInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

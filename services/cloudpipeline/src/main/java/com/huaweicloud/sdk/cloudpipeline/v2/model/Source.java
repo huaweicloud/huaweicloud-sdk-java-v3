@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源码仓库参数 */
+/**
+ * 源码仓库参数
+ */
 public class Source {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class Source {
         return this;
     }
 
-    /** 源码仓名字
-     * 
-     * @return codehubName */
+    /**
+     * 源码仓名字
+     * @return codehubName
+     */
     public String getCodehubName() {
         return codehubName;
     }
@@ -103,9 +106,10 @@ public class Source {
         return this;
     }
 
-    /** 触发分支
-     * 
-     * @return branches */
+    /**
+     * 触发分支
+     * @return branches
+     */
     public List<String> getBranches() {
         return branches;
     }
@@ -119,9 +123,10 @@ public class Source {
         return this;
     }
 
-    /** 源码仓来源
-     * 
-     * @return scmType */
+    /**
+     * 源码仓来源
+     * @return scmType
+     */
     public String getScmType() {
         return scmType;
     }
@@ -135,9 +140,10 @@ public class Source {
         return this;
     }
 
-    /** 是否开启触发执行流水线功能
-     * 
-     * @return hookFlag */
+    /**
+     * 是否开启触发执行流水线功能
+     * @return hookFlag
+     */
     public Boolean getHookFlag() {
         return hookFlag;
     }
@@ -151,9 +157,10 @@ public class Source {
         return this;
     }
 
-    /** 触发分支
-     * 
-     * @return branch */
+    /**
+     * 触发分支
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -167,9 +174,10 @@ public class Source {
         return this;
     }
 
-    /** 源码仓ssh地址
-     * 
-     * @return gitUrl */
+    /**
+     * 源码仓ssh地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -183,9 +191,10 @@ public class Source {
         return this;
     }
 
-    /** 源码仓ID
-     * 
-     * @return codehubId */
+    /**
+     * 源码仓ID
+     * @return codehubId
+     */
     public String getCodehubId() {
         return codehubId;
     }
@@ -199,9 +208,10 @@ public class Source {
         return this;
     }
 
-    /** 源码仓首页url
-     * 
-     * @return webUrl */
+    /**
+     * 源码仓首页url
+     * @return webUrl
+     */
     public String getWebUrl() {
         return webUrl;
     }
@@ -231,9 +241,10 @@ public class Source {
         return this;
     }
 
-    /** 分支列表
-     * 
-     * @return branchList */
+    /**
+     * 分支列表
+     * @return branchList
+     */
     public List<String> getBranchList() {
         return branchList;
     }
@@ -247,9 +258,10 @@ public class Source {
         return this;
     }
 
-    /** 初始化ID
-     * 
-     * @return initId */
+    /**
+     * 初始化ID
+     * @return initId
+     */
     public String getInitId() {
         return initId;
     }
@@ -263,9 +275,10 @@ public class Source {
         return this;
     }
 
-    /** 是否废弃
-     * 
-     * @return disable */
+    /**
+     * 是否废弃
+     * @return disable
+     */
     public Boolean getDisable() {
         return disable;
     }
@@ -325,7 +338,10 @@ public class Source {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

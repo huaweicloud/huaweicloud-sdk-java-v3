@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** AclBindApiInfo */
+/**
+ * AclBindApiInfo
+ */
 public class AclBindApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -80,9 +83,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -96,9 +100,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return apiType */
+    /**
+     * API类型
+     * @return apiType
+     */
     public Long getApiType() {
         return apiType;
     }
@@ -112,9 +117,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API的描述信息
-     * 
-     * @return apiRemark */
+    /**
+     * API的描述信息
+     * @return apiRemark
+     */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -128,9 +134,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** 生效的环境编号
-     * 
-     * @return envId */
+    /**
+     * 生效的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -144,9 +151,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** 生效的环境名称
-     * 
-     * @return envName */
+    /**
+     * 生效的环境名称
+     * @return envName
+     */
     public String getEnvName() {
         return envName;
     }
@@ -160,9 +168,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** 绑定关系编号
-     * 
-     * @return bindId */
+    /**
+     * 绑定关系编号
+     * @return bindId
+     */
     public String getBindId() {
         return bindId;
     }
@@ -176,9 +185,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API分组名称
-     * 
-     * @return groupName */
+    /**
+     * API分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -192,9 +202,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return bindTime */
+    /**
+     * 绑定时间
+     * @return bindTime
+     */
     public OffsetDateTime getBindTime() {
         return bindTime;
     }
@@ -208,9 +219,10 @@ public class AclBindApiInfo {
         return this;
     }
 
-    /** API发布记录编号
-     * 
-     * @return publishId */
+    /**
+     * API发布记录编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -261,7 +273,10 @@ public class AclBindApiInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

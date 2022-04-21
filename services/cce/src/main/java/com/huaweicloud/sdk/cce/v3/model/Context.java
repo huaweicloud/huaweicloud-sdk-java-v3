@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Context */
+/**
+ * Context
+ */
 public class Context {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Context {
         return this;
     }
 
-    /** 上下文cluster信息。
-     * 
-     * @return cluster */
+    /**
+     * 上下文cluster信息。 
+     * @return cluster
+     */
     public String getCluster() {
         return cluster;
     }
@@ -39,9 +42,10 @@ public class Context {
         return this;
     }
 
-    /** 上下文user信息。
-     * 
-     * @return user */
+    /**
+     * 上下文user信息。 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -77,7 +81,10 @@ public class Context {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

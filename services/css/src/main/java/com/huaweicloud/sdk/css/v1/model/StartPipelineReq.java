@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StartPipelineReq */
+/**
+ * StartPipelineReq
+ */
 public class StartPipelineReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,10 +28,10 @@ public class StartPipelineReq {
         return this;
     }
 
-    /** 是否保持常驻。
-     * 开启“保持常驻”适用于需要长期运行的业务。开启“保持常驻”以后，将会在每个节点上面配置一个守护进程，当logstash服务出现故障的时候，会主动拉起并修复。“保持常驻”不适用于短期运行的业务，因为多次主动拉起logstash服务会导致数据迁移重复。
-     * 
-     * @return keepAlive */
+    /**
+     * 是否保持常驻。 开启“保持常驻”适用于需要长期运行的业务。开启“保持常驻”以后，将会在每个节点上面配置一个守护进程，当logstash服务出现故障的时候，会主动拉起并修复。“保持常驻”不适用于短期运行的业务，因为多次主动拉起logstash服务会导致数据迁移重复。
+     * @return keepAlive
+     */
     public Boolean getKeepAlive() {
         return keepAlive;
     }
@@ -59,9 +61,10 @@ public class StartPipelineReq {
         return this;
     }
 
-    /** 配置文件名称。
-     * 
-     * @return names */
+    /**
+     * 配置文件名称。
+     * @return names
+     */
     public List<String> getNames() {
         return names;
     }
@@ -98,7 +101,10 @@ public class StartPipelineReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

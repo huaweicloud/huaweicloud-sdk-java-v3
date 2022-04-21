@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Job的响应信息。 */
+/**
+ * Job的响应信息。
+ */
 public class JobEntities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 云硬盘的类型。
-     * 
-     * @return volumeType */
+    /**
+     * 云硬盘的类型。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -57,9 +60,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 云硬盘的容量，单位为GB。
-     * 
-     * @return size */
+    /**
+     * 云硬盘的容量，单位为GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -73,9 +77,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 云硬盘的ID。
-     * 
-     * @return volumeId */
+    /**
+     * 云硬盘的ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -89,9 +94,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 云硬盘的名称。
-     * 
-     * @return name */
+    /**
+     * 云硬盘的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +127,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 子Job的信息。当存在子Job信息时，entities中的其他字段将不会返回。
-     * 
-     * @return subJobs */
+    /**
+     * 子Job的信息。当存在子Job信息时，entities中的其他字段将不会返回。
+     * @return subJobs
+     */
     public List<SubJob> getSubJobs() {
         return subJobs;
     }
@@ -164,7 +171,10 @@ public class JobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

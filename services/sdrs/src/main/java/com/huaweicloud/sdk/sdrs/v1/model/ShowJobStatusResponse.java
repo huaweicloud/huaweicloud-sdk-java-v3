@@ -12,22 +12,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobStatusResponse extends SdkResponse {
 
-    /** Job的状态。 SUCCESS：成功。 RUNNING：运行中。 FAIL：失败。 INIT：正在初始化。 */
+    /**
+     * Job的状态。 SUCCESS：成功。 RUNNING：运行中。 FAIL：失败。 INIT：正在初始化。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +151,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Job的状态。 SUCCESS：成功。 RUNNING：运行中。 FAIL：失败。 INIT：正在初始化。
-     * 
-     * @return status */
+    /**
+     * Job的状态。 SUCCESS：成功。 RUNNING：运行中。 FAIL：失败。 INIT：正在初始化。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -164,9 +177,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get entities
-     * 
-     * @return entities */
+    /**
+     * Get entities
+     * @return entities
+     */
     public JobEntities getEntities() {
         return entities;
     }
@@ -180,9 +194,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Job ID。
-     * 
-     * @return jobId */
+    /**
+     * Job ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -196,11 +211,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Job的类型。createProtectionGroupNoCG：创建保护组。deleteProtectionGroupNoCG：删除保护组。startProtectionGroupNoCG
-     * ：保护组开始保护。reprotectProtectionGroupNoCG ：保护组重保护。stopProtectionGroupNoCG ：保护组停止保护。failoverProtectionGroupNoCG
-     * ：保护组故障切换。reverseProtectionGroupNoCG：保护组切换。createProtectedInstanceNoCG：创建保护实例。deleteProtectedInstanceNoCG：删除保护实例。attachReplicationPairNew：保护实例挂载复制对。detachReplicationPairNew：保护实例卸载复制对。addNicNew：保护实例添加网卡。deleteNicNew：保护实例删除网卡。resizeProtectedInstanceNew：保护实例变更规格。createReplicationPairNoCG：创建复制对。deleteReplicationPairNoCG：删除复制对。expandReplicationPairNew：复制对扩容。createDisasterRecoveryDrill：创建容灾演练。deleteDisasterRecoveryDrill：删除容灾演练。
-     * 
-     * @return jobType */
+    /**
+     * Job的类型。createProtectionGroupNoCG：创建保护组。deleteProtectionGroupNoCG：删除保护组。startProtectionGroupNoCG ：保护组开始保护。reprotectProtectionGroupNoCG ：保护组重保护。stopProtectionGroupNoCG ：保护组停止保护。failoverProtectionGroupNoCG  ：保护组故障切换。reverseProtectionGroupNoCG：保护组切换。createProtectedInstanceNoCG：创建保护实例。deleteProtectedInstanceNoCG：删除保护实例。attachReplicationPairNew：保护实例挂载复制对。detachReplicationPairNew：保护实例卸载复制对。addNicNew：保护实例添加网卡。deleteNicNew：保护实例删除网卡。resizeProtectedInstanceNew：保护实例变更规格。createReplicationPairNoCG：创建复制对。deleteReplicationPairNoCG：删除复制对。expandReplicationPairNew：复制对扩容。createDisasterRecoveryDrill：创建容灾演练。deleteDisasterRecoveryDrill：删除容灾演练。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -214,9 +228,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -230,9 +245,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 结束时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -246,9 +262,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Job执行失败时的错误码。
-     * 
-     * @return errorCode */
+    /**
+     * Job执行失败时的错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -262,9 +279,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Job执行失败时的错误原因。
-     * 
-     * @return failReason */
+    /**
+     * Job执行失败时的错误原因。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -313,7 +331,10 @@ public class ShowJobStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

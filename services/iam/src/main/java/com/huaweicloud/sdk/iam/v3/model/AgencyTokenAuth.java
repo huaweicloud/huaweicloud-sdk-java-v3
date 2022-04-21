@@ -35,9 +35,10 @@ public class AgencyTokenAuth {
         return this;
     }
 
-    /** Get identity
-     * 
-     * @return identity */
+    /**
+     * Get identity
+     * @return identity
+     */
     public AgencyTokenIdentity getIdentity() {
         return identity;
     }
@@ -60,9 +61,10 @@ public class AgencyTokenAuth {
         return this;
     }
 
-    /** Get scope
-     * 
-     * @return scope */
+    /**
+     * Get scope
+     * @return scope
+     */
     public AgencyTokenScope getScope() {
         return scope;
     }
@@ -99,7 +101,10 @@ public class AgencyTokenAuth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

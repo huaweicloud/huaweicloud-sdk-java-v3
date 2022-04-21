@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 凭据版本被标记的状态。 */
+/**
+ * 凭据版本被标记的状态。
+ */
 public class VersionMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class VersionMetadata {
         return this;
     }
 
-    /** 凭据的版本号标识符，凭据对象下唯一。
-     * 
-     * @return id */
+    /**
+     * 凭据的版本号标识符，凭据对象下唯一。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,9 +60,12 @@ public class VersionMetadata {
         return this;
     }
 
-    /** 凭据版本创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 13
-     * 
-     * @return createTime */
+    /**
+     * 凭据版本创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+     * minimum: 0
+     * maximum: 13
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -73,9 +79,10 @@ public class VersionMetadata {
         return this;
     }
 
-    /** 加密版本凭据值的KMS主密钥ID。
-     * 
-     * @return kmsKeyId */
+    /**
+     * 加密版本凭据值的KMS主密钥ID。 
+     * @return kmsKeyId
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -89,9 +96,10 @@ public class VersionMetadata {
         return this;
     }
 
-    /** 凭据名称。
-     * 
-     * @return secretName */
+    /**
+     * 凭据名称。
+     * @return secretName
+     */
     public String getSecretName() {
         return secretName;
     }
@@ -121,10 +129,10 @@ public class VersionMetadata {
         return this;
     }
 
-    /** 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果你创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。
-     * 如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。
-     * 
-     * @return versionStages */
+    /**
+     * 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果你创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。  如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。 
+     * @return versionStages
+     */
     public List<String> getVersionStages() {
         return versionStages;
     }
@@ -167,7 +175,10 @@ public class VersionMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

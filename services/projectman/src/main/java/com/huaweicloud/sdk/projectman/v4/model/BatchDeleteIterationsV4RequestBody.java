@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteIterationsV4RequestBody */
+/**
+ * BatchDeleteIterationsV4RequestBody
+ */
 public class BatchDeleteIterationsV4RequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteIterationsV4RequestBody {
         return this;
     }
 
-    /** 迭代的id
-     * 
-     * @return iterationIds */
+    /**
+     * 迭代的id
+     * @return iterationIds
+     */
     public List<Integer> getIterationIds() {
         return iterationIds;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteIterationsV4RequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

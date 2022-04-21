@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 生成接入凭证的结构体。 */
+/**
+ * 生成接入凭证的结构体。
+ */
 public class CreateAccessCodeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreateAccessCodeRequestBody {
         return this;
     }
 
-    /** **参数说明**：接入凭证类型，默认为AMQP的接入凭证类型。 **取值范围**： - AMQP
-     * 
-     * @return type */
+    /**
+     * **参数说明**：接入凭证类型，默认为AMQP的接入凭证类型。 **取值范围**： - AMQP 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -55,7 +58,10 @@ public class CreateAccessCodeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

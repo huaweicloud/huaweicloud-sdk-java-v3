@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ImageDetectionResultDetailPolitics */
+/**
+ * ImageDetectionResultDetailPolitics
+ */
 public class ImageDetectionResultDetailPolitics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ImageDetectionResultDetailPolitics {
         return this;
     }
 
-    /** 置信度，取值范围 0-1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围 0-1。
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -45,9 +48,10 @@ public class ImageDetectionResultDetailPolitics {
         return this;
     }
 
-    /** 对应的政治人物信息。
-     * 
-     * @return label */
+    /**
+     * 对应的政治人物信息。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -71,9 +75,10 @@ public class ImageDetectionResultDetailPolitics {
         return this;
     }
 
-    /** Get faceDetail
-     * 
-     * @return faceDetail */
+    /**
+     * Get faceDetail
+     * @return faceDetail
+     */
     public ImageDetectionResultDetailFaceDetail getFaceDetail() {
         return faceDetail;
     }
@@ -112,7 +117,10 @@ public class ImageDetectionResultDetailPolitics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 自定义安全策略创建参数。 */
+/**
+ * 自定义安全策略创建参数。
+ */
 public class CreateSecurityPolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,100 +38,162 @@ public class CreateSecurityPolicyOption {
 
     private List<String> protocols = null;
 
-    /** Gets or Sets ciphers */
+    /**
+    * Gets or Sets ciphers
+    */
     public static final class CiphersEnum {
 
-        /** Enum ECDHE_RSA_AES256_GCM_SHA384 for value: "ECDHE-RSA-AES256-GCM-SHA384" */
+        /**
+         * Enum ECDHE_RSA_AES256_GCM_SHA384 for value: "ECDHE-RSA-AES256-GCM-SHA384"
+         */
         public static final CiphersEnum ECDHE_RSA_AES256_GCM_SHA384 = new CiphersEnum("ECDHE-RSA-AES256-GCM-SHA384");
 
-        /** Enum ECDHE_RSA_AES128_GCM_SHA256 for value: "ECDHE-RSA-AES128-GCM-SHA256" */
+        /**
+         * Enum ECDHE_RSA_AES128_GCM_SHA256 for value: "ECDHE-RSA-AES128-GCM-SHA256"
+         */
         public static final CiphersEnum ECDHE_RSA_AES128_GCM_SHA256 = new CiphersEnum("ECDHE-RSA-AES128-GCM-SHA256");
 
-        /** Enum ECDHE_ECDSA_AES256_GCM_SHA384 for value: "ECDHE-ECDSA-AES256-GCM-SHA384" */
+        /**
+         * Enum ECDHE_ECDSA_AES256_GCM_SHA384 for value: "ECDHE-ECDSA-AES256-GCM-SHA384"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES256_GCM_SHA384 =
             new CiphersEnum("ECDHE-ECDSA-AES256-GCM-SHA384");
 
-        /** Enum ECDHE_ECDSA_AES128_GCM_SHA256 for value: "ECDHE-ECDSA-AES128-GCM-SHA256" */
+        /**
+         * Enum ECDHE_ECDSA_AES128_GCM_SHA256 for value: "ECDHE-ECDSA-AES128-GCM-SHA256"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES128_GCM_SHA256 =
             new CiphersEnum("ECDHE-ECDSA-AES128-GCM-SHA256");
 
-        /** Enum AES128_GCM_SHA256 for value: "AES128-GCM-SHA256" */
+        /**
+         * Enum AES128_GCM_SHA256 for value: "AES128-GCM-SHA256"
+         */
         public static final CiphersEnum AES128_GCM_SHA256 = new CiphersEnum("AES128-GCM-SHA256");
 
-        /** Enum AES256_GCM_SHA384 for value: "AES256-GCM-SHA384" */
+        /**
+         * Enum AES256_GCM_SHA384 for value: "AES256-GCM-SHA384"
+         */
         public static final CiphersEnum AES256_GCM_SHA384 = new CiphersEnum("AES256-GCM-SHA384");
 
-        /** Enum ECDHE_ECDSA_AES128_SHA256 for value: "ECDHE-ECDSA-AES128-SHA256" */
+        /**
+         * Enum ECDHE_ECDSA_AES128_SHA256 for value: "ECDHE-ECDSA-AES128-SHA256"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES128_SHA256 = new CiphersEnum("ECDHE-ECDSA-AES128-SHA256");
 
-        /** Enum ECDHE_RSA_AES128_SHA256 for value: "ECDHE-RSA-AES128-SHA256" */
+        /**
+         * Enum ECDHE_RSA_AES128_SHA256 for value: "ECDHE-RSA-AES128-SHA256"
+         */
         public static final CiphersEnum ECDHE_RSA_AES128_SHA256 = new CiphersEnum("ECDHE-RSA-AES128-SHA256");
 
-        /** Enum AES128_SHA256 for value: "AES128-SHA256" */
+        /**
+         * Enum AES128_SHA256 for value: "AES128-SHA256"
+         */
         public static final CiphersEnum AES128_SHA256 = new CiphersEnum("AES128-SHA256");
 
-        /** Enum AES256_SHA256 for value: "AES256-SHA256" */
+        /**
+         * Enum AES256_SHA256 for value: "AES256-SHA256"
+         */
         public static final CiphersEnum AES256_SHA256 = new CiphersEnum("AES256-SHA256");
 
-        /** Enum ECDHE_ECDSA_AES256_SHA384 for value: "ECDHE-ECDSA-AES256-SHA384" */
+        /**
+         * Enum ECDHE_ECDSA_AES256_SHA384 for value: "ECDHE-ECDSA-AES256-SHA384"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES256_SHA384 = new CiphersEnum("ECDHE-ECDSA-AES256-SHA384");
 
-        /** Enum ECDHE_RSA_AES256_SHA384 for value: "ECDHE-RSA-AES256-SHA384" */
+        /**
+         * Enum ECDHE_RSA_AES256_SHA384 for value: "ECDHE-RSA-AES256-SHA384"
+         */
         public static final CiphersEnum ECDHE_RSA_AES256_SHA384 = new CiphersEnum("ECDHE-RSA-AES256-SHA384");
 
-        /** Enum ECDHE_ECDSA_AES128_SHA for value: "ECDHE-ECDSA-AES128-SHA" */
+        /**
+         * Enum ECDHE_ECDSA_AES128_SHA for value: "ECDHE-ECDSA-AES128-SHA"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES128_SHA = new CiphersEnum("ECDHE-ECDSA-AES128-SHA");
 
-        /** Enum ECDHE_RSA_AES128_SHA for value: "ECDHE-RSA-AES128-SHA" */
+        /**
+         * Enum ECDHE_RSA_AES128_SHA for value: "ECDHE-RSA-AES128-SHA"
+         */
         public static final CiphersEnum ECDHE_RSA_AES128_SHA = new CiphersEnum("ECDHE-RSA-AES128-SHA");
 
-        /** Enum ECDHE_RSA_AES256_SHA for value: "ECDHE-RSA-AES256-SHA" */
+        /**
+         * Enum ECDHE_RSA_AES256_SHA for value: "ECDHE-RSA-AES256-SHA"
+         */
         public static final CiphersEnum ECDHE_RSA_AES256_SHA = new CiphersEnum("ECDHE-RSA-AES256-SHA");
 
-        /** Enum ECDHE_ECDSA_AES256_SHA for value: "ECDHE-ECDSA-AES256-SHA" */
+        /**
+         * Enum ECDHE_ECDSA_AES256_SHA for value: "ECDHE-ECDSA-AES256-SHA"
+         */
         public static final CiphersEnum ECDHE_ECDSA_AES256_SHA = new CiphersEnum("ECDHE-ECDSA-AES256-SHA");
 
-        /** Enum AES128_SHA for value: "AES128-SHA" */
+        /**
+         * Enum AES128_SHA for value: "AES128-SHA"
+         */
         public static final CiphersEnum AES128_SHA = new CiphersEnum("AES128-SHA");
 
-        /** Enum AES256_SHA for value: "AES256-SHA" */
+        /**
+         * Enum AES256_SHA for value: "AES256-SHA"
+         */
         public static final CiphersEnum AES256_SHA = new CiphersEnum("AES256-SHA");
 
-        /** Enum CAMELLIA128_SHA for value: "CAMELLIA128-SHA" */
+        /**
+         * Enum CAMELLIA128_SHA for value: "CAMELLIA128-SHA"
+         */
         public static final CiphersEnum CAMELLIA128_SHA = new CiphersEnum("CAMELLIA128-SHA");
 
-        /** Enum DES_CBC3_SHA for value: "DES-CBC3-SHA" */
+        /**
+         * Enum DES_CBC3_SHA for value: "DES-CBC3-SHA"
+         */
         public static final CiphersEnum DES_CBC3_SHA = new CiphersEnum("DES-CBC3-SHA");
 
-        /** Enum CAMELLIA256_SHA for value: "CAMELLIA256-SHA" */
+        /**
+         * Enum CAMELLIA256_SHA for value: "CAMELLIA256-SHA"
+         */
         public static final CiphersEnum CAMELLIA256_SHA = new CiphersEnum("CAMELLIA256-SHA");
 
-        /** Enum ECDHE_RSA_CHACHA20_POLY1305 for value: "ECDHE-RSA-CHACHA20-POLY1305" */
+        /**
+         * Enum ECDHE_RSA_CHACHA20_POLY1305 for value: "ECDHE-RSA-CHACHA20-POLY1305"
+         */
         public static final CiphersEnum ECDHE_RSA_CHACHA20_POLY1305 = new CiphersEnum("ECDHE-RSA-CHACHA20-POLY1305");
 
-        /** Enum ECDHE_ECDSA_CHACHA20_POLY1305 for value: "ECDHE-ECDSA-CHACHA20-POLY1305" */
+        /**
+         * Enum ECDHE_ECDSA_CHACHA20_POLY1305 for value: "ECDHE-ECDSA-CHACHA20-POLY1305"
+         */
         public static final CiphersEnum ECDHE_ECDSA_CHACHA20_POLY1305 =
             new CiphersEnum("ECDHE-ECDSA-CHACHA20-POLY1305");
 
-        /** Enum TLS_AES_128_GCM_SHA256 for value: "TLS_AES_128_GCM_SHA256" */
+        /**
+         * Enum TLS_AES_128_GCM_SHA256 for value: "TLS_AES_128_GCM_SHA256"
+         */
         public static final CiphersEnum TLS_AES_128_GCM_SHA256 = new CiphersEnum("TLS_AES_128_GCM_SHA256");
 
-        /** Enum TLS_AES_256_GCM_SHA384 for value: "TLS_AES_256_GCM_SHA384" */
+        /**
+         * Enum TLS_AES_256_GCM_SHA384 for value: "TLS_AES_256_GCM_SHA384"
+         */
         public static final CiphersEnum TLS_AES_256_GCM_SHA384 = new CiphersEnum("TLS_AES_256_GCM_SHA384");
 
-        /** Enum TLS_CHACHA20_POLY1305_SHA256 for value: "TLS_CHACHA20_POLY1305_SHA256" */
+        /**
+         * Enum TLS_CHACHA20_POLY1305_SHA256 for value: "TLS_CHACHA20_POLY1305_SHA256"
+         */
         public static final CiphersEnum TLS_CHACHA20_POLY1305_SHA256 = new CiphersEnum("TLS_CHACHA20_POLY1305_SHA256");
 
-        /** Enum TLS_AES_128_CCM_SHA256 for value: "TLS_AES_128_CCM_SHA256" */
+        /**
+         * Enum TLS_AES_128_CCM_SHA256 for value: "TLS_AES_128_CCM_SHA256"
+         */
         public static final CiphersEnum TLS_AES_128_CCM_SHA256 = new CiphersEnum("TLS_AES_128_CCM_SHA256");
 
-        /** Enum TLS_AES_128_CCM_8_SHA256 for value: "TLS_AES_128_CCM_8_SHA256" */
+        /**
+         * Enum TLS_AES_128_CCM_8_SHA256 for value: "TLS_AES_128_CCM_8_SHA256"
+         */
         public static final CiphersEnum TLS_AES_128_CCM_8_SHA256 = new CiphersEnum("TLS_AES_128_CCM_8_SHA256");
 
-        /** Enum ECC_SM4_SM3 for value: "ECC-SM4-SM3" */
+        /**
+         * Enum ECC_SM4_SM3 for value: "ECC-SM4-SM3"
+         */
         public static final CiphersEnum ECC_SM4_SM3 = new CiphersEnum("ECC-SM4-SM3");
 
-        /** Enum ECDHE_SM4_SM3 for value: "ECDHE-SM4-SM3" */
+        /**
+         * Enum ECDHE_SM4_SM3 for value: "ECDHE-SM4-SM3"
+         */
         public static final CiphersEnum ECDHE_SM4_SM3 = new CiphersEnum("ECDHE-SM4-SM3");
 
         private static final Map<String, CiphersEnum> STATIC_FIELDS = createStaticFields();
@@ -232,9 +296,10 @@ public class CreateSecurityPolicyOption {
         return this;
     }
 
-    /** 自定义安全策略的名称。默认空字符串\"\"。
-     * 
-     * @return name */
+    /**
+     * 自定义安全策略的名称。默认空字符串\"\"。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -248,9 +313,10 @@ public class CreateSecurityPolicyOption {
         return this;
     }
 
-    /** 自定义安全策略的描述信息。默认空字符串\"\"。
-     * 
-     * @return description */
+    /**
+     * 自定义安全策略的描述信息。默认空字符串\"\"。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -264,9 +330,10 @@ public class CreateSecurityPolicyOption {
         return this;
     }
 
-    /** 所属企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 所属企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -296,9 +363,10 @@ public class CreateSecurityPolicyOption {
         return this;
     }
 
-    /** 自定义安全策略选择的TLS协议列表。取值：TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, GMTLS
-     * 
-     * @return protocols */
+    /**
+     * 自定义安全策略选择的TLS协议列表。取值：TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, GMTLS
+     * @return protocols
+     */
     public List<String> getProtocols() {
         return protocols;
     }
@@ -328,11 +396,10 @@ public class CreateSecurityPolicyOption {
         return this;
     }
 
-    /** 自定义策略的加密套件列表。支持以下加密套件：
-     * ECDHE-RSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256,AES128-GCM-SHA256,AES256-GCM-SHA384,ECDHE-ECDSA-AES128-SHA256,ECDHE-RSA-AES128-SHA256,AES128-SHA256,AES256-SHA256,ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384,ECDHE-ECDSA-AES128-SHA,ECDHE-RSA-AES128-SHA,ECDHE-RSA-AES256-SHA,ECDHE-ECDSA-AES256-SHA,AES128-SHA,AES256-SHA,CAMELLIA128-SHA,DES-CBC3-SHA,CAMELLIA256-SHA,ECDHE-RSA-CHACHA20-POLY1305,ECDHE-ECDSA-CHACHA20-POLY1305,TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256,TLS_AES_128_CCM_SHA256,TLS_AES_128_CCM_8_SHA256,ECC-SM4-SM3,
-     * ECDHE-SM4-SM3
-     * 
-     * @return ciphers */
+    /**
+     * 自定义策略的加密套件列表。支持以下加密套件： ECDHE-RSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256,AES128-GCM-SHA256,AES256-GCM-SHA384,ECDHE-ECDSA-AES128-SHA256,ECDHE-RSA-AES128-SHA256,AES128-SHA256,AES256-SHA256,ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384,ECDHE-ECDSA-AES128-SHA,ECDHE-RSA-AES128-SHA,ECDHE-RSA-AES256-SHA,ECDHE-ECDSA-AES256-SHA,AES128-SHA,AES256-SHA,CAMELLIA128-SHA,DES-CBC3-SHA,CAMELLIA256-SHA,ECDHE-RSA-CHACHA20-POLY1305,ECDHE-ECDSA-CHACHA20-POLY1305,TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256,TLS_AES_128_CCM_SHA256,TLS_AES_128_CCM_8_SHA256,ECC-SM4-SM3, ECDHE-SM4-SM3
+     * @return ciphers
+     */
     public List<CiphersEnum> getCiphers() {
         return ciphers;
     }
@@ -375,7 +442,10 @@ public class CreateSecurityPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

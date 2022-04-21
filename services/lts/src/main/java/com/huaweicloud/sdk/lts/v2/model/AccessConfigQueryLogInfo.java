@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 日志接入日志详情 */
+/**
+ * 日志接入日志详情
+ */
 public class AccessConfigQueryLogInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AccessConfigQueryLogInfo {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -49,9 +52,10 @@ public class AccessConfigQueryLogInfo {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -65,9 +69,10 @@ public class AccessConfigQueryLogInfo {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -81,9 +86,10 @@ public class AccessConfigQueryLogInfo {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -124,7 +130,10 @@ public class AccessConfigQueryLogInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

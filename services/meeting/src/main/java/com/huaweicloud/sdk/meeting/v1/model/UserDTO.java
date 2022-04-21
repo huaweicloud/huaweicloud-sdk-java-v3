@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页查询企业用户信息 */
+/**
+ * 分页查询企业用户信息
+ */
 public class UserDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return id */
+    /**
+     * 用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -114,9 +117,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 查询用户详情时, 根据不同情况，响应不同。 * 0： 查询成功且用户信息有变化， 响应会把新的信息都返回回去 * 1 ：查询成功且用户信息没有变化，响应只会返回用户ID * 2 ：用户不存在 * 3 ：无权限查询这个用户
-     * 
-     * @return statusCode */
+    /**
+     * 查询用户详情时, 根据不同情况，响应不同。 * 0： 查询成功且用户信息有变化， 响应会把新的信息都返回回去 * 1 ：查询成功且用户信息没有变化，响应只会返回用户ID * 2 ：用户不存在 * 3 ：无权限查询这个用户 
+     * @return statusCode
+     */
     public Integer getStatusCode() {
         return statusCode;
     }
@@ -130,9 +134,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户账号。
-     * 
-     * @return account */
+    /**
+     * 用户账号。
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -146,9 +151,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return name */
+    /**
+     * 用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -162,9 +168,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 英文名。
-     * 
-     * @return englishName */
+    /**
+     * 英文名。
+     * @return englishName
+     */
     public String getEnglishName() {
         return englishName;
     }
@@ -178,9 +185,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 邮箱。
-     * 
-     * @return email */
+    /**
+     * 邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -194,9 +202,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户手机。
-     * 
-     * @return phone */
+    /**
+     * 用户手机。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -210,9 +219,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户部门。
-     * 
-     * @return deptName */
+    /**
+     * 用户部门。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -226,9 +236,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户号码。
-     * 
-     * @return number */
+    /**
+     * 用户号码。
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -242,9 +253,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户信息最后更新时间。
-     * 
-     * @return updateTime */
+    /**
+     * 用户信息最后更新时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -258,9 +270,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 是否为硬终端。
-     * 
-     * @return isHardTerminal */
+    /**
+     * 是否为硬终端。
+     * @return isHardTerminal
+     */
     public Boolean getIsHardTerminal() {
         return isHardTerminal;
     }
@@ -274,9 +287,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户虚拟会议室ID。
-     * 
-     * @return vmrId */
+    /**
+     * 用户虚拟会议室ID。
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -290,9 +304,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 用户签名。
-     * 
-     * @return signature */
+    /**
+     * 用户签名。
+     * @return signature
+     */
     public String getSignature() {
         return signature;
     }
@@ -306,9 +321,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 职位。
-     * 
-     * @return title */
+    /**
+     * 职位。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -322,9 +338,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 描述信息。
-     * 
-     * @return description */
+    /**
+     * 描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -338,9 +355,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 是否隐藏手机号（如果为true，其他人查询该用户时，不会返回该用户的手机号。自己查自己是可见的）
-     * 
-     * @return hidePhone */
+    /**
+     * 是否隐藏手机号（如果为true，其他人查询该用户时，不会返回该用户的手机号。自己查自己是可见的）
+     * @return hidePhone
+     */
     public Boolean getHidePhone() {
         return hidePhone;
     }
@@ -354,9 +372,10 @@ public class UserDTO {
         return this;
     }
 
-    /** 类型： * NORMAL_USER=普通用户 * HARD_TERMINAL=硬终端用户 * WHITE_BOARD=第三方白板 * HW_VISION_MEMBER=智慧屏
-     * 
-     * @return type */
+    /**
+     * 类型： * NORMAL_USER=普通用户 * HARD_TERMINAL=硬终端用户 * WHITE_BOARD=第三方白板 * HW_VISION_MEMBER=智慧屏 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -431,7 +450,10 @@ public class UserDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

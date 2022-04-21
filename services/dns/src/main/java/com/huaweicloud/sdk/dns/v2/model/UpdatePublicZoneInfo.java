@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdatePublicZoneInfo */
+/**
+ * UpdatePublicZoneInfo
+ */
 public class UpdatePublicZoneInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdatePublicZoneInfo {
         return this;
     }
 
-    /** 域名的描述信息。长度不超过255个字符。
-     * 
-     * @return description */
+    /**
+     * 域名的描述信息。长度不超过255个字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -44,9 +47,10 @@ public class UpdatePublicZoneInfo {
         return this;
     }
 
-    /** 管理该zone的管理员邮箱。 如果为空，表示维持原值。 默认值为空。
-     * 
-     * @return email */
+    /**
+     * 管理该zone的管理员邮箱。  如果为空，表示维持原值。  默认值为空。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -60,9 +64,10 @@ public class UpdatePublicZoneInfo {
         return this;
     }
 
-    /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -101,7 +106,10 @@ public class UpdatePublicZoneInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

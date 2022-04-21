@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BasicTaskInfo */
+/**
+ * BasicTaskInfo
+ */
 public class BasicTaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** 任务Id
-     * 
-     * @return taskId */
+    /**
+     * 任务Id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -60,10 +63,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** 任务执行状态，取值如下。 \"NO_TASK\" //无任务，task_id非法 \"WAITING\" //等待启动 \"PROCESSING\" //处理中 \"SUCCEEDED\" //成功 \"FAILED\"
-     * //失败 \"CANCELED\" //已删除
-     * 
-     * @return status */
+    /**
+     * 任务执行状态，取值如下。 \"NO_TASK\"      //无任务，task_id非法 \"WAITING\"      //等待启动 \"PROCESSING\"   //处理中 \"SUCCEEDED\"    //成功 \"FAILED\"       //失败 \"CANCELED\"     //已删除 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -77,9 +80,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** 任务启动时间
-     * 
-     * @return createTime */
+    /**
+     * 任务启动时间 
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -93,9 +97,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** 任务结束时间
-     * 
-     * @return endTime */
+    /**
+     * 任务结束时间 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -118,9 +123,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -134,9 +140,10 @@ public class BasicTaskInfo {
         return this;
     }
 
-    /** 任务描述，当出现异常时，此字段为异常的原因。
-     * 
-     * @return description */
+    /**
+     * 任务描述，当出现异常时，此字段为异常的原因。 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -179,7 +186,10 @@ public class BasicTaskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

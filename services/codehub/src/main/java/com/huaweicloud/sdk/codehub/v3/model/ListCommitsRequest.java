@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCommitsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return repoId */
+    /**
+     * 仓库短id
+     * @return repoId
+     */
     public Integer getRepoId() {
         return repoId;
     }
@@ -64,9 +67,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 仓库的branch名或tag名，如果为空则查询默认分支
-     * 
-     * @return refName */
+    /**
+     * 仓库的branch名或tag名，如果为空则查询默认分支
+     * @return refName
+     */
     public String getRefName() {
         return refName;
     }
@@ -80,9 +84,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 在此日期之后或当天提交，格式 YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return since */
+    /**
+     * 在此日期之后或当天提交，格式 YYYY-MM-DDTHH:MM:SSZ
+     * @return since
+     */
     public String getSince() {
         return since;
     }
@@ -96,9 +101,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 在此日期之前或当天提交，格式 YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return until */
+    /**
+     * 在此日期之前或当天提交，格式 YYYY-MM-DDTHH:MM:SSZ
+     * @return until
+     */
     public String getUntil() {
         return until;
     }
@@ -112,9 +118,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return path */
+    /**
+     * 文件路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -128,9 +135,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 是否检索仓库中每个提交
-     * 
-     * @return all */
+    /**
+     * 是否检索仓库中每个提交
+     * @return all
+     */
     public Boolean getAll() {
         return all;
     }
@@ -144,9 +152,10 @@ public class ListCommitsRequest {
         return this;
     }
 
-    /** 有关每个提交的统计信息是否添加到响应中
-     * 
-     * @return withStats */
+    /**
+     * 有关每个提交的统计信息是否添加到响应中
+     * @return withStats
+     */
     public Boolean getWithStats() {
         return withStats;
     }
@@ -192,7 +201,10 @@ public class ListCommitsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

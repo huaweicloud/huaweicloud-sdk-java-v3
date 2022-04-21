@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 访问方式。 */
+/**
+ * 访问方式。
+ */
 public class ExternalAccesses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** ID。
-     * 
-     * @return id */
+    /**
+     * ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** Get protocol
-     * 
-     * @return protocol */
+    /**
+     * Get protocol
+     * @return protocol
+     */
     public ExternalAccessProtocol getProtocol() {
         return protocol;
     }
@@ -85,9 +89,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** 访问地址。
-     * 
-     * @return address */
+    /**
+     * 访问地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -101,9 +106,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** 应用组件进程监听端口
-     * 
-     * @return forwardPort */
+    /**
+     * 应用组件进程监听端口
+     * @return forwardPort
+     */
     public Integer getForwardPort() {
         return forwardPort;
     }
@@ -117,9 +123,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public ExternalAccessType getType() {
         return type;
     }
@@ -133,9 +140,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public ExternalAccessStatus getStatus() {
         return status;
     }
@@ -149,9 +157,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -165,9 +174,10 @@ public class ExternalAccesses {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -214,7 +224,10 @@ public class ExternalAccesses {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

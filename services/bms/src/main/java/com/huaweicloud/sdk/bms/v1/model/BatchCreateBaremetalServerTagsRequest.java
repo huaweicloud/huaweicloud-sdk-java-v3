@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class BatchCreateBaremetalServerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class BatchCreateBaremetalServerTagsRequest {
         return this;
     }
 
-    /** 裸金属服务器ID。
-     * 
-     * @return serverId */
+    /**
+     * 裸金属服务器ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -50,9 +53,10 @@ public class BatchCreateBaremetalServerTagsRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public BatchCreateBaremetalServerTagsRequestBody getBody() {
         return body;
     }
@@ -90,7 +94,10 @@ public class BatchCreateBaremetalServerTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

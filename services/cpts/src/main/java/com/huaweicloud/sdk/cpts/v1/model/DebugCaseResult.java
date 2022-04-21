@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DebugCaseResult */
+/**
+ * DebugCaseResult
+ */
 public class DebugCaseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** body
-     * 
-     * @return body */
+    /**
+     * body
+     * @return body
+     */
     public String getBody() {
         return body;
     }
@@ -80,9 +83,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** errorReason
-     * 
-     * @return errorReason */
+    /**
+     * errorReason
+     * @return errorReason
+     */
     public String getErrorReason() {
         return errorReason;
     }
@@ -105,9 +109,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** Get header
-     * 
-     * @return header */
+    /**
+     * Get header
+     * @return header
+     */
     public DebugCaseResultHeader getHeader() {
         return header;
     }
@@ -121,9 +126,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -137,9 +143,12 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** responseTime minimum: 0 maximum: 1024
-     * 
-     * @return responseTime */
+    /**
+     * responseTime
+     * minimum: 0
+     * maximum: 1024
+     * @return responseTime
+     */
     public Integer getResponseTime() {
         return responseTime;
     }
@@ -153,9 +162,12 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** result minimum: 0 maximum: 2147483647
-     * 
-     * @return result */
+    /**
+     * result
+     * minimum: 0
+     * maximum: 2147483647
+     * @return result
+     */
     public Integer getResult() {
         return result;
     }
@@ -169,9 +181,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** returnBody
-     * 
-     * @return returnBody */
+    /**
+     * returnBody
+     * @return returnBody
+     */
     public String getReturnBody() {
         return returnBody;
     }
@@ -194,9 +207,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** Get returnHeader
-     * 
-     * @return returnHeader */
+    /**
+     * Get returnHeader
+     * @return returnHeader
+     */
     public DebugCaseReturnHeader getReturnHeader() {
         return returnHeader;
     }
@@ -210,9 +224,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** statusCode
-     * 
-     * @return statusCode */
+    /**
+     * statusCode
+     * @return statusCode
+     */
     public String getStatusCode() {
         return statusCode;
     }
@@ -226,9 +241,10 @@ public class DebugCaseResult {
         return this;
     }
 
-    /** url
-     * 
-     * @return url */
+    /**
+     * url
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -281,7 +297,10 @@ public class DebugCaseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

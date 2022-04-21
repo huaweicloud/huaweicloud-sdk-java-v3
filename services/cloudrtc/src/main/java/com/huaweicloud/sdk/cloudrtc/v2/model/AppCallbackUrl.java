@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 回调配置 */
+/**
+ * 回调配置
+ */
 public class AppCallbackUrl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,14 +28,20 @@ public class AppCallbackUrl {
 
     private String authKey;
 
-    /** Gets or Sets notifyEventSubscription */
+    /**
+     * Gets or Sets notifyEventSubscription
+     */
     public static final class NotifyEventSubscriptionEnum {
 
-        /** Enum RECORD_NEW_FILE_START for value: "RECORD_NEW_FILE_START" */
+        /**
+         * Enum RECORD_NEW_FILE_START for value: "RECORD_NEW_FILE_START"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_NEW_FILE_START =
             new NotifyEventSubscriptionEnum("RECORD_NEW_FILE_START");
 
-        /** Enum RECORD_FILE_COMPLETE for value: "RECORD_FILE_COMPLETE" */
+        /**
+         * Enum RECORD_FILE_COMPLETE for value: "RECORD_FILE_COMPLETE"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_FILE_COMPLETE =
             new NotifyEventSubscriptionEnum("RECORD_FILE_COMPLETE");
 
@@ -114,9 +122,10 @@ public class AppCallbackUrl {
         return this;
     }
 
-    /** 回调通知url地址，url必须以http://或https://开头，需要支持POST调用。
-     * 
-     * @return url */
+    /**
+     * 回调通知url地址，url必须以http://或https://开头，需要支持POST调用。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -130,9 +139,10 @@ public class AppCallbackUrl {
         return this;
     }
 
-    /** 回调秘钥，主要用于鉴权。如果不设置或者为空，则回调不会增加鉴权头域字段。
-     * 
-     * @return authKey */
+    /**
+     * 回调秘钥，主要用于鉴权。如果不设置或者为空，则回调不会增加鉴权头域字段。 
+     * @return authKey
+     */
     public String getAuthKey() {
         return authKey;
     }
@@ -163,9 +173,10 @@ public class AppCallbackUrl {
         return this;
     }
 
-    /** 订阅云端录制通知消息。 取值如下： - RECORD_NEW_FILE_START：录制模块开始创建新的录制文件。 - RECORD_FILE_COMPLETE：录制模块已经生成录制文件。
-     * 
-     * @return notifyEventSubscription */
+    /**
+     * 订阅云端录制通知消息。  取值如下：  - RECORD_NEW_FILE_START：录制模块开始创建新的录制文件。  - RECORD_FILE_COMPLETE：录制模块已经生成录制文件。 
+     * @return notifyEventSubscription
+     */
     public List<NotifyEventSubscriptionEnum> getNotifyEventSubscription() {
         return notifyEventSubscription;
     }
@@ -179,9 +190,10 @@ public class AppCallbackUrl {
         return this;
     }
 
-    /** 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC。
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC。 
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -221,7 +233,10 @@ public class AppCallbackUrl {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LogicController */
+/**
+ * LogicController
+ */
 public class LogicController {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LogicController {
         return this;
     }
 
-    /** for_loop_params
-     * 
-     * @return forLoopParams */
+    /**
+     * for_loop_params
+     * @return forLoopParams
+     */
     public String getForLoopParams() {
         return forLoopParams;
     }
@@ -39,9 +42,10 @@ public class LogicController {
         return this;
     }
 
-    /** condition
-     * 
-     * @return condition */
+    /**
+     * condition
+     * @return condition
+     */
     public String getCondition() {
         return condition;
     }
@@ -78,7 +82,10 @@ public class LogicController {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

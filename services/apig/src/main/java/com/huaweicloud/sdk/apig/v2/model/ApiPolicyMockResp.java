@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiPolicyMockResp */
+/**
+ * ApiPolicyMockResp
+ */
 public class ApiPolicyMockResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class ApiPolicyMockResp {
 
     private String id;
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     */
     public static final class EffectModeEnum {
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +135,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -143,9 +152,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * 
-     * @return effectMode */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
+     */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -159,9 +169,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * 
-     * @return name */
+    /**
+     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -191,9 +202,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * 后端参数列表
+     * @return backendParams
+     */
     public List<BackendParam> getBackendParams() {
         return backendParams;
     }
@@ -223,9 +235,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 策略条件列表
-     * 
-     * @return conditions */
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
     public List<CoditionResp> getConditions() {
         return conditions;
     }
@@ -239,9 +252,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 后端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -255,9 +269,10 @@ public class ApiPolicyMockResp {
         return this;
     }
 
-    /** 返回结果
-     * 
-     * @return resultContent */
+    /**
+     * 返回结果
+     * @return resultContent
+     */
     public String getResultContent() {
         return resultContent;
     }
@@ -304,7 +319,10 @@ public class ApiPolicyMockResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

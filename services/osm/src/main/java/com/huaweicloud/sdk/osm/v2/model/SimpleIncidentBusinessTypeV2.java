@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SimpleIncidentBusinessTypeV2 */
+/**
+ * SimpleIncidentBusinessTypeV2
+ */
 public class SimpleIncidentBusinessTypeV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SimpleIncidentBusinessTypeV2 {
         return this;
     }
 
-    /** 问题类型id
-     * 
-     * @return businessTypeId */
+    /**
+     * 问题类型id
+     * @return businessTypeId
+     */
     public String getBusinessTypeId() {
         return businessTypeId;
     }
@@ -49,9 +52,10 @@ public class SimpleIncidentBusinessTypeV2 {
         return this;
     }
 
-    /** 问题类型名称
-     * 
-     * @return businessTypeName */
+    /**
+     * 问题类型名称
+     * @return businessTypeName
+     */
     public String getBusinessTypeName() {
         return businessTypeName;
     }
@@ -65,9 +69,10 @@ public class SimpleIncidentBusinessTypeV2 {
         return this;
     }
 
-    /** 对应的工单类型0咨询 5报障
-     * 
-     * @return caseType */
+    /**
+     * 对应的工单类型0咨询 5报障
+     * @return caseType
+     */
     public String getCaseType() {
         return caseType;
     }
@@ -81,9 +86,10 @@ public class SimpleIncidentBusinessTypeV2 {
         return this;
     }
 
-    /** 是否可以使用支持计划
-     * 
-     * @return canUseSupportPlan */
+    /**
+     * 是否可以使用支持计划
+     * @return canUseSupportPlan
+     */
     public Boolean getCanUseSupportPlan() {
         return canUseSupportPlan;
     }
@@ -124,7 +130,10 @@ public class SimpleIncidentBusinessTypeV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

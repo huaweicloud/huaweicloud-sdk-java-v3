@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateMembesRoleV4RequestBody */
+/**
+ * UpdateMembesRoleV4RequestBody
+ */
 public class UpdateMembesRoleV4RequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class UpdateMembesRoleV4RequestBody {
         return this;
     }
 
-    /** 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
-     * 
-     * @return roleId */
+    /**
+     * 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
+     * @return roleId
+     */
     public Integer getRoleId() {
         return roleId;
     }
@@ -58,9 +61,10 @@ public class UpdateMembesRoleV4RequestBody {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userIds */
+    /**
+     * 用户id
+     * @return userIds
+     */
     public List<String> getUserIds() {
         return userIds;
     }
@@ -97,7 +101,10 @@ public class UpdateMembesRoleV4RequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

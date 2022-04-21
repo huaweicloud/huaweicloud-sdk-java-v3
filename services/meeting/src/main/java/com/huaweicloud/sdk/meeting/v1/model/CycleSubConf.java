@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CycleSubConf */
+/**
+ * CycleSubConf
+ */
 public class CycleSubConf {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 子会议ID
-     * 
-     * @return cycleSubConfID */
+    /**
+     * 子会议ID
+     * @return cycleSubConfID
+     */
     public String getCycleSubConfID() {
         return cycleSubConfID;
     }
@@ -75,9 +78,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 会议ID，长度限制为不超过32个字符
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID，长度限制为不超过32个字符
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -91,11 +95,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔，枚举值如下： “Voice”：语音 “Video”：标清视频
-     * “HDVideo”：高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video）
-     * “Telepresence”：智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)—暂不支持 “Data”：多媒体
-     * 
-     * @return mediaType */
+    /**
+     * 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔，枚举值如下： “Voice”：语音 “Video”：标清视频 “HDVideo”：高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video） “Telepresence”：智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)—暂不支持 “Data”：多媒体
+     * @return mediaType
+     */
     public String getMediaType() {
         return mediaType;
     }
@@ -109,9 +112,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 会议起始时间(格式：YYYY-MM-DD HH:MM)
-     * 
-     * @return startTime */
+    /**
+     * 会议起始时间(格式：YYYY-MM-DD HH:MM)
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -125,9 +129,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 会议结束时间(格式：YYYY-MM-DD HH:MM)
-     * 
-     * @return endTime */
+    /**
+     * 会议结束时间(格式：YYYY-MM-DD HH:MM)
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -141,9 +146,12 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 是否自动开启录音 minimum: 0 maximum: 1
-     * 
-     * @return isAutoRecord */
+    /**
+     * 是否自动开启录音
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoRecord
+     */
     public Integer getIsAutoRecord() {
         return isAutoRecord;
     }
@@ -166,9 +174,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** Get confConfigInfo
-     * 
-     * @return confConfigInfo */
+    /**
+     * Get confConfigInfo
+     * @return confConfigInfo
+     */
     public CycleSubConfConfigDTO getConfConfigInfo() {
         return confConfigInfo;
     }
@@ -182,9 +191,12 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 录播鉴权方式，在录播类型为:录播、直播+录播时有效。 0为老的鉴权方式，url中携带token鉴权，1为企业内会议用户鉴权，2为会议内会议用户鉴权 minimum: 0 maximum: 2
-     * 
-     * @return recordAuthType */
+    /**
+     * 录播鉴权方式，在录播类型为:录播、直播+录播时有效。 0为老的鉴权方式，url中携带token鉴权，1为企业内会议用户鉴权，2为会议内会议用户鉴权
+     * minimum: 0
+     * maximum: 2
+     * @return recordAuthType
+     */
     public Integer getRecordAuthType() {
         return recordAuthType;
     }
@@ -198,9 +210,10 @@ public class CycleSubConf {
         return this;
     }
 
-    /** 会议描述，长度限制为200个字符
-     * 
-     * @return description */
+    /**
+     * 会议描述，长度限制为200个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -259,7 +272,10 @@ public class CycleSubConf {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

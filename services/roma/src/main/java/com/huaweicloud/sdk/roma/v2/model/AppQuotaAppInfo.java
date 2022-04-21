@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** AppQuotaAppInfo */
+/**
+ * AppQuotaAppInfo
+ */
 public class AppQuotaAppInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端应用编号
-     * 
-     * @return appId */
+    /**
+     * 客户端应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -80,9 +83,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端应用名称
-     * 
-     * @return name */
+    /**
+     * 客户端应用名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +100,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端应用状态： - 1：启用 - 2：禁用
-     * 
-     * @return status */
+    /**
+     * 客户端应用状态： - 1：启用 - 2：禁用
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -112,9 +117,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端应用的Key
-     * 
-     * @return appKey */
+    /**
+     * 客户端应用的Key
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -128,9 +134,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端应用描述
-     * 
-     * @return remark */
+    /**
+     * 客户端应用描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -144,9 +151,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return registerTime */
+    /**
+     * 创建时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -160,9 +168,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -176,9 +185,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 客户端配额编号
-     * 
-     * @return appQuotaId */
+    /**
+     * 客户端配额编号
+     * @return appQuotaId
+     */
     public String getAppQuotaId() {
         return appQuotaId;
     }
@@ -192,9 +202,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符
-     * 
-     * @return appQuotaName */
+    /**
+     * 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符
+     * @return appQuotaName
+     */
     public String getAppQuotaName() {
         return appQuotaName;
     }
@@ -208,9 +219,10 @@ public class AppQuotaAppInfo {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return boundTime */
+    /**
+     * 绑定时间
+     * @return boundTime
+     */
     public OffsetDateTime getBoundTime() {
         return boundTime;
     }
@@ -263,7 +275,10 @@ public class AppQuotaAppInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

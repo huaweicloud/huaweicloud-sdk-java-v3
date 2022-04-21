@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例节点信息。 */
+/**
+ * 实例节点信息。
+ */
 public class NodeResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class NodeResponse {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return id */
+    /**
+     * 节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class NodeResponse {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return name */
+    /**
+     * 节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class NodeResponse {
         return this;
     }
 
-    /** 节点类型，取值为“master”、“slave”或“readreplica”，分别对应于主节点、备节点和只读节点。
-     * 
-     * @return role */
+    /**
+     * 节点类型，取值为“master”、“slave”或“readreplica”，分别对应于主节点、备节点和只读节点。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -86,9 +91,10 @@ public class NodeResponse {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return status */
+    /**
+     * 节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -102,9 +108,10 @@ public class NodeResponse {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -145,7 +152,10 @@ public class NodeResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

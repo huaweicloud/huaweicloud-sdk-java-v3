@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ConfigurationForUpdate */
+/**
+ * ConfigurationForUpdate
+ */
 public class ConfigurationForUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ConfigurationForUpdate {
         return this;
     }
 
-    /** 参数模板名称。最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。
-     * 
-     * @return name */
+    /**
+     * 参数模板名称。最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class ConfigurationForUpdate {
         return this;
     }
 
-    /** 参数模板描述。最长256个字符，不支持>!<\"&'=特殊字符。默认为空。
-     * 
-     * @return description */
+    /**
+     * 参数模板描述。最长256个字符，不支持>!<\"&'=特殊字符。默认为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -79,10 +83,10 @@ public class ConfigurationForUpdate {
         return this;
     }
 
-    /** 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。 - key：参数名称，\"max_connections\":\"10\"。为空时不修改参数值，key不为空时value也不可为空。 -
-     * value：参数值，\"max_connections\":\"10\"。
-     * 
-     * @return values */
+    /**
+     * 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。  - key：参数名称，\"max_connections\":\"10\"。为空时不修改参数值，key不为空时value也不可为空。 - value：参数值，\"max_connections\":\"10\"。
+     * @return values
+     */
     public Map<String, String> getValues() {
         return values;
     }
@@ -121,7 +125,10 @@ public class ConfigurationForUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

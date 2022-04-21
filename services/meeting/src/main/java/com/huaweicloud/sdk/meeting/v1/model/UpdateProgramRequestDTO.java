@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新节目详情响应 */
+/**
+ * 更新节目详情响应
+ */
 public class UpdateProgramRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class UpdateProgramRequestDTO {
         return this;
     }
 
-    /** 节目名称
-     * 
-     * @return programName */
+    /**
+     * 节目名称
+     * @return programName
+     */
     public String getProgramName() {
         return programName;
     }
@@ -58,9 +61,10 @@ public class UpdateProgramRequestDTO {
         return this;
     }
 
-    /** 节目素材列表
-     * 
-     * @return programItemList */
+    /**
+     * 节目素材列表
+     * @return programItemList
+     */
     public List<ProgramItemRequestBase> getProgramItemList() {
         return programItemList;
     }
@@ -97,7 +101,10 @@ public class UpdateProgramRequestDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

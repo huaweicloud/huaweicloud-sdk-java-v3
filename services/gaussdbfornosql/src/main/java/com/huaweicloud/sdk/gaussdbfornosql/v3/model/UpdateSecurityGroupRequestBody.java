@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateSecurityGroupRequestBody */
+/**
+ * UpdateSecurityGroupRequestBody
+ */
 public class UpdateSecurityGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateSecurityGroupRequestBody {
         return this;
     }
 
-    /** 新的安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 新的安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -55,7 +58,10 @@ public class UpdateSecurityGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

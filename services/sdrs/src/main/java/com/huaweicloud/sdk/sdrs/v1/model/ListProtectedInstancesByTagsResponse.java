@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProtectedInstancesByTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListProtectedInstancesByTagsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的保护实例列表。
-     * 
-     * @return resources */
+    /**
+     * 返回的保护实例列表。
+     * @return resources
+     */
     public List<ResourceParams> getResources() {
         return resources;
     }
@@ -59,9 +62,10 @@ public class ListProtectedInstancesByTagsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录数。该值不受过滤条件的影响。
-     * 
-     * @return totalCount */
+    /**
+     * 总记录数。该值不受过滤条件的影响。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -99,7 +103,10 @@ public class ListProtectedInstancesByTagsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

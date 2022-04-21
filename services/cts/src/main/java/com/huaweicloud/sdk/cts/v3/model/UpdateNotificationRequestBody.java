@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改关键操作通知规则的请求体。 */
+/**
+ * 修改关键操作通知规则的请求体。
+ */
 public class UpdateNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,14 +23,19 @@ public class UpdateNotificationRequestBody {
 
     private String notificationName;
 
-    /** 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。
-     * 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。 */
+    /**
+     * 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum CUSTOMIZED for value: "customized" */
+        /**
+         * Enum CUSTOMIZED for value: "customized"
+         */
         public static final OperationTypeEnum CUSTOMIZED = new OperationTypeEnum("customized");
 
-        /** Enum COMPLETE for value: "complete" */
+        /**
+         * Enum COMPLETE for value: "complete"
+         */
         public static final OperationTypeEnum COMPLETE = new OperationTypeEnum("complete");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,13 +115,19 @@ public class UpdateNotificationRequestBody {
 
     private List<NotificationUsers> notifyUserList = null;
 
-    /** 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。 */
+    /**
+    * 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
+    */
     public static final class StatusEnum {
 
-        /** Enum ENABLED for value: "enabled" */
+        /**
+         * Enum ENABLED for value: "enabled"
+         */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
 
-        /** Enum DISABLED for value: "disabled" */
+        /**
+         * Enum DISABLED for value: "disabled"
+         */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +212,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 标识关键操作名称。
-     * 
-     * @return notificationName */
+    /**
+     * 标识关键操作名称。
+     * @return notificationName
+     */
     public String getNotificationName() {
         return notificationName;
     }
@@ -215,10 +229,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。
-     * 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
-     * 
-     * @return operationType */
+    /**
+     * 标识操作类型。 目前支持的操作类型有完整类型(complete)和自定义类型(customized)。 完整类型下，CTS发送通知的对象为已对接服务的所有事件。 自定义类型下，CTS发送通知的对象是在operations列表中指定的事件。
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -248,9 +262,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 操作事件列表。
-     * 
-     * @return operations */
+    /**
+     * 操作事件列表。
+     * @return operations
+     */
     public List<Operations> getOperations() {
         return operations;
     }
@@ -280,9 +295,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
-     * 
-     * @return notifyUserList */
+    /**
+     * 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
+     * @return notifyUserList
+     */
     public List<NotificationUsers> getNotifyUserList() {
         return notifyUserList;
     }
@@ -296,9 +312,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
-     * 
-     * @return status */
+    /**
+     * 标识关键操作通知状态，包括正常(enabled)，停止(disabled)两种状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -312,11 +329,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 消息通知服务的topic_urn或者函数工作流的func_urn，当“status”字段为enabled时，该字段必填。 -
-     * 消息通知服务的topic_urn可以通过消息通知服务的查询主题列表API获取，示例：urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2。 -
-     * 函数工作流的func_urn可以通过函数工作流的获取函数列表API获取，示例：urn:fss:xxxxxxxxx:7aad83af3e8d42e99ac194e8419e2c9b:function:default:test。
-     * 
-     * @return topicId */
+    /**
+     * 消息通知服务的topic_urn或者函数工作流的func_urn，当“status”字段为enabled时，该字段必填。 - 消息通知服务的topic_urn可以通过消息通知服务的查询主题列表API获取，示例：urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2。 - 函数工作流的func_urn可以通过函数工作流的获取函数列表API获取，示例：urn:fss:xxxxxxxxx:7aad83af3e8d42e99ac194e8419e2c9b:function:default:test。
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -330,9 +346,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 关键操作通知id
-     * 
-     * @return notificationId */
+    /**
+     * 关键操作通知id
+     * @return notificationId
+     */
     public String getNotificationId() {
         return notificationId;
     }
@@ -380,7 +397,10 @@ public class UpdateNotificationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

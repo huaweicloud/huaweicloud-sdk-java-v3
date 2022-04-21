@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ChileIdCardConfidence */
+/**
+ * ChileIdCardConfidence
+ */
 public class ChileIdCardConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 姓氏置信度。
-     * 
-     * @return surname */
+    /**
+     * 姓氏置信度。 
+     * @return surname
+     */
     public Float getSurname() {
         return surname;
     }
@@ -74,9 +77,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 名置信度。
-     * 
-     * @return givenName */
+    /**
+     * 名置信度。 
+     * @return givenName
+     */
     public Float getGivenName() {
         return givenName;
     }
@@ -90,9 +94,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 国籍置信度。
-     * 
-     * @return nationality */
+    /**
+     * 国籍置信度。 
+     * @return nationality
+     */
     public Float getNationality() {
         return nationality;
     }
@@ -106,9 +111,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 性别置信度。
-     * 
-     * @return sex */
+    /**
+     * 性别置信度。 
+     * @return sex
+     */
     public Float getSex() {
         return sex;
     }
@@ -122,9 +128,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 出生日置信度。
-     * 
-     * @return birth */
+    /**
+     * 出生日置信度。 
+     * @return birth
+     */
     public Float getBirth() {
         return birth;
     }
@@ -138,9 +145,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 发行日置信度。
-     * 
-     * @return issueDate */
+    /**
+     * 发行日置信度。 
+     * @return issueDate
+     */
     public Float getIssueDate() {
         return issueDate;
     }
@@ -154,9 +162,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 有效期置信度。
-     * 
-     * @return expiryDate */
+    /**
+     * 有效期置信度。 
+     * @return expiryDate
+     */
     public Float getExpiryDate() {
         return expiryDate;
     }
@@ -170,9 +179,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 文档编号置信度。
-     * 
-     * @return documentNumber */
+    /**
+     * 文档编号置信度。 
+     * @return documentNumber
+     */
     public Float getDocumentNumber() {
         return documentNumber;
     }
@@ -186,9 +196,10 @@ public class ChileIdCardConfidence {
         return this;
     }
 
-    /** 身份证号置信度。
-     * 
-     * @return number */
+    /**
+     * 身份证号置信度。 
+     * @return number
+     */
     public Float getNumber() {
         return number;
     }
@@ -239,7 +250,10 @@ public class ChileIdCardConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

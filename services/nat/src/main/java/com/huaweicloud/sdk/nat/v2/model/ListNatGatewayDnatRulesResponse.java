@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNatGatewayDnatRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ListNatGatewayDnatRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询DNAT规则列表的响应体。
-     * 
-     * @return dnatRules */
+    /**
+     * 查询DNAT规则列表的响应体。
+     * @return dnatRules
+     */
     public List<NatGatewayDnatRuleResponseBody> getDnatRules() {
         return dnatRules;
     }
@@ -76,7 +79,10 @@ public class ListNatGatewayDnatRulesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

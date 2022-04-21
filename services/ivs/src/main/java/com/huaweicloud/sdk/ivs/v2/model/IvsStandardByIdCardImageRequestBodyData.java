@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求消息的数据部分。 */
+/**
+ * 请求消息的数据部分。
+ */
 public class IvsStandardByIdCardImageRequestBodyData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class IvsStandardByIdCardImageRequestBodyData {
         return this;
     }
 
-    /** 请求列表，用于支持批量调用。目前暂时只支持单个数据查询。
-     * 
-     * @return reqData */
+    /**
+     * 请求列表，用于支持批量调用。目前暂时只支持单个数据查询。
+     * @return reqData
+     */
     public List<ReqDataByIdCardImage> getReqData() {
         return reqData;
     }
@@ -75,7 +78,10 @@ public class IvsStandardByIdCardImageRequestBodyData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

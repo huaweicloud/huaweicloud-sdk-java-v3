@@ -7,13 +7,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 字典类型 - system: 代表系统内置字典,用户可编辑但不可删除 - user: 代表用户创建字典 */
+/**
+ * 字典类型 - system: 代表系统内置字典,用户可编辑但不可删除 - user: 代表用户创建字典
+ */
 public class DictionaryType {
 
-    /** Enum SYSTEM for value: "system" */
+    /**
+     * Enum SYSTEM for value: "system"
+     */
     public static final DictionaryType SYSTEM = new DictionaryType("system");
 
-    /** Enum USER for value: "user" */
+    /**
+     * Enum USER for value: "user"
+     */
     public static final DictionaryType USER = new DictionaryType("user");
 
     private static final Map<String, DictionaryType> STATIC_FIELDS = createStaticFields();

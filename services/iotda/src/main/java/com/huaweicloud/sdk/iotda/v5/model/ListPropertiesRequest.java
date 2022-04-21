@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPropertiesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListPropertiesRequest {
         return this;
     }
 
-    /** **参数说明**：下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return deviceId */
+    /**
+     * **参数说明**：下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -49,9 +52,10 @@ public class ListPropertiesRequest {
         return this;
     }
 
-    /** Sp用户Token。通过调用IoBPS服务获取SP用户Token
-     * 
-     * @return spAuthToken */
+    /**
+     * Sp用户Token。通过调用IoBPS服务获取SP用户Token
+     * @return spAuthToken
+     */
     public String getSpAuthToken() {
         return spAuthToken;
     }
@@ -65,9 +69,10 @@ public class ListPropertiesRequest {
         return this;
     }
 
-    /** **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
-     * 
-     * @return instanceId */
+    /**
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -81,9 +86,10 @@ public class ListPropertiesRequest {
         return this;
     }
 
-    /** **参数说明**：设备的服务ID，在设备关联的产品模型中定义。
-     * 
-     * @return serviceId */
+    /**
+     * **参数说明**：设备的服务ID，在设备关联的产品模型中定义。
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -124,7 +130,10 @@ public class ListPropertiesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

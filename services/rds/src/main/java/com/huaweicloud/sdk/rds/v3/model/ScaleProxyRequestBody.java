@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ScaleProxyRequestBody */
+/**
+ * ScaleProxyRequestBody
+ */
 public class ScaleProxyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ScaleProxyRequestBody {
         return this;
     }
 
-    /** 需要变更的新规格ID。
-     * 
-     * @return flavorRef */
+    /**
+     * 需要变更的新规格ID。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -39,9 +42,10 @@ public class ScaleProxyRequestBody {
         return this;
     }
 
-    /** 是否延迟变更。 - true：延迟变更，将在运维时间窗内自动变更。 - false：立即变更。
-     * 
-     * @return delay */
+    /**
+     * 是否延迟变更。  - true：延迟变更，将在运维时间窗内自动变更。 - false：立即变更。
+     * @return delay
+     */
     public Boolean getDelay() {
         return delay;
     }
@@ -78,7 +82,10 @@ public class ScaleProxyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

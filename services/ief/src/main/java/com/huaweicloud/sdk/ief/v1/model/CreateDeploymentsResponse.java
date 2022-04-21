@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDeploymentsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,9 +104,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署uuid
-     * 
-     * @return id */
+    /**
+     * 应用部署uuid
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -118,9 +121,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾
-     * 
-     * @return name */
+    /**
+     * 应用部署名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -134,9 +138,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署总副本数
-     * 
-     * @return replicas */
+    /**
+     * 应用部署总副本数
+     * @return replicas
+     */
     public Integer getReplicas() {
         return replicas;
     }
@@ -150,9 +155,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署正常副本数
-     * 
-     * @return readyReplicas */
+    /**
+     * 应用部署正常副本数
+     * @return readyReplicas
+     */
     public Integer getReadyReplicas() {
         return readyReplicas;
     }
@@ -166,9 +172,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 应用部署描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -182,9 +189,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署到指定节点组，与node_ids二选一
-     * 
-     * @return groupId */
+    /**
+     * 应用部署到指定节点组，与node_ids二选一
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -214,9 +222,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署到指定节点，当前只支持一个边缘节点
-     * 
-     * @return nodeIds */
+    /**
+     * 应用部署到指定节点，当前只支持一个边缘节点
+     * @return nodeIds
+     */
     public List<String> getNodeIds() {
         return nodeIds;
     }
@@ -246,9 +255,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点属性
-     * 
-     * @return tags */
+    /**
+     * 节点属性
+     * @return tags
+     */
     public List<Attributes> getTags() {
         return tags;
     }
@@ -262,9 +272,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署版本
-     * 
-     * @return apiVersion */
+    /**
+     * 应用部署版本
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -278,9 +289,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署来源: 边缘市场(iem) or 自定义(userdefined)
-     * 
-     * @return source */
+    /**
+     * 应用部署来源: 边缘市场(iem) or 自定义(userdefined)
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -294,9 +306,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -310,9 +323,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 应用部署创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -326,9 +340,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用部署更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 应用部署更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -351,9 +366,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get template
-     * 
-     * @return template */
+    /**
+     * Get template
+     * @return template
+     */
     public PodRequest getTemplate() {
         return template;
     }
@@ -367,9 +383,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用状态，仅包括冻结（FREEZE）、删除中（PENDING_DELETE）、删除失败（DELETE_FAILED），保留字段
-     * 
-     * @return state */
+    /**
+     * 应用状态，仅包括冻结（FREEZE）、删除中（PENDING_DELETE）、删除失败（DELETE_FAILED），保留字段
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -383,9 +400,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 预留字段
-     * 
-     * @return sourceId */
+    /**
+     * 预留字段
+     * @return sourceId
+     */
     public String getSourceId() {
         return sourceId;
     }
@@ -408,9 +426,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get annotations
-     * 
-     * @return annotations */
+    /**
+     * Get annotations
+     * @return annotations
+     */
     public Annotations getAnnotations() {
         return annotations;
     }
@@ -493,7 +512,10 @@ public class CreateDeploymentsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

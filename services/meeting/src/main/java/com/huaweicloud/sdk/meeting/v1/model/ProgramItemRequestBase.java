@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 新增/更新节目素材信息请求 */
+/**
+ * 新增/更新节目素材信息请求
+ */
 public class ProgramItemRequestBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ProgramItemRequestBase {
         return this;
     }
 
-    /** 素材ID
-     * 
-     * @return materialId */
+    /**
+     * 素材ID
+     * @return materialId
+     */
     public String getMaterialId() {
         return materialId;
     }
@@ -39,9 +42,10 @@ public class ProgramItemRequestBase {
         return this;
     }
 
-    /** 播放时长
-     * 
-     * @return playTime */
+    /**
+     * 播放时长
+     * @return playTime
+     */
     public Integer getPlayTime() {
         return playTime;
     }
@@ -78,7 +82,10 @@ public class ProgramItemRequestBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

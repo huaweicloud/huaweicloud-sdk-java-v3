@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMqsInstanceRequest {
 
-    /** 是否包含内部的实例。include_internal参数必须为true。 */
+    /**
+     * 是否包含内部的实例。include_internal参数必须为true。
+     */
     public static final class IncludeInternalEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IncludeInternalEnum TRUE = new IncludeInternalEnum("true");
 
         private static final Map<String, IncludeInternalEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class ListMqsInstanceRequest {
         return this;
     }
 
-    /** 是否包含内部的实例。include_internal参数必须为true。
-     * 
-     * @return includeInternal */
+    /**
+     * 是否包含内部的实例。include_internal参数必须为true。
+     * @return includeInternal
+     */
     public IncludeInternalEnum getIncludeInternal() {
         return includeInternal;
     }
@@ -127,7 +134,10 @@ public class ListMqsInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

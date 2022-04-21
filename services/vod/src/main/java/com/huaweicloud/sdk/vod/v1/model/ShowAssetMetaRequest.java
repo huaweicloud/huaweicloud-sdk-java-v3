@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowAssetMetaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,43 +33,69 @@ public class ShowAssetMetaRequest {
 
     private List<String> assetId = null;
 
-    /** Gets or Sets status */
+    /**
+    * Gets or Sets status
+    */
     public static final class StatusEnum {
 
-        /** Enum UNCREATED for value: "UNCREATED" */
+        /**
+         * Enum UNCREATED for value: "UNCREATED"
+         */
         public static final StatusEnum UNCREATED = new StatusEnum("UNCREATED");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum CANCELLED for value: "CANCELLED" */
+        /**
+         * Enum CANCELLED for value: "CANCELLED"
+         */
         public static final StatusEnum CANCELLED = new StatusEnum("CANCELLED");
 
-        /** Enum SERVER_ERROR for value: "SERVER_ERROR" */
+        /**
+         * Enum SERVER_ERROR for value: "SERVER_ERROR"
+         */
         public static final StatusEnum SERVER_ERROR = new StatusEnum("SERVER_ERROR");
 
-        /** Enum UPLOAD_FAILED for value: "UPLOAD_FAILED" */
+        /**
+         * Enum UPLOAD_FAILED for value: "UPLOAD_FAILED"
+         */
         public static final StatusEnum UPLOAD_FAILED = new StatusEnum("UPLOAD_FAILED");
 
-        /** Enum CREATING for value: "CREATING" */
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
 
-        /** Enum PUBLISHED for value: "PUBLISHED" */
+        /**
+         * Enum PUBLISHED for value: "PUBLISHED"
+         */
         public static final StatusEnum PUBLISHED = new StatusEnum("PUBLISHED");
 
-        /** Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE" */
+        /**
+         * Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE"
+         */
         public static final StatusEnum WAITING_TRANSCODE = new StatusEnum("WAITING_TRANSCODE");
 
-        /** Enum TRANSCODING for value: "TRANSCODING" */
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
         public static final StatusEnum TRANSCODING = new StatusEnum("TRANSCODING");
 
-        /** Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED" */
+        /**
+         * Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED"
+         */
         public static final StatusEnum TRANSCODE_FAILED = new StatusEnum("TRANSCODE_FAILED");
 
-        /** Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED" */
+        /**
+         * Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED"
+         */
         public static final StatusEnum TRANSCODE_SUCCEED = new StatusEnum("TRANSCODE_SUCCEED");
 
-        /** Enum CREATED for value: "CREATED" */
+        /**
+         * Enum CREATED for value: "CREATED"
+         */
         public static final StatusEnum CREATED = new StatusEnum("CREATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -147,22 +175,34 @@ public class ShowAssetMetaRequest {
 
     private List<StatusEnum> status = null;
 
-    /** Gets or Sets transcodeStatus */
+    /**
+    * Gets or Sets transcodeStatus
+    */
     public static final class TranscodeStatusEnum {
 
-        /** Enum TRANSCODING for value: "TRANSCODING" */
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
         public static final TranscodeStatusEnum TRANSCODING = new TranscodeStatusEnum("TRANSCODING");
 
-        /** Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED" */
+        /**
+         * Enum TRANSCODE_FAILED for value: "TRANSCODE_FAILED"
+         */
         public static final TranscodeStatusEnum TRANSCODE_FAILED = new TranscodeStatusEnum("TRANSCODE_FAILED");
 
-        /** Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED" */
+        /**
+         * Enum TRANSCODE_SUCCEED for value: "TRANSCODE_SUCCEED"
+         */
         public static final TranscodeStatusEnum TRANSCODE_SUCCEED = new TranscodeStatusEnum("TRANSCODE_SUCCEED");
 
-        /** Enum UN_TRANSCODE for value: "UN_TRANSCODE" */
+        /**
+         * Enum UN_TRANSCODE for value: "UN_TRANSCODE"
+         */
         public static final TranscodeStatusEnum UN_TRANSCODE = new TranscodeStatusEnum("UN_TRANSCODE");
 
-        /** Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE" */
+        /**
+         * Enum WAITING_TRANSCODE for value: "WAITING_TRANSCODE"
+         */
         public static final TranscodeStatusEnum WAITING_TRANSCODE = new TranscodeStatusEnum("WAITING_TRANSCODE");
 
         private static final Map<String, TranscodeStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -235,13 +275,19 @@ public class ShowAssetMetaRequest {
 
     private List<TranscodeStatusEnum> transcodeStatus = null;
 
-    /** Gets or Sets assetStatus */
+    /**
+    * Gets or Sets assetStatus
+    */
     public static final class AssetStatusEnum {
 
-        /** Enum PUBLISHED for value: "PUBLISHED" */
+        /**
+         * Enum PUBLISHED for value: "PUBLISHED"
+         */
         public static final AssetStatusEnum PUBLISHED = new AssetStatusEnum("PUBLISHED");
 
-        /** Enum CREATED for value: "CREATED" */
+        /**
+         * Enum CREATED for value: "CREATED"
+         */
         public static final AssetStatusEnum CREATED = new AssetStatusEnum("CREATED");
 
         private static final Map<String, AssetStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -351,9 +397,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -367,9 +414,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -401,9 +449,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 媒资id，最多同时查询10个媒资。
-     * 
-     * @return assetId */
+    /**
+     * 媒资id，最多同时查询10个媒资。
+     * @return assetId
+     */
     public List<String> getAssetId() {
         return assetId;
     }
@@ -433,11 +482,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 媒资状态。 取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） -
-     * UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） -
-     * TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码）
-     * 
-     * @return status */
+    /**
+     * 媒资状态。  取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） - UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） - TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码）
+     * @return status
+     */
     public List<StatusEnum> getStatus() {
         return status;
     }
@@ -467,10 +515,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 转码状态 取值如下： - TRANSCODING：转码中 - TRANSCODE_FAILED：转码失败 - TRANSCODE_SUCCEED：转码成功 - UN_TRANSCODE：未转码 -
-     * WAITING_TRANSCODE：等待转码
-     * 
-     * @return transcodeStatus */
+    /**
+     * 转码状态  取值如下： - TRANSCODING：转码中 - TRANSCODE_FAILED：转码失败 - TRANSCODE_SUCCEED：转码成功 - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：等待转码
+     * @return transcodeStatus
+     */
     public List<TranscodeStatusEnum> getTranscodeStatus() {
         return transcodeStatus;
     }
@@ -500,9 +548,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 媒资状态。 取值如下： - PUBLISHED：已发布 - CREATED：未发布
-     * 
-     * @return assetStatus */
+    /**
+     * 媒资状态。  取值如下： - PUBLISHED：已发布 - CREATED：未发布
+     * @return assetStatus
+     */
     public List<AssetStatusEnum> getAssetStatus() {
         return assetStatus;
     }
@@ -516,9 +565,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 起始时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间，查询指定“**asset_id**”时，该参数无效。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -532,9 +582,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 结束时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，查询指定“**asset_id**”时，该参数无效。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -548,9 +599,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 分类ID。
-     * 
-     * @return categoryId */
+    /**
+     * 分类ID。
+     * @return categoryId
+     */
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -564,9 +616,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
-     * 
-     * @return tags */
+    /**
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -580,9 +633,10 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 在媒资标题、描述中模糊查询的字符串。
-     * 
-     * @return queryString */
+    /**
+     * 在媒资标题、描述中模糊查询的字符串。
+     * @return queryString
+     */
     public String getQueryString() {
         return queryString;
     }
@@ -596,9 +650,11 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 分页编号，查询指定“asset_id”时，该参数无效。 默认值：0。 minimum: 0
-     * 
-     * @return page */
+    /**
+     * 分页编号，查询指定“asset_id”时，该参数无效。  默认值：0。
+     * minimum: 0
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -612,9 +668,12 @@ public class ShowAssetMetaRequest {
         return this;
     }
 
-    /** 每页记录数，查询指定“**asset_id**”时，该参数无效。 取值范围：[1,100]。 默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 每页记录数，查询指定“**asset_id**”时，该参数无效。  取值范围：[1,100]。  默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -685,7 +744,10 @@ public class ShowAssetMetaRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

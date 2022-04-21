@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CloudWafHostItem */
+/**
+ * CloudWafHostItem
+ */
 public class CloudWafHostItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,9 +86,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -100,9 +103,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return hostid */
+    /**
+     * 域名id
+     * @return hostid
+     */
     public String getHostid() {
         return hostid;
     }
@@ -116,9 +120,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -132,9 +137,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** WAF部署模式
-     * 
-     * @return type */
+    /**
+     * WAF部署模式
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -148,9 +154,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 是否开启了代理
-     * 
-     * @return proxy */
+    /**
+     * 是否开启了代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -173,9 +180,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** Get flag
-     * 
-     * @return flag */
+    /**
+     * Get flag
+     * @return flag
+     */
     public Flag getFlag() {
         return flag;
     }
@@ -189,9 +197,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 创建的云模式防护域名
-     * 
-     * @return hostname */
+    /**
+     * 创建的云模式防护域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -205,9 +214,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** cname前缀
-     * 
-     * @return accessCode */
+    /**
+     * cname前缀
+     * @return accessCode
+     */
     public String getAccessCode() {
         return accessCode;
     }
@@ -221,9 +231,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -237,9 +248,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 创建防护域名的时间
-     * 
-     * @return timestamp */
+    /**
+     * 创建防护域名的时间
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -253,9 +265,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -269,9 +282,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 接入状态
-     * 
-     * @return accessStatus */
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -285,9 +299,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 是否使用独享ip
-     * 
-     * @return exclusiveIp */
+    /**
+     * 是否使用独享ip
+     * @return exclusiveIp
+     */
     public Boolean getExclusiveIp() {
         return exclusiveIp;
     }
@@ -301,9 +316,10 @@ public class CloudWafHostItem {
         return this;
     }
 
-    /** 付费模式，目前只支持prePaid预付款模式
-     * 
-     * @return paidType */
+    /**
+     * 付费模式，目前只支持prePaid预付款模式
+     * @return paidType
+     */
     public String getPaidType() {
         return paidType;
     }
@@ -375,7 +391,10 @@ public class CloudWafHostItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

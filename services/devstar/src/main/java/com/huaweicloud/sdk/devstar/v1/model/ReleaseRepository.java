@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReleaseRepository */
+/**
+ * ReleaseRepository
+ */
 public class ReleaseRepository {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 软件包id
-     * 
-     * @return id */
+    /**
+     * 软件包id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 软件包名称
-     * 
-     * @return name */
+    /**
+     * 软件包名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 软件包下载地址
-     * 
-     * @return downloadPath */
+    /**
+     * 软件包下载地址
+     * @return downloadPath
+     */
     public String getDownloadPath() {
         return downloadPath;
     }
@@ -96,9 +101,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 软件包大小
-     * 
-     * @return size */
+    /**
+     * 软件包大小
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -112,9 +118,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 文件类型
-     * 
-     * @return fileType */
+    /**
+     * 文件类型
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -128,9 +135,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return created */
+    /**
+     * 创建时间
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -144,9 +152,10 @@ public class ReleaseRepository {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updated */
+    /**
+     * 修改时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -192,7 +201,10 @@ public class ReleaseRepository {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

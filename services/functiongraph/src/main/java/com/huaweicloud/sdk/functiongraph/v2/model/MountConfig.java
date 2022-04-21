@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数挂载配置。 */
+/**
+ * 函数挂载配置。
+ */
 public class MountConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class MountConfig {
         return this;
     }
 
-    /** Get mountUser
-     * 
-     * @return mountUser */
+    /**
+     * Get mountUser
+     * @return mountUser
+     */
     public MountUser getMountUser() {
         return mountUser;
     }
@@ -67,9 +70,10 @@ public class MountConfig {
         return this;
     }
 
-    /** 函数挂载列表。
-     * 
-     * @return funcMounts */
+    /**
+     * 函数挂载列表。
+     * @return funcMounts
+     */
     public List<FuncMount> getFuncMounts() {
         return funcMounts;
     }
@@ -106,7 +110,10 @@ public class MountConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

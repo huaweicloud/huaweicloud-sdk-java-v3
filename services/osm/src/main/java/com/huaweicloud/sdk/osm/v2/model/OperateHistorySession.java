@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OperateHistorySession */
+/**
+ * OperateHistorySession
+ */
 public class OperateHistorySession {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class OperateHistorySession {
         return this;
     }
 
-    /** 会话时长，格式：hh:ii:ss
-     * 
-     * @return duration */
+    /**
+     * 会话时长，格式：hh:ii:ss
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -49,9 +52,12 @@ public class OperateHistorySession {
         return this;
     }
 
-    /** 会话id minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return sessionId */
+    /**
+     * 会话id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return sessionId
+     */
     public Long getSessionId() {
         return sessionId;
     }
@@ -65,9 +71,10 @@ public class OperateHistorySession {
         return this;
     }
 
-    /** 会话开始时间
-     * 
-     * @return startTime */
+    /**
+     * 会话开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -81,9 +88,10 @@ public class OperateHistorySession {
         return this;
     }
 
-    /** 会话结束时间
-     * 
-     * @return endTime */
+    /**
+     * 会话结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -124,7 +132,10 @@ public class OperateHistorySession {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

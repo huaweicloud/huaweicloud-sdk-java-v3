@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteDedicatedHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteDedicatedHostRequest {
         return this;
     }
 
-    /** 专属主机ID。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -55,7 +58,10 @@ public class DeleteDedicatedHostRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

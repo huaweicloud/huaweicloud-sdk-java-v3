@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShrinkInstanceNodeRequestBody */
+/**
+ * ShrinkInstanceNodeRequestBody
+ */
 public class ShrinkInstanceNodeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ShrinkInstanceNodeRequestBody {
         return this;
     }
 
-    /** 随机缩减的节点数量。该字段取值为1。说明：如果客户端采用直连节点方式，不推荐使用随机节点缩容。
-     * 
-     * @return num */
+    /**
+     * 随机缩减的节点数量。该字段取值为1。说明：如果客户端采用直连节点方式，不推荐使用随机节点缩容。
+     * @return num
+     */
     public Integer getNum() {
         return num;
     }
@@ -58,11 +61,10 @@ public class ShrinkInstanceNodeRequestBody {
         return this;
     }
 
-    /** 指定缩容节点的ID，且该节点必须支持节点缩容。如果该字段不传指定缩减的节点ID，将根据系统内部策略缩减指定个数的节点。说明： - num与node_list必须有一个字段传值。 - 如果num传值时，取值必须为1。 -
-     * 如果node_list传值时，其长度必须为1。 - 如果num与node_list同时传值时，则以node_list的值为主。 -
-     * 如果node_list取值为空时，缩容以随机节点缩容进行；node_list字段取值不为空，缩容以指定节点ID进行。 - 节点缩容前，请避免直连节点，以防该节点缩容导致业务中断。
-     * 
-     * @return nodeList */
+    /**
+     * 指定缩容节点的ID，且该节点必须支持节点缩容。如果该字段不传指定缩减的节点ID，将根据系统内部策略缩减指定个数的节点。说明： - num与node_list必须有一个字段传值。   - 如果num传值时，取值必须为1。   - 如果node_list传值时，其长度必须为1。   - 如果num与node_list同时传值时，则以node_list的值为主。 - 如果node_list取值为空时，缩容以随机节点缩容进行；node_list字段取值不为空，缩容以指定节点ID进行。 - 节点缩容前，请避免直连节点，以防该节点缩容导致业务中断。
+     * @return nodeList
+     */
     public List<String> getNodeList() {
         return nodeList;
     }
@@ -99,7 +101,10 @@ public class ShrinkInstanceNodeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

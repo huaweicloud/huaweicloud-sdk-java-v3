@@ -25,9 +25,10 @@ public class TokenRole {
         return this;
     }
 
-    /** 权限名称。
-     * 
-     * @return name */
+    /**
+     * 权限名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -41,9 +42,10 @@ public class TokenRole {
         return this;
     }
 
-    /** 权限ID。默认显示为0，非真实权限ID。
-     * 
-     * @return id */
+    /**
+     * 权限ID。默认显示为0，非真实权限ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,7 +81,10 @@ public class TokenRole {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

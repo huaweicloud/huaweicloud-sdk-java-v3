@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSlowLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,28 +35,44 @@ public class ListSlowLogsRequest {
 
     private String nodeId;
 
-    /** 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS */
+    /**
+     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS
+     */
     public static final class TypeEnum {
 
-        /** Enum INSERT for value: "INSERT" */
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
         public static final TypeEnum INSERT = new TypeEnum("INSERT");
 
-        /** Enum QUERY for value: "QUERY" */
+        /**
+         * Enum QUERY for value: "QUERY"
+         */
         public static final TypeEnum QUERY = new TypeEnum("QUERY");
 
-        /** Enum UPDATE for value: "UPDATE" */
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
         public static final TypeEnum UPDATE = new TypeEnum("UPDATE");
 
-        /** Enum REMOVE for value: "REMOVE" */
+        /**
+         * Enum REMOVE for value: "REMOVE"
+         */
         public static final TypeEnum REMOVE = new TypeEnum("REMOVE");
 
-        /** Enum GETMORE for value: "GETMORE" */
+        /**
+         * Enum GETMORE for value: "GETMORE"
+         */
         public static final TypeEnum GETMORE = new TypeEnum("GETMORE");
 
-        /** Enum COMMAND for value: "COMMAND" */
+        /**
+         * Enum COMMAND for value: "COMMAND"
+         */
         public static final TypeEnum COMMAND = new TypeEnum("COMMAND");
 
-        /** Enum KILLCURSORS for value: "KILLCURSORS" */
+        /**
+         * Enum KILLCURSORS for value: "KILLCURSORS"
+         */
         public static final TypeEnum KILLCURSORS = new TypeEnum("KILLCURSORS");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +162,10 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -160,9 +179,10 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return startDate */
+    /**
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -176,9 +196,10 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。注：结束时间不能晚于当前时间。
-     * 
-     * @return endDate */
+    /**
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。注：结束时间不能晚于当前时间。
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -192,10 +213,10 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 节点ID，取空值，表示查询实例下所有允许查询的节点。 使用请参考《DDS API参考》的“查询实例列表和详情”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群实例下面的 shard节点 -
-     * 副本集、单节点实例下面的所有节点
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID，取空值，表示查询实例下所有允许查询的节点。 使用请参考《DDS API参考》的“查询实例列表和详情”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群实例下面的 shard节点 - 副本集、单节点实例下面的所有节点
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -209,9 +230,10 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS
-     * 
-     * @return type */
+    /**
+     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -225,9 +247,12 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。取值范围为 [0, 1999]。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。 minimum: 0 maximum: 1999
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。取值范围为 [0, 1999]。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * minimum: 0
+     * maximum: 1999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -241,9 +266,12 @@ public class ListSlowLogsRequest {
         return this;
     }
 
-    /** 查询记录数。取值范围[1, 100]，默认10 （表示默认返回10条数据）。 注意： limit 与 offset 的和需要满足 <= 2000的条件。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。取值范围[1, 100]，默认10 （表示默认返回10条数据）。 注意： limit 与 offset 的和需要满足 <= 2000的条件。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -290,7 +318,10 @@ public class ListSlowLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckUserIdentityResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CheckUserIdentityResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态码。具体请参考状态码。只有失败才会返回这个参数。
-     * 
-     * @return errorCode */
+    /**
+     * 状态码。具体请参考状态码。只有失败才会返回这个参数。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -45,9 +48,10 @@ public class CheckUserIdentityResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误描述信息。只有失败才会返回这个参数。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误描述信息。只有失败才会返回这个参数。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -61,9 +65,10 @@ public class CheckUserIdentityResponse extends SdkResponse {
         return this;
     }
 
-    /** available：该登录名称/手机号/邮箱有效。used_by_user：该登录名称/手机号/邮箱已被占用。
-     * 
-     * @return checkResult */
+    /**
+     * available：该登录名称/手机号/邮箱有效。used_by_user：该登录名称/手机号/邮箱已被占用。
+     * @return checkResult
+     */
     public String getCheckResult() {
         return checkResult;
     }
@@ -102,7 +107,10 @@ public class CheckUserIdentityResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

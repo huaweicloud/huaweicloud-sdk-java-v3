@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规格信息。 */
+/**
+ * 规格信息。
+ */
 public class Az2Migrate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Az2Migrate {
         return this;
     }
 
-    /** 可用区ID。
-     * 
-     * @return code */
+    /**
+     * 可用区ID。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -44,9 +47,10 @@ public class Az2Migrate {
         return this;
     }
 
-    /** 可用区描述。
-     * 
-     * @return description */
+    /**
+     * 可用区描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,9 +64,10 @@ public class Az2Migrate {
         return this;
     }
 
-    /** 当前可用区的的状态。 - ENABLED，表示该可用区（组合）可用。 - DISABLED，表示该可用区（组合）不可用。
-     * 
-     * @return status */
+    /**
+     * 当前可用区的的状态。 - ENABLED，表示该可用区（组合）可用。 - DISABLED，表示该可用区（组合）不可用。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -100,7 +105,10 @@ public class Az2Migrate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

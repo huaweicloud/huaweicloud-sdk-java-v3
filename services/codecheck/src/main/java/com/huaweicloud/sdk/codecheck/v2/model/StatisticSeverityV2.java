@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StatisticSeverityV2 */
+/**
+ * StatisticSeverityV2
+ */
 public class StatisticSeverityV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StatisticSeverityV2 {
         return this;
     }
 
-    /** 致命问题数
-     * 
-     * @return critical */
+    /**
+     * 致命问题数
+     * @return critical
+     */
     public Integer getCritical() {
         return critical;
     }
@@ -49,9 +52,10 @@ public class StatisticSeverityV2 {
         return this;
     }
 
-    /** 严重问题数
-     * 
-     * @return major */
+    /**
+     * 严重问题数
+     * @return major
+     */
     public Integer getMajor() {
         return major;
     }
@@ -65,9 +69,10 @@ public class StatisticSeverityV2 {
         return this;
     }
 
-    /** 一般问题数
-     * 
-     * @return minor */
+    /**
+     * 一般问题数
+     * @return minor
+     */
     public Integer getMinor() {
         return minor;
     }
@@ -81,9 +86,10 @@ public class StatisticSeverityV2 {
         return this;
     }
 
-    /** 提示问题数
-     * 
-     * @return suggestion */
+    /**
+     * 提示问题数
+     * @return suggestion
+     */
     public Integer getSuggestion() {
         return suggestion;
     }
@@ -124,7 +130,10 @@ public class StatisticSeverityV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

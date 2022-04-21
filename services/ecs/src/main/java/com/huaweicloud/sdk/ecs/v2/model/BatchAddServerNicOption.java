@@ -43,9 +43,10 @@ public class BatchAddServerNicOption {
         return this;
     }
 
-    /** 云服务器添加网卡的信息。 需要指定云服务器所属虚拟私有云下已创建的网络（network）的ID，UUID格式。 指定subnet_id时不能再指定port_id参数。
-     * 
-     * @return subnetId */
+    /**
+     * 云服务器添加网卡的信息。  需要指定云服务器所属虚拟私有云下已创建的网络（network）的ID，UUID格式。 指定subnet_id时不能再指定port_id参数。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -75,9 +76,10 @@ public class BatchAddServerNicOption {
         return this;
     }
 
-    /** 添加网卡的安全组信息
-     * 
-     * @return securityGroups */
+    /**
+     * 添加网卡的安全组信息
+     * @return securityGroups
+     */
     public List<ServerNicSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -91,9 +93,10 @@ public class BatchAddServerNicOption {
         return this;
     }
 
-    /** IP地址，无该参数表示自动分配IP地址。
-     * 
-     * @return ipAddress */
+    /**
+     * IP地址，无该参数表示自动分配IP地址。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -107,9 +110,10 @@ public class BatchAddServerNicOption {
         return this;
     }
 
-    /** 是否支持ipv6。 取值为true时，标识此网卡支持ipv6。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 是否支持ipv6。  取值为true时，标识此网卡支持ipv6。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -132,9 +136,10 @@ public class BatchAddServerNicOption {
         return this;
     }
 
-    /** Get ipv6Bandwidth
-     * 
-     * @return ipv6Bandwidth */
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
     public Ipv6Bandwidth getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -177,7 +182,10 @@ public class BatchAddServerNicOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

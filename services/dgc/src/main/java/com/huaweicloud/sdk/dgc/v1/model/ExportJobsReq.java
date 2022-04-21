@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ExportJobsReq */
+/**
+ * ExportJobsReq
+ */
 public class ExportJobsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ExportJobsReq {
         return this;
     }
 
-    /** Get jobList
-     * 
-     * @return jobList */
+    /**
+     * Get jobList
+     * @return jobList
+     */
     public List<String> getJobList() {
         return jobList;
     }
@@ -58,9 +61,10 @@ public class ExportJobsReq {
         return this;
     }
 
-    /** 是否导出作业依赖的脚本和资源
-     * 
-     * @return exportDepend */
+    /**
+     * 是否导出作业依赖的脚本和资源
+     * @return exportDepend
+     */
     public Boolean getExportDepend() {
         return exportDepend;
     }
@@ -97,7 +101,10 @@ public class ExportJobsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

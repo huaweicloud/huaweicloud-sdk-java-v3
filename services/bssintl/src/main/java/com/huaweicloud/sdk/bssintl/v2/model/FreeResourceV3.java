@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FreeResourceV3 */
+/**
+ * FreeResourceV3
+ */
 public class FreeResourceV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
-     * 
-     * @return freeResourceId */
+    /**
+     * 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
+     * @return freeResourceId
+     */
     public String getFreeResourceId() {
         return freeResourceId;
     }
@@ -54,9 +57,10 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** 使用量类型名称。
-     * 
-     * @return usageTypeName */
+    /**
+     * 使用量类型名称。
+     * @return usageTypeName
+     */
     public String getUsageTypeName() {
         return usageTypeName;
     }
@@ -70,9 +74,10 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
-     * 
-     * @return amount */
+    /**
+     * 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
+     * @return amount
+     */
     public String getAmount() {
         return amount;
     }
@@ -86,9 +91,10 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
-     * 
-     * @return originalAmount */
+    /**
+     * 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
+     * @return originalAmount
+     */
     public String getOriginalAmount() {
         return originalAmount;
     }
@@ -102,9 +108,10 @@ public class FreeResourceV3 {
         return this;
     }
 
-    /** 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
-     * 
-     * @return measureId */
+    /**
+     * 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -147,7 +154,10 @@ public class FreeResourceV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

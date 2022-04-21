@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** security_groups字段数据结构说明 */
+/**
+ * security_groups字段数据结构说明
+ */
 public class SecurityGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class SecurityGroups {
         return this;
     }
 
-    /** 创建裸金属服务器时未指定安全组，该值为default。创建裸金属服务器时，需要指定已有安全组的ID（UUID格式）。
-     * 
-     * @return name */
+    /**
+     * 创建裸金属服务器时未指定安全组，该值为default。创建裸金属服务器时，需要指定已有安全组的ID（UUID格式）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,7 +58,10 @@ public class SecurityGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

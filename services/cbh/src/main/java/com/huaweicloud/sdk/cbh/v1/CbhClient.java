@@ -17,18 +17,32 @@ public class CbhClient {
         return new ClientBuilder<>(CbhClient::new);
     }
 
-    /** 获取CBH实例列表 获取CBH实例列表
+    /**
+     * 获取CBH实例列表
+     *
+     * 获取CBH实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
-     * @return ListCbhInstanceResponse */
+     * @return ListCbhInstanceResponse
+     */
     public ListCbhInstanceResponse listCbhInstance(ListCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.listCbhInstance);
     }
 
-    /** 获取CBH实例列表 获取CBH实例列表
+    /**
+     * 获取CBH实例列表
+     *
+     * 获取CBH实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
-     * @return SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse> */
+     * @return SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>
+     */
     public SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstanceInvoker(
         ListCbhInstanceRequest request) {
         return new SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>(request, CbhMeta.listCbhInstance,

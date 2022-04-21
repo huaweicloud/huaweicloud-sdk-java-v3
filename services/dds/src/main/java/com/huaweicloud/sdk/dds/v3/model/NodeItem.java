@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例节点信息。 */
+/**
+ * 实例节点信息。
+ */
 public class NodeItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return id */
+    /**
+     * 节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return name */
+    /**
+     * 节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return status */
+    /**
+     * 节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -101,10 +106,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 节点角色。 取值： - master，mongos节点返回该值。 - Primary，shard组主节点、config组主节点、副本集主节点、单节点返回该值。 -
-     * Secondary，shard组备节点、config组备节点、副本集备节点返回该值。 - Hidden，shard组隐藏节点、config组隐藏节点、副本集隐藏节点返回该值。 - unknown，节点异常时返回该值。
-     * 
-     * @return role */
+    /**
+     * 节点角色。 取值： - master，mongos节点返回该值。 - Primary，shard组主节点、config组主节点、副本集主节点、单节点返回该值。 - Secondary，shard组备节点、config组备节点、副本集备节点返回该值。 - Hidden，shard组隐藏节点、config组隐藏节点、副本集隐藏节点返回该值。 - unknown，节点异常时返回该值。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -118,9 +123,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 节点内网IP。该参数仅针对集群实例的mongos节点、副本集实例、以及单节点实例有效，且在弹性云服务器创建成功后参数值存在，否则，值为\"\"。
-     * 
-     * @return privateIp */
+    /**
+     * 节点内网IP。该参数仅针对集群实例的mongos节点、副本集实例、以及单节点实例有效，且在弹性云服务器创建成功后参数值存在，否则，值为\"\"。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -134,9 +140,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 绑定的外网IP。该参数值为\"\"。该参数仅针对集群实例的mongos节点、副本集实例的主节点和备节点、以及单节点实例有效。
-     * 
-     * @return publicIp */
+    /**
+     * 绑定的外网IP。该参数值为\"\"。该参数仅针对集群实例的mongos节点、副本集实例的主节点和备节点、以及单节点实例有效。
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -150,9 +157,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 资源规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -166,9 +174,10 @@ public class NodeItem {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -214,7 +223,10 @@ public class NodeItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

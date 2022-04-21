@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OriginPara */
+/**
+ * OriginPara
+ */
 public class OriginPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,12 @@ public class OriginPara {
         return this;
     }
 
-    /** 片源时长，单位：秒 minimum: 0 maximum: 2147483647
-     * 
-     * @return duration */
+    /**
+     * 片源时长，单位：秒
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -55,9 +60,12 @@ public class OriginPara {
         return this;
     }
 
-    /** 片源时长，单位：毫秒 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return durationMs */
+    /**
+     * 片源时长，单位：毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return durationMs
+     */
     public Long getDurationMs() {
         return durationMs;
     }
@@ -71,9 +79,10 @@ public class OriginPara {
         return this;
     }
 
-    /** 文件格式
-     * 
-     * @return fileFormat */
+    /**
+     * 文件格式 
+     * @return fileFormat
+     */
     public String getFileFormat() {
         return fileFormat;
     }
@@ -96,9 +105,10 @@ public class OriginPara {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public VideoInfo getVideo() {
         return video;
     }
@@ -121,9 +131,10 @@ public class OriginPara {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public AudioInfo getAudio() {
         return audio;
     }
@@ -165,7 +176,10 @@ public class OriginPara {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

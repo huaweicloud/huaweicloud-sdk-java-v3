@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 在线会场信息。 */
+/**
+ * 在线会场信息。
+ */
 public class RealTimeParticipant {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 与会者标识。
-     * 
-     * @return pid */
+    /**
+     * 与会者标识。
+     * @return pid
+     */
     public String getPid() {
         return pid;
     }
@@ -64,9 +67,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 与会者名称或昵称，长度限制为96个字符。
-     * 
-     * @return name */
+    /**
+     * 与会者名称或昵称，长度限制为96个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。。
-     * 
-     * @return phone */
+    /**
+     * 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -96,9 +101,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 用户状态。若会场未入会或已离会，则不会显示于在线会场列表。 - 0: 会议中。 - 1: 正在呼叫。 - 2: 正在加入会议。
-     * 
-     * @return state */
+    /**
+     * 用户状态。若会场未入会或已离会，则不会显示于在线会场列表。 - 0: 会议中。 - 1: 正在呼叫。 - 2: 正在加入会议。
+     * @return state
+     */
     public Integer getState() {
         return state;
     }
@@ -112,9 +118,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 音视频能力。 - 0: 音频。 - 1: 视频。
-     * 
-     * @return video */
+    /**
+     * 音视频能力。 - 0: 音频。 - 1: 视频。
+     * @return video
+     */
     public Integer getVideo() {
         return video;
     }
@@ -128,9 +135,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 麦克风状态。 - 0: 麦克风打开。 - 1: 麦克风关闭。
-     * 
-     * @return mute */
+    /**
+     * 麦克风状态。 - 0: 麦克风打开。 - 1: 麦克风关闭。
+     * @return mute
+     */
     public Integer getMute() {
         return mute;
     }
@@ -144,9 +152,10 @@ public class RealTimeParticipant {
         return this;
     }
 
-    /** 与会者举手状态。 - 0: 未举手。 - 1: 举手。
-     * 
-     * @return hand */
+    /**
+     * 与会者举手状态。 - 0: 未举手。 - 1: 举手。
+     * @return hand
+     */
     public Integer getHand() {
         return hand;
     }
@@ -192,7 +201,10 @@ public class RealTimeParticipant {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

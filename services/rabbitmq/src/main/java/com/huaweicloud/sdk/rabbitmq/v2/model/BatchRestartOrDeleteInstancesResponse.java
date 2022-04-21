@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改实例的结果。
-     * 
-     * @return results */
+    /**
+     * 修改实例的结果。
+     * @return results
+     */
     public List<BatchRestartOrDeleteInstanceRespResults> getResults() {
         return results;
     }
@@ -77,7 +80,10 @@ public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

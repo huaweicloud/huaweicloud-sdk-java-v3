@@ -11,13 +11,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-/** metadata数据结构说明 */
+/**
+ * metadata数据结构说明
+ */
 public class MetadataList {
 
-    /** 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。 */
+    /**
+     * 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final ChargingModeEnum _1 = new ChargingModeEnum("1");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -106,16 +112,24 @@ public class MetadataList {
 
     private UUID meteringImageId;
 
-    /** 镜像类型，目前支持：公共镜像（gold）私有镜像（private）共享镜像（shared） */
+    /**
+     * 镜像类型，目前支持：公共镜像（gold）私有镜像（private）共享镜像（shared）
+     */
     public static final class MeteringImagetypeEnum {
 
-        /** Enum GOLD for value: "gold" */
+        /**
+         * Enum GOLD for value: "gold"
+         */
         public static final MeteringImagetypeEnum GOLD = new MeteringImagetypeEnum("gold");
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final MeteringImagetypeEnum PRIVATE = new MeteringImagetypeEnum("private");
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final MeteringImagetypeEnum SHARED = new MeteringImagetypeEnum("shared");
 
         private static final Map<String, MeteringImagetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -211,13 +225,19 @@ public class MetadataList {
 
     private String opSvcUserid;
 
-    /** 操作系统类型，取值为：Linux、Windows */
+    /**
+     * 操作系统类型，取值为：Linux、Windows
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -292,13 +312,19 @@ public class MetadataList {
 
     private String bmsSupportEvs;
 
-    /** 操作系统位数，一般取值为“32”或者“64”。 */
+    /**
+     * 操作系统位数，一般取值为“32”或者“64”。
+     */
     public static final class OsBitEnum {
 
-        /** Enum _32 for value: "32" */
+        /**
+         * Enum _32 for value: "32"
+         */
         public static final OsBitEnum _32 = new OsBitEnum("32");
 
-        /** Enum _64 for value: "64" */
+        /**
+         * Enum _64 for value: "64"
+         */
         public static final OsBitEnum _64 = new OsBitEnum("64");
 
         private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
@@ -373,9 +399,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。
-     * 
-     * @return chargingMode */
+    /**
+     * 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -389,9 +416,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 按“包年/包月”计费的裸金属服务器对应的订单ID。
-     * 
-     * @return meteringOrderId */
+    /**
+     * 按“包年/包月”计费的裸金属服务器对应的订单ID。
+     * @return meteringOrderId
+     */
     public String getMeteringOrderId() {
         return meteringOrderId;
     }
@@ -405,9 +433,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 按“包年/包月”计费的裸金属服务器对应的产品ID
-     * 
-     * @return meteringProductId */
+    /**
+     * 按“包年/包月”计费的裸金属服务器对应的产品ID
+     * @return meteringProductId
+     */
     public String getMeteringProductId() {
         return meteringProductId;
     }
@@ -421,9 +450,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器所属的虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 裸金属服务器所属的虚拟私有云ID
+     * @return vpcId
+     */
     public UUID getVpcId() {
         return vpcId;
     }
@@ -437,9 +467,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器操作系统对应的镜像ID
-     * 
-     * @return meteringImageId */
+    /**
+     * 裸金属服务器操作系统对应的镜像ID
+     * @return meteringImageId
+     */
     public UUID getMeteringImageId() {
         return meteringImageId;
     }
@@ -453,9 +484,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 镜像类型，目前支持：公共镜像（gold）私有镜像（private）共享镜像（shared）
-     * 
-     * @return meteringImagetype */
+    /**
+     * 镜像类型，目前支持：公共镜像（gold）私有镜像（private）共享镜像（shared）
+     * @return meteringImagetype
+     */
     public MeteringImagetypeEnum getMeteringImagetype() {
         return meteringImagetype;
     }
@@ -469,9 +501,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器的网卡列表。
-     * 
-     * @return baremetalPortIDList */
+    /**
+     * 裸金属服务器的网卡列表。
+     * @return baremetalPortIDList
+     */
     public String getBaremetalPortIDList() {
         return baremetalPortIDList;
     }
@@ -485,9 +518,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器对应的资源规格编码，格式为：{规格ID}.{os_type}，例如physical.o2.medium.linux。
-     * 
-     * @return meteringResourcespeccode */
+    /**
+     * 裸金属服务器对应的资源规格编码，格式为：{规格ID}.{os_type}，例如physical.o2.medium.linux。
+     * @return meteringResourcespeccode
+     */
     public String getMeteringResourcespeccode() {
         return meteringResourcespeccode;
     }
@@ -501,9 +535,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器对应的资源类型，取值为：hws.resource.type.pm
-     * 
-     * @return meteringResourcetype */
+    /**
+     * 裸金属服务器对应的资源类型，取值为：hws.resource.type.pm
+     * @return meteringResourcetype
+     */
     public String getMeteringResourcetype() {
         return meteringResourcetype;
     }
@@ -517,9 +552,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器操作系统对应的镜像名称
-     * 
-     * @return imageName */
+    /**
+     * 裸金属服务器操作系统对应的镜像名称
+     * @return imageName
+     */
     public String getImageName() {
         return imageName;
     }
@@ -533,9 +569,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 用户ID（登录管理控制台，进入我的凭证，即可看到“用户ID”）
-     * 
-     * @return opSvcUserid */
+    /**
+     * 用户ID（登录管理控制台，进入我的凭证，即可看到“用户ID”）
+     * @return opSvcUserid
+     */
     public String getOpSvcUserid() {
         return opSvcUserid;
     }
@@ -549,9 +586,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 操作系统类型，取值为：Linux、Windows
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型，取值为：Linux、Windows
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -565,9 +603,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 裸金属服务器是否支持EVS卷。
-     * 
-     * @return bmsSupportEvs */
+    /**
+     * 裸金属服务器是否支持EVS卷。
+     * @return bmsSupportEvs
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__bms_support_evs")
     public String getBmsSupportEvs() {
@@ -583,9 +622,10 @@ public class MetadataList {
         return this;
     }
 
-    /** 操作系统位数，一般取值为“32”或者“64”。
-     * 
-     * @return osBit */
+    /**
+     * 操作系统位数，一般取值为“32”或者“64”。
+     * @return osBit
+     */
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -659,7 +699,10 @@ public class MetadataList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

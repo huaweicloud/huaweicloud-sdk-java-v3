@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 边缘节点日志配置 */
+/**
+ * 边缘节点日志配置
+ */
 public class LogConfigs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** 数据库保存的主键，不需要关注此字段。
-     * 
-     * @return id */
+    /**
+     * 数据库保存的主键，不需要关注此字段。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** 应用日志文件大小限制，单位MB，默认50，取值范围10-1000。
-     * 
-     * @return size */
+    /**
+     * 应用日志文件大小限制，单位MB，默认50，取值范围10-1000。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -80,9 +84,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** - 当type为LTS时，应用级日志可配置为On或Off；系统级日志可配置为Off/Error/Warning/Info/Debug； - 当type为local时，无需配置level。
-     * 
-     * @return level */
+    /**
+     * - 当type为LTS时，应用级日志可配置为On或Off；系统级日志可配置为Off/Error/Warning/Info/Debug； - 当type为local时，无需配置level。
+     * @return level
+     */
     public String getLevel() {
         return level;
     }
@@ -96,9 +101,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** 应用日志rotate个数，默认5，取值范围1-10。
-     * 
-     * @return rotateNum */
+    /**
+     * 应用日志rotate个数，默认5，取值范围1-10。
+     * @return rotateNum
+     */
     public Integer getRotateNum() {
         return rotateNum;
     }
@@ -112,9 +118,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** 应用日志rotate周期，可选项： - daily - monthly - weekly - yearly
-     * 
-     * @return rotatePeriod */
+    /**
+     * 应用日志rotate周期，可选项： - daily - monthly - weekly - yearly
+     * @return rotatePeriod
+     */
     public String getRotatePeriod() {
         return rotatePeriod;
     }
@@ -128,9 +135,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** - LTS：将日志发送到AOM - local：本地日志
-     * 
-     * @return type */
+    /**
+     * - LTS：将日志发送到AOM - local：本地日志
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -144,9 +152,10 @@ public class LogConfigs {
         return this;
     }
 
-    /** - app：部署到边缘节点上的应用的日志 - system：边缘节点上系统的日志
-     * 
-     * @return component */
+    /**
+     * - app：部署到边缘节点上的应用的日志 - system：边缘节点上系统的日志
+     * @return component
+     */
     public String getComponent() {
         return component;
     }
@@ -190,7 +199,10 @@ public class LogConfigs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

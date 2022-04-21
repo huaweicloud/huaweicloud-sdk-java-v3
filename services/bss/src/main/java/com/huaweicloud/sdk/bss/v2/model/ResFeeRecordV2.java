@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResFeeRecordV2 */
+/**
+ * ResFeeRecordV2
+ */
 public class ResFeeRecordV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,9 +255,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源消费记录的日期。 格式：YYYY-MM-DD。按照东八区截取。
-     * 
-     * @return billDate */
+    /**
+     * 资源消费记录的日期。 格式：YYYY-MM-DD。按照东八区截取。
+     * @return billDate
+     */
     public String getBillDate() {
         return billDate;
     }
@@ -269,9 +272,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -285,10 +289,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 消费的客户账号ID。
-     * 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 消费的客户账号ID。 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -302,9 +306,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return region */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -318,9 +323,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
-     * 
-     * @return regionName */
+    /**
+     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -334,9 +340,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -350,9 +357,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -366,9 +374,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return cloudServiceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return cloudServiceTypeName
+     */
     public String getCloudServiceTypeName() {
         return cloudServiceTypeName;
     }
@@ -382,9 +391,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -398,9 +408,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
-     * 
-     * @return effectiveTime */
+    /**
+     * 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -414,9 +425,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
-     * 
-     * @return expireTime */
+    /**
+     * 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -430,9 +442,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -446,9 +459,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -462,9 +476,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return resourceTag */
+    /**
+     * 资源标签。
+     * @return resourceTag
+     */
     public String getResourceTag() {
         return resourceTag;
     }
@@ -478,9 +493,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -494,9 +510,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品名称。
-     * 
-     * @return productName */
+    /**
+     * 产品名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -510,9 +527,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品的规格描述。
-     * 
-     * @return productSpecDesc */
+    /**
+     * 产品的规格描述。
+     * @return productSpecDesc
+     */
     public String getProductSpecDesc() {
         return productSpecDesc;
     }
@@ -526,9 +544,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** SKU编码，在账单中唯一标识一个资源的规格。
-     * 
-     * @return skuCode */
+    /**
+     * SKU编码，在账单中唯一标识一个资源的规格。
+     * @return skuCode
+     */
     public String getSkuCode() {
         return skuCode;
     }
@@ -542,9 +561,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品的实例大小，仅线性产品有效。 说明： 线性产品是指订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小规格。
-     * 
-     * @return specSize */
+    /**
+     * 产品的实例大小，仅线性产品有效。  说明： 线性产品是指订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小规格。
+     * @return specSize
+     */
     public Double getSpecSize() {
         return specSize;
     }
@@ -558,9 +578,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品实例大小的单位，仅线性产品有该字段。 您可以调用查询度量单位列表接口获取。
-     * 
-     * @return specSizeMeasureId */
+    /**
+     * 产品实例大小的单位，仅线性产品有该字段。 您可以调用查询度量单位列表接口获取。
+     * @return specSizeMeasureId
+     */
     public Integer getSpecSizeMeasureId() {
         return specSizeMeasureId;
     }
@@ -574,9 +595,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 订单ID或交易ID，扣费维度的唯一标识。
-     * 
-     * @return tradeId */
+    /**
+     * 订单ID或交易ID，扣费维度的唯一标识。
+     * @return tradeId
+     */
     public String getTradeId() {
         return tradeId;
     }
@@ -590,9 +612,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 交易时间。
-     * 
-     * @return tradeTime */
+    /**
+     * 交易时间。
+     * @return tradeTime
+     */
     public String getTradeTime() {
         return tradeTime;
     }
@@ -606,9 +629,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -622,9 +646,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 企业项目的名称。
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 企业项目的名称。
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -638,9 +663,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 计费模式。 1：包年/包月3：按需10：预留实例
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。 1：包年/包月3：按需10：预留实例
+     * @return chargeMode
+     */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -654,9 +680,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 订单ID。 说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。  说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -670,9 +697,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 周期类型： 19：年20：月24：天25：小时5：一次性
-     * 
-     * @return periodType */
+    /**
+     * 周期类型： 19：年20：月24：天25：小时5：一次性
+     * @return periodType
+     */
     public String getPeriodType() {
         return periodType;
     }
@@ -686,9 +714,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
-     * 
-     * @return usageType */
+    /**
+     * 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
+     * @return usageType
+     */
     public String getUsageType() {
         return usageType;
     }
@@ -702,9 +731,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源的使用量。
-     * 
-     * @return usage */
+    /**
+     * 资源的使用量。
+     * @return usage
+     */
     public Double getUsage() {
         return usage;
     }
@@ -718,9 +748,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return usageMeasureId */
+    /**
+     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return usageMeasureId
+     */
     public Integer getUsageMeasureId() {
         return usageMeasureId;
     }
@@ -734,9 +765,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 套餐内使用量。
-     * 
-     * @return freeResourceUsage */
+    /**
+     * 套餐内使用量。
+     * @return freeResourceUsage
+     */
     public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
@@ -750,9 +782,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return freeResourceMeasureId */
+    /**
+     * 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return freeResourceMeasureId
+     */
     public Integer getFreeResourceMeasureId() {
         return freeResourceMeasureId;
     }
@@ -766,9 +799,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 预留实例使用量。
-     * 
-     * @return riUsage */
+    /**
+     * 预留实例使用量。
+     * @return riUsage
+     */
     public Double getRiUsage() {
         return riUsage;
     }
@@ -782,9 +816,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 预留实例使用量单位。
-     * 
-     * @return riUsageMeasureId */
+    /**
+     * 预留实例使用量单位。
+     * @return riUsageMeasureId
+     */
     public Integer getRiUsageMeasureId() {
         return riUsageMeasureId;
     }
@@ -798,10 +833,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品的单价。 按需产品的单价，只有简单定价，不分档的场景会返回。 包周期产品的单价，只有包周期的如下场景会返回：包周期订购/续订/降配/升配/扩容简单定价，不分档
-     * 预留实例的单价，只有如下场景下会返回：订购/续订/降配/升配/扩容/按时计费简单定价，不分档
-     * 
-     * @return unitPrice */
+    /**
+     * 产品的单价。 按需产品的单价，只有简单定价，不分档的场景会返回。 包周期产品的单价，只有包周期的如下场景会返回：包周期订购/续订/降配/升配/扩容简单定价，不分档 预留实例的单价，只有如下场景下会返回：订购/续订/降配/升配/扩容/按时计费简单定价，不分档
+     * @return unitPrice
+     */
     public Double getUnitPrice() {
         return unitPrice;
     }
@@ -815,10 +850,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 产品的单价单位。 线性产品的单价单位为“元/{线性单位}/月”或“元/{线性单位}/小时”等。非线性产品的单价单位为“元/月”或“元/小时”等。 说明：
-     * “线性单位”为线性产品（即订购时需要指定大小的产品）的大小的单位，比如硬盘的线性单位为GB，带宽的线性单位为Mbps。
-     * 
-     * @return unit */
+    /**
+     * 产品的单价单位。 线性产品的单价单位为“元/{线性单位}/月”或“元/{线性单位}/小时”等。非线性产品的单价单位为“元/月”或“元/小时”等。  说明： “线性单位”为线性产品（即订购时需要指定大小的产品）的大小的单位，比如硬盘的线性单位为GB，带宽的线性单位为Mbps。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -832,9 +867,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 官网价，华为云商品在官网上未叠加应用商务折扣、促销折扣等优惠的销售价格。
-     * 
-     * @return officialAmount */
+    /**
+     * 官网价，华为云商品在官网上未叠加应用商务折扣、促销折扣等优惠的销售价格。
+     * @return officialAmount
+     */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -848,9 +884,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 优惠金额，用户使用云服务享受折扣优惠如商务折扣、伙伴授予折扣以及促销优惠等减免的金额。
-     * 
-     * @return discountAmount */
+    /**
+     * 优惠金额，用户使用云服务享受折扣优惠如商务折扣、伙伴授予折扣以及促销优惠等减免的金额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -864,10 +901,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 应付金额，用户使用云服务享受折扣优惠后需要支付的费用金额，包括现金券和储值卡和代金券金额，精确到小数点后2位。 说明：
-     * amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
-     * 
-     * @return amount */
+    /**
+     * 应付金额，用户使用云服务享受折扣优惠后需要支付的费用金额，包括现金券和储值卡和代金券金额，精确到小数点后2位。  说明： amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -881,9 +918,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 现金支付金额。
-     * 
-     * @return cashAmount */
+    /**
+     * 现金支付金额。
+     * @return cashAmount
+     */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -897,9 +935,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 信用额度支付金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用额度支付金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -913,9 +952,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 代金券支付金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券支付金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -929,9 +969,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 现金券支付金额。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券支付金额。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -945,9 +986,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 储值卡支付金额。
-     * 
-     * @return storedCardAmount */
+    /**
+     * 储值卡支付金额。
+     * @return storedCardAmount
+     */
     public Double getStoredCardAmount() {
         return storedCardAmount;
     }
@@ -961,9 +1003,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 奖励金支付金额（用于现网客户未使用完的奖励金）。
-     * 
-     * @return bonusAmount */
+    /**
+     * 奖励金支付金额（用于现网客户未使用完的奖励金）。
+     * @return bonusAmount
+     */
     public Double getBonusAmount() {
         return bonusAmount;
     }
@@ -977,9 +1020,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 欠费金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠费金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -993,9 +1037,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 欠费核销金额。
-     * 
-     * @return adjustmentAmount */
+    /**
+     * 欠费核销金额。
+     * @return adjustmentAmount
+     */
     public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
@@ -1009,9 +1054,10 @@ public class ResFeeRecordV2 {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -1187,7 +1233,10 @@ public class ResFeeRecordV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PipelineStateStatus */
+/**
+ * PipelineStateStatus
+ */
 public class PipelineStateStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 阶段或任务标识
-     * 
-     * @return id */
+    /**
+     * 阶段或任务标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -92,9 +95,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 阶段或任务名称
-     * 
-     * @return name */
+    /**
+     * 阶段或任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -108,9 +112,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 类别(阶段/任务)
-     * 
-     * @return type */
+    /**
+     * 类别(阶段/任务)
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -124,9 +129,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 执行开始时间
-     * 
-     * @return startTime */
+    /**
+     * 执行开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -140,9 +146,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 执行结束时间
-     * 
-     * @return endTime */
+    /**
+     * 执行结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -156,9 +163,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 运行耗时
-     * 
-     * @return elapsedTime */
+    /**
+     * 运行耗时
+     * @return elapsedTime
+     */
     public String getElapsedTime() {
         return elapsedTime;
     }
@@ -172,9 +180,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 运行状态
-     * 
-     * @return status */
+    /**
+     * 运行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -188,9 +197,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 运行结果
-     * 
-     * @return outcome */
+    /**
+     * 运行结果
+     * @return outcome
+     */
     public String getOutcome() {
         return outcome;
     }
@@ -204,9 +214,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -220,9 +231,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -252,9 +264,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 子任务运行信息(对任务来说是空的)
-     * 
-     * @return children */
+    /**
+     * 子任务运行信息(对任务来说是空的)
+     * @return children
+     */
     public List<PipelineStateStatus> getChildren() {
         return children;
     }
@@ -268,9 +281,10 @@ public class PipelineStateStatus {
         return this;
     }
 
-    /** 任务运行记录跳转链接
-     * 
-     * @return detailUrl */
+    /**
+     * 任务运行记录跳转链接
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -337,7 +351,10 @@ public class PipelineStateStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

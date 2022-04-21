@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 输出为hosting时，hosting结果文件的相关信息 */
+/**
+ * 输出为hosting时，hosting结果文件的相关信息
+ */
 public class TaskHostingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TaskHostingResult {
         return this;
     }
 
-    /** Get hostingResult
-     * 
-     * @return hostingResult */
+    /**
+     * Get hostingResult
+     * @return hostingResult
+     */
     public TaskHostingResultHostingResult getHostingResult() {
         return hostingResult;
     }
@@ -65,7 +68,10 @@ public class TaskHostingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

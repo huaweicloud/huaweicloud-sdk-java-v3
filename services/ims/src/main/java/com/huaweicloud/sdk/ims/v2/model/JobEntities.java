@@ -43,9 +43,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 镜像ID
-     * 
-     * @return imageId */
+    /**
+     * 镜像ID
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -59,9 +60,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 当前任务名称
-     * 
-     * @return currentTask */
+    /**
+     * 当前任务名称
+     * @return currentTask
+     */
     public String getCurrentTask() {
         return currentTask;
     }
@@ -75,9 +77,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 镜像名称
-     * 
-     * @return imageName */
+    /**
+     * 镜像名称
+     * @return imageName
+     */
     public String getImageName() {
         return imageName;
     }
@@ -91,9 +94,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 任务执行进度
-     * 
-     * @return processPercent */
+    /**
+     * 任务执行进度
+     * @return processPercent
+     */
     public Double getProcessPercent() {
         return processPercent;
     }
@@ -123,9 +127,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 批量任务执行结果
-     * 
-     * @return results */
+    /**
+     * 批量任务执行结果
+     * @return results
+     */
     public List<JobEntitiesResult> getResults() {
         return results;
     }
@@ -168,7 +173,10 @@ public class JobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

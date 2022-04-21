@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** csv文件格式转换列表 */
+/**
+ * csv文件格式转换列表
+ */
 public class CsvMappings {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CsvMappings {
         return this;
     }
 
-    /** **参数说明**：OBS文件中的列名
-     * 
-     * @return columnName */
+    /**
+     * **参数说明**：OBS文件中的列名
+     * @return columnName
+     */
     public String getColumnName() {
         return columnName;
     }
@@ -39,9 +42,10 @@ public class CsvMappings {
         return this;
     }
 
-    /** **参数说明**：流转数据的属性名
-     * 
-     * @return jsonKey */
+    /**
+     * **参数说明**：流转数据的属性名
+     * @return jsonKey
+     */
     public String getJsonKey() {
         return jsonKey;
     }
@@ -78,7 +82,10 @@ public class CsvMappings {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

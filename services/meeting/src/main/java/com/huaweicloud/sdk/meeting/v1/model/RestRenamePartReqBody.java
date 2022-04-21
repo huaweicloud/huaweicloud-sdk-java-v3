@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 重命名会场消息体。 */
+/**
+ * 重命名会场消息体。
+ */
 public class RestRenamePartReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RestRenamePartReqBody {
         return this;
     }
 
-    /** 与会者标识。 已入会的必须填写该字段。
-     * 
-     * @return participantID */
+    /**
+     * 与会者标识。 已入会的必须填写该字段。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -44,9 +47,10 @@ public class RestRenamePartReqBody {
         return this;
     }
 
-    /** 与会者号码。
-     * 
-     * @return number */
+    /**
+     * 与会者号码。
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -60,9 +64,10 @@ public class RestRenamePartReqBody {
         return this;
     }
 
-    /** 新名字。
-     * 
-     * @return newName */
+    /**
+     * 新名字。
+     * @return newName
+     */
     public String getNewName() {
         return newName;
     }
@@ -101,7 +106,10 @@ public class RestRenamePartReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AppUpdate */
+/**
+ * AppUpdate
+ */
 public class AppUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AppUpdate {
         return this;
     }
 
-    /** 应用模板别名，中文、英文字母、数字、中划线、下划线，最大64字符
-     * 
-     * @return alias */
+    /**
+     * 应用模板别名，中文、英文字母、数字、中划线、下划线，最大64字符
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -39,9 +42,10 @@ public class AppUpdate {
         return this;
     }
 
-    /** 应用模板描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 应用模板描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -77,7 +81,10 @@ public class AppUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

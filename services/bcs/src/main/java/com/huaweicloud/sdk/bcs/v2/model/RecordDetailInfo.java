@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 操作记录详细信息 */
+/**
+ * 操作记录详细信息
+ */
 public class RecordDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作记录ID
-     * 
-     * @return operationId */
+    /**
+     * 操作记录ID
+     * @return operationId
+     */
     public String getOperationId() {
         return operationId;
     }
@@ -99,9 +102,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -115,9 +119,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作类型
-     * 
-     * @return operationType */
+    /**
+     * 操作类型
+     * @return operationType
+     */
     public String getOperationType() {
         return operationType;
     }
@@ -131,9 +136,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainId */
+    /**
+     * 租户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -147,9 +153,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -163,9 +170,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 区块链ID
-     * 
-     * @return blockchainId */
+    /**
+     * 区块链ID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -179,9 +187,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 区块链名称
-     * 
-     * @return blockchainName */
+    /**
+     * 区块链名称
+     * @return blockchainName
+     */
     public String getBlockchainName() {
         return blockchainName;
     }
@@ -204,9 +213,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** Get clusterInfo
-     * 
-     * @return clusterInfo */
+    /**
+     * Get clusterInfo
+     * @return clusterInfo
+     */
     public OprecordCluster getClusterInfo() {
         return clusterInfo;
     }
@@ -236,9 +246,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作流程，key为流程名，value为流程信息
-     * 
-     * @return operationProcess */
+    /**
+     * 操作流程，key为流程名，value为流程信息
+     * @return operationProcess
+     */
     public Map<String, ProcessInfo> getOperationProcess() {
         return operationProcess;
     }
@@ -252,9 +263,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 记录更新时间
-     * 
-     * @return recordTime */
+    /**
+     * 记录更新时间
+     * @return recordTime
+     */
     public Long getRecordTime() {
         return recordTime;
     }
@@ -268,9 +280,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作状态
-     * 
-     * @return operationStatus */
+    /**
+     * 操作状态
+     * @return operationStatus
+     */
     public String getOperationStatus() {
         return operationStatus;
     }
@@ -300,9 +313,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作过程信息记录
-     * 
-     * @return message */
+    /**
+     * 操作过程信息记录
+     * @return message
+     */
     public List<String> getMessage() {
         return message;
     }
@@ -316,9 +330,10 @@ public class RecordDetailInfo {
         return this;
     }
 
-    /** 操作描述
-     * 
-     * @return desc */
+    /**
+     * 操作描述
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -389,7 +404,10 @@ public class RecordDetailInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

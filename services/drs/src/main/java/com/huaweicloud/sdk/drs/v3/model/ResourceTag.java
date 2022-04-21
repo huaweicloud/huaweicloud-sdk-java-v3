@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 标签信息体 */
+/**
+ * 标签信息体
+ */
 public class ResourceTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签键，最大长度36，只能包含字母、数字、下划线、中划线和中文。
-     * 
-     * @return key */
+    /**
+     * 标签键，最大长度36，只能包含字母、数字、下划线、中划线和中文。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签值，最大长度43，只能包含字母、数字、下划线、中划线和中文。
-     * 
-     * @return value */
+    /**
+     * 标签值，最大长度43，只能包含字母、数字、下划线、中划线和中文。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

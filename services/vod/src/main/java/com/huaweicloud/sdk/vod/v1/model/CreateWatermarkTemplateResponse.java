@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateWatermarkTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 水印配置模板id<br/>
-     * 
-     * @return id */
+    /**
+     * 水印配置模板id<br/> 
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -40,9 +43,10 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 水印图片上传地址<br/>
-     * 
-     * @return uploadUrl */
+    /**
+     * 水印图片上传地址<br/> 
+     * @return uploadUrl
+     */
     public String getUploadUrl() {
         return uploadUrl;
     }
@@ -79,7 +83,10 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

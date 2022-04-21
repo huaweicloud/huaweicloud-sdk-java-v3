@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowIssuesByPlanIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowIssuesByPlanIdRequest {
         return this;
     }
 
-    /** DevCloud项目id，项目唯一标识，固定长度32位字符
-     * 
-     * @return projectId */
+    /**
+     * DevCloud项目id，项目唯一标识，固定长度32位字符
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -49,9 +52,10 @@ public class ShowIssuesByPlanIdRequest {
         return this;
     }
 
-    /** 测试计划id，测试计划的唯一标识，固定长度32位字符
-     * 
-     * @return planId */
+    /**
+     * 测试计划id，测试计划的唯一标识，固定长度32位字符
+     * @return planId
+     */
     public String getPlanId() {
         return planId;
     }
@@ -65,9 +69,12 @@ public class ShowIssuesByPlanIdRequest {
         return this;
     }
 
-    /** 起始偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999
-     * 
-     * @return offset */
+    /**
+     * 起始偏移量，表示从此偏移量开始查询， offset大于等于0
+     * minimum: 0
+     * maximum: 999
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -81,9 +88,12 @@ public class ShowIssuesByPlanIdRequest {
         return this;
     }
 
-    /** 每页显示的条目数量,最大支持200条 minimum: 1 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量,最大支持200条
+     * minimum: 1
+     * maximum: 200
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -124,7 +134,10 @@ public class ShowIssuesByPlanIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

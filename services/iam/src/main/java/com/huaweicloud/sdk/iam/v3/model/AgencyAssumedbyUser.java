@@ -36,9 +36,10 @@ public class AgencyAssumedbyUser {
         return this;
     }
 
-    /** 被委托方B中IAM用户的用户名。
-     * 
-     * @return name */
+    /**
+     * 被委托方B中IAM用户的用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +53,10 @@ public class AgencyAssumedbyUser {
         return this;
     }
 
-    /** 被委托方B中IAM用户的用户ID。
-     * 
-     * @return id */
+    /**
+     * 被委托方B中IAM用户的用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +79,10 @@ public class AgencyAssumedbyUser {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public AgencyAssumedbyUserDomain getDomain() {
         return domain;
     }
@@ -93,9 +96,10 @@ public class AgencyAssumedbyUser {
         return this;
     }
 
-    /** 被委托方B中IAM用户的密码过期时间（UTC时间），“”表示密码不过期。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 被委托方B中IAM用户的密码过期时间（UTC时间），“”表示密码不过期。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -135,7 +139,10 @@ public class AgencyAssumedbyUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

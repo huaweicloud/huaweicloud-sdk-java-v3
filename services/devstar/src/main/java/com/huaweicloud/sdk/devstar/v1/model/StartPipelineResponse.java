@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class StartPipelineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class StartPipelineResponse extends SdkResponse {
 
     private String id;
 
-    /** 流水线操作成功 */
+    /**
+     * 流水线操作成功
+     */
     public static final class ResultEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final ResultEnum SUCCESS = new ResultEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final ResultEnum FAILED = new ResultEnum("failed");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +108,10 @@ public class StartPipelineResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线id
-     * 
-     * @return id */
+    /**
+     * 流水线id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -116,9 +125,10 @@ public class StartPipelineResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线操作成功
-     * 
-     * @return result */
+    /**
+     * 流水线操作成功
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -155,7 +165,10 @@ public class StartPipelineResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRecordingFileDownloadUrlsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return this;
     }
 
-    /** 会议的ConfUUID(通过查询录制文件列表获取)。
-     * 
-     * @return confUUID */
+    /**
+     * 会议的ConfUUID(通过查询录制文件列表获取)。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -54,9 +57,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return this;
     }
 
-    /** 数据偏移记录。
-     * 
-     * @return offset */
+    /**
+     * 数据偏移记录。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -70,9 +74,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return this;
     }
 
-    /** 指定返回的记录数，最大500条。
-     * 
-     * @return limit */
+    /**
+     * 指定返回的记录数，最大500条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求。
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求。
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -104,9 +110,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -152,7 +159,10 @@ public class ShowRecordingFileDownloadUrlsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

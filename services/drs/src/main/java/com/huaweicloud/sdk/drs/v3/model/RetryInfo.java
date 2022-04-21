@@ -25,9 +25,10 @@ public class RetryInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -41,9 +42,10 @@ public class RetryInfo {
         return this;
     }
 
-    /** 再编辑之后启动，必填为true。
-     * 
-     * @return isSyncReEdit */
+    /**
+     * 再编辑之后启动，必填为true。
+     * @return isSyncReEdit
+     */
     public Boolean getIsSyncReEdit() {
         return isSyncReEdit;
     }
@@ -79,7 +81,10 @@ public class RetryInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

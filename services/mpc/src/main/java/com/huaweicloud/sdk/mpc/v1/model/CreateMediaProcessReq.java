@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateMediaProcessReq */
+/**
+ * CreateMediaProcessReq
+ */
 public class CreateMediaProcessReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateMediaProcessReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -63,9 +66,10 @@ public class CreateMediaProcessReq {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -79,9 +83,10 @@ public class CreateMediaProcessReq {
         return this;
     }
 
-    /** 模板ID
-     * 
-     * @return templateId */
+    /**
+     * 模板ID 
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -120,7 +125,10 @@ public class CreateMediaProcessReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

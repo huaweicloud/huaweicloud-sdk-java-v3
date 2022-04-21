@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateRunRequestBody */
+/**
+ * CreateRunRequestBody
+ */
 public class CreateRunRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CreateRunRequestBody {
         return this;
     }
 
-    /** 计算资源ID。
-     * 
-     * @return computingResourceId */
+    /**
+     * 计算资源ID。
+     * @return computingResourceId
+     */
     public String getComputingResourceId() {
         return computingResourceId;
     }
@@ -58,9 +61,10 @@ public class CreateRunRequestBody {
         return this;
     }
 
-    /** 作业配置项。
-     * 
-     * @return conf */
+    /**
+     * 作业配置项。
+     * @return conf
+     */
     public List<String> getConf() {
         return conf;
     }
@@ -97,7 +101,10 @@ public class CreateRunRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

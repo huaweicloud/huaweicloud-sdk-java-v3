@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转换计算 */
+/**
+ * 转换计算
+ */
 public class DTTransformRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class DTTransformRequest {
         return this;
     }
 
-    /** 输入参数，最多支持10个
-     * 
-     * @return inputs */
+    /**
+     * 输入参数，最多支持10个
+     * @return inputs
+     */
     public List<InputRequest> getInputs() {
         return inputs;
     }
@@ -74,9 +77,10 @@ public class DTTransformRequest {
         return this;
     }
 
-    /** Get outputs
-     * 
-     * @return outputs */
+    /**
+     * Get outputs
+     * @return outputs
+     */
     public List<OutputRequest> getOutputs() {
         return outputs;
     }
@@ -113,7 +117,10 @@ public class DTTransformRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

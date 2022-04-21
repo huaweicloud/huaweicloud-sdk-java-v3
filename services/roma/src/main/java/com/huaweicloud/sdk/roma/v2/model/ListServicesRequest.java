@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,9 +82,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -95,9 +101,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 服务ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -111,9 +120,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 服务名称
-     * 
-     * @return serviceName */
+    /**
+     * 服务名称
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -127,9 +137,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 归属产品模板ID，product_template_id和product_id二选一 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productTemplateId */
+    /**
+     * 归属产品模板ID，product_template_id和product_id二选一
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productTemplateId
+     */
     public Integer getProductTemplateId() {
         return productTemplateId;
     }
@@ -143,9 +156,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 归属产品ID，product_template_id和product_id二选一 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productId */
+    /**
+     * 归属产品ID，product_template_id和product_id二选一
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -159,9 +175,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 创建用户名
-     * 
-     * @return createdUserName */
+    /**
+     * 创建用户名
+     * @return createdUserName
+     */
     public String getCreatedUserName() {
         return createdUserName;
     }
@@ -175,9 +192,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return createdDateStart */
+    /**
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return createdDateStart
+     */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -191,9 +211,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 创建时间截止，格式timestamp(ms)。使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return createdDateEnd */
+    /**
+     * 创建时间截止，格式timestamp(ms)。使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return createdDateEnd
+     */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -207,9 +230,12 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -271,7 +297,10 @@ public class ListServicesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

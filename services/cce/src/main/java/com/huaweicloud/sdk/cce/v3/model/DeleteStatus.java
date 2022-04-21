@@ -40,9 +40,10 @@ public class DeleteStatus {
         return this;
     }
 
-    /** 集群删除时已经存在的集群资源记录总数
-     * 
-     * @return previousTotal */
+    /**
+     * 集群删除时已经存在的集群资源记录总数
+     * @return previousTotal
+     */
     public Integer getPreviousTotal() {
         return previousTotal;
     }
@@ -56,9 +57,10 @@ public class DeleteStatus {
         return this;
     }
 
-    /** 基于当前集群资源记录信息，生成实际最新资源记录总数
-     * 
-     * @return currentTotal */
+    /**
+     * 基于当前集群资源记录信息，生成实际最新资源记录总数
+     * @return currentTotal
+     */
     public Integer getCurrentTotal() {
         return currentTotal;
     }
@@ -72,9 +74,10 @@ public class DeleteStatus {
         return this;
     }
 
-    /** 集群删除时更新的资源记录总数
-     * 
-     * @return updated */
+    /**
+     * 集群删除时更新的资源记录总数
+     * @return updated
+     */
     public Integer getUpdated() {
         return updated;
     }
@@ -88,9 +91,10 @@ public class DeleteStatus {
         return this;
     }
 
-    /** 集群删除时更新的资源记录总数
-     * 
-     * @return added */
+    /**
+     * 集群删除时更新的资源记录总数
+     * @return added
+     */
     public Integer getAdded() {
         return added;
     }
@@ -104,9 +108,10 @@ public class DeleteStatus {
         return this;
     }
 
-    /** 集群删除时删除的资源记录总数
-     * 
-     * @return deleted */
+    /**
+     * 集群删除时删除的资源记录总数
+     * @return deleted
+     */
     public Integer getDeleted() {
         return deleted;
     }
@@ -148,7 +153,10 @@ public class DeleteStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

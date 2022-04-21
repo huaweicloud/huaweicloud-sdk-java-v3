@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Error */
+/**
+ * Error
+ */
 public class Error {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Error {
         return this;
     }
 
-    /** 错误详情
-     * 
-     * @return detail */
+    /**
+     * 错误详情
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -54,9 +57,10 @@ public class Error {
         return this;
     }
 
-    /** 铂金版实例ID，如果为空则表示是专业版实例。
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，如果为空则表示是专业版实例。
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -70,9 +74,10 @@ public class Error {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -86,9 +91,10 @@ public class Error {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return ruleId */
+    /**
+     * 规则ID
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -102,9 +108,10 @@ public class Error {
         return this;
     }
 
-    /** 错误发生的时间
-     * 
-     * @return time */
+    /**
+     * 错误发生的时间
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -145,7 +152,10 @@ public class Error {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

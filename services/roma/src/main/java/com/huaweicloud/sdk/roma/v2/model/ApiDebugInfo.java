@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiDebugInfo */
+/**
+ * ApiDebugInfo
+ */
 public class ApiDebugInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,28 +27,44 @@ public class ApiDebugInfo {
 
     private Map<String, List<String>> header = null;
 
-    /** API的请求方法 */
+    /**
+    * API的请求方法
+    */
     public static final class MethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final MethodEnum GET = new MethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final MethodEnum POST = new MethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final MethodEnum PUT = new MethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final MethodEnum DELETE = new MethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final MethodEnum HEAD = new MethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final MethodEnum PATCH = new MethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final MethodEnum OPTIONS = new MethodEnum("OPTIONS");
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
@@ -166,9 +184,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 请求消息体，最长2097152字节
-     * 
-     * @return body */
+    /**
+     * 请求消息体，最长2097152字节
+     * @return body
+     */
     public String getBody() {
         return body;
     }
@@ -198,11 +217,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 头域参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 -
-     * 不支持取值为\"X-Stage\"，不区分大小写 - mode为MARKET或CONSUMER时，不支持取值为\"X-Auth-Token\"和\"Authorization\"，不区分大小写 >
-     * 头域名称在使用前会被规范化，如：\"x-MY-hEaDer\"会被规范化为\"X-My-Header\"
-     * 
-     * @return header */
+    /**
+     * 头域参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 - 不支持取值为\"X-Stage\"，不区分大小写 - mode为MARKET或CONSUMER时，不支持取值为\"X-Auth-Token\"和\"Authorization\"，不区分大小写 > 头域名称在使用前会被规范化，如：\"x-MY-hEaDer\"会被规范化为\"X-My-Header\"
+     * @return header
+     */
     public Map<String, List<String>> getHeader() {
         return header;
     }
@@ -216,9 +234,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** API的请求方法
-     * 
-     * @return method */
+    /**
+     * API的请求方法
+     * @return method
+     */
     public MethodEnum getMethod() {
         return method;
     }
@@ -232,10 +251,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET 调试云市场已购买的API - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。
-     * MARKET模式，接口调用者必须是API购买者或拥有者。 CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
-     * 
-     * @return mode */
+    /**
+     * 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET 调试云市场已购买的API - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。    MARKET模式，接口调用者必须是API购买者或拥有者。    CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -249,9 +268,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** API的请求路径，需以\"/\"开头，最大长度1024 > 须符合路径规范，百分号编码格式可被正确解码
-     * 
-     * @return path */
+    /**
+     * API的请求路径，需以\"/\"开头，最大长度1024 > 须符合路径规范，百分号编码格式可被正确解码
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -281,10 +301,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 查询参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、下划线、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 -
-     * 不支持取值为\"X-Stage\"，不区分大小写
-     * 
-     * @return query */
+    /**
+     * 查询参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、下划线、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 - 不支持取值为\"X-Stage\"，不区分大小写
+     * @return query
+     */
     public Map<String, List<String>> getQuery() {
         return query;
     }
@@ -298,9 +318,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** API的请求协议 - HTTP - HTTPS
-     * 
-     * @return scheme */
+    /**
+     * API的请求协议 - HTTP - HTTPS
+     * @return scheme
+     */
     public String getScheme() {
         return scheme;
     }
@@ -314,9 +335,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 调试请求使用的APP的key
-     * 
-     * @return appKey */
+    /**
+     * 调试请求使用的APP的key
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -330,9 +352,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 调试请求使用的APP的密钥
-     * 
-     * @return appSecret */
+    /**
+     * 调试请求使用的APP的密钥
+     * @return appSecret
+     */
     public String getAppSecret() {
         return appSecret;
     }
@@ -346,9 +369,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** API的访问域名，未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET 云市场为API分组分配的域名 - CONSUMER API分组的子域名
-     * 
-     * @return domain */
+    /**
+     * API的访问域名，未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET 云市场为API分组分配的域名 - CONSUMER API分组的子域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -362,9 +386,10 @@ public class ApiDebugInfo {
         return this;
     }
 
-    /** 调试请求指定的运行环境，仅在mode为CONSUMER时有效，未提供时有如下默认值: - CONSUMER RELEASE
-     * 
-     * @return stage */
+    /**
+     * 调试请求指定的运行环境，仅在mode为CONSUMER时有效，未提供时有如下默认值: - CONSUMER RELEASE
+     * @return stage
+     */
     public String getStage() {
         return stage;
     }
@@ -414,7 +439,10 @@ public class ApiDebugInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

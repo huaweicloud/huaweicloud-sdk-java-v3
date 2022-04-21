@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,12 @@ public class CreateTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 任务ID。
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -40,9 +45,10 @@ public class CreateTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -79,7 +85,10 @@ public class CreateTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

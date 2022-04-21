@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 响应参数。 */
+/**
+ * 响应参数。
+ */
 public class CreateEventsResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateEventsResponseBody {
         return this;
     }
 
-    /** 事件ID。
-     * 
-     * @return eventId */
+    /**
+     * 事件ID。
+     * @return eventId
+     */
     public String getEventId() {
         return eventId;
     }
@@ -39,9 +42,10 @@ public class CreateEventsResponseBody {
         return this;
     }
 
-    /** 事件名称。 必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64。
-     * 
-     * @return eventName */
+    /**
+     * 事件名称。  必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64。
+     * @return eventName
+     */
     public String getEventName() {
         return eventName;
     }
@@ -78,7 +82,10 @@ public class CreateEventsResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

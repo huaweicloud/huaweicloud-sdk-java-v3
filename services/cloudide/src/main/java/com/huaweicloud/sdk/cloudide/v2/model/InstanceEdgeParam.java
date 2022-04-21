@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceEdgeParam */
+/**
+ * InstanceEdgeParam
+ */
 public class InstanceEdgeParam {
 
-    /** cpu架构 x86|arm */
+    /**
+     * cpu架构 x86|arm
+     */
     public static final class ArchEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchEnum X86 = new ArchEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchEnum ARM = new ArchEnum("arm");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
@@ -92,20 +100,29 @@ public class InstanceEdgeParam {
 
     private ArchEnum arch;
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     */
     public static final class CpuMemoryEnum {
 
-        /** Enum _1U1G for value: "1U1G" */
+        /**
+         * Enum _1U1G for value: "1U1G"
+         */
         public static final CpuMemoryEnum _1U1G = new CpuMemoryEnum("1U1G");
 
-        /** Enum _2U4G for value: "2U4G" */
+        /**
+         * Enum _2U4G for value: "2U4G"
+         */
         public static final CpuMemoryEnum _2U4G = new CpuMemoryEnum("2U4G");
 
-        /** Enum _2U8G for value: "2U8G" */
+        /**
+         * Enum _2U8G for value: "2U8G"
+         */
         public static final CpuMemoryEnum _2U8G = new CpuMemoryEnum("2U8G");
 
-        /** Enum _4U8G for value: "4U8G" */
+        /**
+         * Enum _4U8G for value: "4U8G"
+         */
         public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
 
         private static final Map<String, CpuMemoryEnum> STATIC_FIELDS = createStaticFields();
@@ -217,16 +234,24 @@ public class InstanceEdgeParam {
 
     private List<Plugin> plugins = null;
 
-    /** PVC规格 5GB|10GB|20GB */
+    /**
+    * PVC规格 5GB|10GB|20GB
+    */
     public static final class PvcQuantityEnum {
 
-        /** Enum _5GB for value: "5GB" */
+        /**
+         * Enum _5GB for value: "5GB"
+         */
         public static final PvcQuantityEnum _5GB = new PvcQuantityEnum("5GB");
 
-        /** Enum _10GB for value: "10GB" */
+        /**
+         * Enum _10GB for value: "10GB"
+         */
         public static final PvcQuantityEnum _10GB = new PvcQuantityEnum("10GB");
 
-        /** Enum _20GB for value: "20GB" */
+        /**
+         * Enum _20GB for value: "20GB"
+         */
         public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
 
         private static final Map<String, PvcQuantityEnum> STATIC_FIELDS = createStaticFields();
@@ -312,9 +337,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public ArchEnum getArch() {
         return arch;
     }
@@ -328,10 +354,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
-     * 
-     * @return cpuMemory */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     * @return cpuMemory
+     */
     public CpuMemoryEnum getCpuMemory() {
         return cpuMemory;
     }
@@ -345,9 +371,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 描述。长度不操过100个字符
-     * 
-     * @return description */
+    /**
+     * 描述。长度不操过100个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -361,9 +388,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * 
-     * @return instanceName */
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -377,9 +405,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 租户id（对应华为云帐号的domainId）
-     * 
-     * @return instanceUserDomainId */
+    /**
+     * 租户id（对应华为云帐号的domainId）
+     * @return instanceUserDomainId
+     */
     public String getInstanceUserDomainId() {
         return instanceUserDomainId;
     }
@@ -393,9 +422,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 用户租户名
-     * 
-     * @return instanceUserDomainName */
+    /**
+     * 用户租户名
+     * @return instanceUserDomainName
+     */
     public String getInstanceUserDomainName() {
         return instanceUserDomainName;
     }
@@ -409,9 +439,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return instanceUserId */
+    /**
+     * 用户id
+     * @return instanceUserId
+     */
     public String getInstanceUserId() {
         return instanceUserId;
     }
@@ -425,9 +456,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return instanceUserName */
+    /**
+     * 用户名
+     * @return instanceUserName
+     */
     public String getInstanceUserName() {
         return instanceUserName;
     }
@@ -441,9 +473,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 是否页面显示（以标签配置为准）
-     * 
-     * @return isTemporary */
+    /**
+     * 是否页面显示（以标签配置为准）
+     * @return isTemporary
+     */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -473,9 +506,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 插件列表
-     * 
-     * @return plugins */
+    /**
+     * 插件列表
+     * @return plugins
+     */
     public List<Plugin> getPlugins() {
         return plugins;
     }
@@ -489,9 +523,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** PVC规格 5GB|10GB|20GB
-     * 
-     * @return pvcQuantity */
+    /**
+     * PVC规格 5GB|10GB|20GB
+     * @return pvcQuantity
+     */
     public PvcQuantityEnum getPvcQuantity() {
         return pvcQuantity;
     }
@@ -505,10 +540,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 自动休眠时长。
-     * arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
-     * 
-     * @return refreshTime */
+    /**
+     * 自动休眠时长。 arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
+     * @return refreshTime
+     */
     public String getRefreshTime() {
         return refreshTime;
     }
@@ -522,9 +557,10 @@ public class InstanceEdgeParam {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
-     * 
-     * @return stackId */
+    /**
+     * 技术栈ID，通过技术栈管理ListStacks接口获取。
+     * @return stackId
+     */
     public String getStackId() {
         return stackId;
     }
@@ -595,7 +631,10 @@ public class InstanceEdgeParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

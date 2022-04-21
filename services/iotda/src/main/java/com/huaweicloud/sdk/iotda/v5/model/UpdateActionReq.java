@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改规则动作请求结构体 */
+/**
+ * 修改规则动作请求结构体
+ */
 public class UpdateActionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,10 +26,10 @@ public class UpdateActionReq {
         return this;
     }
 
-    /** **参数说明**：规则动作的类型。 **取值范围**： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 -
-     * OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
-     * 
-     * @return channel */
+    /**
+     * **参数说明**：规则动作的类型。 **取值范围**： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
+     * @return channel
+     */
     public String getChannel() {
         return channel;
     }
@@ -50,9 +52,10 @@ public class UpdateActionReq {
         return this;
     }
 
-    /** Get channelDetail
-     * 
-     * @return channelDetail */
+    /**
+     * Get channelDetail
+     * @return channelDetail
+     */
     public ChannelDetail getChannelDetail() {
         return channelDetail;
     }
@@ -89,7 +92,10 @@ public class UpdateActionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ChangeFailoverModeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例Id
-     * 
-     * @return instanceId */
+    /**
+     * 实例Id
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -45,9 +48,10 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 同步模式
-     * 
-     * @return replicationMode */
+    /**
+     * 同步模式
+     * @return replicationMode
+     */
     public String getReplicationMode() {
         return replicationMode;
     }
@@ -61,9 +65,10 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return workflowId */
+    /**
+     * 任务id
+     * @return workflowId
+     */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -102,7 +107,10 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

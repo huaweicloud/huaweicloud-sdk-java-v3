@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HLSRecordConfig */
+/**
+ * HLSRecordConfig
+ */
 public class HLSRecordConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class HLSRecordConfig {
         return this;
     }
 
-    /** 周期录制时长。 取值范围：[60，43200]或者0，如果为0则整个流录制为一个文件。 单位：秒。 minimum: 0 maximum: 43200
-     * 
-     * @return recordCycle */
+    /**
+     *  周期录制时长。  取值范围：[60，43200]或者0，如果为0则整个流录制为一个文件。  单位：秒。 
+     * minimum: 0
+     * maximum: 43200
+     * @return recordCycle
+     */
     public Integer getRecordCycle() {
         return recordCycle;
     }
@@ -49,10 +54,10 @@ public class HLSRecordConfig {
         return this;
     }
 
-    /** 录制m3u8文件含路径和文件名的前缀 默认{app_id}/{record_format}/{stream}\\_{file_start_time}/{stream}\\_{file_start_time}
-     * 上述特殊变量含义： - {app_id}：应用id - {record_format}：录制格式 - {stream}：流名 - {file_start_time}：文件生成时间
-     * 
-     * @return recordPrefix */
+    /**
+     * 录制m3u8文件含路径和文件名的前缀  默认{app_id}/{record_format}/{stream}\\_{file_start_time}/{stream}\\_{file_start_time}  上述特殊变量含义： - {app_id}：应用id - {record_format}：录制格式 - {stream}：流名 - {file_start_time}：文件生成时间 
+     * @return recordPrefix
+     */
     public String getRecordPrefix() {
         return recordPrefix;
     }
@@ -66,9 +71,12 @@ public class HLSRecordConfig {
         return this;
     }
 
-    /** 录制HLS时ts的切片时长，非必填。 取值范围：[2，60]，缺省为10。 单位：秒。 minimum: 2 maximum: 60
-     * 
-     * @return recordSliceDuration */
+    /**
+     *  录制HLS时ts的切片时长，非必填。  取值范围：[2，60]，缺省为10。  单位：秒。 
+     * minimum: 2
+     * maximum: 60
+     * @return recordSliceDuration
+     */
     public Integer getRecordSliceDuration() {
         return recordSliceDuration;
     }
@@ -82,10 +90,12 @@ public class HLSRecordConfig {
         return this;
     }
 
-    /** 录制HLS文件拼接时长，如果流中断超过该时间，则生成新文件。 取值范围：[-1，300]，缺省为0。 单位：秒。 - 如果为0表示流中断就生成新文件。 - 如果为-1则表示流中断恢复后追加到原来的文件中（相隔不超过30天）。
-     * minimum: -1 maximum: 300
-     * 
-     * @return recordMaxDurationToMergeFile */
+    /**
+     * 录制HLS文件拼接时长，如果流中断超过该时间，则生成新文件。  取值范围：[-1，300]，缺省为0。  单位：秒。  - 如果为0表示流中断就生成新文件。 - 如果为-1则表示流中断恢复后追加到原来的文件中（相隔不超过30天）。 
+     * minimum: -1
+     * maximum: 300
+     * @return recordMaxDurationToMergeFile
+     */
     public Integer getRecordMaxDurationToMergeFile() {
         return recordMaxDurationToMergeFile;
     }
@@ -128,7 +138,10 @@ public class HLSRecordConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

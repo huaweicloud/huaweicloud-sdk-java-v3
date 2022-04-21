@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 系统盘参数 */
+/**
+ * 系统盘参数
+ */
 public class RootVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class RootVolume {
         return this;
     }
 
-    /** 系统盘大小，容量单位为GB，输入大小范围为[40,100]。 minimum: 40 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 系统盘大小，容量单位为GB，输入大小范围为[40,100]。
+     * minimum: 40
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -39,9 +44,10 @@ public class RootVolume {
         return this;
     }
 
-    /** 边缘实例系统盘对应的磁盘类型，需要与站点所提供的磁盘类型相匹配。
-     * 
-     * @return volumeType */
+    /**
+     * 边缘实例系统盘对应的磁盘类型，需要与站点所提供的磁盘类型相匹配。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -77,7 +83,10 @@ public class RootVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

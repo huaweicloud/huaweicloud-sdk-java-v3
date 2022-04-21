@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RestoreNewInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,9 +109,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -132,9 +135,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -148,9 +152,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例名称，与请求参数相同。
-     * 
-     * @return name */
+    /**
+     * 实例名称，与请求参数相同。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -164,9 +169,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间为本地时间，格式为“yyyy-mm-dd hh:mm:ss”。
-     * 
-     * @return created */
+    /**
+     * 创建时间为本地时间，格式为“yyyy-mm-dd hh:mm:ss”。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -180,9 +186,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例状态，取值为“creating”。
-     * 
-     * @return status */
+    /**
+     * 实例状态，取值为“creating”。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -196,9 +203,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 区域ID，与请求参数相同。
-     * 
-     * @return region */
+    /**
+     * 区域ID，与请求参数相同。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -212,9 +220,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 可用区ID，与请求参数相同。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区ID，与请求参数相同。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -228,9 +237,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云ID，与请求参数相同。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID，与请求参数相同。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -244,9 +254,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID，与请求参数相同。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID，与请求参数相同。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -260,9 +271,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例所属的安全组ID，与请求参数相同。
-     * 
-     * @return securityGroupId */
+    /**
+     * 实例所属的安全组ID，与请求参数相同。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -276,9 +288,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 磁盘加密的密钥ID，与请求参数相同。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 磁盘加密的密钥ID，与请求参数相同。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -292,9 +305,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例类型，与请求参数相同。
-     * 
-     * @return mode */
+    /**
+     * 实例类型，与请求参数相同。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -324,9 +338,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例规格详情，与请求参数相同。
-     * 
-     * @return flavor */
+    /**
+     * 实例规格详情，与请求参数相同。
+     * @return flavor
+     */
     public List<RestoreNewInstanceFlavorOption> getFlavor() {
         return flavor;
     }
@@ -349,9 +364,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
@@ -365,9 +381,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。取值为“0”，表示为default企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。取值为“0”，表示为default企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -381,9 +398,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL开关选项，与请求参数相同。
-     * 
-     * @return sslOption */
+    /**
+     * SSL开关选项，与请求参数相同。
+     * @return sslOption
+     */
     public String getSslOption() {
         return sslOption;
     }
@@ -397,9 +415,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 专属存储池ID。
-     * 
-     * @return dssPoolId */
+    /**
+     * 专属存储池ID。
+     * @return dssPoolId
+     */
     public String getDssPoolId() {
         return dssPoolId;
     }
@@ -413,9 +432,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建实例的工作流ID。
-     * 
-     * @return jobId */
+    /**
+     * 创建实例的工作流ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -501,7 +521,10 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

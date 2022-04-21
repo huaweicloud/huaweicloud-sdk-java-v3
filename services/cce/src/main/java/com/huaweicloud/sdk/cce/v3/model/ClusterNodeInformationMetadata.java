@@ -20,9 +20,10 @@ public class ClusterNodeInformationMetadata {
         return this;
     }
 
-    /** 节点名称 > 修改节点名称后，弹性云服务器名称（虚拟机名称）会同步修改。 > > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
-     * 
-     * @return name */
+    /**
+     * 节点名称  > 修改节点名称后，弹性云服务器名称（虚拟机名称）会同步修改。 > > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,7 +58,10 @@ public class ClusterNodeInformationMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepoMemberInfo */
+/**
+ * RepoMemberInfo
+ */
 public class RepoMemberInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RepoMemberInfo {
         return this;
     }
 
-    /** 用户的租户ID
-     * 
-     * @return domainId */
+    /**
+     * 用户的租户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -54,9 +57,10 @@ public class RepoMemberInfo {
         return this;
     }
 
-    /** 用户的租户名称
-     * 
-     * @return domainName */
+    /**
+     * 用户的租户名称
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -70,9 +74,10 @@ public class RepoMemberInfo {
         return this;
     }
 
-    /** 添加的用户ID
-     * 
-     * @return id */
+    /**
+     * 添加的用户ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -86,9 +91,10 @@ public class RepoMemberInfo {
         return this;
     }
 
-    /** 添加的用户名
-     * 
-     * @return name */
+    /**
+     * 添加的用户名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +108,10 @@ public class RepoMemberInfo {
         return this;
     }
 
-    /** 添加的用户权限，取值范围：30->普通成员，40->管理员
-     * 
-     * @return role */
+    /**
+     * 添加的用户权限，取值范围：30->普通成员，40->管理员
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -145,7 +152,10 @@ public class RepoMemberInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

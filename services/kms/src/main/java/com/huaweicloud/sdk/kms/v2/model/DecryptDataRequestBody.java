@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DecryptDataRequestBody */
+/**
+ * DecryptDataRequestBody
+ */
 public class DecryptDataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,26 @@ public class DecryptDataRequestBody {
 
     private String cipherText;
 
-    /** 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下： - SYMMETRIC_DEFAULT - RSAES_OAEP_SHA_256 -
-     * SM2_ENCRYPT */
+    /**
+     * 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下：  - SYMMETRIC_DEFAULT  - RSAES_OAEP_SHA_256  - SM2_ENCRYPT
+     */
     public static final class EncryptionAlgorithmEnum {
 
-        /** Enum SYMMETRIC_DEFAULT for value: "SYMMETRIC_DEFAULT" */
+        /**
+         * Enum SYMMETRIC_DEFAULT for value: "SYMMETRIC_DEFAULT"
+         */
         public static final EncryptionAlgorithmEnum SYMMETRIC_DEFAULT =
             new EncryptionAlgorithmEnum("SYMMETRIC_DEFAULT");
 
-        /** Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256" */
+        /**
+         * Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256"
+         */
         public static final EncryptionAlgorithmEnum RSAES_OAEP_SHA_256 =
             new EncryptionAlgorithmEnum("RSAES_OAEP_SHA_256");
 
-        /** Enum SM2_ENCRYPT for value: "SM2_ENCRYPT" */
+        /**
+         * Enum SM2_ENCRYPT for value: "SM2_ENCRYPT"
+         */
         public static final EncryptionAlgorithmEnum SM2_ENCRYPT = new EncryptionAlgorithmEnum("SM2_ENCRYPT");
 
         private static final Map<String, EncryptionAlgorithmEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +125,10 @@ public class DecryptDataRequestBody {
         return this;
     }
 
-    /** 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/=]{128,5648}$”。
-     * 
-     * @return cipherText */
+    /**
+     * 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/=]{128,5648}$”。
+     * @return cipherText
+     */
     public String getCipherText() {
         return cipherText;
     }
@@ -132,9 +142,10 @@ public class DecryptDataRequestBody {
         return this;
     }
 
-    /** 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下： - SYMMETRIC_DEFAULT - RSAES_OAEP_SHA_256 - SM2_ENCRYPT
-     * 
-     * @return encryptionAlgorithm */
+    /**
+     * 数据加密算法，仅使用非对称密钥需要指定该参数，默认值为“SYMMETRIC_DEFAULT”，合法枚举值如下：  - SYMMETRIC_DEFAULT  - RSAES_OAEP_SHA_256  - SM2_ENCRYPT
+     * @return encryptionAlgorithm
+     */
     public EncryptionAlgorithmEnum getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
@@ -148,10 +159,10 @@ public class DecryptDataRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$”。仅当密文使用非对称密钥加密时才需要此参数。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$”。仅当密文使用非对称密钥加密时才需要此参数。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -165,9 +176,10 @@ public class DecryptDataRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -208,7 +220,10 @@ public class DecryptDataRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

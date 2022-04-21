@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPrivilegesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,12 @@ public class ListPrivilegesResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有权限 minimum: 0 maximum: 1
-     * 
-     * @return hasPrivilege */
+    /**
+     * 是否有权限
+     * minimum: 0
+     * maximum: 1
+     * @return hasPrivilege
+     */
     public Integer getHasPrivilege() {
         return hasPrivilege;
     }
@@ -56,7 +61,10 @@ public class ListPrivilegesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

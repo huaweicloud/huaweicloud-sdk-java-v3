@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResourceInfo */
+/**
+ * ResourceInfo
+ */
 public class ResourceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,16 +23,24 @@ public class ResourceInfo {
 
     private String name;
 
-    /** Gets or Sets type */
+    /**
+     * Gets or Sets type
+     */
     public static final class TypeEnum {
 
-        /** Enum ARCHIVE for value: "archive" */
+        /**
+         * Enum ARCHIVE for value: "archive"
+         */
         public static final TypeEnum ARCHIVE = new TypeEnum("archive");
 
-        /** Enum FILE for value: "file" */
+        /**
+         * Enum FILE for value: "file"
+         */
         public static final TypeEnum FILE = new TypeEnum("file");
 
-        /** Enum JAR for value: "jar" */
+        /**
+         * Enum JAR for value: "jar"
+         */
         public static final TypeEnum JAR = new TypeEnum("jar");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +136,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -142,9 +153,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -158,9 +170,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** 资源文件所在OBS路径
-     * 
-     * @return location */
+    /**
+     * 资源文件所在OBS路径
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -190,9 +203,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** Get dependFiles
-     * 
-     * @return dependFiles */
+    /**
+     * Get dependFiles
+     * @return dependFiles
+     */
     public List<String> getDependFiles() {
         return dependFiles;
     }
@@ -206,9 +220,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** Get desc
-     * 
-     * @return desc */
+    /**
+     * Get desc
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -222,9 +237,10 @@ public class ResourceInfo {
         return this;
     }
 
-    /** 资源所在目录
-     * 
-     * @return directory */
+    /**
+     * 资源所在目录
+     * @return directory
+     */
     public String getDirectory() {
         return directory;
     }
@@ -267,7 +283,10 @@ public class ResourceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

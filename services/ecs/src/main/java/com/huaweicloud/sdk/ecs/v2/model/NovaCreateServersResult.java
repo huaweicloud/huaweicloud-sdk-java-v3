@@ -33,13 +33,19 @@ public class NovaCreateServersResult {
 
     private List<NovaServerSecurityGroup> securityGroups = null;
 
-    /** diskConfig方式。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。 */
+    /**
+    * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+    */
     public static final class OsDCFDiskConfigEnum {
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
 
-        /** Enum AUTO for value: "AUTO" */
+        /**
+         * Enum AUTO for value: "AUTO"
+         */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
 
         private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +130,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** 弹性云服务器uuid。
-     * 
-     * @return id */
+    /**
+     * 弹性云服务器uuid。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -156,9 +163,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** 弹性云服务器URI自描述信息。
-     * 
-     * @return links */
+    /**
+     * 弹性云服务器URI自描述信息。
+     * @return links
+     */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -188,9 +196,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** 弹性云服务器所在安全组。
-     * 
-     * @return securityGroups */
+    /**
+     * 弹性云服务器所在安全组。
+     * @return securityGroups
+     */
     public List<NovaServerSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -204,9 +213,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** diskConfig方式。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     * 
-     * @return osDCFDiskConfig */
+    /**
+     * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     * @return osDCFDiskConfig
+     */
     public OsDCFDiskConfigEnum getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -220,9 +230,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** 通过返回的reservation_id，可以过滤查询到本次创建的弹性云服务器。 > 说明： > > 批量创建弹性云服务器时，支持使用该字段。
-     * 
-     * @return reservationId */
+    /**
+     * 通过返回的reservation_id，可以过滤查询到本次创建的弹性云服务器。  > 说明： >  > 批量创建弹性云服务器时，支持使用该字段。
+     * @return reservationId
+     */
     public String getReservationId() {
         return reservationId;
     }
@@ -236,9 +247,10 @@ public class NovaCreateServersResult {
         return this;
     }
 
-    /** Windows弹性云服务器Administrator用户的密码。
-     * 
-     * @return adminPass */
+    /**
+     * Windows弹性云服务器Administrator用户的密码。
+     * @return adminPass
+     */
     public String getAdminPass() {
         return adminPass;
     }
@@ -283,7 +295,10 @@ public class NovaCreateServersResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

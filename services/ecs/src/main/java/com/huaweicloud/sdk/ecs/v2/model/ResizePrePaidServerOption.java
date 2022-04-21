@@ -36,9 +36,10 @@ public class ResizePrePaidServerOption {
         return this;
     }
 
-    /** 变更后的云服务器规格ID。 可通过[查询云服务器规格变更支持列表](https://support.huaweicloud.com/api-ecs/ecs_02_0402.html)接口查询允许变更的规格列表。
-     * 
-     * @return flavorRef */
+    /**
+     * 变更后的云服务器规格ID。  可通过[查询云服务器规格变更支持列表](https://support.huaweicloud.com/api-ecs/ecs_02_0402.html)接口查询允许变更的规格列表。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -52,9 +53,10 @@ public class ResizePrePaidServerOption {
         return this;
     }
 
-    /** 新专属主机ID（仅适用于专属主机上的弹性云服务器）。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 新专属主机ID（仅适用于专属主机上的弹性云服务器）。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -77,9 +79,10 @@ public class ResizePrePaidServerOption {
         return this;
     }
 
-    /** Get extendparam
-     * 
-     * @return extendparam */
+    /**
+     * Get extendparam
+     * @return extendparam
+     */
     public ResizeServerExtendParam getExtendparam() {
         return extendparam;
     }
@@ -93,9 +96,10 @@ public class ResizePrePaidServerOption {
         return this;
     }
 
-    /** 取值为withStopServer ，支持开机状态下变更规格。 mode取值为withStopServer时，对开机状态的云服务器执行变更规格操作，系统自动对云服务器先执行关机，再变更规格，变更成功后再执行开机。
-     * 
-     * @return mode */
+    /**
+     * 取值为withStopServer ，支持开机状态下变更规格。  mode取值为withStopServer时，对开机状态的云服务器执行变更规格操作，系统自动对云服务器先执行关机，再变更规格，变更成功后再执行开机。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -136,7 +140,10 @@ public class ResizePrePaidServerOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

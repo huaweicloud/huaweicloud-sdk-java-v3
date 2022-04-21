@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 配额信息，包括总配额和已使用配额。 */
+/**
+ * 配额信息，包括总配额和已使用配额。
+ */
 public class QuotaInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class QuotaInfo {
         return this;
     }
 
-    /** 资源类型。
-     * 取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
-     * 
-     * @return quotaKey */
+    /**
+     * 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
+     * @return quotaKey
+     */
     public String getQuotaKey() {
         return quotaKey;
     }
@@ -50,9 +52,10 @@ public class QuotaInfo {
         return this;
     }
 
-    /** 总配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return quotaLimit */
+    /**
+     * 总配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return quotaLimit
+     */
     public Integer getQuotaLimit() {
         return quotaLimit;
     }
@@ -66,9 +69,10 @@ public class QuotaInfo {
         return this;
     }
 
-    /** 已使用配额。
-     * 
-     * @return used */
+    /**
+     * 已使用配额。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -82,9 +86,10 @@ public class QuotaInfo {
         return this;
     }
 
-    /** 配额单位。 取值：count，表示个数。
-     * 
-     * @return unit */
+    /**
+     * 配额单位。 取值：count，表示个数。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -124,7 +129,10 @@ public class QuotaInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

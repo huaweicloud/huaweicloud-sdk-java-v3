@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求参数 */
+/**
+ * 请求参数
+ */
 public class ListImageByTagsRequestBody {
 
-    /** 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。 */
+    /**
+     * 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
+     */
     public static final class ActionEnum {
 
-        /** Enum FILTER for value: "filter" */
+        /**
+         * Enum FILTER for value: "filter"
+         */
         public static final ActionEnum FILTER = new ActionEnum("filter");
 
-        /** Enum COUNT for value: "count" */
+        /**
+         * Enum COUNT for value: "count"
+         */
         public static final ActionEnum COUNT = new ActionEnum("count");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +145,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
-     * 
-     * @return action */
+    /**
+     * 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -169,9 +178,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * 
-     * @return tags */
+    /**
+     * 包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * @return tags
+     */
     public List<Tags> getTags() {
         return tags;
     }
@@ -201,9 +211,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不允许为空列表，但可以不传递参数。
-     * 
-     * @return tagsAny */
+    /**
+     * 包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不允许为空列表，但可以不传递参数。
+     * @return tagsAny
+     */
     public List<Tags> getTagsAny() {
         return tagsAny;
     }
@@ -233,9 +244,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 不包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * 
-     * @return notTags */
+    /**
+     * 不包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * @return notTags
+     */
     public List<Tags> getNotTags() {
         return notTags;
     }
@@ -265,9 +277,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 不包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * 
-     * @return notTagsAny */
+    /**
+     * 不包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * @return notTagsAny
+     */
     public List<Tags> getNotTagsAny() {
         return notTagsAny;
     }
@@ -281,9 +294,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 最大查询记录数(action为count，时此参数无效）如果action为filter默认为10，limit最多为1000，不能为负数，最小值为1。
-     * 
-     * @return limit */
+    /**
+     * 最大查询记录数(action为count，时此参数无效）如果action为filter默认为10，limit最多为1000，不能为负数，最小值为1。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -297,9 +311,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数（action为count时，此参数无效），如果action为filter默认为0，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数（action为count时，此参数无效），如果action为filter默认为0，不能为负数。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -329,9 +344,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 搜索字段，key为要匹配的字段，如resource_name、resource_id等。value为匹配的值。多个matches的key不允许重复。不允许为空列表，但可以不传递参数。
-     * 
-     * @return matches */
+    /**
+     * 搜索字段，key为要匹配的字段，如resource_name、resource_id等。value为匹配的值。多个matches的key不允许重复。不允许为空列表，但可以不传递参数。
+     * @return matches
+     */
     public List<TagKeyValue> getMatches() {
         return matches;
     }
@@ -345,9 +361,10 @@ public class ListImageByTagsRequestBody {
         return this;
     }
 
-    /** 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
-     * 
-     * @return withoutAnyTag */
+    /**
+     * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
+     * @return withoutAnyTag
+     */
     public Boolean getWithoutAnyTag() {
         return withoutAnyTag;
     }
@@ -398,7 +415,10 @@ public class ListImageByTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

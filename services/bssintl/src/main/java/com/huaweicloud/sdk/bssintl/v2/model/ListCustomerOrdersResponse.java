@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCustomerOrdersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         return this;
     }
 
-    /** 大于等于0的整数。 符合条件的记录总数。
-     * 
-     * @return totalCount */
+    /**
+     * 大于等于0的整数。 符合条件的记录总数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -59,9 +62,10 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         return this;
     }
 
-    /** - 客户订单详情信息。 具体请参见表2
-     * 
-     * @return orderInfos */
+    /**
+     * - 客户订单详情信息。 具体请参见表2
+     * @return orderInfos
+     */
     public List<CustomerOrderV2> getOrderInfos() {
         return orderInfos;
     }
@@ -98,7 +102,10 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

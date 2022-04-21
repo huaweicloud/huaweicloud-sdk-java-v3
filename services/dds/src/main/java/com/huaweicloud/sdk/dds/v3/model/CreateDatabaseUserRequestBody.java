@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateDatabaseUserRequestBody */
+/**
+ * CreateDatabaseUserRequestBody
+ */
 public class CreateDatabaseUserRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreateDatabaseUserRequestBody {
         return this;
     }
 
-    /** 数据库用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
-     * 
-     * @return userName */
+    /**
+     * 数据库用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -52,9 +55,10 @@ public class CreateDatabaseUserRequestBody {
         return this;
     }
 
-    /** 数据库用户密码。 - 长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 - 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
-     * 
-     * @return userPwd */
+    /**
+     * 数据库用户密码。 - 长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 - 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+     * @return userPwd
+     */
     public String getUserPwd() {
         return userPwd;
     }
@@ -68,9 +72,10 @@ public class CreateDatabaseUserRequestBody {
         return this;
     }
 
-    /** 新用户所在的数据库，默认为“admin”。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
-     * 
-     * @return dbName */
+    /**
+     * 新用户所在的数据库，默认为“admin”。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -100,9 +105,10 @@ public class CreateDatabaseUserRequestBody {
         return this;
     }
 
-    /** 新用户所拥有的角色。
-     * 
-     * @return roles */
+    /**
+     * 新用户所拥有的角色。
+     * @return roles
+     */
     public List<RolesOption> getRoles() {
         return roles;
     }
@@ -143,7 +149,10 @@ public class CreateDatabaseUserRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

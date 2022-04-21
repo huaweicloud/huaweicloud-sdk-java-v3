@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ItemAttrs */
+/**
+ * ItemAttrs
+ */
 public class ItemAttrs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ItemAttrs {
         return this;
     }
 
-    /** 数据类型。
-     * 
-     * @return dataType */
+    /**
+     * 数据类型。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -47,9 +50,10 @@ public class ItemAttrs {
         return this;
     }
 
-    /** 物品。
-     * 
-     * @return name */
+    /**
+     * 物品。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class ItemAttrs {
         return this;
     }
 
-    /** 其他用途。
-     * 
-     * @return otherUses */
+    /**
+     * 其他用途。
+     * @return otherUses
+     */
     public List<String> getOtherUses() {
         return otherUses;
     }
@@ -119,7 +124,10 @@ public class ItemAttrs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

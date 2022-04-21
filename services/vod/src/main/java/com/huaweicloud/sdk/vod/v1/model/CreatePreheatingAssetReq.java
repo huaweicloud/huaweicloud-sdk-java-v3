@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreatePreheatingAssetReq */
+/**
+ * CreatePreheatingAssetReq
+ */
 public class CreatePreheatingAssetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CreatePreheatingAssetReq {
         return this;
     }
 
-    /** 已发布媒资的ID。
-     * 
-     * @return assetId */
+    /**
+     * 已发布媒资的ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -58,9 +61,10 @@ public class CreatePreheatingAssetReq {
         return this;
     }
 
-    /** 已发布媒资的播放URL列表，一次最多只能预热10个URL。
-     * 
-     * @return urls */
+    /**
+     * 已发布媒资的播放URL列表，一次最多只能预热10个URL。
+     * @return urls
+     */
     public List<String> getUrls() {
         return urls;
     }
@@ -97,7 +101,10 @@ public class CreatePreheatingAssetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

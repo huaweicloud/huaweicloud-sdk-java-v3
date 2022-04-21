@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteClustersTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteClustersTagsRequest {
         return this;
     }
 
-    /** 指定删除集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 指定删除集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -39,9 +42,10 @@ public class DeleteClustersTagsRequest {
         return this;
     }
 
-    /** 需要删除的标签名。
-     * 
-     * @return key */
+    /**
+     * 需要删除的标签名。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -78,7 +82,10 @@ public class DeleteClustersTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 公网带宽信息。 */
+/**
+ * 公网带宽信息。
+ */
 public class CreateClusterPublicEipSize {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreateClusterPublicEipSize {
         return this;
     }
 
-    /** 带宽大小。
-     * 
-     * @return size */
+    /**
+     * 带宽大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -55,7 +58,10 @@ public class CreateClusterPublicEipSize {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

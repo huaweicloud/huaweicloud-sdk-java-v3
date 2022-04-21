@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListProductsRespDetail */
+/**
+ * ListProductsRespDetail
+ */
 public class ListProductsRespDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 单位时间内的消息量最大值。
-     * 
-     * @return tps */
+    /**
+     * 单位时间内的消息量最大值。
+     * @return tps
+     */
     public String getTps() {
         return tps;
     }
@@ -87,9 +90,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 消息存储空间。
-     * 
-     * @return storage */
+    /**
+     * 消息存储空间。
+     * @return storage
+     */
     public String getStorage() {
         return storage;
     }
@@ -103,9 +107,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** Kafka实例的分区数量。
-     * 
-     * @return partitionNum */
+    /**
+     * Kafka实例的分区数量。
+     * @return partitionNum
+     */
     public String getPartitionNum() {
         return partitionNum;
     }
@@ -119,9 +124,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -135,9 +141,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 规格ID。
-     * 
-     * @return specCode */
+    /**
+     * 规格ID。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -167,9 +174,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** IO信息。
-     * 
-     * @return io */
+    /**
+     * IO信息。
+     * @return io
+     */
     public List<ListProductsRespIo> getIo() {
         return io;
     }
@@ -183,9 +191,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** Kafka实例的基准带宽。
-     * 
-     * @return bandwidth */
+    /**
+     * Kafka实例的基准带宽。
+     * @return bandwidth
+     */
     public String getBandwidth() {
         return bandwidth;
     }
@@ -215,9 +224,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 资源售罄的可用区列表。
-     * 
-     * @return unavailableZones */
+    /**
+     * 资源售罄的可用区列表。
+     * @return unavailableZones
+     */
     public List<String> getUnavailableZones() {
         return unavailableZones;
     }
@@ -247,9 +257,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 有可用资源的可用区列表。
-     * 
-     * @return availableZones */
+    /**
+     * 有可用资源的可用区列表。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -263,9 +274,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 该产品规格对应的虚拟机规格。
-     * 
-     * @return ecsFlavorId */
+    /**
+     * 该产品规格对应的虚拟机规格。
+     * @return ecsFlavorId
+     */
     public String getEcsFlavorId() {
         return ecsFlavorId;
     }
@@ -279,9 +291,10 @@ public class ListProductsRespDetail {
         return this;
     }
 
-    /** 实例规格架构类型。当前仅支持X86。
-     * 
-     * @return archType */
+    /**
+     * 实例规格架构类型。当前仅支持X86。
+     * @return archType
+     */
     public String getArchType() {
         return archType;
     }
@@ -346,7 +359,10 @@ public class ListProductsRespDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

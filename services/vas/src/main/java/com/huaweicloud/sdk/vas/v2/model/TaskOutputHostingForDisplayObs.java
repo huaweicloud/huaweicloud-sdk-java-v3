@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 单个结果文件result.json所在的OBS桶和路径 */
+/**
+ * 单个结果文件result.json所在的OBS桶和路径
+ */
 public class TaskOutputHostingForDisplayObs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TaskOutputHostingForDisplayObs {
         return this;
     }
 
-    /** 结果文件result.json所在的OBS桶
-     * 
-     * @return bucket */
+    /**
+     * 结果文件result.json所在的OBS桶
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -39,9 +42,10 @@ public class TaskOutputHostingForDisplayObs {
         return this;
     }
 
-    /** 结果文件result.json所在的路径
-     * 
-     * @return path */
+    /**
+     * 结果文件result.json所在的路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -78,7 +82,10 @@ public class TaskOutputHostingForDisplayObs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

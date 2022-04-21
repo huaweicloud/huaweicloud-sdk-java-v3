@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备信息 */
+/**
+ * 终端设备信息
+ */
 public class DevicesDevices {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class DevicesDevices {
         return this;
     }
 
-    /** Get added
-     * 
-     * @return added */
+    /**
+     * Get added
+     * @return added
+     */
     public DevicesDevicesAdded getAdded() {
         return added;
     }
@@ -67,9 +70,10 @@ public class DevicesDevices {
         return this;
     }
 
-    /** 要解绑的终端设备ID
-     * 
-     * @return removed */
+    /**
+     * 要解绑的终端设备ID
+     * @return removed
+     */
     public List<String> getRemoved() {
         return removed;
     }
@@ -105,7 +109,10 @@ public class DevicesDevices {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

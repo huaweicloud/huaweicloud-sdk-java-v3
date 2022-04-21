@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建端口参数对象。 */
+/**
+ * 创建端口参数对象。
+ */
 public class CreatePortOption {
 
-    /** 端口设备所属。 取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP */
+    /**
+     * 端口设备所属。  取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
+     */
     public static final class DeviceOwnerEnum {
 
-        /** Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT" */
+        /**
+         * Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT"
+         */
         public static final DeviceOwnerEnum NEUTRON_VIP_PORT = new DeviceOwnerEnum("neutron:VIP_PORT");
 
         private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +109,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 端口设备所属。 取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
-     * 
-     * @return deviceOwner */
+    /**
+     * 端口设备所属。  取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
+     * @return deviceOwner
+     */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -119,9 +126,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 端口所属网络的ID。 约束：必须是存在的网络ID。
-     * 
-     * @return networkId */
+    /**
+     * 端口所属网络的ID。  约束：必须是存在的网络ID。
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -151,9 +159,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 端口IP 约束：一个端口只支持一个fixed_ip，且不支持更新。
-     * 
-     * @return fixedIps */
+    /**
+     * 端口IP  约束：一个端口只支持一个fixed_ip，且不支持更新。
+     * @return fixedIps
+     */
     public List<FixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -192,7 +201,10 @@ public class CreatePortOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

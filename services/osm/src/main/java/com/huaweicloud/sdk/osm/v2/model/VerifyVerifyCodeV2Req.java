@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VerifyVerifyCodeV2Req */
+/**
+ * VerifyVerifyCodeV2Req
+ */
 public class VerifyVerifyCodeV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 验证码
-     * 
-     * @return verifyCode */
+    /**
+     * 验证码
+     * @return verifyCode
+     */
     public String getVerifyCode() {
         return verifyCode;
     }
@@ -59,9 +62,10 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 联系方式的值
-     * 
-     * @return contactValue */
+    /**
+     * 联系方式的值
+     * @return contactValue
+     */
     public String getContactValue() {
         return contactValue;
     }
@@ -75,9 +79,12 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 联系方式的类型。0：短信；1：邮件 minimum: 0 maximum: 1
-     * 
-     * @return contactWay */
+    /**
+     * 联系方式的类型。0：短信；1：邮件
+     * minimum: 0
+     * maximum: 1
+     * @return contactWay
+     */
     public Integer getContactWay() {
         return contactWay;
     }
@@ -91,9 +98,10 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -107,9 +115,10 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return xCustomerId */
+    /**
+     * 子用户id
+     * @return xCustomerId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_id")
     public String getXCustomerId() {
@@ -125,9 +134,10 @@ public class VerifyVerifyCodeV2Req {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -172,7 +182,10 @@ public class VerifyVerifyCodeV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

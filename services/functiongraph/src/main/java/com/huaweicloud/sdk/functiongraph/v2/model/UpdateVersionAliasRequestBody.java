@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateVersionAliasRequestBody */
+/**
+ * UpdateVersionAliasRequestBody
+ */
 public class UpdateVersionAliasRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class UpdateVersionAliasRequestBody {
         return this;
     }
 
-    /** 别名对应的版本名称。
-     * 
-     * @return version */
+    /**
+     * 别名对应的版本名称。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -47,9 +50,10 @@ public class UpdateVersionAliasRequestBody {
         return this;
     }
 
-    /** 别名描述信息。
-     * 
-     * @return description */
+    /**
+     * 别名描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -81,9 +85,10 @@ public class UpdateVersionAliasRequestBody {
         return this;
     }
 
-    /** 灰度版本信息
-     * 
-     * @return additionalVersionWeights */
+    /**
+     * 灰度版本信息
+     * @return additionalVersionWeights
+     */
     public Map<String, Integer> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
@@ -122,7 +127,10 @@ public class UpdateVersionAliasRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

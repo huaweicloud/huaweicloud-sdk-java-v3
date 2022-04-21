@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDatabaseWaterMarkResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class CreateDatabaseWaterMarkResponse extends SdkResponse {
         return this;
     }
 
-    /** 嵌入水印后的数据
-     * 
-     * @return markedData */
+    /**
+     * 嵌入水印后的数据
+     * @return markedData
+     */
     public List<Map<String, Object>> getMarkedData() {
         return markedData;
     }
@@ -76,7 +79,10 @@ public class CreateDatabaseWaterMarkResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SimCardsFlowVO */
+/**
+ * SimCardsFlowVO
+ */
 public class SimCardsFlowVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,11 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 套餐实例ID minimum: 0
-     * 
-     * @return id */
+    /**
+     * 套餐实例ID
+     * minimum: 0
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -74,9 +78,10 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 账户ID
-     * 
-     * @return accountId */
+    /**
+     * 账户ID
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -90,9 +95,11 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** sim卡ID minimum: 0
-     * 
-     * @return simCardId */
+    /**
+     * sim卡ID
+     * minimum: 0
+     * @return simCardId
+     */
     public Long getSimCardId() {
         return simCardId;
     }
@@ -106,9 +113,10 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 套餐ID
-     * 
-     * @return pricePlanId */
+    /**
+     * 套餐ID
+     * @return pricePlanId
+     */
     public String getPricePlanId() {
         return pricePlanId;
     }
@@ -122,9 +130,10 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 套餐名称
-     * 
-     * @return pricePlanName */
+    /**
+     * 套餐名称
+     * @return pricePlanName
+     */
     public String getPricePlanName() {
         return pricePlanName;
     }
@@ -138,9 +147,10 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** ICCID
-     * 
-     * @return iccid */
+    /**
+     * ICCID
+     * @return iccid
+     */
     public String getIccid() {
         return iccid;
     }
@@ -154,9 +164,11 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 总流量(MB),两位小数 minimum: 0
-     * 
-     * @return flowTotal */
+    /**
+     * 总流量(MB),两位小数
+     * minimum: 0
+     * @return flowTotal
+     */
     public Double getFlowTotal() {
         return flowTotal;
     }
@@ -170,9 +182,11 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 已使用流量(MB),两位小数 minimum: 0
-     * 
-     * @return flowUsed */
+    /**
+     * 已使用流量(MB),两位小数
+     * minimum: 0
+     * @return flowUsed
+     */
     public Double getFlowUsed() {
         return flowUsed;
     }
@@ -186,9 +200,10 @@ public class SimCardsFlowVO {
         return this;
     }
 
-    /** 剩余流量(MB),两位小数
-     * 
-     * @return flowLeft */
+    /**
+     * 剩余流量(MB),两位小数
+     * @return flowLeft
+     */
     public Double getFlowLeft() {
         return flowLeft;
     }
@@ -238,7 +253,10 @@ public class SimCardsFlowVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

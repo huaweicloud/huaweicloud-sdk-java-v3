@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentSatisfactionV2Do */
+/**
+ * IncidentSatisfactionV2Do
+ */
 public class IncidentSatisfactionV2Do {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,12 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度总分数 minimum: 0 maximum: 65535
-     * 
-     * @return value */
+    /**
+     * 满意度总分数
+     * minimum: 0
+     * maximum: 65535
+     * @return value
+     */
     public Integer getValue() {
         return value;
     }
@@ -64,9 +69,12 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度分类id minimum: 0 maximum: 9999
-     * 
-     * @return satisfactionId */
+    /**
+     * 满意度分类id
+     * minimum: 0
+     * maximum: 9999
+     * @return satisfactionId
+     */
     public Integer getSatisfactionId() {
         return satisfactionId;
     }
@@ -80,9 +88,12 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度的值 minimum: 0 maximum: 65535
-     * 
-     * @return satisfactionValue */
+    /**
+     * 满意度的值
+     * minimum: 0
+     * maximum: 65535
+     * @return satisfactionValue
+     */
     public Integer getSatisfactionValue() {
         return satisfactionValue;
     }
@@ -96,9 +107,10 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度分类名称
-     * 
-     * @return satisfactionName */
+    /**
+     * 满意度分类名称
+     * @return satisfactionName
+     */
     public String getSatisfactionName() {
         return satisfactionName;
     }
@@ -112,9 +124,12 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 每格的分数 minimum: 0 maximum: 65535
-     * 
-     * @return perValue */
+    /**
+     * 每格的分数
+     * minimum: 0
+     * maximum: 65535
+     * @return perValue
+     */
     public Integer getPerValue() {
         return perValue;
     }
@@ -128,9 +143,10 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度维度id
-     * 
-     * @return satCategoryId */
+    /**
+     * 满意度维度id
+     * @return satCategoryId
+     */
     public String getSatCategoryId() {
         return satCategoryId;
     }
@@ -144,9 +160,10 @@ public class IncidentSatisfactionV2Do {
         return this;
     }
 
-    /** 满意度维度名称
-     * 
-     * @return satCategoryName */
+    /**
+     * 满意度维度名称
+     * @return satCategoryName
+     */
     public String getSatCategoryName() {
         return satCategoryName;
     }
@@ -194,7 +211,10 @@ public class IncidentSatisfactionV2Do {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

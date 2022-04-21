@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** MemberBase */
+/**
+ * MemberBase
+ */
 public class MemberBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class MemberBase {
 
     private String memberGroupName;
 
-    /** 后端服务器状态 - 1：可用 - 2：不可用 */
+    /**
+     * 后端服务器状态   - 1：可用   - 2：不可用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class MemberBase {
         return this;
     }
 
-    /** 后端服务器地址 后端实例类型为ip时必填
-     * 
-     * @return host */
+    /**
+     * 后端服务器地址  后端实例类型为ip时必填
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -135,9 +144,12 @@ public class MemberBase {
         return this;
     }
 
-    /** 权重值。 允许您对后端服务进行评级，权重值越大，转发到该云服务的请求数量越多。 minimum: 0 maximum: 10000
-     * 
-     * @return weight */
+    /**
+     * 权重值。  允许您对后端服务进行评级，权重值越大，转发到该云服务的请求数量越多。
+     * minimum: 0
+     * maximum: 10000
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -151,9 +163,10 @@ public class MemberBase {
         return this;
     }
 
-    /** 是否备用节点。 开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。 实例需要升级到对应版本才支持此功能，若不支持请联系技术支持。
-     * 
-     * @return isBackup */
+    /**
+     * 是否备用节点。  开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。  实例需要升级到对应版本才支持此功能，若不支持请联系技术支持。
+     * @return isBackup
+     */
     public Boolean getIsBackup() {
         return isBackup;
     }
@@ -167,9 +180,10 @@ public class MemberBase {
         return this;
     }
 
-    /** 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。
-     * 
-     * @return memberGroupName */
+    /**
+     * 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。
+     * @return memberGroupName
+     */
     public String getMemberGroupName() {
         return memberGroupName;
     }
@@ -183,9 +197,10 @@ public class MemberBase {
         return this;
     }
 
-    /** 后端服务器状态 - 1：可用 - 2：不可用
-     * 
-     * @return status */
+    /**
+     * 后端服务器状态   - 1：可用   - 2：不可用
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -199,9 +214,12 @@ public class MemberBase {
         return this;
     }
 
-    /** 后端服务器端口 minimum: 0 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 后端服务器端口
+     * minimum: 0
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -244,7 +262,10 @@ public class MemberBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

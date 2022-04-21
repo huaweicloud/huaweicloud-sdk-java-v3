@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 企业项目详情 */
+/**
+ * 企业项目详情
+ */
 public class EpDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,13 +46,19 @@ public class EpDetail {
 
     private OffsetDateTime updatedAt;
 
-    /** 项目类型： - prod：商用项目 - poc：测试项目 */
+    /**
+     * 项目类型： - prod：商用项目 - poc：测试项目
+     */
     public static final class TypeEnum {
 
-        /** Enum PROD for value: "prod" */
+        /**
+         * Enum PROD for value: "prod"
+         */
         public static final TypeEnum PROD = new TypeEnum("prod");
 
-        /** Enum POC for value: "poc" */
+        /**
+         * Enum POC for value: "poc"
+         */
         public static final TypeEnum POC = new TypeEnum("poc");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -125,9 +133,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return id */
+    /**
+     * 企业项目ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -141,9 +150,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 企业项目名称
-     * 
-     * @return name */
+    /**
+     * 企业项目名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,9 +167,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 企业项目描述
-     * 
-     * @return description */
+    /**
+     * 企业项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +184,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 企业项目状态。1启用，2停用
-     * 
-     * @return status */
+    /**
+     * 企业项目状态。1启用，2停用
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -189,9 +201,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 创建时间，格式为UTC格式。如：2018-05-18T06:49:06Z。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间，格式为UTC格式。如：2018-05-18T06:49:06Z。
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -205,9 +218,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 修改时间，格式为UTC格式。如：2018-05-28T02:21:36Z。
-     * 
-     * @return updatedAt */
+    /**
+     * 修改时间，格式为UTC格式。如：2018-05-28T02:21:36Z。
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -221,9 +235,10 @@ public class EpDetail {
         return this;
     }
 
-    /** 项目类型： - prod：商用项目 - poc：测试项目
-     * 
-     * @return type */
+    /**
+     * 项目类型： - prod：商用项目 - poc：测试项目
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -267,7 +282,10 @@ public class EpDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

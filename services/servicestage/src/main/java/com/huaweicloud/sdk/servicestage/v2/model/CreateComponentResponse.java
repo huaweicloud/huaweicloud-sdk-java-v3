@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateComponentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件ID。
-     * 
-     * @return id */
+    /**
+     * 应用组件ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -103,9 +106,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件名称
-     * 
-     * @return name */
+    /**
+     * 应用组件名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -119,9 +123,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 取值0或1。 0：表示正常状态。 1：表示正在删除。
-     * 
-     * @return status */
+    /**
+     * 取值0或1。  0：表示正常状态。  1：表示正在删除。 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -135,9 +140,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get runtime
-     * 
-     * @return runtime */
+    /**
+     * Get runtime
+     * @return runtime
+     */
     public RuntimeType getRuntime() {
         return runtime;
     }
@@ -151,9 +157,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get category
-     * 
-     * @return category */
+    /**
+     * Get category
+     * @return category
+     */
     public ComponentCategory getCategory() {
         return category;
     }
@@ -167,9 +174,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get subCategory
-     * 
-     * @return subCategory */
+    /**
+     * Get subCategory
+     * @return subCategory
+     */
     public ComponentSubCategory getSubCategory() {
         return subCategory;
     }
@@ -183,9 +191,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -199,9 +208,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -215,9 +225,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return applicationId */
+    /**
+     * 应用ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -240,9 +251,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get source
-     * 
-     * @return source */
+    /**
+     * Get source
+     * @return source
+     */
     public SourceObject getSource() {
         return source;
     }
@@ -265,9 +277,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get build
-     * 
-     * @return build */
+    /**
+     * Get build
+     * @return build
+     */
     public BuildInfo getBuild() {
         return build;
     }
@@ -297,9 +310,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线Id列表，最多10个。
-     * 
-     * @return pipelineIds */
+    /**
+     * 流水线Id列表，最多10个。
+     * @return pipelineIds
+     */
     public List<String> getPipelineIds() {
         return pipelineIds;
     }
@@ -313,9 +327,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -329,9 +344,10 @@ public class CreateComponentResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -405,7 +421,10 @@ public class CreateComponentResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

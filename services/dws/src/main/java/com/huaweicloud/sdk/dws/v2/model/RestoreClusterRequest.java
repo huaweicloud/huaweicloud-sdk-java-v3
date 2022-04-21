@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RestoreClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class RestoreClusterRequest {
         return this;
     }
 
-    /** 待恢复的快照ID
-     * 
-     * @return snapshotId */
+    /**
+     * 待恢复的快照ID。
+     * @return snapshotId
+     */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -49,9 +52,10 @@ public class RestoreClusterRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public RestoreClusterRequestBody getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class RestoreClusterRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

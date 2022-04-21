@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DefaultRecordConfig */
+/**
+ * DefaultRecordConfig
+ */
 public class DefaultRecordConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class DefaultRecordConfig {
         return this;
     }
 
-    /** 录制格式，当前支持：FLV，HLS，MP4三种格式，设置格式时必须使用大写字母
-     * 
-     * @return recordFormat */
+    /**
+     * 录制格式，当前支持：FLV，HLS，MP4三种格式，设置格式时必须使用大写字母
+     * @return recordFormat
+     */
     public List<VideoFormatVar> getRecordFormat() {
         return recordFormat;
     }
@@ -82,9 +85,10 @@ public class DefaultRecordConfig {
         return this;
     }
 
-    /** Get obsAddr
-     * 
-     * @return obsAddr */
+    /**
+     * Get obsAddr
+     * @return obsAddr
+     */
     public RecordObsFileAddr getObsAddr() {
         return obsAddr;
     }
@@ -107,9 +111,10 @@ public class DefaultRecordConfig {
         return this;
     }
 
-    /** Get hlsConfig
-     * 
-     * @return hlsConfig */
+    /**
+     * Get hlsConfig
+     * @return hlsConfig
+     */
     public HLSRecordConfig getHlsConfig() {
         return hlsConfig;
     }
@@ -132,9 +137,10 @@ public class DefaultRecordConfig {
         return this;
     }
 
-    /** Get flvConfig
-     * 
-     * @return flvConfig */
+    /**
+     * Get flvConfig
+     * @return flvConfig
+     */
     public FLVRecordConfig getFlvConfig() {
         return flvConfig;
     }
@@ -157,9 +163,10 @@ public class DefaultRecordConfig {
         return this;
     }
 
-    /** Get mp4Config
-     * 
-     * @return mp4Config */
+    /**
+     * Get mp4Config
+     * @return mp4Config
+     */
     public MP4RecordConfig getMp4Config() {
         return mp4Config;
     }
@@ -202,7 +209,10 @@ public class DefaultRecordConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

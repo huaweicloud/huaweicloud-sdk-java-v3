@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDomainDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowDomainDetailRequest {
         return this;
     }
 
-    /** 加速域名ID。获取方法请参见查询加速域名。
-     * 
-     * @return domainId */
+    /**
+     * 加速域名ID。获取方法请参见查询加速域名。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -39,9 +42,10 @@ public class ShowDomainDetailRequest {
         return this;
     }
 
-    /** 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -78,7 +82,10 @@ public class ShowDomainDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

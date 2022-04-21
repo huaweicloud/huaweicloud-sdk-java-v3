@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTemplatesV2Request {
 
-    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文 */
+    /**
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -105,9 +113,10 @@ public class ListTemplatesV2Request {
         return this;
     }
 
-    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -123,9 +132,10 @@ public class ListTemplatesV2Request {
         return this;
     }
 
-    /** 请填写固定值“query”。
-     * 
-     * @return actionId */
+    /**
+     * 请填写固定值“query”。
+     * @return actionId
+     */
     public String getActionId() {
         return actionId;
     }
@@ -148,9 +158,10 @@ public class ListTemplatesV2Request {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public TemplateQueryV2 getBody() {
         return body;
     }
@@ -189,7 +200,10 @@ public class ListTemplatesV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectIterationsV4Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListProjectIterationsV4Request {
         return this;
     }
 
-    /** devcloud的项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud的项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -44,9 +47,10 @@ public class ListProjectIterationsV4Request {
         return this;
     }
 
-    /** 更新迭代的时间(查询的起始时间,查询的结束时间)
-     * 
-     * @return updatedTimeInterval */
+    /**
+     * 更新迭代的时间(查询的起始时间,查询的结束时间)
+     * @return updatedTimeInterval
+     */
     public String getUpdatedTimeInterval() {
         return updatedTimeInterval;
     }
@@ -60,9 +64,10 @@ public class ListProjectIterationsV4Request {
         return this;
     }
 
-    /** 是否包含被删除的迭代,默认false不包含被删除的迭代
-     * 
-     * @return includeDeleted */
+    /**
+     * 是否包含被删除的迭代,默认false不包含被删除的迭代
+     * @return includeDeleted
+     */
     public Boolean getIncludeDeleted() {
         return includeDeleted;
     }
@@ -101,7 +106,10 @@ public class ListProjectIterationsV4Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

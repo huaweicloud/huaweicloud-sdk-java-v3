@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RemoveAllProjectsPermissionFromAgencyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RemoveAllProjectsPermissionFromAgencyRequest {
         return this;
     }
 
-    /** 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return agencyId */
+    /**
+     * 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return agencyId
+     */
     public String getAgencyId() {
         return agencyId;
     }
@@ -44,9 +47,10 @@ public class RemoveAllProjectsPermissionFromAgencyRequest {
         return this;
     }
 
-    /** 账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * 账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -60,9 +64,10 @@ public class RemoveAllProjectsPermissionFromAgencyRequest {
         return this;
     }
 
-    /** 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
-     * 
-     * @return roleId */
+    /**
+     * 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
+     * @return roleId
+     */
     public String getRoleId() {
         return roleId;
     }
@@ -102,7 +107,10 @@ public class RemoveAllProjectsPermissionFromAgencyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AnalysisInfo */
+/**
+ * AnalysisInfo
+ */
 public class AnalysisInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,24 @@ public class AnalysisInfo {
 
     private Boolean diarization;
 
-    /** 语音文件声道信息，可以为MONO（缺省), LEFT_AGENT, RIGHT_AGENT。 如果channel 为MONO，那么原始文件需要为单声道文件。 如果为双声道文件，系统会将其转换成单声道文件，可能会影响识别效果。
-     * 如果 channel 为 LEFT_AGENT或RIGHT_AGENT, 则原始文件需要为双声道文件，如果为单声道文件，系统会将其转换成双声道文件，可能会影响识别效果。 当channel 为
-     * LEFT_AGENT或RIGHT_AGENT，且diarization为true时，系统会按照配置给出对应角色。其中： LEFT_AGENT 指定左声道语音为agent（坐席）, RIGHT_AGENT
-     * 指定右声道为agent（坐席）。 */
+    /**
+     * 语音文件声道信息，可以为MONO（缺省), LEFT_AGENT, RIGHT_AGENT。  如果channel 为MONO，那么原始文件需要为单声道文件。  如果为双声道文件，系统会将其转换成单声道文件，可能会影响识别效果。  如果 channel 为 LEFT_AGENT或RIGHT_AGENT, 则原始文件需要为双声道文件，如果为单声道文件，系统会将其转换成双声道文件，可能会影响识别效果。  当channel 为 LEFT_AGENT或RIGHT_AGENT，且diarization为true时，系统会按照配置给出对应角色。其中：  LEFT_AGENT 指定左声道语音为agent（坐席）,  RIGHT_AGENT 指定右声道为agent（坐席）。
+     */
     public static final class ChannelEnum {
 
-        /** Enum MONO for value: "MONO" */
+        /**
+         * Enum MONO for value: "MONO"
+         */
         public static final ChannelEnum MONO = new ChannelEnum("MONO");
 
-        /** Enum LEFT_AGENT for value: "LEFT_AGENT" */
+        /**
+         * Enum LEFT_AGENT for value: "LEFT_AGENT"
+         */
         public static final ChannelEnum LEFT_AGENT = new ChannelEnum("LEFT_AGENT");
 
-        /** Enum RIGHT_AGENT for value: "RIGHT_AGENT" */
+        /**
+         * Enum RIGHT_AGENT for value: "RIGHT_AGENT"
+         */
         public static final ChannelEnum RIGHT_AGENT = new ChannelEnum("RIGHT_AGENT");
 
         private static final Map<String, ChannelEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +123,10 @@ public class AnalysisInfo {
         return this;
     }
 
-    /** 是否需要做话者分离。缺省为true，表示会进行话者分离，识别结果中会包含role项（角色）。如果diarization为false, 那么结果中不会出现role项。
-     * 
-     * @return diarization */
+    /**
+     * 是否需要做话者分离。缺省为true，表示会进行话者分离，识别结果中会包含role项（角色）。如果diarization为false, 那么结果中不会出现role项。
+     * @return diarization
+     */
     public Boolean getDiarization() {
         return diarization;
     }
@@ -132,12 +140,10 @@ public class AnalysisInfo {
         return this;
     }
 
-    /** 语音文件声道信息，可以为MONO（缺省), LEFT_AGENT, RIGHT_AGENT。 如果channel 为MONO，那么原始文件需要为单声道文件。 如果为双声道文件，系统会将其转换成单声道文件，可能会影响识别效果。
-     * 如果 channel 为 LEFT_AGENT或RIGHT_AGENT, 则原始文件需要为双声道文件，如果为单声道文件，系统会将其转换成双声道文件，可能会影响识别效果。 当channel 为
-     * LEFT_AGENT或RIGHT_AGENT，且diarization为true时，系统会按照配置给出对应角色。其中： LEFT_AGENT 指定左声道语音为agent（坐席）, RIGHT_AGENT
-     * 指定右声道为agent（坐席）。
-     * 
-     * @return channel */
+    /**
+     * 语音文件声道信息，可以为MONO（缺省), LEFT_AGENT, RIGHT_AGENT。  如果channel 为MONO，那么原始文件需要为单声道文件。  如果为双声道文件，系统会将其转换成单声道文件，可能会影响识别效果。  如果 channel 为 LEFT_AGENT或RIGHT_AGENT, 则原始文件需要为双声道文件，如果为单声道文件，系统会将其转换成双声道文件，可能会影响识别效果。  当channel 为 LEFT_AGENT或RIGHT_AGENT，且diarization为true时，系统会按照配置给出对应角色。其中：  LEFT_AGENT 指定左声道语音为agent（坐席）,  RIGHT_AGENT 指定右声道为agent（坐席）。
+     * @return channel
+     */
     public ChannelEnum getChannel() {
         return channel;
     }
@@ -151,9 +157,10 @@ public class AnalysisInfo {
         return this;
     }
 
-    /** 是否需要做情绪检测, 缺省为true。
-     * 
-     * @return emotion */
+    /**
+     * 是否需要做情绪检测, 缺省为true。
+     * @return emotion
+     */
     public Boolean getEmotion() {
         return emotion;
     }
@@ -167,9 +174,10 @@ public class AnalysisInfo {
         return this;
     }
 
-    /** 是否需要输出语速信息, 缺省为true。
-     * 
-     * @return speed */
+    /**
+     * 是否需要输出语速信息, 缺省为true。
+     * @return speed
+     */
     public Boolean getSpeed() {
         return speed;
     }
@@ -209,7 +217,10 @@ public class AnalysisInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

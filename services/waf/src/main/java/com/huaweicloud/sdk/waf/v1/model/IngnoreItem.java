@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IngnoreItem */
+/**
+ * IngnoreItem
+ */
 public class IngnoreItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -82,9 +85,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -98,9 +102,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 创建规则的时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 创建规则的时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -114,9 +119,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -130,9 +136,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 规则状态，0：关闭，1：开启
-     * 
-     * @return status */
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -146,9 +153,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
-     * 
-     * @return url */
+    /**
+     * 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -162,9 +170,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 屏蔽的规则，可以是命中规则id，对应防护事件的命中规则；或者所有规则（所有规则：all）；或者攻击类型枚举（XSS攻击：xss，sqli，命令注入：cmdi，恶意爬虫：robot，本地文件包含：lfi，远程文件包含：rfi，网站木马：webshell，cc攻击：cc，精准防护：custom_custom，IP黑白名单：custom_whiteblackip，地理位置访问控制：custom_geoip，防篡改：antitamper，反爬虫：anticrawler，网站信息防泄漏：leakage，非法请求：illegal，其它类型攻击：vuln）
-     * 
-     * @return rule */
+    /**
+     * 屏蔽的规则，可以是命中规则id，对应防护事件的命中规则；或者所有规则（所有规则：all）；或者攻击类型枚举（XSS攻击：xss，sqli，命令注入：cmdi，恶意爬虫：robot，本地文件包含：lfi，远程文件包含：rfi，网站木马：webshell，cc攻击：cc，精准防护：custom_custom，IP黑白名单：custom_whiteblackip，地理位置访问控制：custom_geoip，防篡改：antitamper，反爬虫：anticrawler，网站信息防泄漏：leakage，非法请求：illegal，其它类型攻击：vuln）
+     * @return rule
+     */
     public String getRule() {
         return rule;
     }
@@ -194,9 +203,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** 防护的域名
-     * 
-     * @return domain */
+    /**
+     * 防护的域名
+     * @return domain
+     */
     public List<String> getDomain() {
         return domain;
     }
@@ -210,9 +220,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** url匹配逻辑（prefix：前缀匹配，equal：全等）
-     * 
-     * @return urlLogic */
+    /**
+     * url匹配逻辑（prefix：前缀匹配，equal：全等）
+     * @return urlLogic
+     */
     public String getUrlLogic() {
         return urlLogic;
     }
@@ -235,9 +246,10 @@ public class IngnoreItem {
         return this;
     }
 
-    /** Get advanced
-     * 
-     * @return advanced */
+    /**
+     * Get advanced
+     * @return advanced
+     */
     public Advance getAdvanced() {
         return advanced;
     }
@@ -287,7 +299,10 @@ public class IngnoreItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListWorkflowExecutionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,22 +25,34 @@ public class ListWorkflowExecutionsRequest {
 
     private Integer limit;
 
-    /** 需要过滤的流程实例状态 */
+    /**
+     * 需要过滤的流程实例状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAIL for value: "fail" */
+        /**
+         * Enum FAIL for value: "fail"
+         */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum TIMEOUT for value: "timeout" */
+        /**
+         * Enum TIMEOUT for value: "timeout"
+         */
         public static final StatusEnum TIMEOUT = new StatusEnum("timeout");
 
-        /** Enum CANCEL for value: "cancel" */
+        /**
+         * Enum CANCEL for value: "cancel"
+         */
         public static final StatusEnum CANCEL = new StatusEnum("cancel");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +140,10 @@ public class ListWorkflowExecutionsRequest {
         return this;
     }
 
-    /** 函数工作流ID
-     * 
-     * @return workflowId */
+    /**
+     * 函数工作流ID
+     * @return workflowId
+     */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -142,9 +157,12 @@ public class ListWorkflowExecutionsRequest {
         return this;
     }
 
-    /** 分页查询，每页显示的条目数量，最大数量200，超过200后只返回200 minimum: 0 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 分页查询，每页显示的条目数量，最大数量200，超过200后只返回200
+     * minimum: 0
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -158,9 +176,10 @@ public class ListWorkflowExecutionsRequest {
         return this;
     }
 
-    /** 需要过滤的流程实例状态
-     * 
-     * @return status */
+    /**
+     * 需要过滤的流程实例状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -174,9 +193,10 @@ public class ListWorkflowExecutionsRequest {
         return this;
     }
 
-    /** 查询开始时间，UTC时间。若起始时间未填写，以终止时间前推3天为起始时间
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间，UTC时间。若起始时间未填写，以终止时间前推3天为起始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -190,9 +210,10 @@ public class ListWorkflowExecutionsRequest {
         return this;
     }
 
-    /** 查询开始时间，UTC时间。若终止时间未填写，以起始时间后退3天未终止时间。若均未填写，默认查询最近3天数据。
-     * 
-     * @return endTime */
+    /**
+     * 查询开始时间，UTC时间。若终止时间未填写，以起始时间后退3天未终止时间。若均未填写，默认查询最近3天数据。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -235,7 +256,10 @@ public class ListWorkflowExecutionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

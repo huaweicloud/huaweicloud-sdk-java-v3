@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CountTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class CountTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get commonTaskDetails
-     * 
-     * @return commonTaskDetails */
+    /**
+     * Get commonTaskDetails
+     * @return commonTaskDetails
+     */
     public TaskStatisticDetails getCommonTaskDetails() {
         return commonTaskDetails;
     }
@@ -59,9 +62,10 @@ public class CountTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** Get cdcTaskDetails
-     * 
-     * @return cdcTaskDetails */
+    /**
+     * Get cdcTaskDetails
+     * @return cdcTaskDetails
+     */
     public TaskStatisticDetails getCdcTaskDetails() {
         return cdcTaskDetails;
     }
@@ -98,7 +102,10 @@ public class CountTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

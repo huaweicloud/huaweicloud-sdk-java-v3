@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ActionResources */
+/**
+ * ActionResources
+ */
 public class ActionResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ActionResources {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -61,9 +64,10 @@ public class ActionResources {
         return this;
     }
 
-    /** Get resourceDetail
-     * 
-     * @return resourceDetail */
+    /**
+     * Get resourceDetail
+     * @return resourceDetail
+     */
     public Secret getResourceDetail() {
         return resourceDetail;
     }
@@ -77,9 +81,10 @@ public class ActionResources {
         return this;
     }
 
-    /** 资源名称，默认为空字符串。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称，默认为空字符串。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -109,9 +114,10 @@ public class ActionResources {
         return this;
     }
 
-    /** 标签列表，没有标签，数组默认为空。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，没有标签，数组默认为空。
+     * @return tags
+     */
     public List<TagItem> getTags() {
         return tags;
     }
@@ -152,7 +158,10 @@ public class ActionResources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

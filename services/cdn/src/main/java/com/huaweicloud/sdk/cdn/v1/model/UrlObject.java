@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UrlObject */
+/**
+ * UrlObject
+ */
 public class UrlObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UrlObject {
         return this;
     }
 
-    /** url的id
-     * 
-     * @return id */
+    /**
+     * url的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class UrlObject {
         return this;
     }
 
-    /** url的地址。
-     * 
-     * @return url */
+    /**
+     * url的地址。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -75,9 +79,10 @@ public class UrlObject {
         return this;
     }
 
-    /** url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
-     * 
-     * @return status */
+    /**
+     * url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -91,9 +96,10 @@ public class UrlObject {
         return this;
     }
 
-    /** url创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return createTime */
+    /**
+     * url创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -107,9 +113,10 @@ public class UrlObject {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return taskId */
+    /**
+     * 任务id。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -123,9 +130,10 @@ public class UrlObject {
         return this;
     }
 
-    /** 任务的类型， 其值可以为REFRESH、PREHEATING、REFRESH_AFTER_PREHEATING
-     * 
-     * @return taskType */
+    /**
+     * 任务的类型， 其值可以为REFRESH、PREHEATING、REFRESH_AFTER_PREHEATING
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -167,7 +175,10 @@ public class UrlObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

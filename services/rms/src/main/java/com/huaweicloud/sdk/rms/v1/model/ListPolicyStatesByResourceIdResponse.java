@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPolicyStatesByResourceIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListPolicyStatesByResourceIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 合规结果查询返回值
-     * 
-     * @return value */
+    /**
+     * 合规结果查询返回值
+     * @return value
+     */
     public List<PolicyState> getValue() {
         return value;
     }
@@ -68,9 +71,10 @@ public class ListPolicyStatesByResourceIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pageInfo
-     * 
-     * @return pageInfo */
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -108,7 +112,10 @@ public class ListPolicyStatesByResourceIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShrinkClusterReq */
+/**
+ * ShrinkClusterReq
+ */
 public class ShrinkClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ShrinkClusterReq {
         return this;
     }
 
-    /** 需要缩容的节点类型和数量集合。
-     * 
-     * @return shrink */
+    /**
+     * 需要缩容的节点类型和数量集合。
+     * @return shrink
+     */
     public List<ShrinkNodeReq> getShrink() {
         return shrink;
     }
@@ -74,7 +77,10 @@ public class ShrinkClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

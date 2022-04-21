@@ -94,9 +94,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 姓名列表。
-     * 
-     * @return name */
+    /**
+     * 姓名列表。 
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -126,9 +127,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 职位头衔列表。
-     * 
-     * @return title */
+    /**
+     * 职位头衔列表。 
+     * @return title
+     */
     public List<String> getTitle() {
         return title;
     }
@@ -158,9 +160,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 公司列表。
-     * 
-     * @return company */
+    /**
+     * 公司列表。 
+     * @return company
+     */
     public List<String> getCompany() {
         return company;
     }
@@ -190,9 +193,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 部门列表。
-     * 
-     * @return department */
+    /**
+     * 部门列表。 
+     * @return department
+     */
     public List<String> getDepartment() {
         return department;
     }
@@ -222,9 +226,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 联系方式列表。
-     * 
-     * @return phone */
+    /**
+     * 联系方式列表。 
+     * @return phone
+     */
     public List<String> getPhone() {
         return phone;
     }
@@ -254,9 +259,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 地址列表。
-     * 
-     * @return address */
+    /**
+     * 地址列表。 
+     * @return address
+     */
     public List<String> getAddress() {
         return address;
     }
@@ -286,9 +292,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 邮箱列表。
-     * 
-     * @return email */
+    /**
+     * 邮箱列表。 
+     * @return email
+     */
     public List<String> getEmail() {
         return email;
     }
@@ -318,9 +325,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 传真列表。
-     * 
-     * @return fax */
+    /**
+     * 传真列表。 
+     * @return fax
+     */
     public List<String> getFax() {
         return fax;
     }
@@ -350,9 +358,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 邮编列表。
-     * 
-     * @return postcode */
+    /**
+     * 邮编列表。 
+     * @return postcode
+     */
     public List<String> getPostcode() {
         return postcode;
     }
@@ -382,9 +391,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 公司网址列表。
-     * 
-     * @return website */
+    /**
+     * 公司网址列表。 
+     * @return website
+     */
     public List<String> getWebsite() {
         return website;
     }
@@ -414,9 +424,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 其余信息列表。
-     * 
-     * @return extraInfoList */
+    /**
+     * 其余信息列表。 
+     * @return extraInfoList
+     */
     public List<ExtraInfoList> getExtraInfoList() {
         return extraInfoList;
     }
@@ -430,9 +441,10 @@ public class BusinessCardResult {
         return this;
     }
 
-    /** 返回矫正后的名片图像的BASE64编码。
-     * 
-     * @return adjustedImage */
+    /**
+     * 返回矫正后的名片图像的BASE64编码。 
+     * @return adjustedImage
+     */
     public String getAdjustedImage() {
         return adjustedImage;
     }
@@ -499,7 +511,10 @@ public class BusinessCardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

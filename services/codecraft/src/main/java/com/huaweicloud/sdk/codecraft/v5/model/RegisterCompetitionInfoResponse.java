@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RegisterCompetitionInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class RegisterCompetitionInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否允许提交作品，true-允许，false-不允许
-     * 
-     * @return isPermitted */
+    /**
+     * 是否允许提交作品，true-允许，false-不允许
+     * @return isPermitted
+     */
     public Boolean getIsPermitted() {
         return isPermitted;
     }
@@ -40,9 +43,10 @@ public class RegisterCompetitionInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 团队ID
-     * 
-     * @return teamId */
+    /**
+     * 团队ID
+     * @return teamId
+     */
     public String getTeamId() {
         return teamId;
     }
@@ -79,7 +83,10 @@ public class RegisterCompetitionInfoResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

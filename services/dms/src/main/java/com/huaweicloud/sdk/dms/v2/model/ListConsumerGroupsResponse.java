@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListConsumerGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,13 +34,19 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
     private List<ListQueueGroupsRespGroups> groups = null;
 
-    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。 */
+    /**
+    * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+    */
     public static final class RedrivePolicyEnum {
 
-        /** Enum ENABLE for value: "enable" */
+        /**
+         * Enum ENABLE for value: "enable"
+         */
         public static final RedrivePolicyEnum ENABLE = new RedrivePolicyEnum("enable");
 
-        /** Enum DISABLE for value: "disable" */
+        /**
+         * Enum DISABLE for value: "disable"
+         */
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
 
         private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +121,10 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列ID。
-     * 
-     * @return queueId */
+    /**
+     * 队列ID。
+     * @return queueId
+     */
     public String getQueueId() {
         return queueId;
     }
@@ -129,9 +138,10 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列的名称。
-     * 
-     * @return queueName */
+    /**
+     * 队列的名称。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -161,9 +171,10 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 消费组列表。
-     * 
-     * @return groups */
+    /**
+     * 消费组列表。
+     * @return groups
+     */
     public List<ListQueueGroupsRespGroups> getGroups() {
         return groups;
     }
@@ -177,9 +188,10 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
-     * 
-     * @return redrivePolicy */
+    /**
+     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+     * @return redrivePolicy
+     */
     public RedrivePolicyEnum getRedrivePolicy() {
         return redrivePolicy;
     }
@@ -220,7 +232,10 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowNamespaceAuthResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -58,9 +61,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return this;
     }
 
-    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * 
-     * @return name */
+    /**
+     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -74,9 +78,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return this;
     }
 
-    /** 组织创建者
-     * 
-     * @return creatorName */
+    /**
+     * 组织创建者
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -99,9 +104,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return this;
     }
 
-    /** Get selfAuth
-     * 
-     * @return selfAuth */
+    /**
+     * Get selfAuth
+     * @return selfAuth
+     */
     public UserAuth getSelfAuth() {
         return selfAuth;
     }
@@ -131,9 +137,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return this;
     }
 
-    /** 其他用户的权限
-     * 
-     * @return othersAuths */
+    /**
+     * 其他用户的权限
+     * @return othersAuths
+     */
     public List<UserAuth> getOthersAuths() {
         return othersAuths;
     }
@@ -176,7 +183,10 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

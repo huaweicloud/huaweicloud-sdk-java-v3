@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTaskStatusRequestBody */
+/**
+ * UpdateTaskStatusRequestBody
+ */
 public class UpdateTaskStatusRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,12 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** cluster_id minimum: -1 maximum: 2147483647
-     * 
-     * @return clusterId */
+    /**
+     * cluster_id
+     * minimum: -1
+     * maximum: 2147483647
+     * @return clusterId
+     */
     public Integer getClusterId() {
         return clusterId;
     }
@@ -55,9 +60,10 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** cluster_type
-     * 
-     * @return clusterType */
+    /**
+     * cluster_type
+     * @return clusterType
+     */
     public String getClusterType() {
         return clusterType;
     }
@@ -71,9 +77,12 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** without_package minimum: 0 maximum: 2147483647
-     * 
-     * @return withoutPackage */
+    /**
+     * without_package
+     * minimum: 0
+     * maximum: 2147483647
+     * @return withoutPackage
+     */
     public Integer getWithoutPackage() {
         return withoutPackage;
     }
@@ -96,9 +105,10 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** Get networkInfo
-     * 
-     * @return networkInfo */
+    /**
+     * Get networkInfo
+     * @return networkInfo
+     */
     public NetworkInfo getNetworkInfo() {
         return networkInfo;
     }
@@ -112,9 +122,12 @@ public class UpdateTaskStatusRequestBody {
         return this;
     }
 
-    /** status minimum: 0 maximum: 2147483647
-     * 
-     * @return status */
+    /**
+     * status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -157,7 +170,10 @@ public class UpdateTaskStatusRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

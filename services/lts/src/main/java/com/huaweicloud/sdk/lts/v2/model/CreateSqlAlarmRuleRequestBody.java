@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateSqlAlarmRuleRequestBody */
+/**
+ * CreateSqlAlarmRuleRequestBody
+ */
 public class CreateSqlAlarmRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,19 +43,29 @@ public class CreateSqlAlarmRuleRequestBody {
 
     private String conditionExpression;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class SqlAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final SqlAlarmLevelEnum INFO = new SqlAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final SqlAlarmLevelEnum MINOR = new SqlAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final SqlAlarmLevelEnum MAJOR = new SqlAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final SqlAlarmLevelEnum CRITICAL = new SqlAlarmLevelEnum("Critical");
 
         private static final Map<String, SqlAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -145,9 +157,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL告警名称
-     * 
-     * @return sqlAlarmRuleName */
+    /**
+     * SQL告警名称
+     * @return sqlAlarmRuleName
+     */
     public String getSqlAlarmRuleName() {
         return sqlAlarmRuleName;
     }
@@ -161,9 +174,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL告警信息描述
-     * 
-     * @return sqlAlarmRuleDescription */
+    /**
+     * SQL告警信息描述
+     * @return sqlAlarmRuleDescription
+     */
     public String getSqlAlarmRuleDescription() {
         return sqlAlarmRuleDescription;
     }
@@ -193,9 +207,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL详细信息
-     * 
-     * @return sqlRequests */
+    /**
+     * SQL详细信息
+     * @return sqlRequests
+     */
     public List<SqlRequest> getSqlRequests() {
         return sqlRequests;
     }
@@ -218,9 +233,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警统计周期
-     * 
-     * @return frequency */
+    /**
+     * 告警统计周期
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -234,9 +250,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 条件表达式
-     * 
-     * @return conditionExpression */
+    /**
+     * 条件表达式
+     * @return conditionExpression
+     */
     public String getConditionExpression() {
         return conditionExpression;
     }
@@ -250,9 +267,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return sqlAlarmLevel */
+    /**
+     * 告警级别
+     * @return sqlAlarmLevel
+     */
     public SqlAlarmLevelEnum getSqlAlarmLevel() {
         return sqlAlarmLevel;
     }
@@ -266,9 +284,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return sqlAlarmSend */
+    /**
+     * 是否发送
+     * @return sqlAlarmSend
+     */
     public Boolean getSqlAlarmSend() {
         return sqlAlarmSend;
     }
@@ -282,9 +301,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -308,9 +328,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 通知主题
-     * 
-     * @return notificationSaveRule */
+    /**
+     * 通知主题
+     * @return notificationSaveRule
+     */
     public NotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
@@ -369,7 +390,10 @@ public class CreateSqlAlarmRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

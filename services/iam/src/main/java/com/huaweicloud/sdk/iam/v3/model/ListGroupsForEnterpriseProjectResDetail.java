@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListGroupsForEnterpriseProjectResDetail */
+/**
+ * ListGroupsForEnterpriseProjectResDetail
+ */
 public class ListGroupsForEnterpriseProjectResDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return this;
     }
 
-    /** 用户组创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 用户组创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -54,9 +57,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return this;
     }
 
-    /** 用户组描述。
-     * 
-     * @return description */
+    /**
+     * 用户组描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -70,9 +74,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return this;
     }
 
-    /** 租户Id。
-     * 
-     * @return domainId */
+    /**
+     * 租户Id。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -86,9 +91,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return this;
     }
 
-    /** 用户组Id。
-     * 
-     * @return id */
+    /**
+     * 用户组Id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +108,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return this;
     }
 
-    /** 用户组名称。
-     * 
-     * @return name */
+    /**
+     * 用户组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -148,7 +155,10 @@ public class ListGroupsForEnterpriseProjectResDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 扫描任务配置 */
+/**
+ * 扫描任务配置
+ */
 public class TaskSettingsTaskConfig {
 
-    /** 扫描模式: * fast - 快速扫描 * normal - 标准扫描 * deep - 深度扫描 */
+    /**
+     * 扫描模式:   * fast - 快速扫描   * normal - 标准扫描   * deep - 深度扫描 
+     */
     public static final class ScanModeEnum {
 
-        /** Enum FAST for value: "fast" */
+        /**
+         * Enum FAST for value: "fast"
+         */
         public static final ScanModeEnum FAST = new ScanModeEnum("fast");
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final ScanModeEnum NORMAL = new ScanModeEnum("normal");
 
-        /** Enum DEEP for value: "deep" */
+        /**
+         * Enum DEEP for value: "deep"
+         */
         public static final ScanModeEnum DEEP = new ScanModeEnum("deep");
 
         private static final Map<String, ScanModeEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +143,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 扫描模式: * fast - 快速扫描 * normal - 标准扫描 * deep - 深度扫描
-     * 
-     * @return scanMode */
+    /**
+     * 扫描模式:   * fast - 快速扫描   * normal - 标准扫描   * deep - 深度扫描 
+     * @return scanMode
+     */
     public ScanModeEnum getScanMode() {
         return scanMode;
     }
@@ -149,9 +160,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行端口扫描
-     * 
-     * @return portScan */
+    /**
+     * 是否进行端口扫描
+     * @return portScan
+     */
     public Boolean getPortScan() {
         return portScan;
     }
@@ -165,9 +177,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行弱密码扫描
-     * 
-     * @return weakPwdScan */
+    /**
+     * 是否进行弱密码扫描
+     * @return weakPwdScan
+     */
     public Boolean getWeakPwdScan() {
         return weakPwdScan;
     }
@@ -181,9 +194,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行CVE漏洞扫描
-     * 
-     * @return cveCheck */
+    /**
+     * 是否进行CVE漏洞扫描
+     * @return cveCheck
+     */
     public Boolean getCveCheck() {
         return cveCheck;
     }
@@ -197,9 +211,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行网站内容合规文字检测
-     * 
-     * @return textCheck */
+    /**
+     * 是否进行网站内容合规文字检测
+     * @return textCheck
+     */
     public Boolean getTextCheck() {
         return textCheck;
     }
@@ -213,9 +228,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行网站内容合规图片检测
-     * 
-     * @return pictureCheck */
+    /**
+     * 是否进行网站内容合规图片检测
+     * @return pictureCheck
+     */
     public Boolean getPictureCheck() {
         return pictureCheck;
     }
@@ -229,9 +245,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行网站挂马检测
-     * 
-     * @return maliciousCode */
+    /**
+     * 是否进行网站挂马检测
+     * @return maliciousCode
+     */
     public Boolean getMaliciousCode() {
         return maliciousCode;
     }
@@ -245,9 +262,10 @@ public class TaskSettingsTaskConfig {
         return this;
     }
 
-    /** 是否进行链接健康检测（死链、暗链、恶意外链）
-     * 
-     * @return maliciousLink */
+    /**
+     * 是否进行链接健康检测（死链、暗链、恶意外链）
+     * @return maliciousLink
+     */
     public Boolean getMaliciousLink() {
         return maliciousLink;
     }
@@ -297,7 +315,10 @@ public class TaskSettingsTaskConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

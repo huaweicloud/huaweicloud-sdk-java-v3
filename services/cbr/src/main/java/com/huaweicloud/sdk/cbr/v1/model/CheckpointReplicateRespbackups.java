@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckpointReplicateRespbackups */
+/**
+ * CheckpointReplicateRespbackups
+ */
 public class CheckpointReplicateRespbackups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CheckpointReplicateRespbackups {
         return this;
     }
 
-    /** 待复制的备份ID
-     * 
-     * @return backupId */
+    /**
+     * 待复制的备份ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -39,9 +42,10 @@ public class CheckpointReplicateRespbackups {
         return this;
     }
 
-    /** 复制记录ID
-     * 
-     * @return replicationRecordId */
+    /**
+     * 复制记录ID
+     * @return replicationRecordId
+     */
     public String getReplicationRecordId() {
         return replicationRecordId;
     }
@@ -78,7 +82,10 @@ public class CheckpointReplicateRespbackups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

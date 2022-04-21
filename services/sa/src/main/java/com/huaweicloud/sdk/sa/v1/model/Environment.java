@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Environment */
+/**
+ * Environment
+ */
 public class Environment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Environment {
         return this;
     }
 
-    /** 环境供应商，HWCP/HWC/AWS/Azure/GCP等。
-     * 
-     * @return type */
+    /**
+     * 环境供应商，HWCP/HWC/AWS/Azure/GCP等。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -49,9 +52,10 @@ public class Environment {
         return this;
     }
 
-    /** 租户账号ID，用来标识事件所属租户。
-     * 
-     * @return domainId */
+    /**
+     * 租户账号ID，用来标识事件所属租户。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -65,9 +69,10 @@ public class Environment {
         return this;
     }
 
-    /** 租户项目ID，用来标识事件所属项目区域。
-     * 
-     * @return projectId */
+    /**
+     * 租户项目ID，用来标识事件所属项目区域。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -81,9 +86,10 @@ public class Environment {
         return this;
     }
 
-    /** 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
-     * 
-     * @return regionId */
+    /**
+     * 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -123,7 +129,10 @@ public class Environment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

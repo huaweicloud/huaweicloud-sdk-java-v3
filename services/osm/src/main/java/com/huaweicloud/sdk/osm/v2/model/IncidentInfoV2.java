@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IncidentInfoV2 */
+/**
+ * IncidentInfoV2
+ */
 public class IncidentInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return xcustomerId */
+    /**
+     * 子用户id
+     * @return xcustomerId
+     */
     public String getXcustomerId() {
         return xcustomerId;
     }
@@ -88,9 +91,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 子用户名称
-     * 
-     * @return xcustomerName */
+    /**
+     * 子用户名称
+     * @return xcustomerName
+     */
     public String getXcustomerName() {
         return xcustomerName;
     }
@@ -104,9 +108,12 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
-     * 
-     * @return status */
+    /**
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
+     * minimum: 0
+     * maximum: 20
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -120,9 +127,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -136,9 +144,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 问题类型名称
-     * 
-     * @return businessTypeName */
+    /**
+     * 问题类型名称
+     * @return businessTypeName
+     */
     public String getBusinessTypeName() {
         return businessTypeName;
     }
@@ -152,9 +161,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 工单类型名称
-     * 
-     * @return incidentTypeName */
+    /**
+     * 工单类型名称
+     * @return incidentTypeName
+     */
     public String getIncidentTypeName() {
         return incidentTypeName;
     }
@@ -168,9 +178,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -184,9 +195,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return dcName */
+    /**
+     * 区域名称
+     * @return dcName
+     */
     public String getDcName() {
         return dcName;
     }
@@ -200,9 +212,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 简要描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 简要描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -216,9 +229,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -248,9 +262,10 @@ public class IncidentInfoV2 {
         return this;
     }
 
-    /** 标签列表
-     * 
-     * @return labelList */
+    /**
+     * 标签列表
+     * @return labelList
+     */
     public List<LabelInfo> getLabelList() {
         return labelList;
     }
@@ -315,7 +330,10 @@ public class IncidentInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

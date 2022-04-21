@@ -20,13 +20,19 @@ public class PrePaidServerSchedulerHints {
 
     private String group;
 
-    /** 在指定的专属主机或者共享主机上创建弹性云服务器。参数值为shared或者dedicated。 */
+    /**
+     * 在指定的专属主机或者共享主机上创建弹性云服务器。参数值为shared或者dedicated。
+     */
     public static final class TenancyEnum {
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final TenancyEnum SHARED = new TenancyEnum("shared");
 
-        /** Enum DEDICATED for value: "dedicated" */
+        /**
+         * Enum DEDICATED for value: "dedicated"
+         */
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
 
         private static final Map<String, TenancyEnum> STATIC_FIELDS = createStaticFields();
@@ -106,9 +112,10 @@ public class PrePaidServerSchedulerHints {
         return this;
     }
 
-    /** 云服务器组ID，UUID格式。 云服务器组的ID可以从控制台或者参考[查询云服务器组列表](https://support.huaweicloud.com/api-ecs/ecs_03_1402.html)获取。
-     * 
-     * @return group */
+    /**
+     * 云服务器组ID，UUID格式。  云服务器组的ID可以从控制台或者参考[查询云服务器组列表](https://support.huaweicloud.com/api-ecs/ecs_03_1402.html)获取。
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -122,9 +129,10 @@ public class PrePaidServerSchedulerHints {
         return this;
     }
 
-    /** 在指定的专属主机或者共享主机上创建弹性云服务器。参数值为shared或者dedicated。
-     * 
-     * @return tenancy */
+    /**
+     * 在指定的专属主机或者共享主机上创建弹性云服务器。参数值为shared或者dedicated。
+     * @return tenancy
+     */
     public TenancyEnum getTenancy() {
         return tenancy;
     }
@@ -138,9 +146,10 @@ public class PrePaidServerSchedulerHints {
         return this;
     }
 
-    /** 专属主机的ID。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机的ID。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -179,7 +188,10 @@ public class PrePaidServerSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchCtlRecordsOfHisMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 会议UUID。
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -64,9 +67,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 指定返回的记录索引。该值必须大于等于0； 默认为0。
-     * 
-     * @return offset */
+    /**
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -80,9 +84,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 指定返回的记录数，默认是20，最大500条。
-     * 
-     * @return limit */
+    /**
+     * 指定返回的记录数，默认是20，最大500条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -96,9 +101,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 用户的UUID（已在USG注册过的）。
-     * 
-     * @return userUUID */
+    /**
+     * 用户的UUID（已在USG注册过的）。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -112,9 +118,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求。
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求。
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -130,9 +137,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -148,9 +156,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return this;
     }
 
-    /** 语言。默认简体中文。 - zh-CN: 简体中文。 - en-US: 美国英文。
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言。默认简体中文。 - zh-CN: 简体中文。 - en-US: 美国英文。
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -198,7 +207,10 @@ public class SearchCtlRecordsOfHisMeetingRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

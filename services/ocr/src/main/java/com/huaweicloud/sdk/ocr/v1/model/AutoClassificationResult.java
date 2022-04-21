@@ -47,9 +47,10 @@ public class AutoClassificationResult {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public AutoClassificationResultStatus getStatus() {
         return status;
     }
@@ -63,9 +64,10 @@ public class AutoClassificationResult {
         return this;
     }
 
-    /** 对应票证具体结构化识别的结果。
-     * 
-     * @return content */
+    /**
+     * 对应票证具体结构化识别的结果。 
+     * @return content
+     */
     public Object getContent() {
         return content;
     }
@@ -79,9 +81,10 @@ public class AutoClassificationResult {
         return this;
     }
 
-    /** 对应票证的类别。
-     * 
-     * @return type */
+    /**
+     * 对应票证的类别。         
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -111,9 +114,10 @@ public class AutoClassificationResult {
         return this;
     }
 
-    /** 文字块的区域位置信息，列表形式，包含文字区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
+    /**
+     * 文字块的区域位置信息，列表形式，包含文字区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -154,7 +158,10 @@ public class AutoClassificationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

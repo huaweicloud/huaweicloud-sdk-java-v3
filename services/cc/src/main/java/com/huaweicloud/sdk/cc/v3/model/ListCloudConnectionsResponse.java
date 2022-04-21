@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCloudConnectionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListCloudConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 云连接实例列表。
-     * 
-     * @return cloudConnections */
+    /**
+     * 云连接实例列表。
+     * @return cloudConnections
+     */
     public List<CloudConnection> getCloudConnections() {
         return cloudConnections;
     }
@@ -73,9 +76,10 @@ public class ListCloudConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pageInfo
-     * 
-     * @return pageInfo */
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -89,9 +93,10 @@ public class ListCloudConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -130,7 +135,10 @@ public class ListCloudConnectionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

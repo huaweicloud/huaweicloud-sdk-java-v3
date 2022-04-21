@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteMembersV4RequestBody */
+/**
+ * BatchDeleteMembersV4RequestBody
+ */
 public class BatchDeleteMembersV4RequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteMembersV4RequestBody {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userIds */
+    /**
+     * 用户id
+     * @return userIds
+     */
     public List<String> getUserIds() {
         return userIds;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteMembersV4RequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

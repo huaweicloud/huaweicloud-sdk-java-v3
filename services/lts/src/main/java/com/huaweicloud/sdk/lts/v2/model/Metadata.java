@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Metadata */
+/**
+ * Metadata
+ */
 public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警类型
-     * 
-     * @return eventType */
+    /**
+     * 告警类型
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -69,9 +72,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警id
-     * 
-     * @return eventId */
+    /**
+     * 告警id
+     * @return eventId
+     */
     public String getEventId() {
         return eventId;
     }
@@ -85,9 +89,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return eventSeverity */
+    /**
+     * 告警级别
+     * @return eventSeverity
+     */
     public String getEventSeverity() {
         return eventSeverity;
     }
@@ -101,9 +106,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警名称
-     * 
-     * @return eventName */
+    /**
+     * 告警名称
+     * @return eventName
+     */
     public String getEventName() {
         return eventName;
     }
@@ -117,9 +123,10 @@ public class Metadata {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -133,9 +140,10 @@ public class Metadata {
         return this;
     }
 
-    /** 日志组/流名称
-     * 
-     * @return resourceId */
+    /**
+     * 日志组/流名称
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -149,9 +157,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警源
-     * 
-     * @return resourceProvider */
+    /**
+     * 告警源
+     * @return resourceProvider
+     */
     public String getResourceProvider() {
         return resourceProvider;
     }
@@ -165,9 +174,10 @@ public class Metadata {
         return this;
     }
 
-    /** 告警规则类型(SQL/关键词)
-     * 
-     * @return ltsAlarmType */
+    /**
+     * 告警规则类型(SQL/关键词)
+     * @return ltsAlarmType
+     */
     public String getLtsAlarmType() {
         return ltsAlarmType;
     }
@@ -222,7 +232,10 @@ public class Metadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

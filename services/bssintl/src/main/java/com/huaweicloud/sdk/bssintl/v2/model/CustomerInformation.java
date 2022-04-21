@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CustomerInformation */
+/**
+ * CustomerInformation
+ */
 public class CustomerInformation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 实名认证名称。
-     * 
-     * @return customer */
+    /**
+     * 实名认证名称。
+     * @return customer
+     */
     public String getCustomer() {
         return customer;
     }
@@ -107,9 +110,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户经理登录名称。
-     * 
-     * @return accountName */
+    /**
+     * 客户经理登录名称。
+     * @return accountName
+     */
     public String getAccountName() {
         return accountName;
     }
@@ -123,9 +127,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -139,9 +144,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户和伙伴关联时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”，其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return associatedOn */
+    /**
+     * 客户和伙伴关联时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”，其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return associatedOn
+     */
     public String getAssociatedOn() {
         return associatedOn;
     }
@@ -155,9 +161,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 关联类型： 1：顾问销售3：转售
-     * 
-     * @return associationType */
+    /**
+     * 关联类型： 1：顾问销售3：转售
+     * @return associationType
+     */
     public String getAssociationType() {
         return associationType;
     }
@@ -171,9 +178,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 标签。
-     * 
-     * @return label */
+    /**
+     * 标签。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -187,9 +195,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户电话号码。
-     * 
-     * @return telephone */
+    /**
+     * 客户电话号码。
+     * @return telephone
+     */
     public String getTelephone() {
         return telephone;
     }
@@ -203,9 +212,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 实名认证状态： -1：未实名认证0：实名认证审核中1：实名认证不通过2：已实名认证3：实名认证失败
-     * 
-     * @return verifiedStatus */
+    /**
+     * 实名认证状态： -1：未实名认证0：实名认证审核中1：实名认证不通过2：已实名认证3：实名认证失败
+     * @return verifiedStatus
+     */
     public String getVerifiedStatus() {
         return verifiedStatus;
     }
@@ -219,9 +229,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 国家码，电话号码的国家码前缀。 例如：中国 0086。
-     * 
-     * @return countryCode */
+    /**
+     * 国家码，电话号码的国家码前缀。 例如：中国 0086。
+     * @return countryCode
+     */
     public String getCountryCode() {
         return countryCode;
     }
@@ -235,9 +246,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户类型： -1：无类型0：个人1：企业 客户刚注册的时候，没有具体的客户类型，为“-1：无类型”，客户可以在账号中心通过设置客户类型或者在实名认证的时候，选择对应的企业/个人实名认证来决定自己的类型。
-     * 
-     * @return customerType */
+    /**
+     * 客户类型： -1：无类型0：个人1：企业 客户刚注册的时候，没有具体的客户类型，为“-1：无类型”，客户可以在账号中心通过设置客户类型或者在实名认证的时候，选择对应的企业/个人实名认证来决定自己的类型。
+     * @return customerType
+     */
     public Integer getCustomerType() {
         return customerType;
     }
@@ -251,9 +263,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 是否冻结： 0：否1：是
-     * 
-     * @return isFrozen */
+    /**
+     * 是否冻结： 0：否1：是
+     * @return isFrozen
+     */
     public Integer getIsFrozen() {
         return isFrozen;
     }
@@ -283,9 +296,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 该客户对应的客户经理信息，目前只支持1个，具体参见表2。
-     * 
-     * @return accountManagers */
+    /**
+     * 该客户对应的客户经理信息，目前只支持1个，具体参见表2。
+     * @return accountManagers
+     */
     public List<AccountManager> getAccountManagers() {
         return accountManagers;
     }
@@ -299,9 +313,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 伙伴销售平台的用户唯一标识，该标识的具体值由伙伴分配。
-     * 
-     * @return xaccountId */
+    /**
+     * 伙伴销售平台的用户唯一标识，该标识的具体值由伙伴分配。
+     * @return xaccountId
+     */
     public String getXaccountId() {
         return xaccountId;
     }
@@ -315,9 +330,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 华为分配给合作伙伴的平台标识。 该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值。
-     * 
-     * @return xaccountType */
+    /**
+     * 华为分配给合作伙伴的平台标识。 该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值。
+     * @return xaccountType
+     */
     public String getXaccountType() {
         return xaccountType;
     }
@@ -331,9 +347,10 @@ public class CustomerInformation {
         return this;
     }
 
-    /** 客户等级。 V0 V1 V2 V3 V4 V5
-     * 
-     * @return customerLevel */
+    /**
+     * 客户等级。 V0 V1 V2 V3 V4 V5
+     * @return customerLevel
+     */
     public String getCustomerLevel() {
         return customerLevel;
     }
@@ -410,7 +427,10 @@ public class CustomerInformation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

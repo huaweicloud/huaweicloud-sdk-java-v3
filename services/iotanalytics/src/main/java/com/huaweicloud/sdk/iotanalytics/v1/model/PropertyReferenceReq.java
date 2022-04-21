@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 属性引用 */
+/**
+ * 属性引用
+ */
 public class PropertyReferenceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class PropertyReferenceReq {
         return this;
     }
 
-    /** 引用的资产ID，只有single型参数才能填写，可填写null置空
-     * 
-     * @return assetId */
+    /**
+     * 引用的资产ID，只有single型参数才能填写，可填写null置空
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -55,7 +58,10 @@ public class PropertyReferenceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

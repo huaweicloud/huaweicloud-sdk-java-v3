@@ -10,23 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 转发到的url配置。 [共享型负载均衡器下的转发策略不支持该字段，传入会报错。](tag:hcso_dt) 当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。
- * [当action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
- * 格式：protocol://host:port/path?query
- * protocol、host、port、path不允许同时不传或同时传${xxx}（${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。
- * [不支持该字段，请勿使用。](tag:dt,dt_test) */
+/**
+ * 转发到的url配置。  [共享型负载均衡器下的转发策略不支持该字段，传入会报错。](tag:hcso_dt)  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  [当action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx}（${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+ */
 public class CreateRedirectUrlConfig {
 
-    /** 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。 取值范围： - HTTP - HTTPS - ${protocol} */
+    /**
+     * 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。  取值范围： - HTTP - HTTPS - ${protocol}
+     */
     public static final class ProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
 
-        /** Enum _PROTOCOL_ for value: "${protocol}" */
+        /**
+         * Enum _PROTOCOL_ for value: "${protocol}"
+         */
         public static final ProtocolEnum _PROTOCOL_ = new ProtocolEnum("${protocol}");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -117,22 +123,34 @@ public class CreateRedirectUrlConfig {
 
     private String query;
 
-    /** 重定向后的返回码。 取值范围： - 301 - 302 - 303 - 307 - 308 */
+    /**
+     * 重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+     */
     public static final class StatusCodeEnum {
 
-        /** Enum _301 for value: "301" */
+        /**
+         * Enum _301 for value: "301"
+         */
         public static final StatusCodeEnum _301 = new StatusCodeEnum("301");
 
-        /** Enum _302 for value: "302" */
+        /**
+         * Enum _302 for value: "302"
+         */
         public static final StatusCodeEnum _302 = new StatusCodeEnum("302");
 
-        /** Enum _303 for value: "303" */
+        /**
+         * Enum _303 for value: "303"
+         */
         public static final StatusCodeEnum _303 = new StatusCodeEnum("303");
 
-        /** Enum _307 for value: "307" */
+        /**
+         * Enum _307 for value: "307"
+         */
         public static final StatusCodeEnum _307 = new StatusCodeEnum("307");
 
-        /** Enum _308 for value: "308" */
+        /**
+         * Enum _308 for value: "308"
+         */
         public static final StatusCodeEnum _308 = new StatusCodeEnum("308");
 
         private static final Map<String, StatusCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -210,9 +228,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。 取值范围： - HTTP - HTTPS - ${protocol}
-     * 
-     * @return protocol */
+    /**
+     * 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。  取值范围： - HTTP - HTTPS - ${protocol}
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -226,9 +245,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向的主机名。字符串只能包含英文字母、数字、\"-\"、\".\"，必须以字母、数字开头。默认值${host}表示继承原值（即与被转发请求保持一致）。
-     * 
-     * @return host */
+    /**
+     * 重定向的主机名。字符串只能包含英文字母、数字、\"-\"、\".\"，必须以字母、数字开头。默认值${host}表示继承原值（即与被转发请求保持一致）。
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -242,9 +262,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向到的端口。默认值${port}表示继承原值（即与被转发请求保持一致）。
-     * 
-     * @return port */
+    /**
+     * 重定向到的端口。默认值${port}表示继承原值（即与被转发请求保持一致）。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -258,9 +279,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向的路径。默认值${path}表示继承原值（即与被转发请求保持一致）。 只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|/()[]{}，且必须以\"/\"开头。
-     * 
-     * @return path */
+    /**
+     * 重定向的路径。默认值${path}表示继承原值（即与被转发请求保持一致）。  只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|/()[]{}，且必须以\"/\"开头。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -274,11 +296,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向的查询字符串。默认${query}表示继承原值（即与被转发请求保持一致）。举例如下：
-     * 若该字段被设置为：${query}&name=my_name，则在转发符合条件的URL（如https://www.xxx.com:8080/elb?type=loadbalancer，此时${query}表示type=loadbalancer）时，将会重定向到https://www.xxx.com:8080/elb?type=loadbalancer&name=my_name。
-     * 只能包含英文字母、数字和特殊字符：!$&'()*+,-./:;=?@^_`。字母区分大小写。
-     * 
-     * @return query */
+    /**
+     * 重定向的查询字符串。默认${query}表示继承原值（即与被转发请求保持一致）。举例如下： 若该字段被设置为：${query}&name=my_name，则在转发符合条件的URL（如https://www.xxx.com:8080/elb?type=loadbalancer，此时${query}表示type=loadbalancer）时，将会重定向到https://www.xxx.com:8080/elb?type=loadbalancer&name=my_name。  只能包含英文字母、数字和特殊字符：!$&'()*+,-./:;=?@^_`。字母区分大小写。
+     * @return query
+     */
     public String getQuery() {
         return query;
     }
@@ -292,9 +313,10 @@ public class CreateRedirectUrlConfig {
         return this;
     }
 
-    /** 重定向后的返回码。 取值范围： - 301 - 302 - 303 - 307 - 308
-     * 
-     * @return statusCode */
+    /**
+     * 重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+     * @return statusCode
+     */
     public StatusCodeEnum getStatusCode() {
         return statusCode;
     }
@@ -339,7 +361,10 @@ public class CreateRedirectUrlConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

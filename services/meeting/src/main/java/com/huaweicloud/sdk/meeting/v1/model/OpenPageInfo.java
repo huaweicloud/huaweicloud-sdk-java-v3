@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页结果信息。 */
+/**
+ * 分页结果信息。
+ */
 public class OpenPageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OpenPageInfo {
         return this;
     }
 
-    /** 偏移量。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -44,9 +47,10 @@ public class OpenPageInfo {
         return this;
     }
 
-    /** 查询个数。
-     * 
-     * @return limit */
+    /**
+     * 查询个数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class OpenPageInfo {
         return this;
     }
 
-    /** 总记录数
-     * 
-     * @return count */
+    /**
+     * 总记录数
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -100,7 +105,10 @@ public class OpenPageInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

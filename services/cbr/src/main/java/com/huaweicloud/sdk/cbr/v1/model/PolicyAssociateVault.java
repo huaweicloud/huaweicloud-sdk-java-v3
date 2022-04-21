@@ -25,9 +25,10 @@ public class PolicyAssociateVault {
         return this;
     }
 
-    /** 关联的远端存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 关联的远端存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -41,9 +42,10 @@ public class PolicyAssociateVault {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -80,7 +82,10 @@ public class PolicyAssociateVault {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

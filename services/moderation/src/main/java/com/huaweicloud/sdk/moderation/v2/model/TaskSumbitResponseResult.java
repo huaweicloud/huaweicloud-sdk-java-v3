@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 调用成功时表示调用结果。 调用失败时无此字段。 */
+/**
+ * 调用成功时表示调用结果。  调用失败时无此字段。 
+ */
 public class TaskSumbitResponseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class TaskSumbitResponseResult {
         return this;
     }
 
-    /** 批量图像内容审核的任务标识，用于后续的结果查询。
-     * 
-     * @return jobId */
+    /**
+     * 批量图像内容审核的任务标识，用于后续的结果查询。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -55,7 +58,10 @@ public class TaskSumbitResponseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

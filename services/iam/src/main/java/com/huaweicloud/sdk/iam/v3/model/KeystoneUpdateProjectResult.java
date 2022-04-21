@@ -61,9 +61,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** false.
-     * 
-     * @return isDomain */
+    /**
+     * false.
+     * @return isDomain
+     */
     public Boolean getIsDomain() {
         return isDomain;
     }
@@ -77,9 +78,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目描述信息。
-     * 
-     * @return description */
+    /**
+     * 项目描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -93,9 +95,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目的其他信息。
-     * 
-     * @return extra */
+    /**
+     * 项目的其他信息。
+     * @return extra
+     */
     public Object getExtra() {
         return extra;
     }
@@ -118,9 +121,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -134,9 +138,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目是否可用。
-     * 
-     * @return enabled */
+    /**
+     * 项目是否可用。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -150,9 +155,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return id */
+    /**
+     * 项目ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -166,9 +172,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 区域对应的项目ID，例如区域“华北-北京一”区域对应的项目ID为：04dd42abe48026ad2fa3c01ad7fa.....。
-     * 
-     * @return parentId */
+    /**
+     * 区域对应的项目ID，例如区域“华北-北京一”区域对应的项目ID为：04dd42abe48026ad2fa3c01ad7fa.....。
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -182,9 +189,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 项目所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -198,9 +206,10 @@ public class KeystoneUpdateProjectResult {
         return this;
     }
 
-    /** 项目名称。
-     * 
-     * @return name */
+    /**
+     * 项目名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -251,7 +260,10 @@ public class KeystoneUpdateProjectResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

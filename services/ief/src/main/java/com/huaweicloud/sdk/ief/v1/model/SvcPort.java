@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 服务需要暴露的端口列表 */
+/**
+ * 服务需要暴露的端口列表
+ */
 public class SvcPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class SvcPort {
         return this;
     }
 
-    /** 服务端口必须进行命名，而且名称只允许是{protocol}-{suffix}这种格式，其中{protocol}可以是tcp、http等，IEF根据在端口上定义的协议来提供对应的路由能力。例如“name:http-0”和“name:tcp-0”是合法的端口名，“name:http2forecast”是非法的端口号。
-     * 
-     * @return name */
+    /**
+     * 服务端口必须进行命名，而且名称只允许是{protocol}-{suffix}这种格式，其中{protocol}可以是tcp、http等，IEF根据在端口上定义的协议来提供对应的路由能力。例如“name:http-0”和“name:tcp-0”是合法的端口名，“name:http2forecast”是非法的端口号。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class SvcPort {
         return this;
     }
 
-    /** 当spec.type=NodePort时，指定映射到物理机的端口号
-     * 
-     * @return nodePort */
+    /**
+     * 当spec.type=NodePort时，指定映射到物理机的端口号
+     * @return nodePort
+     */
     public String getNodePort() {
         return nodePort;
     }
@@ -70,9 +74,10 @@ public class SvcPort {
         return this;
     }
 
-    /** 服务监听的端口号
-     * 
-     * @return port */
+    /**
+     * 服务监听的端口号
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -86,9 +91,10 @@ public class SvcPort {
         return this;
     }
 
-    /** 具体的协议，比如TCP
-     * 
-     * @return protocol */
+    /**
+     * 具体的协议，比如TCP
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -102,9 +108,10 @@ public class SvcPort {
         return this;
     }
 
-    /** 需要转发到后端Pod的端口号
-     * 
-     * @return targetPort */
+    /**
+     * 需要转发到后端Pod的端口号
+     * @return targetPort
+     */
     public String getTargetPort() {
         return targetPort;
     }
@@ -145,7 +152,10 @@ public class SvcPort {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

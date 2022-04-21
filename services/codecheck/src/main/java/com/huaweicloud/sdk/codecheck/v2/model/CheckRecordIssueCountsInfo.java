@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckRecordIssueCountsInfo */
+/**
+ * CheckRecordIssueCountsInfo
+ */
 public class CheckRecordIssueCountsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CheckRecordIssueCountsInfo {
         return this;
     }
 
-    /** 致命问题
-     * 
-     * @return critical */
+    /**
+     * 致命问题
+     * @return critical
+     */
     public Integer getCritical() {
         return critical;
     }
@@ -49,9 +52,10 @@ public class CheckRecordIssueCountsInfo {
         return this;
     }
 
-    /** 严重问题
-     * 
-     * @return serious */
+    /**
+     * 严重问题
+     * @return serious
+     */
     public Integer getSerious() {
         return serious;
     }
@@ -65,9 +69,10 @@ public class CheckRecordIssueCountsInfo {
         return this;
     }
 
-    /** 常规问题
-     * 
-     * @return normal */
+    /**
+     * 常规问题
+     * @return normal
+     */
     public Integer getNormal() {
         return normal;
     }
@@ -81,9 +86,10 @@ public class CheckRecordIssueCountsInfo {
         return this;
     }
 
-    /** 提示问题
-     * 
-     * @return prompt */
+    /**
+     * 提示问题
+     * @return prompt
+     */
     public Integer getPrompt() {
         return prompt;
     }
@@ -124,7 +130,10 @@ public class CheckRecordIssueCountsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

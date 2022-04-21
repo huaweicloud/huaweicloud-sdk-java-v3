@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCaseQuotasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,12 @@ public class ListCaseQuotasResponse extends SdkResponse {
         return this;
     }
 
-    /** 总配额 minimum: -1 maximum: 65535
-     * 
-     * @return total */
+    /**
+     * 总配额
+     * minimum: -1
+     * maximum: 65535
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -40,9 +45,12 @@ public class ListCaseQuotasResponse extends SdkResponse {
         return this;
     }
 
-    /** 未使用 minimum: -1 maximum: 65535
-     * 
-     * @return unUsed */
+    /**
+     * 未使用
+     * minimum: -1
+     * maximum: 65535
+     * @return unUsed
+     */
     public Integer getUnUsed() {
         return unUsed;
     }
@@ -79,7 +87,10 @@ public class ListCaseQuotasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

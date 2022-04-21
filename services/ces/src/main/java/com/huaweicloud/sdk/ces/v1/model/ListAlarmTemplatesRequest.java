@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAlarmTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListAlarmTemplatesRequest {
         return this;
     }
 
-    /** 自定义告警模的ID，如：at1603330892378wkDm77y6B。
-     * 
-     * @return alarmTemplateId */
+    /**
+     * 自定义告警模的ID，如：at1603330892378wkDm77y6B。
+     * @return alarmTemplateId
+     */
     public String getAlarmTemplateId() {
         return alarmTemplateId;
     }
@@ -54,9 +57,10 @@ public class ListAlarmTemplatesRequest {
         return this;
     }
 
-    /** 自定义告警模板选择的资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return namespace */
+    /**
+     * 自定义告警模板选择的资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -70,9 +74,10 @@ public class ListAlarmTemplatesRequest {
         return this;
     }
 
-    /** 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dname */
+    /**
+     * 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dname
+     */
     public String getDname() {
         return dname;
     }
@@ -86,9 +91,10 @@ public class ListAlarmTemplatesRequest {
         return this;
     }
 
-    /** 分页起始值，类型为integer，默认值为0。
-     * 
-     * @return start */
+    /**
+     * 分页起始值，类型为integer，默认值为0。
+     * @return start
+     */
     public String getStart() {
         return start;
     }
@@ -102,9 +108,10 @@ public class ListAlarmTemplatesRequest {
         return this;
     }
 
-    /** 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
-     * 
-     * @return limit */
+    /**
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -147,7 +154,10 @@ public class ListAlarmTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

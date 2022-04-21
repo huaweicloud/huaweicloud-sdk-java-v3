@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatabaseUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListDatabaseUsersRequest {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,10 @@ public class ListDatabaseUsersRequest {
         return this;
     }
 
-    /** 用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
-     * 
-     * @return userName */
+    /**
+     * 用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -70,9 +74,10 @@ public class ListDatabaseUsersRequest {
         return this;
     }
 
-    /** 数据库名称，默认为admin。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称，默认为admin。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -86,9 +91,10 @@ public class ListDatabaseUsersRequest {
         return this;
     }
 
-    /** 索引位置偏移量。 取值大于或等于0。不传该参数时，查询偏移量默认为0。
-     * 
-     * @return offset */
+    /**
+     * 索引位置偏移量。 取值大于或等于0。不传该参数时，查询偏移量默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +108,10 @@ public class ListDatabaseUsersRequest {
         return this;
     }
 
-    /** 查询实例个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
-     * 
-     * @return limit */
+    /**
+     * 查询实例个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +154,10 @@ public class ListDatabaseUsersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

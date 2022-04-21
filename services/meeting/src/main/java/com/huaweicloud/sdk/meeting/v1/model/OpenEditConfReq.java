@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 编辑网路研讨会议。 */
+/**
+ * 编辑网路研讨会议。
+ */
 public class OpenEditConfReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 会议ID, 预约会议成功后分配的ID标识
-     * 
-     * @return conferenceId */
+    /**
+     * 会议ID, 预约会议成功后分配的ID标识
+     * @return conferenceId
+     */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -97,9 +100,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 主题
-     * 
-     * @return subject */
+    /**
+     * 主题
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -113,9 +117,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -129,9 +134,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 会议开始时间（UTC时间）， 格式：yyyy-MM-dd HH:mm。说明：创建预约会议时，如果没有指定开始时间或填空串，则表示会议马上开始。
-     * 
-     * @return startTime */
+    /**
+     * 会议开始时间（UTC时间）， 格式：yyyy-MM-dd HH:mm。说明：创建预约会议时，如果没有指定开始时间或填空串，则表示会议马上开始。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -145,9 +151,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 会议持续时长，单位分钟，取值范围[15,1440]。
-     * 
-     * @return duration */
+    /**
+     * 会议持续时长，单位分钟，取值范围[15,1440]。
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -161,9 +168,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 开始时间的时区信息。时区信息，参考时区映射关系。
-     * 
-     * @return timeZoneId */
+    /**
+     * 开始时间的时区信息。时区信息，参考时区映射关系。
+     * @return timeZoneId
+     */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -193,9 +201,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
-     * 
-     * @return attendees */
+    /**
+     * 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
+     * @return attendees
+     */
     public List<OpenAttendeeEntity> getAttendees() {
         return attendees;
     }
@@ -218,9 +227,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** Get notifySetting
-     * 
-     * @return notifySetting */
+    /**
+     * Get notifySetting
+     * @return notifySetting
+     */
     public OpenNotifySetting getNotifySetting() {
         return notifySetting;
     }
@@ -234,9 +244,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 自定义嘉宾入会密码, 4-16位数字，不能与观众密码相同；不指定则系统自动创建。
-     * 
-     * @return guestPasswd */
+    /**
+     * 自定义嘉宾入会密码, 4-16位数字，不能与观众密码相同；不指定则系统自动创建。
+     * @return guestPasswd
+     */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -250,9 +261,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 自定义观众入会密码, 4-16位数字，不能与嘉宾密码相同；不指定则系统自动创建。
-     * 
-     * @return audiencePasswd */
+    /**
+     * 自定义观众入会密码, 4-16位数字，不能与嘉宾密码相同；不指定则系统自动创建。
+     * @return audiencePasswd
+     */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -266,9 +278,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 入会范围开关
-     * 
-     * @return callRestriction */
+    /**
+     * 入会范围开关
+     * @return callRestriction
+     */
     public Boolean getCallRestriction() {
         return callRestriction;
     }
@@ -282,9 +295,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 主持人、嘉宾入会范围 0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户; 默认值 0。
-     * 
-     * @return scope */
+    /**
+     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户; 默认值 0。
+     * @return scope
+     */
     public Integer getScope() {
         return scope;
     }
@@ -298,9 +312,10 @@ public class OpenEditConfReq {
         return this;
     }
 
-    /** 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户; 默认值 0。
-     * 
-     * @return audienceScope */
+    /**
+     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户; 默认值 0。
+     * @return audienceScope
+     */
     public Integer getAudienceScope() {
         return audienceScope;
     }
@@ -371,7 +386,10 @@ public class OpenEditConfReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

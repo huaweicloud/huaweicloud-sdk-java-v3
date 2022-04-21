@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPostalAddressResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListPostalAddressResponse extends SdkResponse {
         return this;
     }
 
-    /** 邮寄地址的个数，只有成功的时候才返回。
-     * 
-     * @return totalCount */
+    /**
+     * 邮寄地址的个数，只有成功的时候才返回。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -59,9 +62,10 @@ public class ListPostalAddressResponse extends SdkResponse {
         return this;
     }
 
-    /** 邮寄地址，具体参见表2。
-     * 
-     * @return postalAddress */
+    /**
+     * 邮寄地址，具体参见表2。
+     * @return postalAddress
+     */
     public List<CustomerPostalAddressV2> getPostalAddress() {
         return postalAddress;
     }
@@ -98,7 +102,10 @@ public class ListPostalAddressResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

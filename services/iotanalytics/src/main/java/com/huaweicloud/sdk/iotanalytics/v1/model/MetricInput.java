@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 定义指标计算查询的输入资产属性 */
+/**
+ * 定义指标计算查询的输入资产属性
+ */
 public class MetricInput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MetricInput {
         return this;
     }
 
-    /** 指标计算表达式的入参名称
-     * 
-     * @return name */
+    /**
+     * 指标计算表达式的入参名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class MetricInput {
         return this;
     }
 
-    /** 入参所对应的资产属性名称
-     * 
-     * @return propertyName */
+    /**
+     * 入参所对应的资产属性名称
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -78,7 +82,10 @@ public class MetricInput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

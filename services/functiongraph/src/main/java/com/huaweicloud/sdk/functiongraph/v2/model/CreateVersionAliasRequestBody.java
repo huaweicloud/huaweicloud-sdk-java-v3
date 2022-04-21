@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 版本别名结构 */
+/**
+ * 版本别名结构
+ */
 public class CreateVersionAliasRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreateVersionAliasRequestBody {
         return this;
     }
 
-    /** 要获取的别名名称。
-     * 
-     * @return name */
+    /**
+     * 要获取的别名名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class CreateVersionAliasRequestBody {
         return this;
     }
 
-    /** 别名对应的版本名称。
-     * 
-     * @return version */
+    /**
+     * 别名对应的版本名称。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -68,9 +72,10 @@ public class CreateVersionAliasRequestBody {
         return this;
     }
 
-    /** 别名描述信息。
-     * 
-     * @return description */
+    /**
+     * 别名描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -102,9 +107,10 @@ public class CreateVersionAliasRequestBody {
         return this;
     }
 
-    /** 灰度版本信息
-     * 
-     * @return additionalVersionWeights */
+    /**
+     * 灰度版本信息
+     * @return additionalVersionWeights
+     */
     public Map<String, Integer> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
@@ -145,7 +151,10 @@ public class CreateVersionAliasRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

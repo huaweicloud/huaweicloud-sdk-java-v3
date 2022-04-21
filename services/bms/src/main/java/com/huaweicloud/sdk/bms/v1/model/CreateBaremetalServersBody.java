@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建裸金属服务器接口请求结构体 */
+/**
+ * 创建裸金属服务器接口请求结构体
+ */
 public class CreateBaremetalServersBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateBaremetalServersBody {
         return this;
     }
 
-    /** Get server
-     * 
-     * @return server */
+    /**
+     * Get server
+     * @return server
+     */
     public CreateServers getServer() {
         return server;
     }
@@ -65,7 +68,10 @@ public class CreateBaremetalServersBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

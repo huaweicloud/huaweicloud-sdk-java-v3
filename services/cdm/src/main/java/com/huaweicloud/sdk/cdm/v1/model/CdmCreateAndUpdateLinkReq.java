@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CdmCreateAndUpdateLinkReq */
+/**
+ * CdmCreateAndUpdateLinkReq
+ */
 public class CdmCreateAndUpdateLinkReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class CdmCreateAndUpdateLinkReq {
         return this;
     }
 
-    /** 连接列表，请参见links数据结构说明
-     * 
-     * @return links */
+    /**
+     * 连接列表，请参见links数据结构说明
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -74,7 +77,10 @@ public class CdmCreateAndUpdateLinkReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -20,9 +20,10 @@ public class ProtocolOption {
         return this;
     }
 
-    /** 映射ID。身份提供商类型为iam_user_sso时，不需要绑定映射ID，无需传入此字段；否则此字段必填。
-     * 
-     * @return mappingId */
+    /**
+     * 映射ID。身份提供商类型为iam_user_sso时，不需要绑定映射ID，无需传入此字段；否则此字段必填。
+     * @return mappingId
+     */
     public String getMappingId() {
         return mappingId;
     }
@@ -57,7 +58,10 @@ public class ProtocolOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

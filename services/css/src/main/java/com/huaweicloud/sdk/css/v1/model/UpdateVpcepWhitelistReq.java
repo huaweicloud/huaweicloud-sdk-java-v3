@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateVpcepWhitelistReq */
+/**
+ * UpdateVpcepWhitelistReq
+ */
 public class UpdateVpcepWhitelistReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateVpcepWhitelistReq {
         return this;
     }
 
-    /** 白名单(用户的账号ID)。
-     * 
-     * @return vpcPermissions */
+    /**
+     * 白名单(用户的账号ID)。
+     * @return vpcPermissions
+     */
     public List<String> getVpcPermissions() {
         return vpcPermissions;
     }
@@ -74,7 +77,10 @@ public class UpdateVpcepWhitelistReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

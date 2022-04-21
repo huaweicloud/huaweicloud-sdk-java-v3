@@ -11,19 +11,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreatePasswordAuthRequest {
 
-    /** 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。 */
+    /**
+     * 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。
+     */
     public static final class RepoTypeEnum {
 
-        /** Enum GITHUB for value: "github" */
+        /**
+         * Enum GITHUB for value: "github"
+         */
         public static final RepoTypeEnum GITHUB = new RepoTypeEnum("github");
 
-        /** Enum DEVCLOUD for value: "devcloud" */
+        /**
+         * Enum DEVCLOUD for value: "devcloud"
+         */
         public static final RepoTypeEnum DEVCLOUD = new RepoTypeEnum("devcloud");
 
-        /** Enum BITBUCKET for value: "bitbucket" */
+        /**
+         * Enum BITBUCKET for value: "bitbucket"
+         */
         public static final RepoTypeEnum BITBUCKET = new RepoTypeEnum("bitbucket");
 
         private static final Map<String, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +114,10 @@ public class CreatePasswordAuthRequest {
         return this;
     }
 
-    /** 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。
-     * 
-     * @return repoType */
+    /**
+     * 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。
+     * @return repoType
+     */
     public RepoTypeEnum getRepoType() {
         return repoType;
     }
@@ -129,9 +140,10 @@ public class CreatePasswordAuthRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public AccessPassword getBody() {
         return body;
     }
@@ -168,7 +180,10 @@ public class CreatePasswordAuthRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

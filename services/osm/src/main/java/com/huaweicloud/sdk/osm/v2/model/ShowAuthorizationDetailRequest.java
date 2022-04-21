@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowAuthorizationDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,12 @@ public class ShowAuthorizationDetailRequest {
         return this;
     }
 
-    /** 授权id minimum: -9223372036854775808 maximum: 9223372036854775807
-     * 
-     * @return authorizationId */
+    /**
+     * 授权id
+     * minimum: -9223372036854775808
+     * maximum: 9223372036854775807
+     * @return authorizationId
+     */
     public Long getAuthorizationId() {
         return authorizationId;
     }
@@ -54,9 +59,10 @@ public class ShowAuthorizationDetailRequest {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -70,9 +76,12 @@ public class ShowAuthorizationDetailRequest {
         return this;
     }
 
-    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
-     * 
-     * @return xSite */
+    /**
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
+     * minimum: 0
+     * maximum: 1
+     * @return xSite
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
     public Integer getXSite() {
@@ -88,9 +97,10 @@ public class ShowAuthorizationDetailRequest {
         return this;
     }
 
-    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * 
-     * @return xLanguage */
+    /**
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -106,9 +116,10 @@ public class ShowAuthorizationDetailRequest {
         return this;
     }
 
-    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
-     * 
-     * @return xTimeZone */
+    /**
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
+     * @return xTimeZone
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
@@ -153,7 +164,10 @@ public class ShowAuthorizationDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateTokenResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,9 +107,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 接入token字符串。
-     * 
-     * @return accessToken */
+    /**
+     * 接入token字符串。
+     * @return accessToken
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -121,9 +124,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户IP。
-     * 
-     * @return tokenIp */
+    /**
+     * 用户IP。
+     * @return tokenIp
+     */
     public String getTokenIp() {
         return tokenIp;
     }
@@ -137,9 +141,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** token有效时长，单位：秒。
-     * 
-     * @return validPeriod */
+    /**
+     * token有效时长，单位：秒。
+     * @return validPeriod
+     */
     public Long getValidPeriod() {
         return validPeriod;
     }
@@ -153,9 +158,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** token的失效时间戳，单位：秒。
-     * 
-     * @return expireTime */
+    /**
+     * token的失效时间戳，单位：秒。
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -169,9 +175,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 业务token的创建时间戳，单位：毫秒。
-     * 
-     * @return createTime */
+    /**
+     * 业务token的创建时间戳，单位：毫秒。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -194,9 +201,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public UserInfo getUser() {
         return user;
     }
@@ -210,9 +218,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 登录帐号类型。 * 72：API调用类型
-     * 
-     * @return clientType */
+    /**
+     * 登录帐号类型。 * 72：API调用类型 
+     * @return clientType
+     */
     public Integer getClientType() {
         return clientType;
     }
@@ -226,9 +235,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 抢占登录标识 * 0：非抢占 * 1：抢占 未启用
-     * 
-     * @return forceLoginInd */
+    /**
+     * 抢占登录标识 * 0：非抢占 * 1：抢占  未启用 
+     * @return forceLoginInd
+     */
     public Integer getForceLoginInd() {
         return forceLoginInd;
     }
@@ -242,9 +252,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否首次登录（说明：首次登录表示尚未修改过密码。首次登录时，系统会提醒用户需要修改密码），默认值：false。
-     * 
-     * @return firstLogin */
+    /**
+     * 是否首次登录（说明：首次登录表示尚未修改过密码。首次登录时，系统会提醒用户需要修改密码），默认值：false。
+     * @return firstLogin
+     */
     public Boolean getFirstLogin() {
         return firstLogin;
     }
@@ -258,9 +269,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 密码是否过期，默认值：false。
-     * 
-     * @return pwdExpired */
+    /**
+     * 密码是否过期，默认值：false。
+     * @return pwdExpired
+     */
     public Boolean getPwdExpired() {
         return pwdExpired;
     }
@@ -274,9 +286,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 密码有效天数
-     * 
-     * @return daysPwdAvailable */
+    /**
+     * 密码有效天数
+     * @return daysPwdAvailable
+     */
     public Integer getDaysPwdAvailable() {
         return daysPwdAvailable;
     }
@@ -299,9 +312,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** Get proxyToken
-     * 
-     * @return proxyToken */
+    /**
+     * Get proxyToken
+     * @return proxyToken
+     */
     public ProxyTokenDTO getProxyToken() {
         return proxyToken;
     }
@@ -315,9 +329,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否延时删除状态
-     * 
-     * @return delayDelete */
+    /**
+     * 是否延时删除状态
+     * @return delayDelete
+     */
     public Boolean getDelayDelete() {
         return delayDelete;
     }
@@ -331,9 +346,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** token类型 * 0：用户ACCESS TOKEN； * 1：会控TOKEN * 2：一次性TOKEN
-     * 
-     * @return tokenType */
+    /**
+     * token类型 * 0：用户ACCESS TOKEN； * 1：会控TOKEN * 2：一次性TOKEN 
+     * @return tokenType
+     */
     public Integer getTokenType() {
         return tokenType;
     }
@@ -347,9 +363,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 刷新token字符串。
-     * 
-     * @return refreshToken */
+    /**
+     * 刷新token字符串。
+     * @return refreshToken
+     */
     public String getRefreshToken() {
         return refreshToken;
     }
@@ -363,9 +380,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 刷新token有效时长，单位：秒。
-     * 
-     * @return refreshValidPeriod */
+    /**
+     * 刷新token有效时长，单位：秒。
+     * @return refreshValidPeriod
+     */
     public Long getRefreshValidPeriod() {
         return refreshValidPeriod;
     }
@@ -379,9 +397,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 刷新token的失效时间戳，单位：秒。
-     * 
-     * @return refreshExpireTime */
+    /**
+     * 刷新token的失效时间戳，单位：秒。
+     * @return refreshExpireTime
+     */
     public Long getRefreshExpireTime() {
         return refreshExpireTime;
     }
@@ -395,9 +414,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 刷新token的创建时间戳，单位：毫秒。
-     * 
-     * @return refreshCreateTime */
+    /**
+     * 刷新token的创建时间戳，单位：毫秒。
+     * @return refreshCreateTime
+     */
     public Long getRefreshCreateTime() {
         return refreshCreateTime;
     }
@@ -483,7 +503,10 @@ public class UpdateTokenResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

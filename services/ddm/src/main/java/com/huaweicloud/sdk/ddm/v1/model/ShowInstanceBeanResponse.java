@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DDM实例的信息。 */
+/**
+ * DDM实例的信息。
+ */
 public class ShowInstanceBeanResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -113,9 +115,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** DDM实例ID。
-     * 
-     * @return id */
+    /**
+     * DDM实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -129,9 +132,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** DDM实例状态。
-     * 
-     * @return status */
+    /**
+     * DDM实例状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -145,9 +149,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 创建的实例名称。
-     * 
-     * @return name */
+    /**
+     * 创建的实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -161,9 +166,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 创建时间，格式为yyyy-mm-dd Thh:mm:ssZ。 其中，T指定某个时间的开始；Z指示 UTC 时间。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为yyyy-mm-dd Thh:mm:ssZ。  其中，T指定某个时间的开始；Z指示 UTC 时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -177,9 +183,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 更新时间，格式与“created”完全相同。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式与“created”完全相同。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -193,9 +200,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 可用区名称
-     * 
-     * @return availableZone */
+    /**
+     * 可用区名称
+     * @return availableZone
+     */
     public String getAvailableZone() {
         return availableZone;
     }
@@ -209,9 +217,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 虚拟私有云的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -225,9 +234,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -241,9 +251,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -257,9 +268,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 节点数量。
-     * 
-     * @return nodeCount */
+    /**
+     * 节点数量。
+     * @return nodeCount
+     */
     public Integer getNodeCount() {
         return nodeCount;
     }
@@ -273,9 +285,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** DDM实例访问地址。
-     * 
-     * @return accessIp */
+    /**
+     * DDM实例访问地址。
+     * @return accessIp
+     */
     public String getAccessIp() {
         return accessIp;
     }
@@ -289,9 +302,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** DDM实例访问端口。
-     * 
-     * @return accessPort */
+    /**
+     * DDM实例访问端口。
+     * @return accessPort
+     */
     public String getAccessPort() {
         return accessPort;
     }
@@ -305,9 +319,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** cpu个数。
-     * 
-     * @return coreCount */
+    /**
+     * cpu个数。
+     * @return coreCount
+     */
     public String getCoreCount() {
         return coreCount;
     }
@@ -321,9 +336,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 内存大小，单位为G。
-     * 
-     * @return ramCapacity */
+    /**
+     * 内存大小，单位为G。
+     * @return ramCapacity
+     */
     public String getRamCapacity() {
         return ramCapacity;
     }
@@ -337,9 +353,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 响应信息，若无异常信息则不返回该参数
-     * 
-     * @return errorMsg */
+    /**
+     * 响应信息，若无异常信息则不返回该参数 
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -353,9 +370,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return nodeStatus */
+    /**
+     * 节点状态。
+     * @return nodeStatus
+     */
     public String getNodeStatus() {
         return nodeStatus;
     }
@@ -369,9 +387,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -385,9 +404,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 租户在某一region下的project ID。
-     * 
-     * @return projectId */
+    /**
+     * 租户在某一region下的project ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -401,9 +421,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 引擎版本号（Core实例版本号）。
-     * 
-     * @return engineVersion */
+    /**
+     * 引擎版本号（Core实例版本号）。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -417,9 +438,10 @@ public class ShowInstanceBeanResponse {
         return this;
     }
 
-    /** 包周期的实例，有订单id。
-     * 
-     * @return orderId */
+    /**
+     * 包周期的实例，有订单id。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -511,7 +533,10 @@ public class ShowInstanceBeanResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

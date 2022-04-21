@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchQosParticipantsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class SearchQosParticipantsRequest {
 
     private String confUUID;
 
-    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。 */
+    /**
+     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     */
     public static final class ConfTypeEnum {
 
-        /** Enum ONLINE for value: "online" */
+        /**
+         * Enum ONLINE for value: "online"
+         */
         public static final ConfTypeEnum ONLINE = new ConfTypeEnum("online");
 
-        /** Enum HISTORY for value: "history" */
+        /**
+         * Enum HISTORY for value: "history"
+         */
         public static final ConfTypeEnum HISTORY = new ConfTypeEnum("history");
 
         private static final Map<String, ConfTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class SearchQosParticipantsRequest {
         return this;
     }
 
-    /** 会议UUID。最大不超过64个字节。
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID。最大不超过64个字节。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -130,9 +139,10 @@ public class SearchQosParticipantsRequest {
         return this;
     }
 
-    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     * 
-     * @return confType */
+    /**
+     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * @return confType
+     */
     public ConfTypeEnum getConfType() {
         return confType;
     }
@@ -146,9 +156,10 @@ public class SearchQosParticipantsRequest {
         return this;
     }
 
-    /** 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页的数据。
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页的数据。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -162,9 +173,10 @@ public class SearchQosParticipantsRequest {
         return this;
     }
 
-    /** 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
-     * 
-     * @return limit */
+    /**
+     * 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -178,9 +190,10 @@ public class SearchQosParticipantsRequest {
         return this;
     }
 
-    /** 根据与会人名称作为关键词，模糊查询与会者列表
-     * 
-     * @return searchKey */
+    /**
+     * 根据与会人名称作为关键词，模糊查询与会者列表
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -223,7 +236,10 @@ public class SearchQosParticipantsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MockApiBaseInfoHeader */
+/**
+ * MockApiBaseInfoHeader
+ */
 public class MockApiBaseInfoHeader {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class MockApiBaseInfoHeader {
         return this;
     }
 
-    /** mock后端自定义响应头header key
-     * 
-     * @return key */
+    /**
+     * mock后端自定义响应头header key
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -44,9 +47,10 @@ public class MockApiBaseInfoHeader {
         return this;
     }
 
-    /** mock后端自定义响应头header value
-     * 
-     * @return value */
+    /**
+     * mock后端自定义响应头header value
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -60,9 +64,10 @@ public class MockApiBaseInfoHeader {
         return this;
     }
 
-    /** mock后端自定义响应头header remark
-     * 
-     * @return remark */
+    /**
+     * mock后端自定义响应头header remark
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -101,7 +106,10 @@ public class MockApiBaseInfoHeader {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

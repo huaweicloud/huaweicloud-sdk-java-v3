@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateInstanceRequest {
 
-    /** 语言 */
+    /**
+     * 语言
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +108,10 @@ public class CreateInstanceRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -127,9 +136,10 @@ public class CreateInstanceRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public InstanceRequest getBody() {
         return body;
     }
@@ -166,7 +176,10 @@ public class CreateInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

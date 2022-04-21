@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTopicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -54,9 +57,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 查询的数量限制。 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
-     * 
-     * @return limit */
+    /**
+     *  查询的数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -70,9 +74,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 企业项目id，默认企业项目id为0。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id，默认企业项目id为0。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -86,9 +91,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 检索的主题名称，完全匹配。
-     * 
-     * @return name */
+    /**
+     * 检索的主题名称，完全匹配。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +108,10 @@ public class ListTopicsRequest {
         return this;
     }
 
-    /** 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
-     * 
-     * @return fuzzyName */
+    /**
+     * 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
+     * @return fuzzyName
+     */
     public String getFuzzyName() {
         return fuzzyName;
     }
@@ -147,7 +154,10 @@ public class ListTopicsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

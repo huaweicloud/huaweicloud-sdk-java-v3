@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 获取企业项目下资源请求 */
+/**
+ * 获取企业项目下资源请求
+ */
 public class ResqEpResouce {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class ResqEpResouce {
         return this;
     }
 
-    /** 项目ID列表。resource_types中包含region级别服务时为必选项。
-     * 
-     * @return projects */
+    /**
+     * 项目ID列表。resource_types中包含region级别服务时为必选项。
+     * @return projects
+     */
     public List<String> getProjects() {
         return projects;
     }
@@ -89,9 +92,10 @@ public class ResqEpResouce {
         return this;
     }
 
-    /** 资源类型列表， 此参数为可输入的值（区分大小写）。例如：ecs,scaling_group, images, disk, vpcs,security-groups, shared_bandwidth, eip, cdn等。
-     * 
-     * @return resourceTypes */
+    /**
+     * 资源类型列表， 此参数为可输入的值（区分大小写）。例如：ecs,scaling_group, images, disk, vpcs,security-groups, shared_bandwidth, eip, cdn等。
+     * @return resourceTypes
+     */
     public List<String> getResourceTypes() {
         return resourceTypes;
     }
@@ -105,9 +109,10 @@ public class ResqEpResouce {
         return this;
     }
 
-    /** 索引位置， 从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 索引位置， 从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -121,9 +126,10 @@ public class ResqEpResouce {
         return this;
     }
 
-    /** 查询记录数，不传默认为1000，limit最多为1000, 最小值为1。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，不传默认为1000，limit最多为1000, 最小值为1。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -153,9 +159,10 @@ public class ResqEpResouce {
         return this;
     }
 
-    /** 搜索字段，key为要匹配的字段，固定为resource_name，value为匹配的值，不传则表示无匹配条件。
-     * 
-     * @return matches */
+    /**
+     * 搜索字段，key为要匹配的字段，固定为resource_name，value为匹配的值，不传则表示无匹配条件。
+     * @return matches
+     */
     public List<Match> getMatches() {
         return matches;
     }
@@ -197,7 +204,10 @@ public class ResqEpResouce {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

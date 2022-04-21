@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。 [不支持该字段，请勿使用。](tag:dt,dt_test) */
+/**
+ * listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+ */
 public class CreateListenerIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CreateListenerIpGroupOption {
 
     private Boolean enableIpgroup;
 
-    /** 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。 */
+    /**
+     * 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。
+     */
     public static final class TypeEnum {
 
-        /** Enum WHITE for value: "white" */
+        /**
+         * Enum WHITE for value: "white"
+         */
         public static final TypeEnum WHITE = new TypeEnum("white");
 
-        /** Enum BLACK for value: "black" */
+        /**
+         * Enum BLACK for value: "black"
+         */
         public static final TypeEnum BLACK = new TypeEnum("black");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class CreateListenerIpGroupOption {
         return this;
     }
 
-    /** 监听器关联的访问控制组的id。 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。
-     * 
-     * @return ipgroupId */
+    /**
+     * 监听器关联的访问控制组的id。  当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。  当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。
+     * @return ipgroupId
+     */
     public String getIpgroupId() {
         return ipgroupId;
     }
@@ -120,9 +129,10 @@ public class CreateListenerIpGroupOption {
         return this;
     }
 
-    /** 访问控制组的状态。取值： - true：开启访问控制，默认值。 - false：关闭访问控制。
-     * 
-     * @return enableIpgroup */
+    /**
+     * 访问控制组的状态。取值： - true：开启访问控制，默认值。 - false：关闭访问控制。
+     * @return enableIpgroup
+     */
     public Boolean getEnableIpgroup() {
         return enableIpgroup;
     }
@@ -136,9 +146,10 @@ public class CreateListenerIpGroupOption {
         return this;
     }
 
-    /** 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。
-     * 
-     * @return type */
+    /**
+     * 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -177,7 +188,10 @@ public class CreateListenerIpGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

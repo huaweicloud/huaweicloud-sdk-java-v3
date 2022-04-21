@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateMemberGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组名称
-     * 
-     * @return memberGroupName */
+    /**
+     * VPC通道后端服务器组名称
+     * @return memberGroupName
+     */
     public String getMemberGroupName() {
         return memberGroupName;
     }
@@ -66,9 +69,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组描述
-     * 
-     * @return memberGroupRemark */
+    /**
+     * VPC通道后端服务器组描述
+     * @return memberGroupRemark
+     */
     public String getMemberGroupRemark() {
         return memberGroupRemark;
     }
@@ -82,9 +86,12 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组权重值。 当前服务器组存在服务器且此权重值存在时，自动使用此权重值分配权重。 minimum: 0 maximum: 100
-     * 
-     * @return memberGroupWeight */
+    /**
+     * VPC通道后端服务器组权重值。  当前服务器组存在服务器且此权重值存在时，自动使用此权重值分配权重。
+     * minimum: 0
+     * maximum: 100
+     * @return memberGroupWeight
+     */
     public Integer getMemberGroupWeight() {
         return memberGroupWeight;
     }
@@ -98,9 +105,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组的字典编码 支持英文，数字，特殊字符（-_.） 暂不支持
-     * 
-     * @return dictCode */
+    /**
+     * VPC通道后端服务器组的字典编码  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
     public String getDictCode() {
         return dictCode;
     }
@@ -114,9 +122,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组编号
-     * 
-     * @return memberGroupId */
+    /**
+     * VPC通道后端服务器组编号
+     * @return memberGroupId
+     */
     public String getMemberGroupId() {
         return memberGroupId;
     }
@@ -130,9 +139,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组创建时间
-     * 
-     * @return createTime */
+    /**
+     * VPC通道后端服务器组创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -146,9 +156,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC通道后端服务器组更新时间
-     * 
-     * @return updateTime */
+    /**
+     * VPC通道后端服务器组更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -201,7 +212,10 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

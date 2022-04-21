@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteFaceByFaceIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteFaceByFaceIdRequest {
         return this;
     }
 
-    /** 人脸库名称。
-     * 
-     * @return faceSetName */
+    /**
+     * 人脸库名称。
+     * @return faceSetName
+     */
     public String getFaceSetName() {
         return faceSetName;
     }
@@ -39,9 +42,10 @@ public class DeleteFaceByFaceIdRequest {
         return this;
     }
 
-    /** 人脸ID。
-     * 
-     * @return faceId */
+    /**
+     * 人脸ID。
+     * @return faceId
+     */
     public String getFaceId() {
         return faceId;
     }
@@ -78,7 +82,10 @@ public class DeleteFaceByFaceIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

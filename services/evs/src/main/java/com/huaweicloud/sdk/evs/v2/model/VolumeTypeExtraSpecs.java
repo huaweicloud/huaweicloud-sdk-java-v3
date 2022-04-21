@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云硬盘类型的规格 */
+/**
+ * 云硬盘类型的规格
+ */
 public class VolumeTypeExtraSpecs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class VolumeTypeExtraSpecs {
         return this;
     }
 
-    /** 支持当前云硬盘类型的可用区列表，列表的元素以逗号分隔。
-     * 
-     * @return reSKEYAvailabilityZones */
+    /**
+     * 支持当前云硬盘类型的可用区列表，列表的元素以逗号分隔。
+     * @return reSKEYAvailabilityZones
+     */
     public String getReSKEYAvailabilityZones() {
         return reSKEYAvailabilityZones;
     }
@@ -54,9 +57,10 @@ public class VolumeTypeExtraSpecs {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return availabilityZone */
+    /**
+     * 预留属性。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -71,9 +75,10 @@ public class VolumeTypeExtraSpecs {
         return this;
     }
 
-    /** 当前云硬盘类型已售罄的可用区列表，列表的元素以逗号分隔。
-     * 
-     * @return osVendorExtendedSoldOutAvailabilityZones */
+    /**
+     * 当前云硬盘类型已售罄的可用区列表，列表的元素以逗号分隔。
+     * @return osVendorExtendedSoldOutAvailabilityZones
+     */
     public String getOsVendorExtendedSoldOutAvailabilityZones() {
         return osVendorExtendedSoldOutAvailabilityZones;
     }
@@ -87,9 +92,10 @@ public class VolumeTypeExtraSpecs {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return volumeBackendName */
+    /**
+     * 预留属性。
+     * @return volumeBackendName
+     */
     public String getVolumeBackendName() {
         return volumeBackendName;
     }
@@ -103,9 +109,10 @@ public class VolumeTypeExtraSpecs {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return hwAvailabilityZone */
+    /**
+     * 预留属性。
+     * @return hwAvailabilityZone
+     */
     public String getHwAvailabilityZone() {
         return hwAvailabilityZone;
     }
@@ -155,7 +162,10 @@ public class VolumeTypeExtraSpecs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

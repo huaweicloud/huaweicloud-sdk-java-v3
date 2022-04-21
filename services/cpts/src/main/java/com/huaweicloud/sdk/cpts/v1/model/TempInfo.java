@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TempInfo */
+/**
+ * TempInfo
+ */
 public class TempInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,12 @@ public class TempInfo {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -82,9 +87,12 @@ public class TempInfo {
         return this;
     }
 
-    /** project_id minimum: 0 maximum: 2147483647
-     * 
-     * @return projectId */
+    /**
+     * project_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -98,9 +106,10 @@ public class TempInfo {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -114,9 +123,10 @@ public class TempInfo {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -130,9 +140,10 @@ public class TempInfo {
         return this;
     }
 
-    /** variables
-     * 
-     * @return variables */
+    /**
+     * variables
+     * @return variables
+     */
     public String getVariables() {
         return variables;
     }
@@ -162,9 +173,10 @@ public class TempInfo {
         return this;
     }
 
-    /** contents
-     * 
-     * @return contents */
+    /**
+     * contents
+     * @return contents
+     */
     public List<Object> getContents() {
         return contents;
     }
@@ -178,9 +190,12 @@ public class TempInfo {
         return this;
     }
 
-    /** temp_type minimum: 0 maximum: 2147483647
-     * 
-     * @return tempType */
+    /**
+     * temp_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return tempType
+     */
     public Integer getTempType() {
         return tempType;
     }
@@ -210,9 +225,10 @@ public class TempInfo {
         return this;
     }
 
-    /** for_loop_params
-     * 
-     * @return forLoopParams */
+    /**
+     * for_loop_params
+     * @return forLoopParams
+     */
     public List<Object> getForLoopParams() {
         return forLoopParams;
     }
@@ -235,9 +251,10 @@ public class TempInfo {
         return this;
     }
 
-    /** Get logicController
-     * 
-     * @return logicController */
+    /**
+     * Get logicController
+     * @return logicController
+     */
     public LogicController getLogicController() {
         return logicController;
     }
@@ -251,9 +268,10 @@ public class TempInfo {
         return this;
     }
 
-    /** enable_pre
-     * 
-     * @return enablePre */
+    /**
+     * enable_pre
+     * @return enablePre
+     */
     public Boolean getEnablePre() {
         return enablePre;
     }
@@ -312,7 +330,10 @@ public class TempInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

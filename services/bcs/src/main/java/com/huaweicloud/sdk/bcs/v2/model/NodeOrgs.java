@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点组织 */
+/**
+ * 节点组织
+ */
 public class NodeOrgs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class NodeOrgs {
         return this;
     }
 
-    /** 组织名称，IEF节点绑定模式下组织名与IEF节点名称保持一致。支持英文，数字，中文字符和中划线(-), 不能以中划线(-)开头，长度4-24个字符
-     * 
-     * @return name */
+    /**
+     * 组织名称，IEF节点绑定模式下组织名与IEF节点名称保持一致。支持英文，数字，中文字符和中划线(-), 不能以中划线(-)开头，长度4-24个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class NodeOrgs {
         return this;
     }
 
-    /** 组织目标节点数, 1-2的正整数
-     * 
-     * @return nodeCount */
+    /**
+     * 组织目标节点数, 1-2的正整数
+     * @return nodeCount
+     */
     public Long getNodeCount() {
         return nodeCount;
     }
@@ -60,9 +64,10 @@ public class NodeOrgs {
         return this;
     }
 
-    /** pvc名称，添加组织时需要提供pvc_name。CCE模式必填
-     * 
-     * @return pvcName */
+    /**
+     * pvc名称，添加组织时需要提供pvc_name。CCE模式必填
+     * @return pvcName
+     */
     public String getPvcName() {
         return pvcName;
     }
@@ -100,7 +105,10 @@ public class NodeOrgs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

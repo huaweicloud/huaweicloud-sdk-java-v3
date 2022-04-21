@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 网卡实体类 */
+/**
+ * 网卡实体类
+ */
 public class NetWork {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class NetWork {
         return this;
     }
 
-    /** 网卡的名称
-     * 
-     * @return name */
+    /**
+     * 网卡的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class NetWork {
         return this;
     }
 
-    /** 该网卡绑定的IP
-     * 
-     * @return ip */
+    /**
+     * 该网卡绑定的IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -80,9 +84,10 @@ public class NetWork {
         return this;
     }
 
-    /** 掩码
-     * 
-     * @return netmask */
+    /**
+     * 掩码
+     * @return netmask
+     */
     public String getNetmask() {
         return netmask;
     }
@@ -96,9 +101,10 @@ public class NetWork {
         return this;
     }
 
-    /** 网关
-     * 
-     * @return gateway */
+    /**
+     * 网关
+     * @return gateway
+     */
     public String getGateway() {
         return gateway;
     }
@@ -112,9 +118,12 @@ public class NetWork {
         return this;
     }
 
-    /** Linux必选，网卡的MTU minimum: 0 maximum: 2147483647
-     * 
-     * @return mtu */
+    /**
+     * Linux必选，网卡的MTU
+     * minimum: 0
+     * maximum: 2147483647
+     * @return mtu
+     */
     public Integer getMtu() {
         return mtu;
     }
@@ -128,9 +137,10 @@ public class NetWork {
         return this;
     }
 
-    /** Mac地址
-     * 
-     * @return mac */
+    /**
+     * Mac地址
+     * @return mac
+     */
     public String getMac() {
         return mac;
     }
@@ -144,9 +154,10 @@ public class NetWork {
         return this;
     }
 
-    /** 数据库Id
-     * 
-     * @return id */
+    /**
+     * 数据库Id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -190,7 +201,10 @@ public class NetWork {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ObsScanResultInfo */
+/**
+ * ObsScanResultInfo
+ */
 public class ObsScanResultInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -72,9 +75,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** OBS桶ID
-     * 
-     * @return bucketId */
+    /**
+     * OBS桶ID
+     * @return bucketId
+     */
     public String getBucketId() {
         return bucketId;
     }
@@ -88,9 +92,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** OBS桶名称
-     * 
-     * @return bucketName */
+    /**
+     * OBS桶名称
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -104,9 +109,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return filePath */
+    /**
+     * 文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -120,9 +126,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -136,9 +143,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 文件md5值
-     * 
-     * @return md5 */
+    /**
+     * 文件md5值
+     * @return md5
+     */
     public String getMd5() {
         return md5;
     }
@@ -152,9 +160,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 风险等级
-     * 
-     * @return riskLevel */
+    /**
+     * 风险等级
+     * @return riskLevel
+     */
     public Integer getRiskLevel() {
         return riskLevel;
     }
@@ -184,9 +193,10 @@ public class ObsScanResultInfo {
         return this;
     }
 
-    /** 风险数据类型
-     * 
-     * @return sensitiveDataType */
+    /**
+     * 风险数据类型
+     * @return sensitiveDataType
+     */
     public List<String> getSensitiveDataType() {
         return sensitiveDataType;
     }
@@ -235,7 +245,10 @@ public class ObsScanResultInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

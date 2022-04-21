@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目下的某资源的标签列表。 */
+/**
+ * 项目下的某资源的标签列表。
+ */
 public class ListTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ListTag {
         return this;
     }
 
-    /** 键。最大长度36个unicode字符。 key不能为空。不能包含非打印字符\"=\"，“*”，“<”，“>”，“\\”，“,”，\"|\"，“/”。
-     * 
-     * @return key */
+    /**
+     * 键。最大长度36个unicode字符。 key不能为空。不能包含非打印字符\"=\"，“*”，“<”，“>”，“\\”，“,”，\"|\"，“/”。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class ListTag {
         return this;
     }
 
-    /** 值列表。每个值最大长度43个unicode字符，可以为空字符串。 如果values为空列表，则表示any_value。value之间为或的关系。
-     * 
-     * @return values */
+    /**
+     * 值列表。每个值最大长度43个unicode字符，可以为空字符串。 如果values为空列表，则表示any_value。value之间为或的关系。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class ListTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResizeFlavorObject */
+/**
+ * ResizeFlavorObject
+ */
 public class ResizeFlavorObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResizeFlavorObject {
         return this;
     }
 
-    /** 资源规格编码。例如：rds.mysql.m1.xlarge。其中，rds代表RDS产品，mysql代表数据库引擎，m1.xlarge代表性能规格，为高内存类型。带\"rr\"的表示只读实例规格，反之表示单实例和HA实例规格。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。例如：rds.mysql.m1.xlarge。其中，rds代表RDS产品，mysql代表数据库引擎，m1.xlarge代表性能规格，为高内存类型。带\"rr\"的表示只读实例规格，反之表示单实例和HA实例规格。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -39,9 +42,10 @@ public class ResizeFlavorObject {
         return this;
     }
 
-    /** 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
-     * 
-     * @return isAutoPay */
+    /**
+     * 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
+     * @return isAutoPay
+     */
     public Boolean getIsAutoPay() {
         return isAutoPay;
     }
@@ -78,7 +82,10 @@ public class ResizeFlavorObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

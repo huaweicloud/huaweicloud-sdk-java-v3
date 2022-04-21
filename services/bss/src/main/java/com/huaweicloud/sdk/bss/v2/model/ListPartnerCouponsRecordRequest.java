@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPartnerCouponsRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 操作类型。1：发放2：手动回收3：解绑自动回收4：过期回收5：退订回收6：退款充值撤销7：建立关联回收
-     * 
-     * @return operationTypes */
+    /**
+     * 操作类型。1：发放2：手动回收3：解绑自动回收4：过期回收5：退订回收6：退款充值撤销7：建立关联回收
+     * @return operationTypes
+     */
     public List<String> getOperationTypes() {
         return operationTypes;
     }
@@ -103,9 +106,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 额度ID。请从“查询优惠券额度”接口的响应参数中获取。
-     * 
-     * @return quotaId */
+    /**
+     * 额度ID。请从“查询优惠券额度”接口的响应参数中获取。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -119,9 +123,12 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 额度类型：0：代金券额度1：现金券额度 minimum: 0 maximum: 1
-     * 
-     * @return quotaType */
+    /**
+     * 额度类型：0：代金券额度1：现金券额度
+     * minimum: 0
+     * maximum: 1
+     * @return quotaType
+     */
     public Integer getQuotaType() {
         return quotaType;
     }
@@ -151,9 +158,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 代金券ID列表。请从“发放优惠券”接口的响应参数中获取。
-     * 
-     * @return couponIds */
+    /**
+     * 代金券ID列表。请从“发放优惠券”接口的响应参数中获取。
+     * @return couponIds
+     */
     public List<String> getCouponIds() {
         return couponIds;
     }
@@ -167,9 +175,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -183,9 +192,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 操作时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间大于这个时间的记录。
-     * 
-     * @return operationTimeBegin */
+    /**
+     * 操作时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间大于这个时间的记录。
+     * @return operationTimeBegin
+     */
     public String getOperationTimeBegin() {
         return operationTimeBegin;
     }
@@ -199,9 +209,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 操作时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间小于这个时间的记录。
-     * 
-     * @return operationTimeEnd */
+    /**
+     * 操作时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间小于这个时间的记录。
+     * @return operationTimeEnd
+     */
     public String getOperationTimeEnd() {
         return operationTimeEnd;
     }
@@ -215,9 +226,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 操作结果：0：成功-1：失败（非0的记录）
-     * 
-     * @return result */
+    /**
+     * 操作结果：0：成功-1：失败（非0的记录）
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -231,11 +243,12 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483646
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483646
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -249,9 +262,12 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 每页记录数。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页记录数。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -265,9 +281,10 @@ public class ListPartnerCouponsRecordRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券发放记录时，需要携带该参数，否则只能查询发给自己子客户的优惠券发放记录。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券发放记录时，需要携带该参数，否则只能查询发给自己子客户的优惠券发放记录。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -332,7 +349,10 @@ public class ListPartnerCouponsRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListIssuedPartnerCouponsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 优惠券ID。
-     * 
-     * @return couponId */
+    /**
+     * 优惠券ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -99,9 +102,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -115,9 +119,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -131,9 +136,12 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 优惠券类型：1：代金券4：现金券 minimum: 1 maximum: 4
-     * 
-     * @return couponType */
+    /**
+     * 优惠券类型：1：代金券4：现金券
+     * minimum: 1
+     * maximum: 4
+     * @return couponType
+     */
     public Integer getCouponType() {
         return couponType;
     }
@@ -147,9 +155,12 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 客户优惠券实例状态：1：未激活2：可使用3：已使用4：已过期5：已回收 minimum: 1 maximum: 5
-     * 
-     * @return status */
+    /**
+     * 客户优惠券实例状态：1：未激活2：可使用3：已使用4：已过期5：已回收
+     * minimum: 1
+     * maximum: 5
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -163,9 +174,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 创建时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间大于这个时间的记录。
-     * 
-     * @return createTimeBegin */
+    /**
+     * 创建时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间大于这个时间的记录。
+     * @return createTimeBegin
+     */
     public String getCreateTimeBegin() {
         return createTimeBegin;
     }
@@ -179,9 +191,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 创建时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间小于这个时间的记录。
-     * 
-     * @return createTimeEnd */
+    /**
+     * 创建时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间小于这个时间的记录。
+     * @return createTimeEnd
+     */
     public String getCreateTimeEnd() {
         return createTimeEnd;
     }
@@ -195,9 +208,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 生效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间大于这个时间的记录。
-     * 
-     * @return effectiveTimeBegin */
+    /**
+     * 生效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间大于这个时间的记录。
+     * @return effectiveTimeBegin
+     */
     public String getEffectiveTimeBegin() {
         return effectiveTimeBegin;
     }
@@ -211,9 +225,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 生效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间小于这个时间的记录。
-     * 
-     * @return effectiveTimeEnd */
+    /**
+     * 生效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间小于这个时间的记录。
+     * @return effectiveTimeEnd
+     */
     public String getEffectiveTimeEnd() {
         return effectiveTimeEnd;
     }
@@ -227,9 +242,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 失效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间大于这个时间的记录。
-     * 
-     * @return expireTimeBegin */
+    /**
+     * 失效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间大于这个时间的记录。
+     * @return expireTimeBegin
+     */
     public String getExpireTimeBegin() {
         return expireTimeBegin;
     }
@@ -243,9 +259,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 失效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间小于这个时间的记录。
-     * 
-     * @return expireTimeEnd */
+    /**
+     * 失效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间小于这个时间的记录。
+     * @return expireTimeEnd
+     */
     public String getExpireTimeEnd() {
         return expireTimeEnd;
     }
@@ -259,11 +276,12 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483646
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483646
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -277,9 +295,12 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 查询的每页数量。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询的每页数量。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -293,9 +314,10 @@ public class ListIssuedPartnerCouponsRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -369,7 +391,10 @@ public class ListIssuedPartnerCouponsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

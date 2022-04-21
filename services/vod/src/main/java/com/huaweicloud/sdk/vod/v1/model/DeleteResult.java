@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DeleteResult */
+/**
+ * DeleteResult
+ */
 public class DeleteResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class DeleteResult {
 
     private String assetId;
 
-    /** 删除状态。 取值如下： - DELETED：已删除。 - FAILED：删除失败。 */
+    /**
+     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
+     */
     public static final class StatusEnum {
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final StatusEnum UNKNOW = new StatusEnum("UNKNOW");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class DeleteResult {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -119,9 +130,10 @@ public class DeleteResult {
         return this;
     }
 
-    /** 删除状态。 取值如下： - DELETED：已删除。 - FAILED：删除失败。
-     * 
-     * @return status */
+    /**
+     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -157,7 +169,10 @@ public class DeleteResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

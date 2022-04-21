@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DecryptDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class DecryptDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -45,9 +48,10 @@ public class DecryptDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 明文。
-     * 
-     * @return plainText */
+    /**
+     * 明文。
+     * @return plainText
+     */
     public String getPlainText() {
         return plainText;
     }
@@ -61,9 +65,10 @@ public class DecryptDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 明文的Base64值，在非对称加密场景下，若加密的明文中含有不可见字符，则解密结果以该值为准。
-     * 
-     * @return plainTextBase64 */
+    /**
+     * 明文的Base64值，在非对称加密场景下，若加密的明文中含有不可见字符，则解密结果以该值为准。
+     * @return plainTextBase64
+     */
     public String getPlainTextBase64() {
         return plainTextBase64;
     }
@@ -102,7 +107,10 @@ public class DecryptDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

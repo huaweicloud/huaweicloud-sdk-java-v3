@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TagValues */
+/**
+ * TagValues
+ */
 public class TagValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class TagValues {
         return this;
     }
 
-    /** 键。最大长度127个unicode字符。 key不能为空。(搜索时不对此参数做校验)
-     * 
-     * @return key */
+    /**
+     * 键。最大长度127个unicode字符。 key不能为空。(搜索时不对此参数做校验)
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class TagValues {
         return this;
     }
 
-    /** 值列表。每个值最大长度255个unicode字符。*为系统保留字符。如果里面的value是以*开头时，表示按照*后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
-     * 
-     * @return values */
+    /**
+     * 值列表。每个值最大长度255个unicode字符。*为系统保留字符。如果里面的value是以*开头时，表示按照*后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class TagValues {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

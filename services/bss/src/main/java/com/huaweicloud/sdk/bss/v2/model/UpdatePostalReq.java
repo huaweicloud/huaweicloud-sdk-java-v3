@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdatePostalReq */
+/**
+ * UpdatePostalReq
+ */
 public class UpdatePostalReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 地址ID，地址的唯一索引。
-     * 
-     * @return addressId */
+    /**
+     * 地址ID，地址的唯一索引。
+     * @return addressId
+     */
     public String getAddressId() {
         return addressId;
     }
@@ -74,9 +77,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 收件人姓名。
-     * 
-     * @return recipient */
+    /**
+     * 收件人姓名。
+     * @return recipient
+     */
     public String getRecipient() {
         return recipient;
     }
@@ -90,9 +94,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 省/自治区/直辖市。例如：江苏省。
-     * 
-     * @return province */
+    /**
+     * 省/自治区/直辖市。例如：江苏省。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -106,9 +111,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 市/区。例如：南京市。
-     * 
-     * @return city */
+    /**
+     * 市/区。例如：南京市。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -122,9 +128,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 区。例如：雨花区。
-     * 
-     * @return district */
+    /**
+     * 区。例如：雨花区。
+     * @return district
+     */
     public String getDistrict() {
         return district;
     }
@@ -138,9 +145,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 邮寄详细地址。
-     * 
-     * @return address */
+    /**
+     * 邮寄详细地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -154,9 +162,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 邮寄地址所在邮编。
-     * 
-     * @return zipcode */
+    /**
+     * 邮寄地址所在邮编。
+     * @return zipcode
+     */
     public String getZipcode() {
         return zipcode;
     }
@@ -170,9 +179,10 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 手机号码，不带国家码。
-     * 
-     * @return mobilePhone */
+    /**
+     * 手机号码，不带国家码。
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -186,9 +196,12 @@ public class UpdatePostalReq {
         return this;
     }
 
-    /** 是否默认地址，默认为0。 1：默认地址0：非默认地址 minimum: 0 maximum: 1
-     * 
-     * @return isDefault */
+    /**
+     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
+     * minimum: 0
+     * maximum: 1
+     * @return isDefault
+     */
     public Integer getIsDefault() {
         return isDefault;
     }
@@ -239,7 +252,10 @@ public class UpdatePostalReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateValueListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表id
-     * 
-     * @return id */
+    /**
+     * 引用表id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -63,9 +66,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表名称
-     * 
-     * @return name */
+    /**
+     * 引用表名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表类型
-     * 
-     * @return type */
+    /**
+     * 引用表类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -95,9 +100,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表描述
-     * 
-     * @return description */
+    /**
+     * 引用表描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -111,9 +117,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 引用表时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -143,9 +150,10 @@ public class CreateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表的值
-     * 
-     * @return values */
+    /**
+     * 引用表的值
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -190,7 +198,10 @@ public class CreateValueListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

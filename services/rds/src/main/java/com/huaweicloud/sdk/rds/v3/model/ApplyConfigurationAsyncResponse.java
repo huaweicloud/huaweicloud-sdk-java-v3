@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ApplyConfigurationAsyncResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组ID。
-     * 
-     * @return configurationId */
+    /**
+     * 参数组ID。
+     * @return configurationId
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -50,9 +53,10 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组名称。
-     * 
-     * @return configurationName */
+    /**
+     * 参数组名称。
+     * @return configurationName
+     */
     public String getConfigurationName() {
         return configurationName;
     }
@@ -66,9 +70,10 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数模板是否都应用成功。 - “true”表示参数模板都应用成功。 - “false”表示存在应用失败的参数模板。
-     * 
-     * @return success */
+    /**
+     * 参数模板是否都应用成功。 - “true”表示参数模板都应用成功。 - “false”表示存在应用失败的参数模板。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -82,9 +87,10 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务流id
-     * 
-     * @return jobId */
+    /**
+     * 任务流id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -125,7 +131,10 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -46,9 +46,10 @@ public class Service {
         return this;
     }
 
-    /** 服务名。
-     * 
-     * @return name */
+    /**
+     * 服务名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +63,10 @@ public class Service {
         return this;
     }
 
-    /** 服务描述信息。
-     * 
-     * @return description */
+    /**
+     * 服务描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -87,9 +89,10 @@ public class Service {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -103,9 +106,10 @@ public class Service {
         return this;
     }
 
-    /** 服务ID。
-     * 
-     * @return id */
+    /**
+     * 服务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -119,9 +123,10 @@ public class Service {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return type */
+    /**
+     * 服务类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -135,9 +140,10 @@ public class Service {
         return this;
     }
 
-    /** 服务是否可用。
-     * 
-     * @return enabled */
+    /**
+     * 服务是否可用。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -179,7 +185,10 @@ public class Service {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

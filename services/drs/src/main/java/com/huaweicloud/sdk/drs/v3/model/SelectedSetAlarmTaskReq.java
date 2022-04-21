@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 需要设置SMN的任务信息。 */
+/**
+ * 需要设置SMN的任务信息。
+ */
 public class SelectedSetAlarmTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class SelectedSetAlarmTaskReq {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -44,9 +47,10 @@ public class SelectedSetAlarmTaskReq {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -60,9 +64,10 @@ public class SelectedSetAlarmTaskReq {
         return this;
     }
 
-    /** 引擎类型
-     * 
-     * @return engineType */
+    /**
+     * 引擎类型
+     * @return engineType
+     */
     public String getEngineType() {
         return engineType;
     }
@@ -101,7 +106,10 @@ public class SelectedSetAlarmTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 流量限制列表 */
+/**
+ * 流量限制列表
+ */
 public class TriggerBpsDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TriggerBpsDict {
         return this;
     }
 
-    /** 流量分段ID
-     * 
-     * @return trafficPosId */
+    /**
+     * 流量分段ID
+     * @return trafficPosId
+     */
     public Long getTrafficPosId() {
         return trafficPosId;
     }
@@ -44,9 +47,10 @@ public class TriggerBpsDict {
         return this;
     }
 
-    /** 每秒流量（Mbit/s）阈值
-     * 
-     * @return trafficPerSecond */
+    /**
+     * 每秒流量（Mbit/s）阈值
+     * @return trafficPerSecond
+     */
     public Long getTrafficPerSecond() {
         return trafficPerSecond;
     }
@@ -60,9 +64,10 @@ public class TriggerBpsDict {
         return this;
     }
 
-    /** 每秒报文数（个/s）阈值
-     * 
-     * @return packetPerSecond */
+    /**
+     * 每秒报文数（个/s）阈值
+     * @return packetPerSecond
+     */
     public Long getPacketPerSecond() {
         return packetPerSecond;
     }
@@ -101,7 +106,10 @@ public class TriggerBpsDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

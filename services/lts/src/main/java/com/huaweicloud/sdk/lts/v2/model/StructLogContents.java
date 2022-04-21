@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 参数集 */
+/**
+ * 参数集
+ */
 public class StructLogContents {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StructLogContents {
         return this;
     }
 
-    /** 日志原数据。
-     * 
-     * @return logContent */
+    /**
+     * 日志原数据。
+     * @return logContent
+     */
     public String getLogContent() {
         return logContent;
     }
@@ -39,9 +42,10 @@ public class StructLogContents {
         return this;
     }
 
-    /** 日志单行序列号。
-     * 
-     * @return lineNum */
+    /**
+     * 日志单行序列号。
+     * @return lineNum
+     */
     public String getLineNum() {
         return lineNum;
     }
@@ -78,7 +82,10 @@ public class StructLogContents {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

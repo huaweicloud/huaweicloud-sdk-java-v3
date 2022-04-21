@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数流执行请求body体 */
+/**
+ * 函数流执行请求body体
+ */
 public class StartWorkflowExecutionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StartWorkflowExecutionRequestBody {
         return this;
     }
 
-    /** 函数执行时需要的Header
-     * 
-     * @return headers */
+    /**
+     * 函数执行时需要的Header
+     * @return headers
+     */
     public Object getHeaders() {
         return headers;
     }
@@ -39,9 +42,10 @@ public class StartWorkflowExecutionRequestBody {
         return this;
     }
 
-    /** 定义函数执行时的入参，支持使用JSONPATH进行映射，以及指定默认值
-     * 
-     * @return input */
+    /**
+     * 定义函数执行时的入参，支持使用JSONPATH进行映射，以及指定默认值
+     * @return input
+     */
     public Object getInput() {
         return input;
     }
@@ -78,7 +82,10 @@ public class StartWorkflowExecutionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

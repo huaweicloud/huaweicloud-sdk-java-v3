@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListInstanceRequestBody */
+/**
+ * ListInstanceRequestBody
+ */
 public class ListInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为与的关系。
-     * 
-     * @return tags */
+    /**
+     * 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为与的关系。
+     * @return tags
+     */
     public List<ResourceTags> getTags() {
         return tags;
     }
@@ -104,9 +107,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为或的关系。
-     * 
-     * @return tagsAny */
+    /**
+     * 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为或的关系。
+     * @return tagsAny
+     */
     public List<ResourceTags> getTagsAny() {
         return tagsAny;
     }
@@ -136,9 +140,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为与非的关系。
-     * 
-     * @return notTags */
+    /**
+     * 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为与非的关系。
+     * @return notTags
+     */
     public List<ResourceTags> getNotTags() {
         return notTags;
     }
@@ -168,9 +173,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为或非的关系。
-     * 
-     * @return notTagsAny */
+    /**
+     * 最多包含10个key，每个key最多包含10个value，结构体不能缺失。key不能为空或者空字符串。key不能重复，同一个key中value不能重复，不同key对应的资源之间为或非的关系。
+     * @return notTagsAny
+     */
     public List<ResourceTags> getNotTagsAny() {
         return notTagsAny;
     }
@@ -184,10 +190,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。 action为count时无此参数。
-     * action为filter时，默认为0，必须为数字，且不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。  action为count时无此参数。  action为filter时，默认为0，必须为数字，且不能为负数。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -201,9 +207,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 查询记录数。 action为count时无此参数。 action为filter时，默认为1000。limit最多为1000，不能为负数，最小值为1。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。  action为count时无此参数。  action为filter时，默认为1000。limit最多为1000，不能为负数，最小值为1。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -217,9 +224,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。 为filter时表示分页查询，为count只需按照条件将总条数返回即可。
-     * 
-     * @return action */
+    /**
+     * 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。 为filter时表示分页查询，为count只需按照条件将总条数返回即可。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -249,9 +257,10 @@ public class ListInstanceRequestBody {
         return this;
     }
 
-    /** 搜索字段。 key为要匹配的字段，当前只支持resource_name。 value为匹配的值，当前为精确匹配。
-     * 
-     * @return matches */
+    /**
+     * 搜索字段。  key为要匹配的字段，当前只支持resource_name。  value为匹配的值，当前为精确匹配。
+     * @return matches
+     */
     public List<TagMatch> getMatches() {
         return matches;
     }
@@ -300,7 +309,10 @@ public class ListInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

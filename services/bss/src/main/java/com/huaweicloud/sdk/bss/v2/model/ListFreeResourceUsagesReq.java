@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListFreeResourceUsagesReq */
+/**
+ * ListFreeResourceUsagesReq
+ */
 public class ListFreeResourceUsagesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListFreeResourceUsagesReq {
         return this;
     }
 
-    /** 资源项ID列表，每个最大64字节。 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。资源项ID来自查询资源包列表接口的响应。
-     * 
-     * @return freeResourceIds */
+    /**
+     * 资源项ID列表，每个最大64字节。 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。资源项ID来自查询资源包列表接口的响应。
+     * @return freeResourceIds
+     */
     public List<String> getFreeResourceIds() {
         return freeResourceIds;
     }
@@ -74,7 +77,10 @@ public class ListFreeResourceUsagesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

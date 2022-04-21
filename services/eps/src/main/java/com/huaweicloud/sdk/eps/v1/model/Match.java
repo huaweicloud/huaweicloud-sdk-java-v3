@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 匹配字段 */
+/**
+ * 匹配字段
+ */
 public class Match {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Match {
         return this;
     }
 
-    /** 键。有matches参数时，该字段为必填，固定为resource_name。
-     * 
-     * @return key */
+    /**
+     * 键。有matches参数时，该字段为必填，固定为resource_name。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class Match {
         return this;
     }
 
-    /** 值。即资源名称，有matches参数时，该字段为必填，且默认为模糊搜索，如”message.com”。每个值最大长度255个字符。
-     * 
-     * @return value */
+    /**
+     * 值。即资源名称，有matches参数时，该字段为必填，且默认为模糊搜索，如”message.com”。每个值最大长度255个字符。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class Match {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

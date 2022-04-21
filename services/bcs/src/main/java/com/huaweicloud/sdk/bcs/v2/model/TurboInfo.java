@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 极速文件存储卷信息 */
+/**
+ * 极速文件存储卷信息
+ */
 public class TurboInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TurboInfo {
         return this;
     }
 
-    /** 共享方式
-     * 
-     * @return shareType */
+    /**
+     * 共享方式
+     * @return shareType
+     */
     public String getShareType() {
         return shareType;
     }
@@ -49,9 +52,10 @@ public class TurboInfo {
         return this;
     }
 
-    /** 类型
-     * 
-     * @return type */
+    /**
+     * 类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -65,9 +69,10 @@ public class TurboInfo {
         return this;
     }
 
-    /** 可用区
-     * 
-     * @return availableZone */
+    /**
+     * 可用区
+     * @return availableZone
+     */
     public String getAvailableZone() {
         return availableZone;
     }
@@ -81,9 +86,10 @@ public class TurboInfo {
         return this;
     }
 
-    /** 规格
-     * 
-     * @return resourceSpecCode */
+    /**
+     * 规格
+     * @return resourceSpecCode
+     */
     public String getResourceSpecCode() {
         return resourceSpecCode;
     }
@@ -123,7 +129,10 @@ public class TurboInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

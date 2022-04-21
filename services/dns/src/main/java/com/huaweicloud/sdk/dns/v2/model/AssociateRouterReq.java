@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 需要关联的Router(VPC)。 */
+/**
+ * 需要关联的Router(VPC)。
+ */
 public class AssociateRouterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AssociateRouterReq {
         return this;
     }
 
-    /** Get router
-     * 
-     * @return router */
+    /**
+     * Get router
+     * @return router
+     */
     public Router getRouter() {
         return router;
     }
@@ -65,7 +68,10 @@ public class AssociateRouterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

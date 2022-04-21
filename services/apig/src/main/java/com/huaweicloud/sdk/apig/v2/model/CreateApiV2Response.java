@@ -15,7 +15,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateApiV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String name;
 
-    /** API类型 - 1：公有API - 2：私有API */
+    /**
+     * API类型 - 1：公有API - 2：私有API
+     */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
         private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,16 +112,24 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String version;
 
-    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS */
+    /**
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     */
     public static final class ReqProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
-        /** Enum BOTH for value: "BOTH" */
+        /**
+         * Enum BOTH for value: "BOTH"
+         */
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -184,31 +200,49 @@ public class CreateApiV2Response extends SdkResponse {
 
     private ReqProtocolEnum reqProtocol;
 
-    /** API的请求方式 */
+    /**
+     * API的请求方式
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -289,19 +323,29 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String reqUri;
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
+    /**
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     */
     public static final class AuthTypeEnum {
 
-        /** Enum NONE for value: "NONE" */
+        /**
+         * Enum NONE for value: "NONE"
+         */
         public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
 
-        /** Enum APP for value: "APP" */
+        /**
+         * Enum APP for value: "APP"
+         */
         public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
 
-        /** Enum IAM for value: "IAM" */
+        /**
+         * Enum IAM for value: "IAM"
+         */
         public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
 
-        /** Enum AUTHORIZER for value: "AUTHORIZER" */
+        /**
+         * Enum AUTHORIZER for value: "AUTHORIZER"
+         */
         public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
 
         private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -383,13 +427,19 @@ public class CreateApiV2Response extends SdkResponse {
 
     private Boolean cors;
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     */
     public static final class MatchModeEnum {
 
-        /** Enum SWA for value: "SWA" */
+        /**
+         * Enum SWA for value: "SWA"
+         */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
@@ -459,16 +509,24 @@ public class CreateApiV2Response extends SdkResponse {
 
     private MatchModeEnum matchMode;
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
+    /**
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     */
     public static final class BackendTypeEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final BackendTypeEnum HTTP = new BackendTypeEnum("HTTP");
 
-        /** Enum FUNCTION for value: "FUNCTION" */
+        /**
+         * Enum FUNCTION for value: "FUNCTION"
+         */
         public static final BackendTypeEnum FUNCTION = new BackendTypeEnum("FUNCTION");
 
-        /** Enum MOCK for value: "MOCK" */
+        /**
+         * Enum MOCK for value: "MOCK"
+         */
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
 
         private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -594,19 +652,29 @@ public class CreateApiV2Response extends SdkResponse {
 
     private String tag;
 
-    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持 */
+    /**
+     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain  暂不支持
+     */
     public static final class ContentTypeEnum {
 
-        /** Enum APPLICATION_JSON for value: "application/json" */
+        /**
+         * Enum APPLICATION_JSON for value: "application/json"
+         */
         public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
 
-        /** Enum APPLICATION_XML for value: "application/xml" */
+        /**
+         * Enum APPLICATION_XML for value: "application/xml"
+         */
         public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
 
-        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        /**
+         * Enum MULTIPART_FORM_DATE for value: "multipart/form-date"
+         */
         public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
 
-        /** Enum TEXT_PLAIN for value: "text/plain" */
+        /**
+         * Enum TEXT_PLAIN for value: "text/plain"
+         */
         public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -793,9 +861,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * API名称。  长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -809,9 +878,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API类型 - 1：公有API - 2：私有API
-     * 
-     * @return type */
+    /**
+     * API类型 - 1：公有API - 2：私有API
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -825,9 +895,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的版本
-     * 
-     * @return version */
+    /**
+     * API的版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -841,9 +912,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     * 
-     * @return reqProtocol */
+    /**
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * @return reqProtocol
+     */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -857,9 +929,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的请求方式
-     * 
-     * @return reqMethod */
+    /**
+     * API的请求方式
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -873,9 +946,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
-     * 
-     * @return reqUri */
+    /**
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -889,9 +963,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     * 
-     * @return authType */
+    /**
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * @return authType
+     */
     public AuthTypeEnum getAuthType() {
         return authType;
     }
@@ -914,9 +989,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get authOpt
-     * 
-     * @return authOpt */
+    /**
+     * Get authOpt
+     * @return authOpt
+     */
     public AuthOpt getAuthOpt() {
         return authOpt;
     }
@@ -930,9 +1006,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否支持跨域 - TRUE：支持 - FALSE：不支持
-     * 
-     * @return cors */
+    /**
+     * 是否支持跨域 - TRUE：支持 - FALSE：不支持
+     * @return cors
+     */
     public Boolean getCors() {
         return cors;
     }
@@ -946,9 +1023,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     * 
-     * @return matchMode */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     * @return matchMode
+     */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -962,9 +1040,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     * 
-     * @return backendType */
+    /**
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * @return backendType
+     */
     public BackendTypeEnum getBackendType() {
         return backendType;
     }
@@ -978,9 +1057,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -994,9 +1074,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API所属的分组编号
-     * 
-     * @return groupId */
+    /**
+     * API所属的分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -1010,9 +1091,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return bodyRemark */
+    /**
+     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * @return bodyRemark
+     */
     public String getBodyRemark() {
         return bodyRemark;
     }
@@ -1026,9 +1108,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return resultNormalSample */
+    /**
+     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * @return resultNormalSample
+     */
     public String getResultNormalSample() {
         return resultNormalSample;
     }
@@ -1042,9 +1125,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return resultFailureSample */
+    /**
+     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * @return resultFailureSample
+     */
     public String getResultFailureSample() {
         return resultFailureSample;
     }
@@ -1058,9 +1142,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 前端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 前端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -1090,9 +1175,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 标签。 支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。
-     * 
-     * @return tags */
+    /**
+     * 标签。  支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。 
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -1106,9 +1192,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组自定义响应ID
-     * 
-     * @return responseId */
+    /**
+     * 分组自定义响应ID
+     * @return responseId
+     */
     public String getResponseId() {
         return responseId;
     }
@@ -1122,9 +1209,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 集成应用ID 暂不支持
-     * 
-     * @return romaAppId */
+    /**
+     * 集成应用ID  暂不支持
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -1138,9 +1226,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API绑定的自定义域名 暂不支持
-     * 
-     * @return domainName */
+    /**
+     * API绑定的自定义域名  暂不支持
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -1154,9 +1243,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 标签 待废弃，优先使用tags字段
-     * 
-     * @return tag */
+    /**
+     * 标签  待废弃，优先使用tags字段
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -1170,9 +1260,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain 暂不支持
-     * 
-     * @return contentType */
+    /**
+     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain  暂不支持
+     * @return contentType
+     */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -1186,9 +1277,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return id */
+    /**
+     * API编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -1202,9 +1294,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * API状态   - 1： 有效
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -1218,9 +1311,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否需要编排
-     * 
-     * @return arrangeNecessary */
+    /**
+     * 是否需要编排
+     * @return arrangeNecessary
+     */
     public Integer getArrangeNecessary() {
         return arrangeNecessary;
     }
@@ -1234,9 +1328,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API注册时间
-     * 
-     * @return registerTime */
+    /**
+     * API注册时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -1250,9 +1345,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API修改时间
-     * 
-     * @return updateTime */
+    /**
+     * API修改时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -1266,9 +1362,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -1282,9 +1379,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API所属分组的版本 默认V1，其他版本暂不支持
-     * 
-     * @return groupVersion */
+    /**
+     * API所属分组的版本  默认V1，其他版本暂不支持
+     * @return groupVersion
+     */
     public String getGroupVersion() {
         return groupVersion;
     }
@@ -1298,9 +1396,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 发布的环境编号 存在多个发布记录时，环境编号之间用|隔开
-     * 
-     * @return runEnvId */
+    /**
+     * 发布的环境编号  存在多个发布记录时，环境编号之间用|隔开
+     * @return runEnvId
+     */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -1314,9 +1413,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 发布的环境名称 存在多个发布记录时，环境名称之间用|隔开
-     * 
-     * @return runEnvName */
+    /**
+     * 发布的环境名称  存在多个发布记录时，环境名称之间用|隔开
+     * @return runEnvName
+     */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -1330,9 +1430,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 发布记录编号 存在多个发布记录时，发布记录编号之间用|隔开
-     * 
-     * @return publishId */
+    /**
+     * 发布记录编号  存在多个发布记录时，发布记录编号之间用|隔开
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -1346,9 +1447,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 发布时间 存在多个发布记录时，发布时间之间用|隔开
-     * 
-     * @return publishTime */
+    /**
+     * 发布时间  存在多个发布记录时，发布时间之间用|隔开
+     * @return publishTime
+     */
     public String getPublishTime() {
         return publishTime;
     }
@@ -1362,9 +1464,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API归属的集成应用名称 暂不支持
-     * 
-     * @return romaAppName */
+    /**
+     * API归属的集成应用名称  暂不支持
+     * @return romaAppName
+     */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -1378,9 +1481,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 当API的后端为自定义后端时，对应的自定义后端API编号 暂不支持
-     * 
-     * @return ldApiId */
+    /**
+     * 当API的后端为自定义后端时，对应的自定义后端API编号  暂不支持
+     * @return ldApiId
+     */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -1403,9 +1507,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get backendApi
-     * 
-     * @return backendApi */
+    /**
+     * Get backendApi
+     * @return backendApi
+     */
     public BackendApi getBackendApi() {
         return backendApi;
     }
@@ -1428,9 +1533,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get apiGroupInfo
-     * 
-     * @return apiGroupInfo */
+    /**
+     * Get apiGroupInfo
+     * @return apiGroupInfo
+     */
     public ApiGroupCommonInfo getApiGroupInfo() {
         return apiGroupInfo;
     }
@@ -1453,9 +1559,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get funcInfo
-     * 
-     * @return funcInfo */
+    /**
+     * Get funcInfo
+     * @return funcInfo
+     */
     public ApiFunc getFuncInfo() {
         return funcInfo;
     }
@@ -1478,9 +1585,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get mockInfo
-     * 
-     * @return mockInfo */
+    /**
+     * Get mockInfo
+     * @return mockInfo
+     */
     public ApiMock getMockInfo() {
         return mockInfo;
     }
@@ -1510,9 +1618,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的请求参数列表
-     * 
-     * @return reqParams */
+    /**
+     * API的请求参数列表
+     * @return reqParams
+     */
     public List<ReqParam> getReqParams() {
         return reqParams;
     }
@@ -1542,9 +1651,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** API的后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * API的后端参数列表
+     * @return backendParams
+     */
     public List<BackendParam> getBackendParams() {
         return backendParams;
     }
@@ -1574,9 +1684,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 函数工作流策略后端列表
-     * 
-     * @return policyFunctions */
+    /**
+     * 函数工作流策略后端列表
+     * @return policyFunctions
+     */
     public List<ApiPolicyFunctionResp> getPolicyFunctions() {
         return policyFunctions;
     }
@@ -1606,9 +1717,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** mock策略后端列表
-     * 
-     * @return policyMocks */
+    /**
+     * mock策略后端列表
+     * @return policyMocks
+     */
     public List<ApiPolicyMockResp> getPolicyMocks() {
         return policyMocks;
     }
@@ -1638,9 +1750,10 @@ public class CreateApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** web策略后端列表
-     * 
-     * @return policyHttps */
+    /**
+     * web策略后端列表
+     * @return policyHttps
+     */
     public List<ApiPolicyHttpResp> getPolicyHttps() {
         return policyHttps;
     }
@@ -1807,7 +1920,10 @@ public class CreateApiV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

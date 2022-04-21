@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRetentionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ShowRetentionResponse extends SdkResponse {
         return this;
     }
 
-    /** 回收规则匹配策略，or
-     * 
-     * @return algorithm */
+    /**
+     * 回收规则匹配策略，or
+     * @return algorithm
+     */
     public String getAlgorithm() {
         return algorithm;
     }
@@ -53,9 +56,10 @@ public class ShowRetentionResponse extends SdkResponse {
         return this;
     }
 
-    /** ID
-     * 
-     * @return id */
+    /**
+     * ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -85,9 +89,10 @@ public class ShowRetentionResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像老化规则
-     * 
-     * @return rules */
+    /**
+     * 镜像老化规则
+     * @return rules
+     */
     public List<Rule> getRules() {
         return rules;
     }
@@ -101,9 +106,10 @@ public class ShowRetentionResponse extends SdkResponse {
         return this;
     }
 
-    /** 保留字段
-     * 
-     * @return scope */
+    /**
+     * 保留字段
+     * @return scope
+     */
     public String getScope() {
         return scope;
     }
@@ -144,7 +150,10 @@ public class ShowRetentionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

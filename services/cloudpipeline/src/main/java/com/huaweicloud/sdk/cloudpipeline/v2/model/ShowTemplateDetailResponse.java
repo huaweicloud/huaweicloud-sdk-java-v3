@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTemplateDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,9 +111,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板ID
-     * 
-     * @return templateId */
+    /**
+     * 模板ID
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -125,9 +128,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板名字
-     * 
-     * @return templateName */
+    /**
+     * 模板名字
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -141,9 +145,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return templateType */
+    /**
+     * 模板类型
+     * @return templateType
+     */
     public String getTemplateType() {
         return templateType;
     }
@@ -157,9 +162,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -173,9 +179,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户名字
-     * 
-     * @return userName */
+    /**
+     * 用户名字
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -189,9 +196,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainId */
+    /**
+     * 租户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -205,9 +213,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户名字
-     * 
-     * @return domainName */
+    /**
+     * 租户名字
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -221,9 +230,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否内置模板
-     * 
-     * @return isBuildIn */
+    /**
+     * 是否内置模板
+     * @return isBuildIn
+     */
     public Boolean getIsBuildIn() {
         return isBuildIn;
     }
@@ -237,9 +247,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** region
-     * 
-     * @return region */
+    /**
+     * region
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -253,9 +264,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -269,9 +281,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目名字
-     * 
-     * @return projectName */
+    /**
+     * 项目名字
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -285,9 +298,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -301,9 +315,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return lastModifyTime */
+    /**
+     * 修改时间
+     * @return lastModifyTime
+     */
     public String getLastModifyTime() {
         return lastModifyTime;
     }
@@ -317,9 +332,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否关注
-     * 
-     * @return isWatch */
+    /**
+     * 是否关注
+     * @return isWatch
+     */
     public Boolean getIsWatch() {
         return isWatch;
     }
@@ -333,9 +349,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板描述
-     * 
-     * @return description */
+    /**
+     * 模板描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -365,9 +382,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板参数
-     * 
-     * @return parameter */
+    /**
+     * 模板参数
+     * @return parameter
+     */
     public List<TemplateParam> getParameter() {
         return parameter;
     }
@@ -397,9 +415,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * 
-     * @return flow */
+    /**
+     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * @return flow
+     */
     public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
@@ -429,9 +448,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * 
-     * @return states */
+    /**
+     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * @return states
+     */
     public Map<String, TemplateState> getStates() {
         return states;
     }
@@ -517,7 +537,10 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

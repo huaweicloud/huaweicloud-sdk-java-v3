@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CacheConfigRequest */
+/**
+ * CacheConfigRequest
+ */
 public class CacheConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CacheConfigRequest {
         return this;
     }
 
-    /** 是否忽略url中的参数。
-     * 
-     * @return ignoreUrlParameter */
+    /**
+     * 是否忽略url中的参数。
+     * @return ignoreUrlParameter
+     */
     public Boolean getIgnoreUrlParameter() {
         return ignoreUrlParameter;
     }
@@ -52,9 +55,10 @@ public class CacheConfigRequest {
         return this;
     }
 
-    /** 缓存规则是否遵循源站
-     * 
-     * @return followOrigin */
+    /**
+     * 缓存规则是否遵循源站
+     * @return followOrigin
+     */
     public Boolean getFollowOrigin() {
         return followOrigin;
     }
@@ -77,9 +81,10 @@ public class CacheConfigRequest {
         return this;
     }
 
-    /** Get compress
-     * 
-     * @return compress */
+    /**
+     * Get compress
+     * @return compress
+     */
     public CompressRequest getCompress() {
         return compress;
     }
@@ -109,9 +114,10 @@ public class CacheConfigRequest {
         return this;
     }
 
-    /** 缓存规则，将覆盖之前的规则配置。规则为空重置为默认规则。
-     * 
-     * @return rules */
+    /**
+     * 缓存规则，将覆盖之前的规则配置。规则为空重置为默认规则。
+     * @return rules
+     */
     public List<Rules> getRules() {
         return rules;
     }
@@ -152,7 +158,10 @@ public class CacheConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

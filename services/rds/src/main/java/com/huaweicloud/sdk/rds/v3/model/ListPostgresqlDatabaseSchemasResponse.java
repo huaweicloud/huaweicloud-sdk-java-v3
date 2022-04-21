@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 列表中每个元素表示一个数据库schema。
-     * 
-     * @return databaseSchemas */
+    /**
+     * 列表中每个元素表示一个数据库schema。
+     * @return databaseSchemas
+     */
     public List<PostgresqlDatabaseForListSchema> getDatabaseSchemas() {
         return databaseSchemas;
     }
@@ -62,9 +65,10 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库schema总数。
-     * 
-     * @return totalCount */
+    /**
+     * 数据库schema总数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -102,7 +106,10 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

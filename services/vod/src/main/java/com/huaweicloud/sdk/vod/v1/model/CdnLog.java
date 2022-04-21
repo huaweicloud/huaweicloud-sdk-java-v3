@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CdnLog */
+/**
+ * CdnLog
+ */
 public class CdnLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 域名名称。
-     * 
-     * @return domainName */
+    /**
+     * 域名名称。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -59,9 +62,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 查询起始时间。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -75,9 +79,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 查询结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -91,9 +96,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 日志名称。
-     * 
-     * @return name */
+    /**
+     * 日志名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 日志大小。 单位：byte。
-     * 
-     * @return size */
+    /**
+     * 日志大小。  单位：byte。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -123,9 +130,10 @@ public class CdnLog {
         return this;
     }
 
-    /** 日志下载链接。
-     * 
-     * @return link */
+    /**
+     * 日志下载链接。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -167,7 +175,10 @@ public class CdnLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

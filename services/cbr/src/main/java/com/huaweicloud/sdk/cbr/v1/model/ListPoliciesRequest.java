@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPoliciesRequest {
 
-    /** 策略类型：备份（backup）、复制(replication) */
+    /**
+     * 策略类型：备份（backup）、复制(replication)
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ListPoliciesRequest {
         return this;
     }
 
-    /** 策略类型：备份（backup）、复制(replication)
-     * 
-     * @return operationType */
+    /**
+     * 策略类型：备份（backup）、复制(replication)
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -115,9 +124,10 @@ public class ListPoliciesRequest {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -154,7 +164,10 @@ public class ListPoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

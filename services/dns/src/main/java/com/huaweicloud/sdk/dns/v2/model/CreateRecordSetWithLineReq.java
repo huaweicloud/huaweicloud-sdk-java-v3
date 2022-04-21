@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateRecordSetWithLineReq */
+/**
+ * CreateRecordSetWithLineReq
+ */
 public class CreateRecordSetWithLineReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
-     * 
-     * @return name */
+    /**
+     * 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -82,9 +85,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 可选配置，对域名的描述。
-     * 
-     * @return description */
+    /**
+     * 可选配置，对域名的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -98,9 +102,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** Record Set的类型。取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
-     * 
-     * @return type */
+    /**
+     * Record Set的类型。取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -114,9 +119,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 解析记录的状态。默认值为ENABLE。
-     * 
-     * @return status */
+    /**
+     * 解析记录的状态。默认值为ENABLE。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -130,9 +136,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -162,9 +169,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 解析记录的值。不同类型解析记录对应的值的规则不同。
-     * 
-     * @return records */
+    /**
+     * 解析记录的值。不同类型解析记录对应的值的规则不同。
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -178,9 +186,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 解析线路ID
-     * 
-     * @return line */
+    /**
+     * 解析线路ID
+     * @return line
+     */
     public String getLine() {
         return line;
     }
@@ -210,9 +219,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 资源标签
-     * 
-     * @return tags */
+    /**
+     *  资源标签
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -226,9 +236,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** 解析记录的权重。
-     * 
-     * @return weight */
+    /**
+     * 解析记录的权重。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -251,9 +262,10 @@ public class CreateRecordSetWithLineReq {
         return this;
     }
 
-    /** Get aliasTarget
-     * 
-     * @return aliasTarget */
+    /**
+     * Get aliasTarget
+     * @return aliasTarget
+     */
     public AliasTarget getAliasTarget() {
         return aliasTarget;
     }
@@ -306,7 +318,10 @@ public class CreateRecordSetWithLineReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

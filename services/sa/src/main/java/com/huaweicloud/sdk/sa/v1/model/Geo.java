@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** Geo */
+/**
+ * Geo
+ */
 public class Geo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,12 @@ public class Geo {
         return this;
     }
 
-    /** 纬度。 minimum: -1.8E+2 maximum: 1.8E+2
-     * 
-     * @return latitude */
+    /**
+     * 纬度。
+     * minimum: -1.8E+2
+     * maximum: 1.8E+2
+     * @return latitude
+     */
     public BigDecimal getLatitude() {
         return latitude;
     }
@@ -50,9 +55,12 @@ public class Geo {
         return this;
     }
 
-    /** 经度。 minimum: -1.8E+2 maximum: 1.8E+2
-     * 
-     * @return longitude */
+    /**
+     * 经度。
+     * minimum: -1.8E+2
+     * maximum: 1.8E+2
+     * @return longitude
+     */
     public BigDecimal getLongitude() {
         return longitude;
     }
@@ -66,9 +74,10 @@ public class Geo {
         return this;
     }
 
-    /** 城市编码。
-     * 
-     * @return cityCode */
+    /**
+     * 城市编码。
+     * @return cityCode
+     */
     public String getCityCode() {
         return cityCode;
     }
@@ -82,9 +91,10 @@ public class Geo {
         return this;
     }
 
-    /** 国家简码ISO 3166-1 alpha-2，例如：CN、US、DE、IT、SG。
-     * 
-     * @return countryCode */
+    /**
+     * 国家简码ISO 3166-1 alpha-2，例如：CN、US、DE、IT、SG。
+     * @return countryCode
+     */
     public String getCountryCode() {
         return countryCode;
     }
@@ -123,7 +133,10 @@ public class Geo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

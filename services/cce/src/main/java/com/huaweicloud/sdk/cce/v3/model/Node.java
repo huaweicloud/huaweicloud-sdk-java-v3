@@ -41,9 +41,10 @@ public class Node {
         return this;
     }
 
-    /** API类型，固定值“Node”，该值不可修改。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“Node”，该值不可修改。  
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -57,9 +58,10 @@ public class Node {
         return this;
     }
 
-    /** API版本，固定值“v3”，该值不可修改。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”，该值不可修改。  
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -82,9 +84,10 @@ public class Node {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public NodeMetadata getMetadata() {
         return metadata;
     }
@@ -107,9 +110,10 @@ public class Node {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public NodeSpec getSpec() {
         return spec;
     }
@@ -132,9 +136,10 @@ public class Node {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public NodeStatus getStatus() {
         return status;
     }
@@ -175,7 +180,10 @@ public class Node {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

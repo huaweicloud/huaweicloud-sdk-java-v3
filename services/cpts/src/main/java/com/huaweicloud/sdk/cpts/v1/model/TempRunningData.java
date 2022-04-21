@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TempRunningData */
+/**
+ * TempRunningData
+ */
 public class TempRunningData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** content_method_url
-     * 
-     * @return contentMethodUrl */
+    /**
+     * content_method_url
+     * @return contentMethodUrl
+     */
     public List<String> getContentMethodUrl() {
         return contentMethodUrl;
     }
@@ -83,9 +86,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** crawler_status
-     * 
-     * @return crawlerStatus */
+    /**
+     * crawler_status
+     * @return crawlerStatus
+     */
     public Integer getCrawlerStatus() {
         return crawlerStatus;
     }
@@ -99,9 +103,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** related_temp_running_id
-     * 
-     * @return relatedTempRunningId */
+    /**
+     * related_temp_running_id
+     * @return relatedTempRunningId
+     */
     public Integer getRelatedTempRunningId() {
         return relatedTempRunningId;
     }
@@ -115,9 +120,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** task_run_info_id
-     * 
-     * @return taskRunInfoId */
+    /**
+     * task_run_info_id
+     * @return taskRunInfoId
+     */
     public Integer getTaskRunInfoId() {
         return taskRunInfoId;
     }
@@ -131,9 +137,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** temp_id
-     * 
-     * @return tempId */
+    /**
+     * temp_id
+     * @return tempId
+     */
     public Integer getTempId() {
         return tempId;
     }
@@ -147,9 +154,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** temp_name
-     * 
-     * @return tempName */
+    /**
+     * temp_name
+     * @return tempName
+     */
     public String getTempName() {
         return tempName;
     }
@@ -163,9 +171,10 @@ public class TempRunningData {
         return this;
     }
 
-    /** temp_running_status
-     * 
-     * @return tempRunningStatus */
+    /**
+     * temp_running_status
+     * @return tempRunningStatus
+     */
     public Integer getTempRunningStatus() {
         return tempRunningStatus;
     }
@@ -218,7 +227,10 @@ public class TempRunningData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

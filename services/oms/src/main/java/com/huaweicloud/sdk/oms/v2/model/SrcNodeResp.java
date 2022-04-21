@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端节点信息。 */
+/**
+ * 源端节点信息。
+ */
 public class SrcNodeResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,41 +23,64 @@ public class SrcNodeResp {
 
     private String bucket;
 
-    /** 源端云服务提供商。
-     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。 */
+    /**
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     */
     public static final class CloudTypeEnum {
 
-        /** Enum AWS for value: "AWS" */
+        /**
+         * Enum AWS for value: "AWS"
+         */
         public static final CloudTypeEnum AWS = new CloudTypeEnum("AWS");
 
-        /** Enum AZURE for value: "Azure" */
+        /**
+         * Enum AZURE for value: "Azure"
+         */
         public static final CloudTypeEnum AZURE = new CloudTypeEnum("Azure");
 
-        /** Enum ALIYUN for value: "Aliyun" */
+        /**
+         * Enum ALIYUN for value: "Aliyun"
+         */
         public static final CloudTypeEnum ALIYUN = new CloudTypeEnum("Aliyun");
 
-        /** Enum TENCENT for value: "Tencent" */
+        /**
+         * Enum TENCENT for value: "Tencent"
+         */
         public static final CloudTypeEnum TENCENT = new CloudTypeEnum("Tencent");
 
-        /** Enum HUAWEICLOUD for value: "HuaweiCloud" */
+        /**
+         * Enum HUAWEICLOUD for value: "HuaweiCloud"
+         */
         public static final CloudTypeEnum HUAWEICLOUD = new CloudTypeEnum("HuaweiCloud");
 
-        /** Enum QINGCLOUD for value: "QingCloud" */
+        /**
+         * Enum QINGCLOUD for value: "QingCloud"
+         */
         public static final CloudTypeEnum QINGCLOUD = new CloudTypeEnum("QingCloud");
 
-        /** Enum KINGSOFTCLOUD for value: "KingsoftCloud" */
+        /**
+         * Enum KINGSOFTCLOUD for value: "KingsoftCloud"
+         */
         public static final CloudTypeEnum KINGSOFTCLOUD = new CloudTypeEnum("KingsoftCloud");
 
-        /** Enum BAIDU for value: "Baidu" */
+        /**
+         * Enum BAIDU for value: "Baidu"
+         */
         public static final CloudTypeEnum BAIDU = new CloudTypeEnum("Baidu");
 
-        /** Enum QINIU for value: "Qiniu" */
+        /**
+         * Enum QINIU for value: "Qiniu"
+         */
         public static final CloudTypeEnum QINIU = new CloudTypeEnum("Qiniu");
 
-        /** Enum URLSOURCE for value: "URLSource" */
+        /**
+         * Enum URLSOURCE for value: "URLSource"
+         */
         public static final CloudTypeEnum URLSOURCE = new CloudTypeEnum("URLSource");
 
-        /** Enum UCLOUD for value: "UCloud" */
+        /**
+         * Enum UCLOUD for value: "UCloud"
+         */
         public static final CloudTypeEnum UCLOUD = new CloudTypeEnum("UCloud");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -159,9 +184,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** 源端桶的名称。
-     * 
-     * @return bucket */
+    /**
+     * 源端桶的名称。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -175,10 +201,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** 源端云服务提供商。
-     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
-     * 
-     * @return cloudType */
+    /**
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * @return cloudType
+     */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -192,9 +218,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** 源端桶所处的区域。
-     * 
-     * @return region */
+    /**
+     * 源端桶所处的区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -208,9 +235,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** 当源端为腾讯云时，会返回此参数。
-     * 
-     * @return appId */
+    /**
+     * 当源端为腾讯云时，会返回此参数。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -240,9 +268,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** 任务类型为对象迁移任务时，表示待迁移对象名称； 任务类型为前缀迁移任务时，表示待迁移前缀。
-     * 
-     * @return objectKey */
+    /**
+     * 任务类型为对象迁移任务时，表示待迁移对象名称； 任务类型为前缀迁移任务时，表示待迁移前缀。
+     * @return objectKey
+     */
     public List<String> getObjectKey() {
         return objectKey;
     }
@@ -265,9 +294,10 @@ public class SrcNodeResp {
         return this;
     }
 
-    /** Get listFile
-     * 
-     * @return listFile */
+    /**
+     * Get listFile
+     * @return listFile
+     */
     public ListFile getListFile() {
         return listFile;
     }
@@ -310,7 +340,10 @@ public class SrcNodeResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

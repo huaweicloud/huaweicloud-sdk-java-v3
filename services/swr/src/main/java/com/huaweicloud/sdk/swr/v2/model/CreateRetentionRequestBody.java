@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateRetentionRequestBody */
+/**
+ * CreateRetentionRequestBody
+ */
 public class CreateRetentionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CreateRetentionRequestBody {
         return this;
     }
 
-    /** 回收规则匹配策略，固定为\"or\"
-     * 
-     * @return algorithm */
+    /**
+     * 回收规则匹配策略，固定为\"or\"
+     * @return algorithm
+     */
     public String getAlgorithm() {
         return algorithm;
     }
@@ -58,9 +61,10 @@ public class CreateRetentionRequestBody {
         return this;
     }
 
-    /** 镜像老化规则
-     * 
-     * @return rules */
+    /**
+     * 镜像老化规则
+     * @return rules
+     */
     public List<Rule> getRules() {
         return rules;
     }
@@ -97,7 +101,10 @@ public class CreateRetentionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

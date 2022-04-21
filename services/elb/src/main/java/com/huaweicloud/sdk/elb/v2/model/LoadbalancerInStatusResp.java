@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器对象，用于负载均衡器状态树中 */
+/**
+ * 负载均衡器对象，用于负载均衡器状态树中
+ */
 public class LoadbalancerInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,22 +38,34 @@ public class LoadbalancerInStatusResp {
 
     private List<PoolsInStatusResp> pools = null;
 
-    /** 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。 */
+    /**
+    * 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+    */
     public static final class OperatingStatusEnum {
 
-        /** Enum ONLINE for value: "ONLINE" */
+        /**
+         * Enum ONLINE for value: "ONLINE"
+         */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
 
-        /** Enum OFFLINE for value: "OFFLINE" */
+        /**
+         * Enum OFFLINE for value: "OFFLINE"
+         */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
 
-        /** Enum DEGRADED for value: "DEGRADED" */
+        /**
+         * Enum DEGRADED for value: "DEGRADED"
+         */
         public static final OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
 
-        /** Enum DISABLED for value: "DISABLED" */
+        /**
+         * Enum DISABLED for value: "DISABLED"
+         */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
 
-        /** Enum NO_MONITOR for value: "NO_MONITOR" */
+        /**
+         * Enum NO_MONITOR for value: "NO_MONITOR"
+         */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -124,16 +138,24 @@ public class LoadbalancerInStatusResp {
 
     private OperatingStatusEnum operatingStatus;
 
-    /** 负载均衡器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。 */
+    /**
+     * 负载均衡器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     */
     public static final class ProvisioningStatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final ProvisioningStatusEnum ACTIVE = new ProvisioningStatusEnum("ACTIVE");
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final ProvisioningStatusEnum PENDING_CREATE = new ProvisioningStatusEnum("PENDING_CREATE");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ProvisioningStatusEnum ERROR = new ProvisioningStatusEnum("ERROR");
 
         private static final Map<String, ProvisioningStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +231,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器名称
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -225,9 +248,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器ID
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -257,9 +281,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器关联的监听器列表
-     * 
-     * @return listeners */
+    /**
+     * 负载均衡器关联的监听器列表
+     * @return listeners
+     */
     public List<ListenersInStatusResp> getListeners() {
         return listeners;
     }
@@ -289,9 +314,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器关联的后端云服务器组列表
-     * 
-     * @return pools */
+    /**
+     * 负载均衡器关联的后端云服务器组列表
+     * @return pools
+     */
     public List<PoolsInStatusResp> getPools() {
         return pools;
     }
@@ -305,9 +331,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     * @return operatingStatus
+     */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -321,9 +348,10 @@ public class LoadbalancerInStatusResp {
         return this;
     }
 
-    /** 负载均衡器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public ProvisioningStatusEnum getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -368,7 +396,10 @@ public class LoadbalancerInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

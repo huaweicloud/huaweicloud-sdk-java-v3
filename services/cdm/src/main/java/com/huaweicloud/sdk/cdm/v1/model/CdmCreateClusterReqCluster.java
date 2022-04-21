@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群对象，请参见cluster参数说明 */
+/**
+ * 集群对象，请参见cluster参数说明
+ */
 public class CdmCreateClusterReqCluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 定时开机的时间，CDM集群会在每天这个时间开机
-     * 
-     * @return scheduleBootTime */
+    /**
+     * 定时开机的时间，CDM集群会在每天这个时间开机
+     * @return scheduleBootTime
+     */
     public String getScheduleBootTime() {
         return scheduleBootTime;
     }
@@ -77,9 +80,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
-     * 
-     * @return isScheduleBootOff */
+    /**
+     * 选择是否启用定时开关机功能。定时开关机功能和自动关机功能不可同时开启
+     * @return isScheduleBootOff
+     */
     public Boolean getIsScheduleBootOff() {
         return isScheduleBootOff;
     }
@@ -109,9 +113,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 节点列表，请参见instances参数说明
-     * 
-     * @return instances */
+    /**
+     * 节点列表，请参见instances参数说明
+     * @return instances
+     */
     public List<Instance> getInstances() {
         return instances;
     }
@@ -134,9 +139,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -150,9 +156,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 定时关机的时间，定时关机时系统不会等待未完成的作业执行完成
-     * 
-     * @return scheduleOffTime */
+    /**
+     * 定时关机的时间，定时关机时系统不会等待未完成的作业执行完成
+     * @return scheduleOffTime
+     */
     public String getScheduleOffTime() {
         return scheduleOffTime;
     }
@@ -166,9 +173,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 指定虚拟私有云ID，用于集群网络配置
-     * 
-     * @return vpcId */
+    /**
+     * 指定虚拟私有云ID，用于集群网络配置
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -182,9 +190,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return name */
+    /**
+     * 集群名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -214,9 +223,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 企业项目信息，请参见•sys_tags参数说明
-     * 
-     * @return sysTags */
+    /**
+     * 企业项目信息，请参见•sys_tags参数说明
+     * @return sysTags
+     */
     public List<SysTags> getSysTags() {
         return sysTags;
     }
@@ -230,9 +240,10 @@ public class CdmCreateClusterReqCluster {
         return this;
     }
 
-    /** 选择是否启用自动关机功能，自动关机功能和定时开关机功能不可同时开启。如果选择自动关机，则当集群中无作业运行且无定时作业时，等待15分钟后集群将自动关机来帮您节约成本
-     * 
-     * @return isAutoOff */
+    /**
+     * 选择是否启用自动关机功能，自动关机功能和定时开关机功能不可同时开启。如果选择自动关机，则当集群中无作业运行且无定时作业时，等待15分钟后集群将自动关机来帮您节约成本
+     * @return isAutoOff
+     */
     public Boolean getIsAutoOff() {
         return isAutoOff;
     }
@@ -291,7 +302,10 @@ public class CdmCreateClusterReqCluster {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

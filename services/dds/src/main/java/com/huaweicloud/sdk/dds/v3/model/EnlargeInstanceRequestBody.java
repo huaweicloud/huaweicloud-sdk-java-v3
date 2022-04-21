@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EnlargeInstanceRequestBody */
+/**
+ * EnlargeInstanceRequestBody
+ */
 public class EnlargeInstanceRequestBody {
 
-    /** 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。 */
+    /**
+     * 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
+     */
     public static final class TypeEnum {
 
-        /** Enum MONGOS for value: "mongos" */
+        /**
+         * Enum MONGOS for value: "mongos"
+         */
         public static final TypeEnum MONGOS = new TypeEnum("mongos");
 
-        /** Enum SHARD for value: "shard" */
+        /**
+         * Enum SHARD for value: "shard"
+         */
         public static final TypeEnum SHARD = new TypeEnum("shard");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class EnlargeInstanceRequestBody {
         return this;
     }
 
-    /** 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
-     * 
-     * @return type */
+    /**
+     * 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -126,9 +135,10 @@ public class EnlargeInstanceRequestBody {
         return this;
     }
 
-    /** 资源规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -142,9 +152,10 @@ public class EnlargeInstanceRequestBody {
         return this;
     }
 
-    /** 一个集群实例下，最多支持16个mongos节点和16个shard组。
-     * 
-     * @return num */
+    /**
+     * 一个集群实例下，最多支持16个mongos节点和16个shard组。
+     * @return num
+     */
     public String getNum() {
         return num;
     }
@@ -167,9 +178,10 @@ public class EnlargeInstanceRequestBody {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public AddShardingNodeVolumeOption getVolume() {
         return volume;
     }
@@ -210,7 +222,10 @@ public class EnlargeInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

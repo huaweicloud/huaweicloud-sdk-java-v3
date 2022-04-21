@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecurityGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 功能说明：每页返回的个数 取值范围：0-2000
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回的个数 取值范围：0-2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -62,9 +65,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -94,9 +98,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 功能说明：安全组资源ID。可以使用该字段精确过滤安全组，支持多个ID
-     * 
-     * @return id */
+    /**
+     * 功能说明：安全组资源ID。可以使用该字段精确过滤安全组，支持多个ID
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -126,9 +131,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 功能说明：安全组名称。可以使用该字段精确过滤满足条件的安全组，支持传入多个name过滤
-     * 
-     * @return name */
+    /**
+     * 功能说明：安全组名称。可以使用该字段精确过滤满足条件的安全组，支持传入多个name过滤
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -158,9 +164,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 功能说明：安全组描述新增。可以使用该字段精确过滤安全组，支持传入多个描述进行过滤
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组描述新增。可以使用该字段精确过滤安全组，支持传入多个描述进行过滤
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -174,10 +181,10 @@ public class ListSecurityGroupsRequest {
         return this;
     }
 
-    /** 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的安全组。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 约束：若需要查询当前用户所有有权限查看企业项目绑定的安全组，请传参all_granted_eps。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的安全组。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 约束：若需要查询当前用户所有有权限查看企业项目绑定的安全组，请传参all_granted_eps。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -222,7 +229,10 @@ public class ListSecurityGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

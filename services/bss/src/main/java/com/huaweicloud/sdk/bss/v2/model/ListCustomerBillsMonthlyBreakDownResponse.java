@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
         return this;
     }
 
-    /** 货币单位代码： CNY：人民币
-     * 
-     * @return currency */
+    /**
+     * 货币单位代码： CNY：人民币
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -48,9 +51,10 @@ public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
         return this;
     }
 
-    /** 结果集数量，只有成功才返回这个参数。
-     * 
-     * @return totalCount */
+    /**
+     * 结果集数量，只有成功才返回这个参数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -81,9 +85,10 @@ public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
         return this;
     }
 
-    /** 分摊成本记录数据。 具体请参见表3。
-     * 
-     * @return details */
+    /**
+     * 分摊成本记录数据。 具体请参见表3。
+     * @return details
+     */
     public List<NvlCostAnalysedBillDetail> getDetails() {
         return details;
     }
@@ -123,7 +128,10 @@ public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

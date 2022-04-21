@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询Vmr套餐包分配数量结果 */
+/**
+ * 查询Vmr套餐包分配数量结果
+ */
 public class QueryVmrPkgResResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class QueryVmrPkgResResultDTO {
         return this;
     }
 
-    /** 云会议室套餐包id。
-     * 
-     * @return vmrPkgId */
+    /**
+     * 云会议室套餐包id。
+     * @return vmrPkgId
+     */
     public String getVmrPkgId() {
         return vmrPkgId;
     }
@@ -54,9 +57,10 @@ public class QueryVmrPkgResResultDTO {
         return this;
     }
 
-    /** 云会议室套餐包名称。
-     * 
-     * @return vmrName */
+    /**
+     * 云会议室套餐包名称。
+     * @return vmrName
+     */
     public String getVmrName() {
         return vmrName;
     }
@@ -70,9 +74,10 @@ public class QueryVmrPkgResResultDTO {
         return this;
     }
 
-    /** 云会议室套餐方数。
-     * 
-     * @return vmrPkgParties */
+    /**
+     * 云会议室套餐方数。
+     * @return vmrPkgParties
+     */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -86,9 +91,10 @@ public class QueryVmrPkgResResultDTO {
         return this;
     }
 
-    /** 该云会议室套餐分配的总数。
-     * 
-     * @return vmrPkgCount */
+    /**
+     * 该云会议室套餐分配的总数。
+     * @return vmrPkgCount
+     */
     public Integer getVmrPkgCount() {
         return vmrPkgCount;
     }
@@ -102,9 +108,10 @@ public class QueryVmrPkgResResultDTO {
         return this;
     }
 
-    /** 该套餐对应的云会议室已分配数量。
-     * 
-     * @return vmrPkgUsedCount */
+    /**
+     * 该套餐对应的云会议室已分配数量。
+     * @return vmrPkgUsedCount
+     */
     public Integer getVmrPkgUsedCount() {
         return vmrPkgUsedCount;
     }
@@ -147,7 +154,10 @@ public class QueryVmrPkgResResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

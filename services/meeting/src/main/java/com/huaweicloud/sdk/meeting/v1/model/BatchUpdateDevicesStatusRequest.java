@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class BatchUpdateDevicesStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class BatchUpdateDevicesStatusRequest {
 
     private String acceptLanguage;
 
-    /** 状态。 * 0、启用 * 1、停用 */
+    /**
+     * 状态。 * 0、启用 * 1、停用 
+     */
     public static final class ValueEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ValueEnum NUMBER_0 = new ValueEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ValueEnum NUMBER_1 = new ValueEnum(1);
 
         private static final Map<Integer, ValueEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class BatchUpdateDevicesStatusRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -130,9 +139,10 @@ public class BatchUpdateDevicesStatusRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -146,9 +156,10 @@ public class BatchUpdateDevicesStatusRequest {
         return this;
     }
 
-    /** 状态。 * 0、启用 * 1、停用
-     * 
-     * @return value */
+    /**
+     * 状态。 * 0、启用 * 1、停用 
+     * @return value
+     */
     public ValueEnum getValue() {
         return value;
     }
@@ -178,9 +189,10 @@ public class BatchUpdateDevicesStatusRequest {
         return this;
     }
 
-    /** 终端序列号列表，当SN对应的终端状态一致的，则忽略该记录 maxLength：100 minLength：1
-     * 
-     * @return body */
+    /**
+     * 终端序列号列表，当SN对应的终端状态一致的，则忽略该记录 maxLength：100 minLength：1
+     * @return body
+     */
     public List<String> getBody() {
         return body;
     }
@@ -221,7 +233,10 @@ public class BatchUpdateDevicesStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

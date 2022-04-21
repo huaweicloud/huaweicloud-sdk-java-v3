@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ParseCertificateSigningRequestRequestBody */
+/**
+ * ParseCertificateSigningRequestRequestBody
+ */
 public class ParseCertificateSigningRequestRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ParseCertificateSigningRequestRequestBody {
         return this;
     }
 
-    /** 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
-     * 
-     * @return csr */
+    /**
+     * 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
+     * @return csr
+     */
     public String getCsr() {
         return csr;
     }
@@ -56,7 +59,10 @@ public class ParseCertificateSigningRequestRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

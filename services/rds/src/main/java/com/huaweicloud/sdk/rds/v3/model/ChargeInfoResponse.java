@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 计费类型信息，支持包年包月和按需，默认为按需。 */
+/**
+ * 计费类型信息，支持包年包月和按需，默认为按需。
+ */
 public class ChargeInfoResponse {
 
-    /** 计费模式。 取值范围： - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。 */
+    /**
+     * 计费模式。  取值范围：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
+     */
     public static final class ChargeModeEnum {
 
-        /** Enum PREPAID for value: "prePaid" */
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
         public static final ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
 
-        /** Enum POSTPAID for value: "postPaid" */
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ChargeInfoResponse {
         return this;
     }
 
-    /** 计费模式。 取值范围： - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。  取值范围：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
+     * @return chargeMode
+     */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -131,7 +140,10 @@ public class ChargeInfoResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

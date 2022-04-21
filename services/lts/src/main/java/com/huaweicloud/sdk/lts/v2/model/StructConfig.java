@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 结构化配置参数体 */
+/**
+ * 结构化配置参数体
+ */
 public class StructConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,13 +38,19 @@ public class StructConfig {
 
     private String templateName;
 
-    /** 所用模板类型，分为built_in及custom两种类型，对应系统模板和自定义模板，系统模板分为CTS，VPC和ELB三种。 */
+    /**
+     * 所用模板类型，分为built_in及custom两种类型，对应系统模板和自定义模板，系统模板分为CTS，VPC和ELB三种。
+     */
     public static final class TemplateTypeEnum {
 
-        /** Enum BUILT_IN for value: "built_in" */
+        /**
+         * Enum BUILT_IN for value: "built_in"
+         */
         public static final TemplateTypeEnum BUILT_IN = new TemplateTypeEnum("built_in");
 
-        /** Enum CUSTOM for value: "custom" */
+        /**
+         * Enum CUSTOM for value: "custom"
+         */
         public static final TemplateTypeEnum CUSTOM = new TemplateTypeEnum("custom");
 
         private static final Map<String, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +140,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 日志组ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -148,9 +157,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 日志流ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -164,9 +174,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 所用模板id。当使用系统模板时，当前属性可以为空
-     * 
-     * @return templateId */
+    /**
+     * 所用模板id。当使用系统模板时，当前属性可以为空
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -180,9 +191,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 所用模板名称，会对模板名称及id进行校验
-     * 
-     * @return templateName */
+    /**
+     * 所用模板名称，会对模板名称及id进行校验
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -196,9 +208,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 所用模板类型，分为built_in及custom两种类型，对应系统模板和自定义模板，系统模板分为CTS，VPC和ELB三种。
-     * 
-     * @return templateType */
+    /**
+     * 所用模板类型，分为built_in及custom两种类型，对应系统模板和自定义模板，系统模板分为CTS，VPC和ELB三种。
+     * @return templateType
+     */
     public TemplateTypeEnum getTemplateType() {
         return templateType;
     }
@@ -228,9 +241,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 示例字段数组，只需要填写与模板中is_analysis状态不同的字段
-     * 
-     * @return demoFields */
+    /**
+     * 示例字段数组，只需要填写与模板中is_analysis状态不同的字段
+     * @return demoFields
+     */
     public List<FieldModel> getDemoFields() {
         return demoFields;
     }
@@ -260,9 +274,10 @@ public class StructConfig {
         return this;
     }
 
-    /** Tag字段数组，只需要填写与模板中is_analysis状态不同的字段
-     * 
-     * @return tagFields */
+    /**
+     * Tag字段数组，只需要填写与模板中is_analysis状态不同的字段
+     * @return tagFields
+     */
     public List<FieldModel> getTagFields() {
         return tagFields;
     }
@@ -276,9 +291,10 @@ public class StructConfig {
         return this;
     }
 
-    /** 是否开启demo_fields和tag_fields快速分析,为true时，所有的demo_fields和tag_fields全部字段均打开快速分析;不填或者为false，以模板中的demo_fields和tag_fields中的is_analysis决定是否开启快速分析。
-     * 
-     * @return quickAnalysis */
+    /**
+     * 是否开启demo_fields和tag_fields快速分析,为true时，所有的demo_fields和tag_fields全部字段均打开快速分析;不填或者为false，以模板中的demo_fields和tag_fields中的is_analysis决定是否开启快速分析。
+     * @return quickAnalysis
+     */
     public Boolean getQuickAnalysis() {
         return quickAnalysis;
     }
@@ -334,7 +350,10 @@ public class StructConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

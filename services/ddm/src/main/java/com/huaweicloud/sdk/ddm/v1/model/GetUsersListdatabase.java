@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto query response Object */
+/**
+ * This is a auto query response Object
+ */
 public class GetUsersListdatabase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class GetUsersListdatabase {
         return this;
     }
 
-    /** DDM实例帐号关联的逻辑库名称。
-     * 
-     * @return name */
+    /**
+     * DDM实例帐号关联的逻辑库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class GetUsersListdatabase {
         return this;
     }
 
-    /** 逻辑库的描述信息。
-     * 
-     * @return description */
+    /**
+     * 逻辑库的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class GetUsersListdatabase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

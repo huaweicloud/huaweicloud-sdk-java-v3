@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTrackersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ListTrackersRequest {
 
     private String trackerName;
 
-    /** 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。 */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。
+     */
     public static final class TrackerTypeEnum {
 
-        /** Enum SYSTEM for value: "system" */
+        /**
+         * Enum SYSTEM for value: "system"
+         */
         public static final TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
 
-        /** Enum DATA for value: "data" */
+        /**
+         * Enum DATA for value: "data"
+         */
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
 
         private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ListTrackersRequest {
         return this;
     }
 
-    /** 标示追踪器名称。 在不传入该字段的情况下，将查询租户所有的追踪器。
-     * 
-     * @return trackerName */
+    /**
+     * 标示追踪器名称。 在不传入该字段的情况下，将查询租户所有的追踪器。
+     * @return trackerName
+     */
     public String getTrackerName() {
         return trackerName;
     }
@@ -115,9 +124,10 @@ public class ListTrackersRequest {
         return this;
     }
 
-    /** 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。
-     * 
-     * @return trackerType */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。
+     * @return trackerType
+     */
     public TrackerTypeEnum getTrackerType() {
         return trackerType;
     }
@@ -154,7 +164,10 @@ public class ListTrackersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

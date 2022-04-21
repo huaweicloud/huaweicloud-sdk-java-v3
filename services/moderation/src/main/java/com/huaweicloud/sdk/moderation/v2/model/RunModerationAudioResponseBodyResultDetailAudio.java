@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 返回的音频审核结果列表，porn为涉黄场景审核结果； 当前仅支持porn场景。 */
+/**
+ * 返回的音频审核结果列表，porn为涉黄场景审核结果； 当前仅支持porn场景。 
+ */
 public class RunModerationAudioResponseBodyResultDetailAudio {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RunModerationAudioResponseBodyResultDetailAudio {
         return this;
     }
 
-    /** 涉黄场景审核结果
-     * 
-     * @return porn */
+    /**
+     * 涉黄场景审核结果
+     * @return porn
+     */
     public List<PornModerationResultDetail> getPorn() {
         return porn;
     }
@@ -76,7 +79,10 @@ public class RunModerationAudioResponseBodyResultDetailAudio {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

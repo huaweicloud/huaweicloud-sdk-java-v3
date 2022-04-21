@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 关闭裸金属服务器接口请求结构体 */
+/**
+ * 关闭裸金属服务器接口请求结构体
+ */
 public class OsStopBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OsStopBody {
         return this;
     }
 
-    /** Get osStop
-     * 
-     * @return osStop */
+    /**
+     * Get osStop
+     * @return osStop
+     */
     public OsStopBodyType getOsStop() {
         return osStop;
     }
@@ -65,7 +68,10 @@ public class OsStopBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

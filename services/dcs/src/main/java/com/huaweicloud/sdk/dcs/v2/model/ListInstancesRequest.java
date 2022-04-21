@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,9 +82,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
-     * 
-     * @return includeFailure */
+    /**
+     * 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+     * @return includeFailure
+     */
     public String getIncludeFailure() {
         return includeFailure;
     }
@@ -95,9 +99,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 是否返回已删除的实例数。 当参数值为“true”时，返回已删除的实例数。参数值为“false”或者其他值，不返回已删除的实例数。
-     * 
-     * @return includeDelete */
+    /**
+     * 是否返回已删除的实例数。 当参数值为“true”时，返回已删除的实例数。参数值为“false”或者其他值，不返回已删除的实例数。
+     * @return includeDelete
+     */
     public String getIncludeDelete() {
         return includeDelete;
     }
@@ -111,9 +116,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -127,9 +133,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -143,9 +150,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 每页显示条数，最小值为1，最大值为1000，若不设置该参数，则为10。
-     * 
-     * @return limit */
+    /**
+     * 每页显示条数，最小值为1，最大值为1000，若不设置该参数，则为10。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -159,9 +167,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 实例状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
-     * 
-     * @return status */
+    /**
+     * 实例状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -175,9 +184,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 是否按照实例名称进行精确匹配查询。 默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
-     * 
-     * @return nameEqual */
+    /**
+     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
+     * @return nameEqual
+     */
     public String getNameEqual() {
         return nameEqual;
     }
@@ -191,9 +201,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值。 如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。
-     * 
-     * @return tags */
+    /**
+     * 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值。  如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。 
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -207,9 +218,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 连接缓存实例的IP地址。
-     * 
-     * @return ip */
+    /**
+     * 连接缓存实例的IP地址。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -262,7 +274,10 @@ public class ListInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

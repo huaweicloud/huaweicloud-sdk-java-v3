@@ -10,8 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 如下字段不可使用： - node.kubernetes.io/memory-pressure - node.kubernetes.io/disk-pressure - node.kubernetes.io/out-of-disk -
- * node.kubernetes.io/unschedulable - node.kubernetes.io/network-unavailable */
+/**
+ * 如下字段不可使用：  - node.kubernetes.io/memory-pressure - node.kubernetes.io/disk-pressure - node.kubernetes.io/out-of-disk - node.kubernetes.io/unschedulable - node.kubernetes.io/network-unavailable
+ */
 public class Taint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,16 +25,24 @@ public class Taint {
 
     private String value;
 
-    /** 作用效果 */
+    /**
+     * 作用效果
+     */
     public static final class EffectEnum {
 
-        /** Enum NOSCHEDULE for value: "NoSchedule" */
+        /**
+         * Enum NOSCHEDULE for value: "NoSchedule"
+         */
         public static final EffectEnum NOSCHEDULE = new EffectEnum("NoSchedule");
 
-        /** Enum PREFERNOSCHEDULE for value: "PreferNoSchedule" */
+        /**
+         * Enum PREFERNOSCHEDULE for value: "PreferNoSchedule"
+         */
         public static final EffectEnum PREFERNOSCHEDULE = new EffectEnum("PreferNoSchedule");
 
-        /** Enum NOEXECUTE for value: "NoExecute" */
+        /**
+         * Enum NOEXECUTE for value: "NoExecute"
+         */
         public static final EffectEnum NOEXECUTE = new EffectEnum("NoExecute");
 
         private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +118,10 @@ public class Taint {
         return this;
     }
 
-    /** 键
-     * 
-     * @return key */
+    /**
+     * 键
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -125,9 +135,10 @@ public class Taint {
         return this;
     }
 
-    /** 值
-     * 
-     * @return value */
+    /**
+     * 值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -141,9 +152,10 @@ public class Taint {
         return this;
     }
 
-    /** 作用效果
-     * 
-     * @return effect */
+    /**
+     * 作用效果
+     * @return effect
+     */
     public EffectEnum getEffect() {
         return effect;
     }
@@ -181,7 +193,10 @@ public class Taint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

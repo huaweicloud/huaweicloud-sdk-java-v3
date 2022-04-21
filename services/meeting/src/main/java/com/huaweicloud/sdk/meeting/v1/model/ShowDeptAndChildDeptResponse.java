@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -103,9 +106,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门id
-     * 
-     * @return deptCode */
+    /**
+     * 部门id
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -119,9 +123,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门层级
-     * 
-     * @return deptLevel */
+    /**
+     * 部门层级
+     * @return deptLevel
+     */
     public Integer getDeptLevel() {
         return deptLevel;
     }
@@ -135,9 +140,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -151,9 +157,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 根部门名路径
-     * 
-     * @return deptNamePath */
+    /**
+     * 根部门名路径
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -167,9 +174,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否叶子
-     * 
-     * @return isLeafNode */
+    /**
+     * 是否叶子
+     * @return isLeafNode
+     */
     public Boolean getIsLeafNode() {
         return isLeafNode;
     }
@@ -183,9 +191,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 父部门编号
-     * 
-     * @return parentDeptCode */
+    /**
+     * 父部门编号
+     * @return parentDeptCode
+     */
     public String getParentDeptCode() {
         return parentDeptCode;
     }
@@ -199,9 +208,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门编码路径
-     * 
-     * @return deptCodePath */
+    /**
+     * 部门编码路径
+     * @return deptCodePath
+     */
     public String getDeptCodePath() {
         return deptCodePath;
     }
@@ -215,9 +225,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return note */
+    /**
+     * 备注
+     * @return note
+     */
     public String getNote() {
         return note;
     }
@@ -231,9 +242,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 其他用户对该部门下用户的访问权限
-     * 
-     * @return inPermission */
+    /**
+     * 其他用户对该部门下用户的访问权限
+     * @return inPermission
+     */
     public String getInPermission() {
         return inPermission;
     }
@@ -247,9 +259,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 该部门下用户访问权限控制
-     * 
-     * @return outPermission */
+    /**
+     * 该部门下用户访问权限控制
+     * @return outPermission
+     */
     public String getOutPermission() {
         return outPermission;
     }
@@ -280,9 +293,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 许访问的部门列表,前台回显DTO，id为deptCode,mark为部门名称
-     * 
-     * @return designatedOutDeptCodes */
+    /**
+     * 许访问的部门列表,前台回显DTO，id为deptCode,mark为部门名称
+     * @return designatedOutDeptCodes
+     */
     public List<IdMarkDTO> getDesignatedOutDeptCodes() {
         return designatedOutDeptCodes;
     }
@@ -312,9 +326,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 子部门列表
-     * 
-     * @return childDepts */
+    /**
+     * 子部门列表
+     * @return childDepts
+     */
     public List<QueryDeptResultDTO> getChildDepts() {
         return childDepts;
     }
@@ -328,9 +343,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门排序号
-     * 
-     * @return sortLevel */
+    /**
+     * 部门排序号
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -404,7 +420,10 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

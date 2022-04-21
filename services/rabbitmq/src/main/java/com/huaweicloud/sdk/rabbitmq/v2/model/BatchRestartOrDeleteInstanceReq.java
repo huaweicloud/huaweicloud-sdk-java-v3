@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchRestartOrDeleteInstanceReq */
+/**
+ * BatchRestartOrDeleteInstanceReq
+ */
 public class BatchRestartOrDeleteInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class BatchRestartOrDeleteInstanceReq {
 
     private List<String> instances = null;
 
-    /** 对实例的操作：restart、delete */
+    /**
+    * 对实例的操作：restart、delete
+    */
     public static final class ActionEnum {
 
-        /** Enum RESTART for value: "restart" */
+        /**
+         * Enum RESTART for value: "restart"
+         */
         public static final ActionEnum RESTART = new ActionEnum("restart");
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final ActionEnum DELETE = new ActionEnum("delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -97,13 +105,19 @@ public class BatchRestartOrDeleteInstanceReq {
 
     private ActionEnum action;
 
-    /** 是否批量删除创建失败的实例。 当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。 */
+    /**
+     * 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+     */
     public static final class AllFailureEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final AllFailureEnum TRUE = new AllFailureEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final AllFailureEnum FALSE = new AllFailureEnum("false");
 
         private static final Map<String, AllFailureEnum> STATIC_FIELDS = createStaticFields();
@@ -194,9 +208,10 @@ public class BatchRestartOrDeleteInstanceReq {
         return this;
     }
 
-    /** 实例的ID列表。
-     * 
-     * @return instances */
+    /**
+     * 实例的ID列表。
+     * @return instances
+     */
     public List<String> getInstances() {
         return instances;
     }
@@ -210,9 +225,10 @@ public class BatchRestartOrDeleteInstanceReq {
         return this;
     }
 
-    /** 对实例的操作：restart、delete
-     * 
-     * @return action */
+    /**
+     * 对实例的操作：restart、delete
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -226,9 +242,10 @@ public class BatchRestartOrDeleteInstanceReq {
         return this;
     }
 
-    /** 是否批量删除创建失败的实例。 当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
-     * 
-     * @return allFailure */
+    /**
+     * 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+     * @return allFailure
+     */
     public AllFailureEnum getAllFailure() {
         return allFailure;
     }
@@ -267,7 +284,10 @@ public class BatchRestartOrDeleteInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

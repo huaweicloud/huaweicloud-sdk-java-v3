@@ -12,7 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDomainResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,13 +22,19 @@ public class CreateDomainResponse extends SdkResponse {
 
     private String domain;
 
-    /** 域名类型 - pull表示播放域名 - push表示推流域名 */
+    /**
+     * 域名类型 - pull表示播放域名 - push表示推流域名 
+     */
     public static final class DomainTypeEnum {
 
-        /** Enum PULL for value: "pull" */
+        /**
+         * Enum PULL for value: "pull"
+         */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
 
-        /** Enum PUSH for value: "push" */
+        /**
+         * Enum PUSH for value: "push"
+         */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -106,19 +114,29 @@ public class CreateDomainResponse extends SdkResponse {
 
     private String region;
 
-    /** 直播域名的状态 */
+    /**
+     * 直播域名的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final StatusEnum ON = new StatusEnum("on");
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final StatusEnum OFF = new StatusEnum("off");
 
-        /** Enum CONFIGURING for value: "configuring" */
+        /**
+         * Enum CONFIGURING for value: "configuring"
+         */
         public static final StatusEnum CONFIGURING = new StatusEnum("configuring");
 
-        /** Enum DISABLE for value: "disable" */
+        /**
+         * Enum DISABLE for value: "disable"
+         */
         public static final StatusEnum DISABLE = new StatusEnum("disable");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -200,16 +218,24 @@ public class CreateDomainResponse extends SdkResponse {
 
     private String statusDescribe;
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /** Enum GLOBAL for value: "global" */
+        /**
+         * Enum GLOBAL for value: "global"
+         */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -285,9 +311,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播域名
-     * 
-     * @return domain */
+    /**
+     * 直播域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -301,9 +328,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名类型 - pull表示播放域名 - push表示推流域名
-     * 
-     * @return domainType */
+    /**
+     * 域名类型 - pull表示播放域名 - push表示推流域名 
+     * @return domainType
+     */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -317,9 +345,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播域名的CNAME
-     * 
-     * @return domainCname */
+    /**
+     * 直播域名的CNAME
+     * @return domainCname
+     */
     public String getDomainCname() {
         return domainCname;
     }
@@ -333,9 +362,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播所属直播中心
-     * 
-     * @return region */
+    /**
+     * 直播所属直播中心
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -349,9 +379,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播域名的状态
-     * 
-     * @return status */
+    /**
+     * 直播域名的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -365,9 +396,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
-     * 
-     * @return createTime */
+    /**
+     * 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -381,9 +413,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态描述
-     * 
-     * @return statusDescribe */
+    /**
+     * 状态描述
+     * @return statusDescribe
+     */
     public String getStatusDescribe() {
         return statusDescribe;
     }
@@ -397,9 +430,10 @@ public class CreateDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
-     * 
-     * @return serviceArea */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -448,7 +482,10 @@ public class CreateDomainResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

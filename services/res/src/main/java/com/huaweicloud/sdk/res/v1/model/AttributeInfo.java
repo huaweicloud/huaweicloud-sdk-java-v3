@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 综合排序信息 */
+/**
+ * 综合排序信息
+ */
 public class AttributeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class AttributeInfo {
 
     private List<NumericalAttr> numericalAttrs = null;
 
-    /** 统计方式： - ORDER，顺序 - ABS，绝对值 */
+    /**
+    * 统计方式： - ORDER，顺序 - ABS，绝对值
+    */
     public static final class NumStatisticsTypeEnum {
 
-        /** Enum ORDER for value: "ORDER" */
+        /**
+         * Enum ORDER for value: "ORDER"
+         */
         public static final NumStatisticsTypeEnum ORDER = new NumStatisticsTypeEnum("ORDER");
 
-        /** Enum ABS for value: "ABS" */
+        /**
+         * Enum ABS for value: "ABS"
+         */
         public static final NumStatisticsTypeEnum ABS = new NumStatisticsTypeEnum("ABS");
 
         private static final Map<String, NumStatisticsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +131,10 @@ public class AttributeInfo {
         return this;
     }
 
-    /** 属性匹配对。
-     * 
-     * @return rankFeaturePairs */
+    /**
+     * 属性匹配对。
+     * @return rankFeaturePairs
+     */
     public List<RankFeaturePair> getRankFeaturePairs() {
         return rankFeaturePairs;
     }
@@ -155,9 +164,10 @@ public class AttributeInfo {
         return this;
     }
 
-    /** 属性权重。
-     * 
-     * @return numericalAttrs */
+    /**
+     * 属性权重。
+     * @return numericalAttrs
+     */
     public List<NumericalAttr> getNumericalAttrs() {
         return numericalAttrs;
     }
@@ -171,9 +181,10 @@ public class AttributeInfo {
         return this;
     }
 
-    /** 统计方式： - ORDER，顺序 - ABS，绝对值
-     * 
-     * @return numStatisticsType */
+    /**
+     * 统计方式： - ORDER，顺序 - ABS，绝对值
+     * @return numStatisticsType
+     */
     public NumStatisticsTypeEnum getNumStatisticsType() {
         return numStatisticsType;
     }
@@ -212,7 +223,10 @@ public class AttributeInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

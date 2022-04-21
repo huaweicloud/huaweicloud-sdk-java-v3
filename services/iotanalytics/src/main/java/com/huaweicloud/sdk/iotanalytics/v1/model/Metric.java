@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Metric */
+/**
+ * Metric
+ */
 public class Metric {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Metric {
         return this;
     }
 
-    /** 指标名称
-     * 
-     * @return name */
+    /**
+     * 指标名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class Metric {
         return this;
     }
 
-    /** 指标值类型
-     * 
-     * @return type */
+    /**
+     * 指标值类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -65,9 +69,10 @@ public class Metric {
         return this;
     }
 
-    /** 指标描述
-     * 
-     * @return description */
+    /**
+     * 指标描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -81,9 +86,10 @@ public class Metric {
         return this;
     }
 
-    /** 指标单位
-     * 
-     * @return unit */
+    /**
+     * 指标单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -122,7 +128,10 @@ public class Metric {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

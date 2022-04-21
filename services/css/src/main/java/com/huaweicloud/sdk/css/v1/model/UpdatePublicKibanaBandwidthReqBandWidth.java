@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带宽。 */
+/**
+ * 带宽。
+ */
 public class UpdatePublicKibanaBandwidthReqBandWidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdatePublicKibanaBandwidthReqBandWidth {
         return this;
     }
 
-    /** 修改后的带宽。
-     * 
-     * @return size */
+    /**
+     * 修改后的带宽。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -56,7 +59,10 @@ public class UpdatePublicKibanaBandwidthReqBandWidth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 集群启动操作，定义集群启动标识，为空对象 */
+/**
+ * 集群启动操作，定义集群启动标识，为空对象
+ */
 public class CdmStopClusterReqStop {
 
-    /** 关机类型： - IMMEDIATELY：立即关机。 - GRACEFULLY：优雅关机。 */
+    /**
+     * 关机类型： - IMMEDIATELY：立即关机。 - GRACEFULLY：优雅关机。
+     */
     public static final class StopModeEnum {
 
-        /** Enum IMMEDIATELY for value: "IMMEDIATELY" */
+        /**
+         * Enum IMMEDIATELY for value: "IMMEDIATELY"
+         */
         public static final StopModeEnum IMMEDIATELY = new StopModeEnum("IMMEDIATELY");
 
-        /** Enum GRACEFULLY for value: "GRACEFULLY" */
+        /**
+         * Enum GRACEFULLY for value: "GRACEFULLY"
+         */
         public static final StopModeEnum GRACEFULLY = new StopModeEnum("GRACEFULLY");
 
         private static final Map<String, StopModeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class CdmStopClusterReqStop {
         return this;
     }
 
-    /** 关机类型： - IMMEDIATELY：立即关机。 - GRACEFULLY：优雅关机。
-     * 
-     * @return stopMode */
+    /**
+     * 关机类型： - IMMEDIATELY：立即关机。 - GRACEFULLY：优雅关机。
+     * @return stopMode
+     */
     public StopModeEnum getStopMode() {
         return stopMode;
     }
@@ -115,9 +124,10 @@ public class CdmStopClusterReqStop {
         return this;
     }
 
-    /** 关机时延，仅在stopMode为“GRACEFULLY”生效，单位：秒。该值为-1时，表示等待所有作业完成，并停止接受新作业。该值为大于0的任意值表示等待该时长后关机，并停止接受新作业。
-     * 
-     * @return delayTime */
+    /**
+     * 关机时延，仅在stopMode为“GRACEFULLY”生效，单位：秒。该值为-1时，表示等待所有作业完成，并停止接受新作业。该值为大于0的任意值表示等待该时长后关机，并停止接受新作业。
+     * @return delayTime
+     */
     public Integer getDelayTime() {
         return delayTime;
     }
@@ -154,7 +164,10 @@ public class CdmStopClusterReqStop {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

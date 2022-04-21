@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRepositoryTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class ListRepositoryTagsRequest {
 
     private String orderColumn;
 
-    /** 排序类型，可设置为desc（降序）、asc（升序） */
+    /**
+     * 排序类型，可设置为desc（降序）、asc（升序） 
+     */
     public static final class OrderTypeEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderTypeEnum DESC = new OrderTypeEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderTypeEnum ASC = new OrderTypeEnum("asc");
 
         private static final Map<String, OrderTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * 
-     * @return namespace */
+    /**
+     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -140,9 +149,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 镜像仓库名称
-     * 
-     * @return repository */
+    /**
+     * 镜像仓库名称
+     * @return repository
+     */
     public String getRepository() {
         return repository;
     }
@@ -156,9 +166,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 起始索引。**注意：offset和limit参数需要配套使用**
-     * 
-     * @return offset */
+    /**
+     * 起始索引。**注意：offset和limit参数需要配套使用** 
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -172,9 +183,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 返回条数。**注意：offset和limit参数需要配套使用*
-     * 
-     * @return limit */
+    /**
+     * 返回条数。**注意：offset和limit参数需要配套使用* 
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -188,9 +200,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 按列排序，可设置为updated_at（按更新时间排序）
-     * 
-     * @return orderColumn */
+    /**
+     * 按列排序，可设置为updated_at（按更新时间排序） 
+     * @return orderColumn
+     */
     public String getOrderColumn() {
         return orderColumn;
     }
@@ -204,9 +217,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 排序类型，可设置为desc（降序）、asc（升序）
-     * 
-     * @return orderType */
+    /**
+     * 排序类型，可设置为desc（降序）、asc（升序） 
+     * @return orderType
+     */
     public OrderTypeEnum getOrderType() {
         return orderType;
     }
@@ -220,9 +234,10 @@ public class ListRepositoryTagsRequest {
         return this;
     }
 
-    /** 镜像版本名
-     * 
-     * @return tag */
+    /**
+     * 镜像版本名
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -269,7 +284,10 @@ public class ListRepositoryTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

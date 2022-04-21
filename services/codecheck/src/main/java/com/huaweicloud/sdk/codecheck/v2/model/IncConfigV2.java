@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 增量检查相关的参数 */
+/**
+ * 增量检查相关的参数
+ */
 public class IncConfigV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** 需要关联的父任务ID，流水线创建或MR创建任务需要该参数
-     * 
-     * @return parentTaskId */
+    /**
+     * 需要关联的父任务ID，流水线创建或MR创建任务需要该参数
+     * @return parentTaskId
+     */
     public String getParentTaskId() {
         return parentTaskId;
     }
@@ -64,9 +67,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** 增量检查代码源分支
-     * 
-     * @return gitSourceBranch */
+    /**
+     * 增量检查代码源分支
+     * @return gitSourceBranch
+     */
     public String getGitSourceBranch() {
         return gitSourceBranch;
     }
@@ -80,9 +84,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** 增量检查代码目标分支
-     * 
-     * @return gitTargetBranch */
+    /**
+     * 增量检查代码目标分支
+     * @return gitTargetBranch
+     */
     public String getGitTargetBranch() {
         return gitTargetBranch;
     }
@@ -96,9 +101,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** MR唯一标示ID
-     * 
-     * @return mergeId */
+    /**
+     * MR唯一标示ID
+     * @return mergeId
+     */
     public String getMergeId() {
         return mergeId;
     }
@@ -112,9 +118,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** webhook触发事件类型,merge_request/push_request
-     * 
-     * @return eventType */
+    /**
+     * webhook触发事件类型,merge_request/push_request
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -128,9 +135,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** webhook事件状态，open/close/update
-     * 
-     * @return action */
+    /**
+     * webhook事件状态，open/close/update
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -144,9 +152,10 @@ public class IncConfigV2 {
         return this;
     }
 
-    /** MR标题
-     * 
-     * @return title */
+    /**
+     * MR标题
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -192,7 +201,10 @@ public class IncConfigV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

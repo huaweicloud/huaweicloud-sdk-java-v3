@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** project信息 */
+/**
+ * project信息
+ */
 public class ProjectInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ProjectInfo {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public DomainInfo getDomain() {
         return domain;
     }
@@ -54,9 +57,10 @@ public class ProjectInfo {
         return this;
     }
 
-    /** project id
-     * 
-     * @return id */
+    /**
+     * project id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +74,10 @@ public class ProjectInfo {
         return this;
     }
 
-    /** project name
-     * 
-     * @return name */
+    /**
+     * project name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -110,7 +115,10 @@ public class ProjectInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

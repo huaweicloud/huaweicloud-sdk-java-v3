@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DetectStandardByNameAndIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class DetectStandardByNameAndIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get meta
-     * 
-     * @return meta */
+    /**
+     * Get meta
+     * @return meta
+     */
     public Meta getMeta() {
         return meta;
     }
@@ -60,9 +63,10 @@ public class DetectStandardByNameAndIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get result
-     * 
-     * @return result */
+    /**
+     * Get result
+     * @return result
+     */
     public IvsStandardByNameAndIdResponseBodyResult getResult() {
         return result;
     }
@@ -99,7 +103,10 @@ public class DetectStandardByNameAndIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

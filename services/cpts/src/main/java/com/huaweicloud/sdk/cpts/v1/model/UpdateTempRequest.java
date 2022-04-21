@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateTempRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,12 @@ public class UpdateTempRequest {
         return this;
     }
 
-    /** 事务id minimum: 0 maximum: 2147483647
-     * 
-     * @return templateId */
+    /**
+     * 事务id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -49,9 +54,10 @@ public class UpdateTempRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateTempRequestBody getBody() {
         return body;
     }
@@ -88,7 +94,10 @@ public class UpdateTempRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

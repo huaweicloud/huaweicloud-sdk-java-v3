@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用于资源对象id列表，{“id”：id值} */
+/**
+ * 用于资源对象id列表，{“id”：id值}
+ */
 public class ResourceList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ResourceList {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return id */
+    /**
+     * 资源ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,7 +58,10 @@ public class ResourceList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

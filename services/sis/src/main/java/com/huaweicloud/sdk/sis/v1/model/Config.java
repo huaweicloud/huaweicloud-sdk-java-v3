@@ -10,46 +10,69 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Config */
+/**
+ * Config
+ */
 public class Config {
 
-    /** 支持语音的格式。 audio_format取值范围： pcm16k16bit 16k16bit单通道录音数据。 pcm8k16bit 8k16bit单通道录音数据。 ulaw16k8bit 16k8bit ulaw
-     * 单通道录音数据。 ulaw8k8bit 8k8bit ulaw 单通道录音数据。 alaw16k8bit 16k8bit alaw 单通道录音数据。 alaw8k8bit 8k8bit alaw 单通道录音数据。 mp3
-     * mp3格式音频。目前仅支持单通道的音频。 aac aac格式音频。目前仅支持单通道的音频。 wav 带wav封装头的格式，从封装头中自动确定格式，目前仅支持8k/16k采样率、单通道、pcm, alaw, ulaw三种编码格式
-     * amr AMR窄带(8k) 压缩录音数据。 amrwb AMR 宽带(16k) 压缩录音数据。 */
+    /**
+     * 支持语音的格式。  audio_format取值范围：  pcm16k16bit  16k16bit单通道录音数据。  pcm8k16bit   8k16bit单通道录音数据。  ulaw16k8bit  16k8bit ulaw 单通道录音数据。  ulaw8k8bit   8k8bit ulaw 单通道录音数据。  alaw16k8bit  16k8bit alaw 单通道录音数据。  alaw8k8bit   8k8bit alaw 单通道录音数据。  mp3  mp3格式音频。目前仅支持单通道的音频。  aac  aac格式音频。目前仅支持单通道的音频。  wav  带wav封装头的格式，从封装头中自动确定格式，目前仅支持8k/16k采样率、单通道、pcm, alaw, ulaw三种编码格式  amr  AMR窄带(8k) 压缩录音数据。  amrwb  AMR 宽带(16k) 压缩录音数据。
+     */
     public static final class AudioFormatEnum {
 
-        /** Enum PCM16K16BIT for value: "pcm16k16bit" */
+        /**
+         * Enum PCM16K16BIT for value: "pcm16k16bit"
+         */
         public static final AudioFormatEnum PCM16K16BIT = new AudioFormatEnum("pcm16k16bit");
 
-        /** Enum PCM8K16BIT for value: "pcm8k16bit" */
+        /**
+         * Enum PCM8K16BIT for value: "pcm8k16bit"
+         */
         public static final AudioFormatEnum PCM8K16BIT = new AudioFormatEnum("pcm8k16bit");
 
-        /** Enum ULAW16K8BIT for value: "ulaw16k8bit" */
+        /**
+         * Enum ULAW16K8BIT for value: "ulaw16k8bit"
+         */
         public static final AudioFormatEnum ULAW16K8BIT = new AudioFormatEnum("ulaw16k8bit");
 
-        /** Enum ULAW8K8BIT for value: "ulaw8k8bit" */
+        /**
+         * Enum ULAW8K8BIT for value: "ulaw8k8bit"
+         */
         public static final AudioFormatEnum ULAW8K8BIT = new AudioFormatEnum("ulaw8k8bit");
 
-        /** Enum ALAW16K8BIT for value: "alaw16k8bit" */
+        /**
+         * Enum ALAW16K8BIT for value: "alaw16k8bit"
+         */
         public static final AudioFormatEnum ALAW16K8BIT = new AudioFormatEnum("alaw16k8bit");
 
-        /** Enum ALAW8K8BIT for value: "alaw8k8bit" */
+        /**
+         * Enum ALAW8K8BIT for value: "alaw8k8bit"
+         */
         public static final AudioFormatEnum ALAW8K8BIT = new AudioFormatEnum("alaw8k8bit");
 
-        /** Enum MP3 for value: "mp3" */
+        /**
+         * Enum MP3 for value: "mp3"
+         */
         public static final AudioFormatEnum MP3 = new AudioFormatEnum("mp3");
 
-        /** Enum AAC for value: "aac" */
+        /**
+         * Enum AAC for value: "aac"
+         */
         public static final AudioFormatEnum AAC = new AudioFormatEnum("aac");
 
-        /** Enum WAV for value: "wav" */
+        /**
+         * Enum WAV for value: "wav"
+         */
         public static final AudioFormatEnum WAV = new AudioFormatEnum("wav");
 
-        /** Enum AMR for value: "amr" */
+        /**
+         * Enum AMR for value: "amr"
+         */
         public static final AudioFormatEnum AMR = new AudioFormatEnum("amr");
 
-        /** Enum AMRWB for value: "amrwb" */
+        /**
+         * Enum AMRWB for value: "amrwb"
+         */
         public static final AudioFormatEnum AMRWB = new AudioFormatEnum("amrwb");
 
         private static final Map<String, AudioFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -128,29 +151,39 @@ public class Config {
 
     private AudioFormatEnum audioFormat;
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common 支持采样率为8k的中文普通话语音识别。
-     * chinese_16k_common 支持采样率为16k的中文普通话语音识别。 chinese_16k_general
-     * 支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。 sichuan_16k_common
-     * 支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。 cantonese_16k_common 支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。
-     * shanghai_16k_common 支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。 */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
+     */
     public static final class PropertyEnum {
 
-        /** Enum CHINESE_8K_COMMON for value: "chinese_8k_common" */
+        /**
+         * Enum CHINESE_8K_COMMON for value: "chinese_8k_common"
+         */
         public static final PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
 
-        /** Enum CHINESE_16K_COMMON for value: "chinese_16k_common" */
+        /**
+         * Enum CHINESE_16K_COMMON for value: "chinese_16k_common"
+         */
         public static final PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
 
-        /** Enum CHINESE_16K_GENERAL for value: "chinese_16k_general" */
+        /**
+         * Enum CHINESE_16K_GENERAL for value: "chinese_16k_general"
+         */
         public static final PropertyEnum CHINESE_16K_GENERAL = new PropertyEnum("chinese_16k_general");
 
-        /** Enum SICHUAN_16K_COMMON for value: "sichuan_16k_common" */
+        /**
+         * Enum SICHUAN_16K_COMMON for value: "sichuan_16k_common"
+         */
         public static final PropertyEnum SICHUAN_16K_COMMON = new PropertyEnum("sichuan_16k_common");
 
-        /** Enum CANTONESE_16K_COMMON for value: "cantonese_16k_common" */
+        /**
+         * Enum CANTONESE_16K_COMMON for value: "cantonese_16k_common"
+         */
         public static final PropertyEnum CANTONESE_16K_COMMON = new PropertyEnum("cantonese_16k_common");
 
-        /** Enum SHANGHAI_16K_COMMON for value: "shanghai_16k_common" */
+        /**
+         * Enum SHANGHAI_16K_COMMON for value: "shanghai_16k_common"
+         */
         public static final PropertyEnum SHANGHAI_16K_COMMON = new PropertyEnum("shanghai_16k_common");
 
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
@@ -224,13 +257,19 @@ public class Config {
 
     private PropertyEnum property;
 
-    /** 表示是否在识别结果中添加标点，取值为“yes”和“no”，缺省为“no”。 */
+    /**
+     * 表示是否在识别结果中添加标点，取值为“yes”和“no”，缺省为“no”。
+     */
     public static final class AddPuncEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final AddPuncEnum YES = new AddPuncEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final AddPuncEnum NO = new AddPuncEnum("no");
 
         private static final Map<String, AddPuncEnum> STATIC_FIELDS = createStaticFields();
@@ -305,13 +344,19 @@ public class Config {
 
     private String vocabularyId;
 
-    /** 表示是否将语音中的数字识别为阿拉伯数字，取值为“yes” 和 “no”，缺省为“yes”。 */
+    /**
+     * 表示是否将语音中的数字识别为阿拉伯数字，取值为“yes” 和 “no”，缺省为“yes”。
+     */
     public static final class DigitNormEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final DigitNormEnum YES = new DigitNormEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final DigitNormEnum NO = new DigitNormEnum("no");
 
         private static final Map<String, DigitNormEnum> STATIC_FIELDS = createStaticFields();
@@ -381,13 +426,19 @@ public class Config {
 
     private DigitNormEnum digitNorm;
 
-    /** 表示是否在识别结果中输出分词结果信息，取值为“yes”和“no”，默认为“no”。 */
+    /**
+     * 表示是否在识别结果中输出分词结果信息，取值为“yes”和“no”，默认为“no”。
+     */
     public static final class NeedWordInfoEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final NeedWordInfoEnum YES = new NeedWordInfoEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final NeedWordInfoEnum NO = new NeedWordInfoEnum("no");
 
         private static final Map<String, NeedWordInfoEnum> STATIC_FIELDS = createStaticFields();
@@ -462,12 +513,10 @@ public class Config {
         return this;
     }
 
-    /** 支持语音的格式。 audio_format取值范围： pcm16k16bit 16k16bit单通道录音数据。 pcm8k16bit 8k16bit单通道录音数据。 ulaw16k8bit 16k8bit ulaw
-     * 单通道录音数据。 ulaw8k8bit 8k8bit ulaw 单通道录音数据。 alaw16k8bit 16k8bit alaw 单通道录音数据。 alaw8k8bit 8k8bit alaw 单通道录音数据。 mp3
-     * mp3格式音频。目前仅支持单通道的音频。 aac aac格式音频。目前仅支持单通道的音频。 wav 带wav封装头的格式，从封装头中自动确定格式，目前仅支持8k/16k采样率、单通道、pcm, alaw, ulaw三种编码格式
-     * amr AMR窄带(8k) 压缩录音数据。 amrwb AMR 宽带(16k) 压缩录音数据。
-     * 
-     * @return audioFormat */
+    /**
+     * 支持语音的格式。  audio_format取值范围：  pcm16k16bit  16k16bit单通道录音数据。  pcm8k16bit   8k16bit单通道录音数据。  ulaw16k8bit  16k8bit ulaw 单通道录音数据。  ulaw8k8bit   8k8bit ulaw 单通道录音数据。  alaw16k8bit  16k8bit alaw 单通道录音数据。  alaw8k8bit   8k8bit alaw 单通道录音数据。  mp3  mp3格式音频。目前仅支持单通道的音频。  aac  aac格式音频。目前仅支持单通道的音频。  wav  带wav封装头的格式，从封装头中自动确定格式，目前仅支持8k/16k采样率、单通道、pcm, alaw, ulaw三种编码格式  amr  AMR窄带(8k) 压缩录音数据。  amrwb  AMR 宽带(16k) 压缩录音数据。
+     * @return audioFormat
+     */
     public AudioFormatEnum getAudioFormat() {
         return audioFormat;
     }
@@ -481,13 +530,10 @@ public class Config {
         return this;
     }
 
-    /** 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common 支持采样率为8k的中文普通话语音识别。
-     * chinese_16k_common 支持采样率为16k的中文普通话语音识别。 chinese_16k_general
-     * 支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。 sichuan_16k_common
-     * 支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。 cantonese_16k_common 支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。
-     * shanghai_16k_common 支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
-     * 
-     * @return property */
+    /**
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
+     * @return property
+     */
     public PropertyEnum getProperty() {
         return property;
     }
@@ -501,9 +547,10 @@ public class Config {
         return this;
     }
 
-    /** 表示是否在识别结果中添加标点，取值为“yes”和“no”，缺省为“no”。
-     * 
-     * @return addPunc */
+    /**
+     * 表示是否在识别结果中添加标点，取值为“yes”和“no”，缺省为“no”。
+     * @return addPunc
+     */
     public AddPuncEnum getAddPunc() {
         return addPunc;
     }
@@ -517,9 +564,10 @@ public class Config {
         return this;
     }
 
-    /** 热词表id，不使用则不填写。
-     * 
-     * @return vocabularyId */
+    /**
+     * 热词表id，不使用则不填写。
+     * @return vocabularyId
+     */
     public String getVocabularyId() {
         return vocabularyId;
     }
@@ -533,9 +581,10 @@ public class Config {
         return this;
     }
 
-    /** 表示是否将语音中的数字识别为阿拉伯数字，取值为“yes” 和 “no”，缺省为“yes”。
-     * 
-     * @return digitNorm */
+    /**
+     * 表示是否将语音中的数字识别为阿拉伯数字，取值为“yes” 和 “no”，缺省为“yes”。
+     * @return digitNorm
+     */
     public DigitNormEnum getDigitNorm() {
         return digitNorm;
     }
@@ -549,9 +598,10 @@ public class Config {
         return this;
     }
 
-    /** 表示是否在识别结果中输出分词结果信息，取值为“yes”和“no”，默认为“no”。
-     * 
-     * @return needWordInfo */
+    /**
+     * 表示是否在识别结果中输出分词结果信息，取值为“yes”和“no”，默认为“no”。
+     * @return needWordInfo
+     */
     public NeedWordInfoEnum getNeedWordInfo() {
         return needWordInfo;
     }
@@ -594,7 +644,10 @@ public class Config {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

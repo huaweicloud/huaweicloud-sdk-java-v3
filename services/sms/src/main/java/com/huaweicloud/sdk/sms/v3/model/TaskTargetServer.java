@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 目的端服务器 */
+/**
+ * 目的端服务器
+ */
 public class TaskTargetServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,13 +38,19 @@ public class TaskTargetServer {
 
     private String ip;
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选 */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -152,9 +160,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端在SMS数据库中的ID
-     * 
-     * @return id */
+    /**
+     * 目的端在SMS数据库中的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -168,9 +177,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端服务器ID，自动创建虚拟机不需要这个参数
-     * 
-     * @return vmId */
+    /**
+     * 目的端服务器ID，自动创建虚拟机不需要这个参数
+     * @return vmId
+     */
     public String getVmId() {
         return vmId;
     }
@@ -184,9 +194,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端服务器的名称
-     * 
-     * @return name */
+    /**
+     * 目的端服务器的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -200,9 +211,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端服务器ip
-     * 
-     * @return ip */
+    /**
+     * 目的端服务器ip
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -216,9 +228,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * 
-     * @return osType */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -232,9 +245,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 操作系统版本，注册必选，更新非必选
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本，注册必选，更新非必选
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -248,9 +262,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** Windows必选，系统目录
-     * 
-     * @return systemDir */
+    /**
+     * Windows必选，系统目录
+     * @return systemDir
+     */
     public String getSystemDir() {
         return systemDir;
     }
@@ -280,9 +295,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端磁盘信息，一般和源端保持一致
-     * 
-     * @return disks */
+    /**
+     * 目的端磁盘信息，一般和源端保持一致
+     * @return disks
+     */
     public List<TargetDisk> getDisks() {
         return disks;
     }
@@ -312,9 +328,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** lvm信息，一般和源端保持一致
-     * 
-     * @return volumeGroups */
+    /**
+     * lvm信息，一般和源端保持一致
+     * @return volumeGroups
+     */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -344,9 +361,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
-     * 
-     * @return btrfsList */
+    /**
+     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * @return btrfsList
+     */
     public List<String> getBtrfsList() {
         return btrfsList;
     }
@@ -360,9 +378,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端代理镜像磁盘id
-     * 
-     * @return imageDiskId */
+    /**
+     * 目的端代理镜像磁盘id
+     * @return imageDiskId
+     */
     public String getImageDiskId() {
         return imageDiskId;
     }
@@ -376,9 +395,10 @@ public class TaskTargetServer {
         return this;
     }
 
-    /** 目的端回滚快照id
-     * 
-     * @return cutoveredSnapshotIds */
+    /**
+     * 目的端回滚快照id
+     * @return cutoveredSnapshotIds
+     */
     public String getCutoveredSnapshotIds() {
         return cutoveredSnapshotIds;
     }
@@ -444,7 +464,10 @@ public class TaskTargetServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

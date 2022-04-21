@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MetricAlarms */
+/**
+ * MetricAlarms
+ */
 public class MetricAlarms {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,13 +48,19 @@ public class MetricAlarms {
 
     private Integer alarmLevel;
 
-    /** 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM */
+    /**
+     * 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+     */
     public static final class AlarmTypeEnum {
 
-        /** Enum EVENT_SYS for value: "EVENT.SYS" */
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
         public static final AlarmTypeEnum EVENT_SYS = new AlarmTypeEnum("EVENT.SYS");
 
-        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
 
         private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -177,9 +185,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警名称。
-     * 
-     * @return alarmName */
+    /**
+     * 告警名称。
+     * @return alarmName
+     */
     public String getAlarmName() {
         return alarmName;
     }
@@ -193,9 +202,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警描述。
-     * 
-     * @return alarmDescription */
+    /**
+     * 告警描述。
+     * @return alarmDescription
+     */
     public String getAlarmDescription() {
         return alarmDescription;
     }
@@ -218,9 +228,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** Get metric
-     * 
-     * @return metric */
+    /**
+     * Get metric
+     * @return metric
+     */
     public MetricInfoForAlarm getMetric() {
         return metric;
     }
@@ -243,9 +254,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** Get condition
-     * 
-     * @return condition */
+    /**
+     * Get condition
+     * @return condition
+     */
     public Condition getCondition() {
         return condition;
     }
@@ -259,9 +271,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 是否启用该条告警。
-     * 
-     * @return alarmEnabled */
+    /**
+     * 是否启用该条告警。
+     * @return alarmEnabled
+     */
     public Boolean getAlarmEnabled() {
         return alarmEnabled;
     }
@@ -275,9 +288,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
-     * 
-     * @return alarmLevel */
+    /**
+     * 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+     * @return alarmLevel
+     */
     public Integer getAlarmLevel() {
         return alarmLevel;
     }
@@ -291,9 +305,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
-     * 
-     * @return alarmType */
+    /**
+     * 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+     * @return alarmType
+     */
     public AlarmTypeEnum getAlarmType() {
         return alarmType;
     }
@@ -307,9 +322,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 是否启用该条告警触发的动作。
-     * 
-     * @return alarmActionEnabled */
+    /**
+     * 是否启用该条告警触发的动作。
+     * @return alarmActionEnabled
+     */
     public Boolean getAlarmActionEnabled() {
         return alarmActionEnabled;
     }
@@ -339,11 +355,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警触发的动作。 结构如下： { \"type\": \"notification\", \"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
-     * notificationList：告警状态发生变化时，被通知对象的列表。
-     * 
-     * @return alarmActions */
+    /**
+     * 告警触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notificationList：告警状态发生变化时，被通知对象的列表。
+     * @return alarmActions
+     */
     public List<AlarmActions> getAlarmActions() {
         return alarmActions;
     }
@@ -373,11 +388,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警恢复触发的动作。 结构如下： { \"type\": \"notification\", \"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。
-     * notificationList：告警状态发生变化时，被通知对象的列表。
-     * 
-     * @return okActions */
+    /**
+     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+     * @return okActions
+     */
     public List<AlarmActions> getOkActions() {
         return okActions;
     }
@@ -407,11 +421,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 数据不足触发的动作。 结构如下： { \"type\": \"notification\", \"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： 数据不足触发告警通知类型，取值为notification。
-     * notificationList：数据不足触发告警通知时，被通知对象的ID列表。
-     * 
-     * @return insufficientdataActions */
+    /**
+     * 数据不足触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： 数据不足触发告警通知类型，取值为notification。 notificationList：数据不足触发告警通知时，被通知对象的ID列表。
+     * @return insufficientdataActions
+     */
     public List<AlarmActions> getInsufficientdataActions() {
         return insufficientdataActions;
     }
@@ -425,9 +438,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警规则生效的开始时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
-     * 
-     * @return alarmActionBeginTime */
+    /**
+     * 告警规则生效的开始时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+     * @return alarmActionBeginTime
+     */
     public String getAlarmActionBeginTime() {
         return alarmActionBeginTime;
     }
@@ -441,9 +455,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警规则生效的结束时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
-     * 
-     * @return alarmActionEndTime */
+    /**
+     * 告警规则生效的结束时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+     * @return alarmActionEndTime
+     */
     public String getAlarmActionEndTime() {
         return alarmActionEndTime;
     }
@@ -457,9 +472,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警规则的ID。
-     * 
-     * @return alarmId */
+    /**
+     * 告警规则的ID。
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -473,9 +489,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警状态变更的时间，UNIX时间戳，单位毫秒。
-     * 
-     * @return updateTime */
+    /**
+     * 告警状态变更的时间，UNIX时间戳，单位毫秒。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -489,9 +506,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 告警状态，取值说明： ok，正常 alarm，告警 insufficient_data，数据不足
-     * 
-     * @return alarmState */
+    /**
+     * 告警状态，取值说明：  ok，正常 alarm，告警 insufficient_data，数据不足
+     * @return alarmState
+     */
     public String getAlarmState() {
         return alarmState;
     }
@@ -505,9 +523,10 @@ public class MetricAlarms {
         return this;
     }
 
-    /** 企业项目ID。 取值为all_granted_eps时，表示所有企业项目; 取值为0时，表示默认的企业项目default。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。 取值为all_granted_eps时，表示所有企业项目; 取值为0时，表示默认的企业项目default。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -590,7 +609,10 @@ public class MetricAlarms {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

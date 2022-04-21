@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ValidationResult */
+/**
+ * ValidationResult
+ */
 public class ValidationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ValidationResult {
         return this;
     }
 
-    /** 创建或更新连接校验结果，请参见linkConfig参数说明
-     * 
-     * @return linkConfig */
+    /**
+     * 创建或更新连接校验结果，请参见linkConfig参数说明
+     * @return linkConfig
+     */
     public List<ValidationLinkConfig> getLinkConfig() {
         return linkConfig;
     }
@@ -74,7 +77,10 @@ public class ValidationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

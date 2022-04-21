@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTaskCmetricsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,9 +67,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskId */
+    /**
+     * 任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -81,9 +84,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务名字
-     * 
-     * @return taskName */
+    /**
+     * 任务名字
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -97,9 +101,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建者id
-     * 
-     * @return creatorId */
+    /**
+     * 创建者id
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -113,9 +118,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓地址
-     * 
-     * @return gitUrl */
+    /**
+     * 代码仓地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -129,9 +135,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓分支
-     * 
-     * @return gitBranch */
+    /**
+     * 代码仓分支
+     * @return gitBranch
+     */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -145,9 +152,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 上一次检查时间
-     * 
-     * @return lastCheckTime */
+    /**
+     * 上一次检查时间
+     * @return lastCheckTime
+     */
     public String getLastCheckTime() {
         return lastCheckTime;
     }
@@ -161,9 +169,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 上次执行时间
-     * 
-     * @return lastExecTime */
+    /**
+     * 上次执行时间
+     * @return lastExecTime
+     */
     public String getLastExecTime() {
         return lastExecTime;
     }
@@ -177,9 +186,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 检查类型
-     * 
-     * @return checkType */
+    /**
+     * 检查类型
+     * @return checkType
+     */
     public String getCheckType() {
         return checkType;
     }
@@ -193,9 +203,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -218,9 +229,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metricInfo
-     * 
-     * @return metricInfo */
+    /**
+     * Get metricInfo
+     * @return metricInfo
+     */
     public MetricInfo getMetricInfo() {
         return metricInfo;
     }
@@ -282,7 +294,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

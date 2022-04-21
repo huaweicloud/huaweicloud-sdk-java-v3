@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PlayInfo */
+/**
+ * PlayInfo
+ */
 public class PlayInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class PlayInfo {
         return this;
     }
 
-    /** 播放协议类型。 取值如下： - hls - dash - mp4
-     * 
-     * @return playType */
+    /**
+     * 播放协议类型。  取值如下： - hls - dash - mp4
+     * @return playType
+     */
     public String getPlayType() {
         return playType;
     }
@@ -50,9 +53,10 @@ public class PlayInfo {
         return this;
     }
 
-    /** 播放URL。
-     * 
-     * @return url */
+    /**
+     * 播放URL。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -66,9 +70,10 @@ public class PlayInfo {
         return this;
     }
 
-    /** 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。 默认值：0。
-     * 
-     * @return encrypted */
+    /**
+     * 标记流是否已被加密。  取值如下： - 0：表示未加密。 - 1：表示已被加密。  默认值：0。
+     * @return encrypted
+     */
     public Integer getEncrypted() {
         return encrypted;
     }
@@ -91,9 +96,10 @@ public class PlayInfo {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -132,7 +138,10 @@ public class PlayInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

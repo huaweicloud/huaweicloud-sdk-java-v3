@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatastoresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,10 @@ public class ListDatastoresRequest {
         return this;
     }
 
-    /** 数据库类型。 - GaussDB(for Cassandra)数据库实例，取值为“cassandra”。 - GaussDB(for Mongo)数据库实例，取值为“mongodb”。 - GaussDB(for
-     * Influx)数据库实例，取值为“influxdb”。
-     * 
-     * @return datastoreName */
+    /**
+     * 数据库类型。 - GaussDB(for Cassandra)数据库实例，取值为“cassandra”。 - GaussDB(for Mongo)数据库实例，取值为“mongodb”。 - GaussDB(for Influx)数据库实例，取值为“influxdb”。
+     * @return datastoreName
+     */
     public String getDatastoreName() {
         return datastoreName;
     }
@@ -56,7 +58,10 @@ public class ListDatastoresRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

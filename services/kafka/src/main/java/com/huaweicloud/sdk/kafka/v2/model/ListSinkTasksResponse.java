@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSinkTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListSinkTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务列表。
-     * 
-     * @return tasks */
+    /**
+     * 转储任务列表。
+     * @return tasks
+     */
     public List<ListSinkTasksRespTasks> getTasks() {
         return tasks;
     }
@@ -69,9 +72,10 @@ public class ListSinkTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务总数。
-     * 
-     * @return totalNumber */
+    /**
+     * 转储任务总数。
+     * @return totalNumber
+     */
     public Integer getTotalNumber() {
         return totalNumber;
     }
@@ -85,9 +89,10 @@ public class ListSinkTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 总的支持任务个数。
-     * 
-     * @return maxTasks */
+    /**
+     * 总的支持任务个数。
+     * @return maxTasks
+     */
     public Integer getMaxTasks() {
         return maxTasks;
     }
@@ -101,9 +106,10 @@ public class ListSinkTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务总数的配额。
-     * 
-     * @return quotaTasks */
+    /**
+     * 任务总数的配额。
+     * @return quotaTasks
+     */
     public Integer getQuotaTasks() {
         return quotaTasks;
     }
@@ -144,7 +150,10 @@ public class ListSinkTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

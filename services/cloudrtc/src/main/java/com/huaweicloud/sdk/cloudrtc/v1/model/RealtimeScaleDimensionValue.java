@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RealtimeScaleDimensionValue */
+/**
+ * RealtimeScaleDimensionValue
+ */
 public class RealtimeScaleDimensionValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RealtimeScaleDimensionValue {
         return this;
     }
 
-    /** 维度值，如查询维度为region，则此处取值可能为GD
-     * 
-     * @return dimension */
+    /**
+     * 维度值，如查询维度为region，则此处取值可能为GD 
+     * @return dimension
+     */
     public String getDimension() {
         return dimension;
     }
@@ -39,9 +42,12 @@ public class RealtimeScaleDimensionValue {
         return this;
     }
 
-    /** 在线观众数 minimum: 0 maximum: 1844674407
-     * 
-     * @return onlineUsers */
+    /**
+     * 在线观众数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return onlineUsers
+     */
     public Long getOnlineUsers() {
         return onlineUsers;
     }
@@ -78,7 +84,10 @@ public class RealtimeScaleDimensionValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

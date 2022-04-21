@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InsurantItem */
+/**
+ * InsurantItem
+ */
 public class InsurantItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class InsurantItem {
         return this;
     }
 
-    /** Get insurantName
-     * 
-     * @return insurantName */
+    /**
+     * Get insurantName
+     * @return insurantName
+     */
     public InsurancePolicyDetail getInsurantName() {
         return insurantName;
     }
@@ -73,9 +76,10 @@ public class InsurantItem {
         return this;
     }
 
-    /** Get insurantSex
-     * 
-     * @return insurantSex */
+    /**
+     * Get insurantSex
+     * @return insurantSex
+     */
     public InsurancePolicyDetail getInsurantSex() {
         return insurantSex;
     }
@@ -98,9 +102,10 @@ public class InsurantItem {
         return this;
     }
 
-    /** Get insurantBirthday
-     * 
-     * @return insurantBirthday */
+    /**
+     * Get insurantBirthday
+     * @return insurantBirthday
+     */
     public InsurancePolicyDetail getInsurantBirthday() {
         return insurantBirthday;
     }
@@ -123,9 +128,10 @@ public class InsurantItem {
         return this;
     }
 
-    /** Get insurantIdType
-     * 
-     * @return insurantIdType */
+    /**
+     * Get insurantIdType
+     * @return insurantIdType
+     */
     public InsurancePolicyDetail getInsurantIdType() {
         return insurantIdType;
     }
@@ -148,9 +154,10 @@ public class InsurantItem {
         return this;
     }
 
-    /** Get insurantIdNumber
-     * 
-     * @return insurantIdNumber */
+    /**
+     * Get insurantIdNumber
+     * @return insurantIdNumber
+     */
     public InsurancePolicyDetail getInsurantIdNumber() {
         return insurantIdNumber;
     }
@@ -193,7 +200,10 @@ public class InsurantItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

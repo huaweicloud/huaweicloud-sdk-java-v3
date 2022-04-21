@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 监听器对象列表，用于状态树中 */
+/**
+ * 监听器对象列表，用于状态树中
+ */
 public class ListenersInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器ID
-     * 
-     * @return id */
+    /**
+     * 监听器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -62,9 +65,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器名称
-     * 
-     * @return name */
+    /**
+     * 监听器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +98,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器关联的后端云服务器组列表
-     * 
-     * @return pools */
+    /**
+     * 监听器关联的后端云服务器组列表
+     * @return pools
+     */
     public List<PoolsInStatusResp> getPools() {
         return pools;
     }
@@ -126,9 +131,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器关联的转发策略列表
-     * 
-     * @return l7policies */
+    /**
+     * 监听器关联的转发策略列表
+     * @return l7policies
+     */
     public List<L7policiesInStatusResp> getL7policies() {
         return l7policies;
     }
@@ -142,9 +148,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-     * 
-     * @return operatingStatus */
+    /**
+     * 监听器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -158,9 +165,10 @@ public class ListenersInStatusResp {
         return this;
     }
 
-    /** 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -205,7 +213,10 @@ public class ListenersInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

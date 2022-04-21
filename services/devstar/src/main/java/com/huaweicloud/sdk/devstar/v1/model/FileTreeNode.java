@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FileTreeNode */
+/**
+ * FileTreeNode
+ */
 public class FileTreeNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class FileTreeNode {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return filePath */
+    /**
+     * 文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -44,9 +47,10 @@ public class FileTreeNode {
         return this;
     }
 
-    /** 文件名称
-     * 
-     * @return fileName */
+    /**
+     * 文件名称
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -60,9 +64,10 @@ public class FileTreeNode {
         return this;
     }
 
-    /** 是否文件夹
-     * 
-     * @return fileType */
+    /**
+     * 是否文件夹
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -101,7 +106,10 @@ public class FileTreeNode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

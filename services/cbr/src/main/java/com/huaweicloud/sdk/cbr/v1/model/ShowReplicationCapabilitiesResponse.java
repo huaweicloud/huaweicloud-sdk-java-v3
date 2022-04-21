@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowReplicationCapabilitiesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class ShowReplicationCapabilitiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持复制的区域列表
-     * 
-     * @return regions */
+    /**
+     * 支持复制的区域列表
+     * @return regions
+     */
     public List<ProtectableReplicationCapabilitiesRespRegion> getRegions() {
         return regions;
     }
@@ -78,7 +81,10 @@ public class ShowReplicationCapabilitiesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

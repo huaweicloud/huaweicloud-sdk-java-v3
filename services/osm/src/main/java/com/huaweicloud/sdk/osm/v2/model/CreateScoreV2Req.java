@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateScoreV2Req */
+/**
+ * CreateScoreV2Req
+ */
 public class CreateScoreV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CreateScoreV2Req {
         return this;
     }
 
-    /** 评价内容
-     * 
-     * @return judgement */
+    /**
+     * 评价内容
+     * @return judgement
+     */
     public String getJudgement() {
         return judgement;
     }
@@ -64,9 +67,10 @@ public class CreateScoreV2Req {
         return this;
     }
 
-    /** 满意度列表
-     * 
-     * @return incidentSatisfactionList */
+    /**
+     * 满意度列表
+     * @return incidentSatisfactionList
+     */
     public List<IncidentSatisfactionV2Do> getIncidentSatisfactionList() {
         return incidentSatisfactionList;
     }
@@ -80,9 +84,10 @@ public class CreateScoreV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -121,7 +126,10 @@ public class CreateScoreV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

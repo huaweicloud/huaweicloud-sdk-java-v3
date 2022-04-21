@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** TaskInfos */
+/**
+ * TaskInfos
+ */
 public class TaskInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class TaskInfos {
 
     private String url;
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务 */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final TaskTypeEnum NORMAL = new TaskTypeEnum("normal");
 
-        /** Enum MONITOR for value: "monitor" */
+        /**
+         * Enum MONITOR for value: "monitor"
+         */
         public static final TaskTypeEnum MONITOR = new TaskTypeEnum("monitor");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class TaskInfos {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -120,9 +129,10 @@ public class TaskInfos {
         return this;
     }
 
-    /** 待扫描的目标网址
-     * 
-     * @return url */
+    /**
+     * 待扫描的目标网址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -136,9 +146,10 @@ public class TaskInfos {
         return this;
     }
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务
-     * 
-     * @return taskType */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -176,7 +187,10 @@ public class TaskInfos {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdatePipelineJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdatePipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 管道ID
-     * 
-     * @return pipelineId */
+    /**
+     * 管道ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -53,9 +56,10 @@ public class UpdatePipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 管道状态
-     * 
-     * @return pipelineState */
+    /**
+     * 管道状态
+     * @return pipelineState
+     */
     public String getPipelineState() {
         return pipelineState;
     }
@@ -69,9 +73,10 @@ public class UpdatePipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作结果
-     * 
-     * @return status */
+    /**
+     * 操作结果
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -101,9 +106,10 @@ public class UpdatePipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 管道错误详情
-     * 
-     * @return checkInfo */
+    /**
+     * 管道错误详情
+     * @return checkInfo
+     */
     public Map<String, Object> getCheckInfo() {
         return checkInfo;
     }
@@ -144,7 +150,10 @@ public class UpdatePipelineJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

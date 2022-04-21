@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子操作详情 */
+/**
+ * 子操作详情
+ */
 public class SubDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 子操作名
-     * 
-     * @return substepName */
+    /**
+     * 子操作名
+     * @return substepName
+     */
     public String getSubstepName() {
         return substepName;
     }
@@ -67,9 +70,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 子操作详情
-     * 
-     * @return detail */
+    /**
+     * 子操作详情
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -83,9 +87,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 子操作状态
-     * 
-     * @return status */
+    /**
+     * 子操作状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -115,9 +120,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 子操作过程信息记录
-     * 
-     * @return message */
+    /**
+     * 子操作过程信息记录
+     * @return message
+     */
     public List<String> getMessage() {
         return message;
     }
@@ -131,9 +137,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -147,9 +154,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -163,9 +171,10 @@ public class SubDetail {
         return this;
     }
 
-    /** 序列号
-     * 
-     * @return serialNum */
+    /**
+     * 序列号
+     * @return serialNum
+     */
     public Long getSerialNum() {
         return serialNum;
     }
@@ -209,7 +218,10 @@ public class SubDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

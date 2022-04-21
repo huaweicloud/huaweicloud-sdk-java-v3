@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ModSubCustomerBudgetReq */
+/**
+ * ModSubCustomerBudgetReq
+ */
 public class ModSubCustomerBudgetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ModSubCustomerBudgetReq {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -44,9 +47,12 @@ public class ModSubCustomerBudgetReq {
         return this;
     }
 
-    /** 调整的目标金额。 单位：元。精确至小数点后2位。 minimum: 0 maximum: 2147483647
-     * 
-     * @return budgetAmount */
+    /**
+     * 调整的目标金额。 单位：元。精确至小数点后2位。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return budgetAmount
+     */
     public Double getBudgetAmount() {
         return budgetAmount;
     }
@@ -60,9 +66,10 @@ public class ModSubCustomerBudgetReq {
         return this;
     }
 
-    /** 是否在设置客户预算的同时解除账号冻结： 0：否1：是 默认值为0。
-     * 
-     * @return cancelPartnerFrozen */
+    /**
+     * 是否在设置客户预算的同时解除账号冻结： 0：否1：是 默认值为0。
+     * @return cancelPartnerFrozen
+     */
     public String getCancelPartnerFrozen() {
         return cancelPartnerFrozen;
     }
@@ -101,7 +108,10 @@ public class ModSubCustomerBudgetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

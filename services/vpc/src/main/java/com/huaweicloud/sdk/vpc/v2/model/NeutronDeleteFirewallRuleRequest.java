@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NeutronDeleteFirewallRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class NeutronDeleteFirewallRuleRequest {
         return this;
     }
 
-    /** 网络ACL防火墙规则ID
-     * 
-     * @return firewallRuleId */
+    /**
+     * 网络ACL防火墙规则ID
+     * @return firewallRuleId
+     */
     public String getFirewallRuleId() {
         return firewallRuleId;
     }
@@ -55,7 +58,10 @@ public class NeutronDeleteFirewallRuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

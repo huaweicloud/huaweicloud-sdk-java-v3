@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ServerOsSchedulerHints */
+/**
+ * ServerOsSchedulerHints
+ */
 public class ServerOsSchedulerHints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ServerOsSchedulerHints {
         return this;
     }
 
-    /** 反亲和性组信息。 UUID格式。
-     * 
-     * @return group */
+    /**
+     * 反亲和性组信息。  UUID格式。
+     * @return group
+     */
     public List<String> getGroup() {
         return group;
     }
@@ -74,7 +77,10 @@ public class ServerOsSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

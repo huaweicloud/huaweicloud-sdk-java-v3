@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchMemberVmrRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -61,9 +64,10 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -77,9 +81,11 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -93,9 +99,12 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -109,9 +118,10 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -125,9 +135,10 @@ public class SearchMemberVmrRequest {
         return this;
     }
 
-    /** 查询vmr的类型，为null则查询所有。 false:个人云会议室 true:专用云会议室，不带则查询所有
-     * 
-     * @return specialVmr */
+    /**
+     * 查询vmr的类型，为null则查询所有。 false:个人云会议室 true:专用云会议室，不带则查询所有 
+     * @return specialVmr
+     */
     public Boolean getSpecialVmr() {
         return specialVmr;
     }
@@ -172,7 +183,10 @@ public class SearchMemberVmrRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

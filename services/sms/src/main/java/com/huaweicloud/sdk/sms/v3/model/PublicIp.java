@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 公网ip */
+/**
+ * 公网ip
+ */
 public class PublicIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性公网IP类型，默认为5_bgp
-     * 
-     * @return type */
+    /**
+     * 弹性公网IP类型，默认为5_bgp
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,11 +42,12 @@ public class PublicIp {
         return this;
     }
 
-    /** 带宽大小，单位：Mbit/s 调整带宽时的最小单位会根据带宽范围不同存在差异。
-     * 小于等于300Mbit/s，默认最小单位为1Mbit/s。300Mbit/s~1000Mbit/s，默认最小单位为50Mbit/s。大于1000Mbit/s：默认最小单位为500Mbit/s。 minimum: 1
+    /**
+     * 带宽大小，单位：Mbit/s  调整带宽时的最小单位会根据带宽范围不同存在差异。  小于等于300Mbit/s，默认最小单位为1Mbit/s。300Mbit/s~1000Mbit/s，默认最小单位为50Mbit/s。大于1000Mbit/s：默认最小单位为500Mbit/s。 
+     * minimum: 1
      * maximum: 2000
-     * 
-     * @return bandwidthSize */
+     * @return bandwidthSize
+     */
     public Integer getBandwidthSize() {
         return bandwidthSize;
     }
@@ -79,7 +83,10 @@ public class PublicIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

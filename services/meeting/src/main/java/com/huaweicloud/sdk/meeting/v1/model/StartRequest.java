@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 开始会议请求参数 */
+/**
+ * 开始会议请求参数
+ */
 public class StartRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StartRequest {
         return this;
     }
 
-    /** 会议ID
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -39,9 +42,10 @@ public class StartRequest {
         return this;
     }
 
-    /** 主席密码
-     * 
-     * @return password */
+    /**
+     * 主席密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -78,7 +82,10 @@ public class StartRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

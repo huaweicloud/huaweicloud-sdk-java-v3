@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** volume信息。 */
+/**
+ * volume信息。
+ */
 public class Volume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘大小。单位：GB。
-     * 
-     * @return size */
+    /**
+     * 磁盘大小。单位：GB。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -39,9 +42,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘使用量。单位：GB。
-     * 
-     * @return used */
+    /**
+     * 磁盘使用量。单位：GB。
+     * @return used
+     */
     public String getUsed() {
         return used;
     }
@@ -77,7 +81,10 @@ public class Volume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

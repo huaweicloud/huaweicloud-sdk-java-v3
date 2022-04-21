@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LiveDataExportReq */
+/**
+ * LiveDataExportReq
+ */
 public class LiveDataExportReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,16 +23,24 @@ public class LiveDataExportReq {
 
     private String appId;
 
-    /** 导出的API定义的格式 */
+    /**
+     * 导出的API定义的格式
+     */
     public static final class FormatEnum {
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final FormatEnum JSON = new FormatEnum("json");
 
-        /** Enum YAML for value: "yaml" */
+        /**
+         * Enum YAML for value: "yaml"
+         */
         public static final FormatEnum YAML = new FormatEnum("yaml");
 
-        /** Enum YML for value: "yml" */
+        /**
+         * Enum YML for value: "yml"
+         */
         public static final FormatEnum YML = new FormatEnum("yml");
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +126,10 @@ public class LiveDataExportReq {
         return this;
     }
 
-    /** API所属的应用ID
-     * 
-     * @return appId */
+    /**
+     * API所属的应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -132,9 +143,10 @@ public class LiveDataExportReq {
         return this;
     }
 
-    /** 导出的API定义的格式
-     * 
-     * @return format */
+    /**
+     * 导出的API定义的格式
+     * @return format
+     */
     public FormatEnum getFormat() {
         return format;
     }
@@ -164,9 +176,10 @@ public class LiveDataExportReq {
         return this;
     }
 
-    /** 导出的自定义后端API ID列表
-     * 
-     * @return apis */
+    /**
+     * 导出的自定义后端API ID列表
+     * @return apis
+     */
     public List<String> getApis() {
         return apis;
     }
@@ -180,9 +193,10 @@ public class LiveDataExportReq {
         return this;
     }
 
-    /** 导出的后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
-     * 
-     * @return status */
+    /**
+     * 导出的后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -223,7 +237,10 @@ public class LiveDataExportReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

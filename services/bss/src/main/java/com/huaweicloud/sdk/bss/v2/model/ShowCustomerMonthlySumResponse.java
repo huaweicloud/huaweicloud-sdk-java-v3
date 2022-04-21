@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCustomerMonthlySumResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,9 +79,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数，必须大于等于0。
-     * 
-     * @return totalCount */
+    /**
+     * 总条数，必须大于等于0。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -109,9 +112,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单记录，具体参考表2。
-     * 
-     * @return billSums */
+    /**
+     * 账单记录，具体参考表2。
+     * @return billSums
+     */
     public List<BillSumRecordInfoV2> getBillSums() {
         return billSums;
     }
@@ -125,9 +129,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 总金额（包含退订）。
-     * 
-     * @return consumeAmount */
+    /**
+     * 总金额（包含退订）。
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -141,9 +146,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 总欠费金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 总欠费金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -157,9 +163,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 代金券金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -173,9 +180,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 现金券金额，预留。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券金额，预留。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -189,9 +197,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 储值卡金额，预留。
-     * 
-     * @return storedValueCardAmount */
+    /**
+     * 储值卡金额，预留。
+     * @return storedValueCardAmount
+     */
     public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
@@ -205,9 +214,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 现金账户金额。
-     * 
-     * @return cashAmount */
+    /**
+     * 现金账户金额。
+     * @return cashAmount
+     */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -221,9 +231,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 信用账户金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用账户金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -237,9 +248,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 欠费核销金额。
-     * 
-     * @return writeoffAmount */
+    /**
+     * 欠费核销金额。
+     * @return writeoffAmount
+     */
     public Double getWriteoffAmount() {
         return writeoffAmount;
     }
@@ -253,9 +265,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -269,9 +282,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    /** 币种。 CNY：人民币。
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -339,7 +353,10 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListResourceUsageResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,10 +54,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 有效天数，精度最高返回小数点后20位。 说明：
-     * 计算方式为上报的点数/288所得出的值。其中288为一天的点数，5分钟为一个点数单位。计算95费用时，因95费用是按月定价，若实际不足月，则是使用官网价*折扣*actual_days/当月天数，来计算费用明细。
-     * 
-     * @return actualDays */
+    /**
+     * 有效天数，精度最高返回小数点后20位。  说明： 计算方式为上报的点数/288所得出的值。其中288为一天的点数，5分钟为一个点数单位。计算95费用时，因95费用是按月定价，若实际不足月，则是使用官网价*折扣*actual_days/当月天数，来计算费用明细。
+     * @return actualDays
+     */
     public String getActualDays() {
         return actualDays;
     }
@@ -69,9 +71,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 计费带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。
-     * 
-     * @return bandWidth */
+    /**
+     * 计费带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。
+     * @return bandWidth
+     */
     public String getBandWidth() {
         return bandWidth;
     }
@@ -85,9 +88,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 月保底带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
-     * 
-     * @return monthlyGuaranteedBandWidth */
+    /**
+     * 月保底带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
+     * @return monthlyGuaranteedBandWidth
+     */
     public String getMonthlyGuaranteedBandWidth() {
         return monthlyGuaranteedBandWidth;
     }
@@ -101,9 +105,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 月峰值带宽。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
-     * 
-     * @return monthlyPeakBandWidth */
+    /**
+     * 月峰值带宽。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
+     * @return monthlyPeakBandWidth
+     */
     public String getMonthlyPeakBandWidth() {
         return monthlyPeakBandWidth;
     }
@@ -117,9 +122,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 带宽单位，您可以调用查询度量单位列表接口获取。若所有带宽为空，则该字段为空。
-     * 
-     * @return bandWidthMeasureId */
+    /**
+     * 带宽单位，您可以调用查询度量单位列表接口获取。若所有带宽为空，则该字段为空。
+     * @return bandWidthMeasureId
+     */
     public Integer getBandWidthMeasureId() {
         return bandWidthMeasureId;
     }
@@ -133,9 +139,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数。
-     * 
-     * @return totalCount */
+    /**
+     * 总条数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -165,9 +172,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return this;
     }
 
-    /** 使用量明细（5分钟统计值）。具体请参见表3。
-     * 
-     * @return usageInfoList */
+    /**
+     * 使用量明细（5分钟统计值）。具体请参见表3。
+     * @return usageInfoList
+     */
     public List<StatUsageInfo> getUsageInfoList() {
         return usageInfoList;
     }
@@ -220,7 +228,10 @@ public class ListResourceUsageResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

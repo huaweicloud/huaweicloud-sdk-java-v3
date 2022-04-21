@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPropertiesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListPropertiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数 minimum: 1 maximum: 999999999999999
-     * 
-     * @return total */
+    /**
+     * 总数
+     * minimum: 1
+     * maximum: 999999999999999
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class ListPropertiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次返回数量 minimum: 1 maximum: 999
-     * 
-     * @return size */
+    /**
+     * 本次返回数量
+     * minimum: 1
+     * maximum: 999
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -80,9 +88,10 @@ public class ListPropertiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 属性列表
-     * 
-     * @return items */
+    /**
+     * 属性列表
+     * @return items
+     */
     public List<Property> getItems() {
         return items;
     }
@@ -121,7 +130,10 @@ public class ListPropertiesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 企业注册信息 */
+/**
+ * 企业注册信息
+ */
 public class ModCorpBasicInfoDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ModCorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业所在地,最大长度为255个字符。 maxLength：255。
-     * 
-     * @return address */
+    /**
+     * 企业所在地,最大长度为255个字符。 maxLength：255。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -39,9 +42,10 @@ public class ModCorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业自动开户开关
-     * 
-     * @return autoUserCreate */
+    /**
+     * 企业自动开户开关
+     * @return autoUserCreate
+     */
     public Boolean getAutoUserCreate() {
         return autoUserCreate;
     }
@@ -78,7 +82,10 @@ public class ModCorpBasicInfoDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

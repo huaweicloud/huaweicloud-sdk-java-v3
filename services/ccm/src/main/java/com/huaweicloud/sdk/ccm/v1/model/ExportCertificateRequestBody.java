@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExportCertificateRequestBody */
+/**
+ * ExportCertificateRequestBody
+ */
 public class ExportCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ExportCertificateRequestBody {
         return this;
     }
 
-    /** 是否压缩。 - **true** - **false**
-     * 
-     * @return isCompressed */
+    /**
+     * 是否压缩。   - **true**   - **false**
+     * @return isCompressed
+     */
     public String getIsCompressed() {
         return isCompressed;
     }
@@ -39,10 +42,10 @@ public class ExportCertificateRequestBody {
         return this;
     }
 
-    /** 根据服务器类型选择下载证书的形式，支持以下五种类型： - **APACHE** : apache服务器推荐使用此参数； - **NGINX** : nginx服务器推荐使用此参数； - **IIS** :
-     * windows服务器推荐使用此参数； - **TOMCAT** : tomcat服务器推荐使用此参数； - **OTHER** : 下载PEM格式证书，推荐使用此参数。
-     * 
-     * @return type */
+    /**
+     * 根据服务器类型选择下载证书的形式，支持以下五种类型：   - **APACHE** : apache服务器推荐使用此参数；   - **NGINX** : nginx服务器推荐使用此参数；   - **IIS** : windows服务器推荐使用此参数；   - **TOMCAT** : tomcat服务器推荐使用此参数；   - **OTHER** : 下载PEM格式证书，推荐使用此参数。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -79,7 +82,10 @@ public class ExportCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

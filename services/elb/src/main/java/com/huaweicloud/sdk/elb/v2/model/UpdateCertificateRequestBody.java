@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** SSL证书对象 最大长度64KB 支持证书链，最大11层(含证书和证书链)
-     * 
-     * @return certificate */
+    /**
+     * SSL证书对象 最大长度64KB 支持证书链，最大11层(含证书和证书链)
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -59,9 +62,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** 服务端的私有密钥。 格式：私钥为PEM格式。 最大长度8KB。
-     * 
-     * @return privateKey */
+    /**
+     * 服务端的私有密钥。  格式：私钥为PEM格式。 最大长度8KB。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -75,9 +79,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** SSL证书的描述信息。 支持的最大字符长度：255
-     * 
-     * @return description */
+    /**
+     * SSL证书的描述信息。  支持的最大字符长度：255
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -91,11 +96,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** 服务端证书所签的域名。默认值：null。 支持的最大字符长度：1024 取值范围：
-     * 普通域名由若干字符串组成，总长度为0-100，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。
-     * 泛域名在普通域名的基础上仅允许首字母为\"*\"。该字段仅type为server时有效。
-     * 
-     * @return domain */
+    /**
+     * 服务端证书所签的域名。默认值：null。  支持的最大字符长度：1024  取值范围：  普通域名由若干字符串组成，总长度为0-100，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。 泛域名在普通域名的基础上仅允许首字母为\"*\"。该字段仅type为server时有效。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -109,9 +113,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** SSL证书的名称。 支持的最大字符长度：255
-     * 
-     * @return name */
+    /**
+     * SSL证书的名称。  支持的最大字符长度：255
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -125,9 +130,10 @@ public class UpdateCertificateRequestBody {
         return this;
     }
 
-    /** SSL证书的管理状态； 取值范围： true/false。 该字段为预留字段，暂未启用。只支持设定为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * SSL证书的管理状态；  取值范围： true/false。  该字段为预留字段，暂未启用。只支持设定为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -172,7 +178,10 @@ public class UpdateCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

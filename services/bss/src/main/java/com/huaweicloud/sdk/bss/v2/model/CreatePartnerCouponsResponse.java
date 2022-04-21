@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePartnerCouponsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误的客户列表和错误信息，只有HTTP 200的时候才会返回这个结构体，具体参见表1。
-     * 
-     * @return errorDetails */
+    /**
+     * 错误的客户列表和错误信息，只有HTTP 200的时候才会返回这个结构体，具体参见表1。
+     * @return errorDetails
+     */
     public List<ErrorDetail> getErrorDetails() {
         return errorDetails;
     }
@@ -75,9 +78,10 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
         return this;
     }
 
-    /** 成功的客户ID和对应的券ID列表，只有HTTP 200的时候才会返回这个结构体，具体参见表2。
-     * 
-     * @return couponInfos */
+    /**
+     * 成功的客户ID和对应的券ID列表，只有HTTP 200的时候才会返回这个结构体，具体参见表2。
+     * @return couponInfos
+     */
     public List<CouponSimpleInfo> getCouponInfos() {
         return couponInfos;
     }
@@ -114,7 +118,10 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

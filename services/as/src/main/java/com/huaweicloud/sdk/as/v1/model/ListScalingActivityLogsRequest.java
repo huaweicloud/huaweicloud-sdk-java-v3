@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingActivityLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListScalingActivityLogsRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -54,9 +57,10 @@ public class ListScalingActivityLogsRequest {
         return this;
     }
 
-    /** 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return startTime */
+    /**
+     * 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -70,9 +74,10 @@ public class ListScalingActivityLogsRequest {
         return this;
     }
 
-    /** 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return endTime */
+    /**
+     * 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -86,9 +91,10 @@ public class ListScalingActivityLogsRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -102,9 +108,11 @@ public class ListScalingActivityLogsRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +155,10 @@ public class ListScalingActivityLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

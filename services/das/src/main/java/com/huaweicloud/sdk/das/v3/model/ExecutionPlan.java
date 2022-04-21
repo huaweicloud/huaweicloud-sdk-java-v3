@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExecutionPlan */
+/**
+ * ExecutionPlan
+ */
 public class ExecutionPlan {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -89,9 +92,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** select子句的类型
-     * 
-     * @return selectType */
+    /**
+     * select子句的类型
+     * @return selectType
+     */
     public String getSelectType() {
         return selectType;
     }
@@ -105,9 +109,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 数据库表
-     * 
-     * @return table */
+    /**
+     * 数据库表
+     * @return table
+     */
     public String getTable() {
         return table;
     }
@@ -121,9 +126,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 查询将匹配记录的分区
-     * 
-     * @return partitions */
+    /**
+     * 查询将匹配记录的分区
+     * @return partitions
+     */
     public String getPartitions() {
         return partitions;
     }
@@ -137,9 +143,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 访问类型
-     * 
-     * @return type */
+    /**
+     * 访问类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -153,9 +160,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 可能使用的键(索引)
-     * 
-     * @return possibleKeys */
+    /**
+     * 可能使用的键(索引)
+     * @return possibleKeys
+     */
     public String getPossibleKeys() {
         return possibleKeys;
     }
@@ -169,9 +177,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 实际使用的键(索引)
-     * 
-     * @return key */
+    /**
+     * 实际使用的键(索引)
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -185,9 +194,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 决定使用的键的长度
-     * 
-     * @return keyLen */
+    /**
+     * 决定使用的键的长度
+     * @return keyLen
+     */
     public String getKeyLen() {
         return keyLen;
     }
@@ -201,9 +211,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 使用哪个列或常数与键一起来选择行
-     * 
-     * @return ref */
+    /**
+     * 使用哪个列或常数与键一起来选择行
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -217,9 +228,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** MySQL认为它执行查询时必须检查的行数
-     * 
-     * @return rows */
+    /**
+     * MySQL认为它执行查询时必须检查的行数
+     * @return rows
+     */
     public String getRows() {
         return rows;
     }
@@ -233,9 +245,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 按表条件过滤的表行的估计百分比
-     * 
-     * @return filtered */
+    /**
+     * 按表条件过滤的表行的估计百分比
+     * @return filtered
+     */
     public String getFiltered() {
         return filtered;
     }
@@ -249,9 +262,10 @@ public class ExecutionPlan {
         return this;
     }
 
-    /** 其他信息
-     * 
-     * @return extra */
+    /**
+     * 其他信息
+     * @return extra
+     */
     public String getExtra() {
         return extra;
     }
@@ -305,7 +319,10 @@ public class ExecutionPlan {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

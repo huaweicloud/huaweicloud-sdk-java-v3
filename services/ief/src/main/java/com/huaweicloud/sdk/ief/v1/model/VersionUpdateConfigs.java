@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 容器特殊参数 */
+/**
+ * 容器特殊参数
+ */
 public class VersionUpdateConfigs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class VersionUpdateConfigs {
         return this;
     }
 
-    /** 默认为false，表示是否开启特权模式
-     * 
-     * @return privileged */
+    /**
+     * 默认为false，表示是否开启特权模式
+     * @return privileged
+     */
     public Boolean getPrivileged() {
         return privileged;
     }
@@ -52,9 +55,10 @@ public class VersionUpdateConfigs {
         return this;
     }
 
-    /** 默认为true，其中true表示主机网络，而false表示端口映射
-     * 
-     * @return hostNetwork */
+    /**
+     * 默认为true，其中true表示主机网络，而false表示端口映射
+     * @return hostNetwork
+     */
     public Boolean getHostNetwork() {
         return hostNetwork;
     }
@@ -68,9 +72,10 @@ public class VersionUpdateConfigs {
         return this;
     }
 
-    /** 应用实例重启模式： 1. Always：当容器终止退出后，总是重启容器； 2. Onfailure：容器异常退出（退出码非0）时才重启容器； 3. Never：容器终止退出后，不重启容器；
-     * 
-     * @return restartPolicy */
+    /**
+     * 应用实例重启模式： 1. Always：当容器终止退出后，总是重启容器； 2. Onfailure：容器异常退出（退出码非0）时才重启容器； 3. Never：容器终止退出后，不重启容器；
+     * @return restartPolicy
+     */
     public String getRestartPolicy() {
         return restartPolicy;
     }
@@ -100,9 +105,10 @@ public class VersionUpdateConfigs {
         return this;
     }
 
-    /** 容器端口映射值
-     * 
-     * @return ports */
+    /**
+     * 容器端口映射值
+     * @return ports
+     */
     public List<AppPorts> getPorts() {
         return ports;
     }
@@ -143,7 +149,10 @@ public class VersionUpdateConfigs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

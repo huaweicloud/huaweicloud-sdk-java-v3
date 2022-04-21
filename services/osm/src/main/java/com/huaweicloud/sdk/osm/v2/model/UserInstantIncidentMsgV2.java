@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UserInstantIncidentMsgV2 */
+/**
+ * UserInstantIncidentMsgV2
+ */
 public class UserInstantIncidentMsgV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class UserInstantIncidentMsgV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -58,9 +61,10 @@ public class UserInstantIncidentMsgV2 {
         return this;
     }
 
-    /** 留言列表
-     * 
-     * @return messageList */
+    /**
+     * 留言列表
+     * @return messageList
+     */
     public List<QueryMessageInfoV2> getMessageList() {
         return messageList;
     }
@@ -97,7 +101,10 @@ public class UserInstantIncidentMsgV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

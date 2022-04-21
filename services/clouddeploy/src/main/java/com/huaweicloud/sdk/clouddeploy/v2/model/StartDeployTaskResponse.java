@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class StartDeployTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class StartDeployTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行记录id
-     * 
-     * @return id */
+    /**
+     * 执行记录id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -53,9 +56,10 @@ public class StartDeployTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务id
-     * 
-     * @return taskId */
+    /**
+     * 部署任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -69,9 +73,10 @@ public class StartDeployTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行任务名称
-     * 
-     * @return jobName */
+    /**
+     * 执行任务名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -101,9 +106,10 @@ public class StartDeployTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务和应用组件对应关系
-     * 
-     * @return appComponentList */
+    /**
+     * 部署任务和应用组件对应关系
+     * @return appComponentList
+     */
     public List<AppComponentDao> getAppComponentList() {
         return appComponentList;
     }
@@ -144,7 +150,10 @@ public class StartDeployTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

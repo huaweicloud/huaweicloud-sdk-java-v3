@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceCreateReq */
+/**
+ * InstanceCreateReq
+ */
 public class InstanceCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,32 +43,49 @@ public class InstanceCreateReq {
 
     private String instanceId;
 
-    /** 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 -
-     * PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 */
+    /**
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     */
     public static final class SpecIdEnum {
 
-        /** Enum BASIC for value: "BASIC" */
+        /**
+         * Enum BASIC for value: "BASIC"
+         */
         public static final SpecIdEnum BASIC = new SpecIdEnum("BASIC");
 
-        /** Enum PROFESSIONAL for value: "PROFESSIONAL" */
+        /**
+         * Enum PROFESSIONAL for value: "PROFESSIONAL"
+         */
         public static final SpecIdEnum PROFESSIONAL = new SpecIdEnum("PROFESSIONAL");
 
-        /** Enum ENTERPRISE for value: "ENTERPRISE" */
+        /**
+         * Enum ENTERPRISE for value: "ENTERPRISE"
+         */
         public static final SpecIdEnum ENTERPRISE = new SpecIdEnum("ENTERPRISE");
 
-        /** Enum PLATINUM for value: "PLATINUM" */
+        /**
+         * Enum PLATINUM for value: "PLATINUM"
+         */
         public static final SpecIdEnum PLATINUM = new SpecIdEnum("PLATINUM");
 
-        /** Enum BASIC_IPV6 for value: "BASIC_IPV6" */
+        /**
+         * Enum BASIC_IPV6 for value: "BASIC_IPV6"
+         */
         public static final SpecIdEnum BASIC_IPV6 = new SpecIdEnum("BASIC_IPV6");
 
-        /** Enum PROFESSIONAL_IPV6 for value: "PROFESSIONAL_IPV6" */
+        /**
+         * Enum PROFESSIONAL_IPV6 for value: "PROFESSIONAL_IPV6"
+         */
         public static final SpecIdEnum PROFESSIONAL_IPV6 = new SpecIdEnum("PROFESSIONAL_IPV6");
 
-        /** Enum ENTERPRISE_IPV6 for value: "ENTERPRISE_IPV6" */
+        /**
+         * Enum ENTERPRISE_IPV6 for value: "ENTERPRISE_IPV6"
+         */
         public static final SpecIdEnum ENTERPRISE_IPV6 = new SpecIdEnum("ENTERPRISE_IPV6");
 
-        /** Enum PLATINUM_IPV6 for value: "PLATINUM_IPV6" */
+        /**
+         * Enum PLATINUM_IPV6 for value: "PLATINUM_IPV6"
+         */
         public static final SpecIdEnum PLATINUM_IPV6 = new SpecIdEnum("PLATINUM_IPV6");
 
         private static final Map<String, SpecIdEnum> STATIC_FIELDS = createStaticFields();
@@ -187,9 +206,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 实例描述
-     * 
-     * @return description */
+    /**
+     * 实例描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -203,10 +223,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** '维护时间窗开始时间。时间格式为 xx:00:00，xx取值为02,06,10,14,18,22。'
-     * '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次。'
-     * 
-     * @return maintainBegin */
+    /**
+     * '维护时间窗开始时间。时间格式为 xx:00:00，xx取值为02,06,10,14,18,22。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次。'
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -220,9 +240,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** '维护时间窗结束时间。时间格式为 xx:00:00，与维护时间窗开始时间相差4个小时。' '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次'。
-     * 
-     * @return maintainEnd */
+    /**
+     * '维护时间窗结束时间。时间格式为 xx:00:00，与维护时间窗开始时间相差4个小时。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次'。
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -236,9 +257,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -252,9 +274,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 实例编号，不填写自动生成
-     * 
-     * @return instanceId */
+    /**
+     * 实例编号，不填写自动生成
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -268,10 +291,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 -
-     * PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
-     * 
-     * @return specId */
+    /**
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     * @return specId
+     */
     public SpecIdEnum getSpecId() {
         return specId;
     }
@@ -285,10 +308,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 虚拟私有云ID。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -302,10 +325,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 子网的网络ID。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。
-     * 
-     * @return subnetId */
+    /**
+     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -319,10 +342,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 指定实例所属的安全组。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 -
-     * 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。
-     * 
-     * @return securityGroupId */
+    /**
+     * 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -336,9 +359,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 弹性公网IP ID。 实例需要开启公网访问时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源 获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
-     * 
-     * @return eipId */
+    /**
+     * 弹性公网IP ID。  实例需要开启公网访问时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -352,9 +376,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 企业项目ID，企业帐号必填。 获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，企业帐号必填。  获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -384,9 +409,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 可用区列表。 可用区指在同一地域下，电力、网络隔离的物理区域，可用区之内内网互通，不同可用区之间物理隔离。选择多个AZ部署可以有效提升可靠性。 获取方法：通过文档中实例管理的可用区列表接口查询。
-     * 
-     * @return availableZoneIds */
+    /**
+     * 可用区列表。  可用区指在同一地域下，电力、网络隔离的物理区域，可用区之内内网互通，不同可用区之间物理隔离。选择多个AZ部署可以有效提升可靠性。  获取方法：通过文档中实例管理的可用区列表接口查询。
+     * @return availableZoneIds
+     */
     public List<String> getAvailableZoneIds() {
         return availableZoneIds;
     }
@@ -400,9 +426,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 出公网带宽 实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源
-     * 
-     * @return bandwidthSize */
+    /**
+     * 出公网带宽  实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源
+     * @return bandwidthSize
+     */
     public Integer getBandwidthSize() {
         return bandwidthSize;
     }
@@ -416,9 +443,10 @@ public class InstanceCreateReq {
         return this;
     }
 
-    /** 公网访问是否支持IPv6。 当前仅部分region部分可用区支持IPv6
-     * 
-     * @return ipv6Enable */
+    /**
+     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -492,7 +520,10 @@ public class InstanceCreateReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

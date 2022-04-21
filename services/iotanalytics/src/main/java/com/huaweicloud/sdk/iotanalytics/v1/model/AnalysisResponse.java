@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AnalysisResponse */
+/**
+ * AnalysisResponse
+ */
 public class AnalysisResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** 分析任务ID
-     * 
-     * @return analysisId */
+    /**
+     * 分析任务ID
+     * @return analysisId
+     */
     public String getAnalysisId() {
         return analysisId;
     }
@@ -65,9 +68,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** 分析任务名称
-     * 
-     * @return name */
+    /**
+     * 分析任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +85,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** 分析任务显示名称
-     * 
-     * @return displayName */
+    /**
+     * 分析任务显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -97,9 +102,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** 分析任务类型，转换计算（transform）、聚合计算（aggregate）、流计算（stream）
-     * 
-     * @return type */
+    /**
+     * 分析任务类型，转换计算（transform）、聚合计算（aggregate）、流计算（stream）
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -122,9 +128,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** Get transform
-     * 
-     * @return transform */
+    /**
+     * Get transform
+     * @return transform
+     */
     public TransformResponse getTransform() {
         return transform;
     }
@@ -147,9 +154,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** Get aggregate
-     * 
-     * @return aggregate */
+    /**
+     * Get aggregate
+     * @return aggregate
+     */
     public AggregateResponse getAggregate() {
         return aggregate;
     }
@@ -172,9 +180,10 @@ public class AnalysisResponse {
         return this;
     }
 
-    /** Get stream
-     * 
-     * @return stream */
+    /**
+     * Get stream
+     * @return stream
+     */
     public StreamResponse getStream() {
         return stream;
     }
@@ -221,7 +230,10 @@ public class AnalysisResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

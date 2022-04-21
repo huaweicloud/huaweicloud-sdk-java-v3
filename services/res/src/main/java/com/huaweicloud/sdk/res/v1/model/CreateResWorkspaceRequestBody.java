@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateResWorkspaceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateResWorkspaceRequestBody {
         return this;
     }
 
-    /** 工作空间名称，1-64位的数字、字母、下划线、中划线组成，支持中文，不能以 - 结尾。
-     * 
-     * @return name */
+    /**
+     * 工作空间名称，1-64位的数字、字母、下划线、中划线组成，支持中文，不能以 - 结尾。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class CreateResWorkspaceRequestBody {
         return this;
     }
 
-    /** 企业项目编号。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目编号。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -60,9 +64,10 @@ public class CreateResWorkspaceRequestBody {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class CreateResWorkspaceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

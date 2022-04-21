@@ -48,9 +48,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 文字块内容。当入参\"return_text_location\"为false时，每个单元格返回一个文本值，不同行文本由换行符 \"\\n\" 拼接。
-     * 
-     * @return words */
+    /**
+     * 文字块内容。当入参\"return_text_location\"为false时，每个单元格返回一个文本值，不同行文本由换行符 \"\\n\" 拼接。 
+     * @return words
+     */
     public String getWords() {
         return words;
     }
@@ -80,9 +81,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
+    /**
+     * 文字块位置信息，列表形式，分别表示文字块4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -96,9 +98,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 文字块识别结果置信度信息，置信度越大，表示本次识别的对应字段的可靠性越大，在统计意义上，置信度越大正确率越高。注：置信度由算法给出，其不直接等价于对应字段的精度。
-     * 
-     * @return confidence */
+    /**
+     * 文字块识别结果置信度信息，置信度越大，表示本次识别的对应字段的可靠性越大，在统计意义上，置信度越大正确率越高。注：置信度由算法给出，其不直接等价于对应字段的精度。 
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -128,9 +131,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 单元格行信息，列表形式。多个连续值表示单元格垮多行。
-     * 
-     * @return rows */
+    /**
+     * 单元格行信息，列表形式。多个连续值表示单元格垮多行。 
+     * @return rows
+     */
     public List<Integer> getRows() {
         return rows;
     }
@@ -160,9 +164,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 单元格列信息，列表形式。多个连续值表示单元格垮多列。
-     * 
-     * @return columns */
+    /**
+     * 单元格列信息，列表形式。多个连续值表示单元格垮多列。 
+     * @return columns
+     */
     public List<Integer> getColumns() {
         return columns;
     }
@@ -192,9 +197,10 @@ public class FinancialStatementWordsBlockList {
         return this;
     }
 
-    /** 单元格位置信息，列表形式，分别表示单元格4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return cellLocation */
+    /**
+     * 单元格位置信息，列表形式，分别表示单元格4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return cellLocation
+     */
     public List<List<Integer>> getCellLocation() {
         return cellLocation;
     }
@@ -239,7 +245,10 @@ public class FinancialStatementWordsBlockList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ResizeServerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ResizeServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单号，创建包年包月的弹性云服务器时返回该参数。
-     * 
-     * @return orderId */
+    /**
+     * 订单号，创建包年包月的弹性云服务器时返回该参数。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -40,9 +43,10 @@ public class ResizeServerResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID，变更按需的弹性云服务器规格时返回该参数。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID，变更按需的弹性云服务器规格时返回该参数。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -79,7 +83,10 @@ public class ResizeServerResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

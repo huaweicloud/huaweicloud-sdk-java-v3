@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** scope详细信息 */
+/**
+ * scope详细信息
+ */
 public class GetIdTokenScopeDomainOrProjectBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class GetIdTokenScopeDomainOrProjectBody {
         return this;
     }
 
-    /** domain id 或者 project id，与name字段至少存在一个。
-     * 
-     * @return id */
+    /**
+     * domain id 或者 project id，与name字段至少存在一个。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class GetIdTokenScopeDomainOrProjectBody {
         return this;
     }
 
-    /** domain name 或者 project name，与id字段至少存在一个。
-     * 
-     * @return name */
+    /**
+     * domain name 或者 project name，与id字段至少存在一个。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +82,10 @@ public class GetIdTokenScopeDomainOrProjectBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

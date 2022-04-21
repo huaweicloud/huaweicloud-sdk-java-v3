@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApplyConfigurationRequestBody */
+/**
+ * ApplyConfigurationRequestBody
+ */
 public class ApplyConfigurationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ApplyConfigurationRequestBody {
         return this;
     }
 
-    /** 实例ID列表对象。
-     * 
-     * @return instanceIds */
+    /**
+     * 实例ID列表对象。
+     * @return instanceIds
+     */
     public List<String> getInstanceIds() {
         return instanceIds;
     }
@@ -74,7 +77,10 @@ public class ApplyConfigurationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

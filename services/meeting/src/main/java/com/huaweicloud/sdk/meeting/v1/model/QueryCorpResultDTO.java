@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryCorpResultDTO */
+/**
+ * QueryCorpResultDTO
+ */
 public class QueryCorpResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class QueryCorpResultDTO {
         return this;
     }
 
-    /** Get basicInfo
-     * 
-     * @return basicInfo */
+    /**
+     * Get basicInfo
+     * @return basicInfo
+     */
     public QueryCorpBasicResultDTO getBasicInfo() {
         return basicInfo;
     }
@@ -73,9 +76,10 @@ public class QueryCorpResultDTO {
         return this;
     }
 
-    /** Get adminInfo
-     * 
-     * @return adminInfo */
+    /**
+     * Get adminInfo
+     * @return adminInfo
+     */
     public QueryAdminResultDTO getAdminInfo() {
         return adminInfo;
     }
@@ -98,9 +102,10 @@ public class QueryCorpResultDTO {
         return this;
     }
 
-    /** Get resInfo
-     * 
-     * @return resInfo */
+    /**
+     * Get resInfo
+     * @return resInfo
+     */
     public QueryCorpResResultDTO getResInfo() {
         return resInfo;
     }
@@ -123,9 +128,10 @@ public class QueryCorpResultDTO {
         return this;
     }
 
-    /** Get groupDTO
-     * 
-     * @return groupDTO */
+    /**
+     * Get groupDTO
+     * @return groupDTO
+     */
     public OrgGroupDTO getGroupDTO() {
         return groupDTO;
     }
@@ -139,9 +145,10 @@ public class QueryCorpResultDTO {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return id */
+    /**
+     * 企业id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -184,7 +191,10 @@ public class QueryCorpResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

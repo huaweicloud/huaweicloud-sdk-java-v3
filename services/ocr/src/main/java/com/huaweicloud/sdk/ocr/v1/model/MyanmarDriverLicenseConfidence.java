@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MyanmarDriverLicenseConfidence */
+/**
+ * MyanmarDriverLicenseConfidence
+ */
 public class MyanmarDriverLicenseConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文驾驶证号置信度。
-     * 
-     * @return cardNumber */
+    /**
+     * 缅文驾驶证号置信度。 
+     * @return cardNumber
+     */
     public Float getCardNumber() {
         return cardNumber;
     }
@@ -89,9 +92,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文驾驶证号置信度。
-     * 
-     * @return cardNumberEn */
+    /**
+     * 英文驾驶证号置信度。 
+     * @return cardNumberEn
+     */
     public Float getCardNumberEn() {
         return cardNumberEn;
     }
@@ -105,9 +109,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文名字置信度。
-     * 
-     * @return name */
+    /**
+     * 缅文名字置信度。 
+     * @return name
+     */
     public Float getName() {
         return name;
     }
@@ -121,9 +126,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文名字置信度。
-     * 
-     * @return nameEn */
+    /**
+     * 英文名字置信度。 
+     * @return nameEn
+     */
     public Float getNameEn() {
         return nameEn;
     }
@@ -137,9 +143,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文nrc号码置信度。
-     * 
-     * @return nrcId */
+    /**
+     * 缅文nrc号码置信度。 
+     * @return nrcId
+     */
     public Float getNrcId() {
         return nrcId;
     }
@@ -153,9 +160,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文nrc号码置信度。
-     * 
-     * @return nrcIdEn */
+    /**
+     * 英文nrc号码置信度。 
+     * @return nrcIdEn
+     */
     public Float getNrcIdEn() {
         return nrcIdEn;
     }
@@ -169,9 +177,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文出生日期置信度。
-     * 
-     * @return birth */
+    /**
+     * 缅文出生日期置信度。 
+     * @return birth
+     */
     public Float getBirth() {
         return birth;
     }
@@ -185,9 +194,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文出生日期置信度。
-     * 
-     * @return birthEn */
+    /**
+     * 英文出生日期置信度。 
+     * @return birthEn
+     */
     public Float getBirthEn() {
         return birthEn;
     }
@@ -201,9 +211,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文血型置信度。
-     * 
-     * @return bloodGroup */
+    /**
+     * 缅文血型置信度。 
+     * @return bloodGroup
+     */
     public Float getBloodGroup() {
         return bloodGroup;
     }
@@ -217,9 +228,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文血型置信度。
-     * 
-     * @return bloodGroupEn */
+    /**
+     * 英文血型置信度。 
+     * @return bloodGroupEn
+     */
     public Float getBloodGroupEn() {
         return bloodGroupEn;
     }
@@ -233,9 +245,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 缅文有效期置信度。
-     * 
-     * @return expiriedDate */
+    /**
+     * 缅文有效期置信度。 
+     * @return expiriedDate
+     */
     public Float getExpiriedDate() {
         return expiriedDate;
     }
@@ -249,9 +262,10 @@ public class MyanmarDriverLicenseConfidence {
         return this;
     }
 
-    /** 英文有效期置信度。
-     * 
-     * @return expiriedDateEn */
+    /**
+     * 英文有效期置信度。 
+     * @return expiriedDateEn
+     */
     public Float getExpiriedDateEn() {
         return expiriedDateEn;
     }
@@ -319,7 +333,10 @@ public class MyanmarDriverLicenseConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

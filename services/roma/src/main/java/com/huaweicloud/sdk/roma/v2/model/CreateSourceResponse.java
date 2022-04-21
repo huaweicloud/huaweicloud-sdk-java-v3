@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateSourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,13 +46,19 @@ public class CreateSourceResponse extends SdkResponse {
 
     private String productName;
 
-    /** 是否payload使用base64，0-是 1-否 */
+    /**
+     * 是否payload使用base64，0-是 1-否
+     */
     public static final class IsBase64Enum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final IsBase64Enum NUMBER_0 = new IsBase64Enum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final IsBase64Enum NUMBER_1 = new IsBase64Enum(1);
 
         private static final Map<Integer, IsBase64Enum> STATIC_FIELDS = createStaticFields();
@@ -120,13 +128,19 @@ public class CreateSourceResponse extends SdkResponse {
 
     private IsBase64Enum isBase64;
 
-    /** 是否包含设备信息，0-是，1-否 */
+    /**
+     * 是否包含设备信息，0-是，1-否
+     */
     public static final class ContainDeviceInfoEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ContainDeviceInfoEnum NUMBER_0 = new ContainDeviceInfoEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ContainDeviceInfoEnum NUMBER_1 = new ContainDeviceInfoEnum(1);
 
         private static final Map<Integer, ContainDeviceInfoEnum> STATIC_FIELDS = createStaticFields();
@@ -201,9 +215,12 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 源数据源ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return sourceId */
+    /**
+     * 源数据源ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return sourceId
+     */
     public Integer getSourceId() {
         return sourceId;
     }
@@ -217,9 +234,12 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productId */
+    /**
+     * 产品ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -233,9 +253,12 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID，不填为全部设备 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，不填为全部设备
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return deviceId
+     */
     public Integer getDeviceId() {
         return deviceId;
     }
@@ -249,9 +272,10 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 主题，当设备ID为空时为产品级主题，设备ID不为空时为设备级主题
-     * 
-     * @return topic */
+    /**
+     * 主题，当设备ID为空时为产品级主题，设备ID不为空时为设备级主题
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -265,9 +289,10 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备名称
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -281,9 +306,10 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品名称
-     * 
-     * @return productName */
+    /**
+     * 产品名称
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -297,9 +323,12 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否payload使用base64，0-是 1-否 minimum: 0 maximum: 10
-     * 
-     * @return isBase64 */
+    /**
+     * 是否payload使用base64，0-是 1-否
+     * minimum: 0
+     * maximum: 10
+     * @return isBase64
+     */
     public IsBase64Enum getIsBase64() {
         return isBase64;
     }
@@ -313,9 +342,12 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否包含设备信息，0-是，1-否 minimum: 0 maximum: 10
-     * 
-     * @return containDeviceInfo */
+    /**
+     * 是否包含设备信息，0-是，1-否
+     * minimum: 0
+     * maximum: 10
+     * @return containDeviceInfo
+     */
     public ContainDeviceInfoEnum getContainDeviceInfo() {
         return containDeviceInfo;
     }
@@ -364,7 +396,10 @@ public class CreateSourceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

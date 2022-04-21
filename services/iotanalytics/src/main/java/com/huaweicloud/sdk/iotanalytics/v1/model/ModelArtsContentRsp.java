@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SMN数据源配置内容 */
+/**
+ * SMN数据源配置内容
+ */
 public class ModelArtsContentRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 服务名称
-     * 
-     * @return serviceName */
+    /**
+     * 服务名称
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -59,9 +62,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 访问地址
-     * 
-     * @return accessAddress */
+    /**
+     * 访问地址
+     * @return accessAddress
+     */
     public String getAccessAddress() {
         return accessAddress;
     }
@@ -75,9 +79,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 校验参数
-     * 
-     * @return verifyBody */
+    /**
+     * 校验参数
+     * @return verifyBody
+     */
     public String getVerifyBody() {
         return verifyBody;
     }
@@ -91,9 +96,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 租户的AK
-     * 
-     * @return ak */
+    /**
+     * 租户的AK
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -107,9 +113,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 租户的SK
-     * 
-     * @return sk */
+    /**
+     * 租户的SK
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -123,9 +130,10 @@ public class ModelArtsContentRsp {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -169,7 +177,10 @@ public class ModelArtsContentRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

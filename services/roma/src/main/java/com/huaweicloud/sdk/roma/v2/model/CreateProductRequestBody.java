@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateProductRequestBody */
+/**
+ * CreateProductRequestBody
+ */
 public class CreateProductRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class CreateProductRequestBody {
 
     private String model;
 
-    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 */
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     */
     public static final class ProductTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
 
         private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,16 +127,24 @@ public class CreateProductRequestBody {
 
     private String description;
 
-    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua */
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     */
     public static final class ProtocolTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
 
         private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -214,13 +230,19 @@ public class CreateProductRequestBody {
 
     private String version;
 
-    /** 产品的数据格式 0-JSON 1-USER_DEFINED */
+    /**
+     * 产品的数据格式 0-JSON 1-USER_DEFINED
+     */
     public static final class DataFormatEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final DataFormatEnum NUMBER_0 = new DataFormatEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final DataFormatEnum NUMBER_1 = new DataFormatEnum(1);
 
         private static final Map<Integer, DataFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -295,9 +317,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -311,9 +334,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
-     * 
-     * @return name */
+    /**
+     * 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -327,9 +351,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品供应商ID
-     * 
-     * @return manufacturerId */
+    /**
+     * 产品供应商ID
+     * @return manufacturerId
+     */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -343,9 +368,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 厂商名称
-     * 
-     * @return manufacturerName */
+    /**
+     * 厂商名称
+     * @return manufacturerName
+     */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -359,9 +385,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品型号
-     * 
-     * @return model */
+    /**
+     * 产品型号
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -375,9 +402,12 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 minimum: 0 maximum: 10
-     * 
-     * @return productType */
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     * minimum: 0
+     * maximum: 10
+     * @return productType
+     */
     public ProductTypeEnum getProductType() {
         return productType;
     }
@@ -391,9 +421,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 产品描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -407,9 +438,12 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua minimum: 0 maximum: 10
-     * 
-     * @return protocolType */
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     * minimum: 0
+     * maximum: 10
+     * @return protocolType
+     */
     public ProtocolTypeEnum getProtocolType() {
         return protocolType;
     }
@@ -423,9 +457,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品的设备类型（默认Default）
-     * 
-     * @return deviceType */
+    /**
+     * 产品的设备类型（默认Default）
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -439,9 +474,12 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 关联产品模板ID（使用产品模板创建产品时使用，否则为空），自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return templateId */
+    /**
+     * 关联产品模板ID（使用产品模板创建产品时使用，否则为空），自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -455,9 +493,10 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 模型版本
-     * 
-     * @return version */
+    /**
+     * 模型版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -471,9 +510,12 @@ public class CreateProductRequestBody {
         return this;
     }
 
-    /** 产品的数据格式 0-JSON 1-USER_DEFINED minimum: 0 maximum: 10
-     * 
-     * @return dataFormat */
+    /**
+     * 产品的数据格式 0-JSON 1-USER_DEFINED
+     * minimum: 0
+     * maximum: 10
+     * @return dataFormat
+     */
     public DataFormatEnum getDataFormat() {
         return dataFormat;
     }
@@ -541,7 +583,10 @@ public class CreateProductRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

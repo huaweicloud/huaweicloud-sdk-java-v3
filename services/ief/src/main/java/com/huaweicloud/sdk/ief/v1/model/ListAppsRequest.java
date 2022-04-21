@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAppsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -59,9 +62,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** 应用模板名称，模糊匹配
-     * 
-     * @return name */
+    /**
+     * 应用模板名称，模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，取值范围1~1000，默认为1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，取值范围1~1000，默认为1000
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -91,9 +96,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** 查询的起始位置，取值范围为非负整数，默认为0
-     * 
-     * @return offset */
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -107,9 +113,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** 通过别名过滤，模糊匹配
-     * 
-     * @return alias */
+    /**
+     * 通过别名过滤，模糊匹配
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -123,9 +130,10 @@ public class ListAppsRequest {
         return this;
     }
 
-    /** public：公共模板，只有管理员才能创建 private：用户创建的应用模板，默认 shared：第三方应用，其他用户共享类型的模板（保留，未实现）
-     * 
-     * @return visibility */
+    /**
+     * public：公共模板，只有管理员才能创建 private：用户创建的应用模板，默认 shared：第三方应用，其他用户共享类型的模板（保留，未实现）
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -168,7 +176,10 @@ public class ListAppsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

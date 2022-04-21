@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 申请释放主持人消息。 */
+/**
+ * 申请释放主持人消息。
+ */
 public class RestChairTokenReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RestChairTokenReqBody {
         return this;
     }
 
-    /** - 0: 释放主持人。 - 1: 申请主持人。
-     * 
-     * @return applyChair */
+    /**
+     * - 0: 释放主持人。 - 1: 申请主持人。
+     * @return applyChair
+     */
     public Integer getApplyChair() {
         return applyChair;
     }
@@ -39,9 +42,10 @@ public class RestChairTokenReqBody {
         return this;
     }
 
-    /** 当申请主持人时，携带主持人密码。
-     * 
-     * @return chairmanPwd */
+    /**
+     * 当申请主持人时，携带主持人密码。
+     * @return chairmanPwd
+     */
     public String getChairmanPwd() {
         return chairmanPwd;
     }
@@ -78,7 +82,10 @@ public class RestChairTokenReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

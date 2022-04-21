@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询资源返回的异常信息 */
+/**
+ * 查询资源返回的异常信息
+ */
 public class QueryError {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class QueryError {
         return this;
     }
 
-    /** 错误编码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误编码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -39,9 +42,10 @@ public class QueryError {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -78,7 +82,10 @@ public class QueryError {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

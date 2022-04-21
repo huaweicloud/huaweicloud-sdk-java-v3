@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。 */
+/**
+ * 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
+ */
 public class PersonalityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class PersonalityInfo {
         return this;
     }
 
-    /** 注入文件路径信息。Linux系统请输入注入文件保存路径，例如 “/etc/foo.txt”。Windows系统注入文件自动保存在C盘根目录，只需要输入保存文件名，例如
-     * “foo”，文件名只能包含字母（a~zA~Z）和数字（0~9）。
-     * 
-     * @return path */
+    /**
+     * 注入文件路径信息。Linux系统请输入注入文件保存路径，例如 “/etc/foo.txt”。Windows系统注入文件自动保存在C盘根目录，只需要输入保存文件名，例如 “foo”，文件名只能包含字母（a~zA~Z）和数字（0~9）。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -40,9 +42,10 @@ public class PersonalityInfo {
         return this;
     }
 
-    /** 注入文件内容。该值应指定为注入文件的内容进行base64格式编码后的信息。
-     * 
-     * @return content */
+    /**
+     * 注入文件内容。该值应指定为注入文件的内容进行base64格式编码后的信息。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -78,7 +81,10 @@ public class PersonalityInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResDetailDTO */
+/**
+ * ResDetailDTO
+ */
 public class ResDetailDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ResDetailDTO {
         return this;
     }
 
-    /** 总数
-     * 
-     * @return sumCount */
+    /**
+     * 总数
+     * @return sumCount
+     */
     public Integer getSumCount() {
         return sumCount;
     }
@@ -54,9 +57,10 @@ public class ResDetailDTO {
         return this;
     }
 
-    /** 赠送数量
-     * 
-     * @return trialCount */
+    /**
+     * 赠送数量
+     * @return trialCount
+     */
     public Integer getTrialCount() {
         return trialCount;
     }
@@ -70,9 +74,10 @@ public class ResDetailDTO {
         return this;
     }
 
-    /** 到期数量
-     * 
-     * @return expiredCount */
+    /**
+     * 到期数量
+     * @return expiredCount
+     */
     public Integer getExpiredCount() {
         return expiredCount;
     }
@@ -86,9 +91,10 @@ public class ResDetailDTO {
         return this;
     }
 
-    /** 即将到期数量，到期时间在30天内
-     * 
-     * @return expiringCount */
+    /**
+     * 即将到期数量，到期时间在30天内
+     * @return expiringCount
+     */
     public Integer getExpiringCount() {
         return expiringCount;
     }
@@ -102,9 +108,10 @@ public class ResDetailDTO {
         return this;
     }
 
-    /** 已使用数（录播存储空间、会议并发、推流并发方数暂无法查询）。
-     * 
-     * @return usedCount */
+    /**
+     * 已使用数（录播存储空间、会议并发、推流并发方数暂无法查询）。
+     * @return usedCount
+     */
     public Integer getUsedCount() {
         return usedCount;
     }
@@ -147,7 +154,10 @@ public class ResDetailDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

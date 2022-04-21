@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 区域 */
+/**
+ * 区域
+ */
 public class Region {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Region {
         return this;
     }
 
-    /** 区域ID
-     * 
-     * @return regionId */
+    /**
+     * 区域ID
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -39,9 +42,10 @@ public class Region {
         return this;
     }
 
-    /** 显示名称
-     * 
-     * @return displayName */
+    /**
+     * 显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -77,7 +81,10 @@ public class Region {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MemberListV4Members */
+/**
+ * MemberListV4Members
+ */
 public class MemberListV4Members {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainId */
+    /**
+     * 租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -79,9 +82,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -95,9 +99,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userId */
+    /**
+     * 用户id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -111,9 +116,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -127,9 +133,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 创建人numId
-     * 
-     * @return userNumId */
+    /**
+     * 创建人numId
+     * @return userNumId
+     */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -143,9 +150,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
-     * 
-     * @return roleId */
+    /**
+     * 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
+     * @return roleId
+     */
     public Integer getRoleId() {
         return roleId;
     }
@@ -159,9 +167,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickName */
+    /**
+     * 用户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -175,9 +184,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 用户角色
-     * 
-     * @return roleName */
+    /**
+     * 用户角色
+     * @return roleName
+     */
     public String getRoleName() {
         return roleName;
     }
@@ -191,9 +201,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 用户类型, User iam用户, Federation 联邦账号,
-     * 
-     * @return userType */
+    /**
+     * 用户类型, User iam用户, Federation 联邦账号,
+     * @return userType
+     */
     public String getUserType() {
         return userType;
     }
@@ -207,9 +218,10 @@ public class MemberListV4Members {
         return this;
     }
 
-    /** 是否是禁用账号，1 禁用账号， 0非禁用账号
-     * 
-     * @return forbidden */
+    /**
+     * 是否是禁用账号，1 禁用账号， 0非禁用账号
+     * @return forbidden
+     */
     public Integer getForbidden() {
         return forbidden;
     }
@@ -263,7 +275,10 @@ public class MemberListV4Members {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DecryptDatakeyRequestBody */
+/**
+ * DecryptDatakeyRequestBody
+ */
 public class DecryptDatakeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,10 +40,10 @@ public class DecryptDatakeyRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -55,10 +57,10 @@ public class DecryptDatakeyRequestBody {
         return this;
     }
 
-    /** 一系列key-value键值对，用于记录资源上下文信息，用于保护数据的完整性，不应包含敏感信息，最大长度为8192。 当在加密时指定了该参数时，解密密文时，需要传入相同的参数，才能正确的解密。
-     * 例如：{\"Key1\":\"Value1\",\"Key2\":\"Value2\"}
-     * 
-     * @return encryptionContext */
+    /**
+     * 一系列key-value键值对，用于记录资源上下文信息，用于保护数据的完整性，不应包含敏感信息，最大长度为8192。 当在加密时指定了该参数时，解密密文时，需要传入相同的参数，才能正确的解密。 例如：{\"Key1\":\"Value1\",\"Key2\":\"Value2\"}
+     * @return encryptionContext
+     */
     public Object getEncryptionContext() {
         return encryptionContext;
     }
@@ -72,9 +74,10 @@ public class DecryptDatakeyRequestBody {
         return this;
     }
 
-    /** DEK密文及元数据的16进制字符串。取值为加密数据密钥结果中的cipher_text的值。
-     * 
-     * @return cipherText */
+    /**
+     * DEK密文及元数据的16进制字符串。取值为加密数据密钥结果中的cipher_text的值。
+     * @return cipherText
+     */
     public String getCipherText() {
         return cipherText;
     }
@@ -88,9 +91,10 @@ public class DecryptDatakeyRequestBody {
         return this;
     }
 
-    /** 密钥字节长度，取值范围为1~1024。 密钥字节长度，取值为“64”。
-     * 
-     * @return datakeyCipherLength */
+    /**
+     * 密钥字节长度，取值范围为1~1024。 密钥字节长度，取值为“64”。
+     * @return datakeyCipherLength
+     */
     public String getDatakeyCipherLength() {
         return datakeyCipherLength;
     }
@@ -104,9 +108,10 @@ public class DecryptDatakeyRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -149,7 +154,10 @@ public class DecryptDatakeyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

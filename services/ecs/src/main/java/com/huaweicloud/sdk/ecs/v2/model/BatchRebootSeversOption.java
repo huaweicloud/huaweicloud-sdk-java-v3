@@ -23,13 +23,19 @@ public class BatchRebootSeversOption {
 
     private List<ServerId> servers = null;
 
-    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。 */
+    /**
+    * 重启类型：  - SOFT：普通重启。 - HARD：强制重启。
+    */
     public static final class TypeEnum {
 
-        /** Enum SOFT for value: "SOFT" */
+        /**
+         * Enum SOFT for value: "SOFT"
+         */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
 
-        /** Enum HARD for value: "HARD" */
+        /**
+         * Enum HARD for value: "HARD"
+         */
         public static final TypeEnum HARD = new TypeEnum("HARD");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +126,10 @@ public class BatchRebootSeversOption {
         return this;
     }
 
-    /** 云服务器ID列表。
-     * 
-     * @return servers */
+    /**
+     * 云服务器ID列表。
+     * @return servers
+     */
     public List<ServerId> getServers() {
         return servers;
     }
@@ -136,9 +143,10 @@ public class BatchRebootSeversOption {
         return this;
     }
 
-    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。
-     * 
-     * @return type */
+    /**
+     * 重启类型：  - SOFT：普通重启。 - HARD：强制重启。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -175,7 +183,10 @@ public class BatchRebootSeversOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

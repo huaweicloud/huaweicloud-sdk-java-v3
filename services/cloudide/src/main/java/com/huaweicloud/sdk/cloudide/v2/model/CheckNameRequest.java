@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CheckNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CheckNameRequest {
         return this;
     }
 
-    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * 
-     * @return displayName */
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -55,7 +58,10 @@ public class CheckNameRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

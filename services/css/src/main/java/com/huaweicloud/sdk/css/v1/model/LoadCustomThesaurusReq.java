@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LoadCustomThesaurusReq */
+/**
+ * LoadCustomThesaurusReq
+ */
 public class LoadCustomThesaurusReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class LoadCustomThesaurusReq {
         return this;
     }
 
-    /** 词库文件存放的OBS桶（桶类型必须为标准存储或者低频存储，不支持归档存储）。
-     * 
-     * @return bucketName */
+    /**
+     * 词库文件存放的OBS桶（桶类型必须为标准存储或者低频存储，不支持归档存储）。
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -49,10 +52,10 @@ public class LoadCustomThesaurusReq {
         return this;
     }
 
-    /** 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。 mainObject, stopObject, synonymObject三个参数至少要填写一个。
-     * 说明：一次只能加载一个主词库，不支持同时加载多个主词库。
-     * 
-     * @return mainObject */
+    /**
+     * 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。 说明：一次只能加载一个主词库，不支持同时加载多个主词库。
+     * @return mainObject
+     */
     public String getMainObject() {
         return mainObject;
     }
@@ -66,9 +69,10 @@ public class LoadCustomThesaurusReq {
         return this;
     }
 
-    /** 停词词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持20M。 mainObject, stopObject, synonymObject三个参数至少要填写一个。
-     * 
-     * @return stopObject */
+    /**
+     * 停词词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持20M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。
+     * @return stopObject
+     */
     public String getStopObject() {
         return stopObject;
     }
@@ -82,9 +86,10 @@ public class LoadCustomThesaurusReq {
         return this;
     }
 
-    /** 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持20M。 mainObject, stopObject, synonymObject三个参数至少要填写一个。
-     * 
-     * @return synonymObject */
+    /**
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持20M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。
+     * @return synonymObject
+     */
     public String getSynonymObject() {
         return synonymObject;
     }
@@ -125,7 +130,10 @@ public class LoadCustomThesaurusReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OptionalDiscountRatingResult */
+/**
+ * OptionalDiscountRatingResult
+ */
 public class OptionalDiscountRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 折扣优惠ID。
-     * 
-     * @return discountId */
+    /**
+     * 折扣优惠ID。
+     * @return discountId
+     */
     public String getDiscountId() {
         return discountId;
     }
@@ -77,9 +80,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
-     * 
-     * @return amount */
+    /**
+     * 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -93,9 +97,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 包年/包月产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -109,9 +114,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
-     * 
-     * @return discountAmount */
+    /**
+     * 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -125,9 +131,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 价格度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 价格度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -141,9 +148,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
-     * 
-     * @return discountType */
+    /**
+     * 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
+     * @return discountType
+     */
     public Integer getDiscountType() {
         return discountType;
     }
@@ -157,9 +165,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 折扣名称。
-     * 
-     * @return discountName */
+    /**
+     * 折扣名称。
+     * @return discountName
+     */
     public String getDiscountName() {
         return discountName;
     }
@@ -173,9 +182,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 是否为最优折扣。 0：不是最优折扣，为缺省值。1：是最优折扣最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算。
-     * 
-     * @return bestOffer */
+    /**
+     * 是否为最优折扣。 0：不是最优折扣，为缺省值。1：是最优折扣最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算。
+     * @return bestOffer
+     */
     public Integer getBestOffer() {
         return bestOffer;
     }
@@ -207,9 +217,10 @@ public class OptionalDiscountRatingResult {
         return this;
     }
 
-    /** 产品询价结果，具体参见表5。
-     * 
-     * @return productRatingResults */
+    /**
+     * 产品询价结果，具体参见表5。
+     * @return productRatingResults
+     */
     public List<PeriodProductRatingResult> getProductRatingResults() {
         return productRatingResults;
     }
@@ -268,7 +279,10 @@ public class OptionalDiscountRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

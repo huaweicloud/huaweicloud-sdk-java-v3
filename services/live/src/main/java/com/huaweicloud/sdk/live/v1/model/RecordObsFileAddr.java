@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RecordObsFileAddr */
+/**
+ * RecordObsFileAddr
+ */
 public class RecordObsFileAddr {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class RecordObsFileAddr {
 
     private String bucket;
 
-    /** OBS Bucket所在RegionID */
+    /**
+     * OBS Bucket所在RegionID
+     */
     public static final class LocationEnum {
 
-        /** Enum CN_NORTH_4 for value: "cn-north-4" */
+        /**
+         * Enum CN_NORTH_4 for value: "cn-north-4"
+         */
         public static final LocationEnum CN_NORTH_4 = new LocationEnum("cn-north-4");
 
-        /** Enum CN_NORTH_5 for value: "cn-north-5" */
+        /**
+         * Enum CN_NORTH_5 for value: "cn-north-5"
+         */
         public static final LocationEnum CN_NORTH_5 = new LocationEnum("cn-north-5");
 
-        /** Enum CN_NORTH_6 for value: "cn-north-6" */
+        /**
+         * Enum CN_NORTH_6 for value: "cn-north-6"
+         */
         public static final LocationEnum CN_NORTH_6 = new LocationEnum("cn-north-6");
 
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class RecordObsFileAddr {
         return this;
     }
 
-    /** OBS的bucket名称
-     * 
-     * @return bucket */
+    /**
+     * OBS的bucket名称
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -124,9 +135,10 @@ public class RecordObsFileAddr {
         return this;
     }
 
-    /** OBS Bucket所在RegionID
-     * 
-     * @return location */
+    /**
+     * OBS Bucket所在RegionID
+     * @return location
+     */
     public LocationEnum getLocation() {
         return location;
     }
@@ -140,9 +152,10 @@ public class RecordObsFileAddr {
         return this;
     }
 
-    /** OBS对象路径，遵守OBS Object定义。如果为空则保存到根目录
-     * 
-     * @return _object */
+    /**
+     * OBS对象路径，遵守OBS Object定义。如果为空则保存到根目录
+     * @return _object
+     */
     public String getObject() {
         return _object;
     }
@@ -181,7 +194,10 @@ public class RecordObsFileAddr {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

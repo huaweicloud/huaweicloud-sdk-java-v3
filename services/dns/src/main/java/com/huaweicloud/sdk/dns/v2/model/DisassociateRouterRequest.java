@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DisassociateRouterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class DisassociateRouterRequest {
         return this;
     }
 
-    /** 待解关联zone的ID。
-     * 
-     * @return zoneId */
+    /**
+     * 待解关联zone的ID。
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -49,9 +52,10 @@ public class DisassociateRouterRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public DisassociaterouterReq getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class DisassociateRouterRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

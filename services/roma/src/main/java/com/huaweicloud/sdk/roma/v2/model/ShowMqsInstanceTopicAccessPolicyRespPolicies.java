@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowMqsInstanceTopicAccessPolicyRespPolicies */
+/**
+ * ShowMqsInstanceTopicAccessPolicyRespPolicies
+ */
 public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return this;
     }
 
-    /** 是否为创建topic时所选择的应用。
-     * 
-     * @return owner */
+    /**
+     * 是否为创建topic时所选择的应用。
+     * @return owner
+     */
     public Boolean getOwner() {
         return owner;
     }
@@ -54,9 +57,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return userName */
+    /**
+     * 应用ID。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -70,9 +74,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return this;
     }
 
-    /** 权限类型。 - all：发布+订阅 - pub：发布 - sub：订阅
-     * 
-     * @return accessPolicy */
+    /**
+     * 权限类型。   - all：发布+订阅   - pub：发布   - sub：订阅
+     * @return accessPolicy
+     */
     public String getAccessPolicy() {
         return accessPolicy;
     }
@@ -86,9 +91,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return appName */
+    /**
+     * 应用名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -102,9 +108,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return this;
     }
 
-    /** 权限类型对应的标签。
-     * 
-     * @return tag */
+    /**
+     * 权限类型对应的标签。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -148,7 +155,10 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

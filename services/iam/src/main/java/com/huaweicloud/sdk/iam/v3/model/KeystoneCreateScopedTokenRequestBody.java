@@ -30,9 +30,10 @@ public class KeystoneCreateScopedTokenRequestBody {
         return this;
     }
 
-    /** Get auth
-     * 
-     * @return auth */
+    /**
+     * Get auth
+     * @return auth
+     */
     public ScopedTokenAuth getAuth() {
         return auth;
     }
@@ -68,7 +69,10 @@ public class KeystoneCreateScopedTokenRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

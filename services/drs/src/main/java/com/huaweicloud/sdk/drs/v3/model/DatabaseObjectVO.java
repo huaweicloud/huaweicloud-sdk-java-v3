@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库对象信息体 */
+/**
+ * 数据库对象信息体
+ */
 public class DatabaseObjectVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DatabaseObjectVO {
         return this;
     }
 
-    /** 数据库对象和数据库表名称，例如格式为hec-*-*-drs_test1。
-     * 
-     * @return id */
+    /**
+     * 数据库对象和数据库表名称，例如格式为hec-*-*-drs_test1。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class DatabaseObjectVO {
         return this;
     }
 
-    /** 是否选择高级配置，值为true。
-     * 
-     * @return select */
+    /**
+     * 是否选择高级配置，值为true。
+     * @return select
+     */
     public String getSelect() {
         return select;
     }
@@ -77,7 +81,10 @@ public class DatabaseObjectVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

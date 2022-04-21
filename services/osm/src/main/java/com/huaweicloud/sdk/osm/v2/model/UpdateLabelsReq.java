@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateLabelsReq */
+/**
+ * UpdateLabelsReq
+ */
 public class UpdateLabelsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateLabelsReq {
         return this;
     }
 
-    /** 标签名称
-     * 
-     * @return name */
+    /**
+     * 标签名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateLabelsReq {
         return this;
     }
 
-    /** 颜色id
-     * 
-     * @return color */
+    /**
+     * 颜色id
+     * @return color
+     */
     public String getColor() {
         return color;
     }
@@ -77,7 +81,10 @@ public class UpdateLabelsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

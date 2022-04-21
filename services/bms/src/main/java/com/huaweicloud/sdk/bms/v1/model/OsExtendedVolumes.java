@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** os-extended-volumes:volumes_attached字段数据结构说明 */
+/**
+ * os-extended-volumes:volumes_attached字段数据结构说明
+ */
 public class OsExtendedVolumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class OsExtendedVolumes {
         return this;
     }
 
-    /** 云硬盘ID
-     * 
-     * @return id */
+    /**
+     * 云硬盘ID
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -40,9 +43,10 @@ public class OsExtendedVolumes {
         return this;
     }
 
-    /** 删裸金属服务器时是否一并删除该卷。true：是false：否
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 删裸金属服务器时是否一并删除该卷。true：是false：否
+     * @return deleteOnTermination
+     */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -79,7 +83,10 @@ public class OsExtendedVolumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

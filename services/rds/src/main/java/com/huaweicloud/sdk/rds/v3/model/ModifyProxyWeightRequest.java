@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ModifyProxyWeightRequest */
+/**
+ * ModifyProxyWeightRequest
+ */
 public class ModifyProxyWeightRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ModifyProxyWeightRequest {
         return this;
     }
 
-    /** 主实例权重，取值范围为0~1000。
-     * 
-     * @return masterWeight */
+    /**
+     * 主实例权重，取值范围为0~1000。
+     * @return masterWeight
+     */
     public String getMasterWeight() {
         return masterWeight;
     }
@@ -59,9 +62,10 @@ public class ModifyProxyWeightRequest {
         return this;
     }
 
-    /** 只读实例信息。
-     * 
-     * @return readonlyInstances */
+    /**
+     * 只读实例信息。
+     * @return readonlyInstances
+     */
     public List<ProxyReadonlyInstances> getReadonlyInstances() {
         return readonlyInstances;
     }
@@ -98,7 +102,10 @@ public class ModifyProxyWeightRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

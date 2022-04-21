@@ -39,9 +39,10 @@ public class BatchStartServersOption {
         return this;
     }
 
-    /** 云服务器ID列表
-     * 
-     * @return servers */
+    /**
+     * 云服务器ID列表
+     * @return servers
+     */
     public List<ServerId> getServers() {
         return servers;
     }
@@ -76,7 +77,10 @@ public class BatchStartServersOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

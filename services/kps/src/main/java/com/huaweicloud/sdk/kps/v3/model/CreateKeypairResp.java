@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SSH密钥对信息详情 */
+/**
+ * SSH密钥对信息详情
+ */
 public class CreateKeypairResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class CreateKeypairResp {
 
     private String name;
 
-    /** SSH密钥对的类型 */
+    /**
+     * SSH密钥对的类型
+     */
     public static final class TypeEnum {
 
-        /** Enum SSH for value: "ssh" */
+        /**
+         * Enum SSH for value: "ssh"
+         */
         public static final TypeEnum SSH = new TypeEnum("ssh");
 
-        /** Enum X509 for value: "x509" */
+        /**
+         * Enum X509 for value: "x509"
+         */
         public static final TypeEnum X509 = new TypeEnum("x509");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对的名称
-     * 
-     * @return name */
+    /**
+     * SSH密钥对的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -135,9 +144,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对的类型
-     * 
-     * @return type */
+    /**
+     * SSH密钥对的类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -151,9 +161,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对对应的publicKey信息
-     * 
-     * @return publicKey */
+    /**
+     * SSH密钥对对应的publicKey信息
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -167,9 +178,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对对应的privateKey信息 - 创建SSH密钥对时，响应中包括private_key的信息。 - 导入SSH密钥对时，响应中不包括private_key的信息。
-     * 
-     * @return privateKey */
+    /**
+     * SSH密钥对对应的privateKey信息 - 创建SSH密钥对时，响应中包括private_key的信息。 - 导入SSH密钥对时，响应中不包括private_key的信息。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -183,9 +195,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对应指纹信息
-     * 
-     * @return fingerprint */
+    /**
+     * SSH密钥对应指纹信息
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -199,9 +212,10 @@ public class CreateKeypairResp {
         return this;
     }
 
-    /** SSH密钥对所属的用户信息
-     * 
-     * @return userId */
+    /**
+     * SSH密钥对所属的用户信息
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -245,7 +259,10 @@ public class CreateKeypairResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

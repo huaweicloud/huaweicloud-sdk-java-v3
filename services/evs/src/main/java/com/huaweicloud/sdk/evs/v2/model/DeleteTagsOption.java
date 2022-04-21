@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DeleteTagsOption */
+/**
+ * DeleteTagsOption
+ */
 public class DeleteTagsOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteTagsOption {
         return this;
     }
 
-    /** 标签键。
-     * 
-     * @return key */
+    /**
+     * 标签键。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -55,7 +58,10 @@ public class DeleteTagsOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

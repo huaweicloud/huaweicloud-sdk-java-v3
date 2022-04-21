@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TopUrlSummary */
+/**
+ * TopUrlSummary
+ */
 public class TopUrlSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** URL名称。
-     * 
-     * @return url */
+    /**
+     * URL名称。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -54,9 +57,10 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** 对应查询类型的值。（流量单位：Byte）
-     * 
-     * @return value */
+    /**
+     * 对应查询类型的值。（流量单位：Byte）
+     * @return value
+     */
     public Long getValue() {
         return value;
     }
@@ -70,9 +74,10 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** 查询起始时间戳。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间戳。
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -86,9 +91,10 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** 查询结束时间戳
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间戳
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -102,9 +108,10 @@ public class TopUrlSummary {
         return this;
     }
 
-    /** 参数类型支持：flux(流量)，req_num(请求总数)。
-     * 
-     * @return statType */
+    /**
+     * 参数类型支持：flux(流量)，req_num(请求总数)。
+     * @return statType
+     */
     public String getStatType() {
         return statType;
     }
@@ -146,7 +153,10 @@ public class TopUrlSummary {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

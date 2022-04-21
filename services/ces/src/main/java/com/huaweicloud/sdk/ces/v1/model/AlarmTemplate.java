@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建的自定义告警模板详细信息 */
+/**
+ * 创建的自定义告警模板详细信息
+ */
 public class AlarmTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板名称，如：alarmTemplate-Test01。
-     * 
-     * @return templateName */
+    /**
+     * 自定义告警模板名称，如：alarmTemplate-Test01。
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -62,9 +65,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板描述。
-     * 
-     * @return templateDescription */
+    /**
+     * 自定义告警模板描述。
+     * @return templateDescription
+     */
     public String getTemplateDescription() {
         return templateDescription;
     }
@@ -78,9 +82,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS，各资源的监控指标名称可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return namespace */
+    /**
+     * 自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS，各资源的监控指标名称可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -94,9 +99,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return dimensionName */
+    /**
+     * 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return dimensionName
+     */
     public String getDimensionName() {
         return dimensionName;
     }
@@ -126,9 +132,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板添加的一组或者多个告警策略。
-     * 
-     * @return templateItems */
+    /**
+     * 自定义告警模板添加的一组或者多个告警策略。
+     * @return templateItems
+     */
     public List<TemplateItem> getTemplateItems() {
         return templateItems;
     }
@@ -142,9 +149,10 @@ public class AlarmTemplate {
         return this;
     }
 
-    /** 自定义告警模板的ID，如：at1603330892378wkDm77y6B。
-     * 
-     * @return templateId */
+    /**
+     * 自定义告警模板的ID，如：at1603330892378wkDm77y6B。
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -189,7 +197,10 @@ public class AlarmTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

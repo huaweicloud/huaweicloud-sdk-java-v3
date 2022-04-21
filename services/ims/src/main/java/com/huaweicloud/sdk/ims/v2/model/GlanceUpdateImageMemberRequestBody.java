@@ -10,17 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 镜像成员的状态。 */
+/**
+ * 镜像成员的状态。
+ */
 public class GlanceUpdateImageMemberRequestBody {
 
-    /** 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。
-     * rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。 */
+    /**
+     * 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。 rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -100,10 +107,10 @@ public class GlanceUpdateImageMemberRequestBody {
         return this;
     }
 
-    /** 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。
-     * rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
-     * 
-     * @return status */
+    /**
+     * 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。 rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -117,9 +124,10 @@ public class GlanceUpdateImageMemberRequestBody {
         return this;
     }
 
-    /** 存储库ID。 如果是CBR创建的整机镜像，则在接受该共享镜像时，为必选参数，需传入该值。 存储库ID可以从云备份服务控制台获取，或者参考《云备份接口参考》的“查询存储库列表”章节查询。
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID。 如果是CBR创建的整机镜像，则在接受该共享镜像时，为必选参数，需传入该值。 存储库ID可以从云备份服务控制台获取，或者参考《云备份接口参考》的“查询存储库列表”章节查询。
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -156,7 +164,10 @@ public class GlanceUpdateImageMemberRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

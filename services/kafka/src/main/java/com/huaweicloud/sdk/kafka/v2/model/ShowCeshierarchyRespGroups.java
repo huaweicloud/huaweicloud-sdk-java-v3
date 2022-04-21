@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowCeshierarchyRespGroups */
+/**
+ * ShowCeshierarchyRespGroups
+ */
 public class ShowCeshierarchyRespGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ShowCeshierarchyRespGroups {
         return this;
     }
 
-    /** 消费组名称。
-     * 
-     * @return name */
+    /**
+     * 消费组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class ShowCeshierarchyRespGroups {
         return this;
     }
 
-    /** topic信息。
-     * 
-     * @return queues */
+    /**
+     * topic信息。
+     * @return queues
+     */
     public List<ShowCeshierarchyRespQueues1> getQueues() {
         return queues;
     }
@@ -97,7 +101,10 @@ public class ShowCeshierarchyRespGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

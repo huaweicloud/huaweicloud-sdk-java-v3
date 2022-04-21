@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEdgeNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 边缘节点名称，模糊匹配
-     * 
-     * @return name */
+    /**
+     * 边缘节点名称，模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，取值范围1~1000，默认为500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，取值范围1~1000，默认为500
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -85,9 +89,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 查询的起始位置，取值范围为非负整数，默认为0
-     * 
-     * @return offset */
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -101,9 +106,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 按终端设备ID查找
-     * 
-     * @return deviceId */
+    /**
+     * 按终端设备ID查找
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -117,9 +123,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 按绑定终端设备名称查找
-     * 
-     * @return deviceName */
+    /**
+     * 按绑定终端设备名称查找
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -133,9 +140,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 按应用名称查找
-     * 
-     * @return appName */
+    /**
+     * 按应用名称查找
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -149,9 +157,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 标签的key和value通过点连接， 多个标签通过逗号连接，如：tags=key1.value1,key2.value2
-     * 
-     * @return tags */
+    /**
+     * 标签的key和value通过点连接， 多个标签通过逗号连接，如：tags=key1.value1,key2.value2
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -165,9 +174,10 @@ public class ListEdgeNodesRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -216,7 +226,10 @@ public class ListEdgeNodesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

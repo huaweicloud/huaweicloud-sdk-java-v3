@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** Job */
+/**
+ * Job
+ */
 public class Job {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,9 +101,10 @@ public class Job {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -115,9 +118,10 @@ public class Job {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return jobName */
+    /**
+     * 任务名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -131,9 +135,10 @@ public class Job {
         return this;
     }
 
-    /** 任务创建者
-     * 
-     * @return jobCreator */
+    /**
+     * 任务创建者
+     * @return jobCreator
+     */
     public String getJobCreator() {
         return jobCreator;
     }
@@ -147,9 +152,10 @@ public class Job {
         return this;
     }
 
-    /** 用户名称
-     * 
-     * @return userName */
+    /**
+     * 用户名称
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -163,9 +169,10 @@ public class Job {
         return this;
     }
 
-    /** 最新执行时间
-     * 
-     * @return lastBuildTime */
+    /**
+     * 最新执行时间
+     * @return lastBuildTime
+     */
     public BigDecimal getLastBuildTime() {
         return lastBuildTime;
     }
@@ -179,9 +186,10 @@ public class Job {
         return this;
     }
 
-    /** 健康分值
-     * 
-     * @return healthScore */
+    /**
+     * 健康分值
+     * @return healthScore
+     */
     public Integer getHealthScore() {
         return healthScore;
     }
@@ -195,9 +203,10 @@ public class Job {
         return this;
     }
 
-    /** 代码来源
-     * 
-     * @return sourceCode */
+    /**
+     * 代码来源
+     * @return sourceCode
+     */
     public String getSourceCode() {
         return sourceCode;
     }
@@ -211,9 +220,10 @@ public class Job {
         return this;
     }
 
-    /** 最新构建状态
-     * 
-     * @return lastBuildStatus */
+    /**
+     * 最新构建状态
+     * @return lastBuildStatus
+     */
     public String getLastBuildStatus() {
         return lastBuildStatus;
     }
@@ -227,9 +237,10 @@ public class Job {
         return this;
     }
 
-    /** 是否已结束
-     * 
-     * @return isFinished */
+    /**
+     * 是否已结束
+     * @return isFinished
+     */
     public Boolean getIsFinished() {
         return isFinished;
     }
@@ -243,9 +254,10 @@ public class Job {
         return this;
     }
 
-    /** 是否已禁用
-     * 
-     * @return disabled */
+    /**
+     * 是否已禁用
+     * @return disabled
+     */
     public Boolean getDisabled() {
         return disabled;
     }
@@ -259,9 +271,10 @@ public class Job {
         return this;
     }
 
-    /** 是否已收藏
-     * 
-     * @return favorite */
+    /**
+     * 是否已收藏
+     * @return favorite
+     */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -275,9 +288,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有修改任务权限
-     * 
-     * @return isModify */
+    /**
+     * 是否有修改任务权限
+     * @return isModify
+     */
     public Boolean getIsModify() {
         return isModify;
     }
@@ -291,9 +305,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有删除任务权限
-     * 
-     * @return isDelete */
+    /**
+     * 是否有删除任务权限
+     * @return isDelete
+     */
     public Boolean getIsDelete() {
         return isDelete;
     }
@@ -307,9 +322,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有执行任务权限
-     * 
-     * @return isExecute */
+    /**
+     * 是否有执行任务权限
+     * @return isExecute
+     */
     public Boolean getIsExecute() {
         return isExecute;
     }
@@ -323,9 +339,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有复制任务权限
-     * 
-     * @return isCopy */
+    /**
+     * 是否有复制任务权限
+     * @return isCopy
+     */
     public Boolean getIsCopy() {
         return isCopy;
     }
@@ -339,9 +356,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有禁用任务权限
-     * 
-     * @return isForbidden */
+    /**
+     * 是否有禁用任务权限
+     * @return isForbidden
+     */
     public Boolean getIsForbidden() {
         return isForbidden;
     }
@@ -355,9 +373,10 @@ public class Job {
         return this;
     }
 
-    /** 是否有查看任务权限
-     * 
-     * @return isView */
+    /**
+     * 是否有查看任务权限
+     * @return isView
+     */
     public Boolean getIsView() {
         return isView;
     }
@@ -433,7 +452,10 @@ public class Job {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

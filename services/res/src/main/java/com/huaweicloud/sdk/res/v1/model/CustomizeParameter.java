@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自定义参数 */
+/**
+ * 自定义参数
+ */
 public class CustomizeParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CustomizeParameter {
         return this;
     }
 
-    /** 别名。
-     * 
-     * @return alias */
+    /**
+     * 别名。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -49,9 +52,10 @@ public class CustomizeParameter {
         return this;
     }
 
-    /** 行为类型。
-     * 
-     * @return behaviorType */
+    /**
+     * 行为类型。
+     * @return behaviorType
+     */
     public String getBehaviorType() {
         return behaviorType;
     }
@@ -65,9 +69,12 @@ public class CustomizeParameter {
         return this;
     }
 
-    /** 阈值。 minimum: 0 maximum: 1
-     * 
-     * @return threshold */
+    /**
+     * 阈值。
+     * minimum: 0
+     * maximum: 1
+     * @return threshold
+     */
     public Double getThreshold() {
         return threshold;
     }
@@ -81,9 +88,10 @@ public class CustomizeParameter {
         return this;
     }
 
-    /** 去重。
-     * 
-     * @return deduplication */
+    /**
+     * 去重。
+     * @return deduplication
+     */
     public String getDeduplication() {
         return deduplication;
     }
@@ -124,7 +132,10 @@ public class CustomizeParameter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

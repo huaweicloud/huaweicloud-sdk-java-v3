@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TypeProperties */
+/**
+ * TypeProperties
+ */
 public class TypeProperties {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TypeProperties {
         return this;
     }
 
-    /** Kill chain事件分类，仅当business为attack有效
-     * 
-     * @return killchain */
+    /**
+     * Kill chain事件分类，仅当business为attack有效
+     * @return killchain
+     */
     public String getKillchain() {
         return killchain;
     }
@@ -44,9 +47,10 @@ public class TypeProperties {
         return this;
     }
 
-    /** Mitre Array 事件分类，仅当business为attack有效
-     * 
-     * @return ttps */
+    /**
+     * Mitre Array 事件分类，仅当business为attack有效
+     * @return ttps
+     */
     public String getTtps() {
         return ttps;
     }
@@ -60,9 +64,10 @@ public class TypeProperties {
         return this;
     }
 
-    /** 影响，适用全部类型
-     * 
-     * @return effects */
+    /**
+     * 影响，适用全部类型
+     * @return effects
+     */
     public String getEffects() {
         return effects;
     }
@@ -100,7 +105,10 @@ public class TypeProperties {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

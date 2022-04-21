@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转发策略对象 */
+/**
+ * 转发策略对象
+ */
 public class CreateL7policyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class CreateL7policyReq {
 
     private String name;
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器 */
+    /**
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+     */
     public static final class ActionEnum {
 
-        /** Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL" */
+        /**
+         * Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL"
+         */
         public static final ActionEnum REDIRECT_TO_POOL = new ActionEnum("REDIRECT_TO_POOL");
 
-        /** Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER" */
+        /**
+         * Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER"
+         */
         public static final ActionEnum REDIRECT_TO_LISTENER = new ActionEnum("REDIRECT_TO_LISTENER");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -147,9 +155,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略名称
-     * 
-     * @return name */
+    /**
+     * 转发策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -163,9 +172,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
-     * 
-     * @return action */
+    /**
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -179,9 +189,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 转发策略所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -195,9 +206,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -211,9 +223,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略额描述信息
-     * 
-     * @return description */
+    /**
+     * 转发策略额描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -227,10 +240,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略对应的监听器ID。当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP或TERMINATED_HTTPS的listener上。
-     * 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
-     * 
-     * @return listenerId */
+    /**
+     * 转发策略对应的监听器ID。当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP或TERMINATED_HTTPS的listener上。 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
+     * @return listenerId
+     */
     public String getListenerId() {
         return listenerId;
     }
@@ -244,9 +257,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发到pool的ID。转发到pool的ID。当action为REDIRECT_TO_POOL时生效。当action为REDIRECT_TO_POOL时必选
-     * 
-     * @return redirectPoolId */
+    /**
+     * 转发到pool的ID。转发到pool的ID。当action为REDIRECT_TO_POOL时生效。当action为REDIRECT_TO_POOL时必选
+     * @return redirectPoolId
+     */
     public String getRedirectPoolId() {
         return redirectPoolId;
     }
@@ -260,9 +274,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选
-     * 
-     * @return redirectListenerId */
+    /**
+     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选
+     * @return redirectListenerId
+     */
     public String getRedirectListenerId() {
         return redirectListenerId;
     }
@@ -276,9 +291,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发到的url。该字段未启用。
-     * 
-     * @return redirectUrl */
+    /**
+     * 转发到的url。该字段未启用。
+     * @return redirectUrl
+     */
     public String getRedirectUrl() {
         return redirectUrl;
     }
@@ -292,9 +308,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。
-     * 
-     * @return position */
+    /**
+     * 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。
+     * @return position
+     */
     public Integer getPosition() {
         return position;
     }
@@ -324,9 +341,10 @@ public class CreateL7policyReq {
         return this;
     }
 
-    /** 指定L7rule的参数，可以在创建L7policy的同时创建L7rule
-     * 
-     * @return rules */
+    /**
+     * 指定L7rule的参数，可以在创建L7policy的同时创建L7rule
+     * @return rules
+     */
     public List<CreateL7ruleReqInPolicy> getRules() {
         return rules;
     }
@@ -391,7 +409,10 @@ public class CreateL7policyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

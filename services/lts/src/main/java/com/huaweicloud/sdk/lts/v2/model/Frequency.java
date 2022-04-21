@@ -10,25 +10,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Frequency */
+/**
+ * Frequency
+ */
 public class Frequency {
 
-    /** 时间类型 */
+    /**
+     * 时间类型
+     */
     public static final class TypeEnum {
 
-        /** Enum CRON for value: "CRON" */
+        /**
+         * Enum CRON for value: "CRON"
+         */
         public static final TypeEnum CRON = new TypeEnum("CRON");
 
-        /** Enum HOURLY for value: "HOURLY" */
+        /**
+         * Enum HOURLY for value: "HOURLY"
+         */
         public static final TypeEnum HOURLY = new TypeEnum("HOURLY");
 
-        /** Enum DAILY for value: "DAILY" */
+        /**
+         * Enum DAILY for value: "DAILY"
+         */
         public static final TypeEnum DAILY = new TypeEnum("DAILY");
 
-        /** Enum WEEKLY for value: "WEEKLY" */
+        /**
+         * Enum WEEKLY for value: "WEEKLY"
+         */
         public static final TypeEnum WEEKLY = new TypeEnum("WEEKLY");
 
-        /** Enum FIXED_RATE for value: "FIXED_RATE" */
+        /**
+         * Enum FIXED_RATE for value: "FIXED_RATE"
+         */
         public static final TypeEnum FIXED_RATE = new TypeEnum("FIXED_RATE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -121,13 +135,19 @@ public class Frequency {
 
     private Integer fixedRate;
 
-    /** 时间单位 */
+    /**
+     * 时间单位
+     */
     public static final class FixedRateUnitEnum {
 
-        /** Enum MINUTE for value: "minute" */
+        /**
+         * Enum MINUTE for value: "minute"
+         */
         public static final FixedRateUnitEnum MINUTE = new FixedRateUnitEnum("minute");
 
-        /** Enum HOUR for value: "hour" */
+        /**
+         * Enum HOUR for value: "hour"
+         */
         public static final FixedRateUnitEnum HOUR = new FixedRateUnitEnum("hour");
 
         private static final Map<String, FixedRateUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -202,9 +222,10 @@ public class Frequency {
         return this;
     }
 
-    /** 时间类型
-     * 
-     * @return type */
+    /**
+     * 时间类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -218,9 +239,10 @@ public class Frequency {
         return this;
     }
 
-    /** 当字段type为\"CRON\"时取该字段
-     * 
-     * @return cronExpr */
+    /**
+     * 当字段type为\"CRON\"时取该字段
+     * @return cronExpr
+     */
     public String getCronExpr() {
         return cronExpr;
     }
@@ -234,9 +256,12 @@ public class Frequency {
         return this;
     }
 
-    /** 当字段type为\"DAILY\"或者\"WEEKLY\"时取该字段 minimum: 0 maximum: 24
-     * 
-     * @return hourOfDay */
+    /**
+     * 当字段type为\"DAILY\"或者\"WEEKLY\"时取该字段
+     * minimum: 0
+     * maximum: 24
+     * @return hourOfDay
+     */
     public Integer getHourOfDay() {
         return hourOfDay;
     }
@@ -250,9 +275,12 @@ public class Frequency {
         return this;
     }
 
-    /** 当字段type为\"WEEKLY\"时取该字段(周日~周六) minimum: 1 maximum: 7
-     * 
-     * @return dayOfWeek */
+    /**
+     * 当字段type为\"WEEKLY\"时取该字段(周日~周六)
+     * minimum: 1
+     * maximum: 7
+     * @return dayOfWeek
+     */
     public Integer getDayOfWeek() {
         return dayOfWeek;
     }
@@ -266,10 +294,12 @@ public class Frequency {
         return this;
     }
 
-    /** 当字段type为\"FIXED_RATE\"时取该字段(当fixed_rate_unit单位为minute，最大值60;当fixed_rate_unit单位为hour，最大值24) minimum: 1 maximum:
-     * 60
-     * 
-     * @return fixedRate */
+    /**
+     * 当字段type为\"FIXED_RATE\"时取该字段(当fixed_rate_unit单位为minute，最大值60;当fixed_rate_unit单位为hour，最大值24)
+     * minimum: 1
+     * maximum: 60
+     * @return fixedRate
+     */
     public Integer getFixedRate() {
         return fixedRate;
     }
@@ -283,9 +313,10 @@ public class Frequency {
         return this;
     }
 
-    /** 时间单位
-     * 
-     * @return fixedRateUnit */
+    /**
+     * 时间单位
+     * @return fixedRateUnit
+     */
     public FixedRateUnitEnum getFixedRateUnit() {
         return fixedRateUnit;
     }
@@ -329,7 +360,10 @@ public class Frequency {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

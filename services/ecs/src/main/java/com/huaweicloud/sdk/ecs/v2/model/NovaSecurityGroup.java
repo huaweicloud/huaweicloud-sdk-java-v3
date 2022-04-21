@@ -43,9 +43,10 @@ public class NovaSecurityGroup {
         return this;
     }
 
-    /** 安全组描述信息，长度0-255
-     * 
-     * @return description */
+    /**
+     * 安全组描述信息，长度0-255
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -59,9 +60,10 @@ public class NovaSecurityGroup {
         return this;
     }
 
-    /** 安全组ID，UUID格式
-     * 
-     * @return id */
+    /**
+     * 安全组ID，UUID格式
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,9 +77,10 @@ public class NovaSecurityGroup {
         return this;
     }
 
-    /** 安全组名字，长度0-255
-     * 
-     * @return name */
+    /**
+     * 安全组名字，长度0-255
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +94,10 @@ public class NovaSecurityGroup {
         return this;
     }
 
-    /** 租户ID或项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 租户ID或项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -123,9 +127,10 @@ public class NovaSecurityGroup {
         return this;
     }
 
-    /** 安全组规则列表
-     * 
-     * @return rules */
+    /**
+     * 安全组规则列表
+     * @return rules
+     */
     public List<NovaSecurityGroupCommonRule> getRules() {
         return rules;
     }
@@ -167,7 +172,10 @@ public class NovaSecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

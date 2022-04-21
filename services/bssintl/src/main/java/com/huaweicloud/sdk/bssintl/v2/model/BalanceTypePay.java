@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BalanceTypePay */
+/**
+ * BalanceTypePay
+ */
 public class BalanceTypePay {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class BalanceTypePay {
         return this;
     }
 
-    /** 账户类型。
-     * BALANCE_TYPE_DEBIT：现金账户BALANCE_TYPE_CREDIT：信用账户BALANCE_TYPE_BONUS：奖励账户（该账户已下线）BALANCE_TYPE_COUPON：代金券账户BALANCE_TYPE_DEBIT_RATE：折扣账户
-     * 
-     * @return balanceTypeId */
+    /**
+     * 账户类型。 BALANCE_TYPE_DEBIT：现金账户BALANCE_TYPE_CREDIT：信用账户BALANCE_TYPE_BONUS：奖励账户（该账户已下线）BALANCE_TYPE_COUPON：代金券账户BALANCE_TYPE_DEBIT_RATE：折扣账户
+     * @return balanceTypeId
+     */
     public String getBalanceTypeId() {
         return balanceTypeId;
     }
@@ -40,9 +42,10 @@ public class BalanceTypePay {
         return this;
     }
 
-    /** 支出金额。 单位：分
-     * 
-     * @return deductAmount */
+    /**
+     * 支出金额。 单位：分
+     * @return deductAmount
+     */
     public Double getDeductAmount() {
         return deductAmount;
     }
@@ -79,7 +82,10 @@ public class BalanceTypePay {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

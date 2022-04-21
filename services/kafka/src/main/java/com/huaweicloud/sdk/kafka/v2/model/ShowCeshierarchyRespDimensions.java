@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowCeshierarchyRespDimensions */
+/**
+ * ShowCeshierarchyRespDimensions
+ */
 public class ShowCeshierarchyRespDimensions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 监控维度名称。
-     * 
-     * @return name */
+    /**
+     * 监控维度名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -73,9 +76,10 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 监控指标名称。
-     * 
-     * @return metrics */
+    /**
+     * 监控指标名称。
+     * @return metrics
+     */
     public List<String> getMetrics() {
         return metrics;
     }
@@ -105,9 +109,10 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 监控查询使用的key。
-     * 
-     * @return keyName */
+    /**
+     * 监控查询使用的key。
+     * @return keyName
+     */
     public List<String> getKeyName() {
         return keyName;
     }
@@ -137,9 +142,10 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 监控维度路由。
-     * 
-     * @return dimRouter */
+    /**
+     * 监控维度路由。
+     * @return dimRouter
+     */
     public List<String> getDimRouter() {
         return dimRouter;
     }
@@ -169,9 +175,10 @@ public class ShowCeshierarchyRespDimensions {
         return this;
     }
 
-    /** 子维度列表。
-     * 
-     * @return children */
+    /**
+     * 子维度列表。
+     * @return children
+     */
     public List<ShowCeshierarchyRespChildren> getChildren() {
         return children;
     }
@@ -214,7 +221,10 @@ public class ShowCeshierarchyRespDimensions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

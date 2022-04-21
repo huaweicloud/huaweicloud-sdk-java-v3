@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRpoStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,12 @@ public class ListRpoStatisticsRequest {
         return this;
     }
 
-    /** 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -54,9 +59,11 @@ public class ListRpoStatisticsRequest {
         return this;
     }
 
-    /** 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -70,9 +77,10 @@ public class ListRpoStatisticsRequest {
         return this;
     }
 
-    /** 开始时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return startTime */
+    /**
+     * 开始时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -86,9 +94,10 @@ public class ListRpoStatisticsRequest {
         return this;
     }
 
-    /** 结束时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -102,9 +111,10 @@ public class ListRpoStatisticsRequest {
         return this;
     }
 
-    /** 资源类型。replication：表示查询复制对的RPO超标趋势记录。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型。replication：表示查询复制对的RPO超标趋势记录。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -147,7 +157,10 @@ public class ListRpoStatisticsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

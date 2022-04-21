@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** oidc配置详细信息 */
+/**
+ * oidc配置详细信息
+ */
 public class OpenIdConnectConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,10 +40,14 @@ public class OpenIdConnectConfig {
 
     private String scope;
 
-    /** 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 */
+    /**
+     * 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 
+     */
     public static final class ResponseTypeEnum {
 
-        /** Enum ID_TOKEN for value: "id_token" */
+        /**
+         * Enum ID_TOKEN for value: "id_token"
+         */
         public static final ResponseTypeEnum ID_TOKEN = new ResponseTypeEnum("id_token");
 
         private static final Map<String, ResponseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,13 +116,19 @@ public class OpenIdConnectConfig {
 
     private ResponseTypeEnum responseType;
 
-    /** 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 */
+    /**
+     * 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     */
     public static final class ResponseModeEnum {
 
-        /** Enum FRAGMENT for value: "fragment" */
+        /**
+         * Enum FRAGMENT for value: "fragment"
+         */
         public static final ResponseModeEnum FRAGMENT = new ResponseModeEnum("fragment");
 
-        /** Enum FORM_POST for value: "form_post" */
+        /**
+         * Enum FORM_POST for value: "form_post"
+         */
         public static final ResponseModeEnum FORM_POST = new ResponseModeEnum("form_post");
 
         private static final Map<String, ResponseModeEnum> STATIC_FIELDS = createStaticFields();
@@ -196,9 +208,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** 访问方式: program_console: 支持编程访问和管理控制台访问方式; program: 支持编程访问方式
-     * 
-     * @return accessMode */
+    /**
+     * 访问方式: program_console: 支持编程访问和管理控制台访问方式; program: 支持编程访问方式
+     * @return accessMode
+     */
     public String getAccessMode() {
         return accessMode;
     }
@@ -212,9 +225,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** OpenID Connect身份提供商标识, 对应ID token 中 iss
-     * 
-     * @return idpUrl */
+    /**
+     * OpenID Connect身份提供商标识, 对应ID token 中 iss
+     * @return idpUrl
+     */
     public String getIdpUrl() {
         return idpUrl;
     }
@@ -228,9 +242,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** 在OpenID Connect身份提供商注册的客户端ID
-     * 
-     * @return clientId */
+    /**
+     * 在OpenID Connect身份提供商注册的客户端ID
+     * @return clientId
+     */
     public String getClientId() {
         return clientId;
     }
@@ -244,9 +259,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** OpenID Connect身份提供商授权地址; 编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     * 
-     * @return authorizationEndpoint */
+    /**
+     * OpenID Connect身份提供商授权地址; 编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     * @return authorizationEndpoint
+     */
     public String getAuthorizationEndpoint() {
         return authorizationEndpoint;
     }
@@ -260,11 +276,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** 授权请求信息范围，编程访问和管理控制台访问方式必选，编程访问方式不可选，可选值：openid 、email、profile，IDP自定义scope，字符集a-zA-Z_0-9
-     * ，1-10个可选值组合空格分割，至少包括openid，顺序无关，总长度最长255字符，例如：\"openid\"、\"openid email\"、\"openid profile\" 、\"openid email
-     * profile\"
-     * 
-     * @return scope */
+    /**
+     * 授权请求信息范围，编程访问和管理控制台访问方式必选，编程访问方式不可选，可选值：openid 、email、profile，IDP自定义scope，字符集a-zA-Z_0-9 ，1-10个可选值组合空格分割，至少包括openid，顺序无关，总长度最长255字符，例如：\"openid\"、\"openid email\"、\"openid profile\" 、\"openid email profile\"
+     * @return scope
+     */
     public String getScope() {
         return scope;
     }
@@ -278,9 +293,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     * 
-     * @return responseType */
+    /**
+     * 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 
+     * @return responseType
+     */
     public ResponseTypeEnum getResponseType() {
         return responseType;
     }
@@ -294,9 +310,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     * 
-     * @return responseMode */
+    /**
+     * 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     * @return responseMode
+     */
     public ResponseModeEnum getResponseMode() {
         return responseMode;
     }
@@ -310,9 +327,10 @@ public class OpenIdConnectConfig {
         return this;
     }
 
-    /** OpenID Connect身份提供商ID Token签名的公钥
-     * 
-     * @return signingKey */
+    /**
+     * OpenID Connect身份提供商ID Token签名的公钥
+     * @return signingKey
+     */
     public String getSigningKey() {
         return signingKey;
     }
@@ -362,7 +380,10 @@ public class OpenIdConnectConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

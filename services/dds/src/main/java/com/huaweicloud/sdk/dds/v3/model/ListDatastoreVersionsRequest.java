@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatastoreVersionsRequest {
 
-    /** 数据库版本类型。取值为“DDS-Community”。 */
+    /**
+     * 数据库版本类型。取值为“DDS-Community”。
+     */
     public static final class DatastoreNameEnum {
 
-        /** Enum DDS_COMMUNITY for value: "DDS-Community" */
+        /**
+         * Enum DDS_COMMUNITY for value: "DDS-Community"
+         */
         public static final DatastoreNameEnum DDS_COMMUNITY = new DatastoreNameEnum("DDS-Community");
 
-        /** Enum DDS_ENHANCED for value: "DDS-Enhanced" */
+        /**
+         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
+         */
         public static final DatastoreNameEnum DDS_ENHANCED = new DatastoreNameEnum("DDS-Enhanced");
 
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ListDatastoreVersionsRequest {
         return this;
     }
 
-    /** 数据库版本类型。取值为“DDS-Community”。
-     * 
-     * @return datastoreName */
+    /**
+     * 数据库版本类型。取值为“DDS-Community”。
+     * @return datastoreName
+     */
     public DatastoreNameEnum getDatastoreName() {
         return datastoreName;
     }
@@ -131,7 +140,10 @@ public class ListDatastoreVersionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

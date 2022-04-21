@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListNameServersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class ListNameServersRequest {
         return this;
     }
 
-    /** 待查询名称服务器的类型。 取值范围: public, private。 如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。 如果为private，表示查询内网的名称服务器。
-     * 搜索模式精确搜索。 默认值为空。
-     * 
-     * @return type */
+    /**
+     * 待查询名称服务器的类型。 取值范围: public, private。 如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。 如果为private，表示查询内网的名称服务器。 搜索模式精确搜索。 默认值为空。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -40,9 +42,10 @@ public class ListNameServersRequest {
         return this;
     }
 
-    /** 待查询的region ID。 当查询公网的名称服务器时，此处不填。 搜索模式精确搜索。 默认值为空。
-     * 
-     * @return region */
+    /**
+     * 待查询的region ID。 当查询公网的名称服务器时，此处不填。 搜索模式精确搜索。 默认值为空。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -79,7 +82,10 @@ public class ListNameServersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

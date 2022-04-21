@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RefreshTaskRequest */
+/**
+ * RefreshTaskRequest
+ */
 public class RefreshTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RefreshTaskRequest {
         return this;
     }
 
-    /** Get refreshTask
-     * 
-     * @return refreshTask */
+    /**
+     * Get refreshTask
+     * @return refreshTask
+     */
     public RefreshTaskRequestBody getRefreshTask() {
         return refreshTask;
     }
@@ -65,7 +68,10 @@ public class RefreshTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

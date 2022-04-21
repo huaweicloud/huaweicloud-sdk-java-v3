@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 输入输出过滤配置 */
+/**
+ * 输入输出过滤配置
+ */
 public class StateDataFilter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StateDataFilter {
         return this;
     }
 
-    /** 输入过滤表达式（JsonPath）
-     * 
-     * @return input */
+    /**
+     * 输入过滤表达式（JsonPath）
+     * @return input
+     */
     public String getInput() {
         return input;
     }
@@ -39,9 +42,10 @@ public class StateDataFilter {
         return this;
     }
 
-    /** 输出过滤表达式（JsonPath）
-     * 
-     * @return output */
+    /**
+     * 输出过滤表达式（JsonPath）
+     * @return output
+     */
     public String getOutput() {
         return output;
     }
@@ -77,7 +81,10 @@ public class StateDataFilter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

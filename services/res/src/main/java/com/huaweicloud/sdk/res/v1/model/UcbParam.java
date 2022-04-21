@@ -25,9 +25,12 @@ public class UcbParam {
         return this;
     }
 
-    /** 折中参数。 minimum: 0 maximum: 1
-     * 
-     * @return alpha */
+    /**
+     * 折中参数。
+     * minimum: 0
+     * maximum: 1
+     * @return alpha
+     */
     public Double getAlpha() {
         return alpha;
     }
@@ -41,9 +44,12 @@ public class UcbParam {
         return this;
     }
 
-    /** 最小行为次数。 minimum: 30 maximum: 1000
-     * 
-     * @return minUsedNum */
+    /**
+     * 最小行为次数。
+     * minimum: 30
+     * maximum: 1000
+     * @return minUsedNum
+     */
     public Integer getMinUsedNum() {
         return minUsedNum;
     }
@@ -79,7 +85,10 @@ public class UcbParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** JobInstance */
+/**
+ * JobInstance
+ */
 public class JobInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get jobName
-     * 
-     * @return jobName */
+    /**
+     * Get jobName
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -64,9 +67,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +84,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get planTime
-     * 
-     * @return planTime */
+    /**
+     * Get planTime
+     * @return planTime
+     */
     public Integer getPlanTime() {
         return planTime;
     }
@@ -96,9 +101,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -112,9 +118,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -128,9 +135,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get executeTime
-     * 
-     * @return executeTime */
+    /**
+     * Get executeTime
+     * @return executeTime
+     */
     public Integer getExecuteTime() {
         return executeTime;
     }
@@ -144,9 +152,10 @@ public class JobInstance {
         return this;
     }
 
-    /** Get instancesId
-     * 
-     * @return instancesId */
+    /**
+     * Get instancesId
+     * @return instancesId
+     */
     public String getInstancesId() {
         return instancesId;
     }
@@ -192,7 +201,10 @@ public class JobInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群基本信息。 */
+/**
+ * 集群基本信息。
+ */
 public class ShowClusterRespCluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 控制器ID。
-     * 
-     * @return controller */
+    /**
+     * 控制器ID。
+     * @return controller
+     */
     public String getController() {
         return controller;
     }
@@ -88,9 +91,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 节点列表。
-     * 
-     * @return brokers */
+    /**
+     * 节点列表。
+     * @return brokers
+     */
     public List<ShowClusterRespClusterBrokers> getBrokers() {
         return brokers;
     }
@@ -104,9 +108,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 主题数量。
-     * 
-     * @return topicsCount */
+    /**
+     * 主题数量。
+     * @return topicsCount
+     */
     public Integer getTopicsCount() {
         return topicsCount;
     }
@@ -120,9 +125,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 分区数量。
-     * 
-     * @return partitionsCount */
+    /**
+     * 分区数量。
+     * @return partitionsCount
+     */
     public Integer getPartitionsCount() {
         return partitionsCount;
     }
@@ -136,9 +142,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 在线分区数量。
-     * 
-     * @return onlinePartitionsCount */
+    /**
+     * 在线分区数量。
+     * @return onlinePartitionsCount
+     */
     public Integer getOnlinePartitionsCount() {
         return onlinePartitionsCount;
     }
@@ -152,9 +159,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 副本数量。
-     * 
-     * @return replicasCount */
+    /**
+     * 副本数量。
+     * @return replicasCount
+     */
     public Integer getReplicasCount() {
         return replicasCount;
     }
@@ -168,9 +176,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** ISR（In-Sync Replicas） 副本总数。
-     * 
-     * @return isrReplicasCount */
+    /**
+     * ISR（In-Sync Replicas） 副本总数。
+     * @return isrReplicasCount
+     */
     public Integer getIsrReplicasCount() {
         return isrReplicasCount;
     }
@@ -184,9 +193,10 @@ public class ShowClusterRespCluster {
         return this;
     }
 
-    /** 消费组数量。
-     * 
-     * @return consumersCount */
+    /**
+     * 消费组数量。
+     * @return consumersCount
+     */
     public Integer getConsumersCount() {
         return consumersCount;
     }
@@ -242,7 +252,10 @@ public class ShowClusterRespCluster {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -43,9 +43,10 @@ public class Version {
         return this;
     }
 
-    /** 版本状态。
-     * 
-     * @return status */
+    /**
+     * 版本状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -59,9 +60,10 @@ public class Version {
         return this;
     }
 
-    /** 最后更新时间。
-     * 
-     * @return updated */
+    /**
+     * 最后更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -91,9 +93,10 @@ public class Version {
         return this;
     }
 
-    /** 版本的资源链接信息。
-     * 
-     * @return links */
+    /**
+     * 版本的资源链接信息。
+     * @return links
+     */
     public List<VersionLinks> getLinks() {
         return links;
     }
@@ -107,9 +110,10 @@ public class Version {
         return this;
     }
 
-    /** 版本号，如v3.6。
-     * 
-     * @return id */
+    /**
+     * 版本号，如v3.6。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -139,9 +143,10 @@ public class Version {
         return this;
     }
 
-    /** 支持的消息格式。
-     * 
-     * @return mediaTypes */
+    /**
+     * 支持的消息格式。
+     * @return mediaTypes
+     */
     public List<VersionMediatypes> getMediaTypes() {
         return mediaTypes;
     }
@@ -182,7 +187,10 @@ public class Version {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

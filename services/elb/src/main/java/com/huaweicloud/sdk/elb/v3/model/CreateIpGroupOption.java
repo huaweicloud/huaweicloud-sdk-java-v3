@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建IP地址组请求参数。 */
+/**
+ * 创建IP地址组请求参数。
+ */
 public class CreateIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * IP地址组所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -57,9 +60,10 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的描述。
-     * 
-     * @return description */
+    /**
+     * IP地址组的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -73,9 +77,10 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的名称。
-     * 
-     * @return name */
+    /**
+     * IP地址组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -105,9 +110,10 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组中包含的IP或网段列表。[]表示任意IP。
-     * 
-     * @return ipList */
+    /**
+     * IP地址组中包含的IP或网段列表。[]表示任意IP。
+     * @return ipList
+     */
     public List<CreateIpGroupIpOption> getIpList() {
         return ipList;
     }
@@ -121,9 +127,10 @@ public class CreateIpGroupOption {
         return this;
     }
 
-    /** IP地址组所在的企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -166,7 +173,10 @@ public class CreateIpGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

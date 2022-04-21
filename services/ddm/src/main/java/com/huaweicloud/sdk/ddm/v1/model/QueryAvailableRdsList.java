@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QueryAvailableRdsList。 */
+/**
+ * QueryAvailableRdsList。
+ */
 public class QueryAvailableRdsList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例 ID。
-     * 
-     * @return id */
+    /**
+     * 数据库实例 ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -84,9 +87,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例所在租户在某一region下的project ID。
-     * 
-     * @return projectId */
+    /**
+     * 数据库实例所在租户在某一region下的project ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -100,9 +104,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例状态。
-     * 
-     * @return status */
+    /**
+     * 数据库实例状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -116,9 +121,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例名称。
-     * 
-     * @return name */
+    /**
+     * 数据库实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -132,9 +138,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例引擎名称。
-     * 
-     * @return engineName */
+    /**
+     * 数据库实例引擎名称。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -148,9 +155,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例引擎版本。
-     * 
-     * @return engineSoftwareVersion */
+    /**
+     * 数据库实例引擎版本。
+     * @return engineSoftwareVersion
+     */
     public String getEngineSoftwareVersion() {
         return engineSoftwareVersion;
     }
@@ -164,9 +172,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例内网连接地址。
-     * 
-     * @return privateIp */
+    /**
+     * 数据库实例内网连接地址。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -180,9 +189,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例类型（主备或单机）。
-     * 
-     * @return mode */
+    /**
+     * 数据库实例类型（主备或单机）。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -196,9 +206,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 数据库实例端口。
-     * 
-     * @return port */
+    /**
+     * 数据库实例端口。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -212,9 +223,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return azCode */
+    /**
+     * 可用区。
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -228,9 +240,10 @@ public class QueryAvailableRdsList {
         return this;
     }
 
-    /** 时区。
-     * 
-     * @return timeZone */
+    /**
+     * 时区。
+     * @return timeZone
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -295,7 +308,10 @@ public class QueryAvailableRdsList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

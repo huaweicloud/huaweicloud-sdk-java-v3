@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHasVerifiedContactsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,12 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 联系方式类型 minimum: 0 maximum: 1
-     * 
-     * @return contactWay */
+    /**
+     * 联系方式类型
+     * minimum: 0
+     * maximum: 1
+     * @return contactWay
+     */
     public Integer getContactWay() {
         return contactWay;
     }
@@ -89,9 +94,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -105,9 +111,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return subCustomerId */
+    /**
+     * 子用户id
+     * @return subCustomerId
+     */
     public String getSubCustomerId() {
         return subCustomerId;
     }
@@ -121,9 +128,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 过期时间
-     * 
-     * @return expiredTime */
+    /**
+     * 过期时间
+     * @return expiredTime
+     */
     public String getExpiredTime() {
         return expiredTime;
     }
@@ -137,9 +145,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 验证序列号
-     * 
-     * @return verifiedId */
+    /**
+     * 验证序列号
+     * @return verifiedId
+     */
     public String getVerifiedId() {
         return verifiedId;
     }
@@ -153,9 +162,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 联系方式的值
-     * 
-     * @return contactValue */
+    /**
+     * 联系方式的值
+     * @return contactValue
+     */
     public String getContactValue() {
         return contactValue;
     }
@@ -169,9 +179,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -185,9 +196,12 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -201,9 +215,12 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 查询数量 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询数量
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -217,9 +234,12 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
-     * 
-     * @return xSite */
+    /**
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
+     * minimum: 0
+     * maximum: 1
+     * @return xSite
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
     public Integer getXSite() {
@@ -235,9 +255,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * 
-     * @return xLanguage */
+    /**
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -253,9 +274,10 @@ public class ListHasVerifiedContactsRequest {
         return this;
     }
 
-    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
-     * 
-     * @return xTimeZone */
+    /**
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
+     * @return xTimeZone
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
@@ -325,7 +347,10 @@ public class ListHasVerifiedContactsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

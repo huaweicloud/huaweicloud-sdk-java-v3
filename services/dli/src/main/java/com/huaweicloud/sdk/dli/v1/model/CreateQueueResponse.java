@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateQueueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求执行是否成功。“true”表示请求执行成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 请求执行是否成功。“true”表示请求执行成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -45,9 +48,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统提示信息，执行成功时，信息可能为空。
-     * 
-     * @return message */
+    /**
+     * 系统提示信息，执行成功时，信息可能为空。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -61,9 +65,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 新增队列的名称。
-     * 
-     * @return queueName */
+    /**
+     * 新增队列的名称。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -102,7 +107,10 @@ public class CreateQueueResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

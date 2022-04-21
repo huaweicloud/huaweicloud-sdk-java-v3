@@ -75,9 +75,10 @@ public class ItemList {
         return this;
     }
 
-    /** 货物或应税劳务、服务名称。
-     * 
-     * @return name */
+    /**
+     * 货物或应税劳务、服务名称。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +92,10 @@ public class ItemList {
         return this;
     }
 
-    /** 规格型号。
-     * 
-     * @return specification */
+    /**
+     * 规格型号。 
+     * @return specification
+     */
     public String getSpecification() {
         return specification;
     }
@@ -107,9 +109,10 @@ public class ItemList {
         return this;
     }
 
-    /** 单位。
-     * 
-     * @return unit */
+    /**
+     * 单位。 
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -123,9 +126,10 @@ public class ItemList {
         return this;
     }
 
-    /** 数量。
-     * 
-     * @return quantity */
+    /**
+     * 数量。 
+     * @return quantity
+     */
     public String getQuantity() {
         return quantity;
     }
@@ -139,9 +143,10 @@ public class ItemList {
         return this;
     }
 
-    /** 单价。
-     * 
-     * @return unitPrice */
+    /**
+     * 单价。 
+     * @return unitPrice
+     */
     public String getUnitPrice() {
         return unitPrice;
     }
@@ -155,9 +160,10 @@ public class ItemList {
         return this;
     }
 
-    /** 车牌号码。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return licensePlateNumber */
+    /**
+     * 车牌号码。 当“advanced_mode”设置为“true”时才返回。 
+     * @return licensePlateNumber
+     */
     public String getLicensePlateNumber() {
         return licensePlateNumber;
     }
@@ -171,9 +177,10 @@ public class ItemList {
         return this;
     }
 
-    /** 金额。
-     * 
-     * @return amount */
+    /**
+     * 金额。 
+     * @return amount
+     */
     public String getAmount() {
         return amount;
     }
@@ -187,9 +194,10 @@ public class ItemList {
         return this;
     }
 
-    /** 税率。
-     * 
-     * @return taxRate */
+    /**
+     * 税率。 
+     * @return taxRate
+     */
     public String getTaxRate() {
         return taxRate;
     }
@@ -203,9 +211,10 @@ public class ItemList {
         return this;
     }
 
-    /** 税额。
-     * 
-     * @return tax */
+    /**
+     * 税额。 
+     * @return tax
+     */
     public String getTax() {
         return tax;
     }
@@ -219,9 +228,10 @@ public class ItemList {
         return this;
     }
 
-    /** 通行日期止。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return endDate */
+    /**
+     * 通行日期止。 当“advanced_mode”设置为“true”时才返回。 
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -235,9 +245,10 @@ public class ItemList {
         return this;
     }
 
-    /** 通行日期起。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return startDate */
+    /**
+     * 通行日期起。 当“advanced_mode”设置为“true”时才返回。 
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -251,9 +262,10 @@ public class ItemList {
         return this;
     }
 
-    /** 车辆类型。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return vehicleType */
+    /**
+     * 车辆类型。 当“advanced_mode”设置为“true”时才返回。 
+     * @return vehicleType
+     */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -317,7 +329,10 @@ public class ItemList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

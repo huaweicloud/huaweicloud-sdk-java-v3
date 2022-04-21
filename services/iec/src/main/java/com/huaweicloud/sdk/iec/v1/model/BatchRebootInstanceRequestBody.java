@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量重启边缘实例请求体。 */
+/**
+ * 批量重启边缘实例请求体。
+ */
 public class BatchRebootInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BatchRebootInstanceRequestBody {
         return this;
     }
 
-    /** Get reboot
-     * 
-     * @return reboot */
+    /**
+     * Get reboot
+     * @return reboot
+     */
     public BatchReboot getReboot() {
         return reboot;
     }
@@ -65,7 +68,10 @@ public class BatchRebootInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

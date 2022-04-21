@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 指标分子过滤条件 */
+/**
+ * 指标分子过滤条件
+ */
 public class MetricRequest3Dividend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,9 +145,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 是否按时
-     * 
-     * @return onTime */
+    /**
+     * 是否按时
+     * @return onTime
+     */
     public String getOnTime() {
         return onTime;
     }
@@ -159,9 +162,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField16 */
+    /**
+     * 自定义字段
+     * @return customField16
+     */
     public String getCustomField16() {
         return customField16;
     }
@@ -175,9 +179,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField17 */
+    /**
+     * 自定义字段
+     * @return customField17
+     */
     public String getCustomField17() {
         return customField17;
     }
@@ -191,9 +196,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField18 */
+    /**
+     * 自定义字段
+     * @return customField18
+     */
     public String getCustomField18() {
         return customField18;
     }
@@ -207,9 +213,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField19 */
+    /**
+     * 自定义字段
+     * @return customField19
+     */
     public String getCustomField19() {
         return customField19;
     }
@@ -223,9 +230,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField20 */
+    /**
+     * 自定义字段
+     * @return customField20
+     */
     public String getCustomField20() {
         return customField20;
     }
@@ -239,9 +247,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField21 */
+    /**
+     * 自定义字段
+     * @return customField21
+     */
     public String getCustomField21() {
         return customField21;
     }
@@ -255,9 +264,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField22 */
+    /**
+     * 自定义字段
+     * @return customField22
+     */
     public String getCustomField22() {
         return customField22;
     }
@@ -271,9 +281,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField23 */
+    /**
+     * 自定义字段
+     * @return customField23
+     */
     public String getCustomField23() {
         return customField23;
     }
@@ -287,9 +298,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField24 */
+    /**
+     * 自定义字段
+     * @return customField24
+     */
     public String getCustomField24() {
         return customField24;
     }
@@ -303,9 +315,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField25 */
+    /**
+     * 自定义字段
+     * @return customField25
+     */
     public String getCustomField25() {
         return customField25;
     }
@@ -319,9 +332,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField26 */
+    /**
+     * 自定义字段
+     * @return customField26
+     */
     public String getCustomField26() {
         return customField26;
     }
@@ -335,9 +349,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField27 */
+    /**
+     * 自定义字段
+     * @return customField27
+     */
     public String getCustomField27() {
         return customField27;
     }
@@ -351,9 +366,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField28 */
+    /**
+     * 自定义字段
+     * @return customField28
+     */
     public String getCustomField28() {
         return customField28;
     }
@@ -367,9 +383,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField29 */
+    /**
+     * 自定义字段
+     * @return customField29
+     */
     public String getCustomField29() {
         return customField29;
     }
@@ -383,9 +400,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField30 */
+    /**
+     * 自定义字段
+     * @return customField30
+     */
     public String getCustomField30() {
         return customField30;
     }
@@ -399,9 +417,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField31 */
+    /**
+     * 自定义字段
+     * @return customField31
+     */
     public String getCustomField31() {
         return customField31;
     }
@@ -415,9 +434,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField32 */
+    /**
+     * 自定义字段
+     * @return customField32
+     */
     public String getCustomField32() {
         return customField32;
     }
@@ -431,9 +451,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField33 */
+    /**
+     * 自定义字段
+     * @return customField33
+     */
     public String getCustomField33() {
         return customField33;
     }
@@ -447,9 +468,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField34 */
+    /**
+     * 自定义字段
+     * @return customField34
+     */
     public String getCustomField34() {
         return customField34;
     }
@@ -463,9 +485,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField35 */
+    /**
+     * 自定义字段
+     * @return customField35
+     */
     public String getCustomField35() {
         return customField35;
     }
@@ -479,9 +502,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField36 */
+    /**
+     * 自定义字段
+     * @return customField36
+     */
     public String getCustomField36() {
         return customField36;
     }
@@ -495,9 +519,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField37 */
+    /**
+     * 自定义字段
+     * @return customField37
+     */
     public String getCustomField37() {
         return customField37;
     }
@@ -511,9 +536,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField38 */
+    /**
+     * 自定义字段
+     * @return customField38
+     */
     public String getCustomField38() {
         return customField38;
     }
@@ -527,9 +553,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField39 */
+    /**
+     * 自定义字段
+     * @return customField39
+     */
     public String getCustomField39() {
         return customField39;
     }
@@ -543,9 +570,10 @@ public class MetricRequest3Dividend {
         return this;
     }
 
-    /** 自定义字段
-     * 
-     * @return customField40 */
+    /**
+     * 自定义字段
+     * @return customField40
+     */
     public String getCustomField40() {
         return customField40;
     }
@@ -655,7 +683,10 @@ public class MetricRequest3Dividend {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

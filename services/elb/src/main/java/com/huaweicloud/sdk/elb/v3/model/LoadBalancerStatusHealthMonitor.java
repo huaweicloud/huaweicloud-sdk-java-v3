@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LB状态树的后端服务器组健康检查器状态信息。 */
+/**
+ * LB状态树的后端服务器组健康检查器状态信息。
+ */
 public class LoadBalancerStatusHealthMonitor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class LoadBalancerStatusHealthMonitor {
         return this;
     }
 
-    /** 协议类型。取值：TCP、UDP_CONNECT、HTTP、HTTPS。
-     * 
-     * @return type */
+    /**
+     * 协议类型。取值：TCP、UDP_CONNECT、HTTP、HTTPS。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -49,9 +52,10 @@ public class LoadBalancerStatusHealthMonitor {
         return this;
     }
 
-    /** 健康检查器ID。
-     * 
-     * @return id */
+    /**
+     * 健康检查器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -65,9 +69,10 @@ public class LoadBalancerStatusHealthMonitor {
         return this;
     }
 
-    /** 健康检查器名称。
-     * 
-     * @return name */
+    /**
+     * 健康检查器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +86,10 @@ public class LoadBalancerStatusHealthMonitor {
         return this;
     }
 
-    /** 健康检查器的配置状态。取值：ACTIVE表示使用中。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 健康检查器的配置状态。取值：ACTIVE表示使用中。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -124,7 +130,10 @@ public class LoadBalancerStatusHealthMonitor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

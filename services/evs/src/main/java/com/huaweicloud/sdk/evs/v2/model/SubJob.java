@@ -11,22 +11,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子Job的详细信息。 */
+/**
+ * 子Job的详细信息。
+ */
 public class SubJob {
 
-    /** 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。 */
+    /**
+     * 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +150,10 @@ public class SubJob {
         return this;
     }
 
-    /** 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
-     * 
-     * @return status */
+    /**
+     * 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -163,9 +176,10 @@ public class SubJob {
         return this;
     }
 
-    /** Get entities
-     * 
-     * @return entities */
+    /**
+     * Get entities
+     * @return entities
+     */
     public SubJobEntities getEntities() {
         return entities;
     }
@@ -179,9 +193,10 @@ public class SubJob {
         return this;
     }
 
-    /** 子job的ID。
-     * 
-     * @return jobId */
+    /**
+     * 子job的ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -195,9 +210,10 @@ public class SubJob {
         return this;
     }
 
-    /** 子job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
-     * 
-     * @return jobType */
+    /**
+     * 子job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -211,9 +227,10 @@ public class SubJob {
         return this;
     }
 
-    /** 开始时间。
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -227,9 +244,10 @@ public class SubJob {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -243,9 +261,10 @@ public class SubJob {
         return this;
     }
 
-    /** 子job执行失败时的错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 子job执行失败时的错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -259,9 +278,10 @@ public class SubJob {
         return this;
     }
 
-    /** 子job执行失败时的错误原因。
-     * 
-     * @return failReason */
+    /**
+     * 子job执行失败时的错误原因。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -306,7 +326,10 @@ public class SubJob {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RelatedTempRunningData */
+/**
+ * RelatedTempRunningData
+ */
 public class RelatedTempRunningData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,12 @@ public class RelatedTempRunningData {
         return this;
     }
 
-    /** task_run_info_id minimum: 0 maximum: 2147483647
-     * 
-     * @return taskRunInfoId */
+    /**
+     * task_run_info_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return taskRunInfoId
+     */
     public Integer getTaskRunInfoId() {
         return taskRunInfoId;
     }
@@ -57,9 +62,12 @@ public class RelatedTempRunningData {
         return this;
     }
 
-    /** related_temp_running_id minimum: 0 maximum: 2147483647
-     * 
-     * @return relatedTempRunningId */
+    /**
+     * related_temp_running_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return relatedTempRunningId
+     */
     public Integer getRelatedTempRunningId() {
         return relatedTempRunningId;
     }
@@ -73,9 +81,12 @@ public class RelatedTempRunningData {
         return this;
     }
 
-    /** temp_id minimum: 0 maximum: 2147483647
-     * 
-     * @return tempId */
+    /**
+     * temp_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return tempId
+     */
     public Integer getTempId() {
         return tempId;
     }
@@ -89,9 +100,10 @@ public class RelatedTempRunningData {
         return this;
     }
 
-    /** temp_name
-     * 
-     * @return tempName */
+    /**
+     * temp_name
+     * @return tempName
+     */
     public String getTempName() {
         return tempName;
     }
@@ -122,9 +134,10 @@ public class RelatedTempRunningData {
         return this;
     }
 
-    /** related_temp_running_data
-     * 
-     * @return relatedTempRunningData */
+    /**
+     * related_temp_running_data
+     * @return relatedTempRunningData
+     */
     public List<TempRunningData> getRelatedTempRunningData() {
         return relatedTempRunningData;
     }
@@ -167,7 +180,10 @@ public class RelatedTempRunningData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

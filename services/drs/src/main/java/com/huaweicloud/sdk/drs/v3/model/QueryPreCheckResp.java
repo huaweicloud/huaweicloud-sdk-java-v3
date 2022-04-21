@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 获取预检查结果返回体 */
+/**
+ * 获取预检查结果返回体
+ */
 public class QueryPreCheckResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,16 +43,24 @@ public class QueryPreCheckResp {
 
     private String rdsInstanceId;
 
-    /** 迁移方向 */
+    /**
+     * 迁移方向
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP_ for value: "up-入云 灾备场景时对应本云为备" */
+        /**
+         * Enum UP_ for value: "up-入云 灾备场景时对应本云为备"
+         */
         public static final JobDirectionEnum UP_ = new JobDirectionEnum("up-入云 灾备场景时对应本云为备");
 
-        /** Enum DOWN_ for value: "down-出云 灾备场景时对应本云为主" */
+        /**
+         * Enum DOWN_ for value: "down-出云 灾备场景时对应本云为主"
+         */
         public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down-出云 灾备场景时对应本云为主");
 
-        /** Enum NON_DBS_ for value: "non-dbs-自建" */
+        /**
+         * Enum NON_DBS_ for value: "non-dbs-自建"
+         */
         public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs-自建");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +151,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 预检查id。
-     * 
-     * @return precheckId */
+    /**
+     * 预检查id。
+     * @return precheckId
+     */
     public String getPrecheckId() {
         return precheckId;
     }
@@ -157,9 +168,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 返回的预检查结果是否通过。true表示预检查通过，通过后才可进行启动任务。
-     * 
-     * @return result */
+    /**
+     * 返回的预检查结果是否通过。true表示预检查通过，通过后才可进行启动任务。
+     * @return result
+     */
     public Boolean getResult() {
         return result;
     }
@@ -173,9 +185,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 预检查进度百分比。
-     * 
-     * @return process */
+    /**
+     * 预检查进度百分比。
+     * @return process
+     */
     public String getProcess() {
         return process;
     }
@@ -189,9 +202,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 预检查通过百分比。
-     * 
-     * @return totalPassedRate */
+    /**
+     * 预检查通过百分比。
+     * @return totalPassedRate
+     */
     public String getTotalPassedRate() {
         return totalPassedRate;
     }
@@ -205,9 +219,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** RDS实例id。
-     * 
-     * @return rdsInstanceId */
+    /**
+     * RDS实例id。
+     * @return rdsInstanceId
+     */
     public String getRdsInstanceId() {
         return rdsInstanceId;
     }
@@ -221,9 +236,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 迁移方向
-     * 
-     * @return jobDirection */
+    /**
+     * 迁移方向
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -253,9 +269,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 预检查各项结果。
-     * 
-     * @return precheckResult */
+    /**
+     * 预检查各项结果。
+     * @return precheckResult
+     */
     public List<PrecheckResult> getPrecheckResult() {
         return precheckResult;
     }
@@ -269,9 +286,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -285,9 +303,10 @@ public class QueryPreCheckResp {
         return this;
     }
 
-    /** 任务错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 任务错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -346,7 +365,10 @@ public class QueryPreCheckResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

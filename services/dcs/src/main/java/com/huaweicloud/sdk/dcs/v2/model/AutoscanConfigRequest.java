@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设置自动分析配置返回体 */
+/**
+ * 设置自动分析配置返回体
+ */
 public class AutoscanConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AutoscanConfigRequest {
         return this;
     }
 
-    /** 是否开启自动分析
-     * 
-     * @return enableAutoScan */
+    /**
+     * 是否开启自动分析
+     * @return enableAutoScan
+     */
     public Boolean getEnableAutoScan() {
         return enableAutoScan;
     }
@@ -58,9 +61,10 @@ public class AutoscanConfigRequest {
         return this;
     }
 
-    /** 每日分析时间，时间格式为21:00，时间为UTC时间
-     * 
-     * @return scheduleAt */
+    /**
+     * 每日分析时间，时间格式为21:00，时间为UTC时间
+     * @return scheduleAt
+     */
     public List<String> getScheduleAt() {
         return scheduleAt;
     }
@@ -97,7 +101,10 @@ public class AutoscanConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

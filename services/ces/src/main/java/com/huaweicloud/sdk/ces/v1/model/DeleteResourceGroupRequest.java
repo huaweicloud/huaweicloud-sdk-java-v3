@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteResourceGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteResourceGroupRequest {
         return this;
     }
 
-    /** 资源分组ID。
-     * 
-     * @return groupId */
+    /**
+     * 资源分组ID。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -55,7 +58,10 @@ public class DeleteResourceGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateMixJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,16 +57,24 @@ public class UpdateMixJobResponse extends SdkResponse {
 
     private String updateTime;
 
-    /** 任务状态。 - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 */
+    /**
+     * 任务状态。  - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 
+     */
     public static final class StateEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StateEnum INIT = new StateEnum("INIT");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StateEnum STOPPED = new StateEnum("STOPPED");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -135,16 +145,24 @@ public class UpdateMixJobResponse extends SdkResponse {
 
     private StateEnum state;
 
-    /** 任务结束原因 */
+    /**
+     * 任务结束原因
+     */
     public static final class StopReasonEnum {
 
-        /** Enum TENANT_STOP for value: "TENANT_STOP" */
+        /**
+         * Enum TENANT_STOP for value: "TENANT_STOP"
+         */
         public static final StopReasonEnum TENANT_STOP = new StopReasonEnum("TENANT_STOP");
 
-        /** Enum EXCEED_MAX_IDLE_TIME for value: "EXCEED_MAX_IDLE_TIME" */
+        /**
+         * Enum EXCEED_MAX_IDLE_TIME for value: "EXCEED_MAX_IDLE_TIME"
+         */
         public static final StopReasonEnum EXCEED_MAX_IDLE_TIME = new StopReasonEnum("EXCEED_MAX_IDLE_TIME");
 
-        /** Enum INTERNAL_ERROR for value: "INTERNAL_ERROR" */
+        /**
+         * Enum INTERNAL_ERROR for value: "INTERNAL_ERROR"
+         */
         public static final StopReasonEnum INTERNAL_ERROR = new StopReasonEnum("INTERNAL_ERROR");
 
         private static final Map<String, StopReasonEnum> STATIC_FIELDS = createStaticFields();
@@ -240,9 +258,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务编号，可以用于修改、查看和停止合流任务
-     * 
-     * @return jobId */
+    /**
+     * 任务编号，可以用于修改、查看和停止合流任务
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -256,9 +275,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 流名
-     * 
-     * @return streamName */
+    /**
+     * 流名
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -272,9 +292,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -288,9 +309,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 房间id
-     * 
-     * @return roomId */
+    /**
+     * 房间id
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -313,9 +335,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get mixParam
-     * 
-     * @return mixParam */
+    /**
+     * Get mixParam
+     * @return mixParam
+     */
     public MixParam getMixParam() {
         return mixParam;
     }
@@ -338,9 +361,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get recordParam
-     * 
-     * @return recordParam */
+    /**
+     * Get recordParam
+     * @return recordParam
+     */
     public RecordParam getRecordParam() {
         return recordParam;
     }
@@ -354,9 +378,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务创建的时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return createTime */
+    /**
+     * 任务创建的时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -370,9 +395,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务中的布局更新的时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return updateTime */
+    /**
+     * 任务中的布局更新的时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -386,9 +412,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态。 - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止
-     * 
-     * @return state */
+    /**
+     * 任务状态。  - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -402,9 +429,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结束原因
-     * 
-     * @return stopReason */
+    /**
+     * 任务结束原因
+     * @return stopReason
+     */
     public StopReasonEnum getStopReason() {
         return stopReason;
     }
@@ -418,9 +446,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态描述，对state字段的一些补充说明，可用于人工查阅。
-     * 
-     * @return description */
+    /**
+     * 状态描述，对state字段的一些补充说明，可用于人工查阅。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -434,9 +463,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务开始时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return startTime */
+    /**
+     * 任务开始时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -450,9 +480,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结束时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return stopTime */
+    /**
+     * 任务结束时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return stopTime
+     */
     public String getStopTime() {
         return stopTime;
     }
@@ -466,9 +497,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
     public String getXRequestId() {
@@ -544,7 +576,10 @@ public class UpdateMixJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -20,10 +20,10 @@ public class RulesLocalAdditional {
         return this;
     }
 
-    /** user：联邦用户在本系统中的用户名称。 ``` \"user\":{\"name\":\"{0}\"} ``` group：联邦用户在本系统中所属用户组。 ```
-     * \"group\":{\"name\":\"0cd5e9\"} ```
-     * 
-     * @return name */
+    /**
+     * user：联邦用户在本系统中的用户名称。 ``` \"user\":{\"name\":\"{0}\"} ```  group：联邦用户在本系统中所属用户组。 ``` \"group\":{\"name\":\"0cd5e9\"} ```
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,7 +58,10 @@ public class RulesLocalAdditional {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

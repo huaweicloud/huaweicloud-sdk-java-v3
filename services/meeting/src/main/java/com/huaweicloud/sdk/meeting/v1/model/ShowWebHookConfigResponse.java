@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowWebHookConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,12 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 结果码 minimum: 0 maximum: 2147483647
-     * 
-     * @return returnCode */
+    /**
+     * 结果码
+     * minimum: 0
+     * maximum: 2147483647
+     * @return returnCode
+     */
     public Integer getReturnCode() {
         return returnCode;
     }
@@ -60,9 +65,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 结果描述
-     * 
-     * @return returnDesc */
+    /**
+     * 结果描述
+     * @return returnDesc
+     */
     public String getReturnDesc() {
         return returnDesc;
     }
@@ -76,9 +82,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 配置记录id
-     * 
-     * @return id */
+    /**
+     * 配置记录id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -92,9 +99,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅ID
-     * 
-     * @return subscriberId */
+    /**
+     * 订阅ID
+     * @return subscriberId
+     */
     public String getSubscriberId() {
         return subscriberId;
     }
@@ -108,9 +116,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅url
-     * 
-     * @return url */
+    /**
+     * 订阅url
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -124,9 +133,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
-     * 
-     * @return status */
+    /**
+     * 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -171,7 +181,10 @@ public class ShowWebHookConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

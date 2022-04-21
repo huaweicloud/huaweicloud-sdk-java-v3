@@ -41,9 +41,10 @@ public class PersistentVolumeClaim {
         return this;
     }
 
-    /** API版本，固定值**v1**
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值**v1**
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -57,9 +58,10 @@ public class PersistentVolumeClaim {
         return this;
     }
 
-    /** API类型，固定值**PersistentVolumeClaim**
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值**PersistentVolumeClaim**
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -82,9 +84,10 @@ public class PersistentVolumeClaim {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public PersistentVolumeClaimMetadata getMetadata() {
         return metadata;
     }
@@ -107,9 +110,10 @@ public class PersistentVolumeClaim {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public PersistentVolumeClaimSpec getSpec() {
         return spec;
     }
@@ -132,9 +136,10 @@ public class PersistentVolumeClaim {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public PersistentVolumeClaimStatus getStatus() {
         return status;
     }
@@ -177,7 +182,10 @@ public class PersistentVolumeClaim {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

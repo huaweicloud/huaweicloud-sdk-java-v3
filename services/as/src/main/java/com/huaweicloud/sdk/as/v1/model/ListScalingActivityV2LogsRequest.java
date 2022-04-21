@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingActivityV2LogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,30 +45,44 @@ public class ListScalingActivityV2LogsRequest {
 
     private Integer limit;
 
-    /** 查询的伸缩活动类型（查询多类型使用逗号分隔）： - NORMAL：普通伸缩活动 - MANNUAL_REMOVE：从伸缩组手动移除实例 - MANNUAL_DELETE：从伸缩组手动移除并删除实例 -
-     * MANNUAL_ADD：实例手动加入伸缩组。 - ELB_CHECK_DELETE：ELB检查移除并删除实例。 - AUDIT_CHECK_DELETE：通过审计openstack移除并删除实例。 -
-     * DIFF：期望实例数与实际实例数不一致。 - MODIFY_ELB：LB迁移。 - ENTER_STANDBY：实例转入备用。 - EXIT_STANDBY：实例移出备用。 */
+    /**
+     * 查询的伸缩活动类型（查询多类型使用逗号分隔）： - NORMAL：普通伸缩活动 - MANNUAL_REMOVE：从伸缩组手动移除实例 - MANNUAL_DELETE：从伸缩组手动移除并删除实例 - MANNUAL_ADD：实例手动加入伸缩组。 - ELB_CHECK_DELETE：ELB检查移除并删除实例。 - AUDIT_CHECK_DELETE：通过审计openstack移除并删除实例。 - DIFF：期望实例数与实际实例数不一致。 - MODIFY_ELB：LB迁移。 - ENTER_STANDBY：实例转入备用。 - EXIT_STANDBY：实例移出备用。
+     */
     public static final class TypeEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final TypeEnum NORMAL = new TypeEnum("NORMAL");
 
-        /** Enum MANNUAL_REMOVE for value: "MANNUAL_REMOVE" */
+        /**
+         * Enum MANNUAL_REMOVE for value: "MANNUAL_REMOVE"
+         */
         public static final TypeEnum MANNUAL_REMOVE = new TypeEnum("MANNUAL_REMOVE");
 
-        /** Enum MANNUAL_DELETE for value: "MANNUAL_DELETE" */
+        /**
+         * Enum MANNUAL_DELETE for value: "MANNUAL_DELETE"
+         */
         public static final TypeEnum MANNUAL_DELETE = new TypeEnum("MANNUAL_DELETE");
 
-        /** Enum MANNUAL_ADD for value: "MANNUAL_ADD" */
+        /**
+         * Enum MANNUAL_ADD for value: "MANNUAL_ADD"
+         */
         public static final TypeEnum MANNUAL_ADD = new TypeEnum("MANNUAL_ADD");
 
-        /** Enum ELB_CHECK_DELETE for value: "ELB_CHECK_DELETE" */
+        /**
+         * Enum ELB_CHECK_DELETE for value: "ELB_CHECK_DELETE"
+         */
         public static final TypeEnum ELB_CHECK_DELETE = new TypeEnum("ELB_CHECK_DELETE");
 
-        /** Enum AUDIT_CHECK_DELETE for value: "AUDIT_CHECK_DELETE" */
+        /**
+         * Enum AUDIT_CHECK_DELETE for value: "AUDIT_CHECK_DELETE"
+         */
         public static final TypeEnum AUDIT_CHECK_DELETE = new TypeEnum("AUDIT_CHECK_DELETE");
 
-        /** Enum MODIFY_ELB for value: "MODIFY_ELB" */
+        /**
+         * Enum MODIFY_ELB for value: "MODIFY_ELB"
+         */
         public static final TypeEnum MODIFY_ELB = new TypeEnum("MODIFY_ELB");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -141,16 +157,24 @@ public class ListScalingActivityV2LogsRequest {
 
     private TypeEnum type;
 
-    /** 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中 */
+    /**
+     * 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum DOING for value: "DOING" */
+        /**
+         * Enum DOING for value: "DOING"
+         */
         public static final StatusEnum DOING = new StatusEnum("DOING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -226,9 +250,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -242,9 +267,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 伸缩活动日志ID
-     * 
-     * @return logId */
+    /**
+     * 伸缩活动日志ID
+     * @return logId
+     */
     public String getLogId() {
         return logId;
     }
@@ -258,9 +284,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return startTime */
+    /**
+     * 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -274,9 +301,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
-     * 
-     * @return endTime */
+    /**
+     * 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -290,9 +318,11 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。 maximum: 32768
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * maximum: 32768
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -306,9 +336,11 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -322,11 +354,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询的伸缩活动类型（查询多类型使用逗号分隔）： - NORMAL：普通伸缩活动 - MANNUAL_REMOVE：从伸缩组手动移除实例 - MANNUAL_DELETE：从伸缩组手动移除并删除实例 -
-     * MANNUAL_ADD：实例手动加入伸缩组。 - ELB_CHECK_DELETE：ELB检查移除并删除实例。 - AUDIT_CHECK_DELETE：通过审计openstack移除并删除实例。 -
-     * DIFF：期望实例数与实际实例数不一致。 - MODIFY_ELB：LB迁移。 - ENTER_STANDBY：实例转入备用。 - EXIT_STANDBY：实例移出备用。
-     * 
-     * @return type */
+    /**
+     * 查询的伸缩活动类型（查询多类型使用逗号分隔）： - NORMAL：普通伸缩活动 - MANNUAL_REMOVE：从伸缩组手动移除实例 - MANNUAL_DELETE：从伸缩组手动移除并删除实例 - MANNUAL_ADD：实例手动加入伸缩组。 - ELB_CHECK_DELETE：ELB检查移除并删除实例。 - AUDIT_CHECK_DELETE：通过审计openstack移除并删除实例。 - DIFF：期望实例数与实际实例数不一致。 - MODIFY_ELB：LB迁移。 - ENTER_STANDBY：实例转入备用。 - EXIT_STANDBY：实例移出备用。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -340,9 +371,10 @@ public class ListScalingActivityV2LogsRequest {
         return this;
     }
 
-    /** 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
-     * 
-     * @return status */
+    /**
+     * 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -391,7 +423,10 @@ public class ListScalingActivityV2LogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

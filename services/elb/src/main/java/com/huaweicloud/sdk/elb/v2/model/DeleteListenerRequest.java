@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteListenerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteListenerRequest {
         return this;
     }
 
-    /** （不再支持）级联删除负载均衡器
-     * 
-     * @return cascade */
+    /**
+     * （不再支持）级联删除负载均衡器
+     * @return cascade
+     */
     public Boolean getCascade() {
         return cascade;
     }
@@ -39,9 +42,10 @@ public class DeleteListenerRequest {
         return this;
     }
 
-    /** 监听器id
-     * 
-     * @return listenerId */
+    /**
+     * 监听器id
+     * @return listenerId
+     */
     public String getListenerId() {
         return listenerId;
     }
@@ -78,7 +82,10 @@ public class DeleteListenerRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

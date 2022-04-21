@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** IncidentOperateLogV2 */
+/**
+ * IncidentOperateLogV2
+ */
 public class IncidentOperateLogV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 工单日志id
-     * 
-     * @return incidentLogId */
+    /**
+     * 工单日志id
+     * @return incidentLogId
+     */
     public String getIncidentLogId() {
         return incidentLogId;
     }
@@ -75,9 +78,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -91,9 +95,12 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作类型 minimum: 0 maximum: 65535
-     * 
-     * @return operateType */
+    /**
+     * 操作类型
+     * minimum: 0
+     * maximum: 65535
+     * @return operateType
+     */
     public Integer getOperateType() {
         return operateType;
     }
@@ -107,9 +114,12 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作员类型 minimum: 0 maximum: 3
-     * 
-     * @return operatorType */
+    /**
+     * 操作员类型
+     * minimum: 0
+     * maximum: 3
+     * @return operatorType
+     */
     public Integer getOperatorType() {
         return operatorType;
     }
@@ -123,9 +133,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作员id
-     * 
-     * @return operatorId */
+    /**
+     * 操作员id
+     * @return operatorId
+     */
     public String getOperatorId() {
         return operatorId;
     }
@@ -139,9 +150,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作员名称
-     * 
-     * @return operatorName */
+    /**
+     * 操作员名称
+     * @return operatorName
+     */
     public String getOperatorName() {
         return operatorName;
     }
@@ -155,9 +167,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作描述
-     * 
-     * @return operateDesc */
+    /**
+     * 操作描述
+     * @return operateDesc
+     */
     public String getOperateDesc() {
         return operateDesc;
     }
@@ -171,9 +184,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 操作时间
-     * 
-     * @return operateTime */
+    /**
+     * 操作时间
+     * @return operateTime
+     */
     public String getOperateTime() {
         return operateTime;
     }
@@ -187,9 +201,10 @@ public class IncidentOperateLogV2 {
         return this;
     }
 
-    /** 工单操作时间
-     * 
-     * @return timestampOperateTime */
+    /**
+     * 工单操作时间
+     * @return timestampOperateTime
+     */
     public OffsetDateTime getTimestampOperateTime() {
         return timestampOperateTime;
     }
@@ -248,7 +263,10 @@ public class IncidentOperateLogV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

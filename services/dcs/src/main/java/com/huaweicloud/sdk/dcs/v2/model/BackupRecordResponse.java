@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 实例备份信息。 */
+/**
+ * 实例备份信息。
+ */
 public class BackupRecordResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class BackupRecordResponse {
 
     private Long size;
 
-    /** 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 */
+    /**
+     * 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 
+     */
     public static final class BackupTypeEnum {
 
-        /** Enum MANUAL for value: "manual" */
+        /**
+         * Enum MANUAL for value: "manual"
+         */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("manual");
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -139,25 +147,39 @@ public class BackupRecordResponse {
 
     private String remark;
 
-    /** 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 */
+    /**
+     * 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 
+     */
     public static final class StatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum BACKUPING for value: "backuping" */
+        /**
+         * Enum BACKUPING for value: "backuping"
+         */
         public static final StatusEnum BACKUPING = new StatusEnum("backuping");
 
-        /** Enum SUCCEED for value: "succeed" */
+        /**
+         * Enum SUCCEED for value: "succeed"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("succeed");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum EXPIRED for value: "expired" */
+        /**
+         * Enum EXPIRED for value: "expired"
+         */
         public static final StatusEnum EXPIRED = new StatusEnum("expired");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -241,9 +263,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份记录ID。
-     * 
-     * @return backupId */
+    /**
+     * 备份记录ID。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -257,9 +280,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份执行时间段。
-     * 
-     * @return period */
+    /**
+     * 备份执行时间段。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -273,9 +297,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份记录名称。
-     * 
-     * @return backupName */
+    /**
+     * 备份记录名称。
+     * @return backupName
+     */
     public String getBackupName() {
         return backupName;
     }
@@ -289,9 +314,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -305,9 +331,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份文件大小（Byte）。
-     * 
-     * @return size */
+    /**
+     * 备份文件大小（Byte）。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -321,9 +348,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份
-     * 
-     * @return backupType */
+    /**
+     * 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 
+     * @return backupType
+     */
     public BackupTypeEnum getBackupType() {
         return backupType;
     }
@@ -337,9 +365,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份任务创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 备份任务创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -353,9 +382,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份完成时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 备份完成时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -369,9 +399,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份进度。
-     * 
-     * @return progress */
+    /**
+     * 备份进度。
+     * @return progress
+     */
     public String getProgress() {
         return progress;
     }
@@ -385,11 +416,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` -
-     * 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` -
-     * 自动备份任务未运行，实例正在运行其他任务。
-     * 
-     * @return errorCode */
+    /**
+     * 备份失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` - 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` - 自动备份任务未运行，实例正在运行其他任务。 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -403,9 +433,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份缓存实例的备注信息。
-     * 
-     * @return remark */
+    /**
+     * 备份缓存实例的备注信息。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -419,9 +450,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。
-     * 
-     * @return status */
+    /**
+     * 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -435,9 +467,10 @@ public class BackupRecordResponse {
         return this;
     }
 
-    /** 是否可以进行恢复操作，取值为TRUE或FALSE。
-     * 
-     * @return isSupportRestore */
+    /**
+     * 是否可以进行恢复操作，取值为TRUE或FALSE。
+     * @return isSupportRestore
+     */
     public String getIsSupportRestore() {
         return isSupportRestore;
     }
@@ -508,7 +541,10 @@ public class BackupRecordResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

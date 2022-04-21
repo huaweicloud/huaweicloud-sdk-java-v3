@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转发kafka消息结构 */
+/**
+ * 转发kafka消息结构
+ */
 public class DmsKafkaForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：Kafka服务对应的region区域
-     * 
-     * @return regionName */
+    /**
+     * **参数说明**：Kafka服务对应的region区域
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -67,9 +70,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：Kafka服务对应的projectId信息
-     * 
-     * @return projectId */
+    /**
+     * **参数说明**：Kafka服务对应的projectId信息
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -99,9 +103,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：转发kafka消息对应的地址列表
-     * 
-     * @return addresses */
+    /**
+     * **参数说明**：转发kafka消息对应的地址列表
+     * @return addresses
+     */
     public List<NetAddress> getAddresses() {
         return addresses;
     }
@@ -115,9 +120,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：转发kafka消息关联的topic信息。
-     * 
-     * @return topic */
+    /**
+     * **参数说明**：转发kafka消息关联的topic信息。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -131,9 +137,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：转发kafka关联的用户名信息。
-     * 
-     * @return username */
+    /**
+     * **参数说明**：转发kafka关联的用户名信息。
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -147,9 +154,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：转发kafka关联的密码信息。
-     * 
-     * @return password */
+    /**
+     * **参数说明**：转发kafka关联的密码信息。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -163,9 +171,10 @@ public class DmsKafkaForwarding {
         return this;
     }
 
-    /** **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
-     * 
-     * @return mechanism */
+    /**
+     * **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
+     * @return mechanism
+     */
     public String getMechanism() {
         return mechanism;
     }
@@ -212,7 +221,10 @@ public class DmsKafkaForwarding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

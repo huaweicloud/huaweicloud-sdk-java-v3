@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建VPC的请求体 */
+/**
+ * 创建VPC的请求体
+ */
 public class CreateVpcOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreateVpcOption {
         return this;
     }
 
-    /** 功能描述：VPC的名称信息 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 功能描述：VPC的名称信息 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,9 +60,10 @@ public class CreateVpcOption {
         return this;
     }
 
-    /** 功能说明：VPC的描述信息 取值范围：0-255个字符，不能包含“<”和“>”。
-     * 
-     * @return description */
+    /**
+     * 功能说明：VPC的描述信息 取值范围：0-255个字符，不能包含“<”和“>”。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -73,10 +77,10 @@ public class CreateVpcOption {
         return this;
     }
 
-    /** 功能说明：vpc下可用子网的范围 取值范围： −10.0.0.0/8~10.255.255.240/28 −172.16.0.0/12 ~ 172.31.255.240/28 −192.168.0.0/16 ~
-     * 192.168.255.240/28 约束：必须是cidr格式，例如:192.168.0.0/16
-     * 
-     * @return cidr */
+    /**
+     * 功能说明：vpc下可用子网的范围 取值范围： −10.0.0.0/8~10.255.255.240/28 −172.16.0.0/12 ~ 172.31.255.240/28 −192.168.0.0/16 ~ 192.168.255.240/28 约束：必须是cidr格式，例如:192.168.0.0/16
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -90,9 +94,10 @@ public class CreateVpcOption {
         return this;
     }
 
-    /** 功能说明：企业项目ID。创建vpc时，给vpc绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。创建vpc时，给vpc绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -122,9 +127,10 @@ public class CreateVpcOption {
         return this;
     }
 
-    /** 功能说明：VPC的标签信息，详情参见Tag对象 取值范围：0-10个标签键值对
-     * 
-     * @return tags */
+    /**
+     * 功能说明：VPC的标签信息，详情参见Tag对象 取值范围：0-10个标签键值对
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -167,7 +173,10 @@ public class CreateVpcOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

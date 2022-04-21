@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SearchCorpResourcesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class SearchCorpResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** 页面起始页，从0开始
-     * 
-     * @return offset */
+    /**
+     * 页面起始页，从0开始
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -53,9 +56,10 @@ public class SearchCorpResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页显示的条目数量。 默认值：10。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。 默认值：10。 
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -69,9 +73,10 @@ public class SearchCorpResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数量。
-     * 
-     * @return count */
+    /**
+     * 总数量。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -101,9 +106,10 @@ public class SearchCorpResourcesResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页查询企业的资源项
-     * 
-     * @return data */
+    /**
+     * 分页查询企业的资源项
+     * @return data
+     */
     public List<QueryResourceResultDTO> getData() {
         return data;
     }
@@ -144,7 +150,10 @@ public class SearchCorpResourcesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

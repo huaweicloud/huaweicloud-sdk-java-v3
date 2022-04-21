@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建新集群信息 */
+/**
+ * 创建新集群信息
+ */
 public class CCECreateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** 集群节点数
-     * 
-     * @return nodeNum */
+    /**
+     * 集群节点数
+     * @return nodeNum
+     */
     public Long getNodeNum() {
         return nodeNum;
     }
@@ -59,9 +62,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** 集群节点规格
-     * 
-     * @return nodeFlavor */
+    /**
+     * 集群节点规格
+     * @return nodeFlavor
+     */
     public String getNodeFlavor() {
         return nodeFlavor;
     }
@@ -75,9 +79,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** CCE集群规格
-     * 
-     * @return cceFlavor */
+    /**
+     * CCE集群规格
+     * @return cceFlavor
+     */
     public String getCceFlavor() {
         return cceFlavor;
     }
@@ -91,9 +96,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** 节点初始密码
-     * 
-     * @return initNodePwd */
+    /**
+     * 节点初始密码
+     * @return initNodePwd
+     */
     public String getInitNodePwd() {
         return initNodePwd;
     }
@@ -107,9 +113,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** 可用区
-     * 
-     * @return az */
+    /**
+     * 可用区
+     * @return az
+     */
     public String getAz() {
         return az;
     }
@@ -123,9 +130,10 @@ public class CCECreateInfo {
         return this;
     }
 
-    /** 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
-     * 
-     * @return clusterPlatformType */
+    /**
+     * 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
+     * @return clusterPlatformType
+     */
     public String getClusterPlatformType() {
         return clusterPlatformType;
     }
@@ -169,7 +177,10 @@ public class CCECreateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

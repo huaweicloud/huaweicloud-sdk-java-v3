@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ImportBackupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ImportBackupResponse extends SdkResponse {
         return this;
     }
 
-    /** 同步备份副本接口的返回信息
-     * 
-     * @return sync */
+    /**
+     * 同步备份副本接口的返回信息
+     * @return sync
+     */
     public List<BackupSyncRespBody> getSync() {
         return sync;
     }
@@ -75,7 +78,10 @@ public class ImportBackupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

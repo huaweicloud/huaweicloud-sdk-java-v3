@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListLatelyApiStatisticsV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 响应码
-     * 
-     * @return code */
+    /**
+     * 响应码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -53,9 +56,10 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 开始时间的UTC的时间戳
-     * 
-     * @return startTime */
+    /**
+     * 开始时间的UTC的时间戳
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -69,9 +73,10 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 截止时间的UTC的时间戳
-     * 
-     * @return endTime */
+    /**
+     * 截止时间的UTC的时间戳
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -101,9 +106,10 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 统计指标的数据结构结构体
-     * 
-     * @return list */
+    /**
+     * 统计指标的数据结构结构体
+     * @return list
+     */
     public List<StatisticsAPI> getList() {
         return list;
     }
@@ -144,7 +150,10 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

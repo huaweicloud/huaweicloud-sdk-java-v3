@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** KeywordsRequest */
+/**
+ * KeywordsRequest
+ */
 public class KeywordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,19 +40,29 @@ public class KeywordsRequest {
 
     private String keywords;
 
-    /** 条件 */
+    /**
+     * 条件
+     */
     public static final class ConditionEnum {
 
-        /** Enum GREATER_THAN_OR_EQUAL_TO for value: ">=" */
+        /**
+         * Enum GREATER_THAN_OR_EQUAL_TO for value: ">="
+         */
         public static final ConditionEnum GREATER_THAN_OR_EQUAL_TO = new ConditionEnum(">=");
 
-        /** Enum LESS_THAN_OR_EQUAL_TO for value: "<=" */
+        /**
+         * Enum LESS_THAN_OR_EQUAL_TO for value: "<="
+         */
         public static final ConditionEnum LESS_THAN_OR_EQUAL_TO = new ConditionEnum("<=");
 
-        /** Enum LESS_THAN for value: "<" */
+        /**
+         * Enum LESS_THAN for value: "<"
+         */
         public static final ConditionEnum LESS_THAN = new ConditionEnum("<");
 
-        /** Enum GREATER_THAN for value: ">" */
+        /**
+         * Enum GREATER_THAN for value: ">"
+         */
         public static final ConditionEnum GREATER_THAN = new ConditionEnum(">");
 
         private static final Map<String, ConditionEnum> STATIC_FIELDS = createStaticFields();
@@ -132,10 +144,14 @@ public class KeywordsRequest {
 
     private Integer searchTimeRange;
 
-    /** 查询时间单位 */
+    /**
+     * 查询时间单位
+     */
     public static final class SearchTimeRangeUnitEnum {
 
-        /** Enum MINUTE for value: "minute" */
+        /**
+         * Enum MINUTE for value: "minute"
+         */
         public static final SearchTimeRangeUnitEnum MINUTE = new SearchTimeRangeUnitEnum("minute");
 
         private static final Map<String, SearchTimeRangeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +225,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 日志流id
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流id
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -225,9 +242,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -241,9 +259,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组id
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -257,9 +276,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -273,9 +293,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 关键词
-     * 
-     * @return keywords */
+    /**
+     * 关键词
+     * @return keywords
+     */
     public String getKeywords() {
         return keywords;
     }
@@ -289,9 +310,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 条件
-     * 
-     * @return condition */
+    /**
+     * 条件
+     * @return condition
+     */
     public ConditionEnum getCondition() {
         return condition;
     }
@@ -305,9 +327,12 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 行数 minimum: 1 maximum: 2147483647
-     * 
-     * @return number */
+    /**
+     * 行数
+     * minimum: 1
+     * maximum: 2147483647
+     * @return number
+     */
     public Integer getNumber() {
         return number;
     }
@@ -321,9 +346,12 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 查询执行任务时最近数据的时间范围，最大值为60 minimum: 1 maximum: 60
-     * 
-     * @return searchTimeRange */
+    /**
+     * 查询执行任务时最近数据的时间范围，最大值为60
+     * minimum: 1
+     * maximum: 60
+     * @return searchTimeRange
+     */
     public Integer getSearchTimeRange() {
         return searchTimeRange;
     }
@@ -337,9 +365,10 @@ public class KeywordsRequest {
         return this;
     }
 
-    /** 查询时间单位
-     * 
-     * @return searchTimeRangeUnit */
+    /**
+     * 查询时间单位
+     * @return searchTimeRangeUnit
+     */
     public SearchTimeRangeUnitEnum getSearchTimeRangeUnit() {
         return searchTimeRangeUnit;
     }
@@ -398,7 +427,10 @@ public class KeywordsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

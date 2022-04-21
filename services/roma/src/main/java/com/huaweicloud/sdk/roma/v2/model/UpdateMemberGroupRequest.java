@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateMemberGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateMemberGroupRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,9 +53,10 @@ public class UpdateMemberGroupRequest {
         return this;
     }
 
-    /** VPC通道的编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道的编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -66,9 +70,10 @@ public class UpdateMemberGroupRequest {
         return this;
     }
 
-    /** VPC通道后端服务器组编号
-     * 
-     * @return memberGroupId */
+    /**
+     * VPC通道后端服务器组编号
+     * @return memberGroupId
+     */
     public String getMemberGroupId() {
         return memberGroupId;
     }
@@ -91,9 +96,10 @@ public class UpdateMemberGroupRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public MemberGroupCreate getBody() {
         return body;
     }
@@ -134,7 +140,10 @@ public class UpdateMemberGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

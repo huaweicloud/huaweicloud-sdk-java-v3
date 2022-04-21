@@ -25,33 +25,51 @@ public class CompareTaskList {
 
     private String compareType;
 
-    /** 对比任务的状态。 */
+    /**
+     * 对比任务的状态。
+     */
     public static final class CompareTaskStatusEnum {
 
-        /** Enum RUNNING_ for value: "RUNNING-运行中" */
+        /**
+         * Enum RUNNING_ for value: "RUNNING-运行中"
+         */
         public static final CompareTaskStatusEnum RUNNING_ = new CompareTaskStatusEnum("RUNNING-运行中");
 
-        /** Enum WAITING_FOR_RUNNING_ for value: "WAITING_FOR_RUNNING-等待启动中" */
+        /**
+         * Enum WAITING_FOR_RUNNING_ for value: "WAITING_FOR_RUNNING-等待启动中"
+         */
         public static final CompareTaskStatusEnum WAITING_FOR_RUNNING_ =
             new CompareTaskStatusEnum("WAITING_FOR_RUNNING-等待启动中");
 
-        /** Enum SUCCESSFUL_ for value: "SUCCESSFUL-完成" */
+        /**
+         * Enum SUCCESSFUL_ for value: "SUCCESSFUL-完成"
+         */
         public static final CompareTaskStatusEnum SUCCESSFUL_ = new CompareTaskStatusEnum("SUCCESSFUL-完成");
 
-        /** Enum FAILED_ for value: "FAILED-失败" */
+        /**
+         * Enum FAILED_ for value: "FAILED-失败"
+         */
         public static final CompareTaskStatusEnum FAILED_ = new CompareTaskStatusEnum("FAILED-失败");
 
-        /** Enum CANCELLED_ for value: "CANCELLED-已取消" */
+        /**
+         * Enum CANCELLED_ for value: "CANCELLED-已取消"
+         */
         public static final CompareTaskStatusEnum CANCELLED_ = new CompareTaskStatusEnum("CANCELLED-已取消");
 
-        /** Enum TIMEOUT_INTERRUPT_ for value: "TIMEOUT_INTERRUPT-超时中断" */
+        /**
+         * Enum TIMEOUT_INTERRUPT_ for value: "TIMEOUT_INTERRUPT-超时中断"
+         */
         public static final CompareTaskStatusEnum TIMEOUT_INTERRUPT_ =
             new CompareTaskStatusEnum("TIMEOUT_INTERRUPT-超时中断");
 
-        /** Enum FULL_DOING_ for value: "FULL_DOING-全量校验中" */
+        /**
+         * Enum FULL_DOING_ for value: "FULL_DOING-全量校验中"
+         */
         public static final CompareTaskStatusEnum FULL_DOING_ = new CompareTaskStatusEnum("FULL_DOING-全量校验中");
 
-        /** Enum INCRE_DOING_ for value: "INCRE_DOING-增量校验中" */
+        /**
+         * Enum INCRE_DOING_ for value: "INCRE_DOING-增量校验中"
+         */
         public static final CompareTaskStatusEnum INCRE_DOING_ = new CompareTaskStatusEnum("INCRE_DOING-增量校验中");
 
         private static final Map<String, CompareTaskStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -142,9 +160,10 @@ public class CompareTaskList {
         return this;
     }
 
-    /** 对比任务的id。
-     * 
-     * @return compareTaskId */
+    /**
+     * 对比任务的id。
+     * @return compareTaskId
+     */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -158,9 +177,10 @@ public class CompareTaskList {
         return this;
     }
 
-    /** 对比任务的类型。
-     * 
-     * @return compareType */
+    /**
+     * 对比任务的类型。
+     * @return compareType
+     */
     public String getCompareType() {
         return compareType;
     }
@@ -174,9 +194,10 @@ public class CompareTaskList {
         return this;
     }
 
-    /** 对比任务的状态。
-     * 
-     * @return compareTaskStatus */
+    /**
+     * 对比任务的状态。
+     * @return compareTaskStatus
+     */
     public CompareTaskStatusEnum getCompareTaskStatus() {
         return compareTaskStatus;
     }
@@ -190,9 +211,10 @@ public class CompareTaskList {
         return this;
     }
 
-    /** 对比开始时间。
-     * 
-     * @return createTime */
+    /**
+     * 对比开始时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -206,9 +228,10 @@ public class CompareTaskList {
         return this;
     }
 
-    /** 对比结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 对比结束时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -251,7 +274,10 @@ public class CompareTaskList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

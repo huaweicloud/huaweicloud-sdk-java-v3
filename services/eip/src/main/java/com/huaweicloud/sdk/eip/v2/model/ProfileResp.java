@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Profile对象 */
+/**
+ * Profile对象
+ */
 public class ProfileResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ProfileResp {
         return this;
     }
 
-    /** 订单的id
-     * 
-     * @return orderId */
+    /**
+     * 订单的id
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -49,9 +52,10 @@ public class ProfileResp {
         return this;
     }
 
-    /** 产品的id
-     * 
-     * @return productId */
+    /**
+     * 产品的id
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -65,9 +69,10 @@ public class ProfileResp {
         return this;
     }
 
-    /** region的id
-     * 
-     * @return regionId */
+    /**
+     * region的id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -81,9 +86,10 @@ public class ProfileResp {
         return this;
     }
 
-    /** 用户的id
-     * 
-     * @return userId */
+    /**
+     * 用户的id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -123,7 +129,10 @@ public class ProfileResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

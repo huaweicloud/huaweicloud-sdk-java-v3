@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** HttpCodeSummary */
+/**
+ * HttpCodeSummary
+ */
 public class HttpCodeSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class HttpCodeSummary {
         return this;
     }
 
-    /** 状态码信息
-     * 
-     * @return httpCodes */
+    /**
+     * 状态码信息
+     * @return httpCodes
+     */
     public List<HttpCode> getHttpCodes() {
         return httpCodes;
     }
@@ -58,9 +61,10 @@ public class HttpCodeSummary {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ 。
-     * 
-     * @return time */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ 。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -97,7 +101,10 @@ public class HttpCodeSummary {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CopyImageCrossRegionRequestBody */
+/**
+ * CopyImageCrossRegionRequestBody
+ */
 public class CopyImageCrossRegionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CopyImageCrossRegionRequestBody {
         return this;
     }
 
-    /** IMS服务委托名称。
-     * 
-     * @return agencyName */
+    /**
+     * IMS服务委托名称。
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -54,9 +57,10 @@ public class CopyImageCrossRegionRequestBody {
         return this;
     }
 
-    /** 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * 
-     * @return description */
+    /**
+     * 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -70,9 +74,10 @@ public class CopyImageCrossRegionRequestBody {
         return this;
     }
 
-    /** 镜像名称
-     * 
-     * @return name */
+    /**
+     * 镜像名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +91,10 @@ public class CopyImageCrossRegionRequestBody {
         return this;
     }
 
-    /** 目的区域的项目名称。
-     * 
-     * @return projectName */
+    /**
+     * 目的区域的项目名称。
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -102,9 +108,10 @@ public class CopyImageCrossRegionRequestBody {
         return this;
     }
 
-    /** 目的区域的Region ID。
-     * 
-     * @return region */
+    /**
+     * 目的区域的Region ID。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -147,7 +154,10 @@ public class CopyImageCrossRegionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

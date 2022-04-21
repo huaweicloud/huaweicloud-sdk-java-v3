@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BCS服务监控数据查询请求结构 */
+/**
+ * BCS服务监控数据查询请求结构
+ */
 public class ListBcsMetricRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,11 +39,10 @@ public class ListBcsMetricRequestBody {
         return this;
     }
 
-    /** 指标列表 取值范围 cpuUsage：CPU使用率 diskUsedRate：磁盘使用率 memUsedRate：物理内存使用率 sendBytesRate：上行Bps recvBytesRate：下行Bps
-     * cpuCoreLimit：CPU内核总量 cpuCoreUsed：CPU内核占用 totalMem：物理内存总量 freeMem：可用物理内存 diskCapacity：磁盘空间容量
-     * diskAvailableCapacity：可用磁盘空间 默认值：前5项
-     * 
-     * @return metricNames */
+    /**
+     * 指标列表 取值范围 cpuUsage：CPU使用率 diskUsedRate：磁盘使用率 memUsedRate：物理内存使用率 sendBytesRate：上行Bps recvBytesRate：下行Bps cpuCoreLimit：CPU内核总量 cpuCoreUsed：CPU内核占用 totalMem：物理内存总量 freeMem：可用物理内存 diskCapacity：磁盘空间容量 diskAvailableCapacity：可用磁盘空间 默认值：前5项 
+     * @return metricNames
+     */
     public List<String> getMetricNames() {
         return metricNames;
     }
@@ -76,7 +77,10 @@ public class ListBcsMetricRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

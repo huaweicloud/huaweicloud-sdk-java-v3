@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeploymentJobsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,12 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务编号 minimum: 1 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * 部署任务编号
+     * minimum: 1
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -70,9 +75,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -86,9 +92,12 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署状态,-2：环境准备未就绪 -1 资源准备就绪 0 部署中 1：成功 2：失败 minimum: -2 maximum: 2
-     * 
-     * @return status */
+    /**
+     * 部署状态,-2：环境准备未就绪 -1 资源准备就绪 0 部署中 1：成功 2：失败
+     * minimum: -2
+     * maximum: 2
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -102,9 +111,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问地址
-     * 
-     * @return address */
+    /**
+     * 访问地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -118,9 +128,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署参数
-     * 
-     * @return deployParameters */
+    /**
+     * 部署参数
+     * @return deployParameters
+     */
     public String getDeployParameters() {
         return deployParameters;
     }
@@ -134,9 +145,12 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署耗时 minimum: 0 maximum: 5000
-     * 
-     * @return time */
+    /**
+     * 部署耗时
+     * minimum: 0
+     * maximum: 5000
+     * @return time
+     */
     public Integer getTime() {
         return time;
     }
@@ -150,9 +164,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建人
-     * 
-     * @return creatorName */
+    /**
+     * 创建人
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -166,9 +181,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -217,7 +233,10 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

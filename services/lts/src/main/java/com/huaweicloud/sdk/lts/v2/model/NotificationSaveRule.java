@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** NotificationSaveRule */
+/**
+ * NotificationSaveRule
+ */
 public class NotificationSaveRule {
 
-    /** 首选项对应的语言 */
+    /**
+     * 首选项对应的语言
+     */
     public static final class LanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final LanguageEnum EN_US = new LanguageEnum("en-us");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class NotificationSaveRule {
         return this;
     }
 
-    /** 首选项对应的语言
-     * 
-     * @return language */
+    /**
+     * 首选项对应的语言
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -128,9 +137,10 @@ public class NotificationSaveRule {
         return this;
     }
 
-    /** 首选项对应的时区信息
-     * 
-     * @return timezone */
+    /**
+     * 首选项对应的时区信息
+     * @return timezone
+     */
     public String getTimezone() {
         return timezone;
     }
@@ -144,9 +154,10 @@ public class NotificationSaveRule {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -176,9 +187,10 @@ public class NotificationSaveRule {
         return this;
     }
 
-    /** 主题信息
-     * 
-     * @return topics */
+    /**
+     * 主题信息
+     * @return topics
+     */
     public List<Topics> getTopics() {
         return topics;
     }
@@ -219,7 +231,10 @@ public class NotificationSaveRule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

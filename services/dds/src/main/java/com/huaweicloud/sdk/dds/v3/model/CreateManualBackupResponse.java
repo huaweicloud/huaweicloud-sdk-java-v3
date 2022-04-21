@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateManualBackupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateManualBackupResponse extends SdkResponse {
         return this;
     }
 
-    /** 手动备份的异步任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 手动备份的异步任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -40,9 +43,10 @@ public class CreateManualBackupResponse extends SdkResponse {
         return this;
     }
 
-    /** 手动备份ID。
-     * 
-     * @return backupId */
+    /**
+     * 手动备份ID。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -79,7 +83,10 @@ public class CreateManualBackupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,11 +20,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 可用区，需要指定可用区（AZ）的名称或者ID或者code。 可通过接口
-     * [查询可用区列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=ECS&api=NovaListAvailabilityZones)
-     * 获取，也可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区，需要指定可用区（AZ）的名称或者ID或者code。  可通过接口 [查询可用区列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=ECS&api=NovaListAvailabilityZones) 获取，也可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -57,7 +58,10 @@ public class ListFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

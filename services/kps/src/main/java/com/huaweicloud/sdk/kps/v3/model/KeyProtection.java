@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SSH密钥对私钥托管与保护。 */
+/**
+ * SSH密钥对私钥托管与保护。
+ */
 public class KeyProtection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class KeyProtection {
         return this;
     }
 
-    /** 导入SSH密钥对的私钥。
-     * 
-     * @return privateKey */
+    /**
+     * 导入SSH密钥对的私钥。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -49,9 +52,10 @@ public class KeyProtection {
         return this;
     }
 
-    /** Get encryption
-     * 
-     * @return encryption */
+    /**
+     * Get encryption
+     * @return encryption
+     */
     public Encryption getEncryption() {
         return encryption;
     }
@@ -88,7 +92,10 @@ public class KeyProtection {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

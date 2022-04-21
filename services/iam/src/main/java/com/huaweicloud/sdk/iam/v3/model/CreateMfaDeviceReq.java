@@ -30,9 +30,10 @@ public class CreateMfaDeviceReq {
         return this;
     }
 
-    /** Get virtualMfaDevice
-     * 
-     * @return virtualMfaDevice */
+    /**
+     * Get virtualMfaDevice
+     * @return virtualMfaDevice
+     */
     public CreateMfaDevice getVirtualMfaDevice() {
         return virtualMfaDevice;
     }
@@ -67,7 +68,10 @@ public class CreateMfaDeviceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

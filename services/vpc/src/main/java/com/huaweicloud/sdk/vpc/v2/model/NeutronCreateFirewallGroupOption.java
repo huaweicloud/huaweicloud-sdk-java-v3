@@ -48,9 +48,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：网络ACL组名称 取值范围：0-255个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：网络ACL组名称 取值范围：0-255个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +65,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：网络ACL防火墙组描述 取值范围：最长255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：网络ACL防火墙组描述 取值范围：最长255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,9 +82,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：入方向网络ACL策略
-     * 
-     * @return ingressFirewallPolicyId */
+    /**
+     * 功能说明：入方向网络ACL策略
+     * @return ingressFirewallPolicyId
+     */
     public String getIngressFirewallPolicyId() {
         return ingressFirewallPolicyId;
     }
@@ -96,9 +99,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：出方向网络ACL策略
-     * 
-     * @return egressFirewallPolicyId */
+    /**
+     * 功能说明：出方向网络ACL策略
+     * @return egressFirewallPolicyId
+     */
     public String getEgressFirewallPolicyId() {
         return egressFirewallPolicyId;
     }
@@ -128,9 +132,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：网络ACL防火墙组绑定的端口列表 约束：必须为分布式router的端口id
-     * 
-     * @return ports */
+    /**
+     * 功能说明：网络ACL防火墙组绑定的端口列表 约束：必须为分布式router的端口id
+     * @return ports
+     */
     public List<String> getPorts() {
         return ports;
     }
@@ -144,9 +149,10 @@ public class NeutronCreateFirewallGroupOption {
         return this;
     }
 
-    /** 功能说明：网络ACL是否受管理员控制
-     * 
-     * @return adminStateUp */
+    /**
+     * 功能说明：网络ACL是否受管理员控制
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -191,7 +197,10 @@ public class NeutronCreateFirewallGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

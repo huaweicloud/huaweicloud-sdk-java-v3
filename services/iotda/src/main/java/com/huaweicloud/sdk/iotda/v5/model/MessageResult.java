@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 下发的消息响应结果 */
+/**
+ * 下发的消息响应结果
+ */
 public class MessageResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class MessageResult {
         return this;
     }
 
-    /** 消息状态,
-     * PENDING，DELIVERED，FAILED和TIMEOUT。如果设备不在线，则平台缓存消息，并且返回PENDING，等设备数据上报之后再下发；如果设备在线，则消息直接进行下发，下发成功后接口返回DELIVERED，失败返回FAILED；如果消息在平台默认时间内（1天）还没有下发给设备，则平台会将消息设置为超时，状态为TIMEOUT。另外应用可以订阅消息的执行结果，平台会将消息结果推送给订阅的应用。
-     * 
-     * @return status */
+    /**
+     * 消息状态, PENDING，DELIVERED，FAILED和TIMEOUT。如果设备不在线，则平台缓存消息，并且返回PENDING，等设备数据上报之后再下发；如果设备在线，则消息直接进行下发，下发成功后接口返回DELIVERED，失败返回FAILED；如果消息在平台默认时间内（1天）还没有下发给设备，则平台会将消息设置为超时，状态为TIMEOUT。另外应用可以订阅消息的执行结果，平台会将消息结果推送给订阅的应用。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -45,9 +47,10 @@ public class MessageResult {
         return this;
     }
 
-    /** 消息的创建时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
-     * 
-     * @return createdTime */
+    /**
+     * 消息的创建时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -61,9 +64,10 @@ public class MessageResult {
         return this;
     }
 
-    /** 消息结束时间, \"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串，包含消息转换到DELIVERED，FAILED和TIMEOUT状态的时间。
-     * 
-     * @return finishedTime */
+    /**
+     * 消息结束时间, \"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串，包含消息转换到DELIVERED，FAILED和TIMEOUT状态的时间。
+     * @return finishedTime
+     */
     public String getFinishedTime() {
         return finishedTime;
     }
@@ -102,7 +106,10 @@ public class MessageResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

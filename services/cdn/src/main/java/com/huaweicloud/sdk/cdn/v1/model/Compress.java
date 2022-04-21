@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 智能压缩。 */
+/**
+ * 智能压缩。
+ */
 public class Compress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Compress {
         return this;
     }
 
-    /** 智能压缩开关（on：开启，off：关闭）。
-     * 
-     * @return status */
+    /**
+     * 智能压缩开关（on：开启，off：关闭）。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -39,9 +42,10 @@ public class Compress {
         return this;
     }
 
-    /** 智能压缩类型（gzip：gzip压缩，br：br压缩）。
-     * 
-     * @return type */
+    /**
+     * 智能压缩类型（gzip：gzip压缩，br：br压缩）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -77,7 +81,10 @@ public class Compress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

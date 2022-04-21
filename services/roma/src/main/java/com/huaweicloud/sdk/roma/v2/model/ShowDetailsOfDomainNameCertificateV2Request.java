@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDetailsOfDomainNameCertificateV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return this;
     }
 
-    /** 分组的编号
-     * 
-     * @return groupId */
+    /**
+     * 分组的编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -65,9 +69,10 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return this;
     }
 
-    /** 域名的编号
-     * 
-     * @return domainId */
+    /**
+     * 域名的编号
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -81,9 +86,10 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return this;
     }
 
-    /** 证书的编号
-     * 
-     * @return certificateId */
+    /**
+     * 证书的编号
+     * @return certificateId
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -125,7 +131,10 @@ public class ShowDetailsOfDomainNameCertificateV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

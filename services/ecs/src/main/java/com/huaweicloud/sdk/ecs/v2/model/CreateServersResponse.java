@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateServersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class CreateServersResponse extends SdkResponse {
         return this;
     }
 
-    /** 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
-     * 
-     * @return jobId */
+    /**
+     * 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -48,9 +51,10 @@ public class CreateServersResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单号，创建包年包月的弹性云服务器时返回该参数。
-     * 
-     * @return orderId */
+    /**
+     * 订单号，创建包年包月的弹性云服务器时返回该参数。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -80,9 +84,10 @@ public class CreateServersResponse extends SdkResponse {
         return this;
     }
 
-    /** 云服务器ID列表。 通过云服务器ID查询云服务器详情 ，若返回404 可能云服务器还在创建或者已经创建失败。
-     * 
-     * @return serverIds */
+    /**
+     * 云服务器ID列表。  通过云服务器ID查询云服务器详情 ，若返回404 可能云服务器还在创建或者已经创建失败。
+     * @return serverIds
+     */
     public List<String> getServerIds() {
         return serverIds;
     }
@@ -121,7 +126,10 @@ public class CreateServersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

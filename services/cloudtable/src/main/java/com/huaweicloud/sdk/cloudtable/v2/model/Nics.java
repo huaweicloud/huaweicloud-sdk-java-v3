@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群所在的网络信息以及安全组信息。 */
+/**
+ * 集群所在的网络信息以及安全组信息。
+ */
 public class Nics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Nics {
         return this;
     }
 
-    /** CloudTable集群所在网络ID。
-     * 
-     * @return netId */
+    /**
+     * CloudTable集群所在网络ID。
+     * @return netId
+     */
     public String getNetId() {
         return netId;
     }
@@ -39,9 +42,10 @@ public class Nics {
         return this;
     }
 
-    /** CloudTable所在安全组对应的ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * CloudTable所在安全组对应的ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -77,7 +81,10 @@ public class Nics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

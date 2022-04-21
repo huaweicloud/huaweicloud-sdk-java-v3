@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QoS会议信息。 */
+/**
+ * QoS会议信息。
+ */
 public class QosConferenceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议UUID。
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -109,9 +112,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -125,9 +129,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议主题。
-     * 
-     * @return subject */
+    /**
+     * 会议主题。
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -141,9 +146,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议预订者名称。
-     * 
-     * @return scheduserName */
+    /**
+     * 会议预订者名称。
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -157,9 +163,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 部门。
-     * 
-     * @return deptName */
+    /**
+     * 部门。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -173,9 +180,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 总体告警 YES/NO。 说明： * 会议的音频，视频，屏幕共享，CPU任一项产生告警，总体告警就为YES。
-     * 
-     * @return alarm */
+    /**
+     * 总体告警 YES/NO。 说明： * 会议的音频，视频，屏幕共享，CPU任一项产生告警，总体告警就为YES。
+     * @return alarm
+     */
     public String getAlarm() {
         return alarm;
     }
@@ -189,9 +197,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 音频告警 YES/NO。 说明： * 会议中任一与会者存在音频告警，会议音频告警就为YES。
-     * 
-     * @return audioAlarm */
+    /**
+     * 音频告警 YES/NO。 说明： * 会议中任一与会者存在音频告警，会议音频告警就为YES。
+     * @return audioAlarm
+     */
     public String getAudioAlarm() {
         return audioAlarm;
     }
@@ -205,9 +214,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 视频告警 YES/NO。 说明： * 会议中任一与会者存在视频告警，会议视频告警就为YES。
-     * 
-     * @return videoAlarm */
+    /**
+     * 视频告警 YES/NO。 说明： * 会议中任一与会者存在视频告警，会议视频告警就为YES。
+     * @return videoAlarm
+     */
     public String getVideoAlarm() {
         return videoAlarm;
     }
@@ -221,9 +231,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 屏幕共享告警 YES/NO。 说明： * 会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES。
-     * 
-     * @return screenAlarm */
+    /**
+     * 屏幕共享告警 YES/NO。 说明： * 会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES。
+     * @return screenAlarm
+     */
     public String getScreenAlarm() {
         return screenAlarm;
     }
@@ -237,9 +248,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** CPU告警 YES/NO。 说明： * 会议中任一与会者存在CPU告警，会议CPU告警就为YES。'
-     * 
-     * @return cpuAlarm */
+    /**
+     * CPU告警 YES/NO。 说明： * 会议中任一与会者存在CPU告警，会议CPU告警就为YES。'
+     * @return cpuAlarm
+     */
     public String getCpuAlarm() {
         return cpuAlarm;
     }
@@ -253,9 +265,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 时区。详情参考时区表（云会议帮助中心->服务端API参考->附录->时区表），中国默认时区56-东八区。
-     * 
-     * @return timeZoneID */
+    /**
+     * 时区。详情参考时区表（云会议帮助中心->服务端API参考->附录->时区表），中国默认时区56-东八区。
+     * @return timeZoneID
+     */
     public String getTimeZoneID() {
         return timeZoneID;
     }
@@ -269,9 +282,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议开始时间(UTC时间), Unix时间戳（单位毫秒）。
-     * 
-     * @return startTime */
+    /**
+     * 会议开始时间(UTC时间), Unix时间戳（单位毫秒）。
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -285,9 +299,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -301,9 +316,11 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。 minimum: 0
-     * 
-     * @return duration */
+    /**
+     * 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。
+     * minimum: 0
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -317,9 +334,11 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。 minimum: 0
-     * 
-     * @return participants */
+    /**
+     * 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。
+     * minimum: 0
+     * @return participants
+     */
     public Integer getParticipants() {
         return participants;
     }
@@ -333,9 +352,10 @@ public class QosConferenceInfo {
         return this;
     }
 
-    /** 是否网络研讨会。
-     * 
-     * @return webinar */
+    /**
+     * 是否网络研讨会。
+     * @return webinar
+     */
     public Boolean getWebinar() {
         return webinar;
     }
@@ -415,7 +435,10 @@ public class QosConferenceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

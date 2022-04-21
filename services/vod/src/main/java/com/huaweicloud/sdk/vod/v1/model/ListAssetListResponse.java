@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAssetListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListAssetListResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资总数 > 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请提交工单申请。
-     * 
-     * @return total */
+    /**
+     * 媒资总数  > 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请提交工单申请。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +62,10 @@ public class ListAssetListResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资列表
-     * 
-     * @return assets */
+    /**
+     * 媒资列表
+     * @return assets
+     */
     public List<AssetSummary> getAssets() {
         return assets;
     }
@@ -98,7 +102,10 @@ public class ListAssetListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

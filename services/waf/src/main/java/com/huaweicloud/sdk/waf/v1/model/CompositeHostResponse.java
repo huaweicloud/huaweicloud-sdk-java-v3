@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CompositeHostResponse */
+/**
+ * CompositeHostResponse
+ */
 public class CompositeHostResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -85,9 +88,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 创建的云模式防护域名
-     * 
-     * @return hostname */
+    /**
+     * 创建的云模式防护域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -101,9 +105,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -117,9 +122,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** cname前缀
-     * 
-     * @return accessCode */
+    /**
+     * cname前缀
+     * @return accessCode
+     */
     public String getAccessCode() {
         return accessCode;
     }
@@ -133,9 +139,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -149,9 +156,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 接入状态
-     * 
-     * @return accessStatus */
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -165,9 +173,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 是否开启了代理
-     * 
-     * @return proxy */
+    /**
+     * 是否开启了代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -181,9 +190,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 创建防护域名的时间
-     * 
-     * @return timestamp */
+    /**
+     * 创建防护域名的时间
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -197,9 +207,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 套餐付费模式，目前只支持prePaid预付款模式
-     * 
-     * @return paidType */
+    /**
+     * 套餐付费模式，目前只支持prePaid预付款模式
+     * @return paidType
+     */
     public String getPaidType() {
         return paidType;
     }
@@ -222,9 +233,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** Get flag
-     * 
-     * @return flag */
+    /**
+     * Get flag
+     * @return flag
+     */
     public HostFlag getFlag() {
         return flag;
     }
@@ -238,9 +250,10 @@ public class CompositeHostResponse {
         return this;
     }
 
-    /** 域名所属WAF模式
-     * 
-     * @return wafType */
+    /**
+     * 域名所属WAF模式
+     * @return wafType
+     */
     public String getWafType() {
         return wafType;
     }
@@ -305,7 +318,10 @@ public class CompositeHostResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

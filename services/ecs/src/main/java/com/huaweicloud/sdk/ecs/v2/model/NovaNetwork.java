@@ -35,9 +35,10 @@ public class NovaNetwork {
         return this;
     }
 
-    /** IP地址。
-     * 
-     * @return addr */
+    /**
+     * IP地址。
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -51,9 +52,10 @@ public class NovaNetwork {
         return this;
     }
 
-    /** IP地址类型，值为4或6。 4：IP地址类型是IPv4 6：IP地址类型是IPv6
-     * 
-     * @return version */
+    /**
+     * IP地址类型，值为4或6。  4：IP地址类型是IPv4 6：IP地址类型是IPv6
+     * @return version
+     */
     public Integer getVersion() {
         return version;
     }
@@ -67,9 +69,10 @@ public class NovaNetwork {
         return this;
     }
 
-    /** 扩展属性，MAC地址。
-     * 
-     * @return osEXTIPSMACMacAddr */
+    /**
+     * 扩展属性，MAC地址。
+     * @return osEXTIPSMACMacAddr
+     */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -83,9 +86,10 @@ public class NovaNetwork {
         return this;
     }
 
-    /** 扩展属性，分配IP地址方式。
-     * 
-     * @return osEXTIPSType */
+    /**
+     * 扩展属性，分配IP地址方式。
+     * @return osEXTIPSType
+     */
     public String getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -125,7 +129,10 @@ public class NovaNetwork {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议配置信息 */
+/**
+ * 会议配置信息
+ */
 public class RestConfConfigDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议邮件通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
-     * 
-     * @return isSendNotify */
+    /**
+     * 是否需要发送会议邮件通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * @return isSendNotify
+     */
     public Boolean getIsSendNotify() {
         return isSendNotify;
     }
@@ -89,9 +92,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议短信通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
-     * 
-     * @return isSendSms */
+    /**
+     * 是否需要发送会议短信通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * @return isSendSms
+     */
     public Boolean getIsSendSms() {
         return isSendSms;
     }
@@ -105,9 +109,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否需要发送会议通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
-     * 
-     * @return isSendCalendar */
+    /**
+     * 是否需要发送会议通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * @return isSendCalendar
+     */
     public Boolean getIsSendCalendar() {
         return isSendCalendar;
     }
@@ -121,9 +126,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 来宾入会,软终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
-     * 
-     * @return isAutoMute */
+    /**
+     * 来宾入会,软终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
+     * @return isAutoMute
+     */
     public Boolean getIsAutoMute() {
         return isAutoMute;
     }
@@ -137,9 +143,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 来宾入会,硬终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
-     * 
-     * @return isHardTerminalAutoMute */
+    /**
+     * 来宾入会,硬终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
+     * @return isHardTerminalAutoMute
+     */
     public Boolean getIsHardTerminalAutoMute() {
         return isHardTerminalAutoMute;
     }
@@ -153,9 +160,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否来宾免密（仅随机会议有效）。 - True: 免密。 - False: 需要密码。
-     * 
-     * @return isGuestFreePwd */
+    /**
+     * 是否来宾免密（仅随机会议有效）。 - True: 免密。 - False: 需要密码。
+     * @return isGuestFreePwd
+     */
     public Boolean getIsGuestFreePwd() {
         return isGuestFreePwd;
     }
@@ -169,9 +177,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 允许呼入的范围。 - 0: 所有用户。 - 2: 企业内用户。 - 3: 被邀请用户。
-     * 
-     * @return callInRestriction */
+    /**
+     * 允许呼入的范围。 - 0: 所有用户。 - 2: 企业内用户。 - 3: 被邀请用户。
+     * @return callInRestriction
+     */
     public Integer getCallInRestriction() {
         return callInRestriction;
     }
@@ -185,9 +194,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 是否允许来宾启动会议(随机会议)。 - True: 允许来宾启动会议。 - False: 禁止来宾启动会议。
-     * 
-     * @return allowGuestStartConf */
+    /**
+     * 是否允许来宾启动会议(随机会议)。 - True: 允许来宾启动会议。 - False: 禁止来宾启动会议。
+     * @return allowGuestStartConf
+     */
     public Boolean getAllowGuestStartConf() {
         return allowGuestStartConf;
     }
@@ -201,9 +211,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 来宾密码
-     * 
-     * @return guestPwd */
+    /**
+     * 来宾密码
+     * @return guestPwd
+     */
     public String getGuestPwd() {
         return guestPwd;
     }
@@ -217,9 +228,12 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** |参数名称：专用VMR会议ID类型 |参数描述：专用VMR会议ID类型 0: 固定ID 1: 随机ID |取值范围：[0,1]| minimum: 0 maximum: 1
-     * 
-     * @return vmrIDType */
+    /**
+     * |参数名称：专用VMR会议ID类型 |参数描述：专用VMR会议ID类型 0: 固定ID 1: 随机ID |取值范围：[0,1]|
+     * minimum: 0
+     * maximum: 1
+     * @return vmrIDType
+     */
     public Integer getVmrIDType() {
         return vmrIDType;
     }
@@ -233,9 +247,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** |参数名称：自动延长会议时长，0表示会议不延长 |建议取值范围：[0,60]|
-     * 
-     * @return prolongLength */
+    /**
+     * |参数名称：自动延长会议时长，0表示会议不延长 |建议取值范围：[0,60]|
+     * @return prolongLength
+     */
     public Integer getProlongLength() {
         return prolongLength;
     }
@@ -249,9 +264,10 @@ public class RestConfConfigDTO {
         return this;
     }
 
-    /** 开启或者关闭等候室
-     * 
-     * @return enableWaitingRoom */
+    /**
+     * 开启或者关闭等候室
+     * @return enableWaitingRoom
+     */
     public Boolean getEnableWaitingRoom() {
         return enableWaitingRoom;
     }
@@ -319,7 +335,10 @@ public class RestConfConfigDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

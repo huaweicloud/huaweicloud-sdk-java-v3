@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RtcServerRoomInfo */
+/**
+ * RtcServerRoomInfo
+ */
 public class RtcServerRoomInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class RtcServerRoomInfo {
 
     private String roomId;
 
-    /** 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭 */
+    /**
+     * 房间状态，取值如下：  - RUNNING：开启中  - CLOSED：已关闭 
+     */
     public static final class StateEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum CLOSED for value: "CLOSED" */
+        /**
+         * Enum CLOSED for value: "CLOSED"
+         */
         public static final StateEnum CLOSED = new StateEnum("CLOSED");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domain */
+    /**
+     * 域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -140,9 +149,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -156,9 +166,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -172,9 +183,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 房间状态，取值如下： - RUNNING：开启中 - CLOSED：已关闭
-     * 
-     * @return state */
+    /**
+     * 房间状态，取值如下：  - RUNNING：开启中  - CLOSED：已关闭 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -188,9 +200,12 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 房间持续时长 minimum: 0 maximum: 1844674407
-     * 
-     * @return duration */
+    /**
+     * 房间持续时长
+     * minimum: 0
+     * maximum: 1844674407
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -204,9 +219,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 房间开始时间，即第一个用户加入房间时间，UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z
-     * 
-     * @return startTime */
+    /**
+     * 房间开始时间，即第一个用户加入房间时间，UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -220,9 +236,10 @@ public class RtcServerRoomInfo {
         return this;
     }
 
-    /** 房间关闭时间，即最后一个room_uuid关闭的时间，UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，若房间未关闭，则返回 “-”
-     * 
-     * @return endTime */
+    /**
+     * 房间关闭时间，即最后一个room_uuid关闭的时间，UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，若房间未关闭，则返回 “-” 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -268,7 +285,10 @@ public class RtcServerRoomInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

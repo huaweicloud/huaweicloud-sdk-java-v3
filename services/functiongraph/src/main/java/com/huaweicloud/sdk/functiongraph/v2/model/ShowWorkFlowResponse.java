@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowWorkFlowResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** 唯一标识ID，流程定义ID
-     * 
-     * @return id */
+    /**
+     * 唯一标识ID，流程定义ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -61,9 +64,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** 唯一标识ID，流程URN
-     * 
-     * @return workflowUrn */
+    /**
+     * 唯一标识ID，流程URN
+     * @return workflowUrn
+     */
     public String getWorkflowUrn() {
         return workflowUrn;
     }
@@ -77,9 +81,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return createdTime */
+    /**
+     * 流程创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -93,9 +98,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程修改时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return updatedTime */
+    /**
+     * 流程修改时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -109,9 +115,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程创建者
-     * 
-     * @return createdBy */
+    /**
+     * 流程创建者
+     * @return createdBy
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -134,9 +141,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return this;
     }
 
-    /** Get definition
-     * 
-     * @return definition */
+    /**
+     * Get definition
+     * @return definition
+     */
     public CreateWorkflowRequestBody getDefinition() {
         return definition;
     }
@@ -181,7 +189,10 @@ public class ShowWorkFlowResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

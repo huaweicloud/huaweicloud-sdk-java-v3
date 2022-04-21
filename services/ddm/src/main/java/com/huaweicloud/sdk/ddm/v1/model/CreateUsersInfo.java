@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateUsersInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,31 +28,49 @@ public class CreateUsersInfo {
 
     private String password;
 
-    /** Gets or Sets baseAuthority */
+    /**
+     * Gets or Sets baseAuthority
+     */
     public static final class BaseAuthorityEnum {
 
-        /** Enum CREATE for value: "CREATE" */
+        /**
+         * Enum CREATE for value: "CREATE"
+         */
         public static final BaseAuthorityEnum CREATE = new BaseAuthorityEnum("CREATE");
 
-        /** Enum DROP for value: "DROP" */
+        /**
+         * Enum DROP for value: "DROP"
+         */
         public static final BaseAuthorityEnum DROP = new BaseAuthorityEnum("DROP");
 
-        /** Enum ALTER for value: "ALTER" */
+        /**
+         * Enum ALTER for value: "ALTER"
+         */
         public static final BaseAuthorityEnum ALTER = new BaseAuthorityEnum("ALTER");
 
-        /** Enum INDEX for value: "INDEX" */
+        /**
+         * Enum INDEX for value: "INDEX"
+         */
         public static final BaseAuthorityEnum INDEX = new BaseAuthorityEnum("INDEX");
 
-        /** Enum INSERT for value: "INSERT" */
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
         public static final BaseAuthorityEnum INSERT = new BaseAuthorityEnum("INSERT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final BaseAuthorityEnum DELETE = new BaseAuthorityEnum("DELETE");
 
-        /** Enum UPDATE for value: "UPDATE" */
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
         public static final BaseAuthorityEnum UPDATE = new BaseAuthorityEnum("UPDATE");
 
-        /** Enum SELECT for value: "SELECT" */
+        /**
+         * Enum SELECT for value: "SELECT"
+         */
         public static final BaseAuthorityEnum SELECT = new BaseAuthorityEnum("SELECT");
 
         private static final Map<String, BaseAuthorityEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +161,10 @@ public class CreateUsersInfo {
         return this;
     }
 
-    /** DDM实例帐号名称，命名要求如下。 - 长度为1-32个字符。 - 必须以字母开头。 - 可以包含字母，数字、下划线，不能包含其它特殊字符。
-     * 
-     * @return name */
+    /**
+     * DDM实例帐号名称，命名要求如下。  - 长度为1-32个字符。 - 必须以字母开头。 - 可以包含字母，数字、下划线，不能包含其它特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,9 +178,10 @@ public class CreateUsersInfo {
         return this;
     }
 
-    /** DDM实例帐号密码。
-     * 
-     * @return password */
+    /**
+     * DDM实例帐号密码。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -189,9 +211,10 @@ public class CreateUsersInfo {
         return this;
     }
 
-    /** DDM实例帐号的基础权限。 取值为：CREATE、DROP、ALTER、INDEX、INSERT、DELETE、UPDATE、SELECT
-     * 
-     * @return baseAuthority */
+    /**
+     * DDM实例帐号的基础权限。  取值为：CREATE、DROP、ALTER、INDEX、INSERT、DELETE、UPDATE、SELECT
+     * @return baseAuthority
+     */
     public List<BaseAuthorityEnum> getBaseAuthority() {
         return baseAuthority;
     }
@@ -205,9 +228,10 @@ public class CreateUsersInfo {
         return this;
     }
 
-    /** DDM实例帐号的描述，最大长度不能超过256。默认值为空。
-     * 
-     * @return description */
+    /**
+     * DDM实例帐号的描述，最大长度不能超过256。默认值为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -237,9 +261,10 @@ public class CreateUsersInfo {
         return this;
     }
 
-    /** 关联的逻辑库的集合。 databases字段可以省略，即创建用户时可以不关联逻辑库。
-     * 
-     * @return databases */
+    /**
+     * 关联的逻辑库的集合。 databases字段可以省略，即创建用户时可以不关联逻辑库。
+     * @return databases
+     */
     public List<CreateUsersDatabases> getDatabases() {
         return databases;
     }
@@ -282,7 +307,10 @@ public class CreateUsersInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiForSign */
+/**
+ * ApiForSign
+ */
 public class ApiForSign {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API的认证方式
-     * 
-     * @return authType */
+    /**
+     * API的认证方式
+     * @return authType
+     */
     public String getAuthType() {
         return authType;
     }
@@ -89,9 +92,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** 发布的环境名
-     * 
-     * @return runEnvName */
+    /**
+     * 发布的环境名
+     * @return runEnvName
+     */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -105,9 +109,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -121,9 +126,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** 发布记录的编号
-     * 
-     * @return publishId */
+    /**
+     * 发布记录的编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -137,9 +143,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API所属分组的编号
-     * 
-     * @return groupId */
+    /**
+     * API所属分组的编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -153,9 +160,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return name */
+    /**
+     * API名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -169,9 +177,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return remark */
+    /**
+     * API描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -185,9 +194,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** 发布的环境id
-     * 
-     * @return runEnvId */
+    /**
+     * 发布的环境id
+     * @return runEnvId
+     */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -201,9 +211,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return id */
+    /**
+     * API编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -217,9 +228,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API的请求地址
-     * 
-     * @return reqUri */
+    /**
+     * API的请求地址
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -233,9 +245,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return type */
+    /**
+     * API类型
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -249,9 +262,10 @@ public class ApiForSign {
         return this;
     }
 
-    /** 已绑定的签名密钥名称
-     * 
-     * @return signatureName */
+    /**
+     * 已绑定的签名密钥名称
+     * @return signatureName
+     */
     public String getSignatureName() {
         return signatureName;
     }
@@ -315,7 +329,10 @@ public class ApiForSign {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

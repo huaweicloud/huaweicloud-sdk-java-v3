@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Cron */
+/**
+ * Cron
+ */
 public class Cron {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class Cron {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -57,9 +60,10 @@ public class Cron {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -73,9 +77,10 @@ public class Cron {
         return this;
     }
 
-    /** Cron表达式
-     * 
-     * @return expression */
+    /**
+     * Cron表达式
+     * @return expression
+     */
     public String getExpression() {
         return expression;
     }
@@ -89,9 +94,10 @@ public class Cron {
         return this;
     }
 
-    /** 是否依赖本作业上一个运行周期任务的执行结果
-     * 
-     * @return dependPrePeriod */
+    /**
+     * 是否依赖本作业上一个运行周期任务的执行结果
+     * @return dependPrePeriod
+     */
     public Boolean getDependPrePeriod() {
         return dependPrePeriod;
     }
@@ -121,9 +127,10 @@ public class Cron {
         return this;
     }
 
-    /** 依赖其它作业列表
-     * 
-     * @return dependJobs */
+    /**
+     * 依赖其它作业列表
+     * @return dependJobs
+     */
     public List<DependJob> getDependJobs() {
         return dependJobs;
     }
@@ -165,7 +172,10 @@ public class Cron {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

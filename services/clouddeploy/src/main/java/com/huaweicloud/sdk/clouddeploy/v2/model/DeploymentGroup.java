@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 主机组详细信息 */
+/**
+ * 主机组详细信息
+ */
 public class DeploymentGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class DeploymentGroup {
 
     private String projectId;
 
-    /** 操作信息：windows|linux */
+    /**
+     * 操作信息：windows|linux
+     */
     public static final class OsEnum {
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final OsEnum WINDOWS = new OsEnum("windows");
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final OsEnum LINUX = new OsEnum("linux");
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** 主机组名
-     * 
-     * @return name */
+    /**
+     * 主机组名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -135,9 +144,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** 局点信息
-     * 
-     * @return regionName */
+    /**
+     * 局点信息
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -151,9 +161,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** devcloud项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -167,9 +178,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** 操作信息：windows|linux
-     * 
-     * @return os */
+    /**
+     * 操作信息：windows|linux
+     * @return os
+     */
     public OsEnum getOs() {
         return os;
     }
@@ -183,9 +195,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
-     * 
-     * @return slaveClusterId */
+    /**
+     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * @return slaveClusterId
+     */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -199,9 +212,10 @@ public class DeploymentGroup {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -245,7 +259,10 @@ public class DeploymentGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

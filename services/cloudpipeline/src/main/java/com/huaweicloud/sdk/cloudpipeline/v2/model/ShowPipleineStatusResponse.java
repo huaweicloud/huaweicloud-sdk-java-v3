@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPipleineStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,9 +79,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线ID
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -93,9 +96,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线名称
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名称
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -109,9 +113,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行人
-     * 
-     * @return executor */
+    /**
+     * 执行人
+     * @return executor
+     */
     public String getExecutor() {
         return executor;
     }
@@ -125,9 +130,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线执行ID
-     * 
-     * @return buildId */
+    /**
+     * 流水线执行ID
+     * @return buildId
+     */
     public String getBuildId() {
         return buildId;
     }
@@ -141,9 +147,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始执行时间
-     * 
-     * @return startTime */
+    /**
+     * 开始执行时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -157,9 +164,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 结束执行时间
-     * 
-     * @return endTime */
+    /**
+     * 结束执行时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -189,9 +197,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线参数
-     * 
-     * @return parameters */
+    /**
+     * 流水线参数
+     * @return parameters
+     */
     public List<PipelineParameter> getParameters() {
         return parameters;
     }
@@ -221,9 +230,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线执行情况
-     * 
-     * @return states */
+    /**
+     * 流水线执行情况
+     * @return states
+     */
     public List<PipelineStateStatus> getStates() {
         return states;
     }
@@ -237,9 +247,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行耗时
-     * 
-     * @return elapsedTime */
+    /**
+     * 执行耗时
+     * @return elapsedTime
+     */
     public String getElapsedTime() {
         return elapsedTime;
     }
@@ -253,9 +264,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线运行状态
-     * 
-     * @return status */
+    /**
+     * 流水线运行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -269,9 +281,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线执行结果
-     * 
-     * @return outcome */
+    /**
+     * 流水线执行结果
+     * @return outcome
+     */
     public String getOutcome() {
         return outcome;
     }
@@ -285,9 +298,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线详情页地址
-     * 
-     * @return detailUrl */
+    /**
+     * 流水线详情页地址
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -355,7 +369,10 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

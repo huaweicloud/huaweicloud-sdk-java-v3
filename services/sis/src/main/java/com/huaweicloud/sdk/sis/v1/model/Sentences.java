@@ -31,9 +31,10 @@ public class Sentences {
         return this;
     }
 
-    /** 分句结果信息
-     * 
-     * @return endTime */
+    /**
+     * 分句结果信息
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -56,9 +57,10 @@ public class Sentences {
         return this;
     }
 
-    /** Get result
-     * 
-     * @return result */
+    /**
+     * Get result
+     * @return result
+     */
     public FlashScoreResult getResult() {
         return result;
     }
@@ -72,9 +74,10 @@ public class Sentences {
         return this;
     }
 
-    /** 一句话开始时间，单位毫秒
-     * 
-     * @return startTime */
+    /**
+     * 一句话开始时间，单位毫秒
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -112,7 +115,10 @@ public class Sentences {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

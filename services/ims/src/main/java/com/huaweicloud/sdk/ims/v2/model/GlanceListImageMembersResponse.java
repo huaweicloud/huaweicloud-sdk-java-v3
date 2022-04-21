@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceListImageMembersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 成员信息
-     * 
-     * @return members */
+    /**
+     * 成员信息
+     * @return members
+     */
     public List<GlanceImageMembers> getMembers() {
         return members;
     }
@@ -59,9 +62,10 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 视图信息
-     * 
-     * @return schema */
+    /**
+     * 视图信息
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -98,7 +102,10 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeviceShadowResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ShowDeviceShadowResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -59,9 +62,10 @@ public class ShowDeviceShadowResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备影子数据结构体。
-     * 
-     * @return shadow */
+    /**
+     * 设备影子数据结构体。
+     * @return shadow
+     */
     public List<DeviceShadowData> getShadow() {
         return shadow;
     }
@@ -98,7 +102,10 @@ public class ShowDeviceShadowResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

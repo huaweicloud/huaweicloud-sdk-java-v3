@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 预览邮件格式请求体 */
+/**
+ * 预览邮件格式请求体
+ */
 public class PreviewTemplateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class PreviewTemplateBody {
 
     private String templates;
 
-    /** 语言 zh-cn中文，en-us英文 */
+    /**
+     * 语言 zh-cn中文，en-us英文
+     */
     public static final class LanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final LanguageEnum EN_US = new LanguageEnum("en-us");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class PreviewTemplateBody {
         return this;
     }
 
-    /** 邮件模板内容
-     * 
-     * @return templates */
+    /**
+     * 邮件模板内容
+     * @return templates
+     */
     public String getTemplates() {
         return templates;
     }
@@ -120,9 +129,10 @@ public class PreviewTemplateBody {
         return this;
     }
 
-    /** 语言 zh-cn中文，en-us英文
-     * 
-     * @return language */
+    /**
+     * 语言 zh-cn中文，en-us英文
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -136,9 +146,10 @@ public class PreviewTemplateBody {
         return this;
     }
 
-    /** 来源，只能填LTS
-     * 
-     * @return source */
+    /**
+     * 来源，只能填LTS
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -177,7 +188,10 @@ public class PreviewTemplateBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

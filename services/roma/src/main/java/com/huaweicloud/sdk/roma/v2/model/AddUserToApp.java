@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AddUserToApp */
+/**
+ * AddUserToApp
+ */
 public class AddUserToApp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AddUserToApp {
         return this;
     }
 
-    /** 要添加的用户成员列表，空列表时代表清空应用的所有成员
-     * 
-     * @return users */
+    /**
+     * 要添加的用户成员列表，空列表时代表清空应用的所有成员
+     * @return users
+     */
     public List<User> getUsers() {
         return users;
     }
@@ -74,7 +77,10 @@ public class AddUserToApp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

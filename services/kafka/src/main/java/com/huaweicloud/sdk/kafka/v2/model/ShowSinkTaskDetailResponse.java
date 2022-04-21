@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSinkTaskDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 转储任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -68,9 +71,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务类型。
-     * 
-     * @return destinationType */
+    /**
+     * 转储任务类型。
+     * @return destinationType
+     */
     public String getDestinationType() {
         return destinationType;
     }
@@ -84,9 +88,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务创建时间戳。
-     * 
-     * @return createTime */
+    /**
+     * 转储任务创建时间戳。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -100,9 +105,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务状态。
-     * 
-     * @return status */
+    /**
+     * 转储任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -116,9 +122,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回任务转存的topics列表或者正则表达式。
-     * 
-     * @return topics */
+    /**
+     * 返回任务转存的topics列表或者正则表达式。
+     * @return topics
+     */
     public String getTopics() {
         return topics;
     }
@@ -143,9 +150,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get obsDestinationDescriptor
-     * 
-     * @return obsDestinationDescriptor */
+    /**
+     * Get obsDestinationDescriptor
+     * @return obsDestinationDescriptor
+     */
     public ShowSinkTaskDetailRespObsDestinationDescriptor getObsDestinationDescriptor() {
         return obsDestinationDescriptor;
     }
@@ -176,9 +184,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** topic信息。
-     * 
-     * @return topicsInfo */
+    /**
+     * topic信息。
+     * @return topicsInfo
+     */
     public List<ShowSinkTaskDetailRespTopicsInfo> getTopicsInfo() {
         return topicsInfo;
     }
@@ -226,7 +235,10 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

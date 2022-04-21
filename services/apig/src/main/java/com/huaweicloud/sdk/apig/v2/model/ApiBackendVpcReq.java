@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VPC通道详情。vpc_channel_status &#x3D; 1，则这个object类型为必填信息 */
+/**
+ * VPC通道详情。vpc_channel_status &#x3D; 1，则这个object类型为必填信息
+ */
 public class ApiBackendVpcReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ApiBackendVpcReq {
         return this;
     }
 
-    /** 代理主机
-     * 
-     * @return vpcChannelProxyHost */
+    /**
+     * 代理主机
+     * @return vpcChannelProxyHost
+     */
     public String getVpcChannelProxyHost() {
         return vpcChannelProxyHost;
     }
@@ -39,9 +42,10 @@ public class ApiBackendVpcReq {
         return this;
     }
 
-    /** VPC通道编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -78,7 +82,10 @@ public class ApiBackendVpcReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

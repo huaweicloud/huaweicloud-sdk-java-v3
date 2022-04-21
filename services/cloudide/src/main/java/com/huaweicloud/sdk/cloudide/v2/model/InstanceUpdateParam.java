@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InstanceUpdateParam */
+/**
+ * InstanceUpdateParam
+ */
 public class InstanceUpdateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class InstanceUpdateParam {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -44,9 +47,10 @@ public class InstanceUpdateParam {
         return this;
     }
 
-    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * 
-     * @return displayName */
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -60,10 +64,10 @@ public class InstanceUpdateParam {
         return this;
     }
 
-    /** 自动休眠时长。
-     * arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
-     * 
-     * @return refreshInterval */
+    /**
+     * 自动休眠时长。 arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
+     * @return refreshInterval
+     */
     public String getRefreshInterval() {
         return refreshInterval;
     }
@@ -102,7 +106,10 @@ public class InstanceUpdateParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 管理员信息 */
+/**
+ * 管理员信息
+ */
 public class QueryAdminResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return id */
+    /**
+     * 用户id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 用户账号
-     * 
-     * @return account */
+    /**
+     * 用户账号
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -80,9 +84,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +101,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 管理员类型 - 0：默认管理员 - 1：普通管理员
-     * 
-     * @return adminType */
+    /**
+     * 管理员类型 - 0：默认管理员 - 1：普通管理员
+     * @return adminType
+     */
     public Integer getAdminType() {
         return adminType;
     }
@@ -112,9 +118,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 邮箱
-     * 
-     * @return email */
+    /**
+     * 邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -128,9 +135,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 联系电话
-     * 
-     * @return phone */
+    /**
+     * 联系电话
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -144,9 +152,10 @@ public class QueryAdminResultDTO {
         return this;
     }
 
-    /** 联系电话所属的国家
-     * 
-     * @return country */
+    /**
+     * 联系电话所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -193,7 +202,10 @@ public class QueryAdminResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class NeutronInsertFirewallRuleRequestBody {
         return this;
     }
 
-    /** 功能说明：网络ACL规则ID
-     * 
-     * @return firewallRuleId */
+    /**
+     * 功能说明：网络ACL规则ID
+     * @return firewallRuleId
+     */
     public String getFirewallRuleId() {
         return firewallRuleId;
     }
@@ -46,9 +47,10 @@ public class NeutronInsertFirewallRuleRequestBody {
         return this;
     }
 
-    /** insert_after参数表示已经和某个policy关联的rule，新的rule将会直接被插入到insert_after参数指定的rule后面。如果insert_after和insert_before都被指定了，insert_after参数值将被忽略。
-     * 
-     * @return insertAfter */
+    /**
+     * insert_after参数表示已经和某个policy关联的rule，新的rule将会直接被插入到insert_after参数指定的rule后面。如果insert_after和insert_before都被指定了，insert_after参数值将被忽略。
+     * @return insertAfter
+     */
     public String getInsertAfter() {
         return insertAfter;
     }
@@ -62,10 +64,10 @@ public class NeutronInsertFirewallRuleRequestBody {
         return this;
     }
 
-    /** insert_before参数表示已经和某个policy关联的rule，新的firewall rule将会直接被插入到insert_ before参数指定的firewall
-     * rule前面。如果insert_after和insert_before都被指定了，insert_after参数值将被忽略。
-     * 
-     * @return insertBefore */
+    /**
+     * insert_before参数表示已经和某个policy关联的rule，新的firewall rule将会直接被插入到insert_ before参数指定的firewall rule前面。如果insert_after和insert_before都被指定了，insert_after参数值将被忽略。
+     * @return insertBefore
+     */
     public String getInsertBefore() {
         return insertBefore;
     }
@@ -105,7 +107,10 @@ public class NeutronInsertFirewallRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

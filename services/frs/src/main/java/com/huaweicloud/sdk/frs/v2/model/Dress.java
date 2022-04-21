@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Dress */
+/**
+ * Dress
+ */
 public class Dress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Dress {
         return this;
     }
 
-    /** 是否带眼镜： • yes：带眼镜 • dark：带墨镜 • none：未戴眼镜 • unknown：未知
-     * 
-     * @return glass */
+    /**
+     * 是否带眼镜： • yes：带眼镜 • dark：带墨镜 • none：未戴眼镜 • unknown：未知
+     * @return glass
+     */
     public String getGlass() {
         return glass;
     }
@@ -39,9 +42,10 @@ public class Dress {
         return this;
     }
 
-    /** 是否戴帽子： • yes：戴帽子 • none：未戴帽子 • unknown：未知
-     * 
-     * @return hat */
+    /**
+     * 是否戴帽子： • yes：戴帽子 • none：未戴帽子 • unknown：未知
+     * @return hat
+     */
     public String getHat() {
         return hat;
     }
@@ -77,7 +81,10 @@ public class Dress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

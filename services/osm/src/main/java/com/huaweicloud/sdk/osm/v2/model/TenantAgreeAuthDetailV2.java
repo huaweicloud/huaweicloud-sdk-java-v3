@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TenantAgreeAuthDetailV2 */
+/**
+ * TenantAgreeAuthDetailV2
+ */
 public class TenantAgreeAuthDetailV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class TenantAgreeAuthDetailV2 {
         return this;
     }
 
-    /** 端口 minimum: 1 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 端口
+     * minimum: 1
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -49,9 +54,10 @@ public class TenantAgreeAuthDetailV2 {
         return this;
     }
 
-    /** 账号
-     * 
-     * @return account */
+    /**
+     * 账号
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -65,9 +71,10 @@ public class TenantAgreeAuthDetailV2 {
         return this;
     }
 
-    /** 密码
-     * 
-     * @return password */
+    /**
+     * 密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -81,9 +88,12 @@ public class TenantAgreeAuthDetailV2 {
         return this;
     }
 
-    /** 授权详情id minimum: -9223372036854775808 maximum: 9223372036854775807
-     * 
-     * @return authDetailId */
+    /**
+     * 授权详情id
+     * minimum: -9223372036854775808
+     * maximum: 9223372036854775807
+     * @return authDetailId
+     */
     public Long getAuthDetailId() {
         return authDetailId;
     }
@@ -124,7 +134,10 @@ public class TenantAgreeAuthDetailV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

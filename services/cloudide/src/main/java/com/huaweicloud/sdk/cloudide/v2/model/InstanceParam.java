@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceParam */
+/**
+ * InstanceParam
+ */
 public class InstanceParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class InstanceParam {
 
     private String agentId;
 
-    /** cpu架构 x86|arm */
+    /**
+     * cpu架构 x86|arm
+     */
     public static final class ArchEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchEnum X86 = new ArchEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchEnum ARM = new ArchEnum("arm");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
@@ -97,20 +105,29 @@ public class InstanceParam {
 
     private ArchEnum arch;
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     */
     public static final class CpuMemoryEnum {
 
-        /** Enum _1U1G for value: "1U1G" */
+        /**
+         * Enum _1U1G for value: "1U1G"
+         */
         public static final CpuMemoryEnum _1U1G = new CpuMemoryEnum("1U1G");
 
-        /** Enum _2U4G for value: "2U4G" */
+        /**
+         * Enum _2U4G for value: "2U4G"
+         */
         public static final CpuMemoryEnum _2U4G = new CpuMemoryEnum("2U4G");
 
-        /** Enum _2U8G for value: "2U8G" */
+        /**
+         * Enum _2U8G for value: "2U8G"
+         */
         public static final CpuMemoryEnum _2U8G = new CpuMemoryEnum("2U8G");
 
-        /** Enum _4U8G for value: "4U8G" */
+        /**
+         * Enum _4U8G for value: "4U8G"
+         */
         public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
 
         private static final Map<String, CpuMemoryEnum> STATIC_FIELDS = createStaticFields();
@@ -222,16 +239,24 @@ public class InstanceParam {
 
     private String privateIp;
 
-    /** PVC规格 5GB|10GB|20GB */
+    /**
+     * PVC规格 5GB|10GB|20GB
+     */
     public static final class PvcQuantityEnum {
 
-        /** Enum _5GB for value: "5GB" */
+        /**
+         * Enum _5GB for value: "5GB"
+         */
         public static final PvcQuantityEnum _5GB = new PvcQuantityEnum("5GB");
 
-        /** Enum _10GB for value: "10GB" */
+        /**
+         * Enum _10GB for value: "10GB"
+         */
         public static final PvcQuantityEnum _10GB = new PvcQuantityEnum("10GB");
 
-        /** Enum _20GB for value: "20GB" */
+        /**
+         * Enum _20GB for value: "20GB"
+         */
         public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
 
         private static final Map<String, PvcQuantityEnum> STATIC_FIELDS = createStaticFields();
@@ -357,9 +382,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 代理商id，教程活动场景下使用
-     * 
-     * @return agentId */
+    /**
+     * 代理商id，教程活动场景下使用
+     * @return agentId
+     */
     public String getAgentId() {
         return agentId;
     }
@@ -373,9 +399,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public ArchEnum getArch() {
         return arch;
     }
@@ -389,10 +416,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
-     * 
-     * @return cpuMemory */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     * @return cpuMemory
+     */
     public CpuMemoryEnum getCpuMemory() {
         return cpuMemory;
     }
@@ -406,9 +433,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -422,9 +450,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * 
-     * @return displayName */
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -438,9 +467,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 是否页面显示（以标签配置为准）
-     * 
-     * @return isTemporary */
+    /**
+     * 是否页面显示（以标签配置为准）
+     * @return isTemporary
+     */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -454,9 +484,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例标签（不同的第三方需要和CloudIDE服务共同设定标签），不传默认为default
-     * 
-     * @return labelTag */
+    /**
+     * 实例标签（不同的第三方需要和CloudIDE服务共同设定标签），不传默认为default
+     * @return labelTag
+     */
     public String getLabelTag() {
         return labelTag;
     }
@@ -486,9 +517,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 预装插件列表
-     * 
-     * @return pluginEnableList */
+    /**
+     * 预装插件列表
+     * @return pluginEnableList
+     */
     public List<String> getPluginEnableList() {
         return pluginEnableList;
     }
@@ -518,9 +550,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 预装插件参数
-     * 
-     * @return pluginVars */
+    /**
+     * 预装插件参数
+     * @return pluginVars
+     */
     public Map<String, String> getPluginVars() {
         return pluginVars;
     }
@@ -534,9 +567,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 云服务器对应的portId，小网连接ecs的场景下使用
-     * 
-     * @return portId */
+    /**
+     * 云服务器对应的portId，小网连接ecs的场景下使用
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -550,9 +584,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 云服务器ip，小网连接ecs的场景下使用
-     * 
-     * @return privateIp */
+    /**
+     * 云服务器ip，小网连接ecs的场景下使用
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -566,9 +601,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** PVC规格 5GB|10GB|20GB
-     * 
-     * @return pvcQuantity */
+    /**
+     * PVC规格 5GB|10GB|20GB
+     * @return pvcQuantity
+     */
     public PvcQuantityEnum getPvcQuantity() {
         return pvcQuantity;
     }
@@ -582,10 +618,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 自动休眠时长。
-     * arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
-     * 
-     * @return refreshInterval */
+    /**
+     * 自动休眠时长。 arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
+     * @return refreshInterval
+     */
     public String getRefreshInterval() {
         return refreshInterval;
     }
@@ -599,9 +635,12 @@ public class InstanceParam {
         return this;
     }
 
-    /** 解放号的仓库id，解放号场景下使用 minimum: 1 maximum: -9223372036854775616
-     * 
-     * @return repositoryId */
+    /**
+     * 解放号的仓库id，解放号场景下使用
+     * minimum: 1
+     * maximum: -9223372036854775616
+     * @return repositoryId
+     */
     public Long getRepositoryId() {
         return repositoryId;
     }
@@ -615,9 +654,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
-     * 
-     * @return stackId */
+    /**
+     * 技术栈ID，通过技术栈管理ListStacks接口获取。
+     * @return stackId
+     */
     public String getStackId() {
         return stackId;
     }
@@ -631,9 +671,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 任务类型，教程活动场景下使用
-     * 
-     * @return taskType */
+    /**
+     * 任务类型，教程活动场景下使用
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -647,9 +688,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 解放号的token，解放号场景下使用
-     * 
-     * @return token */
+    /**
+     * 解放号的token，解放号场景下使用
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -663,9 +705,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 云服务器对应的vpcId，小网连接ecs的场景下使用
-     * 
-     * @return vpcId */
+    /**
+     * 云服务器对应的vpcId，小网连接ecs的场景下使用
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -679,9 +722,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例授权用户租户名
-     * 
-     * @return instanceUserDomainName */
+    /**
+     * 实例授权用户租户名
+     * @return instanceUserDomainName
+     */
     public String getInstanceUserDomainName() {
         return instanceUserDomainName;
     }
@@ -695,9 +739,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例授权用户名
-     * 
-     * @return instanceUserName */
+    /**
+     * 实例授权用户名
+     * @return instanceUserName
+     */
     public String getInstanceUserName() {
         return instanceUserName;
     }
@@ -711,9 +756,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例授权用户租户ID
-     * 
-     * @return instanceDomainId */
+    /**
+     * 实例授权用户租户ID
+     * @return instanceDomainId
+     */
     public String getInstanceDomainId() {
         return instanceDomainId;
     }
@@ -727,9 +773,10 @@ public class InstanceParam {
         return this;
     }
 
-    /** 实例授权用户ID
-     * 
-     * @return instanceUserId */
+    /**
+     * 实例授权用户ID
+     * @return instanceUserId
+     */
     public String getInstanceUserId() {
         return instanceUserId;
     }
@@ -825,7 +872,10 @@ public class InstanceParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

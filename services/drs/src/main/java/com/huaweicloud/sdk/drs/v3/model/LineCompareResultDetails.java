@@ -33,9 +33,10 @@ public class LineCompareResultDetails {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -65,9 +66,10 @@ public class LineCompareResultDetails {
         return this;
     }
 
-    /** 该库的表的行对比详情。
-     * 
-     * @return lineCompareDetail */
+    /**
+     * 该库的表的行对比详情。
+     * @return lineCompareDetail
+     */
     public List<LineCompareDetail> getLineCompareDetail() {
         return lineCompareDetail;
     }
@@ -81,9 +83,10 @@ public class LineCompareResultDetails {
         return this;
     }
 
-    /** 该库的行对比结果详情总数。
-     * 
-     * @return lineCompareDetailCount */
+    /**
+     * 该库的行对比结果详情总数。
+     * @return lineCompareDetailCount
+     */
     public Integer getLineCompareDetailCount() {
         return lineCompareDetailCount;
     }
@@ -122,7 +125,10 @@ public class LineCompareResultDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

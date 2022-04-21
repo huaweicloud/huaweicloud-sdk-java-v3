@@ -21,10 +21,14 @@ public class UpdateFirewallRuleResp {
 
     private String id;
 
-    /** 网络ACL状态。 */
+    /**
+     * 网络ACL状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum INACTIVE for value: "INACTIVE" */
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +112,10 @@ public class UpdateFirewallRuleResp {
         return this;
     }
 
-    /** 网络ACL ID
-     * 
-     * @return id */
+    /**
+     * 网络ACL ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -124,9 +129,10 @@ public class UpdateFirewallRuleResp {
         return this;
     }
 
-    /** 网络ACL状态。
-     * 
-     * @return status */
+    /**
+     * 网络ACL状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -149,9 +155,10 @@ public class UpdateFirewallRuleResp {
         return this;
     }
 
-    /** Get egressFirewallPolicy
-     * 
-     * @return egressFirewallPolicy */
+    /**
+     * Get egressFirewallPolicy
+     * @return egressFirewallPolicy
+     */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -174,9 +181,10 @@ public class UpdateFirewallRuleResp {
         return this;
     }
 
-    /** Get ingressFirewallPolicy
-     * 
-     * @return ingressFirewallPolicy */
+    /**
+     * Get ingressFirewallPolicy
+     * @return ingressFirewallPolicy
+     */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -217,7 +225,10 @@ public class UpdateFirewallRuleResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** PortItem */
+/**
+ * PortItem
+ */
 public class PortItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class PortItem {
 
     private String service;
 
-    /** 端口协议: * TCP * UDP */
+    /**
+     * 端口协议:   * TCP   * UDP 
+     */
     public static final class ProtocolEnum {
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
-        /** Enum UDP for value: "UDP" */
+        /**
+         * Enum UDP for value: "UDP"
+         */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class PortItem {
 
     private ProtocolEnum protocol;
 
-    /** 端口状态: * filtered - 过滤的 * open - 开放 */
+    /**
+     * 端口状态:   * filtered - 过滤的   * open - 开放 
+     */
     public static final class StatusEnum {
 
-        /** Enum FILTERED for value: "filtered" */
+        /**
+         * Enum FILTERED for value: "filtered"
+         */
         public static final StatusEnum FILTERED = new StatusEnum("filtered");
 
-        /** Enum OPEN for value: "open" */
+        /**
+         * Enum OPEN for value: "open"
+         */
         public static final StatusEnum OPEN = new StatusEnum("open");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -180,9 +194,12 @@ public class PortItem {
         return this;
     }
 
-    /** 端口号 minimum: 0 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 端口号
+     * minimum: 0
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -196,9 +213,10 @@ public class PortItem {
         return this;
     }
 
-    /** 服务
-     * 
-     * @return service */
+    /**
+     * 服务
+     * @return service
+     */
     public String getService() {
         return service;
     }
@@ -212,9 +230,10 @@ public class PortItem {
         return this;
     }
 
-    /** 端口协议: * TCP * UDP
-     * 
-     * @return protocol */
+    /**
+     * 端口协议:   * TCP   * UDP 
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -228,9 +247,10 @@ public class PortItem {
         return this;
     }
 
-    /** 端口状态: * filtered - 过滤的 * open - 开放
-     * 
-     * @return status */
+    /**
+     * 端口状态:   * filtered - 过滤的   * open - 开放 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -269,7 +289,10 @@ public class PortItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

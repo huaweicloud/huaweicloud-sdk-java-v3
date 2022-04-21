@@ -44,9 +44,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 每个子任务的执行信息。
-     * 
-     * @return subJobs */
+    /**
+     * 每个子任务的执行信息。
+     * @return subJobs
+     */
     public List<SubJob> getSubJobs() {
         return subJobs;
     }
@@ -60,9 +61,10 @@ public class JobEntities {
         return this;
     }
 
-    /** 子任务数量。
-     * 
-     * @return subJobsTotal */
+    /**
+     * 子任务数量。
+     * @return subJobsTotal
+     */
     public Integer getSubJobsTotal() {
         return subJobsTotal;
     }
@@ -99,7 +101,10 @@ public class JobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

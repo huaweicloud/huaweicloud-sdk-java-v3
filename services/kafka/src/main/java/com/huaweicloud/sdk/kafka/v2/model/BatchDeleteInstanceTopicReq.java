@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteInstanceTopicReq */
+/**
+ * BatchDeleteInstanceTopicReq
+ */
 public class BatchDeleteInstanceTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteInstanceTopicReq {
         return this;
     }
 
-    /** 待删除的topic列表。
-     * 
-     * @return topics */
+    /**
+     * 待删除的topic列表。
+     * @return topics
+     */
     public List<String> getTopics() {
         return topics;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteInstanceTopicReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 监听器响应体 */
+/**
+ * 监听器响应体
+ */
 public class ListenerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,19 +58,29 @@ public class ListenerResp {
 
     private Boolean http2Enable;
 
-    /** 监听器的监听协议 */
+    /**
+     * 监听器的监听协议
+     */
     public static final class ProtocolEnum {
 
-        /** Enum UDP for value: "UDP" */
+        /**
+         * Enum UDP for value: "UDP"
+         */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
 
-        /** Enum TERMINATED_HTTPS for value: "TERMINATED_HTTPS" */
+        /**
+         * Enum TERMINATED_HTTPS for value: "TERMINATED_HTTPS"
+         */
         public static final ProtocolEnum TERMINATED_HTTPS = new ProtocolEnum("TERMINATED_HTTPS");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +212,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器ID
-     * 
-     * @return id */
+    /**
+     * 监听器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -216,9 +229,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 监听器所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -232,9 +246,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器名称。
-     * 
-     * @return name */
+    /**
+     * 监听器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -248,9 +263,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的描述信息
-     * 
-     * @return description */
+    /**
+     * 监听器的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -264,9 +280,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * 
-     * @return adminStateUp */
+    /**
+     * 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -296,9 +313,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器绑定的负载均衡器ID的列表。
-     * 
-     * @return loadbalancers */
+    /**
+     * 监听器绑定的负载均衡器ID的列表。
+     * @return loadbalancers
+     */
     public List<ResourceList> getLoadbalancers() {
         return loadbalancers;
     }
@@ -312,9 +330,12 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。 minimum: -1 maximum: 2147483647
-     * 
-     * @return connectionLimit */
+    /**
+     * 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。
+     * minimum: -1
+     * maximum: 2147483647
+     * @return connectionLimit
+     */
     public Integer getConnectionLimit() {
         return connectionLimit;
     }
@@ -328,9 +349,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
-     * 
-     * @return http2Enable */
+    /**
+     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
+     * @return http2Enable
+     */
     public Boolean getHttp2Enable() {
         return http2Enable;
     }
@@ -344,9 +366,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的监听协议
-     * 
-     * @return protocol */
+    /**
+     * 监听器的监听协议
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -360,9 +383,12 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的监听端口。 minimum: 1 maximum: 65535
-     * 
-     * @return protocolPort */
+    /**
+     * 监听器的监听端口。
+     * minimum: 1
+     * maximum: 65535
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -376,9 +402,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
-     * 
-     * @return defaultPoolId */
+    /**
+     * 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
+     * @return defaultPoolId
+     */
     public String getDefaultPoolId() {
         return defaultPoolId;
     }
@@ -392,9 +419,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器使用的服务器证书ID。
-     * 
-     * @return defaultTlsContainerRef */
+    /**
+     * 监听器使用的服务器证书ID。
+     * @return defaultTlsContainerRef
+     */
     public String getDefaultTlsContainerRef() {
         return defaultTlsContainerRef;
     }
@@ -408,9 +436,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器使用的CA证书ID。
-     * 
-     * @return clientCaTlsContainerRef */
+    /**
+     * 监听器使用的CA证书ID。
+     * @return clientCaTlsContainerRef
+     */
     public String getClientCaTlsContainerRef() {
         return clientCaTlsContainerRef;
     }
@@ -440,9 +469,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
-     * 
-     * @return sniContainerRefs */
+    /**
+     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
+     * @return sniContainerRefs
+     */
     public List<String> getSniContainerRefs() {
         return sniContainerRefs;
     }
@@ -472,9 +502,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的标签。
-     * 
-     * @return tags */
+    /**
+     * 监听器的标签。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -488,9 +519,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 监听器的创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -504,9 +536,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器的更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 监听器的更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -529,9 +562,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** Get insertHeaders
-     * 
-     * @return insertHeaders */
+    /**
+     * Get insertHeaders
+     * @return insertHeaders
+     */
     public InsertHeader getInsertHeaders() {
         return insertHeaders;
     }
@@ -545,9 +579,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 监听器所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -561,9 +596,10 @@ public class ListenerResp {
         return this;
     }
 
-    /** 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略
-     * 
-     * @return tlsCiphersPolicy */
+    /**
+     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略
+     * @return tlsCiphersPolicy
+     */
     public String getTlsCiphersPolicy() {
         return tlsCiphersPolicy;
     }
@@ -653,7 +689,10 @@ public class ListenerResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 异步调用记录 */
+/**
+ * 异步调用记录
+ */
 public class ListFunctionAsyncInvocationsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,22 +21,34 @@ public class ListFunctionAsyncInvocationsResult {
 
     private String requestId;
 
-    /** 异步调用状态，支持5种状态 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃 */
+    /**
+     * 异步调用状态，支持5种状态 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
+     */
     public static final class StatusEnum {
 
-        /** Enum WAIT for value: "WAIT" */
+        /**
+         * Enum WAIT for value: "WAIT"
+         */
         public static final StatusEnum WAIT = new StatusEnum("WAIT");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum DISCARD for value: "DISCARD" */
+        /**
+         * Enum DISCARD for value: "DISCARD"
+         */
         public static final StatusEnum DISCARD = new StatusEnum("DISCARD");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +141,10 @@ public class ListFunctionAsyncInvocationsResult {
         return this;
     }
 
-    /** 异步调用请求ID
-     * 
-     * @return requestId */
+    /**
+     * 异步调用请求ID
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -143,9 +158,10 @@ public class ListFunctionAsyncInvocationsResult {
         return this;
     }
 
-    /** 异步调用状态，支持5种状态 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
-     * 
-     * @return status */
+    /**
+     * 异步调用状态，支持5种状态 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -159,9 +175,10 @@ public class ListFunctionAsyncInvocationsResult {
         return this;
     }
 
-    /** 异步调用错误信息，如果执行成功，则返回空
-     * 
-     * @return errorMessage */
+    /**
+     * 异步调用错误信息，如果执行成功，则返回空
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -175,9 +192,10 @@ public class ListFunctionAsyncInvocationsResult {
         return this;
     }
 
-    /** 异步调用开始时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。
-     * 
-     * @return startTime */
+    /**
+     * 异步调用开始时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。
+     * @return startTime
+     */
     public OffsetDateTime getStartTime() {
         return startTime;
     }
@@ -191,9 +209,10 @@ public class ListFunctionAsyncInvocationsResult {
         return this;
     }
 
-    /** 异步调用结束时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。
-     * 
-     * @return endTime */
+    /**
+     * 异步调用结束时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -236,7 +255,10 @@ public class ListFunctionAsyncInvocationsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

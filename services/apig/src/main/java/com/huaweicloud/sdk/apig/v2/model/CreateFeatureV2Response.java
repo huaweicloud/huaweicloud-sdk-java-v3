@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateFeatureV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 特性编号
-     * 
-     * @return id */
+    /**
+     * 特性编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -61,9 +64,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 特性名称
-     * 
-     * @return name */
+    /**
+     * 特性名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,9 +81,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否开启特性
-     * 
-     * @return enable */
+    /**
+     * 是否开启特性
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -93,9 +98,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 特性参数配置
-     * 
-     * @return config */
+    /**
+     * 特性参数配置
+     * @return config
+     */
     public String getConfig() {
         return config;
     }
@@ -109,9 +115,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例编号
-     * 
-     * @return instanceId */
+    /**
+     * 实例编号
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -125,9 +132,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例特性更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 实例特性更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -172,7 +180,10 @@ public class CreateFeatureV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

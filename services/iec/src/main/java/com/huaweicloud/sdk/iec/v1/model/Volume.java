@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 硬盘对象 */
+/**
+ * 硬盘对象
+ */
 public class Volume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class Volume {
         return this;
     }
 
-    /** 硬盘ID。
-     * 
-     * @return id */
+    /**
+     * 硬盘ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -94,9 +97,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘状态。
-     * 
-     * @return status */
+    /**
+     * 磁盘状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -110,9 +114,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘大小。
-     * 
-     * @return size */
+    /**
+     * 磁盘大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -126,9 +131,10 @@ public class Volume {
         return this;
     }
 
-    /** 硬盘所属的AZ信息。
-     * 
-     * @return availabilityZone */
+    /**
+     * 硬盘所属的AZ信息。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -158,9 +164,10 @@ public class Volume {
         return this;
     }
 
-    /** 硬盘的挂载信息。
-     * 
-     * @return attachments */
+    /**
+     * 硬盘的挂载信息。
+     * @return attachments
+     */
     public List<Attachment> getAttachments() {
         return attachments;
     }
@@ -174,9 +181,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘名称。
-     * 
-     * @return name */
+    /**
+     * 磁盘名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -190,9 +198,10 @@ public class Volume {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -206,9 +215,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘类型。
-     * 
-     * @return volumeType */
+    /**
+     * 磁盘类型。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -222,9 +232,10 @@ public class Volume {
         return this;
     }
 
-    /** 显示这个卷是否可启动。
-     * 
-     * @return bootable */
+    /**
+     * 显示这个卷是否可启动。
+     * @return bootable
+     */
     public String getBootable() {
         return bootable;
     }
@@ -238,9 +249,10 @@ public class Volume {
         return this;
     }
 
-    /** 显示该卷是否已被加密。
-     * 
-     * @return encrypted */
+    /**
+     * 显示该卷是否已被加密。
+     * @return encrypted
+     */
     public Boolean getEncrypted() {
         return encrypted;
     }
@@ -254,9 +266,10 @@ public class Volume {
         return this;
     }
 
-    /** 磁盘是否多挂载。
-     * 
-     * @return multiattach */
+    /**
+     * 磁盘是否多挂载。
+     * @return multiattach
+     */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -286,9 +299,10 @@ public class Volume {
         return this;
     }
 
-    /** 硬盘的元数据。
-     * 
-     * @return metadata */
+    /**
+     * 硬盘的元数据。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -351,7 +365,10 @@ public class Volume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

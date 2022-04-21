@@ -11,17 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RunRecordRequest {
 
-    /** 操作行为。 取值如下： - START：对指定流开始录制，必须在直播流已经推送情况下才能正常启动，使用此命令启动录制的直播流如果发生了断流且超出断流时长，就会停止录制，并且重新推流后不会自动启动录制。 -
-     * STOP：对指定流停止录制。 */
+    /**
+     * 操作行为。 取值如下： - START：对指定流开始录制，必须在直播流已经推送情况下才能正常启动，使用此命令启动录制的直播流如果发生了断流且超出断流时长，就会停止录制，并且重新推流后不会自动启动录制。 - STOP：对指定流停止录制。 
+     */
     public static final class ActionEnum {
 
-        /** Enum START for value: "START" */
+        /**
+         * Enum START for value: "START"
+         */
         public static final ActionEnum START = new ActionEnum("START");
 
-        /** Enum STOP for value: "STOP" */
+        /**
+         * Enum STOP for value: "STOP"
+         */
         public static final ActionEnum STOP = new ActionEnum("STOP");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -101,10 +108,10 @@ public class RunRecordRequest {
         return this;
     }
 
-    /** 操作行为。 取值如下： - START：对指定流开始录制，必须在直播流已经推送情况下才能正常启动，使用此命令启动录制的直播流如果发生了断流且超出断流时长，就会停止录制，并且重新推流后不会自动启动录制。 -
-     * STOP：对指定流停止录制。
-     * 
-     * @return action */
+    /**
+     * 操作行为。 取值如下： - START：对指定流开始录制，必须在直播流已经推送情况下才能正常启动，使用此命令启动录制的直播流如果发生了断流且超出断流时长，就会停止录制，并且重新推流后不会自动启动录制。 - STOP：对指定流停止录制。 
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -127,9 +134,10 @@ public class RunRecordRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public RecordControlInfo getBody() {
         return body;
     }
@@ -165,7 +173,10 @@ public class RunRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

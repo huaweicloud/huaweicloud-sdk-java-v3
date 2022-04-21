@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateBaremetalServerMetadataReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateBaremetalServerMetadataReq {
         return this;
     }
 
-    /** 用户自定义metadata键值对。 结构体允许为空，取值为空时不更新数据。
-     * 
-     * @return metadata */
+    /**
+     * 用户自定义metadata键值对。  结构体允许为空，取值为空时不更新数据。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -74,7 +77,10 @@ public class UpdateBaremetalServerMetadataReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

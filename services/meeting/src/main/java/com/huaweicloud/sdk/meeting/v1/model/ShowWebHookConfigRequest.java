@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowWebHookConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowWebHookConfigRequest {
         return this;
     }
 
-    /** 企业ID，与spId二者必填一个
-     * 
-     * @return corpId */
+    /**
+     * 企业ID，与spId二者必填一个
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -39,9 +42,10 @@ public class ShowWebHookConfigRequest {
         return this;
     }
 
-    /** sp管理员ID，与corpId二者必填一个
-     * 
-     * @return spId */
+    /**
+     * sp管理员ID，与corpId二者必填一个
+     * @return spId
+     */
     public String getSpId() {
         return spId;
     }
@@ -78,7 +82,10 @@ public class ShowWebHookConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

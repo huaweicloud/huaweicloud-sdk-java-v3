@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 源端CDN配置。 */
+/**
+ * 源端CDN配置。
+ */
 public class SourceCdnReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,27 +20,40 @@ public class SourceCdnReq {
 
     private String authenticationKey;
 
-    /** 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C,
-     * KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN */
+    /**
+     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
+     */
     public static final class AuthenticationTypeEnum {
 
-        /** Enum NONE for value: "NONE" */
+        /**
+         * Enum NONE for value: "NONE"
+         */
         public static final AuthenticationTypeEnum NONE = new AuthenticationTypeEnum("NONE");
 
-        /** Enum QINIU_PRIVATE_AUTHENTICATION for value: "QINIU_PRIVATE_AUTHENTICATION" */
+        /**
+         * Enum QINIU_PRIVATE_AUTHENTICATION for value: "QINIU_PRIVATE_AUTHENTICATION"
+         */
         public static final AuthenticationTypeEnum QINIU_PRIVATE_AUTHENTICATION =
             new AuthenticationTypeEnum("QINIU_PRIVATE_AUTHENTICATION");
 
-        /** Enum ALIYUN_OSS_A for value: "ALIYUN_OSS_A" */
+        /**
+         * Enum ALIYUN_OSS_A for value: "ALIYUN_OSS_A"
+         */
         public static final AuthenticationTypeEnum ALIYUN_OSS_A = new AuthenticationTypeEnum("ALIYUN_OSS_A");
 
-        /** Enum ALIYUN_OSS_B for value: "ALIYUN_OSS_B" */
+        /**
+         * Enum ALIYUN_OSS_B for value: "ALIYUN_OSS_B"
+         */
         public static final AuthenticationTypeEnum ALIYUN_OSS_B = new AuthenticationTypeEnum("ALIYUN_OSS_B");
 
-        /** Enum ALIYUN_OSS_C for value: "ALIYUN_OSS_C" */
+        /**
+         * Enum ALIYUN_OSS_C for value: "ALIYUN_OSS_C"
+         */
         public static final AuthenticationTypeEnum ALIYUN_OSS_C = new AuthenticationTypeEnum("ALIYUN_OSS_C");
 
-        /** Enum KSYUN_PRIVATE_AUTHENTICATION for value: "KSYUN_PRIVATE_AUTHENTICATION" */
+        /**
+         * Enum KSYUN_PRIVATE_AUTHENTICATION for value: "KSYUN_PRIVATE_AUTHENTICATION"
+         */
         public static final AuthenticationTypeEnum KSYUN_PRIVATE_AUTHENTICATION =
             new AuthenticationTypeEnum("KSYUN_PRIVATE_AUTHENTICATION");
 
@@ -118,13 +133,19 @@ public class SourceCdnReq {
 
     private String domain;
 
-    /** 协议类型，支持http和https协议。 */
+    /**
+     * 协议类型，支持http和https协议。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum HTTP for value: "http" */
+        /**
+         * Enum HTTP for value: "http"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("http");
 
-        /** Enum HTTPS for value: "https" */
+        /**
+         * Enum HTTPS for value: "https"
+         */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -199,10 +220,10 @@ public class SourceCdnReq {
         return this;
     }
 
-    /** CDN鉴权秘钥，如果CDN需要进行鉴权，则此选项为必选。 无需授权：无需配置此项。 Qiniu：无需配置此项。 Aliyun：根据authentication_type指定的鉴权方式配置此项。
-     * KingsoftCloud：无需配置此项。
-     * 
-     * @return authenticationKey */
+    /**
+     * CDN鉴权秘钥，如果CDN需要进行鉴权，则此选项为必选。  无需授权：无需配置此项。 Qiniu：无需配置此项。 Aliyun：根据authentication_type指定的鉴权方式配置此项。 KingsoftCloud：无需配置此项。
+     * @return authenticationKey
+     */
     public String getAuthenticationKey() {
         return authenticationKey;
     }
@@ -216,10 +237,10 @@ public class SourceCdnReq {
         return this;
     }
 
-    /** 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C,
-     * KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
-     * 
-     * @return authenticationType */
+    /**
+     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
+     * @return authenticationType
+     */
     public AuthenticationTypeEnum getAuthenticationType() {
         return authenticationType;
     }
@@ -233,9 +254,10 @@ public class SourceCdnReq {
         return this;
     }
 
-    /** 从指定域名获取对象。
-     * 
-     * @return domain */
+    /**
+     *   从指定域名获取对象。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -249,9 +271,10 @@ public class SourceCdnReq {
         return this;
     }
 
-    /** 协议类型，支持http和https协议。
-     * 
-     * @return protocol */
+    /**
+     * 协议类型，支持http和https协议。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -291,7 +314,10 @@ public class SourceCdnReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

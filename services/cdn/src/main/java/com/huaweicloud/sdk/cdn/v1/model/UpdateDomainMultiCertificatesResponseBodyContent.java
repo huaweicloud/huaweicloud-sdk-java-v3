@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateDomainMultiCertificatesResponseBodyContent */
+/**
+ * UpdateDomainMultiCertificatesResponseBodyContent
+ */
 public class UpdateDomainMultiCertificatesResponseBodyContent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 域名列表
-     * 
-     * @return domainName */
+    /**
+     * 域名列表
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -80,9 +83,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** https开关(0：\"关闭\"；1：\"设置证书\")
-     * 
-     * @return httpsSwitch */
+    /**
+     * https开关(0：\"关闭\"；1：\"设置证书\")
+     * @return httpsSwitch
+     */
     public Integer getHttpsSwitch() {
         return httpsSwitch;
     }
@@ -96,9 +100,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 回源方式:1：\"PROTOCOL_FOLLOW\"；2：\"HTTP\"(默认)，3：\"https\"
-     * 
-     * @return accessOriginWay */
+    /**
+     * 回源方式:1：\"PROTOCOL_FOLLOW\"；2：\"HTTP\"(默认)，3：\"https\"
+     * @return accessOriginWay
+     */
     public Integer getAccessOriginWay() {
         return accessOriginWay;
     }
@@ -112,9 +117,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
-     * 
-     * @return forceRedirectHttps */
+    /**
+     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * @return forceRedirectHttps
+     */
     public Integer getForceRedirectHttps() {
         return forceRedirectHttps;
     }
@@ -138,9 +144,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** Get forceRedirectConfig
-     * 
-     * @return forceRedirectConfig */
+    /**
+     * Get forceRedirectConfig
+     * @return forceRedirectConfig
+     */
     public ForceRedirect getForceRedirectConfig() {
         return forceRedirectConfig;
     }
@@ -154,9 +161,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** http2.0（0：关闭；1：开启）
-     * 
-     * @return http2 */
+    /**
+     * http2.0（0：关闭；1：开启）
+     * @return http2
+     */
     public Integer getHttp2() {
         return http2;
     }
@@ -170,9 +178,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 证书名称。（长度限制为3-32字符）。
-     * 
-     * @return certName */
+    /**
+     * 证书名称。（长度限制为3-32字符）。
+     * @return certName
+     */
     public String getCertName() {
         return certName;
     }
@@ -186,9 +195,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 证书内容
-     * 
-     * @return certificate */
+    /**
+     * 证书内容
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -202,9 +212,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 证书类型（0为自有证书 ， 1为托管证书）
-     * 
-     * @return certificateType */
+    /**
+     * 证书类型（0为自有证书 ， 1为托管证书）
+     * @return certificateType
+     */
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -218,9 +229,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return this;
     }
 
-    /** 证书过期时间
-     * 
-     * @return expirationTime */
+    /**
+     * 证书过期时间
+     * @return expirationTime
+     */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -285,7 +297,10 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

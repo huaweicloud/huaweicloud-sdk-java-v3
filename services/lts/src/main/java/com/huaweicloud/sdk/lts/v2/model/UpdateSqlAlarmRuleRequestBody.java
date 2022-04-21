@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateSqlAlarmRuleRequestBody */
+/**
+ * UpdateSqlAlarmRuleRequestBody
+ */
 public class UpdateSqlAlarmRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,19 +48,29 @@ public class UpdateSqlAlarmRuleRequestBody {
 
     private String conditionExpression;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class SqlAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final SqlAlarmLevelEnum INFO = new SqlAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final SqlAlarmLevelEnum MINOR = new SqlAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final SqlAlarmLevelEnum MAJOR = new SqlAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final SqlAlarmLevelEnum CRITICAL = new SqlAlarmLevelEnum("Critical");
 
         private static final Map<String, SqlAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -135,19 +147,29 @@ public class UpdateSqlAlarmRuleRequestBody {
 
     private Boolean sqlAlarmSend;
 
-    /** 发送主题 0:不变 1:新增 2:修改 3:删除 */
+    /**
+     * 发送主题 0:不变 1:新增 2:修改 3:删除
+     */
     public static final class SqlAlarmSendCodeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final SqlAlarmSendCodeEnum NUMBER_0 = new SqlAlarmSendCodeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final SqlAlarmSendCodeEnum NUMBER_1 = new SqlAlarmSendCodeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final SqlAlarmSendCodeEnum NUMBER_2 = new SqlAlarmSendCodeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final SqlAlarmSendCodeEnum NUMBER_3 = new SqlAlarmSendCodeEnum(3);
 
         private static final Map<Integer, SqlAlarmSendCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +256,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL告警id
-     * 
-     * @return sqlAlarmRuleId */
+    /**
+     * SQL告警id
+     * @return sqlAlarmRuleId
+     */
     public String getSqlAlarmRuleId() {
         return sqlAlarmRuleId;
     }
@@ -250,9 +273,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL告警名称
-     * 
-     * @return sqlAlarmRuleName */
+    /**
+     * SQL告警名称
+     * @return sqlAlarmRuleName
+     */
     public String getSqlAlarmRuleName() {
         return sqlAlarmRuleName;
     }
@@ -266,9 +290,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL告警信息描述
-     * 
-     * @return sqlAlarmRuleDescription */
+    /**
+     * SQL告警信息描述
+     * @return sqlAlarmRuleDescription
+     */
     public String getSqlAlarmRuleDescription() {
         return sqlAlarmRuleDescription;
     }
@@ -298,9 +323,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** SQL详细信息
-     * 
-     * @return sqlRequests */
+    /**
+     * SQL详细信息
+     * @return sqlRequests
+     */
     public List<SqlRequest> getSqlRequests() {
         return sqlRequests;
     }
@@ -323,9 +349,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警统计周期
-     * 
-     * @return frequency */
+    /**
+     * 告警统计周期
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -339,9 +366,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 条件表达式
-     * 
-     * @return conditionExpression */
+    /**
+     * 条件表达式
+     * @return conditionExpression
+     */
     public String getConditionExpression() {
         return conditionExpression;
     }
@@ -355,9 +383,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return sqlAlarmLevel */
+    /**
+     * 告警级别
+     * @return sqlAlarmLevel
+     */
     public SqlAlarmLevelEnum getSqlAlarmLevel() {
         return sqlAlarmLevel;
     }
@@ -371,9 +400,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return sqlAlarmSend */
+    /**
+     * 是否发送
+     * @return sqlAlarmSend
+     */
     public Boolean getSqlAlarmSend() {
         return sqlAlarmSend;
     }
@@ -387,9 +417,12 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 发送主题 0:不变 1:新增 2:修改 3:删除 minimum: 0 maximum: 3
-     * 
-     * @return sqlAlarmSendCode */
+    /**
+     * 发送主题 0:不变 1:新增 2:修改 3:删除
+     * minimum: 0
+     * maximum: 3
+     * @return sqlAlarmSendCode
+     */
     public SqlAlarmSendCodeEnum getSqlAlarmSendCode() {
         return sqlAlarmSendCode;
     }
@@ -403,9 +436,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -429,9 +463,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return this;
     }
 
-    /** 通知主题
-     * 
-     * @return notificationSaveRule */
+    /**
+     * 通知主题
+     * @return notificationSaveRule
+     */
     public NotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
@@ -496,7 +531,10 @@ public class UpdateSqlAlarmRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

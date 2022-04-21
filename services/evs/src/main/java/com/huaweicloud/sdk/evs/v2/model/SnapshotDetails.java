@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 快照详情。 */
+/**
+ * 快照详情。
+ */
 public class SnapshotDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照ID。
-     * 
-     * @return id */
+    /**
+     * 云硬盘快照ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -84,9 +87,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照状态。
-     * 
-     * @return status */
+    /**
+     * 云硬盘快照状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -100,9 +104,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照名称。
-     * 
-     * @return name */
+    /**
+     * 云硬盘快照名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -116,9 +121,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照描述信息。
-     * 
-     * @return description */
+    /**
+     * 云硬盘快照描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -132,9 +138,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照创建时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * 
-     * @return createdAt */
+    /**
+     * 云硬盘快照创建时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -148,9 +155,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 快照更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * 
-     * @return updatedAt */
+    /**
+     * 快照更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -164,9 +172,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照的元数据信息。
-     * 
-     * @return metadata */
+    /**
+     * 云硬盘快照的元数据信息。
+     * @return metadata
+     */
     public Object getMetadata() {
         return metadata;
     }
@@ -180,9 +189,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 快照所属的云硬盘ID。
-     * 
-     * @return volumeId */
+    /**
+     * 快照所属的云硬盘ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -196,9 +206,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 云硬盘快照大小，单位为GB。
-     * 
-     * @return size */
+    /**
+     * 云硬盘快照大小，单位为GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -212,9 +223,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return osExtendedSnapshotAttributesProjectId */
+    /**
+     * 预留属性。
+     * @return osExtendedSnapshotAttributesProjectId
+     */
     public String getOsExtendedSnapshotAttributesProjectId() {
         return osExtendedSnapshotAttributesProjectId;
     }
@@ -228,9 +240,10 @@ public class SnapshotDetails {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return osExtendedSnapshotAttributesProgress */
+    /**
+     * 预留属性。
+     * @return osExtendedSnapshotAttributesProgress
+     */
     public String getOsExtendedSnapshotAttributesProgress() {
         return osExtendedSnapshotAttributesProgress;
     }
@@ -300,7 +313,10 @@ public class SnapshotDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

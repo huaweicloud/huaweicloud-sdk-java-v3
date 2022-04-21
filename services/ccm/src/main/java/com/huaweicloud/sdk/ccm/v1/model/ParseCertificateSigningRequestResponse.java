@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ParseCertificateSigningRequestResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥算法。
-     * 
-     * @return keyAlgorithm */
+    /**
+     * 密钥算法。
+     * @return keyAlgorithm
+     */
     public String getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -56,9 +59,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥算法长度，单位为bit。
-     * 
-     * @return keyAlgorithmLength */
+    /**
+     * 密钥算法长度，单位为bit。
+     * @return keyAlgorithmLength
+     */
     public String getKeyAlgorithmLength() {
         return keyAlgorithmLength;
     }
@@ -72,9 +76,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return this;
     }
 
-    /** 签名算法，带具体的签名与哈希算法，如\"SHA256withRSA\"。
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名算法，带具体的签名与哈希算法，如\"SHA256withRSA\"。
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -88,9 +93,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return this;
     }
 
-    /** 公钥内容。 > 其中，换行符已被“\\r\\n”替代；
-     * 
-     * @return publicKey */
+    /**
+     * 公钥内容。 > 其中，换行符已被“\\r\\n”替代；
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -114,9 +120,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return this;
     }
 
-    /** Get distinguishedName
-     * 
-     * @return distinguishedName */
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
     public DistinguishedName getDistinguishedName() {
         return distinguishedName;
     }
@@ -160,7 +167,10 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

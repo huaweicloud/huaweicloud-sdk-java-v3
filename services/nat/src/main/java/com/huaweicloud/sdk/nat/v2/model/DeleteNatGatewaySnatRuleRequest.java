@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteNatGatewaySnatRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteNatGatewaySnatRuleRequest {
         return this;
     }
 
-    /** 公网NAT网关实例的ID。
-     * 
-     * @return natGatewayId */
+    /**
+     * 公网NAT网关实例的ID。
+     * @return natGatewayId
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -39,9 +42,10 @@ public class DeleteNatGatewaySnatRuleRequest {
         return this;
     }
 
-    /** SNAT规则的ID。
-     * 
-     * @return snatRuleId */
+    /**
+     * SNAT规则的ID。
+     * @return snatRuleId
+     */
     public String getSnatRuleId() {
         return snatRuleId;
     }
@@ -78,7 +82,10 @@ public class DeleteNatGatewaySnatRuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

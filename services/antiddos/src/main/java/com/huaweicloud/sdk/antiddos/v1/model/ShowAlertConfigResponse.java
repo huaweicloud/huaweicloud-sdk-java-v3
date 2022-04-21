@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAlertConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,9 +32,10 @@ public class ShowAlertConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 告警群组的唯一标识
-     * 
-     * @return topicUrn */
+    /**
+     * 告警群组的唯一标识
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -46,9 +49,10 @@ public class ShowAlertConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 告警群组描述
-     * 
-     * @return displayName */
+    /**
+     * 告警群组描述
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -71,9 +75,10 @@ public class ShowAlertConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get warnConfig
-     * 
-     * @return warnConfig */
+    /**
+     * Get warnConfig
+     * @return warnConfig
+     */
     public AlertConfigRespWarnConfig getWarnConfig() {
         return warnConfig;
     }
@@ -112,7 +117,10 @@ public class ShowAlertConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

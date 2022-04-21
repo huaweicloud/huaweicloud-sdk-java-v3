@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 连接数限制列表 */
+/**
+ * 连接数限制列表
+ */
 public class CleanLimitDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CleanLimitDict {
         return this;
     }
 
-    /** 清洗时访问限制分段ID
-     * 
-     * @return cleaningAccessPosId */
+    /**
+     * 清洗时访问限制分段ID
+     * @return cleaningAccessPosId
+     */
     public Long getCleaningAccessPosId() {
         return cleaningAccessPosId;
     }
@@ -44,9 +47,10 @@ public class CleanLimitDict {
         return this;
     }
 
-    /** 单一源IP新建连接个数
-     * 
-     * @return newConnectionLimited */
+    /**
+     * 单一源IP新建连接个数
+     * @return newConnectionLimited
+     */
     public Long getNewConnectionLimited() {
         return newConnectionLimited;
     }
@@ -60,9 +64,10 @@ public class CleanLimitDict {
         return this;
     }
 
-    /** 单一源IP连接数总个数
-     * 
-     * @return totalConnectionLimited */
+    /**
+     * 单一源IP连接数总个数
+     * @return totalConnectionLimited
+     */
     public Long getTotalConnectionLimited() {
         return totalConnectionLimited;
     }
@@ -101,7 +106,10 @@ public class CleanLimitDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

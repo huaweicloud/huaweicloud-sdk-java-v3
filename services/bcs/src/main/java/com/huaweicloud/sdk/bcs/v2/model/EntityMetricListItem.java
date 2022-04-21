@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 监控数据列表项目 */
+/**
+ * 监控数据列表项目
+ */
 public class EntityMetricListItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** cpu使用率
-     * 
-     * @return cpuUsage */
+    /**
+     * cpu使用率
+     * @return cpuUsage
+     */
     public String getCpuUsage() {
         return cpuUsage;
     }
@@ -59,9 +62,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** 磁盘使用率
-     * 
-     * @return diskReadRate */
+    /**
+     * 磁盘使用率
+     * @return diskReadRate
+     */
     public String getDiskReadRate() {
         return diskReadRate;
     }
@@ -75,9 +79,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** 磁盘写入速率
-     * 
-     * @return diskWriteRate */
+    /**
+     * 磁盘写入速率
+     * @return diskWriteRate
+     */
     public String getDiskWriteRate() {
         return diskWriteRate;
     }
@@ -91,9 +96,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** 物理内存使用率
-     * 
-     * @return memUsage */
+    /**
+     * 物理内存使用率
+     * @return memUsage
+     */
     public String getMemUsage() {
         return memUsage;
     }
@@ -107,9 +113,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** 下行BPs
-     * 
-     * @return recvBytesRate */
+    /**
+     * 下行BPs
+     * @return recvBytesRate
+     */
     public String getRecvBytesRate() {
         return recvBytesRate;
     }
@@ -123,9 +130,10 @@ public class EntityMetricListItem {
         return this;
     }
 
-    /** 上行BPs
-     * 
-     * @return sendBytesRate */
+    /**
+     * 上行BPs
+     * @return sendBytesRate
+     */
     public String getSendBytesRate() {
         return sendBytesRate;
     }
@@ -170,7 +178,10 @@ public class EntityMetricListItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

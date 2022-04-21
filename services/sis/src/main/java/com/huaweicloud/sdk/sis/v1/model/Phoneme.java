@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单个音素的发音评测结果 */
+/**
+ * 单个音素的发音评测结果
+ */
 public class Phoneme {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class Phoneme {
         return this;
     }
 
-    /** 音标（ARPAbet音标系统）
-     * 
-     * @return arpa */
+    /**
+     * 音标（ARPAbet音标系统）
+     * @return arpa
+     */
     public String getArpa() {
         return arpa;
     }
@@ -60,9 +63,10 @@ public class Phoneme {
         return this;
     }
 
-    /** 音标（国际音标系统）
-     * 
-     * @return ipa */
+    /**
+     * 音标（国际音标系统）
+     * @return ipa
+     */
     public String getIpa() {
         return ipa;
     }
@@ -76,7 +80,10 @@ public class Phoneme {
         return this;
     }
 
-    /** @return startTime */
+    /**
+     * 
+     * @return startTime
+     */
     public Float getStartTime() {
         return startTime;
     }
@@ -90,7 +97,10 @@ public class Phoneme {
         return this;
     }
 
-    /** @return endTime */
+    /**
+     * 
+     * @return endTime
+     */
     public Float getEndTime() {
         return endTime;
     }
@@ -113,9 +123,10 @@ public class Phoneme {
         return this;
     }
 
-    /** Get fluency
-     * 
-     * @return fluency */
+    /**
+     * Get fluency
+     * @return fluency
+     */
     public PhonemeFluency getFluency() {
         return fluency;
     }
@@ -138,9 +149,10 @@ public class Phoneme {
         return this;
     }
 
-    /** Get pronunciation
-     * 
-     * @return pronunciation */
+    /**
+     * Get pronunciation
+     * @return pronunciation
+     */
     public PhonemePronunciation getPronunciation() {
         return pronunciation;
     }
@@ -183,7 +195,10 @@ public class Phoneme {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

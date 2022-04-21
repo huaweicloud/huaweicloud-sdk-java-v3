@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 消费组信息。 */
+/**
+ * 消费组信息。
+ */
 public class ShowGroupsRespGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 消费组名称。
-     * 
-     * @return groupId */
+    /**
+     * 消费组名称。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -62,10 +65,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 消费组状态。包含以下状态： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 -
-     * CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
-     * 
-     * @return state */
+    /**
+     * 消费组状态。包含以下状态： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -79,9 +82,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 协调器编号。
-     * 
-     * @return coordinatorId */
+    /**
+     * 协调器编号。
+     * @return coordinatorId
+     */
     public Integer getCoordinatorId() {
         return coordinatorId;
     }
@@ -111,9 +115,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 消费者列表。
-     * 
-     * @return members */
+    /**
+     * 消费者列表。
+     * @return members
+     */
     public List<ShowGroupsRespGroupMembers> getMembers() {
         return members;
     }
@@ -146,9 +151,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 消费进度。
-     * 
-     * @return groupMessageOffsets */
+    /**
+     * 消费进度。
+     * @return groupMessageOffsets
+     */
     public List<ShowGroupsRespGroupGroupMessageOffsets> getGroupMessageOffsets() {
         return groupMessageOffsets;
     }
@@ -162,9 +168,10 @@ public class ShowGroupsRespGroup {
         return this;
     }
 
-    /** 分区分配策略。
-     * 
-     * @return assignmentStrategy */
+    /**
+     * 分区分配策略。
+     * @return assignmentStrategy
+     */
     public String getAssignmentStrategy() {
         return assignmentStrategy;
     }
@@ -209,7 +216,10 @@ public class ShowGroupsRespGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

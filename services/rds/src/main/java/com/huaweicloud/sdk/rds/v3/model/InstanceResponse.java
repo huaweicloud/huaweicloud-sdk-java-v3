@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例信息。 */
+/**
+ * 实例信息。
+ */
 public class InstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -211,9 +213,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -227,12 +230,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例状态。 - 值为“BUILD”，表示实例正在创建。 - 值为“ACTIVE”，表示实例正常。 - 值为“FAILED”，表示实例异常。 - 值为“FROZEN”，表示实例冻结。 -
-     * 值为“MODIFYING”，表示实例正在扩容。 - 值为“REBOOTING”，表示实例正在重启。 - 值为“RESTORING”，表示实例正在恢复。 - 值为“MODIFYING INSTANCE
-     * TYPE”，表示实例正在转主备。 - 值为“SWITCHOVER”，表示实例正在主备切换。 - 值为“MIGRATING”，表示实例正在迁移。 - 值为“BACKING UP”，表示实例正在进行备份。 -
-     * 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。 - 值为“STORAGE FULL”，表示实例磁盘空间满。
-     * 
-     * @return status */
+    /**
+     * 实例状态。 - 值为“BUILD”，表示实例正在创建。 - 值为“ACTIVE”，表示实例正常。 - 值为“FAILED”，表示实例异常。 - 值为“FROZEN”，表示实例冻结。 - 值为“MODIFYING”，表示实例正在扩容。 - 值为“REBOOTING”，表示实例正在重启。 - 值为“RESTORING”，表示实例正在恢复。 - 值为“MODIFYING INSTANCE TYPE”，表示实例正在转主备。 - 值为“SWITCHOVER”，表示实例正在主备切换。 - 值为“MIGRATING”，表示实例正在迁移。 - 值为“BACKING UP”，表示实例正在进行备份。 - 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。 - 值为“STORAGE FULL”，表示实例磁盘空间满。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -246,9 +247,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例是否开启SSL，取值为\"true\"表示实例开启了SSL，取值为\"false\"表示实例未开启SSL。
-     * 
-     * @return enableSsl */
+    /**
+     * 实例是否开启SSL，取值为\"true\"表示实例开启了SSL，取值为\"false\"表示实例未开启SSL。
+     * @return enableSsl
+     */
     public Boolean getEnableSsl() {
         return enableSsl;
     }
@@ -278,9 +280,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空字符串。
-     * 
-     * @return privateIps */
+    /**
+     * 实例内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空字符串。
+     * @return privateIps
+     */
     public List<String> getPrivateIps() {
         return privateIps;
     }
@@ -310,9 +313,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get privateDnsNames
-     * 
-     * @return privateDnsNames */
+    /**
+     * Get privateDnsNames
+     * @return privateDnsNames
+     */
     public List<String> getPrivateDnsNames() {
         return privateDnsNames;
     }
@@ -342,9 +346,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例外网IP地址列表。
-     * 
-     * @return publicIps */
+    /**
+     * 实例外网IP地址列表。
+     * @return publicIps
+     */
     public List<String> getPublicIps() {
         return publicIps;
     }
@@ -358,9 +363,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例类型，取值为“Single”，“Ha”或“Replica”，分别对应于单机实例、主备实例、只读实例。
-     * 
-     * @return type */
+    /**
+     * 实例类型，取值为“Single”，“Ha”或“Replica”，分别对应于单机实例、主备实例、只读实例。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -374,9 +380,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -390,9 +397,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 更新时间，格式与“created”字段对应格式完全相同。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式与“created”字段对应格式完全相同。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -406,9 +414,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 默认用户名。
-     * 
-     * @return dbUserName */
+    /**
+     * 默认用户名。
+     * @return dbUserName
+     */
     public String getDbUserName() {
         return dbUserName;
     }
@@ -422,9 +431,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。
-     * 
-     * @return switchStrategy */
+    /**
+     * 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。
+     * @return switchStrategy
+     */
     public String getSwitchStrategy() {
         return switchStrategy;
     }
@@ -438,9 +448,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 可维护时间窗，为UTC时间。
-     * 
-     * @return maintenanceWindow */
+    /**
+     * 可维护时间窗，为UTC时间。
+     * @return maintenanceWindow
+     */
     public String getMaintenanceWindow() {
         return maintenanceWindow;
     }
@@ -470,9 +481,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get nodes
-     * 
-     * @return nodes */
+    /**
+     * Get nodes
+     * @return nodes
+     */
     public List<NodeResponse> getNodes() {
         return nodes;
     }
@@ -502,9 +514,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get relatedInstance
-     * 
-     * @return relatedInstance */
+    /**
+     * Get relatedInstance
+     * @return relatedInstance
+     */
     public List<RelatedInstance> getRelatedInstance() {
         return relatedInstance;
     }
@@ -518,9 +531,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -543,9 +557,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -568,9 +583,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get ha
-     * 
-     * @return ha */
+    /**
+     * Get ha
+     * @return ha
+     */
     public HaResponse getHa() {
         return ha;
     }
@@ -584,11 +600,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 数据库端口信息。 - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft
-     * SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE版，5050、5353和5986不可设置）。 当不传该参数时，默认端口如下： - MySQL默认3306。
-     * - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
-     * 
-     * @return port */
+    /**
+     * 数据库端口信息。  - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE版，5050、5353和5986不可设置）。  当不传该参数时，默认端口如下：  - MySQL默认3306。 - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -611,9 +626,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategyForResponse getBackupStrategy() {
         return backupStrategy;
     }
@@ -627,9 +643,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -643,9 +660,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 用于磁盘加密的密钥ID。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 用于磁盘加密的密钥ID。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -659,9 +677,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 规格码。
-     * 
-     * @return flavorRef */
+    /**
+     * 规格码。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -675,9 +694,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** CPU大小。例如，1表示1U。
-     * 
-     * @return cpu */
+    /**
+     * CPU大小。例如，1表示1U。
+     * @return cpu
+     */
     public String getCpu() {
         return cpu;
     }
@@ -691,9 +711,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 内存大小（单位：GB）。
-     * 
-     * @return mem */
+    /**
+     * 内存大小（单位：GB）。
+     * @return mem
+     */
     public String getMem() {
         return mem;
     }
@@ -716,9 +737,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public Volume getVolume() {
         return volume;
     }
@@ -732,9 +754,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 区域ID。
-     * 
-     * @return region */
+    /**
+     * 区域ID。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -748,9 +771,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -764,9 +788,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -780,9 +805,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -805,9 +831,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get chargeInfo
-     * 
-     * @return chargeInfo */
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
     public ChargeInfoResponse getChargeInfo() {
         return chargeInfo;
     }
@@ -821,9 +848,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 时区。
-     * 
-     * @return timeZone */
+    /**
+     * 时区。
+     * @return timeZone
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -853,9 +881,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** Get tags
-     * 
-     * @return tags */
+    /**
+     * Get tags
+     * @return tags
+     */
     public List<TagResponse> getTags() {
         return tags;
     }
@@ -869,9 +898,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 备份空间使用量，单位GB。 该字段仅用于查询指定SQL Server实例信息时返回。
-     * 
-     * @return backupUsedSpace */
+    /**
+     * 备份空间使用量，单位GB。  该字段仅用于查询指定SQL Server实例信息时返回。
+     * @return backupUsedSpace
+     */
     public Double getBackupUsedSpace() {
         return backupUsedSpace;
     }
@@ -885,9 +915,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 磁盘空间使用量，单位GB。 该字段仅用于查询指定SQL Server实例信息时返回。
-     * 
-     * @return storageUsedSpace */
+    /**
+     * 磁盘空间使用量，单位GB。  该字段仅用于查询指定SQL Server实例信息时返回。
+     * @return storageUsedSpace
+     */
     public Double getStorageUsedSpace() {
         return storageUsedSpace;
     }
@@ -901,9 +932,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 订单ID，仅包周期场景返回。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID，仅包周期场景返回。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -917,9 +949,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 是否已被DDM实例关联。
-     * 
-     * @return associatedWithDdm */
+    /**
+     * 是否已被DDM实例关联。
+     * @return associatedWithDdm
+     */
     public Boolean getAssociatedWithDdm() {
         return associatedWithDdm;
     }
@@ -933,9 +966,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例的备注信息。
-     * 
-     * @return alias */
+    /**
+     * 实例的备注信息。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -949,9 +983,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例磁盘的最大IOPS值。 当前该字段仅对于SQL Server引擎实例返回。
-     * 
-     * @return maxIops */
+    /**
+     * 实例磁盘的最大IOPS值。  当前该字段仅对于SQL Server引擎实例返回。
+     * @return maxIops
+     */
     public Long getMaxIops() {
         return maxIops;
     }
@@ -965,9 +1000,10 @@ public class InstanceResponse {
         return this;
     }
 
-    /** 实例的到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 仅包周期场景返回。
-     * 
-     * @return expirationTime */
+    /**
+     * 实例的到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  仅包周期场景返回。
+     * @return expirationTime
+     */
     public String getExpirationTime() {
         return expirationTime;
     }
@@ -1113,7 +1149,10 @@ public class InstanceResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

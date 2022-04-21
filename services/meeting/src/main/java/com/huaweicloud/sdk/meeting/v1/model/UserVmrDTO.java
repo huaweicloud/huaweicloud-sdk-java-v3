@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UserVmrDTO */
+/**
+ * UserVmrDTO
+ */
 public class UserVmrDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,16 +55,24 @@ public class UserVmrDTO {
 
     private Integer vmrPkgLength;
 
-    /** 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 */
+    /**
+     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +148,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室的唯一标识
-     * 
-     * @return id */
+    /**
+     * 云会议室的唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -154,9 +165,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室ID即预约会议的id，分为两种，一种是创建用户时生成的，为用户个人的，另一种是企业管理员分配的专用云会议室
-     * 
-     * @return vmrId */
+    /**
+     * 云会议室ID即预约会议的id，分为两种，一种是创建用户时生成的，为用户个人的，另一种是企业管理员分配的专用云会议室
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -170,9 +182,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室名称
-     * 
-     * @return vmrName */
+    /**
+     * 云会议室名称
+     * @return vmrName
+     */
     public String getVmrName() {
         return vmrName;
     }
@@ -186,9 +199,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** VMR模式。 - 0：个人会议ID - 1: 云会议室 - 2: 网络研讨会
-     * 
-     * @return vmrMode */
+    /**
+     * VMR模式。 - 0：个人会议ID - 1: 云会议室 - 2: 网络研讨会 
+     * @return vmrMode
+     */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -202,9 +216,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室套餐包的id，仅专用云会议室返回
-     * 
-     * @return vmrPkgId */
+    /**
+     * 云会议室套餐包的id，仅专用云会议室返回
+     * @return vmrPkgId
+     */
     public String getVmrPkgId() {
         return vmrPkgId;
     }
@@ -218,9 +233,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室套餐包的名称，仅专用云会议室返回
-     * 
-     * @return vmrPkgName */
+    /**
+     * 云会议室套餐包的名称，仅专用云会议室返回
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -234,9 +250,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室套餐包的会议并发方数，仅专用云会议室返回
-     * 
-     * @return vmrPkgParties */
+    /**
+     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * @return vmrPkgParties
+     */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -250,9 +267,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室套餐包的与会时间，若为0则代表无限时长，仅专用云会议室返回
-     * 
-     * @return vmrPkgLength */
+    /**
+     * 云会议室套餐包的与会时间，若为0则代表无限时长，仅专用云会议室返回
+     * @return vmrPkgLength
+     */
     public Integer getVmrPkgLength() {
         return vmrPkgLength;
     }
@@ -266,9 +284,10 @@ public class UserVmrDTO {
         return this;
     }
 
-    /** 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配
-     * 
-     * @return status */
+    /**
+     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -317,7 +336,10 @@ public class UserVmrDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

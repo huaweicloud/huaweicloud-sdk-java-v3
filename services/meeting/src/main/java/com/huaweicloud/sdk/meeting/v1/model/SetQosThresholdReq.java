@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设置企业用户指定类型的阈值的请求体 */
+/**
+ * 设置企业用户指定类型的阈值的请求体
+ */
 public class SetQosThresholdReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SetQosThresholdReq {
         return this;
     }
 
-    /** Get latency
-     * 
-     * @return latency */
+    /**
+     * Get latency
+     * @return latency
+     */
     public SetThresholdData getLatency() {
         return latency;
     }
@@ -73,9 +76,10 @@ public class SetQosThresholdReq {
         return this;
     }
 
-    /** Get jitter
-     * 
-     * @return jitter */
+    /**
+     * Get jitter
+     * @return jitter
+     */
     public SetThresholdData getJitter() {
         return jitter;
     }
@@ -98,9 +102,10 @@ public class SetQosThresholdReq {
         return this;
     }
 
-    /** Get packetLoss
-     * 
-     * @return packetLoss */
+    /**
+     * Get packetLoss
+     * @return packetLoss
+     */
     public SetPacketThresholdData getPacketLoss() {
         return packetLoss;
     }
@@ -123,9 +128,10 @@ public class SetQosThresholdReq {
         return this;
     }
 
-    /** Get clientCpuMax
-     * 
-     * @return clientCpuMax */
+    /**
+     * Get clientCpuMax
+     * @return clientCpuMax
+     */
     public SetCPUThresholdData getClientCpuMax() {
         return clientCpuMax;
     }
@@ -148,9 +154,10 @@ public class SetQosThresholdReq {
         return this;
     }
 
-    /** Get systemCpuMax
-     * 
-     * @return systemCpuMax */
+    /**
+     * Get systemCpuMax
+     * @return systemCpuMax
+     */
     public SetCPUThresholdData getSystemCpuMax() {
         return systemCpuMax;
     }
@@ -193,7 +200,10 @@ public class SetQosThresholdReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

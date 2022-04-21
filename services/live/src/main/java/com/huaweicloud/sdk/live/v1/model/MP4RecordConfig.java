@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MP4RecordConfig */
+/**
+ * MP4RecordConfig
+ */
 public class MP4RecordConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 单位为秒，周期录制时长，最小1分钟，最大12小时。如果为0则整个流录制一个文件。 minimum: 0 maximum: 43200
-     * 
-     * @return recordCycle */
+    /**
+     * 单位为秒，周期录制时长，最小1分钟，最大12小时。如果为0则整个流录制一个文件。
+     * minimum: 0
+     * maximum: 43200
+     * @return recordCycle
+     */
     public Integer getRecordCycle() {
         return recordCycle;
     }
@@ -44,10 +49,10 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 录制文件含路径和文件名的前缀，
-     * 默认Record/{publish_domain}/{app}/{record_type}/{record_format}/{stream}_{file_start_time}/{file_start_time}
-     * 
-     * @return recordPrefix */
+    /**
+     * 录制文件含路径和文件名的前缀， 默认Record/{publish_domain}/{app}/{record_type}/{record_format}/{stream}_{file_start_time}/{file_start_time}
+     * @return recordPrefix
+     */
     public String getRecordPrefix() {
         return recordPrefix;
     }
@@ -61,9 +66,12 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 录制mp4拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件。默认为0。 minimum: 0 maximum: 300
-     * 
-     * @return recordMaxDurationToMergeFile */
+    /**
+     * 录制mp4拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件。默认为0。
+     * minimum: 0
+     * maximum: 300
+     * @return recordMaxDurationToMergeFile
+     */
     public Integer getRecordMaxDurationToMergeFile() {
         return recordMaxDurationToMergeFile;
     }
@@ -104,7 +112,10 @@ public class MP4RecordConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

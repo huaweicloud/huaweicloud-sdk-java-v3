@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SQL翻译接口返回的SQL语句中的不支持特性 */
+/**
+ * SQL翻译接口返回的SQL语句中的不支持特性
+ */
 public class UnSupportedItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UnSupportedItem {
         return this;
     }
 
-    /** 输入SQL转换到目标端不支持的特性
-     * 
-     * @return itemName */
+    /**
+     * 输入SQL转换到目标端不支持的特性
+     * @return itemName
+     */
     public String getItemName() {
         return itemName;
     }
@@ -39,9 +42,10 @@ public class UnSupportedItem {
         return this;
     }
 
-    /** 不支持特性的改造建议
-     * 
-     * @return suggestion */
+    /**
+     * 不支持特性的改造建议
+     * @return suggestion
+     */
     public String getSuggestion() {
         return suggestion;
     }
@@ -78,7 +82,10 @@ public class UnSupportedItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

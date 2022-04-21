@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSqlSwitchStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowSqlSwitchStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 开关状态。取值： Enabled：已开启， Disabled：已关闭， Switching：开关切换中
-     * 
-     * @return status */
+    /**
+     * 开关状态。取值： Enabled：已开启， Disabled：已关闭， Switching：开关切换中
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -40,9 +43,10 @@ public class ShowSqlSwitchStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** SQL数据保存天数。
-     * 
-     * @return retentionDays */
+    /**
+     * SQL数据保存天数。
+     * @return retentionDays
+     */
     public Long getRetentionDays() {
         return retentionDays;
     }
@@ -79,7 +83,10 @@ public class ShowSqlSwitchStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

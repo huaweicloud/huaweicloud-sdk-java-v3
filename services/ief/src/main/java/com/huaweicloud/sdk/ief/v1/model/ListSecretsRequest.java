@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecretsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -54,9 +57,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 密钥名称，模糊匹配
-     * 
-     * @return name */
+    /**
+     * 密钥名称，模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，取值范围1~1000，默认值为1000。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，取值范围1~1000，默认值为1000。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 查询的起始位置，取值范围为非负整数，默认为0
-     * 
-     * @return offset */
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -102,9 +108,10 @@ public class ListSecretsRequest {
         return this;
     }
 
-    /** 排序方式，可根据名称、创建时间、更新时间排序 枚举值： - name - created_at - updated_at 默认升序，如sort=name，降序：sort=name%3Adesc
-     * 
-     * @return sort */
+    /**
+     * 排序方式，可根据名称、创建时间、更新时间排序 枚举值： - name - created_at - updated_at 默认升序，如sort=name，降序：sort=name%3Adesc
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -147,7 +154,10 @@ public class ListSecretsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

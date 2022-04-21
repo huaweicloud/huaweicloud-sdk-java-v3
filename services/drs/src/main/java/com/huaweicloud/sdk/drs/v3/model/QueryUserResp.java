@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 迁移用户响应体 */
+/**
+ * 迁移用户响应体
+ */
 public class QueryUserResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -62,9 +65,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 是否使用全局密码
-     * 
-     * @return isGlobalPassword */
+    /**
+     * 是否使用全局密码
+     * @return isGlobalPassword
+     */
     public String getIsGlobalPassword() {
         return isGlobalPassword;
     }
@@ -78,9 +82,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return message */
+    /**
+     * 错误码
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -110,9 +115,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 用户列表数据
-     * 
-     * @return userList */
+    /**
+     * 用户列表数据
+     * @return userList
+     */
     public List<QueryUserDetailResp> getUserList() {
         return userList;
     }
@@ -142,9 +148,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 角色列表数据
-     * 
-     * @return rolesList */
+    /**
+     * 角色列表数据
+     * @return rolesList
+     */
     public List<QueryRoleDetailResp> getRolesList() {
         return rolesList;
     }
@@ -158,9 +165,10 @@ public class QueryUserResp {
         return this;
     }
 
-    /** 是否成功
-     * 
-     * @return isSuccess */
+    /**
+     * 是否成功
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -205,7 +213,10 @@ public class QueryUserResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** quota响应 */
+/**
+ * quota响应
+ */
 public class Quota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Quota {
         return this;
     }
 
-    /** 查询的配额信息。
-     * 
-     * @return resources */
+    /**
+     * 查询的配额信息。
+     * @return resources
+     */
     public List<QuotaInfo> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class Quota {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJudgementDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务回调状态:callback_success(回调成功)、callback_error(回调出错)
-     * 
-     * @return taskStatus */
+    /**
+     * 任务回调状态:callback_success(回调成功)、callback_error(回调出错)
+     * @return taskStatus
+     */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -61,9 +64,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务运行状态:success(成功)、compile_error(编译错误)、internal_error(系统内部错误)、run_timeout(运行超时)、judging(代码运行中)、runtime_error(运行出错)、output_match_error(不符合输出规范)
-     * 
-     * @return status */
+    /**
+     * 任务运行状态:success(成功)、compile_error(编译错误)、internal_error(系统内部错误)、run_timeout(运行超时)、judging(代码运行中)、runtime_error(运行出错)、output_match_error(不符合输出规范)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -77,9 +81,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 判题任务ID
-     * 
-     * @return judgementId */
+    /**
+     * 判题任务ID
+     * @return judgementId
+     */
     public String getJudgementId() {
         return judgementId;
     }
@@ -93,9 +98,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务开始时间
-     * 
-     * @return startTime */
+    /**
+     * 任务开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -109,9 +115,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结束时间
-     * 
-     * @return endTime */
+    /**
+     * 任务结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -134,9 +141,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get result
-     * 
-     * @return result */
+    /**
+     * Get result
+     * @return result
+     */
     public JudgementResult getResult() {
         return result;
     }
@@ -181,7 +189,10 @@ public class ShowJudgementDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

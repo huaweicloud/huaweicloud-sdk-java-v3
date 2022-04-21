@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SQL作业。 */
+/**
+ * SQL作业。
+ */
 public class Schedule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class Schedule {
         return this;
     }
 
-    /** 调度开始时间。时间格式为ISO时区日期时间。例如2021-03-03T10:15:30+08:00
-     * 
-     * @return startTime */
+    /**
+     * 调度开始时间。时间格式为ISO时区日期时间。例如2021-03-03T10:15:30+08:00
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -77,9 +80,10 @@ public class Schedule {
         return this;
     }
 
-    /** 调度结束时间。时间格式为ISO时区日期时间。例如2021-03-03T10:15:30+08:00
-     * 
-     * @return endTime */
+    /**
+     * 调度结束时间。时间格式为ISO时区日期时间。例如2021-03-03T10:15:30+08:00
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -93,9 +97,10 @@ public class Schedule {
         return this;
     }
 
-    /** Cron表达式，格式为<秒> <分> <时> <天> <月> <星期>
-     * 
-     * @return cronExpression */
+    /**
+     * Cron表达式，格式为<秒> <分> <时> <天> <月> <星期>
+     * @return cronExpression
+     */
     public String getCronExpression() {
         return cronExpression;
     }
@@ -109,9 +114,10 @@ public class Schedule {
         return this;
     }
 
-    /** 计算资源ID。
-     * 
-     * @return computingResourceId */
+    /**
+     * 计算资源ID。
+     * @return computingResourceId
+     */
     public String getComputingResourceId() {
         return computingResourceId;
     }
@@ -125,9 +131,10 @@ public class Schedule {
         return this;
     }
 
-    /** 调度启用状态. true: 调度中；false：停止调度。
-     * 
-     * @return enable */
+    /**
+     * 调度启用状态. true: 调度中；false：停止调度。
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -157,9 +164,10 @@ public class Schedule {
         return this;
     }
 
-    /** 作业运行配置信息。
-     * 
-     * @return conf */
+    /**
+     * 作业运行配置信息。
+     * @return conf
+     */
     public List<String> getConf() {
         return conf;
     }
@@ -173,9 +181,10 @@ public class Schedule {
         return this;
     }
 
-    /** 仅在查询作业和查询所有作业接口的响应返回。调度状态。1:NORMAL, 2:PAUSED, 3:COMPLETE, 4:ERROR, 5:BLOCKED
-     * 
-     * @return scheduleStatus */
+    /**
+     * 仅在查询作业和查询所有作业接口的响应返回。调度状态。1:NORMAL, 2:PAUSED, 3:COMPLETE, 4:ERROR, 5:BLOCKED
+     * @return scheduleStatus
+     */
     public String getScheduleStatus() {
         return scheduleStatus;
     }
@@ -189,9 +198,10 @@ public class Schedule {
         return this;
     }
 
-    /** 仅在查询作业和查询所有作业接口的响应返回。上一次调度开始时间。
-     * 
-     * @return nextFireTime */
+    /**
+     * 仅在查询作业和查询所有作业接口的响应返回。上一次调度开始时间。
+     * @return nextFireTime
+     */
     public String getNextFireTime() {
         return nextFireTime;
     }
@@ -205,9 +215,10 @@ public class Schedule {
         return this;
     }
 
-    /** 仅在查询作业和查询所有作业接口的响应返回。下一次调度开始时间。
-     * 
-     * @return prevFireTime */
+    /**
+     * 仅在查询作业和查询所有作业接口的响应返回。下一次调度开始时间。
+     * @return prevFireTime
+     */
     public String getPrevFireTime() {
         return prevFireTime;
     }
@@ -264,7 +275,10 @@ public class Schedule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

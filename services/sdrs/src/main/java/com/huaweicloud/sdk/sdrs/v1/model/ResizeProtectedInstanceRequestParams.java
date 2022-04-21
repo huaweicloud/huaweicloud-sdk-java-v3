@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 保护实例变更规格请求数据结构 */
+/**
+ * 保护实例变更规格请求数据结构
+ */
 public class ResizeProtectedInstanceRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,10 +40,10 @@ public class ResizeProtectedInstanceRequestParams {
         return this;
     }
 
-    /** 变更规格后，生产站点云服务器和容灾站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。
-     * 说明：系统支持同时变更生产站点云服务器和容灾站点云服务器的规格。如需同时变更，请使用flavorRef参数，变更规格后，生产站点云服务器和容灾站点云服务器的规格相同。
-     * 
-     * @return flavorRef */
+    /**
+     * 变更规格后，生产站点云服务器和容灾站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。 说明：系统支持同时变更生产站点云服务器和容灾站点云服务器的规格。如需同时变更，请使用flavorRef参数，变更规格后，生产站点云服务器和容灾站点云服务器的规格相同。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -55,10 +57,10 @@ public class ResizeProtectedInstanceRequestParams {
         return this;
     }
 
-    /** 变更规格后，生产站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。
-     * 说明：系统支持仅变更生产站点云服务器的规格。此时，请使用production_flavorRef参数。当flavorRef参数有值时，production_flavorRef参数不生效。
-     * 
-     * @return productionFlavorRef */
+    /**
+     * 变更规格后，生产站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。 说明：系统支持仅变更生产站点云服务器的规格。此时，请使用production_flavorRef参数。当flavorRef参数有值时，production_flavorRef参数不生效。
+     * @return productionFlavorRef
+     */
     public String getProductionFlavorRef() {
         return productionFlavorRef;
     }
@@ -72,10 +74,10 @@ public class ResizeProtectedInstanceRequestParams {
         return this;
     }
 
-    /** 变更规格后，容灾站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。
-     * 说明：系统支持仅变更容灾站点云服务器的规格。此时，请使用dr_flavorRef参数。当flavorRef参数有值时，dr_flavorRef参数不生效。
-     * 
-     * @return drFlavorRef */
+    /**
+     * 变更规格后，容灾站点云服务器的flavor ID。可通过查询云服务器规格变更支持列表接口获取。 说明：系统支持仅变更容灾站点云服务器的规格。此时，请使用dr_flavorRef参数。当flavorRef参数有值时，dr_flavorRef参数不生效。
+     * @return drFlavorRef
+     */
     public String getDrFlavorRef() {
         return drFlavorRef;
     }
@@ -89,9 +91,10 @@ public class ResizeProtectedInstanceRequestParams {
         return this;
     }
 
-    /** 新生产站点专属主机ID。 说明：生产站点云服务器在专属主机上时，变更规格需要指定此参数。可以指定为生产站点云服务器当前所在专属主机ID或其他专属主机ID。
-     * 
-     * @return productionDedicatedHostId */
+    /**
+     * 新生产站点专属主机ID。 说明：生产站点云服务器在专属主机上时，变更规格需要指定此参数。可以指定为生产站点云服务器当前所在专属主机ID或其他专属主机ID。
+     * @return productionDedicatedHostId
+     */
     public String getProductionDedicatedHostId() {
         return productionDedicatedHostId;
     }
@@ -105,9 +108,10 @@ public class ResizeProtectedInstanceRequestParams {
         return this;
     }
 
-    /** 新容灾站点专属主机ID。 说明：容灾站点云服务器在专属主机上时，变更规格需要指定此参数。可以指定为容灾站点云服务器当前所在专属主机ID或其他专属主机ID。
-     * 
-     * @return drDedicatedHostId */
+    /**
+     * 新容灾站点专属主机ID。 说明：容灾站点云服务器在专属主机上时，变更规格需要指定此参数。可以指定为容灾站点云服务器当前所在专属主机ID或其他专属主机ID。
+     * @return drDedicatedHostId
+     */
     public String getDrDedicatedHostId() {
         return drDedicatedHostId;
     }
@@ -152,7 +156,10 @@ public class ResizeProtectedInstanceRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

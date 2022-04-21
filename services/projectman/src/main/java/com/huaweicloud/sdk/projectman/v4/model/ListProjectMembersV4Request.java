@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectMembersV4Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListProjectMembersV4Request {
         return this;
     }
 
-    /** devcloud的项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud的项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -44,9 +47,12 @@ public class ListProjectMembersV4Request {
         return this;
     }
 
-    /** 分页索引，偏移量,offset是limit的整数倍，limit=10,offset=0,10,20... minimum: 0 maximum: 10000
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
+     * minimum: 0
+     * maximum: 10000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +66,12 @@ public class ListProjectMembersV4Request {
         return this;
     }
 
-    /** 每页显示的数量,每页最多显示100条 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量,每页最多显示100条
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,7 +110,10 @@ public class ListProjectMembersV4Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

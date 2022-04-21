@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 凭据对象。 */
+/**
+ * 凭据对象。
+ */
 public class Secret {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class Secret {
         return this;
     }
 
-    /** 凭据的资源标识符。
-     * 
-     * @return id */
+    /**
+     * 凭据的资源标识符。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class Secret {
         return this;
     }
 
-    /** 凭据名称。
-     * 
-     * @return name */
+    /**
+     * 凭据名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class Secret {
         return this;
     }
 
-    /** 凭据状态，取值如下： ENABLED：表示启用状态 DISABLED：表示禁用状态 PENDING_DELETE：表示待删除状态 FROZEN：表示冻结状态状态
-     * 
-     * @return state */
+    /**
+     * 凭据状态，取值如下：  ENABLED：表示启用状态  DISABLED：表示禁用状态  PENDING_DELETE：表示待删除状态  FROZEN：表示冻结状态状态 
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -101,9 +106,10 @@ public class Secret {
         return this;
     }
 
-    /** 用于加密凭据值的KMS主密钥的ID值。
-     * 
-     * @return kmsKeyId */
+    /**
+     * 用于加密凭据值的KMS主密钥的ID值。 
+     * @return kmsKeyId
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -117,9 +123,10 @@ public class Secret {
         return this;
     }
 
-    /** 凭据的描述信息。
-     * 
-     * @return description */
+    /**
+     * 凭据的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -133,9 +140,12 @@ public class Secret {
         return this;
     }
 
-    /** 凭据创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 13
-     * 
-     * @return createTime */
+    /**
+     * 凭据创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+     * minimum: 0
+     * maximum: 13
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -149,9 +159,12 @@ public class Secret {
         return this;
     }
 
-    /** 凭据上次更新时间，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 13
-     * 
-     * @return updateTime */
+    /**
+     * 凭据上次更新时间，时间戳，即从1970年1月1日至该时间的总秒数。
+     * minimum: 0
+     * maximum: 13
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -165,9 +178,12 @@ public class Secret {
         return this;
     }
 
-    /** 凭据计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。 凭据不在删除计划中时，本项值为null。 minimum: 0 maximum: 13
-     * 
-     * @return scheduledDeleteTime */
+    /**
+     * 凭据计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。  凭据不在删除计划中时，本项值为null。 
+     * minimum: 0
+     * maximum: 13
+     * @return scheduledDeleteTime
+     */
     public Long getScheduledDeleteTime() {
         return scheduledDeleteTime;
     }
@@ -213,7 +229,10 @@ public class Secret {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

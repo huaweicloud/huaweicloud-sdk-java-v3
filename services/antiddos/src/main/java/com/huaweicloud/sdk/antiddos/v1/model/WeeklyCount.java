@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WeeklyCount */
+/**
+ * WeeklyCount
+ */
 public class WeeklyCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class WeeklyCount {
         return this;
     }
 
-    /** DDoS拦截次数
-     * 
-     * @return ddosInterceptTimes */
+    /**
+     * DDoS拦截次数
+     * @return ddosInterceptTimes
+     */
     public Integer getDdosInterceptTimes() {
         return ddosInterceptTimes;
     }
@@ -54,9 +57,10 @@ public class WeeklyCount {
         return this;
     }
 
-    /** DDoS黑洞次数
-     * 
-     * @return ddosBlackholeTimes */
+    /**
+     * DDoS黑洞次数
+     * @return ddosBlackholeTimes
+     */
     public Integer getDdosBlackholeTimes() {
         return ddosBlackholeTimes;
     }
@@ -70,9 +74,10 @@ public class WeeklyCount {
         return this;
     }
 
-    /** 最大攻击流量
-     * 
-     * @return maxAttackBps */
+    /**
+     * 最大攻击流量
+     * @return maxAttackBps
+     */
     public Integer getMaxAttackBps() {
         return maxAttackBps;
     }
@@ -86,9 +91,10 @@ public class WeeklyCount {
         return this;
     }
 
-    /** 最大攻击连接数
-     * 
-     * @return maxAttackConns */
+    /**
+     * 最大攻击连接数
+     * @return maxAttackConns
+     */
     public Integer getMaxAttackConns() {
         return maxAttackConns;
     }
@@ -102,9 +108,10 @@ public class WeeklyCount {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return periodStartDate */
+    /**
+     * 开始时间
+     * @return periodStartDate
+     */
     public Long getPeriodStartDate() {
         return periodStartDate;
     }
@@ -147,7 +154,10 @@ public class WeeklyCount {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

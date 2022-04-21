@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResponseInfoResp */
+/**
+ * ResponseInfoResp
+ */
 public class ResponseInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ResponseInfoResp {
         return this;
     }
 
-    /** 响应的HTTP状态码
-     * 
-     * @return status */
+    /**
+     * 响应的HTTP状态码
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -44,9 +47,10 @@ public class ResponseInfoResp {
         return this;
     }
 
-    /** 响应的Body模板
-     * 
-     * @return body */
+    /**
+     * 响应的Body模板
+     * @return body
+     */
     public String getBody() {
         return body;
     }
@@ -60,9 +64,10 @@ public class ResponseInfoResp {
         return this;
     }
 
-    /** 是否为默认响应
-     * 
-     * @return _default */
+    /**
+     * 是否为默认响应
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -100,7 +105,10 @@ public class ResponseInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

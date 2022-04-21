@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 孪生属性配置，与access_protocol关联。 */
+/**
+ * 孪生属性配置，与access_protocol关联。
+ */
 public class ValueInPropertyVisitors {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get registerType
-     * 
-     * @return registerType */
+    /**
+     * Get registerType
+     * @return registerType
+     */
     public ValueInPropertyVisitorsRegisterType getRegisterType() {
         return registerType;
     }
@@ -118,9 +121,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get accessMode
-     * 
-     * @return accessMode */
+    /**
+     * Get accessMode
+     * @return accessMode
+     */
     public ValueInPropertyVisitorsAccessMode getAccessMode() {
         return accessMode;
     }
@@ -144,9 +148,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get registerIndex
-     * 
-     * @return registerIndex */
+    /**
+     * Get registerIndex
+     * @return registerIndex
+     */
     public ValueInPropertyVisitorsRegisterIndex getRegisterIndex() {
         return registerIndex;
     }
@@ -169,9 +174,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get registerNum
-     * 
-     * @return registerNum */
+    /**
+     * Get registerNum
+     * @return registerNum
+     */
     public ValueInPropertyVisitorsRegisterNum getRegisterNum() {
         return registerNum;
     }
@@ -194,9 +200,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get scaleIndex
-     * 
-     * @return scaleIndex */
+    /**
+     * Get scaleIndex
+     * @return scaleIndex
+     */
     public ValueInPropertyVisitorsScaleIndex getScaleIndex() {
         return scaleIndex;
     }
@@ -220,9 +227,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get originalDatatype
-     * 
-     * @return originalDatatype */
+    /**
+     * Get originalDatatype
+     * @return originalDatatype
+     */
     public ValueInPropertyVisitorsOriginalDatatype getOriginalDatatype() {
         return originalDatatype;
     }
@@ -246,9 +254,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get expectedDatatype
-     * 
-     * @return expectedDatatype */
+    /**
+     * Get expectedDatatype
+     * @return expectedDatatype
+     */
     public ValueInPropertyVisitorsExpectedDatatype getExpectedDatatype() {
         return expectedDatatype;
     }
@@ -272,9 +281,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get isRegisterswap
-     * 
-     * @return isRegisterswap */
+    /**
+     * Get isRegisterswap
+     * @return isRegisterswap
+     */
     public ValueInPropertyVisitorsIsRegisterswap getIsRegisterswap() {
         return isRegisterswap;
     }
@@ -297,9 +307,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get isSwap
-     * 
-     * @return isSwap */
+    /**
+     * Get isSwap
+     * @return isSwap
+     */
     public ValueInPropertyVisitorsIsSwap getIsSwap() {
         return isSwap;
     }
@@ -323,9 +334,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get sampleInterval
-     * 
-     * @return sampleInterval */
+    /**
+     * Get sampleInterval
+     * @return sampleInterval
+     */
     public ValueInPropertyVisitorsSampleInterval getSampleInterval() {
         return sampleInterval;
     }
@@ -348,9 +360,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get dataMin
-     * 
-     * @return dataMin */
+    /**
+     * Get dataMin
+     * @return dataMin
+     */
     public ValueInPropertyVisitorsDataMin getDataMin() {
         return dataMin;
     }
@@ -373,9 +386,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get dataMax
-     * 
-     * @return dataMax */
+    /**
+     * Get dataMax
+     * @return dataMax
+     */
     public ValueInPropertyVisitorsDataMax getDataMax() {
         return dataMax;
     }
@@ -398,9 +412,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get nodeId
-     * 
-     * @return nodeId */
+    /**
+     * Get nodeId
+     * @return nodeId
+     */
     public ValueInPropertyVisitorsNodeId getNodeId() {
         return nodeId;
     }
@@ -423,9 +438,10 @@ public class ValueInPropertyVisitors {
         return this;
     }
 
-    /** Get browseName
-     * 
-     * @return browseName */
+    /**
+     * Get browseName
+     * @return browseName
+     */
     public ValueInPropertyVisitorsBrowseName getBrowseName() {
         return browseName;
     }
@@ -499,7 +515,10 @@ public class ValueInPropertyVisitors {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

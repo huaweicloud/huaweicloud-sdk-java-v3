@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTasksDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,52 +25,84 @@ public class ListTasksDetailsRequest {
 
     private String serviceVersion;
 
-    /** 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结） */
+    /**
+     * 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
+     */
     public static final class StateEnum {
 
-        /** Enum PENDING for value: "PENDING" */
+        /**
+         * Enum PENDING for value: "PENDING"
+         */
         public static final StateEnum PENDING = new StateEnum("PENDING");
 
-        /** Enum RECOVERING for value: "RECOVERING" */
+        /**
+         * Enum RECOVERING for value: "RECOVERING"
+         */
         public static final StateEnum RECOVERING = new StateEnum("RECOVERING");
 
-        /** Enum STARTING for value: "STARTING" */
+        /**
+         * Enum STARTING for value: "STARTING"
+         */
         public static final StateEnum STARTING = new StateEnum("STARTING");
 
-        /** Enum UPGRADING for value: "UPGRADING" */
+        /**
+         * Enum UPGRADING for value: "UPGRADING"
+         */
         public static final StateEnum UPGRADING = new StateEnum("UPGRADING");
 
-        /** Enum CREATE_FAILED for value: "CREATE_FAILED" */
+        /**
+         * Enum CREATE_FAILED for value: "CREATE_FAILED"
+         */
         public static final StateEnum CREATE_FAILED = new StateEnum("CREATE_FAILED");
 
-        /** Enum START_FAILED for value: "START_FAILED" */
+        /**
+         * Enum START_FAILED for value: "START_FAILED"
+         */
         public static final StateEnum START_FAILED = new StateEnum("START_FAILED");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StateEnum STOPPING = new StateEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StateEnum STOPPED = new StateEnum("STOPPED");
 
-        /** Enum ABNORMAL for value: "ABNORMAL" */
+        /**
+         * Enum ABNORMAL for value: "ABNORMAL"
+         */
         public static final StateEnum ABNORMAL = new StateEnum("ABNORMAL");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final StateEnum SUCCEEDED = new StateEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StateEnum FAILED = new StateEnum("FAILED");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StateEnum DELETING = new StateEnum("DELETING");
 
-        /** Enum FREEZING for value: "FREEZING" */
+        /**
+         * Enum FREEZING for value: "FREEZING"
+         */
         public static final StateEnum FREEZING = new StateEnum("FREEZING");
 
-        /** Enum FROZEN for value: "FROZEN" */
+        /**
+         * Enum FROZEN for value: "FROZEN"
+         */
         public static final StateEnum FROZEN = new StateEnum("FROZEN");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -171,25 +205,39 @@ public class ListTasksDetailsRequest {
 
     private Long createdUntil;
 
-    /** 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序） */
+    /**
+     * 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序）
+     */
     public static final class OrderEnum {
 
-        /** Enum NAME_ASC for value: "name:ASC" */
+        /**
+         * Enum NAME_ASC for value: "name:ASC"
+         */
         public static final OrderEnum NAME_ASC = new OrderEnum("name:ASC");
 
-        /** Enum NAME_DESC for value: "name:DESC" */
+        /**
+         * Enum NAME_DESC for value: "name:DESC"
+         */
         public static final OrderEnum NAME_DESC = new OrderEnum("name:DESC");
 
-        /** Enum CREATED_AT_ASC for value: "created_at:ASC" */
+        /**
+         * Enum CREATED_AT_ASC for value: "created_at:ASC"
+         */
         public static final OrderEnum CREATED_AT_ASC = new OrderEnum("created_at:ASC");
 
-        /** Enum CREATED_AT_DESC for value: "created_at:DESC" */
+        /**
+         * Enum CREATED_AT_DESC for value: "created_at:DESC"
+         */
         public static final OrderEnum CREATED_AT_DESC = new OrderEnum("created_at:DESC");
 
-        /** Enum UPDATED_AT_ASC for value: "updated_at:ASC" */
+        /**
+         * Enum UPDATED_AT_ASC for value: "updated_at:ASC"
+         */
         public static final OrderEnum UPDATED_AT_ASC = new OrderEnum("updated_at:ASC");
 
-        /** Enum UPDATED_AT_DESC for value: "updated_at:DESC" */
+        /**
+         * Enum UPDATED_AT_DESC for value: "updated_at:DESC"
+         */
         public static final OrderEnum UPDATED_AT_DESC = new OrderEnum("updated_at:DESC");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -278,9 +326,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 服务名称
-     * 
-     * @return serviceName */
+    /**
+     * 服务名称
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -294,9 +343,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业对应的服务版本号
-     * 
-     * @return serviceVersion */
+    /**
+     * 目标服务作业对应的服务版本号
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -310,9 +360,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
-     * 
-     * @return state */
+    /**
+     * 目标服务作业的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -326,9 +377,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的名称，支持模糊匹配
-     * 
-     * @return nameLike */
+    /**
+     * 目标服务作业的名称，支持模糊匹配
+     * @return nameLike
+     */
     public String getNameLike() {
         return nameLike;
     }
@@ -342,9 +394,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的ID，支持模糊匹配
-     * 
-     * @return idLike */
+    /**
+     * 目标服务作业的ID，支持模糊匹配
+     * @return idLike
+     */
     public String getIdLike() {
         return idLike;
     }
@@ -358,9 +411,12 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的创建起始时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return createdSince */
+    /**
+     * 目标服务作业的创建起始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createdSince
+     */
     public Long getCreatedSince() {
         return createdSince;
     }
@@ -374,9 +430,12 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 目标服务作业的创建截止时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return createdUntil */
+    /**
+     * 目标服务作业的创建截止时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createdUntil
+     */
     public Long getCreatedUntil() {
         return createdUntil;
     }
@@ -390,9 +449,10 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序）
-     * 
-     * @return order */
+    /**
+     * 展示服务作业时的排序字段和顺序，分别为name:ASC（按名称顺序排序），name:DESC（按名称倒序排序），created_at:ASC（按创建时间正序排序），created_at:DESC（按创建时间倒序排序），updated_at:ASC（按更新时间正序排序），updated_at:DESC（按更新时间倒序排序）
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -406,9 +466,12 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 首个展示的服务作业的偏移量 minimum: 0 maximum: 100000
-     * 
-     * @return offset */
+    /**
+     * 首个展示的服务作业的偏移量
+     * minimum: 0
+     * maximum: 100000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -422,9 +485,12 @@ public class ListTasksDetailsRequest {
         return this;
     }
 
-    /** 展示服务作业的数量 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 展示服务作业的数量
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -486,7 +552,10 @@ public class ListTasksDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

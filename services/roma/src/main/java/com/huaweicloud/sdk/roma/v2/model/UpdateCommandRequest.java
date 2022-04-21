@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateCommandRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateCommandRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,9 +53,10 @@ public class UpdateCommandRequest {
         return this;
     }
 
-    /** 服务ID
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -66,9 +70,12 @@ public class UpdateCommandRequest {
         return this;
     }
 
-    /** 命令ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return commandId */
+    /**
+     * 命令ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return commandId
+     */
     public Integer getCommandId() {
         return commandId;
     }
@@ -91,9 +98,10 @@ public class UpdateCommandRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateCommandRequestBody getBody() {
         return body;
     }
@@ -134,7 +142,10 @@ public class UpdateCommandRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

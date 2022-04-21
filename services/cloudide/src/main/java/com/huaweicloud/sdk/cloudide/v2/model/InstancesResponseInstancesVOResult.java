@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 返回值 */
+/**
+ * 返回值
+ */
 public class InstancesResponseInstancesVOResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class InstancesResponseInstancesVOResult {
 
     private String link;
 
-    /** cpu架构 x86|arm */
+    /**
+     * cpu架构 x86|arm
+     */
     public static final class ArchEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchEnum X86 = new ArchEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchEnum ARM = new ArchEnum("arm");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class InstancesResponseInstancesVOResult {
         return this;
     }
 
-    /** 链接
-     * 
-     * @return link */
+    /**
+     * 链接
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -125,9 +134,10 @@ public class InstancesResponseInstancesVOResult {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public ArchEnum getArch() {
         return arch;
     }
@@ -141,9 +151,10 @@ public class InstancesResponseInstancesVOResult {
         return this;
     }
 
-    /** 实例id
-     * 
-     * @return id */
+    /**
+     * 实例id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -157,9 +168,10 @@ public class InstancesResponseInstancesVOResult {
         return this;
     }
 
-    /** 是否私有平台
-     * 
-     * @return _private */
+    /**
+     * 是否私有平台
+     * @return _private
+     */
     public Boolean getPrivate() {
         return _private;
     }
@@ -200,7 +212,10 @@ public class InstancesResponseInstancesVOResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

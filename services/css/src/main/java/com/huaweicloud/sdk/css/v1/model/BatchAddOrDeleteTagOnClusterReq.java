@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchAddOrDeleteTagOnClusterReq */
+/**
+ * BatchAddOrDeleteTagOnClusterReq
+ */
 public class BatchAddOrDeleteTagOnClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    /** 操作类型。 说明：通过该属性标识当前所需的操作类型。 - create：批量添加标签。 - delete：批量删除标签。
-     * 
-     * @return action */
+    /**
+     * 操作类型。 说明：通过该属性标识当前所需的操作类型。 - create：批量添加标签。 - delete：批量删除标签。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -63,9 +66,10 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -95,9 +99,10 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return sysTags */
+    /**
+     * 标签列表。
+     * @return sysTags
+     */
     public List<SysTags> getSysTags() {
         return sysTags;
     }
@@ -136,7 +141,10 @@ public class BatchAddOrDeleteTagOnClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

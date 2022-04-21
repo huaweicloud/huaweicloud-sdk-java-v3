@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 主机组相关权限详情类 */
+/**
+ * 主机组相关权限详情类
+ */
 public class PermissionGroupDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PermissionGroupDetail {
         return this;
     }
 
-    /** 是否有查看权限
-     * 
-     * @return canView */
+    /**
+     * 是否有查看权限
+     * @return canView
+     */
     public Boolean getCanView() {
         return canView;
     }
@@ -54,9 +57,10 @@ public class PermissionGroupDetail {
         return this;
     }
 
-    /** 是否有编辑权限
-     * 
-     * @return canEdit */
+    /**
+     * 是否有编辑权限
+     * @return canEdit
+     */
     public Boolean getCanEdit() {
         return canEdit;
     }
@@ -70,9 +74,10 @@ public class PermissionGroupDetail {
         return this;
     }
 
-    /** 是否有删除权限
-     * 
-     * @return canDelete */
+    /**
+     * 是否有删除权限
+     * @return canDelete
+     */
     public Boolean getCanDelete() {
         return canDelete;
     }
@@ -86,9 +91,10 @@ public class PermissionGroupDetail {
         return this;
     }
 
-    /** 是否有添加主机权限
-     * 
-     * @return canAddHost */
+    /**
+     * 是否有添加主机权限
+     * @return canAddHost
+     */
     public Boolean getCanAddHost() {
         return canAddHost;
     }
@@ -102,9 +108,10 @@ public class PermissionGroupDetail {
         return this;
     }
 
-    /** 是否有管理权限
-     * 
-     * @return canManage */
+    /**
+     * 是否有管理权限
+     * @return canManage
+     */
     public Boolean getCanManage() {
         return canManage;
     }
@@ -147,7 +154,10 @@ public class PermissionGroupDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

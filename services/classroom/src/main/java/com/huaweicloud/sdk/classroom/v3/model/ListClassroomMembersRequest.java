@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListClassroomMembersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListClassroomMembersRequest {
         return this;
     }
 
-    /** 课堂ID
-     * 
-     * @return classroomId */
+    /**
+     * 课堂ID
+     * @return classroomId
+     */
     public String getClassroomId() {
         return classroomId;
     }
@@ -49,9 +52,12 @@ public class ListClassroomMembersRequest {
         return this;
     }
 
-    /** 信息记录的起始编号 minimum: 1 maximum: 1000
-     * 
-     * @return offset */
+    /**
+     * 信息记录的起始编号
+     * minimum: 1
+     * maximum: 1000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -65,9 +71,12 @@ public class ListClassroomMembersRequest {
         return this;
     }
 
-    /** 每页包含的信息记录数 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页包含的信息记录数
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -81,9 +90,10 @@ public class ListClassroomMembersRequest {
         return this;
     }
 
-    /** 按照条件搜索学生，搜索字段会同时匹配姓名，学号，用户名，班级
-     * 
-     * @return filter */
+    /**
+     * 按照条件搜索学生，搜索字段会同时匹配姓名，学号，用户名，班级
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -124,7 +134,10 @@ public class ListClassroomMembersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

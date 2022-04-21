@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 调用成功时的返回值。 */
+/**
+ * 调用成功时的返回值。
+ */
 public class TagFieldsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class TagFieldsInfo {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return fieldName */
+    /**
+     * 字段名称
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -54,9 +57,10 @@ public class TagFieldsInfo {
         return this;
     }
 
-    /** 字段类型
-     * 
-     * @return type */
+    /**
+     * 字段类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,9 +74,10 @@ public class TagFieldsInfo {
         return this;
     }
 
-    /** 内容
-     * 
-     * @return content */
+    /**
+     * 内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -86,9 +91,10 @@ public class TagFieldsInfo {
         return this;
     }
 
-    /** 是否解析
-     * 
-     * @return isAnalysis */
+    /**
+     * 是否解析
+     * @return isAnalysis
+     */
     public Boolean getIsAnalysis() {
         return isAnalysis;
     }
@@ -102,9 +108,10 @@ public class TagFieldsInfo {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return index */
+    /**
+     * 字段名称
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -146,7 +153,10 @@ public class TagFieldsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -45,9 +45,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端桶的AK（最大长度100个字符）。
-     * 
-     * @return ak */
+    /**
+     * 目的端桶的AK（最大长度100个字符）。
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -61,9 +62,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端桶的SK（最大长度100个字符）。
-     * 
-     * @return sk */
+    /**
+     * 目的端桶的SK（最大长度100个字符）。
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -77,9 +79,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端的临时Token（最大长度16384个字符）。
-     * 
-     * @return securityToken */
+    /**
+     * 目的端的临时Token（最大长度16384个字符）。
+     * @return securityToken
+     */
     public String getSecurityToken() {
         return securityToken;
     }
@@ -93,9 +96,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端桶的名称。
-     * 
-     * @return bucket */
+    /**
+     * 目的端桶的名称。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -109,9 +113,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
-     * 
-     * @return savePrefix */
+    /**
+     * 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
+     * @return savePrefix
+     */
     public String getSavePrefix() {
         return savePrefix;
     }
@@ -125,9 +130,10 @@ public class DstNodeReq {
         return this;
     }
 
-    /** 目的端桶所处的区域。 请与Endpoint对应的区域保持一致。
-     * 
-     * @return region */
+    /**
+     * 目的端桶所处的区域。  请与Endpoint对应的区域保持一致。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -170,7 +176,10 @@ public class DstNodeReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

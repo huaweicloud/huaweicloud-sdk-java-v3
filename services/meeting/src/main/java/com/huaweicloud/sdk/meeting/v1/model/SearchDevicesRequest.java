@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchDevicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -71,9 +74,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -87,9 +91,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 查询偏移量，若超过最大数量，则返回最后一页。
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量，若超过最大数量，则返回最后一页。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -103,9 +108,12 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -119,9 +127,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 搜索条件。支持名称、SN模糊查询。
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件。支持名称、SN模糊查询。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -135,9 +144,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：0
-     * 
-     * @return model */
+    /**
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：0
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -151,9 +161,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：0
-     * 
-     * @return deptCode */
+    /**
+     * 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：0
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -167,9 +178,10 @@ public class SearchDevicesRequest {
         return this;
     }
 
-    /** 是否查询子部门 默认值：true
-     * 
-     * @return enableSubDept */
+    /**
+     * 是否查询子部门 默认值：true 
+     * @return enableSubDept
+     */
     public Boolean getEnableSubDept() {
         return enableSubDept;
     }
@@ -218,7 +230,10 @@ public class SearchDevicesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

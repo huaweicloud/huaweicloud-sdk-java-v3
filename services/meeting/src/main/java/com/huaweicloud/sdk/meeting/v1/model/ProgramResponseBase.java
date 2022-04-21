@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节目响应信息 */
+/**
+ * 节目响应信息
+ */
 public class ProgramResponseBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 节目ID
-     * 
-     * @return id */
+    /**
+     * 节目ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 更新者
-     * 
-     * @return lastUpdatedBy */
+    /**
+     * 更新者
+     * @return lastUpdatedBy
+     */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -75,9 +79,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -91,9 +96,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 节目名称
-     * 
-     * @return programName */
+    /**
+     * 节目名称
+     * @return programName
+     */
     public String getProgramName() {
         return programName;
     }
@@ -107,9 +113,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 节目的总素材大小（含单位）
-     * 
-     * @return materialSizeStr */
+    /**
+     * 节目的总素材大小（含单位）
+     * @return materialSizeStr
+     */
     public String getMaterialSizeStr() {
         return materialSizeStr;
     }
@@ -123,9 +130,10 @@ public class ProgramResponseBase {
         return this;
     }
 
-    /** 节目的总播放时长，单位秒
-     * 
-     * @return playTime */
+    /**
+     * 节目的总播放时长，单位秒
+     * @return playTime
+     */
     public Integer getPlayTime() {
         return playTime;
     }
@@ -170,7 +178,10 @@ public class ProgramResponseBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备动态属性 */
+/**
+ * 终端设备动态属性
+ */
 public class ValueInTwin {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ValueInTwin {
         return this;
     }
 
-    /** Get excepted
-     * 
-     * @return excepted */
+    /**
+     * Get excepted
+     * @return excepted
+     */
     public ValueInTwinExcepted getExcepted() {
         return excepted;
     }
@@ -54,9 +57,10 @@ public class ValueInTwin {
         return this;
     }
 
-    /** 动态属性的期望信息
-     * 
-     * @return optional */
+    /**
+     * 动态属性的期望信息
+     * @return optional
+     */
     public Boolean getOptional() {
         return optional;
     }
@@ -79,9 +83,10 @@ public class ValueInTwin {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public Metadata getMetadata() {
         return metadata;
     }
@@ -120,7 +125,10 @@ public class ValueInTwin {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

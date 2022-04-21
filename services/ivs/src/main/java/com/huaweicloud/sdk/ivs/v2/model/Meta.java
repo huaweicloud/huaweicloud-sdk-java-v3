@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Meta */
+/**
+ * Meta
+ */
 public class Meta {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class Meta {
         return this;
     }
 
-    /** 唯一标识此次请求的ID，用户自定义，不超过64位。
-     * 
-     * @return uuid */
+    /**
+     * 唯一标识此次请求的ID，用户自定义，不超过64位。
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -55,7 +58,10 @@ public class Meta {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

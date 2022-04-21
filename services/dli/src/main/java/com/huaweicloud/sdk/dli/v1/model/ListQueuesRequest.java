@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQueuesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListQueuesRequest {
         return this;
     }
 
-    /** 是否返回权限信息。
-     * 
-     * @return withPriv */
+    /**
+     * 是否返回权限信息。
+     * @return withPriv
+     */
     public Boolean getWithPriv() {
         return withPriv;
     }
@@ -49,9 +52,10 @@ public class ListQueuesRequest {
         return this;
     }
 
-    /** 是否返回收费信息
-     * 
-     * @return withChargeInfo */
+    /**
+     * 是否返回收费信息
+     * @return withChargeInfo
+     */
     public Boolean getWithChargeInfo() {
         return withChargeInfo;
     }
@@ -65,9 +69,10 @@ public class ListQueuesRequest {
         return this;
     }
 
-    /** 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
-     * 
-     * @return queueType */
+    /**
+     * 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
+     * @return queueType
+     */
     public String getQueueType() {
         return queueType;
     }
@@ -81,9 +86,10 @@ public class ListQueuesRequest {
         return this;
     }
 
-    /** 查询根据标签进行过滤
-     * 
-     * @return tags */
+    /**
+     * 查询根据标签进行过滤
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -124,7 +130,10 @@ public class ListQueuesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

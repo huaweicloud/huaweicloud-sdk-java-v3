@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EditHlsInfo */
+/**
+ * EditHlsInfo
+ */
 public class EditHlsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class EditHlsInfo {
         return this;
     }
 
-    /** 切片间隔。 minimum: 2 maximum: 10
-     * 
-     * @return interval */
+    /**
+     * 切片间隔。
+     * minimum: 2
+     * maximum: 10
+     * @return interval
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -55,7 +60,10 @@ public class EditHlsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

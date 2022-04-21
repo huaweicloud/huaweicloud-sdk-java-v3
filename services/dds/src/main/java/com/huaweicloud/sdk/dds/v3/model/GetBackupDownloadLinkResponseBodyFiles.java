@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** GetBackupDownloadLinkResponseBodyFiles */
+/**
+ * GetBackupDownloadLinkResponseBodyFiles
+ */
 public class GetBackupDownloadLinkResponseBodyFiles {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         return this;
     }
 
-    /** 文件名。
-     * 
-     * @return name */
+    /**
+     * 文件名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         return this;
     }
 
-    /** 文件大小，单位为KB。
-     * 
-     * @return size */
+    /**
+     * 文件大小，单位为KB。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -65,9 +69,10 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         return this;
     }
 
-    /** 文件下载链接。
-     * 
-     * @return downloadLink */
+    /**
+     * 文件下载链接。
+     * @return downloadLink
+     */
     public String getDownloadLink() {
         return downloadLink;
     }
@@ -81,9 +86,10 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         return this;
     }
 
-    /** 下载链接过期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，例如UTC时间偏移显示为+0000。
-     * 
-     * @return linkExpiredTime */
+    /**
+     * 下载链接过期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，例如UTC时间偏移显示为+0000。
+     * @return linkExpiredTime
+     */
     public String getLinkExpiredTime() {
         return linkExpiredTime;
     }
@@ -125,7 +131,10 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

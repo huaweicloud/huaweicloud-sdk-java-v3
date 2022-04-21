@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSubscriptionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -54,9 +57,10 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 查询数量限制。 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
-     * 
-     * @return limit */
+    /**
+     *  查询数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -70,9 +74,10 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
-     * 
-     * @return protocol */
+    /**
+     * 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -86,9 +91,10 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 状态。 0：未确认 1：已确认 2：不需要确认 3：已取消确认 4：已经删除。
-     * 
-     * @return status */
+    /**
+     * 状态。 0：未确认 1：已确认 2：不需要确认 3：已取消确认 4：已经删除。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -102,9 +108,10 @@ public class ListSubscriptionsRequest {
         return this;
     }
 
-    /** 订阅终端。
-     * 
-     * @return endpoint */
+    /**
+     * 订阅终端。
+     * @return endpoint
+     */
     public String getEndpoint() {
         return endpoint;
     }
@@ -147,7 +154,10 @@ public class ListSubscriptionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

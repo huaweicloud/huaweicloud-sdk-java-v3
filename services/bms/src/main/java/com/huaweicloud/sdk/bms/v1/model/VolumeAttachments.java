@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** 裸金属服务器挂载信息列表 */
+/**
+ * 裸金属服务器挂载信息列表
+ */
 public class VolumeAttachments {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class VolumeAttachments {
         return this;
     }
 
-    /** 挂载资源ID
-     * 
-     * @return id */
+    /**
+     * 挂载资源ID
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class VolumeAttachments {
         return this;
     }
 
-    /** 所属裸金属服务器ID
-     * 
-     * @return serverId */
+    /**
+     * 所属裸金属服务器ID
+     * @return serverId
+     */
     public UUID getServerId() {
         return serverId;
     }
@@ -66,9 +70,10 @@ public class VolumeAttachments {
         return this;
     }
 
-    /** 挂载云磁盘ID
-     * 
-     * @return volumeId */
+    /**
+     * 挂载云磁盘ID
+     * @return volumeId
+     */
     public UUID getVolumeId() {
         return volumeId;
     }
@@ -82,9 +87,10 @@ public class VolumeAttachments {
         return this;
     }
 
-    /** 挂载目录，例如“/dev/sdd”。
-     * 
-     * @return device */
+    /**
+     * 挂载目录，例如“/dev/sdd”。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -125,7 +131,10 @@ public class VolumeAttachments {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

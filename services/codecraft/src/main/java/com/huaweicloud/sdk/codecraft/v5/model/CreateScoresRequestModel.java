@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateScoresRequestModel */
+/**
+ * CreateScoresRequestModel
+ */
 public class CreateScoresRequestModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,13 +45,19 @@ public class CreateScoresRequestModel {
 
     private Double score;
 
-    /** 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来 */
+    /**
+     * 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +157,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 大赛ID，大赛平台提供
-     * 
-     * @return competitionId */
+    /**
+     * 大赛ID，大赛平台提供
+     * @return competitionId
+     */
     public String getCompetitionId() {
         return competitionId;
     }
@@ -165,9 +174,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 大赛阶段ID，大赛平台提供
-     * 
-     * @return stageId */
+    /**
+     * 大赛阶段ID，大赛平台提供
+     * @return stageId
+     */
     public String getStageId() {
         return stageId;
     }
@@ -181,9 +191,12 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 第三方服务作品ID minimum: 1 maximum: 2147483647
-     * 
-     * @return worksId */
+    /**
+     * 第三方服务作品ID
+     * minimum: 1
+     * maximum: 2147483647
+     * @return worksId
+     */
     public Integer getWorksId() {
         return worksId;
     }
@@ -197,9 +210,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品名称，名称最大字符数为75，并且不能有含有特殊符号
-     * 
-     * @return name */
+    /**
+     * 作品名称，名称最大字符数为75，并且不能有含有特殊符号
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -213,9 +227,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品类型,例如docx、png、zip等
-     * 
-     * @return worksKind */
+    /**
+     * 作品类型,例如docx、png、zip等
+     * @return worksKind
+     */
     public String getWorksKind() {
         return worksKind;
     }
@@ -229,9 +244,12 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品分数，作品状态为failed时传-1，计算长度时包括小数点，小数点后面最多保留四位 minimum: -1 maximum: 99999999999
-     * 
-     * @return score */
+    /**
+     * 作品分数，作品状态为failed时传-1，计算长度时包括小数点，小数点后面最多保留四位
+     * minimum: -1
+     * maximum: 99999999999
+     * @return score
+     */
     public Double getScore() {
         return score;
     }
@@ -245,9 +263,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
-     * 
-     * @return status */
+    /**
+     * 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -261,9 +280,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 作品创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -277,9 +297,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品备注信息
-     * 
-     * @return note */
+    /**
+     * 作品备注信息
+     * @return note
+     */
     public String getNote() {
         return note;
     }
@@ -293,9 +314,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 作品描述信息
-     * 
-     * @return message */
+    /**
+     * 作品描述信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -309,9 +331,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainId */
+    /**
+     * 租户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -325,9 +348,10 @@ public class CreateScoresRequestModel {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -395,7 +419,10 @@ public class CreateScoresRequestModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** security_groups字段数据结构说明 */
+/**
+ * security_groups字段数据结构说明
+ */
 public class SecurityGroupsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class SecurityGroupsInfo {
         return this;
     }
 
-    /** 裸金属服务器对应的安全组ID，对创建裸金属服务器中配置的所有网卡生效。当该参数未指定时默认给裸金属服务器绑定default安全组。当该参数传值（UUID格式）时需要指定已有安全组的ID。获取已有安全组的方法请参见《虚拟私有云API参考》的“查询安全组列表”章节。
-     * 
-     * @return id */
+    /**
+     * 裸金属服务器对应的安全组ID，对创建裸金属服务器中配置的所有网卡生效。当该参数未指定时默认给裸金属服务器绑定default安全组。当该参数传值（UUID格式）时需要指定已有安全组的ID。获取已有安全组的方法请参见《虚拟私有云API参考》的“查询安全组列表”章节。
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -56,7 +59,10 @@ public class SecurityGroupsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 隐私屏蔽响应体 */
+/**
+ * 隐私屏蔽响应体
+ */
 public class PrivacyResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,19 +40,29 @@ public class PrivacyResponseBody {
 
     private String url;
 
-    /** 屏蔽字段 */
+    /**
+     * 屏蔽字段
+     */
     public static final class CategoryEnum {
 
-        /** Enum PARAMS for value: "params" */
+        /**
+         * Enum PARAMS for value: "params"
+         */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
 
-        /** Enum COOKIE for value: "cookie" */
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
 
-        /** Enum HEADER for value: "header" */
+        /**
+         * Enum HEADER for value: "header"
+         */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
 
-        /** Enum FORM for value: "form" */
+        /**
+         * Enum FORM for value: "form"
+         */
         public static final CategoryEnum FORM = new CategoryEnum("form");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +144,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -148,9 +161,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -164,9 +178,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 创建规则的时间，格式为13位毫秒时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 创建规则的时间，格式为13位毫秒时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -180,9 +195,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 规则状态，0：关闭，1：开启
-     * 
-     * @return status */
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -196,9 +212,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 隐私屏蔽规则应用的url
-     * 
-     * @return url */
+    /**
+     * 隐私屏蔽规则应用的url
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -212,9 +229,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 屏蔽字段
-     * 
-     * @return category */
+    /**
+     * 屏蔽字段
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -228,9 +246,10 @@ public class PrivacyResponseBody {
         return this;
     }
 
-    /** 屏蔽字段名
-     * 
-     * @return index */
+    /**
+     * 屏蔽字段名
+     * @return index
+     */
     public String getIndex() {
         return index;
     }
@@ -277,7 +296,10 @@ public class PrivacyResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

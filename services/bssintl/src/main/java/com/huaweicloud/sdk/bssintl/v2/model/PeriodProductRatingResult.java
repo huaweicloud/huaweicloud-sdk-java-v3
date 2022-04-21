@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PeriodProductRatingResult */
+/**
+ * PeriodProductRatingResult
+ */
 public class PeriodProductRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** ID标识，来源于请求中的ID。
-     * 
-     * @return id */
+    /**
+     * ID标识，来源于请求中的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的ID。
-     * 
-     * @return productId */
+    /**
+     * 包年/包月产品的ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -80,9 +84,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
-     * 
-     * @return amount */
+    /**
+     * 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -96,9 +101,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 包年/包月产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -112,9 +118,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
-     * 
-     * @return discountAmount */
+    /**
+     * 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -128,9 +135,12 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 价格度量单位标识。 1：元 minimum: 1 maximum: 2147483647
-     * 
-     * @return measureId */
+    /**
+     * 价格度量单位标识。 1：元
+     * minimum: 1
+     * maximum: 2147483647
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -144,9 +154,12 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** |参数名称：每页数量| |参数的约束及描述：该参数非必填，且只允许1-100数字，默认10，最多100| minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * |参数名称：每页数量| |参数的约束及描述：该参数非必填，且只允许1-100数字，默认10，最多100|
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -193,7 +206,10 @@ public class PeriodProductRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

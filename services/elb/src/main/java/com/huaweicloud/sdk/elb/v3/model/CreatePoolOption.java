@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建主机组请求 */
+/**
+ * 创建主机组请求
+ */
 public class CreatePoolOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的管理状态，只支持更新为true。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器组的管理状态，只支持更新为true。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -85,9 +88,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的描述信息。
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,10 +105,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法。 取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。
-     * 使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+     * @return lbAlgorithm
+     */
     public String getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -118,9 +122,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组关联的监听器的ID。 使用说明： - listener_id和loadbalancer_id至少指定一个。
-     * 
-     * @return listenerId */
+    /**
+     * 后端云服务器组关联的监听器的ID。  使用说明： - listener_id和loadbalancer_id至少指定一个。
+     * @return listenerId
+     */
     public String getListenerId() {
         return listenerId;
     }
@@ -134,9 +139,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组关联的负载均衡器ID。 使用说明： - listener_id和loadbalancer_id中至少指定一个。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 后端云服务器组关联的负载均衡器ID。  使用说明： - listener_id和loadbalancer_id中至少指定一个。
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -150,9 +156,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -166,9 +173,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组所属的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 后端云服务器组所属的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -182,11 +190,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 后端云服务器组的后端协议。 取值：TCP、UDP、HTTP、HTTPS和QUIC。 使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； -
-     * listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 -
-     * listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
-     * 
-     * @return protocol */
+    /**
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -210,9 +217,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** Get sessionPersistence
-     * 
-     * @return sessionPersistence */
+    /**
+     * Get sessionPersistence
+     * @return sessionPersistence
+     */
     public CreatePoolSessionPersistenceOption getSessionPersistence() {
         return sessionPersistence;
     }
@@ -235,9 +243,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** Get slowStart
-     * 
-     * @return slowStart */
+    /**
+     * Get slowStart
+     * @return slowStart
+     */
     public CreatePoolSlowStartOption getSlowStart() {
         return slowStart;
     }
@@ -251,9 +260,10 @@ public class CreatePoolOption {
         return this;
     }
 
-    /** 是否开启删除保护。取值：false不开启，true开启，默认false。 > 退场时需要先关闭所有资源的删除保护开关。
-     * 
-     * @return memberDeletionProtectionEnable */
+    /**
+     * 是否开启删除保护。取值：false不开启，true开启，默认false。 > 退场时需要先关闭所有资源的删除保护开关。
+     * @return memberDeletionProtectionEnable
+     */
     public Boolean getMemberDeletionProtectionEnable() {
         return memberDeletionProtectionEnable;
     }
@@ -320,7 +330,10 @@ public class CreatePoolOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

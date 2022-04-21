@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DebugCaseReturnHeader */
+/**
+ * DebugCaseReturnHeader
+ */
 public class DebugCaseReturnHeader {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DebugCaseReturnHeader {
         return this;
     }
 
-    /** Connection
-     * 
-     * @return connection */
+    /**
+     * Connection
+     * @return connection
+     */
     public String getConnection() {
         return connection;
     }
@@ -54,9 +57,10 @@ public class DebugCaseReturnHeader {
         return this;
     }
 
-    /** Content-Length
-     * 
-     * @return contentLength */
+    /**
+     * Content-Length
+     * @return contentLength
+     */
     public String getContentLength() {
         return contentLength;
     }
@@ -70,9 +74,10 @@ public class DebugCaseReturnHeader {
         return this;
     }
 
-    /** Content-Type
-     * 
-     * @return contentType */
+    /**
+     * Content-Type
+     * @return contentType
+     */
     public String getContentType() {
         return contentType;
     }
@@ -86,9 +91,10 @@ public class DebugCaseReturnHeader {
         return this;
     }
 
-    /** Date
-     * 
-     * @return date */
+    /**
+     * Date
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -102,9 +108,10 @@ public class DebugCaseReturnHeader {
         return this;
     }
 
-    /** Vary
-     * 
-     * @return vary */
+    /**
+     * Vary
+     * @return vary
+     */
     public String getVary() {
         return vary;
     }
@@ -147,7 +154,10 @@ public class DebugCaseReturnHeader {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

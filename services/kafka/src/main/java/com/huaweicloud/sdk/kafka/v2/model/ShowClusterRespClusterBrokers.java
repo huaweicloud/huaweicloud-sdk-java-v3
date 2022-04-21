@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点。 */
+/**
+ * 节点。
+ */
 public class ShowClusterRespClusterBrokers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** 节点IP。
-     * 
-     * @return host */
+    /**
+     * 节点IP。
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -64,9 +67,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** 端口号。
-     * 
-     * @return port */
+    /**
+     * 端口号。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -80,9 +84,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** 节点id。
-     * 
-     * @return brokerId */
+    /**
+     * 节点id。
+     * @return brokerId
+     */
     public String getBrokerId() {
         return brokerId;
     }
@@ -96,9 +101,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** 是否为contoller节点。
-     * 
-     * @return isController */
+    /**
+     * 是否为contoller节点。
+     * @return isController
+     */
     public Boolean getIsController() {
         return isController;
     }
@@ -112,9 +118,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** 服务端版本。
-     * 
-     * @return version */
+    /**
+     * 服务端版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -128,9 +135,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** broker注册时间，为unix时间戳格式。
-     * 
-     * @return registerTime */
+    /**
+     * broker注册时间，为unix时间戳格式。
+     * @return registerTime
+     */
     public Long getRegisterTime() {
         return registerTime;
     }
@@ -144,9 +152,10 @@ public class ShowClusterRespClusterBrokers {
         return this;
     }
 
-    /** Kafka实例节点的连通性是否正常。
-     * 
-     * @return isHealth */
+    /**
+     * Kafka实例节点的连通性是否正常。
+     * @return isHealth
+     */
     public Boolean getIsHealth() {
         return isHealth;
     }
@@ -193,7 +202,10 @@ public class ShowClusterRespClusterBrokers {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

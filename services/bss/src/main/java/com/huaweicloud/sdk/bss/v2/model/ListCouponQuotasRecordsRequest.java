@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCouponQuotasRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -69,9 +72,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -85,9 +89,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 查询条件：操作起始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return operationTimeBegin */
+    /**
+     * 查询条件：操作起始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return operationTimeBegin
+     */
     public String getOperationTimeBegin() {
         return operationTimeBegin;
     }
@@ -101,9 +106,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 查询条件：操作截止时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return operationTimeEnd */
+    /**
+     * 查询条件：操作截止时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return operationTimeEnd
+     */
     public String getOperationTimeEnd() {
         return operationTimeEnd;
     }
@@ -117,9 +123,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 父额度ID。这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
-     * 
-     * @return parentQuotaId */
+    /**
+     * 父额度ID。这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
+     * @return parentQuotaId
+     */
     public String getParentQuotaId() {
         return parentQuotaId;
     }
@@ -133,9 +140,10 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 操作类型。10：发放额度11：回收额度
-     * 
-     * @return operationType */
+    /**
+     * 操作类型。10：发放额度11：回收额度
+     * @return operationType
+     */
     public String getOperationType() {
         return operationType;
     }
@@ -149,11 +157,12 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始，默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始，默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -167,9 +176,12 @@ public class ListCouponQuotasRecordsRequest {
         return this;
     }
 
-    /** 每次查询的数目。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数目。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -225,7 +237,10 @@ public class ListCouponQuotasRecordsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

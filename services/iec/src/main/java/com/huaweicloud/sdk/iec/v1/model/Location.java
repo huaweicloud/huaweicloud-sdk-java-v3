@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 位置信息 */
+/**
+ * 位置信息
+ */
 public class Location {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,16 +35,24 @@ public class Location {
 
     private String city;
 
-    /** 所属运营商。 */
+    /**
+     * 所属运营商。
+     */
     public static final class OperatorEnum {
 
-        /** Enum CHINAMOBILE for value: "chinamobile" */
+        /**
+         * Enum CHINAMOBILE for value: "chinamobile"
+         */
         public static final OperatorEnum CHINAMOBILE = new OperatorEnum("chinamobile");
 
-        /** Enum CHINAUNICOM for value: "chinaunicom" */
+        /**
+         * Enum CHINAUNICOM for value: "chinaunicom"
+         */
         public static final OperatorEnum CHINAUNICOM = new OperatorEnum("chinaunicom");
 
-        /** Enum CHINATELECOM for value: "chinatelecom" */
+        /**
+         * Enum CHINATELECOM for value: "chinatelecom"
+         */
         public static final OperatorEnum CHINATELECOM = new OperatorEnum("chinatelecom");
 
         private static final Map<String, OperatorEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +143,10 @@ public class Location {
         return this;
     }
 
-    /** 站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -149,9 +160,10 @@ public class Location {
         return this;
     }
 
-    /** 所在大区。
-     * 
-     * @return area */
+    /**
+     * 所在大区。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -165,9 +177,10 @@ public class Location {
         return this;
     }
 
-    /** 所属省份英文名称。 大小写通用，皆支持
-     * 
-     * @return province */
+    /**
+     * 所属省份英文名称。 大小写通用，皆支持
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -181,9 +194,10 @@ public class Location {
         return this;
     }
 
-    /** 所在城市英文名称。
-     * 
-     * @return city */
+    /**
+     * 所在城市英文名称。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -197,9 +211,10 @@ public class Location {
         return this;
     }
 
-    /** 所属运营商。
-     * 
-     * @return operator */
+    /**
+     * 所属运营商。
+     * @return operator
+     */
     public OperatorEnum getOperator() {
         return operator;
     }
@@ -213,9 +228,10 @@ public class Location {
         return this;
     }
 
-    /** 线路ID。多线路场景下，创建的弹性公网IP在该线路下。
-     * 
-     * @return poolId */
+    /**
+     * 线路ID。多线路场景下，创建的弹性公网IP在该线路下。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -229,9 +245,10 @@ public class Location {
         return this;
     }
 
-    /** 站点需要发放的资源(组)总数。
-     * 
-     * @return stackCount */
+    /**
+     * 站点需要发放的资源(组)总数。
+     * @return stackCount
+     */
     public Integer getStackCount() {
         return stackCount;
     }
@@ -245,9 +262,10 @@ public class Location {
         return this;
     }
 
-    /** 城市简称。
-     * 
-     * @return cityShortName */
+    /**
+     * 城市简称。
+     * @return cityShortName
+     */
     public String getCityShortName() {
         return cityShortName;
     }
@@ -293,7 +311,10 @@ public class Location {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

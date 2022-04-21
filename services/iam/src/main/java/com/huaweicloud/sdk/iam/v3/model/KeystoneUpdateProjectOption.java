@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改的项目信息。 */
+/**
+ * 修改的项目信息。
+ */
 public class KeystoneUpdateProjectOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class KeystoneUpdateProjectOption {
         return this;
     }
 
-    /** 项目名称，必须以存在的\"区域ID_\"开头，长度小于等于64字符。项目所属区域不能改变，即原项目名为“cn-north-1_IAMProject”时，新项目名只能以“cn-north-1_”开头。“name”与\"description\"至少填写一个。
-     * 
-     * @return name */
+    /**
+     * 项目名称，必须以存在的\"区域ID_\"开头，长度小于等于64字符。项目所属区域不能改变，即原项目名为“cn-north-1_IAMProject”时，新项目名只能以“cn-north-1_”开头。“name”与\"description\"至少填写一个。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class KeystoneUpdateProjectOption {
         return this;
     }
 
-    /** 项目描述，长度小于等于255字符。“name”与\"description\"至少填写一个。
-     * 
-     * @return description */
+    /**
+     * 项目描述，长度小于等于255字符。“name”与\"description\"至少填写一个。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class KeystoneUpdateProjectOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

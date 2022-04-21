@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量创建后端服务器响应参数 */
+/**
+ * 批量创建后端服务器响应参数
+ */
 public class BatchMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端服务器ID。
-     * 
-     * @return id */
+    /**
+     * 后端服务器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -94,9 +97,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端服务器名称。
-     * 
-     * @return name */
+    /**
+     * 后端服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -110,9 +114,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端服务器所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 后端服务器所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -126,9 +131,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端云服务器的管理状态。取值：true、false。 虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器的管理状态。取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -142,11 +148,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。
-     * 若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。 使用说明： -
-     * 该子网和关联的负载均衡器的子网必须在同一VPC下。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
-     * 
-     * @return subnetCidrId */
+    /**
+     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+     * @return subnetCidrId
+     */
     public String getSubnetCidrId() {
         return subnetCidrId;
     }
@@ -160,9 +165,12 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端服务器业务端口号。 minimum: 1 maximum: 65535
-     * 
-     * @return protocolPort */
+    /**
+     * 后端服务器业务端口号。
+     * minimum: 1
+     * maximum: 65535
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -176,10 +184,12 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明： -
-     * 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。 minimum: 0 maximum: 100
-     * 
-     * @return weight */
+    /**
+     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明：  - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
+     * minimum: 0
+     * maximum: 100
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -193,11 +203,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端服务器对应的IP地址。 使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 -
-     * 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。
-     * [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
-     * 
-     * @return address */
+    /**
+     * 后端服务器对应的IP地址。 使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -211,9 +220,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端云服务器的健康状态。取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
-     * 
-     * @return operatingStatus */
+    /**
+     * 后端云服务器的健康状态。取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -227,9 +237,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 后端云服务器的类型。取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
-     * 
-     * @return memberType */
+    /**
+     * 后端云服务器的类型。取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * @return memberType
+     */
     public String getMemberType() {
         return memberType;
     }
@@ -243,9 +254,10 @@ public class BatchMember {
         return this;
     }
 
-    /** member关联的实例ID，空表示跨VPC场景的member。
-     * 
-     * @return instanceId */
+    /**
+     * member关联的实例ID，空表示跨VPC场景的member。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -259,9 +271,10 @@ public class BatchMember {
         return this;
     }
 
-    /** IP地址对应的VPC port ID
-     * 
-     * @return portId */
+    /**
+     * IP地址对应的VPC port ID
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -275,9 +288,10 @@ public class BatchMember {
         return this;
     }
 
-    /** 当前后端服务器创建结果状态。取值： - successful：添加成功。 - existed：member已存在。
-     * 
-     * @return retStatus */
+    /**
+     * 当前后端服务器创建结果状态。取值： - successful：添加成功。 - existed：member已存在。
+     * @return retStatus
+     */
     public String getRetStatus() {
         return retStatus;
     }
@@ -345,7 +359,10 @@ public class BatchMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

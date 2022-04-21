@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 合流任务参数，转推和录制至少选一个 */
+/**
+ * 合流任务参数，转推和录制至少选一个
+ */
 public class MixJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class MixJobReq {
         return this;
     }
 
-    /** Get mixParam
-     * 
-     * @return mixParam */
+    /**
+     * Get mixParam
+     * @return mixParam
+     */
     public MixParam getMixParam() {
         return mixParam;
     }
@@ -63,9 +66,10 @@ public class MixJobReq {
         return this;
     }
 
-    /** Get publishParam
-     * 
-     * @return publishParam */
+    /**
+     * Get publishParam
+     * @return publishParam
+     */
     public PublishParam getPublishParam() {
         return publishParam;
     }
@@ -88,9 +92,10 @@ public class MixJobReq {
         return this;
     }
 
-    /** Get recordParam
-     * 
-     * @return recordParam */
+    /**
+     * Get recordParam
+     * @return recordParam
+     */
     public RecordParam getRecordParam() {
         return recordParam;
     }
@@ -129,7 +134,10 @@ public class MixJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSubcustomerMonthlyBillsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -69,9 +72,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 消费时间。格式固定为YYYY-MM。示例：2018-08
-     * 
-     * @return cycle */
+    /**
+     * 消费时间。格式固定为YYYY-MM。示例：2018-08
+     * @return cycle
+     */
     public String getCycle() {
         return cycle;
     }
@@ -85,9 +89,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -101,9 +106,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 计费模式。1：包年/包月3：按需
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。1：包年/包月3：按需
+     * @return chargeMode
+     */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -117,11 +123,12 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -135,9 +142,12 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 每页个数。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页个数。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -151,9 +161,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 账单类型。0：消费1：退订2：华为核销
-     * 
-     * @return billType */
+    /**
+     * 账单类型。0：消费1：退订2：华为核销
+     * @return billType
+     */
     public String getBillType() {
         return billType;
     }
@@ -167,9 +178,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -219,7 +231,10 @@ public class ListSubcustomerMonthlyBillsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

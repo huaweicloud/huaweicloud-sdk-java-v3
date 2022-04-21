@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CheckParametersRes */
+/**
+ * CheckParametersRes
+ */
 public class CheckParametersRes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CheckParametersRes {
         return this;
     }
 
-    /** 检查工具ID
-     * 
-     * @return checkId */
+    /**
+     * 检查工具ID
+     * @return checkId
+     */
     public Integer getCheckId() {
         return checkId;
     }
@@ -47,9 +50,10 @@ public class CheckParametersRes {
         return this;
     }
 
-    /** 编译参数名称
-     * 
-     * @return name */
+    /**
+     * 编译参数名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class CheckParametersRes {
         return this;
     }
 
-    /** 检查参数配置信息
-     * 
-     * @return checkerConfigs */
+    /**
+     * 检查参数配置信息
+     * @return checkerConfigs
+     */
     public List<CheckConfigsItem> getCheckerConfigs() {
         return checkerConfigs;
     }
@@ -120,7 +125,10 @@ public class CheckParametersRes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AttrsObject */
+/**
+ * AttrsObject
+ */
 public class AttrsObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AttrsObject {
         return this;
     }
 
-    /** 缓存容量（G Byte）。
-     * 
-     * @return capacity */
+    /**
+     * 缓存容量（G Byte）。
+     * @return capacity
+     */
     public String getCapacity() {
         return capacity;
     }
@@ -44,11 +47,10 @@ public class AttrsObject {
         return this;
     }
 
-    /** 额外信息名，取值范围如下： - sharding_num：该规格实例支持的分片数。 - proxy_num：该规格Proxy实例支持的Proxy节点数量。如果不是Proxy实例，该参数为0。 -
-     * db_number：该规格实例的DB数量。 - max_memory：实际可使用的最大内存。 - max_connections：该规格支持的最大连接数。 -
-     * max_clients：该规格支持的最大客户端数，一般等于最大连接数。 - max_bandwidth：该规格支持的最大带宽。 - max_in_bandwidth：该规格支持的最大接入带宽，一般等于最大带宽。
-     * 
-     * @return name */
+    /**
+     * 额外信息名，取值范围如下： - sharding_num：该规格实例支持的分片数。 - proxy_num：该规格Proxy实例支持的Proxy节点数量。如果不是Proxy实例，该参数为0。 - db_number：该规格实例的DB数量。 - max_memory：实际可使用的最大内存。 - max_connections：该规格支持的最大连接数。 - max_clients：该规格支持的最大客户端数，一般等于最大连接数。 - max_bandwidth：该规格支持的最大带宽。 - max_in_bandwidth：该规格支持的最大接入带宽，一般等于最大带宽。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +64,10 @@ public class AttrsObject {
         return this;
     }
 
-    /** 额外信息值。
-     * 
-     * @return value */
+    /**
+     * 额外信息值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -102,7 +105,10 @@ public class AttrsObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -38,9 +38,10 @@ public class NeutronUpdateFirewallPolicyOption {
         return this;
     }
 
-    /** 功能说明：网络ACL防火墙策略名称 取值范围：最长255个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：网络ACL防火墙策略名称 取值范围：最长255个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +55,10 @@ public class NeutronUpdateFirewallPolicyOption {
         return this;
     }
 
-    /** 功能说明：网络ACL防火墙策略描述 取值范围：最长255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：网络ACL防火墙策略描述 取值范围：最长255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +88,10 @@ public class NeutronUpdateFirewallPolicyOption {
         return this;
     }
 
-    /** 功能说明：网络ACL策略关联的规则列表
-     * 
-     * @return firewallRules */
+    /**
+     * 功能说明：网络ACL策略关联的规则列表
+     * @return firewallRules
+     */
     public List<String> getFirewallRules() {
         return firewallRules;
     }
@@ -102,9 +105,10 @@ public class NeutronUpdateFirewallPolicyOption {
         return this;
     }
 
-    /** 审计标记。
-     * 
-     * @return audited */
+    /**
+     * 审计标记。
+     * @return audited
+     */
     public Boolean getAudited() {
         return audited;
     }
@@ -145,7 +149,10 @@ public class NeutronUpdateFirewallPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

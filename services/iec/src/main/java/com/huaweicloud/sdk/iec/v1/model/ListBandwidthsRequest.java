@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBandwidthsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 查询的数目，取值范围：0~1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询的数目，取值范围：0~1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -44,9 +49,10 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 查询的偏移量。
-     * 
-     * @return offset */
+    /**
+     * 查询的偏移量。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +66,10 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 边缘站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 边缘站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -101,7 +108,10 @@ public class ListBandwidthsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

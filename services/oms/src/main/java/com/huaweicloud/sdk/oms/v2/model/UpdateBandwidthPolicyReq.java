@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateBandwidthPolicyReq */
+/**
+ * UpdateBandwidthPolicyReq
+ */
 public class UpdateBandwidthPolicyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateBandwidthPolicyReq {
         return this;
     }
 
-    /** 配置流量控制策略。数组中一个元素对应一个时段的最大带宽，最多允许5个时段，且时段不能重叠。
-     * 
-     * @return bandwidthPolicy */
+    /**
+     * 配置流量控制策略。数组中一个元素对应一个时段的最大带宽，最多允许5个时段，且时段不能重叠。
+     * @return bandwidthPolicy
+     */
     public List<BandwidthPolicyDto> getBandwidthPolicy() {
         return bandwidthPolicy;
     }
@@ -74,7 +77,10 @@ public class UpdateBandwidthPolicyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

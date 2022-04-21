@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 删除通知模板参数体 */
+/**
+ * 删除通知模板参数体
+ */
 public class DeleteNotificationTemplateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteNotificationTemplateBody {
         return this;
     }
 
-    /** 待删除模板名称数组
-     * 
-     * @return templateNames */
+    /**
+     * 待删除模板名称数组
+     * @return templateNames
+     */
     public List<String> getTemplateNames() {
         return templateNames;
     }
@@ -74,7 +77,10 @@ public class DeleteNotificationTemplateBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

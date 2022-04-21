@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowSqlExecutionPlanRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ShowSqlExecutionPlanRequest {
 
     private String sql;
 
-    /** 语言 */
+    /**
+     * 语言
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class ShowSqlExecutionPlanRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -130,9 +139,10 @@ public class ShowSqlExecutionPlanRequest {
         return this;
     }
 
-    /** 数据库用户ID
-     * 
-     * @return dbUserId */
+    /**
+     * 数据库用户ID
+     * @return dbUserId
+     */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -146,9 +156,10 @@ public class ShowSqlExecutionPlanRequest {
         return this;
     }
 
-    /** 数据库名称
-     * 
-     * @return database */
+    /**
+     * 数据库名称
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -162,9 +173,10 @@ public class ShowSqlExecutionPlanRequest {
         return this;
     }
 
-    /** SQL语句
-     * 
-     * @return sql */
+    /**
+     * SQL语句
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -178,9 +190,10 @@ public class ShowSqlExecutionPlanRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -225,7 +238,10 @@ public class ShowSqlExecutionPlanRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

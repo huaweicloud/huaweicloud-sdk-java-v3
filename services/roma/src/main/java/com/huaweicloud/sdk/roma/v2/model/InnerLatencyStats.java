@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InnerLatencyStats */
+/**
+ * InnerLatencyStats
+ */
 public class InnerLatencyStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class InnerLatencyStats {
         return this;
     }
 
-    /** 最大网关内部延时
-     * 
-     * @return maxInnerLatency */
+    /**
+     * 最大网关内部延时
+     * @return maxInnerLatency
+     */
     public Integer getMaxInnerLatency() {
         return maxInnerLatency;
     }
@@ -39,9 +42,10 @@ public class InnerLatencyStats {
         return this;
     }
 
-    /** 平均网关内部延时
-     * 
-     * @return avgInnerLatency */
+    /**
+     * 平均网关内部延时
+     * @return avgInnerLatency
+     */
     public Float getAvgInnerLatency() {
         return avgInnerLatency;
     }
@@ -78,7 +82,10 @@ public class InnerLatencyStats {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

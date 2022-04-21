@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UploadBatchTaskFileResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UploadBatchTaskFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 上传的批量任务文件ID，由平台自动生成。
-     * 
-     * @return fileId */
+    /**
+     * 上传的批量任务文件ID，由平台自动生成。
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -45,9 +48,10 @@ public class UploadBatchTaskFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 上传的批量任务文件名称。
-     * 
-     * @return fileName */
+    /**
+     * 上传的批量任务文件名称。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -61,9 +65,10 @@ public class UploadBatchTaskFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 在物联网平台上传文件的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return uploadTime */
+    /**
+     * 在物联网平台上传文件的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return uploadTime
+     */
     public String getUploadTime() {
         return uploadTime;
     }
@@ -102,7 +107,10 @@ public class UploadBatchTaskFileResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 监听器HTTP扩展头部对象。 */
+/**
+ * 监听器HTTP扩展头部对象。
+ */
 public class InsertHeader {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class InsertHeader {
         return this;
     }
 
-    /** 负载均衡器弹性公网IP透传开关。
-     * 
-     * @return xForwardedELBIP */
+    /**
+     * 负载均衡器弹性公网IP透传开关。
+     * @return xForwardedELBIP
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-ELB-IP")
     public Boolean getXForwardedELBIP() {
@@ -41,9 +44,10 @@ public class InsertHeader {
         return this;
     }
 
-    /** X-Forwarded-Host设为true可以将客户请求头的第一个X-Forwarded-Host设置为请求头的Host带到后端云服务器。
-     * 
-     * @return xForwardedHost */
+    /**
+     * X-Forwarded-Host设为true可以将客户请求头的第一个X-Forwarded-Host设置为请求头的Host带到后端云服务器。
+     * @return xForwardedHost
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-Host")
     public Boolean getXForwardedHost() {
@@ -82,7 +86,10 @@ public class InsertHeader {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

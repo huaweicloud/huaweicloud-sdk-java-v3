@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** resource_tag字段说明 */
+/**
+ * resource_tag字段说明
+ */
 public class ResourceTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签的键。 最大长度36个字符。 key不能为空，不能包含非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。只能包含大写字母、小写字母、数字，特殊字符\"-\"和\"_\"。
-     * 
-     * @return key */
+    /**
+     * 标签的键。  最大长度36个字符。   key不能为空，不能包含非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。只能包含大写字母、小写字母、数字，特殊字符\"-\"和\"_\"。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,10 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签的值。 每个值最大长度43个字符，可以为空字符串。
-     * 不能包含非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。只能包含大写字母、小写字母、数字，特殊字符\"-\"和\"_\"。
-     * 
-     * @return value */
+    /**
+     * 标签的值。  每个值最大长度43个字符，可以为空字符串。  不能包含非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。只能包含大写字母、小写字母、数字，特殊字符\"-\"和\"_\"。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -78,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

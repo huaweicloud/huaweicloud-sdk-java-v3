@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 组织查询的vmr列表，不越权显示vmr的来宾密码，主席密码等 */
+/**
+ * 组织查询的vmr列表，不越权显示vmr的来宾密码，主席密码等
+ */
 public class QueryOrgVmrResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。
-     * 
-     * @return id */
+    /**
+     * 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。 
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。
-     * 
-     * @return vmrId */
+    /**
+     * 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。 
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -86,9 +90,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 云会议室名称。
-     * 
-     * @return vmrName */
+    /**
+     * 云会议室名称。
+     * @return vmrName
+     */
     public String getVmrName() {
         return vmrName;
     }
@@ -102,9 +107,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 云会议室套餐名称。
-     * 
-     * @return vmrPkgName */
+    /**
+     * 云会议室套餐名称。
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -118,9 +124,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 云会议室套餐会议并发方数。
-     * 
-     * @return vmrPkgParties */
+    /**
+     * 云会议室套餐会议并发方数。
+     * @return vmrPkgParties
+     */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -143,9 +150,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** Get member
-     * 
-     * @return member */
+    /**
+     * Get member
+     * @return member
+     */
     public IdMarkDTO getMember() {
         return member;
     }
@@ -168,9 +176,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** Get device
-     * 
-     * @return device */
+    /**
+     * Get device
+     * @return device
+     */
     public IdMarkDTO getDevice() {
         return device;
     }
@@ -184,9 +193,10 @@ public class QueryOrgVmrResultDTO {
         return this;
     }
 
-    /** 云会议室状态。 * 0：正常 * 1：冻结 * 2：未分配
-     * 
-     * @return status */
+    /**
+     * 云会议室状态。 * 0：正常 * 1：冻结 * 2：未分配 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -235,7 +245,10 @@ public class QueryOrgVmrResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

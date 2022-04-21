@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListSinkTasksRespTasks */
+/**
+ * ListSinkTasksRespTasks
+ */
 public class ListSinkTasksRespTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -59,9 +62,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 转储任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 转储任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -75,9 +79,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 转储任务类型。
-     * 
-     * @return destinationType */
+    /**
+     * 转储任务类型。
+     * @return destinationType
+     */
     public String getDestinationType() {
         return destinationType;
     }
@@ -91,9 +96,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 转储任务创建时间戳。
-     * 
-     * @return createTime */
+    /**
+     * 转储任务创建时间戳。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -107,9 +113,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 转储任务状态。
-     * 
-     * @return status */
+    /**
+     * 转储任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -123,9 +130,10 @@ public class ListSinkTasksRespTasks {
         return this;
     }
 
-    /** 返回任务转存的topics列表或者正则表达式。
-     * 
-     * @return topics */
+    /**
+     * 返回任务转存的topics列表或者正则表达式。
+     * @return topics
+     */
     public String getTopics() {
         return topics;
     }
@@ -170,7 +178,10 @@ public class ListSinkTasksRespTasks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

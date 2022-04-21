@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规则条件组 */
+/**
+ * 规则条件组
+ */
 public class ConditionGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ConditionGroup {
         return this;
     }
 
-    /** **参数说明**：规则的条件列表，单个规则最多支持设置10个条件。
-     * 
-     * @return conditions */
+    /**
+     * **参数说明**：规则的条件列表，单个规则最多支持设置10个条件。
+     * @return conditions
+     */
     public List<RuleCondition> getConditions() {
         return conditions;
     }
@@ -63,9 +66,10 @@ public class ConditionGroup {
         return this;
     }
 
-    /** **参数说明**：规则条件列表中多个条件之间的逻辑关系，默认值：and。 **取值范围**： - and：逻辑且。 - or：逻辑或。
-     * 
-     * @return logic */
+    /**
+     * **参数说明**：规则条件列表中多个条件之间的逻辑关系，默认值：and。 **取值范围**： - and：逻辑且。 - or：逻辑或。
+     * @return logic
+     */
     public String getLogic() {
         return logic;
     }
@@ -88,9 +92,10 @@ public class ConditionGroup {
         return this;
     }
 
-    /** Get timeRange
-     * 
-     * @return timeRange */
+    /**
+     * Get timeRange
+     * @return timeRange
+     */
     public TimeRange getTimeRange() {
         return timeRange;
     }
@@ -129,7 +134,10 @@ public class ConditionGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

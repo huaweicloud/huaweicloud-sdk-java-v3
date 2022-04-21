@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EnvironmentModify */
+/**
+ * EnvironmentModify
+ */
 public class EnvironmentModify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class EnvironmentModify {
         return this;
     }
 
-    /** 环境名称。
-     * 
-     * @return name */
+    /**
+     * 环境名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class EnvironmentModify {
         return this;
     }
 
-    /** 环境别名。
-     * 
-     * @return alias */
+    /**
+     * 环境别名。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -60,9 +64,10 @@ public class EnvironmentModify {
         return this;
     }
 
-    /** 环境描述。
-     * 
-     * @return description */
+    /**
+     * 环境描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,7 +105,10 @@ public class EnvironmentModify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

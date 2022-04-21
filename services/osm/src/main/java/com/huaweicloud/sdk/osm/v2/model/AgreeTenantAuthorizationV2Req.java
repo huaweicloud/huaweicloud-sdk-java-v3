@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AgreeTenantAuthorizationV2Req */
+/**
+ * AgreeTenantAuthorizationV2Req
+ */
 public class AgreeTenantAuthorizationV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class AgreeTenantAuthorizationV2Req {
         return this;
     }
 
-    /** 授权详情列表
-     * 
-     * @return authDetailList */
+    /**
+     * 授权详情列表
+     * @return authDetailList
+     */
     public List<TenantAgreeAuthDetailV2> getAuthDetailList() {
         return authDetailList;
     }
@@ -74,9 +77,12 @@ public class AgreeTenantAuthorizationV2Req {
         return this;
     }
 
-    /** 授权生效时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return authEffectiveTime */
+    /**
+     * 授权生效时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return authEffectiveTime
+     */
     public Long getAuthEffectiveTime() {
         return authEffectiveTime;
     }
@@ -90,9 +96,12 @@ public class AgreeTenantAuthorizationV2Req {
         return this;
     }
 
-    /** 授权到期时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return authExpireTime */
+    /**
+     * 授权到期时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return authExpireTime
+     */
     public Long getAuthExpireTime() {
         return authExpireTime;
     }
@@ -106,9 +115,10 @@ public class AgreeTenantAuthorizationV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -122,9 +132,10 @@ public class AgreeTenantAuthorizationV2Req {
         return this;
     }
 
-    /** 委托id
-     * 
-     * @return agencyId */
+    /**
+     * 委托id
+     * @return agencyId
+     */
     public String getAgencyId() {
         return agencyId;
     }
@@ -167,7 +178,10 @@ public class AgreeTenantAuthorizationV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

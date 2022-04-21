@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 启动任务请求体。 */
+/**
+ * 启动任务请求体。
+ */
 public class StartInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StartInfo {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。 
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -39,9 +42,10 @@ public class StartInfo {
         return this;
     }
 
-    /** 任务启动时间，时间戳格式精确到秒，例如：1614078283，取值为空代表立即启动。
-     * 
-     * @return startTime */
+    /**
+     * 任务启动时间，时间戳格式精确到秒，例如：1614078283，取值为空代表立即启动。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -77,7 +81,10 @@ public class StartInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

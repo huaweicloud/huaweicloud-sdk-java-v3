@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TopicCategory */
+/**
+ * TopicCategory
+ */
 public class TopicCategory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TopicCategory {
         return this;
     }
 
-    /** topic的id。
-     * 
-     * @return topicId */
+    /**
+     * topic的id。
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -49,9 +52,10 @@ public class TopicCategory {
         return this;
     }
 
-    /** topic的名称。
-     * 
-     * @return topicName */
+    /**
+     * topic的名称。
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -65,9 +69,10 @@ public class TopicCategory {
         return this;
     }
 
-    /** topic对应的类别的id。
-     * 
-     * @return categoryId */
+    /**
+     * topic对应的类别的id。
+     * @return categoryId
+     */
     public String getCategoryId() {
         return categoryId;
     }
@@ -81,9 +86,10 @@ public class TopicCategory {
         return this;
     }
 
-    /** topic对应的类别的名称。
-     * 
-     * @return categoryName */
+    /**
+     * topic对应的类别的名称。
+     * @return categoryName
+     */
     public String getCategoryName() {
         return categoryName;
     }
@@ -124,7 +130,10 @@ public class TopicCategory {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

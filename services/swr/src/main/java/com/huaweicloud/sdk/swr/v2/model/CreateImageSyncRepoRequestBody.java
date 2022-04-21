@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateImageSyncRepoRequestBody */
+/**
+ * CreateImageSyncRepoRequestBody
+ */
 public class CreateImageSyncRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标region ID。
-     * 
-     * @return remoteRegionId */
+    /**
+     * 目标region ID。
+     * @return remoteRegionId
+     */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -49,9 +52,10 @@ public class CreateImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标组织
-     * 
-     * @return remoteNamespace */
+    /**
+     * 目标组织
+     * @return remoteNamespace
+     */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -65,9 +69,10 @@ public class CreateImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 自动同步，默认为false
-     * 
-     * @return syncAuto */
+    /**
+     * 自动同步，默认为false
+     * @return syncAuto
+     */
     public Boolean getSyncAuto() {
         return syncAuto;
     }
@@ -81,9 +86,10 @@ public class CreateImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 是否覆盖，默认为false
-     * 
-     * @return override */
+    /**
+     * 是否覆盖，默认为false
+     * @return override
+     */
     public Boolean getOverride() {
         return override;
     }
@@ -124,7 +130,10 @@ public class CreateImageSyncRepoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

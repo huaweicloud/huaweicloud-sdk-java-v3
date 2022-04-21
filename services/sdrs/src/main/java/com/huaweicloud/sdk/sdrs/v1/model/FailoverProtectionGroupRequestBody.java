@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 保护组故障切换请求体 */
+/**
+ * 保护组故障切换请求体
+ */
 public class FailoverProtectionGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class FailoverProtectionGroupRequestBody {
         return this;
     }
 
-    /** 标识保护组故障切换操作。该参数目前默认值为空。
-     * 
-     * @return failoverServerGroup */
+    /**
+     * 标识保护组故障切换操作。该参数目前默认值为空。
+     * @return failoverServerGroup
+     */
     public Object getFailoverServerGroup() {
         return failoverServerGroup;
     }
@@ -55,7 +58,10 @@ public class FailoverProtectionGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNatGatewaysResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListNatGatewaysResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询公网NAT网关实例列表的响应体。 详见NatGateway字段说明。
-     * 
-     * @return natGateways */
+    /**
+     * 查询公网NAT网关实例列表的响应体。 详见NatGateway字段说明。
+     * @return natGateways
+     */
     public List<NatGatewayResponseBody> getNatGateways() {
         return natGateways;
     }
@@ -75,7 +78,10 @@ public class ListNatGatewaysResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

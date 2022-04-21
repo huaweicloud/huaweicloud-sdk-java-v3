@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAssetMetaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowAssetMetaResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资信息列表。
-     * 
-     * @return assetInfoArray */
+    /**
+     * 媒资信息列表。
+     * @return assetInfoArray
+     */
     public List<AssetInfo> getAssetInfoArray() {
         return assetInfoArray;
     }
@@ -64,9 +67,10 @@ public class ShowAssetMetaResponse extends SdkResponse {
         return this;
     }
 
-    /** 列表是否被截断。 取值如下： - 1：表示本次查询未返回全部结果。 - 0：表示本次查询已经返回了全部结果。
-     * 
-     * @return isTruncated */
+    /**
+     * 列表是否被截断。  取值如下： - 1：表示本次查询未返回全部结果。 - 0：表示本次查询已经返回了全部结果。
+     * @return isTruncated
+     */
     public Integer getIsTruncated() {
         return isTruncated;
     }
@@ -80,10 +84,10 @@ public class ShowAssetMetaResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询媒资总数。 >
-     * 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请[提交工单](https://console.huaweicloud.com/ticket/?#/ticketindex/business?productTypeId=462902cc39a04ab3a429df872021f970)申请。
-     * 
-     * @return total */
+    /**
+     * 查询媒资总数。  > 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请[提交工单](https://console.huaweicloud.com/ticket/?#/ticketindex/business?productTypeId=462902cc39a04ab3a429df872021f970)申请。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -122,7 +126,10 @@ public class ShowAssetMetaResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

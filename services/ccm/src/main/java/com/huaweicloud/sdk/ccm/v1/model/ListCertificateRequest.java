@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,12 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 指定查询返回记录条数，默认值10。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 指定查询返回记录条数，默认值10。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,9 +64,10 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 私有证书名称，返回名称带有name字段的证书集合。
-     * 
-     * @return name */
+    /**
+     * 私有证书名称，返回名称带有name字段的证书集合。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +81,11 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 索引位置，从offset指定的下一条数据开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 索引位置，从offset指定的下一条数据开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -91,9 +99,10 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 私有证书状态，通过状态过滤证书集合。 - **ISSUED** : 已签发； - **REVOKED** : 已吊销； - **EXPIRED** : 已过期。
-     * 
-     * @return status */
+    /**
+     * 私有证书状态，通过状态过滤证书集合。   - **ISSUED** : 已签发；   - **REVOKED** : 已吊销；   - **EXPIRED** : 已过期。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -107,10 +116,10 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 排序属性，目前支持以下属性： - **create_time** : 证书创建时间（默认） - **common_name** : 证书名称 - **issuer_name** : 签发CA名称 -
-     * **not_after** : 证书到期时间
-     * 
-     * @return sortKey */
+    /**
+     * 排序属性，目前支持以下属性： - **create_time** : 证书创建时间（默认） - **common_name** : 证书名称 - **issuer_name** : 签发CA名称 - **not_after** : 证书到期时间
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -124,9 +133,10 @@ public class ListCertificateRequest {
         return this;
     }
 
-    /** 排序方向，支持以下值： - **DESC** : 降序（默认） - **ASC** : 升序
-     * 
-     * @return sortDir */
+    /**
+     * 排序方向，支持以下值：   - **DESC** : 降序（默认）   - **ASC** : 升序
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -171,7 +181,10 @@ public class ListCertificateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

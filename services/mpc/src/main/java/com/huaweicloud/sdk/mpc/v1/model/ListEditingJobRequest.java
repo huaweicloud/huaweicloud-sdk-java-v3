@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEditingJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,25 +28,39 @@ public class ListEditingJobRequest {
 
     private List<String> jobId = null;
 
-    /** 任务执行状态。 取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 */
+    /**
+    * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
+    */
     public static final class StatusEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
 
-        /** Enum PREPROCESSING for value: "PREPROCESSING" */
+        /**
+         * Enum PREPROCESSING for value: "PREPROCESSING"
+         */
         public static final StatusEnum PREPROCESSING = new StatusEnum("PREPROCESSING");
 
-        /** Enum SUCCEED for value: "SUCCEED" */
+        /**
+         * Enum SUCCEED for value: "SUCCEED"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum CANCELED for value: "CANCELED" */
+        /**
+         * Enum CANCELED for value: "CANCELED"
+         */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -143,9 +159,10 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 客户端语言
-     * 
-     * @return xLanguage */
+    /**
+     * 客户端语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-language")
     public String getXLanguage() {
@@ -177,9 +194,10 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 任务ID。一次最多10个
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。一次最多10个
+     * @return jobId
+     */
     public List<String> getJobId() {
         return jobId;
     }
@@ -193,9 +211,10 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 任务执行状态。 取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -209,9 +228,10 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -225,9 +245,10 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -241,9 +262,12 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 分页编号。查询指定“task_id”时，该参数无效。 默认值：0。 minimum: 0 maximum: 50000
-     * 
-     * @return page */
+    /**
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。
+     * minimum: 0
+     * maximum: 50000
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -257,9 +281,12 @@ public class ListEditingJobRequest {
         return this;
     }
 
-    /** 每页记录数。查询指定“task_id”时，该参数无效。 取值范围：[1,100]。 默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -306,7 +333,10 @@ public class ListEditingJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

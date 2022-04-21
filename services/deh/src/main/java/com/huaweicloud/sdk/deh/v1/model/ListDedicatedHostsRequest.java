@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDedicatedHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,16 +40,24 @@ public class ListDedicatedHostsRequest {
 
     private String flavor;
 
-    /** 专属主机状态。 取值范围：“available”、“fault”或“released”。 */
+    /**
+     * 专属主机状态。  取值范围：“available”、“fault”或“released”。
+     */
     public static final class StateEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StateEnum AVAILABLE = new StateEnum("available");
 
-        /** Enum FAULT for value: "fault" */
+        /**
+         * Enum FAULT for value: "fault"
+         */
         public static final StateEnum FAULT = new StateEnum("fault");
 
-        /** Enum RELEASED for value: "released" */
+        /**
+         * Enum RELEASED for value: "released"
+         */
         public static final StateEnum RELEASED = new StateEnum("released");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -163,9 +173,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机ID。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -179,9 +190,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机名称。
-     * 
-     * @return name */
+    /**
+     * 专属主机名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -195,9 +207,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机类型。
-     * 
-     * @return hostType */
+    /**
+     * 专属主机类型。
+     * @return hostType
+     */
     public String getHostType() {
         return hostType;
     }
@@ -211,9 +224,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机类型的名称。
-     * 
-     * @return hostTypeName */
+    /**
+     * 专属主机类型的名称。
+     * @return hostTypeName
+     */
     public String getHostTypeName() {
         return hostTypeName;
     }
@@ -227,9 +241,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 规格ID。
-     * 
-     * @return flavor */
+    /**
+     * 规格ID。
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -243,9 +258,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机状态。 取值范围：“available”、“fault”或“released”。
-     * 
-     * @return state */
+    /**
+     * 专属主机状态。  取值范围：“available”、“fault”或“released”。
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -259,9 +275,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 取值范围：租户ID或“all”。 只有管理员可以指定该参数。
-     * 
-     * @return tenant */
+    /**
+     * 取值范围：租户ID或“all”。  只有管理员可以指定该参数。
+     * @return tenant
+     */
     public String getTenant() {
         return tenant;
     }
@@ -275,9 +292,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机所属AZ。
-     * 
-     * @return availabilityZone */
+    /**
+     * 专属主机所属AZ。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -291,9 +309,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 每个页面上显示的条目数。
-     * 
-     * @return limit */
+    /**
+     * 每个页面上显示的条目数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -307,9 +326,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 该值是上一页最后一条记录的ID。 如果“marker”取值无效，将会返回“400”错误码。
-     * 
-     * @return marker */
+    /**
+     * 该值是上一页最后一条记录的ID。  如果“marker”取值无效，将会返回“400”错误码。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -323,9 +343,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机标签。
-     * 
-     * @return tags */
+    /**
+     * 专属主机标签。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -339,9 +360,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机上的云服务器ID。
-     * 
-     * @return instanceUuid */
+    /**
+     * 专属主机上的云服务器ID。
+     * @return instanceUuid
+     */
     public String getInstanceUuid() {
         return instanceUuid;
     }
@@ -355,9 +377,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 专属主机的释放时间。
-     * 
-     * @return releasedAt */
+    /**
+     * 专属主机的释放时间。
+     * @return releasedAt
+     */
     public String getReleasedAt() {
         return releasedAt;
     }
@@ -371,10 +394,10 @@ public class ListDedicatedHostsRequest {
         return this;
     }
 
-    /** 当专属主机更新了状态时，按日期和时间戳过滤响应。为了便于记录更改，还可能返回最近删除的专属主机。 日期和时间戳的格式为ISO 8601：CCYY-MM-DDThh:mm:ss±hh:mm
-     * 如果包含“hh:mm”值，则将时区作为UTC的偏移量返回。例如，“2015-08-27T09:49:58-05:00”。如果您省略时区，则假定为UTC时区。
-     * 
-     * @return changesSince */
+    /**
+     * 当专属主机更新了状态时，按日期和时间戳过滤响应。为了便于记录更改，还可能返回最近删除的专属主机。  日期和时间戳的格式为ISO 8601：CCYY-MM-DDThh:mm:ss±hh:mm  如果包含“hh:mm”值，则将时区作为UTC的偏移量返回。例如，“2015-08-27T09:49:58-05:00”。如果您省略时区，则假定为UTC时区。
+     * @return changesSince
+     */
     public String getChangesSince() {
         return changesSince;
     }
@@ -448,7 +471,10 @@ public class ListDedicatedHostsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

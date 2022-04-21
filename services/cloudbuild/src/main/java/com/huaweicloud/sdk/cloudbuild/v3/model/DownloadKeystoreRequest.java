@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DownloadKeystoreRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DownloadKeystoreRequest {
         return this;
     }
 
-    /** 下载的文件名称
-     * 
-     * @return fileName */
+    /**
+     * 下载的文件名称
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -39,9 +42,10 @@ public class DownloadKeystoreRequest {
         return this;
     }
 
-    /** 租户ID。32位数字、小写字母组合
-     * 
-     * @return domainId */
+    /**
+     * 租户ID。32位数字、小写字母组合
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -78,7 +82,10 @@ public class DownloadKeystoreRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

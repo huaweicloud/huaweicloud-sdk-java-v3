@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 订单信息, 有订单表示包周期 */
+/**
+ * 订单信息, 有订单表示包周期
+ */
 public class BillingInfoDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BillingInfoDict {
         return this;
     }
 
-    /** 订单信息
-     * 
-     * @return orderId */
+    /**
+     * 订单信息
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -39,9 +42,10 @@ public class BillingInfoDict {
         return this;
     }
 
-    /** 产品id
-     * 
-     * @return productId */
+    /**
+     * 产品id
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -78,7 +82,10 @@ public class BillingInfoDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

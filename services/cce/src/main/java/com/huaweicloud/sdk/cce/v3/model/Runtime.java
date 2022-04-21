@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Runtime */
+/**
+ * Runtime
+ */
 public class Runtime {
 
-    /** 容器运行时，默认为“docker” */
+    /**
+     * 容器运行时，默认为“docker”
+     */
     public static final class NameEnum {
 
-        /** Enum DOCKER for value: "docker" */
+        /**
+         * Enum DOCKER for value: "docker"
+         */
         public static final NameEnum DOCKER = new NameEnum("docker");
 
-        /** Enum CONTAINERD for value: "containerd" */
+        /**
+         * Enum CONTAINERD for value: "containerd"
+         */
         public static final NameEnum CONTAINERD = new NameEnum("containerd");
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class Runtime {
         return this;
     }
 
-    /** 容器运行时，默认为“docker”
-     * 
-     * @return name */
+    /**
+     * 容器运行时，默认为“docker”
+     * @return name
+     */
     public NameEnum getName() {
         return name;
     }
@@ -131,7 +140,10 @@ public class Runtime {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

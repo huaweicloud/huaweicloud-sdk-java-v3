@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FollowerMigrateRequest */
+/**
+ * FollowerMigrateRequest
+ */
 public class FollowerMigrateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class FollowerMigrateRequest {
         return this;
     }
 
-    /** 备机节点Id
-     * 
-     * @return nodeId */
+    /**
+     * 备机节点Id
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -39,9 +42,10 @@ public class FollowerMigrateRequest {
         return this;
     }
 
-    /** 要迁入的可用区code
-     * 
-     * @return azCode */
+    /**
+     * 要迁入的可用区code
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -78,7 +82,10 @@ public class FollowerMigrateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

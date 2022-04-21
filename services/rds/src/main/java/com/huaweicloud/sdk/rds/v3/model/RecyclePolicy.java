@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 回收策略。 */
+/**
+ * 回收策略。
+ */
 public class RecyclePolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RecyclePolicy {
         return this;
     }
 
-    /** 保留时间，设置已删除实例保留天数，支持整数，可设置范围为1~7天。 当“retention_period_in_days”为空，保留时间默认是7天。
-     * 
-     * @return retentionPeriodInDays */
+    /**
+     * 保留时间，设置已删除实例保留天数，支持整数，可设置范围为1~7天。  当“retention_period_in_days”为空，保留时间默认是7天。
+     * @return retentionPeriodInDays
+     */
     public String getRetentionPeriodInDays() {
         return retentionPeriodInDays;
     }
@@ -55,7 +58,10 @@ public class RecyclePolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

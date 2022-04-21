@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProtectionGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListProtectionGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 保护组的信息列表。
-     * 
-     * @return serverGroups */
+    /**
+     * 保护组的信息列表。
+     * @return serverGroups
+     */
     public List<ShowProtectionGroupParams> getServerGroups() {
         return serverGroups;
     }
@@ -59,9 +62,10 @@ public class ListProtectionGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 此参数为满足过滤条件的列表中包含的保护组个数。
-     * 
-     * @return count */
+    /**
+     * 此参数为满足过滤条件的列表中包含的保护组个数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -98,7 +102,10 @@ public class ListProtectionGroupsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

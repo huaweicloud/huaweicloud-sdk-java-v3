@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** flavor数据结构说明 */
+/**
+ * flavor数据结构说明
+ */
 public class FlavorInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class FlavorInfos {
         return this;
     }
 
-    /** 裸金属服务器规格ID
-     * 
-     * @return id */
+    /**
+     * 裸金属服务器规格ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class FlavorInfos {
         return this;
     }
 
-    /** 裸金属服务器规格名称
-     * 
-     * @return name */
+    /**
+     * 裸金属服务器规格名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class FlavorInfos {
         return this;
     }
 
-    /** 该裸金属服务器规格对应要求系统盘大小，0为不限制。
-     * 
-     * @return disk */
+    /**
+     * 该裸金属服务器规格对应要求系统盘大小，0为不限制。
+     * @return disk
+     */
     public String getDisk() {
         return disk;
     }
@@ -86,9 +91,10 @@ public class FlavorInfos {
         return this;
     }
 
-    /** 该裸金属服务器规格对应的CPU核数
-     * 
-     * @return vcpus */
+    /**
+     * 该裸金属服务器规格对应的CPU核数
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -102,9 +108,10 @@ public class FlavorInfos {
         return this;
     }
 
-    /** 该裸金属服务器规格对应的内存大小，单位为MB
-     * 
-     * @return ram */
+    /**
+     * 该裸金属服务器规格对应的内存大小，单位为MB
+     * @return ram
+     */
     public String getRam() {
         return ram;
     }
@@ -145,7 +152,10 @@ public class FlavorInfos {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

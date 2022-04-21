@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** GetRestoreTimeResponseRestoreTime */
+/**
+ * GetRestoreTimeResponseRestoreTime
+ */
 public class GetRestoreTimeResponseRestoreTime {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class GetRestoreTimeResponseRestoreTime {
         return this;
     }
 
-    /** 可恢复时间段的起始时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
-     * 
-     * @return startTime */
+    /**
+     * 可恢复时间段的起始时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -39,9 +42,10 @@ public class GetRestoreTimeResponseRestoreTime {
         return this;
     }
 
-    /** 可恢复时间段的结束时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
-     * 
-     * @return endTime */
+    /**
+     * 可恢复时间段的结束时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -78,7 +82,10 @@ public class GetRestoreTimeResponseRestoreTime {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VaultUpdate */
+/**
+ * VaultUpdate
+ */
 public class VaultUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** Get billing
-     * 
-     * @return billing */
+    /**
+     * Get billing
+     * @return billing
+     */
     public BillingUpdate getBilling() {
         return billing;
     }
@@ -74,9 +77,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** 存储库名称
-     * 
-     * @return name */
+    /**
+     * 存储库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -90,9 +94,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** 是否支持自动挂载
-     * 
-     * @return autoBind */
+    /**
+     * 是否支持自动挂载
+     * @return autoBind
+     */
     public Boolean getAutoBind() {
         return autoBind;
     }
@@ -115,9 +120,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** Get bindRules
-     * 
-     * @return bindRules */
+    /**
+     * Get bindRules
+     * @return bindRules
+     */
     public VaultBindRules getBindRules() {
         return bindRules;
     }
@@ -131,9 +137,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
-     * 
-     * @return autoExpand */
+    /**
+     * 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
+     * @return autoExpand
+     */
     public Boolean getAutoExpand() {
         return autoExpand;
     }
@@ -147,9 +154,10 @@ public class VaultUpdate {
         return this;
     }
 
-    /** 发送smn通知开关
-     * 
-     * @return smnNotify */
+    /**
+     * 发送smn通知开关
+     * @return smnNotify
+     */
     public Boolean getSmnNotify() {
         return smnNotify;
     }
@@ -163,9 +171,12 @@ public class VaultUpdate {
         return this;
     }
 
-    /** 存储库容量阈值，存储库已用容量和总容量的百分比超过该值，若smn_notify为开，将发送相关通知。 minimum: 1 maximum: 100
-     * 
-     * @return threshold */
+    /**
+     * 存储库容量阈值，存储库已用容量和总容量的百分比超过该值，若smn_notify为开，将发送相关通知。
+     * minimum: 1
+     * maximum: 100
+     * @return threshold
+     */
     public Integer getThreshold() {
         return threshold;
     }
@@ -211,7 +222,10 @@ public class VaultUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

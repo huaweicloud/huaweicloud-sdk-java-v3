@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RestoreInstanceFromCollectionRequestBodyRestoreCollections */
+/**
+ * RestoreInstanceFromCollectionRequestBodyRestoreCollections
+ */
 public class RestoreInstanceFromCollectionRequestBodyRestoreCollections {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return database */
+    /**
+     * 数据库名称。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -48,9 +51,10 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections {
         return this;
     }
 
-    /** 数据库恢复时间点。如果是数据库级恢复，该参数必传，UNIX时间戳格式，单位是毫秒，时区是UTC。
-     * 
-     * @return restoreDatabaseTime */
+    /**
+     * 数据库恢复时间点。如果是数据库级恢复，该参数必传，UNIX时间戳格式，单位是毫秒，时区是UTC。
+     * @return restoreDatabaseTime
+     */
     public String getRestoreDatabaseTime() {
         return restoreDatabaseTime;
     }
@@ -83,9 +87,10 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections {
         return this;
     }
 
-    /** 集合信息。
-     * 
-     * @return collections */
+    /**
+     * 集合信息。
+     * @return collections
+     */
     public List<RestoreInstanceFromCollectionRequestBodyCollections> getCollections() {
         return collections;
     }
@@ -126,7 +131,10 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

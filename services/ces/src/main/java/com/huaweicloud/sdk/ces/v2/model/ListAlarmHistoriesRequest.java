@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAlarmHistoriesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 告警ID,以al开头，后跟22位由字母或数字组成的字符串
-     * 
-     * @return alarmId */
+    /**
+     * 告警ID,以al开头，后跟22位由字母或数字组成的字符串
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -79,9 +82,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 告警规则名称
-     * 
-     * @return name */
+    /**
+     * 告警规则名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -95,9 +99,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 告警规则状态
-     * 
-     * @return status */
+    /**
+     * 告警规则状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -111,9 +116,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 告警规则等级
-     * 
-     * @return level */
+    /**
+     * 告警规则等级
+     * @return level
+     */
     public Integer getLevel() {
         return level;
     }
@@ -127,9 +133,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 服务的命名空间
-     * 
-     * @return namespace */
+    /**
+     * 服务的命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -143,9 +150,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 告警资源ID，多维度情况使用逗号分隔
-     * 
-     * @return resourceId */
+    /**
+     * 告警资源ID，多维度情况使用逗号分隔
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -159,9 +167,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
-     * 
-     * @return from */
+    /**
+     * 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
+     * @return from
+     */
     public String getFrom() {
         return from;
     }
@@ -175,9 +184,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
-     * 
-     * @return to */
+    /**
+     * 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
+     * @return to
+     */
     public String getTo() {
         return to;
     }
@@ -191,9 +201,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 偏移量
-     * 
-     * @return offset */
+    /**
+     * 偏移量
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -207,9 +218,10 @@ public class ListAlarmHistoriesRequest {
         return this;
     }
 
-    /** 希望的查询的数据量
-     * 
-     * @return limit */
+    /**
+     * 希望的查询的数据量
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -262,7 +274,10 @@ public class ListAlarmHistoriesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

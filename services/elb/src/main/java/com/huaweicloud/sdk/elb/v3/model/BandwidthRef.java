@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带宽对象ID，仅在创建或更新公网IPv6负载均衡器时有效。若选择创建新EIP并指定共享带宽时，此EIP会被分进共享带宽里面。 [不支持IPv6，请勿使用。](tag:dt,dt_test) */
+/**
+ * 带宽对象ID，仅在创建或更新公网IPv6负载均衡器时有效。若选择创建新EIP并指定共享带宽时，此EIP会被分进共享带宽里面。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+ */
 public class BandwidthRef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class BandwidthRef {
         return this;
     }
 
-    /** 共享带宽的id
-     * 
-     * @return id */
+    /**
+     * 共享带宽的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,7 +58,10 @@ public class BandwidthRef {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

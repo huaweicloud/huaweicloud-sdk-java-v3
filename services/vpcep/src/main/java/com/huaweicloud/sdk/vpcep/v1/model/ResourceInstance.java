@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源实例详情 */
+/**
+ * 资源实例详情
+ */
 public class ResourceInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ResourceInstance {
         return this;
     }
 
-    /** 资源ID，Endpoint Service ID或Endpoint ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID，Endpoint Service ID或Endpoint ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -63,9 +66,10 @@ public class ResourceInstance {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<TagList> getTags() {
         return tags;
     }
@@ -79,9 +83,10 @@ public class ResourceInstance {
         return this;
     }
 
-    /** 资源名称，资源没有名称时，返回ID。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称，资源没有名称时，返回ID。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -120,7 +125,10 @@ public class ResourceInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteProtectedInstanceTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteProtectedInstanceTagRequest {
         return this;
     }
 
-    /** 保护实例的ID。
-     * 
-     * @return protectedInstanceId */
+    /**
+     * 保护实例的ID。
+     * @return protectedInstanceId
+     */
     public String getProtectedInstanceId() {
         return protectedInstanceId;
     }
@@ -39,9 +42,10 @@ public class DeleteProtectedInstanceTagRequest {
         return this;
     }
 
-    /** 标签key。
-     * 
-     * @return key */
+    /**
+     * 标签key。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -78,7 +82,10 @@ public class DeleteProtectedInstanceTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

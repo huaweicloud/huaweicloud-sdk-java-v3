@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 标签信息 */
+/**
+ * 标签信息
+ */
 public class TagsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TagsInfo {
         return this;
     }
 
-    /** 功能说明：键。同一资源的key值不能重复。
-     * 
-     * @return key */
+    /**
+     * 功能说明：键。同一资源的key值不能重复。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class TagsInfo {
         return this;
     }
 
-    /** 功能说明：值列表。
-     * 
-     * @return value */
+    /**
+     * 功能说明：值列表。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class TagsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

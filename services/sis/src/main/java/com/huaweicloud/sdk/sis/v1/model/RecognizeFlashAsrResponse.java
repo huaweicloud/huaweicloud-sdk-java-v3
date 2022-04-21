@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RecognizeFlashAsrResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务内部的令牌，可用于在日志中追溯具体调用流程
-     * 
-     * @return traceId */
+    /**
+     * 服务内部的令牌，可用于在日志中追溯具体调用流程
+     * @return traceId
+     */
     public String getTraceId() {
         return traceId;
     }
@@ -48,9 +51,10 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
         return this;
     }
 
-    /** 音频时长
-     * 
-     * @return audioDuration */
+    /**
+     * 音频时长
+     * @return audioDuration
+     */
     public Integer getAudioDuration() {
         return audioDuration;
     }
@@ -80,9 +84,10 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
         return this;
     }
 
-    /** 识别结果
-     * 
-     * @return flashResult */
+    /**
+     * 识别结果
+     * @return flashResult
+     */
     public List<FlashResult> getFlashResult() {
         return flashResult;
     }
@@ -121,7 +126,10 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

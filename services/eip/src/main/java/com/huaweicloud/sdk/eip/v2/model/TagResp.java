@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 标签 */
+/**
+ * 标签
+ */
 public class TagResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class TagResp {
         return this;
     }
 
-    /** 键，key不能为空。长度不超过36个字符。由英文字母、数字、下划线、中划线、中文字符组成。
-     * 
-     * @return key */
+    /**
+     * 键，key不能为空。长度不超过36个字符。由英文字母、数字、下划线、中划线、中文字符组成。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class TagResp {
         return this;
     }
 
-    /** 值列表。
-     * 
-     * @return values */
+    /**
+     * 值列表。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class TagResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

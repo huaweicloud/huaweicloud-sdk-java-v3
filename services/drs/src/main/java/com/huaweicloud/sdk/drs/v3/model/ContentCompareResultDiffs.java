@@ -38,9 +38,10 @@ public class ContentCompareResultDiffs {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -54,9 +55,10 @@ public class ContentCompareResultDiffs {
         return this;
     }
 
-    /** 源库的表名称。
-     * 
-     * @return sourceTableName */
+    /**
+     * 源库的表名称。
+     * @return sourceTableName
+     */
     public String getSourceTableName() {
         return sourceTableName;
     }
@@ -87,9 +89,10 @@ public class ContentCompareResultDiffs {
         return this;
     }
 
-    /** 内容对比结果差异。
-     * 
-     * @return contentCompareDiff */
+    /**
+     * 内容对比结果差异。
+     * @return contentCompareDiff
+     */
     public List<ContentCompareDiff> getContentCompareDiff() {
         return contentCompareDiff;
     }
@@ -103,9 +106,10 @@ public class ContentCompareResultDiffs {
         return this;
     }
 
-    /** 内容对比结果差异总数。
-     * 
-     * @return contentCompareDiffCount */
+    /**
+     * 内容对比结果差异总数。
+     * @return contentCompareDiffCount
+     */
     public Integer getContentCompareDiffCount() {
         return contentCompareDiffCount;
     }
@@ -146,7 +150,10 @@ public class ContentCompareResultDiffs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ThrottleBaseInfo */
+/**
+ * ThrottleBaseInfo
+ */
 public class ThrottleBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class ThrottleBaseInfo {
 
     private String name;
 
-    /** 流控的时间单位 */
+    /**
+     * 流控的时间单位
+     */
     public static final class TimeUnitEnum {
 
-        /** Enum SECOND for value: "SECOND" */
+        /**
+         * Enum SECOND for value: "SECOND"
+         */
         public static final TimeUnitEnum SECOND = new TimeUnitEnum("SECOND");
 
-        /** Enum MINUTE for value: "MINUTE" */
+        /**
+         * Enum MINUTE for value: "MINUTE"
+         */
         public static final TimeUnitEnum MINUTE = new TimeUnitEnum("MINUTE");
 
-        /** Enum HOUR for value: "HOUR" */
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
         public static final TimeUnitEnum HOUR = new TimeUnitEnum("HOUR");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final TimeUnitEnum DAY = new TimeUnitEnum("DAY");
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -117,13 +129,19 @@ public class ThrottleBaseInfo {
 
     private Integer apiCallLimits;
 
-    /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。 */
+    /**
+     * 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。
+     */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
         private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -218,9 +236,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** APP流量限制是指一个API在时长之内被每个APP访问的次数上限，该数值不超过用户流量限制值。输入的值不超过2147483647。正整数。
-     * 
-     * @return appCallLimits */
+    /**
+     * APP流量限制是指一个API在时长之内被每个APP访问的次数上限，该数值不超过用户流量限制值。输入的值不超过2147483647。正整数。 
+     * @return appCallLimits
+     */
     public Integer getAppCallLimits() {
         return appCallLimits;
     }
@@ -234,9 +253,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 流控策略名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * 流控策略名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -250,9 +270,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 流控的时间单位
-     * 
-     * @return timeUnit */
+    /**
+     * 流控的时间单位
+     * @return timeUnit
+     */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -266,9 +287,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 流控策略描述字符长度不超过255。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 流控策略描述字符长度不超过255。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -282,9 +304,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** API流量限制是指时长内一个API能够被访问的次数上限。该值不超过系统默认配额限制，系统默认配额为200tps，用户可根据实际情况修改该系统默认配额。输入的值不超过2147483647。正整数。
-     * 
-     * @return apiCallLimits */
+    /**
+     * API流量限制是指时长内一个API能够被访问的次数上限。该值不超过系统默认配额限制，系统默认配额为200tps，用户可根据实际情况修改该系统默认配额。输入的值不超过2147483647。正整数。 
+     * @return apiCallLimits
+     */
     public Integer getApiCallLimits() {
         return apiCallLimits;
     }
@@ -298,9 +321,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。
-     * 
-     * @return type */
+    /**
+     * 流控策略的类型 - 1：基础，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -314,9 +338,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 是否开启动态流控： - TRUE - FALSE 暂不支持
-     * 
-     * @return enableAdaptiveControl */
+    /**
+     * 是否开启动态流控： - TRUE - FALSE  暂不支持
+     * @return enableAdaptiveControl
+     */
     public String getEnableAdaptiveControl() {
         return enableAdaptiveControl;
     }
@@ -330,9 +355,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws;hws_hk;hcs;fcs;g42;)[site不支持用户流量限制,输入值为0](tag:Site)
-     * 
-     * @return userCallLimits */
+    /**
+     * [用户流量限制是指一个API在时长之内每一个用户能访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。](tag:hws;hws_hk;hcs;fcs;g42;)[site不支持用户流量限制,输入值为0](tag:Site)
+     * @return userCallLimits
+     */
     public Integer getUserCallLimits() {
         return userCallLimits;
     }
@@ -346,9 +372,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 流量控制的时长单位。与“流量限制次数”配合使用，表示单位时间内的API请求次数上限。输入的值不超过2147483647。正整数。
-     * 
-     * @return timeInterval */
+    /**
+     * 流量控制的时长单位。与“流量限制次数”配合使用，表示单位时间内的API请求次数上限。输入的值不超过2147483647。正整数。
+     * @return timeInterval
+     */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -362,9 +389,10 @@ public class ThrottleBaseInfo {
         return this;
     }
 
-    /** 源IP流量限制是指一个API在时长之内被每个IP访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。
-     * 
-     * @return ipCallLimits */
+    /**
+     * 源IP流量限制是指一个API在时长之内被每个IP访问的次数上限，该数值不超过API流量限制值。输入的值不超过2147483647。正整数。
+     * @return ipCallLimits
+     */
     public Integer getIpCallLimits() {
         return ipCallLimits;
     }
@@ -426,7 +454,10 @@ public class ThrottleBaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

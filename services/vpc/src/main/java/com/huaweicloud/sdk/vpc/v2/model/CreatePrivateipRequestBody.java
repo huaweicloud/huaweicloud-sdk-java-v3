@@ -39,9 +39,10 @@ public class CreatePrivateipRequestBody {
         return this;
     }
 
-    /** 私有IP列表对象
-     * 
-     * @return privateips */
+    /**
+     * 私有IP列表对象
+     * @return privateips
+     */
     public List<CreatePrivateipOption> getPrivateips() {
         return privateips;
     }
@@ -76,7 +77,10 @@ public class CreatePrivateipRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

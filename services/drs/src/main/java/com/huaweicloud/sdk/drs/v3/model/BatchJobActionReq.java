@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 任务动作请求体 */
+/**
+ * 任务动作请求体
+ */
 public class BatchJobActionReq {
 
-    /** 执行操作 */
+    /**
+     * 执行操作
+     */
     public static final class ActionEnum {
 
-        /** Enum TESTCONNECTION for value: "testConnection" */
+        /**
+         * Enum TESTCONNECTION for value: "testConnection"
+         */
         public static final ActionEnum TESTCONNECTION = new ActionEnum("testConnection");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -100,9 +106,10 @@ public class BatchJobActionReq {
         return this;
     }
 
-    /** 执行操作
-     * 
-     * @return action */
+    /**
+     * 执行操作
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -116,9 +123,10 @@ public class BatchJobActionReq {
         return this;
     }
 
-    /** 任务ID（集群模式 取父任务的任务id）
-     * 
-     * @return jobId */
+    /**
+     * 任务ID（集群模式 取父任务的任务id）
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -132,9 +140,10 @@ public class BatchJobActionReq {
         return this;
     }
 
-    /** 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/zh-cn_topic_0295171516.html)
-     * 
-     * @return property */
+    /**
+     * 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/zh-cn_topic_0295171516.html)
+     * @return property
+     */
     public String getProperty() {
         return property;
     }
@@ -173,7 +182,10 @@ public class BatchJobActionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DecoupledLiveDomainInfo */
+/**
+ * DecoupledLiveDomainInfo
+ */
 public class DecoupledLiveDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class DecoupledLiveDomainInfo {
 
     private String domain;
 
-    /** 域名类型 */
+    /**
+     * 域名类型
+     */
     public static final class DomainTypeEnum {
 
-        /** Enum PULL for value: "pull" */
+        /**
+         * Enum PULL for value: "pull"
+         */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
 
-        /** Enum PUSH for value: "push" */
+        /**
+         * Enum PUSH for value: "push"
+         */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -95,34 +103,54 @@ public class DecoupledLiveDomainInfo {
 
     private DomainTypeEnum domainType;
 
-    /** CDN厂商 */
+    /**
+     * CDN厂商
+     */
     public static final class VendorEnum {
 
-        /** Enum CHINANETCENTER for value: "ChinaNetCenter" */
+        /**
+         * Enum CHINANETCENTER for value: "ChinaNetCenter"
+         */
         public static final VendorEnum CHINANETCENTER = new VendorEnum("ChinaNetCenter");
 
-        /** Enum KINGSOFT for value: "KingSoft" */
+        /**
+         * Enum KINGSOFT for value: "KingSoft"
+         */
         public static final VendorEnum KINGSOFT = new VendorEnum("KingSoft");
 
-        /** Enum TENCENT for value: "Tencent" */
+        /**
+         * Enum TENCENT for value: "Tencent"
+         */
         public static final VendorEnum TENCENT = new VendorEnum("Tencent");
 
-        /** Enum UCDN for value: "uCDN" */
+        /**
+         * Enum UCDN for value: "uCDN"
+         */
         public static final VendorEnum UCDN = new VendorEnum("uCDN");
 
-        /** Enum TENCENTOUTSIDE for value: "TencentOutside" */
+        /**
+         * Enum TENCENTOUTSIDE for value: "TencentOutside"
+         */
         public static final VendorEnum TENCENTOUTSIDE = new VendorEnum("TencentOutside");
 
-        /** Enum DNION for value: "Dnion" */
+        /**
+         * Enum DNION for value: "Dnion"
+         */
         public static final VendorEnum DNION = new VendorEnum("Dnion");
 
-        /** Enum BAISHAN for value: "Baishan" */
+        /**
+         * Enum BAISHAN for value: "Baishan"
+         */
         public static final VendorEnum BAISHAN = new VendorEnum("Baishan");
 
-        /** Enum BAIDU for value: "Baidu" */
+        /**
+         * Enum BAIDU for value: "Baidu"
+         */
         public static final VendorEnum BAIDU = new VendorEnum("Baidu");
 
-        /** Enum ONETHING for value: "Onething" */
+        /**
+         * Enum ONETHING for value: "Onething"
+         */
         public static final VendorEnum ONETHING = new VendorEnum("Onething");
 
         private static final Map<String, VendorEnum> STATIC_FIELDS = createStaticFields();
@@ -209,16 +237,24 @@ public class DecoupledLiveDomainInfo {
 
     private String domainCname;
 
-    /** 直播域名的状态 */
+    /**
+     * 直播域名的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final StatusEnum ON = new StatusEnum("on");
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final StatusEnum OFF = new StatusEnum("off");
 
-        /** Enum CONFIGURING for value: "configuring" */
+        /**
+         * Enum CONFIGURING for value: "configuring"
+         */
         public static final StatusEnum CONFIGURING = new StatusEnum("configuring");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -304,16 +340,24 @@ public class DecoupledLiveDomainInfo {
 
     private String statusDescribe;
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /** Enum GLOBAL for value: "global" */
+        /**
+         * Enum GLOBAL for value: "global"
+         */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -389,9 +433,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 直播域名
-     * 
-     * @return domain */
+    /**
+     * 直播域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -405,9 +450,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 域名类型
-     * 
-     * @return domainType */
+    /**
+     * 域名类型
+     * @return domainType
+     */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -421,9 +467,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** CDN厂商
-     * 
-     * @return vendor */
+    /**
+     * CDN厂商
+     * @return vendor
+     */
     public VendorEnum getVendor() {
         return vendor;
     }
@@ -437,9 +484,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 直播所属直播中心
-     * 
-     * @return region */
+    /**
+     * 直播所属直播中心
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -453,9 +501,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 直播域名的CName
-     * 
-     * @return domainCname */
+    /**
+     * 直播域名的CName
+     * @return domainCname
+     */
     public String getDomainCname() {
         return domainCname;
     }
@@ -469,9 +518,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 直播域名的状态
-     * 
-     * @return status */
+    /**
+     * 直播域名的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -485,9 +535,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 播放域名关联的推流域名（只有domain_type为pull的时候有效）
-     * 
-     * @return relatedDomain */
+    /**
+     * 播放域名关联的推流域名（只有domain_type为pull的时候有效）
+     * @return relatedDomain
+     */
     public String getRelatedDomain() {
         return relatedDomain;
     }
@@ -501,9 +552,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
-     * 
-     * @return createTime */
+    /**
+     * 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -517,9 +569,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 状态描述
-     * 
-     * @return statusDescribe */
+    /**
+     * 状态描述
+     * @return statusDescribe
+     */
     public String getStatusDescribe() {
         return statusDescribe;
     }
@@ -533,9 +586,10 @@ public class DecoupledLiveDomainInfo {
         return this;
     }
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
-     * 
-     * @return serviceArea */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -597,7 +651,10 @@ public class DecoupledLiveDomainInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

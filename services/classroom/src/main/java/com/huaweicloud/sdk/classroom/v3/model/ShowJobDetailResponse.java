@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业下发人数
-     * 
-     * @return acceptJobNum */
+    /**
+     * 作业下发人数
+     * @return acceptJobNum
+     */
     public Integer getAcceptJobNum() {
         return acceptJobNum;
     }
@@ -65,9 +68,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return endTime */
+    /**
+     * 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -81,9 +85,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业答案是否公布(unpublish:表示未公布答案, publish:表示已公布答案)
-     * 
-     * @return isAnswerVisibility */
+    /**
+     * 作业答案是否公布(unpublish:表示未公布答案, publish:表示已公布答案)
+     * @return isAnswerVisibility
+     */
     public String getIsAnswerVisibility() {
         return isAnswerVisibility;
     }
@@ -97,9 +102,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
-     * 
-     * @return isScoreVisibility */
+    /**
+     * 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
+     * @return isScoreVisibility
+     */
     public String getIsScoreVisibility() {
         return isScoreVisibility;
     }
@@ -113,9 +119,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业均分
-     * 
-     * @return averageScore */
+    /**
+     * 作业均分
+     * @return averageScore
+     */
     public String getAverageScore() {
         return averageScore;
     }
@@ -129,9 +136,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 老师手动评分人数
-     * 
-     * @return scoreJobNum */
+    /**
+     * 老师手动评分人数
+     * @return scoreJobNum
+     */
     public Integer getScoreJobNum() {
         return scoreJobNum;
     }
@@ -145,9 +153,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业提交人数
-     * 
-     * @return submitJobNum */
+    /**
+     * 作业提交人数
+     * @return submitJobNum
+     */
     public Integer getSubmitJobNum() {
         return submitJobNum;
     }
@@ -200,7 +209,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

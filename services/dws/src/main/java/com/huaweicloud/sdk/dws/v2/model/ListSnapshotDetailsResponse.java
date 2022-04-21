@@ -7,36 +7,39 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSnapshotDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot")
 
-    private SnapshoDetail snapshot;
+    private SnapshotDetail snapshot;
 
-    public ListSnapshotDetailsResponse withSnapshot(SnapshoDetail snapshot) {
+    public ListSnapshotDetailsResponse withSnapshot(SnapshotDetail snapshot) {
         this.snapshot = snapshot;
         return this;
     }
 
-    public ListSnapshotDetailsResponse withSnapshot(Consumer<SnapshoDetail> snapshotSetter) {
+    public ListSnapshotDetailsResponse withSnapshot(Consumer<SnapshotDetail> snapshotSetter) {
         if (this.snapshot == null) {
-            this.snapshot = new SnapshoDetail();
+            this.snapshot = new SnapshotDetail();
             snapshotSetter.accept(this.snapshot);
         }
 
         return this;
     }
 
-    /** Get snapshot
-     * 
-     * @return snapshot */
-    public SnapshoDetail getSnapshot() {
+    /**
+     * Get snapshot
+     * @return snapshot
+     */
+    public SnapshotDetail getSnapshot() {
         return snapshot;
     }
 
-    public void setSnapshot(SnapshoDetail snapshot) {
+    public void setSnapshot(SnapshotDetail snapshot) {
         this.snapshot = snapshot;
     }
 
@@ -66,7 +69,10 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

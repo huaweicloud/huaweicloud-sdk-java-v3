@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建资源分组，请求参数。 */
+/**
+ * 创建资源分组，请求参数。
+ */
 public class CreateResourceGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CreateResourceGroupRequestBody {
         return this;
     }
 
-    /** 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
-     * 
-     * @return groupName */
+    /**
+     * 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -58,9 +61,10 @@ public class CreateResourceGroupRequestBody {
         return this;
     }
 
-    /** 创建的资源分组选择一个或者多个资源。
-     * 
-     * @return resources */
+    /**
+     * 创建的资源分组选择一个或者多个资源。
+     * @return resources
+     */
     public List<CreateResourceGroup> getResources() {
         return resources;
     }
@@ -97,7 +101,10 @@ public class CreateResourceGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

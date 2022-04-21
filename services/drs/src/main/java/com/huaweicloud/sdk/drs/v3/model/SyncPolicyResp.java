@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SyncPolicyResp */
+/**
+ * SyncPolicyResp
+ */
 public class SyncPolicyResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SyncPolicyResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class SyncPolicyResp {
         return this;
     }
 
-    /** 状态 - success：成功 - failed：失败
-     * 
-     * @return status */
+    /**
+     * 状态 - success：成功 - failed：失败
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -65,9 +69,10 @@ public class SyncPolicyResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class SyncPolicyResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -123,7 +129,10 @@ public class SyncPolicyResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

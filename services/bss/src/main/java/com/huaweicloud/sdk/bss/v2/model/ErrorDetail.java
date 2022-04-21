@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ErrorDetail */
+/**
+ * ErrorDetail
+ */
 public class ErrorDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ErrorDetail {
         return this;
     }
 
-    /** 状态码。
-     * 
-     * @return errorCode */
+    /**
+     * 状态码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -44,9 +47,10 @@ public class ErrorDetail {
         return this;
     }
 
-    /** 错误描述信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误描述信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -60,9 +64,10 @@ public class ErrorDetail {
         return this;
     }
 
-    /** 出现错误的客户ID或批量处理消息的ID。
-     * 
-     * @return id */
+    /**
+     * 出现错误的客户ID或批量处理消息的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -100,7 +105,10 @@ public class ErrorDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

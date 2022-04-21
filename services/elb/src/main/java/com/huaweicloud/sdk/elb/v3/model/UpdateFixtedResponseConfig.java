@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。
- * [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
- * [不支持该字段，请勿使用。](tag:dt,dt_test) */
+/**
+ * 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。  [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用。](tag:dt,dt_test)
+ */
 public class UpdateFixtedResponseConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,22 +20,34 @@ public class UpdateFixtedResponseConfig {
 
     private String statusCode;
 
-    /** 返回body的格式。 取值范围： - text/plain - text/css - text/html - application/javascript - application/json */
+    /**
+     * 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+     */
     public static final class ContentTypeEnum {
 
-        /** Enum TEXT_PLAIN for value: "text/plain" */
+        /**
+         * Enum TEXT_PLAIN for value: "text/plain"
+         */
         public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
 
-        /** Enum TEXT_CSS for value: "text/css" */
+        /**
+         * Enum TEXT_CSS for value: "text/css"
+         */
         public static final ContentTypeEnum TEXT_CSS = new ContentTypeEnum("text/css");
 
-        /** Enum TEXT_HTML for value: "text/html" */
+        /**
+         * Enum TEXT_HTML for value: "text/html"
+         */
         public static final ContentTypeEnum TEXT_HTML = new ContentTypeEnum("text/html");
 
-        /** Enum APPLICATION_JAVASCRIPT for value: "application/javascript" */
+        /**
+         * Enum APPLICATION_JAVASCRIPT for value: "application/javascript"
+         */
         public static final ContentTypeEnum APPLICATION_JAVASCRIPT = new ContentTypeEnum("application/javascript");
 
-        /** Enum APPLICATION_JSON for value: "application/json" */
+        /**
+         * Enum APPLICATION_JSON for value: "application/json"
+         */
         public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +130,10 @@ public class UpdateFixtedResponseConfig {
         return this;
     }
 
-    /** 返回码。支持200~299,400~499,500~599。
-     * 
-     * @return statusCode */
+    /**
+     * 返回码。支持200~299,400~499,500~599。
+     * @return statusCode
+     */
     public String getStatusCode() {
         return statusCode;
     }
@@ -134,9 +147,10 @@ public class UpdateFixtedResponseConfig {
         return this;
     }
 
-    /** 返回body的格式。 取值范围： - text/plain - text/css - text/html - application/javascript - application/json
-     * 
-     * @return contentType */
+    /**
+     * 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+     * @return contentType
+     */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -150,9 +164,10 @@ public class UpdateFixtedResponseConfig {
         return this;
     }
 
-    /** 返回消息内容。
-     * 
-     * @return messageBody */
+    /**
+     * 返回消息内容。
+     * @return messageBody
+     */
     public String getMessageBody() {
         return messageBody;
     }
@@ -191,7 +206,10 @@ public class UpdateFixtedResponseConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

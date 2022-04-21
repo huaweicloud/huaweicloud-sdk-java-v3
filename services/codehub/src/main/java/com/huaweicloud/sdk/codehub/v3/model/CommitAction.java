@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CommitAction */
+/**
+ * CommitAction
+ */
 public class CommitAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 要执行的操作：create、delete、move、update、chmod
-     * 
-     * @return action */
+    /**
+     * 要执行的操作：create、delete、move、update、chmod
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -64,9 +67,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 文件的完整路径。例如lib/class.rb
-     * 
-     * @return filePath */
+    /**
+     * 文件的完整路径。例如lib/class.rb
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -80,9 +84,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 要移动的文件的原始完整路径。例如lib/class1.rb。仅在move操作时生效
-     * 
-     * @return previousPath */
+    /**
+     * 要移动的文件的原始完整路径。例如lib/class1.rb。仅在move操作时生效
+     * @return previousPath
+     */
     public String getPreviousPath() {
         return previousPath;
     }
@@ -96,9 +101,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 文件内容，create和update操作时必须。未指定内容的移动操作将保留现有文件内容，内容的任何其他值将覆盖文件内容。
-     * 
-     * @return content */
+    /**
+     * 文件内容，create和update操作时必须。未指定内容的移动操作将保留现有文件内容，内容的任何其他值将覆盖文件内容。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -112,9 +118,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 文件编码：text、base64。默认为text
-     * 
-     * @return encoding */
+    /**
+     * 文件编码：text、base64。默认为text
+     * @return encoding
+     */
     public String getEncoding() {
         return encoding;
     }
@@ -128,9 +135,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 最后一个已知的提交ID。仅在update、move、delete操作时生效
-     * 
-     * @return lastCommitId */
+    /**
+     * 最后一个已知的提交ID。仅在update、move、delete操作时生效
+     * @return lastCommitId
+     */
     public String getLastCommitId() {
         return lastCommitId;
     }
@@ -144,9 +152,10 @@ public class CommitAction {
         return this;
     }
 
-    /** 启用或者禁用文件的执行模式。仅在chmod操作时生效
-     * 
-     * @return executeFilemode */
+    /**
+     * 启用或者禁用文件的执行模式。仅在chmod操作时生效
+     * @return executeFilemode
+     */
     public Boolean getExecuteFilemode() {
         return executeFilemode;
     }
@@ -192,7 +201,10 @@ public class CommitAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ExportFunctionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ExportFunctionRequest {
 
     private Boolean code;
 
-    /** 兼容老的方式，type=code代表导出代码,type=config代码导出配置 */
+    /**
+     * 兼容老的方式，type=code代表导出代码,type=config代码导出配置
+     */
     public static final class TypeEnum {
 
-        /** Enum TYPE for value: "type" */
+        /**
+         * Enum TYPE for value: "type"
+         */
         public static final TypeEnum TYPE = new TypeEnum("type");
 
-        /** Enum CODE for value: "code" */
+        /**
+         * Enum CODE for value: "code"
+         */
         public static final TypeEnum CODE = new TypeEnum("code");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ExportFunctionRequest {
         return this;
     }
 
-    /** 函数的URN（Uniform Resource Name），唯一标识函数。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -125,9 +134,10 @@ public class ExportFunctionRequest {
         return this;
     }
 
-    /** 是否导出函数配置
-     * 
-     * @return config */
+    /**
+     * 是否导出函数配置
+     * @return config
+     */
     public Boolean getConfig() {
         return config;
     }
@@ -141,9 +151,10 @@ public class ExportFunctionRequest {
         return this;
     }
 
-    /** 是否导出函数代码
-     * 
-     * @return code */
+    /**
+     * 是否导出函数代码
+     * @return code
+     */
     public Boolean getCode() {
         return code;
     }
@@ -157,9 +168,10 @@ public class ExportFunctionRequest {
         return this;
     }
 
-    /** 兼容老的方式，type=code代表导出代码,type=config代码导出配置
-     * 
-     * @return type */
+    /**
+     * 兼容老的方式，type=code代表导出代码,type=config代码导出配置
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -200,7 +212,10 @@ public class ExportFunctionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

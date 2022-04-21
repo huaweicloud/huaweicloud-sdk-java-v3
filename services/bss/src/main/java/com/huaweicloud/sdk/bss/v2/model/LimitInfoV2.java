@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LimitInfoV2 */
+/**
+ * LimitInfoV2
+ */
 public class LimitInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** 使用限制ID，主键。
-     * 
-     * @return useLimitiInfoId */
+    /**
+     * 使用限制ID，主键。
+     * @return useLimitiInfoId
+     */
     public String getUseLimitiInfoId() {
         return useLimitiInfoId;
     }
@@ -64,9 +67,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** 折扣限制，key的取值请参考表5。
-     * 
-     * @return limitKey */
+    /**
+     * 折扣限制，key的取值请参考表5。
+     * @return limitKey
+     */
     public String getLimitKey() {
         return limitKey;
     }
@@ -80,9 +84,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** value1。
-     * 
-     * @return value1 */
+    /**
+     * value1。
+     * @return value1
+     */
     public String getValue1() {
         return value1;
     }
@@ -96,9 +101,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** value2。
-     * 
-     * @return value2 */
+    /**
+     * value2。
+     * @return value2
+     */
     public String getValue2() {
         return value2;
     }
@@ -112,9 +118,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** value单位。
-     * 
-     * @return valueUnit */
+    /**
+     * value单位。
+     * @return valueUnit
+     */
     public String getValueUnit() {
         return valueUnit;
     }
@@ -128,9 +135,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** 限制类型。
-     * 
-     * @return limitType */
+    /**
+     * 限制类型。
+     * @return limitType
+     */
     public String getLimitType() {
         return limitType;
     }
@@ -144,9 +152,10 @@ public class LimitInfoV2 {
         return this;
     }
 
-    /** 促销计划ID。
-     * 
-     * @return promotionPlanId */
+    /**
+     * 促销计划ID。
+     * @return promotionPlanId
+     */
     public String getPromotionPlanId() {
         return promotionPlanId;
     }
@@ -191,7 +200,10 @@ public class LimitInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

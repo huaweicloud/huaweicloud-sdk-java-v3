@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ObsScanResult */
+/**
+ * ObsScanResult
+ */
 public class ObsScanResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ObsScanResult {
         return this;
     }
 
-    /** 扫描结果总数
-     * 
-     * @return total */
+    /**
+     * 扫描结果总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -58,9 +61,10 @@ public class ObsScanResult {
         return this;
     }
 
-    /** OBS扫描结果列表
-     * 
-     * @return dbScanResults */
+    /**
+     * OBS扫描结果列表
+     * @return dbScanResults
+     */
     public List<ObsScanResultInfo> getDbScanResults() {
         return dbScanResults;
     }
@@ -97,7 +101,10 @@ public class ObsScanResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

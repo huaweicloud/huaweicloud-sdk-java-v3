@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-/** bandwidth字段数据结构说明 */
+/**
+ * bandwidth字段数据结构说明
+ */
 public class BandWidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class BandWidth {
 
     private String name;
 
-    /** 带宽的共享类型。共享类型枚举：PER，表示独享；WHOLE，表示共享 */
+    /**
+     * 带宽的共享类型。共享类型枚举：PER，表示独享；WHOLE，表示共享
+     */
     public static final class SharetypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final SharetypeEnum PER = new SharetypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
 
         private static final Map<String, SharetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -105,14 +113,19 @@ public class BandWidth {
 
     private Integer size;
 
-    /** 带宽的计费类型。取值为：traffic（按流量计费）、bandwidth（按带宽计费）未传该字段，表示按带宽计费。字段值为空，表示按带宽计费。
-     * 说明：如果sharetype是WHOLE并且id有值，仅支持按带宽计费，该参数会忽略。 */
+    /**
+     * 带宽的计费类型。取值为：traffic（按流量计费）、bandwidth（按带宽计费）未传该字段，表示按带宽计费。字段值为空，表示按带宽计费。 说明：如果sharetype是WHOLE并且id有值，仅支持按带宽计费，该参数会忽略。
+     */
     public static final class ChargemodeEnum {
 
-        /** Enum TRAFFIC for value: "traffic" */
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
         public static final ChargemodeEnum TRAFFIC = new ChargemodeEnum("traffic");
 
-        /** Enum BANDWIDTH for value: "bandwidth" */
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
         public static final ChargemodeEnum BANDWIDTH = new ChargemodeEnum("bandwidth");
 
         private static final Map<String, ChargemodeEnum> STATIC_FIELDS = createStaticFields();
@@ -187,9 +200,10 @@ public class BandWidth {
         return this;
     }
 
-    /** 带宽名称
-     * 
-     * @return name */
+    /**
+     * 带宽名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -203,9 +217,10 @@ public class BandWidth {
         return this;
     }
 
-    /** 带宽的共享类型。共享类型枚举：PER，表示独享；WHOLE，表示共享
-     * 
-     * @return sharetype */
+    /**
+     * 带宽的共享类型。共享类型枚举：PER，表示独享；WHOLE，表示共享
+     * @return sharetype
+     */
     public SharetypeEnum getSharetype() {
         return sharetype;
     }
@@ -219,9 +234,10 @@ public class BandWidth {
         return this;
     }
 
-    /** 共享带宽ID。创建WHOLE类型带宽的弹性公网IP时可以指定之前的共享带宽创建。共享带宽的使用限制请参见“共享带宽简介”。 说明：当创建WHOLE类型的带宽时，该字段必选。
-     * 
-     * @return id */
+    /**
+     * 共享带宽ID。创建WHOLE类型带宽的弹性公网IP时可以指定之前的共享带宽创建。共享带宽的使用限制请参见“共享带宽简介”。 说明：当创建WHOLE类型的带宽时，该字段必选。
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -235,10 +251,10 @@ public class BandWidth {
         return this;
     }
 
-    /** 取值范围：默认5Mbit/s~2000Mbit/s（具体范围以各Region配置为准，请参见管理控制台对应页面显示）。功能说明：带宽大小。共享带宽的大小有最小值限制，默认为5M。
-     * 说明：如果传入的参数为小数（如10.2）或者字符类型（如10），会自动强制转换为整数。带宽小于300Mbit/s时，步长支持1Mbit/s；带宽为300Mbit/s~1000Mbit/s时，步长支持50Mbit/s；带宽为1000Mbit/s~2000Mbit/s时，步长支持1000Mbit/s。如果sharetype是PER，该参数必选；如果sharetype是WHOLE并且id有值，该参数会忽略。
-     * 
-     * @return size */
+    /**
+     * 取值范围：默认5Mbit/s~2000Mbit/s（具体范围以各Region配置为准，请参见管理控制台对应页面显示）。功能说明：带宽大小。共享带宽的大小有最小值限制，默认为5M。 说明：如果传入的参数为小数（如10.2）或者字符类型（如10），会自动强制转换为整数。带宽小于300Mbit/s时，步长支持1Mbit/s；带宽为300Mbit/s~1000Mbit/s时，步长支持50Mbit/s；带宽为1000Mbit/s~2000Mbit/s时，步长支持1000Mbit/s。如果sharetype是PER，该参数必选；如果sharetype是WHOLE并且id有值，该参数会忽略。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -252,10 +268,10 @@ public class BandWidth {
         return this;
     }
 
-    /** 带宽的计费类型。取值为：traffic（按流量计费）、bandwidth（按带宽计费）未传该字段，表示按带宽计费。字段值为空，表示按带宽计费。
-     * 说明：如果sharetype是WHOLE并且id有值，仅支持按带宽计费，该参数会忽略。
-     * 
-     * @return chargemode */
+    /**
+     * 带宽的计费类型。取值为：traffic（按流量计费）、bandwidth（按带宽计费）未传该字段，表示按带宽计费。字段值为空，表示按带宽计费。 说明：如果sharetype是WHOLE并且id有值，仅支持按带宽计费，该参数会忽略。
+     * @return chargemode
+     */
     public ChargemodeEnum getChargemode() {
         return chargemode;
     }
@@ -296,7 +312,10 @@ public class BandWidth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

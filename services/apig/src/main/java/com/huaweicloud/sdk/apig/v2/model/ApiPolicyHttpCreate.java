@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiPolicyHttpCreate */
+/**
+ * ApiPolicyHttpCreate
+ */
 public class ApiPolicyHttpCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class ApiPolicyHttpCreate {
 
     private String urlDomain;
 
-    /** 请求协议：HTTP、HTTPS */
+    /**
+     * 请求协议：HTTP、HTTPS
+     */
     public static final class ReqProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -97,31 +105,49 @@ public class ApiPolicyHttpCreate {
 
     private ReqProtocolEnum reqProtocol;
 
-    /** 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY */
+    /**
+     * 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -207,13 +233,19 @@ public class ApiPolicyHttpCreate {
 
     private Integer timeout;
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     */
     public static final class EffectModeEnum {
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
@@ -308,13 +340,19 @@ public class ApiPolicyHttpCreate {
 
     private ApiBackendVpcReq vpcChannelInfo;
 
-    /** 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道 */
+    /**
+     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     */
     public static final class VpcChannelStatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final VpcChannelStatusEnum NUMBER_1 = new VpcChannelStatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
 
         private static final Map<Integer, VpcChannelStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -389,10 +427,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 策略后端的Endpoint。 由域名（或IP地址）和端口号组成，总长度不超过255。格式为域名:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443，
-     * HTTP默认端口号为80。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、“_”、“-”组成，且只能以英文开头。
-     * 
-     * @return urlDomain */
+    /**
+     * 策略后端的Endpoint。 由域名（或IP地址）和端口号组成，总长度不超过255。格式为域名:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443， HTTP默认端口号为80。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、“_”、“-”组成，且只能以英文开头。 
+     * @return urlDomain
+     */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -406,9 +444,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 请求协议：HTTP、HTTPS
-     * 
-     * @return reqProtocol */
+    /**
+     * 请求协议：HTTP、HTTPS
+     * @return reqProtocol
+     */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -422,9 +461,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
-     * 
-     * @return reqMethod */
+    /**
+     * 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -438,10 +478,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~
-     * 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
-     * 
-     * @return reqUri */
+    /**
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -455,9 +495,11 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。 单位：毫秒。 minimum: 1
-     * 
-     * @return timeout */
+    /**
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
+     * minimum: 1
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -471,9 +513,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * 
-     * @return effectMode */
+    /**
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
+     */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -487,9 +530,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * 
-     * @return name */
+    /**
+     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -519,9 +563,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * 后端参数列表
+     * @return backendParams
+     */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -551,9 +596,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 策略条件列表
-     * 
-     * @return conditions */
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
     public List<ApiConditionBase> getConditions() {
         return conditions;
     }
@@ -567,9 +613,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 后端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -592,9 +639,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** Get vpcChannelInfo
-     * 
-     * @return vpcChannelInfo */
+    /**
+     * Get vpcChannelInfo
+     * @return vpcChannelInfo
+     */
     public ApiBackendVpcReq getVpcChannelInfo() {
         return vpcChannelInfo;
     }
@@ -608,9 +656,10 @@ public class ApiPolicyHttpCreate {
         return this;
     }
 
-    /** 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
-     * 
-     * @return vpcChannelStatus */
+    /**
+     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     * @return vpcChannelStatus
+     */
     public VpcChannelStatusEnum getVpcChannelStatus() {
         return vpcChannelStatus;
     }
@@ -678,7 +727,10 @@ public class ApiPolicyHttpCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

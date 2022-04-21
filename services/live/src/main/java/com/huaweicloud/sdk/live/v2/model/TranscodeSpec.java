@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TranscodeSpec */
+/**
+ * TranscodeSpec
+ */
 public class TranscodeSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class TranscodeSpec {
         return this;
     }
 
-    /** 转码规格，格式是“编码格式_分辨率档位”（未开启高清低码）和“编码格式_PVC_分辨率档位”（开启高清低码）。 其中编码格式包括H264、H265，分辨率档位包括： 4K（3840 x 2160）及以下，2K（2560 x
-     * 1440）及以下，FHD（1920 x 1080）及以下，HD（1280 x 720）及以下，SD（640 x 480）及以下。
-     * 
-     * @return type */
+    /**
+     * 转码规格，格式是“编码格式_分辨率档位”（未开启高清低码）和“编码格式_PVC_分辨率档位”（开启高清低码）。  其中编码格式包括H264、H265，分辨率档位包括：  4K（3840 x 2160）及以下，2K（2560 x 1440）及以下，FHD（1920 x 1080）及以下，HD（1280 x 720）及以下，SD（640 x 480）及以下。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -40,9 +42,12 @@ public class TranscodeSpec {
         return this;
     }
 
-    /** 采样时间点转码时长，单位为分钟，保留两位小数。 minimum: 0 maximum: 1.7976931348623157E+308
-     * 
-     * @return value */
+    /**
+     * 采样时间点转码时长，单位为分钟，保留两位小数。
+     * minimum: 0
+     * maximum: 1.7976931348623157E+308
+     * @return value
+     */
     public Double getValue() {
         return value;
     }
@@ -78,7 +83,10 @@ public class TranscodeSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

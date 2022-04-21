@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建秘钥对请求体。 */
+/**
+ * 创建秘钥对请求体。
+ */
 public class CreateKeypairRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateKeypairRequestBody {
         return this;
     }
 
-    /** 密钥对名称。 新创建的密钥名称不能和已有密钥名称相同。
-     * 
-     * @return name */
+    /**
+     * 密钥对名称。 新创建的密钥名称不能和已有密钥名称相同。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class CreateKeypairRequestBody {
         return this;
     }
 
-    /** 导入的公钥信息。 建议导入的公钥长度不大于1024字节。 > 长度超过1024字节会导致边缘实例注入该密钥失败。
-     * 
-     * @return publicKey */
+    /**
+     * 导入的公钥信息。 建议导入的公钥长度不大于1024字节。 > 长度超过1024字节会导致边缘实例注入该密钥失败。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -78,7 +82,10 @@ public class CreateKeypairRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

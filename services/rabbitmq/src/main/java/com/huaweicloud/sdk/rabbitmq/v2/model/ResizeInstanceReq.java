@@ -10,21 +10,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ResizeInstanceReq */
+/**
+ * ResizeInstanceReq
+ */
 public class ResizeInstanceReq {
 
-    /** 规格变更后的规格ID。 */
+    /**
+     * 规格变更后的规格ID。
+     */
     public static final class NewSpecCodeEnum {
 
-        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.3" */
+        /**
+         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.3"
+         */
         public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 =
             new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.3");
 
-        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.5" */
+        /**
+         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.5"
+         */
         public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 =
             new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.5");
 
-        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.7" */
+        /**
+         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.7"
+         */
         public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 =
             new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.7");
 
@@ -106,9 +116,10 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的规格ID。
-     * 
-     * @return newSpecCode */
+    /**
+     * 规格变更后的规格ID。
+     * @return newSpecCode
+     */
     public NewSpecCodeEnum getNewSpecCode() {
         return newSpecCode;
     }
@@ -122,9 +133,10 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的消息存储空间，单位：GB。
-     * 
-     * @return newStorageSpace */
+    /**
+     * 规格变更后的消息存储空间，单位：GB。
+     * @return newStorageSpace
+     */
     public Integer getNewStorageSpace() {
         return newStorageSpace;
     }
@@ -161,7 +173,10 @@ public class ResizeInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

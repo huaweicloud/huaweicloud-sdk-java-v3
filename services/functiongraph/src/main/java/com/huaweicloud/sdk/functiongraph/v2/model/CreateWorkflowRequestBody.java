@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数流创建body体 */
+/**
+ * 函数流创建body体
+ */
 public class CreateWorkflowRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 流程定义名称
-     * 
-     * @return name */
+    /**
+     * 流程定义名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,9 +80,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 流程定义描述
-     * 
-     * @return description */
+    /**
+     * 流程定义描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -109,9 +113,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 触发器列表
-     * 
-     * @return triggers */
+    /**
+     * 触发器列表
+     * @return triggers
+     */
     public List<Trigger> getTriggers() {
         return triggers;
     }
@@ -125,9 +130,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 流程开始节点ID
-     * 
-     * @return start */
+    /**
+     * 流程开始节点ID
+     * @return start
+     */
     public String getStart() {
         return start;
     }
@@ -157,9 +163,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 函数清单
-     * 
-     * @return functions */
+    /**
+     * 函数清单
+     * @return functions
+     */
     public List<Function> getFunctions() {
         return functions;
     }
@@ -189,9 +196,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 工作流节点清单，定义参考SleepState和OperationState
-     * 
-     * @return states */
+    /**
+     * 工作流节点清单，定义参考SleepState和OperationState
+     * @return states
+     */
     public List<OperationState> getStates() {
         return states;
     }
@@ -205,9 +213,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 工作流中的常量
-     * 
-     * @return constants */
+    /**
+     * 工作流中的常量
+     * @return constants
+     */
     public Object getConstants() {
         return constants;
     }
@@ -237,9 +246,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 重试策略清单
-     * 
-     * @return retries */
+    /**
+     * 重试策略清单
+     * @return retries
+     */
     public List<Retry> getRetries() {
         return retries;
     }
@@ -253,9 +263,10 @@ public class CreateWorkflowRequestBody {
         return this;
     }
 
-    /** 企业项目ID，在企业用户创建函数时必填。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，在企业用户创建函数时必填。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -307,7 +318,10 @@ public class CreateWorkflowRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

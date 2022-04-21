@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAllScalingV2PoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ListAllScalingV2PoliciesRequest {
 
     private String scalingResourceId;
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
+     */
     public static final class ScalingResourceTypeEnum {
 
-        /** Enum SCALING_GROUP for value: "SCALING_GROUP" */
+        /**
+         * Enum SCALING_GROUP for value: "SCALING_GROUP"
+         */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
 
-        /** Enum BANDWIDTH for value: "BANDWIDTH" */
+        /**
+         * Enum BANDWIDTH for value: "BANDWIDTH"
+         */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
 
         private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,16 +107,24 @@ public class ListAllScalingV2PoliciesRequest {
 
     private String scalingPolicyName;
 
-    /** 策略类型。 告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE */
+    /**
+     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
+     */
     public static final class ScalingPolicyTypeEnum {
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
 
-        /** Enum SCHEDULED for value: "SCHEDULED" */
+        /**
+         * Enum SCHEDULED for value: "SCHEDULED"
+         */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
 
-        /** Enum RECURRENCE for value: "RECURRENCE" */
+        /**
+         * Enum RECURRENCE for value: "RECURRENCE"
+         */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -194,16 +210,24 @@ public class ListAllScalingV2PoliciesRequest {
 
     private Integer limit;
 
-    /** 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。 */
+    /**
+     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
+     */
     public static final class SortByEnum {
 
-        /** Enum POLICY_NAME for value: "POLICY_NAME" */
+        /**
+         * Enum POLICY_NAME for value: "POLICY_NAME"
+         */
         public static final SortByEnum POLICY_NAME = new SortByEnum("POLICY_NAME");
 
-        /** Enum TRIGGER_CONDITION for value: "TRIGGER_CONDITION" */
+        /**
+         * Enum TRIGGER_CONDITION for value: "TRIGGER_CONDITION"
+         */
         public static final SortByEnum TRIGGER_CONDITION = new SortByEnum("TRIGGER_CONDITION");
 
-        /** Enum CREATE_TIME for value: "CREATE_TIME" */
+        /**
+         * Enum CREATE_TIME for value: "CREATE_TIME"
+         */
         public static final SortByEnum CREATE_TIME = new SortByEnum("CREATE_TIME");
 
         private static final Map<String, SortByEnum> STATIC_FIELDS = createStaticFields();
@@ -274,13 +298,19 @@ public class ListAllScalingV2PoliciesRequest {
 
     private SortByEnum sortBy;
 
-    /** 排序顺序ASC：升序；DESC：降序 */
+    /**
+     * 排序顺序ASC：升序；DESC：降序
+     */
     public static final class OrderEnum {
 
-        /** Enum ASC for value: "ASC" */
+        /**
+         * Enum ASC for value: "ASC"
+         */
         public static final OrderEnum ASC = new OrderEnum("ASC");
 
-        /** Enum DESC for value: "DESC" */
+        /**
+         * Enum DESC for value: "DESC"
+         */
         public static final OrderEnum DESC = new OrderEnum("DESC");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -365,9 +395,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingResourceId */
+    /**
+     * 伸缩组ID。
+     * @return scalingResourceId
+     */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -381,9 +412,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
-     * 
-     * @return scalingResourceType */
+    /**
+     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
+     * @return scalingResourceType
+     */
     public ScalingResourceTypeEnum getScalingResourceType() {
         return scalingResourceType;
     }
@@ -397,9 +429,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略名称。
-     * 
-     * @return scalingPolicyName */
+    /**
+     * 伸缩策略名称。
+     * @return scalingPolicyName
+     */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -413,9 +446,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 策略类型。 告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
-     * 
-     * @return scalingPolicyType */
+    /**
+     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
+     * @return scalingPolicyType
+     */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -429,9 +463,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -445,9 +480,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -461,9 +497,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -477,9 +514,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
-     * 
-     * @return sortBy */
+    /**
+     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
+     * @return sortBy
+     */
     public SortByEnum getSortBy() {
         return sortBy;
     }
@@ -493,9 +531,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 排序顺序ASC：升序；DESC：降序
-     * 
-     * @return order */
+    /**
+     * 排序顺序ASC：升序；DESC：降序
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -509,15 +548,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 企业项目ID。 当scaling_resource_type指定为：SCALING_GROUP 传入all_granted_eps时： 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组对应的伸缩策略。
-     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表。
-     * 当scaling_resource_type指定为：BANDWIDTH 传入all_granted_eps时: 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有带宽对应的伸缩策略。
-     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的带宽对应的伸缩策略，带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
-     * 不指定scaling_resource_type 当传入all_granted_eps时： 华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组和带宽对应的伸缩策略。
-     * 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组和带宽对应的伸缩策略。 说明：
-     * 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表；带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。  当scaling_resource_type指定为：SCALING_GROUP 传入all_granted_eps时：  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表。  当scaling_resource_type指定为：BANDWIDTH 传入all_granted_eps时:  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有带宽对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的带宽对应的伸缩策略，带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。 不指定scaling_resource_type 当传入all_granted_eps时：  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组和带宽对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组和带宽对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表；带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -531,9 +565,10 @@ public class ListAllScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 告警ID，即告警规则的ID。
-     * 
-     * @return alarmId */
+    /**
+     * 告警ID，即告警规则的ID。
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -598,7 +633,10 @@ public class ListAllScalingV2PoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

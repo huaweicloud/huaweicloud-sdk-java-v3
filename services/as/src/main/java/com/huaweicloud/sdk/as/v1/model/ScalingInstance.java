@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 伸缩实例。 */
+/**
+ * 伸缩实例。
+ */
 public class ScalingInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ScalingInstance {
         return this;
     }
 
-    /** 云服务器名称。
-     * 
-     * @return instanceName */
+    /**
+     * 云服务器名称。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -54,9 +57,10 @@ public class ScalingInstance {
         return this;
     }
 
-    /** 云服务器id。
-     * 
-     * @return instanceId */
+    /**
+     * 云服务器id。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,9 +74,10 @@ public class ScalingInstance {
         return this;
     }
 
-    /** 实例伸缩失败原因。
-     * 
-     * @return failedReason */
+    /**
+     * 实例伸缩失败原因。
+     * @return failedReason
+     */
     public String getFailedReason() {
         return failedReason;
     }
@@ -86,9 +91,10 @@ public class ScalingInstance {
         return this;
     }
 
-    /** 实例伸缩失败详情。
-     * 
-     * @return failedDetails */
+    /**
+     * 实例伸缩失败详情。
+     * @return failedDetails
+     */
     public String getFailedDetails() {
         return failedDetails;
     }
@@ -102,9 +108,10 @@ public class ScalingInstance {
         return this;
     }
 
-    /** 实例配置信息。
-     * 
-     * @return instanceConfig */
+    /**
+     * 实例配置信息。
+     * @return instanceConfig
+     */
     public String getInstanceConfig() {
         return instanceConfig;
     }
@@ -147,7 +154,10 @@ public class ScalingInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

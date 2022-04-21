@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘业务对象 */
+/**
+ * 边缘业务对象
+ */
 public class EdgeCloud {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 边缘业务ID。
-     * 
-     * @return id */
+    /**
+     * 边缘业务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
-     * 
-     * @return name */
+    /**
+     * 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +90,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 边缘业务描述。最大支持255字节。
-     * 
-     * @return description */
+    /**
+     * 边缘业务描述。最大支持255字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -111,9 +116,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** Get coverage
-     * 
-     * @return coverage */
+    /**
+     * Get coverage
+     * @return coverage
+     */
     public CoverageResp getCoverage() {
         return coverage;
     }
@@ -127,9 +133,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 创建失败的虚拟机
-     * 
-     * @return failedNum */
+    /**
+     * 创建失败的虚拟机
+     * @return failedNum
+     */
     public Integer getFailedNum() {
         return failedNum;
     }
@@ -143,9 +150,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
-     * 
-     * @return status */
+    /**
+     * 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -159,9 +167,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 成功创建的虚拟机
-     * 
-     * @return successNum */
+    /**
+     * 成功创建的虚拟机
+     * @return successNum
+     */
     public Integer getSuccessNum() {
         return successNum;
     }
@@ -175,9 +184,10 @@ public class EdgeCloud {
         return this;
     }
 
-    /** 边缘业务支持的边缘区域数目。
-     * 
-     * @return edgeRegions */
+    /**
+     * 边缘业务支持的边缘区域数目。
+     * @return edgeRegions
+     */
     public Integer getEdgeRegions() {
         return edgeRegions;
     }
@@ -223,7 +233,10 @@ public class EdgeCloud {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

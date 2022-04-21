@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListInvoicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListInvoicesRequest {
         return this;
     }
 
-    /** 发票申请开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return startTime */
+    /**
+     * 发票申请开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -49,9 +52,10 @@ public class ListInvoicesRequest {
         return this;
     }
 
-    /** 发票申请结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return endTime */
+    /**
+     * 发票申请结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -65,9 +69,12 @@ public class ListInvoicesRequest {
         return this;
     }
 
-    /** 页码。 minimum: 1 maximum: 99999
-     * 
-     * @return offset */
+    /**
+     * 页码。
+     * minimum: 1
+     * maximum: 99999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -81,9 +88,12 @@ public class ListInvoicesRequest {
         return this;
     }
 
-    /** 每页大小。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页大小。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +134,10 @@ public class ListInvoicesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

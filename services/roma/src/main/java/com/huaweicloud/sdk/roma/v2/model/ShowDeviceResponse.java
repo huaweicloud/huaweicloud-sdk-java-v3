@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeviceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,13 +69,19 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private String appName;
 
-    /** 设备状态 0-启用 1-禁用 */
+    /**
+     * 设备状态 0-启用 1-禁用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -143,16 +151,24 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private StatusEnum status;
 
-    /** 是否在线 0-未连接 1-在线 2-离线 */
+    /**
+     * 是否在线 0-未连接 1-在线 2-离线
+     */
     public static final class OnlineStatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final OnlineStatusEnum NUMBER_0 = new OnlineStatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final OnlineStatusEnum NUMBER_1 = new OnlineStatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final OnlineStatusEnum NUMBER_2 = new OnlineStatusEnum(2);
 
         private static final Map<Integer, OnlineStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -288,19 +304,24 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private Integer nodeType;
 
-    /** 设备类型<br>
-     * 0-普通设备（无子设备也无父设备）<br>
-     * 1-网关设备(可挂载子设备)<br>
-     * 2-子设备(归属于某个网关设备) */
+    /**
+     * 设备类型<br>0-普通设备（无子设备也无父设备）<br>1-网关设备(可挂载子设备)<br>2-子设备(归属于某个网关设备)
+     */
     public static final class DeviceTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final DeviceTypeEnum NUMBER_0 = new DeviceTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final DeviceTypeEnum NUMBER_1 = new DeviceTypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final DeviceTypeEnum NUMBER_2 = new DeviceTypeEnum(2);
 
         private static final Map<Integer, DeviceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -391,16 +412,24 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private String version;
 
-    /** modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品 */
+    /**
+     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
+     */
     public static final class PluginIdEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PluginIdEnum NUMBER_0 = new PluginIdEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PluginIdEnum NUMBER_1 = new PluginIdEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final PluginIdEnum NUMBER_2 = new PluginIdEnum(2);
 
         private static final Map<Integer, PluginIdEnum> STATIC_FIELDS = createStaticFields();
@@ -497,9 +526,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permissions */
+    /**
+     * 权限
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -513,9 +543,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return id */
+    /**
+     * 设备ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -529,9 +562,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 父设备ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return parentDeviceId */
+    /**
+     * 父设备ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return parentDeviceId
+     */
     public Integer getParentDeviceId() {
         return parentDeviceId;
     }
@@ -545,9 +581,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 父设备名称
-     * 
-     * @return parentDeviceName */
+    /**
+     * 父设备名称
+     * @return parentDeviceName
+     */
     public String getParentDeviceName() {
         return parentDeviceName;
     }
@@ -570,9 +607,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get product
-     * 
-     * @return product */
+    /**
+     * Get product
+     * @return product
+     */
     public ProductReferer getProduct() {
         return product;
     }
@@ -586,9 +624,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -602,9 +641,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例id
-     * 
-     * @return instanceId */
+    /**
+     * 实例id
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -618,9 +658,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备客户端ID，平台生成的设备唯一标识
-     * 
-     * @return clientId */
+    /**
+     * 设备客户端ID，平台生成的设备唯一标识
+     * @return clientId
+     */
     public String getClientId() {
         return clientId;
     }
@@ -634,9 +675,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
-     * 
-     * @return nodeId */
+    /**
+     * 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -650,9 +692,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -666,9 +709,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备状态 0-启用 1-禁用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 设备状态 0-启用 1-禁用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -682,9 +728,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否在线 0-未连接 1-在线 2-离线 minimum: 0 maximum: 10
-     * 
-     * @return onlineStatus */
+    /**
+     * 是否在线 0-未连接 1-在线 2-离线
+     * minimum: 0
+     * maximum: 10
+     * @return onlineStatus
+     */
     public OnlineStatusEnum getOnlineStatus() {
         return onlineStatus;
     }
@@ -698,9 +747,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return description */
+    /**
+     * 备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -723,9 +773,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get authentication
-     * 
-     * @return authentication */
+    /**
+     * Get authentication
+     * @return authentication
+     */
     public Authentication getAuthentication() {
         return authentication;
     }
@@ -748,9 +799,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get createdUser
-     * 
-     * @return createdUser */
+    /**
+     * Get createdUser
+     * @return createdUser
+     */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -773,9 +825,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lastUpdatedUser
-     * 
-     * @return lastUpdatedUser */
+    /**
+     * Get lastUpdatedUser
+     * @return lastUpdatedUser
+     */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -805,9 +858,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return tags */
+    /**
+     * 标签
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -821,9 +875,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return createdDatetime */
+    /**
+     * 创建时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return createdDatetime
+     */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -837,9 +894,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后修改时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastUpdatedDatetime */
+    /**
+     * 最后修改时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastUpdatedDatetime
+     */
     public Long getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -853,9 +913,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入地址
-     * 
-     * @return connectAddress */
+    /**
+     * 设备接入地址
+     * @return connectAddress
+     */
     public String getConnectAddress() {
         return connectAddress;
     }
@@ -869,9 +930,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入SSL地址
-     * 
-     * @return sslConnectAddress */
+    /**
+     * 设备接入SSL地址
+     * @return sslConnectAddress
+     */
     public String getSslConnectAddress() {
         return sslConnectAddress;
     }
@@ -885,9 +947,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入IPV6地址
-     * 
-     * @return ipv6ConnectAddress */
+    /**
+     * 设备接入IPV6地址
+     * @return ipv6ConnectAddress
+     */
     public String getIpv6ConnectAddress() {
         return ipv6ConnectAddress;
     }
@@ -901,9 +964,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入IPV6 SSL地址
-     * 
-     * @return ipv6SslConnectAddress */
+    /**
+     * 设备接入IPV6 SSL地址
+     * @return ipv6SslConnectAddress
+     */
     public String getIpv6SslConnectAddress() {
         return ipv6SslConnectAddress;
     }
@@ -917,9 +981,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后登录时间 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastLoginDatetime */
+    /**
+     * 最后登录时间
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastLoginDatetime
+     */
     public Long getLastLoginDatetime() {
         return lastLoginDatetime;
     }
@@ -933,9 +1000,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点类型 0-直连 1-网关 2-子设备 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return nodeType */
+    /**
+     * 节点类型 0-直连 1-网关 2-子设备
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return nodeType
+     */
     public Integer getNodeType() {
         return nodeType;
     }
@@ -949,12 +1019,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备类型<br>
-     * 0-普通设备（无子设备也无父设备）<br>
-     * 1-网关设备(可挂载子设备)<br>
-     * 2-子设备(归属于某个网关设备) minimum: 0 maximum: 10
-     * 
-     * @return deviceType */
+    /**
+     * 设备类型<br>0-普通设备（无子设备也无父设备）<br>1-网关设备(可挂载子设备)<br>2-子设备(归属于某个网关设备)
+     * minimum: 0
+     * maximum: 10
+     * @return deviceType
+     */
     public DeviceTypeEnum getDeviceType() {
         return deviceType;
     }
@@ -968,9 +1038,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 客户端ip
-     * 
-     * @return clientIp */
+    /**
+     * 客户端ip
+     * @return clientIp
+     */
     public String getClientIp() {
         return clientIp;
     }
@@ -984,9 +1055,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 心跳时间
-     * 
-     * @return keepAlive */
+    /**
+     * 心跳时间
+     * @return keepAlive
+     */
     public String getKeepAlive() {
         return keepAlive;
     }
@@ -1000,9 +1072,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后登录时间 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastActiveTime */
+    /**
+     * 最后登录时间
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastActiveTime
+     */
     public Long getLastActiveTime() {
         return lastActiveTime;
     }
@@ -1016,9 +1091,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备版本
-     * 
-     * @return version */
+    /**
+     * 设备版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -1032,9 +1108,12 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return pluginId */
+    /**
+     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return pluginId
+     */
     public PluginIdEnum getPluginId() {
         return pluginId;
     }
@@ -1048,9 +1127,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -1178,7 +1258,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

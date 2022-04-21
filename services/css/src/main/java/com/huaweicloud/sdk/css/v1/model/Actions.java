@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Actions */
+/**
+ * Actions
+ */
 public class Actions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Actions {
         return this;
     }
 
-    /** 操作记录id。
-     * 
-     * @return id */
+    /**
+     * 操作记录id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class Actions {
         return this;
     }
 
-    /** 操作类型。
-     * 
-     * @return actionType */
+    /**
+     * 操作类型。
+     * @return actionType
+     */
     public String getActionType() {
         return actionType;
     }
@@ -80,9 +84,10 @@ public class Actions {
         return this;
     }
 
-    /** 配置文件内容。
-     * 
-     * @return confContent */
+    /**
+     * 配置文件内容。
+     * @return confContent
+     */
     public String getConfContent() {
         return confContent;
     }
@@ -96,9 +101,10 @@ public class Actions {
         return this;
     }
 
-    /** 操作状态。
-     * 
-     * @return status */
+    /**
+     * 操作状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -112,9 +118,10 @@ public class Actions {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -128,9 +135,10 @@ public class Actions {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -144,9 +152,10 @@ public class Actions {
         return this;
     }
 
-    /** 内容。
-     * 
-     * @return message */
+    /**
+     * 内容。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -190,7 +199,10 @@ public class Actions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

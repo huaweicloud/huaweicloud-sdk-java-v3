@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 函数URN。
-     * 
-     * @return funcUrn */
+    /**
+     * 函数URN。
+     * @return funcUrn
+     */
     public String getFuncUrn() {
         return funcUrn;
     }
@@ -61,9 +64,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息最大存活时长，取值范围[60，86400]。单位：秒。
-     * 
-     * @return maxAsyncEventAgeInSeconds */
+    /**
+     * 消息最大存活时长，取值范围[60，86400]。单位：秒。
+     * @return maxAsyncEventAgeInSeconds
+     */
     public Integer getMaxAsyncEventAgeInSeconds() {
         return maxAsyncEventAgeInSeconds;
     }
@@ -77,9 +81,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
-     * 
-     * @return maxAsyncRetryAttempts */
+    /**
+     * 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
+     * @return maxAsyncRetryAttempts
+     */
     public Integer getMaxAsyncRetryAttempts() {
         return maxAsyncRetryAttempts;
     }
@@ -103,9 +108,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get destinationConfig
-     * 
-     * @return destinationConfig */
+    /**
+     * Get destinationConfig
+     * @return destinationConfig
+     */
     public FuncAsyncDestinationConfig getDestinationConfig() {
         return destinationConfig;
     }
@@ -119,9 +125,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 异步调用配置的创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 异步调用配置的创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -135,9 +142,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 异步调用配置的最后更改时间。
-     * 
-     * @return lastModified */
+    /**
+     * 异步调用配置的最后更改时间。
+     * @return lastModified
+     */
     public String getLastModified() {
         return lastModified;
     }
@@ -189,7 +197,10 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

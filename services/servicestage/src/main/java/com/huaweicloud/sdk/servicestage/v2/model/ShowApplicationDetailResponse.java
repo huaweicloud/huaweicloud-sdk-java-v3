@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowApplicationDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 组件个数。
-     * 
-     * @return componentCount */
+    /**
+     * 组件个数。
+     * @return componentCount
+     */
     public Integer getComponentCount() {
         return componentCount;
     }
@@ -75,9 +78,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return id */
+    /**
+     * 应用ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -91,9 +95,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return name */
+    /**
+     * 应用名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +112,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用描述。
-     * 
-     * @return description */
+    /**
+     * 应用描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +129,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建人。
-     * 
-     * @return creator */
+    /**
+     * 创建人。
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -139,9 +146,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -155,9 +163,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -171,9 +180,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -187,9 +197,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -248,7 +259,10 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePublicZoneResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,9 +99,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** zone的ID，uuid形式的一个资源标识。
-     * 
-     * @return id */
+    /**
+     * zone的ID，uuid形式的一个资源标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -113,9 +116,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** zone名称。
-     * 
-     * @return name */
+    /**
+     * zone名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -129,9 +133,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 对zone的描述信息。
-     * 
-     * @return description */
+    /**
+     * 对zone的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -145,9 +150,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 管理该zone的管理员邮箱。
-     * 
-     * @return email */
+    /**
+     * 管理该zone的管理员邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -161,9 +167,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** zone类型，公网（public）。
-     * 
-     * @return zoneType */
+    /**
+     * zone类型，公网（public）。
+     * @return zoneType
+     */
     public String getZoneType() {
         return zoneType;
     }
@@ -177,9 +184,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 该zone下SOA记录中的ttl值。
-     * 
-     * @return ttl */
+    /**
+     * 该zone下SOA记录中的ttl值。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -193,9 +201,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
-     * 
-     * @return serial */
+    /**
+     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+     * @return serial
+     */
     public Integer getSerial() {
         return serial;
     }
@@ -209,9 +218,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -225,9 +235,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 该zone下的recordset个数。
-     * 
-     * @return recordNum */
+    /**
+     * 该zone下的recordset个数。
+     * @return recordNum
+     */
     public Integer getRecordNum() {
         return recordNum;
     }
@@ -241,9 +252,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 托管该zone的pool，由系统分配。
-     * 
-     * @return poolId */
+    /**
+     * 托管该zone的pool，由系统分配。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -257,9 +269,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** zone所属的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * zone所属的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -273,9 +286,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -289,9 +303,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -314,9 +329,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -330,9 +346,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名关联的企业项目ID，长度不超过36个字符。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 域名关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -362,9 +379,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    /** 主从模式中，从DNS服务器用以获取DNS信息。 目前暂未使用。
-     * 
-     * @return masters */
+    /**
+     * 主从模式中，从DNS服务器用以获取DNS信息。  目前暂未使用。
+     * @return masters
+     */
     public List<String> getMasters() {
         return masters;
     }
@@ -444,7 +462,10 @@ public class CreatePublicZoneResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

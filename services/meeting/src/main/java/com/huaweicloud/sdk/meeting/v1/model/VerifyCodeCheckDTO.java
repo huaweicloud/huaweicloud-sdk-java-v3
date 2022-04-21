@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VerifyCodeCheckDTO */
+/**
+ * VerifyCodeCheckDTO
+ */
 public class VerifyCodeCheckDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class VerifyCodeCheckDTO {
         return this;
     }
 
-    /** 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1
-     * 
-     * @return user */
+    /**
+     * 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -39,9 +42,10 @@ public class VerifyCodeCheckDTO {
         return this;
     }
 
-    /** 验证码 maxLength：32 minLength：1
-     * 
-     * @return code */
+    /**
+     * 验证码 maxLength：32 minLength：1 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -77,7 +81,10 @@ public class VerifyCodeCheckDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

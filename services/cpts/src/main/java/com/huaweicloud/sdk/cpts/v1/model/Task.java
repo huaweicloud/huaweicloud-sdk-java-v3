@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** tasks */
+/**
+ * tasks
+ */
 public class Task {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,12 @@ public class Task {
         return this;
     }
 
-    /** bench_concurrent minimum: 0 maximum: 2147483647
-     * 
-     * @return benchConcurrent */
+    /**
+     * bench_concurrent
+     * minimum: 0
+     * maximum: 2147483647
+     * @return benchConcurrent
+     */
     public Integer getBenchConcurrent() {
         return benchConcurrent;
     }
@@ -65,9 +70,10 @@ public class Task {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -81,9 +87,12 @@ public class Task {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -97,9 +106,10 @@ public class Task {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -113,9 +123,12 @@ public class Task {
         return this;
     }
 
-    /** operate_mode minimum: 0 maximum: 2147483647
-     * 
-     * @return operateMode */
+    /**
+     * operate_mode
+     * minimum: 0
+     * maximum: 2147483647
+     * @return operateMode
+     */
     public Integer getOperateMode() {
         return operateMode;
     }
@@ -138,9 +151,10 @@ public class Task {
         return this;
     }
 
-    /** Get taskRunInfo
-     * 
-     * @return taskRunInfo */
+    /**
+     * Get taskRunInfo
+     * @return taskRunInfo
+     */
     public TaskRunInfo getTaskRunInfo() {
         return taskRunInfo;
     }
@@ -154,9 +168,10 @@ public class Task {
         return this;
     }
 
-    /** update_time
-     * 
-     * @return updateTime */
+    /**
+     * update_time
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -200,7 +215,10 @@ public class Task {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

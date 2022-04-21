@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFunctionAsyncInvocationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,22 +31,34 @@ public class ListFunctionAsyncInvocationsRequest {
 
     private String limit;
 
-    /** 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃 */
+    /**
+     * 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
+     */
     public static final class StatusEnum {
 
-        /** Enum WAIT for value: "WAIT" */
+        /**
+         * Enum WAIT for value: "WAIT"
+         */
         public static final StatusEnum WAIT = new StatusEnum("WAIT");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum DISCARD for value: "DISCARD" */
+        /**
+         * Enum DISCARD for value: "DISCARD"
+         */
         public static final StatusEnum DISCARD = new StatusEnum("DISCARD");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +146,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 函数URN
-     * 
-     * @return functionUrn */
+    /**
+     * 函数URN
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -148,9 +163,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 需要查询的异步请求ID。如果不指定，默认查询所有异步调用记录
-     * 
-     * @return requestId */
+    /**
+     * 需要查询的异步请求ID。如果不指定，默认查询所有异步调用记录
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -164,9 +180,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 本次查询最大返回的数据条数，最大值500，默认值100
-     * 
-     * @return limit */
+    /**
+     * 本次查询最大返回的数据条数，最大值500，默认值100
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -180,9 +197,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
-     * 
-     * @return status */
+    /**
+     * 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -196,9 +214,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 搜索起始时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。如果不指定默认为当前时间前1小时
-     * 
-     * @return queryBeginTime */
+    /**
+     * 搜索起始时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。如果不指定默认为当前时间前1小时
+     * @return queryBeginTime
+     */
     public OffsetDateTime getQueryBeginTime() {
         return queryBeginTime;
     }
@@ -212,9 +231,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return this;
     }
 
-    /** 搜索结束时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。如果不指定默认为当前时间
-     * 
-     * @return queryEndTime */
+    /**
+     * 搜索结束时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。如果不指定默认为当前时间
+     * @return queryEndTime
+     */
     public OffsetDateTime getQueryEndTime() {
         return queryEndTime;
     }
@@ -260,7 +280,10 @@ public class ListFunctionAsyncInvocationsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

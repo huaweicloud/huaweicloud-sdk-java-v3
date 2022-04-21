@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LimitValue */
+/**
+ * LimitValue
+ */
 public class LimitValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LimitValue {
         return this;
     }
 
-    /** 属性值1。
-     * 
-     * @return value1 */
+    /**
+     * 属性值1。
+     * @return value1
+     */
     public String getValue1() {
         return value1;
     }
@@ -39,9 +42,10 @@ public class LimitValue {
         return this;
     }
 
-    /** 属性值2。
-     * 
-     * @return value2 */
+    /**
+     * 属性值2。
+     * @return value2
+     */
     public String getValue2() {
         return value2;
     }
@@ -77,7 +81,10 @@ public class LimitValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateRepoRequest */
+/**
+ * CreateRepoRequest
+ */
 public class CreateRepoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 是否导入项目成员，取值范围：0->不导入项目成员，1->导入项目成员
-     * 
-     * @return importMembers */
+    /**
+     * 是否导入项目成员，取值范围：0->不导入项目成员，1->导入项目成员
+     * @return importMembers
+     */
     public Integer getImportMembers() {
         return importMembers;
     }
@@ -84,9 +87,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 仓库名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
-     * 
-     * @return name */
+    /**
+     * 仓库名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,9 +104,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 指定项目的UUID
-     * 
-     * @return projectUuid */
+    /**
+     * 指定项目的UUID
+     * @return projectUuid
+     */
     public String getProjectUuid() {
         return projectUuid;
     }
@@ -116,9 +121,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 复制模板的ID
-     * 
-     * @return templateId */
+    /**
+     * 复制模板的ID
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -132,9 +138,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 仓库状态，取值范围：0->私有，20->公开只读
-     * 
-     * @return visibilityLevel */
+    /**
+     * 仓库状态，取值范围：0->私有，20->公开只读
+     * @return visibilityLevel
+     */
     public Integer getVisibilityLevel() {
         return visibilityLevel;
     }
@@ -148,9 +155,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 模板仓库的https地址的base64加密
-     * 
-     * @return importUrl */
+    /**
+     * 模板仓库的https地址的base64加密
+     * @return importUrl
+     */
     public String getImportUrl() {
         return importUrl;
     }
@@ -164,9 +172,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 仓库描述信息
-     * 
-     * @return description */
+    /**
+     * 仓库描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -180,9 +189,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 根据编程语言生成.gitignore文件
-     * 
-     * @return gitignoreId */
+    /**
+     * 根据编程语言生成.gitignore文件
+     * @return gitignoreId
+     */
     public String getGitignoreId() {
         return gitignoreId;
     }
@@ -196,9 +206,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 许可证id
-     * 
-     * @return licenseId */
+    /**
+     * 许可证id
+     * @return licenseId
+     */
     public Integer getLicenseId() {
         return licenseId;
     }
@@ -212,9 +223,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 是否允许生成README文件
-     * 
-     * @return enableReadme */
+    /**
+     * 是否允许生成README文件
+     * @return enableReadme
+     */
     public Integer getEnableReadme() {
         return enableReadme;
     }
@@ -228,9 +240,10 @@ public class CreateRepoRequest {
         return this;
     }
 
-    /** 调用者
-     * 
-     * @return caller */
+    /**
+     * 调用者
+     * @return caller
+     */
     public String getCaller() {
         return caller;
     }
@@ -295,7 +308,10 @@ public class CreateRepoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

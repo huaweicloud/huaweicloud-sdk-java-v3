@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTablePreviewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowTablePreviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 表的列名称和类型。
-     * 
-     * @return schema */
+    /**
+     * 表的列名称和类型。
+     * @return schema
+     */
     public List<Object> getSchema() {
         return schema;
     }
@@ -75,9 +78,10 @@ public class ShowTablePreviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 预览的表内容。
-     * 
-     * @return rows */
+    /**
+     * 预览的表内容。
+     * @return rows
+     */
     public List<Object> getRows() {
         return rows;
     }
@@ -114,7 +118,10 @@ public class ShowTablePreviewResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

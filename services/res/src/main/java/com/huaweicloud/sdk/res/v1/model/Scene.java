@@ -65,9 +65,10 @@ public class Scene {
         return this;
     }
 
-    /** 类型。
-     * 
-     * @return category */
+    /**
+     * 类型。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -81,9 +82,10 @@ public class Scene {
         return this;
     }
 
-    /** 场景类型。
-     * 
-     * @return type */
+    /**
+     * 场景类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -97,9 +99,10 @@ public class Scene {
         return this;
     }
 
-    /** 场景名称。
-     * 
-     * @return sceneName */
+    /**
+     * 场景名称。
+     * @return sceneName
+     */
     public String getSceneName() {
         return sceneName;
     }
@@ -113,9 +116,10 @@ public class Scene {
         return this;
     }
 
-    /** 场景id。
-     * 
-     * @return sceneId */
+    /**
+     * 场景id。
+     * @return sceneId
+     */
     public String getSceneId() {
         return sceneId;
     }
@@ -129,9 +133,10 @@ public class Scene {
         return this;
     }
 
-    /** 数据源id。
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源id。
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -145,9 +150,10 @@ public class Scene {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -161,9 +167,10 @@ public class Scene {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public Integer getCreatedAt() {
         return createdAt;
     }
@@ -177,9 +184,10 @@ public class Scene {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public Integer getUpdateAt() {
         return updateAt;
     }
@@ -193,9 +201,10 @@ public class Scene {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -209,9 +218,10 @@ public class Scene {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -269,7 +279,10 @@ public class Scene {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

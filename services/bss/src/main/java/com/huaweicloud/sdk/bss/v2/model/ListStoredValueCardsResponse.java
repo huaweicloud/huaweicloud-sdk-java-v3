@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListStoredValueCardsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListStoredValueCardsResponse extends SdkResponse {
         return this;
     }
 
-    /** 符合查询条件的总条数。
-     * 
-     * @return totalCount */
+    /**
+     * 符合查询条件的总条数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -60,9 +63,10 @@ public class ListStoredValueCardsResponse extends SdkResponse {
         return this;
     }
 
-    /** 优惠券记录。 具体请参见表2。
-     * 
-     * @return storedValueCards */
+    /**
+     * 优惠券记录。 具体请参见表2。
+     * @return storedValueCards
+     */
     public List<UserStoredValueCard> getStoredValueCards() {
         return storedValueCards;
     }
@@ -99,7 +103,10 @@ public class ListStoredValueCardsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 攻击事件统计结果 */
+/**
+ * 攻击事件统计结果
+ */
 public class CountItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CountItem {
         return this;
     }
 
-    /** 类型
-     * 
-     * @return key */
+    /**
+     * 类型
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class CountItem {
         return this;
     }
 
-    /** 数量
-     * 
-     * @return num */
+    /**
+     * 数量
+     * @return num
+     */
     public Integer getNum() {
         return num;
     }
@@ -77,7 +81,10 @@ public class CountItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

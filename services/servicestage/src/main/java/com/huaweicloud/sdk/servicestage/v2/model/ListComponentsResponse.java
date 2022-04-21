@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListComponentsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListComponentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 组件个数。
-     * 
-     * @return count */
+    /**
+     * 组件个数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListComponentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 组件列表。
-     * 
-     * @return components */
+    /**
+     * 组件列表。
+     * @return components
+     */
     public List<ComponentView> getComponents() {
         return components;
     }
@@ -98,7 +102,10 @@ public class ListComponentsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

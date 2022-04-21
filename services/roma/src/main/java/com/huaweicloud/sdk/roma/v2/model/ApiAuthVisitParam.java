@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiAuthVisitParam */
+/**
+ * ApiAuthVisitParam
+ */
 public class ApiAuthVisitParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ApiAuthVisitParam {
         return this;
     }
 
-    /** 需要授权的API编号
-     * 
-     * @return apiId */
+    /**
+     * 需要授权的API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -44,9 +47,10 @@ public class ApiAuthVisitParam {
         return this;
     }
 
-    /** 需要授权的APP编号
-     * 
-     * @return appId */
+    /**
+     * 需要授权的APP编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -60,9 +64,10 @@ public class ApiAuthVisitParam {
         return this;
     }
 
-    /** 访问参数 支持英文、数字、下划线和中划线，多个参数以英文格式下的逗号隔开，单个参数须以英文或数字结尾且不能重复，且单个参数长度不超过255个字符。
-     * 
-     * @return visitParam */
+    /**
+     * 访问参数  支持英文、数字、下划线和中划线，多个参数以英文格式下的逗号隔开，单个参数须以英文或数字结尾且不能重复，且单个参数长度不超过255个字符。
+     * @return visitParam
+     */
     public String getVisitParam() {
         return visitParam;
     }
@@ -101,7 +106,10 @@ public class ApiAuthVisitParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

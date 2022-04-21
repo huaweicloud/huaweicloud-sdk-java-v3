@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiCreate */
+/**
+ * ApiCreate
+ */
 public class ApiCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class ApiCreate {
 
     private String name;
 
-    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API */
+    /**
+     * API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
+     */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
         private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,16 +110,24 @@ public class ApiCreate {
 
     private String version;
 
-    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS */
+    /**
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     */
     public static final class ReqProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
-        /** Enum BOTH for value: "BOTH" */
+        /**
+         * Enum BOTH for value: "BOTH"
+         */
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -182,31 +198,49 @@ public class ApiCreate {
 
     private ReqProtocolEnum reqProtocol;
 
-    /** API的请求方式 */
+    /**
+     * API的请求方式
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -287,19 +321,29 @@ public class ApiCreate {
 
     private String reqUri;
 
-    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
+    /**
+     * API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     */
     public static final class AuthTypeEnum {
 
-        /** Enum NONE for value: "NONE" */
+        /**
+         * Enum NONE for value: "NONE"
+         */
         public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
 
-        /** Enum APP for value: "APP" */
+        /**
+         * Enum APP for value: "APP"
+         */
         public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
 
-        /** Enum IAM for value: "IAM" */
+        /**
+         * Enum IAM for value: "IAM"
+         */
         public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
 
-        /** Enum AUTHORIZER for value: "AUTHORIZER" */
+        /**
+         * Enum AUTHORIZER for value: "AUTHORIZER"
+         */
         public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
 
         private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -381,13 +425,19 @@ public class ApiCreate {
 
     private Boolean cors;
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     */
     public static final class MatchModeEnum {
 
-        /** Enum SWA for value: "SWA" */
+        /**
+         * Enum SWA for value: "SWA"
+         */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
@@ -457,16 +507,24 @@ public class ApiCreate {
 
     private MatchModeEnum matchMode;
 
-    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
+    /**
+     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     */
     public static final class BackendTypeEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final BackendTypeEnum HTTP = new BackendTypeEnum("HTTP");
 
-        /** Enum FUNCTION for value: "FUNCTION" */
+        /**
+         * Enum FUNCTION for value: "FUNCTION"
+         */
         public static final BackendTypeEnum FUNCTION = new BackendTypeEnum("FUNCTION");
 
-        /** Enum MOCK for value: "MOCK" */
+        /**
+         * Enum MOCK for value: "MOCK"
+         */
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
 
         private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -592,19 +650,29 @@ public class ApiCreate {
 
     private String tag;
 
-    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain */
+    /**
+     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain
+     */
     public static final class ContentTypeEnum {
 
-        /** Enum APPLICATION_JSON for value: "application/json" */
+        /**
+         * Enum APPLICATION_JSON for value: "application/json"
+         */
         public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
 
-        /** Enum APPLICATION_XML for value: "application/xml" */
+        /**
+         * Enum APPLICATION_XML for value: "application/xml"
+         */
         public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
 
-        /** Enum MULTIPART_FORM_DATE for value: "multipart/form-date" */
+        /**
+         * Enum MULTIPART_FORM_DATE for value: "multipart/form-date"
+         */
         public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
 
-        /** Enum TEXT_PLAIN for value: "text/plain" */
+        /**
+         * Enum TEXT_PLAIN for value: "text/plain"
+         */
         public static final ContentTypeEnum TEXT_PLAIN = new ContentTypeEnum("text/plain");
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -721,9 +789,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -737,9 +806,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
-     * 
-     * @return type */
+    /**
+     * API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -753,9 +823,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的版本
-     * 
-     * @return version */
+    /**
+     * API的版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -769,9 +840,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     * 
-     * @return reqProtocol */
+    /**
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * @return reqProtocol
+     */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -785,9 +857,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的请求方式
-     * 
-     * @return reqMethod */
+    /**
+     * API的请求方式
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -801,9 +874,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
-     * 
-     * @return reqUri */
+    /**
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -817,9 +891,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     * 
-     * @return authType */
+    /**
+     * API的认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * @return authType
+     */
     public AuthTypeEnum getAuthType() {
         return authType;
     }
@@ -842,9 +917,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** Get authOpt
-     * 
-     * @return authOpt */
+    /**
+     * Get authOpt
+     * @return authOpt
+     */
     public AuthOpt getAuthOpt() {
         return authOpt;
     }
@@ -858,9 +934,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 是否支持跨域 - TRUE：支持 - FALSE：不支持
-     * 
-     * @return cors */
+    /**
+     * 是否支持跨域 - TRUE：支持 - FALSE：不支持
+     * @return cors
+     */
     public Boolean getCors() {
         return cors;
     }
@@ -874,9 +951,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     * 
-     * @return matchMode */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     * @return matchMode
+     */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -890,9 +968,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     * 
-     * @return backendType */
+    /**
+     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * @return backendType
+     */
     public BackendTypeEnum getBackendType() {
         return backendType;
     }
@@ -906,9 +985,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API描述。 不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * API描述。  不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -922,9 +1002,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API所属的分组编号
-     * 
-     * @return groupId */
+    /**
+     * API所属的分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -938,9 +1019,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return bodyRemark */
+    /**
+     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return bodyRemark
+     */
     public String getBodyRemark() {
         return bodyRemark;
     }
@@ -954,9 +1036,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return resultNormalSample */
+    /**
+     * 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return resultNormalSample
+     */
     public String getResultNormalSample() {
         return resultNormalSample;
     }
@@ -970,9 +1053,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return resultFailureSample */
+    /**
+     * 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return resultFailureSample
+     */
     public String getResultFailureSample() {
         return resultFailureSample;
     }
@@ -986,9 +1070,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 前端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 前端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -1018,9 +1103,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 标签。 支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。支持输入多个标签，不同标签以英文逗号分割。 默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。
-     * 
-     * @return tags */
+    /**
+     * 标签。  支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。支持输入多个标签，不同标签以英文逗号分割。  默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。 
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -1034,9 +1120,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 分组自定义响应ID 暂不支持
-     * 
-     * @return responseId */
+    /**
+     * 分组自定义响应ID  暂不支持
+     * @return responseId
+     */
     public String getResponseId() {
         return responseId;
     }
@@ -1050,9 +1137,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API归属的集成应用编号 API分组为全局分组时或API绑定自定义域名时必填。
-     * 
-     * @return romaAppId */
+    /**
+     * API归属的集成应用编号  API分组为全局分组时或API绑定自定义域名时必填。
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -1066,9 +1154,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API绑定的自定义域名，使用自定义域名时roma_app_id字段必填。
-     * 
-     * @return domainName */
+    /**
+     * API绑定的自定义域名，使用自定义域名时roma_app_id字段必填。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -1082,9 +1171,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 标签 待废弃，优先使用tags字段
-     * 
-     * @return tag */
+    /**
+     * 标签  待废弃，优先使用tags字段
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -1098,9 +1188,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** 请求内容格式类型： application/json application/xml multipart/form-date text/plain
-     * 
-     * @return contentType */
+    /**
+     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain
+     * @return contentType
+     */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -1123,9 +1214,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** Get mockInfo
-     * 
-     * @return mockInfo */
+    /**
+     * Get mockInfo
+     * @return mockInfo
+     */
     public ApiMockCreate getMockInfo() {
         return mockInfo;
     }
@@ -1148,9 +1240,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** Get funcInfo
-     * 
-     * @return funcInfo */
+    /**
+     * Get funcInfo
+     * @return funcInfo
+     */
     public ApiFuncCreate getFuncInfo() {
         return funcInfo;
     }
@@ -1180,9 +1273,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的请求参数列表
-     * 
-     * @return reqParams */
+    /**
+     * API的请求参数列表
+     * @return reqParams
+     */
     public List<ReqParamBase> getReqParams() {
         return reqParams;
     }
@@ -1212,9 +1306,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** API的后端参数列表
-     * 
-     * @return backendParams */
+    /**
+     * API的后端参数列表
+     * @return backendParams
+     */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -1244,9 +1339,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** mock策略后端列表
-     * 
-     * @return policyMocks */
+    /**
+     * mock策略后端列表
+     * @return policyMocks
+     */
     public List<ApiPolicyMockCreate> getPolicyMocks() {
         return policyMocks;
     }
@@ -1276,9 +1372,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** [函数工作流策略后端列表](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site)
-     * 
-     * @return policyFunctions */
+    /**
+     * [函数工作流策略后端列表](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site)
+     * @return policyFunctions
+     */
     public List<ApiPolicyFunctionCreate> getPolicyFunctions() {
         return policyFunctions;
     }
@@ -1301,9 +1398,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** Get backendApi
-     * 
-     * @return backendApi */
+    /**
+     * Get backendApi
+     * @return backendApi
+     */
     public BackendApiCreate getBackendApi() {
         return backendApi;
     }
@@ -1333,9 +1431,10 @@ public class ApiCreate {
         return this;
     }
 
-    /** web策略后端列表
-     * 
-     * @return policyHttps */
+    /**
+     * web策略后端列表
+     * @return policyHttps
+     */
     public List<ApiPolicyHttpCreate> getPolicyHttps() {
         return policyHttps;
     }
@@ -1451,7 +1550,10 @@ public class ApiCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

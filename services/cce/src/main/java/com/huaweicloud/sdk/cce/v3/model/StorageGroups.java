@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StorageGroups */
+/**
+ * StorageGroups
+ */
 public class StorageGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class StorageGroups {
         return this;
     }
 
-    /** storageGroups的名字，作为虚拟存储组的名字，因此各个group个名字不能重复。
-     * 
-     * @return name */
+    /**
+     * storageGroups的名字，作为虚拟存储组的名字，因此各个group个名字不能重复。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class StorageGroups {
         return this;
     }
 
-    /** k8s及runtime所属存储空间。有且仅有一个group被设置为true，不填默认false。
-     * 
-     * @return cceManaged */
+    /**
+     * k8s及runtime所属存储空间。有且仅有一个group被设置为true，不填默认false。
+     * @return cceManaged
+     */
     public Boolean getCceManaged() {
         return cceManaged;
     }
@@ -84,9 +88,10 @@ public class StorageGroups {
         return this;
     }
 
-    /** 对应storageSelectors中的name，一个group可选择多个selector；但一个selector只能被一个group选择。
-     * 
-     * @return selectorNames */
+    /**
+     * 对应storageSelectors中的name，一个group可选择多个selector；但一个selector只能被一个group选择。
+     * @return selectorNames
+     */
     public List<String> getSelectorNames() {
         return selectorNames;
     }
@@ -116,9 +121,10 @@ public class StorageGroups {
         return this;
     }
 
-    /** group中空间配置的详细管理。
-     * 
-     * @return virtualSpaces */
+    /**
+     * group中空间配置的详细管理。
+     * @return virtualSpaces
+     */
     public List<VirtualSpace> getVirtualSpaces() {
         return virtualSpaces;
     }
@@ -159,7 +165,10 @@ public class StorageGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

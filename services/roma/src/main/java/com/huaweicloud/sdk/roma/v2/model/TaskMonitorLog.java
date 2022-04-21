@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 任务监控日志 */
+/**
+ * 任务监控日志
+ */
 public class TaskMonitorLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,25 +39,39 @@ public class TaskMonitorLog {
 
     private Long endTime;
 
-    /** 任务本次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常 */
+    /**
+     * 任务本次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
+     */
     public static final class ExecuteStatusEnum {
 
-        /** Enum UNSTARTED for value: "UNSTARTED" */
+        /**
+         * Enum UNSTARTED for value: "UNSTARTED"
+         */
         public static final ExecuteStatusEnum UNSTARTED = new ExecuteStatusEnum("UNSTARTED");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final ExecuteStatusEnum WAITING = new ExecuteStatusEnum("WAITING");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final ExecuteStatusEnum RUNNING = new ExecuteStatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final ExecuteStatusEnum SUCCESS = new ExecuteStatusEnum("SUCCESS");
 
-        /** Enum CANCELLED for value: "CANCELLED" */
+        /**
+         * Enum CANCELLED for value: "CANCELLED"
+         */
         public static final ExecuteStatusEnum CANCELLED = new ExecuteStatusEnum("CANCELLED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ExecuteStatusEnum ERROR = new ExecuteStatusEnum("ERROR");
 
         private static final Map<String, ExecuteStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -129,16 +145,24 @@ public class TaskMonitorLog {
 
     private ExecuteStatusEnum executeStatus;
 
-    /** 标识本次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作 */
+    /**
+     * 标识本次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
+     */
     public static final class PositionEnum {
 
-        /** Enum ADAPTER for value: "ADAPTER" */
+        /**
+         * Enum ADAPTER for value: "ADAPTER"
+         */
         public static final PositionEnum ADAPTER = new PositionEnum("ADAPTER");
 
-        /** Enum READER for value: "READER" */
+        /**
+         * Enum READER for value: "READER"
+         */
         public static final PositionEnum READER = new PositionEnum("READER");
 
-        /** Enum WRITER for value: "WRITER" */
+        /**
+         * Enum WRITER for value: "WRITER"
+         */
         public static final PositionEnum WRITER = new PositionEnum("WRITER");
 
         private static final Map<String, PositionEnum> STATIC_FIELDS = createStaticFields();
@@ -209,26 +233,39 @@ public class TaskMonitorLog {
 
     private PositionEnum position;
 
-    /** 任务本次执行当前阶段的状态，允许如下值：NORMAL-正在运行, NODE_END-本节点正常结束, RUNTIME_CANCEL-任务被取消, TASK_END-本任务正常结束, RUNTIME_ERR-运行时异常,
-     * INTERNAL_ERR-内部程序异常 */
+    /**
+     * 任务本次执行当前阶段的状态，允许如下值：NORMAL-正在运行, NODE_END-本节点正常结束, RUNTIME_CANCEL-任务被取消, TASK_END-本任务正常结束, RUNTIME_ERR-运行时异常, INTERNAL_ERR-内部程序异常
+     */
     public static final class PositionStatusEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final PositionStatusEnum NORMAL = new PositionStatusEnum("NORMAL");
 
-        /** Enum NODE_END for value: "NODE_END" */
+        /**
+         * Enum NODE_END for value: "NODE_END"
+         */
         public static final PositionStatusEnum NODE_END = new PositionStatusEnum("NODE_END");
 
-        /** Enum RUNTIME_CANCEL for value: "RUNTIME_CANCEL" */
+        /**
+         * Enum RUNTIME_CANCEL for value: "RUNTIME_CANCEL"
+         */
         public static final PositionStatusEnum RUNTIME_CANCEL = new PositionStatusEnum("RUNTIME_CANCEL");
 
-        /** Enum TASK_END for value: "TASK_END" */
+        /**
+         * Enum TASK_END for value: "TASK_END"
+         */
         public static final PositionStatusEnum TASK_END = new PositionStatusEnum("TASK_END");
 
-        /** Enum RUNTIME_ERR for value: "RUNTIME_ERR" */
+        /**
+         * Enum RUNTIME_ERR for value: "RUNTIME_ERR"
+         */
         public static final PositionStatusEnum RUNTIME_ERR = new PositionStatusEnum("RUNTIME_ERR");
 
-        /** Enum INTERNAL_ERR for value: "INTERNAL_ERR" */
+        /**
+         * Enum INTERNAL_ERR for value: "INTERNAL_ERR"
+         */
         public static final PositionStatusEnum INTERNAL_ERR = new PositionStatusEnum("INTERNAL_ERR");
 
         private static final Map<String, PositionStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -322,22 +359,34 @@ public class TaskMonitorLog {
 
     private BigDecimal dataSize;
 
-    /** 成功数据大小的计量单位 */
+    /**
+     * 成功数据大小的计量单位
+     */
     public static final class DataSizeUnitEnum {
 
-        /** Enum B for value: "B" */
+        /**
+         * Enum B for value: "B"
+         */
         public static final DataSizeUnitEnum B = new DataSizeUnitEnum("B");
 
-        /** Enum KB for value: "KB" */
+        /**
+         * Enum KB for value: "KB"
+         */
         public static final DataSizeUnitEnum KB = new DataSizeUnitEnum("KB");
 
-        /** Enum MB for value: "MB" */
+        /**
+         * Enum MB for value: "MB"
+         */
         public static final DataSizeUnitEnum MB = new DataSizeUnitEnum("MB");
 
-        /** Enum GB for value: "GB" */
+        /**
+         * Enum GB for value: "GB"
+         */
         public static final DataSizeUnitEnum GB = new DataSizeUnitEnum("GB");
 
-        /** Enum TB for value: "TB" */
+        /**
+         * Enum TB for value: "TB"
+         */
         public static final DataSizeUnitEnum TB = new DataSizeUnitEnum("TB");
 
         private static final Map<String, DataSizeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -440,9 +489,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 单次任务执行的跟踪ID
-     * 
-     * @return id */
+    /**
+     * 单次任务执行的跟踪ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -456,9 +506,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 本次执行启动时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 9999999999999
-     * 
-     * @return startTime */
+    /**
+     * 本次执行启动时间，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -472,9 +525,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 计划执行时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 9999999999999
-     * 
-     * @return dispatchTime */
+    /**
+     * 计划执行时间，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return dispatchTime
+     */
     public Long getDispatchTime() {
         return dispatchTime;
     }
@@ -488,9 +544,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 写入结束时间，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 9999999999999
-     * 
-     * @return endTime */
+    /**
+     * 写入结束时间，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -504,9 +563,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 任务本次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
-     * 
-     * @return executeStatus */
+    /**
+     * 任务本次执行状态，允许如下值：UNSTARTED-未启动, WAITING-等待调度中, RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常
+     * @return executeStatus
+     */
     public ExecuteStatusEnum getExecuteStatus() {
         return executeStatus;
     }
@@ -520,9 +580,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 标识本次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
-     * 
-     * @return position */
+    /**
+     * 标识本次任务执行到哪一个阶段，允许如下值：ADAPTER-任务处于初始化阶段, READER-任务正在执行Reader读操作, WRITER-任务正在执行Writer写操作
+     * @return position
+     */
     public PositionEnum getPosition() {
         return position;
     }
@@ -536,10 +597,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 任务本次执行当前阶段的状态，允许如下值：NORMAL-正在运行, NODE_END-本节点正常结束, RUNTIME_CANCEL-任务被取消, TASK_END-本任务正常结束, RUNTIME_ERR-运行时异常,
-     * INTERNAL_ERR-内部程序异常
-     * 
-     * @return positionStatus */
+    /**
+     * 任务本次执行当前阶段的状态，允许如下值：NORMAL-正在运行, NODE_END-本节点正常结束, RUNTIME_CANCEL-任务被取消, TASK_END-本任务正常结束, RUNTIME_ERR-运行时异常, INTERNAL_ERR-内部程序异常
+     * @return positionStatus
+     */
     public PositionStatusEnum getPositionStatus() {
         return positionStatus;
     }
@@ -553,47 +614,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 本次任务执行详细状态，使用状态码的形式</br>
-     * 状态码划分规则：reader端 100 ~ 499，writer端 500 ~ 899，其他900 ~ </br>
-     * 当前状态码如下：</br>
-     * 16-被强制取消</br>
-     * 99-任务开始</br>
-     * 100-Reader 任务开始</br>
-     * 101-Reader 任务结束</br>
-     * 102-正在读取数据</br>
-     * 103-读端数据源端异常</br>
-     * 104-读取数据结束</br>
-     * 105-读取数据为0</br>
-     * 106-读任务强制取消</br>
-     * 107-在reader plugin中，任务发生了中断</br>
-     * 108-读任务恢复运行</br>
-     * 500-Writer 任务开始</br>
-     * 501-Writer 任务结束</br>
-     * 502-正在数据写入</br>
-     * 503-目标端异常</br>
-     * 504-数据写入结束</br>
-     * 505-写任务强制取消</br>
-     * 506-在writer plugin中，任务发生了中断</br>
-     * 507-写任务恢复运行</br>
-     * 900-接收到调度请求</br>
-     * 901-任务运行结束</br>
-     * 902-任务已运行结束，正在进行数据完整性校验</br>
-     * 903-输出数据完整性校验结果</br>
-     * 904-经过数据完整性校验，发现有数据缺失，正在进行数据补偿</br>
-     * 905-输出数据补偿结果</br>
-     * 906-读取任务正在在排队中（平台资源）</br>
-     * 907-读取任务被拒绝执行，因为上一次调度还没有结束</br>
-     * 908-写入任务正在在排队中（平台资源）</br>
-     * 909-写入任务被拒绝执行，因为上一次调度还没有结束</br>
-     * 911-读取任务没有被正常开启，请检查网络是否通畅，参数是否正确</br>
-     * 912-写入任务没有被正常开启，请检查网络是否通畅，参数是否正确</br>
-     * 913-任务调度请求失败</br>
-     * 914-任务被拒绝执行，因为上一次调度还没有结束</br>
-     * 915-任务不正常运行</br>
-     * 916-任务日志上报异常</br>
-     * minimum: 1 maximum: 1000
-     * 
-     * @return status */
+    /**
+     * 本次任务执行详细状态，使用状态码的形式</br> 状态码划分规则：reader端 100 ~ 499，writer端 500 ~ 899，其他900 ~ </br> 当前状态码如下：</br> 16-被强制取消</br> 99-任务开始</br> 100-Reader 任务开始</br> 101-Reader 任务结束</br> 102-正在读取数据</br> 103-读端数据源端异常</br> 104-读取数据结束</br> 105-读取数据为0</br> 106-读任务强制取消</br> 107-在reader plugin中，任务发生了中断</br> 108-读任务恢复运行</br> 500-Writer 任务开始</br> 501-Writer 任务结束</br> 502-正在数据写入</br> 503-目标端异常</br> 504-数据写入结束</br> 505-写任务强制取消</br> 506-在writer plugin中，任务发生了中断</br> 507-写任务恢复运行</br> 900-接收到调度请求</br> 901-任务运行结束</br> 902-任务已运行结束，正在进行数据完整性校验</br> 903-输出数据完整性校验结果</br> 904-经过数据完整性校验，发现有数据缺失，正在进行数据补偿</br> 905-输出数据补偿结果</br> 906-读取任务正在在排队中（平台资源）</br> 907-读取任务被拒绝执行，因为上一次调度还没有结束</br> 908-写入任务正在在排队中（平台资源）</br> 909-写入任务被拒绝执行，因为上一次调度还没有结束</br> 911-读取任务没有被正常开启，请检查网络是否通畅，参数是否正确</br> 912-写入任务没有被正常开启，请检查网络是否通畅，参数是否正确</br> 913-任务调度请求失败</br> 914-任务被拒绝执行，因为上一次调度还没有结束</br> 915-任务不正常运行</br> 916-任务日志上报异常</br>
+     * minimum: 1
+     * maximum: 1000
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -607,9 +633,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 异常数据条数 minimum: 0 maximum: 9999999999999
-     * 
-     * @return dirtyDataCount */
+    /**
+     * 异常数据条数
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return dirtyDataCount
+     */
     public Integer getDirtyDataCount() {
         return dirtyDataCount;
     }
@@ -623,9 +652,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 成功数据条数 minimum: 0 maximum: 9999999999999
-     * 
-     * @return dataCount */
+    /**
+     * 成功数据条数
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return dataCount
+     */
     public Integer getDataCount() {
         return dataCount;
     }
@@ -639,9 +671,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 成功数据大小，浮点数类型 minimum: 0 maximum: 9999999999999
-     * 
-     * @return dataSize */
+    /**
+     * 成功数据大小，浮点数类型
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return dataSize
+     */
     public BigDecimal getDataSize() {
         return dataSize;
     }
@@ -655,9 +690,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 成功数据大小的计量单位
-     * 
-     * @return dataSizeUnit */
+    /**
+     * 成功数据大小的计量单位
+     * @return dataSizeUnit
+     */
     public DataSizeUnitEnum getDataSizeUnit() {
         return dataSizeUnit;
     }
@@ -671,9 +707,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 执行时长，单位：ms minimum: 0 maximum: 9999999999999
-     * 
-     * @return spendTime */
+    /**
+     * 执行时长，单位：ms
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return spendTime
+     */
     public Long getSpendTime() {
         return spendTime;
     }
@@ -687,9 +726,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 读取执行时长，单位：ms，只有在定时任务时存在该属性 minimum: 0 maximum: 9999999999999
-     * 
-     * @return readSpendTime */
+    /**
+     * 读取执行时长，单位：ms，只有在定时任务时存在该属性
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return readSpendTime
+     */
     public Long getReadSpendTime() {
         return readSpendTime;
     }
@@ -703,9 +745,12 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 写入执行时长，单位：ms minimum: 0 maximum: 9999999999999
-     * 
-     * @return writeSpendTime */
+    /**
+     * 写入执行时长，单位：ms
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return writeSpendTime
+     */
     public Long getWriteSpendTime() {
         return writeSpendTime;
     }
@@ -719,9 +764,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 本次执行结果简要信息
-     * 
-     * @return remarks */
+    /**
+     * 本次执行结果简要信息
+     * @return remarks
+     */
     public String getRemarks() {
         return remarks;
     }
@@ -751,9 +797,10 @@ public class TaskMonitorLog {
         return this;
     }
 
-    /** 本次执行详细轨迹信息
-     * 
-     * @return detailLogs */
+    /**
+     * 本次执行详细轨迹信息
+     * @return detailLogs
+     */
     public List<TaskMonitorDetailLog> getDetailLogs() {
         return detailLogs;
     }
@@ -835,7 +882,10 @@ public class TaskMonitorLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

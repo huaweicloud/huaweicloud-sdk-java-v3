@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDatabaseUsersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库用户信息。
-     * 
-     * @return users */
+    /**
+     * 数据库用户信息。
+     * @return users
+     */
     public String getUsers() {
         return users;
     }
@@ -40,9 +43,10 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库用户总数。
-     * 
-     * @return totalCount */
+    /**
+     * 数据库用户总数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -79,7 +83,10 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AudioTrack */
+/**
+ * AudioTrack
+ */
 public class AudioTrack {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class AudioTrack {
         return this;
     }
 
-    /** 音轨选取方式。 - 0：默认选取 - 1：手动选择 minimum: 0 maximum: 1
-     * 
-     * @return type */
+    /**
+     * 音轨选取方式。 - 0：默认选取 - 1：手动选择 
+     * minimum: 0
+     * maximum: 1
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -44,9 +49,12 @@ public class AudioTrack {
         return this;
     }
 
-    /** 选取左声道所在的音轨编号。 minimum: 0 maximum: 2147483647
-     * 
-     * @return left */
+    /**
+     * 选取左声道所在的音轨编号。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return left
+     */
     public Integer getLeft() {
         return left;
     }
@@ -60,9 +68,12 @@ public class AudioTrack {
         return this;
     }
 
-    /** 选取右声道所在的音轨编号。 minimum: 0 maximum: 2147483647
-     * 
-     * @return right */
+    /**
+     * 选取右声道所在的音轨编号。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return right
+     */
     public Integer getRight() {
         return right;
     }
@@ -100,7 +111,10 @@ public class AudioTrack {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

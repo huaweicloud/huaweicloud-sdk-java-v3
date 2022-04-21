@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeviceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,9 +109,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间ID。
-     * 
-     * @return appId */
+    /**
+     * 资源空间ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -123,9 +126,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间名称。
-     * 
-     * @return appName */
+    /**
+     * 资源空间名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -139,9 +143,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -155,9 +160,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。
-     * 
-     * @return nodeId */
+    /**
+     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -171,9 +177,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 网关ID，用于标识设备所属的父设备，即父设备的设备ID。当设备是直连设备时，gateway_id与设备的device_id一致。当设备是非直连设备时，gateway_id为设备所关联的父设备的device_id。
-     * 
-     * @return gatewayId */
+    /**
+     * 网关ID，用于标识设备所属的父设备，即父设备的设备ID。当设备是直连设备时，gateway_id与设备的device_id一致。当设备是非直连设备时，gateway_id为设备所关联的父设备的device_id。
+     * @return gatewayId
+     */
     public String getGatewayId() {
         return gatewayId;
     }
@@ -187,9 +194,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备名称。
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称。
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -203,9 +211,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备节点类型。 - ENDPOINT：非直连设备。 - GATEWAY：直连设备或网关。 - UNKNOWN：未知。
-     * 
-     * @return nodeType */
+    /**
+     * 设备节点类型。 - ENDPOINT：非直连设备。 - GATEWAY：直连设备或网关。 - UNKNOWN：未知。 
+     * @return nodeType
+     */
     public String getNodeType() {
         return nodeType;
     }
@@ -219,9 +228,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的描述信息。
-     * 
-     * @return description */
+    /**
+     * 设备的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -235,9 +245,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的固件版本。
-     * 
-     * @return fwVersion */
+    /**
+     * 设备的固件版本。
+     * @return fwVersion
+     */
     public String getFwVersion() {
         return fwVersion;
     }
@@ -251,9 +262,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的软件版本。
-     * 
-     * @return swVersion */
+    /**
+     * 设备的软件版本。
+     * @return swVersion
+     */
     public String getSwVersion() {
         return swVersion;
     }
@@ -267,9 +279,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的sdk信息。
-     * 
-     * @return deviceSdkVersion */
+    /**
+     * 设备的sdk信息。
+     * @return deviceSdkVersion
+     */
     public String getDeviceSdkVersion() {
         return deviceSdkVersion;
     }
@@ -292,9 +305,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get authInfo
-     * 
-     * @return authInfo */
+    /**
+     * Get authInfo
+     * @return authInfo
+     */
     public AuthInfo getAuthInfo() {
         return authInfo;
     }
@@ -308,9 +322,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备关联的产品ID，用于唯一标识一个产品模型。
-     * 
-     * @return productId */
+    /**
+     * 设备关联的产品ID，用于唯一标识一个产品模型。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -324,9 +339,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备关联的产品名称。
-     * 
-     * @return productName */
+    /**
+     * 设备关联的产品名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -340,9 +356,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的状态。 - ONLINE：设备在线。 - OFFLINE：设备离线。 - ABNORMAL：设备异常。 - INACTIVE：设备未激活。 - FROZEN：设备冻结。
-     * 
-     * @return status */
+    /**
+     * 设备的状态。 - ONLINE：设备在线。 - OFFLINE：设备离线。 - ABNORMAL：设备异常。 - INACTIVE：设备未激活。 - FROZEN：设备冻结。 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -356,9 +373,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 在物联网平台注册设备的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createTime */
+    /**
+     * 在物联网平台注册设备的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -388,9 +406,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的标签列表。
-     * 
-     * @return tags */
+    /**
+     * 设备的标签列表。
+     * @return tags
+     */
     public List<TagV5DTO> getTags() {
         return tags;
     }
@@ -404,9 +423,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。
-     * 
-     * @return extensionInfo */
+    /**
+     * 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。
+     * @return extensionInfo
+     */
     public Object getExtensionInfo() {
         return extensionInfo;
     }
@@ -492,7 +512,10 @@ public class ShowDeviceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

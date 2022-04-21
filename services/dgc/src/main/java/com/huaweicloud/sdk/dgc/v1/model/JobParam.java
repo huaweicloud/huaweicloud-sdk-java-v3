@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** JobParam */
+/**
+ * JobParam
+ */
 public class JobParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class JobParam {
 
     private String value;
 
-    /** Gets or Sets paramType */
+    /**
+     * Gets or Sets paramType
+     */
     public static final class ParamTypeEnum {
 
-        /** Enum VARIABLE for value: "variable" */
+        /**
+         * Enum VARIABLE for value: "variable"
+         */
         public static final ParamTypeEnum VARIABLE = new ParamTypeEnum("variable");
 
-        /** Enum CONSTANTS for value: "constants" */
+        /**
+         * Enum CONSTANTS for value: "constants"
+         */
         public static final ParamTypeEnum CONSTANTS = new ParamTypeEnum("constants");
 
         private static final Map<String, ParamTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class JobParam {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -120,9 +129,10 @@ public class JobParam {
         return this;
     }
 
-    /** Get value
-     * 
-     * @return value */
+    /**
+     * Get value
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -136,9 +146,10 @@ public class JobParam {
         return this;
     }
 
-    /** Get paramType
-     * 
-     * @return paramType */
+    /**
+     * Get paramType
+     * @return paramType
+     */
     public ParamTypeEnum getParamType() {
         return paramType;
     }
@@ -176,7 +187,10 @@ public class JobParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

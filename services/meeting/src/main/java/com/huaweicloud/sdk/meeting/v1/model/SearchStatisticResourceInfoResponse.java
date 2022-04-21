@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SearchStatisticResourceInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,11 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录数。 minimum: 0
-     * 
-     * @return count */
+    /**
+     * 总记录数。
+     * minimum: 0
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -53,9 +57,12 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询条目数量。 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询条目数量。
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -69,9 +76,11 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询偏移量。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -101,9 +110,10 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议已购资源使用数据按时间点统计的查询结果数组。
-     * 
-     * @return data */
+    /**
+     * 会议已购资源使用数据按时间点统计的查询结果数组。
+     * @return data
+     */
     public List<StatisticResourceDataItem> getData() {
         return data;
     }
@@ -145,7 +155,10 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuerySubCustomerListReq */
+/**
+ * QuerySubCustomerListReq
+ */
 public class QuerySubCustomerListReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 客户登录名称（如果客户创建了IAM用户，此处需要填写主账号登录名称。关于主账号和IAM用户的具体介绍请参见身份管理中“账号”和“IAM用户”的描述）。 支持模糊查询。
-     * 
-     * @return accountName */
+    /**
+     * 客户登录名称（如果客户创建了IAM用户，此处需要填写主账号登录名称。关于主账号和IAM用户的具体介绍请参见身份管理中“账号”和“IAM用户”的描述）。 支持模糊查询。
+     * @return accountName
+     */
     public String getAccountName() {
         return accountName;
     }
@@ -79,9 +82,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 客户的实名认证名称，支持模糊查询。
-     * 
-     * @return customer */
+    /**
+     * 客户的实名认证名称，支持模糊查询。
+     * @return customer
+     */
     public String getCustomer() {
         return customer;
     }
@@ -95,10 +99,12 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
-     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。  说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -112,9 +118,12 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 每次查询的客户数量。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询的客户数量。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -128,9 +137,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 标签，支持模糊查找。
-     * 
-     * @return label */
+    /**
+     * 标签，支持模糊查找。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -144,9 +154,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 关联类型： 1：顾问销售2：代售
-     * 
-     * @return associationType */
+    /**
+     * 关联类型： 1：顾问销售2：代售
+     * @return associationType
+     */
     public String getAssociationType() {
         return associationType;
     }
@@ -160,9 +171,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 关联时间区间段开始，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
-     * 
-     * @return associatedOnBegin */
+    /**
+     * 关联时间区间段开始，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
+     * @return associatedOnBegin
+     */
     public String getAssociatedOnBegin() {
         return associatedOnBegin;
     }
@@ -176,9 +188,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 关联时间区间段结束，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
-     * 
-     * @return associatedOnEnd */
+    /**
+     * 关联时间区间段结束，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。
+     * @return associatedOnEnd
+     */
     public String getAssociatedOnEnd() {
         return associatedOnEnd;
     }
@@ -192,9 +205,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id，或者可以从创建客户接口的响应获取domain_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id，或者可以从创建客户接口的响应获取domain_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -208,9 +222,10 @@ public class QuerySubCustomerListReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。如果需要查询精英服务商伙伴的子客户列表，必须携带该字段。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。如果需要查询精英服务商伙伴的子客户列表，必须携带该字段。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -272,7 +287,10 @@ public class QuerySubCustomerListReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

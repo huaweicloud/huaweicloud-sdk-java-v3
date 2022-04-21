@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ChannelInfoV2 */
+/**
+ * ChannelInfoV2
+ */
 public class ChannelInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ChannelInfoV2 {
         return this;
     }
 
-    /** 通道名
-     * 
-     * @return name */
+    /**
+     * 通道名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -63,9 +66,10 @@ public class ChannelInfoV2 {
         return this;
     }
 
-    /** 通道中组织名
-     * 
-     * @return orgNames */
+    /**
+     * 通道中组织名
+     * @return orgNames
+     */
     public List<String> getOrgNames() {
         return orgNames;
     }
@@ -79,9 +83,10 @@ public class ChannelInfoV2 {
         return this;
     }
 
-    /** 通道描述
-     * 
-     * @return description */
+    /**
+     * 通道描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -119,7 +124,10 @@ public class ChannelInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

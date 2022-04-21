@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PicLayoutInfo */
+/**
+ * PicLayoutInfo
+ */
 public class PicLayoutInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,11 @@ public class PicLayoutInfo {
         return this;
     }
 
-    /** 多画面布局的宽度 minimum: 1
-     * 
-     * @return x */
+    /**
+     * 多画面布局的宽度
+     * minimum: 1
+     * @return x
+     */
     public Integer getX() {
         return x;
     }
@@ -47,9 +51,11 @@ public class PicLayoutInfo {
         return this;
     }
 
-    /** 多画面布局的高度 minimum: 1
-     * 
-     * @return y */
+    /**
+     * 多画面布局的高度
+     * minimum: 1
+     * @return y
+     */
     public Integer getY() {
         return y;
     }
@@ -79,9 +85,10 @@ public class PicLayoutInfo {
         return this;
     }
 
-    /** 子画面布局具体列表
-     * 
-     * @return subPicLayoutInfoList */
+    /**
+     * 子画面布局具体列表
+     * @return subPicLayoutInfoList
+     */
     public List<SubPicLayoutInfo> getSubPicLayoutInfoList() {
         return subPicLayoutInfoList;
     }
@@ -119,7 +126,10 @@ public class PicLayoutInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

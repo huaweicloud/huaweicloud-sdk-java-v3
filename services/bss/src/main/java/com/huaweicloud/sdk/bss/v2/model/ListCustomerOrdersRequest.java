@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCustomerOrdersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单ID。 说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。 说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -94,9 +97,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -110,9 +114,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单创建开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return createTimeBegin */
+    /**
+     * 订单创建开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return createTimeBegin
+     */
     public String getCreateTimeBegin() {
         return createTimeBegin;
     }
@@ -126,9 +131,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单创建结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return createTimeEnd */
+    /**
+     * 订单创建结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return createTimeEnd
+     */
     public String getCreateTimeEnd() {
         return createTimeEnd;
     }
@@ -142,9 +148,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -158,9 +165,12 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单状态。1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认 minimum: 1 maximum: 9
-     * 
-     * @return status */
+    /**
+     * 订单状态。1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认
+     * minimum: 1
+     * maximum: 9
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -174,9 +184,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单类型。1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
-     * 
-     * @return orderType */
+    /**
+     * 订单类型。1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
+     * @return orderType
+     */
     public String getOrderType() {
         return orderType;
     }
@@ -190,9 +201,12 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 每次查询的订单数量，默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询的订单数量，默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -206,11 +220,12 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -224,9 +239,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 查询的订单列表排序。支持按照创建时间进行排序，带-表示倒序。创建时间：升序为createTime，倒序为-createTime。
-     * 
-     * @return orderBy */
+    /**
+     * 查询的订单列表排序。支持按照创建时间进行排序，带-表示倒序。创建时间：升序为createTime，倒序为-createTime。
+     * @return orderBy
+     */
     public String getOrderBy() {
         return orderBy;
     }
@@ -240,9 +256,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单支付开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return paymentTimeBegin */
+    /**
+     * 订单支付开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return paymentTimeBegin
+     */
     public String getPaymentTimeBegin() {
         return paymentTimeBegin;
     }
@@ -256,9 +273,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 订单支付结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return paymentTimeEnd */
+    /**
+     * 订单支付结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return paymentTimeEnd
+     */
     public String getPaymentTimeEnd() {
         return paymentTimeEnd;
     }
@@ -272,9 +290,10 @@ public class ListCustomerOrdersRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -345,7 +364,10 @@ public class ListCustomerOrdersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

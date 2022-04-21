@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 字典排序，值越小顺序越靠前 */
+/**
+ * 字典排序，值越小顺序越靠前
+ */
 public class DictionaryOrder {
 
     @Override

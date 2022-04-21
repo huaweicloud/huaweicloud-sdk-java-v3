@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateProductTopicResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class CreateProductTopicResponse extends SdkResponse {
 
     private String topicId;
 
-    /** 主题权限 0-发布 1-订阅 */
+    /**
+     * 主题权限 0-发布 1-订阅
+     */
     public static final class PermissionEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PermissionEnum NUMBER_0 = new PermissionEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PermissionEnum NUMBER_1 = new PermissionEnum(1);
 
         private static final Map<Integer, PermissionEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +128,12 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 归属产品ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productId */
+    /**
+     * 归属产品ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -136,9 +147,10 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品主题ID
-     * 
-     * @return topicId */
+    /**
+     * 产品主题ID
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -152,9 +164,12 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 主题权限 0-发布 1-订阅 minimum: 0 maximum: 10
-     * 
-     * @return permission */
+    /**
+     * 主题权限 0-发布 1-订阅
+     * minimum: 0
+     * maximum: 10
+     * @return permission
+     */
     public PermissionEnum getPermission() {
         return permission;
     }
@@ -168,9 +183,10 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 主题名称
-     * 
-     * @return topicName */
+    /**
+     * 主题名称
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -184,9 +200,10 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本号
-     * 
-     * @return version */
+    /**
+     * 版本号
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -200,9 +217,10 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -247,7 +265,10 @@ public class CreateProductTopicResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ResourcePrice */
+/**
+ * ResourcePrice
+ */
 public class ResourcePrice {
 
-    /** cpu架构 x86|arm */
+    /**
+     * cpu架构 x86|arm
+     */
     public static final class ArchEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchEnum X86 = new ArchEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchEnum ARM = new ArchEnum("arm");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ResourcePrice {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public ArchEnum getArch() {
         return arch;
     }
@@ -125,9 +134,12 @@ public class ResourcePrice {
         return this;
     }
 
-    /** 价格 minimum: 0 maximum: 1E+8
-     * 
-     * @return price */
+    /**
+     * 价格
+     * minimum: 0
+     * maximum: 1E+8
+     * @return price
+     */
     public Float getPrice() {
         return price;
     }
@@ -141,10 +153,10 @@ public class ResourcePrice {
         return this;
     }
 
-    /** 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。
-     * 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G，4U8G；arch为'arm'，size值可以为4U8G。
-     * 
-     * @return size */
+    /**
+     * 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G，4U8G；arch为'arm'，size值可以为4U8G。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -158,9 +170,10 @@ public class ResourcePrice {
         return this;
     }
 
-    /** 类型。目前可以取值storage，cpuMemory
-     * 
-     * @return type */
+    /**
+     * 类型。目前可以取值storage，cpuMemory
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -199,7 +212,10 @@ public class ResourcePrice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

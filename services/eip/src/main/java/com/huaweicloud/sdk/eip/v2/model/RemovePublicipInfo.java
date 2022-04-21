@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 共享带宽插入/移除弹性公网IP的publicip_info字段 */
+/**
+ * 共享带宽插入/移除弹性公网IP的publicip_info字段
+ */
 public class RemovePublicipInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RemovePublicipInfo {
         return this;
     }
 
-    /** 功能说明：若publicip_id为弹性公网IP的id，则该字段可自动忽略。若publicip_id为IPv6端口PORT的id，则该字段必填：5_dualStack(目前仅北京4局点支持)
-     * 
-     * @return publicipType */
+    /**
+     * 功能说明：若publicip_id为弹性公网IP的id，则该字段可自动忽略。若publicip_id为IPv6端口PORT的id，则该字段必填：5_dualStack(目前仅北京4局点支持)
+     * @return publicipType
+     */
     public String getPublicipType() {
         return publicipType;
     }
@@ -39,9 +42,10 @@ public class RemovePublicipInfo {
         return this;
     }
 
-    /** 功能说明：带宽对应的弹性公网IP或IPv6端口PORT的唯一标识
-     * 
-     * @return publicipId */
+    /**
+     * 功能说明：带宽对应的弹性公网IP或IPv6端口PORT的唯一标识
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -78,7 +82,10 @@ public class RemovePublicipInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

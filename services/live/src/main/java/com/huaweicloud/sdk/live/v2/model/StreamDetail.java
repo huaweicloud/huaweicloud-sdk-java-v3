@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StreamDetail */
+/**
+ * StreamDetail
+ */
 public class StreamDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class StreamDetail {
         return this;
     }
 
-    /** 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return startTime */
+    /**
+     * 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -47,9 +50,10 @@ public class StreamDetail {
         return this;
     }
 
-    /** 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return endTime */
+    /**
+     * 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -79,9 +83,10 @@ public class StreamDetail {
         return this;
     }
 
-    /** 流监控数据列表。
-     * 
-     * @return dataList */
+    /**
+     * 流监控数据列表。
+     * @return dataList
+     */
     public List<Long> getDataList() {
         return dataList;
     }
@@ -120,7 +125,10 @@ public class StreamDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEngineProductsRequest {
 
-    /** 消息引擎的类型。 */
+    /**
+     * 消息引擎的类型。
+     */
     public static final class EngineEnum {
 
-        /** Enum RABBITMQ for value: "rabbitmq" */
+        /**
+         * Enum RABBITMQ for value: "rabbitmq"
+         */
         public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
@@ -95,9 +101,10 @@ public class ListEngineProductsRequest {
         return this;
     }
 
-    /** 消息引擎的类型。
-     * 
-     * @return engine */
+    /**
+     * 消息引擎的类型。
+     * @return engine
+     */
     public EngineEnum getEngine() {
         return engine;
     }
@@ -111,9 +118,10 @@ public class ListEngineProductsRequest {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -150,7 +158,10 @@ public class ListEngineProductsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

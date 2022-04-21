@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateProductResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,9 +79,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间ID。
-     * 
-     * @return appId */
+    /**
+     * 资源空间ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -93,9 +96,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间名称。
-     * 
-     * @return appName */
+    /**
+     * 资源空间名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -109,9 +113,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品ID，用于唯一标识一个产品，在物联网平台创建产品后由平台分配获得。
-     * 
-     * @return productId */
+    /**
+     * 产品ID，用于唯一标识一个产品，在物联网平台创建产品后由平台分配获得。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -125,9 +130,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品名称。
-     * 
-     * @return name */
+    /**
+     * 产品名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -141,9 +147,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备类型。
-     * 
-     * @return deviceType */
+    /**
+     * 设备类型。
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -157,9 +164,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA，Other。
-     * 
-     * @return protocolType */
+    /**
+     * 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA，Other。
+     * @return protocolType
+     */
     public String getProtocolType() {
         return protocolType;
     }
@@ -173,9 +181,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备上报数据的格式，取值范围：json，binary。
-     * 
-     * @return dataFormat */
+    /**
+     * 设备上报数据的格式，取值范围：json，binary。
+     * @return dataFormat
+     */
     public String getDataFormat() {
         return dataFormat;
     }
@@ -189,9 +198,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 厂商名称。
-     * 
-     * @return manufacturerName */
+    /**
+     * 厂商名称。
+     * @return manufacturerName
+     */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -205,9 +215,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备所属行业。
-     * 
-     * @return industry */
+    /**
+     * 设备所属行业。
+     * @return industry
+     */
     public String getIndustry() {
         return industry;
     }
@@ -221,9 +232,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品的描述信息。
-     * 
-     * @return description */
+    /**
+     * 产品的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -253,9 +265,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备的服务能力列表。
-     * 
-     * @return serviceCapabilities */
+    /**
+     * 设备的服务能力列表。
+     * @return serviceCapabilities
+     */
     public List<ServiceCapability> getServiceCapabilities() {
         return serviceCapabilities;
     }
@@ -269,9 +282,10 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    /** 在物联网平台创建产品的时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createTime */
+    /**
+     * 在物联网平台创建产品的时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -339,7 +353,10 @@ public class UpdateProductResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

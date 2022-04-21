@@ -26,11 +26,10 @@ public class NodeEIPSpec {
         return this;
     }
 
-    /** 弹性IP类型，取值请参见申请EIP接口中publicip.type说明。
-     * [链接请参见[申请EIP](https://support.huaweicloud.com/api-eip/eip_api_0001.html)](tag:hws)
-     * [链接请参见[申请EIP](https://support.huaweicloud.com/intl/zh-cn/api-eip/eip_api_0001.html)](tag:hws_hk)
-     * 
-     * @return iptype */
+    /**
+     * 弹性IP类型，取值请参见申请EIP接口中publicip.type说明。 [链接请参见[申请EIP](https://support.huaweicloud.com/api-eip/eip_api_0001.html)](tag:hws) [链接请参见[申请EIP](https://support.huaweicloud.com/intl/zh-cn/api-eip/eip_api_0001.html)](tag:hws_hk)
+     * @return iptype
+     */
     public String getIptype() {
         return iptype;
     }
@@ -53,9 +52,10 @@ public class NodeEIPSpec {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public NodeBandwidth getBandwidth() {
         return bandwidth;
     }
@@ -91,7 +91,10 @@ public class NodeEIPSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

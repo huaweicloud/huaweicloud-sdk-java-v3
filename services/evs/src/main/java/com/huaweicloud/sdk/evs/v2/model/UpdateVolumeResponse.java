@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateVolumeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,9 +135,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否挂载信息。
-     * 
-     * @return attachments */
+    /**
+     * 是否挂载信息。
+     * @return attachments
+     */
     public List<Attachment> getAttachments() {
         return attachments;
     }
@@ -149,9 +152,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘所属AZ。
-     * 
-     * @return availabilityZone */
+    /**
+     * 云硬盘所属AZ。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -165,9 +169,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否为可启动云硬盘。
-     * 
-     * @return bootable */
+    /**
+     * 是否为可启动云硬盘。
+     * @return bootable
+     */
     public String getBootable() {
         return bootable;
     }
@@ -181,9 +186,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建云硬盘的时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建云硬盘的时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -197,9 +203,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘ID。
-     * 
-     * @return id */
+    /**
+     * 云硬盘ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -229,9 +236,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘uri自描述信息
-     * 
-     * @return links */
+    /**
+     * 云硬盘uri自描述信息
+     * @return links
+     */
     public List<Link> getLinks() {
         return links;
     }
@@ -254,9 +262,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public VolumeMetadata getMetadata() {
         return metadata;
     }
@@ -270,9 +279,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否为可共享云硬盘。
-     * 
-     * @return multiattach */
+    /**
+     * 是否为可共享云硬盘。
+     * @return multiattach
+     */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -286,9 +296,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘名称
-     * 
-     * @return name */
+    /**
+     * 云硬盘名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -302,9 +313,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return osVolHostAttrHost */
+    /**
+     * 预留属性。
+     * @return osVolHostAttrHost
+     */
     public String getOsVolHostAttrHost() {
         return osVolHostAttrHost;
     }
@@ -318,9 +330,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘所属的项目ID。
-     * 
-     * @return osVolTenantAttrTenantId */
+    /**
+     * 云硬盘所属的项目ID。
+     * @return osVolTenantAttrTenantId
+     */
     public String getOsVolTenantAttrTenantId() {
         return osVolTenantAttrTenantId;
     }
@@ -334,9 +347,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否为共享云硬盘。
-     * 
-     * @return shareable */
+    /**
+     * 是否为共享云硬盘。
+     * @return shareable
+     */
     public String getShareable() {
         return shareable;
     }
@@ -350,9 +364,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘大小。
-     * 
-     * @return size */
+    /**
+     * 云硬盘大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -366,9 +381,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照ID。
-     * 
-     * @return snapshotId */
+    /**
+     * 快照ID。
+     * @return snapshotId
+     */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -382,9 +398,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 预留字段。
-     * 
-     * @return sourceVolid */
+    /**
+     * 预留字段。
+     * @return sourceVolid
+     */
     public String getSourceVolid() {
         return sourceVolid;
     }
@@ -398,9 +415,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘状态。
-     * 
-     * @return status */
+    /**
+     * 云硬盘状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -414,10 +432,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘镜像的元数据。 > 说明： > >
-     * 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
-     * 
-     * @return volumeImageMetadata */
+    /**
+     * 云硬盘镜像的元数据。 > 说明： >  > 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
+     * @return volumeImageMetadata
+     */
     public Object getVolumeImageMetadata() {
         return volumeImageMetadata;
     }
@@ -431,9 +449,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘类型。
-     * 
-     * @return volumeType */
+    /**
+     * 云硬盘类型。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -447,9 +466,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘描述。
-     * 
-     * @return description */
+    /**
+     * 云硬盘描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -463,9 +483,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return osVolumeReplicationExtendedStatus */
+    /**
+     * 预留属性。
+     * @return osVolumeReplicationExtendedStatus
+     */
     public String getOsVolumeReplicationExtendedStatus() {
         return osVolumeReplicationExtendedStatus;
     }
@@ -559,7 +580,10 @@ public class UpdateVolumeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

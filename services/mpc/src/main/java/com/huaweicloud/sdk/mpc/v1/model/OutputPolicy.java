@@ -10,22 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OutputPolicy */
+/**
+ * OutputPolicy
+ */
 public class OutputPolicy {
 
-    /** 输出策略。 取值如下： - discard - transcode >-
-     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
-     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
-     * 同时为“transcode”时，表示输出音视频。 */
+    /**
+     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
+     */
     public static final class OutputPolicyEnum {
 
-        /** Enum TRANSCODE for value: "transcode" */
+        /**
+         * Enum TRANSCODE for value: "transcode"
+         */
         public static final OutputPolicyEnum TRANSCODE = new OutputPolicyEnum("transcode");
 
-        /** Enum DISCARD for value: "discard" */
+        /**
+         * Enum DISCARD for value: "discard"
+         */
         public static final OutputPolicyEnum DISCARD = new OutputPolicyEnum("discard");
 
-        /** Enum COPY for value: "copy" */
+        /**
+         * Enum COPY for value: "copy"
+         */
         public static final OutputPolicyEnum COPY = new OutputPolicyEnum("copy");
 
         private static final Map<String, OutputPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -101,12 +108,10 @@ public class OutputPolicy {
         return this;
     }
 
-    /** 输出策略。 取值如下： - discard - transcode >-
-     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
-     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
-     * 同时为“transcode”时，表示输出音视频。
-     * 
-     * @return outputPolicy */
+    /**
+     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
+     * @return outputPolicy
+     */
     public OutputPolicyEnum getOutputPolicy() {
         return outputPolicy;
     }
@@ -141,7 +146,10 @@ public class OutputPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

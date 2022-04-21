@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ErrorResponseBody */
+/**
+ * ErrorResponseBody
+ */
 public class ErrorResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ErrorResponseBody {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -39,9 +42,10 @@ public class ErrorResponseBody {
         return this;
     }
 
-    /** 错误消息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误消息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -78,7 +82,10 @@ public class ErrorResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 环境变量引用配置项时使用。 */
+/**
+ * 环境变量引用配置项时使用。
+ */
 public class ConfigsMap {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ConfigsMap {
         return this;
     }
 
-    /** 配置项的名称
-     * 
-     * @return name */
+    /**
+     * 配置项的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class ConfigsMap {
         return this;
     }
 
-    /** 配置项的属性名
-     * 
-     * @return key */
+    /**
+     * 配置项的属性名
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -77,7 +81,10 @@ public class ConfigsMap {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 执行任务接口请求体 */
+/**
+ * 执行任务接口请求体
+ */
 public class RunJobRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class RunJobRequestBody {
         return this;
     }
 
-    /** 构建任务ID；编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串
-     * 
-     * @return jobId */
+    /**
+     * 构建任务ID；编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -63,9 +66,10 @@ public class RunJobRequestBody {
         return this;
     }
 
-    /** 自定义参数
-     * 
-     * @return parameter */
+    /**
+     * 自定义参数
+     * @return parameter
+     */
     public List<ParameterItem> getParameter() {
         return parameter;
     }
@@ -88,9 +92,10 @@ public class RunJobRequestBody {
         return this;
     }
 
-    /** Get scm
-     * 
-     * @return scm */
+    /**
+     * Get scm
+     * @return scm
+     */
     public Scm getScm() {
         return scm;
     }
@@ -129,7 +134,10 @@ public class RunJobRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

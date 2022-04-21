@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowExtensionAuthorizationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowExtensionAuthorizationRequest {
         return this;
     }
 
-    /** 插件版本
-     * 
-     * @return extensionVersion */
+    /**
+     * 插件版本
+     * @return extensionVersion
+     */
     public String getExtensionVersion() {
         return extensionVersion;
     }
@@ -44,9 +47,10 @@ public class ShowExtensionAuthorizationRequest {
         return this;
     }
 
-    /** 插件标识(发布者.插件名)
-     * 
-     * @return identifier */
+    /**
+     * 插件标识(发布者.插件名)
+     * @return identifier
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -60,9 +64,10 @@ public class ShowExtensionAuthorizationRequest {
         return this;
     }
 
-    /** CloudIDE实例ID
-     * 
-     * @return instanceId */
+    /**
+     * CloudIDE实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -101,7 +106,10 @@ public class ShowExtensionAuthorizationRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

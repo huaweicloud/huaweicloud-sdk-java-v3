@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RestorePoint */
+/**
+ * RestorePoint
+ */
 public class RestorePoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。当type为“backup”，为非必选。当type为“timestamp”，为必选。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。当type为“backup”，为非必选。当type为“timestamp”，为必选。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,10 +52,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 恢复方式，枚举值： - “backup”，表示使用备份文件恢复，按照此方式恢复时，当“type”字段为非必选时，“backup_id”必选。 -
-     * “timestamp”，表示按时间点恢复，按照此方式恢复时，当“type”字段必选时，“restore_time”必选。
-     * 
-     * @return type */
+    /**
+     * 恢复方式，枚举值： - “backup”，表示使用备份文件恢复，按照此方式恢复时，当“type”字段为非必选时，“backup_id”必选。 - “timestamp”，表示按时间点恢复，按照此方式恢复时，当“type”字段必选时，“restore_time”必选。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -66,9 +69,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。当“type”字段为非必选时，“backup_id”必选。
-     * 
-     * @return backupId */
+    /**
+     * 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。当“type”字段为非必选时，“backup_id”必选。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -82,9 +86,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。须知：当“type”字段必选时，“restore_time”必选。
-     * 
-     * @return restoreTime */
+    /**
+     * 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。须知：当“type”字段必选时，“restore_time”必选。
+     * @return restoreTime
+     */
     public String getRestoreTime() {
         return restoreTime;
     }
@@ -124,7 +129,10 @@ public class RestorePoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

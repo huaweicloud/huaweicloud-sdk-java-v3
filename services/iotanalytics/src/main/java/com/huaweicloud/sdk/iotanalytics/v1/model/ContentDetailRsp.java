@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IoTA服务各类数据源详细配置内容 */
+/**
+ * IoTA服务各类数据源详细配置内容
+ */
 public class ContentDetailRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get iotdaContent
-     * 
-     * @return iotdaContent */
+    /**
+     * Get iotdaContent
+     * @return iotdaContent
+     */
     public IotdaContentRsp getIotdaContent() {
         return iotdaContent;
     }
@@ -103,9 +106,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get obsContent
-     * 
-     * @return obsContent */
+    /**
+     * Get obsContent
+     * @return obsContent
+     */
     public ObsContentRsp getObsContent() {
         return obsContent;
     }
@@ -128,9 +132,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get disContent
-     * 
-     * @return disContent */
+    /**
+     * Get disContent
+     * @return disContent
+     */
     public DisContentRsp getDisContent() {
         return disContent;
     }
@@ -153,9 +158,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get smnContent
-     * 
-     * @return smnContent */
+    /**
+     * Get smnContent
+     * @return smnContent
+     */
     public SmnContentRsp getSmnContent() {
         return smnContent;
     }
@@ -178,9 +184,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get functionGraphContent
-     * 
-     * @return functionGraphContent */
+    /**
+     * Get functionGraphContent
+     * @return functionGraphContent
+     */
     public FunctionGraphContentRsp getFunctionGraphContent() {
         return functionGraphContent;
     }
@@ -203,9 +210,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get modelArtsContent
-     * 
-     * @return modelArtsContent */
+    /**
+     * Get modelArtsContent
+     * @return modelArtsContent
+     */
     public ModelArtsContentRsp getModelArtsContent() {
         return modelArtsContent;
     }
@@ -228,9 +236,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get dcsContent
-     * 
-     * @return dcsContent */
+    /**
+     * Get dcsContent
+     * @return dcsContent
+     */
     public DcsContentRsp getDcsContent() {
         return dcsContent;
     }
@@ -253,9 +262,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get kafkaContent
-     * 
-     * @return kafkaContent */
+    /**
+     * Get kafkaContent
+     * @return kafkaContent
+     */
     public KafkaContentRsp getKafkaContent() {
         return kafkaContent;
     }
@@ -278,9 +288,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get apiContent
-     * 
-     * @return apiContent */
+    /**
+     * Get apiContent
+     * @return apiContent
+     */
     public ApiContentRsp getApiContent() {
         return apiContent;
     }
@@ -303,9 +314,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get nodeContent
-     * 
-     * @return nodeContent */
+    /**
+     * Get nodeContent
+     * @return nodeContent
+     */
     public NodeContentRsp getNodeContent() {
         return nodeContent;
     }
@@ -328,9 +340,10 @@ public class ContentDetailRsp {
         return this;
     }
 
-    /** Get edgeContent
-     * 
-     * @return edgeContent */
+    /**
+     * Get edgeContent
+     * @return edgeContent
+     */
     public EdgeContentRsp getEdgeContent() {
         return edgeContent;
     }
@@ -395,7 +408,10 @@ public class ContentDetailRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RestoreDatabasesInfo */
+/**
+ * RestoreDatabasesInfo
+ */
 public class RestoreDatabasesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class RestoreDatabasesInfo {
         return this;
     }
 
-    /** 库名
-     * 
-     * @return database */
+    /**
+     * 库名
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -58,9 +61,10 @@ public class RestoreDatabasesInfo {
         return this;
     }
 
-    /** 表信息
-     * 
-     * @return tables */
+    /**
+     * 表信息
+     * @return tables
+     */
     public List<RestoreTableInfo> getTables() {
         return tables;
     }
@@ -97,7 +101,10 @@ public class RestoreDatabasesInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

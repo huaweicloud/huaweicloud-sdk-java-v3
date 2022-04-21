@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VirtualSpace */
+/**
+ * VirtualSpace
+ */
 public class VirtualSpace {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class VirtualSpace {
         return this;
     }
 
-    /** virtualSpace的名称，当前仅支持三种类型：kubernetes、runtime、user。kubernetes：k8s空间配置，需配置lvmConfig；runtime：运行时空间配置，需配置runtimeConfig；user：用户空间配置，需配置lvmConfig
-     * 
-     * @return name */
+    /**
+     * virtualSpace的名称，当前仅支持三种类型：kubernetes、runtime、user。kubernetes：k8s空间配置，需配置lvmConfig；runtime：运行时空间配置，需配置runtimeConfig；user：用户空间配置，需配置lvmConfig
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -50,9 +53,10 @@ public class VirtualSpace {
         return this;
     }
 
-    /** virtualSpace的大小，仅支持整数百分比。例如：90%。 需要注意：一个group中所有virtualSpace的百分比之和不得超过100%
-     * 
-     * @return size */
+    /**
+     * virtualSpace的大小，仅支持整数百分比。例如：90%。 需要注意：一个group中所有virtualSpace的百分比之和不得超过100%
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -75,9 +79,10 @@ public class VirtualSpace {
         return this;
     }
 
-    /** Get lvmConfig
-     * 
-     * @return lvmConfig */
+    /**
+     * Get lvmConfig
+     * @return lvmConfig
+     */
     public LVMConfig getLvmConfig() {
         return lvmConfig;
     }
@@ -100,9 +105,10 @@ public class VirtualSpace {
         return this;
     }
 
-    /** Get runtimeConfig
-     * 
-     * @return runtimeConfig */
+    /**
+     * Get runtimeConfig
+     * @return runtimeConfig
+     */
     public RuntimeConfig getRuntimeConfig() {
         return runtimeConfig;
     }
@@ -142,7 +148,10 @@ public class VirtualSpace {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

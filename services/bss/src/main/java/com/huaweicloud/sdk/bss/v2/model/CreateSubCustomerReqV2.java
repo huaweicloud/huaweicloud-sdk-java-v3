@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateSubCustomerReqV2 */
+/**
+ * CreateSubCustomerReqV2
+ */
 public class CreateSubCustomerReqV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** 企业子账号挂载的组织单元。 组织单元的Party ID，通过查询企业组织结构接口的响应获得。
-     * 
-     * @return partyId */
+    /**
+     * 企业子账号挂载的组织单元。 组织单元的Party ID，通过查询企业组织结构接口的响应获得。
+     * @return partyId
+     */
     public String getPartyId() {
         return partyId;
     }
@@ -57,9 +60,10 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** 企业子账号的显示名称，不限制特殊字符。
-     * 
-     * @return displayName */
+    /**
+     * 企业子账号的显示名称，不限制特殊字符。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -73,9 +77,12 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** 子账号关联类型：1：同一法人。 关联类型目前只能是同一法人。 minimum: -1 maximum: 1
-     * 
-     * @return subCustomerAssociationType */
+    /**
+     * 子账号关联类型：1：同一法人。 关联类型目前只能是同一法人。
+     * minimum: -1
+     * maximum: 1
+     * @return subCustomerAssociationType
+     */
     public Integer getSubCustomerAssociationType() {
         return subCustomerAssociationType;
     }
@@ -105,9 +112,10 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** 申请的权限列表。 支持的权限项请参见下表。
-     * 
-     * @return permissionIds */
+    /**
+     * 申请的权限列表。 支持的权限项请参见下表。
+     * @return permissionIds
+     */
     public List<String> getPermissionIds() {
         return permissionIds;
     }
@@ -130,9 +138,10 @@ public class CreateSubCustomerReqV2 {
         return this;
     }
 
-    /** Get newSubCustomer
-     * 
-     * @return newSubCustomer */
+    /**
+     * Get newSubCustomer
+     * @return newSubCustomer
+     */
     public NewCustomerV2 getNewSubCustomer() {
         return newSubCustomer;
     }
@@ -175,7 +184,10 @@ public class CreateSubCustomerReqV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

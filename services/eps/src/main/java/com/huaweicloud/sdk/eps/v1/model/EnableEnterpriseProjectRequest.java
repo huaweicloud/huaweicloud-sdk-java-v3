@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class EnableEnterpriseProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class EnableEnterpriseProjectRequest {
         return this;
     }
 
-    /** 企业项目ID，不能为0。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，不能为0。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -49,9 +52,10 @@ public class EnableEnterpriseProjectRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public EnableAction getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class EnableEnterpriseProjectRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

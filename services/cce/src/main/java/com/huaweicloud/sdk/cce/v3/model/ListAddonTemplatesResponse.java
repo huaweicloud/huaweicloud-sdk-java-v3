@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAddonTemplatesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListAddonTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** API类型，固定值“Addon”，该值不可修改。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“Addon”，该值不可修改。
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -48,9 +51,10 @@ public class ListAddonTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本，固定值“v3”，该值不可修改。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”，该值不可修改。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -80,9 +84,10 @@ public class ListAddonTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** 插件模板列表
-     * 
-     * @return items */
+    /**
+     * 插件模板列表
+     * @return items
+     */
     public List<AddonTemplate> getItems() {
         return items;
     }
@@ -121,7 +126,10 @@ public class ListAddonTemplatesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

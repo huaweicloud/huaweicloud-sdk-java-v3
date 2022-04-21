@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例支持的功能特性。 */
+/**
+ * 实例支持的功能特性。
+ */
 public class ListEngineSupportFeaturesEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ListEngineSupportFeaturesEntity {
         return this;
     }
 
-    /** 功能名称。
-     * 
-     * @return name */
+    /**
+     * 功能名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -50,9 +53,10 @@ public class ListEngineSupportFeaturesEntity {
         return this;
     }
 
-    /** Get properties
-     * 
-     * @return properties */
+    /**
+     * Get properties
+     * @return properties
+     */
     public ListEngineSupportFeaturesPropertiesEntity getProperties() {
         return properties;
     }
@@ -89,7 +93,10 @@ public class ListEngineSupportFeaturesEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

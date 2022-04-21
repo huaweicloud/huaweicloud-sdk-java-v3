@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IncidentSubTypeV2Do */
+/**
+ * IncidentSubTypeV2Do
+ */
 public class IncidentSubTypeV2Do {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class IncidentSubTypeV2Do {
         return this;
     }
 
-    /** 工单子类型id
-     * 
-     * @return incidentSubTypeId */
+    /**
+     * 工单子类型id
+     * @return incidentSubTypeId
+     */
     public String getIncidentSubTypeId() {
         return incidentSubTypeId;
     }
@@ -47,9 +50,10 @@ public class IncidentSubTypeV2Do {
         return this;
     }
 
-    /** 工单子类型名称
-     * 
-     * @return incidentSubTypeName */
+    /**
+     * 工单子类型名称
+     * @return incidentSubTypeName
+     */
     public String getIncidentSubTypeName() {
         return incidentSubTypeName;
     }
@@ -82,9 +86,10 @@ public class IncidentSubTypeV2Do {
         return this;
     }
 
-    /** 产品类型列表
-     * 
-     * @return incidentProductCategoryList */
+    /**
+     * 产品类型列表
+     * @return incidentProductCategoryList
+     */
     public List<IncidentProductCategoryV2> getIncidentProductCategoryList() {
         return incidentProductCategoryList;
     }
@@ -125,7 +130,10 @@ public class IncidentSubTypeV2Do {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改设备影子预期数据结构体。 */
+/**
+ * 修改设备影子预期数据结构体。
+ */
 public class UpdateDesireds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateDesireds {
         return this;
     }
 
-    /** **参数说明**：设备影子期望值构体。
-     * 
-     * @return shadow */
+    /**
+     * **参数说明**：设备影子期望值构体。
+     * @return shadow
+     */
     public List<UpdateDesired> getShadow() {
         return shadow;
     }
@@ -74,7 +77,10 @@ public class UpdateDesireds {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

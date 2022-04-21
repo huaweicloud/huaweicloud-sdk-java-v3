@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SendVerificationCodeV2Req */
+/**
+ * SendVerificationCodeV2Req
+ */
 public class SendVerificationCodeV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,12 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 发送验证码的类型： 1：发送短信验证码 minimum: 1 maximum: 2
-     * 
-     * @return receiverType */
+    /**
+     * 发送验证码的类型： 1：发送短信验证码
+     * minimum: 1
+     * maximum: 2
+     * @return receiverType
+     */
     public Integer getReceiverType() {
         return receiverType;
     }
@@ -59,9 +64,12 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟 minimum: 1 maximum: 2147483647
-     * 
-     * @return timeout */
+    /**
+     * 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟
+     * minimum: 1
+     * maximum: 2147483647
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -75,9 +83,10 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 指定发送验证码的手机号。 目前系统只支持中国手机号。 示例：13XXXXXXXXX
-     * 
-     * @return mobilePhone */
+    /**
+     * 指定发送验证码的手机号。 目前系统只支持中国手机号。 示例：13XXXXXXXXX
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -91,9 +100,10 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 根据该参数的取值选择发送短信验证码的语言。 zh-cn：中文en-us：英文
-     * 
-     * @return lang */
+    /**
+     * 根据该参数的取值选择发送短信验证码的语言。 zh-cn：中文en-us：英文
+     * @return lang
+     */
     public String getLang() {
         return lang;
     }
@@ -107,9 +117,12 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 验证码使用的场景，目前支持如下场景： 29：注册场景18：个人银行卡实名认证场景 不填写默认为29。 minimum: 18 maximum: 29
-     * 
-     * @return scene */
+    /**
+     * 验证码使用的场景，目前支持如下场景： 29：注册场景18：个人银行卡实名认证场景 不填写默认为29。
+     * minimum: 18
+     * maximum: 29
+     * @return scene
+     */
     public Integer getScene() {
         return scene;
     }
@@ -123,9 +136,10 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。 如果scene=18的时候必填。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。 如果scene=18的时候必填。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -170,7 +184,10 @@ public class SendVerificationCodeV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

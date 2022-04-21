@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改设备信息对象。 */
+/**
+ * 修改设备信息对象。
+ */
 public class UpdateDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateDevice {
         return this;
     }
 
-    /** **参数说明**：设备名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合，建议不少于4个字符。
-     * 
-     * @return deviceName */
+    /**
+     * **参数说明**：设备名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合，建议不少于4个字符。
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -50,9 +53,10 @@ public class UpdateDevice {
         return this;
     }
 
-    /** **参数说明**：设备的描述信息。 **取值范围**：长度不超过2048，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
-     * 
-     * @return description */
+    /**
+     * **参数说明**：设备的描述信息。 **取值范围**：长度不超过2048，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -66,9 +70,10 @@ public class UpdateDevice {
         return this;
     }
 
-    /** **参数说明**：设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
-     * 
-     * @return extensionInfo */
+    /**
+     * **参数说明**：设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
+     * @return extensionInfo
+     */
     public Object getExtensionInfo() {
         return extensionInfo;
     }
@@ -91,9 +96,10 @@ public class UpdateDevice {
         return this;
     }
 
-    /** Get authInfo
-     * 
-     * @return authInfo */
+    /**
+     * Get authInfo
+     * @return authInfo
+     */
     public AuthInfoWithoutSecret getAuthInfo() {
         return authInfo;
     }
@@ -134,7 +140,10 @@ public class UpdateDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

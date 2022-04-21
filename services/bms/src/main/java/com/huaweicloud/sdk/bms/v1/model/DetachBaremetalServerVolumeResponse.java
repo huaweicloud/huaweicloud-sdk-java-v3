@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DetachBaremetalServerVolumeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class DetachBaremetalServerVolumeResponse extends SdkResponse {
         return this;
     }
 
-    /** 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询
-     * 
-     * @return jobId */
+    /**
+     * 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -57,7 +60,10 @@ public class DetachBaremetalServerVolumeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

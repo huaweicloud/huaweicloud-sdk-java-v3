@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OperateInfoResponseBody */
+/**
+ * OperateInfoResponseBody
+ */
 public class OperateInfoResponseBody {
 
-    /** 状态码: * success - 成功 * failure - 失败 */
+    /**
+     * 状态码:   * success - 成功   * failure - 失败 
+     */
     public static final class InfoCodeEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final InfoCodeEnum SUCCESS = new InfoCodeEnum("success");
 
-        /** Enum FAILURE for value: "failure" */
+        /**
+         * Enum FAILURE for value: "failure"
+         */
         public static final InfoCodeEnum FAILURE = new InfoCodeEnum("failure");
 
         private static final Map<String, InfoCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class OperateInfoResponseBody {
         return this;
     }
 
-    /** 状态码: * success - 成功 * failure - 失败
-     * 
-     * @return infoCode */
+    /**
+     * 状态码:   * success - 成功   * failure - 失败 
+     * @return infoCode
+     */
     public InfoCodeEnum getInfoCode() {
         return infoCode;
     }
@@ -115,9 +124,10 @@ public class OperateInfoResponseBody {
         return this;
     }
 
-    /** 返回的提示信息
-     * 
-     * @return infoDescription */
+    /**
+     * 返回的提示信息
+     * @return infoDescription
+     */
     public String getInfoDescription() {
         return infoDescription;
     }
@@ -154,7 +164,10 @@ public class OperateInfoResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

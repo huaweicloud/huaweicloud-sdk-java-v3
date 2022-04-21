@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPostpaidBillSumRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListPostpaidBillSumRequest {
         return this;
     }
 
-    /** 账单所归属的月份。格式：YYYY-MM。
-     * 
-     * @return billCycle */
+    /**
+     * 账单所归属的月份。格式：YYYY-MM。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -55,7 +58,10 @@ public class ListPostpaidBillSumRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NeutronListFirewallPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -62,9 +65,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -94,9 +98,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 使用网络ACL策略ID过滤网络ACL策略
-     * 
-     * @return id */
+    /**
+     * 使用网络ACL策略ID过滤网络ACL策略
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -126,9 +131,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 使用name过滤网络ACL策略
-     * 
-     * @return name */
+    /**
+     * 使用name过滤网络ACL策略
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -158,9 +164,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 使用网络ACL策略描述过滤查询网络ACL策略
-     * 
-     * @return description */
+    /**
+     * 使用网络ACL策略描述过滤查询网络ACL策略
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -174,9 +181,10 @@ public class NeutronListFirewallPoliciesRequest {
         return this;
     }
 
-    /** 使用tenant_id过滤查询网络ACL策略
-     * 
-     * @return tenantId */
+    /**
+     * 使用tenant_id过滤查询网络ACL策略
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -221,7 +229,10 @@ public class NeutronListFirewallPoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

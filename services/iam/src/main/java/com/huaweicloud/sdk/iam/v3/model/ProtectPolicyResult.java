@@ -20,9 +20,10 @@ public class ProtectPolicyResult {
         return this;
     }
 
-    /** 是否开启操作保护，开启为\"true\"，未开启为\"false\"。
-     * 
-     * @return operationProtection */
+    /**
+     * 是否开启操作保护，开启为\"true\"，未开启为\"false\"。
+     * @return operationProtection
+     */
     public Boolean getOperationProtection() {
         return operationProtection;
     }
@@ -57,7 +58,10 @@ public class ProtectPolicyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

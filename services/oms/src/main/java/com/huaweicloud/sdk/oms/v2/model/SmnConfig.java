@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SMN消息通知配置。 */
+/**
+ * SMN消息通知配置。
+ */
 public class SmnConfig {
 
-    /** 当前用户所使用的管理控制台的语言。 可以选择zh-cn或者en-us。 */
+    /**
+     * 当前用户所使用的管理控制台的语言。  可以选择zh-cn或者en-us。
+     */
     public static final class LanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final LanguageEnum EN_US = new LanguageEnum("en-us");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +115,10 @@ public class SmnConfig {
         return this;
     }
 
-    /** 当前用户所使用的管理控制台的语言。 可以选择zh-cn或者en-us。
-     * 
-     * @return language */
+    /**
+     * 当前用户所使用的管理控制台的语言。  可以选择zh-cn或者en-us。
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -123,9 +132,10 @@ public class SmnConfig {
         return this;
     }
 
-    /** 迁移任务所绑定的SMN消息主题的urn号。
-     * 
-     * @return topicUrn */
+    /**
+     * 迁移任务所绑定的SMN消息主题的urn号。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -155,9 +165,10 @@ public class SmnConfig {
         return this;
     }
 
-    /** SMN消息的触发条件，取决于迁移任务状态。 迁移任务状态的取值范围为SUCCESS或者FAILURE。 - FAILURE表示任务失败后发送SMN消息。 - SUCCESS表示任务成功后发送SMN消息。
-     * 
-     * @return triggerConditions */
+    /**
+     *   SMN消息的触发条件，取决于迁移任务状态。  迁移任务状态的取值范围为SUCCESS或者FAILURE。  - FAILURE表示任务失败后发送SMN消息。 - SUCCESS表示任务成功后发送SMN消息。
+     * @return triggerConditions
+     */
     public List<String> getTriggerConditions() {
         return triggerConditions;
     }
@@ -195,7 +206,10 @@ public class SmnConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

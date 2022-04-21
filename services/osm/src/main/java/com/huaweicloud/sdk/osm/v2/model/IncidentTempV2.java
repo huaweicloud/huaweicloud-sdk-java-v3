@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentTempV2 */
+/**
+ * IncidentTempV2
+ */
 public class IncidentTempV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class IncidentTempV2 {
         return this;
     }
 
-    /** 模板id
-     * 
-     * @return incidentTemplateId */
+    /**
+     * 模板id
+     * @return incidentTemplateId
+     */
     public String getIncidentTemplateId() {
         return incidentTemplateId;
     }
@@ -44,9 +47,10 @@ public class IncidentTempV2 {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return incidentTemplateName */
+    /**
+     * 模板名称
+     * @return incidentTemplateName
+     */
     public String getIncidentTemplateName() {
         return incidentTemplateName;
     }
@@ -60,9 +64,10 @@ public class IncidentTempV2 {
         return this;
     }
 
-    /** 模板内容
-     * 
-     * @return incidentTemplateContent */
+    /**
+     * 模板内容
+     * @return incidentTemplateContent
+     */
     public String getIncidentTemplateContent() {
         return incidentTemplateContent;
     }
@@ -101,7 +106,10 @@ public class IncidentTempV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

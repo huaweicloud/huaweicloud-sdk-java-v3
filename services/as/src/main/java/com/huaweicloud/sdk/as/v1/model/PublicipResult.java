@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 弹性IP信息 */
+/**
+ * 弹性IP信息
+ */
 public class PublicipResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PublicipResult {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public EipResult getEip() {
         return eip;
     }
@@ -65,7 +68,10 @@ public class PublicipResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

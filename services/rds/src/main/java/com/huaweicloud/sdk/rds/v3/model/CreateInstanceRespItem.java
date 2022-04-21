@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例信息。 */
+/**
+ * 实例信息。
+ */
 public class CreateInstanceRespItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -114,9 +116,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 实例id
-     * 
-     * @return id */
+    /**
+     * 实例id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -130,10 +133,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 实例名称。 用于表示实例的名称，同一租户下，同类型的实例名可重名，其中，SQL Server实例名唯一。
-     * 取值范围：4~64个字符之间，必须以字母开头，区分大小写，可以包含字母、数字、中划线或者下划线，不能包含其他的特殊字符。
-     * 
-     * @return name */
+    /**
+     * 实例名称。 用于表示实例的名称，同一租户下，同类型的实例名可重名，其中，SQL Server实例名唯一。 取值范围：4~64个字符之间，必须以字母开头，区分大小写，可以包含字母、数字、中划线或者下划线，不能包含其他的特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -147,9 +150,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 实例状态。如BUILD，表示创建中。 仅创建按需实例时会返回该参数。
-     * 
-     * @return status */
+    /**
+     * 实例状态。如BUILD，表示创建中。 仅创建按需实例时会返回该参数。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -172,9 +176,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -197,9 +202,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get ha
-     * 
-     * @return ha */
+    /**
+     * Get ha
+     * @return ha
+     */
     public Ha getHa() {
         return ha;
     }
@@ -213,9 +219,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 参数组ID。
-     * 
-     * @return configurationId */
+    /**
+     * 参数组ID。
+     * @return configurationId
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -229,11 +236,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 数据库端口信息。 - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft
-     * SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE、2017 SE、2017 Web版，5050、5353和5986不可设置。
-     * 当不传该参数时，默认端口如下： - MySQL默认3306。 - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
-     * 
-     * @return port */
+    /**
+     * 数据库端口信息。  - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE、2017 SE、2017 Web版，5050、5353和5986不可设置。  当不传该参数时，默认端口如下：  - MySQL默认3306。 - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -256,9 +262,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
@@ -272,9 +279,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -288,9 +296,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 用于磁盘加密的密钥ID。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 用于磁盘加密的密钥ID。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -304,9 +313,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 规格码。
-     * 
-     * @return flavorRef */
+    /**
+     * 规格码。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -329,9 +339,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public Volume getVolume() {
         return volume;
     }
@@ -345,9 +356,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
-     * 
-     * @return region */
+    /**
+     * 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -361,9 +373,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 可用区ID。对于数据库实例类型不是单机的实例，需要分别为实例所有节点指定可用区，并用逗号隔开。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区ID。对于数据库实例类型不是单机的实例，需要分别为实例所有节点指定可用区，并用逗号隔开。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -377,9 +390,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -393,9 +407,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 子网ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -409,9 +424,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -434,9 +450,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get chargeInfo
-     * 
-     * @return chargeInfo */
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
     public ChargeInfo getChargeInfo() {
         return chargeInfo;
     }
@@ -450,9 +467,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** 仅限Microsoft SQL Server实例使用。取值范围：根据查询SQL Server可用字符集的字符集查询列表查询可设置的字符集。
-     * 
-     * @return collation */
+    /**
+     * 仅限Microsoft SQL Server实例使用。取值范围：根据查询SQL Server可用字符集的字符集查询列表查询可设置的字符集。
+     * @return collation
+     */
     public String getCollation() {
         return collation;
     }
@@ -475,9 +493,10 @@ public class CreateInstanceRespItem {
         return this;
     }
 
-    /** Get restorePoint
-     * 
-     * @return restorePoint */
+    /**
+     * Get restorePoint
+     * @return restorePoint
+     */
     public RestorePoint getRestorePoint() {
         return restorePoint;
     }
@@ -569,7 +588,10 @@ public class CreateInstanceRespItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

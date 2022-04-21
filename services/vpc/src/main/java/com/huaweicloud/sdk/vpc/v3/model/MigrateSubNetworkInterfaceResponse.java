@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class MigrateSubNetworkInterfaceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class MigrateSubNetworkInterfaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID
-     * 
-     * @return requestId */
+    /**
+     * 请求ID
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -61,9 +64,10 @@ public class MigrateSubNetworkInterfaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 批量迁移辅助弹性网卡的响应体
-     * 
-     * @return subNetworkInterfaces */
+    /**
+     * 批量迁移辅助弹性网卡的响应体
+     * @return subNetworkInterfaces
+     */
     public List<SubNetworkInterface> getSubNetworkInterfaces() {
         return subNetworkInterfaces;
     }
@@ -100,7 +104,10 @@ public class MigrateSubNetworkInterfaceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

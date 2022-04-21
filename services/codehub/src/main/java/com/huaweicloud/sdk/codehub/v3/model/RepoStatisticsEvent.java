@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** RepoStatisticsEvent */
+/**
+ * RepoStatisticsEvent
+ */
 public class RepoStatisticsEvent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 分支名
-     * 
-     * @return branch */
+    /**
+     * 分支名
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -70,9 +73,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库统计创建的时间
-     * 
-     * @return createdAt */
+    /**
+     * 仓库统计创建的时间
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -86,9 +90,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库统计的日期
-     * 
-     * @return date */
+    /**
+     * 仓库统计的日期
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -102,9 +107,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库统计事件的id
-     * 
-     * @return id */
+    /**
+     * 仓库统计事件的id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -118,9 +124,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return projectId */
+    /**
+     * 仓库id
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -134,9 +141,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库统计的状态: 等待统计waiting 正在统计active 完成统计finish
-     * 
-     * @return status */
+    /**
+     * 仓库统计的状态: 等待统计waiting  正在统计active  完成统计finish
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -150,9 +158,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 仓库统计更新的时间
-     * 
-     * @return updatedAt */
+    /**
+     * 仓库统计更新的时间
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -166,9 +175,10 @@ public class RepoStatisticsEvent {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userId */
+    /**
+     * 用户id
+     * @return userId
+     */
     public Integer getUserId() {
         return userId;
     }
@@ -216,7 +226,10 @@ public class RepoStatisticsEvent {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

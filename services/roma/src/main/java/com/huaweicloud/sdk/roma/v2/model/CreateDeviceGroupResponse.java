@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDeviceGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permissions */
+    /**
+     * 权限
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -104,9 +107,12 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 父分组ID minimum: 1 maximum: 99999999999999999
-     * 
-     * @return parentId */
+    /**
+     * 父分组ID
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return parentId
+     */
     public Integer getParentId() {
         return parentId;
     }
@@ -120,9 +126,12 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 分组ID minimum: 1 maximum: 99999999999999999
-     * 
-     * @return id */
+    /**
+     * 分组ID
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -136,9 +145,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
-     * 
-     * @return name */
+    /**
+     * 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -152,9 +162,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 分组描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 分组描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -168,9 +179,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 分组归属应用ID
-     * 
-     * @return appId */
+    /**
+     * 分组归属应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -193,9 +205,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** Get createdUser
-     * 
-     * @return createdUser */
+    /**
+     * Get createdUser
+     * @return createdUser
+     */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -218,9 +231,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lastUpdatedUser
-     * 
-     * @return lastUpdatedUser */
+    /**
+     * Get lastUpdatedUser
+     * @return lastUpdatedUser
+     */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -234,9 +248,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdDatetime */
+    /**
+     * 创建时间
+     * @return createdDatetime
+     */
     public String getCreatedDatetime() {
         return createdDatetime;
     }
@@ -250,9 +265,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后修改时间
-     * 
-     * @return lastUpdatedDatetime */
+    /**
+     * 最后修改时间
+     * @return lastUpdatedDatetime
+     */
     public String getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -266,9 +282,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -333,7 +350,10 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

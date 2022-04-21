@@ -35,9 +35,10 @@ public class VolumesAttached {
         return this;
     }
 
-    /** 磁盘ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 磁盘ID，格式为UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -51,9 +52,10 @@ public class VolumesAttached {
         return this;
     }
 
-    /** 启动标识。 - “0”代表系统盘 - 非“0”为数据盘。
-     * 
-     * @return bootIndex */
+    /**
+     * 启动标识。  - “0”代表系统盘 - 非“0”为数据盘。
+     * @return bootIndex
+     */
     public String getBootIndex() {
         return bootIndex;
     }
@@ -67,9 +69,10 @@ public class VolumesAttached {
         return this;
     }
 
-    /** 删边缘实例时是否一并删除该磁盘。 - true：是 - false：否
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 删边缘实例时是否一并删除该磁盘。  - true：是 - false：否
+     * @return deleteOnTermination
+     */
     public String getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -83,9 +86,10 @@ public class VolumesAttached {
         return this;
     }
 
-    /** 硬盘挂载盘符，即磁盘挂载点。
-     * 
-     * @return device */
+    /**
+     * 硬盘挂载盘符，即磁盘挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -125,7 +129,10 @@ public class VolumesAttached {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

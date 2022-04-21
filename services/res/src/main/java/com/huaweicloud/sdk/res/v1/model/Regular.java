@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 正则化参数 */
+/**
+ * 正则化参数
+ */
 public class Regular {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Regular {
 
     private Double l2Regularization;
 
-    /** 正则损失计算方式。 */
+    /**
+     * 正则损失计算方式。
+     */
     public static final class RegularLossComputeModeEnum {
 
-        /** Enum FULL for value: "full" */
+        /**
+         * Enum FULL for value: "full"
+         */
         public static final RegularLossComputeModeEnum FULL = new RegularLossComputeModeEnum("full");
 
-        /** Enum BATCH for value: "batch" */
+        /**
+         * Enum BATCH for value: "batch"
+         */
         public static final RegularLossComputeModeEnum BATCH = new RegularLossComputeModeEnum("batch");
 
         private static final Map<String, RegularLossComputeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,12 @@ public class Regular {
         return this;
     }
 
-    /** L2正则项系数。 minimum: 0 maximum: 1
-     * 
-     * @return l2Regularization */
+    /**
+     * L2正则项系数。
+     * minimum: 0
+     * maximum: 1
+     * @return l2Regularization
+     */
     public Double getL2Regularization() {
         return l2Regularization;
     }
@@ -130,9 +141,10 @@ public class Regular {
         return this;
     }
 
-    /** 正则损失计算方式。
-     * 
-     * @return regularLossComputeMode */
+    /**
+     * 正则损失计算方式。
+     * @return regularLossComputeMode
+     */
     public RegularLossComputeModeEnum getRegularLossComputeMode() {
         return regularLossComputeMode;
     }
@@ -146,9 +158,12 @@ public class Regular {
         return this;
     }
 
-    /** 隐向量层L2正则化系数。 minimum: 0 maximum: 1
-     * 
-     * @return embedL2Regularization */
+    /**
+     * 隐向量层L2正则化系数。
+     * minimum: 0
+     * maximum: 1
+     * @return embedL2Regularization
+     */
     public Double getEmbedL2Regularization() {
         return embedL2Regularization;
     }
@@ -162,9 +177,12 @@ public class Regular {
         return this;
     }
 
-    /** wide部分L2正则化系数。 minimum: 0 maximum: 1
-     * 
-     * @return wideL2Regularization */
+    /**
+     * wide部分L2正则化系数。
+     * minimum: 0
+     * maximum: 1
+     * @return wideL2Regularization
+     */
     public Double getWideL2Regularization() {
         return wideL2Regularization;
     }
@@ -178,9 +196,12 @@ public class Regular {
         return this;
     }
 
-    /** 结构化部分L2正则化系数。 minimum: 0 maximum: 1
-     * 
-     * @return structureL2Regularization */
+    /**
+     * 结构化部分L2正则化系数。
+     * minimum: 0
+     * maximum: 1
+     * @return structureL2Regularization
+     */
     public Double getStructureL2Regularization() {
         return structureL2Regularization;
     }
@@ -227,7 +248,10 @@ public class Regular {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

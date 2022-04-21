@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TagCreate */
+/**
+ * TagCreate
+ */
 public class TagCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TagCreate {
         return this;
     }
 
-    /** tag标签名称。
-     * 
-     * @return name */
+    /**
+     * tag标签名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class TagCreate {
         return this;
     }
 
-    /** tag标签描述信息。
-     * 
-     * @return description */
+    /**
+     * tag标签描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -77,7 +81,10 @@ public class TagCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

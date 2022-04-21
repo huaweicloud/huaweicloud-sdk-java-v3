@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** GroupEntity */
+/**
+ * GroupEntity
+ */
 public class GroupEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class GroupEntity {
         return this;
     }
 
-    /** 消费组的名称。 长度不超过32位的字符串，仅包含a~z，A~Z，0~9、下划线（_）和中划线（-）。
-     * 
-     * @return name */
+    /**
+     * 消费组的名称。  长度不超过32位的字符串，仅包含a~z，A~Z，0~9、下划线（_）和中划线（-）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,7 +58,10 @@ public class GroupEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

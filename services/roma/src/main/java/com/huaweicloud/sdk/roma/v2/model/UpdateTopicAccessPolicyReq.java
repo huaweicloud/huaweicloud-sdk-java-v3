@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTopicAccessPolicyReq */
+/**
+ * UpdateTopicAccessPolicyReq
+ */
 public class UpdateTopicAccessPolicyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateTopicAccessPolicyReq {
         return this;
     }
 
-    /** 策略列表。
-     * 
-     * @return topics */
+    /**
+     * 策略列表。
+     * @return topics
+     */
     public List<UpdateTopicAccessPolicyTopicsObject> getTopics() {
         return topics;
     }
@@ -74,7 +77,10 @@ public class UpdateTopicAccessPolicyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

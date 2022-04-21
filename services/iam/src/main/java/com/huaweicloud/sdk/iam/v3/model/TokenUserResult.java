@@ -36,9 +36,10 @@ public class TokenUserResult {
         return this;
     }
 
-    /** IAM用户名。
-     * 
-     * @return name */
+    /**
+     * IAM用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +53,10 @@ public class TokenUserResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return id */
+    /**
+     * IAM用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -68,9 +70,10 @@ public class TokenUserResult {
         return this;
     }
 
-    /** 密码过期时间（UTC时间），“”表示密码不过期。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 密码过期时间（UTC时间），“”表示密码不过期。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -93,9 +96,10 @@ public class TokenUserResult {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public TokenUserDomainResult getDomain() {
         return domain;
     }
@@ -135,7 +139,10 @@ public class TokenUserResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

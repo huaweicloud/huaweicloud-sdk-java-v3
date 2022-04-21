@@ -18,10 +18,14 @@ import java.util.function.Consumer;
  */
 public class AgencyPolicyStatement {
 
-    /** Gets or Sets action */
+    /**
+     * Gets or Sets action
+     */
     public static final class ActionEnum {
 
-        /** Enum IAM_AGENCIES_ASSUME for value: "iam:agencies:assume" */
+        /**
+         * Enum IAM_AGENCIES_ASSUME for value: "iam:agencies:assume"
+         */
         public static final ActionEnum IAM_AGENCIES_ASSUME = new ActionEnum("iam:agencies:assume");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -90,13 +94,19 @@ public class AgencyPolicyStatement {
 
     private List<ActionEnum> action = null;
 
-    /** 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。 */
+    /**
+    * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
+    */
     public static final class EffectEnum {
 
-        /** Enum ALLOW for value: "Allow" */
+        /**
+         * Enum ALLOW for value: "Allow"
+         */
         public static final EffectEnum ALLOW = new EffectEnum("Allow");
 
-        /** Enum DENY for value: "Deny" */
+        /**
+         * Enum DENY for value: "Deny"
+         */
         public static final EffectEnum DENY = new EffectEnum("Deny");
 
         private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
@@ -192,9 +202,10 @@ public class AgencyPolicyStatement {
         return this;
     }
 
-    /** 授权项，指对资源的具体操作权限。 > - 当自定义策略为委托自定义策略时，该字段值为：``` \"Action\": [\"iam:agencies:assume\"]```。
-     * 
-     * @return action */
+    /**
+     * 授权项，指对资源的具体操作权限。 > - 当自定义策略为委托自定义策略时，该字段值为：``` \"Action\": [\"iam:agencies:assume\"]```。
+     * @return action
+     */
     public List<ActionEnum> getAction() {
         return action;
     }
@@ -208,9 +219,10 @@ public class AgencyPolicyStatement {
         return this;
     }
 
-    /** 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
-     * 
-     * @return effect */
+    /**
+     * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
+     * @return effect
+     */
     public EffectEnum getEffect() {
         return effect;
     }
@@ -233,9 +245,10 @@ public class AgencyPolicyStatement {
         return this;
     }
 
-    /** Get resource
-     * 
-     * @return resource */
+    /**
+     * Get resource
+     * @return resource
+     */
     public AgencyPolicyResource getResource() {
         return resource;
     }
@@ -274,7 +287,10 @@ public class AgencyPolicyStatement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

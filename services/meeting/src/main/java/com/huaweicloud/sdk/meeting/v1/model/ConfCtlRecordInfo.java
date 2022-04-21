@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会控操作信息 */
+/**
+ * 会控操作信息
+ */
 public class ConfCtlRecordInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 操作时间（UTC时间，单位毫秒）。
-     * 
-     * @return operateTime */
+    /**
+     * 操作时间（UTC时间，单位毫秒）。
+     * @return operateTime
+     */
     public Long getOperateTime() {
         return operateTime;
     }
@@ -64,9 +67,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 操作来源。
-     * 
-     * @return operateSource */
+    /**
+     * 操作来源。
+     * @return operateSource
+     */
     public String getOperateSource() {
         return operateSource;
     }
@@ -80,9 +84,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 操作者。
-     * 
-     * @return operator */
+    /**
+     * 操作者。
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -96,9 +101,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 操作描述。
-     * 
-     * @return operateCode */
+    /**
+     * 操作描述。
+     * @return operateCode
+     */
     public String getOperateCode() {
         return operateCode;
     }
@@ -112,9 +118,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 被操作对象。
-     * 
-     * @return operationObject */
+    /**
+     * 被操作对象。
+     * @return operationObject
+     */
     public String getOperationObject() {
         return operationObject;
     }
@@ -128,9 +135,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 操作结果。
-     * 
-     * @return operateResult */
+    /**
+     * 操作结果。
+     * @return operateResult
+     */
     public String getOperateResult() {
         return operateResult;
     }
@@ -144,9 +152,10 @@ public class ConfCtlRecordInfo {
         return this;
     }
 
-    /** 详情。
-     * 
-     * @return detail */
+    /**
+     * 详情。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -193,7 +202,10 @@ public class ConfCtlRecordInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

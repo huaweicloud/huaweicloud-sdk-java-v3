@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** extend对象 */
+/**
+ * extend对象
+ */
 public class Extend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class Extend {
         return this;
     }
 
-    /** 扩容后文件系统的新容量，以GB为单位。扩容步长大于等于100GB。 普通文件系统容量，取值范围500~32768。 带宽型文件系统，容量范围是10240~327680 minimum: 500 maximum: 327680
-     * 
-     * @return newSize */
+    /**
+     * 扩容后文件系统的新容量，以GB为单位。扩容步长大于等于100GB。  普通文件系统容量，取值范围500~32768。  带宽型文件系统，容量范围是10240~327680
+     * minimum: 500
+     * maximum: 327680
+     * @return newSize
+     */
     public Integer getNewSize() {
         return newSize;
     }
@@ -55,7 +60,10 @@ public class Extend {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

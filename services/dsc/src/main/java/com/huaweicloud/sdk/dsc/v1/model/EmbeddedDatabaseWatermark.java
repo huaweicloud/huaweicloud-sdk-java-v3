@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EmbeddedDatabaseWatermark */
+/**
+ * EmbeddedDatabaseWatermark
+ */
 public class EmbeddedDatabaseWatermark {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class EmbeddedDatabaseWatermark {
         return this;
     }
 
-    /** 添加水印的内容
-     * 
-     * @return watermarkContent */
+    /**
+     * 添加水印的内容
+     * @return watermarkContent
+     */
     public String getWatermarkContent() {
         return watermarkContent;
     }
@@ -53,9 +56,10 @@ public class EmbeddedDatabaseWatermark {
         return this;
     }
 
-    /** 水印密钥
-     * 
-     * @return watermarkKey */
+    /**
+     * 水印密钥
+     * @return watermarkKey
+     */
     public String getWatermarkKey() {
         return watermarkKey;
     }
@@ -85,9 +89,10 @@ public class EmbeddedDatabaseWatermark {
         return this;
     }
 
-    /** 字段类型列表，最大长度100。使用时，至少包含两个字段，一个“primary_key”为true表示主键，一个为false用来嵌入水印
-     * 
-     * @return columns */
+    /**
+     * 字段类型列表，最大长度100。使用时，至少包含两个字段，一个“primary_key”为true表示主键，一个为false用来嵌入水印
+     * @return columns
+     */
     public List<Columns> getColumns() {
         return columns;
     }
@@ -117,9 +122,10 @@ public class EmbeddedDatabaseWatermark {
         return this;
     }
 
-    /** 数据字段的内容，最大支持长度2000
-     * 
-     * @return data */
+    /**
+     * 数据字段的内容，最大支持长度2000
+     * @return data
+     */
     public List<Map<String, Object>> getData() {
         return data;
     }
@@ -160,7 +166,10 @@ public class EmbeddedDatabaseWatermark {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

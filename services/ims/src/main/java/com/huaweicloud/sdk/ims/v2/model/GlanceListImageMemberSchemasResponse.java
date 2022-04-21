@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceListImageMemberSchemasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 视图链接。
-     * 
-     * @return links */
+    /**
+     * 视图链接。
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -64,9 +67,10 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 视图名称。
-     * 
-     * @return name */
+    /**
+     * 视图名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型，用途。
-     * 
-     * @return properties */
+    /**
+     * 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型，用途。
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -122,7 +127,10 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

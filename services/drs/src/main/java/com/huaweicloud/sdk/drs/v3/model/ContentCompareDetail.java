@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 内容对比结果详情。 */
+/**
+ * 内容对比结果详情。
+ */
 public class ContentCompareDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,31 +50,47 @@ public class ContentCompareDetail {
 
     private Integer diffRowNum;
 
-    /** 行对比结果。 */
+    /**
+     * 行对比结果。
+     */
     public static final class LineCompareResultEnum {
 
-        /** Enum CONSISTENT_ for value: "CONSISTENT-一致" */
+        /**
+         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         */
         public static final LineCompareResultEnum CONSISTENT_ = new LineCompareResultEnum("CONSISTENT-一致");
 
-        /** Enum INCONSISTENT_ for value: "INCONSISTENT-不一致" */
+        /**
+         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         */
         public static final LineCompareResultEnum INCONSISTENT_ = new LineCompareResultEnum("INCONSISTENT-不一致");
 
-        /** Enum COMPARING_ for value: "COMPARING-正在对比" */
+        /**
+         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         */
         public static final LineCompareResultEnum COMPARING_ = new LineCompareResultEnum("COMPARING-正在对比");
 
-        /** Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比" */
+        /**
+         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         */
         public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ =
             new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
 
-        /** Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败" */
+        /**
+         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         */
         public static final LineCompareResultEnum FAILED_TO_COMPARE_ =
             new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
 
-        /** Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在" */
+        /**
+         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         */
         public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ =
             new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
 
-        /** Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比" */
+        /**
+         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         */
         public static final LineCompareResultEnum CAN_NOT_COMPARE_ = new LineCompareResultEnum("CAN_NOT_COMPARE-无法对比");
 
         private static final Map<String, LineCompareResultEnum> STATIC_FIELDS = createStaticFields();
@@ -147,31 +165,47 @@ public class ContentCompareDetail {
 
     private LineCompareResultEnum lineCompareResult;
 
-    /** 内容对比结果。 */
+    /**
+     * 内容对比结果。
+     */
     public static final class ContentCompareResultEnum {
 
-        /** Enum CONSISTENT_ for value: "CONSISTENT-一致" */
+        /**
+         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         */
         public static final ContentCompareResultEnum CONSISTENT_ = new ContentCompareResultEnum("CONSISTENT-一致");
 
-        /** Enum INCONSISTENT_ for value: "INCONSISTENT-不一致" */
+        /**
+         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         */
         public static final ContentCompareResultEnum INCONSISTENT_ = new ContentCompareResultEnum("INCONSISTENT-不一致");
 
-        /** Enum COMPARING_ for value: "COMPARING-正在对比" */
+        /**
+         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         */
         public static final ContentCompareResultEnum COMPARING_ = new ContentCompareResultEnum("COMPARING-正在对比");
 
-        /** Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比" */
+        /**
+         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         */
         public static final ContentCompareResultEnum WAITING_FOR_COMPARISON_ =
             new ContentCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
 
-        /** Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败" */
+        /**
+         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         */
         public static final ContentCompareResultEnum FAILED_TO_COMPARE_ =
             new ContentCompareResultEnum("FAILED_TO_COMPARE-对比失败");
 
-        /** Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在" */
+        /**
+         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         */
         public static final ContentCompareResultEnum TARGET_DB_NOT_EXIT_ =
             new ContentCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
 
-        /** Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比" */
+        /**
+         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         */
         public static final ContentCompareResultEnum CAN_NOT_COMPARE_ =
             new ContentCompareResultEnum("CAN_NOT_COMPARE-无法对比");
 
@@ -257,9 +291,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 源库名称。
-     * 
-     * @return sourceDbName */
+    /**
+     * 源库名称。
+     * @return sourceDbName
+     */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -273,9 +308,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 目标库名称。
-     * 
-     * @return targetDbName */
+    /**
+     * 目标库名称。
+     * @return targetDbName
+     */
     public String getTargetDbName() {
         return targetDbName;
     }
@@ -289,9 +325,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 源库的表名称。
-     * 
-     * @return sourceTableName */
+    /**
+     * 源库的表名称。
+     * @return sourceTableName
+     */
     public String getSourceTableName() {
         return sourceTableName;
     }
@@ -305,9 +342,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 目标库的表名称。
-     * 
-     * @return targetTableName */
+    /**
+     * 目标库的表名称。
+     * @return targetTableName
+     */
     public String getTargetTableName() {
         return targetTableName;
     }
@@ -321,9 +359,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 源库的表的行数。
-     * 
-     * @return sourceRowNum */
+    /**
+     * 源库的表的行数。
+     * @return sourceRowNum
+     */
     public Integer getSourceRowNum() {
         return sourceRowNum;
     }
@@ -337,9 +376,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 目标库的表的行数。
-     * 
-     * @return targetRowNum */
+    /**
+     * 目标库的表的行数。
+     * @return targetRowNum
+     */
     public Integer getTargetRowNum() {
         return targetRowNum;
     }
@@ -353,9 +393,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 源库的表和目标库的表的差异值。
-     * 
-     * @return diffRowNum */
+    /**
+     * 源库的表和目标库的表的差异值。
+     * @return diffRowNum
+     */
     public Integer getDiffRowNum() {
         return diffRowNum;
     }
@@ -369,9 +410,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 行对比结果。
-     * 
-     * @return lineCompareResult */
+    /**
+     * 行对比结果。
+     * @return lineCompareResult
+     */
     public LineCompareResultEnum getLineCompareResult() {
         return lineCompareResult;
     }
@@ -385,9 +427,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 内容对比结果。
-     * 
-     * @return contentCompareResult */
+    /**
+     * 内容对比结果。
+     * @return contentCompareResult
+     */
     public ContentCompareResultEnum getContentCompareResult() {
         return contentCompareResult;
     }
@@ -401,9 +444,10 @@ public class ContentCompareDetail {
         return this;
     }
 
-    /** 附加信息。
-     * 
-     * @return message */
+    /**
+     * 附加信息。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -465,7 +509,10 @@ public class ContentCompareDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

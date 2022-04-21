@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 操作 */
+/**
+ * 操作
+ */
 public class PolicyAction {
 
-    /** 防护等级（log为仅记录、block为拦截） */
+    /**
+     * 防护等级（log为仅记录、block为拦截）
+     */
     public static final class CategoryEnum {
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final CategoryEnum BLOCK = new CategoryEnum("block");
 
-        /** Enum LOG for value: "log" */
+        /**
+         * Enum LOG for value: "log"
+         */
         public static final CategoryEnum LOG = new CategoryEnum("log");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class PolicyAction {
         return this;
     }
 
-    /** 防护等级（log为仅记录、block为拦截）
-     * 
-     * @return category */
+    /**
+     * 防护等级（log为仅记录、block为拦截）
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -131,7 +140,10 @@ public class PolicyAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

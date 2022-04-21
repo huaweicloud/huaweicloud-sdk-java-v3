@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRpoStatisticsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ListRpoStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源的RPO超标趋势记录列表。
-     * 
-     * @return resourceRpoStatistics */
+    /**
+     * 资源的RPO超标趋势记录列表。
+     * @return resourceRpoStatistics
+     */
     public List<RpoStattisticsParams> getResourceRpoStatistics() {
         return resourceRpoStatistics;
     }
@@ -60,9 +63,10 @@ public class ListRpoStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 列表中包含的资源的RPO超标趋势记录个数。
-     * 
-     * @return count */
+    /**
+     * 列表中包含的资源的RPO超标趋势记录个数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -99,7 +103,10 @@ public class ListRpoStatisticsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

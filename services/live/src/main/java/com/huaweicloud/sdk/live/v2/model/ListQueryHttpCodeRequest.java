@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQueryHttpCodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。
-     * 
-     * @return playDomains */
+    /**
+     * 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。 
+     * @return playDomains
+     */
     public List<String> getPlayDomains() {
         return playDomains;
     }
@@ -94,9 +97,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 状态码。
-     * 
-     * @return code */
+    /**
+     * 状态码。 
+     * @return code
+     */
     public List<String> getCode() {
         return code;
     }
@@ -126,9 +130,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。
-     * 
-     * @return region */
+    /**
+     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
+     * @return region
+     */
     public List<String> getRegion() {
         return region;
     }
@@ -158,9 +163,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
-     * 
-     * @return isp */
+    /**
+     * 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他  不填写查询所有运营商。 
+     * @return isp
+     */
     public List<String> getIsp() {
         return isp;
     }
@@ -174,9 +180,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。若参数为空，默认查询最近1小时数据。 最大查询跨度1天，最大查询周期7天。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。若参数为空，默认查询最近1小时数据。  最大查询跨度1天，最大查询周期7天。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -190,9 +197,10 @@ public class ListQueryHttpCodeRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间。结束时间需大于起始时间。 最大查询跨度1天，最大查询周期7天。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。  最大查询跨度1天，最大查询周期7天。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -237,7 +245,10 @@ public class ListQueryHttpCodeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

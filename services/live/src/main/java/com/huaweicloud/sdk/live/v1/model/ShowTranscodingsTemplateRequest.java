@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTranscodingsTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -49,9 +52,10 @@ public class ShowTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -65,9 +69,11 @@ public class ShowTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 分页编号，默认为0。 minimum: 0
-     * 
-     * @return page */
+    /**
+     * 分页编号，默认为0。
+     * minimum: 0
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -81,9 +87,12 @@ public class ShowTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 每页记录数。 取值范围：1-100。 默认为10。 minimum: 1 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 每页记录数。  取值范围：1-100。  默认为10。 
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -124,7 +133,10 @@ public class ShowTranscodingsTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

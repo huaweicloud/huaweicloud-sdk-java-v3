@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ReclaimCouponQuotasReq */
+/**
+ * ReclaimCouponQuotasReq
+ */
 public class ReclaimCouponQuotasReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ReclaimCouponQuotasReq {
         return this;
     }
 
-    /** 被回收的精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
-     * 
-     * @return quotaIds */
+    /**
+     * 被回收的精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
+     * @return quotaIds
+     */
     public List<String> getQuotaIds() {
         return quotaIds;
     }
@@ -58,9 +61,10 @@ public class ReclaimCouponQuotasReq {
         return this;
     }
 
-    /** 回收时的备注。
-     * 
-     * @return remark */
+    /**
+     * 回收时的备注。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -97,7 +101,10 @@ public class ReclaimCouponQuotasReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

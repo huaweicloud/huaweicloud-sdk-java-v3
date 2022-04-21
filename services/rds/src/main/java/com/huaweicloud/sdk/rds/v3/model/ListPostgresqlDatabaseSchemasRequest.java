@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPostgresqlDatabaseSchemasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -56,9 +59,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -72,9 +76,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -88,9 +93,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return this;
     }
 
-    /** 分页页码，从1开始。
-     * 
-     * @return page */
+    /**
+     * 分页页码，从1开始。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -104,9 +110,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return this;
     }
 
-    /** 每页数据条数。取值范围[1, 100]。
-     * 
-     * @return limit */
+    /**
+     * 每页数据条数。取值范围[1, 100]。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -150,7 +157,10 @@ public class ListPostgresqlDatabaseSchemasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

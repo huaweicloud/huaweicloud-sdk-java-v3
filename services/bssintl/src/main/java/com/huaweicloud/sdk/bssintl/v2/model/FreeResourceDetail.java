@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FreeResourceDetail */
+/**
+ * FreeResourceDetail
+ */
 public class FreeResourceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
-     * 
-     * @return freeResourceId */
+    /**
+     * 资源项ID，一个资源包中会含有多个资源项，一个使用量类型对应一个资源项。
+     * @return freeResourceId
+     */
     public String getFreeResourceId() {
         return freeResourceId;
     }
@@ -79,9 +82,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 资源项类型名称。
-     * 
-     * @return freeResourceTypeName */
+    /**
+     * 资源项类型名称。
+     * @return freeResourceTypeName
+     */
     public String getFreeResourceTypeName() {
         return freeResourceTypeName;
     }
@@ -95,9 +99,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 重置周期，只有quota_reuse_mode为可重置，该字段才有意义。 1：小时2：天3：周4：月5：年
-     * 
-     * @return quotaReuseCycle */
+    /**
+     * 重置周期，只有quota_reuse_mode为可重置，该字段才有意义。 1：小时2：天3：周4：月5：年
+     * @return quotaReuseCycle
+     */
     public Integer getQuotaReuseCycle() {
         return quotaReuseCycle;
     }
@@ -111,10 +116,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 重置周期类别，只有quota_reuse_mode为可重置，该字段才有意义。 1：按自然周期重置是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。
-     * 2：按订购周期重置。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
-     * 
-     * @return quotaReuseCycleType */
+    /**
+     * 重置周期类别，只有quota_reuse_mode为可重置，该字段才有意义。 1：按自然周期重置是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。 2：按订购周期重置。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
+     * @return quotaReuseCycleType
+     */
     public Integer getQuotaReuseCycleType() {
         return quotaReuseCycleType;
     }
@@ -128,9 +133,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 使用量类型名称。
-     * 
-     * @return usageTypeName */
+    /**
+     * 使用量类型名称。
+     * @return usageTypeName
+     */
     public String getUsageTypeName() {
         return usageTypeName;
     }
@@ -144,9 +150,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 开始时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的开始时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的生效时间。
-     * 
-     * @return startTime */
+    /**
+     * 开始时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的开始时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的生效时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -160,9 +167,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 结束时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的结束时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的失效时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，格式UTC。 如果quota_reuse_mode为可重置，则此时间为当前时间所在的重置周期的结束时间。如果quota_reuse_mode为不可重置，则此时间为订购实例的失效时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -176,9 +184,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
-     * 
-     * @return amount */
+    /**
+     * 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -192,9 +201,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
-     * 
-     * @return originalAmount */
+    /**
+     * 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
+     * @return originalAmount
+     */
     public Double getOriginalAmount() {
         return originalAmount;
     }
@@ -208,9 +218,10 @@ public class FreeResourceDetail {
         return this;
     }
 
-    /** 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
-     * 
-     * @return measureId */
+    /**
+     * 度量单位，免费资源套餐额度度量单位。您可以调用查询度量单位列表接口获取。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -272,7 +283,10 @@ public class FreeResourceDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

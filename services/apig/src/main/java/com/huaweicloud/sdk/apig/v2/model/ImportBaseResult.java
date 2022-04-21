@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ImportBaseResult */
+/**
+ * ImportBaseResult
+ */
 public class ImportBaseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ImportBaseResult {
         return this;
     }
 
-    /** 导入成功信息
-     * 
-     * @return success */
+    /**
+     * 导入成功信息
+     * @return success
+     */
     public List<Success> getSuccess() {
         return success;
     }
@@ -79,9 +82,10 @@ public class ImportBaseResult {
         return this;
     }
 
-    /** 导入失败信息
-     * 
-     * @return failure */
+    /**
+     * 导入失败信息
+     * @return failure
+     */
     public List<Failure> getFailure() {
         return failure;
     }
@@ -104,9 +108,10 @@ public class ImportBaseResult {
         return this;
     }
 
-    /** Get swagger
-     * 
-     * @return swagger */
+    /**
+     * Get swagger
+     * @return swagger
+     */
     public Swagger getSwagger() {
         return swagger;
     }
@@ -145,7 +150,10 @@ public class ImportBaseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

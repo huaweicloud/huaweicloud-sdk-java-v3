@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建或修改规则动作响应结构体 */
+/**
+ * 创建或修改规则动作响应结构体
+ */
 public class RoutingRuleAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class RoutingRuleAction {
         return this;
     }
 
-    /** 规则动作ID，用于唯一标识一条规则动作，在创建规则动作时由物联网平台分配获得，创建时无需携带，由平台统一分配唯一的action_id。
-     * 
-     * @return actionId */
+    /**
+     * 规则动作ID，用于唯一标识一条规则动作，在创建规则动作时由物联网平台分配获得，创建时无需携带，由平台统一分配唯一的action_id。
+     * @return actionId
+     */
     public String getActionId() {
         return actionId;
     }
@@ -55,9 +58,10 @@ public class RoutingRuleAction {
         return this;
     }
 
-    /** 规则动作对应的的规则触发条件ID。
-     * 
-     * @return ruleId */
+    /**
+     * 规则动作对应的的规则触发条件ID。
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -71,9 +75,10 @@ public class RoutingRuleAction {
         return this;
     }
 
-    /** 资源空间ID。
-     * 
-     * @return appId */
+    /**
+     * 资源空间ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -87,10 +92,10 @@ public class RoutingRuleAction {
         return this;
     }
 
-    /** 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 -
-     * AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
-     * 
-     * @return channel */
+    /**
+     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
+     * @return channel
+     */
     public String getChannel() {
         return channel;
     }
@@ -113,9 +118,10 @@ public class RoutingRuleAction {
         return this;
     }
 
-    /** Get channelDetail
-     * 
-     * @return channelDetail */
+    /**
+     * Get channelDetail
+     * @return channelDetail
+     */
     public ChannelDetail getChannelDetail() {
         return channelDetail;
     }
@@ -158,7 +164,10 @@ public class RoutingRuleAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

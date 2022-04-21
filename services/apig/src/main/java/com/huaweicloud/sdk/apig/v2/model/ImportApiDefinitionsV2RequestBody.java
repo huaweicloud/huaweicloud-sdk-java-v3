@@ -15,7 +15,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ImportApiDefinitionsV2RequestBody */
+/**
+ * ImportApiDefinitionsV2RequestBody
+ */
 public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
     private String groupId;
 
-    /** 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息 */
+    /**
+     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
+     */
     public static final class ExtendModeEnum {
 
-        /** Enum MERGE for value: "merge" */
+        /**
+         * Enum MERGE for value: "merge"
+         */
         public static final ExtendModeEnum MERGE = new ExtendModeEnum("merge");
 
-        /** Enum OVERRIDE for value: "override" */
+        /**
+         * Enum OVERRIDE for value: "override"
+         */
         public static final ExtendModeEnum OVERRIDE = new ExtendModeEnum("override");
 
         private static final Map<String, ExtendModeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,13 +122,19 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
     private Boolean mockMode;
 
-    /** 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息 */
+    /**
+     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
+     */
     public static final class ApiModeEnum {
 
-        /** Enum MERGE for value: "merge" */
+        /**
+         * Enum MERGE for value: "merge"
+         */
         public static final ApiModeEnum MERGE = new ApiModeEnum("merge");
 
-        /** Enum OVERRIDE for value: "override" */
+        /**
+         * Enum OVERRIDE for value: "override"
+         */
         public static final ApiModeEnum OVERRIDE = new ApiModeEnum("override");
 
         private static final Map<String, ApiModeEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +213,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 是否创建新分组
-     * 
-     * @return isCreateGroup */
+    /**
+     * 是否创建新分组
+     * @return isCreateGroup
+     */
     public Boolean getIsCreateGroup() {
         return isCreateGroup;
     }
@@ -215,9 +230,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** API分组编号，当is_create_group=false时为必填
-     * 
-     * @return groupId */
+    /**
+     * API分组编号，当is_create_group=false时为必填
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -231,9 +247,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
-     * 
-     * @return extendMode */
+    /**
+     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
+     * @return extendMode
+     */
     public ExtendModeEnum getExtendMode() {
         return extendMode;
     }
@@ -247,9 +264,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 是否开启简易导入模式
-     * 
-     * @return simpleMode */
+    /**
+     * 是否开启简易导入模式
+     * @return simpleMode
+     */
     public Boolean getSimpleMode() {
         return simpleMode;
     }
@@ -263,9 +281,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 是否开启Mock后端
-     * 
-     * @return mockMode */
+    /**
+     * 是否开启Mock后端
+     * @return mockMode
+     */
     public Boolean getMockMode() {
         return mockMode;
     }
@@ -279,9 +298,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
-     * 
-     * @return apiMode */
+    /**
+     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
+     * @return apiMode
+     */
     public ApiModeEnum getApiMode() {
         return apiMode;
     }
@@ -295,9 +315,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 导入Api的请求体，json或yaml格式的文件
-     * 
-     * @return fileName */
+    /**
+     * 导入Api的请求体，json或yaml格式的文件
+     * @return fileName
+     */
     public FormDataFilePart getFileName() {
         return fileName;
     }
@@ -389,7 +410,10 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

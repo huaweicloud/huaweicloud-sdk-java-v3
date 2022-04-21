@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** vpc对象 */
+/**
+ * vpc对象
+ */
 public class VpcObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class VpcObject {
         return this;
     }
 
-    /** 虚拟私有云ID，如果是自动创建，填“autoCreate”
-     * 
-     * @return id */
+    /**
+     * 虚拟私有云ID，如果是自动创建，填“autoCreate”
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class VpcObject {
         return this;
     }
 
-    /** 虚拟私有云名称
-     * 
-     * @return name */
+    /**
+     * 虚拟私有云名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class VpcObject {
         return this;
     }
 
-    /** VPC的网段，默认192.168.0.0/16
-     * 
-     * @return cidr */
+    /**
+     * VPC的网段，默认192.168.0.0/16
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -100,7 +105,10 @@ public class VpcObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

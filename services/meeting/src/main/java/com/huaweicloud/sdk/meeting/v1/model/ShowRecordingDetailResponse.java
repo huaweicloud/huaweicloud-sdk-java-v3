@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRecordingDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议UUID。
-     * 
-     * @return confUUID */
+    /**
+     * 会议UUID。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -88,9 +91,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return confID */
+    /**
+     * 会议ID。
+     * @return confID
+     */
     public String getConfID() {
         return confID;
     }
@@ -120,9 +124,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 点播地址。
-     * 
-     * @return url */
+    /**
+     * 点播地址。
+     * @return url
+     */
     public List<String> getUrl() {
         return url;
     }
@@ -136,9 +141,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制时长（单位秒）。
-     * 
-     * @return rcdTime */
+    /**
+     * 录制时长（单位秒）。
+     * @return rcdTime
+     */
     public Integer getRcdTime() {
         return rcdTime;
     }
@@ -152,9 +158,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制文件大小（MB）。
-     * 
-     * @return rcdSize */
+    /**
+     * 录制文件大小（MB）。
+     * @return rcdSize
+     */
     public Integer getRcdSize() {
         return rcdSize;
     }
@@ -168,9 +175,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议主题。
-     * 
-     * @return subject */
+    /**
+     * 会议主题。
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -184,9 +192,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议预订者。
-     * 
-     * @return scheduserName */
+    /**
+     * 会议预订者。
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -200,9 +209,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议开始时间。
-     * 
-     * @return startTime */
+    /**
+     * 会议开始时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -216,9 +226,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制文件是否转码完成。
-     * 
-     * @return isDecodeFinish */
+    /**
+     * 录制文件是否转码完成。
+     * @return isDecodeFinish
+     */
     public Boolean getIsDecodeFinish() {
         return isDecodeFinish;
     }
@@ -232,9 +243,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 录制文件预计转码完成时间。
-     * 
-     * @return decodeEndTime */
+    /**
+     * 录制文件预计转码完成时间。
+     * @return decodeEndTime
+     */
     public Long getDecodeEndTime() {
         return decodeEndTime;
     }
@@ -248,9 +260,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 录播文件是否可观看。
-     * 
-     * @return available */
+    /**
+     * 录播文件是否可观看。
+     * @return available
+     */
     public Boolean getAvailable() {
         return available;
     }
@@ -315,7 +328,10 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

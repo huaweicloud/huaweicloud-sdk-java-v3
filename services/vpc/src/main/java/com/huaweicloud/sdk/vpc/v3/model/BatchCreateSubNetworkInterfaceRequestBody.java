@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchCreateSubNetworkInterfaceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +31,10 @@ public class BatchCreateSubNetworkInterfaceRequestBody {
         return this;
     }
 
-    /** 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会创建辅助弹性网卡。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。
-     * -false（默认值）：发送正常请求，并直接创建辅助弹性网卡。
-     * 
-     * @return dryRun */
+    /**
+     * 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会创建辅助弹性网卡。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。 -false（默认值）：发送正常请求，并直接创建辅助弹性网卡。
+     * @return dryRun
+     */
     public Boolean getDryRun() {
         return dryRun;
     }
@@ -57,9 +59,10 @@ public class BatchCreateSubNetworkInterfaceRequestBody {
         return this;
     }
 
-    /** Get subNetworkInterface
-     * 
-     * @return subNetworkInterface */
+    /**
+     * Get subNetworkInterface
+     * @return subNetworkInterface
+     */
     public BatchCreateSubNetworkInterfaceOption getSubNetworkInterface() {
         return subNetworkInterface;
     }
@@ -73,9 +76,12 @@ public class BatchCreateSubNetworkInterfaceRequestBody {
         return this;
     }
 
-    /** 批量创建辅助弹性网卡的个数 minimum: 1 maximum: 20
-     * 
-     * @return count */
+    /**
+     * 批量创建辅助弹性网卡的个数
+     * minimum: 1
+     * maximum: 20
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -115,7 +121,10 @@ public class BatchCreateSubNetworkInterfaceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

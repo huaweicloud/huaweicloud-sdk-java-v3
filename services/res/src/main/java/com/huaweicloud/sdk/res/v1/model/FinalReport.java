@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 数据探索报告 */
+/**
+ * 数据探索报告
+ */
 public class FinalReport {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 报告生成时间。
-     * 
-     * @return generatedTime */
+    /**
+     * 报告生成时间。
+     * @return generatedTime
+     */
     public String getGeneratedTime() {
         return generatedTime;
     }
@@ -99,9 +102,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 宽表条目数，行为数据去重以后的数目。
-     * 
-     * @return wideTableNum */
+    /**
+     * 宽表条目数，行为数据去重以后的数目。
+     * @return wideTableNum
+     */
     public Long getWideTableNum() {
         return wideTableNum;
     }
@@ -115,9 +119,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 用户齐全度，一条行为中的用户是否在产生这条行为的时候拥有画像。
-     * 
-     * @return userCompleteDegree */
+    /**
+     * 用户齐全度，一条行为中的用户是否在产生这条行为的时候拥有画像。
+     * @return userCompleteDegree
+     */
     public Double getUserCompleteDegree() {
         return userCompleteDegree;
     }
@@ -131,9 +136,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 物品齐全度，一条行为中的物品是否在这条行为产生的时候拥有画像。
-     * 
-     * @return itemCompleteDegree */
+    /**
+     * 物品齐全度，一条行为中的物品是否在这条行为产生的时候拥有画像。
+     * @return itemCompleteDegree
+     */
     public Double getItemCompleteDegree() {
         return itemCompleteDegree;
     }
@@ -163,9 +169,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 行为次数统计。
-     * 
-     * @return bhvCount */
+    /**
+     * 行为次数统计。
+     * @return bhvCount
+     */
     public Map<String, Long> getBhvCount() {
         return bhvCount;
     }
@@ -195,9 +202,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 用户数字类型特征统计。
-     * 
-     * @return userLongFeatureReport */
+    /**
+     * 用户数字类型特征统计。
+     * @return userLongFeatureReport
+     */
     public List<NumFeatureReport> getUserLongFeatureReport() {
         return userLongFeatureReport;
     }
@@ -227,9 +235,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 用户连续类型特征统计。
-     * 
-     * @return userFloatFeatureReport */
+    /**
+     * 用户连续类型特征统计。
+     * @return userFloatFeatureReport
+     */
     public List<NumFeatureReport> getUserFloatFeatureReport() {
         return userFloatFeatureReport;
     }
@@ -259,9 +268,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 用户单值离散值类型特征统计。
-     * 
-     * @return userStrFeatureReport */
+    /**
+     * 用户单值离散值类型特征统计。
+     * @return userStrFeatureReport
+     */
     public List<StrFeatureReport> getUserStrFeatureReport() {
         return userStrFeatureReport;
     }
@@ -291,9 +301,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 用户多值离散值类型特征统计。
-     * 
-     * @return userStrArrayFeatureReport */
+    /**
+     * 用户多值离散值类型特征统计。
+     * @return userStrArrayFeatureReport
+     */
     public List<StrFeatureReport> getUserStrArrayFeatureReport() {
         return userStrArrayFeatureReport;
     }
@@ -323,9 +334,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 物品数字类型特征统计。
-     * 
-     * @return itemLongFeatureReport */
+    /**
+     * 物品数字类型特征统计。
+     * @return itemLongFeatureReport
+     */
     public List<NumFeatureReport> getItemLongFeatureReport() {
         return itemLongFeatureReport;
     }
@@ -355,9 +367,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 物品连续类型特征统计。
-     * 
-     * @return itemFloatFeatureReport */
+    /**
+     * 物品连续类型特征统计。
+     * @return itemFloatFeatureReport
+     */
     public List<NumFeatureReport> getItemFloatFeatureReport() {
         return itemFloatFeatureReport;
     }
@@ -387,9 +400,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 物品单值离散值类型特征统计。
-     * 
-     * @return itemStrFeatureReport */
+    /**
+     * 物品单值离散值类型特征统计。
+     * @return itemStrFeatureReport
+     */
     public List<StrFeatureReport> getItemStrFeatureReport() {
         return itemStrFeatureReport;
     }
@@ -419,9 +433,10 @@ public class FinalReport {
         return this;
     }
 
-    /** 物品多值离散值类型特征统计。
-     * 
-     * @return itemStrArrayFeatureReport */
+    /**
+     * 物品多值离散值类型特征统计。
+     * @return itemStrArrayFeatureReport
+     */
     public List<StrFeatureReport> getItemStrArrayFeatureReport() {
         return itemStrArrayFeatureReport;
     }
@@ -492,7 +507,10 @@ public class FinalReport {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

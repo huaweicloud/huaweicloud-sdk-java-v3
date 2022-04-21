@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateVpcepConnectionReq */
+/**
+ * UpdateVpcepConnectionReq
+ */
 public class UpdateVpcepConnectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class UpdateVpcepConnectionReq {
         return this;
     }
 
-    /** 期望的操作行为。
-     * 
-     * @return action */
+    /**
+     * 期望的操作行为。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -58,9 +61,10 @@ public class UpdateVpcepConnectionReq {
         return this;
     }
 
-    /** 终端节点ID列表（用户ID）。
-     * 
-     * @return endpointIdList */
+    /**
+     * 终端节点ID列表（用户ID）。
+     * @return endpointIdList
+     */
     public List<String> getEndpointIdList() {
         return endpointIdList;
     }
@@ -97,7 +101,10 @@ public class UpdateVpcepConnectionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

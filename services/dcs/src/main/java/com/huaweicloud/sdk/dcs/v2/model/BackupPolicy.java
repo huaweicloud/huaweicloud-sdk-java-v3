@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BackupPolicy */
+/**
+ * BackupPolicy
+ */
 public class BackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class BackupPolicy {
         return this;
     }
 
-    /** 备份类型。 - auto：自动备份 - manual：手动备份
-     * 
-     * @return backupType */
+    /**
+     * 备份类型。 - auto：自动备份 - manual：手动备份 
+     * @return backupType
+     */
     public String getBackupType() {
         return backupType;
     }
@@ -45,9 +48,10 @@ public class BackupPolicy {
         return this;
     }
 
-    /** 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。
-     * 
-     * @return saveDays */
+    /**
+     * 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
+     * @return saveDays
+     */
     public Integer getSaveDays() {
         return saveDays;
     }
@@ -70,9 +74,10 @@ public class BackupPolicy {
         return this;
     }
 
-    /** Get periodicalBackupPlan
-     * 
-     * @return periodicalBackupPlan */
+    /**
+     * Get periodicalBackupPlan
+     * @return periodicalBackupPlan
+     */
     public BackupPlan getPeriodicalBackupPlan() {
         return periodicalBackupPlan;
     }
@@ -111,7 +116,10 @@ public class BackupPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

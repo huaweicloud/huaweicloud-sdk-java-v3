@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询保护实例数据结构 */
+/**
+ * 查询保护实例数据结构
+ */
 public class ShowProtectedInstanceParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护实例的ID。
-     * 
-     * @return id */
+    /**
+     * 保护实例的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +105,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护实例的名称。
-     * 
-     * @return name */
+    /**
+     * 保护实例的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -118,9 +122,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护实例的描述。
-     * 
-     * @return description */
+    /**
+     * 保护实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -134,9 +139,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护实例的状态。
-     * 
-     * @return status */
+    /**
+     * 保护实例的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -150,9 +156,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 生产站点云服务器ID。
-     * 
-     * @return sourceServer */
+    /**
+     * 生产站点云服务器ID。
+     * @return sourceServer
+     */
     public String getSourceServer() {
         return sourceServer;
     }
@@ -166,9 +173,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 容灾站点云服务器ID。
-     * 
-     * @return targetServer */
+    /**
+     * 容灾站点云服务器ID。
+     * @return targetServer
+     */
     public String getTargetServer() {
         return targetServer;
     }
@@ -182,9 +190,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -198,9 +207,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -214,9 +224,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -239,9 +250,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetadataParams getMetadata() {
         return metadata;
     }
@@ -271,9 +283,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 挂载的复制对列表。
-     * 
-     * @return attachment */
+    /**
+     * 挂载的复制对列表。
+     * @return attachment
+     */
     public List<ProtectedInstanceAttachment> getAttachment() {
         return attachment;
     }
@@ -303,9 +316,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -319,9 +333,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 保护实例的同步进度。单位：百分比（%）。
-     * 
-     * @return progress */
+    /**
+     * 保护实例的同步进度。单位：百分比（%）。
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -335,9 +350,10 @@ public class ShowProtectedInstanceParams {
         return this;
     }
 
-    /** 标识保护实例所在保护组的当前生产站点可用区。source：表示当前生产站点可用区为保护组source_availability_zone的值。target：表示当前生产站点可用区为保护组的target_availability_zone的值。
-     * 
-     * @return priorityStation */
+    /**
+     * 标识保护实例所在保护组的当前生产站点可用区。source：表示当前生产站点可用区为保护组source_availability_zone的值。target：表示当前生产站点可用区为保护组的target_availability_zone的值。
+     * @return priorityStation
+     */
     public String getPriorityStation() {
         return priorityStation;
     }
@@ -411,7 +427,10 @@ public class ShowProtectedInstanceParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

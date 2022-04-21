@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ThailandIdcardConfidence */
+/**
+ * ThailandIdcardConfidence
+ */
 public class ThailandIdcardConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 身份证号置信度。
-     * 
-     * @return idNumber */
+    /**
+     * 身份证号置信度。 
+     * @return idNumber
+     */
     public Float getIdNumber() {
         return idNumber;
     }
@@ -104,9 +107,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 泰文名字置信度。
-     * 
-     * @return nameTh */
+    /**
+     * 泰文名字置信度。 
+     * @return nameTh
+     */
     public Float getNameTh() {
         return nameTh;
     }
@@ -120,9 +124,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 英文名字置信度。
-     * 
-     * @return firstNameEn */
+    /**
+     * 英文名字置信度。 
+     * @return firstNameEn
+     */
     public Float getFirstNameEn() {
         return firstNameEn;
     }
@@ -136,9 +141,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 英文姓氏置信度。
-     * 
-     * @return lastNameEn */
+    /**
+     * 英文姓氏置信度。 
+     * @return lastNameEn
+     */
     public Float getLastNameEn() {
         return lastNameEn;
     }
@@ -152,9 +158,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 泰文出生日期置信度。
-     * 
-     * @return dateOfBirthTh */
+    /**
+     * 泰文出生日期置信度。 
+     * @return dateOfBirthTh
+     */
     public Float getDateOfBirthTh() {
         return dateOfBirthTh;
     }
@@ -168,9 +175,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 英文出生日期置信度。
-     * 
-     * @return dateOfBirthEn */
+    /**
+     * 英文出生日期置信度。 
+     * @return dateOfBirthEn
+     */
     public Float getDateOfBirthEn() {
         return dateOfBirthEn;
     }
@@ -184,9 +192,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 宗教置信度。
-     * 
-     * @return religionTh */
+    /**
+     * 宗教置信度。 
+     * @return religionTh
+     */
     public Float getReligionTh() {
         return religionTh;
     }
@@ -200,9 +209,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 地址置信度。
-     * 
-     * @return addressTh */
+    /**
+     * 地址置信度。 
+     * @return addressTh
+     */
     public Float getAddressTh() {
         return addressTh;
     }
@@ -216,9 +226,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 泰文签发日期置信度。
-     * 
-     * @return dateOfIssueTh */
+    /**
+     * 泰文签发日期置信度。 
+     * @return dateOfIssueTh
+     */
     public Float getDateOfIssueTh() {
         return dateOfIssueTh;
     }
@@ -232,9 +243,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 英文签发日期置信度。
-     * 
-     * @return dateOfIssueEn */
+    /**
+     * 英文签发日期置信度。 
+     * @return dateOfIssueEn
+     */
     public Float getDateOfIssueEn() {
         return dateOfIssueEn;
     }
@@ -248,9 +260,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 泰文有效期置信度。
-     * 
-     * @return dateOfExpiryTh */
+    /**
+     * 泰文有效期置信度。 
+     * @return dateOfExpiryTh
+     */
     public Float getDateOfExpiryTh() {
         return dateOfExpiryTh;
     }
@@ -264,9 +277,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 英文有效期置信度。
-     * 
-     * @return dateOfExpiryEn */
+    /**
+     * 英文有效期置信度。 
+     * @return dateOfExpiryEn
+     */
     public Float getDateOfExpiryEn() {
         return dateOfExpiryEn;
     }
@@ -280,9 +294,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 序列号置信度。
-     * 
-     * @return serialNumber */
+    /**
+     * 序列号置信度。 
+     * @return serialNumber
+     */
     public Float getSerialNumber() {
         return serialNumber;
     }
@@ -296,9 +311,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 身份证反面卡号置信度。
-     * 
-     * @return cardNumber */
+    /**
+     * 身份证反面卡号置信度。 
+     * @return cardNumber
+     */
     public Float getCardNumber() {
         return cardNumber;
     }
@@ -312,9 +328,10 @@ public class ThailandIdcardConfidence {
         return this;
     }
 
-    /** 激光码置信度。
-     * 
-     * @return laserNumber */
+    /**
+     * 激光码置信度。 
+     * @return laserNumber
+     */
     public Float getLaserNumber() {
         return laserNumber;
     }
@@ -391,7 +408,10 @@ public class ThailandIdcardConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PrivateKeyVerify */
+/**
+ * PrivateKeyVerify
+ */
 public class PrivateKeyVerify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PrivateKeyVerify {
         return this;
     }
 
-    /** 仓库UUID
-     * 
-     * @return repositoryUuid */
+    /**
+     * 仓库UUID
+     * @return repositoryUuid
+     */
     public String getRepositoryUuid() {
         return repositoryUuid;
     }
@@ -39,9 +42,10 @@ public class PrivateKeyVerify {
         return this;
     }
 
-    /** 私钥
-     * 
-     * @return privateKey */
+    /**
+     * 私钥
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -78,7 +82,10 @@ public class PrivateKeyVerify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

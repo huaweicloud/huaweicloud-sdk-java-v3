@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 删除的人脸数量。 调用失败时无此字段。
-     * 
-     * @return faceNumber */
+    /**
+     * 删除的人脸数量。 调用失败时无此字段。
+     * @return faceNumber
+     */
     public Integer getFaceNumber() {
         return faceNumber;
     }
@@ -45,9 +48,10 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库ID。 调用失败时无此字段。
-     * 
-     * @return faceSetId */
+    /**
+     * 人脸库ID。 调用失败时无此字段。
+     * @return faceSetId
+     */
     public String getFaceSetId() {
         return faceSetId;
     }
@@ -61,9 +65,10 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库名称。 调用失败时无此字段。
-     * 
-     * @return faceSetName */
+    /**
+     * 人脸库名称。 调用失败时无此字段。
+     * @return faceSetName
+     */
     public String getFaceSetName() {
         return faceSetName;
     }
@@ -103,7 +108,10 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

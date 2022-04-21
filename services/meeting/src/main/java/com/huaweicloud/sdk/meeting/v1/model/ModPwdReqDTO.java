@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ModPwdReqDTO */
+/**
+ * ModPwdReqDTO
+ */
 public class ModPwdReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ModPwdReqDTO {
         return this;
     }
 
-    /** 帐号，必须是携带域名的帐号 maxLength: 255 minLength: 1
-     * 
-     * @return account */
+    /**
+     * 帐号，必须是携带域名的帐号 maxLength: 255 minLength: 1 
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -44,9 +47,10 @@ public class ModPwdReqDTO {
         return this;
     }
 
-    /** 用户旧的登录密码 maxLength: 255 minLength: 1
-     * 
-     * @return oldPwd */
+    /**
+     * 用户旧的登录密码 maxLength: 255 minLength: 1 
+     * @return oldPwd
+     */
     public String getOldPwd() {
         return oldPwd;
     }
@@ -60,10 +64,10 @@ public class ModPwdReqDTO {
         return this;
     }
 
-    /** 用户新的登录密码 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 旧密码和新密码不能相同 * 上次修改密码后5分钟内不能更新密码 * 不能与最近使用的旧密码相同 * 不能包含3个以上重复字符 *
-     * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写） * 新密码与旧密码之间允许的最少不相同字符数为2个
-     * 
-     * @return newPwd */
+    /**
+     * 用户新的登录密码 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 旧密码和新密码不能相同 * 上次修改密码后5分钟内不能更新密码 * 不能与最近使用的旧密码相同 * 不能包含3个以上重复字符 * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写） * 新密码与旧密码之间允许的最少不相同字符数为2个 
+     * @return newPwd
+     */
     public String getNewPwd() {
         return newPwd;
     }
@@ -101,7 +105,10 @@ public class ModPwdReqDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

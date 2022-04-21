@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 绑定密钥对描述消息体 */
+/**
+ * 绑定密钥对描述消息体
+ */
 public class AssociateKeypairRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class AssociateKeypairRequestBody {
         return this;
     }
 
-    /** SSH密钥对的名称
-     * 
-     * @return keypairName */
+    /**
+     * SSH密钥对的名称
+     * @return keypairName
+     */
     public String getKeypairName() {
         return keypairName;
     }
@@ -49,9 +52,10 @@ public class AssociateKeypairRequestBody {
         return this;
     }
 
-    /** Get server
-     * 
-     * @return server */
+    /**
+     * Get server
+     * @return server
+     */
     public EcsServerInfo getServer() {
         return server;
     }
@@ -88,7 +92,10 @@ public class AssociateKeypairRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

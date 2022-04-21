@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowJobDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 部署任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 部署任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -54,9 +57,10 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 应用组件实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 应用组件实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,9 +74,10 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 指定查询的个数，可用于分页查询。
-     * 
-     * @return limit */
+    /**
+     * 指定查询的个数，可用于分页查询。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 指定查询的偏移量，可用于分页查询。
-     * 
-     * @return offset */
+    /**
+     * 指定查询的偏移量，可用于分页查询。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +108,10 @@ public class ShowJobDetailRequest {
         return this;
     }
 
-    /** 是否降序。true表示desc, false表示asc。
-     * 
-     * @return desc */
+    /**
+     * 是否降序。true表示desc, false表示asc。
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -147,7 +154,10 @@ public class ShowJobDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

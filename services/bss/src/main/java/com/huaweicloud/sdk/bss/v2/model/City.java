@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** City */
+/**
+ * City
+ */
 public class City {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class City {
         return this;
     }
 
-    /** 城市的编码。
-     * 
-     * @return code */
+    /**
+     * 城市的编码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -39,9 +42,10 @@ public class City {
         return this;
     }
 
-    /** 城市的名称，根据请求参数X-Language的取值返回对应语言的名称，目前仅支持中文。
-     * 
-     * @return name */
+    /**
+     * 城市的名称，根据请求参数X-Language的取值返回对应语言的名称，目前仅支持中文。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -77,7 +81,10 @@ public class City {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListProjectVersionsV4ResponseBodyIterations */
+/**
+ * ListProjectVersionsV4ResponseBodyIterations
+ */
 public class ListProjectVersionsV4ResponseBodyIterations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代描述
-     * 
-     * @return description */
+    /**
+     * 迭代描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -69,9 +72,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代结束时间
-     * 
-     * @return endTime */
+    /**
+     * 迭代结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -85,9 +89,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return id */
+    /**
+     * 迭代id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -101,9 +106,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代标题
-     * 
-     * @return name */
+    /**
+     * 迭代标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -117,9 +123,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代开始时间
-     * 
-     * @return beginTime */
+    /**
+     * 迭代开始时间
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -133,9 +140,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代状态
-     * 
-     * @return status */
+    /**
+     * 迭代状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -149,9 +157,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代更新时间，长整型时间戳
-     * 
-     * @return updatedTime */
+    /**
+     * 迭代更新时间，长整型时间戳
+     * @return updatedTime
+     */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -165,9 +174,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return this;
     }
 
-    /** 迭代是否已经删除，false, 未删除， true已经删除
-     * 
-     * @return deleted */
+    /**
+     * 迭代是否已经删除，false, 未删除， true已经删除
+     * @return deleted
+     */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -217,7 +227,10 @@ public class ListProjectVersionsV4ResponseBodyIterations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

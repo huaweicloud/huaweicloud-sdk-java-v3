@@ -7,29 +7,44 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 失败描述。 cluster_deleted, // 集群被删除 cluster_unavailable, // 集群不可用 cluster_inaccessible, // 集群无法访问 namespace_deleted, //
- * 命名空间被删除 namespace_unavailable, // 命名空间不可用 namespace_inaccessible, // 命名空间无法访问 resource_deleted, // 资源已删除 */
+/**
+ * 失败描述。  cluster_deleted,        // 集群被删除  cluster_unavailable,    // 集群不可用  cluster_inaccessible,   // 集群无法访问  namespace_deleted,      // 命名空间被删除  namespace_unavailable,  // 命名空间不可用  namespace_inaccessible, // 命名空间无法访问  resource_deleted,       // 资源已删除 
+ */
 public class InstanceFailDetail {
 
-    /** Enum CLUSTER_DELETED for value: "cluster_deleted" */
+    /**
+     * Enum CLUSTER_DELETED for value: "cluster_deleted"
+     */
     public static final InstanceFailDetail CLUSTER_DELETED = new InstanceFailDetail("cluster_deleted");
 
-    /** Enum CLUSTER_UNAVAILABLE for value: "cluster_unavailable" */
+    /**
+     * Enum CLUSTER_UNAVAILABLE for value: "cluster_unavailable"
+     */
     public static final InstanceFailDetail CLUSTER_UNAVAILABLE = new InstanceFailDetail("cluster_unavailable");
 
-    /** Enum CLUSTER_INACCESSIBLE for value: "cluster_inaccessible" */
+    /**
+     * Enum CLUSTER_INACCESSIBLE for value: "cluster_inaccessible"
+     */
     public static final InstanceFailDetail CLUSTER_INACCESSIBLE = new InstanceFailDetail("cluster_inaccessible");
 
-    /** Enum NAMESPACE_DELETED for value: "namespace_deleted" */
+    /**
+     * Enum NAMESPACE_DELETED for value: "namespace_deleted"
+     */
     public static final InstanceFailDetail NAMESPACE_DELETED = new InstanceFailDetail("namespace_deleted");
 
-    /** Enum NAMESPACE_UNAVAILABLE for value: "namespace_unavailable" */
+    /**
+     * Enum NAMESPACE_UNAVAILABLE for value: "namespace_unavailable"
+     */
     public static final InstanceFailDetail NAMESPACE_UNAVAILABLE = new InstanceFailDetail("namespace_unavailable");
 
-    /** Enum NAMESPACE_INACCESSIBLE for value: "namespace_inaccessible" */
+    /**
+     * Enum NAMESPACE_INACCESSIBLE for value: "namespace_inaccessible"
+     */
     public static final InstanceFailDetail NAMESPACE_INACCESSIBLE = new InstanceFailDetail("namespace_inaccessible");
 
-    /** Enum RESOURCE_DELETED for value: "resource_deleted" */
+    /**
+     * Enum RESOURCE_DELETED for value: "resource_deleted"
+     */
     public static final InstanceFailDetail RESOURCE_DELETED = new InstanceFailDetail("resource_deleted");
 
     private static final Map<String, InstanceFailDetail> STATIC_FIELDS = createStaticFields();

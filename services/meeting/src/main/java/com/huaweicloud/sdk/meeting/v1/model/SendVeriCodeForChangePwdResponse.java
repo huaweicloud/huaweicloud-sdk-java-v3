@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SendVeriCodeForChangePwdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         return this;
     }
 
-    /** 过期时间，单位：秒。
-     * 
-     * @return expire */
+    /**
+     * 过期时间，单位：秒。
+     * @return expire
+     */
     public Integer getExpire() {
         return expire;
     }
@@ -45,9 +48,10 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         return this;
     }
 
-    /** 如果通过手机发送验证码，则该字段携带该用户绑定的手机号（手机号经过处理，屏蔽中间几位，如+8618****12345）
-     * 
-     * @return bindPhone */
+    /**
+     * 如果通过手机发送验证码，则该字段携带该用户绑定的手机号（手机号经过处理，屏蔽中间几位，如+8618****12345）
+     * @return bindPhone
+     */
     public String getBindPhone() {
         return bindPhone;
     }
@@ -61,9 +65,10 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         return this;
     }
 
-    /** 如果通过邮箱发送验证码，则该字段携带用户绑定的邮箱账号（邮箱账号经过处理，屏蔽中间几位，如tes****ount@huawei.com）
-     * 
-     * @return bindEmail */
+    /**
+     * 如果通过邮箱发送验证码，则该字段携带用户绑定的邮箱账号（邮箱账号经过处理，屏蔽中间几位，如tes****ount@huawei.com）
+     * @return bindEmail
+     */
     public String getBindEmail() {
         return bindEmail;
     }
@@ -102,7 +107,10 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

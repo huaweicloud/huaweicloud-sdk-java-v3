@@ -40,9 +40,10 @@ public class Resources {
         return this;
     }
 
-    /** 配额最大值。
-     * 
-     * @return max */
+    /**
+     * 配额最大值。
+     * @return max
+     */
     public Integer getMax() {
         return max;
     }
@@ -56,9 +57,10 @@ public class Resources {
         return this;
     }
 
-    /** 配额最小值。
-     * 
-     * @return min */
+    /**
+     * 配额最小值。
+     * @return min
+     */
     public Integer getMin() {
         return min;
     }
@@ -72,9 +74,10 @@ public class Resources {
         return this;
     }
 
-    /** 当前配额。
-     * 
-     * @return quota */
+    /**
+     * 当前配额。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -88,9 +91,10 @@ public class Resources {
         return this;
     }
 
-    /** 配额类型。
-     * 
-     * @return type */
+    /**
+     * 配额类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -104,9 +108,10 @@ public class Resources {
         return this;
     }
 
-    /** 已使用的配额。
-     * 
-     * @return used */
+    /**
+     * 已使用的配额。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -147,7 +152,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

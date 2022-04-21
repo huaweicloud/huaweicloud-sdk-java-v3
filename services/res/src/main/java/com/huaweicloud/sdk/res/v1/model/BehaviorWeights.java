@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BehaviorWeights */
+/**
+ * BehaviorWeights
+ */
 public class BehaviorWeights {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class BehaviorWeights {
         return this;
     }
 
-    /** 行为类型。
-     * 
-     * @return behaviorType */
+    /**
+     * 行为类型。
+     * @return behaviorType
+     */
     public String getBehaviorType() {
         return behaviorType;
     }
@@ -47,9 +50,10 @@ public class BehaviorWeights {
         return this;
     }
 
-    /** 行为权重。
-     * 
-     * @return weight */
+    /**
+     * 行为权重。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -79,9 +83,10 @@ public class BehaviorWeights {
         return this;
     }
 
-    /** 其他用途。
-     * 
-     * @return otherUses */
+    /**
+     * 其他用途。
+     * @return otherUses
+     */
     public List<String> getOtherUses() {
         return otherUses;
     }
@@ -120,7 +125,10 @@ public class BehaviorWeights {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

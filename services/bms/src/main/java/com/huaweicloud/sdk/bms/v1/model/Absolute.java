@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** absolute数据结构说明 */
+/**
+ * absolute数据结构说明
+ */
 public class Absolute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class Absolute {
         return this;
     }
 
-    /** 裸金属服务器最大申请数量
-     * 
-     * @return maxTotalInstances */
+    /**
+     * 裸金属服务器最大申请数量
+     * @return maxTotalInstances
+     */
     public Integer getMaxTotalInstances() {
         return maxTotalInstances;
     }
@@ -124,9 +127,10 @@ public class Absolute {
         return this;
     }
 
-    /** CPU核数最大申请数量
-     * 
-     * @return maxTotalCores */
+    /**
+     * CPU核数最大申请数量
+     * @return maxTotalCores
+     */
     public Integer getMaxTotalCores() {
         return maxTotalCores;
     }
@@ -140,9 +144,10 @@ public class Absolute {
         return this;
     }
 
-    /** 内存最大申请容量（单位：MB）
-     * 
-     * @return maxTotalRAMSize */
+    /**
+     * 内存最大申请容量（单位：MB）
+     * @return maxTotalRAMSize
+     */
     public Integer getMaxTotalRAMSize() {
         return maxTotalRAMSize;
     }
@@ -156,9 +161,10 @@ public class Absolute {
         return this;
     }
 
-    /** 可以申请的SSH密钥对最大数量
-     * 
-     * @return maxTotalKeypairs */
+    /**
+     * 可以申请的SSH密钥对最大数量
+     * @return maxTotalKeypairs
+     */
     public Integer getMaxTotalKeypairs() {
         return maxTotalKeypairs;
     }
@@ -172,9 +178,10 @@ public class Absolute {
         return this;
     }
 
-    /** 可输入元数据的最大长度
-     * 
-     * @return maxServerMeta */
+    /**
+     * 可输入元数据的最大长度
+     * @return maxServerMeta
+     */
     public Integer getMaxServerMeta() {
         return maxServerMeta;
     }
@@ -188,9 +195,10 @@ public class Absolute {
         return this;
     }
 
-    /** 可注入文件的最大个数
-     * 
-     * @return maxPersonality */
+    /**
+     * 可注入文件的最大个数
+     * @return maxPersonality
+     */
     public Integer getMaxPersonality() {
         return maxPersonality;
     }
@@ -204,9 +212,10 @@ public class Absolute {
         return this;
     }
 
-    /** 注入文件内容的最大长度（单位：Byte）
-     * 
-     * @return maxPersonalitySize */
+    /**
+     * 注入文件内容的最大长度（单位：Byte）
+     * @return maxPersonalitySize
+     */
     public Integer getMaxPersonalitySize() {
         return maxPersonalitySize;
     }
@@ -220,9 +229,10 @@ public class Absolute {
         return this;
     }
 
-    /** 服务器组的最大个数
-     * 
-     * @return maxServerGroups */
+    /**
+     * 服务器组的最大个数
+     * @return maxServerGroups
+     */
     public Integer getMaxServerGroups() {
         return maxServerGroups;
     }
@@ -236,9 +246,10 @@ public class Absolute {
         return this;
     }
 
-    /** 服务器组中的最大裸金属服务器数。
-     * 
-     * @return maxServerGroupMembers */
+    /**
+     * 服务器组中的最大裸金属服务器数。
+     * @return maxServerGroupMembers
+     */
     public Integer getMaxServerGroupMembers() {
         return maxServerGroupMembers;
     }
@@ -252,9 +263,10 @@ public class Absolute {
         return this;
     }
 
-    /** 已使用的服务器组个数
-     * 
-     * @return totalServerGroupsUsed */
+    /**
+     * 已使用的服务器组个数
+     * @return totalServerGroupsUsed
+     */
     public Integer getTotalServerGroupsUsed() {
         return totalServerGroupsUsed;
     }
@@ -268,9 +280,10 @@ public class Absolute {
         return this;
     }
 
-    /** 安全组最大使用个数。 说明：具体配额限制请以VPC配额限制为准。
-     * 
-     * @return maxSecurityGroups */
+    /**
+     * 安全组最大使用个数。 说明：具体配额限制请以VPC配额限制为准。
+     * @return maxSecurityGroups
+     */
     public Integer getMaxSecurityGroups() {
         return maxSecurityGroups;
     }
@@ -284,9 +297,10 @@ public class Absolute {
         return this;
     }
 
-    /** 安全组中安全组规则最大的配置个数。 说明：具体配额限制请以VPC配额限制为准。
-     * 
-     * @return maxSecurityGroupRules */
+    /**
+     * 安全组中安全组规则最大的配置个数。 说明：具体配额限制请以VPC配额限制为准。
+     * @return maxSecurityGroupRules
+     */
     public Integer getMaxSecurityGroupRules() {
         return maxSecurityGroupRules;
     }
@@ -300,9 +314,10 @@ public class Absolute {
         return this;
     }
 
-    /** 最大的浮动IP使用个数
-     * 
-     * @return maxTotalFloatingIps */
+    /**
+     * 最大的浮动IP使用个数
+     * @return maxTotalFloatingIps
+     */
     public Integer getMaxTotalFloatingIps() {
         return maxTotalFloatingIps;
     }
@@ -316,9 +331,10 @@ public class Absolute {
         return this;
     }
 
-    /** 镜像元数据最大的长度
-     * 
-     * @return maxImageMeta */
+    /**
+     * 镜像元数据最大的长度
+     * @return maxImageMeta
+     */
     public Integer getMaxImageMeta() {
         return maxImageMeta;
     }
@@ -332,9 +348,10 @@ public class Absolute {
         return this;
     }
 
-    /** 当前裸金属服务器使用个数
-     * 
-     * @return totalInstancesUsed */
+    /**
+     * 当前裸金属服务器使用个数
+     * @return totalInstancesUsed
+     */
     public Integer getTotalInstancesUsed() {
         return totalInstancesUsed;
     }
@@ -348,9 +365,10 @@ public class Absolute {
         return this;
     }
 
-    /** 当前已使用CPU核数
-     * 
-     * @return totalCoresUsed */
+    /**
+     * 当前已使用CPU核数
+     * @return totalCoresUsed
+     */
     public Integer getTotalCoresUsed() {
         return totalCoresUsed;
     }
@@ -364,9 +382,10 @@ public class Absolute {
         return this;
     }
 
-    /** 当前内存使用容量（单位：MB）
-     * 
-     * @return totalRAMUsed */
+    /**
+     * 当前内存使用容量（单位：MB）
+     * @return totalRAMUsed
+     */
     public Integer getTotalRAMUsed() {
         return totalRAMUsed;
     }
@@ -380,9 +399,10 @@ public class Absolute {
         return this;
     }
 
-    /** 当前安全组使用个数
-     * 
-     * @return totalSecurityGroupsUsed */
+    /**
+     * 当前安全组使用个数
+     * @return totalSecurityGroupsUsed
+     */
     public Integer getTotalSecurityGroupsUsed() {
         return totalSecurityGroupsUsed;
     }
@@ -396,9 +416,10 @@ public class Absolute {
         return this;
     }
 
-    /** 当前浮动IP使用个数
-     * 
-     * @return totalFloatingIpsUsed */
+    /**
+     * 当前浮动IP使用个数
+     * @return totalFloatingIpsUsed
+     */
     public Integer getTotalFloatingIpsUsed() {
         return totalFloatingIpsUsed;
     }
@@ -487,7 +508,10 @@ public class Absolute {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

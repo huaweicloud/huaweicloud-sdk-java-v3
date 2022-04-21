@@ -25,9 +25,10 @@ public class IdentityToken {
         return this;
     }
 
-    /** token的ID。与请求头中的X-Auth-Token含义相同，待废弃。
-     * 
-     * @return id */
+    /**
+     * token的ID。与请求头中的X-Auth-Token含义相同，待废弃。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -41,9 +42,12 @@ public class IdentityToken {
         return this;
     }
 
-    /** AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。 minimum: 900 maximum: 86400
-     * 
-     * @return durationSeconds */
+    /**
+     * AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。
+     * minimum: 900
+     * maximum: 86400
+     * @return durationSeconds
+     */
     public Integer getDurationSeconds() {
         return durationSeconds;
     }
@@ -80,7 +84,10 @@ public class IdentityToken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

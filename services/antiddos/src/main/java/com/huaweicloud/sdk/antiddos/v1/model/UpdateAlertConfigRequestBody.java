@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateAlertConfigRequestBody */
+/**
+ * UpdateAlertConfigRequestBody
+ */
 public class UpdateAlertConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateAlertConfigRequestBody {
         return this;
     }
 
-    /** 告警群组描述。
-     * 
-     * @return displayName */
+    /**
+     * 告警群组描述。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -45,9 +48,10 @@ public class UpdateAlertConfigRequestBody {
         return this;
     }
 
-    /** 告警群组的唯一标识。
-     * 
-     * @return topicUrn */
+    /**
+     * 告警群组的唯一标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -71,9 +75,10 @@ public class UpdateAlertConfigRequestBody {
         return this;
     }
 
-    /** Get warnConfig
-     * 
-     * @return warnConfig */
+    /**
+     * Get warnConfig
+     * @return warnConfig
+     */
     public UpdateAlertConfigRequestBodyWarnConfig getWarnConfig() {
         return warnConfig;
     }
@@ -112,7 +117,10 @@ public class UpdateAlertConfigRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

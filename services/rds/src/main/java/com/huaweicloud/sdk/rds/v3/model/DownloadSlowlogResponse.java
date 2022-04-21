@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DownloadSlowlogResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class DownloadSlowlogResponse extends SdkResponse {
         return this;
     }
 
-    /** 慢日志下载链接列表
-     * 
-     * @return list */
+    /**
+     * 慢日志下载链接列表
+     * @return list
+     */
     public List<SlowlogDownloadInfo> getList() {
         return list;
     }
@@ -64,9 +67,10 @@ public class DownloadSlowlogResponse extends SdkResponse {
         return this;
     }
 
-    /** - 慢日志下载链接生成状态。FINISH，表示下载链接已经生成完成。CREATING，表示正在生成文件，准备下载链接。FAILED，表示存在日志文件准备失败。
-     * 
-     * @return status */
+    /**
+     * - 慢日志下载链接生成状态。FINISH，表示下载链接已经生成完成。CREATING，表示正在生成文件，准备下载链接。FAILED，表示存在日志文件准备失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +84,10 @@ public class DownloadSlowlogResponse extends SdkResponse {
         return this;
     }
 
-    /** - 慢日志链接数量。
-     * 
-     * @return count */
+    /**
+     * - 慢日志链接数量。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -121,7 +126,10 @@ public class DownloadSlowlogResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

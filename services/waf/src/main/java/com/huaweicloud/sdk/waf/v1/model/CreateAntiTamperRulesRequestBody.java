@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateAntiTamperRulesRequestBody */
+/**
+ * CreateAntiTamperRulesRequestBody
+ */
 public class CreateAntiTamperRulesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateAntiTamperRulesRequestBody {
         return this;
     }
 
-    /** 防护网站，查询云模式防护域名列表（ListHost）接口获取防护域名，响应体中的的hostname字段
-     * 
-     * @return hostname */
+    /**
+     * 防护网站，查询云模式防护域名列表（ListHost）接口获取防护域名，响应体中的的hostname字段
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -44,9 +47,10 @@ public class CreateAntiTamperRulesRequestBody {
         return this;
     }
 
-    /** 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
-     * 
-     * @return url */
+    /**
+     * 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -60,9 +64,10 @@ public class CreateAntiTamperRulesRequestBody {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class CreateAntiTamperRulesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

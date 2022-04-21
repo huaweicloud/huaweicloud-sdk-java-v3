@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 逻辑卷组信息 */
+/**
+ * 逻辑卷组信息
+ */
 public class PutVolumeGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class PutVolumeGroups {
         return this;
     }
 
-    /** lv信息
-     * 
-     * @return logicalVolumes */
+    /**
+     * lv信息
+     * @return logicalVolumes
+     */
     public List<PutLogicalVolume> getLogicalVolumes() {
         return logicalVolumes;
     }
@@ -68,9 +71,10 @@ public class PutVolumeGroups {
         return this;
     }
 
-    /** 卷组id
-     * 
-     * @return id */
+    /**
+     * 卷组id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -84,9 +88,10 @@ public class PutVolumeGroups {
         return this;
     }
 
-    /** 是否迁移
-     * 
-     * @return needMigration */
+    /**
+     * 是否迁移
+     * @return needMigration
+     */
     public Boolean getNeedMigration() {
         return needMigration;
     }
@@ -100,9 +105,12 @@ public class PutVolumeGroups {
         return this;
     }
 
-    /** 调整大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return adjustSize */
+    /**
+     * 调整大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return adjustSize
+     */
     public Long getAdjustSize() {
         return adjustSize;
     }
@@ -143,7 +151,10 @@ public class PutVolumeGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

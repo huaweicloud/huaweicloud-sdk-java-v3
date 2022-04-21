@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ChangingTheDelayThresholdRequestBody */
+/**
+ * ChangingTheDelayThresholdRequestBody
+ */
 public class ChangingTheDelayThresholdRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ChangingTheDelayThresholdRequestBody {
         return this;
     }
 
-    /** 延时阈值（单位：KB），取值范围为0~10485760。
-     * 
-     * @return delayThresholdInKilobytes */
+    /**
+     * 延时阈值（单位：KB），取值范围为0~10485760。
+     * @return delayThresholdInKilobytes
+     */
     public Integer getDelayThresholdInKilobytes() {
         return delayThresholdInKilobytes;
     }
@@ -57,7 +60,10 @@ public class ChangingTheDelayThresholdRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListLogStreamRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListLogStreamRequest {
         return this;
     }
 
-    /** 租户想查询的日志流所在的日志组的groupid，一般为36位字符串。
-     * 
-     * @return logGroupId */
+    /**
+     * 租户想查询的日志流所在的日志组的groupid，一般为36位字符串。 
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -39,9 +42,10 @@ public class ListLogStreamRequest {
         return this;
     }
 
-    /** 按条件搜索，内容设置为日志流的tag键值对，比如k1=v1；
-     * 
-     * @return tag */
+    /**
+     * 按条件搜索，内容设置为日志流的tag键值对，比如k1=v1； 
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -78,7 +82,10 @@ public class ListLogStreamRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

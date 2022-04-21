@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateDDosResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 内部错误码
-     * 
-     * @return errorCode */
+    /**
+     * 内部错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -45,9 +48,10 @@ public class UpdateDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 内部错误描述
-     * 
-     * @return errorMsg */
+    /**
+     * 内部错误描述
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -61,9 +65,10 @@ public class UpdateDDosResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID，后续可根据该ID查询本任务状态。 本字段为后续的任务审计扩展，暂时不需要，先保留。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID，后续可根据该ID查询本任务状态。 本字段为后续的任务审计扩展，暂时不需要，先保留。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -102,7 +107,10 @@ public class UpdateDDosResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

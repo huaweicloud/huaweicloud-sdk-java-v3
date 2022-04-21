@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页查询企业用户信息 */
+/**
+ * 分页查询企业用户信息
+ */
 public class SearchUserResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -138,9 +140,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return id */
+    /**
+     * 用户id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -154,9 +157,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 账号
-     * 
-     * @return userAccount */
+    /**
+     * 账号
+     * @return userAccount
+     */
     public String getUserAccount() {
         return userAccount;
     }
@@ -170,9 +174,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 姓名
-     * 
-     * @return name */
+    /**
+     * 姓名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -186,9 +191,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 英文名称
-     * 
-     * @return englishName */
+    /**
+     * 英文名称
+     * @return englishName
+     */
     public String getEnglishName() {
         return englishName;
     }
@@ -202,9 +208,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 手机
-     * 
-     * @return phone */
+    /**
+     * 手机
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -218,9 +225,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 手机所属国家
-     * 
-     * @return country */
+    /**
+     * 手机所属国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -234,9 +242,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 邮箱
-     * 
-     * @return email */
+    /**
+     * 邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -250,9 +259,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 个人会议室Id
-     * 
-     * @return vmrId */
+    /**
+     * 个人会议室Id
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -266,9 +276,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 部门编码
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -282,9 +293,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 部门完整名称
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门完整名称
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -298,9 +310,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 用户类型 - 0：系统管理员账户 - 1：SP管理员账户 - 2：企业成员账户 - 3：注册用户 - 10：硬终端用户
-     * 
-     * @return userType */
+    /**
+     * 用户类型 - 0：系统管理员账户 - 1：SP管理员账户 - 2：企业成员账户 - 3：注册用户 - 10：硬终端用户
+     * @return userType
+     */
     public Integer getUserType() {
         return userType;
     }
@@ -314,9 +327,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
-     * 
-     * @return adminType */
+    /**
+     * 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
+     * @return adminType
+     */
     public Integer getAdminType() {
         return adminType;
     }
@@ -330,9 +344,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 签名
-     * 
-     * @return signature */
+    /**
+     * 签名
+     * @return signature
+     */
     public String getSignature() {
         return signature;
     }
@@ -346,9 +361,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 职位
-     * 
-     * @return title */
+    /**
+     * 职位
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -362,9 +378,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return desc */
+    /**
+     * 备注
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -378,9 +395,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 用户状态 * 0：正常 * 1：停用
-     * 
-     * @return status */
+    /**
+     * 用户状态 * 0：正常 * 1：停用 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -394,9 +412,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 通讯录排序等级，序号越低优先级越高
-     * 
-     * @return sortLevel */
+    /**
+     * 通讯录排序等级，序号越低优先级越高
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -410,9 +429,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 是否隐藏手机号码
-     * 
-     * @return hidePhone */
+    /**
+     * 是否隐藏手机号码
+     * @return hidePhone
+     */
     public Boolean getHidePhone() {
         return hidePhone;
     }
@@ -426,9 +446,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 第三方账号自动开户的第三方账号、Ideahub账号的sn等
-     * 
-     * @return thirdAccount */
+    /**
+     * 第三方账号自动开户的第三方账号、Ideahub账号的sn等
+     * @return thirdAccount
+     */
     public String getThirdAccount() {
         return thirdAccount;
     }
@@ -442,9 +463,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 智慧屏账号
-     * 
-     * @return visionAccount */
+    /**
+     * 智慧屏账号
+     * @return visionAccount
+     */
     public String getVisionAccount() {
         return visionAccount;
     }
@@ -458,9 +480,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 许可证 * 0：商用 * 1：免费试用
-     * 
-     * @return license */
+    /**
+     * 许可证 * 0：商用 * 1：免费试用 
+     * @return license
+     */
     public Integer getLicense() {
         return license;
     }
@@ -474,9 +497,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 激活时间，utc时间戳
-     * 
-     * @return activeTime */
+    /**
+     * 激活时间，utc时间戳
+     * @return activeTime
+     */
     public Long getActiveTime() {
         return activeTime;
     }
@@ -490,9 +514,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 激活码到期时间,utc时间戳
-     * 
-     * @return activeCodeExpireTime */
+    /**
+     * 激活码到期时间,utc时间戳
+     * @return activeCodeExpireTime
+     */
     public Long getActiveCodeExpireTime() {
         return activeCodeExpireTime;
     }
@@ -506,9 +531,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 已激活的终端到期时间,utc时间戳
-     * 
-     * @return expireTime */
+    /**
+     * 已激活的终端到期时间,utc时间戳
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -522,9 +548,10 @@ public class SearchUserResultDTO {
         return this;
     }
 
-    /** 激活码
-     * 
-     * @return activeCode */
+    /**
+     * 激活码
+     * @return activeCode
+     */
     public String getActiveCode() {
         return activeCode;
     }
@@ -631,7 +658,10 @@ public class SearchUserResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Pod反亲和规则 */
+/**
+ * Pod反亲和规则
+ */
 public class AffinityPodAntiAffinity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class AffinityPodAntiAffinity {
         return this;
     }
 
-    /** 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。
-     * 
-     * @return preferredDuringSchedulingIgnoredDuringExecution */
+    /**
+     * 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。
+     * @return preferredDuringSchedulingIgnoredDuringExecution
+     */
     public List<WeightPodAffinityTerms> getPreferredDuringSchedulingIgnoredDuringExecution() {
         return preferredDuringSchedulingIgnoredDuringExecution;
     }
@@ -83,9 +86,10 @@ public class AffinityPodAntiAffinity {
         return this;
     }
 
-    /** 强制使用定义的规则调度，且不会影响已经在节点上运行的Pod。即强制选择调度到满足规则的节点，不会调度到不满足规则的节点。
-     * 
-     * @return requiredDuringSchedulingIgnoredDuringExecution */
+    /**
+     * 强制使用定义的规则调度，且不会影响已经在节点上运行的Pod。即强制选择调度到满足规则的节点，不会调度到不满足规则的节点。
+     * @return requiredDuringSchedulingIgnoredDuringExecution
+     */
     public List<PodAffinityTerm> getRequiredDuringSchedulingIgnoredDuringExecution() {
         return requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -130,7 +134,10 @@ public class AffinityPodAntiAffinity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

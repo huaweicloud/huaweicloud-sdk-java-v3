@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 部门基本信息, 查询企业级别的管理员时需要显示部门信息 */
+/**
+ * 部门基本信息, 查询企业级别的管理员时需要显示部门信息
+ */
 public class DeptBasicDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DeptBasicDTO {
         return this;
     }
 
-    /** 部门编码
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -54,9 +57,10 @@ public class DeptBasicDTO {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -70,9 +74,10 @@ public class DeptBasicDTO {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -86,9 +91,10 @@ public class DeptBasicDTO {
         return this;
     }
 
-    /** 部门名称路径
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门名称路径
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -102,9 +108,10 @@ public class DeptBasicDTO {
         return this;
     }
 
-    /** 父部门编码
-     * 
-     * @return parentDeptCode */
+    /**
+     * 父部门编码
+     * @return parentDeptCode
+     */
     public String getParentDeptCode() {
         return parentDeptCode;
     }
@@ -146,7 +153,10 @@ public class DeptBasicDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

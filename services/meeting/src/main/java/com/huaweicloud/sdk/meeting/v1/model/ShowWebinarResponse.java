@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowWebinarResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,9 +134,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议ID。长度限制为32个字符。
-     * 
-     * @return conferenceId */
+    /**
+     * 会议ID。长度限制为32个字符。
+     * @return conferenceId
+     */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -148,9 +151,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -164,9 +168,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 主题
-     * 
-     * @return subject */
+    /**
+     * 主题
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -180,9 +185,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -196,9 +202,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -212,9 +219,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 时长，单位分钟
-     * 
-     * @return duration */
+    /**
+     * 时长，单位分钟
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -228,9 +236,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 时区ID
-     * 
-     * @return timeZoneId */
+    /**
+     * 时区ID
+     * @return timeZoneId
+     */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -244,9 +253,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** Get state
-     * 
-     * @return state */
+    /**
+     * Get state
+     * @return state
+     */
     public MeetingStatus getState() {
         return state;
     }
@@ -260,9 +270,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议预订者ID
-     * 
-     * @return scheduserId */
+    /**
+     * 会议预订者ID
+     * @return scheduserId
+     */
     public String getScheduserId() {
         return scheduserId;
     }
@@ -276,9 +287,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 预订人部门
-     * 
-     * @return deptName */
+    /**
+     * 预订人部门
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -292,9 +304,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议预订者帐号名称。长度最大限制为96个字符。
-     * 
-     * @return scheduserName */
+    /**
+     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -308,9 +321,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 网络研讨会资源名
-     * 
-     * @return vmrPkgName */
+    /**
+     * 网络研讨会资源名
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -324,9 +338,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 入会范围开关
-     * 
-     * @return callRestriction */
+    /**
+     * 入会范围开关
+     * @return callRestriction
+     */
     public Boolean getCallRestriction() {
         return callRestriction;
     }
@@ -340,9 +355,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 主持人、嘉宾入会范围 0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
-     * 
-     * @return scope */
+    /**
+     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
+     * @return scope
+     */
     public Integer getScope() {
         return scope;
     }
@@ -356,9 +372,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
-     * 
-     * @return audienceScope */
+    /**
+     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
+     * @return audienceScope
+     */
     public Integer getAudienceScope() {
         return audienceScope;
     }
@@ -372,9 +389,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 主持人入会地址。
-     * 
-     * @return chairJoinUri */
+    /**
+     * 主持人入会地址。
+     * @return chairJoinUri
+     */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -388,9 +406,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 主持人密码。
-     * 
-     * @return chairPasswd */
+    /**
+     * 主持人密码。
+     * @return chairPasswd
+     */
     public String getChairPasswd() {
         return chairPasswd;
     }
@@ -404,9 +423,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 嘉宾入会地址。
-     * 
-     * @return guestJoinUri */
+    /**
+     * 嘉宾入会地址。
+     * @return guestJoinUri
+     */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -420,9 +440,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 嘉宾密码。
-     * 
-     * @return guestPasswd */
+    /**
+     * 嘉宾密码。
+     * @return guestPasswd
+     */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -436,9 +457,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 观众入会地址。
-     * 
-     * @return audienceJoinUri */
+    /**
+     * 观众入会地址。
+     * @return audienceJoinUri
+     */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -452,9 +474,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** 观众密码。
-     * 
-     * @return audiencePasswd */
+    /**
+     * 观众密码。
+     * @return audiencePasswd
+     */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -477,9 +500,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** Get notifySetting
-     * 
-     * @return notifySetting */
+    /**
+     * Get notifySetting
+     * @return notifySetting
+     */
     public OpenNotifySetting getNotifySetting() {
         return notifySetting;
     }
@@ -509,9 +533,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return this;
     }
 
-    /** Get attendees
-     * 
-     * @return attendees */
+    /**
+     * Get attendees
+     * @return attendees
+     */
     public List<String> getAttendees() {
         return attendees;
     }
@@ -612,7 +637,10 @@ public class ShowWebinarResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CaseInfo */
+/**
+ * CaseInfo
+ */
 public class CaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,12 @@ public class CaseInfo {
         return this;
     }
 
-    /** case_id minimum: 0 maximum: 2147483647
-     * 
-     * @return caseId */
+    /**
+     * case_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return caseId
+     */
     public Integer getCaseId() {
         return caseId;
     }
@@ -82,9 +87,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** case_name
-     * 
-     * @return caseName */
+    /**
+     * case_name
+     * @return caseName
+     */
     public String getCaseName() {
         return caseName;
     }
@@ -98,9 +104,12 @@ public class CaseInfo {
         return this;
     }
 
-    /** case_type minimum: 0 maximum: 2147483647
-     * 
-     * @return caseType */
+    /**
+     * case_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return caseType
+     */
     public Integer getCaseType() {
         return caseType;
     }
@@ -130,9 +139,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** contents
-     * 
-     * @return contents */
+    /**
+     * contents
+     * @return contents
+     */
     public List<Contents> getContents() {
         return contents;
     }
@@ -162,9 +172,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** for_loop_params
-     * 
-     * @return forLoopParams */
+    /**
+     * for_loop_params
+     * @return forLoopParams
+     */
     public List<Object> getForLoopParams() {
         return forLoopParams;
     }
@@ -194,9 +205,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** increase_setting
-     * 
-     * @return increaseSetting */
+    /**
+     * increase_setting
+     * @return increaseSetting
+     */
     public List<Object> getIncreaseSetting() {
         return increaseSetting;
     }
@@ -226,9 +238,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** stages
-     * 
-     * @return stages */
+    /**
+     * stages
+     * @return stages
+     */
     public List<Object> getStages() {
         return stages;
     }
@@ -242,9 +255,12 @@ public class CaseInfo {
         return this;
     }
 
-    /** status minimum: 0 maximum: 2147483647
-     * 
-     * @return status */
+    /**
+     * status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -258,9 +274,12 @@ public class CaseInfo {
         return this;
     }
 
-    /** temp_id minimum: 0 maximum: 2147483647
-     * 
-     * @return tempId */
+    /**
+     * temp_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return tempId
+     */
     public Integer getTempId() {
         return tempId;
     }
@@ -274,9 +293,10 @@ public class CaseInfo {
         return this;
     }
 
-    /** sort
-     * 
-     * @return sort */
+    /**
+     * sort
+     * @return sort
+     */
     public Integer getSort() {
         return sort;
     }
@@ -326,7 +346,10 @@ public class CaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

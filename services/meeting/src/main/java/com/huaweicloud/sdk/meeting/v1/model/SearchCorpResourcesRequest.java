@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchCorpResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -91,9 +94,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -107,9 +111,11 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -123,9 +129,12 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -139,9 +148,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 搜索条件，支持resourceId模糊查询。
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件，支持resourceId模糊查询。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -155,9 +165,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之后的资源项
-     * 
-     * @return startExpireDate */
+    /**
+     * 查询过期时间在该时间戳之后的资源项
+     * @return startExpireDate
+     */
     public Long getStartExpireDate() {
         return startExpireDate;
     }
@@ -171,9 +182,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之前的资源项
-     * 
-     * @return endExpireDate */
+    /**
+     * 查询过期时间在该时间戳之前的资源项
+     * @return endExpireDate
+     */
     public Long getEndExpireDate() {
         return endExpireDate;
     }
@@ -187,10 +199,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 资源类型。 - VMR - 云会议室 - CONF_CALL - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P - 720P硬终端 - SOFT - 软终端用户数 - ROOM -
-     * 大屏软终端 - LIVE - 直播推流 - RECORD - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 - HUAWEI_VISION -智慧屏 说明：查询网络研讨会资源时type字段需上送VMR
-     * 
-     * @return type */
+    /**
+     * 资源类型。 - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 - HUAWEI_VISION -智慧屏 说明：查询网络研讨会资源时type字段需上送VMR 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -204,9 +216,12 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** VMR模式，type为vmr时传递该参数 * 0：个人会议ID * 1：云会议室 * 2：网络研讨会 minimum: 1 maximum: 2
-     * 
-     * @return vmrMode */
+    /**
+     * VMR模式，type为vmr时传递该参数 * 0：个人会议ID * 1：云会议室 * 2：网络研讨会 
+     * minimum: 1
+     * maximum: 2
+     * @return vmrMode
+     */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -220,9 +235,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
-     * 
-     * @return typeId */
+    /**
+     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
+     * @return typeId
+     */
     public String getTypeId() {
         return typeId;
     }
@@ -236,9 +252,10 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 订单Id
-     * 
-     * @return orderId */
+    /**
+     * 订单Id
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -252,9 +269,12 @@ public class SearchCorpResourcesRequest {
         return this;
     }
 
-    /** 订单状态。 - 0：正常 - 1：到期 - 2：停用 minimum: 0 maximum: 2
-     * 
-     * @return status */
+    /**
+     * 订单状态。 - 0：正常 - 1：到期 - 2：停用 
+     * minimum: 0
+     * maximum: 2
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -322,7 +342,10 @@ public class SearchCorpResourcesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

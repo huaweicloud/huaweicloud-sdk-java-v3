@@ -16,34 +16,54 @@ import java.util.function.Consumer;
  */
 public class NodeStatus {
 
-    /** 节点状态。 */
+    /**
+     * 节点状态。
+     */
     public static final class PhaseEnum {
 
-        /** Enum BUILD for value: "Build" */
+        /**
+         * Enum BUILD for value: "Build"
+         */
         public static final PhaseEnum BUILD = new PhaseEnum("Build");
 
-        /** Enum INSTALLING for value: "Installing" */
+        /**
+         * Enum INSTALLING for value: "Installing"
+         */
         public static final PhaseEnum INSTALLING = new PhaseEnum("Installing");
 
-        /** Enum INSTALLED for value: "Installed" */
+        /**
+         * Enum INSTALLED for value: "Installed"
+         */
         public static final PhaseEnum INSTALLED = new PhaseEnum("Installed");
 
-        /** Enum SHUTDOWN for value: "ShutDown" */
+        /**
+         * Enum SHUTDOWN for value: "ShutDown"
+         */
         public static final PhaseEnum SHUTDOWN = new PhaseEnum("ShutDown");
 
-        /** Enum UPGRADING for value: "Upgrading" */
+        /**
+         * Enum UPGRADING for value: "Upgrading"
+         */
         public static final PhaseEnum UPGRADING = new PhaseEnum("Upgrading");
 
-        /** Enum ACTIVE for value: "Active" */
+        /**
+         * Enum ACTIVE for value: "Active"
+         */
         public static final PhaseEnum ACTIVE = new PhaseEnum("Active");
 
-        /** Enum ABNORMAL for value: "Abnormal" */
+        /**
+         * Enum ABNORMAL for value: "Abnormal"
+         */
         public static final PhaseEnum ABNORMAL = new PhaseEnum("Abnormal");
 
-        /** Enum DELETING for value: "Deleting" */
+        /**
+         * Enum DELETING for value: "Deleting"
+         */
         public static final PhaseEnum DELETING = new PhaseEnum("Deleting");
 
-        /** Enum ERROR for value: "Error" */
+        /**
+         * Enum ERROR for value: "Error"
+         */
         public static final PhaseEnum ERROR = new PhaseEnum("Error");
 
         private static final Map<String, PhaseEnum> STATIC_FIELDS = createStaticFields();
@@ -150,9 +170,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return phase */
+    /**
+     * 节点状态。
+     * @return phase
+     */
     public PhaseEnum getPhase() {
         return phase;
     }
@@ -166,9 +187,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** 创建或删除时的任务ID。
-     * 
-     * @return jobID */
+    /**
+     * 创建或删除时的任务ID。
+     * @return jobID
+     */
     public String getJobID() {
         return jobID;
     }
@@ -182,9 +204,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** 底层云服务器或裸金属节点ID。
-     * 
-     * @return serverId */
+    /**
+     * 底层云服务器或裸金属节点ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -198,9 +221,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** 节点主网卡私有网段IP地址。
-     * 
-     * @return privateIP */
+    /**
+     * 节点主网卡私有网段IP地址。
+     * @return privateIP
+     */
     public String getPrivateIP() {
         return privateIP;
     }
@@ -214,9 +238,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
-     * 
-     * @return publicIP */
+    /**
+     * 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
+     * @return publicIP
+     */
     public String getPublicIP() {
         return publicIP;
     }
@@ -239,9 +264,10 @@ public class NodeStatus {
         return this;
     }
 
-    /** Get deleteStatus
-     * 
-     * @return deleteStatus */
+    /**
+     * Get deleteStatus
+     * @return deleteStatus
+     */
     public DeleteStatus getDeleteStatus() {
         return deleteStatus;
     }
@@ -285,7 +311,10 @@ public class NodeStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

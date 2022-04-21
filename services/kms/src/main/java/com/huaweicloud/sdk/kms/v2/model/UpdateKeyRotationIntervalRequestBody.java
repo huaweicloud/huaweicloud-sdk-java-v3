@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateKeyRotationIntervalRequestBody */
+/**
+ * UpdateKeyRotationIntervalRequestBody
+ */
 public class UpdateKeyRotationIntervalRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class UpdateKeyRotationIntervalRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -45,9 +47,12 @@ public class UpdateKeyRotationIntervalRequestBody {
         return this;
     }
 
-    /** 轮换周期，取值范围为30~365的整数。 周期范围设置根据密钥使用频率进行，若密钥使用频率高，建议设置为短周期；反之，则设置为长周期。 minimum: 30 maximum: 365
-     * 
-     * @return rotationInterval */
+    /**
+     * 轮换周期，取值范围为30~365的整数。 周期范围设置根据密钥使用频率进行，若密钥使用频率高，建议设置为短周期；反之，则设置为长周期。
+     * minimum: 30
+     * maximum: 365
+     * @return rotationInterval
+     */
     public Integer getRotationInterval() {
         return rotationInterval;
     }
@@ -61,9 +66,10 @@ public class UpdateKeyRotationIntervalRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -103,7 +109,10 @@ public class UpdateKeyRotationIntervalRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

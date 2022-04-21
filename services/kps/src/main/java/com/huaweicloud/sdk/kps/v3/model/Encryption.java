@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 对私钥进行加密存储的方式。 */
+/**
+ * 对私钥进行加密存储的方式。
+ */
 public class Encryption {
 
-    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。 */
+    /**
+     * 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
+     */
     public static final class TypeEnum {
 
-        /** Enum DEFAULT for value: "default" */
+        /**
+         * Enum DEFAULT for value: "default"
+         */
         public static final TypeEnum DEFAULT = new TypeEnum("default");
 
-        /** Enum KMS for value: "kms" */
+        /**
+         * Enum KMS for value: "kms"
+         */
         public static final TypeEnum KMS = new TypeEnum("kms");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class Encryption {
         return this;
     }
 
-    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
-     * 
-     * @return type */
+    /**
+     * 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -115,9 +124,10 @@ public class Encryption {
         return this;
     }
 
-    /** kms密钥的名称。 - 若“type”为“kms”，则必须填入kms服务密钥名称。
-     * 
-     * @return kmsKeyName */
+    /**
+     * kms密钥的名称。  - 若“type”为“kms”，则必须填入kms服务密钥名称。
+     * @return kmsKeyName
+     */
     public String getKmsKeyName() {
         return kmsKeyName;
     }
@@ -153,7 +163,10 @@ public class Encryption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

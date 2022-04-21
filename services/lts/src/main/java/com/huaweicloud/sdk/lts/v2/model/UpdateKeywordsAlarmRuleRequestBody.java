@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateKeywordsAlarmRuleRequestBody */
+/**
+ * UpdateKeywordsAlarmRuleRequestBody
+ */
 public class UpdateKeywordsAlarmRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,19 +43,29 @@ public class UpdateKeywordsAlarmRuleRequestBody {
 
     private Frequency frequency;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class KeywordsAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final KeywordsAlarmLevelEnum INFO = new KeywordsAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final KeywordsAlarmLevelEnum MINOR = new KeywordsAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final KeywordsAlarmLevelEnum MAJOR = new KeywordsAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final KeywordsAlarmLevelEnum CRITICAL = new KeywordsAlarmLevelEnum("Critical");
 
         private static final Map<String, KeywordsAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -130,19 +142,29 @@ public class UpdateKeywordsAlarmRuleRequestBody {
 
     private Boolean keywordsAlarmSend;
 
-    /** 发送主题 0:不变 1:新增 2:修改 3:删除 */
+    /**
+     * 发送主题 0:不变 1:新增 2:修改 3:删除
+     */
     public static final class KeywordsAlarmSendCodeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final KeywordsAlarmSendCodeEnum NUMBER_0 = new KeywordsAlarmSendCodeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final KeywordsAlarmSendCodeEnum NUMBER_1 = new KeywordsAlarmSendCodeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final KeywordsAlarmSendCodeEnum NUMBER_2 = new KeywordsAlarmSendCodeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final KeywordsAlarmSendCodeEnum NUMBER_3 = new KeywordsAlarmSendCodeEnum(3);
 
         private static final Map<Integer, KeywordsAlarmSendCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -229,9 +251,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词告警规则id
-     * 
-     * @return keywordsAlarmRuleId */
+    /**
+     * 关键词告警规则id
+     * @return keywordsAlarmRuleId
+     */
     public String getKeywordsAlarmRuleId() {
         return keywordsAlarmRuleId;
     }
@@ -245,9 +268,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词告警名称
-     * 
-     * @return keywordsAlarmRuleName */
+    /**
+     * 关键词告警名称
+     * @return keywordsAlarmRuleName
+     */
     public String getKeywordsAlarmRuleName() {
         return keywordsAlarmRuleName;
     }
@@ -261,9 +285,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词告警信息描述
-     * 
-     * @return keywordsAlarmRuleDescription */
+    /**
+     * 关键词告警信息描述
+     * @return keywordsAlarmRuleDescription
+     */
     public String getKeywordsAlarmRuleDescription() {
         return keywordsAlarmRuleDescription;
     }
@@ -294,9 +319,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 关键词详细信息
-     * 
-     * @return keywordsRequests */
+    /**
+     * 关键词详细信息
+     * @return keywordsRequests
+     */
     public List<KeywordsRequest> getKeywordsRequests() {
         return keywordsRequests;
     }
@@ -319,9 +345,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警统计周期
-     * 
-     * @return frequency */
+    /**
+     * 告警统计周期
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -335,9 +362,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return keywordsAlarmLevel */
+    /**
+     * 告警级别
+     * @return keywordsAlarmLevel
+     */
     public KeywordsAlarmLevelEnum getKeywordsAlarmLevel() {
         return keywordsAlarmLevel;
     }
@@ -351,9 +379,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return keywordsAlarmSend */
+    /**
+     * 是否发送
+     * @return keywordsAlarmSend
+     */
     public Boolean getKeywordsAlarmSend() {
         return keywordsAlarmSend;
     }
@@ -368,9 +397,12 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 发送主题 0:不变 1:新增 2:修改 3:删除 minimum: 0 maximum: 3
-     * 
-     * @return keywordsAlarmSendCode */
+    /**
+     * 发送主题 0:不变 1:新增 2:修改 3:删除
+     * minimum: 0
+     * maximum: 3
+     * @return keywordsAlarmSendCode
+     */
     public KeywordsAlarmSendCodeEnum getKeywordsAlarmSendCode() {
         return keywordsAlarmSendCode;
     }
@@ -384,9 +416,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -410,9 +443,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return this;
     }
 
-    /** 通知主题
-     * 
-     * @return notificationSaveRule */
+    /**
+     * 通知主题
+     * @return notificationSaveRule
+     */
     public NotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
@@ -477,7 +511,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量操作失败的返回结果 */
+/**
+ * 批量操作失败的返回结果
+ */
 public class BatchFailure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class BatchFailure {
         return this;
     }
 
-    /** 操作失败的API ID
-     * 
-     * @return apiId */
+    /**
+     * 操作失败的API ID
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -49,9 +52,10 @@ public class BatchFailure {
         return this;
     }
 
-    /** 操作失败的APi名称
-     * 
-     * @return apiName */
+    /**
+     * 操作失败的APi名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -65,9 +69,10 @@ public class BatchFailure {
         return this;
     }
 
-    /** 操作失败的错误码
-     * 
-     * @return errorCode */
+    /**
+     * 操作失败的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class BatchFailure {
         return this;
     }
 
-    /** 操作失败的错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 操作失败的错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -123,7 +129,10 @@ public class BatchFailure {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

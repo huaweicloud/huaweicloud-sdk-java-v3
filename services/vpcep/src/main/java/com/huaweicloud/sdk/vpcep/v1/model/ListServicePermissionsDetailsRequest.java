@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServicePermissionsDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ListServicePermissionsDetailsRequest {
 
     private Integer offset;
 
-    /** 查询结果中白名单列表的排序字 段，取值为create_at，表示白名单 的添加时间。 */
+    /**
+     * 查询结果中白名单列表的排序字 段，取值为create_at，表示白名单 的添加时间。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum CREATE_AT for value: "create_at" */
+        /**
+         * Enum CREATE_AT for value: "create_at"
+         */
         public static final SortKeyEnum CREATE_AT = new SortKeyEnum("create_at");
 
-        /** Enum UPDATE_AT for value: "update_at" */
+        /**
+         * Enum UPDATE_AT for value: "update_at"
+         */
         public static final SortKeyEnum UPDATE_AT = new SortKeyEnum("update_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +117,19 @@ public class ListServicePermissionsDetailsRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 查询结果中白名单列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。 */
+    /**
+     * 查询结果中白名单列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -190,9 +204,10 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 终端节点服务的ID。
-     * 
-     * @return vpcEndpointServiceId */
+    /**
+     * 终端节点服务的ID。
+     * @return vpcEndpointServiceId
+     */
     public String getVpcEndpointServiceId() {
         return vpcEndpointServiceId;
     }
@@ -206,10 +221,10 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 权限帐号ID，格式为 “iam:domain::domain_id”。 其中“domain_id”为授权用户的 帐号ID，例如“iam:domain:: 6e9dfd51d1124e8d8498dce89492 3a0d”。
-     * 支持模糊搜索。
-     * 
-     * @return permission */
+    /**
+     * 权限帐号ID，格式为 “iam:domain::domain_id”。 其中“domain_id”为授权用户的 帐号ID，例如“iam:domain:: 6e9dfd51d1124e8d8498dce89492 3a0d”。 支持模糊搜索。
+     * @return permission
+     */
     public String getPermission() {
         return permission;
     }
@@ -223,9 +238,11 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 查询返回终端节点服务的白名单数 量限制，即每页返回的个数。 取值范围：0~500，取值一般为 10，20或者50，默认为10。 minimum: 1
-     * 
-     * @return limit */
+    /**
+     * 查询返回终端节点服务的白名单数 量限制，即每页返回的个数。 取值范围：0~500，取值一般为 10，20或者50，默认为10。
+     * minimum: 1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -239,9 +256,11 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -255,9 +274,10 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 查询结果中白名单列表的排序字 段，取值为create_at，表示白名单 的添加时间。
-     * 
-     * @return sortKey */
+    /**
+     * 查询结果中白名单列表的排序字 段，取值为create_at，表示白名单 的添加时间。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -271,9 +291,10 @@ public class ListServicePermissionsDetailsRequest {
         return this;
     }
 
-    /** 查询结果中白名单列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
-     * 
-     * @return sortDir */
+    /**
+     * 查询结果中白名单列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -319,7 +340,10 @@ public class ListServicePermissionsDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署参数类 */
+/**
+ * 部署参数类
+ */
 public class ConfigInfoDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,16 +23,24 @@ public class ConfigInfoDO {
 
     private String name;
 
-    /** 类型，如果填写name字段，则type必选 */
+    /**
+     * 类型，如果填写name字段，则type必选
+     */
     public static final class TypeEnum {
 
-        /** Enum TEXT for value: "text" */
+        /**
+         * Enum TEXT for value: "text"
+         */
         public static final TypeEnum TEXT = new TypeEnum("text");
 
-        /** Enum HOST_GROUP for value: "host_group" */
+        /**
+         * Enum HOST_GROUP for value: "host_group"
+         */
         public static final TypeEnum HOST_GROUP = new TypeEnum("host_group");
 
-        /** Enum ENUM for value: "enum" */
+        /**
+         * Enum ENUM for value: "enum"
+         */
         public static final TypeEnum ENUM = new TypeEnum("enum");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -116,13 +126,19 @@ public class ConfigInfoDO {
 
     private String taskId;
 
-    /** 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线 */
+    /**
+     * 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线
+     */
     public static final class StaticStatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StaticStatusEnum NUMBER_0 = new StaticStatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StaticStatusEnum NUMBER_1 = new StaticStatusEnum(1);
 
         private static final Map<Integer, StaticStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -202,9 +218,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 部署参数名称，用户可自定义
-     * 
-     * @return name */
+    /**
+     * 部署参数名称，用户可自定义
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -218,9 +235,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 类型，如果填写name字段，则type必选
-     * 
-     * @return type */
+    /**
+     * 类型，如果填写name字段，则type必选
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -234,9 +252,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -250,9 +269,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 部署参数值，如果填写name字段，则value必选
-     * 
-     * @return value */
+    /**
+     * 部署参数值，如果填写name字段，则value必选
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -266,9 +286,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 部署任务id，创建部署任务后由系统自动生成
-     * 
-     * @return taskId */
+    /**
+     * 部署任务id，创建部署任务后由系统自动生成
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -282,9 +303,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线
-     * 
-     * @return staticStatus */
+    /**
+     * 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线
+     * @return staticStatus
+     */
     public StaticStatusEnum getStaticStatus() {
         return staticStatus;
     }
@@ -314,9 +336,10 @@ public class ConfigInfoDO {
         return this;
     }
 
-    /** 当参数类型为enum枚举类型时，必须填写可选值
-     * 
-     * @return limits */
+    /**
+     * 当参数类型为enum枚举类型时，必须填写可选值
+     * @return limits
+     */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -361,7 +384,10 @@ public class ConfigInfoDO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

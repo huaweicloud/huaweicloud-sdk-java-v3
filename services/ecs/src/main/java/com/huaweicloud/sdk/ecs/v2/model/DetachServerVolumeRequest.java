@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DetachServerVolumeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class DetachServerVolumeRequest {
 
     private String volumeId;
 
-    /** 是否强制卸载数据盘。 - 是，值为“1”。 - 否，值为“0”。 默认值为0。 */
+    /**
+     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
+     */
     public static final class DeleteFlagEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final DeleteFlagEnum _0 = new DeleteFlagEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final DeleteFlagEnum _1 = new DeleteFlagEnum("1");
 
         private static final Map<String, DeleteFlagEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class DetachServerVolumeRequest {
         return this;
     }
 
-    /** 云服务器ID。
-     * 
-     * @return serverId */
+    /**
+     * 云服务器ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -120,9 +129,10 @@ public class DetachServerVolumeRequest {
         return this;
     }
 
-    /** 磁盘ID。
-     * 
-     * @return volumeId */
+    /**
+     * 磁盘ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -136,9 +146,10 @@ public class DetachServerVolumeRequest {
         return this;
     }
 
-    /** 是否强制卸载数据盘。 - 是，值为“1”。 - 否，值为“0”。 默认值为0。
-     * 
-     * @return deleteFlag */
+    /**
+     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
+     * @return deleteFlag
+     */
     public DeleteFlagEnum getDeleteFlag() {
         return deleteFlag;
     }
@@ -177,7 +188,10 @@ public class DetachServerVolumeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 执行或启用或停止伸缩策略 */
+/**
+ * 执行或启用或停止伸缩策略
+ */
 public class ExecuteScalingPolicyOption {
 
-    /** 执行或启用或停止伸缩策略操作的标识。执行：execute。启用：resume。停止：pause。 */
+    /**
+     * 执行或启用或停止伸缩策略操作的标识。执行：execute。启用：resume。停止：pause。
+     */
     public static final class ActionEnum {
 
-        /** Enum EXECUTE for value: "execute" */
+        /**
+         * Enum EXECUTE for value: "execute"
+         */
         public static final ActionEnum EXECUTE = new ActionEnum("execute");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class ExecuteScalingPolicyOption {
         return this;
     }
 
-    /** 执行或启用或停止伸缩策略操作的标识。执行：execute。启用：resume。停止：pause。
-     * 
-     * @return action */
+    /**
+     * 执行或启用或停止伸缩策略操作的标识。执行：execute。启用：resume。停止：pause。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -127,7 +134,10 @@ public class ExecuteScalingPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

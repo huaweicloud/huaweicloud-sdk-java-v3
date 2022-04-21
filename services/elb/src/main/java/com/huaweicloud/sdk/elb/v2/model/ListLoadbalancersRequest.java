@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListLoadbalancersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,12 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 分页查询中每页的负载均衡器个数 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的负载均衡器个数
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -109,9 +114,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -125,9 +131,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -141,9 +148,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的ID。
-     * 
-     * @return id */
+    /**
+     * 负载均衡器的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -157,9 +165,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的描述信息。
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +182,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -189,9 +199,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的操作状态。取值范围：可以为ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态。取值范围：可以为ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -205,9 +216,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的配置状态。取值范围：可以为ACTIVE、PENDING_CREATE 或者ERROR。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态。取值范围：可以为ACTIVE、PENDING_CREATE 或者ERROR。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -221,9 +233,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的内网IP。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的内网IP。
+     * @return vipAddress
+     */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -237,9 +250,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器内网IP对应的端口ID。
-     * 
-     * @return vipPortId */
+    /**
+     * 负载均衡器内网IP对应的端口ID。
+     * @return vipPortId
+     */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -253,9 +267,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所在的子网ID。
-     * 
-     * @return vipSubnetId */
+    /**
+     * 负载均衡器所在的子网ID。
+     * @return vipSubnetId
+     */
     public String getVipSubnetId() {
         return vipSubnetId;
     }
@@ -269,9 +284,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器所在的虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 负载均衡器所在的虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -285,10 +301,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -302,9 +318,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的管理状态。负载均衡器停用时不再接收流量。取值范围：true：启用负载均衡器；false：停用负载均衡器。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。负载均衡器停用时不再接收流量。取值范围：true：启用负载均衡器；false：停用负载均衡器。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -318,9 +335,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的后端服务器的IP地址
-     * 
-     * @return memberAddress */
+    /**
+     * 负载均衡器的后端服务器的IP地址
+     * @return memberAddress
+     */
     public String getMemberAddress() {
         return memberAddress;
     }
@@ -334,9 +352,10 @@ public class ListLoadbalancersRequest {
         return this;
     }
 
-    /** 负载均衡器的后端服务器对应的弹性云服务器ID
-     * 
-     * @return memberDeviceId */
+    /**
+     * 负载均衡器的后端服务器对应的弹性云服务器ID
+     * @return memberDeviceId
+     */
     public String getMemberDeviceId() {
         return memberDeviceId;
     }
@@ -416,7 +435,10 @@ public class ListLoadbalancersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

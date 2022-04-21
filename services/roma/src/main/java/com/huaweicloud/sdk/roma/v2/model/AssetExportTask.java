@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 任务ID */
+/**
+ * 任务ID
+ */
 public class AssetExportTask {
 
     @Override

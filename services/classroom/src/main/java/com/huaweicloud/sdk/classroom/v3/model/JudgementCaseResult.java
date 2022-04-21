@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 用例运行结果信息 */
+/**
+ * 用例运行结果信息
+ */
 public class JudgementCaseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,23 +20,34 @@ public class JudgementCaseResult {
 
     private String output;
 
-    /** 用例运行结果状态： judgeout判题类型对应：pass（用例比对成功）、failed（用例比对失败）；
-     * caseout判题类型对应：success（用例运行成功）、error（用例运行失败）；run_timeout（用例运行超时） */
+    /**
+     * 用例运行结果状态： judgeout判题类型对应：pass（用例比对成功）、failed（用例比对失败）； caseout判题类型对应：success（用例运行成功）、error（用例运行失败）；run_timeout（用例运行超时）
+     */
     public static final class CaseStatusEnum {
 
-        /** Enum PASS for value: "pass" */
+        /**
+         * Enum PASS for value: "pass"
+         */
         public static final CaseStatusEnum PASS = new CaseStatusEnum("pass");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final CaseStatusEnum FAILED = new CaseStatusEnum("failed");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final CaseStatusEnum SUCCESS = new CaseStatusEnum("success");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final CaseStatusEnum ERROR = new CaseStatusEnum("error");
 
-        /** Enum RUN_TIMEOUT for value: "run_timeout" */
+        /**
+         * Enum RUN_TIMEOUT for value: "run_timeout"
+         */
         public static final CaseStatusEnum RUN_TIMEOUT = new CaseStatusEnum("run_timeout");
 
         private static final Map<String, CaseStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +125,10 @@ public class JudgementCaseResult {
         return this;
     }
 
-    /** 用例实际运行结果输出
-     * 
-     * @return output */
+    /**
+     * 用例实际运行结果输出
+     * @return output
+     */
     public String getOutput() {
         return output;
     }
@@ -128,10 +142,10 @@ public class JudgementCaseResult {
         return this;
     }
 
-    /** 用例运行结果状态： judgeout判题类型对应：pass（用例比对成功）、failed（用例比对失败）；
-     * caseout判题类型对应：success（用例运行成功）、error（用例运行失败）；run_timeout（用例运行超时）
-     * 
-     * @return caseStatus */
+    /**
+     * 用例运行结果状态： judgeout判题类型对应：pass（用例比对成功）、failed（用例比对失败）； caseout判题类型对应：success（用例运行成功）、error（用例运行失败）；run_timeout（用例运行超时）
+     * @return caseStatus
+     */
     public CaseStatusEnum getCaseStatus() {
         return caseStatus;
     }
@@ -168,7 +182,10 @@ public class JudgementCaseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

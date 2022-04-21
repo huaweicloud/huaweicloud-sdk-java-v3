@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResouceInfo */
+/**
+ * ResouceInfo
+ */
 public class ResouceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 云服务名称。
-     * 
-     * @return name */
+    /**
+     * 云服务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -85,9 +89,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 首页链接。
-     * 
-     * @return homeLink */
+    /**
+     * 首页链接。
+     * @return homeLink
+     */
     public String getHomeLink() {
         return homeLink;
     }
@@ -101,9 +106,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 开通链接。
-     * 
-     * @return subscribeLink */
+    /**
+     * 开通链接。
+     * @return subscribeLink
+     */
     public String getSubscribeLink() {
         return subscribeLink;
     }
@@ -117,9 +123,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return type */
+    /**
+     * 服务类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -133,9 +140,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 参考价格。
-     * 
-     * @return referencePrice */
+    /**
+     * 参考价格。
+     * @return referencePrice
+     */
     public String getReferencePrice() {
         return referencePrice;
     }
@@ -149,9 +157,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 价格详情链接。
-     * 
-     * @return priceDetailsLink */
+    /**
+     * 价格详情链接。
+     * @return priceDetailsLink
+     */
     public String getPriceDetailsLink() {
         return priceDetailsLink;
     }
@@ -165,9 +174,10 @@ public class ResouceInfo {
         return this;
     }
 
-    /** 规格,例如: {\"cpu\" : \"0.5\",\"ram\" : 1GB}。
-     * 
-     * @return specifications */
+    /**
+     * 规格,例如: {\"cpu\" : \"0.5\",\"ram\" : 1GB}。
+     * @return specifications
+     */
     public Object getSpecifications() {
         return specifications;
     }
@@ -216,7 +226,10 @@ public class ResouceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

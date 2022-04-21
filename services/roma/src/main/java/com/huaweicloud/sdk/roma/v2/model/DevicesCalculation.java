@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DevicesCalculation */
+/**
+ * DevicesCalculation
+ */
 public class DevicesCalculation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DevicesCalculation {
         return this;
     }
 
-    /** Get normalDevices
-     * 
-     * @return normalDevices */
+    /**
+     * Get normalDevices
+     * @return normalDevices
+     */
     public Calculation getNormalDevices() {
         return normalDevices;
     }
@@ -63,9 +66,10 @@ public class DevicesCalculation {
         return this;
     }
 
-    /** Get gatewayDevices
-     * 
-     * @return gatewayDevices */
+    /**
+     * Get gatewayDevices
+     * @return gatewayDevices
+     */
     public Calculation getGatewayDevices() {
         return gatewayDevices;
     }
@@ -88,9 +92,10 @@ public class DevicesCalculation {
         return this;
     }
 
-    /** Get subsetsDevices
-     * 
-     * @return subsetsDevices */
+    /**
+     * Get subsetsDevices
+     * @return subsetsDevices
+     */
     public Calculation getSubsetsDevices() {
         return subsetsDevices;
     }
@@ -129,7 +134,10 @@ public class DevicesCalculation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

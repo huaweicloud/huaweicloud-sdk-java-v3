@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** ClassroomCard */
+/**
+ * ClassroomCard
+ */
 public class ClassroomCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ClassroomCard {
         return this;
     }
 
-    /** 课堂ID
-     * 
-     * @return classroomId */
+    /**
+     * 课堂ID
+     * @return classroomId
+     */
     public String getClassroomId() {
         return classroomId;
     }
@@ -55,9 +58,10 @@ public class ClassroomCard {
         return this;
     }
 
-    /** 课堂名称
-     * 
-     * @return name */
+    /**
+     * 课堂名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -71,9 +75,10 @@ public class ClassroomCard {
         return this;
     }
 
-    /** 课堂描述
-     * 
-     * @return description */
+    /**
+     * 课堂描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -87,9 +92,10 @@ public class ClassroomCard {
         return this;
     }
 
-    /** 课堂学分
-     * 
-     * @return credit */
+    /**
+     * 课堂学分
+     * @return credit
+     */
     public BigDecimal getCredit() {
         return credit;
     }
@@ -103,9 +109,10 @@ public class ClassroomCard {
         return this;
     }
 
-    /** 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
-     * 
-     * @return status */
+    /**
+     * 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -147,7 +154,10 @@ public class ClassroomCard {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 代码信息 */
+/**
+ * 代码信息
+ */
 public class Scm {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Scm {
         return this;
     }
 
-    /** 代码Tag
-     * 
-     * @return buildTag */
+    /**
+     * 代码Tag
+     * @return buildTag
+     */
     public String getBuildTag() {
         return buildTag;
     }
@@ -39,9 +42,10 @@ public class Scm {
         return this;
     }
 
-    /** 代码提交ID
-     * 
-     * @return buildCommitId */
+    /**
+     * 代码提交ID
+     * @return buildCommitId
+     */
     public String getBuildCommitId() {
         return buildCommitId;
     }
@@ -77,7 +81,10 @@ public class Scm {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

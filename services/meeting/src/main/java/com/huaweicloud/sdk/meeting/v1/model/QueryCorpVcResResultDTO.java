@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 企业资源信息 */
+/**
+ * 企业资源信息
+ */
 public class QueryCorpVcResResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 虚拟会议室类型列表,最多支持8个，暂不限制
-     * 
-     * @return vmrPkgList */
+    /**
+     * 虚拟会议室类型列表,最多支持8个，暂不限制
+     * @return vmrPkgList
+     */
     public List<QueryVmrPkgResResultDTO> getVmrPkgList() {
         return vmrPkgList;
     }
@@ -103,9 +106,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 1080P硬终端账户数
-     * 
-     * @return te1080pHardCount */
+    /**
+     * 1080P硬终端账户数
+     * @return te1080pHardCount
+     */
     public Integer getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -119,9 +123,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 720P硬终端账户数
-     * 
-     * @return te720pHardCount */
+    /**
+     * 720P硬终端账户数
+     * @return te720pHardCount
+     */
     public Integer getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -135,9 +140,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 软终端账户数
-     * 
-     * @return teSoftCount */
+    /**
+     * 软终端账户数
+     * @return teSoftCount
+     */
     public Integer getTeSoftCount() {
         return teSoftCount;
     }
@@ -151,9 +157,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 大屏软终端数量
-     * 
-     * @return roomCount */
+    /**
+     * 大屏软终端数量
+     * @return roomCount
+     */
     public Integer getRoomCount() {
         return roomCount;
     }
@@ -167,9 +174,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 录播存储空间 （单位：G）
-     * 
-     * @return recordCapability */
+    /**
+     * 录播存储空间 （单位：G）
+     * @return recordCapability
+     */
     public Integer getRecordCapability() {
         return recordCapability;
     }
@@ -183,9 +191,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 会议并发方数
-     * 
-     * @return confCallCount */
+    /**
+     * 会议并发方数
+     * @return confCallCount
+     */
     public Integer getConfCallCount() {
         return confCallCount;
     }
@@ -199,9 +208,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 推流并发数量
-     * 
-     * @return liveCount */
+    /**
+     * 推流并发数量
+     * @return liveCount
+     */
     public Integer getLiveCount() {
         return liveCount;
     }
@@ -215,9 +225,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 第三方硬终端接入数
-     * 
-     * @return thirdPartyHardCount */
+    /**
+     * 第三方硬终端接入数
+     * @return thirdPartyHardCount
+     */
     public Integer getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -231,9 +242,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** 智慧屏终端接入数
-     * 
-     * @return hwVisionCount */
+    /**
+     * 智慧屏终端接入数
+     * @return hwVisionCount
+     */
     public Integer getHwVisionCount() {
         return hwVisionCount;
     }
@@ -247,9 +259,10 @@ public class QueryCorpVcResResultDTO {
         return this;
     }
 
-    /** ideahub终端接入数
-     * 
-     * @return ideaHubCount */
+    /**
+     * ideahub终端接入数
+     * @return ideaHubCount
+     */
     public Integer getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -314,7 +327,10 @@ public class QueryCorpVcResResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

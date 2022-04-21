@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AdjustToIndirectPartnerReq */
+/**
+ * AdjustToIndirectPartnerReq
+ */
 public class AdjustToIndirectPartnerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AdjustToIndirectPartnerReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -39,9 +42,12 @@ public class AdjustToIndirectPartnerReq {
         return this;
     }
 
-    /** 华为云伙伴能力中心向精英服务商拨款的金额。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0 maximum: 999999999.99
-     * 
-     * @return amount */
+    /**
+     * 华为云伙伴能力中心向精英服务商拨款的金额。 单位：元。取值大于0且精确到小数点后2位。
+     * minimum: 0
+     * maximum: 999999999.99
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -78,7 +84,10 @@ public class AdjustToIndirectPartnerReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

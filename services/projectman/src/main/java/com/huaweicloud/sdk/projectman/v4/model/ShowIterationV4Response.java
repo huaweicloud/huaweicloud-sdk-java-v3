@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowIterationV4Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代结束时间，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 迭代结束时间，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -114,9 +117,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 燃尽图
-     * 
-     * @return charts */
+    /**
+     * 燃尽图
+     * @return charts
+     */
     public List<Chart> getCharts() {
         return charts;
     }
@@ -130,9 +134,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 已关闭的工单数
-     * 
-     * @return closedTotal */
+    /**
+     * 已关闭的工单数
+     * @return closedTotal
+     */
     public Integer getClosedTotal() {
         return closedTotal;
     }
@@ -146,9 +151,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 迭代创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -162,9 +168,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代开始时间，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 迭代开始时间，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -178,9 +185,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 是否有task
-     * 
-     * @return haveTask */
+    /**
+     * 是否有task
+     * @return haveTask
+     */
     public Boolean getHaveTask() {
         return haveTask;
     }
@@ -194,9 +202,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return iterationId */
+    /**
+     * 迭代id
+     * @return iterationId
+     */
     public Integer getIterationId() {
         return iterationId;
     }
@@ -210,9 +219,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代标题
-     * 
-     * @return name */
+    /**
+     * 迭代标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -226,9 +236,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 开启的工单数
-     * 
-     * @return openedTotal */
+    /**
+     * 开启的工单数
+     * @return openedTotal
+     */
     public Integer getOpenedTotal() {
         return openedTotal;
     }
@@ -242,9 +253,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 工作进展
-     * 
-     * @return progress */
+    /**
+     * 工作进展
+     * @return progress
+     */
     public String getProgress() {
         return progress;
     }
@@ -258,9 +270,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 工单总数
-     * 
-     * @return total */
+    /**
+     * 工单总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -274,9 +287,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代更新时间
-     * 
-     * @return updatedTime */
+    /**
+     * 迭代更新时间
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -290,9 +304,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    /** 迭代的状态,0 未开始，1 进行中，2 结束
-     * 
-     * @return status */
+    /**
+     * 迭代的状态,0 未开始，1 进行中，2 结束
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -363,7 +378,10 @@ public class ShowIterationV4Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

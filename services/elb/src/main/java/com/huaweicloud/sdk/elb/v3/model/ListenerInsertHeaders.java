@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 可选的HTTP头插入，可以将从负载均衡器到后端云服务器的路径中需要被后端云服务器用到的信息写入HTTP中，随报文传递到后端云服务器。例如可通过X-Forwarded-ELB-IP开关，将负载均衡器的弹性公网IP传到后端云服务器。 */
+/**
+ * 可选的HTTP头插入，可以将从负载均衡器到后端云服务器的路径中需要被后端云服务器用到的信息写入HTTP中，随报文传递到后端云服务器。例如可通过X-Forwarded-ELB-IP开关，将负载均衡器的弹性公网IP传到后端云服务器。
+ */
 public class ListenerInsertHeaders {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListenerInsertHeaders {
         return this;
     }
 
-    /** X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
-     * 
-     * @return xForwardedELBIP */
+    /**
+     * X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
+     * @return xForwardedELBIP
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-ELB-IP")
     public Boolean getXForwardedELBIP() {
@@ -51,9 +54,10 @@ public class ListenerInsertHeaders {
         return this;
     }
 
-    /** X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
-     * 
-     * @return xForwardedPort */
+    /**
+     * X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
+     * @return xForwardedPort
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-Port")
     public Boolean getXForwardedPort() {
@@ -69,9 +73,10 @@ public class ListenerInsertHeaders {
         return this;
     }
 
-    /** X-Forwarded-For-Port设为true可以将客户端的源端口从报文的http头中带到后端云服务器。
-     * 
-     * @return xForwardedForPort */
+    /**
+     * X-Forwarded-For-Port设为true可以将客户端的源端口从报文的http头中带到后端云服务器。
+     * @return xForwardedForPort
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-For-Port")
     public Boolean getXForwardedForPort() {
@@ -87,9 +92,10 @@ public class ListenerInsertHeaders {
         return this;
     }
 
-    /** X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
-     * 
-     * @return xForwardedHost */
+    /**
+     * X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
+     * @return xForwardedHost
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-Host")
     public Boolean getXForwardedHost() {
@@ -132,7 +138,10 @@ public class ListenerInsertHeaders {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

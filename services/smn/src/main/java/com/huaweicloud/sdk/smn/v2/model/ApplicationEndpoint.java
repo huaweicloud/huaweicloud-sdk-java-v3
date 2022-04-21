@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApplicationEndpoint */
+/**
+ * ApplicationEndpoint
+ */
 public class ApplicationEndpoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ApplicationEndpoint {
         return this;
     }
 
-    /** 创建application的时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return createTime */
+    /**
+     * 创建application的时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -54,9 +57,10 @@ public class ApplicationEndpoint {
         return this;
     }
 
-    /** Application endpoint的唯一资源标识。
-     * 
-     * @return endpointUrn */
+    /**
+     * Application endpoint的唯一资源标识。
+     * @return endpointUrn
+     */
     public String getEndpointUrn() {
         return endpointUrn;
     }
@@ -70,9 +74,10 @@ public class ApplicationEndpoint {
         return this;
     }
 
-    /** 用户自定义数据 最大长度支持UTF-8编码后2048字节。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据 最大长度支持UTF-8编码后2048字节。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -86,9 +91,10 @@ public class ApplicationEndpoint {
         return this;
     }
 
-    /** endpoint启用开关 true或false字符串。
-     * 
-     * @return enabled */
+    /**
+     * endpoint启用开关 true或false字符串。
+     * @return enabled
+     */
     public String getEnabled() {
         return enabled;
     }
@@ -102,9 +108,10 @@ public class ApplicationEndpoint {
         return this;
     }
 
-    /** 设备token 最大长度512个字节。
-     * 
-     * @return token */
+    /**
+     * 设备token 最大长度512个字节。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -147,7 +154,10 @@ public class ApplicationEndpoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

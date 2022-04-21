@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdatePolicyProtectHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdatePolicyProtectHostRequest {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -44,9 +47,10 @@ public class UpdatePolicyProtectHostRequest {
         return this;
     }
 
-    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
-     * 
-     * @return policyId */
+    /**
+     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -60,9 +64,10 @@ public class UpdatePolicyProtectHostRequest {
         return this;
     }
 
-    /** 域名id，您可以通过调用查询云模式防护域名列表（ListHost）获取域名id
-     * 
-     * @return hosts */
+    /**
+     * 域名id，您可以通过调用查询云模式防护域名列表（ListHost）获取域名id
+     * @return hosts
+     */
     public String getHosts() {
         return hosts;
     }
@@ -101,7 +106,10 @@ public class UpdatePolicyProtectHostRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

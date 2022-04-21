@@ -35,9 +35,10 @@ public class DataConfig {
         return this;
     }
 
-    /** Get offline
-     * 
-     * @return offline */
+    /**
+     * Get offline
+     * @return offline
+     */
     public Offline getOffline() {
         return offline;
     }
@@ -60,9 +61,10 @@ public class DataConfig {
         return this;
     }
 
-    /** Get nearline
-     * 
-     * @return nearline */
+    /**
+     * Get nearline
+     * @return nearline
+     */
     public Nearline getNearline() {
         return nearline;
     }
@@ -98,7 +100,10 @@ public class DataConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

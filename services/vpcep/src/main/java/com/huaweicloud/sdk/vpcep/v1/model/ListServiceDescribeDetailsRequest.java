@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServiceDescribeDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListServiceDescribeDetailsRequest {
         return this;
     }
 
-    /** 终端节点服务的名称。说明：该字段和id字段必须二选一，否则会出现错误。
-     * 
-     * @return endpointServiceName */
+    /**
+     * 终端节点服务的名称。说明：该字段和id字段必须二选一，否则会出现错误。
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -39,9 +42,10 @@ public class ListServiceDescribeDetailsRequest {
         return this;
     }
 
-    /** 终端节点服务的ID，唯一标识。说明：该字段必须和endpoint_service_name字段二选一，否则会出现错误。
-     * 
-     * @return id */
+    /**
+     * 终端节点服务的ID，唯一标识。说明：该字段必须和endpoint_service_name字段二选一，否则会出现错误。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,7 +82,10 @@ public class ListServiceDescribeDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

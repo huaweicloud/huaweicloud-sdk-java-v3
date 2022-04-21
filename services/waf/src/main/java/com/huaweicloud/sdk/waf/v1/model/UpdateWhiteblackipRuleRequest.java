@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateWhiteblackipRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -50,9 +53,10 @@ public class UpdateWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
-     * 
-     * @return policyId */
+    /**
+     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -66,9 +70,10 @@ public class UpdateWhiteblackipRuleRequest {
         return this;
     }
 
-    /** 黑白名单规则ID（从查询黑白名单规则列表ListWhiteblackipRule接口获取）
-     * 
-     * @return ruleId */
+    /**
+     * 黑白名单规则ID（从查询黑白名单规则列表ListWhiteblackipRule接口获取）
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -91,9 +96,10 @@ public class UpdateWhiteblackipRuleRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateWhiteBlackIpRuleRequestBody getBody() {
         return body;
     }
@@ -134,7 +140,10 @@ public class UpdateWhiteblackipRuleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

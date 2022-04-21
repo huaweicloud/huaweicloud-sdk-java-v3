@@ -50,9 +50,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 发卡行。
-     * 
-     * @return bankName */
+    /**
+     * 发卡行。 
+     * @return bankName
+     */
     public String getBankName() {
         return bankName;
     }
@@ -66,9 +67,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 银行卡号。
-     * 
-     * @return cardNumber */
+    /**
+     * 银行卡号。 
+     * @return cardNumber
+     */
     public String getCardNumber() {
         return cardNumber;
     }
@@ -82,9 +84,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 有效期开始日期。
-     * 
-     * @return issueDate */
+    /**
+     * 有效期开始日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -98,9 +101,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 有效期截止日期。
-     * 
-     * @return expiryDate */
+    /**
+     * 有效期截止日期。 
+     * @return expiryDate
+     */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -114,9 +118,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 银行卡类别，如：储蓄卡，信用卡。
-     * 
-     * @return type */
+    /**
+     * 银行卡类别，如：储蓄卡，信用卡。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -130,9 +135,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -146,9 +152,10 @@ public class BankcardResult {
         return this;
     }
 
-    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return textLocation */
+    /**
+     * 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -195,7 +202,10 @@ public class BankcardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

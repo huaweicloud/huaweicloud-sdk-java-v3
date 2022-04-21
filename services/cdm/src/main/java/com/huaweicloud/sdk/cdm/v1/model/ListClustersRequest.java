@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListClustersRequest {
 
     @Override

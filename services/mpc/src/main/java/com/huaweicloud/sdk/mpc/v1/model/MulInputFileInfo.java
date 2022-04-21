@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MulInputFileInfo */
+/**
+ * MulInputFileInfo
+ */
 public class MulInputFileInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class MulInputFileInfo {
         return this;
     }
 
-    /** 语言标签。
-     * 
-     * @return language */
+    /**
+     * 语言标签。
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -49,9 +52,10 @@ public class MulInputFileInfo {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -88,7 +92,10 @@ public class MulInputFileInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

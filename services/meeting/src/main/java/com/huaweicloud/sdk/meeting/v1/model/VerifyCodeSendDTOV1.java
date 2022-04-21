@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VerifyCodeSendDTOV1 */
+/**
+ * VerifyCodeSendDTOV1
+ */
 public class VerifyCodeSendDTOV1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class VerifyCodeSendDTOV1 {
         return this;
     }
 
-    /** 用户身份信息（手机号码或邮箱账号或用户真实账号） 说明：必须和发送滑块验证码时带的用户身份信息相同。 maxLength：255 minLength：1
-     * 
-     * @return user */
+    /**
+     * 用户身份信息（手机号码或邮箱账号或用户真实账号） 说明：必须和发送滑块验证码时带的用户身份信息相同。 maxLength：255 minLength：1 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -44,9 +47,10 @@ public class VerifyCodeSendDTOV1 {
         return this;
     }
 
-    /** 验证码发送方式 user类型是用户真实账号时必选；如果没有选择的话，优先短信方式。 * sms：短信方式 * email：邮件方式
-     * 
-     * @return sendMethod */
+    /**
+     * 验证码发送方式 user类型是用户真实账号时必选；如果没有选择的话，优先短信方式。 * sms：短信方式 * email：邮件方式 
+     * @return sendMethod
+     */
     public String getSendMethod() {
         return sendMethod;
     }
@@ -60,9 +64,10 @@ public class VerifyCodeSendDTOV1 {
         return this;
     }
 
-    /** 校验滑块验证码返回的token字符串。
-     * 
-     * @return token */
+    /**
+     * 校验滑块验证码返回的token字符串。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -101,7 +106,10 @@ public class VerifyCodeSendDTOV1 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

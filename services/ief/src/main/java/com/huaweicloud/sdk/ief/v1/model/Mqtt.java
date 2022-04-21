@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MQTT配置。 当enable_mqtt取值为false时，mqtts需要为空数组。 */
+/**
+ * MQTT配置。 当enable_mqtt取值为false时，mqtts需要为空数组。
+ */
 public class Mqtt {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Mqtt {
         return this;
     }
 
-    /** MQTT监听地址，根据type取值确定。
-     * 
-     * @return bindAddr */
+    /**
+     * MQTT监听地址，根据type取值确定。
+     * @return bindAddr
+     */
     public String getBindAddr() {
         return bindAddr;
     }
@@ -44,9 +47,10 @@ public class Mqtt {
         return this;
     }
 
-    /** 端口号。
-     * 
-     * @return port */
+    /**
+     * 端口号。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -60,9 +64,10 @@ public class Mqtt {
         return this;
     }
 
-    /** 类型。 枚举值： - nic：网卡类型 - ip：IP类型
-     * 
-     * @return type */
+    /**
+     * 类型。 枚举值： - nic：网卡类型 - ip：IP类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -100,7 +105,10 @@ public class Mqtt {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

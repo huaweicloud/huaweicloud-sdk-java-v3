@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BasicInfo */
+/**
+ * BasicInfo
+ */
 public class BasicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 作业责任人
-     * 
-     * @return owner */
+    /**
+     * 作业责任人
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -54,9 +57,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 作业优先级
-     * 
-     * @return priority */
+    /**
+     * 作业优先级
+     * @return priority
+     */
     public String getPriority() {
         return priority;
     }
@@ -70,9 +74,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 作业执行用户
-     * 
-     * @return executeUser */
+    /**
+     * 作业执行用户
+     * @return executeUser
+     */
     public String getExecuteUser() {
         return executeUser;
     }
@@ -86,9 +91,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 实例超时时间
-     * 
-     * @return instanceTimeout */
+    /**
+     * 实例超时时间
+     * @return instanceTimeout
+     */
     public String getInstanceTimeout() {
         return instanceTimeout;
     }
@@ -102,9 +108,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 用户自定义属性字段
-     * 
-     * @return customFields */
+    /**
+     * 用户自定义属性字段
+     * @return customFields
+     */
     public Object getCustomFields() {
         return customFields;
     }
@@ -146,7 +153,10 @@ public class BasicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

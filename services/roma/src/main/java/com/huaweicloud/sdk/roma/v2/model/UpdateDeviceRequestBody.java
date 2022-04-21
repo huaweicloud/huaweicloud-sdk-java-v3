@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateDeviceRequestBody */
+/**
+ * UpdateDeviceRequestBody
+ */
 public class UpdateDeviceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class UpdateDeviceRequestBody {
 
     private String deviceName;
 
-    /** 设备状态 0启用 1禁用 */
+    /**
+     * 设备状态 0启用 1禁用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class UpdateDeviceRequestBody {
         return this;
     }
 
-    /** 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -128,9 +137,12 @@ public class UpdateDeviceRequestBody {
         return this;
     }
 
-    /** 设备状态 0启用 1禁用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 设备状态 0启用 1禁用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -144,9 +156,10 @@ public class UpdateDeviceRequestBody {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return description */
+    /**
+     * 备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -176,9 +189,10 @@ public class UpdateDeviceRequestBody {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return tags */
+    /**
+     * 标签
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -219,7 +233,10 @@ public class UpdateDeviceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TrainTicketResult */
+/**
+ * TrainTicketResult
+ */
 public class TrainTicketResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 火车票左上角的车票ID。
-     * 
-     * @return ticketId */
+    /**
+     * 火车票左上角的车票ID。 
+     * @return ticketId
+     */
     public String getTicketId() {
         return ticketId;
     }
@@ -124,9 +127,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 检票口信息。
-     * 
-     * @return checkPort */
+    /**
+     * 检票口信息。 
+     * @return checkPort
+     */
     public String getCheckPort() {
         return checkPort;
     }
@@ -140,9 +144,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 车次。
-     * 
-     * @return trainNumber */
+    /**
+     * 车次。 
+     * @return trainNumber
+     */
     public String getTrainNumber() {
         return trainNumber;
     }
@@ -156,9 +161,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 始发站。
-     * 
-     * @return departureStation */
+    /**
+     * 始发站。 
+     * @return departureStation
+     */
     public String getDepartureStation() {
         return departureStation;
     }
@@ -172,9 +178,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 终点站。
-     * 
-     * @return destinationStation */
+    /**
+     * 终点站。 
+     * @return destinationStation
+     */
     public String getDestinationStation() {
         return destinationStation;
     }
@@ -188,9 +195,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 始发站拼音。
-     * 
-     * @return departureStationEn */
+    /**
+     * 始发站拼音。 
+     * @return departureStationEn
+     */
     public String getDepartureStationEn() {
         return departureStationEn;
     }
@@ -204,9 +212,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 终点站拼音。
-     * 
-     * @return destinationStationEn */
+    /**
+     * 终点站拼音。 
+     * @return destinationStationEn
+     */
     public String getDestinationStationEn() {
         return destinationStationEn;
     }
@@ -220,9 +229,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 开车时间。
-     * 
-     * @return departureTime */
+    /**
+     * 开车时间。 
+     * @return departureTime
+     */
     public String getDepartureTime() {
         return departureTime;
     }
@@ -236,9 +246,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 座位号。
-     * 
-     * @return seatNumber */
+    /**
+     * 座位号。 
+     * @return seatNumber
+     */
     public String getSeatNumber() {
         return seatNumber;
     }
@@ -252,9 +263,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 票价。
-     * 
-     * @return ticketPrice */
+    /**
+     * 票价。 
+     * @return ticketPrice
+     */
     public String getTicketPrice() {
         return ticketPrice;
     }
@@ -268,9 +280,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 售票方式。
-     * 
-     * @return saleMethod */
+    /**
+     * 售票方式。 
+     * @return saleMethod
+     */
     public String getSaleMethod() {
         return saleMethod;
     }
@@ -284,9 +297,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 座位类别。
-     * 
-     * @return seatCategory */
+    /**
+     * 座位类别。 
+     * @return seatCategory
+     */
     public String getSeatCategory() {
         return seatCategory;
     }
@@ -300,9 +314,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 是否改签票, \"Yes\"表示改签票，\"No\"表示非改签票。
-     * 
-     * @return ticketChanging */
+    /**
+     * 是否改签票, \"Yes\"表示改签票，\"No\"表示非改签票。 
+     * @return ticketChanging
+     */
     public String getTicketChanging() {
         return ticketChanging;
     }
@@ -316,9 +331,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 车票持有人的身份证号。
-     * 
-     * @return idNumber */
+    /**
+     * 车票持有人的身份证号。 
+     * @return idNumber
+     */
     public String getIdNumber() {
         return idNumber;
     }
@@ -332,9 +348,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 车票持有人姓名。
-     * 
-     * @return name */
+    /**
+     * 车票持有人姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -348,9 +365,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 车票最下方的序列号。
-     * 
-     * @return logId */
+    /**
+     * 车票最下方的序列号。 
+     * @return logId
+     */
     public String getLogId() {
         return logId;
     }
@@ -364,9 +382,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 车票售票地点。
-     * 
-     * @return saleLocation */
+    /**
+     * 车票售票地点。 
+     * @return saleLocation
+     */
     public String getSaleLocation() {
         return saleLocation;
     }
@@ -380,9 +399,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -396,9 +416,10 @@ public class TrainTicketResult {
         return this;
     }
 
-    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return textLocation */
+    /**
+     * 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -486,7 +507,10 @@ public class TrainTicketResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

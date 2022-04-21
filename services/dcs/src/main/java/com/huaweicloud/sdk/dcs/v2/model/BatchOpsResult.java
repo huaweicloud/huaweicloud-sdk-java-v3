@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量删除实例接口返回结构体 */
+/**
+ * 批量删除实例接口返回结构体
+ */
 public class BatchOpsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BatchOpsResult {
         return this;
     }
 
-    /** 操作结果，取值有success或failed。
-     * 
-     * @return result */
+    /**
+     * 操作结果，取值有success或failed。
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -39,9 +42,10 @@ public class BatchOpsResult {
         return this;
     }
 
-    /** 缓存实例ID。
-     * 
-     * @return instance */
+    /**
+     * 缓存实例ID。
+     * @return instance
+     */
     public String getInstance() {
         return instance;
     }
@@ -78,7 +82,10 @@ public class BatchOpsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

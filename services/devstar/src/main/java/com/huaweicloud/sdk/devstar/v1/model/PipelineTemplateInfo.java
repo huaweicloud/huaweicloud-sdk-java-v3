@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PipelineTemplateInfo */
+/**
+ * PipelineTemplateInfo
+ */
 public class PipelineTemplateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PipelineTemplateInfo {
         return this;
     }
 
-    /** 流水线模板的id。
-     * 
-     * @return id */
+    /**
+     * 流水线模板的id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class PipelineTemplateInfo {
         return this;
     }
 
-    /** 流水线模板的名称。
-     * 
-     * @return name */
+    /**
+     * 流水线模板的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class PipelineTemplateInfo {
         return this;
     }
 
-    /** 流水线模板的详细信息。
-     * 
-     * @return detail */
+    /**
+     * 流水线模板的详细信息。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -100,7 +105,10 @@ public class PipelineTemplateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

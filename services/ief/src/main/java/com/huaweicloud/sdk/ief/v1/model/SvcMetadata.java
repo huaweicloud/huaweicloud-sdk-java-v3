@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 服务详情 */
+/**
+ * 服务详情
+ */
 public class SvcMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class SvcMetadata {
         return this;
     }
 
-    /** 自定义标签属性列表
-     * 
-     * @return labels */
+    /**
+     * 自定义标签属性列表
+     * @return labels
+     */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -58,9 +61,10 @@ public class SvcMetadata {
         return this;
     }
 
-    /** 服务名称，只允许英文小写字母、数字、中划线，最大长度64，英文小写字母开头，数字或小写字母结尾
-     * 
-     * @return name */
+    /**
+     * 服务名称，只允许英文小写字母、数字、中划线，最大长度64，英文小写字母开头，数字或小写字母结尾
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,7 +100,10 @@ public class SvcMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

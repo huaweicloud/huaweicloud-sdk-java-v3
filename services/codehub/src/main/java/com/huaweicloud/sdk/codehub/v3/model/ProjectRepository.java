@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProjectRepository */
+/**
+ * ProjectRepository
+ */
 public class ProjectRepository {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ProjectRepository {
         return this;
     }
 
-    /** 创建项目的UUID
-     * 
-     * @return projectUuid */
+    /**
+     * 创建项目的UUID
+     * @return projectUuid
+     */
     public String getProjectUuid() {
         return projectUuid;
     }
@@ -39,9 +42,10 @@ public class ProjectRepository {
         return this;
     }
 
-    /** 创建仓库的UUID
-     * 
-     * @return repositoryUuid */
+    /**
+     * 创建仓库的UUID
+     * @return repositoryUuid
+     */
     public String getRepositoryUuid() {
         return repositoryUuid;
     }
@@ -78,7 +82,10 @@ public class ProjectRepository {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

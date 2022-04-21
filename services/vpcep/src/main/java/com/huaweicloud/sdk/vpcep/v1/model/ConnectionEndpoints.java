@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端节点列表 */
+/**
+ * 终端节点列表
+ */
 public class ConnectionEndpoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,25 +43,39 @@ public class ConnectionEndpoints {
 
     private String domainId;
 
-    /** 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中 */
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     */
     public static final class StatusEnum {
 
-        /** Enum PENDINGACCEPTANCE for value: "pendingAcceptance" */
+        /**
+         * Enum PENDINGACCEPTANCE for value: "pendingAcceptance"
+         */
         public static final StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -143,9 +159,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 终端节点的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -159,9 +176,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 终端节点的报文标识。
-     * 
-     * @return markerId */
+    /**
+     * 终端节点的报文标识。
+     * @return markerId
+     */
     public Integer getMarkerId() {
         return markerId;
     }
@@ -175,9 +193,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -191,9 +210,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return updatedAt */
+    /**
+     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -207,9 +227,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 用户的Domain ID。
-     * 
-     * @return domainId */
+    /**
+     * 用户的Domain ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -223,9 +244,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-     * 
-     * @return status */
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -255,9 +277,10 @@ public class ConnectionEndpoints {
         return this;
     }
 
-    /** 错误信息。 当终端节点服务状态异常，即“status”的值为“failed”时，会返回该字段。
-     * 
-     * @return error */
+    /**
+     * 错误信息。  当终端节点服务状态异常，即“status”的值为“failed”时，会返回该字段。
+     * @return error
+     */
     public List<QueryError> getError() {
         return error;
     }
@@ -304,7 +327,10 @@ public class ConnectionEndpoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 监控数据信息 */
+/**
+ * 监控数据信息
+ */
 public class MetricItemResultAPI {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class MetricItemResultAPI {
         return this;
     }
 
-    /** Get metric
-     * 
-     * @return metric */
+    /**
+     * Get metric
+     * @return metric
+     */
     public MetricDemision getMetric() {
         return metric;
     }
@@ -67,9 +70,10 @@ public class MetricItemResultAPI {
         return this;
     }
 
-    /** 监控数据信息
-     * 
-     * @return dataPoints */
+    /**
+     * 监控数据信息
+     * @return dataPoints
+     */
     public List<MetricDataPoints> getDataPoints() {
         return dataPoints;
     }
@@ -106,7 +110,10 @@ public class MetricItemResultAPI {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

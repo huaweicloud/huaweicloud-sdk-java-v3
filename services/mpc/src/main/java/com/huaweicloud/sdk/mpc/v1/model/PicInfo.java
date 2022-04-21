@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PicInfo */
+/**
+ * PicInfo
+ */
 public class PicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class PicInfo {
         return this;
     }
 
-    /** 截图文件名。
-     * 
-     * @return picName */
+    /**
+     * 截图文件名。 
+     * @return picName
+     */
     public String getPicName() {
         return picName;
     }
@@ -55,7 +58,10 @@ public class PicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

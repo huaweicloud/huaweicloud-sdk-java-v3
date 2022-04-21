@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDailyLogResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListDailyLogResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性IP总数
-     * 
-     * @return total */
+    /**
+     * 弹性IP总数
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -59,9 +62,10 @@ public class ListDailyLogResponse extends SdkResponse {
         return this;
     }
 
-    /** 异常事件列表
-     * 
-     * @return logs */
+    /**
+     * 异常事件列表
+     * @return logs
+     */
     public List<DailyLog> getLogs() {
         return logs;
     }
@@ -98,7 +102,10 @@ public class ListDailyLogResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

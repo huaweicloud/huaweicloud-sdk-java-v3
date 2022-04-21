@@ -25,9 +25,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 对等连接其中一端vpc ID
-     * 
-     * @return vpcId */
+    /**
+     * 对等连接其中一端vpc ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -41,9 +42,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 对等连接其中一端vpc所属的租户ID 约束：跨租户VPC创建对等连接时必选
-     * 
-     * @return tenantId */
+    /**
+     * 对等连接其中一端vpc所属的租户ID 约束：跨租户VPC创建对等连接时必选
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -79,7 +81,10 @@ public class VpcInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

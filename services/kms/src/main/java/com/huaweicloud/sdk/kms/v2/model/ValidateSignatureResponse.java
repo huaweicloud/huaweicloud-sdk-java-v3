@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ValidateSignatureResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ValidateSignatureResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -40,9 +43,10 @@ public class ValidateSignatureResponse extends SdkResponse {
         return this;
     }
 
-    /** 签名验证合法性，“true”表示验证签名合法，“false”表示验证签名非法。
-     * 
-     * @return signatureVaild */
+    /**
+     * 签名验证合法性，“true”表示验证签名合法，“false”表示验证签名非法。
+     * @return signatureVaild
+     */
     public Boolean getSignatureVaild() {
         return signatureVaild;
     }
@@ -79,7 +83,10 @@ public class ValidateSignatureResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

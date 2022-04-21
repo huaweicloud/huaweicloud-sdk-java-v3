@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。 */
+/**
+ * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+ */
 public class GetOffSiteBackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class GetOffSiteBackupPolicy {
         return this;
     }
 
-    /** 指定备份的类型。取值如下： - auto：自动全量备份。 - incremental：自动增量备份。 - manual：手动备份，仅SQL Server返回该备份类型 。
-     * 
-     * @return backupType */
+    /**
+     * 指定备份的类型。取值如下：  - auto：自动全量备份。 - incremental：自动增量备份。 - manual：手动备份，仅SQL Server返回该备份类型 。
+     * @return backupType
+     */
     public String getBackupType() {
         return backupType;
     }
@@ -49,9 +52,10 @@ public class GetOffSiteBackupPolicy {
         return this;
     }
 
-    /** 备份文件可以保存的天数。
-     * 
-     * @return keepDays */
+    /**
+     * 备份文件可以保存的天数。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -65,9 +69,10 @@ public class GetOffSiteBackupPolicy {
         return this;
     }
 
-    /** 设置跨区域备份策略的目标区域ID。
-     * 
-     * @return destinationRegion */
+    /**
+     * 设置跨区域备份策略的目标区域ID。
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -81,9 +86,10 @@ public class GetOffSiteBackupPolicy {
         return this;
     }
 
-    /** 设置跨区域备份策略的目标project ID。
-     * 
-     * @return destinationProjectId */
+    /**
+     * 设置跨区域备份策略的目标project ID。
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -124,7 +130,10 @@ public class GetOffSiteBackupPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

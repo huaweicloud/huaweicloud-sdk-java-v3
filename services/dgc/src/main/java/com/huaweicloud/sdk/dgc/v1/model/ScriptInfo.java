@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ScriptInfo */
+/**
+ * ScriptInfo
+ */
 public class ScriptInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,25 +20,39 @@ public class ScriptInfo {
 
     private String name;
 
-    /** 脚本类型 */
+    /**
+     * 脚本类型
+     */
     public static final class TypeEnum {
 
-        /** Enum FLINKSQL for value: "FlinkSQL" */
+        /**
+         * Enum FLINKSQL for value: "FlinkSQL"
+         */
         public static final TypeEnum FLINKSQL = new TypeEnum("FlinkSQL");
 
-        /** Enum DLISQL for value: "DLISQL" */
+        /**
+         * Enum DLISQL for value: "DLISQL"
+         */
         public static final TypeEnum DLISQL = new TypeEnum("DLISQL");
 
-        /** Enum SPARKSQL for value: "SparkSQL" */
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
         public static final TypeEnum SPARKSQL = new TypeEnum("SparkSQL");
 
-        /** Enum HIVESQL for value: "HiveSQL" */
+        /**
+         * Enum HIVESQL for value: "HiveSQL"
+         */
         public static final TypeEnum HIVESQL = new TypeEnum("HiveSQL");
 
-        /** Enum DWSSQL for value: "DWSSQL" */
+        /**
+         * Enum DWSSQL for value: "DWSSQL"
+         */
         public static final TypeEnum DWSSQL = new TypeEnum("DWSSQL");
 
-        /** Enum SHELL for value: "Shell" */
+        /**
+         * Enum SHELL for value: "Shell"
+         */
         public static final TypeEnum SHELL = new TypeEnum("Shell");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -145,9 +161,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -161,9 +178,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本类型
-     * 
-     * @return type */
+    /**
+     * 脚本类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -177,9 +195,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本关联的目录
-     * 
-     * @return directory */
+    /**
+     * 脚本关联的目录
+     * @return directory
+     */
     public String getDirectory() {
         return directory;
     }
@@ -193,9 +212,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本内容
-     * 
-     * @return content */
+    /**
+     * 脚本内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -209,9 +229,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本关联的连接名称
-     * 
-     * @return connectionName */
+    /**
+     * 脚本关联的连接名称
+     * @return connectionName
+     */
     public String getConnectionName() {
         return connectionName;
     }
@@ -225,9 +246,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本执行所在的数据库
-     * 
-     * @return database */
+    /**
+     * 脚本执行所在的数据库
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -241,9 +263,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本关联的DLI队列名称
-     * 
-     * @return queueName */
+    /**
+     * 脚本关联的DLI队列名称
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -257,9 +280,10 @@ public class ScriptInfo {
         return this;
     }
 
-    /** 脚本的配置项参数
-     * 
-     * @return _configuration */
+    /**
+     * 脚本的配置项参数
+     * @return _configuration
+     */
     public String getConfiguration() {
         return _configuration;
     }
@@ -306,7 +330,10 @@ public class ScriptInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

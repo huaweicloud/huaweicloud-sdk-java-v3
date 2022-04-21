@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群标签。 */
+/**
+ * 集群标签。
+ */
 public class ShowAllTagsTagsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ShowAllTagsTagsResp {
         return this;
     }
 
-    /** 集群标签的key值。
-     * 
-     * @return key */
+    /**
+     * 集群标签的key值。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class ShowAllTagsTagsResp {
         return this;
     }
 
-    /** 集群标签的value值列表。
-     * 
-     * @return values */
+    /**
+     * 集群标签的value值列表。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -97,7 +101,10 @@ public class ShowAllTagsTagsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

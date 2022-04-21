@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CdmUpdateJobJsonReq */
+/**
+ * CdmUpdateJobJsonReq
+ */
 public class CdmUpdateJobJsonReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class CdmUpdateJobJsonReq {
         return this;
     }
 
-    /** 作业列表，请参见jobs数据结构说明。
-     * 
-     * @return jobs */
+    /**
+     * 作业列表，请参见jobs数据结构说明。
+     * @return jobs
+     */
     public List<Job> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class CdmUpdateJobJsonReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

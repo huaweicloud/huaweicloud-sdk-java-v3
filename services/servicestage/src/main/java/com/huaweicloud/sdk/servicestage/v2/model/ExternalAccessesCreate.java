@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 外网访问。 */
+/**
+ * 外网访问。
+ */
 public class ExternalAccessesCreate {
 
-    /** 协议，支持http、https。 */
+    /**
+     * 协议，支持http、https。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum HTTP for value: "http" */
+        /**
+         * Enum HTTP for value: "http"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("http");
 
-        /** Enum HTTPS for value: "https" */
+        /**
+         * Enum HTTPS for value: "https"
+         */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class ExternalAccessesCreate {
         return this;
     }
 
-    /** 协议，支持http、https。
-     * 
-     * @return protocol */
+    /**
+     * 协议，支持http、https。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -120,9 +129,10 @@ public class ExternalAccessesCreate {
         return this;
     }
 
-    /** 访问地址。
-     * 
-     * @return address */
+    /**
+     * 访问地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -136,9 +146,10 @@ public class ExternalAccessesCreate {
         return this;
     }
 
-    /** 端口号。
-     * 
-     * @return forwardPort */
+    /**
+     * 端口号。
+     * @return forwardPort
+     */
     public Integer getForwardPort() {
         return forwardPort;
     }
@@ -177,7 +188,10 @@ public class ExternalAccessesCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

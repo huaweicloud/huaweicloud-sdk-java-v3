@@ -19,588 +19,1068 @@ public class SmsAsyncClient {
         return new ClientBuilder<>(SmsAsyncClient::new, "GlobalCredentials");
     }
 
-    /** 新建迁移项目 新建迁移项目
+    /**
+     * 新建迁移项目
+     *
+     * 新建迁移项目
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMigprojectRequest 请求对象
-     * @return CompletableFuture<CreateMigprojectResponse> */
+     * @return CompletableFuture<CreateMigprojectResponse>
+     */
     public CompletableFuture<CreateMigprojectResponse> createMigprojectAsync(CreateMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.createMigproject);
     }
 
-    /** 新建迁移项目 新建迁移项目
+    /**
+     * 新建迁移项目
+     *
+     * 新建迁移项目
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMigprojectRequest 请求对象
-     * @return AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse> */
+     * @return AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse>
+     */
     public AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse> createMigprojectAsyncInvoker(
         CreateMigprojectRequest request) {
         return new AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse>(request, SmsMeta.createMigproject,
             hcClient);
     }
 
-    /** 创建迁移任务 根据源端服务器创建一个迁移任务。
+    /**
+     * 创建迁移任务
+     *
+     * 根据源端服务器创建一个迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
-     * @return CompletableFuture<CreateTaskResponse> */
+     * @return CompletableFuture<CreateTaskResponse>
+     */
     public CompletableFuture<CreateTaskResponse> createTaskAsync(CreateTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.createTask);
     }
 
-    /** 创建迁移任务 根据源端服务器创建一个迁移任务。
+    /**
+     * 创建迁移任务
+     *
+     * 根据源端服务器创建一个迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
-     * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse> */
+     * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
+     */
     public AsyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskAsyncInvoker(CreateTaskRequest request) {
         return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, SmsMeta.createTask, hcClient);
     }
 
-    /** 新增模板信息 新增源端模板信息
+    /**
+     * 新增模板信息
+     *
+     * 新增源端模板信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
-     * @return CompletableFuture<CreateTemplateResponse> */
+     * @return CompletableFuture<CreateTemplateResponse>
+     */
     public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.createTemplate);
     }
 
-    /** 新增模板信息 新增源端模板信息
+    /**
+     * 新增模板信息
+     *
+     * 新增源端模板信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
-     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> */
+     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
     public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
         CreateTemplateRequest request) {
         return new AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, SmsMeta.createTemplate,
             hcClient);
     }
 
-    /** 删除迁移项目 删除指定ID的迁移项目
+    /**
+     * 删除迁移项目
+     *
+     * 删除指定ID的迁移项目
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteMigprojectRequest 请求对象
-     * @return CompletableFuture<DeleteMigprojectResponse> */
+     * @return CompletableFuture<DeleteMigprojectResponse>
+     */
     public CompletableFuture<DeleteMigprojectResponse> deleteMigprojectAsync(DeleteMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteMigproject);
     }
 
-    /** 删除迁移项目 删除指定ID的迁移项目
+    /**
+     * 删除迁移项目
+     *
+     * 删除指定ID的迁移项目
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteMigprojectRequest 请求对象
-     * @return AsyncInvoker<DeleteMigprojectRequest, DeleteMigprojectResponse> */
+     * @return AsyncInvoker<DeleteMigprojectRequest, DeleteMigprojectResponse>
+     */
     public AsyncInvoker<DeleteMigprojectRequest, DeleteMigprojectResponse> deleteMigprojectAsyncInvoker(
         DeleteMigprojectRequest request) {
         return new AsyncInvoker<DeleteMigprojectRequest, DeleteMigprojectResponse>(request, SmsMeta.deleteMigproject,
             hcClient);
     }
 
-    /** 删除指定ID的源端服务器信息 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+    /**
+     * 删除指定ID的源端服务器信息
+     *
+     * 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteServerRequest 请求对象
-     * @return CompletableFuture<DeleteServerResponse> */
+     * @return CompletableFuture<DeleteServerResponse>
+     */
     public CompletableFuture<DeleteServerResponse> deleteServerAsync(DeleteServerRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteServer);
     }
 
-    /** 删除指定ID的源端服务器信息 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+    /**
+     * 删除指定ID的源端服务器信息
+     *
+     * 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteServerRequest 请求对象
-     * @return AsyncInvoker<DeleteServerRequest, DeleteServerResponse> */
+     * @return AsyncInvoker<DeleteServerRequest, DeleteServerResponse>
+     */
     public AsyncInvoker<DeleteServerRequest, DeleteServerResponse> deleteServerAsyncInvoker(
         DeleteServerRequest request) {
         return new AsyncInvoker<DeleteServerRequest, DeleteServerResponse>(request, SmsMeta.deleteServer, hcClient);
     }
 
-    /** 批量删除源端服务器信息 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+    /**
+     * 批量删除源端服务器信息
+     *
+     * 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
-     * @return CompletableFuture<DeleteServersResponse> */
+     * @return CompletableFuture<DeleteServersResponse>
+     */
     public CompletableFuture<DeleteServersResponse> deleteServersAsync(DeleteServersRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteServers);
     }
 
-    /** 批量删除源端服务器信息 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+    /**
+     * 批量删除源端服务器信息
+     *
+     * 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
-     * @return AsyncInvoker<DeleteServersRequest, DeleteServersResponse> */
+     * @return AsyncInvoker<DeleteServersRequest, DeleteServersResponse>
+     */
     public AsyncInvoker<DeleteServersRequest, DeleteServersResponse> deleteServersAsyncInvoker(
         DeleteServersRequest request) {
         return new AsyncInvoker<DeleteServersRequest, DeleteServersResponse>(request, SmsMeta.deleteServers, hcClient);
     }
 
-    /** 删除指定ID的迁移任务 删除指定ID的迁移任务。
+    /**
+     * 删除指定ID的迁移任务
+     *
+     * 删除指定ID的迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
-     * @return CompletableFuture<DeleteTaskResponse> */
+     * @return CompletableFuture<DeleteTaskResponse>
+     */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteTask);
     }
 
-    /** 删除指定ID的迁移任务 删除指定ID的迁移任务。
+    /**
+     * 删除指定ID的迁移任务
+     *
+     * 删除指定ID的迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
-     * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
+     * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
+     */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
         return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, SmsMeta.deleteTask, hcClient);
     }
 
-    /** 批量删除迁移任务 批量删除迁移任务。
+    /**
+     * 批量删除迁移任务
+     *
+     * 批量删除迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTasksRequest 请求对象
-     * @return CompletableFuture<DeleteTasksResponse> */
+     * @return CompletableFuture<DeleteTasksResponse>
+     */
     public CompletableFuture<DeleteTasksResponse> deleteTasksAsync(DeleteTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteTasks);
     }
 
-    /** 批量删除迁移任务 批量删除迁移任务。
+    /**
+     * 批量删除迁移任务
+     *
+     * 批量删除迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTasksRequest 请求对象
-     * @return AsyncInvoker<DeleteTasksRequest, DeleteTasksResponse> */
+     * @return AsyncInvoker<DeleteTasksRequest, DeleteTasksResponse>
+     */
     public AsyncInvoker<DeleteTasksRequest, DeleteTasksResponse> deleteTasksAsyncInvoker(DeleteTasksRequest request) {
         return new AsyncInvoker<DeleteTasksRequest, DeleteTasksResponse>(request, SmsMeta.deleteTasks, hcClient);
     }
 
-    /** 删除指定ID的模板 删除指定ID的模板。
+    /**
+     * 删除指定ID的模板
+     *
+     * 删除指定ID的模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
-     * @return CompletableFuture<DeleteTemplateResponse> */
+     * @return CompletableFuture<DeleteTemplateResponse>
+     */
     public CompletableFuture<DeleteTemplateResponse> deleteTemplateAsync(DeleteTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteTemplate);
     }
 
-    /** 删除指定ID的模板 删除指定ID的模板。
+    /**
+     * 删除指定ID的模板
+     *
+     * 删除指定ID的模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
-     * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> */
+     * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
+     */
     public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
         DeleteTemplateRequest request) {
         return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, SmsMeta.deleteTemplate,
             hcClient);
     }
 
-    /** 批量删除指定ID的模板 批量删除指定ID的模板。
+    /**
+     * 批量删除指定ID的模板
+     *
+     * 批量删除指定ID的模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTemplatesRequest 请求对象
-     * @return CompletableFuture<DeleteTemplatesResponse> */
+     * @return CompletableFuture<DeleteTemplatesResponse>
+     */
     public CompletableFuture<DeleteTemplatesResponse> deleteTemplatesAsync(DeleteTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.deleteTemplates);
     }
 
-    /** 批量删除指定ID的模板 批量删除指定ID的模板。
+    /**
+     * 批量删除指定ID的模板
+     *
+     * 批量删除指定ID的模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTemplatesRequest 请求对象
-     * @return AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse> */
+     * @return AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse>
+     */
     public AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplatesAsyncInvoker(
         DeleteTemplatesRequest request) {
         return new AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse>(request, SmsMeta.deleteTemplates,
             hcClient);
     }
 
-    /** 查询待迁移源端的所有错误 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
+    /**
+     * 查询待迁移源端的所有错误
+     *
+     * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorServersRequest 请求对象
-     * @return CompletableFuture<ListErrorServersResponse> */
+     * @return CompletableFuture<ListErrorServersResponse>
+     */
     public CompletableFuture<ListErrorServersResponse> listErrorServersAsync(ListErrorServersRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.listErrorServers);
     }
 
-    /** 查询待迁移源端的所有错误 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
+    /**
+     * 查询待迁移源端的所有错误
+     *
+     * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorServersRequest 请求对象
-     * @return AsyncInvoker<ListErrorServersRequest, ListErrorServersResponse> */
+     * @return AsyncInvoker<ListErrorServersRequest, ListErrorServersResponse>
+     */
     public AsyncInvoker<ListErrorServersRequest, ListErrorServersResponse> listErrorServersAsyncInvoker(
         ListErrorServersRequest request) {
         return new AsyncInvoker<ListErrorServersRequest, ListErrorServersResponse>(request, SmsMeta.listErrorServers,
             hcClient);
     }
 
-    /** 获取项目列表 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
+    /**
+     * 获取项目列表
+     *
+     * 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMigprojectsRequest 请求对象
-     * @return CompletableFuture<ListMigprojectsResponse> */
+     * @return CompletableFuture<ListMigprojectsResponse>
+     */
     public CompletableFuture<ListMigprojectsResponse> listMigprojectsAsync(ListMigprojectsRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.listMigprojects);
     }
 
-    /** 获取项目列表 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
+    /**
+     * 获取项目列表
+     *
+     * 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListMigprojectsRequest 请求对象
-     * @return AsyncInvoker<ListMigprojectsRequest, ListMigprojectsResponse> */
+     * @return AsyncInvoker<ListMigprojectsRequest, ListMigprojectsResponse>
+     */
     public AsyncInvoker<ListMigprojectsRequest, ListMigprojectsResponse> listMigprojectsAsyncInvoker(
         ListMigprojectsRequest request) {
         return new AsyncInvoker<ListMigprojectsRequest, ListMigprojectsResponse>(request, SmsMeta.listMigprojects,
             hcClient);
     }
 
-    /** 查询源端服务器列表 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
+    /**
+     * 查询源端服务器列表
+     *
+     * 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListServersRequest 请求对象
-     * @return CompletableFuture<ListServersResponse> */
+     * @return CompletableFuture<ListServersResponse>
+     */
     public CompletableFuture<ListServersResponse> listServersAsync(ListServersRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.listServers);
     }
 
-    /** 查询源端服务器列表 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
+    /**
+     * 查询源端服务器列表
+     *
+     * 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListServersRequest 请求对象
-     * @return AsyncInvoker<ListServersRequest, ListServersResponse> */
+     * @return AsyncInvoker<ListServersRequest, ListServersResponse>
+     */
     public AsyncInvoker<ListServersRequest, ListServersResponse> listServersAsyncInvoker(ListServersRequest request) {
         return new AsyncInvoker<ListServersRequest, ListServersResponse>(request, SmsMeta.listServers, hcClient);
     }
 
-    /** 查询迁移任务列表 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
+    /**
+     * 查询迁移任务列表
+     *
+     * 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
-     * @return CompletableFuture<ListTasksResponse> */
+     * @return CompletableFuture<ListTasksResponse>
+     */
     public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.listTasks);
     }
 
-    /** 查询迁移任务列表 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
+    /**
+     * 查询迁移任务列表
+     *
+     * 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
-     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse> */
+     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
     public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
         return new AsyncInvoker<ListTasksRequest, ListTasksResponse>(request, SmsMeta.listTasks, hcClient);
     }
 
-    /** 查询模板列表 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
+    /**
+     * 查询模板列表
+     *
+     * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
-     * @return CompletableFuture<ListTemplatesResponse> */
+     * @return CompletableFuture<ListTemplatesResponse>
+     */
     public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.listTemplates);
     }
 
-    /** 查询模板列表 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
+    /**
+     * 查询模板列表
+     *
+     * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
-     * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> */
+     * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
     public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
         ListTemplatesRequest request) {
         return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, SmsMeta.listTemplates, hcClient);
     }
 
-    /** 上报源端服务器基本信息 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
+    /**
+     * 上报源端服务器基本信息
+     *
+     * 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RegisterServerRequest 请求对象
-     * @return CompletableFuture<RegisterServerResponse> */
+     * @return CompletableFuture<RegisterServerResponse>
+     */
     public CompletableFuture<RegisterServerResponse> registerServerAsync(RegisterServerRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.registerServer);
     }
 
-    /** 上报源端服务器基本信息 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
+    /**
+     * 上报源端服务器基本信息
+     *
+     * 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RegisterServerRequest 请求对象
-     * @return AsyncInvoker<RegisterServerRequest, RegisterServerResponse> */
+     * @return AsyncInvoker<RegisterServerRequest, RegisterServerResponse>
+     */
     public AsyncInvoker<RegisterServerRequest, RegisterServerResponse> registerServerAsyncInvoker(
         RegisterServerRequest request) {
         return new AsyncInvoker<RegisterServerRequest, RegisterServerResponse>(request, SmsMeta.registerServer,
             hcClient);
     }
 
-    /** 获取服务端命令 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
+    /**
+     * 获取服务端命令
+     *
+     * 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
-     * @return CompletableFuture<ShowCommandResponse> */
+     * @return CompletableFuture<ShowCommandResponse>
+     */
     public CompletableFuture<ShowCommandResponse> showCommandAsync(ShowCommandRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showCommand);
     }
 
-    /** 获取服务端命令 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
+    /**
+     * 获取服务端命令
+     *
+     * 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
-     * @return AsyncInvoker<ShowCommandRequest, ShowCommandResponse> */
+     * @return AsyncInvoker<ShowCommandRequest, ShowCommandResponse>
+     */
     public AsyncInvoker<ShowCommandRequest, ShowCommandResponse> showCommandAsyncInvoker(ShowCommandRequest request) {
         return new AsyncInvoker<ShowCommandRequest, ShowCommandResponse>(request, SmsMeta.showCommand, hcClient);
     }
 
-    /** 查询指定ID迁移项目详情 查询指定ID的迁移项目详情。
+    /**
+     * 查询指定ID迁移项目详情
+     *
+     * 查询指定ID的迁移项目详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMigprojectRequest 请求对象
-     * @return CompletableFuture<ShowMigprojectResponse> */
+     * @return CompletableFuture<ShowMigprojectResponse>
+     */
     public CompletableFuture<ShowMigprojectResponse> showMigprojectAsync(ShowMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showMigproject);
     }
 
-    /** 查询指定ID迁移项目详情 查询指定ID的迁移项目详情。
+    /**
+     * 查询指定ID迁移项目详情
+     *
+     * 查询指定ID的迁移项目详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMigprojectRequest 请求对象
-     * @return AsyncInvoker<ShowMigprojectRequest, ShowMigprojectResponse> */
+     * @return AsyncInvoker<ShowMigprojectRequest, ShowMigprojectResponse>
+     */
     public AsyncInvoker<ShowMigprojectRequest, ShowMigprojectResponse> showMigprojectAsyncInvoker(
         ShowMigprojectRequest request) {
         return new AsyncInvoker<ShowMigprojectRequest, ShowMigprojectResponse>(request, SmsMeta.showMigproject,
             hcClient);
     }
 
-    /** 获取服务器总览 获取服务器总览
+    /**
+     * 获取服务器总览
+     *
+     * 获取服务器总览
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
-     * @return CompletableFuture<ShowOverviewResponse> */
+     * @return CompletableFuture<ShowOverviewResponse>
+     */
     public CompletableFuture<ShowOverviewResponse> showOverviewAsync(ShowOverviewRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showOverview);
     }
 
-    /** 获取服务器总览 获取服务器总览
+    /**
+     * 获取服务器总览
+     *
+     * 获取服务器总览
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
-     * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse> */
+     * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
+     */
     public AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewAsyncInvoker(
         ShowOverviewRequest request) {
         return new AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, SmsMeta.showOverview, hcClient);
     }
 
-    /** 查询指定ID的源端服务器 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
+    /**
+     * 查询指定ID的源端服务器
+     *
+     * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
-     * @return CompletableFuture<ShowServerResponse> */
+     * @return CompletableFuture<ShowServerResponse>
+     */
     public CompletableFuture<ShowServerResponse> showServerAsync(ShowServerRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showServer);
     }
 
-    /** 查询指定ID的源端服务器 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
+    /**
+     * 查询指定ID的源端服务器
+     *
+     * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
-     * @return AsyncInvoker<ShowServerRequest, ShowServerResponse> */
+     * @return AsyncInvoker<ShowServerRequest, ShowServerResponse>
+     */
     public AsyncInvoker<ShowServerRequest, ShowServerResponse> showServerAsyncInvoker(ShowServerRequest request) {
         return new AsyncInvoker<ShowServerRequest, ShowServerResponse>(request, SmsMeta.showServer, hcClient);
     }
 
-    /** 查询指定ID的迁移任务 查询指定ID的迁移任务。
+    /**
+     * 查询指定ID的迁移任务
+     *
+     * 查询指定ID的迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
-     * @return CompletableFuture<ShowTaskResponse> */
+     * @return CompletableFuture<ShowTaskResponse>
+     */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showTask);
     }
 
-    /** 查询指定ID的迁移任务 查询指定ID的迁移任务。
+    /**
+     * 查询指定ID的迁移任务
+     *
+     * 查询指定ID的迁移任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
-     * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse> */
+     * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
+     */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
         return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, SmsMeta.showTask, hcClient);
     }
 
-    /** 查询指定ID模板信息 查询指定ID的弹性云服务器模板信息。
+    /**
+     * 查询指定ID模板信息
+     *
+     * 查询指定ID的弹性云服务器模板信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
-     * @return CompletableFuture<ShowTemplateResponse> */
+     * @return CompletableFuture<ShowTemplateResponse>
+     */
     public CompletableFuture<ShowTemplateResponse> showTemplateAsync(ShowTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showTemplate);
     }
 
-    /** 查询指定ID模板信息 查询指定ID的弹性云服务器模板信息。
+    /**
+     * 查询指定ID模板信息
+     *
+     * 查询指定ID的弹性云服务器模板信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
-     * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse> */
+     * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
+     */
     public AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse> showTemplateAsyncInvoker(
         ShowTemplateRequest request) {
         return new AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>(request, SmsMeta.showTemplate, hcClient);
     }
 
-    /** 查询任务限速规则 按时间段查询迁移任务的迁移速率
+    /**
+     * 查询任务限速规则
+     *
+     * 按时间段查询迁移任务的迁移速率
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowsSpeedLimitsRequest 请求对象
-     * @return CompletableFuture<ShowsSpeedLimitsResponse> */
+     * @return CompletableFuture<ShowsSpeedLimitsResponse>
+     */
     public CompletableFuture<ShowsSpeedLimitsResponse> showsSpeedLimitsAsync(ShowsSpeedLimitsRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.showsSpeedLimits);
     }
 
-    /** 查询任务限速规则 按时间段查询迁移任务的迁移速率
+    /**
+     * 查询任务限速规则
+     *
+     * 按时间段查询迁移任务的迁移速率
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowsSpeedLimitsRequest 请求对象
-     * @return AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> */
+     * @return AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse>
+     */
     public AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> showsSpeedLimitsAsyncInvoker(
         ShowsSpeedLimitsRequest request) {
         return new AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse>(request, SmsMeta.showsSpeedLimits,
             hcClient);
     }
 
-    /** 上报服务端命令执行结果 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
+    /**
+     * 上报服务端命令执行结果
+     *
+     * 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCommandResultRequest 请求对象
-     * @return CompletableFuture<UpdateCommandResultResponse> */
+     * @return CompletableFuture<UpdateCommandResultResponse>
+     */
     public CompletableFuture<UpdateCommandResultResponse> updateCommandResultAsync(UpdateCommandResultRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateCommandResult);
     }
 
-    /** 上报服务端命令执行结果 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
+    /**
+     * 上报服务端命令执行结果
+     *
+     * 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCommandResultRequest 请求对象
-     * @return AsyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse> */
+     * @return AsyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse>
+     */
     public AsyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse> updateCommandResultAsyncInvoker(
         UpdateCommandResultRequest request) {
         return new AsyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse>(request,
             SmsMeta.updateCommandResult, hcClient);
     }
 
-    /** 更新任务对应源端复制状态 更新任务对应源端复制状态
+    /**
+     * 更新任务对应源端复制状态
+     *
+     * 更新任务对应源端复制状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCopyStateRequest 请求对象
-     * @return CompletableFuture<UpdateCopyStateResponse> */
+     * @return CompletableFuture<UpdateCopyStateResponse>
+     */
     public CompletableFuture<UpdateCopyStateResponse> updateCopyStateAsync(UpdateCopyStateRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateCopyState);
     }
 
-    /** 更新任务对应源端复制状态 更新任务对应源端复制状态
+    /**
+     * 更新任务对应源端复制状态
+     *
+     * 更新任务对应源端复制状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCopyStateRequest 请求对象
-     * @return AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse> */
+     * @return AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>
+     */
     public AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse> updateCopyStateAsyncInvoker(
         UpdateCopyStateRequest request) {
         return new AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>(request, SmsMeta.updateCopyState,
             hcClient);
     }
 
-    /** 更新默认迁移项目 更改默认迁移项目，注册源端会注册在当前的默认项目下。
+    /**
+     * 更新默认迁移项目
+     *
+     * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDefaultMigprojectRequest 请求对象
-     * @return CompletableFuture<UpdateDefaultMigprojectResponse> */
+     * @return CompletableFuture<UpdateDefaultMigprojectResponse>
+     */
     public CompletableFuture<UpdateDefaultMigprojectResponse> updateDefaultMigprojectAsync(
         UpdateDefaultMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateDefaultMigproject);
     }
 
-    /** 更新默认迁移项目 更改默认迁移项目，注册源端会注册在当前的默认项目下。
+    /**
+     * 更新默认迁移项目
+     *
+     * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDefaultMigprojectRequest 请求对象
-     * @return AsyncInvoker<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> */
+     * @return AsyncInvoker<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse>
+     */
     public AsyncInvoker<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> updateDefaultMigprojectAsyncInvoker(
         UpdateDefaultMigprojectRequest request) {
         return new AsyncInvoker<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse>(request,
             SmsMeta.updateDefaultMigproject, hcClient);
     }
 
-    /** 更新磁盘信息 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息
+    /**
+     * 更新磁盘信息
+     *
+     * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDiskInfoRequest 请求对象
-     * @return CompletableFuture<UpdateDiskInfoResponse> */
+     * @return CompletableFuture<UpdateDiskInfoResponse>
+     */
     public CompletableFuture<UpdateDiskInfoResponse> updateDiskInfoAsync(UpdateDiskInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateDiskInfo);
     }
 
-    /** 更新磁盘信息 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息
+    /**
+     * 更新磁盘信息
+     *
+     * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDiskInfoRequest 请求对象
-     * @return AsyncInvoker<UpdateDiskInfoRequest, UpdateDiskInfoResponse> */
+     * @return AsyncInvoker<UpdateDiskInfoRequest, UpdateDiskInfoResponse>
+     */
     public AsyncInvoker<UpdateDiskInfoRequest, UpdateDiskInfoResponse> updateDiskInfoAsyncInvoker(
         UpdateDiskInfoRequest request) {
         return new AsyncInvoker<UpdateDiskInfoRequest, UpdateDiskInfoResponse>(request, SmsMeta.updateDiskInfo,
             hcClient);
     }
 
-    /** 更新迁移项目信息 更新迁移项目的信息
+    /**
+     * 更新迁移项目信息
+     *
+     * 更新迁移项目的信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateMigprojectRequest 请求对象
-     * @return CompletableFuture<UpdateMigprojectResponse> */
+     * @return CompletableFuture<UpdateMigprojectResponse>
+     */
     public CompletableFuture<UpdateMigprojectResponse> updateMigprojectAsync(UpdateMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateMigproject);
     }
 
-    /** 更新迁移项目信息 更新迁移项目的信息
+    /**
+     * 更新迁移项目信息
+     *
+     * 更新迁移项目的信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateMigprojectRequest 请求对象
-     * @return AsyncInvoker<UpdateMigprojectRequest, UpdateMigprojectResponse> */
+     * @return AsyncInvoker<UpdateMigprojectRequest, UpdateMigprojectResponse>
+     */
     public AsyncInvoker<UpdateMigprojectRequest, UpdateMigprojectResponse> updateMigprojectAsyncInvoker(
         UpdateMigprojectRequest request) {
         return new AsyncInvoker<UpdateMigprojectRequest, UpdateMigprojectResponse>(request, SmsMeta.updateMigproject,
             hcClient);
     }
 
-    /** 修改指定ID的源端服务器名称 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+    /**
+     * 修改指定ID的源端服务器名称
+     *
+     * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
-     * @return CompletableFuture<UpdateServerNameResponse> */
+     * @return CompletableFuture<UpdateServerNameResponse>
+     */
     public CompletableFuture<UpdateServerNameResponse> updateServerNameAsync(UpdateServerNameRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateServerName);
     }
 
-    /** 修改指定ID的源端服务器名称 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+    /**
+     * 修改指定ID的源端服务器名称
+     *
+     * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
-     * @return AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse> */
+     * @return AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>
+     */
     public AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse> updateServerNameAsyncInvoker(
         UpdateServerNameRequest request) {
         return new AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>(request, SmsMeta.updateServerName,
             hcClient);
     }
 
-    /** 设置迁移限速规则 设置迁移任务的迁移速率。
+    /**
+     * 设置迁移限速规则
+     *
+     * 设置迁移任务的迁移速率。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateSpeedRequest 请求对象
-     * @return CompletableFuture<UpdateSpeedResponse> */
+     * @return CompletableFuture<UpdateSpeedResponse>
+     */
     public CompletableFuture<UpdateSpeedResponse> updateSpeedAsync(UpdateSpeedRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateSpeed);
     }
 
-    /** 设置迁移限速规则 设置迁移任务的迁移速率。
+    /**
+     * 设置迁移限速规则
+     *
+     * 设置迁移任务的迁移速率。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateSpeedRequest 请求对象
-     * @return AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse> */
+     * @return AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse>
+     */
     public AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse> updateSpeedAsyncInvoker(UpdateSpeedRequest request) {
         return new AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse>(request, SmsMeta.updateSpeed, hcClient);
     }
 
-    /** 更新指定ID的迁移任务 更新指定ID的迁移任务
+    /**
+     * 更新指定ID的迁移任务
+     *
+     * 更新指定ID的迁移任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
-     * @return CompletableFuture<UpdateTaskResponse> */
+     * @return CompletableFuture<UpdateTaskResponse>
+     */
     public CompletableFuture<UpdateTaskResponse> updateTaskAsync(UpdateTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateTask);
     }
 
-    /** 更新指定ID的迁移任务 更新指定ID的迁移任务
+    /**
+     * 更新指定ID的迁移任务
+     *
+     * 更新指定ID的迁移任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
-     * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> */
+     * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
+     */
     public AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskAsyncInvoker(UpdateTaskRequest request) {
         return new AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, SmsMeta.updateTask, hcClient);
     }
 
-    /** 上报数据迁移进度和速率 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
+    /**
+     * 上报数据迁移进度和速率
+     *
+     * 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。
+     *  
+     * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskSpeedRequest 请求对象
-     * @return CompletableFuture<UpdateTaskSpeedResponse> */
+     * @return CompletableFuture<UpdateTaskSpeedResponse>
+     */
     public CompletableFuture<UpdateTaskSpeedResponse> updateTaskSpeedAsync(UpdateTaskSpeedRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateTaskSpeed);
     }
 
-    /** 上报数据迁移进度和速率 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
+    /**
+     * 上报数据迁移进度和速率
+     *
+     * 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。
+     *  
+     * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskSpeedRequest 请求对象
-     * @return AsyncInvoker<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> */
+     * @return AsyncInvoker<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse>
+     */
     public AsyncInvoker<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> updateTaskSpeedAsyncInvoker(
         UpdateTaskSpeedRequest request) {
         return new AsyncInvoker<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse>(request, SmsMeta.updateTaskSpeed,
             hcClient);
     }
 
-    /** 管理迁移任务 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务
+    /**
+     * 管理迁移任务
+     *
+     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
-     * @return CompletableFuture<UpdateTaskStatusResponse> */
+     * @return CompletableFuture<UpdateTaskStatusResponse>
+     */
     public CompletableFuture<UpdateTaskStatusResponse> updateTaskStatusAsync(UpdateTaskStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateTaskStatus);
     }
 
-    /** 管理迁移任务 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务
+    /**
+     * 管理迁移任务
+     *
+     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
-     * @return AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse> */
+     * @return AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse>
+     */
     public AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse> updateTaskStatusAsyncInvoker(
         UpdateTaskStatusRequest request) {
         return new AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse>(request, SmsMeta.updateTaskStatus,
             hcClient);
     }
 
-    /** 修改模板信息 修改源端模板信息。
+    /**
+     * 修改模板信息
+     *
+     * 修改源端模板信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTemplateRequest 请求对象
-     * @return CompletableFuture<UpdateTemplateResponse> */
+     * @return CompletableFuture<UpdateTemplateResponse>
+     */
     public CompletableFuture<UpdateTemplateResponse> updateTemplateAsync(UpdateTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateTemplate);
     }
 
-    /** 修改模板信息 修改源端模板信息。
+    /**
+     * 修改模板信息
+     *
+     * 修改源端模板信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTemplateRequest 请求对象
-     * @return AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> */
+     * @return AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>
+     */
     public AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateAsyncInvoker(
         UpdateTemplateRequest request) {
         return new AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>(request, SmsMeta.updateTemplate,

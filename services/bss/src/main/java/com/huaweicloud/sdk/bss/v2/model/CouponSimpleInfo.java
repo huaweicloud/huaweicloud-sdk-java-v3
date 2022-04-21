@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CouponSimpleInfo */
+/**
+ * CouponSimpleInfo
+ */
 public class CouponSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CouponSimpleInfo {
         return this;
     }
 
-    /** 批量发放优惠券成功的客户ID。
-     * 
-     * @return id */
+    /**
+     * 批量发放优惠券成功的客户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class CouponSimpleInfo {
         return this;
     }
 
-    /** 发放成功的券ID。
-     * 
-     * @return couponId */
+    /**
+     * 发放成功的券ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -77,7 +81,10 @@ public class CouponSimpleInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 期望数据类型 */
+/**
+ * 期望数据类型
+ */
 public class ValueInPropertyVisitorsExpectedDatatype {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ValueInPropertyVisitorsExpectedDatatype {
         return this;
     }
 
-    /** value 最大长度512， value允许英文字母、数字、下划线、中划线、点、逗号、@、#、+、\\、/、？、^、=、%、&、:、~
-     * 
-     * @return value */
+    /**
+     * value 最大长度512， value允许英文字母、数字、下划线、中划线、点、逗号、@、#、+、\\、/、？、^、=、%、&、:、~
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -45,9 +48,10 @@ public class ValueInPropertyVisitorsExpectedDatatype {
         return this;
     }
 
-    /** 标识属性是否可选，默认为true
-     * 
-     * @return optional */
+    /**
+     * 标识属性是否可选，默认为true
+     * @return optional
+     */
     public Boolean getOptional() {
         return optional;
     }
@@ -71,9 +75,10 @@ public class ValueInPropertyVisitorsExpectedDatatype {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public ValueInPropertyVisitorsRegisterTypeMetadata getMetadata() {
         return metadata;
     }
@@ -113,7 +118,10 @@ public class ValueInPropertyVisitorsExpectedDatatype {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

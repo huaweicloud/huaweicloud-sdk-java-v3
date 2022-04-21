@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpenApi调用记录 */
+/**
+ * OpenApi调用记录
+ */
 public class OpenApiCalledRecord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的user_name
-     * 
-     * @return userName */
+    /**
+     * 调用API的user_name
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -74,9 +77,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的user_id
-     * 
-     * @return userId */
+    /**
+     * 调用API的user_id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -90,9 +94,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的domain_name
-     * 
-     * @return domainName */
+    /**
+     * 调用API的domain_name
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -106,9 +111,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的domain_id
-     * 
-     * @return domainId */
+    /**
+     * 调用API的domain_id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -122,9 +128,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的URL
-     * 
-     * @return requestUrl */
+    /**
+     * 调用API的URL
+     * @return requestUrl
+     */
     public String getRequestUrl() {
         return requestUrl;
     }
@@ -138,9 +145,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** http请求方法
-     * 
-     * @return requestMethod */
+    /**
+     * http请求方法
+     * @return requestMethod
+     */
     public String getRequestMethod() {
         return requestMethod;
     }
@@ -154,9 +162,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** http状态码
-     * 
-     * @return responseCode */
+    /**
+     * http状态码
+     * @return responseCode
+     */
     public String getResponseCode() {
         return responseCode;
     }
@@ -170,9 +179,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API失败原因
-     * 
-     * @return failReason */
+    /**
+     * 调用API失败原因
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -186,9 +196,10 @@ public class OpenApiCalledRecord {
         return this;
     }
 
-    /** 调用API的时间（Unix timestamp），单位：毫秒
-     * 
-     * @return timestamp */
+    /**
+     * 调用API的时间（Unix timestamp），单位：毫秒
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -247,7 +258,10 @@ public class OpenApiCalledRecord {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

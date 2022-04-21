@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 插件信息。 */
+/**
+ * 插件信息。
+ */
 public class PluginEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PluginEntity {
         return this;
     }
 
-    /** 是否运行。
-     * 
-     * @return running */
+    /**
+     * 是否运行。
+     * @return running
+     */
     public Boolean getRunning() {
         return running;
     }
@@ -49,9 +52,10 @@ public class PluginEntity {
         return this;
     }
 
-    /** 是否启用。
-     * 
-     * @return enable */
+    /**
+     * 是否启用。
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -65,9 +69,10 @@ public class PluginEntity {
         return this;
     }
 
-    /** 插件名称。
-     * 
-     * @return name */
+    /**
+     * 插件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +86,10 @@ public class PluginEntity {
         return this;
     }
 
-    /** 插件版本。
-     * 
-     * @return version */
+    /**
+     * 插件版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -122,7 +128,10 @@ public class PluginEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

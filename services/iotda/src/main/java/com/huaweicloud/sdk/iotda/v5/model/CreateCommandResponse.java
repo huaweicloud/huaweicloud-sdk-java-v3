@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateCommandResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备命令ID，用于唯一标识一条命令，在下发设备命令时由物联网平台分配获得。
-     * 
-     * @return commandId */
+    /**
+     * 设备命令ID，用于唯一标识一条命令，在下发设备命令时由物联网平台分配获得。
+     * @return commandId
+     */
     public String getCommandId() {
         return commandId;
     }
@@ -40,9 +43,10 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备上报的命令执行结果。Json格式，具体格式需要应用和设备约定。
-     * 
-     * @return response */
+    /**
+     * 设备上报的命令执行结果。Json格式，具体格式需要应用和设备约定。
+     * @return response
+     */
     public Object getResponse() {
         return response;
     }
@@ -79,7 +83,10 @@ public class CreateCommandResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

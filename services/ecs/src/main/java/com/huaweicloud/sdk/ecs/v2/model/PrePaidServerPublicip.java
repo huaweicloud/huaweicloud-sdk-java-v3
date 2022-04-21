@@ -31,9 +31,10 @@ public class PrePaidServerPublicip {
         return this;
     }
 
-    /** 为待创建云服务器分配已有弹性IP时，分配的弹性IP的ID，UUID格式。 约束：只能分配状态（status）为DOWN的弹性IP。
-     * 
-     * @return id */
+    /**
+     * 为待创建云服务器分配已有弹性IP时，分配的弹性IP的ID，UUID格式。  约束：只能分配状态（status）为DOWN的弹性IP。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -56,9 +57,10 @@ public class PrePaidServerPublicip {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public PrePaidServerEip getEip() {
         return eip;
     }
@@ -72,9 +74,10 @@ public class PrePaidServerPublicip {
         return this;
     }
 
-    /** 弹性公网IP随实例释放策略。 true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+     * @return deleteOnTermination
+     */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -112,7 +115,10 @@ public class PrePaidServerPublicip {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子画面信息 */
+/**
+ * 子画面信息
+ */
 public class RestSubscriberInPic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,12 @@ public class RestSubscriberInPic {
         return this;
     }
 
-    /** 多画面中每个画面的编号，编号从1开始 minimum: 1 maximum: 16
-     * 
-     * @return index */
+    /**
+     * 多画面中每个画面的编号，编号从1开始
+     * minimum: 1
+     * maximum: 16
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -63,9 +68,10 @@ public class RestSubscriberInPic {
         return this;
     }
 
-    /** 每个画面中会话标识，即Call_ID，通过会议状态通知获取
-     * 
-     * @return subscriber */
+    /**
+     * 每个画面中会话标识，即Call_ID，通过会议状态通知获取
+     * @return subscriber
+     */
     public List<String> getSubscriber() {
         return subscriber;
     }
@@ -79,9 +85,12 @@ public class RestSubscriberInPic {
         return this;
     }
 
-    /** 是否为辅流 0： 不是辅流 1： 是辅流 minimum: 0 maximum: 1
-     * 
-     * @return isAssistStream */
+    /**
+     * 是否为辅流 0： 不是辅流 1： 是辅流
+     * minimum: 0
+     * maximum: 1
+     * @return isAssistStream
+     */
     public Integer getIsAssistStream() {
         return isAssistStream;
     }
@@ -120,7 +129,10 @@ public class RestSubscriberInPic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class MfaTotpUser {
         return this;
     }
 
-    /** 已开启虚拟MFA方式的登录保护的IAM用户ID。
-     * 
-     * @return id */
+    /**
+     * 已开启虚拟MFA方式的登录保护的IAM用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -41,9 +42,10 @@ public class MfaTotpUser {
         return this;
     }
 
-    /** 虚拟MFA验证码，在MFA应用程序中获取动态验证码，获取方法请参见：[如何获取虚拟MFA验证码](https://support.huaweicloud.com/iam_faq/iam_01_0001.html)。
-     * 
-     * @return passcode */
+    /**
+     * 虚拟MFA验证码，在MFA应用程序中获取动态验证码，获取方法请参见：[如何获取虚拟MFA验证码](https://support.huaweicloud.com/iam_faq/iam_01_0001.html)。
+     * @return passcode
+     */
     public String getPasscode() {
         return passcode;
     }
@@ -79,7 +81,10 @@ public class MfaTotpUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LoadBalancerStatus */
+/**
+ * LoadBalancerStatus
+ */
 public class LoadBalancerStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +65,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -94,9 +98,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器关联的监听器列表。
-     * 
-     * @return listeners */
+    /**
+     * 负载均衡器关联的监听器列表。
+     * @return listeners
+     */
     public List<LoadBalancerStatusListener> getListeners() {
         return listeners;
     }
@@ -126,9 +131,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器关联的后端云服务器组列表。
-     * 
-     * @return pools */
+    /**
+     * 负载均衡器关联的后端云服务器组列表。
+     * @return pools
+     */
     public List<LoadBalancerStatusPool> getPools() {
         return pools;
     }
@@ -142,9 +148,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器ID。
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -158,11 +165,10 @@ public class LoadBalancerStatus {
         return this;
     }
 
-    /** 负载均衡器的操作状态。取值： - ONLINE：创建时默认状态，表示负载均衡器正常运行。 - FROZEN：已冻结。 -
-     * DEGRADED：负载均衡器下存在member的operating_status为OFFLINE时返回这个状态。 - DISABLED：负载均衡器的admin_state_up属性值为false。
-     * 说明：DEGRADED和DISABLED状态仅在当前接口中返回，LB详情等其他接口不返回这两个状态值。
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态。取值： - ONLINE：创建时默认状态，表示负载均衡器正常运行。 - FROZEN：已冻结。 - DEGRADED：负载均衡器下存在member的operating_status为OFFLINE时返回这个状态。 - DISABLED：负载均衡器的admin_state_up属性值为false。  说明：DEGRADED和DISABLED状态仅在当前接口中返回，LB详情等其他接口不返回这两个状态值。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -206,7 +212,10 @@ public class LoadBalancerStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

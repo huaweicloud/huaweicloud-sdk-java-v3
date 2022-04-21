@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DiscountItemV2 */
+/**
+ * DiscountItemV2
+ */
 public class DiscountItemV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class DiscountItemV2 {
         return this;
     }
 
-    /** 折扣类型：
-     * 200：促销产品折扣300：促销折扣券301：促销代金券302：促销现金券500：代理订购指定折扣501：代理订购指定减免502：代理订购指定一口价600：折扣返利合同601：渠道框架合同602：专款专用合同603：线下直签合同604：电销授权合同605：商务合同折扣606：渠道商务合同折扣607：合作伙伴授权折扣609：订单调价折扣610：免单金额700：促销折扣800：充值帐户折扣900：产品本身折扣901：基准价一口价的折扣
-     * 
-     * @return discountType */
+    /**
+     * 折扣类型： 200：促销产品折扣300：促销折扣券301：促销代金券302：促销现金券500：代理订购指定折扣501：代理订购指定减免502：代理订购指定一口价600：折扣返利合同601：渠道框架合同602：专款专用合同603：线下直签合同604：电销授权合同605：商务合同折扣606：渠道商务合同折扣607：合作伙伴授权折扣609：订单调价折扣610：免单金额700：促销折扣800：充值帐户折扣900：产品本身折扣901：基准价一口价的折扣
+     * @return discountType
+     */
     public String getDiscountType() {
         return discountType;
     }
@@ -40,9 +42,10 @@ public class DiscountItemV2 {
         return this;
     }
 
-    /** 折扣金额。
-     * 
-     * @return discountAmount */
+    /**
+     * 折扣金额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -79,7 +82,10 @@ public class DiscountItemV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

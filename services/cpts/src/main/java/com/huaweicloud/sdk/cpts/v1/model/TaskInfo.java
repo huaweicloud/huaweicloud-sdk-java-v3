@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TaskInfo */
+/**
+ * TaskInfo
+ */
 public class TaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,12 @@ public class TaskInfo {
         return this;
     }
 
-    /** bench_concurrent minimum: 0 maximum: 2147483647
-     * 
-     * @return benchConcurrent */
+    /**
+     * bench_concurrent
+     * minimum: 0
+     * maximum: 2147483647
+     * @return benchConcurrent
+     */
     public Integer getBenchConcurrent() {
         return benchConcurrent;
     }
@@ -104,9 +109,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** case_list
-     * 
-     * @return caseList */
+    /**
+     * case_list
+     * @return caseList
+     */
     public List<CaseInfo> getCaseList() {
         return caseList;
     }
@@ -120,9 +126,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -136,9 +143,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -152,9 +160,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -168,9 +177,12 @@ public class TaskInfo {
         return this;
     }
 
-    /** operate_mode minimum: 0 maximum: 2147483647
-     * 
-     * @return operateMode */
+    /**
+     * operate_mode
+     * minimum: 0
+     * maximum: 2147483647
+     * @return operateMode
+     */
     public Integer getOperateMode() {
         return operateMode;
     }
@@ -184,9 +196,12 @@ public class TaskInfo {
         return this;
     }
 
-    /** project_id minimum: 0 maximum: 2147483647
-     * 
-     * @return projectId */
+    /**
+     * project_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -216,9 +231,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** related_temp_running_data
-     * 
-     * @return relatedTempRunningData */
+    /**
+     * related_temp_running_data
+     * @return relatedTempRunningData
+     */
     public List<RelatedTempRunningData> getRelatedTempRunningData() {
         return relatedTempRunningData;
     }
@@ -232,9 +248,12 @@ public class TaskInfo {
         return this;
     }
 
-    /** run_status minimum: 0 maximum: 2147483647
-     * 
-     * @return runStatus */
+    /**
+     * run_status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return runStatus
+     */
     public Integer getRunStatus() {
         return runStatus;
     }
@@ -248,9 +267,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** update_time
-     * 
-     * @return updateTime */
+    /**
+     * update_time
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -264,9 +284,10 @@ public class TaskInfo {
         return this;
     }
 
-    /** parallel
-     * 
-     * @return parallel */
+    /**
+     * parallel
+     * @return parallel
+     */
     public Boolean getParallel() {
         return parallel;
     }
@@ -328,7 +349,10 @@ public class TaskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

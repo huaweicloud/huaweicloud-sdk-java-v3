@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性云服务器故障信息。 */
+/**
+ * 弹性云服务器故障信息。
+ */
 public class ServerFault {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ServerFault {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return code */
+    /**
+     * 错误码。
+     * @return code
+     */
     public Integer getCode() {
         return code;
     }
@@ -49,9 +52,10 @@ public class ServerFault {
         return this;
     }
 
-    /** 异常出现的时间。
-     * 
-     * @return created */
+    /**
+     * 异常出现的时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -65,9 +69,10 @@ public class ServerFault {
         return this;
     }
 
-    /** 异常描述信息。
-     * 
-     * @return message */
+    /**
+     * 异常描述信息。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -81,9 +86,10 @@ public class ServerFault {
         return this;
     }
 
-    /** 异常详情信息。
-     * 
-     * @return details */
+    /**
+     * 异常详情信息。
+     * @return details
+     */
     public String getDetails() {
         return details;
     }
@@ -122,7 +128,10 @@ public class ServerFault {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

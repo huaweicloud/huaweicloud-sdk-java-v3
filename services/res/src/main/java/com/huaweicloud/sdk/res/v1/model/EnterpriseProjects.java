@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EnterpriseProjects */
+/**
+ * EnterpriseProjects
+ */
 public class EnterpriseProjects {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -59,9 +62,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -75,9 +79,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 企业项目id。
-     * 
-     * @return id */
+    /**
+     * 企业项目id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -91,9 +96,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 企业项目名称。
-     * 
-     * @return name */
+    /**
+     * 企业项目名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -123,9 +130,10 @@ public class EnterpriseProjects {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -169,7 +177,10 @@ public class EnterpriseProjects {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

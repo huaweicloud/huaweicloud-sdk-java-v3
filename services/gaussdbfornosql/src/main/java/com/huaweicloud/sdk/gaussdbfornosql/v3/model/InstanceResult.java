@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceResult */
+/**
+ * InstanceResult
+ */
 public class InstanceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class InstanceResult {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -47,9 +50,10 @@ public class InstanceResult {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -79,9 +83,10 @@ public class InstanceResult {
         return this;
     }
 
-    /** 标签列表。如果没有标签，默认为空数组。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。如果没有标签，默认为空数组。
+     * @return tags
+     */
     public List<InstanceTagResult> getTags() {
         return tags;
     }
@@ -120,7 +125,10 @@ public class InstanceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

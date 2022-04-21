@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除伸缩配置请求 */
+/**
+ * 批量删除伸缩配置请求
+ */
 public class BatchDeleteScalingConfigOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BatchDeleteScalingConfigOption {
         return this;
     }
 
-    /** 伸缩配置ID。
-     * 
-     * @return scalingConfigurationId */
+    /**
+     * 伸缩配置ID。
+     * @return scalingConfigurationId
+     */
     public List<String> getScalingConfigurationId() {
         return scalingConfigurationId;
     }
@@ -75,7 +78,10 @@ public class BatchDeleteScalingConfigOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

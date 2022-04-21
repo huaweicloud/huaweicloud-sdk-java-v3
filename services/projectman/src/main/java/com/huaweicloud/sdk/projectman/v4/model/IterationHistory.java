@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IterationHistory */
+/**
+ * IterationHistory
+ */
 public class IterationHistory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** 迭代ID
-     * 
-     * @return iterationId */
+    /**
+     * 迭代ID
+     * @return iterationId
+     */
     public String getIterationId() {
         return iterationId;
     }
@@ -62,9 +65,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -87,9 +91,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** Get operator
-     * 
-     * @return operator */
+    /**
+     * Get operator
+     * @return operator
+     */
     public VersionHistoryOperator getOperator() {
         return operator;
     }
@@ -103,9 +108,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** 操作类型
-     * 
-     * @return operate */
+    /**
+     * 操作类型
+     * @return operate
+     */
     public String getOperate() {
         return operate;
     }
@@ -119,9 +125,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** 操作时间
-     * 
-     * @return operateTime */
+    /**
+     * 操作时间
+     * @return operateTime
+     */
     public String getOperateTime() {
         return operateTime;
     }
@@ -151,9 +158,10 @@ public class IterationHistory {
         return this;
     }
 
-    /** 操作详情
-     * 
-     * @return details */
+    /**
+     * 操作详情
+     * @return details
+     */
     public List<IterationHistoryDetails> getDetails() {
         return details;
     }
@@ -198,7 +206,10 @@ public class IterationHistory {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

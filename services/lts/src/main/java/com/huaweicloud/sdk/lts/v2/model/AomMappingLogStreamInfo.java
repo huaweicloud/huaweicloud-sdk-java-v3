@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AomMappingLogStreamInfo */
+/**
+ * AomMappingLogStreamInfo
+ */
 public class AomMappingLogStreamInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AomMappingLogStreamInfo {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return targetLogGroupId */
+    /**
+     * 日志组id
+     * @return targetLogGroupId
+     */
     public String getTargetLogGroupId() {
         return targetLogGroupId;
     }
@@ -49,9 +52,10 @@ public class AomMappingLogStreamInfo {
         return this;
     }
 
-    /** 目标日志组名称。
-     * 
-     * @return targetLogGroupName */
+    /**
+     * 目标日志组名称。
+     * @return targetLogGroupName
+     */
     public String getTargetLogGroupName() {
         return targetLogGroupName;
     }
@@ -65,9 +69,10 @@ public class AomMappingLogStreamInfo {
         return this;
     }
 
-    /** 日志流id
-     * 
-     * @return targetLogStreamId */
+    /**
+     * 日志流id
+     * @return targetLogStreamId
+     */
     public String getTargetLogStreamId() {
         return targetLogStreamId;
     }
@@ -81,9 +86,10 @@ public class AomMappingLogStreamInfo {
         return this;
     }
 
-    /** 目标日志组名称。
-     * 
-     * @return targetLogStreamName */
+    /**
+     * 目标日志组名称。
+     * @return targetLogStreamName
+     */
     public String getTargetLogStreamName() {
         return targetLogStreamName;
     }
@@ -124,7 +130,10 @@ public class AomMappingLogStreamInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

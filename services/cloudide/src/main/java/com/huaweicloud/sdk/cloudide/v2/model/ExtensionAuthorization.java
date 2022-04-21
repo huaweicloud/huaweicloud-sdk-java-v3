@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ExtensionAuthorization */
+/**
+ * ExtensionAuthorization
+ */
 public class ExtensionAuthorization {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class ExtensionAuthorization {
 
     private String instanceId;
 
-    /** 插件状态。 - AGREE 同意 - REJECT 不同意 - UNKNOWN 未知（下次重新询问） */
+    /**
+     * 插件状态。 - AGREE 同意 - REJECT 不同意 - UNKNOWN 未知（下次重新询问）
+     */
     public static final class StatusEnum {
 
-        /** Enum AGREE for value: "AGREE" */
+        /**
+         * Enum AGREE for value: "AGREE"
+         */
         public static final StatusEnum AGREE = new StatusEnum("AGREE");
 
-        /** Enum REJECT for value: "REJECT" */
+        /**
+         * Enum REJECT for value: "REJECT"
+         */
         public static final StatusEnum REJECT = new StatusEnum("REJECT");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +123,10 @@ public class ExtensionAuthorization {
         return this;
     }
 
-    /** 插件版本
-     * 
-     * @return extensionVersion */
+    /**
+     * 插件版本
+     * @return extensionVersion
+     */
     public String getExtensionVersion() {
         return extensionVersion;
     }
@@ -129,9 +140,10 @@ public class ExtensionAuthorization {
         return this;
     }
 
-    /** 插件标识(发布者.插件名)
-     * 
-     * @return identifier */
+    /**
+     * 插件标识(发布者.插件名)
+     * @return identifier
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -145,9 +157,10 @@ public class ExtensionAuthorization {
         return this;
     }
 
-    /** CloudIDE实例ID
-     * 
-     * @return instanceId */
+    /**
+     * CloudIDE实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -161,9 +174,10 @@ public class ExtensionAuthorization {
         return this;
     }
 
-    /** 插件状态。 - AGREE 同意 - REJECT 不同意 - UNKNOWN 未知（下次重新询问）
-     * 
-     * @return status */
+    /**
+     * 插件状态。 - AGREE 同意 - REJECT 不同意 - UNKNOWN 未知（下次重新询问）
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -204,7 +218,10 @@ public class ExtensionAuthorization {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

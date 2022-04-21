@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 插件模板详情-response结构体 */
+/**
+ * 插件模板详情-response结构体
+ */
 public class AddonTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class AddonTemplate {
         return this;
     }
 
-    /** API类型，固定值“Addon”，该值不可修改。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“Addon”，该值不可修改。
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -50,9 +53,10 @@ public class AddonTemplate {
         return this;
     }
 
-    /** API版本，固定值“v3”，该值不可修改。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”，该值不可修改。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -75,9 +79,10 @@ public class AddonTemplate {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public Metadata getMetadata() {
         return metadata;
     }
@@ -100,9 +105,10 @@ public class AddonTemplate {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public Templatespec getSpec() {
         return spec;
     }
@@ -142,7 +148,10 @@ public class AddonTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

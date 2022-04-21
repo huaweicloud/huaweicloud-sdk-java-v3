@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,10 +21,14 @@ public class CreateNodeRequest {
 
     private String clusterId;
 
-    /** 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数 */
+    /**
+     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
+     */
     public static final class NodepoolScaleUpEnum {
 
-        /** Enum NODEPOOLSCALEUP for value: "NodepoolScaleUp" */
+        /**
+         * Enum NODEPOOLSCALEUP for value: "NodepoolScaleUp"
+         */
         public static final NodepoolScaleUpEnum NODEPOOLSCALEUP = new NodepoolScaleUpEnum("NodepoolScaleUp");
 
         private static final Map<String, NodepoolScaleUpEnum> STATIC_FIELDS = createStaticFields();
@@ -101,9 +107,10 @@ public class CreateNodeRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -117,9 +124,10 @@ public class CreateNodeRequest {
         return this;
     }
 
-    /** 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
-     * 
-     * @return nodepoolScaleUp */
+    /**
+     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
+     * @return nodepoolScaleUp
+     */
     public NodepoolScaleUpEnum getNodepoolScaleUp() {
         return nodepoolScaleUp;
     }
@@ -142,9 +150,10 @@ public class CreateNodeRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public NodeCreateRequest getBody() {
         return body;
     }
@@ -183,7 +192,10 @@ public class CreateNodeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

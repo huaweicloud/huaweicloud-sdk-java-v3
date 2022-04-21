@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 运营商信息 */
+/**
+ * 运营商信息
+ */
 public class Operator {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Operator {
         return this;
     }
 
-    /** 运营商ID。
-     * 
-     * @return id */
+    /**
+     * 运营商ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class Operator {
         return this;
     }
 
-    /** 运营商名称。 取值范围： - chinamobile：中国移动； - chinaunicom：中国联通； - chinatelecom：中国电信。
-     * 
-     * @return name */
+    /**
+     * 运营商名称。  取值范围： - chinamobile：中国移动； - chinaunicom：中国联通； - chinatelecom：中国电信。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class Operator {
         return this;
     }
 
-    /** 运营商国际化名称。
-     * 
-     * @return i18nName */
+    /**
+     * 运营商国际化名称。
+     * @return i18nName
+     */
     public String getI18nName() {
         return i18nName;
     }
@@ -81,9 +86,10 @@ public class Operator {
         return this;
     }
 
-    /** 运营商的简写。
-     * 
-     * @return sa */
+    /**
+     * 运营商的简写。
+     * @return sa
+     */
     public String getSa() {
         return sa;
     }
@@ -122,7 +128,10 @@ public class Operator {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

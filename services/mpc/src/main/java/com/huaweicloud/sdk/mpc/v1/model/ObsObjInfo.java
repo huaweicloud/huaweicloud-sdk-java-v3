@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ObsObjInfo */
+/**
+ * ObsObjInfo
+ */
 public class ObsObjInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ObsObjInfo {
         return this;
     }
 
-    /** OBS的bucket名称。
-     * 
-     * @return bucket */
+    /**
+     * OBS的bucket名称。 
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -49,9 +52,10 @@ public class ObsObjInfo {
         return this;
     }
 
-    /** OBS桶所在的区域，且必须与使用的MPC区域保持一致。
-     * 
-     * @return location */
+    /**
+     * OBS桶所在的区域，且必须与使用的MPC区域保持一致。 
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -65,9 +69,10 @@ public class ObsObjInfo {
         return this;
     }
 
-    /** OBS对象路径，遵守OSS Object定义。 - 当用于指示input时,需要指定到具体对象。 - 当用于指示output时, 只需指定到转码结果期望存放的路径。
-     * 
-     * @return _object */
+    /**
+     * OBS对象路径，遵守OSS Object定义。  - 当用于指示input时,需要指定到具体对象。 - 当用于指示output时, 只需指定到转码结果期望存放的路径。 
+     * @return _object
+     */
     public String getObject() {
         return _object;
     }
@@ -81,9 +86,10 @@ public class ObsObjInfo {
         return this;
     }
 
-    /** 文件名，仅用于转封装指定输出名称。 - 当指定了此参数时，输出的对象名为object/file_name 。 - 当不指定此参数时，输出的对象名为object/xxx，其中xxx由MPC指定。
-     * 
-     * @return fileName */
+    /**
+     * 文件名，仅用于转封装指定输出名称。  - 当指定了此参数时，输出的对象名为object/file_name 。 - 当不指定此参数时，输出的对象名为object/xxx，其中xxx由MPC指定。 
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -122,7 +128,10 @@ public class ObsObjInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

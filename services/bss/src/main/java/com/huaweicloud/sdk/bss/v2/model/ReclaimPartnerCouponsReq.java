@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReclaimPartnerCouponsReq */
+/**
+ * ReclaimPartnerCouponsReq
+ */
 public class ReclaimPartnerCouponsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ReclaimPartnerCouponsReq {
         return this;
     }
 
-    /** 待回收的代金券ID。 请从“发放优惠券”或“查询已发放的优惠券”接口的响应参数中获取。
-     * 
-     * @return couponId */
+    /**
+     * 待回收的代金券ID。 请从“发放优惠券”或“查询已发放的优惠券”接口的响应参数中获取。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -39,9 +42,10 @@ public class ReclaimPartnerCouponsReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -78,7 +82,10 @@ public class ReclaimPartnerCouponsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

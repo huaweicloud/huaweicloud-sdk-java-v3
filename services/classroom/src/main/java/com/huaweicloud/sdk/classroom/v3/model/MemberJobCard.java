@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MemberJobCard */
+/**
+ * MemberJobCard
+ */
 public class MemberJobCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class MemberJobCard {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return name */
+    /**
+     * 作业名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class MemberJobCard {
         return this;
     }
 
-    /** 作业均分(作业有均分该字段才返回)
-     * 
-     * @return averageScore */
+    /**
+     * 作业均分(作业有均分该字段才返回)
+     * @return averageScore
+     */
     public String getAverageScore() {
         return averageScore;
     }
@@ -70,9 +74,10 @@ public class MemberJobCard {
         return this;
     }
 
-    /** 作业得分(作业有分数该字段才返回)
-     * 
-     * @return score */
+    /**
+     * 作业得分(作业有分数该字段才返回)
+     * @return score
+     */
     public Integer getScore() {
         return score;
     }
@@ -86,9 +91,10 @@ public class MemberJobCard {
         return this;
     }
 
-    /** 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return sendTime */
+    /**
+     * 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return sendTime
+     */
     public String getSendTime() {
         return sendTime;
     }
@@ -102,9 +108,10 @@ public class MemberJobCard {
         return this;
     }
 
-    /** 作业最后一次提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return lastSubmitTime */
+    /**
+     * 作业最后一次提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return lastSubmitTime
+     */
     public String getLastSubmitTime() {
         return lastSubmitTime;
     }
@@ -146,7 +153,10 @@ public class MemberJobCard {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

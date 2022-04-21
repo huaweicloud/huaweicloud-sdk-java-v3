@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 可用的专属主机类型。 */
+/**
+ * 可用的专属主机类型。
+ */
 public class RespHostType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RespHostType {
         return this;
     }
 
-    /** 专属主机类型。
-     * 
-     * @return hostType */
+    /**
+     * 专属主机类型。
+     * @return hostType
+     */
     public String getHostType() {
         return hostType;
     }
@@ -39,9 +42,10 @@ public class RespHostType {
         return this;
     }
 
-    /** 专属主机类型名字。
-     * 
-     * @return hostTypeName */
+    /**
+     * 专属主机类型名字。
+     * @return hostTypeName
+     */
     public String getHostTypeName() {
         return hostTypeName;
     }
@@ -78,7 +82,10 @@ public class RespHostType {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowQuotaSetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowQuotaSetsRequest {
         return this;
     }
 
-    /** 租户ID。 可以从专属主机控制台查询，或者通过调用查询专属主机列表API获取。
-     * 
-     * @return tenantId */
+    /**
+     * 租户ID。  可以从专属主机控制台查询，或者通过调用查询专属主机列表API获取。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -39,9 +42,10 @@ public class ShowQuotaSetsRequest {
         return this;
     }
 
-    /** 配额类别。
-     * 
-     * @return resource */
+    /**
+     * 配额类别。
+     * @return resource
+     */
     public String getResource() {
         return resource;
     }
@@ -78,7 +82,10 @@ public class ShowQuotaSetsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

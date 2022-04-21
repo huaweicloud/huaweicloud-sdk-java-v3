@@ -32,9 +32,10 @@ public class KeystoneUpdateIdentityProviderRequestBody {
         return this;
     }
 
-    /** Get identityProvider
-     * 
-     * @return identityProvider */
+    /**
+     * Get identityProvider
+     * @return identityProvider
+     */
     public UpdateIdentityproviderOption getIdentityProvider() {
         return identityProvider;
     }
@@ -70,7 +71,10 @@ public class KeystoneUpdateIdentityProviderRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

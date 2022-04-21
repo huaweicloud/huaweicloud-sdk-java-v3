@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 任务配置检查参数请求信息 */
+/**
+ * 任务配置检查参数请求信息
+ */
 public class ConfigTaskParameterBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ConfigTaskParameterBody {
         return this;
     }
 
-    /** 检查工具ID
-     * 
-     * @return checkId */
+    /**
+     * 检查工具ID
+     * @return checkId
+     */
     public Integer getCheckId() {
         return checkId;
     }
@@ -57,9 +60,10 @@ public class ConfigTaskParameterBody {
         return this;
     }
 
-    /** 规则集ID
-     * 
-     * @return rulesetId */
+    /**
+     * 规则集ID
+     * @return rulesetId
+     */
     public String getRulesetId() {
         return rulesetId;
     }
@@ -73,9 +77,10 @@ public class ConfigTaskParameterBody {
         return this;
     }
 
-    /** 规则集语言
-     * 
-     * @return language */
+    /**
+     * 规则集语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -89,9 +94,10 @@ public class ConfigTaskParameterBody {
         return this;
     }
 
-    /** off：关闭，on：开启
-     * 
-     * @return status */
+    /**
+     * off：关闭，on：开启
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -122,9 +128,10 @@ public class ConfigTaskParameterBody {
         return this;
     }
 
-    /** 检查参数信息
-     * 
-     * @return taskCheckSettings */
+    /**
+     * 检查参数信息
+     * @return taskCheckSettings
+     */
     public List<TaskCheckSettingsItem> getTaskCheckSettings() {
         return taskCheckSettings;
     }
@@ -167,7 +174,10 @@ public class ConfigTaskParameterBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

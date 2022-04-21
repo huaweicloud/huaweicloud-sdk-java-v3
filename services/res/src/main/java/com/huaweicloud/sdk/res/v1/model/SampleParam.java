@@ -30,9 +30,10 @@ public class SampleParam {
         return this;
     }
 
-    /** 训练集测试集划分方式： - TIME，时间比例 - RAMDOM，个数比例
-     * 
-     * @return divideType */
+    /**
+     * 训练集测试集划分方式： - TIME，时间比例 - RAMDOM，个数比例
+     * @return divideType
+     */
     public String getDivideType() {
         return divideType;
     }
@@ -46,9 +47,12 @@ public class SampleParam {
         return this;
     }
 
-    /** 训练数据占比。 minimum: 0.01 maximum: 1
-     * 
-     * @return trainRate */
+    /**
+     * 训练数据占比。
+     * minimum: 0.01
+     * maximum: 1
+     * @return trainRate
+     */
     public Double getTrainRate() {
         return trainRate;
     }
@@ -62,9 +66,12 @@ public class SampleParam {
         return this;
     }
 
-    /** 测试数据占比。 minimum: 0.01 maximum: 1
-     * 
-     * @return testRate */
+    /**
+     * 测试数据占比。
+     * minimum: 0.01
+     * maximum: 1
+     * @return testRate
+     */
     public Double getTestRate() {
         return testRate;
     }
@@ -103,7 +110,10 @@ public class SampleParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 云服务详情 */
+/**
+ * 云服务详情
+ */
 public class ResourceProviderResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ResourceProviderResponse {
         return this;
     }
 
-    /** 云服务名称
-     * 
-     * @return provider */
+    /**
+     * 云服务名称
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -52,9 +55,10 @@ public class ResourceProviderResponse {
         return this;
     }
 
-    /** 云服务显示名称，可以通过请求Header中的'X-Language'设置语言
-     * 
-     * @return displayName */
+    /**
+     * 云服务显示名称，可以通过请求Header中的'X-Language'设置语言
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -68,9 +72,10 @@ public class ResourceProviderResponse {
         return this;
     }
 
-    /** 云服务类别显示名称，可以通过请求Header中的'X-Language'设置语言
-     * 
-     * @return categoryDisplayName */
+    /**
+     * 云服务类别显示名称，可以通过请求Header中的'X-Language'设置语言
+     * @return categoryDisplayName
+     */
     public String getCategoryDisplayName() {
         return categoryDisplayName;
     }
@@ -100,9 +105,10 @@ public class ResourceProviderResponse {
         return this;
     }
 
-    /** 资源类型列表
-     * 
-     * @return resourceTypes */
+    /**
+     * 资源类型列表
+     * @return resourceTypes
+     */
     public List<ResourceTypeResponse> getResourceTypes() {
         return resourceTypes;
     }
@@ -143,7 +149,10 @@ public class ResourceProviderResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

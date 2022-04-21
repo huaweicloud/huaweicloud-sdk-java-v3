@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AttachInternalIpRequestBody */
+/**
+ * AttachInternalIpRequestBody
+ */
 public class AttachInternalIpRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AttachInternalIpRequestBody {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -39,9 +42,10 @@ public class AttachInternalIpRequestBody {
         return this;
     }
 
-    /** 新的Ip需要为用户可用vpc中的网段。只支持IPV4。
-     * 
-     * @return newIp */
+    /**
+     * 新的Ip需要为用户可用vpc中的网段。只支持IPV4。
+     * @return newIp
+     */
     public String getNewIp() {
         return newIp;
     }
@@ -78,7 +82,10 @@ public class AttachInternalIpRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VideoInfo */
+/**
+ * VideoInfo
+ */
 public class VideoInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,12 @@ public class VideoInfo {
         return this;
     }
 
-    /** 视频宽度 minimum: 0 maximum: 2147483647
-     * 
-     * @return width */
+    /**
+     * 视频宽度
+     * minimum: 0
+     * maximum: 2147483647
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -59,9 +64,12 @@ public class VideoInfo {
         return this;
     }
 
-    /** 视频高度 minimum: 0 maximum: 2147483647
-     * 
-     * @return height */
+    /**
+     * 视频高度
+     * minimum: 0
+     * maximum: 2147483647
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -75,9 +83,12 @@ public class VideoInfo {
         return this;
     }
 
-    /** 视频码率，单位: kbit/s minimum: 0 maximum: 2147483647
-     * 
-     * @return bitrate */
+    /**
+     * 视频码率，单位: kbit/s 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -91,9 +102,12 @@ public class VideoInfo {
         return this;
     }
 
-    /** 视频码率，单位: bit/s minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return bitrateBps */
+    /**
+     * 视频码率，单位: bit/s 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return bitrateBps
+     */
     public Long getBitrateBps() {
         return bitrateBps;
     }
@@ -107,10 +121,12 @@ public class VideoInfo {
         return this;
     }
 
-    /** 帧率。 取值范围：0或[5,60]，0表示自适应。 单位：帧每秒。 > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return frameRate */
+    /**
+     * 帧率。    取值范围：0或[5,60]，0表示自适应。    单位：帧每秒。    > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return frameRate
+     */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -124,9 +140,10 @@ public class VideoInfo {
         return this;
     }
 
-    /** 视频编码格式
-     * 
-     * @return codec */
+    /**
+     * 视频编码格式
+     * @return codec
+     */
     public String getCodec() {
         return codec;
     }
@@ -168,7 +185,10 @@ public class VideoInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

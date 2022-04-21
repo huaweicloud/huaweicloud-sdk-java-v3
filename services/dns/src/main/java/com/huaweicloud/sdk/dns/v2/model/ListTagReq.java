@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListTagReq */
+/**
+ * ListTagReq
+ */
 public class ListTagReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 包含标签。 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * 
-     * @return tags */
+    /**
+     * 包含标签。 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * @return tags
+     */
     public List<TagValues> getTags() {
         return tags;
     }
@@ -104,9 +107,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * 
-     * @return tagsAny */
+    /**
+     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * @return tagsAny
+     */
     public List<TagValues> getTagsAny() {
         return tagsAny;
     }
@@ -136,9 +140,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * 
-     * @return notTags */
+    /**
+     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * @return notTags
+     */
     public List<TagValues> getNotTags() {
         return notTags;
     }
@@ -168,9 +173,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * 
-     * @return notTagsAny */
+    /**
+     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * @return notTagsAny
+     */
     public List<TagValues> getNotTagsAny() {
         return notTagsAny;
     }
@@ -184,9 +190,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 每页返回的资源个数。 取值范围：1~1000 参数取值说明： 如果action为filter时，默认为1000。 如果action为count时，无此参数。
-     * 
-     * @return limit */
+    /**
+     * 每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -200,10 +207,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 取值范围：0~2147483647 默认值为0。 参数取值说明： 查询第一页数据时，不需要传入此参数。 查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。
-     * 如果action为filter时，默认为0，必须为数字，不能为负数。 如果action为count时，无此参数。
-     * 
-     * @return offset */
+    /**
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  参数取值说明： 查询第一页数据时，不需要传入此参数。 查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。 如果action为filter时，默认为0，必须为数字，不能为负数。 如果action为count时，无此参数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -217,9 +224,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** 操作标识（区分大小写）。 取值范围： filter：分页过滤查询 count：查询总条数
-     * 
-     * @return action */
+    /**
+     * 操作标识（区分大小写）。  取值范围：  filter：分页过滤查询 count：查询总条数
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -249,9 +257,10 @@ public class ListTagReq {
         return this;
     }
 
-    /** key为要匹配的字段，value为匹配的值。 如果value为空字符串则精确匹配，否则模糊匹配。
-     * 
-     * @return matches */
+    /**
+     * key为要匹配的字段，value为匹配的值。  如果value为空字符串则精确匹配，否则模糊匹配。
+     * @return matches
+     */
     public List<Match> getMatches() {
         return matches;
     }
@@ -297,7 +306,10 @@ public class ListTagReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

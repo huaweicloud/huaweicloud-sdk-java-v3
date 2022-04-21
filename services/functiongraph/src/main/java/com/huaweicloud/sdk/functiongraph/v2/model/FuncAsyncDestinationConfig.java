@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数异步调用目标参数配置。 */
+/**
+ * 函数异步调用目标参数配置。
+ */
 public class FuncAsyncDestinationConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class FuncAsyncDestinationConfig {
         return this;
     }
 
-    /** Get onSuccess
-     * 
-     * @return onSuccess */
+    /**
+     * Get onSuccess
+     * @return onSuccess
+     */
     public FuncDestinationConfig getOnSuccess() {
         return onSuccess;
     }
@@ -58,9 +61,10 @@ public class FuncAsyncDestinationConfig {
         return this;
     }
 
-    /** Get onFailure
-     * 
-     * @return onFailure */
+    /**
+     * Get onFailure
+     * @return onFailure
+     */
     public FuncDestinationConfig getOnFailure() {
         return onFailure;
     }
@@ -97,7 +101,10 @@ public class FuncAsyncDestinationConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 仓库统计信息 */
+/**
+ * 仓库统计信息
+ */
 public class RepoCommitStatistics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** 仓库总提交次数
-     * 
-     * @return allBranchCommitsCount */
+    /**
+     * 仓库总提交次数
+     * @return allBranchCommitsCount
+     */
     public Integer getAllBranchCommitsCount() {
         return allBranchCommitsCount;
     }
@@ -78,9 +81,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** 近15日每日代码提交行数
-     * 
-     * @return codelines */
+    /**
+     * 近15日每日代码提交行数
+     * @return codelines
+     */
     public List<RepoDailyCodeline> getCodelines() {
         return codelines;
     }
@@ -94,9 +98,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** 对应分支仓库总提交次数
-     * 
-     * @return count */
+    /**
+     * 对应分支仓库总提交次数
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -119,9 +124,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** Get event
-     * 
-     * @return event */
+    /**
+     * Get event
+     * @return event
+     */
     public RepoStatisticsEvent getEvent() {
         return event;
     }
@@ -151,9 +157,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** 仓库统计列表
-     * 
-     * @return statistics */
+    /**
+     * 仓库统计列表
+     * @return statistics
+     */
     public List<RepoStatistics> getStatistics() {
         return statistics;
     }
@@ -167,9 +174,10 @@ public class RepoCommitStatistics {
         return this;
     }
 
-    /** 仓库统计次数
-     * 
-     * @return total */
+    /**
+     * 仓库统计次数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -214,7 +222,10 @@ public class RepoCommitStatistics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

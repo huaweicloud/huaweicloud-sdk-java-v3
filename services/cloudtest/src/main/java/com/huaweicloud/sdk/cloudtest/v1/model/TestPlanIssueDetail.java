@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 测试计划需求列表详情 */
+/**
+ * 测试计划需求列表详情
+ */
 public class TestPlanIssueDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,9 +86,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** DevCloud项目id，项目唯一标识，固定长度32位字符
-     * 
-     * @return projectId */
+    /**
+     * DevCloud项目id，项目唯一标识，固定长度32位字符
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -100,9 +103,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 测试计划id
-     * 
-     * @return planId */
+    /**
+     * 测试计划id
+     * @return planId
+     */
     public String getPlanId() {
         return planId;
     }
@@ -116,9 +120,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 工作项id
-     * 
-     * @return workitemId */
+    /**
+     * 工作项id
+     * @return workitemId
+     */
     public String getWorkitemId() {
         return workitemId;
     }
@@ -132,9 +137,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 父工作项
-     * 
-     * @return parentIssue */
+    /**
+     * 父工作项
+     * @return parentIssue
+     */
     public String getParentIssue() {
         return parentIssue;
     }
@@ -148,9 +154,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 预计开始日期
-     * 
-     * @return startDate */
+    /**
+     * 预计开始日期
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -164,9 +171,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 预计结束日期
-     * 
-     * @return endDate */
+    /**
+     * 预计结束日期
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -180,9 +188,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** 工作项名称
-     * 
-     * @return name */
+    /**
+     * 工作项名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -196,9 +205,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** region信息
-     * 
-     * @return regionId */
+    /**
+     * region信息
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -221,9 +231,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get owner
-     * 
-     * @return owner */
+    /**
+     * Get owner
+     * @return owner
+     */
     public NameAndId getOwner() {
         return owner;
     }
@@ -246,9 +257,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get severity
-     * 
-     * @return severity */
+    /**
+     * Get severity
+     * @return severity
+     */
     public NameAndId getSeverity() {
         return severity;
     }
@@ -271,9 +283,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public NameAndId getStatus() {
         return status;
     }
@@ -296,9 +309,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get tracker
-     * 
-     * @return tracker */
+    /**
+     * Get tracker
+     * @return tracker
+     */
     public NameAndId getTracker() {
         return tracker;
     }
@@ -321,9 +335,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get iteration
-     * 
-     * @return iteration */
+    /**
+     * Get iteration
+     * @return iteration
+     */
     public NameAndId getIteration() {
         return iteration;
     }
@@ -346,9 +361,10 @@ public class TestPlanIssueDetail {
         return this;
     }
 
-    /** Get module
-     * 
-     * @return module */
+    /**
+     * Get module
+     * @return module
+     */
     public NameAndId getModule() {
         return module;
     }
@@ -422,7 +438,10 @@ public class TestPlanIssueDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

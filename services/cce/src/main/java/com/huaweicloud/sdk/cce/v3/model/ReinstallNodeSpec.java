@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点重装配置参数 */
+/**
+ * 节点重装配置参数
+ */
 public class ReinstallNodeSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** 操作系统。指定自定义镜像场景将以IMS镜像的实际操作系统版本为准。请选择当前集群支持的操作系统版本，例如EulerOS 2.5、CentOS 7.6、EulerOS 2.8。
-     * 
-     * @return os */
+    /**
+     * 操作系统。指定自定义镜像场景将以IMS镜像的实际操作系统版本为准。请选择当前集群支持的操作系统版本，例如EulerOS 2.5、CentOS 7.6、EulerOS 2.8。
+     * @return os
+     */
     public String getOs() {
         return os;
     }
@@ -84,9 +87,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get login
-     * 
-     * @return login */
+    /**
+     * Get login
+     * @return login
+     */
     public Login getLogin() {
         return login;
     }
@@ -100,9 +104,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** 节点名称 > 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 > > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
-     * 
-     * @return name */
+    /**
+     * 节点名称  > 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 > > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -125,9 +130,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get serverConfig
-     * 
-     * @return serverConfig */
+    /**
+     * Get serverConfig
+     * @return serverConfig
+     */
     public ReinstallServerConfig getServerConfig() {
         return serverConfig;
     }
@@ -150,9 +156,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get volumeConfig
-     * 
-     * @return volumeConfig */
+    /**
+     * Get volumeConfig
+     * @return volumeConfig
+     */
     public ReinstallVolumeConfig getVolumeConfig() {
         return volumeConfig;
     }
@@ -175,9 +182,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get runtimeConfig
-     * 
-     * @return runtimeConfig */
+    /**
+     * Get runtimeConfig
+     * @return runtimeConfig
+     */
     public ReinstallRuntimeConfig getRuntimeConfig() {
         return runtimeConfig;
     }
@@ -200,9 +208,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get k8sOptions
-     * 
-     * @return k8sOptions */
+    /**
+     * Get k8sOptions
+     * @return k8sOptions
+     */
     public ReinstallK8sOptionsConfig getK8sOptions() {
         return k8sOptions;
     }
@@ -225,9 +234,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get lifecycle
-     * 
-     * @return lifecycle */
+    /**
+     * Get lifecycle
+     * @return lifecycle
+     */
     public NodeLifecycleConfig getLifecycle() {
         return lifecycle;
     }
@@ -250,9 +260,10 @@ public class ReinstallNodeSpec {
         return this;
     }
 
-    /** Get extendParam
-     * 
-     * @return extendParam */
+    /**
+     * Get extendParam
+     * @return extendParam
+     */
     public ReinstallExtendParam getExtendParam() {
         return extendParam;
     }
@@ -303,7 +314,10 @@ public class ReinstallNodeSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

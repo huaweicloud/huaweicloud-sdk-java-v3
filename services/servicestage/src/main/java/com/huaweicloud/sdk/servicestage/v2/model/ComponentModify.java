@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ComponentModify */
+/**
+ * ComponentModify
+ */
 public class ComponentModify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ComponentModify {
         return this;
     }
 
-    /** 应用组件名称。
-     * 
-     * @return name */
+    /**
+     * 应用组件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -50,9 +53,10 @@ public class ComponentModify {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -75,9 +79,10 @@ public class ComponentModify {
         return this;
     }
 
-    /** Get source
-     * 
-     * @return source */
+    /**
+     * Get source
+     * @return source
+     */
     public SourceObject getSource() {
         return source;
     }
@@ -100,9 +105,10 @@ public class ComponentModify {
         return this;
     }
 
-    /** Get build
-     * 
-     * @return build */
+    /**
+     * Get build
+     * @return build
+     */
     public Build getBuild() {
         return build;
     }
@@ -142,7 +148,10 @@ public class ComponentModify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 条件中简单定时类型的信息，自定义结构。 */
+/**
+ * 条件中简单定时类型的信息，自定义结构。
+ */
 public class SimpleTimerType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class SimpleTimerType {
         return this;
     }
 
-    /** **参数说明**：规则触发的开始时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
-     * 
-     * @return startTime */
+    /**
+     * **参数说明**：规则触发的开始时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -44,9 +47,12 @@ public class SimpleTimerType {
         return this;
     }
 
-    /** **参数说明**：规则触发的重复时间间隔，单位为秒。 minimum: 1 maximum: 31536000
-     * 
-     * @return repeatInterval */
+    /**
+     * **参数说明**：规则触发的重复时间间隔，单位为秒。
+     * minimum: 1
+     * maximum: 31536000
+     * @return repeatInterval
+     */
     public Integer getRepeatInterval() {
         return repeatInterval;
     }
@@ -60,9 +66,12 @@ public class SimpleTimerType {
         return this;
     }
 
-    /** **参数说明**：规则触发的重复次数。 minimum: 1 maximum: 9999
-     * 
-     * @return repeatCount */
+    /**
+     * **参数说明**：规则触发的重复次数。
+     * minimum: 1
+     * maximum: 9999
+     * @return repeatCount
+     */
     public Integer getRepeatCount() {
         return repeatCount;
     }
@@ -101,7 +110,10 @@ public class SimpleTimerType {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlideVerifyCodeSendDTO */
+/**
+ * SlideVerifyCodeSendDTO
+ */
 public class SlideVerifyCodeSendDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class SlideVerifyCodeSendDTO {
         return this;
     }
 
-    /** 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1
-     * 
-     * @return user */
+    /**
+     * 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -44,9 +47,12 @@ public class SlideVerifyCodeSendDTO {
         return this;
     }
 
-    /** 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc minimum: 0 maximum: 255
-     * 
-     * @return clientType */
+    /**
+     * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc 
+     * minimum: 0
+     * maximum: 255
+     * @return clientType
+     */
     public Integer getClientType() {
         return clientType;
     }
@@ -60,9 +66,10 @@ public class SlideVerifyCodeSendDTO {
         return this;
     }
 
-    /** 校验类型。 * 0：登录； * 1：忘记密码； 默认值：0
-     * 
-     * @return checkType */
+    /**
+     * 校验类型。 * 0：登录； * 1：忘记密码； 默认值：0 
+     * @return checkType
+     */
     public Integer getCheckType() {
         return checkType;
     }
@@ -101,7 +108,10 @@ public class SlideVerifyCodeSendDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

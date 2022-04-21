@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单流任务请求，转推和录制至少选一个 */
+/**
+ * 单流任务请求，转推和录制至少选一个
+ */
 public class IndividualStreamJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,13 +31,19 @@ public class IndividualStreamJobReq {
 
     private Boolean isRecordAudio;
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。 */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     */
     public static final class VideoTypeEnum {
 
-        /** Enum CAMERASTREAM for value: "CAMERASTREAM" */
+        /**
+         * Enum CAMERASTREAM for value: "CAMERASTREAM"
+         */
         public static final VideoTypeEnum CAMERASTREAM = new VideoTypeEnum("CAMERASTREAM");
 
-        /** Enum SCREENSTREAM for value: "SCREENSTREAM" */
+        /**
+         * Enum SCREENSTREAM for value: "SCREENSTREAM"
+         */
         public static final VideoTypeEnum SCREENSTREAM = new VideoTypeEnum("SCREENSTREAM");
 
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -105,19 +113,29 @@ public class IndividualStreamJobReq {
 
     private VideoTypeEnum videoType;
 
-    /** 指定窗口拉取的分辨率档位。 - LD - SD - HD - FHD 缺省为FHD。 */
+    /**
+     * 指定窗口拉取的分辨率档位。  - LD - SD - HD - FHD  缺省为FHD。 
+     */
     public static final class SelectStreamTypeEnum {
 
-        /** Enum LD for value: "LD" */
+        /**
+         * Enum LD for value: "LD"
+         */
         public static final SelectStreamTypeEnum LD = new SelectStreamTypeEnum("LD");
 
-        /** Enum SD for value: "SD" */
+        /**
+         * Enum SD for value: "SD"
+         */
         public static final SelectStreamTypeEnum SD = new SelectStreamTypeEnum("SD");
 
-        /** Enum HD for value: "HD" */
+        /**
+         * Enum HD for value: "HD"
+         */
         public static final SelectStreamTypeEnum HD = new SelectStreamTypeEnum("HD");
 
-        /** Enum FHD for value: "FHD" */
+        /**
+         * Enum FHD for value: "FHD"
+         */
         public static final SelectStreamTypeEnum FHD = new SelectStreamTypeEnum("FHD");
 
         private static final Map<String, SelectStreamTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +227,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 房间id
-     * 
-     * @return roomId */
+    /**
+     * 房间id
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -225,9 +244,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 选看的用户id，单个录制任务内保证唯一
-     * 
-     * @return userId */
+    /**
+     * 选看的用户id，单个录制任务内保证唯一
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -241,9 +261,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 是否录制音频。 - true：录制音频 - false：不录制音频 缺省为true。
-     * 
-     * @return isRecordAudio */
+    /**
+     *  是否录制音频。  - true：录制音频 - false：不录制音频  缺省为true。 
+     * @return isRecordAudio
+     */
     public Boolean getIsRecordAudio() {
         return isRecordAudio;
     }
@@ -257,9 +278,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。
-     * 
-     * @return videoType */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     * @return videoType
+     */
     public VideoTypeEnum getVideoType() {
         return videoType;
     }
@@ -273,9 +295,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 指定窗口拉取的分辨率档位。 - LD - SD - HD - FHD 缺省为FHD。
-     * 
-     * @return selectStreamType */
+    /**
+     * 指定窗口拉取的分辨率档位。  - LD - SD - HD - FHD  缺省为FHD。 
+     * @return selectStreamType
+     */
     public SelectStreamTypeEnum getSelectStreamType() {
         return selectStreamType;
     }
@@ -289,10 +312,12 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** 最长空闲频道时间。 取值范围：[5，43200]，默认值为30。 单位：秒。 如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。
-     * 连麦方指：joiner或者publisher的用户。 minimum: 5 maximum: 43200
-     * 
-     * @return maxIdleTime */
+    /**
+     * 最长空闲频道时间。  取值范围：[5，43200]，默认值为30。  单位：秒。  如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。  连麦方指：joiner或者publisher的用户。 
+     * minimum: 5
+     * maximum: 43200
+     * @return maxIdleTime
+     */
     public Integer getMaxIdleTime() {
         return maxIdleTime;
     }
@@ -315,9 +340,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** Get publishParam
-     * 
-     * @return publishParam */
+    /**
+     * Get publishParam
+     * @return publishParam
+     */
     public PublishParam getPublishParam() {
         return publishParam;
     }
@@ -340,9 +366,10 @@ public class IndividualStreamJobReq {
         return this;
     }
 
-    /** Get recordParam
-     * 
-     * @return recordParam */
+    /**
+     * Get recordParam
+     * @return recordParam
+     */
     public RecordParam getRecordParam() {
         return recordParam;
     }
@@ -392,7 +419,10 @@ public class IndividualStreamJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

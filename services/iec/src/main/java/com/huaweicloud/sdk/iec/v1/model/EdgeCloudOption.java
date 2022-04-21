@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘业务对象 */
+/**
+ * 边缘业务对象
+ */
 public class EdgeCloudOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class EdgeCloudOption {
         return this;
     }
 
-    /** 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
-     * 
-     * @return name */
+    /**
+     * 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,9 +58,10 @@ public class EdgeCloudOption {
         return this;
     }
 
-    /** 已有边缘业务ID，该参数用于扩容边缘业务场景。 >- id与name不可同时为空，同时有值时部署计划无效； - 通过id扩容场景要求区域分布层级与原边缘业务一致； - 区域分布层级为站点级的边缘业务不支持扩容。
-     * 
-     * @return id */
+    /**
+     * 已有边缘业务ID，该参数用于扩容边缘业务场景。 >-  id与name不可同时为空，同时有值时部署计划无效； - 通过id扩容场景要求区域分布层级与原边缘业务一致； - 区域分布层级为站点级的边缘业务不支持扩容。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -71,9 +75,10 @@ public class EdgeCloudOption {
         return this;
     }
 
-    /** 描述，缺省值为空字符串。
-     * 
-     * @return description */
+    /**
+     * 描述，缺省值为空字符串。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -96,9 +101,10 @@ public class EdgeCloudOption {
         return this;
     }
 
-    /** Get coverage
-     * 
-     * @return coverage */
+    /**
+     * Get coverage
+     * @return coverage
+     */
     public Coverage getCoverage() {
         return coverage;
     }
@@ -121,9 +127,10 @@ public class EdgeCloudOption {
         return this;
     }
 
-    /** Get stack
-     * 
-     * @return stack */
+    /**
+     * Get stack
+     * @return stack
+     */
     public Stack getStack() {
         return stack;
     }
@@ -165,7 +172,10 @@ public class EdgeCloudOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

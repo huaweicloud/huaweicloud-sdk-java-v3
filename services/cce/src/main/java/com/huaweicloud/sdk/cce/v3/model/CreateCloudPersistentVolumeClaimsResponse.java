@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本，固定值**v1**
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值**v1**
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -56,9 +59,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    /** API类型，固定值**PersistentVolumeClaim**
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值**PersistentVolumeClaim**
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -82,9 +86,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public PersistentVolumeClaimMetadata getMetadata() {
         return metadata;
     }
@@ -107,9 +112,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public PersistentVolumeClaimSpec getSpec() {
         return spec;
     }
@@ -132,9 +138,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public PersistentVolumeClaimStatus getStatus() {
         return status;
     }
@@ -178,7 +185,10 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

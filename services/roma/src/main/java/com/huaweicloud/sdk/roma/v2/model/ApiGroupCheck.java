@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiGroupCheck */
+/**
+ * ApiGroupCheck
+ */
 public class ApiGroupCheck {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ApiGroupCheck {
         return this;
     }
 
-    /** 待校验的API分组名称
-     * 
-     * @return groupName */
+    /**
+     * 待校验的API分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -39,9 +42,10 @@ public class ApiGroupCheck {
         return this;
     }
 
-    /** 集成应用ID 校验分组在集成应用下是否重名时必填，不填写默认校验全局分组是否重名
-     * 
-     * @return romaAppId */
+    /**
+     * 集成应用ID  校验分组在集成应用下是否重名时必填，不填写默认校验全局分组是否重名
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -78,7 +82,10 @@ public class ApiGroupCheck {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 参数信息 */
+/**
+ * 参数信息
+ */
 public class ParamsReqBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ParamsReqBean {
         return this;
     }
 
-    /** 数据库参数名
-     * 
-     * @return key */
+    /**
+     * 数据库参数名
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ParamsReqBean {
         return this;
     }
 
-    /** 目标数据库参数值
-     * 
-     * @return targetValue */
+    /**
+     * 目标数据库参数值
+     * @return targetValue
+     */
     public String getTargetValue() {
         return targetValue;
     }
@@ -78,7 +82,10 @@ public class ParamsReqBean {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

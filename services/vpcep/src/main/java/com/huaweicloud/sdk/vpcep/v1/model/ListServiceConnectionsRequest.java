@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServiceConnectionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ListServiceConnectionsRequest {
 
     private String status;
 
-    /** 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。 */
+    /**
+     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum CREATE_AT for value: "create_at" */
+        /**
+         * Enum CREATE_AT for value: "create_at"
+         */
         public static final SortKeyEnum CREATE_AT = new SortKeyEnum("create_at");
 
-        /** Enum UPDATE_AT for value: "update_at" */
+        /**
+         * Enum UPDATE_AT for value: "update_at"
+         */
         public static final SortKeyEnum UPDATE_AT = new SortKeyEnum("update_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +117,19 @@ public class ListServiceConnectionsRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。 */
+    /**
+     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +214,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 终端节点服务的ID。
-     * 
-     * @return vpcEndpointServiceId */
+    /**
+     * 终端节点服务的ID。
+     * @return vpcEndpointServiceId
+     */
     public String getVpcEndpointServiceId() {
         return vpcEndpointServiceId;
     }
@@ -216,9 +231,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 终端节点的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -232,9 +248,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 终端节点的报文标识。
-     * 
-     * @return markerId */
+    /**
+     * 终端节点的报文标识。
+     * @return markerId
+     */
     public String getMarkerId() {
         return markerId;
     }
@@ -248,9 +265,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 终端节点的连接状态。 ● pendingAcceptance：待接受 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败
-     * 
-     * @return status */
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -264,9 +282,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
-     * 
-     * @return sortKey */
+    /**
+     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -280,9 +299,10 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
-     * 
-     * @return sortDir */
+    /**
+     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -296,9 +316,11 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 查询返回终端节点服务的连接列表限制每页个数，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。 minimum: 1
-     * 
-     * @return limit */
+    /**
+     * 查询返回终端节点服务的连接列表限制每页个数，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
+     * minimum: 1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -312,9 +334,11 @@ public class ListServiceConnectionsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -363,7 +387,10 @@ public class ListServiceConnectionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建DNAT规则的请求体。 */
+/**
+ * 创建DNAT规则的请求体。
+ */
 public class CreateNatGatewayDnatOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** DNAT规则的描述，长度限制为255。
-     * 
-     * @return description */
+    /**
+     * DNAT规则的描述，长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -79,9 +82,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
-     * 
-     * @return portId */
+    /**
+     * 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -95,9 +99,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
-     * 
-     * @return privateIp */
+    /**
+     * 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -111,9 +116,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 公网NAT网关实例的ID。
-     * 
-     * @return natGatewayId */
+    /**
+     * 公网NAT网关实例的ID。
+     * @return natGatewayId
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -127,9 +133,12 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。 minimum: 0 maximum: 65535
-     * 
-     * @return internalServicePort */
+    /**
+     * 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
+     * minimum: 0
+     * maximum: 65535
+     * @return internalServicePort
+     */
     public Integer getInternalServicePort() {
         return internalServicePort;
     }
@@ -143,9 +152,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 弹性公网IP的id。
-     * 
-     * @return floatingIpId */
+    /**
+     * 弹性公网IP的id。
+     * @return floatingIpId
+     */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -159,9 +169,12 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** Floatingip对外提供服务的端口号。 取值范围：0~65535。 minimum: 0 maximum: 65535
-     * 
-     * @return externalServicePort */
+    /**
+     * Floatingip对外提供服务的端口号。 取值范围：0~65535。
+     * minimum: 0
+     * maximum: 65535
+     * @return externalServicePort
+     */
     public Integer getExternalServicePort() {
         return externalServicePort;
     }
@@ -175,9 +188,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
-     * 
-     * @return protocol */
+    /**
+     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -191,9 +205,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
-     * 
-     * @return internalServicePortRange */
+    /**
+     * 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。 
+     * @return internalServicePortRange
+     */
     public String getInternalServicePortRange() {
         return internalServicePortRange;
     }
@@ -207,9 +222,10 @@ public class CreateNatGatewayDnatOption {
         return this;
     }
 
-    /** Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
-     * 
-     * @return externalServicePortRange */
+    /**
+     * Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。 
+     * @return externalServicePortRange
+     */
     public String getExternalServicePortRange() {
         return externalServicePortRange;
     }
@@ -271,7 +287,10 @@ public class CreateNatGatewayDnatOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

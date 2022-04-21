@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新监听器的结构体 */
+/**
+ * 更新监听器的结构体
+ */
 public class UpdateListenerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器名称。
-     * 
-     * @return name */
+    /**
+     * 监听器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -87,9 +90,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器的描述信息
-     * 
-     * @return description */
+    /**
+     * 监听器的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -103,9 +107,11 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。 maximum: 2147483647
-     * 
-     * @return connectionLimit */
+    /**
+     * 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。
+     * maximum: 2147483647
+     * @return connectionLimit
+     */
     public Integer getConnectionLimit() {
         return connectionLimit;
     }
@@ -119,9 +125,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时才有意义。
-     * 
-     * @return http2Enable */
+    /**
+     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时才有意义。
+     * @return http2Enable
+     */
     public Boolean getHttp2Enable() {
         return http2Enable;
     }
@@ -135,9 +142,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。当该字段为null时，表示监听器无默认的后端云服务器组。
-     * 
-     * @return defaultPoolId */
+    /**
+     * 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。当该字段为null时，表示监听器无默认的后端云服务器组。
+     * @return defaultPoolId
+     */
     public String getDefaultPoolId() {
         return defaultPoolId;
     }
@@ -151,9 +159,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器使用的服务器证书ID。当protocol参数为TERMINATED_HTTPS时，为必选字段
-     * 
-     * @return defaultTlsContainerRef */
+    /**
+     * 监听器使用的服务器证书ID。当protocol参数为TERMINATED_HTTPS时，为必选字段
+     * @return defaultTlsContainerRef
+     */
     public String getDefaultTlsContainerRef() {
         return defaultTlsContainerRef;
     }
@@ -167,9 +176,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器使用的CA证书ID。
-     * 
-     * @return clientCaTlsContainerRef */
+    /**
+     * 监听器使用的CA证书ID。
+     * @return clientCaTlsContainerRef
+     */
     public String getClientCaTlsContainerRef() {
         return clientCaTlsContainerRef;
     }
@@ -199,9 +209,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
-     * 
-     * @return sniContainerRefs */
+    /**
+     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
+     * @return sniContainerRefs
+     */
     public List<String> getSniContainerRefs() {
         return sniContainerRefs;
     }
@@ -224,9 +235,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** Get insertHeaders
-     * 
-     * @return insertHeaders */
+    /**
+     * Get insertHeaders
+     * @return insertHeaders
+     */
     public InsertHeader getInsertHeaders() {
         return insertHeaders;
     }
@@ -240,9 +252,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效。 取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略。
-     * 
-     * @return tlsCiphersPolicy */
+    /**
+     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略。
+     * @return tlsCiphersPolicy
+     */
     public String getTlsCiphersPolicy() {
         return tlsCiphersPolicy;
     }
@@ -256,9 +269,10 @@ public class UpdateListenerReq {
         return this;
     }
 
-    /** 监听器的管理状态。 该字段为预留字段，暂未启动。只支持设定为true
-     * 
-     * @return adminStateUp */
+    /**
+     * 监听器的管理状态。  该字段为预留字段，暂未启动。只支持设定为true
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -323,7 +337,10 @@ public class UpdateListenerReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

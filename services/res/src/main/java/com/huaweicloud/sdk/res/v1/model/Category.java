@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 热度策略的分群配置 */
+/**
+ * 热度策略的分群配置
+ */
 public class Category {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class Category {
         return this;
     }
 
-    /** 用户特征。
-     * 
-     * @return userMetaList */
+    /**
+     * 用户特征。
+     * @return userMetaList
+     */
     public List<String> getUserMetaList() {
         return userMetaList;
     }
@@ -74,9 +77,10 @@ public class Category {
         return this;
     }
 
-    /** 物品特征。
-     * 
-     * @return itemMetaList */
+    /**
+     * 物品特征。
+     * @return itemMetaList
+     */
     public List<String> getItemMetaList() {
         return itemMetaList;
     }
@@ -113,7 +117,10 @@ public class Category {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

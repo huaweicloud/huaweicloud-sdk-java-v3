@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例组信息。 */
+/**
+ * 实例组信息。
+ */
 public class ListInstancesGroupResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ListInstancesGroupResult {
         return this;
     }
 
-    /** 组ID。
-     * 
-     * @return id */
+    /**
+     * 组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -52,9 +55,10 @@ public class ListInstancesGroupResult {
         return this;
     }
 
-    /** 组状态。
-     * 
-     * @return status */
+    /**
+     * 组状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -77,9 +81,10 @@ public class ListInstancesGroupResult {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public Volume getVolume() {
         return volume;
     }
@@ -109,9 +114,10 @@ public class ListInstancesGroupResult {
         return this;
     }
 
-    /** 节点信息。
-     * 
-     * @return nodes */
+    /**
+     * 节点信息。
+     * @return nodes
+     */
     public List<ListInstancesNodeResult> getNodes() {
         return nodes;
     }
@@ -152,7 +158,10 @@ public class ListInstancesGroupResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

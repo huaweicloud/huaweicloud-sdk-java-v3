@@ -28,9 +28,10 @@ public class CompareObjectInfo {
         return this;
     }
 
-    /** 库名。
-     * 
-     * @return dbName */
+    /**
+     * 库名。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -60,9 +61,10 @@ public class CompareObjectInfo {
         return this;
     }
 
-    /** 该库下的表名列表。
-     * 
-     * @return tableName */
+    /**
+     * 该库下的表名列表。
+     * @return tableName
+     */
     public List<String> getTableName() {
         return tableName;
     }
@@ -99,7 +101,10 @@ public class CompareObjectInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

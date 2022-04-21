@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckConfigInfo */
+/**
+ * CheckConfigInfo
+ */
 public class CheckConfigInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 检查参数名称
-     * 
-     * @return name */
+    /**
+     * 检查参数名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 检查参数对应的key值
-     * 
-     * @return cfgKey */
+    /**
+     * 检查参数对应的key值
+     * @return cfgKey
+     */
     public String getCfgKey() {
         return cfgKey;
     }
@@ -85,9 +89,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 检查参数默认值
-     * 
-     * @return defaultValue */
+    /**
+     * 检查参数默认值
+     * @return defaultValue
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -101,9 +106,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 检查参数可选项
-     * 
-     * @return optionValue */
+    /**
+     * 检查参数可选项
+     * @return optionValue
+     */
     public String getOptionValue() {
         return optionValue;
     }
@@ -117,9 +123,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 0：非必填，1：必填
-     * 
-     * @return isRequired */
+    /**
+     * 0：非必填，1：必填
+     * @return isRequired
+     */
     public Integer getIsRequired() {
         return isRequired;
     }
@@ -133,9 +140,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 检查参数说明
-     * 
-     * @return description */
+    /**
+     * 检查参数说明
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -149,9 +157,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 参数类型，0：文本，2：有可选项
-     * 
-     * @return type */
+    /**
+     * 参数类型，0：文本，2：有可选项
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -165,9 +174,10 @@ public class CheckConfigInfo {
         return this;
     }
 
-    /** 参数状态，on：启用，off：未启用
-     * 
-     * @return status */
+    /**
+     * 参数状态，on：启用，off：未启用
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -214,7 +224,10 @@ public class CheckConfigInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

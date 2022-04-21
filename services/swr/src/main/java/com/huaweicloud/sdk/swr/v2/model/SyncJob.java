@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SyncJob */
+/**
+ * SyncJob
+ */
 public class SyncJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -99,9 +102,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 租户ID
-     * 
-     * @return domainID */
+    /**
+     * 租户ID
+     * @return domainID
+     */
     public String getDomainID() {
         return domainID;
     }
@@ -115,9 +119,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -131,9 +136,10 @@ public class SyncJob {
         return this;
     }
 
-    /** ID
-     * 
-     * @return id */
+    /**
+     * ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -147,9 +153,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 组织名
-     * 
-     * @return namespace */
+    /**
+     * 组织名
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -163,9 +170,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 是否覆盖
-     * 
-     * @return override */
+    /**
+     * 是否覆盖
+     * @return override
+     */
     public Boolean getOverride() {
         return override;
     }
@@ -179,9 +187,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 目的组织
-     * 
-     * @return remoteNamespace */
+    /**
+     * 目的组织
+     * @return remoteNamespace
+     */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -195,9 +204,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 目的region
-     * 
-     * @return remoteRegionId */
+    /**
+     * 目的region
+     * @return remoteRegionId
+     */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -211,9 +221,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 仓库名
-     * 
-     * @return repoName */
+    /**
+     * 仓库名
+     * @return repoName
+     */
     public String getRepoName() {
         return repoName;
     }
@@ -227,9 +238,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 同步状态,waiting、running、success、failed、timeout、cancel、existed
-     * 
-     * @return status */
+    /**
+     * 同步状态,waiting、running、success、failed、timeout、cancel、existed
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -243,9 +255,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 操作用户ID
-     * 
-     * @return syncOperatorId */
+    /**
+     * 操作用户ID
+     * @return syncOperatorId
+     */
     public String getSyncOperatorId() {
         return syncOperatorId;
     }
@@ -259,9 +272,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 操作用户名
-     * 
-     * @return syncOperatorName */
+    /**
+     * 操作用户名
+     * @return syncOperatorName
+     */
     public String getSyncOperatorName() {
         return syncOperatorName;
     }
@@ -275,9 +289,10 @@ public class SyncJob {
         return this;
     }
 
-    /** 镜像版本
-     * 
-     * @return tag */
+    /**
+     * 镜像版本
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -291,9 +306,10 @@ public class SyncJob {
         return this;
     }
 
-    /** updatedAt
-     * 
-     * @return updatedAt */
+    /**
+     * updatedAt
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -362,7 +378,10 @@ public class SyncJob {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

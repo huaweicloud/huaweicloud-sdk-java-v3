@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息列表。
-     * 
-     * @return messages */
+    /**
+     * 消息列表。
+     * @return messages
+     */
     public List<MessagesEntity> getMessages() {
         return messages;
     }
@@ -64,9 +67,10 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息总条数。
-     * 
-     * @return total */
+    /**
+     * 消息总条数。
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -80,9 +84,10 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息条数。
-     * 
-     * @return size */
+    /**
+     * 消息条数。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -121,7 +126,10 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

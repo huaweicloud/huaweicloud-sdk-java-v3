@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 表字段详情 */
+/**
+ * 表字段详情
+ */
 public class ColumnInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return fieldName */
+    /**
+     * 字段名称
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -69,9 +72,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 字段类型
-     * 
-     * @return fieldType */
+    /**
+     * 字段类型
+     * @return fieldType
+     */
     public String getFieldType() {
         return fieldType;
     }
@@ -85,9 +89,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 字段长度
-     * 
-     * @return fieldLength */
+    /**
+     * 字段长度
+     * @return fieldLength
+     */
     public String getFieldLength() {
         return fieldLength;
     }
@@ -101,9 +106,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 是否允许为空
-     * 
-     * @return nullAble */
+    /**
+     * 是否允许为空
+     * @return nullAble
+     */
     public String getNullAble() {
         return nullAble;
     }
@@ -117,9 +123,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 是否是分区字段
-     * 
-     * @return isPartition */
+    /**
+     * 是否是分区字段
+     * @return isPartition
+     */
     public Boolean getIsPartition() {
         return isPartition;
     }
@@ -133,9 +140,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 是否是主键字段
-     * 
-     * @return primary */
+    /**
+     * 是否是主键字段
+     * @return primary
+     */
     public String getPrimary() {
         return primary;
     }
@@ -149,9 +157,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 是否是唯一键字段
-     * 
-     * @return unique */
+    /**
+     * 是否是唯一键字段
+     * @return unique
+     */
     public String getUnique() {
         return unique;
     }
@@ -165,9 +174,10 @@ public class ColumnInfo {
         return this;
     }
 
-    /** 小数部分位数，非数字类型返回null
-     * 
-     * @return decimalDigits */
+    /**
+     * 小数部分位数，非数字类型返回null
+     * @return decimalDigits
+     */
     public String getDecimalDigits() {
         return decimalDigits;
     }
@@ -215,7 +225,10 @@ public class ColumnInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

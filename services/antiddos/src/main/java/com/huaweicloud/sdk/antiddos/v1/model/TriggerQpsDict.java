@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HTTP限制列表 */
+/**
+ * HTTP限制列表
+ */
 public class TriggerQpsDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TriggerQpsDict {
         return this;
     }
 
-    /** HTTP请求数分段ID
-     * 
-     * @return httpRequestPosId */
+    /**
+     * HTTP请求数分段ID
+     * @return httpRequestPosId
+     */
     public Long getHttpRequestPosId() {
         return httpRequestPosId;
     }
@@ -39,9 +42,10 @@ public class TriggerQpsDict {
         return this;
     }
 
-    /** 每秒HTTP请求数（个/s）阈值
-     * 
-     * @return httpPacketPerSecond */
+    /**
+     * 每秒HTTP请求数（个/s）阈值
+     * @return httpPacketPerSecond
+     */
     public Long getHttpPacketPerSecond() {
         return httpPacketPerSecond;
     }
@@ -78,7 +82,10 @@ public class TriggerQpsDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

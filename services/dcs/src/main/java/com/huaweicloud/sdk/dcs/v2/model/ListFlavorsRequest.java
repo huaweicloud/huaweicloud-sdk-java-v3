@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ListFlavorsRequest {
 
     private String engineVersion;
 
-    /** CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 */
+    /**
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
+     */
     public static final class CpuTypeEnum {
 
-        /** Enum X86_64 for value: "x86_64" */
+        /**
+         * Enum X86_64 for value: "x86_64"
+         */
         public static final CpuTypeEnum X86_64 = new CpuTypeEnum("x86_64");
 
-        /** Enum AARCH64 for value: "aarch64" */
+        /**
+         * Enum AARCH64 for value: "aarch64"
+         */
         public static final CpuTypeEnum AARCH64 = new CpuTypeEnum("aarch64");
 
         private static final Map<String, CpuTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 产品规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 产品规格编码。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -135,9 +144,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例
-     * 
-     * @return cacheMode */
+    /**
+     * 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例 
+     * @return cacheMode
+     */
     public String getCacheMode() {
         return cacheMode;
     }
@@ -151,9 +161,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 缓存引擎类型。取值范围如下： - Redis - Memcached
-     * 
-     * @return engine */
+    /**
+     * 缓存引擎类型。取值范围如下： - Redis - Memcached 
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -167,9 +178,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 缓存版本，当缓存引擎为Redis时，取值范围如下： - 3.0 - 4.0 - 5.0
-     * 
-     * @return engineVersion */
+    /**
+     * 缓存版本，当缓存引擎为Redis时，取值范围如下： - 3.0 - 4.0 - 5.0 
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -183,9 +195,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构
-     * 
-     * @return cpuType */
+    /**
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
+     * @return cpuType
+     */
     public CpuTypeEnum getCpuType() {
         return cpuType;
     }
@@ -199,11 +212,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 缓存容量（G Byte）。 - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 -
-     * Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。
-     * - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。
-     * 
-     * @return capacity */
+    /**
+     * 缓存容量（G Byte）。 - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 - Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
+     * @return capacity
+     */
     public String getCapacity() {
         return capacity;
     }
@@ -248,7 +260,10 @@ public class ListFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

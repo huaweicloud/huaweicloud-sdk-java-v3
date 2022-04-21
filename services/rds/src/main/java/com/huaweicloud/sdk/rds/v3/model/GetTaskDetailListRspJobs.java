@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 任务信息。 */
+/**
+ * 任务信息。
+ */
 public class GetTaskDetailListRspJobs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,16 +26,24 @@ public class GetTaskDetailListRspJobs {
 
     private String name;
 
-    /** 任务执行状态。 取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。 */
+    /**
+     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "Running" */
+        /**
+         * Enum RUNNING for value: "Running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
 
-        /** Enum COMPLETED for value: "Completed" */
+        /**
+         * Enum COMPLETED for value: "Completed"
+         */
         public static final StatusEnum COMPLETED = new StatusEnum("Completed");
 
-        /** Enum FAILED for value: "Failed" */
+        /**
+         * Enum FAILED for value: "Failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("Failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +154,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return id */
+    /**
+     * 任务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -160,9 +171,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return name */
+    /**
+     * 任务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -176,9 +188,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务执行状态。 取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -192,9 +205,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -208,9 +222,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return ended */
+    /**
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return ended
+     */
     public String getEnded() {
         return ended;
     }
@@ -224,9 +239,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务执行进度。执行中状态才返回执行进度，例如60%，否则返回“”。
-     * 
-     * @return process */
+    /**
+     * 任务执行进度。执行中状态才返回执行进度，例如60%，否则返回“”。
+     * @return process
+     */
     public String getProcess() {
         return process;
     }
@@ -240,9 +256,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务执行的具体的参数信息，为空则不返回该字段。
-     * 
-     * @return taskDetail */
+    /**
+     * 任务执行的具体的参数信息，为空则不返回该字段。
+     * @return taskDetail
+     */
     public String getTaskDetail() {
         return taskDetail;
     }
@@ -265,9 +282,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** Get instance
-     * 
-     * @return instance */
+    /**
+     * Get instance
+     * @return instance
+     */
     public GetTaskDetailListRspJobsInstance getInstance() {
         return instance;
     }
@@ -281,9 +299,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 根据不同的任务，显示不同的内容。
-     * 
-     * @return entities */
+    /**
+     * 根据不同的任务，显示不同的内容。
+     * @return entities
+     */
     public Object getEntities() {
         return entities;
     }
@@ -297,9 +316,10 @@ public class GetTaskDetailListRspJobs {
         return this;
     }
 
-    /** 任务执行失败时的错误信息。
-     * 
-     * @return failReason */
+    /**
+     * 任务执行失败时的错误信息。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -352,7 +372,10 @@ public class GetTaskDetailListRspJobs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 后端云服务器对象列表，用于状态树中 */
+/**
+ * 后端云服务器对象列表，用于状态树中
+ */
 public class MembersInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,19 +30,29 @@ public class MembersInStatusResp {
 
     private Integer protocolPort;
 
-    /** 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启 */
+    /**
+     * 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
+     */
     public static final class OperatingStatusEnum {
 
-        /** Enum ONLINE for value: "ONLINE" */
+        /**
+         * Enum ONLINE for value: "ONLINE"
+         */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
 
-        /** Enum OFFLINE for value: "OFFLINE" */
+        /**
+         * Enum OFFLINE for value: "OFFLINE"
+         */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
 
-        /** Enum DISABLED for value: "DISABLED" */
+        /**
+         * Enum DISABLED for value: "DISABLED"
+         */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
 
-        /** Enum NO_MONITOR for value: "NO_MONITOR" */
+        /**
+         * Enum NO_MONITOR for value: "NO_MONITOR"
+         */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +134,10 @@ public class MembersInStatusResp {
         return this;
     }
 
-    /** 后端云服务器ID
-     * 
-     * @return id */
+    /**
+     * 后端云服务器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -138,9 +151,10 @@ public class MembersInStatusResp {
         return this;
     }
 
-    /** 后端云服务器的IP地址
-     * 
-     * @return address */
+    /**
+     * 后端云服务器的IP地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -154,9 +168,12 @@ public class MembersInStatusResp {
         return this;
     }
 
-    /** 后端云服务器的端口号 minimum: 0 maximum: 65535
-     * 
-     * @return protocolPort */
+    /**
+     * 后端云服务器的端口号
+     * minimum: 0
+     * maximum: 65535
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -170,9 +187,10 @@ public class MembersInStatusResp {
         return this;
     }
 
-    /** 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
-     * 
-     * @return operatingStatus */
+    /**
+     * 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
+     * @return operatingStatus
+     */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -186,9 +204,10 @@ public class MembersInStatusResp {
         return this;
     }
 
-    /** 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -231,7 +250,10 @@ public class MembersInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

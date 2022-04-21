@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CustomerOnDemandResource */
+/**
+ * CustomerOnDemandResource
+ */
 public class CustomerOnDemandResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -104,9 +107,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -120,9 +124,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 所属可用区的编码。
-     * 
-     * @return availabilityZoneCode */
+    /**
+     * 所属可用区的编码。
+     * @return availabilityZoneCode
+     */
     public String getAvailabilityZoneCode() {
         return availabilityZoneCode;
     }
@@ -136,9 +141,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -152,9 +158,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -168,9 +175,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -184,9 +192,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -200,9 +209,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -216,9 +226,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 资源实例名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源实例名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -232,9 +243,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -248,9 +260,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -264,9 +277,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭
-     * 
-     * @return status */
+    /**
+     * 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -280,9 +294,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
-     * 
-     * @return resourceSpecCode */
+    /**
+     * 云服务产品的资源规格。如果是VM的资源规格，则需要在规格后面添加“.win”或“.linux”，例如“s2.small.1.linux”。
+     * @return resourceSpecCode
+     */
     public String getResourceSpecCode() {
         return resourceSpecCode;
     }
@@ -296,9 +311,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 按需资源的容量大小。 格式如：\"resourceInfo\": \"{\\\"specSize\\\":40.0}\"
-     * 
-     * @return resourceInfo */
+    /**
+     * 按需资源的容量大小。 格式如：\"resourceInfo\": \"{\\\"specSize\\\":40.0}\"
+     * @return resourceInfo
+     */
     public String getResourceInfo() {
         return resourceInfo;
     }
@@ -312,9 +328,10 @@ public class CustomerOnDemandResource {
         return this;
     }
 
-    /** 产品规格描述。例如： 虚拟机：“通用计算增强型|c6.2xlarge.4|8vCPUs|32GB|linux”硬盘：“云硬盘_SATA_LXH01|40.0GB”
-     * 
-     * @return productSpecDesc */
+    /**
+     * 产品规格描述。例如： 虚拟机：“通用计算增强型|c6.2xlarge.4|8vCPUs|32GB|linux”硬盘：“云硬盘_SATA_LXH01|40.0GB”
+     * @return productSpecDesc
+     */
     public String getProductSpecDesc() {
         return productSpecDesc;
     }
@@ -391,7 +408,10 @@ public class CustomerOnDemandResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页页码信息 */
+/**
+ * 分页页码信息
+ */
 public class PageInfoOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PageInfoOption {
         return this;
     }
 
-    /** 翻页时，作为前一页的marker取值
-     * 
-     * @return previousMarker */
+    /**
+     * 翻页时，作为前一页的marker取值
+     * @return previousMarker
+     */
     public String getPreviousMarker() {
         return previousMarker;
     }
@@ -44,9 +47,10 @@ public class PageInfoOption {
         return this;
     }
 
-    /** 翻页时，作为后一页的marker取值
-     * 
-     * @return nextMarker */
+    /**
+     * 翻页时，作为后一页的marker取值
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -60,9 +64,12 @@ public class PageInfoOption {
         return this;
     }
 
-    /** 当前页的数据总数 minimum: 0 maximum: 99999
-     * 
-     * @return currentCount */
+    /**
+     * 当前页的数据总数
+     * minimum: 0
+     * maximum: 99999
+     * @return currentCount
+     */
     public Integer getCurrentCount() {
         return currentCount;
     }
@@ -101,7 +108,10 @@ public class PageInfoOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

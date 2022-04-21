@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QualificationCategoryConfidence */
+/**
+ * QualificationCategoryConfidence
+ */
 public class QualificationCategoryConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class QualificationCategoryConfidence {
         return this;
     }
 
-    /** 诚信考核信息（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return category */
+    /**
+     * 诚信考核信息（非必有，依赖对应从业资格证板式）。 
+     * @return category
+     */
     public Float getCategory() {
         return category;
     }
@@ -49,9 +52,10 @@ public class QualificationCategoryConfidence {
         return this;
     }
 
-    /** 初次领证日期（非必有，依赖对应从业资格证板式）
-     * 
-     * @return initialIssueDate */
+    /**
+     * 初次领证日期（非必有，依赖对应从业资格证板式） 
+     * @return initialIssueDate
+     */
     public Float getInitialIssueDate() {
         return initialIssueDate;
     }
@@ -65,9 +69,10 @@ public class QualificationCategoryConfidence {
         return this;
     }
 
-    /** 有效起始日期（非必有，依赖对应从业资格证板式）
-     * 
-     * @return issueDate */
+    /**
+     * 有效起始日期（非必有，依赖对应从业资格证板式） 
+     * @return issueDate
+     */
     public Float getIssueDate() {
         return issueDate;
     }
@@ -81,9 +86,10 @@ public class QualificationCategoryConfidence {
         return this;
     }
 
-    /** 有效期至
-     * 
-     * @return expiryDate */
+    /**
+     * 有效期至 
+     * @return expiryDate
+     */
     public Float getExpiryDate() {
         return expiryDate;
     }
@@ -124,7 +130,10 @@ public class QualificationCategoryConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

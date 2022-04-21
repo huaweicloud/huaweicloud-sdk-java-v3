@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDedicatedHostsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListDedicatedHostsResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的专属主机。
-     * 
-     * @return dedicatedHosts */
+    /**
+     * 满足查询条件的专属主机。
+     * @return dedicatedHosts
+     */
     public List<RespDedicatedHost> getDedicatedHosts() {
         return dedicatedHosts;
     }
@@ -59,9 +62,11 @@ public class ListDedicatedHostsResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的专属主机数量。 minimum: 0
-     * 
-     * @return total */
+    /**
+     * 满足查询条件的专属主机数量。
+     * minimum: 0
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -98,7 +103,10 @@ public class ListDedicatedHostsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

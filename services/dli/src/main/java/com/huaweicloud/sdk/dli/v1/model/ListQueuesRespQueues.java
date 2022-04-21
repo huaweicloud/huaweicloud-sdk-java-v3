@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询所有队列的响应参数。 */
+/**
+ * 查询所有队列的响应参数。
+ */
 public class ListQueuesRespQueues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,9 +123,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列名称。
-     * 
-     * @return queueName */
+    /**
+     * 队列名称。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -137,9 +140,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列描述信息。
-     * 
-     * @return description */
+    /**
+     * 队列描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -153,9 +157,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 创建队列的用户。
-     * 
-     * @return owner */
+    /**
+     * 创建队列的用户。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -169,9 +174,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 创建队列的时间。是单位为“毫秒”的时间戳。
-     * 
-     * @return createTime */
+    /**
+     * 创建队列的时间。是单位为“毫秒”的时间戳。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -185,9 +191,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列的类型,。有如下两种类型： sql spark
-     * 
-     * @return queueType */
+    /**
+     * 队列的类型,。有如下两种类型： sql spark
+     * @return queueType
+     */
     public String getQueueType() {
         return queueType;
     }
@@ -201,9 +208,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
-     * 
-     * @return cuCount */
+    /**
+     * 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
+     * @return cuCount
+     */
     public Integer getCuCount() {
         return cuCount;
     }
@@ -217,9 +225,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列的收费模式。 “1”表示按照CU时收费。 “2”表示按照包年包月收费。
-     * 
-     * @return chargingMode */
+    /**
+     * 队列的收费模式。 “1”表示按照CU时收费。 “2”表示按照包年包月收费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -233,9 +242,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列的资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 队列的资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -249,9 +259,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 企业项目ID。0”表示default，即默认的企业项目。 说明： 开通了企业管理服务的用户可设置该参数绑定指定的项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。0”表示default，即默认的企业项目。 说明： 开通了企业管理服务的用户可设置该参数绑定指定的项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -265,9 +276,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列的虚拟私有云（VPC）的网段。建议使用网段：10.0.0.0/8~28，172.16.0.0/12~28，192.168.0.0/16~28。
-     * 
-     * @return cidrInVpc */
+    /**
+     * 队列的虚拟私有云（VPC）的网段。建议使用网段：10.0.0.0/8~28，172.16.0.0/12~28，192.168.0.0/16~28。
+     * @return cidrInVpc
+     */
     public String getCidrInVpc() {
         return cidrInVpc;
     }
@@ -281,9 +293,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 管理子网的网段。
-     * 
-     * @return cidrInMgntsubnet */
+    /**
+     * 管理子网的网段。
+     * @return cidrInMgntsubnet
+     */
     public String getCidrInMgntsubnet() {
         return cidrInMgntsubnet;
     }
@@ -297,9 +310,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 子网网段。
-     * 
-     * @return cidrInSubnet */
+    /**
+     * 子网网段。
+     * @return cidrInSubnet
+     */
     public String getCidrInSubnet() {
         return cidrInSubnet;
     }
@@ -313,9 +327,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列类型。 0：共享队列 1：专属队列
-     * 
-     * @return resourceMode */
+    /**
+     * 队列类型。 0：共享队列 1：专属队列
+     * @return resourceMode
+     */
     public Integer getResourceMode() {
         return resourceMode;
     }
@@ -329,9 +344,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列计算资源的cpu架构。
-     * 
-     * @return platform */
+    /**
+     * 队列计算资源的cpu架构。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -345,9 +361,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 是否重启队列。默认值为“false”。
-     * 
-     * @return isRestarting */
+    /**
+     * 是否重启队列。默认值为“false”。
+     * @return isRestarting
+     */
     public Boolean getIsRestarting() {
         return isRestarting;
     }
@@ -377,9 +394,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 创建队列的标签信息，目前包括队列是否跨AZ的标签信息的Json字符串。目前只支持值为“2”，即创建两个队列
-     * 
-     * @return labels */
+    /**
+     * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息的Json字符串。目前只支持值为“2”，即创建两个队列
+     * @return labels
+     */
     public List<String> getLabels() {
         return labels;
     }
@@ -393,9 +411,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
-     * 
-     * @return feature */
+    /**
+     * 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
+     * @return feature
+     */
     public String getFeature() {
         return feature;
     }
@@ -409,9 +428,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列所属资源类型。
-     * 
-     * @return queueResourceType */
+    /**
+     * 队列所属资源类型。
+     * @return queueResourceType
+     */
     public String getQueueResourceType() {
         return queueResourceType;
     }
@@ -425,9 +445,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
-     * 
-     * @return cuSpec */
+    /**
+     * 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
+     * @return cuSpec
+     */
     public Long getCuSpec() {
         return cuSpec;
     }
@@ -441,9 +462,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 当前队列弹性扩缩容的CU值上限。
-     * 
-     * @return cuScaleOutLimit */
+    /**
+     * 当前队列弹性扩缩容的CU值上限。
+     * @return cuScaleOutLimit
+     */
     public Long getCuScaleOutLimit() {
         return cuScaleOutLimit;
     }
@@ -457,9 +479,10 @@ public class ListQueuesRespQueues {
         return this;
     }
 
-    /** 当前队列弹性扩缩容的CU值下限。
-     * 
-     * @return cuScaleInLimit */
+    /**
+     * 当前队列弹性扩缩容的CU值下限。
+     * @return cuScaleInLimit
+     */
     public Long getCuScaleInLimit() {
         return cuScaleInLimit;
     }
@@ -554,7 +577,10 @@ public class ListQueuesRespQueues {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

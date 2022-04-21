@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LogConfiguration */
+/**
+ * LogConfiguration
+ */
 public class LogConfiguration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** ID。
-     * 
-     * @return id */
+    /**
+     * ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -90,9 +94,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** OBS桶。
-     * 
-     * @return obsBucket */
+    /**
+     * OBS桶。
+     * @return obsBucket
+     */
     public String getObsBucket() {
         return obsBucket;
     }
@@ -106,9 +111,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** IAM 委托。
-     * 
-     * @return agency */
+    /**
+     * IAM 委托。
+     * @return agency
+     */
     public String getAgency() {
         return agency;
     }
@@ -122,9 +128,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -138,9 +145,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 备份路径。
-     * 
-     * @return basePath */
+    /**
+     * 备份路径。
+     * @return basePath
+     */
     public String getBasePath() {
         return basePath;
     }
@@ -154,9 +162,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 自动备份开关。
-     * 
-     * @return autoEnable */
+    /**
+     * 自动备份开关。
+     * @return autoEnable
+     */
     public Boolean getAutoEnable() {
         return autoEnable;
     }
@@ -170,9 +179,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 备份开始时间。
-     * 
-     * @return period */
+    /**
+     * 备份开始时间。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -186,9 +196,10 @@ public class LogConfiguration {
         return this;
     }
 
-    /** 日志开关。
-     * 
-     * @return logSwitch */
+    /**
+     * 日志开关。
+     * @return logSwitch
+     */
     public Boolean getLogSwitch() {
         return logSwitch;
     }
@@ -239,7 +250,10 @@ public class LogConfiguration {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

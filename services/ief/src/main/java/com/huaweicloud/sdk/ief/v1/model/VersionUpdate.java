@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用模板版本配置 */
+/**
+ * 应用模板版本配置
+ */
 public class VersionUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,9 +79,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 环境变量
-     * 
-     * @return envs */
+    /**
+     * 环境变量
+     * @return envs
+     */
     public List<Env> getEnvs() {
         return envs;
     }
@@ -109,9 +112,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 卷配置
-     * 
-     * @return volumes */
+    /**
+     * 卷配置
+     * @return volumes
+     */
     public List<Volumes> getVolumes() {
         return volumes;
     }
@@ -134,9 +138,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** Get configs
-     * 
-     * @return configs */
+    /**
+     * Get configs
+     * @return configs
+     */
     public VersionUpdateConfigs getConfigs() {
         return configs;
     }
@@ -159,9 +164,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** Get resources
-     * 
-     * @return resources */
+    /**
+     * Get resources
+     * @return resources
+     */
     public VersionDetailResources getResources() {
         return resources;
     }
@@ -191,9 +197,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 启动命令
-     * 
-     * @return command */
+    /**
+     * 启动命令
+     * @return command
+     */
     public List<String> getCommand() {
         return command;
     }
@@ -223,9 +230,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 参数
-     * 
-     * @return args */
+    /**
+     * 参数
+     * @return args
+     */
     public List<String> getArgs() {
         return args;
     }
@@ -239,9 +247,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 工作负载存活探针
-     * 
-     * @return livenessProbe */
+    /**
+     * 工作负载存活探针
+     * @return livenessProbe
+     */
     public String getLivenessProbe() {
         return livenessProbe;
     }
@@ -255,9 +264,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** 工作负载业务探针
-     * 
-     * @return readinessProbe */
+    /**
+     * 工作负载业务探针
+     * @return readinessProbe
+     */
     public String getReadinessProbe() {
         return readinessProbe;
     }
@@ -271,9 +281,10 @@ public class VersionUpdate {
         return this;
     }
 
-    /** npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
-     * 
-     * @return npuType */
+    /**
+     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * @return npuType
+     */
     public String getNpuType() {
         return npuType;
     }
@@ -322,7 +333,10 @@ public class VersionUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

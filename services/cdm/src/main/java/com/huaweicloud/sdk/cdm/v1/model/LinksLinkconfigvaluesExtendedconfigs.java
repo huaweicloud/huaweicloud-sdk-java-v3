@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 扩展配置，请参见extended-configs参数说明。 */
+/**
+ * 扩展配置，请参见extended-configs参数说明。
+ */
 public class LinksLinkconfigvaluesExtendedconfigs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LinksLinkconfigvaluesExtendedconfigs {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class LinksLinkconfigvaluesExtendedconfigs {
         return this;
     }
 
-    /** 值
-     * 
-     * @return value */
+    /**
+     * 值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +83,10 @@ public class LinksLinkconfigvaluesExtendedconfigs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

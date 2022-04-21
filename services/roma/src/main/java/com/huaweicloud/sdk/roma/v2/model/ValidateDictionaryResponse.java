@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ValidateDictionaryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ValidateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -40,9 +43,10 @@ public class ValidateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * 
-     * @return code */
+    /**
+     * 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -79,7 +83,10 @@ public class ValidateDictionaryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

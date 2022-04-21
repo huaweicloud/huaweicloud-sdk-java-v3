@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteStreamForbiddenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DeleteStreamForbiddenRequest {
         return this;
     }
 
-    /** op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
-     * 
-     * @return specifyProject */
+    /**
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
+     * @return specifyProject
+     */
     public String getSpecifyProject() {
         return specifyProject;
     }
@@ -49,9 +52,10 @@ public class DeleteStreamForbiddenRequest {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -65,9 +69,10 @@ public class DeleteStreamForbiddenRequest {
         return this;
     }
 
-    /** RTMP应用名称
-     * 
-     * @return appName */
+    /**
+     * RTMP应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -81,9 +86,10 @@ public class DeleteStreamForbiddenRequest {
         return this;
     }
 
-    /** 流名称
-     * 
-     * @return streamName */
+    /**
+     * 流名称
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -124,7 +130,10 @@ public class DeleteStreamForbiddenRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

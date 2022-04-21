@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 跨区域备份实例信息。 */
+/**
+ * 跨区域备份实例信息。
+ */
 public class OffsiteBackupInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 创建的实例名称。
-     * 
-     * @return name */
+    /**
+     * 创建的实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +90,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 源区域。
-     * 
-     * @return sourceRegion */
+    /**
+     * 源区域。
+     * @return sourceRegion
+     */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -102,9 +107,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 租户在源区域下的project ID。
-     * 
-     * @return sourceProjectId */
+    /**
+     * 租户在源区域下的project ID。
+     * @return sourceProjectId
+     */
     public String getSourceProjectId() {
         return sourceProjectId;
     }
@@ -127,9 +133,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public ParaGroupDatastore getDatastore() {
         return datastore;
     }
@@ -143,9 +150,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 跨区域备份所在区域。
-     * 
-     * @return destinationRegion */
+    /**
+     * 跨区域备份所在区域。
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -159,9 +167,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 租户在目标区域下的project ID。
-     * 
-     * @return destinationProjectId */
+    /**
+     * 租户在目标区域下的project ID。
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -175,9 +184,10 @@ public class OffsiteBackupInstance {
         return this;
     }
 
-    /** 跨区域备份保留天数。
-     * 
-     * @return keepDays */
+    /**
+     * 跨区域备份保留天数。
+     * @return keepDays
+     */
     public Long getKeepDays() {
         return keepDays;
     }
@@ -233,7 +243,10 @@ public class OffsiteBackupInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

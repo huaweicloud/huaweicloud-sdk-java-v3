@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAuthorizationDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,12 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权id minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 授权id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -124,9 +129,12 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权状态 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 授权状态
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -140,9 +148,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -156,9 +165,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 简要描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 简要描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -172,9 +182,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权资源类型id
-     * 
-     * @return resourceTypeId */
+    /**
+     * 授权资源类型id
+     * @return resourceTypeId
+     */
     public String getResourceTypeId() {
         return resourceTypeId;
     }
@@ -188,9 +199,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权资源类型名称
-     * 
-     * @return resourceTypeName */
+    /**
+     * 授权资源类型名称
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -204,9 +216,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权访问类型id
-     * 
-     * @return visitTypeId */
+    /**
+     * 授权访问类型id
+     * @return visitTypeId
+     */
     public String getVisitTypeId() {
         return visitTypeId;
     }
@@ -220,9 +233,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权访问类型名称
-     * 
-     * @return visitTypeName */
+    /**
+     * 授权访问类型名称
+     * @return visitTypeName
+     */
     public String getVisitTypeName() {
         return visitTypeName;
     }
@@ -236,9 +250,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权生效时间
-     * 
-     * @return authEffectiveTime */
+    /**
+     * 授权生效时间
+     * @return authEffectiveTime
+     */
     public OffsetDateTime getAuthEffectiveTime() {
         return authEffectiveTime;
     }
@@ -252,9 +267,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权到期时间
-     * 
-     * @return authExpireTime */
+    /**
+     * 授权到期时间
+     * @return authExpireTime
+     */
     public OffsetDateTime getAuthExpireTime() {
         return authExpireTime;
     }
@@ -268,9 +284,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 拒绝原因
-     * 
-     * @return rejectReason */
+    /**
+     * 拒绝原因
+     * @return rejectReason
+     */
     public String getRejectReason() {
         return rejectReason;
     }
@@ -303,9 +320,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权详情列表
-     * 
-     * @return incidentAuthDetailList */
+    /**
+     * 授权详情列表
+     * @return incidentAuthDetailList
+     */
     public List<IncidentOrderAuthDetailInfoV2> getIncidentAuthDetailList() {
         return incidentAuthDetailList;
     }
@@ -319,9 +337,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 子账号名称
-     * 
-     * @return xcustomerName */
+    /**
+     * 子账号名称
+     * @return xcustomerName
+     */
     public String getXcustomerName() {
         return xcustomerName;
     }
@@ -335,9 +354,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权处理人名称
-     * 
-     * @return authHandlerName */
+    /**
+     * 授权处理人名称
+     * @return authHandlerName
+     */
     public String getAuthHandlerName() {
         return authHandlerName;
     }
@@ -351,9 +371,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 委托名称
-     * 
-     * @return agencyName */
+    /**
+     * 委托名称
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -367,9 +388,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权描述
-     * 
-     * @return authDescribe */
+    /**
+     * 授权描述
+     * @return authDescribe
+     */
     public String getAuthDescribe() {
         return authDescribe;
     }
@@ -383,9 +405,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权内容Id
-     * 
-     * @return contentTypeId */
+    /**
+     * 授权内容Id 
+     * @return contentTypeId
+     */
     public String getContentTypeId() {
         return contentTypeId;
     }
@@ -399,9 +422,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授权内容名称
-     * 
-     * @return contentTypeName */
+    /**
+     * 授权内容名称
+     * @return contentTypeName
+     */
     public String getContentTypeName() {
         return contentTypeName;
     }
@@ -487,7 +511,10 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

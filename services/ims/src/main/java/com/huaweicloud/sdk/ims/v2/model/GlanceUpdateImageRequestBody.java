@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 原生更新接口请求体 */
+/**
+ * 原生更新接口请求体
+ */
 public class GlanceUpdateImageRequestBody {
 
-    /** 所需进行的更新操作的类型：替换、添加、删除。取值范围：replace、add、remove */
+    /**
+     * 所需进行的更新操作的类型：替换、添加、删除。取值范围：replace、add、remove
+     */
     public static final class OpEnum {
 
-        /** Enum REPLACE for value: "replace" */
+        /**
+         * Enum REPLACE for value: "replace"
+         */
         public static final OpEnum REPLACE = new OpEnum("replace");
 
-        /** Enum ADD for value: "add" */
+        /**
+         * Enum ADD for value: "add"
+         */
         public static final OpEnum ADD = new OpEnum("add");
 
-        /** Enum REMOVE for value: "remove" */
+        /**
+         * Enum REMOVE for value: "remove"
+         */
         public static final OpEnum REMOVE = new OpEnum("remove");
 
         private static final Map<String, OpEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class GlanceUpdateImageRequestBody {
         return this;
     }
 
-    /** 所需进行的更新操作的类型：替换、添加、删除。取值范围：replace、add、remove
-     * 
-     * @return op */
+    /**
+     * 所需进行的更新操作的类型：替换、添加、删除。取值范围：replace、add、remove
+     * @return op
+     */
     public OpEnum getOp() {
         return op;
     }
@@ -124,9 +135,10 @@ public class GlanceUpdateImageRequestBody {
         return this;
     }
 
-    /** 所要操作的属性名称。 replace和remove操作取值只能是镜像当前已有的属性、add操作取值只能是镜像当前不存在的属性，需要在属性名称前加”/”
-     * 
-     * @return path */
+    /**
+     * 所要操作的属性名称。 replace和remove操作取值只能是镜像当前已有的属性、add操作取值只能是镜像当前不存在的属性，需要在属性名称前加”/”
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -140,9 +152,10 @@ public class GlanceUpdateImageRequestBody {
         return this;
     }
 
-    /** 所需更新/添加属性的值
-     * 
-     * @return value */
+    /**
+     * 所需更新/添加属性的值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -181,7 +194,10 @@ public class GlanceUpdateImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

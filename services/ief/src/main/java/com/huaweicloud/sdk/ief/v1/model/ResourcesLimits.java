@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 允许容器使用的最大资源 */
+/**
+ * 允许容器使用的最大资源
+ */
 public class ResourcesLimits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ResourcesLimits {
         return this;
     }
 
-    /** cpu核数，大于等于0.01，最大1000；请求不需要带单位
-     * 
-     * @return cpu */
+    /**
+     * cpu核数，大于等于0.01，最大1000；请求不需要带单位
+     * @return cpu
+     */
     public Float getCpu() {
         return cpu;
     }
@@ -49,9 +52,10 @@ public class ResourcesLimits {
         return this;
     }
 
-    /** 内存大小，单位兆，大于等于0.01，最大1024000。注意：内存的limits值最小为4；请求不需要带单位
-     * 
-     * @return memory */
+    /**
+     * 内存大小，单位兆，大于等于0.01，最大1024000。注意：内存的limits值最小为4；请求不需要带单位
+     * @return memory
+     */
     public Float getMemory() {
         return memory;
     }
@@ -65,9 +69,10 @@ public class ResourcesLimits {
         return this;
     }
 
-    /** Gpu显存大小，单位兆，大于等于0.01，最大1024000；请求不需要带单位
-     * 
-     * @return gpu */
+    /**
+     * Gpu显存大小，单位兆，大于等于0.01，最大1024000；请求不需要带单位
+     * @return gpu
+     */
     public Float getGpu() {
         return gpu;
     }
@@ -81,9 +86,10 @@ public class ResourcesLimits {
         return this;
     }
 
-    /** Npu个数，大于0，最大1000；请求不需要带单位
-     * 
-     * @return npu */
+    /**
+     * Npu个数，大于0，最大1000；请求不需要带单位
+     * @return npu
+     */
     public Float getNpu() {
         return npu;
     }
@@ -122,7 +128,10 @@ public class ResourcesLimits {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

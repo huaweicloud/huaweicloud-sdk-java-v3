@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TollInvoiceResult */
+/**
+ * TollInvoiceResult
+ */
 public class TollInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 发票代码。
-     * 
-     * @return code */
+    /**
+     * 发票代码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -79,9 +82,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return number */
+    /**
+     * 发票号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -95,9 +99,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 入口。
-     * 
-     * @return entry */
+    /**
+     * 入口。 
+     * @return entry
+     */
     public String getEntry() {
         return entry;
     }
@@ -111,9 +116,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 出口。
-     * 
-     * @return exit */
+    /**
+     * 出口。 
+     * @return exit
+     */
     public String getExit() {
         return exit;
     }
@@ -127,9 +133,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 收费金额。
-     * 
-     * @return amount */
+    /**
+     * 收费金额。 
+     * @return amount
+     */
     public String getAmount() {
         return amount;
     }
@@ -143,9 +150,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 收费员。
-     * 
-     * @return cashier */
+    /**
+     * 收费员。 
+     * @return cashier
+     */
     public String getCashier() {
         return cashier;
     }
@@ -159,9 +167,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 车辆类型。
-     * 
-     * @return vehicleType */
+    /**
+     * 车辆类型。 
+     * @return vehicleType
+     */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -175,9 +184,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 日期。
-     * 
-     * @return date */
+    /**
+     * 日期。 
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -191,9 +201,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 时间。
-     * 
-     * @return time */
+    /**
+     * 时间。 
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -207,9 +218,10 @@ public class TollInvoiceResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -260,7 +272,10 @@ public class TollInvoiceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

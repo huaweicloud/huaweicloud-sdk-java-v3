@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateRdsInstanceAliasRequest */
+/**
+ * UpdateRdsInstanceAliasRequest
+ */
 public class UpdateRdsInstanceAliasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateRdsInstanceAliasRequest {
         return this;
     }
 
-    /** 长度可在0~64个字符之间，由字母、数字、汉字、英文句号、下划线、中划线组成。
-     * 
-     * @return alias */
+    /**
+     * 长度可在0~64个字符之间，由字母、数字、汉字、英文句号、下划线、中划线组成。
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -55,7 +58,10 @@ public class UpdateRdsInstanceAliasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

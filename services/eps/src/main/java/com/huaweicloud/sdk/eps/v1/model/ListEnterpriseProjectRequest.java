@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEnterpriseProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ListEnterpriseProjectRequest {
 
     private Integer offset;
 
-    /** 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序 */
+    /**
+     * 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
+     */
     public static final class SortDirEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -109,13 +117,19 @@ public class ListEnterpriseProjectRequest {
 
     private SortDirEnum sortDir;
 
-    /** 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”） */
+    /**
+     * 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
+     */
     public static final class SortKeyEnum {
 
-        /** Enum CREATED_AT for value: "created_at" */
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
 
-        /** Enum UPDATED_AT for value: "updated_at" */
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -195,9 +209,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 企业项目ID，0表示默认企业项目
-     * 
-     * @return id */
+    /**
+     * 企业项目ID，0表示默认企业项目
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -211,9 +226,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 查询记录数默认为1000，limit最多为1000, 最小值为1
-     * 
-     * @return limit */
+    /**
+     * 查询记录数默认为1000，limit最多为1000, 最小值为1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -227,9 +243,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 企业项目名称，支持模糊搜索
-     * 
-     * @return name */
+    /**
+     * 企业项目名称，支持模糊搜索
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -243,9 +260,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0
-     * 
-     * @return offset */
+    /**
+     * 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -259,9 +277,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
-     * 
-     * @return sortDir */
+    /**
+     * 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -275,9 +294,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
-     * 
-     * @return sortKey */
+    /**
+     * 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -291,9 +311,10 @@ public class ListEnterpriseProjectRequest {
         return this;
     }
 
-    /** 企业项目状态。 1--启用，2--停用
-     * 
-     * @return status */
+    /**
+     * 企业项目状态。 1--启用，2--停用
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -340,7 +361,10 @@ public class ListEnterpriseProjectRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

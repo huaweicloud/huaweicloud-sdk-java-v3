@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 后端云服务器对象列表，用于状态树中 */
+/**
+ * 后端云服务器对象列表，用于状态树中
+ */
 public class PoolsInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** 后端云服务器组ID
-     * 
-     * @return id */
+    /**
+     * 后端云服务器组ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -62,9 +65,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** 后端云服务器组名称
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +98,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** 后端云服务器组关联的后端云服务器列表
-     * 
-     * @return members */
+    /**
+     * 后端云服务器组关联的后端云服务器列表
+     * @return members
+     */
     public List<MembersInStatusResp> getMembers() {
         return members;
     }
@@ -110,9 +115,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** 后端云服务器组的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-     * 
-     * @return operatingStatus */
+    /**
+     * 后端云服务器组的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -126,9 +132,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** 后端云服务器组的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 后端云服务器组的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -151,9 +158,10 @@ public class PoolsInStatusResp {
         return this;
     }
 
-    /** Get healthmonitor
-     * 
-     * @return healthmonitor */
+    /**
+     * Get healthmonitor
+     * @return healthmonitor
+     */
     public HealthmonitorsInStatusResp getHealthmonitor() {
         return healthmonitor;
     }
@@ -197,7 +205,10 @@ public class PoolsInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

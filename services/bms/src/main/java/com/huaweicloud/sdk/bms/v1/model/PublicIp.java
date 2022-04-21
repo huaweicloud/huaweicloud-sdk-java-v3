@@ -7,7 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** publicip字段数据结构说明 */
+/**
+ * publicip字段数据结构说明
+ */
 public class PublicIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 创建裸金属服务器分配已有弹性公网IP时，分配的弹性公网IP的ID，UUID格式。弹性公网IP的ID可以从网络控制台或者参考《虚拟私有云API参考》的“查询弹性公网IP列表”章节获取。约束：只能分配状态（status）为DOWN的弹性公网IP。批量创建裸金属服务器时，不能使用已有弹性公网IP，即不支持此参数。
-     * 
-     * @return id */
+    /**
+     * 创建裸金属服务器分配已有弹性公网IP时，分配的弹性公网IP的ID，UUID格式。弹性公网IP的ID可以从网络控制台或者参考《虚拟私有云API参考》的“查询弹性公网IP列表”章节获取。约束：只能分配状态（status）为DOWN的弹性公网IP。批量创建裸金属服务器时，不能使用已有弹性公网IP，即不支持此参数。
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class PublicIp {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public Eip getEip() {
         return eip;
     }
@@ -88,7 +92,10 @@ public class PublicIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

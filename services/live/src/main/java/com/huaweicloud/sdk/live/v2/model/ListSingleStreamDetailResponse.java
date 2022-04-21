@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSingleStreamDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return publishDomain */
+    /**
+     * 推流域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -68,9 +71,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return app */
+    /**
+     * 应用名
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -84,9 +88,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 流名
-     * 
-     * @return stream */
+    /**
+     * 流名
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -116,11 +121,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 展示流视频帧率情况，帧率单位为fps。 如果出现断流则会出现多个时间段流信息，如： ``` \"video_framerate\": [ { \"start_time\": \"2022-02-04T07:00:00Z\",
-     * \"end_time\": \"2022-02-04T07:00:02Z\", \"data_list\": [ 21, 22 ] }, { \"start_time\": \"2022-02-04T07:00:05Z\",
-     * \"end_time\": \"2022-02-04T07:00:07Z\", \"data_list\": [ 13, 34, 21 ] } ]
-     * 
-     * @return videoFramerate */
+    /**
+     * 展示流视频帧率情况，帧率单位为fps。  如果出现断流则会出现多个时间段流信息，如： ``` \"video_framerate\": [     {       \"start_time\": \"2022-02-04T07:00:00Z\",       \"end_time\": \"2022-02-04T07:00:02Z\",       \"data_list\": [         21,         22       ]     },     {       \"start_time\": \"2022-02-04T07:00:05Z\",       \"end_time\": \"2022-02-04T07:00:07Z\",       \"data_list\": [         13,         34,         21       ]     }   ] 
+     * @return videoFramerate
+     */
     public List<StreamDetail> getVideoFramerate() {
         return videoFramerate;
     }
@@ -150,11 +154,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 展示流视频码率情况，码率单位为Kbps。 如果出现断流则会出现多个时间段流信息，如： ``` \"video_bitrate\": [ { \"start_time\": \"2022-02-04T07:00:00Z\",
-     * \"end_time\": \"2022-02-04T07:00:02Z\", \"data_list\": [ 1326, 1268, 775 ] }, { \"start_time\":
-     * \"2022-02-04T07:00:05Z\", \"end_time\": \"2022-02-04T07:00:07Z\", \"data_list\": [ 1021, 2022 ] } ]
-     * 
-     * @return videoBitrate */
+    /**
+     * 展示流视频码率情况，码率单位为Kbps。  如果出现断流则会出现多个时间段流信息，如： ``` \"video_bitrate\": [     {       \"start_time\": \"2022-02-04T07:00:00Z\",       \"end_time\": \"2022-02-04T07:00:02Z\",       \"data_list\": [         1326,         1268,         775       ]     },     {       \"start_time\": \"2022-02-04T07:00:05Z\",       \"end_time\": \"2022-02-04T07:00:07Z\",       \"data_list\": [         1021,         2022       ]     }   ] 
+     * @return videoBitrate
+     */
     public List<StreamDetail> getVideoBitrate() {
         return videoBitrate;
     }
@@ -184,11 +187,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 展示流音频帧率情况，帧率单位为fps。 如果出现断流则会出现多个时间段流信息，如： ``` \"audio_framerate\": [ { \"start_time\": \"2022-02-04T07:00:00Z\",
-     * \"end_time\": \"2022-02-04T07:00:02Z\", \"data_list\": [ 10, 17 ] }, { \"start_time\": \"2022-02-04T07:00:05Z\",
-     * \"end_time\": \"2022-02-04T07:00:06Z\", \"data_list\": [ 31, 33 ] } ]
-     * 
-     * @return audioFramerate */
+    /**
+     * 展示流音频帧率情况，帧率单位为fps。  如果出现断流则会出现多个时间段流信息，如： ``` \"audio_framerate\": [     {       \"start_time\": \"2022-02-04T07:00:00Z\",       \"end_time\": \"2022-02-04T07:00:02Z\",       \"data_list\": [         10,         17       ]     },     {       \"start_time\": \"2022-02-04T07:00:05Z\",       \"end_time\": \"2022-02-04T07:00:06Z\",       \"data_list\": [         31,         33       ]     }   ] 
+     * @return audioFramerate
+     */
     public List<StreamDetail> getAudioFramerate() {
         return audioFramerate;
     }
@@ -202,9 +204,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -253,7 +256,10 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

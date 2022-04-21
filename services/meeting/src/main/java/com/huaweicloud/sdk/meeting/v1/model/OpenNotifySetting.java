@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 通知配置 */
+/**
+ * 通知配置
+ */
 public class OpenNotifySetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OpenNotifySetting {
         return this;
     }
 
-    /** 发送邮件日历是否开启，\"Y\" 开启，\"N\" 不开启。
-     * 
-     * @return enableCalendar */
+    /**
+     * 发送邮件日历是否开启，\"Y\" 开启，\"N\" 不开启。
+     * @return enableCalendar
+     */
     public String getEnableCalendar() {
         return enableCalendar;
     }
@@ -44,9 +47,10 @@ public class OpenNotifySetting {
         return this;
     }
 
-    /** 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
-     * 
-     * @return enableSms */
+    /**
+     * 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
+     * @return enableSms
+     */
     public String getEnableSms() {
         return enableSms;
     }
@@ -60,9 +64,10 @@ public class OpenNotifySetting {
         return this;
     }
 
-    /** 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
-     * 
-     * @return enableEmail */
+    /**
+     * 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
+     * @return enableEmail
+     */
     public String getEnableEmail() {
         return enableEmail;
     }
@@ -101,7 +106,10 @@ public class OpenNotifySetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

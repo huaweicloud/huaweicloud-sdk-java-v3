@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配额信息。 */
+/**
+ * 配额信息。
+ */
 public class QuotaList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,9 +120,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get backupGigabytes
-     * 
-     * @return backupGigabytes */
+    /**
+     * Get backupGigabytes
+     * @return backupGigabytes
+     */
     public QuotaDetailBackupGigabytes getBackupGigabytes() {
         return backupGigabytes;
     }
@@ -143,9 +146,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get backups
-     * 
-     * @return backups */
+    /**
+     * Get backups
+     * @return backups
+     */
     public QuotaDetailBackups getBackups() {
         return backups;
     }
@@ -168,9 +172,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get gigabytes
-     * 
-     * @return gigabytes */
+    /**
+     * Get gigabytes
+     * @return gigabytes
+     */
     public QuotaDetailGigabytes getGigabytes() {
         return gigabytes;
     }
@@ -184,9 +189,10 @@ public class QuotaList {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return id */
+    /**
+     * 项目ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -209,9 +215,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get snapshots
-     * 
-     * @return snapshots */
+    /**
+     * Get snapshots
+     * @return snapshots
+     */
     public QuotaDetailSnapshots getSnapshots() {
         return snapshots;
     }
@@ -234,9 +241,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get volumes
-     * 
-     * @return volumes */
+    /**
+     * Get volumes
+     * @return volumes
+     */
     public QuotaDetailVolumes getVolumes() {
         return volumes;
     }
@@ -259,9 +267,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get gigabytesSATA
-     * 
-     * @return gigabytesSATA */
+    /**
+     * Get gigabytesSATA
+     * @return gigabytesSATA
+     */
     public QuotaDetailGigabytesSATA getGigabytesSATA() {
         return gigabytesSATA;
     }
@@ -284,9 +293,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get snapshotsSATA
-     * 
-     * @return snapshotsSATA */
+    /**
+     * Get snapshotsSATA
+     * @return snapshotsSATA
+     */
     public QuotaDetailSnapshotsSATA getSnapshotsSATA() {
         return snapshotsSATA;
     }
@@ -309,9 +319,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get volumesSATA
-     * 
-     * @return volumesSATA */
+    /**
+     * Get volumesSATA
+     * @return volumesSATA
+     */
     public QuotaDetailVolumesSATA getVolumesSATA() {
         return volumesSATA;
     }
@@ -334,9 +345,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get gigabytesSAS
-     * 
-     * @return gigabytesSAS */
+    /**
+     * Get gigabytesSAS
+     * @return gigabytesSAS
+     */
     public QuotaDetailGigabytesSAS getGigabytesSAS() {
         return gigabytesSAS;
     }
@@ -359,9 +371,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get snapshotsSAS
-     * 
-     * @return snapshotsSAS */
+    /**
+     * Get snapshotsSAS
+     * @return snapshotsSAS
+     */
     public QuotaDetailSnapshotsSAS getSnapshotsSAS() {
         return snapshotsSAS;
     }
@@ -384,9 +397,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get volumesSAS
-     * 
-     * @return volumesSAS */
+    /**
+     * Get volumesSAS
+     * @return volumesSAS
+     */
     public QuotaDetailVolumesSAS getVolumesSAS() {
         return volumesSAS;
     }
@@ -409,9 +423,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get gigabytesSSD
-     * 
-     * @return gigabytesSSD */
+    /**
+     * Get gigabytesSSD
+     * @return gigabytesSSD
+     */
     public QuotaDetailGigabytesSSD getGigabytesSSD() {
         return gigabytesSSD;
     }
@@ -434,9 +449,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get snapshotsSSD
-     * 
-     * @return snapshotsSSD */
+    /**
+     * Get snapshotsSSD
+     * @return snapshotsSSD
+     */
     public QuotaDetailSnapshotsSSD getSnapshotsSSD() {
         return snapshotsSSD;
     }
@@ -459,9 +475,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get volumesSSD
-     * 
-     * @return volumesSSD */
+    /**
+     * Get volumesSSD
+     * @return volumesSSD
+     */
     public QuotaDetailVolumesSSD getVolumesSSD() {
         return volumesSSD;
     }
@@ -484,9 +501,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get gigabytesGPSSD
-     * 
-     * @return gigabytesGPSSD */
+    /**
+     * Get gigabytesGPSSD
+     * @return gigabytesGPSSD
+     */
     public QuotaDetailGigabytesGPSSD getGigabytesGPSSD() {
         return gigabytesGPSSD;
     }
@@ -509,9 +527,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get snapshotsGPSSD
-     * 
-     * @return snapshotsGPSSD */
+    /**
+     * Get snapshotsGPSSD
+     * @return snapshotsGPSSD
+     */
     public QuotaDetailSnapshotsGPSSD getSnapshotsGPSSD() {
         return snapshotsGPSSD;
     }
@@ -534,9 +553,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get volumesGPSSD
-     * 
-     * @return volumesGPSSD */
+    /**
+     * Get volumesGPSSD
+     * @return volumesGPSSD
+     */
     public QuotaDetailVolumesGPSSD getVolumesGPSSD() {
         return volumesGPSSD;
     }
@@ -559,9 +579,10 @@ public class QuotaList {
         return this;
     }
 
-    /** Get perVolumeGigabytes
-     * 
-     * @return perVolumeGigabytes */
+    /**
+     * Get perVolumeGigabytes
+     * @return perVolumeGigabytes
+     */
     public QuotaDetailPerVolumeGigabytes getPerVolumeGigabytes() {
         return perVolumeGigabytes;
     }
@@ -648,7 +669,10 @@ public class QuotaList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

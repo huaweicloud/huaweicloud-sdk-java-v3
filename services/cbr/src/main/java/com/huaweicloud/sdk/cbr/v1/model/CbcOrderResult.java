@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CbcOrderResult */
+/**
+ * CbcOrderResult
+ */
 public class CbcOrderResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CbcOrderResult {
         return this;
     }
 
-    /** 云服务ID
-     * 
-     * @return cloudServiceId */
+    /**
+     * 云服务ID
+     * @return cloudServiceId
+     */
     public String getCloudServiceId() {
         return cloudServiceId;
     }
@@ -49,9 +52,10 @@ public class CbcOrderResult {
         return this;
     }
 
-    /** 订单ID
-     * 
-     * @return orderId */
+    /**
+     * 订单ID
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -65,9 +69,10 @@ public class CbcOrderResult {
         return this;
     }
 
-    /** 订购结果，1：成功；0：失败
-     * 
-     * @return subscribeResult */
+    /**
+     * 订购结果，1：成功；0：失败
+     * @return subscribeResult
+     */
     public Integer getSubscribeResult() {
         return subscribeResult;
     }
@@ -81,9 +86,10 @@ public class CbcOrderResult {
         return this;
     }
 
-    /** 包周期资源预生成资源id。
-     * 
-     * @return resourceId */
+    /**
+     * 包周期资源预生成资源id。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -124,7 +130,10 @@ public class CbcOrderResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

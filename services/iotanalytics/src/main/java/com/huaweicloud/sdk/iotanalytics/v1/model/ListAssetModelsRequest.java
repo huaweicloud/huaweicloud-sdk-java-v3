@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAssetModelsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,10 @@ public class ListAssetModelsRequest {
         return this;
     }
 
-    /** 过滤条件 示例： {\"key\":\"xxx\"} {\"key1\":\"xxx\",\"key2\":\"xxx\"} {\"key\":{\"eq|like\":\"xxx\"}}
-     * {\"key\":{\"in\":[\"xxx\",\"xxx\"]}}
-     * {\"or\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}}
-     * {\"and\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} 支持的key：
-     * asset_model_id，name，display_name，job_id 注意： job_id只支持contain过滤 {\"job_id\":{\"contain\":\"xxx\"}}
-     * 
-     * @return filter */
+    /**
+     * 过滤条件 示例： {\"key\":\"xxx\"} {\"key1\":\"xxx\",\"key2\":\"xxx\"} {\"key\":{\"eq|like\":\"xxx\"}} {\"key\":{\"in\":[\"xxx\",\"xxx\"]}} {\"or\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} {\"and\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} 支持的key： asset_model_id，name，display_name，job_id 注意： job_id只支持contain过滤 {\"job_id\":{\"contain\":\"xxx\"}}
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -48,9 +47,12 @@ public class ListAssetModelsRequest {
         return this;
     }
 
-    /** 每页记录数 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页记录数
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -64,9 +66,11 @@ public class ListAssetModelsRequest {
         return this;
     }
 
-    /** 页码 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -105,7 +109,10 @@ public class ListAssetModelsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

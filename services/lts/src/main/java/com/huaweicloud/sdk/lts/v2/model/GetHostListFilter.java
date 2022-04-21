@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询主机信息过滤参数 */
+/**
+ * 查询主机信息过滤参数
+ */
 public class GetHostListFilter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,51 +28,79 @@ public class GetHostListFilter {
 
     private List<String> hostIpList = null;
 
-    /** 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中
-     * install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中
-     * uninstalling-transient:卸载中 authentication error:鉴权失败 */
+    /**
+    * 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
+    */
     public static final class HostStatusEnum {
 
-        /** Enum UNINSTALL for value: "uninstall" */
+        /**
+         * Enum UNINSTALL for value: "uninstall"
+         */
         public static final HostStatusEnum UNINSTALL = new HostStatusEnum("uninstall");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final HostStatusEnum RUNNING = new HostStatusEnum("running");
 
-        /** Enum OFFLINE for value: "offline" */
+        /**
+         * Enum OFFLINE for value: "offline"
+         */
         public static final HostStatusEnum OFFLINE = new HostStatusEnum("offline");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final HostStatusEnum ERROR = new HostStatusEnum("error");
 
-        /** Enum PLUGIN_ERROR for value: "plugin error" */
+        /**
+         * Enum PLUGIN_ERROR for value: "plugin error"
+         */
         public static final HostStatusEnum PLUGIN_ERROR = new HostStatusEnum("plugin error");
 
-        /** Enum INSTALLING for value: "installing" */
+        /**
+         * Enum INSTALLING for value: "installing"
+         */
         public static final HostStatusEnum INSTALLING = new HostStatusEnum("installing");
 
-        /** Enum INSTALL_FAIL for value: "install-fail" */
+        /**
+         * Enum INSTALL_FAIL for value: "install-fail"
+         */
         public static final HostStatusEnum INSTALL_FAIL = new HostStatusEnum("install-fail");
 
-        /** Enum UPGRADING for value: "upgrading" */
+        /**
+         * Enum UPGRADING for value: "upgrading"
+         */
         public static final HostStatusEnum UPGRADING = new HostStatusEnum("upgrading");
 
-        /** Enum UPGRADING_TRANSIENT for value: "upgrading-transient" */
+        /**
+         * Enum UPGRADING_TRANSIENT for value: "upgrading-transient"
+         */
         public static final HostStatusEnum UPGRADING_TRANSIENT = new HostStatusEnum("upgrading-transient");
 
-        /** Enum UPGRADE_FAILED for value: "upgrade failed" */
+        /**
+         * Enum UPGRADE_FAILED for value: "upgrade failed"
+         */
         public static final HostStatusEnum UPGRADE_FAILED = new HostStatusEnum("upgrade failed");
 
-        /** Enum UPGRADE_FAIL for value: "upgrade-fail" */
+        /**
+         * Enum UPGRADE_FAIL for value: "upgrade-fail"
+         */
         public static final HostStatusEnum UPGRADE_FAIL = new HostStatusEnum("upgrade-fail");
 
-        /** Enum UNINSTALLING for value: "uninstalling" */
+        /**
+         * Enum UNINSTALLING for value: "uninstalling"
+         */
         public static final HostStatusEnum UNINSTALLING = new HostStatusEnum("uninstalling");
 
-        /** Enum UNINSTALLING_TRANSIENT for value: "uninstalling-transient" */
+        /**
+         * Enum UNINSTALLING_TRANSIENT for value: "uninstalling-transient"
+         */
         public static final HostStatusEnum UNINSTALLING_TRANSIENT = new HostStatusEnum("uninstalling-transient");
 
-        /** Enum AUTHENTICATION_ERROR for value: "authentication error" */
+        /**
+         * Enum AUTHENTICATION_ERROR for value: "authentication error"
+         */
         public static final HostStatusEnum AUTHENTICATION_ERROR = new HostStatusEnum("authentication error");
 
         private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -178,9 +208,10 @@ public class GetHostListFilter {
         return this;
     }
 
-    /** 主机名称列表。可以根据主机名称列表，进行批量过滤。
-     * 
-     * @return hostNameList */
+    /**
+     * 主机名称列表。可以根据主机名称列表，进行批量过滤。
+     * @return hostNameList
+     */
     public List<String> getHostNameList() {
         return hostNameList;
     }
@@ -210,9 +241,10 @@ public class GetHostListFilter {
         return this;
     }
 
-    /** 主机ID列表。可以根据主机IP列表，进行批量过滤。
-     * 
-     * @return hostIpList */
+    /**
+     * 主机ID列表。可以根据主机IP列表，进行批量过滤。
+     * @return hostIpList
+     */
     public List<String> getHostIpList() {
         return hostIpList;
     }
@@ -226,11 +258,10 @@ public class GetHostListFilter {
         return this;
     }
 
-    /** 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中
-     * install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中
-     * uninstalling-transient:卸载中 authentication error:鉴权失败
-     * 
-     * @return hostStatus */
+    /**
+     * 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
+     * @return hostStatus
+     */
     public HostStatusEnum getHostStatus() {
         return hostStatus;
     }
@@ -244,9 +275,10 @@ public class GetHostListFilter {
         return this;
     }
 
-    /** 主机版本。可以根据主机版本进行过滤。
-     * 
-     * @return hostVersion */
+    /**
+     * 主机版本。可以根据主机版本进行过滤。
+     * @return hostVersion
+     */
     public String getHostVersion() {
         return hostVersion;
     }
@@ -287,7 +319,10 @@ public class GetHostListFilter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

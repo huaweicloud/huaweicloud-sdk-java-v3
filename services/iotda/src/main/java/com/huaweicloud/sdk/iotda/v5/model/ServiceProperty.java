@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 属性服务对象。 */
+/**
+ * 属性服务对象。
+ */
 public class ServiceProperty {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,10 +78,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性名称。注：设备服务内不允许重复。属性名称作为设备影子JSON文档中的key不支持特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)，如果包含了以上特殊字符则无法正常刷新影子文档。
-     * **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return propertyName */
+    /**
+     * **参数说明**：设备属性名称。注：设备服务内不允许重复。属性名称作为设备影子JSON文档中的key不支持特殊字符：点(.)、dollar符号($)、空char(十六进制的ASCII码为00)，如果包含了以上特殊字符则无法正常刷新影子文档。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -93,9 +95,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
-     * 
-     * @return dataType */
+    /**
+     * **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -109,9 +112,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性是否必选。默认为false。
-     * 
-     * @return required */
+    /**
+     * **参数说明**：设备属性是否必选。默认为false。
+     * @return required
+     */
     public Boolean getRequired() {
         return required;
     }
@@ -141,9 +145,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的枚举值列表。
-     * 
-     * @return enumList */
+    /**
+     * **参数说明**：设备属性的枚举值列表。
+     * @return enumList
+     */
     public List<String> getEnumList() {
         return enumList;
     }
@@ -157,9 +162,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
-     * 
-     * @return min */
+    /**
+     * **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
+     * @return min
+     */
     public String getMin() {
         return min;
     }
@@ -173,9 +179,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
-     * 
-     * @return max */
+    /**
+     * **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
+     * @return max
+     */
     public String getMax() {
         return max;
     }
@@ -189,9 +196,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的最大长度。
-     * 
-     * @return maxLength */
+    /**
+     * **参数说明**：设备属性的最大长度。
+     * @return maxLength
+     */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -205,9 +213,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的步长。
-     * 
-     * @return step */
+    /**
+     * **参数说明**：设备属性的步长。
+     * @return step
+     */
     public Double getStep() {
         return step;
     }
@@ -221,9 +230,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
-     * 
-     * @return unit */
+    /**
+     * **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -237,9 +247,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
-     * 
-     * @return method */
+    /**
+     * **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -253,9 +264,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -269,9 +281,10 @@ public class ServiceProperty {
         return this;
     }
 
-    /** **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
-     * 
-     * @return defaultValue */
+    /**
+     * **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
+     * @return defaultValue
+     */
     public Object getDefaultValue() {
         return defaultValue;
     }
@@ -337,7 +350,10 @@ public class ServiceProperty {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckProjectNameV4Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class CheckProjectNameV4Response extends SdkResponse {
         return this;
     }
 
-    /** 是否存在相同的项目名称 true 存在， false 不存在
-     * 
-     * @return exist */
+    /**
+     * 是否存在相同的项目名称 true 存在， false 不存在
+     * @return exist
+     */
     public Boolean getExist() {
         return exist;
     }
@@ -56,7 +59,10 @@ public class CheckProjectNameV4Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

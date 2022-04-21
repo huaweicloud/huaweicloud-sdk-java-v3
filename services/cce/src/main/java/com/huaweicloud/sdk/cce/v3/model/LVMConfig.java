@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LVMConfig */
+/**
+ * LVMConfig
+ */
 public class LVMConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LVMConfig {
         return this;
     }
 
-    /** LVM写入模式：linear、striped。linear：线性模式；striped：条带模式，使用多块磁盘组成条带模式，能够提升磁盘性能。
-     * 
-     * @return lvType */
+    /**
+     * LVM写入模式：linear、striped。linear：线性模式；striped：条带模式，使用多块磁盘组成条带模式，能够提升磁盘性能。
+     * @return lvType
+     */
     public String getLvType() {
         return lvType;
     }
@@ -39,9 +42,10 @@ public class LVMConfig {
         return this;
     }
 
-    /** 磁盘挂载路径。仅在用户配置中生效。支持包含：数字、大小写字母、点、中划线、下划线的绝对路径。
-     * 
-     * @return path */
+    /**
+     * 磁盘挂载路径。仅在用户配置中生效。支持包含：数字、大小写字母、点、中划线、下划线的绝对路径。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -77,7 +81,10 @@ public class LVMConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IP池对象。 支持IPv4和IPv6 */
+/**
+ * IP池对象。 支持IPv4和IPv6
+ */
 public class IpPool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class IpPool {
         return this;
     }
 
-    /** 线路的ID。
-     * 
-     * @return id */
+    /**
+     * 线路的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class IpPool {
         return this;
     }
 
-    /** 线路所属站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 线路所属站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -76,9 +80,10 @@ public class IpPool {
         return this;
     }
 
-    /** 线路标识。
-     * 
-     * @return poolId */
+    /**
+     * 线路标识。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -92,9 +97,10 @@ public class IpPool {
         return this;
     }
 
-    /** IPv4[或IPv6](tag:hide)线路。 取值范围： - 4：IPv4线路 [- 6：IPv6线路](tag:hide)
-     * 
-     * @return ipVersion */
+    /**
+     * IPv4[或IPv6](tag:hide)线路。  取值范围： - 4：IPv4线路 [- 6：IPv6线路](tag:hide)
+     * @return ipVersion
+     */
     public String getIpVersion() {
         return ipVersion;
     }
@@ -117,9 +123,10 @@ public class IpPool {
         return this;
     }
 
-    /** Get operator
-     * 
-     * @return operator */
+    /**
+     * Get operator
+     * @return operator
+     */
     public Operator getOperator() {
         return operator;
     }
@@ -133,9 +140,10 @@ public class IpPool {
         return this;
     }
 
-    /** 线路的显示名称。
-     * 
-     * @return displayName */
+    /**
+     * 线路的显示名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -177,7 +185,10 @@ public class IpPool {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

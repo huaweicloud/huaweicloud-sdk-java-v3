@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 图片审核结果 */
+/**
+ * 图片审核结果
+ */
 public class ImageModerationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ImageModerationResult {
         return this;
     }
 
-    /** 审核情况
-     * 
-     * @return suggestion */
+    /**
+     * 审核情况
+     * @return suggestion
+     */
     public String getSuggestion() {
         return suggestion;
     }
@@ -49,9 +52,10 @@ public class ImageModerationResult {
         return this;
     }
 
-    /** Get categorySuggestions
-     * 
-     * @return categorySuggestions */
+    /**
+     * Get categorySuggestions
+     * @return categorySuggestions
+     */
     public CategorySuggestions getCategorySuggestions() {
         return categorySuggestions;
     }
@@ -88,7 +92,10 @@ public class ImageModerationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

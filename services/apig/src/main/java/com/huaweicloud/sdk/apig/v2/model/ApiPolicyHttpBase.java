@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ApiPolicyHttpBase */
+/**
+ * ApiPolicyHttpBase
+ */
 public class ApiPolicyHttpBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ApiPolicyHttpBase {
 
     private String urlDomain;
 
-    /** 请求协议：HTTP、HTTPS */
+    /**
+     * 请求协议：HTTP、HTTPS
+     */
     public static final class ReqProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -94,31 +102,49 @@ public class ApiPolicyHttpBase {
 
     private ReqProtocolEnum reqProtocol;
 
-    /** 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY */
+    /**
+     * 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -209,10 +235,10 @@ public class ApiPolicyHttpBase {
         return this;
     }
 
-    /** 策略后端的Endpoint。 由域名（或IP地址）和端口号组成，总长度不超过255。格式为域名:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443，
-     * HTTP默认端口号为80。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、“_”、“-”组成，且只能以英文开头。
-     * 
-     * @return urlDomain */
+    /**
+     * 策略后端的Endpoint。 由域名（或IP地址）和端口号组成，总长度不超过255。格式为域名:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443， HTTP默认端口号为80。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、“_”、“-”组成，且只能以英文开头。 
+     * @return urlDomain
+     */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -226,9 +252,10 @@ public class ApiPolicyHttpBase {
         return this;
     }
 
-    /** 请求协议：HTTP、HTTPS
-     * 
-     * @return reqProtocol */
+    /**
+     * 请求协议：HTTP、HTTPS
+     * @return reqProtocol
+     */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -242,9 +269,10 @@ public class ApiPolicyHttpBase {
         return this;
     }
 
-    /** 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
-     * 
-     * @return reqMethod */
+    /**
+     * 请求方式：GET、POST、PUT、DELETE、HEAD、PATCH、OPTIONS、ANY
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -258,10 +286,10 @@ public class ApiPolicyHttpBase {
         return this;
     }
 
-    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~
-     * 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
-     * 
-     * @return reqUri */
+    /**
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -275,9 +303,11 @@ public class ApiPolicyHttpBase {
         return this;
     }
 
-    /** API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。 单位：毫秒。 minimum: 1
-     * 
-     * @return timeout */
+    /**
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
+     * minimum: 1
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -320,7 +350,10 @@ public class ApiPolicyHttpBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

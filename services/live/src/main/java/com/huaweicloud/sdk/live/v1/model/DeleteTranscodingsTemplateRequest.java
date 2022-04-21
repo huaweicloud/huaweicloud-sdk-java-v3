@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteTranscodingsTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -39,9 +42,10 @@ public class DeleteTranscodingsTemplateRequest {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -78,7 +82,10 @@ public class DeleteTranscodingsTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

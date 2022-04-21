@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IP白名单分组列表结构体 */
+/**
+ * IP白名单分组列表结构体
+ */
 public class Whitelist {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Whitelist {
         return this;
     }
 
-    /** 白名单分组名称，每个实例支持创建4个分组。
-     * 
-     * @return groupName */
+    /**
+     * 白名单分组名称，每个实例支持创建4个分组。
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -58,9 +61,10 @@ public class Whitelist {
         return this;
     }
 
-    /** 白名单分组下的IP列表,每个实例最多可以添加20个IP地址/地址段。如果有多个，可以用逗号分隔。不支持的IP和地址段：0.0.0.0和0.0.0.0/0
-     * 
-     * @return ipList */
+    /**
+     * 白名单分组下的IP列表,每个实例最多可以添加20个IP地址/地址段。如果有多个，可以用逗号分隔。不支持的IP和地址段：0.0.0.0和0.0.0.0/0
+     * @return ipList
+     */
     public List<String> getIpList() {
         return ipList;
     }
@@ -96,7 +100,10 @@ public class Whitelist {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

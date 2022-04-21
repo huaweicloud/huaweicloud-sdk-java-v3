@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckRomaInstanceListV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class CheckRomaInstanceListV2Response extends SdkResponse {
         return this;
     }
 
-    /** 列表总数 minimum: 0 maximum: 100
-     * 
-     * @return total */
+    /**
+     * 列表总数
+     * minimum: 0
+     * maximum: 100
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class CheckRomaInstanceListV2Response extends SdkResponse {
         return this;
     }
 
-    /** 本页数量 minimum: 0 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 本页数量
+     * minimum: 0
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -81,9 +89,10 @@ public class CheckRomaInstanceListV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例列表
-     * 
-     * @return instances */
+    /**
+     * 实例列表
+     * @return instances
+     */
     public List<RomaInstanceCheckListRespInstances> getInstances() {
         return instances;
     }
@@ -122,7 +131,10 @@ public class CheckRomaInstanceListV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

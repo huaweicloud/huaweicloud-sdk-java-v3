@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTaskRequestV2 */
+/**
+ * CreateTaskRequestV2
+ */
 public class CreateTaskRequestV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +94,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 检查类型，数组格式，默认为source
-     * 
-     * @return checkType */
+    /**
+     * 检查类型，数组格式，默认为source
+     * @return checkType
+     */
     public List<String> getCheckType() {
         return checkType;
     }
@@ -108,9 +111,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 仓库地址
-     * 
-     * @return gitUrl */
+    /**
+     * 仓库地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -124,9 +128,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 仓库分支
-     * 
-     * @return gitBranch */
+    /**
+     * 仓库分支
+     * @return gitBranch
+     */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -156,9 +161,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
-     * 
-     * @return language */
+    /**
+     * 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
+     * @return language
+     */
     public List<String> getLanguage() {
         return language;
     }
@@ -188,9 +194,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 指定规则集
-     * 
-     * @return ruleSets */
+    /**
+     * 指定规则集
+     * @return ruleSets
+     */
     public List<RuleSetV2> getRuleSets() {
         return ruleSets;
     }
@@ -204,9 +211,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
-     * 
-     * @return taskType */
+    /**
+     * 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -220,9 +228,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 仓库有权限的用户名
-     * 
-     * @return username */
+    /**
+     * 仓库有权限的用户名
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -236,9 +245,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 仓库有权限的用户token
-     * 
-     * @return accessToken */
+    /**
+     * 仓库有权限的用户token
+     * @return accessToken
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -252,9 +262,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 仓库有权限的用户endpointId
-     * 
-     * @return endpointId */
+    /**
+     * 仓库有权限的用户endpointId
+     * @return endpointId
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -277,9 +288,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** Get incConfig
-     * 
-     * @return incConfig */
+    /**
+     * Get incConfig
+     * @return incConfig
+     */
     public IncConfigV2 getIncConfig() {
         return incConfig;
     }
@@ -293,9 +305,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 是否打开fossbot检查,默认不开
-     * 
-     * @return enableFossbot */
+    /**
+     * 是否打开fossbot检查,默认不开
+     * @return enableFossbot
+     */
     public Boolean getEnableFossbot() {
         return enableFossbot;
     }
@@ -309,9 +322,10 @@ public class CreateTaskRequestV2 {
         return this;
     }
 
-    /** 资源池id，可以从资源池管理页面获取
-     * 
-     * @return resourcePoolId */
+    /**
+     * 资源池id，可以从资源池管理页面获取
+     * @return resourcePoolId
+     */
     public String getResourcePoolId() {
         return resourcePoolId;
     }
@@ -379,7 +393,10 @@ public class CreateTaskRequestV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

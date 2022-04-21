@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建独享模式域名的请求 */
+/**
+ * 创建独享模式域名的请求
+ */
 public class CreatePremiumHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
-     * 
-     * @return certificateid */
+    /**
+     * 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
+     * @return certificateid
+     */
     public String getCertificateid() {
         return certificateid;
     }
@@ -62,9 +65,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 证书名 - 对外协议为HTTP时不需要填写 - 对外协议HTTPS时为必填参数
-     * 
-     * @return certificatename */
+    /**
+     * 证书名   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
+     * @return certificatename
+     */
     public String getCertificatename() {
         return certificatename;
     }
@@ -78,9 +82,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 防护域名或IP（可带端口）
-     * 
-     * @return hostname */
+    /**
+     * 防护域名或IP（可带端口）
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -94,9 +99,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 是否使用代理
-     * 
-     * @return proxy */
+    /**
+     * 是否使用代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -110,9 +116,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
-     * 
-     * @return policyid */
+    /**
+     * 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -142,9 +149,10 @@ public class CreatePremiumHostRequestBody {
         return this;
     }
 
-    /** 服务器配置
-     * 
-     * @return server */
+    /**
+     * 服务器配置
+     * @return server
+     */
     public List<PremiumWafServer> getServer() {
         return server;
     }
@@ -189,7 +197,10 @@ public class CreatePremiumHostRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

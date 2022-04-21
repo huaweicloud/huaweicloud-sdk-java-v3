@@ -13,19 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 描述VPCEP服务API版本信息列表 */
+/**
+ * 描述VPCEP服务API版本信息列表
+ */
 public class Version {
 
-    /** 版本状态。● CURRENT：表示该版本为主推版本。● SUPPORT：表示为老版本，但是现在还在继续支持。● DEPRECATED：表示为废弃版本，存在后续删除的可能。 */
+    /**
+     * 版本状态。● CURRENT：表示该版本为主推版本。● SUPPORT：表示为老版本，但是现在还在继续支持。● DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORT for value: "SUPPORT" */
+        /**
+         * Enum SUPPORT for value: "SUPPORT"
+         */
         public static final StatusEnum SUPPORT = new StatusEnum("SUPPORT");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -96,10 +106,14 @@ public class Version {
 
     private StatusEnum status;
 
-    /** 版本ID。 */
+    /**
+     * 版本ID。
+     */
     public static final class IdEnum {
 
-        /** Enum V1 for value: "v1" */
+        /**
+         * Enum V1 for value: "v1"
+         */
         public static final IdEnum V1 = new IdEnum("v1");
 
         private static final Map<String, IdEnum> STATIC_FIELDS = createStaticFields();
@@ -193,9 +207,10 @@ public class Version {
         return this;
     }
 
-    /** 版本状态。● CURRENT：表示该版本为主推版本。● SUPPORT：表示为老版本，但是现在还在继续支持。● DEPRECATED：表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态。● CURRENT：表示该版本为主推版本。● SUPPORT：表示为老版本，但是现在还在继续支持。● DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -209,9 +224,10 @@ public class Version {
         return this;
     }
 
-    /** 版本ID。
-     * 
-     * @return id */
+    /**
+     * 版本ID。
+     * @return id
+     */
     public IdEnum getId() {
         return id;
     }
@@ -225,9 +241,10 @@ public class Version {
         return this;
     }
 
-    /** 版本发布时间。采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
-     * 
-     * @return updated */
+    /**
+     * 版本发布时间。采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -241,9 +258,10 @@ public class Version {
         return this;
     }
 
-    /** 支持的版本号。
-     * 
-     * @return version */
+    /**
+     * 支持的版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -257,9 +275,10 @@ public class Version {
         return this;
     }
 
-    /** 支持的微版本号。若该版本API不支持微版本，则为空。
-     * 
-     * @return minVersion */
+    /**
+     * 支持的微版本号。若该版本API不支持微版本，则为空。
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -289,9 +308,10 @@ public class Version {
         return this;
     }
 
-    /** API的URL地址
-     * 
-     * @return links */
+    /**
+     * API的URL地址
+     * @return links
+     */
     public List<Link> getLinks() {
         return links;
     }
@@ -333,7 +353,10 @@ public class Version {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

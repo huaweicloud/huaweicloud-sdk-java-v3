@@ -7,13 +7,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 状态。 */
+/**
+ * 状态。
+ */
 public class ExternalAccessStatus {
 
-    /** Enum NORMAL for value: "NORMAL" */
+    /**
+     * Enum NORMAL for value: "NORMAL"
+     */
     public static final ExternalAccessStatus NORMAL = new ExternalAccessStatus("NORMAL");
 
-    /** Enum EXPIRED for value: "EXPIRED" */
+    /**
+     * Enum EXPIRED for value: "EXPIRED"
+     */
     public static final ExternalAccessStatus EXPIRED = new ExternalAccessStatus("EXPIRED");
 
     private static final Map<String, ExternalAccessStatus> STATIC_FIELDS = createStaticFields();

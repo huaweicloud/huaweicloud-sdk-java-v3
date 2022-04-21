@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 协调器信息。 */
+/**
+ * 协调器信息。
+ */
 public class ShowCoordinatorsRespCoordinators {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowCoordinatorsRespCoordinators {
         return this;
     }
 
-    /** 消费组ID。
-     * 
-     * @return groupId */
+    /**
+     * 消费组ID。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -49,9 +52,10 @@ public class ShowCoordinatorsRespCoordinators {
         return this;
     }
 
-    /** 对应协调器的broker id。
-     * 
-     * @return id */
+    /**
+     * 对应协调器的broker id。
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -65,9 +69,10 @@ public class ShowCoordinatorsRespCoordinators {
         return this;
     }
 
-    /** 对应协调器的地址。
-     * 
-     * @return host */
+    /**
+     * 对应协调器的地址。
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -81,9 +86,10 @@ public class ShowCoordinatorsRespCoordinators {
         return this;
     }
 
-    /** 端口号。
-     * 
-     * @return port */
+    /**
+     * 端口号。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -124,7 +130,10 @@ public class ShowCoordinatorsRespCoordinators {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

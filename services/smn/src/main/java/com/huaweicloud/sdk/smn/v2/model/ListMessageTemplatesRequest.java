@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMessageTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListMessageTemplatesRequest {
         return this;
     }
 
-    /** 偏移量，偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量，偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -49,9 +52,10 @@ public class ListMessageTemplatesRequest {
         return this;
     }
 
-    /** 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
-     * 
-     * @return limit */
+    /**
+     * 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,9 +69,10 @@ public class ListMessageTemplatesRequest {
         return this;
     }
 
-    /** 模板的名称。 只能包含大写字母、小写字母、数字、-和_，且必须由大写字母、小写字母或数字开头，长度在1到64个字符之间。
-     * 
-     * @return messageTemplateName */
+    /**
+     * 模板的名称。  只能包含大写字母、小写字母、数字、-和_，且必须由大写字母、小写字母或数字开头，长度在1到64个字符之间。
+     * @return messageTemplateName
+     */
     public String getMessageTemplateName() {
         return messageTemplateName;
     }
@@ -81,10 +86,10 @@ public class ListMessageTemplatesRequest {
         return this;
     }
 
-    /** 模板支持的协议类型。 目前支持的协议包括： “default”：默认协议。 “email”：邮件传输协议。 “sms”：短信传输协议。 “functionstage”：FunctionGraph（函数）传输协议。
-     * “dms”：DMS传输协议。 “http”、“https”：HTTP/HTTPS传输协议。
-     * 
-     * @return protocol */
+    /**
+     * 模板支持的协议类型。  目前支持的协议包括：  “default”：默认协议。  “email”：邮件传输协议。  “sms”：短信传输协议。  “functionstage”：FunctionGraph（函数）传输协议。  “dms”：DMS传输协议。  “http”、“https”：HTTP/HTTPS传输协议。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -125,7 +130,10 @@ public class ListMessageTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

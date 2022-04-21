@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DevicesInGroup */
+/**
+ * DevicesInGroup
+ */
 public class DevicesInGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class DevicesInGroup {
 
     private String productName;
 
-    /** 设备状态 0-启用 1-禁用 */
+    /**
+     * 设备状态 0-启用 1-禁用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -109,16 +117,24 @@ public class DevicesInGroup {
 
     private StatusEnum status;
 
-    /** 是否在线 0-未连接 1-在线 2-离线 */
+    /**
+     * 是否在线 0-未连接 1-在线 2-离线
+     */
     public static final class OnlineStatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final OnlineStatusEnum NUMBER_0 = new OnlineStatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final OnlineStatusEnum NUMBER_1 = new OnlineStatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final OnlineStatusEnum NUMBER_2 = new OnlineStatusEnum(2);
 
         private static final Map<Integer, OnlineStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -194,9 +210,12 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 设备ID minimum: 1 maximum: -8446744073709551617
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID
+     * minimum: 1
+     * maximum: -8446744073709551617
+     * @return deviceId
+     */
     public Integer getDeviceId() {
         return deviceId;
     }
@@ -210,9 +229,10 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 设备名称
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -226,9 +246,12 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 产品ID minimum: 1 maximum: -8446744073709551617
-     * 
-     * @return productId */
+    /**
+     * 产品ID
+     * minimum: 1
+     * maximum: -8446744073709551617
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -242,9 +265,10 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 产品名称
-     * 
-     * @return productName */
+    /**
+     * 产品名称
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -258,9 +282,12 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 设备状态 0-启用 1-禁用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 设备状态 0-启用 1-禁用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -274,9 +301,12 @@ public class DevicesInGroup {
         return this;
     }
 
-    /** 是否在线 0-未连接 1-在线 2-离线 minimum: 0 maximum: 10
-     * 
-     * @return onlineStatus */
+    /**
+     * 是否在线 0-未连接 1-在线 2-离线
+     * minimum: 0
+     * maximum: 10
+     * @return onlineStatus
+     */
     public OnlineStatusEnum getOnlineStatus() {
         return onlineStatus;
     }
@@ -321,7 +351,10 @@ public class DevicesInGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VaultAssociate */
+/**
+ * VaultAssociate
+ */
 public class VaultAssociate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class VaultAssociate {
         return this;
     }
 
-    /** 目标vault ID , 只有设置复制策略时使用，而且必传
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标vault ID , 只有设置复制策略时使用，而且必传
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -47,9 +50,10 @@ public class VaultAssociate {
         return this;
     }
 
-    /** 策略ID。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
-     * 
-     * @return policyId */
+    /**
+     * 策略ID。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -79,9 +83,10 @@ public class VaultAssociate {
         return this;
     }
 
-    /** 多策略场景下，绑定新策略的id列表。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
-     * 
-     * @return addPolicyIds */
+    /**
+     * 多策略场景下，绑定新策略的id列表。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
+     * @return addPolicyIds
+     */
     public List<String> getAddPolicyIds() {
         return addPolicyIds;
     }
@@ -120,7 +125,10 @@ public class VaultAssociate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

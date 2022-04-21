@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SqlRequest */
+/**
+ * SqlRequest
+ */
 public class SqlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,13 +55,19 @@ public class SqlRequest {
 
     private Integer searchTimeRange;
 
-    /** 查询时间单位 */
+    /**
+     * 查询时间单位
+     */
     public static final class SearchTimeRangeUnitEnum {
 
-        /** Enum MINUTE for value: "minute" */
+        /**
+         * Enum MINUTE for value: "minute"
+         */
         public static final SearchTimeRangeUnitEnum MINUTE = new SearchTimeRangeUnitEnum("minute");
 
-        /** Enum HOUR for value: "hour" */
+        /**
+         * Enum HOUR for value: "hour"
+         */
         public static final SearchTimeRangeUnitEnum HOUR = new SearchTimeRangeUnitEnum("hour");
 
         private static final Map<String, SearchTimeRangeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -134,9 +142,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 是时间范围相对
-     * 
-     * @return isTimeRangeRelative */
+    /**
+     * 是时间范围相对
+     * @return isTimeRangeRelative
+     */
     public Boolean getIsTimeRangeRelative() {
         return isTimeRangeRelative;
     }
@@ -150,9 +159,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 日志流id
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流id
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -166,9 +176,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -182,9 +193,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组id
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -198,9 +210,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -214,9 +227,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** sql语句
-     * 
-     * @return sql */
+    /**
+     * sql语句
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -230,9 +244,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 图表名称
-     * 
-     * @return sqlRequestTitle */
+    /**
+     * 图表名称
+     * @return sqlRequestTitle
+     */
     public String getSqlRequestTitle() {
         return sqlRequestTitle;
     }
@@ -246,10 +261,12 @@ public class SqlRequest {
         return this;
     }
 
-    /** 查询执行任务时最近数据的时间范围(当search_time_range_unit为minute，则最大值为60;当search_time_range_unit为hour，则最大值为24) minimum: 1
+    /**
+     * 查询执行任务时最近数据的时间范围(当search_time_range_unit为minute，则最大值为60;当search_time_range_unit为hour，则最大值为24)
+     * minimum: 1
      * maximum: 60
-     * 
-     * @return searchTimeRange */
+     * @return searchTimeRange
+     */
     public Integer getSearchTimeRange() {
         return searchTimeRange;
     }
@@ -263,9 +280,10 @@ public class SqlRequest {
         return this;
     }
 
-    /** 查询时间单位
-     * 
-     * @return searchTimeRangeUnit */
+    /**
+     * 查询时间单位
+     * @return searchTimeRangeUnit
+     */
     public SearchTimeRangeUnitEnum getSearchTimeRangeUnit() {
         return searchTimeRangeUnit;
     }
@@ -323,7 +341,10 @@ public class SqlRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListActiveOrHistoryAlarmsRequestBody */
+/**
+ * ListActiveOrHistoryAlarmsRequestBody
+ */
 public class ListActiveOrHistoryAlarmsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 关键字检索条件
-     * 
-     * @return step */
+    /**
+     * 关键字检索条件
+     * @return step
+     */
     public Integer getStep() {
         return step;
     }
@@ -72,9 +75,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 是否自定义查询时间段
-     * 
-     * @return whetherCustomField */
+    /**
+     * 是否自定义查询时间段
+     * @return whetherCustomField
+     */
     public Boolean getWhetherCustomField() {
         return whetherCustomField;
     }
@@ -88,9 +92,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 自定义时间段开始时间(时间戳)
-     * 
-     * @return startTime */
+    /**
+     * 自定义时间段开始时间(时间戳)
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -104,9 +109,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 自定义时间段结束时间(时间戳)
-     * 
-     * @return endTime */
+    /**
+     * 自定义时间段结束时间(时间戳)
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -120,9 +126,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 非自定义时间段时间范围(单位为分钟)
-     * 
-     * @return timeRange */
+    /**
+     * 非自定义时间段时间范围(单位为分钟)
+     * @return timeRange
+     */
     public String getTimeRange() {
         return timeRange;
     }
@@ -136,9 +143,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 关键字检索条件
-     * 
-     * @return search */
+    /**
+     * 关键字检索条件
+     * @return search
+     */
     public String getSearch() {
         return search;
     }
@@ -168,9 +176,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** 告警级别(\"Critical\",\"Major\",\"Minor\",\"Info\")
-     * 
-     * @return alarmLevelIds */
+    /**
+     * 告警级别(\"Critical\",\"Major\",\"Minor\",\"Info\")
+     * @return alarmLevelIds
+     */
     public List<String> getAlarmLevelIds() {
         return alarmLevelIds;
     }
@@ -193,9 +202,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return this;
     }
 
-    /** Get sort
-     * 
-     * @return sort */
+    /**
+     * Get sort
+     * @return sort
+     */
     public Sort getSort() {
         return sort;
     }
@@ -245,7 +255,10 @@ public class ListActiveOrHistoryAlarmsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

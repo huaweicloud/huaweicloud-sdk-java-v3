@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ThumbTask */
+/**
+ * ThumbTask
+ */
 public class ThumbTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,25 +23,39 @@ public class ThumbTask {
 
     private String taskId;
 
-    /** 任务状态 */
+    /**
+     * 任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum NO_TASK for value: "NO_TASK" */
+        /**
+         * Enum NO_TASK for value: "NO_TASK"
+         */
         public static final StatusEnum NO_TASK = new StatusEnum("NO_TASK");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
 
-        /** Enum PROCESSING for value: "PROCESSING" */
+        /**
+         * Enum PROCESSING for value: "PROCESSING"
+         */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum CANCELED for value: "CANCELED" */
+        /**
+         * Enum CANCELED for value: "CANCELED"
+         */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -158,9 +174,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 任务ID。 截图服务接受任务后产生的任务ID。一次最多10个。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。  截图服务接受任务后产生的任务ID。一次最多10个。 
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -174,9 +191,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -190,9 +208,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 起始时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
-     * 
-     * @return createTime */
+    /**
+     * 起始时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -206,9 +225,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 结束时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -231,9 +251,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -256,9 +277,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -272,9 +294,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 输出文件名。
-     * 
-     * @return outputFileName */
+    /**
+     * 输出文件名。
+     * @return outputFileName
+     */
     public String getOutputFileName() {
         return outputFileName;
     }
@@ -288,9 +311,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 用户数据。
-     * 
-     * @return userData */
+    /**
+     * 用户数据。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -304,9 +328,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 任务描述。
-     * 
-     * @return description */
+    /**
+     * 任务描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -336,9 +361,10 @@ public class ThumbTask {
         return this;
     }
 
-    /** 截图文件信息。
-     * 
-     * @return thumbnailInfo */
+    /**
+     * 截图文件信息。 
+     * @return thumbnailInfo
+     */
     public List<PicInfo> getThumbnailInfo() {
         return thumbnailInfo;
     }
@@ -397,7 +423,10 @@ public class ThumbTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

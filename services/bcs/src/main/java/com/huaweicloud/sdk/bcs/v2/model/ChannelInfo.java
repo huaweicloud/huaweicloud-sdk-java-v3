@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ChannelInfo */
+/**
+ * ChannelInfo
+ */
 public class ChannelInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ChannelInfo {
         return this;
     }
 
-    /** 通道名
-     * 
-     * @return name */
+    /**
+     * 通道名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +73,10 @@ public class ChannelInfo {
         return this;
     }
 
-    /** 通道中组织名
-     * 
-     * @return orgNames */
+    /**
+     * 通道中组织名
+     * @return orgNames
+     */
     public List<String> getOrgNames() {
         return orgNames;
     }
@@ -102,9 +106,10 @@ public class ChannelInfo {
         return this;
     }
 
-    /** 通道中组织名的哈希值
-     * 
-     * @return orgNameHash */
+    /**
+     * 通道中组织名的哈希值
+     * @return orgNameHash
+     */
     public List<String> getOrgNameHash() {
         return orgNameHash;
     }
@@ -134,9 +139,10 @@ public class ChannelInfo {
         return this;
     }
 
-    /** key:组织名，value:peer节点数组
-     * 
-     * @return peers */
+    /**
+     * key:组织名，value:peer节点数组
+     * @return peers
+     */
     public Map<String, List<String>> getPeers() {
         return peers;
     }
@@ -176,7 +182,10 @@ public class ChannelInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

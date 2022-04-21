@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteDevicesRequestBody */
+/**
+ * BatchDeleteDevicesRequestBody
+ */
 public class BatchDeleteDevicesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteDevicesRequestBody {
         return this;
     }
 
-    /** 删除设备ID列表，自动向下取整
-     * 
-     * @return resources */
+    /**
+     * 删除设备ID列表，自动向下取整
+     * @return resources
+     */
     public List<Integer> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteDevicesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 云服务器相关操作显示server_id。
-     * 
-     * @return serverId */
+    /**
+     * 云服务器相关操作显示server_id。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -46,9 +47,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 网卡相关操作显示nic_id。
-     * 
-     * @return nicId */
+    /**
+     * 网卡相关操作显示nic_id。
+     * @return nicId
+     */
     public String getNicId() {
         return nicId;
     }
@@ -62,9 +64,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 子任务执行失败的具体原因。
-     * 
-     * @return errorcodeMessage */
+    /**
+     * 子任务执行失败的具体原因。
+     * @return errorcodeMessage
+     */
     public String getErrorcodeMessage() {
         return errorcodeMessage;
     }
@@ -103,7 +106,10 @@ public class SubJobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

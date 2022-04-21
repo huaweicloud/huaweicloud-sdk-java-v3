@@ -17,18 +17,32 @@ public class CgsClient {
         return new ClientBuilder<>(CgsClient::new);
     }
 
-    /** 查询容器节点列表 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
+    /**
+     * 查询容器节点列表
+     *
+     * 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListContainerNodesRequest 请求对象
-     * @return ListContainerNodesResponse */
+     * @return ListContainerNodesResponse
+     */
     public ListContainerNodesResponse listContainerNodes(ListContainerNodesRequest request) {
         return hcClient.syncInvokeHttp(request, CgsMeta.listContainerNodes);
     }
 
-    /** 查询容器节点列表 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
+    /**
+     * 查询容器节点列表
+     *
+     * 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListContainerNodesRequest 请求对象
-     * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> */
+     * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>
+     */
     public SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> listContainerNodesInvoker(
         ListContainerNodesRequest request) {
         return new SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>(request,

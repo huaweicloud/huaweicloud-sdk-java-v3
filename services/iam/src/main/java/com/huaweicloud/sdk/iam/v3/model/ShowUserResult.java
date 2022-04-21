@@ -106,9 +106,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户是否启用。true表示启用，false表示停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * IAM用户是否启用。true表示启用，false表示停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -122,9 +123,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return id */
+    /**
+     * IAM用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -138,9 +140,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * IAM用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -154,9 +157,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户名。
-     * 
-     * @return name */
+    /**
+     * IAM用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -179,9 +183,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -195,9 +200,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户在外部系统中的ID。
-     * 
-     * @return xuserId */
+    /**
+     * IAM用户在外部系统中的ID。
+     * @return xuserId
+     */
     public String getXuserId() {
         return xuserId;
     }
@@ -211,9 +217,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户在外部系统中的类型。
-     * 
-     * @return xuserType */
+    /**
+     * IAM用户在外部系统中的类型。
+     * @return xuserType
+     */
     public String getXuserType() {
         return xuserType;
     }
@@ -227,9 +234,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户手机号的国家码。
-     * 
-     * @return areacode */
+    /**
+     * IAM用户手机号的国家码。
+     * @return areacode
+     */
     public String getAreacode() {
         return areacode;
     }
@@ -243,9 +251,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户邮箱。
-     * 
-     * @return email */
+    /**
+     * IAM用户邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -259,9 +268,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户手机号。
-     * 
-     * @return phone */
+    /**
+     * IAM用户手机号。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -275,9 +285,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户密码状态。true：需要修改密码，false：正常。
-     * 
-     * @return pwdStatus */
+    /**
+     * IAM用户密码状态。true：需要修改密码，false：正常。
+     * @return pwdStatus
+     */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -291,9 +302,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户更新时间。
-     * 
-     * @return updateTime */
+    /**
+     * IAM用户更新时间。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -307,9 +319,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户创建时间。
-     * 
-     * @return createTime */
+    /**
+     * IAM用户创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -323,9 +336,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户最后登录时间。
-     * 
-     * @return lastLoginTime */
+    /**
+     * IAM用户最后登录时间。
+     * @return lastLoginTime
+     */
     public String getLastLoginTime() {
         return lastLoginTime;
     }
@@ -339,9 +353,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户密码强度。结果为Low/Middle/High/None，分别表示密码强度低/中/高/无。
-     * 
-     * @return pwdStrength */
+    /**
+     * IAM用户密码强度。结果为Low/Middle/High/None，分别表示密码强度低/中/高/无。
+     * @return pwdStrength
+     */
     public String getPwdStrength() {
         return pwdStrength;
     }
@@ -355,9 +370,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户是否为根用户。
-     * 
-     * @return isDomainOwner */
+    /**
+     * IAM用户是否为根用户。
+     * @return isDomainOwner
+     */
     public Boolean getIsDomainOwner() {
         return isDomainOwner;
     }
@@ -371,9 +387,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户访问模式。
-     * 
-     * @return accessMode */
+    /**
+     * IAM用户访问模式。
+     * @return accessMode
+     */
     public String getAccessMode() {
         return accessMode;
     }
@@ -387,9 +404,10 @@ public class ShowUserResult {
         return this;
     }
 
-    /** IAM用户描述信息
-     * 
-     * @return description */
+    /**
+     * IAM用户描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -471,7 +489,10 @@ public class ShowUserResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

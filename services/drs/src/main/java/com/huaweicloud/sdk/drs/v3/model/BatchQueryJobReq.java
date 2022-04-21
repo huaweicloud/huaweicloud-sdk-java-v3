@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询任务请求体 */
+/**
+ * 查询任务请求体
+ */
 public class BatchQueryJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchQueryJobReq {
         return this;
     }
 
-    /** 查询任务请求体
-     * 
-     * @return jobs */
+    /**
+     * 查询任务请求体
+     * @return jobs
+     */
     public List<String> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class BatchQueryJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

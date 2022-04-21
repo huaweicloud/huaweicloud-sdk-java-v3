@@ -33,9 +33,10 @@ public class GeneralTableResult {
         return this;
     }
 
-    /** 文字区域数目。
-     * 
-     * @return wordsRegionCount */
+    /**
+     * 文字区域数目。          
+     * @return wordsRegionCount
+     */
     public Integer getWordsRegionCount() {
         return wordsRegionCount;
     }
@@ -65,9 +66,10 @@ public class GeneralTableResult {
         return this;
     }
 
-    /** 文字区域识别结果列表，输出顺序从左到右，先上后下。
-     * 
-     * @return wordsRegionList */
+    /**
+     * 文字区域识别结果列表，输出顺序从左到右，先上后下。 
+     * @return wordsRegionList
+     */
     public List<WordsRegionList> getWordsRegionList() {
         return wordsRegionList;
     }
@@ -81,9 +83,10 @@ public class GeneralTableResult {
         return this;
     }
 
-    /** 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel。对返回的excel编码可用base64.b64decode解码并保存为.xlsx文件。
-     * 
-     * @return excel */
+    /**
+     * 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel。对返回的excel编码可用base64.b64decode解码并保存为.xlsx文件。 
+     * @return excel
+     */
     public String getExcel() {
         return excel;
     }
@@ -122,7 +125,10 @@ public class GeneralTableResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

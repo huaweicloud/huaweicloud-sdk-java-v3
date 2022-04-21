@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResizeInstanceOption */
+/**
+ * ResizeInstanceOption
+ */
 public class ResizeInstanceOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ResizeInstanceOption {
         return this;
     }
 
-    /** 变更至新规格的资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“flavors.spec_code”的值。
-     * 
-     * @return targetSpecCode */
+    /**
+     * 变更至新规格的资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“flavors.spec_code”的值。
+     * @return targetSpecCode
+     */
     public String getTargetSpecCode() {
         return targetSpecCode;
     }
@@ -55,7 +58,10 @@ public class ResizeInstanceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

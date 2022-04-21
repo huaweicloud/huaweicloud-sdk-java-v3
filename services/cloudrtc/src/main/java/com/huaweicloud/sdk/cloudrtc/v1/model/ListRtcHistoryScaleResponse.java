@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRtcHistoryScaleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListRtcHistoryScaleResponse extends SdkResponse {
         return this;
     }
 
-    /** 时间戳及相应时间的指标数值列表
-     * 
-     * @return scale */
+    /**
+     * 时间戳及相应时间的指标数值列表
+     * @return scale
+     */
     public List<RtcHistoryScaleTimeValue> getScale() {
         return scale;
     }
@@ -59,9 +62,10 @@ public class ListRtcHistoryScaleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -100,7 +104,10 @@ public class ListRtcHistoryScaleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

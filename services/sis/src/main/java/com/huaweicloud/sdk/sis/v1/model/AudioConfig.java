@@ -15,30 +15,44 @@ import java.util.Objects;
  */
 public class AudioConfig {
 
-    /** 语音的格式。不填写此字段，则默认为auto。注意音频不论何种格式，均要求采样率在16000Hz以上。 auto
-     * 自动判断，系统会自动判断并支持WAV（内部支持pcm/ulaw/alaw编码格式）、MP3、M4A、ogg-opus、AMR等格式。推荐使用此取值。 wav wav格式。 aac aac格式。 mp3 mp3格式。 amr
-     * amr格式。 m4a m4a格式。 opus ogg-opus格式。 */
+    /**
+     * 语音的格式。不填写此字段，则默认为auto。注意音频不论何种格式，均要求采样率在16000Hz以上。  auto  自动判断，系统会自动判断并支持WAV（内部支持pcm/ulaw/alaw编码格式）、MP3、M4A、ogg-opus、AMR等格式。推荐使用此取值。  wav  wav格式。  aac  aac格式。  mp3  mp3格式。  amr  amr格式。  m4a  m4a格式。  opus  ogg-opus格式。 
+     */
     public static final class AudioFormatEnum {
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final AudioFormatEnum AUTO = new AudioFormatEnum("auto");
 
-        /** Enum WAV for value: "wav" */
+        /**
+         * Enum WAV for value: "wav"
+         */
         public static final AudioFormatEnum WAV = new AudioFormatEnum("wav");
 
-        /** Enum AAC for value: "aac" */
+        /**
+         * Enum AAC for value: "aac"
+         */
         public static final AudioFormatEnum AAC = new AudioFormatEnum("aac");
 
-        /** Enum MP3 for value: "mp3" */
+        /**
+         * Enum MP3 for value: "mp3"
+         */
         public static final AudioFormatEnum MP3 = new AudioFormatEnum("mp3");
 
-        /** Enum AMR for value: "amr" */
+        /**
+         * Enum AMR for value: "amr"
+         */
         public static final AudioFormatEnum AMR = new AudioFormatEnum("amr");
 
-        /** Enum M4A for value: "m4a" */
+        /**
+         * Enum M4A for value: "m4a"
+         */
         public static final AudioFormatEnum M4A = new AudioFormatEnum("m4a");
 
-        /** Enum OPUS for value: "opus" */
+        /**
+         * Enum OPUS for value: "opus"
+         */
         public static final AudioFormatEnum OPUS = new AudioFormatEnum("opus");
 
         private static final Map<String, AudioFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -113,10 +127,14 @@ public class AudioConfig {
 
     private AudioFormatEnum audioFormat;
 
-    /** 评测语言 en_gb 英语-英式口音。 */
+    /**
+     * 评测语言  en_gb  英语-英式口音。
+     */
     public static final class LanguageEnum {
 
-        /** Enum EN_GB for value: "en_gb" */
+        /**
+         * Enum EN_GB for value: "en_gb"
+         */
         public static final LanguageEnum EN_GB = new LanguageEnum("en_gb");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -185,13 +203,19 @@ public class AudioConfig {
 
     private LanguageEnum language;
 
-    /** 评测模式 word 单词模式 sentence 句子模式 */
+    /**
+     * 评测模式  word 单词模式  sentence 句子模式
+     */
     public static final class ModeEnum {
 
-        /** Enum WORD for value: "word" */
+        /**
+         * Enum WORD for value: "word"
+         */
         public static final ModeEnum WORD = new ModeEnum("word");
 
-        /** Enum SENTENCE for value: "sentence" */
+        /**
+         * Enum SENTENCE for value: "sentence"
+         */
         public static final ModeEnum SENTENCE = new ModeEnum("sentence");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -266,11 +290,10 @@ public class AudioConfig {
         return this;
     }
 
-    /** 语音的格式。不填写此字段，则默认为auto。注意音频不论何种格式，均要求采样率在16000Hz以上。 auto
-     * 自动判断，系统会自动判断并支持WAV（内部支持pcm/ulaw/alaw编码格式）、MP3、M4A、ogg-opus、AMR等格式。推荐使用此取值。 wav wav格式。 aac aac格式。 mp3 mp3格式。 amr
-     * amr格式。 m4a m4a格式。 opus ogg-opus格式。
-     * 
-     * @return audioFormat */
+    /**
+     * 语音的格式。不填写此字段，则默认为auto。注意音频不论何种格式，均要求采样率在16000Hz以上。  auto  自动判断，系统会自动判断并支持WAV（内部支持pcm/ulaw/alaw编码格式）、MP3、M4A、ogg-opus、AMR等格式。推荐使用此取值。  wav  wav格式。  aac  aac格式。  mp3  mp3格式。  amr  amr格式。  m4a  m4a格式。  opus  ogg-opus格式。 
+     * @return audioFormat
+     */
     public AudioFormatEnum getAudioFormat() {
         return audioFormat;
     }
@@ -284,9 +307,10 @@ public class AudioConfig {
         return this;
     }
 
-    /** 评测语言 en_gb 英语-英式口音。
-     * 
-     * @return language */
+    /**
+     * 评测语言  en_gb  英语-英式口音。
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -300,9 +324,10 @@ public class AudioConfig {
         return this;
     }
 
-    /** 评测模式 word 单词模式 sentence 句子模式
-     * 
-     * @return mode */
+    /**
+     * 评测模式  word 单词模式  sentence 句子模式
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -340,7 +365,10 @@ public class AudioConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

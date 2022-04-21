@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询api版本结构 */
+/**
+ * 查询api版本结构
+ */
 public class ShowApiVersionParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,16 +33,24 @@ public class ShowApiVersionParams {
 
     private String version;
 
-    /** 版本状态，为如下3种： CURRENT：表示该版本为主推版本 SUPPORTED：表示为老版本，但是现在还继续支持 DEPRECATED：表示为废弃版本，存在后续删除的可能 */
+    /**
+     * 版本状态，为如下3种： CURRENT：表示该版本为主推版本 SUPPORTED：表示为老版本，但是现在还继续支持 DEPRECATED：表示为废弃版本，存在后续删除的可能
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORTED for value: "SUPPORTED" */
+        /**
+         * Enum SUPPORTED for value: "SUPPORTED"
+         */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +136,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 版本ID（版本号），如v1。
-     * 
-     * @return id */
+    /**
+     * 版本ID（版本号），如v1。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -158,9 +169,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 版本号查询链接
-     * 
-     * @return links */
+    /**
+     * 版本号查询链接
+     * @return links
+     */
     public List<ShowApiVersionLinksParams> getLinks() {
         return links;
     }
@@ -174,9 +186,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 若该版本API支持微版本，则返回支持的最大微版本号，如果不支持微版本，则返回空。
-     * 
-     * @return version */
+    /**
+     * 若该版本API支持微版本，则返回支持的最大微版本号，如果不支持微版本，则返回空。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -190,9 +203,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 版本状态，为如下3种： CURRENT：表示该版本为主推版本 SUPPORTED：表示为老版本，但是现在还继续支持 DEPRECATED：表示为废弃版本，存在后续删除的可能
-     * 
-     * @return status */
+    /**
+     * 版本状态，为如下3种： CURRENT：表示该版本为主推版本 SUPPORTED：表示为老版本，但是现在还继续支持 DEPRECATED：表示为废弃版本，存在后续删除的可能
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -206,9 +220,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 版本发布时间，采用UTC时间表示。如v1发布的时间2018-05-30T15:00:00Z。
-     * 
-     * @return updated */
+    /**
+     * 版本发布时间，采用UTC时间表示。如v1发布的时间2018-05-30T15:00:00Z。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -222,9 +237,10 @@ public class ShowApiVersionParams {
         return this;
     }
 
-    /** 若该版本API 支持微版本，则返回支持的最小微版本号，如果不支持微版本，则返回空。
-     * 
-     * @return minVersion */
+    /**
+     * 若该版本API 支持微版本，则返回支持的最小微版本号，如果不支持微版本，则返回空。
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -269,7 +285,10 @@ public class ShowApiVersionParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

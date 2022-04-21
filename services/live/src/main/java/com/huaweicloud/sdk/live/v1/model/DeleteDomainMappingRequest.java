@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteDomainMappingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteDomainMappingRequest {
         return this;
     }
 
-    /** op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
-     * 
-     * @return specifyProject */
+    /**
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
+     * @return specifyProject
+     */
     public String getSpecifyProject() {
         return specifyProject;
     }
@@ -44,9 +47,10 @@ public class DeleteDomainMappingRequest {
         return this;
     }
 
-    /** 直播播放域名
-     * 
-     * @return pullDomain */
+    /**
+     * 直播播放域名
+     * @return pullDomain
+     */
     public String getPullDomain() {
         return pullDomain;
     }
@@ -60,9 +64,10 @@ public class DeleteDomainMappingRequest {
         return this;
     }
 
-    /** 直播推流域名
-     * 
-     * @return pushDomain */
+    /**
+     * 直播推流域名
+     * @return pushDomain
+     */
     public String getPushDomain() {
         return pushDomain;
     }
@@ -101,7 +106,10 @@ public class DeleteDomainMappingRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

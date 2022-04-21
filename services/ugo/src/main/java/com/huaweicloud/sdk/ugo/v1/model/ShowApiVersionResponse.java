@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowApiVersionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,16 +31,24 @@ public class ShowApiVersionResponse extends SdkResponse {
 
     private String version;
 
-    /** 版本的状态 */
+    /**
+     * 版本的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORTED for value: "SUPPORTED" */
+        /**
+         * Enum SUPPORTED for value: "SUPPORTED"
+         */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +129,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本ID
-     * 
-     * @return id */
+    /**
+     * 版本ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -135,9 +146,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本详情
-     * 
-     * @return links */
+    /**
+     * 版本详情
+     * @return links
+     */
     public String getLinks() {
         return links;
     }
@@ -151,9 +163,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    /** 该版本API的微版本信息
-     * 
-     * @return version */
+    /**
+     * 该版本API的微版本信息
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -167,9 +180,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本的状态
-     * 
-     * @return status */
+    /**
+     * 版本的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -183,9 +197,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本更新时间
-     * 
-     * @return updated */
+    /**
+     * 版本更新时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -228,7 +243,10 @@ public class ShowApiVersionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

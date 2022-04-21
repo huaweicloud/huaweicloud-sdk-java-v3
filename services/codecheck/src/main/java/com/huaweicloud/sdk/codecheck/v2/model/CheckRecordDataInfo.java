@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CheckRecordDataInfo */
+/**
+ * CheckRecordDataInfo
+ */
 public class CheckRecordDataInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CheckRecordDataInfo {
         return this;
     }
 
-    /** 检查时间
-     * 
-     * @return checkTime */
+    /**
+     * 检查时间
+     * @return checkTime
+     */
     public String getCheckTime() {
         return checkTime;
     }
@@ -49,9 +52,10 @@ public class CheckRecordDataInfo {
         return this;
     }
 
-    /** Get issueCounts
-     * 
-     * @return issueCounts */
+    /**
+     * Get issueCounts
+     * @return issueCounts
+     */
     public CheckRecordIssueCountsInfo getIssueCounts() {
         return issueCounts;
     }
@@ -88,7 +92,10 @@ public class CheckRecordDataInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

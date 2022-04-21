@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListApiVersionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,16 +21,24 @@ public class ListApiVersionsResponse extends SdkResponse {
 
     private String id;
 
-    /** API版本的状态。 取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。 */
+    /**
+     * API版本的状态。 取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum STABLE for value: "STABLE" */
+        /**
+         * Enum STABLE for value: "STABLE"
+         */
         public static final StatusEnum STABLE = new StatusEnum("STABLE");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +114,10 @@ public class ListApiVersionsResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本号。 取值：由高到低版本分别为v3，v2，v2.0。
-     * 
-     * @return id */
+    /**
+     * API版本号。 取值：由高到低版本分别为v3，v2，v2.0。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -120,9 +131,10 @@ public class ListApiVersionsResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本的状态。 取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。
-     * 
-     * @return status */
+    /**
+     * API版本的状态。 取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -159,7 +171,10 @@ public class ListApiVersionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

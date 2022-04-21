@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteTransferResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -58,9 +61,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -91,9 +95,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志流ID集合
-     * 
-     * @return logStreams */
+    /**
+     * 日志流ID集合
+     * @return logStreams
+     */
     public List<CreateTransferResponseBodyLogStreams> getLogStreams() {
         return logStreams;
     }
@@ -107,9 +112,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志转储ID
-     * 
-     * @return logTransferId */
+    /**
+     * 日志转储ID
+     * @return logTransferId
+     */
     public String getLogTransferId() {
         return logTransferId;
     }
@@ -133,9 +139,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return this;
     }
 
-    /** Get logTransferInfo
-     * 
-     * @return logTransferInfo */
+    /**
+     * Get logTransferInfo
+     * @return logTransferInfo
+     */
     public CreateTransferResponseBodyLogTransferInfo getLogTransferInfo() {
         return logTransferInfo;
     }
@@ -178,7 +185,10 @@ public class DeleteTransferResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

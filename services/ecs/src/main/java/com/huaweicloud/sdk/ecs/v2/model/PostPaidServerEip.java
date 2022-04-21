@@ -31,9 +31,10 @@ public class PostPaidServerEip {
         return this;
     }
 
-    /** 弹性IP地址类型。 详情请参见“[申请弹性公网IP](https://support.huaweicloud.com/api-eip/eip_api_0001.html)”章节的“publicip”字段说明。
-     * 
-     * @return iptype */
+    /**
+     * 弹性IP地址类型。  详情请参见“[申请弹性公网IP](https://support.huaweicloud.com/api-eip/eip_api_0001.html)”章节的“publicip”字段说明。
+     * @return iptype
+     */
     public String getIptype() {
         return iptype;
     }
@@ -56,9 +57,10 @@ public class PostPaidServerEip {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public PostPaidServerEipBandwidth getBandwidth() {
         return bandwidth;
     }
@@ -81,9 +83,10 @@ public class PostPaidServerEip {
         return this;
     }
 
-    /** Get extendparam
-     * 
-     * @return extendparam */
+    /**
+     * Get extendparam
+     * @return extendparam
+     */
     public PostPaidServerEipExtendParam getExtendparam() {
         return extendparam;
     }
@@ -122,7 +125,10 @@ public class PostPaidServerEip {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

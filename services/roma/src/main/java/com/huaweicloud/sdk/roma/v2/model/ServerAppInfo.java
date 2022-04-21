@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ServerAppInfo */
+/**
+ * ServerAppInfo
+ */
 public class ServerAppInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,22 +33,34 @@ public class ServerAppInfo {
 
     private String remark;
 
-    /** Gets or Sets roles */
+    /**
+     * Gets or Sets roles
+     */
     public static final class RolesEnum {
 
-        /** Enum READ for value: "read" */
+        /**
+         * Enum READ for value: "read"
+         */
         public static final RolesEnum READ = new RolesEnum("read");
 
-        /** Enum ACCESS for value: "access" */
+        /**
+         * Enum ACCESS for value: "access"
+         */
         public static final RolesEnum ACCESS = new RolesEnum("access");
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final RolesEnum DELETE = new RolesEnum("delete");
 
-        /** Enum MODIFY for value: "modify" */
+        /**
+         * Enum MODIFY for value: "modify"
+         */
         public static final RolesEnum MODIFY = new RolesEnum("modify");
 
-        /** Enum ADMIN for value: "admin" */
+        /**
+         * Enum ADMIN for value: "admin"
+         */
         public static final RolesEnum ADMIN = new RolesEnum("admin");
 
         private static final Map<String, RolesEnum> STATIC_FIELDS = createStaticFields();
@@ -159,9 +173,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return id */
+    /**
+     * 应用ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -175,9 +190,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -191,9 +207,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return remark */
+    /**
+     * 应用描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -223,10 +240,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 应用权限角色 - read：应用下资源只读权限，至少要存在此权限，包括API调试 - access：应用下资源的访问管理权限 - delete：应用下资源的删除权限 -
-     * modify：应用下资源的修改权限，包括API发布、下线 - admin：应用和应用下资源的权限 - 仅提供admin时，会自动应用其它所有权限 - 未提供read时会自动应用read权限
-     * 
-     * @return roles */
+    /**
+     * 应用权限角色 - read：应用下资源只读权限，至少要存在此权限，包括API调试 - access：应用下资源的访问管理权限 - delete：应用下资源的删除权限 - modify：应用下资源的修改权限，包括API发布、下线 - admin：应用和应用下资源的权限 - 仅提供admin时，会自动应用其它所有权限 - 未提供read时会自动应用read权限
+     * @return roles
+     */
     public List<RolesEnum> getRoles() {
         return roles;
     }
@@ -240,9 +257,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 创建UTC时间
-     * 
-     * @return createTime */
+    /**
+     * 创建UTC时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -256,9 +274,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 创建UTC时间
-     * 
-     * @return updateTime */
+    /**
+     * 创建UTC时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -281,9 +300,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** Get createdUser
-     * 
-     * @return createdUser */
+    /**
+     * Get createdUser
+     * @return createdUser
+     */
     public ServerAppInfoCreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -306,9 +326,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** Get lastUpdatedUser
-     * 
-     * @return lastUpdatedUser */
+    /**
+     * Get lastUpdatedUser
+     * @return lastUpdatedUser
+     */
     public ServerAppInfoLastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -322,9 +343,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 是否是应用拥有者
-     * 
-     * @return owner */
+    /**
+     * 是否是应用拥有者
+     * @return owner
+     */
     public Boolean getOwner() {
         return owner;
     }
@@ -338,9 +360,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
-     * 
-     * @return key */
+    /**
+     * 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -354,9 +377,10 @@ public class ServerAppInfo {
         return this;
     }
 
-    /** 是否收藏应用，收藏的应用会在列表里优先显示
-     * 
-     * @return favorite */
+    /**
+     * 是否收藏应用，收藏的应用会在列表里优先显示
+     * @return favorite
+     */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -409,7 +433,10 @@ public class ServerAppInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

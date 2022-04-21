@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群操作进度，任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。示例如
- * \&quot;action_progress\&quot;:{\&quot;SNAPSHOTTING\&quot;:\&quot;16%\&quot;} */
+/**
+ * 集群操作进度，任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。示例如 \&quot;action_progress\&quot;:{\&quot;SNAPSHOTTING\&quot;:\&quot;16%\&quot;}
+ */
 public class ActionProgress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +40,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 创建集群进度，例如：29%
-     * 
-     * @return creating */
+    /**
+     * 创建集群进度，例如：29%
+     * @return creating
+     */
     public String getCreating() {
         return creating;
     }
@@ -55,9 +57,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 扩容集群进度，例如：29%
-     * 
-     * @return growing */
+    /**
+     * 扩容集群进度，例如：29%
+     * @return growing
+     */
     public String getGrowing() {
         return growing;
     }
@@ -71,9 +74,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 恢复集群进度，例如：29%
-     * 
-     * @return restoring */
+    /**
+     * 恢复集群进度，例如：29%
+     * @return restoring
+     */
     public String getRestoring() {
         return restoring;
     }
@@ -87,9 +91,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 集群快照进度，例如：29%
-     * 
-     * @return snapshotting */
+    /**
+     * 集群快照进度，例如：29%
+     * @return snapshotting
+     */
     public String getSnapshotting() {
         return snapshotting;
     }
@@ -103,9 +108,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 修复集群进度，例如：29%
-     * 
-     * @return repairing */
+    /**
+     * 修复集群进度，例如：29%
+     * @return repairing
+     */
     public String getRepairing() {
         return repairing;
     }
@@ -148,7 +154,10 @@ public class ActionProgress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAutoCreatePolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照保留的天数。
-     * 
-     * @return keepday */
+    /**
+     * 快照保留的天数。
+     * @return keepday
+     */
     public Integer getKeepday() {
         return keepday;
     }
@@ -65,9 +68,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 每天快照创建时刻。
-     * 
-     * @return period */
+    /**
+     * 每天快照创建时刻。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -81,9 +85,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照命名前缀。
-     * 
-     * @return prefix */
+    /**
+     * 快照命名前缀。
+     * @return prefix
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -97,9 +102,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照存放的OBS桶。
-     * 
-     * @return bucket */
+    /**
+     * 快照存放的OBS桶。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -113,9 +119,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照在OBS桶中的存放路径。
-     * 
-     * @return basePath */
+    /**
+     * 快照在OBS桶中的存放路径。
+     * @return basePath
+     */
     public String getBasePath() {
         return basePath;
     }
@@ -129,9 +136,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问OBS桶用到的委托。
-     * 
-     * @return agency */
+    /**
+     * 访问OBS桶用到的委托。
+     * @return agency
+     */
     public String getAgency() {
         return agency;
     }
@@ -145,9 +153,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启自动创建快照策略。
-     * 
-     * @return enable */
+    /**
+     * 是否开启自动创建快照策略。
+     * @return enable
+     */
     public String getEnable() {
         return enable;
     }
@@ -194,7 +203,10 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

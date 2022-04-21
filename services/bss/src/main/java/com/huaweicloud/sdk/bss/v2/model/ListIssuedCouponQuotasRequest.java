@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListIssuedCouponQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
-     * 
-     * @return quotaId */
+    /**
+     * 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -54,9 +57,10 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -70,9 +74,10 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
-     * 
-     * @return parentQuotaId */
+    /**
+     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
+     * @return parentQuotaId
+     */
     public String getParentQuotaId() {
         return parentQuotaId;
     }
@@ -86,11 +91,12 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -104,9 +110,12 @@ public class ListIssuedCouponQuotasRequest {
         return this;
     }
 
-    /** 每次查询记录数。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询记录数。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -149,7 +158,10 @@ public class ListIssuedCouponQuotasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

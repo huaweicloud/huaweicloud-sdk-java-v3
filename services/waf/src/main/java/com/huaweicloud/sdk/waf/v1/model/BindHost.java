@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 绑定的域名信息 */
+/**
+ * 绑定的域名信息
+ */
 public class BindHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class BindHost {
         return this;
     }
 
-    /** 域名ID
-     * 
-     * @return id */
+    /**
+     * 域名ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class BindHost {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return hostname */
+    /**
+     * 域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -65,9 +69,10 @@ public class BindHost {
         return this;
     }
 
-    /** 域名对应模式：cloud（云模式）/premium（独享模式）
-     * 
-     * @return wafType */
+    /**
+     * 域名对应模式：cloud（云模式）/premium（独享模式）
+     * @return wafType
+     */
     public String getWafType() {
         return wafType;
     }
@@ -81,9 +86,10 @@ public class BindHost {
         return this;
     }
 
-    /** 仅独享模式涉及特殊域名模式
-     * 
-     * @return mode */
+    /**
+     * 仅独享模式涉及特殊域名模式
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -122,7 +128,10 @@ public class BindHost {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

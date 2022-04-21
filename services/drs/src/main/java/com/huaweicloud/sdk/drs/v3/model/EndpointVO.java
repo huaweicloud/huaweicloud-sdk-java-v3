@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 数据库信息 */
+/**
+ * 数据库信息
+ */
 public class EndpointVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,13 +31,19 @@ public class EndpointVO {
 
     private String instanceName;
 
-    /** 数据库类型 */
+    /**
+     * 数据库类型
+     */
     public static final class DbTypeEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final DbTypeEnum MYSQL = new DbTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final DbTypeEnum MONGODB = new DbTypeEnum("mongodb");
 
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -220,16 +228,24 @@ public class EndpointVO {
 
     private String dbVersion;
 
-    /** mongoHa模式 */
+    /**
+     * mongoHa模式
+     */
     public static final class MongoHaModeEnum {
 
-        /** Enum SHARDING_ for value: "Sharding 集群" */
+        /**
+         * Enum SHARDING_ for value: "Sharding 集群"
+         */
         public static final MongoHaModeEnum SHARDING_ = new MongoHaModeEnum("Sharding 集群");
 
-        /** Enum REPLICASET_ for value: "ReplicaSet 副本集" */
+        /**
+         * Enum REPLICASET_ for value: "ReplicaSet 副本集"
+         */
         public static final MongoHaModeEnum REPLICASET_ = new MongoHaModeEnum("ReplicaSet 副本集");
 
-        /** Enum REPLICASINGLE_ for value: "ReplicaSingle 单节点" */
+        /**
+         * Enum REPLICASINGLE_ for value: "ReplicaSingle 单节点"
+         */
         public static final MongoHaModeEnum REPLICASINGLE_ = new MongoHaModeEnum("ReplicaSingle 单节点");
 
         private static final Map<String, MongoHaModeEnum> STATIC_FIELDS = createStaticFields();
@@ -305,43 +321,67 @@ public class EndpointVO {
 
     private String projectId;
 
-    /** 集群模式 */
+    /**
+     * 集群模式
+     */
     public static final class ClusterModeEnum {
 
-        /** Enum SINGLE_RDS for value: "Single 单节点RDS" */
+        /**
+         * Enum SINGLE_RDS for value: "Single 单节点RDS"
+         */
         public static final ClusterModeEnum SINGLE_RDS = new ClusterModeEnum("Single 单节点RDS");
 
-        /** Enum HA_RDS for value: "Ha 主备RDS" */
+        /**
+         * Enum HA_RDS for value: "Ha 主备RDS"
+         */
         public static final ClusterModeEnum HA_RDS = new ClusterModeEnum("Ha 主备RDS");
 
-        /** Enum GR_RDS for value: "GR 金融版RDS" */
+        /**
+         * Enum GR_RDS for value: "GR 金融版RDS"
+         */
         public static final ClusterModeEnum GR_RDS = new ClusterModeEnum("GR 金融版RDS");
 
-        /** Enum SHARDING_MONGODB_DDM_ for value: "Sharding mongodb 集群或DDM的模式，均默认为分片" */
+        /**
+         * Enum SHARDING_MONGODB_DDM_ for value: "Sharding mongodb 集群或DDM的模式，均默认为分片"
+         */
         public static final ClusterModeEnum SHARDING_MONGODB_DDM_ =
             new ClusterModeEnum("Sharding mongodb 集群或DDM的模式，均默认为分片");
 
-        /** Enum REPLICASET_MONGODB_ for value: "ReplicaSet mongodb 副本集" */
+        /**
+         * Enum REPLICASET_MONGODB_ for value: "ReplicaSet mongodb 副本集"
+         */
         public static final ClusterModeEnum REPLICASET_MONGODB_ = new ClusterModeEnum("ReplicaSet mongodb 副本集");
 
-        /** Enum REPLICA_RDS_ for value: "Replica RDS只读副本" */
+        /**
+         * Enum REPLICA_RDS_ for value: "Replica RDS只读副本"
+         */
         public static final ClusterModeEnum REPLICA_RDS_ = new ClusterModeEnum("Replica RDS只读副本");
 
-        /** Enum REPLICASINGLE_MONGODB_ for value: "ReplicaSingle mongodb 单节点" */
+        /**
+         * Enum REPLICASINGLE_MONGODB_ for value: "ReplicaSingle mongodb 单节点"
+         */
         public static final ClusterModeEnum REPLICASINGLE_MONGODB_ = new ClusterModeEnum("ReplicaSingle mongodb 单节点");
 
-        /** Enum CLUSTER_ for value: "Cluster 集群" */
+        /**
+         * Enum CLUSTER_ for value: "Cluster 集群"
+         */
         public static final ClusterModeEnum CLUSTER_ = new ClusterModeEnum("Cluster 集群");
 
-        /** Enum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ for value: "Independent gaussdbv5 independent模式" */
+        /**
+         * Enum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ for value: "Independent gaussdbv5 independent模式"
+         */
         public static final ClusterModeEnum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ =
             new ClusterModeEnum("Independent gaussdbv5 independent模式");
 
-        /** Enum COMBINED_GAUSSDBV5_COMBINED_ for value: "Combined gaussdbv5 Combined模式" */
+        /**
+         * Enum COMBINED_GAUSSDBV5_COMBINED_ for value: "Combined gaussdbv5 Combined模式"
+         */
         public static final ClusterModeEnum COMBINED_GAUSSDBV5_COMBINED_ =
             new ClusterModeEnum("Combined gaussdbv5 Combined模式");
 
-        /** Enum DISTRIBUTED_TAURUS for value: "Distributed 分布式taurus" */
+        /**
+         * Enum DISTRIBUTED_TAURUS for value: "Distributed 分布式taurus"
+         */
         public static final ClusterModeEnum DISTRIBUTED_TAURUS = new ClusterModeEnum("Distributed 分布式taurus");
 
         private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
@@ -455,9 +495,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库id。
-     * 
-     * @return id */
+    /**
+     * 数据库id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -471,9 +512,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 对象id。
-     * 
-     * @return objId */
+    /**
+     * 对象id。
+     * @return objId
+     */
     public String getObjId() {
         return objId;
     }
@@ -487,9 +529,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** RDS实例名称。
-     * 
-     * @return instanceName */
+    /**
+     * RDS实例名称。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -503,9 +546,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库类型
-     * 
-     * @return dbType */
+    /**
+     * 数据库类型
+     * @return dbType
+     */
     public DbTypeEnum getDbType() {
         return dbType;
     }
@@ -519,9 +563,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库用户。
-     * 
-     * @return dbUser */
+    /**
+     * 数据库用户。
+     * @return dbUser
+     */
     public String getDbUser() {
         return dbUser;
     }
@@ -535,9 +580,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库密码。
-     * 
-     * @return dbPassword */
+    /**
+     * 数据库密码。
+     * @return dbPassword
+     */
     public String getDbPassword() {
         return dbPassword;
     }
@@ -551,9 +597,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 管理IP。
-     * 
-     * @return manageIp */
+    /**
+     * 管理IP。
+     * @return manageIp
+     */
     public String getManageIp() {
         return manageIp;
     }
@@ -567,9 +614,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 流量IP。
-     * 
-     * @return trafficIp */
+    /**
+     * 流量IP。
+     * @return trafficIp
+     */
     public String getTrafficIp() {
         return trafficIp;
     }
@@ -583,9 +631,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库端口。
-     * 
-     * @return dbPort */
+    /**
+     * 数据库端口。
+     * @return dbPort
+     */
     public Integer getDbPort() {
         return dbPort;
     }
@@ -599,9 +648,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** RDS实例所在region。
-     * 
-     * @return region */
+    /**
+     * RDS实例所在region。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -615,9 +665,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 创建日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return createdAt */
+    /**
+     * 创建日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -631,9 +682,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 修改日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return updatedAt */
+    /**
+     * 修改日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -647,9 +699,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 迁移实例所在的私有IP。
-     * 
-     * @return ip */
+    /**
+     * 迁移实例所在的私有IP。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -663,9 +716,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 迁移实例所在的公网IP。
-     * 
-     * @return publicIp */
+    /**
+     * 迁移实例所在的公网IP。
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -679,9 +733,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 可用区azCode。
-     * 
-     * @return azCode */
+    /**
+     * 可用区azCode。
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -695,9 +750,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 源库所在的安全组id。
-     * 
-     * @return securityGroupId */
+    /**
+     * 源库所在的安全组id。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -711,9 +767,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 源库所在的子网id。
-     * 
-     * @return subnetId */
+    /**
+     * 源库所在的子网id。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -727,9 +784,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 源库所在的虚拟私有云id。
-     * 
-     * @return vpcId */
+    /**
+     * 源库所在的虚拟私有云id。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -743,9 +801,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 迁移实例的磁盘大小。
-     * 
-     * @return volumeSize */
+    /**
+     * 迁移实例的磁盘大小。
+     * @return volumeSize
+     */
     public Long getVolumeSize() {
         return volumeSize;
     }
@@ -759,9 +818,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 全量迁移用户密码，密文。
-     * 
-     * @return fullTransUserPwd */
+    /**
+     * 全量迁移用户密码，密文。
+     * @return fullTransUserPwd
+     */
     public String getFullTransUserPwd() {
         return fullTransUserPwd;
     }
@@ -775,9 +835,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 增量迁移用户密码，密文。
-     * 
-     * @return incrementTransUserPwd */
+    /**
+     * 增量迁移用户密码，密文。
+     * @return incrementTransUserPwd
+     */
     public String getIncrementTransUserPwd() {
         return incrementTransUserPwd;
     }
@@ -791,9 +852,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 是否SSL安全连接。
-     * 
-     * @return sslLink */
+    /**
+     * 是否SSL安全连接。
+     * @return sslLink
+     */
     public Boolean getSslLink() {
         return sslLink;
     }
@@ -807,9 +869,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** SSL证书内容。
-     * 
-     * @return sslCertKey */
+    /**
+     * SSL证书内容。
+     * @return sslCertKey
+     */
     public String getSslCertKey() {
         return sslCertKey;
     }
@@ -823,9 +886,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** SSL证书名字。
-     * 
-     * @return sslCertName */
+    /**
+     * SSL证书名字。
+     * @return sslCertName
+     */
     public String getSslCertName() {
         return sslCertName;
     }
@@ -839,9 +903,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** SSL证书内容checksum值。
-     * 
-     * @return sslCertCheckSum */
+    /**
+     * SSL证书内容checksum值。
+     * @return sslCertCheckSum
+     */
     public String getSslCertCheckSum() {
         return sslCertCheckSum;
     }
@@ -855,9 +920,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** SSL证书密码，密文。
-     * 
-     * @return sslCertPassword */
+    /**
+     * SSL证书密码，密文。
+     * @return sslCertPassword
+     */
     public String getSslCertPassword() {
         return sslCertPassword;
     }
@@ -871,9 +937,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 数据库版本。
-     * 
-     * @return dbVersion */
+    /**
+     * 数据库版本。
+     * @return dbVersion
+     */
     public String getDbVersion() {
         return dbVersion;
     }
@@ -887,9 +954,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** mongoHa模式
-     * 
-     * @return mongoHaMode */
+    /**
+     * mongoHa模式
+     * @return mongoHaMode
+     */
     public MongoHaModeEnum getMongoHaMode() {
         return mongoHaMode;
     }
@@ -903,9 +971,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** RDS实例projectId。
-     * 
-     * @return projectId */
+    /**
+     * RDS实例projectId。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -919,9 +988,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 集群模式
-     * 
-     * @return clusterMode */
+    /**
+     * 集群模式
+     * @return clusterMode
+     */
     public ClusterModeEnum getClusterMode() {
         return clusterMode;
     }
@@ -935,9 +1005,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** RDS实例id。
-     * 
-     * @return instanceId */
+    /**
+     * RDS实例id。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -951,9 +1022,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** Oracle服务名serviceName。
-     * 
-     * @return dbName */
+    /**
+     * Oracle服务名serviceName。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -967,9 +1039,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** mrskafka topic名称。
-     * 
-     * @return topic */
+    /**
+     * mrskafka topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -983,9 +1056,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** MRSkafka是否开启kerberos认证 - 0非安全认证 - 1安全认证
-     * 
-     * @return safeMode */
+    /**
+     * MRSkafka是否开启kerberos认证 - 0非安全认证 - 1安全认证
+     * @return safeMode
+     */
     public Integer getSafeMode() {
         return safeMode;
     }
@@ -1008,9 +1082,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** Get kerberosVo
-     * 
-     * @return kerberosVo */
+    /**
+     * Get kerberosVo
+     * @return kerberosVo
+     */
     public KerberosVO getKerberosVo() {
         return kerberosVo;
     }
@@ -1024,9 +1099,10 @@ public class EndpointVO {
         return this;
     }
 
-    /** 多写数据库Id。
-     * 
-     * @return multiWriteDbId */
+    /**
+     * 多写数据库Id。
+     * @return multiWriteDbId
+     */
     public String getMultiWriteDbId() {
         return multiWriteDbId;
     }
@@ -1157,7 +1233,10 @@ public class EndpointVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

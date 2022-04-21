@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ThrottleSpecialUpdate */
+/**
+ * ThrottleSpecialUpdate
+ */
 public class ThrottleSpecialUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ThrottleSpecialUpdate {
         return this;
     }
 
-    /** 流控时间内特殊对象能够访问API的最大次数限制
-     * 
-     * @return callLimits */
+    /**
+     * 流控时间内特殊对象能够访问API的最大次数限制
+     * @return callLimits
+     */
     public Long getCallLimits() {
         return callLimits;
     }
@@ -55,7 +58,10 @@ public class ThrottleSpecialUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

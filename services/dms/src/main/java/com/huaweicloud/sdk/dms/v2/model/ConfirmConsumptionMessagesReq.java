@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ConfirmConsumptionMessagesReq */
+/**
+ * ConfirmConsumptionMessagesReq
+ */
 public class ConfirmConsumptionMessagesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ConfirmConsumptionMessagesReq {
         return this;
     }
 
-    /** 确认消息数组。
-     * 
-     * @return message */
+    /**
+     * 确认消息数组。
+     * @return message
+     */
     public List<ConfirmMessageEntity> getMessage() {
         return message;
     }
@@ -74,7 +77,10 @@ public class ConfirmConsumptionMessagesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

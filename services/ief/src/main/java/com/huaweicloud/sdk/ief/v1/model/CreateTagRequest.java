@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class CreateTagRequest {
         return this;
     }
 
-    /** 资源id
-     * 
-     * @return resourceId */
+    /**
+     * 资源id
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -50,9 +53,10 @@ public class CreateTagRequest {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -66,9 +70,10 @@ public class CreateTagRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -91,9 +96,10 @@ public class CreateTagRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public AddTag getBody() {
         return body;
     }
@@ -134,7 +140,10 @@ public class CreateTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Referer */
+/**
+ * Referer
+ */
 public class Referer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Referer {
         return this;
     }
 
-    /** Referer类型。取值：0代表不设置Referer过滤；1代表黑名单；2代表白名单。默认取值为0。
-     * 
-     * @return refererType */
+    /**
+     * Referer类型。取值：0代表不设置Referer过滤；1代表黑名单；2代表白名单。默认取值为0。
+     * @return refererType
+     */
     public Integer getRefererType() {
         return refererType;
     }
@@ -44,9 +47,10 @@ public class Referer {
         return this;
     }
 
-    /** 请输入域名或IP地址，以“;”进行分割，域名、IP地址可以混合输入，支持泛域名添加。输入的域名、IP地址总数不超过100个。当设置防盗链时，此项必填。
-     * 
-     * @return refererList */
+    /**
+     * 请输入域名或IP地址，以“;”进行分割，域名、IP地址可以混合输入，支持泛域名添加。输入的域名、IP地址总数不超过100个。当设置防盗链时，此项必填。
+     * @return refererList
+     */
     public String getRefererList() {
         return refererList;
     }
@@ -60,9 +64,10 @@ public class Referer {
         return this;
     }
 
-    /** 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认值false。
-     * 
-     * @return includeEmpty */
+    /**
+     * 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认值false。
+     * @return includeEmpty
+     */
     public Boolean getIncludeEmpty() {
         return includeEmpty;
     }
@@ -101,7 +106,10 @@ public class Referer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

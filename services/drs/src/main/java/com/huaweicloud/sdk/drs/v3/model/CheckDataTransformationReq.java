@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 校验数据加工规则请求体 */
+/**
+ * 校验数据加工规则请求体
+ */
 public class CheckDataTransformationReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CheckDataTransformationReq {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -68,9 +71,10 @@ public class CheckDataTransformationReq {
         return this;
     }
 
-    /** 对象信息
-     * 
-     * @return objectInfo */
+    /**
+     * 对象信息
+     * @return objectInfo
+     */
     public List<DatabaseObjectVO> getObjectInfo() {
         return objectInfo;
     }
@@ -93,9 +97,10 @@ public class CheckDataTransformationReq {
         return this;
     }
 
-    /** Get transformationInfo
-     * 
-     * @return transformationInfo */
+    /**
+     * Get transformationInfo
+     * @return transformationInfo
+     */
     public TransformationInfo getTransformationInfo() {
         return transformationInfo;
     }
@@ -119,9 +124,10 @@ public class CheckDataTransformationReq {
         return this;
     }
 
-    /** Get configTransformation
-     * 
-     * @return configTransformation */
+    /**
+     * Get configTransformation
+     * @return configTransformation
+     */
     public ConfigTransformationVo getConfigTransformation() {
         return configTransformation;
     }
@@ -162,7 +168,10 @@ public class CheckDataTransformationReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

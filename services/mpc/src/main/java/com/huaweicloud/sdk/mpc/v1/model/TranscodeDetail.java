@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TranscodeDetail */
+/**
+ * TranscodeDetail
+ */
 public class TranscodeDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class TranscodeDetail {
         return this;
     }
 
-    /** 一进多出情况下部分转码失败的情况。
-     * 
-     * @return multitaskInfo */
+    /**
+     * 一进多出情况下部分转码失败的情况。 
+     * @return multitaskInfo
+     */
     public List<MultiTaskInfo> getMultitaskInfo() {
         return multitaskInfo;
     }
@@ -67,9 +70,10 @@ public class TranscodeDetail {
         return this;
     }
 
-    /** Get inputFile
-     * 
-     * @return inputFile */
+    /**
+     * Get inputFile
+     * @return inputFile
+     */
     public SourceInfo getInputFile() {
         return inputFile;
     }
@@ -106,7 +110,10 @@ public class TranscodeDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

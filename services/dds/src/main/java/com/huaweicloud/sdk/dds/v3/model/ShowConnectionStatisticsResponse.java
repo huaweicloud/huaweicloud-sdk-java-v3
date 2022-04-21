@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowConnectionStatisticsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总连接数，包括内部连接与外部连接。
-     * 
-     * @return totalConnections */
+    /**
+     * 总连接数，包括内部连接与外部连接。
+     * @return totalConnections
+     */
     public Integer getTotalConnections() {
         return totalConnections;
     }
@@ -58,9 +61,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 内部总连接数。
-     * 
-     * @return totalInnerConnections */
+    /**
+     * 内部总连接数。
+     * @return totalInnerConnections
+     */
     public Integer getTotalInnerConnections() {
         return totalInnerConnections;
     }
@@ -74,9 +78,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 外部总连接数。
-     * 
-     * @return totalOuterConnections */
+    /**
+     * 外部总连接数。
+     * @return totalOuterConnections
+     */
     public Integer getTotalOuterConnections() {
         return totalOuterConnections;
     }
@@ -107,9 +112,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 内部连接统计信息数组，最大记录数为200条。
-     * 
-     * @return innerConnections */
+    /**
+     * 内部连接统计信息数组，最大记录数为200条。
+     * @return innerConnections
+     */
     public List<QueryConnectionsResponse> getInnerConnections() {
         return innerConnections;
     }
@@ -140,9 +146,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 外部连接统计信息数组，最大记录数为200条。
-     * 
-     * @return outerConnections */
+    /**
+     * 外部连接统计信息数组，最大记录数为200条。
+     * @return outerConnections
+     */
     public List<QueryConnectionsResponse> getOuterConnections() {
         return outerConnections;
     }
@@ -186,7 +193,10 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

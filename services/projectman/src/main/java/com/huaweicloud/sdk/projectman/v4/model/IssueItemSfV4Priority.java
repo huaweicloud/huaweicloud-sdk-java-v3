@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 工作项优先级 */
+/**
+ * 工作项优先级
+ */
 public class IssueItemSfV4Priority {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class IssueItemSfV4Priority {
         return this;
     }
 
-    /** 优先级id
-     * 
-     * @return id */
+    /**
+     * 优先级id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class IssueItemSfV4Priority {
         return this;
     }
 
-    /** 优先级
-     * 
-     * @return name */
+    /**
+     * 优先级
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +82,10 @@ public class IssueItemSfV4Priority {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

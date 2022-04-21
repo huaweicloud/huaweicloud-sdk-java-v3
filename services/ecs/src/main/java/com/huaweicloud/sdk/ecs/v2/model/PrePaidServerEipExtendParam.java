@@ -15,14 +15,19 @@ import java.util.Objects;
  */
 public class PrePaidServerEipExtendParam {
 
-    /** 公网IP的计费模式。 取值范围： - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费； > 说明： > >
-     * 如果bandwidth对象中share_type是WHOLE且id有值，弹性IP只能创建为按需付费的，故该参数传参“prePaid”无效。 */
+    /**
+     * 公网IP的计费模式。  取值范围：  - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费；  > 说明： >  > 如果bandwidth对象中share_type是WHOLE且id有值，弹性IP只能创建为按需付费的，故该参数传参“prePaid”无效。
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum PREPAID for value: "prePaid" */
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
-        /** Enum POSTPAID for value: "postPaid" */
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
         public static final ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -97,10 +102,10 @@ public class PrePaidServerEipExtendParam {
         return this;
     }
 
-    /** 公网IP的计费模式。 取值范围： - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费； > 说明： > >
-     * 如果bandwidth对象中share_type是WHOLE且id有值，弹性IP只能创建为按需付费的，故该参数传参“prePaid”无效。
-     * 
-     * @return chargingMode */
+    /**
+     * 公网IP的计费模式。  取值范围：  - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费；  > 说明： >  > 如果bandwidth对象中share_type是WHOLE且id有值，弹性IP只能创建为按需付费的，故该参数传参“prePaid”无效。
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -135,7 +140,10 @@ public class PrePaidServerEipExtendParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

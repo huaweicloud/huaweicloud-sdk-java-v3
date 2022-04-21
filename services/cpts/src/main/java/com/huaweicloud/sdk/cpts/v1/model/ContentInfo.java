@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ContentInfo */
+/**
+ * ContentInfo
+ */
 public class ContentInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,12 @@ public class ContentInfo {
         return this;
     }
 
-    /** body_type minimum: 0 maximum: 2147483647
-     * 
-     * @return bodyType */
+    /**
+     * body_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return bodyType
+     */
     public Integer getBodyType() {
         return bodyType;
     }
@@ -107,9 +112,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** bodys
-     * 
-     * @return bodys */
+    /**
+     * bodys
+     * @return bodys
+     */
     public String getBodys() {
         return bodys;
     }
@@ -123,9 +129,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** check_end_length
-     * 
-     * @return checkEndLength */
+    /**
+     * check_end_length
+     * @return checkEndLength
+     */
     public String getCheckEndLength() {
         return checkEndLength;
     }
@@ -139,9 +146,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** check_end_str
-     * 
-     * @return checkEndStr */
+    /**
+     * check_end_str
+     * @return checkEndStr
+     */
     public String getCheckEndStr() {
         return checkEndStr;
     }
@@ -155,9 +163,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** check_end_type
-     * 
-     * @return checkEndType */
+    /**
+     * check_end_type
+     * @return checkEndType
+     */
     public String getCheckEndType() {
         return checkEndType;
     }
@@ -171,9 +180,12 @@ public class ContentInfo {
         return this;
     }
 
-    /** connect_timeout minimum: 0 maximum: 2147483647
-     * 
-     * @return connectTimeout */
+    /**
+     * connect_timeout
+     * minimum: 0
+     * maximum: 2147483647
+     * @return connectTimeout
+     */
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
@@ -187,9 +199,12 @@ public class ContentInfo {
         return this;
     }
 
-    /** connect_type minimum: 0 maximum: 2147483647
-     * 
-     * @return connectType */
+    /**
+     * connect_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return connectType
+     */
     public Integer getConnectType() {
         return connectType;
     }
@@ -219,9 +234,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** headers
-     * 
-     * @return headers */
+    /**
+     * headers
+     * @return headers
+     */
     public List<ContentHeader> getHeaders() {
         return headers;
     }
@@ -235,9 +251,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** http_version
-     * 
-     * @return httpVersion */
+    /**
+     * http_version
+     * @return httpVersion
+     */
     public String getHttpVersion() {
         return httpVersion;
     }
@@ -251,9 +268,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** method
-     * 
-     * @return method */
+    /**
+     * method
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -267,9 +285,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -283,9 +302,12 @@ public class ContentInfo {
         return this;
     }
 
-    /** protocol_type minimum: 0 maximum: 2147483647
-     * 
-     * @return protocolType */
+    /**
+     * protocol_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return protocolType
+     */
     public Integer getProtocolType() {
         return protocolType;
     }
@@ -299,9 +321,12 @@ public class ContentInfo {
         return this;
     }
 
-    /** return_timeout minimum: 0 maximum: 2147483647
-     * 
-     * @return returnTimeout */
+    /**
+     * return_timeout
+     * minimum: 0
+     * maximum: 2147483647
+     * @return returnTimeout
+     */
     public Integer getReturnTimeout() {
         return returnTimeout;
     }
@@ -315,9 +340,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** return_timeout_param
-     * 
-     * @return returnTimeoutParam */
+    /**
+     * return_timeout_param
+     * @return returnTimeoutParam
+     */
     public String getReturnTimeoutParam() {
         return returnTimeoutParam;
     }
@@ -331,9 +357,10 @@ public class ContentInfo {
         return this;
     }
 
-    /** url
-     * 
-     * @return url */
+    /**
+     * url
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -408,7 +435,10 @@ public class ContentInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

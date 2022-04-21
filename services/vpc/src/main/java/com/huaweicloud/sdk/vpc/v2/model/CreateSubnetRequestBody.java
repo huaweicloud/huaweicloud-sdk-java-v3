@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建子网对象 */
+/**
+ * 创建子网对象
+ */
 public class CreateSubnetRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateSubnetRequestBody {
         return this;
     }
 
-    /** Get subnet
-     * 
-     * @return subnet */
+    /**
+     * Get subnet
+     * @return subnet
+     */
     public CreateSubnetOption getSubnet() {
         return subnet;
     }
@@ -65,7 +68,10 @@ public class CreateSubnetRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

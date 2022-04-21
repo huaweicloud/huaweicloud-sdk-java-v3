@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议与会统计数据的单个时间点数据。 */
+/**
+ * 会议与会统计数据的单个时间点数据。
+ */
 public class StatisticParticipateDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 日期/月份。
-     * 
-     * @return time */
+    /**
+     * 日期/月份。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -99,9 +102,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会用户名称。 category = user_participate_info时有效。
-     * 
-     * @return confUserName */
+    /**
+     * 与会用户名称。 category = user_participate_info时有效。
+     * @return confUserName
+     */
     public String getConfUserName() {
         return confUserName;
     }
@@ -115,9 +119,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会用户账户。 category = user_participate_info时有效。
-     * 
-     * @return confUserAccount */
+    /**
+     * 与会用户账户。 category = user_participate_info时有效。
+     * @return confUserAccount
+     */
     public String getConfUserAccount() {
         return confUserAccount;
     }
@@ -131,9 +136,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会用户所属部门。 category = user_participate_info时有效。
-     * 
-     * @return confUserDeptName */
+    /**
+     * 与会用户所属部门。 category = user_participate_info时有效。
+     * @return confUserDeptName
+     */
     public String getConfUserDeptName() {
         return confUserDeptName;
     }
@@ -147,9 +153,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 用户与会数。 category = user_participate_info时有效。
-     * 
-     * @return confUserCount */
+    /**
+     * 用户与会数。 category = user_participate_info时有效。
+     * @return confUserCount
+     */
     public String getConfUserCount() {
         return confUserCount;
     }
@@ -163,9 +170,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 用户与会时长(秒)。 category = user_participate_info时有效。
-     * 
-     * @return confUserDuration */
+    /**
+     * 用户与会时长(秒)。 category = user_participate_info时有效。
+     * @return confUserDuration
+     */
     public String getConfUserDuration() {
         return confUserDuration;
     }
@@ -179,9 +187,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会硬件终端名称。 category = hard_terminal_participate_info时有效。
-     * 
-     * @return confHardTerminalName */
+    /**
+     * 与会硬件终端名称。 category = hard_terminal_participate_info时有效。
+     * @return confHardTerminalName
+     */
     public String getConfHardTerminalName() {
         return confHardTerminalName;
     }
@@ -195,9 +204,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会硬件终端型号。 category = hard_terminal_participate_info时有效。
-     * 
-     * @return confHardTerminalModel */
+    /**
+     * 与会硬件终端型号。 category = hard_terminal_participate_info时有效。
+     * @return confHardTerminalModel
+     */
     public String getConfHardTerminalModel() {
         return confHardTerminalModel;
     }
@@ -211,9 +221,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会硬件终端的用户ID。 category = hard_terminal_participate_info时有效。
-     * 
-     * @return confHardTerminalUserId */
+    /**
+     * 与会硬件终端的用户ID。 category = hard_terminal_participate_info时有效。
+     * @return confHardTerminalUserId
+     */
     public String getConfHardTerminalUserId() {
         return confHardTerminalUserId;
     }
@@ -227,9 +238,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 硬件终端与会数。 category = hard_terminal_participate_info时有效。
-     * 
-     * @return confHardTerminalCount */
+    /**
+     * 硬件终端与会数。 category = hard_terminal_participate_info时有效。
+     * @return confHardTerminalCount
+     */
     public String getConfHardTerminalCount() {
         return confHardTerminalCount;
     }
@@ -243,9 +255,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 硬件终端与会时长(秒)。 category = hard_terminal_participate_info时有效。
-     * 
-     * @return confHardTerminalDuration */
+    /**
+     * 硬件终端与会时长(秒)。 category = hard_terminal_participate_info时有效。
+     * @return confHardTerminalDuration
+     */
     public String getConfHardTerminalDuration() {
         return confHardTerminalDuration;
     }
@@ -259,9 +272,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会设备类型。 category = participant_type_info时有效。
-     * 
-     * @return deviceType */
+    /**
+     * 与会设备类型。 category = participant_type_info时有效。
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -275,9 +289,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 与会设备版本。 category = participant_type_info时有效。
-     * 
-     * @return deviceVersion */
+    /**
+     * 与会设备版本。 category = participant_type_info时有效。
+     * @return deviceVersion
+     */
     public String getDeviceVersion() {
         return deviceVersion;
     }
@@ -291,9 +306,10 @@ public class StatisticParticipateDataItem {
         return this;
     }
 
-    /** 设备与会数。 category = participant_type_info时有效。
-     * 
-     * @return deviceAttendanceCount */
+    /**
+     * 设备与会数。 category = participant_type_info时有效。
+     * @return deviceAttendanceCount
+     */
     public String getDeviceAttendanceCount() {
         return deviceAttendanceCount;
     }
@@ -367,7 +383,10 @@ public class StatisticParticipateDataItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

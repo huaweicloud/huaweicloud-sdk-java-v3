@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ExportCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 私钥内容。
-     * 
-     * @return privateKey */
+    /**
+     * 私钥内容。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -45,9 +48,10 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书内容。
-     * 
-     * @return certificate */
+    /**
+     * 证书内容。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -61,9 +65,10 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书链内容。
-     * 
-     * @return certificateChain */
+    /**
+     * 证书链内容。
+     * @return certificateChain
+     */
     public String getCertificateChain() {
         return certificateChain;
     }
@@ -102,7 +107,10 @@ public class ExportCertificateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

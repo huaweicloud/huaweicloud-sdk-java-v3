@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProductCategoriesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,12 @@ public class ListProductCategoriesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数 minimum: 0 maximum: 65535
-     * 
-     * @return totalCount */
+    /**
+     * 总数
+     * minimum: 0
+     * maximum: 65535
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -62,9 +67,10 @@ public class ListProductCategoriesResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品类型列表
-     * 
-     * @return incidentProductCategoryList */
+    /**
+     * 产品类型列表
+     * @return incidentProductCategoryList
+     */
     public List<IncidentProductCategoryV2> getIncidentProductCategoryList() {
         return incidentProductCategoryList;
     }
@@ -103,7 +109,10 @@ public class ListProductCategoriesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

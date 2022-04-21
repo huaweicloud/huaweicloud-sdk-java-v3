@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 产品规格的详细信息。 */
+/**
+ * 产品规格的详细信息。
+ */
 public class ListEngineProductsEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 产品类型。当前产品类型有单机和集群。
-     * 
-     * @return type */
+    /**
+     * 产品类型。当前产品类型有单机和集群。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -77,9 +80,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -93,9 +97,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 底层资源类型。
-     * 
-     * @return ecsFlavorId */
+    /**
+     * 底层资源类型。
+     * @return ecsFlavorId
+     */
     public String getEcsFlavorId() {
         return ecsFlavorId;
     }
@@ -109,9 +114,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 账单计费类型。
-     * 
-     * @return billingCode */
+    /**
+     * 账单计费类型。
+     * @return billingCode
+     */
     public String getBillingCode() {
         return billingCode;
     }
@@ -141,9 +147,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** CPU架构。
-     * 
-     * @return archTypes */
+    /**
+     * CPU架构。
+     * @return archTypes
+     */
     public List<String> getArchTypes() {
         return archTypes;
     }
@@ -173,9 +180,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 计费模式。 - monthly：包年/包月类型。 - hourly：按需类型。
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。   - monthly：包年/包月类型。   - hourly：按需类型。
+     * @return chargingMode
+     */
     public List<String> getChargingMode() {
         return chargingMode;
     }
@@ -205,9 +213,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 支持的磁盘IO类型列表。
-     * 
-     * @return ios */
+    /**
+     * 支持的磁盘IO类型列表。
+     * @return ios
+     */
     public List<ListEngineIosEntity> getIos() {
         return ios;
     }
@@ -237,9 +246,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** 当前规格实例支持的功能特性列表。
-     * 
-     * @return supportFeatures */
+    /**
+     * 当前规格实例支持的功能特性列表。
+     * @return supportFeatures
+     */
     public List<Object> getSupportFeatures() {
         return supportFeatures;
     }
@@ -262,9 +272,10 @@ public class ListEngineProductsEntity {
         return this;
     }
 
-    /** Get properties
-     * 
-     * @return properties */
+    /**
+     * Get properties
+     * @return properties
+     */
     public ListEnginePropertiesEntity getProperties() {
         return properties;
     }
@@ -316,7 +327,10 @@ public class ListEngineProductsEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

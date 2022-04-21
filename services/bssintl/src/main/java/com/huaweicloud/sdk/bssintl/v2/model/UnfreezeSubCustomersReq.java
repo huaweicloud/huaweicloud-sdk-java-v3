@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UnfreezeSubCustomersReq */
+/**
+ * UnfreezeSubCustomersReq
+ */
 public class UnfreezeSubCustomersReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class UnfreezeSubCustomersReq {
         return this;
     }
 
-    /** 需要解冻的客户账号ID列表。 您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerIds */
+    /**
+     * 需要解冻的客户账号ID列表。 您可以调用查询客户列表接口获取customer_id。
+     * @return customerIds
+     */
     public List<String> getCustomerIds() {
         return customerIds;
     }
@@ -58,9 +61,10 @@ public class UnfreezeSubCustomersReq {
         return this;
     }
 
-    /** 解冻原因。
-     * 
-     * @return reason */
+    /**
+     * 解冻原因。
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -97,7 +101,10 @@ public class UnfreezeSubCustomersReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

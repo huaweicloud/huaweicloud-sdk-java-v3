@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 消息体。 */
+/**
+ * 消息体。
+ */
 public class ShowPartitionMessageEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 消息的key。
-     * 
-     * @return key */
+    /**
+     * 消息的key。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -64,9 +67,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 消息内容。
-     * 
-     * @return value */
+    /**
+     * 消息内容。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -80,9 +84,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** Topic名称。
-     * 
-     * @return topic */
+    /**
+     * Topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -96,9 +101,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 分区编号。
-     * 
-     * @return partition */
+    /**
+     * 分区编号。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -112,9 +118,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 消息位置。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息位置。
+     * @return messageOffset
+     */
     public Long getMessageOffset() {
         return messageOffset;
     }
@@ -128,9 +135,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 消息大小，单位字节。
-     * 
-     * @return size */
+    /**
+     * 消息大小，单位字节。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -144,9 +152,10 @@ public class ShowPartitionMessageEntity {
         return this;
     }
 
-    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
-     * 
-     * @return timestamp */
+    /**
+     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -193,7 +202,10 @@ public class ShowPartitionMessageEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

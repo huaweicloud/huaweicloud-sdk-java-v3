@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DownloadSlowlogRequestBody */
+/**
+ * DownloadSlowlogRequestBody
+ */
 public class DownloadSlowlogRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class DownloadSlowlogRequestBody {
         return this;
     }
 
-    /** - 需要下载的文件的文件名列表。
-     * 
-     * @return fileNameList */
+    /**
+     * - 需要下载的文件的文件名列表。
+     * @return fileNameList
+     */
     public List<String> getFileNameList() {
         return fileNameList;
     }
@@ -74,10 +77,10 @@ public class DownloadSlowlogRequestBody {
         return this;
     }
 
-    /** 节点ID列表，取空值，表示查询实例下所有允许查询的节点。使用请参考《DDS API参考》的“查询实例列表和详情”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群下面的 shard节点 -
-     * 副本集、单节点下面的所有节点
-     * 
-     * @return nodeIdList */
+    /**
+     * 节点ID列表，取空值，表示查询实例下所有允许查询的节点。使用请参考《DDS API参考》的“查询实例列表和详情”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群下面的 shard节点 - 副本集、单节点下面的所有节点
+     * @return nodeIdList
+     */
     public List<String> getNodeIdList() {
         return nodeIdList;
     }
@@ -114,7 +117,10 @@ public class DownloadSlowlogRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** NameServersResp */
+/**
+ * NameServersResp
+ */
 public class NameServersResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class NameServersResp {
         return this;
     }
 
-    /** 待查询名称服务器的类型。 取值范围: public, private。 如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。 如果为private，表示查询内网的名称服务器。
-     * 
-     * @return type */
+    /**
+     * 待查询名称服务器的类型。  取值范围: public, private。  如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。  如果为private，表示查询内网的名称服务器。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -47,9 +50,10 @@ public class NameServersResp {
         return this;
     }
 
-    /** 待查询的region ID。 当查询公网的名称服务器时，此处不填。
-     * 
-     * @return region */
+    /**
+     * 待查询的region ID。  当查询公网的名称服务器时，此处不填。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -79,9 +83,10 @@ public class NameServersResp {
         return this;
     }
 
-    /** Get nsRecords
-     * 
-     * @return nsRecords */
+    /**
+     * Get nsRecords
+     * @return nsRecords
+     */
     public List<NsRecords> getNsRecords() {
         return nsRecords;
     }
@@ -119,7 +124,10 @@ public class NameServersResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

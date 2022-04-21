@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SslOptionRequest */
+/**
+ * SslOptionRequest
+ */
 public class SslOptionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class SslOptionRequest {
         return this;
     }
 
-    /** - true, 打开ssl开关。 - false, 关闭ssl开关。
-     * 
-     * @return sslOption */
+    /**
+     * - true, 打开ssl开关。 - false, 关闭ssl开关。
+     * @return sslOption
+     */
     public Boolean getSslOption() {
         return sslOption;
     }
@@ -55,7 +58,10 @@ public class SslOptionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

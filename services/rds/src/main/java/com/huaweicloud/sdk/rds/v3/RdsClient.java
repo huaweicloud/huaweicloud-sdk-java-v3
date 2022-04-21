@@ -17,2070 +17,3726 @@ public class RdsClient {
         return new ClientBuilder<>(RdsClient::new);
     }
 
-    /** 应用参数模板 应用参数模板。
+    /**
+     * 应用参数模板
+     *
+     * 应用参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ApplyConfigurationAsyncRequest 请求对象
-     * @return ApplyConfigurationAsyncResponse */
+     * @return ApplyConfigurationAsyncResponse
+     */
     public ApplyConfigurationAsyncResponse applyConfigurationAsync(ApplyConfigurationAsyncRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.applyConfigurationAsync);
     }
 
-    /** 应用参数模板 应用参数模板。
+    /**
+     * 应用参数模板
+     *
+     * 应用参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ApplyConfigurationAsyncRequest 请求对象
-     * @return SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> */
+     * @return SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse>
+     */
     public SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> applyConfigurationAsyncInvoker(
         ApplyConfigurationAsyncRequest request) {
         return new SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse>(request,
             RdsMeta.applyConfigurationAsync, hcClient);
     }
 
-    /** 绑定和解绑弹性公网IP 绑定和解绑弹性公网IP。
+    /**
+     * 绑定和解绑弹性公网IP
+     *
+     * 绑定和解绑弹性公网IP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
-     * @return AttachEipResponse */
+     * @return AttachEipResponse
+     */
     public AttachEipResponse attachEip(AttachEipRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.attachEip);
     }
 
-    /** 绑定和解绑弹性公网IP 绑定和解绑弹性公网IP。
+    /**
+     * 绑定和解绑弹性公网IP
+     *
+     * 绑定和解绑弹性公网IP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
-     * @return SyncInvoker<AttachEipRequest, AttachEipResponse> */
+     * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
+     */
     public SyncInvoker<AttachEipRequest, AttachEipResponse> attachEipInvoker(AttachEipRequest request) {
         return new SyncInvoker<AttachEipRequest, AttachEipResponse>(request, RdsMeta.attachEip, hcClient);
     }
 
-    /** 批量添加标签 批量添加标签。
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagAddActionRequest 请求对象
-     * @return BatchTagAddActionResponse */
+     * @return BatchTagAddActionResponse
+     */
     public BatchTagAddActionResponse batchTagAddAction(BatchTagAddActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.batchTagAddAction);
     }
 
-    /** 批量添加标签 批量添加标签。
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagAddActionRequest 请求对象
-     * @return SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse> */
+     * @return SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse>
+     */
     public SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse> batchTagAddActionInvoker(
         BatchTagAddActionRequest request) {
         return new SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse>(request, RdsMeta.batchTagAddAction,
             hcClient);
     }
 
-    /** 批量删除标签 批量删除标签。
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagDelActionRequest 请求对象
-     * @return BatchTagDelActionResponse */
+     * @return BatchTagDelActionResponse
+     */
     public BatchTagDelActionResponse batchTagDelAction(BatchTagDelActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.batchTagDelAction);
     }
 
-    /** 批量删除标签 批量删除标签。
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param BatchTagDelActionRequest 请求对象
-     * @return SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse> */
+     * @return SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse>
+     */
     public SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse> batchTagDelActionInvoker(
         BatchTagDelActionRequest request) {
         return new SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse>(request, RdsMeta.batchTagDelAction,
             hcClient);
     }
 
-    /** 更改主备实例的数据同步方式 更改主备实例的数据同步方式。
+    /**
+     * 更改主备实例的数据同步方式
+     *
+     * 更改主备实例的数据同步方式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeFailoverModeRequest 请求对象
-     * @return ChangeFailoverModeResponse */
+     * @return ChangeFailoverModeResponse
+     */
     public ChangeFailoverModeResponse changeFailoverMode(ChangeFailoverModeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.changeFailoverMode);
     }
 
-    /** 更改主备实例的数据同步方式 更改主备实例的数据同步方式。
+    /**
+     * 更改主备实例的数据同步方式
+     *
+     * 更改主备实例的数据同步方式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeFailoverModeRequest 请求对象
-     * @return SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse> */
+     * @return SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse>
+     */
     public SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse> changeFailoverModeInvoker(
         ChangeFailoverModeRequest request) {
         return new SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse>(request,
             RdsMeta.changeFailoverMode, hcClient);
     }
 
-    /** 切换主备实例的倒换策略 切换主备实例的倒换策略.
+    /**
+     * 切换主备实例的倒换策略
+     *
+     * 切换主备实例的倒换策略.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeFailoverStrategyRequest 请求对象
-     * @return ChangeFailoverStrategyResponse */
+     * @return ChangeFailoverStrategyResponse
+     */
     public ChangeFailoverStrategyResponse changeFailoverStrategy(ChangeFailoverStrategyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.changeFailoverStrategy);
     }
 
-    /** 切换主备实例的倒换策略 切换主备实例的倒换策略.
+    /**
+     * 切换主备实例的倒换策略
+     *
+     * 切换主备实例的倒换策略.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeFailoverStrategyRequest 请求对象
-     * @return SyncInvoker<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> */
+     * @return SyncInvoker<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse>
+     */
     public SyncInvoker<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> changeFailoverStrategyInvoker(
         ChangeFailoverStrategyRequest request) {
         return new SyncInvoker<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse>(request,
             RdsMeta.changeFailoverStrategy, hcClient);
     }
 
-    /** 设置可维护时间段 设置可维护时间段
+    /**
+     * 设置可维护时间段
+     *
+     * 设置可维护时间段
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeOpsWindowRequest 请求对象
-     * @return ChangeOpsWindowResponse */
+     * @return ChangeOpsWindowResponse
+     */
     public ChangeOpsWindowResponse changeOpsWindow(ChangeOpsWindowRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.changeOpsWindow);
     }
 
-    /** 设置可维护时间段 设置可维护时间段
+    /**
+     * 设置可维护时间段
+     *
+     * 设置可维护时间段
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeOpsWindowRequest 请求对象
-     * @return SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse> */
+     * @return SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse>
+     */
     public SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse> changeOpsWindowInvoker(
         ChangeOpsWindowRequest request) {
         return new SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse>(request, RdsMeta.changeOpsWindow,
             hcClient);
     }
 
-    /** 创建参数模板 创建参数模板。
+    /**
+     * 创建参数模板
+     *
+     * 创建参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
-     * @return CreateConfigurationResponse */
+     * @return CreateConfigurationResponse
+     */
     public CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createConfiguration);
     }
 
-    /** 创建参数模板 创建参数模板。
+    /**
+     * 创建参数模板
+     *
+     * 创建参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
-     * @return SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse> */
+     * @return SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
+     */
     public SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse> createConfigurationInvoker(
         CreateConfigurationRequest request) {
         return new SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>(request,
             RdsMeta.createConfiguration, hcClient);
     }
 
-    /** 申请域名 申请域名
+    /**
+     * 申请域名
+     *
+     * 申请域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDnsNameRequest 请求对象
-     * @return CreateDnsNameResponse */
+     * @return CreateDnsNameResponse
+     */
     public CreateDnsNameResponse createDnsName(CreateDnsNameRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createDnsName);
     }
 
-    /** 申请域名 申请域名
+    /**
+     * 申请域名
+     *
+     * 申请域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDnsNameRequest 请求对象
-     * @return SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse> */
+     * @return SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse>
+     */
     public SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse> createDnsNameInvoker(CreateDnsNameRequest request) {
         return new SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse>(request, RdsMeta.createDnsName, hcClient);
     }
 
-    /** 创建数据库实例 创建数据库实例。
+    /**
+     * 创建数据库实例
+     *
+     * 创建数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
-     * @return CreateInstanceResponse */
+     * @return CreateInstanceResponse
+     */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createInstance);
     }
 
-    /** 创建数据库实例 创建数据库实例。
+    /**
+     * 创建数据库实例
+     *
+     * 创建数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
-     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> */
+     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
         return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, RdsMeta.createInstance,
             hcClient);
     }
 
-    /** 创建手动备份 创建手动备份。
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateManualBackupRequest 请求对象
-     * @return CreateManualBackupResponse */
+     * @return CreateManualBackupResponse
+     */
     public CreateManualBackupResponse createManualBackup(CreateManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createManualBackup);
     }
 
-    /** 创建手动备份 创建手动备份。
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateManualBackupRequest 请求对象
-     * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> */
+     * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
     public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(
         CreateManualBackupRequest request) {
         return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request,
             RdsMeta.createManualBackup, hcClient);
     }
 
-    /** 恢复到新实例 恢复到新实例。
+    /**
+     * 恢复到新实例
+     *
+     * 恢复到新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateRestoreInstanceRequest 请求对象
-     * @return CreateRestoreInstanceResponse */
+     * @return CreateRestoreInstanceResponse
+     */
     public CreateRestoreInstanceResponse createRestoreInstance(CreateRestoreInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createRestoreInstance);
     }
 
-    /** 恢复到新实例 恢复到新实例。
+    /**
+     * 恢复到新实例
+     *
+     * 恢复到新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateRestoreInstanceRequest 请求对象
-     * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> */
+     * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
+     */
     public SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceInvoker(
         CreateRestoreInstanceRequest request) {
         return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request,
             RdsMeta.createRestoreInstance, hcClient);
     }
 
-    /** 删除参数模板 删除参数模板。
+    /**
+     * 删除参数模板
+     *
+     * 删除参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
-     * @return DeleteConfigurationResponse */
+     * @return DeleteConfigurationResponse
+     */
     public DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteConfiguration);
     }
 
-    /** 删除参数模板 删除参数模板。
+    /**
+     * 删除参数模板
+     *
+     * 删除参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
-     * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> */
+     * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
+     */
     public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(
         DeleteConfigurationRequest request) {
         return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
             RdsMeta.deleteConfiguration, hcClient);
     }
 
-    /** 删除数据库实例 删除数据库实例。
+    /**
+     * 删除数据库实例
+     *
+     * 删除数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
-     * @return DeleteInstanceResponse */
+     * @return DeleteInstanceResponse
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteInstance);
     }
 
-    /** 删除数据库实例 删除数据库实例。
+    /**
+     * 删除数据库实例
+     *
+     * 删除数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
-     * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> */
+     * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
+     */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
         return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, RdsMeta.deleteInstance,
             hcClient);
     }
 
-    /** 删除手动备份 删除手动备份。
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteManualBackupRequest 请求对象
-     * @return DeleteManualBackupResponse */
+     * @return DeleteManualBackupResponse
+     */
     public DeleteManualBackupResponse deleteManualBackup(DeleteManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteManualBackup);
     }
 
-    /** 删除手动备份 删除手动备份。
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteManualBackupRequest 请求对象
-     * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> */
+     * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
+     */
     public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(
         DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             RdsMeta.deleteManualBackup, hcClient);
     }
 
-    /** 获取慢日志下载链接 获取慢日志下载链接。
+    /**
+     * 获取慢日志下载链接
+     *
+     * 获取慢日志下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DownloadSlowlogRequest 请求对象
-     * @return DownloadSlowlogResponse */
+     * @return DownloadSlowlogResponse
+     */
     public DownloadSlowlogResponse downloadSlowlog(DownloadSlowlogRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.downloadSlowlog);
     }
 
-    /** 获取慢日志下载链接 获取慢日志下载链接。
+    /**
+     * 获取慢日志下载链接
+     *
+     * 获取慢日志下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DownloadSlowlogRequest 请求对象
-     * @return SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse> */
+     * @return SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>
+     */
     public SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlogInvoker(
         DownloadSlowlogRequest request) {
         return new SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>(request, RdsMeta.downloadSlowlog,
             hcClient);
     }
 
-    /** 应用参数模板 应用参数模板。
+    /**
+     * 应用参数模板
+     *
+     * 应用参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param EnableConfigurationRequest 请求对象
-     * @return EnableConfigurationResponse */
+     * @return EnableConfigurationResponse
+     */
     public EnableConfigurationResponse enableConfiguration(EnableConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.enableConfiguration);
     }
 
-    /** 应用参数模板 应用参数模板。
+    /**
+     * 应用参数模板
+     *
+     * 应用参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param EnableConfigurationRequest 请求对象
-     * @return SyncInvoker<EnableConfigurationRequest, EnableConfigurationResponse> */
+     * @return SyncInvoker<EnableConfigurationRequest, EnableConfigurationResponse>
+     */
     public SyncInvoker<EnableConfigurationRequest, EnableConfigurationResponse> enableConfigurationInvoker(
         EnableConfigurationRequest request) {
         return new SyncInvoker<EnableConfigurationRequest, EnableConfigurationResponse>(request,
             RdsMeta.enableConfiguration, hcClient);
     }
 
-    /** 获取审计日志列表 获取审计日志列表。
+    /**
+     * 获取审计日志列表
+     *
+     * 获取审计日志列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuditlogsRequest 请求对象
-     * @return ListAuditlogsResponse */
+     * @return ListAuditlogsResponse
+     */
     public ListAuditlogsResponse listAuditlogs(ListAuditlogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listAuditlogs);
     }
 
-    /** 获取审计日志列表 获取审计日志列表。
+    /**
+     * 获取审计日志列表
+     *
+     * 获取审计日志列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuditlogsRequest 请求对象
-     * @return SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> */
+     * @return SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse>
+     */
     public SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogsInvoker(ListAuditlogsRequest request) {
         return new SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse>(request, RdsMeta.listAuditlogs, hcClient);
     }
 
-    /** 获取备份列表 获取备份列表。
+    /**
+     * 获取备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
-     * @return ListBackupsResponse */
+     * @return ListBackupsResponse
+     */
     public ListBackupsResponse listBackups(ListBackupsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listBackups);
     }
 
-    /** 获取备份列表 获取备份列表。
+    /**
+     * 获取备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
-     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse> */
+     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
     public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
         return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, RdsMeta.listBackups, hcClient);
     }
 
-    /** 查询SQLServer可用字符集 查询SQLServer可用字符集
+    /**
+     * 查询SQLServer可用字符集
+     *
+     * 查询SQLServer可用字符集
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCollationsRequest 请求对象
-     * @return ListCollationsResponse */
+     * @return ListCollationsResponse
+     */
     public ListCollationsResponse listCollations(ListCollationsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listCollations);
     }
 
-    /** 查询SQLServer可用字符集 查询SQLServer可用字符集
+    /**
+     * 查询SQLServer可用字符集
+     *
+     * 查询SQLServer可用字符集
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCollationsRequest 请求对象
-     * @return SyncInvoker<ListCollationsRequest, ListCollationsResponse> */
+     * @return SyncInvoker<ListCollationsRequest, ListCollationsResponse>
+     */
     public SyncInvoker<ListCollationsRequest, ListCollationsResponse> listCollationsInvoker(
         ListCollationsRequest request) {
         return new SyncInvoker<ListCollationsRequest, ListCollationsResponse>(request, RdsMeta.listCollations,
             hcClient);
     }
 
-    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
-     * @return ListConfigurationsResponse */
+     * @return ListConfigurationsResponse
+     */
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listConfigurations);
     }
 
-    /** 获取参数模板列表 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
-     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> */
+     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
     public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
         ListConfigurationsRequest request) {
         return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
             RdsMeta.listConfigurations, hcClient);
     }
 
-    /** 查询数据库引擎的版本 查询数据库引擎的版本。
+    /**
+     * 查询数据库引擎的版本
+     *
+     * 查询数据库引擎的版本。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
-     * @return ListDatastoresResponse */
+     * @return ListDatastoresResponse
+     */
     public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listDatastores);
     }
 
-    /** 查询数据库引擎的版本 查询数据库引擎的版本。
+    /**
+     * 查询数据库引擎的版本
+     *
+     * 查询数据库引擎的版本。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
-     * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> */
+     * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
+     */
     public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(
         ListDatastoresRequest request) {
         return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, RdsMeta.listDatastores,
             hcClient);
     }
 
-    /** 查询数据库错误日志 查询数据库错误日志。
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorLogsRequest 请求对象
-     * @return ListErrorLogsResponse */
+     * @return ListErrorLogsResponse
+     */
     public ListErrorLogsResponse listErrorLogs(ListErrorLogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listErrorLogs);
     }
 
-    /** 查询数据库错误日志 查询数据库错误日志。
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorLogsRequest 请求对象
-     * @return SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse> */
+     * @return SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>
+     */
     public SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogsInvoker(ListErrorLogsRequest request) {
         return new SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>(request, RdsMeta.listErrorLogs, hcClient);
     }
 
-    /** 查询数据库错误日志 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorLogsNewRequest 请求对象
-     * @return ListErrorLogsNewResponse */
+     * @return ListErrorLogsNewResponse
+     */
     public ListErrorLogsNewResponse listErrorLogsNew(ListErrorLogsNewRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listErrorLogsNew);
     }
 
-    /** 查询数据库错误日志 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListErrorLogsNewRequest 请求对象
-     * @return SyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse> */
+     * @return SyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse>
+     */
     public SyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse> listErrorLogsNewInvoker(
         ListErrorLogsNewRequest request) {
         return new SyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse>(request, RdsMeta.listErrorLogsNew,
             hcClient);
     }
 
-    /** 查询数据库规格 查询数据库规格。
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
-     * @return ListFlavorsResponse */
+     * @return ListFlavorsResponse
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listFlavors);
     }
 
-    /** 查询数据库规格 查询数据库规格。
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
-     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> */
+     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, RdsMeta.listFlavors, hcClient);
     }
 
-    /** 查询数据库实例列表 查询数据库实例列表。
+    /**
+     * 查询数据库实例列表
+     *
+     * 查询数据库实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
-     * @return ListInstancesResponse */
+     * @return ListInstancesResponse
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listInstances);
     }
 
-    /** 查询数据库实例列表 查询数据库实例列表。
+    /**
+     * 查询数据库实例列表
+     *
+     * 查询数据库实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
-     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse> */
+     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RdsMeta.listInstances, hcClient);
     }
 
-    /** 获取指定ID的任务信息 获取指定ID的任务信息。
+    /**
+     * 获取指定ID的任务信息
+     *
+     * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInfoRequest 请求对象
-     * @return ListJobInfoResponse */
+     * @return ListJobInfoResponse
+     */
     public ListJobInfoResponse listJobInfo(ListJobInfoRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listJobInfo);
     }
 
-    /** 获取指定ID的任务信息 获取指定ID的任务信息。
+    /**
+     * 获取指定ID的任务信息
+     *
+     * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInfoRequest 请求对象
-     * @return SyncInvoker<ListJobInfoRequest, ListJobInfoResponse> */
+     * @return SyncInvoker<ListJobInfoRequest, ListJobInfoResponse>
+     */
     public SyncInvoker<ListJobInfoRequest, ListJobInfoResponse> listJobInfoInvoker(ListJobInfoRequest request) {
         return new SyncInvoker<ListJobInfoRequest, ListJobInfoResponse>(request, RdsMeta.listJobInfo, hcClient);
     }
 
-    /** 获取指定实例和时间范围的任务信息（SQL Server） 获取指定实例和时间范围的任务信息（SQL Server）。
+    /**
+     * 获取指定实例和时间范围的任务信息（SQL Server）
+     *
+     * 获取指定实例和时间范围的任务信息（SQL Server）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInfoDetailRequest 请求对象
-     * @return ListJobInfoDetailResponse */
+     * @return ListJobInfoDetailResponse
+     */
     public ListJobInfoDetailResponse listJobInfoDetail(ListJobInfoDetailRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listJobInfoDetail);
     }
 
-    /** 获取指定实例和时间范围的任务信息（SQL Server） 获取指定实例和时间范围的任务信息（SQL Server）。
+    /**
+     * 获取指定实例和时间范围的任务信息（SQL Server）
+     *
+     * 获取指定实例和时间范围的任务信息（SQL Server）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInfoDetailRequest 请求对象
-     * @return SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse> */
+     * @return SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse>
+     */
     public SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse> listJobInfoDetailInvoker(
         ListJobInfoDetailRequest request) {
         return new SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse>(request, RdsMeta.listJobInfoDetail,
             hcClient);
     }
 
-    /** 查询跨区域备份列表 查询跨区域备份列表。
+    /**
+     * 查询跨区域备份列表
+     *
+     * 查询跨区域备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteBackupsRequest 请求对象
-     * @return ListOffSiteBackupsResponse */
+     * @return ListOffSiteBackupsResponse
+     */
     public ListOffSiteBackupsResponse listOffSiteBackups(ListOffSiteBackupsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteBackups);
     }
 
-    /** 查询跨区域备份列表 查询跨区域备份列表。
+    /**
+     * 查询跨区域备份列表
+     *
+     * 查询跨区域备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteBackupsRequest 请求对象
-     * @return SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> */
+     * @return SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse>
+     */
     public SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> listOffSiteBackupsInvoker(
         ListOffSiteBackupsRequest request) {
         return new SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse>(request,
             RdsMeta.listOffSiteBackups, hcClient);
     }
 
-    /** 查询跨区域备份实例列表 查询跨区域备份实例列表。
+    /**
+     * 查询跨区域备份实例列表
+     *
+     * 查询跨区域备份实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteInstancesRequest 请求对象
-     * @return ListOffSiteInstancesResponse */
+     * @return ListOffSiteInstancesResponse
+     */
     public ListOffSiteInstancesResponse listOffSiteInstances(ListOffSiteInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteInstances);
     }
 
-    /** 查询跨区域备份实例列表 查询跨区域备份实例列表。
+    /**
+     * 查询跨区域备份实例列表
+     *
+     * 查询跨区域备份实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteInstancesRequest 请求对象
-     * @return SyncInvoker<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> */
+     * @return SyncInvoker<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse>
+     */
     public SyncInvoker<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> listOffSiteInstancesInvoker(
         ListOffSiteInstancesRequest request) {
         return new SyncInvoker<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse>(request,
             RdsMeta.listOffSiteInstances, hcClient);
     }
 
-    /** 查询跨区域备份可恢复时间段 查询跨区域备份可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+    /**
+     * 查询跨区域备份可恢复时间段
+     *
+     * 查询跨区域备份可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
-     * @return ListOffSiteRestoreTimesResponse */
+     * @return ListOffSiteRestoreTimesResponse
+     */
     public ListOffSiteRestoreTimesResponse listOffSiteRestoreTimes(ListOffSiteRestoreTimesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteRestoreTimes);
     }
 
-    /** 查询跨区域备份可恢复时间段 查询跨区域备份可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+    /**
+     * 查询跨区域备份可恢复时间段
+     *
+     * 查询跨区域备份可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
-     * @return SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> */
+     * @return SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>
+     */
     public SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimesInvoker(
         ListOffSiteRestoreTimesRequest request) {
         return new SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>(request,
             RdsMeta.listOffSiteRestoreTimes, hcClient);
     }
 
-    /** 查询项目标签 查询项目标签。
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
-     * @return ListProjectTagsResponse */
+     * @return ListProjectTagsResponse
+     */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listProjectTags);
     }
 
-    /** 查询项目标签 查询项目标签。
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
-     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> */
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
         return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, RdsMeta.listProjectTags,
             hcClient);
     }
 
-    /** 查询可恢复时间段 查询可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRestoreTimesRequest 请求对象
-     * @return ListRestoreTimesResponse */
+     * @return ListRestoreTimesResponse
+     */
     public ListRestoreTimesResponse listRestoreTimes(ListRestoreTimesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listRestoreTimes);
     }
 
-    /** 查询可恢复时间段 查询可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRestoreTimesRequest 请求对象
-     * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> */
+     * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
+     */
     public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(
         ListRestoreTimesRequest request) {
         return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, RdsMeta.listRestoreTimes,
             hcClient);
     }
 
-    /** 查询慢日志文件列表 查询慢日志文件列表。 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+    /**
+     * 查询慢日志文件列表
+     *
+     * 查询慢日志文件列表。
+     * 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogFileRequest 请求对象
-     * @return ListSlowLogFileResponse */
+     * @return ListSlowLogFileResponse
+     */
     public ListSlowLogFileResponse listSlowLogFile(ListSlowLogFileRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowLogFile);
     }
 
-    /** 查询慢日志文件列表 查询慢日志文件列表。 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+    /**
+     * 查询慢日志文件列表
+     *
+     * 查询慢日志文件列表。
+     * 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogFileRequest 请求对象
-     * @return SyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse> */
+     * @return SyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse>
+     */
     public SyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse> listSlowLogFileInvoker(
         ListSlowLogFileRequest request) {
         return new SyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse>(request, RdsMeta.listSlowLogFile,
             hcClient);
     }
 
-    /** 查询数据库慢日志 查询数据库慢日志。
+    /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
-     * @return ListSlowLogsResponse */
+     * @return ListSlowLogsResponse
+     */
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowLogs);
     }
 
-    /** 查询数据库慢日志 查询数据库慢日志。
+    /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
-     * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> */
+     * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
+     */
     public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
         return new SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, RdsMeta.listSlowLogs, hcClient);
     }
 
-    /** 查询数据库慢日志 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+    /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogsNewRequest 请求对象
-     * @return ListSlowLogsNewResponse */
+     * @return ListSlowLogsNewResponse
+     */
     public ListSlowLogsNewResponse listSlowLogsNew(ListSlowLogsNewRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowLogsNew);
     }
 
-    /** 查询数据库慢日志 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+    /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowLogsNewRequest 请求对象
-     * @return SyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse> */
+     * @return SyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse>
+     */
     public SyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse> listSlowLogsNewInvoker(
         ListSlowLogsNewRequest request) {
         return new SyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse>(request, RdsMeta.listSlowLogsNew,
             hcClient);
     }
 
-    /** 获取慢日志统计信息 获取慢日志统计信息
+    /**
+     * 获取慢日志统计信息
+     *
+     * 获取慢日志统计信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowlogStatisticsRequest 请求对象
-     * @return ListSlowlogStatisticsResponse */
+     * @return ListSlowlogStatisticsResponse
+     */
     public ListSlowlogStatisticsResponse listSlowlogStatistics(ListSlowlogStatisticsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowlogStatistics);
     }
 
-    /** 获取慢日志统计信息 获取慢日志统计信息
+    /**
+     * 获取慢日志统计信息
+     *
+     * 获取慢日志统计信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSlowlogStatisticsRequest 请求对象
-     * @return SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> */
+     * @return SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse>
+     */
     public SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> listSlowlogStatisticsInvoker(
         ListSlowlogStatisticsRequest request) {
         return new SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse>(request,
             RdsMeta.listSlowlogStatistics, hcClient);
     }
 
-    /** 查询数据库磁盘类型 查询数据库磁盘类型。
+    /**
+     * 查询数据库磁盘类型
+     *
+     * 查询数据库磁盘类型。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
-     * @return ListStorageTypesResponse */
+     * @return ListStorageTypesResponse
+     */
     public ListStorageTypesResponse listStorageTypes(ListStorageTypesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listStorageTypes);
     }
 
-    /** 查询数据库磁盘类型 查询数据库磁盘类型。
+    /**
+     * 查询数据库磁盘类型
+     *
+     * 查询数据库磁盘类型。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
-     * @return SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> */
+     * @return SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
+     */
     public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(
         ListStorageTypesRequest request) {
         return new SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, RdsMeta.listStorageTypes,
             hcClient);
     }
 
-    /** 迁移主备实例的备机 迁移主备实例的备机
+    /**
+     * 迁移主备实例的备机
+     *
+     * 迁移主备实例的备机
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param MigrateFollowerRequest 请求对象
-     * @return MigrateFollowerResponse */
+     * @return MigrateFollowerResponse
+     */
     public MigrateFollowerResponse migrateFollower(MigrateFollowerRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.migrateFollower);
     }
 
-    /** 迁移主备实例的备机 迁移主备实例的备机
+    /**
+     * 迁移主备实例的备机
+     *
+     * 迁移主备实例的备机
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param MigrateFollowerRequest 请求对象
-     * @return SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse> */
+     * @return SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse>
+     */
     public SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse> migrateFollowerInvoker(
         MigrateFollowerRequest request) {
         return new SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse>(request, RdsMeta.migrateFollower,
             hcClient);
     }
 
-    /** 恢复到已有实例 恢复到已有实例。
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreExistInstanceRequest 请求对象
-     * @return RestoreExistInstanceResponse */
+     * @return RestoreExistInstanceResponse
+     */
     public RestoreExistInstanceResponse restoreExistInstance(RestoreExistInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.restoreExistInstance);
     }
 
-    /** 恢复到已有实例 恢复到已有实例。
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreExistInstanceRequest 请求对象
-     * @return SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse> */
+     * @return SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse>
+     */
     public SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse> restoreExistInstanceInvoker(
         RestoreExistInstanceRequest request) {
         return new SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse>(request,
             RdsMeta.restoreExistInstance, hcClient);
     }
 
-    /** 表级时间点恢复(MySQL) 表级时间点恢复(MySQL)。
+    /**
+     * 表级时间点恢复(MySQL)
+     *
+     * 表级时间点恢复(MySQL)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreTablesRequest 请求对象
-     * @return RestoreTablesResponse */
+     * @return RestoreTablesResponse
+     */
     public RestoreTablesResponse restoreTables(RestoreTablesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.restoreTables);
     }
 
-    /** 表级时间点恢复(MySQL) 表级时间点恢复(MySQL)。
+    /**
+     * 表级时间点恢复(MySQL)
+     *
+     * 表级时间点恢复(MySQL)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreTablesRequest 请求对象
-     * @return SyncInvoker<RestoreTablesRequest, RestoreTablesResponse> */
+     * @return SyncInvoker<RestoreTablesRequest, RestoreTablesResponse>
+     */
     public SyncInvoker<RestoreTablesRequest, RestoreTablesResponse> restoreTablesInvoker(RestoreTablesRequest request) {
         return new SyncInvoker<RestoreTablesRequest, RestoreTablesResponse>(request, RdsMeta.restoreTables, hcClient);
     }
 
-    /** 恢复到已有实例 恢复到已有实例。
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreToExistingInstanceRequest 请求对象
-     * @return RestoreToExistingInstanceResponse */
+     * @return RestoreToExistingInstanceResponse
+     */
     public RestoreToExistingInstanceResponse restoreToExistingInstance(RestoreToExistingInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.restoreToExistingInstance);
     }
 
-    /** 恢复到已有实例 恢复到已有实例。
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreToExistingInstanceRequest 请求对象
-     * @return SyncInvoker<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> */
+     * @return SyncInvoker<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse>
+     */
     public SyncInvoker<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> restoreToExistingInstanceInvoker(
         RestoreToExistingInstanceRequest request) {
         return new SyncInvoker<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse>(request,
             RdsMeta.restoreToExistingInstance, hcClient);
     }
 
-    /** 设置审计日志策略 设置审计日志策略。
+    /**
+     * 设置审计日志策略
+     *
+     * 设置审计日志策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetAuditlogPolicyRequest 请求对象
-     * @return SetAuditlogPolicyResponse */
+     * @return SetAuditlogPolicyResponse
+     */
     public SetAuditlogPolicyResponse setAuditlogPolicy(SetAuditlogPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setAuditlogPolicy);
     }
 
-    /** 设置审计日志策略 设置审计日志策略。
+    /**
+     * 设置审计日志策略
+     *
+     * 设置审计日志策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetAuditlogPolicyRequest 请求对象
-     * @return SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> */
+     * @return SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse>
+     */
     public SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> setAuditlogPolicyInvoker(
         SetAuditlogPolicyRequest request) {
         return new SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse>(request, RdsMeta.setAuditlogPolicy,
             hcClient);
     }
 
-    /** 设置自动备份策略 设置自动备份策略。
+    /**
+     * 设置自动备份策略
+     *
+     * 设置自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
-     * @return SetBackupPolicyResponse */
+     * @return SetBackupPolicyResponse
+     */
     public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setBackupPolicy);
     }
 
-    /** 设置自动备份策略 设置自动备份策略。
+    /**
+     * 设置自动备份策略
+     *
+     * 设置自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
-     * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> */
+     * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
+     */
     public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(
         SetBackupPolicyRequest request) {
         return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, RdsMeta.setBackupPolicy,
             hcClient);
     }
 
-    /** 设置binlog本地保留时长 修改指定实例的binlog本地保留时长。
+    /**
+     * 设置binlog本地保留时长
+     *
+     * 修改指定实例的binlog本地保留时长。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBinlogClearPolicyRequest 请求对象
-     * @return SetBinlogClearPolicyResponse */
+     * @return SetBinlogClearPolicyResponse
+     */
     public SetBinlogClearPolicyResponse setBinlogClearPolicy(SetBinlogClearPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setBinlogClearPolicy);
     }
 
-    /** 设置binlog本地保留时长 修改指定实例的binlog本地保留时长。
+    /**
+     * 设置binlog本地保留时长
+     *
+     * 修改指定实例的binlog本地保留时长。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetBinlogClearPolicyRequest 请求对象
-     * @return SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> */
+     * @return SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>
+     */
     public SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> setBinlogClearPolicyInvoker(
         SetBinlogClearPolicyRequest request) {
         return new SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>(request,
             RdsMeta.setBinlogClearPolicy, hcClient);
     }
 
-    /** 设置跨区域备份策略 设置跨区域备份策略。
+    /**
+     * 设置跨区域备份策略
+     *
+     * 设置跨区域备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetOffSiteBackupPolicyRequest 请求对象
-     * @return SetOffSiteBackupPolicyResponse */
+     * @return SetOffSiteBackupPolicyResponse
+     */
     public SetOffSiteBackupPolicyResponse setOffSiteBackupPolicy(SetOffSiteBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setOffSiteBackupPolicy);
     }
 
-    /** 设置跨区域备份策略 设置跨区域备份策略。
+    /**
+     * 设置跨区域备份策略
+     *
+     * 设置跨区域备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetOffSiteBackupPolicyRequest 请求对象
-     * @return SyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> */
+     * @return SyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse>
+     */
     public SyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicyInvoker(
         SetOffSiteBackupPolicyRequest request) {
         return new SyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse>(request,
             RdsMeta.setOffSiteBackupPolicy, hcClient);
     }
 
-    /** 修改安全组 修改安全组
+    /**
+     * 修改安全组
+     *
+     * 修改安全组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetSecurityGroupRequest 请求对象
-     * @return SetSecurityGroupResponse */
+     * @return SetSecurityGroupResponse
+     */
     public SetSecurityGroupResponse setSecurityGroup(SetSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setSecurityGroup);
     }
 
-    /** 修改安全组 修改安全组
+    /**
+     * 修改安全组
+     *
+     * 修改安全组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetSecurityGroupRequest 请求对象
-     * @return SyncInvoker<SetSecurityGroupRequest, SetSecurityGroupResponse> */
+     * @return SyncInvoker<SetSecurityGroupRequest, SetSecurityGroupResponse>
+     */
     public SyncInvoker<SetSecurityGroupRequest, SetSecurityGroupResponse> setSecurityGroupInvoker(
         SetSecurityGroupRequest request) {
         return new SyncInvoker<SetSecurityGroupRequest, SetSecurityGroupResponse>(request, RdsMeta.setSecurityGroup,
             hcClient);
     }
 
-    /** 生成审计日志下载链接 生成审计日志下载链接。
+    /**
+     * 生成审计日志下载链接
+     *
+     * 生成审计日志下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditlogDownloadLinkRequest 请求对象
-     * @return ShowAuditlogDownloadLinkResponse */
+     * @return ShowAuditlogDownloadLinkResponse
+     */
     public ShowAuditlogDownloadLinkResponse showAuditlogDownloadLink(ShowAuditlogDownloadLinkRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showAuditlogDownloadLink);
     }
 
-    /** 生成审计日志下载链接 生成审计日志下载链接。
+    /**
+     * 生成审计日志下载链接
+     *
+     * 生成审计日志下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditlogDownloadLinkRequest 请求对象
-     * @return SyncInvoker<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> */
+     * @return SyncInvoker<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse>
+     */
     public SyncInvoker<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> showAuditlogDownloadLinkInvoker(
         ShowAuditlogDownloadLinkRequest request) {
         return new SyncInvoker<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse>(request,
             RdsMeta.showAuditlogDownloadLink, hcClient);
     }
 
-    /** 查询审计日志策略 查询审计日志策略。
+    /**
+     * 查询审计日志策略
+     *
+     * 查询审计日志策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditlogPolicyRequest 请求对象
-     * @return ShowAuditlogPolicyResponse */
+     * @return ShowAuditlogPolicyResponse
+     */
     public ShowAuditlogPolicyResponse showAuditlogPolicy(ShowAuditlogPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showAuditlogPolicy);
     }
 
-    /** 查询审计日志策略 查询审计日志策略。
+    /**
+     * 查询审计日志策略
+     *
+     * 查询审计日志策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAuditlogPolicyRequest 请求对象
-     * @return SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> */
+     * @return SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>
+     */
     public SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicyInvoker(
         ShowAuditlogPolicyRequest request) {
         return new SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>(request,
             RdsMeta.showAuditlogPolicy, hcClient);
     }
 
-    /** 获取备份下载链接 获取备份下载链接。
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBackupDownloadLinkRequest 请求对象
-     * @return ShowBackupDownloadLinkResponse */
+     * @return ShowBackupDownloadLinkResponse
+     */
     public ShowBackupDownloadLinkResponse showBackupDownloadLink(ShowBackupDownloadLinkRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showBackupDownloadLink);
     }
 
-    /** 获取备份下载链接 获取备份下载链接。
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBackupDownloadLinkRequest 请求对象
-     * @return SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> */
+     * @return SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>
+     */
     public SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLinkInvoker(
         ShowBackupDownloadLinkRequest request) {
         return new SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>(request,
             RdsMeta.showBackupDownloadLink, hcClient);
     }
 
-    /** 查询自动备份策略 查询自动备份策略。
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
-     * @return ShowBackupPolicyResponse */
+     * @return ShowBackupPolicyResponse
+     */
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showBackupPolicy);
     }
 
-    /** 查询自动备份策略 查询自动备份策略。
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
-     * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> */
+     * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
+     */
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(
         ShowBackupPolicyRequest request) {
         return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, RdsMeta.showBackupPolicy,
             hcClient);
     }
 
-    /** 获取binlog本地保留时长 查寻指定实例的binlog本地保留时长。
+    /**
+     * 获取binlog本地保留时长
+     *
+     * 查寻指定实例的binlog本地保留时长。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBinlogClearPolicyRequest 请求对象
-     * @return ShowBinlogClearPolicyResponse */
+     * @return ShowBinlogClearPolicyResponse
+     */
     public ShowBinlogClearPolicyResponse showBinlogClearPolicy(ShowBinlogClearPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showBinlogClearPolicy);
     }
 
-    /** 获取binlog本地保留时长 查寻指定实例的binlog本地保留时长。
+    /**
+     * 获取binlog本地保留时长
+     *
+     * 查寻指定实例的binlog本地保留时长。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowBinlogClearPolicyRequest 请求对象
-     * @return SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> */
+     * @return SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse>
+     */
     public SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> showBinlogClearPolicyInvoker(
         ShowBinlogClearPolicyRequest request) {
         return new SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse>(request,
             RdsMeta.showBinlogClearPolicy, hcClient);
     }
 
-    /** 获取指定参数模板的参数 获取指定参数模板的参数。
+    /**
+     * 获取指定参数模板的参数
+     *
+     * 获取指定参数模板的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowConfigurationRequest 请求对象
-     * @return ShowConfigurationResponse */
+     * @return ShowConfigurationResponse
+     */
     public ShowConfigurationResponse showConfiguration(ShowConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showConfiguration);
     }
 
-    /** 获取指定参数模板的参数 获取指定参数模板的参数。
+    /**
+     * 获取指定参数模板的参数
+     *
+     * 获取指定参数模板的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowConfigurationRequest 请求对象
-     * @return SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> */
+     * @return SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
+     */
     public SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationInvoker(
         ShowConfigurationRequest request) {
         return new SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>(request, RdsMeta.showConfiguration,
             hcClient);
     }
 
-    /** 查询跨云容灾复制状态 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+    /**
+     * 查询跨云容灾复制状态
+     *
+     * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDrReplicaStatusRequest 请求对象
-     * @return ShowDrReplicaStatusResponse */
+     * @return ShowDrReplicaStatusResponse
+     */
     public ShowDrReplicaStatusResponse showDrReplicaStatus(ShowDrReplicaStatusRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showDrReplicaStatus);
     }
 
-    /** 查询跨云容灾复制状态 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+    /**
+     * 查询跨云容灾复制状态
+     *
+     * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDrReplicaStatusRequest 请求对象
-     * @return SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> */
+     * @return SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>
+     */
     public SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatusInvoker(
         ShowDrReplicaStatusRequest request) {
         return new SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>(request,
             RdsMeta.showDrReplicaStatus, hcClient);
     }
 
-    /** 获取指定实例的参数模板 获取指定实例的参数模板。
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
-     * @return ShowInstanceConfigurationResponse */
+     * @return ShowInstanceConfigurationResponse
+     */
     public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showInstanceConfiguration);
     }
 
-    /** 获取指定实例的参数模板 获取指定实例的参数模板。
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
-     * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> */
+     * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
+     */
     public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(
         ShowInstanceConfigurationRequest request) {
         return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request,
             RdsMeta.showInstanceConfiguration, hcClient);
     }
 
-    /** 查询跨区域备份策略 查询跨区域备份策略。
+    /**
+     * 查询跨区域备份策略
+     *
+     * 查询跨区域备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOffSiteBackupPolicyRequest 请求对象
-     * @return ShowOffSiteBackupPolicyResponse */
+     * @return ShowOffSiteBackupPolicyResponse
+     */
     public ShowOffSiteBackupPolicyResponse showOffSiteBackupPolicy(ShowOffSiteBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showOffSiteBackupPolicy);
     }
 
-    /** 查询跨区域备份策略 查询跨区域备份策略。
+    /**
+     * 查询跨区域备份策略
+     *
+     * 查询跨区域备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOffSiteBackupPolicyRequest 请求对象
-     * @return SyncInvoker<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> */
+     * @return SyncInvoker<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse>
+     */
     public SyncInvoker<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> showOffSiteBackupPolicyInvoker(
         ShowOffSiteBackupPolicyRequest request) {
         return new SyncInvoker<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse>(request,
             RdsMeta.showOffSiteBackupPolicy, hcClient);
     }
 
-    /** 查询配额 查询当前项目下资源配额情况。
+    /**
+     * 查询配额
+     *
+     * 查询当前项目下资源配额情况。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
-     * @return ShowQuotasResponse */
+     * @return ShowQuotasResponse
+     */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showQuotas);
     }
 
-    /** 查询配额 查询当前项目下资源配额情况。
+    /**
+     * 查询配额
+     *
+     * 查询当前项目下资源配额情况。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
-     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> */
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
         return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
     }
 
-    /** 手动倒换主备 手动倒换主备.
+    /**
+     * 手动倒换主备
+     *
+     * 手动倒换主备.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartFailoverRequest 请求对象
-     * @return StartFailoverResponse */
+     * @return StartFailoverResponse
+     */
     public StartFailoverResponse startFailover(StartFailoverRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startFailover);
     }
 
-    /** 手动倒换主备 手动倒换主备.
+    /**
+     * 手动倒换主备
+     *
+     * 手动倒换主备.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartFailoverRequest 请求对象
-     * @return SyncInvoker<StartFailoverRequest, StartFailoverResponse> */
+     * @return SyncInvoker<StartFailoverRequest, StartFailoverResponse>
+     */
     public SyncInvoker<StartFailoverRequest, StartFailoverResponse> startFailoverInvoker(StartFailoverRequest request) {
         return new SyncInvoker<StartFailoverRequest, StartFailoverResponse>(request, RdsMeta.startFailover, hcClient);
     }
 
-    /** 扩容数据库实例的磁盘空间 扩容数据库实例的磁盘空间。
+    /**
+     * 扩容数据库实例的磁盘空间
+     *
+     * 扩容数据库实例的磁盘空间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceEnlargeVolumeActionRequest 请求对象
-     * @return StartInstanceEnlargeVolumeActionResponse */
+     * @return StartInstanceEnlargeVolumeActionResponse
+     */
     public StartInstanceEnlargeVolumeActionResponse startInstanceEnlargeVolumeAction(
         StartInstanceEnlargeVolumeActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceEnlargeVolumeAction);
     }
 
-    /** 扩容数据库实例的磁盘空间 扩容数据库实例的磁盘空间。
+    /**
+     * 扩容数据库实例的磁盘空间
+     *
+     * 扩容数据库实例的磁盘空间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceEnlargeVolumeActionRequest 请求对象
-     * @return SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse> */
+     * @return SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>
+     */
     public SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse> startInstanceEnlargeVolumeActionInvoker(
         StartInstanceEnlargeVolumeActionRequest request) {
         return new SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>(
             request, RdsMeta.startInstanceEnlargeVolumeAction, hcClient);
     }
 
-    /** 重启数据库实例 重启数据库实例。
+    /**
+     * 重启数据库实例
+     *
+     * 重启数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceRestartActionRequest 请求对象
-     * @return StartInstanceRestartActionResponse */
+     * @return StartInstanceRestartActionResponse
+     */
     public StartInstanceRestartActionResponse startInstanceRestartAction(StartInstanceRestartActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceRestartAction);
     }
 
-    /** 重启数据库实例 重启数据库实例。
+    /**
+     * 重启数据库实例
+     *
+     * 重启数据库实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceRestartActionRequest 请求对象
-     * @return SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse> */
+     * @return SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse>
+     */
     public SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse> startInstanceRestartActionInvoker(
         StartInstanceRestartActionRequest request) {
         return new SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse>(request,
             RdsMeta.startInstanceRestartAction, hcClient);
     }
 
-    /** 单机转主备实例 单机转主备实例。
+    /**
+     * 单机转主备实例
+     *
+     * 单机转主备实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceSingleToHaActionRequest 请求对象
-     * @return StartInstanceSingleToHaActionResponse */
+     * @return StartInstanceSingleToHaActionResponse
+     */
     public StartInstanceSingleToHaActionResponse startInstanceSingleToHaAction(
         StartInstanceSingleToHaActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceSingleToHaAction);
     }
 
-    /** 单机转主备实例 单机转主备实例。
+    /**
+     * 单机转主备实例
+     *
+     * 单机转主备实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartInstanceSingleToHaActionRequest 请求对象
-     * @return SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse> */
+     * @return SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>
+     */
     public SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse> startInstanceSingleToHaActionInvoker(
         StartInstanceSingleToHaActionRequest request) {
         return new SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>(request,
             RdsMeta.startInstanceSingleToHaAction, hcClient);
     }
 
-    /** 设置回收站策略 设置回收站策略。
+    /**
+     * 设置回收站策略
+     *
+     * 设置回收站策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartRecyclePolicyRequest 请求对象
-     * @return StartRecyclePolicyResponse */
+     * @return StartRecyclePolicyResponse
+     */
     public StartRecyclePolicyResponse startRecyclePolicy(StartRecyclePolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startRecyclePolicy);
     }
 
-    /** 设置回收站策略 设置回收站策略。
+    /**
+     * 设置回收站策略
+     *
+     * 设置回收站策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartRecyclePolicyRequest 请求对象
-     * @return SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse> */
+     * @return SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse>
+     */
     public SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse> startRecyclePolicyInvoker(
         StartRecyclePolicyRequest request) {
         return new SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse>(request,
             RdsMeta.startRecyclePolicy, hcClient);
     }
 
-    /** 变更数据库实例的规格 变更数据库实例的规格。
+    /**
+     * 变更数据库实例的规格
+     *
+     * 变更数据库实例的规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartResizeFlavorActionRequest 请求对象
-     * @return StartResizeFlavorActionResponse */
+     * @return StartResizeFlavorActionResponse
+     */
     public StartResizeFlavorActionResponse startResizeFlavorAction(StartResizeFlavorActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startResizeFlavorAction);
     }
 
-    /** 变更数据库实例的规格 变更数据库实例的规格。
+    /**
+     * 变更数据库实例的规格
+     *
+     * 变更数据库实例的规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartResizeFlavorActionRequest 请求对象
-     * @return SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse> */
+     * @return SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>
+     */
     public SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse> startResizeFlavorActionInvoker(
         StartResizeFlavorActionRequest request) {
         return new SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>(request,
             RdsMeta.startResizeFlavorAction, hcClient);
     }
 
-    /** 开启实例 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+    /**
+     * 开启实例
+     *
+     * 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartupInstanceRequest 请求对象
-     * @return StartupInstanceResponse */
+     * @return StartupInstanceResponse
+     */
     public StartupInstanceResponse startupInstance(StartupInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startupInstance);
     }
 
-    /** 开启实例 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+    /**
+     * 开启实例
+     *
+     * 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartupInstanceRequest 请求对象
-     * @return SyncInvoker<StartupInstanceRequest, StartupInstanceResponse> */
+     * @return SyncInvoker<StartupInstanceRequest, StartupInstanceResponse>
+     */
     public SyncInvoker<StartupInstanceRequest, StartupInstanceResponse> startupInstanceInvoker(
         StartupInstanceRequest request) {
         return new SyncInvoker<StartupInstanceRequest, StartupInstanceResponse>(request, RdsMeta.startupInstance,
             hcClient);
     }
 
-    /** 停止实例 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+    /**
+     * 停止实例
+     *
+     * 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
-     * @return StopInstanceResponse */
+     * @return StopInstanceResponse
+     */
     public StopInstanceResponse stopInstance(StopInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.stopInstance);
     }
 
-    /** 停止实例 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+    /**
+     * 停止实例
+     *
+     * 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
-     * @return SyncInvoker<StopInstanceRequest, StopInstanceResponse> */
+     * @return SyncInvoker<StopInstanceRequest, StopInstanceResponse>
+     */
     public SyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceInvoker(StopInstanceRequest request) {
         return new SyncInvoker<StopInstanceRequest, StopInstanceResponse>(request, RdsMeta.stopInstance, hcClient);
     }
 
-    /** 设置SSL数据加密 设置SSL数据加密。
+    /**
+     * 设置SSL数据加密
+     *
+     * 设置SSL数据加密。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
-     * @return SwitchSslResponse */
+     * @return SwitchSslResponse
+     */
     public SwitchSslResponse switchSsl(SwitchSslRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.switchSsl);
     }
 
-    /** 设置SSL数据加密 设置SSL数据加密。
+    /**
+     * 设置SSL数据加密
+     *
+     * 设置SSL数据加密。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
-     * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse> */
+     * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
+     */
     public SyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslInvoker(SwitchSslRequest request) {
         return new SyncInvoker<SwitchSslRequest, SwitchSslResponse>(request, RdsMeta.switchSsl, hcClient);
     }
 
-    /** 修改参数模板参数 修改参数模板参数。
+    /**
+     * 修改参数模板参数
+     *
+     * 修改参数模板参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
-     * @return UpdateConfigurationResponse */
+     * @return UpdateConfigurationResponse
+     */
     public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateConfiguration);
     }
 
-    /** 修改参数模板参数 修改参数模板参数。
+    /**
+     * 修改参数模板参数
+     *
+     * 修改参数模板参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
-     * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> */
+     * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
+     */
     public SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationInvoker(
         UpdateConfigurationRequest request) {
         return new SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
             RdsMeta.updateConfiguration, hcClient);
     }
 
-    /** 修改内网地址 修改内网地址
+    /**
+     * 修改内网地址
+     *
+     * 修改内网地址
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDataIpRequest 请求对象
-     * @return UpdateDataIpResponse */
+     * @return UpdateDataIpResponse
+     */
     public UpdateDataIpResponse updateDataIp(UpdateDataIpRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateDataIp);
     }
 
-    /** 修改内网地址 修改内网地址
+    /**
+     * 修改内网地址
+     *
+     * 修改内网地址
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDataIpRequest 请求对象
-     * @return SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse> */
+     * @return SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse>
+     */
     public SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse> updateDataIpInvoker(UpdateDataIpRequest request) {
         return new SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse>(request, RdsMeta.updateDataIp, hcClient);
     }
 
-    /** 修改域名 修改域名
+    /**
+     * 修改域名
+     *
+     * 修改域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDnsNameRequest 请求对象
-     * @return UpdateDnsNameResponse */
+     * @return UpdateDnsNameResponse
+     */
     public UpdateDnsNameResponse updateDnsName(UpdateDnsNameRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateDnsName);
     }
 
-    /** 修改域名 修改域名
+    /**
+     * 修改域名
+     *
+     * 修改域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDnsNameRequest 请求对象
-     * @return SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse> */
+     * @return SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse>
+     */
     public SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse> updateDnsNameInvoker(UpdateDnsNameRequest request) {
         return new SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse>(request, RdsMeta.updateDnsName, hcClient);
     }
 
-    /** 修改指定实例的参数 修改指定实例的参数。
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
-     * @return UpdateInstanceConfigurationResponse */
+     * @return UpdateInstanceConfigurationResponse
+     */
     public UpdateInstanceConfigurationResponse updateInstanceConfiguration(UpdateInstanceConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceConfiguration);
     }
 
-    /** 修改指定实例的参数 修改指定实例的参数。
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
-     * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> */
+     * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
+     */
     public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(
         UpdateInstanceConfigurationRequest request) {
         return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request,
             RdsMeta.updateInstanceConfiguration, hcClient);
     }
 
-    /** 修改指定实例的参数 修改指定实例的参数。
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationAsyncRequest 请求对象
-     * @return UpdateInstanceConfigurationAsyncResponse */
+     * @return UpdateInstanceConfigurationAsyncResponse
+     */
     public UpdateInstanceConfigurationAsyncResponse updateInstanceConfigurationAsync(
         UpdateInstanceConfigurationAsyncRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceConfigurationAsync);
     }
 
-    /** 修改指定实例的参数 修改指定实例的参数。
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationAsyncRequest 请求对象
-     * @return SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> */
+     * @return SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse>
+     */
     public SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse> updateInstanceConfigurationAsyncInvoker(
         UpdateInstanceConfigurationAsyncRequest request) {
         return new SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse>(
             request, RdsMeta.updateInstanceConfigurationAsync, hcClient);
     }
 
-    /** 修改实例名称 修改实例名称。
+    /**
+     * 修改实例名称
+     *
+     * 修改实例名称。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
-     * @return UpdateInstanceNameResponse */
+     * @return UpdateInstanceNameResponse
+     */
     public UpdateInstanceNameResponse updateInstanceName(UpdateInstanceNameRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceName);
     }
 
-    /** 修改实例名称 修改实例名称。
+    /**
+     * 修改实例名称
+     *
+     * 修改实例名称。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
-     * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> */
+     * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
+     */
     public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(
         UpdateInstanceNameRequest request) {
         return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request,
             RdsMeta.updateInstanceName, hcClient);
     }
 
-    /** 修改数据库端口 修改数据库端口
+    /**
+     * 修改数据库端口
+     *
+     * 修改数据库端口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
-     * @return UpdatePortResponse */
+     * @return UpdatePortResponse
+     */
     public UpdatePortResponse updatePort(UpdatePortRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updatePort);
     }
 
-    /** 修改数据库端口 修改数据库端口
+    /**
+     * 修改数据库端口
+     *
+     * 修改数据库端口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
-     * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse> */
+     * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse>
+     */
     public SyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortInvoker(UpdatePortRequest request) {
         return new SyncInvoker<UpdatePortRequest, UpdatePortResponse>(request, RdsMeta.updatePort, hcClient);
     }
 
-    /** 修改实例备注信息 修改指定数据库实例的备注信息。
+    /**
+     * 修改实例备注信息
+     *
+     * 修改指定数据库实例的备注信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return UpdatePostgresqlInstanceAliasResponse */
+     * @return UpdatePostgresqlInstanceAliasResponse
+     */
     public UpdatePostgresqlInstanceAliasResponse updatePostgresqlInstanceAlias(
         UpdatePostgresqlInstanceAliasRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
     }
 
-    /** 修改实例备注信息 修改指定数据库实例的备注信息。
+    /**
+     * 修改实例备注信息
+     *
+     * 修改指定数据库实例的备注信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> */
+     * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
+     */
     public SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasInvoker(
         UpdatePostgresqlInstanceAliasRequest request) {
         return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request,
             RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
-    /** 升级内核小版本 对实例进行小版本升级。
+    /**
+     * 升级内核小版本
+     *
+     * 对实例进行小版本升级。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
-     * @return UpgradeDbVersionResponse */
+     * @return UpgradeDbVersionResponse
+     */
     public UpgradeDbVersionResponse upgradeDbVersion(UpgradeDbVersionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.upgradeDbVersion);
     }
 
-    /** 升级内核小版本 对实例进行小版本升级。
+    /**
+     * 升级内核小版本
+     *
+     * 对实例进行小版本升级。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
-     * @return SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> */
+     * @return SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
+     */
     public SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionInvoker(
         UpgradeDbVersionRequest request) {
         return new SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request, RdsMeta.upgradeDbVersion,
             hcClient);
     }
 
-    /** 查询API版本列表 查询API版本列表。
+    /**
+     * 查询API版本列表
+     *
+     * 查询API版本列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
-     * @return ListApiVersionResponse */
+     * @return ListApiVersionResponse
+     */
     public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listApiVersion);
     }
 
-    /** 查询API版本列表 查询API版本列表。
+    /**
+     * 查询API版本列表
+     *
+     * 查询API版本列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
-     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> */
+     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
+     */
     public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
         ListApiVersionRequest request) {
         return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, RdsMeta.listApiVersion,
             hcClient);
     }
 
-    /** 查询API版本列表 查询API版本列表。
+    /**
+     * 查询API版本列表
+     *
+     * 查询API版本列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionNewRequest 请求对象
-     * @return ListApiVersionNewResponse */
+     * @return ListApiVersionNewResponse
+     */
     public ListApiVersionNewResponse listApiVersionNew(ListApiVersionNewRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listApiVersionNew);
     }
 
-    /** 查询API版本列表 查询API版本列表。
+    /**
+     * 查询API版本列表
+     *
+     * 查询API版本列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListApiVersionNewRequest 请求对象
-     * @return SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> */
+     * @return SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse>
+     */
     public SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse> listApiVersionNewInvoker(
         ListApiVersionNewRequest request) {
         return new SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse>(request, RdsMeta.listApiVersionNew,
             hcClient);
     }
 
-    /** 查询指定的API版本信息 查询指定的API版本信息。
+    /**
+     * 查询指定的API版本信息
+     *
+     * 查询指定的API版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
-     * @return ShowApiVersionResponse */
+     * @return ShowApiVersionResponse
+     */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showApiVersion);
     }
 
-    /** 查询指定的API版本信息 查询指定的API版本信息。
+    /**
+     * 查询指定的API版本信息
+     *
+     * 查询指定的API版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
-     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> */
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
         return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, RdsMeta.showApiVersion,
             hcClient);
     }
 
-    /** 授权数据库帐号 授权数据库帐号。
+    /**
+     * 授权数据库帐号
+     *
+     * 授权数据库帐号。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
-     * @return AllowDbUserPrivilegeResponse */
+     * @return AllowDbUserPrivilegeResponse
+     */
     public AllowDbUserPrivilegeResponse allowDbUserPrivilege(AllowDbUserPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.allowDbUserPrivilege);
     }
 
-    /** 授权数据库帐号 授权数据库帐号。
+    /**
+     * 授权数据库帐号
+     *
+     * 授权数据库帐号。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
-     * @return SyncInvoker<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> */
+     * @return SyncInvoker<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse>
+     */
     public SyncInvoker<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> allowDbUserPrivilegeInvoker(
         AllowDbUserPrivilegeRequest request) {
         return new SyncInvoker<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse>(request,
             RdsMeta.allowDbUserPrivilege, hcClient);
     }
 
-    /** 创建数据库 创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
-     * @return CreateDatabaseResponse */
+     * @return CreateDatabaseResponse
+     */
     public CreateDatabaseResponse createDatabase(CreateDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createDatabase);
     }
 
-    /** 创建数据库 创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
-     * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> */
+     * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
+     */
     public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(
         CreateDatabaseRequest request) {
         return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, RdsMeta.createDatabase,
             hcClient);
     }
 
-    /** 创建数据库用户 创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDbUserRequest 请求对象
-     * @return CreateDbUserResponse */
+     * @return CreateDbUserResponse
+     */
     public CreateDbUserResponse createDbUser(CreateDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createDbUser);
     }
 
-    /** 创建数据库用户 创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateDbUserRequest 请求对象
-     * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> */
+     * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
+     */
     public SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserInvoker(CreateDbUserRequest request) {
         return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, RdsMeta.createDbUser, hcClient);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
-     * @return DeleteDatabaseResponse */
+     * @return DeleteDatabaseResponse
+     */
     public DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteDatabase);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
-     * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> */
+     * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
+     */
     public SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseInvoker(
         DeleteDatabaseRequest request) {
         return new SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request, RdsMeta.deleteDatabase,
             hcClient);
     }
 
-    /** 删除数据库用户 删除数据库用户。
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
-     * @return DeleteDbUserResponse */
+     * @return DeleteDbUserResponse
+     */
     public DeleteDbUserResponse deleteDbUser(DeleteDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteDbUser);
     }
 
-    /** 删除数据库用户 删除数据库用户。
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
-     * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> */
+     * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
+     */
     public SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserInvoker(DeleteDbUserRequest request) {
         return new SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>(request, RdsMeta.deleteDbUser, hcClient);
     }
 
-    /** 查询指定用户的已授权数据库 查询指定用户的已授权数据库。
+    /**
+     * 查询指定用户的已授权数据库
+     *
+     * 查询指定用户的已授权数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedDatabasesRequest 请求对象
-     * @return ListAuthorizedDatabasesResponse */
+     * @return ListAuthorizedDatabasesResponse
+     */
     public ListAuthorizedDatabasesResponse listAuthorizedDatabases(ListAuthorizedDatabasesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedDatabases);
     }
 
-    /** 查询指定用户的已授权数据库 查询指定用户的已授权数据库。
+    /**
+     * 查询指定用户的已授权数据库
+     *
+     * 查询指定用户的已授权数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedDatabasesRequest 请求对象
-     * @return SyncInvoker<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> */
+     * @return SyncInvoker<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse>
+     */
     public SyncInvoker<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> listAuthorizedDatabasesInvoker(
         ListAuthorizedDatabasesRequest request) {
         return new SyncInvoker<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse>(request,
             RdsMeta.listAuthorizedDatabases, hcClient);
     }
 
-    /** 查询指定数据库的已授权用户 查询指定数据库的已授权用户。
+    /**
+     * 查询指定数据库的已授权用户
+     *
+     * 查询指定数据库的已授权用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedDbUsersRequest 请求对象
-     * @return ListAuthorizedDbUsersResponse */
+     * @return ListAuthorizedDbUsersResponse
+     */
     public ListAuthorizedDbUsersResponse listAuthorizedDbUsers(ListAuthorizedDbUsersRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedDbUsers);
     }
 
-    /** 查询指定数据库的已授权用户 查询指定数据库的已授权用户。
+    /**
+     * 查询指定数据库的已授权用户
+     *
+     * 查询指定数据库的已授权用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedDbUsersRequest 请求对象
-     * @return SyncInvoker<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> */
+     * @return SyncInvoker<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse>
+     */
     public SyncInvoker<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> listAuthorizedDbUsersInvoker(
         ListAuthorizedDbUsersRequest request) {
         return new SyncInvoker<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse>(request,
             RdsMeta.listAuthorizedDbUsers, hcClient);
     }
 
-    /** 查询数据库列表 查询数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
-     * @return ListDatabasesResponse */
+     * @return ListDatabasesResponse
+     */
     public ListDatabasesResponse listDatabases(ListDatabasesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listDatabases);
     }
 
-    /** 查询数据库列表 查询数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
-     * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> */
+     * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
+     */
     public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
         return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, RdsMeta.listDatabases, hcClient);
     }
 
-    /** 查询数据库用户列表 查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
-     * @return ListDbUsersResponse */
+     * @return ListDbUsersResponse
+     */
     public ListDbUsersResponse listDbUsers(ListDbUsersRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listDbUsers);
     }
 
-    /** 查询数据库用户列表 查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
-     * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> */
+     * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
+     */
     public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
         return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, RdsMeta.listDbUsers, hcClient);
     }
 
-    /** 重置数据库密码 重置数据库密码.
+    /**
+     * 重置数据库密码
+     *
+     * 重置数据库密码.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
-     * @return ResetPwdResponse */
+     * @return ResetPwdResponse
+     */
     public ResetPwdResponse resetPwd(ResetPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.resetPwd);
     }
 
-    /** 重置数据库密码 重置数据库密码.
+    /**
+     * 重置数据库密码
+     *
+     * 重置数据库密码.
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
-     * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse> */
+     * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse>
+     */
     public SyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdInvoker(ResetPwdRequest request) {
         return new SyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, RdsMeta.resetPwd, hcClient);
     }
 
-    /** 解除数据库帐号权限 解除数据库帐号权限。
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRequest 请求对象
-     * @return RevokeResponse */
+     * @return RevokeResponse
+     */
     public RevokeResponse revoke(RevokeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.revoke);
     }
 
-    /** 解除数据库帐号权限 解除数据库帐号权限。
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRequest 请求对象
-     * @return SyncInvoker<RevokeRequest, RevokeResponse> */
+     * @return SyncInvoker<RevokeRequest, RevokeResponse>
+     */
     public SyncInvoker<RevokeRequest, RevokeResponse> revokeInvoker(RevokeRequest request) {
         return new SyncInvoker<RevokeRequest, RevokeResponse>(request, RdsMeta.revoke, hcClient);
     }
 
-    /** 设置数据库账号密码 设置数据库账号密码
+    /**
+     * 设置数据库账号密码
+     *
+     * 设置数据库账号密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetDbUserPwdRequest 请求对象
-     * @return SetDbUserPwdResponse */
+     * @return SetDbUserPwdResponse
+     */
     public SetDbUserPwdResponse setDbUserPwd(SetDbUserPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setDbUserPwd);
     }
 
-    /** 设置数据库账号密码 设置数据库账号密码
+    /**
+     * 设置数据库账号密码
+     *
+     * 设置数据库账号密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetDbUserPwdRequest 请求对象
-     * @return SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> */
+     * @return SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>
+     */
     public SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdInvoker(SetDbUserPwdRequest request) {
         return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, RdsMeta.setDbUserPwd, hcClient);
     }
 
-    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+    /**
+     * 修改指定实例的数据库备注
+     *
+     * 修改指定实例中的数据库备注。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDatabaseRequest 请求对象
-     * @return UpdateDatabaseResponse */
+     * @return UpdateDatabaseResponse
+     */
     public UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateDatabase);
     }
 
-    /** 修改指定实例的数据库备注 修改指定实例中的数据库备注。
+    /**
+     * 修改指定实例的数据库备注
+     *
+     * 修改指定实例中的数据库备注。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDatabaseRequest 请求对象
-     * @return SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> */
+     * @return SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse>
+     */
     public SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabaseInvoker(
         UpdateDatabaseRequest request) {
         return new SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse>(request, RdsMeta.updateDatabase,
             hcClient);
     }
 
-    /** 授权数据库帐号 在指定实例的数据库中, 设置帐号的权限。
+    /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowDbPrivilegeRequest 请求对象
-     * @return AllowDbPrivilegeResponse */
+     * @return AllowDbPrivilegeResponse
+     */
     public AllowDbPrivilegeResponse allowDbPrivilege(AllowDbPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.allowDbPrivilege);
     }
 
-    /** 授权数据库帐号 在指定实例的数据库中, 设置帐号的权限。
+    /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowDbPrivilegeRequest 请求对象
-     * @return SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse> */
+     * @return SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>
+     */
     public SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse> allowDbPrivilegeInvoker(
         AllowDbPrivilegeRequest request) {
         return new SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>(request, RdsMeta.allowDbPrivilege,
             hcClient);
     }
 
-    /** 数据库代理规格变更 数据库代理实例进行规格变更。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理实例进行规格变更。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeProxyScaleRequest 请求对象
-     * @return ChangeProxyScaleResponse */
+     * @return ChangeProxyScaleResponse
+     */
     public ChangeProxyScaleResponse changeProxyScale(ChangeProxyScaleRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.changeProxyScale);
     }
 
-    /** 数据库代理规格变更 数据库代理实例进行规格变更。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理实例进行规格变更。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeProxyScaleRequest 请求对象
-     * @return SyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse> */
+     * @return SyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse>
+     */
     public SyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse> changeProxyScaleInvoker(
         ChangeProxyScaleRequest request) {
         return new SyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse>(request, RdsMeta.changeProxyScale,
             hcClient);
     }
 
-    /** 修改读写分离阈值 修改指定实例的读写分离延时阈值。
+    /**
+     * 修改读写分离阈值
+     *
+     * 修改指定实例的读写分离延时阈值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeTheDelayThresholdRequest 请求对象
-     * @return ChangeTheDelayThresholdResponse */
+     * @return ChangeTheDelayThresholdResponse
+     */
     public ChangeTheDelayThresholdResponse changeTheDelayThreshold(ChangeTheDelayThresholdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.changeTheDelayThreshold);
     }
 
-    /** 修改读写分离阈值 修改指定实例的读写分离延时阈值。
+    /**
+     * 修改读写分离阈值
+     *
+     * 修改指定实例的读写分离延时阈值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ChangeTheDelayThresholdRequest 请求对象
-     * @return SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> */
+     * @return SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>
+     */
     public SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThresholdInvoker(
         ChangeTheDelayThresholdRequest request) {
         return new SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>(request,
             RdsMeta.changeTheDelayThreshold, hcClient);
     }
 
-    /** 创建数据库 在指定实例中创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
-     * @return CreatePostgresqlDatabaseResponse */
+     * @return CreatePostgresqlDatabaseResponse
+     */
     public CreatePostgresqlDatabaseResponse createPostgresqlDatabase(CreatePostgresqlDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDatabase);
     }
 
-    /** 创建数据库 在指定实例中创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
-     * @return SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse> */
+     * @return SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>
+     */
     public SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse> createPostgresqlDatabaseInvoker(
         CreatePostgresqlDatabaseRequest request) {
         return new SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>(request,
             RdsMeta.createPostgresqlDatabase, hcClient);
     }
 
-    /** 创建数据库SCHEMA 在指定实例的数据库中, 创建数据库schema。
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
-     * @return CreatePostgresqlDatabaseSchemaResponse */
+     * @return CreatePostgresqlDatabaseSchemaResponse
+     */
     public CreatePostgresqlDatabaseSchemaResponse createPostgresqlDatabaseSchema(
         CreatePostgresqlDatabaseSchemaRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDatabaseSchema);
     }
 
-    /** 创建数据库SCHEMA 在指定实例的数据库中, 创建数据库schema。
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
-     * @return SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse> */
+     * @return SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>
+     */
     public SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse> createPostgresqlDatabaseSchemaInvoker(
         CreatePostgresqlDatabaseSchemaRequest request) {
         return new SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>(request,
             RdsMeta.createPostgresqlDatabaseSchema, hcClient);
     }
 
-    /** 创建数据库用户 在指定实例中创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
-     * @return CreatePostgresqlDbUserResponse */
+     * @return CreatePostgresqlDbUserResponse
+     */
     public CreatePostgresqlDbUserResponse createPostgresqlDbUser(CreatePostgresqlDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDbUser);
     }
 
-    /** 创建数据库用户 在指定实例中创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
-     * @return SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse> */
+     * @return SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>
+     */
     public SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse> createPostgresqlDbUserInvoker(
         CreatePostgresqlDbUserRequest request) {
         return new SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>(request,
             RdsMeta.createPostgresqlDbUser, hcClient);
     }
 
-    /** 查询数据库SCHEMA列表 查询指定实例的数据库SCHEMA列表。
+    /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
-     * @return ListPostgresqlDatabaseSchemasResponse */
+     * @return ListPostgresqlDatabaseSchemasResponse
+     */
     public ListPostgresqlDatabaseSchemasResponse listPostgresqlDatabaseSchemas(
         ListPostgresqlDatabaseSchemasRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDatabaseSchemas);
     }
 
-    /** 查询数据库SCHEMA列表 查询指定实例的数据库SCHEMA列表。
+    /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
-     * @return SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse> */
+     * @return SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>
+     */
     public SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse> listPostgresqlDatabaseSchemasInvoker(
         ListPostgresqlDatabaseSchemasRequest request) {
         return new SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>(request,
             RdsMeta.listPostgresqlDatabaseSchemas, hcClient);
     }
 
-    /** 查询数据库列表 查询指定实例中的数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
-     * @return ListPostgresqlDatabasesResponse */
+     * @return ListPostgresqlDatabasesResponse
+     */
     public ListPostgresqlDatabasesResponse listPostgresqlDatabases(ListPostgresqlDatabasesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDatabases);
     }
 
-    /** 查询数据库列表 查询指定实例中的数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
-     * @return SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse> */
+     * @return SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>
+     */
     public SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse> listPostgresqlDatabasesInvoker(
         ListPostgresqlDatabasesRequest request) {
         return new SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>(request,
             RdsMeta.listPostgresqlDatabases, hcClient);
     }
 
-    /** 查询数据库用户列表 在指定实例中查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
-     * @return ListPostgresqlDbUserPaginatedResponse */
+     * @return ListPostgresqlDbUserPaginatedResponse
+     */
     public ListPostgresqlDbUserPaginatedResponse listPostgresqlDbUserPaginated(
         ListPostgresqlDbUserPaginatedRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDbUserPaginated);
     }
 
-    /** 查询数据库用户列表 在指定实例中查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
-     * @return SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse> */
+     * @return SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>
+     */
     public SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse> listPostgresqlDbUserPaginatedInvoker(
         ListPostgresqlDbUserPaginatedRequest request) {
         return new SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>(request,
             RdsMeta.listPostgresqlDbUserPaginated, hcClient);
     }
 
-    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 查询数据库代理可变更的规格
+     *
+     * 查询数据库代理可变更的规格信息。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SearchQueryScaleComputeFlavorsRequest 请求对象
-     * @return SearchQueryScaleComputeFlavorsResponse */
+     * @return SearchQueryScaleComputeFlavorsResponse
+     */
     public SearchQueryScaleComputeFlavorsResponse searchQueryScaleComputeFlavors(
         SearchQueryScaleComputeFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.searchQueryScaleComputeFlavors);
     }
 
-    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 查询数据库代理可变更的规格
+     *
+     * 查询数据库代理可变更的规格信息。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SearchQueryScaleComputeFlavorsRequest 请求对象
-     * @return SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> */
+     * @return SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse>
+     */
     public SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse> searchQueryScaleComputeFlavorsInvoker(
         SearchQueryScaleComputeFlavorsRequest request) {
         return new SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse>(request,
             RdsMeta.searchQueryScaleComputeFlavors, hcClient);
     }
 
-    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 查询数据库代理可变更的规格
+     *
+     * 查询数据库代理可变更的规格信息。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SearchQueryScaleFlavorsRequest 请求对象
-     * @return SearchQueryScaleFlavorsResponse */
+     * @return SearchQueryScaleFlavorsResponse
+     */
     public SearchQueryScaleFlavorsResponse searchQueryScaleFlavors(SearchQueryScaleFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.searchQueryScaleFlavors);
     }
 
-    /** 查询数据库代理可变更的规格 查询数据库代理可变更的规格信息。 - 调用接口前，您需要了解API 认证鉴权。
+    /**
+     * 查询数据库代理可变更的规格
+     *
+     * 查询数据库代理可变更的规格信息。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SearchQueryScaleFlavorsRequest 请求对象
-     * @return SyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> */
+     * @return SyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse>
+     */
     public SyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse> searchQueryScaleFlavorsInvoker(
         SearchQueryScaleFlavorsRequest request) {
         return new SyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse>(request,
             RdsMeta.searchQueryScaleFlavors, hcClient);
     }
 
-    /** 重置数据库帐号密码 重置指定数据库帐号的密码。
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
-     * @return SetPostgresqlDbUserPwdResponse */
+     * @return SetPostgresqlDbUserPwdResponse
+     */
     public SetPostgresqlDbUserPwdResponse setPostgresqlDbUserPwd(SetPostgresqlDbUserPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setPostgresqlDbUserPwd);
     }
 
-    /** 重置数据库帐号密码 重置指定数据库帐号的密码。
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
-     * @return SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> */
+     * @return SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>
+     */
     public SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwdInvoker(
         SetPostgresqlDbUserPwdRequest request) {
         return new SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>(request,
             RdsMeta.setPostgresqlDbUserPwd, hcClient);
     }
 
-    /** 查询数据库代理信息 查询指定实例的数据库代理详细信息。
+    /**
+     * 查询数据库代理信息
+     *
+     * 查询指定实例的数据库代理详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInformationAboutDatabaseProxyRequest 请求对象
-     * @return ShowInformationAboutDatabaseProxyResponse */
+     * @return ShowInformationAboutDatabaseProxyResponse
+     */
     public ShowInformationAboutDatabaseProxyResponse showInformationAboutDatabaseProxy(
         ShowInformationAboutDatabaseProxyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showInformationAboutDatabaseProxy);
     }
 
-    /** 查询数据库代理信息 查询指定实例的数据库代理详细信息。
+    /**
+     * 查询数据库代理信息
+     *
+     * 查询指定实例的数据库代理详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowInformationAboutDatabaseProxyRequest 请求对象
-     * @return SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> */
+     * @return SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>
+     */
     public SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyInvoker(
         ShowInformationAboutDatabaseProxyRequest request) {
         return new SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>(
             request, RdsMeta.showInformationAboutDatabaseProxy, hcClient);
     }
 
-    /** 开启数据库代理 为指定实例开启数据库代理。
+    /**
+     * 开启数据库代理
+     *
+     * 为指定实例开启数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartDatabaseProxyRequest 请求对象
-     * @return StartDatabaseProxyResponse */
+     * @return StartDatabaseProxyResponse
+     */
     public StartDatabaseProxyResponse startDatabaseProxy(StartDatabaseProxyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startDatabaseProxy);
     }
 
-    /** 开启数据库代理 为指定实例开启数据库代理。
+    /**
+     * 开启数据库代理
+     *
+     * 为指定实例开启数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartDatabaseProxyRequest 请求对象
-     * @return SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> */
+     * @return SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>
+     */
     public SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxyInvoker(
         StartDatabaseProxyRequest request) {
         return new SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>(request,
             RdsMeta.startDatabaseProxy, hcClient);
     }
 
-    /** 关闭数据库代理 为指定实例关闭数据库代理。
+    /**
+     * 关闭数据库代理
+     *
+     * 为指定实例关闭数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopDatabaseProxyRequest 请求对象
-     * @return StopDatabaseProxyResponse */
+     * @return StopDatabaseProxyResponse
+     */
     public StopDatabaseProxyResponse stopDatabaseProxy(StopDatabaseProxyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.stopDatabaseProxy);
     }
 
-    /** 关闭数据库代理 为指定实例关闭数据库代理。
+    /**
+     * 关闭数据库代理
+     *
+     * 为指定实例关闭数据库代理。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopDatabaseProxyRequest 请求对象
-     * @return SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> */
+     * @return SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>
+     */
     public SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyInvoker(
         StopDatabaseProxyRequest request) {
         return new SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>(request, RdsMeta.stopDatabaseProxy,
             hcClient);
     }
 
-    /** 修改读写分离权重 修改指定实例的读写分离权重。
+    /**
+     * 修改读写分离权重
+     *
+     * 修改指定实例的读写分离权重。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateReadWeightRequest 请求对象
-     * @return UpdateReadWeightResponse */
+     * @return UpdateReadWeightResponse
+     */
     public UpdateReadWeightResponse updateReadWeight(UpdateReadWeightRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateReadWeight);
     }
 
-    /** 修改读写分离权重 修改指定实例的读写分离权重。
+    /**
+     * 修改读写分离权重
+     *
+     * 修改指定实例的读写分离权重。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateReadWeightRequest 请求对象
-     * @return SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> */
+     * @return SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>
+     */
     public SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeightInvoker(
         UpdateReadWeightRequest request) {
         return new SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>(request, RdsMeta.updateReadWeight,
             hcClient);
     }
 
-    /** 授权数据库帐号 授权数据库帐号。
+    /**
+     * 授权数据库帐号
+     *
+     * 授权数据库帐号。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
-     * @return AllowSqlserverDbUserPrivilegeResponse */
+     * @return AllowSqlserverDbUserPrivilegeResponse
+     */
     public AllowSqlserverDbUserPrivilegeResponse allowSqlserverDbUserPrivilege(
         AllowSqlserverDbUserPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.allowSqlserverDbUserPrivilege);
     }
 
-    /** 授权数据库帐号 授权数据库帐号。
+    /**
+     * 授权数据库帐号
+     *
+     * 授权数据库帐号。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
-     * @return SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> */
+     * @return SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>
+     */
     public SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> allowSqlserverDbUserPrivilegeInvoker(
         AllowSqlserverDbUserPrivilegeRequest request) {
         return new SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>(request,
             RdsMeta.allowSqlserverDbUserPrivilege, hcClient);
     }
 
-    /** 创建数据库 创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateSqlserverDatabaseRequest 请求对象
-     * @return CreateSqlserverDatabaseResponse */
+     * @return CreateSqlserverDatabaseResponse
+     */
     public CreateSqlserverDatabaseResponse createSqlserverDatabase(CreateSqlserverDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createSqlserverDatabase);
     }
 
-    /** 创建数据库 创建数据库。
+    /**
+     * 创建数据库
+     *
+     * 创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateSqlserverDatabaseRequest 请求对象
-     * @return SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> */
+     * @return SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>
+     */
     public SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabaseInvoker(
         CreateSqlserverDatabaseRequest request) {
         return new SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>(request,
             RdsMeta.createSqlserverDatabase, hcClient);
     }
 
-    /** 创建数据库用户 创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateSqlserverDbUserRequest 请求对象
-     * @return CreateSqlserverDbUserResponse */
+     * @return CreateSqlserverDbUserResponse
+     */
     public CreateSqlserverDbUserResponse createSqlserverDbUser(CreateSqlserverDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createSqlserverDbUser);
     }
 
-    /** 创建数据库用户 创建数据库用户。
+    /**
+     * 创建数据库用户
+     *
+     * 创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateSqlserverDbUserRequest 请求对象
-     * @return SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> */
+     * @return SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>
+     */
     public SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> createSqlserverDbUserInvoker(
         CreateSqlserverDbUserRequest request) {
         return new SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>(request,
             RdsMeta.createSqlserverDbUser, hcClient);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseRequest 请求对象
-     * @return DeleteSqlserverDatabaseResponse */
+     * @return DeleteSqlserverDatabaseResponse
+     */
     public DeleteSqlserverDatabaseResponse deleteSqlserverDatabase(DeleteSqlserverDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDatabase);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseRequest 请求对象
-     * @return SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> */
+     * @return SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>
+     */
     public SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> deleteSqlserverDatabaseInvoker(
         DeleteSqlserverDatabaseRequest request) {
         return new SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>(request,
             RdsMeta.deleteSqlserverDatabase, hcClient);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseExRequest 请求对象
-     * @return DeleteSqlserverDatabaseExResponse */
+     * @return DeleteSqlserverDatabaseExResponse
+     */
     public DeleteSqlserverDatabaseExResponse deleteSqlserverDatabaseEx(DeleteSqlserverDatabaseExRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDatabaseEx);
     }
 
-    /** 删除数据库 删除数据库。
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseExRequest 请求对象
-     * @return SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> */
+     * @return SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse>
+     */
     public SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse> deleteSqlserverDatabaseExInvoker(
         DeleteSqlserverDatabaseExRequest request) {
         return new SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse>(request,
             RdsMeta.deleteSqlserverDatabaseEx, hcClient);
     }
 
-    /** 删除数据库用户 删除数据库用户。
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDbUserRequest 请求对象
-     * @return DeleteSqlserverDbUserResponse */
+     * @return DeleteSqlserverDbUserResponse
+     */
     public DeleteSqlserverDbUserResponse deleteSqlserverDbUser(DeleteSqlserverDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDbUser);
     }
 
-    /** 删除数据库用户 删除数据库用户。
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteSqlserverDbUserRequest 请求对象
-     * @return SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> */
+     * @return SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>
+     */
     public SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> deleteSqlserverDbUserInvoker(
         DeleteSqlserverDbUserRequest request) {
         return new SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>(request,
             RdsMeta.deleteSqlserverDbUser, hcClient);
     }
 
-    /** 查询指定数据库的已授权用户 查询指定数据库的已授权用户。
+    /**
+     * 查询指定数据库的已授权用户
+     *
+     * 查询指定数据库的已授权用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
-     * @return ListAuthorizedSqlserverDbUsersResponse */
+     * @return ListAuthorizedSqlserverDbUsersResponse
+     */
     public ListAuthorizedSqlserverDbUsersResponse listAuthorizedSqlserverDbUsers(
         ListAuthorizedSqlserverDbUsersRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedSqlserverDbUsers);
     }
 
-    /** 查询指定数据库的已授权用户 查询指定数据库的已授权用户。
+    /**
+     * 查询指定数据库的已授权用户
+     *
+     * 查询指定数据库的已授权用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
-     * @return SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> */
+     * @return SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>
+     */
     public SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsersInvoker(
         ListAuthorizedSqlserverDbUsersRequest request) {
         return new SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>(request,
             RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
     }
 
-    /** 查询数据库列表 查询数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSqlserverDatabasesRequest 请求对象
-     * @return ListSqlserverDatabasesResponse */
+     * @return ListSqlserverDatabasesResponse
+     */
     public ListSqlserverDatabasesResponse listSqlserverDatabases(ListSqlserverDatabasesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSqlserverDatabases);
     }
 
-    /** 查询数据库列表 查询数据库列表。
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSqlserverDatabasesRequest 请求对象
-     * @return SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> */
+     * @return SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>
+     */
     public SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> listSqlserverDatabasesInvoker(
         ListSqlserverDatabasesRequest request) {
         return new SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>(request,
             RdsMeta.listSqlserverDatabases, hcClient);
     }
 
-    /** 查询数据库用户列表 查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSqlserverDbUsersRequest 请求对象
-     * @return ListSqlserverDbUsersResponse */
+     * @return ListSqlserverDbUsersResponse
+     */
     public ListSqlserverDbUsersResponse listSqlserverDbUsers(ListSqlserverDbUsersRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSqlserverDbUsers);
     }
 
-    /** 查询数据库用户列表 查询数据库用户列表。
+    /**
+     * 查询数据库用户列表
+     *
+     * 查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSqlserverDbUsersRequest 请求对象
-     * @return SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> */
+     * @return SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>
+     */
     public SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> listSqlserverDbUsersInvoker(
         ListSqlserverDbUsersRequest request) {
         return new SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>(request,
             RdsMeta.listSqlserverDbUsers, hcClient);
     }
 
-    /** 解除数据库帐号权限 解除数据库帐号权限。
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
-     * @return RevokeSqlserverDbUserPrivilegeResponse */
+     * @return RevokeSqlserverDbUserPrivilegeResponse
+     */
     public RevokeSqlserverDbUserPrivilegeResponse revokeSqlserverDbUserPrivilege(
         RevokeSqlserverDbUserPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.revokeSqlserverDbUserPrivilege);
     }
 
-    /** 解除数据库帐号权限 解除数据库帐号权限。
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
-     * @return SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> */
+     * @return SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>
+     */
     public SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilegeInvoker(
         RevokeSqlserverDbUserPrivilegeRequest request) {
         return new SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>(request,

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteBlockchainRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** bcs 服务id
-     * 
-     * @return blockchainId */
+    /**
+     * bcs 服务id
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -49,9 +52,10 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** [是否删除存储，IEF模式下不用填写](tag:online,g42)[是否删除存储](tag:hcs)
-     * 
-     * @return isDeleteStorage */
+    /**
+     * [是否删除存储，IEF模式下不用填写](tag:online,g42)[是否删除存储](tag:hcs)
+     * @return isDeleteStorage
+     */
     public Boolean getIsDeleteStorage() {
         return isDeleteStorage;
     }
@@ -65,9 +69,10 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** [是否删除obs，IEF模式下不用填写](tag:online,g42)[是否删除obs](tag:hcs)
-     * 
-     * @return isDeleteObs */
+    /**
+     * [是否删除obs，IEF模式下不用填写](tag:online,g42)[是否删除obs](tag:hcs)
+     * @return isDeleteObs
+     */
     public Boolean getIsDeleteObs() {
         return isDeleteObs;
     }
@@ -81,9 +86,10 @@ public class DeleteBlockchainRequest {
         return this;
     }
 
-    /** 是否删除底层CCE资源，IEF模式下不用填写
-     * 
-     * @return isDeleteResource */
+    /**
+     * 是否删除底层CCE资源，IEF模式下不用填写
+     * @return isDeleteResource
+     */
     public Boolean getIsDeleteResource() {
         return isDeleteResource;
     }
@@ -124,7 +130,10 @@ public class DeleteBlockchainRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

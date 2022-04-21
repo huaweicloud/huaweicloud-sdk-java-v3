@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PostShortAudioReq */
+/**
+ * PostShortAudioReq
+ */
 public class PostShortAudioReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PostShortAudioReq {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public Config getConfig() {
         return config;
     }
@@ -49,9 +52,10 @@ public class PostShortAudioReq {
         return this;
     }
 
-    /** 语音数据，base64编码，要求base64编码后大小不超过4M，音频时长不超过1分钟。
-     * 
-     * @return data */
+    /**
+     * 语音数据，base64编码，要求base64编码后大小不超过4M，音频时长不超过1分钟。
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -88,7 +92,10 @@ public class PostShortAudioReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

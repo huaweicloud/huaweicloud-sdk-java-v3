@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowClusterRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -39,9 +42,10 @@ public class ShowClusterRequest {
         return this;
     }
 
-    /** 查询集群详细信息。若设置为true，获取集群下节点总数(totalNodesNumber)、正常节点数(activeNodesNumber)、CPU总量(totalNodesCPU)、内存总量(totalNodesMemory)和已安装插件列表(installedAddonInstances)，已安装插件列表中包含名称(addonTemplateName)、版本号(version)、插件的状态信息(status)，放入到annotation中。
-     * 
-     * @return detail */
+    /**
+     * 查询集群详细信息。若设置为true，获取集群下节点总数(totalNodesNumber)、正常节点数(activeNodesNumber)、CPU总量(totalNodesCPU)、内存总量(totalNodesMemory)和已安装插件列表(installedAddonInstances)，已安装插件列表中包含名称(addonTemplateName)、版本号(version)、插件的状态信息(status)，放入到annotation中。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -78,7 +82,10 @@ public class ShowClusterRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SendCommandRequestBody */
+/**
+ * SendCommandRequestBody
+ */
 public class SendCommandRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,12 @@ public class SendCommandRequestBody {
         return this;
     }
 
-    /** 服务ID，自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -52,9 +57,12 @@ public class SendCommandRequestBody {
         return this;
     }
 
-    /** 命令ID，自动向下取整 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return commandId */
+    /**
+     * 命令ID，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return commandId
+     */
     public Integer getCommandId() {
         return commandId;
     }
@@ -68,9 +76,10 @@ public class SendCommandRequestBody {
         return this;
     }
 
-    /** 命令是否同步 true-同步 false-异步 同步命令会将命令以MQTT消息发送给设备后等待设备的MQTT命令响应，收到响应后再回复响应（默认超时5秒），异步命令则以立即返回响应
-     * 
-     * @return isSync */
+    /**
+     * 命令是否同步 true-同步 false-异步 同步命令会将命令以MQTT消息发送给设备后等待设备的MQTT命令响应，收到响应后再回复响应（默认超时5秒），异步命令则以立即返回响应
+     * @return isSync
+     */
     public Boolean getIsSync() {
         return isSync;
     }
@@ -100,9 +109,10 @@ public class SendCommandRequestBody {
         return this;
     }
 
-    /** 请求参数列表
-     * 
-     * @return requests */
+    /**
+     * 请求参数列表
+     * @return requests
+     */
     public List<RequestParameter> getRequests() {
         return requests;
     }
@@ -143,7 +153,10 @@ public class SendCommandRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

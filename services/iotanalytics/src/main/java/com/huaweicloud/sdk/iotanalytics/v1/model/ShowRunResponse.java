@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRunResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业运行ID。
-     * 
-     * @return runId */
+    /**
+     * 作业运行ID。
+     * @return runId
+     */
     public String getRunId() {
         return runId;
     }
@@ -68,9 +71,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业ID。
-     * 
-     * @return jobId */
+    /**
+     * 作业ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -84,9 +88,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -100,9 +105,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
-     * 
-     * @return status */
+    /**
+     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -116,9 +122,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建运行时间。
-     * 
-     * @return createdTime */
+    /**
+     * 创建运行时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -132,9 +139,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统提示信息。运行失败时，失败原因。
-     * 
-     * @return message */
+    /**
+     * 系统提示信息。运行失败时，失败原因。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -164,9 +172,10 @@ public class ShowRunResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业运行详情。
-     * 
-     * @return details */
+    /**
+     * 作业运行详情。
+     * @return details
+     */
     public List<RunDetail> getDetails() {
         return details;
     }
@@ -212,7 +221,10 @@ public class ShowRunResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

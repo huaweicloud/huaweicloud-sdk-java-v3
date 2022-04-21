@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateParamsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class UpdateParamsResponse extends SdkResponse {
 
     private Boolean success;
 
-    /** 是否需要重启 */
+    /**
+     * 是否需要重启
+     */
     public static final class ShouldRestartEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final ShouldRestartEnum TRUE = new ShouldRestartEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final ShouldRestartEnum FALSE = new ShouldRestartEnum("false");
 
         private static final Map<String, ShouldRestartEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class UpdateParamsResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改参数是否成功
-     * 
-     * @return success */
+    /**
+     * 修改参数是否成功
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -126,9 +135,10 @@ public class UpdateParamsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否需要重启
-     * 
-     * @return shouldRestart */
+    /**
+     * 是否需要重启
+     * @return shouldRestart
+     */
     public ShouldRestartEnum getShouldRestart() {
         return shouldRestart;
     }
@@ -142,9 +152,10 @@ public class UpdateParamsResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -158,9 +169,10 @@ public class UpdateParamsResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -201,7 +213,10 @@ public class UpdateParamsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

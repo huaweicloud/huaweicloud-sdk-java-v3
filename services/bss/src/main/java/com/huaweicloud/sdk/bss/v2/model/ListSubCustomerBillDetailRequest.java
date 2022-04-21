@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSubCustomerBillDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
-     * 
-     * @return xLanguage */
+    /**
+     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -116,9 +119,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 账期所在月份。格式：YYYY-MM
-     * 
-     * @return billCycle */
+    /**
+     * 账期所在月份。格式：YYYY-MM
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -132,9 +136,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -148,9 +153,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -164,9 +170,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -180,9 +187,12 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 计费模式。不传数据时默认查询所有计费模式下的消费记录。1：包周期3：按需10：预留实例 minimum: 0 maximum: 64
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。不传数据时默认查询所有计费模式下的消费记录。1：包周期3：按需10：预留实例
+     * minimum: 0
+     * maximum: 64
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -196,10 +206,12 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 minimum: 0
+    /**
+     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * minimum: 0
      * maximum: 127
-     * 
-     * @return billDetailType */
+     * @return billDetailType
+     */
     public Integer getBillDetailType() {
         return billDetailType;
     }
@@ -213,9 +225,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 资源标识。
-     * 
-     * @return resourceId */
+    /**
+     * 资源标识。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -229,9 +242,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -245,9 +259,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 订单ID或交易ID，扣费维度的唯一标识。账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
-     * 
-     * @return tradeId */
+    /**
+     * 订单ID或交易ID，扣费维度的唯一标识。账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
+     * @return tradeId
+     */
     public String getTradeId() {
         return tradeId;
     }
@@ -261,9 +276,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 客户经理标识。
-     * 
-     * @return accountManagerId */
+    /**
+     * 客户经理标识。
+     * @return accountManagerId
+     */
     public String getAccountManagerId() {
         return accountManagerId;
     }
@@ -277,9 +293,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 子客户的关联类型：1：顾问销售2：代售
-     * 
-     * @return associationType */
+    /**
+     * 子客户的关联类型：1：顾问销售2：代售
+     * @return associationType
+     */
     public String getAssociationType() {
         return associationType;
     }
@@ -293,11 +310,12 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -311,9 +329,12 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 每次查询的数量限制。默认值为10。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数量限制。默认值为10。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -327,9 +348,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 说明： 华为云伙伴能力中心可以查询名下所有子客户消费（包括精英服务商子客户）。如果是普通经销商，那么此处可以为空。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 说明： 华为云伙伴能力中心可以查询名下所有子客户消费（包括精英服务商子客户）。如果是普通经销商，那么此处可以为空。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -343,9 +365,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 查询的资源消费记录的开始日期，格式为YYYY-MM-DD。 说明： 必须和cycle（即资源的消费账期）在同一个月。
-     * 
-     * @return billDateBegin */
+    /**
+     * 查询的资源消费记录的开始日期，格式为YYYY-MM-DD。 说明： 必须和cycle（即资源的消费账期）在同一个月。
+     * @return billDateBegin
+     */
     public String getBillDateBegin() {
         return billDateBegin;
     }
@@ -359,10 +382,10 @@ public class ListSubCustomerBillDetailRequest {
         return this;
     }
 
-    /** 查询的资源消费记录的结束日期，格式为YYYY-MM-DD。 说明：
-     * 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
-     * 
-     * @return billDateEnd */
+    /**
+     * 查询的资源消费记录的结束日期，格式为YYYY-MM-DD。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
+     * @return billDateEnd
+     */
     public String getBillDateEnd() {
         return billDateEnd;
     }
@@ -445,7 +468,10 @@ public class ListSubCustomerBillDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

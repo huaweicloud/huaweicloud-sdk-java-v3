@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。 */
+/**
+ * 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。
+ */
 public class WeightPodAffinityTerms {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class WeightPodAffinityTerms {
         return this;
     }
 
-    /** Get podAffinityTerm
-     * 
-     * @return podAffinityTerm */
+    /**
+     * Get podAffinityTerm
+     * @return podAffinityTerm
+     */
     public WeightPodAffinityTermsPodAffinityTerm getPodAffinityTerm() {
         return podAffinityTerm;
     }
@@ -50,9 +53,10 @@ public class WeightPodAffinityTerms {
         return this;
     }
 
-    /** 权重，范围为1-100
-     * 
-     * @return weight */
+    /**
+     * 权重，范围为1-100
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -89,7 +93,10 @@ public class WeightPodAffinityTerms {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

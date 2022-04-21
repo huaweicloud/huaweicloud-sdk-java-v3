@@ -10,72 +10,109 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateTaskSpeedReq {
 
-    /** 当前上报进度的子任务名称，子任务名称包括： 创建虚拟机 CREATE_CLOUD_SERVER 配置安全通道 SSL_CONFIG 挂载代理镜像 ATTACH_AGENT_IMAGE 卸载载代理镜像
-     * DETTACH_AGENT_IMAGE Linux分区格式化 FORMAT_DISK_LINUX Linux分区格式化(文件级级） FORMAT_DISK_LINUX_FILE Linux分区格式化(块级）
-     * FORMAT_DISK_LINUX_BLOCK Windows分区格式化 FORMAT_DISK_WINDOWS Linux文件级数据迁移 MIGRATE_LINUX_FILE, Linux块级数据迁移
-     * MIGRATE_LINUX_BLOCK Windows块级数据迁移 MIGRATE_WINDOWS_BLOCK 克隆一个虚拟机 CLONE_VM Linux文件级数据同步 SYNC_LINUX_FILE Linux块级数据同步
-     * SYNC_LINUX_BLOCK Windows块级数据同步 SYNC_WINDOWS_BLOCK Linux配置修改 CONFIGURE_LINUX Linux配置修改(块级）CONFIGURE_LINUX_BLOCK
-     * Linux配置修改（文件级） CONFIGURE_LINUX_FILE Windows配置修改 CONFIGURE_WINDOWS */
+    /**
+     * 当前上报进度的子任务名称，子任务名称包括： 创建虚拟机 CREATE_CLOUD_SERVER 配置安全通道 SSL_CONFIG 挂载代理镜像 ATTACH_AGENT_IMAGE 卸载载代理镜像 DETTACH_AGENT_IMAGE Linux分区格式化 FORMAT_DISK_LINUX Linux分区格式化(文件级级） FORMAT_DISK_LINUX_FILE Linux分区格式化(块级） FORMAT_DISK_LINUX_BLOCK Windows分区格式化 FORMAT_DISK_WINDOWS Linux文件级数据迁移 MIGRATE_LINUX_FILE, Linux块级数据迁移 MIGRATE_LINUX_BLOCK Windows块级数据迁移 MIGRATE_WINDOWS_BLOCK 克隆一个虚拟机 CLONE_VM Linux文件级数据同步 SYNC_LINUX_FILE Linux块级数据同步 SYNC_LINUX_BLOCK Windows块级数据同步 SYNC_WINDOWS_BLOCK Linux配置修改 CONFIGURE_LINUX Linux配置修改(块级）CONFIGURE_LINUX_BLOCK Linux配置修改（文件级） CONFIGURE_LINUX_FILE Windows配置修改 CONFIGURE_WINDOWS
+     */
     public static final class SubtaskNameEnum {
 
-        /** Enum CREATE_CLOUD_SERVER for value: "CREATE_CLOUD_SERVER" */
+        /**
+         * Enum CREATE_CLOUD_SERVER for value: "CREATE_CLOUD_SERVER"
+         */
         public static final SubtaskNameEnum CREATE_CLOUD_SERVER = new SubtaskNameEnum("CREATE_CLOUD_SERVER");
 
-        /** Enum SSL_CONFIG for value: "SSL_CONFIG" */
+        /**
+         * Enum SSL_CONFIG for value: "SSL_CONFIG"
+         */
         public static final SubtaskNameEnum SSL_CONFIG = new SubtaskNameEnum("SSL_CONFIG");
 
-        /** Enum ATTACH_AGENT_IMAGE for value: "ATTACH_AGENT_IMAGE" */
+        /**
+         * Enum ATTACH_AGENT_IMAGE for value: "ATTACH_AGENT_IMAGE"
+         */
         public static final SubtaskNameEnum ATTACH_AGENT_IMAGE = new SubtaskNameEnum("ATTACH_AGENT_IMAGE");
 
-        /** Enum DETTACH_AGENT_IMAGE for value: "DETTACH_AGENT_IMAGE" */
+        /**
+         * Enum DETTACH_AGENT_IMAGE for value: "DETTACH_AGENT_IMAGE"
+         */
         public static final SubtaskNameEnum DETTACH_AGENT_IMAGE = new SubtaskNameEnum("DETTACH_AGENT_IMAGE");
 
-        /** Enum FORMAT_DISK_LINUX for value: "FORMAT_DISK_LINUX" */
+        /**
+         * Enum FORMAT_DISK_LINUX for value: "FORMAT_DISK_LINUX"
+         */
         public static final SubtaskNameEnum FORMAT_DISK_LINUX = new SubtaskNameEnum("FORMAT_DISK_LINUX");
 
-        /** Enum FORMAT_DISK_LINUX_FILE for value: "FORMAT_DISK_LINUX_FILE" */
+        /**
+         * Enum FORMAT_DISK_LINUX_FILE for value: "FORMAT_DISK_LINUX_FILE"
+         */
         public static final SubtaskNameEnum FORMAT_DISK_LINUX_FILE = new SubtaskNameEnum("FORMAT_DISK_LINUX_FILE");
 
-        /** Enum FORMAT_DISK_LINUX_BLOCK for value: "FORMAT_DISK_LINUX_BLOCK" */
+        /**
+         * Enum FORMAT_DISK_LINUX_BLOCK for value: "FORMAT_DISK_LINUX_BLOCK"
+         */
         public static final SubtaskNameEnum FORMAT_DISK_LINUX_BLOCK = new SubtaskNameEnum("FORMAT_DISK_LINUX_BLOCK");
 
-        /** Enum FORMAT_DISK_WINDOWS for value: "FORMAT_DISK_WINDOWS" */
+        /**
+         * Enum FORMAT_DISK_WINDOWS for value: "FORMAT_DISK_WINDOWS"
+         */
         public static final SubtaskNameEnum FORMAT_DISK_WINDOWS = new SubtaskNameEnum("FORMAT_DISK_WINDOWS");
 
-        /** Enum MIGRATE_LINUX_FILE for value: "MIGRATE_LINUX_FILE" */
+        /**
+         * Enum MIGRATE_LINUX_FILE for value: "MIGRATE_LINUX_FILE"
+         */
         public static final SubtaskNameEnum MIGRATE_LINUX_FILE = new SubtaskNameEnum("MIGRATE_LINUX_FILE");
 
-        /** Enum MIGRATE_LINUX_BLOCK for value: "MIGRATE_LINUX_BLOCK" */
+        /**
+         * Enum MIGRATE_LINUX_BLOCK for value: "MIGRATE_LINUX_BLOCK"
+         */
         public static final SubtaskNameEnum MIGRATE_LINUX_BLOCK = new SubtaskNameEnum("MIGRATE_LINUX_BLOCK");
 
-        /** Enum MIGRATE_WINDOWS_BLOCK for value: "MIGRATE_WINDOWS_BLOCK" */
+        /**
+         * Enum MIGRATE_WINDOWS_BLOCK for value: "MIGRATE_WINDOWS_BLOCK"
+         */
         public static final SubtaskNameEnum MIGRATE_WINDOWS_BLOCK = new SubtaskNameEnum("MIGRATE_WINDOWS_BLOCK");
 
-        /** Enum CLONE_VM for value: "CLONE_VM" */
+        /**
+         * Enum CLONE_VM for value: "CLONE_VM"
+         */
         public static final SubtaskNameEnum CLONE_VM = new SubtaskNameEnum("CLONE_VM");
 
-        /** Enum SYNC_LINUX_FILE for value: "SYNC_LINUX_FILE" */
+        /**
+         * Enum SYNC_LINUX_FILE for value: "SYNC_LINUX_FILE"
+         */
         public static final SubtaskNameEnum SYNC_LINUX_FILE = new SubtaskNameEnum("SYNC_LINUX_FILE");
 
-        /** Enum SYNC_LINUX_BLOCK for value: "SYNC_LINUX_BLOCK" */
+        /**
+         * Enum SYNC_LINUX_BLOCK for value: "SYNC_LINUX_BLOCK"
+         */
         public static final SubtaskNameEnum SYNC_LINUX_BLOCK = new SubtaskNameEnum("SYNC_LINUX_BLOCK");
 
-        /** Enum SYNC_WINDOWS_BLOCK for value: "SYNC_WINDOWS_BLOCK" */
+        /**
+         * Enum SYNC_WINDOWS_BLOCK for value: "SYNC_WINDOWS_BLOCK"
+         */
         public static final SubtaskNameEnum SYNC_WINDOWS_BLOCK = new SubtaskNameEnum("SYNC_WINDOWS_BLOCK");
 
-        /** Enum CONFIGURE_LINUX for value: "CONFIGURE_LINUX" */
+        /**
+         * Enum CONFIGURE_LINUX for value: "CONFIGURE_LINUX"
+         */
         public static final SubtaskNameEnum CONFIGURE_LINUX = new SubtaskNameEnum("CONFIGURE_LINUX");
 
-        /** Enum CONFIGURE_LINUX_BLOCK for value: "CONFIGURE_LINUX_BLOCK" */
+        /**
+         * Enum CONFIGURE_LINUX_BLOCK for value: "CONFIGURE_LINUX_BLOCK"
+         */
         public static final SubtaskNameEnum CONFIGURE_LINUX_BLOCK = new SubtaskNameEnum("CONFIGURE_LINUX_BLOCK");
 
-        /** Enum CONFIGURE_LINUX_FILE for value: "CONFIGURE_LINUX_FILE" */
+        /**
+         * Enum CONFIGURE_LINUX_FILE for value: "CONFIGURE_LINUX_FILE"
+         */
         public static final SubtaskNameEnum CONFIGURE_LINUX_FILE = new SubtaskNameEnum("CONFIGURE_LINUX_FILE");
 
-        /** Enum CONFIGURE_WINDOWS for value: "CONFIGURE_WINDOWS" */
+        /**
+         * Enum CONFIGURE_WINDOWS for value: "CONFIGURE_WINDOWS"
+         */
         public static final SubtaskNameEnum CONFIGURE_WINDOWS = new SubtaskNameEnum("CONFIGURE_WINDOWS");
 
         private static final Map<String, SubtaskNameEnum> STATIC_FIELDS = createStaticFields();
@@ -197,14 +234,10 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 当前上报进度的子任务名称，子任务名称包括： 创建虚拟机 CREATE_CLOUD_SERVER 配置安全通道 SSL_CONFIG 挂载代理镜像 ATTACH_AGENT_IMAGE 卸载载代理镜像
-     * DETTACH_AGENT_IMAGE Linux分区格式化 FORMAT_DISK_LINUX Linux分区格式化(文件级级） FORMAT_DISK_LINUX_FILE Linux分区格式化(块级）
-     * FORMAT_DISK_LINUX_BLOCK Windows分区格式化 FORMAT_DISK_WINDOWS Linux文件级数据迁移 MIGRATE_LINUX_FILE, Linux块级数据迁移
-     * MIGRATE_LINUX_BLOCK Windows块级数据迁移 MIGRATE_WINDOWS_BLOCK 克隆一个虚拟机 CLONE_VM Linux文件级数据同步 SYNC_LINUX_FILE Linux块级数据同步
-     * SYNC_LINUX_BLOCK Windows块级数据同步 SYNC_WINDOWS_BLOCK Linux配置修改 CONFIGURE_LINUX Linux配置修改(块级）CONFIGURE_LINUX_BLOCK
-     * Linux配置修改（文件级） CONFIGURE_LINUX_FILE Windows配置修改 CONFIGURE_WINDOWS
-     * 
-     * @return subtaskName */
+    /**
+     * 当前上报进度的子任务名称，子任务名称包括： 创建虚拟机 CREATE_CLOUD_SERVER 配置安全通道 SSL_CONFIG 挂载代理镜像 ATTACH_AGENT_IMAGE 卸载载代理镜像 DETTACH_AGENT_IMAGE Linux分区格式化 FORMAT_DISK_LINUX Linux分区格式化(文件级级） FORMAT_DISK_LINUX_FILE Linux分区格式化(块级） FORMAT_DISK_LINUX_BLOCK Windows分区格式化 FORMAT_DISK_WINDOWS Linux文件级数据迁移 MIGRATE_LINUX_FILE, Linux块级数据迁移 MIGRATE_LINUX_BLOCK Windows块级数据迁移 MIGRATE_WINDOWS_BLOCK 克隆一个虚拟机 CLONE_VM Linux文件级数据同步 SYNC_LINUX_FILE Linux块级数据同步 SYNC_LINUX_BLOCK Windows块级数据同步 SYNC_WINDOWS_BLOCK Linux配置修改 CONFIGURE_LINUX Linux配置修改(块级）CONFIGURE_LINUX_BLOCK Linux配置修改（文件级） CONFIGURE_LINUX_FILE Windows配置修改 CONFIGURE_WINDOWS
+     * @return subtaskName
+     */
     public SubtaskNameEnum getSubtaskName() {
         return subtaskName;
     }
@@ -218,9 +251,12 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 当前上报的子任务的最新百分比进度 minimum: 0 maximum: 100
-     * 
-     * @return progress */
+    /**
+     * 当前上报的子任务的最新百分比进度
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -234,9 +270,12 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 当前任务已经复制的数据量大小（B） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return replicatesize */
+    /**
+     * 当前任务已经复制的数据量大小（B）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return replicatesize
+     */
     public Long getReplicatesize() {
         return replicatesize;
     }
@@ -250,9 +289,12 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 当前任务的总迁移数据大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return totalsize */
+    /**
+     * 当前任务的总迁移数据大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return totalsize
+     */
     public Long getTotalsize() {
         return totalsize;
     }
@@ -266,9 +308,10 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 迁移或同步时，具体的迁移详情
-     * 
-     * @return processTrace */
+    /**
+     * 迁移或同步时，具体的迁移详情
+     * @return processTrace
+     */
     public String getProcessTrace() {
         return processTrace;
     }
@@ -282,9 +325,12 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 实施迁移速率，单位Mb/s minimum: 0 maximum: 1E+4
-     * 
-     * @return migrateSpeed */
+    /**
+     * 实施迁移速率，单位Mb/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return migrateSpeed
+     */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -298,9 +344,10 @@ public class UpdateTaskSpeedReq {
         return this;
     }
 
-    /** 实施文件压缩率
-     * 
-     * @return compressRate */
+    /**
+     * 实施文件压缩率
+     * @return compressRate
+     */
     public Double getCompressRate() {
         return compressRate;
     }
@@ -347,7 +394,10 @@ public class UpdateTaskSpeedReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

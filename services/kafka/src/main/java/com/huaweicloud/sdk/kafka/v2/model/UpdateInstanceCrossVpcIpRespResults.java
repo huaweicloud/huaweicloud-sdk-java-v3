@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改broker跨VPC访问的结果。 */
+/**
+ * 修改broker跨VPC访问的结果。
+ */
 public class UpdateInstanceCrossVpcIpRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateInstanceCrossVpcIpRespResults {
         return this;
     }
 
-    /** advertised.listeners IP/域名。
-     * 
-     * @return advertisedIp */
+    /**
+     * advertised.listeners IP/域名。
+     * @return advertisedIp
+     */
     public String getAdvertisedIp() {
         return advertisedIp;
     }
@@ -44,9 +47,10 @@ public class UpdateInstanceCrossVpcIpRespResults {
         return this;
     }
 
-    /** 修改broker跨VPC访问的状态。
-     * 
-     * @return success */
+    /**
+     * 修改broker跨VPC访问的状态。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -60,9 +64,10 @@ public class UpdateInstanceCrossVpcIpRespResults {
         return this;
     }
 
-    /** listeners IP。
-     * 
-     * @return ip */
+    /**
+     * listeners IP。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -102,7 +107,10 @@ public class UpdateInstanceCrossVpcIpRespResults {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

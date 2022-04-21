@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** This is a auto restart Body Object */
+/**
+ * This is a auto restart Body Object
+ */
 public class RestarInstanceInfo {
 
-    /** 重启的类型，soft或者hard。 - soft表示软重启（只重启进程）。 - hard表示强制重启（重启虚拟机）。 */
+    /**
+     * 重启的类型，soft或者hard。 - soft表示软重启（只重启进程）。 - hard表示强制重启（重启虚拟机）。
+     */
     public static final class TypeEnum {
 
-        /** Enum SOFT for value: "soft" */
+        /**
+         * Enum SOFT for value: "soft"
+         */
         public static final TypeEnum SOFT = new TypeEnum("soft");
 
-        /** Enum HARD for value: "hard" */
+        /**
+         * Enum HARD for value: "hard"
+         */
         public static final TypeEnum HARD = new TypeEnum("hard");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class RestarInstanceInfo {
         return this;
     }
 
-    /** 重启的类型，soft或者hard。 - soft表示软重启（只重启进程）。 - hard表示强制重启（重启虚拟机）。
-     * 
-     * @return type */
+    /**
+     * 重启的类型，soft或者hard。 - soft表示软重启（只重启进程）。 - hard表示强制重启（重启虚拟机）。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -131,7 +140,10 @@ public class RestarInstanceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

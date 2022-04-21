@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询复制对数据结构 */
+/**
+ * 查询复制对数据结构
+ */
 public class ShowReplicationParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,19 +93,29 @@ public class ShowReplicationParams {
 
     private String priorityStation;
 
-    /** 数据同步状态。active：表示数据已同步完成。inactive：表示数据未同步。copying：表示数据正在同步。active-stopped：表示数据已停止同步。 */
+    /**
+     * 数据同步状态。active：表示数据已同步完成。inactive：表示数据未同步。copying：表示数据正在同步。active-stopped：表示数据已停止同步。
+     */
     public static final class ReplicationStatusEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final ReplicationStatusEnum ACTIVE = new ReplicationStatusEnum("active");
 
-        /** Enum INACTIVE for value: "inactive" */
+        /**
+         * Enum INACTIVE for value: "inactive"
+         */
         public static final ReplicationStatusEnum INACTIVE = new ReplicationStatusEnum("inactive");
 
-        /** Enum COPYING for value: "copying" */
+        /**
+         * Enum COPYING for value: "copying"
+         */
         public static final ReplicationStatusEnum COPYING = new ReplicationStatusEnum("copying");
 
-        /** Enum ACTIVE_STOPPED for value: "active-stopped" */
+        /**
+         * Enum ACTIVE_STOPPED for value: "active-stopped"
+         */
         public static final ReplicationStatusEnum ACTIVE_STOPPED = new ReplicationStatusEnum("active-stopped");
 
         private static final Map<String, ReplicationStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -180,9 +192,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的ID。
-     * 
-     * @return id */
+    /**
+     * 复制对的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -196,9 +209,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的名称。
-     * 
-     * @return name */
+    /**
+     * 复制对的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -212,9 +226,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的描述。
-     * 
-     * @return description */
+    /**
+     * 复制对的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -228,9 +243,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的状态。
-     * 
-     * @return status */
+    /**
+     * 复制对的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -244,9 +260,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对使用的云硬盘ID。
-     * 
-     * @return volumeIds */
+    /**
+     * 复制对使用的云硬盘ID。
+     * @return volumeIds
+     */
     public String getVolumeIds() {
         return volumeIds;
     }
@@ -276,9 +293,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 挂载点。
-     * 
-     * @return attachment */
+    /**
+     * 挂载点。
+     * @return attachment
+     */
     public List<ReplicationAttachment> getAttachment() {
         return attachment;
     }
@@ -292,9 +310,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 创建时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例如：\"2019-04-01T12:00:00.000Z\"
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例如：\"2019-04-01T12:00:00.000Z\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -308,9 +327,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 更新时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例如：\"2019-04-01T12:00:00.000Z\"
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例如：\"2019-04-01T12:00:00.000Z\"
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -324,9 +344,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的复制类型。默认值为“hypermetro”，表示同步复制。
-     * 
-     * @return replicationModel */
+    /**
+     * 复制对的复制类型。默认值为“hypermetro”，表示同步复制。
+     * @return replicationModel
+     */
     public String getReplicationModel() {
         return replicationModel;
     }
@@ -340,9 +361,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的同步进度。单位：百分比（%）。
-     * 
-     * @return progress */
+    /**
+     * 复制对的同步进度。单位：百分比（%）。
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -356,9 +378,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 仅在复制对的状态“status”为“error”时，返回的错误码。
-     * 
-     * @return failureDetail */
+    /**
+     * 仅在复制对的状态“status”为“error”时，返回的错误码。
+     * @return failureDetail
+     */
     public String getFailureDetail() {
         return failureDetail;
     }
@@ -381,9 +404,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** Get recordMetadata
-     * 
-     * @return recordMetadata */
+    /**
+     * Get recordMetadata
+     * @return recordMetadata
+     */
     public ReplicationRecordMetadata getRecordMetadata() {
         return recordMetadata;
     }
@@ -397,9 +421,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 复制对的故障等级。0：表示无故障。2：表示当前生产站点的云硬盘无读写数据权限，此时建议执行故障切换操作。5：表示复制链路已断，不能执行故障切换操作，需联系技术支持工程师。
-     * 
-     * @return faultLevel */
+    /**
+     * 复制对的故障等级。0：表示无故障。2：表示当前生产站点的云硬盘无读写数据权限，此时建议执行故障切换操作。5：表示复制链路已断，不能执行故障切换操作，需联系技术支持工程师。
+     * @return faultLevel
+     */
     public String getFaultLevel() {
         return faultLevel;
     }
@@ -413,9 +438,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -429,9 +455,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 标识复制对所在保护组的当前生产站点可用区。source：表示当前生产站点可用区为保护组source_availability_zone的值。target：表示当前生产站点可用区为保护组target_availability_zone的值。
-     * 
-     * @return priorityStation */
+    /**
+     * 标识复制对所在保护组的当前生产站点可用区。source：表示当前生产站点可用区为保护组source_availability_zone的值。target：表示当前生产站点可用区为保护组target_availability_zone的值。
+     * @return priorityStation
+     */
     public String getPriorityStation() {
         return priorityStation;
     }
@@ -445,9 +472,10 @@ public class ShowReplicationParams {
         return this;
     }
 
-    /** 数据同步状态。active：表示数据已同步完成。inactive：表示数据未同步。copying：表示数据正在同步。active-stopped：表示数据已停止同步。
-     * 
-     * @return replicationStatus */
+    /**
+     * 数据同步状态。active：表示数据已同步完成。inactive：表示数据未同步。copying：表示数据正在同步。active-stopped：表示数据已停止同步。
+     * @return replicationStatus
+     */
     public ReplicationStatusEnum getReplicationStatus() {
         return replicationStatus;
     }
@@ -527,7 +555,10 @@ public class ShowReplicationParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

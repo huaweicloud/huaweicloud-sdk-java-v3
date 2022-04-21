@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设备实体列表 */
+/**
+ * 设备实体列表
+ */
 public class GetDevicesListArrayObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,9 +125,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备ID
-     * 
-     * @return id */
+    /**
+     * 设备ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -139,9 +142,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备名称
-     * 
-     * @return name */
+    /**
+     * 设备名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -155,9 +159,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备类型
-     * 
-     * @return type */
+    /**
+     * 设备类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -171,9 +176,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备状态(0:离线;1:在线)
-     * 
-     * @return status */
+    /**
+     * 设备状态(0:离线;1:在线)
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -187,9 +193,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** cpu核数
-     * 
-     * @return cpu */
+    /**
+     * cpu核数
+     * @return cpu
+     */
     public Integer getCpu() {
         return cpu;
     }
@@ -203,9 +210,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 内存大小
-     * 
-     * @return memory */
+    /**
+     * 内存大小
+     * @return memory
+     */
     public Integer getMemory() {
         return memory;
     }
@@ -219,9 +227,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 操作系统
-     * 
-     * @return os */
+    /**
+     * 操作系统
+     * @return os
+     */
     public String getOs() {
         return os;
     }
@@ -235,9 +244,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 固件名称
-     * 
-     * @return firmwareName */
+    /**
+     * 固件名称
+     * @return firmwareName
+     */
     public String getFirmwareName() {
         return firmwareName;
     }
@@ -251,9 +261,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 固件版本
-     * 
-     * @return firmwareVersion */
+    /**
+     * 固件版本
+     * @return firmwareVersion
+     */
     public String getFirmwareVersion() {
         return firmwareVersion;
     }
@@ -267,9 +278,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 固件状态(1:更新中，2：更新失败，3：更新成功)
-     * 
-     * @return firmwareStatus */
+    /**
+     * 固件状态(1:更新中，2：更新失败，3：更新成功)
+     * @return firmwareStatus
+     */
     public Integer getFirmwareStatus() {
         return firmwareStatus;
     }
@@ -283,9 +295,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 固件更新失败原因
-     * 
-     * @return firmwareCause */
+    /**
+     * 固件更新失败原因
+     * @return firmwareCause
+     */
     public String getFirmwareCause() {
         return firmwareCause;
     }
@@ -299,9 +312,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备数据存储路径，该桶需要和当前region匹配
-     * 
-     * @return path */
+    /**
+     * 设备数据存储路径，该桶需要和当前region匹配
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -315,9 +329,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备数据存储路径更新状态(0:更新成功，1：更新中)
-     * 
-     * @return pathUpdateStatus */
+    /**
+     * 设备数据存储路径更新状态(0:更新成功，1：更新中)
+     * @return pathUpdateStatus
+     */
     public Integer getPathUpdateStatus() {
         return pathUpdateStatus;
     }
@@ -331,9 +346,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 设备数据存储路径更新失败原因
-     * 
-     * @return pathUpdateCause */
+    /**
+     * 设备数据存储路径更新失败原因
+     * @return pathUpdateCause
+     */
     public String getPathUpdateCause() {
         return pathUpdateCause;
     }
@@ -347,9 +363,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 创建时间（时间戳）
-     * 
-     * @return createTime */
+    /**
+     * 创建时间（时间戳）
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -363,9 +380,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 更新时间（时间戳）
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间（时间戳）
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -379,9 +397,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** IAM用户名
-     * 
-     * @return userTime */
+    /**
+     * IAM用户名
+     * @return userTime
+     */
     public String getUserTime() {
         return userTime;
     }
@@ -395,9 +414,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 计费资源码
-     * 
-     * @return resourceSpecCode */
+    /**
+     * 计费资源码
+     * @return resourceSpecCode
+     */
     public String getResourceSpecCode() {
         return resourceSpecCode;
     }
@@ -411,9 +431,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 云服务计费类型
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务计费类型
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -427,9 +448,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 激活内容
-     * 
-     * @return activeContent */
+    /**
+     * 激活内容
+     * @return activeContent
+     */
     public String getActiveContent() {
         return activeContent;
     }
@@ -443,9 +465,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 激活状态(0:未激活，1：已激活且付费，2：已激活且免费，3：付费到期，4：已激活使用SN码，5：已激活30天免费，6：免费到期)
-     * 
-     * @return activeFlag */
+    /**
+     * 激活状态(0:未激活，1：已激活且付费，2：已激活且免费，3：付费到期，4：已激活使用SN码，5：已激活30天免费，6：免费到期)
+     * @return activeFlag
+     */
     public Integer getActiveFlag() {
         return activeFlag;
     }
@@ -459,9 +482,10 @@ public class GetDevicesListArrayObject {
         return this;
     }
 
-    /** 关联设备的主题消息推送的URN地址
-     * 
-     * @return topicUrn */
+    /**
+     * 关联设备的主题消息推送的URN地址
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -559,7 +583,10 @@ public class GetDevicesListArrayObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

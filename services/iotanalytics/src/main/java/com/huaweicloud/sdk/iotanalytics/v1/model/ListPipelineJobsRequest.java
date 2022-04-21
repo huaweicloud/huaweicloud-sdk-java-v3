@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPipelineJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 数据存储Id
-     * 
-     * @return dataStoreId */
+    /**
+     * 数据存储Id
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -69,9 +72,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 存储组Id
-     * 
-     * @return dataStoreGroupId */
+    /**
+     * 存储组Id
+     * @return dataStoreGroupId
+     */
     public String getDataStoreGroupId() {
         return dataStoreGroupId;
     }
@@ -85,9 +89,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 数据源Id
-     * 
-     * @return dataSourceId */
+    /**
+     * 数据源Id
+     * @return dataSourceId
+     */
     public String getDataSourceId() {
         return dataSourceId;
     }
@@ -101,9 +106,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 管道名称
-     * 
-     * @return pipelineName */
+    /**
+     * 管道名称
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -117,9 +123,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 包含的管道类名
-     * 
-     * @return operatorClassName */
+    /**
+     * 包含的管道类名
+     * @return operatorClassName
+     */
     public String getOperatorClassName() {
         return operatorClassName;
     }
@@ -133,9 +140,12 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -149,9 +159,12 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -165,9 +178,10 @@ public class ListPipelineJobsRequest {
         return this;
     }
 
-    /** 立即同步作业状态，默认是false
-     * 
-     * @return syncStatus */
+    /**
+     * 立即同步作业状态，默认是false
+     * @return syncStatus
+     */
     public Boolean getSyncStatus() {
         return syncStatus;
     }
@@ -223,7 +237,10 @@ public class ListPipelineJobsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

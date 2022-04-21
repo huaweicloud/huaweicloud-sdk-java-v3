@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DetectLiveFaceByFileRequestBody */
+/**
+ * DetectLiveFaceByFileRequestBody
+ */
 public class DetectLiveFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
@@ -22,9 +24,10 @@ public class DetectLiveFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 本地图片文件。上传文件时，请求格式为multipart。
-     * 
-     * @return imageFile */
+    /**
+     * 本地图片文件。上传文件时，请求格式为multipart。
+     * @return imageFile
+     */
     public FormDataFilePart getImageFile() {
         return imageFile;
     }
@@ -85,7 +88,10 @@ public class DetectLiveFaceByFileRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

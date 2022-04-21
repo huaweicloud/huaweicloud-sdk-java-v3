@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主机组过滤参数 */
+/**
+ * 主机组过滤参数
+ */
 public class GetHostGroupListFilter {
 
-    /** 主机组类型。windows：windows类型，linux：linux类型 */
+    /**
+     * 主机组类型。windows：windows类型，linux：linux类型
+     */
     public static final class HostGroupTypeEnum {
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final HostGroupTypeEnum WINDOWS = new HostGroupTypeEnum("windows");
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final HostGroupTypeEnum LINUX = new HostGroupTypeEnum("linux");
 
         private static final Map<String, HostGroupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class GetHostGroupListFilter {
         return this;
     }
 
-    /** 主机组类型。windows：windows类型，linux：linux类型
-     * 
-     * @return hostGroupType */
+    /**
+     * 主机组类型。windows：windows类型，linux：linux类型
+     * @return hostGroupType
+     */
     public HostGroupTypeEnum getHostGroupType() {
         return hostGroupType;
     }
@@ -144,9 +153,10 @@ public class GetHostGroupListFilter {
         return this;
     }
 
-    /** 主机组名称列表。
-     * 
-     * @return hostGroupNameList */
+    /**
+     * 主机组名称列表。
+     * @return hostGroupNameList
+     */
     public List<String> getHostGroupNameList() {
         return hostGroupNameList;
     }
@@ -176,9 +186,10 @@ public class GetHostGroupListFilter {
         return this;
     }
 
-    /** 主机名称列表。
-     * 
-     * @return hostNameList */
+    /**
+     * 主机名称列表。
+     * @return hostNameList
+     */
     public List<String> getHostNameList() {
         return hostNameList;
     }
@@ -201,9 +212,10 @@ public class GetHostGroupListFilter {
         return this;
     }
 
-    /** Get hostGroupTag
-     * 
-     * @return hostGroupTag */
+    /**
+     * Get hostGroupTag
+     * @return hostGroupTag
+     */
     public GetHostGroupListTag getHostGroupTag() {
         return hostGroupTag;
     }
@@ -244,7 +256,10 @@ public class GetHostGroupListFilter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

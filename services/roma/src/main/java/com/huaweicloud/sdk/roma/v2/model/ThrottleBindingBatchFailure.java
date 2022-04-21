@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ThrottleBindingBatchFailure */
+/**
+ * ThrottleBindingBatchFailure
+ */
 public class ThrottleBindingBatchFailure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ThrottleBindingBatchFailure {
         return this;
     }
 
-    /** 解除绑定失败的API和流控策略绑定关系ID
-     * 
-     * @return bindId */
+    /**
+     * 解除绑定失败的API和流控策略绑定关系ID
+     * @return bindId
+     */
     public String getBindId() {
         return bindId;
     }
@@ -54,9 +57,10 @@ public class ThrottleBindingBatchFailure {
         return this;
     }
 
-    /** 解除绑定失败的错误码
-     * 
-     * @return errorCode */
+    /**
+     * 解除绑定失败的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -70,9 +74,10 @@ public class ThrottleBindingBatchFailure {
         return this;
     }
 
-    /** 解除绑定失败的错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 解除绑定失败的错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -86,9 +91,10 @@ public class ThrottleBindingBatchFailure {
         return this;
     }
 
-    /** 解除绑定失败的API的ID
-     * 
-     * @return apiId */
+    /**
+     * 解除绑定失败的API的ID
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -102,9 +108,10 @@ public class ThrottleBindingBatchFailure {
         return this;
     }
 
-    /** 解除绑定失败的API的名称
-     * 
-     * @return apiName */
+    /**
+     * 解除绑定失败的API的名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -147,7 +154,10 @@ public class ThrottleBindingBatchFailure {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

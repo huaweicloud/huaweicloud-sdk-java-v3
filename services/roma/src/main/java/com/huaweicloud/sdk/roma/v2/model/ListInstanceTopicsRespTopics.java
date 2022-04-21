@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListInstanceTopicsRespTopics */
+/**
+ * ListInstanceTopicsRespTopics
+ */
 public class ListInstanceTopicsRespTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 是否只更新策略。
-     * 
-     * @return policiesOnly */
+    /**
+     * 是否只更新策略。
+     * @return policiesOnly
+     */
     public Boolean getPoliciesOnly() {
         return policiesOnly;
     }
@@ -102,9 +105,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -118,9 +122,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 副本数，配置数据的可靠性。
-     * 
-     * @return replication */
+    /**
+     * 副本数，配置数据的可靠性。
+     * @return replication
+     */
     public Integer getReplication() {
         return replication;
     }
@@ -134,9 +139,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。
-     * 
-     * @return partition */
+    /**
+     * topic分区数，设置消费的并发数。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -150,9 +156,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 消息老化时间。
-     * 
-     * @return retentionTime */
+    /**
+     * 消息老化时间。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -166,9 +173,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -182,9 +190,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -198,9 +207,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return appId */
+    /**
+     * 应用ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -214,9 +224,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return appName */
+    /**
+     * 应用名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -246,9 +257,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 允许操作的权限。
-     * 
-     * @return permissions */
+    /**
+     * 允许操作的权限。
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -262,9 +274,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 其他配置。
-     * 
-     * @return externalConfigs */
+    /**
+     * 其他配置。
+     * @return externalConfigs
+     */
     public Object getExternalConfigs() {
         return externalConfigs;
     }
@@ -278,9 +291,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -294,9 +308,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** 敏感字段。
-     * 
-     * @return sensitiveWord */
+    /**
+     * 敏感字段。
+     * @return sensitiveWord
+     */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -310,9 +325,10 @@ public class ListInstanceTopicsRespTopics {
         return this;
     }
 
-    /** topic类型。
-     * 
-     * @return topicType */
+    /**
+     * topic类型。
+     * @return topicType
+     */
     public Integer getTopicType() {
         return topicType;
     }
@@ -386,7 +402,10 @@ public class ListInstanceTopicsRespTopics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Match */
+/**
+ * Match
+ */
 public class Match {
 
-    /** 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。 */
+    /**
+     * 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
+     */
     public static final class KeyEnum {
 
-        /** Enum RESOURCE_NAME for value: "resource_name" */
+        /**
+         * Enum RESOURCE_NAME for value: "resource_name"
+         */
         public static final KeyEnum RESOURCE_NAME = new KeyEnum("resource_name");
 
-        /** Enum SERVICE_TYPE for value: "service_type" */
+        /**
+         * Enum SERVICE_TYPE for value: "service_type"
+         */
         public static final KeyEnum SERVICE_TYPE = new KeyEnum("service_type");
 
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class Match {
         return this;
     }
 
-    /** 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
-     * 
-     * @return key */
+    /**
+     * 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
+     * @return key
+     */
     public KeyEnum getKey() {
         return key;
     }
@@ -115,9 +124,10 @@ public class Match {
         return this;
     }
 
-    /** 值。最大长度255个字符。 key为“resource_name”时，value为模糊匹配。
-     * 
-     * @return value */
+    /**
+     * 值。最大长度255个字符。 key为“resource_name”时，value为模糊匹配。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -153,7 +163,10 @@ public class Match {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

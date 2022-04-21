@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CustomAttributesRule */
+/**
+ * CustomAttributesRule
+ */
 public class CustomAttributesRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CustomAttributesRule {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return ruleId */
+    /**
+     * 规则ID
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -47,9 +50,10 @@ public class CustomAttributesRule {
         return this;
     }
 
-    /** attribute的问题级别，0致命，1严重，2一般，3提示
-     * 
-     * @return value */
+    /**
+     * attribute的问题级别，0致命，1严重，2一般，3提示
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,9 +83,10 @@ public class CustomAttributesRule {
         return this;
     }
 
-    /** 规则阈值详细
-     * 
-     * @return ruleConfigList */
+    /**
+     * 规则阈值详细
+     * @return ruleConfigList
+     */
     public List<RuleConfig> getRuleConfigList() {
         return ruleConfigList;
     }
@@ -120,7 +125,10 @@ public class CustomAttributesRule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchStartOrStopTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,12 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 成功的个数 minimum: 0 maximum: 999999
-     * 
-     * @return successCount */
+    /**
+     * 成功的个数
+     * minimum: 0
+     * maximum: 999999
+     * @return successCount
+     */
     public Integer getSuccessCount() {
         return successCount;
     }
@@ -53,9 +58,12 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 失败的个数 minimum: 0 maximum: 999999
-     * 
-     * @return failureCount */
+    /**
+     * 失败的个数
+     * minimum: 0
+     * maximum: 999999
+     * @return failureCount
+     */
     public Integer getFailureCount() {
         return failureCount;
     }
@@ -85,9 +93,10 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 失败的详情
-     * 
-     * @return failure */
+    /**
+     * 失败的详情
+     * @return failure
+     */
     public List<TaskBeanFacade> getFailure() {
         return failure;
     }
@@ -117,9 +126,10 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 成功的任务信息
-     * 
-     * @return success */
+    /**
+     * 成功的任务信息
+     * @return success
+     */
     public List<TaskBeanFacade> getSuccess() {
         return success;
     }
@@ -160,7 +170,10 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

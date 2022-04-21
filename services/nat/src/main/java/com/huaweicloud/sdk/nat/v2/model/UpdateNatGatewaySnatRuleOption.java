@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateNatGatewaySnatRuleOption */
+/**
+ * UpdateNatGatewaySnatRuleOption
+ */
 public class UpdateNatGatewaySnatRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 公网NAT网关的id。
-     * 
-     * @return natGatewayId */
+    /**
+     * 公网NAT网关的id。
+     * @return natGatewayId
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -44,9 +47,10 @@ public class UpdateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。 约束：弹性公网IP的id个数不能超过20个
-     * 
-     * @return publicIpAddress */
+    /**
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。 约束：弹性公网IP的id个数不能超过20个 
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -60,9 +64,10 @@ public class UpdateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** SNAT规则的描述，长度限制为255。
-     * 
-     * @return description */
+    /**
+     * SNAT规则的描述，长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class UpdateNatGatewaySnatRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

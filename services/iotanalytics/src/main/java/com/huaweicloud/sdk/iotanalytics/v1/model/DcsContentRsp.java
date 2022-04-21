@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** redis数据源配置内容 */
+/**
+ * redis数据源配置内容
+ */
 public class DcsContentRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** VPC-EP服务端id
-     * 
-     * @return endpointServiceId */
+    /**
+     * VPC-EP服务端id
+     * @return endpointServiceId
+     */
     public String getEndpointServiceId() {
         return endpointServiceId;
     }
@@ -59,9 +62,10 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** VPC-EP服务端名称
-     * 
-     * @return endpointServiceName */
+    /**
+     * VPC-EP服务端名称
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -75,9 +79,10 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** VPC-EP客户端IP
-     * 
-     * @return endpointIp */
+    /**
+     * VPC-EP客户端IP
+     * @return endpointIp
+     */
     public String getEndpointIp() {
         return endpointIp;
     }
@@ -91,9 +96,12 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** VPC-EP客户端Port minimum: 1 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * VPC-EP客户端Port
+     * minimum: 1
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -107,9 +115,10 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** redis实例类型
-     * 
-     * @return dcsType */
+    /**
+     * redis实例类型
+     * @return dcsType
+     */
     public String getDcsType() {
         return dcsType;
     }
@@ -123,9 +132,10 @@ public class DcsContentRsp {
         return this;
     }
 
-    /** redis访问密码
-     * 
-     * @return password */
+    /**
+     * redis访问密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -169,7 +179,10 @@ public class DcsContentRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

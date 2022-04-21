@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTracesRequest {
 
-    /** 标识审计事件类型。 目前支持管理类事件（system）和数据类事件（data）。 默认值为\"system\"。 */
+    /**
+     * 标识审计事件类型。 目前支持管理类事件（system）和数据类事件（data）。 默认值为\"system\"。
+     */
     public static final class TraceTypeEnum {
 
-        /** Enum SYSTEM for value: "system" */
+        /**
+         * Enum SYSTEM for value: "system"
+         */
         public static final TraceTypeEnum SYSTEM = new TraceTypeEnum("system");
 
-        /** Enum DATA for value: "data" */
+        /**
+         * Enum DATA for value: "data"
+         */
         public static final TraceTypeEnum DATA = new TraceTypeEnum("data");
 
         private static final Map<String, TraceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -149,16 +157,24 @@ public class ListTracesRequest {
 
     private String traceName;
 
-    /** 标示查询事件列表对应的事件等级目前有三种：正常(normal), 警告(warning),事故(incident)。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 */
+    /**
+     * 标示查询事件列表对应的事件等级目前有三种：正常(normal), 警告(warning),事故(incident)。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     */
     public static final class TraceRatingEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final TraceRatingEnum NORMAL = new TraceRatingEnum("normal");
 
-        /** Enum WARNING for value: "warning" */
+        /**
+         * Enum WARNING for value: "warning"
+         */
         public static final TraceRatingEnum WARNING = new TraceRatingEnum("warning");
 
-        /** Enum INCIDENT for value: "incident" */
+        /**
+         * Enum INCIDENT for value: "incident"
+         */
         public static final TraceRatingEnum INCIDENT = new TraceRatingEnum("incident");
 
         private static final Map<String, TraceRatingEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +250,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标识审计事件类型。 目前支持管理类事件（system）和数据类事件（data）。 默认值为\"system\"。
-     * 
-     * @return traceType */
+    /**
+     * 标识审计事件类型。 目前支持管理类事件（system）和数据类事件（data）。 默认值为\"system\"。
+     * @return traceType
+     */
     public TraceTypeEnum getTraceType() {
         return traceType;
     }
@@ -250,9 +267,12 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表中限定返回的事件条数。不传时默认10条，最大值200条。 minimum: 0 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 标示查询事件列表中限定返回的事件条数。不传时默认10条，最大值200条。
+     * minimum: 0
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -266,10 +286,12 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标识查询事件列表的起始时间戳（timestamp，为标准UTC时间，毫秒级，13位数字，不包括传入时间）默认为上一小时的时间戳。查询条件from与to配套使用。 minimum: 946656000000 maximum:
-     * 4102416000000
-     * 
-     * @return from */
+    /**
+     * 标识查询事件列表的起始时间戳（timestamp，为标准UTC时间，毫秒级，13位数字，不包括传入时间）默认为上一小时的时间戳。查询条件from与to配套使用。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return from
+     */
     public Long getFrom() {
         return from;
     }
@@ -283,9 +305,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 取值为响应中中marker的值，用于标识查询事件的起始时间（自此条事件的记录时间起，向更早时间查询）。 可以与“from”、“to”结合使用。 最终的查询条件取两组时间条件的交集。
-     * 
-     * @return next */
+    /**
+     * 取值为响应中中marker的值，用于标识查询事件的起始时间（自此条事件的记录时间起，向更早时间查询）。 可以与“from”、“to”结合使用。 最终的查询条件取两组时间条件的交集。
+     * @return next
+     */
     public String getNext() {
         return next;
     }
@@ -299,10 +322,12 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标识查询事件列表的结束时间戳（timestamp，为标准UTC时间，毫秒级，13位数字，不包括传入时间）默认为当前时间戳。查询条件to与from配套使用。 minimum: 946656000000 maximum:
-     * 4102416000000
-     * 
-     * @return to */
+    /**
+     * 标识查询事件列表的结束时间戳（timestamp，为标准UTC时间，毫秒级，13位数字，不包括传入时间）默认为当前时间戳。查询条件to与from配套使用。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return to
+     */
     public Long getTo() {
         return to;
     }
@@ -316,10 +341,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 当\"trace_type\"字段值为\"system\"时，该字段值默认为\"system\"。
-     * 当\"trace_type\"字段值为\"data\"时，该字段值可以传入数据类追踪器名称，达到筛选某个数据类追踪器下的数据事件目的。
-     * 
-     * @return trackerName */
+    /**
+     * 当\"trace_type\"字段值为\"system\"时，该字段值默认为\"system\"。 当\"trace_type\"字段值为\"data\"时，该字段值可以传入数据类追踪器名称，达到筛选某个数据类追踪器下的数据事件目的。
+     * @return trackerName
+     */
     public String getTrackerName() {
         return trackerName;
     }
@@ -333,10 +358,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 已对接的云服务列表参见《云审计服务用户指南》“支持的服务”章节。
-     * 
-     * @return serviceType */
+    /**
+     * 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 已对接的云服务列表参见《云审计服务用户指南》“支持的服务”章节。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -350,9 +375,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标识特定用户名称，用以查询该用户下的所有事件。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 
-     * @return user */
+    /**
+     * 标识特定用户名称，用以查询该用户下的所有事件。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -366,9 +392,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表对应的云服务资源ID。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 
-     * @return resourceId */
+    /**
+     * 标示查询事件列表对应的云服务资源ID。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -382,9 +409,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表对应的的资源名称。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 说明：该字段可能包含大写字母。
-     * 
-     * @return resourceName */
+    /**
+     * 标示查询事件列表对应的的资源名称。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 说明：该字段可能包含大写字母。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -398,9 +426,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表对应的资源类型。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 
-     * @return resourceType */
+    /**
+     * 标示查询事件列表对应的资源类型。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -414,9 +443,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示某一条事件的事件ID。当传入这个查询条件时，其他查询条件自动不生效。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 
-     * @return traceId */
+    /**
+     * 标示某一条事件的事件ID。当传入这个查询条件时，其他查询条件自动不生效。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     * @return traceId
+     */
     public String getTraceId() {
         return traceId;
     }
@@ -430,9 +460,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表对应的事件名称。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 说明：该字段可能包含大写字母。
-     * 
-     * @return traceName */
+    /**
+     * 标示查询事件列表对应的事件名称。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。 说明：该字段可能包含大写字母。
+     * @return traceName
+     */
     public String getTraceName() {
         return traceName;
     }
@@ -446,9 +477,10 @@ public class ListTracesRequest {
         return this;
     }
 
-    /** 标示查询事件列表对应的事件等级目前有三种：正常(normal), 警告(warning),事故(incident)。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
-     * 
-     * @return traceRating */
+    /**
+     * 标示查询事件列表对应的事件等级目前有三种：正常(normal), 警告(warning),事故(incident)。 当\"trace_type\"字段值为\"system\"时，该字段筛选有效\"。
+     * @return traceRating
+     */
     public TraceRatingEnum getTraceRating() {
         return traceRating;
     }
@@ -520,7 +552,10 @@ public class ListTracesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

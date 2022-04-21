@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListWeeklyReportsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         return this;
     }
 
-    /** 一周内DDoS拦截次数
-     * 
-     * @return ddosInterceptTimes */
+    /**
+     * 一周内DDoS拦截次数
+     * @return ddosInterceptTimes
+     */
     public Integer getDdosInterceptTimes() {
         return ddosInterceptTimes;
     }
@@ -64,9 +67,10 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         return this;
     }
 
-    /** 一周的攻击次数统计数据
-     * 
-     * @return weekdata */
+    /**
+     * 一周的攻击次数统计数据
+     * @return weekdata
+     */
     public List<WeeklyCount> getWeekdata() {
         return weekdata;
     }
@@ -96,9 +100,10 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         return this;
     }
 
-    /** 被攻击次数排名前10的IP地址
-     * 
-     * @return top10 */
+    /**
+     * 被攻击次数排名前10的IP地址
+     * @return top10
+     */
     public List<WeeklyTop10> getTop10() {
         return top10;
     }
@@ -137,7 +142,10 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

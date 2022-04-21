@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return taskId */
+    /**
+     * 实例ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -55,9 +58,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例创建状态
-     * 
-     * @return taskStatus */
+    /**
+     * 实例创建状态，取值和含义:initializing：初始化中；processing：处理中；finished：已完成；succeeded：成功
+     * @return taskStatus
+     */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -71,9 +75,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线ID
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -87,9 +92,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线名字
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名字
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -103,9 +109,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线详情页面url
-     * 
-     * @return pipelineUrl */
+    /**
+     * 流水线详情页面url
+     * @return pipelineUrl
+     */
     public String getPipelineUrl() {
         return pipelineUrl;
     }
@@ -148,7 +155,10 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

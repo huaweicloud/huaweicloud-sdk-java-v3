@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新路由表 */
+/**
+ * 更新路由表
+ */
 public class UpdateRoutetableOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateRoutetableOption {
         return this;
     }
 
-    /** 路由表名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 路由表名称  取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateRoutetableOption {
         return this;
     }
 
-    /** 路由表描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 路由表描述信息  取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class UpdateRoutetableOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

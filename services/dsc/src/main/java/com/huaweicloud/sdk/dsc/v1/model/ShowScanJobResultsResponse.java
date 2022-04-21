@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowScanJobResultsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -61,9 +64,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务名
-     * 
-     * @return jobName */
+    /**
+     * 任务名
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -77,9 +81,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询资产类型
-     * 
-     * @return type */
+    /**
+     * 查询资产类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -102,9 +107,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get dbScanResult
-     * 
-     * @return dbScanResult */
+    /**
+     * Get dbScanResult
+     * @return dbScanResult
+     */
     public DbScanResult getDbScanResult() {
         return dbScanResult;
     }
@@ -127,9 +133,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get obsScanResult
-     * 
-     * @return obsScanResult */
+    /**
+     * Get obsScanResult
+     * @return obsScanResult
+     */
     public ObsScanResult getObsScanResult() {
         return obsScanResult;
     }
@@ -152,9 +159,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get esScanResult
-     * 
-     * @return esScanResult */
+    /**
+     * Get esScanResult
+     * @return esScanResult
+     */
     public EsScanResult getEsScanResult() {
         return esScanResult;
     }
@@ -199,7 +207,10 @@ public class ShowScanJobResultsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

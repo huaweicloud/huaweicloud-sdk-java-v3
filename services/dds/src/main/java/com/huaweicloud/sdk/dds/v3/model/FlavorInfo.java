@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规格信息。 */
+/**
+ * 规格信息。
+ */
 public class FlavorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 引擎名称。
-     * 
-     * @return engineName */
+    /**
+     * 引擎名称。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -67,9 +70,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single
-     * 
-     * @return type */
+    /**
+     * 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -83,9 +87,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * CPU核数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -99,9 +104,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 内存大小，单位为兆字节。
-     * 
-     * @return ram */
+    /**
+     * 内存大小，单位为兆字节。
+     * @return ram
+     */
     public String getRam() {
         return ram;
     }
@@ -115,9 +121,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 资源规格编码。例如：dds.c3.xlarge.2.shard。 - “dds”表示文档数据库服务产品。 - “c3.xlarge.2”表示节点性能规格，为高内存类型。 - “shard”表示节点类型。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。例如：dds.c3.xlarge.2.shard。  - “dds”表示文档数据库服务产品。 - “c3.xlarge.2”表示节点性能规格，为高内存类型。 - “shard”表示节点类型。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -131,9 +138,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** '支持该规格的可用区ID。' 示例：[\"cn-east-2a\",\"cn-east-2b\",\"cn-east-2c\"]。
-     * 
-     * @return azStatus */
+    /**
+     * '支持该规格的可用区ID。' 示例：[\"cn-east-2a\",\"cn-east-2b\",\"cn-east-2c\"]。
+     * @return azStatus
+     */
     public Object getAzStatus() {
         return azStatus;
     }
@@ -163,9 +171,10 @@ public class FlavorInfo {
         return this;
     }
 
-    /** 数据库版本号列表。针对DDS引擎的mongos节点，例如：{\"3.4\", \"4.0\"}
-     * 
-     * @return engineVersions */
+    /**
+     * 数据库版本号列表。针对DDS引擎的mongos节点，例如：{\"3.4\", \"4.0\"}
+     * @return engineVersions
+     */
     public List<String> getEngineVersions() {
         return engineVersions;
     }
@@ -209,7 +218,10 @@ public class FlavorInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

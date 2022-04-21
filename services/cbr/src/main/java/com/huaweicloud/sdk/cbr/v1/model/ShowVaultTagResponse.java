@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowVaultTagResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowVaultTagResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签列表 tags中key不重复
-     * 
-     * @return tags */
+    /**
+     * 标签列表 tags中key不重复
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -75,10 +78,10 @@ public class ShowVaultTagResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅op_service权限才可以获取此字段： 目前只包含一个resource_tag结构体 key：_sys_enterprise_project_id value：企业项目id。0表示默认企业项目
-     * 非op_service场景不能返回此字段。
-     * 
-     * @return sysTags */
+    /**
+     * 仅op_service权限才可以获取此字段： 目前只包含一个resource_tag结构体  key：_sys_enterprise_project_id value：企业项目id。0表示默认企业项目 非op_service场景不能返回此字段。
+     * @return sysTags
+     */
     public List<SysTag> getSysTags() {
         return sysTags;
     }
@@ -115,7 +118,10 @@ public class ShowVaultTagResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

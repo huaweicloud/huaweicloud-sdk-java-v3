@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowInstanceTopicDetailRespPartitions */
+/**
+ * ShowInstanceTopicDetailRespPartitions
+ */
 public class ShowInstanceTopicDetailRespPartitions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区ID。
-     * 
-     * @return partition */
+    /**
+     * 分区ID。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -67,9 +70,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** leader副本所在节点的id。
-     * 
-     * @return leader */
+    /**
+     * leader副本所在节点的id。
+     * @return leader
+     */
     public Integer getLeader() {
         return leader;
     }
@@ -83,9 +87,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区leader副本的LEO（Log End Offset）。
-     * 
-     * @return leo */
+    /**
+     * 分区leader副本的LEO（Log End Offset）。
+     * @return leo
+     */
     public Integer getLeo() {
         return leo;
     }
@@ -99,9 +104,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区高水位（HW，High Watermark）。
-     * 
-     * @return hw */
+    /**
+     * 分区高水位（HW，High Watermark）。
+     * @return hw
+     */
     public Integer getHw() {
         return hw;
     }
@@ -115,9 +121,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区leader副本的LSO（Log Start Offset）。
-     * 
-     * @return lso */
+    /**
+     * 分区leader副本的LSO（Log Start Offset）。
+     * @return lso
+     */
     public Integer getLso() {
         return lso;
     }
@@ -131,9 +138,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 分区上次写入消息的时间。 格式为Unix时间戳。 单位：毫秒。
-     * 
-     * @return lastUpdateTimestamp */
+    /**
+     * 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。
+     * @return lastUpdateTimestamp
+     */
     public Long getLastUpdateTimestamp() {
         return lastUpdateTimestamp;
     }
@@ -164,9 +172,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return this;
     }
 
-    /** 副本列表。
-     * 
-     * @return replicas */
+    /**
+     * 副本列表。
+     * @return replicas
+     */
     public List<ShowInstanceTopicDetailRespReplicas> getReplicas() {
         return replicas;
     }
@@ -214,7 +223,10 @@ public class ShowInstanceTopicDetailRespPartitions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

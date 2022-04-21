@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExternalKeyMessage */
+/**
+ * ExternalKeyMessage
+ */
 public class ExternalKeyMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ExternalKeyMessage {
         return this;
     }
 
-    /** 第三方保存在codehub的关键信息
-     * 
-     * @return externalKeyMessage */
+    /**
+     * 第三方保存在codehub的关键信息
+     * @return externalKeyMessage
+     */
     public String getExternalKeyMessage() {
         return externalKeyMessage;
     }
@@ -39,9 +42,10 @@ public class ExternalKeyMessage {
         return this;
     }
 
-    /** 外部服务名称
-     * 
-     * @return externalService */
+    /**
+     * 外部服务名称
+     * @return externalService
+     */
     public String getExternalService() {
         return externalService;
     }
@@ -78,7 +82,10 @@ public class ExternalKeyMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

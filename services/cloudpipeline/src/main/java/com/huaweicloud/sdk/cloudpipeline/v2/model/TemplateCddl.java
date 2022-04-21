@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建流水线接口入参 */
+/**
+ * 创建流水线接口入参
+ */
 public class TemplateCddl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class TemplateCddl {
         return this;
     }
 
-    /** 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * 
-     * @return flow */
+    /**
+     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * @return flow
+     */
     public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
@@ -79,9 +82,10 @@ public class TemplateCddl {
         return this;
     }
 
-    /** 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * 
-     * @return states */
+    /**
+     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * @return states
+     */
     public Map<String, TemplateState> getStates() {
         return states;
     }
@@ -104,9 +108,10 @@ public class TemplateCddl {
         return this;
     }
 
-    /** Get workflow
-     * 
-     * @return workflow */
+    /**
+     * Get workflow
+     * @return workflow
+     */
     public Workflow getWorkflow() {
         return workflow;
     }
@@ -144,7 +149,10 @@ public class TemplateCddl {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

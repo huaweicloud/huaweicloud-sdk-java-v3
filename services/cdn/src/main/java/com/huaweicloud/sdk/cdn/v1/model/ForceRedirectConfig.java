@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 强制跳转。 */
+/**
+ * 强制跳转。
+ */
 public class ForceRedirectConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ForceRedirectConfig {
         return this;
     }
 
-    /** 强制跳转开关（on：打开，off：关闭）。
-     * 
-     * @return status */
+    /**
+     * 强制跳转开关（on：打开，off：关闭）。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -39,9 +42,10 @@ public class ForceRedirectConfig {
         return this;
     }
 
-    /** 强制跳转类型（http：强制跳转HTTP，https：强制跳转HTTPS）。
-     * 
-     * @return type */
+    /**
+     * 强制跳转类型（http：强制跳转HTTP，https：强制跳转HTTPS）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -78,7 +82,10 @@ public class ForceRedirectConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -17,50 +17,96 @@ public class DliClient {
         return new ClientBuilder<>(DliClient::new);
     }
 
-    /** 创建队列 该API用于创建队列，该队列将会绑定用户指定的计算资源。
+    /**
+     * 创建队列
+     *
+     * 该API用于创建队列，该队列将会绑定用户指定的计算资源。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
-     * @return CreateQueueResponse */
+     * @return CreateQueueResponse
+     */
     public CreateQueueResponse createQueue(CreateQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createQueue);
     }
 
-    /** 创建队列 该API用于创建队列，该队列将会绑定用户指定的计算资源。
+    /**
+     * 创建队列
+     *
+     * 该API用于创建队列，该队列将会绑定用户指定的计算资源。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
-     * @return SyncInvoker<CreateQueueRequest, CreateQueueResponse> */
+     * @return SyncInvoker<CreateQueueRequest, CreateQueueResponse>
+     */
     public SyncInvoker<CreateQueueRequest, CreateQueueResponse> createQueueInvoker(CreateQueueRequest request) {
         return new SyncInvoker<CreateQueueRequest, CreateQueueResponse>(request, DliMeta.createQueue, hcClient);
     }
 
-    /** 删除队列 该API用于删除指定队列。 说明： 若指定队列正在执行任务，则不允许删除。
+    /**
+     * 删除队列
+     *
+     * 该API用于删除指定队列。
+     * 说明： 
+     * 若指定队列正在执行任务，则不允许删除。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
-     * @return DeleteQueueResponse */
+     * @return DeleteQueueResponse
+     */
     public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteQueue);
     }
 
-    /** 删除队列 该API用于删除指定队列。 说明： 若指定队列正在执行任务，则不允许删除。
+    /**
+     * 删除队列
+     *
+     * 该API用于删除指定队列。
+     * 说明： 
+     * 若指定队列正在执行任务，则不允许删除。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
-     * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse> */
+     * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
+     */
     public SyncInvoker<DeleteQueueRequest, DeleteQueueResponse> deleteQueueInvoker(DeleteQueueRequest request) {
         return new SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>(request, DliMeta.deleteQueue, hcClient);
     }
 
-    /** 查询所有队列 该API用于列出该project下所有的队列。
+    /**
+     * 查询所有队列
+     *
+     * 该API用于列出该project下所有的队列。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
-     * @return ListQueuesResponse */
+     * @return ListQueuesResponse
+     */
     public ListQueuesResponse listQueues(ListQueuesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listQueues);
     }
 
-    /** 查询所有队列 该API用于列出该project下所有的队列。
+    /**
+     * 查询所有队列
+     *
+     * 该API用于列出该project下所有的队列。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
-     * @return SyncInvoker<ListQueuesRequest, ListQueuesResponse> */
+     * @return SyncInvoker<ListQueuesRequest, ListQueuesResponse>
+     */
     public SyncInvoker<ListQueuesRequest, ListQueuesResponse> listQueuesInvoker(ListQueuesRequest request) {
         return new SyncInvoker<ListQueuesRequest, ListQueuesResponse>(request, DliMeta.listQueues, hcClient);
     }

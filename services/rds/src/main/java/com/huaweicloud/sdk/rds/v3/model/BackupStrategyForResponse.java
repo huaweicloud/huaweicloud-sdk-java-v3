@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自动备份策略。 */
+/**
+ * 自动备份策略。
+ */
 public class BackupStrategyForResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BackupStrategyForResponse {
         return this;
     }
 
-    /** 备份时间段。自动备份将在该时间段内触发。 取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。 HH取值必须比hh大1。 mm和MM取值必须相同，且取值必须为00、15、30或45。
-     * 
-     * @return startTime */
+    /**
+     * 备份时间段。自动备份将在该时间段内触发。  取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。  HH取值必须比hh大1。 mm和MM取值必须相同，且取值必须为00、15、30或45。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -39,10 +42,10 @@ public class BackupStrategyForResponse {
         return this;
     }
 
-    /** 指定备份文件的可保存天数。 取值范围：0～732。该参数缺省，或取值为0，表示关闭自动备份策略。如果需要延长保留时间请联系客服人员申请，自动备份最长可以保留2562天。 说明：SQL
-     * Server的HA实例不支持关闭自动备份策略。
-     * 
-     * @return keepDays */
+    /**
+     * 指定备份文件的可保存天数。  取值范围：0～732。该参数缺省，或取值为0，表示关闭自动备份策略。如果需要延长保留时间请联系客服人员申请，自动备份最长可以保留2562天。  说明：SQL Server的HA实例不支持关闭自动备份策略。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -79,7 +82,10 @@ public class BackupStrategyForResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

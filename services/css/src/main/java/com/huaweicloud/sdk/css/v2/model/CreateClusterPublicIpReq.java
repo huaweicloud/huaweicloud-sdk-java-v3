@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 弹性Ip信息 */
+/**
+ * 弹性Ip信息
+ */
 public class CreateClusterPublicIpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateClusterPublicIpReq {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public CreateClusterPublicEip getEip() {
         return eip;
     }
@@ -68,9 +71,10 @@ public class CreateClusterPublicIpReq {
         return this;
     }
 
-    /** Get elbWhiteListReq
-     * 
-     * @return elbWhiteListReq */
+    /**
+     * Get elbWhiteListReq
+     * @return elbWhiteListReq
+     */
     public CreateClusterElbWhiteList getElbWhiteListReq() {
         return elbWhiteListReq;
     }
@@ -84,9 +88,10 @@ public class CreateClusterPublicIpReq {
         return this;
     }
 
-    /** 是否自动绑定弹性公网IP。auto_assign为自动分配，bind_existing为绑定已有IP，需要填写eipId字段。
-     * 
-     * @return publicBindType */
+    /**
+     * 是否自动绑定弹性公网IP。auto_assign为自动分配，bind_existing为绑定已有IP，需要填写eipId字段。
+     * @return publicBindType
+     */
     public String getPublicBindType() {
         return publicBindType;
     }
@@ -100,9 +105,10 @@ public class CreateClusterPublicIpReq {
         return this;
     }
 
-    /** 弹性公网IP的ID。
-     * 
-     * @return eipId */
+    /**
+     * 弹性公网IP的ID。
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -143,7 +149,10 @@ public class CreateClusterPublicIpReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

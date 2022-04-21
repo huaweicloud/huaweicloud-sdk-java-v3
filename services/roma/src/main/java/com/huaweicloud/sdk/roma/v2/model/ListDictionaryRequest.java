@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDictionaryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -59,9 +62,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 偏移量，大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，大于等于0
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -75,9 +79,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 每页显示的条目数量
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -91,9 +96,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 指定父字典编码，返回子字典列表信息，未指定时查询顶级字典列表信息
-     * 
-     * @return parentCode */
+    /**
+     * 指定父字典编码，返回子字典列表信息，未指定时查询顶级字典列表信息
+     * @return parentCode
+     */
     public String getParentCode() {
         return parentCode;
     }
@@ -107,9 +113,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 通过code进行模糊匹配查询
-     * 
-     * @return code */
+    /**
+     * 通过code进行模糊匹配查询
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -123,9 +130,10 @@ public class ListDictionaryRequest {
         return this;
     }
 
-    /** 通过name进行模糊匹配查询
-     * 
-     * @return name */
+    /**
+     * 通过name进行模糊匹配查询
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -170,7 +178,10 @@ public class ListDictionaryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

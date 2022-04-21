@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量添加镜像成员body */
+/**
+ * 批量添加镜像成员body
+ */
 public class BatchAddMembersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchAddMembersRequestBody {
         return this;
     }
 
-    /** 镜像ID列表
-     * 
-     * @return images */
+    /**
+     * 镜像ID列表
+     * @return images
+     */
     public List<String> getImages() {
         return images;
     }
@@ -74,9 +77,10 @@ public class BatchAddMembersRequestBody {
         return this;
     }
 
-    /** 项目ID列表
-     * 
-     * @return projects */
+    /**
+     * 项目ID列表
+     * @return projects
+     */
     public List<String> getProjects() {
         return projects;
     }
@@ -113,7 +117,10 @@ public class BatchAddMembersRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

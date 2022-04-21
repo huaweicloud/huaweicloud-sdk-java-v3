@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Rules */
+/**
+ * Rules
+ */
 public class Rules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Rules {
         return this;
     }
 
-    /** 0：全部类型，表示匹配所有文件，默认值。 1：文件类型，表示按文件后缀匹配。 2：文件夹类型，表示按目录匹配。 3：文件全路径类型，表示按文件全路径匹配。
-     * 
-     * @return ruleType */
+    /**
+     * 0：全部类型，表示匹配所有文件，默认值。  1：文件类型，表示按文件后缀匹配。  2：文件夹类型，表示按目录匹配。  3：文件全路径类型，表示按文件全路径匹配。
+     * @return ruleType
+     */
     public Integer getRuleType() {
         return ruleType;
     }
@@ -54,11 +57,10 @@ public class Rules {
         return this;
     }
 
-    /** 缓存匹配设置。 当rule_type为0时，为空。 当rule_type为1时，为文件后缀，输入首字符为“.”，以“;”进行分隔，如.jpg;.zip;.exe，并且输入的文件名后缀总数不超过20个。
-     * 当rule_type为2时，为目录，输入要求以“/”作为首字符，以“;”进行分隔，如/test/folder01;/test/folder02，并且输入的目录路径总数不超过20个。
-     * 当rule_type为3时，为全路径，输入要求以“/”作为首字符，支持匹配指定目录下的具体文件，或者带通配符“*”的文件，如/test/index.html或/test/_*.jpg。
-     * 
-     * @return content */
+    /**
+     * 缓存匹配设置。  当rule_type为0时，为空。  当rule_type为1时，为文件后缀，输入首字符为“.”，以“;”进行分隔，如.jpg;.zip;.exe，并且输入的文件名后缀总数不超过20个。 当rule_type为2时，为目录，输入要求以“/”作为首字符，以“;”进行分隔，如/test/folder01;/test/folder02，并且输入的目录路径总数不超过20个。 当rule_type为3时，为全路径，输入要求以“/”作为首字符，支持匹配指定目录下的具体文件，或者带通配符“*”的文件，如/test/index.html或/test/_*.jpg。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -72,9 +74,10 @@ public class Rules {
         return this;
     }
 
-    /** 缓存时间。最大支持365天。
-     * 
-     * @return ttl */
+    /**
+     * 缓存时间。最大支持365天。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -88,9 +91,10 @@ public class Rules {
         return this;
     }
 
-    /** 缓存时间单位。1：秒；2：分；3：小时；4：天。
-     * 
-     * @return ttlType */
+    /**
+     * 缓存时间单位。1：秒；2：分；3：小时；4：天。
+     * @return ttlType
+     */
     public Integer getTtlType() {
         return ttlType;
     }
@@ -104,9 +108,10 @@ public class Rules {
         return this;
     }
 
-    /** 此条配置的权重值, 默认值1，数值越大，优先级越高。取值范围为1-100，权重值不能相同。
-     * 
-     * @return priority */
+    /**
+     * 此条配置的权重值, 默认值1，数值越大，优先级越高。取值范围为1-100，权重值不能相同。
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -147,7 +152,10 @@ public class Rules {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

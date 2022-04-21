@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RestorePoint */
+/**
+ * RestorePoint
+ */
 public class RestorePoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 源实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 源实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -57,10 +60,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 表示恢复方式，枚举值： - “backup”，表示使用备份文件恢复，按照此方式恢复时，“type”字段为非必选，“backup_id”必选。 -
-     * “timestamp”，表示按时间点恢复，按照此方式恢复时，“type”字段必选，“restore_time”必选。
-     * 
-     * @return type */
+    /**
+     * 表示恢复方式，枚举值：  - “backup”，表示使用备份文件恢复，按照此方式恢复时，“type”字段为非必选，“backup_id”必选。 - “timestamp”，表示按时间点恢复，按照此方式恢复时，“type”字段必选，“restore_time”必选。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -74,9 +77,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。
-     * 
-     * @return backupId */
+    /**
+     * 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -90,9 +94,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。
-     * 
-     * @return restoreTime */
+    /**
+     * 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。
+     * @return restoreTime
+     */
     public Integer getRestoreTime() {
         return restoreTime;
     }
@@ -122,11 +127,10 @@ public class RestorePoint {
         return this;
     }
 
-    /** 仅适用于SQL Server引擎，当有此参数时表示支持局部恢复和重命名恢复，恢复数据以局部恢复为主。 - 新数据库名称不可与源实例数据库名称重名，新数据库名称为空，默认按照原数据库名进行恢复。 注意：
-     * 不填写该字段时，默认恢复全部数据库。 示例：”database_name”:{“原库名”:”新库名”} -
-     * 新数据库名不能包含rdsadmin、master、msdb、tempdb、model或resource字段（不区分大小写）。 - 数据库名称长度在1~64个字符之间，包含字母、数字、下划线或中划线，不能包含其他特殊字符。
-     * 
-     * @return databaseName */
+    /**
+     * 仅适用于SQL Server引擎，当有此参数时表示支持局部恢复和重命名恢复，恢复数据以局部恢复为主。  - 新数据库名称不可与源实例数据库名称重名，新数据库名称为空，默认按照原数据库名进行恢复。   注意：   不填写该字段时，默认恢复全部数据库。    示例：”database_name”:{“原库名”:”新库名”}  - 新数据库名不能包含rdsadmin、master、msdb、tempdb、model或resource字段（不区分大小写）。 - 数据库名称长度在1~64个字符之间，包含字母、数字、下划线或中划线，不能包含其他特殊字符。
+     * @return databaseName
+     */
     public Map<String, String> getDatabaseName() {
         return databaseName;
     }
@@ -168,7 +172,10 @@ public class RestorePoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

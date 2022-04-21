@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 音频数据的输出列表 */
+/**
+ * 音频数据的输出列表
+ */
 public class AudioOutput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AudioOutput {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public AudioOutputObs getObs() {
         return obs;
     }
@@ -58,9 +61,10 @@ public class AudioOutput {
         return this;
     }
 
-    /** Get hosting
-     * 
-     * @return hosting */
+    /**
+     * Get hosting
+     * @return hosting
+     */
     public AudioOutputHosting getHosting() {
         return hosting;
     }
@@ -96,7 +100,10 @@ public class AudioOutput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

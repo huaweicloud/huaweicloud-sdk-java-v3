@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 日志接入偏移时间 */
+/**
+ * 日志接入偏移时间
+ */
 public class AccessConfigTimeOffsetCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class AccessConfigTimeOffsetCreate {
 
     private Long offset;
 
-    /** 偏移时间单位。day ：天，hour：小时，sec：秒 */
+    /**
+     * 偏移时间单位。day ：天，hour：小时，sec：秒
+     */
     public static final class UnitEnum {
 
-        /** Enum DAY for value: "day" */
+        /**
+         * Enum DAY for value: "day"
+         */
         public static final UnitEnum DAY = new UnitEnum("day");
 
-        /** Enum HOUR for value: "hour" */
+        /**
+         * Enum HOUR for value: "hour"
+         */
         public static final UnitEnum HOUR = new UnitEnum("hour");
 
-        /** Enum SEC for value: "sec" */
+        /**
+         * Enum SEC for value: "sec"
+         */
         public static final UnitEnum SEC = new UnitEnum("sec");
 
         private static final Map<String, UnitEnum> STATIC_FIELDS = createStaticFields();
@@ -103,10 +113,12 @@ public class AccessConfigTimeOffsetCreate {
         return this;
     }
 
-    /** 偏移时间。 当\"unit\"选择\"day\"时，范围为1~7天。 当\"unit\"选择\"hour\"时，范围为1~168小时。 当\"unit\"选择\"sec\"时，范围为1~604800秒。 minimum: 1
+    /**
+     * 偏移时间。 当\"unit\"选择\"day\"时，范围为1~7天。 当\"unit\"选择\"hour\"时，范围为1~168小时。 当\"unit\"选择\"sec\"时，范围为1~604800秒。
+     * minimum: 1
      * maximum: 604800
-     * 
-     * @return offset */
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -120,9 +132,10 @@ public class AccessConfigTimeOffsetCreate {
         return this;
     }
 
-    /** 偏移时间单位。day ：天，hour：小时，sec：秒
-     * 
-     * @return unit */
+    /**
+     * 偏移时间单位。day ：天，hour：小时，sec：秒
+     * @return unit
+     */
     public UnitEnum getUnit() {
         return unit;
     }
@@ -159,7 +172,10 @@ public class AccessConfigTimeOffsetCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

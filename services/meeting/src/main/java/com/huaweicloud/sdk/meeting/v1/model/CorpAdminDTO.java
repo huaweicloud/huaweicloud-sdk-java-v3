@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CorpAdminDTO */
+/**
+ * CorpAdminDTO
+ */
 public class CorpAdminDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CorpAdminDTO {
         return this;
     }
 
-    /** 企业用户账号。 maxLength：64 minLength：1
-     * 
-     * @return account */
+    /**
+     * 企业用户账号。 maxLength：64 minLength：1
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -55,7 +58,10 @@ public class CorpAdminDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

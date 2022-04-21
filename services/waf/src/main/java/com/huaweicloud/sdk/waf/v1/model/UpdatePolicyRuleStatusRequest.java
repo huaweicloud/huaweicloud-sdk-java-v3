@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdatePolicyRuleStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,19 +26,29 @@ public class UpdatePolicyRuleStatusRequest {
 
     private String policyId;
 
-    /** 策略类型 */
+    /**
+     * 策略类型
+     */
     public static final class RuletypeEnum {
 
-        /** Enum WHITEBLACKIP for value: "whiteblackip" */
+        /**
+         * Enum WHITEBLACKIP for value: "whiteblackip"
+         */
         public static final RuletypeEnum WHITEBLACKIP = new RuletypeEnum("whiteblackip");
 
-        /** Enum GEOIP for value: "geoip" */
+        /**
+         * Enum GEOIP for value: "geoip"
+         */
         public static final RuletypeEnum GEOIP = new RuletypeEnum("geoip");
 
-        /** Enum PRIVACY for value: "privacy" */
+        /**
+         * Enum PRIVACY for value: "privacy"
+         */
         public static final RuletypeEnum PRIVACY = new RuletypeEnum("privacy");
 
-        /** Enum ANTITAMPER for value: "antitamper" */
+        /**
+         * Enum ANTITAMPER for value: "antitamper"
+         */
         public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
 
         private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +135,10 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -139,9 +152,10 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** 策略id（策略id从查询防护策略列表接口获取）
-     * 
-     * @return policyId */
+    /**
+     * 策略id（策略id从查询防护策略列表接口获取）
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -155,9 +169,10 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** 策略类型
-     * 
-     * @return ruletype */
+    /**
+     * 策略类型
+     * @return ruletype
+     */
     public RuletypeEnum getRuletype() {
         return ruletype;
     }
@@ -171,9 +186,10 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** 规则id，根据不同的规则类型（ruletype）调用规则列表接口获取规则id，例如黑白名单（whiteblackip）规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取规则id
-     * 
-     * @return ruleId */
+    /**
+     * 规则id，根据不同的规则类型（ruletype）调用规则列表接口获取规则id，例如黑白名单（whiteblackip）规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取规则id
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -196,9 +212,10 @@ public class UpdatePolicyRuleStatusRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdatePolicyRuleStatusRequestBody getBody() {
         return body;
     }
@@ -241,7 +258,10 @@ public class UpdatePolicyRuleStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

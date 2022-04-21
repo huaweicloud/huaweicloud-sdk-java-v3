@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAuditlogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -61,9 +64,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -77,9 +81,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -93,9 +98,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。 其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -109,9 +115,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -125,9 +132,10 @@ public class ListAuditlogsRequest {
         return this;
     }
 
-    /** 查询记录数。取值范围[1, 50]。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。取值范围[1, 50]。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -172,7 +180,10 @@ public class ListAuditlogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 备份信息。 */
+/**
+ * 备份信息。
+ */
 public class BackupForList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,19 +48,29 @@ public class BackupForList {
 
     private String endTime;
 
-    /** 备份状态，取值： - BUILDING: 备份中。 - COMPLETED: 备份完成。 - FAILED：备份失败。 - DELETING：备份删除中。 */
+    /**
+     * 备份状态，取值：  - BUILDING: 备份中。 - COMPLETED: 备份完成。 - FAILED：备份失败。 - DELETING：备份删除中。
+     */
     public static final class StatusEnum {
 
-        /** Enum BUILDING for value: "BUILDING" */
+        /**
+         * Enum BUILDING for value: "BUILDING"
+         */
         public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
 
-        /** Enum COMPLETED for value: "COMPLETED" */
+        /**
+         * Enum COMPLETED for value: "COMPLETED"
+         */
         public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -130,19 +142,29 @@ public class BackupForList {
 
     private StatusEnum status;
 
-    /** 备份类型，取值： - “auto”: 自动全量备份 - “manual”: 手动全量备份 - “fragment”: 差异全量备份 - “incremental”: 自动增量备份 */
+    /**
+     * 备份类型，取值：  - “auto”: 自动全量备份 - “manual”: 手动全量备份 - “fragment”: 差异全量备份 - “incremental”: 自动增量备份
+     */
     public static final class TypeEnum {
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final TypeEnum AUTO = new TypeEnum("auto");
 
-        /** Enum MANUAL for value: "manual" */
+        /**
+         * Enum MANUAL for value: "manual"
+         */
         public static final TypeEnum MANUAL = new TypeEnum("manual");
 
-        /** Enum FRAGMENT for value: "fragment" */
+        /**
+         * Enum FRAGMENT for value: "fragment"
+         */
         public static final TypeEnum FRAGMENT = new TypeEnum("fragment");
 
-        /** Enum INCREMENTAL for value: "incremental" */
+        /**
+         * Enum INCREMENTAL for value: "incremental"
+         */
         public static final TypeEnum INCREMENTAL = new TypeEnum("incremental");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +256,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份ID。
-     * 
-     * @return id */
+    /**
+     * 备份ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -250,9 +273,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -266,9 +290,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份名称。
-     * 
-     * @return name */
+    /**
+     * 备份名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -298,9 +323,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份的数据库。
-     * 
-     * @return databases */
+    /**
+     * 备份的数据库。
+     * @return databases
+     */
     public List<BackupDatabase> getDatabases() {
         return databases;
     }
@@ -314,9 +340,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return beginTime */
+    /**
+     * 备份开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -330,9 +357,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return endTime */
+    /**
+     * 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -346,9 +374,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份状态，取值： - BUILDING: 备份中。 - COMPLETED: 备份完成。 - FAILED：备份失败。 - DELETING：备份删除中。
-     * 
-     * @return status */
+    /**
+     * 备份状态，取值：  - BUILDING: 备份中。 - COMPLETED: 备份完成。 - FAILED：备份失败。 - DELETING：备份删除中。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -362,9 +391,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份类型，取值： - “auto”: 自动全量备份 - “manual”: 手动全量备份 - “fragment”: 差异全量备份 - “incremental”: 自动增量备份
-     * 
-     * @return type */
+    /**
+     * 备份类型，取值：  - “auto”: 自动全量备份 - “manual”: 手动全量备份 - “fragment”: 差异全量备份 - “incremental”: 自动增量备份
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -378,9 +408,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 备份大小，单位为KB。
-     * 
-     * @return size */
+    /**
+     * 备份大小，单位为KB。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -403,9 +434,10 @@ public class BackupForList {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public BackupDatastore getDatastore() {
         return datastore;
     }
@@ -419,9 +451,10 @@ public class BackupForList {
         return this;
     }
 
-    /** 是否已被DDM实例关联。
-     * 
-     * @return associatedWithDdm */
+    /**
+     * 是否已被DDM实例关联。
+     * @return associatedWithDdm
+     */
     public Boolean getAssociatedWithDdm() {
         return associatedWithDdm;
     }
@@ -482,7 +515,10 @@ public class BackupForList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

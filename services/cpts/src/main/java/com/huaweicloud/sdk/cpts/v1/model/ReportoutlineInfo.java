@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ReportoutlineInfo */
+/**
+ * ReportoutlineInfo
+ */
 public class ReportoutlineInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,9 +135,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 平均响应时间
-     * 
-     * @return avgResponseTime */
+    /**
+     * 平均响应时间
+     * @return avgResponseTime
+     */
     public Double getAvgResponseTime() {
         return avgResponseTime;
     }
@@ -149,9 +152,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 分支id
-     * 
-     * @return branchId */
+    /**
+     * 分支id
+     * @return branchId
+     */
     public String getBranchId() {
         return branchId;
     }
@@ -165,9 +169,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 分支名称
-     * 
-     * @return branchName */
+    /**
+     * 分支名称
+     * @return branchName
+     */
     public String getBranchName() {
         return branchName;
     }
@@ -181,9 +186,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 用例重试次数
-     * 
-     * @return caseRetry */
+    /**
+     * 用例重试次数
+     * @return caseRetry
+     */
     public Double getCaseRetry() {
         return caseRetry;
     }
@@ -197,9 +203,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 已完成的用例数
-     * 
-     * @return completeNum */
+    /**
+     * 已完成的用例数
+     * @return completeNum
+     */
     public Double getCompleteNum() {
         return completeNum;
     }
@@ -213,9 +220,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 持续时间
-     * 
-     * @return duration */
+    /**
+     * 持续时间
+     * @return duration
+     */
     public Double getDuration() {
         return duration;
     }
@@ -229,9 +237,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -245,9 +254,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 已执行用例数
-     * 
-     * @return executedNum */
+    /**
+     * 已执行用例数
+     * @return executedNum
+     */
     public Double getExecutedNum() {
         return executedNum;
     }
@@ -261,9 +271,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return iterationUri */
+    /**
+     * 迭代id
+     * @return iterationUri
+     */
     public String getIterationUri() {
         return iterationUri;
     }
@@ -277,9 +288,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** kpi用例数
-     * 
-     * @return kpiCaseCount */
+    /**
+     * kpi用例数
+     * @return kpiCaseCount
+     */
     public Double getKpiCaseCount() {
         return kpiCaseCount;
     }
@@ -293,9 +305,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** kpi用例执行次数
-     * 
-     * @return kpiCaseExecuteCount */
+    /**
+     * kpi用例执行次数
+     * @return kpiCaseExecuteCount
+     */
     public Double getKpiCaseExecuteCount() {
         return kpiCaseExecuteCount;
     }
@@ -309,9 +322,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** kpi用例通过次数
-     * 
-     * @return kpiCasePassCount */
+    /**
+     * kpi用例通过次数
+     * @return kpiCasePassCount
+     */
     public Double getKpiCasePassCount() {
         return kpiCasePassCount;
     }
@@ -325,9 +339,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 最大并发数
-     * 
-     * @return maxUsers */
+    /**
+     * 最大并发数
+     * @return maxUsers
+     */
     public Double getMaxUsers() {
         return maxUsers;
     }
@@ -341,9 +356,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 结果为pass的用例数
-     * 
-     * @return passNum */
+    /**
+     * 结果为pass的用例数
+     * @return passNum
+     */
     public Double getPassNum() {
         return passNum;
     }
@@ -357,9 +373,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 阶段id
-     * 
-     * @return stage */
+    /**
+     * 阶段id
+     * @return stage
+     */
     public Double getStage() {
         return stage;
     }
@@ -373,9 +390,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 阶段名称
-     * 
-     * @return stageName */
+    /**
+     * 阶段名称
+     * @return stageName
+     */
     public String getStageName() {
         return stageName;
     }
@@ -389,9 +407,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -405,9 +424,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 成功率
-     * 
-     * @return successRate */
+    /**
+     * 成功率
+     * @return successRate
+     */
     public Double getSuccessRate() {
         return successRate;
     }
@@ -421,9 +441,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态
+     * @return taskStatus
+     */
     public Double getTaskStatus() {
         return taskStatus;
     }
@@ -437,9 +458,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 总用例数
-     * 
-     * @return totalNum */
+    /**
+     * 总用例数
+     * @return totalNum
+     */
     public Double getTotalNum() {
         return totalNum;
     }
@@ -453,9 +475,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 性能tps指标
-     * 
-     * @return tps */
+    /**
+     * 性能tps指标
+     * @return tps
+     */
     public Double getTps() {
         return tps;
     }
@@ -469,9 +492,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 分支uri
-     * 
-     * @return versionUri */
+    /**
+     * 分支uri
+     * @return versionUri
+     */
     public String getVersionUri() {
         return versionUri;
     }
@@ -485,9 +509,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 工程id
-     * 
-     * @return projectId */
+    /**
+     * 工程id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -501,9 +526,10 @@ public class ReportoutlineInfo {
         return this;
     }
 
-    /** 服务id
-     * 
-     * @return serviceId */
+    /**
+     * 服务id
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -607,7 +633,10 @@ public class ReportoutlineInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建镜像请求体 */
+/**
+ * 创建镜像请求体
+ */
 public class CreateDataImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,13 +53,19 @@ public class CreateDataImageRequestBody {
 
     private String name;
 
-    /** 操作系统类型。只能是Windows、Linux二者之一，默认Linux。 */
+    /**
+     * 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +145,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 创建加密镜像的用户主密钥，具体取值请参考《密钥管理服务用户指南》获取。
-     * 
-     * @return cmkId */
+    /**
+     * 创建加密镜像的用户主密钥，具体取值请参考《密钥管理服务用户指南》获取。
+     * @return cmkId
+     */
     public String getCmkId() {
         return cmkId;
     }
@@ -153,9 +162,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * 
-     * @return description */
+    /**
+     * 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -169,9 +179,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目；取值为UUID，表示属于该UUID对应的企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目；取值为UUID，表示属于该UUID对应的企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -201,9 +212,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 新规范的镜像标签列表。默认为空。 tags和image_tags只能使用一个。
-     * 
-     * @return imageTags */
+    /**
+     * 新规范的镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+     * @return imageTags
+     */
     public List<ImageTag> getImageTags() {
         return imageTags;
     }
@@ -217,9 +229,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** OBS桶中外部镜像文件地址。格式为<OBS桶名>:<OBS镜像文件名称>。 此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
-     * 
-     * @return imageUrl */
+    /**
+     * OBS桶中外部镜像文件地址。格式为<OBS桶名>:<OBS镜像文件名称>。 此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -233,9 +246,12 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 最小数据盘大小。取值范围40-2048GB。 minimum: 40 maximum: 2048
-     * 
-     * @return minDisk */
+    /**
+     * 最小数据盘大小。取值范围40-2048GB。
+     * minimum: 40
+     * maximum: 2048
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -249,9 +265,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 镜像名称。
-     * 
-     * @return name */
+    /**
+     * 镜像名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -265,9 +282,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -297,9 +315,10 @@ public class CreateDataImageRequestBody {
         return this;
     }
 
-    /** 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
-     * 
-     * @return tags */
+    /**
+     * 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -350,7 +369,10 @@ public class CreateDataImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

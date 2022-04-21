@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchDeleteWorkflowsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class BatchDeleteWorkflowsResponse extends SdkResponse {
         return this;
     }
 
-    /** 成功流程URN列表
-     * 
-     * @return success */
+    /**
+     * 成功流程URN列表
+     * @return success
+     */
     public List<String> getSuccess() {
         return success;
     }
@@ -75,9 +78,10 @@ public class BatchDeleteWorkflowsResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误流程详情
-     * 
-     * @return fail */
+    /**
+     * 错误流程详情
+     * @return fail
+     */
     public List<OperateErrorInfo> getFail() {
         return fail;
     }
@@ -114,7 +118,10 @@ public class BatchDeleteWorkflowsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

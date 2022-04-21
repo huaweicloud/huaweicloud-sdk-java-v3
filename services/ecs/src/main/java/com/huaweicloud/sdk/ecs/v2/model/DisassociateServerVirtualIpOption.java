@@ -15,10 +15,14 @@ import java.util.Objects;
  */
 public class DisassociateServerVirtualIpOption {
 
-    /** 云服务器添加网卡的信息。 约束：解绑虚拟IP时，subnet_id为空字符串 */
+    /**
+     * 云服务器添加网卡的信息。  约束：解绑虚拟IP时，subnet_id为空字符串
+     */
     public static final class SubnetIdEnum {
 
-        /** Enum EMPTY for value: "" */
+        /**
+         * Enum EMPTY for value: ""
+         */
         public static final SubnetIdEnum EMPTY = new SubnetIdEnum("");
 
         private static final Map<String, SubnetIdEnum> STATIC_FIELDS = createStaticFields();
@@ -87,10 +91,14 @@ public class DisassociateServerVirtualIpOption {
 
     private SubnetIdEnum subnetId;
 
-    /** 网卡即将配置的虚拟IP的地址。 约束：解绑虚拟IP时，ip_address为空字符串 */
+    /**
+     * 网卡即将配置的虚拟IP的地址。  约束：解绑虚拟IP时，ip_address为空字符串
+     */
     public static final class IpAddressEnum {
 
-        /** Enum EMPTY for value: "" */
+        /**
+         * Enum EMPTY for value: ""
+         */
         public static final IpAddressEnum EMPTY = new IpAddressEnum("");
 
         private static final Map<String, IpAddressEnum> STATIC_FIELDS = createStaticFields();
@@ -169,9 +177,10 @@ public class DisassociateServerVirtualIpOption {
         return this;
     }
 
-    /** 云服务器添加网卡的信息。 约束：解绑虚拟IP时，subnet_id为空字符串
-     * 
-     * @return subnetId */
+    /**
+     * 云服务器添加网卡的信息。  约束：解绑虚拟IP时，subnet_id为空字符串
+     * @return subnetId
+     */
     public SubnetIdEnum getSubnetId() {
         return subnetId;
     }
@@ -185,9 +194,10 @@ public class DisassociateServerVirtualIpOption {
         return this;
     }
 
-    /** 网卡即将配置的虚拟IP的地址。 约束：解绑虚拟IP时，ip_address为空字符串
-     * 
-     * @return ipAddress */
+    /**
+     * 网卡即将配置的虚拟IP的地址。  约束：解绑虚拟IP时，ip_address为空字符串
+     * @return ipAddress
+     */
     public IpAddressEnum getIpAddress() {
         return ipAddress;
     }
@@ -201,9 +211,10 @@ public class DisassociateServerVirtualIpOption {
         return this;
     }
 
-    /** 虚拟IP的allowed_address_pairs属性是否添加网卡的IP/Mac对。
-     * 
-     * @return reverseBinding */
+    /**
+     * 虚拟IP的allowed_address_pairs属性是否添加网卡的IP/Mac对。
+     * @return reverseBinding
+     */
     public Boolean getReverseBinding() {
         return reverseBinding;
     }
@@ -242,7 +253,10 @@ public class DisassociateServerVirtualIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

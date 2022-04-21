@@ -40,9 +40,10 @@ public class NodePoolSpecUpdate {
         return this;
     }
 
-    /** Get nodeTemplate
-     * 
-     * @return nodeTemplate */
+    /**
+     * Get nodeTemplate
+     * @return nodeTemplate
+     */
     public NodeSpecUpdate getNodeTemplate() {
         return nodeTemplate;
     }
@@ -56,9 +57,10 @@ public class NodePoolSpecUpdate {
         return this;
     }
 
-    /** 节点池初始化节点个数。查询时为节点池目标节点数量。
-     * 
-     * @return initialNodeCount */
+    /**
+     * 节点池初始化节点个数。查询时为节点池目标节点数量。
+     * @return initialNodeCount
+     */
     public Integer getInitialNodeCount() {
         return initialNodeCount;
     }
@@ -81,9 +83,10 @@ public class NodePoolSpecUpdate {
         return this;
     }
 
-    /** Get autoscaling
-     * 
-     * @return autoscaling */
+    /**
+     * Get autoscaling
+     * @return autoscaling
+     */
     public NodePoolNodeAutoscaling getAutoscaling() {
         return autoscaling;
     }
@@ -122,7 +125,10 @@ public class NodePoolSpecUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

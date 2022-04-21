@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新分区 */
+/**
+ * 更新分区
+ */
 public class PutVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PutVolume {
         return this;
     }
 
-    /** 数据库id
-     * 
-     * @return id */
+    /**
+     * 数据库id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class PutVolume {
         return this;
     }
 
-    /** 是否迁移
-     * 
-     * @return needMigration */
+    /**
+     * 是否迁移
+     * @return needMigration
+     */
     public Boolean getNeedMigration() {
         return needMigration;
     }
@@ -60,9 +64,12 @@ public class PutVolume {
         return this;
     }
 
-    /** 调整大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return adjustSize */
+    /**
+     * 调整大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return adjustSize
+     */
     public Long getAdjustSize() {
         return adjustSize;
     }
@@ -100,7 +107,10 @@ public class PutVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

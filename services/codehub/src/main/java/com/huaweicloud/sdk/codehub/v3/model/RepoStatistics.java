@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** RepoStatistics */
+/**
+ * RepoStatistics
+ */
 public class RepoStatistics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 添加代码行
-     * 
-     * @return addLines */
+    /**
+     * 添加代码行
+     * @return addLines
+     */
     public Integer getAddLines() {
         return addLines;
     }
@@ -75,9 +78,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 分支名
-     * 
-     * @return branch */
+    /**
+     * 分支名
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -91,9 +95,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 提交次数
-     * 
-     * @return commitCount */
+    /**
+     * 提交次数
+     * @return commitCount
+     */
     public Integer getCommitCount() {
         return commitCount;
     }
@@ -107,9 +112,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 仓库统计创建的时间
-     * 
-     * @return createdAt */
+    /**
+     * 仓库统计创建的时间
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -123,9 +129,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 删除代码行
-     * 
-     * @return deleteLines */
+    /**
+     * 删除代码行
+     * @return deleteLines
+     */
     public Integer getDeleteLines() {
         return deleteLines;
     }
@@ -139,9 +146,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return id */
+    /**
+     * 仓库id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -155,9 +163,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return projectId */
+    /**
+     * 仓库id
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -171,9 +180,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 仓库统计更新的时间
-     * 
-     * @return updatedAt */
+    /**
+     * 仓库统计更新的时间
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -187,9 +197,10 @@ public class RepoStatistics {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -239,7 +250,10 @@ public class RepoStatistics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

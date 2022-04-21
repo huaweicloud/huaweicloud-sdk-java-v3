@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 指定用户的背景图，优先级大于default_user_background_image */
+/**
+ * 指定用户的背景图，优先级大于default_user_background_image
+ */
 public class MixUserBackgroundImage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MixUserBackgroundImage {
         return this;
     }
 
-    /** 需要设置背景图的用户ID
-     * 
-     * @return userId */
+    /**
+     * 需要设置背景图的用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -39,9 +42,10 @@ public class MixUserBackgroundImage {
         return this;
     }
 
-    /** 需要设置背景图的地址，图片先上传obs，格式s3://bucket/object
-     * 
-     * @return imageUri */
+    /**
+     * 需要设置背景图的地址，图片先上传obs，格式s3://bucket/object
+     * @return imageUri
+     */
     public String getImageUri() {
         return imageUri;
     }
@@ -78,7 +82,10 @@ public class MixUserBackgroundImage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

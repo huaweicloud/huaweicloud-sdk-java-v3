@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEnginesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListEnginesResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎信息列表。
-     * 
-     * @return engineGroups */
+    /**
+     * 引擎信息列表。
+     * @return engineGroups
+     */
     public List<EngineGroupsInfo> getEngineGroups() {
         return engineGroups;
     }
@@ -69,9 +72,10 @@ public class ListEnginesResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数: 起始值。
-     * 
-     * @return offset */
+    /**
+     * 分页参数: 起始值。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -85,9 +89,10 @@ public class ListEnginesResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数：每页多少条。
-     * 
-     * @return limit */
+    /**
+     * 分页参数：每页多少条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,9 +106,10 @@ public class ListEnginesResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎信息总数。
-     * 
-     * @return total */
+    /**
+     * 引擎信息总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -144,7 +150,10 @@ public class ListEnginesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateKeyRequestBody */
+/**
+ * CreateKeyRequestBody
+ */
 public class CreateKeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,31 +20,49 @@ public class CreateKeyRequestBody {
 
     private String keyAlias;
 
-    /** 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2 */
+    /**
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+     */
     public static final class KeySpecEnum {
 
-        /** Enum AES_256 for value: "AES_256" */
+        /**
+         * Enum AES_256 for value: "AES_256"
+         */
         public static final KeySpecEnum AES_256 = new KeySpecEnum("AES_256");
 
-        /** Enum SM4 for value: "SM4" */
+        /**
+         * Enum SM4 for value: "SM4"
+         */
         public static final KeySpecEnum SM4 = new KeySpecEnum("SM4");
 
-        /** Enum RSA_2048 for value: "RSA_2048" */
+        /**
+         * Enum RSA_2048 for value: "RSA_2048"
+         */
         public static final KeySpecEnum RSA_2048 = new KeySpecEnum("RSA_2048");
 
-        /** Enum RSA_3072 for value: "RSA_3072" */
+        /**
+         * Enum RSA_3072 for value: "RSA_3072"
+         */
         public static final KeySpecEnum RSA_3072 = new KeySpecEnum("RSA_3072");
 
-        /** Enum RSA_4096 for value: "RSA_4096" */
+        /**
+         * Enum RSA_4096 for value: "RSA_4096"
+         */
         public static final KeySpecEnum RSA_4096 = new KeySpecEnum("RSA_4096");
 
-        /** Enum EC_P256 for value: "EC_P256" */
+        /**
+         * Enum EC_P256 for value: "EC_P256"
+         */
         public static final KeySpecEnum EC_P256 = new KeySpecEnum("EC_P256");
 
-        /** Enum EC_P384 for value: "EC_P384" */
+        /**
+         * Enum EC_P384 for value: "EC_P384"
+         */
         public static final KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
 
-        /** Enum SM2 for value: "SM2" */
+        /**
+         * Enum SM2 for value: "SM2"
+         */
         public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
 
         private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
@@ -118,13 +138,19 @@ public class CreateKeyRequestBody {
 
     private KeySpecEnum keySpec;
 
-    /** 密钥用途，对称密钥默认为“ENCRYPT_DECRYPT”，非对称密钥默认为“SIGN_VERIFY”，枚举如下： - ENCRYPT_DECRYPT - SIGN_VERIFY */
+    /**
+     * 密钥用途，对称密钥默认为“ENCRYPT_DECRYPT”，非对称密钥默认为“SIGN_VERIFY”，枚举如下： - ENCRYPT_DECRYPT - SIGN_VERIFY
+     */
     public static final class KeyUsageEnum {
 
-        /** Enum ENCRYPT_DECRYPT for value: "ENCRYPT_DECRYPT" */
+        /**
+         * Enum ENCRYPT_DECRYPT for value: "ENCRYPT_DECRYPT"
+         */
         public static final KeyUsageEnum ENCRYPT_DECRYPT = new KeyUsageEnum("ENCRYPT_DECRYPT");
 
-        /** Enum SIGN_VERIFY for value: "SIGN_VERIFY" */
+        /**
+         * Enum SIGN_VERIFY for value: "SIGN_VERIFY"
+         */
         public static final KeyUsageEnum SIGN_VERIFY = new KeyUsageEnum("SIGN_VERIFY");
 
         private static final Map<String, KeyUsageEnum> STATIC_FIELDS = createStaticFields();
@@ -199,13 +225,19 @@ public class CreateKeyRequestBody {
 
     private String keyDescription;
 
-    /** 密钥来源，默认为“kms”，枚举如下： - kms：表示密钥材料由kms生成。 - external：表示密钥材料由外部导入。 */
+    /**
+     * 密钥来源，默认为“kms”，枚举如下： - kms：表示密钥材料由kms生成。 - external：表示密钥材料由外部导入。
+     */
     public static final class OriginEnum {
 
-        /** Enum KMS for value: "kms" */
+        /**
+         * Enum KMS for value: "kms"
+         */
         public static final OriginEnum KMS = new OriginEnum("kms");
 
-        /** Enum EXTERNAL for value: "external" */
+        /**
+         * Enum EXTERNAL for value: "external"
+         */
         public static final OriginEnum EXTERNAL = new OriginEnum("external");
 
         private static final Map<String, OriginEnum> STATIC_FIELDS = createStaticFields();
@@ -290,9 +322,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 非默认主密钥别名，取值范围为1到255个字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”，且不与系统服务创建的默认主密钥别名重名。
-     * 
-     * @return keyAlias */
+    /**
+     * 非默认主密钥别名，取值范围为1到255个字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”，且不与系统服务创建的默认主密钥别名重名。
+     * @return keyAlias
+     */
     public String getKeyAlias() {
         return keyAlias;
     }
@@ -306,9 +339,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
-     * 
-     * @return keySpec */
+    /**
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+     * @return keySpec
+     */
     public KeySpecEnum getKeySpec() {
         return keySpec;
     }
@@ -322,9 +356,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 密钥用途，对称密钥默认为“ENCRYPT_DECRYPT”，非对称密钥默认为“SIGN_VERIFY”，枚举如下： - ENCRYPT_DECRYPT - SIGN_VERIFY
-     * 
-     * @return keyUsage */
+    /**
+     * 密钥用途，对称密钥默认为“ENCRYPT_DECRYPT”，非对称密钥默认为“SIGN_VERIFY”，枚举如下： - ENCRYPT_DECRYPT - SIGN_VERIFY
+     * @return keyUsage
+     */
     public KeyUsageEnum getKeyUsage() {
         return keyUsage;
     }
@@ -338,9 +373,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 密钥描述，取值0到255字符。
-     * 
-     * @return keyDescription */
+    /**
+     * 密钥描述，取值0到255字符。
+     * @return keyDescription
+     */
     public String getKeyDescription() {
         return keyDescription;
     }
@@ -354,9 +390,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 密钥来源，默认为“kms”，枚举如下： - kms：表示密钥材料由kms生成。 - external：表示密钥材料由外部导入。
-     * 
-     * @return origin */
+    /**
+     * 密钥来源，默认为“kms”，枚举如下： - kms：表示密钥材料由kms生成。 - external：表示密钥材料由外部导入。
+     * @return origin
+     */
     public OriginEnum getOrigin() {
         return origin;
     }
@@ -370,10 +407,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 企业多项目ID。 - 用户未开通企业多项目时，不需要输入该字段。 - 用户开通企业多项目时，创建资源可以输入该字段。若用户户不输入该字段，默认创建属于默认企业多项目ID（ID为“0”）的资源。
-     * 注意：若用户没有默认企业多项目ID（ID为“0”）下的创建权限，则接口报错。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业多项目ID。 - 用户未开通企业多项目时，不需要输入该字段。 - 用户开通企业多项目时，创建资源可以输入该字段。若用户户不输入该字段，默认创建属于默认企业多项目ID（ID为“0”）的资源。 注意：若用户没有默认企业多项目ID（ID为“0”）下的创建权限，则接口报错。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -387,9 +424,10 @@ public class CreateKeyRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -436,7 +474,10 @@ public class CreateKeyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

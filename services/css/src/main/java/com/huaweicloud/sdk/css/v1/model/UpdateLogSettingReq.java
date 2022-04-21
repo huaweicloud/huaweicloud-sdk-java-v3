@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateLogSettingReq */
+/**
+ * UpdateLogSettingReq
+ */
 public class UpdateLogSettingReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateLogSettingReq {
         return this;
     }
 
-    /** IAM 委托。
-     * 
-     * @return agency */
+    /**
+     * IAM 委托。
+     * @return agency
+     */
     public String getAgency() {
         return agency;
     }
@@ -44,9 +47,10 @@ public class UpdateLogSettingReq {
         return this;
     }
 
-    /** 备份路径。
-     * 
-     * @return logBasePath */
+    /**
+     * 备份路径。
+     * @return logBasePath
+     */
     public String getLogBasePath() {
         return logBasePath;
     }
@@ -60,9 +64,10 @@ public class UpdateLogSettingReq {
         return this;
     }
 
-    /** OBS 桶。
-     * 
-     * @return logBucket */
+    /**
+     * OBS 桶。
+     * @return logBucket
+     */
     public String getLogBucket() {
         return logBucket;
     }
@@ -101,7 +106,10 @@ public class UpdateLogSettingReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

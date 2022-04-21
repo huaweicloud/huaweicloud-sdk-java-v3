@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** SignApiBindingBase */
+/**
+ * SignApiBindingBase
+ */
 public class SignApiBindingBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,9 +76,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API的发布编号
-     * 
-     * @return publishId */
+    /**
+     * API的发布编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -90,9 +93,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -106,9 +110,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -122,9 +127,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return bindingTime */
+    /**
+     * 绑定时间
+     * @return bindingTime
+     */
     public OffsetDateTime getBindingTime() {
         return bindingTime;
     }
@@ -138,9 +144,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API所属环境的编号
-     * 
-     * @return envId */
+    /**
+     * API所属环境的编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -154,9 +161,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API所属环境的名称
-     * 
-     * @return envName */
+    /**
+     * API所属环境的名称
+     * @return envName
+     */
     public String getEnvName() {
         return envName;
     }
@@ -170,9 +178,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return apiType */
+    /**
+     * API类型
+     * @return apiType
+     */
     public Integer getApiType() {
         return apiType;
     }
@@ -186,9 +195,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -202,9 +212,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** 绑定关系的ID
-     * 
-     * @return id */
+    /**
+     * 绑定关系的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -218,9 +229,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return apiRemark */
+    /**
+     * API描述
+     * @return apiRemark
+     */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -234,9 +246,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** 签名密钥的编号
-     * 
-     * @return signId */
+    /**
+     * 签名密钥的编号
+     * @return signId
+     */
     public String getSignId() {
         return signId;
     }
@@ -250,9 +263,10 @@ public class SignApiBindingBase {
         return this;
     }
 
-    /** 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return signName */
+    /**
+     * 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return signName
+     */
     public String getSignName() {
         return signName;
     }
@@ -320,7 +334,10 @@ public class SignApiBindingBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

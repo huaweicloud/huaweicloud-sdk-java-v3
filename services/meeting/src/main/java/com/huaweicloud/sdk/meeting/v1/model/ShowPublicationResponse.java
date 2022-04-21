@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPublicationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,16 +59,24 @@ public class ShowPublicationResponse extends SdkResponse {
 
     private Long endTime;
 
-    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线 */
+    /**
+     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     */
     public static final class PublishStatusEnum {
 
-        /** Enum NOT_ONLINE for value: "NOT_ONLINE" */
+        /**
+         * Enum NOT_ONLINE for value: "NOT_ONLINE"
+         */
         public static final PublishStatusEnum NOT_ONLINE = new PublishStatusEnum("NOT_ONLINE");
 
-        /** Enum PUBLISHING for value: "PUBLISHING" */
+        /**
+         * Enum PUBLISHING for value: "PUBLISHING"
+         */
         public static final PublishStatusEnum PUBLISHING = new PublishStatusEnum("PUBLISHING");
 
-        /** Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE" */
+        /**
+         * Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE"
+         */
         public static final PublishStatusEnum ALREADY_OFFLINE = new PublishStatusEnum("ALREADY_OFFLINE");
 
         private static final Map<String, PublishStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -157,9 +167,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布ID
-     * 
-     * @return id */
+    /**
+     * 发布ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -173,9 +184,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新者
-     * 
-     * @return lastUpdatedBy */
+    /**
+     * 更新者
+     * @return lastUpdatedBy
+     */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -189,9 +201,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -205,9 +218,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -221,9 +235,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布名称
-     * 
-     * @return publishName */
+    /**
+     * 发布名称
+     * @return publishName
+     */
     public String getPublishName() {
         return publishName;
     }
@@ -237,9 +252,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布范围
-     * 
-     * @return publishScope */
+    /**
+     * 发布范围
+     * @return publishScope
+     */
     public String getPublishScope() {
         return publishScope;
     }
@@ -253,9 +269,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -269,9 +286,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -285,9 +303,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
-     * 
-     * @return publishStatus */
+    /**
+     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * @return publishStatus
+     */
     public PublishStatusEnum getPublishStatus() {
         return publishStatus;
     }
@@ -317,9 +336,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布节目ID列表
-     * 
-     * @return programList */
+    /**
+     * 发布节目ID列表
+     * @return programList
+     */
     public List<ProgramResponseBase> getProgramList() {
         return programList;
     }
@@ -349,9 +369,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布部门列表
-     * 
-     * @return deptList */
+    /**
+     * 发布部门列表
+     * @return deptList
+     */
     public List<PublishDeptResponseDTO> getDeptList() {
         return deptList;
     }
@@ -381,9 +402,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布设备列表
-     * 
-     * @return deviceList */
+    /**
+     * 发布设备列表
+     * @return deviceList
+     */
     public List<PublishDeviceResponseDTO> getDeviceList() {
         return deviceList;
     }
@@ -451,7 +473,10 @@ public class ShowPublicationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

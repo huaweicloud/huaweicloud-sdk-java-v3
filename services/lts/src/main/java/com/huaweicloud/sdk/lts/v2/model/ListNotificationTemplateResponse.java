@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNotificationTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class ListNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 为一个html文本，需要进行相应的解析后展示
-     * 
-     * @return template */
+    /**
+     * 为一个html文本，需要进行相应的解析后展示
+     * @return template
+     */
     public String getTemplate() {
         return template;
     }
@@ -56,7 +59,10 @@ public class ListNotificationTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

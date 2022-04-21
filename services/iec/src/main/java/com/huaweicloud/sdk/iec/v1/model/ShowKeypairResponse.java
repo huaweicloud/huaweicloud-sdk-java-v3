@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowKeypairResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥名称。
-     * 
-     * @return name */
+    /**
+     * 密钥名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -50,9 +53,10 @@ public class ShowKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥对应publicKey信息。
-     * 
-     * @return publicKey */
+    /**
+     *   密钥对应publicKey信息。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -66,9 +70,10 @@ public class ShowKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -82,9 +87,10 @@ public class ShowKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥对应指纹信息。
-     * 
-     * @return fingerprint */
+    /**
+     *   密钥对应指纹信息。
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -125,7 +131,10 @@ public class ShowKeypairResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 密钥对信息 */
+/**
+ * 密钥对信息
+ */
 public class Keypair {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Keypair {
 
     private String name;
 
-    /** SSH密钥对的类型，值为“ssh”或“x509” */
+    /**
+     * SSH密钥对的类型，值为“ssh”或“x509”
+     */
     public static final class TypeEnum {
 
-        /** Enum SSH for value: "ssh" */
+        /**
+         * Enum SSH for value: "ssh"
+         */
         public static final TypeEnum SSH = new TypeEnum("ssh");
 
-        /** Enum X509 for value: "x509" */
+        /**
+         * Enum X509 for value: "x509"
+         */
         public static final TypeEnum X509 = new TypeEnum("x509");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +102,19 @@ public class Keypair {
 
     private TypeEnum type;
 
-    /** 租户级或者用户级 */
+    /**
+     * 租户级或者用户级
+     */
     public static final class ScopeEnum {
 
-        /** Enum DOMAIN for value: "domain" */
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
         public static final ScopeEnum DOMAIN = new ScopeEnum("domain");
 
-        /** Enum USER for value: "user" */
+        /**
+         * Enum USER for value: "user"
+         */
         public static final ScopeEnum USER = new ScopeEnum("user");
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
@@ -195,9 +209,10 @@ public class Keypair {
         return this;
     }
 
-    /** SSH密钥对的名称
-     * 
-     * @return name */
+    /**
+     * SSH密钥对的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -211,9 +226,10 @@ public class Keypair {
         return this;
     }
 
-    /** SSH密钥对的类型，值为“ssh”或“x509”
-     * 
-     * @return type */
+    /**
+     * SSH密钥对的类型，值为“ssh”或“x509”
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -227,9 +243,10 @@ public class Keypair {
         return this;
     }
 
-    /** 租户级或者用户级
-     * 
-     * @return scope */
+    /**
+     * 租户级或者用户级
+     * @return scope
+     */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -243,9 +260,10 @@ public class Keypair {
         return this;
     }
 
-    /** SSH密钥对对应的publicKey信息
-     * 
-     * @return publicKey */
+    /**
+     * SSH密钥对对应的publicKey信息
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -259,9 +277,10 @@ public class Keypair {
         return this;
     }
 
-    /** SSH密钥对应指纹信息
-     * 
-     * @return fingerprint */
+    /**
+     * SSH密钥对应指纹信息
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -275,9 +294,10 @@ public class Keypair {
         return this;
     }
 
-    /** 是否托管密钥
-     * 
-     * @return isKeyProtection */
+    /**
+     * 是否托管密钥
+     * @return isKeyProtection
+     */
     public Boolean getIsKeyProtection() {
         return isKeyProtection;
     }
@@ -291,10 +311,10 @@ public class Keypair {
         return this;
     }
 
-    /** 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 -
-     * 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结
-     * 
-     * @return frozenState */
+    /**
+     * 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 - 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结
+     * @return frozenState
+     */
     public String getFrozenState() {
         return frozenState;
     }
@@ -339,7 +359,10 @@ public class Keypair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

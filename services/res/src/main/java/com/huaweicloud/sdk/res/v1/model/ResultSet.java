@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResultSet */
+/**
+ * ResultSet
+ */
 public class ResultSet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 可用性
-     * 
-     * @return availability */
+    /**
+     * 可用性
+     * @return availability
+     */
     public Integer getAvailability() {
         return availability;
     }
@@ -74,9 +77,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 类别
-     * 
-     * @return category */
+    /**
+     * 类别
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -90,9 +94,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 作业编号
-     * 
-     * @return jobId */
+    /**
+     * 作业编号
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -106,9 +111,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 作业类型
-     * 
-     * @return jobType */
+    /**
+     * 作业类型
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -122,9 +128,10 @@ public class ResultSet {
         return this;
     }
 
-    /** rec编号
-     * 
-     * @return recId */
+    /**
+     * rec编号
+     * @return recId
+     */
     public String getRecId() {
         return recId;
     }
@@ -138,9 +145,10 @@ public class ResultSet {
         return this;
     }
 
-    /** rec类型
-     * 
-     * @return recType */
+    /**
+     * rec类型
+     * @return recType
+     */
     public String getRecType() {
         return recType;
     }
@@ -154,9 +162,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 场景编号
-     * 
-     * @return sceneId */
+    /**
+     * 场景编号
+     * @return sceneId
+     */
     public String getSceneId() {
         return sceneId;
     }
@@ -170,9 +179,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 表名
-     * 
-     * @return tableName */
+    /**
+     * 表名
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -186,9 +196,10 @@ public class ResultSet {
         return this;
     }
 
-    /** 工作空间编号
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间编号
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -236,7 +247,10 @@ public class ResultSet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

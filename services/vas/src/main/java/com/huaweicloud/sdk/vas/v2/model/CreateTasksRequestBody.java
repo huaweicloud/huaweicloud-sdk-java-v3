@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTasksRequestBody */
+/**
+ * CreateTasksRequestBody
+ */
 public class CreateTasksRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业的名称，必填。仅能包含汉字、字母、数字、中划线和下划线，长度介于1~100之间。
-     * 
-     * @return name */
+    /**
+     * 作业的名称，必填。仅能包含汉字、字母、数字、中划线和下划线，长度介于1~100之间。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +78,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业的描述，选填。长度不超过500。
-     * 
-     * @return description */
+    /**
+     * 作业的描述，选填。长度不超过500。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -91,9 +95,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业对应服务的版本号，必填。由两个介于0~999的整数和一个点号分隔符组成。
-     * 
-     * @return serviceVersion */
+    /**
+     * 作业对应服务的版本号，必填。由两个介于0~999的整数和一个点号分隔符组成。
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -107,9 +112,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业运行指定的边缘运行池ID，仅边缘场景需填且必填。
-     * 
-     * @return edgePoolId */
+    /**
+     * 作业运行指定的边缘运行池ID，仅边缘场景需填且必填。
+     * @return edgePoolId
+     */
     public String getEdgePoolId() {
         return edgePoolId;
     }
@@ -123,9 +129,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业指定的算法能力包包周期订单ID，仅部分服务需填且必填。
-     * 
-     * @return resourceOrderId */
+    /**
+     * 作业指定的算法能力包包周期订单ID，仅部分服务需填且必填。
+     * @return resourceOrderId
+     */
     public String getResourceOrderId() {
         return resourceOrderId;
     }
@@ -148,9 +155,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get timing
-     * 
-     * @return timing */
+    /**
+     * Get timing
+     * @return timing
+     */
     public TaskTiming getTiming() {
         return timing;
     }
@@ -173,9 +181,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public TaskInput getInput() {
         return input;
     }
@@ -198,9 +207,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public TaskOutput getOutput() {
         return output;
     }
@@ -223,9 +233,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public TaskServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -277,7 +288,10 @@ public class CreateTasksRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateClusterNameReq */
+/**
+ * UpdateClusterNameReq
+ */
 public class UpdateClusterNameReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateClusterNameReq {
         return this;
     }
 
-    /** 修改后集群名称。
-     * 
-     * @return displayName */
+    /**
+     * 修改后集群名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -55,7 +58,10 @@ public class UpdateClusterNameReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

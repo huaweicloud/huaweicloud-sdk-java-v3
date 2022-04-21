@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** btrfs子卷信息 */
+/**
+ * btrfs子卷信息
+ */
 public class BtrfsSubvolumn {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 父卷的uuid
-     * 
-     * @return uuid */
+    /**
+     * 父卷的uuid
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -59,9 +62,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 子卷是否为快照
-     * 
-     * @return isSnapshot */
+    /**
+     * 子卷是否为快照
+     * @return isSnapshot
+     */
     public String getIsSnapshot() {
         return isSnapshot;
     }
@@ -75,9 +79,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 子卷的id
-     * 
-     * @return subvolId */
+    /**
+     * 子卷的id
+     * @return subvolId
+     */
     public String getSubvolId() {
         return subvolId;
     }
@@ -91,9 +96,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 父卷id
-     * 
-     * @return parentId */
+    /**
+     * 父卷id
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -107,9 +113,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 子卷的名称
-     * 
-     * @return subvolName */
+    /**
+     * 子卷的名称
+     * @return subvolName
+     */
     public String getSubvolName() {
         return subvolName;
     }
@@ -123,9 +130,10 @@ public class BtrfsSubvolumn {
         return this;
     }
 
-    /** 子卷的挂载路径
-     * 
-     * @return subvolMountPath */
+    /**
+     * 子卷的挂载路径
+     * @return subvolMountPath
+     */
     public String getSubvolMountPath() {
         return subvolMountPath;
     }
@@ -170,7 +178,10 @@ public class BtrfsSubvolumn {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

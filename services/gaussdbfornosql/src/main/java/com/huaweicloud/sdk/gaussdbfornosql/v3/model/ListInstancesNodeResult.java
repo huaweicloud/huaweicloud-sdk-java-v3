@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例节点信息。 */
+/**
+ * 实例节点信息。
+ */
 public class ListInstancesNodeResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return id */
+    /**
+     * 节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return name */
+    /**
+     * 节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -90,9 +94,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return status */
+    /**
+     * 节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -106,9 +111,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 节点角色。 该参数仅对GaussDB(for Mongo)引擎的副本集实例有效。
-     * 
-     * @return role */
+    /**
+     * 节点角色。 该参数仅对GaussDB(for Mongo)引擎的副本集实例有效。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -122,9 +128,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 节点内网IP。在弹性云服务器创建成功后参数值存在，否则，值为\"\"。
-     * 
-     * @return privateIp */
+    /**
+     * 节点内网IP。在弹性云服务器创建成功后参数值存在，否则，值为\"\"。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -138,9 +145,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 绑定的公网IP。该参数仅针对绑定了公网IP的节点有效。
-     * 
-     * @return publicIp */
+    /**
+     * 绑定的公网IP。该参数仅针对绑定了公网IP的节点有效。
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -154,9 +162,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 资源规格编码。关于实例的规格信息，请参见查询所有实例规格信息中响应参数“flavors.spec_code”的值。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。关于实例的规格信息，请参见查询所有实例规格信息中响应参数“flavors.spec_code”的值。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -170,9 +179,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -186,9 +196,10 @@ public class ListInstancesNodeResult {
         return this;
     }
 
-    /** 是否支持节点缩容。 - true，表示该节点支持节点缩容。 - false，表示该节点不支持节点缩容。
-     * 
-     * @return supportReduce */
+    /**
+     * 是否支持节点缩容。 - true，表示该节点支持节点缩容。 - false，表示该节点不支持节点缩容。
+     * @return supportReduce
+     */
     public Boolean getSupportReduce() {
         return supportReduce;
     }
@@ -239,7 +250,10 @@ public class ListInstancesNodeResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

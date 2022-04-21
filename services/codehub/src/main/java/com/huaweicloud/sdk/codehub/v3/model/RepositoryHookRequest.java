@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RepositoryHookRequest */
+/**
+ * RepositoryHookRequest
+ */
 public class RepositoryHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class RepositoryHookRequest {
         return this;
     }
 
-    /** 触发url
-     * 
-     * @return hookUrl */
+    /**
+     * 触发url
+     * @return hookUrl
+     */
     public String getHookUrl() {
         return hookUrl;
     }
@@ -52,9 +55,10 @@ public class RepositoryHookRequest {
         return this;
     }
 
-    /** 事件来源
-     * 
-     * @return service */
+    /**
+     * 事件来源
+     * @return service
+     */
     public String getService() {
         return service;
     }
@@ -68,9 +72,10 @@ public class RepositoryHookRequest {
         return this;
     }
 
-    /** 安全令牌
-     * 
-     * @return token */
+    /**
+     * 安全令牌
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -100,9 +105,10 @@ public class RepositoryHookRequest {
         return this;
     }
 
-    /** 触发事件
-     * 
-     * @return hookEvents */
+    /**
+     * 触发事件
+     * @return hookEvents
+     */
     public List<String> getHookEvents() {
         return hookEvents;
     }
@@ -143,7 +149,10 @@ public class RepositoryHookRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

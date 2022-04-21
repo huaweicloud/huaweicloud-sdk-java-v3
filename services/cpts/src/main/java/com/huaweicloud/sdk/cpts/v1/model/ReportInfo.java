@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ReportInfo */
+/**
+ * ReportInfo
+ */
 public class ReportInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ReportInfo {
         return this;
     }
 
-    /** Get brokens
-     * 
-     * @return brokens */
+    /**
+     * Get brokens
+     * @return brokens
+     */
     public ReportbrokensInfo getBrokens() {
         return brokens;
     }
@@ -73,9 +76,10 @@ public class ReportInfo {
         return this;
     }
 
-    /** Get details
-     * 
-     * @return details */
+    /**
+     * Get details
+     * @return details
+     */
     public ReportdetailsInfo getDetails() {
         return details;
     }
@@ -98,9 +102,10 @@ public class ReportInfo {
         return this;
     }
 
-    /** Get outline
-     * 
-     * @return outline */
+    /**
+     * Get outline
+     * @return outline
+     */
     public ReportoutlineInfo getOutline() {
         return outline;
     }
@@ -114,9 +119,10 @@ public class ReportInfo {
         return this;
     }
 
-    /** 响应时间分布
-     * 
-     * @return rtproportion */
+    /**
+     * 响应时间分布
+     * @return rtproportion
+     */
     public String getRtproportion() {
         return rtproportion;
     }
@@ -139,9 +145,10 @@ public class ReportInfo {
         return this;
     }
 
-    /** Get taskInfo
-     * 
-     * @return taskInfo */
+    /**
+     * Get taskInfo
+     * @return taskInfo
+     */
     public ReportTaskInfo getTaskInfo() {
         return taskInfo;
     }
@@ -183,7 +190,10 @@ public class ReportInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

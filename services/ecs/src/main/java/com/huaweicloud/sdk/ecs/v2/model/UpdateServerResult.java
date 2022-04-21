@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 云服务器详情。 */
+/**
+ * 云服务器详情。
+ */
 public class UpdateServerResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,9 +125,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -139,9 +142,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return image */
+    /**
+     * 镜像ID。
+     * @return image
+     */
     public String getImage() {
         return image;
     }
@@ -155,9 +159,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv4 */
+    /**
+     * 预留属性。
+     * @return accessIPv4
+     */
     public String getAccessIPv4() {
         return accessIPv4;
     }
@@ -171,9 +176,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv6 */
+    /**
+     * 预留属性。
+     * @return accessIPv6
+     */
     public String getAccessIPv6() {
         return accessIPv6;
     }
@@ -203,9 +209,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 云服务器元数据。
-     * 
-     * @return metadata */
+    /**
+     * 云服务器元数据。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -235,9 +242,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器的网络属性。
-     * 
-     * @return addresses */
+    /**
+     * 弹性云服务器的网络属性。
+     * @return addresses
+     */
     public Map<String, List<UpdateServerAddress>> getAddresses() {
         return addresses;
     }
@@ -251,9 +259,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器创建时间。 时间格式例如：2019-05-22T03:19:19Z
-     * 
-     * @return created */
+    /**
+     * 弹性云服务器创建时间。  时间格式例如：2019-05-22T03:19:19Z
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -267,9 +276,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器所在主机的主机ID。
-     * 
-     * @return hostId */
+    /**
+     * 弹性云服务器所在主机的主机ID。
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -292,9 +302,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public SimpleFlavor getFlavor() {
         return flavor;
     }
@@ -308,9 +319,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 扩展属性， diskConfig的类型。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     * 
-     * @return osDCFDiskConfig */
+    /**
+     * 扩展属性， diskConfig的类型。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     * @return osDCFDiskConfig
+     */
     public String getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -324,9 +336,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 创建弹性云服务器的用户ID，格式为UUID。
-     * 
-     * @return userId */
+    /**
+     * 创建弹性云服务器的用户ID，格式为UUID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -340,9 +353,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 弹性云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -356,9 +370,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器进度。
-     * 
-     * @return progress */
+    /**
+     * 弹性云服务器进度。
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -388,9 +403,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 云服务器相关标记快捷链接信息。
-     * 
-     * @return links */
+    /**
+     * 云服务器相关标记快捷链接信息。
+     * @return links
+     */
     public List<Link> getLinks() {
         return links;
     }
@@ -404,9 +420,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 弹性云服务器ID，格式为UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -420,9 +437,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器更新时间。 时间格式例如：2019-05-22T03:30:52Z
-     * 
-     * @return updated */
+    /**
+     * 弹性云服务器更新时间。  时间格式例如：2019-05-22T03:30:52Z
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -436,9 +454,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器是否为锁定状态。 - true：锁定 - false：未锁定
-     * 
-     * @return locked */
+    /**
+     * 弹性云服务器是否为锁定状态。  - true：锁定 - false：未锁定
+     * @return locked
+     */
     public Boolean getLocked() {
         return locked;
     }
@@ -452,9 +471,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器的描述信息。
-     * 
-     * @return description */
+    /**
+     * 弹性云服务器的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -484,10 +504,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 云服务器的标签列表。 微版本2.26后支持，如果不使用微版本查询，响应中无tags字段。 系统近期对标签功能进行了升级，升级后，返回的tag值遵循如下规则： - key与value使用“=”连接，如“key=value”。
-     * - 如果value为空字符串，则仅返回key。 - key与value使用“=”连接，如“key=value”。 - 如果value为空字符串，则仅返回key。
-     * 
-     * @return tags */
+    /**
+     * 云服务器的标签列表。  微版本2.26后支持，如果不使用微版本查询，响应中无tags字段。  系统近期对标签功能进行了升级，升级后，返回的tag值遵循如下规则：  - key与value使用“=”连接，如“key=value”。 - 如果value为空字符串，则仅返回key。 - key与value使用“=”连接，如“key=value”。 - 如果value为空字符串，则仅返回key。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -501,11 +521,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器状态。 取值范围：
-     * ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
-     * 弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
-     * 
-     * @return status */
+    /**
+     * 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -519,9 +538,10 @@ public class UpdateServerResult {
         return this;
     }
 
-    /** 弹性云服务器的主机名。
-     * 
-     * @return osEXTSRVATTRHostname */
+    /**
+     * 弹性云服务器的主机名。
+     * @return osEXTSRVATTRHostname
+     */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -615,7 +635,10 @@ public class UpdateServerResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

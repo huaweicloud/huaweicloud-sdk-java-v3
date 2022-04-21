@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主备倒换响应体 */
+/**
+ * 主备倒换响应体
+ */
 public class SwitchoverResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,16 +36,24 @@ public class SwitchoverResp {
 
     private EndpointVO targetDb;
 
-    /** 任务方向。 */
+    /**
+     * 任务方向。
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP_ for value: "up 入云 灾备场景时对应本云为备" */
+        /**
+         * Enum UP_ for value: "up 入云 灾备场景时对应本云为备"
+         */
         public static final JobDirectionEnum UP_ = new JobDirectionEnum("up 入云 灾备场景时对应本云为备");
 
-        /** Enum DOWN_ for value: "down 出云 灾备场景时对应本云为主" */
+        /**
+         * Enum DOWN_ for value: "down 出云 灾备场景时对应本云为主"
+         */
         public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down 出云 灾备场景时对应本云为主");
 
-        /** Enum NON_DBS_ for value: "non-dbs 自建" */
+        /**
+         * Enum NON_DBS_ for value: "non-dbs 自建"
+         */
         public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs 自建");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -134,9 +144,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -150,9 +161,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 更新时间，格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间，格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -175,9 +187,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** Get sourceDb
-     * 
-     * @return sourceDb */
+    /**
+     * Get sourceDb
+     * @return sourceDb
+     */
     public EndpointVO getSourceDb() {
         return sourceDb;
     }
@@ -200,9 +213,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** Get targetDb
-     * 
-     * @return targetDb */
+    /**
+     * Get targetDb
+     * @return targetDb
+     */
     public EndpointVO getTargetDb() {
         return targetDb;
     }
@@ -216,9 +230,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 任务方向。
-     * 
-     * @return jobDirection */
+    /**
+     * 任务方向。
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -232,9 +247,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 目标库是否只读。
-     * 
-     * @return isTargetReadonly */
+    /**
+     * 目标库是否只读。
+     * @return isTargetReadonly
+     */
     public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
@@ -248,9 +264,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -264,9 +281,10 @@ public class SwitchoverResp {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -315,7 +333,10 @@ public class SwitchoverResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

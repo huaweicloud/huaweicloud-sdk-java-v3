@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建伸缩配置请求 */
+/**
+ * 创建伸缩配置请求
+ */
 public class CreateScalingConfigOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateScalingConfigOption {
         return this;
     }
 
-    /** 伸缩配置名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线。
-     * 
-     * @return scalingConfigurationName */
+    /**
+     * 伸缩配置名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线。
+     * @return scalingConfigurationName
+     */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -49,9 +52,10 @@ public class CreateScalingConfigOption {
         return this;
     }
 
-    /** Get instanceConfig
-     * 
-     * @return instanceConfig */
+    /**
+     * Get instanceConfig
+     * @return instanceConfig
+     */
     public InstanceConfig getInstanceConfig() {
         return instanceConfig;
     }
@@ -88,7 +92,10 @@ public class CreateScalingConfigOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

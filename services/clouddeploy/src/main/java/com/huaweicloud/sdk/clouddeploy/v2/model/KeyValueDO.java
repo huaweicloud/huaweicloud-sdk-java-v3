@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 执行部署任务时传递的动态参数 */
+/**
+ * 执行部署任务时传递的动态参数
+ */
 public class KeyValueDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class KeyValueDO {
         return this;
     }
 
-    /** 执行部署任务时传递的参数名称
-     * 
-     * @return name */
+    /**
+     * 执行部署任务时传递的参数名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class KeyValueDO {
         return this;
     }
 
-    /** 执行部署任务时传递的参数值
-     * 
-     * @return value */
+    /**
+     * 执行部署任务时传递的参数值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,9 +83,10 @@ public class KeyValueDO {
         return this;
     }
 
-    /** 参数值为枚举类型时，返回可选值列表
-     * 
-     * @return limits */
+    /**
+     * 参数值为枚举类型时，返回可选值列表
+     * @return limits
+     */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -119,7 +124,10 @@ public class KeyValueDO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

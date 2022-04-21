@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 按标签过滤资源后返回结果的排序方式 */
+/**
+ * 按标签过滤资源后返回结果的排序方式
+ */
 public class Sorted {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Sorted {
         return this;
     }
 
-    /** 按key值对请求内容进行排序
-     * 
-     * @return key */
+    /**
+     * 按key值对请求内容进行排序
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class Sorted {
         return this;
     }
 
-    /** 是否采用倒序
-     * 
-     * @return reverse */
+    /**
+     * 是否采用倒序
+     * @return reverse
+     */
     public Boolean getReverse() {
         return reverse;
     }
@@ -77,7 +81,10 @@ public class Sorted {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

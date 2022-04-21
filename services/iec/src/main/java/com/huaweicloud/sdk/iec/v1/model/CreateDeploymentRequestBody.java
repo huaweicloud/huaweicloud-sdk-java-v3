@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建部署计划请求体 */
+/**
+ * 创建部署计划请求体
+ */
 public class CreateDeploymentRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateDeploymentRequestBody {
         return this;
     }
 
-    /** Get edgecloud
-     * 
-     * @return edgecloud */
+    /**
+     * Get edgecloud
+     * @return edgecloud
+     */
     public EdgeCloudOption getEdgecloud() {
         return edgecloud;
     }
@@ -65,7 +68,10 @@ public class CreateDeploymentRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

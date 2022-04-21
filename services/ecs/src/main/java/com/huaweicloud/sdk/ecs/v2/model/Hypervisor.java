@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** hypervisor信息。 */
+/**
+ * hypervisor信息。
+ */
 public class Hypervisor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Hypervisor {
         return this;
     }
 
-    /** hypervisor类型
-     * 
-     * @return hypervisorType */
+    /**
+     * hypervisor类型
+     * @return hypervisorType
+     */
     public String getHypervisorType() {
         return hypervisorType;
     }
@@ -39,9 +42,10 @@ public class Hypervisor {
         return this;
     }
 
-    /** hypervisor csd信息
-     * 
-     * @return csdHypervisor */
+    /**
+     * hypervisor csd信息
+     * @return csdHypervisor
+     */
     public String getCsdHypervisor() {
         return csdHypervisor;
     }
@@ -78,7 +82,10 @@ public class Hypervisor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

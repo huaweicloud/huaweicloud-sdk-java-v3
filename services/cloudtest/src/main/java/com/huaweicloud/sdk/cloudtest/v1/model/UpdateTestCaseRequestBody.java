@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新测试用例信息请求体 */
+/**
+ * 更新测试用例信息请求体
+ */
 public class UpdateTestCaseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** 云测页面上显示的用例名称，长度为[3-128]位字符
-     * 
-     * @return name */
+    /**
+     * 云测页面上显示的用例名称，长度为[3-128]位字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,9 +58,10 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** 注册测试类型服务接口返回的服务id，取值范围为10-9999
-     * 
-     * @return serviceId */
+    /**
+     * 注册测试类型服务接口返回的服务id，取值范围为10-9999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -71,9 +75,10 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** 测试用例等级，可选值为[0,1,2,3,4]，不填时云测默认为2
-     * 
-     * @return rankId */
+    /**
+     * 测试用例等级，可选值为[0,1,2,3,4]，不填时云测默认为2
+     * @return rankId
+     */
     public String getRankId() {
         return rankId;
     }
@@ -87,9 +92,10 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** 用例编号，不填该值时云测会自动生成，长度为[3-128]位字符
-     * 
-     * @return testcaseNumber */
+    /**
+     * 用例编号，不填该值时云测会自动生成，长度为[3-128]位字符
+     * @return testcaseNumber
+     */
     public String getTestcaseNumber() {
         return testcaseNumber;
     }
@@ -112,9 +118,10 @@ public class UpdateTestCaseRequestBody {
         return this;
     }
 
-    /** Get extendInfo
-     * 
-     * @return extendInfo */
+    /**
+     * Get extendInfo
+     * @return extendInfo
+     */
     public ExternalServiceBizCase getExtendInfo() {
         return extendInfo;
     }
@@ -157,7 +164,10 @@ public class UpdateTestCaseRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

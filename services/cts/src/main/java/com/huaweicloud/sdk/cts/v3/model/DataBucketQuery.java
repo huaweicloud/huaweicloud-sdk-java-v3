@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 追踪桶信息。 */
+/**
+ * 追踪桶信息。
+ */
 public class DataBucketQuery {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class DataBucketQuery {
 
     private Boolean searchEnabled;
 
-    /** Gets or Sets dataEvent */
+    /**
+     * Gets or Sets dataEvent
+     */
     public static final class DataEventEnum {
 
-        /** Enum WRITE for value: "WRITE" */
+        /**
+         * Enum WRITE for value: "WRITE"
+         */
         public static final DataEventEnum WRITE = new DataEventEnum("WRITE");
 
-        /** Enum READ for value: "READ" */
+        /**
+         * Enum READ for value: "READ"
+         */
         public static final DataEventEnum READ = new DataEventEnum("READ");
 
         private static final Map<String, DataEventEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +115,10 @@ public class DataBucketQuery {
         return this;
     }
 
-    /** 标识OBS桶名称。由数字或字母开头，支持小写字母、数字、“-”、“.”，长度为3～63个字符。
-     * 
-     * @return dataBucketName */
+    /**
+     * 标识OBS桶名称。由数字或字母开头，支持小写字母、数字、“-”、“.”，长度为3～63个字符。
+     * @return dataBucketName
+     */
     public String getDataBucketName() {
         return dataBucketName;
     }
@@ -123,9 +132,10 @@ public class DataBucketQuery {
         return this;
     }
 
-    /** 追踪桶日志是否支持搜索。
-     * 
-     * @return searchEnabled */
+    /**
+     * 追踪桶日志是否支持搜索。
+     * @return searchEnabled
+     */
     public Boolean getSearchEnabled() {
         return searchEnabled;
     }
@@ -155,9 +165,10 @@ public class DataBucketQuery {
         return this;
     }
 
-    /** 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
-     * 
-     * @return dataEvent */
+    /**
+     * 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
+     * @return dataEvent
+     */
     public List<DataEventEnum> getDataEvent() {
         return dataEvent;
     }
@@ -196,7 +207,10 @@ public class DataBucketQuery {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

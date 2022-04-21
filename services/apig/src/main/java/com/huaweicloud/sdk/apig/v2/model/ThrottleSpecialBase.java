@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** ThrottleSpecialBase */
+/**
+ * ThrottleSpecialBase
+ */
 public class ThrottleSpecialBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ThrottleSpecialBase {
         return this;
     }
 
-    /** 特殊配置的编号
-     * 
-     * @return id */
+    /**
+     * 特殊配置的编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,9 +58,10 @@ public class ThrottleSpecialBase {
         return this;
     }
 
-    /** 特殊对象在流控时间内能够访问API的最大次数限制
-     * 
-     * @return callLimits */
+    /**
+     * 特殊对象在流控时间内能够访问API的最大次数限制
+     * @return callLimits
+     */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -71,9 +75,10 @@ public class ThrottleSpecialBase {
         return this;
     }
 
-    /** 设置时间
-     * 
-     * @return applyTime */
+    /**
+     * 设置时间
+     * @return applyTime
+     */
     public OffsetDateTime getApplyTime() {
         return applyTime;
     }
@@ -87,9 +92,10 @@ public class ThrottleSpecialBase {
         return this;
     }
 
-    /** 作用的APP名称
-     * 
-     * @return appName */
+    /**
+     * 作用的APP名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -103,9 +109,10 @@ public class ThrottleSpecialBase {
         return this;
     }
 
-    /** 作用的APP编号
-     * 
-     * @return appId */
+    /**
+     * 作用的APP编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -148,7 +155,10 @@ public class ThrottleSpecialBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

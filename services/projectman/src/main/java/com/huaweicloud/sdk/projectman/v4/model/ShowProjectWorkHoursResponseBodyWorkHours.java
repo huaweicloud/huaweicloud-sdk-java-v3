@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowProjectWorkHoursResponseBodyWorkHours */
+/**
+ * ShowProjectWorkHoursResponseBodyWorkHours
+ */
 public class ShowProjectWorkHoursResponseBodyWorkHours {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -89,9 +92,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickName */
+    /**
+     * 用户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -105,9 +109,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -121,9 +126,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工时日期
-     * 
-     * @return workDate */
+    /**
+     * 工时日期
+     * @return workDate
+     */
     public String getWorkDate() {
         return workDate;
     }
@@ -137,9 +143,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工时花费
-     * 
-     * @return workHoursNum */
+    /**
+     * 工时花费
+     * @return workHoursNum
+     */
     public String getWorkHoursNum() {
         return workHoursNum;
     }
@@ -153,9 +160,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工时内容
-     * 
-     * @return summary */
+    /**
+     * 工时内容
+     * @return summary
+     */
     public String getSummary() {
         return summary;
     }
@@ -169,9 +177,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工时类型
-     * 
-     * @return workHoursTypeName */
+    /**
+     * 工时类型
+     * @return workHoursTypeName
+     */
     public String getWorkHoursTypeName() {
         return workHoursTypeName;
     }
@@ -185,9 +194,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工作项id
-     * 
-     * @return issueId */
+    /**
+     * 工作项id
+     * @return issueId
+     */
     public Integer getIssueId() {
         return issueId;
     }
@@ -201,9 +211,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工作项类型
-     * 
-     * @return issueType */
+    /**
+     * 工作项类型
+     * @return issueType
+     */
     public String getIssueType() {
         return issueType;
     }
@@ -217,9 +228,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工作项标题
-     * 
-     * @return subject */
+    /**
+     * 工作项标题
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -233,9 +245,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工作项创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 工作项创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -249,9 +262,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return this;
     }
 
-    /** 工作项结束时间
-     * 
-     * @return closedTime */
+    /**
+     * 工作项结束时间
+     * @return closedTime
+     */
     public String getClosedTime() {
         return closedTime;
     }
@@ -320,7 +334,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

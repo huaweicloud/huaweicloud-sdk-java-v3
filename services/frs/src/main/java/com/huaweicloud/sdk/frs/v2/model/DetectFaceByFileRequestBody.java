@@ -11,7 +11,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DetectFaceByFileRequestBody */
+/**
+ * DetectFaceByFileRequestBody
+ */
 public class DetectFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
@@ -28,9 +30,10 @@ public class DetectFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
-     * 
-     * @return imageFile */
+    /**
+     * 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
+     * @return imageFile
+     */
     public FormDataFilePart getImageFile() {
         return imageFile;
     }
@@ -44,10 +47,10 @@ public class DetectFaceByFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 是否返回人脸属性，希望获取的属性列表，多个属性间使用逗号（,）隔开。目前支持的属性有： • 2：年龄 • 4：装束（帽子、眼镜） • 6：口罩 • 7：发型 • 8：胡须 • 11：图片类型 • 12：质量 • 13：表情
-     * • 21：人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转
-     * 
-     * @return attributes */
+    /**
+     * 是否返回人脸属性，希望获取的属性列表，多个属性间使用逗号（,）隔开。目前支持的属性有： • 2：年龄 • 4：装束（帽子、眼镜） • 6：口罩 • 7：发型 • 8：胡须 • 11：图片类型 • 12：质量 • 13：表情 • 21：人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转
+     * @return attributes
+     */
     public String getAttributes() {
         return attributes;
     }
@@ -113,7 +116,10 @@ public class DetectFaceByFileRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

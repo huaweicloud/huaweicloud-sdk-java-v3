@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSimPoolMembersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,11 @@ public class ListSimPoolMembersRequest {
         return this;
     }
 
-    /** 流量池标识 minimum: 0
-     * 
-     * @return simPoolId */
+    /**
+     * 流量池标识
+     * minimum: 0
+     * @return simPoolId
+     */
     public Long getSimPoolId() {
         return simPoolId;
     }
@@ -54,9 +58,10 @@ public class ListSimPoolMembersRequest {
         return this;
     }
 
-    /** 容器ID
-     * 
-     * @return cid */
+    /**
+     * 容器ID
+     * @return cid
+     */
     public String getCid() {
         return cid;
     }
@@ -70,9 +75,12 @@ public class ListSimPoolMembersRequest {
         return this;
     }
 
-    /** 每页记录数 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页记录数
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -86,9 +94,12 @@ public class ListSimPoolMembersRequest {
         return this;
     }
 
-    /** 页码 minimum: 1 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * minimum: 1
+     * maximum: 1000000
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -102,9 +113,10 @@ public class ListSimPoolMembersRequest {
         return this;
     }
 
-    /** 账期，例如：2021-04
-     * 
-     * @return billingCycle */
+    /**
+     * 账期，例如：2021-04
+     * @return billingCycle
+     */
     public String getBillingCycle() {
         return billingCycle;
     }
@@ -147,7 +159,10 @@ public class ListSimPoolMembersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

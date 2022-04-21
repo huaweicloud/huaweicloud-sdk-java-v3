@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StartAutoCreateSnapshotsReq */
+/**
+ * StartAutoCreateSnapshotsReq
+ */
 public class StartAutoCreateSnapshotsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class StartAutoCreateSnapshotsReq {
         return this;
     }
 
-    /** 指定要恢复的索引名称，多个索引用逗号隔开，默认恢复所有索引。支持使用“\\*”匹配多个索引，例如：2018-06\\*，表示恢复名称前缀是2018-06的所有索引的数据。
-     * 0～1024个字符，不能包含空格和大写字母，且不能包含\\\"\\\\<|>/?特殊字符。 默认值为\\*，表示恢复所有索引。
-     * 
-     * @return indices */
+    /**
+     * 指定要恢复的索引名称，多个索引用逗号隔开，默认恢复所有索引。支持使用“\\*”匹配多个索引，例如：2018-06\\*，表示恢复名称前缀是2018-06的所有索引的数据。  0～1024个字符，不能包含空格和大写字母，且不能包含\\\"\\\\<|>/?特殊字符。  默认值为\\*，表示恢复所有索引。
+     * @return indices
+     */
     public String getIndices() {
         return indices;
     }
@@ -50,9 +52,10 @@ public class StartAutoCreateSnapshotsReq {
         return this;
     }
 
-    /** 设置快照保留的天数，范围是1～90。系统在半点时刻会自动删除超过保留天数的快照。
-     * 
-     * @return keepday */
+    /**
+     * 设置快照保留的天数，范围是1～90。系统在半点时刻会自动删除超过保留天数的快照。
+     * @return keepday
+     */
     public Integer getKeepday() {
         return keepday;
     }
@@ -66,9 +69,10 @@ public class StartAutoCreateSnapshotsReq {
         return this;
     }
 
-    /** 每天创建快照的时刻，只支持整点，后面需加上时区，格式为“HH:mm z”，“HH:mm”表示整点时间，“z”表示时区。比如“00:00 GMT+08:00”、“01:00 GMT+08:00”等。
-     * 
-     * @return period */
+    /**
+     * 每天创建快照的时刻，只支持整点，后面需加上时区，格式为“HH:mm z”，“HH:mm”表示整点时间，“z”表示时区。比如“00:00 GMT+08:00”、“01:00 GMT+08:00”等。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -82,9 +86,10 @@ public class StartAutoCreateSnapshotsReq {
         return this;
     }
 
-    /** 自动创建的快照名称前缀。
-     * 
-     * @return prefix */
+    /**
+     * 自动创建的快照名称前缀。
+     * @return prefix
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -125,7 +130,10 @@ public class StartAutoCreateSnapshotsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

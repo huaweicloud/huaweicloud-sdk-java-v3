@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowInstanceMessagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,9 +82,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -95,9 +99,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 是否按照时间排序。
-     * 
-     * @return asc */
+    /**
+     * 是否按照时间排序。
+     * @return asc
+     */
     public Boolean getAsc() {
         return asc;
     }
@@ -111,9 +116,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 开始时间。 Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
-     * 
-     * @return startTime */
+    /**
+     * 开始时间。  Unix毫秒时间戳。  查询消息偏移量时，为必选参数。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -127,9 +133,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 结束时间。 Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。  Unix毫秒时间戳。  查询消息偏移量时，为必选参数。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -143,9 +150,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 分页大小。
-     * 
-     * @return limit */
+    /**
+     * 分页大小。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -159,9 +167,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -175,9 +184,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 是否下载。
-     * 
-     * @return download */
+    /**
+     * 是否下载。
+     * @return download
+     */
     public Boolean getDownload() {
         return download;
     }
@@ -191,9 +201,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 消息偏移量。 **查询消息内容时，为必选参数。** 若start_time、end_time参数不为空，该参数无效。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息偏移量。  **查询消息内容时，为必选参数。**  若start_time、end_time参数不为空，该参数无效。
+     * @return messageOffset
+     */
     public String getMessageOffset() {
         return messageOffset;
     }
@@ -207,9 +218,10 @@ public class ShowInstanceMessagesRequest {
         return this;
     }
 
-    /** 分区。 **查询消息内容时，为必选参数。** 若start_time、end_time参数不为空，该参数无效。
-     * 
-     * @return partition */
+    /**
+     * 分区。  **查询消息内容时，为必选参数。**  若start_time、end_time参数不为空，该参数无效。
+     * @return partition
+     */
     public String getPartition() {
         return partition;
     }
@@ -263,7 +275,10 @@ public class ShowInstanceMessagesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

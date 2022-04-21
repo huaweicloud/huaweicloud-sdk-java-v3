@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 指定分页查询每页的行数，最大为100，默认值为10。
-     * 
-     * @return limit */
+    /**
+     * 指定分页查询每页的行数，最大为100，默认值为10。
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -59,9 +62,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 指定要查询的偏移数量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 指定要查询的偏移数量，默认为0。
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -75,9 +79,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 响应中查询到的服务将按照指定的字段进行排序
-     * 
-     * @return sorted */
+    /**
+     * 响应中查询到的服务将按照指定的字段进行排序
+     * @return sorted
+     */
     public String getSorted() {
         return sorted;
     }
@@ -91,9 +96,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 服务名称
-     * 
-     * @return name */
+    /**
+     * 服务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 按照相关的应用查询服务
-     * 
-     * @return app */
+    /**
+     * 按照相关的应用查询服务
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -123,9 +130,10 @@ public class ListServicesRequest {
         return this;
     }
 
-    /** 铂金版实例ID
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -169,7 +177,10 @@ public class ListServicesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

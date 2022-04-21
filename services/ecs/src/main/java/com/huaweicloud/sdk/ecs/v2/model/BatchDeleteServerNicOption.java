@@ -20,9 +20,10 @@ public class BatchDeleteServerNicOption {
         return this;
     }
 
-    /** 网卡Port ID。
-     * 
-     * @return id */
+    /**
+     * 网卡Port ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,7 +58,10 @@ public class BatchDeleteServerNicOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

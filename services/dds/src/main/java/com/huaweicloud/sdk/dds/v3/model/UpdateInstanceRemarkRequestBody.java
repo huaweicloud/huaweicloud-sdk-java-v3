@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateInstanceRemarkRequestBody */
+/**
+ * UpdateInstanceRemarkRequestBody
+ */
 public class UpdateInstanceRemarkRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateInstanceRemarkRequestBody {
         return this;
     }
 
-    /** 实例备注内容。 长度不能超过64位，不支持回车和>!<\"&'=特殊字符。
-     * 
-     * @return remark */
+    /**
+     * 实例备注内容。 长度不能超过64位，不支持回车和>!<\"&'=特殊字符。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -55,7 +58,10 @@ public class UpdateInstanceRemarkRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

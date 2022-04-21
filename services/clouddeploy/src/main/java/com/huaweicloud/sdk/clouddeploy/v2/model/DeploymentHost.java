@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主机信息body体 */
+/**
+ * 主机信息body体
+ */
 public class DeploymentHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,13 +31,19 @@ public class DeploymentHost {
 
     private Integer port;
 
-    /** 操作系统：windows|linux，需要和主机组保持一致 */
+    /**
+     * 操作系统：windows|linux，需要和主机组保持一致
+     */
     public static final class OsEnum {
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final OsEnum WINDOWS = new OsEnum("windows");
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final OsEnum LINUX = new OsEnum("linux");
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
@@ -130,9 +138,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** 主机名称
-     * 
-     * @return hostName */
+    /**
+     * 主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -146,9 +155,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** IP，请输入弹性ip格式：161.17.101.12
-     * 
-     * @return ip */
+    /**
+     * IP，请输入弹性ip格式：161.17.101.12
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -162,9 +172,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** ssh端口，如：22
-     * 
-     * @return port */
+    /**
+     * ssh端口，如：22
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -178,9 +189,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** 操作系统：windows|linux，需要和主机组保持一致
-     * 
-     * @return os */
+    /**
+     * 操作系统：windows|linux，需要和主机组保持一致
+     * @return os
+     */
     public OsEnum getOs() {
         return os;
     }
@@ -194,9 +206,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** 是否为代理机
-     * 
-     * @return asProxy */
+    /**
+     * 是否为代理机
+     * @return asProxy
+     */
     public Boolean getAsProxy() {
         return asProxy;
     }
@@ -210,9 +223,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** 代理机id
-     * 
-     * @return proxyHostId */
+    /**
+     * 代理机id
+     * @return proxyHostId
+     */
     public String getProxyHostId() {
         return proxyHostId;
     }
@@ -235,9 +249,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** Get authorization
-     * 
-     * @return authorization */
+    /**
+     * Get authorization
+     * @return authorization
+     */
     public DeploymentHostAuthorizationBody getAuthorization() {
         return authorization;
     }
@@ -251,9 +266,10 @@ public class DeploymentHost {
         return this;
     }
 
-    /** 免费启用应用运维服务（AOM），提供指标监控、日志查询、告警功能（自动安装数据采集器 ICAgent，仅支持华为云linux主机）
-     * 
-     * @return installIcagent */
+    /**
+     * 免费启用应用运维服务（AOM），提供指标监控、日志查询、告警功能（自动安装数据采集器 ICAgent，仅支持华为云linux主机）
+     * @return installIcagent
+     */
     public Boolean getInstallIcagent() {
         return installIcagent;
     }
@@ -300,7 +316,10 @@ public class DeploymentHost {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

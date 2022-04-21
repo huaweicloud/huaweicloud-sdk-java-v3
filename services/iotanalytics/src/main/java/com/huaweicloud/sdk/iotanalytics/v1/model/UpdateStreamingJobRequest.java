@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateStreamingJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class UpdateStreamingJobRequest {
         return this;
     }
 
-    /** 是否需要校验配置是否正确
-     * 
-     * @return check */
+    /**
+     * 是否需要校验配置是否正确
+     * @return check
+     */
     public Boolean getCheck() {
         return check;
     }
@@ -47,9 +50,10 @@ public class UpdateStreamingJobRequest {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -79,9 +83,10 @@ public class UpdateStreamingJobRequest {
         return this;
     }
 
-    /** 实时分析作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：实时分析算子配置指南。
-     * 
-     * @return body */
+    /**
+     * 实时分析作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：实时分析算子配置指南。
+     * @return body
+     */
     public Map<String, Object> getBody() {
         return body;
     }
@@ -120,7 +125,10 @@ public class UpdateStreamingJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

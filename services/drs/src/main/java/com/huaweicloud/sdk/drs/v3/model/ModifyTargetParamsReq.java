@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改数据库参数请求体 */
+/**
+ * 修改数据库参数请求体
+ */
 public class ModifyTargetParamsReq {
 
-    /** 参数分组 */
+    /**
+     * 参数分组
+     */
     public static final class GroupEnum {
 
-        /** Enum COMMON for value: "common" */
+        /**
+         * Enum COMMON for value: "common"
+         */
         public static final GroupEnum COMMON = new GroupEnum("common");
 
-        /** Enum PERFORMANCE for value: "performance" */
+        /**
+         * Enum PERFORMANCE for value: "performance"
+         */
         public static final GroupEnum PERFORMANCE = new GroupEnum("performance");
 
         private static final Map<String, GroupEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class ModifyTargetParamsReq {
         return this;
     }
 
-    /** 参数分组
-     * 
-     * @return group */
+    /**
+     * 参数分组
+     * @return group
+     */
     public GroupEnum getGroup() {
         return group;
     }
@@ -134,9 +143,10 @@ public class ModifyTargetParamsReq {
         return this;
     }
 
-    /** 修改的参数信息
-     * 
-     * @return params */
+    /**
+     * 修改的参数信息
+     * @return params
+     */
     public List<ParamsReqBean> getParams() {
         return params;
     }
@@ -173,7 +183,10 @@ public class ModifyTargetParamsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

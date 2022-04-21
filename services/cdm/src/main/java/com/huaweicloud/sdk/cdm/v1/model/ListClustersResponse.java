@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListClustersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群列表，请参见clusters参数说明
-     * 
-     * @return clusters */
+    /**
+     * 集群列表，请参见clusters参数说明
+     * @return clusters
+     */
     public List<Clusters> getClusters() {
         return clusters;
     }
@@ -75,7 +78,10 @@ public class ListClustersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

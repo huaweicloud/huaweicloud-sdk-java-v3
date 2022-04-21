@@ -25,9 +25,10 @@ public class PublicEndpoints {
         return this;
     }
 
-    /** 公网连接信息
-     * 
-     * @return publicConnectInfo */
+    /**
+     * 公网连接信息
+     * @return publicConnectInfo
+     */
     public String getPublicConnectInfo() {
         return publicConnectInfo;
     }
@@ -41,9 +42,10 @@ public class PublicEndpoints {
         return this;
     }
 
-    /** 公网JDBC URL
-     * 
-     * @return jdbcUrl */
+    /**
+     * 公网JDBC URL，默认格式如下： jdbc:postgresql://<public_connect_info>/<YOUR_DATABASE_name>
+     * @return jdbcUrl
+     */
     public String getJdbcUrl() {
         return jdbcUrl;
     }
@@ -80,7 +82,10 @@ public class PublicEndpoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

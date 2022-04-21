@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点网卡的描述信息。 */
+/**
+ * 节点网卡的描述信息。 
+ */
 public class NodeNicSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class NodeNicSpec {
         return this;
     }
 
-    /** Get primaryNic
-     * 
-     * @return primaryNic */
+    /**
+     * Get primaryNic
+     * @return primaryNic
+     */
     public NicSpec getPrimaryNic() {
         return primaryNic;
     }
@@ -67,9 +70,10 @@ public class NodeNicSpec {
         return this;
     }
 
-    /** 扩展网卡
-     * 
-     * @return extNics */
+    /**
+     * 扩展网卡
+     * @return extNics
+     */
     public List<NicSpec> getExtNics() {
         return extNics;
     }
@@ -106,7 +110,10 @@ public class NodeNicSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateCommandResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,12 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 命令所属服务id minimum: 0 maximum: 999999999999999999
-     * 
-     * @return serviceId */
+    /**
+     * 命令所属服务id
+     * minimum: 0
+     * maximum: 999999999999999999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -50,9 +55,12 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 命令id minimum: 0 maximum: 999999999999999999
-     * 
-     * @return commandId */
+    /**
+     * 命令id
+     * minimum: 0
+     * maximum: 999999999999999999
+     * @return commandId
+     */
     public Integer getCommandId() {
         return commandId;
     }
@@ -66,9 +74,10 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 命令名称
-     * 
-     * @return commandName */
+    /**
+     * 命令名称
+     * @return commandName
+     */
     public String getCommandName() {
         return commandName;
     }
@@ -82,9 +91,10 @@ public class CreateCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 命令描述
-     * 
-     * @return description */
+    /**
+     * 命令描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -125,7 +135,10 @@ public class CreateCommandResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

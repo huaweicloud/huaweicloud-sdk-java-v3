@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 参数模板信息。 */
+/**
+ * 参数模板信息。
+ */
 public class ListConfigurationsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 参数模板ID。
-     * 
-     * @return id */
+    /**
+     * 参数模板ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 参数模板名称。
-     * 
-     * @return name */
+    /**
+     * 参数模板名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 参数模板描述。
-     * 
-     * @return description */
+    /**
+     * 参数模板描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,9 +106,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 数据库版本名称。
-     * 
-     * @return datastoreVersionName */
+    /**
+     * 数据库版本名称。
+     * @return datastoreVersionName
+     */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -117,9 +123,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return datastoreName */
+    /**
+     * 数据库名称。
+     * @return datastoreName
+     */
     public String getDatastoreName() {
         return datastoreName;
     }
@@ -133,9 +140,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -149,9 +157,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -165,9 +174,10 @@ public class ListConfigurationsResult {
         return this;
     }
 
-    /** 是否是用户自定义参数模板： - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
-     * 
-     * @return userDefined */
+    /**
+     * 是否是用户自定义参数模板： - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
+     * @return userDefined
+     */
     public Boolean getUserDefined() {
         return userDefined;
     }
@@ -216,7 +226,10 @@ public class ListConfigurationsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

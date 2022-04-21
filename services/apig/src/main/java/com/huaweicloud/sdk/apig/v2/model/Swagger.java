@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** swagger文档导入结果 暂不支持 */
+/**
+ * swagger文档导入结果  暂不支持
+ */
 public class Swagger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Swagger {
         return this;
     }
 
-    /** swagger文档编号
-     * 
-     * @return id */
+    /**
+     * swagger文档编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class Swagger {
         return this;
     }
 
-    /** 导入结果说明
-     * 
-     * @return result */
+    /**
+     * 导入结果说明
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -77,7 +81,10 @@ public class Swagger {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

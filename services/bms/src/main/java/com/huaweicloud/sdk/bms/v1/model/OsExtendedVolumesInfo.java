@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-/** os-extended-volumes:volumes_attached数据结构说明 */
+/**
+ * os-extended-volumes:volumes_attached数据结构说明
+ */
 public class OsExtendedVolumesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class OsExtendedVolumesInfo {
 
     private String deleteOnTermination;
 
-    /** 启动标识，“0”代表启动盘，“-1“代表非启动盘 */
+    /**
+     * 启动标识，“0”代表启动盘，“-1“代表非启动盘
+     */
     public static final class BootIndexEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final BootIndexEnum _0 = new BootIndexEnum("0");
 
-        /** Enum _1 for value: "-1" */
+        /**
+         * Enum _1 for value: "-1"
+         */
         public static final BootIndexEnum _1 = new BootIndexEnum("-1");
 
         private static final Map<String, BootIndexEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class OsExtendedVolumesInfo {
         return this;
     }
 
-    /** 磁盘ID，格式为UUID
-     * 
-     * @return id */
+    /**
+     * 磁盘ID，格式为UUID
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -126,9 +135,10 @@ public class OsExtendedVolumesInfo {
         return this;
     }
 
-    /** 删裸金属服务器时是否一并删除该磁盘。true：是false：否
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 删裸金属服务器时是否一并删除该磁盘。true：是false：否
+     * @return deleteOnTermination
+     */
     public String getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -142,9 +152,10 @@ public class OsExtendedVolumesInfo {
         return this;
     }
 
-    /** 启动标识，“0”代表启动盘，“-1“代表非启动盘
-     * 
-     * @return bootIndex */
+    /**
+     * 启动标识，“0”代表启动盘，“-1“代表非启动盘
+     * @return bootIndex
+     */
     public BootIndexEnum getBootIndex() {
         return bootIndex;
     }
@@ -158,9 +169,10 @@ public class OsExtendedVolumesInfo {
         return this;
     }
 
-    /** 磁盘设备名称，例如“/dev/sdb”。
-     * 
-     * @return device */
+    /**
+     * 磁盘设备名称，例如“/dev/sdb”。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -201,7 +213,10 @@ public class OsExtendedVolumesInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

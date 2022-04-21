@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询结果要点 */
+/**
+ * 查询结果要点
+ */
 public class MetricDataPoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class MetricDataPoints {
         return this;
     }
 
-    /** 时间戳。
-     * 
-     * @return timestamp */
+    /**
+     * 时间戳。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -47,9 +50,10 @@ public class MetricDataPoints {
         return this;
     }
 
-    /** 指标单位。
-     * 
-     * @return unit */
+    /**
+     * 指标单位。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -79,9 +83,10 @@ public class MetricDataPoints {
         return this;
     }
 
-    /** 统计方式。
-     * 
-     * @return statistics */
+    /**
+     * 统计方式。
+     * @return statistics
+     */
     public List<StatisticValue> getStatistics() {
         return statistics;
     }
@@ -120,7 +125,10 @@ public class MetricDataPoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

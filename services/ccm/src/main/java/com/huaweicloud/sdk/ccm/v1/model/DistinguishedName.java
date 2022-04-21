@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DistinguishedName */
+/**
+ * DistinguishedName
+ */
 public class DistinguishedName {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 证书通用名称（CN）。
-     * 
-     * @return commonName */
+    /**
+     * 证书通用名称（CN）。
+     * @return commonName
+     */
     public String getCommonName() {
         return commonName;
     }
@@ -59,9 +62,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 国家编码，需符合正则\"**[A-Za-z]{2}**\"。
-     * 
-     * @return country */
+    /**
+     * 国家编码，需符合正则\"**[A-Za-z]{2}**\"。
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -75,9 +79,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 省市名称。
-     * 
-     * @return state */
+    /**
+     * 省市名称。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -91,9 +96,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 地区名称。
-     * 
-     * @return locality */
+    /**
+     * 地区名称。
+     * @return locality
+     */
     public String getLocality() {
         return locality;
     }
@@ -107,9 +113,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 组织名称。
-     * 
-     * @return organization */
+    /**
+     * 组织名称。
+     * @return organization
+     */
     public String getOrganization() {
         return organization;
     }
@@ -123,9 +130,10 @@ public class DistinguishedName {
         return this;
     }
 
-    /** 组织单元名称。
-     * 
-     * @return organizationalUnit */
+    /**
+     * 组织单元名称。
+     * @return organizationalUnit
+     */
     public String getOrganizationalUnit() {
         return organizationalUnit;
     }
@@ -170,7 +178,10 @@ public class DistinguishedName {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

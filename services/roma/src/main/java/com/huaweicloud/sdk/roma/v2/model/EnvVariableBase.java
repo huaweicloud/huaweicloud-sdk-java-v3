@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EnvVariableBase */
+/**
+ * EnvVariableBase
+ */
 public class EnvVariableBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class EnvVariableBase {
         return this;
     }
 
-    /** 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
-     * 
-     * @return variableValue */
+    /**
+     * 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
+     * @return variableValue
+     */
     public String getVariableValue() {
         return variableValue;
     }
@@ -55,7 +58,10 @@ public class EnvVariableBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

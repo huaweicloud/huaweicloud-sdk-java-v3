@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** TaskBasicRequestBody */
+/**
+ * TaskBasicRequestBody
+ */
 public class TaskBasicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class TaskBasicRequestBody {
 
     private String taskName;
 
-    /** 任务类型 - REALTIME (实时) - TIMING (定时) */
+    /**
+     * 任务类型 - REALTIME (实时) - TIMING (定时)
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum REALTIME for value: "REALTIME" */
+        /**
+         * Enum REALTIME for value: "REALTIME"
+         */
         public static final TaskTypeEnum REALTIME = new TaskTypeEnum("REALTIME");
 
-        /** Enum TIMING for value: "TIMING" */
+        /**
+         * Enum TIMING for value: "TIMING"
+         */
         public static final TaskTypeEnum TIMING = new TaskTypeEnum("TIMING");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 任务名称，只能以字母、数字为开头，包含字母、数字和 . _ - 3~100个字符
-     * 
-     * @return taskName */
+    /**
+     * 任务名称，只能以字母、数字为开头，包含字母、数字和 . _ -  3~100个字符
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -135,9 +144,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 任务类型 - REALTIME (实时) - TIMING (定时)
-     * 
-     * @return taskType */
+    /**
+     * 任务类型 - REALTIME (实时) - TIMING (定时)
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -151,9 +161,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -167,9 +178,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -183,9 +195,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -199,9 +212,10 @@ public class TaskBasicRequestBody {
         return this;
     }
 
-    /** 任务标签,只能包含字母、数字、中划线、下划线
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签,只能包含字母、数字、中划线、下划线
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -246,7 +260,10 @@ public class TaskBasicRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

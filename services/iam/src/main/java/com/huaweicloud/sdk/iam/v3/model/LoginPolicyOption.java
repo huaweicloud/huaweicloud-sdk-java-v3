@@ -50,9 +50,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 账号在该值设置的有效期内未使用，则被停用。
-     * 
-     * @return accountValidityPeriod */
+    /**
+     * 账号在该值设置的有效期内未使用，则被停用。
+     * @return accountValidityPeriod
+     */
     public Integer getAccountValidityPeriod() {
         return accountValidityPeriod;
     }
@@ -66,9 +67,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 登录提示信息。
-     * 
-     * @return customInfoForLogin */
+    /**
+     * 登录提示信息。
+     * @return customInfoForLogin
+     */
     public String getCustomInfoForLogin() {
         return customInfoForLogin;
     }
@@ -82,9 +84,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 帐号锁定时长（分钟），取值范围[15,30]。
-     * 
-     * @return lockoutDuration */
+    /**
+     * 帐号锁定时长（分钟），取值范围[15,30]。
+     * @return lockoutDuration
+     */
     public Integer getLockoutDuration() {
         return lockoutDuration;
     }
@@ -98,9 +101,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 限定时间内登录失败次数，取值范围[3,10]。
-     * 
-     * @return loginFailedTimes */
+    /**
+     * 限定时间内登录失败次数，取值范围[3,10]。
+     * @return loginFailedTimes
+     */
     public Integer getLoginFailedTimes() {
         return loginFailedTimes;
     }
@@ -114,9 +118,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 限定时间长度（分钟），取值范围[15,60]。
-     * 
-     * @return periodWithLoginFailures */
+    /**
+     * 限定时间长度（分钟），取值范围[15,60]。
+     * @return periodWithLoginFailures
+     */
     public Integer getPeriodWithLoginFailures() {
         return periodWithLoginFailures;
     }
@@ -130,9 +135,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 登录会话失效时间，取值范围[15,1440]。
-     * 
-     * @return sessionTimeout */
+    /**
+     * 登录会话失效时间，取值范围[15,1440]。
+     * @return sessionTimeout
+     */
     public Integer getSessionTimeout() {
         return sessionTimeout;
     }
@@ -146,9 +152,10 @@ public class LoginPolicyOption {
         return this;
     }
 
-    /** 显示最近一次的登录信息。取值范围true或false。
-     * 
-     * @return showRecentLoginInfo */
+    /**
+     * 显示最近一次的登录信息。取值范围true或false。
+     * @return showRecentLoginInfo
+     */
     public Boolean getShowRecentLoginInfo() {
         return showRecentLoginInfo;
     }
@@ -201,7 +208,10 @@ public class LoginPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

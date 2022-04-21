@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 召回字段 */
+/**
+ * 召回字段
+ */
 public class RecallFiled {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RecallFiled {
         return this;
     }
 
-    /** 字段名称。
-     * 
-     * @return name */
+    /**
+     * 字段名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,12 @@ public class RecallFiled {
         return this;
     }
 
-    /** 使用字段值的个数。 minimum: 1 maximum: 10
-     * 
-     * @return value */
+    /**
+     * 使用字段值的个数。
+     * minimum: 1
+     * maximum: 10
+     * @return value
+     */
     public Integer getValue() {
         return value;
     }
@@ -77,7 +83,10 @@ public class RecallFiled {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

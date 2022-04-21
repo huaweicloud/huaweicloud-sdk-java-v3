@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 矩阵分解参数配置 */
+/**
+ * 矩阵分解参数配置
+ */
 public class MatrixFactorization {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class MatrixFactorization {
         return this;
     }
 
-    /** 隐向量维度。 minimum: 1 maximum: 100
-     * 
-     * @return implicitVectorRank */
+    /**
+     * 隐向量维度。
+     * minimum: 1
+     * maximum: 100
+     * @return implicitVectorRank
+     */
     public Integer getImplicitVectorRank() {
         return implicitVectorRank;
     }
@@ -44,9 +49,12 @@ public class MatrixFactorization {
         return this;
     }
 
-    /** 优化正则化系数。 minimum: 1E-8 maximum: 1
-     * 
-     * @return regularParam */
+    /**
+     * 优化正则化系数。
+     * minimum: 1E-8
+     * maximum: 1
+     * @return regularParam
+     */
     public Double getRegularParam() {
         return regularParam;
     }
@@ -60,9 +68,12 @@ public class MatrixFactorization {
         return this;
     }
 
-    /** 迭代次数。 minimum: 1 maximum: 50
-     * 
-     * @return maxIteratorNum */
+    /**
+     * 迭代次数。
+     * minimum: 1
+     * maximum: 50
+     * @return maxIteratorNum
+     */
     public Integer getMaxIteratorNum() {
         return maxIteratorNum;
     }
@@ -101,7 +112,10 @@ public class MatrixFactorization {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

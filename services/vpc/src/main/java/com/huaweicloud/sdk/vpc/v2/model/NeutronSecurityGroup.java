@@ -59,9 +59,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组描述 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组描述 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -75,9 +76,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 安全组ID
-     * 
-     * @return id */
+    /**
+     * 安全组ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -91,9 +93,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组名称 取值范围：0-255个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：安全组名称 取值范围：0-255个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,9 +127,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 安全组规则，详情参见Security Group Rule对象
-     * 
-     * @return securityGroupRules */
+    /**
+     * 安全组规则，详情参见Security Group Rule对象
+     * @return securityGroupRules
+     */
     public List<NeutronSecurityGroupRule> getSecurityGroupRules() {
         return securityGroupRules;
     }
@@ -140,9 +144,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -156,9 +161,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -172,9 +178,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -188,9 +195,10 @@ public class NeutronSecurityGroup {
         return this;
     }
 
-    /** 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return updatedAt */
+    /**
+     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -238,7 +246,10 @@ public class NeutronSecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

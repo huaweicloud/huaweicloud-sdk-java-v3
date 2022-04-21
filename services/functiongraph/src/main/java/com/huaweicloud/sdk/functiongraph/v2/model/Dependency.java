@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数依赖包结构。 */
+/**
+ * 函数依赖包结构。
+ */
 public class Dependency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包id。
-     * 
-     * @return id */
+    /**
+     * 依赖包id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包属主的domainId。
-     * 
-     * @return owner */
+    /**
+     * 依赖包属主的domainId。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -90,9 +94,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包在OBS上的链接。
-     * 
-     * @return link */
+    /**
+     * 依赖包在OBS上的链接。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -106,9 +111,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包语言类型，仅作为分类条件。
-     * 
-     * @return runtime */
+    /**
+     * 依赖包语言类型，仅作为分类条件。
+     * @return runtime
+     */
     public String getRuntime() {
         return runtime;
     }
@@ -122,9 +128,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包的md5值
-     * 
-     * @return etag */
+    /**
+     * 依赖包的md5值
+     * @return etag
+     */
     public String getEtag() {
         return etag;
     }
@@ -138,9 +145,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包大小。
-     * 
-     * @return size */
+    /**
+     * 依赖包大小。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -154,9 +162,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包名称。
-     * 
-     * @return name */
+    /**
+     * 依赖包名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -170,9 +179,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包描述。
-     * 
-     * @return description */
+    /**
+     * 依赖包描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -186,9 +196,10 @@ public class Dependency {
         return this;
     }
 
-    /** 依赖包文件名，如果创建方式为zip时。
-     * 
-     * @return fileName */
+    /**
+     * 依赖包文件名，如果创建方式为zip时。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -235,7 +246,10 @@ public class Dependency {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

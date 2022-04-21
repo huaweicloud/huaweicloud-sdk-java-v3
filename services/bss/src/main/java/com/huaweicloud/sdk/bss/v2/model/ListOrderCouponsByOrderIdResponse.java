@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询总数。
-     * 
-     * @return count */
+    /**
+     * 查询总数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -64,9 +67,10 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 可用的优惠券列表。 具体请参见表2。
-     * 
-     * @return userCoupons */
+    /**
+     * 可用的优惠券列表。 具体请参见表2。
+     * @return userCoupons
+     */
     public List<CouponInfoV2> getUserCoupons() {
         return userCoupons;
     }
@@ -98,9 +102,10 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 优惠券使用的最大数量。 具体请参见表4。
-     * 
-     * @return couponMaxUseQuantity */
+    /**
+     * 优惠券使用的最大数量。 具体请参见表4。
+     * @return couponMaxUseQuantity
+     */
     public List<CouponMaxUseQuantity> getCouponMaxUseQuantity() {
         return couponMaxUseQuantity;
     }
@@ -139,7 +144,10 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

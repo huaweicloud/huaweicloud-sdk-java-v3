@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端校验项 */
+/**
+ * 源端校验项
+ */
 public class EnvironmentCheck {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,16 +33,24 @@ public class EnvironmentCheck {
 
     private String name;
 
-    /** 检查结果 */
+    /**
+     * 检查结果
+     */
     public static final class ResultEnum {
 
-        /** Enum OK for value: "OK" */
+        /**
+         * Enum OK for value: "OK"
+         */
         public static final ResultEnum OK = new ResultEnum("OK");
 
-        /** Enum WARN for value: "WARN" */
+        /**
+         * Enum WARN for value: "WARN"
+         */
         public static final ResultEnum WARN = new ResultEnum("WARN");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ResultEnum ERROR = new ResultEnum("ERROR");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +136,12 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 该检查项的ID minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 该检查项的ID
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -158,9 +171,10 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 参数
-     * 
-     * @return params */
+    /**
+     * 参数
+     * @return params
+     */
     public List<String> getParams() {
         return params;
     }
@@ -174,9 +188,10 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 检查项名称
-     * 
-     * @return name */
+    /**
+     * 检查项名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -190,9 +205,10 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 检查结果
-     * 
-     * @return result */
+    /**
+     * 检查结果
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -206,9 +222,10 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 检查不通过的错误码
-     * 
-     * @return errorCode */
+    /**
+     * 检查不通过的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -222,9 +239,10 @@ public class EnvironmentCheck {
         return this;
     }
 
-    /** 检查不通过的错误参数
-     * 
-     * @return errorParams */
+    /**
+     * 检查不通过的错误参数
+     * @return errorParams
+     */
     public String getErrorParams() {
         return errorParams;
     }
@@ -267,7 +285,10 @@ public class EnvironmentCheck {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

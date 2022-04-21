@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** tracker通道配置 */
+/**
+ * tracker通道配置
+ */
 public class ChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ChannelConfigBody {
         return this;
     }
 
-    /** Get smn
-     * 
-     * @return smn */
+    /**
+     * Get smn
+     * @return smn
+     */
     public TrackerSMNChannelConfigBody getSmn() {
         return smn;
     }
@@ -58,9 +61,10 @@ public class ChannelConfigBody {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public TrackerOBSChannelConfigBody getObs() {
         return obs;
     }
@@ -96,7 +100,10 @@ public class ChannelConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

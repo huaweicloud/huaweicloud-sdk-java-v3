@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DbScanResultInfo */
+/**
+ * DbScanResultInfo
+ */
 public class DbScanResultInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -67,9 +70,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 数据库名称
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -83,9 +87,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 表ID
-     * 
-     * @return tableId */
+    /**
+     * 表ID
+     * @return tableId
+     */
     public String getTableId() {
         return tableId;
     }
@@ -99,9 +104,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 表名称
-     * 
-     * @return tableName */
+    /**
+     * 表名称
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -115,9 +121,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 风险等级
-     * 
-     * @return riskLevel */
+    /**
+     * 风险等级
+     * @return riskLevel
+     */
     public Integer getRiskLevel() {
         return riskLevel;
     }
@@ -147,9 +154,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 匹配到的规则
-     * 
-     * @return sensitiveDataType */
+    /**
+     * 匹配到的规则
+     * @return sensitiveDataType
+     */
     public List<String> getSensitiveDataType() {
         return sensitiveDataType;
     }
@@ -179,9 +187,10 @@ public class DbScanResultInfo {
         return this;
     }
 
-    /** 表中各列匹配到的规则
-     * 
-     * @return matchInfo */
+    /**
+     * 表中各列匹配到的规则
+     * @return matchInfo
+     */
     public List<DbMatchInfo> getMatchInfo() {
         return matchInfo;
     }
@@ -228,7 +237,10 @@ public class DbScanResultInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

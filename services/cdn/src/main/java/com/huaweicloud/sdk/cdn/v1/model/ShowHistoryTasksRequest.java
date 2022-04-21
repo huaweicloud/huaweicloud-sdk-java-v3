@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowHistoryTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ShowHistoryTasksRequest {
 
     private Integer pageNumber;
 
-    /** 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。 */
+    /**
+     * 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
+     */
     public static final class StatusEnum {
 
-        /** Enum TASK_INPROCESS for value: "task_inprocess" */
+        /**
+         * Enum TASK_INPROCESS for value: "task_inprocess"
+         */
         public static final StatusEnum TASK_INPROCESS = new StatusEnum("task_inprocess");
 
-        /** Enum TASK_DONE for value: "task_done" */
+        /**
+         * Enum TASK_DONE for value: "task_done"
+         */
         public static final StatusEnum TASK_DONE = new StatusEnum("task_done");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -124,13 +132,19 @@ public class ShowHistoryTasksRequest {
 
     private String orderType;
 
-    /** 默认是文件file。file：文件,directory：目录。 */
+    /**
+     * 默认是文件file。file：文件,directory：目录。
+     */
     public static final class FileTypeEnum {
 
-        /** Enum FILE for value: "file" */
+        /**
+         * Enum FILE for value: "file"
+         */
         public static final FileTypeEnum FILE = new FileTypeEnum("file");
 
-        /** Enum DIRECTORY for value: "directory" */
+        /**
+         * Enum DIRECTORY for value: "directory"
+         */
         public static final FileTypeEnum DIRECTORY = new FileTypeEnum("directory");
 
         private static final Map<String, FileTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -205,9 +219,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -221,9 +236,12 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。 minimum: 1 maximum: 10000
-     * 
-     * @return pageSize */
+    /**
+     * 单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
+     * minimum: 1
+     * maximum: 10000
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -237,9 +255,12 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 当前查询第几页，取值范围为1-65535。默认值1。 minimum: 1 maximum: 65535
-     * 
-     * @return pageNumber */
+    /**
+     * 当前查询第几页，取值范围为1-65535。默认值1。
+     * minimum: 1
+     * maximum: 65535
+     * @return pageNumber
+     */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -253,9 +274,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
-     * 
-     * @return status */
+    /**
+     * 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -269,9 +291,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return startDate */
+    /**
+     * 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return startDate
+     */
     public Long getStartDate() {
         return startDate;
     }
@@ -285,9 +308,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return endDate */
+    /**
+     * 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return endDate
+     */
     public Long getEndDate() {
         return endDate;
     }
@@ -301,10 +325,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 用来排序的字段，支持的字段有“task_type”，“total”，“processing”，
-     * “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
-     * 
-     * @return orderField */
+    /**
+     * 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
+     * @return orderField
+     */
     public String getOrderField() {
         return orderField;
     }
@@ -318,9 +342,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** desc 或者asc。默认值desc。
-     * 
-     * @return orderType */
+    /**
+     * desc 或者asc。默认值desc。
+     * @return orderType
+     */
     public String getOrderType() {
         return orderType;
     }
@@ -334,9 +359,10 @@ public class ShowHistoryTasksRequest {
         return this;
     }
 
-    /** 默认是文件file。file：文件,directory：目录。
-     * 
-     * @return fileType */
+    /**
+     * 默认是文件file。file：文件,directory：目录。
+     * @return fileType
+     */
     public FileTypeEnum getFileType() {
         return fileType;
     }
@@ -395,7 +421,10 @@ public class ShowHistoryTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

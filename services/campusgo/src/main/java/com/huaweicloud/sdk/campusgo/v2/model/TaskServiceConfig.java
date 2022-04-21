@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 作业运行时指定的算法配置参数，见园区智能体API参考文档[API参考文档](https://support.huaweicloud.com/api-campusgo/campusgo_03_0013.html) */
+/**
+ * 作业运行时指定的算法配置参数，见园区智能体API参考文档[API参考文档](https://support.huaweicloud.com/api-campusgo/campusgo_03_0013.html)
+ */
 public class TaskServiceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class TaskServiceConfig {
         return this;
     }
 
-    /** 根据不同服务，填写对应的服务配置参数json结构体
-     * 
-     * @return common */
+    /**
+     * 根据不同服务，填写对应的服务配置参数json结构体
+     * @return common
+     */
     public Object getCommon() {
         return common;
     }
@@ -55,7 +58,10 @@ public class TaskServiceConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

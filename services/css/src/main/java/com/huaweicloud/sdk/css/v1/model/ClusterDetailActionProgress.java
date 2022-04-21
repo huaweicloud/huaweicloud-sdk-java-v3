@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群行为进度，显示创建和扩容进度的百分比。 */
+/**
+ * 集群行为进度，显示创建和扩容进度的百分比。
+ */
 public class ClusterDetailActionProgress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ClusterDetailActionProgress {
         return this;
     }
 
-    /** 进度百分比。
-     * 
-     * @return creating */
+    /**
+     * 进度百分比。
+     * @return creating
+     */
     public String getCreating() {
         return creating;
     }
@@ -55,7 +58,10 @@ public class ClusterDetailActionProgress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** permission列表。 */
+/**
+ * permission列表。
+ */
 public class Permission {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Permission {
         return this;
     }
 
-    /** permission的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * permission的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,10 +47,10 @@ public class Permission {
         return this;
     }
 
-    /** permission列表。 权限格式为“iam:domain:: 6e9dfd51d1124e8d8498dce894923a0d”或 “*”，“*”表示所有用户的终端节点可连接。
-     * 其中6e9dfd51d1124e8d8498dce894923a0d为 可连接的用户domian_id。
-     * 
-     * @return permission */
+    /**
+     * permission列表。 权限格式为“iam:domain:: 6e9dfd51d1124e8d8498dce894923a0d”或 “*”，“*”表示所有用户的终端节点可连接。 其中6e9dfd51d1124e8d8498dce894923a0d为 可连接的用户domian_id。
+     * @return permission
+     */
     public String getPermission() {
         return permission;
     }
@@ -61,9 +64,10 @@ public class Permission {
         return this;
     }
 
-    /** 白名单的添加时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 白名单的添加时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -101,7 +105,10 @@ public class Permission {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSlowlogRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListSlowlogRequest {
 
     private Integer limit;
 
-    /** 返回结果按该关键字排序，支持start_time，duration，默认为“start_time” */
+    /**
+     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
+     */
     public static final class SortKeyEnum {
 
-        /** Enum START_TIME for value: "start_time" */
+        /**
+         * Enum START_TIME for value: "start_time"
+         */
         public static final SortKeyEnum START_TIME = new SortKeyEnum("start_time");
 
-        /** Enum DURATION for value: "duration" */
+        /**
+         * Enum DURATION for value: "duration"
+         */
         public static final SortKeyEnum DURATION = new SortKeyEnum("duration");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -104,13 +112,19 @@ public class ListSlowlogRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 降序或升序（分别对应desc和asc，默认为“desc”） */
+    /**
+     * 降序或升序（分别对应desc和asc，默认为“desc”）
+     */
     public static final class SortDirEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -195,9 +209,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -211,9 +226,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -227,9 +243,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 每页显示的条目数量。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -243,9 +260,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
-     * 
-     * @return sortKey */
+    /**
+     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -259,9 +277,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 降序或升序（分别对应desc和asc，默认为“desc”）
-     * 
-     * @return sortDir */
+    /**
+     * 降序或升序（分别对应desc和asc，默认为“desc”）
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -275,9 +294,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -291,9 +311,10 @@ public class ListSlowlogRequest {
         return this;
     }
 
-    /** 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -340,7 +361,10 @@ public class ListSlowlogRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

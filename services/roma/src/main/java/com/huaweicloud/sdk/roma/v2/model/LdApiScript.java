@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** LdApiScript */
+/**
+ * LdApiScript
+ */
 public class LdApiScript {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,45 +26,69 @@ public class LdApiScript {
 
     private String dsName;
 
-    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
-     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
-     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型 */
+    /**
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     */
     public static final class DsTypeEnum {
 
-        /** Enum ORACLE for value: "oracle" */
+        /**
+         * Enum ORACLE for value: "oracle"
+         */
         public static final DsTypeEnum ORACLE = new DsTypeEnum("oracle");
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final DsTypeEnum MYSQL = new DsTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final DsTypeEnum MONGODB = new DsTypeEnum("mongodb");
 
-        /** Enum REDIS for value: "redis" */
+        /**
+         * Enum REDIS for value: "redis"
+         */
         public static final DsTypeEnum REDIS = new DsTypeEnum("redis");
 
-        /** Enum POSTGRESQL for value: "postgresql" */
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
         public static final DsTypeEnum POSTGRESQL = new DsTypeEnum("postgresql");
 
-        /** Enum HIVE for value: "hive" */
+        /**
+         * Enum HIVE for value: "hive"
+         */
         public static final DsTypeEnum HIVE = new DsTypeEnum("hive");
 
-        /** Enum MSSQL for value: "mssql" */
+        /**
+         * Enum MSSQL for value: "mssql"
+         */
         public static final DsTypeEnum MSSQL = new DsTypeEnum("mssql");
 
-        /** Enum SQLSERVER for value: "sqlserver" */
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
         public static final DsTypeEnum SQLSERVER = new DsTypeEnum("sqlserver");
 
-        /** Enum GAUSS200 for value: "gauss200" */
+        /**
+         * Enum GAUSS200 for value: "gauss200"
+         */
         public static final DsTypeEnum GAUSS200 = new DsTypeEnum("gauss200");
 
-        /** Enum DWS for value: "dws" */
+        /**
+         * Enum DWS for value: "dws"
+         */
         public static final DsTypeEnum DWS = new DsTypeEnum("dws");
 
-        /** Enum GAUSS100 for value: "gauss100" */
+        /**
+         * Enum GAUSS100 for value: "gauss100"
+         */
         public static final DsTypeEnum GAUSS100 = new DsTypeEnum("gauss100");
 
-        /** Enum ZENITH for value: "zenith" */
+        /**
+         * Enum ZENITH for value: "zenith"
+         */
         public static final DsTypeEnum ZENITH = new DsTypeEnum("zenith");
 
         private static final Map<String, DsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -182,9 +208,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 数据源编号，当api_type = data时，必选
-     * 
-     * @return dsId */
+    /**
+     * 数据源编号，当api_type = data时，必选
+     * @return dsId
+     */
     public String getDsId() {
         return dsId;
     }
@@ -198,9 +225,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 数据源名称
-     * 
-     * @return dsName */
+    /**
+     * 数据源名称
+     * @return dsName
+     */
     public String getDsName() {
         return dsName;
     }
@@ -214,11 +242,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
-     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
-     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
-     * 
-     * @return dsType */
+    /**
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     * @return dsType
+     */
     public DsTypeEnum getDsType() {
         return dsType;
     }
@@ -232,9 +259,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 脚本类型 - SQL：sql语句 - SP：存储过程
-     * 
-     * @return type */
+    /**
+     * 脚本类型 - SQL：sql语句 - SP：存储过程 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -248,9 +276,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 返回对象。 当api_type = data时，必选
-     * 
-     * @return objectName */
+    /**
+     * 返回对象。  当api_type = data时，必选
+     * @return objectName
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -264,9 +293,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** API脚本内容 请对脚本进行base64编码
-     * 
-     * @return content */
+    /**
+     * API脚本内容  请对脚本进行base64编码
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -280,9 +310,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 数据脚本是否结果分页，当api_type = data时有效
-     * 
-     * @return enableResultPaging */
+    /**
+     * 数据脚本是否结果分页，当api_type = data时有效
+     * @return enableResultPaging
+     */
     public Boolean getEnableResultPaging() {
         return enableResultPaging;
     }
@@ -296,9 +327,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 数据脚本是否预编译，当api_type = data时有效
-     * 
-     * @return enablePreparestatement */
+    /**
+     * 数据脚本是否预编译，当api_type = data时有效
+     * @return enablePreparestatement
+     */
     public Boolean getEnablePreparestatement() {
         return enablePreparestatement;
     }
@@ -312,9 +344,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 后端API脚本创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 后端API脚本创建时间
+     * @return createdTime
+     */
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
@@ -328,9 +361,10 @@ public class LdApiScript {
         return this;
     }
 
-    /** 后端API脚本修改时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 后端API脚本修改时间
+     * @return modifiedTime
+     */
     public OffsetDateTime getModifiedTime() {
         return modifiedTime;
     }
@@ -390,7 +424,10 @@ public class LdApiScript {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

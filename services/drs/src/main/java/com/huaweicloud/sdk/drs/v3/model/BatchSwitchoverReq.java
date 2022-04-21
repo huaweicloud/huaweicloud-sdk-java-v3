@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量主备倒换请求体 */
+/**
+ * 批量主备倒换请求体
+ */
 public class BatchSwitchoverReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchSwitchoverReq {
         return this;
     }
 
-    /** 批量主备调换的任务详情ID请求列表
-     * 
-     * @return jobs */
+    /**
+     * 批量主备调换的任务详情ID请求列表
+     * @return jobs
+     */
     public List<String> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class BatchSwitchoverReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

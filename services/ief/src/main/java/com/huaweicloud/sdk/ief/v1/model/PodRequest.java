@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用部署模板 */
+/**
+ * 应用部署模板
+ */
 public class PodRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class PodRequest {
         return this;
     }
 
-    /** Get configs
-     * 
-     * @return configs */
+    /**
+     * Get configs
+     * @return configs
+     */
     public PodConfigs getConfigs() {
         return configs;
     }
@@ -70,9 +73,10 @@ public class PodRequest {
         return this;
     }
 
-    /** Get affinity
-     * 
-     * @return affinity */
+    /**
+     * Get affinity
+     * @return affinity
+     */
     public Affinity getAffinity() {
         return affinity;
     }
@@ -102,9 +106,10 @@ public class PodRequest {
         return this;
     }
 
-    /** 应用部署init业务容器
-     * 
-     * @return initContainers */
+    /**
+     * 应用部署init业务容器
+     * @return initContainers
+     */
     public List<ContainerDef> getInitContainers() {
         return initContainers;
     }
@@ -134,9 +139,10 @@ public class PodRequest {
         return this;
     }
 
-    /** 应用部署业务容器
-     * 
-     * @return containers */
+    /**
+     * 应用部署业务容器
+     * @return containers
+     */
     public List<ContainerDef> getContainers() {
         return containers;
     }
@@ -176,7 +182,10 @@ public class PodRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

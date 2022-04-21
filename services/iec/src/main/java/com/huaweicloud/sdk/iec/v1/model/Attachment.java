@@ -45,9 +45,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载信息对应的ID。
-     * 
-     * @return attachmentId */
+    /**
+     * 挂载信息对应的ID。
+     * @return attachmentId
+     */
     public String getAttachmentId() {
         return attachmentId;
     }
@@ -61,9 +62,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载点。
-     * 
-     * @return device */
+    /**
+     * 挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -77,9 +79,10 @@ public class Attachment {
         return this;
     }
 
-    /** 边缘硬盘挂载到的边缘实例对应的物理主机的名称。
-     * 
-     * @return hostName */
+    /**
+     * 边缘硬盘挂载到的边缘实例对应的物理主机的名称。
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -93,9 +96,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载的资源ID。
-     * 
-     * @return id */
+    /**
+     * 挂载的资源ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -109,9 +113,10 @@ public class Attachment {
         return this;
     }
 
-    /** 硬盘挂载到的边缘实例的ID。
-     * 
-     * @return serverId */
+    /**
+     * 硬盘挂载到的边缘实例的ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -125,9 +130,10 @@ public class Attachment {
         return this;
     }
 
-    /** 磁盘ID。
-     * 
-     * @return volumeId */
+    /**
+     * 磁盘ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -170,7 +176,10 @@ public class Attachment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

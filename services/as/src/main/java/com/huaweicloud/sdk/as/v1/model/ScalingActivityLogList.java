@@ -11,19 +11,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 伸缩活动日志列表。 */
+/**
+ * 伸缩活动日志列表。
+ */
 public class ScalingActivityLogList {
 
-    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。 */
+    /**
+     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum DING for value: "DING" */
+        /**
+         * Enum DING for value: "DING"
+         */
         public static final StatusEnum DING = new StatusEnum("DING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +159,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
-     * 
-     * @return status */
+    /**
+     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -165,9 +176,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动触发时间，遵循UTC时间。
-     * 
-     * @return startTime */
+    /**
+     * 伸缩活动触发时间，遵循UTC时间。
+     * @return startTime
+     */
     public OffsetDateTime getStartTime() {
         return startTime;
     }
@@ -181,9 +193,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动结束时间，遵循UTC时间。
-     * 
-     * @return endTime */
+    /**
+     * 伸缩活动结束时间，遵循UTC时间。
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -197,9 +210,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动日志ID。
-     * 
-     * @return id */
+    /**
+     * 伸缩活动日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -213,9 +227,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分隔。
-     * 
-     * @return instanceRemovedList */
+    /**
+     * 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分隔。
+     * @return instanceRemovedList
+     */
     public String getInstanceRemovedList() {
         return instanceRemovedList;
     }
@@ -229,9 +244,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器名之间以逗号分隔。
-     * 
-     * @return instanceDeletedList */
+    /**
+     * 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器名之间以逗号分隔。
+     * @return instanceDeletedList
+     */
     public String getInstanceDeletedList() {
         return instanceDeletedList;
     }
@@ -245,9 +261,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分割。
-     * 
-     * @return instanceAddedList */
+    /**
+     * 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分割。
+     * @return instanceAddedList
+     */
     public String getInstanceAddedList() {
         return instanceAddedList;
     }
@@ -261,9 +278,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动中变化（增加或减少）的云服务器数量。
-     * 
-     * @return scalingValue */
+    /**
+     * 伸缩活动中变化（增加或减少）的云服务器数量。
+     * @return scalingValue
+     */
     public String getScalingValue() {
         return scalingValue;
     }
@@ -277,9 +295,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动的描述信息。
-     * 
-     * @return description */
+    /**
+     * 伸缩活动的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -293,9 +312,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩组当前instance值。
-     * 
-     * @return instanceValue */
+    /**
+     * 伸缩组当前instance值。
+     * @return instanceValue
+     */
     public Integer getInstanceValue() {
         return instanceValue;
     }
@@ -309,9 +329,10 @@ public class ScalingActivityLogList {
         return this;
     }
 
-    /** 伸缩活动最终desire值。
-     * 
-     * @return desireValue */
+    /**
+     * 伸缩活动最终desire值。
+     * @return desireValue
+     */
     public Integer getDesireValue() {
         return desireValue;
     }
@@ -376,7 +397,10 @@ public class ScalingActivityLogList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

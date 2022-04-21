@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LtsStructTemplateInfo */
+/**
+ * LtsStructTemplateInfo
+ */
 public class LtsStructTemplateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,22 +38,34 @@ public class LtsStructTemplateInfo {
 
     private String logGroupId;
 
-    /** 结构化方式 */
+    /**
+     * 结构化方式
+     */
     public static final class ParseTypeEnum {
 
-        /** Enum BUILT_IN for value: "built_in" */
+        /**
+         * Enum BUILT_IN for value: "built_in"
+         */
         public static final ParseTypeEnum BUILT_IN = new ParseTypeEnum("built_in");
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final ParseTypeEnum JSON = new ParseTypeEnum("json");
 
-        /** Enum CUSTOM_REGEX for value: "custom_regex" */
+        /**
+         * Enum CUSTOM_REGEX for value: "custom_regex"
+         */
         public static final ParseTypeEnum CUSTOM_REGEX = new ParseTypeEnum("custom_regex");
 
-        /** Enum SPLIT for value: "split" */
+        /**
+         * Enum SPLIT for value: "split"
+         */
         public static final ParseTypeEnum SPLIT = new ParseTypeEnum("split");
 
-        /** Enum NGINX for value: "nginx" */
+        /**
+         * Enum NGINX for value: "nginx"
+         */
         public static final ParseTypeEnum NGINX = new ParseTypeEnum("nginx");
 
         private static final Map<String, ParseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -175,9 +189,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 结构化字段
-     * 
-     * @return demoFields */
+    /**
+     * 结构化字段
+     * @return demoFields
+     */
     public List<StructFieldInfo> getDemoFields() {
         return demoFields;
     }
@@ -207,9 +222,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** tag字段列表（使用tag字段解析时需要，其中系统模板不支持使用tag字段）。
-     * 
-     * @return tagFields */
+    /**
+     * tag字段列表（使用tag字段解析时需要，其中系统模板不支持使用tag字段）。
+     * @return tagFields
+     */
     public List<TagField> getTagFields() {
         return tagFields;
     }
@@ -223,9 +239,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 示例日志
-     * 
-     * @return content */
+    /**
+     * 示例日志
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -239,9 +256,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -255,9 +273,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 结构化方式
-     * 
-     * @return parseType */
+    /**
+     * 结构化方式
+     * @return parseType
+     */
     public ParseTypeEnum getParseType() {
         return parseType;
     }
@@ -271,9 +290,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 日志流ID
-     * 
-     * @return logStreamId */
+    /**
+     * 日志流ID
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -287,9 +307,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -303,9 +324,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** parse_type为custom_regex类型时必填，regex提取规则
-     * 
-     * @return regexRules */
+    /**
+     * parse_type为custom_regex类型时必填，regex提取规则
+     * @return regexRules
+     */
     public String getRegexRules() {
         return regexRules;
     }
@@ -319,9 +341,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** parse_type为json类型时必填，解析层数，目前固定是3
-     * 
-     * @return layers */
+    /**
+     * parse_type为json类型时必填，解析层数，目前固定是3
+     * @return layers
+     */
     public Integer getLayers() {
         return layers;
     }
@@ -335,9 +358,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** parse_type为split类型时必填，分隔符，分词符号
-     * 
-     * @return tokenizer */
+    /**
+     * parse_type为split类型时必填，分隔符，分词符号
+     * @return tokenizer
+     */
     public String getTokenizer() {
         return tokenizer;
     }
@@ -351,9 +375,10 @@ public class LtsStructTemplateInfo {
         return this;
     }
 
-    /** parse_type为nginx类型时必填，nginx日志格式模板
-     * 
-     * @return logFormat */
+    /**
+     * parse_type为nginx类型时必填，nginx日志格式模板
+     * @return logFormat
+     */
     public String getLogFormat() {
         return logFormat;
     }
@@ -418,7 +443,10 @@ public class LtsStructTemplateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

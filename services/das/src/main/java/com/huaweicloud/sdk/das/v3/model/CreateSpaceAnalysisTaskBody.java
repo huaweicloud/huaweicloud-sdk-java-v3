@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateSpaceAnalysisTaskBody */
+/**
+ * CreateSpaceAnalysisTaskBody
+ */
 public class CreateSpaceAnalysisTaskBody {
 
-    /** 操作类型 */
+    /**
+     * 操作类型
+     */
     public static final class OperateEnum {
 
-        /** Enum REANALYSIS for value: "reanalysis" */
+        /**
+         * Enum REANALYSIS for value: "reanalysis"
+         */
         public static final OperateEnum REANALYSIS = new OperateEnum("reanalysis");
 
         private static final Map<String, OperateEnum> STATIC_FIELDS = createStaticFields();
@@ -85,13 +91,19 @@ public class CreateSpaceAnalysisTaskBody {
 
     private OperateEnum operate;
 
-    /** 引擎类型 */
+    /**
+     * 引擎类型
+     */
     public static final class DatastoreTypeEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
 
-        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
+        /**
+         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
+         */
         public static final DatastoreTypeEnum GAUSSDB_FOR_MYSQL_ = new DatastoreTypeEnum("GaussDB(for MySQL)");
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -166,9 +178,10 @@ public class CreateSpaceAnalysisTaskBody {
         return this;
     }
 
-    /** 操作类型
-     * 
-     * @return operate */
+    /**
+     * 操作类型
+     * @return operate
+     */
     public OperateEnum getOperate() {
         return operate;
     }
@@ -182,9 +195,10 @@ public class CreateSpaceAnalysisTaskBody {
         return this;
     }
 
-    /** 引擎类型
-     * 
-     * @return datastoreType */
+    /**
+     * 引擎类型
+     * @return datastoreType
+     */
     public DatastoreTypeEnum getDatastoreType() {
         return datastoreType;
     }
@@ -221,7 +235,10 @@ public class CreateSpaceAnalysisTaskBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

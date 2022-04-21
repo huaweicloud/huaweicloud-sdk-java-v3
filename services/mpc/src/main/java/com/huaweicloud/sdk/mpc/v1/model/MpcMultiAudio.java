@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MpcMultiAudio */
+/**
+ * MpcMultiAudio
+ */
 public class MpcMultiAudio {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class MpcMultiAudio {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -72,9 +75,10 @@ public class MpcMultiAudio {
         return this;
     }
 
-    /** 音频文件列表
-     * 
-     * @return audioFiles */
+    /**
+     * 音频文件列表
+     * @return audioFiles
+     */
     public List<AudioFile> getAudioFiles() {
         return audioFiles;
     }
@@ -88,9 +92,10 @@ public class MpcMultiAudio {
         return this;
     }
 
-    /** 输出文件名。
-     * 
-     * @return outputFilename */
+    /**
+     * 输出文件名。 
+     * @return outputFilename
+     */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -129,7 +134,10 @@ public class MpcMultiAudio {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

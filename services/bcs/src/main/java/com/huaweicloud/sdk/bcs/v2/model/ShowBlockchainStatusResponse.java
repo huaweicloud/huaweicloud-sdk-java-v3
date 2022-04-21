@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBlockchainStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get bcs
-     * 
-     * @return bcs */
+    /**
+     * Get bcs
+     * @return bcs
+     */
     public Detail getBcs() {
         return bcs;
     }
@@ -79,9 +82,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get eip
-     * 
-     * @return eip */
+    /**
+     * Get eip
+     * @return eip
+     */
     public Detail getEip() {
         return eip;
     }
@@ -104,9 +108,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get sfs
-     * 
-     * @return sfs */
+    /**
+     * Get sfs
+     * @return sfs
+     */
     public Detail getSfs() {
         return sfs;
     }
@@ -129,9 +134,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public Detail getObs() {
         return obs;
     }
@@ -154,9 +160,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get kafka
-     * 
-     * @return kafka */
+    /**
+     * Get kafka
+     * @return kafka
+     */
     public Detail getKafka() {
         return kafka;
     }
@@ -179,9 +186,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** Get cce
-     * 
-     * @return cce */
+    /**
+     * Get cce
+     * @return cce
+     */
     public ComCCE getCce() {
         return cce;
     }
@@ -226,7 +234,10 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

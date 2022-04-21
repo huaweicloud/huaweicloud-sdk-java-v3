@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListIssueItemResponse */
+/**
+ * ListIssueItemResponse
+ */
 public class ListIssueItemResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -141,9 +143,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 实际工时
-     * 
-     * @return actualWorkHours */
+    /**
+     * 实际工时
+     * @return actualWorkHours
+     */
     public Double getActualWorkHours() {
         return actualWorkHours;
     }
@@ -173,9 +176,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 抄送人
-     * 
-     * @return assignedCcUser */
+    /**
+     * 抄送人
+     * @return assignedCcUser
+     */
     public List<IssueUser> getAssignedCcUser() {
         return assignedCcUser;
     }
@@ -198,9 +202,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get assignedUser
-     * 
-     * @return assignedUser */
+    /**
+     * Get assignedUser
+     * @return assignedUser
+     */
     public IssueUser getAssignedUser() {
         return assignedUser;
     }
@@ -214,9 +219,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 预计开始时间，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 预计开始时间，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -230,9 +236,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 创建时间 年-月-日 时:分:秒
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间 年-月-日 时:分:秒
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -255,9 +262,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get creator
-     * 
-     * @return creator */
+    /**
+     * Get creator
+     * @return creator
+     */
     public IssueUser getCreator() {
         return creator;
     }
@@ -287,9 +295,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 自定义属性值
-     * 
-     * @return customFields */
+    /**
+     * 自定义属性值
+     * @return customFields
+     */
     public List<CustomField> getCustomFields() {
         return customFields;
     }
@@ -312,9 +321,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get developer
-     * 
-     * @return developer */
+    /**
+     * Get developer
+     * @return developer
+     */
     public IssueUser getDeveloper() {
         return developer;
     }
@@ -337,9 +347,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public IssueItemSfV4Domain getDomain() {
         return domain;
     }
@@ -353,9 +364,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 工作项进度值
-     * 
-     * @return doneRatio */
+    /**
+     * 工作项进度值
+     * @return doneRatio
+     */
     public Integer getDoneRatio() {
         return doneRatio;
     }
@@ -369,9 +381,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 预计结束时间，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 预计结束时间，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -385,9 +398,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 预计工时
-     * 
-     * @return expectedWorkHours */
+    /**
+     * 预计工时
+     * @return expectedWorkHours
+     */
     public Double getExpectedWorkHours() {
         return expectedWorkHours;
     }
@@ -401,9 +415,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 工作项项id
-     * 
-     * @return id */
+    /**
+     * 工作项项id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -426,9 +441,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public IssueProjectResponseV4 getProject() {
         return project;
     }
@@ -451,9 +467,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get iteration
-     * 
-     * @return iteration */
+    /**
+     * Get iteration
+     * @return iteration
+     */
     public IssueItemSfV4Iteration getIteration() {
         return iteration;
     }
@@ -476,9 +493,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get module
-     * 
-     * @return module */
+    /**
+     * Get module
+     * @return module
+     */
     public IssueItemSfV4Module getModule() {
         return module;
     }
@@ -492,9 +510,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 标题
-     * 
-     * @return name */
+    /**
+     * 标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -517,9 +536,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get parentIssue
-     * 
-     * @return parentIssue */
+    /**
+     * Get parentIssue
+     * @return parentIssue
+     */
     public CreateIssueResponseV4ParentIssue getParentIssue() {
         return parentIssue;
     }
@@ -542,9 +562,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get priority
-     * 
-     * @return priority */
+    /**
+     * Get priority
+     * @return priority
+     */
     public IssueItemSfV4Priority getPriority() {
         return priority;
     }
@@ -567,9 +588,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get severity
-     * 
-     * @return severity */
+    /**
+     * Get severity
+     * @return severity
+     */
     public IssueItemSfV4Severity getSeverity() {
         return severity;
     }
@@ -592,9 +614,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public IssueItemSfV4Status getStatus() {
         return status;
     }
@@ -617,9 +640,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** Get tracker
-     * 
-     * @return tracker */
+    /**
+     * Get tracker
+     * @return tracker
+     */
     public IssueItemSfV4Tracker getTracker() {
         return tracker;
     }
@@ -633,9 +657,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 更新时间 年-月-日 时:分:秒
-     * 
-     * @return updatedTime */
+    /**
+     * 更新时间 年-月-日 时:分:秒
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -649,9 +674,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 关闭时间 年-月-日 时:分:秒
-     * 
-     * @return closedTime */
+    /**
+     * 关闭时间 年-月-日 时:分:秒
+     * @return closedTime
+     */
     public String getClosedTime() {
         return closedTime;
     }
@@ -665,9 +691,10 @@ public class ListIssueItemResponse {
         return this;
     }
 
-    /** 是否已经删除,true 已经删除， false 未删除
-     * 
-     * @return deleted */
+    /**
+     * 是否已经删除,true 已经删除， false 未删除
+     * @return deleted
+     */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -774,7 +801,10 @@ public class ListIssueItemResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HttpCode */
+/**
+ * HttpCode
+ */
 public class HttpCode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class HttpCode {
         return this;
     }
 
-    /** 状态码 minimum: 0 maximum: 2147483647
-     * 
-     * @return code */
+    /**
+     * 状态码
+     * minimum: 0
+     * maximum: 2147483647
+     * @return code
+     */
     public Integer getCode() {
         return code;
     }
@@ -44,9 +49,12 @@ public class HttpCode {
         return this;
     }
 
-    /** 状态码出现次数 minimum: 0 maximum: 2147483647
-     * 
-     * @return count */
+    /**
+     * 状态码出现次数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -60,9 +68,12 @@ public class HttpCode {
         return this;
     }
 
-    /** 状态码在对应时间点中的占比，保留4位小数。 minimum: 0 maximum: 1
-     * 
-     * @return proportion */
+    /**
+     * 状态码在对应时间点中的占比，保留4位小数。 
+     * minimum: 0
+     * maximum: 1
+     * @return proportion
+     */
     public Double getProportion() {
         return proportion;
     }
@@ -100,7 +111,10 @@ public class HttpCode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建结构化模板中的字段模型 */
+/**
+ * 创建结构化模板中的字段模型
+ */
 public class FieldModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class FieldModel {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return fieldName */
+    /**
+     * 字段名称
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -39,9 +42,10 @@ public class FieldModel {
         return this;
     }
 
-    /** 是否开启快速分析。
-     * 
-     * @return isAnalysis */
+    /**
+     * 是否开启快速分析。
+     * @return isAnalysis
+     */
     public Boolean getIsAnalysis() {
         return isAnalysis;
     }
@@ -78,7 +82,10 @@ public class FieldModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

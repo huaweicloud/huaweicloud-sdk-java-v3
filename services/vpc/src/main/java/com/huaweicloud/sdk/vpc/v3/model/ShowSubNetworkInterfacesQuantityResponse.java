@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID
-     * 
-     * @return requestId */
+    /**
+     * 请求ID
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -40,9 +43,10 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
         return this;
     }
 
-    /** 辅助弹性网卡数目
-     * 
-     * @return subNetworkInterfaces */
+    /**
+     * 辅助弹性网卡数目
+     * @return subNetworkInterfaces
+     */
     public Integer getSubNetworkInterfaces() {
         return subNetworkInterfaces;
     }
@@ -80,7 +84,10 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 扩容集群详情 */
+/**
+ * 扩容集群详情
+ */
 public class ScaleOut {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ScaleOut {
         return this;
     }
 
-    /** 扩容节点数
-     * 
-     * @return count */
+    /**
+     * 扩容节点数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -55,7 +58,10 @@ public class ScaleOut {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

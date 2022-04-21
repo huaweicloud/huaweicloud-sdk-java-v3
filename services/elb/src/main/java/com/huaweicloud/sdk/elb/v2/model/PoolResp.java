@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 后端云服务器组响应体 */
+/**
+ * 后端云服务器组响应体
+ */
 public class PoolResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,16 +73,24 @@ public class PoolResp {
 
     private SessionPersistence sessionPersistence;
 
-    /** 后端云服务器组的后端协议。 */
+    /**
+     * 后端云服务器组的后端协议。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum UDP for value: "UDP" */
+        /**
+         * Enum UDP for value: "UDP"
+         */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -151,16 +161,24 @@ public class PoolResp {
 
     private ProtocolEnum protocol;
 
-    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 */
+    /**
+     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     */
     public static final class LbAlgorithmEnum {
 
-        /** Enum ROUND_ROBIN for value: "ROUND_ROBIN" */
+        /**
+         * Enum ROUND_ROBIN for value: "ROUND_ROBIN"
+         */
         public static final LbAlgorithmEnum ROUND_ROBIN = new LbAlgorithmEnum("ROUND_ROBIN");
 
-        /** Enum LEAST_CONNECTIONS for value: "LEAST_CONNECTIONS" */
+        /**
+         * Enum LEAST_CONNECTIONS for value: "LEAST_CONNECTIONS"
+         */
         public static final LbAlgorithmEnum LEAST_CONNECTIONS = new LbAlgorithmEnum("LEAST_CONNECTIONS");
 
-        /** Enum SOURCE_IP for value: "SOURCE_IP" */
+        /**
+         * Enum SOURCE_IP for value: "SOURCE_IP"
+         */
         public static final LbAlgorithmEnum SOURCE_IP = new LbAlgorithmEnum("SOURCE_IP");
 
         private static final Map<String, LbAlgorithmEnum> STATIC_FIELDS = createStaticFields();
@@ -236,9 +254,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的ID
-     * 
-     * @return id */
+    /**
+     * 后端云服务器组的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -252,9 +271,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 后端云服务器组所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -268,9 +288,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 后端云服务器组所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -284,9 +305,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -300,9 +322,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的描述信息
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -316,9 +339,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的管理状态。只支持设定为true，该字段的值无实际意义。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器组的管理状态。只支持设定为true，该字段的值无实际意义。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -348,9 +372,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组绑定的负载均衡器ID的列表。
-     * 
-     * @return loadbalancers */
+    /**
+     * 后端云服务器组绑定的负载均衡器ID的列表。
+     * @return loadbalancers
+     */
     public List<ResourceList> getLoadbalancers() {
         return loadbalancers;
     }
@@ -380,9 +405,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组关联的监听器ID的列表。
-     * 
-     * @return listeners */
+    /**
+     * 后端云服务器组关联的监听器ID的列表。
+     * @return listeners
+     */
     public List<ResourceList> getListeners() {
         return listeners;
     }
@@ -412,9 +438,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组关联的后端云服务器ID的列表。
-     * 
-     * @return members */
+    /**
+     * 后端云服务器组关联的后端云服务器ID的列表。
+     * @return members
+     */
     public List<ResourceList> getMembers() {
         return members;
     }
@@ -428,9 +455,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组关联的健康检查的ID。
-     * 
-     * @return healthmonitorId */
+    /**
+     * 后端云服务器组关联的健康检查的ID。
+     * @return healthmonitorId
+     */
     public String getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -453,9 +481,10 @@ public class PoolResp {
         return this;
     }
 
-    /** Get sessionPersistence
-     * 
-     * @return sessionPersistence */
+    /**
+     * Get sessionPersistence
+     * @return sessionPersistence
+     */
     public SessionPersistence getSessionPersistence() {
         return sessionPersistence;
     }
@@ -469,9 +498,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的后端协议。
-     * 
-     * @return protocol */
+    /**
+     * 后端云服务器组的后端协议。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -485,9 +515,10 @@ public class PoolResp {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     * @return lbAlgorithm
+     */
     public LbAlgorithmEnum getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -555,7 +586,10 @@ public class PoolResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

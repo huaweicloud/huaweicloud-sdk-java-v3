@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** address数据结构说明 */
+/**
+ * address数据结构说明
+ */
 public class AddressInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class AddressInfo {
 
     private String addr;
 
-    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。 */
+    /**
+     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     */
     public static final class OsEXTIPSTypeEnum {
 
-        /** Enum FIXED for value: "fixed" */
+        /**
+         * Enum FIXED for value: "fixed"
+         */
         public static final OsEXTIPSTypeEnum FIXED = new OsEXTIPSTypeEnum("fixed");
 
-        /** Enum FLOATING for value: "floating" */
+        /**
+         * Enum FLOATING for value: "floating"
+         */
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
 
         private static final Map<String, OsEXTIPSTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class AddressInfo {
         return this;
     }
 
-    /** IP地址版本。4：代表IPv4。6：代表IPv6。
-     * 
-     * @return version */
+    /**
+     * IP地址版本。4：代表IPv4。6：代表IPv6。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -130,9 +139,10 @@ public class AddressInfo {
         return this;
     }
 
-    /** IP地址
-     * 
-     * @return addr */
+    /**
+     * IP地址
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -146,9 +156,10 @@ public class AddressInfo {
         return this;
     }
 
-    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     * 
-     * @return osEXTIPSType */
+    /**
+     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     * @return osEXTIPSType
+     */
     public OsEXTIPSTypeEnum getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -162,9 +173,10 @@ public class AddressInfo {
         return this;
     }
 
-    /** MAC地址。
-     * 
-     * @return osEXTIPSMACMacAddr */
+    /**
+     * MAC地址。
+     * @return osEXTIPSMACMacAddr
+     */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -178,9 +190,10 @@ public class AddressInfo {
         return this;
     }
 
-    /** IP地址对应的端口ID
-     * 
-     * @return osEXTIPSPortId */
+    /**
+     * IP地址对应的端口ID
+     * @return osEXTIPSPortId
+     */
     public String getOsEXTIPSPortId() {
         return osEXTIPSPortId;
     }
@@ -222,7 +235,10 @@ public class AddressInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

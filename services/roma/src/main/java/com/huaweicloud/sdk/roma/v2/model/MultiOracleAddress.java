@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ORACLE集群地址 */
+/**
+ * ORACLE集群地址
+ */
 public class MultiOracleAddress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MultiOracleAddress {
         return this;
     }
 
-    /** ORACLE地址
-     * 
-     * @return oracleAddress */
+    /**
+     * ORACLE地址
+     * @return oracleAddress
+     */
     public String getOracleAddress() {
         return oracleAddress;
     }
@@ -39,9 +42,10 @@ public class MultiOracleAddress {
         return this;
     }
 
-    /** ORACLE端口
-     * 
-     * @return oraclePort */
+    /**
+     * ORACLE端口
+     * @return oraclePort
+     */
     public String getOraclePort() {
         return oraclePort;
     }
@@ -78,7 +82,10 @@ public class MultiOracleAddress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

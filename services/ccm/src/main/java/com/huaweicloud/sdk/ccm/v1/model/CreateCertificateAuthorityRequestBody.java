@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCertificateAuthorityRequestBody */
+/**
+ * CreateCertificateAuthorityRequestBody
+ */
 public class CreateCertificateAuthorityRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** 创建的CA类型。 - **ROOT** : 根CA - **SUBORDINATE** : 从属CA
-     * 
-     * @return type */
+    /**
+     * 创建的CA类型。 - **ROOT** : 根CA - **SUBORDINATE** : 从属CA
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -87,9 +90,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** Get distinguishedName
-     * 
-     * @return distinguishedName */
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
     public DistinguishedName getDistinguishedName() {
         return distinguishedName;
     }
@@ -103,11 +107,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** 密钥算法，可选值如下： - **RSA2048** : RSA算法，密钥长度2048位； - **RSA4096** : RSA算法，密钥长度4096位； - **EC256** : 椭圆曲线算法（Elliptic
-     * Curve Digital Signature Algorithm (ECDSA)），密钥长度256位； - **EC384** : 椭圆曲线算法（Elliptic Curve Digital Signature
-     * Algorithm (ECDSA)），密钥长度384位。
-     * 
-     * @return keyAlgorithm */
+    /**
+     * 密钥算法，可选值如下：   - **RSA2048** : RSA算法，密钥长度2048位；   - **RSA4096** : RSA算法，密钥长度4096位；   - **EC256** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度256位；   - **EC384** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度384位。
+     * @return keyAlgorithm
+     */
     public String getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -130,9 +133,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** Get validity
-     * 
-     * @return validity */
+    /**
+     * Get validity
+     * @return validity
+     */
     public Validity getValidity() {
         return validity;
     }
@@ -146,10 +150,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** 父CA证书ID，分以下三种情况： - 创建根CA，根CA为自签名证书，无父CA，将忽略该参数； - 创建从属CA，并需要直接激活该证书，为必填值； -
-     * 创建从属CA，不需要直接激活该证书，本参数值将被忽略，激活证书时需要再次传入。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID，分以下三种情况：   - 创建根CA，根CA为自签名证书，无父CA，将忽略该参数；   - 创建从属CA，并需要直接激活该证书，为必填值；   - 创建从属CA，不需要直接激活该证书，本参数值将被忽略，激活证书时需要再次传入。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -163,10 +167,12 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** CA证书路径长度，分以下三种情况： - 创建根CA，为便于后期对证书层级的扩展，根CA默认不对路径长度做限制，故将忽略该参数。证书层级规划可由从属CA做限制； -
-     * 创建从属CA，并需要直接激活该证书，用户可自定义。缺省值为0； - 创建从属CA，不需要直接激活该证书，本参数值将被忽略。激活证书时若要自定义，需要再次传入； minimum: 0 maximum: 6
-     * 
-     * @return pathLength */
+    /**
+     * CA证书路径长度，分以下三种情况：   - 创建根CA，为便于后期对证书层级的扩展，根CA默认不对路径长度做限制，故将忽略该参数。证书层级规划可由从属CA做限制；   - 创建从属CA，并需要直接激活该证书，用户可自定义。缺省值为0；   - 创建从属CA，不需要直接激活该证书，本参数值将被忽略。激活证书时若要自定义，需要再次传入；
+     * minimum: 0
+     * maximum: 6
+     * @return pathLength
+     */
     public Integer getPathLength() {
         return pathLength;
     }
@@ -180,10 +186,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** 签名哈希算法。 - 分以下三种情况： - 创建根CA，为必填值； - 创建从属CA，并需要直接激活该证书，为必填值； - 创建从属CA，不需要直接激活该证书，本参数值将被忽略，激活证书时需要再次传入。 - 可选值如下： -
-     * **SHA256** - **SHA384** - **SHA512**
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名哈希算法。 - 分以下三种情况：   - 创建根CA，为必填值；   - 创建从属CA，并需要直接激活该证书，为必填值；   - 创建从属CA，不需要直接激活该证书，本参数值将被忽略，激活证书时需要再次传入。 - 可选值如下：   - **SHA256**   - **SHA384**   - **SHA512**
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -213,14 +219,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** 密钥用法，具体标准参见RFC 5280中:[4.2.1.3节](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.3)。 -
-     * **digitalSignature** : 数字签名； - **nonRepudiation** : 不可抵赖； - **keyEncipherment** : 密钥用于加密密钥数据； -
-     * **dataEncipherment** : 用于加密数据； - **keyAgreement** : 密钥协商； - **keyCertSign** : 签发证书； - **cRLSign** : 签发吊销列表； -
-     * **encipherOnly** : 仅用于加密； - **decipherOnly** : 仅用于解密。 > 缺省值如下： > -
-     * 根CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，忽略用户传入值； > -
-     * 从属CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，支持用户自定义。
-     * 
-     * @return keyUsages */
+    /**
+     * 密钥用法，具体标准参见RFC 5280中:[4.2.1.3节](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.3)。   - **digitalSignature** : 数字签名；   - **nonRepudiation** : 不可抵赖；   - **keyEncipherment** : 密钥用于加密密钥数据；   - **dataEncipherment** : 用于加密数据；   - **keyAgreement** : 密钥协商；   - **keyCertSign** : 签发证书；   - **cRLSign** : 签发吊销列表；   - **encipherOnly** : 仅用于加密；   - **decipherOnly** : 仅用于解密。 > 缺省值如下： > - 根CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，忽略用户传入值； > - 从属CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，支持用户自定义。
+     * @return keyUsages
+     */
     public List<String> getKeyUsages() {
         return keyUsages;
     }
@@ -244,9 +246,10 @@ public class CreateCertificateAuthorityRequestBody {
         return this;
     }
 
-    /** Get crlConfiguration
-     * 
-     * @return crlConfiguration */
+    /**
+     * Get crlConfiguration
+     * @return crlConfiguration
+     */
     public CrlConfiguration getCrlConfiguration() {
         return crlConfiguration;
     }
@@ -306,7 +309,10 @@ public class CreateCertificateAuthorityRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

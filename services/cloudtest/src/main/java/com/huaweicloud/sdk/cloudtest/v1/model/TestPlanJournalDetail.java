@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 测试计划操作历史详情 */
+/**
+ * 测试计划操作历史详情
+ */
 public class TestPlanJournalDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class TestPlanJournalDetail {
         return this;
     }
 
-    /** 测试计划基础信息变更，包括计划名称，测试类型，计划处理者、版本号、关联迭代、开始日期、截至日期、描述
-     * 
-     * @return updated */
+    /**
+     * 测试计划基础信息变更，包括计划名称，测试类型，计划处理者、版本号、关联迭代、开始日期、截至日期、描述
+     * @return updated
+     */
     public List<AttributeChange> getUpdated() {
         return updated;
     }
@@ -89,9 +92,10 @@ public class TestPlanJournalDetail {
         return this;
     }
 
-    /** 测试计划资源的添加记录（工作项或者测试用例）
-     * 
-     * @return added */
+    /**
+     * 测试计划资源的添加记录（工作项或者测试用例）
+     * @return added
+     */
     public List<NameAndId> getAdded() {
         return added;
     }
@@ -121,9 +125,10 @@ public class TestPlanJournalDetail {
         return this;
     }
 
-    /** 测试计划资源的移除记录（工作项或者测试用例）
-     * 
-     * @return deleted */
+    /**
+     * 测试计划资源的移除记录（工作项或者测试用例）
+     * @return deleted
+     */
     public List<NameAndId> getDeleted() {
         return deleted;
     }
@@ -137,9 +142,10 @@ public class TestPlanJournalDetail {
         return this;
     }
 
-    /** 表明该条变更记录的具体变更类型，例如测试用例（testCase），需求（issue）
-     * 
-     * @return journalizedType */
+    /**
+     * 表明该条变更记录的具体变更类型，例如测试用例（testCase），需求（issue）
+     * @return journalizedType
+     */
     public String getJournalizedType() {
         return journalizedType;
     }
@@ -153,9 +159,10 @@ public class TestPlanJournalDetail {
         return this;
     }
 
-    /** 表明该条变更记录属于基础信息变更还是资源（需求添加移除、用例添加移除）变更
-     * 
-     * @return type */
+    /**
+     * 表明该条变更记录属于基础信息变更还是资源（需求添加移除、用例添加移除）变更
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -198,7 +205,10 @@ public class TestPlanJournalDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

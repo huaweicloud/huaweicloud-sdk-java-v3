@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CustomerBalancesV2 */
+/**
+ * CustomerBalancesV2
+ */
 public class CustomerBalancesV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CustomerBalancesV2 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -54,9 +57,10 @@ public class CustomerBalancesV2 {
         return this;
     }
 
-    /** 客户欠款总额度。
-     * 
-     * @return debtAmount */
+    /**
+     * 客户欠款总额度。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -70,9 +74,10 @@ public class CustomerBalancesV2 {
         return this;
     }
 
-    /** 客户可用总额度。
-     * 
-     * @return amount */
+    /**
+     * 客户可用总额度。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -86,9 +91,10 @@ public class CustomerBalancesV2 {
         return this;
     }
 
-    /** 币种。 CNY：人民币。
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -102,9 +108,10 @@ public class CustomerBalancesV2 {
         return this;
     }
 
-    /** 度量单位： 1：元
-     * 
-     * @return measureId */
+    /**
+     * 度量单位： 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -147,7 +154,10 @@ public class CustomerBalancesV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

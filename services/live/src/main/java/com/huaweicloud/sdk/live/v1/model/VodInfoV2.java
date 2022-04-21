@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VodInfoV2 */
+/**
+ * VodInfoV2
+ */
 public class VodInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class VodInfoV2 {
         return this;
     }
 
-    /** VOD媒资id
-     * 
-     * @return assetId */
+    /**
+     * VOD媒资id
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -39,9 +42,10 @@ public class VodInfoV2 {
         return this;
     }
 
-    /** 点播播放地址
-     * 
-     * @return playUrl */
+    /**
+     * 点播播放地址
+     * @return playUrl
+     */
     public String getPlayUrl() {
         return playUrl;
     }
@@ -77,7 +81,10 @@ public class VodInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

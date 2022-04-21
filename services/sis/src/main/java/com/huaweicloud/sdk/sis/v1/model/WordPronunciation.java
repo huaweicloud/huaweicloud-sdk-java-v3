@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 单词发音打分 */
+/**
+ *  单词发音打分
+ */
 public class WordPronunciation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class WordPronunciation {
         return this;
     }
 
-    /** 单词发音综合得分 0-100
-     * 
-     * @return score */
+    /**
+     * 单词发音综合得分 0-100
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -39,9 +42,10 @@ public class WordPronunciation {
         return this;
     }
 
-    /** 单词发音好坏得分 0-100
-     * 
-     * @return gop */
+    /**
+     * 单词发音好坏得分 0-100
+     * @return gop
+     */
     public Float getGop() {
         return gop;
     }
@@ -77,7 +81,10 @@ public class WordPronunciation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

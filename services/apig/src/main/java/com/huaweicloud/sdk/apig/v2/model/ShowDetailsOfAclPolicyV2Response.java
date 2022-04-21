@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return aclName */
+    /**
+     * 名称
+     * @return aclName
+     */
     public String getAclName() {
         return aclName;
     }
@@ -61,9 +64,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 类型: - PERMIT（白名单类型） - DENY（黑名单类型）
-     * 
-     * @return aclType */
+    /**
+     * 类型: - PERMIT（白名单类型） - DENY（黑名单类型）
+     * @return aclType
+     */
     public String getAclType() {
         return aclType;
     }
@@ -77,9 +81,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** ACL策略值
-     * 
-     * @return aclValue */
+    /**
+     * ACL策略值
+     * @return aclValue
+     */
     public String getAclValue() {
         return aclValue;
     }
@@ -93,9 +98,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 对象类型： - IP - DOMAIN
-     * 
-     * @return entityType */
+    /**
+     * 对象类型： - IP - DOMAIN
+     * @return entityType
+     */
     public String getEntityType() {
         return entityType;
     }
@@ -109,9 +115,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -125,9 +132,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -172,7 +180,10 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

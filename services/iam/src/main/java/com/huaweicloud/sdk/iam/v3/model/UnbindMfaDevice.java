@@ -30,9 +30,10 @@ public class UnbindMfaDevice {
         return this;
     }
 
-    /** 待解绑MFA设备的IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * 待解绑MFA设备的IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -46,9 +47,10 @@ public class UnbindMfaDevice {
         return this;
     }
 
-    /** • 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。 • IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
-     * 
-     * @return authenticationCode */
+    /**
+     * • 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。 • IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
+     * @return authenticationCode
+     */
     public String getAuthenticationCode() {
         return authenticationCode;
     }
@@ -62,9 +64,10 @@ public class UnbindMfaDevice {
         return this;
     }
 
-    /** MFA设备序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * MFA设备序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -103,7 +106,10 @@ public class UnbindMfaDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

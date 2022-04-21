@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 构建任务的环境变量。 */
+/**
+ * 构建任务的环境变量。
+ */
 public class BuildInfoParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BuildInfoParameters {
         return this;
     }
 
-    /** 编译命令。默认： 1、根目录存在build.sh：./build.sh 2、根据运行系统，示例如下： Java和Tomcat：mvn clean package Nodejs: npm build
-     * 
-     * @return buildCmd */
+    /**
+     * 编译命令。默认：  1、根目录存在build.sh：./build.sh  2、根据运行系统，示例如下：  Java和Tomcat：mvn clean package  Nodejs: npm build 
+     * @return buildCmd
+     */
     public String getBuildCmd() {
         return buildCmd;
     }
@@ -44,9 +47,10 @@ public class BuildInfoParameters {
         return this;
     }
 
-    /** dockerfile地址。默认是根目录./。
-     * 
-     * @return dockerfilePath */
+    /**
+     * dockerfile地址。默认是根目录./。
+     * @return dockerfilePath
+     */
     public String getDockerfilePath() {
         return dockerfilePath;
     }
@@ -60,9 +64,10 @@ public class BuildInfoParameters {
         return this;
     }
 
-    /** 构建归档组织，默认cas_{project_id}。
-     * 
-     * @return artifactNamespace */
+    /**
+     * 构建归档组织，默认cas_{project_id}。
+     * @return artifactNamespace
+     */
     public String getArtifactNamespace() {
         return artifactNamespace;
     }
@@ -101,7 +106,10 @@ public class BuildInfoParameters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

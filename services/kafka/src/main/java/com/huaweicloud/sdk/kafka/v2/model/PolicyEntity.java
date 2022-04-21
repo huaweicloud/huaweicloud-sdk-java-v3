@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** PolicyEntity */
+/**
+ * PolicyEntity
+ */
 public class PolicyEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class PolicyEntity {
 
     private String userName;
 
-    /** 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。 */
+    /**
+     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     */
     public static final class AccessPolicyEnum {
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final AccessPolicyEnum ALL = new AccessPolicyEnum("all");
 
-        /** Enum PUB for value: "pub" */
+        /**
+         * Enum PUB for value: "pub"
+         */
         public static final AccessPolicyEnum PUB = new AccessPolicyEnum("pub");
 
-        /** Enum SUB for value: "sub" */
+        /**
+         * Enum SUB for value: "sub"
+         */
         public static final AccessPolicyEnum SUB = new AccessPolicyEnum("sub");
 
         private static final Map<String, AccessPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class PolicyEntity {
         return this;
     }
 
-    /** 是否为创建topic时所选择的用户。
-     * 
-     * @return owner */
+    /**
+     * 是否为创建topic时所选择的用户。
+     * @return owner
+     */
     public Boolean getOwner() {
         return owner;
     }
@@ -124,9 +135,10 @@ public class PolicyEntity {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -140,9 +152,10 @@ public class PolicyEntity {
         return this;
     }
 
-    /** 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
-     * 
-     * @return accessPolicy */
+    /**
+     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * @return accessPolicy
+     */
     public AccessPolicyEnum getAccessPolicy() {
         return accessPolicy;
     }
@@ -180,7 +193,10 @@ public class PolicyEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

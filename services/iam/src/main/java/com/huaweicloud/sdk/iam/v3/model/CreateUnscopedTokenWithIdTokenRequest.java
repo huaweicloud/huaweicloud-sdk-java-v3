@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateUnscopedTokenWithIdTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateUnscopedTokenWithIdTokenRequest {
         return this;
     }
 
-    /** 身份提供商id。
-     * 
-     * @return idpId */
+    /**
+     * 身份提供商id。
+     * @return idpId
+     */
     public String getIdpId() {
         return idpId;
     }
@@ -44,9 +47,10 @@ public class CreateUnscopedTokenWithIdTokenRequest {
         return this;
     }
 
-    /** 协议id。
-     * 
-     * @return protocolId */
+    /**
+     * 协议id。
+     * @return protocolId
+     */
     public String getProtocolId() {
         return protocolId;
     }
@@ -60,9 +64,10 @@ public class CreateUnscopedTokenWithIdTokenRequest {
         return this;
     }
 
-    /** OpenID Connect身份提供商的ID Token，格式为Bearer {ID Token}。
-     * 
-     * @return authorization */
+    /**
+     * OpenID Connect身份提供商的ID Token，格式为Bearer {ID Token}。
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -102,7 +107,10 @@ public class CreateUnscopedTokenWithIdTokenRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

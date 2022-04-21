@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListGroupsRequest {
 
-    /** 存储用量单位 */
+    /**
+     * 存储用量单位
+     */
     public static final class UnitEnum {
 
-        /** Enum MB for value: "MB" */
+        /**
+         * Enum MB for value: "MB"
+         */
         public static final UnitEnum MB = new UnitEnum("MB");
 
         private static final Map<String, UnitEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +121,10 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 存储用量单位
-     * 
-     * @return unit */
+    /**
+     * 存储用量单位
+     * @return unit
+     */
     public UnitEnum getUnit() {
         return unit;
     }
@@ -131,9 +138,10 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 存储类型，有资产存储(取值:AssetStorage)、设备存储(取值:DeviceStorage)两种类型
-     * 
-     * @return type */
+    /**
+     * 存储类型，有资产存储(取值:AssetStorage)、设备存储(取值:DeviceStorage)两种类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -147,9 +155,10 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 存储组 ID
-     * 
-     * @return groupId */
+    /**
+     * 存储组 ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -163,9 +172,10 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 存储组名称
-     * 
-     * @return name */
+    /**
+     * 存储组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -179,9 +189,12 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 页码 minimum: 0 maximum: 0
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * minimum: 0
+     * maximum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -195,9 +208,12 @@ public class ListGroupsRequest {
         return this;
     }
 
-    /** 返回条数限制 minimum: 200 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 返回条数限制
+     * minimum: 200
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -241,7 +257,10 @@ public class ListGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

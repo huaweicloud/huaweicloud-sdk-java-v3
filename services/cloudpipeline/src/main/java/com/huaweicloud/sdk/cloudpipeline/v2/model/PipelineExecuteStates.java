@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流水线执行结果 */
+/**
+ * 流水线执行结果
+ */
 public class PipelineExecuteStates {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线执行结果
-     * 
-     * @return result */
+    /**
+     * 流水线执行结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -82,9 +85,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线执行状态
-     * 
-     * @return status */
+    /**
+     * 流水线执行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -114,9 +118,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 阶段执行情况
-     * 
-     * @return stages */
+    /**
+     * 阶段执行情况
+     * @return stages
+     */
     public List<Stages> getStages() {
         return stages;
     }
@@ -130,9 +135,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 执行人
-     * 
-     * @return executor */
+    /**
+     * 执行人
+     * @return executor
+     */
     public String getExecutor() {
         return executor;
     }
@@ -146,9 +152,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线名字
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名字
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -162,9 +169,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线ID
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -178,9 +186,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线详情页URL
-     * 
-     * @return detailUrl */
+    /**
+     * 流水线详情页URL
+     * @return detailUrl
+     */
     public String getDetailUrl() {
         return detailUrl;
     }
@@ -194,9 +203,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 流水线编辑页URL
-     * 
-     * @return modifyUrl */
+    /**
+     * 流水线编辑页URL
+     * @return modifyUrl
+     */
     public String getModifyUrl() {
         return modifyUrl;
     }
@@ -210,9 +220,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 开始执行时间
-     * 
-     * @return startTime */
+    /**
+     * 开始执行时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -226,9 +237,10 @@ public class PipelineExecuteStates {
         return this;
     }
 
-    /** 结束执行时间
-     * 
-     * @return endTime */
+    /**
+     * 结束执行时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -282,7 +294,10 @@ public class PipelineExecuteStates {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

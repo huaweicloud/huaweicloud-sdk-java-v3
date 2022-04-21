@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** amqp queue配置信息 */
+/**
+ * amqp queue配置信息
+ */
 public class AmqpForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AmqpForwarding {
         return this;
     }
 
-    /** **参数说明**：用于接收满足规则条件数据的amqp queue。
-     * 
-     * @return queueName */
+    /**
+     * **参数说明**：用于接收满足规则条件数据的amqp queue。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -55,7 +58,10 @@ public class AmqpForwarding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

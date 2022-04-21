@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPublicipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class ListPublicipsRequest {
 
     private Integer limit;
 
-    /** IP地址版本信息 4：IPv4 6：IPv6 */
+    /**
+     * IP地址版本信息  4：IPv4  6：IPv6
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -137,9 +145,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 取值为上一页数据的最后一条记录的id，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 取值为上一页数据的最后一条记录的id，为空时为查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -153,9 +162,11 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 功能说明：每页返回的个数 取值范围：0~intmax minimum: 0
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回的个数  取值范围：0~intmax
+     * minimum: 0
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -169,9 +180,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** IP地址版本信息 4：IPv4 6：IPv6
-     * 
-     * @return ipVersion */
+    /**
+     * IP地址版本信息  4：IPv4  6：IPv6
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -185,10 +197,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的弹性IP弹性公网IP。
-     * 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的弹性公网IP，请传参all_granted_eps。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的弹性IP弹性公网IP。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的弹性公网IP，请传参all_granted_eps。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -218,9 +230,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 绑定弹性公网IP的端口id
-     * 
-     * @return portId */
+    /**
+     * 绑定弹性公网IP的端口id
+     * @return portId
+     */
     public List<String> getPortId() {
         return portId;
     }
@@ -250,9 +263,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
-     * 
-     * @return publicIpAddress */
+    /**
+     * IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
+     * @return publicIpAddress
+     */
     public List<String> getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -282,9 +296,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 关联端口的私有IP地址
-     * 
-     * @return privateIpAddress */
+    /**
+     * 关联端口的私有IP地址
+     * @return privateIpAddress
+     */
     public List<String> getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -314,9 +329,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 弹性公网IP唯一标识
-     * 
-     * @return id */
+    /**
+     * 弹性公网IP唯一标识
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -347,9 +363,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
-     * 
-     * @return allowShareBandwidthTypeAny */
+    /**
+     * 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
+     * @return allowShareBandwidthTypeAny
+     */
     public List<String> getAllowShareBandwidthTypeAny() {
         return allowShareBandwidthTypeAny;
     }
@@ -408,7 +425,10 @@ public class ListPublicipsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

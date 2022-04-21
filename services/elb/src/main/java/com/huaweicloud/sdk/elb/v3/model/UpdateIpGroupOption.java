@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateIpGroupOption */
+/**
+ * UpdateIpGroupOption
+ */
 public class UpdateIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class UpdateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的描述信息
-     * 
-     * @return description */
+    /**
+     * IP地址组的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -47,9 +50,10 @@ public class UpdateIpGroupOption {
         return this;
     }
 
-    /** IP地址组的名称
-     * 
-     * @return name */
+    /**
+     * IP地址组的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class UpdateIpGroupOption {
         return this;
     }
 
-    /** IP地址组中包含的IP列表。
-     * 
-     * @return ipList */
+    /**
+     * IP地址组中包含的IP列表。
+     * @return ipList
+     */
     public List<UpadateIpGroupIpOption> getIpList() {
         return ipList;
     }
@@ -120,7 +125,10 @@ public class UpdateIpGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

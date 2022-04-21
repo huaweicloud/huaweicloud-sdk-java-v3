@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SqlAlarmRuleRespList */
+/**
+ * SqlAlarmRuleRespList
+ */
 public class SqlAlarmRuleRespList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,19 +53,29 @@ public class SqlAlarmRuleRespList {
 
     private List<Topics> topics = null;
 
-    /** 告警级别 */
+    /**
+    * 告警级别
+    */
     public static final class SqlAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final SqlAlarmLevelEnum INFO = new SqlAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final SqlAlarmLevelEnum MINOR = new SqlAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final SqlAlarmLevelEnum MAJOR = new SqlAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final SqlAlarmLevelEnum CRITICAL = new SqlAlarmLevelEnum("Critical");
 
         private static final Map<String, SqlAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -160,13 +172,19 @@ public class SqlAlarmRuleRespList {
 
     private String templateName;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -241,9 +259,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** SQL告警名称
-     * 
-     * @return sqlAlarmRuleName */
+    /**
+     * SQL告警名称
+     * @return sqlAlarmRuleName
+     */
     public String getSqlAlarmRuleName() {
         return sqlAlarmRuleName;
     }
@@ -257,9 +276,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** SQL告警规则id
-     * 
-     * @return sqlAlarmRuleId */
+    /**
+     * SQL告警规则id
+     * @return sqlAlarmRuleId
+     */
     public String getSqlAlarmRuleId() {
         return sqlAlarmRuleId;
     }
@@ -273,9 +293,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** SQL告警信息描述
-     * 
-     * @return sqlAlarmRuleDescription */
+    /**
+     * SQL告警信息描述
+     * @return sqlAlarmRuleDescription
+     */
     public String getSqlAlarmRuleDescription() {
         return sqlAlarmRuleDescription;
     }
@@ -305,9 +326,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** SQL详细信息
-     * 
-     * @return sqlRequests */
+    /**
+     * SQL详细信息
+     * @return sqlRequests
+     */
     public List<SqlRequest> getSqlRequests() {
         return sqlRequests;
     }
@@ -330,9 +352,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 告警统计周期
-     * 
-     * @return frequency */
+    /**
+     * 告警统计周期
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -346,9 +369,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 条件表达式
-     * 
-     * @return conditionExpression */
+    /**
+     * 条件表达式
+     * @return conditionExpression
+     */
     public String getConditionExpression() {
         return conditionExpression;
     }
@@ -378,9 +402,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 主题信息
-     * 
-     * @return topics */
+    /**
+     * 主题信息
+     * @return topics
+     */
     public List<Topics> getTopics() {
         return topics;
     }
@@ -394,9 +419,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return sqlAlarmLevel */
+    /**
+     * 告警级别
+     * @return sqlAlarmLevel
+     */
     public SqlAlarmLevelEnum getSqlAlarmLevel() {
         return sqlAlarmLevel;
     }
@@ -410,9 +436,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return sqlAlarmSend */
+    /**
+     * 是否发送
+     * @return sqlAlarmSend
+     */
     public Boolean getSqlAlarmSend() {
         return sqlAlarmSend;
     }
@@ -426,9 +453,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -442,9 +470,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
-     * 
-     * @return createTime */
+    /**
+     * 创建时间(毫秒时间戳)
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -458,9 +487,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间(毫秒时间戳)
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -474,9 +504,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** Get templateName
-     * 
-     * @return templateName */
+    /**
+     * Get templateName
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -490,9 +521,10 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -566,7 +598,10 @@ public class SqlAlarmRuleRespList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

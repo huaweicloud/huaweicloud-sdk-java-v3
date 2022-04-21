@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 分片列表 */
+/**
+ * 分片列表
+ */
 public class InstanceGroupListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class InstanceGroupListInfo {
         return this;
     }
 
-    /** 分片id
-     * 
-     * @return groupId */
+    /**
+     * 分片id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -47,9 +50,10 @@ public class InstanceGroupListInfo {
         return this;
     }
 
-    /** 分片名称
-     * 
-     * @return groupName */
+    /**
+     * 分片名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -80,9 +84,10 @@ public class InstanceGroupListInfo {
         return this;
     }
 
-    /** 每个分片包含的副本列表。
-     * 
-     * @return replicationList */
+    /**
+     * 每个分片包含的副本列表。
+     * @return replicationList
+     */
     public List<InstanceReplicationListInfo> getReplicationList() {
         return replicationList;
     }
@@ -121,7 +126,10 @@ public class InstanceGroupListInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

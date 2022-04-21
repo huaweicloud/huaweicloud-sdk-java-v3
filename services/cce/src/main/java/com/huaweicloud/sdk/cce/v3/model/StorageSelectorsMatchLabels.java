@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** evs盘的匹配字段，支持DataVolume中的size、volumeType、metadataEncrypted、metadataCmkid、count五个字段。 */
+/**
+ * evs盘的匹配字段，支持DataVolume中的size、volumeType、metadataEncrypted、metadataCmkid、count五个字段。
+ */
 public class StorageSelectorsMatchLabels {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class StorageSelectorsMatchLabels {
         return this;
     }
 
-    /** 匹配的磁盘大小，不填则无磁盘大小限制。例如：100.
-     * 
-     * @return size */
+    /**
+     * 匹配的磁盘大小，不填则无磁盘大小限制。例如：100.
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -54,9 +57,10 @@ public class StorageSelectorsMatchLabels {
         return this;
     }
 
-    /** 云硬盘类型，目前支持SSD\\GPSSD\\SAS三种。
-     * 
-     * @return volumeType */
+    /**
+     * 云硬盘类型，目前支持SSD\\GPSSD\\SAS三种。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -70,9 +74,10 @@ public class StorageSelectorsMatchLabels {
         return this;
     }
 
-    /** 磁盘加密标识符，0代表不加密，1代表加密。
-     * 
-     * @return metadataEncrypted */
+    /**
+     * 磁盘加密标识符，0代表不加密，1代表加密。
+     * @return metadataEncrypted
+     */
     public String getMetadataEncrypted() {
         return metadataEncrypted;
     }
@@ -86,9 +91,10 @@ public class StorageSelectorsMatchLabels {
         return this;
     }
 
-    /** 加密磁盘的用户主密钥ID，长度为36字节的字符串。
-     * 
-     * @return metadataCmkid */
+    /**
+     * 加密磁盘的用户主密钥ID，长度为36字节的字符串。
+     * @return metadataCmkid
+     */
     public String getMetadataCmkid() {
         return metadataCmkid;
     }
@@ -102,9 +108,10 @@ public class StorageSelectorsMatchLabels {
         return this;
     }
 
-    /** 磁盘选择个数，不填则选择所有此类磁盘。
-     * 
-     * @return count */
+    /**
+     * 磁盘选择个数，不填则选择所有此类磁盘。
+     * @return count
+     */
     public String getCount() {
         return count;
     }
@@ -147,7 +154,10 @@ public class StorageSelectorsMatchLabels {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Bug信息 */
+/**
+ * Bug信息
+ */
 public class BugStatisticResponseV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 重要程度为关键的缺陷数
-     * 
-     * @return criticalNum */
+    /**
+     * 重要程度为关键的缺陷数
+     * @return criticalNum
+     */
     public Integer getCriticalNum() {
         return criticalNum;
     }
@@ -64,9 +67,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** DI
-     * 
-     * @return defectIndex */
+    /**
+     * DI
+     * @return defectIndex
+     */
     public Double getDefectIndex() {
         return defectIndex;
     }
@@ -80,9 +84,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 模块
-     * 
-     * @return module */
+    /**
+     * 模块
+     * @return module
+     */
     public String getModule() {
         return module;
     }
@@ -96,9 +101,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 重要程度为一般的缺陷数
-     * 
-     * @return normalNum */
+    /**
+     * 重要程度为一般的缺陷数
+     * @return normalNum
+     */
     public Integer getNormalNum() {
         return normalNum;
     }
@@ -112,9 +118,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 重要程度为严重的缺陷数
-     * 
-     * @return seriousNum */
+    /**
+     * 重要程度为严重的缺陷数
+     * @return seriousNum
+     */
     public Integer getSeriousNum() {
         return seriousNum;
     }
@@ -128,9 +135,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 重要程度为提示的缺陷数
-     * 
-     * @return tipNum */
+    /**
+     * 重要程度为提示的缺陷数
+     * @return tipNum
+     */
     public Integer getTipNum() {
         return tipNum;
     }
@@ -144,9 +152,10 @@ public class BugStatisticResponseV4 {
         return this;
     }
 
-    /** 总数
-     * 
-     * @return total */
+    /**
+     * 总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -193,7 +202,10 @@ public class BugStatisticResponseV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

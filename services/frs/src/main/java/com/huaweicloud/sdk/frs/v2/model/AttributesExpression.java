@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 人脸表情，包括中性、高兴、害怕、惊讶、伤心、生气、厌恶。 */
+/**
+ * 人脸表情，包括中性、高兴、害怕、惊讶、伤心、生气、厌恶。
+ */
 public class AttributesExpression {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AttributesExpression {
         return this;
     }
 
-    /** 人脸表情类型： • neutral：中性 • happy：高兴 • fear：害怕 • surprise：惊讶 • sad：伤心 • angry：生气 • disgust：厌恶 • unknown：图片质量问题导致未识别
-     * 
-     * @return type */
+    /**
+     * 人脸表情类型： • neutral：中性 • happy：高兴 • fear：害怕 • surprise：惊讶 • sad：伤心 • angry：生气 • disgust：厌恶 • unknown：图片质量问题导致未识别
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class AttributesExpression {
         return this;
     }
 
-    /** 表情置信度，取值范围[0-1]。
-     * 
-     * @return probability */
+    /**
+     * 表情置信度，取值范围[0-1]。
+     * @return probability
+     */
     public Double getProbability() {
         return probability;
     }
@@ -78,7 +82,10 @@ public class AttributesExpression {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

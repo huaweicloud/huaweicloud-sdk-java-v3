@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 绑定证书和域名的请求体 */
+/**
+ * 绑定证书和域名的请求体
+ */
 public class ApplyCertificateToHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ApplyCertificateToHostRequestBody {
         return this;
     }
 
-    /** 云模式HTTPS域名id，通过查询云模式防护域名列表（ListHost）接口获取
-     * 
-     * @return cloudHostIds */
+    /**
+     * 云模式HTTPS域名id，通过查询云模式防护域名列表（ListHost）接口获取
+     * @return cloudHostIds
+     */
     public List<String> getCloudHostIds() {
         return cloudHostIds;
     }
@@ -74,9 +77,10 @@ public class ApplyCertificateToHostRequestBody {
         return this;
     }
 
-    /** 独享模式HTTPS域名id，通过独享模式域名列表（ListPremiumHost）接口获取
-     * 
-     * @return premiumHostIds */
+    /**
+     * 独享模式HTTPS域名id，通过独享模式域名列表（ListPremiumHost）接口获取
+     * @return premiumHostIds
+     */
     public List<String> getPremiumHostIds() {
         return premiumHostIds;
     }
@@ -113,7 +117,10 @@ public class ApplyCertificateToHostRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

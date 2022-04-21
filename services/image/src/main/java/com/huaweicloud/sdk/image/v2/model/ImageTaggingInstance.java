@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ImageTaggingInstance */
+/**
+ * ImageTaggingInstance
+ */
 public class ImageTaggingInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ImageTaggingInstance {
         return this;
     }
 
-    /** 目标检测框位置信息，包括4个值： width：检测框区域宽度 height：检测框区域高度 top_left_x：检测框左上角到垂直轴距离 top_left_y：检测框左上角到水平轴距离
-     * 
-     * @return boundingBox */
+    /**
+     * 目标检测框位置信息，包括4个值：  width：检测框区域宽度  height：检测框区域高度  top_left_x：检测框左上角到垂直轴距离  top_left_y：检测框左上角到水平轴距离 
+     * @return boundingBox
+     */
     public Object getBoundingBox() {
         return boundingBox;
     }
@@ -39,9 +42,10 @@ public class ImageTaggingInstance {
         return this;
     }
 
-    /** 检测标签置信度,将Float型置信度转为String类型返回,Float取值范围（0~100）。
-     * 
-     * @return confidence */
+    /**
+     * 检测标签置信度,将Float型置信度转为String类型返回,Float取值范围（0~100）。
+     * @return confidence
+     */
     public String getConfidence() {
         return confidence;
     }
@@ -78,7 +82,10 @@ public class ImageTaggingInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

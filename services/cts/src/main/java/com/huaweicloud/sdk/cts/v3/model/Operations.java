@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 操作事件列表，目前最多支持对100服务的1000个关键操作进行配置。 */
+/**
+ * 操作事件列表，目前最多支持对100服务的1000个关键操作进行配置。
+ */
 public class Operations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Operations {
         return this;
     }
 
-    /** 标识云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。 已对接的云服务列表参见《云审计服务用户指南》“支持的服务”章节。
-     * 
-     * @return serviceType */
+    /**
+     * 标识云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。 已对接的云服务列表参见《云审计服务用户指南》“支持的服务”章节。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -47,9 +50,10 @@ public class Operations {
         return this;
     }
 
-    /** 标识资源类型。
-     * 
-     * @return resourceType */
+    /**
+     * 标识资源类型。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -79,9 +83,10 @@ public class Operations {
         return this;
     }
 
-    /** 标识事件名称。
-     * 
-     * @return traceNames */
+    /**
+     * 标识事件名称。
+     * @return traceNames
+     */
     public List<String> getTraceNames() {
         return traceNames;
     }
@@ -120,7 +125,10 @@ public class Operations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

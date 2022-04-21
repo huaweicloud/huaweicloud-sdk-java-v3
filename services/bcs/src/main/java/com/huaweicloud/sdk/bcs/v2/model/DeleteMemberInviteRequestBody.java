@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DeleteMemberInviteRequestBody */
+/**
+ * DeleteMemberInviteRequestBody
+ */
 public class DeleteMemberInviteRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class DeleteMemberInviteRequestBody {
         return this;
     }
 
-    /** 邀请实例id
-     * 
-     * @return bcsId */
+    /**
+     * 邀请实例id
+     * @return bcsId
+     */
     public String getBcsId() {
         return bcsId;
     }
@@ -47,9 +50,10 @@ public class DeleteMemberInviteRequestBody {
         return this;
     }
 
-    /** 邀请加入的通道名
-     * 
-     * @return channelName */
+    /**
+     * 邀请加入的通道名
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -79,9 +83,10 @@ public class DeleteMemberInviteRequestBody {
         return this;
     }
 
-    /** 被邀请的用户列表，对应信息可通过获取联盟成员列表（ListMembers）接口查询，或被邀请方已加入联盟，或邀请状态为released时，需填写准确的被邀请方bcs实例id和邀请状态
-     * 
-     * @return invitedUserinfo */
+    /**
+     * 被邀请的用户列表，对应信息可通过获取联盟成员列表（ListMembers）接口查询，或被邀请方已加入联盟，或邀请状态为released时，需填写准确的被邀请方bcs实例id和邀请状态
+     * @return invitedUserinfo
+     */
     public List<InvitationDetail> getInvitedUserinfo() {
         return invitedUserinfo;
     }
@@ -120,7 +125,10 @@ public class DeleteMemberInviteRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

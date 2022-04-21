@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class InvokeFunctionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class InvokeFunctionRequest {
         return this;
     }
 
-    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -52,9 +55,10 @@ public class InvokeFunctionRequest {
         return this;
     }
 
-    /** 取值为：tail（返回函数执行后的4K日志），或者为空（不返回日志）。
-     * 
-     * @return xCffLogType */
+    /**
+     * 取值为：tail（返回函数执行后的4K日志），或者为空（不返回日志）。
+     * @return xCffLogType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Cff-Log-Type")
     public String getXCffLogType() {
@@ -70,9 +74,10 @@ public class InvokeFunctionRequest {
         return this;
     }
 
-    /** 返回体格式，取值v0,v1。
-     * 
-     * @return xCFFRequestVersion */
+    /**
+     * 返回体格式，取值v0,v1。
+     * @return xCFFRequestVersion
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-CFF-Request-Version")
     public String getXCFFRequestVersion() {
@@ -104,9 +109,10 @@ public class InvokeFunctionRequest {
         return this;
     }
 
-    /** 执行函数请求体，为json格式。
-     * 
-     * @return body */
+    /**
+     * 执行函数请求体，为json格式。
+     * @return body
+     */
     public Map<String, Object> getBody() {
         return body;
     }
@@ -147,7 +153,10 @@ public class InvokeFunctionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

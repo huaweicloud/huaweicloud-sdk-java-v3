@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 音频数据输入列表 */
+/**
+ * 音频数据输入列表
+ */
 public class AudioInputData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AudioInputData {
         return this;
     }
 
-    /** type为obs时输入参数 OBS桶名称。
-     * 
-     * @return bucket */
+    /**
+     * type为obs时输入参数  OBS桶名称。 
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -44,9 +47,10 @@ public class AudioInputData {
         return this;
     }
 
-    /** type为obs时输入参数 OBS桶内的路径，例如“output/c1.mp4”。
-     * 
-     * @return path */
+    /**
+     * type为obs时输入参数  OBS桶内的路径，例如“output/c1.mp4”。 
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -60,9 +64,10 @@ public class AudioInputData {
         return this;
     }
 
-    /** type为url时输入参数 视频数据的URL，目前支持OBS URL，且需要设置该URL对匿名用户可读权限。
-     * 
-     * @return url */
+    /**
+     * type为url时输入参数  视频数据的URL，目前支持OBS URL，且需要设置该URL对匿名用户可读权限。 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -100,7 +105,10 @@ public class AudioInputData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

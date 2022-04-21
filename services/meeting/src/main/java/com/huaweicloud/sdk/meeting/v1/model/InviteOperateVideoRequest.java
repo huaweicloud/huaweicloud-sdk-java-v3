@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class InviteOperateVideoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class InviteOperateVideoRequest {
         return this;
     }
 
-    /** 会议id，创建会议时生成
-     * 
-     * @return conferenceID */
+    /**
+     * 会议id，创建会议时生成
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -50,9 +53,10 @@ public class InviteOperateVideoRequest {
         return this;
     }
 
-    /** 被操作的会场id，可以通过查询会场id接口获取。
-     * 
-     * @return participantID */
+    /**
+     * 被操作的会场id，可以通过查询会场id接口获取。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -66,9 +70,10 @@ public class InviteOperateVideoRequest {
         return this;
     }
 
-    /** 会控授权令牌，通过调用申请会控token的接口生成
-     * 
-     * @return xConferenceAuthorization */
+    /**
+     * 会控授权令牌，通过调用申请会控token的接口生成
+     * @return xConferenceAuthorization
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Conference-Authorization")
     public String getXConferenceAuthorization() {
@@ -93,9 +98,10 @@ public class InviteOperateVideoRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public RestVideoBody getBody() {
         return body;
     }
@@ -136,7 +142,10 @@ public class InviteOperateVideoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

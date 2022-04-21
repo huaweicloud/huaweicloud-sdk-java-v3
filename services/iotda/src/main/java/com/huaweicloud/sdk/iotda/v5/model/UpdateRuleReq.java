@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改规则触发条件请求结构体 */
+/**
+ * 修改规则触发条件请求结构体
+ */
 public class UpdateRuleReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：规则名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
-     * 
-     * @return ruleName */
+    /**
+     * **参数说明**：规则名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -54,9 +57,10 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：用户自定义的规则描述。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：用户自定义的规则描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -70,9 +74,10 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
-     * 
-     * @return select */
+    /**
+     * **参数说明**：用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+     * @return select
+     */
     public String getSelect() {
         return select;
     }
@@ -86,9 +91,10 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
-     * 
-     * @return where */
+    /**
+     * **参数说明**：用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+     * @return where
+     */
     public String getWhere() {
         return where;
     }
@@ -102,9 +108,10 @@ public class UpdateRuleReq {
         return this;
     }
 
-    /** **参数说明**：修改规则条件的状态是否为激活。
-     * 
-     * @return active */
+    /**
+     * **参数说明**：修改规则条件的状态是否为激活。
+     * @return active
+     */
     public Boolean getActive() {
         return active;
     }
@@ -146,7 +153,10 @@ public class UpdateRuleReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

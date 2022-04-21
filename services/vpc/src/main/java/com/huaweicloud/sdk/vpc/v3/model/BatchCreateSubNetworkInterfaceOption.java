@@ -48,9 +48,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：虚拟子网ID 取值范围：标准UUID
-     * 
-     * @return virsubnetId */
+    /**
+     * 功能说明：虚拟子网ID 取值范围：标准UUID
+     * @return virsubnetId
+     */
     public String getVirsubnetId() {
         return virsubnetId;
     }
@@ -64,9 +65,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：宿主网络接口的ID 取值范围：标注UUID 约束：必须是实际存在的端口ID
-     * 
-     * @return parentId */
+    /**
+     * 功能说明：宿主网络接口的ID 取值范围：标注UUID 约束：必须是实际存在的端口ID
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -96,9 +98,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
-     * 
-     * @return securityGroups */
+    /**
+     * 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -112,9 +115,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -128,9 +132,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡是否启用ipv6地址 取值范围：true（开启)，false（关闭） 默认值：false
-     * 
-     * @return ipv6Enable */
+    /**
+     * 功能说明：辅助弹性网卡是否启用ipv6地址 取值范围：true（开启)，false（关闭） 默认值：false
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -144,9 +149,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 功能说明：辅助弹性网卡所属的项目ID 取值范围：标准UUID 约束：只有管理员有权限指定
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：辅助弹性网卡所属的项目ID 取值范围：标准UUID 约束：只有管理员有权限指定
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -192,7 +198,10 @@ public class BatchCreateSubNetworkInterfaceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

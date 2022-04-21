@@ -10,29 +10,44 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 多模态评测的配置 */
+/**
+ * 多模态评测的配置
+ */
 public class MultiModalConfig {
 
-    /** 视频的封装格式。不填写此字段，则默认为auto。注意不论何种格式，均要求帧率在25fps以上，清晰度在240*240以上。 auto 自动判断，系统会自动判断视频封装格式。 avi avi封装格式。 mp4 mp4封装格式。
-     * webm webm封装格式。 mkv mkv封装格式。 flv flv封装格式。 */
+    /**
+     * 视频的封装格式。不填写此字段，则默认为auto。注意不论何种格式，均要求帧率在25fps以上，清晰度在240*240以上。   auto  自动判断，系统会自动判断视频封装格式。  avi  avi封装格式。  mp4  mp4封装格式。  webm  webm封装格式。  mkv  mkv封装格式。  flv  flv封装格式。 
+     */
     public static final class VideoFormatEnum {
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final VideoFormatEnum AUTO = new VideoFormatEnum("auto");
 
-        /** Enum AVI for value: "avi" */
+        /**
+         * Enum AVI for value: "avi"
+         */
         public static final VideoFormatEnum AVI = new VideoFormatEnum("avi");
 
-        /** Enum MP4 for value: "mp4" */
+        /**
+         * Enum MP4 for value: "mp4"
+         */
         public static final VideoFormatEnum MP4 = new VideoFormatEnum("mp4");
 
-        /** Enum WEBM for value: "webm" */
+        /**
+         * Enum WEBM for value: "webm"
+         */
         public static final VideoFormatEnum WEBM = new VideoFormatEnum("webm");
 
-        /** Enum MKV for value: "mkv" */
+        /**
+         * Enum MKV for value: "mkv"
+         */
         public static final VideoFormatEnum MKV = new VideoFormatEnum("mkv");
 
-        /** Enum FLV for value: "flv" */
+        /**
+         * Enum FLV for value: "flv"
+         */
         public static final VideoFormatEnum FLV = new VideoFormatEnum("flv");
 
         private static final Map<String, VideoFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -106,10 +121,14 @@ public class MultiModalConfig {
 
     private VideoFormatEnum videoFormat;
 
-    /** 评测语言和口音。 en_gb 英语-英式口音。 */
+    /**
+     * 评测语言和口音。  en_gb 英语-英式口音。
+     */
     public static final class LanguageEnum {
 
-        /** Enum EN_GB for value: "en_gb" */
+        /**
+         * Enum EN_GB for value: "en_gb"
+         */
         public static final LanguageEnum EN_GB = new LanguageEnum("en_gb");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -178,13 +197,19 @@ public class MultiModalConfig {
 
     private LanguageEnum language;
 
-    /** 评测模式。 word 单词模式。 sentence 句子模式。 */
+    /**
+     * 评测模式。  word 单词模式。  sentence 句子模式。
+     */
     public static final class ModeEnum {
 
-        /** Enum WORD for value: "word" */
+        /**
+         * Enum WORD for value: "word"
+         */
         public static final ModeEnum WORD = new ModeEnum("word");
 
-        /** Enum SENTENCE for value: "sentence" */
+        /**
+         * Enum SENTENCE for value: "sentence"
+         */
         public static final ModeEnum SENTENCE = new ModeEnum("sentence");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -259,10 +284,10 @@ public class MultiModalConfig {
         return this;
     }
 
-    /** 视频的封装格式。不填写此字段，则默认为auto。注意不论何种格式，均要求帧率在25fps以上，清晰度在240*240以上。 auto 自动判断，系统会自动判断视频封装格式。 avi avi封装格式。 mp4 mp4封装格式。
-     * webm webm封装格式。 mkv mkv封装格式。 flv flv封装格式。
-     * 
-     * @return videoFormat */
+    /**
+     * 视频的封装格式。不填写此字段，则默认为auto。注意不论何种格式，均要求帧率在25fps以上，清晰度在240*240以上。   auto  自动判断，系统会自动判断视频封装格式。  avi  avi封装格式。  mp4  mp4封装格式。  webm  webm封装格式。  mkv  mkv封装格式。  flv  flv封装格式。 
+     * @return videoFormat
+     */
     public VideoFormatEnum getVideoFormat() {
         return videoFormat;
     }
@@ -276,9 +301,10 @@ public class MultiModalConfig {
         return this;
     }
 
-    /** 评测语言和口音。 en_gb 英语-英式口音。
-     * 
-     * @return language */
+    /**
+     * 评测语言和口音。  en_gb 英语-英式口音。
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -292,9 +318,10 @@ public class MultiModalConfig {
         return this;
     }
 
-    /** 评测模式。 word 单词模式。 sentence 句子模式。
-     * 
-     * @return mode */
+    /**
+     * 评测模式。  word 单词模式。  sentence 句子模式。
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -333,7 +360,10 @@ public class MultiModalConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

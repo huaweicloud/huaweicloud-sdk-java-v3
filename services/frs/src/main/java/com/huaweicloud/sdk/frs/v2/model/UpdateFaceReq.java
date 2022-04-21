@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateFaceReq */
+/**
+ * UpdateFaceReq
+ */
 public class UpdateFaceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class UpdateFaceReq {
         return this;
     }
 
-    /** Json字符串不校验重复性，自定义字段的key值长度范围为[1,36]，string类型的value长度范围为[1,256]，具体参见[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。
-     * 这里是待修改的参数，external_image_id和external_fields至少选一个。
-     * 
-     * @return externalFields */
+    /**
+     * Json字符串不校验重复性，自定义字段的key值长度范围为[1,36]，string类型的value长度范围为[1,256]，具体参见[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。 这里是待修改的参数，external_image_id和external_fields至少选一个。
+     * @return externalFields
+     */
     public Object getExternalFields() {
         return externalFields;
     }
@@ -45,10 +47,10 @@ public class UpdateFaceReq {
         return this;
     }
 
-    /** 用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。
-     * 这里是待修改的参数，external_image_id和external_fields至少选一个。
-     * 
-     * @return externalImageId */
+    /**
+     * 用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。 这里是待修改的参数，external_image_id和external_fields至少选一个。
+     * @return externalImageId
+     */
     public String getExternalImageId() {
         return externalImageId;
     }
@@ -62,9 +64,10 @@ public class UpdateFaceReq {
         return this;
     }
 
-    /** 人脸库ID，由系统内部生成的唯一ID。
-     * 
-     * @return faceId */
+    /**
+     * 人脸库ID，由系统内部生成的唯一ID。
+     * @return faceId
+     */
     public String getFaceId() {
         return faceId;
     }
@@ -103,7 +106,10 @@ public class UpdateFaceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

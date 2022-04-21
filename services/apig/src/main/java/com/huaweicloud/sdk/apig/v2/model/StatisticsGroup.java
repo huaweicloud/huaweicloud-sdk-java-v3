@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** StatisticsGroup */
+/**
+ * StatisticsGroup
+ */
 public class StatisticsGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,9 +86,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 最大延时 单位：ms
-     * 
-     * @return maxLatency */
+    /**
+     * 最大延时  单位：ms
+     * @return maxLatency
+     */
     public Integer getMaxLatency() {
         return maxLatency;
     }
@@ -100,9 +103,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 平均延时 单位：ms
-     * 
-     * @return avgLatency */
+    /**
+     * 平均延时  单位：ms
+     * @return avgLatency
+     */
     public Float getAvgLatency() {
         return avgLatency;
     }
@@ -116,9 +120,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 请求总次数
-     * 
-     * @return reqCount */
+    /**
+     * 请求总次数
+     * @return reqCount
+     */
     public Integer getReqCount() {
         return reqCount;
     }
@@ -132,9 +137,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 2xx响应码总次数
-     * 
-     * @return reqCount2xx */
+    /**
+     * 2xx响应码总次数
+     * @return reqCount2xx
+     */
     public Integer getReqCount2xx() {
         return reqCount2xx;
     }
@@ -148,9 +154,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 4xx响应码总次数
-     * 
-     * @return reqCount4xx */
+    /**
+     * 4xx响应码总次数
+     * @return reqCount4xx
+     */
     public Integer getReqCount4xx() {
         return reqCount4xx;
     }
@@ -164,9 +171,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 5xx响应码总次数
-     * 
-     * @return reqCount5xx */
+    /**
+     * 5xx响应码总次数
+     * @return reqCount5xx
+     */
     public Integer getReqCount5xx() {
         return reqCount5xx;
     }
@@ -180,9 +188,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 错误次数
-     * 
-     * @return reqCountError */
+    /**
+     * 错误次数
+     * @return reqCountError
+     */
     public Integer getReqCountError() {
         return reqCountError;
     }
@@ -196,9 +205,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 下行吞吐量（byte）
-     * 
-     * @return outputThroughput */
+    /**
+     * 下行吞吐量（byte）
+     * @return outputThroughput
+     */
     public Long getOutputThroughput() {
         return outputThroughput;
     }
@@ -212,9 +222,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 上行吞吐量（byte）
-     * 
-     * @return inputThroughput */
+    /**
+     * 上行吞吐量（byte）
+     * @return inputThroughput
+     */
     public Long getInputThroughput() {
         return inputThroughput;
     }
@@ -228,9 +239,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** API访问的UTC时间戳
-     * 
-     * @return currentMinute */
+    /**
+     * API访问的UTC时间戳
+     * @return currentMinute
+     */
     public Long getCurrentMinute() {
         return currentMinute;
     }
@@ -244,9 +256,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** API分组编号
-     * 
-     * @return groupId */
+    /**
+     * API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -260,9 +273,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** API拥有者
-     * 
-     * @return provider */
+    /**
+     * API拥有者
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -276,9 +290,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** API请求时间
-     * 
-     * @return reqTime */
+    /**
+     * API请求时间
+     * @return reqTime
+     */
     public OffsetDateTime getReqTime() {
         return reqTime;
     }
@@ -292,9 +307,10 @@ public class StatisticsGroup {
         return this;
     }
 
-    /** 记录时间
-     * 
-     * @return registerTime */
+    /**
+     * 记录时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -368,7 +384,10 @@ public class StatisticsGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

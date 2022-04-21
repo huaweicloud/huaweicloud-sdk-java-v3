@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StandardReqDataByNameAndId */
+/**
+ * StandardReqDataByNameAndId
+ */
 public class StandardReqDataByNameAndId {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class StandardReqDataByNameAndId {
         return this;
     }
 
-    /** 被验证人的姓名。
-     * 
-     * @return verificationName */
+    /**
+     * 被验证人的姓名。
+     * @return verificationName
+     */
     public String getVerificationName() {
         return verificationName;
     }
@@ -44,9 +47,10 @@ public class StandardReqDataByNameAndId {
         return this;
     }
 
-    /** 被验证人的身份证号码。
-     * 
-     * @return verificationId */
+    /**
+     * 被验证人的身份证号码。
+     * @return verificationId
+     */
     public String getVerificationId() {
         return verificationId;
     }
@@ -60,9 +64,10 @@ public class StandardReqDataByNameAndId {
         return this;
     }
 
-    /** 现场人像图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
-     * 
-     * @return faceImage */
+    /**
+     * 现场人像图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
+     * @return faceImage
+     */
     public String getFaceImage() {
         return faceImage;
     }
@@ -101,7 +106,10 @@ public class StandardReqDataByNameAndId {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

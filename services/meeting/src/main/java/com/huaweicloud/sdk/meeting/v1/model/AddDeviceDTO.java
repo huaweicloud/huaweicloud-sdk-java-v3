@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 终端信息。 */
+/**
+ * 终端信息。
+ */
 public class AddDeviceDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class AddDeviceDTO {
 
     private String sn;
 
-    /** 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度： 私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂 */
+    /**
+     * 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：   私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
+     */
     public static final class PrjCodeModeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PrjCodeModeEnum NUMBER_0 = new PrjCodeModeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PrjCodeModeEnum NUMBER_1 = new PrjCodeModeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final PrjCodeModeEnum NUMBER_2 = new PrjCodeModeEnum(2);
 
         private static final Map<Integer, PrjCodeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -133,13 +143,19 @@ public class AddDeviceDTO {
 
     private String description;
 
-    /** 终端状态 * 0、正常 * 1、冻结\" 默认值：0。 */
+    /**
+     * 终端状态 * 0、正常 * 1、冻结\" 默认值：0。 
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -219,9 +235,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 终端名称，可以自定义，建议为具体位置，方便识别。 maxLength：64 minLength：1
-     * 
-     * @return name */
+    /**
+     * 终端名称，可以自定义，建议为具体位置，方便识别。 maxLength：64 minLength：1
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -235,9 +252,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 终端型号，枚举类型。当前支持TE系列和部分第三方硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：1
-     * 
-     * @return model */
+    /**
+     * 终端型号，枚举类型。当前支持TE系列和部分第三方硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：1
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -251,9 +269,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 终端SN码，仅可包含数字、字母和下划线。 maxLength：30 minLength：1
-     * 
-     * @return sn */
+    /**
+     * 终端SN码，仅可包含数字、字母和下划线。 maxLength：30 minLength：1
+     * @return sn
+     */
     public String getSn() {
         return sn;
     }
@@ -267,9 +286,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度： 私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
-     * 
-     * @return prjCodeMode */
+    /**
+     * 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：   私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
+     * @return prjCodeMode
+     */
     public PrjCodeModeEnum getPrjCodeMode() {
         return prjCodeMode;
     }
@@ -283,9 +303,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：1
-     * 
-     * @return deptCode */
+    /**
+     * 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：1
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -299,10 +320,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 手机号，必须加上国家码，例如中国大陆手机为“+86xxxxxxxxxxx”。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 maxLength：32 minLength：0 说明： -
-     * 手机号或者邮箱至少填写一个。
-     * 
-     * @return phone */
+    /**
+     * 手机号，必须加上国家码，例如中国大陆手机为“+86xxxxxxxxxxx”。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 maxLength：32 minLength：0 说明： - 手机号或者邮箱至少填写一个。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -316,10 +337,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR
-     * 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html
-     * 
-     * @return country */
+    /**
+     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -333,9 +354,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 统一邮箱格式 maxLength：255 minLength：0
-     * 
-     * @return email */
+    /**
+     * 统一邮箱格式 maxLength：255 minLength：0
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -349,9 +371,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 终端描述 maxLength：128 minLength：0
-     * 
-     * @return description */
+    /**
+     * 终端描述 maxLength：128 minLength：0
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -365,9 +388,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 终端状态 * 0、正常 * 1、冻结\" 默认值：0。
-     * 
-     * @return status */
+    /**
+     * 终端状态 * 0、正常 * 1、冻结\" 默认值：0。 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -381,9 +405,10 @@ public class AddDeviceDTO {
         return this;
     }
 
-    /** 是否发送邮件和短信通知。 * 0：不发送 * 不填或者其他值就发送
-     * 
-     * @return sendNotify */
+    /**
+     * 是否发送邮件和短信通知。 * 0：不发送 * 不填或者其他值就发送
+     * @return sendNotify
+     */
     public String getSendNotify() {
         return sendNotify;
     }
@@ -435,7 +460,10 @@ public class AddDeviceDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

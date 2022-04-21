@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateValueListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表id
-     * 
-     * @return id */
+    /**
+     * 引用表id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -68,9 +71,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表名称
-     * 
-     * @return name */
+    /**
+     * 引用表名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -84,9 +88,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表类型
-     * 
-     * @return type */
+    /**
+     * 引用表类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -100,9 +105,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表描述
-     * 
-     * @return description */
+    /**
+     * 引用表描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -116,9 +122,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 引用表时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -148,9 +155,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表的值
-     * 
-     * @return values */
+    /**
+     * 引用表的值
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -164,9 +172,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return this;
     }
 
-    /** 引用表来源： - 1:表示来源于用户手动创建 - 2:表示来源于moduleX自动创建
-     * 
-     * @return producer */
+    /**
+     * 引用表来源：  - 1:表示来源于用户手动创建  - 2:表示来源于moduleX自动创建
+     * @return producer
+     */
     public Integer getProducer() {
         return producer;
     }
@@ -213,7 +222,10 @@ public class UpdateValueListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

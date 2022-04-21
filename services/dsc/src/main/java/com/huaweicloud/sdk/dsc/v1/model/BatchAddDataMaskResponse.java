@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchAddDataMaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class BatchAddDataMaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 脱敏后的数据的数据列表，结构与请求中结构相同
-     * 
-     * @return maskedData */
+    /**
+     * 脱敏后的数据的数据列表，结构与请求中结构相同
+     * @return maskedData
+     */
     public List<Map<String, Object>> getMaskedData() {
         return maskedData;
     }
@@ -76,7 +79,10 @@ public class BatchAddDataMaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

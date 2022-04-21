@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量启动\\停止任务的详情 */
+/**
+ * 批量启动\\停止任务的详情
+ */
 public class TaskBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class TaskBean {
         return this;
     }
 
-    /** 任务ID, 可为空
-     * 
-     * @return taskId */
+    /**
+     * 任务ID, 可为空
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -55,7 +58,10 @@ public class TaskBean {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHealthmonitorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,12 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 分页查询中每页的健康检查个数 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的健康检查个数
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -104,9 +109,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的健康检查的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的健康检查的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -120,9 +126,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -136,9 +143,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查ID。
-     * 
-     * @return id */
+    /**
+     * 健康检查ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -152,9 +160,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查名称。
-     * 
-     * @return name */
+    /**
+     * 健康检查名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -168,9 +177,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查间隔，单位秒，取值范围[1，50]。
-     * 
-     * @return delay */
+    /**
+     * 健康检查间隔，单位秒，取值范围[1，50]。
+     * @return delay
+     */
     public Integer getDelay() {
         return delay;
     }
@@ -184,9 +194,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查最大重试次数，取值范围[1，10]。
-     * 
-     * @return maxRetries */
+    /**
+     * 健康检查最大重试次数，取值范围[1，10]。
+     * @return maxRetries
+     */
     public Integer getMaxRetries() {
         return maxRetries;
     }
@@ -200,9 +211,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查的管理状态。取值范围：true/false。默认为true；true表示开启健康检查；false表示关闭健康检查。
-     * 
-     * @return adminStateUp */
+    /**
+     * 健康检查的管理状态。取值范围：true/false。默认为true；true表示开启健康检查；false表示关闭健康检查。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -216,9 +228,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查超时时间，单位秒，取值范围[1，50]。 建议该值小于delay的值。
-     * 
-     * @return timeout */
+    /**
+     * 健康检查超时时间，单位秒，取值范围[1，50]。 建议该值小于delay的值。
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -232,9 +245,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查的类型。取值范围：TCP、UDP_CONNECT、HTTP。
-     * 
-     * @return type */
+    /**
+     * 健康检查的类型。取值范围：TCP、UDP_CONNECT、HTTP。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -248,9 +262,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查端口号]。默认为空，表示使用后端云服务器的protocol_port作为健康检查的检查端口。
-     * 
-     * @return monitorPort */
+    /**
+     * 健康检查端口号]。默认为空，表示使用后端云服务器的protocol_port作为健康检查的检查端口。
+     * @return monitorPort
+     */
     public Integer getMonitorPort() {
         return monitorPort;
     }
@@ -264,9 +279,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 期望HTTP响应状态码；默认值：“200”。取值范围：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。 该字段为预留字段，暂未启用。
-     * 
-     * @return expectedCodes */
+    /**
+     * 期望HTTP响应状态码；默认值：“200”。取值范围：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。 该字段为预留字段，暂未启用。
+     * @return expectedCodes
+     */
     public String getExpectedCodes() {
         return expectedCodes;
     }
@@ -280,9 +296,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查时，发送的http请求的域名。仅当type为HTTP时生效。默认为空，表示使用负载均衡器的vip_address作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。例如：www.huaweitest.com
-     * 
-     * @return domainName */
+    /**
+     * 健康检查时，发送的http请求的域名。仅当type为HTTP时生效。默认为空，表示使用负载均衡器的vip_address作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。例如：www.huaweitest.com
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -296,9 +313,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** 健康检查时发送的http请求路径。默认为“/”。以“/”开头。仅当type为HTTP时生效。例如：“/test”
-     * 
-     * @return urlPath */
+    /**
+     * 健康检查时发送的http请求路径。默认为“/”。以“/”开头。仅当type为HTTP时生效。例如：“/test”
+     * @return urlPath
+     */
     public String getUrlPath() {
         return urlPath;
     }
@@ -312,9 +330,10 @@ public class ListHealthmonitorsRequest {
         return this;
     }
 
-    /** HTTP请求的方法；默认值：GET取值范围：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。
-     * 
-     * @return httpMethod */
+    /**
+     * HTTP请求的方法；默认值：GET取值范围：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。
+     * @return httpMethod
+     */
     public String getHttpMethod() {
         return httpMethod;
     }
@@ -391,7 +410,10 @@ public class ListHealthmonitorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

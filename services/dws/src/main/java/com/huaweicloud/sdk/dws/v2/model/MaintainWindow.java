@@ -5,8 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群维护时间窗信息 */
+/**
+ * 集群维护时间窗信息
+ */
 public class MaintainWindow {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "day")
+
+    private String day;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -18,19 +25,32 @@ public class MaintainWindow {
 
     private String endTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "day")
+    public MaintainWindow withDay(String day) {
+        this.day = day;
+        return this;
+    }
 
-    private String day;
+    /**
+     * 每周的维护时间，以天为粒度，取值如下：  - Mon：星期一 - Tue：星期二 - Wed：星期三 - Thu：星期四 - Fri： 星期五 - Sat：星期六 - Sun：星期日
+     * @return day
+     */
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
 
     public MaintainWindow withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    /** 维护开始时间，显示格式为 HH：mm，时区为GMT+0。
-     * 
-     * @return startTime */
+    /**
+     * 维护开始时间，显示格式为 HH：mm，时区为GMT+0。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -44,31 +64,16 @@ public class MaintainWindow {
         return this;
     }
 
-    /** 维护结束时间，显示格式为 HH：mm, 时区为GMT+0。
-     * 
-     * @return endTime */
+    /**
+     * 维护结束时间，显示格式为 HH：mm, 时区为GMT+0。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public MaintainWindow withDay(String day) {
-        this.day = day;
-        return this;
-    }
-
-    /** 每周的维护时间，以天为粒度，取值如下  Mon：星期一  Tue：星期二  Wed：星期三  Thu：星期四  Fri： 星期五  Sat：星期六  Sun：星期日
-     * 
-     * @return day */
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
     }
 
     @Override
@@ -80,27 +85,30 @@ public class MaintainWindow {
             return false;
         }
         MaintainWindow maintainWindow = (MaintainWindow) o;
-        return Objects.equals(this.startTime, maintainWindow.startTime)
-            && Objects.equals(this.endTime, maintainWindow.endTime) && Objects.equals(this.day, maintainWindow.day);
+        return Objects.equals(this.day, maintainWindow.day) && Objects.equals(this.startTime, maintainWindow.startTime)
+            && Objects.equals(this.endTime, maintainWindow.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, day);
+        return Objects.hash(day, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MaintainWindow {\n");
+        sb.append("    day: ").append(toIndentedString(day)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    day: ").append(toIndentedString(day)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

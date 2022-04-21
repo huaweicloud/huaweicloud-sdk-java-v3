@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InsurancePolicyDetail */
+/**
+ * InsurancePolicyDetail
+ */
 public class InsurancePolicyDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class InsurancePolicyDetail {
         return this;
     }
 
-    /** 对应识别出的文本内容
-     * 
-     * @return words */
+    /**
+     * 对应识别出的文本内容
+     * @return words
+     */
     public String getWords() {
         return words;
     }
@@ -58,9 +61,10 @@ public class InsurancePolicyDetail {
         return this;
     }
 
-    /** 对应识别出的四个顶点坐标
-     * 
-     * @return location */
+    /**
+     * 对应识别出的四个顶点坐标 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -97,7 +101,10 @@ public class InsurancePolicyDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

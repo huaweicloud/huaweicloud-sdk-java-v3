@@ -7,16 +7,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 模板名称。 */
+/**
+ * 模板名称。
+ */
 public class Template {
 
-    /** Enum MAGENTO for value: "magento" */
+    /**
+     * Enum MAGENTO for value: "magento"
+     */
     public static final Template MAGENTO = new Template("magento");
 
-    /** Enum MBAAS for value: "mbaas" */
+    /**
+     * Enum MBAAS for value: "mbaas"
+     */
     public static final Template MBAAS = new Template("mbaas");
 
-    /** Enum WORDPRESS for value: "wordpress" */
+    /**
+     * Enum WORDPRESS for value: "wordpress"
+     */
     public static final Template WORDPRESS = new Template("wordpress");
 
     private static final Map<String, Template> STATIC_FIELDS = createStaticFields();

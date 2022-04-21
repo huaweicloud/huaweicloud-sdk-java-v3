@@ -30,9 +30,10 @@ public class PageInfo {
         return this;
     }
 
-    /** 当前页第一条记录
-     * 
-     * @return previousMarker */
+    /**
+     * 当前页第一条记录
+     * @return previousMarker
+     */
     public String getPreviousMarker() {
         return previousMarker;
     }
@@ -46,9 +47,10 @@ public class PageInfo {
         return this;
     }
 
-    /** 当前页总数
-     * 
-     * @return currentCount */
+    /**
+     * 当前页总数
+     * @return currentCount
+     */
     public Integer getCurrentCount() {
         return currentCount;
     }
@@ -62,9 +64,10 @@ public class PageInfo {
         return this;
     }
 
-    /** 当前页最后一条记录，最后一页时无next_marker字段
-     * 
-     * @return nextMarker */
+    /**
+     * 当前页最后一条记录，最后一页时无next_marker字段
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -103,7 +106,10 @@ public class PageInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

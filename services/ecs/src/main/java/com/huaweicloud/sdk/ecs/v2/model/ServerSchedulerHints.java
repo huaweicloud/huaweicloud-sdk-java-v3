@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 弹性云服务器调度信息。 */
+/**
+ * 弹性云服务器调度信息。
+ */
 public class ServerSchedulerHints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ServerSchedulerHints {
         return this;
     }
 
-    /** 反亲和性组信息。 UUID格式。
-     * 
-     * @return group */
+    /**
+     * 反亲和性组信息。  UUID格式。
+     * @return group
+     */
     public List<String> getGroup() {
         return group;
     }
@@ -79,9 +82,10 @@ public class ServerSchedulerHints {
         return this;
     }
 
-    /** 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。值为： shared或dedicated。 - shared：表示共享池。 - dedicated:表示专属主机。 创建与查询此值均有效。
-     * 
-     * @return tenancy */
+    /**
+     * 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。值为： shared或dedicated。  - shared：表示共享池。 - dedicated:表示专属主机。  创建与查询此值均有效。
+     * @return tenancy
+     */
     public List<String> getTenancy() {
         return tenancy;
     }
@@ -111,9 +115,10 @@ public class ServerSchedulerHints {
         return this;
     }
 
-    /** 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。  此属性仅在tenancy值为dedicated时有效。  不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。  创建与查询此值均有效。
+     * @return dedicatedHostId
+     */
     public List<String> getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -152,7 +157,10 @@ public class ServerSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

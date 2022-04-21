@@ -38,9 +38,10 @@ public class HandwritingWordsBlockList {
         return this;
     }
 
-    /** 文字块识别结果。
-     * 
-     * @return words */
+    /**
+     * 文字块识别结果。 
+     * @return words
+     */
     public String getWords() {
         return words;
     }
@@ -54,9 +55,10 @@ public class HandwritingWordsBlockList {
         return this;
     }
 
-    /** 说明该识别结果所属类型，例如：handwriting。
-     * 
-     * @return type */
+    /**
+     * 说明该识别结果所属类型，例如：handwriting。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,9 +72,10 @@ public class HandwritingWordsBlockList {
         return this;
     }
 
-    /** 文字块words的置信度。
-     * 
-     * @return confidence */
+    /**
+     * 文字块words的置信度。 
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -102,9 +105,10 @@ public class HandwritingWordsBlockList {
         return this;
     }
 
-    /** 文字块words的区域位置信息，列表形式，分别表示文字块顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
+    /**
+     * 文字块words的区域位置信息，列表形式，分别表示文字块顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -145,7 +149,10 @@ public class HandwritingWordsBlockList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

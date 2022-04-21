@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** os-start字段数据结构说明 */
+/**
+ * os-start字段数据结构说明
+ */
 public class StartServersInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class StartServersInfo {
         return this;
     }
 
-    /** 裸金属服务器ID列表，详情请参见表3 servers字段数据结构说明
-     * 
-     * @return servers */
+    /**
+     * 裸金属服务器ID列表，详情请参见表3 servers字段数据结构说明
+     * @return servers
+     */
     public List<ServersList> getServers() {
         return servers;
     }
@@ -74,7 +77,10 @@ public class StartServersInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 独享模式域名部分详情 */
+/**
+ * 独享模式域名部分详情
+ */
 public class SimplePremiumWafHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return hostname */
+    /**
+     * 域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -90,9 +94,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -106,9 +111,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -122,9 +128,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 接入状态
-     * 
-     * @return accessStatus */
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -154,9 +161,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 特殊标识
-     * 
-     * @return flag */
+    /**
+     * 特殊标识
+     * @return flag
+     */
     public Map<String, String> getFlag() {
         return flag;
     }
@@ -170,9 +178,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 特殊模式独享引擎的标识（如elb）
-     * 
-     * @return mode */
+    /**
+     * 特殊模式独享引擎的标识（如elb）
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -202,9 +211,10 @@ public class SimplePremiumWafHost {
         return this;
     }
 
-    /** 特殊模式域名所属独享引擎组
-     * 
-     * @return poolIds */
+    /**
+     * 特殊模式域名所属独享引擎组
+     * @return poolIds
+     */
     public List<String> getPoolIds() {
         return poolIds;
     }
@@ -253,7 +263,10 @@ public class SimplePremiumWafHost {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

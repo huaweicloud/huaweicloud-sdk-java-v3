@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTempRequestBody */
+/**
+ * CreateTempRequestBody
+ */
 public class CreateTempRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,12 @@ public class CreateTempRequestBody {
         return this;
     }
 
-    /** project_id minimum: 0 maximum: 2147483647
-     * 
-     * @return projectId */
+    /**
+     * project_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -57,9 +62,12 @@ public class CreateTempRequestBody {
         return this;
     }
 
-    /** temp_type minimum: 0 maximum: 2147483647
-     * 
-     * @return tempType */
+    /**
+     * temp_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return tempType
+     */
     public Integer getTempType() {
         return tempType;
     }
@@ -73,9 +81,10 @@ public class CreateTempRequestBody {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -89,9 +98,10 @@ public class CreateTempRequestBody {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -121,9 +131,10 @@ public class CreateTempRequestBody {
         return this;
     }
 
-    /** contents
-     * 
-     * @return contents */
+    /**
+     * contents
+     * @return contents
+     */
     public List<Object> getContents() {
         return contents;
     }
@@ -166,7 +177,10 @@ public class CreateTempRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

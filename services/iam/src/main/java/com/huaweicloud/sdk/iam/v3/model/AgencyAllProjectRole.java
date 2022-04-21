@@ -31,9 +31,10 @@ public class AgencyAllProjectRole {
         return this;
     }
 
-    /** 权限ID。
-     * 
-     * @return id */
+    /**
+     * 权限ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -56,9 +57,10 @@ public class AgencyAllProjectRole {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -72,9 +74,10 @@ public class AgencyAllProjectRole {
         return this;
     }
 
-    /** 权限名。
-     * 
-     * @return name */
+    /**
+     * 权限名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -113,7 +116,10 @@ public class AgencyAllProjectRole {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

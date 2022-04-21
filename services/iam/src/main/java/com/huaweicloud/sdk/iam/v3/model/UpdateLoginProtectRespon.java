@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** { \&quot;login_protect\&quot;:{ \&quot;user_id\&quot;: \&quot;16b26081f43d4c628c4bb88cf32e9f9b\&quot;,
- * \&quot;enabled\&quot;: true, \&quot;verification_method\&quot;: \&quot;vmfa\&quot; } } */
+/**
+ * {  \&quot;login_protect\&quot;:{         \&quot;user_id\&quot;: \&quot;16b26081f43d4c628c4bb88cf32e9f9b\&quot;,         \&quot;enabled\&quot;: true,         \&quot;verification_method\&quot;: \&quot;vmfa\&quot;     } } 
+ */
 public class UpdateLoginProtectRespon {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +30,10 @@ public class UpdateLoginProtectRespon {
         return this;
     }
 
-    /** 待修改信息的IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * 待修改信息的IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -45,9 +47,10 @@ public class UpdateLoginProtectRespon {
         return this;
     }
 
-    /** IAM用户是否开启登录保护，开启为\"true\"，不开启为\"false\"。
-     * 
-     * @return enabled */
+    /**
+     * IAM用户是否开启登录保护，开启为\"true\"，不开启为\"false\"。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -61,9 +64,10 @@ public class UpdateLoginProtectRespon {
         return this;
     }
 
-    /** IAM用户登录验证方式。手机验证为“sms”,邮箱验证为“email”,MFA验证为“vmfa”。
-     * 
-     * @return verificationMethod */
+    /**
+     * IAM用户登录验证方式。手机验证为“sms”,邮箱验证为“email”,MFA验证为“vmfa”。
+     * @return verificationMethod
+     */
     public String getVerificationMethod() {
         return verificationMethod;
     }
@@ -102,7 +106,10 @@ public class UpdateLoginProtectRespon {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

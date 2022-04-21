@@ -20,16 +20,24 @@ public class SubnetResult {
 
     private String id;
 
-    /** 功能说明：子网的状态。 取值范围：ACTIVE,UNKNOWN,ERROR ACTIVE表示子网已挂载到ROUTER上 UNKNOWN表示子网还未挂载到ROUTER上 ERROR表示子网状态故障 */
+    /**
+     * 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -105,9 +113,10 @@ public class SubnetResult {
         return this;
     }
 
-    /** uuid形式的一个资源标识。
-     * 
-     * @return id */
+    /**
+     * uuid形式的一个资源标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -121,9 +130,10 @@ public class SubnetResult {
         return this;
     }
 
-    /** 功能说明：子网的状态。 取值范围：ACTIVE,UNKNOWN,ERROR ACTIVE表示子网已挂载到ROUTER上 UNKNOWN表示子网还未挂载到ROUTER上 ERROR表示子网状态故障
-     * 
-     * @return status */
+    /**
+     * 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -159,7 +169,10 @@ public class SubnetResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

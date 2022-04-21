@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ImportCertificateAuthorityCertificateRequestBody */
+/**
+ * ImportCertificateAuthorityCertificateRequestBody
+ */
 public class ImportCertificateAuthorityCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ImportCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 证书内容。
-     * 
-     * @return certificate */
+    /**
+     * 证书内容。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -39,9 +42,10 @@ public class ImportCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 证书链内容。
-     * 
-     * @return certificateChain */
+    /**
+     * 证书链内容。
+     * @return certificateChain
+     */
     public String getCertificateChain() {
         return certificateChain;
     }
@@ -79,7 +83,10 @@ public class ImportCertificateAuthorityCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSlowlogStatisticsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前页码
-     * 
-     * @return pageNumber */
+    /**
+     * 当前页码
+     * @return pageNumber
+     */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -63,9 +66,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页条数
-     * 
-     * @return pageRecord */
+    /**
+     * 每页条数
+     * @return pageRecord
+     */
     public Integer getPageRecord() {
         return pageRecord;
     }
@@ -95,9 +99,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 慢日志列表
-     * 
-     * @return slowLogList */
+    /**
+     * 慢日志列表
+     * @return slowLogList
+     */
     public List<SlowLogStatistics> getSlowLogList() {
         return slowLogList;
     }
@@ -111,9 +116,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数
-     * 
-     * @return totalRecord */
+    /**
+     * 总条数
+     * @return totalRecord
+     */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -127,9 +133,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -143,9 +150,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -190,7 +198,10 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

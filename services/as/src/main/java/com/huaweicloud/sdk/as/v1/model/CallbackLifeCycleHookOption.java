@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 伸缩实例生命周期回调 */
+/**
+ * 伸缩实例生命周期回调
+ */
 public class CallbackLifeCycleHookOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class CallbackLifeCycleHookOption {
 
     private String lifecycleHookName;
 
-    /** 生命周期回调操作。ABANDON：终止。CONTINUE：继续。EXTEND：延长超时时间，每次延长1小时。 */
+    /**
+     * 生命周期回调操作。ABANDON：终止。CONTINUE：继续。EXTEND：延长超时时间，每次延长1小时。
+     */
     public static final class LifecycleActionResultEnum {
 
-        /** Enum ABANDON for value: "ABANDON" */
+        /**
+         * Enum ABANDON for value: "ABANDON"
+         */
         public static final LifecycleActionResultEnum ABANDON = new LifecycleActionResultEnum("ABANDON");
 
-        /** Enum CONTINUE for value: "CONTINUE" */
+        /**
+         * Enum CONTINUE for value: "CONTINUE"
+         */
         public static final LifecycleActionResultEnum CONTINUE = new LifecycleActionResultEnum("CONTINUE");
 
-        /** Enum EXTEND for value: "EXTEND" */
+        /**
+         * Enum EXTEND for value: "EXTEND"
+         */
         public static final LifecycleActionResultEnum EXTEND = new LifecycleActionResultEnum("EXTEND");
 
         private static final Map<String, LifecycleActionResultEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +123,10 @@ public class CallbackLifeCycleHookOption {
         return this;
     }
 
-    /** 生命周期操作令牌，通过查询伸缩实例挂起信息接口获取。指定生命周期回调对象，当不传入instance_id字段时，该字段为必选。当该字段与instance_id字段都传入，优先使用该字段进行回调。
-     * 
-     * @return lifecycleActionKey */
+    /**
+     * 生命周期操作令牌，通过查询伸缩实例挂起信息接口获取。指定生命周期回调对象，当不传入instance_id字段时，该字段为必选。当该字段与instance_id字段都传入，优先使用该字段进行回调。
+     * @return lifecycleActionKey
+     */
     public String getLifecycleActionKey() {
         return lifecycleActionKey;
     }
@@ -129,9 +140,10 @@ public class CallbackLifeCycleHookOption {
         return this;
     }
 
-    /** 实例ID。指定生命周期回调对象，当不传入lifecycle_action_key字段时，该字段为必选。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。指定生命周期回调对象，当不传入lifecycle_action_key字段时，该字段为必选。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -145,9 +157,10 @@ public class CallbackLifeCycleHookOption {
         return this;
     }
 
-    /** 生命周期挂钩名称。指定生命周期回调对象，当不传入lifecycle_action_key字段时，该字段为必选。
-     * 
-     * @return lifecycleHookName */
+    /**
+     * 生命周期挂钩名称。指定生命周期回调对象，当不传入lifecycle_action_key字段时，该字段为必选。
+     * @return lifecycleHookName
+     */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -161,9 +174,10 @@ public class CallbackLifeCycleHookOption {
         return this;
     }
 
-    /** 生命周期回调操作。ABANDON：终止。CONTINUE：继续。EXTEND：延长超时时间，每次延长1小时。
-     * 
-     * @return lifecycleActionResult */
+    /**
+     * 生命周期回调操作。ABANDON：终止。CONTINUE：继续。EXTEND：延长超时时间，每次延长1小时。
+     * @return lifecycleActionResult
+     */
     public LifecycleActionResultEnum getLifecycleActionResult() {
         return lifecycleActionResult;
     }
@@ -204,7 +218,10 @@ public class CallbackLifeCycleHookOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 列表接口返回的路由表对象 */
+/**
+ * 列表接口返回的路由表对象
+ */
 public class ListRoutetableOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 路由表ID 取值范围：标准UUID
-     * 
-     * @return id */
+    /**
+     * 路由表ID  取值范围：标准UUID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 路由表名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 路由表名称  取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 路由表所在的虚拟私有云ID
-     * 
-     * @return vpcId */
+    /**
+     * 路由表所在的虚拟私有云ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -91,9 +96,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 帐号ID
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -107,9 +113,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 路由表描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 路由表描述信息  取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +130,10 @@ public class ListRoutetableOption {
         return this;
     }
 
-    /** 是否为默认路由表 取值范围：true表示默认路由表；false表示自定义路由表
-     * 
-     * @return _default */
+    /**
+     * 是否为默认路由表  取值范围：true表示默认路由表；false表示自定义路由表
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -169,7 +177,10 @@ public class ListRoutetableOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

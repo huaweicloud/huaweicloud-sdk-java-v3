@@ -40,9 +40,10 @@ public class FeatureTransformation {
         return this;
     }
 
-    /** Get attr
-     * 
-     * @return attr */
+    /**
+     * Get attr
+     * @return attr
+     */
     public Attribute getAttr() {
         return attr;
     }
@@ -56,9 +57,10 @@ public class FeatureTransformation {
         return this;
     }
 
-    /** 离散方法： - equal_distance_discrete，等距离散 - user_define_discrete，自定义离散 - normalize，归一化 - null，不离散
-     * 
-     * @return discreteMethod */
+    /**
+     * 离散方法： - equal_distance_discrete，等距离散 - user_define_discrete，自定义离散 - normalize，归一化 - null，不离散 
+     * @return discreteMethod
+     */
     public String getDiscreteMethod() {
         return discreteMethod;
     }
@@ -72,9 +74,10 @@ public class FeatureTransformation {
         return this;
     }
 
-    /** 具体处理参数。
-     * 
-     * @return params */
+    /**
+     * 具体处理参数。
+     * @return params
+     */
     public Object getParams() {
         return params;
     }
@@ -113,7 +116,10 @@ public class FeatureTransformation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

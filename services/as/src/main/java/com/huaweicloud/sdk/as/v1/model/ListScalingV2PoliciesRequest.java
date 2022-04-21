@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingV2PoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingResourceId */
+    /**
+     * 伸缩组ID。
+     * @return scalingResourceId
+     */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -59,9 +62,10 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略名称。
-     * 
-     * @return scalingPolicyName */
+    /**
+     * 伸缩策略名称。
+     * @return scalingPolicyName
+     */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -75,9 +79,10 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 策略类型： - 告警策略：ALARM - 定时策略：SCHEDULED - 周期策略：RECURRENCE
-     * 
-     * @return scalingPolicyType */
+    /**
+     * 策略类型：  - 告警策略：ALARM - 定时策略：SCHEDULED - 周期策略：RECURRENCE
+     * @return scalingPolicyType
+     */
     public String getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -91,9 +96,10 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -107,9 +113,10 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -123,9 +130,12 @@ public class ListScalingV2PoliciesRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,7 +181,10 @@ public class ListScalingV2PoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

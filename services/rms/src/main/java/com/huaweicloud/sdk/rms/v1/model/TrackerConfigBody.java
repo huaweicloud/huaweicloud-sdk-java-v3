@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TrackerConfig对象 */
+/**
+ * TrackerConfig对象
+ */
 public class TrackerConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class TrackerConfigBody {
         return this;
     }
 
-    /** Get channel
-     * 
-     * @return channel */
+    /**
+     * Get channel
+     * @return channel
+     */
     public ChannelConfigBody getChannel() {
         return channel;
     }
@@ -63,9 +66,10 @@ public class TrackerConfigBody {
         return this;
     }
 
-    /** Get selector
-     * 
-     * @return selector */
+    /**
+     * Get selector
+     * @return selector
+     */
     public SelectorConfigBody getSelector() {
         return selector;
     }
@@ -79,9 +83,10 @@ public class TrackerConfigBody {
         return this;
     }
 
-    /** IAM委托名称
-     * 
-     * @return agencyName */
+    /**
+     * IAM委托名称
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -120,7 +125,10 @@ public class TrackerConfigBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

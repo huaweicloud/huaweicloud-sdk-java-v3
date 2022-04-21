@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 端口的字典对象。 */
+/**
+ * 端口的字典对象。
+ */
 public class Port {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,16 +28,24 @@ public class Port {
 
     private String name;
 
-    /** 端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN */
+    /**
+     * 端口状态，Hana硬直通虚拟机端口状态总为DOWN  取值范围：ACTIVE、BUILD、DOWN
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum BUILD for value: "BUILD" */
+        /**
+         * Enum BUILD for value: "BUILD"
+         */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -171,9 +181,10 @@ public class Port {
         return this;
     }
 
-    /** 端口唯一标识
-     * 
-     * @return id */
+    /**
+     * 端口唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -187,9 +198,10 @@ public class Port {
         return this;
     }
 
-    /** 端口名称 取值：默认为空，最大长度不超过255
-     * 
-     * @return name */
+    /**
+     * 端口名称  取值：默认为空，最大长度不超过255
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -203,9 +215,10 @@ public class Port {
         return this;
     }
 
-    /** 端口状态，Hana硬直通虚拟机端口状态总为DOWN 取值范围：ACTIVE、BUILD、DOWN
-     * 
-     * @return status */
+    /**
+     * 端口状态，Hana硬直通虚拟机端口状态总为DOWN  取值范围：ACTIVE、BUILD、DOWN
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -219,9 +232,10 @@ public class Port {
         return this;
     }
 
-    /** 管理状态 约束：只支持true，默认为true
-     * 
-     * @return adminStateUp */
+    /**
+     * 管理状态  约束：只支持true，默认为true
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -251,9 +265,10 @@ public class Port {
         return this;
     }
 
-    /** 端口IP。 约束：一个端口只支持一个fixed_ip，且不支持更新。
-     * 
-     * @return fixedIps */
+    /**
+     * 端口IP。  约束：一个端口只支持一个fixed_ip，且不支持更新。
+     * @return fixedIps
+     */
     public List<FixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -267,9 +282,10 @@ public class Port {
         return this;
     }
 
-    /** 端口MAC地址 约束：由系统分配，不支持指定
-     * 
-     * @return macAddress */
+    /**
+     * 端口MAC地址  约束：由系统分配，不支持指定
+     * @return macAddress
+     */
     public String getMacAddress() {
         return macAddress;
     }
@@ -283,9 +299,10 @@ public class Port {
         return this;
     }
 
-    /** 端口所属网络的ID 约束：必须是存在的网络ID
-     * 
-     * @return networkId */
+    /**
+     * 端口所属网络的ID  约束：必须是存在的网络ID
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -299,9 +316,10 @@ public class Port {
         return this;
     }
 
-    /** 端口所属设备ID 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return deviceId */
+    /**
+     * 端口所属设备ID  约束：不支持设置和更新，由系统自动维护
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -315,9 +333,10 @@ public class Port {
         return this;
     }
 
-    /** 设备所属（DHCP/Router/ lb/Nova） 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return deviceOwner */
+    /**
+     * 设备所属（DHCP/Router/ lb/Nova）  约束：不支持设置和更新，由系统自动维护 
+     * @return deviceOwner
+     */
     public String getDeviceOwner() {
         return deviceOwner;
     }
@@ -347,9 +366,10 @@ public class Port {
         return this;
     }
 
-    /** 安全组的UUID(扩展属性)
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组的UUID(扩展属性)
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -379,9 +399,10 @@ public class Port {
         return this;
     }
 
-    /** DHCP的扩展属性。
-     * 
-     * @return extraDhcpOpts */
+    /**
+     * DHCP的扩展属性。
+     * @return extraDhcpOpts
+     */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -411,9 +432,10 @@ public class Port {
         return this;
     }
 
-    /** IP/Mac对列表。 约束：IP地址不允许为 “0.0.0.0/0” 建议：如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。
-     * 
-     * @return allowedAddressPairs */
+    /**
+     * IP/Mac对列表。  约束：IP地址不允许为 “0.0.0.0/0”  建议：如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。
+     * @return allowedAddressPairs
+     */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
         return allowedAddressPairs;
     }
@@ -427,9 +449,10 @@ public class Port {
         return this;
     }
 
-    /** 站点ID
-     * 
-     * @return siteId */
+    /**
+     * 站点ID
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -459,9 +482,10 @@ public class Port {
         return this;
     }
 
-    /** 主网卡默认内网域名信息 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return dnsAssignment */
+    /**
+     * 主网卡默认内网域名信息  约束：不支持设置和更新，由系统自动维护
+     * @return dnsAssignment
+     */
     public List<DnsAssignment> getDnsAssignment() {
         return dnsAssignment;
     }
@@ -475,9 +499,10 @@ public class Port {
         return this;
     }
 
-    /** 主网卡默认内网DNS名称 约束：不支持设置和更新，由系统自动维护
-     * 
-     * @return dnsName */
+    /**
+     * 主网卡默认内网DNS名称  约束：不支持设置和更新，由系统自动维护
+     * @return dnsName
+     */
     public String getDnsName() {
         return dnsName;
     }
@@ -549,7 +574,10 @@ public class Port {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

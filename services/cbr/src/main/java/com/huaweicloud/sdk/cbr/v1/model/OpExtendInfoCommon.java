@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpExtendInfoCommon */
+/**
+ * OpExtendInfoCommon
+ */
 public class OpExtendInfoCommon {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class OpExtendInfoCommon {
         return this;
     }
 
-    /** 进度，取值为0-100 minimum: 0 maximum: 100
-     * 
-     * @return progress */
+    /**
+     * 进度，取值为0-100
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -44,9 +49,10 @@ public class OpExtendInfoCommon {
         return this;
     }
 
-    /** 请求id
-     * 
-     * @return requestId */
+    /**
+     * 请求id
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -60,9 +66,10 @@ public class OpExtendInfoCommon {
         return this;
     }
 
-    /** 备份任务id
-     * 
-     * @return taskId */
+    /**
+     * 备份任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -101,7 +108,10 @@ public class OpExtendInfoCommon {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

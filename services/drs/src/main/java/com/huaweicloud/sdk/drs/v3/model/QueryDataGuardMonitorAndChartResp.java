@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 容灾任务监控数据响应体 */
+/**
+ * 容灾任务监控数据响应体
+ */
 public class QueryDataGuardMonitorAndChartResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class QueryDataGuardMonitorAndChartResp {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class QueryDataGuardMonitorAndChartResp {
         return this;
     }
 
-    /** Get dataGuardMinitor
-     * 
-     * @return dataGuardMinitor */
+    /**
+     * Get dataGuardMinitor
+     * @return dataGuardMinitor
+     */
     public QueryDataGuardMonitorResponse getDataGuardMinitor() {
         return dataGuardMinitor;
     }
@@ -89,7 +93,10 @@ public class QueryDataGuardMonitorAndChartResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

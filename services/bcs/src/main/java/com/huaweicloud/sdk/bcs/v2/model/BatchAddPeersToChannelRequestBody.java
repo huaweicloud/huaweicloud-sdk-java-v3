@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点加入通道 */
+/**
+ * 节点加入通道
+ */
 public class BatchAddPeersToChannelRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchAddPeersToChannelRequestBody {
         return this;
     }
 
-    /** 加入某个通道的节点信息
-     * 
-     * @return channelPeers */
+    /**
+     * 加入某个通道的节点信息
+     * @return channelPeers
+     */
     public List<PeerChannelInfo> getChannelPeers() {
         return channelPeers;
     }
@@ -74,7 +77,10 @@ public class BatchAddPeersToChannelRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

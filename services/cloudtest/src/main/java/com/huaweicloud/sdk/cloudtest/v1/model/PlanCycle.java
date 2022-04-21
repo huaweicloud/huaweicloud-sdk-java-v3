@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 计划周期信息 */
+/**
+ * 计划周期信息
+ */
 public class PlanCycle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PlanCycle {
         return this;
     }
 
-    /** 计划开始时间，要求用UTC时间表示。如2020-03-04
-     * 
-     * @return startDate */
+    /**
+     * 计划开始时间，要求用UTC时间表示。如2020-03-04
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -39,9 +42,10 @@ public class PlanCycle {
         return this;
     }
 
-    /** 计划结束时间，要求用UTC时间表示。如2020-03-31
-     * 
-     * @return endDate */
+    /**
+     * 计划结束时间，要求用UTC时间表示。如2020-03-31
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -77,7 +81,10 @@ public class PlanCycle {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

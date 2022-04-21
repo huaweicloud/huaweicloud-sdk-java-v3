@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 回源请求头 */
+/**
+ * 回源请求头
+ */
 public class OriginRequestHeader {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OriginRequestHeader {
         return this;
     }
 
-    /** 设置回源请求头参数。格式要求：长度1~64，由数字，大小写字母，中划线-组成。
-     * 
-     * @return name */
+    /**
+     * 设置回源请求头参数。格式要求：长度1~64，由数字，大小写字母，中划线-组成。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class OriginRequestHeader {
         return this;
     }
 
-    /** 设置回源请求头参数的值。当为删除动作时，可不填。格式要求：长度1~512。不支持中文，不支持变量配置，如：$client_ip,$remote_port等。
-     * 
-     * @return value */
+    /**
+     * 设置回源请求头参数的值。当为删除动作时，可不填。格式要求：长度1~512。不支持中文，不支持变量配置，如：$client_ip,$remote_port等。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -60,9 +64,10 @@ public class OriginRequestHeader {
         return this;
     }
 
-    /** 回源请求头设置类型。delete：删除，set：设置。同一个请求头字段只允许删除或者设置。设置：若原始回源请求中不存在该字段，先执行新增再执行设置。
-     * 
-     * @return action */
+    /**
+     * 回源请求头设置类型。delete：删除，set：设置。同一个请求头字段只允许删除或者设置。设置：若原始回源请求中不存在该字段，先执行新增再执行设置。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -101,7 +106,10 @@ public class OriginRequestHeader {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

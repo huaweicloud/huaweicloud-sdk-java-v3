@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建或更新引用表 */
+/**
+ * 创建或更新引用表
+ */
 public class UpdateValueListRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,37 +23,59 @@ public class UpdateValueListRequestBody {
 
     private String name;
 
-    /** 引用表类型，参见枚举列表 */
+    /**
+     * 引用表类型，参见枚举列表
+     */
     public static final class TypeEnum {
 
-        /** Enum URL for value: "url" */
+        /**
+         * Enum URL for value: "url"
+         */
         public static final TypeEnum URL = new TypeEnum("url");
 
-        /** Enum PARAMS for value: "params" */
+        /**
+         * Enum PARAMS for value: "params"
+         */
         public static final TypeEnum PARAMS = new TypeEnum("params");
 
-        /** Enum IP for value: "ip" */
+        /**
+         * Enum IP for value: "ip"
+         */
         public static final TypeEnum IP = new TypeEnum("ip");
 
-        /** Enum COOKIE for value: "cookie" */
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
         public static final TypeEnum COOKIE = new TypeEnum("cookie");
 
-        /** Enum REFERER for value: "referer" */
+        /**
+         * Enum REFERER for value: "referer"
+         */
         public static final TypeEnum REFERER = new TypeEnum("referer");
 
-        /** Enum USER_AGENT for value: "user-agent" */
+        /**
+         * Enum USER_AGENT for value: "user-agent"
+         */
         public static final TypeEnum USER_AGENT = new TypeEnum("user-agent");
 
-        /** Enum HEADER for value: "header" */
+        /**
+         * Enum HEADER for value: "header"
+         */
         public static final TypeEnum HEADER = new TypeEnum("header");
 
-        /** Enum RESPONSE_CODE for value: "response_code" */
+        /**
+         * Enum RESPONSE_CODE for value: "response_code"
+         */
         public static final TypeEnum RESPONSE_CODE = new TypeEnum("response_code");
 
-        /** Enum RESPONSE_HEADER for value: "response_header" */
+        /**
+         * Enum RESPONSE_HEADER for value: "response_header"
+         */
         public static final TypeEnum RESPONSE_HEADER = new TypeEnum("response_header");
 
-        /** Enum RESOPNSE_BODY for value: "resopnse_body" */
+        /**
+         * Enum RESOPNSE_BODY for value: "resopnse_body"
+         */
         public static final TypeEnum RESOPNSE_BODY = new TypeEnum("resopnse_body");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +168,10 @@ public class UpdateValueListRequestBody {
         return this;
     }
 
-    /** 引用表名称，2-32位字符串组成
-     * 
-     * @return name */
+    /**
+     * 引用表名称，2-32位字符串组成
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -160,9 +185,10 @@ public class UpdateValueListRequestBody {
         return this;
     }
 
-    /** 引用表类型，参见枚举列表
-     * 
-     * @return type */
+    /**
+     * 引用表类型，参见枚举列表
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -192,9 +218,10 @@ public class UpdateValueListRequestBody {
         return this;
     }
 
-    /** 引用表的值
-     * 
-     * @return values */
+    /**
+     * 引用表的值
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -208,9 +235,10 @@ public class UpdateValueListRequestBody {
         return this;
     }
 
-    /** 引用表描述，最长128字符
-     * 
-     * @return description */
+    /**
+     * 引用表描述，最长128字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -251,7 +279,10 @@ public class UpdateValueListRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

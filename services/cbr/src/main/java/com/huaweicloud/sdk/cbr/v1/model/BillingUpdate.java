@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** BillingUpdate */
+/**
+ * BillingUpdate
+ */
 public class BillingUpdate {
 
-    /** 存储库规格 */
+    /**
+     * 存储库规格
+     */
     public static final class ConsistentLevelEnum {
 
-        /** Enum APP_CONSISTENT for value: "app_consistent" */
+        /**
+         * Enum APP_CONSISTENT for value: "app_consistent"
+         */
         public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
 
-        /** Enum CRASH_CONSISTENT for value: "crash_consistent" */
+        /**
+         * Enum CRASH_CONSISTENT for value: "crash_consistent"
+         */
         public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
 
         private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class BillingUpdate {
         return this;
     }
 
-    /** 存储库规格
-     * 
-     * @return consistentLevel */
+    /**
+     * 存储库规格
+     * @return consistentLevel
+     */
     public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
@@ -115,9 +124,12 @@ public class BillingUpdate {
         return this;
     }
 
-    /** 存储库大小，单位为GB minimum: 1 maximum: 10485760
-     * 
-     * @return size */
+    /**
+     * 存储库大小，单位为GB
+     * minimum: 1
+     * maximum: 10485760
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -154,7 +166,10 @@ public class BillingUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Computes */
+/**
+ * Computes
+ */
 public class Computes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Computes {
         return this;
     }
 
-    /** 群组类型。 - X86：X86架构。 - ARM：ARM架构。
-     * 
-     * @return groupType */
+    /**
+     * 群组类型。  - X86：X86架构。 - ARM：ARM架构。
+     * @return groupType
+     */
     public String getGroupType() {
         return groupType;
     }
@@ -58,9 +61,10 @@ public class Computes {
         return this;
     }
 
-    /** 计算规格信息。
-     * 
-     * @return computeFlavors */
+    /**
+     * 计算规格信息。
+     * @return computeFlavors
+     */
     public List<ScaleFlavors> getComputeFlavors() {
         return computeFlavors;
     }
@@ -97,7 +101,10 @@ public class Computes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

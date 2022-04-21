@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BCS组织维度监控数据列表结构 */
+/**
+ * BCS组织维度监控数据列表结构
+ */
 public class EntityMetricList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class EntityMetricList {
         return this;
     }
 
-    /** 指标对象列表。
-     * 
-     * @return dimensions */
+    /**
+     * 指标对象列表。
+     * @return dimensions
+     */
     public List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -74,9 +77,10 @@ public class EntityMetricList {
         return this;
     }
 
-    /** 监控数据列表项目。
-     * 
-     * @return values */
+    /**
+     * 监控数据列表项目。
+     * @return values
+     */
     public List<EntityMetricListItem> getValues() {
         return values;
     }
@@ -113,7 +117,10 @@ public class EntityMetricList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

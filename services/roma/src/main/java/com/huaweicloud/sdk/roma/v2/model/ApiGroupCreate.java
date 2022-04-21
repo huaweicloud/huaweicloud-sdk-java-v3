@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiGroupCreate */
+/**
+ * ApiGroupCreate
+ */
 public class ApiGroupCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ApiGroupCreate {
         return this;
     }
 
-    /** API分组的名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头，3-255个字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * API分组的名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头，3-255个字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class ApiGroupCreate {
         return this;
     }
 
-    /** API分组描述。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * API分组描述。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -65,9 +69,10 @@ public class ApiGroupCreate {
         return this;
     }
 
-    /** 分组归属的集成应用编号。 分组版本V2时必填。
-     * 
-     * @return romaAppId */
+    /**
+     * 分组归属的集成应用编号。  分组版本V2时必填。
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -81,9 +86,10 @@ public class ApiGroupCreate {
         return this;
     }
 
-    /** 分组版本 - V1：全局分组 - V2：应用级分组
-     * 
-     * @return version */
+    /**
+     * 分组版本  - V1：全局分组 - V2：应用级分组
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -123,7 +129,10 @@ public class ApiGroupCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页对象 */
+/**
+ * 分页对象
+ */
 public class PageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class PageInfo {
         return this;
     }
 
-    /** 当前页的资源数量 minimum: 0 maximum: 200
-     * 
-     * @return currentCount */
+    /**
+     * 当前页的资源数量
+     * minimum: 0
+     * maximum: 200
+     * @return currentCount
+     */
     public Integer getCurrentCount() {
         return currentCount;
     }
@@ -39,9 +44,10 @@ public class PageInfo {
         return this;
     }
 
-    /** 下一页的marker
-     * 
-     * @return nextMarker */
+    /**
+     * 下一页的marker
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -78,7 +84,10 @@ public class PageInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

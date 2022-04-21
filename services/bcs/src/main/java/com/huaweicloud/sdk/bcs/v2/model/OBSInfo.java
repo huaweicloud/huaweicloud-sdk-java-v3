@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OBS桶信息 */
+/**
+ * OBS桶信息
+ */
 public class OBSInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OBSInfo {
         return this;
     }
 
-    /** OBS桶名称
-     * 
-     * @return name */
+    /**
+     * OBS桶名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class OBSInfo {
         return this;
     }
 
-    /** OBS桶地址
-     * 
-     * @return addr */
+    /**
+     * OBS桶地址
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -77,7 +81,10 @@ public class OBSInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

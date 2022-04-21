@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneListEndpointsRequest {
 
-    /** 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。 */
+    /**
+     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
+     */
     public static final class InterfaceEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final InterfaceEnum PUBLIC = new InterfaceEnum("public");
 
-        /** Enum INTERNAL for value: "internal" */
+        /**
+         * Enum INTERNAL for value: "internal"
+         */
         public static final InterfaceEnum INTERNAL = new InterfaceEnum("internal");
 
-        /** Enum ADMIN for value: "admin" */
+        /**
+         * Enum ADMIN for value: "admin"
+         */
         public static final InterfaceEnum ADMIN = new InterfaceEnum("admin");
 
         private static final Map<String, InterfaceEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class KeystoneListEndpointsRequest {
         return this;
     }
 
-    /** 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
-     * 
-     * @return _interface */
+    /**
+     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
+     * @return _interface
+     */
     public InterfaceEnum getInterface() {
         return _interface;
     }
@@ -119,9 +130,10 @@ public class KeystoneListEndpointsRequest {
         return this;
     }
 
-    /** 服务ID。
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID。
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -158,7 +170,10 @@ public class KeystoneListEndpointsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

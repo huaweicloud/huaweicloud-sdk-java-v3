@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数流节点执行详细信息 */
+/**
+ * 函数流节点执行详细信息
+ */
 public class NodeExecutionDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class NodeExecutionDetail {
         return this;
     }
 
-    /** 流程节点ID
-     * 
-     * @return nodeId */
+    /**
+     * 流程节点ID
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -58,9 +61,10 @@ public class NodeExecutionDetail {
         return this;
     }
 
-    /** 节点执行记录
-     * 
-     * @return executions */
+    /**
+     * 节点执行记录
+     * @return executions
+     */
     public List<NodeExecution> getExecutions() {
         return executions;
     }
@@ -97,7 +101,10 @@ public class NodeExecutionDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

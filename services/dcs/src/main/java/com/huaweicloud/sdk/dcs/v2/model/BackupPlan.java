@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BackupPlan */
+/**
+ * BackupPlan
+ */
 public class BackupPlan {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class BackupPlan {
         return this;
     }
 
-    /** 备份的时区。取值为-1200 ~+1200之间的时区。若为空则默认使用DCS-Server节点的当前时区。
-     * 
-     * @return timezoneOffset */
+    /**
+     * 备份的时区。取值为-1200 ~+1200之间的时区。若为空则默认使用DCS-Server节点的当前时区。
+     * @return timezoneOffset
+     */
     public String getTimezoneOffset() {
         return timezoneOffset;
     }
@@ -68,9 +71,10 @@ public class BackupPlan {
         return this;
     }
 
-    /** 每周的周几开始备份，取值1-7，1代表周一，7代表周日。
-     * 
-     * @return backupAt */
+    /**
+     * 每周的周几开始备份，取值1-7，1代表周一，7代表周日。
+     * @return backupAt
+     */
     public List<Integer> getBackupAt() {
         return backupAt;
     }
@@ -84,9 +88,10 @@ public class BackupPlan {
         return this;
     }
 
-    /** 备份周期类型，目前支持“weekly”。
-     * 
-     * @return periodType */
+    /**
+     * 备份周期类型，目前支持“weekly”。
+     * @return periodType
+     */
     public String getPeriodType() {
         return periodType;
     }
@@ -100,9 +105,10 @@ public class BackupPlan {
         return this;
     }
 
-    /** 备份执行时间，“00:00-01:00”代表0点开始执行备份。
-     * 
-     * @return beginAt */
+    /**
+     * 备份执行时间，“00:00-01:00”代表0点开始执行备份。
+     * @return beginAt
+     */
     public String getBeginAt() {
         return beginAt;
     }
@@ -143,7 +149,10 @@ public class BackupPlan {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

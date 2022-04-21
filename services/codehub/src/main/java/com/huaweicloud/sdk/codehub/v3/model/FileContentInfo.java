@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FileContentInfo */
+/**
+ * FileContentInfo
+ */
 public class FileContentInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -79,9 +82,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return filePath */
+    /**
+     * 文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -95,9 +99,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 文件大小
-     * 
-     * @return size */
+    /**
+     * 文件大小
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -111,9 +116,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 文件编码
-     * 
-     * @return encoding */
+    /**
+     * 文件编码
+     * @return encoding
+     */
     public String getEncoding() {
         return encoding;
     }
@@ -127,9 +133,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** sha256编码的文件内容
-     * 
-     * @return contentSha256 */
+    /**
+     * sha256编码的文件内容
+     * @return contentSha256
+     */
     public String getContentSha256() {
         return contentSha256;
     }
@@ -143,9 +150,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 分支名
-     * 
-     * @return ref */
+    /**
+     * 分支名
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -159,9 +167,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** blob sha
-     * 
-     * @return blobId */
+    /**
+     * blob sha
+     * @return blobId
+     */
     public String getBlobId() {
         return blobId;
     }
@@ -175,9 +184,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 提交对应的SHA id
-     * 
-     * @return commitId */
+    /**
+     * 提交对应的SHA id
+     * @return commitId
+     */
     public String getCommitId() {
         return commitId;
     }
@@ -191,9 +201,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** 最后一个提交对应的SHA id
-     * 
-     * @return lastCommitId */
+    /**
+     * 最后一个提交对应的SHA id
+     * @return lastCommitId
+     */
     public String getLastCommitId() {
         return lastCommitId;
     }
@@ -207,9 +218,10 @@ public class FileContentInfo {
         return this;
     }
 
-    /** base64编码的文件内容
-     * 
-     * @return content */
+    /**
+     * base64编码的文件内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -262,7 +274,10 @@ public class FileContentInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

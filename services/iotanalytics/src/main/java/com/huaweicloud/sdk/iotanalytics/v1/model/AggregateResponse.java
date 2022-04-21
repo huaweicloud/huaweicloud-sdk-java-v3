@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 聚合计算 */
+/**
+ * 聚合计算
+ */
 public class AggregateResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class AggregateResponse {
         return this;
     }
 
-    /** 输入参数
-     * 
-     * @return inputs */
+    /**
+     * 输入参数
+     * @return inputs
+     */
     public List<InputResponse> getInputs() {
         return inputs;
     }
@@ -82,9 +85,10 @@ public class AggregateResponse {
         return this;
     }
 
-    /** Get expression
-     * 
-     * @return expression */
+    /**
+     * Get expression
+     * @return expression
+     */
     public Expression getExpression() {
         return expression;
     }
@@ -98,9 +102,10 @@ public class AggregateResponse {
         return this;
     }
 
-    /** 输出属性名(不推荐使用，待废弃，使用outputs替代)
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名(不推荐使用，待废弃，使用outputs替代)
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -130,9 +135,10 @@ public class AggregateResponse {
         return this;
     }
 
-    /** Get outputs
-     * 
-     * @return outputs */
+    /**
+     * Get outputs
+     * @return outputs
+     */
     public List<OutputResponse> getOutputs() {
         return outputs;
     }
@@ -155,9 +161,10 @@ public class AggregateResponse {
         return this;
     }
 
-    /** Get schedule
-     * 
-     * @return schedule */
+    /**
+     * Get schedule
+     * @return schedule
+     */
     public DTSchedule getSchedule() {
         return schedule;
     }
@@ -200,7 +207,10 @@ public class AggregateResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

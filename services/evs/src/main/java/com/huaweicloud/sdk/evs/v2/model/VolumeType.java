@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VolumeType */
+/**
+ * VolumeType
+ */
 public class VolumeType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class VolumeType {
         return this;
     }
 
-    /** 云硬盘类型的ID。
-     * 
-     * @return id */
+    /**
+     * 云硬盘类型的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class VolumeType {
         return this;
     }
 
-    /** 云硬盘类型名称。
-     * 
-     * @return name */
+    /**
+     * 云硬盘类型名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class VolumeType {
         return this;
     }
 
-    /** Get extraSpecs
-     * 
-     * @return extraSpecs */
+    /**
+     * Get extraSpecs
+     * @return extraSpecs
+     */
     public VolumeTypeExtraSpecs getExtraSpecs() {
         return extraSpecs;
     }
@@ -101,9 +106,10 @@ public class VolumeType {
         return this;
     }
 
-    /** 云硬盘类型的描述信息。
-     * 
-     * @return description */
+    /**
+     * 云硬盘类型的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -117,9 +123,10 @@ public class VolumeType {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return qosSpecsId */
+    /**
+     * 预留属性。
+     * @return qosSpecsId
+     */
     public String getQosSpecsId() {
         return qosSpecsId;
     }
@@ -133,9 +140,10 @@ public class VolumeType {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return isPublic */
+    /**
+     * 预留属性。
+     * @return isPublic
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -179,7 +187,10 @@ public class VolumeType {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

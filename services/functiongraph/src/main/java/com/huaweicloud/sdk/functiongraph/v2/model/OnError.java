@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 错误处理策略详情 */
+/**
+ * 错误处理策略详情
+ */
 public class OnError {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OnError {
         return this;
     }
 
-    /** 错误匹配表达式，用来过滤需要处理的异常
-     * 
-     * @return error */
+    /**
+     * 错误匹配表达式，用来过滤需要处理的异常
+     * @return error
+     */
     public String getError() {
         return error;
     }
@@ -44,9 +47,10 @@ public class OnError {
         return this;
     }
 
-    /** 下一步骤节点ID
-     * 
-     * @return transition */
+    /**
+     * 下一步骤节点ID
+     * @return transition
+     */
     public String getTransition() {
         return transition;
     }
@@ -60,9 +64,10 @@ public class OnError {
         return this;
     }
 
-    /** 重试策略名称
-     * 
-     * @return retryRef */
+    /**
+     * 重试策略名称
+     * @return retryRef
+     */
     public String getRetryRef() {
         return retryRef;
     }
@@ -100,7 +105,10 @@ public class OnError {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

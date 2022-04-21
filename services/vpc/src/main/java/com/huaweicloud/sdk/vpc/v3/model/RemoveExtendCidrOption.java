@@ -39,9 +39,10 @@ public class RemoveExtendCidrOption {
         return this;
     }
 
-    /** 功能说明：移除VPC扩展网段 取值范围：该VPC已经存在的扩展网段 约束：移除扩展网段前，请先清理该VPC下对应cidr范围内的subnet；当前只支持一个一个移除
-     * 
-     * @return extendCidrs */
+    /**
+     * 功能说明：移除VPC扩展网段 取值范围：该VPC已经存在的扩展网段 约束：移除扩展网段前，请先清理该VPC下对应cidr范围内的subnet；当前只支持一个一个移除
+     * @return extendCidrs
+     */
     public List<String> getExtendCidrs() {
         return extendCidrs;
     }
@@ -76,7 +77,10 @@ public class RemoveExtendCidrOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

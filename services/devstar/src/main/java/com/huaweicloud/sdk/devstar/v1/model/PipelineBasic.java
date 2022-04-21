@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 流水线资源信息 */
+/**
+ * 流水线资源信息
+ */
 public class PipelineBasic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,16 +35,24 @@ public class PipelineBasic {
 
     private String url;
 
-    /** 流水线最后一次运行状态,success:成功,failed:失败,running:运行中 */
+    /**
+     * 流水线最后一次运行状态,success:成功,failed:失败,running:运行中
+     */
     public static final class LastRunningStatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final LastRunningStatusEnum SUCCESS = new LastRunningStatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final LastRunningStatusEnum FAILED = new LastRunningStatusEnum("failed");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final LastRunningStatusEnum RUNNING = new LastRunningStatusEnum("running");
 
         private static final Map<String, LastRunningStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class PipelineBasic {
         return this;
     }
 
-    /** DevStar系统生成的流水线UUID
-     * 
-     * @return uuid */
+    /**
+     * DevStar系统生成的流水线UUID
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -134,9 +145,10 @@ public class PipelineBasic {
         return this;
     }
 
-    /** CloudPipeline系统对应流水线ID
-     * 
-     * @return id */
+    /**
+     * CloudPipeline系统对应流水线ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -150,9 +162,10 @@ public class PipelineBasic {
         return this;
     }
 
-    /** 流水线名称
-     * 
-     * @return name */
+    /**
+     * 流水线名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -166,9 +179,10 @@ public class PipelineBasic {
         return this;
     }
 
-    /** 流水线地址
-     * 
-     * @return url */
+    /**
+     * 流水线地址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -182,9 +196,10 @@ public class PipelineBasic {
         return this;
     }
 
-    /** 流水线最后一次运行状态,success:成功,failed:失败,running:运行中
-     * 
-     * @return lastRunningStatus */
+    /**
+     * 流水线最后一次运行状态,success:成功,failed:失败,running:运行中
+     * @return lastRunningStatus
+     */
     public LastRunningStatusEnum getLastRunningStatus() {
         return lastRunningStatus;
     }
@@ -225,7 +240,10 @@ public class PipelineBasic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

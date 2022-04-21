@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OrderV3 */
+/**
+ * OrderV3
+ */
 public class OrderV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class OrderV3 {
         return this;
     }
 
-    /** 可使用折扣的订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 可使用折扣的订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -58,9 +61,10 @@ public class OrderV3 {
         return this;
     }
 
-    /** 可使用折扣的订单项列表，具体参见表4。
-     * 
-     * @return orderLineItems */
+    /**
+     * 可使用折扣的订单项列表，具体参见表4。
+     * @return orderLineItems
+     */
     public List<OrderLineItemV3> getOrderLineItems() {
         return orderLineItems;
     }
@@ -97,7 +101,10 @@ public class OrderV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MetricRequestV2DividendCustomFields */
+/**
+ * MetricRequestV2DividendCustomFields
+ */
 public class MetricRequestV2DividendCustomFields {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MetricRequestV2DividendCustomFields {
         return this;
     }
 
-    /** 自定义字段名称
-     * 
-     * @return name */
+    /**
+     * 自定义字段名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class MetricRequestV2DividendCustomFields {
         return this;
     }
 
-    /** 自定义字段取值，逗号分隔
-     * 
-     * @return options */
+    /**
+     * 自定义字段取值，逗号分隔
+     * @return options
+     */
     public String getOptions() {
         return options;
     }
@@ -79,7 +83,10 @@ public class MetricRequestV2DividendCustomFields {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

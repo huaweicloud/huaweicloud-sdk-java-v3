@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class ListVolumesByTagsRequestBody {
 
-    /** 操作标识。 根据标签查询云硬盘实例详情时使用“filter”。 */
+    /**
+     * 操作标识。  根据标签查询云硬盘实例详情时使用“filter”。
+     */
     public static final class ActionEnum {
 
-        /** Enum FILTER for value: "filter" */
+        /**
+         * Enum FILTER for value: "filter"
+         */
         public static final ActionEnum FILTER = new ActionEnum("filter");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +119,10 @@ public class ListVolumesByTagsRequestBody {
         return this;
     }
 
-    /** 操作标识。 根据标签查询云硬盘实例详情时使用“filter”。
-     * 
-     * @return action */
+    /**
+     * 操作标识。  根据标签查询云硬盘实例详情时使用“filter”。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -129,9 +136,12 @@ public class ListVolumesByTagsRequestBody {
         return this;
     }
 
-    /** 查询记录数。最小值1，最大值1000，默认为1000。返回的结果中记录数不超过limit值 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。最小值1，最大值1000，默认为1000。返回的结果中记录数不超过limit值
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -161,9 +171,10 @@ public class ListVolumesByTagsRequestBody {
         return this;
     }
 
-    /** 资源本身支持的查询条件。标签列表中的标签key值不允许重复。
-     * 
-     * @return matches */
+    /**
+     * 资源本身支持的查询条件。标签列表中的标签key值不允许重复。
+     * @return matches
+     */
     public List<Match> getMatches() {
         return matches;
     }
@@ -177,9 +188,10 @@ public class ListVolumesByTagsRequestBody {
         return this;
     }
 
-    /** 索引位置。最小值0，默认为0。返回的结果中第一条记录为符合查询条件的第“offset值+1”条记录
-     * 
-     * @return offset */
+    /**
+     * 索引位置。最小值0，默认为0。返回的结果中第一条记录为符合查询条件的第“offset值+1”条记录
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -209,9 +221,10 @@ public class ListVolumesByTagsRequestBody {
         return this;
     }
 
-    /** 标签的键值对。标签列表中最多包含10个key 。标签列表中的标签key值不允许重复。标签列表中多个key之间是“与”的关系，云硬盘必须满足请求中所有key才会匹配出来。
-     * 
-     * @return tags */
+    /**
+     * 标签的键值对。标签列表中最多包含10个key 。标签列表中的标签key值不允许重复。标签列表中多个key之间是“与”的关系，云硬盘必须满足请求中所有key才会匹配出来。
+     * @return tags
+     */
     public List<TagsForListVolumes> getTags() {
         return tags;
     }
@@ -254,7 +267,10 @@ public class ListVolumesByTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

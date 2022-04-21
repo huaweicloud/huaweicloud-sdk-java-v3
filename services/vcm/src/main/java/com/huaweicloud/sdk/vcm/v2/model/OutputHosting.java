@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 托管输出位置 */
+/**
+ * 托管输出位置
+ */
 public class OutputHosting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class OutputHosting {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public OutputHostingObs getObs() {
         return obs;
     }
@@ -54,9 +57,10 @@ public class OutputHosting {
         return this;
     }
 
-    /** 托管文件result.json的过期日期，文件默认保存48小时。 result.json文件生成且未过期时，会有这个字段。
-     * 
-     * @return resultJsonOverdueAt */
+    /**
+     * 托管文件result.json的过期日期，文件默认保存48小时。 result.json文件生成且未过期时，会有这个字段。
+     * @return resultJsonOverdueAt
+     */
     public String getResultJsonOverdueAt() {
         return resultJsonOverdueAt;
     }
@@ -70,9 +74,10 @@ public class OutputHosting {
         return this;
     }
 
-    /** True表示校验obs。
-     * 
-     * @return checkObsAfterEndState */
+    /**
+     * True表示校验obs。
+     * @return checkObsAfterEndState
+     */
     public Boolean getCheckObsAfterEndState() {
         return checkObsAfterEndState;
     }
@@ -111,7 +116,10 @@ public class OutputHosting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

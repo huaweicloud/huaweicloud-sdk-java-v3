@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubCutomerInfoV2 */
+/**
+ * SubCutomerInfoV2
+ */
 public class SubCutomerInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 手机号（匿名化）
-     * 
-     * @return mobile */
+    /**
+     * 手机号（匿名化）
+     * @return mobile
+     */
     public String getMobile() {
         return mobile;
     }
@@ -59,9 +62,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 邮箱（匿名化）
-     * 
-     * @return email */
+    /**
+     * 邮箱（匿名化）
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -75,9 +79,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -91,9 +96,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 主账号id
-     * 
-     * @return domainId */
+    /**
+     * 主账号id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -107,9 +113,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 客户名称（匿名化）
-     * 
-     * @return customerName */
+    /**
+     * 客户名称（匿名化）
+     * @return customerName
+     */
     public String getCustomerName() {
         return customerName;
     }
@@ -123,9 +130,10 @@ public class SubCutomerInfoV2 {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -170,7 +178,10 @@ public class SubCutomerInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

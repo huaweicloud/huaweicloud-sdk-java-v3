@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceParamResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM参数最后更新时间。
-     * 
-     * @return updated */
+    /**
+     * DDM参数最后更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -77,9 +80,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例参数信息列表的集合。
-     * 
-     * @return configurationParameter */
+    /**
+     * DDM实例参数信息列表的集合。
+     * @return configurationParameter
+     */
     public List<ConfigurationParameterList> getConfigurationParameter() {
         return configurationParameter;
     }
@@ -93,9 +97,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数: 起始值。
-     * 
-     * @return offset */
+    /**
+     * 分页参数: 起始值。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -109,9 +114,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数：每页多少条。
-     * 
-     * @return limit */
+    /**
+     * 分页参数：每页多少条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -125,9 +131,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 集合总数
-     * 
-     * @return total */
+    /**
+     * 集合总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -170,7 +177,10 @@ public class ShowInstanceParamResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

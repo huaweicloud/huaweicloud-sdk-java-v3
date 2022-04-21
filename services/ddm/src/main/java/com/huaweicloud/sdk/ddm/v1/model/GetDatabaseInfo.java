@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** databases 返回参数 */
+/**
+ * databases 返回参数
+ */
 public class GetDatabaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 逻辑库名称。
-     * 
-     * @return name */
+    /**
+     * 逻辑库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 逻辑库的工作模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
-     * 
-     * @return shardMode */
+    /**
+     * 逻辑库的工作模式。  - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
+     * @return shardMode
+     */
     public String getShardMode() {
         return shardMode;
     }
@@ -83,9 +87,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 同一种工作模式下逻辑库分片的数量。
-     * 
-     * @return shardNumber */
+    /**
+     * 同一种工作模式下逻辑库分片的数量。
+     * @return shardNumber
+     */
     public Integer getShardNumber() {
         return shardNumber;
     }
@@ -99,9 +104,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 逻辑库状态。
-     * 
-     * @return status */
+    /**
+     * 逻辑库状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -115,9 +121,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 逻辑库的创建时间。
-     * 
-     * @return created */
+    /**
+     * 逻辑库的创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -147,9 +154,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 逻辑库关联的RDS实例信息。
-     * 
-     * @return usedRds */
+    /**
+     * 逻辑库关联的RDS实例信息。
+     * @return usedRds
+     */
     public List<GetDatabaseUsedRds> getUsedRds() {
         return usedRds;
     }
@@ -163,9 +171,10 @@ public class GetDatabaseInfo {
         return this;
     }
 
-    /** 单个RDS上的逻辑库分片数。
-     * 
-     * @return shardUnit */
+    /**
+     * 单个RDS上的逻辑库分片数。
+     * @return shardUnit
+     */
     public Integer getShardUnit() {
         return shardUnit;
     }
@@ -212,7 +221,10 @@ public class GetDatabaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

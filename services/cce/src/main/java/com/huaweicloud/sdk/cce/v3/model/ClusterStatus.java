@@ -73,12 +73,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 -
-     * ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 -
-     * Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 -
-     * RollbackFailed：回滚异常，表示集群回滚异常，需联系管理员进行回滚重试。 - Empty：集群无任何资源
-     * 
-     * @return phase */
+    /**
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 - RollbackFailed：回滚异常，表示集群回滚异常，需联系管理员进行回滚重试。 - Empty：集群无任何资源
+     * @return phase
+     */
     public String getPhase() {
         return phase;
     }
@@ -92,9 +90,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobID */
+    /**
+     * 作业ID
+     * @return jobID
+     */
     public String getJobID() {
         return jobID;
     }
@@ -108,9 +107,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 集群变为当前状态的原因，在集群在非“Available”状态下时，会返回此参数。
-     * 
-     * @return reason */
+    /**
+     * 集群变为当前状态的原因，在集群在非“Available”状态下时，会返回此参数。
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -124,9 +124,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 集群变为当前状态的原因的详细信息，在集群在非“Available”状态下时，会返回此参数。
-     * 
-     * @return message */
+    /**
+     * 集群变为当前状态的原因的详细信息，在集群在非“Available”状态下时，会返回此参数。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -156,9 +157,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 集群中 kube-apiserver 的访问地址。
-     * 
-     * @return endpoints */
+    /**
+     * 集群中 kube-apiserver 的访问地址。
+     * @return endpoints
+     */
     public List<ClusterEndpoints> getEndpoints() {
         return endpoints;
     }
@@ -172,9 +174,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** CBC资源锁定
-     * 
-     * @return isLocked */
+    /**
+     * CBC资源锁定
+     * @return isLocked
+     */
     public Boolean getIsLocked() {
         return isLocked;
     }
@@ -188,9 +191,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** CBC资源锁定场景
-     * 
-     * @return lockScene */
+    /**
+     * CBC资源锁定场景
+     * @return lockScene
+     */
     public String getLockScene() {
         return lockScene;
     }
@@ -204,9 +208,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 锁定资源
-     * 
-     * @return lockSource */
+    /**
+     * 锁定资源
+     * @return lockSource
+     */
     public String getLockSource() {
         return lockSource;
     }
@@ -220,9 +225,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 锁定的资源ID
-     * 
-     * @return lockSourceId */
+    /**
+     * 锁定的资源ID
+     * @return lockSourceId
+     */
     public String getLockSourceId() {
         return lockSourceId;
     }
@@ -236,9 +242,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 删除配置状态（仅删除请求响应包含）
-     * 
-     * @return deleteOption */
+    /**
+     * 删除配置状态（仅删除请求响应包含）
+     * @return deleteOption
+     */
     public Object getDeleteOption() {
         return deleteOption;
     }
@@ -252,9 +259,10 @@ public class ClusterStatus {
         return this;
     }
 
-    /** 删除状态信息（仅删除请求响应包含）
-     * 
-     * @return deleteStatus */
+    /**
+     * 删除状态信息（仅删除请求响应包含）
+     * @return deleteStatus
+     */
     public Object getDeleteStatus() {
         return deleteStatus;
     }
@@ -317,7 +325,10 @@ public class ClusterStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

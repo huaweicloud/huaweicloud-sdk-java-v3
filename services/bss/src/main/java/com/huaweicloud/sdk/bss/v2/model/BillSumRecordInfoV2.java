@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BillSumRecordInfoV2 */
+/**
+ * BillSumRecordInfoV2
+ */
 public class BillSumRecordInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -113,9 +115,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 消费汇总数据所在账期，格式：YYYY-MM。
-     * 
-     * @return billCycle */
+    /**
+     * 消费汇总数据所在账期，格式：YYYY-MM。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -129,9 +132,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -145,9 +149,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -161,9 +166,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -177,9 +183,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -193,9 +200,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 计费模式。 1：包年/包月3：按需10：预留实例
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。 1：包年/包月3：按需10：预留实例
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -209,9 +217,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 官网价。
-     * 
-     * @return officialAmount */
+    /**
+     * 官网价。
+     * @return officialAmount
+     */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -225,9 +234,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 折扣金额。
-     * 
-     * @return officialDiscountAmount */
+    /**
+     * 折扣金额。
+     * @return officialDiscountAmount
+     */
     public Double getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
@@ -241,9 +251,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 抹零金额。
-     * 
-     * @return truncatedAmount */
+    /**
+     * 抹零金额。
+     * @return truncatedAmount
+     */
     public Double getTruncatedAmount() {
         return truncatedAmount;
     }
@@ -257,9 +268,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 应付金额。 应付金额=官网价-折扣金额-抹零金额
-     * 
-     * @return consumeAmount */
+    /**
+     * 应付金额。 应付金额=官网价-折扣金额-抹零金额
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -273,9 +285,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 代金券金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -289,9 +302,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 现金券金额，预留。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券金额，预留。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -305,9 +319,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 储值卡金额，预留。
-     * 
-     * @return storedValueCardAmount */
+    /**
+     * 储值卡金额，预留。
+     * @return storedValueCardAmount
+     */
     public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
@@ -321,9 +336,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -337,9 +353,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 欠费核销金额。
-     * 
-     * @return writeoffAmount */
+    /**
+     * 欠费核销金额。
+     * @return writeoffAmount
+     */
     public Double getWriteoffAmount() {
         return writeoffAmount;
     }
@@ -353,9 +370,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 现金账户金额。
-     * 
-     * @return cashAmount */
+    /**
+     * 现金账户金额。
+     * @return cashAmount
+     */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -369,9 +387,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 信用账户金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用账户金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -385,9 +404,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -401,9 +421,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 账单类型。 1：消费2：退款3：调账
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 1：消费2：退款3：调账
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -417,10 +438,10 @@ public class BillSumRecordInfoV2 {
         return this;
     }
 
-    /** 消费的客户账号ID。
-     * 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 消费的客户账号ID。 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -512,7 +533,10 @@ public class BillSumRecordInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

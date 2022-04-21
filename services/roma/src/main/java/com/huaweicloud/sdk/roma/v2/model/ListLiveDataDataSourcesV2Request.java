@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListLiveDataDataSourcesV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListLiveDataDataSourcesV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,10 @@ public class ListLiveDataDataSourcesV2Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -70,9 +74,12 @@ public class ListLiveDataDataSourcesV2Request {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +93,10 @@ public class ListLiveDataDataSourcesV2Request {
         return this;
     }
 
-    /** 应用编号
-     * 
-     * @return appId */
+    /**
+     * 应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -102,9 +110,10 @@ public class ListLiveDataDataSourcesV2Request {
         return this;
     }
 
-    /** 数据源名称
-     * 
-     * @return name */
+    /**
+     * 数据源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -147,7 +156,10 @@ public class ListLiveDataDataSourcesV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BackupRestore */
+/**
+ * BackupRestore
+ */
 public class BackupRestore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class BackupRestore {
         return this;
     }
 
-    /** 恢复的映射关系(整机恢复时必填，卷恢复时可选但是不会用到填写的值）
-     * 
-     * @return mappings */
+    /**
+     * 恢复的映射关系(整机恢复时必填，卷恢复时可选但是不会用到填写的值）
+     * @return mappings
+     */
     public List<BackupRestoreServerMapping> getMappings() {
         return mappings;
     }
@@ -73,9 +76,10 @@ public class BackupRestore {
         return this;
     }
 
-    /** 恢复后是否开始，默认开机。
-     * 
-     * @return powerOn */
+    /**
+     * 恢复后是否开始，默认开机。
+     * @return powerOn
+     */
     public Boolean getPowerOn() {
         return powerOn;
     }
@@ -89,9 +93,10 @@ public class BackupRestore {
         return this;
     }
 
-    /** 恢复的目标虚拟机ID（整机恢复时必填）
-     * 
-     * @return serverId */
+    /**
+     * 恢复的目标虚拟机ID（整机恢复时必填）
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -105,9 +110,10 @@ public class BackupRestore {
         return this;
     }
 
-    /** 恢复的目标卷ID（卷恢复时必填）
-     * 
-     * @return volumeId */
+    /**
+     * 恢复的目标卷ID（卷恢复时必填）
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -121,9 +127,10 @@ public class BackupRestore {
         return this;
     }
 
-    /** 待恢复的目标资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 待恢复的目标资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -166,7 +173,10 @@ public class BackupRestore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

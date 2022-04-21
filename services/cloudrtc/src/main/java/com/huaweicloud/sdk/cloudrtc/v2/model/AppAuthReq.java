@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改app鉴权请求 */
+/**
+ * 修改app鉴权请求
+ */
 public class AppAuthReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AppAuthReq {
         return this;
     }
 
-    /** 开启或关闭URL鉴权
-     * 
-     * @return enable */
+    /**
+     * 开启或关闭URL鉴权
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -39,9 +42,12 @@ public class AppAuthReq {
         return this;
     }
 
-    /** 有效期，当开启鉴权时必填。 取值范围：[60，2592000]，缺省为300。 单位：秒。 minimum: 60 maximum: 2592000
-     * 
-     * @return expire */
+    /**
+     * 有效期，当开启鉴权时必填。  取值范围：[60，2592000]，缺省为300。  单位：秒。 
+     * minimum: 60
+     * maximum: 2592000
+     * @return expire
+     */
     public Integer getExpire() {
         return expire;
     }
@@ -77,7 +83,10 @@ public class AppAuthReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

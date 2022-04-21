@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FailoverModeRequest */
+/**
+ * FailoverModeRequest
+ */
 public class FailoverModeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class FailoverModeRequest {
         return this;
     }
 
-    /** 同步模式，各引擎可选择方式具体如下： MySQL： - async：异步。 - semisync：半同步。
-     * 
-     * @return mode */
+    /**
+     * 同步模式，各引擎可选择方式具体如下： MySQL： - async：异步。 - semisync：半同步。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -55,7 +58,10 @@ public class FailoverModeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

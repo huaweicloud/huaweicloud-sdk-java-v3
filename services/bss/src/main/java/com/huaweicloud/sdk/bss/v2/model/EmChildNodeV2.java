@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EmChildNodeV2 */
+/**
+ * EmChildNodeV2
+ */
 public class EmChildNodeV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class EmChildNodeV2 {
         return this;
     }
 
-    /** 实体关系ID。
-     * 
-     * @return relationId */
+    /**
+     * 实体关系ID。
+     * @return relationId
+     */
     public String getRelationId() {
         return relationId;
     }
@@ -52,9 +55,10 @@ public class EmChildNodeV2 {
         return this;
     }
 
-    /** 节点ID（即组织单元的Party ID）。
-     * 
-     * @return id */
+    /**
+     * 节点ID（即组织单元的Party ID）。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -68,9 +72,10 @@ public class EmChildNodeV2 {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return name */
+    /**
+     * 节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,9 +105,10 @@ public class EmChildNodeV2 {
         return this;
     }
 
-    /** 子节点列表。
-     * 
-     * @return childNodes */
+    /**
+     * 子节点列表。
+     * @return childNodes
+     */
     public List<EmChildNodeV2> getChildNodes() {
         return childNodes;
     }
@@ -142,7 +148,10 @@ public class EmChildNodeV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

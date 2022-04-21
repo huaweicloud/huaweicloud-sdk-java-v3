@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DiskusageEntity */
+/**
+ * DiskusageEntity
+ */
 public class DiskusageEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** Broker名称。
-     * 
-     * @return brokerName */
+    /**
+     * Broker名称。
+     * @return brokerName
+     */
     public String getBrokerName() {
         return brokerName;
     }
@@ -67,9 +70,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** 磁盘容量。
-     * 
-     * @return dataDiskSize */
+    /**
+     * 磁盘容量。
+     * @return dataDiskSize
+     */
     public String getDataDiskSize() {
         return dataDiskSize;
     }
@@ -83,9 +87,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** 已使用的磁盘容量。
-     * 
-     * @return dataDiskUse */
+    /**
+     * 已使用的磁盘容量。
+     * @return dataDiskUse
+     */
     public String getDataDiskUse() {
         return dataDiskUse;
     }
@@ -99,9 +104,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** 剩余可用的磁盘容量。
-     * 
-     * @return dataDiskFree */
+    /**
+     * 剩余可用的磁盘容量。
+     * @return dataDiskFree
+     */
     public String getDataDiskFree() {
         return dataDiskFree;
     }
@@ -115,9 +121,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** 消息标签。
-     * 
-     * @return dataDiskUsePercentage */
+    /**
+     * 消息标签。
+     * @return dataDiskUsePercentage
+     */
     public String getDataDiskUsePercentage() {
         return dataDiskUsePercentage;
     }
@@ -131,9 +138,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** 消息标签。
-     * 
-     * @return status */
+    /**
+     * 消息标签。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -163,9 +171,10 @@ public class DiskusageEntity {
         return this;
     }
 
-    /** topic磁盘容量使用列表。
-     * 
-     * @return topicList */
+    /**
+     * topic磁盘容量使用列表。
+     * @return topicList
+     */
     public List<DiskusageTopicEntity> getTopicList() {
         return topicList;
     }
@@ -213,7 +222,10 @@ public class DiskusageEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

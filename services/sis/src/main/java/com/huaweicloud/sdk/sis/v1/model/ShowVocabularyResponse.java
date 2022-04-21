@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowVocabularyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,13 +34,19 @@ public class ShowVocabularyResponse extends SdkResponse {
 
     private String description;
 
-    /** 调用成功返回热词表语言类型，调用失败时无此字段。 */
+    /**
+     * 调用成功返回热词表语言类型，调用失败时无此字段。
+     */
     public static final class LanguageEnum {
 
-        /** Enum CHINESE_MANDARIN for value: "chinese-mandarin" */
+        /**
+         * Enum CHINESE_MANDARIN for value: "chinese-mandarin"
+         */
         public static final LanguageEnum CHINESE_MANDARIN = new LanguageEnum("chinese-mandarin");
 
-        /** Enum _ENGLISH for value: " english" */
+        /**
+         * Enum _ENGLISH for value: " english"
+         */
         public static final LanguageEnum _ENGLISH = new LanguageEnum(" english");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +126,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词表ID，调用失败时无此字段。
-     * 
-     * @return vocabularyId */
+    /**
+     * 调用成功返回热词表ID，调用失败时无此字段。
+     * @return vocabularyId
+     */
     public String getVocabularyId() {
         return vocabularyId;
     }
@@ -134,9 +143,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词表名，调用失败时无此字段。
-     * 
-     * @return name */
+    /**
+     * 调用成功返回热词表名，调用失败时无此字段。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -150,9 +160,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词表描述，调用失败时无此字段。
-     * 
-     * @return description */
+    /**
+     * 调用成功返回热词表描述，调用失败时无此字段。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -166,9 +177,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词表语言类型，调用失败时无此字段。
-     * 
-     * @return language */
+    /**
+     * 调用成功返回热词表语言类型，调用失败时无此字段。
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -198,9 +210,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词列表，调用失败时无此字段。
-     * 
-     * @return contents */
+    /**
+     * 调用成功返回热词列表，调用失败时无此字段。
+     * @return contents
+     */
     public List<String> getContents() {
         return contents;
     }
@@ -243,7 +256,10 @@ public class ShowVocabularyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

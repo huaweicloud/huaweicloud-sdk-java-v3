@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RealTimeNodeStatus */
+/**
+ * RealTimeNodeStatus
+ */
 public class RealTimeNodeStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class RealTimeNodeStatus {
 
     private String name;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum STARTTING for value: "STARTTING" */
+        /**
+         * Enum STARTTING for value: "STARTTING"
+         */
         public static final StatusEnum STARTTING = new StatusEnum("STARTTING");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
 
-        /** Enum EXCEPTION for value: "EXCEPTION" */
+        /**
+         * Enum EXCEPTION for value: "EXCEPTION"
+         */
         public static final StatusEnum EXCEPTION = new StatusEnum("EXCEPTION");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -111,55 +125,89 @@ public class RealTimeNodeStatus {
 
     private String logPath;
 
-    /** Gets or Sets nodeType */
+    /**
+     * Gets or Sets nodeType
+     */
     public static final class NodeTypeEnum {
 
-        /** Enum HIVESQL for value: "HiveSQL" */
+        /**
+         * Enum HIVESQL for value: "HiveSQL"
+         */
         public static final NodeTypeEnum HIVESQL = new NodeTypeEnum("HiveSQL");
 
-        /** Enum SPARKSQL for value: "SparkSQL" */
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
         public static final NodeTypeEnum SPARKSQL = new NodeTypeEnum("SparkSQL");
 
-        /** Enum DWSSQL for value: "DWSSQL" */
+        /**
+         * Enum DWSSQL for value: "DWSSQL"
+         */
         public static final NodeTypeEnum DWSSQL = new NodeTypeEnum("DWSSQL");
 
-        /** Enum DLISQL for value: "DLISQL" */
+        /**
+         * Enum DLISQL for value: "DLISQL"
+         */
         public static final NodeTypeEnum DLISQL = new NodeTypeEnum("DLISQL");
 
-        /** Enum SHELL for value: "Shell" */
+        /**
+         * Enum SHELL for value: "Shell"
+         */
         public static final NodeTypeEnum SHELL = new NodeTypeEnum("Shell");
 
-        /** Enum CDMJOB for value: "CDMJob" */
+        /**
+         * Enum CDMJOB for value: "CDMJob"
+         */
         public static final NodeTypeEnum CDMJOB = new NodeTypeEnum("CDMJob");
 
-        /** Enum DISTRANSFERTASK for value: "DISTransferTask" */
+        /**
+         * Enum DISTRANSFERTASK for value: "DISTransferTask"
+         */
         public static final NodeTypeEnum DISTRANSFERTASK = new NodeTypeEnum("DISTransferTask");
 
-        /** Enum CSJOB for value: "CSJob" */
+        /**
+         * Enum CSJOB for value: "CSJob"
+         */
         public static final NodeTypeEnum CSJOB = new NodeTypeEnum("CSJob");
 
-        /** Enum CLOUDTABLEMANAGE for value: "CloudTableManage" */
+        /**
+         * Enum CLOUDTABLEMANAGE for value: "CloudTableManage"
+         */
         public static final NodeTypeEnum CLOUDTABLEMANAGE = new NodeTypeEnum("CloudTableManage");
 
-        /** Enum OBSMANAGER for value: "OBSManager" */
+        /**
+         * Enum OBSMANAGER for value: "OBSManager"
+         */
         public static final NodeTypeEnum OBSMANAGER = new NodeTypeEnum("OBSManager");
 
-        /** Enum RESTAPI for value: "RESTAPI" */
+        /**
+         * Enum RESTAPI for value: "RESTAPI"
+         */
         public static final NodeTypeEnum RESTAPI = new NodeTypeEnum("RESTAPI");
 
-        /** Enum MACHINELEARNING for value: "MachineLearning" */
+        /**
+         * Enum MACHINELEARNING for value: "MachineLearning"
+         */
         public static final NodeTypeEnum MACHINELEARNING = new NodeTypeEnum("MachineLearning");
 
-        /** Enum SMN for value: "SMN" */
+        /**
+         * Enum SMN for value: "SMN"
+         */
         public static final NodeTypeEnum SMN = new NodeTypeEnum("SMN");
 
-        /** Enum MRSSPARK for value: "MRSSpark" */
+        /**
+         * Enum MRSSPARK for value: "MRSSpark"
+         */
         public static final NodeTypeEnum MRSSPARK = new NodeTypeEnum("MRSSpark");
 
-        /** Enum MAPREDUCE for value: "MapReduce" */
+        /**
+         * Enum MAPREDUCE for value: "MapReduce"
+         */
         public static final NodeTypeEnum MAPREDUCE = new NodeTypeEnum("MapReduce");
 
-        /** Enum DLISPARK for value: "DLISpark" */
+        /**
+         * Enum DLISPARK for value: "DLISpark"
+         */
         public static final NodeTypeEnum DLISPARK = new NodeTypeEnum("DLISpark");
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -248,9 +296,10 @@ public class RealTimeNodeStatus {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -264,9 +313,10 @@ public class RealTimeNodeStatus {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -280,9 +330,10 @@ public class RealTimeNodeStatus {
         return this;
     }
 
-    /** Get logPath
-     * 
-     * @return logPath */
+    /**
+     * Get logPath
+     * @return logPath
+     */
     public String getLogPath() {
         return logPath;
     }
@@ -296,9 +347,10 @@ public class RealTimeNodeStatus {
         return this;
     }
 
-    /** Get nodeType
-     * 
-     * @return nodeType */
+    /**
+     * Get nodeType
+     * @return nodeType
+     */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -339,7 +391,10 @@ public class RealTimeNodeStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

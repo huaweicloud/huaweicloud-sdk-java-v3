@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPartitionEndMessageResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         return this;
     }
 
-    /** Topic名称。
-     * 
-     * @return topic */
+    /**
+     * Topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -50,9 +53,10 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         return this;
     }
 
-    /** 分区编号。
-     * 
-     * @return partition */
+    /**
+     * 分区编号。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -66,9 +70,10 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         return this;
     }
 
-    /** 最新消息位置。
-     * 
-     * @return messageOffset */
+    /**
+     * 最新消息位置。
+     * @return messageOffset
+     */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -82,9 +87,10 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         return this;
     }
 
-    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
-     * 
-     * @return timestamp */
+    /**
+     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -125,7 +131,10 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

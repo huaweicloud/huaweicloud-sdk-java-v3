@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Resources */
+/**
+ * Resources
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Resources {
         return this;
     }
 
-    /** 证书类型: - **CERTIFICATE_AUTHORITY**: CA证书； - **CERTIFICATE**: 私有证书。
-     * 
-     * @return type */
+    /**
+     * 证书类型:  - **CERTIFICATE_AUTHORITY**: CA证书；  - **CERTIFICATE**: 私有证书。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -44,9 +47,10 @@ public class Resources {
         return this;
     }
 
-    /** 已使用配额数。
-     * 
-     * @return used */
+    /**
+     * 已使用配额数。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -60,9 +64,10 @@ public class Resources {
         return this;
     }
 
-    /** 配额总数： - **CERTIFICATE_AUTHORITY**: 当前系统指定100； - **CERTIFICATE**: 当前系统指定100000。
-     * 
-     * @return quota */
+    /**
+     * 配额总数：   - **CERTIFICATE_AUTHORITY**: 当前系统指定100；   - **CERTIFICATE**: 当前系统指定100000。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -100,7 +105,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

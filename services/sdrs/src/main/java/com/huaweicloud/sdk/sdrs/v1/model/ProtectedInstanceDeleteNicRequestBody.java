@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 保护实例删除网卡请求体 */
+/**
+ * 保护实例删除网卡请求体
+ */
 public class ProtectedInstanceDeleteNicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ProtectedInstanceDeleteNicRequestBody {
         return this;
     }
 
-    /** 网卡Port ID。
-     * 
-     * @return nicId */
+    /**
+     * 网卡Port ID。
+     * @return nicId
+     */
     public String getNicId() {
         return nicId;
     }
@@ -56,7 +59,10 @@ public class ProtectedInstanceDeleteNicRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OrgPropertyDTO */
+/**
+ * OrgPropertyDTO
+ */
 public class OrgPropertyDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OrgPropertyDTO {
         return this;
     }
 
-    /** 配置项key。 开通本地录制功能，参数填写：enableClientRecord
-     * 
-     * @return propertyKey */
+    /**
+     * 配置项key。 开通本地录制功能，参数填写：enableClientRecord 
+     * @return propertyKey
+     */
     public String getPropertyKey() {
         return propertyKey;
     }
@@ -39,9 +42,10 @@ public class OrgPropertyDTO {
         return this;
     }
 
-    /** 配置项值。 开通本地录制功能，参数填写：true
-     * 
-     * @return propertyValue */
+    /**
+     * 配置项值。 开通本地录制功能，参数填写：true 
+     * @return propertyValue
+     */
     public String getPropertyValue() {
         return propertyValue;
     }
@@ -78,7 +82,10 @@ public class OrgPropertyDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

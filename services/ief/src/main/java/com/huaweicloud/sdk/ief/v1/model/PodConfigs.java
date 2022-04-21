@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 应用实例配置 */
+/**
+ * 应用实例配置
+ */
 public class PodConfigs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PodConfigs {
         return this;
     }
 
-    /** 应用实例是否启用主机网络，不启用则使用端口映射,默认值false
-     * 
-     * @return hostNetwork */
+    /**
+     * 应用实例是否启用主机网络，不启用则使用端口映射,默认值false
+     * @return hostNetwork
+     */
     public Boolean getHostNetwork() {
         return hostNetwork;
     }
@@ -54,9 +57,10 @@ public class PodConfigs {
         return this;
     }
 
-    /** 应用实例是否与主机共PID命名空间,默认值false
-     * 
-     * @return hostPid */
+    /**
+     * 应用实例是否与主机共PID命名空间,默认值false
+     * @return hostPid
+     */
     public Boolean getHostPid() {
         return hostPid;
     }
@@ -70,9 +74,10 @@ public class PodConfigs {
         return this;
     }
 
-    /** 应用实例故障是否迁移,指定节点组部署时必选，默认值false
-     * 
-     * @return migration */
+    /**
+     * 应用实例故障是否迁移,指定节点组部署时必选，默认值false
+     * @return migration
+     */
     public Boolean getMigration() {
         return migration;
     }
@@ -86,9 +91,10 @@ public class PodConfigs {
         return this;
     }
 
-    /** 应用实例重启策略,可选值Always、OnFailure、Never
-     * 
-     * @return restartPolicy */
+    /**
+     * 应用实例重启策略,可选值Always、OnFailure、Never
+     * @return restartPolicy
+     */
     public String getRestartPolicy() {
         return restartPolicy;
     }
@@ -102,9 +108,10 @@ public class PodConfigs {
         return this;
     }
 
-    /** 应用实例故障容忍时间,容忍时间到达后迁移应用实例，只在指定节点组部署时生效
-     * 
-     * @return tolerationSeconds */
+    /**
+     * 应用实例故障容忍时间,容忍时间到达后迁移应用实例，只在指定节点组部署时生效
+     * @return tolerationSeconds
+     */
     public Integer getTolerationSeconds() {
         return tolerationSeconds;
     }
@@ -146,7 +153,10 @@ public class PodConfigs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStatisticsApiRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,20 +20,29 @@ public class ListStatisticsApiRequest {
 
     private String instanceId;
 
-    /** 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值 注意：mode =
-     * APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段 */
+    /**
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
+     */
     public static final class ModeEnum {
 
-        /** Enum INSTANCE for value: "INSTANCE" */
+        /**
+         * Enum INSTANCE for value: "INSTANCE"
+         */
         public static final ModeEnum INSTANCE = new ModeEnum("INSTANCE");
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final ModeEnum ALL = new ModeEnum("ALL");
 
-        /** Enum APP for value: "APP" */
+        /**
+         * Enum APP for value: "APP"
+         */
         public static final ModeEnum APP = new ModeEnum("APP");
 
-        /** Enum API for value: "API" */
+        /**
+         * Enum API for value: "API"
+         */
         public static final ModeEnum API = new ModeEnum("API");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -113,16 +124,24 @@ public class ListStatisticsApiRequest {
 
     private String apiId;
 
-    /** 查询统计周期 * minute：分钟 * hour：小时 * day：天 */
+    /**
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
+     */
     public static final class CycleEnum {
 
-        /** Enum MINUTE for value: "minute" */
+        /**
+         * Enum MINUTE for value: "minute"
+         */
         public static final CycleEnum MINUTE = new CycleEnum("minute");
 
-        /** Enum HOUR for value: "hour" */
+        /**
+         * Enum HOUR for value: "hour"
+         */
         public static final CycleEnum HOUR = new CycleEnum("hour");
 
-        /** Enum DAY for value: "day" */
+        /**
+         * Enum DAY for value: "day"
+         */
         public static final CycleEnum DAY = new CycleEnum("day");
 
         private static final Map<String, CycleEnum> STATIC_FIELDS = createStaticFields();
@@ -213,9 +232,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -229,10 +249,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值 注意：mode =
-     * APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
-     * 
-     * @return mode */
+    /**
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -246,9 +266,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 集成应用编号，查询模式为APP时必填
-     * 
-     * @return romaAppId */
+    /**
+     * 集成应用编号，查询模式为APP时必填
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -262,9 +283,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** API编号，查询模式为API时必填
-     * 
-     * @return apiId */
+    /**
+     * API编号，查询模式为API时必填
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -278,9 +300,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 查询统计周期 * minute：分钟 * hour：小时 * day：天
-     * 
-     * @return cycle */
+    /**
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
+     * @return cycle
+     */
     public CycleEnum getCycle() {
         return cycle;
     }
@@ -294,9 +317,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 开始时间，格式：2020-06-18 10:00:01
-     * 
-     * @return startTime */
+    /**
+     * 开始时间，格式：2020-06-18 10:00:01
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -310,9 +334,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 结束时间，格式：2020-06-18 23:00:00
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，格式：2020-06-18 23:00:00
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -326,12 +351,10 @@ public class ListStatisticsApiRequest {
         return this;
     }
 
-    /** 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] *
-     * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] *
-     * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time] *
-     * start_time，end_time和duration都不存在，报错missing time range parameters。 * duration最长查询范围：小时最长支持72小时，分钟最长支持90分钟。
-     * 
-     * @return duration */
+    /**
+     * 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time] * start_time，end_time和duration都不存在，报错missing time range parameters。 * duration最长查询范围：小时最长支持72小时，分钟最长支持90分钟。
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -380,7 +403,10 @@ public class ListStatisticsApiRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

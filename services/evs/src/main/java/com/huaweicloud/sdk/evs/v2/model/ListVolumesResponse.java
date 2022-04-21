@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListVolumesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListVolumesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询到的云硬盘总数量，不受分页影响。
-     * 
-     * @return count */
+    /**
+     * 查询到的云硬盘总数量，不受分页影响。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -64,9 +67,10 @@ public class ListVolumesResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘列表查询位置标记。如果本次查询只返回部分列表信息时，会返回查询到的当前磁盘mark标记的url，可以继续使用这个url查询剩余列表信息。
-     * 
-     * @return volumesLinks */
+    /**
+     * 云硬盘列表查询位置标记。如果本次查询只返回部分列表信息时，会返回查询到的当前磁盘mark标记的url，可以继续使用这个url查询剩余列表信息。
+     * @return volumesLinks
+     */
     public List<Link> getVolumesLinks() {
         return volumesLinks;
     }
@@ -96,9 +100,10 @@ public class ListVolumesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询请求返回的云硬盘列表。
-     * 
-     * @return volumes */
+    /**
+     * 查询请求返回的云硬盘列表。
+     * @return volumes
+     */
     public List<VolumeDetail> getVolumes() {
         return volumes;
     }
@@ -137,7 +142,10 @@ public class ListVolumesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

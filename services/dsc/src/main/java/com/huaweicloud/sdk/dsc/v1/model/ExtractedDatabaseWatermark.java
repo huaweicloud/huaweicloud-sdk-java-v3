@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ExtractedDatabaseWatermark */
+/**
+ * ExtractedDatabaseWatermark
+ */
 public class ExtractedDatabaseWatermark {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ExtractedDatabaseWatermark {
         return this;
     }
 
-    /** 水印密钥
-     * 
-     * @return watermarkKey */
+    /**
+     * 水印密钥
+     * @return watermarkKey
+     */
     public String getWatermarkKey() {
         return watermarkKey;
     }
@@ -64,9 +67,10 @@ public class ExtractedDatabaseWatermark {
         return this;
     }
 
-    /** 字段类型列表，最大长度100。使用时，要包含嵌入时所有“primary_key”为true的字段，和至少一个为false的字段用来提取水印
-     * 
-     * @return columns */
+    /**
+     * 字段类型列表，最大长度100。使用时，要包含嵌入时所有“primary_key”为true的字段，和至少一个为false的字段用来提取水印
+     * @return columns
+     */
     public List<Columns> getColumns() {
         return columns;
     }
@@ -96,9 +100,10 @@ public class ExtractedDatabaseWatermark {
         return this;
     }
 
-    /** 水印数据，数据条数不超过30,000条
-     * 
-     * @return data */
+    /**
+     * 水印数据，数据条数不超过30,000条
+     * @return data
+     */
     public List<Map<String, Object>> getData() {
         return data;
     }
@@ -137,7 +142,10 @@ public class ExtractedDatabaseWatermark {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

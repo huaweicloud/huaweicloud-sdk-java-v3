@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OAuth */
+/**
+ * OAuth
+ */
 public class OAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OAuth {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return name */
+    /**
+     * 授权名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class OAuth {
         return this;
     }
 
-    /** git仓库授权后，重定向回来的url里面的query参数。
-     * 
-     * @return code */
+    /**
+     * git仓库授权后，重定向回来的url里面的query参数。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -60,9 +64,10 @@ public class OAuth {
         return this;
     }
 
-    /** git仓库授权后，一次性的认证编码和随机串。
-     * 
-     * @return state */
+    /**
+     * git仓库授权后，一次性的认证编码和随机串。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -100,7 +105,10 @@ public class OAuth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

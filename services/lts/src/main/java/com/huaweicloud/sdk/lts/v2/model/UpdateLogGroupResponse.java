@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateLogGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建该日志组的时间， 毫秒级。
-     * 
-     * @return creationTime */
+    /**
+     * 创建该日志组的时间， 毫秒级。
+     * @return creationTime
+     */
     public Long getCreationTime() {
         return creationTime;
     }
@@ -50,9 +53,10 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组的名称。
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组的名称。
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -66,9 +70,10 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组ID。
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID。
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -82,9 +87,12 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志存储时间（天）。 minimum: 1 maximum: 30
-     * 
-     * @return ttlInDays */
+    /**
+     * 日志存储时间（天）。
+     * minimum: 1
+     * maximum: 30
+     * @return ttlInDays
+     */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -125,7 +133,10 @@ public class UpdateLogGroupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

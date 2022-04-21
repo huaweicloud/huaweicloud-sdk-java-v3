@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,13 +45,19 @@ public class ListHostsRequest {
 
     private String sortKey;
 
-    /** 排序方式,默认为：DESC */
+    /**
+     * 排序方式,默认为：DESC。DESC：降序排序。ASC：升序排序
+     */
     public static final class SortDirEnum {
 
-        /** Enum DESC for value: "DESC" */
+        /**
+         * Enum DESC for value: "DESC"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("DESC");
 
-        /** Enum ASC for value: "ASC" */
+        /**
+         * Enum ASC for value: "ASC"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("ASC");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 主机组id
-     * 
-     * @return groupId */
+    /**
+     * 主机组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -145,9 +154,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 是否为代理机
-     * 
-     * @return asProxy */
+    /**
+     * 是否为代理机
+     * @return asProxy
+     */
     public Boolean getAsProxy() {
         return asProxy;
     }
@@ -161,9 +171,11 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -177,9 +189,12 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，默认为1000 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，默认为1000
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -193,9 +208,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 主机名，可输入中英文，数字和符号(-_.)
-     * 
-     * @return name */
+    /**
+     * 主机名，可输入中英文，数字和符号(-_.)
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -209,9 +225,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 排序字段，支持：AS_PROXY|HOST_NAME|OS|OWNER_NAME|as_proxy|host_name|os|owner_name|nickName。不填默认为：as_proxy
-     * 
-     * @return sortKey */
+    /**
+     * 排序字段，支持：AS_PROXY|HOST_NAME|OS|OWNER_NAME|as_proxy|host_name|os|owner_name|nickName。不填默认为：as_proxy
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -225,9 +242,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 排序方式,默认为：DESC
-     * 
-     * @return sortDir */
+    /**
+     * 排序方式,默认为：DESC。DESC：降序排序。ASC：升序排序
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -241,9 +259,10 @@ public class ListHostsRequest {
         return this;
     }
 
-    /** 返回结果是否加密
-     * 
-     * @return withAuth */
+    /**
+     * 返回结果是否加密
+     * @return withAuth
+     */
     public Boolean getWithAuth() {
         return withAuth;
     }
@@ -291,7 +310,10 @@ public class ListHostsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

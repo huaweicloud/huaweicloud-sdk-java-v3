@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建集群参数对象实体。 */
+/**
+ * 创建集群参数对象实体。
+ */
 public class Cluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class Cluster {
         return this;
     }
 
-    /** 是否开启IAM权限认证。 - false：不开启 - true：开启
-     * 
-     * @return authMode */
+    /**
+     * 是否开启IAM权限认证。 - false：不开启 - true：开启
+     * @return authMode
+     */
     public String getAuthMode() {
         return authMode;
     }
@@ -75,9 +78,10 @@ public class Cluster {
         return this;
     }
 
-    /** 是否开启Lemon(目前已关闭该参数，填false即可) - false：不开启 - true：开启
-     * 
-     * @return enableLemon */
+    /**
+     * 是否开启Lemon(目前已关闭该参数，填false即可) - false：不开启 - true：开启
+     * @return enableLemon
+     */
     public Boolean getEnableLemon() {
         return enableLemon;
     }
@@ -91,9 +95,10 @@ public class Cluster {
         return this;
     }
 
-    /** 是否开启OpenTSDB。 - false：不开启 - true：开启
-     * 
-     * @return enableOpenTSDB */
+    /**
+     * 是否开启OpenTSDB。 - false：不开启 - true：开启
+     * @return enableOpenTSDB
+     */
     public Boolean getEnableOpenTSDB() {
         return enableOpenTSDB;
     }
@@ -116,9 +121,10 @@ public class Cluster {
         return this;
     }
 
-    /** Get instance
-     * 
-     * @return instance */
+    /**
+     * Get instance
+     * @return instance
+     */
     public Instance getInstance() {
         return instance;
     }
@@ -132,9 +138,10 @@ public class Cluster {
         return this;
     }
 
-    /** CloudTable集群的名称。
-     * 
-     * @return name */
+    /**
+     * CloudTable集群的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -148,9 +155,10 @@ public class Cluster {
         return this;
     }
 
-    /** 存储值的大小。 取值范围: 1-[10240-1024*1024*1024]
-     * 
-     * @return storageSize */
+    /**
+     * 存储值的大小。  取值范围: 1-[10240-1024*1024*1024]
+     * @return storageSize
+     */
     public Integer getStorageSize() {
         return storageSize;
     }
@@ -164,9 +172,10 @@ public class Cluster {
         return this;
     }
 
-    /** 存储类型： - ULTRAHIGH：超高IO - COMMON：普通IO
-     * 
-     * @return storageType */
+    /**
+     * 存储类型： - ULTRAHIGH：超高IO - COMMON：普通IO
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -180,9 +189,10 @@ public class Cluster {
         return this;
     }
 
-    /** 集群所在的（虚拟网络私有云）VPC。
-     * 
-     * @return vpcId */
+    /**
+     * 集群所在的（虚拟网络私有云）VPC。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -205,9 +215,10 @@ public class Cluster {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -256,7 +267,10 @@ public class Cluster {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

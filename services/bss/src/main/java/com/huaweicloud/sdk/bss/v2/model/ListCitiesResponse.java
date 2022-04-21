@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCitiesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,12 @@ public class ListCitiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询个数，成功的时候返回。 minimum: 0 maximum: 1000
-     * 
-     * @return count */
+    /**
+     * 查询个数，成功的时候返回。
+     * minimum: 0
+     * maximum: 1000
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +64,10 @@ public class ListCitiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 城市信息列表，成功的时候返回，具体参见表2。
-     * 
-     * @return cities */
+    /**
+     * 城市信息列表，成功的时候返回，具体参见表2。
+     * @return cities
+     */
     public List<City> getCities() {
         return cities;
     }
@@ -98,7 +104,10 @@ public class ListCitiesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

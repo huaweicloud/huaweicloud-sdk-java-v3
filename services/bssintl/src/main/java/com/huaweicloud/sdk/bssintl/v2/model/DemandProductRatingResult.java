@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DemandProductRatingResult */
+/**
+ * DemandProductRatingResult
+ */
 public class DemandProductRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
-     * 
-     * @return id */
+    /**
+     * 同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -67,9 +70,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 按需产品的ID。
-     * 
-     * @return productId */
+    /**
+     * 按需产品的ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -83,9 +87,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 折扣的金额。
-     * 
-     * @return amount */
+    /**
+     * 折扣的金额。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -99,9 +104,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 优惠额（官网价和总价的差）。
-     * 
-     * @return discountAmount */
+    /**
+     * 优惠额（官网价和总价的差）。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -115,9 +121,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 按需产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 按需产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -131,9 +138,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -165,9 +173,10 @@ public class DemandProductRatingResult {
         return this;
     }
 
-    /** 折扣优惠明细，包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息，具体参见表3。
-     * 
-     * @return discountRatingResults */
+    /**
+     * 折扣优惠明细，包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息，具体参见表3。
+     * @return discountRatingResults
+     */
     public List<DemandDiscountRatingResult> getDiscountRatingResults() {
         return discountRatingResults;
     }
@@ -215,7 +224,10 @@ public class DemandProductRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

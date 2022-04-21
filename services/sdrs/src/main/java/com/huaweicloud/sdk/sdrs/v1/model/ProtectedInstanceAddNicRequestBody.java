@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 保护实例添加网卡请求体 */
+/**
+ * 保护实例添加网卡请求体
+ */
 public class ProtectedInstanceAddNicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ProtectedInstanceAddNicRequestBody {
         return this;
     }
 
-    /** 添加网卡的子网ID。该参数是子网的network_id，和neutron_network_id的值保持一致。
-     * 
-     * @return subnetId */
+    /**
+     * 添加网卡的子网ID。该参数是子网的network_id，和neutron_network_id的值保持一致。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -64,9 +67,10 @@ public class ProtectedInstanceAddNicRequestBody {
         return this;
     }
 
-    /** 添加网卡的安全组信息。默认为Sys-default安全组。
-     * 
-     * @return securityGroups */
+    /**
+     * 添加网卡的安全组信息。默认为Sys-default安全组。
+     * @return securityGroups
+     */
     public List<SecurityGroupsParams> getSecurityGroups() {
         return securityGroups;
     }
@@ -80,9 +84,10 @@ public class ProtectedInstanceAddNicRequestBody {
         return this;
     }
 
-    /** IP地址，若无该参数表示自动分配IP地址。
-     * 
-     * @return ipAddress */
+    /**
+     * IP地址，若无该参数表示自动分配IP地址。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -121,7 +126,10 @@ public class ProtectedInstanceAddNicRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

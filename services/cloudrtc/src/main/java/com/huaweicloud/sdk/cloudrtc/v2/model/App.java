@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** app详细信息 */
+/**
+ * app详细信息
+ */
 public class App {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,16 +31,24 @@ public class App {
 
     private AppState state;
 
-    /** RTC覆盖范围。 取值如下： - DOMESTIC：国内范围。 - OVERSEA：海外范围。 - GLOBAL：全球范围。 */
+    /**
+     * RTC覆盖范围。  取值如下：    - DOMESTIC：国内范围。   - OVERSEA：海外范围。   - GLOBAL：全球范围。 
+     */
     public static final class ScopeEnum {
 
-        /** Enum DOMESTIC for value: "DOMESTIC" */
+        /**
+         * Enum DOMESTIC for value: "DOMESTIC"
+         */
         public static final ScopeEnum DOMESTIC = new ScopeEnum("DOMESTIC");
 
-        /** Enum OVERSEA for value: "OVERSEA" */
+        /**
+         * Enum OVERSEA for value: "OVERSEA"
+         */
         public static final ScopeEnum OVERSEA = new ScopeEnum("OVERSEA");
 
-        /** Enum GLOBAL for value: "GLOBAL" */
+        /**
+         * Enum GLOBAL for value: "GLOBAL"
+         */
         public static final ScopeEnum GLOBAL = new ScopeEnum("GLOBAL");
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +154,10 @@ public class App {
         return this;
     }
 
-    /** app名称
-     * 
-     * @return appName */
+    /**
+     * app名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -160,9 +171,10 @@ public class App {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -185,9 +197,10 @@ public class App {
         return this;
     }
 
-    /** Get state
-     * 
-     * @return state */
+    /**
+     * Get state
+     * @return state
+     */
     public AppState getState() {
         return state;
     }
@@ -201,9 +214,10 @@ public class App {
         return this;
     }
 
-    /** RTC覆盖范围。 取值如下： - DOMESTIC：国内范围。 - OVERSEA：海外范围。 - GLOBAL：全球范围。
-     * 
-     * @return scope */
+    /**
+     * RTC覆盖范围。  取值如下：    - DOMESTIC：国内范围。   - OVERSEA：海外范围。   - GLOBAL：全球范围。 
+     * @return scope
+     */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -217,9 +231,10 @@ public class App {
         return this;
     }
 
-    /** 账号名
-     * 
-     * @return tenantName */
+    /**
+     * 账号名
+     * @return tenantName
+     */
     public String getTenantName() {
         return tenantName;
     }
@@ -233,9 +248,10 @@ public class App {
         return this;
     }
 
-    /** 域名，App对应域名
-     * 
-     * @return domain */
+    /**
+     * 域名，App对应域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -249,9 +265,10 @@ public class App {
         return this;
     }
 
-    /** 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -274,9 +291,10 @@ public class App {
         return this;
     }
 
-    /** Get authentication
-     * 
-     * @return authentication */
+    /**
+     * Get authentication
+     * @return authentication
+     */
     public AppAuth getAuthentication() {
         return authentication;
     }
@@ -299,9 +317,10 @@ public class App {
         return this;
     }
 
-    /** Get callbacks
-     * 
-     * @return callbacks */
+    /**
+     * Get callbacks
+     * @return callbacks
+     */
     public AppCallbacks getCallbacks() {
         return callbacks;
     }
@@ -324,9 +343,10 @@ public class App {
         return this;
     }
 
-    /** Get autoRecordMode
-     * 
-     * @return autoRecordMode */
+    /**
+     * Get autoRecordMode
+     * @return autoRecordMode
+     */
     public AppAutoRecordMode getAutoRecordMode() {
         return autoRecordMode;
     }
@@ -384,7 +404,10 @@ public class App {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

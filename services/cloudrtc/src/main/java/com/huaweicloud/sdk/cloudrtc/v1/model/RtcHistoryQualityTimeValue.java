@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RtcHistoryQualityTimeValue */
+/**
+ * RtcHistoryQualityTimeValue
+ */
 public class RtcHistoryQualityTimeValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
-     * 
-     * @return date */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -104,9 +107,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 加入房间成功率参数取值，取值为1代表成功率100% minimum: 0 maximum: 1
-     * 
-     * @return joinSuccessRate */
+    /**
+     * 加入房间成功率参数取值，取值为1代表成功率100%
+     * minimum: 0
+     * maximum: 1
+     * @return joinSuccessRate
+     */
     public Double getJoinSuccessRate() {
         return joinSuccessRate;
     }
@@ -120,9 +126,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 5s内加入房间成功率参数取值，取值为1代表成功率100% minimum: 0 maximum: 1
-     * 
-     * @return joinSuccessIn5secsRate */
+    /**
+     * 5s内加入房间成功率参数取值，取值为1代表成功率100%
+     * minimum: 0
+     * maximum: 1
+     * @return joinSuccessIn5secsRate
+     */
     public Double getJoinSuccessIn5secsRate() {
         return joinSuccessIn5secsRate;
     }
@@ -136,9 +145,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 视频卡顿率参数取值，取值为1代表卡顿率100% minimum: 0 maximum: 1
-     * 
-     * @return videoFreezeRate */
+    /**
+     * 视频卡顿率参数取值，取值为1代表卡顿率100%
+     * minimum: 0
+     * maximum: 1
+     * @return videoFreezeRate
+     */
     public Double getVideoFreezeRate() {
         return videoFreezeRate;
     }
@@ -152,9 +164,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 音频卡顿率参数取值，取值为1代表卡顿率100% minimum: 0 maximum: 1
-     * 
-     * @return audioFreezeRate */
+    /**
+     * 音频卡顿率参数取值，取值为1代表卡顿率100%
+     * minimum: 0
+     * maximum: 1
+     * @return audioFreezeRate
+     */
     public Double getAudioFreezeRate() {
         return audioFreezeRate;
     }
@@ -168,9 +183,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 首帧视频接收耗时，单位毫秒 minimum: 0 maximum: 1
-     * 
-     * @return firstVideoRecvTime */
+    /**
+     * 首帧视频接收耗时，单位毫秒
+     * minimum: 0
+     * maximum: 1
+     * @return firstVideoRecvTime
+     */
     public Long getFirstVideoRecvTime() {
         return firstVideoRecvTime;
     }
@@ -184,9 +202,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 首帧音频接收耗时，单位毫秒 minimum: 0 maximum: 1
-     * 
-     * @return firstAudioRecvTime */
+    /**
+     * 首帧音频接收耗时，单位毫秒
+     * minimum: 0
+     * maximum: 1
+     * @return firstAudioRecvTime
+     */
     public Long getFirstAudioRecvTime() {
         return firstAudioRecvTime;
     }
@@ -200,9 +221,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 拉流成功率参数取值，取值为1代表成功率100% minimum: 0 maximum: 1
-     * 
-     * @return pullStreamSuccessRate */
+    /**
+     * 拉流成功率参数取值，取值为1代表成功率100%
+     * minimum: 0
+     * maximum: 1
+     * @return pullStreamSuccessRate
+     */
     public Double getPullStreamSuccessRate() {
         return pullStreamSuccessRate;
     }
@@ -216,9 +240,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 推流成功率参数取值，取值为1代表成功率100% minimum: 0 maximum: 1
-     * 
-     * @return pushStreamSuccessRate */
+    /**
+     * 推流成功率参数取值，取值为1代表成功率100%
+     * minimum: 0
+     * maximum: 1
+     * @return pushStreamSuccessRate
+     */
     public Double getPushStreamSuccessRate() {
         return pushStreamSuccessRate;
     }
@@ -232,9 +259,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 客户端视频上行优质传输率，取值为1代表传输率100% minimum: 0 maximum: 1844674407
-     * 
-     * @return videoUpstreamExcellentTransRate */
+    /**
+     * 客户端视频上行优质传输率，取值为1代表传输率100%
+     * minimum: 0
+     * maximum: 1844674407
+     * @return videoUpstreamExcellentTransRate
+     */
     public Double getVideoUpstreamExcellentTransRate() {
         return videoUpstreamExcellentTransRate;
     }
@@ -248,9 +278,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 客户端音频上行优质传输率，取值为1代表传输率100% minimum: 0 maximum: 1
-     * 
-     * @return audioUpstreamExcellentTransRate */
+    /**
+     * 客户端音频上行优质传输率，取值为1代表传输率100%
+     * minimum: 0
+     * maximum: 1
+     * @return audioUpstreamExcellentTransRate
+     */
     public Double getAudioUpstreamExcellentTransRate() {
         return audioUpstreamExcellentTransRate;
     }
@@ -264,9 +297,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 端到端视频优质传输率，取值为1代表传输率100% minimum: 0 maximum: 1
-     * 
-     * @return videoExcellentTransRate */
+    /**
+     * 端到端视频优质传输率，取值为1代表传输率100%
+     * minimum: 0
+     * maximum: 1
+     * @return videoExcellentTransRate
+     */
     public Double getVideoExcellentTransRate() {
         return videoExcellentTransRate;
     }
@@ -280,9 +316,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 端到端音频优质传输率，取值为1代表传输率100% minimum: 0 maximum: 1
-     * 
-     * @return audioExcellentTransRate */
+    /**
+     * 端到端音频优质传输率，取值为1代表传输率100%
+     * minimum: 0
+     * maximum: 1
+     * @return audioExcellentTransRate
+     */
     public Double getAudioExcellentTransRate() {
         return audioExcellentTransRate;
     }
@@ -296,9 +335,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 端到端视频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数。 minimum: 0 maximum: 1
-     * 
-     * @return videoTransDelay */
+    /**
+     * 端到端视频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数。
+     * minimum: 0
+     * maximum: 1
+     * @return videoTransDelay
+     */
     public Double getVideoTransDelay() {
         return videoTransDelay;
     }
@@ -312,9 +354,12 @@ public class RtcHistoryQualityTimeValue {
         return this;
     }
 
-    /** 端到端音频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数。 minimum: 0 maximum: 1
-     * 
-     * @return audioTransDelay */
+    /**
+     * 端到端音频网络时延，单位为毫秒，取当天所有用户网络延迟的中位数。
+     * minimum: 0
+     * maximum: 1
+     * @return audioTransDelay
+     */
     public Double getAudioTransDelay() {
         return audioTransDelay;
     }
@@ -397,7 +442,10 @@ public class RtcHistoryQualityTimeValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

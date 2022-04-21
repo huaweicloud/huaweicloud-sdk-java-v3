@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRtcUserListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,12 @@ public class ListRtcUserListResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数 minimum: 0 maximum: 1844674407
-     * 
-     * @return total */
+    /**
+     * 总数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -58,9 +63,12 @@ public class ListRtcUserListResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询结果限制 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询结果限制
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -74,9 +82,12 @@ public class ListRtcUserListResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 1844674407
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量
+     * minimum: 0
+     * maximum: 1844674407
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -106,9 +117,10 @@ public class ListRtcUserListResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户列表
-     * 
-     * @return users */
+    /**
+     * 用户列表
+     * @return users
+     */
     public List<RtcUser> getUsers() {
         return users;
     }
@@ -122,9 +134,10 @@ public class ListRtcUserListResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -169,7 +182,10 @@ public class ListRtcUserListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OriginRangeBody */
+/**
+ * OriginRangeBody
+ */
 public class OriginRangeBody {
 
-    /** range状态（\"off\"/\"on\"） */
+    /**
+     * range状态（\"off\"/\"on\"）
+     */
     public static final class RangeStatusEnum {
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final RangeStatusEnum OFF = new RangeStatusEnum("off");
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final RangeStatusEnum ON = new RangeStatusEnum("on");
 
         private static final Map<String, RangeStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class OriginRangeBody {
         return this;
     }
 
-    /** range状态（\"off\"/\"on\"）
-     * 
-     * @return rangeStatus */
+    /**
+     * range状态（\"off\"/\"on\"）
+     * @return rangeStatus
+     */
     public RangeStatusEnum getRangeStatus() {
         return rangeStatus;
     }
@@ -115,9 +124,10 @@ public class OriginRangeBody {
         return this;
     }
 
-    /** 加速域名id。获取方法请参见查询加速域名。
-     * 
-     * @return domainId */
+    /**
+     * 加速域名id。获取方法请参见查询加速域名。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -154,7 +164,10 @@ public class OriginRangeBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

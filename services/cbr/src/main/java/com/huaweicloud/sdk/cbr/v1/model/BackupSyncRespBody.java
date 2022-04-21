@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BackupSyncRespBody */
+/**
+ * BackupSyncRespBody
+ */
 public class BackupSyncRespBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BackupSyncRespBody {
         return this;
     }
 
-    /** 备份副本ID
-     * 
-     * @return backupId */
+    /**
+     * 备份副本ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -39,9 +42,10 @@ public class BackupSyncRespBody {
         return this;
     }
 
-    /** 同步任务ID
-     * 
-     * @return operationLogId */
+    /**
+     * 同步任务ID
+     * @return operationLogId
+     */
     public String getOperationLogId() {
         return operationLogId;
     }
@@ -78,7 +82,10 @@ public class BackupSyncRespBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListApiQuantitiesV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    /** API总个数
-     * 
-     * @return instanceNum */
+    /**
+     * API总个数
+     * @return instanceNum
+     */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -45,9 +48,10 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 已发布到release环境的API个数
-     * 
-     * @return numsOnRelease */
+    /**
+     * 已发布到release环境的API个数
+     * @return numsOnRelease
+     */
     public Integer getNumsOnRelease() {
         return numsOnRelease;
     }
@@ -61,9 +65,10 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 未发布到release环境的API个数
-     * 
-     * @return numsOffRelease */
+    /**
+     * 未发布到release环境的API个数
+     * @return numsOffRelease
+     */
     public Integer getNumsOffRelease() {
         return numsOffRelease;
     }
@@ -102,7 +107,10 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

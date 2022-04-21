@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPrivateipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListPrivateipsRequest {
         return this;
     }
 
-    /** 私有IP所在子网的唯一标识
-     * 
-     * @return subnetId */
+    /**
+     * 私有IP所在子网的唯一标识
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -44,9 +47,10 @@ public class ListPrivateipsRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class ListPrivateipsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源id，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源id，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -101,7 +106,10 @@ public class ListPrivateipsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

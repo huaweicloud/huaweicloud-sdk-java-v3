@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMonitoredObjectsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListMonitoredObjectsRequest {
         return this;
     }
 
-    /** 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
-     * 
-     * @return dimName */
+    /**
+     * 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
+     * @return dimName
+     */
     public String getDimName() {
         return dimName;
     }
@@ -44,9 +47,10 @@ public class ListMonitoredObjectsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +64,10 @@ public class ListMonitoredObjectsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,7 +106,10 @@ public class ListMonitoredObjectsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

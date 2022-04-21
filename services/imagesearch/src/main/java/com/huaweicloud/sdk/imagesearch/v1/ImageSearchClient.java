@@ -19,7 +19,14 @@ public class ImageSearchClient {
 
     /**
      * 添加图片
-     * 添加图片 将图片导入图片索引库，该图片可以是同一区域OBS桶内的图片或请求消息体里的图片，只有导入图片索引库的图片方可被搜索到。  &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
+     *
+     * 添加图片
+     * 将图片导入图片索引库，该图片可以是同一区域OBS桶内的图片或请求消息体里的图片，只有导入图片索引库的图片方可被搜索到。
+     * 
+     * &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunAddPictureRequest 请求对象
      * @return RunAddPictureResponse
@@ -30,7 +37,14 @@ public class ImageSearchClient {
 
     /**
      * 添加图片
-     * 添加图片 将图片导入图片索引库，该图片可以是同一区域OBS桶内的图片或请求消息体里的图片，只有导入图片索引库的图片方可被搜索到。  &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
+     *
+     * 添加图片
+     * 将图片导入图片索引库，该图片可以是同一区域OBS桶内的图片或请求消息体里的图片，只有导入图片索引库的图片方可被搜索到。
+     * 
+     * &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunAddPictureRequest 请求对象
      * @return SyncInvoker<RunAddPictureRequest, RunAddPictureResponse>
@@ -41,7 +55,11 @@ public class ImageSearchClient {
 
     /**
      * 查询图片
+     *
      * 通过图片路径查询索引库中对应图片是否存在。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunCheckPictureRequest 请求对象
      * @return RunCheckPictureResponse
@@ -52,7 +70,11 @@ public class ImageSearchClient {
 
     /**
      * 查询图片
+     *
      * 通过图片路径查询索引库中对应图片是否存在。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunCheckPictureRequest 请求对象
      * @return SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse>
@@ -63,7 +85,11 @@ public class ImageSearchClient {
 
     /**
      * 创建实例
+     *
      * 创建实例，实例中会生成图片索引库，用来存放图片特征。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunCreateInstanceRequest 请求对象
      * @return RunCreateInstanceResponse
@@ -74,7 +100,11 @@ public class ImageSearchClient {
 
     /**
      * 创建实例
+     *
      * 创建实例，实例中会生成图片索引库，用来存放图片特征。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunCreateInstanceRequest 请求对象
      * @return SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse>
@@ -85,7 +115,11 @@ public class ImageSearchClient {
 
     /**
      * 删除实例
+     *
      * 删除已存在的实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunDeleteInstanceRequest 请求对象
      * @return RunDeleteInstanceResponse
@@ -96,7 +130,11 @@ public class ImageSearchClient {
 
     /**
      * 删除实例
+     *
      * 删除已存在的实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunDeleteInstanceRequest 请求对象
      * @return SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse>
@@ -107,7 +145,11 @@ public class ImageSearchClient {
 
     /**
      * 删除图片
+     *
      * 通过图片路径删除索引库中对应图片。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunDeletePictureRequest 请求对象
      * @return RunDeletePictureResponse
@@ -118,7 +160,11 @@ public class ImageSearchClient {
 
     /**
      * 删除图片
+     *
      * 通过图片路径删除索引库中对应图片。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunDeletePictureRequest 请求对象
      * @return SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse>
@@ -129,7 +175,11 @@ public class ImageSearchClient {
 
     /**
      * 修改图片信息
+     *
      * 修改图像索引库中已存在的图片信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunModifyPictureRequest 请求对象
      * @return RunModifyPictureResponse
@@ -140,7 +190,11 @@ public class ImageSearchClient {
 
     /**
      * 修改图片信息
+     *
      * 修改图像索引库中已存在的图片信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunModifyPictureRequest 请求对象
      * @return SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse>
@@ -151,7 +205,11 @@ public class ImageSearchClient {
 
     /**
      * 查询用户实例信息
+     *
      * 查看用户指定实例详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunQueryInstanceRequest 请求对象
      * @return RunQueryInstanceResponse
@@ -162,7 +220,11 @@ public class ImageSearchClient {
 
     /**
      * 查询用户实例信息
+     *
      * 查看用户指定实例详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunQueryInstanceRequest 请求对象
      * @return SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse>
@@ -173,7 +235,11 @@ public class ImageSearchClient {
 
     /**
      * 搜索图片
+     *
      * 从图片索引库中搜索相似图片。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunSearchPictureRequest 请求对象
      * @return RunSearchPictureResponse
@@ -184,7 +250,11 @@ public class ImageSearchClient {
 
     /**
      * 搜索图片
+     *
      * 从图片索引库中搜索相似图片。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunSearchPictureRequest 请求对象
      * @return SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse>

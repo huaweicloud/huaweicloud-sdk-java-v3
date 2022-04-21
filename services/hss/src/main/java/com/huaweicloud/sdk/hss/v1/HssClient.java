@@ -17,34 +17,62 @@ public class HssClient {
         return new ClientBuilder<>(HssClient::new);
     }
 
-    /** 查入侵事件列表 查入侵事件列表
+    /**
+     * 查入侵事件列表
+     *
+     * 查入侵事件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
-     * @return ListEventsResponse */
+     * @return ListEventsResponse
+     */
     public ListEventsResponse listEvents(ListEventsRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listEvents);
     }
 
-    /** 查入侵事件列表 查入侵事件列表
+    /**
+     * 查入侵事件列表
+     *
+     * 查入侵事件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
-     * @return SyncInvoker<ListEventsRequest, ListEventsResponse> */
+     * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
         return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, HssMeta.listEvents, hcClient);
     }
 
-    /** 查询弹性云服务器状态列表 查询弹性云服务器状态列表
+    /**
+     * 查询弹性云服务器状态列表
+     *
+     * 查询弹性云服务器状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
-     * @return ListHostsResponse */
+     * @return ListHostsResponse
+     */
     public ListHostsResponse listHosts(ListHostsRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listHosts);
     }
 
-    /** 查询弹性云服务器状态列表 查询弹性云服务器状态列表
+    /**
+     * 查询弹性云服务器状态列表
+     *
+     * 查询弹性云服务器状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
-     * @return SyncInvoker<ListHostsRequest, ListHostsResponse> */
+     * @return SyncInvoker<ListHostsRequest, ListHostsResponse>
+     */
     public SyncInvoker<ListHostsRequest, ListHostsResponse> listHostsInvoker(ListHostsRequest request) {
         return new SyncInvoker<ListHostsRequest, ListHostsResponse>(request, HssMeta.listHosts, hcClient);
     }

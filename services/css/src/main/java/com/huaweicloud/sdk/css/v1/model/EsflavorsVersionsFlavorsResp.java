@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规格。 */
+/**
+ * 规格。
+ */
 public class EsflavorsVersionsFlavorsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 实例的内存大小。单位GB。
-     * 
-     * @return ram */
+    /**
+     * 实例的内存大小。单位GB。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -59,9 +62,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 实例的CPU核数。
-     * 
-     * @return cpu */
+    /**
+     * 实例的CPU核数。
+     * @return cpu
+     */
     public Integer getCpu() {
         return cpu;
     }
@@ -75,9 +79,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 规格名称。
-     * 
-     * @return name */
+    /**
+     * 规格名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +96,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 可用区域。
-     * 
-     * @return region */
+    /**
+     * 可用区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -107,9 +113,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 实例的硬盘容量范围。
-     * 
-     * @return diskrange */
+    /**
+     * 实例的硬盘容量范围。
+     * @return diskrange
+     */
     public String getDiskrange() {
         return diskrange;
     }
@@ -123,9 +130,10 @@ public class EsflavorsVersionsFlavorsResp {
         return this;
     }
 
-    /** 规格对应的ID。
-     * 
-     * @return flavorId */
+    /**
+     * 规格对应的ID。
+     * @return flavorId
+     */
     public String getFlavorId() {
         return flavorId;
     }
@@ -170,7 +178,10 @@ public class EsflavorsVersionsFlavorsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

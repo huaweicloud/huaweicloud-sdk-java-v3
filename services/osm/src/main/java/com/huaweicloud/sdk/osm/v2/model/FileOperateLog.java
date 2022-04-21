@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FileOperateLog */
+/**
+ * FileOperateLog
+ */
 public class FileOperateLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 传输时间 格式：hh:ii:ss
-     * 
-     * @return duration */
+    /**
+     * 传输时间 格式：hh:ii:ss
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -69,9 +72,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 操作时间
-     * 
-     * @return operateTime */
+    /**
+     * 操作时间
+     * @return operateTime
+     */
     public String getOperateTime() {
         return operateTime;
     }
@@ -85,9 +89,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 操作类型
-     * 
-     * @return operateType */
+    /**
+     * 操作类型
+     * @return operateType
+     */
     public String getOperateType() {
         return operateType;
     }
@@ -101,9 +106,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -117,9 +123,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 来源路径
-     * 
-     * @return fromPath */
+    /**
+     * 来源路径
+     * @return fromPath
+     */
     public String getFromPath() {
         return fromPath;
     }
@@ -133,9 +140,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 目标路径
-     * 
-     * @return toPath */
+    /**
+     * 目标路径
+     * @return toPath
+     */
     public String getToPath() {
         return toPath;
     }
@@ -149,9 +157,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 文件大小，多少k，多少M，多少G。
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小，多少k，多少M，多少G。
+     * @return fileSize
+     */
     public String getFileSize() {
         return fileSize;
     }
@@ -165,9 +174,10 @@ public class FileOperateLog {
         return this;
     }
 
-    /** 操作结果
-     * 
-     * @return operResult */
+    /**
+     * 操作结果
+     * @return operResult
+     */
     public String getOperResult() {
         return operResult;
     }
@@ -216,7 +226,10 @@ public class FileOperateLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

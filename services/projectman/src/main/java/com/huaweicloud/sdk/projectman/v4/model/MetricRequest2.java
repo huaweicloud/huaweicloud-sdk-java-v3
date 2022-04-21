@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MetricRequest2 */
+/**
+ * MetricRequest2
+ */
 public class MetricRequest2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class MetricRequest2 {
         return this;
     }
 
-    /** 指标类型
-     * 
-     * @return metricType */
+    /**
+     * 指标类型
+     * @return metricType
+     */
     public String getMetricType() {
         return metricType;
     }
@@ -50,9 +53,10 @@ public class MetricRequest2 {
         return this;
     }
 
-    /** 迭代ID
-     * 
-     * @return sprintId */
+    /**
+     * 迭代ID
+     * @return sprintId
+     */
     public String getSprintId() {
         return sprintId;
     }
@@ -75,9 +79,10 @@ public class MetricRequest2 {
         return this;
     }
 
-    /** Get dividend
-     * 
-     * @return dividend */
+    /**
+     * Get dividend
+     * @return dividend
+     */
     public MetricRequest2Dividend getDividend() {
         return dividend;
     }
@@ -91,9 +96,10 @@ public class MetricRequest2 {
         return this;
     }
 
-    /** 指标分母过滤条件
-     * 
-     * @return divisor */
+    /**
+     * 指标分母过滤条件
+     * @return divisor
+     */
     public Object getDivisor() {
         return divisor;
     }
@@ -134,7 +140,10 @@ public class MetricRequest2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

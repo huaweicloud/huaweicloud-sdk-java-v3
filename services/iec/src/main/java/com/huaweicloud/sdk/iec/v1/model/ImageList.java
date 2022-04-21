@@ -25,22 +25,34 @@ public class ImageList {
 
     private String name;
 
-    /** 镜像状态。 */
+    /**
+     * 镜像状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum QUEUED for value: "queued" */
+        /**
+         * Enum QUEUED for value: "queued"
+         */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
 
-        /** Enum SAVING for value: "saving" */
+        /**
+         * Enum SAVING for value: "saving"
+         */
         public static final StatusEnum SAVING = new StatusEnum("saving");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum KILLED for value: "killed" */
+        /**
+         * Enum KILLED for value: "killed"
+         */
         public static final StatusEnum KILLED = new StatusEnum("killed");
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -113,22 +125,34 @@ public class ImageList {
 
     private StatusEnum status;
 
-    /** 镜像格式。 */
+    /**
+     * 镜像格式。
+     */
     public static final class DiskFormatEnum {
 
-        /** Enum ZVHD2 for value: "zvhd2" */
+        /**
+         * Enum ZVHD2 for value: "zvhd2"
+         */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
 
-        /** Enum VHD for value: "vhd" */
+        /**
+         * Enum VHD for value: "vhd"
+         */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
 
-        /** Enum ZVHD for value: "zvhd" */
+        /**
+         * Enum ZVHD for value: "zvhd"
+         */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
 
-        /** Enum RAW for value: "raw" */
+        /**
+         * Enum RAW for value: "raw"
+         */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
 
-        /** Enum QCOW2 for value: "qcow2" */
+        /**
+         * Enum QCOW2 for value: "qcow2"
+         */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -261,13 +285,19 @@ public class ImageList {
 
     private String relationJobId;
 
-    /** 镜像类型。 取值范围： - gold：公有镜像； - private：私有镜像。 */
+    /**
+     * 镜像类型。  取值范围： - gold：公有镜像； - private：私有镜像。
+     */
     public static final class ImagetypeEnum {
 
-        /** Enum GOLD for value: "gold" */
+        /**
+         * Enum GOLD for value: "gold"
+         */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
 
-        /** Enum PRIVATE_ for value: "private " */
+        /**
+         * Enum PRIVATE_ for value: "private "
+         */
         public static final ImagetypeEnum PRIVATE_ = new ImagetypeEnum("private ");
 
         private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -342,16 +372,24 @@ public class ImageList {
 
     private String platform;
 
-    /** 镜像系统类型。 */
+    /**
+     * 镜像系统类型。
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum OTHER for value: "Other" */
+        /**
+         * Enum OTHER for value: "Other"
+         */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -477,9 +515,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return id */
+    /**
+     * 镜像ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -493,9 +532,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像名称。
-     * 
-     * @return name */
+    /**
+     * 镜像名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -509,9 +549,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像状态。
-     * 
-     * @return status */
+    /**
+     * 镜像状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -525,9 +566,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像格式。
-     * 
-     * @return diskFormat */
+    /**
+     * 镜像格式。
+     * @return diskFormat
+     */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -541,9 +583,12 @@ public class ImageList {
         return this;
     }
 
-    /** 最小系统盘（单位：GB），取值为40～1024GB。 minimum: 40 maximum: 1024
-     * 
-     * @return minDisk */
+    /**
+     * 最小系统盘（单位：GB），取值为40～1024GB。
+     * minimum: 40
+     * maximum: 1024
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -557,9 +602,10 @@ public class ImageList {
         return this;
     }
 
-    /** 最小内存（单位：MB），默认值为0。
-     * 
-     * @return minRam */
+    /**
+     * 最小内存（单位：MB），默认值为0。
+     * @return minRam
+     */
     public Integer getMinRam() {
         return minRam;
     }
@@ -573,9 +619,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像所属租户ID。
-     * 
-     * @return owner */
+    /**
+     * 镜像所属租户ID。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -589,9 +636,10 @@ public class ImageList {
         return this;
     }
 
-    /** 是否受保护。
-     * 
-     * @return _protected */
+    /**
+     * 是否受保护。
+     * @return _protected
+     */
     public Boolean getProtected() {
         return _protected;
     }
@@ -605,9 +653,10 @@ public class ImageList {
         return this;
     }
 
-    /** 可见性。
-     * 
-     * @return visibility */
+    /**
+     * 可见性。
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -621,9 +670,10 @@ public class ImageList {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -637,9 +687,10 @@ public class ImageList {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -653,9 +704,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像链接信息。
-     * 
-     * @return self */
+    /**
+     * 镜像链接信息。
+     * @return self
+     */
     public String getSelf() {
         return self;
     }
@@ -669,9 +721,10 @@ public class ImageList {
         return this;
     }
 
-    /** 是否是删除的镜像，取值为true或者false。
-     * 
-     * @return deleted */
+    /**
+     * 是否是删除的镜像，取值为true或者false。
+     * @return deleted
+     */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -685,9 +738,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像使用环境类型。
-     * 
-     * @return virtualEnvType */
+    /**
+     * 镜像使用环境类型。
+     * @return virtualEnvType
+     */
     public String getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -701,9 +755,10 @@ public class ImageList {
         return this;
     }
 
-    /** 删除时间，格式为UTC时间。
-     * 
-     * @return deletedAt */
+    /**
+     * 删除时间，格式为UTC时间。
+     * @return deletedAt
+     */
     public String getDeletedAt() {
         return deletedAt;
     }
@@ -717,9 +772,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像关联的任务ID。
-     * 
-     * @return relationJobId */
+    /**
+     * 镜像关联的任务ID。
+     * @return relationJobId
+     */
     public String getRelationJobId() {
         return relationJobId;
     }
@@ -733,9 +789,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像类型。 取值范围： - gold：公有镜像； - private：私有镜像。
-     * 
-     * @return imagetype */
+    /**
+     * 镜像类型。  取值范围： - gold：公有镜像； - private：私有镜像。
+     * @return imagetype
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
     public ImagetypeEnum getImagetype() {
@@ -751,9 +808,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像平台分类。
-     * 
-     * @return platform */
+    /**
+     * 镜像平台分类。
+     * @return platform
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
     public String getPlatform() {
@@ -769,9 +827,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像系统类型。
-     * 
-     * @return osType */
+    /**
+     * 镜像系统类型。
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
@@ -787,9 +846,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像的操作系统具体版本。
-     * 
-     * @return osVersion */
+    /**
+     * 镜像的操作系统具体版本。
+     * @return osVersion
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
     public String getOsVersion() {
@@ -805,9 +865,10 @@ public class ImageList {
         return this;
     }
 
-    /** 是否是注册过的镜像。
-     * 
-     * @return isregistered */
+    /**
+     * 是否是注册过的镜像。
+     * @return isregistered
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
     public Boolean getIsregistered() {
@@ -823,9 +884,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像支持KVM，取值为true，否则无该属性。
-     * 
-     * @return supportKvm */
+    /**
+     * 如果镜像支持KVM，取值为true，否则无该属性。
+     * @return supportKvm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm")
     public String getSupportKvm() {
@@ -841,9 +903,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像是支持KVM虚拟化平台下的GPU类型，取值为“V100_vGPU”或者“RTX5000”，否则无该属性。
-     * 
-     * @return supportKvmGpuType */
+    /**
+     * 如果镜像是支持KVM虚拟化平台下的GPU类型，取值为“V100_vGPU”或者“RTX5000”，否则无该属性。
+     * @return supportKvmGpuType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
@@ -859,9 +922,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像支持AI加速，取值为true，否则无该属性。
-     * 
-     * @return supportKvmAscend310 */
+    /**
+     * 如果镜像支持AI加速，取值为true，否则无该属性。
+     * @return supportKvmAscend310
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_ascend_310")
     public String getSupportKvmAscend310() {
@@ -877,9 +941,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像支持计算增强，取值为true，否则无该属性。
-     * 
-     * @return supportKvmHi1822Hiovs */
+    /**
+     * 如果镜像支持计算增强，取值为true，否则无该属性。
+     * @return supportKvmHi1822Hiovs
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_hi1822_hiovs")
     public String getSupportKvmHi1822Hiovs() {
@@ -895,9 +960,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像为ARM架构类型，取值为true，否则无该属性。
-     * 
-     * @return supportArm */
+    /**
+     * 如果镜像为ARM架构类型，取值为true，否则无该属性。
+     * @return supportArm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_arm")
     public String getSupportArm() {
@@ -913,9 +979,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像启动模式，取值为uefi或bios，不指定时无该属性。
-     * 
-     * @return hwFirmwareType */
+    /**
+     * 镜像启动模式，取值为uefi或bios，不指定时无该属性。
+     * @return hwFirmwareType
+     */
     public String getHwFirmwareType() {
         return hwFirmwareType;
     }
@@ -929,9 +996,10 @@ public class ImageList {
         return this;
     }
 
-    /** 镜像来源。 - 来源边缘实例：instance:<实例ID> - 来源IMS：ims:<镜像ID>:<region ID>
-     * 
-     * @return dataSource */
+    /**
+     * 镜像来源。  - 来源边缘实例：instance:<实例ID> - 来源IMS：ims:<镜像ID>:<region ID>
+     * @return dataSource
+     */
     public String getDataSource() {
         return dataSource;
     }
@@ -945,9 +1013,10 @@ public class ImageList {
         return this;
     }
 
-    /** 如果镜像支持GPU T4类型，取值为true，否则无该属性。
-     * 
-     * @return supportGpuT4 */
+    /**
+     * 如果镜像支持GPU T4类型，取值为true，否则无该属性。
+     * @return supportGpuT4
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_gpu_t4")
     public String getSupportGpuT4() {
@@ -1061,7 +1130,10 @@ public class ImageList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

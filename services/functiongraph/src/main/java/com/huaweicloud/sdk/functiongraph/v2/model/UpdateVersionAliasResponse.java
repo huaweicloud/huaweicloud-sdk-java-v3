@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateVersionAliasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 要获取的别名名称。
-     * 
-     * @return name */
+    /**
+     * 要获取的别名名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 别名对应的版本名称。
-     * 
-     * @return version */
+    /**
+     * 别名对应的版本名称。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -80,9 +84,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 别名描述信息。
-     * 
-     * @return description */
+    /**
+     * 别名描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -96,9 +101,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 别名最后修改时间。
-     * 
-     * @return lastModified */
+    /**
+     * 别名最后修改时间。
+     * @return lastModified
+     */
     public OffsetDateTime getLastModified() {
         return lastModified;
     }
@@ -112,9 +118,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本别名唯一标识。
-     * 
-     * @return aliasUrn */
+    /**
+     * 版本别名唯一标识。
+     * @return aliasUrn
+     */
     public String getAliasUrn() {
         return aliasUrn;
     }
@@ -146,9 +153,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return this;
     }
 
-    /** 灰度版本信息
-     * 
-     * @return additionalVersionWeights */
+    /**
+     * 灰度版本信息
+     * @return additionalVersionWeights
+     */
     public Map<String, Integer> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
@@ -193,7 +201,10 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

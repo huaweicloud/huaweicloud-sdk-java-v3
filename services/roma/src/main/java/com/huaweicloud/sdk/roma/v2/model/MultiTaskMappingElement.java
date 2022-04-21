@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskMappingElement */
+/**
+ * MultiTaskMappingElement
+ */
 public class MultiTaskMappingElement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,25 +43,39 @@ public class MultiTaskMappingElement {
 
     private Long mappingPercent;
 
-    /** 映射状态 - AUTO (自动映射) - MANUAL (手工新增) - ADD (自动新增) - UPDATE (更新) - DELETE (删除) - USING (使用中) */
+    /**
+     * 映射状态 - AUTO (自动映射) - MANUAL (手工新增) - ADD (自动新增) - UPDATE (更新) - DELETE (删除) - USING (使用中)
+     */
     public static final class StatusEnum {
 
-        /** Enum AUTO for value: "AUTO" */
+        /**
+         * Enum AUTO for value: "AUTO"
+         */
         public static final StatusEnum AUTO = new StatusEnum("AUTO");
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final StatusEnum MANUAL = new StatusEnum("MANUAL");
 
-        /** Enum ADD for value: "ADD" */
+        /**
+         * Enum ADD for value: "ADD"
+         */
         public static final StatusEnum ADD = new StatusEnum("ADD");
 
-        /** Enum UPDATE for value: "UPDATE" */
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
         public static final StatusEnum UPDATE = new StatusEnum("UPDATE");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final StatusEnum DELETE = new StatusEnum("DELETE");
 
-        /** Enum USING for value: "USING" */
+        /**
+         * Enum USING for value: "USING"
+         */
         public static final StatusEnum USING = new StatusEnum("USING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -153,9 +169,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 映射唯一ID
-     * 
-     * @return id */
+    /**
+     * 映射唯一ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -169,9 +186,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 源表名
-     * 
-     * @return sourceTable */
+    /**
+     * 源表名
+     * @return sourceTable
+     */
     public String getSourceTable() {
         return sourceTable;
     }
@@ -185,9 +203,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 目标表名
-     * 
-     * @return targetTable */
+    /**
+     * 目标表名
+     * @return targetTable
+     */
     public String getTargetTable() {
         return targetTable;
     }
@@ -201,9 +220,12 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 上次修改时间 minimum: 1 maximum: -8446744073709551617
-     * 
-     * @return updatedTime */
+    /**
+     * 上次修改时间
+     * minimum: 1
+     * maximum: -8446744073709551617
+     * @return updatedTime
+     */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -217,9 +239,12 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 匹配度 minimum: 0 maximum: 100
-     * 
-     * @return mappingPercent */
+    /**
+     * 匹配度
+     * minimum: 0
+     * maximum: 100
+     * @return mappingPercent
+     */
     public Long getMappingPercent() {
         return mappingPercent;
     }
@@ -233,9 +258,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 映射状态 - AUTO (自动映射) - MANUAL (手工新增) - ADD (自动新增) - UPDATE (更新) - DELETE (删除) - USING (使用中)
-     * 
-     * @return status */
+    /**
+     * 映射状态 - AUTO (自动映射) - MANUAL (手工新增) - ADD (自动新增) - UPDATE (更新) - DELETE (删除) - USING (使用中)
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -265,9 +291,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 源端字段列表
-     * 
-     * @return sourceColumns */
+    /**
+     * 源端字段列表
+     * @return sourceColumns
+     */
     public List<MultiTaskColumnInfo> getSourceColumns() {
         return sourceColumns;
     }
@@ -297,9 +324,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 目标端字段列表
-     * 
-     * @return targetColumns */
+    /**
+     * 目标端字段列表
+     * @return targetColumns
+     */
     public List<MultiTaskColumnInfo> getTargetColumns() {
         return targetColumns;
     }
@@ -329,9 +357,10 @@ public class MultiTaskMappingElement {
         return this;
     }
 
-    /** 字段映射列表
-     * 
-     * @return mapping */
+    /**
+     * 字段映射列表
+     * @return mapping
+     */
     public List<MappingInfo> getMapping() {
         return mapping;
     }
@@ -390,7 +419,10 @@ public class MultiTaskMappingElement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

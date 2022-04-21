@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DuplicateApiInfo */
+/**
+ * DuplicateApiInfo
+ */
 public class DuplicateApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class DuplicateApiInfo {
 
     private String remark;
 
-    /** api类型： - self-owned：自有API - authorized：授权API */
+    /**
+     * api类型： - self-owned：自有API - authorized：授权API
+     */
     public static final class ApiTypeEnum {
 
-        /** Enum SELF_OWNED for value: "self-owned" */
+        /**
+         * Enum SELF_OWNED for value: "self-owned"
+         */
         public static final ApiTypeEnum SELF_OWNED = new ApiTypeEnum("self-owned");
 
-        /** Enum AUTHORIZED for value: "authorized" */
+        /**
+         * Enum AUTHORIZED for value: "authorized"
+         */
         public static final ApiTypeEnum AUTHORIZED = new ApiTypeEnum("authorized");
 
         private static final Map<String, ApiTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** API ID
-     * 
-     * @return apiId */
+    /**
+     * API ID
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -135,9 +144,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -151,9 +161,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** 分组名称
-     * 
-     * @return groupName */
+    /**
+     * 分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -167,9 +178,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** 分组ID
-     * 
-     * @return groupId */
+    /**
+     * 分组ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -183,9 +195,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return remark */
+    /**
+     * API描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -199,9 +212,10 @@ public class DuplicateApiInfo {
         return this;
     }
 
-    /** api类型： - self-owned：自有API - authorized：授权API
-     * 
-     * @return apiType */
+    /**
+     * api类型： - self-owned：自有API - authorized：授权API
+     * @return apiType
+     */
     public ApiTypeEnum getApiType() {
         return apiType;
     }
@@ -246,7 +260,10 @@ public class DuplicateApiInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

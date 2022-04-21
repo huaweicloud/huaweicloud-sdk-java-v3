@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecretVersionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListSecretVersionsRequest {
         return this;
     }
 
-    /** 凭据的资源标识符。
-     * 
-     * @return secretId */
+    /**
+     * 凭据的资源标识符。
+     * @return secretId
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -55,7 +58,10 @@ public class ListSecretVersionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

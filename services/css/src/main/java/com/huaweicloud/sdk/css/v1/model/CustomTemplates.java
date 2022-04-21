@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CustomTemplates */
+/**
+ * CustomTemplates
+ */
 public class CustomTemplates {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CustomTemplates {
         return this;
     }
 
-    /** 配置文件id。
-     * 
-     * @return id */
+    /**
+     * 配置文件id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class CustomTemplates {
         return this;
     }
 
-    /** 配置文件名称。
-     * 
-     * @return name */
+    /**
+     * 配置文件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class CustomTemplates {
         return this;
     }
 
-    /** 配置文件内容。
-     * 
-     * @return confContent */
+    /**
+     * 配置文件内容。
+     * @return confContent
+     */
     public String getConfContent() {
         return confContent;
     }
@@ -81,9 +86,10 @@ public class CustomTemplates {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return desc */
+    /**
+     * 描述。
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -123,7 +129,10 @@ public class CustomTemplates {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

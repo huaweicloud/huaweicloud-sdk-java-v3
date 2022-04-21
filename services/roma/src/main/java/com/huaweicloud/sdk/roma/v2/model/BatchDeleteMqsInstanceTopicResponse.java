@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchDeleteMqsInstanceTopicResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class BatchDeleteMqsInstanceTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 待删除的topic列表。
-     * 
-     * @return topics */
+    /**
+     * 待删除的topic列表。
+     * @return topics
+     */
     public List<BatchDeleteMqsInstanceTopicRespTopics> getTopics() {
         return topics;
     }
@@ -77,7 +80,10 @@ public class BatchDeleteMqsInstanceTopicResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

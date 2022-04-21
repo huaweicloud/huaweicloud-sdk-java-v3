@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMonitorInfosRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,26 +35,39 @@ public class ListMonitorInfosRequest {
 
     private String taskName;
 
-    /** 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br>
-     * 非必填参数，如果为空，搜索所有任务 */
+    /**
+     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
+     */
     public static final class ExecuteStatusEnum {
 
-        /** Enum UNSTARTED for value: "UNSTARTED" */
+        /**
+         * Enum UNSTARTED for value: "UNSTARTED"
+         */
         public static final ExecuteStatusEnum UNSTARTED = new ExecuteStatusEnum("UNSTARTED");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final ExecuteStatusEnum WAITING = new ExecuteStatusEnum("WAITING");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final ExecuteStatusEnum RUNNING = new ExecuteStatusEnum("RUNNING");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final ExecuteStatusEnum SUCCESS = new ExecuteStatusEnum("SUCCESS");
 
-        /** Enum CANCELLED for value: "CANCELLED" */
+        /**
+         * Enum CANCELLED for value: "CANCELLED"
+         */
         public static final ExecuteStatusEnum CANCELLED = new ExecuteStatusEnum("CANCELLED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ExecuteStatusEnum ERROR = new ExecuteStatusEnum("ERROR");
 
         private static final Map<String, ExecuteStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +146,10 @@ public class ListMonitorInfosRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -147,9 +163,12 @@ public class ListMonitorInfosRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于1 minimum: 1 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于1
+     * minimum: 1
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -163,9 +182,12 @@ public class ListMonitorInfosRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -179,9 +201,10 @@ public class ListMonitorInfosRequest {
         return this;
     }
 
-    /** 需要搜索的任务名称，支持模糊搜索，大小写敏感，非必填参数，如果为空，搜索所有任务
-     * 
-     * @return taskName */
+    /**
+     * 需要搜索的任务名称，支持模糊搜索，大小写敏感，非必填参数，如果为空，搜索所有任务
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -195,10 +218,10 @@ public class ListMonitorInfosRequest {
         return this;
     }
 
-    /** 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br>
-     * 非必填参数，如果为空，搜索所有任务
-     * 
-     * @return executeStatus */
+    /**
+     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
+     * @return executeStatus
+     */
     public ExecuteStatusEnum getExecuteStatus() {
         return executeStatus;
     }
@@ -241,7 +264,10 @@ public class ListMonitorInfosRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

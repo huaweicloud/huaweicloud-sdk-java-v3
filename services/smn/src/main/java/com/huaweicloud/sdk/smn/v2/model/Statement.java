@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Statement */
+/**
+ * Statement
+ */
 public class Statement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句的ID。 Statement语句ID必须是唯一的，例如statement01、statement02。
-     * 
-     * @return sid */
+    /**
+     * Statement语句的ID。 Statement语句ID必须是唯一的，例如statement01、statement02。
+     * @return sid
+     */
     public String getSid() {
         return sid;
     }
@@ -69,9 +72,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句的效果。“Allow”或者“Deny”。
-     * 
-     * @return effect */
+    /**
+     * Statement语句的效果。“Allow”或者“Deny”。
+     * @return effect
+     */
     public String getEffect() {
         return effect;
     }
@@ -85,11 +89,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。 “CSP”对象指的是其他用户，可以作用于多个用户。 “Service”对象指的是云服务，可以作用于多个云服务。
-     * Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。
-     * “Service”对象填写内容的格式为小写的云服务名称缩写。
-     * 
-     * @return principal */
+    /**
+     * Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * @return principal
+     */
     public String getPrincipal() {
         return principal;
     }
@@ -103,11 +106,10 @@ public class Statement {
         return this;
     }
 
-    /** NotPrincipal：Statement语句排除作用的对象。 目前支持“CSP”和“Service”两类对象。 “CSP”对象指的是其他用户，可以作用于多个用户。
-     * “Service”对象指的是云服务，可以作用于多个云服务。 Principal元素和NotPrincipal元素两者任选其一。选定后，
-     * “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。 “Service”对象填写内容的格式为小写的云服务名称缩写。
-     * 
-     * @return notPrincipal */
+    /**
+     * NotPrincipal：Statement语句排除作用的对象。  目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * @return notPrincipal
+     */
     public String getNotPrincipal() {
         return notPrincipal;
     }
@@ -121,12 +123,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句作用的操作。 允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。
-     * Action元素和NotAction元素两者任选其一。 目前支持的操作有： SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail
-     * SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName
-     * SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
-     * 
-     * @return action */
+    /**
+     * Statement语句作用的操作。  允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。  Action元素和NotAction元素两者任选其一。  目前支持的操作有：  SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -140,12 +140,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句排除作用的操作。 允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。
-     * Action元素和NotAction元素两者任选其一。 目前支持的操作有： SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail
-     * SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName
-     * SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
-     * 
-     * @return notAction */
+    /**
+     * Statement语句排除作用的操作。  允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。  Action元素和NotAction元素两者任选其一。  目前支持的操作有：  SMN:UpdateTopic  SMN:DeleteTopic  SMN:QueryTopicDetail  SMN:ListTopicAttributes  SMN:UpdateTopicAttribute  SMN:DeleteTopicAttributes  SMN:DeleteTopicAttributeByName  SMN:ListSubscriptionsByTopic  SMN:Subscribe  SMN:Unsubscribe  SMN:Publish
+     * @return notAction
+     */
     public String getNotAction() {
         return notAction;
     }
@@ -159,9 +157,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句作用的主题。 Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
-     * 
-     * @return resource */
+    /**
+     * Statement语句作用的主题。  Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
+     * @return resource
+     */
     public String getResource() {
         return resource;
     }
@@ -175,9 +174,10 @@ public class Statement {
         return this;
     }
 
-    /** Statement语句排除作用的主题。 Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
-     * 
-     * @return notResource */
+    /**
+     * Statement语句排除作用的主题。  Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
+     * @return notResource
+     */
     public String getNotResource() {
         return notResource;
     }
@@ -224,7 +224,10 @@ public class Statement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

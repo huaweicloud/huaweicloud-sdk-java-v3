@@ -17,18 +17,32 @@ public class CesClient {
         return new ClientBuilder<>(CesClient::new);
     }
 
-    /** 查询告警历史 查询告警历史列表
+    /**
+     * 查询告警历史
+     *
+     * 查询告警历史列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
-     * @return ListAlarmHistoriesResponse */
+     * @return ListAlarmHistoriesResponse
+     */
     public ListAlarmHistoriesResponse listAlarmHistories(ListAlarmHistoriesRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.listAlarmHistories);
     }
 
-    /** 查询告警历史 查询告警历史列表
+    /**
+     * 查询告警历史
+     *
+     * 查询告警历史列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
-     * @return SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> */
+     * @return SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
+     */
     public SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistoriesInvoker(
         ListAlarmHistoriesRequest request) {
         return new SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>(request,

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HlsEncrypt */
+/**
+ * HlsEncrypt
+ */
 public class HlsEncrypt {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class HlsEncrypt {
         return this;
     }
 
-    /** 内容加密秘钥
-     * 
-     * @return key */
+    /**
+     * 内容加密秘钥 
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -49,9 +52,10 @@ public class HlsEncrypt {
         return this;
     }
 
-    /** 秘钥获取服务的地址
-     * 
-     * @return url */
+    /**
+     * 秘钥获取服务的地址 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -65,9 +69,10 @@ public class HlsEncrypt {
         return this;
     }
 
-    /** 初始向量，base64binary，随机数
-     * 
-     * @return iv */
+    /**
+     * 初始向量，base64binary，随机数 
+     * @return iv
+     */
     public String getIv() {
         return iv;
     }
@@ -81,9 +86,10 @@ public class HlsEncrypt {
         return this;
     }
 
-    /** 加密算法。 - AES-128-CTR - AES-128-CBC - SM4CBC 默认值：AES-128-CTR
-     * 
-     * @return algorithm */
+    /**
+     * 加密算法。 - AES-128-CTR - AES-128-CBC - SM4CBC  默认值：AES-128-CTR 
+     * @return algorithm
+     */
     public String getAlgorithm() {
         return algorithm;
     }
@@ -122,7 +128,10 @@ public class HlsEncrypt {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

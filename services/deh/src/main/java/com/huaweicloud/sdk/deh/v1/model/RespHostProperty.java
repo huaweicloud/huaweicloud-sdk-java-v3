@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 专属主机属性。 */
+/**
+ * 专属主机属性。
+ */
 public class RespHostProperty {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机类型。
-     * 
-     * @return hostType */
+    /**
+     * 专属主机类型。
+     * @return hostType
+     */
     public String getHostType() {
         return hostType;
     }
@@ -67,9 +70,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机类型的名称。
-     * 
-     * @return hostTypeName */
+    /**
+     * 专属主机类型的名称。
+     * @return hostTypeName
+     */
     public String getHostTypeName() {
         return hostTypeName;
     }
@@ -83,9 +87,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机的vCPUs个数。
-     * 
-     * @return vcpus */
+    /**
+     * 专属主机的vCPUs个数。
+     * @return vcpus
+     */
     public Integer getVcpus() {
         return vcpus;
     }
@@ -99,9 +104,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机的物理核数。
-     * 
-     * @return cores */
+    /**
+     * 专属主机的物理核数。
+     * @return cores
+     */
     public Integer getCores() {
         return cores;
     }
@@ -115,9 +121,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机的物理套接字数量。
-     * 
-     * @return sockets */
+    /**
+     * 专属主机的物理套接字数量。
+     * @return sockets
+     */
     public Integer getSockets() {
         return sockets;
     }
@@ -131,9 +138,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机的物理内存大小。
-     * 
-     * @return memory */
+    /**
+     * 专属主机的物理内存大小。
+     * @return memory
+     */
     public Integer getMemory() {
         return memory;
     }
@@ -164,9 +172,10 @@ public class RespHostProperty {
         return this;
     }
 
-    /** 专属主机上创建的云服务器规格。
-     * 
-     * @return availableInstanceCapacities */
+    /**
+     * 专属主机上创建的云服务器规格。
+     * @return availableInstanceCapacities
+     */
     public List<RespInstanceCapacity> getAvailableInstanceCapacities() {
         return availableInstanceCapacities;
     }
@@ -214,7 +223,10 @@ public class RespHostProperty {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

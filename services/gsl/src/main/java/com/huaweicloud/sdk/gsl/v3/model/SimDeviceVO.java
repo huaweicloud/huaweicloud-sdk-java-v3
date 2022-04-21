@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** SimDeviceVO */
+/**
+ * SimDeviceVO
+ */
 public class SimDeviceVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -204,9 +206,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** sim卡id
-     * 
-     * @return simCardId */
+    /**
+     * sim卡id
+     * @return simCardId
+     */
     public Long getSimCardId() {
         return simCardId;
     }
@@ -220,9 +223,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 账户id
-     * 
-     * @return accountId */
+    /**
+     * 账户id
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -236,9 +240,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 容器ID:不同类型卡含义如下 iccid(实体卡)，eid（eSIM）cid（vSIM)
-     * 
-     * @return cid */
+    /**
+     * 容器ID:不同类型卡含义如下 iccid(实体卡)，eid（eSIM）cid（vSIM)
+     * @return cid
+     */
     public String getCid() {
         return cid;
     }
@@ -252,9 +257,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 流量池ID
-     * 
-     * @return simPoolId */
+    /**
+     * 流量池ID
+     * @return simPoolId
+     */
     public Long getSimPoolId() {
         return simPoolId;
     }
@@ -268,9 +274,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 设备IMEI
-     * 
-     * @return imei */
+    /**
+     * 设备IMEI
+     * @return imei
+     */
     public String getImei() {
         return imei;
     }
@@ -284,9 +291,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** sim卡状态： 10.可测试 11.未激活 13.可激活 14.已停用 20.在用 30.已拆机
-     * 
-     * @return simStatus */
+    /**
+     * sim卡状态：  10.可测试  11.未激活  13.可激活  14.已停用  20.在用  30.已拆机
+     * @return simStatus
+     */
     public Integer getSimStatus() {
         return simStatus;
     }
@@ -300,9 +308,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 设备状态
-     * 
-     * @return deviceStatus */
+    /**
+     * 设备状态
+     * @return deviceStatus
+     */
     public Integer getDeviceStatus() {
         return deviceStatus;
     }
@@ -316,9 +325,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 设备模组
-     * 
-     * @return deviceModel */
+    /**
+     * 设备模组
+     * @return deviceModel
+     */
     public String getDeviceModel() {
         return deviceModel;
     }
@@ -332,9 +342,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 激活日期 例如2020-01-31T16:00:00.000Z
-     * 
-     * @return actDate */
+    /**
+     * 激活日期 例如2020-01-31T16:00:00.000Z
+     * @return actDate
+     */
     public OffsetDateTime getActDate() {
         return actDate;
     }
@@ -348,9 +359,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 设备状态变更时间 例如2020-01-31T16:00:00.000Z
-     * 
-     * @return deviceStatusDate */
+    /**
+     * 设备状态变更时间 例如2020-01-31T16:00:00.000Z
+     * @return deviceStatusDate
+     */
     public OffsetDateTime getDeviceStatusDate() {
         return deviceStatusDate;
     }
@@ -364,9 +376,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 设备标识
-     * 
-     * @return nodeId */
+    /**
+     * 设备标识
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -380,9 +393,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 码号iccid
-     * 
-     * @return iccid */
+    /**
+     * 码号iccid
+     * @return iccid
+     */
     public String getIccid() {
         return iccid;
     }
@@ -396,9 +410,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 网络类型
-     * 
-     * @return networkType */
+    /**
+     * 网络类型
+     * @return networkType
+     */
     public String getNetworkType() {
         return networkType;
     }
@@ -412,9 +427,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 信号强度
-     * 
-     * @return dbm */
+    /**
+     * 信号强度
+     * @return dbm
+     */
     public String getDbm() {
         return dbm;
     }
@@ -428,9 +444,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 信号等级:1.差 2.良 3.良 4.优（该参数只有eSIM,vSIM返回，实体卡不返回）
-     * 
-     * @return signalLevel */
+    /**
+     * 信号等级:1.差  2.良  3.良 4.优（该参数只有eSIM,vSIM返回，实体卡不返回）
+     * @return signalLevel
+     */
     public String getSignalLevel() {
         return signalLevel;
     }
@@ -444,9 +461,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** sim卡类型 1.vSIM 2.eSIM 3.实体卡
-     * 
-     * @return simType */
+    /**
+     * sim卡类型 1.vSIM  2.eSIM  3.实体卡
+     * @return simType
+     */
     public Integer getSimType() {
         return simType;
     }
@@ -460,9 +478,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 标签名
-     * 
-     * @return tagNames */
+    /**
+     * 标签名
+     * @return tagNames
+     */
     public String getTagNames() {
         return tagNames;
     }
@@ -476,9 +495,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 批次号
-     * 
-     * @return orderId */
+    /**
+     * 批次号
+     * @return orderId
+     */
     public Long getOrderId() {
         return orderId;
     }
@@ -492,9 +512,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 到期时间 例如2021-06-30T00:00:00.000Z
-     * 
-     * @return expireTime */
+    /**
+     * 到期时间 例如2021-06-30T00:00:00.000Z
+     * @return expireTime
+     */
     public OffsetDateTime getExpireTime() {
         return expireTime;
     }
@@ -508,9 +529,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 在用套餐名
-     * 
-     * @return pricePlanName */
+    /**
+     * 在用套餐名
+     * @return pricePlanName
+     */
     public String getPricePlanName() {
         return pricePlanName;
     }
@@ -524,9 +546,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 套餐订购实例ID
-     * 
-     * @return simPricePlanId */
+    /**
+     * 套餐订购实例ID
+     * @return simPricePlanId
+     */
     public Long getSimPricePlanId() {
         return simPricePlanId;
     }
@@ -540,9 +563,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 剩余流量(单位M)，数据默认截止到昨日24点。
-     * 
-     * @return flowLeft */
+    /**
+     * 剩余流量(单位M)，数据默认截止到昨日24点。
+     * @return flowLeft
+     */
     public Double getFlowLeft() {
         return flowLeft;
     }
@@ -556,9 +580,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 已用流量(单位M)，数据默认截止到昨日24点。
-     * 
-     * @return flowUsed */
+    /**
+     * 已用流量(单位M)，数据默认截止到昨日24点。
+     * @return flowUsed
+     */
     public Double getFlowUsed() {
         return flowUsed;
     }
@@ -572,9 +597,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 运营商状态 -1.正常（非停机状态） 1.停机（超流量停机） 2.停机（超流量阈值停机） 3.停机（流量池停机） 4.停机（套餐到期停机） 5.停机（主动停机） 6.停机（违规停机）
-     * 
-     * @return operatorStatus */
+    /**
+     * 运营商状态 -1.正常（非停机状态） 1.停机（超流量停机） 2.停机（超流量阈值停机） 3.停机（流量池停机） 4.停机（套餐到期停机） 5.停机（主动停机） 6.停机（违规停机）
+     * @return operatorStatus
+     */
     public Integer getOperatorStatus() {
         return operatorStatus;
     }
@@ -588,9 +614,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** MSISDN
-     * 
-     * @return msisdn */
+    /**
+     * MSISDN
+     * @return msisdn
+     */
     public String getMsisdn() {
         return msisdn;
     }
@@ -604,9 +631,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** IMSI
-     * 
-     * @return imsi */
+    /**
+     * IMSI
+     * @return imsi
+     */
     public String getImsi() {
         return imsi;
     }
@@ -620,9 +648,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性一
-     * 
-     * @return customerAttribute1 */
+    /**
+     * 自定义属性一
+     * @return customerAttribute1
+     */
     public String getCustomerAttribute1() {
         return customerAttribute1;
     }
@@ -636,9 +665,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性二
-     * 
-     * @return customerAttribute2 */
+    /**
+     * 自定义属性二
+     * @return customerAttribute2
+     */
     public String getCustomerAttribute2() {
         return customerAttribute2;
     }
@@ -652,9 +682,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性三
-     * 
-     * @return customerAttribute3 */
+    /**
+     * 自定义属性三
+     * @return customerAttribute3
+     */
     public String getCustomerAttribute3() {
         return customerAttribute3;
     }
@@ -668,9 +699,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性四
-     * 
-     * @return customerAttribute4 */
+    /**
+     * 自定义属性四
+     * @return customerAttribute4
+     */
     public String getCustomerAttribute4() {
         return customerAttribute4;
     }
@@ -684,9 +716,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性五
-     * 
-     * @return customerAttribute5 */
+    /**
+     * 自定义属性五
+     * @return customerAttribute5
+     */
     public String getCustomerAttribute5() {
         return customerAttribute5;
     }
@@ -700,9 +733,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 自定义属性六
-     * 
-     * @return customerAttribute6 */
+    /**
+     * 自定义属性六
+     * @return customerAttribute6
+     */
     public String getCustomerAttribute6() {
         return customerAttribute6;
     }
@@ -716,9 +750,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 是否已实名认证: true表示是，false表示否，系统SIM卡实名认证状态非实时。
-     * 
-     * @return realNamed */
+    /**
+     * 是否已实名认证: true表示是，false表示否，系统SIM卡实名认证状态非实时。
+     * @return realNamed
+     */
     public Boolean getRealNamed() {
         return realNamed;
     }
@@ -732,9 +767,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 是否单独断网 true:断网，false:未断网 （当前仅电信卡支持）
-     * 
-     * @return cutNetFlag */
+    /**
+     * 是否单独断网 true:断网，false:未断网 （当前仅电信卡支持）
+     * @return cutNetFlag
+     */
     public Boolean getCutNetFlag() {
         return cutNetFlag;
     }
@@ -748,9 +784,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 是否达量断网 true:达量断网，false:未达量断网 （当前仅电信卡支持）
-     * 
-     * @return exceedCutNetFlag */
+    /**
+     * 是否达量断网 true:达量断网，false:未达量断网 （当前仅电信卡支持）
+     * @return exceedCutNetFlag
+     */
     public Boolean getExceedCutNetFlag() {
         return exceedCutNetFlag;
     }
@@ -764,9 +801,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 达量断网阈值（单位MB 当前仅电信卡支持）
-     * 
-     * @return exceedCutNetQuota */
+    /**
+     * 达量断网阈值（单位MB 当前仅电信卡支持）
+     * @return exceedCutNetQuota
+     */
     public Integer getExceedCutNetQuota() {
         return exceedCutNetQuota;
     }
@@ -780,9 +818,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 本月机卡绑定剩余次数（当前仅电信卡支持）
-     * 
-     * @return imeiBindRemainTimes */
+    /**
+     * 本月机卡绑定剩余次数（当前仅电信卡支持）
+     * @return imeiBindRemainTimes
+     */
     public Integer getImeiBindRemainTimes() {
         return imeiBindRemainTimes;
     }
@@ -796,9 +835,10 @@ public class SimDeviceVO {
         return this;
     }
 
-    /** 网络限制速率（单位Kbps,当前电信联通卡支持）
-     * 
-     * @return speedValue */
+    /**
+     * 网络限制速率（单位Kbps,当前电信联通卡支持）
+     * @return speedValue
+     */
     public Integer getSpeedValue() {
         return speedValue;
     }
@@ -938,7 +978,10 @@ public class SimDeviceVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

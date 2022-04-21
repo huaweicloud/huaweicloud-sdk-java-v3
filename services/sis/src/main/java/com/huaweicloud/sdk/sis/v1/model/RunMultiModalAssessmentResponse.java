@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RunMultiModalAssessmentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,12 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** 综合评分，0-100 minimum: 0 maximum: 1E+2
-     * 
-     * @return score */
+    /**
+     * 综合评分，0-100
+     * minimum: 0
+     * maximum: 1E+2
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -68,9 +73,12 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** 完整性评分，0-100 表示有多少比例的单词发音是清楚的 minimum: 0 maximum: 1E+2
-     * 
-     * @return completeness */
+    /**
+     * 完整性评分，0-100 表示有多少比例的单词发音是清楚的
+     * minimum: 0
+     * maximum: 1E+2
+     * @return completeness
+     */
     public Float getCompleteness() {
         return completeness;
     }
@@ -84,9 +92,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** 音频/视频时长，单位秒
-     * 
-     * @return duration */
+    /**
+     * 音频/视频时长，单位秒
+     * @return duration
+     */
     public Float getDuration() {
         return duration;
     }
@@ -109,9 +118,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pronunciation
-     * 
-     * @return pronunciation */
+    /**
+     * Get pronunciation
+     * @return pronunciation
+     */
     public Pronunciation getPronunciation() {
         return pronunciation;
     }
@@ -134,9 +144,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** Get fluency
-     * 
-     * @return fluency */
+    /**
+     * Get fluency
+     * @return fluency
+     */
     public Fluency getFluency() {
         return fluency;
     }
@@ -166,9 +177,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** 单词评测打分表
-     * 
-     * @return words */
+    /**
+     * 单词评测打分表
+     * @return words
+     */
     public List<Word> getWords() {
         return words;
     }
@@ -182,9 +194,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return this;
     }
 
-    /** 评测失败时定位问题使用的字段
-     * 
-     * @return traceId */
+    /**
+     * 评测失败时定位问题使用的字段
+     * @return traceId
+     */
     public String getTraceId() {
         return traceId;
     }
@@ -231,7 +244,10 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -19,36 +19,64 @@ public class HiLensAsyncClient {
         return new ClientBuilder<>(HiLensAsyncClient::new);
     }
 
-    /** 获取设备告警列表 获取设备告警列表
+    /**
+     * 获取设备告警列表
+     *
+     * 获取设备告警列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDeviceAlarmsRequest 请求对象
-     * @return CompletableFuture<ListDeviceAlarmsResponse> */
+     * @return CompletableFuture<ListDeviceAlarmsResponse>
+     */
     public CompletableFuture<ListDeviceAlarmsResponse> listDeviceAlarmsAsync(ListDeviceAlarmsRequest request) {
         return hcClient.asyncInvokeHttp(request, HiLensMeta.listDeviceAlarms);
     }
 
-    /** 获取设备告警列表 获取设备告警列表
+    /**
+     * 获取设备告警列表
+     *
+     * 获取设备告警列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDeviceAlarmsRequest 请求对象
-     * @return AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> */
+     * @return AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>
+     */
     public AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> listDeviceAlarmsAsyncInvoker(
         ListDeviceAlarmsRequest request) {
         return new AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>(request, HiLensMeta.listDeviceAlarms,
             hcClient);
     }
 
-    /** 获取设备列表 获取设备列表
+    /**
+     * 获取设备列表
+     *
+     * 获取设备列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
-     * @return CompletableFuture<ListDevicesResponse> */
+     * @return CompletableFuture<ListDevicesResponse>
+     */
     public CompletableFuture<ListDevicesResponse> listDevicesAsync(ListDevicesRequest request) {
         return hcClient.asyncInvokeHttp(request, HiLensMeta.listDevices);
     }
 
-    /** 获取设备列表 获取设备列表
+    /**
+     * 获取设备列表
+     *
+     * 获取设备列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
-     * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse> */
+     * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>
+     */
     public AsyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesAsyncInvoker(ListDevicesRequest request) {
         return new AsyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, HiLensMeta.listDevices, hcClient);
     }

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DecryptDatakeyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class DecryptDatakeyResponse extends SdkResponse {
         return this;
     }
 
-    /** DEK明文的16进制字符串。
-     * 
-     * @return dataKey */
+    /**
+     * DEK明文的16进制字符串。
+     * @return dataKey
+     */
     public String getDataKey() {
         return dataKey;
     }
@@ -45,9 +48,10 @@ public class DecryptDatakeyResponse extends SdkResponse {
         return this;
     }
 
-    /** DEK明文字节长度。
-     * 
-     * @return datakeyLength */
+    /**
+     * DEK明文字节长度。
+     * @return datakeyLength
+     */
     public String getDatakeyLength() {
         return datakeyLength;
     }
@@ -61,9 +65,10 @@ public class DecryptDatakeyResponse extends SdkResponse {
         return this;
     }
 
-    /** DEK明文的SHA256值对应的16进制字符串。
-     * 
-     * @return datakeyDgst */
+    /**
+     * DEK明文的SHA256值对应的16进制字符串。
+     * @return datakeyDgst
+     */
     public String getDatakeyDgst() {
         return datakeyDgst;
     }
@@ -102,7 +107,10 @@ public class DecryptDatakeyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlideVerifyCodeCheckDTO */
+/**
+ * SlideVerifyCodeCheckDTO
+ */
 public class SlideVerifyCodeCheckDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1
-     * 
-     * @return user */
+    /**
+     * 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -59,10 +62,12 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc； * 18：workplace mobile minimum:
-     * 0 maximum: 255
-     * 
-     * @return clientType */
+    /**
+     * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc； * 18：workplace mobile 
+     * minimum: 0
+     * maximum: 255
+     * @return clientType
+     */
     public Integer getClientType() {
         return clientType;
     }
@@ -76,9 +81,10 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 校验类型。 * 0：登录； * 1：忘记密码; 默认值：0
-     * 
-     * @return checkType */
+    /**
+     * 校验类型。 * 0：登录； * 1：忘记密码; 默认值：0 
+     * @return checkType
+     */
     public Integer getCheckType() {
         return checkType;
     }
@@ -92,9 +98,10 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 发送滑块验证码返回的token字符串 maxLength：255 minLength：1
-     * 
-     * @return token */
+    /**
+     * 发送滑块验证码返回的token字符串 maxLength：255 minLength：1 
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -108,9 +115,10 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 抠出图形的X轴坐标。
-     * 
-     * @return pointX */
+    /**
+     * 抠出图形的X轴坐标。
+     * @return pointX
+     */
     public Integer getPointX() {
         return pointX;
     }
@@ -124,9 +132,10 @@ public class SlideVerifyCodeCheckDTO {
         return this;
     }
 
-    /** 滑动时间，单位ms。
-     * 
-     * @return slideTime */
+    /**
+     * 滑动时间，单位ms。
+     * @return slideTime
+     */
     public Integer getSlideTime() {
         return slideTime;
     }
@@ -171,7 +180,10 @@ public class SlideVerifyCodeCheckDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

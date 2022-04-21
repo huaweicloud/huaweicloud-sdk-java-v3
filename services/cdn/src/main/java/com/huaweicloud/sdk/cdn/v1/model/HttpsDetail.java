@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** HttpsDetail */
+/**
+ * HttpsDetail
+ */
 public class HttpsDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return domainId */
+    /**
+     * 域名id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -85,9 +88,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 绑定该证书的域名
-     * 
-     * @return domainName */
+    /**
+     * 绑定该证书的域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -101,9 +105,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 证书名字。（长度限制为3-32字符）。
-     * 
-     * @return certName */
+    /**
+     * 证书名字。（长度限制为3-32字符）。
+     * @return certName
+     */
     public String getCertName() {
         return certName;
     }
@@ -117,9 +122,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 证书内容
-     * 
-     * @return certificate */
+    /**
+     * 证书内容
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -133,9 +139,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 私钥内容
-     * 
-     * @return privateKey */
+    /**
+     * 私钥内容
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -149,9 +156,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 0：自有证书 1：云托管证书
-     * 
-     * @return certificateType */
+    /**
+     * 0：自有证书  1：云托管证书
+     * @return certificateType
+     */
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -165,9 +173,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 证书过期时间
-     * 
-     * @return expirationTime */
+    /**
+     * 证书过期时间
+     * @return expirationTime
+     */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -181,9 +190,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
-     * 
-     * @return httpsStatus */
+    /**
+     * HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
+     * @return httpsStatus
+     */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -197,9 +207,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
-     * 
-     * @return forceRedirectHttps */
+    /**
+     * 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
+     * @return forceRedirectHttps
+     */
     public Integer getForceRedirectHttps() {
         return forceRedirectHttps;
     }
@@ -222,9 +233,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** Get forceRedirectConfig
-     * 
-     * @return forceRedirectConfig */
+    /**
+     * Get forceRedirectConfig
+     * @return forceRedirectConfig
+     */
     public ForceRedirect getForceRedirectConfig() {
         return forceRedirectConfig;
     }
@@ -238,9 +250,10 @@ public class HttpsDetail {
         return this;
     }
 
-    /** 是否使用HTTP2.0。（1是，0否。）
-     * 
-     * @return http2 */
+    /**
+     * 是否使用HTTP2.0。（1是，0否。）
+     * @return http2
+     */
     public Integer getHttp2() {
         return http2;
     }
@@ -305,7 +318,10 @@ public class HttpsDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

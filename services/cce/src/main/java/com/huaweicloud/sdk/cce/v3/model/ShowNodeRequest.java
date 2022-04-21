@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowNodeRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -39,9 +42,10 @@ public class ShowNodeRequest {
         return this;
     }
 
-    /** 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -78,7 +82,10 @@ public class ShowNodeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

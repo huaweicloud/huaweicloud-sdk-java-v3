@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdatePolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护策略id
-     * 
-     * @return id */
+    /**
+     * 防护策略id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -85,9 +88,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护策略名
-     * 
-     * @return name */
+    /**
+     * 防护策略名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,9 +105,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护等级
-     * 
-     * @return level */
+    /**
+     * 防护等级
+     * @return level
+     */
     public Integer getLevel() {
         return level;
     }
@@ -126,9 +131,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get action
-     * 
-     * @return action */
+    /**
+     * Get action
+     * @return action
+     */
     public PolicyAction getAction() {
         return action;
     }
@@ -151,9 +157,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get options
-     * 
-     * @return options */
+    /**
+     * Get options
+     * @return options
+     */
     public PolicyOption getOptions() {
         return options;
     }
@@ -183,9 +190,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护域名的信息
-     * 
-     * @return hosts */
+    /**
+     * 防护域名的信息
+     * @return hosts
+     */
     public List<String> getHosts() {
         return hosts;
     }
@@ -215,9 +223,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 扩展字段
-     * 
-     * @return extend */
+    /**
+     * 扩展字段
+     * @return extend
+     */
     public Map<String, String> getExtend() {
         return extend;
     }
@@ -231,9 +240,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建防护策略的时间
-     * 
-     * @return timestamp */
+    /**
+     * 创建防护策略的时间
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -247,9 +257,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 精准防护中的检测模式
-     * 
-     * @return fullDetection */
+    /**
+     * 精准防护中的检测模式
+     * @return fullDetection
+     */
     public Boolean getFullDetection() {
         return fullDetection;
     }
@@ -279,9 +290,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护域名的信息
-     * 
-     * @return bindHost */
+    /**
+     * 防护域名的信息
+     * @return bindHost
+     */
     public List<BindHost> getBindHost() {
         return bindHost;
     }
@@ -333,7 +345,10 @@ public class UpdatePolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

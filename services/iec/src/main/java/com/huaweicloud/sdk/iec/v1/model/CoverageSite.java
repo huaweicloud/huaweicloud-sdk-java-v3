@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 站点覆盖策略 */
+/**
+ * 站点覆盖策略
+ */
 public class CoverageSite {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class CoverageSite {
         return this;
     }
 
-    /** 站点名称。 具体信息可通过调用“查询边缘站点列表”来查询(注意：本字段区分大小写)。
-     * 
-     * @return site */
+    /**
+     * 站点名称。 具体信息可通过调用“查询边缘站点列表”来查询(注意：本字段区分大小写)。
+     * @return site
+     */
     public String getSite() {
         return site;
     }
@@ -58,9 +61,10 @@ public class CoverageSite {
         return this;
     }
 
-    /** 租户需求数量列表。表示租户发放资源站点的运营商和发放的资源组的数量。
-     * 
-     * @return demands */
+    /**
+     * 租户需求数量列表。表示租户发放资源站点的运营商和发放的资源组的数量。
+     * @return demands
+     */
     public List<Demand> getDemands() {
         return demands;
     }
@@ -96,7 +100,10 @@ public class CoverageSite {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

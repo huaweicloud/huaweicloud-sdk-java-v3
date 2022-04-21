@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 裸金属服务器挂载云硬盘接口请求结构体 */
+/**
+ * 裸金属服务器挂载云硬盘接口请求结构体
+ */
 public class AttachVolumeBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AttachVolumeBody {
         return this;
     }
 
-    /** Get volumeAttachment
-     * 
-     * @return volumeAttachment */
+    /**
+     * Get volumeAttachment
+     * @return volumeAttachment
+     */
     public VolumeAttachment getVolumeAttachment() {
         return volumeAttachment;
     }
@@ -65,7 +68,10 @@ public class AttachVolumeBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

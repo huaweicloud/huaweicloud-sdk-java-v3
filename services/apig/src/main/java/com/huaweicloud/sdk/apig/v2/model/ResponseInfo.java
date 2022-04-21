@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResponseInfo */
+/**
+ * ResponseInfo
+ */
 public class ResponseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResponseInfo {
         return this;
     }
 
-    /** 响应的HTTP状态码
-     * 
-     * @return status */
+    /**
+     * 响应的HTTP状态码
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -39,9 +42,10 @@ public class ResponseInfo {
         return this;
     }
 
-    /** 响应的Body模板
-     * 
-     * @return body */
+    /**
+     * 响应的Body模板
+     * @return body
+     */
     public String getBody() {
         return body;
     }
@@ -77,7 +81,10 @@ public class ResponseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

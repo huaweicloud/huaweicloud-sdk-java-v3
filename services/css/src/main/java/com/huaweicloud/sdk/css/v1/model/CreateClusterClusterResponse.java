@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群对象。 */
+/**
+ * 集群对象。
+ */
 public class CreateClusterClusterResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateClusterClusterResponse {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return id */
+    /**
+     * 集群ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class CreateClusterClusterResponse {
         return this;
     }
 
-    /** 集群名称。
-     * 
-     * @return name */
+    /**
+     * 集群名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +82,10 @@ public class CreateClusterClusterResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

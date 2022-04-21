@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OperateAuthorizationV2Req */
+/**
+ * OperateAuthorizationV2Req
+ */
 public class OperateAuthorizationV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OperateAuthorizationV2Req {
         return this;
     }
 
-    /** 拒绝理由
-     * 
-     * @return rejectReason */
+    /**
+     * 拒绝理由
+     * @return rejectReason
+     */
     public String getRejectReason() {
         return rejectReason;
     }
@@ -39,9 +42,10 @@ public class OperateAuthorizationV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -78,7 +82,10 @@ public class OperateAuthorizationV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

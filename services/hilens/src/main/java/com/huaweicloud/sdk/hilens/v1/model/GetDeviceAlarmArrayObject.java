@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设备告警实体列表 */
+/**
+ * 设备告警实体列表
+ */
 public class GetDeviceAlarmArrayObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警记录ID
-     * 
-     * @return id */
+    /**
+     * 设备告警记录ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警名称
-     * 
-     * @return name */
+    /**
+     * 设备告警名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -95,9 +99,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警ID
-     * 
-     * @return alarmId */
+    /**
+     * 设备告警ID
+     * @return alarmId
+     */
     public Integer getAlarmId() {
         return alarmId;
     }
@@ -111,9 +116,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警等级，紧急告警(critical)，严重告警(major)，一般告警(minor)
-     * 
-     * @return level */
+    /**
+     * 设备告警等级，紧急告警(critical)，严重告警(major)，一般告警(minor)
+     * @return level
+     */
     public String getLevel() {
         return level;
     }
@@ -127,9 +133,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备平台
-     * 
-     * @return platform */
+    /**
+     * 设备平台
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -143,9 +150,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警的影响
-     * 
-     * @return impact */
+    /**
+     * 设备告警的影响
+     * @return impact
+     */
     public String getImpact() {
         return impact;
     }
@@ -159,9 +167,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警详情内容
-     * 
-     * @return detail */
+    /**
+     * 设备告警详情内容
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -175,9 +184,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警原因
-     * 
-     * @return reason */
+    /**
+     * 设备告警原因
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -191,9 +201,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 设备告警处理建议
-     * 
-     * @return dealSuggestion */
+    /**
+     * 设备告警处理建议
+     * @return dealSuggestion
+     */
     public String getDealSuggestion() {
         return dealSuggestion;
     }
@@ -207,9 +218,10 @@ public class GetDeviceAlarmArrayObject {
         return this;
     }
 
-    /** 创建时间（时间戳）
-     * 
-     * @return createTime */
+    /**
+     * 创建时间（时间戳）
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -262,7 +274,10 @@ public class GetDeviceAlarmArrayObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

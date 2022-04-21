@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建后端云服务器的请求体 */
+/**
+ * 创建后端云服务器的请求体
+ */
 public class CreateMemberReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 后端云服务器所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -64,9 +67,10 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -96,9 +101,12 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端端口和协议号 minimum: 1 maximum: 65535
-     * 
-     * @return protocolPort */
+    /**
+     * 后端端口和协议号
+     * minimum: 1
+     * maximum: 65535
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -112,9 +120,10 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。
-     * 
-     * @return subnetId */
+    /**
+     * 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -128,9 +137,10 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器的对应的IP地址，这个IP必须在subnet_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。
-     * 
-     * @return address */
+    /**
+     * 后端云服务器的对应的IP地址，这个IP必须在subnet_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -144,10 +154,12 @@ public class CreateMemberReq {
         return this;
     }
 
-    /** 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
-     * minimum: 0 maximum: 100
-     * 
-     * @return weight */
+    /**
+     * 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
+     * minimum: 0
+     * maximum: 100
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -194,7 +206,10 @@ public class CreateMemberReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class CreateSecurityGroupOption {
         return this;
     }
 
-    /** 功能说明：安全组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 功能说明：安全组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -46,9 +47,10 @@ public class CreateSecurityGroupOption {
         return this;
     }
 
-    /** 功能说明：安全组所在的vpc的资源标识
-     * 
-     * @return vpcId */
+    /**
+     * 功能说明：安全组所在的vpc的资源标识
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -62,9 +64,10 @@ public class CreateSecurityGroupOption {
         return this;
     }
 
-    /** 功能说明：企业项目ID。创建安全组时，给安全组绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 默认值：“0”
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。创建安全组时，给安全组绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 默认值：“0”
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -103,7 +106,10 @@ public class CreateSecurityGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

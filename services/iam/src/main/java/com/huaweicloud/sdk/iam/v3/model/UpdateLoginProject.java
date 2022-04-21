@@ -25,9 +25,10 @@ public class UpdateLoginProject {
         return this;
     }
 
-    /** IAM用户是否开启登录保护，开启为\"true\"，未开启为\"false\"。
-     * 
-     * @return enabled */
+    /**
+     * IAM用户是否开启登录保护，开启为\"true\"，未开启为\"false\"。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -41,9 +42,10 @@ public class UpdateLoginProject {
         return this;
     }
 
-    /** IAM用户登录验证方式。手机验证为“sms”,邮箱验证为“email”,MFA验证为“vmfa”。
-     * 
-     * @return verificationMethod */
+    /**
+     * IAM用户登录验证方式。手机验证为“sms”,邮箱验证为“email”,MFA验证为“vmfa”。
+     * @return verificationMethod
+     */
     public String getVerificationMethod() {
         return verificationMethod;
     }
@@ -80,7 +82,10 @@ public class UpdateLoginProject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

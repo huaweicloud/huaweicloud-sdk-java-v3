@@ -33,9 +33,10 @@ public class GeneralTextResult {
         return this;
     }
 
-    /** 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359]。当detect_direction为false时，该字段值为 -1。
-     * 
-     * @return direction */
+    /**
+     * 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359]。当detect_direction为false时，该字段值为 -1。 
+     * @return direction
+     */
     public Integer getDirection() {
         return direction;
     }
@@ -49,9 +50,10 @@ public class GeneralTextResult {
         return this;
     }
 
-    /** 识别文字块数目。
-     * 
-     * @return wordsBlockCount */
+    /**
+     * 识别文字块数目。 
+     * @return wordsBlockCount
+     */
     public Integer getWordsBlockCount() {
         return wordsBlockCount;
     }
@@ -81,9 +83,10 @@ public class GeneralTextResult {
         return this;
     }
 
-    /** 识别文字块列表，输出顺序从左到右，先上后下。
-     * 
-     * @return wordsBlockList */
+    /**
+     * 识别文字块列表，输出顺序从左到右，先上后下。 
+     * @return wordsBlockList
+     */
     public List<GeneralTextWordsBlockList> getWordsBlockList() {
         return wordsBlockList;
     }
@@ -122,7 +125,10 @@ public class GeneralTextResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

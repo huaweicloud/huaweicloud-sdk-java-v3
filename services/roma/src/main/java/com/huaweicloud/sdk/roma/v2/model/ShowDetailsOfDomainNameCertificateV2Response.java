@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 证书域名
-     * 
-     * @return commonName */
+    /**
+     * 证书域名
+     * @return commonName
+     */
     public String getCommonName() {
         return commonName;
     }
@@ -115,9 +118,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** SAN域名
-     * 
-     * @return san */
+    /**
+     * SAN域名
+     * @return san
+     */
     public List<String> getSan() {
         return san;
     }
@@ -131,9 +135,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 证书版本
-     * 
-     * @return version */
+    /**
+     * 证书版本
+     * @return version
+     */
     public Integer getVersion() {
         return version;
     }
@@ -163,9 +168,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 公司、组织
-     * 
-     * @return organization */
+    /**
+     * 公司、组织
+     * @return organization
+     */
     public List<String> getOrganization() {
         return organization;
     }
@@ -196,9 +202,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 部门
-     * 
-     * @return organizationalUnit */
+    /**
+     * 部门
+     * @return organizationalUnit
+     */
     public List<String> getOrganizationalUnit() {
         return organizationalUnit;
     }
@@ -228,9 +235,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 城市
-     * 
-     * @return locality */
+    /**
+     * 城市
+     * @return locality
+     */
     public List<String> getLocality() {
         return locality;
     }
@@ -260,9 +268,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 省份
-     * 
-     * @return state */
+    /**
+     * 省份
+     * @return state
+     */
     public List<String> getState() {
         return state;
     }
@@ -292,9 +301,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 国家
-     * 
-     * @return country */
+    /**
+     * 国家
+     * @return country
+     */
     public List<String> getCountry() {
         return country;
     }
@@ -308,9 +318,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 证书有效期起始时间
-     * 
-     * @return notBefore */
+    /**
+     * 证书有效期起始时间
+     * @return notBefore
+     */
     public OffsetDateTime getNotBefore() {
         return notBefore;
     }
@@ -324,9 +335,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 证书有效期截止时间
-     * 
-     * @return notAfter */
+    /**
+     * 证书有效期截止时间
+     * @return notAfter
+     */
     public OffsetDateTime getNotAfter() {
         return notAfter;
     }
@@ -340,9 +352,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 序列号
-     * 
-     * @return serialNumber */
+    /**
+     * 序列号
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -372,9 +385,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 颁发者
-     * 
-     * @return issuer */
+    /**
+     * 颁发者
+     * @return issuer
+     */
     public List<String> getIssuer() {
         return issuer;
     }
@@ -388,9 +402,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    /** 签名算法
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名算法
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -462,7 +477,10 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

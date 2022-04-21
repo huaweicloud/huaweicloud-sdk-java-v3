@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBackgroundTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListBackgroundTaskRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,10 @@ public class ListBackgroundTaskRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -70,9 +74,10 @@ public class ListBackgroundTaskRequest {
         return this;
     }
 
-    /** 每页显示的条目数量。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +91,10 @@ public class ListBackgroundTaskRequest {
         return this;
     }
 
-    /** 查询开始时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20200609160000。
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20200609160000。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -102,9 +108,10 @@ public class ListBackgroundTaskRequest {
         return this;
     }
 
-    /** 查询结束时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20200617155959。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20200617155959。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -147,7 +154,10 @@ public class ListBackgroundTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

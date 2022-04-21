@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEdgeCloudRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListEdgeCloudRequest {
         return this;
     }
 
-    /** 偏移量。 当前偏移量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 当前偏移量，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -49,9 +52,10 @@ public class ListEdgeCloudRequest {
         return this;
     }
 
-    /** 查询返回边缘业务列表当前页面的数量。 取值范围：0~1000。
-     * 
-     * @return limit */
+    /**
+     * 查询返回边缘业务列表当前页面的数量。 取值范围：0~1000。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,9 +69,10 @@ public class ListEdgeCloudRequest {
         return this;
     }
 
-    /** 边缘业务名称。
-     * 
-     * @return name */
+    /**
+     * 边缘业务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +86,10 @@ public class ListEdgeCloudRequest {
         return this;
     }
 
-    /** 边缘业务ID。
-     * 
-     * @return id */
+    /**
+     * 边缘业务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -123,7 +129,10 @@ public class ListEdgeCloudRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

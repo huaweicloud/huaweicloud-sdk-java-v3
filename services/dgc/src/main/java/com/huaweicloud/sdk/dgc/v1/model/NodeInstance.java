@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NodeInstance */
+/**
+ * NodeInstance
+ */
 public class NodeInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get nodeName
-     * 
-     * @return nodeName */
+    /**
+     * Get nodeName
+     * @return nodeName
+     */
     public String getNodeName() {
         return nodeName;
     }
@@ -89,9 +92,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -105,9 +109,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get planTime
-     * 
-     * @return planTime */
+    /**
+     * Get planTime
+     * @return planTime
+     */
     public Integer getPlanTime() {
         return planTime;
     }
@@ -121,9 +126,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -137,9 +143,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -153,9 +160,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get executeTime
-     * 
-     * @return executeTime */
+    /**
+     * Get executeTime
+     * @return executeTime
+     */
     public Integer getExecuteTime() {
         return executeTime;
     }
@@ -169,9 +177,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get nodeType
-     * 
-     * @return nodeType */
+    /**
+     * Get nodeType
+     * @return nodeType
+     */
     public String getNodeType() {
         return nodeType;
     }
@@ -185,9 +194,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get retryTimes
-     * 
-     * @return retryTimes */
+    /**
+     * Get retryTimes
+     * @return retryTimes
+     */
     public Integer getRetryTimes() {
         return retryTimes;
     }
@@ -201,9 +211,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get instanceId
-     * 
-     * @return instanceId */
+    /**
+     * Get instanceId
+     * @return instanceId
+     */
     public Integer getInstanceId() {
         return instanceId;
     }
@@ -217,9 +228,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get inputRowCount
-     * 
-     * @return inputRowCount */
+    /**
+     * Get inputRowCount
+     * @return inputRowCount
+     */
     public Integer getInputRowCount() {
         return inputRowCount;
     }
@@ -233,9 +245,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get outputRowCount
-     * 
-     * @return outputRowCount */
+    /**
+     * Get outputRowCount
+     * @return outputRowCount
+     */
     public Integer getOutputRowCount() {
         return outputRowCount;
     }
@@ -249,9 +262,10 @@ public class NodeInstance {
         return this;
     }
 
-    /** Get logPath
-     * 
-     * @return logPath */
+    /**
+     * Get logPath
+     * @return logPath
+     */
     public String getLogPath() {
         return logPath;
     }
@@ -318,7 +332,10 @@ public class NodeInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ResetMessagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,10 +21,14 @@ public class ResetMessagesRequest {
 
     private String instanceId;
 
-    /** 重发类型。当前只支持“resend”。 */
+    /**
+     * 重发类型。当前只支持“resend”。
+     */
     public static final class ActionIdEnum {
 
-        /** Enum RESEND for value: "resend" */
+        /**
+         * Enum RESEND for value: "resend"
+         */
         public static final ActionIdEnum RESEND = new ActionIdEnum("resend");
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
@@ -101,9 +107,10 @@ public class ResetMessagesRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -117,9 +124,10 @@ public class ResetMessagesRequest {
         return this;
     }
 
-    /** 重发类型。当前只支持“resend”。
-     * 
-     * @return actionId */
+    /**
+     * 重发类型。当前只支持“resend”。
+     * @return actionId
+     */
     public ActionIdEnum getActionId() {
         return actionId;
     }
@@ -142,9 +150,10 @@ public class ResetMessagesRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public ResetMessagesReq getBody() {
         return body;
     }
@@ -183,7 +192,10 @@ public class ResetMessagesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

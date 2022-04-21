@@ -30,9 +30,10 @@ public class Offline {
         return this;
     }
 
-    /** 用户数据url。
-     * 
-     * @return userUrl */
+    /**
+     * 用户数据url。
+     * @return userUrl
+     */
     public String getUserUrl() {
         return userUrl;
     }
@@ -46,9 +47,10 @@ public class Offline {
         return this;
     }
 
-    /** 物品数据url。
-     * 
-     * @return itemUrl */
+    /**
+     * 物品数据url。
+     * @return itemUrl
+     */
     public String getItemUrl() {
         return itemUrl;
     }
@@ -62,9 +64,10 @@ public class Offline {
         return this;
     }
 
-    /** 行为数据url。
-     * 
-     * @return behaviorUrl */
+    /**
+     * 行为数据url。
+     * @return behaviorUrl
+     */
     public String getBehaviorUrl() {
         return behaviorUrl;
     }
@@ -102,7 +105,10 @@ public class Offline {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

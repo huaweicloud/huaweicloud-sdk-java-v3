@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 专属主机的配额。 */
+/**
+ * 专属主机的配额。
+ */
 public class RespQuotaSet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RespQuotaSet {
         return this;
     }
 
-    /** 配额类别。
-     * 
-     * @return resource */
+    /**
+     * 配额类别。
+     * @return resource
+     */
     public String getResource() {
         return resource;
     }
@@ -44,9 +47,10 @@ public class RespQuotaSet {
         return this;
     }
 
-    /** 配额最大限制。 “-1”表示资源配额不受限制。
-     * 
-     * @return hardLimit */
+    /**
+     * 配额最大限制。  “-1”表示资源配额不受限制。
+     * @return hardLimit
+     */
     public Integer getHardLimit() {
         return hardLimit;
     }
@@ -60,9 +64,10 @@ public class RespQuotaSet {
         return this;
     }
 
-    /** 已使用配额数量。
-     * 
-     * @return used */
+    /**
+     * 已使用配额数量。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -100,7 +105,10 @@ public class RespQuotaSet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

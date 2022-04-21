@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiAuthCreate */
+/**
+ * ApiAuthCreate
+ */
 public class ApiAuthCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 需要授权的环境编号
-     * 
-     * @return envId */
+    /**
+     * 需要授权的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -63,9 +66,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** APP的编号列表
-     * 
-     * @return appIds */
+    /**
+     * APP的编号列表
+     * @return appIds
+     */
     public List<String> getAppIds() {
         return appIds;
     }
@@ -95,9 +99,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** API的编号列表，可以选择租户自己的API，也可以选择从云市场上购买的API。
-     * 
-     * @return apiIds */
+    /**
+     * API的编号列表，可以选择租户自己的API，也可以选择从云市场上购买的API。
+     * @return apiIds
+     */
     public List<String> getApiIds() {
         return apiIds;
     }
@@ -135,7 +140,10 @@ public class ApiAuthCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListBackgroundTasksRespTasks */
+/**
+ * ListBackgroundTasksRespTasks
+ */
 public class ListBackgroundTasksRespTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return id */
+    /**
+     * 任务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return name */
+    /**
+     * 任务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -85,9 +89,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -101,9 +106,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -117,9 +123,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 任务参数。
-     * 
-     * @return params */
+    /**
+     * 任务参数。
+     * @return params
+     */
     public String getParams() {
         return params;
     }
@@ -133,9 +140,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return status */
+    /**
+     * 任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -149,9 +157,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 启动时间。
-     * 
-     * @return createdAt */
+    /**
+     * 启动时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -165,9 +174,10 @@ public class ListBackgroundTasksRespTasks {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 结束时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -216,7 +226,10 @@ public class ListBackgroundTasksRespTasks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

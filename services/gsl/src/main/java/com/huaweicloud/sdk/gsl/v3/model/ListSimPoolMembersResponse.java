@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSimPoolMembersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListSimPoolMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页记录数
-     * 
-     * @return limit */
+    /**
+     * 每页记录数
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -53,9 +56,10 @@ public class ListSimPoolMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 页码
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -69,9 +73,10 @@ public class ListSimPoolMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前流量池的成员总数
-     * 
-     * @return count */
+    /**
+     * 当前流量池的成员总数
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -101,9 +106,10 @@ public class ListSimPoolMembersResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询出来的流量池成员记录列表
-     * 
-     * @return poolMembers */
+    /**
+     * 查询出来的流量池成员记录列表
+     * @return poolMembers
+     */
     public List<PoolMemVO> getPoolMembers() {
         return poolMembers;
     }
@@ -144,7 +150,10 @@ public class ListSimPoolMembersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

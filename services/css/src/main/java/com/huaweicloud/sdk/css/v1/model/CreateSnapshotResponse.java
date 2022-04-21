@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateSnapshotResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateSnapshotResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照名称。
-     * 
-     * @return name */
+    /**
+     * 快照名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -45,9 +48,10 @@ public class CreateSnapshotResponse extends SdkResponse {
         return this;
     }
 
-    /** 快照描述。
-     * 
-     * @return description */
+    /**
+     * 快照描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -61,9 +65,10 @@ public class CreateSnapshotResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定要备份的索引名称。
-     * 
-     * @return indices */
+    /**
+     * 指定要备份的索引名称。
+     * @return indices
+     */
     public String getIndices() {
         return indices;
     }
@@ -102,7 +107,10 @@ public class CreateSnapshotResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

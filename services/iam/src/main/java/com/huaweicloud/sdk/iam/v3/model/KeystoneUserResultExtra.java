@@ -30,9 +30,10 @@ public class KeystoneUserResultExtra {
         return this;
     }
 
-    /** IAM用户描述信息。
-     * 
-     * @return description */
+    /**
+     * IAM用户描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -46,9 +47,10 @@ public class KeystoneUserResultExtra {
         return this;
     }
 
-    /** IAM用户密码状态。true：需要修改密码，false：正常。
-     * 
-     * @return pwdStatus */
+    /**
+     * IAM用户密码状态。true：需要修改密码，false：正常。
+     * @return pwdStatus
+     */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -62,9 +64,10 @@ public class KeystoneUserResultExtra {
         return this;
     }
 
-    /** IAM用户退出系统前，在控制台最后访问的项目ID。
-     * 
-     * @return lastProjectId */
+    /**
+     * IAM用户退出系统前，在控制台最后访问的项目ID。
+     * @return lastProjectId
+     */
     public String getLastProjectId() {
         return lastProjectId;
     }
@@ -103,7 +106,10 @@ public class KeystoneUserResultExtra {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 分组详情 */
+/**
+ * 分组详情
+ */
 public class CommonPoolsWithBorderGroupDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CommonPoolsWithBorderGroupDict {
         return this;
     }
 
-    /** 同组的公共池列表
-     * 
-     * @return publicipPools */
+    /**
+     * 同组的公共池列表
+     * @return publicipPools
+     */
     public List<String> getPublicipPools() {
         return publicipPools;
     }
@@ -58,9 +61,10 @@ public class CommonPoolsWithBorderGroupDict {
         return this;
     }
 
-    /** 分组：中心还是边缘
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 分组：中心还是边缘
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -97,7 +101,10 @@ public class CommonPoolsWithBorderGroupDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

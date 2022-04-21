@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ApplyConfigurationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ApplyConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用参数模板的异步任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 应用参数模板的异步任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -40,9 +43,10 @@ public class ApplyConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用参数模板任务是否提交成功。 - 取值为“true”，表示任务提交成功。 - 取值为“false”，表示任务提交失败。
-     * 
-     * @return success */
+    /**
+     * 应用参数模板任务是否提交成功。 - 取值为“true”，表示任务提交成功。 - 取值为“false”，表示任务提交失败。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -79,7 +83,10 @@ public class ApplyConfigurationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

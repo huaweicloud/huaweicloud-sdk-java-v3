@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateBlockchainCertByUserNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateBlockchainCertByUserNameRequest {
         return this;
     }
 
-    /** blockchainID
-     * 
-     * @return blockchainId */
+    /**
+     * blockchainID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -44,9 +47,10 @@ public class CreateBlockchainCertByUserNameRequest {
         return this;
     }
 
-    /** peer组织名称
-     * 
-     * @return orgName */
+    /**
+     * peer组织名称
+     * @return orgName
+     */
     public String getOrgName() {
         return orgName;
     }
@@ -60,9 +64,10 @@ public class CreateBlockchainCertByUserNameRequest {
         return this;
     }
 
-    /** 用户名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
-     * 
-     * @return userName */
+    /**
+     * 用户名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -102,7 +107,10 @@ public class CreateBlockchainCertByUserNameRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

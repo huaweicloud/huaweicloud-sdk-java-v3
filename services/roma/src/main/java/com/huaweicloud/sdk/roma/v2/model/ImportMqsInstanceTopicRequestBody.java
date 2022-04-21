@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ImportMqsInstanceTopicRequestBody */
+/**
+ * ImportMqsInstanceTopicRequestBody
+ */
 public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "upload_file_name", access = JsonProperty.Access.WRITE_ONLY)
@@ -22,9 +24,10 @@ public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 待导入的topic列表文件。
-     * 
-     * @return uploadFileName */
+    /**
+     * 待导入的topic列表文件。
+     * @return uploadFileName
+     */
     public FormDataFilePart getUploadFileName() {
         return uploadFileName;
     }
@@ -86,7 +89,10 @@ public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

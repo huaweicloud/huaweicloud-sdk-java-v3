@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子画面信息 */
+/**
+ * 子画面信息
+ */
 public class PicInfoNotify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class PicInfoNotify {
         return this;
     }
 
-    /** 多画面中每个画面的编号，编号从1开始
-     * 
-     * @return index */
+    /**
+     * 多画面中每个画面的编号，编号从1开始
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -63,9 +66,10 @@ public class PicInfoNotify {
         return this;
     }
 
-    /** 每个画面中会话标识，即callNumber。
-     * 
-     * @return id */
+    /**
+     * 每个画面中会话标识，即callNumber。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -79,9 +83,10 @@ public class PicInfoNotify {
         return this;
     }
 
-    /** 是否为辅流 0： 不是辅流 1： 是辅流
-     * 
-     * @return share */
+    /**
+     * 是否为辅流 0： 不是辅流 1： 是辅流
+     * @return share
+     */
     public Integer getShare() {
         return share;
     }
@@ -119,7 +124,10 @@ public class PicInfoNotify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

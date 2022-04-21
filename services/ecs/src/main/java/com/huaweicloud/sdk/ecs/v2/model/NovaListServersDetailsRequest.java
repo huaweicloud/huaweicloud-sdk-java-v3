@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NovaListServersDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,40 +60,64 @@ public class NovaListServersDetailsRequest {
 
     private String reservationId;
 
-    /** 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。 */
+    /**
+     * 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum CREATED_AT for value: "created_at" */
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
 
-        /** Enum AVAILABILITY_ZONE for value: "availability_zone" */
+        /**
+         * Enum AVAILABILITY_ZONE for value: "availability_zone"
+         */
         public static final SortKeyEnum AVAILABILITY_ZONE = new SortKeyEnum("availability_zone");
 
-        /** Enum DISPLAY_NAME for value: "display_name" */
+        /**
+         * Enum DISPLAY_NAME for value: "display_name"
+         */
         public static final SortKeyEnum DISPLAY_NAME = new SortKeyEnum("display_name");
 
-        /** Enum HOST for value: "host" */
+        /**
+         * Enum HOST for value: "host"
+         */
         public static final SortKeyEnum HOST = new SortKeyEnum("host");
 
-        /** Enum INSTANCE_TYPE_ID for value: "instance_type_id" */
+        /**
+         * Enum INSTANCE_TYPE_ID for value: "instance_type_id"
+         */
         public static final SortKeyEnum INSTANCE_TYPE_ID = new SortKeyEnum("instance_type_id");
 
-        /** Enum KEY_NAME for value: "key_name" */
+        /**
+         * Enum KEY_NAME for value: "key_name"
+         */
         public static final SortKeyEnum KEY_NAME = new SortKeyEnum("key_name");
 
-        /** Enum PROJECT_ID for value: "project_id" */
+        /**
+         * Enum PROJECT_ID for value: "project_id"
+         */
         public static final SortKeyEnum PROJECT_ID = new SortKeyEnum("project_id");
 
-        /** Enum USER_ID for value: "user_id" */
+        /**
+         * Enum USER_ID for value: "user_id"
+         */
         public static final SortKeyEnum USER_ID = new SortKeyEnum("user_id");
 
-        /** Enum UPDATED_AT for value: "updated_at" */
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
 
-        /** Enum UUID for value: "uuid" */
+        /**
+         * Enum UUID for value: "uuid"
+         */
         public static final SortKeyEnum UUID = new SortKeyEnum("uuid");
 
-        /** Enum VM_STATE for value: "vm_state" */
+        /**
+         * Enum VM_STATE for value: "vm_state"
+         */
         public static final SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -170,52 +196,79 @@ public class NovaListServersDetailsRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 云服务器状态。 取值范围： ACTIVE，
-     * BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
-     * 直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。 */
+    /**
+     * 云服务器状态。  取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum BUILD for value: "BUILD" */
+        /**
+         * Enum BUILD for value: "BUILD"
+         */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum HARD_REBOOT for value: "HARD_REBOOT" */
+        /**
+         * Enum HARD_REBOOT for value: "HARD_REBOOT"
+         */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
 
-        /** Enum MIGRATING for value: "MIGRATING" */
+        /**
+         * Enum MIGRATING for value: "MIGRATING"
+         */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
 
-        /** Enum REBOOT for value: "REBOOT" */
+        /**
+         * Enum REBOOT for value: "REBOOT"
+         */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
 
-        /** Enum RESIZE for value: "RESIZE" */
+        /**
+         * Enum RESIZE for value: "RESIZE"
+         */
         public static final StatusEnum RESIZE = new StatusEnum("RESIZE");
 
-        /** Enum REVERT_RESIZE for value: "REVERT_RESIZE" */
+        /**
+         * Enum REVERT_RESIZE for value: "REVERT_RESIZE"
+         */
         public static final StatusEnum REVERT_RESIZE = new StatusEnum("REVERT_RESIZE");
 
-        /** Enum SHELVED for value: "SHELVED" */
+        /**
+         * Enum SHELVED for value: "SHELVED"
+         */
         public static final StatusEnum SHELVED = new StatusEnum("SHELVED");
 
-        /** Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED" */
+        /**
+         * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
+         */
         public static final StatusEnum SHELVED_OFFLOADED = new StatusEnum("SHELVED_OFFLOADED");
 
-        /** Enum SHUTOFF for value: "SHUTOFF" */
+        /**
+         * Enum SHUTOFF for value: "SHUTOFF"
+         */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
 
-        /** Enum VERIFY_RESIZE for value: "VERIFY_RESIZE" */
+        /**
+         * Enum VERIFY_RESIZE for value: "VERIFY_RESIZE"
+         */
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -312,9 +365,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器上次更新状态的时间戳信息。时间戳为UTC格式。
-     * 
-     * @return changesSince */
+    /**
+     * 云服务器上次更新状态的时间戳信息。时间戳为UTC格式。
+     * @return changesSince
+     */
     public String getChangesSince() {
         return changesSince;
     }
@@ -328,9 +382,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器规格ID。
-     * 
-     * @return flavor */
+    /**
+     * 云服务器规格ID。
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -344,9 +399,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 镜像ID 在使用image作为条件过滤时，不能同时支持其他过滤条件和分页条件。如果同时指定image及其他条件，则以image条件为准；当条件不含image时，接口功能不受限制。
-     * 
-     * @return image */
+    /**
+     * 镜像ID  在使用image作为条件过滤时，不能同时支持其他过滤条件和分页条件。如果同时指定image及其他条件，则以image条件为准；当条件不含image时，接口功能不受限制。
+     * @return image
+     */
     public String getImage() {
         return image;
     }
@@ -360,9 +416,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** IPv4地址过滤结果，匹配规则为模糊匹配。
-     * 
-     * @return ip */
+    /**
+     * IPv4地址过滤结果，匹配规则为模糊匹配。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -376,9 +433,12 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 查询返回云服务器数量限制。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询返回云服务器数量限制。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -392,9 +452,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 从marker指定的云服务器ID的下一条数据开始查询。
-     * 
-     * @return marker */
+    /**
+     * 从marker指定的云服务器ID的下一条数据开始查询。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -408,9 +469,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -424,10 +486,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 查询tag字段中不包含该值的云服务器，值为标签的Key。 > 说明： > > 系统近期对标签功能进行了升级。如果之前添加的Tag为“Key.Value”的形式，则查询的时候需要使用“Key”来查询。 > >
-     * 例如：之前添加的tag为“a.b”,则升级后，查询时需使用“not-tags=a”。
-     * 
-     * @return notTags */
+    /**
+     * 查询tag字段中不包含该值的云服务器，值为标签的Key。  > 说明： >  > 系统近期对标签功能进行了升级。如果之前添加的Tag为“Key.Value”的形式，则查询的时候需要使用“Key”来查询。 >  > 例如：之前添加的tag为“a.b”,则升级后，查询时需使用“not-tags=a”。
+     * @return notTags
+     */
     public String getNotTags() {
         return notTags;
     }
@@ -441,9 +503,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
-     * 
-     * @return reservationId */
+    /**
+     * 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
+     * @return reservationId
+     */
     public String getReservationId() {
         return reservationId;
     }
@@ -457,9 +520,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
-     * 
-     * @return sortKey */
+    /**
+     * 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -473,12 +537,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 云服务器状态。 取值范围： ACTIVE，
-     * BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
-     * 直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
-     * 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
-     * 
-     * @return status */
+    /**
+     * 云服务器状态。  取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -492,9 +554,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 查询tag字段中包含该值的云服务器。
-     * 
-     * @return tags */
+    /**
+     * 查询tag字段中包含该值的云服务器。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -508,9 +571,10 @@ public class NovaListServersDetailsRequest {
         return this;
     }
 
-    /** 微版本头
-     * 
-     * @return openStackAPIVersion */
+    /**
+     * 微版本头
+     * @return openStackAPIVersion
+     */
     public String getOpenStackAPIVersion() {
         return openStackAPIVersion;
     }
@@ -581,7 +645,10 @@ public class NovaListServersDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

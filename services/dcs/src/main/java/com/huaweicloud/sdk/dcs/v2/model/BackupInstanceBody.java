@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 备份实例请求体 */
+/**
+ * 备份实例请求体
+ */
 public class BackupInstanceBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class BackupInstanceBody {
 
     private String remark;
 
-    /** 备份缓存实例的格式。 */
+    /**
+     * 备份缓存实例的格式。
+     */
     public static final class BackupFormatEnum {
 
-        /** Enum AOF for value: "aof" */
+        /**
+         * Enum AOF for value: "aof"
+         */
         public static final BackupFormatEnum AOF = new BackupFormatEnum("aof");
 
-        /** Enum RDB for value: "rdb" */
+        /**
+         * Enum RDB for value: "rdb"
+         */
         public static final BackupFormatEnum RDB = new BackupFormatEnum("rdb");
 
         private static final Map<String, BackupFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class BackupInstanceBody {
         return this;
     }
 
-    /** 备份缓存实例的备注信息。
-     * 
-     * @return remark */
+    /**
+     * 备份缓存实例的备注信息。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -115,9 +124,10 @@ public class BackupInstanceBody {
         return this;
     }
 
-    /** 备份缓存实例的格式。
-     * 
-     * @return backupFormat */
+    /**
+     * 备份缓存实例的格式。
+     * @return backupFormat
+     */
     public BackupFormatEnum getBackupFormat() {
         return backupFormat;
     }
@@ -154,7 +164,10 @@ public class BackupInstanceBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

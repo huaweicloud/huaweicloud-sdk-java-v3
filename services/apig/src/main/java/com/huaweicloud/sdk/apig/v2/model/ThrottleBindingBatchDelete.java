@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ThrottleBindingBatchDelete */
+/**
+ * ThrottleBindingBatchDelete
+ */
 public class ThrottleBindingBatchDelete {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ThrottleBindingBatchDelete {
         return this;
     }
 
-    /** 需要解除绑定的API和流控策略绑定关系ID列表
-     * 
-     * @return throttleBindings */
+    /**
+     * 需要解除绑定的API和流控策略绑定关系ID列表
+     * @return throttleBindings
+     */
     public List<String> getThrottleBindings() {
         return throttleBindings;
     }
@@ -74,7 +77,10 @@ public class ThrottleBindingBatchDelete {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

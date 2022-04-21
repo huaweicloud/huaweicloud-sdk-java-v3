@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用部署全量替换修改，应用更新时调用 */
+/**
+ * 应用部署全量替换修改，应用更新时调用
+ */
 public class UpdatePodDeployment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdatePodDeployment {
         return this;
     }
 
-    /** 应用部署副本数，只能为1
-     * 
-     * @return replicas */
+    /**
+     * 应用部署副本数，只能为1
+     * @return replicas
+     */
     public Integer getReplicas() {
         return replicas;
     }
@@ -49,9 +52,10 @@ public class UpdatePodDeployment {
         return this;
     }
 
-    /** Get template
-     * 
-     * @return template */
+    /**
+     * Get template
+     * @return template
+     */
     public PodRequest getTemplate() {
         return template;
     }
@@ -88,7 +92,10 @@ public class UpdatePodDeployment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

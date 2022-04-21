@@ -16,96 +16,154 @@ import java.util.function.Consumer;
  */
 public class PublishAssetFromObsReq {
 
-    /** 转存的音视频文件类型。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS -
-     * 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2 若上传格式为音频文件，则不支持转码、添加水印和字幕。 >
-     * 当**video_type**选择HLS时，**storage_mode**（存储模式）需选择存储在租户桶，且输出路径设置为和输入路径在同一个目录。 */
+    /**
+     * 转存的音视频文件类型。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。  > 当**video_type**选择HLS时，**storage_mode**（存储模式）需选择存储在租户桶，且输出路径设置为和输入路径在同一个目录。
+     */
     public static final class VideoTypeEnum {
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final VideoTypeEnum MP4 = new VideoTypeEnum("MP4");
 
-        /** Enum TS for value: "TS" */
+        /**
+         * Enum TS for value: "TS"
+         */
         public static final VideoTypeEnum TS = new VideoTypeEnum("TS");
 
-        /** Enum MOV for value: "MOV" */
+        /**
+         * Enum MOV for value: "MOV"
+         */
         public static final VideoTypeEnum MOV = new VideoTypeEnum("MOV");
 
-        /** Enum MXF for value: "MXF" */
+        /**
+         * Enum MXF for value: "MXF"
+         */
         public static final VideoTypeEnum MXF = new VideoTypeEnum("MXF");
 
-        /** Enum MPG for value: "MPG" */
+        /**
+         * Enum MPG for value: "MPG"
+         */
         public static final VideoTypeEnum MPG = new VideoTypeEnum("MPG");
 
-        /** Enum FLV for value: "FLV" */
+        /**
+         * Enum FLV for value: "FLV"
+         */
         public static final VideoTypeEnum FLV = new VideoTypeEnum("FLV");
 
-        /** Enum WMV for value: "WMV" */
+        /**
+         * Enum WMV for value: "WMV"
+         */
         public static final VideoTypeEnum WMV = new VideoTypeEnum("WMV");
 
-        /** Enum AVI for value: "AVI" */
+        /**
+         * Enum AVI for value: "AVI"
+         */
         public static final VideoTypeEnum AVI = new VideoTypeEnum("AVI");
 
-        /** Enum M4V for value: "M4V" */
+        /**
+         * Enum M4V for value: "M4V"
+         */
         public static final VideoTypeEnum M4V = new VideoTypeEnum("M4V");
 
-        /** Enum F4V for value: "F4V" */
+        /**
+         * Enum F4V for value: "F4V"
+         */
         public static final VideoTypeEnum F4V = new VideoTypeEnum("F4V");
 
-        /** Enum MPEG for value: "MPEG" */
+        /**
+         * Enum MPEG for value: "MPEG"
+         */
         public static final VideoTypeEnum MPEG = new VideoTypeEnum("MPEG");
 
-        /** Enum _3GP for value: "3GP" */
+        /**
+         * Enum _3GP for value: "3GP"
+         */
         public static final VideoTypeEnum _3GP = new VideoTypeEnum("3GP");
 
-        /** Enum ASF for value: "ASF" */
+        /**
+         * Enum ASF for value: "ASF"
+         */
         public static final VideoTypeEnum ASF = new VideoTypeEnum("ASF");
 
-        /** Enum MKV for value: "MKV" */
+        /**
+         * Enum MKV for value: "MKV"
+         */
         public static final VideoTypeEnum MKV = new VideoTypeEnum("MKV");
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final VideoTypeEnum HLS = new VideoTypeEnum("HLS");
 
-        /** Enum MP3 for value: "MP3" */
+        /**
+         * Enum MP3 for value: "MP3"
+         */
         public static final VideoTypeEnum MP3 = new VideoTypeEnum("MP3");
 
-        /** Enum OGG for value: "OGG" */
+        /**
+         * Enum OGG for value: "OGG"
+         */
         public static final VideoTypeEnum OGG = new VideoTypeEnum("OGG");
 
-        /** Enum WAV for value: "WAV" */
+        /**
+         * Enum WAV for value: "WAV"
+         */
         public static final VideoTypeEnum WAV = new VideoTypeEnum("WAV");
 
-        /** Enum WMA for value: "WMA" */
+        /**
+         * Enum WMA for value: "WMA"
+         */
         public static final VideoTypeEnum WMA = new VideoTypeEnum("WMA");
 
-        /** Enum APE for value: "APE" */
+        /**
+         * Enum APE for value: "APE"
+         */
         public static final VideoTypeEnum APE = new VideoTypeEnum("APE");
 
-        /** Enum FLAC for value: "FLAC" */
+        /**
+         * Enum FLAC for value: "FLAC"
+         */
         public static final VideoTypeEnum FLAC = new VideoTypeEnum("FLAC");
 
-        /** Enum AAC for value: "AAC" */
+        /**
+         * Enum AAC for value: "AAC"
+         */
         public static final VideoTypeEnum AAC = new VideoTypeEnum("AAC");
 
-        /** Enum AC3 for value: "AC3" */
+        /**
+         * Enum AC3 for value: "AC3"
+         */
         public static final VideoTypeEnum AC3 = new VideoTypeEnum("AC3");
 
-        /** Enum MMF for value: "MMF" */
+        /**
+         * Enum MMF for value: "MMF"
+         */
         public static final VideoTypeEnum MMF = new VideoTypeEnum("MMF");
 
-        /** Enum AMR for value: "AMR" */
+        /**
+         * Enum AMR for value: "AMR"
+         */
         public static final VideoTypeEnum AMR = new VideoTypeEnum("AMR");
 
-        /** Enum M4A for value: "M4A" */
+        /**
+         * Enum M4A for value: "M4A"
+         */
         public static final VideoTypeEnum M4A = new VideoTypeEnum("M4A");
 
-        /** Enum M4R for value: "M4R" */
+        /**
+         * Enum M4R for value: "M4R"
+         */
         public static final VideoTypeEnum M4R = new VideoTypeEnum("M4R");
 
-        /** Enum WV for value: "WV" */
+        /**
+         * Enum WV for value: "WV"
+         */
         public static final VideoTypeEnum WV = new VideoTypeEnum("WV");
 
-        /** Enum MP2 for value: "MP2" */
+        /**
+         * Enum MP2 for value: "MP2"
+         */
         public static final VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -282,11 +340,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 转存的音视频文件类型。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS -
-     * 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2 若上传格式为音频文件，则不支持转码、添加水印和字幕。 >
-     * 当**video_type**选择HLS时，**storage_mode**（存储模式）需选择存储在租户桶，且输出路径设置为和输入路径在同一个目录。
-     * 
-     * @return videoType */
+    /**
+     * 转存的音视频文件类型。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。  > 当**video_type**选择HLS时，**storage_mode**（存储模式）需选择存储在租户桶，且输出路径设置为和输入路径在同一个目录。
+     * @return videoType
+     */
     public VideoTypeEnum getVideoType() {
         return videoType;
     }
@@ -300,9 +357,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 媒资标题，长度不超过128个字节，UTF-8编码。
-     * 
-     * @return title */
+    /**
+     * 媒资标题，长度不超过128个字节，UTF-8编码。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -316,9 +374,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 视频描述，长度不超过1024个字节。
-     * 
-     * @return description */
+    /**
+     * 视频描述，长度不超过1024个字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -332,11 +391,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 媒资分类ID。
-     * 您可以调用[创建媒资分类](https://support.huaweicloud.com/api-vod/vod_04_0028.html)接口或在点播控制台的[分类设置](https://support.huaweicloud.com/usermanual-vod/vod010006.html)中创建对应的媒资分类，并获取分类ID。
-     * > 若不设置或者设置为-1，则上传的音视频归类到系统预置的“其它”分类中。
-     * 
-     * @return categoryId */
+    /**
+     * 媒资分类ID。  您可以调用[创建媒资分类](https://support.huaweicloud.com/api-vod/vod_04_0028.html)接口或在点播控制台的[分类设置](https://support.huaweicloud.com/usermanual-vod/vod010006.html)中创建对应的媒资分类，并获取分类ID。  > 若不设置或者设置为-1，则上传的音视频归类到系统预置的“其它”分类中。
+     * @return categoryId
+     */
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -350,9 +408,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 视频标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
-     * 
-     * @return tags */
+    /**
+     * 视频标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -366,9 +425,12 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 是否自动发布。 取值如下： - 0：表示不自动发布。 - 1：表示自动发布。 默认值：0。 minimum: 0 maximum: 1
-     * 
-     * @return autoPublish */
+    /**
+     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+     * minimum: 0
+     * maximum: 1
+     * @return autoPublish
+     */
     public Integer getAutoPublish() {
         return autoPublish;
     }
@@ -382,11 +444,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 转码模板组名称。
-     * 若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
-     * > 若同时设置了“**template_group_name**”和“**workflow_name**”字段，则“**template_group_name**”字段生效。
-     * 
-     * @return templateGroupName */
+    /**
+     * 转码模板组名称。  若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。  > 若同时设置了“**template_group_name**”和“**workflow_name**”字段，则“**template_group_name**”字段生效。
+     * @return templateGroupName
+     */
     public String getTemplateGroupName() {
         return templateGroupName;
     }
@@ -400,9 +461,12 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 若设置为需要加密，则必须配置转码模板，且转码的输出格式是HLS。 minimum: 0 maximum: 1
-     * 
-     * @return autoEncrypt */
+    /**
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  若设置为需要加密，则必须配置转码模板，且转码的输出格式是HLS。
+     * minimum: 0
+     * maximum: 1
+     * @return autoEncrypt
+     */
     public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
@@ -416,9 +480,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 是否自动预热到CDN。 取值如下： - 0：表示不自动预热。 - 1：表示自动预热。 默认值：0。
-     * 
-     * @return autoPreheat */
+    /**
+     * 是否自动预热到CDN。  取值如下： - 0：表示不自动预热。 - 1：表示自动预热。  默认值：0。
+     * @return autoPreheat
+     */
     public Integer getAutoPreheat() {
         return autoPreheat;
     }
@@ -441,9 +506,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** Get thumbnail
-     * 
-     * @return thumbnail */
+    /**
+     * Get thumbnail
+     * @return thumbnail
+     */
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
@@ -466,9 +532,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** Get review
-     * 
-     * @return review */
+    /**
+     * Get review
+     * @return review
+     */
     public Review getReview() {
         return review;
     }
@@ -482,10 +549,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 工作流名称。
-     * 若不为空，则使用指定的工作流对上传的音视频进行处理，您可以在视频点播控制台配置工作流，具体请参见[工作流设置](https://support.huaweicloud.com/usermanual-vod/vod010041.html)。
-     * 
-     * @return workflowName */
+    /**
+     * 工作流名称。  若不为空，则使用指定的工作流对上传的音视频进行处理，您可以在视频点播控制台配置工作流，具体请参见[工作流设置](https://support.huaweicloud.com/usermanual-vod/vod010041.html)。
+     * @return workflowName
+     */
     public String getWorkflowName() {
         return workflowName;
     }
@@ -508,9 +575,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public FileAddr getInput() {
         return input;
     }
@@ -524,9 +592,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 存储模式。 取值如下： - 0：表示视频拷贝到点播桶。 - 1：表示视频存储在租户桶。 默认值：0
-     * 
-     * @return storageMode */
+    /**
+     * 存储模式。  取值如下： - 0：表示视频拷贝到点播桶。 - 1：表示视频存储在租户桶。  默认值：0
+     * @return storageMode
+     */
     public Integer getStorageMode() {
         return storageMode;
     }
@@ -540,9 +609,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 输出桶名，“**storage_mode**”为1时必选。
-     * 
-     * @return outputBucket */
+    /**
+     * 输出桶名，“**storage_mode**”为1时必选。
+     * @return outputBucket
+     */
     public String getOutputBucket() {
         return outputBucket;
     }
@@ -556,9 +626,10 @@ public class PublishAssetFromObsReq {
         return this;
     }
 
-    /** 输出路径名，“**storage_mode**”为1时必选。
-     * 
-     * @return outputPath */
+    /**
+     * 输出路径名，“**storage_mode**”为1时必选。
+     * @return outputPath
+     */
     public String getOutputPath() {
         return outputPath;
     }
@@ -638,7 +709,10 @@ public class PublishAssetFromObsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

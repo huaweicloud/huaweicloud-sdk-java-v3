@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRtcAbnormalEventsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListRtcAbnormalEventsResponse extends SdkResponse {
         return this;
     }
 
-    /** 异常总数 minimum: 0 maximum: 2147483647
-     * 
-     * @return total */
+    /**
+     * 异常总数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -64,9 +69,10 @@ public class ListRtcAbnormalEventsResponse extends SdkResponse {
         return this;
     }
 
-    /** 异常体验列表
-     * 
-     * @return events */
+    /**
+     * 异常体验列表
+     * @return events
+     */
     public List<AbnormalEvent> getEvents() {
         return events;
     }
@@ -80,9 +86,10 @@ public class ListRtcAbnormalEventsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -123,7 +130,10 @@ public class ListRtcAbnormalEventsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

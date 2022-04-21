@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 消息的内容。 */
+/**
+ * 消息的内容。
+ */
 public class ConsumeMessageMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ConsumeMessageMessage {
         return this;
     }
 
-    /** 消息体的内容。
-     * 
-     * @return body */
+    /**
+     * 消息体的内容。
+     * @return body
+     */
     public Object getBody() {
         return body;
     }
@@ -47,9 +50,10 @@ public class ConsumeMessageMessage {
         return this;
     }
 
-    /** 属性的列表。
-     * 
-     * @return attributes */
+    /**
+     * 属性的列表。
+     * @return attributes
+     */
     public Object getAttributes() {
         return attributes;
     }
@@ -79,9 +83,10 @@ public class ConsumeMessageMessage {
         return this;
     }
 
-    /** 标签值。
-     * 
-     * @return tags */
+    /**
+     * 标签值。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -120,7 +125,10 @@ public class ConsumeMessageMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDatastoreVersionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库版本。支持3.4、3.2和4.0版本。
-     * 
-     * @return versions */
+    /**
+     * 数据库版本。支持3.4、3.2和4.0版本。
+     * @return versions
+     */
     public List<String> getVersions() {
         return versions;
     }
@@ -75,7 +78,10 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateEventResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class UpdateEventResponse extends SdkResponse {
         return this;
     }
 
-    /** 测试事件ID。
-     * 
-     * @return id */
+    /**
+     * 测试事件ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -51,9 +54,10 @@ public class UpdateEventResponse extends SdkResponse {
         return this;
     }
 
-    /** 测试事件名称。
-     * 
-     * @return name */
+    /**
+     * 测试事件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +71,10 @@ public class UpdateEventResponse extends SdkResponse {
         return this;
     }
 
-    /** 测试事件content。
-     * 
-     * @return content */
+    /**
+     * 测试事件content。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -83,9 +88,10 @@ public class UpdateEventResponse extends SdkResponse {
         return this;
     }
 
-    /** 上次修改测试事件的时间。
-     * 
-     * @return lastModified */
+    /**
+     * 上次修改测试事件的时间。
+     * @return lastModified
+     */
     public BigDecimal getLastModified() {
         return lastModified;
     }
@@ -125,7 +131,10 @@ public class UpdateEventResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RecordContentInfoV2 */
+/**
+ * RecordContentInfoV2
+ */
 public class RecordContentInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,16 +37,24 @@ public class RecordContentInfoV2 {
 
     private String stream;
 
-    /** 录制格式flv，hls，mp4 */
+    /**
+     * 录制格式flv，hls，mp4
+     */
     public static final class RecordFormatEnum {
 
-        /** Enum FLV for value: "FLV" */
+        /**
+         * Enum FLV for value: "FLV"
+         */
         public static final RecordFormatEnum FLV = new RecordFormatEnum("FLV");
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final RecordFormatEnum HLS = new RecordFormatEnum("HLS");
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final RecordFormatEnum MP4 = new RecordFormatEnum("MP4");
 
         private static final Map<String, RecordFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -115,22 +125,29 @@ public class RecordContentInfoV2 {
 
     private RecordFormatEnum recordFormat;
 
-    /** 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 -
-     * CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 -
-     * COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。
-     * - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 */
+    /**
+     * 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+     */
     public static final class RecordTypeEnum {
 
-        /** Enum CONTINUOUS_RECORD for value: "CONTINUOUS_RECORD" */
+        /**
+         * Enum CONTINUOUS_RECORD for value: "CONTINUOUS_RECORD"
+         */
         public static final RecordTypeEnum CONTINUOUS_RECORD = new RecordTypeEnum("CONTINUOUS_RECORD");
 
-        /** Enum COMMAND_RECORD for value: "COMMAND_RECORD" */
+        /**
+         * Enum COMMAND_RECORD for value: "COMMAND_RECORD"
+         */
         public static final RecordTypeEnum COMMAND_RECORD = new RecordTypeEnum("COMMAND_RECORD");
 
-        /** Enum PLAN_RECORD for value: "PLAN_RECORD" */
+        /**
+         * Enum PLAN_RECORD for value: "PLAN_RECORD"
+         */
         public static final RecordTypeEnum PLAN_RECORD = new RecordTypeEnum("PLAN_RECORD");
 
-        /** Enum ON_DEMAND_RECORD for value: "ON_DEMAND_RECORD" */
+        /**
+         * Enum ON_DEMAND_RECORD for value: "ON_DEMAND_RECORD"
+         */
         public static final RecordTypeEnum ON_DEMAND_RECORD = new RecordTypeEnum("ON_DEMAND_RECORD");
 
         private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -237,9 +254,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 直播推流域名
-     * 
-     * @return publishDomain */
+    /**
+     * 直播推流域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -253,9 +271,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制文件名
-     * 
-     * @return fileName */
+    /**
+     * 录制文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -269,9 +288,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return app */
+    /**
+     * 应用名
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -285,9 +305,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制的流名
-     * 
-     * @return stream */
+    /**
+     * 录制的流名
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -301,9 +322,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制格式flv，hls，mp4
-     * 
-     * @return recordFormat */
+    /**
+     * 录制格式flv，hls，mp4
+     * @return recordFormat
+     */
     public RecordFormatEnum getRecordFormat() {
         return recordFormat;
     }
@@ -317,12 +339,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 -
-     * CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 -
-     * COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。
-     * - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。
-     * 
-     * @return recordType */
+    /**
+     * 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+     * @return recordType
+     */
     public RecordTypeEnum getRecordType() {
         return recordType;
     }
@@ -345,9 +365,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** Get obsAddr
-     * 
-     * @return obsAddr */
+    /**
+     * Get obsAddr
+     * @return obsAddr
+     */
     public RecordObsFileAddr getObsAddr() {
         return obsAddr;
     }
@@ -370,9 +391,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** Get vodInfo
-     * 
-     * @return vodInfo */
+    /**
+     * Get vodInfo
+     * @return vodInfo
+     */
     public VodInfoV2 getVodInfo() {
         return vodInfo;
     }
@@ -386,9 +408,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** OBS下载地址
-     * 
-     * @return downloadUrl */
+    /**
+     * OBS下载地址
+     * @return downloadUrl
+     */
     public String getDownloadUrl() {
         return downloadUrl;
     }
@@ -402,9 +425,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制开始时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。对record_type为PLAN_RECORD有效
-     * 
-     * @return startTime */
+    /**
+     * 录制开始时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。对record_type为PLAN_RECORD有效
+     * @return startTime
+     */
     public LocalDate getStartTime() {
         return startTime;
     }
@@ -418,9 +442,10 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 录制结束时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。对record_type为PLAN_RECORD有效
-     * 
-     * @return endTime */
+    /**
+     * 录制结束时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。对record_type为PLAN_RECORD有效
+     * @return endTime
+     */
     public LocalDate getEndTime() {
         return endTime;
     }
@@ -434,9 +459,12 @@ public class RecordContentInfoV2 {
         return this;
     }
 
-    /** 该录制文件时长，单位为秒 minimum: 0 maximum: 43200
-     * 
-     * @return duration */
+    /**
+     * 该录制文件时长，单位为秒
+     * minimum: 0
+     * maximum: 43200
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -504,7 +532,10 @@ public class RecordContentInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群的实例对象。 */
+/**
+ * 集群的实例对象。
+ */
 public class Instance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class Instance {
         return this;
     }
 
-    /** 集群所在可用区的ID。
-     * 
-     * @return availabilityZone */
+    /**
+     * 集群所在可用区的ID。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -57,9 +60,10 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群计算单元节点数目，至少为2。
-     * 
-     * @return cuNum */
+    /**
+     * CloudTable集群计算单元节点数目，至少为2。
+     * @return cuNum
+     */
     public Integer getCuNum() {
         return cuNum;
     }
@@ -73,9 +77,10 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群Lemon节点数目。
-     * 
-     * @return lemonNum */
+    /**
+     * CloudTable集群Lemon节点数目。
+     * @return lemonNum
+     */
     public Integer getLemonNum() {
         return lemonNum;
     }
@@ -105,9 +110,10 @@ public class Instance {
         return this;
     }
 
-    /** 集群所在网络信息。
-     * 
-     * @return nics */
+    /**
+     * 集群所在网络信息。
+     * @return nics
+     */
     public List<Nics> getNics() {
         return nics;
     }
@@ -121,9 +127,10 @@ public class Instance {
         return this;
     }
 
-    /** CloudTable集群TSD节点数目，至少为2。
-     * 
-     * @return tsdNum */
+    /**
+     * CloudTable集群TSD节点数目，至少为2。
+     * @return tsdNum
+     */
     public Integer getTsdNum() {
         return tsdNum;
     }
@@ -164,7 +171,10 @@ public class Instance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

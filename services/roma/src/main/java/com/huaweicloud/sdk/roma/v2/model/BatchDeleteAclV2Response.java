@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchDeleteAclV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         return this;
     }
 
-    /** 删除成功的ACL策略数量
-     * 
-     * @return successCount */
+    /**
+     * 删除成功的ACL策略数量
+     * @return successCount
+     */
     public Integer getSuccessCount() {
         return successCount;
     }
@@ -59,9 +62,10 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         return this;
     }
 
-    /** 删除失败的ACL策略及错误信息
-     * 
-     * @return failure */
+    /**
+     * 删除失败的ACL策略及错误信息
+     * @return failure
+     */
     public List<AclBatchFailure> getFailure() {
         return failure;
     }
@@ -98,7 +102,10 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

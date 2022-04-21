@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListOffSiteRestoreTimesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListOffSiteRestoreTimesRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -46,9 +49,10 @@ public class ListOffSiteRestoreTimesRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -62,9 +66,10 @@ public class ListOffSiteRestoreTimesRequest {
         return this;
     }
 
-    /** 所需查询的日期，为yyyy-mm-dd字符串格式，时区为UTC。
-     * 
-     * @return date */
+    /**
+     * 所需查询的日期，为yyyy-mm-dd字符串格式，时区为UTC。
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -103,7 +108,10 @@ public class ListOffSiteRestoreTimesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

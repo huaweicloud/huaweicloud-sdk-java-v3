@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
         return this;
     }
 
-    /** 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
-     * 
-     * @return nocatalog */
+    /**
+     * 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
+     * @return nocatalog
+     */
     public String getNocatalog() {
         return nocatalog;
     }
@@ -51,9 +54,10 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public KeystoneCreateUserTokenByPasswordAndMfaRequestBody getBody() {
         return body;
     }
@@ -91,7 +95,10 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

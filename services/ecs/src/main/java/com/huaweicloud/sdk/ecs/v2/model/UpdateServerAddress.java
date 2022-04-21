@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性云服务器的网络属性。 */
+/**
+ * 弹性云服务器的网络属性。
+ */
 public class UpdateServerAddress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateServerAddress {
         return this;
     }
 
-    /** IP地址版本。 - 4：代表IPv4。 - 6：代表IPv6。
-     * 
-     * @return version */
+    /**
+     * IP地址版本。  - 4：代表IPv4。 - 6：代表IPv6。
+     * @return version
+     */
     public Integer getVersion() {
         return version;
     }
@@ -39,9 +42,10 @@ public class UpdateServerAddress {
         return this;
     }
 
-    /** IP地址。
-     * 
-     * @return addr */
+    /**
+     * IP地址。
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -78,7 +82,10 @@ public class UpdateServerAddress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

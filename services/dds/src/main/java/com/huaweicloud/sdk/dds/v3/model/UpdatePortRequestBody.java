@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdatePortRequestBody */
+/**
+ * UpdatePortRequestBody
+ */
 public class UpdatePortRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdatePortRequestBody {
         return this;
     }
 
-    /** 新端口号。端口号有效范围为2100~9500，27017，27018，27019。
-     * 
-     * @return port */
+    /**
+     * 新端口号。端口号有效范围为2100~9500，27017，27018，27019。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -55,7 +58,10 @@ public class UpdatePortRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

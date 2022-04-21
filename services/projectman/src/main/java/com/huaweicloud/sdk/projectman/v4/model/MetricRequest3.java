@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MetricRequest3 */
+/**
+ * MetricRequest3
+ */
 public class MetricRequest3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class MetricRequest3 {
         return this;
     }
 
-    /** 统计周期
-     * 
-     * @return dateRange */
+    /**
+     * 统计周期
+     * @return dateRange
+     */
     public String getDateRange() {
         return dateRange;
     }
@@ -55,9 +58,10 @@ public class MetricRequest3 {
         return this;
     }
 
-    /** 指标类型
-     * 
-     * @return metricType */
+    /**
+     * 指标类型
+     * @return metricType
+     */
     public String getMetricType() {
         return metricType;
     }
@@ -71,9 +75,10 @@ public class MetricRequest3 {
         return this;
     }
 
-    /** 迭代ID
-     * 
-     * @return sprintId */
+    /**
+     * 迭代ID
+     * @return sprintId
+     */
     public String getSprintId() {
         return sprintId;
     }
@@ -96,9 +101,10 @@ public class MetricRequest3 {
         return this;
     }
 
-    /** Get dividend
-     * 
-     * @return dividend */
+    /**
+     * Get dividend
+     * @return dividend
+     */
     public MetricRequest3Dividend getDividend() {
         return dividend;
     }
@@ -112,9 +118,10 @@ public class MetricRequest3 {
         return this;
     }
 
-    /** 指标分母过滤条件
-     * 
-     * @return divisor */
+    /**
+     * 指标分母过滤条件
+     * @return divisor
+     */
     public Object getDivisor() {
         return divisor;
     }
@@ -157,7 +164,10 @@ public class MetricRequest3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

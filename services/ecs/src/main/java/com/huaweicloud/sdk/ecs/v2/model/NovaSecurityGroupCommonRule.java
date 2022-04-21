@@ -51,9 +51,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** 起始端口，范围1-65535，且不大于to_port。 ip_protocol设置为icmp时，from_port表示type，范围是0-255。
-     * 
-     * @return fromPort */
+    /**
+     * 起始端口，范围1-65535，且不大于to_port。 ip_protocol设置为icmp时，from_port表示type，范围是0-255。
+     * @return fromPort
+     */
     public Integer getFromPort() {
         return fromPort;
     }
@@ -76,9 +77,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** Get group
-     * 
-     * @return group */
+    /**
+     * Get group
+     * @return group
+     */
     public NovaSecurityGroupCommonGroup getGroup() {
         return group;
     }
@@ -92,9 +94,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** 安全组规则ID，UUID格式。
-     * 
-     * @return id */
+    /**
+     * 安全组规则ID，UUID格式。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -108,9 +111,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** 协议类型或直接指定IP协议号，取值可为icmp，tcp，udp或IP协议号。
-     * 
-     * @return ipProtocol */
+    /**
+     * 协议类型或直接指定IP协议号，取值可为icmp，tcp，udp或IP协议号。
+     * @return ipProtocol
+     */
     public String getIpProtocol() {
         return ipProtocol;
     }
@@ -133,9 +137,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** Get ipRange
-     * 
-     * @return ipRange */
+    /**
+     * Get ipRange
+     * @return ipRange
+     */
     public NovaSecurityGroupCommonIpRange getIpRange() {
         return ipRange;
     }
@@ -149,9 +154,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** 相关联的安全组ID，UUID格式。
-     * 
-     * @return parentGroupId */
+    /**
+     * 相关联的安全组ID，UUID格式。
+     * @return parentGroupId
+     */
     public String getParentGroupId() {
         return parentGroupId;
     }
@@ -165,9 +171,10 @@ public class NovaSecurityGroupCommonRule {
         return this;
     }
 
-    /** 终止端口，范围1-65535，且不小于from_port。 ip_protocol设置为icmp时，to_port表示code，范围是0-255，且如果from_port为-1，to_port为-1表示任意ICMP报文。
-     * 
-     * @return toPort */
+    /**
+     * 终止端口，范围1-65535，且不小于from_port。 ip_protocol设置为icmp时，to_port表示code，范围是0-255，且如果from_port为-1，to_port为-1表示任意ICMP报文。
+     * @return toPort
+     */
     public Integer getToPort() {
         return toPort;
     }
@@ -214,7 +221,10 @@ public class NovaSecurityGroupCommonRule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VerifyHostV2Req */
+/**
+ * VerifyHostV2Req
+ */
 public class VerifyHostV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class VerifyHostV2Req {
         return this;
     }
 
-    /** 主机端口 minimum: 1 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 主机端口
+     * minimum: 1
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -49,9 +54,10 @@ public class VerifyHostV2Req {
         return this;
     }
 
-    /** 主机账号
-     * 
-     * @return account */
+    /**
+     * 主机账号
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -65,9 +71,10 @@ public class VerifyHostV2Req {
         return this;
     }
 
-    /** 主机密码
-     * 
-     * @return password */
+    /**
+     * 主机密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -81,9 +88,10 @@ public class VerifyHostV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -123,7 +131,10 @@ public class VerifyHostV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

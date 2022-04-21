@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Event */
+/**
+ * Event
+ */
 public class Event {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Event {
         return this;
     }
 
-    /** 事件类型
-     * 
-     * @return eventType */
+    /**
+     * 事件类型
+     * @return eventType
+     */
     public String getEventType() {
         return eventType;
     }
@@ -54,9 +57,10 @@ public class Event {
         return this;
     }
 
-    /** DIS通道名称
-     * 
-     * @return channel */
+    /**
+     * DIS通道名称
+     * @return channel
+     */
     public String getChannel() {
         return channel;
     }
@@ -70,9 +74,10 @@ public class Event {
         return this;
     }
 
-    /** 执行失败处理策略
-     * 
-     * @return failPolicy */
+    /**
+     * 执行失败处理策略
+     * @return failPolicy
+     */
     public String getFailPolicy() {
         return failPolicy;
     }
@@ -86,9 +91,10 @@ public class Event {
         return this;
     }
 
-    /** 调度并发数
-     * 
-     * @return concurrent */
+    /**
+     * 调度并发数
+     * @return concurrent
+     */
     public Integer getConcurrent() {
         return concurrent;
     }
@@ -102,9 +108,10 @@ public class Event {
         return this;
     }
 
-    /** 读取策略
-     * 
-     * @return readPolicy */
+    /**
+     * 读取策略
+     * @return readPolicy
+     */
     public String getReadPolicy() {
         return readPolicy;
     }
@@ -145,7 +152,10 @@ public class Event {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

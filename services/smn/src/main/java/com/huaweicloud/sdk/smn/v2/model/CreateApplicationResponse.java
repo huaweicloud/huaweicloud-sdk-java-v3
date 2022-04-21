@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateApplicationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的唯一标识ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -45,9 +48,10 @@ public class CreateApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** Application的唯一资源标识。
-     * 
-     * @return applicationUrn */
+    /**
+     * Application的唯一资源标识。
+     * @return applicationUrn
+     */
     public String getApplicationUrn() {
         return applicationUrn;
     }
@@ -61,9 +65,10 @@ public class CreateApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** Application资源的ID。
-     * 
-     * @return applicationId */
+    /**
+     * Application资源的ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -102,7 +107,10 @@ public class CreateApplicationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

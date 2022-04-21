@@ -38,9 +38,10 @@ public class CheckResultItemsBody {
         return this;
     }
 
-    /** 图片的URL路径。
-     * 
-     * @return url */
+    /**
+     * 图片的URL路径。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -54,10 +55,10 @@ public class CheckResultItemsBody {
         return this;
     }
 
-    /** 检测结果是否通过。 - block：包含敏感信息，不通过 - pass：不包含敏感信息，通过 - review：需要人工复检 >
-     * 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
-     * 
-     * @return suggestion */
+    /**
+     * 检测结果是否通过。 - block：包含敏感信息，不通过 - pass：不包含敏感信息，通过 - review：需要人工复检 > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。 
+     * @return suggestion
+     */
     public String getSuggestion() {
         return suggestion;
     }
@@ -80,9 +81,10 @@ public class CheckResultItemsBody {
         return this;
     }
 
-    /** Get detail
-     * 
-     * @return detail */
+    /**
+     * Get detail
+     * @return detail
+     */
     public ImageDetectionResultDetail getDetail() {
         return detail;
     }
@@ -112,9 +114,10 @@ public class CheckResultItemsBody {
         return this;
     }
 
-    /** 具体每个场景的检测结果。 block：包含敏感信息，不通过 pass：不包含敏感信息，通过 review：需要人工复检
-     * 
-     * @return categorySuggestions */
+    /**
+     * 具体每个场景的检测结果。  block：包含敏感信息，不通过  pass：不包含敏感信息，通过  review：需要人工复检 
+     * @return categorySuggestions
+     */
     public Map<String, String> getCategorySuggestions() {
         return categorySuggestions;
     }
@@ -155,7 +158,10 @@ public class CheckResultItemsBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

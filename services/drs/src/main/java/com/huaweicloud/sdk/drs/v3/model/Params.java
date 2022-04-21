@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据参数信息体 */
+/**
+ * 数据参数信息体
+ */
 public class Params {
 
-    /** 参数对比结果 */
+    /**
+     * 参数对比结果
+     */
     public static final class CompareResultEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final CompareResultEnum TRUE = new CompareResultEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final CompareResultEnum FALSE = new CompareResultEnum("false");
 
         private static final Map<String, CompareResultEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +102,19 @@ public class Params {
 
     private String dataType;
 
-    /** 分组 */
+    /**
+     * 分组
+     */
     public static final class GroupEnum {
 
-        /** Enum COMMON_ for value: "common-常规参数" */
+        /**
+         * Enum COMMON_ for value: "common-常规参数"
+         */
         public static final GroupEnum COMMON_ = new GroupEnum("common-常规参数");
 
-        /** Enum PERFORMANCE_ for value: "performance-性能参数" */
+        /**
+         * Enum PERFORMANCE_ for value: "performance-性能参数"
+         */
         public static final GroupEnum PERFORMANCE_ = new GroupEnum("performance-性能参数");
 
         private static final Map<String, GroupEnum> STATIC_FIELDS = createStaticFields();
@@ -175,13 +189,19 @@ public class Params {
 
     private String key;
 
-    /** 是否需要重启 */
+    /**
+     * 是否需要重启
+     */
     public static final class NeedRestartEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final NeedRestartEnum TRUE = new NeedRestartEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final NeedRestartEnum FALSE = new NeedRestartEnum("false");
 
         private static final Map<String, NeedRestartEnum> STATIC_FIELDS = createStaticFields();
@@ -281,9 +301,10 @@ public class Params {
         return this;
     }
 
-    /** 参数对比结果
-     * 
-     * @return compareResult */
+    /**
+     * 参数对比结果
+     * @return compareResult
+     */
     public CompareResultEnum getCompareResult() {
         return compareResult;
     }
@@ -297,9 +318,10 @@ public class Params {
         return this;
     }
 
-    /** 参数类型
-     * 
-     * @return dataType */
+    /**
+     * 参数类型
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -313,9 +335,10 @@ public class Params {
         return this;
     }
 
-    /** 分组
-     * 
-     * @return group */
+    /**
+     * 分组
+     * @return group
+     */
     public GroupEnum getGroup() {
         return group;
     }
@@ -329,9 +352,10 @@ public class Params {
         return this;
     }
 
-    /** 参数名
-     * 
-     * @return key */
+    /**
+     * 参数名
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -345,9 +369,10 @@ public class Params {
         return this;
     }
 
-    /** 是否需要重启
-     * 
-     * @return needRestart */
+    /**
+     * 是否需要重启
+     * @return needRestart
+     */
     public NeedRestartEnum getNeedRestart() {
         return needRestart;
     }
@@ -361,9 +386,10 @@ public class Params {
         return this;
     }
 
-    /** 源数据库参数值
-     * 
-     * @return sourceValue */
+    /**
+     * 源数据库参数值
+     * @return sourceValue
+     */
     public String getSourceValue() {
         return sourceValue;
     }
@@ -377,9 +403,10 @@ public class Params {
         return this;
     }
 
-    /** 目标数据库参数值
-     * 
-     * @return targetValue */
+    /**
+     * 目标数据库参数值
+     * @return targetValue
+     */
     public String getTargetValue() {
         return targetValue;
     }
@@ -393,9 +420,10 @@ public class Params {
         return this;
     }
 
-    /** 参数范围
-     * 
-     * @return valueRange */
+    /**
+     * 参数范围
+     * @return valueRange
+     */
     public String getValueRange() {
         return valueRange;
     }
@@ -409,9 +437,10 @@ public class Params {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -425,9 +454,10 @@ public class Params {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -486,7 +516,10 @@ public class Params {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

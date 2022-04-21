@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 收件方式与信息体 */
+/**
+ * 收件方式与信息体
+ */
 public class SubscriptionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class SubscriptionInfo {
 
     private List<String> endpoints = null;
 
-    /** 收件方式，sms：短信,email：邮件 */
+    /**
+    * 收件方式，sms：短信,email：邮件
+    */
     public static final class ProtocolEnum {
 
-        /** Enum SMS for value: "sms" */
+        /**
+         * Enum SMS for value: "sms"
+         */
         public static final ProtocolEnum SMS = new ProtocolEnum("sms");
 
-        /** Enum EMAIL for value: "email" */
+        /**
+         * Enum EMAIL for value: "email"
+         */
         public static final ProtocolEnum EMAIL = new ProtocolEnum("email");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +126,10 @@ public class SubscriptionInfo {
         return this;
     }
 
-    /** 短信或者邮件列表
-     * 
-     * @return endpoints */
+    /**
+     * 短信或者邮件列表
+     * @return endpoints
+     */
     public List<String> getEndpoints() {
         return endpoints;
     }
@@ -134,9 +143,10 @@ public class SubscriptionInfo {
         return this;
     }
 
-    /** 收件方式，sms：短信,email：邮件
-     * 
-     * @return protocol */
+    /**
+     * 收件方式，sms：短信,email：邮件
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -173,7 +183,10 @@ public class SubscriptionInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,13 +25,19 @@ public class VocabInfo {
 
     private String name;
 
-    /** 热词表语言类型。 */
+    /**
+     * 热词表语言类型。
+     */
     public static final class LanguageEnum {
 
-        /** Enum CHINESE_MANDARIN for value: "chinese_mandarin" */
+        /**
+         * Enum CHINESE_MANDARIN for value: "chinese_mandarin"
+         */
         public static final LanguageEnum CHINESE_MANDARIN = new LanguageEnum("chinese_mandarin");
 
-        /** Enum ENGLISH for value: "english" */
+        /**
+         * Enum ENGLISH for value: "english"
+         */
         public static final LanguageEnum ENGLISH = new LanguageEnum("english");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +117,10 @@ public class VocabInfo {
         return this;
     }
 
-    /** 热词表ID。
-     * 
-     * @return vocabularyId */
+    /**
+     * 热词表ID。
+     * @return vocabularyId
+     */
     public String getVocabularyId() {
         return vocabularyId;
     }
@@ -127,9 +134,10 @@ public class VocabInfo {
         return this;
     }
 
-    /** 热词表名。
-     * 
-     * @return name */
+    /**
+     * 热词表名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -143,9 +151,10 @@ public class VocabInfo {
         return this;
     }
 
-    /** 热词表语言类型。
-     * 
-     * @return language */
+    /**
+     * 热词表语言类型。
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -159,9 +168,10 @@ public class VocabInfo {
         return this;
     }
 
-    /** 热词表描述。
-     * 
-     * @return description */
+    /**
+     * 热词表描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -201,7 +211,10 @@ public class VocabInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

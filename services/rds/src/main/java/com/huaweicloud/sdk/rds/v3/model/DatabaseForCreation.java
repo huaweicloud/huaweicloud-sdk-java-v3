@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class DatabaseForCreation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DatabaseForCreation {
         return this;
     }
 
-    /** 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线、下划线或$组成，$累计总长度小于等于10个字符，（MySQL 8.0不可包含$）。
-     * 
-     * @return name */
+    /**
+     * 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线、下划线或$组成，$累计总长度小于等于10个字符，（MySQL 8.0不可包含$）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class DatabaseForCreation {
         return this;
     }
 
-    /** 数据库使用的字符集，例如utf8、gbk、ascii等MySQL支持的字符集。
-     * 
-     * @return characterSet */
+    /**
+     * 数据库使用的字符集，例如utf8、gbk、ascii等MySQL支持的字符集。
+     * @return characterSet
+     */
     public String getCharacterSet() {
         return characterSet;
     }
@@ -60,9 +64,10 @@ public class DatabaseForCreation {
         return this;
     }
 
-    /** 数据库备注，最大长度512
-     * 
-     * @return comment */
+    /**
+     * 数据库备注，最大长度512
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -101,7 +106,10 @@ public class DatabaseForCreation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

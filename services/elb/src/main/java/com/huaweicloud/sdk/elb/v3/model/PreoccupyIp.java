@@ -20,9 +20,10 @@ public class PreoccupyIp {
         return this;
     }
 
-    /** 预占IP总数
-     * 
-     * @return total */
+    /**
+     * 预占IP总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -57,7 +58,10 @@ public class PreoccupyIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

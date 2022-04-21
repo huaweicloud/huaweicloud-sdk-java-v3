@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class StartTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 源端节点AK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
-     * 
-     * @return srcAk */
+    /**
+     * 源端节点AK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
+     * @return srcAk
+     */
     public String getSrcAk() {
         return srcAk;
     }
@@ -69,9 +72,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 源端节点SK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
-     * 
-     * @return srcSk */
+    /**
+     * 源端节点SK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
+     * @return srcSk
+     */
     public String getSrcSk() {
         return srcSk;
     }
@@ -85,9 +89,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 源端节点临时Token
-     * 
-     * @return srcSecurityToken */
+    /**
+     * 源端节点临时Token
+     * @return srcSecurityToken
+     */
     public String getSrcSecurityToken() {
         return srcSecurityToken;
     }
@@ -101,9 +106,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 目的端节点AK（最大长度100个字符）。
-     * 
-     * @return dstAk */
+    /**
+     * 目的端节点AK（最大长度100个字符）。
+     * @return dstAk
+     */
     public String getDstAk() {
         return dstAk;
     }
@@ -117,9 +123,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 目的端节点SK（最大长度100个字符）。
-     * 
-     * @return dstSk */
+    /**
+     * 目的端节点SK（最大长度100个字符）。
+     * @return dstSk
+     */
     public String getDstSk() {
         return dstSk;
     }
@@ -133,9 +140,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 目标端节点临时Token
-     * 
-     * @return dstSecurityToken */
+    /**
+     * 目标端节点临时Token
+     * @return dstSecurityToken
+     */
     public String getDstSecurityToken() {
         return dstSecurityToken;
     }
@@ -149,9 +157,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** CDN鉴权秘钥。
-     * 
-     * @return sourceCdnAuthenticationKey */
+    /**
+     * CDN鉴权秘钥。
+     * @return sourceCdnAuthenticationKey
+     */
     public String getSourceCdnAuthenticationKey() {
         return sourceCdnAuthenticationKey;
     }
@@ -165,9 +174,10 @@ public class StartTaskReq {
         return this;
     }
 
-    /** 迁移类型，标识是否为全量迁移，默认false（全量迁移）。 值为true时表示只重传失败对象。 值为空或者为false时表示全量迁移。
-     * 
-     * @return migrateFailedObject */
+    /**
+     * 迁移类型，标识是否为全量迁移，默认false（全量迁移）。 值为true时表示只重传失败对象。 值为空或者为false时表示全量迁移。
+     * @return migrateFailedObject
+     */
     public Boolean getMigrateFailedObject() {
         return migrateFailedObject;
     }
@@ -221,7 +231,10 @@ public class StartTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

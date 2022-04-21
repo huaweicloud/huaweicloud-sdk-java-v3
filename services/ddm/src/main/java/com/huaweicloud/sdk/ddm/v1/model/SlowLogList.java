@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlowLogList */
+/**
+ * SlowLogList
+ */
 public class SlowLogList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 执行慢sql的DDM账号名称。
-     * 
-     * @return users */
+    /**
+     * 执行慢sql的DDM账号名称。
+     * @return users
+     */
     public String getUsers() {
         return users;
     }
@@ -64,9 +67,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 慢sql所属逻辑库的名称。
-     * 
-     * @return database */
+    /**
+     * 慢sql所属逻辑库的名称。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -80,9 +84,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 慢sql执行语法。
-     * 
-     * @return querySample */
+    /**
+     * 慢sql执行语法。
+     * @return querySample
+     */
     public String getQuerySample() {
         return querySample;
     }
@@ -96,9 +101,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** DDM慢sql开始执行时间。
-     * 
-     * @return logTime */
+    /**
+     * DDM慢sql开始执行时间。
+     * @return logTime
+     */
     public String getLogTime() {
         return logTime;
     }
@@ -112,9 +118,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 慢sql的执行时长，精确到毫秒。
-     * 
-     * @return time */
+    /**
+     * 慢sql的执行时长，精确到毫秒。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -128,9 +135,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 逻辑库物理分片名称。
-     * 
-     * @return shards */
+    /**
+     * 逻辑库物理分片名称。
+     * @return shards
+     */
     public String getShards() {
         return shards;
     }
@@ -144,9 +152,10 @@ public class SlowLogList {
         return this;
     }
 
-    /** 慢sql影响行数。
-     * 
-     * @return rowsExamined */
+    /**
+     * 慢sql影响行数。
+     * @return rowsExamined
+     */
     public String getRowsExamined() {
         return rowsExamined;
     }
@@ -191,7 +200,10 @@ public class SlowLogList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

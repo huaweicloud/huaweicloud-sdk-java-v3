@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateCompareTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -67,9 +70,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get objectLevelCompareCreateResult
-     * 
-     * @return objectLevelCompareCreateResult */
+    /**
+     * Get objectLevelCompareCreateResult
+     * @return objectLevelCompareCreateResult
+     */
     public CreateCompareTaskResult getObjectLevelCompareCreateResult() {
         return objectLevelCompareCreateResult;
     }
@@ -94,9 +98,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get dataLevelCompareCreateResult
-     * 
-     * @return dataLevelCompareCreateResult */
+    /**
+     * Get dataLevelCompareCreateResult
+     * @return dataLevelCompareCreateResult
+     */
     public CreateCompareTaskResult getDataLevelCompareCreateResult() {
         return dataLevelCompareCreateResult;
     }
@@ -110,9 +115,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -126,9 +132,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -176,7 +183,10 @@ public class CreateCompareTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

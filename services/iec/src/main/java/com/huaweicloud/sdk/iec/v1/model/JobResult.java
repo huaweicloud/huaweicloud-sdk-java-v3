@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 任务类响应通用返回体。 */
+/**
+ * 任务类响应通用返回体。
+ */
 public class JobResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class JobResult {
         return this;
     }
 
-    /** 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
-     * 
-     * @return jobId */
+    /**
+     * 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -55,7 +58,10 @@ public class JobResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

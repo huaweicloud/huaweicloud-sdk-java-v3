@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 磁盘信息 */
+/**
+ * 磁盘信息
+ */
 public class PutDisk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class PutDisk {
         return this;
     }
 
-    /** 磁盘名称
-     * 
-     * @return needMigration */
+    /**
+     * 磁盘名称
+     * @return needMigration
+     */
     public Boolean getNeedMigration() {
         return needMigration;
     }
@@ -52,9 +55,10 @@ public class PutDisk {
         return this;
     }
 
-    /** 磁盘id
-     * 
-     * @return id */
+    /**
+     * 磁盘id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -68,9 +72,12 @@ public class PutDisk {
         return this;
     }
 
-    /** 调整大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return adjustSize */
+    /**
+     * 调整大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return adjustSize
+     */
     public Long getAdjustSize() {
         return adjustSize;
     }
@@ -100,9 +107,10 @@ public class PutDisk {
         return this;
     }
 
-    /** 修改的卷信息
-     * 
-     * @return physicalVolumes */
+    /**
+     * 修改的卷信息
+     * @return physicalVolumes
+     */
     public List<PutVolume> getPhysicalVolumes() {
         return physicalVolumes;
     }
@@ -142,7 +150,10 @@ public class PutDisk {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

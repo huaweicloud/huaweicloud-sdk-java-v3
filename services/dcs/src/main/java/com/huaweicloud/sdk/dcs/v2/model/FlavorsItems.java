@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FlavorsItems */
+/**
+ * FlavorsItems
+ */
 public class FlavorsItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +98,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 产品规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 产品规格编码。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -112,9 +115,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 云服务类型编码。
-     * 
-     * @return cloudServiceTypeCode */
+    /**
+     * 云服务类型编码。
+     * @return cloudServiceTypeCode
+     */
     public String getCloudServiceTypeCode() {
         return cloudServiceTypeCode;
     }
@@ -128,9 +132,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 云资源类型编码。
-     * 
-     * @return cloudResourceTypeCode */
+    /**
+     * 云资源类型编码。
+     * @return cloudResourceTypeCode
+     */
     public String getCloudResourceTypeCode() {
         return cloudResourceTypeCode;
     }
@@ -144,9 +149,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例
-     * 
-     * @return cacheMode */
+    /**
+     * 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例 
+     * @return cacheMode
+     */
     public String getCacheMode() {
         return cacheMode;
     }
@@ -160,9 +166,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 缓存引擎类型。
-     * 
-     * @return engine */
+    /**
+     * 缓存引擎类型。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -176,9 +183,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
-     * 
-     * @return engineVersion */
+    /**
+     * 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -192,9 +200,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** Redis缓存实例的产品类型。取值当前仅支持： generic：标准类型
-     * 
-     * @return productType */
+    /**
+     * Redis缓存实例的产品类型。取值当前仅支持： generic：标准类型 
+     * @return productType
+     */
     public String getProductType() {
         return productType;
     }
@@ -208,9 +217,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构
-     * 
-     * @return cpuType */
+    /**
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构 
+     * @return cpuType
+     */
     public String getCpuType() {
         return cpuType;
     }
@@ -224,9 +234,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 存储类型，取值当前仅支持： DRAM:内存存储
-     * 
-     * @return storageType */
+    /**
+     * 存储类型，取值当前仅支持： DRAM:内存存储 
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -256,9 +267,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 缓存容量（G Byte）。
-     * 
-     * @return capacity */
+    /**
+     * 缓存容量（G Byte）。
+     * @return capacity
+     */
     public List<String> getCapacity() {
         return capacity;
     }
@@ -288,9 +300,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 计费模式，取值范围如下： - Hourly：按需计费 - Monthly: 包月计费 - Yearly: 包周期计费
-     * 
-     * @return billingMode */
+    /**
+     * 计费模式，取值范围如下： - Hourly：按需计费 - Monthly: 包月计费 - Yearly: 包周期计费 
+     * @return billingMode
+     */
     public List<String> getBillingMode() {
         return billingMode;
     }
@@ -304,9 +317,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 租户侧IP数量。
-     * 
-     * @return tenantIpCount */
+    /**
+     * 租户侧IP数量。
+     * @return tenantIpCount
+     */
     public Integer getTenantIpCount() {
         return tenantIpCount;
     }
@@ -320,9 +334,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 定价类型，取值如下： - tier: 阶梯定价，一个规格对应多个容量 - normal: 规格和容量一一对应
-     * 
-     * @return pricingType */
+    /**
+     * 定价类型，取值如下： - tier: 阶梯定价，一个规格对应多个容量 - normal: 规格和容量一一对应 
+     * @return pricingType
+     */
     public String getPricingType() {
         return pricingType;
     }
@@ -336,9 +351,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 是否支持专属云。
-     * 
-     * @return isDec */
+    /**
+     * 是否支持专属云。
+     * @return isDec
+     */
     public Boolean getIsDec() {
         return isDec;
     }
@@ -368,9 +384,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 规格的其他信息。
-     * 
-     * @return attrs */
+    /**
+     * 规格的其他信息。
+     * @return attrs
+     */
     public List<AttrsObject> getAttrs() {
         return attrs;
     }
@@ -400,9 +417,10 @@ public class FlavorsItems {
         return this;
     }
 
-    /** 有资源的可用区。
-     * 
-     * @return flavorsAvailableZones */
+    /**
+     * 有资源的可用区。
+     * @return flavorsAvailableZones
+     */
     public List<FlavorAzObject> getFlavorsAvailableZones() {
         return flavorsAvailableZones;
     }
@@ -481,7 +499,10 @@ public class FlavorsItems {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

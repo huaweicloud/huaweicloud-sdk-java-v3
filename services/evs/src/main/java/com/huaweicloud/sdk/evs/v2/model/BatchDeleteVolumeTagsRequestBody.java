@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchDeleteVolumeTagsRequestBody {
 
-    /** 操作标识，当前支持的取值如下： 删除标签：delete */
+    /**
+     * 操作标识，当前支持的取值如下：  删除标签：delete
+     */
     public static final class ActionEnum {
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final ActionEnum DELETE = new ActionEnum("delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -98,9 +104,10 @@ public class BatchDeleteVolumeTagsRequestBody {
         return this;
     }
 
-    /** 操作标识，当前支持的取值如下： 删除标签：delete
-     * 
-     * @return action */
+    /**
+     * 操作标识，当前支持的取值如下：  删除标签：delete
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -130,9 +137,10 @@ public class BatchDeleteVolumeTagsRequestBody {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<DeleteTagsOption> getTags() {
         return tags;
     }
@@ -169,7 +177,10 @@ public class BatchDeleteVolumeTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

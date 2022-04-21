@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新防火墙规则的参数 */
+/**
+ * 更新防火墙规则的参数
+ */
 public class UpdateFirewallRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class UpdateFirewallRuleOption {
         return this;
     }
 
-    /** Get egressFirewallPolicy
-     * 
-     * @return egressFirewallPolicy */
+    /**
+     * Get egressFirewallPolicy
+     * @return egressFirewallPolicy
+     */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -58,9 +61,10 @@ public class UpdateFirewallRuleOption {
         return this;
     }
 
-    /** Get ingressFirewallPolicy
-     * 
-     * @return ingressFirewallPolicy */
+    /**
+     * Get ingressFirewallPolicy
+     * @return ingressFirewallPolicy
+     */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -97,7 +101,10 @@ public class UpdateFirewallRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepositoryInfo */
+/**
+ * RepositoryInfo
+ */
 public class RepositoryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 代码仓的名称。
-     * 
-     * @return name */
+    /**
+     * 代码仓的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -74,9 +77,10 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 代码仓描述。
-     * 
-     * @return description */
+    /**
+     * 代码仓描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -90,9 +94,10 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 项目id。
-     * 
-     * @return projectId */
+    /**
+     * 项目id。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -106,9 +111,10 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 区域id。
-     * 
-     * @return regionId */
+    /**
+     * 区域id。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -122,9 +128,10 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 根据编程语言生成gitignore文件。
-     * 
-     * @return gitignore */
+    /**
+     * 根据编程语言生成gitignore文件。
+     * @return gitignore
+     */
     public String getGitignore() {
         return gitignore;
     }
@@ -138,9 +145,12 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 是否允许项目内成员访问仓库： - 0：不允许 - 1：允许 minimum: 0 maximum: 1
-     * 
-     * @return memberPermission */
+    /**
+     * 是否允许项目内成员访问仓库： - 0：不允许 - 1：允许 
+     * minimum: 0
+     * maximum: 1
+     * @return memberPermission
+     */
     public Integer getMemberPermission() {
         return memberPermission;
     }
@@ -154,9 +164,12 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 是否允许生成README文件： - 0：不允许 - 1：允许 minimum: 0 maximum: 1
-     * 
-     * @return readmePermission */
+    /**
+     * 是否允许生成README文件： - 0：不允许 - 1：允许 
+     * minimum: 0
+     * maximum: 1
+     * @return readmePermission
+     */
     public Integer getReadmePermission() {
         return readmePermission;
     }
@@ -170,9 +183,12 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 是否公开： - 0：私有 - 20：公开只读 minimum: 0 maximum: 20
-     * 
-     * @return visibilityLevel */
+    /**
+     * 是否公开： - 0：私有 - 20：公开只读 
+     * minimum: 0
+     * maximum: 20
+     * @return visibilityLevel
+     */
     public Integer getVisibilityLevel() {
         return visibilityLevel;
     }
@@ -186,9 +202,12 @@ public class RepositoryInfo {
         return this;
     }
 
-    /** 开源许可证id （0:默认）。 minimum: 0 maximum: 100
-     * 
-     * @return licenseId */
+    /**
+     *  开源许可证id （0:默认）。
+     * minimum: 0
+     * maximum: 100
+     * @return licenseId
+     */
     public Integer getLicenseId() {
         return licenseId;
     }
@@ -247,7 +266,10 @@ public class RepositoryInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

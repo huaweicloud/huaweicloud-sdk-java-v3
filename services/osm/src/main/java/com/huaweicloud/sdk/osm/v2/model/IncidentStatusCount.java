@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentStatusCount */
+/**
+ * IncidentStatusCount
+ */
 public class IncidentStatusCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class IncidentStatusCount {
         return this;
     }
 
-    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
-     * 
-     * @return status */
+    /**
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
+     * minimum: 0
+     * maximum: 20
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -39,9 +44,12 @@ public class IncidentStatusCount {
         return this;
     }
 
-    /** 数量 minimum: 0 maximum: 65535
-     * 
-     * @return count */
+    /**
+     * 数量
+     * minimum: 0
+     * maximum: 65535
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -78,7 +86,10 @@ public class IncidentStatusCount {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

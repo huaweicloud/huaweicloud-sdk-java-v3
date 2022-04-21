@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PublicKeyList */
+/**
+ * PublicKeyList
+ */
 public class PublicKeyList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class PublicKeyList {
         return this;
     }
 
-    /** 密钥列表
-     * 
-     * @return sshkey */
+    /**
+     * 密钥列表
+     * @return sshkey
+     */
     public List<PublicKey> getSshkey() {
         return sshkey;
     }
@@ -58,9 +61,10 @@ public class PublicKeyList {
         return this;
     }
 
-    /** 密钥总数
-     * 
-     * @return total */
+    /**
+     * 密钥总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -96,7 +100,10 @@ public class PublicKeyList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

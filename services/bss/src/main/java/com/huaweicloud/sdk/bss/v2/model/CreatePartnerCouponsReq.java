@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreatePartnerCouponsReq */
+/**
+ * CreatePartnerCouponsReq
+ */
 public class CreatePartnerCouponsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 优惠券额度ID。该值在查询优惠券额度接口的响应参数中获取。
-     * 
-     * @return quotaId */
+    /**
+     * 优惠券额度ID。该值在查询优惠券额度接口的响应参数中获取。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -93,9 +96,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerIds */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerIds
+     */
     public List<String> getCustomerIds() {
         return customerIds;
     }
@@ -109,9 +113,12 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 代金券面值。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0.01 maximum: 99999999999
-     * 
-     * @return faceValue */
+    /**
+     * 代金券面值。 单位：元。取值大于0且精确到小数点后2位。
+     * minimum: 0.01
+     * maximum: 99999999999
+     * @return faceValue
+     */
     public Double getFaceValue() {
         return faceValue;
     }
@@ -125,9 +132,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return validTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return validTime
+     */
     public String getValidTime() {
         return validTime;
     }
@@ -141,9 +149,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -173,10 +182,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 允许使用的云服务列表，您可以调用查询云服务类型列表接口获取。 多个云服务产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制） 说明：
-     * 如果额度上有限制云服务类型列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定云服务类型。
-     * 
-     * @return cloudServiceTypes */
+    /**
+     * 允许使用的云服务列表，您可以调用查询云服务类型列表接口获取。 多个云服务产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制）  说明： 如果额度上有限制云服务类型列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定云服务类型。
+     * @return cloudServiceTypes
+     */
     public List<String> getCloudServiceTypes() {
         return cloudServiceTypes;
     }
@@ -206,10 +215,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 允许使用的产品列表。 多个产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制） 说明： 如果额度上有限制产品列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定产品ID。
-     * 产品ID需要合作伙伴通过线下获得。
-     * 
-     * @return productIds */
+    /**
+     * 允许使用的产品列表。 多个产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制）  说明： 如果额度上有限制产品列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定产品ID。 产品ID需要合作伙伴通过线下获得。
+     * @return productIds
+     */
     public List<String> getProductIds() {
         return productIds;
     }
@@ -223,9 +232,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 发券时的备注信息。
-     * 
-     * @return memo */
+    /**
+     * 发券时的备注信息。
+     * @return memo
+     */
     public String getMemo() {
         return memo;
     }
@@ -239,9 +249,10 @@ public class CreatePartnerCouponsReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商给子客户发放优惠券时，需要携带该参数。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商给子客户发放优惠券时，需要携带该参数。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -300,7 +311,10 @@ public class CreatePartnerCouponsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateAppCodeAutoV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         return this;
     }
 
-    /** App Code值 支持英文，+_!@#$%+/=，且只能以英文和+、/开头，64-180个字符。
-     * 
-     * @return appCode */
+    /**
+     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头，64-180个字符。
+     * @return appCode
+     */
     public String getAppCode() {
         return appCode;
     }
@@ -50,9 +53,10 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -66,9 +70,10 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用编号
-     * 
-     * @return appId */
+    /**
+     * 应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -82,9 +87,10 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -125,7 +131,10 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

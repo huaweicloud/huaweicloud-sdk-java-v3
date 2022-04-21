@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTemplatesV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListTemplatesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 返回模板的数量。 minimum: 0 maximum: 100
-     * 
-     * @return count */
+    /**
+     * 返回模板的数量。
+     * minimum: 0
+     * maximum: 100
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -48,9 +53,12 @@ public class ListTemplatesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 返回关联了失效资源的模板数量。 minimum: 0 maximum: 100
-     * 
-     * @return invalidCount */
+    /**
+     * 返回关联了失效资源的模板数量。
+     * minimum: 0
+     * maximum: 100
+     * @return invalidCount
+     */
     public Integer getInvalidCount() {
         return invalidCount;
     }
@@ -80,9 +88,10 @@ public class ListTemplatesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 返回模板的列表。
-     * 
-     * @return templates */
+    /**
+     * 返回模板的列表。
+     * @return templates
+     */
     public List<TemplateInfo> getTemplates() {
         return templates;
     }
@@ -121,7 +130,10 @@ public class ListTemplatesV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -18,10 +18,14 @@ import java.util.function.Consumer;
  */
 public class AgencyAuthIdentity {
 
-    /** Gets or Sets methods */
+    /**
+     * Gets or Sets methods
+     */
     public static final class MethodsEnum {
 
-        /** Enum ASSUME_ROLE for value: "assume_role" */
+        /**
+         * Enum ASSUME_ROLE for value: "assume_role"
+         */
         public static final MethodsEnum ASSUME_ROLE = new MethodsEnum("assume_role");
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +125,10 @@ public class AgencyAuthIdentity {
         return this;
     }
 
-    /** 认证方法，该字段内容为[\"assume_role\"]。
-     * 
-     * @return methods */
+    /**
+     * 认证方法，该字段内容为[\"assume_role\"]。
+     * @return methods
+     */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -146,9 +151,10 @@ public class AgencyAuthIdentity {
         return this;
     }
 
-    /** Get assumeRole
-     * 
-     * @return assumeRole */
+    /**
+     * Get assumeRole
+     * @return assumeRole
+     */
     public IdentityAssumerole getAssumeRole() {
         return assumeRole;
     }
@@ -171,9 +177,10 @@ public class AgencyAuthIdentity {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public ServicePolicy getPolicy() {
         return policy;
     }
@@ -212,7 +219,10 @@ public class AgencyAuthIdentity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

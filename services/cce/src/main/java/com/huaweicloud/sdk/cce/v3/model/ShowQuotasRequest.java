@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowQuotasRequest {
 
     @Override

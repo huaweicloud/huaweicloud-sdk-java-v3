@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CodeCheck任务语言参数 */
+/**
+ * CodeCheck任务语言参数
+ */
 public class ParamTypeLimits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ParamTypeLimits {
         return this;
     }
 
-    /** 是否废弃
-     * 
-     * @return disable */
+    /**
+     * 是否废弃
+     * @return disable
+     */
     public String getDisable() {
         return disable;
     }
@@ -54,9 +57,10 @@ public class ParamTypeLimits {
         return this;
     }
 
-    /** 语言名字
-     * 
-     * @return name */
+    /**
+     * 语言名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class ParamTypeLimits {
         return this;
     }
 
-    /** 语言展示名字
-     * 
-     * @return displayname */
+    /**
+     * 语言展示名字
+     * @return displayname
+     */
     public String getDisplayname() {
         return displayname;
     }
@@ -86,9 +91,10 @@ public class ParamTypeLimits {
         return this;
     }
 
-    /** 规则集ID
-     * 
-     * @return id */
+    /**
+     * 规则集ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +108,10 @@ public class ParamTypeLimits {
         return this;
     }
 
-    /** 扫描语言
-     * 
-     * @return language */
+    /**
+     * 扫描语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -145,7 +152,10 @@ public class ParamTypeLimits {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

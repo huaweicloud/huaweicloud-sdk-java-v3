@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** AclApiBindingInfo */
+/**
+ * AclApiBindingInfo
+ */
 public class AclApiBindingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class AclApiBindingInfo {
         return this;
     }
 
-    /** 绑定关系编号
-     * 
-     * @return id */
+    /**
+     * 绑定关系编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,9 +58,10 @@ public class AclApiBindingInfo {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -71,9 +75,10 @@ public class AclApiBindingInfo {
         return this;
     }
 
-    /** 环境编号
-     * 
-     * @return envId */
+    /**
+     * 环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -87,9 +92,10 @@ public class AclApiBindingInfo {
         return this;
     }
 
-    /** ACL策略编号
-     * 
-     * @return aclId */
+    /**
+     * ACL策略编号
+     * @return aclId
+     */
     public String getAclId() {
         return aclId;
     }
@@ -103,9 +109,10 @@ public class AclApiBindingInfo {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return createTime */
+    /**
+     * 绑定时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -147,7 +154,10 @@ public class AclApiBindingInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

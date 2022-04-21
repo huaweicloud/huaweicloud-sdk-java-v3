@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OrderRefundInfoV2 */
+/**
+ * OrderRefundInfoV2
+ */
 public class OrderRefundInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 该记录的ID。
-     * 
-     * @return id */
+    /**
+     * 该记录的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 金额。 金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。
-     * 
-     * @return amount */
+    /**
+     * 金额。 金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -95,9 +99,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 金额的度量单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额的度量单位。 1：元
+     * @return measureId
+     */
     public String getMeasureId() {
         return measureId;
     }
@@ -111,9 +116,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -127,9 +133,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -143,9 +150,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -159,9 +167,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -175,9 +184,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -191,9 +201,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -207,9 +218,10 @@ public class OrderRefundInfoV2 {
         return this;
     }
 
-    /** 退订金额、已消费金额或收取退订手续费对应的原订单ID。
-     * 
-     * @return baseOrderId */
+    /**
+     * 退订金额、已消费金额或收取退订手续费对应的原订单ID。
+     * @return baseOrderId
+     */
     public String getBaseOrderId() {
         return baseOrderId;
     }
@@ -270,7 +282,10 @@ public class OrderRefundInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

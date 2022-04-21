@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CouponRecordV2 */
+/**
+ * CouponRecordV2
+ */
 public class CouponRecordV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 该记录的ID。
-     * 
-     * @return id */
+    /**
+     * 该记录的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 操作类型。 1：发放2：手动回收3：解绑自动回收
-     * 
-     * @return operationType */
+    /**
+     * 操作类型。 1：发放2：手动回收3：解绑自动回收
+     * @return operationType
+     */
     public String getOperationType() {
         return operationType;
     }
@@ -95,9 +99,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -111,9 +116,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 额度类型。 0：代金券额度1：现金券额度
-     * 
-     * @return quotaType */
+    /**
+     * 额度类型。 0：代金券额度1：现金券额度
+     * @return quotaType
+     */
     public Integer getQuotaType() {
         return quotaType;
     }
@@ -127,9 +133,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 代金券ID。
-     * 
-     * @return couponId */
+    /**
+     * 代金券ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -143,9 +150,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -159,9 +167,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 操作的面额值。单位：元。 发放时，等于面额值；回收时，指每次回收的具体值。
-     * 
-     * @return operationAmount */
+    /**
+     * 操作的面额值。单位：元。 发放时，等于面额值；回收时，指每次回收的具体值。
+     * @return operationAmount
+     */
     public Double getOperationAmount() {
         return operationAmount;
     }
@@ -175,9 +184,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 操作时间。
-     * 
-     * @return operationTime */
+    /**
+     * 操作时间。
+     * @return operationTime
+     */
     public String getOperationTime() {
         return operationTime;
     }
@@ -191,9 +201,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 操作结果。 0：成功-1：失败
-     * 
-     * @return result */
+    /**
+     * 操作结果。 0：成功-1：失败
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -207,9 +218,10 @@ public class CouponRecordV2 {
         return this;
     }
 
-    /** 操作记录中的备注。
-     * 
-     * @return remark */
+    /**
+     * 操作记录中的备注。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -270,7 +282,10 @@ public class CouponRecordV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

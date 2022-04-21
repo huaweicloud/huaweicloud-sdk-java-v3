@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 期望值设置的时间信息 */
+/**
+ * 期望值设置的时间信息
+ */
 public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class Metadata {
         return this;
     }
 
-    /** 属性类型标识，string|int|float|boolean（boolean类型为true或false），默认为string
-     * 
-     * @return type */
+    /**
+     * 属性类型标识，string|int|float|boolean（boolean类型为true或false），默认为string
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -55,7 +58,10 @@ public class Metadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

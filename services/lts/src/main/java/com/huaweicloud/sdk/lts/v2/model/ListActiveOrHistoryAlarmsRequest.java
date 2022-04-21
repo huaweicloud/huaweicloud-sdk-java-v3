@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListActiveOrHistoryAlarmsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class ListActiveOrHistoryAlarmsRequest {
 
     private String domainId;
 
-    /** 是活动告警还是历史告警 */
+    /**
+     * 是活动告警还是历史告警
+     */
     public static final class TypeEnum {
 
-        /** Enum ACTIVE_ALERT for value: "active_alert" */
+        /**
+         * Enum ACTIVE_ALERT for value: "active_alert"
+         */
         public static final TypeEnum ACTIVE_ALERT = new TypeEnum("active_alert");
 
-        /** Enum HISTORY_ALERT for value: "history_alert" */
+        /**
+         * Enum HISTORY_ALERT for value: "history_alert"
+         */
         public static final TypeEnum HISTORY_ALERT = new TypeEnum("history_alert");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +123,10 @@ public class ListActiveOrHistoryAlarmsRequest {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -131,9 +140,10 @@ public class ListActiveOrHistoryAlarmsRequest {
         return this;
     }
 
-    /** 是活动告警还是历史告警
-     * 
-     * @return type */
+    /**
+     * 是活动告警还是历史告警
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -147,9 +157,10 @@ public class ListActiveOrHistoryAlarmsRequest {
         return this;
     }
 
-    /** 取值为上一页数据的最后一条记录的id(填写上一页数据返回得previous_marker或者next_marker值。)
-     * 
-     * @return marker */
+    /**
+     * 取值为上一页数据的最后一条记录的id(填写上一页数据返回得previous_marker或者next_marker值。)
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -163,9 +174,12 @@ public class ListActiveOrHistoryAlarmsRequest {
         return this;
     }
 
-    /** 每页数据量 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页数据量
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -188,9 +202,10 @@ public class ListActiveOrHistoryAlarmsRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public ListActiveOrHistoryAlarmsRequestBody getBody() {
         return body;
     }
@@ -233,7 +248,10 @@ public class ListActiveOrHistoryAlarmsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ValidateRomaAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ValidateRomaAppRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ValidateRomaAppRequest {
         return this;
     }
 
-    /** 应用名称，不支持模糊匹配
-     * 
-     * @return name */
+    /**
+     * 应用名称，不支持模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class ValidateRomaAppRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return id */
+    /**
+     * 应用ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -81,9 +86,10 @@ public class ValidateRomaAppRequest {
         return this;
     }
 
-    /** 应用key
-     * 
-     * @return key */
+    /**
+     * 应用key
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -124,7 +130,10 @@ public class ValidateRomaAppRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

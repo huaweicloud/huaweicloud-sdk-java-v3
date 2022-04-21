@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 添加网卡请求体 */
+/**
+ * 添加网卡请求体
+ */
 public class AddNicsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class AddNicsRequestBody {
         return this;
     }
 
-    /** 虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -68,9 +71,10 @@ public class AddNicsRequestBody {
         return this;
     }
 
-    /** 安全组ID列表。
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组ID列表。
+     * @return securityGroups
+     */
     public List<BaseId> getSecurityGroups() {
         return securityGroups;
     }
@@ -84,9 +88,10 @@ public class AddNicsRequestBody {
         return this;
     }
 
-    /** 子网ID。 当subnet_id提供时，则在该子网下创建nic_num个网卡； 不输入，则自动分配subnet。 当添加网卡的VPC为手动规划VPC时，subnet_id必填。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。  当subnet_id提供时，则在该子网下创建nic_num个网卡； 不输入，则自动分配subnet。 当添加网卡的VPC为手动规划VPC时，subnet_id必填。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -100,9 +105,11 @@ public class AddNicsRequestBody {
         return this;
     }
 
-    /** 待添加网卡数量。 minimum: 1
-     * 
-     * @return nicNum */
+    /**
+     * 待添加网卡数量。
+     * minimum: 1
+     * @return nicNum
+     */
     public Integer getNicNum() {
         return nicNum;
     }
@@ -143,7 +150,10 @@ public class AddNicsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class RunDevstarTemplateJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class RunDevstarTemplateJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -59,9 +62,10 @@ public class RunDevstarTemplateJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件列表。
-     * 
-     * @return fileList */
+    /**
+     * 文件列表。
+     * @return fileList
+     */
     public List<FileTreeNode> getFileList() {
         return fileList;
     }
@@ -98,7 +102,10 @@ public class RunDevstarTemplateJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

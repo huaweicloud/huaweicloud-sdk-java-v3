@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SetRepoRoleRequestBody */
+/**
+ * SetRepoRoleRequestBody
+ */
 public class SetRepoRoleRequestBody {
 
-    /** 设置仓库的成员权限，取值范围：20 -> 只读成员 30->普通成员，40->管理员 */
+    /**
+     * 设置仓库的成员权限，取值范围：20 -> 只读成员 30->普通成员，40->管理员
+     */
     public static final class RoleEnum {
 
-        /** Enum NUMBER_20 for value: 20 */
+        /**
+         * Enum NUMBER_20 for value: 20
+         */
         public static final RoleEnum NUMBER_20 = new RoleEnum(20);
 
-        /** Enum NUMBER_30 for value: 30 */
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
         public static final RoleEnum NUMBER_30 = new RoleEnum(30);
 
-        /** Enum NUMBER_40 for value: 40 */
+        /**
+         * Enum NUMBER_40 for value: 40
+         */
         public static final RoleEnum NUMBER_40 = new RoleEnum(40);
 
         private static final Map<Integer, RoleEnum> STATIC_FIELDS = createStaticFields();
@@ -98,9 +108,10 @@ public class SetRepoRoleRequestBody {
         return this;
     }
 
-    /** 设置仓库的成员权限，取值范围：20 -> 只读成员 30->普通成员，40->管理员
-     * 
-     * @return role */
+    /**
+     * 设置仓库的成员权限，取值范围：20 -> 只读成员 30->普通成员，40->管理员
+     * @return role
+     */
     public RoleEnum getRole() {
         return role;
     }
@@ -135,7 +146,10 @@ public class SetRepoRoleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAuditlogPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 审计日志保存天数，审计日志策略关闭时为0。
-     * 
-     * @return keepDays */
+    /**
+     * 审计日志保存天数，审计日志策略关闭时为0。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -48,9 +51,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 审计范围。
-     * 
-     * @return auditScope */
+    /**
+     * 审计范围。
+     * @return auditScope
+     */
     public String getAuditScope() {
         return auditScope;
     }
@@ -80,9 +84,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 审计类型。
-     * 
-     * @return auditTypes */
+    /**
+     * 审计类型。
+     * @return auditTypes
+     */
     public List<String> getAuditTypes() {
         return auditTypes;
     }
@@ -121,7 +126,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

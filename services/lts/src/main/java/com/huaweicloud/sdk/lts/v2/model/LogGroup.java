@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 返回的日志组信息 */
+/**
+ * 返回的日志组信息
+ */
 public class LogGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,12 @@ public class LogGroup {
         return this;
     }
 
-    /** 创建时间 minimum: 946656000000000000 maximum: 4102416000000000000
-     * 
-     * @return creationTime */
+    /**
+     * 创建时间 
+     * minimum: 946656000000000000
+     * maximum: 4102416000000000000
+     * @return creationTime
+     */
     public Long getCreationTime() {
         return creationTime;
     }
@@ -57,9 +62,10 @@ public class LogGroup {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称 
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -73,9 +79,10 @@ public class LogGroup {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID 
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -89,9 +96,12 @@ public class LogGroup {
         return this;
     }
 
-    /** 日志存储时间 天 minimum: 1 maximum: 30
-     * 
-     * @return ttlInDays */
+    /**
+     * 日志存储时间 天 
+     * minimum: 1
+     * maximum: 30
+     * @return ttlInDays
+     */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -121,9 +131,10 @@ public class LogGroup {
         return this;
     }
 
-    /** 日志流所属标签
-     * 
-     * @return tag */
+    /**
+     * 日志流所属标签
+     * @return tag
+     */
     public Map<String, String> getTag() {
         return tag;
     }
@@ -165,7 +176,10 @@ public class LogGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

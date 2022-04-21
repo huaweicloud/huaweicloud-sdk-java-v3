@@ -31,9 +31,10 @@ public class NeutronUpdateFirewallRuleRequestBody {
         return this;
     }
 
-    /** Get firewallRule
-     * 
-     * @return firewallRule */
+    /**
+     * Get firewallRule
+     * @return firewallRule
+     */
     public NeutronUpdateFirewallRuleOption getFirewallRule() {
         return firewallRule;
     }
@@ -69,7 +70,10 @@ public class NeutronUpdateFirewallRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

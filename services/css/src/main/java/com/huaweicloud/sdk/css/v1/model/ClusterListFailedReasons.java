@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 失败原因。如果集群处于正常状态，则不返回该参数。 */
+/**
+ * 失败原因。如果集群处于正常状态，则不返回该参数。
+ */
 public class ClusterListFailedReasons {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ClusterListFailedReasons {
         return this;
     }
 
-    /** 错误码。 - CSS.6000：表示集群创建失败。 - CSS.6001：表示集群扩容失败。 - CSS.6002：表示集群重启失败。 - CSS.6004：表示集群节点创建失败。 - CSS.6005：表示服务初始化失败。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。  - CSS.6000：表示集群创建失败。 - CSS.6001：表示集群扩容失败。 - CSS.6002：表示集群重启失败。 - CSS.6004：表示集群节点创建失败。 - CSS.6005：表示服务初始化失败。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -39,9 +42,10 @@ public class ClusterListFailedReasons {
         return this;
     }
 
-    /** 详细错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 详细错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -78,7 +82,10 @@ public class ClusterListFailedReasons {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

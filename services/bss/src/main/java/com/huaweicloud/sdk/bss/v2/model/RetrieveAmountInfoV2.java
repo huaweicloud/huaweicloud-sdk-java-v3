@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RetrieveAmountInfoV2 */
+/**
+ * RetrieveAmountInfoV2
+ */
 public class RetrieveAmountInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 可回收的金额。
-     * 
-     * @return availRetrieveAmount */
+    /**
+     * 可回收的金额。
+     * @return availRetrieveAmount
+     */
     public Double getAvailRetrieveAmount() {
         return availRetrieveAmount;
     }
@@ -59,9 +62,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -75,9 +79,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 币种。 CNY：人民币
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -91,9 +96,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 账户余额（仅balance_type=信用账户时才有这个字段）。
-     * 
-     * @return amount */
+    /**
+     * 账户余额（仅balance_type=信用账户时才有这个字段）。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -107,9 +113,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 信用额度（仅balance_type=信用账户时才有这个字段）。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用额度（仅balance_type=信用账户时才有这个字段）。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -123,9 +130,10 @@ public class RetrieveAmountInfoV2 {
         return this;
     }
 
-    /** 信用额度过期时间。 UTC时间，格式为：2016-03-28T14:45:38Z。 如果查询信用账户可回收余额的查询结果没有失效时间，表示永久有效。
-     * 
-     * @return expireTime */
+    /**
+     * 信用额度过期时间。 UTC时间，格式为：2016-03-28T14:45:38Z。 如果查询信用账户可回收余额的查询结果没有失效时间，表示永久有效。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -170,7 +178,10 @@ public class RetrieveAmountInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,12 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 每页返回的个数。 取值范围：0~intmax。 minimum: 0 maximum: 65534
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。 取值范围：0~intmax。
+     * minimum: 0
+     * maximum: 65534
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,9 +84,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 分页查询起始的证书id，为空时为查询第一页。 仅当和limit一起使用时生效
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的证书id，为空时为查询第一页。 仅当和limit一起使用时生效
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -95,9 +101,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 仅当和limit一起使用时生效。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 仅当和limit一起使用时生效。
+     * @return pageReverse
+     */
     public String getPageReverse() {
         return pageReverse;
     }
@@ -111,9 +118,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** SSL证书ID。
-     * 
-     * @return id */
+    /**
+     * SSL证书ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -127,9 +135,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** SSL证书的名称。
-     * 
-     * @return name */
+    /**
+     * SSL证书的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -143,9 +152,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 证书描述SSL证书描述。
-     * 
-     * @return description */
+    /**
+     * 证书描述SSL证书描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -159,9 +169,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** SSL证书的类型。默认值：server；取值范围：server：服务端证书；client：客户端证书；
-     * 
-     * @return type */
+    /**
+     * SSL证书的类型。默认值：server；取值范围：server：服务端证书；client：客户端证书；
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -175,9 +186,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** 服务端证书所签的域名。默认值：null；取值范围：普通域名由若干字符串组成，总长度为0-1024，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。泛域名在普通域名的基础上仅允许首字母为\"*\"。该字段仅type为server时有效。
-     * 
-     * @return domain */
+    /**
+     * 服务端证书所签的域名。默认值：null；取值范围：普通域名由若干字符串组成，总长度为0-1024，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。泛域名在普通域名的基础上仅允许首字母为\"*\"。该字段仅type为server时有效。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -191,9 +203,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** PEM格式的服务端私有密钥。
-     * 
-     * @return privateKey */
+    /**
+     * PEM格式的服务端私有密钥。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -207,9 +220,10 @@ public class ListCertificatesRequest {
         return this;
     }
 
-    /** PEM格式的服务端公有密钥或者用于认证客户端证书的CA证书，由type字段区分。
-     * 
-     * @return certificate */
+    /**
+     * PEM格式的服务端公有密钥或者用于认证客户端证书的CA证书，由type字段区分。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -262,7 +276,10 @@ public class ListCertificatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

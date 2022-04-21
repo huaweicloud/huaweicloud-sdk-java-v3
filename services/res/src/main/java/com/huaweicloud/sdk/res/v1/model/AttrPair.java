@@ -25,9 +25,10 @@ public class AttrPair {
         return this;
     }
 
-    /** 被推荐对象的属性名。
-     * 
-     * @return partyA */
+    /**
+     * 被推荐对象的属性名。
+     * @return partyA
+     */
     public String getPartyA() {
         return partyA;
     }
@@ -41,9 +42,10 @@ public class AttrPair {
         return this;
     }
 
-    /** 被推荐对象的属性名。
-     * 
-     * @return partyB */
+    /**
+     * 被推荐对象的属性名。
+     * @return partyB
+     */
     public String getPartyB() {
         return partyB;
     }
@@ -79,7 +81,10 @@ public class AttrPair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

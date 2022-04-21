@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点亲和规则 */
+/**
+ * 节点亲和规则
+ */
 public class AffinityNodeAffinity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class AffinityNodeAffinity {
         return this;
     }
 
-    /** 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。
-     * 
-     * @return preferredDuringSchedulingIgnoredDuringExecution */
+    /**
+     * 优先使用定义的规则调度，且不会影响已经在节点上运行的Pod。即优先选择调度到满足规则的节点，但也可能会调度到不满足规则的节点。
+     * @return preferredDuringSchedulingIgnoredDuringExecution
+     */
     public List<PreferredSchedulingTerm> getPreferredDuringSchedulingIgnoredDuringExecution() {
         return preferredDuringSchedulingIgnoredDuringExecution;
     }
@@ -75,9 +78,10 @@ public class AffinityNodeAffinity {
         return this;
     }
 
-    /** Get requiredDuringSchedulingIgnoredDuringExecution
-     * 
-     * @return requiredDuringSchedulingIgnoredDuringExecution */
+    /**
+     * Get requiredDuringSchedulingIgnoredDuringExecution
+     * @return requiredDuringSchedulingIgnoredDuringExecution
+     */
     public RequiredDuringScheduling getRequiredDuringSchedulingIgnoredDuringExecution() {
         return requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -122,7 +126,10 @@ public class AffinityNodeAffinity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

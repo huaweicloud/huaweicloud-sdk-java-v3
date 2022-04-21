@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AddOrRemoveServicePermissionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,10 +40,10 @@ public class AddOrRemoveServicePermissionsResponse extends SdkResponse {
         return this;
     }
 
-    /** permission列表。 权限格式为iam:domain:: 6e9dfd51d1124e8d8498dce894923a0d或“*”， “*”表示所有用户的终端节点可连接。其中
-     * 6e9dfd51d1124e8d8498dce894923a0d为可连接 的用户domian_id。
-     * 
-     * @return permissions */
+    /**
+     * permission列表。 权限格式为iam:domain:: 6e9dfd51d1124e8d8498dce894923a0d或“*”， “*”表示所有用户的终端节点可连接。其中 6e9dfd51d1124e8d8498dce894923a0d为可连接 的用户domian_id。
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -77,7 +79,10 @@ public class AddOrRemoveServicePermissionsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         return this;
     }
 
-    /** 实名认证审核结果，只有状态码为200并且已经提交过实名认证请求才返回： 0：审核中1：不通过2：通过
-     * 
-     * @return reviewResult */
+    /**
+     * 实名认证审核结果，只有状态码为200并且已经提交过实名认证请求才返回： 0：审核中1：不通过2：通过
+     * @return reviewResult
+     */
     public Integer getReviewResult() {
         return reviewResult;
     }
@@ -40,9 +43,10 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         return this;
     }
 
-    /** 审批意见，只有状态码为200并且审核不通过才返回。
-     * 
-     * @return opinion */
+    /**
+     * 审批意见，只有状态码为200并且审核不通过才返回。
+     * @return opinion
+     */
     public String getOpinion() {
         return opinion;
     }
@@ -80,7 +84,10 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

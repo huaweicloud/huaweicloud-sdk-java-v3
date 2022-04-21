@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 可修改的合流参数 */
+/**
+ * 可修改的合流参数
+ */
 public class UpdateMixParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 视频布局模板编号，仅支持自定义模板之间的更新。
-     * 
-     * @return layoutTemplate */
+    /**
+     * 视频布局模板编号，仅支持自定义模板之间的更新。
+     * @return layoutTemplate
+     */
     public String getLayoutTemplate() {
         return layoutTemplate;
     }
@@ -67,9 +70,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 画布背景图地址，图片先上传obs。默认使用等比缩放裁剪，保证铺满。格式s3://bucket/object
-     * 
-     * @return backgroundImage */
+    /**
+     * 画布背景图地址，图片先上传obs。默认使用等比缩放裁剪，保证铺满。格式s3://bucket/object
+     * @return backgroundImage
+     */
     public String getBackgroundImage() {
         return backgroundImage;
     }
@@ -83,9 +87,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 默认用户背景图地址，图片先上传obs，格式s3://bucket/object。默认使用等比缩放裁剪，保证铺满。
-     * 
-     * @return defaultUserBackgroundImage */
+    /**
+     * 默认用户背景图地址，图片先上传obs，格式s3://bucket/object。默认使用等比缩放裁剪，保证铺满。
+     * @return defaultUserBackgroundImage
+     */
     public String getDefaultUserBackgroundImage() {
         return defaultUserBackgroundImage;
     }
@@ -99,9 +104,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 共享屏幕的背景图地址，图片先上传obs，格式s3://bucket/object。 在一大多小的布局场景下，无论大窗是显示非指定用户（屏幕共享人的桌面）还是指定用户的共享桌面，都通过该字段指定背景图。
-     * 
-     * @return screenBackgroundImage */
+    /**
+     * 共享屏幕的背景图地址，图片先上传obs，格式s3://bucket/object。  在一大多小的布局场景下，无论大窗是显示非指定用户（屏幕共享人的桌面）还是指定用户的共享桌面，都通过该字段指定背景图。 
+     * @return screenBackgroundImage
+     */
     public String getScreenBackgroundImage() {
         return screenBackgroundImage;
     }
@@ -115,10 +121,12 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 最长空闲频道时间。 取值范围：[5，43200]，默认值为30。 单位：秒。 如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。
-     * 连麦方指：joiner或者publisher的用户。 minimum: 5 maximum: 43200
-     * 
-     * @return maxIdleTime */
+    /**
+     * 最长空闲频道时间。  取值范围：[5，43200]，默认值为30。  单位：秒。  如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。  连麦方指：joiner或者publisher的用户。 
+     * minimum: 5
+     * maximum: 43200
+     * @return maxIdleTime
+     */
     public Integer getMaxIdleTime() {
         return maxIdleTime;
     }
@@ -148,9 +156,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 需要混流的视频列表。若不需要视频混流，则可不传递该参数。
-     * 
-     * @return layoutPanes */
+    /**
+     * 需要混流的视频列表。若不需要视频混流，则可不传递该参数。
+     * @return layoutPanes
+     */
     public List<MixLayoutPane> getLayoutPanes() {
         return layoutPanes;
     }
@@ -180,9 +189,10 @@ public class UpdateMixParam {
         return this;
     }
 
-    /** 指定用户背景图，优先级大于default_user_background_image
-     * 
-     * @return userBackgroundImages */
+    /**
+     * 指定用户背景图，优先级大于default_user_background_image
+     * @return userBackgroundImages
+     */
     public List<MixUserBackgroundImage> getUserBackgroundImages() {
         return userBackgroundImages;
     }
@@ -235,7 +245,10 @@ public class UpdateMixParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

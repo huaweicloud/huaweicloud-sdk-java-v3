@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 函数异步配置列表。
-     * 
-     * @return asyncInvokeConfigs */
+    /**
+     * 函数异步配置列表。
+     * @return asyncInvokeConfigs
+     */
     public List<ListFunctionAsyncInvokeConfigResult> getAsyncInvokeConfigs() {
         return asyncInvokeConfigs;
     }
@@ -67,9 +70,11 @@ public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 列表总数。 minimum: 0
-     * 
-     * @return count */
+    /**
+     * 列表总数。
+     * minimum: 0
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -92,9 +97,10 @@ public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pageInfo
-     * 
-     * @return pageInfo */
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -134,7 +140,10 @@ public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RemovePipelineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RemovePipelineRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -41,9 +44,10 @@ public class RemovePipelineRequest {
         return this;
     }
 
-    /** 要删除的流水线ID
-     * 
-     * @return pipelineId */
+    /**
+     * 要删除的流水线ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -80,7 +84,10 @@ public class RemovePipelineRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

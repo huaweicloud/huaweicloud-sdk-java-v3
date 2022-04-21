@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** PublicipInfo对象 */
+/**
+ * PublicipInfo对象
+ */
 public class PublicipInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class PublicipInfoResp {
 
     private String publicipv6Address;
 
-    /** IP版本信息 取值范围： 4：IPv4 6：IPv6 */
+    /**
+     * IP版本信息  取值范围：  4：IPv4  6：IPv6
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class PublicipInfoResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP或者IPv6端口的地址
-     * 
-     * @return publicipAddress */
+    /**
+     * 功能说明：弹性公网IP或者IPv6端口的地址
+     * @return publicipAddress
+     */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -130,9 +139,10 @@ public class PublicipInfoResp {
         return this;
     }
 
-    /** 功能说明：带宽对应的弹性公网IP或者IPv6端口的唯一标识
-     * 
-     * @return publicipId */
+    /**
+     * 功能说明：带宽对应的弹性公网IP或者IPv6端口的唯一标识
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -146,11 +156,10 @@ public class PublicipInfoResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP或者IPv6端口的类型 取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6 东北-大连：5_telcom、5_union
-     * 华南-广州：5_bgp、5_sbgp 华东-上海二：5_bgp、5_sbgp 华北-北京一：5_bgp、5_sbgp、5_ipv6 亚太-香港：5_bgp 亚太-曼谷：5_bgp 亚太-新加坡：5_bgp
-     * 非洲-约翰内斯堡：5_bgp 西南-贵阳一：5_bgp、5_sbgp 华北-北京四：5_bgp、5_sbgp 约束：必须是系统具体支持的类型
-     * 
-     * @return publicipType */
+    /**
+     * 功能说明：弹性公网IP或者IPv6端口的类型  取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6  东北-大连：5_telcom、5_union  华南-广州：5_bgp、5_sbgp  华东-上海二：5_bgp、5_sbgp  华北-北京一：5_bgp、5_sbgp、5_ipv6  亚太-香港：5_bgp  亚太-曼谷：5_bgp  亚太-新加坡：5_bgp  非洲-约翰内斯堡：5_bgp  西南-贵阳一：5_bgp、5_sbgp  华北-北京四：5_bgp、5_sbgp  约束：必须是系统具体支持的类型
+     * @return publicipType
+     */
     public String getPublicipType() {
         return publicipType;
     }
@@ -164,9 +173,10 @@ public class PublicipInfoResp {
         return this;
     }
 
-    /** 功能说明：IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
-     * 
-     * @return publicipv6Address */
+    /**
+     * 功能说明：IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
+     * @return publicipv6Address
+     */
     public String getPublicipv6Address() {
         return publicipv6Address;
     }
@@ -180,9 +190,10 @@ public class PublicipInfoResp {
         return this;
     }
 
-    /** IP版本信息 取值范围： 4：IPv4 6：IPv6
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本信息  取值范围：  4：IPv4  6：IPv6
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -225,7 +236,10 @@ public class PublicipInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

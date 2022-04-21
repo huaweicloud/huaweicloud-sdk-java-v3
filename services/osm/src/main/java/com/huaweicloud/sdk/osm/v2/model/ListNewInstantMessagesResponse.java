@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListNewInstantMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态列表
-     * 
-     * @return imstatus */
+    /**
+     * 状态列表
+     * @return imstatus
+     */
     public List<ImStatusV2> getImstatus() {
         return imstatus;
     }
@@ -80,9 +83,10 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 留言内容列表
-     * 
-     * @return immsg */
+    /**
+     * 留言内容列表
+     * @return immsg
+     */
     public List<UserInstantIncidentMsgV2> getImmsg() {
         return immsg;
     }
@@ -96,9 +100,10 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 上次查询留言时间
-     * 
-     * @return lastMessageTimeId */
+    /**
+     * 上次查询留言时间
+     * @return lastMessageTimeId
+     */
     public String getLastMessageTimeId() {
         return lastMessageTimeId;
     }
@@ -137,7 +142,10 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

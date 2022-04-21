@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 带宽信息 */
+/**
+ * 带宽信息
+ */
 public class BandwidthResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class BandwidthResult {
 
     private Integer size;
 
-    /** 带宽的共享类型。共享类型枚举：PER，表示独享。目前只支持独享。 */
+    /**
+     * 带宽的共享类型。共享类型枚举：PER，表示独享。目前只支持独享。
+     */
     public static final class ShareTypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final ShareTypeEnum PER = new ShareTypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
 
         private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +102,19 @@ public class BandwidthResult {
 
     private ShareTypeEnum shareType;
 
-    /** 带宽的计费类型。字段值为“bandwidth”，表示按带宽计费。字段值为“traffic”，表示按流量计费。 */
+    /**
+     * 带宽的计费类型。字段值为“bandwidth”，表示按带宽计费。字段值为“traffic”，表示按流量计费。
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum BANDWIDTH for value: "bandwidth" */
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
         public static final ChargingModeEnum BANDWIDTH = new ChargingModeEnum("bandwidth");
 
-        /** Enum TRAFFIC for value: "traffic" */
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
         public static final ChargingModeEnum TRAFFIC = new ChargingModeEnum("traffic");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -180,9 +194,12 @@ public class BandwidthResult {
         return this;
     }
 
-    /** 带宽（Mbit/s）。 minimum: 1 maximum: 300
-     * 
-     * @return size */
+    /**
+     * 带宽（Mbit/s）。
+     * minimum: 1
+     * maximum: 300
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -196,9 +213,10 @@ public class BandwidthResult {
         return this;
     }
 
-    /** 带宽的共享类型。共享类型枚举：PER，表示独享。目前只支持独享。
-     * 
-     * @return shareType */
+    /**
+     * 带宽的共享类型。共享类型枚举：PER，表示独享。目前只支持独享。
+     * @return shareType
+     */
     public ShareTypeEnum getShareType() {
         return shareType;
     }
@@ -212,9 +230,10 @@ public class BandwidthResult {
         return this;
     }
 
-    /** 带宽的计费类型。字段值为“bandwidth”，表示按带宽计费。字段值为“traffic”，表示按流量计费。
-     * 
-     * @return chargingMode */
+    /**
+     * 带宽的计费类型。字段值为“bandwidth”，表示按带宽计费。字段值为“traffic”，表示按流量计费。
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -228,9 +247,10 @@ public class BandwidthResult {
         return this;
     }
 
-    /** 带宽ID，创建WHOLE类型带宽的弹性IP时指定的共享带宽。
-     * 
-     * @return id */
+    /**
+     * 带宽ID，创建WHOLE类型带宽的弹性IP时指定的共享带宽。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -271,7 +291,10 @@ public class BandwidthResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

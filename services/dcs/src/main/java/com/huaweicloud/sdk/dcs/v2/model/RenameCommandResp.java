@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RenameCommandResp */
+/**
+ * RenameCommandResp
+ */
 public class RenameCommandResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RenameCommandResp {
         return this;
     }
 
-    /** 命令command
-     * 
-     * @return command */
+    /**
+     * 命令command
+     * @return command
+     */
     public String getCommand() {
         return command;
     }
@@ -54,9 +57,10 @@ public class RenameCommandResp {
         return this;
     }
 
-    /** 命令flushall
-     * 
-     * @return flushall */
+    /**
+     * 命令flushall
+     * @return flushall
+     */
     public String getFlushall() {
         return flushall;
     }
@@ -70,9 +74,10 @@ public class RenameCommandResp {
         return this;
     }
 
-    /** 命令flushdb
-     * 
-     * @return flushdb */
+    /**
+     * 命令flushdb
+     * @return flushdb
+     */
     public String getFlushdb() {
         return flushdb;
     }
@@ -86,9 +91,10 @@ public class RenameCommandResp {
         return this;
     }
 
-    /** 命令hgetall
-     * 
-     * @return hgetall */
+    /**
+     * 命令hgetall
+     * @return hgetall
+     */
     public String getHgetall() {
         return hgetall;
     }
@@ -102,9 +108,10 @@ public class RenameCommandResp {
         return this;
     }
 
-    /** 命令keys
-     * 
-     * @return keys */
+    /**
+     * 命令keys
+     * @return keys
+     */
     public String getKeys() {
         return keys;
     }
@@ -147,7 +154,10 @@ public class RenameCommandResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

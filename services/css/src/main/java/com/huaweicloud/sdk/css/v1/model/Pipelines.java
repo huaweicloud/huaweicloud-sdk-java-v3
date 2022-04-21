@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Pipelines */
+/**
+ * Pipelines
+ */
 public class Pipelines {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Pipelines {
         return this;
     }
 
-    /** 配置文件名称。
-     * 
-     * @return name */
+    /**
+     * 配置文件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class Pipelines {
         return this;
     }
 
-    /** pipeline状态。
-     * 
-     * @return status */
+    /**
+     * pipeline状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -70,9 +74,10 @@ public class Pipelines {
         return this;
     }
 
-    /** 是否开启常驻。
-     * 
-     * @return keepAlive */
+    /**
+     * 是否开启常驻。
+     * @return keepAlive
+     */
     public Boolean getKeepAlive() {
         return keepAlive;
     }
@@ -86,9 +91,10 @@ public class Pipelines {
         return this;
     }
 
-    /** 事件只有在“工作中”状态才可以实时查看（需要手动刷新），“已停止”状态请到output端查看迁移数据量。
-     * 
-     * @return events */
+    /**
+     * 事件只有在“工作中”状态才可以实时查看（需要手动刷新），“已停止”状态请到output端查看迁移数据量。
+     * @return events
+     */
     public String getEvents() {
         return events;
     }
@@ -102,9 +108,10 @@ public class Pipelines {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -145,7 +152,10 @@ public class Pipelines {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

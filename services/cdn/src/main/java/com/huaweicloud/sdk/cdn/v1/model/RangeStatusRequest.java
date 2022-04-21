@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** RangeStatusRequest */
+/**
+ * RangeStatusRequest
+ */
 public class RangeStatusRequest {
 
-    /** range状态（\"off\"/\"on\"） */
+    /**
+     * range状态（\"off\"/\"on\"）
+     */
     public static final class RangeStatusEnum {
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final RangeStatusEnum OFF = new RangeStatusEnum("off");
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final RangeStatusEnum ON = new RangeStatusEnum("on");
 
         private static final Map<String, RangeStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class RangeStatusRequest {
         return this;
     }
 
-    /** range状态（\"off\"/\"on\"）
-     * 
-     * @return rangeStatus */
+    /**
+     * range状态（\"off\"/\"on\"）
+     * @return rangeStatus
+     */
     public RangeStatusEnum getRangeStatus() {
         return rangeStatus;
     }
@@ -131,7 +140,10 @@ public class RangeStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** VulnItem */
+/**
+ * VulnItem
+ */
 public class VulnItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,19 +30,29 @@ public class VulnItem {
 
     private String url;
 
-    /** 漏洞风险等级: * high - 高风险 * middle - 中风险 * low - 低风险 * hint - 提示 */
+    /**
+     * 漏洞风险等级:   * high - 高风险   * middle - 中风险   * low - 低风险   * hint - 提示 
+     */
     public static final class SeverityEnum {
 
-        /** Enum HIGH for value: "high" */
+        /**
+         * Enum HIGH for value: "high"
+         */
         public static final SeverityEnum HIGH = new SeverityEnum("high");
 
-        /** Enum MIDDLE for value: "middle" */
+        /**
+         * Enum MIDDLE for value: "middle"
+         */
         public static final SeverityEnum MIDDLE = new SeverityEnum("middle");
 
-        /** Enum LOW for value: "low" */
+        /**
+         * Enum LOW for value: "low"
+         */
         public static final SeverityEnum LOW = new SeverityEnum("low");
 
-        /** Enum HINT for value: "hint" */
+        /**
+         * Enum HINT for value: "hint"
+         */
         public static final SeverityEnum HINT = new SeverityEnum("hint");
 
         private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
@@ -112,16 +124,24 @@ public class VulnItem {
 
     private SeverityEnum severity;
 
-    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略 */
+    /**
+     * 漏洞状态:   * repairing - 未修复   * repaired - 已修复   * false_report - 误报，已忽略 
+     */
     public static final class VulnStatusEnum {
 
-        /** Enum REPAIRING for value: "repairing" */
+        /**
+         * Enum REPAIRING for value: "repairing"
+         */
         public static final VulnStatusEnum REPAIRING = new VulnStatusEnum("repairing");
 
-        /** Enum REPAIRED for value: "repaired" */
+        /**
+         * Enum REPAIRED for value: "repaired"
+         */
         public static final VulnStatusEnum REPAIRED = new VulnStatusEnum("repaired");
 
-        /** Enum FALSE_REPORT for value: "false_report" */
+        /**
+         * Enum FALSE_REPORT for value: "false_report"
+         */
         public static final VulnStatusEnum FALSE_REPORT = new VulnStatusEnum("false_report");
 
         private static final Map<String, VulnStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -247,9 +267,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞ID
-     * 
-     * @return vulnId */
+    /**
+     * 漏洞ID
+     * @return vulnId
+     */
     public String getVulnId() {
         return vulnId;
     }
@@ -263,9 +284,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 域名ID
-     * 
-     * @return domainId */
+    /**
+     * 域名ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -279,9 +301,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 目标网址
-     * 
-     * @return url */
+    /**
+     * 目标网址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -295,9 +318,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞风险等级: * high - 高风险 * middle - 中风险 * low - 低风险 * hint - 提示
-     * 
-     * @return severity */
+    /**
+     * 漏洞风险等级:   * high - 高风险   * middle - 中风险   * low - 低风险   * hint - 提示 
+     * @return severity
+     */
     public SeverityEnum getSeverity() {
         return severity;
     }
@@ -311,9 +335,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略
-     * 
-     * @return vulnStatus */
+    /**
+     * 漏洞状态:   * repairing - 未修复   * repaired - 已修复   * false_report - 误报，已忽略 
+     * @return vulnStatus
+     */
     public VulnStatusEnum getVulnStatus() {
         return vulnStatus;
     }
@@ -327,9 +352,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞类别
-     * 
-     * @return vulnClass */
+    /**
+     * 漏洞类别
+     * @return vulnClass
+     */
     public String getVulnClass() {
         return vulnClass;
     }
@@ -343,9 +369,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞名称
-     * 
-     * @return vulnType */
+    /**
+     * 漏洞名称
+     * @return vulnType
+     */
     public String getVulnType() {
         return vulnType;
     }
@@ -359,9 +386,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞描述
-     * 
-     * @return description */
+    /**
+     * 漏洞描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -375,9 +403,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 修复建议
-     * 
-     * @return advice */
+    /**
+     * 修复建议
+     * @return advice
+     */
     public String getAdvice() {
         return advice;
     }
@@ -391,9 +420,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 命中详情
-     * 
-     * @return hitDetails */
+    /**
+     * 命中详情
+     * @return hitDetails
+     */
     public String getHitDetails() {
         return hitDetails;
     }
@@ -407,9 +437,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 请求详情
-     * 
-     * @return request */
+    /**
+     * 请求详情
+     * @return request
+     */
     public String getRequest() {
         return request;
     }
@@ -423,9 +454,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 响应详情
-     * 
-     * @return response */
+    /**
+     * 响应详情
+     * @return response
+     */
     public String getResponse() {
         return response;
     }
@@ -439,9 +471,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞确认人
-     * 
-     * @return provider */
+    /**
+     * 漏洞确认人
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -455,9 +488,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞忽略理由
-     * 
-     * @return reason */
+    /**
+     * 漏洞忽略理由
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -471,9 +505,10 @@ public class VulnItem {
         return this;
     }
 
-    /** 漏洞发现时间
-     * 
-     * @return findTime */
+    /**
+     * 漏洞发现时间
+     * @return findTime
+     */
     public String getFindTime() {
         return findTime;
     }
@@ -543,7 +578,10 @@ public class VulnItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

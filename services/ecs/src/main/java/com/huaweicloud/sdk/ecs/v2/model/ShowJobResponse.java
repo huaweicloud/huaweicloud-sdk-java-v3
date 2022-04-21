@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,19 +62,29 @@ public class ShowJobResponse extends SdkResponse {
 
     private String message;
 
-    /** Job的状态。 - SUCCESS：成功。 - RUNNING：运行中。 - FAIL：失败。 - INIT：正在初始化。 */
+    /**
+     * Job的状态。  - SUCCESS：成功。  - RUNNING：运行中。  - FAIL：失败。  - INIT：正在初始化。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +161,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始时间。
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -165,9 +178,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询Job的API请求出现错误时，返回的错误码。
-     * 
-     * @return code */
+    /**
+     * 查询Job的API请求出现错误时，返回的错误码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -181,9 +195,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -206,9 +221,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get entities
-     * 
-     * @return entities */
+    /**
+     * Get entities
+     * @return entities
+     */
     public JobEntities getEntities() {
         return entities;
     }
@@ -222,9 +238,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Job执行失败时的错误码。 Job执行成功后，该值为null。
-     * 
-     * @return errorCode */
+    /**
+     * Job执行失败时的错误码。  Job执行成功后，该值为null。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -238,9 +255,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Job执行失败时的错误原因。 Job执行成功后，该值为null。
-     * 
-     * @return failReason */
+    /**
+     * Job执行失败时的错误原因。  Job执行成功后，该值为null。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -254,9 +272,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 异步请求的任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 异步请求的任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -270,9 +289,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 异步请求的任务类型。
-     * 
-     * @return jobType */
+    /**
+     * 异步请求的任务类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -286,9 +306,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询Job的API请求出现错误时，返回的错误消息。
-     * 
-     * @return message */
+    /**
+     * 查询Job的API请求出现错误时，返回的错误消息。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -302,9 +323,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Job的状态。 - SUCCESS：成功。 - RUNNING：运行中。 - FAIL：失败。 - INIT：正在初始化。
-     * 
-     * @return status */
+    /**
+     * Job的状态。  - SUCCESS：成功。  - RUNNING：运行中。  - FAIL：失败。  - INIT：正在初始化。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -356,7 +378,10 @@ public class ShowJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

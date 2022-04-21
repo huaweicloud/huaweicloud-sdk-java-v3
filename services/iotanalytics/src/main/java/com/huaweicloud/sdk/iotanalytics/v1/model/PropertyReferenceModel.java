@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 属性引用 */
+/**
+ * 属性引用
+ */
 public class PropertyReferenceModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PropertyReferenceModel {
         return this;
     }
 
-    /** 属性引用类型，引用本资产属性（this）、引用其他资产属性（single）、引用子资产属性（children）
-     * 
-     * @return type */
+    /**
+     * 属性引用类型，引用本资产属性（this）、引用其他资产属性（single）、引用子资产属性（children）
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -49,9 +52,10 @@ public class PropertyReferenceModel {
         return this;
     }
 
-    /** 引用属性所属的资产模型ID，该字段仅当type为“引用其他资产属性”或“引用子资产属性”时有效；使用导入模型和导出模型接口时，该字段无效
-     * 
-     * @return assetModelId */
+    /**
+     * 引用属性所属的资产模型ID，该字段仅当type为“引用其他资产属性”或“引用子资产属性”时有效；使用导入模型和导出模型接口时，该字段无效
+     * @return assetModelId
+     */
     public String getAssetModelId() {
         return assetModelId;
     }
@@ -65,9 +69,10 @@ public class PropertyReferenceModel {
         return this;
     }
 
-    /** 引用属性所属的资产模型名称，请求中携带该字段时可以不携带asset_model_id字段
-     * 
-     * @return assetModelName */
+    /**
+     * 引用属性所属的资产模型名称，请求中携带该字段时可以不携带asset_model_id字段
+     * @return assetModelName
+     */
     public String getAssetModelName() {
         return assetModelName;
     }
@@ -81,9 +86,10 @@ public class PropertyReferenceModel {
         return this;
     }
 
-    /** 引用属性的名称
-     * 
-     * @return propertyName */
+    /**
+     * 引用属性的名称
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -124,7 +130,10 @@ public class PropertyReferenceModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

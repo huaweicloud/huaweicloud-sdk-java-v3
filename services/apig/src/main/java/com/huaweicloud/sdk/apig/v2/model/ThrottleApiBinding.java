@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ThrottleApiBinding */
+/**
+ * ThrottleApiBinding
+ */
 public class ThrottleApiBinding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,16 +21,24 @@ public class ThrottleApiBinding {
 
     private String publishId;
 
-    /** 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP 目前只支持1 */
+    /**
+     * 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP  目前只支持1
+     */
     public static final class ScopeEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ScopeEnum NUMBER_1 = new ScopeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ScopeEnum NUMBER_2 = new ScopeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final ScopeEnum NUMBER_3 = new ScopeEnum(3);
 
         private static final Map<Integer, ScopeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +129,10 @@ public class ThrottleApiBinding {
         return this;
     }
 
-    /** API的发布记录编号
-     * 
-     * @return publishId */
+    /**
+     * API的发布记录编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -135,9 +146,10 @@ public class ThrottleApiBinding {
         return this;
     }
 
-    /** 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP 目前只支持1
-     * 
-     * @return scope */
+    /**
+     * 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP  目前只支持1
+     * @return scope
+     */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -151,9 +163,10 @@ public class ThrottleApiBinding {
         return this;
     }
 
-    /** 流控策略的ID
-     * 
-     * @return strategyId */
+    /**
+     * 流控策略的ID
+     * @return strategyId
+     */
     public String getStrategyId() {
         return strategyId;
     }
@@ -167,9 +180,10 @@ public class ThrottleApiBinding {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return applyTime */
+    /**
+     * 绑定时间
+     * @return applyTime
+     */
     public OffsetDateTime getApplyTime() {
         return applyTime;
     }
@@ -183,9 +197,10 @@ public class ThrottleApiBinding {
         return this;
     }
 
-    /** 绑定关系的ID
-     * 
-     * @return id */
+    /**
+     * 绑定关系的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -228,7 +243,10 @@ public class ThrottleApiBinding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

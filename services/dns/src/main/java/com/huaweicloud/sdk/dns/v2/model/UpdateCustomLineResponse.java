@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateCustomLineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 解析线路ID。
-     * 
-     * @return lineId */
+    /**
+     * 解析线路ID。
+     * @return lineId
+     */
     public String getLineId() {
         return lineId;
     }
@@ -68,9 +71,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 解析线路名称。
-     * 
-     * @return name */
+    /**
+     * 解析线路名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,9 +104,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** IP地址段。
-     * 
-     * @return ipSegments */
+    /**
+     * IP地址段。
+     * @return ipSegments
+     */
     public List<String> getIpSegments() {
         return ipSegments;
     }
@@ -116,9 +121,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -132,9 +138,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -148,9 +155,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -164,9 +172,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    /** 自定义线路的描述信息。
-     * 
-     * @return description */
+    /**
+     * 自定义线路的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -213,7 +222,10 @@ public class UpdateCustomLineResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

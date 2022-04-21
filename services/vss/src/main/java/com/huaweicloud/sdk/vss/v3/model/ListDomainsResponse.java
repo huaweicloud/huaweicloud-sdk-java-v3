@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDomainsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListDomainsResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名总数 minimum: 0 maximum: 1000
-     * 
-     * @return total */
+    /**
+     * 域名总数
+     * minimum: 0
+     * maximum: 1000
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class ListDomainsResponse extends SdkResponse {
         return this;
     }
 
-    /** 一级域名总数 minimum: 0 maximum: 1000
-     * 
-     * @return topLevelDomainNum */
+    /**
+     * 一级域名总数
+     * minimum: 0
+     * maximum: 1000
+     * @return topLevelDomainNum
+     */
     public Integer getTopLevelDomainNum() {
         return topLevelDomainNum;
     }
@@ -80,9 +88,10 @@ public class ListDomainsResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名列表
-     * 
-     * @return domains */
+    /**
+     * 域名列表
+     * @return domains
+     */
     public List<DomainItem> getDomains() {
         return domains;
     }
@@ -121,7 +130,10 @@ public class ListDomainsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

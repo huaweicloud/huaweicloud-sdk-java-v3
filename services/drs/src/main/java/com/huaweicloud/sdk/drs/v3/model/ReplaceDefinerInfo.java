@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设置replaceDefiner信息 */
+/**
+ * 设置replaceDefiner信息
+ */
 public class ReplaceDefinerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ReplaceDefinerInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -39,9 +42,10 @@ public class ReplaceDefinerInfo {
         return this;
     }
 
-    /** 是否使用目标库的用户替换掉definer
-     * 
-     * @return replaceDefiner */
+    /**
+     * 是否使用目标库的用户替换掉definer
+     * @return replaceDefiner
+     */
     public Boolean getReplaceDefiner() {
         return replaceDefiner;
     }
@@ -78,7 +82,10 @@ public class ReplaceDefinerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

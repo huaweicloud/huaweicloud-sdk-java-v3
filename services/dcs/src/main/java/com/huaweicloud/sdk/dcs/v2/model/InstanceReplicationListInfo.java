@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 副本列表 */
+/**
+ * 副本列表
+ */
 public class InstanceReplicationListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,13 +43,19 @@ public class InstanceReplicationListInfo {
 
     private String nodeId;
 
-    /** 副本状态。 */
+    /**
+     * 副本状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "Active" */
+        /**
+         * Enum ACTIVE for value: "Active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("Active");
 
-        /** Enum INACTIVE for value: "Inactive" */
+        /**
+         * Enum INACTIVE for value: "Inactive"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("Inactive");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +140,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本角色，取值有： - master：表示主节点。 - slave：表示从节点。
-     * 
-     * @return replicationRole */
+    /**
+     * 副本角色，取值有： - master：表示主节点。 - slave：表示从节点。 
+     * @return replicationRole
+     */
     public String getReplicationRole() {
         return replicationRole;
     }
@@ -148,9 +157,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本IP。
-     * 
-     * @return replicationIp */
+    /**
+     * 副本IP。
+     * @return replicationIp
+     */
     public String getReplicationIp() {
         return replicationIp;
     }
@@ -164,9 +174,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 是否是新加副本。
-     * 
-     * @return isReplication */
+    /**
+     * 是否是新加副本。
+     * @return isReplication
+     */
     public Boolean getIsReplication() {
         return isReplication;
     }
@@ -180,9 +191,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本id。
-     * 
-     * @return replicationId */
+    /**
+     * 副本id。
+     * @return replicationId
+     */
     public String getReplicationId() {
         return replicationId;
     }
@@ -196,9 +208,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 节点id。
-     * 
-     * @return nodeId */
+    /**
+     * 节点id。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -212,9 +225,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本状态。
-     * 
-     * @return status */
+    /**
+     * 副本状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -228,9 +242,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本所在的可用区
-     * 
-     * @return azCode */
+    /**
+     * 副本所在的可用区
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -261,10 +276,10 @@ public class InstanceReplicationListInfo {
         return this;
     }
 
-    /** 副本对应的监控指标维度信息。可用于调用云监控服务的查询监控数据指标相关接口 - 副本的监控维度为多维度，返回数组中包含两个维度信息。从云监控查询监控数据时，要按多维度传递指标维度参数，才能查询到监控指标值 -
-     * 第一个维度为副本父维度信息，维度名称为dcs_instance_id，维度值对应副本所在的实例ID - 第二个维度，维度名称为dcs_cluster_redis_node,维度值为副本的监控对象ID，与副本ID和节点ID不同。
-     * 
-     * @return dimensions */
+    /**
+     * 副本对应的监控指标维度信息。可用于调用云监控服务的查询监控数据指标相关接口 - 副本的监控维度为多维度，返回数组中包含两个维度信息。从云监控查询监控数据时，要按多维度传递指标维度参数，才能查询到监控指标值 - 第一个维度为副本父维度信息，维度名称为dcs_instance_id，维度值对应副本所在的实例ID - 第二个维度，维度名称为dcs_cluster_redis_node,维度值为副本的监控对象ID，与副本ID和节点ID不同。 
+     * @return dimensions
+     */
     public List<InstanceReplicationDimensionsInfo> getDimensions() {
         return dimensions;
     }
@@ -314,7 +329,10 @@ public class InstanceReplicationListInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

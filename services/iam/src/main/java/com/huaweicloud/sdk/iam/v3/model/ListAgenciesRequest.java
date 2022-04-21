@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAgenciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListAgenciesRequest {
         return this;
     }
 
-    /** 委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * 委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -44,9 +47,10 @@ public class ListAgenciesRequest {
         return this;
     }
 
-    /** 被委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return trustDomainId */
+    /**
+     * 被委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return trustDomainId
+     */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -60,9 +64,10 @@ public class ListAgenciesRequest {
         return this;
     }
 
-    /** 委托名，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return name */
+    /**
+     * 委托名，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,7 +106,10 @@ public class ListAgenciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

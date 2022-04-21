@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据同步配置库规则信息体 */
+/**
+ * 数据同步配置库规则信息体
+ */
 public class ConfigTransformationVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 库名.表名。
-     * 
-     * @return dbTableName */
+    /**
+     * 库名.表名。
+     * @return dbTableName
+     */
     public String getDbTableName() {
         return dbTableName;
     }
@@ -64,9 +67,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 库名。长度限制256。
-     * 
-     * @return dbName */
+    /**
+     * 库名。长度限制256。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -80,9 +84,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 表名。长度限制256。
-     * 
-     * @return tableName */
+    /**
+     * 表名。长度限制256。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -96,9 +101,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 列名。长度限制256。
-     * 
-     * @return colNames */
+    /**
+     * 列名。长度限制256。
+     * @return colNames
+     */
     public String getColNames() {
         return colNames;
     }
@@ -112,9 +118,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 主键或唯一索引。长度限制256。
-     * 
-     * @return primKeyOrIndex */
+    /**
+     * 主键或唯一索引。长度限制256。
+     * @return primKeyOrIndex
+     */
     public String getPrimKeyOrIndex() {
         return primKeyOrIndex;
     }
@@ -128,9 +135,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 优化查询所需的索引。长度限制256。
-     * 
-     * @return indexs */
+    /**
+     * 优化查询所需的索引。长度限制256。
+     * @return indexs
+     */
     public String getIndexs() {
         return indexs;
     }
@@ -144,9 +152,10 @@ public class ConfigTransformationVo {
         return this;
     }
 
-    /** 过滤条件。长度限制256。
-     * 
-     * @return values */
+    /**
+     * 过滤条件。长度限制256。
+     * @return values
+     */
     public String getValues() {
         return values;
     }
@@ -193,7 +202,10 @@ public class ConfigTransformationVo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

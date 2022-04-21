@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlowlogDownloadInfo */
+/**
+ * SlowlogDownloadInfo
+ */
 public class SlowlogDownloadInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return workflowId */
+    /**
+     * 任务ID
+     * @return workflowId
+     */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -64,9 +67,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 生成的下载文件名
-     * 
-     * @return fileName */
+    /**
+     * 生成的下载文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -80,9 +84,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 生成链接的生成状态
-     * 
-     * @return status */
+    /**
+     * 生成链接的生成状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -96,9 +101,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 文件大小
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小
+     * @return fileSize
+     */
     public String getFileSize() {
         return fileSize;
     }
@@ -112,9 +118,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 下载链接
-     * 
-     * @return fileLink */
+    /**
+     * 下载链接
+     * @return fileLink
+     */
     public String getFileLink() {
         return fileLink;
     }
@@ -128,9 +135,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 生成时间
-     * 
-     * @return createAt */
+    /**
+     * 生成时间
+     * @return createAt
+     */
     public Long getCreateAt() {
         return createAt;
     }
@@ -144,9 +152,10 @@ public class SlowlogDownloadInfo {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间
+     * @return updateAt
+     */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -193,7 +202,10 @@ public class SlowlogDownloadInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

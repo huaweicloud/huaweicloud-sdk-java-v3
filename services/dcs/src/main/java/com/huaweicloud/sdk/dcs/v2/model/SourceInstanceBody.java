@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 源实例信息。 */
+/**
+ * 源实例信息。
+ */
 public class SourceInstanceBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SourceInstanceBody {
         return this;
     }
 
-    /** Redis实例名称(source_instance信息中填写)。
-     * 
-     * @return addrs */
+    /**
+     * Redis实例名称(source_instance信息中填写)。
+     * @return addrs
+     */
     public String getAddrs() {
         return addrs;
     }
@@ -39,9 +42,10 @@ public class SourceInstanceBody {
         return this;
     }
 
-    /** Redis密码，如果设置了密码，则必须填写。
-     * 
-     * @return password */
+    /**
+     * Redis密码，如果设置了密码，则必须填写。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -78,7 +82,10 @@ public class SourceInstanceBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

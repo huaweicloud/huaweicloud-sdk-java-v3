@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** flavors数据结构说明 */
+/**
+ * flavors数据结构说明
+ */
 public class FlavorsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 裸金属服务器规格的ID
-     * 
-     * @return id */
+    /**
+     * 裸金属服务器规格的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,9 +105,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 裸金属服务器规格的名称
-     * 
-     * @return name */
+    /**
+     * 裸金属服务器规格的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -118,9 +122,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 该裸金属服务器规格对应的CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * 该裸金属服务器规格对应的CPU核数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -134,9 +139,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 该裸金属服务器规格对应的内存大小，单位为MB。
-     * 
-     * @return ram */
+    /**
+     * 该裸金属服务器规格对应的内存大小，单位为MB。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -150,9 +156,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 该裸金属服务器规格对应要求系统盘大小，0为不限制。
-     * 
-     * @return disk */
+    /**
+     * 该裸金属服务器规格对应要求系统盘大小，0为不限制。
+     * @return disk
+     */
     public String getDisk() {
         return disk;
     }
@@ -166,9 +173,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return swap */
+    /**
+     * 未使用
+     * @return swap
+     */
     public String getSwap() {
         return swap;
     }
@@ -182,9 +190,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return osFLVEXTDATAEphemeral */
+    /**
+     * 未使用
+     * @return osFLVEXTDATAEphemeral
+     */
     public Integer getOsFLVEXTDATAEphemeral() {
         return osFLVEXTDATAEphemeral;
     }
@@ -198,9 +207,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return osFLVDISABLEDDisabled */
+    /**
+     * 未使用
+     * @return osFLVDISABLEDDisabled
+     */
     public Boolean getOsFLVDISABLEDDisabled() {
         return osFLVDISABLEDDisabled;
     }
@@ -214,9 +224,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return rxtxFactor */
+    /**
+     * 未使用
+     * @return rxtxFactor
+     */
     public Float getRxtxFactor() {
         return rxtxFactor;
     }
@@ -230,9 +241,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return rxtxQuota */
+    /**
+     * 未使用
+     * @return rxtxQuota
+     */
     public String getRxtxQuota() {
         return rxtxQuota;
     }
@@ -246,9 +258,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 未使用
-     * 
-     * @return rxtxCap */
+    /**
+     * 未使用
+     * @return rxtxCap
+     */
     public String getRxtxCap() {
         return rxtxCap;
     }
@@ -262,9 +275,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 是否是公共规格。false：私有规格；true：公共规格
-     * 
-     * @return osFlavorAccessIsPublic */
+    /**
+     * 是否是公共规格。false：私有规格；true：公共规格
+     * @return osFlavorAccessIsPublic
+     */
     public Boolean getOsFlavorAccessIsPublic() {
         return osFlavorAccessIsPublic;
     }
@@ -294,9 +308,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** 规格相关快捷链接地址，详情请参见表3 links字段数据结构说明。
-     * 
-     * @return links */
+    /**
+     * 规格相关快捷链接地址，详情请参见表3 links字段数据结构说明。
+     * @return links
+     */
     public List<LinksInfo> getLinks() {
         return links;
     }
@@ -319,9 +334,10 @@ public class FlavorsResp {
         return this;
     }
 
-    /** Get osExtraSpecs
-     * 
-     * @return osExtraSpecs */
+    /**
+     * Get osExtraSpecs
+     * @return osExtraSpecs
+     */
     public OsExtraSpecs getOsExtraSpecs() {
         return osExtraSpecs;
     }
@@ -392,7 +408,10 @@ public class FlavorsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

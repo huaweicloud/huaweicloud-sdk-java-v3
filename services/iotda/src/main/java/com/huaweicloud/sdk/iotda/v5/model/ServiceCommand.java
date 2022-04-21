@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 命令服务对象。 */
+/**
+ * 命令服务对象。
+ */
 public class ServiceCommand {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ServiceCommand {
         return this;
     }
 
-    /** **参数说明**：设备命令名称。注：设备服务内不允许重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return commandName */
+    /**
+     * **参数说明**：设备命令名称。注：设备服务内不允许重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return commandName
+     */
     public String getCommandName() {
         return commandName;
     }
@@ -63,9 +66,10 @@ public class ServiceCommand {
         return this;
     }
 
-    /** **参数说明**：设备命令的参数列表。
-     * 
-     * @return paras */
+    /**
+     * **参数说明**：设备命令的参数列表。
+     * @return paras
+     */
     public List<ServiceCommandPara> getParas() {
         return paras;
     }
@@ -95,9 +99,10 @@ public class ServiceCommand {
         return this;
     }
 
-    /** **参数说明**：设备命令的响应列表。
-     * 
-     * @return responses */
+    /**
+     * **参数说明**：设备命令的响应列表。
+     * @return responses
+     */
     public List<ServiceCommandResponse> getResponses() {
         return responses;
     }
@@ -136,7 +141,10 @@ public class ServiceCommand {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

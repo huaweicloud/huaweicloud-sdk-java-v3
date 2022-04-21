@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 伸缩策略详情 */
+/**
+ * 伸缩策略详情
+ */
 public class ScalingV2PolicyDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,13 +32,19 @@ public class ScalingV2PolicyDetail {
 
     private String scalingResourceId;
 
-    /** 伸缩资源类型。伸缩组：SCALING_GROUP。带宽：BANDWIDTH。 */
+    /**
+     * 伸缩资源类型。伸缩组：SCALING_GROUP。带宽：BANDWIDTH。
+     */
     public static final class ScalingResourceTypeEnum {
 
-        /** Enum SCALING_GROUP for value: "SCALING_GROUP" */
+        /**
+         * Enum SCALING_GROUP for value: "SCALING_GROUP"
+         */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
 
-        /** Enum BANDWIDTH for value: "BANDWIDTH" */
+        /**
+         * Enum BANDWIDTH for value: "BANDWIDTH"
+         */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
 
         private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -106,16 +114,24 @@ public class ScalingV2PolicyDetail {
 
     private ScalingResourceTypeEnum scalingResourceType;
 
-    /** 伸缩策略状态。INSERVICE：使用中。PAUSED：停止。EXECUTING：执行中。 */
+    /**
+     * 伸缩策略状态。INSERVICE：使用中。PAUSED：停止。EXECUTING：执行中。
+     */
     public static final class PolicyStatusEnum {
 
-        /** Enum INSERVICE for value: "INSERVICE" */
+        /**
+         * Enum INSERVICE for value: "INSERVICE"
+         */
         public static final PolicyStatusEnum INSERVICE = new PolicyStatusEnum("INSERVICE");
 
-        /** Enum PAUSED for value: "PAUSED" */
+        /**
+         * Enum PAUSED for value: "PAUSED"
+         */
         public static final PolicyStatusEnum PAUSED = new PolicyStatusEnum("PAUSED");
 
-        /** Enum EXECUTING for value: "EXECUTING" */
+        /**
+         * Enum EXECUTING for value: "EXECUTING"
+         */
         public static final PolicyStatusEnum EXECUTING = new PolicyStatusEnum("EXECUTING");
 
         private static final Map<String, PolicyStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -186,16 +202,24 @@ public class ScalingV2PolicyDetail {
 
     private PolicyStatusEnum policyStatus;
 
-    /** 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。 */
+    /**
+     * 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
+     */
     public static final class ScalingPolicyTypeEnum {
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
 
-        /** Enum SCHEDULED for value: "SCHEDULED" */
+        /**
+         * Enum SCHEDULED for value: "SCHEDULED"
+         */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
 
-        /** Enum RECURRENCE for value: "RECURRENCE" */
+        /**
+         * Enum RECURRENCE for value: "RECURRENCE"
+         */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -306,9 +330,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩策略名称。
-     * 
-     * @return scalingPolicyName */
+    /**
+     * 伸缩策略名称。
+     * @return scalingPolicyName
+     */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -322,9 +347,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -338,9 +364,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩资源ID。
-     * 
-     * @return scalingResourceId */
+    /**
+     * 伸缩资源ID。
+     * @return scalingResourceId
+     */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -354,9 +381,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩资源类型。伸缩组：SCALING_GROUP。带宽：BANDWIDTH。
-     * 
-     * @return scalingResourceType */
+    /**
+     * 伸缩资源类型。伸缩组：SCALING_GROUP。带宽：BANDWIDTH。
+     * @return scalingResourceType
+     */
     public ScalingResourceTypeEnum getScalingResourceType() {
         return scalingResourceType;
     }
@@ -370,9 +398,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩策略状态。INSERVICE：使用中。PAUSED：停止。EXECUTING：执行中。
-     * 
-     * @return policyStatus */
+    /**
+     * 伸缩策略状态。INSERVICE：使用中。PAUSED：停止。EXECUTING：执行中。
+     * @return policyStatus
+     */
     public PolicyStatusEnum getPolicyStatus() {
         return policyStatus;
     }
@@ -386,9 +415,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
-     * 
-     * @return scalingPolicyType */
+    /**
+     * 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
+     * @return scalingPolicyType
+     */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -402,9 +432,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 告警ID。
-     * 
-     * @return alarmId */
+    /**
+     * 告警ID。
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -427,9 +458,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** Get scheduledPolicy
-     * 
-     * @return scheduledPolicy */
+    /**
+     * Get scheduledPolicy
+     * @return scheduledPolicy
+     */
     public ScheduledPolicy getScheduledPolicy() {
         return scheduledPolicy;
     }
@@ -452,9 +484,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** Get scalingPolicyAction
-     * 
-     * @return scalingPolicyAction */
+    /**
+     * Get scalingPolicyAction
+     * @return scalingPolicyAction
+     */
     public ScalingPolicyActionV2 getScalingPolicyAction() {
         return scalingPolicyAction;
     }
@@ -468,9 +501,11 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 冷却时间，取值范围0-86400，默认为300，单位是秒。 maximum: 86400
-     * 
-     * @return coolDownTime */
+    /**
+     * 冷却时间，取值范围0-86400，默认为300，单位是秒。
+     * maximum: 86400
+     * @return coolDownTime
+     */
     public Integer getCoolDownTime() {
         return coolDownTime;
     }
@@ -484,9 +519,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 创建伸缩策略时间，遵循UTC时间
-     * 
-     * @return createTime */
+    /**
+     * 创建伸缩策略时间，遵循UTC时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -509,9 +545,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public ScalingPolicyV2MetaData getMetaData() {
         return metaData;
     }
@@ -525,9 +562,10 @@ public class ScalingV2PolicyDetail {
         return this;
     }
 
-    /** 伸缩策略描述（1-256个字符）
-     * 
-     * @return description */
+    /**
+     * 伸缩策略描述（1-256个字符）
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -598,7 +636,10 @@ public class ScalingV2PolicyDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

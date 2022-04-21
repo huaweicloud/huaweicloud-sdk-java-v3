@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 代码仓相关的信息非必填，主要是用于CodeFever临时仓库使用，不填时直接使用创建任务时已经提供的信息 */
+/**
+ * 代码仓相关的信息非必填，主要是用于CodeFever临时仓库使用，不填时直接使用创建任务时已经提供的信息
+ */
 public class RunRequestV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class RunRequestV2 {
         return this;
     }
 
-    /** 该任务对应临时仓库有权限的用户名
-     * 
-     * @return username */
+    /**
+     * 该任务对应临时仓库有权限的用户名
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -49,9 +52,10 @@ public class RunRequestV2 {
         return this;
     }
 
-    /** 该任务对应临时仓库有权限的用户token
-     * 
-     * @return accessToken */
+    /**
+     * 该任务对应临时仓库有权限的用户token
+     * @return accessToken
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -65,9 +69,10 @@ public class RunRequestV2 {
         return this;
     }
 
-    /** 该任务对应的临时仓库地址
-     * 
-     * @return gitUrl */
+    /**
+     * 该任务对应的临时仓库地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -81,9 +86,10 @@ public class RunRequestV2 {
         return this;
     }
 
-    /** 该任务对应的临时仓库分支
-     * 
-     * @return gitBranch */
+    /**
+     * 该任务对应的临时仓库分支
+     * @return gitBranch
+     */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -124,7 +130,10 @@ public class RunRequestV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

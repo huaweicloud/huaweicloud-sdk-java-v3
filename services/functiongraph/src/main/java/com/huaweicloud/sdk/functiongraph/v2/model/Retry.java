@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 重试策略 */
+/**
+ * 重试策略
+ */
 public class Retry {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Retry {
         return this;
     }
 
-    /** 重试策略名称，在单个流程中，名称需要唯一
-     * 
-     * @return name */
+    /**
+     * 重试策略名称，在单个流程中，名称需要唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,12 @@ public class Retry {
         return this;
     }
 
-    /** 重试间隔，单位：秒。若不传，默认为1 minimum: 1 maximum: 30
-     * 
-     * @return delay */
+    /**
+     * 重试间隔，单位：秒。若不传，默认为1
+     * minimum: 1
+     * maximum: 30
+     * @return delay
+     */
     public Long getDelay() {
         return delay;
     }
@@ -60,9 +66,12 @@ public class Retry {
         return this;
     }
 
-    /** 最大重试次数，。若不传，默认为3 minimum: 1 maximum: 8
-     * 
-     * @return maxAttempts */
+    /**
+     * 最大重试次数，。若不传，默认为3
+     * minimum: 1
+     * maximum: 8
+     * @return maxAttempts
+     */
     public Long getMaxAttempts() {
         return maxAttempts;
     }
@@ -100,7 +109,10 @@ public class Retry {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

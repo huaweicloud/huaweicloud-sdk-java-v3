@@ -18,10 +18,14 @@ import java.util.function.Consumer;
  */
 public class PwdIdentity {
 
-    /** Gets or Sets methods */
+    /**
+     * Gets or Sets methods
+     */
     public static final class MethodsEnum {
 
-        /** Enum PASSWORD for value: "password" */
+        /**
+         * Enum PASSWORD for value: "password"
+         */
         public static final MethodsEnum PASSWORD = new MethodsEnum("password");
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +120,10 @@ public class PwdIdentity {
         return this;
     }
 
-    /** 认证方法，该字段内容为[\"password\"]。
-     * 
-     * @return methods */
+    /**
+     * 认证方法，该字段内容为[\"password\"]。
+     * @return methods
+     */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -141,9 +146,10 @@ public class PwdIdentity {
         return this;
     }
 
-    /** Get password
-     * 
-     * @return password */
+    /**
+     * Get password
+     * @return password
+     */
     public PwdPassword getPassword() {
         return password;
     }
@@ -179,7 +185,10 @@ public class PwdIdentity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

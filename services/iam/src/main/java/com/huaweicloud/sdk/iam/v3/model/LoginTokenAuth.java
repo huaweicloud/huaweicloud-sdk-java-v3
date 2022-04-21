@@ -30,9 +30,10 @@ public class LoginTokenAuth {
         return this;
     }
 
-    /** Get securitytoken
-     * 
-     * @return securitytoken */
+    /**
+     * Get securitytoken
+     * @return securitytoken
+     */
     public LoginTokenSecurityToken getSecuritytoken() {
         return securitytoken;
     }
@@ -67,7 +68,10 @@ public class LoginTokenAuth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

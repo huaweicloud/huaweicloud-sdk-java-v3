@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 用户信息。 */
+/**
+ * 用户信息。
+ */
 public class UserInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
-     * 
-     * @return id */
+    /**
+     * 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -45,9 +48,10 @@ public class UserInfo {
         return this;
     }
 
-    /** 账号名称。
-     * 
-     * @return name */
+    /**
+     * 账号名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class UserInfo {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public BaseUser getDomain() {
         return domain;
     }
@@ -110,7 +115,10 @@ public class UserInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

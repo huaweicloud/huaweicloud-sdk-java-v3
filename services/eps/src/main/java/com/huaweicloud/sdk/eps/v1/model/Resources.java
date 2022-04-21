@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 资源列表 */
+/**
+ * 资源列表
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Resources {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -64,9 +67,10 @@ public class Resources {
         return this;
     }
 
-    /** ProjectID
-     * 
-     * @return projectId */
+    /**
+     * ProjectID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -80,9 +84,10 @@ public class Resources {
         return this;
     }
 
-    /** Project名称
-     * 
-     * @return projectName */
+    /**
+     * Project名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -96,9 +101,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源详情
-     * 
-     * @return resourceDetail */
+    /**
+     * 资源详情
+     * @return resourceDetail
+     */
     public Object getResourceDetail() {
         return resourceDetail;
     }
@@ -112,9 +118,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -128,9 +135,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -144,9 +152,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -194,7 +203,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

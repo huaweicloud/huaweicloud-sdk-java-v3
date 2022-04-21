@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMemberGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -64,9 +67,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** VPC通道的编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道的编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -80,9 +84,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -96,9 +101,12 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -112,9 +120,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** 字典编码。 支持英文，数字，特殊字符（-_.） 暂不支持
-     * 
-     * @return dictCode */
+    /**
+     * 字典编码。  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
     public String getDictCode() {
         return dictCode;
     }
@@ -128,9 +137,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** VPC通道后端云服务组的名称
-     * 
-     * @return memberGroupName */
+    /**
+     * VPC通道后端云服务组的名称
+     * @return memberGroupName
+     */
     public String getMemberGroupName() {
         return memberGroupName;
     }
@@ -144,9 +154,10 @@ public class ListMemberGroupsRequest {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。 当前支持member_group_name。
-     * 
-     * @return preciseSearch */
+    /**
+     * 指定需要精确匹配查找的参数名称，多个参数需要支持精确匹配时参数之间使用“,”隔开。  当前支持member_group_name。
+     * @return preciseSearch
+     */
     public String getPreciseSearch() {
         return preciseSearch;
     }
@@ -193,7 +204,10 @@ public class ListMemberGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

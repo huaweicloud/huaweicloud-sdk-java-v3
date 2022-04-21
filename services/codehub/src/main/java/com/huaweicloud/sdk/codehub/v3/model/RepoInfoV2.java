@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepoInfoV2 */
+/**
+ * RepoInfoV2
+ */
 public class RepoInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,9 +120,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -134,9 +137,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 创建者的用户名，在用户是租户的情况下，用户名和租户名相等
-     * 
-     * @return creatorName */
+    /**
+     * 创建者的用户名，在用户是租户的情况下，用户名和租户名相等
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -150,9 +154,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 创建者的租户名
-     * 
-     * @return domainName */
+    /**
+     * 创建者的租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -166,9 +171,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库组名
-     * 
-     * @return groupName */
+    /**
+     * 仓库组名
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -182,9 +188,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 使用 https 克隆仓库时所使用的 url
-     * 
-     * @return httpsUrl */
+    /**
+     * 使用 https 克隆仓库时所使用的 url
+     * @return httpsUrl
+     */
     public String getHttpsUrl() {
         return httpsUrl;
     }
@@ -198,9 +205,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 用户的 iam user uuid
-     * 
-     * @return iamUserUuid */
+    /**
+     * 用户的 iam user uuid
+     * @return iamUserUuid
+     */
     public String getIamUserUuid() {
         return iamUserUuid;
     }
@@ -214,9 +222,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 当前用户是否是仓库的创建者，1：是，0：不是
-     * 
-     * @return isOwner */
+    /**
+     * 当前用户是否是仓库的创建者，1：是，0：不是
+     * @return isOwner
+     */
     public Integer getIsOwner() {
         return isOwner;
     }
@@ -230,9 +239,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库 LFS 容量，单位为M，大于 1024M 则单位为 G
-     * 
-     * @return lfsSize */
+    /**
+     * 仓库 LFS 容量，单位为M，大于 1024M 则单位为 G
+     * @return lfsSize
+     */
     public String getLfsSize() {
         return lfsSize;
     }
@@ -246,9 +256,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 项目是否被删除
-     * 
-     * @return projectIsDeleted */
+    /**
+     * 项目是否被删除
+     * @return projectIsDeleted
+     */
     public String getProjectIsDeleted() {
         return projectIsDeleted;
     }
@@ -262,9 +273,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 项目的uuid
-     * 
-     * @return projectUuid */
+    /**
+     * 项目的uuid
+     * @return projectUuid
+     */
     public String getProjectUuid() {
         return projectUuid;
     }
@@ -278,9 +290,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库主键id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库主键id
+     * @return repositoryId
+     */
     public Integer getRepositoryId() {
         return repositoryId;
     }
@@ -294,9 +307,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库名
-     * 
-     * @return repositoryName */
+    /**
+     * 仓库名
+     * @return repositoryName
+     */
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -310,9 +324,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库总容量 = 仓库 LFS 容量 + git 库容量，单位为M，大于 1024M 则单位为 G
-     * 
-     * @return repositorySize */
+    /**
+     * 仓库总容量 = 仓库 LFS 容量 + git 库容量，单位为M，大于 1024M 则单位为 G
+     * @return repositorySize
+     */
     public String getRepositorySize() {
         return repositorySize;
     }
@@ -326,9 +341,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库uuid
-     * 
-     * @return repositoryUuid */
+    /**
+     * 仓库uuid
+     * @return repositoryUuid
+     */
     public String getRepositoryUuid() {
         return repositoryUuid;
     }
@@ -342,9 +358,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 使用 ssh 方式克隆仓库时所使用的 url
-     * 
-     * @return sshUrl */
+    /**
+     * 使用 ssh 方式克隆仓库时所使用的 url
+     * @return sshUrl
+     */
     public String getSshUrl() {
         return sshUrl;
     }
@@ -358,9 +375,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 当前用户是否收藏该仓库
-     * 
-     * @return star */
+    /**
+     * 当前用户是否收藏该仓库
+     * @return star
+     */
     public Boolean getStar() {
         return star;
     }
@@ -374,9 +392,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 仓库状态， 0：仓库正常创建成功 1：仓库创建中 2：创建失败 3：仓库冻结 4：仓库已经关闭
-     * 
-     * @return status */
+    /**
+     * 仓库状态， 0：仓库正常创建成功 1：仓库创建中 2：创建失败 3：仓库冻结 4：仓库已经关闭 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -390,9 +409,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -406,9 +426,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 用户在仓库中的权限:20：只读成员 30：普通成员 40：管理员
-     * 
-     * @return userRole */
+    /**
+     * 用户在仓库中的权限:20：只读成员 30：普通成员 40：管理员 
+     * @return userRole
+     */
     public Integer getUserRole() {
         return userRole;
     }
@@ -422,9 +443,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** 是否可见：0私有仓库，20公有仓库
-     * 
-     * @return visibilityLevel */
+    /**
+     * 是否可见：0私有仓库，20公有仓库
+     * @return visibilityLevel
+     */
     public Integer getVisibilityLevel() {
         return visibilityLevel;
     }
@@ -438,9 +460,10 @@ public class RepoInfoV2 {
         return this;
     }
 
-    /** web url 路径，访问它将跳转至仓库详情页
-     * 
-     * @return webUrl */
+    /**
+     * web url 路径，访问它将跳转至仓库详情页
+     * @return webUrl
+     */
     public String getWebUrl() {
         return webUrl;
     }
@@ -532,7 +555,10 @@ public class RepoInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

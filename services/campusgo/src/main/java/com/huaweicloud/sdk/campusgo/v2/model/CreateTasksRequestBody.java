@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTasksRequestBody */
+/**
+ * CreateTasksRequestBody
+ */
 public class CreateTasksRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业的名称
-     * 
-     * @return name */
+    /**
+     * 作业的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +73,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业的描述
-     * 
-     * @return description */
+    /**
+     * 作业的描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -95,9 +99,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public TaskInput getInput() {
         return input;
     }
@@ -120,9 +125,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public TaskOutput getOutput() {
         return output;
     }
@@ -136,9 +142,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业对应服务的版本号
-     * 
-     * @return serviceVersion */
+    /**
+     * 作业对应服务的版本号
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -152,9 +159,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 仅边缘作业需填且必填，作业运行指定的边缘运行池ID
-     * 
-     * @return edgePoolId */
+    /**
+     * 仅边缘作业需填且必填，作业运行指定的边缘运行池ID
+     * @return edgePoolId
+     */
     public String getEdgePoolId() {
         return edgePoolId;
     }
@@ -168,9 +176,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 作业指定的算法能力包包周期订单ID
-     * 
-     * @return resourceOrderId */
+    /**
+     * 作业指定的算法能力包包周期订单ID
+     * @return resourceOrderId
+     */
     public String getResourceOrderId() {
         return resourceOrderId;
     }
@@ -193,9 +202,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public TaskServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -245,7 +255,10 @@ public class CreateTasksRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

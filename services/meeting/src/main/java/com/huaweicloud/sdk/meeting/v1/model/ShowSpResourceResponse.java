@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSpResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +98,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get te1080pHardCount
-     * 
-     * @return te1080pHardCount */
+    /**
+     * Get te1080pHardCount
+     * @return te1080pHardCount
+     */
     public ResDetailDTO getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -121,9 +124,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get te720pHardCount
-     * 
-     * @return te720pHardCount */
+    /**
+     * Get te720pHardCount
+     * @return te720pHardCount
+     */
     public ResDetailDTO getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -146,9 +150,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get teSoftCount
-     * 
-     * @return teSoftCount */
+    /**
+     * Get teSoftCount
+     * @return teSoftCount
+     */
     public ResDetailDTO getTeSoftCount() {
         return teSoftCount;
     }
@@ -171,9 +176,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get roomCount
-     * 
-     * @return roomCount */
+    /**
+     * Get roomCount
+     * @return roomCount
+     */
     public ResDetailDTO getRoomCount() {
         return roomCount;
     }
@@ -196,9 +202,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get recordCapability
-     * 
-     * @return recordCapability */
+    /**
+     * Get recordCapability
+     * @return recordCapability
+     */
     public ResDetailDTO getRecordCapability() {
         return recordCapability;
     }
@@ -221,9 +228,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get confCallCount
-     * 
-     * @return confCallCount */
+    /**
+     * Get confCallCount
+     * @return confCallCount
+     */
     public ResDetailDTO getConfCallCount() {
         return confCallCount;
     }
@@ -246,9 +254,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get liveCount
-     * 
-     * @return liveCount */
+    /**
+     * Get liveCount
+     * @return liveCount
+     */
     public ResDetailDTO getLiveCount() {
         return liveCount;
     }
@@ -271,9 +280,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get corpCount
-     * 
-     * @return corpCount */
+    /**
+     * Get corpCount
+     * @return corpCount
+     */
     public ResDetailDTO getCorpCount() {
         return corpCount;
     }
@@ -296,9 +306,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get thirdPartyHardCount
-     * 
-     * @return thirdPartyHardCount */
+    /**
+     * Get thirdPartyHardCount
+     * @return thirdPartyHardCount
+     */
     public ResDetailDTO getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -321,9 +332,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get hwVisionCount
-     * 
-     * @return hwVisionCount */
+    /**
+     * Get hwVisionCount
+     * @return hwVisionCount
+     */
     public ResDetailDTO getHwVisionCount() {
         return hwVisionCount;
     }
@@ -346,9 +358,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ideaHubCount
-     * 
-     * @return ideaHubCount */
+    /**
+     * Get ideaHubCount
+     * @return ideaHubCount
+     */
     public ResDetailDTO getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -362,9 +375,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 在创建SP的时候设置的pstn权限开关
-     * 
-     * @return enablePstn */
+    /**
+     * 在创建SP的时候设置的pstn权限开关
+     * @return enablePstn
+     */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -378,9 +392,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 在创建SP的时候设置发送短信开关
-     * 
-     * @return enableSMS */
+    /**
+     * 在创建SP的时候设置发送短信开关
+     * @return enableSMS
+     */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -410,9 +425,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** sp管理员绑定的分组列表
-     * 
-     * @return groupList */
+    /**
+     * sp管理员绑定的分组列表
+     * @return groupList
+     */
     public List<QueryCorpGroupDTO> getGroupList() {
         return groupList;
     }
@@ -486,7 +502,10 @@ public class ShowSpResourceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

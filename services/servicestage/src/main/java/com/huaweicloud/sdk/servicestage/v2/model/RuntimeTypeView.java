@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 运行时参数。 */
+/**
+ * 运行时参数。
+ */
 public class RuntimeTypeView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class RuntimeTypeView {
         return this;
     }
 
-    /** 类型名称。
-     * 
-     * @return typeName */
+    /**
+     * 类型名称。
+     * @return typeName
+     */
     public String getTypeName() {
         return typeName;
     }
@@ -49,9 +52,10 @@ public class RuntimeTypeView {
         return this;
     }
 
-    /** 显示名称。
-     * 
-     * @return displayName */
+    /**
+     * 显示名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -65,9 +69,10 @@ public class RuntimeTypeView {
         return this;
     }
 
-    /** 容器默认端口。
-     * 
-     * @return containerDefaultPort */
+    /**
+     * 容器默认端口。
+     * @return containerDefaultPort
+     */
     public Integer getContainerDefaultPort() {
         return containerDefaultPort;
     }
@@ -81,9 +86,10 @@ public class RuntimeTypeView {
         return this;
     }
 
-    /** 类型描述。
-     * 
-     * @return typeDesc */
+    /**
+     * 类型描述。
+     * @return typeDesc
+     */
     public String getTypeDesc() {
         return typeDesc;
     }
@@ -124,7 +130,10 @@ public class RuntimeTypeView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

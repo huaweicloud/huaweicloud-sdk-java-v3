@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class NeutronListFirewallRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class NeutronListFirewallRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** firewall_rule对象列表
-     * 
-     * @return firewallRules */
+    /**
+     * firewall_rule对象列表
+     * @return firewallRules
+     */
     public List<NeutronFirewallRule> getFirewallRules() {
         return firewallRules;
     }
@@ -76,9 +79,10 @@ public class NeutronListFirewallRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页信息
-     * 
-     * @return firewallRulesLinks */
+    /**
+     * 分页信息
+     * @return firewallRulesLinks
+     */
     public List<NeutronPageLink> getFirewallRulesLinks() {
         return firewallRulesLinks;
     }
@@ -115,7 +119,10 @@ public class NeutronListFirewallRulesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

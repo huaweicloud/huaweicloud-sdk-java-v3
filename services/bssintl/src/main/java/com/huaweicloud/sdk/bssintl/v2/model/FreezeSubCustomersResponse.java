@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class FreezeSubCustomersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class FreezeSubCustomersResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误原因，只有部分失败的时候才返回。 具体请参见表1。
-     * 
-     * @return errorDetails */
+    /**
+     * 错误原因，只有部分失败的时候才返回。 具体请参见表1。
+     * @return errorDetails
+     */
     public List<CustomerErrorDetail> getErrorDetails() {
         return errorDetails;
     }
@@ -75,7 +78,10 @@ public class FreezeSubCustomersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

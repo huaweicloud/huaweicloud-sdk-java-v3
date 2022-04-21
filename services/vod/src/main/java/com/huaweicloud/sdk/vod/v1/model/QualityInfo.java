@@ -26,28 +26,44 @@ public class QualityInfo {
 
     private AudioTemplateInfo audio;
 
-    /** 格式。 */
+    /**
+     * 格式。
+     */
     public static final class FormatEnum {
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final FormatEnum MP4 = new FormatEnum("MP4");
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final FormatEnum HLS = new FormatEnum("HLS");
 
-        /** Enum DASH for value: "DASH" */
+        /**
+         * Enum DASH for value: "DASH"
+         */
         public static final FormatEnum DASH = new FormatEnum("DASH");
 
-        /** Enum DASH_HLS for value: "DASH_HLS" */
+        /**
+         * Enum DASH_HLS for value: "DASH_HLS"
+         */
         public static final FormatEnum DASH_HLS = new FormatEnum("DASH_HLS");
 
-        /** Enum MP3 for value: "MP3" */
+        /**
+         * Enum MP3 for value: "MP3"
+         */
         public static final FormatEnum MP3 = new FormatEnum("MP3");
 
-        /** Enum ADTS for value: "ADTS" */
+        /**
+         * Enum ADTS for value: "ADTS"
+         */
         public static final FormatEnum ADTS = new FormatEnum("ADTS");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final FormatEnum UNKNOW = new FormatEnum("UNKNOW");
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +152,10 @@ public class QualityInfo {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public VideoTemplateInfo getVideo() {
         return video;
     }
@@ -161,9 +178,10 @@ public class QualityInfo {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public AudioTemplateInfo getAudio() {
         return audio;
     }
@@ -177,9 +195,10 @@ public class QualityInfo {
         return this;
     }
 
-    /** 格式。
-     * 
-     * @return format */
+    /**
+     * 格式。
+     * @return format
+     */
     public FormatEnum getFormat() {
         return format;
     }
@@ -217,7 +236,10 @@ public class QualityInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

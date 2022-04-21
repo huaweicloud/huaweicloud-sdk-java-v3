@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转发策略对象 */
+/**
+ * 转发策略对象
+ */
 public class L7policyResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,13 +33,19 @@ public class L7policyResp {
 
     private List<ResourceList> rules = null;
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器 */
+    /**
+    * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+    */
     public static final class ActionEnum {
 
-        /** Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL" */
+        /**
+         * Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL"
+         */
         public static final ActionEnum REDIRECT_TO_POOL = new ActionEnum("REDIRECT_TO_POOL");
 
-        /** Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER" */
+        /**
+         * Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER"
+         */
         public static final ActionEnum REDIRECT_TO_LISTENER = new ActionEnum("REDIRECT_TO_LISTENER");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -162,9 +170,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略ID
-     * 
-     * @return id */
+    /**
+     * 转发策略ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -178,9 +187,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略名称
-     * 
-     * @return name */
+    /**
+     * 转发策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -210,9 +220,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略关联的转发规则列表
-     * 
-     * @return rules */
+    /**
+     * 转发策略关联的转发规则列表
+     * @return rules
+     */
     public List<ResourceList> getRules() {
         return rules;
     }
@@ -226,9 +237,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
-     * 
-     * @return action */
+    /**
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -242,9 +254,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -258,9 +271,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 转发策略所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -274,9 +288,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 转发策略所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -290,9 +305,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -306,9 +322,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略额描述信息
-     * 
-     * @return description */
+    /**
+     * 转发策略额描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -322,9 +339,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略对应的监听器ID
-     * 
-     * @return listenerId */
+    /**
+     * 转发策略对应的监听器ID
+     * @return listenerId
+     */
     public String getListenerId() {
         return listenerId;
     }
@@ -338,9 +356,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发到pool的ID。转发到pool的ID。当action为REDIRECT_TO_POOL时生效。
-     * 
-     * @return redirectPoolId */
+    /**
+     * 转发到pool的ID。转发到pool的ID。当action为REDIRECT_TO_POOL时生效。
+     * @return redirectPoolId
+     */
     public String getRedirectPoolId() {
         return redirectPoolId;
     }
@@ -354,9 +373,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。
-     * 
-     * @return redirectListenerId */
+    /**
+     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。
+     * @return redirectListenerId
+     */
     public String getRedirectListenerId() {
         return redirectListenerId;
     }
@@ -370,9 +390,10 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发到的url。该字段未启用。
-     * 
-     * @return redirectUrl */
+    /**
+     * 转发到的url。该字段未启用。
+     * @return redirectUrl
+     */
     public String getRedirectUrl() {
         return redirectUrl;
     }
@@ -386,9 +407,12 @@ public class L7policyResp {
         return this;
     }
 
-    /** 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。 minimum: 1 maximum: 100
-     * 
-     * @return position */
+    /**
+     * 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。
+     * minimum: 1
+     * maximum: 100
+     * @return position
+     */
     public Integer getPosition() {
         return position;
     }
@@ -460,7 +484,10 @@ public class L7policyResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

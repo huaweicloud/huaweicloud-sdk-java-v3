@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 搜索激活码的返回结果DTO对象 */
+/**
+ * 搜索激活码的返回结果DTO对象
+ */
 public class QueryVisionActiveCodeResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 激活码唯一标识
-     * 
-     * @return id */
+    /**
+     * 激活码唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 激活码
-     * 
-     * @return activeCode */
+    /**
+     * 激活码
+     * @return activeCode
+     */
     public String getActiveCode() {
         return activeCode;
     }
@@ -80,9 +84,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 终端名称
-     * 
-     * @return devName */
+    /**
+     * 终端名称
+     * @return devName
+     */
     public String getDevName() {
         return devName;
     }
@@ -96,9 +101,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 终端类型
-     * 
-     * @return devType */
+    /**
+     * 终端类型
+     * @return devType
+     */
     public String getDevType() {
         return devType;
     }
@@ -112,9 +118,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 部门编码
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -128,9 +135,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -144,9 +152,10 @@ public class QueryVisionActiveCodeResultDTO {
         return this;
     }
 
-    /** 失效时间戳
-     * 
-     * @return expireDate */
+    /**
+     * 失效时间戳
+     * @return expireDate
+     */
     public Long getExpireDate() {
         return expireDate;
     }
@@ -193,7 +202,10 @@ public class QueryVisionActiveCodeResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

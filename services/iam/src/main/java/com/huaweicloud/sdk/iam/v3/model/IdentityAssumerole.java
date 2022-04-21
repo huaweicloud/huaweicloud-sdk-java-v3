@@ -41,9 +41,10 @@ public class IdentityAssumerole {
         return this;
     }
 
-    /** 委托名。
-     * 
-     * @return agencyName */
+    /**
+     * 委托名。
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -57,9 +58,10 @@ public class IdentityAssumerole {
         return this;
     }
 
-    /** 委托方的账号ID。“domain_id”与“domain_name”至少填写一个。
-     * 
-     * @return domainId */
+    /**
+     * 委托方的账号ID。“domain_id”与“domain_name”至少填写一个。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -73,9 +75,10 @@ public class IdentityAssumerole {
         return this;
     }
 
-    /** 委托方的账号名。“domain_id”与“domain_name”至少填写一个。
-     * 
-     * @return domainName */
+    /**
+     * 委托方的账号名。“domain_id”与“domain_name”至少填写一个。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -89,9 +92,12 @@ public class IdentityAssumerole {
         return this;
     }
 
-    /** AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。 minimum: 900 maximum: 86400
-     * 
-     * @return durationSeconds */
+    /**
+     * AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。
+     * minimum: 900
+     * maximum: 86400
+     * @return durationSeconds
+     */
     public Integer getDurationSeconds() {
         return durationSeconds;
     }
@@ -114,9 +120,10 @@ public class IdentityAssumerole {
         return this;
     }
 
-    /** Get sessionUser
-     * 
-     * @return sessionUser */
+    /**
+     * Get sessionUser
+     * @return sessionUser
+     */
     public AssumeroleSessionuser getSessionUser() {
         return sessionUser;
     }
@@ -159,7 +166,10 @@ public class IdentityAssumerole {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

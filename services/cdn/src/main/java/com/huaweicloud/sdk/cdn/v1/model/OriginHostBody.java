@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OriginHostBody */
+/**
+ * OriginHostBody
+ */
 public class OriginHostBody {
 
-    /** accelerate：选择加速域名作为回源地址； customize：使用自定义的域名作为回源host域名； */
+    /**
+     * accelerate：选择加速域名作为回源地址；  customize：使用自定义的域名作为回源host域名；
+     */
     public static final class OriginHostTypeEnum {
 
-        /** Enum ACCELERATE for value: "accelerate" */
+        /**
+         * Enum ACCELERATE for value: "accelerate"
+         */
         public static final OriginHostTypeEnum ACCELERATE = new OriginHostTypeEnum("accelerate");
 
-        /** Enum CUSTOMIZE for value: "customize" */
+        /**
+         * Enum CUSTOMIZE for value: "customize"
+         */
         public static final OriginHostTypeEnum CUSTOMIZE = new OriginHostTypeEnum("customize");
 
         private static final Map<String, OriginHostTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class OriginHostBody {
         return this;
     }
 
-    /** accelerate：选择加速域名作为回源地址； customize：使用自定义的域名作为回源host域名；
-     * 
-     * @return originHostType */
+    /**
+     * accelerate：选择加速域名作为回源地址；  customize：使用自定义的域名作为回源host域名；
+     * @return originHostType
+     */
     public OriginHostTypeEnum getOriginHostType() {
         return originHostType;
     }
@@ -115,9 +124,10 @@ public class OriginHostBody {
         return this;
     }
 
-    /** 自定义回源域名，origin_host_type为 customize时传入该参数。
-     * 
-     * @return customizeDomain */
+    /**
+     * 自定义回源域名，origin_host_type为 customize时传入该参数。
+     * @return customizeDomain
+     */
     public String getCustomizeDomain() {
         return customizeDomain;
     }
@@ -154,7 +164,10 @@ public class OriginHostBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

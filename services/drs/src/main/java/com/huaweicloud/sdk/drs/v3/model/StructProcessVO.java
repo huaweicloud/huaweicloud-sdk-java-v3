@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 灾备初始化进度信息体 */
+/**
+ * 灾备初始化进度信息体
+ */
 public class StructProcessVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 对象类型
-     * 
-     * @return type */
+    /**
+     * 对象类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -59,9 +62,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -75,9 +79,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 源对象数量
-     * 
-     * @return srcCount */
+    /**
+     * 源对象数量
+     * @return srcCount
+     */
     public Integer getSrcCount() {
         return srcCount;
     }
@@ -91,9 +96,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 目标对象数量
-     * 
-     * @return dstCount */
+    /**
+     * 目标对象数量
+     * @return dstCount
+     */
     public Integer getDstCount() {
         return dstCount;
     }
@@ -107,9 +113,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -123,9 +130,10 @@ public class StructProcessVO {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -169,7 +177,10 @@ public class StructProcessVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

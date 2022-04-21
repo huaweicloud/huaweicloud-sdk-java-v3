@@ -30,9 +30,10 @@ public class NovaServerNetwork {
         return this;
     }
 
-    /** 网络port uuid。 没有指定网络uuid时必须指定。
-     * 
-     * @return port */
+    /**
+     * 网络port uuid。  没有指定网络uuid时必须指定。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -46,9 +47,10 @@ public class NovaServerNetwork {
         return this;
     }
 
-    /** 网络uuid。 没有指定网络port时必须指定。
-     * 
-     * @return uuid */
+    /**
+     * 网络uuid。  没有指定网络port时必须指定。
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -62,9 +64,10 @@ public class NovaServerNetwork {
         return this;
     }
 
-    /** 指定的IP地址。网络的三个参数（port、uuid和fixed_ip）中，port优先级最高；指定fixed_ip时必须指明uuid。
-     * 
-     * @return fixedIp */
+    /**
+     * 指定的IP地址。网络的三个参数（port、uuid和fixed_ip）中，port优先级最高；指定fixed_ip时必须指明uuid。
+     * @return fixedIp
+     */
     public String getFixedIp() {
         return fixedIp;
     }
@@ -102,7 +105,10 @@ public class NovaServerNetwork {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

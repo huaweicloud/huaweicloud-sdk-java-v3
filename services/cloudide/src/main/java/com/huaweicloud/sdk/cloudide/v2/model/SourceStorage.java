@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SourceStorage */
+/**
+ * SourceStorage
+ */
 public class SourceStorage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class SourceStorage {
         return this;
     }
 
-    /** 位置
-     * 
-     * @return location */
+    /**
+     * 位置
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -63,9 +66,10 @@ public class SourceStorage {
         return this;
     }
 
-    /** 参数值
-     * 
-     * @return parameters */
+    /**
+     * 参数值
+     * @return parameters
+     */
     public Map<String, String> getParameters() {
         return parameters;
     }
@@ -79,9 +83,10 @@ public class SourceStorage {
         return this;
     }
 
-    /** 类型
-     * 
-     * @return type */
+    /**
+     * 类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -120,7 +125,10 @@ public class SourceStorage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

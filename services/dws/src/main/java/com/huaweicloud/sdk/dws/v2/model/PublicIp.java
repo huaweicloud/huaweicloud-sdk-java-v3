@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PublicIp */
+/**
+ * PublicIp
+ */
 public class PublicIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性IP绑定类型，取值如下：  auto_assign：自动绑定  not_use：暂未使用  bind_existing ：使用已有
-     * 
-     * @return publicBindType */
+    /**
+     * 弹性IP绑定类型，取值如下：  - auto_assign：自动绑定 - not_use：暂未使用 - bind_existing ：使用已有
+     * @return publicBindType
+     */
     public String getPublicBindType() {
         return publicBindType;
     }
@@ -39,9 +42,10 @@ public class PublicIp {
         return this;
     }
 
-    /** 弹性IP的id
-     * 
-     * @return eipId */
+    /**
+     * 弹性IP的id
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -78,7 +82,10 @@ public class PublicIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

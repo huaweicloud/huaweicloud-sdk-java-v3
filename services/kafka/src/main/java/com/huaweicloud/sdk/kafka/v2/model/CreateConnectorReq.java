@@ -10,23 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateConnectorReq */
+/**
+ * CreateConnectorReq
+ */
 public class CreateConnectorReq {
 
-    /** 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。 取值范围： - 100MB - 300MB - 600MB - 1200MB 可以不填，则默认跟当前实例的规格是一致。
-     * 第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。 */
+    /**
+     * 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。  取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  可以不填，则默认跟当前实例的规格是一致。  第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。
+     */
     public static final class SpecificationEnum {
 
-        /** Enum _100MB for value: "100MB" */
+        /**
+         * Enum _100MB for value: "100MB"
+         */
         public static final SpecificationEnum _100MB = new SpecificationEnum("100MB");
 
-        /** Enum _300MB for value: "300MB" */
+        /**
+         * Enum _300MB for value: "300MB"
+         */
         public static final SpecificationEnum _300MB = new SpecificationEnum("300MB");
 
-        /** Enum _600MB for value: "600MB" */
+        /**
+         * Enum _600MB for value: "600MB"
+         */
         public static final SpecificationEnum _600MB = new SpecificationEnum("600MB");
 
-        /** Enum _1200MB for value: "1200MB" */
+        /**
+         * Enum _1200MB for value: "1200MB"
+         */
         public static final SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
 
         private static final Map<String, SpecificationEnum> STATIC_FIELDS = createStaticFields();
@@ -113,10 +124,10 @@ public class CreateConnectorReq {
         return this;
     }
 
-    /** 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。 取值范围： - 100MB - 300MB - 600MB - 1200MB 可以不填，则默认跟当前实例的规格是一致。
-     * 第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。
-     * 
-     * @return specification */
+    /**
+     * 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。  取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  可以不填，则默认跟当前实例的规格是一致。  第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。
+     * @return specification
+     */
     public SpecificationEnum getSpecification() {
         return specification;
     }
@@ -130,9 +141,10 @@ public class CreateConnectorReq {
         return this;
     }
 
-    /** 转储节点数量。不能小于2个。 默认是2个。
-     * 
-     * @return nodeCnt */
+    /**
+     * 转储节点数量。不能小于2个。 默认是2个。 
+     * @return nodeCnt
+     */
     public String getNodeCnt() {
         return nodeCnt;
     }
@@ -146,9 +158,10 @@ public class CreateConnectorReq {
         return this;
     }
 
-    /** 转储节点规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 转储节点规格编码。 
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -187,7 +200,10 @@ public class CreateConnectorReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

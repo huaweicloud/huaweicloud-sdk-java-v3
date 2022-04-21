@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowJobListByProjectIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowJobListByProjectIdRequest {
         return this;
     }
 
-    /** DevCloud项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
-     * 
-     * @return projectId */
+    /**
+     * DevCloud项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -44,9 +47,11 @@ public class ShowJobListByProjectIdRequest {
         return this;
     }
 
-    /** 分页页码， 表示从此页开始查询， page_index大于等于0 minimum: 0
-     * 
-     * @return pageIndex */
+    /**
+     * 分页页码， 表示从此页开始查询， page_index大于等于0
+     * minimum: 0
+     * @return pageIndex
+     */
     public Integer getPageIndex() {
         return pageIndex;
     }
@@ -60,9 +65,12 @@ public class ShowJobListByProjectIdRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，page_size小于等于100 minimum: 0 maximum: 100
-     * 
-     * @return pageSize */
+    /**
+     * 每页显示的条目数量，page_size小于等于100
+     * minimum: 0
+     * maximum: 100
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -101,7 +109,10 @@ public class ShowJobListByProjectIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

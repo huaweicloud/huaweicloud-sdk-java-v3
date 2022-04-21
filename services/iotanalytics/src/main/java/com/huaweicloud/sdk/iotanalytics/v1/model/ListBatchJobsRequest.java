@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBatchJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 当前偏移量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 当前偏移量，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -64,9 +67,12 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 每页显示的最大作业个数，范围: [1, 100]。默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的最大作业个数，范围: [1, 100]。默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -80,9 +86,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 是否定时作业。true：定时作业：false：不是定时作业。为空时：所有作业。
-     * 
-     * @return hasSchedule */
+    /**
+     * 是否定时作业。true：定时作业：false：不是定时作业。为空时：所有作业。
+     * @return hasSchedule
+     */
     public Boolean getHasSchedule() {
         return hasSchedule;
     }
@@ -96,9 +103,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return jobName */
+    /**
+     * 作业名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -112,9 +120,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 调度状态。1:NORMAL, 2:PAUSED, 3:COMPLETE, 4:ERROR, 5:BLOCKED
-     * 
-     * @return scheduleStatus */
+    /**
+     * 调度状态。1:NORMAL, 2:PAUSED, 3:COMPLETE, 4:ERROR, 5:BLOCKED
+     * @return scheduleStatus
+     */
     public String getScheduleStatus() {
         return scheduleStatus;
     }
@@ -128,9 +137,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 指定作业排序字段，默认为created_time（作业创建时间），支持created_time(作业创建时间)、modified_time（作业更新时间） 、job_name（作业名称）三种排序字段。
-     * 
-     * @return orderBy */
+    /**
+     * 指定作业排序字段，默认为created_time（作业创建时间），支持created_time(作业创建时间)、modified_time（作业更新时间） 、job_name（作业名称）三种排序字段。
+     * @return orderBy
+     */
     public String getOrderBy() {
         return orderBy;
     }
@@ -144,9 +154,10 @@ public class ListBatchJobsRequest {
         return this;
     }
 
-    /** 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。
-     * 
-     * @return order */
+    /**
+     * 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。
+     * @return order
+     */
     public String getOrder() {
         return order;
     }
@@ -193,7 +204,10 @@ public class ListBatchJobsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

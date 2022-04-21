@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FaceCompareBase64Req */
+/**
+ * FaceCompareBase64Req
+ */
 public class FaceCompareBase64Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class FaceCompareBase64Req {
         return this;
     }
 
-    /** 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于1MB。 • 图片为JPG/JPEG/BMP/PNG格式。
-     * 
-     * @return image2Base64 */
+    /**
+     * 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于1MB。 • 图片为JPG/JPEG/BMP/PNG格式。
+     * @return image2Base64
+     */
     public String getImage2Base64() {
         return image2Base64;
     }
@@ -39,9 +42,10 @@ public class FaceCompareBase64Req {
         return this;
     }
 
-    /** 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于1MB。 • 图片为JPG/JPEG/BMP/PNG格式。
-     * 
-     * @return image1Base64 */
+    /**
+     * 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议小于1MB。 • 图片为JPG/JPEG/BMP/PNG格式。
+     * @return image1Base64
+     */
     public String getImage1Base64() {
         return image1Base64;
     }
@@ -78,7 +82,10 @@ public class FaceCompareBase64Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

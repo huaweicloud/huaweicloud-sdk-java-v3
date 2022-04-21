@@ -78,9 +78,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +95,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
-     * 
-     * @return description */
+    /**
+     * 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -110,9 +112,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
-     * 
-     * @return cidr */
+    /**
+     * 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -126,9 +129,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 子网所在VPC标识
-     * 
-     * @return vpcId */
+    /**
+     * 子网所在VPC标识
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -142,9 +146,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
-     * 
-     * @return gatewayIp */
+    /**
+     * 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
+     * @return gatewayIp
+     */
     public String getGatewayIp() {
         return gatewayIp;
     }
@@ -158,9 +163,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭） 约束：不填时默认为false > 说明 该参数目前仅在“华北-北京四”区域开放，且申请IPv6公测后才可设置。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭） 约束：不填时默认为false > 说明 该参数目前仅在“华北-北京四”区域开放，且申请IPv6公测后才可设置。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -174,9 +180,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网是否开启dhcp功能 取值范围：true（开启），false（关闭） 约束：不填时默认为true。当设置为false时，会导致新创建的ECS无法获取IP地址，cloudinit无法注入账号密码，请谨慎操作。
-     * 
-     * @return dhcpEnable */
+    /**
+     * 功能说明：子网是否开启dhcp功能 取值范围：true（开启），false（关闭） 约束：不填时默认为true。当设置为false时，会导致新创建的ECS无法获取IP地址，cloudinit无法注入账号密码，请谨慎操作。
+     * @return dhcpEnable
+     */
     public Boolean getDhcpEnable() {
         return dhcpEnable;
     }
@@ -190,11 +197,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址 默认值：不填时为空
-     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
-     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * 
-     * @return primaryDns */
+    /**
+     * 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * @return primaryDns
+     */
     public String getPrimaryDns() {
         return primaryDns;
     }
@@ -208,11 +214,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址 默认值：不填时为空
-     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
-     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * 
-     * @return secondaryDns */
+    /**
+     * 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * @return secondaryDns
+     */
     public String getSecondaryDns() {
         return secondaryDns;
     }
@@ -242,11 +247,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。 默认值：不填时为空，无法使用云内网DNS功能
-     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
-     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * 
-     * @return dnsList */
+    /**
+     * 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。 默认值：不填时为空，无法使用云内网DNS功能 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * @return dnsList
+     */
     public List<String> getDnsList() {
         return dnsList;
     }
@@ -260,9 +264,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 功能说明：子网所在的可用分区标识 约束：系统存在的可用分区标识
-     * 
-     * @return availabilityZone */
+    /**
+     * 功能说明：子网所在的可用分区标识 约束：系统存在的可用分区标识
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -292,9 +297,10 @@ public class CreateSubnetOption {
         return this;
     }
 
-    /** 子网配置的NTP地址
-     * 
-     * @return extraDhcpOpts */
+    /**
+     * 子网配置的NTP地址
+     * @return extraDhcpOpts
+     */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -362,7 +368,10 @@ public class CreateSubnetOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

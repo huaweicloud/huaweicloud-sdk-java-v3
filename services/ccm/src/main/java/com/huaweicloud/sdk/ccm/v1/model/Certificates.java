@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Certificates */
+/**
+ * Certificates
+ */
 public class Certificates {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,9 +86,10 @@ public class Certificates {
         return this;
     }
 
-    /** 私有证书ID。
-     * 
-     * @return certificateId */
+    /**
+     * 私有证书ID。
+     * @return certificateId
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -100,9 +103,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书状态： - **ISSUED** : 已签发； - **EXPIRED** : 已过期； - **REVOKED** : 已吊销。
-     * 
-     * @return status */
+    /**
+     * 证书状态：   - **ISSUED** : 已签发；   - **EXPIRED** : 已过期；   - **REVOKED** : 已吊销。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -116,9 +120,10 @@ public class Certificates {
         return this;
     }
 
-    /** 父CA证书ID。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -132,9 +137,10 @@ public class Certificates {
         return this;
     }
 
-    /** 父CA证书名称。
-     * 
-     * @return issuerName */
+    /**
+     * 父CA证书名称。
+     * @return issuerName
+     */
     public String getIssuerName() {
         return issuerName;
     }
@@ -148,9 +154,10 @@ public class Certificates {
         return this;
     }
 
-    /** 密钥算法。
-     * 
-     * @return keyAlgorithm */
+    /**
+     * 密钥算法。
+     * @return keyAlgorithm
+     */
     public String getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -164,9 +171,10 @@ public class Certificates {
         return this;
     }
 
-    /** 签名算法。
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名算法。
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -180,9 +188,10 @@ public class Certificates {
         return this;
     }
 
-    /** 冻结标识: - **0** : 非冻结状态； - **其它值** : 冻结状态，当前预留。
-     * 
-     * @return freezeFlag */
+    /**
+     * 冻结标识:   - **0** : 非冻结状态；   - **其它值** : 冻结状态，当前预留。
+     * @return freezeFlag
+     */
     public Integer getFreezeFlag() {
         return freezeFlag;
     }
@@ -196,9 +205,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书生成方式： - **GENERATE** : PCA系统生成； - **IMPORT** : 外部导入； - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
-     * 
-     * @return genMode */
+    /**
+     * 证书生成方式：  - **GENERATE** : PCA系统生成；  - **IMPORT** : 外部导入；  - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
+     * @return genMode
+     */
     public String getGenMode() {
         return genMode;
     }
@@ -212,9 +222,10 @@ public class Certificates {
         return this;
     }
 
-    /** 序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * 序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -228,9 +239,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书创建时间，格式为时间戳（毫秒级）。
-     * 
-     * @return createTime */
+    /**
+     * 证书创建时间，格式为时间戳（毫秒级）。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -244,9 +256,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书删除时间，格式为时间戳（毫秒级）。
-     * 
-     * @return deleteTime */
+    /**
+     * 证书删除时间，格式为时间戳（毫秒级）。
+     * @return deleteTime
+     */
     public Long getDeleteTime() {
         return deleteTime;
     }
@@ -260,9 +273,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书创建时间，格式为时间戳（毫秒级）。
-     * 
-     * @return notBefore */
+    /**
+     * 证书创建时间，格式为时间戳（毫秒级）。
+     * @return notBefore
+     */
     public Long getNotBefore() {
         return notBefore;
     }
@@ -276,9 +290,10 @@ public class Certificates {
         return this;
     }
 
-    /** 证书到期时间，格式为时间戳（毫秒级）。
-     * 
-     * @return notAfter */
+    /**
+     * 证书到期时间，格式为时间戳（毫秒级）。
+     * @return notAfter
+     */
     public Long getNotAfter() {
         return notAfter;
     }
@@ -301,9 +316,10 @@ public class Certificates {
         return this;
     }
 
-    /** Get distinguishedName
-     * 
-     * @return distinguishedName */
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
     public DistinguishedName getDistinguishedName() {
         return distinguishedName;
     }
@@ -376,7 +392,10 @@ public class Certificates {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

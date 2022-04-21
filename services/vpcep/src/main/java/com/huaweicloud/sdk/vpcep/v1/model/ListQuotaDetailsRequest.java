@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQuotaDetailsRequest {
 
-    /** 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点 */
+    /**
+     * 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     */
     public static final class TypeEnum {
 
-        /** Enum ENDPOINT_SERVICE for value: "endpoint_service" */
+        /**
+         * Enum ENDPOINT_SERVICE for value: "endpoint_service"
+         */
         public static final TypeEnum ENDPOINT_SERVICE = new TypeEnum("endpoint_service");
 
-        /** Enum ENDPOINT for value: "endpoint" */
+        /**
+         * Enum ENDPOINT for value: "endpoint"
+         */
         public static final TypeEnum ENDPOINT = new TypeEnum("endpoint");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ListQuotaDetailsRequest {
         return this;
     }
 
-    /** 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
-     * 
-     * @return type */
+    /**
+     * 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -131,7 +140,10 @@ public class ListQuotaDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 密钥 */
+/**
+ * 密钥
+ */
 public class SecretDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SecretDetail {
         return this;
     }
 
-    /** 密钥名称，以小写英文字母开头，4-64位，可以使用小写英文、数字、中划线（-），不能以中划线结尾
-     * 
-     * @return name */
+    /**
+     * 密钥名称，以小写英文字母开头，4-64位，可以使用小写英文、数字、中划线（-），不能以中划线结尾
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class SecretDetail {
         return this;
     }
 
-    /** 密钥类型，目前只支持“Opaque”类型
-     * 
-     * @return type */
+    /**
+     * 密钥类型，目前只支持“Opaque”类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -68,9 +72,10 @@ public class SecretDetail {
         return this;
     }
 
-    /** 密钥描述,最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 密钥描述,最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,10 +105,10 @@ public class SecretDetail {
         return this;
     }
 
-    /** secrets是一个字典，由多个键值对组成，json化后最大总长度为1048576，key和value均为字符串。键值对中key由大小写字母或中划线开头，由数字、大小写字母、点号（.）、中划线（-）、下划线（_）组成，最小长度为1，最大长度63个字符,
-     * 键值对中的value必须为base64字符。 注：secrets字典的长度即字典转为标准的字符串后的长度，例如字典{\"a\": \"b\"}转为标准字符串后为'{\"a\": \"b\"}'，长度为10
-     * 
-     * @return secrets */
+    /**
+     * secrets是一个字典，由多个键值对组成，json化后最大总长度为1048576，key和value均为字符串。键值对中key由大小写字母或中划线开头，由数字、大小写字母、点号（.）、中划线（-）、下划线（_）组成，最小长度为1，最大长度63个字符, 键值对中的value必须为base64字符。 注：secrets字典的长度即字典转为标准的字符串后的长度，例如字典{\"a\": \"b\"}转为标准字符串后为'{\"a\": \"b\"}'，长度为10
+     * @return secrets
+     */
     public Map<String, String> getSecrets() {
         return secrets;
     }
@@ -143,7 +148,10 @@ public class SecretDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

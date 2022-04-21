@@ -33,9 +33,10 @@ public class ExtraInfoList {
         return this;
     }
 
-    /** 表示key值，可能是qq, wechat, alipay及bank等。
-     * 
-     * @return item */
+    /**
+     * 表示key值，可能是qq, wechat, alipay及bank等。 
+     * @return item
+     */
     public String getItem() {
         return item;
     }
@@ -49,9 +50,10 @@ public class ExtraInfoList {
         return this;
     }
 
-    /** 表示value值，对应qq, wechat, alipay及bank等的账号。
-     * 
-     * @return value */
+    /**
+     * 表示value值，对应qq, wechat, alipay及bank等的账号。 
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -81,9 +83,10 @@ public class ExtraInfoList {
         return this;
     }
 
-    /** 对应item关联的额外信息，为bank时第一个默认为户名，第二个为开户行，为alipay时第一个默认为账号名。
-     * 
-     * @return note */
+    /**
+     * 对应item关联的额外信息，为bank时第一个默认为户名，第二个为开户行，为alipay时第一个默认为账号名。 
+     * @return note
+     */
     public List<String> getNote() {
         return note;
     }
@@ -121,7 +124,10 @@ public class ExtraInfoList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 被邀请方的信息 */
+/**
+ * 被邀请方的信息
+ */
 public class InviteeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class InviteeInfo {
         return this;
     }
 
-    /** 被邀请用户id
-     * 
-     * @return inviteeId */
+    /**
+     * 被邀请用户id
+     * @return inviteeId
+     */
     public String getInviteeId() {
         return inviteeId;
     }
@@ -54,9 +57,10 @@ public class InviteeInfo {
         return this;
     }
 
-    /** 被邀请租户名称
-     * 
-     * @return inviteeName */
+    /**
+     * 被邀请租户名称
+     * @return inviteeName
+     */
     public Long getInviteeName() {
         return inviteeName;
     }
@@ -70,9 +74,10 @@ public class InviteeInfo {
         return this;
     }
 
-    /** 被邀请的服务名称
-     * 
-     * @return inviteeBcsName */
+    /**
+     * 被邀请的服务名称
+     * @return inviteeBcsName
+     */
     public String getInviteeBcsName() {
         return inviteeBcsName;
     }
@@ -86,9 +91,10 @@ public class InviteeInfo {
         return this;
     }
 
-    /** 被邀请的服务id
-     * 
-     * @return inviteeBcsId */
+    /**
+     * 被邀请的服务id
+     * @return inviteeBcsId
+     */
     public String getInviteeBcsId() {
         return inviteeBcsId;
     }
@@ -102,9 +108,10 @@ public class InviteeInfo {
         return this;
     }
 
-    /** 被邀请的项目id
-     * 
-     * @return inviteeProjectId */
+    /**
+     * 被邀请的项目id
+     * @return inviteeProjectId
+     */
     public String getInviteeProjectId() {
         return inviteeProjectId;
     }
@@ -147,7 +154,10 @@ public class InviteeInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

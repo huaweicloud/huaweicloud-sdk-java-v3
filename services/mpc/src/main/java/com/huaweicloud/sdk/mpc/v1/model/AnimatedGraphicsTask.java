@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AnimatedGraphicsTask */
+/**
+ * AnimatedGraphicsTask
+ */
 public class AnimatedGraphicsTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID 
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -85,9 +88,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务状态。 取值如下： - INIT：初始状态。 - WAITING：等待启动。 - PROCESSING：处理中。 - SUCCEED：处理成功。 - FAILED：处理失败。 - CANCELED：已取消。
-     * 
-     * @return status */
+    /**
+     * 任务状态。  取值如下： - INIT：初始状态。 - WAITING：等待启动。 - PROCESSING：处理中。 - SUCCEED：处理成功。 - FAILED：处理失败。 - CANCELED：已取消。 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -101,9 +105,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务创建时间
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间 
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -117,9 +122,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务启动时间
-     * 
-     * @return startTime */
+    /**
+     * 任务启动时间 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -133,9 +139,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务结束时间
-     * 
-     * @return endTime */
+    /**
+     * 任务结束时间 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -149,9 +156,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 任务的返回码。
-     * 
-     * @return errorCode */
+    /**
+     * 任务的返回码。 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -165,9 +173,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 错误描述
-     * 
-     * @return description */
+    /**
+     * 错误描述 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -181,9 +190,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** 用户数据。
-     * 
-     * @return userData */
+    /**
+     * 用户数据。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -206,9 +216,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -231,9 +242,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -256,9 +268,10 @@ public class AnimatedGraphicsTask {
         return this;
     }
 
-    /** Get outputParam
-     * 
-     * @return outputParam */
+    /**
+     * Get outputParam
+     * @return outputParam
+     */
     public AnimatedGraphicsOutputParam getOutputParam() {
         return outputParam;
     }
@@ -323,7 +336,10 @@ public class AnimatedGraphicsTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

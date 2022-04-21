@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDispatchesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,22 +31,34 @@ public class CreateDispatchesResponse extends SdkResponse {
 
     private Long startDatetime;
 
-    /** 调度计划执行周期的时间单位，当使用cron表达式时，为空 - MIN (分钟) - HOUR (小时) - DAY (日) - WEEK (周) - MON (月) */
+    /**
+     * 调度计划执行周期的时间单位，当使用cron表达式时，为空 - MIN (分钟) - HOUR (小时) - DAY (日) - WEEK (周) - MON (月)
+     */
     public static final class PeriodEnum {
 
-        /** Enum MIN for value: "MIN" */
+        /**
+         * Enum MIN for value: "MIN"
+         */
         public static final PeriodEnum MIN = new PeriodEnum("MIN");
 
-        /** Enum HOUR for value: "HOUR" */
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
         public static final PeriodEnum HOUR = new PeriodEnum("HOUR");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final PeriodEnum DAY = new PeriodEnum("DAY");
 
-        /** Enum WEEK for value: "WEEK" */
+        /**
+         * Enum WEEK for value: "WEEK"
+         */
         public static final PeriodEnum WEEK = new PeriodEnum("WEEK");
 
-        /** Enum MON for value: "MON" */
+        /**
+         * Enum MON for value: "MON"
+         */
         public static final PeriodEnum MON = new PeriodEnum("MON");
 
         private static final Map<String, PeriodEnum> STATIC_FIELDS = createStaticFields();
@@ -152,9 +166,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划ID
-     * 
-     * @return dispatchId */
+    /**
+     * 调度计划ID
+     * @return dispatchId
+     */
     public String getDispatchId() {
         return dispatchId;
     }
@@ -168,9 +183,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划关联的任务ID
-     * 
-     * @return taskId */
+    /**
+     * 调度计划关联的任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -184,9 +200,12 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划的执行开始时间 minimum: 0 maximum: 99999999999999999
-     * 
-     * @return startDatetime */
+    /**
+     * 调度计划的执行开始时间
+     * minimum: 0
+     * maximum: 99999999999999999
+     * @return startDatetime
+     */
     public Long getStartDatetime() {
         return startDatetime;
     }
@@ -200,9 +219,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划执行周期的时间单位，当使用cron表达式时，为空 - MIN (分钟) - HOUR (小时) - DAY (日) - WEEK (周) - MON (月)
-     * 
-     * @return period */
+    /**
+     * 调度计划执行周期的时间单位，当使用cron表达式时，为空 - MIN (分钟) - HOUR (小时) - DAY (日) - WEEK (周) - MON (月)
+     * @return period
+     */
     public PeriodEnum getPeriod() {
         return period;
     }
@@ -216,9 +236,12 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划的执行间隔时间周期 minimum: 1 maximum: 59
-     * 
-     * @return dispatchInterval */
+    /**
+     * 调度计划的执行间隔时间周期
+     * minimum: 1
+     * maximum: 59
+     * @return dispatchInterval
+     */
     public Long getDispatchInterval() {
         return dispatchInterval;
     }
@@ -232,9 +255,12 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划的创建时间 minimum: 1 maximum: 99999999999999999
-     * 
-     * @return createdDate */
+    /**
+     * 调度计划的创建时间
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return createdDate
+     */
     public Long getCreatedDate() {
         return createdDate;
     }
@@ -248,9 +274,12 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划最近一次的修改时间 minimum: 1 maximum: 99999999999999999
-     * 
-     * @return lastModifiedDate */
+    /**
+     * 调度计划最近一次的修改时间
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return lastModifiedDate
+     */
     public Long getLastModifiedDate() {
         return lastModifiedDate;
     }
@@ -264,9 +293,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划的备注信息
-     * 
-     * @return remark */
+    /**
+     * 调度计划的备注信息
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -280,9 +310,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划是否使用cron表达式，允许如下值： - true (使用cron表达式) - false (不使用cron表达式)
-     * 
-     * @return useQuartzCron */
+    /**
+     * 调度计划是否使用cron表达式，允许如下值： - true (使用cron表达式) - false (不使用cron表达式)
+     * @return useQuartzCron
+     */
     public Boolean getUseQuartzCron() {
         return useQuartzCron;
     }
@@ -296,9 +327,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调度计划的cron表达式
-     * 
-     * @return cron */
+    /**
+     * 调度计划的cron表达式
+     * @return cron
+     */
     public String getCron() {
         return cron;
     }
@@ -360,7 +392,10 @@ public class CreateDispatchesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

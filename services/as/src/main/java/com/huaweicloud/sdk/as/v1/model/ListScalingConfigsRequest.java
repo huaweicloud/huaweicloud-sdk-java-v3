@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingConfigsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListScalingConfigsRequest {
         return this;
     }
 
-    /** 伸缩配置名称。
-     * 
-     * @return scalingConfigurationName */
+    /**
+     * 伸缩配置名称。
+     * @return scalingConfigurationName
+     */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -49,9 +52,10 @@ public class ListScalingConfigsRequest {
         return this;
     }
 
-    /** 镜像ID，同imageRef。
-     * 
-     * @return imageId */
+    /**
+     * 镜像ID，同imageRef。
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -65,9 +69,10 @@ public class ListScalingConfigsRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -81,9 +86,10 @@ public class ListScalingConfigsRequest {
         return this;
     }
 
-    /** 查询的记录条数，默认为20。
-     * 
-     * @return limit */
+    /**
+     * 查询的记录条数，默认为20。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +130,10 @@ public class ListScalingConfigsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

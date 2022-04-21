@@ -10,25 +10,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 配额资源 */
+/**
+ * 配额资源
+ */
 public class AllResources {
 
-    /** 查询配额的类型。scaling_Group：伸缩组配额。scaling_Config：伸缩配置配额。scaling_Policy：伸缩策略配额。scaling_Instance：伸缩实例配额。bandwidth_scaling_policy：伸缩带宽策略配额。 */
+    /**
+     * 查询配额的类型。scaling_Group：伸缩组配额。scaling_Config：伸缩配置配额。scaling_Policy：伸缩策略配额。scaling_Instance：伸缩实例配额。bandwidth_scaling_policy：伸缩带宽策略配额。
+     */
     public static final class TypeEnum {
 
-        /** Enum SCALING_GROUP for value: "scaling_group" */
+        /**
+         * Enum SCALING_GROUP for value: "scaling_group"
+         */
         public static final TypeEnum SCALING_GROUP = new TypeEnum("scaling_group");
 
-        /** Enum SCALING_CONFIG for value: "scaling_config" */
+        /**
+         * Enum SCALING_CONFIG for value: "scaling_config"
+         */
         public static final TypeEnum SCALING_CONFIG = new TypeEnum("scaling_config");
 
-        /** Enum SCALING_POLICY for value: "scaling_Policy" */
+        /**
+         * Enum SCALING_POLICY for value: "scaling_Policy"
+         */
         public static final TypeEnum SCALING_POLICY = new TypeEnum("scaling_Policy");
 
-        /** Enum SCALING_INSTANCE for value: "scaling_Instance" */
+        /**
+         * Enum SCALING_INSTANCE for value: "scaling_Instance"
+         */
         public static final TypeEnum SCALING_INSTANCE = new TypeEnum("scaling_Instance");
 
-        /** Enum BANDWIDTH_SCALING_POLICY for value: "bandwidth_scaling_policy" */
+        /**
+         * Enum BANDWIDTH_SCALING_POLICY for value: "bandwidth_scaling_policy"
+         */
         public static final TypeEnum BANDWIDTH_SCALING_POLICY = new TypeEnum("bandwidth_scaling_policy");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +140,10 @@ public class AllResources {
         return this;
     }
 
-    /** 查询配额的类型。scaling_Group：伸缩组配额。scaling_Config：伸缩配置配额。scaling_Policy：伸缩策略配额。scaling_Instance：伸缩实例配额。bandwidth_scaling_policy：伸缩带宽策略配额。
-     * 
-     * @return type */
+    /**
+     * 查询配额的类型。scaling_Group：伸缩组配额。scaling_Config：伸缩配置配额。scaling_Policy：伸缩策略配额。scaling_Instance：伸缩实例配额。bandwidth_scaling_policy：伸缩带宽策略配额。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -142,9 +157,10 @@ public class AllResources {
         return this;
     }
 
-    /** 已使用的配额数量。当type为scaling_Policy和scaling_Instance时，该字段为保留字段，返回-1。可通过查询弹性伸缩策略和伸缩实例配额查询指定弹性伸缩组下的弹性伸缩策略和伸缩实例已使用的配额数量。
-     * 
-     * @return used */
+    /**
+     * 已使用的配额数量。当type为scaling_Policy和scaling_Instance时，该字段为保留字段，返回-1。可通过查询弹性伸缩策略和伸缩实例配额查询指定弹性伸缩组下的弹性伸缩策略和伸缩实例已使用的配额数量。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -158,9 +174,10 @@ public class AllResources {
         return this;
     }
 
-    /** 配额总数量。
-     * 
-     * @return quota */
+    /**
+     * 配额总数量。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -174,9 +191,10 @@ public class AllResources {
         return this;
     }
 
-    /** 配额上限。
-     * 
-     * @return max */
+    /**
+     * 配额上限。
+     * @return max
+     */
     public Integer getMax() {
         return max;
     }
@@ -190,9 +208,10 @@ public class AllResources {
         return this;
     }
 
-    /** 配额下限。
-     * 
-     * @return min */
+    /**
+     * 配额下限。
+     * @return min
+     */
     public Integer getMin() {
         return min;
     }
@@ -233,7 +252,10 @@ public class AllResources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

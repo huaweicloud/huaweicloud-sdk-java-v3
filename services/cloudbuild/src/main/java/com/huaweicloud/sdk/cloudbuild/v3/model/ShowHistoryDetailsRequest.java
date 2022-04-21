@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowHistoryDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class ShowHistoryDetailsRequest {
         return this;
     }
 
-    /** 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)；
-     * 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
-     * 
-     * @return jobId */
+    /**
+     * 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)； 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -40,9 +42,11 @@ public class ShowHistoryDetailsRequest {
         return this;
     }
 
-    /** 构建任务的构建编号，从1开始，每次构建递增1 minimum: 1
-     * 
-     * @return buildNumber */
+    /**
+     * 构建任务的构建编号，从1开始，每次构建递增1
+     * minimum: 1
+     * @return buildNumber
+     */
     public Integer getBuildNumber() {
         return buildNumber;
     }
@@ -79,7 +83,10 @@ public class ShowHistoryDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

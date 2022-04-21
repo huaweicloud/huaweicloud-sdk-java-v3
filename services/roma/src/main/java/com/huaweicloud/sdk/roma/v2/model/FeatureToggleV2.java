@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FeatureToggleV2 */
+/**
+ * FeatureToggleV2
+ */
 public class FeatureToggleV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class FeatureToggleV2 {
         return this;
     }
 
-    /** 特性名称
-     * 
-     * @return name */
+    /**
+     * 特性名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class FeatureToggleV2 {
         return this;
     }
 
-    /** 是否开启特性
-     * 
-     * @return enable */
+    /**
+     * 是否开启特性
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -60,9 +64,10 @@ public class FeatureToggleV2 {
         return this;
     }
 
-    /** 特性参数配置
-     * 
-     * @return config */
+    /**
+     * 特性参数配置
+     * @return config
+     */
     public String getConfig() {
         return config;
     }
@@ -100,7 +105,10 @@ public class FeatureToggleV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

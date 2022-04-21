@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AomMappingRuleInfo */
+/**
+ * AomMappingRuleInfo
+ */
 public class AomMappingRuleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 集群id
-     * 
-     * @return clusterId */
+    /**
+     * 集群id
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -62,9 +65,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return clusterName */
+    /**
+     * 集群名称
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -94,9 +98,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 工作负载
-     * 
-     * @return deployments */
+    /**
+     * 工作负载
+     * @return deployments
+     */
     public List<String> getDeployments() {
         return deployments;
     }
@@ -110,9 +115,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespace */
+    /**
+     * 命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -126,9 +132,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 容器名称
-     * 
-     * @return containerName */
+    /**
+     * 容器名称
+     * @return containerName
+     */
     public String getContainerName() {
         return containerName;
     }
@@ -158,9 +165,10 @@ public class AomMappingRuleInfo {
         return this;
     }
 
-    /** 接入规则详情
-     * 
-     * @return files */
+    /**
+     * 接入规则详情
+     * @return files
+     */
     public List<AomMappingfilesInfo> getFiles() {
         return files;
     }
@@ -205,7 +213,10 @@ public class AomMappingRuleInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

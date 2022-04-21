@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 批量查询迁移项目返回的迁移项目信息 */
+/**
+ * 批量查询迁移项目返回的迁移项目信息
+ */
 public class MigprojectsResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,13 +60,19 @@ public class MigprojectsResponseBody {
 
     private String description;
 
-    /** 迁移项目默认迁移类型 */
+    /**
+     * 迁移项目默认迁移类型
+     */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
-        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +157,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目ID
-     * 
-     * @return id */
+    /**
+     * 迁移项目ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -165,9 +174,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目名称
-     * 
-     * @return name */
+    /**
+     * 迁移项目名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -181,9 +191,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 是否使用公网IP迁移
-     * 
-     * @return usePublicIp */
+    /**
+     * 是否使用公网IP迁移
+     * @return usePublicIp
+     */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -197,9 +208,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 是否为默认模板
-     * 
-     * @return isdefault */
+    /**
+     * 是否为默认模板
+     * @return isdefault
+     */
     public Boolean getIsdefault() {
         return isdefault;
     }
@@ -213,9 +225,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移后是否启动目的端虚拟机
-     * 
-     * @return startTargetServer */
+    /**
+     * 迁移后是否启动目的端虚拟机
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -229,9 +242,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return region */
+    /**
+     * 区域名称
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -245,9 +259,12 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 模板中配置的限速信息，单位：Mbps minimum: 0 maximum: 10000
-     * 
-     * @return speedLimit */
+    /**
+     * 模板中配置的限速信息，单位：Mbps
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
+     */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -261,9 +278,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目下是否存在服务器
-     * 
-     * @return existServer */
+    /**
+     * 迁移项目下是否存在服务器
+     * @return existServer
+     */
     public Boolean getExistServer() {
         return existServer;
     }
@@ -277,9 +295,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目描述
-     * 
-     * @return description */
+    /**
+     * 迁移项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -293,9 +312,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目默认迁移类型
-     * 
-     * @return type */
+    /**
+     * 迁移项目默认迁移类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -309,9 +329,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 迁移项目所属的企业项目名称
-     * 
-     * @return enterpriseProject */
+    /**
+     * 迁移项目所属的企业项目名称
+     * @return enterpriseProject
+     */
     public String getEnterpriseProject() {
         return enterpriseProject;
     }
@@ -325,9 +346,10 @@ public class MigprojectsResponseBody {
         return this;
     }
 
-    /** 是否持续同步
-     * 
-     * @return syncing */
+    /**
+     * 是否持续同步
+     * @return syncing
+     */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -395,7 +417,10 @@ public class MigprojectsResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

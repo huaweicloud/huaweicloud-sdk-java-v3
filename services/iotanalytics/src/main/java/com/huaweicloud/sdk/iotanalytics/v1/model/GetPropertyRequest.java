@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询属性值请求 */
+/**
+ * 查询属性值请求
+ */
 public class GetPropertyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class GetPropertyRequest {
         return this;
     }
 
-    /** 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
-     * 
-     * @return tags */
+    /**
+     * 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
+     * @return tags
+     */
     public Map<String, String> getTags() {
         return tags;
     }
@@ -76,9 +79,10 @@ public class GetPropertyRequest {
         return this;
     }
 
-    /** 查询设备的属性名称
-     * 
-     * @return propertyNames */
+    /**
+     * 查询设备的属性名称
+     * @return propertyNames
+     */
     public List<String> getPropertyNames() {
         return propertyNames;
     }
@@ -115,7 +119,10 @@ public class GetPropertyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

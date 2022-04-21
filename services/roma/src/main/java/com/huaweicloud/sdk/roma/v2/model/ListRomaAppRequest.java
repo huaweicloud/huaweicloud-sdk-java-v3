@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRomaAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -69,9 +72,12 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 偏移量，大于等于0 minimum: 0 maximum: 10000
-     * 
-     * @return offset */
+    /**
+     * 偏移量，大于等于0
+     * minimum: 0
+     * maximum: 10000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -85,9 +91,12 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,9 +110,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 查询收藏的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，获取收藏的应用 - 为false时，获取未被收藏的应用
-     * 
-     * @return favorite */
+    /**
+     * 查询收藏的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，获取收藏的应用 - 为false时，获取未被收藏的应用
+     * @return favorite
+     */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -117,9 +127,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 获取拥有指定权限应用
-     * 
-     * @return authRole */
+    /**
+     * 获取拥有指定权限应用
+     * @return authRole
+     */
     public String getAuthRole() {
         return authRole;
     }
@@ -133,9 +144,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 应用名称，模糊匹配
-     * 
-     * @return name */
+    /**
+     * 应用名称，模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -149,9 +161,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 查询有权限访问的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，查询当前用户创建的应用 - 为false时，查询非当前用户创建的有权限的应用，比如其它人共享的应用
-     * 
-     * @return owner */
+    /**
+     * 查询有权限访问的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，查询当前用户创建的应用 - 为false时，查询非当前用户创建的有权限的应用，比如其它人共享的应用
+     * @return owner
+     */
     public Boolean getOwner() {
         return owner;
     }
@@ -165,9 +178,10 @@ public class ListRomaAppRequest {
         return this;
     }
 
-    /** 从当前调用者有权限的所有应用中过滤出指定用户名有权限的应用
-     * 
-     * @return userName */
+    /**
+     * 从当前调用者有权限的所有应用中过滤出指定用户名有权限的应用
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -216,7 +230,10 @@ public class ListRomaAppRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

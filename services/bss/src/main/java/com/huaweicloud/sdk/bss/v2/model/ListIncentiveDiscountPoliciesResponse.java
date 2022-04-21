@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListIncentiveDiscountPoliciesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ListIncentiveDiscountPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品折扣和激励策略信息列表。 具体请参见表2。
-     * 
-     * @return policies */
+    /**
+     * 产品折扣和激励策略信息列表。 具体请参见表2。
+     * @return policies
+     */
     public List<IncentiveAndDiscountPolicy> getPolicies() {
         return policies;
     }
@@ -60,9 +63,10 @@ public class ListIncentiveDiscountPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询总条数。
-     * 
-     * @return totalCount */
+    /**
+     * 查询总条数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -100,7 +104,10 @@ public class ListIncentiveDiscountPoliciesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

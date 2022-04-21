@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckpointReplicateParam */
+/**
+ * CheckpointReplicateParam
+ */
 public class CheckpointReplicateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 本次复制是否自动触发，默认为false，代表手动触发
-     * 
-     * @return autoTrigger */
+    /**
+     * 本次复制是否自动触发，默认为false，代表手动触发
+     * @return autoTrigger
+     */
     public Boolean getAutoTrigger() {
         return autoTrigger;
     }
@@ -59,9 +62,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 复制的目标项目ID
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -75,9 +79,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 复制的目标区域id
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域id
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -91,9 +96,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 目标区域存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标区域存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -107,9 +113,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 跨区域复制时，是否启用加速从而缩短复制的时间，如果不指定，默认不启用加速，如果启用加速，会额外收取加速的费用。
-     * 
-     * @return enableAcceleration */
+    /**
+     * 跨区域复制时，是否启用加速从而缩短复制的时间，如果不指定，默认不启用加速，如果启用加速，会额外收取加速的费用。
+     * @return enableAcceleration
+     */
     public Boolean getEnableAcceleration() {
         return enableAcceleration;
     }
@@ -123,9 +130,10 @@ public class CheckpointReplicateParam {
         return this;
     }
 
-    /** 存储库ID: uuid
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID: uuid
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -175,7 +183,10 @@ public class CheckpointReplicateParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

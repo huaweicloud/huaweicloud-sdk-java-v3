@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 任务参数校验参数 */
+/**
+ * 任务参数校验参数
+ */
 public class Constraint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Constraint {
         return this;
     }
 
-    /** 校验规则类型
-     * 
-     * @return type */
+    /**
+     * 校验规则类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -44,9 +47,10 @@ public class Constraint {
         return this;
     }
 
-    /** 校验规则
-     * 
-     * @return value */
+    /**
+     * 校验规则
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -60,9 +64,10 @@ public class Constraint {
         return this;
     }
 
-    /** 校验失败描述
-     * 
-     * @return errormsg */
+    /**
+     * 校验失败描述
+     * @return errormsg
+     */
     public String getErrormsg() {
         return errormsg;
     }
@@ -100,7 +105,10 @@ public class Constraint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

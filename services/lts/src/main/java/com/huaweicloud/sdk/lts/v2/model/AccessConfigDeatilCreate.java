@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 日志接入详细信息 */
+/**
+ * 日志接入详细信息
+ */
 public class AccessConfigDeatilCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class AccessConfigDeatilCreate {
         return this;
     }
 
-    /** 采集路径。 1. 路径必须以/或者字母:\\\\开头 2. 不能包含特殊字符<> ' | \" 且不能只输入/ 3. 第一级目录不支持通配符*：不能以/_** /_*开头 4.**只能出现一次
-     * 
-     * @return paths */
+    /**
+     * 采集路径。 1. 路径必须以/或者字母:\\\\开头 2. 不能包含特殊字符<> ' | \" 且不能只输入/ 3. 第一级目录不支持通配符*：不能以/_**   /_*开头 4.**只能出现一次
+     * @return paths
+     */
     public List<String> getPaths() {
         return paths;
     }
@@ -84,9 +87,10 @@ public class AccessConfigDeatilCreate {
         return this;
     }
 
-    /** 采集路径黑名单。 1. 路径必须以/或者字母:\\\\开头 2. 不能包含特殊字符<> ' | \" 且不能只输入/ 3. 第一级目录不支持通配符*：不能以/_** /_*开头 4.**只能出现一次
-     * 
-     * @return blackPaths */
+    /**
+     * 采集路径黑名单。 1. 路径必须以/或者字母:\\\\开头 2. 不能包含特殊字符<> ' | \" 且不能只输入/ 3. 第一级目录不支持通配符*：不能以/_**   /_*开头 4.**只能出现一次
+     * @return blackPaths
+     */
     public List<String> getBlackPaths() {
         return blackPaths;
     }
@@ -109,9 +113,10 @@ public class AccessConfigDeatilCreate {
         return this;
     }
 
-    /** Get format
-     * 
-     * @return format */
+    /**
+     * Get format
+     * @return format
+     */
     public AccessConfigFormatCreate getFormat() {
         return format;
     }
@@ -135,9 +140,10 @@ public class AccessConfigDeatilCreate {
         return this;
     }
 
-    /** Get windowsLogInfo
-     * 
-     * @return windowsLogInfo */
+    /**
+     * Get windowsLogInfo
+     * @return windowsLogInfo
+     */
     public AccessConfigWindowsLogInfoCreate getWindowsLogInfo() {
         return windowsLogInfo;
     }
@@ -178,7 +184,10 @@ public class AccessConfigDeatilCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

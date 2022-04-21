@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVpcPeeringsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,22 +35,34 @@ public class ListVpcPeeringsRequest {
 
     private String name;
 
-    /** 根据status进行过滤 - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。 */
+    /**
+     * 根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
+     */
     public static final class StatusEnum {
 
-        /** Enum PENDING_ACCEPTANCE for value: "PENDING_ACCEPTANCE" */
+        /**
+         * Enum PENDING_ACCEPTANCE for value: "PENDING_ACCEPTANCE"
+         */
         public static final StatusEnum PENDING_ACCEPTANCE = new StatusEnum("PENDING_ACCEPTANCE");
 
-        /** Enum REJECTED for value: "REJECTED" */
+        /**
+         * Enum REJECTED for value: "REJECTED"
+         */
         public static final StatusEnum REJECTED = new StatusEnum("REJECTED");
 
-        /** Enum EXPIRED for value: "EXPIRED" */
+        /**
+         * Enum EXPIRED for value: "EXPIRED"
+         */
         public static final StatusEnum EXPIRED = new StatusEnum("EXPIRED");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +150,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -152,9 +167,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -168,9 +184,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 按照peering_id过滤查询
-     * 
-     * @return id */
+    /**
+     * 按照peering_id过滤查询
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -184,9 +201,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 功能说明：按照peering_name过查询 取值范围：最大长度不超过64
-     * 
-     * @return name */
+    /**
+     * 功能说明：按照peering_name过查询  取值范围：最大长度不超过64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -200,9 +218,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 根据status进行过滤 - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
-     * 
-     * @return status */
+    /**
+     * 根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -216,9 +235,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 按照项目ID过滤查询
-     * 
-     * @return tenantId */
+    /**
+     * 按照项目ID过滤查询
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -232,9 +252,10 @@ public class ListVpcPeeringsRequest {
         return this;
     }
 
-    /** 根据vpc ID过滤查询
-     * 
-     * @return vpcId */
+    /**
+     * 根据vpc ID过滤查询
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -281,7 +302,10 @@ public class ListVpcPeeringsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StatUsageInfo */
+/**
+ * StatUsageInfo
+ */
 public class StatUsageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StatUsageInfo {
         return this;
     }
 
-    /** 统计时间点，格式为YYYY-MM-DDTHH:MM:SSZ，UTC时间。
-     * 
-     * @return statTime */
+    /**
+     * 统计时间点，格式为YYYY-MM-DDTHH:MM:SSZ，UTC时间。
+     * @return statTime
+     */
     public String getStatTime() {
         return statTime;
     }
@@ -49,9 +52,10 @@ public class StatUsageInfo {
         return this;
     }
 
-    /** 保底带宽。 说明： 该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
-     * 
-     * @return guaranteedBandWidth */
+    /**
+     * 保底带宽。  说明： 该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
+     * @return guaranteedBandWidth
+     */
     public String getGuaranteedBandWidth() {
         return guaranteedBandWidth;
     }
@@ -65,9 +69,10 @@ public class StatUsageInfo {
         return this;
     }
 
-    /** 用量。
-     * 
-     * @return usage */
+    /**
+     * 用量。
+     * @return usage
+     */
     public String getUsage() {
         return usage;
     }
@@ -81,9 +86,10 @@ public class StatUsageInfo {
         return this;
     }
 
-    /** 单位，您可以调用查询度量单位列表接口获取。带宽和用量使用相同的计量单位。
-     * 
-     * @return measureId */
+    /**
+     * 单位，您可以调用查询度量单位列表接口获取。带宽和用量使用相同的计量单位。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -124,7 +130,10 @@ public class StatUsageInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

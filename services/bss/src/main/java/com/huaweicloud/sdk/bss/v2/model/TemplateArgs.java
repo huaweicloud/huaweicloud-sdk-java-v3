@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TemplateArgs */
+/**
+ * TemplateArgs
+ */
 public class TemplateArgs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TemplateArgs {
         return this;
     }
 
-    /** 模板参数名。 目前仅支持sub_customer_name：表明企业主创建企业子的名字
-     * 
-     * @return key */
+    /**
+     * 模板参数名。 目前仅支持sub_customer_name：表明企业主创建企业子的名字
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class TemplateArgs {
         return this;
     }
 
-    /** 模板参数值。 key对应的取值。
-     * 
-     * @return value */
+    /**
+     * 模板参数值。 key对应的取值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class TemplateArgs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

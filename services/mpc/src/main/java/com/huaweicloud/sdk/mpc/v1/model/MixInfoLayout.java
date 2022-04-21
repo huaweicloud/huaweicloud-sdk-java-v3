@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MixInfoLayout */
+/**
+ * MixInfoLayout
+ */
 public class MixInfoLayout {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class MixInfoLayout {
         return this;
     }
 
-    /** 原视频在合成视频中的位置布局配置
-     * 
-     * @return panes */
+    /**
+     * 原视频在合成视频中的位置布局配置
+     * @return panes
+     */
     public List<PaneSetting> getPanes() {
         return panes;
     }
@@ -74,7 +77,10 @@ public class MixInfoLayout {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

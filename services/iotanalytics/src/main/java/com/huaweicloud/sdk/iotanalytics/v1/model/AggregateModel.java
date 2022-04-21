@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 聚合计算 */
+/**
+ * 聚合计算
+ */
 public class AggregateModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class AggregateModel {
         return this;
     }
 
-    /** 输入参数，最多支持10个
-     * 
-     * @return inputs */
+    /**
+     * 输入参数，最多支持10个
+     * @return inputs
+     */
     public List<InputModel> getInputs() {
         return inputs;
     }
@@ -82,9 +85,10 @@ public class AggregateModel {
         return this;
     }
 
-    /** Get expression
-     * 
-     * @return expression */
+    /**
+     * Get expression
+     * @return expression
+     */
     public Expression getExpression() {
         return expression;
     }
@@ -107,9 +111,10 @@ public class AggregateModel {
         return this;
     }
 
-    /** Get schedule
-     * 
-     * @return schedule */
+    /**
+     * Get schedule
+     * @return schedule
+     */
     public DTSchedule getSchedule() {
         return schedule;
     }
@@ -123,9 +128,10 @@ public class AggregateModel {
         return this;
     }
 
-    /** 输出属性名(分析任务单输出场景，配合expression的formula使用)
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名(分析任务单输出场景，配合expression的formula使用)
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -155,9 +161,10 @@ public class AggregateModel {
         return this;
     }
 
-    /** 输出属性，最多支持10个
-     * 
-     * @return outputs */
+    /**
+     * 输出属性，最多支持10个
+     * @return outputs
+     */
     public List<OutputWithModel> getOutputs() {
         return outputs;
     }
@@ -200,7 +207,10 @@ public class AggregateModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

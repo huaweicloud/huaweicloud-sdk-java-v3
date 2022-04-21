@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiLink */
+/**
+ * ApiLink
+ */
 public class ApiLink {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ApiLink {
         return this;
     }
 
-    /** API的URL地址。
-     * 
-     * @return href */
+    /**
+     * API的URL地址。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -39,9 +42,10 @@ public class ApiLink {
         return this;
     }
 
-    /** 默认值self。
-     * 
-     * @return rel */
+    /**
+     * 默认值self。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -77,7 +81,10 @@ public class ApiLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

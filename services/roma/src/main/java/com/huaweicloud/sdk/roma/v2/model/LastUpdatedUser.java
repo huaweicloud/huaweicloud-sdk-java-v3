@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 最后更新时的用户 */
+/**
+ * 最后更新时的用户
+ */
 public class LastUpdatedUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LastUpdatedUser {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -39,9 +42,10 @@ public class LastUpdatedUser {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -78,7 +82,10 @@ public class LastUpdatedUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

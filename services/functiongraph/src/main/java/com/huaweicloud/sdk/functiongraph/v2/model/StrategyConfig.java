@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数策略配置。 */
+/**
+ * 函数策略配置。
+ */
 public class StrategyConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StrategyConfig {
         return this;
     }
 
-    /** 0：函数被禁用;-1：函数被启用。
-     * 
-     * @return concurrency */
+    /**
+     * 0：函数被禁用;-1：函数被启用。
+     * @return concurrency
+     */
     public Integer getConcurrency() {
         return concurrency;
     }
@@ -39,9 +42,10 @@ public class StrategyConfig {
         return this;
     }
 
-    /** 函数并发数
-     * 
-     * @return concurrentNum */
+    /**
+     * 函数并发数
+     * @return concurrentNum
+     */
     public Integer getConcurrentNum() {
         return concurrentNum;
     }
@@ -78,7 +82,10 @@ public class StrategyConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

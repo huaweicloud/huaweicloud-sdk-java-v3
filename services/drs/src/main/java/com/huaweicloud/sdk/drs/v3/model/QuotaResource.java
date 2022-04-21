@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 配额信息 */
+/**
+ * 配额信息
+ */
 public class QuotaResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 配额类型信息
-     * 
-     * @return type */
+    /**
+     * 配额类型信息
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -54,9 +57,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 配额最小取值
-     * 
-     * @return min */
+    /**
+     * 配额最小取值
+     * @return min
+     */
     public Integer getMin() {
         return min;
     }
@@ -70,9 +74,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 配额最大取值
-     * 
-     * @return max */
+    /**
+     * 配额最大取值
+     * @return max
+     */
     public Integer getMax() {
         return max;
     }
@@ -86,9 +91,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 用户配额的实际值
-     * 
-     * @return quota */
+    /**
+     * 用户配额的实际值
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -102,9 +108,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 已使用的配额值
-     * 
-     * @return used */
+    /**
+     * 已使用的配额值
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -145,7 +152,10 @@ public class QuotaResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

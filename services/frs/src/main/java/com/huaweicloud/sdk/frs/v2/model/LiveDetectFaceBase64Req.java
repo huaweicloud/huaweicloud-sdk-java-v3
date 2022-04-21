@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LiveDetectFaceBase64Req */
+/**
+ * LiveDetectFaceBase64Req
+ */
 public class LiveDetectFaceBase64Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class LiveDetectFaceBase64Req {
         return this;
     }
 
-    /** 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB。 • 图片编码格式： JPG、PNG、JPEG、BMP格式的图片。
-     * 
-     * @return imageBase64 */
+    /**
+     * 图像数据，Base64编码，要求： • Base64编码后大小不超过8MB。 • 图片编码格式： JPG、PNG、JPEG、BMP格式的图片。
+     * @return imageBase64
+     */
     public String getImageBase64() {
         return imageBase64;
     }
@@ -55,7 +58,10 @@ public class LiveDetectFaceBase64Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

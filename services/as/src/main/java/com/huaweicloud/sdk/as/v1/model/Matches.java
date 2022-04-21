@@ -25,9 +25,10 @@ public class Matches {
         return this;
     }
 
-    /** 键。暂限定为resource_name。
-     * 
-     * @return key */
+    /**
+     * 键。暂限定为resource_name。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class Matches {
         return this;
     }
 
-    /** 值。为固定字典值。每个值最大长度255个unicode字符。若为空字符串、resource_id时为精确匹配。
-     * 
-     * @return value */
+    /**
+     * 值。为固定字典值。每个值最大长度255个unicode字符。若为空字符串、resource_id时为精确匹配。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class Matches {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RevokeRequestBody */
+/**
+ * RevokeRequestBody
+ */
 public class RevokeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class RevokeRequestBody {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -58,9 +61,10 @@ public class RevokeRequestBody {
         return this;
     }
 
-    /** 解除授权的用户列表。
-     * 
-     * @return users */
+    /**
+     * 解除授权的用户列表。
+     * @return users
+     */
     public List<RevokeRequestBodyUsers> getUsers() {
         return users;
     }
@@ -97,7 +101,10 @@ public class RevokeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

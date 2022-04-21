@@ -7,7 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** event */
+/**
+ * event
+ */
 public class Event {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -155,9 +157,10 @@ public class Event {
         return this;
     }
 
-    /** SA数据对象版本号，数据接入时需携带版本号。版本号由SA服务团队负责更新，数据源只可填写SA给定的版本号。目前版本为1.0.0。
-     * 
-     * @return version */
+    /**
+     * SA数据对象版本号，数据接入时需携带版本号。版本号由SA服务团队负责更新，数据源只可填写SA给定的版本号。目前版本为1.0.0。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -180,9 +183,10 @@ public class Event {
         return this;
     }
 
-    /** Get environment
-     * 
-     * @return environment */
+    /**
+     * Get environment
+     * @return environment
+     */
     public Environment getEnvironment() {
         return environment;
     }
@@ -205,9 +209,10 @@ public class Event {
         return this;
     }
 
-    /** Get dataSource
-     * 
-     * @return dataSource */
+    /**
+     * Get dataSource
+     * @return dataSource
+     */
     public DataSource getDataSource() {
         return dataSource;
     }
@@ -221,9 +226,10 @@ public class Event {
         return this;
     }
 
-    /** 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * 
-     * @return firstObservedTime */
+    /**
+     * 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
+     * @return firstObservedTime
+     */
     public String getFirstObservedTime() {
         return firstObservedTime;
     }
@@ -237,9 +243,10 @@ public class Event {
         return this;
     }
 
-    /** 最新发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * 
-     * @return lastObservedTime */
+    /**
+     * 最新发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
+     * @return lastObservedTime
+     */
     public String getLastObservedTime() {
         return lastObservedTime;
     }
@@ -253,9 +260,10 @@ public class Event {
         return this;
     }
 
-    /** 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * 
-     * @return createTime */
+    /**
+     * 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -269,10 +277,10 @@ public class Event {
         return this;
     }
 
-    /** 数据接收时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * 是指事件数据被SA侧接收的时间，由SA接收时填写，产品上报数据时不用填写。
-     * 
-     * @return arriveTime */
+    /**
+     * 数据接收时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。  是指事件数据被SA侧接收的时间，由SA接收时填写，产品上报数据时不用填写。
+     * @return arriveTime
+     */
     public String getArriveTime() {
         return arriveTime;
     }
@@ -286,9 +294,10 @@ public class Event {
         return this;
     }
 
-    /** 事件唯一标识，UUID格式。
-     * 
-     * @return eventId */
+    /**
+     * 事件唯一标识，UUID格式。
+     * @return eventId
+     */
     public UUID getEventId() {
         return eventId;
     }
@@ -302,9 +311,10 @@ public class Event {
         return this;
     }
 
-    /** 事件标题，最大255字符。
-     * 
-     * @return title */
+    /**
+     * 事件标题，最大255字符。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -318,9 +328,10 @@ public class Event {
         return this;
     }
 
-    /** 事件描述信息，最大1024个字符
-     * 
-     * @return description */
+    /**
+     * 事件描述信息，最大1024个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -334,9 +345,10 @@ public class Event {
         return this;
     }
 
-    /** 事件URL链接，指向数据源产品中有关当前事件说明的页面。
-     * 
-     * @return sourceUrl */
+    /**
+     * 事件URL链接，指向数据源产品中有关当前事件说明的页面。
+     * @return sourceUrl
+     */
     public String getSourceUrl() {
         return sourceUrl;
     }
@@ -350,9 +362,12 @@ public class Event {
         return this;
     }
 
-    /** 事件发生次数，默认为1，必填。 minimum: 1 maximum: 9223372036854775807
-     * 
-     * @return count */
+    /**
+     * 事件发生次数，默认为1，必填。
+     * minimum: 1
+     * maximum: 9223372036854775807
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -366,9 +381,12 @@ public class Event {
         return this;
     }
 
-    /** 事件的置信度。置信度的定义旨在说明识别的行为或问题的可能性。 取值范围：0-100，0表示置信度为0%，100表示置信度为100%。 minimum: 0 maximum: 100
-     * 
-     * @return confidence */
+    /**
+     * 事件的置信度。置信度的定义旨在说明识别的行为或问题的可能性。 取值范围：0-100，0表示置信度为0%，100表示置信度为100%。
+     * minimum: 0
+     * maximum: 100
+     * @return confidence
+     */
     public Integer getConfidence() {
         return confidence;
     }
@@ -391,9 +409,10 @@ public class Event {
         return this;
     }
 
-    /** Get severity
-     * 
-     * @return severity */
+    /**
+     * Get severity
+     * @return severity
+     */
     public Severity getSeverity() {
         return severity;
     }
@@ -407,9 +426,12 @@ public class Event {
         return this;
     }
 
-    /** 关键性，是指事件涉及的资源的重要性级别。 取值范围：0-100，0表示资源不关键，100表示最关键资源。 minimum: 0 maximum: 100
-     * 
-     * @return criticality */
+    /**
+     * 关键性，是指事件涉及的资源的重要性级别。 取值范围：0-100，0表示资源不关键，100表示最关键资源。
+     * minimum: 0
+     * maximum: 100
+     * @return criticality
+     */
     public Integer getCriticality() {
         return criticality;
     }
@@ -432,9 +454,10 @@ public class Event {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public Type getType() {
         return type;
     }
@@ -457,9 +480,10 @@ public class Event {
         return this;
     }
 
-    /** Get compliance
-     * 
-     * @return compliance */
+    /**
+     * Get compliance
+     * @return compliance
+     */
     public Compliance getCompliance() {
         return compliance;
     }
@@ -482,9 +506,10 @@ public class Event {
         return this;
     }
 
-    /** Get network
-     * 
-     * @return network */
+    /**
+     * Get network
+     * @return network
+     */
     public Network getNetwork() {
         return network;
     }
@@ -507,9 +532,10 @@ public class Event {
         return this;
     }
 
-    /** Get vulnerabilityPatch
-     * 
-     * @return vulnerabilityPatch */
+    /**
+     * Get vulnerabilityPatch
+     * @return vulnerabilityPatch
+     */
     public VulnerabilityPatch getVulnerabilityPatch() {
         return vulnerabilityPatch;
     }
@@ -532,9 +558,10 @@ public class Event {
         return this;
     }
 
-    /** Get malware
-     * 
-     * @return malware */
+    /**
+     * Get malware
+     * @return malware
+     */
     public Malware getMalware() {
         return malware;
     }
@@ -557,9 +584,10 @@ public class Event {
         return this;
     }
 
-    /** Get threatIntel
-     * 
-     * @return threatIntel */
+    /**
+     * Get threatIntel
+     * @return threatIntel
+     */
     public ThreatIntel getThreatIntel() {
         return threatIntel;
     }
@@ -582,9 +610,10 @@ public class Event {
         return this;
     }
 
-    /** Get resource
-     * 
-     * @return resource */
+    /**
+     * Get resource
+     * @return resource
+     */
     public Resource getResource() {
         return resource;
     }
@@ -607,9 +636,10 @@ public class Event {
         return this;
     }
 
-    /** Get remediation
-     * 
-     * @return remediation */
+    /**
+     * Get remediation
+     * @return remediation
+     */
     public Remediation getRemediation() {
         return remediation;
     }
@@ -623,10 +653,10 @@ public class Event {
         return this;
     }
 
-    /** 数据源自定义信息，最多支持50个key/value对，约束条件： 1、该对象不能包含冗余数据，并且不能与已定义的SSA事件格式字段冲突。 2、字段名称可以包含字母数字字符、空格和以下符号：_ . / = + \\ - @。
-     * 示例： \"data_source_fields\": { \"key1\": \"value1\", \"key2\", \"value2\", }
-     * 
-     * @return dataSourceFields */
+    /**
+     * 数据源自定义信息，最多支持50个key/value对，约束条件： 1、该对象不能包含冗余数据，并且不能与已定义的SSA事件格式字段冲突。 2、字段名称可以包含字母数字字符、空格和以下符号：_ . / = + \\ - @。 示例： \"data_source_fields\": {     \"key1\": \"value1\",     \"key2\", \"value2\",   }
+     * @return dataSourceFields
+     */
     public Object getDataSourceFields() {
         return dataSourceFields;
     }
@@ -640,9 +670,10 @@ public class Event {
         return this;
     }
 
-    /** 事件验证状态，标识事件的准确性。 Unknown – 未知，默认 True_positive – 确认 False_positive – 误报。
-     * 
-     * @return verificationState */
+    /**
+     * 事件验证状态，标识事件的准确性。 Unknown – 未知，默认 True_positive – 确认 False_positive – 误报。
+     * @return verificationState
+     */
     public String getVerificationState() {
         return verificationState;
     }
@@ -656,9 +687,10 @@ public class Event {
         return this;
     }
 
-    /** 事件处理状态，New/Ignored/Resolved；默认New。
-     * 
-     * @return handleStatus */
+    /**
+     * 事件处理状态，New/Ignored/Resolved；默认New。
+     * @return handleStatus
+     */
     public String getHandleStatus() {
         return handleStatus;
     }
@@ -672,9 +704,10 @@ public class Event {
         return this;
     }
 
-    /** 阶段：Prepartion|Detection and Analysis|Containm，Eradication& Recovery| Post-Incident-Activity。
-     * 
-     * @return phase */
+    /**
+     * 阶段：Prepartion|Detection and Analysis|Containm，Eradication& Recovery| Post-Incident-Activity。
+     * @return phase
+     */
     public String getPhase() {
         return phase;
     }
@@ -688,9 +721,12 @@ public class Event {
         return this;
     }
 
-    /** 约束闭环时间：单位：天。 minimum: 1 maximum: 90
-     * 
-     * @return sla */
+    /**
+     * 约束闭环时间：单位：天。
+     * minimum: 1
+     * maximum: 90
+     * @return sla
+     */
     public Integer getSla() {
         return sla;
     }
@@ -796,7 +832,10 @@ public class Event {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

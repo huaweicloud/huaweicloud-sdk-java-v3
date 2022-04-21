@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 素材信息 */
+/**
+ * 素材信息
+ */
 public class Material {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Material {
         return this;
     }
 
-    /** 素材ID
-     * 
-     * @return id */
+    /**
+     * 素材ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class Material {
         return this;
     }
 
-    /** 更新者
-     * 
-     * @return lastUpdatedBy */
+    /**
+     * 更新者
+     * @return lastUpdatedBy
+     */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -80,9 +84,10 @@ public class Material {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -96,9 +101,10 @@ public class Material {
         return this;
     }
 
-    /** 素材名称
-     * 
-     * @return materialName */
+    /**
+     * 素材名称
+     * @return materialName
+     */
     public String getMaterialName() {
         return materialName;
     }
@@ -112,9 +118,10 @@ public class Material {
         return this;
     }
 
-    /** 素材分辨率
-     * 
-     * @return materialResolution */
+    /**
+     * 素材分辨率
+     * @return materialResolution
+     */
     public String getMaterialResolution() {
         return materialResolution;
     }
@@ -128,9 +135,10 @@ public class Material {
         return this;
     }
 
-    /** 素材大小（含单位）
-     * 
-     * @return materialSizeStr */
+    /**
+     * 素材大小（含单位）
+     * @return materialSizeStr
+     */
     public String getMaterialSizeStr() {
         return materialSizeStr;
     }
@@ -144,9 +152,10 @@ public class Material {
         return this;
     }
 
-    /** 素材云盘存储文件下载地址
-     * 
-     * @return filePath */
+    /**
+     * 素材云盘存储文件下载地址
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -192,7 +201,10 @@ public class Material {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

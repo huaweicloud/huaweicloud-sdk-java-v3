@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。 */
+/**
+ * start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。
+ */
 public class DefectFragmentV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DefectFragmentV2 {
         return this;
     }
 
-    /** 行号
-     * 
-     * @return lineNum */
+    /**
+     * 行号
+     * @return lineNum
+     */
     public String getLineNum() {
         return lineNum;
     }
@@ -49,9 +52,10 @@ public class DefectFragmentV2 {
         return this;
     }
 
-    /** 该行代码内容
-     * 
-     * @return lineContent */
+    /**
+     * 该行代码内容
+     * @return lineContent
+     */
     public String getLineContent() {
         return lineContent;
     }
@@ -65,9 +69,10 @@ public class DefectFragmentV2 {
         return this;
     }
 
-    /** 缺陷开始列号
-     * 
-     * @return startOffset */
+    /**
+     * 缺陷开始列号
+     * @return startOffset
+     */
     public Integer getStartOffset() {
         return startOffset;
     }
@@ -81,9 +86,10 @@ public class DefectFragmentV2 {
         return this;
     }
 
-    /** 缺陷结束列号
-     * 
-     * @return endOffset */
+    /**
+     * 缺陷结束列号
+     * @return endOffset
+     */
     public Integer getEndOffset() {
         return endOffset;
     }
@@ -124,7 +130,10 @@ public class DefectFragmentV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

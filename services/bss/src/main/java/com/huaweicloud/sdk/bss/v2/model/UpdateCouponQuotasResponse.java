@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateCouponQuotasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
         return this;
     }
 
-    /** 发放失败的精英服务商额度信息，具体参见表1，只有HTTP STATUS 200的时候才有这个结构体。
-     * 
-     * @return errorDetails */
+    /**
+     * 发放失败的精英服务商额度信息，具体参见表1，只有HTTP STATUS 200的时候才有这个结构体。
+     * @return errorDetails
+     */
     public List<ErrorDetail> getErrorDetails() {
         return errorDetails;
     }
@@ -75,9 +78,10 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
         return this;
     }
 
-    /** 发放成功的精英服务商额度信息，具体参见表2，只有HTTP STATUS 200的时候才有这个结构体。
-     * 
-     * @return simpleQuotaInfos */
+    /**
+     * 发放成功的精英服务商额度信息，具体参见表2，只有HTTP STATUS 200的时候才有这个结构体。
+     * @return simpleQuotaInfos
+     */
     public List<QuotaSimpleInfo> getSimpleQuotaInfos() {
         return simpleQuotaInfos;
     }
@@ -114,7 +118,10 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

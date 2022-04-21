@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListHistoryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListHistoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 时间序列
-     * 
-     * @return timestamps */
+    /**
+     * 时间序列
+     * @return timestamps
+     */
     public List<String> getTimestamps() {
         return timestamps;
     }
@@ -75,9 +78,10 @@ public class ListHistoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询设备的属性值
-     * 
-     * @return properties */
+    /**
+     * 查询设备的属性值
+     * @return properties
+     */
     public List<HistoryValues> getProperties() {
         return properties;
     }
@@ -114,7 +118,10 @@ public class ListHistoryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

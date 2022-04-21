@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateParametersForImportResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class CreateParametersForImportResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -50,9 +53,10 @@ public class CreateParametersForImportResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥导入令牌。
-     * 
-     * @return importToken */
+    /**
+     * 密钥导入令牌。
+     * @return importToken
+     */
     public String getImportToken() {
         return importToken;
     }
@@ -66,9 +70,12 @@ public class CreateParametersForImportResponse extends SdkResponse {
         return this;
     }
 
-    /** 导入参数到期时间，时间戳，即从1970年1月1日至该时间的总秒数。 minimum: 0 maximum: 10000000000
-     * 
-     * @return expirationTime */
+    /**
+     * 导入参数到期时间，时间戳，即从1970年1月1日至该时间的总秒数。
+     * minimum: 0
+     * maximum: 10000000000
+     * @return expirationTime
+     */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -82,9 +89,10 @@ public class CreateParametersForImportResponse extends SdkResponse {
         return this;
     }
 
-    /** 加密密钥材料的公钥，base64格式。
-     * 
-     * @return publicKey */
+    /**
+     * 加密密钥材料的公钥，base64格式。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -125,7 +133,10 @@ public class CreateParametersForImportResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

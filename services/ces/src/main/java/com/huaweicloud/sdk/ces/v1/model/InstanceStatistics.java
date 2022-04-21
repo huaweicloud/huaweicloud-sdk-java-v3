@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 资源分组中的资源信息统计。 */
+/**
+ * 资源分组中的资源信息统计。
+ */
 public class InstanceStatistics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class InstanceStatistics {
         return this;
     }
 
-    /** 该资源分组中当前处在告警状态的资源个数。
-     * 
-     * @return unhealth */
+    /**
+     * 该资源分组中当前处在告警状态的资源个数。
+     * @return unhealth
+     */
     public Integer getUnhealth() {
         return unhealth;
     }
@@ -44,9 +47,10 @@ public class InstanceStatistics {
         return this;
     }
 
-    /** 该资源分组中资源的总个数。
-     * 
-     * @return total */
+    /**
+     * 该资源分组中资源的总个数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -60,9 +64,10 @@ public class InstanceStatistics {
         return this;
     }
 
-    /** 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。
-     * 
-     * @return typeStatistics */
+    /**
+     * 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。
+     * @return typeStatistics
+     */
     public Integer getTypeStatistics() {
         return typeStatistics;
     }
@@ -101,7 +106,10 @@ public class InstanceStatistics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

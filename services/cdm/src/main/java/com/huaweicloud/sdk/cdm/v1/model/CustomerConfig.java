@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户配置信息 */
+/**
+ * 用户配置信息
+ */
 public class CustomerConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 失败提醒。
-     * 
-     * @return failureRemind */
+    /**
+     * 失败提醒。
+     * @return failureRemind
+     */
     public String getFailureRemind() {
         return failureRemind;
     }
@@ -79,9 +82,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 集群类型。
-     * 
-     * @return clusterName */
+    /**
+     * 集群类型。
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -95,9 +99,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 服务提供
-     * 
-     * @return serviceProvider */
+    /**
+     * 服务提供
+     * @return serviceProvider
+     */
     public String getServiceProvider() {
         return serviceProvider;
     }
@@ -111,9 +116,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 是否本地磁盘。
-     * 
-     * @return localDisk */
+    /**
+     * 是否本地磁盘。
+     * @return localDisk
+     */
     public String getLocalDisk() {
         return localDisk;
     }
@@ -127,9 +133,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 是否使用ssl。
-     * 
-     * @return ssl */
+    /**
+     * 是否使用ssl。
+     * @return ssl
+     */
     public String getSsl() {
         return ssl;
     }
@@ -143,9 +150,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 创建来源
-     * 
-     * @return createFrom */
+    /**
+     * 创建来源
+     * @return createFrom
+     */
     public String getCreateFrom() {
         return createFrom;
     }
@@ -159,9 +167,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -175,9 +184,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 规格类型
-     * 
-     * @return flavorType */
+    /**
+     * 规格类型
+     * @return flavorType
+     */
     public String getFlavorType() {
         return flavorType;
     }
@@ -191,9 +201,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 工作空间ID
-     * 
-     * @return workSpaceId */
+    /**
+     * 工作空间ID
+     * @return workSpaceId
+     */
     public String getWorkSpaceId() {
         return workSpaceId;
     }
@@ -207,9 +218,10 @@ public class CustomerConfig {
         return this;
     }
 
-    /** 适用
-     * 
-     * @return trial */
+    /**
+     * 适用
+     * @return trial
+     */
     public String getTrial() {
         return trial;
     }
@@ -270,7 +282,10 @@ public class CustomerConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

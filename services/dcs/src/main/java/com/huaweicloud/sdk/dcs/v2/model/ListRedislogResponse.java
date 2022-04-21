@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRedislogResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListRedislogResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数
-     * 
-     * @return totalNum */
+    /**
+     * 总数
+     * @return totalNum
+     */
     public Integer getTotalNum() {
         return totalNum;
     }
@@ -59,9 +62,10 @@ public class ListRedislogResponse extends SdkResponse {
         return this;
     }
 
-    /** 运行日志列表
-     * 
-     * @return fileList */
+    /**
+     * 运行日志列表
+     * @return fileList
+     */
     public List<RunlogItem> getFileList() {
         return fileList;
     }
@@ -98,7 +102,10 @@ public class ListRedislogResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

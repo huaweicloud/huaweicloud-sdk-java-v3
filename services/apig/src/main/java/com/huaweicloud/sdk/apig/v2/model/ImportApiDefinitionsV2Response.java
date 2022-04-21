@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ImportApiDefinitionsV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 导入成功信息
-     * 
-     * @return success */
+    /**
+     * 导入成功信息
+     * @return success
+     */
     public List<Success> getSuccess() {
         return success;
     }
@@ -90,9 +93,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 导入失败信息
-     * 
-     * @return failure */
+    /**
+     * 导入失败信息
+     * @return failure
+     */
     public List<Failure> getFailure() {
         return failure;
     }
@@ -115,9 +119,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    /** Get swagger
-     * 
-     * @return swagger */
+    /**
+     * Get swagger
+     * @return swagger
+     */
     public Swagger getSwagger() {
         return swagger;
     }
@@ -131,9 +136,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    /** API分组编号
-     * 
-     * @return groupId */
+    /**
+     * API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -163,9 +169,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    /** 被忽略导入的API信息
-     * 
-     * @return ignore */
+    /**
+     * 被忽略导入的API信息
+     * @return ignore
+     */
     public List<Ignore> getIgnore() {
         return ignore;
     }
@@ -208,7 +215,10 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

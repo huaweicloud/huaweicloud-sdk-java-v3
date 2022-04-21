@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 专属主机结构体。 */
+/**
+ * 专属主机结构体。
+ */
 public class RespDedicatedHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class RespDedicatedHost {
 
     private String name;
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。
+     */
     public static final class AutoPlacementEnum {
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final AutoPlacementEnum ON = new AutoPlacementEnum("on");
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final AutoPlacementEnum OFF = new AutoPlacementEnum("off");
 
         private static final Map<String, AutoPlacementEnum> STATIC_FIELDS = createStaticFields();
@@ -117,16 +125,24 @@ public class RespDedicatedHost {
 
     private RespHostProperty hostProperties;
 
-    /** 专属主机状态。 */
+    /**
+     * 专属主机状态。
+     */
     public static final class StateEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StateEnum AVAILABLE = new StateEnum("available");
 
-        /** Enum RELEASED for value: "released" */
+        /**
+         * Enum RELEASED for value: "released"
+         */
         public static final StateEnum RELEASED = new StateEnum("released");
 
-        /** Enum FAULT for value: "fault" */
+        /**
+         * Enum FAULT for value: "fault"
+         */
         public static final StateEnum FAULT = new StateEnum("fault");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -242,9 +258,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机ID。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -258,9 +275,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机的名称。 长度限制在255个字符以内，并且不能以空格开头或结尾。
-     * 
-     * @return name */
+    /**
+     * 专属主机的名称。  长度限制在255个字符以内，并且不能以空格开头或结尾。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -274,9 +292,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。
-     * 
-     * @return autoPlacement */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。
+     * @return autoPlacement
+     */
     public AutoPlacementEnum getAutoPlacement() {
         return autoPlacement;
     }
@@ -290,9 +309,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机所属的可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 专属主机所属的可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -306,9 +326,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机所属的租户ID。
-     * 
-     * @return projectId */
+    /**
+     * 专属主机所属的租户ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -331,9 +352,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** Get hostProperties
-     * 
-     * @return hostProperties */
+    /**
+     * Get hostProperties
+     * @return hostProperties
+     */
     public RespHostProperty getHostProperties() {
         return hostProperties;
     }
@@ -347,9 +369,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机状态。
-     * 
-     * @return state */
+    /**
+     * 专属主机状态。
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -363,9 +386,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机可用的vCPU核数。
-     * 
-     * @return availableVcpus */
+    /**
+     * 专属主机可用的vCPU核数。
+     * @return availableVcpus
+     */
     public Integer getAvailableVcpus() {
         return availableVcpus;
     }
@@ -379,9 +403,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机可用的内存大小。
-     * 
-     * @return availableMemory */
+    /**
+     * 专属主机可用的内存大小。
+     * @return availableMemory
+     */
     public Integer getAvailableMemory() {
         return availableMemory;
     }
@@ -395,9 +420,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机的分配时间。
-     * 
-     * @return allocatedAt */
+    /**
+     * 专属主机的分配时间。
+     * @return allocatedAt
+     */
     public String getAllocatedAt() {
         return allocatedAt;
     }
@@ -411,9 +437,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机的释放时间。
-     * 
-     * @return releasedAt */
+    /**
+     * 专属主机的释放时间。
+     * @return releasedAt
+     */
     public String getReleasedAt() {
         return releasedAt;
     }
@@ -427,9 +454,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机上的实例总数。
-     * 
-     * @return instanceTotal */
+    /**
+     * 专属主机上的实例总数。
+     * @return instanceTotal
+     */
     public Integer getInstanceTotal() {
         return instanceTotal;
     }
@@ -459,9 +487,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机上的实例UUID。 查询专属主机列表接口不显示此参数。
-     * 
-     * @return instanceUuids */
+    /**
+     * 专属主机上的实例UUID。  查询专属主机列表接口不显示此参数。
+     * @return instanceUuids
+     */
     public List<String> getInstanceUuids() {
         return instanceUuids;
     }
@@ -475,9 +504,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机标签。
-     * 
-     * @return tags */
+    /**
+     * 专属主机标签。
+     * @return tags
+     */
     public Object getTags() {
         return tags;
     }
@@ -491,9 +521,10 @@ public class RespDedicatedHost {
         return this;
     }
 
-    /** 专属主机系统标签。
-     * 
-     * @return sysTags */
+    /**
+     * 专属主机系统标签。
+     * @return sysTags
+     */
     public Object getSysTags() {
         return sysTags;
     }
@@ -570,7 +601,10 @@ public class RespDedicatedHost {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

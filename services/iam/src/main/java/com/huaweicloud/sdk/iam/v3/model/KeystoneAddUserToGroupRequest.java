@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class KeystoneAddUserToGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class KeystoneAddUserToGroupRequest {
         return this;
     }
 
-    /** 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return groupId */
+    /**
+     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -39,9 +42,10 @@ public class KeystoneAddUserToGroupRequest {
         return this;
     }
 
-    /** 待添加的IAM用户ID，获取方式请参见：[获取IAM用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return userId */
+    /**
+     * 待添加的IAM用户ID，获取方式请参见：[获取IAM用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -78,7 +82,10 @@ public class KeystoneAddUserToGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

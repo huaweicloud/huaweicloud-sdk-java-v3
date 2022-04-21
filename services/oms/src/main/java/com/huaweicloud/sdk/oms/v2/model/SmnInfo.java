@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** smn 消息通知结果 */
+/**
+ * smn 消息通知结果
+ */
 public class SmnInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class SmnInfo {
         return this;
     }
 
-    /** 记录迁移任务执行完毕后SMN消息是否发送成功。
-     * 
-     * @return notifyResult */
+    /**
+     * 记录迁移任务执行完毕后SMN消息是否发送成功。
+     * @return notifyResult
+     */
     public Boolean getNotifyResult() {
         return notifyResult;
     }
@@ -44,9 +47,10 @@ public class SmnInfo {
         return this;
     }
 
-    /** 记录SMN消息发送失败原因的错误码（迁移任务成功时为空）。
-     * 
-     * @return notifyErrorMessage */
+    /**
+     * 记录SMN消息发送失败原因的错误码（迁移任务成功时为空）。
+     * @return notifyErrorMessage
+     */
     public String getNotifyErrorMessage() {
         return notifyErrorMessage;
     }
@@ -60,9 +64,10 @@ public class SmnInfo {
         return this;
     }
 
-    /** SMN Topic的名称（SMN消息发送成功时为空）。
-     * 
-     * @return topicName */
+    /**
+     * SMN Topic的名称（SMN消息发送成功时为空）。
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -101,7 +106,10 @@ public class SmnInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

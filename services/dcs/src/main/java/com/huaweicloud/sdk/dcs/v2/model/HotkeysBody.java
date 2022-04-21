@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 热key记录结构体 */
+/**
+ * 热key记录结构体
+ */
 public class HotkeysBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class HotkeysBody {
 
     private String name;
 
-    /** key类型 */
+    /**
+     * key类型
+     */
     public static final class TypeEnum {
 
-        /** Enum STRING for value: "string" */
+        /**
+         * Enum STRING for value: "string"
+         */
         public static final TypeEnum STRING = new TypeEnum("string");
 
-        /** Enum LIST for value: "list" */
+        /**
+         * Enum LIST for value: "list"
+         */
         public static final TypeEnum LIST = new TypeEnum("list");
 
-        /** Enum SET for value: "set" */
+        /**
+         * Enum SET for value: "set"
+         */
         public static final TypeEnum SET = new TypeEnum("set");
 
-        /** Enum ZSET for value: "zset" */
+        /**
+         * Enum ZSET for value: "zset"
+         */
         public static final TypeEnum ZSET = new TypeEnum("zset");
 
-        /** Enum HASH for value: "hash" */
+        /**
+         * Enum HASH for value: "hash"
+         */
         public static final TypeEnum HASH = new TypeEnum("hash");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +150,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** key名称
-     * 
-     * @return name */
+    /**
+     * key名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -152,9 +167,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** key类型
-     * 
-     * @return type */
+    /**
+     * key类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -168,9 +184,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** 热key所在的分片，仅在实例类型为集群时支持,格式为ip:port
-     * 
-     * @return shard */
+    /**
+     * 热key所在的分片，仅在实例类型为集群时支持,格式为ip:port
+     * @return shard
+     */
     public String getShard() {
         return shard;
     }
@@ -184,9 +201,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** 热key所在的db
-     * 
-     * @return db */
+    /**
+     * 热key所在的db
+     * @return db
+     */
     public Integer getDb() {
         return db;
     }
@@ -200,9 +218,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** key的value大小。
-     * 
-     * @return size */
+    /**
+     * key的value大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -216,9 +235,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
-     * 
-     * @return unit */
+    /**
+     * key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -232,10 +252,10 @@ public class HotkeysBody {
         return this;
     }
 
-    /** 表示某个key在一段时间的访问频度，会随着访问的频率而变化。
-     * 该值并不是简单的访问频率值，而是一个基于概率的对数计数器结果，最大为255(可表示100万次访问)，超过255后如果继续频繁访问该值并不会继续增大，同时默认如果每过一分钟没有访问，该值会衰减1。
-     * 
-     * @return freq */
+    /**
+     * 表示某个key在一段时间的访问频度，会随着访问的频率而变化。  该值并不是简单的访问频率值，而是一个基于概率的对数计数器结果，最大为255(可表示100万次访问)，超过255后如果继续频繁访问该值并不会继续增大，同时默认如果每过一分钟没有访问，该值会衰减1。 
+     * @return freq
+     */
     public Integer getFreq() {
         return freq;
     }
@@ -279,7 +299,10 @@ public class HotkeysBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

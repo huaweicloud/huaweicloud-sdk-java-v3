@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,9 +96,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件实例ID。
-     * 
-     * @return id */
+    /**
+     * 应用组件实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -110,9 +113,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件实例名称。
-     * 
-     * @return name */
+    /**
+     * 应用组件实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -126,9 +130,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例描述。
-     * 
-     * @return description */
+    /**
+     * 实例描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -142,9 +147,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件环境ID。
-     * 
-     * @return environmentId */
+    /**
+     * 应用组件环境ID。
+     * @return environmentId
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -158,9 +164,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get platformType
-     * 
-     * @return platformType */
+    /**
+     * Get platformType
+     * @return platformType
+     */
     public InstancePlatformType getPlatformType() {
         return platformType;
     }
@@ -174,9 +181,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get flavorId
-     * 
-     * @return flavorId */
+    /**
+     * Get flavorId
+     * @return flavorId
+     */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -206,9 +214,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * 
-     * @return artifacts */
+    /**
+     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * @return artifacts
+     */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -222,9 +231,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件版本号。
-     * 
-     * @return version */
+    /**
+     * 应用组件版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -238,9 +248,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用组件配置，如环境变量。
-     * 
-     * @return _configuration */
+    /**
+     * 应用组件配置，如环境变量。
+     * @return _configuration
+     */
     public Object getConfiguration() {
         return _configuration;
     }
@@ -254,9 +265,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建人。
-     * 
-     * @return creator */
+    /**
+     * 创建人。
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -270,9 +282,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -286,9 +299,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -318,9 +332,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问方式列表。
-     * 
-     * @return externalAccesses */
+    /**
+     * 访问方式列表。
+     * @return externalAccesses
+     */
     public List<ExternalAccesses> getExternalAccesses() {
         return externalAccesses;
     }
@@ -350,9 +365,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署资源列表。
-     * 
-     * @return referResources */
+    /**
+     * 部署资源列表。
+     * @return referResources
+     */
     public List<ReferResources> getReferResources() {
         return referResources;
     }
@@ -375,9 +391,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get statusDetail
-     * 
-     * @return statusDetail */
+    /**
+     * Get statusDetail
+     * @return statusDetail
+     */
     public InstanceStatusView getStatusDetail() {
         return statusDetail;
     }
@@ -454,7 +471,10 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

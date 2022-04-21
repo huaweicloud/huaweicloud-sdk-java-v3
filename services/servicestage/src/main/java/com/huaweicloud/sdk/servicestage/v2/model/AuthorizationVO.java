@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 授权结构体。 */
+/**
+ * 授权结构体。
+ */
 public class AuthorizationVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return name */
+    /**
+     * 授权名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +82,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket、devcloud。
-     * 
-     * @return repoType */
+    /**
+     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket、devcloud。 
+     * @return repoType
+     */
     public String getRepoType() {
         return repoType;
     }
@@ -95,9 +99,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 仓库地址。
-     * 
-     * @return repoHost */
+    /**
+     * 仓库地址。
+     * @return repoHost
+     */
     public String getRepoHost() {
         return repoHost;
     }
@@ -111,9 +116,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 仓库主页。
-     * 
-     * @return repoHome */
+    /**
+     * 仓库主页。
+     * @return repoHome
+     */
     public String getRepoHome() {
         return repoHome;
     }
@@ -127,9 +133,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 仓库用户名。
-     * 
-     * @return repoUser */
+    /**
+     * 仓库用户名。
+     * @return repoUser
+     */
     public String getRepoUser() {
         return repoUser;
     }
@@ -143,9 +150,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 头像。
-     * 
-     * @return avartar */
+    /**
+     * 头像。
+     * @return avartar
+     */
     public String getAvartar() {
         return avartar;
     }
@@ -159,9 +167,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 授权方式。
-     * 
-     * @return tokenType */
+    /**
+     * 授权方式。
+     * @return tokenType
+     */
     public String getTokenType() {
         return tokenType;
     }
@@ -175,9 +184,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -191,9 +201,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -207,9 +218,10 @@ public class AuthorizationVO {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -263,7 +275,10 @@ public class AuthorizationVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

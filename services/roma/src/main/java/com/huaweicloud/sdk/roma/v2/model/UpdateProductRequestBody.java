@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateProductRequestBody */
+/**
+ * UpdateProductRequestBody
+ */
 public class UpdateProductRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 产品名称，创建产品时租户内唯一，长度1-64，仅支持中文，英文字母，数字，下划线和中划线
-     * 
-     * @return name */
+    /**
+     * 产品名称，创建产品时租户内唯一，长度1-64，仅支持中文，英文字母，数字，下划线和中划线
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 产品描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 产品描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,9 +84,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 产品供应商ID，支持英文大小写，数字，下划线和中划线，长度2-50
-     * 
-     * @return manufacturerId */
+    /**
+     * 产品供应商ID，支持英文大小写，数字，下划线和中划线，长度2-50
+     * @return manufacturerId
+     */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -96,9 +101,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 厂商名称，支持长度2-64
-     * 
-     * @return manufacturerName */
+    /**
+     * 厂商名称，支持长度2-64
+     * @return manufacturerName
+     */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -112,9 +118,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 产品型号，支持英文大小写，数字，下划线，中划线和空格(首尾空格会被忽略)，长度2-50
-     * 
-     * @return model */
+    /**
+     * 产品型号，支持英文大小写，数字，下划线，中划线和空格(首尾空格会被忽略)，长度2-50
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -128,9 +135,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 产品的设备类型（默认Default Type）
-     * 
-     * @return deviceType */
+    /**
+     * 产品的设备类型（默认Default Type）
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -144,9 +152,10 @@ public class UpdateProductRequestBody {
         return this;
     }
 
-    /** 模型版本
-     * 
-     * @return version */
+    /**
+     * 模型版本
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -193,7 +202,10 @@ public class UpdateProductRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

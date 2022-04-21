@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 用户的角色信息 */
+/**
+ * 用户的角色信息
+ */
 public class UserRoleVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 角色
-     * 
-     * @return role */
+    /**
+     * 角色
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -62,9 +65,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 说明
-     * 
-     * @return comment */
+    /**
+     * 说明
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -78,9 +82,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 是否支持迁移。
-     * 
-     * @return isTransfer */
+    /**
+     * 是否支持迁移。
+     * @return isTransfer
+     */
     public Boolean getIsTransfer() {
         return isTransfer;
     }
@@ -94,9 +99,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return privileges */
+    /**
+     * 权限
+     * @return privileges
+     */
     public String getPrivileges() {
         return privileges;
     }
@@ -126,9 +132,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 继承角色列表
-     * 
-     * @return inheritsRoles */
+    /**
+     * 继承角色列表
+     * @return inheritsRoles
+     */
     public List<String> getInheritsRoles() {
         return inheritsRoles;
     }
@@ -142,9 +149,10 @@ public class UserRoleVO {
         return this;
     }
 
-    /** 是否选择。
-     * 
-     * @return selected */
+    /**
+     * 是否选择。
+     * @return selected
+     */
     public Boolean getSelected() {
         return selected;
     }
@@ -188,7 +196,10 @@ public class UserRoleVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

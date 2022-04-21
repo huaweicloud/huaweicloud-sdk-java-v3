@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库帐号名称。 数据库帐号名称在1到128个字符之间，不能和系统用户名称相同。 系统用户包括：rdsadmin, rdsuser, rdsbackup, rdsmirror。 */
+/**
+ * 数据库帐号名称。  数据库帐号名称在1到128个字符之间，不能和系统用户名称相同。  系统用户包括：rdsadmin, rdsuser, rdsbackup, rdsmirror。
+ */
 public class SqlserverUserWithPrivilege {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SqlserverUserWithPrivilege {
         return this;
     }
 
-    /** 数据库帐号名称。
-     * 
-     * @return name */
+    /**
+     * 数据库帐号名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class SqlserverUserWithPrivilege {
         return this;
     }
 
-    /** 是否为只读权限。
-     * 
-     * @return readonly */
+    /**
+     * 是否为只读权限。
+     * @return readonly
+     */
     public Boolean getReadonly() {
         return readonly;
     }
@@ -78,7 +82,10 @@ public class SqlserverUserWithPrivilege {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

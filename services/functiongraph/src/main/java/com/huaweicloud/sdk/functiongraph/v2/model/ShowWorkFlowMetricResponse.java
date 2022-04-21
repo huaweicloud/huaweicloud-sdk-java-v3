@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowWorkFlowMetricResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行次数
-     * 
-     * @return count */
+    /**
+     * 执行次数
+     * @return count
+     */
     public List<SlaReportsValue> getCount() {
         return count;
     }
@@ -85,9 +88,10 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
         return this;
     }
 
-    /** 平均时延，单位毫秒
-     * 
-     * @return duration */
+    /**
+     * 平均时延，单位毫秒
+     * @return duration
+     */
     public List<SlaReportsValue> getDuration() {
         return duration;
     }
@@ -117,9 +121,10 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误次数
-     * 
-     * @return failCount */
+    /**
+     * 错误次数
+     * @return failCount
+     */
     public List<SlaReportsValue> getFailCount() {
         return failCount;
     }
@@ -149,9 +154,10 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
         return this;
     }
 
-    /** 运行中数量
-     * 
-     * @return runningCount */
+    /**
+     * 运行中数量
+     * @return runningCount
+     */
     public List<SlaReportsValue> getRunningCount() {
         return runningCount;
     }
@@ -192,7 +198,10 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

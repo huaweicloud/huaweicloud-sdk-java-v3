@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 正在处理的任务详细信息。 */
+/**
+ * 正在处理的任务详细信息。
+ */
 public class RunningTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class RunningTasks {
 
     private String taskId;
 
-    /** 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑 */
+    /**
+     * 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
+     */
     public static final class OperateTypeEnum {
 
-        /** Enum FAILED_RESET for value: "FAILED_RESET" */
+        /**
+         * Enum FAILED_RESET for value: "FAILED_RESET"
+         */
         public static final OperateTypeEnum FAILED_RESET = new OperateTypeEnum("FAILED_RESET");
 
-        /** Enum FAILED_REPLACE for value: "FAILED_REPLACE" */
+        /**
+         * Enum FAILED_REPLACE for value: "FAILED_REPLACE"
+         */
         public static final OperateTypeEnum FAILED_REPLACE = new OperateTypeEnum("FAILED_REPLACE");
 
-        /** Enum FAILED_UNBIND for value: "FAILED_UNBIND" */
+        /**
+         * Enum FAILED_UNBIND for value: "FAILED_UNBIND"
+         */
         public static final OperateTypeEnum FAILED_UNBIND = new OperateTypeEnum("FAILED_UNBIND");
 
         private static final Map<String, OperateTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 虚拟机ID
-     * 
-     * @return taskId */
+    /**
+     * 虚拟机ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -139,9 +150,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
-     * 
-     * @return operateType */
+    /**
+     * 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
+     * @return operateType
+     */
     public OperateTypeEnum getOperateType() {
         return operateType;
     }
@@ -155,9 +167,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 任务时间
-     * 
-     * @return taskTime */
+    /**
+     * 任务时间
+     * @return taskTime
+     */
     public String getTaskTime() {
         return taskTime;
     }
@@ -171,9 +184,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 虚拟机名称
-     * 
-     * @return serverName */
+    /**
+     * 虚拟机名称
+     * @return serverName
+     */
     public String getServerName() {
         return serverName;
     }
@@ -187,9 +201,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 虚拟机ID
-     * 
-     * @return serverId */
+    /**
+     * 虚拟机ID
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -203,9 +218,10 @@ public class RunningTasks {
         return this;
     }
 
-    /** 密钥对名称
-     * 
-     * @return keypairName */
+    /**
+     * 密钥对名称
+     * @return keypairName
+     */
     public String getKeypairName() {
         return keypairName;
     }
@@ -250,7 +266,10 @@ public class RunningTasks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

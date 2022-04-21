@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateAssetNewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +94,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产ID
-     * 
-     * @return assetId */
+    /**
+     * 资产ID
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -108,9 +111,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产模型ID
-     * 
-     * @return assetModelId */
+    /**
+     * 资产模型ID
+     * @return assetModelId
+     */
     public String getAssetModelId() {
         return assetModelId;
     }
@@ -124,9 +128,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产模型名称
-     * 
-     * @return assetModelName */
+    /**
+     * 资产模型名称
+     * @return assetModelName
+     */
     public String getAssetModelName() {
         return assetModelName;
     }
@@ -140,9 +145,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产名称
-     * 
-     * @return name */
+    /**
+     * 资产名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -156,9 +162,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产显示名称
-     * 
-     * @return displayName */
+    /**
+     * 资产显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -188,9 +195,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 属性集
-     * 
-     * @return properties */
+    /**
+     * 属性集
+     * @return properties
+     */
     public List<PropertyResponse> getProperties() {
         return properties;
     }
@@ -220,9 +228,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 分析任务集
-     * 
-     * @return analyses */
+    /**
+     * 分析任务集
+     * @return analyses
+     */
     public List<AnalysisResponse> getAnalyses() {
         return analyses;
     }
@@ -236,9 +245,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 根资产ID
-     * 
-     * @return root */
+    /**
+     * 根资产ID
+     * @return root
+     */
     public String getRoot() {
         return root;
     }
@@ -252,9 +262,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 父资产ID，根资产的父资产ID为null
-     * 
-     * @return parent */
+    /**
+     * 父资产ID，根资产的父资产ID为null
+     * @return parent
+     */
     public String getParent() {
         return parent;
     }
@@ -284,9 +295,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 子资产ID集
-     * 
-     * @return children */
+    /**
+     * 子资产ID集
+     * @return children
+     */
     public List<String> getChildren() {
         return children;
     }
@@ -300,9 +312,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产状态，正常状态（ACTIVE），异常状态（INACTIVE）；只有草稿态（SKETCH）资产有此状态；资产处于异常状态的场景有：1、该资产存在未填写设备ID的测量数据类别的属性；2、该资产存在未填写静态值的静态配置类别的属性；3、该资产存在分析任务，该分析任务的输入参数存在属性引用类型为引用其他资产属性，且没有为该输入参数配置引用的其他资产的资产ID
-     * 
-     * @return state */
+    /**
+     * 资产状态，正常状态（ACTIVE），异常状态（INACTIVE）；只有草稿态（SKETCH）资产有此状态；资产处于异常状态的场景有：1、该资产存在未填写设备ID的测量数据类别的属性；2、该资产存在未填写静态值的静态配置类别的属性；3、该资产存在分析任务，该分析任务的输入参数存在属性引用类型为引用其他资产属性，且没有为该输入参数配置引用的其他资产的资产ID
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -316,9 +329,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 资产发布状态，发布中（PUBLISHING），发布完成（PUBLISHED）；只能对草稿态（SKETCH）的根资产进行发布，也只有草稿态的根资产有此字段；如果根资产从未发布过则值为null
-     * 
-     * @return publishState */
+    /**
+     * 资产发布状态，发布中（PUBLISHING），发布完成（PUBLISHED）；只能对草稿态（SKETCH）的根资产进行发布，也只有草稿态的根资产有此字段；如果根资产从未发布过则值为null
+     * @return publishState
+     */
     public String getPublishState() {
         return publishState;
     }
@@ -332,9 +346,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间，格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -348,9 +363,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间，格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间，格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -364,9 +380,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return this;
     }
 
-    /** 发布时间，只能对草稿态（SKETCH）的根资产进行发布，也只有草稿态的根资产有此字段；如果从未发布过则值为null；格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
-     * 
-     * @return publishedTime */
+    /**
+     * 发布时间，只能对草稿态（SKETCH）的根资产进行发布，也只有草稿态的根资产有此字段；如果从未发布过则值为null；格式\"yyyy-MM-dd'T'HH:mm:ss'Z'\"
+     * @return publishedTime
+     */
     public String getPublishedTime() {
         return publishedTime;
     }
@@ -443,7 +460,10 @@ public class UpdateAssetNewResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

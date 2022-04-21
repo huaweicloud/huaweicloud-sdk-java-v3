@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListComputingResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListComputingResourcesRequest {
         return this;
     }
 
-    /** 计算资源名称。
-     * 
-     * @return computingResourceName */
+    /**
+     * 计算资源名称。
+     * @return computingResourceName
+     */
     public String getComputingResourceName() {
         return computingResourceName;
     }
@@ -44,9 +47,10 @@ public class ListComputingResourcesRequest {
         return this;
     }
 
-    /** 当前偏移量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 当前偏移量，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +64,12 @@ public class ListComputingResourcesRequest {
         return this;
     }
 
-    /** 每页显示的最大作业个数，范围: [1, 100]。默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的最大作业个数，范围: [1, 100]。默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,7 +108,10 @@ public class ListComputingResourcesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

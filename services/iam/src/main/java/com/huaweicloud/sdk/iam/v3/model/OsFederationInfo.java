@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** user详细信息。 */
+/**
+ * user详细信息。
+ */
 public class OsFederationInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class OsFederationInfo {
         return this;
     }
 
-    /** Get identityProvider
-     * 
-     * @return identityProvider */
+    /**
+     * Get identityProvider
+     * @return identityProvider
+     */
     public IdpIdInfo getIdentityProvider() {
         return identityProvider;
     }
@@ -65,9 +68,10 @@ public class OsFederationInfo {
         return this;
     }
 
-    /** Get protocol
-     * 
-     * @return protocol */
+    /**
+     * Get protocol
+     * @return protocol
+     */
     public ProtocolIdInfo getProtocol() {
         return protocol;
     }
@@ -97,9 +101,10 @@ public class OsFederationInfo {
         return this;
     }
 
-    /** 用户组信息。
-     * 
-     * @return groups */
+    /**
+     * 用户组信息。
+     * @return groups
+     */
     public List<Object> getGroups() {
         return groups;
     }
@@ -138,7 +143,10 @@ public class OsFederationInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

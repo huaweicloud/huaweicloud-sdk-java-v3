@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 结构化类型。 */
+/**
+ * 结构化类型。
+ */
 public class ShowStructTemplateclusterInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowStructTemplateclusterInfo {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return clusterName */
+    /**
+     * 测试
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -44,9 +47,10 @@ public class ShowStructTemplateclusterInfo {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return kafkaBootstrapServers */
+    /**
+     * 测试
+     * @return kafkaBootstrapServers
+     */
     public String getKafkaBootstrapServers() {
         return kafkaBootstrapServers;
     }
@@ -60,9 +64,10 @@ public class ShowStructTemplateclusterInfo {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return kafkaSslEnable */
+    /**
+     * 测试
+     * @return kafkaSslEnable
+     */
     public Boolean getKafkaSslEnable() {
         return kafkaSslEnable;
     }
@@ -101,7 +106,10 @@ public class ShowStructTemplateclusterInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

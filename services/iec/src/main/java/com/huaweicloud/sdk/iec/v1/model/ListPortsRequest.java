@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPortsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,12 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 查询返回端口列表数量。取值范围：0~1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询返回端口列表数量。取值范围：0~1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -92,9 +97,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 查询的偏移量。
-     * 
-     * @return offset */
+    /**
+     * 查询的偏移量。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -108,9 +114,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 子网的neutron的network的ID。
-     * 
-     * @return networkId */
+    /**
+     * 子网的neutron的network的ID。
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -124,9 +131,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 按照端口ID过滤查询
-     * 
-     * @return id */
+    /**
+     * 按照端口ID过滤查询
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -140,9 +148,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 按照name过滤查询 取值范围：最大长度不超过255
-     * 
-     * @return name */
+    /**
+     * 按照name过滤查询  取值范围：最大长度不超过255
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -156,9 +165,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 按照admin_state_up进行过滤 约束：只支持true
-     * 
-     * @return adminStateUp */
+    /**
+     * 按照admin_state_up进行过滤  约束：只支持true
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -188,9 +198,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 根据绑定的IP查询端口。按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询，示例：fixed_ips=ip_address=xxx&fixed_ips=subnet_id=xxxx
-     * 
-     * @return fixedIps */
+    /**
+     * 根据绑定的IP查询端口。按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询，示例：fixed_ips=ip_address=xxx&fixed_ips=subnet_id=xxxx
+     * @return fixedIps
+     */
     public List<String> getFixedIps() {
         return fixedIps;
     }
@@ -204,9 +215,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 根据网卡的mac地址查询端口。
-     * 
-     * @return macAddress */
+    /**
+     * 根据网卡的mac地址查询端口。
+     * @return macAddress
+     */
     public String getMacAddress() {
         return macAddress;
     }
@@ -220,9 +232,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 根据设备ID查询端口。
-     * 
-     * @return deviceId */
+    /**
+     * 根据设备ID查询端口。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -236,9 +249,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 根据设备主查询端口。
-     * 
-     * @return deviceOwner */
+    /**
+     * 根据设备主查询端口。
+     * @return deviceOwner
+     */
     public String getDeviceOwner() {
         return deviceOwner;
     }
@@ -252,9 +266,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 按照status过滤查询 取值范围：ACTIVE、BUILD、DOWN
-     * 
-     * @return status */
+    /**
+     * 按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -268,9 +283,10 @@ public class ListPortsRequest {
         return this;
     }
 
-    /** 根据安全组信息ID查询端口。
-     * 
-     * @return securityGroups */
+    /**
+     * 根据安全组信息ID查询端口。
+     * @return securityGroups
+     */
     public String getSecurityGroups() {
         return securityGroups;
     }
@@ -337,7 +353,10 @@ public class ListPortsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

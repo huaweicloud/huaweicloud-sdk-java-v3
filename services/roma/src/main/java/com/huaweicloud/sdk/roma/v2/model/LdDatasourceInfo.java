@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** LdDatasourceInfo */
+/**
+ * LdDatasourceInfo
+ */
 public class LdDatasourceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,45 +21,69 @@ public class LdDatasourceInfo {
 
     private String name;
 
-    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
-     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
-     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型 */
+    /**
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     */
     public static final class TypeEnum {
 
-        /** Enum ORACLE for value: "oracle" */
+        /**
+         * Enum ORACLE for value: "oracle"
+         */
         public static final TypeEnum ORACLE = new TypeEnum("oracle");
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final TypeEnum MYSQL = new TypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final TypeEnum MONGODB = new TypeEnum("mongodb");
 
-        /** Enum REDIS for value: "redis" */
+        /**
+         * Enum REDIS for value: "redis"
+         */
         public static final TypeEnum REDIS = new TypeEnum("redis");
 
-        /** Enum POSTGRESQL for value: "postgresql" */
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
         public static final TypeEnum POSTGRESQL = new TypeEnum("postgresql");
 
-        /** Enum HIVE for value: "hive" */
+        /**
+         * Enum HIVE for value: "hive"
+         */
         public static final TypeEnum HIVE = new TypeEnum("hive");
 
-        /** Enum MSSQL for value: "mssql" */
+        /**
+         * Enum MSSQL for value: "mssql"
+         */
         public static final TypeEnum MSSQL = new TypeEnum("mssql");
 
-        /** Enum SQLSERVER for value: "sqlserver" */
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
         public static final TypeEnum SQLSERVER = new TypeEnum("sqlserver");
 
-        /** Enum GAUSS200 for value: "gauss200" */
+        /**
+         * Enum GAUSS200 for value: "gauss200"
+         */
         public static final TypeEnum GAUSS200 = new TypeEnum("gauss200");
 
-        /** Enum DWS for value: "dws" */
+        /**
+         * Enum DWS for value: "dws"
+         */
         public static final TypeEnum DWS = new TypeEnum("dws");
 
-        /** Enum GAUSS100 for value: "gauss100" */
+        /**
+         * Enum GAUSS100 for value: "gauss100"
+         */
         public static final TypeEnum GAUSS100 = new TypeEnum("gauss100");
 
-        /** Enum ZENITH for value: "zenith" */
+        /**
+         * Enum ZENITH for value: "zenith"
+         */
         public static final TypeEnum ZENITH = new TypeEnum("zenith");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -187,9 +213,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源名称
-     * 
-     * @return name */
+    /**
+     * 数据源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -203,11 +230,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
-     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
-     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
-     * 
-     * @return type */
+    /**
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -221,9 +247,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源描述
-     * 
-     * @return description */
+    /**
+     * 数据源描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -237,9 +264,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源连接字符串
-     * 
-     * @return url */
+    /**
+     * 数据源连接字符串
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -253,9 +281,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return user */
+    /**
+     * 用户名
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -269,9 +298,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 密码。 敏感信息不作为响应返回
-     * 
-     * @return password */
+    /**
+     * 密码。  敏感信息不作为响应返回
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -285,9 +315,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** ftp上传路径 预留字段，暂不支持。
-     * 
-     * @return remotepath */
+    /**
+     * ftp上传路径  预留字段，暂不支持。
+     * @return remotepath
+     */
     public String getRemotepath() {
         return remotepath;
     }
@@ -301,9 +332,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源ID
-     * 
-     * @return id */
+    /**
+     * 数据源ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -317,9 +349,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源状态： - old：存量数据源 - new：roma数据源
-     * 
-     * @return status */
+    /**
+     * 数据源状态： - old：存量数据源 - new：roma数据源
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -333,9 +366,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 数据源创建时间
+     * @return createdTime
+     */
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
@@ -349,9 +383,10 @@ public class LdDatasourceInfo {
         return this;
     }
 
-    /** 数据源更新时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 数据源更新时间
+     * @return modifiedTime
+     */
     public OffsetDateTime getModifiedTime() {
         return modifiedTime;
     }
@@ -404,7 +439,10 @@ public class LdDatasourceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

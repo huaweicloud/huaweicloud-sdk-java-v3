@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 作业对应服务的标题 */
+/**
+ * 作业对应服务的标题
+ */
 public class TaskDetailsServiceTitle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TaskDetailsServiceTitle {
         return this;
     }
 
-    /** 作业对应服务的中文标题
-     * 
-     * @return zh */
+    /**
+     * 作业对应服务的中文标题
+     * @return zh
+     */
     public String getZh() {
         return zh;
     }
@@ -39,9 +42,10 @@ public class TaskDetailsServiceTitle {
         return this;
     }
 
-    /** 作业对应服务的英文标题
-     * 
-     * @return en */
+    /**
+     * 作业对应服务的英文标题
+     * @return en
+     */
     public String getEn() {
         return en;
     }
@@ -78,7 +82,10 @@ public class TaskDetailsServiceTitle {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

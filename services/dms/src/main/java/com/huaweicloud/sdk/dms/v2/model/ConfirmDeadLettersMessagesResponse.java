@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ConfirmDeadLettersMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ConfirmDeadLettersMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 确认成功的数目（如果为N，则表示前N条消息确认成功）。
-     * 
-     * @return success */
+    /**
+     * 确认成功的数目（如果为N，则表示前N条消息确认成功）。
+     * @return success
+     */
     public Integer getSuccess() {
         return success;
     }
@@ -40,9 +43,10 @@ public class ConfirmDeadLettersMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 确认失败的数目（如果为N，则表示后N条消息确认失败）。
-     * 
-     * @return fail */
+    /**
+     * 确认失败的数目（如果为N，则表示后N条消息确认失败）。
+     * @return fail
+     */
     public Integer getFail() {
         return fail;
     }
@@ -79,7 +83,10 @@ public class ConfirmDeadLettersMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

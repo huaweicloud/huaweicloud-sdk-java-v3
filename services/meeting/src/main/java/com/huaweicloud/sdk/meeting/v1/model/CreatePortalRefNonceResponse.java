@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePortalRefNonceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class CreatePortalRefNonceResponse extends SdkResponse {
         return this;
     }
 
-    /** 用于跳转登录的nonce信息。 说明： 通过链接https://bmeeting.huaweicloud.com/?lang=zh-CN&nonce=xxxxxxxxxxxxx#/login进行免登陆跳转。
-     * 
-     * @return nonce */
+    /**
+     * 用于跳转登录的nonce信息。 说明： 通过链接https://bmeeting.huaweicloud.com/?lang=zh-CN&nonce=xxxxxxxxxxxxx#/login进行免登陆跳转。 
+     * @return nonce
+     */
     public String getNonce() {
         return nonce;
     }
@@ -56,7 +59,10 @@ public class CreatePortalRefNonceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

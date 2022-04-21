@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateSecretStageRequestBody */
+/**
+ * UpdateSecretStageRequestBody
+ */
 public class UpdateSecretStageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateSecretStageRequestBody {
         return this;
     }
 
-    /** 凭据的版本号标识符。
-     * 
-     * @return versionId */
+    /**
+     * 凭据的版本号标识符。 
+     * @return versionId
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -55,7 +58,10 @@ public class UpdateSecretStageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

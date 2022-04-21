@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ContactV2 */
+/**
+ * ContactV2
+ */
 public class ContactV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class ContactV2 {
         return this;
     }
 
-    /** 联系方式类型 minimum: 0 maximum: 1
-     * 
-     * @return contactWay */
+    /**
+     * 联系方式类型
+     * minimum: 0
+     * maximum: 1
+     * @return contactWay
+     */
     public Integer getContactWay() {
         return contactWay;
     }
@@ -49,9 +54,10 @@ public class ContactV2 {
         return this;
     }
 
-    /** 联系方式值
-     * 
-     * @return contactValue */
+    /**
+     * 联系方式值
+     * @return contactValue
+     */
     public String getContactValue() {
         return contactValue;
     }
@@ -65,9 +71,10 @@ public class ContactV2 {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -81,9 +88,10 @@ public class ContactV2 {
         return this;
     }
 
-    /** 验证序列号
-     * 
-     * @return verifiedId */
+    /**
+     * 验证序列号
+     * @return verifiedId
+     */
     public String getVerifiedId() {
         return verifiedId;
     }
@@ -124,7 +132,10 @@ public class ContactV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

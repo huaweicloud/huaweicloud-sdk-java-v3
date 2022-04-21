@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateCustomsLineReq */
+/**
+ * UpdateCustomsLineReq
+ */
 public class UpdateCustomsLineReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class UpdateCustomsLineReq {
         return this;
     }
 
-    /** 解析线路名称。
-     * 
-     * @return name */
+    /**
+     * 解析线路名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -63,9 +66,10 @@ public class UpdateCustomsLineReq {
         return this;
     }
 
-    /** P地址段。 以“-”分隔，小IP地址在前，大IP地址在后。IP段之间不能有交叉。当只有一个IP时，填写IP1-IP1。 目前只支持IPV4。
-     * 
-     * @return ipSegments */
+    /**
+     * P地址段。  以“-”分隔，小IP地址在前，大IP地址在后。IP段之间不能有交叉。当只有一个IP时，填写IP1-IP1。 目前只支持IPV4。
+     * @return ipSegments
+     */
     public List<String> getIpSegments() {
         return ipSegments;
     }
@@ -79,9 +83,10 @@ public class UpdateCustomsLineReq {
         return this;
     }
 
-    /** 自定义线路的描述信息。长度不超过255个字符。
-     * 
-     * @return description */
+    /**
+     * 自定义线路的描述信息。长度不超过255个字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -120,7 +125,10 @@ public class UpdateCustomsLineReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

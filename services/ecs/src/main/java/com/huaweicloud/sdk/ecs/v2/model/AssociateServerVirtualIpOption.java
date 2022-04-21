@@ -30,9 +30,10 @@ public class AssociateServerVirtualIpOption {
         return this;
     }
 
-    /** 网卡的子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 网卡的子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -46,9 +47,10 @@ public class AssociateServerVirtualIpOption {
         return this;
     }
 
-    /** 网卡即将配置的私有IP的地址。
-     * 
-     * @return ipAddress */
+    /**
+     * 网卡即将配置的私有IP的地址。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -62,9 +64,10 @@ public class AssociateServerVirtualIpOption {
         return this;
     }
 
-    /** 私有IP的allowed_address_pairs属性是否添加网卡的IP/Mac对。
-     * 
-     * @return reverseBinding */
+    /**
+     * 私有IP的allowed_address_pairs属性是否添加网卡的IP/Mac对。
+     * @return reverseBinding
+     */
     public Boolean getReverseBinding() {
         return reverseBinding;
     }
@@ -103,7 +106,10 @@ public class AssociateServerVirtualIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

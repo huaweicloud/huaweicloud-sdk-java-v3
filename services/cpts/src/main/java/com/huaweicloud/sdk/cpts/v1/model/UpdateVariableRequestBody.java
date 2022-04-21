@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateVariableRequestBody */
+/**
+ * UpdateVariableRequestBody
+ */
 public class UpdateVariableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,12 @@ public class UpdateVariableRequestBody {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -52,9 +57,10 @@ public class UpdateVariableRequestBody {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +74,12 @@ public class UpdateVariableRequestBody {
         return this;
     }
 
-    /** variable_type minimum: 0 maximum: 2147483647
-     * 
-     * @return variableType */
+    /**
+     * variable_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return variableType
+     */
     public Integer getVariableType() {
         return variableType;
     }
@@ -100,9 +109,10 @@ public class UpdateVariableRequestBody {
         return this;
     }
 
-    /** variable
-     * 
-     * @return variable */
+    /**
+     * variable
+     * @return variable
+     */
     public List<Object> getVariable() {
         return variable;
     }
@@ -143,7 +153,10 @@ public class UpdateVariableRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

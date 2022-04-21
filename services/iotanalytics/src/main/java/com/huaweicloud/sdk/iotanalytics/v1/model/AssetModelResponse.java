@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AssetModelResponse */
+/**
+ * AssetModelResponse
+ */
 public class AssetModelResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 模型ID
-     * 
-     * @return assetModelId */
+    /**
+     * 模型ID
+     * @return assetModelId
+     */
     public String getAssetModelId() {
         return assetModelId;
     }
@@ -67,9 +70,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 模型名称
-     * 
-     * @return name */
+    /**
+     * 模型名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -83,9 +87,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 模型显示名称
-     * 
-     * @return displayName */
+    /**
+     * 模型显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -115,9 +120,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 属性集
-     * 
-     * @return properties */
+    /**
+     * 属性集
+     * @return properties
+     */
     public List<PropertyModelResponse> getProperties() {
         return properties;
     }
@@ -147,9 +153,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 分析任务集
-     * 
-     * @return analyses */
+    /**
+     * 分析任务集
+     * @return analyses
+     */
     public List<AnalysisModelResponse> getAnalyses() {
         return analyses;
     }
@@ -163,9 +170,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -179,9 +187,10 @@ public class AssetModelResponse {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -228,7 +237,10 @@ public class AssetModelResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

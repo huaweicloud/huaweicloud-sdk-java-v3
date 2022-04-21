@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubCustomerMonthlyBillDetail */
+/**
+ * SubCustomerMonthlyBillDetail
+ */
 public class SubCustomerMonthlyBillDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,9 +215,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 账期。 格式：YYYY-MM
-     * 
-     * @return billCycle */
+    /**
+     * 账期。 格式：YYYY-MM
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -229,9 +232,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -245,9 +249,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 子客户的关联类型： 1：顾问销售2：代售
-     * 
-     * @return associationType */
+    /**
+     * 子客户的关联类型： 1：顾问销售2：代售
+     * @return associationType
+     */
     public String getAssociationType() {
         return associationType;
     }
@@ -261,9 +266,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -277,10 +283,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。 ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -294,9 +300,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -310,9 +317,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -326,9 +334,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 计费模式。 1：包周期3：按需10：预留实例
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。 1：包周期3：按需10：预留实例
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -342,9 +351,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 交易时间，即某条消费记录对应的扣费时间。 示例：2020-11-17T06:43:38Z
-     * 
-     * @return tradeTime */
+    /**
+     * 交易时间，即某条消费记录对应的扣费时间。 示例：2020-11-17T06:43:38Z
+     * @return tradeTime
+     */
     public String getTradeTime() {
         return tradeTime;
     }
@@ -358,9 +368,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
-     * 
-     * @return tradeId */
+    /**
+     * 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
+     * @return tradeId
+     */
     public String getTradeId() {
         return tradeId;
     }
@@ -374,10 +385,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 账单类型。
-     * 1：消费-新购2：消费-续订3：消费-变更8：消费-自动续订5：消费-使用12：消费-按时计费4：退款-退订9：调账-补偿13：消费-退订手续费增收14：消费-服务支持计划月末补扣16：调账-扣费18：消费-按月付费20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金
-     * 
-     * @return billDetailType */
+    /**
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更8：消费-自动续订5：消费-使用12：消费-按时计费4：退款-退订9：调账-补偿13：消费-退订手续费增收14：消费-服务支持计划月末补扣16：调账-扣费18：消费-按月付费20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金
+     * @return billDetailType
+     */
     public Integer getBillDetailType() {
         return billDetailType;
     }
@@ -391,9 +402,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -407,9 +419,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -423,9 +436,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 产品的规格描述。
-     * 
-     * @return productSpecDesc */
+    /**
+     * 产品的规格描述。
+     * @return productSpecDesc
+     */
     public String getProductSpecDesc() {
         return productSpecDesc;
     }
@@ -439,9 +453,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -455,9 +470,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 产品ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -471,9 +487,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 产品名称。
-     * 
-     * @return productName */
+    /**
+     * 产品名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -487,9 +504,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return resourceTag */
+    /**
+     * 资源标签。
+     * @return resourceTag
+     */
     public String getResourceTag() {
         return resourceTag;
     }
@@ -503,9 +521,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 消费时间。 包周期和预留实例订购场景下为订单支付时间；按需场景下为话单生失效时间。 格式：YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return consumeTime */
+    /**
+     * 消费时间。 包周期和预留实例订购场景下为订单支付时间；按需场景下为话单生失效时间。 格式：YYYY-MM-DDThh:mm:ssZ
+     * @return consumeTime
+     */
     public String getConsumeTime() {
         return consumeTime;
     }
@@ -519,9 +538,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
-     * 
-     * @return usageType */
+    /**
+     * 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
+     * @return usageType
+     */
     public String getUsageType() {
         return usageType;
     }
@@ -535,9 +555,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源的使用量。
-     * 
-     * @return usageAmount */
+    /**
+     * 资源的使用量。
+     * @return usageAmount
+     */
     public Double getUsageAmount() {
         return usageAmount;
     }
@@ -551,9 +572,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return usageMeasureId */
+    /**
+     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return usageMeasureId
+     */
     public Integer getUsageMeasureId() {
         return usageMeasureId;
     }
@@ -567,9 +589,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 套餐内使用量。
-     * 
-     * @return freeResourceUsage */
+    /**
+     * 套餐内使用量。
+     * @return freeResourceUsage
+     */
     public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
@@ -583,9 +606,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return freeResourceMeasureId */
+    /**
+     * 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return freeResourceMeasureId
+     */
     public Integer getFreeResourceMeasureId() {
         return freeResourceMeasureId;
     }
@@ -599,9 +623,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 预留实例使用量。
-     * 
-     * @return riUsage */
+    /**
+     * 预留实例使用量。
+     * @return riUsage
+     */
     public Double getRiUsage() {
         return riUsage;
     }
@@ -615,9 +640,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 预留实例使用量单位。
-     * 
-     * @return riUsageMeasureId */
+    /**
+     * 预留实例使用量单位。
+     * @return riUsageMeasureId
+     */
     public Integer getRiUsageMeasureId() {
         return riUsageMeasureId;
     }
@@ -631,9 +657,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 官网价。
-     * 
-     * @return officialAmount */
+    /**
+     * 官网价。
+     * @return officialAmount
+     */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -647,9 +674,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 对应官网价折扣金额。
-     * 
-     * @return officialDiscountAmount */
+    /**
+     * 对应官网价折扣金额。
+     * @return officialDiscountAmount
+     */
     public Double getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
@@ -663,9 +691,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 应付金额。
-     * 
-     * @return paymentAmount */
+    /**
+     * 应付金额。
+     * @return paymentAmount
+     */
     public Double getPaymentAmount() {
         return paymentAmount;
     }
@@ -679,9 +708,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 现金支付金额。
-     * 
-     * @return cashAmount */
+    /**
+     * 现金支付金额。
+     * @return cashAmount
+     */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -695,9 +725,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 信用额度支付金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用额度支付金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -711,9 +742,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 代金券支付金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券支付金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -727,9 +759,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 现金券支付金额。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券支付金额。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -743,9 +776,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 储值卡支付金额。
-     * 
-     * @return storedValueCardAmount */
+    /**
+     * 储值卡支付金额。
+     * @return storedValueCardAmount
+     */
     public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
@@ -759,9 +793,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 欠费金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠费金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -775,9 +810,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 欠费核销金额。
-     * 
-     * @return writeoffAmount */
+    /**
+     * 欠费核销金额。
+     * @return writeoffAmount
+     */
     public Double getWriteoffAmount() {
         return writeoffAmount;
     }
@@ -791,9 +827,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 周期类型： 19：年20：月24：天25：小时5：一次性
-     * 
-     * @return periodType */
+    /**
+     * 周期类型： 19：年20：月24：天25：小时5：一次性
+     * @return periodType
+     */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -807,9 +844,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 客户经理标识。
-     * 
-     * @return accountManagerId */
+    /**
+     * 客户经理标识。
+     * @return accountManagerId
+     */
     public String getAccountManagerId() {
         return accountManagerId;
     }
@@ -823,9 +861,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 经销商ID。 说明： 如果是普通经销商，那么此处可以为空。
-     * 
-     * @return partnerId */
+    /**
+     * 关联的经销商ID。
+     * @return partnerId
+     */
     public String getPartnerId() {
         return partnerId;
     }
@@ -839,9 +878,10 @@ public class SubCustomerMonthlyBillDetail {
         return this;
     }
 
-    /** 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
-     * 
-     * @return regionName */
+    /**
+     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -993,7 +1033,10 @@ public class SubCustomerMonthlyBillDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCaseOperateLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return caseId */
+    /**
+     * 工单id
+     * @return caseId
+     */
     public String getCaseId() {
         return caseId;
     }
@@ -64,9 +67,10 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -80,9 +84,12 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 查询偏移量 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -96,9 +103,12 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 查询数量 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询数量
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -112,9 +122,12 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
-     * 
-     * @return xSite */
+    /**
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
+     * minimum: 0
+     * maximum: 1
+     * @return xSite
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
     public Integer getXSite() {
@@ -130,9 +143,10 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * 
-     * @return xLanguage */
+    /**
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -148,9 +162,10 @@ public class ListCaseOperateLogsRequest {
         return this;
     }
 
-    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
-     * 
-     * @return xTimeZone */
+    /**
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
+     * @return xTimeZone
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
@@ -199,7 +214,10 @@ public class ListCaseOperateLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CfgRequestBody */
+/**
+ * CfgRequestBody
+ */
 public class CfgRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** 链代码名称，以小写字母开头，支持小写字母和数字，长度6-25位
-     * 
-     * @return chaincodeName */
+    /**
+     * 链代码名称，以小写字母开头，支持小写字母和数字，长度6-25位
+     * @return chaincodeName
+     */
     public String getChaincodeName() {
         return chaincodeName;
     }
@@ -68,9 +71,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** SDK配置文件存放路径
-     * 
-     * @return certPath */
+    /**
+     * SDK配置文件存放路径
+     * @return certPath
+     */
     public String getCertPath() {
         return certPath;
     }
@@ -84,9 +88,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** 通道名称
-     * 
-     * @return channelName */
+    /**
+     * 通道名称
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -116,9 +121,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** key：组织名，value：该组织下需要下载的peer节点信息，peer节点请按照0,1,2的顺序升序填写
-     * 
-     * @return peerOrgs */
+    /**
+     * key：组织名，value：该组织下需要下载的peer节点信息，peer节点请按照0,1,2的顺序升序填写
+     * @return peerOrgs
+     */
     public Map<String, List<String>> getPeerOrgs() {
         return peerOrgs;
     }
@@ -148,9 +154,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** key：联盟成员名称，value：该联盟成员peer组织名称hash值数组
-     * 
-     * @return unionInfo */
+    /**
+     * key：联盟成员名称，value：该联盟成员peer组织名称hash值数组
+     * @return unionInfo
+     */
     public Map<String, List<String>> getUnionInfo() {
         return unionInfo;
     }
@@ -164,9 +171,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** 是否是多通道请求，如此处设成true则必须传入channel_chaincode，chaincode_name和channel_name设为空即可
-     * 
-     * @return isMultiChan */
+    /**
+     * 是否是多通道请求，如此处设成true则必须传入channel_chaincode，chaincode_name和channel_name设为空即可
+     * @return isMultiChan
+     */
     public Boolean getIsMultiChan() {
         return isMultiChan;
     }
@@ -196,9 +204,10 @@ public class CfgRequestBody {
         return this;
     }
 
-    /** key：通道名称，value：该通道对应的链代码数组
-     * 
-     * @return channelChaincode */
+    /**
+     * key：通道名称，value：该通道对应的链代码数组
+     * @return channelChaincode
+     */
     public Map<String, List<String>> getChannelChaincode() {
         return channelChaincode;
     }
@@ -245,7 +254,10 @@ public class CfgRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

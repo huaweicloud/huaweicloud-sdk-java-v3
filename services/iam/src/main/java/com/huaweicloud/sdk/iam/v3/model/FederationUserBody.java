@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 联邦用户信息。 */
+/**
+ * 联邦用户信息。
+ */
 public class FederationUserBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class FederationUserBody {
         return this;
     }
 
-    /** Get osFederation
-     * 
-     * @return osFederation */
+    /**
+     * Get osFederation
+     * @return osFederation
+     */
     public OsFederationInfo getOsFederation() {
         return osFederation;
     }
@@ -68,9 +71,10 @@ public class FederationUserBody {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public DomainInfo getDomain() {
         return domain;
     }
@@ -84,9 +88,10 @@ public class FederationUserBody {
         return this;
     }
 
-    /** user id。
-     * 
-     * @return id */
+    /**
+     * user id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -100,9 +105,10 @@ public class FederationUserBody {
         return this;
     }
 
-    /** user name。
-     * 
-     * @return name */
+    /**
+     * user name。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -142,7 +148,10 @@ public class FederationUserBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

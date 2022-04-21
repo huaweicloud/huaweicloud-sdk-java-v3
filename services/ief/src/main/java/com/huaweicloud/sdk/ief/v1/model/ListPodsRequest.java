@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPodsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 指定节点查询应用实例, 可选， 与group_id、deployment_id、deployment_ids四选一
-     * 
-     * @return nodeId */
+    /**
+     * 指定节点查询应用实例, 可选， 与group_id、deployment_id、deployment_ids四选一
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -64,9 +67,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 指定节点组查询应用实例，可选，与node_id、deployment_id、deployment_ids四选一
-     * 
-     * @return groupId */
+    /**
+     * 指定节点组查询应用实例，可选，与node_id、deployment_id、deployment_ids四选一
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -80,9 +84,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 指定应用部署ID查询应用实例， 可选， 与node_id、group_id、deployment_ids四选一
-     * 
-     * @return deploymentId */
+    /**
+     * 指定应用部署ID查询应用实例， 可选， 与node_id、group_id、deployment_ids四选一
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -96,9 +101,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 指定应用部署ID列表查询应用实例，多个ID使用逗号分隔，可选， 与node_id、group_id、deployment_id四选一
-     * 
-     * @return deploymentIds */
+    /**
+     * 指定应用部署ID列表查询应用实例，多个ID使用逗号分隔，可选， 与node_id、group_id、deployment_id四选一
+     * @return deploymentIds
+     */
     public String getDeploymentIds() {
         return deploymentIds;
     }
@@ -112,9 +118,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 查询返回记录的数量限制
-     * 
-     * @return limit */
+    /**
+     * 查询返回记录的数量限制
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -128,9 +135,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 偏移量，表示查询该偏移量后面的记录
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示查询该偏移量后面的记录
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -144,9 +152,10 @@ public class ListPodsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -192,7 +201,10 @@ public class ListPodsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

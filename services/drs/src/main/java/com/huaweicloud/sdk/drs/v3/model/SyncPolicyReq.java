@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 设置同步策略请求体 */
+/**
+ * 设置同步策略请求体
+ */
 public class SyncPolicyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class SyncPolicyReq {
 
     private String jobId;
 
-    /** 冲突策略。 - ignore：忽略 - overwrite：覆盖 - stop：报错 */
+    /**
+     * 冲突策略。 - ignore：忽略 - overwrite：覆盖 - stop：报错
+     */
     public static final class ConflictPolicyEnum {
 
-        /** Enum IGNORE for value: "ignore" */
+        /**
+         * Enum IGNORE for value: "ignore"
+         */
         public static final ConflictPolicyEnum IGNORE = new ConflictPolicyEnum("ignore");
 
-        /** Enum OVERWRITE for value: "overwrite" */
+        /**
+         * Enum OVERWRITE for value: "overwrite"
+         */
         public static final ConflictPolicyEnum OVERWRITE = new ConflictPolicyEnum("overwrite");
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final ConflictPolicyEnum STOP = new ConflictPolicyEnum("stop");
 
         private static final Map<String, ConflictPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -98,10 +108,14 @@ public class SyncPolicyReq {
 
     private ConflictPolicyEnum conflictPolicy;
 
-    /** 过滤DDL策略。 */
+    /**
+     * 过滤DDL策略。
+     */
     public static final class FilterDdlPolicyEnum {
 
-        /** Enum DROP_DATABASE for value: "drop_database" */
+        /**
+         * Enum DROP_DATABASE for value: "drop_database"
+         */
         public static final FilterDdlPolicyEnum DROP_DATABASE = new FilterDdlPolicyEnum("drop_database");
 
         private static final Map<String, FilterDdlPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -180,20 +194,29 @@ public class SyncPolicyReq {
 
     private Boolean indexTrans;
 
-    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 -
-     * 3：按库名-schema自动生成Topic名字 */
+    /**
+     * 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 - 3：按库名-schema自动生成Topic名字
+     */
     public static final class TopicPolicyEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final TopicPolicyEnum _0 = new TopicPolicyEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final TopicPolicyEnum _1 = new TopicPolicyEnum("1");
 
-        /** Enum _2 for value: "2" */
+        /**
+         * Enum _2 for value: "2"
+         */
         public static final TopicPolicyEnum _2 = new TopicPolicyEnum("2");
 
-        /** Enum _3 for value: "3" */
+        /**
+         * Enum _3 for value: "3"
+         */
         public static final TopicPolicyEnum _3 = new TopicPolicyEnum("3");
 
         private static final Map<String, TopicPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -270,21 +293,29 @@ public class SyncPolicyReq {
 
     private String topic;
 
-    /** 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition
-     * - 3：按库名.schema的hash值投递到不同Partition
-     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；** */
+    /**
+     * 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition - 3：按库名.schema的hash值投递到不同Partition **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；**
+     */
     public static final class PartitionPolicyEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final PartitionPolicyEnum _0 = new PartitionPolicyEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final PartitionPolicyEnum _1 = new PartitionPolicyEnum("1");
 
-        /** Enum _2 for value: "2" */
+        /**
+         * Enum _2 for value: "2"
+         */
         public static final PartitionPolicyEnum _2 = new PartitionPolicyEnum("2");
 
-        /** Enum _3 for value: "3" */
+        /**
+         * Enum _3 for value: "3"
+         */
         public static final PartitionPolicyEnum _3 = new PartitionPolicyEnum("3");
 
         private static final Map<String, PartitionPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -356,13 +387,19 @@ public class SyncPolicyReq {
 
     private PartitionPolicyEnum partitionPolicy;
 
-    /** 投送到kafka的数据格式，不填默认为json： */
+    /**
+     * 投送到kafka的数据格式，不填默认为json：
+     */
     public static final class KafkaDataFormatEnum {
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final KafkaDataFormatEnum JSON = new KafkaDataFormatEnum("json");
 
-        /** Enum AVRO for value: "avro" */
+        /**
+         * Enum AVRO for value: "avro"
+         */
         public static final KafkaDataFormatEnum AVRO = new KafkaDataFormatEnum("avro");
 
         private static final Map<String, KafkaDataFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -462,9 +499,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -478,9 +516,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 冲突策略。 - ignore：忽略 - overwrite：覆盖 - stop：报错
-     * 
-     * @return conflictPolicy */
+    /**
+     * 冲突策略。 - ignore：忽略 - overwrite：覆盖 - stop：报错
+     * @return conflictPolicy
+     */
     public ConflictPolicyEnum getConflictPolicy() {
         return conflictPolicy;
     }
@@ -494,9 +533,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 过滤DDL策略。
-     * 
-     * @return filterDdlPolicy */
+    /**
+     * 过滤DDL策略。
+     * @return filterDdlPolicy
+     */
     public FilterDdlPolicyEnum getFilterDdlPolicy() {
         return filterDdlPolicy;
     }
@@ -510,9 +550,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 同步增量是否同步DDL。
-     * 
-     * @return ddlTrans */
+    /**
+     * 同步增量是否同步DDL。
+     * @return ddlTrans
+     */
     public Boolean getDdlTrans() {
         return ddlTrans;
     }
@@ -526,9 +567,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 同步增量是否同步索引。
-     * 
-     * @return indexTrans */
+    /**
+     * 同步增量是否同步索引。
+     * @return indexTrans
+     */
     public Boolean getIndexTrans() {
         return indexTrans;
     }
@@ -542,10 +584,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 -
-     * 3：按库名-schema自动生成Topic名字
-     * 
-     * @return topicPolicy */
+    /**
+     * 同步Topic策略，目标库为kafka时必填，取值： - 0：集中投递到一个Topic - 1：按库名-schema-表名自动生成Topic名字 - 2：按库名自动生成Topic名字 - 3：按库名-schema自动生成Topic名字
+     * @return topicPolicy
+     */
     public TopicPolicyEnum getTopicPolicy() {
         return topicPolicy;
     }
@@ -559,9 +601,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** Topic名称，topic_policy为0时必填，确保topic已存在。
-     * 
-     * @return topic */
+    /**
+     * Topic名称，topic_policy为0时必填，确保topic已存在。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -575,11 +618,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition
-     * - 3：按库名.schema的hash值投递到不同Partition
-     * **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；**
-     * 
-     * @return partitionPolicy */
+    /**
+     * 同步到kafka partition策略，取值： - 0：按库名.schema.表名的hash值投递到不同Partition - 1：全部投递到Partition 0 - 2：按主键的hash值投递到不同Partition - 3：按库名.schema的hash值投递到不同Partition **当topic_policy取0时，可以取0,1,2,3；当topic_policy取1时，可以取1,2；当topic_policy取2时，可以取0,1,3；当topic_policy取3时，可以取0,1；**
+     * @return partitionPolicy
+     */
     public PartitionPolicyEnum getPartitionPolicy() {
         return partitionPolicy;
     }
@@ -593,9 +635,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 投送到kafka的数据格式，不填默认为json：
-     * 
-     * @return kafkaDataFormat */
+    /**
+     * 投送到kafka的数据格式，不填默认为json：
+     * @return kafkaDataFormat
+     */
     public KafkaDataFormatEnum getKafkaDataFormat() {
         return kafkaDataFormat;
     }
@@ -609,12 +652,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** Topic名字格式，topic_policy为1,2,3,时需要 -
-     * 当topic_policy取1时，Topic名字格式支持database、schema两个变量，其他字符当做常量。分别用$database$代替数据库名，$schema$代替模式名，不填默认为$database$-$schema$
-     * - 当topic_policy取2时，Topic名字格式支持database一个变量，其他字符都当做常量，不填默认为$database$ -
-     * 当topic_policy取3时，Topic名字格式支持database、schema和tablename三个变量，其他字符当做常量。分别用$database$代替数据库名，$schema$代替模式名，$tablename$代替表名，不填默认为$database$-$schema$-$tablename$
-     * 
-     * @return topicNameFormat */
+    /**
+     * Topic名字格式，topic_policy为1,2,3,时需要 - 当topic_policy取1时，Topic名字格式支持database、schema两个变量，其他字符当做常量。分别用$database$代替数据库名，$schema$代替模式名，不填默认为$database$-$schema$ - 当topic_policy取2时，Topic名字格式支持database一个变量，其他字符都当做常量，不填默认为$database$ - 当topic_policy取3时，Topic名字格式支持database、schema和tablename三个变量，其他字符当做常量。分别用$database$代替数据库名，$schema$代替模式名，$tablename$代替表名，不填默认为$database$-$schema$-$tablename$
+     * @return topicNameFormat
+     */
     public String getTopicNameFormat() {
         return topicNameFormat;
     }
@@ -628,9 +669,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** Partition个数，取值1-2147483647之间，topic_policy为1,2,3,时需要，不填默认为1
-     * 
-     * @return partitionsNum */
+    /**
+     * Partition个数，取值1-2147483647之间，topic_policy为1,2,3,时需要，不填默认为1
+     * @return partitionsNum
+     */
     public String getPartitionsNum() {
         return partitionsNum;
     }
@@ -644,9 +686,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** 副本个数，取值1-32767之间，topic_policy为1,2,3,时需要，不填默认为1
-     * 
-     * @return replicationFactor */
+    /**
+     * 副本个数，取值1-32767之间，topic_policy为1,2,3,时需要，不填默认为1
+     * @return replicationFactor
+     */
     public String getReplicationFactor() {
         return replicationFactor;
     }
@@ -660,9 +703,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** PostgreSQL同步全量阶段是否填充物化视图，不填默认为false
-     * 
-     * @return isFillMaterializedView */
+    /**
+     * PostgreSQL同步全量阶段是否填充物化视图，不填默认为false
+     * @return isFillMaterializedView
+     */
     public Boolean getIsFillMaterializedView() {
         return isFillMaterializedView;
     }
@@ -676,9 +720,10 @@ public class SyncPolicyReq {
         return this;
     }
 
-    /** PostgreSQL同步全量阶段是否使用快照模式导出，不填默认为false
-     * 
-     * @return exportSnapshot */
+    /**
+     * PostgreSQL同步全量阶段是否使用快照模式导出，不填默认为false
+     * @return exportSnapshot
+     */
     public Boolean getExportSnapshot() {
         return exportSnapshot;
     }
@@ -752,7 +797,10 @@ public class SyncPolicyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

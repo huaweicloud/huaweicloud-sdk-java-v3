@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepoDailyCodeline */
+/**
+ * RepoDailyCodeline
+ */
 public class RepoDailyCodeline {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RepoDailyCodeline {
         return this;
     }
 
-    /** 每日增加代码行
-     * 
-     * @return additions */
+    /**
+     * 每日增加代码行
+     * @return additions
+     */
     public Integer getAdditions() {
         return additions;
     }
@@ -44,9 +47,10 @@ public class RepoDailyCodeline {
         return this;
     }
 
-    /** 日期
-     * 
-     * @return date */
+    /**
+     * 日期
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -60,9 +64,10 @@ public class RepoDailyCodeline {
         return this;
     }
 
-    /** 每日删除代码行
-     * 
-     * @return deletions */
+    /**
+     * 每日删除代码行
+     * @return deletions
+     */
     public Integer getDeletions() {
         return deletions;
     }
@@ -101,7 +106,10 @@ public class RepoDailyCodeline {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

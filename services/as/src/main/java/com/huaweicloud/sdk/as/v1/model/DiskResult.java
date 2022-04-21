@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 磁盘信息 */
+/**
+ * 磁盘信息
+ */
 public class DiskResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,22 +21,34 @@ public class DiskResult {
 
     private Integer size;
 
-    /** 磁盘类型。 */
+    /**
+     * 磁盘类型。
+     */
     public static final class VolumeTypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
 
-        /** Enum CO_PL for value: "co-pl" */
+        /**
+         * Enum CO_PL for value: "co-pl"
+         */
         public static final VolumeTypeEnum CO_PL = new VolumeTypeEnum("co-pl");
 
-        /** Enum UH_11 for value: "uh-11" */
+        /**
+         * Enum UH_11 for value: "uh-11"
+         */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,13 +121,19 @@ public class DiskResult {
 
     private VolumeTypeEnum volumeType;
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 */
+    /**
+     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
+     */
     public static final class DiskTypeEnum {
 
-        /** Enum SYS for value: "SYS" */
+        /**
+         * Enum SYS for value: "SYS"
+         */
         public static final DiskTypeEnum SYS = new DiskTypeEnum("SYS");
 
-        /** Enum DATA for value: "DATA" */
+        /**
+         * Enum DATA for value: "DATA"
+         */
         public static final DiskTypeEnum DATA = new DiskTypeEnum("DATA");
 
         private static final Map<String, DiskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -208,9 +228,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 磁盘大小，容量单位为GB。
-     * 
-     * @return size */
+    /**
+     * 磁盘大小，容量单位为GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -224,9 +245,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 磁盘类型。
-     * 
-     * @return volumeType */
+    /**
+     * 磁盘类型。
+     * @return volumeType
+     */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -240,9 +262,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
-     * 
-     * @return diskType */
+    /**
+     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
+     * @return diskType
+     */
     public DiskTypeEnum getDiskType() {
         return diskType;
     }
@@ -256,9 +279,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 磁盘所属的专属存储ID。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 磁盘所属的专属存储ID。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -272,9 +296,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 导入数据盘的数据盘镜像ID。
-     * 
-     * @return dataDiskImageId */
+    /**
+     * 导入数据盘的数据盘镜像ID。
+     * @return dataDiskImageId
+     */
     public String getDataDiskImageId() {
         return dataDiskImageId;
     }
@@ -288,9 +313,10 @@ public class DiskResult {
         return this;
     }
 
-    /** 磁盘备份的快照ID。
-     * 
-     * @return snapshotId */
+    /**
+     * 磁盘备份的快照ID。
+     * @return snapshotId
+     */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -313,9 +339,10 @@ public class DiskResult {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -361,7 +388,10 @@ public class DiskResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

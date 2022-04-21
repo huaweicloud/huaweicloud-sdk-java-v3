@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class KeystoneCreateUserTokenByPasswordResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class KeystoneCreateUserTokenByPasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** Get token
-     * 
-     * @return token */
+    /**
+     * Get token
+     * @return token
+     */
     public TokenResult getToken() {
         return token;
     }
@@ -50,9 +53,10 @@ public class KeystoneCreateUserTokenByPasswordResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xSubjectToken
-     * 
-     * @return xSubjectToken */
+    /**
+     * Get xSubjectToken
+     * @return xSubjectToken
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Subject-Token")
     public String getXSubjectToken() {
@@ -92,7 +96,10 @@ public class KeystoneCreateUserTokenByPasswordResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

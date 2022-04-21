@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.ces.v2.model;
 
 import java.util.Objects;
 
-/** SMNUrn */
+/**
+ * SMNUrn
+ */
 public class SMNUrn {
 
     @Override

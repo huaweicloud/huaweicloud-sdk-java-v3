@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Chart */
+/**
+ * Chart
+ */
 public class Chart {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class Chart {
         return this;
     }
 
-    /** 统计时间
-     * 
-     * @return date */
+    /**
+     * 统计时间
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -59,9 +62,10 @@ public class Chart {
         return this;
     }
 
-    /** 完成story工单
-     * 
-     * @return finishedNum */
+    /**
+     * 完成story工单
+     * @return finishedNum
+     */
     public Integer getFinishedNum() {
         return finishedNum;
     }
@@ -75,9 +79,10 @@ public class Chart {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return iterationId */
+    /**
+     * 迭代id
+     * @return iterationId
+     */
     public Integer getIterationId() {
         return iterationId;
     }
@@ -91,9 +96,10 @@ public class Chart {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectNumId */
+    /**
+     * 项目id
+     * @return projectNumId
+     */
     public Integer getProjectNumId() {
         return projectNumId;
     }
@@ -107,9 +113,10 @@ public class Chart {
         return this;
     }
 
-    /** 未完成story数
-     * 
-     * @return remainingNum */
+    /**
+     * 未完成story数
+     * @return remainingNum
+     */
     public Integer getRemainingNum() {
         return remainingNum;
     }
@@ -123,9 +130,10 @@ public class Chart {
         return this;
     }
 
-    /** 总story数
-     * 
-     * @return total */
+    /**
+     * 总story数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -168,7 +176,10 @@ public class Chart {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

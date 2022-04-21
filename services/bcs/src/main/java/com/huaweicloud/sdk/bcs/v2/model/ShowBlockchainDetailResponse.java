@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBlockchainDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get basicInfo
-     * 
-     * @return basicInfo */
+    /**
+     * Get basicInfo
+     * @return basicInfo
+     */
     public BasicInfo getBasicInfo() {
         return basicInfo;
     }
@@ -130,9 +133,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 通道信息
-     * 
-     * @return channels */
+    /**
+     * 通道信息
+     * @return channels
+     */
     public List<ChannelInfo> getChannels() {
         return channels;
     }
@@ -162,9 +166,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** peer组织信息
-     * 
-     * @return peerInfo */
+    /**
+     * peer组织信息
+     * @return peerInfo
+     */
     public List<PeerInfo> getPeerInfo() {
         return peerInfo;
     }
@@ -194,9 +199,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** light_peer组织信息
-     * 
-     * @return lightPeerInfo */
+    /**
+     * light_peer组织信息
+     * @return lightPeerInfo
+     */
     public List<PeerInfo> getLightPeerInfo() {
         return lightPeerInfo;
     }
@@ -219,9 +225,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ordererInfo
-     * 
-     * @return ordererInfo */
+    /**
+     * Get ordererInfo
+     * @return ordererInfo
+     */
     public PeerInfo getOrdererInfo() {
         return ordererInfo;
     }
@@ -244,9 +251,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get couchDbInfo
-     * 
-     * @return couchDbInfo */
+    /**
+     * Get couchDbInfo
+     * @return couchDbInfo
+     */
     public CouchDBInfo getCouchDbInfo() {
         return couchDbInfo;
     }
@@ -269,9 +277,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get dmsKafkaInfo
-     * 
-     * @return dmsKafkaInfo */
+    /**
+     * Get dmsKafkaInfo
+     * @return dmsKafkaInfo
+     */
     public DmsKafkaInfo getDmsKafkaInfo() {
         return dmsKafkaInfo;
     }
@@ -294,9 +303,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get iefInfo
-     * 
-     * @return iefInfo */
+    /**
+     * Get iefInfo
+     * @return iefInfo
+     */
     public IefInfo getIefInfo() {
         return iefInfo;
     }
@@ -319,9 +329,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get sfsInfo
-     * 
-     * @return sfsInfo */
+    /**
+     * Get sfsInfo
+     * @return sfsInfo
+     */
     public SfsInfo getSfsInfo() {
         return sfsInfo;
     }
@@ -344,9 +355,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get agentInfo
-     * 
-     * @return agentInfo */
+    /**
+     * Get agentInfo
+     * @return agentInfo
+     */
     public PeerInfo getAgentInfo() {
         return agentInfo;
     }
@@ -369,9 +381,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get restapiInfo
-     * 
-     * @return restapiInfo */
+    /**
+     * Get restapiInfo
+     * @return restapiInfo
+     */
     public PeerInfo getRestapiInfo() {
         return restapiInfo;
     }
@@ -401,9 +414,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 云硬盘存储卷信息
-     * 
-     * @return evsPvcInfo */
+    /**
+     * 云硬盘存储卷信息
+     * @return evsPvcInfo
+     */
     public Map<String, Map<String, String>> getEvsPvcInfo() {
         return evsPvcInfo;
     }
@@ -426,9 +440,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get tc3TaskserverInfo
-     * 
-     * @return tc3TaskserverInfo */
+    /**
+     * Get tc3TaskserverInfo
+     * @return tc3TaskserverInfo
+     */
     public PeerInfo getTc3TaskserverInfo() {
         return tc3TaskserverInfo;
     }
@@ -451,9 +466,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get obsBucketInfo
-     * 
-     * @return obsBucketInfo */
+    /**
+     * Get obsBucketInfo
+     * @return obsBucketInfo
+     */
     public OBSInfo getObsBucketInfo() {
         return obsBucketInfo;
     }
@@ -527,7 +543,10 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

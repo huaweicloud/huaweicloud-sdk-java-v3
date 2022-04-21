@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WatermarkTemplate */
+/**
+ * WatermarkTemplate
+ */
 public class WatermarkTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印模板名称。
-     * 
-     * @return name */
+    /**
+     * 水印模板名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -104,9 +107,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印模板配置id。
-     * 
-     * @return id */
+    /**
+     * 水印模板配置id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -120,9 +124,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 启用状态。 取值为： - 0：停用 - 1：启用
-     * 
-     * @return status */
+    /**
+     * 启用状态。  取值为： - 0：停用 - 1：启用
+     * @return status
+     */
     public Long getStatus() {
         return status;
     }
@@ -136,9 +141,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片相对输出视频的水平偏移量。 默认值是0。
-     * 
-     * @return dx */
+    /**
+     * 水印图片相对输出视频的水平偏移量。  默认值是0。
+     * @return dx
+     */
     public String getDx() {
         return dx;
     }
@@ -152,9 +158,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片相对输出视频的垂直偏移量。 默认值是0。
-     * 
-     * @return dy */
+    /**
+     * 水印图片相对输出视频的垂直偏移量。  默认值是0。
+     * @return dy
+     */
     public String getDy() {
         return dy;
     }
@@ -168,9 +175,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印的位置。
-     * 
-     * @return position */
+    /**
+     * 水印的位置。
+     * @return position
+     */
     public String getPosition() {
         return position;
     }
@@ -184,9 +192,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片宽。
-     * 
-     * @return width */
+    /**
+     * 水印图片宽。
+     * @return width
+     */
     public String getWidth() {
         return width;
     }
@@ -200,9 +209,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片高。
-     * 
-     * @return height */
+    /**
+     * 水印图片高。
+     * @return height
+     */
     public String getHeight() {
         return height;
     }
@@ -216,9 +226,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -232,9 +243,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片下载url。
-     * 
-     * @return imageUrl */
+    /**
+     * 水印图片下载url。
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -248,9 +260,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印图片格式类型。
-     * 
-     * @return type */
+    /**
+     * 水印图片格式类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -264,9 +277,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印类型，当前只支持Image（图片水印）。
-     * 
-     * @return watermarkType */
+    /**
+     * 水印类型，当前只支持Image（图片水印）。
+     * @return watermarkType
+     */
     public String getWatermarkType() {
         return watermarkType;
     }
@@ -280,9 +294,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** type设置为Image时有效。 目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
-     * 
-     * @return imageProcess */
+    /**
+     * type设置为Image时有效。  目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
+     * @return imageProcess
+     */
     public String getImageProcess() {
         return imageProcess;
     }
@@ -296,9 +311,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印开始时间。
-     * 
-     * @return timelineStart */
+    /**
+     * 水印开始时间。
+     * @return timelineStart
+     */
     public String getTimelineStart() {
         return timelineStart;
     }
@@ -312,9 +328,10 @@ public class WatermarkTemplate {
         return this;
     }
 
-    /** 水印持续时间。
-     * 
-     * @return timelineDuration */
+    /**
+     * 水印持续时间。
+     * @return timelineDuration
+     */
     public String getTimelineDuration() {
         return timelineDuration;
     }
@@ -389,7 +406,10 @@ public class WatermarkTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

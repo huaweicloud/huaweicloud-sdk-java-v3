@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QosQualityData */
+/**
+ * QosQualityData
+ */
 public class QosQualityData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class QosQualityData {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return uid */
+    /**
+     * 用户id
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -52,9 +55,10 @@ public class QosQualityData {
         return this;
     }
 
-    /** 对端的用户ID，为0时表示本端上行数据
-     * 
-     * @return peerid */
+    /**
+     * 对端的用户ID，为0时表示本端上行数据
+     * @return peerid
+     */
     public String getPeerid() {
         return peerid;
     }
@@ -68,9 +72,10 @@ public class QosQualityData {
         return this;
     }
 
-    /** 指标ID
-     * 
-     * @return mid */
+    /**
+     * 指标ID
+     * @return mid
+     */
     public String getMid() {
         return mid;
     }
@@ -100,9 +105,10 @@ public class QosQualityData {
         return this;
     }
 
-    /** 时间戳及相应时间的指标数值列表
-     * 
-     * @return data */
+    /**
+     * 时间戳及相应时间的指标数值列表
+     * @return data
+     */
     public List<TimeFloatValueData> getData() {
         return data;
     }
@@ -141,7 +147,10 @@ public class QosQualityData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

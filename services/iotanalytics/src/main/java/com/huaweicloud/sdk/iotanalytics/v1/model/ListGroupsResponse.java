@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储组列表
-     * 
-     * @return groups */
+    /**
+     * 存储组列表
+     * @return groups
+     */
     public List<GetGroup> getGroups() {
         return groups;
     }
@@ -59,9 +62,12 @@ public class ListGroupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的 data-store-group 数量 minimum: 0 maximum: 4
-     * 
-     * @return count */
+    /**
+     * 返回的 data-store-group 数量
+     * minimum: 0
+     * maximum: 4
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -98,7 +104,10 @@ public class ListGroupsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

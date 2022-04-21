@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 输出为obs类型时的配置信息 */
+/**
+ * 输出为obs类型时的配置信息
+ */
 public class TaskOutputObs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class TaskOutputObs {
         return this;
     }
 
-    /** OBS桶名，选用obs类型输出时必填。
-     * 
-     * @return bucket */
+    /**
+     * OBS桶名，选用obs类型输出时必填。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -47,9 +50,10 @@ public class TaskOutputObs {
         return this;
     }
 
-    /** OBS的路径，选用obs类型输出时必填。
-     * 
-     * @return path */
+    /**
+     * OBS的路径，选用obs类型输出时必填。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -79,9 +83,10 @@ public class TaskOutputObs {
         return this;
     }
 
-    /** 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
+     * @return dataCategory
+     */
     public List<String> getDataCategory() {
         return dataCategory;
     }
@@ -119,7 +124,10 @@ public class TaskOutputObs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,13 +44,19 @@ public class ShowJobResponse extends SdkResponse {
 
     private String directory;
 
-    /** Gets or Sets jobType */
+    /**
+     * Gets or Sets jobType
+     */
     public static final class JobTypeEnum {
 
-        /** Enum BATCH for value: "BATCH" */
+        /**
+         * Enum BATCH for value: "BATCH"
+         */
         public static final JobTypeEnum BATCH = new JobTypeEnum("BATCH");
 
-        /** Enum REAL_TIME for value: "REAL_TIME" */
+        /**
+         * Enum REAL_TIME for value: "REAL_TIME"
+         */
         public static final JobTypeEnum REAL_TIME = new JobTypeEnum("REAL_TIME");
 
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -128,9 +136,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -160,9 +169,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get nodes
-     * 
-     * @return nodes */
+    /**
+     * Get nodes
+     * @return nodes
+     */
     public List<Node> getNodes() {
         return nodes;
     }
@@ -185,9 +195,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get schedule
-     * 
-     * @return schedule */
+    /**
+     * Get schedule
+     * @return schedule
+     */
     public Schedule getSchedule() {
         return schedule;
     }
@@ -217,9 +228,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get params
-     * 
-     * @return params */
+    /**
+     * Get params
+     * @return params
+     */
     public List<JobParam> getParams() {
         return params;
     }
@@ -233,9 +245,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get directory
-     * 
-     * @return directory */
+    /**
+     * Get directory
+     * @return directory
+     */
     public String getDirectory() {
         return directory;
     }
@@ -249,9 +262,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get jobType
-     * 
-     * @return jobType */
+    /**
+     * Get jobType
+     * @return jobType
+     */
     public JobTypeEnum getJobType() {
         return jobType;
     }
@@ -274,9 +288,10 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get basicConfig
-     * 
-     * @return basicConfig */
+    /**
+     * Get basicConfig
+     * @return basicConfig
+     */
     public BasicInfo getBasicConfig() {
         return basicConfig;
     }
@@ -322,7 +337,10 @@ public class ShowJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

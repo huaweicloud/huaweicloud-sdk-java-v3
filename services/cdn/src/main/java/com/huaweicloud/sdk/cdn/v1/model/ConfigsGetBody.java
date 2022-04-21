@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配置项。 */
+/**
+ * 配置项。
+ */
 public class ConfigsGetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** 回源请求头配置。
-     * 
-     * @return originRequestHeader */
+    /**
+     * 回源请求头配置。
+     * @return originRequestHeader
+     */
     public List<OriginRequestHeader> getOriginRequestHeader() {
         return originRequestHeader;
     }
@@ -104,9 +107,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** http header配置。
-     * 
-     * @return httpResponseHeader */
+    /**
+     * http header配置。
+     * @return httpResponseHeader
+     */
     public List<HttpResponseHeader> getHttpResponseHeader() {
         return httpResponseHeader;
     }
@@ -129,9 +133,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** Get urlAuth
-     * 
-     * @return urlAuth */
+    /**
+     * Get urlAuth
+     * @return urlAuth
+     */
     public UrlAuthGetBody getUrlAuth() {
         return urlAuth;
     }
@@ -154,9 +159,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** Get https
-     * 
-     * @return https */
+    /**
+     * Get https
+     * @return https
+     */
     public HttpGetBody getHttps() {
         return https;
     }
@@ -186,9 +192,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** 源站配置。
-     * 
-     * @return sources */
+    /**
+     * 源站配置。
+     * @return sources
+     */
     public List<SourcesConfig> getSources() {
         return sources;
     }
@@ -202,9 +209,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
-     * 
-     * @return originProtocol */
+    /**
+     * 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+     * @return originProtocol
+     */
     public String getOriginProtocol() {
         return originProtocol;
     }
@@ -227,9 +235,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** Get forceRedirect
-     * 
-     * @return forceRedirect */
+    /**
+     * Get forceRedirect
+     * @return forceRedirect
+     */
     public ForceRedirectConfig getForceRedirect() {
         return forceRedirect;
     }
@@ -252,9 +261,10 @@ public class ConfigsGetBody {
         return this;
     }
 
-    /** Get compress
-     * 
-     * @return compress */
+    /**
+     * Get compress
+     * @return compress
+     */
     public Compress getCompress() {
         return compress;
     }
@@ -309,7 +319,10 @@ public class ConfigsGetBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

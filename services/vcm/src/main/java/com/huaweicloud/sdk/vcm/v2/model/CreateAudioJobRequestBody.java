@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求体 */
+/**
+ * 请求体
+ */
 public class CreateAudioJobRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** 作业名称，只能由字母（a～zA～Z）、数字（0～9）、中划线（-）、下划线（_）组成，长度范围为[1，100]。
-     * 
-     * @return name */
+    /**
+     * 作业名称，只能由字母（a～zA～Z）、数字（0～9）、中划线（-）、下划线（_）组成，长度范围为[1，100]。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +63,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** 作业描述信息，最大长度为500字符长度。
-     * 
-     * @return description */
+    /**
+     * 作业描述信息，最大长度为500字符长度。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -85,9 +89,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public CreateAudioJobRequestBodyInput getInput() {
         return input;
     }
@@ -110,9 +115,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public AudioOutput getOutput() {
         return output;
     }
@@ -135,9 +141,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public AudioServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -151,9 +158,10 @@ public class CreateAudioJobRequestBody {
         return this;
     }
 
-    /** 功能版本为“1.0”。
-     * 
-     * @return serviceVersion */
+    /**
+     * 功能版本为“1.0”。
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -198,7 +206,10 @@ public class CreateAudioJobRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

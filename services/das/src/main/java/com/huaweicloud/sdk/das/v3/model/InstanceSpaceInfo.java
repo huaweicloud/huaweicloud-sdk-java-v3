@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例空间信息。数据来源于文件系统。已用空间包含数据空间、日志空间和其他空间，其他空间包括引擎产生的临时文件等。 */
+/**
+ * 实例空间信息。数据来源于文件系统。已用空间包含数据空间、日志空间和其他空间，其他空间包括引擎产生的临时文件等。
+ */
 public class InstanceSpaceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 实例总空间，以字节为单位。GaussDB(for MySQL)不会返回总空间
-     * 
-     * @return totalSize */
+    /**
+     * 实例总空间，以字节为单位。GaussDB(for MySQL)不会返回总空间
+     * @return totalSize
+     */
     public Long getTotalSize() {
         return totalSize;
     }
@@ -59,9 +62,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 已使用空间，以字节为单位
-     * 
-     * @return usedSize */
+    /**
+     * 已使用空间，以字节为单位
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -75,9 +79,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 数据空间，以字节为单位
-     * 
-     * @return dataSize */
+    /**
+     * 数据空间，以字节为单位
+     * @return dataSize
+     */
     public Long getDataSize() {
         return dataSize;
     }
@@ -91,9 +96,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 日志空间，以字节为单位
-     * 
-     * @return logSize */
+    /**
+     * 日志空间，以字节为单位
+     * @return logSize
+     */
     public Long getLogSize() {
         return logSize;
     }
@@ -107,9 +113,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 近七日的数据平均日增长量，以字节为单位
-     * 
-     * @return avgDailyGrowth */
+    /**
+     * 近七日的数据平均日增长量，以字节为单位
+     * @return avgDailyGrowth
+     */
     public Long getAvgDailyGrowth() {
         return avgDailyGrowth;
     }
@@ -123,9 +130,10 @@ public class InstanceSpaceInfo {
         return this;
     }
 
-    /** 最后一次分析的结果时间，毫秒单位时间戳
-     * 
-     * @return lastResultTime */
+    /**
+     * 最后一次分析的结果时间，毫秒单位时间戳
+     * @return lastResultTime
+     */
     public Long getLastResultTime() {
         return lastResultTime;
     }
@@ -170,7 +178,10 @@ public class InstanceSpaceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

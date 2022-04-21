@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新路由请求体 */
+/**
+ * 更新路由请求体
+ */
 public class UpdateRoutesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateRoutesRequestBody {
         return this;
     }
 
-    /** 待更新的路由信息
-     * 
-     * @return routes */
+    /**
+     * 待更新的路由信息
+     * @return routes
+     */
     public List<RouteOption> getRoutes() {
         return routes;
     }
@@ -74,7 +77,10 @@ public class UpdateRoutesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

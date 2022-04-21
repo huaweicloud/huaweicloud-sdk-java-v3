@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AddEipV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class AddEipV2Response extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP编号
-     * 
-     * @return eipId */
+    /**
+     * 弹性公网IP编号
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -50,9 +53,10 @@ public class AddEipV2Response extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP
-     * 
-     * @return eipAddress */
+    /**
+     * 弹性公网IP
+     * @return eipAddress
+     */
     public String getEipAddress() {
         return eipAddress;
     }
@@ -66,9 +70,10 @@ public class AddEipV2Response extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP状态
-     * 
-     * @return eipStatus */
+    /**
+     * 弹性公网IP状态
+     * @return eipStatus
+     */
     public String getEipStatus() {
         return eipStatus;
     }
@@ -82,9 +87,10 @@ public class AddEipV2Response extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP(IPV6)
-     * 
-     * @return eipIpv6Address */
+    /**
+     * 弹性公网IP(IPV6)
+     * @return eipIpv6Address
+     */
     public String getEipIpv6Address() {
         return eipIpv6Address;
     }
@@ -125,7 +131,10 @@ public class AddEipV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

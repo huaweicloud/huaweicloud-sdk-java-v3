@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBackupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,17 +25,24 @@ public class ListBackupsRequest {
 
     private String backupId;
 
-    /** 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 -
-     * 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。 */
+    /**
+     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
+     */
     public static final class BackupTypeEnum {
 
-        /** Enum AUTO for value: "Auto" */
+        /**
+         * Enum AUTO for value: "Auto"
+         */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("Auto");
 
-        /** Enum MANUAL for value: "Manual" */
+        /**
+         * Enum MANUAL for value: "Manual"
+         */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
 
-        /** Enum INCREMENTAL for value: "Incremental" */
+        /**
+         * Enum INCREMENTAL for value: "Incremental"
+         */
         public static final BackupTypeEnum INCREMENTAL = new BackupTypeEnum("Incremental");
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,16 +133,24 @@ public class ListBackupsRequest {
 
     private String endTime;
 
-    /** 实例模式。 取值： - Sharding - ReplicaSet - Single */
+    /**
+     * 实例模式。 取值： - Sharding - ReplicaSet - Single
+     */
     public static final class ModeEnum {
 
-        /** Enum SHARDING for value: "Sharding" */
+        /**
+         * Enum SHARDING for value: "Sharding"
+         */
         public static final ModeEnum SHARDING = new ModeEnum("Sharding");
 
-        /** Enum REPLICASET for value: "ReplicaSet" */
+        /**
+         * Enum REPLICASET for value: "ReplicaSet"
+         */
         public static final ModeEnum REPLICASET = new ModeEnum("ReplicaSet");
 
-        /** Enum SINGLE for value: "Single" */
+        /**
+         * Enum SINGLE for value: "Single"
+         */
         public static final ModeEnum SINGLE = new ModeEnum("Single");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +226,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -225,9 +243,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 备份ID。 - 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。
-     * 
-     * @return backupId */
+    /**
+     * 备份ID。 - 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -241,10 +260,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 -
-     * 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
-     * 
-     * @return backupType */
+    /**
+     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
+     * @return backupType
+     */
     public BackupTypeEnum getBackupType() {
         return backupType;
     }
@@ -258,10 +277,11 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。
-     * 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -275,9 +295,12 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 查询备份个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询备份个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -291,9 +314,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 查询开始时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 “end_time”有值时，“begin_time”必选。
-     * 
-     * @return beginTime */
+    /**
+     * 查询开始时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 “end_time”有值时，“begin_time”必选。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -307,9 +331,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 “begin_time”有值时，“end_time”必选。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 “begin_time”有值时，“end_time”必选。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -323,9 +348,10 @@ public class ListBackupsRequest {
         return this;
     }
 
-    /** 实例模式。 取值： - Sharding - ReplicaSet - Single
-     * 
-     * @return mode */
+    /**
+     * 实例模式。 取值： - Sharding - ReplicaSet - Single
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -374,7 +400,10 @@ public class ListBackupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class GetTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板平台类型
-     * 
-     * @return platform */
+    /**
+     * 模板平台类型
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -84,9 +87,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 语言类型
-     * 
-     * @return language */
+    /**
+     * 语言类型
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -100,9 +104,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 是否支持流水线
-     * 
-     * @return pipeline */
+    /**
+     * 是否支持流水线
+     * @return pipeline
+     */
     public String getPipeline() {
         return pipeline;
     }
@@ -116,9 +121,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板分类
-     * 
-     * @return entertype */
+    /**
+     * 模板分类
+     * @return entertype
+     */
     public String getEntertype() {
         return entertype;
     }
@@ -132,9 +138,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return search */
+    /**
+     * 模板名称
+     * @return search
+     */
     public String getSearch() {
         return search;
     }
@@ -148,9 +155,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板日期排序
-     * 
-     * @return dateorder */
+    /**
+     * 模板日期排序
+     * @return dateorder
+     */
     public String getDateorder() {
         return dateorder;
     }
@@ -164,9 +172,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板引用次数排序
-     * 
-     * @return usedtimeorder */
+    /**
+     * 模板引用次数排序
+     * @return usedtimeorder
+     */
     public String getUsedtimeorder() {
         return usedtimeorder;
     }
@@ -180,9 +189,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 模板公开类型
-     * 
-     * @return type */
+    /**
+     * 模板公开类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -196,9 +206,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 大区名称
-     * 
-     * @return region */
+    /**
+     * 大区名称
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -212,9 +223,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 分页页数
-     * 
-     * @return pageNo */
+    /**
+     * 分页页数
+     * @return pageNo
+     */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -228,9 +240,10 @@ public class GetTemplatesRequest {
         return this;
     }
 
-    /** 每页数据数
-     * 
-     * @return pageSize */
+    /**
+     * 每页数据数
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -295,7 +308,10 @@ public class GetTemplatesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 定时、周期任务策略 */
+/**
+ * 定时、周期任务策略
+ */
 public class ScheduledPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class ScheduledPolicy {
 
     private String launchTime;
 
-    /** 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。 */
+    /**
+     * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
+     */
     public static final class RecurrenceTypeEnum {
 
-        /** Enum DAILY for value: "Daily" */
+        /**
+         * Enum DAILY for value: "Daily"
+         */
         public static final RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("Daily");
 
-        /** Enum WEEKLY for value: "Weekly" */
+        /**
+         * Enum WEEKLY for value: "Weekly"
+         */
         public static final RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("Weekly");
 
-        /** Enum MONTHLY for value: "Monthly" */
+        /**
+         * Enum MONTHLY for value: "Monthly"
+         */
         public static final RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
 
         private static final Map<String, RecurrenceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class ScheduledPolicy {
         return this;
     }
 
-    /** 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
-     * 
-     * @return launchTime */
+    /**
+     * 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
+     * @return launchTime
+     */
     public String getLaunchTime() {
         return launchTime;
     }
@@ -134,9 +145,10 @@ public class ScheduledPolicy {
         return this;
     }
 
-    /** 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
-     * 
-     * @return recurrenceType */
+    /**
+     * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
+     * @return recurrenceType
+     */
     public RecurrenceTypeEnum getRecurrenceType() {
         return recurrenceType;
     }
@@ -150,10 +162,10 @@ public class ScheduledPolicy {
         return this;
     }
 
-    /** 周期触发任务数值，scaling_policy_type为RECURRENCE时该项必选。类型为Daily时，该字段为null，表示每天执行类型为Weekly时，该字段取值范围为1-7，1表示星期日，以此类推，以”,”分割，例如：1,3,5。类型为Monthly时，该字段取值范围为1-31，分别表示每月的日期，以“,”分割，例如：1,10,13,28。
-     * 说明： - 当recurrence_type类型为Daily时，recurrence_value参数不生效。
-     * 
-     * @return recurrenceValue */
+    /**
+     * 周期触发任务数值，scaling_policy_type为RECURRENCE时该项必选。类型为Daily时，该字段为null，表示每天执行类型为Weekly时，该字段取值范围为1-7，1表示星期日，以此类推，以”,”分割，例如：1,3,5。类型为Monthly时，该字段取值范围为1-31，分别表示每月的日期，以“,”分割，例如：1,10,13,28。 说明： - 当recurrence_type类型为Daily时，recurrence_value参数不生效。
+     * @return recurrenceValue
+     */
     public String getRecurrenceValue() {
         return recurrenceValue;
     }
@@ -167,9 +179,10 @@ public class ScheduledPolicy {
         return this;
     }
 
-    /** 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
-     * 
-     * @return startTime */
+    /**
+     * 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -183,9 +196,10 @@ public class ScheduledPolicy {
         return this;
     }
 
-    /** 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
-     * 
-     * @return endTime */
+    /**
+     * 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -228,7 +242,10 @@ public class ScheduledPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

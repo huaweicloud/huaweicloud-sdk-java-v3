@@ -11,22 +11,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** eip信息 */
+/**
+ * eip信息
+ */
 public class EipResult {
 
-    /** IP地址类型。 */
+    /**
+     * IP地址类型。
+     */
     public static final class IpTypeEnum {
 
-        /** Enum _5_BGP for value: "5_bgp" */
+        /**
+         * Enum _5_BGP for value: "5_bgp"
+         */
         public static final IpTypeEnum _5_BGP = new IpTypeEnum("5_bgp");
 
-        /** Enum _5_SBGP for value: "5_sbgp" */
+        /**
+         * Enum _5_SBGP for value: "5_sbgp"
+         */
         public static final IpTypeEnum _5_SBGP = new IpTypeEnum("5_sbgp");
 
-        /** Enum _5_TELCOM for value: "5_telcom" */
+        /**
+         * Enum _5_TELCOM for value: "5_telcom"
+         */
         public static final IpTypeEnum _5_TELCOM = new IpTypeEnum("5_telcom");
 
-        /** Enum _5_UNION for value: "5_union" */
+        /**
+         * Enum _5_UNION for value: "5_union"
+         */
         public static final IpTypeEnum _5_UNION = new IpTypeEnum("5_union");
 
         private static final Map<String, IpTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +120,10 @@ public class EipResult {
         return this;
     }
 
-    /** IP地址类型。
-     * 
-     * @return ipType */
+    /**
+     * IP地址类型。
+     * @return ipType
+     */
     public IpTypeEnum getIpType() {
         return ipType;
     }
@@ -133,9 +146,10 @@ public class EipResult {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public BandwidthResult getBandwidth() {
         return bandwidth;
     }
@@ -171,7 +185,10 @@ public class EipResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Datasources */
+/**
+ * Datasources
+ */
 public class Datasources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class Datasources {
         return this;
     }
 
-    /** 数据源id。
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源id。
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -75,9 +78,10 @@ public class Datasources {
         return this;
     }
 
-    /** 名称。
-     * 
-     * @return datasourceName */
+    /**
+     * 名称。
+     * @return datasourceName
+     */
     public String getDatasourceName() {
         return datasourceName;
     }
@@ -91,9 +95,10 @@ public class Datasources {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -107,9 +112,10 @@ public class Datasources {
         return this;
     }
 
-    /** 结构。
-     * 
-     * @return structure */
+    /**
+     * 结构。
+     * @return structure
+     */
     public String getStructure() {
         return structure;
     }
@@ -123,9 +129,10 @@ public class Datasources {
         return this;
     }
 
-    /** 工作空间编号。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间编号。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -148,9 +155,10 @@ public class Datasources {
         return this;
     }
 
-    /** Get dataConfig
-     * 
-     * @return dataConfig */
+    /**
+     * Get dataConfig
+     * @return dataConfig
+     */
     public DataConfig getDataConfig() {
         return dataConfig;
     }
@@ -173,9 +181,10 @@ public class Datasources {
         return this;
     }
 
-    /** Get specsConfig
-     * 
-     * @return specsConfig */
+    /**
+     * Get specsConfig
+     * @return specsConfig
+     */
     public SpecsConfig getSpecsConfig() {
         return specsConfig;
     }
@@ -189,9 +198,10 @@ public class Datasources {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public Long getCreatedAt() {
         return createdAt;
     }
@@ -205,9 +215,10 @@ public class Datasources {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -265,7 +276,10 @@ public class Datasources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

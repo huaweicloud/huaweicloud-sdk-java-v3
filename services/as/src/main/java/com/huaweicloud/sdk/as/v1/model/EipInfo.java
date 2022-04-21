@@ -11,22 +11,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配置云服务器的弹性IP信息 */
+/**
+ * 配置云服务器的弹性IP信息
+ */
 public class EipInfo {
 
-    /** 弹性IP地址类型。类型枚举值：5_bgp：全动态BGP;5_sbgp：静态BGP;5_telcom：中国电信;5_union：中国联通;详情请参见《虚拟私有云接口参考》“申请弹性公网IP”章节的“publicip”字段说明。 */
+    /**
+     * 弹性IP地址类型。类型枚举值：5_bgp：全动态BGP;5_sbgp：静态BGP;5_telcom：中国电信;5_union：中国联通;详情请参见《虚拟私有云接口参考》“申请弹性公网IP”章节的“publicip”字段说明。
+     */
     public static final class IpTypeEnum {
 
-        /** Enum _5_BGP for value: "5_bgp" */
+        /**
+         * Enum _5_BGP for value: "5_bgp"
+         */
         public static final IpTypeEnum _5_BGP = new IpTypeEnum("5_bgp");
 
-        /** Enum _5_SBGP for value: "5_sbgp" */
+        /**
+         * Enum _5_SBGP for value: "5_sbgp"
+         */
         public static final IpTypeEnum _5_SBGP = new IpTypeEnum("5_sbgp");
 
-        /** Enum _5_TELCOM for value: "5_telcom" */
+        /**
+         * Enum _5_TELCOM for value: "5_telcom"
+         */
         public static final IpTypeEnum _5_TELCOM = new IpTypeEnum("5_telcom");
 
-        /** Enum _5_UNION for value: "5_union" */
+        /**
+         * Enum _5_UNION for value: "5_union"
+         */
         public static final IpTypeEnum _5_UNION = new IpTypeEnum("5_union");
 
         private static final Map<String, IpTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +120,10 @@ public class EipInfo {
         return this;
     }
 
-    /** 弹性IP地址类型。类型枚举值：5_bgp：全动态BGP;5_sbgp：静态BGP;5_telcom：中国电信;5_union：中国联通;详情请参见《虚拟私有云接口参考》“申请弹性公网IP”章节的“publicip”字段说明。
-     * 
-     * @return ipType */
+    /**
+     * 弹性IP地址类型。类型枚举值：5_bgp：全动态BGP;5_sbgp：静态BGP;5_telcom：中国电信;5_union：中国联通;详情请参见《虚拟私有云接口参考》“申请弹性公网IP”章节的“publicip”字段说明。
+     * @return ipType
+     */
     public IpTypeEnum getIpType() {
         return ipType;
     }
@@ -133,9 +146,10 @@ public class EipInfo {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public BandwidthInfo getBandwidth() {
         return bandwidth;
     }
@@ -171,7 +185,10 @@ public class EipInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RetentionLog */
+/**
+ * RetentionLog
+ */
 public class RetentionLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -64,9 +67,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** ID
-     * 
-     * @return id */
+    /**
+     * ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -80,9 +84,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 组织名
-     * 
-     * @return namespace */
+    /**
+     * 组织名
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -96,9 +101,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 镜像仓库名
-     * 
-     * @return repo */
+    /**
+     * 镜像仓库名
+     * @return repo
+     */
     public String getRepo() {
         return repo;
     }
@@ -112,9 +118,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 老化规则ID
-     * 
-     * @return retentionId */
+    /**
+     * 老化规则ID
+     * @return retentionId
+     */
     public Integer getRetentionId() {
         return retentionId;
     }
@@ -128,9 +135,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 规则
-     * 
-     * @return ruleType */
+    /**
+     * 规则
+     * @return ruleType
+     */
     public String getRuleType() {
         return ruleType;
     }
@@ -144,9 +152,10 @@ public class RetentionLog {
         return this;
     }
 
-    /** 镜像版本
-     * 
-     * @return tag */
+    /**
+     * 镜像版本
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -190,7 +199,10 @@ public class RetentionLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

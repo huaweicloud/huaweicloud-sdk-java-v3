@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCertificateRequestBody */
+/**
+ * CreateCertificateRequestBody
+ */
 public class CreateCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** 父CA证书ID。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -72,11 +75,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** 密钥算法，可选值如下： - **RSA2048** : RSA算法，密钥长度2048位； - **RSA4096** : RSA算法，密钥长度4096位； - **EC256** : 椭圆曲线算法（Elliptic
-     * Curve Digital Signature Algorithm (ECDSA)），密钥长度256位； - **EC384** : 椭圆曲线算法（Elliptic Curve Digital Signature
-     * Algorithm (ECDSA)），密钥长度384位。
-     * 
-     * @return keyAlgorithm */
+    /**
+     * 密钥算法，可选值如下：   - **RSA2048** : RSA算法，密钥长度2048位；   - **RSA4096** : RSA算法，密钥长度4096位；   - **EC256** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度256位；   - **EC384** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度384位。
+     * @return keyAlgorithm
+     */
     public String getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -90,9 +92,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** 签名哈希算法，可选值如下： - **SHA256** - **SHA384** - **SHA512**
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名哈希算法，可选值如下：   - **SHA256**   - **SHA384**   - **SHA512**
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -115,9 +118,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** Get distinguishedName
-     * 
-     * @return distinguishedName */
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
     public CertDistinguishedName getDistinguishedName() {
         return distinguishedName;
     }
@@ -140,9 +144,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** Get validity
-     * 
-     * @return validity */
+    /**
+     * Get validity
+     * @return validity
+     */
     public Validity getValidity() {
         return validity;
     }
@@ -172,12 +177,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** 密钥用法，具体标准参见RFC 5280中:[4.2.1.3节](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.3)。 -
-     * **digitalSignature** : 数字签名； - **nonRepudiation** : 不可抵赖； - **keyEncipherment** : 密钥用于加密密钥数据； -
-     * **dataEncipherment** : 用于加密数据； - **keyAgreement** : 密钥协商； - **keyCertSign** : 签发证书； - **cRLSign** : 签发吊销列表； -
-     * **encipherOnly** : 仅用于加密； - **decipherOnly** : 仅用于解密。
-     * 
-     * @return keyUsages */
+    /**
+     * 密钥用法，具体标准参见RFC 5280中:[4.2.1.3节](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.3)。   - **digitalSignature** : 数字签名；   - **nonRepudiation** : 不可抵赖；   - **keyEncipherment** : 密钥用于加密密钥数据；   - **dataEncipherment** : 用于加密数据；   - **keyAgreement** : 密钥协商；   - **keyCertSign** : 签发证书；   - **cRLSign** : 签发吊销列表；   - **encipherOnly** : 仅用于加密；   - **decipherOnly** : 仅用于解密。
+     * @return keyUsages
+     */
     public List<String> getKeyUsages() {
         return keyUsages;
     }
@@ -210,9 +213,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** 主体备用名称，详情请参见**SubjectAlternativeName**字段数据结构说明。 - array大小：[0,20]。
-     * 
-     * @return subjectAlternativeNames */
+    /**
+     * 主体备用名称，详情请参见**SubjectAlternativeName**字段数据结构说明。   - array大小：[0,20]。
+     * @return subjectAlternativeNames
+     */
     public List<SubjectAlternativeName> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -236,9 +240,10 @@ public class CreateCertificateRequestBody {
         return this;
     }
 
-    /** Get customizedExtension
-     * 
-     * @return customizedExtension */
+    /**
+     * Get customizedExtension
+     * @return customizedExtension
+     */
     public CustomizedExtension getCustomizedExtension() {
         return customizedExtension;
     }
@@ -294,7 +299,10 @@ public class CreateCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

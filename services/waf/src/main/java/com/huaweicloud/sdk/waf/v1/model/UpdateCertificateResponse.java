@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书ID
-     * 
-     * @return id */
+    /**
+     * 证书ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名
-     * 
-     * @return name */
+    /**
+     * 证书名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -66,9 +70,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书过期时间戳
-     * 
-     * @return expireTime */
+    /**
+     * 证书过期时间戳
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -82,9 +87,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -125,7 +131,10 @@ public class UpdateCertificateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

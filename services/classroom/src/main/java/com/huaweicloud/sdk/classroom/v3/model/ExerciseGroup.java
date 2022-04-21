@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ExerciseGroup */
+/**
+ * ExerciseGroup
+ */
 public class ExerciseGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ExerciseGroup {
         return this;
     }
 
-    /** 习题列表
-     * 
-     * @return exercises */
+    /**
+     * 习题列表
+     * @return exercises
+     */
     public List<ExerciseCard> getExercises() {
         return exercises;
     }
@@ -58,9 +61,10 @@ public class ExerciseGroup {
         return this;
     }
 
-    /** 习题分类
-     * 
-     * @return type */
+    /**
+     * 习题分类
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -96,7 +100,10 @@ public class ExerciseGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

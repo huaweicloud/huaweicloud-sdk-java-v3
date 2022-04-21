@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户查询的vmr详情 */
+/**
+ * 用户查询的vmr详情
+ */
 public class QueryVmrResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。
-     * 
-     * @return id */
+    /**
+     * 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。 
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -99,9 +102,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。
-     * 
-     * @return vmrId */
+    /**
+     * 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。 
+     * @return vmrId
+     */
     public String getVmrId() {
         return vmrId;
     }
@@ -115,9 +119,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室名称
-     * 
-     * @return vmrName */
+    /**
+     * 云会议室名称
+     * @return vmrName
+     */
     public String getVmrName() {
         return vmrName;
     }
@@ -131,9 +136,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 来宾密码
-     * 
-     * @return gustPwd */
+    /**
+     * 来宾密码
+     * @return gustPwd
+     */
     public String getGustPwd() {
         return gustPwd;
     }
@@ -147,9 +153,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 来宾与会链接
-     * 
-     * @return gustJoinUrl */
+    /**
+     * 来宾与会链接
+     * @return gustJoinUrl
+     */
     public String getGustJoinUrl() {
         return gustJoinUrl;
     }
@@ -163,9 +170,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 主席密码
-     * 
-     * @return chairPwd */
+    /**
+     * 主席密码
+     * @return chairPwd
+     */
     public String getChairPwd() {
         return chairPwd;
     }
@@ -179,9 +187,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 主席与会链接
-     * 
-     * @return chairJoinUrl */
+    /**
+     * 主席与会链接
+     * @return chairJoinUrl
+     */
     public String getChairJoinUrl() {
         return chairJoinUrl;
     }
@@ -195,9 +204,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 允许来宾先入会
-     * 
-     * @return allowGustFirst */
+    /**
+     * 允许来宾先入会
+     * @return allowGustFirst
+     */
     public Boolean getAllowGustFirst() {
         return allowGustFirst;
     }
@@ -211,9 +221,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室被使用后是否通知会议室所有者
-     * 
-     * @return gustFirstNotice */
+    /**
+     * 云会议室被使用后是否通知会议室所有者
+     * @return gustFirstNotice
+     */
     public Boolean getGustFirstNotice() {
         return gustFirstNotice;
     }
@@ -227,9 +238,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会
-     * 
-     * @return vmrMode */
+    /**
+     * VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会 
+     * @return vmrMode
+     */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -243,9 +255,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室套餐包的id，仅专用云会议室返回
-     * 
-     * @return vmrPkgId */
+    /**
+     * 云会议室套餐包的id，仅专用云会议室返回
+     * @return vmrPkgId
+     */
     public String getVmrPkgId() {
         return vmrPkgId;
     }
@@ -259,9 +272,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室套餐包的名称，仅专用云会议室返回
-     * 
-     * @return vmrPkgName */
+    /**
+     * 云会议室套餐包的名称，仅专用云会议室返回
+     * @return vmrPkgName
+     */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -275,9 +289,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室套餐包的会议并发方数，仅专用云会议室返回
-     * 
-     * @return vmrPkgParties */
+    /**
+     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * @return vmrPkgParties
+     */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -291,9 +306,10 @@ public class QueryVmrResultDTO {
         return this;
     }
 
-    /** 云会议室状态: * 0、正常 * 1、停用 * 2、未分配
-     * 
-     * @return status */
+    /**
+     * 云会议室状态: * 0、正常 * 1、停用 * 2、未分配 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -366,7 +382,10 @@ public class QueryVmrResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

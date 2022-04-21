@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateWebSocketTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateWebSocketTokenRequest {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -39,9 +42,10 @@ public class CreateWebSocketTokenRequest {
         return this;
     }
 
-    /** 会控正式Token。 该头域统一为BASE64编码。
-     * 
-     * @return xConferenceAuthorization */
+    /**
+     * 会控正式Token。 该头域统一为BASE64编码。
+     * @return xConferenceAuthorization
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Conference-Authorization")
     public String getXConferenceAuthorization() {
@@ -80,7 +84,10 @@ public class CreateWebSocketTokenRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

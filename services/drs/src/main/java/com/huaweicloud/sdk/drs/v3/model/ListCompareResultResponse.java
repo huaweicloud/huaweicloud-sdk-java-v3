@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCompareResultResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -76,9 +79,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** Get objectLevelCompareResults
-     * 
-     * @return objectLevelCompareResults */
+    /**
+     * Get objectLevelCompareResults
+     * @return objectLevelCompareResults
+     */
     public ObjectCompareResult getObjectLevelCompareResults() {
         return objectLevelCompareResults;
     }
@@ -101,9 +105,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lineCompareResults
-     * 
-     * @return lineCompareResults */
+    /**
+     * Get lineCompareResults
+     * @return lineCompareResults
+     */
     public LineCompareResult getLineCompareResults() {
         return lineCompareResults;
     }
@@ -127,9 +132,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** Get contentCompareResults
-     * 
-     * @return contentCompareResults */
+    /**
+     * Get contentCompareResults
+     * @return contentCompareResults
+     */
     public ContentCompareResult getContentCompareResults() {
         return contentCompareResults;
     }
@@ -153,9 +159,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** Get compareTaskListResults
-     * 
-     * @return compareTaskListResults */
+    /**
+     * Get compareTaskListResults
+     * @return compareTaskListResults
+     */
     public CompareTaskListResult getCompareTaskListResults() {
         return compareTaskListResults;
     }
@@ -169,9 +176,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -185,9 +193,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -240,7 +249,10 @@ public class ListCompareResultResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

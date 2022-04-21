@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 输出配置请求 */
+/**
+ * 输出配置请求
+ */
 public class OutputRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OutputRequest {
         return this;
     }
 
-    /** 输出参数名称,formulas中定义的name
-     * 
-     * @return name */
+    /**
+     * 输出参数名称,formulas中定义的name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class OutputRequest {
         return this;
     }
 
-    /** 输出资产ID，填写模型中定义的输出模型对应的某资产ID；创建资产时，如果是输出到本资产的模型，且output_static_asset_id和output_dynamic_asset_id都未配置，则后台自动配置output_static_asset_id为本资产ID；修改资产时，如果output_static_asset_id为null则表示置空
-     * 
-     * @return outputStaticAssetId */
+    /**
+     * 输出资产ID，填写模型中定义的输出模型对应的某资产ID；创建资产时，如果是输出到本资产的模型，且output_static_asset_id和output_dynamic_asset_id都未配置，则后台自动配置output_static_asset_id为本资产ID；修改资产时，如果output_static_asset_id为null则表示置空
+     * @return outputStaticAssetId
+     */
     public String getOutputStaticAssetId() {
         return outputStaticAssetId;
     }
@@ -60,9 +64,10 @@ public class OutputRequest {
         return this;
     }
 
-    /** 输出资产ID，填写公式动态生成资产ID，可根据入参获取资产ID，如：GetAssetId(\"assetmodelName1\",\"staticPropertyName1\",paramA)；修改资产时，如果output_static_asset_id为null则表示置空
-     * 
-     * @return outputDynamicAssetId */
+    /**
+     * 输出资产ID，填写公式动态生成资产ID，可根据入参获取资产ID，如：GetAssetId(\"assetmodelName1\",\"staticPropertyName1\",paramA)；修改资产时，如果output_static_asset_id为null则表示置空
+     * @return outputDynamicAssetId
+     */
     public String getOutputDynamicAssetId() {
         return outputDynamicAssetId;
     }
@@ -101,7 +106,10 @@ public class OutputRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

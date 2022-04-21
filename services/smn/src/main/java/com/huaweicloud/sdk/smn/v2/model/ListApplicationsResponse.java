@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListApplicationsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListApplicationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的唯一标识ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -48,9 +51,10 @@ public class ListApplicationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的Application个数。该参数不受offset和limit影响，即返回的是您账户下所有的Application个数。
-     * 
-     * @return applicationCount */
+    /**
+     * 返回的Application个数。该参数不受offset和limit影响，即返回的是您账户下所有的Application个数。
+     * @return applicationCount
+     */
     public Integer getApplicationCount() {
         return applicationCount;
     }
@@ -80,9 +84,10 @@ public class ListApplicationsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get applications
-     * 
-     * @return applications */
+    /**
+     * Get applications
+     * @return applications
+     */
     public List<ApplicationItem> getApplications() {
         return applications;
     }
@@ -121,7 +126,10 @@ public class ListApplicationsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

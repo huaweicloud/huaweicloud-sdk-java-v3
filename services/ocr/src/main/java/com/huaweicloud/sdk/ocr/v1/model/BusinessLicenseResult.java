@@ -70,9 +70,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** - 老版本营业执照对应注册号。 - 新三证合一版本营业执照对应社会保障号。
-     * 
-     * @return registrationNumber */
+    /**
+     *   - 老版本营业执照对应注册号。  - 新三证合一版本营业执照对应社会保障号。 
+     * @return registrationNumber
+     */
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -86,9 +87,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 企业名称。
-     * 
-     * @return name */
+    /**
+     * 企业名称。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +104,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 公司/企业类型/主体类型。
-     * 
-     * @return type */
+    /**
+     * 公司/企业类型/主体类型。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -118,9 +121,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 住所/营业场所/企业住所。
-     * 
-     * @return address */
+    /**
+     * 住所/营业场所/企业住所。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -134,9 +138,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 法定代表人/负责人。
-     * 
-     * @return legalRepresentative */
+    /**
+     * 法定代表人/负责人。 
+     * @return legalRepresentative
+     */
     public String getLegalRepresentative() {
         return legalRepresentative;
     }
@@ -150,9 +155,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 注册资本。
-     * 
-     * @return registeredCapital */
+    /**
+     * 注册资本。 
+     * @return registeredCapital
+     */
     public String getRegisteredCapital() {
         return registeredCapital;
     }
@@ -166,9 +172,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 成立日期。
-     * 
-     * @return foundDate */
+    /**
+     * 成立日期。 
+     * @return foundDate
+     */
     public String getFoundDate() {
         return foundDate;
     }
@@ -182,9 +189,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 营业期限。
-     * 
-     * @return businessTerm */
+    /**
+     * 营业期限。 
+     * @return businessTerm
+     */
     public String getBusinessTerm() {
         return businessTerm;
     }
@@ -198,9 +206,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 经营范围。
-     * 
-     * @return businessScope */
+    /**
+     * 经营范围。 
+     * @return businessScope
+     */
     public String getBusinessScope() {
         return businessScope;
     }
@@ -214,9 +223,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 发照日期。
-     * 
-     * @return issueDate */
+    /**
+     * 发照日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -230,9 +240,10 @@ public class BusinessLicenseResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -297,7 +308,10 @@ public class BusinessLicenseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

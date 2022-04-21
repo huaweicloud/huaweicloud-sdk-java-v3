@@ -30,9 +30,10 @@ public class EventDataInfo {
         return this;
     }
 
-    /** 事件类型，例如instance_host_info。
-     * 
-     * @return type */
+    /**
+     * 事件类型，例如instance_host_info。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -46,9 +47,10 @@ public class EventDataInfo {
         return this;
     }
 
-    /** 事件上报时间。
-     * 
-     * @return timestamp */
+    /**
+     * 事件上报时间。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -62,9 +64,10 @@ public class EventDataInfo {
         return this;
     }
 
-    /** 主机配置信息。
-     * 
-     * @return value */
+    /**
+     * 主机配置信息。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -102,7 +105,10 @@ public class EventDataInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

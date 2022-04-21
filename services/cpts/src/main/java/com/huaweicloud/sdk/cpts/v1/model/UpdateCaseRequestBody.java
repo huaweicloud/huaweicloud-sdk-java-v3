@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateCaseRequestBody */
+/**
+ * UpdateCaseRequestBody
+ */
 public class UpdateCaseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class UpdateCaseRequestBody {
         return this;
     }
 
-    /** contents
-     * 
-     * @return contents */
+    /**
+     * contents
+     * @return contents
+     */
     public List<CaseInfo> getContents() {
         return contents;
     }
@@ -74,9 +77,10 @@ public class UpdateCaseRequestBody {
         return this;
     }
 
-    /** for_loop_params
-     * 
-     * @return forLoopParams */
+    /**
+     * for_loop_params
+     * @return forLoopParams
+     */
     public List<Object> getForLoopParams() {
         return forLoopParams;
     }
@@ -113,7 +117,10 @@ public class UpdateCaseRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

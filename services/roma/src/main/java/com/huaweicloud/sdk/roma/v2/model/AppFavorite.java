@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 是否收藏应用，收藏的应用会在列表里优先显示 */
+/**
+ * 是否收藏应用，收藏的应用会在列表里优先显示
+ */
 public class AppFavorite {
 
     @Override

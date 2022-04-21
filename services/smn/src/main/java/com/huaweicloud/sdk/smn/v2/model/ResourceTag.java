@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 资源标签结构体。 */
+/**
+ * 资源标签结构体。
+ */
 public class ResourceTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 键，表示要匹配的字段。 当前key的参数值只能取“resource_name”，此时value的参数值为云服务器名称。 - key不能重复，value为匹配的值。 - 此字段为固定字典值。 - 不允许为空字符串。
-     * 
-     * @return key */
+    /**
+     * 键，表示要匹配的字段。  当前key的参数值只能取“resource_name”，此时value的参数值为云服务器名称。  - key不能重复，value为匹配的值。  - 此字段为固定字典值。  - 不允许为空字符串。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 值。 当前key的参数值只能取“resource_name”，此时value的参数值为云服务器名称。 - 每个值最大长度255个unicode字符。 - 不可以为空。
-     * 
-     * @return value */
+    /**
+     * 值。  当前key的参数值只能取“resource_name”，此时value的参数值为云服务器名称。  - 每个值最大长度255个unicode字符。  - 不可以为空。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

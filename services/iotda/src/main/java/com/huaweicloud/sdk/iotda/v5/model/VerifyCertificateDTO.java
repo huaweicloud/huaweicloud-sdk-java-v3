@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 验证CA证书结构体。 */
+/**
+ * 验证CA证书结构体。
+ */
 public class VerifyCertificateDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class VerifyCertificateDTO {
         return this;
     }
 
-    /** **参数说明**：验证证书的内容信息。
-     * 
-     * @return verifyContent */
+    /**
+     * **参数说明**：验证证书的内容信息。
+     * @return verifyContent
+     */
     public String getVerifyContent() {
         return verifyContent;
     }
@@ -55,7 +58,10 @@ public class VerifyCertificateDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

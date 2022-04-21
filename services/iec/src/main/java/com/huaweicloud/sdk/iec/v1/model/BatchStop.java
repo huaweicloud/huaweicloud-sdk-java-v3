@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量停止边缘实例对象 */
+/**
+ * 批量停止边缘实例对象
+ */
 public class BatchStop {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchStop {
         return this;
     }
 
-    /** 待停止的边缘实例列表。
-     * 
-     * @return servers */
+    /**
+     * 待停止的边缘实例列表。
+     * @return servers
+     */
     public List<BaseId> getServers() {
         return servers;
     }
@@ -58,9 +61,10 @@ public class BatchStop {
         return this;
     }
 
-    /** 关机类型，默认为SOFT。 取值范围： - SOFT：普通关机。 - HARD：强制关机。
-     * 
-     * @return type */
+    /**
+     * 关机类型，默认为SOFT。  取值范围： - SOFT：普通关机。 - HARD：强制关机。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -96,7 +100,10 @@ public class BatchStop {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

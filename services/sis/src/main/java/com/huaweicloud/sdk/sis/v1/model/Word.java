@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单个单词的发音评测结果 */
+/**
+ * 单个单词的发音评测结果
+ */
 public class Word {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class Word {
         return this;
     }
 
-    /** 去除了所有标点符号后的原始文本 前端调用接口后推荐使用“​text​”来在UI 中展示结果
-     * 
-     * @return text */
+    /**
+     * 去除了所有标点符号后的原始文本 前端调用接口后推荐使用“​text​”来在UI 中展示结果
+     * @return text
+     */
     public String getText() {
         return text;
     }
@@ -82,9 +85,10 @@ public class Word {
         return this;
     }
 
-    /** 接口接收的原始文本
-     * 
-     * @return textOriginal */
+    /**
+     * 接口接收的原始文本
+     * @return textOriginal
+     */
     public String getTextOriginal() {
         return textOriginal;
     }
@@ -114,9 +118,10 @@ public class Word {
         return this;
     }
 
-    /** 原始文本规范化后切分成的单词 如175 会 规范为 [\"one\", \"\"hundred\", \"and\", \"seventy\", \"five\"]
-     * 
-     * @return textNormalised */
+    /**
+     * 原始文本规范化后切分成的单词 如175 会 规范为 [\"one\", \"\"hundred\", \"and\", \"seventy\", \"five\"]
+     * @return textNormalised
+     */
     public List<String> getTextNormalised() {
         return textNormalised;
     }
@@ -130,9 +135,10 @@ public class Word {
         return this;
     }
 
-    /** 是否命中模型发音字典 如果未命中，则表明会根据发音规律推测正确发音
-     * 
-     * @return outOfVocabulary */
+    /**
+     * 是否命中模型发音字典 如果未命中，则表明会根据发音规律推测正确发音
+     * @return outOfVocabulary
+     */
     public Boolean getOutOfVocabulary() {
         return outOfVocabulary;
     }
@@ -146,9 +152,10 @@ public class Word {
         return this;
     }
 
-    /** 起始时间
-     * 
-     * @return startTime */
+    /**
+     * 起始时间
+     * @return startTime
+     */
     public Float getStartTime() {
         return startTime;
     }
@@ -162,9 +169,10 @@ public class Word {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Float getEndTime() {
         return endTime;
     }
@@ -178,9 +186,12 @@ public class Word {
         return this;
     }
 
-    /** 综合评分 minimum: 0 maximum: 1E+2
-     * 
-     * @return score */
+    /**
+     * 综合评分
+     * minimum: 0
+     * maximum: 1E+2
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -203,9 +214,10 @@ public class Word {
         return this;
     }
 
-    /** Get pronunciation
-     * 
-     * @return pronunciation */
+    /**
+     * Get pronunciation
+     * @return pronunciation
+     */
     public WordPronunciation getPronunciation() {
         return pronunciation;
     }
@@ -228,9 +240,10 @@ public class Word {
         return this;
     }
 
-    /** Get fluency
-     * 
-     * @return fluency */
+    /**
+     * Get fluency
+     * @return fluency
+     */
     public WordFluency getFluency() {
         return fluency;
     }
@@ -260,9 +273,10 @@ public class Word {
         return this;
     }
 
-    /** 音节打分表
-     * 
-     * @return phonemes */
+    /**
+     * 音节打分表
+     * @return phonemes
+     */
     public List<Phoneme> getPhonemes() {
         return phonemes;
     }
@@ -320,7 +334,10 @@ public class Word {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Calculation */
+/**
+ * Calculation
+ */
 public class Calculation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class Calculation {
         return this;
     }
 
-    /** 从未连接过的设备数量 minimum: 0 maximum: 999999999
-     * 
-     * @return neverConnected */
+    /**
+     * 从未连接过的设备数量
+     * minimum: 0
+     * maximum: 999999999
+     * @return neverConnected
+     */
     public Integer getNeverConnected() {
         return neverConnected;
     }
@@ -44,9 +49,12 @@ public class Calculation {
         return this;
     }
 
-    /** 在线设备数量 minimum: 0 maximum: 999999999
-     * 
-     * @return online */
+    /**
+     * 在线设备数量
+     * minimum: 0
+     * maximum: 999999999
+     * @return online
+     */
     public Integer getOnline() {
         return online;
     }
@@ -60,9 +68,12 @@ public class Calculation {
         return this;
     }
 
-    /** 离线设备数量 minimum: 0 maximum: 999999999
-     * 
-     * @return offline */
+    /**
+     * 离线设备数量
+     * minimum: 0
+     * maximum: 999999999
+     * @return offline
+     */
     public Integer getOffline() {
         return offline;
     }
@@ -100,7 +111,10 @@ public class Calculation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

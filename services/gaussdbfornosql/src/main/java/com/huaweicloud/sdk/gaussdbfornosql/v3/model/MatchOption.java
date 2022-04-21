@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** MatchOption */
+/**
+ * MatchOption
+ */
 public class MatchOption {
 
-    /** 取值为“instance_name”或“instance_id”，分别表示按实例名称或按实例ID匹配查询。 */
+    /**
+     * 取值为“instance_name”或“instance_id”，分别表示按实例名称或按实例ID匹配查询。
+     */
     public static final class KeyEnum {
 
-        /** Enum INSTANCE_NAME for value: "instance_name" */
+        /**
+         * Enum INSTANCE_NAME for value: "instance_name"
+         */
         public static final KeyEnum INSTANCE_NAME = new KeyEnum("instance_name");
 
-        /** Enum INSTANCE_ID for value: "instance_id" */
+        /**
+         * Enum INSTANCE_ID for value: "instance_id"
+         */
         public static final KeyEnum INSTANCE_ID = new KeyEnum("instance_id");
 
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class MatchOption {
         return this;
     }
 
-    /** 取值为“instance_name”或“instance_id”，分别表示按实例名称或按实例ID匹配查询。
-     * 
-     * @return key */
+    /**
+     * 取值为“instance_name”或“instance_id”，分别表示按实例名称或按实例ID匹配查询。
+     * @return key
+     */
     public KeyEnum getKey() {
         return key;
     }
@@ -115,9 +124,10 @@ public class MatchOption {
         return this;
     }
 
-    /** 待匹配的实例名称或实例ID。
-     * 
-     * @return value */
+    /**
+     * 待匹配的实例名称或实例ID。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -153,7 +163,10 @@ public class MatchOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

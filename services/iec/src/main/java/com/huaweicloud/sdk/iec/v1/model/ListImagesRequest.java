@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListImagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ListImagesRequest {
 
     private String imagetype;
 
-    /** 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。 */
+    /**
+     * 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
+     */
     public static final class ProtectedEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final ProtectedEnum TRUE = new ProtectedEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final ProtectedEnum FALSE = new ProtectedEnum("false");
 
         private static final Map<String, ProtectedEnum> STATIC_FIELDS = createStaticFields();
@@ -119,10 +127,14 @@ public class ListImagesRequest {
 
     private String osType;
 
-    /** 镜像使用环境类型。 目前仅支持系统盘镜像，取值为：FusionCompute */
+    /**
+     * 镜像使用环境类型。  目前仅支持系统盘镜像，取值为：FusionCompute
+     */
     public static final class VirtualEnvTypeEnum {
 
-        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
+        /**
+         * Enum FUSIONCOMPUTE for value: "FusionCompute"
+         */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
 
         private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -191,13 +203,19 @@ public class ListImagesRequest {
 
     private VirtualEnvTypeEnum virtualEnvType;
 
-    /** 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。 */
+    /**
+     * 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。
+     */
     public static final class IsregisteredEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IsregisteredEnum TRUE = new IsregisteredEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final IsregisteredEnum FALSE = new IsregisteredEnum("false");
 
         private static final Map<String, IsregisteredEnum> STATIC_FIELDS = createStaticFields();
@@ -277,19 +295,29 @@ public class ListImagesRequest {
 
     private Integer offset;
 
-    /** 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。 */
+    /**
+     * 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum NAME for value: "name" */
+        /**
+         * Enum NAME for value: "name"
+         */
         public static final SortKeyEnum NAME = new SortKeyEnum("name");
 
-        /** Enum STATUS for value: "status" */
+        /**
+         * Enum STATUS for value: "status"
+         */
         public static final SortKeyEnum STATUS = new SortKeyEnum("status");
 
-        /** Enum DISK_FORMAT for value: "disk_format" */
+        /**
+         * Enum DISK_FORMAT for value: "disk_format"
+         */
         public static final SortKeyEnum DISK_FORMAT = new SortKeyEnum("disk_format");
 
-        /** Enum CREATED_AT for value: "created_at" */
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -361,13 +389,19 @@ public class ListImagesRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。 */
+    /**
+     * 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -472,9 +506,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像类型，目前支持以下类型： - 公共镜像：gold - 私有镜像：private
-     * 
-     * @return imagetype */
+    /**
+     * 镜像类型，目前支持以下类型：  - 公共镜像：gold  - 私有镜像：private
+     * @return imagetype
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
     public String getImagetype() {
@@ -490,9 +525,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
-     * 
-     * @return _protected */
+    /**
+     * 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
+     * @return _protected
+     */
     public ProtectedEnum getProtected() {
         return _protected;
     }
@@ -506,9 +542,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像ID，精确匹配。
-     * 
-     * @return id */
+    /**
+     * 镜像ID，精确匹配。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -522,9 +559,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 是否被其他租户可见，取值如下： - public：公共镜像 - private：私有镜像
-     * 
-     * @return visibility */
+    /**
+     * 是否被其他租户可见，取值如下：  - public：公共镜像  - private：私有镜像
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -538,9 +576,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像状态。取值如下： - saving：表示镜像正在上传文件到后端存储 - deleted：表示镜像已经删除 - killed：表示镜像上传错误 - active：表示镜像可以正常使用
-     * 
-     * @return status */
+    /**
+     * 镜像状态。取值如下：  - saving：表示镜像正在上传文件到后端存储  - deleted：表示镜像已经删除  - killed：表示镜像上传错误  - active：表示镜像可以正常使用
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -554,9 +593,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像名称，匹配规则为精确匹配。
-     * 
-     * @return name */
+    /**
+     * 镜像名称，匹配规则为精确匹配。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -570,9 +610,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像系统类型，取值如下： - Linux - Windows - Other
-     * 
-     * @return osType */
+    /**
+     * 镜像系统类型，取值如下：  - Linux - Windows - Other
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public String getOsType() {
@@ -588,9 +629,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像使用环境类型。 目前仅支持系统盘镜像，取值为：FusionCompute
-     * 
-     * @return virtualEnvType */
+    /**
+     * 镜像使用环境类型。  目前仅支持系统盘镜像，取值为：FusionCompute
+     * @return virtualEnvType
+     */
     public VirtualEnvTypeEnum getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -604,9 +646,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。
-     * 
-     * @return isregistered */
+    /**
+     * 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。
+     * @return isregistered
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
     public IsregisteredEnum getIsregistered() {
@@ -622,9 +665,12 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 用于分页，表示查询几条镜像记录，取值为正整数，最大（默认）取值为500 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 用于分页，表示查询几条镜像记录，取值为正整数，最大（默认）取值为500
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -638,9 +684,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 用于分页，表示查询偏移量，表示从整个列表查询结果中的该位置向后进行查询，并非页数偏移，默认取值为0，表示查询第一页。
-     * 
-     * @return offset */
+    /**
+     * 用于分页，表示查询偏移量，表示从整个列表查询结果中的该位置向后进行查询，并非页数偏移，默认取值为0，表示查询第一页。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -654,9 +701,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。
-     * 
-     * @return sortKey */
+    /**
+     * 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -670,9 +718,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。
-     * 
-     * @return sortDir */
+    /**
+     * 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -686,9 +735,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像支持KVM，取值为true，否则无该属性。
-     * 
-     * @return supportKvm */
+    /**
+     * 如果镜像支持KVM，取值为true，否则无该属性。
+     * @return supportKvm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm")
     public String getSupportKvm() {
@@ -704,9 +754,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像是支持KVM虚拟化平台下的GPU类型，取值为“V100_vGPU”或者“RTX5000”，否则无该属性。
-     * 
-     * @return supportKvmGpuType */
+    /**
+     * 如果镜像是支持KVM虚拟化平台下的GPU类型，取值为“V100_vGPU”或者“RTX5000”，否则无该属性。
+     * @return supportKvmGpuType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
@@ -722,9 +773,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像支持AI加速，取值为true，否则无该属性。
-     * 
-     * @return supportKvmAscend310 */
+    /**
+     * 如果镜像支持AI加速，取值为true，否则无该属性。
+     * @return supportKvmAscend310
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_ascend_310")
     public String getSupportKvmAscend310() {
@@ -740,9 +792,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像支持计算增强，取值为true，否则无该属性。
-     * 
-     * @return supportKvmHi1822Hiovs */
+    /**
+     * 如果镜像支持计算增强，取值为true，否则无该属性。
+     * @return supportKvmHi1822Hiovs
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_hi1822_hiovs")
     public String getSupportKvmHi1822Hiovs() {
@@ -758,9 +811,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像为ARM架构类型，取值为true，否则无该属性。
-     * 
-     * @return supportArm */
+    /**
+     * 如果镜像为ARM架构类型，取值为true，否则无该属性。
+     * @return supportArm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_arm")
     public String getSupportArm() {
@@ -776,9 +830,10 @@ public class ListImagesRequest {
         return this;
     }
 
-    /** 如果镜像支持GPU T4，取值为true，否则无该属性。
-     * 
-     * @return supportGpuT4 */
+    /**
+     * 如果镜像支持GPU T4，取值为true，否则无该属性。
+     * @return supportGpuT4
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_gpu_t4")
     public String getSupportGpuT4() {
@@ -869,7 +924,10 @@ public class ListImagesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 日志转储信息 */
+/**
+ * 日志转储信息
+ */
 public class CreateTransferRequestBodyLogTransferInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class CreateTransferRequestBodyLogTransferInfo {
 
     private String logTransferType;
 
-    /** 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\"cycle\"，DIS转储和DMS转储只支持\"realTime\"。 */
+    /**
+     * 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\"cycle\"，DIS转储和DMS转储只支持\"realTime\"。
+     */
     public static final class LogTransferModeEnum {
 
-        /** Enum CYCLE for value: "cycle" */
+        /**
+         * Enum CYCLE for value: "cycle"
+         */
         public static final LogTransferModeEnum CYCLE = new LogTransferModeEnum("cycle");
 
-        /** Enum REALTIME for value: "realTime" */
+        /**
+         * Enum REALTIME for value: "realTime"
+         */
         public static final LogTransferModeEnum REALTIME = new LogTransferModeEnum("realTime");
 
         private static final Map<String, LogTransferModeEnum> STATIC_FIELDS = createStaticFields();
@@ -95,13 +103,19 @@ public class CreateTransferRequestBodyLogTransferInfo {
 
     private LogTransferModeEnum logTransferMode;
 
-    /** 日志转储格式。只支持\"RAW\", \"JSON\"。RAW是指原始日志格式，JSON是指JSON日志格式。OBS转储和DIS转储支持JSON和RAW，DMS转储仅支持RAW */
+    /**
+     * 日志转储格式。只支持\"RAW\", \"JSON\"。RAW是指原始日志格式，JSON是指JSON日志格式。OBS转储和DIS转储支持JSON和RAW，DMS转储仅支持RAW
+     */
     public static final class LogStorageFormatEnum {
 
-        /** Enum JSON for value: "JSON" */
+        /**
+         * Enum JSON for value: "JSON"
+         */
         public static final LogStorageFormatEnum JSON = new LogStorageFormatEnum("JSON");
 
-        /** Enum RAW for value: "RAW" */
+        /**
+         * Enum RAW for value: "RAW"
+         */
         public static final LogStorageFormatEnum RAW = new LogStorageFormatEnum("RAW");
 
         private static final Map<String, LogStorageFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -171,16 +185,24 @@ public class CreateTransferRequestBodyLogTransferInfo {
 
     private LogStorageFormatEnum logStorageFormat;
 
-    /** 日志转储状态，只支持\"ENABLE\",\"DISABLE\",\"EXCEPTION\"。ENABLE是指日志转储开启状态，DISABLE是指日志转储关闭状态，EXCEPTION是指日志转储异常状态 */
+    /**
+     * 日志转储状态，只支持\"ENABLE\",\"DISABLE\",\"EXCEPTION\"。ENABLE是指日志转储开启状态，DISABLE是指日志转储关闭状态，EXCEPTION是指日志转储异常状态
+     */
     public static final class LogTransferStatusEnum {
 
-        /** Enum ENABLE for value: "ENABLE" */
+        /**
+         * Enum ENABLE for value: "ENABLE"
+         */
         public static final LogTransferStatusEnum ENABLE = new LogTransferStatusEnum("ENABLE");
 
-        /** Enum DISABLE for value: "DISABLE" */
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
         public static final LogTransferStatusEnum DISABLE = new LogTransferStatusEnum("DISABLE");
 
-        /** Enum EXCEPTION for value: "EXCEPTION" */
+        /**
+         * Enum EXCEPTION for value: "EXCEPTION"
+         */
         public static final LogTransferStatusEnum EXCEPTION = new LogTransferStatusEnum("EXCEPTION");
 
         private static final Map<String, LogTransferStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -266,9 +288,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储
-     * 
-     * @return logTransferType */
+    /**
+     * 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储
+     * @return logTransferType
+     */
     public String getLogTransferType() {
         return logTransferType;
     }
@@ -282,9 +305,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\"cycle\"，DIS转储和DMS转储只支持\"realTime\"。
-     * 
-     * @return logTransferMode */
+    /**
+     * 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\"cycle\"，DIS转储和DMS转储只支持\"realTime\"。
+     * @return logTransferMode
+     */
     public LogTransferModeEnum getLogTransferMode() {
         return logTransferMode;
     }
@@ -298,9 +322,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** 日志转储格式。只支持\"RAW\", \"JSON\"。RAW是指原始日志格式，JSON是指JSON日志格式。OBS转储和DIS转储支持JSON和RAW，DMS转储仅支持RAW
-     * 
-     * @return logStorageFormat */
+    /**
+     * 日志转储格式。只支持\"RAW\", \"JSON\"。RAW是指原始日志格式，JSON是指JSON日志格式。OBS转储和DIS转储支持JSON和RAW，DMS转储仅支持RAW
+     * @return logStorageFormat
+     */
     public LogStorageFormatEnum getLogStorageFormat() {
         return logStorageFormat;
     }
@@ -314,9 +339,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** 日志转储状态，只支持\"ENABLE\",\"DISABLE\",\"EXCEPTION\"。ENABLE是指日志转储开启状态，DISABLE是指日志转储关闭状态，EXCEPTION是指日志转储异常状态
-     * 
-     * @return logTransferStatus */
+    /**
+     * 日志转储状态，只支持\"ENABLE\",\"DISABLE\",\"EXCEPTION\"。ENABLE是指日志转储开启状态，DISABLE是指日志转储关闭状态，EXCEPTION是指日志转储异常状态
+     * @return logTransferStatus
+     */
     public LogTransferStatusEnum getLogTransferStatus() {
         return logTransferStatus;
     }
@@ -341,9 +367,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** Get logAgencyTransfer
-     * 
-     * @return logAgencyTransfer */
+    /**
+     * Get logAgencyTransfer
+     * @return logAgencyTransfer
+     */
     public CreateTransferRequestBodyLogTransferInfoLogAgencyTransfer getLogAgencyTransfer() {
         return logAgencyTransfer;
     }
@@ -367,9 +394,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return this;
     }
 
-    /** Get logTransferDetail
-     * 
-     * @return logTransferDetail */
+    /**
+     * Get logTransferDetail
+     * @return logTransferDetail
+     */
     public TransferDetail getLogTransferDetail() {
         return logTransferDetail;
     }
@@ -420,7 +448,10 @@ public class CreateTransferRequestBodyLogTransferInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

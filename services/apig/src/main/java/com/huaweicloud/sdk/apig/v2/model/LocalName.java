@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 可用区中英文名称。 */
+/**
+ * 可用区中英文名称。
+ */
 public class LocalName {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LocalName {
         return this;
     }
 
-    /** 可用区英文名称。
-     * 
-     * @return enUs */
+    /**
+     * 可用区英文名称。
+     * @return enUs
+     */
     public String getEnUs() {
         return enUs;
     }
@@ -39,9 +42,10 @@ public class LocalName {
         return this;
     }
 
-    /** 可用区中文名称。
-     * 
-     * @return zhCn */
+    /**
+     * 可用区中文名称。
+     * @return zhCn
+     */
     public String getZhCn() {
         return zhCn;
     }
@@ -77,7 +81,10 @@ public class LocalName {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

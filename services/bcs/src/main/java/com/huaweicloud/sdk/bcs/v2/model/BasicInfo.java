@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BasicInfo */
+/**
+ * BasicInfo
+ */
 public class BasicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -141,9 +143,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务ID
-     * 
-     * @return id */
+    /**
+     * BCS服务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -157,9 +160,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务名
-     * 
-     * @return name */
+    /**
+     * BCS服务名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -173,9 +177,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务版本信息
-     * 
-     * @return version */
+    /**
+     * BCS服务版本信息
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -189,9 +194,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务的类型，分为：联盟链（union），私有链（private）
-     * 
-     * @return serviceType */
+    /**
+     * BCS服务的类型，分为：联盟链（union），私有链（private）
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -205,9 +211,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务部署类型，一键部署（onestep），普通部署（normal）
-     * 
-     * @return purchaseType */
+    /**
+     * BCS服务部署类型，一键部署（onestep），普通部署（normal）
+     * @return purchaseType
+     */
     public String getPurchaseType() {
         return purchaseType;
     }
@@ -221,9 +228,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务安全机制，分为ECDSA（ECDSA），国密算法（sm2）
-     * 
-     * @return signAlgorithm */
+    /**
+     * BCS服务安全机制，分为ECDSA（ECDSA），国密算法（sm2）
+     * @return signAlgorithm
+     */
     public String getSignAlgorithm() {
         return signAlgorithm;
     }
@@ -237,9 +245,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务的共识策略，分为测试策略（solo），快速拜占庭容错算法（sflic）,Kafka(kafka)，raft共识算法（etcdraft）
-     * 
-     * @return consensus */
+    /**
+     * BCS服务的共识策略，分为测试策略（solo），快速拜占庭容错算法（sflic）,Kafka(kafka)，raft共识算法（etcdraft）
+     * @return consensus
+     */
     public String getConsensus() {
         return consensus;
     }
@@ -253,9 +262,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务付费模式，分为按需（1）[包周期（0）](tag:onorder)
-     * 
-     * @return chargingMode */
+    /**
+     * BCS服务付费模式，分为按需（1）[包周期（0）](tag:onorder)
+     * @return chargingMode
+     */
     public Long getChargingMode() {
         return chargingMode;
     }
@@ -269,9 +279,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务版本类型
-     * 
-     * @return versionType */
+    /**
+     * BCS服务版本类型
+     * @return versionType
+     */
     public Long getVersionType() {
         return versionType;
     }
@@ -285,9 +296,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务数据库类型，包括文件数据库（goleveldb），NoSQL（couchdb）
-     * 
-     * @return databaseType */
+    /**
+     * BCS服务数据库类型，包括文件数据库（goleveldb），NoSQL（couchdb）
+     * @return databaseType
+     */
     public String getDatabaseType() {
         return databaseType;
     }
@@ -301,9 +313,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务所在集群ID
-     * 
-     * @return clusterId */
+    /**
+     * BCS服务所在集群ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -317,9 +330,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务所在集群名称
-     * 
-     * @return clusterName */
+    /**
+     * BCS服务所在集群名称
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -333,9 +347,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务的集群类型，分为CCE集群（CCE），IEF集群（ief）
-     * 
-     * @return clusterType */
+    /**
+     * BCS服务的集群类型，分为CCE集群（CCE），IEF集群（ief）
+     * @return clusterType
+     */
     public String getClusterType() {
         return clusterType;
     }
@@ -349,9 +364,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS多可用区标示，分为：多可用区（yes），非多可用区（no）
-     * 
-     * @return clusterAz */
+    /**
+     * BCS多可用区标示，分为：多可用区（yes），非多可用区（no）
+     * @return clusterAz
+     */
     public String getClusterAz() {
         return clusterAz;
     }
@@ -365,9 +381,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务创建时间
-     * 
-     * @return createdTime */
+    /**
+     * BCS服务创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -381,9 +398,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务联盟链下生效，分为邀请方（create），被邀请方（invite）
-     * 
-     * @return deployType */
+    /**
+     * BCS服务联盟链下生效，分为邀请方（create），被邀请方（invite）
+     * @return deployType
+     */
     public String getDeployType() {
         return deployType;
     }
@@ -397,9 +415,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务是否跨region
-     * 
-     * @return isCrossRegion */
+    /**
+     * BCS服务是否跨region
+     * @return isCrossRegion
+     */
     public Boolean getIsCrossRegion() {
         return isCrossRegion;
     }
@@ -413,9 +432,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务升级失败，是否支持回滚
-     * 
-     * @return isSupportRollback */
+    /**
+     * BCS服务升级失败，是否支持回滚
+     * @return isSupportRollback
+     */
     public Boolean getIsSupportRollback() {
         return isSupportRollback;
     }
@@ -429,9 +449,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务是否添加RESTful APIs支持，分为支持（true），不支持（false）
-     * 
-     * @return isSupportRestful */
+    /**
+     * BCS服务是否添加RESTful APIs支持，分为支持（true），不支持（false）
+     * @return isSupportRestful
+     */
     public Boolean getIsSupportRestful() {
         return isSupportRestful;
     }
@@ -445,9 +466,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** 区分BCS是否新服务，分为老服务（true），新服务（false）
-     * 
-     * @return isOldService */
+    /**
+     * 区分BCS是否新服务，分为老服务（true），新服务（false）
+     * @return isOldService
+     */
     public Boolean getIsOldService() {
         return isOldService;
     }
@@ -461,9 +483,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务为老服务时，此字段为老服务版本号
-     * 
-     * @return oldServiceVersion */
+    /**
+     * BCS服务为老服务时，此字段为老服务版本号
+     * @return oldServiceVersion
+     */
     public String getOldServiceVersion() {
         return oldServiceVersion;
     }
@@ -493,9 +516,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务用户数据面agent地址端口列表
-     * 
-     * @return agentPortalAddrs */
+    /**
+     * BCS服务用户数据面agent地址端口列表
+     * @return agentPortalAddrs
+     */
     public List<String> getAgentPortalAddrs() {
         return agentPortalAddrs;
     }
@@ -509,9 +533,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务状态，分为正常（Normal），异常（Abnormal），弹性IP异常（EipAbnormal），已冻结（Freeze），休眠中（Hibernation），未知（其余值）
-     * 
-     * @return status */
+    /**
+     * BCS服务状态，分为正常（Normal），异常（Abnormal），弹性IP异常（EipAbnormal），已冻结（Freeze），休眠中（Hibernation），未知（其余值）
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -525,9 +550,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务处理状态，分为创建中（IsCreating），升级中（IsUpgrading），扩缩容中（IsScaling），删除中（IsDeleting），添加中（IsAdding）
-     * 
-     * @return processStatus */
+    /**
+     * BCS服务处理状态，分为创建中（IsCreating），升级中（IsUpgrading），扩缩容中（IsScaling），删除中（IsDeleting），添加中（IsAdding）
+     * @return processStatus
+     */
     public String getProcessStatus() {
         return processStatus;
     }
@@ -541,9 +567,10 @@ public class BasicInfo {
         return this;
     }
 
-    /** BCS服务为包周期模式时，返回值为0（订单未成功）,1（订单异常）,2（订单正常）
-     * 
-     * @return orderStatus */
+    /**
+     * BCS服务为包周期模式时，返回值为0（订单未成功）,1（订单异常）,2（订单正常）
+     * @return orderStatus
+     */
     public Long getOrderStatus() {
         return orderStatus;
     }
@@ -649,7 +676,10 @@ public class BasicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

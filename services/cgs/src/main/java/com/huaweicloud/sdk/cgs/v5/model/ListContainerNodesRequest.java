@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListContainerNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListContainerNodesRequest {
         return this;
     }
 
-    /** 节点（服务器）名称
-     * 
-     * @return hostName */
+    /**
+     * 节点（服务器）名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -49,9 +52,10 @@ public class ListContainerNodesRequest {
         return this;
     }
 
-    /** Agent状态，包含如下3种。 - not_installed ：未安装 - online ：在线 - offline ：离线
-     * 
-     * @return agentStatus */
+    /**
+     * Agent状态，包含如下3种。   - not_installed ：未安装   - online ：在线   - offline ：离线
+     * @return agentStatus
+     */
     public String getAgentStatus() {
         return agentStatus;
     }
@@ -65,9 +69,12 @@ public class ListContainerNodesRequest {
         return this;
     }
 
-    /** 查询返回查询容器节点列表当前页面的数，量默认10 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询返回查询容器节点列表当前页面的数，量默认10
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -81,9 +88,12 @@ public class ListContainerNodesRequest {
         return this;
     }
 
-    /** 查询游标，初始传入0 minimum: 0 maximum: 10000
-     * 
-     * @return offset */
+    /**
+     * 查询游标，初始传入0
+     * minimum: 0
+     * maximum: 10000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -124,7 +134,10 @@ public class ListContainerNodesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

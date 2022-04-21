@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** LdApiDeploy */
+/**
+ * LdApiDeploy
+ */
 public class LdApiDeploy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,16 +40,24 @@ public class LdApiDeploy {
 
     private String envId;
 
-    /** 请求协议 */
+    /**
+     * 请求协议
+     */
     public static final class ProtocolEnum {
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
 
-        /** Enum HTTPS_HTTP for value: "HTTPS&HTTP" */
+        /**
+         * Enum HTTPS_HTTP for value: "HTTPS&HTTP"
+         */
         public static final ProtocolEnum HTTPS_HTTP = new ProtocolEnum("HTTPS&HTTP");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -153,9 +163,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 是否自动发布API - true：部署完成后自动创建并发布前端API。此时auth_type，group_id，env_id，protocol必填。 - false：部署完成后不创建前端API
-     * 
-     * @return deployFrontApi */
+    /**
+     * 是否自动发布API - true：部署完成后自动创建并发布前端API。此时auth_type，group_id，env_id，protocol必填。 - false：部署完成后不创建前端API 
+     * @return deployFrontApi
+     */
     public Boolean getDeployFrontApi() {
         return deployFrontApi;
     }
@@ -169,9 +180,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     * 
-     * @return authType */
+    /**
+     * 认证方式[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
+     * @return authType
+     */
     public String getAuthType() {
         return authType;
     }
@@ -185,9 +197,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 自定义认证编号。 认证方式auth_type = AUTHORIZER时必填
-     * 
-     * @return authorizerId */
+    /**
+     * 自定义认证编号。  认证方式auth_type = AUTHORIZER时必填
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -201,9 +214,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 部署的前端API分组编号
-     * 
-     * @return groupId */
+    /**
+     * 部署的前端API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -217,9 +231,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 部署的环境编号
-     * 
-     * @return envId */
+    /**
+     * 部署的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -233,9 +248,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 请求协议
-     * 
-     * @return protocol */
+    /**
+     * 请求协议
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -249,9 +265,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 超时时间
-     * 
-     * @return backendTimeout */
+    /**
+     * 超时时间
+     * @return backendTimeout
+     */
     public Integer getBackendTimeout() {
         return backendTimeout;
     }
@@ -265,9 +282,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 请求路径
-     * 
-     * @return path */
+    /**
+     * 请求路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -281,9 +299,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 请求方式
-     * 
-     * @return method */
+    /**
+     * 请求方式
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -297,9 +316,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 是否支持跨域 - true：支持 - false：不支持
-     * 
-     * @return cors */
+    /**
+     * 是否支持跨域 - true：支持 - false：不支持 
+     * @return cors
+     */
     public Boolean getCors() {
         return cors;
     }
@@ -313,9 +333,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** 部署到前端的api归属的应用编号，与后端归属的应用编号保持一致
-     * 
-     * @return romaAppId */
+    /**
+     * 部署到前端的api归属的应用编号，与后端归属的应用编号保持一致
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -329,9 +350,10 @@ public class LdApiDeploy {
         return this;
     }
 
-    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
-     * 
-     * @return retryCount */
+    /**
+     * ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
     public String getRetryCount() {
         return retryCount;
     }
@@ -396,7 +418,10 @@ public class LdApiDeploy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

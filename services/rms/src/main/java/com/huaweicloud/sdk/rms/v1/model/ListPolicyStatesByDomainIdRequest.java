@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPolicyStatesByDomainIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListPolicyStatesByDomainIdRequest {
         return this;
     }
 
-    /** 合规状态
-     * 
-     * @return complianceState */
+    /**
+     * 合规状态
+     * @return complianceState
+     */
     public String getComplianceState() {
         return complianceState;
     }
@@ -54,9 +57,10 @@ public class ListPolicyStatesByDomainIdRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -70,9 +74,10 @@ public class ListPolicyStatesByDomainIdRequest {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -86,9 +91,12 @@ public class ListPolicyStatesByDomainIdRequest {
         return this;
     }
 
-    /** 最大的返回数量 minimum: 1 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 最大的返回数量
+     * minimum: 1
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,9 +110,10 @@ public class ListPolicyStatesByDomainIdRequest {
         return this;
     }
 
-    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * 
-     * @return marker */
+    /**
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -147,7 +156,10 @@ public class ListPolicyStatesByDomainIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

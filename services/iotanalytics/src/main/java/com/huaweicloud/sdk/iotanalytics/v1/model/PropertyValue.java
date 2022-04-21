@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PropertyValue */
+/**
+ * PropertyValue
+ */
 public class PropertyValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PropertyValue {
         return this;
     }
 
-    /** 属性名称
-     * 
-     * @return propertyName */
+    /**
+     * 属性名称
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -44,9 +47,10 @@ public class PropertyValue {
         return this;
     }
 
-    /** 属性值
-     * 
-     * @return value */
+    /**
+     * 属性值
+     * @return value
+     */
     public Object getValue() {
         return value;
     }
@@ -60,9 +64,10 @@ public class PropertyValue {
         return this;
     }
 
-    /** 属性值最后更新时间
-     * 
-     * @return timestamp */
+    /**
+     * 属性值最后更新时间
+     * @return timestamp
+     */
     public String getTimestamp() {
         return timestamp;
     }
@@ -101,7 +106,10 @@ public class PropertyValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

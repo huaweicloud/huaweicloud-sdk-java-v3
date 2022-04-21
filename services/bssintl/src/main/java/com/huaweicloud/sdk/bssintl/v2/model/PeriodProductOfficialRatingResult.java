@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PeriodProductOfficialRatingResult */
+/**
+ * PeriodProductOfficialRatingResult
+ */
 public class PeriodProductOfficialRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** ID标识，来源于请求中的ID。
-     * 
-     * @return id */
+    /**
+     * ID标识，来源于请求中的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的ID。
-     * 
-     * @return productId */
+    /**
+     * 包年/包月产品的ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -65,9 +69,10 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 包年/包月产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -81,9 +86,10 @@ public class PeriodProductOfficialRatingResult {
         return this;
     }
 
-    /** 价格度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 价格度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -124,7 +130,10 @@ public class PeriodProductOfficialRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** resource字段数据结构。 */
+/**
+ * resource字段数据结构。
+ */
 public class RespDeh {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class RespDeh {
         return this;
     }
 
-    /** 专属主机ID。
-     * 
-     * @return resourceId */
+    /**
+     * 专属主机ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -52,9 +55,10 @@ public class RespDeh {
         return this;
     }
 
-    /** 专属主机详情。 该字段用于后续扩展，默认为空。
-     * 
-     * @return resouceDetail */
+    /**
+     * 专属主机详情。  该字段用于后续扩展，默认为空。
+     * @return resouceDetail
+     */
     public String getResouceDetail() {
         return resouceDetail;
     }
@@ -84,9 +88,10 @@ public class RespDeh {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -100,9 +105,10 @@ public class RespDeh {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -142,7 +148,10 @@ public class RespDeh {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

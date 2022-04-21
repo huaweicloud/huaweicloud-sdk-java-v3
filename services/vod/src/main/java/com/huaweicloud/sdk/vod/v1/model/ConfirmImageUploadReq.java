@@ -20,13 +20,19 @@ public class ConfirmImageUploadReq {
 
     private String id;
 
-    /** 水印上传状态。 */
+    /**
+     * 水印上传状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCEED for value: "SUCCEED" */
+        /**
+         * Enum SUCCEED for value: "SUCCEED"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -101,9 +107,10 @@ public class ConfirmImageUploadReq {
         return this;
     }
 
-    /** 水印配置模板id。
-     * 
-     * @return id */
+    /**
+     * 水印配置模板id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -117,9 +124,10 @@ public class ConfirmImageUploadReq {
         return this;
     }
 
-    /** 水印上传状态。
-     * 
-     * @return status */
+    /**
+     * 水印上传状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -156,7 +164,10 @@ public class ConfirmImageUploadReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

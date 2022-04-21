@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMetricValueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowMetricValueResponse extends SdkResponse {
         return this;
     }
 
-    /** 时间序列,使用UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',示例：2021-02-01T00:00:00.123Z
-     * 
-     * @return timestamps */
+    /**
+     * 时间序列,使用UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',示例：2021-02-01T00:00:00.123Z
+     * @return timestamps
+     */
     public List<String> getTimestamps() {
         return timestamps;
     }
@@ -75,9 +78,10 @@ public class ShowMetricValueResponse extends SdkResponse {
         return this;
     }
 
-    /** 指标计算结果列表
-     * 
-     * @return metrics */
+    /**
+     * 指标计算结果列表
+     * @return metrics
+     */
     public List<MetricValue> getMetrics() {
         return metrics;
     }
@@ -114,7 +118,10 @@ public class ShowMetricValueResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

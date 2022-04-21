@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListResScenesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListResScenesRequest {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -39,9 +42,10 @@ public class ListResScenesRequest {
         return this;
     }
 
-    /** 场景类型： - customize，自定义推荐 - intelligent，智能场景
-     * 
-     * @return category */
+    /**
+     * 场景类型： - customize，自定义推荐 - intelligent，智能场景
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -78,7 +82,10 @@ public class ListResScenesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

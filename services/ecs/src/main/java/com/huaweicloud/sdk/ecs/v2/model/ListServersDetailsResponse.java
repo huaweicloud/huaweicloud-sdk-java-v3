@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListServersDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListServersDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性云服务器的列表总数。
-     * 
-     * @return count */
+    /**
+     * 弹性云服务器的列表总数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListServersDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性云服务器详情列表，具体参照-查询云服务器详情接口。查询级别不同，返回的详情不同。
-     * 
-     * @return servers */
+    /**
+     * 弹性云服务器详情列表，具体参照-查询云服务器详情接口。查询级别不同，返回的详情不同。
+     * @return servers
+     */
     public List<ServerDetail> getServers() {
         return servers;
     }
@@ -98,7 +102,10 @@ public class ListServersDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

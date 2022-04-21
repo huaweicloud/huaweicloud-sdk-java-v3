@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RtcHistoryUsage */
+/**
+ * RtcHistoryUsage
+ */
 public class RtcHistoryUsage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
-     * 
-     * @return date */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -59,9 +62,12 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 标清视频时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return videoSd */
+    /**
+     * 标清视频时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return videoSd
+     */
     public Long getVideoSd() {
         return videoSd;
     }
@@ -75,9 +81,12 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 高清视频时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return videoHd */
+    /**
+     * 高清视频时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return videoHd
+     */
     public Long getVideoHd() {
         return videoHd;
     }
@@ -91,9 +100,12 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 超高清视频时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return videoHdp */
+    /**
+     * 超高清视频时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return videoHdp
+     */
     public Long getVideoHdp() {
         return videoHdp;
     }
@@ -107,9 +119,12 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 音频时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return audio */
+    /**
+     * 音频时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return audio
+     */
     public Long getAudio() {
         return audio;
     }
@@ -123,9 +138,12 @@ public class RtcHistoryUsage {
         return this;
     }
 
-    /** 音视频总时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return totalDuration */
+    /**
+     * 音视频总时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return totalDuration
+     */
     public Long getTotalDuration() {
         return totalDuration;
     }
@@ -169,7 +187,10 @@ public class RtcHistoryUsage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateProductTemplateRequestBody */
+/**
+ * UpdateProductTemplateRequestBody
+ */
 public class UpdateProductTemplateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class UpdateProductTemplateRequestBody {
 
     private String description;
 
-    /** 产品模板状态 0-启用 1-禁用 */
+    /**
+     * 产品模板状态 0-启用 1-禁用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class UpdateProductTemplateRequestBody {
         return this;
     }
 
-    /** 产品模板名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
-     * 
-     * @return name */
+    /**
+     * 产品模板名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -120,9 +129,10 @@ public class UpdateProductTemplateRequestBody {
         return this;
     }
 
-    /** 产品模板描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 产品模板描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -136,9 +146,12 @@ public class UpdateProductTemplateRequestBody {
         return this;
     }
 
-    /** 产品模板状态 0-启用 1-禁用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 产品模板状态 0-启用 1-禁用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -177,7 +190,10 @@ public class UpdateProductTemplateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

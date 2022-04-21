@@ -26,10 +26,10 @@ public class Authentication {
         return this;
     }
 
-    /** 集群认证模式。 - kubernetes 1.11及之前版本的集群支持“x509”、“rbac”和“authenticating_proxy”，默认取值为“x509”。 - kubernetes
-     * 1.13及以上版本的集群支持“rbac”和“authenticating_proxy”，默认取值为“rbac”。
-     * 
-     * @return mode */
+    /**
+     * 集群认证模式。   - kubernetes 1.11及之前版本的集群支持“x509”、“rbac”和“authenticating_proxy”，默认取值为“x509”。  - kubernetes 1.13及以上版本的集群支持“rbac”和“authenticating_proxy”，默认取值为“rbac”。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -52,9 +52,10 @@ public class Authentication {
         return this;
     }
 
-    /** Get authenticatingProxy
-     * 
-     * @return authenticatingProxy */
+    /**
+     * Get authenticatingProxy
+     * @return authenticatingProxy
+     */
     public AuthenticatingProxy getAuthenticatingProxy() {
         return authenticatingProxy;
     }
@@ -91,7 +92,10 @@ public class Authentication {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

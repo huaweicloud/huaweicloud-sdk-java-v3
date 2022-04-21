@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 作业的输出配置，至少需要配置一项输出方式。 */
+/**
+ * 作业的输出配置，至少需要配置一项输出方式。
+ */
 public class TaskOutput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class TaskOutput {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public TaskOutputObs getObs() {
         return obs;
     }
@@ -73,9 +76,10 @@ public class TaskOutput {
         return this;
     }
 
-    /** Get dis
-     * 
-     * @return dis */
+    /**
+     * Get dis
+     * @return dis
+     */
     public TaskOutputDis getDis() {
         return dis;
     }
@@ -98,9 +102,10 @@ public class TaskOutput {
         return this;
     }
 
-    /** Get webhook
-     * 
-     * @return webhook */
+    /**
+     * Get webhook
+     * @return webhook
+     */
     public TaskOutputWebhook getWebhook() {
         return webhook;
     }
@@ -123,9 +128,10 @@ public class TaskOutput {
         return this;
     }
 
-    /** Get hosting
-     * 
-     * @return hosting */
+    /**
+     * Get hosting
+     * @return hosting
+     */
     public TaskOutputHosting getHosting() {
         return hosting;
     }
@@ -148,9 +154,10 @@ public class TaskOutput {
         return this;
     }
 
-    /** Get localpath
-     * 
-     * @return localpath */
+    /**
+     * Get localpath
+     * @return localpath
+     */
     public TaskOutputLocalpath getLocalpath() {
         return localpath;
     }
@@ -191,7 +198,10 @@ public class TaskOutput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StructFieldInfo */
+/**
+ * StructFieldInfo
+ */
 public class StructFieldInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 结构化方式
-     * 
-     * @return isAnalysis */
+    /**
+     * 结构化方式
+     * @return isAnalysis
+     */
     public Boolean getIsAnalysis() {
         return isAnalysis;
     }
@@ -59,9 +62,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 字段内容
-     * 
-     * @return content */
+    /**
+     * 字段内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -75,9 +79,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return fieldName */
+    /**
+     * 字段名称
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -91,9 +96,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 字段数据类型,例：string，long，float
-     * 
-     * @return type */
+    /**
+     * 字段数据类型,例：string，long，float
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -107,9 +113,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 自定义别名(json方式中按需添加)
-     * 
-     * @return userDefinedName */
+    /**
+     * 自定义别名(json方式中按需添加)
+     * @return userDefinedName
+     */
     public String getUserDefinedName() {
         return userDefinedName;
     }
@@ -123,9 +130,10 @@ public class StructFieldInfo {
         return this;
     }
 
-    /** 序号
-     * 
-     * @return index */
+    /**
+     * 序号
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -170,7 +178,10 @@ public class StructFieldInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

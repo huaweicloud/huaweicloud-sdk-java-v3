@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AttachEipResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class AttachEipResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -55,9 +58,10 @@ public class AttachEipResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -71,9 +75,10 @@ public class AttachEipResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return nodeName */
+    /**
+     * 节点名称。
+     * @return nodeName
+     */
     public String getNodeName() {
         return nodeName;
     }
@@ -87,9 +92,10 @@ public class AttachEipResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网IP的ID。
-     * 
-     * @return publicIpId */
+    /**
+     * 公网IP的ID。
+     * @return publicIpId
+     */
     public String getPublicIpId() {
         return publicIpId;
     }
@@ -103,9 +109,10 @@ public class AttachEipResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网IP。
-     * 
-     * @return publicIp */
+    /**
+     * 公网IP。
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -148,7 +155,10 @@ public class AttachEipResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

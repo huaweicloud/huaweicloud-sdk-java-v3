@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 当前规格实例的属性。 */
+/**
+ * 当前规格实例的属性。
+ */
 public class ListEnginePropertiesEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个Broker的最大分区数。
-     * 
-     * @return maxPartitionPerBroker */
+    /**
+     * 每个Broker的最大分区数。
+     * @return maxPartitionPerBroker
+     */
     public String getMaxPartitionPerBroker() {
         return maxPartitionPerBroker;
     }
@@ -69,9 +72,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** Broker的最大个数。
-     * 
-     * @return maxBroker */
+    /**
+     * Broker的最大个数。
+     * @return maxBroker
+     */
     public String getMaxBroker() {
         return maxBroker;
     }
@@ -85,9 +89,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个节点的最大存储。单位为GB。
-     * 
-     * @return maxStoragePerNode */
+    /**
+     * 每个节点的最大存储。单位为GB。
+     * @return maxStoragePerNode
+     */
     public String getMaxStoragePerNode() {
         return maxStoragePerNode;
     }
@@ -101,9 +106,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个Broker的最大消费者数。
-     * 
-     * @return maxConsumerPerBroker */
+    /**
+     * 每个Broker的最大消费者数。
+     * @return maxConsumerPerBroker
+     */
     public String getMaxConsumerPerBroker() {
         return maxConsumerPerBroker;
     }
@@ -117,9 +123,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** Broker的最小个数。
-     * 
-     * @return minBroker */
+    /**
+     * Broker的最小个数。
+     * @return minBroker
+     */
     public String getMinBroker() {
         return minBroker;
     }
@@ -133,9 +140,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个Broker的最大带宽。
-     * 
-     * @return maxBandwidthPerBroker */
+    /**
+     * 每个Broker的最大带宽。
+     * @return maxBandwidthPerBroker
+     */
     public String getMaxBandwidthPerBroker() {
         return maxBandwidthPerBroker;
     }
@@ -149,9 +157,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个节点的最小存储。单位为GB。
-     * 
-     * @return minStoragePerNode */
+    /**
+     * 每个节点的最小存储。单位为GB。
+     * @return minStoragePerNode
+     */
     public String getMinStoragePerNode() {
         return minStoragePerNode;
     }
@@ -165,9 +174,10 @@ public class ListEnginePropertiesEntity {
         return this;
     }
 
-    /** 每个Broker的最大TPS。
-     * 
-     * @return maxTpsPerBroker */
+    /**
+     * 每个Broker的最大TPS。
+     * @return maxTpsPerBroker
+     */
     public String getMaxTpsPerBroker() {
         return maxTpsPerBroker;
     }
@@ -223,7 +233,10 @@ public class ListEnginePropertiesEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

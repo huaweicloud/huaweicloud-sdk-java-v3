@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DeviceMessage */
+/**
+ * DeviceMessage
+ */
 public class DeviceMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 设备消息ID，用于唯一标识一条消息，在下发设备消息时由物联网平台分配获得。
-     * 
-     * @return messageId */
+    /**
+     * 设备消息ID，用于唯一标识一条消息，在下发设备消息时由物联网平台分配获得。
+     * @return messageId
+     */
     public String getMessageId() {
         return messageId;
     }
@@ -74,9 +77,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息名称,在下发消息时由用户指定。
-     * 
-     * @return name */
+    /**
+     * 消息名称,在下发消息时由用户指定。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -90,9 +94,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息内容。
-     * 
-     * @return message */
+    /**
+     * 消息内容。 
+     * @return message
+     */
     public Object getMessage() {
         return message;
     }
@@ -106,9 +111,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。
-     * 
-     * @return encoding */
+    /**
+     * 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。 
+     * @return encoding
+     */
     public String getEncoding() {
         return encoding;
     }
@@ -122,9 +128,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。
-     * 
-     * @return payloadFormat */
+    /**
+     * 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。 
+     * @return payloadFormat
+     */
     public String getPayloadFormat() {
         return payloadFormat;
     }
@@ -138,9 +145,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息topic
-     * 
-     * @return topic */
+    /**
+     * 消息topic
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -154,10 +162,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息状态，包含PENDING，DELIVERED，FAILED和TIMEOUT，PENDING指设备不在线，消息被缓存起来，等设备上线之后下发；
-     * DELIVERED指消息发送成功；FAILED消息发送失败；TIMEOUT指消息在平台默认时间内（1天）还没有下发送给设备，则平台会将消息设置为超时，状态为TIMEOUT。
-     * 
-     * @return status */
+    /**
+     * 消息状态，包含PENDING，DELIVERED，FAILED和TIMEOUT，PENDING指设备不在线，消息被缓存起来，等设备上线之后下发； DELIVERED指消息发送成功；FAILED消息发送失败；TIMEOUT指消息在平台默认时间内（1天）还没有下发送给设备，则平台会将消息设置为超时，状态为TIMEOUT。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -171,9 +179,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息的创建时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
-     * 
-     * @return createdTime */
+    /**
+     * 消息的创建时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -187,9 +196,10 @@ public class DeviceMessage {
         return this;
     }
 
-    /** 消息结束时间, \"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串，包含消息转换到DELIVERED和TIMEOUT两个状态的时间。
-     * 
-     * @return finishedTime */
+    /**
+     * 消息结束时间, \"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串，包含消息转换到DELIVERED和TIMEOUT两个状态的时间。
+     * @return finishedTime
+     */
     public String getFinishedTime() {
         return finishedTime;
     }
@@ -239,7 +249,10 @@ public class DeviceMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

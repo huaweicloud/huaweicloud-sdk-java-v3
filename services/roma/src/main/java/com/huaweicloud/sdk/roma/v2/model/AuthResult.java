@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 授权结果 */
+/**
+ * 授权结果
+ */
 public class AuthResult {
 
-    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败 */
+    /**
+     * 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum SKIPPED for value: "SKIPPED" */
+        /**
+         * Enum SKIPPED for value: "SKIPPED"
+         */
         public static final StatusEnum SKIPPED = new StatusEnum("SKIPPED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
-     * 
-     * @return status */
+    /**
+     * 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -134,9 +145,10 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权失败错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 授权失败错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -150,9 +162,10 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权失败错误码
-     * 
-     * @return errorCode */
+    /**
+     * 授权失败错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -166,9 +179,10 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权失败的API名称
-     * 
-     * @return apiName */
+    /**
+     * 授权失败的API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -182,9 +196,10 @@ public class AuthResult {
         return this;
     }
 
-    /** 授权失败的APP名称
-     * 
-     * @return appName */
+    /**
+     * 授权失败的APP名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -225,7 +240,10 @@ public class AuthResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

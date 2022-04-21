@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数异步配置返回结构体。 */
+/**
+ * 函数异步配置返回结构体。
+ */
 public class ListFunctionAsyncInvokeConfigResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** 函数URN。
-     * 
-     * @return funcUrn */
+    /**
+     * 函数URN。
+     * @return funcUrn
+     */
     public String getFuncUrn() {
         return funcUrn;
     }
@@ -60,9 +63,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** 消息最大存活时长，取值范围[60，86400]。单位：秒。
-     * 
-     * @return maxAsyncEventAgeInSeconds */
+    /**
+     * 消息最大存活时长，取值范围[60，86400]。单位：秒。
+     * @return maxAsyncEventAgeInSeconds
+     */
     public Integer getMaxAsyncEventAgeInSeconds() {
         return maxAsyncEventAgeInSeconds;
     }
@@ -76,9 +80,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
-     * 
-     * @return maxAsyncRetryAttempts */
+    /**
+     * 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
+     * @return maxAsyncRetryAttempts
+     */
     public Integer getMaxAsyncRetryAttempts() {
         return maxAsyncRetryAttempts;
     }
@@ -102,9 +107,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** Get destinationConfig
-     * 
-     * @return destinationConfig */
+    /**
+     * Get destinationConfig
+     * @return destinationConfig
+     */
     public FuncAsyncDestinationConfig getDestinationConfig() {
         return destinationConfig;
     }
@@ -118,9 +124,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** 异步调用配置的创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 异步调用配置的创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -134,9 +141,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return this;
     }
 
-    /** 异步调用配置的最后更改时间。
-     * 
-     * @return lastModified */
+    /**
+     * 异步调用配置的最后更改时间。
+     * @return lastModified
+     */
     public String getLastModified() {
         return lastModified;
     }
@@ -188,7 +196,10 @@ public class ListFunctionAsyncInvokeConfigResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -49,9 +49,10 @@ public class TokenUserOsfederation {
         return this;
     }
 
-    /** 用户组信息列表。
-     * 
-     * @return groups */
+    /**
+     * 用户组信息列表。
+     * @return groups
+     */
     public List<OsfederationGroups> getGroups() {
         return groups;
     }
@@ -74,9 +75,10 @@ public class TokenUserOsfederation {
         return this;
     }
 
-    /** Get identityProvider
-     * 
-     * @return identityProvider */
+    /**
+     * Get identityProvider
+     * @return identityProvider
+     */
     public OsfederationIdentityprovider getIdentityProvider() {
         return identityProvider;
     }
@@ -99,9 +101,10 @@ public class TokenUserOsfederation {
         return this;
     }
 
-    /** Get protocol
-     * 
-     * @return protocol */
+    /**
+     * Get protocol
+     * @return protocol
+     */
     public OsfederationProtocol getProtocol() {
         return protocol;
     }
@@ -140,7 +143,10 @@ public class TokenUserOsfederation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

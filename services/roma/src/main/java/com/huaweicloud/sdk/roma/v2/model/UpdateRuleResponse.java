@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,13 +49,19 @@ public class UpdateRuleResponse extends SdkResponse {
 
     private String description;
 
-    /** 规则状态 0-启用 1-停用 */
+    /**
+     * 规则状态 0-启用 1-停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -123,13 +131,19 @@ public class UpdateRuleResponse extends SdkResponse {
 
     private StatusEnum status;
 
-    /** 数据解析状态，ENABLE时data_parsing必填 0-启用 1-停用 */
+    /**
+     * 数据解析状态，ENABLE时data_parsing必填 0-启用 1-停用
+     */
     public static final class DataParsingStatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final DataParsingStatusEnum NUMBER_0 = new DataParsingStatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final DataParsingStatusEnum NUMBER_1 = new DataParsingStatusEnum(1);
 
         private static final Map<Integer, DataParsingStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -255,9 +269,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permissions */
+    /**
+     * 权限
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -271,9 +286,12 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return ruleId */
+    /**
+     * 规则ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return ruleId
+     */
     public Integer getRuleId() {
         return ruleId;
     }
@@ -287,9 +305,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
-     * 
-     * @return name */
+    /**
+     * 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -303,9 +322,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -319,9 +339,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -335,9 +356,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -351,9 +373,12 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则状态 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 规则状态 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -367,9 +392,12 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据解析状态，ENABLE时data_parsing必填 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return dataParsingStatus */
+    /**
+     * 数据解析状态，ENABLE时data_parsing必填 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return dataParsingStatus
+     */
     public DataParsingStatusEnum getDataParsingStatus() {
         return dataParsingStatus;
     }
@@ -383,9 +411,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** SQL查询字段
-     * 
-     * @return sqlField */
+    /**
+     * SQL查询字段
+     * @return sqlField
+     */
     public String getSqlField() {
         return sqlField;
     }
@@ -399,9 +428,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** SQL查询条件
-     * 
-     * @return sqlWhere */
+    /**
+     * SQL查询条件
+     * @return sqlWhere
+     */
     public String getSqlWhere() {
         return sqlWhere;
     }
@@ -415,9 +445,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 完整的规则表达式
-     * 
-     * @return ruleExpress */
+    /**
+     * 完整的规则表达式
+     * @return ruleExpress
+     */
     public String getRuleExpress() {
         return ruleExpress;
     }
@@ -440,9 +471,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get createdUser
-     * 
-     * @return createdUser */
+    /**
+     * Get createdUser
+     * @return createdUser
+     */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -465,9 +497,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get lastUpdatedUser
-     * 
-     * @return lastUpdatedUser */
+    /**
+     * Get lastUpdatedUser
+     * @return lastUpdatedUser
+     */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -481,9 +514,12 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return createdDatetime */
+    /**
+     * 创建时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return createdDatetime
+     */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -497,9 +533,12 @@ public class UpdateRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后修改时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return lastUpdatedDatetime */
+    /**
+     * 最后修改时间，timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return lastUpdatedDatetime
+     */
     public Long getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -576,7 +615,10 @@ public class UpdateRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

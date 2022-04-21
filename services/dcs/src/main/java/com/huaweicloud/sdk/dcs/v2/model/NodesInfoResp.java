@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** NodesInfoResp */
+/**
+ * NodesInfoResp
+ */
 public class NodesInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,22 +28,34 @@ public class NodesInfoResp {
 
     private String name;
 
-    /** 节点状态，所有值如下: - Creating：创建中。 - Active：运行中。 - Inactive：故障。 - Deleting：删除中。 - AddSharding：添加分片中。 */
+    /**
+     * 节点状态，所有值如下: - Creating：创建中。 - Active：运行中。 - Inactive：故障。 - Deleting：删除中。 - AddSharding：添加分片中。 
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "Creating" */
+        /**
+         * Enum CREATING for value: "Creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("Creating");
 
-        /** Enum ACTIVE for value: "Active" */
+        /**
+         * Enum ACTIVE for value: "Active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("Active");
 
-        /** Enum INACTIVE for value: "Inactive" */
+        /**
+         * Enum INACTIVE for value: "Inactive"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("Inactive");
 
-        /** Enum DELETING for value: "Deleting" */
+        /**
+         * Enum DELETING for value: "Deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("Deleting");
 
-        /** Enum ADDSHARDING for value: "AddSharding" */
+        /**
+         * Enum ADDSHARDING for value: "AddSharding"
+         */
         public static final StatusEnum ADDSHARDING = new StatusEnum("AddSharding");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +133,19 @@ public class NodesInfoResp {
 
     private String azCode;
 
-    /** 节点角色，所有值如下: - redis-server：Redis server节点。 - redis-proxy：proxy节点。 */
+    /**
+     * 节点角色，所有值如下: - redis-server：Redis server节点。 - redis-proxy：proxy节点。 
+     */
     public static final class NodeRoleEnum {
 
-        /** Enum REDIS_SERVER for value: "redis-server" */
+        /**
+         * Enum REDIS_SERVER for value: "redis-server"
+         */
         public static final NodeRoleEnum REDIS_SERVER = new NodeRoleEnum("redis-server");
 
-        /** Enum REDIS_PROXY for value: "redis-proxy" */
+        /**
+         * Enum REDIS_PROXY for value: "redis-proxy"
+         */
         public static final NodeRoleEnum REDIS_PROXY = new NodeRoleEnum("redis-proxy");
 
         private static final Map<String, NodeRoleEnum> STATIC_FIELDS = createStaticFields();
@@ -195,16 +215,24 @@ public class NodesInfoResp {
 
     private NodeRoleEnum nodeRole;
 
-    /** 节点主从角色: - master：主 - slave：从 - proxy: proxy实例节点角色为\"proxy\" */
+    /**
+     * 节点主从角色: - master：主 - slave：从 - proxy: proxy实例节点角色为\"proxy\" 
+     */
     public static final class NodeTypeEnum {
 
-        /** Enum MASTER for value: "master" */
+        /**
+         * Enum MASTER for value: "master"
+         */
         public static final NodeTypeEnum MASTER = new NodeTypeEnum("master");
 
-        /** Enum SLAVE for value: "slave" */
+        /**
+         * Enum SLAVE for value: "slave"
+         */
         public static final NodeTypeEnum SLAVE = new NodeTypeEnum("slave");
 
-        /** Enum PROXY for value: "proxy" */
+        /**
+         * Enum PROXY for value: "proxy"
+         */
         public static final NodeTypeEnum PROXY = new NodeTypeEnum("proxy");
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -330,9 +358,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 逻辑节点ID
-     * 
-     * @return logicalNodeId */
+    /**
+     * 逻辑节点ID
+     * @return logicalNodeId
+     */
     public String getLogicalNodeId() {
         return logicalNodeId;
     }
@@ -346,9 +375,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点名称
-     * 
-     * @return name */
+    /**
+     * 节点名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -362,9 +392,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点状态，所有值如下: - Creating：创建中。 - Active：运行中。 - Inactive：故障。 - Deleting：删除中。 - AddSharding：添加分片中。
-     * 
-     * @return status */
+    /**
+     * 节点状态，所有值如下: - Creating：创建中。 - Active：运行中。 - Inactive：故障。 - Deleting：删除中。 - AddSharding：添加分片中。 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -378,9 +409,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 可用区code
-     * 
-     * @return azCode */
+    /**
+     * 可用区code
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -394,9 +426,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点角色，所有值如下: - redis-server：Redis server节点。 - redis-proxy：proxy节点。
-     * 
-     * @return nodeRole */
+    /**
+     * 节点角色，所有值如下: - redis-server：Redis server节点。 - redis-proxy：proxy节点。 
+     * @return nodeRole
+     */
     public NodeRoleEnum getNodeRole() {
         return nodeRole;
     }
@@ -410,9 +443,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点主从角色: - master：主 - slave：从 - proxy: proxy实例节点角色为\"proxy\"
-     * 
-     * @return nodeType */
+    /**
+     * 节点主从角色: - master：主 - slave：从 - proxy: proxy实例节点角色为\"proxy\" 
+     * @return nodeType
+     */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -426,9 +460,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点的IP
-     * 
-     * @return nodeIp */
+    /**
+     * 节点的IP
+     * @return nodeIp
+     */
     public String getNodeIp() {
         return nodeIp;
     }
@@ -442,9 +477,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点的port
-     * 
-     * @return nodePort */
+    /**
+     * 节点的port
+     * @return nodePort
+     */
     public String getNodePort() {
         return nodePort;
     }
@@ -458,9 +494,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点ID
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -474,9 +511,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点权重
-     * 
-     * @return priorityWeight */
+    /**
+     * 节点权重
+     * @return priorityWeight
+     */
     public Integer getPriorityWeight() {
         return priorityWeight;
     }
@@ -490,9 +528,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 节点的IP是否可直接访问
-     * 
-     * @return isAccess */
+    /**
+     * 节点的IP是否可直接访问
+     * @return isAccess
+     */
     public Boolean getIsAccess() {
         return isAccess;
     }
@@ -506,9 +545,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 分片ID
-     * 
-     * @return groupId */
+    /**
+     * 分片ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -522,9 +562,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 分片名称
-     * 
-     * @return groupName */
+    /**
+     * 分片名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -538,9 +579,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 是否从只读域名中摘除IP
-     * 
-     * @return isRemoveIp */
+    /**
+     * 是否从只读域名中摘除IP
+     * @return isRemoveIp
+     */
     public Boolean getIsRemoveIp() {
         return isRemoveIp;
     }
@@ -554,9 +596,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 副本id
-     * 
-     * @return replicationId */
+    /**
+     * 副本id
+     * @return replicationId
+     */
     public String getReplicationId() {
         return replicationId;
     }
@@ -586,10 +629,10 @@ public class NodesInfoResp {
         return this;
     }
 
-    /** 副本对应的监控指标维度信息。可用于调用云监控服务的查询监控数据指标相关接口 - 副本的监控维度为多维度，返回数组中包含两个维度信息。从云监控查询监控数据时，要按多维度传递指标维度参数，才能查询到监控指标值 -
-     * 第一个维度为副本父维度信息 维度名称为dcs_instance_id，维度值对应副本所在的实例ID - 第二个维度，维度名称为dcs_cluster_redis_node,维度值为副本的监控对象ID，与副本ID和节点ID不同。
-     * 
-     * @return dimensions */
+    /**
+     * 副本对应的监控指标维度信息。可用于调用云监控服务的查询监控数据指标相关接口 - 副本的监控维度为多维度，返回数组中包含两个维度信息。从云监控查询监控数据时，要按多维度传递指标维度参数，才能查询到监控指标值 - 第一个维度为副本父维度信息 维度名称为dcs_instance_id，维度值对应副本所在的实例ID - 第二个维度，维度名称为dcs_cluster_redis_node,维度值为副本的监控对象ID，与副本ID和节点ID不同。 
+     * @return dimensions
+     */
     public List<InstanceReplicationDimensionsInfo> getDimensions() {
         return dimensions;
     }
@@ -668,7 +711,10 @@ public class NodesInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

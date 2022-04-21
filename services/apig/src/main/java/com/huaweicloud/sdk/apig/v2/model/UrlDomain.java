@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UrlDomain */
+/**
+ * UrlDomain
+ */
 public class UrlDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class UrlDomain {
 
     private String sslName;
 
-    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2 */
+    /**
+     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
+     */
     public static final class MinSslVersionEnum {
 
-        /** Enum TLSV1_1 for value: "TLSv1.1" */
+        /**
+         * Enum TLSV1_1 for value: "TLSv1.1"
+         */
         public static final MinSslVersionEnum TLSV1_1 = new MinSslVersionEnum("TLSv1.1");
 
-        /** Enum TLSV1_2 for value: "TLSv1.2" */
+        /**
+         * Enum TLSV1_2 for value: "TLSv1.2"
+         */
         public static final MinSslVersionEnum TLSV1_2 = new MinSslVersionEnum("TLSv1.2");
 
         private static final Map<String, MinSslVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** 域名编号
-     * 
-     * @return id */
+    /**
+     * 域名编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -135,9 +144,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** 访问域名
-     * 
-     * @return domain */
+    /**
+     * 访问域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -151,9 +161,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** 域名cname状态： - 1：未解析 - 2：解析中 - 3：解析成功 - 4：解析失败
-     * 
-     * @return cnameStatus */
+    /**
+     * 域名cname状态： - 1：未解析 - 2：解析中 - 3：解析成功 - 4：解析失败
+     * @return cnameStatus
+     */
     public Integer getCnameStatus() {
         return cnameStatus;
     }
@@ -167,9 +178,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** SSL证书编号
-     * 
-     * @return sslId */
+    /**
+     * SSL证书编号
+     * @return sslId
+     */
     public String getSslId() {
         return sslId;
     }
@@ -183,9 +195,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** SSL证书名称
-     * 
-     * @return sslName */
+    /**
+     * SSL证书名称
+     * @return sslName
+     */
     public String getSslName() {
         return sslName;
     }
@@ -199,9 +212,10 @@ public class UrlDomain {
         return this;
     }
 
-    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
-     * 
-     * @return minSslVersion */
+    /**
+     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
+     * @return minSslVersion
+     */
     public MinSslVersionEnum getMinSslVersion() {
         return minSslVersion;
     }
@@ -244,7 +258,10 @@ public class UrlDomain {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

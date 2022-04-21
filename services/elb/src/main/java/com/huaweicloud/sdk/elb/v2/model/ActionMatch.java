@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 根据标签查询资源时，match字段结构。 */
+/**
+ * 根据标签查询资源时，match字段结构。
+ */
 public class ActionMatch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ActionMatch {
         return this;
     }
 
-    /** 键。目前只支持resource_name。表示匹配资源实例的名称。
-     * 
-     * @return key */
+    /**
+     * 键。目前只支持resource_name。表示匹配资源实例的名称。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ActionMatch {
         return this;
     }
 
-    /** 值。每个值最大长度255个unicode字符 。当key为resource_name时，表示待匹配的资源实例的名称。
-     * 
-     * @return value */
+    /**
+     * 值。每个值最大长度255个unicode字符 。当key为resource_name时，表示待匹配的资源实例的名称。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ActionMatch {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

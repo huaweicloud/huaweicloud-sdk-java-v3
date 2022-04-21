@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDictionaryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数，与分页无关 minimum: 1 maximum: 128
-     * 
-     * @return total */
+    /**
+     * 总数，与分页无关
+     * minimum: 1
+     * maximum: 128
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class ListDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前页的数量，小于等于请求里指定的limit minimum: 1 maximum: 128
-     * 
-     * @return size */
+    /**
+     * 当前页的数量，小于等于请求里指定的limit
+     * minimum: 1
+     * maximum: 128
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -80,9 +88,10 @@ public class ListDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典列表
-     * 
-     * @return dictionaries */
+    /**
+     * 字典列表
+     * @return dictionaries
+     */
     public List<Dictionary> getDictionaries() {
         return dictionaries;
     }
@@ -121,7 +130,10 @@ public class ListDictionaryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

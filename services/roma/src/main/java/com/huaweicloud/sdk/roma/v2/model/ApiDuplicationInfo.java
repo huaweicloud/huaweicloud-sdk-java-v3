@@ -13,34 +13,54 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiDuplicationInfo */
+/**
+ * ApiDuplicationInfo
+ */
 public class ApiDuplicationInfo {
 
-    /** 请求方式 */
+    /**
+     * 请求方式
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -121,13 +141,19 @@ public class ApiDuplicationInfo {
 
     private String reqUri;
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     */
     public static final class MatchModeEnum {
 
-        /** Enum SWA for value: "SWA" */
+        /**
+         * Enum SWA for value: "SWA"
+         */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
@@ -207,9 +233,10 @@ public class ApiDuplicationInfo {
         return this;
     }
 
-    /** 请求方式
-     * 
-     * @return reqMethod */
+    /**
+     * 请求方式
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -223,9 +250,10 @@ public class ApiDuplicationInfo {
         return this;
     }
 
-    /** API的访问地址
-     * 
-     * @return reqUri */
+    /**
+     * API的访问地址
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -239,9 +267,10 @@ public class ApiDuplicationInfo {
         return this;
     }
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     * 
-     * @return matchMode */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     * @return matchMode
+     */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -271,9 +300,10 @@ public class ApiDuplicationInfo {
         return this;
     }
 
-    /** 该路径下冲突的api列表
-     * 
-     * @return duplicatedApis */
+    /**
+     * 该路径下冲突的api列表
+     * @return duplicatedApis
+     */
     public List<DuplicateApiInfo> getDuplicatedApis() {
         return duplicatedApis;
     }
@@ -314,7 +344,10 @@ public class ApiDuplicationInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

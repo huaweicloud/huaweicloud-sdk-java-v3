@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ExportSlowQueryLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,13 +45,19 @@ public class ExportSlowQueryLogsRequest {
 
     private String marker;
 
-    /** 请求语言类型。 */
+    /**
+     * 请求语言类型。
+     */
     public static final class XLanguageEnum {
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -140,9 +149,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 数据库类型。支持MySQL、GaussDB(for MySQL)、PostgreSQL。
-     * 
-     * @return datastoreType */
+    /**
+     * 数据库类型。支持MySQL、GaussDB(for MySQL)、PostgreSQL。
+     * @return datastoreType
+     */
     public String getDatastoreType() {
         return datastoreType;
     }
@@ -156,9 +166,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 开始时间（Unix timestamp），单位：毫秒。
-     * 
-     * @return startAt */
+    /**
+     * 开始时间（Unix timestamp），单位：毫秒。
+     * @return startAt
+     */
     public Long getStartAt() {
         return startAt;
     }
@@ -172,9 +183,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 结束时间（Unix timestamp），单位：毫秒。
-     * 
-     * @return endAt */
+    /**
+     * 结束时间（Unix timestamp），单位：毫秒。
+     * @return endAt
+     */
     public Long getEndAt() {
         return endAt;
     }
@@ -188,9 +200,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 每页记录数。最大为2000。
-     * 
-     * @return limit */
+    /**
+     * 每页记录数。最大为2000。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -204,9 +217,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
-     * 
-     * @return marker */
+    /**
+     * 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -220,9 +234,10 @@ public class ExportSlowQueryLogsRequest {
         return this;
     }
 
-    /** 请求语言类型。
-     * 
-     * @return xLanguage */
+    /**
+     * 请求语言类型。
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -271,7 +286,10 @@ public class ExportSlowQueryLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

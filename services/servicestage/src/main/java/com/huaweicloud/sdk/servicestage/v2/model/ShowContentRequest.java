@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowContentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowContentRequest {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return xRepoAuth */
+    /**
+     * 授权名称。
+     * @return xRepoAuth
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
@@ -56,9 +59,10 @@ public class ShowContentRequest {
         return this;
     }
 
-    /** 组织ID。
-     * 
-     * @return namespace */
+    /**
+     * 组织ID。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -72,9 +76,10 @@ public class ShowContentRequest {
         return this;
     }
 
-    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * 
-     * @return project */
+    /**
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * @return project
+     */
     public String getProject() {
         return project;
     }
@@ -88,9 +93,10 @@ public class ShowContentRequest {
         return this;
     }
 
-    /** 文件路径，需要将“/”替换为“:”。
-     * 
-     * @return path */
+    /**
+     * 文件路径，需要将“/”替换为“:”。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -104,9 +110,10 @@ public class ShowContentRequest {
         return this;
     }
 
-    /** 分支名称或者tag标签名称或者commit sha。
-     * 
-     * @return ref */
+    /**
+     * 分支名称或者tag标签名称或者commit sha。
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -148,7 +155,10 @@ public class ShowContentRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

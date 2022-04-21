@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 机票行程列表。 */
+/**
+ * 机票行程列表。
+ */
 public class ItineraryList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 始发站。
-     * 
-     * @return departureStation */
+    /**
+     * 始发站。 
+     * @return departureStation
+     */
     public String getDepartureStation() {
         return departureStation;
     }
@@ -84,9 +87,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 目的站。
-     * 
-     * @return destinationStation */
+    /**
+     * 目的站。 
+     * @return destinationStation
+     */
     public String getDestinationStation() {
         return destinationStation;
     }
@@ -100,9 +104,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 承运人。
-     * 
-     * @return carrier */
+    /**
+     * 承运人。 
+     * @return carrier
+     */
     public String getCarrier() {
         return carrier;
     }
@@ -116,9 +121,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 航班号。
-     * 
-     * @return flight */
+    /**
+     * 航班号。 
+     * @return flight
+     */
     public String getFlight() {
         return flight;
     }
@@ -132,9 +138,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 座位等级。
-     * 
-     * @return cabinClass */
+    /**
+     * 座位等级。 
+     * @return cabinClass
+     */
     public String getCabinClass() {
         return cabinClass;
     }
@@ -148,9 +155,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 日期。
-     * 
-     * @return date */
+    /**
+     * 日期。 
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -164,9 +172,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 时间。
-     * 
-     * @return time */
+    /**
+     * 时间。 
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -180,9 +189,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 客票类别。
-     * 
-     * @return fareBasis */
+    /**
+     * 客票类别。 
+     * @return fareBasis
+     */
     public String getFareBasis() {
         return fareBasis;
     }
@@ -196,9 +206,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 客票生效日期。
-     * 
-     * @return effectiveDate */
+    /**
+     * 客票生效日期。 
+     * @return effectiveDate
+     */
     public String getEffectiveDate() {
         return effectiveDate;
     }
@@ -212,9 +223,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 有效截止日期。
-     * 
-     * @return expiryDate */
+    /**
+     * 有效截止日期。 
+     * @return expiryDate
+     */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -228,9 +240,10 @@ public class ItineraryList {
         return this;
     }
 
-    /** 免费行李。
-     * 
-     * @return baggageAllowance */
+    /**
+     * 免费行李。 
+     * @return baggageAllowance
+     */
     public String getBaggageAllowance() {
         return baggageAllowance;
     }
@@ -293,7 +306,10 @@ public class ItineraryList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

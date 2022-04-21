@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InspectResult */
+/**
+ * InspectResult
+ */
 public class InspectResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class InspectResult {
         return this;
     }
 
-    /** 数据类型。
-     * 
-     * @return type */
+    /**
+     * 数据类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -49,9 +52,10 @@ public class InspectResult {
         return this;
     }
 
-    /** 条目数。
-     * 
-     * @return countNum */
+    /**
+     * 条目数。
+     * @return countNum
+     */
     public Integer getCountNum() {
         return countNum;
     }
@@ -65,9 +69,10 @@ public class InspectResult {
         return this;
     }
 
-    /** 重复读。
-     * 
-     * @return multiplicity */
+    /**
+     * 重复读。
+     * @return multiplicity
+     */
     public Double getMultiplicity() {
         return multiplicity;
     }
@@ -81,9 +86,10 @@ public class InspectResult {
         return this;
     }
 
-    /** 合法率。
-     * 
-     * @return legalRate */
+    /**
+     * 合法率。
+     * @return legalRate
+     */
     public Double getLegalRate() {
         return legalRate;
     }
@@ -123,7 +129,10 @@ public class InspectResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

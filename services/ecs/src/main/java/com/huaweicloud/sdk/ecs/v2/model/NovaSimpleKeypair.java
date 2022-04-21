@@ -35,9 +35,10 @@ public class NovaSimpleKeypair {
         return this;
     }
 
-    /** 密钥对应指纹信息。
-     * 
-     * @return fingerprint */
+    /**
+     * 密钥对应指纹信息。
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -51,9 +52,10 @@ public class NovaSimpleKeypair {
         return this;
     }
 
-    /** 密钥名称。
-     * 
-     * @return name */
+    /**
+     * 密钥名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +69,10 @@ public class NovaSimpleKeypair {
         return this;
     }
 
-    /** 密钥对应publicKey信息。
-     * 
-     * @return publicKey */
+    /**
+     * 密钥对应publicKey信息。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -83,9 +86,10 @@ public class NovaSimpleKeypair {
         return this;
     }
 
-    /** 密钥类型，默认“ssh” 微版本2.2以上支持
-     * 
-     * @return type */
+    /**
+     * 密钥类型，默认“ssh”  微版本2.2以上支持
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -126,7 +130,10 @@ public class NovaSimpleKeypair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

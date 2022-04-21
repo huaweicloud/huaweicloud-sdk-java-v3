@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplatesInfo */
+/**
+ * TemplatesInfo
+ */
 public class TemplatesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class TemplatesInfo {
         return this;
     }
 
-    /** 模板ID列表。
-     * 
-     * @return templateIds */
+    /**
+     * 模板ID列表。
+     * @return templateIds
+     */
     public List<String> getTemplateIds() {
         return templateIds;
     }
@@ -58,9 +61,12 @@ public class TemplatesInfo {
         return this;
     }
 
-    /** 平台来源： - 0：codelabs - 1：devstar minimum: 0 maximum: 1
-     * 
-     * @return platformSource */
+    /**
+     * 平台来源： - 0：codelabs - 1：devstar 
+     * minimum: 0
+     * maximum: 1
+     * @return platformSource
+     */
     public Integer getPlatformSource() {
         return platformSource;
     }
@@ -97,7 +103,10 @@ public class TemplatesInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

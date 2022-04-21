@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowIkThesaurusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 加载状态。 - Loaded表示加载成功。 - Loading表示正在加载中。 - Failed表示加载失败。
-     * 
-     * @return status */
+    /**
+     * 加载状态。  - Loaded表示加载成功。 - Loading表示正在加载中。 - Failed表示加载失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +83,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 存放词库文件的OBS桶。
-     * 
-     * @return bucket */
+    /**
+     * 存放词库文件的OBS桶。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -96,9 +100,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 主词库文件对象。
-     * 
-     * @return mainObj */
+    /**
+     * 主词库文件对象。
+     * @return mainObj
+     */
     public String getMainObj() {
         return mainObj;
     }
@@ -112,9 +117,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 停词词库文件对象。
-     * 
-     * @return stopObj */
+    /**
+     * 停词词库文件对象。
+     * @return stopObj
+     */
     public String getStopObj() {
         return stopObj;
     }
@@ -128,9 +134,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 同义词词库文件对象。
-     * 
-     * @return synonymObj */
+    /**
+     * 同义词词库文件对象。
+     * @return synonymObj
+     */
     public String getSynonymObj() {
         return synonymObj;
     }
@@ -144,9 +151,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 词库最近更新时间。
-     * 
-     * @return updateTime */
+    /**
+     * 词库最近更新时间。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -160,9 +168,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新详情。
-     * 
-     * @return updateDetails */
+    /**
+     * 更新详情。
+     * @return updateDetails
+     */
     public String getUpdateDetails() {
         return updateDetails;
     }
@@ -176,9 +185,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定配置自定义词库的集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 指定配置自定义词库的集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -192,9 +202,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作状态。
-     * 
-     * @return operateStatus */
+    /**
+     * 操作状态。
+     * @return operateStatus
+     */
     public String getOperateStatus() {
         return operateStatus;
     }
@@ -208,9 +219,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return this;
     }
 
-    /** 词库的ID。
-     * 
-     * @return id */
+    /**
+     * 词库的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -272,7 +284,10 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

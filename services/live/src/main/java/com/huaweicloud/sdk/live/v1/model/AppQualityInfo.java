@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AppQualityInfo */
+/**
+ * AppQualityInfo
+ */
 public class AppQualityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AppQualityInfo {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -58,9 +61,10 @@ public class AppQualityInfo {
         return this;
     }
 
-    /** 视频质量信息
-     * 
-     * @return qualityInfo */
+    /**
+     * 视频质量信息
+     * @return qualityInfo
+     */
     public List<QualityInfo> getQualityInfo() {
         return qualityInfo;
     }
@@ -97,7 +101,10 @@ public class AppQualityInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

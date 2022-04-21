@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DebugLiveDataApiV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试返回的状态码
-     * 
-     * @return testStatusCode */
+    /**
+     * 测试返回的状态码
+     * @return testStatusCode
+     */
     public String getTestStatusCode() {
         return testStatusCode;
     }
@@ -84,9 +87,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试的请求内容
-     * 
-     * @return testRequest */
+    /**
+     * 测试的请求内容
+     * @return testRequest
+     */
     public String getTestRequest() {
         return testRequest;
     }
@@ -100,9 +104,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试耗时
-     * 
-     * @return testUsedTime */
+    /**
+     * 测试耗时
+     * @return testUsedTime
+     */
     public Integer getTestUsedTime() {
         return testUsedTime;
     }
@@ -116,9 +121,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试者的项目编号
-     * 
-     * @return testOperator */
+    /**
+     * 测试者的项目编号
+     * @return testOperator
+     */
     public String getTestOperator() {
         return testOperator;
     }
@@ -132,9 +138,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试的响应内容
-     * 
-     * @return testResponse */
+    /**
+     * 测试的响应内容
+     * @return testResponse
+     */
     public String getTestResponse() {
         return testResponse;
     }
@@ -148,9 +155,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试的请求方法
-     * 
-     * @return testMethod */
+    /**
+     * 测试的请求方法
+     * @return testMethod
+     */
     public String getTestMethod() {
         return testMethod;
     }
@@ -164,9 +172,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试编号
-     * 
-     * @return testId */
+    /**
+     * 测试编号
+     * @return testId
+     */
     public Integer getTestId() {
         return testId;
     }
@@ -180,9 +189,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 测试时间
-     * 
-     * @return testDate */
+    /**
+     * 测试时间
+     * @return testDate
+     */
     public OffsetDateTime getTestDate() {
         return testDate;
     }
@@ -196,9 +206,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 后端API编号
-     * 
-     * @return ldApiId */
+    /**
+     * 后端API编号
+     * @return ldApiId
+     */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -228,9 +239,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 本次测试日志列表
-     * 
-     * @return debugLog */
+    /**
+     * 本次测试日志列表
+     * @return debugLog
+     */
     public List<String> getDebugLog() {
         return debugLog;
     }
@@ -292,7 +304,10 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

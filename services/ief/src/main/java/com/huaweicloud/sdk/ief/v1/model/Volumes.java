@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 卷配置 */
+/**
+ * 卷配置
+ */
 public class Volumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Volumes {
         return this;
     }
 
-    /** 卷名称，小写字母或数字，最长63个字符
-     * 
-     * @return name */
+    /**
+     * 卷名称，小写字母或数字，最长63个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class Volumes {
         return this;
     }
 
-    /** 卷的类型，支持configMap,secret,emptyDir,hostPath
-     * 
-     * @return type */
+    /**
+     * 卷的类型，支持configMap,secret,emptyDir,hostPath
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,10 +74,10 @@ public class Volumes {
         return this;
     }
 
-    /** 卷来源，type为hostPath时输入路径，要求以/开头，后面可包含中划线，反斜杠，下划线，点号，字母，数字；
-     * secret时输入secret名称，configMap时输入configMap名称，emptyDir时输入disk或memory
-     * 
-     * @return source */
+    /**
+     * 卷来源，type为hostPath时输入路径，要求以/开头，后面可包含中划线，反斜杠，下划线，点号，字母，数字； secret时输入secret名称，configMap时输入configMap名称，emptyDir时输入disk或memory
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -87,9 +91,10 @@ public class Volumes {
         return this;
     }
 
-    /** 卷挂载路径，必须是合法的路径
-     * 
-     * @return destination */
+    /**
+     * 卷挂载路径，必须是合法的路径
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -103,9 +108,10 @@ public class Volumes {
         return this;
     }
 
-    /** 读写权限，configMap和secret类型只支持读权限
-     * 
-     * @return readOnly */
+    /**
+     * 读写权限，configMap和secret类型只支持读权限
+     * @return readOnly
+     */
     public Boolean getReadOnly() {
         return readOnly;
     }
@@ -146,7 +152,10 @@ public class Volumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

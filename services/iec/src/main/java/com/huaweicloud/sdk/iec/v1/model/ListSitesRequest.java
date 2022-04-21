@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSitesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,13 +50,19 @@ public class ListSitesRequest {
 
     private String flavor;
 
-    /** 过滤支持磁盘类型的站点，多个类型之间用“,”分割。 */
+    /**
+     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
+     */
     public static final class VolumeTypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,12 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 查询返回边缘站点列表当前页面的数量。 取值范围：0~1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询返回边缘站点列表当前页面的数量。 取值范围：0~1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -145,9 +156,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 查询的偏移量。默认为0。
-     * 
-     * @return offset */
+    /**
+     * 查询的偏移量。默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -161,9 +173,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 查询条件，站点ID。
-     * 
-     * @return id */
+    /**
+     * 查询条件，站点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -177,9 +190,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 边缘实例所在大区。 大小写通用，皆支持。 支持多个查询，中间使用','分隔。
-     * 
-     * @return area */
+    /**
+     * 边缘实例所在大区。   大小写通用，皆支持。 支持多个查询，中间使用','分隔。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -193,9 +207,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 边缘实例所在省份。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return province */
+    /**
+     * 边缘实例所在省份。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -209,9 +224,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 边缘实例所在城市。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return city */
+    /**
+     * 边缘实例所在城市。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -225,9 +241,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 边缘实例规格。
-     * 
-     * @return flavor */
+    /**
+     * 边缘实例规格。
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -241,9 +258,10 @@ public class ListSitesRequest {
         return this;
     }
 
-    /** 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
-     * 
-     * @return volumeType */
+    /**
+     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
+     * @return volumeType
+     */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -290,7 +308,10 @@ public class ListSitesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

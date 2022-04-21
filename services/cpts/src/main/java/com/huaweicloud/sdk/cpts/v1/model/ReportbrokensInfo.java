@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ReportbrokensInfo */
+/**
+ * ReportbrokensInfo
+ */
 public class ReportbrokensInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** Get brandBrokens
-     * 
-     * @return brandBrokens */
+    /**
+     * Get brandBrokens
+     * @return brandBrokens
+     */
     public BrandBrokens getBrandBrokens() {
         return brandBrokens;
     }
@@ -82,9 +85,10 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** 时间戳
-     * 
-     * @return commonTimestamps */
+    /**
+     * 时间戳
+     * @return commonTimestamps
+     */
     public List<String> getCommonTimestamps() {
         return commonTimestamps;
     }
@@ -107,9 +111,10 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** Get respcodeBrokens
-     * 
-     * @return respcodeBrokens */
+    /**
+     * Get respcodeBrokens
+     * @return respcodeBrokens
+     */
     public RespcodeBrokens getRespcodeBrokens() {
         return respcodeBrokens;
     }
@@ -132,9 +137,10 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** Get tpsBrokens
-     * 
-     * @return tpsBrokens */
+    /**
+     * Get tpsBrokens
+     * @return tpsBrokens
+     */
     public TpsBrokens getTpsBrokens() {
         return tpsBrokens;
     }
@@ -157,9 +163,10 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    /** Get vusersBrokens
-     * 
-     * @return vusersBrokens */
+    /**
+     * Get vusersBrokens
+     * @return vusersBrokens
+     */
     public VusersBrokens getVusersBrokens() {
         return vusersBrokens;
     }
@@ -202,7 +209,10 @@ public class ReportbrokensInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

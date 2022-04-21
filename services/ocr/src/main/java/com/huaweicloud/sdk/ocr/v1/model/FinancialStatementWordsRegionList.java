@@ -38,9 +38,10 @@ public class FinancialStatementWordsRegionList {
         return this;
     }
 
-    /** 区域属性：文本或表格。
-     * 
-     * @return type */
+    /**
+     * 区域属性：文本或表格。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -54,9 +55,10 @@ public class FinancialStatementWordsRegionList {
         return this;
     }
 
-    /** 区域内文字块数目。对文本区，文字块以文本字段为单位；对表格区，文字块以单元格内所有字段为单位。
-     * 
-     * @return wordsBlockCount */
+    /**
+     * 区域内文字块数目。对文本区，文字块以文本字段为单位；对表格区，文字块以单元格内所有字段为单位。 
+     * @return wordsBlockCount
+     */
     public Float getWordsBlockCount() {
         return wordsBlockCount;
     }
@@ -86,9 +88,10 @@ public class FinancialStatementWordsRegionList {
         return this;
     }
 
-    /** 表格位置信息，列表形式，分别表示表格4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return tableLocation */
+    /**
+     * 表格位置信息，列表形式，分别表示表格4个顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return tableLocation
+     */
     public List<List<Integer>> getTableLocation() {
         return tableLocation;
     }
@@ -120,9 +123,10 @@ public class FinancialStatementWordsRegionList {
         return this;
     }
 
-    /** 区域内文字块列表，输出顺序从左到右，从上到下。
-     * 
-     * @return wordsBlockList */
+    /**
+     * 区域内文字块列表，输出顺序从左到右，从上到下。 
+     * @return wordsBlockList
+     */
     public List<FinancialStatementWordsBlockList> getWordsBlockList() {
         return wordsBlockList;
     }
@@ -163,7 +167,10 @@ public class FinancialStatementWordsRegionList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

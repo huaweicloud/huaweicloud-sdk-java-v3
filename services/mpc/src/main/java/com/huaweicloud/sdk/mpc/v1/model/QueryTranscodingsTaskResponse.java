@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryTranscodingsTaskResponse */
+/**
+ * QueryTranscodingsTaskResponse
+ */
 public class QueryTranscodingsTaskResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,28 +23,44 @@ public class QueryTranscodingsTaskResponse {
 
     private String taskId;
 
-    /** 任务执行状态。 */
+    /**
+     * 任务执行状态。 
+     */
     public static final class StatusEnum {
 
-        /** Enum NO_TASK for value: "NO_TASK" */
+        /**
+         * Enum NO_TASK for value: "NO_TASK"
+         */
         public static final StatusEnum NO_TASK = new StatusEnum("NO_TASK");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
 
-        /** Enum TRANSCODING for value: "TRANSCODING" */
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
         public static final StatusEnum TRANSCODING = new StatusEnum("TRANSCODING");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum CANCELED for value: "CANCELED" */
+        /**
+         * Enum CANCELED for value: "CANCELED"
+         */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
 
-        /** Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT" */
+        /**
+         * Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT"
+         */
         public static final StatusEnum NEED_TO_BE_AUDIT = new StatusEnum("NEED_TO_BE_AUDIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -197,9 +215,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -213,9 +232,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 任务执行状态。
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -229,9 +249,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码任务启动时间
-     * 
-     * @return createTime */
+    /**
+     * 转码任务启动时间 
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -245,9 +266,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码任务结束时间
-     * 
-     * @return endTime */
+    /**
+     * 转码任务结束时间 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -277,9 +299,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码任务对应的转码模板ID
-     * 
-     * @return transTemplateId */
+    /**
+     * 转码任务对应的转码模板ID 
+     * @return transTemplateId
+     */
     public List<Integer> getTransTemplateId() {
         return transTemplateId;
     }
@@ -302,9 +325,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -327,9 +351,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -359,9 +384,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码生成的文件名，数组类型，可能包含多个，包含截图文件名。
-     * 
-     * @return outputFileName */
+    /**
+     * 转码生成的文件名，数组类型，可能包含多个，包含截图文件名。 
+     * @return outputFileName
+     */
     public List<String> getOutputFileName() {
         return outputFileName;
     }
@@ -375,9 +401,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 用户自定义数据。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -391,9 +418,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码任务的返回码。
-     * 
-     * @return errorCode */
+    /**
+     * 转码任务的返回码。 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -407,9 +435,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码任务描述，当转码出现异常时，此字段为异常的原因。
-     * 
-     * @return description */
+    /**
+     * 转码任务描述，当转码出现异常时，此字段为异常的原因。 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -423,9 +452,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码成功，但音频采样率过低时的提示。
-     * 
-     * @return tips */
+    /**
+     * 转码成功，但音频采样率过低时的提示。 
+     * @return tips
+     */
     public String getTips() {
         return tips;
     }
@@ -448,9 +478,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** Get transcodeDetail
-     * 
-     * @return transcodeDetail */
+    /**
+     * Get transcodeDetail
+     * @return transcodeDetail
+     */
     public TranscodeDetail getTranscodeDetail() {
         return transcodeDetail;
     }
@@ -473,9 +504,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** Get thumbnailOutput
-     * 
-     * @return thumbnailOutput */
+    /**
+     * Get thumbnailOutput
+     * @return thumbnailOutput
+     */
     public ObsObjInfo getThumbnailOutput() {
         return thumbnailOutput;
     }
@@ -489,9 +521,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 截图压缩包名。
-     * 
-     * @return thumbnailOutputname */
+    /**
+     * 截图压缩包名。 
+     * @return thumbnailOutputname
+     */
     public String getThumbnailOutputname() {
         return thumbnailOutputname;
     }
@@ -521,9 +554,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 截图文件信息。
-     * 
-     * @return picInfo */
+    /**
+     * 截图文件信息。 
+     * @return picInfo
+     */
     public List<PicInfo> getPicInfo() {
         return picInfo;
     }
@@ -553,9 +587,10 @@ public class QueryTranscodingsTaskResponse {
         return this;
     }
 
-    /** 转码参数。 若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码。
-     * 
-     * @return avParameters */
+    /**
+     * 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码。 
+     * @return avParameters
+     */
     public List<AvParameters> getAvParameters() {
         return avParameters;
     }
@@ -638,7 +673,10 @@ public class QueryTranscodingsTaskResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

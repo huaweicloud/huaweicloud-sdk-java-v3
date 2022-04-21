@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SetOnlineMigrationTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,19 +26,29 @@ public class SetOnlineMigrationTaskResponse extends SdkResponse {
 
     private String name;
 
-    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED */
+    /**
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum MIGRATING for value: "MIGRATING" */
+        /**
+         * Enum MIGRATING for value: "MIGRATING"
+         */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
 
-        /** Enum TERMINATED for value: "TERMINATED" */
+        /**
+         * Enum TERMINATED for value: "TERMINATED"
+         */
         public static final StatusEnum TERMINATED = new StatusEnum("TERMINATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +125,10 @@ public class SetOnlineMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务ID。
-     * 
-     * @return id */
+    /**
+     * 迁移任务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -129,9 +142,10 @@ public class SetOnlineMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务名称。
-     * 
-     * @return name */
+    /**
+     * 迁移任务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -145,9 +159,10 @@ public class SetOnlineMigrationTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
-     * 
-     * @return status */
+    /**
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -186,7 +201,10 @@ public class SetOnlineMigrationTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

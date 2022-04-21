@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApplicationListConfigConfiguration1 */
+/**
+ * ApplicationListConfigConfiguration1
+ */
 public class ApplicationListConfigConfiguration1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ApplicationListConfigConfiguration1 {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return applicationId */
+    /**
+     * 应用ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -45,9 +48,10 @@ public class ApplicationListConfigConfiguration1 {
         return this;
     }
 
-    /** 环境ID。
-     * 
-     * @return environmentId */
+    /**
+     * 环境ID。
+     * @return environmentId
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -71,9 +75,10 @@ public class ApplicationListConfigConfiguration1 {
         return this;
     }
 
-    /** Get _configuration
-     * 
-     * @return _configuration */
+    /**
+     * Get _configuration
+     * @return _configuration
+     */
     public ApplicationListConfigConfiguration getConfiguration() {
         return _configuration;
     }
@@ -113,7 +118,10 @@ public class ApplicationListConfigConfiguration1 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

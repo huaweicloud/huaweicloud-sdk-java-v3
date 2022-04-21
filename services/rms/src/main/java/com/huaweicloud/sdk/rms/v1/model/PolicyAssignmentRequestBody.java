@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规则请求体 */
+/**
+ * 规则请求体
+ */
 public class PolicyAssignmentRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class PolicyAssignmentRequestBody {
         return this;
     }
 
-    /** 规则名字
-     * 
-     * @return name */
+    /**
+     * 规则名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,9 +60,10 @@ public class PolicyAssignmentRequestBody {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -82,9 +86,10 @@ public class PolicyAssignmentRequestBody {
         return this;
     }
 
-    /** Get policyFilter
-     * 
-     * @return policyFilter */
+    /**
+     * Get policyFilter
+     * @return policyFilter
+     */
     public PolicyFilterDefinition getPolicyFilter() {
         return policyFilter;
     }
@@ -98,9 +103,10 @@ public class PolicyAssignmentRequestBody {
         return this;
     }
 
-    /** 策略定义ID
-     * 
-     * @return policyDefinitionId */
+    /**
+     * 策略定义ID
+     * @return policyDefinitionId
+     */
     public String getPolicyDefinitionId() {
         return policyDefinitionId;
     }
@@ -130,9 +136,10 @@ public class PolicyAssignmentRequestBody {
         return this;
     }
 
-    /** 规则参数
-     * 
-     * @return parameters */
+    /**
+     * 规则参数
+     * @return parameters
+     */
     public Map<String, PolicyParameterValue> getParameters() {
         return parameters;
     }
@@ -175,7 +182,10 @@ public class PolicyAssignmentRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

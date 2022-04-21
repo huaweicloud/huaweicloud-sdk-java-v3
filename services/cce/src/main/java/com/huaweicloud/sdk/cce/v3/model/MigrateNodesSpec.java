@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MigrateNodesSpec */
+/**
+ * MigrateNodesSpec
+ */
 public class MigrateNodesSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class MigrateNodesSpec {
         return this;
     }
 
-    /** 操作系统类型，须精确到版本号。 当指定“alpha.cce/NodeImageID”参数时，“os”参数必须和用户自定义镜像的操作系统一致。
-     * 
-     * @return os */
+    /**
+     * 操作系统类型，须精确到版本号。 当指定“alpha.cce/NodeImageID”参数时，“os”参数必须和用户自定义镜像的操作系统一致。 
+     * @return os
+     */
     public String getOs() {
         return os;
     }
@@ -61,9 +64,10 @@ public class MigrateNodesSpec {
         return this;
     }
 
-    /** Get extendParam
-     * 
-     * @return extendParam */
+    /**
+     * Get extendParam
+     * @return extendParam
+     */
     public MigrateNodeExtendParam getExtendParam() {
         return extendParam;
     }
@@ -86,9 +90,10 @@ public class MigrateNodesSpec {
         return this;
     }
 
-    /** Get login
-     * 
-     * @return login */
+    /**
+     * Get login
+     * @return login
+     */
     public Login getLogin() {
         return login;
     }
@@ -118,9 +123,10 @@ public class MigrateNodesSpec {
         return this;
     }
 
-    /** 待操作节点列表
-     * 
-     * @return nodes */
+    /**
+     * 待操作节点列表
+     * @return nodes
+     */
     public List<NodeItem> getNodes() {
         return nodes;
     }
@@ -160,7 +166,10 @@ public class MigrateNodesSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

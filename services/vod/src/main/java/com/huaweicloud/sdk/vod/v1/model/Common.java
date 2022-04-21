@@ -10,22 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 模板信息。 */
+/**
+ * 模板信息。
+ */
 public class Common {
 
-    /** pvc开关。 */
+    /**
+     * pvc开关。
+     */
     public static final class PvcEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final PvcEnum _0 = new PvcEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final PvcEnum _1 = new PvcEnum("1");
 
-        /** Enum _2 for value: "2" */
+        /**
+         * Enum _2 for value: "2"
+         */
         public static final PvcEnum _2 = new PvcEnum("2");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final PvcEnum UNKNOW = new PvcEnum("UNKNOW");
 
         private static final Map<String, PvcEnum> STATIC_FIELDS = createStaticFields();
@@ -102,16 +114,24 @@ public class Common {
 
     private String pvcVersion;
 
-    /** 视频编码格式。 */
+    /**
+     * 视频编码格式。
+     */
     public static final class VideoCodecEnum {
 
-        /** Enum H264 for value: "H264" */
+        /**
+         * Enum H264 for value: "H264"
+         */
         public static final VideoCodecEnum H264 = new VideoCodecEnum("H264");
 
-        /** Enum H265 for value: "H265" */
+        /**
+         * Enum H265 for value: "H265"
+         */
         public static final VideoCodecEnum H265 = new VideoCodecEnum("H265");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final VideoCodecEnum UNKNOW = new VideoCodecEnum("UNKNOW");
 
         private static final Map<String, VideoCodecEnum> STATIC_FIELDS = createStaticFields();
@@ -182,20 +202,29 @@ public class Common {
 
     private VideoCodecEnum videoCodec;
 
-    /** 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 -
-     * 4：AUDIO_CODECTYPE_MP3 默认值为1。 */
+    /**
+     * 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 - 4：AUDIO_CODECTYPE_MP3  默认值为1。
+     */
     public static final class AudioCodecEnum {
 
-        /** Enum AAC for value: "AAC" */
+        /**
+         * Enum AAC for value: "AAC"
+         */
         public static final AudioCodecEnum AAC = new AudioCodecEnum("AAC");
 
-        /** Enum HEAAC1 for value: "HEAAC1" */
+        /**
+         * Enum HEAAC1 for value: "HEAAC1"
+         */
         public static final AudioCodecEnum HEAAC1 = new AudioCodecEnum("HEAAC1");
 
-        /** Enum HEAAC2 for value: "HEAAC2" */
+        /**
+         * Enum HEAAC2 for value: "HEAAC2"
+         */
         public static final AudioCodecEnum HEAAC2 = new AudioCodecEnum("HEAAC2");
 
-        /** Enum MP3 for value: "MP3" */
+        /**
+         * Enum MP3 for value: "MP3"
+         */
         public static final AudioCodecEnum MP3 = new AudioCodecEnum("MP3");
 
         private static final Map<String, AudioCodecEnum> STATIC_FIELDS = createStaticFields();
@@ -277,9 +306,10 @@ public class Common {
         return this;
     }
 
-    /** pvc开关。
-     * 
-     * @return pvc */
+    /**
+     * pvc开关。
+     * @return pvc
+     */
     public PvcEnum getPvc() {
         return pvc;
     }
@@ -293,9 +323,10 @@ public class Common {
         return this;
     }
 
-    /** pvc版本。
-     * 
-     * @return pvcVersion */
+    /**
+     * pvc版本。
+     * @return pvcVersion
+     */
     public String getPvcVersion() {
         return pvcVersion;
     }
@@ -309,9 +340,10 @@ public class Common {
         return this;
     }
 
-    /** 视频编码格式。
-     * 
-     * @return videoCodec */
+    /**
+     * 视频编码格式。
+     * @return videoCodec
+     */
     public VideoCodecEnum getVideoCodec() {
         return videoCodec;
     }
@@ -325,10 +357,10 @@ public class Common {
         return this;
     }
 
-    /** 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 -
-     * 4：AUDIO_CODECTYPE_MP3 默认值为1。
-     * 
-     * @return audioCodec */
+    /**
+     * 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 - 4：AUDIO_CODECTYPE_MP3  默认值为1。
+     * @return audioCodec
+     */
     public AudioCodecEnum getAudioCodec() {
         return audioCodec;
     }
@@ -342,9 +374,10 @@ public class Common {
         return this;
     }
 
-    /** 分片时长(默认为5秒)。
-     * 
-     * @return hlsInterval */
+    /**
+     * 分片时长(默认为5秒)。
+     * @return hlsInterval
+     */
     public Integer getHlsInterval() {
         return hlsInterval;
     }
@@ -385,7 +418,10 @@ public class Common {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

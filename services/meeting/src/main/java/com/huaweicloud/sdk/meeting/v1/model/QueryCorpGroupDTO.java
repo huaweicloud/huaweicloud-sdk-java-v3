@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QueryCorpGroupDTO */
+/**
+ * QueryCorpGroupDTO
+ */
 public class QueryCorpGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 分组Id
-     * 
-     * @return groupId */
+    /**
+     * 分组Id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -59,9 +62,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 分组名称
-     * 
-     * @return groupName */
+    /**
+     * 分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -75,9 +79,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 分组类型
-     * 
-     * @return groupType */
+    /**
+     * 分组类型
+     * @return groupType
+     */
     public Integer getGroupType() {
         return groupType;
     }
@@ -91,9 +96,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 分组备注信息
-     * 
-     * @return remarks */
+    /**
+     * 分组备注信息
+     * @return remarks
+     */
     public String getRemarks() {
         return remarks;
     }
@@ -107,9 +113,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 区域ID，仅服务列表类型场景必填
-     * 
-     * @return regionId */
+    /**
+     * 区域ID，仅服务列表类型场景必填
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -123,9 +130,10 @@ public class QueryCorpGroupDTO {
         return this;
     }
 
-    /** 分组状态 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组
-     * 
-     * @return status */
+    /**
+     * 分组状态 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -170,7 +178,10 @@ public class QueryCorpGroupDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

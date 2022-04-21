@@ -11,16 +11,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CancelTasksResponse extends SdkResponse {
 
-    /** 状态码: * success - 成功 * failure - 失败 */
+    /**
+     * 状态码:   * success - 成功   * failure - 失败 
+     */
     public static final class InfoCodeEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final InfoCodeEnum SUCCESS = new InfoCodeEnum("success");
 
-        /** Enum FAILURE for value: "failure" */
+        /**
+         * Enum FAILURE for value: "failure"
+         */
         public static final InfoCodeEnum FAILURE = new InfoCodeEnum("failure");
 
         private static final Map<String, InfoCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,22 +108,34 @@ public class CancelTasksResponse extends SdkResponse {
 
     private String taskId;
 
-    /** 任务状态: * running - 正在运行 * success - 成功 * canceled - 已取消 * waiting - 正在等待 * failure - 失败 */
+    /**
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     */
     public static final class TaskStatusEnum {
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final TaskStatusEnum RUNNING = new TaskStatusEnum("running");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final TaskStatusEnum SUCCESS = new TaskStatusEnum("success");
 
-        /** Enum CANCELED for value: "canceled" */
+        /**
+         * Enum CANCELED for value: "canceled"
+         */
         public static final TaskStatusEnum CANCELED = new TaskStatusEnum("canceled");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final TaskStatusEnum WAITING = new TaskStatusEnum("waiting");
 
-        /** Enum FAILURE for value: "failure" */
+        /**
+         * Enum FAILURE for value: "failure"
+         */
         public static final TaskStatusEnum FAILURE = new TaskStatusEnum("failure");
 
         private static final Map<String, TaskStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -193,9 +213,10 @@ public class CancelTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 状态码: * success - 成功 * failure - 失败
-     * 
-     * @return infoCode */
+    /**
+     * 状态码:   * success - 成功   * failure - 失败 
+     * @return infoCode
+     */
     public InfoCodeEnum getInfoCode() {
         return infoCode;
     }
@@ -209,9 +230,10 @@ public class CancelTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回的提示信息
-     * 
-     * @return infoDescription */
+    /**
+     * 返回的提示信息
+     * @return infoDescription
+     */
     public String getInfoDescription() {
         return infoDescription;
     }
@@ -225,9 +247,10 @@ public class CancelTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -241,9 +264,10 @@ public class CancelTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态: * running - 正在运行 * success - 成功 * canceled - 已取消 * waiting - 正在等待 * failure - 失败
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * @return taskStatus
+     */
     public TaskStatusEnum getTaskStatus() {
         return taskStatus;
     }
@@ -284,7 +308,10 @@ public class CancelTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

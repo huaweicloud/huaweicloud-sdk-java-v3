@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 缺陷信息 */
+/**
+ * 缺陷信息
+ */
 public class DefectInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷的id
-     * 
-     * @return defectId */
+    /**
+     * 缺陷的id
+     * @return defectId
+     */
     public String getDefectId() {
         return defectId;
     }
@@ -92,9 +95,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷对应检查项的名称
-     * 
-     * @return defectCheckerName */
+    /**
+     * 缺陷对应检查项的名称
+     * @return defectCheckerName
+     */
     public String getDefectCheckerName() {
         return defectCheckerName;
     }
@@ -108,9 +112,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷的状态0为解决 1已解决 2已忽略
-     * 
-     * @return defectStatus */
+    /**
+     * 缺陷的状态0为解决 1已解决 2已忽略
+     * @return defectStatus
+     */
     public String getDefectStatus() {
         return defectStatus;
     }
@@ -124,9 +129,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 规则标签,多个标签用逗号隔开
-     * 
-     * @return ruleSystemTags */
+    /**
+     * 规则标签,多个标签用逗号隔开
+     * @return ruleSystemTags
+     */
     public String getRuleSystemTags() {
         return ruleSystemTags;
     }
@@ -140,9 +146,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 规则名
-     * 
-     * @return ruleName */
+    /**
+     * 规则名
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -156,9 +163,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷所在文件行号
-     * 
-     * @return lineNumber */
+    /**
+     * 缺陷所在文件行号
+     * @return lineNumber
+     */
     public String getLineNumber() {
         return lineNumber;
     }
@@ -172,9 +180,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷描述
-     * 
-     * @return defectContent */
+    /**
+     * 缺陷描述
+     * @return defectContent
+     */
     public String getDefectContent() {
         return defectContent;
     }
@@ -188,9 +197,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷等级，0致命，1严重，2一般，3提示
-     * 
-     * @return defectLevel */
+    /**
+     * 缺陷等级，0致命，1严重，2一般，3提示
+     * @return defectLevel
+     */
     public String getDefectLevel() {
         return defectLevel;
     }
@@ -204,9 +214,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷文件路径
-     * 
-     * @return filePath */
+    /**
+     * 缺陷文件路径
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -220,9 +231,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -236,9 +248,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 问题唯一标识
-     * 
-     * @return issueKey */
+    /**
+     * 问题唯一标识
+     * @return issueKey
+     */
     public String getIssueKey() {
         return issueKey;
     }
@@ -268,9 +281,10 @@ public class DefectInfoV2 {
         return this;
     }
 
-    /** 缺陷代码片段详情
-     * 
-     * @return fragment */
+    /**
+     * 缺陷代码片段详情
+     * @return fragment
+     */
     public List<DefectFragmentV2> getFragment() {
         return fragment;
     }
@@ -338,7 +352,10 @@ public class DefectInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

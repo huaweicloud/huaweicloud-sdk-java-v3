@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CheckpointReplicateRespBody */
+/**
+ * CheckpointReplicateRespBody
+ */
 public class CheckpointReplicateRespBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,9 +74,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 待复制的备份列表
-     * 
-     * @return backups */
+    /**
+     * 待复制的备份列表
+     * @return backups
+     */
     public List<CheckpointReplicateRespbackups> getBackups() {
         return backups;
     }
@@ -88,9 +91,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 复制的目标项目ID
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -104,9 +108,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 复制的目标区域
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -120,9 +125,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 目标区域存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标区域存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -136,9 +142,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 执行复制的项目ID
-     * 
-     * @return projectId */
+    /**
+     * 执行复制的项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -152,9 +159,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 备份提供商ID
-     * 
-     * @return providerId */
+    /**
+     * 备份提供商ID
+     * @return providerId
+     */
     public String getProviderId() {
         return providerId;
     }
@@ -168,9 +176,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 复制的源区域
-     * 
-     * @return sourceRegion */
+    /**
+     * 复制的源区域
+     * @return sourceRegion
+     */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -184,9 +193,10 @@ public class CheckpointReplicateRespBody {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -242,7 +252,10 @@ public class CheckpointReplicateRespBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

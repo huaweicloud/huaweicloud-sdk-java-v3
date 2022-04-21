@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** PublishResp */
+/**
+ * PublishResp
+ */
 public class PublishResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class PublishResp {
         return this;
     }
 
-    /** 发布记录的ID
-     * 
-     * @return publishId */
+    /**
+     * 发布记录的ID
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -65,9 +68,10 @@ public class PublishResp {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -81,9 +85,10 @@ public class PublishResp {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -97,9 +102,10 @@ public class PublishResp {
         return this;
     }
 
-    /** 发布的环境编号
-     * 
-     * @return envId */
+    /**
+     * 发布的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -113,9 +119,10 @@ public class PublishResp {
         return this;
     }
 
-    /** 发布描述
-     * 
-     * @return remark */
+    /**
+     * 发布描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -129,9 +136,10 @@ public class PublishResp {
         return this;
     }
 
-    /** 发布时间
-     * 
-     * @return publishTime */
+    /**
+     * 发布时间
+     * @return publishTime
+     */
     public OffsetDateTime getPublishTime() {
         return publishTime;
     }
@@ -145,9 +153,10 @@ public class PublishResp {
         return this;
     }
 
-    /** 在线的版本号
-     * 
-     * @return versionId */
+    /**
+     * 在线的版本号
+     * @return versionId
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -192,7 +201,10 @@ public class PublishResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

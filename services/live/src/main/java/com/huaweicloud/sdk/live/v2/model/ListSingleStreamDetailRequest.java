@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSingleStreamDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListSingleStreamDetailRequest {
         return this;
     }
 
-    /** 推流域名。
-     * 
-     * @return publishDomain */
+    /**
+     * 推流域名。 
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -54,9 +57,10 @@ public class ListSingleStreamDetailRequest {
         return this;
     }
 
-    /** 应用名。
-     * 
-     * @return app */
+    /**
+     * 应用名。 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -70,9 +74,10 @@ public class ListSingleStreamDetailRequest {
         return this;
     }
 
-    /** 流名。
-     * 
-     * @return stream */
+    /**
+     * 流名。 
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -86,9 +91,10 @@ public class ListSingleStreamDetailRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。 若参数为空，默认查询最近1小时数据。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。  若参数为空，默认查询最近1小时数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -102,9 +108,10 @@ public class ListSingleStreamDetailRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。 若参数为空，默认为当前时间。结束时间需大于起始时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -147,7 +154,10 @@ public class ListSingleStreamDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

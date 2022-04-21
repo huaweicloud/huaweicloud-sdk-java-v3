@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AddCorpDTO */
+/**
+ * AddCorpDTO
+ */
 public class AddCorpDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class AddCorpDTO {
         return this;
     }
 
-    /** Get basicInfo
-     * 
-     * @return basicInfo */
+    /**
+     * Get basicInfo
+     * @return basicInfo
+     */
     public CorpBasicDTO getBasicInfo() {
         return basicInfo;
     }
@@ -75,9 +78,10 @@ public class AddCorpDTO {
         return this;
     }
 
-    /** Get adminInfo
-     * 
-     * @return adminInfo */
+    /**
+     * Get adminInfo
+     * @return adminInfo
+     */
     public AdminDTO getAdminInfo() {
         return adminInfo;
     }
@@ -100,9 +104,10 @@ public class AddCorpDTO {
         return this;
     }
 
-    /** Get resInfo
-     * 
-     * @return resInfo */
+    /**
+     * Get resInfo
+     * @return resInfo
+     */
     public AddCorpResDTO getResInfo() {
         return resInfo;
     }
@@ -116,9 +121,10 @@ public class AddCorpDTO {
         return this;
     }
 
-    /** 媒体接入（包括SBC和MCU）分组id, 可通过企业资源管理下的SP管理员查询资源信息接口获取。
-     * 
-     * @return groupId */
+    /**
+     * 媒体接入（包括SBC和MCU）分组id, 可通过企业资源管理下的SP管理员查询资源信息接口获取。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -148,9 +154,10 @@ public class AddCorpDTO {
         return this;
     }
 
-    /** 可配置项信息。
-     * 
-     * @return propertyInfo */
+    /**
+     * 可配置项信息。
+     * @return propertyInfo
+     */
     public List<OrgPropertyDTO> getPropertyInfo() {
         return propertyInfo;
     }
@@ -192,7 +199,10 @@ public class AddCorpDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

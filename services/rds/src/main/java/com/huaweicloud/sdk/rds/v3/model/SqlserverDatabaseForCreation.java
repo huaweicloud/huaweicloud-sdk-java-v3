@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class SqlserverDatabaseForCreation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,10 @@ public class SqlserverDatabaseForCreation {
         return this;
     }
 
-    /** 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线或下划线组成，不能包含其他特殊字符，且不能以RDS for SQL Server系统库开头或结尾。 RDS for SQL
-     * Server系统库包括master，msdb，model，tempdb，resource以及rdsadmin。
-     * 
-     * @return name */
+    /**
+     * 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线或下划线组成，不能包含其他特殊字符，且不能以RDS for SQL Server系统库开头或结尾。 RDS for SQL Server系统库包括master，msdb，model，tempdb，resource以及rdsadmin。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -56,7 +58,10 @@ public class SqlserverDatabaseForCreation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

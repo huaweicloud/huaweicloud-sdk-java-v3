@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** hosting结果文件的相关信息 */
+/**
+ * hosting结果文件的相关信息
+ */
 public class TaskHostingResultHostingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,22 +21,34 @@ public class TaskHostingResultHostingResult {
 
     private OffsetDateTime overdueDate;
 
-    /** 结果文件result.json的状态 */
+    /**
+     * 结果文件result.json的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum NOT_GENERATED for value: "NOT_GENERATED" */
+        /**
+         * Enum NOT_GENERATED for value: "NOT_GENERATED"
+         */
         public static final StatusEnum NOT_GENERATED = new StatusEnum("NOT_GENERATED");
 
-        /** Enum AVAILABLE for value: "AVAILABLE" */
+        /**
+         * Enum AVAILABLE for value: "AVAILABLE"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
 
-        /** Enum EXCEED_IN_SIZE for value: "EXCEED_IN_SIZE" */
+        /**
+         * Enum EXCEED_IN_SIZE for value: "EXCEED_IN_SIZE"
+         */
         public static final StatusEnum EXCEED_IN_SIZE = new StatusEnum("EXCEED_IN_SIZE");
 
-        /** Enum OVERDUE for value: "OVERDUE" */
+        /**
+         * Enum OVERDUE for value: "OVERDUE"
+         */
         public static final StatusEnum OVERDUE = new StatusEnum("OVERDUE");
 
-        /** Enum DELETED_MISTAKENLY for value: "DELETED_MISTAKENLY" */
+        /**
+         * Enum DELETED_MISTAKENLY for value: "DELETED_MISTAKENLY"
+         */
         public static final StatusEnum DELETED_MISTAKENLY = new StatusEnum("DELETED_MISTAKENLY");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +136,10 @@ public class TaskHostingResultHostingResult {
         return this;
     }
 
-    /** 结果文件result.json的过期时间
-     * 
-     * @return overdueDate */
+    /**
+     * 结果文件result.json的过期时间
+     * @return overdueDate
+     */
     public OffsetDateTime getOverdueDate() {
         return overdueDate;
     }
@@ -138,9 +153,10 @@ public class TaskHostingResultHostingResult {
         return this;
     }
 
-    /** 结果文件result.json的状态
-     * 
-     * @return status */
+    /**
+     * 结果文件result.json的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -154,9 +170,10 @@ public class TaskHostingResultHostingResult {
         return this;
     }
 
-    /** 结果文件result.json的具体内容
-     * 
-     * @return data */
+    /**
+     * 结果文件result.json的具体内容
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -170,9 +187,10 @@ public class TaskHostingResultHostingResult {
         return this;
     }
 
-    /** 结果文件result.json的大小
-     * 
-     * @return fileSize */
+    /**
+     * 结果文件result.json的大小
+     * @return fileSize
+     */
     public String getFileSize() {
         return fileSize;
     }
@@ -213,7 +231,10 @@ public class TaskHostingResultHostingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

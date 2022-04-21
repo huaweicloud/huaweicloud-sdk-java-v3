@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAllFaceSetsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库信息集合，详见[FaceSetInfo](https://support.huaweicloud.com/api-face/face_02_0020.html)。 调用失败时无此字段。
-     * 
-     * @return faceSetsInfo */
+    /**
+     * 人脸库信息集合，详见[FaceSetInfo](https://support.huaweicloud.com/api-face/face_02_0020.html)。 调用失败时无此字段。
+     * @return faceSetsInfo
+     */
     public List<FaceSetInfo> getFaceSetsInfo() {
         return faceSetsInfo;
     }
@@ -75,7 +78,10 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

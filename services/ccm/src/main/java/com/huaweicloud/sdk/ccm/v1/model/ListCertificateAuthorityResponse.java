@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCertificateAuthorityResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书总数。
-     * 
-     * @return total */
+    /**
+     * CA证书总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -62,9 +65,10 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
         return this;
     }
 
-    /** CA列表，详情请参见**CertificateAuthorities**字段数据结构说明。
-     * 
-     * @return certificateAuthorities */
+    /**
+     * CA列表，详情请参见**CertificateAuthorities**字段数据结构说明。
+     * @return certificateAuthorities
+     */
     public List<CertificateAuthorities> getCertificateAuthorities() {
         return certificateAuthorities;
     }
@@ -101,7 +105,10 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

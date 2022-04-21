@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListApisBindedToAclPolicyV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -69,9 +72,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -85,9 +89,12 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,9 +108,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** ACL编号
-     * 
-     * @return aclId */
+    /**
+     * ACL编号
+     * @return aclId
+     */
     public String getAclId() {
         return aclId;
     }
@@ -117,9 +125,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -133,9 +142,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return apiName */
+    /**
+     * API名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -149,9 +159,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** 环境编号
-     * 
-     * @return envId */
+    /**
+     * 环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -165,9 +176,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return this;
     }
 
-    /** API分组编号
-     * 
-     * @return groupId */
+    /**
+     * API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -216,7 +228,10 @@ public class ListApisBindedToAclPolicyV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

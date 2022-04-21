@@ -7,7 +7,9 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LdApiDeployHistoryInfo */
+/**
+ * LdApiDeployHistoryInfo
+ */
 public class LdApiDeployHistoryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署的编号
-     * 
-     * @return id */
+    /**
+     * 部署的编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -66,9 +69,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署的后端API编号
-     * 
-     * @return ldApiId */
+    /**
+     * 部署的后端API编号
+     * @return ldApiId
+     */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -82,9 +86,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署的前端API分组编号
-     * 
-     * @return groupId */
+    /**
+     * 部署的前端API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -98,9 +103,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署的环境编号
-     * 
-     * @return envId */
+    /**
+     * 部署的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -114,9 +120,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署的前端API编号
-     * 
-     * @return apiId */
+    /**
+     * 部署的前端API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -130,9 +137,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** 部署时间
-     * 
-     * @return deployTime */
+    /**
+     * 部署时间
+     * @return deployTime
+     */
     public OffsetDateTime getDeployTime() {
         return deployTime;
     }
@@ -155,9 +163,10 @@ public class LdApiDeployHistoryInfo {
         return this;
     }
 
-    /** Get apiDefinition
-     * 
-     * @return apiDefinition */
+    /**
+     * Get apiDefinition
+     * @return apiDefinition
+     */
     public LdApiInfo getApiDefinition() {
         return apiDefinition;
     }
@@ -204,7 +213,10 @@ public class LdApiDeployHistoryInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

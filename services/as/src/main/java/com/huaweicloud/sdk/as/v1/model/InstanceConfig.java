@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例配置信息 */
+/**
+ * 实例配置信息
+ */
 public class InstanceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,10 +73,14 @@ public class InstanceConfig {
 
     private String serverGroupId;
 
-    /** 在专属主机上创建弹性云服务器。参数取值为dedicated。 */
+    /**
+     * 在专属主机上创建弹性云服务器。参数取值为dedicated。
+     */
     public static final class TenancyEnum {
 
-        /** Enum DEDICATED for value: "dedicated" */
+        /**
+         * Enum DEDICATED for value: "dedicated"
+         */
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
 
         private static final Map<String, TenancyEnum> STATIC_FIELDS = createStaticFields();
@@ -148,13 +154,19 @@ public class InstanceConfig {
 
     private String dedicatedHostId;
 
-    /** 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。 */
+    /**
+     * 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
+     */
     public static final class MultiFlavorPriorityPolicyEnum {
 
-        /** Enum PICK_FIRST for value: "PICK_FIRST" */
+        /**
+         * Enum PICK_FIRST for value: "PICK_FIRST"
+         */
         public static final MultiFlavorPriorityPolicyEnum PICK_FIRST = new MultiFlavorPriorityPolicyEnum("PICK_FIRST");
 
-        /** Enum COST_FIRST for value: "COST_FIRST" */
+        /**
+         * Enum COST_FIRST for value: "COST_FIRST"
+         */
         public static final MultiFlavorPriorityPolicyEnum COST_FIRST = new MultiFlavorPriorityPolicyEnum("COST_FIRST");
 
         private static final Map<String, MultiFlavorPriorityPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -224,10 +236,14 @@ public class InstanceConfig {
 
     private MultiFlavorPriorityPolicyEnum multiFlavorPriorityPolicy;
 
-    /** 云服务器的计费模式，可以选择竞价计费或按需计费，取值如下：按需计费：不指定该字段。竞价计费：spot */
+    /**
+     * 云服务器的计费模式，可以选择竞价计费或按需计费，取值如下：按需计费：不指定该字段。竞价计费：spot
+     */
     public static final class MarketTypeEnum {
 
-        /** Enum SPOT for value: "spot" */
+        /**
+         * Enum SPOT for value: "spot"
+         */
         public static final MarketTypeEnum SPOT = new MarketTypeEnum("spot");
 
         private static final Map<String, MarketTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -301,9 +317,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 云服务器ID，当使用已存在的云服务器的规格为模板创建弹性伸缩配置时传入该字段，此时flavorRef、imageRef、disk、security_groups、tenancy和dedicated_host_id字段不生效。当不传入instance_id字段时flavorRef、imageRef、disk字段为必选。
-     * 
-     * @return instanceId */
+    /**
+     * 云服务器ID，当使用已存在的云服务器的规格为模板创建弹性伸缩配置时传入该字段，此时flavorRef、imageRef、disk、security_groups、tenancy和dedicated_host_id字段不生效。当不传入instance_id字段时flavorRef、imageRef、disk字段为必选。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -317,10 +334,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 云服务器的规格ID。最多支持选择10个规格，多个规格ID以逗号分隔。云服务器的ID通过查询弹性云服务器规格详情和扩展信息列表接口获取，详情请参考
-     * [查询云服务器规格详情和扩展信息列表](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212656.html)。
-     * 
-     * @return flavorRef */
+    /**
+     * 云服务器的规格ID。最多支持选择10个规格，多个规格ID以逗号分隔。云服务器的ID通过查询弹性云服务器规格详情和扩展信息列表接口获取，详情请参考 [查询云服务器规格详情和扩展信息列表](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212656.html)。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -334,9 +351,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 镜像ID，同image_id，指定创建实例时选择的镜像资源。通过查询镜像服务镜像列表接口获取，请参考[查询镜像列表](https://support.huaweicloud.com/api-ims/ims_03_0602.html)。
-     * 
-     * @return imageRef */
+    /**
+     * 镜像ID，同image_id，指定创建实例时选择的镜像资源。通过查询镜像服务镜像列表接口获取，请参考[查询镜像列表](https://support.huaweicloud.com/api-ims/ims_03_0602.html)。
+     * @return imageRef
+     */
     public String getImageRef() {
         return imageRef;
     }
@@ -366,9 +384,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 磁盘组信息，系统盘必选，数据盘可选。
-     * 
-     * @return disk */
+    /**
+     * 磁盘组信息，系统盘必选，数据盘可选。
+     * @return disk
+     */
     public List<DiskInfo> getDisk() {
         return disk;
     }
@@ -382,10 +401,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 登录云服务器的SSH密钥名称。 获取密钥对方式请参考[创建及导入SSH密钥对](https://support.huaweicloud.com/api-dew/CreateKeypair.html)。 说明：
-     * 当key_name与user_data同时指定时，user_data只做用户数据注入。
-     * 
-     * @return keyName */
+    /**
+     * 登录云服务器的SSH密钥名称。  获取密钥对方式请参考[创建及导入SSH密钥对](https://support.huaweicloud.com/api-dew/CreateKeypair.html)。  说明： 当key_name与user_data同时指定时，user_data只做用户数据注入。
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -415,9 +434,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
-     * 
-     * @return personality */
+    /**
+     * 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
+     * @return personality
+     */
     public List<PersonalityInfo> getPersonality() {
         return personality;
     }
@@ -440,9 +460,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** Get publicIp
-     * 
-     * @return publicIp */
+    /**
+     * Get publicIp
+     * @return publicIp
+     */
     public PublicIp getPublicIp() {
         return publicIp;
     }
@@ -456,9 +477,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** cloud-init用户数据。支持注入文本、文本文件或gzip文件。文件内容需要进行base64格式编码，注入内容（编码之前的内容）最大为32KB。说明：当key_name没有指定时，user_data注入的数据默认为云服务器root账号的登录密码。创建密码方式鉴权的Linux弹性云服务器时为必填项，为root用户注入自定义初始化密码。
-     * 
-     * @return userData */
+    /**
+     * cloud-init用户数据。支持注入文本、文本文件或gzip文件。文件内容需要进行base64格式编码，注入内容（编码之前的内容）最大为32KB。说明：当key_name没有指定时，user_data注入的数据默认为云服务器root账号的登录密码。创建密码方式鉴权的Linux弹性云服务器时为必填项，为root用户注入自定义初始化密码。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -481,9 +503,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public VmMetaData getMetadata() {
         return metadata;
     }
@@ -513,9 +536,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 安全组信息。使用vpc_id通过查询VPC服务安全组列表接口获取，详见《虚拟私有云API参考》的“查询安全组列表”。当伸缩配置和伸缩组同时指定安全组时，将以伸缩配置中的安全组为准；当伸缩配置和伸缩组都没有指定安全组时，将使用默认安全组。为了使用灵活性更高，推荐在伸缩配置中指定安全组。
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组信息。使用vpc_id通过查询VPC服务安全组列表接口获取，详见《虚拟私有云API参考》的“查询安全组列表”。当伸缩配置和伸缩组同时指定安全组时，将以伸缩配置中的安全组为准；当伸缩配置和伸缩组都没有指定安全组时，将使用默认安全组。为了使用灵活性更高，推荐在伸缩配置中指定安全组。
+     * @return securityGroups
+     */
     public List<SecurityGroups> getSecurityGroups() {
         return securityGroups;
     }
@@ -529,9 +553,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 云服务器组ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 云服务器组ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -545,9 +570,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 在专属主机上创建弹性云服务器。参数取值为dedicated。
-     * 
-     * @return tenancy */
+    /**
+     * 在专属主机上创建弹性云服务器。参数取值为dedicated。
+     * @return tenancy
+     */
     public TenancyEnum getTenancy() {
         return tenancy;
     }
@@ -561,10 +587,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 专属主机的ID。
-     * 说明：该字段仅在tenancy为dedicated时生效；如果指定该字段，云服务器将被创建到指定的专属主机上；如果不指定该字段，此时系统会将云服务器创建在符合规格的专属主机中剩余内存最大的那一台上，以使各专属主机尽量均衡负载。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机的ID。 说明：该字段仅在tenancy为dedicated时生效；如果指定该字段，云服务器将被创建到指定的专属主机上；如果不指定该字段，此时系统会将云服务器创建在符合规格的专属主机中剩余内存最大的那一台上，以使各专属主机尽量均衡负载。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -578,9 +604,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
-     * 
-     * @return multiFlavorPriorityPolicy */
+    /**
+     * 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
+     * @return multiFlavorPriorityPolicy
+     */
     public MultiFlavorPriorityPolicyEnum getMultiFlavorPriorityPolicy() {
         return multiFlavorPriorityPolicy;
     }
@@ -594,9 +621,10 @@ public class InstanceConfig {
         return this;
     }
 
-    /** 云服务器的计费模式，可以选择竞价计费或按需计费，取值如下：按需计费：不指定该字段。竞价计费：spot
-     * 
-     * @return marketType */
+    /**
+     * 云服务器的计费模式，可以选择竞价计费或按需计费，取值如下：按需计费：不指定该字段。竞价计费：spot
+     * @return marketType
+     */
     public MarketTypeEnum getMarketType() {
         return marketType;
     }
@@ -672,7 +700,10 @@ public class InstanceConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

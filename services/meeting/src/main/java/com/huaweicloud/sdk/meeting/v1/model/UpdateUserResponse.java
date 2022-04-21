@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateUserResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,9 +154,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return id */
+    /**
+     * 用户id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -168,9 +171,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 账号
-     * 
-     * @return userAccount */
+    /**
+     * 账号
+     * @return userAccount
+     */
     public String getUserAccount() {
         return userAccount;
     }
@@ -184,9 +188,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 姓名
-     * 
-     * @return name */
+    /**
+     * 姓名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -200,9 +205,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 英文名称
-     * 
-     * @return englishName */
+    /**
+     * 英文名称
+     * @return englishName
+     */
     public String getEnglishName() {
         return englishName;
     }
@@ -216,9 +222,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 联系电话
-     * 
-     * @return phone */
+    /**
+     * 联系电话
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -232,9 +239,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 联系电话所属的国家
-     * 
-     * @return country */
+    /**
+     * 联系电话所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -248,9 +256,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 邮箱
-     * 
-     * @return email */
+    /**
+     * 邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -264,9 +273,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** SIP号码
-     * 
-     * @return sipNum */
+    /**
+     * SIP号码
+     * @return sipNum
+     */
     public String getSipNum() {
         return sipNum;
     }
@@ -296,9 +306,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 云会议室列表
-     * 
-     * @return vmrList */
+    /**
+     * 云会议室列表
+     * @return vmrList
+     */
     public List<UserVmrDTO> getVmrList() {
         return vmrList;
     }
@@ -312,9 +323,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门编码
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -328,9 +340,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -344,9 +357,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 部门完整名称
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门完整名称
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -360,9 +374,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户类型 - 2：企业成员账户
-     * 
-     * @return userType */
+    /**
+     * 用户类型 - 2：企业成员账户
+     * @return userType
+     */
     public Integer getUserType() {
         return userType;
     }
@@ -376,9 +391,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
-     * 
-     * @return adminType */
+    /**
+     * 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
+     * @return adminType
+     */
     public Integer getAdminType() {
         return adminType;
     }
@@ -392,9 +408,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 签名
-     * 
-     * @return signature */
+    /**
+     * 签名
+     * @return signature
+     */
     public String getSignature() {
         return signature;
     }
@@ -408,9 +425,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 职位
-     * 
-     * @return title */
+    /**
+     * 职位
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -424,9 +442,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return desc */
+    /**
+     * 备注
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -449,9 +468,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** Get corp
-     * 
-     * @return corp */
+    /**
+     * Get corp
+     * @return corp
+     */
     public CorpBasicInfoDTO getCorp() {
         return corp;
     }
@@ -474,9 +494,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** Get function
-     * 
-     * @return function */
+    /**
+     * Get function
+     * @return function
+     */
     public UserFunctionDTO getFunction() {
         return function;
     }
@@ -499,9 +520,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** Get devType
-     * 
-     * @return devType */
+    /**
+     * Get devType
+     * @return devType
+     */
     public QueryDeviceInfoResultDTO getDevType() {
         return devType;
     }
@@ -515,9 +537,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户状态 * 0、正常 * 1、停用
-     * 
-     * @return status */
+    /**
+     * 用户状态 * 0、正常 * 1、停用 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -531,9 +554,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 通讯录排序等级，序号越低优先级越高
-     * 
-     * @return sortLevel */
+    /**
+     * 通讯录排序等级，序号越低优先级越高
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -547,9 +571,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否隐藏手机号码
-     * 
-     * @return hidePhone */
+    /**
+     * 是否隐藏手机号码
+     * @return hidePhone
+     */
     public Boolean getHidePhone() {
         return hidePhone;
     }
@@ -563,9 +588,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 智慧屏唯一账号
-     * 
-     * @return visionAccount */
+    /**
+     * 智慧屏唯一账号
+     * @return visionAccount
+     */
     public String getVisionAccount() {
         return visionAccount;
     }
@@ -579,9 +605,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 第三方账号，自动开户的第三方账号、Ideahub账号的sn等
-     * 
-     * @return thirdAccount */
+    /**
+     * 第三方账号，自动开户的第三方账号、Ideahub账号的sn等
+     * @return thirdAccount
+     */
     public String getThirdAccount() {
         return thirdAccount;
     }
@@ -595,9 +622,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 许可证 * 0：商用； * 1：免费试用。
-     * 
-     * @return license */
+    /**
+     * 许可证 * 0：商用； * 1：免费试用。 
+     * @return license
+     */
     public Integer getLicense() {
         return license;
     }
@@ -611,9 +639,10 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    /** 激活时间，utc时间戳
-     * 
-     * @return activeTime */
+    /**
+     * 激活时间，utc时间戳
+     * @return activeTime
+     */
     public Long getActiveTime() {
         return activeTime;
     }
@@ -725,7 +754,10 @@ public class UpdateUserResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

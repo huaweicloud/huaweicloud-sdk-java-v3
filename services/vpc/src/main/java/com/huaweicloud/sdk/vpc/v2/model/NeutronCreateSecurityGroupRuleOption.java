@@ -20,13 +20,19 @@ public class NeutronCreateSecurityGroupRuleOption {
 
     private String description;
 
-    /** 功能说明：安全组规则方向 取值范围：ingress(入方向)或egress(出方向) */
+    /**
+     * 功能说明：安全组规则方向 取值范围：ingress(入方向)或egress(出方向)
+     */
     public static final class DirectionEnum {
 
-        /** Enum INGRESS for value: "ingress" */
+        /**
+         * Enum INGRESS for value: "ingress"
+         */
         public static final DirectionEnum INGRESS = new DirectionEnum("ingress");
 
-        /** Enum EGRESS for value: "egress" */
+        /**
+         * Enum EGRESS for value: "egress"
+         */
         public static final DirectionEnum EGRESS = new DirectionEnum("egress");
 
         private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -96,13 +102,19 @@ public class NeutronCreateSecurityGroupRuleOption {
 
     private DirectionEnum direction;
 
-    /** 功能说明：安全组规则网络类型 取值范围：IPv4或IPv6 */
+    /**
+     * 功能说明：安全组规则网络类型 取值范围：IPv4或IPv6
+     */
     public static final class EthertypeEnum {
 
-        /** Enum IPV4 for value: "IPv4" */
+        /**
+         * Enum IPV4 for value: "IPv4"
+         */
         public static final EthertypeEnum IPV4 = new EthertypeEnum("IPv4");
 
-        /** Enum IPV6 for value: "IPv6" */
+        /**
+         * Enum IPV6 for value: "IPv6"
+         */
         public static final EthertypeEnum IPV6 = new EthertypeEnum("IPv6");
 
         private static final Map<String, EthertypeEnum> STATIC_FIELDS = createStaticFields();
@@ -207,9 +219,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：安全组规则描述 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组规则描述 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -223,9 +236,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：安全组规则方向 取值范围：ingress(入方向)或egress(出方向)
-     * 
-     * @return direction */
+    /**
+     * 功能说明：安全组规则方向 取值范围：ingress(入方向)或egress(出方向)
+     * @return direction
+     */
     public DirectionEnum getDirection() {
         return direction;
     }
@@ -239,9 +253,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：安全组规则网络类型 取值范围：IPv4或IPv6
-     * 
-     * @return ethertype */
+    /**
+     * 功能说明：安全组规则网络类型 取值范围：IPv4或IPv6
+     * @return ethertype
+     */
     public EthertypeEnum getEthertype() {
         return ethertype;
     }
@@ -255,9 +270,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 最大端口，当协议类型为ICMP时，该值表示ICMP的code
-     * 
-     * @return portRangeMax */
+    /**
+     * 最大端口，当协议类型为ICMP时，该值表示ICMP的code
+     * @return portRangeMax
+     */
     public Integer getPortRangeMax() {
         return portRangeMax;
     }
@@ -271,11 +287,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：最小端口，当协议类型为ICMP时，该值表示ICMP的type
-     * 约束：protocol为tcp和udp时，port_range_max和port_range_min必须同时输入，且port_range_max应大于等于port_range_min。protocol为icmp时，指定ICMP
-     * code（port_range_max）时，必须同时指定ICMP type（port_range_min）。
-     * 
-     * @return portRangeMin */
+    /**
+     * 功能说明：最小端口，当协议类型为ICMP时，该值表示ICMP的type 约束：protocol为tcp和udp时，port_range_max和port_range_min必须同时输入，且port_range_max应大于等于port_range_min。protocol为icmp时，指定ICMP code（port_range_max）时，必须同时指定ICMP type（port_range_min）。
+     * @return portRangeMin
+     */
     public Integer getPortRangeMin() {
         return portRangeMin;
     }
@@ -289,9 +304,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：tcp/udp/icmp/icmpv6或IP协议编号（0~255） 约束：协议为icmpv6时，网络类型应该为IPv6；协议为icmp时，网络类型应该为IPv4
-     * 
-     * @return protocol */
+    /**
+     * 功能说明：tcp/udp/icmp/icmpv6或IP协议编号（0~255） 约束：协议为icmpv6时，网络类型应该为IPv6；协议为icmp时，网络类型应该为IPv4
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -305,9 +321,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：目的安全组的ID
-     * 
-     * @return remoteGroupId */
+    /**
+     * 功能说明：目的安全组的ID
+     * @return remoteGroupId
+     */
     public String getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -321,9 +338,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 功能说明：目的端ip网段 取值范围：cidr格式，如10.10.0.0/16
-     * 
-     * @return remoteIpPrefix */
+    /**
+     * 功能说明：目的端ip网段 取值范围：cidr格式，如10.10.0.0/16
+     * @return remoteIpPrefix
+     */
     public String getRemoteIpPrefix() {
         return remoteIpPrefix;
     }
@@ -337,9 +355,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return this;
     }
 
-    /** 所属安全组ID
-     * 
-     * @return securityGroupId */
+    /**
+     * 所属安全组ID
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -399,7 +418,10 @@ public class NeutronCreateSecurityGroupRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

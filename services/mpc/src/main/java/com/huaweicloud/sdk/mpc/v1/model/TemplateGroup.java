@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplateGroup */
+/**
+ * TemplateGroup
+ */
 public class TemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组id
-     * 
-     * @return groupId */
+    /**
+     * 模板组id 
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -67,9 +70,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组名称
-     * 
-     * @return name */
+    /**
+     * 模板组名称 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -99,9 +103,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组模板ID
-     * 
-     * @return templateIds */
+    /**
+     * 模板组模板ID 
+     * @return templateIds
+     */
     public List<Integer> getTemplateIds() {
         return templateIds;
     }
@@ -131,9 +136,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 视频信息列表
-     * 
-     * @return videos */
+    /**
+     * 视频信息列表 
+     * @return videos
+     */
     public List<VideoAndTemplate> getVideos() {
         return videos;
     }
@@ -156,9 +162,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public Audio getAudio() {
         return audio;
     }
@@ -181,9 +188,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** Get videoCommon
-     * 
-     * @return videoCommon */
+    /**
+     * Get videoCommon
+     * @return videoCommon
+     */
     public VideoCommon getVideoCommon() {
         return videoCommon;
     }
@@ -206,9 +214,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public Common getCommon() {
         return common;
     }
@@ -253,7 +262,10 @@ public class TemplateGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

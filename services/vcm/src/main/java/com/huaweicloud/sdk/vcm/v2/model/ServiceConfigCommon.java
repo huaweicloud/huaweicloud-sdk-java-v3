@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 服务算法配置 */
+/**
+ * 服务算法配置
+ */
 public class ServiceConfigCommon {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 截帧时间间隔，单位为秒/帧。
-     * 
-     * @return frameInterval */
+    /**
+     * 截帧时间间隔，单位为秒/帧。 
+     * @return frameInterval
+     */
     public Integer getFrameInterval() {
         return frameInterval;
     }
@@ -59,10 +62,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 视频检测场景。 politics：政治人物的检测。 terrorism：暴恐元素的检测。 porn：涉黄内容元素的检测。 可通过配置上述场景，来完成对应场景元素的检测。 说明：
-     * 如需配置多个检测场景，则将多个场景名称使用英文半角逗号拼接。例如，\"categories\": \"politics,terrorism,porn\"
-     * 
-     * @return categories */
+    /**
+     * 视频检测场景。  politics：政治人物的检测。 terrorism：暴恐元素的检测。 porn：涉黄内容元素的检测。 可通过配置上述场景，来完成对应场景元素的检测。  说明： 如需配置多个检测场景，则将多个场景名称使用英文半角逗号拼接。例如，\"categories\": \"politics,terrorism,porn\" 
+     * @return categories
+     */
     public String getCategories() {
         return categories;
     }
@@ -76,11 +79,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 语音或文字审核服务的检测场景，目前主要支持以下几种： politics：政治人物的检测。 porn：涉黄内容元素的检测。 ad：广告的检测。 abuse：辱骂内容元素的检测。 contraband：违禁品的检测
-     * flood：灌水内容元素的检测。 当使用语音或文字检测服务时，这里应当设置出对应的场景。 说明： 如需配置多个检测场景，则将多个场景名称使用英文半角逗号拼接。例如，\"text_categories\":
-     * \"politics,porn\"。
-     * 
-     * @return textCategories */
+    /**
+     * 语音或文字审核服务的检测场景，目前主要支持以下几种：  politics：政治人物的检测。 porn：涉黄内容元素的检测。 ad：广告的检测。 abuse：辱骂内容元素的检测。 contraband：违禁品的检测 flood：灌水内容元素的检测。 当使用语音或文字检测服务时，这里应当设置出对应的场景。  说明： 如需配置多个检测场景，则将多个场景名称使用英文半角逗号拼接。例如，\"text_categories\": \"politics,porn\"。 
+     * @return textCategories
+     */
     public String getTextCategories() {
         return textCategories;
     }
@@ -94,9 +96,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 是否使用语音审核服务。 true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。
-     * 
-     * @return useSis */
+    /**
+     * 是否使用语音审核服务。  true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。 
+     * @return useSis
+     */
     public String getUseSis() {
         return useSis;
     }
@@ -110,9 +113,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 是否使用文字审核服务。 true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。
-     * 
-     * @return useOcr */
+    /**
+     * 是否使用文字审核服务。  true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。 
+     * @return useOcr
+     */
     public String getUseOcr() {
         return useOcr;
     }
@@ -126,9 +130,10 @@ public class ServiceConfigCommon {
         return this;
     }
 
-    /** 是否使用问题场景图片上传服务。 true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。 当使用该服务时，必须设置obs输出目录，否则图片无法上传。问题图片会自动上传至输出路径/task_id目录下。
-     * 
-     * @return upload */
+    /**
+     * 是否使用问题场景图片上传服务。  true：使用 false：不使用 当不设置该参数或参数为空时，默认为不使用。  当使用该服务时，必须设置obs输出目录，否则图片无法上传。问题图片会自动上传至输出路径/task_id目录下。 
+     * @return upload
+     */
     public String getUpload() {
         return upload;
     }
@@ -173,7 +178,10 @@ public class ServiceConfigCommon {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

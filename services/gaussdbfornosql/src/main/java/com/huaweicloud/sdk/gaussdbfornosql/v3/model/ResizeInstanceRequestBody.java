@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResizeInstanceRequestBody */
+/**
+ * ResizeInstanceRequestBody
+ */
 public class ResizeInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ResizeInstanceRequestBody {
         return this;
     }
 
-    /** Get resize
-     * 
-     * @return resize */
+    /**
+     * Get resize
+     * @return resize
+     */
     public ResizeInstanceOption getResize() {
         return resize;
     }
@@ -49,10 +52,10 @@ public class ResizeInstanceRequestBody {
         return this;
     }
 
-    /** 创建包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - 对于降低规格场景，该字段无效。 - 对于扩大规格场景： - true，表示自动从账户中支付。 -
-     * false，表示手动从账户中支付，默认为该方式。
-     * 
-     * @return isAutoPay */
+    /**
+     * 创建包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - 对于降低规格场景，该字段无效。 - 对于扩大规格场景：   - true，表示自动从账户中支付。   - false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
     public String getIsAutoPay() {
         return isAutoPay;
     }
@@ -89,7 +92,10 @@ public class ResizeInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

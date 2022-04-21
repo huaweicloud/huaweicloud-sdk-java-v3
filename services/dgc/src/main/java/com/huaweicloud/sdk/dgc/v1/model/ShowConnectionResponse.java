@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowConnectionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,25 +21,39 @@ public class ShowConnectionResponse extends SdkResponse {
 
     private String name;
 
-    /** Gets or Sets type */
+    /**
+     * Gets or Sets type
+     */
     public static final class TypeEnum {
 
-        /** Enum DWS for value: "DWS" */
+        /**
+         * Enum DWS for value: "DWS"
+         */
         public static final TypeEnum DWS = new TypeEnum("DWS");
 
-        /** Enum DLI for value: "DLI" */
+        /**
+         * Enum DLI for value: "DLI"
+         */
         public static final TypeEnum DLI = new TypeEnum("DLI");
 
-        /** Enum SPARKSQL for value: "SparkSQL" */
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
         public static final TypeEnum SPARKSQL = new TypeEnum("SparkSQL");
 
-        /** Enum HIVE for value: "Hive" */
+        /**
+         * Enum HIVE for value: "Hive"
+         */
         public static final TypeEnum HIVE = new TypeEnum("Hive");
 
-        /** Enum RDS for value: "RDS" */
+        /**
+         * Enum RDS for value: "RDS"
+         */
         public static final TypeEnum RDS = new TypeEnum("RDS");
 
-        /** Enum CLOUDTABLE for value: "CloudTable" */
+        /**
+         * Enum CLOUDTABLE for value: "CloudTable"
+         */
         public static final TypeEnum CLOUDTABLE = new TypeEnum("CloudTable");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +142,10 @@ public class ShowConnectionResponse extends SdkResponse {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -142,9 +159,10 @@ public class ShowConnectionResponse extends SdkResponse {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -158,9 +176,10 @@ public class ShowConnectionResponse extends SdkResponse {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public Object getConfig() {
         return config;
     }
@@ -174,9 +193,10 @@ public class ShowConnectionResponse extends SdkResponse {
         return this;
     }
 
-    /** Get description
-     * 
-     * @return description */
+    /**
+     * Get description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -217,7 +237,10 @@ public class ShowConnectionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

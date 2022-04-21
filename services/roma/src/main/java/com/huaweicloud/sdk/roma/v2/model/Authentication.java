@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 鉴权 */
+/**
+ * 鉴权
+ */
 public class Authentication {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Authentication {
         return this;
     }
 
-    /** 一型一密/一机一密的用户名
-     * 
-     * @return userName */
+    /**
+     * 一型一密/一机一密的用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -39,9 +42,10 @@ public class Authentication {
         return this;
     }
 
-    /** 一型一密/一机一密的密码，输入要求：至少1个数字，1个大写字母，1个小写字母，1个特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
-     * 
-     * @return password */
+    /**
+     * 一型一密/一机一密的密码，输入要求：至少1个数字，1个大写字母，1个小写字母，1个特殊字符(~!@#$%^&*()-_=+|[{}];:<>/?)，长度8-32个字符
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -78,7 +82,10 @@ public class Authentication {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

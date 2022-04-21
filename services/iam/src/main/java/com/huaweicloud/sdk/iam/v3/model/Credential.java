@@ -35,9 +35,10 @@ public class Credential {
         return this;
     }
 
-    /** AK/SK和securitytoken的过期时间。
-     * 
-     * @return expiresAt */
+    /**
+     * AK/SK和securitytoken的过期时间。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -51,9 +52,10 @@ public class Credential {
         return this;
     }
 
-    /** 获取的AK。
-     * 
-     * @return access */
+    /**
+     * 获取的AK。
+     * @return access
+     */
     public String getAccess() {
         return access;
     }
@@ -67,9 +69,10 @@ public class Credential {
         return this;
     }
 
-    /** 获取的SK。
-     * 
-     * @return secret */
+    /**
+     * 获取的SK。
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -83,9 +86,10 @@ public class Credential {
         return this;
     }
 
-    /** securitytoken是将所获的AK、SK等信息进行加密后的字符串。
-     * 
-     * @return securitytoken */
+    /**
+     * securitytoken是将所获的AK、SK等信息进行加密后的字符串。
+     * @return securitytoken
+     */
     public String getSecuritytoken() {
         return securitytoken;
     }
@@ -125,7 +129,10 @@ public class Credential {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

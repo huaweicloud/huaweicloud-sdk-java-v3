@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 公共池详情 */
+/**
+ * 公共池详情
+ */
 public class CommonPoolDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 公共池名字
-     * 
-     * @return name */
+    /**
+     * 公共池名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -83,9 +87,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 公共池类型，如bgp，sbgp等
-     * 
-     * @return type */
+    /**
+     * 公共池类型，如bgp，sbgp等
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -99,9 +104,12 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 已经使用的ip数量 minimum: 0 maximum: 99999
-     * 
-     * @return used */
+    /**
+     * 已经使用的ip数量
+     * minimum: 0
+     * maximum: 99999
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -115,9 +123,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -131,9 +140,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 默认不展示，取值, 公共池ID
-     * 
-     * @return id */
+    /**
+     * 默认不展示，取值, 公共池ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -163,9 +173,10 @@ public class CommonPoolDict {
         return this;
     }
 
-    /** 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该 publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
-     * 
-     * @return allowShareBandwidthTypes */
+    /**
+     * 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该           publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
+     * @return allowShareBandwidthTypes
+     */
     public List<String> getAllowShareBandwidthTypes() {
         return allowShareBandwidthTypes;
     }
@@ -210,7 +221,10 @@ public class CommonPoolDict {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

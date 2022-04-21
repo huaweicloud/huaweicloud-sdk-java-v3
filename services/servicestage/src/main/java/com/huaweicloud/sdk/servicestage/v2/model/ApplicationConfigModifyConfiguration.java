@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用配置信息。 */
+/**
+ * 应用配置信息。
+ */
 public class ApplicationConfigModifyConfiguration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ApplicationConfigModifyConfiguration {
         return this;
     }
 
-    /** 应用环境变量。
-     * 
-     * @return env */
+    /**
+     * 应用环境变量。
+     * @return env
+     */
     public List<ApplicationConfigModifyConfigurationEnv> getEnv() {
         return env;
     }
@@ -76,7 +79,10 @@ public class ApplicationConfigModifyConfiguration {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

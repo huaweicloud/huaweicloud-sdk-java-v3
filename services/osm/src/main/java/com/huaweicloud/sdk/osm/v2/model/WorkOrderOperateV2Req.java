@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** WorkOrderOperateV2Req */
+/**
+ * WorkOrderOperateV2Req
+ */
 public class WorkOrderOperateV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class WorkOrderOperateV2Req {
         return this;
     }
 
-    /** 评价内容
-     * 
-     * @return judgement */
+    /**
+     * 评价内容
+     * @return judgement
+     */
     public String getJudgement() {
         return judgement;
     }
@@ -52,9 +55,10 @@ public class WorkOrderOperateV2Req {
         return this;
     }
 
-    /** 操作描述
-     * 
-     * @return operateDesc */
+    /**
+     * 操作描述
+     * @return operateDesc
+     */
     public String getOperateDesc() {
         return operateDesc;
     }
@@ -68,9 +72,10 @@ public class WorkOrderOperateV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -102,9 +107,10 @@ public class WorkOrderOperateV2Req {
         return this;
     }
 
-    /** 工单满意度列表
-     * 
-     * @return incidentSatisfactionList */
+    /**
+     * 工单满意度列表
+     * @return incidentSatisfactionList
+     */
     public List<IncidentSatisfactionV2Do> getIncidentSatisfactionList() {
         return incidentSatisfactionList;
     }
@@ -145,7 +151,10 @@ public class WorkOrderOperateV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

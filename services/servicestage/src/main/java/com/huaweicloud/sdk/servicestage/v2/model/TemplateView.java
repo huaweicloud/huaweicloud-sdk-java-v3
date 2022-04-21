@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 模板参数。 */
+/**
+ * 模板参数。
+ */
 public class TemplateView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class TemplateView {
         return this;
     }
 
-    /** Get templateName
-     * 
-     * @return templateName */
+    /**
+     * Get templateName
+     * @return templateName
+     */
     public Template getTemplateName() {
         return templateName;
     }
@@ -54,9 +57,10 @@ public class TemplateView {
         return this;
     }
 
-    /** 模板描述。
-     * 
-     * @return templateDesc */
+    /**
+     * 模板描述。
+     * @return templateDesc
+     */
     public String getTemplateDesc() {
         return templateDesc;
     }
@@ -70,9 +74,10 @@ public class TemplateView {
         return this;
     }
 
-    /** 模板类别。
-     * 
-     * @return sourceType */
+    /**
+     * 模板类别。
+     * @return sourceType
+     */
     public String getSourceType() {
         return sourceType;
     }
@@ -86,9 +91,10 @@ public class TemplateView {
         return this;
     }
 
-    /** 源码仓库URL
-     * 
-     * @return sourceRepoUrl */
+    /**
+     * 源码仓库URL
+     * @return sourceRepoUrl
+     */
     public String getSourceRepoUrl() {
         return sourceRepoUrl;
     }
@@ -102,9 +108,10 @@ public class TemplateView {
         return this;
     }
 
-    /** Get runtime
-     * 
-     * @return runtime */
+    /**
+     * Get runtime
+     * @return runtime
+     */
     public RuntimeType getRuntime() {
         return runtime;
     }
@@ -147,7 +154,10 @@ public class TemplateView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

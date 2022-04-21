@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTranscodingTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 客户端语言
-     * 
-     * @return xLanguage */
+    /**
+     * 客户端语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-language")
     public String getXLanguage() {
@@ -85,9 +88,10 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 转码服务接受任务后产生的任务ID。一次最多10个
-     * 
-     * @return taskId */
+    /**
+     * 转码服务接受任务后产生的任务ID。一次最多10个 
+     * @return taskId
+     */
     public List<Long> getTaskId() {
         return taskId;
     }
@@ -101,10 +105,10 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 任务执行状态。 取值如下： - WAITING：等待启动 - TRANSCODING：转码中 - SUCCEEDED：转码成功 - FAILED：转码失败 - CANCELED：已删除 -
-     * NEED_TO_BE_AUDIT：片源待审核
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。  取值如下： - WAITING：等待启动 - TRANSCODING：转码中 - SUCCEEDED：转码成功 - FAILED：转码失败 - CANCELED：已删除 - NEED_TO_BE_AUDIT：片源待审核 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -118,9 +122,10 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 起始时间 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效
-     * 
-     * @return startTime */
+    /**
+     * 起始时间  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -134,9 +139,10 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 结束时间 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效
-     * 
-     * @return endTime */
+    /**
+     * 结束时间  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -150,9 +156,12 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 分页编号。查询指定“task_id”时，该参数无效。 默认值：0。 minimum: 0 maximum: 50000
-     * 
-     * @return page */
+    /**
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
+     * minimum: 0
+     * maximum: 50000
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -166,9 +175,12 @@ public class ListTranscodingTaskRequest {
         return this;
     }
 
-    /** 每页记录数。查询指定“task_id”时，该参数无效。 取值范围：[1,100]。 默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return size */
+    /**
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -215,7 +227,10 @@ public class ListTranscodingTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

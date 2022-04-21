@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 迁移任务查询接口中返回的任务失败信息提示 */
+/**
+ * 迁移任务查询接口中返回的任务失败信息提示
+ */
 public class ErrorReasonResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ErrorReasonResp {
         return this;
     }
 
-    /** 迁移失败的错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 迁移失败的错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -39,9 +42,10 @@ public class ErrorReasonResp {
         return this;
     }
 
-    /** 迁移失败的原因。
-     * 
-     * @return errorMsg */
+    /**
+     * 迁移失败的原因。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -78,7 +82,10 @@ public class ErrorReasonResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

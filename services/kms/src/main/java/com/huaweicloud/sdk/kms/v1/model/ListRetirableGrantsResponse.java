@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRetirableGrantsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,13 +29,19 @@ public class ListRetirableGrantsResponse extends SdkResponse {
 
     private String nextMarker;
 
-    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。 */
+    /**
+     * 是否还有下一页：  - “true”表示还有数据。  - “false”表示已经是最后一页。
+     */
     public static final class TruncatedEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final TruncatedEnum TRUE = new TruncatedEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final TruncatedEnum FALSE = new TruncatedEnum("false");
 
         private static final Map<String, TruncatedEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         return this;
     }
 
-    /** grant列表，详情请参见grants字段数据结构说明。
-     * 
-     * @return grants */
+    /**
+     * grant列表，详情请参见grants字段数据结构说明。
+     * @return grants
+     */
     public List<Grants> getGrants() {
         return grants;
     }
@@ -140,9 +149,10 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取下一页所需要传递的marker值。 当“truncated”为“false”时，“next_marker”为空。
-     * 
-     * @return nextMarker */
+    /**
+     * 获取下一页所需要传递的marker值。 当“truncated”为“false”时，“next_marker”为空。
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -156,9 +166,10 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
-     * 
-     * @return truncated */
+    /**
+     * 是否还有下一页：  - “true”表示还有数据。  - “false”表示已经是最后一页。
+     * @return truncated
+     */
     public TruncatedEnum getTruncated() {
         return truncated;
     }
@@ -197,7 +208,10 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

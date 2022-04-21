@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IP地址组信息。 */
+/**
+ * IP地址组信息。
+ */
 public class IpGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * IP地址组的创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -72,9 +75,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的描述。
-     * 
-     * @return description */
+    /**
+     * IP地址组的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -88,9 +92,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的ID。
-     * 
-     * @return id */
+    /**
+     * IP地址组的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -120,9 +125,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组中包含的IP或网段列表。[]表示任意IP。
-     * 
-     * @return ipList */
+    /**
+     * IP地址组中包含的IP或网段列表。[]表示任意IP。
+     * @return ipList
+     */
     public List<IpInfo> getIpList() {
         return ipList;
     }
@@ -152,9 +158,10 @@ public class IpGroup {
         return this;
     }
 
-    /** 与IP地址组关联的监听器的ID列表。
-     * 
-     * @return listeners */
+    /**
+     * 与IP地址组关联的监听器的ID列表。
+     * @return listeners
+     */
     public List<ListenerRef> getListeners() {
         return listeners;
     }
@@ -168,9 +175,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的名称。
-     * 
-     * @return name */
+    /**
+     * IP地址组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -184,9 +192,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * IP地址组的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -200,9 +209,10 @@ public class IpGroup {
         return this;
     }
 
-    /** IP地址组的更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * IP地址组的更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -248,7 +258,10 @@ public class IpGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

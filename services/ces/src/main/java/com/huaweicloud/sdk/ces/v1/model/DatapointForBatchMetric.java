@@ -45,9 +45,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 聚合周期内指标数据的最大值。
-     * 
-     * @return max */
+    /**
+     * 聚合周期内指标数据的最大值。
+     * @return max
+     */
     public Double getMax() {
         return max;
     }
@@ -61,9 +62,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 聚合周期内指标数据的最小值。
-     * 
-     * @return min */
+    /**
+     * 聚合周期内指标数据的最小值。
+     * @return min
+     */
     public Double getMin() {
         return min;
     }
@@ -77,9 +79,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 聚合周期内指标数据的平均值。
-     * 
-     * @return average */
+    /**
+     * 聚合周期内指标数据的平均值。
+     * @return average
+     */
     public Double getAverage() {
         return average;
     }
@@ -93,9 +96,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 聚合周期内指标数据的求和值。
-     * 
-     * @return sum */
+    /**
+     * 聚合周期内指标数据的求和值。
+     * @return sum
+     */
     public Double getSum() {
         return sum;
     }
@@ -109,9 +113,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 聚合周期内指标数据的方差。
-     * 
-     * @return variance */
+    /**
+     * 聚合周期内指标数据的方差。
+     * @return variance
+     */
     public Double getVariance() {
         return variance;
     }
@@ -125,9 +130,10 @@ public class DatapointForBatchMetric {
         return this;
     }
 
-    /** 指标采集时间，UNIX时间戳，单位毫秒。
-     * 
-     * @return timestamp */
+    /**
+     * 指标采集时间，UNIX时间戳，单位毫秒。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -172,7 +178,10 @@ public class DatapointForBatchMetric {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

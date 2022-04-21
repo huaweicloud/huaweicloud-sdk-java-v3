@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaskCheckSettingsItem */
+/**
+ * TaskCheckSettingsItem
+ */
 public class TaskCheckSettingsItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class TaskCheckSettingsItem {
         return this;
     }
 
-    /** 检查参数对应的key值
-     * 
-     * @return cfgKey */
+    /**
+     * 检查参数对应的key值
+     * @return cfgKey
+     */
     public String getCfgKey() {
         return cfgKey;
     }
@@ -44,9 +47,10 @@ public class TaskCheckSettingsItem {
         return this;
     }
 
-    /** 参数状态
-     * 
-     * @return status */
+    /**
+     * 参数状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -60,9 +64,10 @@ public class TaskCheckSettingsItem {
         return this;
     }
 
-    /** 检查参数值
-     * 
-     * @return cfgValue */
+    /**
+     * 检查参数值
+     * @return cfgValue
+     */
     public String getCfgValue() {
         return cfgValue;
     }
@@ -101,7 +106,10 @@ public class TaskCheckSettingsItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

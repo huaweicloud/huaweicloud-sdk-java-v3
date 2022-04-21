@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AuthorizeConfigInfoRequestBody */
+/**
+ * AuthorizeConfigInfoRequestBody
+ */
 public class AuthorizeConfigInfoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,9 +105,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 是否开启SSO登录
-     * 
-     * @return enableSSO */
+    /**
+     * 是否开启SSO登录
+     * @return enableSSO
+     */
     public Boolean getEnableSSO() {
         return enableSSO;
     }
@@ -119,9 +122,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 企业域名 说明：开启SSO登录时必填
-     * 
-     * @return domain */
+    /**
+     * 企业域名 说明：开启SSO登录时必填 
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -135,9 +139,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** Oauth2授权地址 说明：开启SSO登录时必填
-     * 
-     * @return authorizeUrl */
+    /**
+     * Oauth2授权地址 说明：开启SSO登录时必填 
+     * @return authorizeUrl
+     */
     public String getAuthorizeUrl() {
         return authorizeUrl;
     }
@@ -151,9 +156,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 获取Token URL 说明：开启SSO登录时必填
-     * 
-     * @return getTokenUrl */
+    /**
+     * 获取Token URL 说明：开启SSO登录时必填 
+     * @return getTokenUrl
+     */
     public String getGetTokenUrl() {
         return getTokenUrl;
     }
@@ -167,9 +173,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** APPID 说明：开启SSO登录时必填
-     * 
-     * @return clientId */
+    /**
+     * APPID 说明：开启SSO登录时必填 
+     * @return clientId
+     */
     public String getClientId() {
         return clientId;
     }
@@ -183,9 +190,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** APP秘钥 说明：开启SSO登录时，若不修改APP秘钥，则置空即可
-     * 
-     * @return clientSecret */
+    /**
+     * APP秘钥 说明：开启SSO登录时，若不修改APP秘钥，则置空即可 
+     * @return clientSecret
+     */
     public String getClientSecret() {
         return clientSecret;
     }
@@ -199,9 +207,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 授权范围，OAuth2.0的OIDC取值为“openid”
-     * 
-     * @return scope */
+    /**
+     * 授权范围，OAuth2.0的OIDC取值为“openid”
+     * @return scope
+     */
     public String getScope() {
         return scope;
     }
@@ -215,9 +224,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方账号的字段名称 说明：开启SSO登录时必填
-     * 
-     * @return accFieldName */
+    /**
+     * 第三方账号的字段名称 说明：开启SSO登录时必填 
+     * @return accFieldName
+     */
     public String getAccFieldName() {
         return accFieldName;
     }
@@ -231,9 +241,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 用户信息查询URL
-     * 
-     * @return getUserInfoUrl */
+    /**
+     * 用户信息查询URL
+     * @return getUserInfoUrl
+     */
     public String getGetUserInfoUrl() {
         return getUserInfoUrl;
     }
@@ -247,9 +258,12 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 鉴权类型。OAuth2.0鉴权时取0 minimum: 0 maximum: 255
-     * 
-     * @return oauth2ServerType */
+    /**
+     * 鉴权类型。OAuth2.0鉴权时取0
+     * minimum: 0
+     * maximum: 255
+     * @return oauth2ServerType
+     */
     public Integer getOauth2ServerType() {
         return oauth2ServerType;
     }
@@ -263,9 +277,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 拉起PC端终端的schema
-     * 
-     * @return pcSchemaUrl */
+    /**
+     * 拉起PC端终端的schema
+     * @return pcSchemaUrl
+     */
     public String getPcSchemaUrl() {
         return pcSchemaUrl;
     }
@@ -279,9 +294,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 拉起安卓端终端的schema
-     * 
-     * @return androidSchemaUrl */
+    /**
+     * 拉起安卓端终端的schema
+     * @return androidSchemaUrl
+     */
     public String getAndroidSchemaUrl() {
         return androidSchemaUrl;
     }
@@ -295,9 +311,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 拉起ios端终端的schema
-     * 
-     * @return iosSchemaUrl */
+    /**
+     * 拉起ios端终端的schema
+     * @return iosSchemaUrl
+     */
     public String getIosSchemaUrl() {
         return iosSchemaUrl;
     }
@@ -311,9 +328,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方姓名的字段名称
-     * 
-     * @return thirdName */
+    /**
+     * 第三方姓名的字段名称
+     * @return thirdName
+     */
     public String getThirdName() {
         return thirdName;
     }
@@ -327,9 +345,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方邮箱的字段名称
-     * 
-     * @return thirdEmail */
+    /**
+     * 第三方邮箱的字段名称
+     * @return thirdEmail
+     */
     public String getThirdEmail() {
         return thirdEmail;
     }
@@ -343,9 +362,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方手机号的字段名称
-     * 
-     * @return thirdMobile */
+    /**
+     * 第三方手机号的字段名称
+     * @return thirdMobile
+     */
     public String getThirdMobile() {
         return thirdMobile;
     }
@@ -359,9 +379,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方accessToken的字段名称 说明：开启SSO登录时必填
-     * 
-     * @return thirdAccessToken */
+    /**
+     * 第三方accessToken的字段名称 说明：开启SSO登录时必填 
+     * @return thirdAccessToken
+     */
     public String getThirdAccessToken() {
         return thirdAccessToken;
     }
@@ -375,9 +396,10 @@ public class AuthorizeConfigInfoRequestBody {
         return this;
     }
 
-    /** 第三方头像链接的字段名称
-     * 
-     * @return thirdHeadImgUrl */
+    /**
+     * 第三方头像链接的字段名称
+     * @return thirdHeadImgUrl
+     */
     public String getThirdHeadImgUrl() {
         return thirdHeadImgUrl;
     }
@@ -463,7 +485,10 @@ public class AuthorizeConfigInfoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BindEipRequest */
+/**
+ * BindEipRequest
+ */
 public class BindEipRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BindEipRequest {
         return this;
     }
 
-    /** 待绑定的弹性公网IP地址，仅允许使用标准的IP地址格式。is_bind为true时必选
-     * 
-     * @return publicIp */
+    /**
+     * 待绑定的弹性公网IP地址，仅允许使用标准的IP地址格式。is_bind为true时必选
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -44,9 +47,10 @@ public class BindEipRequest {
         return this;
     }
 
-    /** 弹性公网IP对应的ID，仅允许使用标准的UUID格式。is_bind为true时必选
-     * 
-     * @return publicIpId */
+    /**
+     * 弹性公网IP对应的ID，仅允许使用标准的UUID格式。is_bind为true时必选
+     * @return publicIpId
+     */
     public String getPublicIpId() {
         return publicIpId;
     }
@@ -60,9 +64,10 @@ public class BindEipRequest {
         return this;
     }
 
-    /** - true，绑定弹性公网IP。 - false，解绑弹性公网IP。
-     * 
-     * @return isBind */
+    /**
+     * - true，绑定弹性公网IP。 - false，解绑弹性公网IP。
+     * @return isBind
+     */
     public Boolean getIsBind() {
         return isBind;
     }
@@ -101,7 +106,10 @@ public class BindEipRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

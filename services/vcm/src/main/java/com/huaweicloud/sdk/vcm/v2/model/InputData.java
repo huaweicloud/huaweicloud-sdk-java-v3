@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 视频数据输入列表 */
+/**
+ * 视频数据输入列表
+ */
 public class InputData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class InputData {
         return this;
     }
 
-    /** type为obs时输入参数 OBS桶名称。
-     * 
-     * @return bucket */
+    /**
+     * type为obs时输入参数  OBS桶名称。 
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -74,9 +77,10 @@ public class InputData {
         return this;
     }
 
-    /** type为obs时输入参数 OBS桶内的路径，例如“output/c1.mp4”。
-     * 
-     * @return path */
+    /**
+     * type为obs时输入参数  OBS桶内的路径，例如“output/c1.mp4”。 
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -90,10 +94,10 @@ public class InputData {
         return this;
     }
 
-    /** type为url或edgerestful时输入参数 type为url时表示视频数据的URL，目前支持OBS URL，且需要设置该URL对匿名用户可读权限。
-     * type为edgerestful时表示容器获取EDGERESTFUL流的rest请求。格式：http(s):ip:port/xxx。
-     * 
-     * @return url */
+    /**
+     * type为url或edgerestful时输入参数  type为url时表示视频数据的URL，目前支持OBS URL，且需要设置该URL对匿名用户可读权限。 type为edgerestful时表示容器获取EDGERESTFUL流的rest请求。格式：http(s):ip:port/xxx。 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -107,9 +111,10 @@ public class InputData {
         return this;
     }
 
-    /** type为edgecamera时输入参数 边缘摄像头id。
-     * 
-     * @return id */
+    /**
+     * type为edgecamera时输入参数  边缘摄像头id。 
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -123,9 +128,10 @@ public class InputData {
         return this;
     }
 
-    /** type为vis时输入参数 视频接入服务中的视频流名称。
-     * 
-     * @return streamName */
+    /**
+     * type为vis时输入参数  视频接入服务中的视频流名称。 
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -139,9 +145,10 @@ public class InputData {
         return this;
     }
 
-    /** type为edgerestful或vcn时输入参数 用于运行的边缘节点id, 下发边缘多任务作业时该字段不填写。
-     * 
-     * @return nodeId */
+    /**
+     * type为edgerestful或vcn时输入参数  用于运行的边缘节点id, 下发边缘多任务作业时该字段不填写。 
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -155,9 +162,10 @@ public class InputData {
         return this;
     }
 
-    /** type为edgerestful时输入参数 true：算法侧需要对https请求进行证书校验。 false：算法侧无需证书校验。 默认值：false。 平台侧仅对齐进行输入校验，不涉及业务逻辑。
-     * 
-     * @return certificateCheck */
+    /**
+     * type为edgerestful时输入参数  true：算法侧需要对https请求进行证书校验。 false：算法侧无需证书校验。 默认值：false。 平台侧仅对齐进行输入校验，不涉及业务逻辑。 
+     * @return certificateCheck
+     */
     public Boolean getCertificateCheck() {
         return certificateCheck;
     }
@@ -171,9 +179,10 @@ public class InputData {
         return this;
     }
 
-    /** type为edgerestful时输入参数 返回body体中edgerestful流地址的路径，不能以/开头。例如：data/url。
-     * 
-     * @return rtspPathInResponse */
+    /**
+     * type为edgerestful时输入参数  返回body体中edgerestful流地址的路径，不能以/开头。例如：data/url。 
+     * @return rtspPathInResponse
+     */
     public String getRtspPathInResponse() {
         return rtspPathInResponse;
     }
@@ -187,10 +196,10 @@ public class InputData {
         return this;
     }
 
-    /** type为vcn时输入参数
-     * 设备id号，符合正则表达式：^([0-9]{20}[#]{1}[a-zA-Z0-9]{32})|([0-9]{20}[#]{1}[0-9]{1,10}[#]{1}[a-zA-Z0-9]{32})$。
-     * 
-     * @return deviceId */
+    /**
+     * type为vcn时输入参数  设备id号，符合正则表达式：^([0-9]{20}[#]{1}[a-zA-Z0-9]{32})|([0-9]{20}[#]{1}[0-9]{1,10}[#]{1}[a-zA-Z0-9]{32})$。 
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -238,7 +247,10 @@ public class InputData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

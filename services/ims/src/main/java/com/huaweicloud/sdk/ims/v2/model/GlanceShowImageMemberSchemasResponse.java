@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 视图名称。
-     * 
-     * @return name */
+    /**
+     * 视图名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -40,9 +43,10 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像成员属性说明，主要是对基础属性的说明，包含每个属性的取值类型、用途等。
-     * 
-     * @return properties */
+    /**
+     * 镜像成员属性说明，主要是对基础属性的说明，包含每个属性的取值类型、用途等。
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -80,7 +84,10 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

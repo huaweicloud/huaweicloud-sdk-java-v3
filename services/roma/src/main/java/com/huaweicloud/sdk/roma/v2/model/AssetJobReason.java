@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AssetJobReason */
+/**
+ * AssetJobReason
+ */
 public class AssetJobReason {
 
-    /** 资源类型 */
+    /**
+     * 资源类型
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum APPLICATION for value: "application" */
+        /**
+         * Enum APPLICATION for value: "application"
+         */
         public static final ResourceTypeEnum APPLICATION = new ResourceTypeEnum("application");
 
-        /** Enum TASK for value: "task" */
+        /**
+         * Enum TASK for value: "task"
+         */
         public static final ResourceTypeEnum TASK = new ResourceTypeEnum("task");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class AssetJobReason {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -125,9 +134,10 @@ public class AssetJobReason {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -141,9 +151,10 @@ public class AssetJobReason {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -157,9 +168,10 @@ public class AssetJobReason {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -200,7 +212,10 @@ public class AssetJobReason {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点自定义生命周期配置 */
+/**
+ * 节点自定义生命周期配置
+ */
 public class NodeLifecycleConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class NodeLifecycleConfig {
         return this;
     }
 
-    /** 安装前执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。
-     * 
-     * @return preInstall */
+    /**
+     * 安装前执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 
+     * @return preInstall
+     */
     public String getPreInstall() {
         return preInstall;
     }
@@ -39,9 +42,10 @@ public class NodeLifecycleConfig {
         return this;
     }
 
-    /** 安装后执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。
-     * 
-     * @return postInstall */
+    /**
+     * 安装后执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 
+     * @return postInstall
+     */
     public String getPostInstall() {
         return postInstall;
     }
@@ -78,7 +82,10 @@ public class NodeLifecycleConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

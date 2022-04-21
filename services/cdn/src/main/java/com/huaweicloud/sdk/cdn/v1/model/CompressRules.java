@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CompressRules */
+/**
+ * CompressRules
+ */
 public class CompressRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CompressRules {
         return this;
     }
 
-    /** GZIP压缩类型（目前只支持 gzip）
-     * 
-     * @return compressType */
+    /**
+     * GZIP压缩类型（目前只支持 gzip）
+     * @return compressType
+     */
     public String getCompressType() {
         return compressType;
     }
@@ -39,9 +42,10 @@ public class CompressRules {
         return this;
     }
 
-    /** GZIP压缩文件类型（文件后缀竖线分割，如：.js|.html|.css|.xml）
-     * 
-     * @return compressFileType */
+    /**
+     * GZIP压缩文件类型（文件后缀竖线分割，如：.js|.html|.css|.xml）
+     * @return compressFileType
+     */
     public String getCompressFileType() {
         return compressFileType;
     }
@@ -78,7 +82,10 @@ public class CompressRules {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

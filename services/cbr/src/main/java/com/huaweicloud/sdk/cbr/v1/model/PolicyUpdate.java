@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PolicyUpdate */
+/**
+ * PolicyUpdate
+ */
 public class PolicyUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class PolicyUpdate {
         return this;
     }
 
-    /** 是否启用策略
-     * 
-     * @return enabled */
+    /**
+     * 是否启用策略
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -50,9 +53,10 @@ public class PolicyUpdate {
         return this;
     }
 
-    /** 策略名称
-     * 
-     * @return name */
+    /**
+     * 策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class PolicyUpdate {
         return this;
     }
 
-    /** Get operationDefinition
-     * 
-     * @return operationDefinition */
+    /**
+     * Get operationDefinition
+     * @return operationDefinition
+     */
     public PolicyoODCreate getOperationDefinition() {
         return operationDefinition;
     }
@@ -100,9 +105,10 @@ public class PolicyUpdate {
         return this;
     }
 
-    /** Get trigger
-     * 
-     * @return trigger */
+    /**
+     * Get trigger
+     * @return trigger
+     */
     public PolicyTriggerReq getTrigger() {
         return trigger;
     }
@@ -142,7 +148,10 @@ public class PolicyUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

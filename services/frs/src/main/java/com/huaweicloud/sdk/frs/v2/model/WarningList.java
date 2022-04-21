@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WarningList */
+/**
+ * WarningList
+ */
 public class WarningList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class WarningList {
         return this;
     }
 
-    /** 警告ID。
-     * 
-     * @return warningCode */
+    /**
+     * 警告ID。
+     * @return warningCode
+     */
     public Integer getWarningCode() {
         return warningCode;
     }
@@ -39,9 +42,10 @@ public class WarningList {
         return this;
     }
 
-    /** 告警消息。
-     * 
-     * @return warningMsg */
+    /**
+     * 告警消息。
+     * @return warningMsg
+     */
     public String getWarningMsg() {
         return warningMsg;
     }
@@ -78,7 +82,10 @@ public class WarningList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

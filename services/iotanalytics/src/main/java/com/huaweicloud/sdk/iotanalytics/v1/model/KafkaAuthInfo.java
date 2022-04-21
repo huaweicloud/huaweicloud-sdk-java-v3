@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Kafka 认证信息 */
+/**
+ * Kafka 认证信息
+ */
 public class KafkaAuthInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class KafkaAuthInfo {
         return this;
     }
 
-    /** 安全协议
-     * 
-     * @return securityProtocol */
+    /**
+     * 安全协议
+     * @return securityProtocol
+     */
     public String getSecurityProtocol() {
         return securityProtocol;
     }
@@ -49,9 +52,10 @@ public class KafkaAuthInfo {
         return this;
     }
 
-    /** Get saslPlainAuthInfo
-     * 
-     * @return saslPlainAuthInfo */
+    /**
+     * Get saslPlainAuthInfo
+     * @return saslPlainAuthInfo
+     */
     public SaslPlainAuthInfo getSaslPlainAuthInfo() {
         return saslPlainAuthInfo;
     }
@@ -88,7 +92,10 @@ public class KafkaAuthInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BackendLatencyStats */
+/**
+ * BackendLatencyStats
+ */
 public class BackendLatencyStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BackendLatencyStats {
         return this;
     }
 
-    /** 最大后端延时
-     * 
-     * @return maxBackendLatency */
+    /**
+     * 最大后端延时
+     * @return maxBackendLatency
+     */
     public Integer getMaxBackendLatency() {
         return maxBackendLatency;
     }
@@ -39,9 +42,10 @@ public class BackendLatencyStats {
         return this;
     }
 
-    /** 平均后端延时
-     * 
-     * @return avgBackendLatency */
+    /**
+     * 平均后端延时
+     * @return avgBackendLatency
+     */
     public Float getAvgBackendLatency() {
         return avgBackendLatency;
     }
@@ -78,7 +82,10 @@ public class BackendLatencyStats {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

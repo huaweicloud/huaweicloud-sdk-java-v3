@@ -15,13 +15,19 @@ import java.util.Objects;
  */
 public class Privateip {
 
-    /** 私有IP的状态 - ACTIVE：活动的 - DOWN：不可用 */
+    /**
+     * 私有IP的状态  - ACTIVE：活动的  - DOWN：不可用
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -106,19 +112,25 @@ public class Privateip {
 
     private String tenantId;
 
-    /** 私有IP的使用者，空表示未使用
-     * 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用)
-     * 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注 */
+    /**
+     * 私有IP的使用者，空表示未使用 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用) 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
+     */
     public static final class DeviceOwnerEnum {
 
-        /** Enum NETWORK_DHCP for value: "network:dhcp" */
+        /**
+         * Enum NETWORK_DHCP for value: "network:dhcp"
+         */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
 
-        /** Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed" */
+        /**
+         * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
+         */
         public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED =
             new DeviceOwnerEnum("network:router_interface_distributed");
 
-        /** Enum COMPUTE_XXX for value: "compute:xxx" */
+        /**
+         * Enum COMPUTE_XXX for value: "compute:xxx"
+         */
         public static final DeviceOwnerEnum COMPUTE_XXX = new DeviceOwnerEnum("compute:xxx");
 
         private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +211,10 @@ public class Privateip {
         return this;
     }
 
-    /** 私有IP的状态 - ACTIVE：活动的 - DOWN：不可用
-     * 
-     * @return status */
+    /**
+     * 私有IP的状态  - ACTIVE：活动的  - DOWN：不可用
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -215,9 +228,10 @@ public class Privateip {
         return this;
     }
 
-    /** 私有IP ID
-     * 
-     * @return id */
+    /**
+     * 私有IP ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -231,9 +245,10 @@ public class Privateip {
         return this;
     }
 
-    /** 分配IP的子网标识
-     * 
-     * @return subnetId */
+    /**
+     * 分配IP的子网标识
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -247,9 +262,10 @@ public class Privateip {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -263,11 +279,10 @@ public class Privateip {
         return this;
     }
 
-    /** 私有IP的使用者，空表示未使用
-     * 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用)
-     * 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
-     * 
-     * @return deviceOwner */
+    /**
+     * 私有IP的使用者，空表示未使用 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用) 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
+     * @return deviceOwner
+     */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -281,9 +296,10 @@ public class Privateip {
         return this;
     }
 
-    /** 申请到的私有IP
-     * 
-     * @return ipAddress */
+    /**
+     * 申请到的私有IP
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -326,7 +342,10 @@ public class Privateip {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

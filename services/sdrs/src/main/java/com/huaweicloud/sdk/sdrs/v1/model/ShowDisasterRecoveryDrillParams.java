@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询容灾演练数据结构 */
+/**
+ * 查询容灾演练数据结构
+ */
 public class ShowDisasterRecoveryDrillParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 容灾演练的ID。
-     * 
-     * @return id */
+    /**
+     * 容灾演练的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -72,9 +75,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 容灾演练的名称。
-     * 
-     * @return name */
+    /**
+     * 容灾演练的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -88,9 +92,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 容灾演练的状态。
-     * 
-     * @return status */
+    /**
+     * 容灾演练的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -104,9 +109,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 演练虚拟私有云id。
-     * 
-     * @return drillVpcId */
+    /**
+     * 演练虚拟私有云id。
+     * @return drillVpcId
+     */
     public String getDrillVpcId() {
         return drillVpcId;
     }
@@ -120,9 +126,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -136,9 +143,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -152,9 +160,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -184,9 +193,10 @@ public class ShowDisasterRecoveryDrillParams {
         return this;
     }
 
-    /** 演练云服务器列表。
-     * 
-     * @return drillServers */
+    /**
+     * 演练云服务器列表。
+     * @return drillServers
+     */
     public List<DrillServerParams> getDrillServers() {
         return drillServers;
     }
@@ -235,7 +245,10 @@ public class ShowDisasterRecoveryDrillParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

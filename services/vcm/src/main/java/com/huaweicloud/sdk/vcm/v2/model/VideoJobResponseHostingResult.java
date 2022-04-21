@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** hosting_result信息为可选，hosting输出类型的作业详情才会有这个信息，且该信息只出现在查询单个作业API中，不出现在查询作业列表API中 */
+/**
+ * hosting_result信息为可选，hosting输出类型的作业详情才会有这个信息，且该信息只出现在查询单个作业API中，不出现在查询作业列表API中
+ */
 public class VideoJobResponseHostingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class VideoJobResponseHostingResult {
         return this;
     }
 
-    /** 结果文件result.json的具体内容。
-     * 
-     * @return data */
+    /**
+     * 结果文件result.json的具体内容。
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -49,9 +52,10 @@ public class VideoJobResponseHostingResult {
         return this;
     }
 
-    /** 结果文件所在的OBS桶和result.json文件路径
-     * 
-     * @return obs */
+    /**
+     * 结果文件所在的OBS桶和result.json文件路径
+     * @return obs
+     */
     public Object getObs() {
         return obs;
     }
@@ -65,10 +69,10 @@ public class VideoJobResponseHostingResult {
         return this;
     }
 
-    /** result.json文件的状态： - NOT_GENERATED：文件未生成 - AVAILABLE：文件可获取 - EXCEED_IN_SIZE：文件超过最大规格 - OVERDUE：文件过期 -
-     * DELETED_MISTAKENLY：文件误删除
-     * 
-     * @return status */
+    /**
+     * result.json文件的状态： - NOT_GENERATED：文件未生成 - AVAILABLE：文件可获取 - EXCEED_IN_SIZE：文件超过最大规格 - OVERDUE：文件过期 - DELETED_MISTAKENLY：文件误删除
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -82,9 +86,10 @@ public class VideoJobResponseHostingResult {
         return this;
     }
 
-    /** result.json文件的过期日期，文件默认保存48小时。
-     * 
-     * @return resultJsonOverdueAt */
+    /**
+     * result.json文件的过期日期，文件默认保存48小时。
+     * @return resultJsonOverdueAt
+     */
     public String getResultJsonOverdueAt() {
         return resultJsonOverdueAt;
     }
@@ -125,7 +130,10 @@ public class VideoJobResponseHostingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowHistoryTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ShowHistoryTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 总共的任务个数。
-     * 
-     * @return total */
+    /**
+     * 总共的任务个数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -59,9 +62,10 @@ public class ShowHistoryTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志列表数据
-     * 
-     * @return tasks */
+    /**
+     * 日志列表数据
+     * @return tasks
+     */
     public List<TasksObject> getTasks() {
         return tasks;
     }
@@ -98,7 +102,10 @@ public class ShowHistoryTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

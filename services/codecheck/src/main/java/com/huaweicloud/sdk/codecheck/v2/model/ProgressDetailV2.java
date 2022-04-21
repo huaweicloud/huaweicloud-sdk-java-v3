@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProgressDetailV2 */
+/**
+ * ProgressDetailV2
+ */
 public class ProgressDetailV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ProgressDetailV2 {
         return this;
     }
 
-    /** 进度百分比
-     * 
-     * @return ratio */
+    /**
+     * 进度百分比
+     * @return ratio
+     */
     public String getRatio() {
         return ratio;
     }
@@ -39,9 +42,10 @@ public class ProgressDetailV2 {
         return this;
     }
 
-    /** 中文信息
-     * 
-     * @return info */
+    /**
+     * 中文信息
+     * @return info
+     */
     public String getInfo() {
         return info;
     }
@@ -77,7 +81,10 @@ public class ProgressDetailV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -40,9 +40,10 @@ public class Nearline {
         return this;
     }
 
-    /** Get itemTopic
-     * 
-     * @return itemTopic */
+    /**
+     * Get itemTopic
+     * @return itemTopic
+     */
     public Topic getItemTopic() {
         return itemTopic;
     }
@@ -65,9 +66,10 @@ public class Nearline {
         return this;
     }
 
-    /** Get userTopic
-     * 
-     * @return userTopic */
+    /**
+     * Get userTopic
+     * @return userTopic
+     */
     public Topic getUserTopic() {
         return userTopic;
     }
@@ -90,9 +92,10 @@ public class Nearline {
         return this;
     }
 
-    /** Get behaviorTopic
-     * 
-     * @return behaviorTopic */
+    /**
+     * Get behaviorTopic
+     * @return behaviorTopic
+     */
     public Topic getBehaviorTopic() {
         return behaviorTopic;
     }
@@ -130,7 +133,10 @@ public class Nearline {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

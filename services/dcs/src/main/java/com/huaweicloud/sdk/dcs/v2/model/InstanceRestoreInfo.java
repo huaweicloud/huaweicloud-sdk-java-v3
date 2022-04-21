@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** InstanceRestoreInfo */
+/**
+ * InstanceRestoreInfo
+ */
 public class InstanceRestoreInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,19 +65,29 @@ public class InstanceRestoreInfo {
 
     private String backupRemark;
 
-    /** 恢复状态。 - waiting：等待中 - restoring：恢复中 - succeed：恢复成功 - failed：恢复失败 */
+    /**
+     * 恢复状态。 - waiting：等待中 - restoring：恢复中 - succeed：恢复成功 - failed：恢复失败 
+     */
     public static final class StatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum RESTORING for value: "restoring" */
+        /**
+         * Enum RESTORING for value: "restoring"
+         */
         public static final StatusEnum RESTORING = new StatusEnum("restoring");
 
-        /** Enum SUCCEED for value: "succeed" */
+        /**
+         * Enum SUCCEED for value: "succeed"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("succeed");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -152,9 +164,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 备份记录ID。
-     * 
-     * @return backupId */
+    /**
+     * 备份记录ID。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -168,9 +181,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复记录ID。
-     * 
-     * @return restoreId */
+    /**
+     * 恢复记录ID。
+     * @return restoreId
+     */
     public String getRestoreId() {
         return restoreId;
     }
@@ -184,9 +198,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 备份记录名称。
-     * 
-     * @return backupName */
+    /**
+     * 备份记录名称。
+     * @return backupName
+     */
     public String getBackupName() {
         return backupName;
     }
@@ -200,9 +215,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复完成时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 恢复完成时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -216,9 +232,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复备注信息。
-     * 
-     * @return restoreRemark */
+    /**
+     * 恢复备注信息。
+     * @return restoreRemark
+     */
     public String getRestoreRemark() {
         return restoreRemark;
     }
@@ -232,9 +249,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复任务创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 恢复任务创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -248,9 +266,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复进度。
-     * 
-     * @return progress */
+    /**
+     * 恢复进度。
+     * @return progress
+     */
     public String getProgress() {
         return progress;
     }
@@ -264,11 +283,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` -
-     * 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` -
-     * 自动备份任务未运行，实例正在运行其他任务。
-     * 
-     * @return errorCode */
+    /**
+     * 恢复失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` - 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` - 自动备份任务未运行，实例正在运行其他任务。 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -282,9 +300,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复记录名称。
-     * 
-     * @return restoreName */
+    /**
+     * 恢复记录名称。
+     * @return restoreName
+     */
     public String getRestoreName() {
         return restoreName;
     }
@@ -298,9 +317,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 备份备注信息。
-     * 
-     * @return backupRemark */
+    /**
+     * 备份备注信息。
+     * @return backupRemark
+     */
     public String getBackupRemark() {
         return backupRemark;
     }
@@ -314,9 +334,10 @@ public class InstanceRestoreInfo {
         return this;
     }
 
-    /** 恢复状态。 - waiting：等待中 - restoring：恢复中 - succeed：恢复成功 - failed：恢复失败
-     * 
-     * @return status */
+    /**
+     * 恢复状态。 - waiting：等待中 - restoring：恢复中 - succeed：恢复成功 - failed：恢复失败 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -381,7 +402,10 @@ public class InstanceRestoreInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

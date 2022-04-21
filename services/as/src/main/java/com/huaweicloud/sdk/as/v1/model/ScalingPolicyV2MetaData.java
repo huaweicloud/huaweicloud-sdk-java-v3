@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 附件信息 */
+/**
+ * 附件信息
+ */
 public class ScalingPolicyV2MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ScalingPolicyV2MetaData {
         return this;
     }
 
-    /** 伸缩带宽策略中带宽对应的共享类型
-     * 
-     * @return metadataBandwidthShareType */
+    /**
+     * 伸缩带宽策略中带宽对应的共享类型
+     * @return metadataBandwidthShareType
+     */
     public String getMetadataBandwidthShareType() {
         return metadataBandwidthShareType;
     }
@@ -44,9 +47,10 @@ public class ScalingPolicyV2MetaData {
         return this;
     }
 
-    /** 伸缩带宽策略中带宽对应的EIP的ID
-     * 
-     * @return metadataEipId */
+    /**
+     * 伸缩带宽策略中带宽对应的EIP的ID
+     * @return metadataEipId
+     */
     public String getMetadataEipId() {
         return metadataEipId;
     }
@@ -60,9 +64,10 @@ public class ScalingPolicyV2MetaData {
         return this;
     }
 
-    /** 伸缩带宽策略中带宽对应的EIP地址
-     * 
-     * @return metadataEipAddress */
+    /**
+     * 伸缩带宽策略中带宽对应的EIP地址
+     * @return metadataEipAddress
+     */
     public String getMetadataEipAddress() {
         return metadataEipAddress;
     }
@@ -101,7 +106,10 @@ public class ScalingPolicyV2MetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

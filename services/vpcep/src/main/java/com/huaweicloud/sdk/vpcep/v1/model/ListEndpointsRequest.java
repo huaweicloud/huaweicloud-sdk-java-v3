@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEndpointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 终端节点服务的名称，支持大小 写，前后模糊匹配。
-     * 
-     * @return endpointServiceName */
+    /**
+     * 终端节点服务的名称，支持大小 写，前后模糊匹配。
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -64,9 +67,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 终端节点所在的VPC的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 终端节点所在的VPC的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -80,9 +84,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 终端节点的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -96,9 +101,11 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 查询返回终端节点的数量限制，即 每页返回的资源个数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。 minimum: 1
-     * 
-     * @return limit */
+    /**
+     * 查询返回终端节点的数量限制，即 每页返回的资源个数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。
+     * minimum: 1
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -112,9 +119,11 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -128,9 +137,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点列表的排序字 段，取值为： ● create_at：终端节点的创建时 间 ● update_at：终端节点的更新时 间 默认值为create_at。
-     * 
-     * @return sortKey */
+    /**
+     * 查询结果中终端节点列表的排序字 段，取值为： ● create_at：终端节点的创建时 间 ● update_at：终端节点的更新时 间 默认值为create_at。
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -144,9 +154,10 @@ public class ListEndpointsRequest {
         return this;
     }
 
-    /** 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
-     * 
-     * @return sortDir */
+    /**
+     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -193,7 +204,10 @@ public class ListEndpointsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

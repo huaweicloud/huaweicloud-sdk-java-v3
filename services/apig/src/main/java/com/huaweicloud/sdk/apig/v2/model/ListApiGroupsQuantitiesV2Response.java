@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 未上架的API分组个数 暂不支持
-     * 
-     * @return offsellNums */
+    /**
+     * 未上架的API分组个数  暂不支持
+     * @return offsellNums
+     */
     public Integer getOffsellNums() {
         return offsellNums;
     }
@@ -40,9 +43,10 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    /** 已上架的API分组个数
-     * 
-     * @return onsellNums */
+    /**
+     * 已上架的API分组个数
+     * @return onsellNums
+     */
     public Integer getOnsellNums() {
         return onsellNums;
     }
@@ -79,7 +83,10 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

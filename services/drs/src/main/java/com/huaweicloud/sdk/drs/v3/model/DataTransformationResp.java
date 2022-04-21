@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据加工返回体 */
+/**
+ * 数据加工返回体
+ */
 public class DataTransformationResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class DataTransformationResp {
 
     private String id;
 
-    /** 状态 */
+    /**
+     * 状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class DataTransformationResp {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -125,9 +134,10 @@ public class DataTransformationResp {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -141,9 +151,10 @@ public class DataTransformationResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -157,9 +168,10 @@ public class DataTransformationResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -200,7 +212,10 @@ public class DataTransformationResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FunctionGraph数据源配置内容 */
+/**
+ * FunctionGraph数据源配置内容
+ */
 public class FunctionGraphContentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return functionName */
+    /**
+     * 名称
+     * @return functionName
+     */
     public String getFunctionName() {
         return functionName;
     }
@@ -64,9 +67,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 原始URL
-     * 
-     * @return origUrl */
+    /**
+     * 原始URL
+     * @return origUrl
+     */
     public String getOrigUrl() {
         return origUrl;
     }
@@ -80,9 +84,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 转换后的URL
-     * 
-     * @return finalUrl */
+    /**
+     * 转换后的URL
+     * @return finalUrl
+     */
     public String getFinalUrl() {
         return finalUrl;
     }
@@ -96,9 +101,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 校验参数
-     * 
-     * @return verifyBody */
+    /**
+     * 校验参数
+     * @return verifyBody
+     */
     public String getVerifyBody() {
         return verifyBody;
     }
@@ -112,9 +118,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 租户的AK
-     * 
-     * @return ak */
+    /**
+     * 租户的AK
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -128,9 +135,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 租户的SK
-     * 
-     * @return sk */
+    /**
+     * 租户的SK
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -144,9 +152,10 @@ public class FunctionGraphContentReq {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -193,7 +202,10 @@ public class FunctionGraphContentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

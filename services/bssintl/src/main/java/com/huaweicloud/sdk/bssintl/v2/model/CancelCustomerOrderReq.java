@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CancelCustomerOrderReq */
+/**
+ * CancelCustomerOrderReq
+ */
 public class CancelCustomerOrderReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CancelCustomerOrderReq {
         return this;
     }
 
-    /** 订单ID。 取值为调用“查询订单列表”接口时响应消息中的“order_id”字段的值。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。 取值为调用“查询订单列表”接口时响应消息中的“order_id”字段的值。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -55,7 +58,10 @@ public class CancelCustomerOrderReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

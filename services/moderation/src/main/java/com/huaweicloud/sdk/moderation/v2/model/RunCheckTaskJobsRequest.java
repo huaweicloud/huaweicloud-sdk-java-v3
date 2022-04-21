@@ -10,22 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class RunCheckTaskJobsRequest {
 
-    /** 图像内容审核任务处理状态如下： - created 已创建 - running 正在处理 - finish 已完成 - failed 处理失败 */
+    /**
+     * 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATED for value: "created" */
+        /**
+         * Enum CREATED for value: "created"
+         */
         public static final StatusEnum CREATED = new StatusEnum("created");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum FINISH for value: "finish" */
+        /**
+         * Enum FINISH for value: "finish"
+         */
         public static final StatusEnum FINISH = new StatusEnum("finish");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +124,10 @@ public class RunCheckTaskJobsRequest {
         return this;
     }
 
-    /** 图像内容审核任务处理状态如下： - created 已创建 - running 正在处理 - finish 已完成 - failed 处理失败
-     * 
-     * @return status */
+    /**
+     * 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -128,9 +141,10 @@ public class RunCheckTaskJobsRequest {
         return this;
     }
 
-    /** 偏移量， 默认为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量， 默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -144,9 +158,10 @@ public class RunCheckTaskJobsRequest {
         return this;
     }
 
-    /** 指定每一页返回的最大条目数，默认为符合查询条件的总任务数量。
-     * 
-     * @return limit */
+    /**
+     * 指定每一页返回的最大条目数，默认为符合查询条件的总任务数量。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -185,7 +200,10 @@ public class RunCheckTaskJobsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

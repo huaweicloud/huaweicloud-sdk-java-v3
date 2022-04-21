@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 可选字段，鉴权认证类型。替换时需要该参数，重置时不需要该参数。 */
+/**
+ * 可选字段，鉴权认证类型。替换时需要该参数，重置时不需要该参数。
+ */
 public class Auth {
 
-    /** 取值为枚举类型。 */
+    /**
+     * 取值为枚举类型。
+     */
     public static final class TypeEnum {
 
-        /** Enum PASSWORD for value: "password" */
+        /**
+         * Enum PASSWORD for value: "password"
+         */
         public static final TypeEnum PASSWORD = new TypeEnum("password");
 
-        /** Enum KEYPAIR for value: "keypair" */
+        /**
+         * Enum KEYPAIR for value: "keypair"
+         */
         public static final TypeEnum KEYPAIR = new TypeEnum("keypair");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class Auth {
         return this;
     }
 
-    /** 取值为枚举类型。
-     * 
-     * @return type */
+    /**
+     * 取值为枚举类型。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -115,9 +124,10 @@ public class Auth {
         return this;
     }
 
-    /** - type为枚举值password时，key表示密码； - type为枚举值keypair时，key表示私钥；
-     * 
-     * @return key */
+    /**
+     * - type为枚举值password时，key表示密码； - type为枚举值keypair时，key表示私钥；
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -153,7 +163,10 @@ public class Auth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新主机组请求体 */
+/**
+ * 更新主机组请求体
+ */
 public class UpdateHostGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组ID
-     * 
-     * @return hostGroupId */
+    /**
+     * 主机组ID
+     * @return hostGroupId
+     */
     public String getHostGroupId() {
         return hostGroupId;
     }
@@ -52,9 +55,10 @@ public class UpdateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组名称
-     * 
-     * @return hostGroupName */
+    /**
+     * 主机组名称
+     * @return hostGroupName
+     */
     public String getHostGroupName() {
         return hostGroupName;
     }
@@ -84,9 +88,10 @@ public class UpdateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机ID列表。主机类型必须与主机组类型一致
-     * 
-     * @return hostIdList */
+    /**
+     * 主机ID列表。主机类型必须与主机组类型一致
+     * @return hostIdList
+     */
     public List<String> getHostIdList() {
         return hostIdList;
     }
@@ -116,9 +121,10 @@ public class UpdateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组标签。KEY不能重复
-     * 
-     * @return hostGroupTag */
+    /**
+     * 主机组标签。KEY不能重复
+     * @return hostGroupTag
+     */
     public List<HostGroupTag> getHostGroupTag() {
         return hostGroupTag;
     }
@@ -159,7 +165,10 @@ public class UpdateHostGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

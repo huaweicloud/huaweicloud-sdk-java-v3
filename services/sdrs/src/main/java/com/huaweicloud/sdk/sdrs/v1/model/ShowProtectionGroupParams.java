@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 查询保护组数据结构 */
+/**
+ * 查询保护组数据结构
+ */
 public class ShowProtectionGroupParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,13 +80,19 @@ public class ShowProtectionGroupParams {
 
     private Integer disasterRecoveryDrillNum;
 
-    /** 保护状态。started：表示该保护组开始保护。stopped：表示该保护组停止保护。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。 */
+    /**
+     * 保护状态。started：表示该保护组开始保护。stopped：表示该保护组停止保护。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     */
     public static final class ProtectedStatusEnum {
 
-        /** Enum STARTED for value: "started" */
+        /**
+         * Enum STARTED for value: "started"
+         */
         public static final ProtectedStatusEnum STARTED = new ProtectedStatusEnum("started");
 
-        /** Enum STOPPED for value: "stopped" */
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
         public static final ProtectedStatusEnum STOPPED = new ProtectedStatusEnum("stopped");
 
         private static final Map<String, ProtectedStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -154,20 +162,29 @@ public class ShowProtectionGroupParams {
 
     private ProtectedStatusEnum protectedStatus;
 
-    /** 数据同步状态。 active：表示数据已同步完成。 inactive：表示数据未同步。 copying：表示数据正在同步。 active-stopped：表示数据已停止同步。
-     * 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。 */
+    /**
+     * 数据同步状态。 active：表示数据已同步完成。 inactive：表示数据未同步。 copying：表示数据正在同步。 active-stopped：表示数据已停止同步。  说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     */
     public static final class ReplicationStatusEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final ReplicationStatusEnum ACTIVE = new ReplicationStatusEnum("active");
 
-        /** Enum INACTIVE for value: "inactive" */
+        /**
+         * Enum INACTIVE for value: "inactive"
+         */
         public static final ReplicationStatusEnum INACTIVE = new ReplicationStatusEnum("inactive");
 
-        /** Enum COPYING for value: "copying" */
+        /**
+         * Enum COPYING for value: "copying"
+         */
         public static final ReplicationStatusEnum COPYING = new ReplicationStatusEnum("copying");
 
-        /** Enum ACTIVE_STOPPED for value: "active-stopped" */
+        /**
+         * Enum ACTIVE_STOPPED for value: "active-stopped"
+         */
         public static final ReplicationStatusEnum ACTIVE_STOPPED = new ReplicationStatusEnum("active-stopped");
 
         private static final Map<String, ReplicationStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -239,16 +256,24 @@ public class ShowProtectionGroupParams {
 
     private ReplicationStatusEnum replicationStatus;
 
-    /** 健康状态。 normal：表示该保护组处于正常状态。 abnormal：表示该保护组处于非正常状态。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。 */
+    /**
+     * 健康状态。 normal：表示该保护组处于正常状态。 abnormal：表示该保护组处于非正常状态。  说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     */
     public static final class HealthStatusEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final HealthStatusEnum NORMAL = new HealthStatusEnum("normal");
 
-        /** Enum ABNORMAL for value: "abnormal" */
+        /**
+         * Enum ABNORMAL for value: "abnormal"
+         */
         public static final HealthStatusEnum ABNORMAL = new HealthStatusEnum("abnormal");
 
-        /** Enum NULL for value: "null" */
+        /**
+         * Enum NULL for value: "null"
+         */
         public static final HealthStatusEnum NULL = new HealthStatusEnum("null");
 
         private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -349,15 +374,19 @@ public class ShowProtectionGroupParams {
 
     private String updatedAt;
 
-    /** 保护模式。 replication-pair：表示以复制对为单位进行数据同步。 null：表示将保护组中的所有复制对作为一个整体进行数据同步。
-     * 说明:当保护组中的所有复制对作为一个整体进行数据同步时，如果数据同步失败，保护组中的所有复制对都会受到影响。因此，SDRS服务对系统做了优化升级：
-     * 对于升级后创建的资源，默认以复制对为单位进行数据同步，返回值为replication-pair； 对于已有资源，仍以一个整体进行数据同步，返回值为null。 */
+    /**
+     * 保护模式。 replication-pair：表示以复制对为单位进行数据同步。 null：表示将保护组中的所有复制对作为一个整体进行数据同步。  说明:当保护组中的所有复制对作为一个整体进行数据同步时，如果数据同步失败，保护组中的所有复制对都会受到影响。因此，SDRS服务对系统做了优化升级： 对于升级后创建的资源，默认以复制对为单位进行数据同步，返回值为replication-pair； 对于已有资源，仍以一个整体进行数据同步，返回值为null。
+     */
     public static final class ProtectionTypeEnum {
 
-        /** Enum REPLICATION_PAIR for value: "replication-pair" */
+        /**
+         * Enum REPLICATION_PAIR for value: "replication-pair"
+         */
         public static final ProtectionTypeEnum REPLICATION_PAIR = new ProtectionTypeEnum("replication-pair");
 
-        /** Enum NULL for value: "null" */
+        /**
+         * Enum NULL for value: "null"
+         */
         public static final ProtectionTypeEnum NULL = new ProtectionTypeEnum("null");
 
         private static final Map<String, ProtectionTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -442,9 +471,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return id */
+    /**
+     * 保护组的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -458,9 +488,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组的名称。
-     * 
-     * @return name */
+    /**
+     * 保护组的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -474,9 +505,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组的描述。
-     * 
-     * @return description */
+    /**
+     * 保护组的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -490,9 +522,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组的状态。
-     * 
-     * @return status */
+    /**
+     * 保护组的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -506,9 +539,12 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组的同步进度。单位：百分比（%）。 minimum: 0 maximum: 100
-     * 
-     * @return progress */
+    /**
+     * 保护组的同步进度。单位：百分比（%）。
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -522,9 +558,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组创建时的生产站点可用区名称。注意：保护组切换、故障切换后，该值不变。
-     * 
-     * @return sourceAvailabilityZone */
+    /**
+     * 保护组创建时的生产站点可用区名称。注意：保护组切换、故障切换后，该值不变。
+     * @return sourceAvailabilityZone
+     */
     public String getSourceAvailabilityZone() {
         return sourceAvailabilityZone;
     }
@@ -538,9 +575,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护组创建时的容灾站点可用区名称。注意：保护组切换、故障切换后，该值不变。
-     * 
-     * @return targetAvailabilityZone */
+    /**
+     * 保护组创建时的容灾站点可用区名称。注意：保护组切换、故障切换后，该值不变。
+     * @return targetAvailabilityZone
+     */
     public String getTargetAvailabilityZone() {
         return targetAvailabilityZone;
     }
@@ -554,9 +592,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 双活域ID。
-     * 
-     * @return domainId */
+    /**
+     * 双活域ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -570,9 +609,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 双活域名称。
-     * 
-     * @return domainName */
+    /**
+     * 双活域名称。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -586,9 +626,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 用于标识保护组的当前生产站点。 source：表示当前生产站点可用区为source_availability_zone的值。 target：表示当前生产站点可用区为target_availability_zone的值。
-     * 
-     * @return priorityStation */
+    /**
+     * 用于标识保护组的当前生产站点。 source：表示当前生产站点可用区为source_availability_zone的值。 target：表示当前生产站点可用区为target_availability_zone的值。
+     * @return priorityStation
+     */
     public String getPriorityStation() {
         return priorityStation;
     }
@@ -602,9 +643,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 该保护组中保护实例的个数。
-     * 
-     * @return protectedInstanceNum */
+    /**
+     * 该保护组中保护实例的个数。
+     * @return protectedInstanceNum
+     */
     public Integer getProtectedInstanceNum() {
         return protectedInstanceNum;
     }
@@ -618,9 +660,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 该保护组中复制对的个数。
-     * 
-     * @return replicationNum */
+    /**
+     * 该保护组中复制对的个数。
+     * @return replicationNum
+     */
     public Integer getReplicationNum() {
         return replicationNum;
     }
@@ -634,9 +677,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 该保护组中容灾演练的个数。
-     * 
-     * @return disasterRecoveryDrillNum */
+    /**
+     * 该保护组中容灾演练的个数。
+     * @return disasterRecoveryDrillNum
+     */
     public Integer getDisasterRecoveryDrillNum() {
         return disasterRecoveryDrillNum;
     }
@@ -650,9 +694,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护状态。started：表示该保护组开始保护。stopped：表示该保护组停止保护。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
-     * 
-     * @return protectedStatus */
+    /**
+     * 保护状态。started：表示该保护组开始保护。stopped：表示该保护组停止保护。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     * @return protectedStatus
+     */
     public ProtectedStatusEnum getProtectedStatus() {
         return protectedStatus;
     }
@@ -666,10 +711,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 数据同步状态。 active：表示数据已同步完成。 inactive：表示数据未同步。 copying：表示数据正在同步。 active-stopped：表示数据已停止同步。
-     * 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
-     * 
-     * @return replicationStatus */
+    /**
+     * 数据同步状态。 active：表示数据已同步完成。 inactive：表示数据未同步。 copying：表示数据正在同步。 active-stopped：表示数据已停止同步。  说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     * @return replicationStatus
+     */
     public ReplicationStatusEnum getReplicationStatus() {
         return replicationStatus;
     }
@@ -683,9 +728,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 健康状态。 normal：表示该保护组处于正常状态。 abnormal：表示该保护组处于非正常状态。 说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
-     * 
-     * @return healthStatus */
+    /**
+     * 健康状态。 normal：表示该保护组处于正常状态。 abnormal：表示该保护组处于非正常状态。  说明:系统近期进行了升级，对于升级后创建的保护组，该字段值为null，无实际意义。
+     * @return healthStatus
+     */
     public HealthStatusEnum getHealthStatus() {
         return healthStatus;
     }
@@ -699,9 +745,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 生产站点虚拟私有云ID。
-     * 
-     * @return sourceVpcId */
+    /**
+     * 生产站点虚拟私有云ID。
+     * @return sourceVpcId
+     */
     public String getSourceVpcId() {
         return sourceVpcId;
     }
@@ -715,9 +762,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 容灾站点虚拟私有云ID。
-     * 
-     * @return targetVpcId */
+    /**
+     * 容灾站点虚拟私有云ID。
+     * @return targetVpcId
+     */
     public String getTargetVpcId() {
         return targetVpcId;
     }
@@ -731,9 +779,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 容灾演练虚拟私有云ID。（该参数暂未使用）
-     * 
-     * @return testVpcId */
+    /**
+     * 容灾演练虚拟私有云ID。（该参数暂未使用）
+     * @return testVpcId
+     */
     public String getTestVpcId() {
         return testVpcId;
     }
@@ -747,9 +796,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 部署模式。默认值为“migration”，migration表示VPC内迁移。
-     * 
-     * @return drType */
+    /**
+     * 部署模式。默认值为“migration”，migration表示VPC内迁移。
+     * @return drType
+     */
     public String getDrType() {
         return drType;
     }
@@ -763,9 +813,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 创建时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -779,9 +830,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 更新时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。默认格式为：\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -795,11 +847,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 保护模式。 replication-pair：表示以复制对为单位进行数据同步。 null：表示将保护组中的所有复制对作为一个整体进行数据同步。
-     * 说明:当保护组中的所有复制对作为一个整体进行数据同步时，如果数据同步失败，保护组中的所有复制对都会受到影响。因此，SDRS服务对系统做了优化升级：
-     * 对于升级后创建的资源，默认以复制对为单位进行数据同步，返回值为replication-pair； 对于已有资源，仍以一个整体进行数据同步，返回值为null。
-     * 
-     * @return protectionType */
+    /**
+     * 保护模式。 replication-pair：表示以复制对为单位进行数据同步。 null：表示将保护组中的所有复制对作为一个整体进行数据同步。  说明:当保护组中的所有复制对作为一个整体进行数据同步时，如果数据同步失败，保护组中的所有复制对都会受到影响。因此，SDRS服务对系统做了优化升级： 对于升级后创建的资源，默认以复制对为单位进行数据同步，返回值为replication-pair； 对于已有资源，仍以一个整体进行数据同步，返回值为null。
+     * @return protectionType
+     */
     public ProtectionTypeEnum getProtectionType() {
         return protectionType;
     }
@@ -813,9 +864,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 复制类型。 说明:预留参数，暂未启用。
-     * 
-     * @return replicationModel */
+    /**
+     * 复制类型。 说明:预留参数，暂未启用。
+     * @return replicationModel
+     */
     public String getReplicationModel() {
         return replicationModel;
     }
@@ -829,9 +881,10 @@ public class ShowProtectionGroupParams {
         return this;
     }
 
-    /** 管理的服务器类型 ECS：表示管理的服务器类型为云服务器。
-     * 
-     * @return serverType */
+    /**
+     * 管理的服务器类型 ECS：表示管理的服务器类型为云服务器。
+     * @return serverType
+     */
     public String getServerType() {
         return serverType;
     }
@@ -938,7 +991,10 @@ public class ShowProtectionGroupParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

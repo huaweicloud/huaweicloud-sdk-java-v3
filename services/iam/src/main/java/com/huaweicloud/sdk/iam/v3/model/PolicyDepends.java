@@ -25,9 +25,10 @@ public class PolicyDepends {
         return this;
     }
 
-    /** 权限所在目录。
-     * 
-     * @return catalog */
+    /**
+     * 权限所在目录。
+     * @return catalog
+     */
     public String getCatalog() {
         return catalog;
     }
@@ -41,9 +42,10 @@ public class PolicyDepends {
         return this;
     }
 
-    /** 权限展示名。
-     * 
-     * @return displayName */
+    /**
+     * 权限展示名。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -80,7 +82,10 @@ public class PolicyDepends {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

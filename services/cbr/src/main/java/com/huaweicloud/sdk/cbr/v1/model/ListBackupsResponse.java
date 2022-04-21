@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListBackupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 备份列表
-     * 
-     * @return backups */
+    /**
+     * 备份列表
+     * @return backups
+     */
     public List<BackupResp> getBackups() {
         return backups;
     }
@@ -69,9 +72,10 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 备份个数
-     * 
-     * @return count */
+    /**
+     * 备份个数
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -85,9 +89,11 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -101,9 +107,12 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -144,7 +153,10 @@ public class ListBackupsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

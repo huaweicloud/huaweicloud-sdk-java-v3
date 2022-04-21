@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源历史 */
+/**
+ * 资源历史
+ */
 public class HistoryItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainId */
+    /**
+     * 租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -67,9 +70,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 资源id
-     * 
-     * @return resourceId */
+    /**
+     * 资源id
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -83,9 +87,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -99,9 +104,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 该资源在RMS系统捕获时间
-     * 
-     * @return captureTime */
+    /**
+     * 该资源在RMS系统捕获时间
+     * @return captureTime
+     */
     public String getCaptureTime() {
         return captureTime;
     }
@@ -115,9 +121,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 资源状态
-     * 
-     * @return status */
+    /**
+     * 资源状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -147,9 +154,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** 资源关系列表
-     * 
-     * @return relations */
+    /**
+     * 资源关系列表
+     * @return relations
+     */
     public List<ResourceRelation> getRelations() {
         return relations;
     }
@@ -172,9 +180,10 @@ public class HistoryItem {
         return this;
     }
 
-    /** Get resource
-     * 
-     * @return resource */
+    /**
+     * Get resource
+     * @return resource
+     */
     public ResourceEntity getResource() {
         return resource;
     }
@@ -220,7 +229,10 @@ public class HistoryItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

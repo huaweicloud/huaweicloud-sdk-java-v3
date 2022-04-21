@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListResizeFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListResizeFlavorsRequest {
 
     private String marker;
 
-    /** 升序/降序排序，默认值为：asc。 取值范围： - asc：表示升序。 - desc：表示降序 */
+    /**
+     * 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -104,26 +112,39 @@ public class ListResizeFlavorsRequest {
 
     private SortDirEnum sortDir;
 
-    /** 排序字段。 key的取值范围： - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 -
-     * vcpus：表示CPU大小。 - root_gb：表示系统盘大小。 */
+    /**
+     * 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
+     */
     public static final class SortKeyEnum {
 
-        /** Enum FLAVORID for value: "flavorid" */
+        /**
+         * Enum FLAVORID for value: "flavorid"
+         */
         public static final SortKeyEnum FLAVORID = new SortKeyEnum("flavorid");
 
-        /** Enum SORT_KEY for value: "sort_key" */
+        /**
+         * Enum SORT_KEY for value: "sort_key"
+         */
         public static final SortKeyEnum SORT_KEY = new SortKeyEnum("sort_key");
 
-        /** Enum NAME for value: "name" */
+        /**
+         * Enum NAME for value: "name"
+         */
         public static final SortKeyEnum NAME = new SortKeyEnum("name");
 
-        /** Enum MEMORY_MB for value: "memory_mb" */
+        /**
+         * Enum MEMORY_MB for value: "memory_mb"
+         */
         public static final SortKeyEnum MEMORY_MB = new SortKeyEnum("memory_mb");
 
-        /** Enum VCPUS for value: "vcpus" */
+        /**
+         * Enum VCPUS for value: "vcpus"
+         */
         public static final SortKeyEnum VCPUS = new SortKeyEnum("vcpus");
 
-        /** Enum ROOT_GB for value: "root_gb" */
+        /**
+         * Enum ROOT_GB for value: "root_gb"
+         */
         public static final SortKeyEnum ROOT_GB = new SortKeyEnum("root_gb");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -212,9 +233,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 进行规格切换的云服务器ID，UUID格式。
-     * 
-     * @return instanceUuid */
+    /**
+     * 进行规格切换的云服务器ID，UUID格式。
+     * @return instanceUuid
+     */
     public String getInstanceUuid() {
         return instanceUuid;
     }
@@ -228,9 +250,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 单页面可显示的flavor条数最大值，默认是1000。
-     * 
-     * @return limit */
+    /**
+     * 单页面可显示的flavor条数最大值，默认是1000。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -244,9 +267,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 以单页最后一条flavor的ID作为分页标记。
-     * 
-     * @return marker */
+    /**
+     * 以单页最后一条flavor的ID作为分页标记。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -260,9 +284,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 升序/降序排序，默认值为：asc。 取值范围： - asc：表示升序。 - desc：表示降序
-     * 
-     * @return sortDir */
+    /**
+     * 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -276,10 +301,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 排序字段。 key的取值范围： - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 -
-     * vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
-     * 
-     * @return sortKey */
+    /**
+     * 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -293,9 +318,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 进行规格切换的云服务器源规格ID。
-     * 
-     * @return sourceFlavorId */
+    /**
+     * 进行规格切换的云服务器源规格ID。
+     * @return sourceFlavorId
+     */
     public String getSourceFlavorId() {
         return sourceFlavorId;
     }
@@ -309,9 +335,10 @@ public class ListResizeFlavorsRequest {
         return this;
     }
 
-    /** 进行规格切换的云服务器源规格名称。
-     * 
-     * @return sourceFlavorName */
+    /**
+     * 进行规格切换的云服务器源规格名称。
+     * @return sourceFlavorName
+     */
     public String getSourceFlavorName() {
         return sourceFlavorName;
     }
@@ -358,7 +385,10 @@ public class ListResizeFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

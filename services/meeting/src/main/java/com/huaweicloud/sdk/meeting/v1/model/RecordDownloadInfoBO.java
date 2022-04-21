@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单会议录制文件下载链接信息（包含多个录制文件） */
+/**
+ * 单会议录制文件下载链接信息（包含多个录制文件）
+ */
 public class RecordDownloadInfoBO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class RecordDownloadInfoBO {
         return this;
     }
 
-    /** 会议UUID
-     * 
-     * @return confUuid */
+    /**
+     * 会议UUID
+     * @return confUuid
+     */
     public String getConfUuid() {
         return confUuid;
     }
@@ -58,9 +61,10 @@ public class RecordDownloadInfoBO {
         return this;
     }
 
-    /** 录制文件下载URL
-     * 
-     * @return urls */
+    /**
+     * 录制文件下载URL
+     * @return urls
+     */
     public List<RecordDownloadUrlDO> getUrls() {
         return urls;
     }
@@ -97,7 +101,10 @@ public class RecordDownloadInfoBO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

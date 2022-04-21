@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 仓库信息 */
+/**
+ * 仓库信息
+ */
 public class RepositoryCreationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,16 +26,24 @@ public class RepositoryCreationResult {
 
     private String taskId;
 
-    /** 任务状态, success:成功,failed:失败,creating:创建中 */
+    /**
+     * 任务状态, success:成功,failed:失败,creating:创建中
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class RepositoryCreationResult {
         return this;
     }
 
-    /** Get repository
-     * 
-     * @return repository */
+    /**
+     * Get repository
+     * @return repository
+     */
     public RepositoryBasicInfo getRepository() {
         return repository;
     }
@@ -139,9 +150,10 @@ public class RepositoryCreationResult {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskId */
+    /**
+     * 任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -155,9 +167,10 @@ public class RepositoryCreationResult {
         return this;
     }
 
-    /** 任务状态, success:成功,failed:失败,creating:创建中
-     * 
-     * @return status */
+    /**
+     * 任务状态, success:成功,failed:失败,creating:创建中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -171,9 +184,10 @@ public class RepositoryCreationResult {
         return this;
     }
 
-    /** 失败原因
-     * 
-     * @return failureReason */
+    /**
+     * 失败原因
+     * @return failureReason
+     */
     public String getFailureReason() {
         return failureReason;
     }
@@ -214,7 +228,10 @@ public class RepositoryCreationResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

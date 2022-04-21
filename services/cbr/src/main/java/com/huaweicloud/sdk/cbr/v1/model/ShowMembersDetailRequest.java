@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowMembersDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 备份id
-     * 
-     * @return backupId */
+    /**
+     * 备份id
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -74,9 +77,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 接受备份共享的项目id
-     * 
-     * @return destProjectId */
+    /**
+     * 接受备份共享的项目id
+     * @return destProjectId
+     */
     public String getDestProjectId() {
         return destProjectId;
     }
@@ -90,9 +94,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 接受的共享备份副本注册的镜像id
-     * 
-     * @return imageId */
+    /**
+     * 接受的共享备份副本注册的镜像id
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -106,9 +111,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 备份共享状态
-     * 
-     * @return status */
+    /**
+     * 备份共享状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -122,9 +128,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 目标端接受共享备份的存储库id，仅支持uuid
-     * 
-     * @return vaultId */
+    /**
+     * 目标端接受共享备份的存储库id，仅支持uuid
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -138,9 +145,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，正整数
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，正整数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -154,9 +162,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 上一次查询最后一条的id，仅支持uuid
-     * 
-     * @return marker */
+    /**
+     * 上一次查询最后一条的id，仅支持uuid
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -170,9 +179,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** 偏移值，正整数
-     * 
-     * @return offset */
+    /**
+     * 偏移值，正整数
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -186,10 +196,10 @@ public class ShowMembersDetailRequest {
         return this;
     }
 
-    /** sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc
-     * (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
-     * 
-     * @return sort */
+    /**
+     * sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
+     * @return sort
+     */
     public String getSort() {
         return sort;
     }
@@ -240,7 +250,10 @@ public class ShowMembersDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -17,434 +17,784 @@ public class CodeCheckClient {
         return new ClientBuilder<>(CodeCheckClient::new);
     }
 
-    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+    /**
+     * 查询任务规则集的检查参数
+     *
+     * 查询任务规则集的检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckParametersRequest 请求对象
-     * @return CheckParametersResponse */
+     * @return CheckParametersResponse
+     */
     public CheckParametersResponse checkParameters(CheckParametersRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkParameters);
     }
 
-    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+    /**
+     * 查询任务规则集的检查参数
+     *
+     * 查询任务规则集的检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckParametersRequest 请求对象
-     * @return SyncInvoker<CheckParametersRequest, CheckParametersResponse> */
+     * @return SyncInvoker<CheckParametersRequest, CheckParametersResponse>
+     */
     public SyncInvoker<CheckParametersRequest, CheckParametersResponse> checkParametersInvoker(
         CheckParametersRequest request) {
         return new SyncInvoker<CheckParametersRequest, CheckParametersResponse>(request, CodeCheckMeta.checkParameters,
             hcClient);
     }
 
-    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+    /**
+     * 历史扫描结果查询
+     *
+     * 提供每次扫描的问题数量统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckRecordRequest 请求对象
-     * @return CheckRecordResponse */
+     * @return CheckRecordResponse
+     */
     public CheckRecordResponse checkRecord(CheckRecordRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkRecord);
     }
 
-    /** 历史扫描结果查询 提供每次扫描的问题数量统计
+    /**
+     * 历史扫描结果查询
+     *
+     * 提供每次扫描的问题数量统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckRecordRequest 请求对象
-     * @return SyncInvoker<CheckRecordRequest, CheckRecordResponse> */
+     * @return SyncInvoker<CheckRecordRequest, CheckRecordResponse>
+     */
     public SyncInvoker<CheckRecordRequest, CheckRecordResponse> checkRecordInvoker(CheckRecordRequest request) {
         return new SyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeCheckMeta.checkRecord, hcClient);
     }
 
-    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+    /**
+     * 查询任务规则集的检查参数
+     *
+     * 查询任务规则集的检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckRulesetParametersRequest 请求对象
-     * @return CheckRulesetParametersResponse */
+     * @return CheckRulesetParametersResponse
+     */
     public CheckRulesetParametersResponse checkRulesetParameters(CheckRulesetParametersRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.checkRulesetParameters);
     }
 
-    /** 查询任务规则集的检查参数 查询任务规则集的检查参数
+    /**
+     * 查询任务规则集的检查参数
+     *
+     * 查询任务规则集的检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckRulesetParametersRequest 请求对象
-     * @return SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> */
+     * @return SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>
+     */
     public SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> checkRulesetParametersInvoker(
         CheckRulesetParametersRequest request) {
         return new SyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>(request,
             CodeCheckMeta.checkRulesetParameters, hcClient);
     }
 
-    /** 创建自定义规则集 可根据需求灵活的组合规则。
+    /**
+     * 创建自定义规则集
+     *
+     * 可根据需求灵活的组合规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateRulesetRequest 请求对象
-     * @return CreateRulesetResponse */
+     * @return CreateRulesetResponse
+     */
     public CreateRulesetResponse createRuleset(CreateRulesetRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.createRuleset);
     }
 
-    /** 创建自定义规则集 可根据需求灵活的组合规则。
+    /**
+     * 创建自定义规则集
+     *
+     * 可根据需求灵活的组合规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateRulesetRequest 请求对象
-     * @return SyncInvoker<CreateRulesetRequest, CreateRulesetResponse> */
+     * @return SyncInvoker<CreateRulesetRequest, CreateRulesetResponse>
+     */
     public SyncInvoker<CreateRulesetRequest, CreateRulesetResponse> createRulesetInvoker(CreateRulesetRequest request) {
         return new SyncInvoker<CreateRulesetRequest, CreateRulesetResponse>(request, CodeCheckMeta.createRuleset,
             hcClient);
     }
 
-    /** 新建检查任务 新建检查任务但是不执行。
+    /**
+     * 新建检查任务
+     *
+     * 新建检查任务但是不执行。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
-     * @return CreateTaskResponse */
+     * @return CreateTaskResponse
+     */
     public CreateTaskResponse createTask(CreateTaskRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.createTask);
     }
 
-    /** 新建检查任务 新建检查任务但是不执行。
+    /**
+     * 新建检查任务
+     *
+     * 新建检查任务但是不执行。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
-     * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse> */
+     * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
+     */
     public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
         return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeCheckMeta.createTask, hcClient);
     }
 
-    /** 删除自定义规则集 删除自定义规则集，正在使用中的或默认规则集不能删除
+    /**
+     * 删除自定义规则集
+     *
+     * 删除自定义规则集，正在使用中的或默认规则集不能删除
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteRulesetRequest 请求对象
-     * @return DeleteRulesetResponse */
+     * @return DeleteRulesetResponse
+     */
     public DeleteRulesetResponse deleteRuleset(DeleteRulesetRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.deleteRuleset);
     }
 
-    /** 删除自定义规则集 删除自定义规则集，正在使用中的或默认规则集不能删除
+    /**
+     * 删除自定义规则集
+     *
+     * 删除自定义规则集，正在使用中的或默认规则集不能删除
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteRulesetRequest 请求对象
-     * @return SyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse> */
+     * @return SyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>
+     */
     public SyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse> deleteRulesetInvoker(DeleteRulesetRequest request) {
         return new SyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>(request, CodeCheckMeta.deleteRuleset,
             hcClient);
     }
 
-    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
+    /**
+     * 删除检查任务
+     *
+     * 删除检查任务，执行中的任务删除无法再查看
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
-     * @return DeleteTaskResponse */
+     * @return DeleteTaskResponse
+     */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.deleteTask);
     }
 
-    /** 删除检查任务 删除检查任务，执行中的任务删除无法再查看
+    /**
+     * 删除检查任务
+     *
+     * 删除检查任务，执行中的任务删除无法再查看
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
-     * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> */
+     * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
+     */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
         return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeCheckMeta.deleteTask, hcClient);
     }
 
-    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+    /**
+     * 获取规则列表接口
+     *
+     * 根据语言、问题级别等条件查询规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
-     * @return ListRulesResponse */
+     * @return ListRulesResponse
+     */
     public ListRulesResponse listRules(ListRulesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.listRules);
     }
 
-    /** 获取规则列表接口 根据语言、问题级别等条件查询规则列表。
+    /**
+     * 获取规则列表接口
+     *
+     * 根据语言、问题级别等条件查询规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
-     * @return SyncInvoker<ListRulesRequest, ListRulesResponse> */
+     * @return SyncInvoker<ListRulesRequest, ListRulesResponse>
+     */
     public SyncInvoker<ListRulesRequest, ListRulesResponse> listRulesInvoker(ListRulesRequest request) {
         return new SyncInvoker<ListRulesRequest, ListRulesResponse>(request, CodeCheckMeta.listRules, hcClient);
     }
 
-    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+    /**
+     * 查询规则集列表
+     *
+     * 根据项目ID、语言等条件查询规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRulesetsRequest 请求对象
-     * @return ListRulesetsResponse */
+     * @return ListRulesetsResponse
+     */
     public ListRulesetsResponse listRulesets(ListRulesetsRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.listRulesets);
     }
 
-    /** 查询规则集列表 根据项目ID、语言等条件查询规则集列表。
+    /**
+     * 查询规则集列表
+     *
+     * 根据项目ID、语言等条件查询规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRulesetsRequest 请求对象
-     * @return SyncInvoker<ListRulesetsRequest, ListRulesetsResponse> */
+     * @return SyncInvoker<ListRulesetsRequest, ListRulesetsResponse>
+     */
     public SyncInvoker<ListRulesetsRequest, ListRulesetsResponse> listRulesetsInvoker(ListRulesetsRequest request) {
         return new SyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeCheckMeta.listRulesets,
             hcClient);
     }
 
-    /** 任务配置检查参数 任务配置检查参数
+    /**
+     * 任务配置检查参数
+     *
+     * 任务配置检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTaskParameterRequest 请求对象
-     * @return ListTaskParameterResponse */
+     * @return ListTaskParameterResponse
+     */
     public ListTaskParameterResponse listTaskParameter(ListTaskParameterRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTaskParameter);
     }
 
-    /** 任务配置检查参数 任务配置检查参数
+    /**
+     * 任务配置检查参数
+     *
+     * 任务配置检查参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTaskParameterRequest 请求对象
-     * @return SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> */
+     * @return SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>
+     */
     public SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> listTaskParameterInvoker(
         ListTaskParameterRequest request) {
         return new SyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>(request,
             CodeCheckMeta.listTaskParameter, hcClient);
     }
 
-    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+    /**
+     * 查询任务的已选规则集列表
+     *
+     * 查询任务的已选规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTaskRulesetRequest 请求对象
-     * @return ListTaskRulesetResponse */
+     * @return ListTaskRulesetResponse
+     */
     public ListTaskRulesetResponse listTaskRuleset(ListTaskRulesetRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTaskRuleset);
     }
 
-    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+    /**
+     * 查询任务的已选规则集列表
+     *
+     * 查询任务的已选规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTaskRulesetRequest 请求对象
-     * @return SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> */
+     * @return SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>
+     */
     public SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> listTaskRulesetInvoker(
         ListTaskRulesetRequest request) {
         return new SyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>(request, CodeCheckMeta.listTaskRuleset,
             hcClient);
     }
 
-    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+    /**
+     * 查看规则集的规则列表
+     *
+     * 根据项目ID、规则集ID等条件查询规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTemplateRulesRequest 请求对象
-     * @return ListTemplateRulesResponse */
+     * @return ListTemplateRulesResponse
+     */
     public ListTemplateRulesResponse listTemplateRules(ListTemplateRulesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.listTemplateRules);
     }
 
-    /** 查看规则集的规则列表 根据项目ID、规则集ID等条件查询规则列表。
+    /**
+     * 查看规则集的规则列表
+     *
+     * 根据项目ID、规则集ID等条件查询规则列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListTemplateRulesRequest 请求对象
-     * @return SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> */
+     * @return SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>
+     */
     public SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> listTemplateRulesInvoker(
         ListTemplateRulesRequest request) {
         return new SyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>(request,
             CodeCheckMeta.listTemplateRules, hcClient);
     }
 
-    /** 执行检查任务 执行检查任务。
+    /**
+     * 执行检查任务
+     *
+     * 执行检查任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
-     * @return RunTaskResponse */
+     * @return RunTaskResponse
+     */
     public RunTaskResponse runTask(RunTaskRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.runTask);
     }
 
-    /** 执行检查任务 执行检查任务。
+    /**
+     * 执行检查任务
+     *
+     * 执行检查任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
-     * @return SyncInvoker<RunTaskRequest, RunTaskResponse> */
+     * @return SyncInvoker<RunTaskRequest, RunTaskResponse>
+     */
     public SyncInvoker<RunTaskRequest, RunTaskResponse> runTaskInvoker(RunTaskRequest request) {
         return new SyncInvoker<RunTaskRequest, RunTaskResponse>(request, CodeCheckMeta.runTask, hcClient);
     }
 
-    /** 设置每个项目对应语言的默认规则集配置 设置每个项目对应语言的默认规则集配置。
+    /**
+     * 设置每个项目对应语言的默认规则集配置
+     *
+     * 设置每个项目对应语言的默认规则集配置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetDefaulTemplateRequest 请求对象
-     * @return SetDefaulTemplateResponse */
+     * @return SetDefaulTemplateResponse
+     */
     public SetDefaulTemplateResponse setDefaulTemplate(SetDefaulTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.setDefaulTemplate);
     }
 
-    /** 设置每个项目对应语言的默认规则集配置 设置每个项目对应语言的默认规则集配置。
+    /**
+     * 设置每个项目对应语言的默认规则集配置
+     *
+     * 设置每个项目对应语言的默认规则集配置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param SetDefaulTemplateRequest 请求对象
-     * @return SyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse> */
+     * @return SyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>
+     */
     public SyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse> setDefaulTemplateInvoker(
         SetDefaulTemplateRequest request) {
         return new SyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>(request,
             CodeCheckMeta.setDefaulTemplate, hcClient);
     }
 
-    /** 查询任务执行状态 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
+    /**
+     * 查询任务执行状态
+     *
+     * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProgressDetailRequest 请求对象
-     * @return ShowProgressDetailResponse */
+     * @return ShowProgressDetailResponse
+     */
     public ShowProgressDetailResponse showProgressDetail(ShowProgressDetailRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showProgressDetail);
     }
 
-    /** 查询任务执行状态 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
+    /**
+     * 查询任务执行状态
+     *
+     * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProgressDetailRequest 请求对象
-     * @return SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse> */
+     * @return SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>
+     */
     public SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse> showProgressDetailInvoker(
         ShowProgressDetailRequest request) {
         return new SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>(request,
             CodeCheckMeta.showProgressDetail, hcClient);
     }
 
-    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+    /**
+     * 查询cmertrics缺陷概要
+     *
+     * 根据检查任务ID查询cmertrics缺陷概要。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskCmetricsRequest 请求对象
-     * @return ShowTaskCmetricsResponse */
+     * @return ShowTaskCmetricsResponse
+     */
     public ShowTaskCmetricsResponse showTaskCmetrics(ShowTaskCmetricsRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskCmetrics);
     }
 
-    /** 查询cmertrics缺陷概要 根据检查任务ID查询cmertrics缺陷概要。
+    /**
+     * 查询cmertrics缺陷概要
+     *
+     * 根据检查任务ID查询cmertrics缺陷概要。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskCmetricsRequest 请求对象
-     * @return SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> */
+     * @return SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>
+     */
     public SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> showTaskCmetricsInvoker(
         ShowTaskCmetricsRequest request) {
         return new SyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>(request,
             CodeCheckMeta.showTaskCmetrics, hcClient);
     }
 
-    /** 查询缺陷详情 根据检查任务ID分页查询缺陷结果详情。
+    /**
+     * 查询缺陷详情
+     *
+     * 根据检查任务ID分页查询缺陷结果详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDefectsRequest 请求对象
-     * @return ShowTaskDefectsResponse */
+     * @return ShowTaskDefectsResponse
+     */
     public ShowTaskDefectsResponse showTaskDefects(ShowTaskDefectsRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDefects);
     }
 
-    /** 查询缺陷详情 根据检查任务ID分页查询缺陷结果详情。
+    /**
+     * 查询缺陷详情
+     *
+     * 根据检查任务ID分页查询缺陷结果详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDefectsRequest 请求对象
-     * @return SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse> */
+     * @return SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>
+     */
     public SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse> showTaskDefectsInvoker(
         ShowTaskDefectsRequest request) {
         return new SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>(request, CodeCheckMeta.showTaskDefects,
             hcClient);
     }
 
-    /** 查询缺陷详情的统计 根据检查任务ID查询缺陷详情的统计
+    /**
+     * 查询缺陷详情的统计
+     *
+     * 根据检查任务ID查询缺陷详情的统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDefectsStatisticRequest 请求对象
-     * @return ShowTaskDefectsStatisticResponse */
+     * @return ShowTaskDefectsStatisticResponse
+     */
     public ShowTaskDefectsStatisticResponse showTaskDefectsStatistic(ShowTaskDefectsStatisticRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDefectsStatistic);
     }
 
-    /** 查询缺陷详情的统计 根据检查任务ID查询缺陷详情的统计
+    /**
+     * 查询缺陷详情的统计
+     *
+     * 根据检查任务ID查询缺陷详情的统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDefectsStatisticRequest 请求对象
-     * @return SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> */
+     * @return SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>
+     */
     public SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> showTaskDefectsStatisticInvoker(
         ShowTaskDefectsStatisticRequest request) {
         return new SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>(request,
             CodeCheckMeta.showTaskDefectsStatistic, hcClient);
     }
 
-    /** 查询缺陷概要 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
+    /**
+     * 查询缺陷概要
+     *
+     * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDetailRequest 请求对象
-     * @return ShowTaskDetailResponse */
+     * @return ShowTaskDetailResponse
+     */
     public ShowTaskDetailResponse showTaskDetail(ShowTaskDetailRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDetail);
     }
 
-    /** 查询缺陷概要 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
+    /**
+     * 查询缺陷概要
+     *
+     * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskDetailRequest 请求对象
-     * @return SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> */
+     * @return SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
+     */
     public SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetailInvoker(
         ShowTaskDetailRequest request) {
         return new SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>(request, CodeCheckMeta.showTaskDetail,
             hcClient);
     }
 
-    /** 查询任务列表 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
+    /**
+     * 查询任务列表
+     *
+     * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskListByProjectIdRequest 请求对象
-     * @return ShowTaskListByProjectIdResponse */
+     * @return ShowTaskListByProjectIdResponse
+     */
     public ShowTaskListByProjectIdResponse showTaskListByProjectId(ShowTaskListByProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskListByProjectId);
     }
 
-    /** 查询任务列表 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
+    /**
+     * 查询任务列表
+     *
+     * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTaskListByProjectIdRequest 请求对象
-     * @return SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> */
+     * @return SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>
+     */
     public SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectIdInvoker(
         ShowTaskListByProjectIdRequest request) {
         return new SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>(request,
             CodeCheckMeta.showTaskListByProjectId, hcClient);
     }
 
-    /** 查询任务检查失败日志 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+    /**
+     * 查询任务检查失败日志
+     *
+     * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTasklogRequest 请求对象
-     * @return ShowTasklogResponse */
+     * @return ShowTasklogResponse
+     */
     public ShowTasklogResponse showTasklog(ShowTasklogRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTasklog);
     }
 
-    /** 查询任务检查失败日志 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+    /**
+     * 查询任务检查失败日志
+     *
+     * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTasklogRequest 请求对象
-     * @return SyncInvoker<ShowTasklogRequest, ShowTasklogResponse> */
+     * @return SyncInvoker<ShowTasklogRequest, ShowTasklogResponse>
+     */
     public SyncInvoker<ShowTasklogRequest, ShowTasklogResponse> showTasklogInvoker(ShowTasklogRequest request) {
         return new SyncInvoker<ShowTasklogRequest, ShowTasklogResponse>(request, CodeCheckMeta.showTasklog, hcClient);
     }
 
-    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+    /**
+     * 查询任务的已选规则集列表
+     *
+     * 查询任务的已选规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTasksRulesetsRequest 请求对象
-     * @return ShowTasksRulesetsResponse */
+     * @return ShowTasksRulesetsResponse
+     */
     public ShowTasksRulesetsResponse showTasksRulesets(ShowTasksRulesetsRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTasksRulesets);
     }
 
-    /** 查询任务的已选规则集列表 查询任务的已选规则集列表。
+    /**
+     * 查询任务的已选规则集列表
+     *
+     * 查询任务的已选规则集列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowTasksRulesetsRequest 请求对象
-     * @return SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> */
+     * @return SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>
+     */
     public SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesetsInvoker(
         ShowTasksRulesetsRequest request) {
         return new SyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>(request,
             CodeCheckMeta.showTasksRulesets, hcClient);
     }
 
-    /** 终止检查任务 根据任务ID终止检查任务。
+    /**
+     * 终止检查任务
+     *
+     * 根据任务ID终止检查任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopTaskByIdRequest 请求对象
-     * @return StopTaskByIdResponse */
+     * @return StopTaskByIdResponse
+     */
     public StopTaskByIdResponse stopTaskById(StopTaskByIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.stopTaskById);
     }
 
-    /** 终止检查任务 根据任务ID终止检查任务。
+    /**
+     * 终止检查任务
+     *
+     * 根据任务ID终止检查任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopTaskByIdRequest 请求对象
-     * @return SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse> */
+     * @return SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>
+     */
     public SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse> stopTaskByIdInvoker(StopTaskByIdRequest request) {
         return new SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>(request, CodeCheckMeta.stopTaskById,
             hcClient);
     }
 
-    /** 修改缺陷状态 修改检查出的缺陷的状态为已解决、已忽略
+    /**
+     * 修改缺陷状态
+     *
+     * 修改检查出的缺陷的状态为已解决、已忽略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDefectStatusRequest 请求对象
-     * @return UpdateDefectStatusResponse */
+     * @return UpdateDefectStatusResponse
+     */
     public UpdateDefectStatusResponse updateDefectStatus(UpdateDefectStatusRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateDefectStatus);
     }
 
-    /** 修改缺陷状态 修改检查出的缺陷的状态为已解决、已忽略
+    /**
+     * 修改缺陷状态
+     *
+     * 修改检查出的缺陷的状态为已解决、已忽略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDefectStatusRequest 请求对象
-     * @return SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse> */
+     * @return SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>
+     */
     public SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse> updateDefectStatusInvoker(
         UpdateDefectStatusRequest request) {
         return new SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>(request,
             CodeCheckMeta.updateDefectStatus, hcClient);
     }
 
-    /** 修改任务规则集 修改任务规则集。
+    /**
+     * 修改任务规则集
+     *
+     * 修改任务规则集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskRulesetRequest 请求对象
-     * @return UpdateTaskRulesetResponse */
+     * @return UpdateTaskRulesetResponse
+     */
     public UpdateTaskRulesetResponse updateTaskRuleset(UpdateTaskRulesetRequest request) {
         return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateTaskRuleset);
     }
 
-    /** 修改任务规则集 修改任务规则集。
+    /**
+     * 修改任务规则集
+     *
+     * 修改任务规则集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateTaskRulesetRequest 请求对象
-     * @return SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> */
+     * @return SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>
+     */
     public SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRulesetInvoker(
         UpdateTaskRulesetRequest request) {
         return new SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,

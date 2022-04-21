@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -44,9 +47,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 资源类型 1. ief-edge_node 2. ief-deployment 3. ief-application 4. ief-device
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型 1. ief-edge_node 2. ief-deployment 3. ief-application 4. ief-device
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -60,9 +64,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -101,7 +106,10 @@ public class ListTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

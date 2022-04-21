@@ -40,9 +40,10 @@ public class FlavorInstance {
         return this;
     }
 
-    /** 边缘实例规格的ID。
-     * 
-     * @return id */
+    /**
+     * 边缘实例规格的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -56,9 +57,10 @@ public class FlavorInstance {
         return this;
     }
 
-    /** 边缘实例规格的名称。
-     * 
-     * @return name */
+    /**
+     * 边缘实例规格的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -72,9 +74,10 @@ public class FlavorInstance {
         return this;
     }
 
-    /** 边缘实例规格对应要求系统盘大小。 当前未使用该参数，缺省值为0。
-     * 
-     * @return disk */
+    /**
+     * 边缘实例规格对应要求系统盘大小。  当前未使用该参数，缺省值为0。
+     * @return disk
+     */
     public String getDisk() {
         return disk;
     }
@@ -88,9 +91,10 @@ public class FlavorInstance {
         return this;
     }
 
-    /** 边缘实例规格对应的内存大小，单位为MB。
-     * 
-     * @return ram */
+    /**
+     * 边缘实例规格对应的内存大小，单位为MB。
+     * @return ram
+     */
     public String getRam() {
         return ram;
     }
@@ -104,9 +108,10 @@ public class FlavorInstance {
         return this;
     }
 
-    /** 边缘实例规格对应的CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * 边缘实例规格对应的CPU核数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -147,7 +152,10 @@ public class FlavorInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

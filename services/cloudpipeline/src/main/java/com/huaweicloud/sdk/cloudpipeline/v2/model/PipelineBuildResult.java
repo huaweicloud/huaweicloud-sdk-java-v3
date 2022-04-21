@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PipelineBuildResult */
+/**
+ * PipelineBuildResult
+ */
 public class PipelineBuildResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 执行ID
-     * 
-     * @return buildId */
+    /**
+     * 执行ID
+     * @return buildId
+     */
     public String getBuildId() {
         return buildId;
     }
@@ -69,9 +72,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 运行耗时
-     * 
-     * @return elapseTime */
+    /**
+     * 运行耗时
+     * @return elapseTime
+     */
     public String getElapseTime() {
         return elapseTime;
     }
@@ -85,9 +89,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 执行结束时间
-     * 
-     * @return endTime */
+    /**
+     * 执行结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -101,9 +106,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 运行结果
-     * 
-     * @return outcome */
+    /**
+     * 运行结果
+     * @return outcome
+     */
     public String getOutcome() {
         return outcome;
     }
@@ -117,9 +123,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 流水线id
-     * 
-     * @return pipelineId */
+    /**
+     * 流水线id
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -133,9 +140,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 流水线名称
-     * 
-     * @return pipelineName */
+    /**
+     * 流水线名称
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -149,9 +157,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 执行开始时间
-     * 
-     * @return startTime */
+    /**
+     * 执行开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -165,9 +174,10 @@ public class PipelineBuildResult {
         return this;
     }
 
-    /** 运行状态
-     * 
-     * @return status */
+    /**
+     * 运行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -216,7 +226,10 @@ public class PipelineBuildResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

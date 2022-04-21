@@ -8,21 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 可以通过 annotations[\&quot;cluster.install.addons/install\&quot;] 来指定创建集群时需要安装的插件，格式形如 &#x60;&#x60;&#x60; [ {
- * \&quot;addonTemplateName\&quot;: \&quot;autoscaler\&quot;, \&quot;version\&quot;: \&quot;1.15.3\&quot;,
- * \&quot;values\&quot;: { \&quot;flavor\&quot;: { \&quot;description\&quot;: \&quot;Has only one instance\&quot;,
- * \&quot;name\&quot;: \&quot;Single\&quot;, \&quot;replicas\&quot;: 1, \&quot;resources\&quot;: [ {
- * \&quot;limitsCpu\&quot;: \&quot;100m\&quot;, \&quot;limitsMem\&quot;: \&quot;300Mi\&quot;, \&quot;name\&quot;:
- * \&quot;autoscaler\&quot;, \&quot;requestsCpu\&quot;: \&quot;100m\&quot;, \&quot;requestsMem\&quot;:
- * \&quot;300Mi\&quot; } ] }, \&quot;custom\&quot;: { \&quot;coresTotal\&quot;: 32000,
- * \&quot;maxEmptyBulkDeleteFlag\&quot;: 10, \&quot;maxNodesTotal\&quot;: 1000, \&quot;memoryTotal\&quot;: 128000,
- * \&quot;scaleDownDelayAfterAdd\&quot;: 10, \&quot;scaleDownDelayAfterDelete\&quot;: 10,
- * \&quot;scaleDownDelayAfterFailure\&quot;: 3, \&quot;scaleDownEnabled\&quot;: false,
- * \&quot;scaleDownUnneededTime\&quot;: 10, \&quot;scaleDownUtilizationThreshold\&quot;: 0.5,
- * \&quot;scaleUpCpuUtilizationThreshold\&quot;: 1, \&quot;scaleUpMemUtilizationThreshold\&quot;: 1,
- * \&quot;scaleUpUnscheduledPodEnabled\&quot;: true, \&quot;scaleUpUtilizationEnabled\&quot;: true,
- * \&quot;tenant_id\&quot;: \&quot;47eb1d64cbeb45cfa01ae20af4f4b563\&quot;, \&quot;unremovableNodeRecheckTimeout\&quot;:
- * 5 } } } ] &#x60;&#x60;&#x60; */
+/**
+ * 可以通过 annotations[\&quot;cluster.install.addons/install\&quot;] 来指定创建集群时需要安装的插件，格式形如 &#x60;&#x60;&#x60; [   {     \&quot;addonTemplateName\&quot;: \&quot;autoscaler\&quot;,     \&quot;version\&quot;: \&quot;1.15.3\&quot;,     \&quot;values\&quot;: {       \&quot;flavor\&quot;: {         \&quot;description\&quot;: \&quot;Has only one instance\&quot;,         \&quot;name\&quot;: \&quot;Single\&quot;,         \&quot;replicas\&quot;: 1,         \&quot;resources\&quot;: [           {             \&quot;limitsCpu\&quot;: \&quot;100m\&quot;,             \&quot;limitsMem\&quot;: \&quot;300Mi\&quot;,             \&quot;name\&quot;: \&quot;autoscaler\&quot;,             \&quot;requestsCpu\&quot;: \&quot;100m\&quot;,             \&quot;requestsMem\&quot;: \&quot;300Mi\&quot;           }         ]       },       \&quot;custom\&quot;: {         \&quot;coresTotal\&quot;: 32000,         \&quot;maxEmptyBulkDeleteFlag\&quot;: 10,         \&quot;maxNodesTotal\&quot;: 1000,         \&quot;memoryTotal\&quot;: 128000,         \&quot;scaleDownDelayAfterAdd\&quot;: 10,         \&quot;scaleDownDelayAfterDelete\&quot;: 10,         \&quot;scaleDownDelayAfterFailure\&quot;: 3,         \&quot;scaleDownEnabled\&quot;: false,         \&quot;scaleDownUnneededTime\&quot;: 10,         \&quot;scaleDownUtilizationThreshold\&quot;: 0.5,         \&quot;scaleUpCpuUtilizationThreshold\&quot;: 1,         \&quot;scaleUpMemUtilizationThreshold\&quot;: 1,         \&quot;scaleUpUnscheduledPodEnabled\&quot;: true,         \&quot;scaleUpUtilizationEnabled\&quot;: true,         \&quot;tenant_id\&quot;: \&quot;47eb1d64cbeb45cfa01ae20af4f4b563\&quot;,         \&quot;unremovableNodeRecheckTimeout\&quot;: 5       }     }   } ] &#x60;&#x60;&#x60;
+ */
 public class ClusterMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,9 +48,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 集群名称。 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。
-     * 
-     * @return name */
+    /**
+     * 集群名称。  命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -76,9 +65,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 资源唯一标识，创建成功后自动生成，填写无效
-     * 
-     * @return uid */
+    /**
+     * 资源唯一标识，创建成功后自动生成，填写无效
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -108,12 +98,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 集群注解，由key/value组成： ``` \"annotations\": { \"key1\" : \"value1\", \"key2\" : \"value2\" } ``` > -
-     * Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured 或unstructured，并且可以包括标签不允许使用的字符。 > -
-     * 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 > - 可通过加入\"cluster.install.addons.external/install\":
-     * \"[{\"addonTemplateName\":\"icagent\"}]\"的键值对在创建集群时安装ICAgent。
-     * 
-     * @return annotations */
+    /**
+     * 集群注解，由key/value组成：   ```  \"annotations\": {    \"key1\" : \"value1\",    \"key2\" : \"value2\" }  ```   >    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured 或unstructured，并且可以包括标签不允许使用的字符。 >    - 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 >    - 可通过加入\"cluster.install.addons.external/install\": \"[{\"addonTemplateName\":\"icagent\"}]\"的键值对在创建集群时安装ICAgent。 
+     * @return annotations
+     */
     public Map<String, String> getAnnotations() {
         return annotations;
     }
@@ -143,9 +131,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 集群标签，key/value对格式。 > 该字段值由系统自动生成，用于升级时前端识别集群支持的特性开关，用户指定无效。
-     * 
-     * @return labels */
+    /**
+     * 集群标签，key/value对格式。  >  该字段值由系统自动生成，用于升级时前端识别集群支持的特性开关，用户指定无效。
+     * @return labels
+     */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -159,9 +148,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 集群创建时间
-     * 
-     * @return creationTimestamp */
+    /**
+     * 集群创建时间
+     * @return creationTimestamp
+     */
     public String getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -175,9 +165,10 @@ public class ClusterMetadata {
         return this;
     }
 
-    /** 集群更新时间
-     * 
-     * @return updateTimestamp */
+    /**
+     * 集群更新时间
+     * @return updateTimestamp
+     */
     public String getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -221,7 +212,10 @@ public class ClusterMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

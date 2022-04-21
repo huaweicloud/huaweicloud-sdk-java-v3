@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建计划请求体 */
+/**
+ * 创建计划请求体
+ */
 public class CreatePlanRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreatePlanRequestBody {
         return this;
     }
 
-    /** 计划名称
-     * 
-     * @return name */
+    /**
+     * 计划名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class CreatePlanRequestBody {
         return this;
     }
 
-    /** 处理者id，不填时默认使用当前用户
-     * 
-     * @return assignedId */
+    /**
+     * 处理者id，不填时默认使用当前用户
+     * @return assignedId
+     */
     public String getAssignedId() {
         return assignedId;
     }
@@ -84,9 +88,10 @@ public class CreatePlanRequestBody {
         return this;
     }
 
-    /** 计划下包含的用例类型，数组长度小于10个
-     * 
-     * @return serviceIdList */
+    /**
+     * 计划下包含的用例类型，数组长度小于10个
+     * @return serviceIdList
+     */
     public List<Integer> getServiceIdList() {
         return serviceIdList;
     }
@@ -109,9 +114,10 @@ public class CreatePlanRequestBody {
         return this;
     }
 
-    /** Get planCycle
-     * 
-     * @return planCycle */
+    /**
+     * Get planCycle
+     * @return planCycle
+     */
     public PlanCycle getPlanCycle() {
         return planCycle;
     }
@@ -152,7 +158,10 @@ public class CreatePlanRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

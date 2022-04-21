@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单记录，具体参考表2。
-     * 
-     * @return billSums */
+    /**
+     * 账单记录，具体参考表2。
+     * @return billSums
+     */
     public List<BillSumInfoV2> getBillSums() {
         return billSums;
     }
@@ -64,9 +67,10 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录数。
-     * 
-     * @return count */
+    /**
+     * 总记录数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -80,9 +84,10 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         return this;
     }
 
-    /** 货币编码。 CNY：人民币。
-     * 
-     * @return currency */
+    /**
+     * 货币编码。 CNY：人民币。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -122,7 +127,10 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

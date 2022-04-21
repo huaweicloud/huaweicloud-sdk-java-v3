@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ChileIdCardResult */
+/**
+ * ChileIdCardResult
+ */
 public class ChileIdCardResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 姓氏。
-     * 
-     * @return surname */
+    /**
+     * 姓氏。 
+     * @return surname
+     */
     public List<String> getSurname() {
         return surname;
     }
@@ -98,9 +101,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 名。
-     * 
-     * @return givenName */
+    /**
+     * 名。 
+     * @return givenName
+     */
     public String getGivenName() {
         return givenName;
     }
@@ -114,9 +118,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 国籍。
-     * 
-     * @return nationality */
+    /**
+     * 国籍。 
+     * @return nationality
+     */
     public String getNationality() {
         return nationality;
     }
@@ -130,9 +135,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 性别。
-     * 
-     * @return sex */
+    /**
+     * 性别。 
+     * @return sex
+     */
     public String getSex() {
         return sex;
     }
@@ -146,9 +152,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 出生日。
-     * 
-     * @return birth */
+    /**
+     * 出生日。 
+     * @return birth
+     */
     public String getBirth() {
         return birth;
     }
@@ -162,9 +169,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 发行日。
-     * 
-     * @return issueDate */
+    /**
+     * 发行日。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -178,9 +186,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 有效期。
-     * 
-     * @return expiryDate */
+    /**
+     * 有效期。 
+     * @return expiryDate
+     */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -194,9 +203,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 文档编号。
-     * 
-     * @return documentNumber */
+    /**
+     * 文档编号。 
+     * @return documentNumber
+     */
     public String getDocumentNumber() {
         return documentNumber;
     }
@@ -210,9 +220,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** 身份证号。
-     * 
-     * @return number */
+    /**
+     * 身份证号。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -235,9 +246,10 @@ public class ChileIdCardResult {
         return this;
     }
 
-    /** Get confidence
-     * 
-     * @return confidence */
+    /**
+     * Get confidence
+     * @return confidence
+     */
     public ChileIdCardConfidence getConfidence() {
         return confidence;
     }
@@ -298,7 +310,10 @@ public class ChileIdCardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

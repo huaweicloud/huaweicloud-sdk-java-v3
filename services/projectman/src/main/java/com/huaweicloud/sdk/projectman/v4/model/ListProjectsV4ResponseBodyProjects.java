@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListProjectsV4ResponseBodyProjects */
+/**
+ * ListProjectsV4ResponseBodyProjects
+ */
 public class ListProjectsV4ResponseBodyProjects {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目numId
-     * 
-     * @return projectNumId */
+    /**
+     * 项目numId
+     * @return projectNumId
+     */
     public Integer getProjectNumId() {
         return projectNumId;
     }
@@ -70,9 +73,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目uuid
-     * 
-     * @return projectId */
+    /**
+     * 项目uuid
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -86,9 +90,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -102,9 +107,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目描述
-     * 
-     * @return description */
+    /**
+     * 项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -118,9 +124,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 项目创建时间
+     * @return createdTime
+     */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -134,9 +141,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目更新时间
-     * 
-     * @return updatedTime */
+    /**
+     * 项目更新时间
+     * @return updatedTime
+     */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -150,9 +158,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** 项目类型
-     * 
-     * @return projectType */
+    /**
+     * 项目类型
+     * @return projectType
+     */
     public String getProjectType() {
         return projectType;
     }
@@ -175,9 +184,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return this;
     }
 
-    /** Get creator
-     * 
-     * @return creator */
+    /**
+     * Get creator
+     * @return creator
+     */
     public ListProjectsV4ResponseBodyCreator getCreator() {
         return creator;
     }
@@ -227,7 +237,10 @@ public class ListProjectsV4ResponseBodyProjects {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

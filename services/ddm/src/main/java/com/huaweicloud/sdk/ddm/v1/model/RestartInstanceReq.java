@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto restart Body Object */
+/**
+ * This is a auto restart Body Object
+ */
 public class RestartInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RestartInstanceReq {
         return this;
     }
 
-    /** Get restart
-     * 
-     * @return restart */
+    /**
+     * Get restart
+     * @return restart
+     */
     public RestarInstanceInfo getRestart() {
         return restart;
     }
@@ -65,7 +68,10 @@ public class RestartInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

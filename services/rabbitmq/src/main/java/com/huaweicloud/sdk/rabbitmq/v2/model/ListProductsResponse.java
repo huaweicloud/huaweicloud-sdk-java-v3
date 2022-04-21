@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListProductsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListProductsResponse extends SdkResponse {
         return this;
     }
 
-    /** 表示按需付费的产品列表。
-     * 
-     * @return hourly */
+    /**
+     * 表示按需付费的产品列表。
+     * @return hourly
+     */
     public List<ListProductsRespHourly> getHourly() {
         return hourly;
     }
@@ -75,9 +78,10 @@ public class ListProductsResponse extends SdkResponse {
         return this;
     }
 
-    /** 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的rabbitmq实例。
-     * 
-     * @return monthly */
+    /**
+     * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的rabbitmq实例。
+     * @return monthly
+     */
     public List<ListProductsRespHourly> getMonthly() {
         return monthly;
     }
@@ -114,7 +118,10 @@ public class ListProductsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

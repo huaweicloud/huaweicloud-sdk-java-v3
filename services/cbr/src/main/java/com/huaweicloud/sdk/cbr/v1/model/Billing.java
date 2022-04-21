@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Billing */
+/**
+ * Billing
+ */
 public class Billing {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Billing {
 
     private Integer allocated;
 
-    /** 创建模式 */
+    /**
+     * 创建模式
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum PRE_PAID for value: "pre_paid" */
+        /**
+         * Enum PRE_PAID for value: "pre_paid"
+         */
         public static final ChargingModeEnum PRE_PAID = new ChargingModeEnum("pre_paid");
 
-        /** Enum POST_PAID for value: "post_paid" */
+        /**
+         * Enum POST_PAID for value: "post_paid"
+         */
         public static final ChargingModeEnum POST_PAID = new ChargingModeEnum("post_paid");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +102,19 @@ public class Billing {
 
     private ChargingModeEnum chargingMode;
 
-    /** 云平台 */
+    /**
+     * 云平台
+     */
     public static final class CloudTypeEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
-        /** Enum HYBRID for value: "hybrid" */
+        /**
+         * Enum HYBRID for value: "hybrid"
+         */
         public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -170,13 +184,19 @@ public class Billing {
 
     private CloudTypeEnum cloudType;
 
-    /** 崩溃一致性（crash_consistent）或应用一致性（app_consistent） */
+    /**
+     * 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     */
     public static final class ConsistentLevelEnum {
 
-        /** Enum APP_CONSISTENT for value: "app_consistent" */
+        /**
+         * Enum APP_CONSISTENT for value: "app_consistent"
+         */
         public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
 
-        /** Enum CRASH_CONSISTENT for value: "crash_consistent" */
+        /**
+         * Enum CRASH_CONSISTENT for value: "crash_consistent"
+         */
         public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
 
         private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -246,13 +266,19 @@ public class Billing {
 
     private ConsistentLevelEnum consistentLevel;
 
-    /** 对象类型 */
+    /**
+     * 对象类型
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final ObjectTypeEnum SERVER = new ObjectTypeEnum("server");
 
-        /** Enum DISK for value: "disk" */
+        /**
+         * Enum DISK for value: "disk"
+         */
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -332,16 +358,24 @@ public class Billing {
 
     private String productId;
 
-    /** 保护类型 */
+    /**
+     * 保护类型
+     */
     public static final class ProtectTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final ProtectTypeEnum BACKUP = new ProtectTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ProtectTypeEnum REPLICATION = new ProtectTypeEnum("replication");
 
-        /** Enum HYBRID for value: "hybrid" */
+        /**
+         * Enum HYBRID for value: "hybrid"
+         */
         public static final ProtectTypeEnum HYBRID = new ProtectTypeEnum("hybrid");
 
         private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -417,14 +451,19 @@ public class Billing {
 
     private Integer size;
 
-    /** 规格编码:
-     * 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal */
+    /**
+     * 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
+     */
     public static final class SpecCodeEnum {
 
-        /** Enum VAULT_BACKUP_SERVER_NORMAL for value: "vault.backup.server.normal" */
+        /**
+         * Enum VAULT_BACKUP_SERVER_NORMAL for value: "vault.backup.server.normal"
+         */
         public static final SpecCodeEnum VAULT_BACKUP_SERVER_NORMAL = new SpecCodeEnum("vault.backup.server.normal");
 
-        /** Enum VAULT_BACKUP_VOLUME_NORMAL for value: "vault.backup.volume.normal" */
+        /**
+         * Enum VAULT_BACKUP_VOLUME_NORMAL for value: "vault.backup.volume.normal"
+         */
         public static final SpecCodeEnum VAULT_BACKUP_VOLUME_NORMAL = new SpecCodeEnum("vault.backup.volume.normal");
 
         private static final Map<String, SpecCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -494,22 +533,34 @@ public class Billing {
 
     private SpecCodeEnum specCode;
 
-    /** 存储库状态 */
+    /**
+     * 存储库状态
+     */
     public static final class StatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum LOCK for value: "lock" */
+        /**
+         * Enum LOCK for value: "lock"
+         */
         public static final StatusEnum LOCK = new StatusEnum("lock");
 
-        /** Enum FROZEN for value: "frozen" */
+        /**
+         * Enum FROZEN for value: "frozen"
+         */
         public static final StatusEnum FROZEN = new StatusEnum("frozen");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StatusEnum ERROR = new StatusEnum("error");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -607,9 +658,10 @@ public class Billing {
         return this;
     }
 
-    /** 已分配容量，单位GB
-     * 
-     * @return allocated */
+    /**
+     * 已分配容量，单位GB
+     * @return allocated
+     */
     public Integer getAllocated() {
         return allocated;
     }
@@ -623,9 +675,10 @@ public class Billing {
         return this;
     }
 
-    /** 创建模式
-     * 
-     * @return chargingMode */
+    /**
+     * 创建模式
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -639,9 +692,10 @@ public class Billing {
         return this;
     }
 
-    /** 云平台
-     * 
-     * @return cloudType */
+    /**
+     * 云平台
+     * @return cloudType
+     */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -655,9 +709,10 @@ public class Billing {
         return this;
     }
 
-    /** 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
-     * 
-     * @return consistentLevel */
+    /**
+     * 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     * @return consistentLevel
+     */
     public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
@@ -671,9 +726,10 @@ public class Billing {
         return this;
     }
 
-    /** 对象类型
-     * 
-     * @return objectType */
+    /**
+     * 对象类型
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -687,9 +743,10 @@ public class Billing {
         return this;
     }
 
-    /** 订单ID
-     * 
-     * @return orderId */
+    /**
+     * 订单ID
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -703,9 +760,10 @@ public class Billing {
         return this;
     }
 
-    /** 产品ID
-     * 
-     * @return productId */
+    /**
+     * 产品ID
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -719,9 +777,10 @@ public class Billing {
         return this;
     }
 
-    /** 保护类型
-     * 
-     * @return protectType */
+    /**
+     * 保护类型
+     * @return protectType
+     */
     public ProtectTypeEnum getProtectType() {
         return protectType;
     }
@@ -735,9 +794,12 @@ public class Billing {
         return this;
     }
 
-    /** 容量，单位GB minimum: 1 maximum: 10485760
-     * 
-     * @return size */
+    /**
+     * 容量，单位GB
+     * minimum: 1
+     * maximum: 10485760
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -751,10 +813,10 @@ public class Billing {
         return this;
     }
 
-    /** 规格编码:
-     * 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
-     * 
-     * @return specCode */
+    /**
+     * 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
+     * @return specCode
+     */
     public SpecCodeEnum getSpecCode() {
         return specCode;
     }
@@ -768,9 +830,10 @@ public class Billing {
         return this;
     }
 
-    /** 存储库状态
-     * 
-     * @return status */
+    /**
+     * 存储库状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -784,9 +847,10 @@ public class Billing {
         return this;
     }
 
-    /** 存储库桶名
-     * 
-     * @return storageUnit */
+    /**
+     * 存储库桶名
+     * @return storageUnit
+     */
     public String getStorageUnit() {
         return storageUnit;
     }
@@ -800,9 +864,10 @@ public class Billing {
         return this;
     }
 
-    /** 已使用容量，单位MB
-     * 
-     * @return used */
+    /**
+     * 已使用容量，单位MB
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -816,9 +881,10 @@ public class Billing {
         return this;
     }
 
-    /** 冻结场景
-     * 
-     * @return frozenScene */
+    /**
+     * 冻结场景
+     * @return frozenScene
+     */
     public String getFrozenScene() {
         return frozenScene;
     }
@@ -832,9 +898,10 @@ public class Billing {
         return this;
     }
 
-    /** 存储库多az属性
-     * 
-     * @return isMultiAz */
+    /**
+     * 存储库多az属性
+     * @return isMultiAz
+     */
     public Boolean getIsMultiAz() {
         return isMultiAz;
     }
@@ -907,7 +974,10 @@ public class Billing {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

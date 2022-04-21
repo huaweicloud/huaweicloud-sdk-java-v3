@@ -11,25 +11,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
 
-    /** 实例创建进度 单位：百分比 */
+    /**
+     * 实例创建进度  单位：百分比
+     */
     public static final class ProgressEnum {
 
-        /** Enum NUMBER_30 for value: 30 */
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
         public static final ProgressEnum NUMBER_30 = new ProgressEnum(30);
 
-        /** Enum NUMBER_50 for value: 50 */
+        /**
+         * Enum NUMBER_50 for value: 50
+         */
         public static final ProgressEnum NUMBER_50 = new ProgressEnum(50);
 
-        /** Enum NUMBER_80 for value: 80 */
+        /**
+         * Enum NUMBER_80 for value: 80
+         */
         public static final ProgressEnum NUMBER_80 = new ProgressEnum(80);
 
-        /** Enum NUMBER_90 for value: 90 */
+        /**
+         * Enum NUMBER_90 for value: 90
+         */
         public static final ProgressEnum NUMBER_90 = new ProgressEnum(90);
 
-        /** Enum NUMBER_100 for value: 100 */
+        /**
+         * Enum NUMBER_100 for value: 100
+         */
         public static final ProgressEnum NUMBER_100 = new ProgressEnum(100);
 
         private static final Map<Integer, ProgressEnum> STATIC_FIELDS = createStaticFields();
@@ -102,16 +116,24 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
 
     private ProgressEnum progress;
 
-    /** 实例创建状态 - creating：创建中 - success：创建成功 - failed：创建失败 */
+    /**
+     * 实例创建状态 - creating：创建中 - success：创建成功 - failed：创建失败
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -207,9 +229,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建进度 单位：百分比
-     * 
-     * @return progress */
+    /**
+     * 实例创建进度  单位：百分比
+     * @return progress
+     */
     public ProgressEnum getProgress() {
         return progress;
     }
@@ -223,9 +246,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建状态 - creating：创建中 - success：创建成功 - failed：创建失败
-     * 
-     * @return status */
+    /**
+     * 实例创建状态 - creating：创建中 - success：创建成功 - failed：创建失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -239,9 +263,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建失败错误码
-     * 
-     * @return errorCode */
+    /**
+     * 实例创建失败错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -255,9 +280,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建失败错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 实例创建失败错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -271,9 +297,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建开始时间。unix时间戳格式。
-     * 
-     * @return startTime */
+    /**
+     * 实例创建开始时间。unix时间戳格式。
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -287,9 +314,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return this;
     }
 
-    /** 实例创建结束时间。unix时间戳格式。
-     * 
-     * @return endTime */
+    /**
+     * 实例创建结束时间。unix时间戳格式。
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -335,7 +363,10 @@ public class ShowDetailsOfInstanceProgressV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

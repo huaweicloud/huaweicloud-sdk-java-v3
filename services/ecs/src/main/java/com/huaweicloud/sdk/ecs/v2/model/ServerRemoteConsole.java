@@ -30,9 +30,10 @@ public class ServerRemoteConsole {
         return this;
     }
 
-    /** 远程登录的协议。
-     * 
-     * @return protocol */
+    /**
+     * 远程登录的协议。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -46,9 +47,10 @@ public class ServerRemoteConsole {
         return this;
     }
 
-    /** 远程登录的类型。
-     * 
-     * @return type */
+    /**
+     * 远程登录的类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -62,9 +64,10 @@ public class ServerRemoteConsole {
         return this;
     }
 
-    /** 远程登录的url。
-     * 
-     * @return url */
+    /**
+     * 远程登录的url。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -102,7 +105,10 @@ public class ServerRemoteConsole {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

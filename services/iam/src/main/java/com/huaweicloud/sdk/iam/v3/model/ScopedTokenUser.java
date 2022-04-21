@@ -50,9 +50,10 @@ public class ScopedTokenUser {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public TokenDomainResult getDomain() {
         return domain;
     }
@@ -75,9 +76,10 @@ public class ScopedTokenUser {
         return this;
     }
 
-    /** Get osFederation
-     * 
-     * @return osFederation */
+    /**
+     * Get osFederation
+     * @return osFederation
+     */
     public TokenUserOsfederation getOsFederation() {
         return osFederation;
     }
@@ -91,9 +93,10 @@ public class ScopedTokenUser {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return id */
+    /**
+     * 用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -107,9 +110,10 @@ public class ScopedTokenUser {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return name */
+    /**
+     * 用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -123,9 +127,10 @@ public class ScopedTokenUser {
         return this;
     }
 
-    /** 密码过期时间（UTC时间），“”表示密码不过期。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 密码过期时间（UTC时间），“”表示密码不过期。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -167,7 +172,10 @@ public class ScopedTokenUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

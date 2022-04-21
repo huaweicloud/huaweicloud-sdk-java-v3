@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 任务信息 */
+/**
+ * 任务信息
+ */
 public class CreateCommonTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateCommonTaskRequestBody {
         return this;
     }
 
-    /** Get task
-     * 
-     * @return task */
+    /**
+     * Get task
+     * @return task
+     */
     public TaskBasicRequestBody getTask() {
         return task;
     }
@@ -49,9 +52,10 @@ public class CreateCommonTaskRequestBody {
         return this;
     }
 
-    /** 参数类型为string，参数结构参照附录中“数据集成参数说明>RawFormDataRequest”章节
-     * 
-     * @return taskDetail */
+    /**
+     * 参数类型为string，参数结构参照附录中“数据集成参数说明>RawFormDataRequest”章节
+     * @return taskDetail
+     */
     public String getTaskDetail() {
         return taskDetail;
     }
@@ -88,7 +92,10 @@ public class CreateCommonTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

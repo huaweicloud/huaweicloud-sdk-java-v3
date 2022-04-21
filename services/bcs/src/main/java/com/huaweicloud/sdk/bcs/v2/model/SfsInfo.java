@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SfsInfo */
+/**
+ * SfsInfo
+ */
 public class SfsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SfsInfo {
         return this;
     }
 
-    /** BCS服务下的SFS文件系统名称
-     * 
-     * @return pvcName */
+    /**
+     * BCS服务下的SFS文件系统名称
+     * @return pvcName
+     */
     public String getPvcName() {
         return pvcName;
     }
@@ -49,9 +52,10 @@ public class SfsInfo {
         return this;
     }
 
-    /** BCS服务网络存储名称
-     * 
-     * @return name */
+    /**
+     * BCS服务网络存储名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class SfsInfo {
         return this;
     }
 
-    /** BCS服务网络存储地址
-     * 
-     * @return addr */
+    /**
+     * BCS服务网络存储地址
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -81,9 +86,10 @@ public class SfsInfo {
         return this;
     }
 
-    /** BCS服务网络存储类型
-     * 
-     * @return type */
+    /**
+     * BCS服务网络存储类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -122,7 +128,10 @@ public class SfsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

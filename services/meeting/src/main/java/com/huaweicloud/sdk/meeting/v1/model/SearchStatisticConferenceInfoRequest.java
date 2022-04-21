@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchStatisticConferenceInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class SearchStatisticConferenceInfoRequest {
 
     private Integer limit;
 
-    /** 查询时间维度，取值： * D: 按日查询 * M: 按月查询。 */
+    /**
+     * 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
+     */
     public static final class TimeUnitEnum {
 
-        /** Enum D for value: "D" */
+        /**
+         * Enum D for value: "D"
+         */
         public static final TimeUnitEnum D = new TimeUnitEnum("D");
 
-        /** Enum M for value: "M" */
+        /**
+         * Enum M for value: "M"
+         */
         public static final TimeUnitEnum M = new TimeUnitEnum("M");
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -109,14 +117,19 @@ public class SearchStatisticConferenceInfoRequest {
 
     private String endTime;
 
-    /** 查询分类，取值： * conference_info: 会议总体数据 * conference_hourly_info: 单日内会议总体数据 * category =
-     * conference_hourly_info的情况，timeUnit只能取值'D'，且startTime与endTime必须为同一天 */
+    /**
+     * 查询分类，取值： * conference_info: 会议总体数据 * conference_hourly_info: 单日内会议总体数据 * category = conference_hourly_info的情况，timeUnit只能取值'D'，且startTime与endTime必须为同一天
+     */
     public static final class CategoryEnum {
 
-        /** Enum CONFERENCE_INFO for value: "conference_info" */
+        /**
+         * Enum CONFERENCE_INFO for value: "conference_info"
+         */
         public static final CategoryEnum CONFERENCE_INFO = new CategoryEnum("conference_info");
 
-        /** Enum CONFERENCE_HOURLY_INFO for value: "conference_hourly_info" */
+        /**
+         * Enum CONFERENCE_HOURLY_INFO for value: "conference_hourly_info"
+         */
         public static final CategoryEnum CONFERENCE_HOURLY_INFO = new CategoryEnum("conference_hourly_info");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -191,9 +204,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页数据，页数根据总条目数和limit计算得出。
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页数据，页数根据总条目数和limit计算得出。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -207,9 +221,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
-     * 
-     * @return limit */
+    /**
+     * 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -223,9 +238,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
-     * 
-     * @return timeUnit */
+    /**
+     * 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
+     * @return timeUnit
+     */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -239,10 +255,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询时间范围的开始时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit =
-     * M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
-     * 
-     * @return startTime */
+    /**
+     * 查询时间范围的开始时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit = M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -256,10 +272,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询时间范围的结束时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit =
-     * M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
-     * 
-     * @return endTime */
+    /**
+     * 查询时间范围的结束时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit = M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -273,10 +289,10 @@ public class SearchStatisticConferenceInfoRequest {
         return this;
     }
 
-    /** 查询分类，取值： * conference_info: 会议总体数据 * conference_hourly_info: 单日内会议总体数据 * category =
-     * conference_hourly_info的情况，timeUnit只能取值'D'，且startTime与endTime必须为同一天
-     * 
-     * @return category */
+    /**
+     * 查询分类，取值： * conference_info: 会议总体数据 * conference_hourly_info: 单日内会议总体数据 * category = conference_hourly_info的情况，timeUnit只能取值'D'，且startTime与endTime必须为同一天
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -322,7 +338,10 @@ public class SearchStatisticConferenceInfoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

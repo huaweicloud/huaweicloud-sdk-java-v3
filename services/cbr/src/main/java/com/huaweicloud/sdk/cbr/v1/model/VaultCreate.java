@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VaultCreate */
+/**
+ * VaultCreate
+ */
 public class VaultCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 备份策略ID，不设置时为null，不自动备份。
-     * 
-     * @return backupPolicyId */
+    /**
+     * 备份策略ID，不设置时为null，不自动备份。
+     * @return backupPolicyId
+     */
     public String getBackupPolicyId() {
         return backupPolicyId;
     }
@@ -91,9 +94,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** Get billing
-     * 
-     * @return billing */
+    /**
+     * Get billing
+     * @return billing
+     */
     public BillingCreate getBilling() {
         return billing;
     }
@@ -107,9 +111,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +128,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 存储库名称
-     * 
-     * @return name */
+    /**
+     * 存储库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -155,9 +161,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 绑定的备份资源，未在创建时绑定资源填[]
-     * 
-     * @return resources */
+    /**
+     * 绑定的备份资源，未在创建时绑定资源填[]
+     * @return resources
+     */
     public List<ResourceCreate> getResources() {
         return resources;
     }
@@ -187,9 +194,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 标签列表 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。
-     * 
-     * @return tags */
+    /**
+     * 标签列表 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -203,9 +211,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 企业项目ID，默认为‘0’。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，默认为‘0’。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -219,9 +228,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 是否支持自动挂载。
-     * 
-     * @return autoBind */
+    /**
+     * 是否支持自动挂载。
+     * @return autoBind
+     */
     public Boolean getAutoBind() {
         return autoBind;
     }
@@ -244,9 +254,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** Get bindRules
-     * 
-     * @return bindRules */
+    /**
+     * Get bindRules
+     * @return bindRules
+     */
     public VaultBindRules getBindRules() {
         return bindRules;
     }
@@ -260,9 +271,10 @@ public class VaultCreate {
         return this;
     }
 
-    /** 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
-     * 
-     * @return autoExpand */
+    /**
+     * 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
+     * @return autoExpand
+     */
     public Boolean getAutoExpand() {
         return autoExpand;
     }
@@ -322,7 +334,10 @@ public class VaultCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

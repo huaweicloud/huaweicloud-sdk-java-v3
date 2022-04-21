@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数vpc配置。 */
+/**
+ * 函数vpc配置。
+ */
 public class FuncVpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 虚拟私有云名称。
-     * 
-     * @return vpcName */
+    /**
+     * 虚拟私有云名称。
+     * @return vpcName
+     */
     public String getVpcName() {
         return vpcName;
     }
@@ -59,9 +62,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 虚拟私有云唯一标识。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云唯一标识。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -75,9 +79,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 子网名称。
-     * 
-     * @return subnetName */
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
     public String getSubnetName() {
         return subnetName;
     }
@@ -91,9 +96,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 子网编号。
-     * 
-     * @return subnetId */
+    /**
+     * 子网编号。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -107,9 +113,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 子网掩码。
-     * 
-     * @return cidr */
+    /**
+     * 子网掩码。
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -123,9 +130,10 @@ public class FuncVpc {
         return this;
     }
 
-    /** 网关。
-     * 
-     * @return gateway */
+    /**
+     * 网关。
+     * @return gateway
+     */
     public String getGateway() {
         return gateway;
     }
@@ -167,7 +175,10 @@ public class FuncVpc {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

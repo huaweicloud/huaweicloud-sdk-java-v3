@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreatePolicyRequestBody */
+/**
+ * CreatePolicyRequestBody
+ */
 public class CreatePolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreatePolicyRequestBody {
         return this;
     }
 
-    /** 策略名称（策略名称只能由数字、字母和下划线组成，长度不能超过64为字符）
-     * 
-     * @return name */
+    /**
+     * 策略名称（策略名称只能由数字、字母和下划线组成，长度不能超过64为字符）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,7 +58,10 @@ public class CreatePolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

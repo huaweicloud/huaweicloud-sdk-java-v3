@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateCategoryReq */
+/**
+ * CreateCategoryReq
+ */
 public class CreateCategoryReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateCategoryReq {
         return this;
     }
 
-    /** 媒资分类名称，最大64字节。
-     * 
-     * @return name */
+    /**
+     * 媒资分类名称，最大64字节。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,11 @@ public class CreateCategoryReq {
         return this;
     }
 
-    /** 父分类ID。 若不填，则默认生成一级分类。 根节点分类ID为0。 minimum: 0
-     * 
-     * @return parentId */
+    /**
+     * 父分类ID。  若不填，则默认生成一级分类。  根节点分类ID为0。
+     * minimum: 0
+     * @return parentId
+     */
     public Integer getParentId() {
         return parentId;
     }
@@ -78,7 +83,10 @@ public class CreateCategoryReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

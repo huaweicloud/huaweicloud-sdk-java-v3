@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 挂载用户信息。 */
+/**
+ * 挂载用户信息。
+ */
 public class MountUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MountUser {
         return this;
     }
 
-    /** 用户ID(-1~65534的非0整数)
-     * 
-     * @return userId */
+    /**
+     * 用户ID(-1~65534的非0整数)
+     * @return userId
+     */
     public Integer getUserId() {
         return userId;
     }
@@ -39,9 +42,10 @@ public class MountUser {
         return this;
     }
 
-    /** 用户组ID(-1~65534的非0整数)
-     * 
-     * @return userGroupId */
+    /**
+     * 用户组ID(-1~65534的非0整数)
+     * @return userGroupId
+     */
     public Integer getUserGroupId() {
         return userGroupId;
     }
@@ -77,7 +81,10 @@ public class MountUser {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

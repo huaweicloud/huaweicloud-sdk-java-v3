@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstancesVO */
+/**
+ * InstancesVO
+ */
 public class InstancesVO {
 
-    /** cpu架构 x86|arm */
+    /**
+     * cpu架构 x86|arm
+     */
     public static final class ArchEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchEnum X86 = new ArchEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchEnum ARM = new ArchEnum("arm");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
@@ -95,20 +103,29 @@ public class InstancesVO {
 
     private Attributes attributes;
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     */
     public static final class CpuMemoryEnum {
 
-        /** Enum _1U1G for value: "1U1G" */
+        /**
+         * Enum _1U1G for value: "1U1G"
+         */
         public static final CpuMemoryEnum _1U1G = new CpuMemoryEnum("1U1G");
 
-        /** Enum _2U4G for value: "2U4G" */
+        /**
+         * Enum _2U4G for value: "2U4G"
+         */
         public static final CpuMemoryEnum _2U4G = new CpuMemoryEnum("2U4G");
 
-        /** Enum _2U8G for value: "2U8G" */
+        /**
+         * Enum _2U8G for value: "2U8G"
+         */
         public static final CpuMemoryEnum _2U8G = new CpuMemoryEnum("2U8G");
 
-        /** Enum _4U8G for value: "4U8G" */
+        /**
+         * Enum _4U8G for value: "4U8G"
+         */
         public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
 
         private static final Map<String, CpuMemoryEnum> STATIC_FIELDS = createStaticFields();
@@ -250,16 +267,24 @@ public class InstancesVO {
 
     private Boolean _private;
 
-    /** PVC规格 5GB|10GB|20GB */
+    /**
+     * PVC规格 5GB|10GB|20GB
+     */
     public static final class PvcQuantityEnum {
 
-        /** Enum _5GB for value: "5GB" */
+        /**
+         * Enum _5GB for value: "5GB"
+         */
         public static final PvcQuantityEnum _5GB = new PvcQuantityEnum("5GB");
 
-        /** Enum _10GB for value: "10GB" */
+        /**
+         * Enum _10GB for value: "10GB"
+         */
         public static final PvcQuantityEnum _10GB = new PvcQuantityEnum("10GB");
 
-        /** Enum _20GB for value: "20GB" */
+        /**
+         * Enum _20GB for value: "20GB"
+         */
         public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
 
         private static final Map<String, PvcQuantityEnum> STATIC_FIELDS = createStaticFields();
@@ -355,32 +380,49 @@ public class InstancesVO {
 
     private String stackId;
 
-    /** 实例状态 。 - INIT 初始化 - STARTING 启动中 - RUNNING 运行中 - STOPPING 停止中 - STOPPED 已停止 - DELETING 删除中 - DELETED 已删除 -
-     * DELETE_FAILED 删除失败 */
+    /**
+     * 实例状态 。 - INIT 初始化 - STARTING 启动中 - RUNNING 运行中 - STOPPING 停止中 - STOPPED 已停止 - DELETING 删除中 - DELETED 已删除 - DELETE_FAILED 删除失败
+     */
     public static final class StatusEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
-        /** Enum STARTING for value: "STARTING" */
+        /**
+         * Enum STARTING for value: "STARTING"
+         */
         public static final StatusEnum STARTING = new StatusEnum("STARTING");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum DELETE_FAILED for value: "DELETE_FAILED" */
+        /**
+         * Enum DELETE_FAILED for value: "DELETE_FAILED"
+         */
         public static final StatusEnum DELETE_FAILED = new StatusEnum("DELETE_FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -481,9 +523,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** cpu架构 x86|arm
-     * 
-     * @return arch */
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
     public ArchEnum getArch() {
         return arch;
     }
@@ -506,9 +549,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** Get attributes
-     * 
-     * @return attributes */
+    /**
+     * Get attributes
+     * @return attributes
+     */
     public Attributes getAttributes() {
         return attributes;
     }
@@ -522,10 +566,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。
-     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
-     * 
-     * @return cpuMemory */
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacks接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     * @return cpuMemory
+     */
     public CpuMemoryEnum getCpuMemory() {
         return cpuMemory;
     }
@@ -539,9 +583,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -555,9 +600,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -571,9 +617,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * 
-     * @return displayName */
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -587,9 +634,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -603,9 +651,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -619,9 +668,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 是否页面显示（以标签配置为准）
-     * 
-     * @return isTemporary */
+    /**
+     * 是否页面显示（以标签配置为准）
+     * @return isTemporary
+     */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -635,9 +685,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return label */
+    /**
+     * 标签
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -651,9 +702,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 链接
-     * 
-     * @return link */
+    /**
+     * 链接
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -667,9 +719,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -683,9 +736,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 租户id（对应华为云帐号的domainId）
-     * 
-     * @return organizationId */
+    /**
+     * 租户id（对应华为云帐号的domainId）
+     * @return organizationId
+     */
     public String getOrganizationId() {
         return organizationId;
     }
@@ -699,9 +753,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return ownerId */
+    /**
+     * 用户id
+     * @return ownerId
+     */
     public String getOwnerId() {
         return ownerId;
     }
@@ -715,9 +770,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return ownerName */
+    /**
+     * 用户名
+     * @return ownerName
+     */
     public String getOwnerName() {
         return ownerName;
     }
@@ -731,9 +787,12 @@ public class InstancesVO {
         return this;
     }
 
-    /** 平台ID minimum: 1 maximum: 100
-     * 
-     * @return platformId */
+    /**
+     * 平台ID
+     * minimum: 1
+     * maximum: 100
+     * @return platformId
+     */
     public Long getPlatformId() {
         return platformId;
     }
@@ -747,9 +806,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 是否私有平台
-     * 
-     * @return _private */
+    /**
+     * 是否私有平台
+     * @return _private
+     */
     public Boolean getPrivate() {
         return _private;
     }
@@ -763,9 +823,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** PVC规格 5GB|10GB|20GB
-     * 
-     * @return pvcQuantity */
+    /**
+     * PVC规格 5GB|10GB|20GB
+     * @return pvcQuantity
+     */
     public PvcQuantityEnum getPvcQuantity() {
         return pvcQuantity;
     }
@@ -779,11 +840,12 @@ public class InstancesVO {
         return this;
     }
 
-    /** 自动休眠时长。
-     * arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
-     * minimum: -1 maximum: 1440
-     * 
-     * @return refreshInterval */
+    /**
+     * 自动休眠时长。 arm架构,自动休眠时长只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例无操作超过自动休眠时长后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止
+     * minimum: -1
+     * maximum: 1440
+     * @return refreshInterval
+     */
     public Long getRefreshInterval() {
         return refreshInterval;
     }
@@ -797,9 +859,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 区域
-     * 
-     * @return region */
+    /**
+     * 区域
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -829,9 +892,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** server
-     * 
-     * @return serverMap */
+    /**
+     * server
+     * @return serverMap
+     */
     public Map<String, String> getServerMap() {
         return serverMap;
     }
@@ -845,9 +909,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 服务链接
-     * 
-     * @return serverUrl */
+    /**
+     * 服务链接
+     * @return serverUrl
+     */
     public String getServerUrl() {
         return serverUrl;
     }
@@ -861,9 +926,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 技术栈ID，通过技术栈管理ListStacks接口获取。
-     * 
-     * @return stackId */
+    /**
+     * 技术栈ID，通过技术栈管理ListStacks接口获取。
+     * @return stackId
+     */
     public String getStackId() {
         return stackId;
     }
@@ -877,10 +943,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 实例状态 。 - INIT 初始化 - STARTING 启动中 - RUNNING 运行中 - STOPPING 停止中 - STOPPED 已停止 - DELETING 删除中 - DELETED 已删除 -
-     * DELETE_FAILED 删除失败
-     * 
-     * @return status */
+    /**
+     * 实例状态 。 - INIT 初始化 - STARTING 启动中 - RUNNING 运行中 - STOPPING 停止中 - STOPPED 已停止 - DELETING 删除中 - DELETED 已删除 - DELETE_FAILED 删除失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -894,9 +960,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedTime */
+    /**
+     * 更新时间
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -910,9 +977,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 访问者id
-     * 
-     * @return visitorId */
+    /**
+     * 访问者id
+     * @return visitorId
+     */
     public String getVisitorId() {
         return visitorId;
     }
@@ -926,9 +994,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 访问者名称
-     * 
-     * @return visitorName */
+    /**
+     * 访问者名称
+     * @return visitorName
+     */
     public String getVisitorName() {
         return visitorName;
     }
@@ -942,9 +1011,10 @@ public class InstancesVO {
         return this;
     }
 
-    /** 访问者租户名称
-     * 
-     * @return visitorDomainName */
+    /**
+     * 访问者租户名称
+     * @return visitorDomainName
+     */
     public String getVisitorDomainName() {
         return visitorDomainName;
     }
@@ -1055,7 +1125,10 @@ public class InstancesVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 删除网卡请求体。 */
+/**
+ * 删除网卡请求体。
+ */
 public class DeleteNicsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteNicsRequestBody {
         return this;
     }
 
-    /** 待删除网卡信息。
-     * 
-     * @return nics */
+    /**
+     * 待删除网卡信息。
+     * @return nics
+     */
     public List<NicId> getNics() {
         return nics;
     }
@@ -74,7 +77,10 @@ public class DeleteNicsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

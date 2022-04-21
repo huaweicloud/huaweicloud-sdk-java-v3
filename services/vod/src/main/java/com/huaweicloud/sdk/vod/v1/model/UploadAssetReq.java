@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UploadAssetReq */
+/**
+ * UploadAssetReq
+ */
 public class UploadAssetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,88 +33,144 @@ public class UploadAssetReq {
 
     private String videoName;
 
-    /** 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV */
+    /**
+     * 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV
+     */
     public static final class VideoTypeEnum {
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final VideoTypeEnum MP4 = new VideoTypeEnum("MP4");
 
-        /** Enum TS for value: "TS" */
+        /**
+         * Enum TS for value: "TS"
+         */
         public static final VideoTypeEnum TS = new VideoTypeEnum("TS");
 
-        /** Enum MOV for value: "MOV" */
+        /**
+         * Enum MOV for value: "MOV"
+         */
         public static final VideoTypeEnum MOV = new VideoTypeEnum("MOV");
 
-        /** Enum MXF for value: "MXF" */
+        /**
+         * Enum MXF for value: "MXF"
+         */
         public static final VideoTypeEnum MXF = new VideoTypeEnum("MXF");
 
-        /** Enum MPG for value: "MPG" */
+        /**
+         * Enum MPG for value: "MPG"
+         */
         public static final VideoTypeEnum MPG = new VideoTypeEnum("MPG");
 
-        /** Enum FLV for value: "FLV" */
+        /**
+         * Enum FLV for value: "FLV"
+         */
         public static final VideoTypeEnum FLV = new VideoTypeEnum("FLV");
 
-        /** Enum WMV for value: "WMV" */
+        /**
+         * Enum WMV for value: "WMV"
+         */
         public static final VideoTypeEnum WMV = new VideoTypeEnum("WMV");
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final VideoTypeEnum HLS = new VideoTypeEnum("HLS");
 
-        /** Enum MP3 for value: "MP3" */
+        /**
+         * Enum MP3 for value: "MP3"
+         */
         public static final VideoTypeEnum MP3 = new VideoTypeEnum("MP3");
 
-        /** Enum WMA for value: "WMA" */
+        /**
+         * Enum WMA for value: "WMA"
+         */
         public static final VideoTypeEnum WMA = new VideoTypeEnum("WMA");
 
-        /** Enum APE for value: "APE" */
+        /**
+         * Enum APE for value: "APE"
+         */
         public static final VideoTypeEnum APE = new VideoTypeEnum("APE");
 
-        /** Enum FLAC for value: "FLAC" */
+        /**
+         * Enum FLAC for value: "FLAC"
+         */
         public static final VideoTypeEnum FLAC = new VideoTypeEnum("FLAC");
 
-        /** Enum AAC for value: "AAC" */
+        /**
+         * Enum AAC for value: "AAC"
+         */
         public static final VideoTypeEnum AAC = new VideoTypeEnum("AAC");
 
-        /** Enum AC3 for value: "AC3" */
+        /**
+         * Enum AC3 for value: "AC3"
+         */
         public static final VideoTypeEnum AC3 = new VideoTypeEnum("AC3");
 
-        /** Enum MMF for value: "MMF" */
+        /**
+         * Enum MMF for value: "MMF"
+         */
         public static final VideoTypeEnum MMF = new VideoTypeEnum("MMF");
 
-        /** Enum AMR for value: "AMR" */
+        /**
+         * Enum AMR for value: "AMR"
+         */
         public static final VideoTypeEnum AMR = new VideoTypeEnum("AMR");
 
-        /** Enum M4A for value: "M4A" */
+        /**
+         * Enum M4A for value: "M4A"
+         */
         public static final VideoTypeEnum M4A = new VideoTypeEnum("M4A");
 
-        /** Enum M4R for value: "M4R" */
+        /**
+         * Enum M4R for value: "M4R"
+         */
         public static final VideoTypeEnum M4R = new VideoTypeEnum("M4R");
 
-        /** Enum OGG for value: "OGG" */
+        /**
+         * Enum OGG for value: "OGG"
+         */
         public static final VideoTypeEnum OGG = new VideoTypeEnum("OGG");
 
-        /** Enum WAV for value: "WAV" */
+        /**
+         * Enum WAV for value: "WAV"
+         */
         public static final VideoTypeEnum WAV = new VideoTypeEnum("WAV");
 
-        /** Enum WV for value: "WV" */
+        /**
+         * Enum WV for value: "WV"
+         */
         public static final VideoTypeEnum WV = new VideoTypeEnum("WV");
 
-        /** Enum MP2 for value: "MP2" */
+        /**
+         * Enum MP2 for value: "MP2"
+         */
         public static final VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
-        /** Enum AVI for value: "AVI" */
+        /**
+         * Enum AVI for value: "AVI"
+         */
         public static final VideoTypeEnum AVI = new VideoTypeEnum("AVI");
 
-        /** Enum F4V for value: "F4V" */
+        /**
+         * Enum F4V for value: "F4V"
+         */
         public static final VideoTypeEnum F4V = new VideoTypeEnum("F4V");
 
-        /** Enum M4V for value: "M4V" */
+        /**
+         * Enum M4V for value: "M4V"
+         */
         public static final VideoTypeEnum M4V = new VideoTypeEnum("M4V");
 
-        /** Enum MPEG for value: "MPEG" */
+        /**
+         * Enum MPEG for value: "MPEG"
+         */
         public static final VideoTypeEnum MPEG = new VideoTypeEnum("MPEG");
 
-        /** Enum UNKNOW for value: "UNKNOW" */
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
         public static final VideoTypeEnum UNKNOW = new VideoTypeEnum("UNKNOW");
 
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -212,13 +270,19 @@ public class UploadAssetReq {
 
     private Integer coverId;
 
-    /** 封面图片格式类型。 取值如下： - JPG - PNG */
+    /**
+     * 封面图片格式类型。  取值如下： - JPG - PNG
+     */
     public static final class CoverTypeEnum {
 
-        /** Enum JPG for value: "JPG" */
+        /**
+         * Enum JPG for value: "JPG"
+         */
         public static final CoverTypeEnum JPG = new CoverTypeEnum("JPG");
 
-        /** Enum PNG for value: "PNG" */
+        /**
+         * Enum PNG for value: "PNG"
+         */
         public static final CoverTypeEnum PNG = new CoverTypeEnum("PNG");
 
         private static final Map<String, CoverTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -303,9 +367,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -319,9 +384,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 视频文件MD5值。 建议参考[媒资上传和更新](https://support.huaweicloud.com/api-vod/vod_04_0212.html)生成对应的MD5值。
-     * 
-     * @return videoMd5 */
+    /**
+     * 视频文件MD5值。  建议参考[媒资上传和更新](https://support.huaweicloud.com/api-vod/vod_04_0212.html)生成对应的MD5值。
+     * @return videoMd5
+     */
     public String getVideoMd5() {
         return videoMd5;
     }
@@ -335,9 +401,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 视频文件名。 文件名后缀为可选。
-     * 
-     * @return videoName */
+    /**
+     * 视频文件名。  文件名后缀为可选。
+     * @return videoName
+     */
     public String getVideoName() {
         return videoName;
     }
@@ -351,9 +418,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV
-     * 
-     * @return videoType */
+    /**
+     * 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV
+     * @return videoType
+     */
     public VideoTypeEnum getVideoType() {
         return videoType;
     }
@@ -367,9 +435,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 封面ID。 取值范围：[0,7]。 当前只支持一张封面，只能设置为0。
-     * 
-     * @return coverId */
+    /**
+     * 封面ID。  取值范围：[0,7]。  当前只支持一张封面，只能设置为0。
+     * @return coverId
+     */
     public Integer getCoverId() {
         return coverId;
     }
@@ -383,9 +452,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 封面图片格式类型。 取值如下： - JPG - PNG
-     * 
-     * @return coverType */
+    /**
+     * 封面图片格式类型。  取值如下： - JPG - PNG
+     * @return coverType
+     */
     public CoverTypeEnum getCoverType() {
         return coverType;
     }
@@ -399,9 +469,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 封面文件的MD5值。
-     * 
-     * @return coverMd5 */
+    /**
+     * 封面文件的MD5值。
+     * @return coverMd5
+     */
     public String getCoverMd5() {
         return coverMd5;
     }
@@ -431,9 +502,10 @@ public class UploadAssetReq {
         return this;
     }
 
-    /** 字幕文件信息
-     * 
-     * @return subtitles */
+    /**
+     * 字幕文件信息
+     * @return subtitles
+     */
     public List<Subtitle> getSubtitles() {
         return subtitles;
     }
@@ -482,7 +554,10 @@ public class UploadAssetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

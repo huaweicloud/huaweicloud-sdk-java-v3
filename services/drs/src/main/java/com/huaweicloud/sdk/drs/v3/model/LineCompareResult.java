@@ -48,9 +48,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 行对比任务的id。
-     * 
-     * @return compareTaskId */
+    /**
+     * 行对比任务的id。
+     * @return compareTaskId
+     */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -81,9 +82,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 行对比结果概览。
-     * 
-     * @return lineCompareOverview */
+    /**
+     * 行对比结果概览。
+     * @return lineCompareOverview
+     */
     public List<LineCompareResultOverview> getLineCompareOverview() {
         return lineCompareOverview;
     }
@@ -97,9 +99,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 行对比结果概览总数。
-     * 
-     * @return lineCompareOverviewCount */
+    /**
+     * 行对比结果概览总数。
+     * @return lineCompareOverviewCount
+     */
     public Integer getLineCompareOverviewCount() {
         return lineCompareOverviewCount;
     }
@@ -129,9 +132,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 行对比结果详情。
-     * 
-     * @return lineCompareDetails */
+    /**
+     * 行对比结果详情。
+     * @return lineCompareDetails
+     */
     public List<LineCompareResultDetails> getLineCompareDetails() {
         return lineCompareDetails;
     }
@@ -145,9 +149,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -161,9 +166,10 @@ public class LineCompareResult {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -213,7 +219,10 @@ public class LineCompareResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

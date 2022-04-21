@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,19 +89,29 @@ public class UpdateHostResponse extends SdkResponse {
 
     private Long timestamp;
 
-    /** ssl协议版本 */
+    /**
+     * ssl协议版本
+     */
     public static final class TlsEnum {
 
-        /** Enum TLS_V1_0 for value: "TLS v1.0" */
+        /**
+         * Enum TLS_V1_0 for value: "TLS v1.0"
+         */
         public static final TlsEnum TLS_V1_0 = new TlsEnum("TLS v1.0");
 
-        /** Enum TLS_V1_1 for value: "TLS v1.1" */
+        /**
+         * Enum TLS_V1_1 for value: "TLS v1.1"
+         */
         public static final TlsEnum TLS_V1_1 = new TlsEnum("TLS v1.1");
 
-        /** Enum TLS_V1_2 for value: "TLS v1.2" */
+        /**
+         * Enum TLS_V1_2 for value: "TLS v1.2"
+         */
         public static final TlsEnum TLS_V1_2 = new TlsEnum("TLS v1.2");
 
-        /** Enum TLS_V1_3 for value: "TLS v1.3" */
+        /**
+         * Enum TLS_V1_3 for value: "TLS v1.3"
+         */
         public static final TlsEnum TLS_V1_3 = new TlsEnum("TLS v1.3");
 
         private static final Map<String, TlsEnum> STATIC_FIELDS = createStaticFields();
@@ -171,27 +183,34 @@ public class UpdateHostResponse extends SdkResponse {
 
     private TlsEnum tls;
 
-    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
-     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
-     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
-     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
-     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
-     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM */
+    /**
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     */
     public static final class CipherEnum {
 
-        /** Enum CIPHER_1 for value: "cipher_1" */
+        /**
+         * Enum CIPHER_1 for value: "cipher_1"
+         */
         public static final CipherEnum CIPHER_1 = new CipherEnum("cipher_1");
 
-        /** Enum CIPHER_2 for value: "cipher_2" */
+        /**
+         * Enum CIPHER_2 for value: "cipher_2"
+         */
         public static final CipherEnum CIPHER_2 = new CipherEnum("cipher_2");
 
-        /** Enum CIPHER_3 for value: "cipher_3" */
+        /**
+         * Enum CIPHER_3 for value: "cipher_3"
+         */
         public static final CipherEnum CIPHER_3 = new CipherEnum("cipher_3");
 
-        /** Enum CIPHER_4 for value: "cipher_4" */
+        /**
+         * Enum CIPHER_4 for value: "cipher_4"
+         */
         public static final CipherEnum CIPHER_4 = new CipherEnum("cipher_4");
 
-        /** Enum CIPHER_DEFAULT for value: "cipher_default" */
+        /**
+         * Enum CIPHER_DEFAULT for value: "cipher_default"
+         */
         public static final CipherEnum CIPHER_DEFAULT = new CipherEnum("cipher_default");
 
         private static final Map<String, CipherEnum> STATIC_FIELDS = createStaticFields();
@@ -299,9 +318,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -315,9 +335,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -331,9 +352,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建的云模式防护域名
-     * 
-     * @return hostname */
+    /**
+     * 创建的云模式防护域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -347,9 +369,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 账户id
-     * 
-     * @return domainid */
+    /**
+     * 账户id
+     * @return domainid
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -363,9 +386,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** cname前缀
-     * 
-     * @return accessCode */
+    /**
+     * cname前缀
+     * @return accessCode
+     */
     public String getAccessCode() {
         return accessCode;
     }
@@ -379,9 +403,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 后端协议类型
-     * 
-     * @return protocol */
+    /**
+     * 后端协议类型
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -411,9 +436,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 源站信息
-     * 
-     * @return server */
+    /**
+     * 源站信息
+     * @return server
+     */
     public List<CloudWafServer> getServer() {
         return server;
     }
@@ -427,9 +453,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id
-     * 
-     * @return certificateid */
+    /**
+     * 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id
+     * @return certificateid
+     */
     public String getCertificateid() {
         return certificateid;
     }
@@ -443,9 +470,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名，通过查询证书列表接口（ListCertificates）接口获取证书id
-     * 
-     * @return certificatename */
+    /**
+     * 证书名，通过查询证书列表接口（ListCertificates）接口获取证书id
+     * @return certificatename
+     */
     public String getCertificatename() {
         return certificatename;
     }
@@ -459,9 +487,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启了代理
-     * 
-     * @return proxy */
+    /**
+     * 是否开启了代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -475,9 +504,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 锁定状态,默认为0
-     * 
-     * @return locked */
+    /**
+     * 锁定状态,默认为0
+     * @return locked
+     */
     public Integer getLocked() {
         return locked;
     }
@@ -491,9 +521,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -507,9 +538,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 接入状态
-     * 
-     * @return accessStatus */
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -523,9 +555,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建防护域名的时间
-     * 
-     * @return timestamp */
+    /**
+     * 创建防护域名的时间
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -539,9 +572,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** ssl协议版本
-     * 
-     * @return tls */
+    /**
+     * ssl协议版本
+     * @return tls
+     */
     public TlsEnum getTls() {
         return tls;
     }
@@ -555,14 +589,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
-     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
-     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
-     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
-     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
-     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
-     * 
-     * @return cipher */
+    /**
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * @return cipher
+     */
     public CipherEnum getCipher() {
         return cipher;
     }
@@ -576,9 +606,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -601,9 +632,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** Get blockPage
-     * 
-     * @return blockPage */
+    /**
+     * Get blockPage
+     * @return blockPage
+     */
     public BlockPage getBlockPage() {
         return blockPage;
     }
@@ -617,9 +649,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名名称
-     * 
-     * @return webTag */
+    /**
+     * 域名名称
+     * @return webTag
+     */
     public Boolean getWebTag() {
         return webTag;
     }
@@ -642,9 +675,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** Get flag
-     * 
-     * @return flag */
+    /**
+     * Get flag
+     * @return flag
+     */
     public Flag getFlag() {
         return flag;
     }
@@ -658,9 +692,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否使用独享ip
-     * 
-     * @return exclusiveIp */
+    /**
+     * 是否使用独享ip
+     * @return exclusiveIp
+     */
     public Boolean getExclusiveIp() {
         return exclusiveIp;
     }
@@ -674,9 +709,10 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名描述
-     * 
-     * @return description */
+    /**
+     * 域名描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -774,7 +810,10 @@ public class UpdateHostResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ShowImageWatermarkWithImageRequestBody */
+/**
+ * ShowImageWatermarkWithImageRequestBody
+ */
 public class ShowImageWatermarkWithImageRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
@@ -22,9 +24,10 @@ public class ShowImageWatermarkWithImageRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 待提取暗水印的图片文件。
-     * 
-     * @return file */
+    /**
+     * 待提取暗水印的图片文件。
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -87,7 +90,10 @@ public class ShowImageWatermarkWithImageRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

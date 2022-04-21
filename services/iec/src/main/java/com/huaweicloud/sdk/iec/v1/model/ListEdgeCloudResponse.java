@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEdgeCloudResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务数量。
-     * 
-     * @return count */
+    /**
+     * 边缘业务数量。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务列表。
-     * 
-     * @return edgeclouds */
+    /**
+     * 边缘业务列表。
+     * @return edgeclouds
+     */
     public List<EdgeCloud> getEdgeclouds() {
         return edgeclouds;
     }
@@ -98,7 +102,10 @@ public class ListEdgeCloudResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

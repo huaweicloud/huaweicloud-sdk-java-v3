@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateSnapshotSettingReq */
+/**
+ * UpdateSnapshotSettingReq
+ */
 public class UpdateSnapshotSettingReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateSnapshotSettingReq {
         return this;
     }
 
-    /** 备份使用的OBS桶，如果桶已经存放快照数据了，不可更改。
-     * 
-     * @return bucket */
+    /**
+     * 备份使用的OBS桶，如果桶已经存放快照数据了，不可更改。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -44,9 +47,10 @@ public class UpdateSnapshotSettingReq {
         return this;
     }
 
-    /** 访问OBS使用的IAM委托名称。
-     * 
-     * @return agency */
+    /**
+     * 访问OBS使用的IAM委托名称。
+     * @return agency
+     */
     public String getAgency() {
         return agency;
     }
@@ -60,9 +64,10 @@ public class UpdateSnapshotSettingReq {
         return this;
     }
 
-    /** 快照在OBS桶中的存放路径。
-     * 
-     * @return basePath */
+    /**
+     * 快照在OBS桶中的存放路径。
+     * @return basePath
+     */
     public String getBasePath() {
         return basePath;
     }
@@ -101,7 +106,10 @@ public class UpdateSnapshotSettingReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

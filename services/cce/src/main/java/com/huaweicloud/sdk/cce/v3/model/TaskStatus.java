@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaskStatus */
+/**
+ * TaskStatus
+ */
 public class TaskStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class TaskStatus {
         return this;
     }
 
-    /** 任务ID，供调用者查询任务进度。
-     * 
-     * @return jobID */
+    /**
+     * 任务ID，供调用者查询任务进度。
+     * @return jobID
+     */
     public String getJobID() {
         return jobID;
     }
@@ -55,7 +58,10 @@ public class TaskStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 磁盘组信息，系统盘必选，数据盘可选。 */
+/**
+ * 磁盘组信息，系统盘必选，数据盘可选。
+ */
 public class DiskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,28 +21,39 @@ public class DiskInfo {
 
     private Integer size;
 
-    /** 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。 SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型)
-     * uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
-     * 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
-     * 了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 */
+    /**
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型) uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     */
     public static final class VolumeTypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
 
-        /** Enum CO_PL for value: "co-pl" */
+        /**
+         * Enum CO_PL for value: "co-pl"
+         */
         public static final VolumeTypeEnum CO_PL = new VolumeTypeEnum("co-pl");
 
-        /** Enum UH_11 for value: "uh-11" */
+        /**
+         * Enum UH_11 for value: "uh-11"
+         */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
 
-        /** Enum GPSSD for value: "GPSSD" */
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
         public static final VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,13 +127,19 @@ public class DiskInfo {
 
     private VolumeTypeEnum volumeType;
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。 */
+    /**
+     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。
+     */
     public static final class DiskTypeEnum {
 
-        /** Enum SYS for value: "SYS" */
+        /**
+         * Enum SYS for value: "SYS"
+         */
         public static final DiskTypeEnum SYS = new DiskTypeEnum("SYS");
 
-        /** Enum DATA for value: "DATA" */
+        /**
+         * Enum DATA for value: "DATA"
+         */
         public static final DiskTypeEnum DATA = new DiskTypeEnum("DATA");
 
         private static final Map<String, DiskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -215,9 +234,12 @@ public class DiskInfo {
         return this;
     }
 
-    /** 磁盘大小，容量单位为GB。系统盘输入大小范围为1~1024，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。 minimum: 10 maximum: 32768
-     * 
-     * @return size */
+    /**
+     * 磁盘大小，容量单位为GB。系统盘输入大小范围为1~1024，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。
+     * minimum: 10
+     * maximum: 32768
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -231,12 +253,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。 SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型)
-     * uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。 说明：
-     * 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
-     * 了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
-     * 
-     * @return volumeType */
+    /**
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  SATA：普通IO磁盘类型。 SAS：高IO磁盘类型。 SSD：超高IO磁盘类型。 GPSSD：通用型SSD磁盘类型。 co-p1：高IO (性能优化Ⅰ型) uh-l1：超高IO (时延优化) 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * @return volumeType
+     */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -250,9 +270,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。
-     * 
-     * @return diskType */
+    /**
+     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 说明： 系统盘不支持加密。
+     * @return diskType
+     */
     public DiskTypeEnum getDiskType() {
         return diskType;
     }
@@ -266,9 +287,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 云服务器的磁盘可指定创建在用户的专属存储中，需要指定专属存储ID。说明：同一个伸缩配置中的磁盘需统一指定或统一不指定专属存储，不支持混用；当指定专属存储时，所有专属存储需要属于同一个可用分区，且每个磁盘选择的专属存储支持的磁盘类型都需要和参数volume_type保持一致。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 云服务器的磁盘可指定创建在用户的专属存储中，需要指定专属存储ID。说明：同一个伸缩配置中的磁盘需统一指定或统一不指定专属存储，不支持混用；当指定专属存储时，所有专属存储需要属于同一个可用分区，且每个磁盘选择的专属存储支持的磁盘类型都需要和参数volume_type保持一致。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -282,9 +304,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 云服务器的数据盘可指定从数据盘镜像导出，需要指定数据盘镜像ID。
-     * 
-     * @return dataDiskImageId */
+    /**
+     * 云服务器的数据盘可指定从数据盘镜像导出，需要指定数据盘镜像ID。
+     * @return dataDiskImageId
+     */
     public String getDataDiskImageId() {
         return dataDiskImageId;
     }
@@ -298,9 +321,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** 当选择使用整机镜像时，云服务器的系统盘及数据盘将通过整机备份恢复，需要指定磁盘备份的快照ID。说明：磁盘备份的快照ID可通过镜像的整机备份ID在CSBS查询备份详情获得；一个伸缩配置中的每一个disk需要通过snapshot_id和整机备份中的磁盘备份一一对应。
-     * 
-     * @return snapshotId */
+    /**
+     * 当选择使用整机镜像时，云服务器的系统盘及数据盘将通过整机备份恢复，需要指定磁盘备份的快照ID。说明：磁盘备份的快照ID可通过镜像的整机备份ID在CSBS查询备份详情获得；一个伸缩配置中的每一个disk需要通过snapshot_id和整机备份中的磁盘备份一一对应。
+     * @return snapshotId
+     */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -323,9 +347,10 @@ public class DiskInfo {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -370,7 +395,10 @@ public class DiskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

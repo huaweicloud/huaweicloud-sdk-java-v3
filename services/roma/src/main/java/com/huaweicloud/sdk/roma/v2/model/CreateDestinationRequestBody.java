@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateDestinationRequestBody */
+/**
+ * CreateDestinationRequestBody
+ */
 public class CreateDestinationRequestBody {
 
-    /** 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备 */
+    /**
+     * 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备
+     */
     public static final class DestinationTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final DestinationTypeEnum NUMBER_0 = new DestinationTypeEnum(0);
 
-        /** Enum NUMBER_7 for value: 7 */
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
         public static final DestinationTypeEnum NUMBER_7 = new DestinationTypeEnum(7);
 
         private static final Map<Integer, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +147,12 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备 minimum: 0 maximum: 10
-     * 
-     * @return destinationType */
+    /**
+     * 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备
+     * minimum: 0
+     * maximum: 10
+     * @return destinationType
+     */
     public DestinationTypeEnum getDestinationType() {
         return destinationType;
     }
@@ -155,9 +166,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 应用ID，目标端为0时需明确对方的APP_ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID，目标端为0时需明确对方的APP_ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -171,9 +183,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标数据源名称
-     * 
-     * @return destinationName */
+    /**
+     * 目标数据源名称
+     * @return destinationName
+     */
     public String getDestinationName() {
         return destinationName;
     }
@@ -187,9 +200,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标数据源主题，从MQS服务中获取已有topic
-     * 
-     * @return topic */
+    /**
+     * 目标数据源主题，从MQS服务中获取已有topic
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -203,9 +217,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标端数据源服务，连接地址
-     * 
-     * @return server */
+    /**
+     * 目标端数据源服务，连接地址
+     * @return server
+     */
     public String getServer() {
         return server;
     }
@@ -219,9 +234,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标端数据源token
-     * 
-     * @return token */
+    /**
+     * 目标端数据源token
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -235,9 +251,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标数据源标签
-     * 
-     * @return tag */
+    /**
+     * 目标数据源标签
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -251,9 +268,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标端数据源MQS的SASL字段是否需要支持SSL加密
-     * 
-     * @return mqsSaslSsl */
+    /**
+     * 目标端数据源MQS的SASL字段是否需要支持SSL加密
+     * @return mqsSaslSsl
+     */
     public Boolean getMqsSaslSsl() {
         return mqsSaslSsl;
     }
@@ -267,9 +285,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标数据源用户名
-     * 
-     * @return userName */
+    /**
+     * 目标数据源用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -283,9 +302,10 @@ public class CreateDestinationRequestBody {
         return this;
     }
 
-    /** 目标数据源密码
-     * 
-     * @return password */
+    /**
+     * 目标数据源密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -339,7 +359,10 @@ public class CreateDestinationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InnodbLock */
+/**
+ * InnodbLock
+ */
 public class InnodbLock {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 锁ID
-     * 
-     * @return lockId */
+    /**
+     * 锁ID
+     * @return lockId
+     */
     public String getLockId() {
         return lockId;
     }
@@ -79,9 +82,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 事务ID
-     * 
-     * @return lockTrxId */
+    /**
+     * 事务ID
+     * @return lockTrxId
+     */
     public String getLockTrxId() {
         return lockTrxId;
     }
@@ -95,9 +99,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 锁模式，取值为S[,GAP], X[,GAP], IS[,GAP], IX[,GAP], AUTO_INC, and UNKNOWN。
-     * 
-     * @return lockMode */
+    /**
+     * 锁模式，取值为S[,GAP], X[,GAP], IS[,GAP], IX[,GAP], AUTO_INC, and UNKNOWN。
+     * @return lockMode
+     */
     public String getLockMode() {
         return lockMode;
     }
@@ -111,9 +116,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 锁类型，取值为RECORD或TABLE。RECORD为行锁, TABLE为表锁
-     * 
-     * @return lockType */
+    /**
+     * 锁类型，取值为RECORD或TABLE。RECORD为行锁, TABLE为表锁
+     * @return lockType
+     */
     public String getLockType() {
         return lockType;
     }
@@ -127,9 +133,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 加锁的表
-     * 
-     * @return lockTable */
+    /**
+     * 加锁的表
+     * @return lockTable
+     */
     public String getLockTable() {
         return lockTable;
     }
@@ -143,9 +150,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 如果是lock_type='RECORD' 行级锁 ,为锁住的索引，如果是表锁为null
-     * 
-     * @return lockIndex */
+    /**
+     * 如果是lock_type='RECORD' 行级锁 ,为锁住的索引，如果是表锁为null
+     * @return lockIndex
+     */
     public String getLockIndex() {
         return lockIndex;
     }
@@ -159,9 +167,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 如果是lock_type='RECORD' 行级锁 ,为锁住的索引，如果是表锁为null
-     * 
-     * @return lockSpace */
+    /**
+     * 如果是lock_type='RECORD' 行级锁 ,为锁住的索引，如果是表锁为null
+     * @return lockSpace
+     */
     public String getLockSpace() {
         return lockSpace;
     }
@@ -175,9 +184,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 如果是lock_type='RECORD' 行级锁 ,为锁住的页号，如果是表锁为null
-     * 
-     * @return lockPage */
+    /**
+     * 如果是lock_type='RECORD' 行级锁 ,为锁住的页号，如果是表锁为null
+     * @return lockPage
+     */
     public String getLockPage() {
         return lockPage;
     }
@@ -191,9 +201,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 如果是lock_type='RECORD' 行级锁 ,为锁住的堆号，如果是表锁为null
-     * 
-     * @return lockRec */
+    /**
+     * 如果是lock_type='RECORD' 行级锁 ,为锁住的堆号，如果是表锁为null
+     * @return lockRec
+     */
     public String getLockRec() {
         return lockRec;
     }
@@ -207,9 +218,10 @@ public class InnodbLock {
         return this;
     }
 
-    /** 事务锁住的主键值，若是表锁，则该值为null
-     * 
-     * @return lockData */
+    /**
+     * 事务锁住的主键值，若是表锁，则该值为null
+     * @return lockData
+     */
     public String getLockData() {
         return lockData;
     }
@@ -260,7 +272,10 @@ public class InnodbLock {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

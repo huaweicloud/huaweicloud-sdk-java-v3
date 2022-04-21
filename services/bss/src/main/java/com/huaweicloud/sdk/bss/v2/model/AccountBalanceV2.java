@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AccountBalanceV2 */
+/**
+ * AccountBalanceV2
+ */
 public class AccountBalanceV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 账户标识。
-     * 
-     * @return accountId */
+    /**
+     * 账户标识。
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -69,9 +72,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 账户类型： 1：余额2：信用5：奖励7：保证金8：可拨款
-     * 
-     * @return accountType */
+    /**
+     * 账户类型： 1：余额2：信用5：奖励7：保证金8：可拨款
+     * @return accountType
+     */
     public Integer getAccountType() {
         return accountType;
     }
@@ -85,9 +89,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 账户余额。
-     * 
-     * @return amount */
+    /**
+     * 账户余额。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -101,9 +106,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 币种。 CNY：人民币。
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -117,9 +123,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 专款专用余额。
-     * 
-     * @return designatedAmount */
+    /**
+     * 专款专用余额。
+     * @return designatedAmount
+     */
     public Double getDesignatedAmount() {
         return designatedAmount;
     }
@@ -133,9 +140,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 总信用额度。只有account_type取值为2时，该字段才有效。
-     * 
-     * @return creditAmount */
+    /**
+     * 总信用额度。只有account_type取值为2时，该字段才有效。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -149,9 +157,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 度量单位。 1：元。
-     * 
-     * @return measureId */
+    /**
+     * 度量单位。 1：元。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -165,9 +174,10 @@ public class AccountBalanceV2 {
         return this;
     }
 
-    /** 备注。
-     * 
-     * @return memo */
+    /**
+     * 备注。
+     * @return memo
+     */
     public String getMemo() {
         return memo;
     }
@@ -216,7 +226,10 @@ public class AccountBalanceV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

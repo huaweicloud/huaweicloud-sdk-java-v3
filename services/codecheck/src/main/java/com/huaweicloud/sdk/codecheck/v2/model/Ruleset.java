@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建规则集信息 */
+/**
+ * 创建规则集信息
+ */
 public class Ruleset {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -72,9 +75,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 新规则集名称
-     * 
-     * @return templateName */
+    /**
+     * 新规则集名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -88,9 +92,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 规则集语言
-     * 
-     * @return language */
+    /**
+     * 规则集语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -104,9 +109,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 如果有基于的规则集则是1，没有基于的规则集则是0
-     * 
-     * @return isDefault */
+    /**
+     * 如果有基于的规则集则是1，没有基于的规则集则是0
+     * @return isDefault
+     */
     public String getIsDefault() {
         return isDefault;
     }
@@ -120,9 +126,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 新启用规则ids
-     * 
-     * @return ruleIds */
+    /**
+     * 新启用规则ids
+     * @return ruleIds
+     */
     public String getRuleIds() {
         return ruleIds;
     }
@@ -136,9 +143,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 新关闭规则id
-     * 
-     * @return uncheckIds */
+    /**
+     * 新关闭规则id
+     * @return uncheckIds
+     */
     public String getUncheckIds() {
         return uncheckIds;
     }
@@ -152,9 +160,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 规则集ID
-     * 
-     * @return templateId */
+    /**
+     * 规则集ID
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -184,9 +193,10 @@ public class Ruleset {
         return this;
     }
 
-    /** 自定义规则参数项，支持修改规则阈值
-     * 
-     * @return customAttributes */
+    /**
+     * 自定义规则参数项，支持修改规则阈值
+     * @return customAttributes
+     */
     public List<CustomAttributes> getCustomAttributes() {
         return customAttributes;
     }
@@ -234,7 +244,10 @@ public class Ruleset {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

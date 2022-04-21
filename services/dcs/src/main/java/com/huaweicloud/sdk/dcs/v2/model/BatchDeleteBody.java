@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteBody */
+/**
+ * BatchDeleteBody
+ */
 public class BatchDeleteBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteBody {
         return this;
     }
 
-    /** 实例的ID列表。 仅当URI中参数all_failure值为“false”或者其他值时，才需要配置该参数。
-     * 
-     * @return instances */
+    /**
+     * 实例的ID列表。  仅当URI中参数all_failure值为“false”或者其他值时，才需要配置该参数。 
+     * @return instances
+     */
     public List<String> getInstances() {
         return instances;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

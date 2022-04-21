@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘站点对象类型 */
+/**
+ * 边缘站点对象类型
+ */
 public class Site {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class Site {
         return this;
     }
 
-    /** 边缘站点ID。
-     * 
-     * @return id */
+    /**
+     * 边缘站点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -97,9 +100,10 @@ public class Site {
         return this;
     }
 
-    /** 边缘站点名称。
-     * 
-     * @return name */
+    /**
+     * 边缘站点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -113,9 +117,10 @@ public class Site {
         return this;
     }
 
-    /** 站点所在城市。
-     * 
-     * @return city */
+    /**
+     * 站点所在城市。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -129,9 +134,10 @@ public class Site {
         return this;
     }
 
-    /** 城市的国际化名称。
-     * 
-     * @return i18nCity */
+    /**
+     * 城市的国际化名称。
+     * @return i18nCity
+     */
     public String getI18nCity() {
         return i18nCity;
     }
@@ -145,9 +151,10 @@ public class Site {
         return this;
     }
 
-    /** 站点所在省份。
-     * 
-     * @return province */
+    /**
+     * 站点所在省份。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -161,9 +168,10 @@ public class Site {
         return this;
     }
 
-    /** 省份的国际化名称。
-     * 
-     * @return i18nProvince */
+    /**
+     * 省份的国际化名称。
+     * @return i18nProvince
+     */
     public String getI18nProvince() {
         return i18nProvince;
     }
@@ -177,9 +185,10 @@ public class Site {
         return this;
     }
 
-    /** 所在大区。
-     * 
-     * @return area */
+    /**
+     * 所在大区。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -193,9 +202,10 @@ public class Site {
         return this;
     }
 
-    /** 大区的国际化名称。
-     * 
-     * @return i18nArea */
+    /**
+     * 大区的国际化名称。
+     * @return i18nArea
+     */
     public String getI18nArea() {
         return i18nArea;
     }
@@ -209,9 +219,10 @@ public class Site {
         return this;
     }
 
-    /** 站点所在的国家。
-     * 
-     * @return country */
+    /**
+     * 站点所在的国家。
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -225,9 +236,10 @@ public class Site {
         return this;
     }
 
-    /** 国家的国际化名称。
-     * 
-     * @return i18nCountry */
+    /**
+     * 国家的国际化名称。
+     * @return i18nCountry
+     */
     public String getI18nCountry() {
         return i18nCountry;
     }
@@ -241,9 +253,10 @@ public class Site {
         return this;
     }
 
-    /** 站点当前的状态。 取值范围： - Normal(正常商用) - Obt(公测) - Gray(灰度) - Offline(下线) - Promotion(推荐，也是商用) - sellout(售罄)
-     * 
-     * @return status */
+    /**
+     * 站点当前的状态。  取值范围： - Normal(正常商用) - Obt(公测) - Gray(灰度) - Offline(下线) - Promotion(推荐，也是商用) - sellout(售罄)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -273,9 +286,10 @@ public class Site {
         return this;
     }
 
-    /** 站点IP线路列表。
-     * 
-     * @return pools */
+    /**
+     * 站点IP线路列表。
+     * @return pools
+     */
     public List<IpPool> getPools() {
         return pools;
     }
@@ -289,9 +303,10 @@ public class Site {
         return this;
     }
 
-    /** 城市名称缩写。
-     * 
-     * @return cityShortName */
+    /**
+     * 城市名称缩写。
+     * @return cityShortName
+     */
     public String getCityShortName() {
         return cityShortName;
     }
@@ -356,7 +371,10 @@ public class Site {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

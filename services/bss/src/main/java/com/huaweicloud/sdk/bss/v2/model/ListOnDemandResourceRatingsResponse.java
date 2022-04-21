@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 折扣的金额。
-     * 
-     * @return amount */
+    /**
+     * 折扣的金额。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -63,9 +66,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 优惠额（官网价和总价的差）。
-     * 
-     * @return discountAmount */
+    /**
+     * 优惠额（官网价和总价的差）。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -79,9 +83,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 按需产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 按需产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -95,9 +100,12 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 度量单位标识。 1：元 minimum: 1 maximum: 4
-     * 
-     * @return measureId */
+    /**
+     * 度量单位标识。 1：元
+     * minimum: 1
+     * maximum: 4
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -111,9 +119,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 币种。 CNY：人民币。 值为空代表人民币。
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币。 值为空代表人民币。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -146,9 +155,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品询价结果，具体参见表2。
-     * 
-     * @return productRatingResults */
+    /**
+     * 产品询价结果，具体参见表2。
+     * @return productRatingResults
+     */
     public List<DemandProductRatingResult> getProductRatingResults() {
         return productRatingResults;
     }
@@ -194,7 +204,10 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

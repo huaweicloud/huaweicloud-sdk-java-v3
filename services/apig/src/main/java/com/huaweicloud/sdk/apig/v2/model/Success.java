@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Success */
+/**
+ * Success
+ */
 public class Success {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class Success {
 
     private String method;
 
-    /** 导入行为： - update：表示更新API - create：表示新建API */
+    /**
+     * 导入行为： - update：表示更新API - create：表示新建API
+     */
     public static final class ActionEnum {
 
-        /** Enum UPDATE for value: "update" */
+        /**
+         * Enum UPDATE for value: "update"
+         */
         public static final ActionEnum UPDATE = new ActionEnum("update");
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class Success {
         return this;
     }
 
-    /** API请求路径
-     * 
-     * @return path */
+    /**
+     * API请求路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -125,9 +134,10 @@ public class Success {
         return this;
     }
 
-    /** API请求方法
-     * 
-     * @return method */
+    /**
+     * API请求方法
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -141,9 +151,10 @@ public class Success {
         return this;
     }
 
-    /** 导入行为： - update：表示更新API - create：表示新建API
-     * 
-     * @return action */
+    /**
+     * 导入行为： - update：表示更新API - create：表示新建API
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -157,9 +168,10 @@ public class Success {
         return this;
     }
 
-    /** 导入成功的API编号
-     * 
-     * @return id */
+    /**
+     * 导入成功的API编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -198,7 +210,10 @@ public class Success {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

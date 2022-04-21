@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BachTags */
+/**
+ * BachTags
+ */
 public class BachTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BachTags {
         return this;
     }
 
-    /** 标签列表
-     * 
-     * @return tags */
+    /**
+     * 标签列表
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -58,9 +61,10 @@ public class BachTags {
         return this;
     }
 
-    /** 操作标识：仅限于create（创建）、delete（删除）
-     * 
-     * @return action */
+    /**
+     * 操作标识：仅限于create（创建）、delete（删除）
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -96,7 +100,10 @@ public class BachTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

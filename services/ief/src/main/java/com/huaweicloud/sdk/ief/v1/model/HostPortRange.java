@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 主机端口范围，在范围内为应用实例自动分配主机端口；与主机端口参数二选一；仅铂金版可用 */
+/**
+ * 主机端口范围，在范围内为应用实例自动分配主机端口；与主机端口参数二选一；仅铂金版可用
+ */
 public class HostPortRange {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class HostPortRange {
         return this;
     }
 
-    /** 主机端口下限制,1到65535之间的整数
-     * 
-     * @return minPort */
+    /**
+     * 主机端口下限制,1到65535之间的整数
+     * @return minPort
+     */
     public Integer getMinPort() {
         return minPort;
     }
@@ -39,9 +42,10 @@ public class HostPortRange {
         return this;
     }
 
-    /** 主机端口上限值,1到65535之间的整数；max_port需大于min_port
-     * 
-     * @return maxPort */
+    /**
+     * 主机端口上限值,1到65535之间的整数；max_port需大于min_port
+     * @return maxPort
+     */
     public Integer getMaxPort() {
         return maxPort;
     }
@@ -78,7 +82,10 @@ public class HostPortRange {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

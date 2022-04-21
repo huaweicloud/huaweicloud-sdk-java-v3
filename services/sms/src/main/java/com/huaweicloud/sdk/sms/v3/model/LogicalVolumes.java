@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 逻辑卷信息 */
+/**
+ * 逻辑卷信息
+ */
 public class LogicalVolumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 块数量 minimum: 0 maximum: 4294967296
-     * 
-     * @return blockCount */
+    /**
+     * 块数量
+     * minimum: 0
+     * maximum: 4294967296
+     * @return blockCount
+     */
     public Integer getBlockCount() {
         return blockCount;
     }
@@ -74,9 +79,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 块大小 minimum: 0 maximum: 1048576
-     * 
-     * @return blockSize */
+    /**
+     * 块大小
+     * minimum: 0
+     * maximum: 1048576
+     * @return blockSize
+     */
     public Long getBlockSize() {
         return blockSize;
     }
@@ -90,9 +98,10 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 文件系统
-     * 
-     * @return fileSystem */
+    /**
+     * 文件系统
+     * @return fileSystem
+     */
     public String getFileSystem() {
         return fileSystem;
     }
@@ -106,9 +115,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** inode数量 minimum: 0 maximum: 4294967296
-     * 
-     * @return inodeSize */
+    /**
+     * inode数量
+     * minimum: 0
+     * maximum: 4294967296
+     * @return inodeSize
+     */
     public Integer getInodeSize() {
         return inodeSize;
     }
@@ -122,9 +134,10 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 挂载点
-     * 
-     * @return mountPoint */
+    /**
+     * 挂载点
+     * @return mountPoint
+     */
     public String getMountPoint() {
         return mountPoint;
     }
@@ -138,9 +151,10 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -154,9 +168,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -170,9 +187,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 使用大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return usedSize */
+    /**
+     * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -186,9 +206,12 @@ public class LogicalVolumes {
         return this;
     }
 
-    /** 剩余空间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return freeSize */
+    /**
+     * 剩余空间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return freeSize
+     */
     public Long getFreeSize() {
         return freeSize;
     }
@@ -238,7 +261,10 @@ public class LogicalVolumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

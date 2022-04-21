@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OutputThumbnailPara */
+/**
+ * OutputThumbnailPara
+ */
 public class OutputThumbnailPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,12 @@ public class OutputThumbnailPara {
         return this;
     }
 
-    /** 抽帧图片张数 minimum: 0 maximum: 2147483647
-     * 
-     * @return totalPictures */
+    /**
+     * 抽帧图片张数 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return totalPictures
+     */
     public Integer getTotalPictures() {
         return totalPictures;
     }
@@ -55,9 +60,12 @@ public class OutputThumbnailPara {
         return this;
     }
 
-    /** 抽帧图片宽度 minimum: 0 maximum: 2147483647
-     * 
-     * @return width */
+    /**
+     * 抽帧图片宽度 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -71,9 +79,12 @@ public class OutputThumbnailPara {
         return this;
     }
 
-    /** 抽帧图片高度 minimum: 0 maximum: 2147483647
-     * 
-     * @return height */
+    /**
+     * 抽帧图片高度 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -87,9 +98,10 @@ public class OutputThumbnailPara {
         return this;
     }
 
-    /** 抽帧文件名
-     * 
-     * @return fileName */
+    /**
+     * 抽帧文件名 
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -112,9 +124,10 @@ public class OutputThumbnailPara {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -157,7 +170,10 @@ public class OutputThumbnailPara {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

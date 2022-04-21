@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListApplicationEndpointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/ListApplications.html)获取该标识。
-     * 
-     * @return applicationUrn */
+    /**
+     * Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/ListApplications.html)获取该标识。
+     * @return applicationUrn
+     */
     public String getApplicationUrn() {
         return applicationUrn;
     }
@@ -59,9 +62,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** 偏移量。 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -75,9 +79,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** 查询的数量限制。 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
-     * 
-     * @return limit */
+    /**
+     * 查询的数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -91,9 +96,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** 设备是否可用，值为true或false字符串。
-     * 
-     * @return enabled */
+    /**
+     * 设备是否可用，值为true或false字符串。
+     * @return enabled
+     */
     public String getEnabled() {
         return enabled;
     }
@@ -107,9 +113,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** 设备token，最大长度512个字节。
-     * 
-     * @return token */
+    /**
+     * 设备token，最大长度512个字节。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -123,9 +130,10 @@ public class ListApplicationEndpointsRequest {
         return this;
     }
 
-    /** 用户数据，最大长度2048个字节。
-     * 
-     * @return userData */
+    /**
+     * 用户数据，最大长度2048个字节。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -170,7 +178,10 @@ public class ListApplicationEndpointsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

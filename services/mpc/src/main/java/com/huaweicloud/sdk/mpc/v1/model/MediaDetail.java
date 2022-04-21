@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MediaDetail */
+/**
+ * MediaDetail
+ */
 public class MediaDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class MediaDetail {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return features */
+    /**
+     * 任务名称
+     * @return features
+     */
     public List<String> getFeatures() {
         return features;
     }
@@ -82,9 +85,10 @@ public class MediaDetail {
         return this;
     }
 
-    /** Get originPara
-     * 
-     * @return originPara */
+    /**
+     * Get originPara
+     * @return originPara
+     */
     public OriginPara getOriginPara() {
         return originPara;
     }
@@ -114,9 +118,10 @@ public class MediaDetail {
         return this;
     }
 
-    /** 多路输出片源信息
-     * 
-     * @return outputVideoParas */
+    /**
+     * 多路输出片源信息
+     * @return outputVideoParas
+     */
     public List<OutputVideoPara> getOutputVideoParas() {
         return outputVideoParas;
     }
@@ -139,9 +144,10 @@ public class MediaDetail {
         return this;
     }
 
-    /** Get outputThumbnailPara
-     * 
-     * @return outputThumbnailPara */
+    /**
+     * Get outputThumbnailPara
+     * @return outputThumbnailPara
+     */
     public OutputThumbnailPara getOutputThumbnailPara() {
         return outputThumbnailPara;
     }
@@ -164,9 +170,10 @@ public class MediaDetail {
         return this;
     }
 
-    /** Get outputWatermarkParas
-     * 
-     * @return outputWatermarkParas */
+    /**
+     * Get outputWatermarkParas
+     * @return outputWatermarkParas
+     */
     public OutputWatermarkPara getOutputWatermarkParas() {
         return outputWatermarkParas;
     }
@@ -209,7 +216,10 @@ public class MediaDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

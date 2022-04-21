@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** eip字段数据结构说明 */
+/**
+ * eip字段数据结构说明
+ */
 public class Eip {
 
-    /** 弹性公网IP地址类型。类型枚举值：5_bgp、5_sbgp详情请参见《虚拟私有云API参考》申请弹性公网IP章节的publicip字段说明。 */
+    /**
+     * 弹性公网IP地址类型。类型枚举值：5_bgp、5_sbgp详情请参见《虚拟私有云API参考》申请弹性公网IP章节的publicip字段说明。
+     */
     public static final class IptypeEnum {
 
-        /** Enum _5_BGP for value: "5_bgp" */
+        /**
+         * Enum _5_BGP for value: "5_bgp"
+         */
         public static final IptypeEnum _5_BGP = new IptypeEnum("5_bgp");
 
-        /** Enum _5_SBGP for value: "5_sbgp" */
+        /**
+         * Enum _5_SBGP for value: "5_sbgp"
+         */
         public static final IptypeEnum _5_SBGP = new IptypeEnum("5_sbgp");
 
         private static final Map<String, IptypeEnum> STATIC_FIELDS = createStaticFields();
@@ -105,9 +113,10 @@ public class Eip {
         return this;
     }
 
-    /** 弹性公网IP地址类型。类型枚举值：5_bgp、5_sbgp详情请参见《虚拟私有云API参考》申请弹性公网IP章节的publicip字段说明。
-     * 
-     * @return iptype */
+    /**
+     * 弹性公网IP地址类型。类型枚举值：5_bgp、5_sbgp详情请参见《虚拟私有云API参考》申请弹性公网IP章节的publicip字段说明。
+     * @return iptype
+     */
     public IptypeEnum getIptype() {
         return iptype;
     }
@@ -130,9 +139,10 @@ public class Eip {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public BandWidth getBandwidth() {
         return bandwidth;
     }
@@ -155,9 +165,10 @@ public class Eip {
         return this;
     }
 
-    /** Get extendparam
-     * 
-     * @return extendparam */
+    /**
+     * Get extendparam
+     * @return extendparam
+     */
     public ExtendParamEip getExtendparam() {
         return extendparam;
     }
@@ -195,7 +206,10 @@ public class Eip {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

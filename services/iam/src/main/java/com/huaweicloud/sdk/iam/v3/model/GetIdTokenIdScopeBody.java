@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** scope信息 */
+/**
+ * scope信息
+ */
 public class GetIdTokenIdScopeBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class GetIdTokenIdScopeBody {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public GetIdTokenScopeDomainOrProjectBody getDomain() {
         return domain;
     }
@@ -58,9 +61,10 @@ public class GetIdTokenIdScopeBody {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public GetIdTokenScopeDomainOrProjectBody getProject() {
         return project;
     }
@@ -97,7 +101,10 @@ public class GetIdTokenIdScopeBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

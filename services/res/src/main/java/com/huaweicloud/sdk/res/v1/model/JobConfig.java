@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** JobConfig */
+/**
+ * JobConfig
+ */
 public class JobConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -145,9 +147,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get nearlineRecallParam
-     * 
-     * @return nearlineRecallParam */
+    /**
+     * Get nearlineRecallParam
+     * @return nearlineRecallParam
+     */
     public NearLineRecallParam getNearlineRecallParam() {
         return nearlineRecallParam;
     }
@@ -161,9 +164,12 @@ public class JobConfig {
         return this;
     }
 
-    /** 最大候选集个数（所有召回作业需提供此参数）。 minimum: 1 maximum: 200
-     * 
-     * @return maxRecommendedNum */
+    /**
+     * 最大候选集个数（所有召回作业需提供此参数）。
+     * minimum: 1
+     * maximum: 200
+     * @return maxRecommendedNum
+     */
     public Integer getMaxRecommendedNum() {
         return maxRecommendedNum;
     }
@@ -193,9 +199,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 匹配特征对（属性匹配召回作业需要提供此参数）。
-     * 
-     * @return matchFeaturePairs */
+    /**
+     * 匹配特征对（属性匹配召回作业需要提供此参数）。
+     * @return matchFeaturePairs
+     */
     public List<MatchFeaturePair> getMatchFeaturePairs() {
         return matchFeaturePairs;
     }
@@ -218,9 +225,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get striping
-     * 
-     * @return striping */
+    /**
+     * Get striping
+     * @return striping
+     */
     public Striping getStriping() {
         return striping;
     }
@@ -234,9 +242,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 匹配类型（属性匹配召回作业需提供此参数）： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
-     * 
-     * @return matchType */
+    /**
+     * 匹配类型（属性匹配召回作业需提供此参数）： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
+     * @return matchType
+     */
     public String getMatchType() {
         return matchType;
     }
@@ -259,9 +268,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get matrixFactorization
-     * 
-     * @return matrixFactorization */
+    /**
+     * Get matrixFactorization
+     * @return matrixFactorization
+     */
     public MatrixFactorization getMatrixFactorization() {
         return matrixFactorization;
     }
@@ -291,9 +301,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 行为频率信息（历史行为记忆召回作业、历史行为过滤作业需提供此参数）。
-     * 
-     * @return behaviorFrequencys */
+    /**
+     * 行为频率信息（历史行为记忆召回作业、历史行为过滤作业需提供此参数）。
+     * @return behaviorFrequencys
+     */
     public List<BehaviorFrequency> getBehaviorFrequencys() {
         return behaviorFrequencys;
     }
@@ -307,9 +318,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 文件路径（人工配置候选集作业需要提供此参数）。
-     * 
-     * @return filePath */
+    /**
+     * 文件路径（人工配置候选集作业需要提供此参数）。
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -332,9 +344,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get ucbParam
-     * 
-     * @return ucbParam */
+    /**
+     * Get ucbParam
+     * @return ucbParam
+     */
     public UcbParam getUcbParam() {
         return ucbParam;
     }
@@ -357,9 +370,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get behaviorGravity
-     * 
-     * @return behaviorGravity */
+    /**
+     * Get behaviorGravity
+     * @return behaviorGravity
+     */
     public BehaviorGravity getBehaviorGravity() {
         return behaviorGravity;
     }
@@ -382,9 +396,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get category
-     * 
-     * @return category */
+    /**
+     * Get category
+     * @return category
+     */
     public Category getCategory() {
         return category;
     }
@@ -398,9 +413,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 行为逻辑过滤（历史行为过滤作业需提供此参数）： - AND，同时满足则过滤 - OR， 满足一个则过滤
-     * 
-     * @return behaviorLogic */
+    /**
+     * 行为逻辑过滤（历史行为过滤作业需提供此参数）： - AND，同时满足则过滤 - OR， 满足一个则过滤
+     * @return behaviorLogic
+     */
     public String getBehaviorLogic() {
         return behaviorLogic;
     }
@@ -423,9 +439,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get featuresEngineering
-     * 
-     * @return featuresEngineering */
+    /**
+     * Get featuresEngineering
+     * @return featuresEngineering
+     */
     public EtlBasicParameter getFeaturesEngineering() {
         return featuresEngineering;
     }
@@ -448,9 +465,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get sampleParam
-     * 
-     * @return sampleParam */
+    /**
+     * Get sampleParam
+     * @return sampleParam
+     */
     public SampleParam getSampleParam() {
         return sampleParam;
     }
@@ -473,9 +491,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get deepLearningParameters
-     * 
-     * @return deepLearningParameters */
+    /**
+     * Get deepLearningParameters
+     * @return deepLearningParameters
+     */
     public DeepLearingParam getDeepLearningParameters() {
         return deepLearningParameters;
     }
@@ -499,9 +518,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get algorithmSpecifyParameters
-     * 
-     * @return algorithmSpecifyParameters */
+    /**
+     * Get algorithmSpecifyParameters
+     * @return algorithmSpecifyParameters
+     */
     public AlgorithmSpecifyParameters getAlgorithmSpecifyParameters() {
         return algorithmSpecifyParameters;
     }
@@ -515,9 +535,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 导入宽表（离线数据导入作业需要提供此参数）。
-     * 
-     * @return loadWidetable */
+    /**
+     * 导入宽表（离线数据导入作业需要提供此参数）。
+     * @return loadWidetable
+     */
     public Boolean getLoadWidetable() {
         return loadWidetable;
     }
@@ -531,9 +552,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 导入画像（离线数据导入作业需要提供此参数）。
-     * 
-     * @return loadProfile */
+    /**
+     * 导入画像（离线数据导入作业需要提供此参数）。
+     * @return loadProfile
+     */
     public Boolean getLoadProfile() {
         return loadProfile;
     }
@@ -547,9 +569,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 保留已有宽表（离线数据导入作业需要提供此参数）： - append，是 - new，否 - overwirte，覆盖
-     * 
-     * @return saveMode */
+    /**
+     * 保留已有宽表（离线数据导入作业需要提供此参数）： - append，是 - new，否 - overwirte，覆盖
+     * @return saveMode
+     */
     public String getSaveMode() {
         return saveMode;
     }
@@ -579,9 +602,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 统计指标（效果评估作业需要提供此参数）。
-     * 
-     * @return indicators */
+    /**
+     * 统计指标（效果评估作业需要提供此参数）。
+     * @return indicators
+     */
     public List<Indicator> getIndicators() {
         return indicators;
     }
@@ -595,9 +619,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 离线排序作业名称（在线训练任务需要提供此参数）。
-     * 
-     * @return offlineRankJobName */
+    /**
+     * 离线排序作业名称（在线训练任务需要提供此参数）。
+     * @return offlineRankJobName
+     */
     public String getOfflineRankJobName() {
         return offlineRankJobName;
     }
@@ -611,9 +636,10 @@ public class JobConfig {
         return this;
     }
 
-    /** 更新周期（在线训练任务需要提供此参数）。
-     * 
-     * @return updateInterval */
+    /**
+     * 更新周期（在线训练任务需要提供此参数）。
+     * @return updateInterval
+     */
     public Integer getUpdateInterval() {
         return updateInterval;
     }
@@ -636,9 +662,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get optimizer
-     * 
-     * @return optimizer */
+    /**
+     * Get optimizer
+     * @return optimizer
+     */
     public Optimizer getOptimizer() {
         return optimizer;
     }
@@ -661,9 +688,10 @@ public class JobConfig {
         return this;
     }
 
-    /** Get flows
-     * 
-     * @return flows */
+    /**
+     * Get flows
+     * @return flows
+     */
     public Flow getFlows() {
         return flows;
     }
@@ -764,7 +792,10 @@ public class JobConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

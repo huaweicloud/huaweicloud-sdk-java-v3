@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 示例字段对象 */
+/**
+ * 示例字段对象
+ */
 public class DemoField {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class DemoField {
 
     private String content;
 
-    /** 字段数据类型。 可选范围：string、long、float */
+    /**
+     * 字段数据类型。 可选范围：string、long、float
+     */
     public static final class TypeEnum {
 
-        /** Enum STRING for value: "string" */
+        /**
+         * Enum STRING for value: "string"
+         */
         public static final TypeEnum STRING = new TypeEnum("string");
 
-        /** Enum LONG for value: "long" */
+        /**
+         * Enum LONG for value: "long"
+         */
         public static final TypeEnum LONG = new TypeEnum("long");
 
-        /** Enum FLOAT for value: "float" */
+        /**
+         * Enum FLOAT for value: "float"
+         */
         public static final TypeEnum FLOAT = new TypeEnum("float");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -128,9 +138,10 @@ public class DemoField {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return fieldName */
+    /**
+     * 字段名称
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -144,9 +155,10 @@ public class DemoField {
         return this;
     }
 
-    /** 字段示例内容
-     * 
-     * @return content */
+    /**
+     * 字段示例内容
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -160,9 +172,10 @@ public class DemoField {
         return this;
     }
 
-    /** 字段数据类型。 可选范围：string、long、float
-     * 
-     * @return type */
+    /**
+     * 字段数据类型。 可选范围：string、long、float
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -176,9 +189,10 @@ public class DemoField {
         return this;
     }
 
-    /** 是否开启快速分析
-     * 
-     * @return isAnalysis */
+    /**
+     * 是否开启快速分析
+     * @return isAnalysis
+     */
     public Boolean getIsAnalysis() {
         return isAnalysis;
     }
@@ -192,9 +206,12 @@ public class DemoField {
         return this;
     }
 
-    /** 手动正则及分隔符方式中字段序号 minimum: 0 maximum: 200
-     * 
-     * @return index */
+    /**
+     * 手动正则及分隔符方式中字段序号
+     * minimum: 0
+     * maximum: 200
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -208,9 +225,10 @@ public class DemoField {
         return this;
     }
 
-    /** 描叙多层级json中字段间的层级关系
-     * 
-     * @return relation */
+    /**
+     * 描叙多层级json中字段间的层级关系
+     * @return relation
+     */
     public String getRelation() {
         return relation;
     }
@@ -224,9 +242,10 @@ public class DemoField {
         return this;
     }
 
-    /** json及nginx方式中字段自定义别名
-     * 
-     * @return userDefinedName */
+    /**
+     * json及nginx方式中字段自定义别名
+     * @return userDefinedName
+     */
     public String getUserDefinedName() {
         return userDefinedName;
     }
@@ -270,7 +289,10 @@ public class DemoField {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

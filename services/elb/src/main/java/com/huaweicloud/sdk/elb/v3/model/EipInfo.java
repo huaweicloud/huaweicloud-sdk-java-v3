@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性ip，同publicips */
+/**
+ * 弹性ip，同publicips
+ */
 public class EipInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class EipInfo {
         return this;
     }
 
-    /** eip_id
-     * 
-     * @return eipId */
+    /**
+     * eip_id
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -44,9 +47,10 @@ public class EipInfo {
         return this;
     }
 
-    /** eip_address
-     * 
-     * @return eipAddress */
+    /**
+     * eip_address
+     * @return eipAddress
+     */
     public String getEipAddress() {
         return eipAddress;
     }
@@ -60,9 +64,10 @@ public class EipInfo {
         return this;
     }
 
-    /** IP版本号，取值：4表示IPv4,6表示IPv6。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本号，取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -100,7 +105,10 @@ public class EipInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

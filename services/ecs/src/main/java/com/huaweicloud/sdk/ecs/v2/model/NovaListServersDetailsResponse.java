@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class NovaListServersDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class NovaListServersDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询云服务器信息列表。
-     * 
-     * @return servers */
+    /**
+     * 查询云服务器信息列表。
+     * @return servers
+     */
     public List<NovaServer> getServers() {
         return servers;
     }
@@ -75,9 +78,10 @@ public class NovaListServersDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页查询时，查询下一页数据链接。
-     * 
-     * @return serversLinks */
+    /**
+     * 分页查询时，查询下一页数据链接。
+     * @return serversLinks
+     */
     public List<PageLink> getServersLinks() {
         return serversLinks;
     }
@@ -114,7 +118,10 @@ public class NovaListServersDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

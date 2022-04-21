@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListLiveSampleLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ListLiveSampleLogsRequest {
         return this;
     }
 
-    /** 播放域名。
-     * 
-     * @return playDomain */
+    /**
+     * 播放域名。
+     * @return playDomain
+     */
     public String getPlayDomain() {
         return playDomain;
     }
@@ -45,9 +48,10 @@ public class ListLiveSampleLogsRequest {
         return this;
     }
 
-    /** 查询开始时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。仅支持查询最近3个月内的数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询开始时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。仅支持查询最近3个月内的数据。
+     * @return startTime
+     */
     public OffsetDateTime getStartTime() {
         return startTime;
     }
@@ -61,9 +65,10 @@ public class ListLiveSampleLogsRequest {
         return this;
     }
 
-    /** 查询结束时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。查询时间跨度不能大于7天。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。查询时间跨度不能大于7天。
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -102,7 +107,10 @@ public class ListLiveSampleLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

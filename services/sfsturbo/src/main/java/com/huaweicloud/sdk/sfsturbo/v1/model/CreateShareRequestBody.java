@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建文件系统参数body */
+/**
+ * 创建文件系统参数body
+ */
 public class CreateShareRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateShareRequestBody {
         return this;
     }
 
-    /** Get share
-     * 
-     * @return share */
+    /**
+     * Get share
+     * @return share
+     */
     public Share getShare() {
         return share;
     }
@@ -65,7 +68,10 @@ public class CreateShareRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Node */
+/**
+ * Node
+ */
 public class Node {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Node {
         return this;
     }
 
-    /** 节点EIP信息
-     * 
-     * @return ipPort */
+    /**
+     * 节点EIP信息
+     * @return ipPort
+     */
     public String getIpPort() {
         return ipPort;
     }
@@ -58,9 +61,10 @@ public class Node {
         return this;
     }
 
-    /** 节点所在通道数组
-     * 
-     * @return channels */
+    /**
+     * 节点所在通道数组
+     * @return channels
+     */
     public List<String> getChannels() {
         return channels;
     }
@@ -96,7 +100,10 @@ public class Node {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

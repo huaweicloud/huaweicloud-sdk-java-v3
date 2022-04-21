@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署任务执行时传递的参数 */
+/**
+ * 部署任务执行时传递的参数
+ */
 public class DynamicConfigInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,16 +33,24 @@ public class DynamicConfigInfo {
 
     private List<ParamTypeLimits> limits = null;
 
-    /** 类型，如果填写动态参数，则类型必选 */
+    /**
+    * 类型，如果填写动态参数，则类型必选
+    */
     public static final class TypeEnum {
 
-        /** Enum TEXT for value: "text" */
+        /**
+         * Enum TEXT for value: "text"
+         */
         public static final TypeEnum TEXT = new TypeEnum("text");
 
-        /** Enum HOST_GROUP for value: "host_group" */
+        /**
+         * Enum HOST_GROUP for value: "host_group"
+         */
         public static final TypeEnum HOST_GROUP = new TypeEnum("host_group");
 
-        /** Enum ENCRYPT for value: "encrypt" */
+        /**
+         * Enum ENCRYPT for value: "encrypt"
+         */
         public static final TypeEnum ENCRYPT = new TypeEnum("encrypt");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +131,10 @@ public class DynamicConfigInfo {
         return this;
     }
 
-    /** 执行部署任务时传递的参数名称
-     * 
-     * @return name */
+    /**
+     * 执行部署任务时传递的参数名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -137,9 +148,10 @@ public class DynamicConfigInfo {
         return this;
     }
 
-    /** 执行部署任务时传递的参数值
-     * 
-     * @return value */
+    /**
+     * 执行部署任务时传递的参数值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -169,9 +181,10 @@ public class DynamicConfigInfo {
         return this;
     }
 
-    /** 参数值为枚举类型时，返回可选值列表
-     * 
-     * @return limits */
+    /**
+     * 参数值为枚举类型时，返回可选值列表
+     * @return limits
+     */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -185,9 +198,10 @@ public class DynamicConfigInfo {
         return this;
     }
 
-    /** 类型，如果填写动态参数，则类型必选
-     * 
-     * @return type */
+    /**
+     * 类型，如果填写动态参数，则类型必选
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -201,9 +215,10 @@ public class DynamicConfigInfo {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -245,7 +260,10 @@ public class DynamicConfigInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

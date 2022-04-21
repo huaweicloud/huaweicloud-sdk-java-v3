@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DependJob */
+/**
+ * DependJob
+ */
 public class DependJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class DependJob {
 
     private String dependPeriod;
 
-    /** Gets or Sets dependFailPolicy */
+    /**
+     * Gets or Sets dependFailPolicy
+     */
     public static final class DependFailPolicyEnum {
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final DependFailPolicyEnum FAIL = new DependFailPolicyEnum("FAIL");
 
-        /** Enum IGNORE for value: "IGNORE" */
+        /**
+         * Enum IGNORE for value: "IGNORE"
+         */
         public static final DependFailPolicyEnum IGNORE = new DependFailPolicyEnum("IGNORE");
 
-        /** Enum SUSPEND for value: "SUSPEND" */
+        /**
+         * Enum SUSPEND for value: "SUSPEND"
+         */
         public static final DependFailPolicyEnum SUSPEND = new DependFailPolicyEnum("SUSPEND");
 
         private static final Map<String, DependFailPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class DependJob {
         return this;
     }
 
-    /** Get jobs
-     * 
-     * @return jobs */
+    /**
+     * Get jobs
+     * @return jobs
+     */
     public String getJobs() {
         return jobs;
     }
@@ -124,9 +135,10 @@ public class DependJob {
         return this;
     }
 
-    /** Get dependPeriod
-     * 
-     * @return dependPeriod */
+    /**
+     * Get dependPeriod
+     * @return dependPeriod
+     */
     public String getDependPeriod() {
         return dependPeriod;
     }
@@ -140,9 +152,10 @@ public class DependJob {
         return this;
     }
 
-    /** Get dependFailPolicy
-     * 
-     * @return dependFailPolicy */
+    /**
+     * Get dependFailPolicy
+     * @return dependFailPolicy
+     */
     public DependFailPolicyEnum getDependFailPolicy() {
         return dependFailPolicy;
     }
@@ -180,7 +193,10 @@ public class DependJob {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

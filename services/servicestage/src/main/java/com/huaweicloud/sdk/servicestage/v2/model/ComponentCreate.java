@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ComponentCreate */
+/**
+ * ComponentCreate
+ */
 public class ComponentCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** 应用组件名称。
-     * 
-     * @return name */
+    /**
+     * 应用组件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +68,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** Get runtime
-     * 
-     * @return runtime */
+    /**
+     * Get runtime
+     * @return runtime
+     */
     public RuntimeType getRuntime() {
         return runtime;
     }
@@ -81,9 +85,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** Get category
-     * 
-     * @return category */
+    /**
+     * Get category
+     * @return category
+     */
     public ComponentCategory getCategory() {
         return category;
     }
@@ -97,9 +102,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** Get subCategory
-     * 
-     * @return subCategory */
+    /**
+     * Get subCategory
+     * @return subCategory
+     */
     public ComponentSubCategory getSubCategory() {
         return subCategory;
     }
@@ -113,9 +119,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -138,9 +145,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** Get source
-     * 
-     * @return source */
+    /**
+     * Get source
+     * @return source
+     */
     public SourceObject getSource() {
         return source;
     }
@@ -163,9 +171,10 @@ public class ComponentCreate {
         return this;
     }
 
-    /** Get build
-     * 
-     * @return build */
+    /**
+     * Get build
+     * @return build
+     */
     public Build getBuild() {
         return build;
     }
@@ -210,7 +219,10 @@ public class ComponentCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

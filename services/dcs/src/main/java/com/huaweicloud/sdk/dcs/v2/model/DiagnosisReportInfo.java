@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DiagnosisReportInfo */
+/**
+ * DiagnosisReportInfo
+ */
 public class DiagnosisReportInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class DiagnosisReportInfo {
 
     private String reportId;
 
-    /** 诊断任务状态 */
+    /**
+     * 诊断任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum DIAGNOSING for value: "diagnosing" */
+        /**
+         * Enum DIAGNOSING for value: "diagnosing"
+         */
         public static final StatusEnum DIAGNOSING = new StatusEnum("diagnosing");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StatusEnum FINISHED = new StatusEnum("finished");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断报告ID
-     * 
-     * @return reportId */
+    /**
+     * 诊断报告ID
+     * @return reportId
+     */
     public String getReportId() {
         return reportId;
     }
@@ -145,9 +154,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断任务状态
-     * 
-     * @return status */
+    /**
+     * 诊断任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -161,9 +171,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断时间段的开始时间。格式为：2017-03-31T12:24:46.297Z
-     * 
-     * @return beginTime */
+    /**
+     * 诊断时间段的开始时间。格式为：2017-03-31T12:24:46.297Z
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -177,9 +188,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断时间段的结束时间。格式为：2017-03-31T12:24:46.297Z
-     * 
-     * @return endTime */
+    /**
+     * 诊断时间段的结束时间。格式为：2017-03-31T12:24:46.297Z
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -193,9 +205,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断报告创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 诊断报告创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -209,9 +222,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 参与诊断的节点个数
-     * 
-     * @return nodeNum */
+    /**
+     * 参与诊断的节点个数
+     * @return nodeNum
+     */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -225,9 +239,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断结果为异常的诊断项总数
-     * 
-     * @return abnormalItemSum */
+    /**
+     * 诊断结果为异常的诊断项总数
+     * @return abnormalItemSum
+     */
     public Integer getAbnormalItemSum() {
         return abnormalItemSum;
     }
@@ -241,9 +256,10 @@ public class DiagnosisReportInfo {
         return this;
     }
 
-    /** 诊断失败的诊断项总数
-     * 
-     * @return failedItemSum */
+    /**
+     * 诊断失败的诊断项总数
+     * @return failedItemSum
+     */
     public Integer getFailedItemSum() {
         return failedItemSum;
     }
@@ -292,7 +308,10 @@ public class DiagnosisReportInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

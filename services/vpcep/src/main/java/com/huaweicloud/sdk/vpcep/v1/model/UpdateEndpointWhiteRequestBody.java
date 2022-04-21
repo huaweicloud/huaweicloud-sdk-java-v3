@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新终端节点白名单接口请求结构体 */
+/**
+ * 更新终端节点白名单接口请求结构体
+ */
 public class UpdateEndpointWhiteRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class UpdateEndpointWhiteRequestBody {
         return this;
     }
 
-    /** 更新或删除用于控制访问终端节点的白名单。此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白名单更新为取值所示内容。 ● 当取值为空时，表示删除所有白名单。 默认为空列表。
-     * 
-     * @return whitelist */
+    /**
+     * 更新或删除用于控制访问终端节点的白名单。此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白名单更新为取值所示内容。 ● 当取值为空时，表示删除所有白名单。 默认为空列表。
+     * @return whitelist
+     */
     public List<String> getWhitelist() {
         return whitelist;
     }
@@ -58,9 +61,10 @@ public class UpdateEndpointWhiteRequestBody {
         return this;
     }
 
-    /** 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 默认值为false。
-     * 
-     * @return enableWhitelist */
+    /**
+     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 默认值为false。
+     * @return enableWhitelist
+     */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -97,7 +101,10 @@ public class UpdateEndpointWhiteRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

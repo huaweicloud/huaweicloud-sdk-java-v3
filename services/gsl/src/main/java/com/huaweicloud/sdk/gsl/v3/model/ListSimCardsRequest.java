@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSimCardsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,13 +50,19 @@ public class ListSimCardsRequest {
 
     private Integer simType;
 
-    /** 排序的顺序，asc表示顺序排序，desc表示倒序排序，不传则默认asc */
+    /**
+     * 排序的顺序，asc表示顺序排序，desc表示倒序排序，不传则默认asc
+     */
     public static final class OrderEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -124,22 +132,34 @@ public class ListSimCardsRequest {
 
     private OrderEnum order;
 
-    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间） */
+    /**
+     * 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间）
+     */
     public static final class SortEnum {
 
-        /** Enum CID for value: "cid" */
+        /**
+         * Enum CID for value: "cid"
+         */
         public static final SortEnum CID = new SortEnum("cid");
 
-        /** Enum FLOW_USED for value: "flow_used" */
+        /**
+         * Enum FLOW_USED for value: "flow_used"
+         */
         public static final SortEnum FLOW_USED = new SortEnum("flow_used");
 
-        /** Enum FLOW_LEFT for value: "flow_left" */
+        /**
+         * Enum FLOW_LEFT for value: "flow_left"
+         */
         public static final SortEnum FLOW_LEFT = new SortEnum("flow_left");
 
-        /** Enum ACT_DATE for value: "act_date" */
+        /**
+         * Enum ACT_DATE for value: "act_date"
+         */
         public static final SortEnum ACT_DATE = new SortEnum("act_date");
 
-        /** Enum EXPIRE_TIME for value: "expire_time" */
+        /**
+         * Enum EXPIRE_TIME for value: "expire_time"
+         */
         public static final SortEnum EXPIRE_TIME = new SortEnum("expire_time");
 
         private static final Map<String, SortEnum> STATIC_FIELDS = createStaticFields();
@@ -277,9 +297,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 查询关键标识类型： 1.容器ID(不同类型卡含义如下:ICCID(实体卡)，EID（eSIM）CID（vSIM)) 2.批次号 3.设备IMEI minimum: 0 maximum: 2147483647
-     * 
-     * @return mainSearchType */
+    /**
+     * 查询关键标识类型： 1.容器ID(不同类型卡含义如下:ICCID(实体卡)，EID（eSIM）CID（vSIM)) 2.批次号 3.设备IMEI
+     * minimum: 0
+     * maximum: 2147483647
+     * @return mainSearchType
+     */
     public Integer getMainSearchType() {
         return mainSearchType;
     }
@@ -293,9 +316,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 查询关键标识值：根据查询关键标识类型进行查询，例如想根据ICCID=xxx进行查询，则main_search_type=1&main_search_key=xxx
-     * 
-     * @return mainSearchKey */
+    /**
+     * 查询关键标识值：根据查询关键标识类型进行查询，例如想根据ICCID=xxx进行查询，则main_search_type=1&main_search_key=xxx
+     * @return mainSearchKey
+     */
     public String getMainSearchKey() {
         return mainSearchKey;
     }
@@ -309,9 +333,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -325,9 +352,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数 minimum: 1 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数
+     * minimum: 1
+     * maximum: 1000000
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -341,9 +371,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** sim卡状态： 10.可测试 11.未激活 13.可激活 14.已停用 20.在用 30.已拆机 minimum: 0 maximum: 2147483647
-     * 
-     * @return simStatus */
+    /**
+     * sim卡状态：  10.可测试  11.未激活  13.可激活  14.已停用  20.在用  30.已拆机
+     * minimum: 0
+     * maximum: 2147483647
+     * @return simStatus
+     */
     public Integer getSimStatus() {
         return simStatus;
     }
@@ -357,9 +390,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 设备状态: 1.注册 2.重启 3.在线 4.离线 minimum: 0 maximum: 2147483647
-     * 
-     * @return deviceStatus */
+    /**
+     * 设备状态: 1.注册 2.重启 3.在线 4.离线
+     * minimum: 0
+     * maximum: 2147483647
+     * @return deviceStatus
+     */
     public Integer getDeviceStatus() {
         return deviceStatus;
     }
@@ -373,9 +409,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** sim卡类型： 1.vSIM 2.eSIM 3.实体卡 minimum: 0 maximum: 2147483647
-     * 
-     * @return simType */
+    /**
+     * sim卡类型：  1.vSIM  2.eSIM  3.实体卡
+     * minimum: 0
+     * maximum: 2147483647
+     * @return simType
+     */
     public Integer getSimType() {
         return simType;
     }
@@ -389,9 +428,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 排序的顺序，asc表示顺序排序，desc表示倒序排序，不传则默认asc
-     * 
-     * @return order */
+    /**
+     * 排序的顺序，asc表示顺序排序，desc表示倒序排序，不传则默认asc
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -405,9 +445,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间）
-     * 
-     * @return sort */
+    /**
+     * 排序的属性，目前支持:cid（容器ID）、flow_used（已用流量）、flow_left（剩余流量）、act_date（激活时间）、expire_time（到期时间）
+     * @return sort
+     */
     public SortEnum getSort() {
         return sort;
     }
@@ -421,9 +462,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** MSISDN
-     * 
-     * @return msisdn */
+    /**
+     * MSISDN
+     * @return msisdn
+     */
     public String getMsisdn() {
         return msisdn;
     }
@@ -437,9 +479,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性一
-     * 
-     * @return customerAttribute1 */
+    /**
+     * 自定义属性一
+     * @return customerAttribute1
+     */
     public String getCustomerAttribute1() {
         return customerAttribute1;
     }
@@ -453,9 +496,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性二
-     * 
-     * @return customerAttribute2 */
+    /**
+     * 自定义属性二
+     * @return customerAttribute2
+     */
     public String getCustomerAttribute2() {
         return customerAttribute2;
     }
@@ -469,9 +513,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性三
-     * 
-     * @return customerAttribute3 */
+    /**
+     * 自定义属性三
+     * @return customerAttribute3
+     */
     public String getCustomerAttribute3() {
         return customerAttribute3;
     }
@@ -485,9 +530,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性四
-     * 
-     * @return customerAttribute4 */
+    /**
+     * 自定义属性四
+     * @return customerAttribute4
+     */
     public String getCustomerAttribute4() {
         return customerAttribute4;
     }
@@ -501,9 +547,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性五
-     * 
-     * @return customerAttribute5 */
+    /**
+     * 自定义属性五
+     * @return customerAttribute5
+     */
     public String getCustomerAttribute5() {
         return customerAttribute5;
     }
@@ -517,9 +564,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 自定义属性六
-     * 
-     * @return customerAttribute6 */
+    /**
+     * 自定义属性六
+     * @return customerAttribute6
+     */
     public String getCustomerAttribute6() {
         return customerAttribute6;
     }
@@ -533,9 +581,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 最小使用流量(MB) minimum: 0 maximum: 2147483647
-     * 
-     * @return minFlow */
+    /**
+     * 最小使用流量(MB)
+     * minimum: 0
+     * maximum: 2147483647
+     * @return minFlow
+     */
     public Long getMinFlow() {
         return minFlow;
     }
@@ -549,9 +600,12 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 最大使用流量(MB) minimum: 0 maximum: 2147483647
-     * 
-     * @return maxFlow */
+    /**
+     * 最大使用流量(MB)
+     * minimum: 0
+     * maximum: 2147483647
+     * @return maxFlow
+     */
     public Long getMaxFlow() {
         return maxFlow;
     }
@@ -565,9 +619,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 是否已实名认证: true表示是，false表示否，系统SIM卡实名认证状态非实时。
-     * 
-     * @return realNamed */
+    /**
+     * 是否已实名认证: true表示是，false表示否，系统SIM卡实名认证状态非实时。
+     * @return realNamed
+     */
     public Boolean getRealNamed() {
         return realNamed;
     }
@@ -581,9 +636,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 订单号
-     * 
-     * @return orderId */
+    /**
+     * 订单号
+     * @return orderId
+     */
     public Long getOrderId() {
         return orderId;
     }
@@ -597,9 +653,10 @@ public class ListSimCardsRequest {
         return this;
     }
 
-    /** 是否过滤停机保号的卡
-     * 
-     * @return filterDowntimePeriod */
+    /**
+     * 是否过滤停机保号的卡
+     * @return filterDowntimePeriod
+     */
     public Boolean getFilterDowntimePeriod() {
         return filterDowntimePeriod;
     }
@@ -694,7 +751,10 @@ public class ListSimCardsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

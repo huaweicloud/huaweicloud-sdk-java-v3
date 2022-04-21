@@ -10,17 +10,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据加工信息 */
+/**
+ * 数据加工信息
+ */
 public class TransformationInfo {
 
-    /** - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter */
+    /**
+     * - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter
+     */
     public static final class TransformationTypeEnum {
 
-        /** Enum CONTENTCONDITIONALFILTER for value: "contentConditionalFilter" */
+        /**
+         * Enum CONTENTCONDITIONALFILTER for value: "contentConditionalFilter"
+         */
         public static final TransformationTypeEnum CONTENTCONDITIONALFILTER =
             new TransformationTypeEnum("contentConditionalFilter");
 
-        /** Enum CONFIGCONDITIONALFILTER for value: "configConditionalFilter" */
+        /**
+         * Enum CONFIGCONDITIONALFILTER for value: "configConditionalFilter"
+         */
         public static final TransformationTypeEnum CONFIGCONDITIONALFILTER =
             new TransformationTypeEnum("configConditionalFilter");
 
@@ -101,9 +109,10 @@ public class TransformationInfo {
         return this;
     }
 
-    /** - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter
-     * 
-     * @return transformationType */
+    /**
+     * - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter
+     * @return transformationType
+     */
     public TransformationTypeEnum getTransformationType() {
         return transformationType;
     }
@@ -117,9 +126,10 @@ public class TransformationInfo {
         return this;
     }
 
-    /** 过滤条件，生成加工规则值为sql条件语句，生成配置规则值为config。长度限制256。
-     * 
-     * @return value */
+    /**
+     * 过滤条件，生成加工规则值为sql条件语句，生成配置规则值为config。长度限制256。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -156,7 +166,10 @@ public class TransformationInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

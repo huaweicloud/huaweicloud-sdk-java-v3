@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** WAF支持的认证项 */
+/**
+ * WAF支持的认证项
+ */
 public class Flag {
 
-    /** true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证 */
+    /**
+     * true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证
+     */
     public static final class Pci3dsEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final Pci3dsEnum TRUE = new Pci3dsEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final Pci3dsEnum FALSE = new Pci3dsEnum("false");
 
         private static final Map<String, Pci3dsEnum> STATIC_FIELDS = createStaticFields();
@@ -89,13 +97,19 @@ public class Flag {
 
     private Pci3dsEnum pci3ds;
 
-    /** true:通过pci_dss标准认证,false:未通过pci_dss标准认证 */
+    /**
+     * true:通过pci_dss标准认证,false:未通过pci_dss标准认证
+     */
     public static final class PciDssEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final PciDssEnum TRUE = new PciDssEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final PciDssEnum FALSE = new PciDssEnum("false");
 
         private static final Map<String, PciDssEnum> STATIC_FIELDS = createStaticFields();
@@ -165,13 +179,19 @@ public class Flag {
 
     private PciDssEnum pciDss;
 
-    /** old：代表域名使用的老的cname，new：代表域名使用新的cname */
+    /**
+     * old：代表域名使用的老的cname，new：代表域名使用新的cname
+     */
     public static final class CnameEnum {
 
-        /** Enum OLD for value: "old" */
+        /**
+         * Enum OLD for value: "old"
+         */
         public static final CnameEnum OLD = new CnameEnum("old");
 
-        /** Enum NEW for value: "new" */
+        /**
+         * Enum NEW for value: "new"
+         */
         public static final CnameEnum NEW = new CnameEnum("new");
 
         private static final Map<String, CnameEnum> STATIC_FIELDS = createStaticFields();
@@ -241,13 +261,19 @@ public class Flag {
 
     private CnameEnum cname;
 
-    /** true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾 */
+    /**
+     * true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾
+     */
     public static final class IsDualAzEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IsDualAzEnum TRUE = new IsDualAzEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final IsDualAzEnum FALSE = new IsDualAzEnum("false");
 
         private static final Map<String, IsDualAzEnum> STATIC_FIELDS = createStaticFields();
@@ -322,9 +348,10 @@ public class Flag {
         return this;
     }
 
-    /** true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证
-     * 
-     * @return pci3ds */
+    /**
+     * true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证
+     * @return pci3ds
+     */
     public Pci3dsEnum getPci3ds() {
         return pci3ds;
     }
@@ -338,9 +365,10 @@ public class Flag {
         return this;
     }
 
-    /** true:通过pci_dss标准认证,false:未通过pci_dss标准认证
-     * 
-     * @return pciDss */
+    /**
+     * true:通过pci_dss标准认证,false:未通过pci_dss标准认证
+     * @return pciDss
+     */
     public PciDssEnum getPciDss() {
         return pciDss;
     }
@@ -354,9 +382,10 @@ public class Flag {
         return this;
     }
 
-    /** old：代表域名使用的老的cname，new：代表域名使用新的cname
-     * 
-     * @return cname */
+    /**
+     * old：代表域名使用的老的cname，new：代表域名使用新的cname
+     * @return cname
+     */
     public CnameEnum getCname() {
         return cname;
     }
@@ -370,9 +399,10 @@ public class Flag {
         return this;
     }
 
-    /** true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾
-     * 
-     * @return isDualAz */
+    /**
+     * true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾
+     * @return isDualAz
+     */
     public IsDualAzEnum getIsDualAz() {
         return isDualAz;
     }
@@ -411,7 +441,10 @@ public class Flag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

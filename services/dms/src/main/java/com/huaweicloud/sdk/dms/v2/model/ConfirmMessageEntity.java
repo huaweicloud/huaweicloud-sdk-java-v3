@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConfirmMessageEntity */
+/**
+ * ConfirmMessageEntity
+ */
 public class ConfirmMessageEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ConfirmMessageEntity {
 
     private String handler;
 
-    /** 客户端处理数据的状态。 取值为“success”或者“fail”。 */
+    /**
+     * 客户端处理数据的状态。 取值为“success”或者“fail”。
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAIL for value: "fail" */
+        /**
+         * Enum FAIL for value: "fail"
+         */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ConfirmMessageEntity {
         return this;
     }
 
-    /** 消费时返回的ID。
-     * 
-     * @return handler */
+    /**
+     * 消费时返回的ID。
+     * @return handler
+     */
     public String getHandler() {
         return handler;
     }
@@ -115,9 +124,10 @@ public class ConfirmMessageEntity {
         return this;
     }
 
-    /** 客户端处理数据的状态。 取值为“success”或者“fail”。
-     * 
-     * @return status */
+    /**
+     * 客户端处理数据的状态。 取值为“success”或者“fail”。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -154,7 +164,10 @@ public class ConfirmMessageEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

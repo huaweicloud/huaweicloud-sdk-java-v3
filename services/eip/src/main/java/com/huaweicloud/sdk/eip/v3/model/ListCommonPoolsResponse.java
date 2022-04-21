@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListCommonPoolsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListCommonPoolsResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：公共池对象
-     * 
-     * @return commonPools */
+    /**
+     * 功能说明：公共池对象
+     * @return commonPools
+     */
     public List<CommonPoolDict> getCommonPools() {
         return commonPools;
     }
@@ -59,9 +62,10 @@ public class ListCommonPoolsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次请求的编号
-     * 
-     * @return requestId */
+    /**
+     * 本次请求的编号
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -98,7 +102,10 @@ public class ListCommonPoolsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

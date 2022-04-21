@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 本次返回的列表长度
-     * 
-     * @return size */
+    /**
+     * 本次返回的列表长度
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -48,9 +51,10 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 满足条件的记录数
-     * 
-     * @return total */
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -80,9 +84,10 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** 本次查询到的流控策略列表
-     * 
-     * @return throttles */
+    /**
+     * 本次查询到的流控策略列表
+     * @return throttles
+     */
     public List<ThrottlesInfo> getThrottles() {
         return throttles;
     }
@@ -122,7 +127,10 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

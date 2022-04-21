@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 子Job的响应信息。 */
+/**
+ * 子Job的响应信息。
+ */
 public class SubJobEntities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 云硬盘的类型。
-     * 
-     * @return volumeType */
+    /**
+     * 云硬盘的类型。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -49,9 +52,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 云硬盘的容量，单位为GB。
-     * 
-     * @return size */
+    /**
+     * 云硬盘的容量，单位为GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -65,9 +69,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 云硬盘的ID。
-     * 
-     * @return volumeId */
+    /**
+     * 云硬盘的ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -81,9 +86,10 @@ public class SubJobEntities {
         return this;
     }
 
-    /** 云硬盘的名称。
-     * 
-     * @return name */
+    /**
+     * 云硬盘的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -123,7 +129,10 @@ public class SubJobEntities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

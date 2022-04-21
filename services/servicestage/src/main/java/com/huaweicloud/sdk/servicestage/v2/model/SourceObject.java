@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 组件来源。 */
+/**
+ * 组件来源。
+ */
 public class SourceObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class SourceObject {
         return this;
     }
 
-    /** Get kind
-     * 
-     * @return kind */
+    /**
+     * Get kind
+     * @return kind
+     */
     public SourceKind getKind() {
         return kind;
     }
@@ -49,9 +52,10 @@ public class SourceObject {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public SourceOrArtifact getSpec() {
         return spec;
     }
@@ -87,7 +91,10 @@ public class SourceObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

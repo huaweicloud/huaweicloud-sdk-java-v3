@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SqlJobRunDetail */
+/**
+ * SqlJobRunDetail
+ */
 public class SqlJobRunDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return sqlType */
+    /**
+     * 作业类型。
+     * @return sqlType
+     */
     public String getSqlType() {
         return sqlType;
     }
@@ -89,9 +92,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 作业开始的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return startTime */
+    /**
+     * 作业开始的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -105,9 +109,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 作业运行时长，单位毫秒。
-     * 
-     * @return duration */
+    /**
+     * 作业运行时长，单位毫秒。
+     * @return duration
+     */
     public Long getDuration() {
         return duration;
     }
@@ -121,9 +126,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** Insert作业执行过程中扫描的记录条数。
-     * 
-     * @return inputRowCount */
+    /**
+     * Insert作业执行过程中扫描的记录条数。
+     * @return inputRowCount
+     */
     public Long getInputRowCount() {
         return inputRowCount;
     }
@@ -137,9 +143,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** Insert作业执行过程中扫描到的错误记录数。
-     * 
-     * @return badRowCount */
+    /**
+     * Insert作业执行过程中扫描到的错误记录数。
+     * @return badRowCount
+     */
     public Long getBadRowCount() {
         return badRowCount;
     }
@@ -153,9 +160,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 作业执行过程中扫描文件的大小。
-     * 
-     * @return inputSize */
+    /**
+     * 作业执行过程中扫描文件的大小。
+     * @return inputSize
+     */
     public Long getInputSize() {
         return inputSize;
     }
@@ -169,9 +177,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 当前作业返回的结果总条数或insert作业插入的总条数。
-     * 
-     * @return resultCount */
+    /**
+     * 当前作业返回的结果总条数或insert作业插入的总条数。
+     * @return resultCount
+     */
     public Long getResultCount() {
         return resultCount;
     }
@@ -185,9 +194,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 记录其操作的表名称。类型为Import和Export作业才有“table_name”属性。
-     * 
-     * @return tableName */
+    /**
+     * 记录其操作的表名称。类型为Import和Export作业才有“table_name”属性。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -201,9 +211,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** Import类型的作业，记录其导入的数据是否包括列名。
-     * 
-     * @return withColumnHeader */
+    /**
+     * Import类型的作业，记录其导入的数据是否包括列名。
+     * @return withColumnHeader
+     */
     public Boolean getWithColumnHeader() {
         return withColumnHeader;
     }
@@ -217,9 +228,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** SQL查询的相关列信息的Json字符串。
-     * 
-     * @return detail */
+    /**
+     * SQL查询的相关列信息的Json字符串。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -233,9 +245,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 作业执行的SQL语句。
-     * 
-     * @return statement */
+    /**
+     * 作业执行的SQL语句。
+     * @return statement
+     */
     public String getStatement() {
         return statement;
     }
@@ -249,9 +262,10 @@ public class SqlJobRunDetail {
         return this;
     }
 
-    /** 系统提示信息。运行失败时，失败原因。
-     * 
-     * @return message */
+    /**
+     * 系统提示信息。运行失败时，失败原因。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -319,7 +333,10 @@ public class SqlJobRunDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

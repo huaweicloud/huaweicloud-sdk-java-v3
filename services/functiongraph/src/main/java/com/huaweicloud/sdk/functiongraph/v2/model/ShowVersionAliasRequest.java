@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowVersionAliasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowVersionAliasRequest {
         return this;
     }
 
-    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -39,9 +42,10 @@ public class ShowVersionAliasRequest {
         return this;
     }
 
-    /** 要查询的别名名称。
-     * 
-     * @return aliasName */
+    /**
+     * 要查询的别名名称。
+     * @return aliasName
+     */
     public String getAliasName() {
         return aliasName;
     }
@@ -78,7 +82,10 @@ public class ShowVersionAliasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

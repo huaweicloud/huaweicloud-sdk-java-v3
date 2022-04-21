@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPropertiesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class ListPropertiesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备上报的属性执行结果。Json格式，具体格式需要应用和设备约定。
-     * 
-     * @return response */
+    /**
+     * 设备上报的属性执行结果。Json格式，具体格式需要应用和设备约定。
+     * @return response
+     */
     public Object getResponse() {
         return response;
     }
@@ -56,7 +59,10 @@ public class ListPropertiesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流水线参数详情 */
+/**
+ * 流水线参数详情
+ */
 public class Workflow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class Workflow {
         return this;
     }
 
-    /** 任务类型,list类型数据
-     * 
-     * @return parameter */
+    /**
+     * 任务类型,list类型数据
+     * @return parameter
+     */
     public List<PipelineParam> getParameter() {
         return parameter;
     }
@@ -89,9 +92,10 @@ public class Workflow {
         return this;
     }
 
-    /** 源码仓,list类型数据
-     * 
-     * @return source */
+    /**
+     * 源码仓,list类型数据
+     * @return source
+     */
     public List<Source> getSource() {
         return source;
     }
@@ -105,9 +109,10 @@ public class Workflow {
         return this;
     }
 
-    /** 流水线名字
-     * 
-     * @return name */
+    /**
+     * 流水线名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +126,10 @@ public class Workflow {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -137,9 +143,10 @@ public class Workflow {
         return this;
     }
 
-    /** 项目名字
-     * 
-     * @return projectName */
+    /**
+     * 项目名字
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -180,7 +187,10 @@ public class Workflow {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

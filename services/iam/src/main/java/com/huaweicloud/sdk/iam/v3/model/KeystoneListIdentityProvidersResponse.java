@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class KeystoneListIdentityProvidersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
         return this;
     }
 
-    /** 身份提供商信息列表。
-     * 
-     * @return identityProviders */
+    /**
+     * 身份提供商信息列表。
+     * @return identityProviders
+     */
     public List<IdentityprovidersResult> getIdentityProviders() {
         return identityProviders;
     }
@@ -71,9 +74,10 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -111,7 +115,10 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会者信息。 */
+/**
+ * 与会者信息。
+ */
 public class QosParticipantInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -168,9 +170,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 会议的UUID。
-     * 
-     * @return confUUID */
+    /**
+     * 会议的UUID。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -184,9 +187,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -200,9 +204,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 入会UUID。
-     * 
-     * @return participantID */
+    /**
+     * 入会UUID。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -216,9 +221,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 用户UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 用户UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -232,9 +238,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 与会者的名称（昵称）。
-     * 
-     * @return displayName */
+    /**
+     * 与会者的名称（昵称）。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -248,9 +255,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 部门。
-     * 
-     * @return deptName */
+    /**
+     * 部门。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -264,10 +272,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 入会终端类型。 - PC: PC机。 - MOBILE: 手机。 - PAD：PAD设备。 - MAC：MAC设备。 - WEB：WEB方式入会，如通过WebRTC入会。 - ROOM: 会议室。 -
-     * 硬件终端：显示具体的硬件设备类型，如TE50, HUAWEI IDEAHUB, CISCO等。 - OTHER: 其他设备。
-     * 
-     * @return terminalType */
+    /**
+     * 入会终端类型。 - PC: PC机。 - MOBILE: 手机。 - PAD：PAD设备。 - MAC：MAC设备。 - WEB：WEB方式入会，如通过WebRTC入会。 - ROOM: 会议室。 - 硬件终端：显示具体的硬件设备类型，如TE50, HUAWEI IDEAHUB, CISCO等。 - OTHER: 其他设备。
+     * @return terminalType
+     */
     public String getTerminalType() {
         return terminalType;
     }
@@ -281,9 +289,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 与会者角色。 - host：主持人。 - guest：来宾。 - audience：观众。
-     * 
-     * @return role */
+    /**
+     * 与会者角色。 - host：主持人。 - guest：来宾。 - audience：观众。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -297,9 +306,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 与会者的IP地址。
-     * 
-     * @return ipAddress */
+    /**
+     * 与会者的IP地址。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -313,9 +323,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 国家。
-     * 
-     * @return country */
+    /**
+     * 国家。
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -329,9 +340,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 省市（仅限中国）。
-     * 
-     * @return province */
+    /**
+     * 省市（仅限中国）。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -345,9 +357,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 城市（仅限中国）。
-     * 
-     * @return city */
+    /**
+     * 城市（仅限中国）。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -361,9 +374,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 华为云会议APP版本。
-     * 
-     * @return appVersion */
+    /**
+     * 华为云会议APP版本。
+     * @return appVersion
+     */
     public String getAppVersion() {
         return appVersion;
     }
@@ -377,9 +391,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 入会时间(UTC时间), Unix时间戳（单位毫秒）。
-     * 
-     * @return joinTime */
+    /**
+     * 入会时间(UTC时间), Unix时间戳（单位毫秒）。
+     * @return joinTime
+     */
     public Long getJoinTime() {
         return joinTime;
     }
@@ -393,9 +408,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 离会时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 与会者未离会：leftTime = 0。 * 与会者已离会：leftTime = 实际离会时间。
-     * 
-     * @return leftTime */
+    /**
+     * 离会时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 与会者未离会：leftTime = 0。 * 与会者已离会：leftTime = 实际离会时间。
+     * @return leftTime
+     */
     public Long getLeftTime() {
         return leftTime;
     }
@@ -409,9 +425,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 系统信息。
-     * 
-     * @return systemInfo */
+    /**
+     * 系统信息。
+     * @return systemInfo
+     */
     public String getSystemInfo() {
         return systemInfo;
     }
@@ -425,9 +442,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 网络类型。
-     * 
-     * @return networkType */
+    /**
+     * 网络类型。
+     * @return networkType
+     */
     public String getNetworkType() {
         return networkType;
     }
@@ -441,9 +459,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 总体告警 YES/NO。 说明： * 音频（发送/接收），视频（发送/接收），屏幕共享（发送/接收），CPU任一项产生告警，总体告警状态即为 YES。
-     * 
-     * @return alarm */
+    /**
+     * 总体告警 YES/NO。 说明： * 音频（发送/接收），视频（发送/接收），屏幕共享（发送/接收），CPU任一项产生告警，总体告警状态即为 YES。
+     * @return alarm
+     */
     public String getAlarm() {
         return alarm;
     }
@@ -457,9 +476,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 音频发送告警 YES / NO。 说明： * 发送音频的抖动，时延，丢包率任一项产生阈值告警，则音频发送告警状态为YES。
-     * 
-     * @return audioAlarmSend */
+    /**
+     * 音频发送告警 YES / NO。 说明： * 发送音频的抖动，时延，丢包率任一项产生阈值告警，则音频发送告警状态为YES。
+     * @return audioAlarmSend
+     */
     public String getAudioAlarmSend() {
         return audioAlarmSend;
     }
@@ -473,9 +493,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 视频发送告警 YES / NO。 说明： * 发送视频的抖动，时延，丢包率，分辨率任一项产生阈值告警，则视频发送告警状态为YES。
-     * 
-     * @return videoAlarmSend */
+    /**
+     * 视频发送告警 YES / NO。 说明： * 发送视频的抖动，时延，丢包率，分辨率任一项产生阈值告警，则视频发送告警状态为YES。
+     * @return videoAlarmSend
+     */
     public String getVideoAlarmSend() {
         return videoAlarmSend;
     }
@@ -489,9 +510,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 屏幕共享发送告警 YES / NO。 说明： * 发送屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享发送告警状态为YES。
-     * 
-     * @return screenAlarmSend */
+    /**
+     * 屏幕共享发送告警 YES / NO。 说明： * 发送屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享发送告警状态为YES。
+     * @return screenAlarmSend
+     */
     public String getScreenAlarmSend() {
         return screenAlarmSend;
     }
@@ -505,9 +527,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 音频接收告警 YES / NO。 说明： * 接收音频的抖动，时延，丢包率任一项产生阈值告警，则音频接收告警状态为YES。
-     * 
-     * @return audioAlarmRec */
+    /**
+     * 音频接收告警 YES / NO。 说明： * 接收音频的抖动，时延，丢包率任一项产生阈值告警，则音频接收告警状态为YES。
+     * @return audioAlarmRec
+     */
     public String getAudioAlarmRec() {
         return audioAlarmRec;
     }
@@ -521,9 +544,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 视频接收告警 YES / NO。 说明： * 接收视频的抖动，时延，丢包率任一项产生阈值告警，则视频接收告警状态为YES。
-     * 
-     * @return videoAlarmRec */
+    /**
+     * 视频接收告警 YES / NO。 说明： * 接收视频的抖动，时延，丢包率任一项产生阈值告警，则视频接收告警状态为YES。
+     * @return videoAlarmRec
+     */
     public String getVideoAlarmRec() {
         return videoAlarmRec;
     }
@@ -537,9 +561,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 屏幕共享接收告警 YES / NO。 说明： * 接收屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享接收告警状态为YES。
-     * 
-     * @return screenAlarmRec */
+    /**
+     * 屏幕共享接收告警 YES / NO。 说明： * 接收屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享接收告警状态为YES。
+     * @return screenAlarmRec
+     */
     public String getScreenAlarmRec() {
         return screenAlarmRec;
     }
@@ -553,9 +578,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** CPU告警 YES / NO。 说明： * 端侧的APP最大CPU使用率或系统最大CPU使用率任一项产生阈值告警，则CPU告警状态为YES。
-     * 
-     * @return cpuAlarm */
+    /**
+     * CPU告警 YES / NO。 说明： * 端侧的APP最大CPU使用率或系统最大CPU使用率任一项产生阈值告警，则CPU告警状态为YES。
+     * @return cpuAlarm
+     */
     public String getCpuAlarm() {
         return cpuAlarm;
     }
@@ -569,9 +595,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 麦克风。
-     * 
-     * @return microphoneInfo */
+    /**
+     * 麦克风。
+     * @return microphoneInfo
+     */
     public String getMicrophoneInfo() {
         return microphoneInfo;
     }
@@ -585,9 +612,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 扬声器。
-     * 
-     * @return speakerInfo */
+    /**
+     * 扬声器。
+     * @return speakerInfo
+     */
     public String getSpeakerInfo() {
         return speakerInfo;
     }
@@ -601,9 +629,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 摄像头。
-     * 
-     * @return cameraInfo */
+    /**
+     * 摄像头。
+     * @return cameraInfo
+     */
     public String getCameraInfo() {
         return cameraInfo;
     }
@@ -617,9 +646,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 数据中心。
-     * 
-     * @return dataCenter */
+    /**
+     * 数据中心。
+     * @return dataCenter
+     */
     public String getDataCenter() {
         return dataCenter;
     }
@@ -633,9 +663,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 离会原因。此字段仅标识离会原因，不做为是否已离会的判断依据。正在与会人员的离会原因初始值 = 0。 说明： * 0：正常离会。 * 1：网络异常离会。
-     * 
-     * @return leftReason */
+    /**
+     * 离会原因。此字段仅标识离会原因，不做为是否已离会的判断依据。正在与会人员的离会原因初始值 = 0。 说明： * 0：正常离会。 * 1：网络异常离会。
+     * @return leftReason
+     */
     public Integer getLeftReason() {
         return leftReason;
     }
@@ -649,9 +680,10 @@ public class QosParticipantInfo {
         return this;
     }
 
-    /** 与会者是否存在QoS数据。 true：存在QoS数据。 false：不存在QoS数据。
-     * 
-     * @return existQos */
+    /**
+     * 与会者是否存在QoS数据。 true：存在QoS数据。 false：不存在QoS数据。
+     * @return existQos
+     */
     public Boolean getExistQos() {
         return existQos;
     }
@@ -776,7 +808,10 @@ public class QosParticipantInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

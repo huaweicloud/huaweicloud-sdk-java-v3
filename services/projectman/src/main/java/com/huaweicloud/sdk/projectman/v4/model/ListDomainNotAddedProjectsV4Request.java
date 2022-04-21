@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDomainNotAddedProjectsV4Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,11 @@ public class ListDomainNotAddedProjectsV4Request {
         return this;
     }
 
-    /** 分页索引，偏移量,offset是limit的整数倍，limit=10,offset=0,10,20... minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -39,9 +43,12 @@ public class ListDomainNotAddedProjectsV4Request {
         return this;
     }
 
-    /** 每页显示的数量,每页最多显示100条 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量,每页最多显示100条
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,7 +86,10 @@ public class ListDomainNotAddedProjectsV4Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

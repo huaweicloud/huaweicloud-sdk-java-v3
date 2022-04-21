@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTemplatesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统模板列表。
-     * 
-     * @return systemTemplates */
+    /**
+     * 系统模板列表。
+     * @return systemTemplates
+     */
     public List<SystemTemplates> getSystemTemplates() {
         return systemTemplates;
     }
@@ -75,9 +78,10 @@ public class ListTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    /** 自定义模板列表。
-     * 
-     * @return customTemplates */
+    /**
+     * 自定义模板列表。
+     * @return customTemplates
+     */
     public List<CustomTemplates> getCustomTemplates() {
         return customTemplates;
     }
@@ -114,7 +118,10 @@ public class ListTemplatesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

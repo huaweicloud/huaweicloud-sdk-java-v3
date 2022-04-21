@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCustomerBillsMonthlyBreakDownRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
-     * 
-     * @return xLanguage */
+    /**
+     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -101,9 +104,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 查询分摊成本的月份，格式：YYYY-MM。
-     * 
-     * @return sharedMonth */
+    /**
+     * 查询分摊成本的月份，格式：YYYY-MM。
+     * @return sharedMonth
+     */
     public String getSharedMonth() {
         return sharedMonth;
     }
@@ -117,9 +121,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -133,9 +138,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -149,9 +155,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -165,9 +172,12 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 计费模式。1：包年/包月3：按需10：预留实例 minimum: 0 maximum: 10
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。1：包年/包月3：按需10：预留实例
+     * minimum: 0
+     * maximum: 10
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -181,10 +191,12 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 minimum: 1
+    /**
+     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * minimum: 1
      * maximum: 102
-     * 
-     * @return billType */
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -198,11 +210,12 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -216,9 +229,12 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 每次查询的数量限制。默认值为10。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数量限制。默认值为10。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -232,9 +248,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -248,9 +265,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -264,9 +282,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -280,9 +299,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。
-     * 
-     * @return method */
+    /**
+     * 查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。
+     * @return method
+     */
     public String getMethod() {
         return method;
     }
@@ -296,9 +316,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return this;
     }
 
-    /** 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
-     * 
-     * @return subCustomerId */
+    /**
+     * 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
+     * @return subCustomerId
+     */
     public String getSubCustomerId() {
         return subCustomerId;
     }
@@ -373,7 +394,10 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

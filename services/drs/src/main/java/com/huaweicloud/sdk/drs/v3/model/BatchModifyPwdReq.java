@@ -39,9 +39,10 @@ public class BatchModifyPwdReq {
         return this;
     }
 
-    /** 批量修改数据库密码信息列表
-     * 
-     * @return jobs */
+    /**
+     * 批量修改数据库密码信息列表
+     * @return jobs
+     */
     public List<ModifyPwdEndPoint> getJobs() {
         return jobs;
     }
@@ -76,7 +77,10 @@ public class BatchModifyPwdReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

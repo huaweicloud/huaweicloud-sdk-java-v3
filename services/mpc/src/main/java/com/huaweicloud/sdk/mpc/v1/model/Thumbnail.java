@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Thumbnail */
+/**
+ * Thumbnail
+ */
 public class Thumbnail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,12 @@ public class Thumbnail {
         return this;
     }
 
-    /** 是否压缩抽帧图片生成tar包 - 0：表示压缩 - 1：表示不压缩 minimum: 0 maximum: 1
-     * 
-     * @return tar */
+    /**
+     * 是否压缩抽帧图片生成tar包 - 0：表示压缩 - 1：表示不压缩 
+     * minimum: 0
+     * maximum: 1
+     * @return tar
+     */
     public Integer getTar() {
         return tar;
     }
@@ -54,9 +59,10 @@ public class Thumbnail {
         return this;
     }
 
-    /** Get out
-     * 
-     * @return out */
+    /**
+     * Get out
+     * @return out
+     */
     public ObsObjInfo getOut() {
         return out;
     }
@@ -79,9 +85,10 @@ public class Thumbnail {
         return this;
     }
 
-    /** Get params
-     * 
-     * @return params */
+    /**
+     * Get params
+     * @return params
+     */
     public ThumbnailPara getParams() {
         return params;
     }
@@ -119,7 +126,10 @@ public class Thumbnail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

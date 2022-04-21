@@ -25,9 +25,10 @@ public class AllowAddressNetmasksOption {
         return this;
     }
 
-    /** IP地址或网段,例如:192.168.0.1/24。
-     * 
-     * @return addressNetmask */
+    /**
+     * IP地址或网段,例如:192.168.0.1/24。
+     * @return addressNetmask
+     */
     public String getAddressNetmask() {
         return addressNetmask;
     }
@@ -41,9 +42,10 @@ public class AllowAddressNetmasksOption {
         return this;
     }
 
-    /** 描述信息。
-     * 
-     * @return description */
+    /**
+     * 描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,7 +82,10 @@ public class AllowAddressNetmasksOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

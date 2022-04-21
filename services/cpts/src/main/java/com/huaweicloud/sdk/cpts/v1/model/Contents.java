@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Contents */
+/**
+ * Contents
+ */
 public class Contents {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,12 @@ public class Contents {
         return this;
     }
 
-    /** content_id minimum: 0 maximum: 2147483647
-     * 
-     * @return contentId */
+    /**
+     * content_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return contentId
+     */
     public Integer getContentId() {
         return contentId;
     }
@@ -78,9 +83,10 @@ public class Contents {
         return this;
     }
 
-    /** content
-     * 
-     * @return content */
+    /**
+     * content
+     * @return content
+     */
     public List<Content> getContent() {
         return content;
     }
@@ -94,9 +100,12 @@ public class Contents {
         return this;
     }
 
-    /** index minimum: 0 maximum: 2147483647
-     * 
-     * @return index */
+    /**
+     * index
+     * minimum: 0
+     * maximum: 2147483647
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -110,9 +119,10 @@ public class Contents {
         return this;
     }
 
-    /** selected_temp_name
-     * 
-     * @return selectedTempName */
+    /**
+     * selected_temp_name
+     * @return selectedTempName
+     */
     public String getSelectedTempName() {
         return selectedTempName;
     }
@@ -126,9 +136,10 @@ public class Contents {
         return this;
     }
 
-    /** data
-     * 
-     * @return data */
+    /**
+     * data
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -142,9 +153,12 @@ public class Contents {
         return this;
     }
 
-    /** data_type minimum: 0 maximum: 2147483647
-     * 
-     * @return dataType */
+    /**
+     * data_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return dataType
+     */
     public Integer getDataType() {
         return dataType;
     }
@@ -187,7 +201,10 @@ public class Contents {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

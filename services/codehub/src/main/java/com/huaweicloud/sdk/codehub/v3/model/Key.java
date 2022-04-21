@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Key */
+/**
+ * Key
+ */
 public class Key {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Key {
         return this;
     }
 
-    /** 是否允许推送
-     * 
-     * @return canPush */
+    /**
+     * 是否允许推送
+     * @return canPush
+     */
     public Boolean getCanPush() {
         return canPush;
     }
@@ -54,9 +57,10 @@ public class Key {
         return this;
     }
 
-    /** 部署密钥新建时间
-     * 
-     * @return createdAt */
+    /**
+     * 部署密钥新建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -70,9 +74,10 @@ public class Key {
         return this;
     }
 
-    /** 部署密钥
-     * 
-     * @return key */
+    /**
+     * 部署密钥
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -86,9 +91,10 @@ public class Key {
         return this;
     }
 
-    /** 部署密钥id
-     * 
-     * @return keyId */
+    /**
+     * 部署密钥id
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -102,9 +108,10 @@ public class Key {
         return this;
     }
 
-    /** 部署密钥名称
-     * 
-     * @return keyTitle */
+    /**
+     * 部署密钥名称
+     * @return keyTitle
+     */
     public String getKeyTitle() {
         return keyTitle;
     }
@@ -145,7 +152,10 @@ public class Key {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAssetCipherResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ShowAssetCipherResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -45,9 +48,10 @@ public class ShowAssetCipherResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥密文。
-     * 
-     * @return edk */
+    /**
+     * 密钥密文。
+     * @return edk
+     */
     public String getEdk() {
         return edk;
     }
@@ -61,9 +65,10 @@ public class ShowAssetCipherResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥明文。
-     * 
-     * @return dk */
+    /**
+     * 密钥明文。
+     * @return dk
+     */
     public String getDk() {
         return dk;
     }
@@ -102,7 +107,10 @@ public class ShowAssetCipherResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

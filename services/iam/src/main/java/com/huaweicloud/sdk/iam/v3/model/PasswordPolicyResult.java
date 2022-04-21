@@ -60,9 +60,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 同一字符连续出现的最大次数。
-     * 
-     * @return maximumConsecutiveIdenticalChars */
+    /**
+     * 同一字符连续出现的最大次数。
+     * @return maximumConsecutiveIdenticalChars
+     */
     public Integer getMaximumConsecutiveIdenticalChars() {
         return maximumConsecutiveIdenticalChars;
     }
@@ -76,9 +77,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码最大字符数。
-     * 
-     * @return maximumPasswordLength */
+    /**
+     * 密码最大字符数。
+     * @return maximumPasswordLength
+     */
     public Integer getMaximumPasswordLength() {
         return maximumPasswordLength;
     }
@@ -92,9 +94,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码最短使用时间（分钟）。
-     * 
-     * @return minimumPasswordAge */
+    /**
+     * 密码最短使用时间（分钟）。
+     * @return minimumPasswordAge
+     */
     public Integer getMinimumPasswordAge() {
         return minimumPasswordAge;
     }
@@ -108,9 +111,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码最小字符数。
-     * 
-     * @return minimumPasswordLength */
+    /**
+     * 密码最小字符数。
+     * @return minimumPasswordLength
+     */
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
@@ -124,9 +128,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码不能与历史密码重复次数。
-     * 
-     * @return numberOfRecentPasswordsDisallowed */
+    /**
+     * 密码不能与历史密码重复次数。
+     * @return numberOfRecentPasswordsDisallowed
+     */
     public Integer getNumberOfRecentPasswordsDisallowed() {
         return numberOfRecentPasswordsDisallowed;
     }
@@ -140,9 +145,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码是否可以是用户名或用户名的反序。
-     * 
-     * @return passwordNotUsernameOrInvert */
+    /**
+     * 密码是否可以是用户名或用户名的反序。
+     * @return passwordNotUsernameOrInvert
+     */
     public Boolean getPasswordNotUsernameOrInvert() {
         return passwordNotUsernameOrInvert;
     }
@@ -156,9 +162,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 设置密码必须包含的字符要求。
-     * 
-     * @return passwordRequirements */
+    /**
+     * 设置密码必须包含的字符要求。
+     * @return passwordRequirements
+     */
     public String getPasswordRequirements() {
         return passwordRequirements;
     }
@@ -172,9 +179,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 密码有效期（天）。
-     * 
-     * @return passwordValidityPeriod */
+    /**
+     * 密码有效期（天）。
+     * @return passwordValidityPeriod
+     */
     public Integer getPasswordValidityPeriod() {
         return passwordValidityPeriod;
     }
@@ -188,9 +196,10 @@ public class PasswordPolicyResult {
         return this;
     }
 
-    /** 至少包含字符种类的个数，取值区间[2,4]。
-     * 
-     * @return passwordCharCombination */
+    /**
+     * 至少包含字符种类的个数，取值区间[2,4]。
+     * @return passwordCharCombination
+     */
     public Integer getPasswordCharCombination() {
         return passwordCharCombination;
     }
@@ -257,7 +266,10 @@ public class PasswordPolicyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

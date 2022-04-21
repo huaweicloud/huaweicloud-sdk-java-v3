@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 应用ID */
+/**
+ * 应用ID
+ */
 public class AppId {
 
     @Override

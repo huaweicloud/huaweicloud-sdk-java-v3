@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteScalingGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class DeleteScalingGroupRequest {
 
     private String scalingGroupId;
 
-    /** 是否强制删除伸缩组。默认为no；可选值为yes或no。 */
+    /**
+     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
+     */
     public static final class ForceDeleteEnum {
 
-        /** Enum YES for value: "yes" */
+        /**
+         * Enum YES for value: "yes"
+         */
         public static final ForceDeleteEnum YES = new ForceDeleteEnum("yes");
 
-        /** Enum NO for value: "no" */
+        /**
+         * Enum NO for value: "no"
+         */
         public static final ForceDeleteEnum NO = new ForceDeleteEnum("no");
 
         private static final Map<String, ForceDeleteEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class DeleteScalingGroupRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -115,9 +124,10 @@ public class DeleteScalingGroupRequest {
         return this;
     }
 
-    /** 是否强制删除伸缩组。默认为no；可选值为yes或no。
-     * 
-     * @return forceDelete */
+    /**
+     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
+     * @return forceDelete
+     */
     public ForceDeleteEnum getForceDelete() {
         return forceDelete;
     }
@@ -154,7 +164,10 @@ public class DeleteScalingGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateFunctionAsyncInvokeConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdateFunctionAsyncInvokeConfigRequest {
         return this;
     }
 
-    /** 函数的URN（Uniform Resource Name），唯一标识函数。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -50,9 +53,10 @@ public class UpdateFunctionAsyncInvokeConfigRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateFunctionAsyncInvokeConfigRequestBody getBody() {
         return body;
     }
@@ -90,7 +94,10 @@ public class UpdateFunctionAsyncInvokeConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

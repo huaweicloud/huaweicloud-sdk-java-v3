@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DisassociateRouterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class DisassociateRouterResponse extends SdkResponse {
         return this;
     }
 
-    /** Router(VPC)的ID。
-     * 
-     * @return routerId */
+    /**
+     * Router(VPC)的ID。
+     * @return routerId
+     */
     public String getRouterId() {
         return routerId;
     }
@@ -45,9 +48,10 @@ public class DisassociateRouterResponse extends SdkResponse {
         return this;
     }
 
-    /** Router(VPC)所在的region。
-     * 
-     * @return routerRegion */
+    /**
+     * Router(VPC)所在的region。
+     * @return routerRegion
+     */
     public String getRouterRegion() {
         return routerRegion;
     }
@@ -61,9 +65,10 @@ public class DisassociateRouterResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -102,7 +107,10 @@ public class DisassociateRouterResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

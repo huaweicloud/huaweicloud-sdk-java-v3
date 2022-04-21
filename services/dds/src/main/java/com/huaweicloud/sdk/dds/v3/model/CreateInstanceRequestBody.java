@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例信息。 */
+/**
+ * 实例信息。
+ */
 public class CreateInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,10 +108,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 实例名称。用于表示实例的名称，用于表示实例的名称，允许和已有名称重复。
-     * 取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
-     * 
-     * @return name */
+    /**
+     * 实例名称。用于表示实例的名称，用于表示实例的名称，允许和已有名称重复。 取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -132,9 +134,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -148,9 +151,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** - 区域ID - 取值：非空。
-     * 
-     * @return region */
+    /**
+     * - 区域ID - 取值：非空。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -164,9 +168,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 可用区ID。非专属云用户可以选择多个AZ，创建跨AZ的集群。专属云用户暂不支持创建跨AZ的集群。取值：非空，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区ID。非专属云用户可以选择多个AZ，创建跨AZ的集群。专属云用户暂不支持创建跨AZ的集群。取值：非空，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -180,9 +185,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 虚拟私有云ID。获取方法请参见《虚拟私有云API参考》中“VPC”的内容。 取值：非空，字符长度校验，严格UUID正则校验。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。获取方法请参见《虚拟私有云API参考》中“VPC”的内容。 取值：非空，字符长度校验，严格UUID正则校验。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -196,9 +202,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 子网ID。获取方法请参见《虚拟私有云API参考》中“子网”的内容。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。获取方法请参见《虚拟私有云API参考》中“子网”的内容。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -212,9 +219,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 指定实例所属的安全组ID。 获取方法请参见《虚拟私有云API参考》中“安全组”的内容。
-     * 
-     * @return securityGroupId */
+    /**
+     * 指定实例所属的安全组ID。 获取方法请参见《虚拟私有云API参考》中“安全组”的内容。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -228,9 +236,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 数据库访问端口。 取值范围：2100~9500，以及27017、27018、27019。 不传该参数时，创建实例的访问端口默认为8635。
-     * 
-     * @return port */
+    /**
+     * 数据库访问端口。 取值范围：2100~9500，以及27017、27018、27019。 不传该参数时，创建实例的访问端口默认为8635。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -244,9 +253,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
-     * 
-     * @return password */
+    /**
+     * 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -260,9 +270,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -276,9 +287,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 实例类型。支持集群、副本集、以及单节点。 取值 - Sharding - ReplicaSet - Single
-     * 
-     * @return mode */
+    /**
+     * 实例类型。支持集群、副本集、以及单节点。 取值   - Sharding   - ReplicaSet   - Single
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -308,9 +320,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 实例规格详情。
-     * 
-     * @return flavor */
+    /**
+     * 实例规格详情。
+     * @return flavor
+     */
     public List<CreateInstanceFlavorOption> getFlavor() {
         return flavor;
     }
@@ -333,9 +346,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
@@ -349,9 +363,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -365,9 +380,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认启用SSL连接。
-     * 
-     * @return sslOption */
+    /**
+     * SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认启用SSL连接。
+     * @return sslOption
+     */
     public String getSslOption() {
         return sslOption;
     }
@@ -381,9 +397,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** Dec用户专属存储ID，默认为空。仅Dec用户支持该参数。
-     * 
-     * @return dssPoolId */
+    /**
+     * Dec用户专属存储ID，默认为空。仅Dec用户支持该参数。
+     * @return dssPoolId
+     */
     public String getDssPoolId() {
         return dssPoolId;
     }
@@ -413,10 +430,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值 -
-     * 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
-     * 
-     * @return serverGroupPolicies */
+    /**
+     * 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值    - 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
+     * @return serverGroupPolicies
+     */
     public List<String> getServerGroupPolicies() {
         return serverGroupPolicies;
     }
@@ -446,9 +463,10 @@ public class CreateInstanceRequestBody {
         return this;
     }
 
-    /** 标签列表。单个实例总标签数上限20个。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。单个实例总标签数上限20个。
+     * @return tags
+     */
     public List<TagWithKeyValue> getTags() {
         return tags;
     }
@@ -534,7 +552,10 @@ public class CreateInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

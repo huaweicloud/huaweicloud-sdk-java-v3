@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点池自动伸缩相关配置 */
+/**
+ * 节点池自动伸缩相关配置
+ */
 public class NodePoolNodeAutoscaling {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class NodePoolNodeAutoscaling {
         return this;
     }
 
-    /** 是否开启自动扩缩容
-     * 
-     * @return enable */
+    /**
+     * 是否开启自动扩缩容
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -54,9 +57,11 @@ public class NodePoolNodeAutoscaling {
         return this;
     }
 
-    /** 若开启自动扩缩容，最小能缩容的节点个数。不可大于集群规格所允许的节点上限 minimum: 0
-     * 
-     * @return minNodeCount */
+    /**
+     * 若开启自动扩缩容，最小能缩容的节点个数。不可大于集群规格所允许的节点上限
+     * minimum: 0
+     * @return minNodeCount
+     */
     public Integer getMinNodeCount() {
         return minNodeCount;
     }
@@ -70,9 +75,11 @@ public class NodePoolNodeAutoscaling {
         return this;
     }
 
-    /** 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。 minimum: 0
-     * 
-     * @return maxNodeCount */
+    /**
+     * 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。
+     * minimum: 0
+     * @return maxNodeCount
+     */
     public Integer getMaxNodeCount() {
         return maxNodeCount;
     }
@@ -86,9 +93,12 @@ public class NodePoolNodeAutoscaling {
         return this;
     }
 
-    /** 节点保留时间，单位为分钟，扩容出来的节点在这个时间内不会被缩掉 minimum: 0 maximum: 2147483647
-     * 
-     * @return scaleDownCooldownTime */
+    /**
+     * 节点保留时间，单位为分钟，扩容出来的节点在这个时间内不会被缩掉
+     * minimum: 0
+     * maximum: 2147483647
+     * @return scaleDownCooldownTime
+     */
     public Integer getScaleDownCooldownTime() {
         return scaleDownCooldownTime;
     }
@@ -102,9 +112,10 @@ public class NodePoolNodeAutoscaling {
         return this;
     }
 
-    /** 节点池权重，更高的权重在扩容时拥有更高的优先级
-     * 
-     * @return priority */
+    /**
+     * 节点池权重，更高的权重在扩容时拥有更高的优先级
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -147,7 +158,10 @@ public class NodePoolNodeAutoscaling {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群重启操作，定义哪些集群节点需要重启，请参见restart参数说明 */
+/**
+ * 集群重启操作，定义哪些集群节点需要重启，请参见restart参数说明
+ */
 public class CdmRestartClusterReqRestart {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 重启时延，单位：秒
-     * 
-     * @return restartDelayTime */
+    /**
+     * 重启时延，单位：秒
+     * @return restartDelayTime
+     */
     public Integer getRestartDelayTime() {
         return restartDelayTime;
     }
@@ -59,10 +62,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 重启类型： - IMMEDIATELY：立即重启。 - GRACEFULL：优雅重启。 - FORCELY：强制重启。 - SOFTLY：一般重启。
-     * 默认值为“IMMEDIATELY”。优雅重启等作业执行完后，有序的释放资源再重启，并且只重启CDM服务的进程，不会重启集群虚拟机。强制重启业务进程会中断，并重启集群的虚拟机。
-     * 
-     * @return restartMode */
+    /**
+     * 重启类型： - IMMEDIATELY：立即重启。 - GRACEFULL：优雅重启。 - FORCELY：强制重启。 - SOFTLY：一般重启。  默认值为“IMMEDIATELY”。优雅重启等作业执行完后，有序的释放资源再重启，并且只重启CDM服务的进程，不会重启集群虚拟机。强制重启业务进程会中断，并重启集群的虚拟机。
+     * @return restartMode
+     */
     public String getRestartMode() {
         return restartMode;
     }
@@ -76,9 +79,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 重启级别： - SERVICE：重启服务。 - VM：重启虚拟机。 默认值为“SERVICE”。
-     * 
-     * @return restartLevel */
+    /**
+     * 重启级别： - SERVICE：重启服务。 - VM：重启虚拟机。  默认值为“SERVICE”。
+     * @return restartLevel
+     */
     public String getRestartLevel() {
         return restartLevel;
     }
@@ -92,9 +96,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 集群节点类型，只支持“cdm”
-     * 
-     * @return type */
+    /**
+     * 集群节点类型，只支持“cdm”
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -108,9 +113,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 预留字段，“restartLevel” 为“SERVICE”时，“instance”必填，填空字串。
-     * 
-     * @return instance */
+    /**
+     * 预留字段，“restartLevel” 为“SERVICE”时，“instance”必填，填空字串。
+     * @return instance
+     */
     public String getInstance() {
         return instance;
     }
@@ -124,9 +130,10 @@ public class CdmRestartClusterReqRestart {
         return this;
     }
 
-    /** 预留字段，“restartLevel” 为“SERVICE”时，“group”必填，填空字串。
-     * 
-     * @return group */
+    /**
+     * 预留字段，“restartLevel” 为“SERVICE”时，“group”必填，填空字串。
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -171,7 +178,10 @@ public class CdmRestartClusterReqRestart {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

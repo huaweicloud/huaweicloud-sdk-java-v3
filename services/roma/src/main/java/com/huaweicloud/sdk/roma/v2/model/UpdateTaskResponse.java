@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class UpdateTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get task
-     * 
-     * @return task */
+    /**
+     * Get task
+     * @return task
+     */
     public TaskBasicRsp getTask() {
         return task;
     }
@@ -50,9 +53,10 @@ public class UpdateTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数类型为string，参数结构参照附录中“数据集成参数说明>RawFormDataResponse”章节
-     * 
-     * @return taskDetail */
+    /**
+     * 参数类型为string，参数结构参照附录中“数据集成参数说明>RawFormDataResponse”章节
+     * @return taskDetail
+     */
     public String getTaskDetail() {
         return taskDetail;
     }
@@ -89,7 +93,10 @@ public class UpdateTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

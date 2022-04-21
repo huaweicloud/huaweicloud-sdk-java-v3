@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 带分页的批量查询任务详情请求体 */
+/**
+ * 带分页的批量查询任务详情请求体
+ */
 public class BatchQueryJobReqPage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchQueryJobReqPage {
         return this;
     }
 
-    /** 批量查询任务详情
-     * 
-     * @return jobs */
+    /**
+     * 批量查询任务详情
+     * @return jobs
+     */
     public List<String> getJobs() {
         return jobs;
     }
@@ -67,9 +70,10 @@ public class BatchQueryJobReqPage {
         return this;
     }
 
-    /** Get pageReq
-     * 
-     * @return pageReq */
+    /**
+     * Get pageReq
+     * @return pageReq
+     */
     public PageReq getPageReq() {
         return pageReq;
     }
@@ -106,7 +110,10 @@ public class BatchQueryJobReqPage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

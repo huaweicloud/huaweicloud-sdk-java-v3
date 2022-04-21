@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** HA配置参数，创建HA实例时使用。 */
+/**
+ * HA配置参数，创建HA实例时使用。
+ */
 public class Ha {
 
-    /** 实例主备模式，取值：Ha（主备），不区分大小写。 */
+    /**
+     * 实例主备模式，取值：Ha（主备），不区分大小写。
+     */
     public static final class ModeEnum {
 
-        /** Enum HA for value: "Ha" */
+        /**
+         * Enum HA for value: "Ha"
+         */
         public static final ModeEnum HA = new ModeEnum("Ha");
 
-        /** Enum SINGLE for value: "Single" */
+        /**
+         * Enum SINGLE for value: "Single"
+         */
         public static final ModeEnum SINGLE = new ModeEnum("Single");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -89,17 +97,24 @@ public class Ha {
 
     private ModeEnum mode;
 
-    /** 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL
-     * Server为“sync”。 */
+    /**
+     * 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL Server为“sync”。
+     */
     public static final class ReplicationModeEnum {
 
-        /** Enum ASYNC for value: "async" */
+        /**
+         * Enum ASYNC for value: "async"
+         */
         public static final ReplicationModeEnum ASYNC = new ReplicationModeEnum("async");
 
-        /** Enum SEMISYNC for value: "semisync" */
+        /**
+         * Enum SEMISYNC for value: "semisync"
+         */
         public static final ReplicationModeEnum SEMISYNC = new ReplicationModeEnum("semisync");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final ReplicationModeEnum SYNC = new ReplicationModeEnum("sync");
 
         private static final Map<String, ReplicationModeEnum> STATIC_FIELDS = createStaticFields();
@@ -175,9 +190,10 @@ public class Ha {
         return this;
     }
 
-    /** 实例主备模式，取值：Ha（主备），不区分大小写。
-     * 
-     * @return mode */
+    /**
+     * 实例主备模式，取值：Ha（主备），不区分大小写。
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -191,9 +207,10 @@ public class Ha {
         return this;
     }
 
-    /** 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL Server为“sync”。
-     * 
-     * @return replicationMode */
+    /**
+     * 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL Server为“sync”。
+     * @return replicationMode
+     */
     public ReplicationModeEnum getReplicationMode() {
         return replicationMode;
     }
@@ -229,7 +246,10 @@ public class Ha {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

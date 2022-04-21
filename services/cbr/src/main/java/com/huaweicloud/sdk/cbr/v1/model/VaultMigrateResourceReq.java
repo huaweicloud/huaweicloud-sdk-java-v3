@@ -28,9 +28,10 @@ public class VaultMigrateResourceReq {
         return this;
     }
 
-    /** 目标存储库
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标存储库
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -60,9 +61,10 @@ public class VaultMigrateResourceReq {
         return this;
     }
 
-    /** 待迁移的资源ID
-     * 
-     * @return resourceIds */
+    /**
+     * 待迁移的资源ID
+     * @return resourceIds
+     */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -99,7 +101,10 @@ public class VaultMigrateResourceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchCreateOrDeleteTagsRequestBody */
+/**
+ * BatchCreateOrDeleteTagsRequestBody
+ */
 public class BatchCreateOrDeleteTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class BatchCreateOrDeleteTagsRequestBody {
         return this;
     }
 
-    /** 标签列表，key和value键值对的集合。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，key和value键值对的集合。
+     * @return tags
+     */
     public List<TagItem> getTags() {
         return tags;
     }
@@ -63,9 +66,10 @@ public class BatchCreateOrDeleteTagsRequestBody {
         return this;
     }
 
-    /** 操作标识： 仅限于“create”和“delete”。
-     * 
-     * @return action */
+    /**
+     * 操作标识： 仅限于“create”和“delete”。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -79,9 +83,10 @@ public class BatchCreateOrDeleteTagsRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -120,7 +125,10 @@ public class BatchCreateOrDeleteTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

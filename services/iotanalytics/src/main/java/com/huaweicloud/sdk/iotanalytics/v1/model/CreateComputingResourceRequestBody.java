@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateComputingResourceRequestBody */
+/**
+ * CreateComputingResourceRequestBody
+ */
 public class CreateComputingResourceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateComputingResourceRequestBody {
         return this;
     }
 
-    /** 新建的计算资源名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。
-     * 
-     * @return computingResourceName */
+    /**
+     * 新建的计算资源名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。
+     * @return computingResourceName
+     */
     public String getComputingResourceName() {
         return computingResourceName;
     }
@@ -54,9 +57,10 @@ public class CreateComputingResourceRequestBody {
         return this;
     }
 
-    /** 计算资源的类型。默认为sql。
-     * 
-     * @return computingResourceType */
+    /**
+     * 计算资源的类型。默认为sql。
+     * @return computingResourceType
+     */
     public String getComputingResourceType() {
         return computingResourceType;
     }
@@ -70,9 +74,10 @@ public class CreateComputingResourceRequestBody {
         return this;
     }
 
-    /** 计算资源的描述信息。
-     * 
-     * @return description */
+    /**
+     * 计算资源的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +91,12 @@ public class CreateComputingResourceRequestBody {
         return this;
     }
 
-    /** 与计算资源绑定的最小计算单元个数。设置值当前只支持16，64，256。 minimum: 16 maximum: 512
-     * 
-     * @return cuCount */
+    /**
+     * 与计算资源绑定的最小计算单元个数。设置值当前只支持16，64，256。
+     * minimum: 16
+     * maximum: 512
+     * @return cuCount
+     */
     public Integer getCuCount() {
         return cuCount;
     }
@@ -102,9 +110,10 @@ public class CreateComputingResourceRequestBody {
         return this;
     }
 
-    /** 计算资源的收费模式。只能设置为“1”，表示按照CU时收费。
-     * 
-     * @return chargingMode */
+    /**
+     * 计算资源的收费模式。只能设置为“1”，表示按照CU时收费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -147,7 +156,10 @@ public class CreateComputingResourceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

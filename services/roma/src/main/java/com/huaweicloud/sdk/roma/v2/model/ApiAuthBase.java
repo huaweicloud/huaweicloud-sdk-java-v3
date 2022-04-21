@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiAuthBase */
+/**
+ * ApiAuthBase
+ */
 public class ApiAuthBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,13 +74,19 @@ public class ApiAuthBase {
 
     private String appRemark;
 
-    /** APP的类型： - apig：存量apic客户端，新建实例不支持此类型 - roma：roma集成客户端 */
+    /**
+     * APP的类型： - apig：存量apic客户端，新建实例不支持此类型 - roma：roma集成客户端
+     */
     public static final class AppTypeEnum {
 
-        /** Enum APIG for value: "apig" */
+        /**
+         * Enum APIG for value: "apig"
+         */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
 
-        /** Enum ROMA for value: "roma" */
+        /**
+         * Enum ROMA for value: "roma"
+         */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -163,13 +171,19 @@ public class ApiAuthBase {
 
     private String groupId;
 
-    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道 */
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道
+     */
     public static final class AuthTunnelEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final AuthTunnelEnum NORMAL = new AuthTunnelEnum("NORMAL");
 
-        /** Enum GREEN for value: "GREEN" */
+        /**
+         * Enum GREEN for value: "GREEN"
+         */
         public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
 
         private static final Map<String, AuthTunnelEnum> STATIC_FIELDS = createStaticFields();
@@ -264,9 +278,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 授权关系编号
-     * 
-     * @return id */
+    /**
+     * 授权关系编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -280,9 +295,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API的编号
-     * 
-     * @return apiId */
+    /**
+     * API的编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -296,9 +312,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API的名称
-     * 
-     * @return apiName */
+    /**
+     * API的名称
+     * @return apiName
+     */
     public String getApiName() {
         return apiName;
     }
@@ -312,9 +329,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API绑定的分组名称
-     * 
-     * @return groupName */
+    /**
+     * API绑定的分组名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -328,9 +346,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return apiType */
+    /**
+     * API类型
+     * @return apiType
+     */
     public Integer getApiType() {
         return apiType;
     }
@@ -344,9 +363,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API的描述信息
-     * 
-     * @return apiRemark */
+    /**
+     * API的描述信息
+     * @return apiRemark
+     */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -360,9 +380,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** api授权绑定的环境ID
-     * 
-     * @return envId */
+    /**
+     * api授权绑定的环境ID
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -376,9 +397,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 授权者
-     * 
-     * @return authRole */
+    /**
+     * 授权者
+     * @return authRole
+     */
     public String getAuthRole() {
         return authRole;
     }
@@ -392,9 +414,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 授权创建的时间
-     * 
-     * @return authTime */
+    /**
+     * 授权创建的时间
+     * @return authTime
+     */
     public OffsetDateTime getAuthTime() {
         return authTime;
     }
@@ -408,9 +431,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** APP的名称
-     * 
-     * @return appName */
+    /**
+     * APP的名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -424,9 +448,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** APP的描述
-     * 
-     * @return appRemark */
+    /**
+     * APP的描述
+     * @return appRemark
+     */
     public String getAppRemark() {
         return appRemark;
     }
@@ -440,9 +465,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** APP的类型： - apig：存量apic客户端，新建实例不支持此类型 - roma：roma集成客户端
-     * 
-     * @return appType */
+    /**
+     * APP的类型： - apig：存量apic客户端，新建实例不支持此类型 - roma：roma集成客户端
+     * @return appType
+     */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -456,9 +482,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** APP的创建者，取值如下： - USER：租户自己创建 - MARKET：API市场分配，暂不支持
-     * 
-     * @return appCreator */
+    /**
+     * APP的创建者，取值如下： - USER：租户自己创建 - MARKET：API市场分配，暂不支持
+     * @return appCreator
+     */
     public String getAppCreator() {
         return appCreator;
     }
@@ -472,9 +499,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API的发布编号
-     * 
-     * @return publishId */
+    /**
+     * API的发布编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -488,9 +516,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** API绑定的分组ID
-     * 
-     * @return groupId */
+    /**
+     * API绑定的分组ID
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -504,9 +533,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道
-     * 
-     * @return authTunnel */
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道
+     * @return authTunnel
+     */
     public AuthTunnelEnum getAuthTunnel() {
         return authTunnel;
     }
@@ -536,9 +566,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 绿色通道的白名单配置
-     * 
-     * @return authWhitelist */
+    /**
+     * 绿色通道的白名单配置
+     * @return authWhitelist
+     */
     public List<String> getAuthWhitelist() {
         return authWhitelist;
     }
@@ -568,9 +599,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 绿色通道的黑名单配置
-     * 
-     * @return authBlacklist */
+    /**
+     * 绿色通道的黑名单配置
+     * @return authBlacklist
+     */
     public List<String> getAuthBlacklist() {
         return authBlacklist;
     }
@@ -584,9 +616,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** 访问参数。
-     * 
-     * @return visitParam */
+    /**
+     * 访问参数。
+     * @return visitParam
+     */
     public String getVisitParam() {
         return visitParam;
     }
@@ -600,9 +633,10 @@ public class ApiAuthBase {
         return this;
     }
 
-    /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
-     * 
-     * @return romaAppType */
+    /**
+     * ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
+     * @return romaAppType
+     */
     public String getRomaAppType() {
         return romaAppType;
     }
@@ -691,7 +725,10 @@ public class ApiAuthBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

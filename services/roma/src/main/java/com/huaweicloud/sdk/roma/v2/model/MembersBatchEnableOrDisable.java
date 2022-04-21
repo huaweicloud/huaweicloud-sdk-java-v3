@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MembersBatchEnableOrDisable */
+/**
+ * MembersBatchEnableOrDisable
+ */
 public class MembersBatchEnableOrDisable {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class MembersBatchEnableOrDisable {
         return this;
     }
 
-    /** 后端服务器编号列表。
-     * 
-     * @return memberIds */
+    /**
+     * 后端服务器编号列表。
+     * @return memberIds
+     */
     public List<String> getMemberIds() {
         return memberIds;
     }
@@ -74,7 +77,10 @@ public class MembersBatchEnableOrDisable {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

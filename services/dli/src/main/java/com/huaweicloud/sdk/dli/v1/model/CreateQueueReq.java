@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建队列的请求参数。 */
+/**
+ * 创建队列的请求参数。
+ */
 public class CreateQueueReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。 说明： 队列名称不区分大小写，系统会自动转换为小写。
-     * 
-     * @return queueName */
+    /**
+     * 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。 说明：  队列名称不区分大小写，系统会自动转换为小写。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -87,9 +90,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列的类型,。有如下两种类型： sql general 如果不指定，默认为sql。
-     * 
-     * @return queueType */
+    /**
+     * 队列的类型,。有如下两种类型： sql general 如果不指定，默认为sql。
+     * @return queueType
+     */
     public String getQueueType() {
         return queueType;
     }
@@ -103,9 +107,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列的描述信息。
-     * 
-     * @return description */
+    /**
+     * 队列的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -119,9 +124,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
-     * 
-     * @return cuCount */
+    /**
+     * 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
+     * @return cuCount
+     */
     public Integer getCuCount() {
         return cuCount;
     }
@@ -135,9 +141,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列的收费模式。只能设置为“1”，表示按照CU时收费。
-     * 
-     * @return chargingMode */
+    /**
+     * 队列的收费模式。只能设置为“1”，表示按照CU时收费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -151,9 +158,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 企业项目ID，“0”表示default，即默认的企业项目。 说明： 开通了企业管理服务的用户可设置该参数绑定指定的项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，“0”表示default，即默认的企业项目。 说明： 开通了企业管理服务的用户可设置该参数绑定指定的项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -167,9 +175,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列计算资源的cpu架构。
-     * 
-     * @return platform */
+    /**
+     * 队列计算资源的cpu架构。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -183,9 +192,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列资源模式。支持以下两种类型：0：共享资源模式1：专属资源模式
-     * 
-     * @return resourceMode */
+    /**
+     * 队列资源模式。支持以下两种类型：0：共享资源模式1：专属资源模式
+     * @return resourceMode
+     */
     public Integer getResourceMode() {
         return resourceMode;
     }
@@ -215,9 +225,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 创建队列的标签信息，目前包括队列是否跨AZ的标签信息（Json字符串），且只支持值为“2”，即创建一个计算资源分布在2个可用区的双AZ队列
-     * 
-     * @return labels */
+    /**
+     * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息（Json字符串），且只支持值为“2”，即创建一个计算资源分布在2个可用区的双AZ队列
+     * @return labels
+     */
     public List<Object> getLabels() {
         return labels;
     }
@@ -231,9 +242,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
-     * 
-     * @return feature */
+    /**
+     * 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
+     * @return feature
+     */
     public String getFeature() {
         return feature;
     }
@@ -263,9 +275,10 @@ public class CreateQueueReq {
         return this;
     }
 
-    /** 队列的标签。具体请参考表tags。
-     * 
-     * @return tags */
+    /**
+     * 队列的标签。具体请参考表tags。
+     * @return tags
+     */
     public List<JobsTags> getTags() {
         return tags;
     }
@@ -329,7 +342,10 @@ public class CreateQueueReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

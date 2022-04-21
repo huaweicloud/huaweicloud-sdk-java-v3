@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SendMessagesReq */
+/**
+ * SendMessagesReq
+ */
 public class SendMessagesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class SendMessagesReq {
         return this;
     }
 
-    /** 发送消息成功后，是否返回Message ID，默认为false，设置为true时，返回参数才有Message ID。
-     * 
-     * @return returnId */
+    /**
+     * 发送消息成功后，是否返回Message ID，默认为false，设置为true时，返回参数才有Message ID。
+     * @return returnId
+     */
     public Boolean getReturnId() {
         return returnId;
     }
@@ -58,9 +61,10 @@ public class SendMessagesReq {
         return this;
     }
 
-    /** 消息列表。
-     * 
-     * @return messages */
+    /**
+     * 消息列表。
+     * @return messages
+     */
     public List<SendMessageEntity> getMessages() {
         return messages;
     }
@@ -97,7 +101,10 @@ public class SendMessagesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

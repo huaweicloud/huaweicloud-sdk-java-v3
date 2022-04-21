@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 时间线 */
+/**
+ * 时间线
+ */
 public class StatisticsTimelineItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class StatisticsTimelineItem {
         return this;
     }
 
-    /** 键值
-     * 
-     * @return key */
+    /**
+     * 键值
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class StatisticsTimelineItem {
         return this;
     }
 
-    /** 对应键值的时间线
-     * 
-     * @return timeline */
+    /**
+     * 对应键值的时间线
+     * @return timeline
+     */
     public List<TimeLineItem> getTimeline() {
         return timeline;
     }
@@ -97,7 +101,10 @@ public class StatisticsTimelineItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

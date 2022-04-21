@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 健康检查详情，VPC通道类型为2时必选。 */
+/**
+ * 健康检查详情，VPC通道类型为2时必选。
+ */
 public class VpcHealthConfigBase {
 
-    /** 使用以下协议，对VPC中主机执行健康检查。 */
+    /**
+     * 使用以下协议，对VPC中主机执行健康检查。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -98,13 +108,19 @@ public class VpcHealthConfigBase {
 
     private String path;
 
-    /** 健康检查时的请求方法 */
+    /**
+     * 健康检查时的请求方法
+     */
     public static final class MethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final MethodEnum GET = new MethodEnum("GET");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final MethodEnum HEAD = new MethodEnum("HEAD");
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
@@ -204,13 +220,19 @@ public class VpcHealthConfigBase {
 
     private Boolean enableClientSsl;
 
-    /** 健康检查状态 - 1：可用 - 2：不可用 */
+    /**
+     * 健康检查状态   - 1：可用   - 2：不可用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -285,9 +307,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 使用以下协议，对VPC中主机执行健康检查。
-     * 
-     * @return protocol */
+    /**
+     * 使用以下协议，对VPC中主机执行健康检查。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -301,9 +324,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 健康检查时的目标路径。protocol = http时必选
-     * 
-     * @return path */
+    /**
+     * 健康检查时的目标路径。protocol = http时必选
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -317,9 +341,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 健康检查时的请求方法
-     * 
-     * @return method */
+    /**
+     * 健康检查时的请求方法
+     * @return method
+     */
     public MethodEnum getMethod() {
         return method;
     }
@@ -333,9 +358,12 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 健康检查的目标端口，缺省时为VPC中主机的端口号。 minimum: 1 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 健康检查的目标端口，缺省时为VPC中主机的端口号。
+     * minimum: 1
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -349,9 +377,12 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。 minimum: 2 maximum: 10
-     * 
-     * @return thresholdNormal */
+    /**
+     * 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。
+     * minimum: 2
+     * maximum: 10
+     * @return thresholdNormal
+     */
     public Integer getThresholdNormal() {
         return thresholdNormal;
     }
@@ -365,9 +396,12 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。 minimum: 2 maximum: 10
-     * 
-     * @return thresholdAbnormal */
+    /**
+     * 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
+     * minimum: 2
+     * maximum: 10
+     * @return thresholdAbnormal
+     */
     public Integer getThresholdAbnormal() {
         return thresholdAbnormal;
     }
@@ -381,9 +415,12 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。 minimum: 5 maximum: 300
-     * 
-     * @return timeInterval */
+    /**
+     * 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。
+     * minimum: 5
+     * maximum: 300
+     * @return timeInterval
+     */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -397,10 +434,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 检查目标HTTP响应时，判断成功使用的HTTP响应码。取值范围为100到599之前的任意整数值，支持如下三种格式： - 多个值，如：200,201,202 - 一系列值，如：200-299 -
-     * 组合值，如：201,202,210-299 protocol = http时必选
-     * 
-     * @return httpCode */
+    /**
+     * 检查目标HTTP响应时，判断成功使用的HTTP响应码。取值范围为100到599之前的任意整数值，支持如下三种格式： - 多个值，如：200,201,202 - 一系列值，如：200-299 - 组合值，如：201,202,210-299 protocol = http时必选
+     * @return httpCode
+     */
     public String getHttpCode() {
         return httpCode;
     }
@@ -414,9 +451,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 是否开启双向认证。若开启，则使用实例配置中的backend_client_certificate配置项的证书
-     * 
-     * @return enableClientSsl */
+    /**
+     * 是否开启双向认证。若开启，则使用实例配置中的backend_client_certificate配置项的证书
+     * @return enableClientSsl
+     */
     public Boolean getEnableClientSsl() {
         return enableClientSsl;
     }
@@ -430,9 +468,10 @@ public class VpcHealthConfigBase {
         return this;
     }
 
-    /** 健康检查状态 - 1：可用 - 2：不可用
-     * 
-     * @return status */
+    /**
+     * 健康检查状态   - 1：可用   - 2：不可用
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -494,7 +533,10 @@ public class VpcHealthConfigBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

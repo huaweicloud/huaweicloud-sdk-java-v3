@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 租户需求 */
+/**
+ * 租户需求
+ */
 public class DemandResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class DemandResp {
         return this;
     }
 
-    /** 站点需要发放的资源(组)总数。 > 实际发放实例数量为count*demand_count。 minimum: 1 maximum: 10
-     * 
-     * @return demandCount */
+    /**
+     * 站点需要发放的资源(组)总数。  > 实际发放实例数量为count*demand_count。
+     * minimum: 1
+     * maximum: 10
+     * @return demandCount
+     */
     public Integer getDemandCount() {
         return demandCount;
     }
@@ -55,7 +60,10 @@ public class DemandResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

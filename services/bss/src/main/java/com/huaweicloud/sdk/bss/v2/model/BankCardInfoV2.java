@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BankCardInfoV2 */
+/**
+ * BankCardInfoV2
+ */
 public class BankCardInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class BankCardInfoV2 {
         return this;
     }
 
-    /** 银行卡账号。 当identifyType为4时，不能为空。 银行账号输入规则：^[0-9a-zA-Z]，可以包含特殊横杠（-）字符。
-     * 
-     * @return bankAccount */
+    /**
+     * 银行卡账号。 当identifyType为4时，不能为空。 银行账号输入规则：^[0-9a-zA-Z]，可以包含特殊横杠（-）字符。
+     * @return bankAccount
+     */
     public String getBankAccount() {
         return bankAccount;
     }
@@ -49,9 +52,10 @@ public class BankCardInfoV2 {
         return this;
     }
 
-    /** 国家/区号码。 例如：0086：中国大陆区号码。
-     * 
-     * @return areacode */
+    /**
+     * 国家/区号码。 例如：0086：中国大陆区号码。
+     * @return areacode
+     */
     public String getAreacode() {
         return areacode;
     }
@@ -65,9 +69,10 @@ public class BankCardInfoV2 {
         return this;
     }
 
-    /** 手机号码。
-     * 
-     * @return mobile */
+    /**
+     * 手机号码。
+     * @return mobile
+     */
     public String getMobile() {
         return mobile;
     }
@@ -81,9 +86,10 @@ public class BankCardInfoV2 {
         return this;
     }
 
-    /** 验证码。 请调用“发送验证码”接口获取。
-     * 
-     * @return verificationCode */
+    /**
+     * 验证码。 请调用“发送验证码”接口获取。
+     * @return verificationCode
+     */
     public String getVerificationCode() {
         return verificationCode;
     }
@@ -124,7 +130,10 @@ public class BankCardInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

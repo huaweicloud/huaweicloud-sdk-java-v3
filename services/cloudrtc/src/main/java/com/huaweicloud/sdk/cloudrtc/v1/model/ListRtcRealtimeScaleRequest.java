@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcRealtimeScaleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -69,9 +72,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -87,9 +91,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。
-     * 
-     * @return xProjectId */
+    /**
+     * 使用AK/SK方式认证时必选，携带项目ID信息，与路径参数中的项目ID相同。 
+     * @return xProjectId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
     public String getXProjectId() {
@@ -105,9 +110,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 应用标识
-     * 
-     * @return app */
+    /**
+     * 应用标识 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -121,9 +127,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -137,9 +144,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 查询的数据类型 OnlineUsers:在线用户数; RoomCount:在线房间数;
-     * 
-     * @return metric */
+    /**
+     * 查询的数据类型  OnlineUsers:在线用户数;  RoomCount:在线房间数; 
+     * @return metric
+     */
     public String getMetric() {
         return metric;
     }
@@ -153,9 +161,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不写默认读取过去1小时数据数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -169,9 +178,10 @@ public class ListRtcRealtimeScaleRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不写默认为当前时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不写默认为当前时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -220,7 +230,10 @@ public class ListRtcRealtimeScaleRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

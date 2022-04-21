@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowOverviewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,12 @@ public class ShowOverviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 等待中 minimum: 0 maximum: 1000
-     * 
-     * @return waiting */
+    /**
+     * 等待中
+     * minimum: 0
+     * maximum: 1000
+     * @return waiting
+     */
     public Integer getWaiting() {
         return waiting;
     }
@@ -50,9 +55,12 @@ public class ShowOverviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 复制中 minimum: 0 maximum: 1000
-     * 
-     * @return replicating */
+    /**
+     * 复制中
+     * minimum: 0
+     * maximum: 1000
+     * @return replicating
+     */
     public Integer getReplicating() {
         return replicating;
     }
@@ -66,9 +74,12 @@ public class ShowOverviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 同步中 minimum: 0 maximum: 1000
-     * 
-     * @return syncing */
+    /**
+     * 同步中
+     * minimum: 0
+     * maximum: 1000
+     * @return syncing
+     */
     public Integer getSyncing() {
         return syncing;
     }
@@ -82,9 +93,12 @@ public class ShowOverviewResponse extends SdkResponse {
         return this;
     }
 
-    /** 其它 minimum: 0 maximum: 1000
-     * 
-     * @return other */
+    /**
+     * 其它
+     * minimum: 0
+     * maximum: 1000
+     * @return other
+     */
     public Integer getOther() {
         return other;
     }
@@ -125,7 +139,10 @@ public class ShowOverviewResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

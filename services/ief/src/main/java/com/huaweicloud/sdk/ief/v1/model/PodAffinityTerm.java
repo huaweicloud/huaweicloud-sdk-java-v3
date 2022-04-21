@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Pod亲和规则 */
+/**
+ * Pod亲和规则
+ */
 public class PodAffinityTerm {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class PodAffinityTerm {
         return this;
     }
 
-    /** Get labelSelector
-     * 
-     * @return labelSelector */
+    /**
+     * Get labelSelector
+     * @return labelSelector
+     */
     public PodAffinityTermLabelSelector getLabelSelector() {
         return labelSelector;
     }
@@ -72,9 +75,10 @@ public class PodAffinityTerm {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespaces */
+    /**
+     * 命名空间
+     * @return namespaces
+     */
     public List<String> getNamespaces() {
         return namespaces;
     }
@@ -88,9 +92,10 @@ public class PodAffinityTerm {
         return this;
     }
 
-    /** 拓扑标签。 先圈定topologyKey指定的范围，然后再选择labelSelector定义的内容，即亲和调度只会在有topologyKey指定的标签节点上调度。
-     * 
-     * @return topologyKey */
+    /**
+     * 拓扑标签。 先圈定topologyKey指定的范围，然后再选择labelSelector定义的内容，即亲和调度只会在有topologyKey指定的标签节点上调度。
+     * @return topologyKey
+     */
     public String getTopologyKey() {
         return topologyKey;
     }
@@ -129,7 +134,10 @@ public class PodAffinityTerm {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

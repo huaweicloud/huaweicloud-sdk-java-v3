@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 环境变量可使用配置项和密钥导入 */
+/**
+ * 环境变量可使用配置项和密钥导入
+ */
 public class EnvValueFrom {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class EnvValueFrom {
         return this;
     }
 
-    /** Get secret
-     * 
-     * @return secret */
+    /**
+     * Get secret
+     * @return secret
+     */
     public Secrets getSecret() {
         return secret;
     }
@@ -58,9 +61,10 @@ public class EnvValueFrom {
         return this;
     }
 
-    /** Get configmap
-     * 
-     * @return configmap */
+    /**
+     * Get configmap
+     * @return configmap
+     */
     public ConfigsMap getConfigmap() {
         return configmap;
     }
@@ -97,7 +101,10 @@ public class EnvValueFrom {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

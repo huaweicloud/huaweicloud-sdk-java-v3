@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量添加保护实例标签请求体 */
+/**
+ * 批量添加保护实例标签请求体
+ */
 public class BatchAddTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,10 +23,14 @@ public class BatchAddTagsRequestBody {
 
     private List<ResourceTag> tags = null;
 
-    /** 操作标识，取值仅限于：create：创建 */
+    /**
+    * 操作标识，取值仅限于：create：创建
+    */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +120,10 @@ public class BatchAddTagsRequestBody {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -130,9 +137,10 @@ public class BatchAddTagsRequestBody {
         return this;
     }
 
-    /** 操作标识，取值仅限于：create：创建
-     * 
-     * @return action */
+    /**
+     * 操作标识，取值仅限于：create：创建
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -169,7 +177,10 @@ public class BatchAddTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

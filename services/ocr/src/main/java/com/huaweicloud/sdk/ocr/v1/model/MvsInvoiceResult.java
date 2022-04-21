@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MvsInvoiceResult */
+/**
+ * MvsInvoiceResult
+ */
 public class MvsInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,9 +185,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 发票代码。
-     * 
-     * @return code */
+    /**
+     * 发票代码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -199,9 +202,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return number */
+    /**
+     * 发票号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -215,9 +219,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 机打代码。
-     * 
-     * @return machinePrintedCode */
+    /**
+     * 机打代码。 
+     * @return machinePrintedCode
+     */
     public String getMachinePrintedCode() {
         return machinePrintedCode;
     }
@@ -231,9 +236,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 机打号码。
-     * 
-     * @return machinePrintedNumber */
+    /**
+     * 机打号码。 
+     * @return machinePrintedNumber
+     */
     public String getMachinePrintedNumber() {
         return machinePrintedNumber;
     }
@@ -247,9 +253,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 开票日期。
-     * 
-     * @return issueDate */
+    /**
+     * 开票日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -263,9 +270,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 机器编号。
-     * 
-     * @return machineNumber */
+    /**
+     * 机器编号。 
+     * @return machineNumber
+     */
     public String getMachineNumber() {
         return machineNumber;
     }
@@ -279,9 +287,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 购买方名称。
-     * 
-     * @return buyerName */
+    /**
+     * 购买方名称。 
+     * @return buyerName
+     */
     public String getBuyerName() {
         return buyerName;
     }
@@ -295,9 +304,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 购买方身份证号码/组织机构代码。
-     * 
-     * @return buyerOrganizationNumber */
+    /**
+     * 购买方身份证号码/组织机构代码。 
+     * @return buyerOrganizationNumber
+     */
     public String getBuyerOrganizationNumber() {
         return buyerOrganizationNumber;
     }
@@ -311,9 +321,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 购买方纳税人识别号。
-     * 
-     * @return buyerId */
+    /**
+     * 购买方纳税人识别号。 
+     * @return buyerId
+     */
     public String getBuyerId() {
         return buyerId;
     }
@@ -327,9 +338,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销货单位名称。
-     * 
-     * @return sellerName */
+    /**
+     * 销货单位名称。 
+     * @return sellerName
+     */
     public String getSellerName() {
         return sellerName;
     }
@@ -343,9 +355,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销售方电话。
-     * 
-     * @return sellerPhone */
+    /**
+     * 销售方电话。 
+     * @return sellerPhone
+     */
     public String getSellerPhone() {
         return sellerPhone;
     }
@@ -359,9 +372,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销售方纳税人识别号。
-     * 
-     * @return sellerId */
+    /**
+     * 销售方纳税人识别号。 
+     * @return sellerId
+     */
     public String getSellerId() {
         return sellerId;
     }
@@ -375,9 +389,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销售方账号。
-     * 
-     * @return sellerAccount */
+    /**
+     * 销售方账号。 
+     * @return sellerAccount
+     */
     public String getSellerAccount() {
         return sellerAccount;
     }
@@ -391,9 +406,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销售方地址。
-     * 
-     * @return sellerAddress */
+    /**
+     * 销售方地址。 
+     * @return sellerAddress
+     */
     public String getSellerAddress() {
         return sellerAddress;
     }
@@ -407,9 +423,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 销售方开户行。
-     * 
-     * @return sellerBank */
+    /**
+     * 销售方开户行。 
+     * @return sellerBank
+     */
     public String getSellerBank() {
         return sellerBank;
     }
@@ -423,9 +440,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 车辆类型。
-     * 
-     * @return vehicleType */
+    /**
+     * 车辆类型。 
+     * @return vehicleType
+     */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -439,9 +457,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 厂牌型号。
-     * 
-     * @return brandModel */
+    /**
+     * 厂牌型号。 
+     * @return brandModel
+     */
     public String getBrandModel() {
         return brandModel;
     }
@@ -455,9 +474,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 产地。
-     * 
-     * @return manufacturingLocation */
+    /**
+     * 产地。 
+     * @return manufacturingLocation
+     */
     public String getManufacturingLocation() {
         return manufacturingLocation;
     }
@@ -471,9 +491,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 合格证号。
-     * 
-     * @return qualityCertificate */
+    /**
+     * 合格证号。 
+     * @return qualityCertificate
+     */
     public String getQualityCertificate() {
         return qualityCertificate;
     }
@@ -487,9 +508,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 进口证明书号。
-     * 
-     * @return importCertificate */
+    /**
+     * 进口证明书号。 
+     * @return importCertificate
+     */
     public String getImportCertificate() {
         return importCertificate;
     }
@@ -503,9 +525,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 商检单号。
-     * 
-     * @return inspectionNumber */
+    /**
+     * 商检单号。 
+     * @return inspectionNumber
+     */
     public String getInspectionNumber() {
         return inspectionNumber;
     }
@@ -519,9 +542,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 发动机号码。
-     * 
-     * @return engineNumber */
+    /**
+     * 发动机号码。 
+     * @return engineNumber
+     */
     public String getEngineNumber() {
         return engineNumber;
     }
@@ -535,9 +559,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 车辆识别代号/车架号码。
-     * 
-     * @return vehicleIdentificationNumber */
+    /**
+     * 车辆识别代号/车架号码。 
+     * @return vehicleIdentificationNumber
+     */
     public String getVehicleIdentificationNumber() {
         return vehicleIdentificationNumber;
     }
@@ -551,9 +576,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 吨位。
-     * 
-     * @return tonnage */
+    /**
+     * 吨位。 
+     * @return tonnage
+     */
     public String getTonnage() {
         return tonnage;
     }
@@ -567,9 +593,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 限乘人数。
-     * 
-     * @return seatingCapacity */
+    /**
+     * 限乘人数。 
+     * @return seatingCapacity
+     */
     public String getSeatingCapacity() {
         return seatingCapacity;
     }
@@ -583,9 +610,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 主管税务机关。
-     * 
-     * @return taxAuthority */
+    /**
+     * 主管税务机关。 
+     * @return taxAuthority
+     */
     public String getTaxAuthority() {
         return taxAuthority;
     }
@@ -599,9 +627,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 主管税务机关代码。
-     * 
-     * @return taxAuthorityCode */
+    /**
+     * 主管税务机关代码。 
+     * @return taxAuthorityCode
+     */
     public String getTaxAuthorityCode() {
         return taxAuthorityCode;
     }
@@ -615,9 +644,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 完税凭证号码。
-     * 
-     * @return taxPaymentReceipt */
+    /**
+     * 完税凭证号码。 
+     * @return taxPaymentReceipt
+     */
     public String getTaxPaymentReceipt() {
         return taxPaymentReceipt;
     }
@@ -631,9 +661,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 增值税税率或征收率。
-     * 
-     * @return taxRate */
+    /**
+     * 增值税税率或征收率。 
+     * @return taxRate
+     */
     public String getTaxRate() {
         return taxRate;
     }
@@ -647,9 +678,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 增值税税额。
-     * 
-     * @return tax */
+    /**
+     * 增值税税额。 
+     * @return tax
+     */
     public String getTax() {
         return tax;
     }
@@ -663,9 +695,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 不含税价。
-     * 
-     * @return taxExclusivePrice */
+    /**
+     * 不含税价。 
+     * @return taxExclusivePrice
+     */
     public String getTaxExclusivePrice() {
         return taxExclusivePrice;
     }
@@ -679,9 +712,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 价税合计。
-     * 
-     * @return total */
+    /**
+     * 价税合计。 
+     * @return total
+     */
     public String getTotal() {
         return total;
     }
@@ -695,9 +729,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 价税合计大写。
-     * 
-     * @return totalChinese */
+    /**
+     * 价税合计大写。 
+     * @return totalChinese
+     */
     public String getTotalChinese() {
         return totalChinese;
     }
@@ -711,9 +746,10 @@ public class MvsInvoiceResult {
         return this;
     }
 
-    /** 税控码。
-     * 
-     * @return fiscalCode */
+    /**
+     * 税控码。 
+     * @return fiscalCode
+     */
     public String getFiscalCode() {
         return fiscalCode;
     }
@@ -847,7 +883,10 @@ public class MvsInvoiceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

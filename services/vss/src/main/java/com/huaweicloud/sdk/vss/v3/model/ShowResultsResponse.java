@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowResultsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ShowResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** 漏洞总数 minimum: 0 maximum: 100000
-     * 
-     * @return total */
+    /**
+     * 漏洞总数
+     * minimum: 0
+     * maximum: 100000
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -64,9 +69,10 @@ public class ShowResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** 漏洞信息列表
-     * 
-     * @return data */
+    /**
+     * 漏洞信息列表
+     * @return data
+     */
     public List<VulnItem> getData() {
         return data;
     }
@@ -89,9 +95,10 @@ public class ShowResultsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get statistics
-     * 
-     * @return statistics */
+    /**
+     * Get statistics
+     * @return statistics
+     */
     public VulnsLevel getStatistics() {
         return statistics;
     }
@@ -130,7 +137,10 @@ public class ShowResultsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

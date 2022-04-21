@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 负载均衡器的包周期规格变更信息 */
+/**
+ * 负载均衡器的包周期规格变更信息
+ */
 public class PrepaidUpdateOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class PrepaidUpdateOption {
 
     private Boolean autoPay;
 
-    /** 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。 */
+    /**
+     * 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+     */
     public static final class ChangeModeEnum {
 
-        /** Enum IMMEDIATE for value: "immediate" */
+        /**
+         * Enum IMMEDIATE for value: "immediate"
+         */
         public static final ChangeModeEnum IMMEDIATE = new ChangeModeEnum("immediate");
 
-        /** Enum DELAY for value: "delay" */
+        /**
+         * Enum DELAY for value: "delay"
+         */
         public static final ChangeModeEnum DELAY = new ChangeModeEnum("delay");
 
         private static final Map<String, ChangeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class PrepaidUpdateOption {
 
     private Integer periodNum;
 
-    /** 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。 */
+    /**
+     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     */
     public static final class PeriodTypeEnum {
 
-        /** Enum MONTH for value: "month" */
+        /**
+         * Enum MONTH for value: "month"
+         */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
 
-        /** Enum YEAR for value: "year" */
+        /**
+         * Enum YEAR for value: "year"
+         */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
 
         private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -180,9 +194,10 @@ public class PrepaidUpdateOption {
         return this;
     }
 
-    /** 下单订购后，是否自动从客户的账户中支付； true：自动支付； false：不自动支付（默认）。 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
-     * 
-     * @return autoPay */
+    /**
+     * 下单订购后，是否自动从客户的账户中支付； true：自动支付； false：不自动支付（默认）。 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
+     * @return autoPay
+     */
     public Boolean getAutoPay() {
         return autoPay;
     }
@@ -196,9 +211,10 @@ public class PrepaidUpdateOption {
         return this;
     }
 
-    /** 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
-     * 
-     * @return changeMode */
+    /**
+     * 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+     * @return changeMode
+     */
     public ChangeModeEnum getChangeMode() {
         return changeMode;
     }
@@ -212,10 +228,12 @@ public class PrepaidUpdateOption {
         return this;
     }
 
-    /** 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。 minimum: 1
+    /**
+     * 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
+     * minimum: 1
      * maximum: 9
-     * 
-     * @return periodNum */
+     * @return periodNum
+     */
     public Integer getPeriodNum() {
         return periodNum;
     }
@@ -229,9 +247,10 @@ public class PrepaidUpdateOption {
         return this;
     }
 
-    /** 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
-     * 
-     * @return periodType */
+    /**
+     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     * @return periodType
+     */
     public PeriodTypeEnum getPeriodType() {
         return periodType;
     }
@@ -272,7 +291,10 @@ public class PrepaidUpdateOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

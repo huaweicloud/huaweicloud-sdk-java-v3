@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 慢日志信息。 */
+/**
+ * 慢日志信息。
+ */
 public class SlowLogFile {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SlowLogFile {
         return this;
     }
 
-    /** 文件名。
-     * 
-     * @return fileName */
+    /**
+     * 文件名。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -39,9 +42,10 @@ public class SlowLogFile {
         return this;
     }
 
-    /** 文件大小（单位Byte）
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小（单位Byte）
+     * @return fileSize
+     */
     public String getFileSize() {
         return fileSize;
     }
@@ -78,7 +82,10 @@ public class SlowLogFile {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

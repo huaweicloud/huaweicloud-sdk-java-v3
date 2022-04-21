@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConnectionParam */
+/**
+ * ConnectionParam
+ */
 public class ConnectionParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,25 +20,39 @@ public class ConnectionParam {
 
     private String name;
 
-    /** Gets or Sets connectionType */
+    /**
+     * Gets or Sets connectionType
+     */
     public static final class ConnectionTypeEnum {
 
-        /** Enum DWS for value: "DWS" */
+        /**
+         * Enum DWS for value: "DWS"
+         */
         public static final ConnectionTypeEnum DWS = new ConnectionTypeEnum("DWS");
 
-        /** Enum DLI for value: "DLI" */
+        /**
+         * Enum DLI for value: "DLI"
+         */
         public static final ConnectionTypeEnum DLI = new ConnectionTypeEnum("DLI");
 
-        /** Enum SPARKSQL for value: "SparkSQL" */
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
         public static final ConnectionTypeEnum SPARKSQL = new ConnectionTypeEnum("SparkSQL");
 
-        /** Enum HIVE for value: "Hive" */
+        /**
+         * Enum HIVE for value: "Hive"
+         */
         public static final ConnectionTypeEnum HIVE = new ConnectionTypeEnum("Hive");
 
-        /** Enum RDS for value: "RDS" */
+        /**
+         * Enum RDS for value: "RDS"
+         */
         public static final ConnectionTypeEnum RDS = new ConnectionTypeEnum("RDS");
 
-        /** Enum CLOUDTABLE for value: "CloudTable" */
+        /**
+         * Enum CLOUDTABLE for value: "CloudTable"
+         */
         public static final ConnectionTypeEnum CLOUDTABLE = new ConnectionTypeEnum("CloudTable");
 
         private static final Map<String, ConnectionTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +136,10 @@ public class ConnectionParam {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -136,9 +153,10 @@ public class ConnectionParam {
         return this;
     }
 
-    /** Get connectionType
-     * 
-     * @return connectionType */
+    /**
+     * Get connectionType
+     * @return connectionType
+     */
     public ConnectionTypeEnum getConnectionType() {
         return connectionType;
     }
@@ -152,9 +170,10 @@ public class ConnectionParam {
         return this;
     }
 
-    /** Get params
-     * 
-     * @return params */
+    /**
+     * Get params
+     * @return params
+     */
     public Object getParams() {
         return params;
     }
@@ -193,7 +212,10 @@ public class ConnectionParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 公网IP字段信息 */
+/**
+ * 公网IP字段信息
+ */
 public class PublicipInstanceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,13 +27,19 @@ public class PublicipInstanceResp {
 
     private String projectId;
 
-    /** 功能说明：IP版本信息 取值范围：4表示公网IP地址为public_ip_address地址;6表示公网IP地址为public_ipv6_address地址\" */
+    /**
+     * 功能说明：IP版本信息 取值范围：4表示公网IP地址为public_ip_address地址;6表示公网IP地址为public_ipv6_address地址\"
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -111,47 +119,74 @@ public class PublicipInstanceResp {
 
     private String publicIpv6Address;
 
-    /** 功能说明：弹性公网IP的状态 取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE，
-     * 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。 */
+    /**
+     * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
+     */
     public static final class StatusEnum {
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final StatusEnum FREEZED = new StatusEnum("FREEZED");
 
-        /** Enum BIND_ERROR for value: "BIND_ERROR" */
+        /**
+         * Enum BIND_ERROR for value: "BIND_ERROR"
+         */
         public static final StatusEnum BIND_ERROR = new StatusEnum("BIND_ERROR");
 
-        /** Enum BINDING for value: "BINDING" */
+        /**
+         * Enum BINDING for value: "BINDING"
+         */
         public static final StatusEnum BINDING = new StatusEnum("BINDING");
 
-        /** Enum PENDING_DELETE for value: "PENDING_DELETE" */
+        /**
+         * Enum PENDING_DELETE for value: "PENDING_DELETE"
+         */
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
 
-        /** Enum NOTIFYING for value: "NOTIFYING" */
+        /**
+         * Enum NOTIFYING for value: "NOTIFYING"
+         */
         public static final StatusEnum NOTIFYING = new StatusEnum("NOTIFYING");
 
-        /** Enum NOTIFY_DELETE for value: "NOTIFY_DELETE" */
+        /**
+         * Enum NOTIFY_DELETE for value: "NOTIFY_DELETE"
+         */
         public static final StatusEnum NOTIFY_DELETE = new StatusEnum("NOTIFY_DELETE");
 
-        /** Enum PENDING_UPDATE for value: "PENDING_UPDATE" */
+        /**
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
+         */
         public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum ELB for value: "ELB" */
+        /**
+         * Enum ELB for value: "ELB"
+         */
         public static final StatusEnum ELB = new StatusEnum("ELB");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum VPN for value: "VPN" */
+        /**
+         * Enum VPN for value: "VPN"
+         */
         public static final StatusEnum VPN = new StatusEnum("VPN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -252,16 +287,24 @@ public class PublicipInstanceResp {
 
     private OffsetDateTime updatedAt;
 
-    /** 功能说明：弹性公网IP类型 */
+    /**
+     * 功能说明：弹性公网IP类型
+     */
     public static final class TypeEnum {
 
-        /** Enum EIP for value: "EIP" */
+        /**
+         * Enum EIP for value: "EIP"
+         */
         public static final TypeEnum EIP = new TypeEnum("EIP");
 
-        /** Enum DUALSTACK for value: "DUALSTACK" */
+        /**
+         * Enum DUALSTACK for value: "DUALSTACK"
+         */
         public static final TypeEnum DUALSTACK = new TypeEnum("DUALSTACK");
 
-        /** Enum DUALSTACK_SUBNET for value: "DUALSTACK_SUBNET" */
+        /**
+         * Enum DUALSTACK_SUBNET for value: "DUALSTACK_SUBNET"
+         */
         public static final TypeEnum DUALSTACK_SUBNET = new TypeEnum("DUALSTACK_SUBNET");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -357,25 +400,39 @@ public class PublicipInstanceResp {
 
     private String lockStatus;
 
-    /** 功能说明：公网IP绑定的实例类型 取值范围：PORT、NATGW、ELB、ELBV1、VPN、null */
+    /**
+     * 功能说明：公网IP绑定的实例类型 取值范围：PORT、NATGW、ELB、ELBV1、VPN、null
+     */
     public static final class AssociateInstanceTypeEnum {
 
-        /** Enum PORT for value: "PORT" */
+        /**
+         * Enum PORT for value: "PORT"
+         */
         public static final AssociateInstanceTypeEnum PORT = new AssociateInstanceTypeEnum("PORT");
 
-        /** Enum NATGW for value: "NATGW" */
+        /**
+         * Enum NATGW for value: "NATGW"
+         */
         public static final AssociateInstanceTypeEnum NATGW = new AssociateInstanceTypeEnum("NATGW");
 
-        /** Enum ELB for value: "ELB" */
+        /**
+         * Enum ELB for value: "ELB"
+         */
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
-        /** Enum ELBV1 for value: "ELBV1" */
+        /**
+         * Enum ELBV1 for value: "ELBV1"
+         */
         public static final AssociateInstanceTypeEnum ELBV1 = new AssociateInstanceTypeEnum("ELBV1");
 
-        /** Enum VPN for value: "VPN" */
+        /**
+         * Enum VPN for value: "VPN"
+         */
         public static final AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
-        /** Enum NULL for value: "null" */
+        /**
+         * Enum NULL for value: "null"
+         */
         public static final AssociateInstanceTypeEnum NULL = new AssociateInstanceTypeEnum("null");
 
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -474,9 +531,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP唯一标识
-     * 
-     * @return id */
+    /**
+     * 功能说明：弹性公网IP唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -490,9 +548,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：项目ID
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -506,9 +565,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：IP版本信息 取值范围：4表示公网IP地址为public_ip_address地址;6表示公网IP地址为public_ipv6_address地址\"
-     * 
-     * @return ipVersion */
+    /**
+     * 功能说明：IP版本信息 取值范围：4表示公网IP地址为public_ip_address地址;6表示公网IP地址为public_ipv6_address地址\"
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -522,9 +582,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP或者IPv6端口的地址
-     * 
-     * @return publicIpAddress */
+    /**
+     * 功能说明：弹性公网IP或者IPv6端口的地址
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -538,9 +599,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
-     * 
-     * @return publicIpv6Address */
+    /**
+     * 功能说明：IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
+     * @return publicIpv6Address
+     */
     public String getPublicIpv6Address() {
         return publicIpv6Address;
     }
@@ -554,10 +616,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的状态 取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE，
-     * 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
-     * 
-     * @return status */
+    /**
+     * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -571,9 +633,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP描述信息 约束：用户以自定义方式标识资源，系统不感知
-     * 
-     * @return description */
+    /**
+     * 功能说明：弹性公网IP描述信息 约束：用户以自定义方式标识资源，系统不感知
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -587,9 +650,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -603,9 +667,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：资源创建UTC时间 格式:yyyy-MM-ddTHH:mm:ssZ
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：资源创建UTC时间 格式:yyyy-MM-ddTHH:mm:ssZ
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -619,9 +684,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：资源更新UTC时间 格式:yyyy-MM-ddTHH:mm:ssZ
-     * 
-     * @return updatedAt */
+    /**
+     * 功能说明：资源更新UTC时间 格式:yyyy-MM-ddTHH:mm:ssZ
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -635,9 +701,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP类型
-     * 
-     * @return type */
+    /**
+     * 功能说明：弹性公网IP类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -660,9 +727,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** Get vnic
-     * 
-     * @return vnic */
+    /**
+     * Get vnic
+     * @return vnic
+     */
     public VnicInfo getVnic() {
         return vnic;
     }
@@ -685,9 +753,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public PublicipBandwidthInfo getBandwidth() {
         return bandwidth;
     }
@@ -701,9 +770,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：企业项目ID。最大长度36字节,带“-”连字符的UUID格式,或者是字符串“0”。创建弹性公网IP时,给弹性公网IP绑定企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。最大长度36字节,带“-”连字符的UUID格式,或者是字符串“0”。创建弹性公网IP时,给弹性公网IP绑定企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -717,9 +787,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：公网IP的订单信息 约束：包周期才会有订单信息，按需资源此字段为空
-     * 
-     * @return billingInfo */
+    /**
+     * 功能说明：公网IP的订单信息 约束：包周期才会有订单信息，按需资源此字段为空
+     * @return billingInfo
+     */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -733,9 +804,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：记录公网IP当前的冻结状态 约束：metadata类型，标识欠费冻结、公安冻结 取值范围：police，locked
-     * 
-     * @return lockStatus */
+    /**
+     * 功能说明：记录公网IP当前的冻结状态 约束：metadata类型，标识欠费冻结、公安冻结 取值范围：police，locked
+     * @return lockStatus
+     */
     public String getLockStatus() {
         return lockStatus;
     }
@@ -749,9 +821,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：公网IP绑定的实例类型 取值范围：PORT、NATGW、ELB、ELBV1、VPN、null
-     * 
-     * @return associateInstanceType */
+    /**
+     * 功能说明：公网IP绑定的实例类型 取值范围：PORT、NATGW、ELB、ELBV1、VPN、null
+     * @return associateInstanceType
+     */
     public AssociateInstanceTypeEnum getAssociateInstanceType() {
         return associateInstanceType;
     }
@@ -765,9 +838,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：公网IP绑定的实例ID
-     * 
-     * @return associateInstanceId */
+    /**
+     * 功能说明：公网IP绑定的实例ID
+     * @return associateInstanceId
+     */
     public String getAssociateInstanceId() {
         return associateInstanceId;
     }
@@ -781,9 +855,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：公网IP所属网络的ID。publicip_pool_name对应的网络ID
-     * 
-     * @return publicipPoolId */
+    /**
+     * 功能说明：公网IP所属网络的ID。publicip_pool_name对应的网络ID
+     * @return publicipPoolId
+     */
     public String getPublicipPoolId() {
         return publicipPoolId;
     }
@@ -797,9 +872,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的网络类型, 包括公共池类型，如5_bgp/5_sbgp...，和用户购买的专属池。 专属池见publcip_pool相关接口
-     * 
-     * @return publicipPoolName */
+    /**
+     * 功能说明：弹性公网IP的网络类型, 包括公共池类型，如5_bgp/5_sbgp...，和用户购买的专属池。 专属池见publcip_pool相关接口
+     * @return publicipPoolName
+     */
     public String getPublicipPoolName() {
         return publicipPoolName;
     }
@@ -813,9 +889,10 @@ public class PublicipInstanceResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP名称
-     * 
-     * @return alias */
+    /**
+     * 功能说明：弹性公网IP名称
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -910,7 +987,10 @@ public class PublicipInstanceResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

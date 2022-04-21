@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例配置信息 */
+/**
+ * 实例配置信息
+ */
 public class InstanceConfigResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 云服务器的规格ID。
-     * 
-     * @return flavorRef */
+    /**
+     * 云服务器的规格ID。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -122,9 +125,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 镜像ID，同image_id。
-     * 
-     * @return imageRef */
+    /**
+     * 镜像ID，同image_id。
+     * @return imageRef
+     */
     public String getImageRef() {
         return imageRef;
     }
@@ -154,9 +158,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 磁盘组信息。
-     * 
-     * @return disk */
+    /**
+     * 磁盘组信息。
+     * @return disk
+     */
     public List<DiskResult> getDisk() {
         return disk;
     }
@@ -170,9 +175,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 登录云服务器的SSH密钥名称。
-     * 
-     * @return keyName */
+    /**
+     * 登录云服务器的SSH密钥名称。
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -186,9 +192,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 登录云服务器的SSH密钥指纹。
-     * 
-     * @return keyFingerprint */
+    /**
+     * 登录云服务器的SSH密钥指纹。
+     * @return keyFingerprint
+     */
     public String getKeyFingerprint() {
         return keyFingerprint;
     }
@@ -202,9 +209,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 该参数为预留字段。
-     * 
-     * @return instanceName */
+    /**
+     * 该参数为预留字段。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -218,9 +226,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 该参数为预留字段。
-     * 
-     * @return instanceId */
+    /**
+     * 该参数为预留字段。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -234,9 +243,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 登录云服务器的密码，非明文回显。
-     * 
-     * @return adminPass */
+    /**
+     * 登录云服务器的密码，非明文回显。
+     * @return adminPass
+     */
     public String getAdminPass() {
         return adminPass;
     }
@@ -266,9 +276,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 个人信息
-     * 
-     * @return personality */
+    /**
+     * 个人信息
+     * @return personality
+     */
     public List<PersonalityResult> getPersonality() {
         return personality;
     }
@@ -291,9 +302,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** Get publicIp
-     * 
-     * @return publicIp */
+    /**
+     * Get publicIp
+     * @return publicIp
+     */
     public PublicipResult getPublicIp() {
         return publicIp;
     }
@@ -307,9 +319,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** cloud-init用户数据，base64格式编码。
-     * 
-     * @return userData */
+    /**
+     * cloud-init用户数据，base64格式编码。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -332,9 +345,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public VmMetaData getMetadata() {
         return metadata;
     }
@@ -364,9 +378,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 安全组信息。
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组信息。
+     * @return securityGroups
+     */
     public List<SecurityGroups> getSecurityGroups() {
         return securityGroups;
     }
@@ -380,9 +395,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 云服务器组ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 云服务器组ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -396,9 +412,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 在专属主机上创建弹性云服务器。
-     * 
-     * @return tenancy */
+    /**
+     * 在专属主机上创建弹性云服务器。
+     * @return tenancy
+     */
     public String getTenancy() {
         return tenancy;
     }
@@ -412,9 +429,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 专属主机的ID。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机的ID。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -428,9 +446,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 云服务器的计费模式，可以选择竞价计费或按需计费。
-     * 
-     * @return marketType */
+    /**
+     * 云服务器的计费模式，可以选择竞价计费或按需计费。
+     * @return marketType
+     */
     public String getMarketType() {
         return marketType;
     }
@@ -444,10 +463,10 @@ public class InstanceConfigResult {
         return this;
     }
 
-    /** 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。 PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。
-     * COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
-     * 
-     * @return multiFlavorPriorityPolicy */
+    /**
+     * 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。  PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。 COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
+     * @return multiFlavorPriorityPolicy
+     */
     public String getMultiFlavorPriorityPolicy() {
         return multiFlavorPriorityPolicy;
     }
@@ -533,7 +552,10 @@ public class InstanceConfigResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

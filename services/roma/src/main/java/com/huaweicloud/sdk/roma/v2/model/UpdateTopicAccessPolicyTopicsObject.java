@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTopicAccessPolicyTopicsObject */
+/**
+ * UpdateTopicAccessPolicyTopicsObject
+ */
 public class UpdateTopicAccessPolicyTopicsObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateTopicAccessPolicyTopicsObject {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class UpdateTopicAccessPolicyTopicsObject {
         return this;
     }
 
-    /** 权限列表。
-     * 
-     * @return policies */
+    /**
+     * 权限列表。
+     * @return policies
+     */
     public List<UpdateTopicAccessPolicyPoliciesObject> getPolicies() {
         return policies;
     }
@@ -85,9 +89,10 @@ public class UpdateTopicAccessPolicyTopicsObject {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,9 +106,10 @@ public class UpdateTopicAccessPolicyTopicsObject {
         return this;
     }
 
-    /** 敏感字段。
-     * 
-     * @return sensitiveWord */
+    /**
+     * 敏感字段。
+     * @return sensitiveWord
+     */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -145,7 +151,10 @@ public class UpdateTopicAccessPolicyTopicsObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

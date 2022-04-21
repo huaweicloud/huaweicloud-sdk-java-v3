@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 终端类型 */
+/**
+ * 终端类型
+ */
 public class QueryDeviceTypeResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 终端类型，区分自研和第三方终端
-     * 
-     * @return type */
+    /**
+     * 终端类型，区分自研和第三方终端
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -59,9 +62,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
-     * 
-     * @return model */
+    /**
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -75,9 +79,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 是否支持激活码
-     * 
-     * @return enableActiveCode */
+    /**
+     * 是否支持激活码
+     * @return enableActiveCode
+     */
     public Boolean getEnableActiveCode() {
         return enableActiveCode;
     }
@@ -91,9 +96,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 屏幕分辨率。1080P、720P等。
-     * 
-     * @return resolution */
+    /**
+     * 屏幕分辨率。1080P、720P等。
+     * @return resolution
+     */
     public String getResolution() {
         return resolution;
     }
@@ -107,9 +113,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 是否支持投影码
-     * 
-     * @return supportProjectionCode */
+    /**
+     * 是否支持投影码
+     * @return supportProjectionCode
+     */
     public Boolean getSupportProjectionCode() {
         return supportProjectionCode;
     }
@@ -123,9 +130,10 @@ public class QueryDeviceTypeResultDTO {
         return this;
     }
 
-    /** 是否支持SVC
-     * 
-     * @return supportSVC */
+    /**
+     * 是否支持SVC
+     * @return supportSVC
+     */
     public Boolean getSupportSVC() {
         return supportSVC;
     }
@@ -170,7 +178,10 @@ public class QueryDeviceTypeResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

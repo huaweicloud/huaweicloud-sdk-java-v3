@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 增强型负载均衡器 */
+/**
+ * 增强型负载均衡器
+ */
 public class LbaasListeners {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class LbaasListeners {
         return this;
     }
 
-    /** 后端云服务器组ID
-     * 
-     * @return poolId */
+    /**
+     * 后端云服务器组ID
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -44,9 +47,12 @@ public class LbaasListeners {
         return this;
     }
 
-    /** 后端协议号，指后端云服务器监听的端口，取值范围[1,65535] minimum: 1 maximum: 65535
-     * 
-     * @return protocolPort */
+    /**
+     * 后端协议号，指后端云服务器监听的端口，取值范围[1,65535]
+     * minimum: 1
+     * maximum: 65535
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -60,9 +66,10 @@ public class LbaasListeners {
         return this;
     }
 
-    /** 权重，指后端云服务器经分发得到的请求数量的比例，取值范围[0, 100]。
-     * 
-     * @return weight */
+    /**
+     * 权重，指后端云服务器经分发得到的请求数量的比例，取值范围[0, 100]。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -101,7 +108,10 @@ public class LbaasListeners {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

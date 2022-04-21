@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListLogHistogramResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ListLogHistogramResponse extends SdkResponse {
         return this;
     }
 
-    /** 直方图结果
-     * 
-     * @return histogram */
+    /**
+     * 直方图结果
+     * @return histogram
+     */
     public String getHistogram() {
         return histogram;
     }
@@ -40,9 +43,10 @@ public class ListLogHistogramResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志条数
-     * 
-     * @return count */
+    /**
+     * 日志条数
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -79,7 +83,10 @@ public class ListLogHistogramResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 操作权限请求结构体 */
+/**
+ * 操作权限请求结构体
+ */
 public class AddOrRemoveServicePermissionsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class AddOrRemoveServicePermissionsRequestBody {
 
     private List<String> permissions = null;
 
-    /** 要执行的操作。 add/remove。 */
+    /**
+    * 要执行的操作。 add/remove。
+    */
     public static final class ActionEnum {
 
-        /** Enum ADD for value: "add" */
+        /**
+         * Enum ADD for value: "add"
+         */
         public static final ActionEnum ADD = new ActionEnum("add");
 
-        /** Enum REMOVE for value: "remove" */
+        /**
+         * Enum REMOVE for value: "remove"
+         */
         public static final ActionEnum REMOVE = new ActionEnum("remove");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -118,10 +126,10 @@ public class AddOrRemoveServicePermissionsRequestBody {
         return this;
     }
 
-    /** permission列表。 权限格式为：iam:domain::domain_id 其中， ● “iam:domain::”为固定格式。 ● “domain_id”为可连接用户的帐号ID。
-     * 支持输入1~64个字符，包括“a~z”、 “A~Z”、“0~9”或者“*”。“*”表示 所有终端节点可连接。 例如：iam:domain:: 6e9dfd51d1124e8d8498dce894923a0dd
-     * 
-     * @return permissions */
+    /**
+     * permission列表。 权限格式为：iam:domain::domain_id 其中， ● “iam:domain::”为固定格式。 ● “domain_id”为可连接用户的帐号ID。 支持输入1~64个字符，包括“a~z”、 “A~Z”、“0~9”或者“*”。“*”表示 所有终端节点可连接。 例如：iam:domain:: 6e9dfd51d1124e8d8498dce894923a0dd
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -135,9 +143,10 @@ public class AddOrRemoveServicePermissionsRequestBody {
         return this;
     }
 
-    /** 要执行的操作。 add/remove。
-     * 
-     * @return action */
+    /**
+     * 要执行的操作。 add/remove。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -175,7 +184,10 @@ public class AddOrRemoveServicePermissionsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

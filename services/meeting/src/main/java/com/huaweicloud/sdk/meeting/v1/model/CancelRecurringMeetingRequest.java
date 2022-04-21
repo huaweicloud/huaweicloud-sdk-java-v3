@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CancelRecurringMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CancelRecurringMeetingRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -56,9 +59,10 @@ public class CancelRecurringMeetingRequest {
         return this;
     }
 
-    /** 用户的uuid（已在USG注册过的）
-     * 
-     * @return userUUID */
+    /**
+     * 用户的uuid（已在USG注册过的）
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -72,9 +76,10 @@ public class CancelRecurringMeetingRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -90,9 +95,10 @@ public class CancelRecurringMeetingRequest {
         return this;
     }
 
-    /** 会议标识
-     * 
-     * @return conferenceID */
+    /**
+     * 会议标识
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -106,9 +112,10 @@ public class CancelRecurringMeetingRequest {
         return this;
     }
 
-    /** 取消会议操作类型,1表示需要结束在线会议
-     * 
-     * @return type */
+    /**
+     * 取消会议操作类型,1表示需要结束在线会议
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -151,7 +158,10 @@ public class CancelRecurringMeetingRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

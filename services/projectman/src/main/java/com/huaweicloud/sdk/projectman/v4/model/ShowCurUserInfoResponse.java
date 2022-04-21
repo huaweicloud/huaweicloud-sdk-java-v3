@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCurUserInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainId */
+    /**
+     * 租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -80,9 +83,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -96,9 +100,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户数字id
-     * 
-     * @return userNumId */
+    /**
+     * 用户数字id
+     * @return userNumId
+     */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -112,9 +117,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userId */
+    /**
+     * 用户id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -128,9 +134,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -144,9 +151,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户昵称
-     * 
-     * @return nickName */
+    /**
+     * 用户昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -160,9 +168,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -176,9 +185,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedTime */
+    /**
+     * 更新时间
+     * @return updatedTime
+     */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -192,9 +202,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 性别
-     * 
-     * @return gender */
+    /**
+     * 性别
+     * @return gender
+     */
     public String getGender() {
         return gender;
     }
@@ -208,9 +219,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户类型, User 云用户, Federation 联邦账号,
-     * 
-     * @return userType */
+    /**
+     * 用户类型, User 云用户, Federation 联邦账号,
+     * @return userType
+     */
     public String getUserType() {
         return userType;
     }
@@ -272,7 +284,10 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

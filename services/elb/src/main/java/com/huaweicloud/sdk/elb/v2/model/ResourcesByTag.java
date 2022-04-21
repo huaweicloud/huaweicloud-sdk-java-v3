@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 根据标签查询资源响应返回对象。 */
+/**
+ * 根据标签查询资源响应返回对象。
+ */
 public class ResourcesByTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ResourcesByTag {
         return this;
     }
 
-    /** 资源ID.
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID.
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -57,9 +60,10 @@ public class ResourcesByTag {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -73,9 +77,10 @@ public class ResourcesByTag {
         return this;
     }
 
-    /** 资源描述。
-     * 
-     * @return resourceDetail */
+    /**
+     * 资源描述。
+     * @return resourceDetail
+     */
     public String getResourceDetail() {
         return resourceDetail;
     }
@@ -105,9 +110,10 @@ public class ResourcesByTag {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -121,9 +127,10 @@ public class ResourcesByTag {
         return this;
     }
 
-    /** 父级资源ID。
-     * 
-     * @return superResourceId */
+    /**
+     * 父级资源ID。
+     * @return superResourceId
+     */
     public String getSuperResourceId() {
         return superResourceId;
     }
@@ -166,7 +173,10 @@ public class ResourcesByTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

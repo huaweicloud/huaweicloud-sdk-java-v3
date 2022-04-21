@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCnfReq */
+/**
+ * CreateCnfReq
+ */
 public class CreateCnfReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateCnfReq {
         return this;
     }
 
-    /** 配置文件名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头
-     * 
-     * @return name */
+    /**
+     * 配置文件名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -45,9 +48,10 @@ public class CreateCnfReq {
         return this;
     }
 
-    /** 配置文件内容。
-     * 
-     * @return confContent */
+    /**
+     * 配置文件内容。
+     * @return confContent
+     */
     public String getConfContent() {
         return confContent;
     }
@@ -70,9 +74,10 @@ public class CreateCnfReq {
         return this;
     }
 
-    /** Get setting
-     * 
-     * @return setting */
+    /**
+     * Get setting
+     * @return setting
+     */
     public Setting getSetting() {
         return setting;
     }
@@ -111,7 +116,10 @@ public class CreateCnfReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

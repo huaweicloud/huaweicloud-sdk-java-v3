@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPipleineBuildResultResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 偏移量,表示从此偏移量开始查询,offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -53,9 +56,10 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 每次查询的条目数量
-     * 
-     * @return limit */
+    /**
+     * 每次查询的条目数量
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -69,9 +73,10 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条目数量
-     * 
-     * @return total */
+    /**
+     * 总条目数量
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -101,9 +106,10 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
         return this;
     }
 
-    /** 执行状况数据列表
-     * 
-     * @return buildResults */
+    /**
+     * 执行状况数据列表
+     * @return buildResults
+     */
     public List<PipelineBuildResult> getBuildResults() {
         return buildResults;
     }
@@ -144,7 +150,10 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

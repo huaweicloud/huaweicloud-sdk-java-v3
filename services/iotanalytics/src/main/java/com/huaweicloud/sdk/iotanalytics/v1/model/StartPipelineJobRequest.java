@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class StartPipelineJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StartPipelineJobRequest {
         return this;
     }
 
-    /** 管道ID
-     * 
-     * @return pipelineId */
+    /**
+     * 管道ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -49,9 +52,12 @@ public class StartPipelineJobRequest {
         return this;
     }
 
-    /** 运行管道的并发度 minimum: 0 maximum: 1000
-     * 
-     * @return parallel */
+    /**
+     * 运行管道的并发度
+     * minimum: 0
+     * maximum: 1000
+     * @return parallel
+     */
     public Integer getParallel() {
         return parallel;
     }
@@ -65,9 +71,12 @@ public class StartPipelineJobRequest {
         return this;
     }
 
-    /** 运行管道的RTU个数 minimum: 0 maximum: 1000
-     * 
-     * @return rtu */
+    /**
+     * 运行管道的RTU个数
+     * minimum: 0
+     * maximum: 1000
+     * @return rtu
+     */
     public Integer getRtu() {
         return rtu;
     }
@@ -81,9 +90,10 @@ public class StartPipelineJobRequest {
         return this;
     }
 
-    /** 运行管道作业使用历史缓存数据
-     * 
-     * @return resumeSavepoint */
+    /**
+     * 运行管道作业使用历史缓存数据
+     * @return resumeSavepoint
+     */
     public Boolean getResumeSavepoint() {
         return resumeSavepoint;
     }
@@ -124,7 +134,10 @@ public class StartPipelineJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

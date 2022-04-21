@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 请求参数 */
+/**
+ * 请求参数
+ */
 public class CopyImageInRegionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CopyImageInRegionRequestBody {
         return this;
     }
 
-    /** 加密密钥。默认为空。
-     * 
-     * @return cmkId */
+    /**
+     * 加密密钥。默认为空。
+     * @return cmkId
+     */
     public String getCmkId() {
         return cmkId;
     }
@@ -49,9 +52,10 @@ public class CopyImageInRegionRequestBody {
         return this;
     }
 
-    /** 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * 
-     * @return description */
+    /**
+     * 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -65,9 +69,10 @@ public class CopyImageInRegionRequestBody {
         return this;
     }
 
-    /** 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -81,9 +86,10 @@ public class CopyImageInRegionRequestBody {
         return this;
     }
 
-    /** 镜像名称
-     * 
-     * @return name */
+    /**
+     * 镜像名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -124,7 +130,10 @@ public class CopyImageInRegionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

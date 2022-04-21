@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StacksConfig */
+/**
+ * StacksConfig
+ */
 public class StacksConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StacksConfig {
         return this;
     }
 
-    /** Get attributes
-     * 
-     * @return attributes */
+    /**
+     * Get attributes
+     * @return attributes
+     */
     public StacksAttribute getAttributes() {
         return attributes;
     }
@@ -58,9 +61,10 @@ public class StacksConfig {
         return this;
     }
 
-    /** Get recipe
-     * 
-     * @return recipe */
+    /**
+     * Get recipe
+     * @return recipe
+     */
     public Recipe getRecipe() {
         return recipe;
     }
@@ -97,7 +101,10 @@ public class StacksConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

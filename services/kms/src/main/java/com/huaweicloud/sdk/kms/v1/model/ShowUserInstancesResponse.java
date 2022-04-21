@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowUserInstancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,12 @@ public class ShowUserInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 非默认用户主密钥个数。 minimum: 0 maximum: 100
-     * 
-     * @return instanceNum */
+    /**
+     * 非默认用户主密钥个数。
+     * minimum: 0
+     * maximum: 100
+     * @return instanceNum
+     */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -56,7 +61,10 @@ public class ShowUserInstancesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VPC通道详情。如果vpc_channel_status &#x3D; 1，则这个object类型为必填信息 */
+/**
+ * VPC通道详情。如果vpc_channel_status &#x3D; 1，则这个object类型为必填信息
+ */
 public class VpcInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 云服务器ID
-     * 
-     * @return ecsId */
+    /**
+     * 云服务器ID
+     * @return ecsId
+     */
     public String getEcsId() {
         return ecsId;
     }
@@ -59,9 +62,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 云服务器名称
-     * 
-     * @return ecsName */
+    /**
+     * 云服务器名称
+     * @return ecsName
+     */
     public String getEcsName() {
         return ecsName;
     }
@@ -75,9 +79,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 是否使用级联方式 暂不支持
-     * 
-     * @return cascadeFlag */
+    /**
+     * 是否使用级联方式  暂不支持
+     * @return cascadeFlag
+     */
     public Boolean getCascadeFlag() {
         return cascadeFlag;
     }
@@ -91,9 +96,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** 代理主机
-     * 
-     * @return vpcChannelProxyHost */
+    /**
+     * 代理主机
+     * @return vpcChannelProxyHost
+     */
     public String getVpcChannelProxyHost() {
         return vpcChannelProxyHost;
     }
@@ -107,9 +113,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** VPC通道编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -123,9 +130,10 @@ public class VpcInfo {
         return this;
     }
 
-    /** VPC通道端口
-     * 
-     * @return vpcChannelPort */
+    /**
+     * VPC通道端口
+     * @return vpcChannelPort
+     */
     public Integer getVpcChannelPort() {
         return vpcChannelPort;
     }
@@ -169,7 +177,10 @@ public class VpcInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

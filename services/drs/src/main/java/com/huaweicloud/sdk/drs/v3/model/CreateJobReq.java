@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建任务请求体 */
+/**
+ * 创建任务请求体
+ */
 public class CreateJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,16 +23,24 @@ public class CreateJobReq {
 
     private Boolean bindEip;
 
-    /** 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备 */
+    /**
+     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     */
     public static final class DbUseTypeEnum {
 
-        /** Enum MIGRATION for value: "migration" */
+        /**
+         * Enum MIGRATION for value: "migration"
+         */
         public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
 
-        /** Enum CLOUDDATAGUARD for value: "cloudDataGuard" */
+        /**
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
+         */
         public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,22 +121,34 @@ public class CreateJobReq {
 
     private String description;
 
-    /** 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用 */
+    /**
+     * 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+     */
     public static final class EngineTypeEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
 
-        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
+        /**
+         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
-        /** Enum GAUSSDBV5 for value: "gaussdbv5" */
+        /**
+         * Enum GAUSSDBV5 for value: "gaussdbv5"
+         */
         public static final EngineTypeEnum GAUSSDBV5 = new EngineTypeEnum("gaussdbv5");
 
-        /** Enum POSTGRESQL for value: "postgresql" */
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
         public static final EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -204,16 +226,24 @@ public class CreateJobReq {
 
     private Boolean isTargetReadonly;
 
-    /** 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建 */
+    /**
+     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP for value: "up" */
+        /**
+         * Enum UP for value: "up"
+         */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
 
-        /** Enum DOWN for value: "down" */
+        /**
+         * Enum DOWN for value: "down"
+         */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
-        /** Enum NON_DBS for value: "non-dbs" */
+        /**
+         * Enum NON_DBS for value: "non-dbs"
+         */
         public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -289,16 +319,24 @@ public class CreateJobReq {
 
     private Boolean multiWrite;
 
-    /** 网络类型 */
+    /**
+     * 网络类型
+     */
     public static final class NetTypeEnum {
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
 
-        /** Enum EIP for value: "eip" */
+        /**
+         * Enum EIP for value: "eip"
+         */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -374,10 +412,14 @@ public class CreateJobReq {
 
     private Integer nodeNum;
 
-    /** 规格类型。 */
+    /**
+     * 规格类型。
+     */
     public static final class NodeTypeEnum {
 
-        /** Enum HIGH for value: "high" */
+        /**
+         * Enum HIGH for value: "high"
+         */
         public static final NodeTypeEnum HIGH = new NodeTypeEnum("high");
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -461,16 +503,24 @@ public class CreateJobReq {
 
     private List<ResourceTag> tags = null;
 
-    /** 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS） */
+    /**
+    * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
+    */
     public static final class TaskTypeEnum {
 
-        /** Enum FULL_TRANS for value: "FULL_TRANS" */
+        /**
+         * Enum FULL_TRANS for value: "FULL_TRANS"
+         */
         public static final TaskTypeEnum FULL_TRANS = new TaskTypeEnum("FULL_TRANS");
 
-        /** Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS" */
+        /**
+         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
+         */
         public static final TaskTypeEnum FULL_INCR_TRANS = new TaskTypeEnum("FULL_INCR_TRANS");
 
-        /** Enum INCR_TRANS for value: "INCR_TRANS" */
+        /**
+         * Enum INCR_TRANS for value: "INCR_TRANS"
+         */
         public static final TaskTypeEnum INCR_TRANS = new TaskTypeEnum("INCR_TRANS");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -566,9 +616,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 是否绑定eip，网络类型为eip时必填且为true
-     * 
-     * @return bindEip */
+    /**
+     * 是否绑定eip，网络类型为eip时必填且为true
+     * @return bindEip
+     */
     public Boolean getBindEip() {
         return bindEip;
     }
@@ -582,9 +633,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
-     * 
-     * @return dbUseType */
+    /**
+     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     * @return dbUseType
+     */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -598,9 +650,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 任务名称，约束：任务名称在4位到50位之间，不区分大小写，可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。
-     * 
-     * @return name */
+    /**
+     * 任务名称，约束：任务名称在4位到50位之间，不区分大小写，可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -614,9 +667,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 任务描述。 **约束**：任务描述不能超过256位，且不能包含!<>&'\"\\特殊字符。
-     * 
-     * @return description */
+    /**
+     * 任务描述。  **约束**：任务描述不能超过256位，且不能包含!<>&'\"\\特殊字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -630,9 +684,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
-     * 
-     * @return engineType */
+    /**
+     * 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+     * @return engineType
+     */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -646,9 +701,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 指定目标实例是否限制为只读，MySQL迁移和灾备，且job_direction为up时设置有效。（灾备场景下，单主灾备且本云为备为必填且为true，不填默认设置为true）。
-     * 
-     * @return isTargetReadonly */
+    /**
+     * 指定目标实例是否限制为只读，MySQL迁移和灾备，且job_direction为up时设置有效。（灾备场景下，单主灾备且本云为备为必填且为true，不填默认设置为true）。
+     * @return isTargetReadonly
+     */
     public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
@@ -662,9 +718,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
-     * 
-     * @return jobDirection */
+    /**
+     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -678,9 +735,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** - db_use_type 是cloudDataGuard时，必填，灾备类型是双主灾备时 muti_write取值true, 否则为false。 - db_use_type 是其他类型时，muti_write是非必选参数
-     * 
-     * @return multiWrite */
+    /**
+     * - db_use_type 是cloudDataGuard时，必填，灾备类型是双主灾备时 muti_write取值true, 否则为false。 - db_use_type 是其他类型时，muti_write是非必选参数
+     * @return multiWrite
+     */
     public Boolean getMultiWrite() {
         return multiWrite;
     }
@@ -694,9 +752,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 网络类型
-     * 
-     * @return netType */
+    /**
+     * 网络类型
+     * @return netType
+     */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -710,9 +769,12 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。 minimum: 1 maximum: 32
-     * 
-     * @return nodeNum */
+    /**
+     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
+     * minimum: 1
+     * maximum: 32
+     * @return nodeNum
+     */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -726,9 +788,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 规格类型。
-     * 
-     * @return nodeType */
+    /**
+     * 规格类型。
+     * @return nodeType
+     */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -751,9 +814,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** Get sourceEndpoint
-     * 
-     * @return sourceEndpoint */
+    /**
+     * Get sourceEndpoint
+     * @return sourceEndpoint
+     */
     public Endpoint getSourceEndpoint() {
         return sourceEndpoint;
     }
@@ -776,9 +840,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** Get targetEndpoint
-     * 
-     * @return targetEndpoint */
+    /**
+     * Get targetEndpoint
+     * @return targetEndpoint
+     */
     public Endpoint getTargetEndpoint() {
         return targetEndpoint;
     }
@@ -808,9 +873,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 标签信息。
-     * 
-     * @return tags */
+    /**
+     * 标签信息。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -824,9 +890,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
-     * 
-     * @return taskType */
+    /**
+     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -840,9 +907,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** DRS实例所在子网ID，对应目标库相同VPC下已创建的子网（subnet）的网络ID，UUID格式。
-     * 
-     * @return customizeSutnetId */
+    /**
+     * DRS实例所在子网ID，对应目标库相同VPC下已创建的子网（subnet）的网络ID，UUID格式。
+     * @return customizeSutnetId
+     */
     public String getCustomizeSutnetId() {
         return customizeSutnetId;
     }
@@ -856,9 +924,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 产品id。
-     * 
-     * @return productId */
+    /**
+     * 产品id。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -888,9 +957,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
-     * 
-     * @return sysTags */
+    /**
+     * 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
+     * @return sysTags
+     */
     public List<ResourceTag> getSysTags() {
         return sysTags;
     }
@@ -904,9 +974,10 @@ public class CreateJobReq {
         return this;
     }
 
-    /** 任务处于异常状态一段时间后，将会自动结束，单位为天。(范围14-100)，不传默认为14天。
-     * 
-     * @return expiredDays */
+    /**
+     * 任务处于异常状态一段时间后，将会自动结束，单位为天。(范围14-100)，不传默认为14天。
+     * @return expiredDays
+     */
     public String getExpiredDays() {
         return expiredDays;
     }
@@ -992,7 +1063,10 @@ public class CreateJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 实例所在区域。
-     * 
-     * @return region */
+    /**
+     * 实例所在区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -39,10 +42,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 数据库类型。 - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。 - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。 -
-     * 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。 - 如果不传该参数，默认为“cassandra”。
-     * 
-     * @return engineName */
+    /**
+     * 数据库类型。   - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。   - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。   - 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。   - 如果不传该参数，默认为“cassandra”。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -79,7 +82,10 @@ public class ListFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

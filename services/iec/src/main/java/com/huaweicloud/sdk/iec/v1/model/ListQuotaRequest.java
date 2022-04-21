@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQuotaRequest {
 
     @Override

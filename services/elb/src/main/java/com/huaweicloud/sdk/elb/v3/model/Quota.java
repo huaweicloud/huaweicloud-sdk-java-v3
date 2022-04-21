@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。 */
+/**
+ * 负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
+ */
 public class Quota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class Quota {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -84,9 +87,10 @@ public class Quota {
         return this;
     }
 
-    /** 负载均衡器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return loadbalancer */
+    /**
+     * 负载均衡器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return loadbalancer
+     */
     public Integer getLoadbalancer() {
         return loadbalancer;
     }
@@ -100,9 +104,10 @@ public class Quota {
         return this;
     }
 
-    /** 证书配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return certificate */
+    /**
+     * 证书配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return certificate
+     */
     public Integer getCertificate() {
         return certificate;
     }
@@ -116,9 +121,10 @@ public class Quota {
         return this;
     }
 
-    /** 监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return listener */
+    /**
+     * 监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return listener
+     */
     public Integer getListener() {
         return listener;
     }
@@ -132,9 +138,10 @@ public class Quota {
         return this;
     }
 
-    /** 转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return l7policy */
+    /**
+     * 转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return l7policy
+     */
     public Integer getL7policy() {
         return l7policy;
     }
@@ -148,9 +155,10 @@ public class Quota {
         return this;
     }
 
-    /** 后端云服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return pool */
+    /**
+     * 后端云服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return pool
+     */
     public Integer getPool() {
         return pool;
     }
@@ -164,9 +172,10 @@ public class Quota {
         return this;
     }
 
-    /** 健康检查配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return healthmonitor */
+    /**
+     * 健康检查配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return healthmonitor
+     */
     public Integer getHealthmonitor() {
         return healthmonitor;
     }
@@ -180,9 +189,10 @@ public class Quota {
         return this;
     }
 
-    /** 后端云服务器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return member */
+    /**
+     * 后端云服务器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return member
+     */
     public Integer getMember() {
         return member;
     }
@@ -196,9 +206,10 @@ public class Quota {
         return this;
     }
 
-    /** 单个pool下的member的配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * 
-     * @return membersPerPool */
+    /**
+     * 单个pool下的member的配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return membersPerPool
+     */
     public Integer getMembersPerPool() {
         return membersPerPool;
     }
@@ -212,9 +223,10 @@ public class Quota {
         return this;
     }
 
-    /** IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return ipgroup */
+    /**
+     * IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return ipgroup
+     */
     public Integer getIpgroup() {
         return ipgroup;
     }
@@ -228,9 +240,10 @@ public class Quota {
         return this;
     }
 
-    /** 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return securityPolicy */
+    /**
+     * 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return securityPolicy
+     */
     public Integer getSecurityPolicy() {
         return securityPolicy;
     }
@@ -290,7 +303,10 @@ public class Quota {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询经过聚合计算的序列值定义 */
+/**
+ * 查询经过聚合计算的序列值定义
+ */
 public class AggregateMetricsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** Get timeSpan
-     * 
-     * @return timeSpan */
+    /**
+     * Get timeSpan
+     * @return timeSpan
+     */
     public TimeSpanDT getTimeSpan() {
         return timeSpan;
     }
@@ -78,9 +81,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 聚合时间间隔，正则：\"^[1-9][0-9]*[dhms]$\"，示例：\"1d|1h|10m|10s\"
-     * 
-     * @return interval */
+    /**
+     * 聚合时间间隔，正则：\"^[1-9][0-9]*[dhms]$\"，示例：\"1d|1h|10m|10s\"
+     * @return interval
+     */
     public String getInterval() {
         return interval;
     }
@@ -94,9 +98,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 聚合时间偏移量，需要小于interval，正则： \"^[1-9][0-9]*[hms]$\"，示例： \"1h|10m|10s\"
-     * 
-     * @return offset */
+    /**
+     * 聚合时间偏移量，需要小于interval，正则： \"^[1-9][0-9]*[hms]$\"，示例： \"1h|10m|10s\"
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -126,10 +131,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 对property按指定tags标签进行过滤查询，填入资产标签属性的属性名与属性值，不可为空，例如 {\"tagPropertyA\":
-     * \"id0001\"}；注意，标签过滤只对打上标签时刻之后的数据生效，打标签之前的数据不能通过标签过滤
-     * 
-     * @return tags */
+    /**
+     * 对property按指定tags标签进行过滤查询，填入资产标签属性的属性名与属性值，不可为空，例如 {\"tagPropertyA\": \"id0001\"}；注意，标签过滤只对打上标签时刻之后的数据生效，打标签之前的数据不能通过标签过滤
+     * @return tags
+     */
     public Map<String, Object> getTags() {
         return tags;
     }
@@ -159,9 +164,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 属性过滤器，最多5个
-     * 
-     * @return propertyFilter */
+    /**
+     * 属性过滤器，最多5个
+     * @return propertyFilter
+     */
     public List<PropertyFilter> getPropertyFilter() {
         return propertyFilter;
     }
@@ -191,9 +197,10 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 聚合查询指标列表，对资产属性进行聚合查询得到指标
-     * 
-     * @return metrics */
+    /**
+     * 聚合查询指标列表，对资产属性进行聚合查询得到指标
+     * @return metrics
+     */
     public List<DTAggregateMetrics> getMetrics() {
         return metrics;
     }
@@ -207,9 +214,11 @@ public class AggregateMetricsRequest {
         return this;
     }
 
-    /** 返回值个数限制，最多2000个 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 返回值个数限制，最多2000个
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -256,7 +265,10 @@ public class AggregateMetricsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStorageTypesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class ListStorageTypesRequest {
 
     private String xLanguage;
 
-    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer */
+    /**
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     */
     public static final class DatabaseNameEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final DatabaseNameEnum MYSQL = new DatabaseNameEnum("MySQL");
 
-        /** Enum POSTGRESQL for value: "PostgreSQL" */
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
         public static final DatabaseNameEnum POSTGRESQL = new DatabaseNameEnum("PostgreSQL");
 
-        /** Enum SQLSERVER for value: "SQLServer" */
+        /**
+         * Enum SQLSERVER for value: "SQLServer"
+         */
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
 
         private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
@@ -103,16 +113,24 @@ public class ListStorageTypesRequest {
 
     private String versionName;
 
-    /** 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。 */
+    /**
+     * 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。
+     */
     public static final class HaModeEnum {
 
-        /** Enum HA for value: "ha" */
+        /**
+         * Enum HA for value: "ha"
+         */
         public static final HaModeEnum HA = new HaModeEnum("ha");
 
-        /** Enum SINGLE for value: "single" */
+        /**
+         * Enum SINGLE for value: "single"
+         */
         public static final HaModeEnum SINGLE = new HaModeEnum("single");
 
-        /** Enum REPLICA for value: "replica" */
+        /**
+         * Enum REPLICA for value: "replica"
+         */
         public static final HaModeEnum REPLICA = new HaModeEnum("replica");
 
         private static final Map<String, HaModeEnum> STATIC_FIELDS = createStaticFields();
@@ -188,9 +206,10 @@ public class ListStorageTypesRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -206,9 +225,10 @@ public class ListStorageTypesRequest {
         return this;
     }
 
-    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     * 
-     * @return databaseName */
+    /**
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     * @return databaseName
+     */
     public DatabaseNameEnum getDatabaseName() {
         return databaseName;
     }
@@ -222,9 +242,10 @@ public class ListStorageTypesRequest {
         return this;
     }
 
-    /** 数据库版本号。
-     * 
-     * @return versionName */
+    /**
+     * 数据库版本号。
+     * @return versionName
+     */
     public String getVersionName() {
         return versionName;
     }
@@ -238,9 +259,10 @@ public class ListStorageTypesRequest {
         return this;
     }
 
-    /** 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。
-     * 
-     * @return haMode */
+    /**
+     * 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。
+     * @return haMode
+     */
     public HaModeEnum getHaMode() {
         return haMode;
     }
@@ -281,7 +303,10 @@ public class ListStorageTypesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

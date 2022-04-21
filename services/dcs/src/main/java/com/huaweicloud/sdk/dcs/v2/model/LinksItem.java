@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LinksItem */
+/**
+ * LinksItem
+ */
 public class LinksItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LinksItem {
         return this;
     }
 
-    /** 备份文件名称。
-     * 
-     * @return fileName */
+    /**
+     * 备份文件名称。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -39,9 +42,10 @@ public class LinksItem {
         return this;
     }
 
-    /** 备份文件下载链接地址。
-     * 
-     * @return link */
+    /**
+     * 备份文件下载链接地址。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -77,7 +81,10 @@ public class LinksItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentProductCategoryV2 */
+/**
+ * IncidentProductCategoryV2
+ */
 public class IncidentProductCategoryV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class IncidentProductCategoryV2 {
         return this;
     }
 
-    /** 产品类型id
-     * 
-     * @return incidentProductCategoryId */
+    /**
+     * 产品类型id
+     * @return incidentProductCategoryId
+     */
     public String getIncidentProductCategoryId() {
         return incidentProductCategoryId;
     }
@@ -54,9 +57,10 @@ public class IncidentProductCategoryV2 {
         return this;
     }
 
-    /** 产品类型名称
-     * 
-     * @return incidentProductCategoryName */
+    /**
+     * 产品类型名称
+     * @return incidentProductCategoryName
+     */
     public String getIncidentProductCategoryName() {
         return incidentProductCategoryName;
     }
@@ -70,9 +74,10 @@ public class IncidentProductCategoryV2 {
         return this;
     }
 
-    /** 产品类型描述
-     * 
-     * @return incidentProductCategoryDesc */
+    /**
+     * 产品类型描述
+     * @return incidentProductCategoryDesc
+     */
     public String getIncidentProductCategoryDesc() {
         return incidentProductCategoryDesc;
     }
@@ -86,9 +91,10 @@ public class IncidentProductCategoryV2 {
         return this;
     }
 
-    /** 产品类型简称
-     * 
-     * @return incidentProductCategoryAcronym */
+    /**
+     * 产品类型简称
+     * @return incidentProductCategoryAcronym
+     */
     public String getIncidentProductCategoryAcronym() {
         return incidentProductCategoryAcronym;
     }
@@ -102,9 +108,10 @@ public class IncidentProductCategoryV2 {
         return this;
     }
 
-    /** 是否可以使用支持计划权益
-     * 
-     * @return canUseSupportPlan */
+    /**
+     * 是否可以使用支持计划权益
+     * @return canUseSupportPlan
+     */
     public Boolean getCanUseSupportPlan() {
         return canUseSupportPlan;
     }
@@ -158,7 +165,10 @@ public class IncidentProductCategoryV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

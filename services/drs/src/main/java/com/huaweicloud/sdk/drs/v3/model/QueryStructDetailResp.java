@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 灾备初始化对象详情 */
+/**
+ * 灾备初始化对象详情
+ */
 public class QueryStructDetailResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class QueryStructDetailResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -50,9 +53,10 @@ public class QueryStructDetailResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -66,9 +70,10 @@ public class QueryStructDetailResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -91,9 +96,10 @@ public class QueryStructDetailResp {
         return this;
     }
 
-    /** Get structDetail
-     * 
-     * @return structDetail */
+    /**
+     * Get structDetail
+     * @return structDetail
+     */
     public QueryFlowCompareDataResp getStructDetail() {
         return structDetail;
     }
@@ -134,7 +140,10 @@ public class QueryStructDetailResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AddFavoriteReqTemplate */
+/**
+ * AddFavoriteReqTemplate
+ */
 public class AddFavoriteReqTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AddFavoriteReqTemplate {
         return this;
     }
 
-    /** 模板名称。
-     * 
-     * @return templateName */
+    /**
+     * 模板名称。
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -39,9 +42,10 @@ public class AddFavoriteReqTemplate {
         return this;
     }
 
-    /** 模板描述。
-     * 
-     * @return desc */
+    /**
+     * 模板描述。
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -78,7 +82,10 @@ public class AddFavoriteReqTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class NeutronListFloatingIpsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
         return this;
     }
 
-    /** floatingip对象列表
-     * 
-     * @return floatingips */
+    /**
+     * floatingip对象列表
+     * @return floatingips
+     */
     public List<FloatingIpResp> getFloatingips() {
         return floatingips;
     }
@@ -75,9 +78,10 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
         return this;
     }
 
-    /** marker分页结构
-     * 
-     * @return floatingipsLinks */
+    /**
+     * marker分页结构
+     * @return floatingipsLinks
+     */
     public List<Pager> getFloatingipsLinks() {
         return floatingipsLinks;
     }
@@ -114,7 +118,10 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

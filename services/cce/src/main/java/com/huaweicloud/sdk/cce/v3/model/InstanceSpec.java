@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** spec是集合类的元素类型，内容为插件实例具体信息 */
+/**
+ * spec是集合类的元素类型，内容为插件实例具体信息
+ */
 public class InstanceSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 集群id
-     * 
-     * @return clusterID */
+    /**
+     * 集群id
+     * @return clusterID
+     */
     public String getClusterID() {
         return clusterID;
     }
@@ -74,9 +77,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板版本号，如1.0.0
-     * 
-     * @return version */
+    /**
+     * 插件模板版本号，如1.0.0
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -90,9 +94,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板名称，如coredns
-     * 
-     * @return addonTemplateName */
+    /**
+     * 插件模板名称，如coredns
+     * @return addonTemplateName
+     */
     public String getAddonTemplateName() {
         return addonTemplateName;
     }
@@ -106,9 +111,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板类型
-     * 
-     * @return addonTemplateType */
+    /**
+     * 插件模板类型
+     * @return addonTemplateType
+     */
     public String getAddonTemplateType() {
         return addonTemplateType;
     }
@@ -122,9 +128,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板logo图片的地址
-     * 
-     * @return addonTemplateLogo */
+    /**
+     * 插件模板logo图片的地址
+     * @return addonTemplateLogo
+     */
     public String getAddonTemplateLogo() {
         return addonTemplateLogo;
     }
@@ -154,9 +161,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板所属类型
-     * 
-     * @return addonTemplateLabels */
+    /**
+     * 插件模板所属类型
+     * @return addonTemplateLabels
+     */
     public List<String> getAddonTemplateLabels() {
         return addonTemplateLabels;
     }
@@ -170,9 +178,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板描述
-     * 
-     * @return description */
+    /**
+     * 插件模板描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -202,9 +211,10 @@ public class InstanceSpec {
         return this;
     }
 
-    /** 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
-     * 
-     * @return values */
+    /**
+     * 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
+     * @return values
+     */
     public Map<String, Object> getValues() {
         return values;
     }
@@ -260,7 +270,10 @@ public class InstanceSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

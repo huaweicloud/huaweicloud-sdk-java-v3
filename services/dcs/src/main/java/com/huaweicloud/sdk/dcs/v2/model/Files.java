@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 导入的备份文件文件列表。 */
+/**
+ * 导入的备份文件文件列表。
+ */
 public class Files {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Files {
         return this;
     }
 
-    /** 备份文件名。
-     * 
-     * @return fileName */
+    /**
+     * 备份文件名。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -44,9 +47,10 @@ public class Files {
         return this;
     }
 
-    /** 文件大小（单位：Byte）。
-     * 
-     * @return size */
+    /**
+     * 文件大小（单位：Byte）。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -60,9 +64,10 @@ public class Files {
         return this;
     }
 
-    /** 文件最后修改时间（格式YYYY-MM-DD HH:MM:SS）。
-     * 
-     * @return updateAt */
+    /**
+     * 文件最后修改时间（格式YYYY-MM-DD HH:MM:SS）。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -100,7 +105,10 @@ public class Files {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

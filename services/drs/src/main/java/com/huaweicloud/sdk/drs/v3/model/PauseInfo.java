@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 暂停任务请求参数 */
+/**
+ * 暂停任务请求参数
+ */
 public class PauseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class PauseInfo {
 
     private String jobId;
 
-    /** 暂停类型，target:停回放,all:停日志抓取和回放 */
+    /**
+     * 暂停类型，target:停回放,all:停日志抓取和回放
+     */
     public static final class PauseModeEnum {
 
-        /** Enum TARGET for value: "target" */
+        /**
+         * Enum TARGET for value: "target"
+         */
         public static final PauseModeEnum TARGET = new PauseModeEnum("target");
 
-        /** Enum ALL for value: "all" */
+        /**
+         * Enum ALL for value: "all"
+         */
         public static final PauseModeEnum ALL = new PauseModeEnum("all");
 
         private static final Map<String, PauseModeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class PauseInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -115,9 +124,10 @@ public class PauseInfo {
         return this;
     }
 
-    /** 暂停类型，target:停回放,all:停日志抓取和回放
-     * 
-     * @return pauseMode */
+    /**
+     * 暂停类型，target:停回放,all:停日志抓取和回放
+     * @return pauseMode
+     */
     public PauseModeEnum getPauseMode() {
         return pauseMode;
     }
@@ -153,7 +163,10 @@ public class PauseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

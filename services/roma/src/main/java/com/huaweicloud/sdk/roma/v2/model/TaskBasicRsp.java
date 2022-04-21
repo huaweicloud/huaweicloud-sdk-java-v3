@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** TaskBasicRsp */
+/**
+ * TaskBasicRsp
+ */
 public class TaskBasicRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class TaskBasicRsp {
 
     private String taskName;
 
-    /** 任务类型 - realtime (实时) - timing (定时) */
+    /**
+     * 任务类型 - realtime (实时) - timing (定时)
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum REALTIME for value: "realtime" */
+        /**
+         * Enum REALTIME for value: "realtime"
+         */
         public static final TaskTypeEnum REALTIME = new TaskTypeEnum("realtime");
 
-        /** Enum TIMING for value: "timing" */
+        /**
+         * Enum TIMING for value: "timing"
+         */
         public static final TaskTypeEnum TIMING = new TaskTypeEnum("timing");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class TaskBasicRsp {
 
     private TaskTypeEnum taskType;
 
-    /** 任务状态, - stop (0停止\\未启动) - running (1运行中) */
+    /**
+     * 任务状态, - stop (0停止\\未启动) - running (1运行中)
+     */
     public static final class StatusEnum {
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final StatusEnum STOP = new StatusEnum("stop");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -250,9 +264,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务ID, 可为空
-     * 
-     * @return taskId */
+    /**
+     * 任务ID, 可为空
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -266,9 +281,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务名称，只能以字母、数字为开头，包含字母、数字和 . _ - 3~100个字符
-     * 
-     * @return taskName */
+    /**
+     * 任务名称，只能以字母、数字为开头，包含字母、数字和 . _ -  3~100个字符
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -282,9 +298,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务类型 - realtime (实时) - timing (定时)
-     * 
-     * @return taskType */
+    /**
+     * 任务类型 - realtime (实时) - timing (定时)
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -298,9 +315,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务状态, - stop (0停止\\未启动) - running (1运行中)
-     * 
-     * @return status */
+    /**
+     * 任务状态, - stop (0停止\\未启动) - running (1运行中)
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -314,9 +332,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -330,9 +349,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 源端数据源ID
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -346,9 +366,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 目标端数据源ID
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -362,9 +383,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 源端数据源的名称
-     * 
-     * @return sourceDatasourceName */
+    /**
+     * 源端数据源的名称
+     * @return sourceDatasourceName
+     */
     public String getSourceDatasourceName() {
         return sourceDatasourceName;
     }
@@ -378,9 +400,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 目标端数据源的名称
-     * 
-     * @return targetDatasourceName */
+    /**
+     * 目标端数据源的名称
+     * @return targetDatasourceName
+     */
     public String getTargetDatasourceName() {
         return targetDatasourceName;
     }
@@ -394,9 +417,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 源端数据源所属集成应用ID
-     * 
-     * @return sourceAppId */
+    /**
+     * 源端数据源所属集成应用ID
+     * @return sourceAppId
+     */
     public String getSourceAppId() {
         return sourceAppId;
     }
@@ -410,9 +434,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 目标端数据源所属集成应用ID
-     * 
-     * @return targetAppId */
+    /**
+     * 目标端数据源所属集成应用ID
+     * @return targetAppId
+     */
     public String getTargetAppId() {
         return targetAppId;
     }
@@ -426,9 +451,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 源端数据源所属集成应用名称
-     * 
-     * @return sourceAppName */
+    /**
+     * 源端数据源所属集成应用名称
+     * @return sourceAppName
+     */
     public String getSourceAppName() {
         return sourceAppName;
     }
@@ -442,9 +468,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 目标端数据源所属集成应用名称
-     * 
-     * @return targetAppName */
+    /**
+     * 目标端数据源所属集成应用名称
+     * @return targetAppName
+     */
     public String getTargetAppName() {
         return targetAppName;
     }
@@ -458,9 +485,12 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 创建时间 minimum: 0 maximum: 7766279631452241919
-     * 
-     * @return createdDate */
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 7766279631452241919
+     * @return createdDate
+     */
     public Long getCreatedDate() {
         return createdDate;
     }
@@ -474,9 +504,12 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 最近一次的修改时间 minimum: 0 maximum: 7766279631452241919
-     * 
-     * @return lastModifiedDate */
+    /**
+     * 最近一次的修改时间
+     * minimum: 0
+     * maximum: 7766279631452241919
+     * @return lastModifiedDate
+     */
     public Long getLastModifiedDate() {
         return lastModifiedDate;
     }
@@ -490,9 +523,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -506,9 +540,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务标签,只能包含字母、数字、中划线、下划线
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签,只能包含字母、数字、中划线、下划线
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -522,9 +557,10 @@ public class TaskBasicRsp {
         return this;
     }
 
-    /** 任务的创建者
-     * 
-     * @return createdBy */
+    /**
+     * 任务的创建者
+     * @return createdBy
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -608,7 +644,10 @@ public class TaskBasicRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

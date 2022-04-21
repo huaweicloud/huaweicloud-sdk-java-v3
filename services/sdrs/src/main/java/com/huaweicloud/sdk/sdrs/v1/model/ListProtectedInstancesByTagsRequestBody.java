@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 通过标签查询保护实例请求体 */
+/**
+ * 通过标签查询保护实例请求体
+ */
 public class ListProtectedInstancesByTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,13 +48,19 @@ public class ListProtectedInstancesByTagsRequestBody {
 
     private String offset;
 
-    /** 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。如果是filter就按照过滤条件查询，如果是count，只需要返回总条数，禁止返回其他字段。 */
+    /**
+     * 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。如果是filter就按照过滤条件查询，如果是count，只需要返回总条数，禁止返回其他字段。
+     */
     public static final class ActionEnum {
 
-        /** Enum FILTER for value: "filter" */
+        /**
+         * Enum FILTER for value: "filter"
+         */
         public static final ActionEnum FILTER = new ActionEnum("filter");
 
-        /** Enum COUNT for value: "count" */
+        /**
+         * Enum COUNT for value: "count"
+         */
         public static final ActionEnum COUNT = new ActionEnum("count");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -148,9 +156,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 包含标签，最多包含10个key，每个key下面的value最多10个，每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。无tag过滤条件时返回全量数据。
-     * 
-     * @return tags */
+    /**
+     * 包含标签，最多包含10个key，每个key下面的value最多10个，每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。无tag过滤条件时返回全量数据。
+     * @return tags
+     */
     public List<TagParams> getTags() {
         return tags;
     }
@@ -180,10 +189,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 包含任意标签，最多包含10个key，每个key下面的value最多10个,
-     * 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回包含标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
-     * 
-     * @return tagsAny */
+    /**
+     * 包含任意标签，最多包含10个key，每个key下面的value最多10个, 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回包含标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
+     * @return tagsAny
+     */
     public List<TagParams> getTagsAny() {
         return tagsAny;
     }
@@ -213,10 +222,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 不包含标签，最多包含10个key，每个key下面的value最多10个,
-     * 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回不包含标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
-     * 
-     * @return notTags */
+    /**
+     * 不包含标签，最多包含10个key，每个key下面的value最多10个, 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回不包含标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
+     * @return notTags
+     */
     public List<TagParams> getNotTags() {
         return notTags;
     }
@@ -246,10 +255,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 不包含任意标签，最多包含10个key，每个key下面的value最多10个,
-     * 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回不包含标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
-     * 
-     * @return notTagsAny */
+    /**
+     * 不包含任意标签，最多包含10个key，每个key下面的value最多10个, 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复，同一个key中values不能重复。结果返回不包含标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。无过滤条件时返回全量数据。
+     * @return notTagsAny
+     */
     public List<TagParams> getNotTagsAny() {
         return notTagsAny;
     }
@@ -263,9 +272,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000,不能为负数，最小值为1。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000,不能为负数，最小值为1。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -279,9 +289,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -295,9 +306,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。如果是filter就按照过滤条件查询，如果是count，只需要返回总条数，禁止返回其他字段。
-     * 
-     * @return action */
+    /**
+     * 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数)。如果是filter就按照过滤条件查询，如果是count，只需要返回总条数，禁止返回其他字段。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -327,9 +339,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return this;
     }
 
-    /** 搜索字段,key为要匹配的字段，如resource_name等。value为匹配的值。key为固定字典值，不能包含重复的key或不支持的key。根据key的值确认是否需要模糊匹配，如resource_name默认为模糊搜索（不区分大小写），如果value为空字符串精确匹配。目前只有resource_name，后续再扩展。
-     * 
-     * @return matches */
+    /**
+     * 搜索字段,key为要匹配的字段，如resource_name等。value为匹配的值。key为固定字典值，不能包含重复的key或不支持的key。根据key的值确认是否需要模糊匹配，如resource_name默认为模糊搜索（不区分大小写），如果value为空字符串精确匹配。目前只有resource_name，后续再扩展。
+     * @return matches
+     */
     public List<MatchParams> getMatches() {
         return matches;
     }
@@ -379,7 +392,10 @@ public class ListProtectedInstancesByTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

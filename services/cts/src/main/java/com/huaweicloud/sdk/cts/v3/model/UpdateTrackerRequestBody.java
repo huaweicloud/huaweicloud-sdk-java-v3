@@ -11,18 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTrackerRequestBody */
+/**
+ * UpdateTrackerRequestBody
+ */
 public class UpdateTrackerRequestBody {
 
-    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info;
-     * 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate;
-     * 数据类追踪器参数：tracker_name, data_bucket。 */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info; 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate; 数据类追踪器参数：tracker_name, data_bucket。
+     */
     public static final class TrackerTypeEnum {
 
-        /** Enum SYSTEM for value: "system" */
+        /**
+         * Enum SYSTEM for value: "system"
+         */
         public static final TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
 
-        /** Enum DATA for value: "data" */
+        /**
+         * Enum DATA for value: "data"
+         */
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
 
         private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -97,13 +103,19 @@ public class UpdateTrackerRequestBody {
 
     private String trackerName;
 
-    /** 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。 */
+    /**
+     * 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
+     */
     public static final class StatusEnum {
 
-        /** Enum ENABLED for value: "enabled" */
+        /**
+         * Enum ENABLED for value: "enabled"
+         */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
 
-        /** Enum DISABLED for value: "disabled" */
+        /**
+         * Enum DISABLED for value: "disabled"
+         */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -208,11 +220,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info;
-     * 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate;
-     * 数据类追踪器参数：tracker_name, data_bucket。
-     * 
-     * @return trackerType */
+    /**
+     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info; 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate; 数据类追踪器参数：tracker_name, data_bucket。
+     * @return trackerType
+     */
     public TrackerTypeEnum getTrackerType() {
         return trackerType;
     }
@@ -226,9 +237,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 标识追踪器名称。 当\"tracker_type\"参数值为\"system\"时该参数为默认值\"system\"。 当\"tracker_type\"参数值为\"data\"时该参数需要指定追踪器名称\"。
-     * 
-     * @return trackerName */
+    /**
+     * 标识追踪器名称。 当\"tracker_type\"参数值为\"system\"时该参数为默认值\"system\"。 当\"tracker_type\"参数值为\"data\"时该参数需要指定追踪器名称\"。
+     * @return trackerName
+     */
     public String getTrackerName() {
         return trackerName;
     }
@@ -242,9 +254,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
-     * 
-     * @return status */
+    /**
+     * 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -258,9 +271,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 是否打开事件分析。
-     * 
-     * @return isLtsEnabled */
+    /**
+     * 是否打开事件分析。
+     * @return isLtsEnabled
+     */
     public Boolean getIsLtsEnabled() {
         return isLtsEnabled;
     }
@@ -283,9 +297,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** Get obsInfo
-     * 
-     * @return obsInfo */
+    /**
+     * Get obsInfo
+     * @return obsInfo
+     */
     public TrackerObsInfo getObsInfo() {
         return obsInfo;
     }
@@ -299,9 +314,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 事件文件转储加密功能开关。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 该参数必须与kms_id参数同时使用。
-     * 
-     * @return isSupportTraceFilesEncryption */
+    /**
+     * 事件文件转储加密功能开关。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 该参数必须与kms_id参数同时使用。
+     * @return isSupportTraceFilesEncryption
+     */
     public Boolean getIsSupportTraceFilesEncryption() {
         return isSupportTraceFilesEncryption;
     }
@@ -315,10 +331,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
-     * 当\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
-     * 
-     * @return kmsId */
+    /**
+     * 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 当\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
+     * @return kmsId
+     */
     public String getKmsId() {
         return kmsId;
     }
@@ -332,9 +348,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** 事件文件转储时是否打开事件文件校验。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
-     * 
-     * @return isSupportValidate */
+    /**
+     * 事件文件转储时是否打开事件文件校验。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
+     * @return isSupportValidate
+     */
     public Boolean getIsSupportValidate() {
         return isSupportValidate;
     }
@@ -357,9 +374,10 @@ public class UpdateTrackerRequestBody {
         return this;
     }
 
-    /** Get dataBucket
-     * 
-     * @return dataBucket */
+    /**
+     * Get dataBucket
+     * @return dataBucket
+     */
     public DataBucket getDataBucket() {
         return dataBucket;
     }
@@ -421,7 +439,10 @@ public class UpdateTrackerRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

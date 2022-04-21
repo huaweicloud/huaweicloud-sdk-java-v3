@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Resources */
+/**
+ * Resources
+ */
 public class Resources {
 
-    /** 配额类型。枚举值说明: - CMK，用户主密钥 - grant_per_CMK，单个用户主密钥可创建授权数 */
+    /**
+     * 配额类型。枚举值说明:  - CMK，用户主密钥  - grant_per_CMK，单个用户主密钥可创建授权数
+     */
     public static final class TypeEnum {
 
-        /** Enum CMK for value: "CMK" */
+        /**
+         * Enum CMK for value: "CMK"
+         */
         public static final TypeEnum CMK = new TypeEnum("CMK");
 
-        /** Enum GRANT_PER_CMK for value: "grant_per_CMK" */
+        /**
+         * Enum GRANT_PER_CMK for value: "grant_per_CMK"
+         */
         public static final TypeEnum GRANT_PER_CMK = new TypeEnum("grant_per_CMK");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class Resources {
         return this;
     }
 
-    /** 配额类型。枚举值说明: - CMK，用户主密钥 - grant_per_CMK，单个用户主密钥可创建授权数
-     * 
-     * @return type */
+    /**
+     * 配额类型。枚举值说明:  - CMK，用户主密钥  - grant_per_CMK，单个用户主密钥可创建授权数
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -120,9 +129,12 @@ public class Resources {
         return this;
     }
 
-    /** 已使用配额数。 minimum: 0 maximum: 100
-     * 
-     * @return used */
+    /**
+     * 已使用配额数。
+     * minimum: 0
+     * maximum: 100
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -136,9 +148,12 @@ public class Resources {
         return this;
     }
 
-    /** 配额总数。 minimum: 0 maximum: 100
-     * 
-     * @return quota */
+    /**
+     * 配额总数。
+     * minimum: 0
+     * maximum: 100
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -176,7 +191,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

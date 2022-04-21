@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAccessDomainResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,9 +76,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** true：存在；false：不存在
-     * 
-     * @return exist */
+    /**
+     * true：存在；false：不存在
+     * @return exist
+     */
     public Boolean getExist() {
         return exist;
     }
@@ -90,9 +93,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 组织名称
-     * 
-     * @return namespace */
+    /**
+     * 组织名称
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -106,9 +110,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像仓库名称
-     * 
-     * @return repository */
+    /**
+     * 镜像仓库名称
+     * @return repository
+     */
     public String getRepository() {
         return repository;
     }
@@ -122,9 +127,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 共享帐号名
-     * 
-     * @return accessDomain */
+    /**
+     * 共享帐号名
+     * @return accessDomain
+     */
     public String getAccessDomain() {
         return accessDomain;
     }
@@ -138,9 +144,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permit */
+    /**
+     * 权限
+     * @return permit
+     */
     public String getPermit() {
         return permit;
     }
@@ -154,9 +161,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 截止时间
-     * 
-     * @return deadline */
+    /**
+     * 截止时间
+     * @return deadline
+     */
     public String getDeadline() {
         return deadline;
     }
@@ -170,9 +178,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -186,9 +195,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建者ID
-     * 
-     * @return creatorId */
+    /**
+     * 创建者ID
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -202,9 +212,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建者名称
-     * 
-     * @return creatorName */
+    /**
+     * 创建者名称
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -218,9 +229,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像创建时间，UTC时间格式，时间为UTC标准时间
-     * 
-     * @return created */
+    /**
+     * 镜像创建时间，UTC时间格式，时间为UTC标准时间
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -234,9 +246,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像更新时间，UTC时间格式，时间为UTC标准时间
-     * 
-     * @return updated */
+    /**
+     * 镜像更新时间，UTC时间格式，时间为UTC标准时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -250,9 +263,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否过期，true：有效；false：过期
-     * 
-     * @return status */
+    /**
+     * 是否过期，true：有效；false：过期
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -320,7 +334,10 @@ public class ShowAccessDomainResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ClusterCert */
+/**
+ * ClusterCert
+ */
 public class ClusterCert {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ClusterCert {
         return this;
     }
 
-    /** 服务器地址。
-     * 
-     * @return server */
+    /**
+     * 服务器地址。
+     * @return server
+     */
     public String getServer() {
         return server;
     }
@@ -44,9 +47,10 @@ public class ClusterCert {
         return this;
     }
 
-    /** 证书授权数据。
-     * 
-     * @return certificateAuthorityData */
+    /**
+     * 证书授权数据。
+     * @return certificateAuthorityData
+     */
     public String getCertificateAuthorityData() {
         return certificateAuthorityData;
     }
@@ -60,9 +64,10 @@ public class ClusterCert {
         return this;
     }
 
-    /** 不校验服务端证书，在 cluster 类型为 externalCluster 时，该值为 true。
-     * 
-     * @return insecureSkipTlsVerify */
+    /**
+     * 不校验服务端证书，在 cluster 类型为 externalCluster 时，该值为 true。
+     * @return insecureSkipTlsVerify
+     */
     public Boolean getInsecureSkipTlsVerify() {
         return insecureSkipTlsVerify;
     }
@@ -101,7 +106,10 @@ public class ClusterCert {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

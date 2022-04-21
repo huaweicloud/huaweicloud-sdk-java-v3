@@ -11,13 +11,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateSinkTaskReq */
+/**
+ * CreateSinkTaskReq
+ */
 public class CreateSinkTaskReq {
 
-    /** 源数据类型，目前只支持BLOB。 */
+    /**
+     * 源数据类型，目前只支持BLOB。 
+     */
     public static final class SourceTypeEnum {
 
-        /** Enum BLOB for value: "BLOB" */
+        /**
+         * Enum BLOB for value: "BLOB"
+         */
         public static final SourceTypeEnum BLOB = new SourceTypeEnum("BLOB");
 
         private static final Map<String, SourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -91,10 +97,14 @@ public class CreateSinkTaskReq {
 
     private String taskName;
 
-    /** 转存的目标类型，当前只支持OBS。 */
+    /**
+     * 转存的目标类型，当前只支持OBS。 
+     */
     public static final class DestinationTypeEnum {
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final DestinationTypeEnum OBS = new DestinationTypeEnum("OBS");
 
         private static final Map<String, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -173,9 +183,10 @@ public class CreateSinkTaskReq {
         return this;
     }
 
-    /** 源数据类型，目前只支持BLOB。
-     * 
-     * @return sourceType */
+    /**
+     * 源数据类型，目前只支持BLOB。 
+     * @return sourceType
+     */
     public SourceTypeEnum getSourceType() {
         return sourceType;
     }
@@ -189,9 +200,10 @@ public class CreateSinkTaskReq {
         return this;
     }
 
-    /** 转储任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 转储任务名称。 
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -205,9 +217,10 @@ public class CreateSinkTaskReq {
         return this;
     }
 
-    /** 转存的目标类型，当前只支持OBS。
-     * 
-     * @return destinationType */
+    /**
+     * 转存的目标类型，当前只支持OBS。 
+     * @return destinationType
+     */
     public DestinationTypeEnum getDestinationType() {
         return destinationType;
     }
@@ -231,9 +244,10 @@ public class CreateSinkTaskReq {
         return this;
     }
 
-    /** Get obsDestinationDescriptor
-     * 
-     * @return obsDestinationDescriptor */
+    /**
+     * Get obsDestinationDescriptor
+     * @return obsDestinationDescriptor
+     */
     public ObsDestinationDescriptor getObsDestinationDescriptor() {
         return obsDestinationDescriptor;
     }
@@ -274,7 +288,10 @@ public class CreateSinkTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

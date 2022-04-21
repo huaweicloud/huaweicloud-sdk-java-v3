@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端列表中关联的任务 */
+/**
+ * 源端列表中关联的任务
+ */
 public class TaskByServerSource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,9 +101,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -115,9 +118,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -131,9 +135,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 任务类型
-     * 
-     * @return type */
+    /**
+     * 任务类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -147,9 +152,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return state */
+    /**
+     * 任务状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -163,9 +169,12 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 开始时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return startDate */
+    /**
+     * 开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return startDate
+     */
     public Long getStartDate() {
         return startDate;
     }
@@ -179,9 +188,12 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 限速 minimum: 0 maximum: 10000
-     * 
-     * @return speedLimit */
+    /**
+     * 限速
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
+     */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -195,9 +207,12 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 迁移速率 minimum: 0 maximum: 1E+4
-     * 
-     * @return migrateSpeed */
+    /**
+     * 迁移速率
+     * minimum: 0
+     * maximum: 1E+4
+     * @return migrateSpeed
+     */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -211,9 +226,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 是否启动虚拟机
-     * 
-     * @return startTargetServer */
+    /**
+     * 是否启动虚拟机
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -227,9 +243,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 虚拟机模板id
-     * 
-     * @return vmTemplateId */
+    /**
+     * 虚拟机模板id
+     * @return vmTemplateId
+     */
     public String getVmTemplateId() {
         return vmTemplateId;
     }
@@ -243,9 +260,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** region_id
-     * 
-     * @return regionId */
+    /**
+     * region_id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -259,9 +277,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -275,9 +294,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -300,9 +320,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** Get targetServer
-     * 
-     * @return targetServer */
+    /**
+     * Get targetServer
+     * @return targetServer
+     */
     public TargetServerById getTargetServer() {
         return targetServer;
     }
@@ -316,9 +337,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 日志收集状态
-     * 
-     * @return logCollectStatus */
+    /**
+     * 日志收集状态
+     * @return logCollectStatus
+     */
     public String getLogCollectStatus() {
         return logCollectStatus;
     }
@@ -332,9 +354,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 是否使用已有虚拟机
-     * 
-     * @return existServer */
+    /**
+     * 是否使用已有虚拟机
+     * @return existServer
+     */
     public Boolean getExistServer() {
         return existServer;
     }
@@ -348,9 +371,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** 是否使用公网ip
-     * 
-     * @return usePublicIp */
+    /**
+     * 是否使用公网ip
+     * @return usePublicIp
+     */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -373,9 +397,10 @@ public class TaskByServerSource {
         return this;
     }
 
-    /** Get cloneServer
-     * 
-     * @return cloneServer */
+    /**
+     * Get cloneServer
+     * @return cloneServer
+     */
     public CloneServer getCloneServer() {
         return cloneServer;
     }
@@ -457,7 +482,10 @@ public class TaskByServerSource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

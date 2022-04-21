@@ -19,34 +19,62 @@ public class HssAsyncClient {
         return new ClientBuilder<>(HssAsyncClient::new);
     }
 
-    /** 查入侵事件列表 查入侵事件列表
+    /**
+     * 查入侵事件列表
+     *
+     * 查入侵事件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
-     * @return CompletableFuture<ListEventsResponse> */
+     * @return CompletableFuture<ListEventsResponse>
+     */
     public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listEvents);
     }
 
-    /** 查入侵事件列表 查入侵事件列表
+    /**
+     * 查入侵事件列表
+     *
+     * 查入侵事件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
-     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse> */
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
     public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
         return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, HssMeta.listEvents, hcClient);
     }
 
-    /** 查询弹性云服务器状态列表 查询弹性云服务器状态列表
+    /**
+     * 查询弹性云服务器状态列表
+     *
+     * 查询弹性云服务器状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
-     * @return CompletableFuture<ListHostsResponse> */
+     * @return CompletableFuture<ListHostsResponse>
+     */
     public CompletableFuture<ListHostsResponse> listHostsAsync(ListHostsRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listHosts);
     }
 
-    /** 查询弹性云服务器状态列表 查询弹性云服务器状态列表
+    /**
+     * 查询弹性云服务器状态列表
+     *
+     * 查询弹性云服务器状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
-     * @return AsyncInvoker<ListHostsRequest, ListHostsResponse> */
+     * @return AsyncInvoker<ListHostsRequest, ListHostsResponse>
+     */
     public AsyncInvoker<ListHostsRequest, ListHostsResponse> listHostsAsyncInvoker(ListHostsRequest request) {
         return new AsyncInvoker<ListHostsRequest, ListHostsResponse>(request, HssMeta.listHosts, hcClient);
     }

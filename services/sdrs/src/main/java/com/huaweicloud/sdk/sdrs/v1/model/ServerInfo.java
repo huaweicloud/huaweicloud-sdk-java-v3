@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量创建保护实例虚拟机信息 */
+/**
+ * 批量创建保护实例虚拟机信息
+ */
 public class ServerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ServerInfo {
         return this;
     }
 
-    /** 指定的生产站点云服务器ID。
-     * 
-     * @return serverId */
+    /**
+     * 指定的生产站点云服务器ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -39,9 +42,10 @@ public class ServerInfo {
         return this;
     }
 
-    /** 指定的容灾站点云服务器的flavor ID。
-     * 
-     * @return flavorRef */
+    /**
+     * 指定的容灾站点云服务器的flavor ID。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -78,7 +82,10 @@ public class ServerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询操作系统列表响应体 */
+/**
+ * 查询操作系统列表响应体
+ */
 public class ListOsVersionsResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ListOsVersionsResponseBody {
         return this;
     }
 
-    /** 操作系统的平台值，如RedHat等
-     * 
-     * @return platform */
+    /**
+     * 操作系统的平台值，如RedHat等
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -58,9 +61,10 @@ public class ListOsVersionsResponseBody {
         return this;
     }
 
-    /** 操作系统的详情值
-     * 
-     * @return versionList */
+    /**
+     * 操作系统的详情值
+     * @return versionList
+     */
     public List<OsVersionInfo> getVersionList() {
         return versionList;
     }
@@ -97,7 +101,10 @@ public class ListOsVersionsResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

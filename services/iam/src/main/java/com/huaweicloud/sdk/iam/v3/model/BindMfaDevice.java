@@ -35,9 +35,10 @@ public class BindMfaDevice {
         return this;
     }
 
-    /** 待绑定MFA设备的IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * 待绑定MFA设备的IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -51,9 +52,10 @@ public class BindMfaDevice {
         return this;
     }
 
-    /** MFA设备序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * MFA设备序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -67,9 +69,10 @@ public class BindMfaDevice {
         return this;
     }
 
-    /** 第一组验证码。
-     * 
-     * @return authenticationCodeFirst */
+    /**
+     * 第一组验证码。
+     * @return authenticationCodeFirst
+     */
     public String getAuthenticationCodeFirst() {
         return authenticationCodeFirst;
     }
@@ -83,9 +86,10 @@ public class BindMfaDevice {
         return this;
     }
 
-    /** 第二组验证码。
-     * 
-     * @return authenticationCodeSecond */
+    /**
+     * 第二组验证码。
+     * @return authenticationCodeSecond
+     */
     public String getAuthenticationCodeSecond() {
         return authenticationCodeSecond;
     }
@@ -126,7 +130,10 @@ public class BindMfaDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

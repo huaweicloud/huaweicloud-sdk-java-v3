@@ -86,9 +86,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
-     * 
-     * @return accessMode */
+    /**
+     * IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+     * @return accessMode
+     */
     public String getAccessMode() {
         return accessMode;
     }
@@ -102,9 +103,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户密码状态。true：需要修改密码，false：正常。
-     * 
-     * @return pwdStatus */
+    /**
+     * IAM用户密码状态。true：需要修改密码，false：正常。
+     * @return pwdStatus
+     */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -118,10 +120,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户在外部系统中的ID。
-     * >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
-     * 
-     * @return xuserId */
+    /**
+     * IAM用户在外部系统中的ID。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
+     * @return xuserId
+     */
     public String getXuserId() {
         return xuserId;
     }
@@ -135,10 +137,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户在外部系统中的类型。
-     * >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
-     * 
-     * @return xuserType */
+    /**
+     * IAM用户在外部系统中的类型。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
+     * @return xuserType
+     */
     public String getXuserType() {
         return xuserType;
     }
@@ -152,9 +154,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户的新描述信息。
-     * 
-     * @return description */
+    /**
+     * IAM用户的新描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -168,9 +171,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户新用户名，长度5~32字符之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
-     * 
-     * @return name */
+    /**
+     * IAM用户新用户名，长度5~32字符之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -184,9 +188,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户新手机号，纯数字，长度小于等于32字符。必须与国家码同时存在。
-     * 
-     * @return phone */
+    /**
+     * IAM用户新手机号，纯数字，长度小于等于32字符。必须与国家码同时存在。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -200,9 +205,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * IAM用户所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -216,9 +222,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** 是否启用IAM用户。true为启用，false为停用，默认为true。
-     * 
-     * @return enabled */
+    /**
+     * 是否启用IAM用户。true为启用，false为停用，默认为true。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -232,9 +239,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** 国家码。中国大陆为“0086”。
-     * 
-     * @return areacode */
+    /**
+     * 国家码。中国大陆为“0086”。
+     * @return areacode
+     */
     public String getAreacode() {
         return areacode;
     }
@@ -248,9 +256,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户新邮箱。
-     * 
-     * @return email */
+    /**
+     * IAM用户新邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -264,9 +273,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return id */
+    /**
+     * IAM用户ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -289,9 +299,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -305,9 +316,10 @@ public class UpdateUserResult {
         return this;
     }
 
-    /** 密码过期时间（UTC时间），“null”表示密码不过期。
-     * 
-     * @return passwordExpiresAt */
+    /**
+     * 密码过期时间（UTC时间），“null”表示密码不过期。
+     * @return passwordExpiresAt
+     */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -379,7 +391,10 @@ public class UpdateUserResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

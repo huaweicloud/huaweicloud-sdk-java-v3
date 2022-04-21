@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改的topic。 */
+/**
+ * 修改的topic。
+ */
 public class UpdateInstanceTopicReqTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** topic名称，不支持修改。
-     * 
-     * @return id */
+    /**
+     * topic名称，不支持修改。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** 老化时间，单位小时。
-     * 
-     * @return retentionTime */
+    /**
+     * 老化时间，单位小时。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -70,9 +74,10 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** 是否同步复制。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否同步复制。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -86,9 +91,10 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** 是否同步落盘。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否同步落盘。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -102,9 +108,10 @@ public class UpdateInstanceTopicReqTopics {
         return this;
     }
 
-    /** 分区数。
-     * 
-     * @return newPartitionNumbers */
+    /**
+     * 分区数。
+     * @return newPartitionNumbers
+     */
     public Integer getNewPartitionNumbers() {
         return newPartitionNumbers;
     }
@@ -147,7 +154,10 @@ public class UpdateInstanceTopicReqTopics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

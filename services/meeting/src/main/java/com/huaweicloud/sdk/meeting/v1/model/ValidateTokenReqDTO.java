@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ValidateTokenReqDTO */
+/**
+ * ValidateTokenReqDTO
+ */
 public class ValidateTokenReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ValidateTokenReqDTO {
         return this;
     }
 
-    /** 登录用账号的token字符串
-     * 
-     * @return token */
+    /**
+     * 登录用账号的token字符串
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -44,9 +47,10 @@ public class ValidateTokenReqDTO {
         return this;
     }
 
-    /** 是否生成新的token，内部使用参数。 true：生成新的token值。 false：不生成新的token值。
-     * 
-     * @return needGenNewToken */
+    /**
+     * 是否生成新的token，内部使用参数。 true：生成新的token值。 false：不生成新的token值。 
+     * @return needGenNewToken
+     */
     public Boolean getNeedGenNewToken() {
         return needGenNewToken;
     }
@@ -60,9 +64,10 @@ public class ValidateTokenReqDTO {
         return this;
     }
 
-    /** 是否需要返回用户可见帐号信息（帐号、用户姓名等信息）。
-     * 
-     * @return needAccountInfo */
+    /**
+     * 是否需要返回用户可见帐号信息（帐号、用户姓名等信息）。
+     * @return needAccountInfo
+     */
     public Boolean getNeedAccountInfo() {
         return needAccountInfo;
     }
@@ -101,7 +106,10 @@ public class ValidateTokenReqDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

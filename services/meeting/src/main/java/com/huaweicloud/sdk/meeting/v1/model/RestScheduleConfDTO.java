@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建或修改会议请求体。 */
+/**
+ * 创建或修改会议请求体。
+ */
 public class RestScheduleConfDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,9 +118,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议开始时间（UTC时间）。 预定创建会议时，如果没有指定开始时间，或填空串，则表示会议马上开始。 格式：yyyy-MM-dd HH:mm
-     * 
-     * @return startTime */
+    /**
+     * 会议开始时间（UTC时间）。 预定创建会议时，如果没有指定开始时间，或填空串，则表示会议马上开始。 格式：yyyy-MM-dd HH:mm
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -132,9 +135,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议持续时长，单位分钟，最大值为1440，最短15。default：30。 minimum: 15 maximum: 1440
-     * 
-     * @return length */
+    /**
+     * 会议持续时长，单位分钟，最大值为1440，最短15。default：30。
+     * minimum: 15
+     * maximum: 1440
+     * @return length
+     */
     public Integer getLength() {
         return length;
     }
@@ -148,9 +154,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议主题。长度限制为128个字符。
-     * 
-     * @return subject */
+    /**
+     * 会议主题。长度限制为128个字符。
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -164,11 +171,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔，枚举值如下： - Voice: 语音。 - Video: 标清视频。 - HDVideo:
-     * 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video） - Telepresence:
-     * 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体（系统配置决定是否自动添加Data）。
-     * 
-     * @return mediaTypes */
+    /**
+     * 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔，枚举值如下： - Voice: 语音。 - Video: 标清视频。 - HDVideo: 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video） - Telepresence: 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体（系统配置决定是否自动添加Data）。
+     * @return mediaTypes
+     */
     public String getMediaTypes() {
         return mediaTypes;
     }
@@ -182,9 +188,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 软终端创建即时会议时在当前字段带临时群组ID，由服务器在邀请其他与会者时在或者conference-info头域中携带。长度限制为31个字符。
-     * 
-     * @return groupuri */
+    /**
+     * 软终端创建即时会议时在当前字段带临时群组ID，由服务器在邀请其他与会者时在或者conference-info头域中携带。长度限制为31个字符。
+     * @return groupuri
+     */
     public String getGroupuri() {
         return groupuri;
     }
@@ -214,9 +221,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
-     * 
-     * @return attendees */
+    /**
+     * 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
+     * @return attendees
+     */
     public List<RestAttendeeDTO> getAttendees() {
         return attendees;
     }
@@ -230,9 +238,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议是否自动启动录制，在录播类型为:录播、直播+录播时有效。默认为不自动启动。 - 0: 不自动启动录制 - 1: 自动启动录制 minimum: 0 maximum: 1
-     * 
-     * @return isAutoRecord */
+    /**
+     * 会议是否自动启动录制，在录播类型为:录播、直播+录播时有效。默认为不自动启动。 - 0: 不自动启动录制 - 1: 自动启动录制
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoRecord
+     */
     public Integer getIsAutoRecord() {
         return isAutoRecord;
     }
@@ -246,9 +257,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议媒体加密模式。默认值由企业级的配置填充。 - 0: 自适应加密 - 1: 强制加密 - 2: 不加密 minimum: 0 maximum: 2
-     * 
-     * @return encryptMode */
+    /**
+     * 会议媒体加密模式。默认值由企业级的配置填充。 - 0: 自适应加密 - 1: 强制加密 - 2: 不加密
+     * minimum: 0
+     * maximum: 2
+     * @return encryptMode
+     */
     public Integer getEncryptMode() {
         return encryptMode;
     }
@@ -262,9 +276,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议的默认语言，默认值由会议云服务定义。 对于系统支持的语言，按照RFC3066规范传递。 - zh-CN: 简体中文。 - en-US: 美国英文。
-     * 
-     * @return language */
+    /**
+     * 会议的默认语言，默认值由会议云服务定义。 对于系统支持的语言，按照RFC3066规范传递。 - zh-CN: 简体中文。 - en-US: 美国英文。
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -278,9 +293,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 开始时间的时区信息。时区信息，参考时区映射关系。
-     * 
-     * @return timeZoneID */
+    /**
+     * 开始时间的时区信息。时区信息，参考时区映射关系。
+     * @return timeZoneID
+     */
     public String getTimeZoneID() {
         return timeZoneID;
     }
@@ -294,9 +310,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 录播类型。默认为禁用。 - 0: 禁用 - 1: 直播 - 2: 录播 - 3: 直播+录播 minimum: 0 maximum: 3
-     * 
-     * @return recordType */
+    /**
+     * 录播类型。默认为禁用。 - 0: 禁用 - 1: 直播 - 2: 录播 - 3: 直播+录播
+     * minimum: 0
+     * maximum: 3
+     * @return recordType
+     */
     public Integer getRecordType() {
         return recordType;
     }
@@ -310,9 +329,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 主流直播地址，最大不超过255个字符。在录播类型为 :直播、直播+录播时有效。
-     * 
-     * @return liveAddress */
+    /**
+     * 主流直播地址，最大不超过255个字符。在录播类型为 :直播、直播+录播时有效。
+     * @return liveAddress
+     */
     public String getLiveAddress() {
         return liveAddress;
     }
@@ -326,9 +346,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 辅流直播地址，最大不超过255个字符。在录播类型为: 直播、直播+录播时有效。
-     * 
-     * @return auxAddress */
+    /**
+     * 辅流直播地址，最大不超过255个字符。在录播类型为: 直播、直播+录播时有效。
+     * @return auxAddress
+     */
     public String getAuxAddress() {
         return auxAddress;
     }
@@ -342,9 +363,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 是否录制辅流，在录播类型为：录播、录播+直播时有效。 - 0: 不录制。 - 1: 录制。 minimum: 0 maximum: 1
-     * 
-     * @return recordAuxStream */
+    /**
+     * 是否录制辅流，在录播类型为：录播、录播+直播时有效。  - 0: 不录制。  - 1: 录制。
+     * minimum: 0
+     * maximum: 1
+     * @return recordAuxStream
+     */
     public Integer getRecordAuxStream() {
         return recordAuxStream;
     }
@@ -367,9 +391,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** Get confConfigInfo
-     * 
-     * @return confConfigInfo */
+    /**
+     * Get confConfigInfo
+     * @return confConfigInfo
+     */
     public RestConfConfigDTO getConfConfigInfo() {
         return confConfigInfo;
     }
@@ -383,9 +408,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 录播鉴权方式，在录播类型为:录播、直播+录播时有效。 - 0: 可通过链接观看/下载。 - 1: 企业用户可观看/下载。 - 2: 与会者可观看/下载。 minimum: 0 maximum: 2
-     * 
-     * @return recordAuthType */
+    /**
+     * 录播鉴权方式，在录播类型为:录播、直播+录播时有效。 - 0: 可通过链接观看/下载。 - 1: 企业用户可观看/下载。 - 2: 与会者可观看/下载。
+     * minimum: 0
+     * maximum: 2
+     * @return recordAuthType
+     */
     public Integer getRecordAuthType() {
         return recordAuthType;
     }
@@ -399,9 +427,12 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 是否使用云会议室召开预约会议。默认不使用云会议室。 - 0: 不使用云会议室。 - 1: 使用云会议室。 minimum: 0 maximum: 1
-     * 
-     * @return vmrFlag */
+    /**
+     * 是否使用云会议室召开预约会议。默认不使用云会议室。 - 0: 不使用云会议室。 - 1: 使用云会议室。
+     * minimum: 0
+     * maximum: 1
+     * @return vmrFlag
+     */
     public Integer getVmrFlag() {
         return vmrFlag;
     }
@@ -424,9 +455,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** Get cycleParams
-     * 
-     * @return cycleParams */
+    /**
+     * Get cycleParams
+     * @return cycleParams
+     */
     public CycleParams getCycleParams() {
         return cycleParams;
     }
@@ -440,10 +472,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 用于识别用户开会时绑定的云会议室。最大长度不超过512个字符。 ID可以从云会议室管理->分页查询用户云会议室中获取id字段。 - 不为空，则用ID查询云会议室信息。 -
-     * 为空，则查用户所有云会议室，如果有个人云会议室，用个人云会议室ID；没有个人云会议室，取最小云会议室ID。
-     * 
-     * @return vmrID */
+    /**
+     * 用于识别用户开会时绑定的云会议室。最大长度不超过512个字符。 ID可以从云会议室管理->分页查询用户云会议室中获取id字段。 - 不为空，则用ID查询云会议室信息。 - 为空，则查用户所有云会议室，如果有个人云会议室，用个人云会议室ID；没有个人云会议室，取最小云会议室ID。
+     * @return vmrID
+     */
     public String getVmrID() {
         return vmrID;
     }
@@ -457,9 +489,10 @@ public class RestScheduleConfDTO {
         return this;
     }
 
-    /** 会议方数，会议最大与会人数限制
-     * 
-     * @return concurrentParticipants */
+    /**
+     * 会议方数，会议最大与会人数限制
+     * @return concurrentParticipants
+     */
     public Integer getConcurrentParticipants() {
         return concurrentParticipants;
     }
@@ -551,7 +584,10 @@ public class RestScheduleConfDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

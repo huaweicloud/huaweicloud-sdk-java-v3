@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 虚拟私有云的数据对象。 */
+/**
+ * 虚拟私有云的数据对象。
+ */
 public class Vpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Vpc {
         return this;
     }
 
-    /** 虚拟私有云的ID。
-     * 
-     * @return id */
+    /**
+     * 虚拟私有云的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class Vpc {
         return this;
     }
 
-    /** 虚拟私有云名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：同一个帐号下的名称不能重复
-     * 
-     * @return name */
+    /**
+     * 虚拟私有云名称  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  约束：同一个帐号下的名称不能重复
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class Vpc {
         return this;
     }
 
-    /** 虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 约束：必须是cidr格式，例如:192.168.0.0/16
-     * 
-     * @return cidr */
+    /**
+     * 虚拟私有云下可用子网的范围  取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24  约束：必须是cidr格式，例如:192.168.0.0/16
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -86,9 +91,10 @@ public class Vpc {
         return this;
     }
 
-    /** 虚拟私有云的模式。
-     * 
-     * @return mode */
+    /**
+     * 虚拟私有云的模式。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -102,9 +108,10 @@ public class Vpc {
         return this;
     }
 
-    /** 子网的数目。
-     * 
-     * @return subnetNum */
+    /**
+     * 子网的数目。
+     * @return subnetNum
+     */
     public Integer getSubnetNum() {
         return subnetNum;
     }
@@ -145,7 +152,10 @@ public class Vpc {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

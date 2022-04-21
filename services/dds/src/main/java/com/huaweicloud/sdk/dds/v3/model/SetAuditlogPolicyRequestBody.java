@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SetAuditlogPolicyRequestBody */
+/**
+ * SetAuditlogPolicyRequestBody
+ */
 public class SetAuditlogPolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 审计日志保存天数，取值范围0，7~732。 - 取值0，表示关闭审计日志策略。 - 取值7~732，表示开启审计日志策略，并设置审计日志保存天数为该值。
-     * 
-     * @return keepDays */
+    /**
+     * 审计日志保存天数，取值范围0，7~732。 - 取值0，表示关闭审计日志策略。 - 取值7~732，表示开启审计日志策略，并设置审计日志保存天数为该值。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -52,9 +55,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 仅关闭审计日志策略时有效。 - true（默认），表示关闭审计日志策略的同时，保留历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
-     * 
-     * @return reserveAuditlogs */
+    /**
+     * 仅关闭审计日志策略时有效。 - true（默认），表示关闭审计日志策略的同时，保留历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
+     * @return reserveAuditlogs
+     */
     public String getReserveAuditlogs() {
         return reserveAuditlogs;
     }
@@ -68,9 +72,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 仅打开审计日志策略时有效，并且为空时，默认全部。审计范围。请输入数据库或集合名称，多个库或集合请用英文逗号分隔。若名称中有英文逗号，请在逗号前添加“$”符号，用以区分分隔符。
-     * 
-     * @return auditScope */
+    /**
+     * 仅打开审计日志策略时有效，并且为空时，默认全部。审计范围。请输入数据库或集合名称，多个库或集合请用英文逗号分隔。若名称中有英文逗号，请在逗号前添加“$”符号，用以区分分隔符。
+     * @return auditScope
+     */
     public String getAuditScope() {
         return auditScope;
     }
@@ -100,9 +105,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 仅打开审计日志策略时有效，并且为空时，默认全部。审计类型。支持insert，delete，update，query等。
-     * 
-     * @return auditTypes */
+    /**
+     * 仅打开审计日志策略时有效，并且为空时，默认全部。审计类型。支持insert，delete，update，query等。
+     * @return auditTypes
+     */
     public List<String> getAuditTypes() {
         return auditTypes;
     }
@@ -143,7 +149,10 @@ public class SetAuditlogPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

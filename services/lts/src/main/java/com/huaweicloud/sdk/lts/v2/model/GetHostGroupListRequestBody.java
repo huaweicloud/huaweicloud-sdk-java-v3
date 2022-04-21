@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** GetHostGroupListRequestBody */
+/**
+ * GetHostGroupListRequestBody
+ */
 public class GetHostGroupListRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class GetHostGroupListRequestBody {
         return this;
     }
 
-    /** 主机组ID
-     * 
-     * @return hostGroupIdList */
+    /**
+     * 主机组ID
+     * @return hostGroupIdList
+     */
     public List<String> getHostGroupIdList() {
         return hostGroupIdList;
     }
@@ -67,9 +70,10 @@ public class GetHostGroupListRequestBody {
         return this;
     }
 
-    /** Get filter
-     * 
-     * @return filter */
+    /**
+     * Get filter
+     * @return filter
+     */
     public GetHostGroupListFilter getFilter() {
         return filter;
     }
@@ -106,7 +110,10 @@ public class GetHostGroupListRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

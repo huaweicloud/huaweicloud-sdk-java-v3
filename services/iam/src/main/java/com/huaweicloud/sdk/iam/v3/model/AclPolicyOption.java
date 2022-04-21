@@ -45,9 +45,10 @@ public class AclPolicyOption {
         return this;
     }
 
-    /** 允许访问的IP地址或网段。
-     * 
-     * @return allowAddressNetmasks */
+    /**
+     * 允许访问的IP地址或网段。
+     * @return allowAddressNetmasks
+     */
     public List<AllowAddressNetmasksOption> getAllowAddressNetmasks() {
         return allowAddressNetmasks;
     }
@@ -77,9 +78,10 @@ public class AclPolicyOption {
         return this;
     }
 
-    /** 允许访问的IP地址区间。
-     * 
-     * @return allowIpRanges */
+    /**
+     * 允许访问的IP地址区间。
+     * @return allowIpRanges
+     */
     public List<AllowIpRangesOption> getAllowIpRanges() {
         return allowIpRanges;
     }
@@ -116,7 +118,10 @@ public class AclPolicyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

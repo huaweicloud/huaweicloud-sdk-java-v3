@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowCommitsByRepoIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 提交作者
-     * 
-     * @return author */
+    /**
+     * 提交作者
+     * @return author
+     */
     public String getAuthor() {
         return author;
     }
@@ -79,9 +82,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 起始提交日期，格式为yyyy-MM-dd
-     * 
-     * @return beginDate */
+    /**
+     * 起始提交日期，格式为yyyy-MM-dd
+     * @return beginDate
+     */
     public String getBeginDate() {
         return beginDate;
     }
@@ -95,9 +99,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 终止提交日期，格式为yyyy-MM-dd
-     * 
-     * @return endDate */
+    /**
+     * 终止提交日期，格式为yyyy-MM-dd
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -111,9 +116,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 提交信息
-     * 
-     * @return message */
+    /**
+     * 提交信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -127,9 +133,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 分页索引
-     * 
-     * @return pageIndex */
+    /**
+     * 分页索引
+     * @return pageIndex
+     */
     public Integer getPageIndex() {
         return pageIndex;
     }
@@ -143,9 +150,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 每页数据量
-     * 
-     * @return pageSize */
+    /**
+     * 每页数据量
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -159,9 +167,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return path */
+    /**
+     * 文件路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -175,9 +184,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 分支或标签名，支持SHA格式
-     * 
-     * @return refName */
+    /**
+     * 分支或标签名，支持SHA格式
+     * @return refName
+     */
     public String getRefName() {
         return refName;
     }
@@ -191,9 +201,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 仓库主键id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库主键id
+     * @return repositoryId
+     */
     public Integer getRepositoryId() {
         return repositoryId;
     }
@@ -207,9 +218,10 @@ public class ShowCommitsByRepoIdRequest {
         return this;
     }
 
-    /** 提交的文件变更详情信息（不包含diff）
-     * 
-     * @return statFormat */
+    /**
+     * 提交的文件变更详情信息（不包含diff）
+     * @return statFormat
+     */
     public String getStatFormat() {
         return statFormat;
     }
@@ -263,7 +275,10 @@ public class ShowCommitsByRepoIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

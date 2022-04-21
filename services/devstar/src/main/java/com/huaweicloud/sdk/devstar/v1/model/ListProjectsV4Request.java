@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProjectsV4Request {
 
-    /** 语言类型 中文:zh-cn 英文:en-us */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ListProjectsV4Request {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -127,9 +136,10 @@ public class ListProjectsV4Request {
         return this;
     }
 
-    /** 搜索关键字,支持按名称和描述搜索，默认null
-     * 
-     * @return keyword */
+    /**
+     * 搜索关键字,支持按名称和描述搜索，默认null
+     * @return keyword
+     */
     public String getKeyword() {
         return keyword;
     }
@@ -143,9 +153,12 @@ public class ListProjectsV4Request {
         return this;
     }
 
-    /** 每页显示的条目数量,默认100 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量,默认100
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -159,9 +172,12 @@ public class ListProjectsV4Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询,默认0 minimum: 0 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询,默认0
+     * minimum: 0
+     * maximum: 1000000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -202,7 +218,10 @@ public class ListProjectsV4Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

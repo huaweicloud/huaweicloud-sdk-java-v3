@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 路由对象 */
+/**
+ * 路由对象
+ */
 public class RouteOption {
 
-    /** 路由的类型 取值范围： 1）ecs：弹性云服务器 2）vip：虚拟IP */
+    /**
+     * 路由的类型  取值范围：     1）ecs：弹性云服务器     2）vip：虚拟IP
+     */
     public static final class TypeEnum {
 
-        /** Enum ECS for value: "ecs" */
+        /**
+         * Enum ECS for value: "ecs"
+         */
         public static final TypeEnum ECS = new TypeEnum("ecs");
 
-        /** Enum VIP for value: "vip" */
+        /**
+         * Enum VIP for value: "vip"
+         */
         public static final TypeEnum VIP = new TypeEnum("vip");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class RouteOption {
         return this;
     }
 
-    /** 路由的类型 取值范围： 1）ecs：弹性云服务器 2）vip：虚拟IP
-     * 
-     * @return type */
+    /**
+     * 路由的类型  取值范围：     1）ecs：弹性云服务器     2）vip：虚拟IP
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -125,9 +134,10 @@ public class RouteOption {
         return this;
     }
 
-    /** 路由的目的网段 约束：合法的CIDR格式, 目的地址不可更新
-     * 
-     * @return destination */
+    /**
+     * 路由的目的网段  约束：合法的CIDR格式, 目的地址不可更新
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -141,9 +151,10 @@ public class RouteOption {
         return this;
     }
 
-    /** 路由下一跳对象的ID 取值范围： 1）当type为ecs时，传入ecs实例ID； 2）当type为vip时，取值为vip的ip地址；
-     * 
-     * @return nexthop */
+    /**
+     * 路由下一跳对象的ID  取值范围：     1）当type为ecs时，传入ecs实例ID；     2）当type为vip时，取值为vip的ip地址；
+     * @return nexthop
+     */
     public String getNexthop() {
         return nexthop;
     }
@@ -157,9 +168,10 @@ public class RouteOption {
         return this;
     }
 
-    /** 路由的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 路由的描述信息  取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -199,7 +211,10 @@ public class RouteOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

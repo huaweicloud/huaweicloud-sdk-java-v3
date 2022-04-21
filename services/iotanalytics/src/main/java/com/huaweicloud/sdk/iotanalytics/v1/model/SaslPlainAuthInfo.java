@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** sasl plain 认证信息 */
+/**
+ * sasl plain 认证信息
+ */
 public class SaslPlainAuthInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SaslPlainAuthInfo {
         return this;
     }
 
-    /** 用户名。支持大小写字母、数字、“.”、“-” 、“_”
-     * 
-     * @return username */
+    /**
+     * 用户名。支持大小写字母、数字、“.”、“-” 、“_”
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -39,9 +42,10 @@ public class SaslPlainAuthInfo {
         return this;
     }
 
-    /** 密码
-     * 
-     * @return password */
+    /**
+     * 密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -78,7 +82,10 @@ public class SaslPlainAuthInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

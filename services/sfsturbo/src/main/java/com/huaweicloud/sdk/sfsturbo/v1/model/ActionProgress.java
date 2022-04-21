@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ActionProgress */
+/**
+ * ActionProgress
+ */
 public class ActionProgress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ActionProgress {
         return this;
     }
 
-    /** 创建文件系统的进度。
-     * 
-     * @return creating */
+    /**
+     * 创建文件系统的进度。
+     * @return creating
+     */
     public String getCreating() {
         return creating;
     }
@@ -55,7 +58,10 @@ public class ActionProgress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

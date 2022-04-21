@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PerformanceInfo */
+/**
+ * PerformanceInfo
+ */
 public class PerformanceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -313,9 +315,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 平均响应时间
-     * 
-     * @return averageRespTime */
+    /**
+     * 平均响应时间
+     * @return averageRespTime
+     */
     public Double getAverageRespTime() {
         return averageRespTime;
     }
@@ -329,9 +332,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 平均带宽
-     * 
-     * @return avgNetworkTraffic */
+    /**
+     * 平均带宽
+     * @return avgNetworkTraffic
+     */
     public Double getAvgNetworkTraffic() {
         return avgNetworkTraffic;
     }
@@ -345,9 +349,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 平均下行带宽
-     * 
-     * @return avgRecBytes */
+    /**
+     * 平均下行带宽
+     * @return avgRecBytes
+     */
     public Double getAvgRecBytes() {
         return avgRecBytes;
     }
@@ -361,9 +366,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 平均上行带宽
-     * 
-     * @return avgSentBytes */
+    /**
+     * 平均上行带宽
+     * @return avgSentBytes
+     */
     public Double getAvgSentBytes() {
         return avgSentBytes;
     }
@@ -377,9 +383,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务平均响应时间
-     * 
-     * @return avgTranRespTime */
+    /**
+     * 事务平均响应时间
+     * @return avgTranRespTime
+     */
     public Double getAvgTranRespTime() {
         return avgTranRespTime;
     }
@@ -393,9 +400,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 用例Uri
-     * 
-     * @return caseUri */
+    /**
+     * 用例Uri
+     * @return caseUri
+     */
     public String getCaseUri() {
         return caseUri;
     }
@@ -409,9 +417,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -425,9 +434,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最大并发数
-     * 
-     * @return currentThreadNum */
+    /**
+     * 最大并发数
+     * @return currentThreadNum
+     */
     public Double getCurrentThreadNum() {
         return currentThreadNum;
     }
@@ -441,9 +451,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 详情id
-     * 
-     * @return detailId */
+    /**
+     * 详情id
+     * @return detailId
+     */
     public String getDetailId() {
         return detailId;
     }
@@ -457,9 +468,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -473,9 +485,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 失败请求数
-     * 
-     * @return errorCount */
+    /**
+     * 失败请求数
+     * @return errorCount
+     */
     public Double getErrorCount() {
         return errorCount;
     }
@@ -489,9 +502,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** ERROR级别的事件个数
-     * 
-     * @return errorEventsCount */
+    /**
+     * ERROR级别的事件个数
+     * @return errorEventsCount
+     */
     public Double getErrorEventsCount() {
         return errorEventsCount;
     }
@@ -505,9 +519,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 断言失败
-     * 
-     * @return failedAssert */
+    /**
+     * 断言失败
+     * @return failedAssert
+     */
     public Double getFailedAssert() {
         return failedAssert;
     }
@@ -521,9 +536,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 其他失败
-     * 
-     * @return failedOthers */
+    /**
+     * 其他失败
+     * @return failedOthers
+     */
     public Double getFailedOthers() {
         return failedOthers;
     }
@@ -537,9 +553,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 解析失败
-     * 
-     * @return failedParsed */
+    /**
+     * 解析失败
+     * @return failedParsed
+     */
     public Double getFailedParsed() {
         return failedParsed;
     }
@@ -553,9 +570,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 连接被拒
-     * 
-     * @return failedRefused */
+    /**
+     * 连接被拒
+     * @return failedRefused
+     */
     public Double getFailedRefused() {
         return failedRefused;
     }
@@ -569,9 +587,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 超时失败
-     * 
-     * @return failedTimeout */
+    /**
+     * 超时失败
+     * @return failedTimeout
+     */
     public Double getFailedTimeout() {
         return failedTimeout;
     }
@@ -585,9 +604,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -601,9 +621,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 是否aw
-     * 
-     * @return isAW */
+    /**
+     * 是否aw
+     * @return isAW
+     */
     public Boolean getIsAW() {
         return isAW;
     }
@@ -617,9 +638,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最大响应时间
-     * 
-     * @return max */
+    /**
+     * 最大响应时间
+     * @return max
+     */
     public Double getMax() {
         return max;
     }
@@ -633,9 +655,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最大带宽
-     * 
-     * @return maxNetworkTraffic */
+    /**
+     * 最大带宽
+     * @return maxNetworkTraffic
+     */
     public Double getMaxNetworkTraffic() {
         return maxNetworkTraffic;
     }
@@ -649,9 +672,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最大接收字节数
-     * 
-     * @return maxRecBytes */
+    /**
+     * 最大接收字节数
+     * @return maxRecBytes
+     */
     public Double getMaxRecBytes() {
         return maxRecBytes;
     }
@@ -665,9 +689,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 探底结果：响应时间
-     * 
-     * @return maxRespTime */
+    /**
+     * 探底结果：响应时间
+     * @return maxRespTime
+     */
     public Double getMaxRespTime() {
         return maxRespTime;
     }
@@ -681,9 +706,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最大发送带宽
-     * 
-     * @return maxSentBytes */
+    /**
+     * 最大发送带宽
+     * @return maxSentBytes
+     */
     public Double getMaxSentBytes() {
         return maxSentBytes;
     }
@@ -697,9 +723,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务最大响应时间
-     * 
-     * @return maxTranRespTime */
+    /**
+     * 事务最大响应时间
+     * @return maxTranRespTime
+     */
     public Double getMaxTranRespTime() {
         return maxTranRespTime;
     }
@@ -713,9 +740,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最小响应时间
-     * 
-     * @return min */
+    /**
+     * 最小响应时间
+     * @return min
+     */
     public Double getMin() {
         return min;
     }
@@ -729,9 +757,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 最小带宽
-     * 
-     * @return minNetworkTraffic */
+    /**
+     * 最小带宽
+     * @return minNetworkTraffic
+     */
     public Double getMinNetworkTraffic() {
         return minNetworkTraffic;
     }
@@ -745,9 +774,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -761,9 +791,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 请求数
-     * 
-     * @return requests */
+    /**
+     * 请求数
+     * @return requests
+     */
     public Double getRequests() {
         return requests;
     }
@@ -777,9 +808,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 用例/aw的执行结果
-     * 
-     * @return result */
+    /**
+     * 用例/aw的执行结果
+     * @return result
+     */
     public Double getResult() {
         return result;
     }
@@ -793,9 +825,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -809,9 +842,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 用例状态
-     * 
-     * @return status */
+    /**
+     * 用例状态
+     * @return status
+     */
     public Double getStatus() {
         return status;
     }
@@ -825,9 +859,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 成功数
-     * 
-     * @return successCount */
+    /**
+     * 成功数
+     * @return successCount
+     */
     public Double getSuccessCount() {
         return successCount;
     }
@@ -841,9 +876,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 成功率
-     * 
-     * @return successRate */
+    /**
+     * 成功率
+     * @return successRate
+     */
     public Double getSuccessRate() {
         return successRate;
     }
@@ -857,9 +893,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 1xx响应码计数
-     * 
-     * @return sum1xx */
+    /**
+     * 1xx响应码计数
+     * @return sum1xx
+     */
     public Double getSum1xx() {
         return sum1xx;
     }
@@ -873,9 +910,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 2xx响应码计数
-     * 
-     * @return sum2xx */
+    /**
+     * 2xx响应码计数
+     * @return sum2xx
+     */
     public Double getSum2xx() {
         return sum2xx;
     }
@@ -889,9 +927,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 3xx响应码计数
-     * 
-     * @return sum3xx */
+    /**
+     * 3xx响应码计数
+     * @return sum3xx
+     */
     public Double getSum3xx() {
         return sum3xx;
     }
@@ -905,9 +944,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 4xx响应码计数
-     * 
-     * @return sum4xx */
+    /**
+     * 4xx响应码计数
+     * @return sum4xx
+     */
     public Double getSum4xx() {
         return sum4xx;
     }
@@ -921,9 +961,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 5xx响应码计数
-     * 
-     * @return sum5xx */
+    /**
+     * 5xx响应码计数
+     * @return sum5xx
+     */
     public Double getSum5xx() {
         return sum5xx;
     }
@@ -937,9 +978,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 任务id_轮次
-     * 
-     * @return taskId */
+    /**
+     * 任务id_轮次
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -953,9 +995,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskProjectId */
+    /**
+     * 任务id
+     * @return taskProjectId
+     */
     public String getTaskProjectId() {
         return taskProjectId;
     }
@@ -969,9 +1012,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态
+     * @return taskStatus
+     */
     public Double getTaskStatus() {
         return taskStatus;
     }
@@ -985,9 +1029,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 用例uri
-     * 
-     * @return testCaseUri */
+    /**
+     * 用例uri
+     * @return testCaseUri
+     */
     public String getTestCaseUri() {
         return testCaseUri;
     }
@@ -1001,9 +1046,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp50
-     * 
-     * @return tp50 */
+    /**
+     * tp50
+     * @return tp50
+     */
     public Double getTp50() {
         return tp50;
     }
@@ -1017,9 +1063,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp75
-     * 
-     * @return tp75 */
+    /**
+     * tp75
+     * @return tp75
+     */
     public Double getTp75() {
         return tp75;
     }
@@ -1033,9 +1080,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp90
-     * 
-     * @return tp90 */
+    /**
+     * tp90
+     * @return tp90
+     */
     public Double getTp90() {
         return tp90;
     }
@@ -1049,9 +1097,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp95
-     * 
-     * @return tp95 */
+    /**
+     * tp95
+     * @return tp95
+     */
     public Double getTp95() {
         return tp95;
     }
@@ -1065,9 +1114,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp99
-     * 
-     * @return tp99 */
+    /**
+     * tp99
+     * @return tp99
+     */
     public Double getTp99() {
         return tp99;
     }
@@ -1081,9 +1131,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp999
-     * 
-     * @return tp999 */
+    /**
+     * tp999
+     * @return tp999
+     */
     public Double getTp999() {
         return tp999;
     }
@@ -1097,9 +1148,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tp9999
-     * 
-     * @return tp9999 */
+    /**
+     * tp9999
+     * @return tp9999
+     */
     public Double getTp9999() {
         return tp9999;
     }
@@ -1113,9 +1165,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** tps
-     * 
-     * @return tps */
+    /**
+     * tps
+     * @return tps
+     */
     public Double getTps() {
         return tps;
     }
@@ -1129,9 +1182,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务TPS
-     * 
-     * @return tranTPS */
+    /**
+     * 事务TPS
+     * @return tranTPS
+     */
     public Double getTranTPS() {
         return tranTPS;
     }
@@ -1145,9 +1199,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务id
-     * 
-     * @return transactionId */
+    /**
+     * 事务id
+     * @return transactionId
+     */
     public String getTransactionId() {
         return transactionId;
     }
@@ -1161,9 +1216,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 成功事务数
-     * 
-     * @return transactionSuccess */
+    /**
+     * 成功事务数
+     * @return transactionSuccess
+     */
     public Double getTransactionSuccess() {
         return transactionSuccess;
     }
@@ -1177,9 +1233,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务成功率
-     * 
-     * @return transactionalSuccessRate */
+    /**
+     * 事务成功率
+     * @return transactionalSuccessRate
+     */
     public Double getTransactionalSuccessRate() {
         return transactionalSuccessRate;
     }
@@ -1193,9 +1250,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 自定义事务tps
-     * 
-     * @return transactionalTps */
+    /**
+     * 自定义事务tps
+     * @return transactionalTps
+     */
     public Double getTransactionalTps() {
         return transactionalTps;
     }
@@ -1209,9 +1267,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 自定义事务成功率
-     * 
-     * @return transactionalTpsSuccess */
+    /**
+     * 自定义事务成功率
+     * @return transactionalTpsSuccess
+     */
     public Double getTransactionalTpsSuccess() {
         return transactionalTpsSuccess;
     }
@@ -1225,9 +1284,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 事务数
-     * 
-     * @return transactions */
+    /**
+     * 事务数
+     * @return transactions
+     */
     public Double getTransactions() {
         return transactions;
     }
@@ -1241,9 +1301,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -1257,9 +1318,10 @@ public class PerformanceInfo {
         return this;
     }
 
-    /** 分钟数*并发数
-     * 
-     * @return vum */
+    /**
+     * 分钟数*并发数
+     * @return vum
+     */
     public Double getVum() {
         return vum;
     }
@@ -1466,7 +1528,10 @@ public class PerformanceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
         return this;
     }
 
-    /** 裸金属服务器挂载信息列表，详情请参见表2 volumeAttachments字段数据结构说明。
-     * 
-     * @return volumeAttachments */
+    /**
+     * 裸金属服务器挂载信息列表，详情请参见表2 volumeAttachments字段数据结构说明。
+     * @return volumeAttachments
+     */
     public List<VolumeAttachments> getVolumeAttachments() {
         return volumeAttachments;
     }
@@ -77,7 +80,10 @@ public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

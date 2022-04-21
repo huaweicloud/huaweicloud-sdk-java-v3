@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ES数据项匹配信息 */
+/**
+ * ES数据项匹配信息
+ */
 public class EsMatchInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class EsMatchInfo {
         return this;
     }
 
-    /** 数据字段名
-     * 
-     * @return fieldName */
+    /**
+     * 数据字段名
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -49,9 +52,10 @@ public class EsMatchInfo {
         return this;
     }
 
-    /** 规则名
-     * 
-     * @return ruleName */
+    /**
+     * 规则名
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -65,9 +69,10 @@ public class EsMatchInfo {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return ruleId */
+    /**
+     * 规则ID
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -81,9 +86,10 @@ public class EsMatchInfo {
         return this;
     }
 
-    /** 规则风险等级
-     * 
-     * @return ruleRiskLevel */
+    /**
+     * 规则风险等级
+     * @return ruleRiskLevel
+     */
     public Integer getRuleRiskLevel() {
         return ruleRiskLevel;
     }
@@ -123,7 +129,10 @@ public class EsMatchInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

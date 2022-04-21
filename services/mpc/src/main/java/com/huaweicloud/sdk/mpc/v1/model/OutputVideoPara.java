@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OutputVideoPara */
+/**
+ * OutputVideoPara
+ */
 public class OutputVideoPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,12 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** 输出视频对应的模板ID minimum: 0 maximum: 2147483647
-     * 
-     * @return templateId */
+    /**
+     * 输出视频对应的模板ID 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return templateId
+     */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -70,9 +75,12 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** 视频大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 视频大小 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -86,9 +94,10 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** 视频封装格式
-     * 
-     * @return pack */
+    /**
+     * 视频封装格式 
+     * @return pack
+     */
     public String getPack() {
         return pack;
     }
@@ -111,9 +120,10 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public VideoInfo getVideo() {
         return video;
     }
@@ -136,9 +146,10 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** Get audio
-     * 
-     * @return audio */
+    /**
+     * Get audio
+     * @return audio
+     */
     public AudioInfo getAudio() {
         return audio;
     }
@@ -152,9 +163,10 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** 输出片源文件名
-     * 
-     * @return fileName */
+    /**
+     * 输出片源文件名 
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -168,9 +180,12 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** 折算后视频时长 minimum: 0 maximum: 2147483647
-     * 
-     * @return converDuration */
+    /**
+     * 折算后视频时长 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return converDuration
+     */
     public Double getConverDuration() {
         return converDuration;
     }
@@ -193,9 +208,10 @@ public class OutputVideoPara {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public XCodeError getError() {
         return error;
     }
@@ -242,7 +258,10 @@ public class OutputVideoPara {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

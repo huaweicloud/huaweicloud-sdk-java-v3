@@ -4,7 +4,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteL7PolicyResponse extends SdkResponse {
 
     @Override

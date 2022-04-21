@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCommitRequestBody */
+/**
+ * CreateCommitRequestBody
+ */
 public class CreateCommitRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 目标分支
-     * 
-     * @return branch */
+    /**
+     * 目标分支
+     * @return branch
+     */
     public String getBranch() {
         return branch;
     }
@@ -72,9 +75,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 提交信息
-     * 
-     * @return commitMessage */
+    /**
+     * 提交信息
+     * @return commitMessage
+     */
     public String getCommitMessage() {
         return commitMessage;
     }
@@ -88,9 +92,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 创建分支时，新的分支名
-     * 
-     * @return startBranch */
+    /**
+     * 创建分支时，新的分支名
+     * @return startBranch
+     */
     public String getStartBranch() {
         return startBranch;
     }
@@ -120,9 +125,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 提交处理列表
-     * 
-     * @return actions */
+    /**
+     * 提交处理列表
+     * @return actions
+     */
     public List<CommitAction> getActions() {
         return actions;
     }
@@ -136,9 +142,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 提交作者的电子邮件地址
-     * 
-     * @return authorEmail */
+    /**
+     * 提交作者的电子邮件地址
+     * @return authorEmail
+     */
     public String getAuthorEmail() {
         return authorEmail;
     }
@@ -152,9 +159,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 提交作者的名称
-     * 
-     * @return authorName */
+    /**
+     * 提交作者的名称
+     * @return authorName
+     */
     public String getAuthorName() {
         return authorName;
     }
@@ -168,9 +176,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 是否包括提交统计信息。默认值为true
-     * 
-     * @return stats */
+    /**
+     * 是否包括提交统计信息。默认值为true
+     * @return stats
+     */
     public Boolean getStats() {
         return stats;
     }
@@ -184,9 +193,10 @@ public class CreateCommitRequestBody {
         return this;
     }
 
-    /** 是否覆盖目标分支。当true时，使用基于start_branch的新提交覆盖目标分支
-     * 
-     * @return force */
+    /**
+     * 是否覆盖目标分支。当true时，使用基于start_branch的新提交覆盖目标分支
+     * @return force
+     */
     public String getForce() {
         return force;
     }
@@ -235,7 +245,10 @@ public class CreateCommitRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

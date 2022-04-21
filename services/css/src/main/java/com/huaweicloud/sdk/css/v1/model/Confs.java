@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Confs */
+/**
+ * Confs
+ */
 public class Confs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class Confs {
         return this;
     }
 
-    /** 配置文件名称。
-     * 
-     * @return name */
+    /**
+     * 配置文件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,9 +58,10 @@ public class Confs {
         return this;
     }
 
-    /** 配置文件状态。
-     * 
-     * @return status */
+    /**
+     * 配置文件状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -71,9 +75,10 @@ public class Confs {
         return this;
     }
 
-    /** 配置文件内容。
-     * 
-     * @return confContent */
+    /**
+     * 配置文件内容。
+     * @return confContent
+     */
     public String getConfContent() {
         return confContent;
     }
@@ -96,9 +101,10 @@ public class Confs {
         return this;
     }
 
-    /** Get setting
-     * 
-     * @return setting */
+    /**
+     * Get setting
+     * @return setting
+     */
     public Setting getSetting() {
         return setting;
     }
@@ -112,9 +118,10 @@ public class Confs {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -155,7 +162,10 @@ public class Confs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** entities字段数据结构说明 */
+/**
+ * entities字段数据结构说明
+ */
 public class Entities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Entities {
         return this;
     }
 
-    /** 子任务数量。没有子任务时为0
-     * 
-     * @return subJobsTotal */
+    /**
+     * 子任务数量。没有子任务时为0
+     * @return subJobsTotal
+     */
     public Integer getSubJobsTotal() {
         return subJobsTotal;
     }
@@ -58,9 +61,10 @@ public class Entities {
         return this;
     }
 
-    /** 每个子任务的执行信息。没有子任务时为空列表
-     * 
-     * @return subJobs */
+    /**
+     * 每个子任务的执行信息。没有子任务时为空列表
+     * @return subJobs
+     */
     public List<SubJobs> getSubJobs() {
         return subJobs;
     }
@@ -97,7 +101,10 @@ public class Entities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

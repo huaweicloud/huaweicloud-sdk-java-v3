@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 截图结果 */
+/**
+ * 截图结果
+ */
 public class ThumbnailRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ThumbnailRsp {
         return this;
     }
 
-    /** 截图在视频中的时间偏移，单位为秒。
-     * 
-     * @return offset */
+    /**
+     * 截图在视频中的时间偏移，单位为秒。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -39,9 +42,10 @@ public class ThumbnailRsp {
         return this;
     }
 
-    /** 截图访问URL
-     * 
-     * @return url */
+    /**
+     * 截图访问URL
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -77,7 +81,10 @@ public class ThumbnailRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

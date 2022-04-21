@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。 */
+/**
+ * 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+ */
 public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class Metadata {
         return this;
     }
 
-    /** 唯一id标识
-     * 
-     * @return uid */
+    /**
+     * 唯一id标识
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -63,9 +66,10 @@ public class Metadata {
         return this;
     }
 
-    /** 插件名称
-     * 
-     * @return name */
+    /**
+     * 插件名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -95,9 +99,10 @@ public class Metadata {
         return this;
     }
 
-    /** 插件标签，key/value对格式，接口保留字段，填写不会生效
-     * 
-     * @return labels */
+    /**
+     * 插件标签，key/value对格式，接口保留字段，填写不会生效
+     * @return labels
+     */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -127,9 +132,10 @@ public class Metadata {
         return this;
     }
 
-    /** 插件注解，由key/value组成 - 安装：固定值为{\"addon.install/type\":\"install\"} - 升级：固定值为{\"addon.upgrade/type\":\"upgrade\"}
-     * 
-     * @return annotations */
+    /**
+     * 插件注解，由key/value组成 - 安装：固定值为{\"addon.install/type\":\"install\"} - 升级：固定值为{\"addon.upgrade/type\":\"upgrade\"} 
+     * @return annotations
+     */
     public Map<String, String> getAnnotations() {
         return annotations;
     }
@@ -143,9 +149,10 @@ public class Metadata {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTimestamp */
+    /**
+     * 更新时间
+     * @return updateTimestamp
+     */
     public LocalDate getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -159,9 +166,10 @@ public class Metadata {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return creationTimestamp */
+    /**
+     * 创建时间
+     * @return creationTimestamp
+     */
     public LocalDate getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -204,7 +212,10 @@ public class Metadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

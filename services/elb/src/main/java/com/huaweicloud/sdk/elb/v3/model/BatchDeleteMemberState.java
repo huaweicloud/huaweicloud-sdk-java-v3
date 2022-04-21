@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量创建后端服务器响应结果 */
+/**
+ * 批量创建后端服务器响应结果
+ */
 public class BatchDeleteMemberState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BatchDeleteMemberState {
         return this;
     }
 
-    /** 后端服务器ID。
-     * 
-     * @return id */
+    /**
+     * 后端服务器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class BatchDeleteMemberState {
         return this;
     }
 
-    /** 当前后端服务器删除结果状态。取值： - successful：删除成功。 - not found：member不存在。
-     * 
-     * @return retStatus */
+    /**
+     * 当前后端服务器删除结果状态。取值： - successful：删除成功。 - not found：member不存在。
+     * @return retStatus
+     */
     public String getRetStatus() {
         return retStatus;
     }
@@ -78,7 +82,10 @@ public class BatchDeleteMemberState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

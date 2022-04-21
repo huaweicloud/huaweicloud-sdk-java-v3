@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 含阈值告警的QoS数据元素，包括时间，QoS取值，告警状态，产生告警时的阈值。 */
+/**
+ * 含阈值告警的QoS数据元素，包括时间，QoS取值，告警状态，产生告警时的阈值。
+ */
 public class QosDataElement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class QosDataElement {
         return this;
     }
 
-    /** QoS时间点, UTC时间，格式：yyyy-MM-ddTHH:mm:ss.SSSZ。
-     * 
-     * @return time */
+    /**
+     * QoS时间点, UTC时间，格式：yyyy-MM-ddTHH:mm:ss.SSSZ。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -49,9 +52,10 @@ public class QosDataElement {
         return this;
     }
 
-    /** QoS值。
-     * 
-     * @return value */
+    /**
+     * QoS值。
+     * @return value
+     */
     public Integer getValue() {
         return value;
     }
@@ -65,9 +69,10 @@ public class QosDataElement {
         return this;
     }
 
-    /** 该时间点是否有阈值告警. true: 阈值告警 false: 无阈值告警。
-     * 
-     * @return alarm */
+    /**
+     * 该时间点是否有阈值告警. true: 阈值告警 false: 无阈值告警。
+     * @return alarm
+     */
     public Boolean getAlarm() {
         return alarm;
     }
@@ -81,9 +86,10 @@ public class QosDataElement {
         return this;
     }
 
-    /** 该时间点的阈值。
-     * 
-     * @return threshold */
+    /**
+     * 该时间点的阈值。
+     * @return threshold
+     */
     public Integer getThreshold() {
         return threshold;
     }
@@ -123,7 +129,10 @@ public class QosDataElement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

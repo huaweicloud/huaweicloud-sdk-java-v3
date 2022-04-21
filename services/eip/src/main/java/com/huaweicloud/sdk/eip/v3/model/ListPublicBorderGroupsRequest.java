@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPublicBorderGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListPublicBorderGroupsRequest {
         return this;
     }
 
-    /** 显示，形式为\"fields=id&fields=name&...\" 支持字段：publicip_pools/public_border_group
-     * 
-     * @return fields */
+    /**
+     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：publicip_pools/public_border_group
+     * @return fields
+     */
     public String getFields() {
         return fields;
     }
@@ -55,7 +58,10 @@ public class ListPublicBorderGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

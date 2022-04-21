@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群证书有效期 */
+/**
+ * 集群证书有效期
+ */
 public class CertDuration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class CertDuration {
         return this;
     }
 
-    /** 集群证书有效时间，单位为天，用户可申请1-10950天，若填写-1则为最大值10950天，10950天约为30年。 minimum: 1 maximum: 10950
-     * 
-     * @return duration */
+    /**
+     * 集群证书有效时间，单位为天，用户可申请1-10950天，若填写-1则为最大值10950天，10950天约为30年。
+     * minimum: 1
+     * maximum: 10950
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -55,7 +60,10 @@ public class CertDuration {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

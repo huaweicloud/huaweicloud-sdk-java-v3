@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMembersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器组id
-     * 
-     * @return poolId */
+    /**
+     * 后端云服务器组id
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -84,9 +87,12 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 分页查询中每页的监听器个数 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的监听器个数
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -100,9 +106,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -116,9 +123,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -132,9 +140,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器的ID。
-     * 
-     * @return id */
+    /**
+     * 后端云服务器的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -148,9 +157,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器的名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -164,9 +174,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器对应的IP地址。
-     * 
-     * @return address */
+    /**
+     * 后端云服务器对应的IP地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -180,9 +191,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器后端端口的协议号。
-     * 
-     * @return protocolPort */
+    /**
+     * 后端云服务器后端端口的协议号。
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -196,9 +208,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器所在的子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 后端云服务器所在的子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -212,9 +225,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器的管理状态。取值范围：true/false。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器的管理状态。取值范围：true/false。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -228,9 +242,10 @@ public class ListMembersRequest {
         return this;
     }
 
-    /** 后端云服务器的权重。
-     * 
-     * @return weight */
+    /**
+     * 后端云服务器的权重。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -285,7 +300,10 @@ public class ListMembersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

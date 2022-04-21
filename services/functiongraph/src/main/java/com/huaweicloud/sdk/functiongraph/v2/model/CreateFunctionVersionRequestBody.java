@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateFunctionVersionRequestBody */
+/**
+ * CreateFunctionVersionRequestBody
+ */
 public class CreateFunctionVersionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateFunctionVersionRequestBody {
         return this;
     }
 
-    /** md5键值
-     * 
-     * @return digest */
+    /**
+     * md5键值
+     * @return digest
+     */
     public String getDigest() {
         return digest;
     }
@@ -44,9 +47,10 @@ public class CreateFunctionVersionRequestBody {
         return this;
     }
 
-    /** 发布版本名称
-     * 
-     * @return version */
+    /**
+     * 发布版本名称
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -60,9 +64,10 @@ public class CreateFunctionVersionRequestBody {
         return this;
     }
 
-    /** 发布版本描述
-     * 
-     * @return description */
+    /**
+     * 发布版本描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class CreateFunctionVersionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

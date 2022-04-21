@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,17 +40,24 @@ public class ShowJobsRequest {
 
     private Integer pageSize;
 
-    /** 作业类型: - jobType=NORMAL_JOB：表示查询表/文件迁移的作业。 - jobType=BATCH_JOB：表示查询整库迁移的作业。 - jobType=SCENARIO_JOB：表示查询场景迁移的作业。 -
-     * 不指定该参数时，默认只查询表/文件迁移的作业。 */
+    /**
+     * 作业类型: - jobType=NORMAL_JOB：表示查询表/文件迁移的作业。 - jobType=BATCH_JOB：表示查询整库迁移的作业。 - jobType=SCENARIO_JOB：表示查询场景迁移的作业。 - 不指定该参数时，默认只查询表/文件迁移的作业。
+     */
     public static final class JobTypeEnum {
 
-        /** Enum NORMAL_JOB for value: "NORMAL_JOB" */
+        /**
+         * Enum NORMAL_JOB for value: "NORMAL_JOB"
+         */
         public static final JobTypeEnum NORMAL_JOB = new JobTypeEnum("NORMAL_JOB");
 
-        /** Enum BATCH_JOB for value: "BATCH_JOB" */
+        /**
+         * Enum BATCH_JOB for value: "BATCH_JOB"
+         */
         public static final JobTypeEnum BATCH_JOB = new JobTypeEnum("BATCH_JOB");
 
-        /** Enum SCENARIO_JOB for value: "SCENARIO_JOB" */
+        /**
+         * Enum SCENARIO_JOB for value: "SCENARIO_JOB"
+         */
         public static final JobTypeEnum SCENARIO_JOB = new JobTypeEnum("SCENARIO_JOB");
 
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +133,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -140,9 +150,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 查询多个作业用all,查询单个作业输入作业名
-     * 
-     * @return jobName */
+    /**
+     * 查询多个作业用all,查询单个作业输入作业名
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -156,9 +167,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 当“job_name”为“all”时，此参数用于模糊过滤作业
-     * 
-     * @return filter */
+    /**
+     * 当“job_name”为“all”时，此参数用于模糊过滤作业
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -172,9 +184,11 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 指定作业页号 minimum: 1
-     * 
-     * @return pageNo */
+    /**
+     * 指定作业页号
+     * minimum: 1
+     * @return pageNo
+     */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -188,9 +202,12 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 每页作业数，值在10-100之间 minimum: 10 maximum: 100
-     * 
-     * @return pageSize */
+    /**
+     * 每页作业数，值在10-100之间
+     * minimum: 10
+     * maximum: 100
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -204,10 +221,10 @@ public class ShowJobsRequest {
         return this;
     }
 
-    /** 作业类型: - jobType=NORMAL_JOB：表示查询表/文件迁移的作业。 - jobType=BATCH_JOB：表示查询整库迁移的作业。 - jobType=SCENARIO_JOB：表示查询场景迁移的作业。 -
-     * 不指定该参数时，默认只查询表/文件迁移的作业。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型: - jobType=NORMAL_JOB：表示查询表/文件迁移的作业。 - jobType=BATCH_JOB：表示查询整库迁移的作业。 - jobType=SCENARIO_JOB：表示查询场景迁移的作业。 - 不指定该参数时，默认只查询表/文件迁移的作业。
+     * @return jobType
+     */
     public JobTypeEnum getJobType() {
         return jobType;
     }
@@ -252,7 +269,10 @@ public class ShowJobsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

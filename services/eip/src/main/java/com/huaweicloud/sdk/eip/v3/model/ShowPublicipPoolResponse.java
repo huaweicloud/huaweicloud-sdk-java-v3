@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPublicipPoolResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowPublicipPoolResponse extends SdkResponse {
         return this;
     }
 
-    /** Get publicipPool
-     * 
-     * @return publicipPool */
+    /**
+     * Get publicipPool
+     * @return publicipPool
+     */
     public PublicipPoolShowResp getPublicipPool() {
         return publicipPool;
     }
@@ -50,9 +53,10 @@ public class ShowPublicipPoolResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次请求的编号
-     * 
-     * @return requestId */
+    /**
+     * 本次请求的编号
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -89,7 +93,10 @@ public class ShowPublicipPoolResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTaskRequestBody */
+/**
+ * UpdateTaskRequestBody
+ */
 public class UpdateTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -87,9 +92,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -103,9 +109,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -119,9 +126,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** project_id minimum: 0 maximum: 2147483647
-     * 
-     * @return projectId */
+    /**
+     * project_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -135,9 +145,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** run_status minimum: 0 maximum: 2147483647
-     * 
-     * @return runStatus */
+    /**
+     * run_status
+     * minimum: 0
+     * maximum: 2147483647
+     * @return runStatus
+     */
     public Integer getRunStatus() {
         return runStatus;
     }
@@ -151,9 +164,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** run_type minimum: 0 maximum: 2147483647
-     * 
-     * @return runType */
+    /**
+     * run_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return runType
+     */
     public Integer getRunType() {
         return runType;
     }
@@ -176,9 +192,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** Get taskRunInfo
-     * 
-     * @return taskRunInfo */
+    /**
+     * Get taskRunInfo
+     * @return taskRunInfo
+     */
     public TaskRunInfo getTaskRunInfo() {
         return taskRunInfo;
     }
@@ -208,9 +225,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** case_list
-     * 
-     * @return caseList */
+    /**
+     * case_list
+     * @return caseList
+     */
     public List<CaseInfo> getCaseList() {
         return caseList;
     }
@@ -224,9 +242,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** operate_mode minimum: 0 maximum: 2147483647
-     * 
-     * @return operateMode */
+    /**
+     * operate_mode
+     * minimum: 0
+     * maximum: 2147483647
+     * @return operateMode
+     */
     public Integer getOperateMode() {
         return operateMode;
     }
@@ -240,9 +261,12 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** bench_concurrent minimum: 0 maximum: 2147483647
-     * 
-     * @return benchConcurrent */
+    /**
+     * bench_concurrent
+     * minimum: 0
+     * maximum: 2147483647
+     * @return benchConcurrent
+     */
     public Integer getBenchConcurrent() {
         return benchConcurrent;
     }
@@ -273,9 +297,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** related_temp_running_data
-     * 
-     * @return relatedTempRunningData */
+    /**
+     * related_temp_running_data
+     * @return relatedTempRunningData
+     */
     public List<RelatedTempRunningData> getRelatedTempRunningData() {
         return relatedTempRunningData;
     }
@@ -340,7 +365,10 @@ public class UpdateTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

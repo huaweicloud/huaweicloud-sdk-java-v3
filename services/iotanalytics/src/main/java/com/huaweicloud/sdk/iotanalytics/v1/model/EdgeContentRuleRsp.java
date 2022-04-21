@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 在Edge实例中要配置转发规则推送数据的资源空间和产品列表 */
+/**
+ * 在Edge实例中要配置转发规则推送数据的资源空间和产品列表
+ */
 public class EdgeContentRuleRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class EdgeContentRuleRsp {
         return this;
     }
 
-    /** Edge中的资源空间Id
-     * 
-     * @return appId */
+    /**
+     * Edge中的资源空间Id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -63,9 +66,10 @@ public class EdgeContentRuleRsp {
         return this;
     }
 
-    /** Edge中某资源空间Id下的产品列表
-     * 
-     * @return products */
+    /**
+     * Edge中某资源空间Id下的产品列表
+     * @return products
+     */
     public List<String> getProducts() {
         return products;
     }
@@ -95,9 +99,10 @@ public class EdgeContentRuleRsp {
         return this;
     }
 
-    /** Edge中rule_id和action_id列表
-     * 
-     * @return ruleActions */
+    /**
+     * Edge中rule_id和action_id列表
+     * @return ruleActions
+     */
     public List<IotdaRuleAction> getRuleActions() {
         return ruleActions;
     }
@@ -136,7 +141,10 @@ public class EdgeContentRuleRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改日志组的参数。 */
+/**
+ * 修改日志组的参数。
+ */
 public class UpdateLogGroupParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class UpdateLogGroupParams {
         return this;
     }
 
-    /** 日志存储时间 天。 取值范围为 [1, 30] minimum: 1 maximum: 30
-     * 
-     * @return ttlInDays */
+    /**
+     * 日志存储时间 天。 取值范围为 [1, 30]
+     * minimum: 1
+     * maximum: 30
+     * @return ttlInDays
+     */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -55,7 +60,10 @@ public class UpdateLogGroupParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

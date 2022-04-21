@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateResDatasourceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateResDatasourceRequestBody {
         return this;
     }
 
-    /** 数据源名称，1-64位字母、数字、下划线、中划线组合。
-     * 
-     * @return datasourceName */
+    /**
+     * 数据源名称，1-64位字母、数字、下划线、中划线组合。
+     * @return datasourceName
+     */
     public String getDatasourceName() {
         return datasourceName;
     }
@@ -54,9 +57,10 @@ public class CreateResDatasourceRequestBody {
         return this;
     }
 
-    /** Get specsConfig
-     * 
-     * @return specsConfig */
+    /**
+     * Get specsConfig
+     * @return specsConfig
+     */
     public SpecsConfig getSpecsConfig() {
         return specsConfig;
     }
@@ -79,9 +83,10 @@ public class CreateResDatasourceRequestBody {
         return this;
     }
 
-    /** Get dataConfig
-     * 
-     * @return dataConfig */
+    /**
+     * Get dataConfig
+     * @return dataConfig
+     */
     public DataConfig getDataConfig() {
         return dataConfig;
     }
@@ -120,7 +125,10 @@ public class CreateResDatasourceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

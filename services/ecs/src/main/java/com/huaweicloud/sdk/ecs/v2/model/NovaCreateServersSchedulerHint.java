@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 弹性云服务器调度信息。 裸金属服务器场景不支持。 */
+/**
+ *  弹性云服务器调度信息。  裸金属服务器场景不支持。
+ */
 public class NovaCreateServersSchedulerHint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 反亲和性组信息。 UUID格式。
-     * 
-     * @return group */
+    /**
+     * 反亲和性组信息。  UUID格式。
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -83,9 +86,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 与指定弹性云服务器满足反亲和性。 当前不支持该功能。
-     * 
-     * @return differentHost */
+    /**
+     * 与指定弹性云服务器满足反亲和性。   当前不支持该功能。
+     * @return differentHost
+     */
     public List<String> getDifferentHost() {
         return differentHost;
     }
@@ -115,9 +119,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 与指定的弹性云服务器满足亲和性。 当前不支持该功能。
-     * 
-     * @return sameHost */
+    /**
+     * 与指定的弹性云服务器满足亲和性。   当前不支持该功能。
+     * @return sameHost
+     */
     public List<String> getSameHost() {
         return sameHost;
     }
@@ -131,9 +136,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 将弹性云服务器scheduler到指定网段的host上，host网段的cidr。 当前不支持该功能。
-     * 
-     * @return cidr */
+    /**
+     * 将弹性云服务器scheduler到指定网段的host上，host网段的cidr。   当前不支持该功能。
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -147,9 +153,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 将弹性云服务器scheduler到指定网段的host上，host IP地址。 当前不支持该功能。
-     * 
-     * @return buildNearHostIp */
+    /**
+     * 将弹性云服务器scheduler到指定网段的host上，host IP地址。   当前不支持该功能。
+     * @return buildNearHostIp
+     */
     public String getBuildNearHostIp() {
         return buildNearHostIp;
     }
@@ -163,9 +170,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。 值为： shared 或dedicated。 shared：表示共享池。 dedicated:表示专属主机。 创建与查询此值均有效。
-     * 
-     * @return tenancy */
+    /**
+     * 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。 值为： shared 或dedicated。 shared：表示共享池。 dedicated:表示专属主机。 创建与查询此值均有效。
+     * @return tenancy
+     */
     public String getTenancy() {
         return tenancy;
     }
@@ -179,9 +187,10 @@ public class NovaCreateServersSchedulerHint {
         return this;
     }
 
-    /** 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -228,7 +237,10 @@ public class NovaCreateServersSchedulerHint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

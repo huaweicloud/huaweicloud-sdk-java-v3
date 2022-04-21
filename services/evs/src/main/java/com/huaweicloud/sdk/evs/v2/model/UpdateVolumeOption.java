@@ -25,9 +25,10 @@ public class UpdateVolumeOption {
         return this;
     }
 
-    /** 新的云硬盘的描述，name和description不能同时为null。最大支持255个字节。
-     * 
-     * @return description */
+    /**
+     * 新的云硬盘的描述，name和description不能同时为null。最大支持255个字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -41,9 +42,10 @@ public class UpdateVolumeOption {
         return this;
     }
 
-    /** 新的云硬盘的名字，name和description不能同时为null。最大支持255个字节。
-     * 
-     * @return name */
+    /**
+     * 新的云硬盘的名字，name和description不能同时为null。最大支持255个字节。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,7 +82,10 @@ public class UpdateVolumeOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

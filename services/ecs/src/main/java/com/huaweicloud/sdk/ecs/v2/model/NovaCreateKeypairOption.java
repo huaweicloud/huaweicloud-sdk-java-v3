@@ -20,13 +20,19 @@ public class NovaCreateKeypairOption {
 
     private String publicKey;
 
-    /** 密钥类型，值为“ssh”或“x509”。 说明： - 微版本2.2支持。 */
+    /**
+     * 密钥类型，值为“ssh”或“x509”。  说明：  - 微版本2.2支持。
+     */
     public static final class TypeEnum {
 
-        /** Enum SSH for value: "ssh" */
+        /**
+         * Enum SSH for value: "ssh"
+         */
         public static final TypeEnum SSH = new TypeEnum("ssh");
 
-        /** Enum X509 for value: "x509" */
+        /**
+         * Enum X509 for value: "x509"
+         */
         public static final TypeEnum X509 = new TypeEnum("x509");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +117,10 @@ public class NovaCreateKeypairOption {
         return this;
     }
 
-    /** 导入的公钥信息。 建议导入的公钥长度不大于1024字节。 说明： - 长度超过1024字节会导致云服务器注入该密钥失败。
-     * 
-     * @return publicKey */
+    /**
+     * 导入的公钥信息。  建议导入的公钥长度不大于1024字节。  说明：  - 长度超过1024字节会导致云服务器注入该密钥失败。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -127,9 +134,10 @@ public class NovaCreateKeypairOption {
         return this;
     }
 
-    /** 密钥类型，值为“ssh”或“x509”。 说明： - 微版本2.2支持。
-     * 
-     * @return type */
+    /**
+     * 密钥类型，值为“ssh”或“x509”。  说明：  - 微版本2.2支持。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -143,9 +151,10 @@ public class NovaCreateKeypairOption {
         return this;
     }
 
-    /** 密钥名称。 新创建的密钥名称不能和已有密钥名称相同。
-     * 
-     * @return name */
+    /**
+     * 密钥名称。  新创建的密钥名称不能和已有密钥名称相同。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -159,9 +168,10 @@ public class NovaCreateKeypairOption {
         return this;
     }
 
-    /** 密钥的用户ID。 说明： - 微版本2.10支持。
-     * 
-     * @return userId */
+    /**
+     * 密钥的用户ID。  说明：  - 微版本2.10支持。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -202,7 +212,10 @@ public class NovaCreateKeypairOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

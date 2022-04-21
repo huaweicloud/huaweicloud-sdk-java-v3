@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBatchJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,9 +67,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅在响应返回。作业ID。
-     * 
-     * @return jobId */
+    /**
+     * 仅在响应返回。作业ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -81,9 +84,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业名称。只能包含数字、英文字母、中文字母、下划线以及中划线。长度为1~128。
-     * 
-     * @return jobName */
+    /**
+     * 作业名称。只能包含数字、英文字母、中文字母、下划线以及中划线。长度为1~128。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -97,9 +101,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签。只能包含数字、英文字母、中文字符、下划线、中划线、逗号以及斜杠。长度为0~128。
-     * 
-     * @return tags */
+    /**
+     * 标签。只能包含数字、英文字母、中文字符、下划线、中划线、逗号以及斜杠。长度为0~128。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -113,9 +118,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅在响应返回。创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 仅在响应返回。创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -129,9 +135,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅在响应返回。更新时间。
-     * 
-     * @return modifiedTime */
+    /**
+     * 仅在响应返回。更新时间。
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -145,9 +152,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业类型。目前仅支持SqlJob.
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。目前仅支持SqlJob.
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -161,9 +169,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业查询结果导出到OBS的路径。覆写已存在文件。
-     * 
-     * @return exportPath */
+    /**
+     * 作业查询结果导出到OBS的路径。覆写已存在文件。
+     * @return exportPath
+     */
     public String getExportPath() {
         return exportPath;
     }
@@ -177,9 +186,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 导出文件时是否合并结果文件。true：合并成一个结果文件；false：不合并结果文件。
-     * 
-     * @return mergeResultFile */
+    /**
+     * 导出文件时是否合并结果文件。true：合并成一个结果文件；false：不合并结果文件。
+     * @return mergeResultFile
+     */
     public Boolean getMergeResultFile() {
         return mergeResultFile;
     }
@@ -202,9 +212,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get sqlJob
-     * 
-     * @return sqlJob */
+    /**
+     * Get sqlJob
+     * @return sqlJob
+     */
     public SqlJob getSqlJob() {
         return sqlJob;
     }
@@ -227,9 +238,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get schedule
-     * 
-     * @return schedule */
+    /**
+     * Get schedule
+     * @return schedule
+     */
     public Schedule getSchedule() {
         return schedule;
     }
@@ -291,7 +303,10 @@ public class ShowBatchJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

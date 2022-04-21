@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PartnersServiceInfo */
+/**
+ * PartnersServiceInfo
+ */
 public class PartnersServiceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PartnersServiceInfo {
         return this;
     }
 
-    /** 客户id
-     * 
-     * @return customerId */
+    /**
+     * 客户id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -54,9 +57,10 @@ public class PartnersServiceInfo {
         return this;
     }
 
-    /** 客户名称
-     * 
-     * @return customerName */
+    /**
+     * 客户名称
+     * @return customerName
+     */
     public String getCustomerName() {
         return customerName;
     }
@@ -70,9 +74,10 @@ public class PartnersServiceInfo {
         return this;
     }
 
-    /** 服务时区，GMT+08:00
-     * 
-     * @return serviceTimeZone */
+    /**
+     * 服务时区，GMT+08:00
+     * @return serviceTimeZone
+     */
     public String getServiceTimeZone() {
         return serviceTimeZone;
     }
@@ -86,9 +91,10 @@ public class PartnersServiceInfo {
         return this;
     }
 
-    /** 每周服务天数
-     * 
-     * @return serviceTimeDay */
+    /**
+     * 每周服务天数
+     * @return serviceTimeDay
+     */
     public String getServiceTimeDay() {
         return serviceTimeDay;
     }
@@ -102,9 +108,10 @@ public class PartnersServiceInfo {
         return this;
     }
 
-    /** 每天服务小时
-     * 
-     * @return serviceTimeHour */
+    /**
+     * 每天服务小时
+     * @return serviceTimeHour
+     */
     public String getServiceTimeHour() {
         return serviceTimeHour;
     }
@@ -147,7 +154,10 @@ public class PartnersServiceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

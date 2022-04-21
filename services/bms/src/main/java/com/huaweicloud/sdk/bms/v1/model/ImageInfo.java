@@ -14,7 +14,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** image数据结构说明 */
+/**
+ * image数据结构说明
+ */
 public class ImageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,16 +29,24 @@ public class ImageInfo {
 
     private String name;
 
-    /** 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统） */
+    /**
+     * 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum OTHER for value: "Other" */
+        /**
+         * Enum OTHER for value: "Other"
+         */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +127,10 @@ public class ImageInfo {
         return this;
     }
 
-    /** 镜像ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 镜像ID，格式为UUID。
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -133,9 +144,10 @@ public class ImageInfo {
         return this;
     }
 
-    /** 镜像的名称
-     * 
-     * @return name */
+    /**
+     * 镜像的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -149,9 +161,10 @@ public class ImageInfo {
         return this;
     }
 
-    /** 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
-     * 
-     * @return osType */
+    /**
+     * 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
@@ -183,9 +196,10 @@ public class ImageInfo {
         return this;
     }
 
-    /** 镜像相关快捷链接地址。
-     * 
-     * @return links */
+    /**
+     * 镜像相关快捷链接地址。
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -224,7 +238,10 @@ public class ImageInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

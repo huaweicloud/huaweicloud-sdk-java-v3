@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 期望值设置的时间信息 */
+/**
+ * 期望值设置的时间信息
+ */
 public class ValueInTwinExceptedMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ValueInTwinExceptedMetadata {
         return this;
     }
 
-    /** 修改时间，UNIX timestamp格式
-     * 
-     * @return timestamp */
+    /**
+     * 修改时间，UNIX timestamp格式
+     * @return timestamp
+     */
     public String getTimestamp() {
         return timestamp;
     }
@@ -55,7 +58,10 @@ public class ValueInTwinExceptedMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

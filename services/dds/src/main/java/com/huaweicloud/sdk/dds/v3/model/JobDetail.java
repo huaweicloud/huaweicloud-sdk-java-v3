@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** JobDetail */
+/**
+ * JobDetail
+ */
 public class JobDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return name */
+    /**
+     * 任务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +90,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务执行状态。
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -102,9 +107,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务创建时间，格式为yyyy-mm-ddThh:mm:ssZ。
-     * 
-     * @return created */
+    /**
+     * 任务创建时间，格式为yyyy-mm-ddThh:mm:ssZ。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -118,9 +124,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务结束时间，格式为yyyy-mm-ddThh:mm:ssZ。
-     * 
-     * @return ended */
+    /**
+     * 任务结束时间，格式为yyyy-mm-ddThh:mm:ssZ。
+     * @return ended
+     */
     public String getEnded() {
         return ended;
     }
@@ -134,9 +141,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务执行进度。
-     * 
-     * @return progress */
+    /**
+     * 任务执行进度。
+     * @return progress
+     */
     public String getProgress() {
         return progress;
     }
@@ -159,9 +167,10 @@ public class JobDetail {
         return this;
     }
 
-    /** Get instance
-     * 
-     * @return instance */
+    /**
+     * Get instance
+     * @return instance
+     */
     public JobInstanceInfo getInstance() {
         return instance;
     }
@@ -175,9 +184,10 @@ public class JobDetail {
         return this;
     }
 
-    /** 任务执行失败时的错误信息。
-     * 
-     * @return failReason */
+    /**
+     * 任务执行失败时的错误信息。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -223,7 +233,10 @@ public class JobDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -26,9 +26,10 @@ public class Indicator {
         return this;
     }
 
-    /** 指标名称： - clickPVRate，点击PV率 - clickUVRate，点击UV率 - customize，自定义
-     * 
-     * @return indicatorName */
+    /**
+     * 指标名称： - clickPVRate，点击PV率 - clickUVRate，点击UV率 - customize，自定义
+     * @return indicatorName
+     */
     public String getIndicatorName() {
         return indicatorName;
     }
@@ -51,9 +52,10 @@ public class Indicator {
         return this;
     }
 
-    /** Get indicatorParams
-     * 
-     * @return indicatorParams */
+    /**
+     * Get indicatorParams
+     * @return indicatorParams
+     */
     public IndicatorParam getIndicatorParams() {
         return indicatorParams;
     }
@@ -90,7 +92,10 @@ public class Indicator {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

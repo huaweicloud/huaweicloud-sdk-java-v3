@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListErrorLogsNewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,31 +45,49 @@ public class ListErrorLogsNewRequest {
 
     private Long limit;
 
-    /** 日志级别，默认为ALL。 */
+    /**
+     * 日志级别，默认为ALL。
+     */
     public static final class LevelEnum {
 
-        /** Enum ALL for value: "ALL" */
+        /**
+         * Enum ALL for value: "ALL"
+         */
         public static final LevelEnum ALL = new LevelEnum("ALL");
 
-        /** Enum INFO for value: "INFO" */
+        /**
+         * Enum INFO for value: "INFO"
+         */
         public static final LevelEnum INFO = new LevelEnum("INFO");
 
-        /** Enum LOG for value: "LOG" */
+        /**
+         * Enum LOG for value: "LOG"
+         */
         public static final LevelEnum LOG = new LevelEnum("LOG");
 
-        /** Enum WARNING for value: "WARNING" */
+        /**
+         * Enum WARNING for value: "WARNING"
+         */
         public static final LevelEnum WARNING = new LevelEnum("WARNING");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final LevelEnum ERROR = new LevelEnum("ERROR");
 
-        /** Enum FATAL for value: "FATAL" */
+        /**
+         * Enum FATAL for value: "FATAL"
+         */
         public static final LevelEnum FATAL = new LevelEnum("FATAL");
 
-        /** Enum PANIC for value: "PANIC" */
+        /**
+         * Enum PANIC for value: "PANIC"
+         */
         public static final LevelEnum PANIC = new LevelEnum("PANIC");
 
-        /** Enum NOTE for value: "NOTE" */
+        /**
+         * Enum NOTE for value: "NOTE"
+         */
         public static final LevelEnum NOTE = new LevelEnum("NOTE");
 
         private static final Map<String, LevelEnum> STATIC_FIELDS = createStaticFields();
@@ -148,9 +168,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -166,9 +187,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -182,9 +204,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return startDate */
+    /**
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -198,9 +221,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 只能查询当前时间前一个月内的错误日志。
-     * 
-     * @return endDate */
+    /**
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 只能查询当前时间前一个月内的错误日志。
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -214,9 +238,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -230,9 +255,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 每页多少条记录，取值范围是1~100，不填时默认为10。
-     * 
-     * @return limit */
+    /**
+     * 每页多少条记录，取值范围是1~100，不填时默认为10。
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -246,9 +272,10 @@ public class ListErrorLogsNewRequest {
         return this;
     }
 
-    /** 日志级别，默认为ALL。
-     * 
-     * @return level */
+    /**
+     * 日志级别，默认为ALL。
+     * @return level
+     */
     public LevelEnum getLevel() {
         return level;
     }
@@ -295,7 +322,10 @@ public class ListErrorLogsNewRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

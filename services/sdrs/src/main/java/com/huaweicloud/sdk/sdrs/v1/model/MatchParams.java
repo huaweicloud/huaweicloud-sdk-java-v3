@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** match数据结构 */
+/**
+ * match数据结构
+ */
 public class MatchParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class MatchParams {
         return this;
     }
 
-    /** 键。目前限定为resource_name，后续扩展。
-     * 
-     * @return key */
+    /**
+     * 键。目前限定为resource_name，后续扩展。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class MatchParams {
         return this;
     }
 
-    /** 值。每个值最大长度255个unicode字符。
-     * 
-     * @return value */
+    /**
+     * 值。每个值最大长度255个unicode字符。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class MatchParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

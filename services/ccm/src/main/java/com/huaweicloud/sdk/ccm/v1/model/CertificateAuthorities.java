@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CertificateAuthorities */
+/**
+ * CertificateAuthorities
+ */
 public class CertificateAuthorities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,9 +101,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** CA证书ID。
-     * 
-     * @return caId */
+    /**
+     * CA证书ID。
+     * @return caId
+     */
     public String getCaId() {
         return caId;
     }
@@ -115,9 +118,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** CA类型: - **ROOT**: 根CA - **SUBORDINATE**: 从属CA
-     * 
-     * @return type */
+    /**
+     * CA类型:   - **ROOT**: 根CA   - **SUBORDINATE**: 从属CA
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -131,10 +135,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** CA证书状态： - **EXPIRED** : 待激活，此状态下，不可用于签发证书； - **ACTIVED** : 已激活，此状态下，可用于签发证书； - **DISABLED** : 已禁用，此状态下，不可用于签发证书；
-     * - **DELETED** : 计划删除，此状态下，不可用于签发证书； - **EXPIRED** : 已过期，此状态下，不可用于签发证书。
-     * 
-     * @return status */
+    /**
+     * CA证书状态：   - **EXPIRED** : 待激活，此状态下，不可用于签发证书；   - **ACTIVED** : 已激活，此状态下，可用于签发证书；   - **DISABLED** : 已禁用，此状态下，不可用于签发证书；   - **DELETED** : 计划删除，此状态下，不可用于签发证书；   - **EXPIRED** : 已过期，此状态下，不可用于签发证书。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -148,9 +152,12 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** CA路径长度。 > 注：生成的根CA证书，其路径长度不做限制，但本字段在数据库中统一置为7。从属CA的路径长度在创建时由用户指定，缺省值为0。 minimum: 0 maximum: 6
-     * 
-     * @return pathLength */
+    /**
+     * CA路径长度。 > 注：生成的根CA证书，其路径长度不做限制，但本字段在数据库中统一置为7。从属CA的路径长度在创建时由用户指定，缺省值为0。
+     * minimum: 0
+     * maximum: 6
+     * @return pathLength
+     */
     public Integer getPathLength() {
         return pathLength;
     }
@@ -164,9 +171,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 父CA证书ID，即签发此证书的CA证书ID。根CA中，此参数为**null**。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID，即签发此证书的CA证书ID。根CA中，此参数为**null**。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -180,9 +188,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 父CA证书名称。根CA中，此参数为**null**。
-     * 
-     * @return issuerName */
+    /**
+     * 父CA证书名称。根CA中，此参数为**null**。
+     * @return issuerName
+     */
     public String getIssuerName() {
         return issuerName;
     }
@@ -196,9 +205,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 密钥算法。
-     * 
-     * @return keyAlgorithm */
+    /**
+     * 密钥算法。
+     * @return keyAlgorithm
+     */
     public String getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -212,9 +222,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 签名哈希算法。
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名哈希算法。
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -228,9 +239,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 冻结标识: - **0** : 非冻结状态； - **其它值** : 冻结状态，当前预留。
-     * 
-     * @return freezeFlag */
+    /**
+     * 冻结标识:   - **0** : 非冻结状态；   - **其它值** : 冻结状态，当前预留。
+     * @return freezeFlag
+     */
     public Integer getFreezeFlag() {
         return freezeFlag;
     }
@@ -244,9 +256,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书生成方式： - **GENERATE** : PCA系统生成； - **IMPORT** : 外部导入； - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
-     * 
-     * @return genMode */
+    /**
+     * 证书生成方式：  - **GENERATE** : PCA系统生成；  - **IMPORT** : 外部导入；  - **CSR** : 外部提供CSR，内部CA进行签发，即私钥不在PCA进行托管。
+     * @return genMode
+     */
     public String getGenMode() {
         return genMode;
     }
@@ -260,9 +273,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * 证书序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -276,9 +290,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书创建时间，格式为时间戳（毫秒级）。
-     * 
-     * @return createTime */
+    /**
+     * 证书创建时间，格式为时间戳（毫秒级）。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -292,9 +307,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书删除时间，格式为时间戳（毫秒级）。
-     * 
-     * @return deleteTime */
+    /**
+     * 证书删除时间，格式为时间戳（毫秒级）。
+     * @return deleteTime
+     */
     public Long getDeleteTime() {
         return deleteTime;
     }
@@ -308,9 +324,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书创建时间，格式为时间戳（毫秒级）。
-     * 
-     * @return notBefore */
+    /**
+     * 证书创建时间，格式为时间戳（毫秒级）。
+     * @return notBefore
+     */
     public Long getNotBefore() {
         return notBefore;
     }
@@ -324,9 +341,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** 证书到期时间，格式为时间戳（毫秒级）。
-     * 
-     * @return notAfter */
+    /**
+     * 证书到期时间，格式为时间戳（毫秒级）。
+     * @return notAfter
+     */
     public Long getNotAfter() {
         return notAfter;
     }
@@ -349,9 +367,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** Get distinguishedName
-     * 
-     * @return distinguishedName */
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
     public DistinguishedName getDistinguishedName() {
         return distinguishedName;
     }
@@ -374,9 +393,10 @@ public class CertificateAuthorities {
         return this;
     }
 
-    /** Get crlConfiguration
-     * 
-     * @return crlConfiguration */
+    /**
+     * Get crlConfiguration
+     * @return crlConfiguration
+     */
     public ListCrlConfiguration getCrlConfiguration() {
         return crlConfiguration;
     }
@@ -459,7 +479,10 @@ public class CertificateAuthorities {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

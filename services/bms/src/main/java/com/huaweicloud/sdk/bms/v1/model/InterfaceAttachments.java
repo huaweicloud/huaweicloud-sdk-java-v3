@@ -14,19 +14,29 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** interfaceAttachments字段数据结构说明 */
+/**
+ * interfaceAttachments字段数据结构说明
+ */
 public class InterfaceAttachments {
 
-    /** 网卡端口状态。取值为：ACTIVE、BUILD、DOWN */
+    /**
+     * 网卡端口状态。取值为：ACTIVE、BUILD、DOWN
+     */
     public static final class PortStateEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final PortStateEnum ACTIVE = new PortStateEnum("ACTIVE");
 
-        /** Enum BUILD for value: "BUILD" */
+        /**
+         * Enum BUILD for value: "BUILD"
+         */
         public static final PortStateEnum BUILD = new PortStateEnum("BUILD");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final PortStateEnum DOWN = new PortStateEnum("DOWN");
 
         private static final Map<String, PortStateEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +142,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 网卡端口状态。取值为：ACTIVE、BUILD、DOWN
-     * 
-     * @return portState */
+    /**
+     * 网卡端口状态。取值为：ACTIVE、BUILD、DOWN
+     * @return portState
+     */
     public PortStateEnum getPortState() {
         return portState;
     }
@@ -164,9 +175,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 网卡私网IP信息列表，详情请参见表3 fixed_ips字段数据结构说明。
-     * 
-     * @return fixedIps */
+    /**
+     * 网卡私网IP信息列表，详情请参见表3 fixed_ips字段数据结构说明。
+     * @return fixedIps
+     */
     public List<FixedIps> getFixedIps() {
         return fixedIps;
     }
@@ -180,9 +192,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 网卡端口所属子网的网络ID（network_id）。
-     * 
-     * @return netId */
+    /**
+     * 网卡端口所属子网的网络ID（network_id）。
+     * @return netId
+     */
     public UUID getNetId() {
         return netId;
     }
@@ -196,9 +209,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 网卡端口ID。
-     * 
-     * @return portId */
+    /**
+     * 网卡端口ID。
+     * @return portId
+     */
     public UUID getPortId() {
         return portId;
     }
@@ -212,9 +226,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 网卡Mac地址信息
-     * 
-     * @return macAddr */
+    /**
+     * 网卡Mac地址信息
+     * @return macAddr
+     */
     public String getMacAddr() {
         return macAddr;
     }
@@ -228,9 +243,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 从guest os中，网卡的驱动类型
-     * 
-     * @return driverMode */
+    /**
+     * 从guest os中，网卡的驱动类型
+     * @return driverMode
+     */
     public String getDriverMode() {
         return driverMode;
     }
@@ -244,9 +260,10 @@ public class InterfaceAttachments {
         return this;
     }
 
-    /** 弹性网卡在Linux GuestOS里的BDF号
-     * 
-     * @return pciAddress */
+    /**
+     * 弹性网卡在Linux GuestOS里的BDF号
+     * @return pciAddress
+     */
     public String getPciAddress() {
         return pciAddress;
     }
@@ -293,7 +310,10 @@ public class InterfaceAttachments {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

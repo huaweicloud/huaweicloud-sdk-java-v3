@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** LiveDomainCreateReq */
+/**
+ * LiveDomainCreateReq
+ */
 public class LiveDomainCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class LiveDomainCreateReq {
 
     private String domain;
 
-    /** 域名类型 - pull表示播放域名 - push表示推流域名 */
+    /**
+     * 域名类型 - pull表示播放域名 - push表示推流域名 
+     */
     public static final class DomainTypeEnum {
 
-        /** Enum PULL for value: "pull" */
+        /**
+         * Enum PULL for value: "pull"
+         */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
 
-        /** Enum PUSH for value: "push" */
+        /**
+         * Enum PUSH for value: "push"
+         */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,16 +107,24 @@ public class LiveDomainCreateReq {
 
     private String region;
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /** Enum GLOBAL for value: "global" */
+        /**
+         * Enum GLOBAL for value: "global"
+         */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -184,9 +200,10 @@ public class LiveDomainCreateReq {
         return this;
     }
 
-    /** 直播域名
-     * 
-     * @return domain */
+    /**
+     * 直播域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -200,9 +217,10 @@ public class LiveDomainCreateReq {
         return this;
     }
 
-    /** 域名类型 - pull表示播放域名 - push表示推流域名
-     * 
-     * @return domainType */
+    /**
+     * 域名类型 - pull表示播放域名 - push表示推流域名 
+     * @return domainType
+     */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -216,9 +234,10 @@ public class LiveDomainCreateReq {
         return this;
     }
 
-    /** 直播所属的直播中心
-     * 
-     * @return region */
+    /**
+     * 直播所属的直播中心
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -232,9 +251,10 @@ public class LiveDomainCreateReq {
         return this;
     }
 
-    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
-     * 
-     * @return serviceArea */
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -275,7 +295,10 @@ public class LiveDomainCreateReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

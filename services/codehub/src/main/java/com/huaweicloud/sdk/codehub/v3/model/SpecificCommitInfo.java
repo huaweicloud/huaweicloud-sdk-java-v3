@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SpecificCommitInfo */
+/**
+ * SpecificCommitInfo
+ */
 public class SpecificCommitInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交对应的SHA id
-     * 
-     * @return id */
+    /**
+     * 提交对应的SHA id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -103,9 +106,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交对应的短SHA id
-     * 
-     * @return shortId */
+    /**
+     * 提交对应的短SHA id
+     * @return shortId
+     */
     public String getShortId() {
         return shortId;
     }
@@ -119,9 +123,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交标题
-     * 
-     * @return title */
+    /**
+     * 提交标题
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -135,9 +140,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 作者
-     * 
-     * @return authorName */
+    /**
+     * 作者
+     * @return authorName
+     */
     public String getAuthorName() {
         return authorName;
     }
@@ -151,9 +157,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 作者邮箱
-     * 
-     * @return authorEmail */
+    /**
+     * 作者邮箱
+     * @return authorEmail
+     */
     public String getAuthorEmail() {
         return authorEmail;
     }
@@ -167,9 +174,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交作者
-     * 
-     * @return committerName */
+    /**
+     * 提交作者
+     * @return committerName
+     */
     public String getCommitterName() {
         return committerName;
     }
@@ -183,9 +191,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交作者邮箱
-     * 
-     * @return committerEmail */
+    /**
+     * 提交作者邮箱
+     * @return committerEmail
+     */
     public String getCommitterEmail() {
         return committerEmail;
     }
@@ -199,9 +208,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -215,9 +225,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交信息
-     * 
-     * @return message */
+    /**
+     * 提交信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -247,9 +258,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 父提交id
-     * 
-     * @return parentIds */
+    /**
+     * 父提交id
+     * @return parentIds
+     */
     public List<String> getParentIds() {
         return parentIds;
     }
@@ -263,9 +275,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 提交时间
-     * 
-     * @return committedDate */
+    /**
+     * 提交时间
+     * @return committedDate
+     */
     public OffsetDateTime getCommittedDate() {
         return committedDate;
     }
@@ -279,9 +292,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** 作者提交时间
-     * 
-     * @return authoredDate */
+    /**
+     * 作者提交时间
+     * @return authoredDate
+     */
     public OffsetDateTime getAuthoredDate() {
         return authoredDate;
     }
@@ -304,9 +318,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** Get stats
-     * 
-     * @return stats */
+    /**
+     * Get stats
+     * @return stats
+     */
     public SpecificCommitInfoStats getStats() {
         return stats;
     }
@@ -329,9 +344,10 @@ public class SpecificCommitInfo {
         return this;
     }
 
-    /** Get lastPipeline
-     * 
-     * @return lastPipeline */
+    /**
+     * Get lastPipeline
+     * @return lastPipeline
+     */
     public SpecificCommitInfoLastPipeline getLastPipeline() {
         return lastPipeline;
     }
@@ -405,7 +421,10 @@ public class SpecificCommitInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

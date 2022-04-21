@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentOrderAuthDetailInfoV2 */
+/**
+ * IncidentOrderAuthDetailInfoV2
+ */
 public class IncidentOrderAuthDetailInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,12 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 授权详情id minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 授权详情id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -64,9 +69,12 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 端口 minimum: 0 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * 端口
+     * minimum: 0
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -80,9 +88,10 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 账户
-     * 
-     * @return account */
+    /**
+     * 账户
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -96,9 +105,12 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 授权详情类型，0控制台 1主机资源 minimum: 0 maximum: 1
-     * 
-     * @return type */
+    /**
+     * 授权详情类型，0控制台 1主机资源
+     * minimum: 0
+     * maximum: 1
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -112,9 +124,10 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 实例id
-     * 
-     * @return instanceId */
+    /**
+     * 实例id
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -128,9 +141,10 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -144,9 +158,10 @@ public class IncidentOrderAuthDetailInfoV2 {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -193,7 +208,10 @@ public class IncidentOrderAuthDetailInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

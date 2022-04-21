@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议已购资源使用数据的单个时间点数据。 */
+/**
+ * 会议已购资源使用数据的单个时间点数据。
+ */
 public class StatisticResourceDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** 日期/月份。
-     * 
-     * @return time */
+    /**
+     * 日期/月份。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -59,9 +62,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** VMR方数。 category = used_vmr_info时有效。
-     * 
-     * @return vmrParties */
+    /**
+     * VMR方数。 category = used_vmr_info时有效。
+     * @return vmrParties
+     */
     public String getVmrParties() {
         return vmrParties;
     }
@@ -75,9 +79,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** VMR并发使用数。 category = used_vmr_info时有效。
-     * 
-     * @return maxConcurrencyVmrCount */
+    /**
+     * VMR并发使用数。 category = used_vmr_info时有效。
+     * @return maxConcurrencyVmrCount
+     */
     public String getMaxConcurrencyVmrCount() {
         return maxConcurrencyVmrCount;
     }
@@ -91,9 +96,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** 直播端口并发使用数。 category = used_live_info时有效。
-     * 
-     * @return livePortUsedCount */
+    /**
+     * 直播端口并发使用数。 category = used_live_info时有效。
+     * @return livePortUsedCount
+     */
     public String getLivePortUsedCount() {
         return livePortUsedCount;
     }
@@ -107,9 +113,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** 录播使用空间(G)。 category = used_record_info时有效。
-     * 
-     * @return recordUsedSize */
+    /**
+     * 录播使用空间(G)。 category = used_record_info时有效。
+     * @return recordUsedSize
+     */
     public String getRecordUsedSize() {
         return recordUsedSize;
     }
@@ -123,9 +130,10 @@ public class StatisticResourceDataItem {
         return this;
     }
 
-    /** PSTN外呼时长(分钟)。 category = used_pstn_info时有效。
-     * 
-     * @return pstnUsedDuration */
+    /**
+     * PSTN外呼时长(分钟)。 category = used_pstn_info时有效。
+     * @return pstnUsedDuration
+     */
     public String getPstnUsedDuration() {
         return pstnUsedDuration;
     }
@@ -171,7 +179,10 @@ public class StatisticResourceDataItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

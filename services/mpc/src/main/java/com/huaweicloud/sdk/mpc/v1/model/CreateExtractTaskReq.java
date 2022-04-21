@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateExtractTaskReq */
+/**
+ * CreateExtractTaskReq
+ */
 public class CreateExtractTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateExtractTaskReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -68,9 +71,10 @@ public class CreateExtractTaskReq {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -84,9 +88,10 @@ public class CreateExtractTaskReq {
         return this;
     }
 
-    /** 用户自定义数据。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -100,9 +105,12 @@ public class CreateExtractTaskReq {
         return this;
     }
 
-    /** 是否同步处理, - 0：排队处理 - 1：同步处理 默认值：0 minimum: 0 maximum: 2
-     * 
-     * @return sync */
+    /**
+     * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
+     * minimum: 0
+     * maximum: 2
+     * @return sync
+     */
     public Integer getSync() {
         return sync;
     }
@@ -143,7 +151,10 @@ public class CreateExtractTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Vault */
+/**
+ * Vault
+ */
 public class Vault {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,9 +107,10 @@ public class Vault {
         return this;
     }
 
-    /** Get billing
-     * 
-     * @return billing */
+    /**
+     * Get billing
+     * @return billing
+     */
     public Billing getBilling() {
         return billing;
     }
@@ -121,9 +124,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库自定义描述信息。
-     * 
-     * @return description */
+    /**
+     * 存储库自定义描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -137,9 +141,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return id */
+    /**
+     * 存储库ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -153,9 +158,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库名称
-     * 
-     * @return name */
+    /**
+     * 存储库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -169,9 +175,10 @@ public class Vault {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -185,9 +192,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库资源类型id
-     * 
-     * @return providerId */
+    /**
+     * 存储库资源类型id
+     * @return providerId
+     */
     public String getProviderId() {
         return providerId;
     }
@@ -217,9 +225,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库资源
-     * 
-     * @return resources */
+    /**
+     * 存储库资源
+     * @return resources
+     */
     public List<ResourceResp> getResources() {
         return resources;
     }
@@ -249,9 +258,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库标签
-     * 
-     * @return tags */
+    /**
+     * 存储库标签
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -265,9 +275,10 @@ public class Vault {
         return this;
     }
 
-    /** 企业项目id，默认为‘0’。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id，默认为‘0’。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -281,9 +292,10 @@ public class Vault {
         return this;
     }
 
-    /** 是否自动绑定，默认为false，不支持。
-     * 
-     * @return autoBind */
+    /**
+     * 是否自动绑定，默认为false，不支持。
+     * @return autoBind
+     */
     public Boolean getAutoBind() {
         return autoBind;
     }
@@ -306,9 +318,10 @@ public class Vault {
         return this;
     }
 
-    /** Get bindRules
-     * 
-     * @return bindRules */
+    /**
+     * Get bindRules
+     * @return bindRules
+     */
     public VaultBindRules getBindRules() {
         return bindRules;
     }
@@ -322,9 +335,10 @@ public class Vault {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userId */
+    /**
+     * 用户id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -338,9 +352,10 @@ public class Vault {
         return this;
     }
 
-    /** 创建时间,例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间,例如:\"2020-02-05T10:38:34.209782\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -354,9 +369,10 @@ public class Vault {
         return this;
     }
 
-    /** 是否开启存储库自动扩容能力（只支持按需存储库）。
-     * 
-     * @return autoExpand */
+    /**
+     * 是否开启存储库自动扩容能力（只支持按需存储库）。
+     * @return autoExpand
+     */
     public Boolean getAutoExpand() {
         return autoExpand;
     }
@@ -370,9 +386,10 @@ public class Vault {
         return this;
     }
 
-    /** 存储库smn消息通知开关
-     * 
-     * @return smnNotify */
+    /**
+     * 存储库smn消息通知开关
+     * @return smnNotify
+     */
     public Boolean getSmnNotify() {
         return smnNotify;
     }
@@ -386,9 +403,12 @@ public class Vault {
         return this;
     }
 
-    /** 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知 minimum: 1 maximum: 100
-     * 
-     * @return threshold */
+    /**
+     * 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知
+     * minimum: 1
+     * maximum: 100
+     * @return threshold
+     */
     public Integer getThreshold() {
         return threshold;
     }
@@ -461,7 +481,10 @@ public class Vault {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

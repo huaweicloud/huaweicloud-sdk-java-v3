@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群连接信息 */
+/**
+ * 集群连接信息
+ */
 public class ClusterLinks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ClusterLinks {
         return this;
     }
 
-    /** 关系
-     * 
-     * @return rel */
+    /**
+     * 关系
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -39,9 +42,10 @@ public class ClusterLinks {
         return this;
     }
 
-    /** 链接地址
-     * 
-     * @return href */
+    /**
+     * 链接地址
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -77,7 +81,10 @@ public class ClusterLinks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

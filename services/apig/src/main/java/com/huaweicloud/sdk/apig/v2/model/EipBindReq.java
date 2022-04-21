@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EipBindReq */
+/**
+ * EipBindReq
+ */
 public class EipBindReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class EipBindReq {
         return this;
     }
 
-    /** 弹性公网IP编号
-     * 
-     * @return eipId */
+    /**
+     * 弹性公网IP编号
+     * @return eipId
+     */
     public String getEipId() {
         return eipId;
     }
@@ -55,7 +58,10 @@ public class EipBindReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** 重置节点参数。集群内已有节点通过重置进行重新安装并接入集群。 */
+/**
+ * 重置节点参数。集群内已有节点通过重置进行重新安装并接入集群。
+ */
 public class ResetNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class ResetNode {
         return this;
     }
 
-    /** 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return nodeID */
+    /**
+     * 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return nodeID
+     */
     public UUID getNodeID() {
         return nodeID;
     }
@@ -50,9 +53,10 @@ public class ResetNode {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public ReinstallNodeSpec getSpec() {
         return spec;
     }
@@ -88,7 +92,10 @@ public class ResetNode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

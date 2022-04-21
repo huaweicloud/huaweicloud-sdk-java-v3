@@ -11,19 +11,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Job */
+/**
+ * Job
+ */
 public class Job {
 
-    /** 作业类型： - NORMAL_JOB：表/文件迁移。 - BATCH_JOB：整库迁移。 - SCENARIO_JOB：场景迁移。 */
+    /**
+     * 作业类型： - NORMAL_JOB：表/文件迁移。 - BATCH_JOB：整库迁移。 - SCENARIO_JOB：场景迁移。
+     */
     public static final class JobTypeEnum {
 
-        /** Enum NORMAL_JOB for value: "NORMAL_JOB" */
+        /**
+         * Enum NORMAL_JOB for value: "NORMAL_JOB"
+         */
         public static final JobTypeEnum NORMAL_JOB = new JobTypeEnum("NORMAL_JOB");
 
-        /** Enum BATCH_JOB for value: "BATCH_JOB" */
+        /**
+         * Enum BATCH_JOB for value: "BATCH_JOB"
+         */
         public static final JobTypeEnum BATCH_JOB = new JobTypeEnum("BATCH_JOB");
 
-        /** Enum SCENARIO_JOB for value: "SCENARIO_JOB" */
+        /**
+         * Enum SCENARIO_JOB for value: "SCENARIO_JOB"
+         */
         public static final JobTypeEnum SCENARIO_JOB = new JobTypeEnum("SCENARIO_JOB");
 
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -259,9 +269,10 @@ public class Job {
         return this;
     }
 
-    /** 作业类型： - NORMAL_JOB：表/文件迁移。 - BATCH_JOB：整库迁移。 - SCENARIO_JOB：场景迁移。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型： - NORMAL_JOB：表/文件迁移。 - BATCH_JOB：整库迁移。 - SCENARIO_JOB：场景迁移。
+     * @return jobType
+     */
     public JobTypeEnum getJobType() {
         return jobType;
     }
@@ -275,9 +286,10 @@ public class Job {
         return this;
     }
 
-    /** 源端连接类型
-     * 
-     * @return fromConnectorName */
+    /**
+     * 源端连接类型
+     * @return fromConnectorName
+     */
     public String getFromConnectorName() {
         return fromConnectorName;
     }
@@ -300,9 +312,10 @@ public class Job {
         return this;
     }
 
-    /** Get toConfigValues
-     * 
-     * @return toConfigValues */
+    /**
+     * Get toConfigValues
+     * @return toConfigValues
+     */
     public ConfigValues getToConfigValues() {
         return toConfigValues;
     }
@@ -316,9 +329,10 @@ public class Job {
         return this;
     }
 
-    /** 目的端连接名称
-     * 
-     * @return toLinkName */
+    /**
+     * 目的端连接名称
+     * @return toLinkName
+     */
     public String getToLinkName() {
         return toLinkName;
     }
@@ -341,9 +355,10 @@ public class Job {
         return this;
     }
 
-    /** Get driverConfigValues
-     * 
-     * @return driverConfigValues */
+    /**
+     * Get driverConfigValues
+     * @return driverConfigValues
+     */
     public ConfigValues getDriverConfigValues() {
         return driverConfigValues;
     }
@@ -366,9 +381,10 @@ public class Job {
         return this;
     }
 
-    /** Get fromConfigValues
-     * 
-     * @return fromConfigValues */
+    /**
+     * Get fromConfigValues
+     * @return fromConfigValues
+     */
     public ConfigValues getFromConfigValues() {
         return fromConfigValues;
     }
@@ -382,9 +398,10 @@ public class Job {
         return this;
     }
 
-    /** 目的端连接类型
-     * 
-     * @return toConnectorName */
+    /**
+     * 目的端连接类型
+     * @return toConnectorName
+     */
     public String getToConnectorName() {
         return toConnectorName;
     }
@@ -398,9 +415,10 @@ public class Job {
         return this;
     }
 
-    /** 作业名称，长度在1到240个字符之间
-     * 
-     * @return name */
+    /**
+     * 作业名称，长度在1到240个字符之间
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -414,9 +432,10 @@ public class Job {
         return this;
     }
 
-    /** 源连接名称
-     * 
-     * @return fromLinkName */
+    /**
+     * 源连接名称
+     * @return fromLinkName
+     */
     public String getFromLinkName() {
         return fromLinkName;
     }
@@ -430,9 +449,10 @@ public class Job {
         return this;
     }
 
-    /** 创建的用户。
-     * 
-     * @return creationUser */
+    /**
+     * 创建的用户。
+     * @return creationUser
+     */
     public String getCreationUser() {
         return creationUser;
     }
@@ -446,9 +466,10 @@ public class Job {
         return this;
     }
 
-    /** 作业创建的时间，单位：毫秒。
-     * 
-     * @return creationDate */
+    /**
+     * 作业创建的时间，单位：毫秒。
+     * @return creationDate
+     */
     public Long getCreationDate() {
         return creationDate;
     }
@@ -462,9 +483,10 @@ public class Job {
         return this;
     }
 
-    /** 作业最后更新的时间，单位：毫秒。
-     * 
-     * @return updateDate */
+    /**
+     * 作业最后更新的时间，单位：毫秒。
+     * @return updateDate
+     */
     public Long getUpdateDate() {
         return updateDate;
     }
@@ -478,9 +500,10 @@ public class Job {
         return this;
     }
 
-    /** 是否增量
-     * 
-     * @return isIncreJob */
+    /**
+     * 是否增量
+     * @return isIncreJob
+     */
     public Boolean getIsIncreJob() {
         return isIncreJob;
     }
@@ -494,9 +517,10 @@ public class Job {
         return this;
     }
 
-    /** 标记
-     * 
-     * @return flag */
+    /**
+     * 标记
+     * @return flag
+     */
     public Integer getFlag() {
         return flag;
     }
@@ -510,9 +534,10 @@ public class Job {
         return this;
     }
 
-    /** 已读文件数
-     * 
-     * @return filesRead */
+    /**
+     * 已读文件数
+     * @return filesRead
+     */
     public Integer getFilesRead() {
         return filesRead;
     }
@@ -526,9 +551,10 @@ public class Job {
         return this;
     }
 
-    /** 作业最后更新的用户。
-     * 
-     * @return updateUser */
+    /**
+     * 作业最后更新的用户。
+     * @return updateUser
+     */
     public String getUpdateUser() {
         return updateUser;
     }
@@ -542,9 +568,10 @@ public class Job {
         return this;
     }
 
-    /** 外部ID。
-     * 
-     * @return externalId */
+    /**
+     * 外部ID。
+     * @return externalId
+     */
     public String getExternalId() {
         return externalId;
     }
@@ -558,9 +585,10 @@ public class Job {
         return this;
     }
 
-    /** 作业类型
-     * 
-     * @return type */
+    /**
+     * 作业类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -574,9 +602,10 @@ public class Job {
         return this;
     }
 
-    /** 执行_开始_日期。
-     * 
-     * @return executeStartDate */
+    /**
+     * 执行_开始_日期。
+     * @return executeStartDate
+     */
     public Long getExecuteStartDate() {
         return executeStartDate;
     }
@@ -590,9 +619,10 @@ public class Job {
         return this;
     }
 
-    /** 删除行数
-     * 
-     * @return deleteRows */
+    /**
+     * 删除行数
+     * @return deleteRows
+     */
     public Integer getDeleteRows() {
         return deleteRows;
     }
@@ -606,9 +636,10 @@ public class Job {
         return this;
     }
 
-    /** 是否激活连接
-     * 
-     * @return enabled */
+    /**
+     * 是否激活连接
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -622,9 +653,10 @@ public class Job {
         return this;
     }
 
-    /** 写入字节
-     * 
-     * @return bytesWritten */
+    /**
+     * 写入字节
+     * @return bytesWritten
+     */
     public Long getBytesWritten() {
         return bytesWritten;
     }
@@ -638,9 +670,10 @@ public class Job {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return id */
+    /**
+     * 作业ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -654,9 +687,10 @@ public class Job {
         return this;
     }
 
-    /** 用户是否使用sql
-     * 
-     * @return isUseSql */
+    /**
+     * 用户是否使用sql
+     * @return isUseSql
+     */
     public Boolean getIsUseSql() {
         return isUseSql;
     }
@@ -670,9 +704,10 @@ public class Job {
         return this;
     }
 
-    /** 更新行数
-     * 
-     * @return updateRows */
+    /**
+     * 更新行数
+     * @return updateRows
+     */
     public Integer getUpdateRows() {
         return updateRows;
     }
@@ -686,9 +721,10 @@ public class Job {
         return this;
     }
 
-    /** 组_名称
-     * 
-     * @return groupName */
+    /**
+     * 组_名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -702,9 +738,10 @@ public class Job {
         return this;
     }
 
-    /** 读取字节
-     * 
-     * @return bytesRead */
+    /**
+     * 读取字节
+     * @return bytesRead
+     */
     public Long getBytesRead() {
         return bytesRead;
     }
@@ -718,9 +755,10 @@ public class Job {
         return this;
     }
 
-    /** 执行_更新_日期。
-     * 
-     * @return executeUpdateDate */
+    /**
+     * 执行_更新_日期。
+     * @return executeUpdateDate
+     */
     public Long getExecuteUpdateDate() {
         return executeUpdateDate;
     }
@@ -734,9 +772,10 @@ public class Job {
         return this;
     }
 
-    /** 写入行数
-     * 
-     * @return writeRows */
+    /**
+     * 写入行数
+     * @return writeRows
+     */
     public Integer getWriteRows() {
         return writeRows;
     }
@@ -750,9 +789,10 @@ public class Job {
         return this;
     }
 
-    /** 写入文件数
-     * 
-     * @return filesWritte */
+    /**
+     * 写入文件数
+     * @return filesWritte
+     */
     public Integer getFilesWritte() {
         return filesWritte;
     }
@@ -766,9 +806,10 @@ public class Job {
         return this;
     }
 
-    /** 是否增量
-     * 
-     * @return isIncrementing */
+    /**
+     * 是否增量
+     * @return isIncrementing
+     */
     public Boolean getIsIncrementing() {
         return isIncrementing;
     }
@@ -782,9 +823,10 @@ public class Job {
         return this;
     }
 
-    /** 执行_创建_日期
-     * 
-     * @return executeCreateDate */
+    /**
+     * 执行_创建_日期
+     * @return executeCreateDate
+     */
     public Long getExecuteCreateDate() {
         return executeCreateDate;
     }
@@ -798,9 +840,10 @@ public class Job {
         return this;
     }
 
-    /** 作业最后的执行状态： - BOOTING：启动中。 - RUNNING：运行中。 - SUCCEEDED：成功。 - FAILED：失败。 - NEW：未被执行。
-     * 
-     * @return status */
+    /**
+     * 作业最后的执行状态： - BOOTING：启动中。 - RUNNING：运行中。 - SUCCEEDED：成功。 - FAILED：失败。 - NEW：未被执行。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -920,7 +963,10 @@ public class Job {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

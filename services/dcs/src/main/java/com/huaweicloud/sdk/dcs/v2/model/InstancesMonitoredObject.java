@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 监控对象结构 */
+/**
+ * 监控对象结构
+ */
 public class InstancesMonitoredObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class InstancesMonitoredObject {
         return this;
     }
 
-    /** 测量对象ID，即实例的ID。
-     * 
-     * @return dcsInstanceId */
+    /**
+     * 测量对象ID，即实例的ID。
+     * @return dcsInstanceId
+     */
     public String getDcsInstanceId() {
         return dcsInstanceId;
     }
@@ -44,9 +47,10 @@ public class InstancesMonitoredObject {
         return this;
     }
 
-    /** 测量对象名称，即实例名称。
-     * 
-     * @return name */
+    /**
+     * 测量对象名称，即实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class InstancesMonitoredObject {
         return this;
     }
 
-    /** 测量对象状态，即实例状态。
-     * 
-     * @return status */
+    /**
+     * 测量对象状态，即实例状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -101,7 +106,10 @@ public class InstancesMonitoredObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

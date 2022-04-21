@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IefNodeinfo */
+/**
+ * IefNodeinfo
+ */
 public class IefNodeinfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class IefNodeinfo {
         return this;
     }
 
-    /** 节点状态，要使用此节点的话，该状态值必须为ACTIVE
-     * 
-     * @return status */
+    /**
+     * 节点状态，要使用此节点的话，该状态值必须为ACTIVE
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -44,9 +47,10 @@ public class IefNodeinfo {
         return this;
     }
 
-    /** 节点IP，填写节点所在的EIP地址
-     * 
-     * @return publicIpAddress */
+    /**
+     * 节点IP，填写节点所在的EIP地址
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -60,9 +64,10 @@ public class IefNodeinfo {
         return this;
     }
 
-    /** ief节点id值
-     * 
-     * @return id */
+    /**
+     * ief节点id值
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -101,7 +106,10 @@ public class IefNodeinfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

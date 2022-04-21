@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryJobResp */
+/**
+ * QueryJobResp
+ */
 public class QueryJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,78 +33,124 @@ public class QueryJobResp {
 
     private String name;
 
-    /** 任务状态 */
+    /**
+     * 任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING_ for value: "CREATING：创建中" */
+        /**
+         * Enum CREATING_ for value: "CREATING：创建中"
+         */
         public static final StatusEnum CREATING_ = new StatusEnum("CREATING：创建中");
 
-        /** Enum CREATE_FAILED_ for value: "CREATE_FAILED: 创建失败" */
+        /**
+         * Enum CREATE_FAILED_ for value: "CREATE_FAILED: 创建失败"
+         */
         public static final StatusEnum CREATE_FAILED_ = new StatusEnum("CREATE_FAILED: 创建失败");
 
-        /** Enum CONFIGURATION_ for value: "CONFIGURATION: 配置中" */
+        /**
+         * Enum CONFIGURATION_ for value: "CONFIGURATION: 配置中"
+         */
         public static final StatusEnum CONFIGURATION_ = new StatusEnum("CONFIGURATION: 配置中");
 
-        /** Enum STARTJOBING_ for value: "STARTJOBING: 启动中" */
+        /**
+         * Enum STARTJOBING_ for value: "STARTJOBING: 启动中"
+         */
         public static final StatusEnum STARTJOBING_ = new StatusEnum("STARTJOBING: 启动中");
 
-        /** Enum WAITING_FOR_START_ for value: "WAITING_FOR_START：等待启动中" */
+        /**
+         * Enum WAITING_FOR_START_ for value: "WAITING_FOR_START：等待启动中"
+         */
         public static final StatusEnum WAITING_FOR_START_ = new StatusEnum("WAITING_FOR_START：等待启动中");
 
-        /** Enum START_JOB_FAILED_ for value: "START_JOB_FAILED：任务启动失败" */
+        /**
+         * Enum START_JOB_FAILED_ for value: "START_JOB_FAILED：任务启动失败"
+         */
         public static final StatusEnum START_JOB_FAILED_ = new StatusEnum("START_JOB_FAILED：任务启动失败");
 
-        /** Enum FULL_TRANSFER_STARTED_ for value: "FULL_TRANSFER_STARTED：全量迁移中，灾备场景为初始化 " */
+        /**
+         * Enum FULL_TRANSFER_STARTED_ for value: "FULL_TRANSFER_STARTED：全量迁移中，灾备场景为初始化 "
+         */
         public static final StatusEnum FULL_TRANSFER_STARTED_ = new StatusEnum("FULL_TRANSFER_STARTED：全量迁移中，灾备场景为初始化 ");
 
-        /** Enum FULL_TRANSFER_FAILED_ for value: "FULL_TRANSFER_FAILED：全量迁移失败，灾备场景为初始化失败 " */
+        /**
+         * Enum FULL_TRANSFER_FAILED_ for value: "FULL_TRANSFER_FAILED：全量迁移失败，灾备场景为初始化失败 "
+         */
         public static final StatusEnum FULL_TRANSFER_FAILED_ =
             new StatusEnum("FULL_TRANSFER_FAILED：全量迁移失败，灾备场景为初始化失败 ");
 
-        /** Enum FULL_TRANSFER_COMPLETE_ for value: "FULL_TRANSFER_COMPLETE：全量迁移完成，灾备场景为初始化完成" */
+        /**
+         * Enum FULL_TRANSFER_COMPLETE_ for value: "FULL_TRANSFER_COMPLETE：全量迁移完成，灾备场景为初始化完成"
+         */
         public static final StatusEnum FULL_TRANSFER_COMPLETE_ =
             new StatusEnum("FULL_TRANSFER_COMPLETE：全量迁移完成，灾备场景为初始化完成");
 
-        /** Enum _INCRE_TRANSFER_STARTED_ for value: " INCRE_TRANSFER_STARTED：增量迁移中，灾备场景为灾备中" */
+        /**
+         * Enum _INCRE_TRANSFER_STARTED_ for value: " INCRE_TRANSFER_STARTED：增量迁移中，灾备场景为灾备中"
+         */
         public static final StatusEnum _INCRE_TRANSFER_STARTED_ =
             new StatusEnum(" INCRE_TRANSFER_STARTED：增量迁移中，灾备场景为灾备中");
 
-        /** Enum INCRE_TRANSFER_FAILED_ for value: "INCRE_TRANSFER_FAILED：增量迁移失败，灾备场景为灾备异常" */
+        /**
+         * Enum INCRE_TRANSFER_FAILED_ for value: "INCRE_TRANSFER_FAILED：增量迁移失败，灾备场景为灾备异常"
+         */
         public static final StatusEnum INCRE_TRANSFER_FAILED_ =
             new StatusEnum("INCRE_TRANSFER_FAILED：增量迁移失败，灾备场景为灾备异常");
 
-        /** Enum RELEASE_RESOURCE_STARTED_ for value: "RELEASE_RESOURCE_STARTED：结束任务中" */
+        /**
+         * Enum RELEASE_RESOURCE_STARTED_ for value: "RELEASE_RESOURCE_STARTED：结束任务中"
+         */
         public static final StatusEnum RELEASE_RESOURCE_STARTED_ = new StatusEnum("RELEASE_RESOURCE_STARTED：结束任务中");
 
-        /** Enum RELEASE_RESOURCE_FAILED_ for value: "RELEASE_RESOURCE_FAILED：结束任务失败" */
+        /**
+         * Enum RELEASE_RESOURCE_FAILED_ for value: "RELEASE_RESOURCE_FAILED：结束任务失败"
+         */
         public static final StatusEnum RELEASE_RESOURCE_FAILED_ = new StatusEnum("RELEASE_RESOURCE_FAILED：结束任务失败");
 
-        /** Enum RELEASE_RESOURCE_COMPLETE_ for value: "RELEASE_RESOURCE_COMPLETE：已结束" */
+        /**
+         * Enum RELEASE_RESOURCE_COMPLETE_ for value: "RELEASE_RESOURCE_COMPLETE：已结束"
+         */
         public static final StatusEnum RELEASE_RESOURCE_COMPLETE_ = new StatusEnum("RELEASE_RESOURCE_COMPLETE：已结束");
 
-        /** Enum CHANGE_JOB_STARTED_ for value: "CHANGE_JOB_STARTED：任务变更中" */
+        /**
+         * Enum CHANGE_JOB_STARTED_ for value: "CHANGE_JOB_STARTED：任务变更中"
+         */
         public static final StatusEnum CHANGE_JOB_STARTED_ = new StatusEnum("CHANGE_JOB_STARTED：任务变更中");
 
-        /** Enum CHANGE_JOB_FAILED_ for value: "CHANGE_JOB_FAILED：任务变更失败" */
+        /**
+         * Enum CHANGE_JOB_FAILED_ for value: "CHANGE_JOB_FAILED：任务变更失败"
+         */
         public static final StatusEnum CHANGE_JOB_FAILED_ = new StatusEnum("CHANGE_JOB_FAILED：任务变更失败");
 
-        /** Enum CHILD_TRANSFER_STARTING_ for value: "CHILD_TRANSFER_STARTING：子任务启动中" */
+        /**
+         * Enum CHILD_TRANSFER_STARTING_ for value: "CHILD_TRANSFER_STARTING：子任务启动中"
+         */
         public static final StatusEnum CHILD_TRANSFER_STARTING_ = new StatusEnum("CHILD_TRANSFER_STARTING：子任务启动中");
 
-        /** Enum CHILD_TRANSFER_STARTED_ for value: "CHILD_TRANSFER_STARTED：子任务迁移中" */
+        /**
+         * Enum CHILD_TRANSFER_STARTED_ for value: "CHILD_TRANSFER_STARTED：子任务迁移中"
+         */
         public static final StatusEnum CHILD_TRANSFER_STARTED_ = new StatusEnum("CHILD_TRANSFER_STARTED：子任务迁移中");
 
-        /** Enum CHILD_TRANSFER_COMPLETE_ for value: "CHILD_TRANSFER_COMPLETE：子任务迁移完成" */
+        /**
+         * Enum CHILD_TRANSFER_COMPLETE_ for value: "CHILD_TRANSFER_COMPLETE：子任务迁移完成"
+         */
         public static final StatusEnum CHILD_TRANSFER_COMPLETE_ = new StatusEnum("CHILD_TRANSFER_COMPLETE：子任务迁移完成");
 
-        /** Enum CHILD_TRANSFER_FAILED_ for value: "CHILD_TRANSFER_FAILED：子任务迁移失败" */
+        /**
+         * Enum CHILD_TRANSFER_FAILED_ for value: "CHILD_TRANSFER_FAILED：子任务迁移失败"
+         */
         public static final StatusEnum CHILD_TRANSFER_FAILED_ = new StatusEnum("CHILD_TRANSFER_FAILED：子任务迁移失败");
 
-        /** Enum RELEASE_CHILD_TRANSFER_STARTED_ for value: "RELEASE_CHILD_TRANSFER_STARTED：子任务结束中" */
+        /**
+         * Enum RELEASE_CHILD_TRANSFER_STARTED_ for value: "RELEASE_CHILD_TRANSFER_STARTED：子任务结束中"
+         */
         public static final StatusEnum RELEASE_CHILD_TRANSFER_STARTED_ =
             new StatusEnum("RELEASE_CHILD_TRANSFER_STARTED：子任务结束中");
 
-        /** Enum RELEASE_CHILD_TRANSFER_COMPLETE_ for value: "RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束" */
+        /**
+         * Enum RELEASE_CHILD_TRANSFER_COMPLETE_ for value: "RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束"
+         */
         public static final StatusEnum RELEASE_CHILD_TRANSFER_COMPLETE_ =
             new StatusEnum("RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束");
 
@@ -203,16 +251,24 @@ public class QueryJobResp {
 
     private String createTime;
 
-    /** 迁移模式 */
+    /**
+     * 迁移模式
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum FULL_TRANS for value: "FULL_TRANS" */
+        /**
+         * Enum FULL_TRANS for value: "FULL_TRANS"
+         */
         public static final TaskTypeEnum FULL_TRANS = new TaskTypeEnum("FULL_TRANS");
 
-        /** Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS" */
+        /**
+         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
+         */
         public static final TaskTypeEnum FULL_INCR_TRANS = new TaskTypeEnum("FULL_INCR_TRANS");
 
-        /** Enum INCR_TRANS for value: "INCR_TRANS" */
+        /**
+         * Enum INCR_TRANS for value: "INCR_TRANS"
+         */
         public static final TaskTypeEnum INCR_TRANS = new TaskTypeEnum("INCR_TRANS");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -303,16 +359,24 @@ public class QueryJobResp {
 
     private Endpoint targetEndpoint;
 
-    /** 网络类型 */
+    /**
+     * 网络类型
+     */
     public static final class NetTypeEnum {
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
 
-        /** Enum EIP for value: "eip" */
+        /**
+         * Enum EIP for value: "eip"
+         */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -408,16 +472,24 @@ public class QueryJobResp {
 
     private String updateTime;
 
-    /** 任务方向 */
+    /**
+     * 任务方向
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP for value: "up" */
+        /**
+         * Enum UP for value: "up"
+         */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
 
-        /** Enum DOWN for value: "down" */
+        /**
+         * Enum DOWN for value: "down"
+         */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
-        /** Enum NON_DBS for value: "non-dbs" */
+        /**
+         * Enum NON_DBS for value: "non-dbs"
+         */
         public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -488,16 +560,24 @@ public class QueryJobResp {
 
     private JobDirectionEnum jobDirection;
 
-    /** 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 */
+    /**
+     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
+     */
     public static final class DbUseTypeEnum {
 
-        /** Enum MIGRATION for value: "migration" */
+        /**
+         * Enum MIGRATION for value: "migration"
+         */
         public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
 
-        /** Enum SYNC for value: "sync" */
+        /**
+         * Enum SYNC for value: "sync"
+         */
         public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
 
-        /** Enum CLOUDDATAGUARD for value: "cloudDataGuard" */
+        /**
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
+         */
         public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -578,16 +658,24 @@ public class QueryJobResp {
 
     private Boolean isTargetReadonly;
 
-    /** 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略 */
+    /**
+     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
+     */
     public static final class ConflictPolicyEnum {
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final ConflictPolicyEnum STOP = new ConflictPolicyEnum("stop");
 
-        /** Enum OVERWRITE for value: "overwrite" */
+        /**
+         * Enum OVERWRITE for value: "overwrite"
+         */
         public static final ConflictPolicyEnum OVERWRITE = new ConflictPolicyEnum("overwrite");
 
-        /** Enum IGNORE for value: "ignore" */
+        /**
+         * Enum IGNORE for value: "ignore"
+         */
         public static final ConflictPolicyEnum IGNORE = new ConflictPolicyEnum("ignore");
 
         private static final Map<String, ConflictPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -668,16 +756,24 @@ public class QueryJobResp {
 
     private List<SpeedLimitInfo> speedLimit = null;
 
-    /** 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份 */
+    /**
+    * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+    */
     public static final class SchemaTypeEnum {
 
-        /** Enum REPLICATION for value: "Replication" */
+        /**
+         * Enum REPLICATION for value: "Replication"
+         */
         public static final SchemaTypeEnum REPLICATION = new SchemaTypeEnum("Replication");
 
-        /** Enum TUNGSTEN for value: "Tungsten" */
+        /**
+         * Enum TUNGSTEN for value: "Tungsten"
+         */
         public static final SchemaTypeEnum TUNGSTEN = new SchemaTypeEnum("Tungsten");
 
-        /** Enum PGBASEBACKUP for value: "PGBaseBackup" */
+        /**
+         * Enum PGBASEBACKUP for value: "PGBaseBackup"
+         */
         public static final SchemaTypeEnum PGBASEBACKUP = new SchemaTypeEnum("PGBaseBackup");
 
         private static final Map<String, SchemaTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -863,9 +959,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -879,9 +976,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 父任务id。
-     * 
-     * @return parentId */
+    /**
+     * 父任务id。
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -895,9 +993,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -911,9 +1010,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -927,9 +1027,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -943,9 +1044,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 创建时间，时间戳格式。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，时间戳格式。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -959,9 +1061,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 迁移模式
-     * 
-     * @return taskType */
+    /**
+     * 迁移模式
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -984,9 +1087,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get sourceEndpoint
-     * 
-     * @return sourceEndpoint */
+    /**
+     * Get sourceEndpoint
+     * @return sourceEndpoint
+     */
     public Endpoint getSourceEndpoint() {
         return sourceEndpoint;
     }
@@ -1009,9 +1113,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get dmqEndpoint
-     * 
-     * @return dmqEndpoint */
+    /**
+     * Get dmqEndpoint
+     * @return dmqEndpoint
+     */
     public Endpoint getDmqEndpoint() {
         return dmqEndpoint;
     }
@@ -1041,9 +1146,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 物理源库信息。
-     * 
-     * @return sourceSharding */
+    /**
+     * 物理源库信息。
+     * @return sourceSharding
+     */
     public List<Endpoint> getSourceSharding() {
         return sourceSharding;
     }
@@ -1066,9 +1172,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get targetEndpoint
-     * 
-     * @return targetEndpoint */
+    /**
+     * Get targetEndpoint
+     * @return targetEndpoint
+     */
     public Endpoint getTargetEndpoint() {
         return targetEndpoint;
     }
@@ -1082,9 +1189,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 网络类型
-     * 
-     * @return netType */
+    /**
+     * 网络类型
+     * @return netType
+     */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -1098,9 +1206,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 失败原因。
-     * 
-     * @return failedReason */
+    /**
+     * 失败原因。
+     * @return failedReason
+     */
     public String getFailedReason() {
         return failedReason;
     }
@@ -1123,9 +1232,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get instInfo
-     * 
-     * @return instInfo */
+    /**
+     * Get instInfo
+     * @return instInfo
+     */
     public InstInfo getInstInfo() {
         return instInfo;
     }
@@ -1139,9 +1249,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 实际启动时间，时间戳格式。
-     * 
-     * @return actualStartTime */
+    /**
+     * 实际启动时间，时间戳格式。
+     * @return actualStartTime
+     */
     public String getActualStartTime() {
         return actualStartTime;
     }
@@ -1155,9 +1266,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 全量完成时间，时间戳格式。
-     * 
-     * @return fullTransferCompleteTime */
+    /**
+     * 全量完成时间，时间戳格式。
+     * @return fullTransferCompleteTime
+     */
     public String getFullTransferCompleteTime() {
         return fullTransferCompleteTime;
     }
@@ -1171,9 +1283,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 更新时间，时间戳格式
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间，时间戳格式
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -1187,9 +1300,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 任务方向
-     * 
-     * @return jobDirection */
+    /**
+     * 任务方向
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -1203,9 +1317,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
-     * 
-     * @return dbUseType */
+    /**
+     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
+     * @return dbUseType
+     */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -1219,9 +1334,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否需要重启
-     * 
-     * @return needRestart */
+    /**
+     * 是否需要重启
+     * @return needRestart
+     */
     public Boolean getNeedRestart() {
         return needRestart;
     }
@@ -1235,9 +1351,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 指定目标实例是否限制为只读
-     * 
-     * @return isTargetReadonly */
+    /**
+     * 指定目标实例是否限制为只读
+     * @return isTargetReadonly
+     */
     public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
@@ -1251,9 +1368,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
-     * 
-     * @return conflictPolicy */
+    /**
+     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
+     * @return conflictPolicy
+     */
     public ConflictPolicyEnum getConflictPolicy() {
         return conflictPolicy;
     }
@@ -1267,9 +1385,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 过滤DDL策略 - drop_database：过滤drop_database - drop_databasefilter_all：过滤所有ddl - \"\"：不过滤
-     * 
-     * @return filterDdlPolicy */
+    /**
+     * 过滤DDL策略 - drop_database：过滤drop_database - drop_databasefilter_all：过滤所有ddl - \"\"：不过滤
+     * @return filterDdlPolicy
+     */
     public String getFilterDdlPolicy() {
         return filterDdlPolicy;
     }
@@ -1299,9 +1418,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 迁移速度限制。
-     * 
-     * @return speedLimit */
+    /**
+     * 迁移速度限制。
+     * @return speedLimit
+     */
     public List<SpeedLimitInfo> getSpeedLimit() {
         return speedLimit;
     }
@@ -1315,9 +1435,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
-     * 
-     * @return schemaType */
+    /**
+     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+     * @return schemaType
+     */
     public SchemaTypeEnum getSchemaType() {
         return schemaType;
     }
@@ -1331,9 +1452,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 节点个数。
-     * 
-     * @return nodeNum */
+    /**
+     * 节点个数。
+     * @return nodeNum
+     */
     public String getNodeNum() {
         return nodeNum;
     }
@@ -1347,9 +1469,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 对象选择开关
-     * 
-     * @return objectSwitch */
+    /**
+     * 对象选择开关
+     * @return objectSwitch
+     */
     public Boolean getObjectSwitch() {
         return objectSwitch;
     }
@@ -1363,9 +1486,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 主任务Id。
-     * 
-     * @return masterJobId */
+    /**
+     * 主任务Id。
+     * @return masterJobId
+     */
     public String getMasterJobId() {
         return masterJobId;
     }
@@ -1379,9 +1503,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 全量快照模式。
-     * 
-     * @return fullMode */
+    /**
+     * 全量快照模式。
+     * @return fullMode
+     */
     public String getFullMode() {
         return fullMode;
     }
@@ -1395,9 +1520,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否迁移结构。
-     * 
-     * @return structTrans */
+    /**
+     * 是否迁移结构。
+     * @return structTrans
+     */
     public Boolean getStructTrans() {
         return structTrans;
     }
@@ -1411,9 +1537,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 否迁移索引。
-     * 
-     * @return indexTrans */
+    /**
+     * 否迁移索引。
+     * @return indexTrans
+     */
     public Boolean getIndexTrans() {
         return indexTrans;
     }
@@ -1427,9 +1554,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否使用目标库的用户替换掉definer。
-     * 
-     * @return replaceDefiner */
+    /**
+     * 是否使用目标库的用户替换掉definer。
+     * @return replaceDefiner
+     */
     public Boolean getReplaceDefiner() {
         return replaceDefiner;
     }
@@ -1443,9 +1571,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否迁移用户。
-     * 
-     * @return migrateUser */
+    /**
+     * 是否迁移用户。
+     * @return migrateUser
+     */
     public Boolean getMigrateUser() {
         return migrateUser;
     }
@@ -1459,9 +1588,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否库级同步。
-     * 
-     * @return syncDatabase */
+    /**
+     * 是否库级同步。
+     * @return syncDatabase
+     */
     public Boolean getSyncDatabase() {
         return syncDatabase;
     }
@@ -1475,9 +1605,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -1491,9 +1622,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -1516,9 +1648,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get targetRootDb
-     * 
-     * @return targetRootDb */
+    /**
+     * Get targetRootDb
+     * @return targetRootDb
+     */
     public DefaultRootDb getTargetRootDb() {
         return targetRootDb;
     }
@@ -1532,9 +1665,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** node所在AZ
-     * 
-     * @return azCode */
+    /**
+     * node所在AZ
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -1548,9 +1682,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** node所在VPC
-     * 
-     * @return vpcId */
+    /**
+     * node所在VPC
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -1564,9 +1699,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** node所在子网
-     * 
-     * @return subnetId */
+    /**
+     * node所在子网
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -1580,9 +1716,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** node所在安全组
-     * 
-     * @return securityGroupId */
+    /**
+     * node所在安全组
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -1596,9 +1733,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否多主灾备任务,双主灾备时有值为true
-     * 
-     * @return multiWrite */
+    /**
+     * 是否多主灾备任务,双主灾备时有值为true
+     * @return multiWrite
+     */
     public Boolean getMultiWrite() {
         return multiWrite;
     }
@@ -1612,9 +1750,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 是否支持IPV6
-     * 
-     * @return supportIpV6 */
+    /**
+     * 是否支持IPV6
+     * @return supportIpV6
+     */
     public Boolean getSupportIpV6() {
         return supportIpV6;
     }
@@ -1628,9 +1767,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 继承的任务ID，Oracle_Mrskafka链路时使用。
-     * 
-     * @return inheritId */
+    /**
+     * 继承的任务ID，Oracle_Mrskafka链路时使用。
+     * @return inheritId
+     */
     public String getInheritId() {
         return inheritId;
     }
@@ -1644,9 +1784,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 断点的GTID集合
-     * 
-     * @return gtid */
+    /**
+     * 断点的GTID集合
+     * @return gtid
+     */
     public String getGtid() {
         return gtid;
     }
@@ -1669,9 +1810,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** Get alarmNotify
-     * 
-     * @return alarmNotify */
+    /**
+     * Get alarmNotify
+     * @return alarmNotify
+     */
     public QuerySmnInfoResp getAlarmNotify() {
         return alarmNotify;
     }
@@ -1685,9 +1827,10 @@ public class QueryJobResp {
         return this;
     }
 
-    /** 增量任务启动位点
-     * 
-     * @return increStartPosition */
+    /**
+     * 增量任务启动位点
+     * @return increStartPosition
+     */
     public String getIncreStartPosition() {
         return increStartPosition;
     }
@@ -1856,7 +1999,10 @@ public class QueryJobResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

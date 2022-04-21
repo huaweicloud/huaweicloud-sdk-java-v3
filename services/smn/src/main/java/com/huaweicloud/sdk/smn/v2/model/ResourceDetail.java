@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResourceDetail */
+/**
+ * ResourceDetail
+ */
 public class ResourceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ResourceDetail {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -49,9 +52,10 @@ public class ResourceDetail {
         return this;
     }
 
-    /** 详情ID
-     * 
-     * @return detailId */
+    /**
+     * 详情ID
+     * @return detailId
+     */
     public String getDetailId() {
         return detailId;
     }
@@ -65,9 +69,10 @@ public class ResourceDetail {
         return this;
     }
 
-    /** topic唯一标识
-     * 
-     * @return topicUrn */
+    /**
+     * topic唯一标识
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -81,9 +86,10 @@ public class ResourceDetail {
         return this;
     }
 
-    /** 显示名
-     * 
-     * @return displayName */
+    /**
+     * 显示名
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -124,7 +130,10 @@ public class ResourceDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

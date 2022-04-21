@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新边缘实例的参数 */
+/**
+ * 更新边缘实例的参数
+ */
 public class UpdateInstanceOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateInstanceOption {
         return this;
     }
 
-    /** 修改后的边缘实例名称， 只能由中文字符、英文字母、数字及“_”、“-”、“.”组成。
-     * 
-     * @return name */
+    /**
+     * 修改后的边缘实例名称， 只能由中文字符、英文字母、数字及“_”、“-”、“.”组成。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UpdateInstanceOption {
         return this;
     }
 
-    /** 描述， 不能包含“<”，“>”。
-     * 
-     * @return description */
+    /**
+     * 描述， 不能包含“<”，“>”。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class UpdateInstanceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

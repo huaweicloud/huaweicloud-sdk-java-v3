@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Node */
+/**
+ * Node
+ */
 public class Node {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,55 +23,89 @@ public class Node {
 
     private String name;
 
-    /** 节点的类型 */
+    /**
+     * 节点的类型
+     */
     public static final class NodeTypeEnum {
 
-        /** Enum HIVESQL for value: "HiveSQL" */
+        /**
+         * Enum HIVESQL for value: "HiveSQL"
+         */
         public static final NodeTypeEnum HIVESQL = new NodeTypeEnum("HiveSQL");
 
-        /** Enum SPARKSQL for value: "SparkSQL" */
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
         public static final NodeTypeEnum SPARKSQL = new NodeTypeEnum("SparkSQL");
 
-        /** Enum DWSSQL for value: "DWSSQL" */
+        /**
+         * Enum DWSSQL for value: "DWSSQL"
+         */
         public static final NodeTypeEnum DWSSQL = new NodeTypeEnum("DWSSQL");
 
-        /** Enum DLISQL for value: "DLISQL" */
+        /**
+         * Enum DLISQL for value: "DLISQL"
+         */
         public static final NodeTypeEnum DLISQL = new NodeTypeEnum("DLISQL");
 
-        /** Enum SHELL for value: "Shell" */
+        /**
+         * Enum SHELL for value: "Shell"
+         */
         public static final NodeTypeEnum SHELL = new NodeTypeEnum("Shell");
 
-        /** Enum CDMJOB for value: "CDMJob" */
+        /**
+         * Enum CDMJOB for value: "CDMJob"
+         */
         public static final NodeTypeEnum CDMJOB = new NodeTypeEnum("CDMJob");
 
-        /** Enum DISTRANSFERTASK for value: "DISTransferTask" */
+        /**
+         * Enum DISTRANSFERTASK for value: "DISTransferTask"
+         */
         public static final NodeTypeEnum DISTRANSFERTASK = new NodeTypeEnum("DISTransferTask");
 
-        /** Enum CSJOB for value: "CSJob" */
+        /**
+         * Enum CSJOB for value: "CSJob"
+         */
         public static final NodeTypeEnum CSJOB = new NodeTypeEnum("CSJob");
 
-        /** Enum CLOUDTABLEMANAGE for value: "CloudTableManage" */
+        /**
+         * Enum CLOUDTABLEMANAGE for value: "CloudTableManage"
+         */
         public static final NodeTypeEnum CLOUDTABLEMANAGE = new NodeTypeEnum("CloudTableManage");
 
-        /** Enum OBSMANAGER for value: "OBSManager" */
+        /**
+         * Enum OBSMANAGER for value: "OBSManager"
+         */
         public static final NodeTypeEnum OBSMANAGER = new NodeTypeEnum("OBSManager");
 
-        /** Enum RESTAPI for value: "RESTAPI" */
+        /**
+         * Enum RESTAPI for value: "RESTAPI"
+         */
         public static final NodeTypeEnum RESTAPI = new NodeTypeEnum("RESTAPI");
 
-        /** Enum MACHINELEARNING for value: "MachineLearning" */
+        /**
+         * Enum MACHINELEARNING for value: "MachineLearning"
+         */
         public static final NodeTypeEnum MACHINELEARNING = new NodeTypeEnum("MachineLearning");
 
-        /** Enum SMN for value: "SMN" */
+        /**
+         * Enum SMN for value: "SMN"
+         */
         public static final NodeTypeEnum SMN = new NodeTypeEnum("SMN");
 
-        /** Enum MRSSPARK for value: "MRSSpark" */
+        /**
+         * Enum MRSSPARK for value: "MRSSpark"
+         */
         public static final NodeTypeEnum MRSSPARK = new NodeTypeEnum("MRSSpark");
 
-        /** Enum MAPREDUCE for value: "MapReduce" */
+        /**
+         * Enum MAPREDUCE for value: "MapReduce"
+         */
         public static final NodeTypeEnum MAPREDUCE = new NodeTypeEnum("MapReduce");
 
-        /** Enum DLISPARK for value: "DLISpark" */
+        /**
+         * Enum DLISPARK for value: "DLISpark"
+         */
         public static final NodeTypeEnum DLISPARK = new NodeTypeEnum("DLISpark");
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -193,16 +229,24 @@ public class Node {
 
     private Integer retryInterval;
 
-    /** 作业失败策略 */
+    /**
+     * 作业失败策略
+     */
     public static final class FailPolicyEnum {
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final FailPolicyEnum FAIL = new FailPolicyEnum("FAIL");
 
-        /** Enum IGNORE for value: "IGNORE" */
+        /**
+         * Enum IGNORE for value: "IGNORE"
+         */
         public static final FailPolicyEnum IGNORE = new FailPolicyEnum("IGNORE");
 
-        /** Enum SUSPEND for value: "SUSPEND" */
+        /**
+         * Enum SUSPEND for value: "SUSPEND"
+         */
         public static final FailPolicyEnum SUSPEND = new FailPolicyEnum("SUSPEND");
 
         private static final Map<String, FailPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -288,9 +332,10 @@ public class Node {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -304,9 +349,10 @@ public class Node {
         return this;
     }
 
-    /** 节点的类型
-     * 
-     * @return nodeType */
+    /**
+     * 节点的类型
+     * @return nodeType
+     */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -329,9 +375,10 @@ public class Node {
         return this;
     }
 
-    /** Get location
-     * 
-     * @return location */
+    /**
+     * Get location
+     * @return location
+     */
     public Location getLocation() {
         return location;
     }
@@ -345,9 +392,10 @@ public class Node {
         return this;
     }
 
-    /** 本节点依赖的前一个节点名称
-     * 
-     * @return preNodeNames */
+    /**
+     * 本节点依赖的前一个节点名称
+     * @return preNodeNames
+     */
     public String getPreNodeNames() {
         return preNodeNames;
     }
@@ -377,9 +425,10 @@ public class Node {
         return this;
     }
 
-    /** 节点执行条件
-     * 
-     * @return condition */
+    /**
+     * 节点执行条件
+     * @return condition
+     */
     public List<Condition> getCondition() {
         return condition;
     }
@@ -393,9 +442,10 @@ public class Node {
         return this;
     }
 
-    /** 节点的属性
-     * 
-     * @return nodeProperties */
+    /**
+     * 节点的属性
+     * @return nodeProperties
+     */
     public String getNodeProperties() {
         return nodeProperties;
     }
@@ -409,9 +459,10 @@ public class Node {
         return this;
     }
 
-    /** 轮询节点执行结果时间间隔
-     * 
-     * @return pollingInterval */
+    /**
+     * 轮询节点执行结果时间间隔
+     * @return pollingInterval
+     */
     public Integer getPollingInterval() {
         return pollingInterval;
     }
@@ -425,9 +476,10 @@ public class Node {
         return this;
     }
 
-    /** 节点最大执行时间
-     * 
-     * @return maxExecutionTime */
+    /**
+     * 节点最大执行时间
+     * @return maxExecutionTime
+     */
     public Integer getMaxExecutionTime() {
         return maxExecutionTime;
     }
@@ -441,9 +493,10 @@ public class Node {
         return this;
     }
 
-    /** 节点失败重试次数
-     * 
-     * @return retryTimes */
+    /**
+     * 节点失败重试次数
+     * @return retryTimes
+     */
     public Integer getRetryTimes() {
         return retryTimes;
     }
@@ -457,9 +510,10 @@ public class Node {
         return this;
     }
 
-    /** 失败重试时间间隔
-     * 
-     * @return retryInterval */
+    /**
+     * 失败重试时间间隔
+     * @return retryInterval
+     */
     public Integer getRetryInterval() {
         return retryInterval;
     }
@@ -473,9 +527,10 @@ public class Node {
         return this;
     }
 
-    /** 作业失败策略
-     * 
-     * @return failPolicy */
+    /**
+     * 作业失败策略
+     * @return failPolicy
+     */
     public FailPolicyEnum getFailPolicy() {
         return failPolicy;
     }
@@ -498,9 +553,10 @@ public class Node {
         return this;
     }
 
-    /** Get eventTrigger
-     * 
-     * @return eventTrigger */
+    /**
+     * Get eventTrigger
+     * @return eventTrigger
+     */
     public Event getEventTrigger() {
         return eventTrigger;
     }
@@ -523,9 +579,10 @@ public class Node {
         return this;
     }
 
-    /** Get cronTrigger
-     * 
-     * @return cronTrigger */
+    /**
+     * Get cronTrigger
+     * @return cronTrigger
+     */
     public Cron getCronTrigger() {
         return cronTrigger;
     }
@@ -593,7 +650,10 @@ public class Node {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

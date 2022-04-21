@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAlarmsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListAlarmsResponse extends SdkResponse {
         return this;
     }
 
-    /** 告警对象列表。
-     * 
-     * @return metricAlarms */
+    /**
+     * 告警对象列表。
+     * @return metricAlarms
+     */
     public List<MetricAlarms> getMetricAlarms() {
         return metricAlarms;
     }
@@ -68,9 +71,10 @@ public class ListAlarmsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -107,7 +111,10 @@ public class ListAlarmsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

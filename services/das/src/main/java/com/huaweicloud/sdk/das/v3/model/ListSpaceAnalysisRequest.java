@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSpaceAnalysisRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ListSpaceAnalysisRequest {
 
     private String xLanguage;
 
-    /** 对象类型 */
+    /**
+     * 对象类型
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum DATABASE for value: "database" */
+        /**
+         * Enum DATABASE for value: "database"
+         */
         public static final ObjectTypeEnum DATABASE = new ObjectTypeEnum("database");
 
-        /** Enum TABLE for value: "table" */
+        /**
+         * Enum TABLE for value: "table"
+         */
         public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("table");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +127,19 @@ public class ListSpaceAnalysisRequest {
 
     private String showInstanceInfo;
 
-    /** 引擎类型 */
+    /**
+     * 引擎类型
+     */
     public static final class DatastoreTypeEnum {
 
-        /** Enum MYSQL for value: "MySQL" */
+        /**
+         * Enum MYSQL for value: "MySQL"
+         */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
 
-        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
+        /**
+         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
+         */
         public static final DatastoreTypeEnum GAUSSDB_FOR_MYSQL_ = new DatastoreTypeEnum("GaussDB(for MySQL)");
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +214,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -216,9 +231,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -234,9 +250,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 对象类型
-     * 
-     * @return objectType */
+    /**
+     * 对象类型
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -250,9 +267,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 数据库ID
-     * 
-     * @return databaseId */
+    /**
+     * 数据库ID
+     * @return databaseId
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -266,9 +284,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。offset必须是limit的整数倍。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。offset必须是limit的整数倍。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -282,9 +301,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -298,9 +318,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 是否返回实例级别数据，取值：true或者false
-     * 
-     * @return showInstanceInfo */
+    /**
+     * 是否返回实例级别数据，取值：true或者false
+     * @return showInstanceInfo
+     */
     public String getShowInstanceInfo() {
         return showInstanceInfo;
     }
@@ -314,9 +335,10 @@ public class ListSpaceAnalysisRequest {
         return this;
     }
 
-    /** 引擎类型
-     * 
-     * @return datastoreType */
+    /**
+     * 引擎类型
+     * @return datastoreType
+     */
     public DatastoreTypeEnum getDatastoreType() {
         return datastoreType;
     }
@@ -366,7 +388,10 @@ public class ListSpaceAnalysisRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

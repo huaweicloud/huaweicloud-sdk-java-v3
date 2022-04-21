@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** SimPricePlanVO */
+/**
+ * SimPricePlanVO
+ */
 public class SimPricePlanVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -124,9 +126,11 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 套餐实例id minimum: 0
-     * 
-     * @return id */
+    /**
+     * 套餐实例id
+     * minimum: 0
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -140,9 +144,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 账户id
-     * 
-     * @return accountId */
+    /**
+     * 账户id
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -156,9 +161,11 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** sim卡id minimum: 0
-     * 
-     * @return simCardId */
+    /**
+     * sim卡id
+     * minimum: 0
+     * @return simCardId
+     */
     public Long getSimCardId() {
         return simCardId;
     }
@@ -172,9 +179,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 套餐状态:0 已删除 1 可激活 2 在用 3. 使用完 4. 可激活 5 已停用 6. 启用失败 minimum: 0 maximum: 2147483647
-     * 
-     * @return status */
+    /**
+     * 套餐状态:0 已删除 1 可激活 2 在用 3. 使用完 4. 可激活 5 已停用 6. 启用失败
+     * minimum: 0
+     * maximum: 2147483647
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -188,9 +198,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 套餐id
-     * 
-     * @return pricePlanId */
+    /**
+     * 套餐id
+     * @return pricePlanId
+     */
     public String getPricePlanId() {
         return pricePlanId;
     }
@@ -204,9 +215,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 容器ID:不同类型卡含义如下 iccid(实体卡)，eid（eSIM）cid（vSIM)
-     * 
-     * @return cid */
+    /**
+     * 容器ID:不同类型卡含义如下 iccid(实体卡)，eid（eSIM）cid（vSIM)
+     * @return cid
+     */
     public String getCid() {
         return cid;
     }
@@ -220,9 +232,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 订单id
-     * 
-     * @return orderId */
+    /**
+     * 订单id
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -236,9 +249,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 创建时间 例如2020-08-24T07:57:56.000Z
-     * 
-     * @return createTime */
+    /**
+     * 创建时间 例如2020-08-24T07:57:56.000Z
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -252,9 +266,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 激活时间 例如2020-10-31T16:00:00.000Z
-     * 
-     * @return activeTime */
+    /**
+     * 激活时间 例如2020-10-31T16:00:00.000Z
+     * @return activeTime
+     */
     public OffsetDateTime getActiveTime() {
         return activeTime;
     }
@@ -268,9 +283,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 停用时间 2021-10-31T16:00:00.000Z
-     * 
-     * @return stopTime */
+    /**
+     * 停用时间 2021-10-31T16:00:00.000Z
+     * @return stopTime
+     */
     public OffsetDateTime getStopTime() {
         return stopTime;
     }
@@ -284,9 +300,11 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 总流量(MB) minimum: 0
-     * 
-     * @return flowTotal */
+    /**
+     * 总流量(MB)
+     * minimum: 0
+     * @return flowTotal
+     */
     public Double getFlowTotal() {
         return flowTotal;
     }
@@ -300,9 +318,11 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 已使用流量(MB) minimum: 0
-     * 
-     * @return flowUsed */
+    /**
+     * 已使用流量(MB)
+     * minimum: 0
+     * @return flowUsed
+     */
     public Double getFlowUsed() {
         return flowUsed;
     }
@@ -316,9 +336,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 剩余流量(MB)
-     * 
-     * @return flowLeft */
+    /**
+     * 剩余流量(MB)
+     * @return flowLeft
+     */
     public Double getFlowLeft() {
         return flowLeft;
     }
@@ -332,9 +353,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 是否使用中(0：否 1：是)
-     * 
-     * @return using */
+    /**
+     * 是否使用中(0：否 1：是)
+     * @return using
+     */
     public String getUsing() {
         return using;
     }
@@ -348,9 +370,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 套餐名
-     * 
-     * @return pricePlanName */
+    /**
+     * 套餐名
+     * @return pricePlanName
+     */
     public String getPricePlanName() {
         return pricePlanName;
     }
@@ -364,9 +387,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -380,9 +404,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 套餐类型: 0.非自动续费 1.自动续费 minimum: 0 maximum: 2147483647
-     * 
-     * @return packageType */
+    /**
+     * 套餐类型: 0.非自动续费 1.自动续费
+     * minimum: 0
+     * maximum: 2147483647
+     * @return packageType
+     */
     public Integer getPackageType() {
         return packageType;
     }
@@ -396,9 +423,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 生效类型: 1.订购后激活使用时生效 2.订购即时生效 3.订购下个月开始生效 minimum: 0 maximum: 2147483647
-     * 
-     * @return effectType */
+    /**
+     * 生效类型: 1.订购后激活使用时生效 2.订购即时生效 3.订购下个月开始生效 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return effectType
+     */
     public Integer getEffectType() {
         return effectType;
     }
@@ -412,9 +442,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 沉默期 minimum: 0 maximum: 2147483647
-     * 
-     * @return silentPeriodDay */
+    /**
+     * 沉默期
+     * minimum: 0
+     * maximum: 2147483647
+     * @return silentPeriodDay
+     */
     public Integer getSilentPeriodDay() {
         return silentPeriodDay;
     }
@@ -428,9 +461,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 沉默期单位: 1.年 2.月 3.日 minimum: 1 maximum: 3
-     * 
-     * @return silentPeriodUnit */
+    /**
+     * 沉默期单位: 1.年 2.月 3.日 
+     * minimum: 1
+     * maximum: 3
+     * @return silentPeriodUnit
+     */
     public Integer getSilentPeriodUnit() {
         return silentPeriodUnit;
     }
@@ -444,9 +480,12 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 自动续订: 0.不自动续订 1.继续续订 minimum: 0 maximum: 2147483647
-     * 
-     * @return autoRenew */
+    /**
+     * 自动续订: 0.不自动续订 1.继续续订
+     * minimum: 0
+     * maximum: 2147483647
+     * @return autoRenew
+     */
     public Integer getAutoRenew() {
         return autoRenew;
     }
@@ -460,9 +499,10 @@ public class SimPricePlanVO {
         return this;
     }
 
-    /** 位置信息:1. 中国 2. 欧洲 3. 大洋洲 4. 非洲5. 亚太
-     * 
-     * @return locationDesc */
+    /**
+     * 位置信息:1.  中国 2.  欧洲 3.  大洋洲 4.  非洲5.  亚太
+     * @return locationDesc
+     */
     public String getLocationDesc() {
         return locationDesc;
     }
@@ -558,7 +598,10 @@ public class SimPricePlanVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

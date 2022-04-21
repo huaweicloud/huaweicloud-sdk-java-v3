@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateDomainsRequestBody */
+/**
+ * CreateDomainsRequestBody
+ */
 public class CreateDomainsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateDomainsRequestBody {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -39,9 +42,10 @@ public class CreateDomainsRequestBody {
         return this;
     }
 
-    /** 域名的别名
-     * 
-     * @return alias */
+    /**
+     * 域名的别名
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -78,7 +82,10 @@ public class CreateDomainsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

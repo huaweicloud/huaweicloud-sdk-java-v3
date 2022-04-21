@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRulesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用。
-     * 
-     * @return marker */
+    /**
+     * 本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -48,9 +51,10 @@ public class ListRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的记录总数。
-     * 
-     * @return count */
+    /**
+     * 满足查询条件的记录总数。
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -80,9 +84,10 @@ public class ListRulesResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则信息列表。
-     * 
-     * @return rules */
+    /**
+     * 规则信息列表。
+     * @return rules
+     */
     public List<RuleResponse> getRules() {
         return rules;
     }
@@ -121,7 +126,10 @@ public class ListRulesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

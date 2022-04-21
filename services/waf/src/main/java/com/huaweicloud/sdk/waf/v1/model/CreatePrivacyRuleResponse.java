@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePrivacyRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,19 +31,29 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
 
     private String url;
 
-    /** 屏蔽字段 */
+    /**
+     * 屏蔽字段
+     */
     public static final class CategoryEnum {
 
-        /** Enum PARAMS for value: "params" */
+        /**
+         * Enum PARAMS for value: "params"
+         */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
 
-        /** Enum COOKIE for value: "cookie" */
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
 
-        /** Enum HEADER for value: "header" */
+        /**
+         * Enum HEADER for value: "header"
+         */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
 
-        /** Enum FORM for value: "form" */
+        /**
+         * Enum FORM for value: "form"
+         */
         public static final CategoryEnum FORM = new CategoryEnum("form");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +135,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -139,9 +152,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -155,9 +169,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
-     * 
-     * @return url */
+    /**
+     * 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -171,9 +186,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 屏蔽字段
-     * 
-     * @return category */
+    /**
+     * 屏蔽字段
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -187,9 +203,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 屏蔽字段名
-     * 
-     * @return index */
+    /**
+     * 屏蔽字段名
+     * @return index
+     */
     public String getIndex() {
         return index;
     }
@@ -232,7 +249,10 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

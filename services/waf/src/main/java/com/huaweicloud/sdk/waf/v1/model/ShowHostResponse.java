@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -98,9 +101,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建的云模式防护域名
-     * 
-     * @return hostname */
+    /**
+     * 创建的云模式防护域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -114,9 +118,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -130,9 +135,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** cname前缀
-     * 
-     * @return accessCode */
+    /**
+     * cname前缀
+     * @return accessCode
+     */
     public String getAccessCode() {
         return accessCode;
     }
@@ -146,9 +152,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -162,9 +169,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 接入状态
-     * 
-     * @return accessStatus */
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -178,9 +186,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 后端包含的协议类型：HTTPS、HTTP、HTTP&HTTPS
-     * 
-     * @return protocol */
+    /**
+     * 后端包含的协议类型：HTTPS、HTTP、HTTP&HTTPS
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -194,9 +203,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** https证书id
-     * 
-     * @return certificateid */
+    /**
+     * https证书id
+     * @return certificateid
+     */
     public String getCertificateid() {
         return certificateid;
     }
@@ -210,9 +220,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名称
-     * 
-     * @return certificatename */
+    /**
+     * 证书名称
+     * @return certificatename
+     */
     public String getCertificatename() {
         return certificatename;
     }
@@ -242,9 +253,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 源站信息
-     * 
-     * @return server */
+    /**
+     * 源站信息
+     * @return server
+     */
     public List<CloudWafServer> getServer() {
         return server;
     }
@@ -258,9 +270,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启了代理
-     * 
-     * @return proxy */
+    /**
+     * 是否开启了代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -274,9 +287,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建防护域名的时间
-     * 
-     * @return timestamp */
+    /**
+     * 创建防护域名的时间
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -290,9 +304,10 @@ public class ShowHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否使用独享ip
-     * 
-     * @return exclusiveIp */
+    /**
+     * 是否使用独享ip
+     * @return exclusiveIp
+     */
     public Boolean getExclusiveIp() {
         return exclusiveIp;
     }
@@ -362,7 +377,10 @@ public class ShowHostResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

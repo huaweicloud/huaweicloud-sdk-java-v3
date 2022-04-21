@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConfirmAssetUploadReq */
+/**
+ * ConfirmAssetUploadReq
+ */
 public class ConfirmAssetUploadReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class ConfirmAssetUploadReq {
 
     private String assetId;
 
-    /** 上传状态。 取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。 */
+    /**
+     * 上传状态。  取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATED for value: "CREATED" */
+        /**
+         * Enum CREATED for value: "CREATED"
+         */
         public static final StatusEnum CREATED = new StatusEnum("CREATED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum CANCELLED for value: "CANCELLED" */
+        /**
+         * Enum CANCELLED for value: "CANCELLED"
+         */
         public static final StatusEnum CANCELLED = new StatusEnum("CANCELLED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class ConfirmAssetUploadReq {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -119,9 +130,10 @@ public class ConfirmAssetUploadReq {
         return this;
     }
 
-    /** 上传状态。 取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
-     * 
-     * @return status */
+    /**
+     * 上传状态。  取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,7 +170,10 @@ public class ConfirmAssetUploadReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

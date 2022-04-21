@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 预检查信息体 */
+/**
+ * 预检查信息体
+ */
 public class PreCheckInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,14 @@ public class PreCheckInfo {
 
     private String jobId;
 
-    /** 预检查模式 */
+    /**
+     * 预检查模式
+     */
     public static final class PrecheckModeEnum {
 
-        /** Enum FORSTARTJOB for value: "forStartJob" */
+        /**
+         * Enum FORSTARTJOB for value: "forStartJob"
+         */
         public static final PrecheckModeEnum FORSTARTJOB = new PrecheckModeEnum("forStartJob");
 
         private static final Map<String, PrecheckModeEnum> STATIC_FIELDS = createStaticFields();
@@ -95,9 +101,10 @@ public class PreCheckInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -111,9 +118,10 @@ public class PreCheckInfo {
         return this;
     }
 
-    /** 预检查模式
-     * 
-     * @return precheckMode */
+    /**
+     * 预检查模式
+     * @return precheckMode
+     */
     public PrecheckModeEnum getPrecheckMode() {
         return precheckMode;
     }
@@ -150,7 +158,10 @@ public class PreCheckInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

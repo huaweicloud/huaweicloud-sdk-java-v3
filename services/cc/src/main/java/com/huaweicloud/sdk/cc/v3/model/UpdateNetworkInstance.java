@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新网络实例的详细信息。 */
+/**
+ * 更新网络实例的详细信息。
+ */
 public class UpdateNetworkInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class UpdateNetworkInstance {
         return this;
     }
 
-    /** 网络实例的名字。
-     * 
-     * @return name */
+    /**
+     * 网络实例的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class UpdateNetworkInstance {
         return this;
     }
 
-    /** 网络实例的描述。
-     * 
-     * @return description */
+    /**
+     * 网络实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -79,9 +83,10 @@ public class UpdateNetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
-     * 
-     * @return cidrs */
+    /**
+     * VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
+     * @return cidrs
+     */
     public List<String> getCidrs() {
         return cidrs;
     }
@@ -120,7 +125,10 @@ public class UpdateNetworkInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

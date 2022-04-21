@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** PreheatingResult */
+/**
+ * PreheatingResult
+ */
 public class PreheatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class PreheatingResult {
 
     private String url;
 
-    /** 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败 */
+    /**
+     * 预热任务状态。  取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
+     */
     public static final class StatusEnum {
 
-        /** Enum PROCESSING for value: "PROCESSING" */
+        /**
+         * Enum PROCESSING for value: "PROCESSING"
+         */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
 
-        /** Enum SUCCEED for value: "SUCCEED" */
+        /**
+         * Enum SUCCEED for value: "SUCCEED"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class PreheatingResult {
         return this;
     }
 
-    /** 媒资URL。
-     * 
-     * @return url */
+    /**
+     * 媒资URL。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -119,9 +130,10 @@ public class PreheatingResult {
         return this;
     }
 
-    /** 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
-     * 
-     * @return status */
+    /**
+     * 预热任务状态。  取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -157,7 +169,10 @@ public class PreheatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

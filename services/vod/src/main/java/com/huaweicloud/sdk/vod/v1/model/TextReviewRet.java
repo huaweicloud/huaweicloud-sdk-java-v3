@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 文本检测结果 */
+/**
+ * 文本检测结果
+ */
 public class TextReviewRet {
 
-    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 */
+    /**
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     */
     public static final class SuggestionEnum {
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final SuggestionEnum BLOCK = new SuggestionEnum("block");
 
-        /** Enum PASS for value: "pass" */
+        /**
+         * Enum PASS for value: "pass"
+         */
         public static final SuggestionEnum PASS = new SuggestionEnum("pass");
 
-        /** Enum REVIEW for value: "review" */
+        /**
+         * Enum REVIEW for value: "review"
+         */
         public static final SuggestionEnum REVIEW = new SuggestionEnum("review");
 
         private static final Map<String, SuggestionEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +123,10 @@ public class TextReviewRet {
         return this;
     }
 
-    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     * 
-     * @return suggestion */
+    /**
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * @return suggestion
+     */
     public SuggestionEnum getSuggestion() {
         return suggestion;
     }
@@ -129,9 +140,10 @@ public class TextReviewRet {
         return this;
     }
 
-    /** 涉政敏感词列表
-     * 
-     * @return politics */
+    /**
+     * 涉政敏感词列表
+     * @return politics
+     */
     public String getPolitics() {
         return politics;
     }
@@ -145,9 +157,10 @@ public class TextReviewRet {
         return this;
     }
 
-    /** 涉黄敏感词列表
-     * 
-     * @return porn */
+    /**
+     * 涉黄敏感词列表
+     * @return porn
+     */
     public String getPorn() {
         return porn;
     }
@@ -161,9 +174,10 @@ public class TextReviewRet {
         return this;
     }
 
-    /** 辱骂敏感词列表
-     * 
-     * @return abuse */
+    /**
+     * 辱骂敏感词列表
+     * @return abuse
+     */
     public String getAbuse() {
         return abuse;
     }
@@ -203,7 +217,10 @@ public class TextReviewRet {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

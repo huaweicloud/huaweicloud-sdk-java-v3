@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设备信息结构体，批量查询返回。 */
+/**
+ * 设备信息结构体，批量查询返回。
+ */
 public class SimplifyDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SimplifyDevice {
         return this;
     }
 
-    /** 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\"product_id\" + \"_\" + \"node_id\"拼接而成。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -49,9 +52,10 @@ public class SimplifyDevice {
         return this;
     }
 
-    /** 设备标识码，通常使用IMEI、MAC地址或Serial No作为nodeId。
-     * 
-     * @return nodeId */
+    /**
+     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为nodeId。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -65,9 +69,10 @@ public class SimplifyDevice {
         return this;
     }
 
-    /** 设备名称。
-     * 
-     * @return deviceName */
+    /**
+     * 设备名称。
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -81,9 +86,10 @@ public class SimplifyDevice {
         return this;
     }
 
-    /** 设备关联的产品ID，用于唯一标识一个产品模型。
-     * 
-     * @return productId */
+    /**
+     * 设备关联的产品ID，用于唯一标识一个产品模型。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -124,7 +130,10 @@ public class SimplifyDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 保护组切换请求参数数据结构 */
+/**
+ * 保护组切换请求参数数据结构
+ */
 public class ReverseProtectionGroupRequestParams {
 
-    /** 切换方向。target：表示从创建保护组时指定的生产站点切换到创建保护组时指定的容灾站点。source：表示从创建保护组时指定的容灾站点切换到创建保护组时指定的生产站点。 */
+    /**
+     * 切换方向。target：表示从创建保护组时指定的生产站点切换到创建保护组时指定的容灾站点。source：表示从创建保护组时指定的容灾站点切换到创建保护组时指定的生产站点。
+     */
     public static final class PriorityStationEnum {
 
-        /** Enum TARGET for value: "target" */
+        /**
+         * Enum TARGET for value: "target"
+         */
         public static final PriorityStationEnum TARGET = new PriorityStationEnum("target");
 
-        /** Enum SOURCE for value: "source" */
+        /**
+         * Enum SOURCE for value: "source"
+         */
         public static final PriorityStationEnum SOURCE = new PriorityStationEnum("source");
 
         private static final Map<String, PriorityStationEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ReverseProtectionGroupRequestParams {
         return this;
     }
 
-    /** 切换方向。target：表示从创建保护组时指定的生产站点切换到创建保护组时指定的容灾站点。source：表示从创建保护组时指定的容灾站点切换到创建保护组时指定的生产站点。
-     * 
-     * @return priorityStation */
+    /**
+     * 切换方向。target：表示从创建保护组时指定的生产站点切换到创建保护组时指定的容灾站点。source：表示从创建保护组时指定的容灾站点切换到创建保护组时指定的生产站点。
+     * @return priorityStation
+     */
     public PriorityStationEnum getPriorityStation() {
         return priorityStation;
     }
@@ -132,7 +141,10 @@ public class ReverseProtectionGroupRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

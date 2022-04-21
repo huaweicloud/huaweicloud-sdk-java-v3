@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VodSampleData */
+/**
+ * VodSampleData
+ */
 public class VodSampleData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class VodSampleData {
         return this;
     }
 
-    /** 存储空间。 单位：GB。
-     * 
-     * @return storage */
+    /**
+     * 存储空间。  单位：GB。
+     * @return storage
+     */
     public Float getStorage() {
         return storage;
     }
@@ -39,9 +42,10 @@ public class VodSampleData {
         return this;
     }
 
-    /** 转码时长。 单位：秒。
-     * 
-     * @return transcode */
+    /**
+     * 转码时长。  单位：秒。
+     * @return transcode
+     */
     public Long getTranscode() {
         return transcode;
     }
@@ -78,7 +82,10 @@ public class VodSampleData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 转包周期下单成功的EIP ID列表
-     * 
-     * @return eipIdList */
+    /**
+     * 转包周期下单成功的EIP ID列表
+     * @return eipIdList
+     */
     public List<String> getEipIdList() {
         return eipIdList;
     }
@@ -86,9 +89,10 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 转包周期下单成功的LB ID列表
-     * 
-     * @return loadbalancerIdList */
+    /**
+     * 转包周期下单成功的LB ID列表
+     * @return loadbalancerIdList
+     */
     public List<String> getLoadbalancerIdList() {
         return loadbalancerIdList;
     }
@@ -102,9 +106,10 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 转包周期订单号
-     * 
-     * @return orderId */
+    /**
+     * 转包周期订单号
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -118,9 +123,10 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的UUIID
-     * 
-     * @return requestId */
+    /**
+     * 请求的UUIID
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -162,7 +168,10 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

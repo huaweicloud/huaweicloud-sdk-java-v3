@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateIterationRequestV4 */
+/**
+ * UpdateIterationRequestV4
+ */
 public class UpdateIterationRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 开始时间，年-月-日
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间，年-月-日
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -59,9 +62,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -75,9 +79,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 结束时间，年-月-日
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，年-月-日
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -91,9 +96,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 标题
-     * 
-     * @return name */
+    /**
+     * 标题
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 迭代的状态，0 未开始 <--> 1 进行中<--> 2 结束 <--> 1<-->0, 状态不能跨状态更改
-     * 
-     * @return status */
+    /**
+     * 迭代的状态，0 未开始 <--> 1 进行中<--> 2 结束 <--> 1<-->0, 状态不能跨状态更改
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -123,9 +130,10 @@ public class UpdateIterationRequestV4 {
         return this;
     }
 
-    /** 迭代结束时，工作项的处理（close 所有的工作项关闭，empty 没有关闭的工作项 放在block里面），status更新为2时需要填写over_type
-     * 
-     * @return overType */
+    /**
+     * 迭代结束时，工作项的处理（close 所有的工作项关闭，empty 没有关闭的工作项 放在block里面），status更新为2时需要填写over_type
+     * @return overType
+     */
     public String getOverType() {
         return overType;
     }
@@ -170,7 +178,10 @@ public class UpdateIterationRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 可用区。 */
+/**
+ * 可用区。
+ */
 public class AvailabilityZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class AvailabilityZone {
         return this;
     }
 
-    /** 可用区唯一编码。
-     * 
-     * @return code */
+    /**
+     * 可用区唯一编码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -47,9 +50,10 @@ public class AvailabilityZone {
         return this;
     }
 
-    /** 可用区状态。 取值：ACTIVE。
-     * 
-     * @return state */
+    /**
+     * 可用区状态。  取值：ACTIVE。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -79,9 +83,10 @@ public class AvailabilityZone {
         return this;
     }
 
-    /** 未售罄的LB规格类别。取值： - L4：表示网络型LB未售罄。 - L7：表示应用型LB未售罄。
-     * 
-     * @return protocol */
+    /**
+     * 未售罄的LB规格类别。取值： - L4：表示网络型LB未售罄。 - L7：表示应用型LB未售罄。
+     * @return protocol
+     */
     public List<String> getProtocol() {
         return protocol;
     }
@@ -119,7 +124,10 @@ public class AvailabilityZone {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

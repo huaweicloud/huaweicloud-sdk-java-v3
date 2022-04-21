@@ -45,9 +45,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网中已经使用的IP数目（不包含系统预留地址）
-     * 
-     * @return usedIps */
+    /**
+     * 子网中已经使用的IP数目（不包含系统预留地址）
+     * @return usedIps
+     */
     public Integer getUsedIps() {
         return usedIps;
     }
@@ -61,9 +62,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网ID
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -77,9 +79,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网名称
-     * 
-     * @return subnetName */
+    /**
+     * 子网名称
+     * @return subnetName
+     */
     public String getSubnetName() {
         return subnetName;
     }
@@ -93,9 +96,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网的IP版本，取值为4或者6
-     * 
-     * @return ipVersion */
+    /**
+     * 子网的IP版本，取值为4或者6
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -109,9 +113,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网的CIDR
-     * 
-     * @return cidr */
+    /**
+     * 子网的CIDR
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -125,9 +130,10 @@ public class SubnetIpAvailability {
         return this;
     }
 
-    /** 子网中IP总数（不包含系统预留地址）
-     * 
-     * @return totalIps */
+    /**
+     * 子网中IP总数（不包含系统预留地址）
+     * @return totalIps
+     */
     public Integer getTotalIps() {
         return totalIps;
     }
@@ -172,7 +178,10 @@ public class SubnetIpAvailability {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

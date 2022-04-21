@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListL7RulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 策略ID。
-     * 
-     * @return l7policyId */
+    /**
+     * 策略ID。
+     * @return l7policyId
+     */
     public String getL7policyId() {
         return l7policyId;
     }
@@ -97,9 +100,12 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -113,9 +119,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -129,9 +136,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明： - 必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -161,9 +169,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 转发规则ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
-     * 
-     * @return id */
+    /**
+     * 转发规则ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -193,10 +202,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 转发规则的匹配方式。 type为HOST_NAME时可以为EQUAL_TO。 type为PATH时可以为Perl类型的REGEX， STARTS_WITH，EQUAL_TO。
-     * 支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。
-     * 
-     * @return compareType */
+    /**
+     * 转发规则的匹配方式。  type为HOST_NAME时可以为EQUAL_TO。  type为PATH时可以为Perl类型的REGEX， STARTS_WITH，EQUAL_TO。  支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。
+     * @return compareType
+     */
     public List<String> getCompareType() {
         return compareType;
     }
@@ -226,9 +235,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 转发规则的配置状态。取值：ACTIVE 表示正常。 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 转发规则的配置状态。取值：ACTIVE 表示正常。  支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
+     * @return provisioningStatus
+     */
     public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -242,9 +252,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 是否反向匹配。固定为false。该字段能更新但不会生效。
-     * 
-     * @return invert */
+    /**
+     * 是否反向匹配。固定为false。该字段能更新但不会生效。
+     * @return invert
+     */
     public Boolean getInvert() {
         return invert;
     }
@@ -258,9 +269,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 转发规则的管理状态，默认为true。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发规则的管理状态，默认为true。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -290,9 +302,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 匹配内容的值。 支持多值查询，查询条件格式：*value=xxx&value=xxx*。
-     * 
-     * @return value */
+    /**
+     * 匹配内容的值。  支持多值查询，查询条件格式：*value=xxx&value=xxx*。
+     * @return value
+     */
     public List<String> getValue() {
         return value;
     }
@@ -322,9 +335,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 匹配内容的键值，用于标识规则。 支持多值查询，查询条件格式：*key=xxx&key=xxx*。 不支持该字段，请勿使用。
-     * 
-     * @return key */
+    /**
+     * 匹配内容的键值，用于标识规则。  支持多值查询，查询条件格式：*key=xxx&key=xxx*。  不支持该字段，请勿使用。
+     * @return key
+     */
     public List<String> getKey() {
         return key;
     }
@@ -354,9 +368,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 匹配类别，可以为HOST_NAME，PATH。 一个l7policy下创建的l7rule的type不能重复。 支持多值查询，查询条件格式：*type=xxx&type=xxx*。
-     * 
-     * @return type */
+    /**
+     * 匹配类别，可以为HOST_NAME，PATH。  一个l7policy下创建的l7rule的type不能重复。  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
+     * @return type
+     */
     public List<String> getType() {
         return type;
     }
@@ -386,10 +401,10 @@ public class ListL7RulesRequest {
         return this;
     }
 
-    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
-     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -459,7 +474,10 @@ public class ListL7RulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

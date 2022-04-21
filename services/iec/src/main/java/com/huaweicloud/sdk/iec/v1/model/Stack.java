@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘资源组对象 */
+/**
+ * 边缘资源组对象
+ */
 public class Stack {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Stack {
         return this;
     }
 
-    /** 边缘资源组名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-48]个字符。
-     * 
-     * @return name */
+    /**
+     * 边缘资源组名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-48]个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class Stack {
         return this;
     }
 
-    /** 边缘业务的堆栈，即为资源组。
-     * 
-     * @return resources */
+    /**
+     * 边缘业务的堆栈，即为资源组。
+     * @return resources
+     */
     public List<Resource> getResources() {
         return resources;
     }
@@ -96,7 +100,10 @@ public class Stack {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

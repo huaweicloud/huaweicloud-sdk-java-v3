@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PaneSetting */
+/**
+ * PaneSetting
+ */
 public class PaneSetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PaneSetting {
         return this;
     }
 
-    /** 原视频的id。
-     * 
-     * @return paneId */
+    /**
+     * 原视频的id。
+     * @return paneId
+     */
     public String getPaneId() {
         return paneId;
     }
@@ -54,9 +57,10 @@ public class PaneSetting {
         return this;
     }
 
-    /** pane_id标记的原视频起点，在合成视频中相对于左下角的水平偏移量。 目前只支持小数类型，表示相对于输出视频宽的水平偏移比率。取值范围(0,1)。
-     * 
-     * @return x */
+    /**
+     * pane_id标记的原视频起点，在合成视频中相对于左下角的水平偏移量。 目前只支持小数类型，表示相对于输出视频宽的水平偏移比率。取值范围(0,1)。
+     * @return x
+     */
     public String getX() {
         return x;
     }
@@ -70,9 +74,10 @@ public class PaneSetting {
         return this;
     }
 
-    /** pane_id标记的原视频，在合成视频中相对于左下角的垂直偏移量。 目前只支持小数型，表示相对于输出视频高的垂直偏移比率。取值范围:(0,1)。
-     * 
-     * @return y */
+    /**
+     * pane_id标记的原视频，在合成视频中相对于左下角的垂直偏移量。 目前只支持小数型，表示相对于输出视频高的垂直偏移比率。取值范围:(0,1)。
+     * @return y
+     */
     public String getY() {
         return y;
     }
@@ -86,9 +91,10 @@ public class PaneSetting {
         return this;
     }
 
-    /** pane_id标记的原视频，在合成视频中占的宽。目前只支持小数型，范围(0,1)，表示占据合成视频宽的比率。
-     * 
-     * @return width */
+    /**
+     * pane_id标记的原视频，在合成视频中占的宽。目前只支持小数型，范围(0,1)，表示占据合成视频宽的比率。 
+     * @return width
+     */
     public String getWidth() {
         return width;
     }
@@ -102,9 +108,10 @@ public class PaneSetting {
         return this;
     }
 
-    /** pane_id标记的原视频，在合成视频中占的高。目前只支持小数型，范围(0,1)，表示占据合成视频高的比率。
-     * 
-     * @return height */
+    /**
+     * pane_id标记的原视频，在合成视频中占的高。目前只支持小数型，范围(0,1)，表示占据合成视频高的比率。 
+     * @return height
+     */
     public String getHeight() {
         return height;
     }
@@ -145,7 +152,10 @@ public class PaneSetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

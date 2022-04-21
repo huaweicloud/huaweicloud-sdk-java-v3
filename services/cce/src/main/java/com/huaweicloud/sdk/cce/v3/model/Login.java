@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Login */
+/**
+ * Login
+ */
 public class Login {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class Login {
         return this;
     }
 
-    /** 选择密钥对方式登录时的密钥对名称。密钥对和密码登录方式二者必选其一。
-     * 
-     * @return sshKey */
+    /**
+     * 选择密钥对方式登录时的密钥对名称。密钥对和密码登录方式二者必选其一。
+     * @return sshKey
+     */
     public String getSshKey() {
         return sshKey;
     }
@@ -49,9 +52,10 @@ public class Login {
         return this;
     }
 
-    /** Get userPassword
-     * 
-     * @return userPassword */
+    /**
+     * Get userPassword
+     * @return userPassword
+     */
     public UserPassword getUserPassword() {
         return userPassword;
     }
@@ -87,7 +91,10 @@ public class Login {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

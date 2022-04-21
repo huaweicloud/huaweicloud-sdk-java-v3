@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListCompositeHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -69,9 +72,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
-     * 
-     * @return page */
+    /**
+     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -85,9 +89,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
-     * 
-     * @return pagesize */
+    /**
+     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * @return pagesize
+     */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -101,9 +106,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 域名名称
-     * 
-     * @return hostname */
+    /**
+     * 域名名称
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -117,9 +123,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 防护策略名称
-     * 
-     * @return policyname */
+    /**
+     * 防护策略名称
+     * @return policyname
+     */
     public String getPolicyname() {
         return policyname;
     }
@@ -133,9 +140,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 域名防护状态： - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测 - 1：开启防护，WAF根据您配置的策略进行攻击检测
-     * 
-     * @return protectStatus */
+    /**
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * @return protectStatus
+     */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -149,9 +157,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 域名所属WAF模式
-     * 
-     * @return wafType */
+    /**
+     * 域名所属WAF模式
+     * @return wafType
+     */
     public String getWafType() {
         return wafType;
     }
@@ -165,9 +174,10 @@ public class ListCompositeHostsRequest {
         return this;
     }
 
-    /** 域名是否使用HTTPS
-     * 
-     * @return isHttps */
+    /**
+     * 域名是否使用HTTPS
+     * @return isHttps
+     */
     public Boolean getIsHttps() {
         return isHttps;
     }
@@ -216,7 +226,10 @@ public class ListCompositeHostsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

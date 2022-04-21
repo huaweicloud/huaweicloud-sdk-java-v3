@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** RepoHook */
+/**
+ * RepoHook
+ */
 public class RepoHook {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,9 +81,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发build_events事件
-     * 
-     * @return buildEvents */
+    /**
+     * 是否触发build_events事件
+     * @return buildEvents
+     */
     public Boolean getBuildEvents() {
         return buildEvents;
     }
@@ -95,9 +98,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 仓库统计创建的时间
-     * 
-     * @return createdAt */
+    /**
+     * 仓库统计创建的时间
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -111,9 +115,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否使用ssl验证
-     * 
-     * @return enableSslVerification */
+    /**
+     * 是否使用ssl验证
+     * @return enableSslVerification
+     */
     public Boolean getEnableSslVerification() {
         return enableSslVerification;
     }
@@ -127,9 +132,10 @@ public class RepoHook {
         return this;
     }
 
-    /** hook id
-     * 
-     * @return id */
+    /**
+     * hook id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -143,9 +149,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发issues_events事件
-     * 
-     * @return issuesEvents */
+    /**
+     * 是否触发issues_events事件
+     * @return issuesEvents
+     */
     public Boolean getIssuesEvents() {
         return issuesEvents;
     }
@@ -159,9 +166,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发merge_requests_events事件
-     * 
-     * @return mergeRequestsEvents */
+    /**
+     * 是否触发merge_requests_events事件
+     * @return mergeRequestsEvents
+     */
     public Boolean getMergeRequestsEvents() {
         return mergeRequestsEvents;
     }
@@ -175,9 +183,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发note_events事件
-     * 
-     * @return noteEvents */
+    /**
+     * 是否触发note_events事件
+     * @return noteEvents
+     */
     public Boolean getNoteEvents() {
         return noteEvents;
     }
@@ -191,9 +200,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发pipeline_events事件
-     * 
-     * @return pipelineEvents */
+    /**
+     * 是否触发pipeline_events事件
+     * @return pipelineEvents
+     */
     public Boolean getPipelineEvents() {
         return pipelineEvents;
     }
@@ -207,9 +217,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return projectId */
+    /**
+     * 仓库id
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -223,9 +234,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发push_events事件
-     * 
-     * @return pushEvents */
+    /**
+     * 是否触发push_events事件
+     * @return pushEvents
+     */
     public Boolean getPushEvents() {
         return pushEvents;
     }
@@ -239,9 +251,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发repository_update_events事件
-     * 
-     * @return repositoryUpdateEvents */
+    /**
+     * 是否触发repository_update_events事件
+     * @return repositoryUpdateEvents
+     */
     public Boolean getRepositoryUpdateEvents() {
         return repositoryUpdateEvents;
     }
@@ -255,9 +268,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发tag_push_events事件
-     * 
-     * @return tagPushEvents */
+    /**
+     * 是否触发tag_push_events事件
+     * @return tagPushEvents
+     */
     public Boolean getTagPushEvents() {
         return tagPushEvents;
     }
@@ -271,9 +285,10 @@ public class RepoHook {
         return this;
     }
 
-    /** 是否触发wiki_page_events事件
-     * 
-     * @return wikiPageEvents */
+    /**
+     * 是否触发wiki_page_events事件
+     * @return wikiPageEvents
+     */
     public Boolean getWikiPageEvents() {
         return wikiPageEvents;
     }
@@ -343,7 +358,10 @@ public class RepoHook {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

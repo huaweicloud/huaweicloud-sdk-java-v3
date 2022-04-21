@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** GroupTreeResponse */
+/**
+ * GroupTreeResponse
+ */
 public class GroupTreeResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,12 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 分组id minimum: 1 maximum: 99999999
-     * 
-     * @return id */
+    /**
+     * 分组id
+     * minimum: 1
+     * maximum: 99999999
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -62,9 +67,10 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 分组名称
-     * 
-     * @return name */
+    /**
+     * 分组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,9 +84,12 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 父分组id minimum: 1 maximum: 99999999
-     * 
-     * @return parentId */
+    /**
+     * 父分组id
+     * minimum: 1
+     * maximum: 99999999
+     * @return parentId
+     */
     public Integer getParentId() {
         return parentId;
     }
@@ -110,9 +119,10 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 子分组
-     * 
-     * @return children */
+    /**
+     * 子分组
+     * @return children
+     */
     public List<GroupTreeResponse> getChildren() {
         return children;
     }
@@ -126,9 +136,10 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -158,9 +169,10 @@ public class GroupTreeResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permissions */
+    /**
+     * 权限
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -204,7 +216,10 @@ public class GroupTreeResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

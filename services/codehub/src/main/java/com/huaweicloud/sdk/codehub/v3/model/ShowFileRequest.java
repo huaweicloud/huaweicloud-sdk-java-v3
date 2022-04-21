@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowFileRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowFileRequest {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return repoId */
+    /**
+     * 仓库短id
+     * @return repoId
+     */
     public Integer getRepoId() {
         return repoId;
     }
@@ -44,9 +47,10 @@ public class ShowFileRequest {
         return this;
     }
 
-    /** Url编码的新文件的完整路径。
-     * 
-     * @return filePath */
+    /**
+     * Url编码的新文件的完整路径。
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -60,9 +64,10 @@ public class ShowFileRequest {
         return this;
     }
 
-    /** commit id，仓库的branch名或tag名
-     * 
-     * @return ref */
+    /**
+     * commit id，仓库的branch名或tag名
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -100,7 +105,10 @@ public class ShowFileRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

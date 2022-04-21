@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户数字类型特征统计 */
+/**
+ * 用户数字类型特征统计
+ */
 public class NumFeatureReport {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 平均值。
-     * 
-     * @return avg */
+    /**
+     * 平均值。
+     * @return avg
+     */
     public Double getAvg() {
         return avg;
     }
@@ -64,9 +67,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 最小值。
-     * 
-     * @return min */
+    /**
+     * 最小值。
+     * @return min
+     */
     public Double getMin() {
         return min;
     }
@@ -80,9 +84,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 最大值。
-     * 
-     * @return max */
+    /**
+     * 最大值。
+     * @return max
+     */
     public Double getMax() {
         return max;
     }
@@ -96,9 +101,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 中位数。
-     * 
-     * @return median */
+    /**
+     * 中位数。
+     * @return median
+     */
     public Double getMedian() {
         return median;
     }
@@ -112,9 +118,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 百分位统计。
-     * 
-     * @return percentsAgg */
+    /**
+     * 百分位统计。
+     * @return percentsAgg
+     */
     public String getPercentsAgg() {
         return percentsAgg;
     }
@@ -128,9 +135,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 特征名。
-     * 
-     * @return name */
+    /**
+     * 特征名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -144,9 +152,10 @@ public class NumFeatureReport {
         return this;
     }
 
-    /** 特征类型。
-     * 
-     * @return dataType */
+    /**
+     * 特征类型。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -191,7 +200,10 @@ public class NumFeatureReport {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

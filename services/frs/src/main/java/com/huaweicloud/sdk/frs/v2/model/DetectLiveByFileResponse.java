@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DetectLiveByFileResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class DetectLiveByFileResponse extends SdkResponse {
         return this;
     }
 
-    /** Get videoResult
-     * 
-     * @return videoResult */
+    /**
+     * Get videoResult
+     * @return videoResult
+     */
     public LiveDetectRespVideoresult getVideoResult() {
         return videoResult;
     }
@@ -68,9 +71,10 @@ public class DetectLiveByFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 警告信息列表，WarningList结构见[WarningList](https://support.huaweicloud.com/api-face/face_02_0077.html)。 调用失败时无此字段
-     * 
-     * @return warningList */
+    /**
+     * 警告信息列表，WarningList结构见[WarningList](https://support.huaweicloud.com/api-face/face_02_0077.html)。 调用失败时无此字段
+     * @return warningList
+     */
     public List<WarningList> getWarningList() {
         return warningList;
     }
@@ -107,7 +111,10 @@ public class DetectLiveByFileResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

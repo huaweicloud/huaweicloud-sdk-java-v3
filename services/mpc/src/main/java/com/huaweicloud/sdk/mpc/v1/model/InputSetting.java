@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InputSetting */
+/**
+ * InputSetting
+ */
 public class InputSetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,14 +26,19 @@ public class InputSetting {
 
     private String paneId;
 
-    /** 该视频采取的音频策略。DISCARD表示丢弃音频，合成的视频中不会出现该视频的音频。 RESERVE表示保留音频，合成的视频中会出现该视频音频。如果多个原视频配置了RESERVE，合成的视频文件的音频，是多个原
-     * 视频音频的混合。默认会丢弃音频。 */
+    /**
+     * 该视频采取的音频策略。DISCARD表示丢弃音频，合成的视频中不会出现该视频的音频。 RESERVE表示保留音频，合成的视频中会出现该视频音频。如果多个原视频配置了RESERVE，合成的视频文件的音频，是多个原 视频音频的混合。默认会丢弃音频。
+     */
     public static final class AudioPolicyEnum {
 
-        /** Enum DISCARD for value: "DISCARD" */
+        /**
+         * Enum DISCARD for value: "DISCARD"
+         */
         public static final AudioPolicyEnum DISCARD = new AudioPolicyEnum("DISCARD");
 
-        /** Enum RESERVE for value: "RESERVE" */
+        /**
+         * Enum RESERVE for value: "RESERVE"
+         */
         public static final AudioPolicyEnum RESERVE = new AudioPolicyEnum("RESERVE");
 
         private static final Map<String, AudioPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +122,10 @@ public class InputSetting {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -131,9 +139,10 @@ public class InputSetting {
         return this;
     }
 
-    /** 原视频的id,为整数类型数值字符串。用于匹配后面的布局配置。
-     * 
-     * @return paneId */
+    /**
+     * 原视频的id,为整数类型数值字符串。用于匹配后面的布局配置。
+     * @return paneId
+     */
     public String getPaneId() {
         return paneId;
     }
@@ -147,10 +156,10 @@ public class InputSetting {
         return this;
     }
 
-    /** 该视频采取的音频策略。DISCARD表示丢弃音频，合成的视频中不会出现该视频的音频。 RESERVE表示保留音频，合成的视频中会出现该视频音频。如果多个原视频配置了RESERVE，合成的视频文件的音频，是多个原
-     * 视频音频的混合。默认会丢弃音频。
-     * 
-     * @return audioPolicy */
+    /**
+     * 该视频采取的音频策略。DISCARD表示丢弃音频，合成的视频中不会出现该视频的音频。 RESERVE表示保留音频，合成的视频中会出现该视频音频。如果多个原视频配置了RESERVE，合成的视频文件的音频，是多个原 视频音频的混合。默认会丢弃音频。
+     * @return audioPolicy
+     */
     public AudioPolicyEnum getAudioPolicy() {
         return audioPolicy;
     }
@@ -188,7 +197,10 @@ public class InputSetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

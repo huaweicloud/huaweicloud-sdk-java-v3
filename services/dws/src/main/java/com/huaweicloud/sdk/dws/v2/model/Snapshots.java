@@ -5,18 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 快照对象列表 */
+/**
+ * 快照对象列表
+ */
 public class Snapshots {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
+    @JsonProperty(value = "id")
 
-    private String clusterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "size")
-
-    private Double size;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -29,19 +26,24 @@ public class Snapshots {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "finished")
-
-    private String finished;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "started")
 
     private String started;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "finished")
 
-    private String id;
+    private String finished;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Double size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -49,40 +51,25 @@ public class Snapshots {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "cluster_id")
 
-    private String status;
+    private String clusterId;
 
-    public Snapshots withClusterId(String clusterId) {
-        this.clusterId = clusterId;
+    public Snapshots withId(String id) {
+        this.id = id;
         return this;
     }
 
-    /** 快照对应的集群ID
-     * 
-     * @return clusterId */
-    public String getClusterId() {
-        return clusterId;
+    /**
+     * 快照ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
-    public Snapshots withSize(Double size) {
-        this.size = size;
-        return this;
-    }
-
-    /** 快照大小，单位 GB
-     * 
-     * @return size */
-    public Double getSize() {
-        return size;
-    }
-
-    public void setSize(Double size) {
-        this.size = size;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Snapshots withName(String name) {
@@ -90,9 +77,10 @@ public class Snapshots {
         return this;
     }
 
-    /** 快照名称
-     * 
-     * @return name */
+    /**
+     * 快照名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -106,9 +94,10 @@ public class Snapshots {
         return this;
     }
 
-    /** 快照描述
-     * 
-     * @return description */
+    /**
+     * 快照描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -117,30 +106,15 @@ public class Snapshots {
         this.description = description;
     }
 
-    public Snapshots withFinished(String finished) {
-        this.finished = finished;
-        return this;
-    }
-
-    /** 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return finished */
-    public String getFinished() {
-        return finished;
-    }
-
-    public void setFinished(String finished) {
-        this.finished = finished;
-    }
-
     public Snapshots withStarted(String started) {
         this.started = started;
         return this;
     }
 
-    /** 快照创建的日期时间
-     * 
-     * @return started */
+    /**
+     * 快照创建的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * @return started
+     */
     public String getStarted() {
         return started;
     }
@@ -149,20 +123,55 @@ public class Snapshots {
         this.started = started;
     }
 
-    public Snapshots withId(String id) {
-        this.id = id;
+    public Snapshots withFinished(String finished) {
+        this.finished = finished;
         return this;
     }
 
-    /** 快照 ID
-     * 
-     * @return id */
-    public String getId() {
-        return id;
+    /**
+     * 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * @return finished
+     */
+    public String getFinished() {
+        return finished;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setFinished(String finished) {
+        this.finished = finished;
+    }
+
+    public Snapshots withSize(Double size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 快照大小，单位 GB。
+     * @return size
+     */
+    public Double getSize() {
+        return size;
+    }
+
+    public void setSize(Double size) {
+        this.size = size;
+    }
+
+    public Snapshots withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 快照状态：  - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Snapshots withType(String type) {
@@ -170,9 +179,10 @@ public class Snapshots {
         return this;
     }
 
-    /** 快照创建类型
-     * 
-     * @return type */
+    /**
+     * 快照创建类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -181,20 +191,21 @@ public class Snapshots {
         this.type = type;
     }
 
-    public Snapshots withStatus(String status) {
-        this.status = status;
+    public Snapshots withClusterId(String clusterId) {
+        this.clusterId = clusterId;
         return this;
     }
 
-    /** 快照状态
-     * 
-     * @return status */
-    public String getStatus() {
-        return status;
+    /**
+     * 快照对应的集群ID
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
     }
 
     @Override
@@ -206,36 +217,39 @@ public class Snapshots {
             return false;
         }
         Snapshots snapshots = (Snapshots) o;
-        return Objects.equals(this.clusterId, snapshots.clusterId) && Objects.equals(this.size, snapshots.size)
-            && Objects.equals(this.name, snapshots.name) && Objects.equals(this.description, snapshots.description)
-            && Objects.equals(this.finished, snapshots.finished) && Objects.equals(this.started, snapshots.started)
-            && Objects.equals(this.id, snapshots.id) && Objects.equals(this.type, snapshots.type)
-            && Objects.equals(this.status, snapshots.status);
+        return Objects.equals(this.id, snapshots.id) && Objects.equals(this.name, snapshots.name)
+            && Objects.equals(this.description, snapshots.description)
+            && Objects.equals(this.started, snapshots.started) && Objects.equals(this.finished, snapshots.finished)
+            && Objects.equals(this.size, snapshots.size) && Objects.equals(this.status, snapshots.status)
+            && Objects.equals(this.type, snapshots.type) && Objects.equals(this.clusterId, snapshots.clusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, size, name, description, finished, started, id, type, status);
+        return Objects.hash(id, name, description, started, finished, size, status, type, clusterId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Snapshots {\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    finished: ").append(toIndentedString(finished)).append("\n");
         sb.append("    started: ").append(toIndentedString(started)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    finished: ").append(toIndentedString(finished)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

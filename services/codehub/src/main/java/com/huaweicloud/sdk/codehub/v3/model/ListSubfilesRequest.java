@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSubfilesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListSubfilesRequest {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return repositoryUuid */
+    /**
+     * 仓库id
+     * @return repositoryUuid
+     */
     public String getRepositoryUuid() {
         return repositoryUuid;
     }
@@ -54,9 +57,10 @@ public class ListSubfilesRequest {
         return this;
     }
 
-    /** 分支名称
-     * 
-     * @return branchName */
+    /**
+     * 分支名称
+     * @return branchName
+     */
     public String getBranchName() {
         return branchName;
     }
@@ -70,9 +74,10 @@ public class ListSubfilesRequest {
         return this;
     }
 
-    /** 文件路径
-     * 
-     * @return path */
+    /**
+     * 文件路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -86,9 +91,10 @@ public class ListSubfilesRequest {
         return this;
     }
 
-    /** 偏移量
-     * 
-     * @return offset */
+    /**
+     * 偏移量
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +108,10 @@ public class ListSubfilesRequest {
         return this;
     }
 
-    /** 记录数量
-     * 
-     * @return limit */
+    /**
+     * 记录数量
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +154,10 @@ public class ListSubfilesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

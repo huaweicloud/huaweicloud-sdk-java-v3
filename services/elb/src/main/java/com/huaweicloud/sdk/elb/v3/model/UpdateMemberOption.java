@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新后端服务器请求参数。 */
+/**
+ * 更新后端服务器请求参数。
+ */
 public class UpdateMemberOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateMemberOption {
         return this;
     }
 
-    /** 后端云服务器的管理状态。取值：true、false。 虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。 请勿传入该字段。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器的管理状态。取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。  请勿传入该字段。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -44,9 +47,10 @@ public class UpdateMemberOption {
         return this;
     }
 
-    /** 后端云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,10 +64,12 @@ public class UpdateMemberOption {
         return this;
     }
 
-    /** 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明： -
-     * 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。 minimum: 0 maximum: 100
-     * 
-     * @return weight */
+    /**
+     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明：  - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
+     * minimum: 0
+     * maximum: 100
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -102,7 +108,10 @@ public class UpdateMemberOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

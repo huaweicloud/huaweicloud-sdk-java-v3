@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例信息。 */
+/**
+ * 实例信息。
+ */
 public class QueryInstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -151,9 +153,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -167,9 +170,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -183,9 +187,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例备注。
-     * 
-     * @return remark */
+    /**
+     * 实例备注。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -199,10 +204,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 -
-     * createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
-     * 
-     * @return status */
+    /**
+     * 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -216,9 +221,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 数据库端口号。文档数据库实例支持的端口号范围为2100～9500。
-     * 
-     * @return port */
+    /**
+     * 数据库端口号。文档数据库实例支持的端口号范围为2100～9500。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -232,9 +238,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例类型。与请求参数相同。
-     * 
-     * @return mode */
+    /**
+     * 实例类型。与请求参数相同。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -248,9 +255,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例所在区域。
-     * 
-     * @return region */
+    /**
+     * 实例所在区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -273,9 +281,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public DatastoreItem getDatastore() {
         return datastore;
     }
@@ -289,9 +298,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 存储引擎。取值为“wiredTiger”。
-     * 
-     * @return engine */
+    /**
+     * 存储引擎。取值为“wiredTiger”。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -305,9 +315,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例创建时间。
-     * 
-     * @return created */
+    /**
+     * 实例创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -321,9 +332,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例操作最新变更的时间。
-     * 
-     * @return updated */
+    /**
+     * 实例操作最新变更的时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -337,9 +349,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 默认用户名。取值为“rwuser”。
-     * 
-     * @return dbUserName */
+    /**
+     * 默认用户名。取值为“rwuser”。
+     * @return dbUserName
+     */
     public String getDbUserName() {
         return dbUserName;
     }
@@ -353,9 +366,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 是否开启SSL安全连接。 - 取值为“1”，表示开启。 - 取值为“0”，表示不开启。
-     * 
-     * @return ssl */
+    /**
+     * 是否开启SSL安全连接。 - 取值为“1”，表示开启。 - 取值为“0”，表示不开启。
+     * @return ssl
+     */
     public Integer getSsl() {
         return ssl;
     }
@@ -369,9 +383,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 虚拟私有云ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -385,9 +400,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -401,9 +417,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -426,9 +443,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategyForItemResponse getBackupStrategy() {
         return backupStrategy;
     }
@@ -442,9 +460,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
-     * 
-     * @return payMode */
+    /**
+     * 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
+     * @return payMode
+     */
     public String getPayMode() {
         return payMode;
     }
@@ -458,9 +477,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 系统可维护时间窗。
-     * 
-     * @return maintenanceWindow */
+    /**
+     * 系统可维护时间窗。
+     * @return maintenanceWindow
+     */
     public String getMaintenanceWindow() {
         return maintenanceWindow;
     }
@@ -490,9 +510,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 组信息。
-     * 
-     * @return groups */
+    /**
+     * 组信息。
+     * @return groups
+     */
     public List<GroupResponseItem> getGroups() {
         return groups;
     }
@@ -506,9 +527,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 磁盘加密的密钥ID。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 磁盘加密的密钥ID。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -522,9 +544,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 企业项目ID。取值为“0”，表示为default企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。取值为“0”，表示为default企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -538,9 +561,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 时区。
-     * 
-     * @return timeZone */
+    /**
+     * 时区。
+     * @return timeZone
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -554,9 +578,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 专属存储池ID。
-     * 
-     * @return dssPoolId */
+    /**
+     * 专属存储池ID。
+     * @return dssPoolId
+     */
     public String getDssPoolId() {
         return dssPoolId;
     }
@@ -586,9 +611,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 实例正在执行的动作。
-     * 
-     * @return actions */
+    /**
+     * 实例正在执行的动作。
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -602,9 +628,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 订单ID，仅包周期场景返回。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID，仅包周期场景返回。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -634,9 +661,10 @@ public class QueryInstanceResponse {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<TagResponse> getTags() {
         return tags;
     }
@@ -749,7 +777,10 @@ public class QueryInstanceResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

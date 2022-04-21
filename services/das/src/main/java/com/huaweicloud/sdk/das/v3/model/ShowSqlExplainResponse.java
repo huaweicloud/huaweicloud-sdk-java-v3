@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSqlExplainResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowSqlExplainResponse extends SdkResponse {
         return this;
     }
 
-    /** SQL执行计划列表
-     * 
-     * @return executionPlans */
+    /**
+     * SQL执行计划列表
+     * @return executionPlans
+     */
     public List<ExecutionPlan> getExecutionPlans() {
         return executionPlans;
     }
@@ -59,9 +62,10 @@ public class ShowSqlExplainResponse extends SdkResponse {
         return this;
     }
 
-    /** SQL执行失败时，显示执行错误信息
-     * 
-     * @return errorMessage */
+    /**
+     * SQL执行失败时，显示执行错误信息
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -98,7 +102,10 @@ public class ShowSqlExplainResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

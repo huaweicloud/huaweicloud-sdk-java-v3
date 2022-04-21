@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Authentification */
+/**
+ * Authentification
+ */
 public class Authentification {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Authentification {
         return this;
     }
 
-    /** 域名校验值名字。
-     * 
-     * @return recordName */
+    /**
+     * 域名校验值名字。
+     * @return recordName
+     */
     public String getRecordName() {
         return recordName;
     }
@@ -49,9 +52,10 @@ public class Authentification {
         return this;
     }
 
-    /** 域名校验值类型。
-     * 
-     * @return recordType */
+    /**
+     * 域名校验值类型。
+     * @return recordType
+     */
     public String getRecordType() {
         return recordType;
     }
@@ -65,9 +69,10 @@ public class Authentification {
         return this;
     }
 
-    /** 域名校验值。
-     * 
-     * @return recordValue */
+    /**
+     * 域名校验值。
+     * @return recordValue
+     */
     public String getRecordValue() {
         return recordValue;
     }
@@ -81,9 +86,10 @@ public class Authentification {
         return this;
     }
 
-    /** 校验值对应的域名。
-     * 
-     * @return domain */
+    /**
+     * 校验值对应的域名。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -124,7 +130,10 @@ public class Authentification {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

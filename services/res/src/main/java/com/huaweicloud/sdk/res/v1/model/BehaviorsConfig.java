@@ -44,9 +44,10 @@ public class BehaviorsConfig {
         return this;
     }
 
-    /** 正向行为。
-     * 
-     * @return positiveBehaviors */
+    /**
+     * 正向行为。
+     * @return positiveBehaviors
+     */
     public List<BehaviorWeights> getPositiveBehaviors() {
         return positiveBehaviors;
     }
@@ -76,9 +77,10 @@ public class BehaviorsConfig {
         return this;
     }
 
-    /** 负向行为。
-     * 
-     * @return negativeBehaviors */
+    /**
+     * 负向行为。
+     * @return negativeBehaviors
+     */
     public List<BehaviorWeights> getNegativeBehaviors() {
         return negativeBehaviors;
     }
@@ -115,7 +117,10 @@ public class BehaviorsConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

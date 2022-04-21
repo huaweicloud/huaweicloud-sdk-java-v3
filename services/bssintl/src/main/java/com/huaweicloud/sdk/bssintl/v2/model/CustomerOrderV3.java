@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CustomerOrderV3 */
+/**
+ * CustomerOrderV3
+ */
 public class CustomerOrderV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,9 +96,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -110,9 +113,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -126,9 +130,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码。例如OBS的云服务类型编码为“hws.service.type.obs”。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -142,9 +147,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -158,9 +164,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 客户订单来源类型： 1：客户2：代理3：合同4：分销商
-     * 
-     * @return sourceType */
+    /**
+     * 客户订单来源类型： 1：客户2：代理3：合同4：分销商
+     * @return sourceType
+     */
     public Integer getSourceType() {
         return sourceType;
     }
@@ -174,9 +181,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单状态。 1：待审核3：处理中4：已取消5：已完成6：待付款9：待确认
-     * 
-     * @return status */
+    /**
+     * 订单状态。 1：待审核3：处理中4：已取消5：已完成6：待付款9：待确认
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -190,9 +198,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单类型。 1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
-     * 
-     * @return orderType */
+    /**
+     * 订单类型。 1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
+     * @return orderType
+     */
     public Integer getOrderType() {
         return orderType;
     }
@@ -206,9 +215,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单优惠后金额（实付价格，不含券不含卡）。
-     * 
-     * @return amountAfterDiscount */
+    /**
+     * 订单优惠后金额（实付价格，不含券不含卡）。
+     * @return amountAfterDiscount
+     */
     public Double getAmountAfterDiscount() {
         return amountAfterDiscount;
     }
@@ -222,9 +232,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单金额（官网价）。 退订订单中，该金额等于currencyAfterDiscount。
-     * 
-     * @return officialAmount */
+    /**
+     * 订单金额（官网价）。 退订订单中，该金额等于currencyAfterDiscount。
+     * @return officialAmount
+     */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -238,9 +249,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单金额度量单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 订单金额度量单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -254,9 +266,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 创建时间 。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间 。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -270,9 +283,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 支付时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
-     * 
-     * @return paymentTime */
+    /**
+     * 支付时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return paymentTime
+     */
     public String getPaymentTime() {
         return paymentTime;
     }
@@ -286,9 +300,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 货币编码。
-     * 
-     * @return currency */
+    /**
+     * 货币编码。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -302,9 +317,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 合同ID。
-     * 
-     * @return contractId */
+    /**
+     * 合同ID。
+     * @return contractId
+     */
     public String getContractId() {
         return contractId;
     }
@@ -327,9 +343,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** Get amountInfo
-     * 
-     * @return amountInfo */
+    /**
+     * Get amountInfo
+     * @return amountInfo
+     */
     public AmountInfomationV2 getAmountInfo() {
         return amountInfo;
     }
@@ -343,9 +360,10 @@ public class CustomerOrderV3 {
         return this;
     }
 
-    /** 订单创建者名称。 如果是客户自己下单，则此处返回下单操作员的登录名称；如果是运营人员从后台下单，则此处返回“运营人员”；如果是运营系统自动触发下单，则此处返回“运营系统”。
-     * 
-     * @return userName */
+    /**
+     * 订单创建者名称。 如果是客户自己下单，则此处返回下单操作员的登录名称；如果是运营人员从后台下单，则此处返回“运营人员”；如果是运营系统自动触发下单，则此处返回“运营系统”。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -425,7 +443,10 @@ public class CustomerOrderV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

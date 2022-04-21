@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpExtendInfoRestore */
+/**
+ * OpExtendInfoRestore
+ */
 public class OpExtendInfoRestore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class OpExtendInfoRestore {
         return this;
     }
 
-    /** 备份副本ID
-     * 
-     * @return backupId */
+    /**
+     * 备份副本ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -49,9 +52,10 @@ public class OpExtendInfoRestore {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return backupName */
+    /**
+     * 备份名称
+     * @return backupName
+     */
     public String getBackupName() {
         return backupName;
     }
@@ -65,9 +69,10 @@ public class OpExtendInfoRestore {
         return this;
     }
 
-    /** 恢复目标资源ID
-     * 
-     * @return targetResourceId */
+    /**
+     * 恢复目标资源ID
+     * @return targetResourceId
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
@@ -81,9 +86,10 @@ public class OpExtendInfoRestore {
         return this;
     }
 
-    /** 恢复目标资源名称
-     * 
-     * @return targetResourceName */
+    /**
+     * 恢复目标资源名称
+     * @return targetResourceName
+     */
     public String getTargetResourceName() {
         return targetResourceName;
     }
@@ -124,7 +130,10 @@ public class OpExtendInfoRestore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

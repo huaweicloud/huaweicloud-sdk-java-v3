@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto query response Object */
+/**
+ * This is a auto query response Object
+ */
 public class GetUsersListDetailResponses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号名称。
-     * 
-     * @return name */
+    /**
+     * DDM实例帐号名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号状态。
-     * 
-     * @return status */
+    /**
+     * DDM实例帐号状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -99,9 +103,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号的基础权限。 取值为：CREATE、DROP、ALTER、INDEX、INSERT、DELETE、UPDATE、SELECT
-     * 
-     * @return baseAuthority */
+    /**
+     * DDM实例帐号的基础权限。  取值为：CREATE、DROP、ALTER、INDEX、INSERT、DELETE、UPDATE、SELECT
+     * @return baseAuthority
+     */
     public List<String> getBaseAuthority() {
         return baseAuthority;
     }
@@ -131,9 +136,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号的扩展权限。2021年8月开始不支持该字段，9月会去掉该字段。 取值为：fulltableDelete、fulltableSelect、fulltableUpdate
-     * 
-     * @return extendAuthority */
+    /**
+     * DDM实例帐号的扩展权限。2021年8月开始不支持该字段，9月会去掉该字段。  取值为：fulltableDelete、fulltableSelect、fulltableUpdate
+     * @return extendAuthority
+     */
     public List<String> getExtendAuthority() {
         return extendAuthority;
     }
@@ -147,9 +153,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号的描述。
-     * 
-     * @return description */
+    /**
+     * DDM实例帐号的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -163,9 +170,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** DDM实例帐号的创建时间。
-     * 
-     * @return created */
+    /**
+     * DDM实例帐号的创建时间。
+     * @return created
+     */
     public Long getCreated() {
         return created;
     }
@@ -195,9 +203,10 @@ public class GetUsersListDetailResponses {
         return this;
     }
 
-    /** 关联的逻辑库的集合。
-     * 
-     * @return databases */
+    /**
+     * 关联的逻辑库的集合。
+     * @return databases
+     */
     public List<GetUsersListdatabase> getDatabases() {
         return databases;
     }
@@ -244,7 +253,10 @@ public class GetUsersListDetailResponses {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

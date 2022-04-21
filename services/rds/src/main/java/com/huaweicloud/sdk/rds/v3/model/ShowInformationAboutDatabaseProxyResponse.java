@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get proxy
-     * 
-     * @return proxy */
+    /**
+     * Get proxy
+     * @return proxy
+     */
     public Proxy getProxy() {
         return proxy;
     }
@@ -66,9 +69,10 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
         return this;
     }
 
-    /** Get masterInstance
-     * 
-     * @return masterInstance */
+    /**
+     * Get masterInstance
+     * @return masterInstance
+     */
     public MasterInstance getMasterInstance() {
         return masterInstance;
     }
@@ -99,9 +103,10 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
         return this;
     }
 
-    /** 只读实例信息。
-     * 
-     * @return readonlyInstances */
+    /**
+     * 只读实例信息。
+     * @return readonlyInstances
+     */
     public List<ReadonlyInstances> getReadonlyInstances() {
         return readonlyInstances;
     }
@@ -141,7 +146,10 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

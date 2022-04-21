@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Topics */
+/**
+ * Topics
+ */
 public class Topics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Topics {
         return this;
     }
 
-    /** 主题名称
-     * 
-     * @return name */
+    /**
+     * 主题名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class Topics {
         return this;
     }
 
-    /** Topic的唯一的资源标识。
-     * 
-     * @return topicUrn */
+    /**
+     * Topic的唯一的资源标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -65,9 +69,10 @@ public class Topics {
         return this;
     }
 
-    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示
-     * 
-     * @return displayName */
+    /**
+     * Topic的显示名，推送邮件消息时，作为邮件发件人显示
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -81,9 +86,12 @@ public class Topics {
         return this;
     }
 
-    /** 消息推送的策略 minimum: 0 maximum: 13
-     * 
-     * @return pushPolicy */
+    /**
+     * 消息推送的策略
+     * minimum: 0
+     * maximum: 13
+     * @return pushPolicy
+     */
     public Integer getPushPolicy() {
         return pushPolicy;
     }
@@ -123,7 +131,10 @@ public class Topics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IssueRecordV4Details */
+/**
+ * IssueRecordV4Details
+ */
 public class IssueRecordV4Details {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 操作属性
-     * 
-     * @return property */
+    /**
+     * 操作属性
+     * @return property
+     */
     public String getProperty() {
         return property;
     }
@@ -59,9 +62,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 上次的记录
-     * 
-     * @return oldValue */
+    /**
+     * 上次的记录
+     * @return oldValue
+     */
     public String getOldValue() {
         return oldValue;
     }
@@ -75,9 +79,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 当前值
-     * 
-     * @return newValue */
+    /**
+     * 当前值
+     * @return newValue
+     */
     public String getNewValue() {
         return newValue;
     }
@@ -91,9 +96,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 操作
-     * 
-     * @return operation */
+    /**
+     * 操作
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -107,9 +113,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 操作记录的id
-     * 
-     * @return id */
+    /**
+     * 操作记录的id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -123,9 +130,10 @@ public class IssueRecordV4Details {
         return this;
     }
 
-    /** 操作的字段
-     * 
-     * @return name */
+    /**
+     * 操作的字段
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -169,7 +177,10 @@ public class IssueRecordV4Details {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

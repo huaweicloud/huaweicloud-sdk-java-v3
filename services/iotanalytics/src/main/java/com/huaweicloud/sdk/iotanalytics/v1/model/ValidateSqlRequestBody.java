@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ValidateSqlRequestBody */
+/**
+ * ValidateSqlRequestBody
+ */
 public class ValidateSqlRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ValidateSqlRequestBody {
         return this;
     }
 
-    /** 待执行的SQL语句。
-     * 
-     * @return sql */
+    /**
+     * 待执行的SQL语句。
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -55,7 +58,10 @@ public class ValidateSqlRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

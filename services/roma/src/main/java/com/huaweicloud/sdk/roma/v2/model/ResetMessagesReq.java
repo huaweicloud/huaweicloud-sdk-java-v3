@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** ResetMessagesReq */
+/**
+ * ResetMessagesReq
+ */
 public class ResetMessagesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ResetMessagesReq {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -50,9 +53,10 @@ public class ResetMessagesReq {
         return this;
     }
 
-    /** 分区。
-     * 
-     * @return partition */
+    /**
+     * 分区。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -66,9 +70,10 @@ public class ResetMessagesReq {
         return this;
     }
 
-    /** 消息偏移量。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息偏移量。
+     * @return messageOffset
+     */
     public BigDecimal getMessageOffset() {
         return messageOffset;
     }
@@ -82,9 +87,10 @@ public class ResetMessagesReq {
         return this;
     }
 
-    /** 应用key。在该消息头中添加一个consumer_key的消息头。
-     * 
-     * @return consumerKey */
+    /**
+     * 应用key。在该消息头中添加一个consumer_key的消息头。
+     * @return consumerKey
+     */
     public String getConsumerKey() {
         return consumerKey;
     }
@@ -125,7 +131,10 @@ public class ResetMessagesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

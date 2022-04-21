@@ -35,10 +35,10 @@ public class BehaviorFrequency {
         return this;
     }
 
-    /** 行为类型： - view，曝光 - click，点击 - collect，收藏 - uncollect，取消收藏 - search_click，搜索后点击 - comment，评论 - share，分享 - like，点赞
-     * - dislike，点衰 - grade，评分 - consume，消费 - use，观看视频/听音乐/阅读 - download，下载 - tip，打赏 - subscribe，关注
-     * 
-     * @return behaviorType */
+    /**
+     * 行为类型： - view，曝光 - click，点击 - collect，收藏 - uncollect，取消收藏 - search_click，搜索后点击 - comment，评论 - share，分享 - like，点赞 - dislike，点衰 - grade，评分 - consume，消费 - use，观看视频/听音乐/阅读 - download，下载 - tip，打赏 - subscribe，关注
+     * @return behaviorType
+     */
     public String getBehaviorType() {
         return behaviorType;
     }
@@ -52,9 +52,11 @@ public class BehaviorFrequency {
         return this;
     }
 
-    /** 最小次数。 minimum: 1
-     * 
-     * @return lowerLimit */
+    /**
+     * 最小次数。
+     * minimum: 1
+     * @return lowerLimit
+     */
     public Integer getLowerLimit() {
         return lowerLimit;
     }
@@ -68,9 +70,11 @@ public class BehaviorFrequency {
         return this;
     }
 
-    /** 最大次数。 minimum: 1
-     * 
-     * @return upperLimit */
+    /**
+     * 最大次数。
+     * minimum: 1
+     * @return upperLimit
+     */
     public Integer getUpperLimit() {
         return upperLimit;
     }
@@ -84,9 +88,11 @@ public class BehaviorFrequency {
         return this;
     }
 
-    /** 时间区间。 minimum: 1
-     * 
-     * @return timeInterval */
+    /**
+     * 时间区间。
+     * minimum: 1
+     * @return timeInterval
+     */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -127,7 +133,10 @@ public class BehaviorFrequency {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

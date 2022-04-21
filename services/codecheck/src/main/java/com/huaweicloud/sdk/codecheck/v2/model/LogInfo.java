@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LogInfo */
+/**
+ * LogInfo
+ */
 public class LogInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志标题
-     * 
-     * @return displayName */
+    /**
+     * 日志标题
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -54,9 +57,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志内容
-     * 
-     * @return log */
+    /**
+     * 日志内容
+     * @return log
+     */
     public String getLog() {
         return log;
     }
@@ -70,9 +74,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志级别
-     * 
-     * @return level */
+    /**
+     * 日志级别
+     * @return level
+     */
     public String getLevel() {
         return level;
     }
@@ -86,9 +91,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志分析
-     * 
-     * @return analysis */
+    /**
+     * 日志分析
+     * @return analysis
+     */
     public String getAnalysis() {
         return analysis;
     }
@@ -102,9 +108,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 常见问题解答
-     * 
-     * @return faq */
+    /**
+     * 常见问题解答
+     * @return faq
+     */
     public String getFaq() {
         return faq;
     }
@@ -145,7 +152,10 @@ public class LogInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

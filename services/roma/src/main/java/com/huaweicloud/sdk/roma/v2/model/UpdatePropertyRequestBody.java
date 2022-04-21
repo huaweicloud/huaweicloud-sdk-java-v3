@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdatePropertyRequestBody */
+/**
+ * UpdatePropertyRequestBody
+ */
 public class UpdatePropertyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,23 +25,34 @@ public class UpdatePropertyRequestBody {
 
     private String description;
 
-    /** 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x
-     * 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式 */
+    /**
+     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     */
     public static final class DataTypeEnum {
 
-        /** Enum INTEGER for value: "integer" */
+        /**
+         * Enum INTEGER for value: "integer"
+         */
         public static final DataTypeEnum INTEGER = new DataTypeEnum("integer");
 
-        /** Enum NUMBER for value: "number" */
+        /**
+         * Enum NUMBER for value: "number"
+         */
         public static final DataTypeEnum NUMBER = new DataTypeEnum("number");
 
-        /** Enum STRING for value: "string" */
+        /**
+         * Enum STRING for value: "string"
+         */
         public static final DataTypeEnum STRING = new DataTypeEnum("string");
 
-        /** Enum DATETIME for value: "datetime" */
+        /**
+         * Enum DATETIME for value: "datetime"
+         */
         public static final DataTypeEnum DATETIME = new DataTypeEnum("datetime");
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final DataTypeEnum JSON = new DataTypeEnum("json");
 
         private static final Map<String, DataTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,13 +125,19 @@ public class UpdatePropertyRequestBody {
 
     private DataTypeEnum dataType;
 
-    /** 是否必填 0-非必填 1-必填 */
+    /**
+     * 是否必填 0-非必填 1-必填
+     */
     public static final class RequiredEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final RequiredEnum NUMBER_0 = new RequiredEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
 
         private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
@@ -223,9 +242,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 属性名称，首位必须为字母，支持大小写字母，数字，中划线及下划线，长度2-50
-     * 
-     * @return propertyName */
+    /**
+     * 属性名称，首位必须为字母，支持大小写字母，数字，中划线及下划线，长度2-50
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -239,9 +259,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 属性描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 属性描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -255,10 +276,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x
-     * 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
-     * 
-     * @return dataType */
+    /**
+     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * @return dataType
+     */
     public DataTypeEnum getDataType() {
         return dataType;
     }
@@ -272,9 +293,12 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 是否必填 0-非必填 1-必填 minimum: 0 maximum: 10
-     * 
-     * @return required */
+    /**
+     * 是否必填 0-非必填 1-必填
+     * minimum: 0
+     * maximum: 10
+     * @return required
+     */
     public RequiredEnum getRequired() {
         return required;
     }
@@ -288,9 +312,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 最小值，当data_type为integer或number时必填
-     * 
-     * @return min */
+    /**
+     * 最小值，当data_type为integer或number时必填
+     * @return min
+     */
     public String getMin() {
         return min;
     }
@@ -304,9 +329,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 最大值，当data_type为integer或number时必填
-     * 
-     * @return max */
+    /**
+     * 最大值，当data_type为integer或number时必填
+     * @return max
+     */
     public String getMax() {
         return max;
     }
@@ -320,9 +346,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 步长，当data_type为integer或number时必填
-     * 
-     * @return step */
+    /**
+     * 步长，当data_type为integer或number时必填
+     * @return step
+     */
     public String getStep() {
         return step;
     }
@@ -336,9 +363,12 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 字符串最大长度，当data_type为string, datetime, json时必填,自动向下取整 minimum: 0 maximum: 9999999
-     * 
-     * @return maxLength */
+    /**
+     * 字符串最大长度，当data_type为string, datetime, json时必填,自动向下取整
+     * minimum: 0
+     * maximum: 9999999
+     * @return maxLength
+     */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -352,9 +382,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** 属性单位
-     * 
-     * @return unit */
+    /**
+     * 属性单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -368,9 +399,10 @@ public class UpdatePropertyRequestBody {
         return this;
     }
 
-    /** string的枚举值数组，使用逗号分隔
-     * 
-     * @return enumList */
+    /**
+     * string的枚举值数组，使用逗号分隔
+     * @return enumList
+     */
     public String getEnumList() {
         return enumList;
     }
@@ -423,7 +455,10 @@ public class UpdatePropertyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

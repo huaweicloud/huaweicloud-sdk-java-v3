@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BlackWhiteListBody */
+/**
+ * BlackWhiteListBody
+ */
 public class BlackWhiteListBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class BlackWhiteListBody {
         return this;
     }
 
-    /** IP黑白名单类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
-     * 
-     * @return type */
+    /**
+     * IP黑白名单类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -58,9 +61,10 @@ public class BlackWhiteListBody {
         return this;
     }
 
-    /** IP黑白名单列表（支持掩码且有掩码的情况下IP必须是该IP段的第一个IP）
-     * 
-     * @return ipList */
+    /**
+     * IP黑白名单列表（支持掩码且有掩码的情况下IP必须是该IP段的第一个IP）
+     * @return ipList
+     */
     public List<String> getIpList() {
         return ipList;
     }
@@ -97,7 +101,10 @@ public class BlackWhiteListBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

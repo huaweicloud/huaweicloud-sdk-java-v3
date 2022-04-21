@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 任务信息 */
+/**
+ * 任务信息
+ */
 public class ClusterTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ClusterTask {
         return this;
     }
 
-    /** 任务描述
-     * 
-     * @return description */
+    /**
+     * 任务描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -44,9 +47,10 @@ public class ClusterTask {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +64,10 @@ public class ClusterTask {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,7 +105,10 @@ public class ClusterTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

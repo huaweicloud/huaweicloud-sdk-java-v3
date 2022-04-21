@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 构建工程参数。 */
+/**
+ * 构建工程参数。
+ */
 public class JobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class JobInfo {
 
     private String createdBy;
 
-    /** 执行状态。 */
+    /**
+     * 执行状态。
+     */
     public static final class ExecutionStatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final ExecutionStatusEnum RUNNING = new ExecutionStatusEnum("RUNNING");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final ExecutionStatusEnum FAILED = new ExecutionStatusEnum("FAILED");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final ExecutionStatusEnum SUCCEEDED = new ExecutionStatusEnum("SUCCEEDED");
 
         private static final Map<String, ExecutionStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +148,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 创建者。
-     * 
-     * @return createdBy */
+    /**
+     * 创建者。
+     * @return createdBy
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -154,9 +165,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 执行状态。
-     * 
-     * @return executionStatus */
+    /**
+     * 执行状态。
+     * @return executionStatus
+     */
     public ExecutionStatusEnum getExecutionStatus() {
         return executionStatus;
     }
@@ -170,9 +182,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 工作描述。
-     * 
-     * @return jobDesc */
+    /**
+     * 工作描述。
+     * @return jobDesc
+     */
     public String getJobDesc() {
         return jobDesc;
     }
@@ -186,9 +199,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 工作ID。
-     * 
-     * @return jobId */
+    /**
+     * 工作ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -202,9 +216,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 工作名称。
-     * 
-     * @return jobName */
+    /**
+     * 工作名称。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -218,9 +233,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 类别。
-     * 
-     * @return jobType */
+    /**
+     * 类别。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -234,9 +250,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 排序ID。
-     * 
-     * @return orderId */
+    /**
+     * 排序ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -250,9 +267,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 创建租户的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 创建租户的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -266,9 +284,10 @@ public class JobInfo {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return serviceInstanceId */
+    /**
+     * 实例ID。
+     * @return serviceInstanceId
+     */
     public String getServiceInstanceId() {
         return serviceInstanceId;
     }
@@ -317,7 +336,10 @@ public class JobInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

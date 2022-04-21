@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EngineGroupsInfo */
+/**
+ * EngineGroupsInfo
+ */
 public class EngineGroupsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class EngineGroupsInfo {
         return this;
     }
 
-    /** 引擎id。
-     * 
-     * @return id */
+    /**
+     * 引擎id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -52,9 +55,10 @@ public class EngineGroupsInfo {
         return this;
     }
 
-    /** 引擎名称。
-     * 
-     * @return name */
+    /**
+     * 引擎名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +72,10 @@ public class EngineGroupsInfo {
         return this;
     }
 
-    /** 引擎版本。
-     * 
-     * @return version */
+    /**
+     * 引擎版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -100,9 +105,10 @@ public class EngineGroupsInfo {
         return this;
     }
 
-    /** 可用区列表。
-     * 
-     * @return supportAzs */
+    /**
+     * 可用区列表。
+     * @return supportAzs
+     */
     public List<SupportAzsInfo> getSupportAzs() {
         return supportAzs;
     }
@@ -142,7 +148,10 @@ public class EngineGroupsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

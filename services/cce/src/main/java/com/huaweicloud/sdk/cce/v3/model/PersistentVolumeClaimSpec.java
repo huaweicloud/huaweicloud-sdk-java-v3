@@ -33,10 +33,14 @@ public class PersistentVolumeClaimSpec {
      */
     public static final class AccessModesEnum {
 
-        /** Enum READONLYMANY for value: "ReadOnlyMany" */
+        /**
+         * Enum READONLYMANY for value: "ReadOnlyMany"
+         */
         public static final AccessModesEnum READONLYMANY = new AccessModesEnum("ReadOnlyMany");
 
-        /** Enum READWRITEMANY for value: "ReadWriteMany" */
+        /**
+         * Enum READWRITEMANY for value: "ReadWriteMany"
+         */
         public static final AccessModesEnum READWRITEMANY = new AccessModesEnum("ReadWriteMany");
 
         private static final Map<String, AccessModesEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +135,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS、SFS-Turbo，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
-     * 
-     * @return volumeID */
+    /**
+     * 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS、SFS-Turbo，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+     * @return volumeID
+     */
     public String getVolumeID() {
         return volumeID;
     }
@@ -147,10 +152,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。 - bs：EVS云存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS
-     * Turbo极速文件存储
-     * 
-     * @return storageType */
+    /**
+     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS Turbo极速文件存储
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -180,11 +185,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** 指定volume应该具有的访问模式，列表中仅第一个配置参数有效。 - ReadWriteOnce：该卷可以被单个节点以读/写模式挂载
-     * >集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。 - ReadOnlyMany：该卷可以被多个节点以只读模式挂载（默认） -
-     * ReadWriteMany：该卷可以被多个节点以读/写模式挂载
-     * 
-     * @return accessModes */
+    /**
+     * 指定volume应该具有的访问模式，列表中仅第一个配置参数有效。 - ReadWriteOnce：该卷可以被单个节点以读/写模式挂载   >集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。 - ReadOnlyMany：该卷可以被多个节点以只读模式挂载（默认） - ReadWriteMany：该卷可以被多个节点以读/写模式挂载
+     * @return accessModes
+     */
     public List<AccessModesEnum> getAccessModes() {
         return accessModes;
     }
@@ -198,9 +202,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** PVC的StorageClass名称
-     * 
-     * @return storageClassName */
+    /**
+     * PVC的StorageClass名称
+     * @return storageClassName
+     */
     public String getStorageClassName() {
         return storageClassName;
     }
@@ -214,9 +219,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** PVC绑定的PV名称
-     * 
-     * @return volumeName */
+    /**
+     * PVC绑定的PV名称
+     * @return volumeName
+     */
     public String getVolumeName() {
         return volumeName;
     }
@@ -239,9 +245,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** Get resources
-     * 
-     * @return resources */
+    /**
+     * Get resources
+     * @return resources
+     */
     public ResourceRequirements getResources() {
         return resources;
     }
@@ -255,9 +262,10 @@ public class PersistentVolumeClaimSpec {
         return this;
     }
 
-    /** PVC指定的PV类型
-     * 
-     * @return volumeMode */
+    /**
+     * PVC指定的PV类型
+     * @return volumeMode
+     */
     public String getVolumeMode() {
         return volumeMode;
     }
@@ -304,7 +312,10 @@ public class PersistentVolumeClaimSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

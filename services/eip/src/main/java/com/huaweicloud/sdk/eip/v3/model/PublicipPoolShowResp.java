@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 公网IP池详情 */
+/**
+ * 公网IP池详情
+ */
 public class PublicipPoolShowResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,13 +33,19 @@ public class PublicipPoolShowResp {
 
     private String status;
 
-    /** 取值, spec_bgp(专属离散动态), spec_sbgp(专属离散静态) */
+    /**
+     * 取值, spec_bgp(专属离散动态), spec_sbgp(专属离散静态)
+     */
     public static final class TypeEnum {
 
-        /** Enum SPEC_BGP for value: "spec_bgp" */
+        /**
+         * Enum SPEC_BGP for value: "spec_bgp"
+         */
         public static final TypeEnum SPEC_BGP = new TypeEnum("spec_bgp");
 
-        /** Enum SPEC_SBGP for value: "spec_sbgp" */
+        /**
+         * Enum SPEC_SBGP for value: "spec_sbgp"
+         */
         public static final TypeEnum SPEC_SBGP = new TypeEnum("spec_sbgp");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -177,9 +185,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 公网IP池id
-     * 
-     * @return id */
+    /**
+     * 公网IP池id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -193,9 +202,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 公网IP池名字
-     * 
-     * @return name */
+    /**
+     * 公网IP池名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -209,9 +219,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -225,9 +236,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 取值, spec_bgp(专属离散动态), spec_sbgp(专属离散静态)
-     * 
-     * @return type */
+    /**
+     * 取值, spec_bgp(专属离散动态), spec_sbgp(专属离散静态)
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -241,9 +253,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -257,9 +270,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return projectId */
+    /**
+     * 租户id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -273,9 +287,12 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 池子大小 minimum: 0 maximum: 999999
-     * 
-     * @return size */
+    /**
+     * 池子大小
+     * minimum: 0
+     * maximum: 999999
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -289,9 +306,12 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 已经使用的ip数量 minimum: 0 maximum: 999999
-     * 
-     * @return used */
+    /**
+     * 已经使用的ip数量
+     * minimum: 0
+     * maximum: 999999
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -305,9 +325,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 公网IP池创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 公网IP池创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -321,9 +342,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 公网IP池更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 公网IP池更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -346,9 +368,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** Get billingInfo
-     * 
-     * @return billingInfo */
+    /**
+     * Get billingInfo
+     * @return billingInfo
+     */
     public BillingInfoDict getBillingInfo() {
         return billingInfo;
     }
@@ -362,9 +385,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 功能说明：中心还是边缘。公网IP池取值为center
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 功能说明：中心还是边缘。公网IP池取值为center
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -378,9 +402,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 功能说明：是否共享
-     * 
-     * @return shared */
+    /**
+     * 功能说明：是否共享
+     * @return shared
+     */
     public Boolean getShared() {
         return shared;
     }
@@ -394,9 +419,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 功能说明：是否公共池
-     * 
-     * @return isCommon */
+    /**
+     * 功能说明：是否公共池
+     * @return isCommon
+     */
     public Boolean getIsCommon() {
         return isCommon;
     }
@@ -426,9 +452,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 默认不显示。用户标签
-     * 
-     * @return tags */
+    /**
+     * 默认不显示。用户标签
+     * @return tags
+     */
     public List<TagsInfo> getTags() {
         return tags;
     }
@@ -442,9 +469,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 功能说明：企业项目ID。最大长度36字节,带“-”连字符的UUID格式,或者是字符串“0”。创建弹性公网IP时,给弹性公网IP绑定企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。最大长度36字节,带“-”连字符的UUID格式,或者是字符串“0”。创建弹性公网IP时,给弹性公网IP绑定企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -474,9 +502,10 @@ public class PublicipPoolShowResp {
         return this;
     }
 
-    /** 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该 publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
-     * 
-     * @return allowShareBandwidthTypes */
+    /**
+     * 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该           publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
+     * @return allowShareBandwidthTypes
+     */
     public List<String> getAllowShareBandwidthTypes() {
         return allowShareBandwidthTypes;
     }
@@ -558,7 +587,10 @@ public class PublicipPoolShowResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

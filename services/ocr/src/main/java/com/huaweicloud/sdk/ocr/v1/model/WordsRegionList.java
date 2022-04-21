@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 文字区域识别结果列表，输出顺序从左到右，先上后下。 */
+/**
+ * 文字区域识别结果列表，输出顺序从左到右，先上后下。
+ */
 public class WordsRegionList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class WordsRegionList {
         return this;
     }
 
-    /** 文字识别区域类型。 - text：文本识别区域; - table：表格识别区域。
-     * 
-     * @return type */
+    /**
+     * 文字识别区域类型。 - text：文本识别区域; - table：表格识别区域。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -47,9 +50,10 @@ public class WordsRegionList {
         return this;
     }
 
-    /** 子区域识别文字块数目。
-     * 
-     * @return wordsBlockCount */
+    /**
+     * 子区域识别文字块数目。 
+     * @return wordsBlockCount
+     */
     public Integer getWordsBlockCount() {
         return wordsBlockCount;
     }
@@ -79,9 +83,10 @@ public class WordsRegionList {
         return this;
     }
 
-    /** 子区域识别文字块列表，输出顺序从左到右，先上后下。
-     * 
-     * @return wordsBlockList */
+    /**
+     * 子区域识别文字块列表，输出顺序从左到右，先上后下。 
+     * @return wordsBlockList
+     */
     public List<GeneralTableWordsBlockList> getWordsBlockList() {
         return wordsBlockList;
     }
@@ -120,7 +125,10 @@ public class WordsRegionList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAddressGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** 功能说明：每页返回的个数 取值范围：0~2000
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回的个数 取值范围：0~2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -62,9 +65,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -94,9 +98,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** 地址组唯一标识，填写后接口按照id进行过滤，支持多ID同时过滤
-     * 
-     * @return id */
+    /**
+     * 地址组唯一标识，填写后接口按照id进行过滤，支持多ID同时过滤
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -126,9 +131,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** 地址组名称，填写后按照名称进行过滤，支持多名称同时过滤
-     * 
-     * @return name */
+    /**
+     * 地址组名称，填写后按照名称进行过滤，支持多名称同时过滤
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -142,9 +148,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** IP地址组ip版本，当前只支持ipv4，填写后按照ip版本进行过滤
-     * 
-     * @return ipVersion */
+    /**
+     * IP地址组ip版本，当前只支持ipv4，填写后按照ip版本进行过滤
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -174,9 +181,10 @@ public class ListAddressGroupRequest {
         return this;
     }
 
-    /** 地址组描述信息，填写后按照地址组描述信息过滤，支持多描述同时过滤
-     * 
-     * @return description */
+    /**
+     * 地址组描述信息，填写后按照地址组描述信息过滤，支持多描述同时过滤
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -221,7 +229,10 @@ public class ListAddressGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

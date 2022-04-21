@@ -49,9 +49,10 @@ public class PersistentVolumeClaimStatus {
         return this;
     }
 
-    /** 显示volume实际具有的访问模式。
-     * 
-     * @return accessModes */
+    /**
+     * 显示volume实际具有的访问模式。
+     * @return accessModes
+     */
     public List<String> getAccessModes() {
         return accessModes;
     }
@@ -65,9 +66,10 @@ public class PersistentVolumeClaimStatus {
         return this;
     }
 
-    /** 底层卷的实际资源
-     * 
-     * @return capacity */
+    /**
+     * 底层卷的实际资源
+     * @return capacity
+     */
     public String getCapacity() {
         return capacity;
     }
@@ -81,9 +83,10 @@ public class PersistentVolumeClaimStatus {
         return this;
     }
 
-    /** PersistentVolumeClaim当前所处的状态
-     * 
-     * @return phase */
+    /**
+     * PersistentVolumeClaim当前所处的状态
+     * @return phase
+     */
     public String getPhase() {
         return phase;
     }
@@ -122,7 +125,10 @@ public class PersistentVolumeClaimStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

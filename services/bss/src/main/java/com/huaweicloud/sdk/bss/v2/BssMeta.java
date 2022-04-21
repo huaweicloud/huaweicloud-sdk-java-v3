@@ -426,6 +426,38 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> listConsumeSubCustomers =
+        genForlistConsumeSubCustomers();
+
+    private static HttpRequestDef<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> genForlistConsumeSubCustomers() {
+        // basic
+        HttpRequestDef.Builder<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListConsumeSubCustomersRequest.class, ListConsumeSubCustomersResponse.class)
+            .withName("ListConsumeSubCustomers")
+            .withUri("/v2/bills/subcustomer-bills/res-fee-records/sub-customers/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListConsumeSubCustomersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListConsumeSubCustomersReq.class),
+            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConversionsRequest, ListConversionsResponse> listConversions =
         genForlistConversions();
 

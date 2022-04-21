@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询终端的返回结果DTO对象 */
+/**
+ * 查询终端的返回结果DTO对象
+ */
 public class QueryDeviceResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,9 +90,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端名称。
-     * 
-     * @return name */
+    /**
+     * 终端名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -104,9 +107,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端类型，区分自研和第三方终端。
-     * 
-     * @return type */
+    /**
+     * 终端类型，区分自研和第三方终端。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -120,9 +124,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
-     * 
-     * @return model */
+    /**
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -136,9 +141,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端SN号，仅可包含数字、字母和下划线。
-     * 
-     * @return sn */
+    /**
+     * 终端SN号，仅可包含数字、字母和下划线。
+     * @return sn
+     */
     public String getSn() {
         return sn;
     }
@@ -152,9 +158,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 硬终端对应的内置账号。
-     * 
-     * @return account */
+    /**
+     * 硬终端对应的内置账号。
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -168,9 +175,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端绑定的号码
-     * 
-     * @return number */
+    /**
+     * 终端绑定的号码
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -184,9 +192,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂
-     * 
-     * @return prjCodeMode */
+    /**
+     * 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂 
+     * @return prjCodeMode
+     */
     public Integer getPrjCodeMode() {
         return prjCodeMode;
     }
@@ -200,9 +209,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 部门编号
-     * 
-     * @return deptCode */
+    /**
+     * 部门编号
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -216,9 +226,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -232,9 +243,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 部门名称路径
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门名称路径
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -248,9 +260,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 手机号
-     * 
-     * @return phone */
+    /**
+     * 手机号
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -264,9 +277,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 手机号所属的国家
-     * 
-     * @return country */
+    /**
+     * 手机号所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -280,9 +294,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 邮箱
-     * 
-     * @return email */
+    /**
+     * 邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -296,9 +311,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端描述
-     * 
-     * @return description */
+    /**
+     * 终端描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -312,9 +328,10 @@ public class QueryDeviceResultDTO {
         return this;
     }
 
-    /** 终端状态 * 0、正常 * 1、停用\"
-     * 
-     * @return status */
+    /**
+     * 终端状态 * 0、正常 * 1、停用\" 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -391,7 +408,10 @@ public class QueryDeviceResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

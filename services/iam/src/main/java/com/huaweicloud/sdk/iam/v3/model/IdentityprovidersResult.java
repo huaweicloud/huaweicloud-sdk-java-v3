@@ -48,9 +48,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种。当返回为空字符串或者null时，默认为缺省类型virtual_user_sso类型。
-     * 
-     * @return ssoType */
+    /**
+     * 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种。当返回为空字符串或者null时，默认为缺省类型virtual_user_sso类型。
+     * @return ssoType
+     */
     public String getSsoType() {
         return ssoType;
     }
@@ -64,9 +65,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** 身份提供商ID。
-     * 
-     * @return id */
+    /**
+     * 身份提供商ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,9 +82,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** 身份提供商描述信息。
-     * 
-     * @return description */
+    /**
+     * 身份提供商描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -96,9 +99,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** 身份提供商是否启用，true为启用，false为停用，默认为false。
-     * 
-     * @return enabled */
+    /**
+     * 身份提供商是否启用，true为启用，false为停用，默认为false。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -128,9 +132,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** 身份提供商的联邦用户ID列表。
-     * 
-     * @return remoteIds */
+    /**
+     * 身份提供商的联邦用户ID列表。
+     * @return remoteIds
+     */
     public List<String> getRemoteIds() {
         return remoteIds;
     }
@@ -153,9 +158,10 @@ public class IdentityprovidersResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public IdentityprovidersLinks getLinks() {
         return links;
     }
@@ -200,7 +206,10 @@ public class IdentityprovidersResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

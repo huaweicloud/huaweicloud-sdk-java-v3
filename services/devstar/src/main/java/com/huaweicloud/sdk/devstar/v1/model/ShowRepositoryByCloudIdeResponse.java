@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRepositoryByCloudIdeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class ShowRepositoryByCloudIdeResponse extends SdkResponse {
         return this;
     }
 
-    /** CloudIde打开链接:https://xxx/cloudide/loading?instanceId=xxx&scmUrl=xxx
-     * 
-     * @return url */
+    /**
+     * CloudIde打开链接:https://xxx/cloudide/loading?instanceId=xxx&scmUrl=xxx
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -56,7 +59,10 @@ public class ShowRepositoryByCloudIdeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

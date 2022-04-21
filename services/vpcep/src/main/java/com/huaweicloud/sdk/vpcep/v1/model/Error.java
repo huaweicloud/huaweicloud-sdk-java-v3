@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 提交任务异常时返回的异常信息 */
+/**
+ * 提交任务异常时返回的异常信息
+ */
 public class Error {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Error {
         return this;
     }
 
-    /** 任务异常错误信息描述
-     * 
-     * @return message */
+    /**
+     * 任务异常错误信息描述
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -39,9 +42,10 @@ public class Error {
         return this;
     }
 
-    /** 任务异常错误信息编码
-     * 
-     * @return code */
+    /**
+     * 任务异常错误信息编码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -77,7 +81,10 @@ public class Error {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

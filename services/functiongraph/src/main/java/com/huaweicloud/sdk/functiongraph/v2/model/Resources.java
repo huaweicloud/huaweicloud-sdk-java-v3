@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Resources */
+/**
+ * Resources
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,25 +25,39 @@ public class Resources {
 
     private Integer used;
 
-    /** “资源类型” */
+    /**
+     * “资源类型”
+     */
     public static final class TypeEnum {
 
-        /** Enum FGS_FUNC_SCALE_DOWN_TIMEOUT for value: "fgs_func_scale_down_timeout" */
+        /**
+         * Enum FGS_FUNC_SCALE_DOWN_TIMEOUT for value: "fgs_func_scale_down_timeout"
+         */
         public static final TypeEnum FGS_FUNC_SCALE_DOWN_TIMEOUT = new TypeEnum("fgs_func_scale_down_timeout");
 
-        /** Enum FGS_FUNC_OCCURS for value: "fgs_func_occurs" */
+        /**
+         * Enum FGS_FUNC_OCCURS for value: "fgs_func_occurs"
+         */
         public static final TypeEnum FGS_FUNC_OCCURS = new TypeEnum("fgs_func_occurs");
 
-        /** Enum FGS_FUNC_PAT_IDLE_TIME for value: "fgs_func_pat_idle_time" */
+        /**
+         * Enum FGS_FUNC_PAT_IDLE_TIME for value: "fgs_func_pat_idle_time"
+         */
         public static final TypeEnum FGS_FUNC_PAT_IDLE_TIME = new TypeEnum("fgs_func_pat_idle_time");
 
-        /** Enum FGS_FUNC_NUM for value: "fgs_func_num" */
+        /**
+         * Enum FGS_FUNC_NUM for value: "fgs_func_num"
+         */
         public static final TypeEnum FGS_FUNC_NUM = new TypeEnum("fgs_func_num");
 
-        /** Enum FGS_FUNC_CODE_SIZE for value: "fgs_func_code_size" */
+        /**
+         * Enum FGS_FUNC_CODE_SIZE for value: "fgs_func_code_size"
+         */
         public static final TypeEnum FGS_FUNC_CODE_SIZE = new TypeEnum("fgs_func_code_size");
 
-        /** Enum FGS_WORKFLOW_NUM for value: "fgs_workflow_num" */
+        /**
+         * Enum FGS_WORKFLOW_NUM for value: "fgs_workflow_num"
+         */
         public static final TypeEnum FGS_WORKFLOW_NUM = new TypeEnum("fgs_workflow_num");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -125,9 +141,10 @@ public class Resources {
         return this;
     }
 
-    /** 函数配额限制。
-     * 
-     * @return quota */
+    /**
+     * 函数配额限制。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -141,9 +158,10 @@ public class Resources {
         return this;
     }
 
-    /** 已使用的配额。
-     * 
-     * @return used */
+    /**
+     * 已使用的配额。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -157,9 +175,10 @@ public class Resources {
         return this;
     }
 
-    /** “资源类型”
-     * 
-     * @return type */
+    /**
+     * “资源类型”
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -173,9 +192,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源的计数单位。fgs_func_code_size,单位为MB,其他场景无单位
-     * 
-     * @return unit */
+    /**
+     * 资源的计数单位。fgs_func_code_size,单位为MB,其他场景无单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -214,7 +234,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

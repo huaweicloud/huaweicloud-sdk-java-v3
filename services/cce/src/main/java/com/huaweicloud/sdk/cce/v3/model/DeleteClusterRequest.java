@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,23 +20,34 @@ public class DeleteClusterRequest {
 
     private String clusterId;
 
-    /** 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程，默认选项) */
+    /**
+     * 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
     public static final class DeleteEfsEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteEfsEnum TRUE = new DeleteEfsEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteEfsEnum BLOCK = new DeleteEfsEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteEfsEnum TRY = new DeleteEfsEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteEfsEnum FALSE = new DeleteEfsEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteEfsEnum SKIP = new DeleteEfsEnum("skip");
 
         private static final Map<String, DeleteEfsEnum> STATIC_FIELDS = createStaticFields();
@@ -107,23 +120,34 @@ public class DeleteClusterRequest {
 
     private DeleteEfsEnum deleteEfs;
 
-    /** 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程) */
+    /**
+     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
+     */
     public static final class DeleteEniEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteEniEnum TRUE = new DeleteEniEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteEniEnum BLOCK = new DeleteEniEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteEniEnum TRY = new DeleteEniEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteEniEnum FALSE = new DeleteEniEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteEniEnum SKIP = new DeleteEniEnum("skip");
 
         private static final Map<String, DeleteEniEnum> STATIC_FIELDS = createStaticFields();
@@ -196,22 +220,34 @@ public class DeleteClusterRequest {
 
     private DeleteEniEnum deleteEni;
 
-    /** 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项) */
+    /**
+     * 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
     public static final class DeleteEvsEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteEvsEnum TRUE = new DeleteEvsEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteEvsEnum BLOCK = new DeleteEvsEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteEvsEnum TRY = new DeleteEvsEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteEvsEnum FALSE = new DeleteEvsEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteEvsEnum SKIP = new DeleteEvsEnum("skip");
 
         private static final Map<String, DeleteEvsEnum> STATIC_FIELDS = createStaticFields();
@@ -284,23 +320,34 @@ public class DeleteClusterRequest {
 
     private DeleteEvsEnum deleteEvs;
 
-    /** 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程)
-     * - false或skip (跳过删除流程) */
+    /**
+     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
+     */
     public static final class DeleteNetEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteNetEnum TRUE = new DeleteNetEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteNetEnum BLOCK = new DeleteNetEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteNetEnum TRY = new DeleteNetEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteNetEnum FALSE = new DeleteNetEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteNetEnum SKIP = new DeleteNetEnum("skip");
 
         private static final Map<String, DeleteNetEnum> STATIC_FIELDS = createStaticFields();
@@ -373,23 +420,34 @@ public class DeleteClusterRequest {
 
     private DeleteNetEnum deleteNet;
 
-    /** 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程，默认选项) */
+    /**
+     * 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
     public static final class DeleteObsEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteObsEnum TRUE = new DeleteObsEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteObsEnum BLOCK = new DeleteObsEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteObsEnum TRY = new DeleteObsEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteObsEnum FALSE = new DeleteObsEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteObsEnum SKIP = new DeleteObsEnum("skip");
 
         private static final Map<String, DeleteObsEnum> STATIC_FIELDS = createStaticFields();
@@ -462,23 +520,34 @@ public class DeleteClusterRequest {
 
     private DeleteObsEnum deleteObs;
 
-    /** 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程，默认选项) */
+    /**
+     * 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
     public static final class DeleteSfsEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final DeleteSfsEnum TRUE = new DeleteSfsEnum("true");
 
-        /** Enum BLOCK for value: "block" */
+        /**
+         * Enum BLOCK for value: "block"
+         */
         public static final DeleteSfsEnum BLOCK = new DeleteSfsEnum("block");
 
-        /** Enum TRY for value: "try" */
+        /**
+         * Enum TRY for value: "try"
+         */
         public static final DeleteSfsEnum TRY = new DeleteSfsEnum("try");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final DeleteSfsEnum FALSE = new DeleteSfsEnum("false");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final DeleteSfsEnum SKIP = new DeleteSfsEnum("skip");
 
         private static final Map<String, DeleteSfsEnum> STATIC_FIELDS = createStaticFields();
@@ -551,12 +620,14 @@ public class DeleteClusterRequest {
 
     private DeleteSfsEnum deleteSfs;
 
-    /** 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。
-     * 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true
-     * (预置模式，仅预置query参数，不执行删除) */
+    /**
+     * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+     */
     public static final class TobedeletedEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final TobedeletedEnum TRUE = new TobedeletedEnum("true");
 
         private static final Map<String, TobedeletedEnum> STATIC_FIELDS = createStaticFields();
@@ -630,9 +701,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
-     * 
-     * @return clusterId */
+    /**
+     * 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -646,10 +718,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程，默认选项)
-     * 
-     * @return deleteEfs */
+    /**
+     * 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return deleteEfs
+     */
     public DeleteEfsEnum getDeleteEfs() {
         return deleteEfs;
     }
@@ -663,10 +735,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip
-     * (跳过删除流程)
-     * 
-     * @return deleteEni */
+    /**
+     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
+     * @return deleteEni
+     */
     public DeleteEniEnum getDeleteEni() {
         return deleteEni;
     }
@@ -680,9 +752,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
-     * 
-     * @return deleteEvs */
+    /**
+     * 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return deleteEvs
+     */
     public DeleteEvsEnum getDeleteEvs() {
         return deleteEvs;
     }
@@ -696,10 +769,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程)
-     * - false或skip (跳过删除流程)
-     * 
-     * @return deleteNet */
+    /**
+     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
+     * @return deleteNet
+     */
     public DeleteNetEnum getDeleteNet() {
         return deleteNet;
     }
@@ -713,9 +786,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
-     * 
-     * @return deleteObs */
+    /**
+     * 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return deleteObs
+     */
     public DeleteObsEnum getDeleteObs() {
         return deleteObs;
     }
@@ -729,9 +803,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
-     * 
-     * @return deleteSfs */
+    /**
+     * 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return deleteSfs
+     */
     public DeleteSfsEnum getDeleteSfs() {
         return deleteSfs;
     }
@@ -745,11 +820,10 @@ public class DeleteClusterRequest {
         return this;
     }
 
-    /** 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。
-     * 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true
-     * (预置模式，仅预置query参数，不执行删除)
-     * 
-     * @return tobedeleted */
+    /**
+     * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+     * @return tobedeleted
+     */
     public TobedeletedEnum getTobedeleted() {
         return tobedeleted;
     }
@@ -798,7 +872,10 @@ public class DeleteClusterRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

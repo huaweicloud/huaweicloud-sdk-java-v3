@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RuleItem */
+/**
+ * RuleItem
+ */
 public class RuleItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return ruleId */
+    /**
+     * 规则id
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -67,9 +70,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则所属语言
-     * 
-     * @return ruleLanguage */
+    /**
+     * 规则所属语言
+     * @return ruleLanguage
+     */
     public String getRuleLanguage() {
         return ruleLanguage;
     }
@@ -83,9 +87,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则名称
-     * 
-     * @return ruleName */
+    /**
+     * 规则名称
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -99,9 +104,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则问题级别
-     * 
-     * @return ruleSeverity */
+    /**
+     * 规则问题级别
+     * @return ruleSeverity
+     */
     public String getRuleSeverity() {
         return ruleSeverity;
     }
@@ -115,9 +121,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则标签
-     * 
-     * @return ruleTages */
+    /**
+     * 规则标签
+     * @return ruleTages
+     */
     public String getRuleTages() {
         return ruleTages;
     }
@@ -131,9 +138,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则状态0：未启用，1：已启用
-     * 
-     * @return checked */
+    /**
+     * 规则状态0：未启用，1：已启用
+     * @return checked
+     */
     public String getChecked() {
         return checked;
     }
@@ -163,9 +171,10 @@ public class RuleItem {
         return this;
     }
 
-    /** 规则配置参数阈值相关信息
-     * 
-     * @return ruleConfigList */
+    /**
+     * 规则配置参数阈值相关信息
+     * @return ruleConfigList
+     */
     public List<RuleConfig> getRuleConfigList() {
         return ruleConfigList;
     }
@@ -210,7 +219,10 @@ public class RuleItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

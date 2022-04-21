@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数挂载结构体。 */
+/**
+ * 函数挂载结构体。
+ */
 public class FuncMount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class FuncMount {
         return this;
     }
 
-    /** 挂载类型(sfs/sfsTurbo/ecs)，func_mounts非空时必选。
-     * 
-     * @return mountType */
+    /**
+     * 挂载类型(sfs/sfsTurbo/ecs)，func_mounts非空时必选。
+     * @return mountType
+     */
     public String getMountType() {
         return mountType;
     }
@@ -49,9 +52,10 @@ public class FuncMount {
         return this;
     }
 
-    /** 挂载资源ID（对应云服务ID），func_mounts非空时必选。
-     * 
-     * @return mountResource */
+    /**
+     * 挂载资源ID（对应云服务ID），func_mounts非空时必选。
+     * @return mountResource
+     */
     public String getMountResource() {
         return mountResource;
     }
@@ -65,9 +69,10 @@ public class FuncMount {
         return this;
     }
 
-    /** 远端挂载路径（例如192.168.0.12:/data），如果mount_type为ecs，必选。
-     * 
-     * @return mountSharePath */
+    /**
+     * 远端挂载路径（例如192.168.0.12:/data），如果mount_type为ecs，必选。
+     * @return mountSharePath
+     */
     public String getMountSharePath() {
         return mountSharePath;
     }
@@ -81,9 +86,10 @@ public class FuncMount {
         return this;
     }
 
-    /** 函数访问路径，func_mounts非空时必选。
-     * 
-     * @return localMountPath */
+    /**
+     * 函数访问路径，func_mounts非空时必选。
+     * @return localMountPath
+     */
     public String getLocalMountPath() {
         return localMountPath;
     }
@@ -124,7 +130,10 @@ public class FuncMount {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

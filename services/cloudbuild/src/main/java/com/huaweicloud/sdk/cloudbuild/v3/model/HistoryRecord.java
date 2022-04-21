@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HistoryRecord */
+/**
+ * HistoryRecord
+ */
 public class HistoryRecord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 构建记录id--唯一key
-     * 
-     * @return recordId */
+    /**
+     * 构建记录id--唯一key
+     * @return recordId
+     */
     public String getRecordId() {
         return recordId;
     }
@@ -59,9 +62,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -75,9 +79,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 构建编号
-     * 
-     * @return buildNumber */
+    /**
+     * 构建编号
+     * @return buildNumber
+     */
     public Integer getBuildNumber() {
         return buildNumber;
     }
@@ -91,9 +96,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 构建开始时间
-     * 
-     * @return startTime */
+    /**
+     * 构建开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -107,9 +113,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 构建结束时间
-     * 
-     * @return endTime */
+    /**
+     * 构建结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -123,9 +130,10 @@ public class HistoryRecord {
         return this;
     }
 
-    /** 构建结果
-     * 
-     * @return result */
+    /**
+     * 构建结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -168,7 +176,10 @@ public class HistoryRecord {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

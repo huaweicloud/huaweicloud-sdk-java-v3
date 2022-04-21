@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配置项 */
+/**
+ * 配置项
+ */
 public class ConfigMapResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 配置项ID
-     * 
-     * @return id */
+    /**
+     * 配置项ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -67,9 +70,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 配置项名称
-     * 
-     * @return name */
+    /**
+     * 配置项名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -83,9 +87,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 配置项描述
-     * 
-     * @return description */
+    /**
+     * 配置项描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -115,9 +120,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 配置项键列表
-     * 
-     * @return configs */
+    /**
+     * 配置项键列表
+     * @return configs
+     */
     public Map<String, String> getConfigs() {
         return configs;
     }
@@ -131,9 +137,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -147,9 +154,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -163,9 +171,10 @@ public class ConfigMapResp {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -211,7 +220,10 @@ public class ConfigMapResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

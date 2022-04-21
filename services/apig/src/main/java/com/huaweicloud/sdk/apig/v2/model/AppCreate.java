@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AppCreate */
+/**
+ * AppCreate
+ */
 public class AppCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AppCreate {
         return this;
     }
 
-    /** APP的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64个字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * APP的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64个字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class AppCreate {
         return this;
     }
 
-    /** APP描述。字符长度不能大于255。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * APP描述。字符长度不能大于255。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -65,9 +69,10 @@ public class AppCreate {
         return this;
     }
 
-    /** APP的key。支持英文，数字，“_”,“-”,且只能以英文或数字开头，8 ~ 64个字符。
-     * 
-     * @return appKey */
+    /**
+     * APP的key。支持英文，数字，“_”,“-”,且只能以英文或数字开头，8 ~ 64个字符。
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -81,9 +86,10 @@ public class AppCreate {
         return this;
     }
 
-    /** 密钥。支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”且只能以英文或数字开头，8 ~ 64个字符。
-     * 
-     * @return appSecret */
+    /**
+     * 密钥。支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”且只能以英文或数字开头，8 ~ 64个字符。
+     * @return appSecret
+     */
     public String getAppSecret() {
         return appSecret;
     }
@@ -122,7 +128,10 @@ public class AppCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProductsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,13 +60,19 @@ public class ListProductsRequest {
 
     private String deviceType;
 
-    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 */
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     */
     public static final class ProductTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
 
         private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -134,16 +142,24 @@ public class ListProductsRequest {
 
     private ProductTypeEnum productType;
 
-    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua */
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     */
     public static final class ProtocolTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
 
         private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -249,9 +265,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -265,9 +282,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -281,9 +301,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -297,9 +318,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品ID
-     * 
-     * @return id */
+    /**
+     * 产品ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -313,9 +335,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品名称
-     * 
-     * @return name */
+    /**
+     * 产品名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -329,9 +352,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 厂商ID
-     * 
-     * @return manufacturerId */
+    /**
+     * 厂商ID
+     * @return manufacturerId
+     */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -345,9 +369,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 厂商名称
-     * 
-     * @return manufacturerName */
+    /**
+     * 厂商名称
+     * @return manufacturerName
+     */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -361,9 +386,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 型号
-     * 
-     * @return model */
+    /**
+     * 型号
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -377,9 +403,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品的设备类型，默认Default
-     * 
-     * @return deviceType */
+    /**
+     * 产品的设备类型，默认Default
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -393,9 +420,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 minimum: 0 maximum: 10
-     * 
-     * @return productType */
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     * minimum: 0
+     * maximum: 10
+     * @return productType
+     */
     public ProductTypeEnum getProductType() {
         return productType;
     }
@@ -409,9 +439,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua minimum: 0 maximum: 10
-     * 
-     * @return protocolType */
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     * minimum: 0
+     * maximum: 10
+     * @return protocolType
+     */
     public ProtocolTypeEnum getProtocolType() {
         return protocolType;
     }
@@ -425,9 +458,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 创建用户
-     * 
-     * @return createdUserName */
+    /**
+     * 创建用户
+     * @return createdUserName
+     */
     public String getCreatedUserName() {
         return createdUserName;
     }
@@ -441,9 +475,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 99999999999999999
-     * 
-     * @return createdDateStart */
+    /**
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return createdDateStart
+     */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -457,9 +494,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 创建时间截止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 99999999999999999
-     * 
-     * @return createdDateEnd */
+    /**
+     * 创建时间截止，格式timestamp(ms)，使用UTC时区
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return createdDateEnd
+     */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -473,9 +513,12 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -489,9 +532,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return appName */
+    /**
+     * 应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -505,9 +549,10 @@ public class ListProductsRequest {
         return this;
     }
 
-    /** 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
-     * 
-     * @return productSerial */
+    /**
+     * 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
+     * @return productSerial
+     */
     public String getProductSerial() {
         return productSerial;
     }
@@ -589,7 +634,10 @@ public class ListProductsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

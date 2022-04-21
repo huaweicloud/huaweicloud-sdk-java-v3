@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Workspaces */
+/**
+ * Workspaces
+ */
 public class Workspaces {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public Long getCreatedAt() {
         return createdAt;
     }
@@ -84,9 +87,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,9 +104,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 企业项目id。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -116,9 +121,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 企业项目名称。
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 企业项目名称。
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -132,9 +138,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return id */
+    /**
+     * 工作空间id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -148,9 +155,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 工作空间名称。
-     * 
-     * @return name */
+    /**
+     * 工作空间名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -164,9 +172,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 创建者。
-     * 
-     * @return owner */
+    /**
+     * 创建者。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -180,9 +189,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -196,9 +206,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -212,9 +223,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 用户id。
-     * 
-     * @return userId */
+    /**
+     * 用户id。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -228,9 +240,10 @@ public class Workspaces {
         return this;
     }
 
-    /** 调用账户的项目Id
-     * 
-     * @return projectId */
+    /**
+     * 调用账户的项目Id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -292,7 +305,10 @@ public class Workspaces {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

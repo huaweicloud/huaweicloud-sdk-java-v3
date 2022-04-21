@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBandwidthsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListBandwidthsRequest {
 
     private String enterpriseProjectId;
 
-    /** 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽 */
+    /**
+     * 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
+     */
     public static final class ShareTypeEnum {
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final ShareTypeEnum PER = new ShareTypeEnum("PER");
 
         private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 取值为上一页数据的最后一条记录的id，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 取值为上一页数据的最后一条记录的id，为空时为查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -125,9 +134,11 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 功能说明：每页返回的个数 取值范围：0~intmax minimum: 0
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回的个数  取值范围：0~intmax
+     * minimum: 0
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -141,10 +152,10 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。
-     * 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -158,9 +169,10 @@ public class ListBandwidthsRequest {
         return this;
     }
 
-    /** 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
-     * 
-     * @return shareType */
+    /**
+     * 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
+     * @return shareType
+     */
     public ShareTypeEnum getShareType() {
         return shareType;
     }
@@ -201,7 +213,10 @@ public class ListBandwidthsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

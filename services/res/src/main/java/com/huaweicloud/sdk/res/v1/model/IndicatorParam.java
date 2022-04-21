@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 自定义指标参数 */
+/**
+ * 自定义指标参数
+ */
 public class IndicatorParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IndicatorParam {
         return this;
     }
 
-    /** Get customizeParameter
-     * 
-     * @return customizeParameter */
+    /**
+     * Get customizeParameter
+     * @return customizeParameter
+     */
     public CustomizeParameter getCustomizeParameter() {
         return customizeParameter;
     }
@@ -58,9 +61,10 @@ public class IndicatorParam {
         return this;
     }
 
-    /** Get customizeFormula
-     * 
-     * @return customizeFormula */
+    /**
+     * Get customizeFormula
+     * @return customizeFormula
+     */
     public CustomizeFormula getCustomizeFormula() {
         return customizeFormula;
     }
@@ -97,7 +101,10 @@ public class IndicatorParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

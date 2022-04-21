@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateBlackWhiteListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         return this;
     }
 
-    /** 编码
-     * 
-     * @return code */
+    /**
+     * 编码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -45,9 +48,10 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         return this;
     }
 
-    /** 结果
-     * 
-     * @return result */
+    /**
+     * 结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -61,9 +65,10 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据
-     * 
-     * @return data */
+    /**
+     * 数据
+     * @return data
+     */
     public Object getData() {
         return data;
     }
@@ -102,7 +107,10 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

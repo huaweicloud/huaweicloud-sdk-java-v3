@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建网络实例的详细信息。 */
+/**
+ * 创建网络实例的详细信息。
+ */
 public class CreateNetworkInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,16 +28,24 @@ public class CreateNetworkInstance {
 
     private String description;
 
-    /** 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。 */
+    /**
+     * 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     */
     public static final class TypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final TypeEnum VPC = new TypeEnum("vpc");
 
-        /** Enum VGW for value: "vgw" */
+        /**
+         * Enum VGW for value: "vgw"
+         */
         public static final TypeEnum VGW = new TypeEnum("vgw");
 
-        /** Enum ER for value: "er" */
+        /**
+         * Enum ER for value: "er"
+         */
         public static final TypeEnum ER = new TypeEnum("er");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +151,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** 网络实例的名字。
-     * 
-     * @return name */
+    /**
+     * 网络实例的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -157,9 +168,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** 网络实例的描述。
-     * 
-     * @return description */
+    /**
+     * 网络实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +185,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
-     * 
-     * @return type */
+    /**
+     * 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -189,9 +202,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** 添加到云连接网络实例的ID，VPC或者VGW的ID。
-     * 
-     * @return instanceId */
+    /**
+     * 添加到云连接网络实例的ID，VPC或者VGW的ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -205,9 +219,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW的账户ID。
-     * 
-     * @return instanceDomainId */
+    /**
+     * VPC或者VGW的账户ID。
+     * @return instanceDomainId
+     */
     public String getInstanceDomainId() {
         return instanceDomainId;
     }
@@ -221,9 +236,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * VPC或者VGW的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -237,9 +253,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW的RegionID。
-     * 
-     * @return regionId */
+    /**
+     * VPC或者VGW的RegionID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -253,9 +270,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** 云连接实例ID。
-     * 
-     * @return cloudConnectionId */
+    /**
+     * 云连接实例ID。
+     * @return cloudConnectionId
+     */
     public String getCloudConnectionId() {
         return cloudConnectionId;
     }
@@ -285,9 +303,10 @@ public class CreateNetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
-     * 
-     * @return cidrs */
+    /**
+     * VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
+     * @return cidrs
+     */
     public List<String> getCidrs() {
         return cidrs;
     }
@@ -339,7 +358,10 @@ public class CreateNetworkInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RateOnPeriodReq */
+/**
+ * RateOnPeriodReq
+ */
 public class RateOnPeriodReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,10 +28,10 @@ public class RateOnPeriodReq {
         return this;
     }
 
-    /** 项目ID。 说明： 获取方法：
-     * 步骤1：调用IAM获取委托Token接口，获取客户Token。步骤2：参见如何将合作伙伴Token置换为客户Token的步骤2，获取项目ID。IAM子用户调用此接口，需要IAM主账号授权，具体请参考创建用户组并授权。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。  说明： 获取方法： 步骤1：调用IAM获取委托Token接口，获取客户Token。步骤2：参见如何将合作伙伴Token置换为客户Token的步骤2，获取项目ID。IAM子用户调用此接口，需要IAM主账号授权，具体请参考创建用户组并授权。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -59,9 +61,10 @@ public class RateOnPeriodReq {
         return this;
     }
 
-    /** 产品信息列表，询价时要询价产品的信息的列表，具体参见表1。
-     * 
-     * @return productInfos */
+    /**
+     * 产品信息列表，询价时要询价产品的信息的列表，具体参见表1。
+     * @return productInfos
+     */
     public List<PeriodProductInfo> getProductInfos() {
         return productInfos;
     }
@@ -98,7 +101,10 @@ public class RateOnPeriodReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

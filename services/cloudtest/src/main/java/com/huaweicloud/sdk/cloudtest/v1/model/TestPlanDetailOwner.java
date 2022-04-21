@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 测试计划处理者信息 */
+/**
+ * 测试计划处理者信息
+ */
 public class TestPlanDetailOwner {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TestPlanDetailOwner {
         return this;
     }
 
-    /** 测试计划处理者id
-     * 
-     * @return id */
+    /**
+     * 测试计划处理者id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class TestPlanDetailOwner {
         return this;
     }
 
-    /** 测试计划处理者名称，优先返回nickName，不存在则返回userName
-     * 
-     * @return name */
+    /**
+     * 测试计划处理者名称，优先返回nickName，不存在则返回userName
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class TestPlanDetailOwner {
         return this;
     }
 
-    /** 测试计划处理者的昵称，当用户未设置昵称时不返回该字段
-     * 
-     * @return nickName */
+    /**
+     * 测试计划处理者的昵称，当用户未设置昵称时不返回该字段
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -81,9 +86,10 @@ public class TestPlanDetailOwner {
         return this;
     }
 
-    /** 测试计划处理者的用户名称
-     * 
-     * @return userName */
+    /**
+     * 测试计划处理者的用户名称
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -123,7 +129,10 @@ public class TestPlanDetailOwner {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuotaInvoiceResult */
+/**
+ * QuotaInvoiceResult
+ */
 public class QuotaInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class QuotaInvoiceResult {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return number */
+    /**
+     * 发票号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -54,9 +57,10 @@ public class QuotaInvoiceResult {
         return this;
     }
 
-    /** 发票代码。
-     * 
-     * @return code */
+    /**
+     * 发票代码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -70,9 +74,10 @@ public class QuotaInvoiceResult {
         return this;
     }
 
-    /** 地址。
-     * 
-     * @return location */
+    /**
+     * 地址。 
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -86,9 +91,10 @@ public class QuotaInvoiceResult {
         return this;
     }
 
-    /** 发票金额。
-     * 
-     * @return amount */
+    /**
+     * 发票金额。 
+     * @return amount
+     */
     public String getAmount() {
         return amount;
     }
@@ -102,9 +108,10 @@ public class QuotaInvoiceResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -147,7 +154,10 @@ public class QuotaInvoiceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

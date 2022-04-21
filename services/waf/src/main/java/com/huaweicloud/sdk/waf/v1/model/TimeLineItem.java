@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TimeLineItem */
+/**
+ * TimeLineItem
+ */
 public class TimeLineItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TimeLineItem {
         return this;
     }
 
-    /** 时间点
-     * 
-     * @return time */
+    /**
+     * 时间点
+     * @return time
+     */
     public Long getTime() {
         return time;
     }
@@ -39,9 +42,10 @@ public class TimeLineItem {
         return this;
     }
 
-    /** 数量
-     * 
-     * @return num */
+    /**
+     * 数量
+     * @return num
+     */
     public Integer getNum() {
         return num;
     }
@@ -77,7 +81,10 @@ public class TimeLineItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

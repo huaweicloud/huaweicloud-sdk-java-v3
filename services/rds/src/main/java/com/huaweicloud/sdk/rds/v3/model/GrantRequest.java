@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** GrantRequest */
+/**
+ * GrantRequest
+ */
 public class GrantRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class GrantRequest {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -58,9 +61,10 @@ public class GrantRequest {
         return this;
     }
 
-    /** 每个元素都是与数据库相关联的帐号。单次请求最多支持50个元素。
-     * 
-     * @return users */
+    /**
+     * 每个元素都是与数据库相关联的帐号。单次请求最多支持50个元素。
+     * @return users
+     */
     public List<UserWithPrivilege> getUsers() {
         return users;
     }
@@ -96,7 +100,10 @@ public class GrantRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

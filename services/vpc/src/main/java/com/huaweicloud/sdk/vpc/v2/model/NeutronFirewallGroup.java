@@ -84,9 +84,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组的ID
-     * 
-     * @return id */
+    /**
+     * 功能说明：网络ACL组的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -100,9 +101,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组名称 取值范围：0-255个字符
-     * 
-     * @return name */
+    /**
+     * 功能说明：网络ACL组名称 取值范围：0-255个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -116,9 +118,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组描述 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：网络ACL组描述 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -132,9 +135,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 网络ACL防火墙是否受管理员控制。
-     * 
-     * @return adminStateUp */
+    /**
+     * 网络ACL防火墙是否受管理员控制。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -148,9 +152,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：出方向网络ACL策略ID
-     * 
-     * @return egressFirewallPolicyId */
+    /**
+     * 功能说明：出方向网络ACL策略ID
+     * @return egressFirewallPolicyId
+     */
     public String getEgressFirewallPolicyId() {
         return egressFirewallPolicyId;
     }
@@ -164,9 +169,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：入方向网络ACL策略ID
-     * 
-     * @return ingressFirewallPolicyId */
+    /**
+     * 功能说明：入方向网络ACL策略ID
+     * @return ingressFirewallPolicyId
+     */
     public String getIngressFirewallPolicyId() {
         return ingressFirewallPolicyId;
     }
@@ -196,9 +202,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 取值范围：网络ACL组绑定的端口列表
-     * 
-     * @return ports */
+    /**
+     * 取值范围：网络ACL组绑定的端口列表
+     * @return ports
+     */
     public List<String> getPorts() {
         return ports;
     }
@@ -212,9 +219,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：是否支持跨租户共享 取值范围：true/false
-     * 
-     * @return _public */
+    /**
+     * 功能说明：是否支持跨租户共享 取值范围：true/false
+     * @return _public
+     */
     public Boolean getPublic() {
         return _public;
     }
@@ -228,9 +236,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组状态
-     * 
-     * @return status */
+    /**
+     * 功能说明：网络ACL组状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -244,9 +253,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组所属项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 功能说明：网络ACL组所属项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -260,9 +270,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：网络ACL组所属项目ID
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：网络ACL组所属项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -276,9 +287,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：资源创建时间，UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：资源创建时间，UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -292,9 +304,10 @@ public class NeutronFirewallGroup {
         return this;
     }
 
-    /** 功能说明：资源更新时间，UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return updatedAt */
+    /**
+     * 功能说明：资源更新时间，UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -364,7 +377,10 @@ public class NeutronFirewallGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 表达式 */
+/**
+ * 表达式
+ */
 public class Expression {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Expression {
         return this;
     }
 
-    /** 公式，最多1024个字符(分析任务单输出场景，配合TransformModel或AggregateModel的output_property使用)
-     * 
-     * @return formula */
+    /**
+     * 公式，最多1024个字符(分析任务单输出场景，配合TransformModel或AggregateModel的output_property使用)
+     * @return formula
+     */
     public String getFormula() {
         return formula;
     }
@@ -63,9 +66,10 @@ public class Expression {
         return this;
     }
 
-    /** 带名称的公式
-     * 
-     * @return formulas */
+    /**
+     * 带名称的公式
+     * @return formulas
+     */
     public List<NamedFormula> getFormulas() {
         return formulas;
     }
@@ -79,9 +83,10 @@ public class Expression {
         return this;
     }
 
-    /** 时间范围，调度时间往前的时间范围，比如1m表示调度时间往前1分钟到调度时间的时间范围，正则：\"1m|5m|15m|1h\"
-     * 
-     * @return timeRange */
+    /**
+     * 时间范围，调度时间往前的时间范围，比如1m表示调度时间往前1分钟到调度时间的时间范围，正则：\"1m|5m|15m|1h\"
+     * @return timeRange
+     */
     public String getTimeRange() {
         return timeRange;
     }
@@ -119,7 +124,10 @@ public class Expression {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

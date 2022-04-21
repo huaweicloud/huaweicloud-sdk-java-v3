@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 流水线阶段执行信息 */
+/**
+ * 流水线阶段执行信息
+ */
 public class Stages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段执行结果
-     * 
-     * @return result */
+    /**
+     * 阶段执行结果
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -64,9 +67,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段执行状态
-     * 
-     * @return status */
+    /**
+     * 阶段执行状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +84,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段名字
-     * 
-     * @return name */
+    /**
+     * 阶段名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +101,10 @@ public class Stages {
         return this;
     }
 
-    /** 任务参数
-     * 
-     * @return parameters */
+    /**
+     * 任务参数
+     * @return parameters
+     */
     public Object getParameters() {
         return parameters;
     }
@@ -112,9 +118,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段顺序
-     * 
-     * @return order */
+    /**
+     * 阶段顺序
+     * @return order
+     */
     public Integer getOrder() {
         return order;
     }
@@ -128,9 +135,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段类型
-     * 
-     * @return dslMethod */
+    /**
+     * 阶段类型
+     * @return dslMethod
+     */
     public String getDslMethod() {
         return dslMethod;
     }
@@ -144,9 +152,10 @@ public class Stages {
         return this;
     }
 
-    /** 阶段显示名称
-     * 
-     * @return displayName */
+    /**
+     * 阶段显示名称
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -190,7 +199,10 @@ public class Stages {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

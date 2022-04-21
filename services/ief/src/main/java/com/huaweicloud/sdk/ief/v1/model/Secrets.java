@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 环境变量引用密钥时使用。使用ValueFrom时，secret与configmap必须二选一。 */
+/**
+ * 环境变量引用密钥时使用。使用ValueFrom时，secret与configmap必须二选一。
+ */
 public class Secrets {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Secrets {
         return this;
     }
 
-    /** 密钥的名称
-     * 
-     * @return name */
+    /**
+     * 密钥的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class Secrets {
         return this;
     }
 
-    /** 密钥的属性名
-     * 
-     * @return key */
+    /**
+     * 密钥的属性名
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -77,7 +81,10 @@ public class Secrets {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

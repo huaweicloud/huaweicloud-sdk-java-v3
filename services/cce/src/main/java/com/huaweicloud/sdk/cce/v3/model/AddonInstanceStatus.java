@@ -13,43 +13,69 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 插件状态信息 */
+/**
+ * 插件状态信息
+ */
 public class AddonInstanceStatus {
 
-    /** 插件实例状态 */
+    /**
+     * 插件实例状态
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum ABNORMAL for value: "abnormal" */
+        /**
+         * Enum ABNORMAL for value: "abnormal"
+         */
         public static final StatusEnum ABNORMAL = new StatusEnum("abnormal");
 
-        /** Enum INSTALLING for value: "installing" */
+        /**
+         * Enum INSTALLING for value: "installing"
+         */
         public static final StatusEnum INSTALLING = new StatusEnum("installing");
 
-        /** Enum INSTALLFAILED for value: "installFailed" */
+        /**
+         * Enum INSTALLFAILED for value: "installFailed"
+         */
         public static final StatusEnum INSTALLFAILED = new StatusEnum("installFailed");
 
-        /** Enum UPGRADING for value: "upgrading" */
+        /**
+         * Enum UPGRADING for value: "upgrading"
+         */
         public static final StatusEnum UPGRADING = new StatusEnum("upgrading");
 
-        /** Enum UPGRADEFAILED for value: "upgradeFailed" */
+        /**
+         * Enum UPGRADEFAILED for value: "upgradeFailed"
+         */
         public static final StatusEnum UPGRADEFAILED = new StatusEnum("upgradeFailed");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum DELETESUCCESS for value: "deleteSuccess" */
+        /**
+         * Enum DELETESUCCESS for value: "deleteSuccess"
+         */
         public static final StatusEnum DELETESUCCESS = new StatusEnum("deleteSuccess");
 
-        /** Enum DELETEFAILED for value: "deleteFailed" */
+        /**
+         * Enum DELETEFAILED for value: "deleteFailed"
+         */
         public static final StatusEnum DELETEFAILED = new StatusEnum("deleteFailed");
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum ROLLBACKING for value: "rollbacking" */
+        /**
+         * Enum ROLLBACKING for value: "rollbacking"
+         */
         public static final StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -153,9 +179,10 @@ public class AddonInstanceStatus {
         return this;
     }
 
-    /** 插件实例状态
-     * 
-     * @return status */
+    /**
+     * 插件实例状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -169,9 +196,10 @@ public class AddonInstanceStatus {
         return this;
     }
 
-    /** 插件安装失败原因
-     * 
-     * @return reason */
+    /**
+     * 插件安装失败原因
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -185,9 +213,10 @@ public class AddonInstanceStatus {
         return this;
     }
 
-    /** 安装错误详情
-     * 
-     * @return message */
+    /**
+     * 安装错误详情
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -217,9 +246,10 @@ public class AddonInstanceStatus {
         return this;
     }
 
-    /** 此插件版本，支持升级的集群版本
-     * 
-     * @return targetVersions */
+    /**
+     * 此插件版本，支持升级的集群版本
+     * @return targetVersions
+     */
     public List<String> getTargetVersions() {
         return targetVersions;
     }
@@ -242,9 +272,10 @@ public class AddonInstanceStatus {
         return this;
     }
 
-    /** Get currentVersion
-     * 
-     * @return currentVersion */
+    /**
+     * Get currentVersion
+     * @return currentVersion
+     */
     public Versions getCurrentVersion() {
         return currentVersion;
     }
@@ -287,7 +318,10 @@ public class AddonInstanceStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

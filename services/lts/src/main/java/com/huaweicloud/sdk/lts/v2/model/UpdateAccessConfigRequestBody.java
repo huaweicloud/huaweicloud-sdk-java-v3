@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改日志接入请求体 */
+/**
+ * 修改日志接入请求体
+ */
 public class UpdateAccessConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateAccessConfigRequestBody {
         return this;
     }
 
-    /** 日志接入ID
-     * 
-     * @return accessConfigId */
+    /**
+     * 日志接入ID
+     * @return accessConfigId
+     */
     public String getAccessConfigId() {
         return accessConfigId;
     }
@@ -61,9 +64,10 @@ public class UpdateAccessConfigRequestBody {
         return this;
     }
 
-    /** Get accessConfigDetail
-     * 
-     * @return accessConfigDetail */
+    /**
+     * Get accessConfigDetail
+     * @return accessConfigDetail
+     */
     public AccessConfigDeatil getAccessConfigDetail() {
         return accessConfigDetail;
     }
@@ -86,9 +90,10 @@ public class UpdateAccessConfigRequestBody {
         return this;
     }
 
-    /** Get hostGroupInfo
-     * 
-     * @return hostGroupInfo */
+    /**
+     * Get hostGroupInfo
+     * @return hostGroupInfo
+     */
     public AccessConfigHostGroupIdList getHostGroupInfo() {
         return hostGroupInfo;
     }
@@ -118,9 +123,10 @@ public class UpdateAccessConfigRequestBody {
         return this;
     }
 
-    /** Get accessConfigTag
-     * 
-     * @return accessConfigTag */
+    /**
+     * Get accessConfigTag
+     * @return accessConfigTag
+     */
     public List<AccessConfigTag> getAccessConfigTag() {
         return accessConfigTag;
     }
@@ -161,7 +167,10 @@ public class UpdateAccessConfigRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ClusterEndpoints */
+/**
+ * ClusterEndpoints
+ */
 public class ClusterEndpoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ClusterEndpoints {
         return this;
     }
 
-    /** 集群中 kube-apiserver 的访问地址
-     * 
-     * @return url */
+    /**
+     * 集群中 kube-apiserver 的访问地址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -39,9 +42,10 @@ public class ClusterEndpoints {
         return this;
     }
 
-    /** 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
-     * 
-     * @return type */
+    /**
+     * 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -77,7 +81,10 @@ public class ClusterEndpoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

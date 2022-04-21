@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MbTasksReportReq */
+/**
+ * MbTasksReportReq
+ */
 public class MbTasksReportReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class MbTasksReportReq {
         return this;
     }
 
-    /** 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。 
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -55,9 +58,10 @@ public class MbTasksReportReq {
         return this;
     }
 
-    /** 任务执行状态。 取值为RUNNING/FINISHED/FAILED。
-     * 
-     * @return status */
+    /**
+     * 任务执行状态。 取值为RUNNING/FINISHED/FAILED。 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -71,9 +75,10 @@ public class MbTasksReportReq {
         return this;
     }
 
-    /** 任务名称。 取值为RESET_TRACKS/MERGE_CHANNELS。
-     * 
-     * @return taskName */
+    /**
+     * 任务名称。 取值为RESET_TRACKS/MERGE_CHANNELS。 
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -87,9 +92,10 @@ public class MbTasksReportReq {
         return this;
     }
 
-    /** 失败任务是否重试。
-     * 
-     * @return retry */
+    /**
+     * 失败任务是否重试。 
+     * @return retry
+     */
     public Boolean getRetry() {
         return retry;
     }
@@ -112,9 +118,10 @@ public class MbTasksReportReq {
         return this;
     }
 
-    /** Get parameter
-     * 
-     * @return parameter */
+    /**
+     * Get parameter
+     * @return parameter
+     */
     public MbTaskParameter getParameter() {
         return parameter;
     }
@@ -157,7 +164,10 @@ public class MbTasksReportReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

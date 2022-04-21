@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** match字段数据结构。 */
+/**
+ * match字段数据结构。
+ */
 public class Match {
 
-    /** 键，表示要匹配的字段。 key不能重复，value为匹配的值。 此字段为固定字典值。 不允许为空字符串。 当前key的参数值仅支持resource_name，此时value的参数值为专属主机名称。 */
+    /**
+     * 键，表示要匹配的字段。  key不能重复，value为匹配的值。  此字段为固定字典值。  不允许为空字符串。  当前key的参数值仅支持resource_name，此时value的参数值为专属主机名称。
+     */
     public static final class KeyEnum {
 
-        /** Enum RESOURCE_NAME for value: "resource_name" */
+        /**
+         * Enum RESOURCE_NAME for value: "resource_name"
+         */
         public static final KeyEnum RESOURCE_NAME = new KeyEnum("resource_name");
 
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
@@ -95,9 +101,10 @@ public class Match {
         return this;
     }
 
-    /** 键，表示要匹配的字段。 key不能重复，value为匹配的值。 此字段为固定字典值。 不允许为空字符串。 当前key的参数值仅支持resource_name，此时value的参数值为专属主机名称。
-     * 
-     * @return key */
+    /**
+     * 键，表示要匹配的字段。  key不能重复，value为匹配的值。  此字段为固定字典值。  不允许为空字符串。  当前key的参数值仅支持resource_name，此时value的参数值为专属主机名称。
+     * @return key
+     */
     public KeyEnum getKey() {
         return key;
     }
@@ -111,9 +118,10 @@ public class Match {
         return this;
     }
 
-    /** 值。 每个值最大长度为255个unicode字符。 不可以为空 。
-     * 
-     * @return value */
+    /**
+     * 值。  每个值最大长度为255个unicode字符。  不可以为空 。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -149,7 +157,10 @@ public class Match {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ChangeInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ChangeInstanceRequest {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return applicationId */
+    /**
+     * 应用ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -50,9 +53,10 @@ public class ChangeInstanceRequest {
         return this;
     }
 
-    /** 组件ID。
-     * 
-     * @return componentId */
+    /**
+     * 组件ID。
+     * @return componentId
+     */
     public String getComponentId() {
         return componentId;
     }
@@ -66,9 +70,10 @@ public class ChangeInstanceRequest {
         return this;
     }
 
-    /** 组件实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 组件实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -91,9 +96,10 @@ public class ChangeInstanceRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public InstanceModify getBody() {
         return body;
     }
@@ -134,7 +140,10 @@ public class ChangeInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建容灾演练请求体 */
+/**
+ * 创建容灾演练请求体
+ */
 public class CreateDisasterRecoveryDrillRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,9 +32,10 @@ public class CreateDisasterRecoveryDrillRequestBody {
         return this;
     }
 
-    /** Get disasterRecoveryDrill
-     * 
-     * @return disasterRecoveryDrill */
+    /**
+     * Get disasterRecoveryDrill
+     * @return disasterRecoveryDrill
+     */
     public CreateDisasterRecoveryDrillRequestParams getDisasterRecoveryDrill() {
         return disasterRecoveryDrill;
     }
@@ -68,7 +71,10 @@ public class CreateDisasterRecoveryDrillRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

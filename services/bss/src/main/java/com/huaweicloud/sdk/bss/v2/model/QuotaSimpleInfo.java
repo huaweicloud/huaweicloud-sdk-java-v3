@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuotaSimpleInfo */
+/**
+ * QuotaSimpleInfo
+ */
 public class QuotaSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class QuotaSimpleInfo {
         return this;
     }
 
-    /** 精英服务商ID。
-     * 
-     * @return id */
+    /**
+     * 精英服务商ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class QuotaSimpleInfo {
         return this;
     }
 
-    /** 分配给精英服务商的代金券额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 分配给精英服务商的代金券额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -77,7 +81,10 @@ public class QuotaSimpleInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

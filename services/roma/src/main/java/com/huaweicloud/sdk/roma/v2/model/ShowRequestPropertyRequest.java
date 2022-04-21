@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRequestPropertyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowRequestPropertyRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ShowRequestPropertyRequest {
         return this;
     }
 
-    /** 服务ID
-     * 
-     * @return serviceId */
+    /**
+     * 服务ID
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -65,9 +69,12 @@ public class ShowRequestPropertyRequest {
         return this;
     }
 
-    /** 命令ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return commandId */
+    /**
+     * 命令ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return commandId
+     */
     public Integer getCommandId() {
         return commandId;
     }
@@ -81,9 +88,12 @@ public class ShowRequestPropertyRequest {
         return this;
     }
 
-    /** 属性/请求属性/响应属性ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return propertyId */
+    /**
+     * 属性/请求属性/响应属性ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return propertyId
+     */
     public Integer getPropertyId() {
         return propertyId;
     }
@@ -124,7 +134,10 @@ public class ShowRequestPropertyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

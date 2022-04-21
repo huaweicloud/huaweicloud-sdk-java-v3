@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BuildStep */
+/**
+ * BuildStep
+ */
 public class BuildStep {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BuildStep {
         return this;
     }
 
-    /** 步骤名称
-     * 
-     * @return name */
+    /**
+     * 步骤名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class BuildStep {
         return this;
     }
 
-    /** 步骤状态,可选值（running运行中，success成功，error失败，未运行为空字符串）
-     * 
-     * @return status */
+    /**
+     * 步骤状态,可选值（running运行中，success成功，error失败，未运行为空字符串）
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -60,9 +64,10 @@ public class BuildStep {
         return this;
     }
 
-    /** 步骤执行时长，单位ms
-     * 
-     * @return buildTime */
+    /**
+     * 步骤执行时长，单位ms
+     * @return buildTime
+     */
     public Integer getBuildTime() {
         return buildTime;
     }
@@ -100,7 +105,10 @@ public class BuildStep {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

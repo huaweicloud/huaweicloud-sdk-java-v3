@@ -25,9 +25,10 @@ public class Match {
         return this;
     }
 
-    /** 键。 key取值范围为：\"resource_name\"，资源名称
-     * 
-     * @return key */
+    /**
+     * 键。 key取值范围为：\"resource_name\"，资源名称
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class Match {
         return this;
     }
 
-    /** 值。 最大长度255个字符。 key为\"resource_name\"时，value为空字符串时精确匹配，为非空字符串时模糊匹配。
-     * 
-     * @return value */
+    /**
+     * 值。 最大长度255个字符。 key为\"resource_name\"时，value为空字符串时精确匹配，为非空字符串时模糊匹配。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class Match {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

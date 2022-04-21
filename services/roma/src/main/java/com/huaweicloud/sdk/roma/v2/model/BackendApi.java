@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** web后端详情 */
+/**
+ * web后端详情
+ */
 public class BackendApi {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,13 +27,19 @@ public class BackendApi {
 
     private String urlDomain;
 
-    /** 请求协议 */
+    /**
+     * 请求协议
+     */
     public static final class ReqProtocolEnum {
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
 
-        /** Enum HTTPS for value: "HTTPS" */
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -106,31 +114,49 @@ public class BackendApi {
 
     private String remark;
 
-    /** 请求方式 */
+    /**
+     * 请求方式
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -236,10 +262,14 @@ public class BackendApi {
 
     private String id;
 
-    /** 后端状态 - 1： 有效 */
+    /**
+     * 后端状态   - 1： 有效
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -333,9 +363,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 后端自定义认证对象的ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证对象的ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -349,10 +380,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 后端服务的地址。 由主机（IP或域名）和端口号组成，总长度不超过255。格式为主机:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443，HTTP默认端口号为80。
-     * 支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、下划线、中划线组成，且只能以英文开头
-     * 
-     * @return urlDomain */
+    /**
+     * 后端服务的地址。  由主机（IP或域名）和端口号组成，总长度不超过255。格式为主机:端口（如：apig.example.com:7443）。如果不写端口，则HTTPS默认端口号为443，HTTP默认端口号为80。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、下划线、中划线组成，且只能以英文开头
+     * @return urlDomain
+     */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -366,9 +397,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 请求协议
-     * 
-     * @return reqProtocol */
+    /**
+     * 请求协议
+     * @return reqProtocol
+     */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -382,9 +414,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 描述。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -398,9 +431,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 请求方式
-     * 
-     * @return reqMethod */
+    /**
+     * 请求方式
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -414,9 +448,10 @@ public class BackendApi {
         return this;
     }
 
-    /** web后端版本，字符长度不超过16
-     * 
-     * @return version */
+    /**
+     * web后端版本，字符长度不超过16
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -430,10 +465,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 支持环境变量，使用环境变量时，每个变量名的长度为3 ~
-     * 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
-     * 
-     * @return reqUri */
+    /**
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -447,9 +482,11 @@ public class BackendApi {
         return this;
     }
 
-    /** ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000 单位：毫秒。 minimum: 1
-     * 
-     * @return timeout */
+    /**
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
+     * minimum: 1
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -463,9 +500,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 是否开启双向认证
-     * 
-     * @return enableClientSsl */
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
     public Boolean getEnableClientSsl() {
         return enableClientSsl;
     }
@@ -479,9 +517,10 @@ public class BackendApi {
         return this;
     }
 
-    /** ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
-     * 
-     * @return retryCount */
+    /**
+     * ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
     public String getRetryCount() {
         return retryCount;
     }
@@ -495,9 +534,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -511,9 +551,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 后端状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * 后端状态   - 1： 有效
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -527,9 +568,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 注册时间
-     * 
-     * @return registerTime */
+    /**
+     * 注册时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -543,9 +585,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -568,9 +611,10 @@ public class BackendApi {
         return this;
     }
 
-    /** Get vpcChannelInfo
-     * 
-     * @return vpcChannelInfo */
+    /**
+     * Get vpcChannelInfo
+     * @return vpcChannelInfo
+     */
     public VpcInfo getVpcChannelInfo() {
         return vpcChannelInfo;
     }
@@ -584,9 +628,10 @@ public class BackendApi {
         return this;
     }
 
-    /** 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
-     * 
-     * @return vpcChannelStatus */
+    /**
+     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
+     * @return vpcChannelStatus
+     */
     public Integer getVpcChannelStatus() {
         return vpcChannelStatus;
     }
@@ -663,7 +708,10 @@ public class BackendApi {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带名称的公式 */
+/**
+ * 带名称的公式
+ */
 public class NamedFormula {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class NamedFormula {
         return this;
     }
 
-    /** 公式名称，不能和输入参数名重复，正则：\"^[A-Za-z][A-Za-z_]{0,31}$\"
-     * 
-     * @return name */
+    /**
+     * 公式名称，不能和输入参数名重复，正则：\"^[A-Za-z][A-Za-z_]{0,31}$\"
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class NamedFormula {
         return this;
     }
 
-    /** 公式，最多1024个字符
-     * 
-     * @return formula */
+    /**
+     * 公式，最多1024个字符
+     * @return formula
+     */
     public String getFormula() {
         return formula;
     }
@@ -77,7 +81,10 @@ public class NamedFormula {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

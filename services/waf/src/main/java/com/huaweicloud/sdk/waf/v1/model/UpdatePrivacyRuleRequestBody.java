@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdatePrivacyRuleRequestBody */
+/**
+ * UpdatePrivacyRuleRequestBody
+ */
 public class UpdatePrivacyRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class UpdatePrivacyRuleRequestBody {
 
     private String url;
 
-    /** 屏蔽字段 */
+    /**
+     * 屏蔽字段
+     */
     public static final class CategoryEnum {
 
-        /** Enum PARAMS for value: "params" */
+        /**
+         * Enum PARAMS for value: "params"
+         */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
 
-        /** Enum COOKIE for value: "cookie" */
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
 
-        /** Enum HEADER for value: "header" */
+        /**
+         * Enum HEADER for value: "header"
+         */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
 
-        /** Enum FORM for value: "form" */
+        /**
+         * Enum FORM for value: "form"
+         */
         public static final CategoryEnum FORM = new CategoryEnum("form");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +129,10 @@ public class UpdatePrivacyRuleRequestBody {
         return this;
     }
 
-    /** 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
-     * 
-     * @return url */
+    /**
+     * 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -133,9 +146,10 @@ public class UpdatePrivacyRuleRequestBody {
         return this;
     }
 
-    /** 屏蔽字段
-     * 
-     * @return category */
+    /**
+     * 屏蔽字段
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -149,9 +163,10 @@ public class UpdatePrivacyRuleRequestBody {
         return this;
     }
 
-    /** 屏蔽字段名
-     * 
-     * @return index */
+    /**
+     * 屏蔽字段名
+     * @return index
+     */
     public String getIndex() {
         return index;
     }
@@ -165,9 +180,10 @@ public class UpdatePrivacyRuleRequestBody {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -208,7 +224,10 @@ public class UpdatePrivacyRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

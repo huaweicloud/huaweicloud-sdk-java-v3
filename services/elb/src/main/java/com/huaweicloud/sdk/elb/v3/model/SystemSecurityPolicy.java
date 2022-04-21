@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SystemSecurityPolicy */
+/**
+ * SystemSecurityPolicy
+ */
 public class SystemSecurityPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SystemSecurityPolicy {
         return this;
     }
 
-    /** 系统安全策略的名称。
-     * 
-     * @return name */
+    /**
+     * 系统安全策略的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +71,10 @@ public class SystemSecurityPolicy {
         return this;
     }
 
-    /** 系统安全策略的TLS协议列表。
-     * 
-     * @return protocols */
+    /**
+     * 系统安全策略的TLS协议列表。
+     * @return protocols
+     */
     public List<String> getProtocols() {
         return protocols;
     }
@@ -100,9 +104,10 @@ public class SystemSecurityPolicy {
         return this;
     }
 
-    /** 系统安全策略的加密套件列表。
-     * 
-     * @return ciphers */
+    /**
+     * 系统安全策略的加密套件列表。
+     * @return ciphers
+     */
     public List<String> getCiphers() {
         return ciphers;
     }
@@ -116,9 +121,10 @@ public class SystemSecurityPolicy {
         return this;
     }
 
-    /** 项目id。
-     * 
-     * @return projectId */
+    /**
+     * 项目id。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -159,7 +165,10 @@ public class SystemSecurityPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateHookResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateHookResponse extends SdkResponse {
         return this;
     }
 
-    /** hook ID。
-     * 
-     * @return id */
+    /**
+     * hook ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -45,9 +48,10 @@ public class CreateHookResponse extends SdkResponse {
         return this;
     }
 
-    /** hook类型。
-     * 
-     * @return type */
+    /**
+     * hook类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -61,9 +65,10 @@ public class CreateHookResponse extends SdkResponse {
         return this;
     }
 
-    /** 回滚URL。
-     * 
-     * @return callbackUrl */
+    /**
+     * 回滚URL。
+     * @return callbackUrl
+     */
     public String getCallbackUrl() {
         return callbackUrl;
     }
@@ -101,7 +106,10 @@ public class CreateHookResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

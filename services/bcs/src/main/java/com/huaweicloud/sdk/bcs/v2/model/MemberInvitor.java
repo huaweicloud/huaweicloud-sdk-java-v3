@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 联盟成员中的邀请方 */
+/**
+ * 联盟成员中的邀请方
+ */
 public class MemberInvitor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class MemberInvitor {
         return this;
     }
 
-    /** 邀请方实例id
-     * 
-     * @return invitorBcsId */
+    /**
+     * 邀请方实例id
+     * @return invitorBcsId
+     */
     public String getInvitorBcsId() {
         return invitorBcsId;
     }
@@ -54,9 +57,10 @@ public class MemberInvitor {
         return this;
     }
 
-    /** 邀请方实例名称
-     * 
-     * @return invitorBcsName */
+    /**
+     * 邀请方实例名称
+     * @return invitorBcsName
+     */
     public String getInvitorBcsName() {
         return invitorBcsName;
     }
@@ -70,9 +74,10 @@ public class MemberInvitor {
         return this;
     }
 
-    /** 邀请方project id
-     * 
-     * @return invitorProjectId */
+    /**
+     * 邀请方project id
+     * @return invitorProjectId
+     */
     public String getInvitorProjectId() {
         return invitorProjectId;
     }
@@ -86,9 +91,10 @@ public class MemberInvitor {
         return this;
     }
 
-    /** 邀请方租户id
-     * 
-     * @return invitorUserId */
+    /**
+     * 邀请方租户id
+     * @return invitorUserId
+     */
     public String getInvitorUserId() {
         return invitorUserId;
     }
@@ -102,9 +108,10 @@ public class MemberInvitor {
         return this;
     }
 
-    /** 邀请方租户名
-     * 
-     * @return invitorUsername */
+    /**
+     * 邀请方租户名
+     * @return invitorUsername
+     */
     public String getInvitorUsername() {
         return invitorUsername;
     }
@@ -147,7 +154,10 @@ public class MemberInvitor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

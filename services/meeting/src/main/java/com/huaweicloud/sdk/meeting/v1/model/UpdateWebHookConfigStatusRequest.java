@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateWebHookConfigStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateWebHookConfigStatusRequest {
         return this;
     }
 
-    /** 订阅配置记录id
-     * 
-     * @return id */
+    /**
+     * 订阅配置记录id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class UpdateWebHookConfigStatusRequest {
         return this;
     }
 
-    /** 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
-     * 
-     * @return status */
+    /**
+     * 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -78,7 +82,10 @@ public class UpdateWebHookConfigStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

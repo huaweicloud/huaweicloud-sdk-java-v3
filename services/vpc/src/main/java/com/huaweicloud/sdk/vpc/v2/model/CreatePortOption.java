@@ -63,9 +63,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线），默认为空
-     * 
-     * @return name */
+    /**
+     * 功能说明：端口名称 取值范围：0~255个字符，支持中文、英文、字母、_(下划线)、-（中划线），默认为空
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +80,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：端口所属网络的ID 约束：必须是存在的网络ID
-     * 
-     * @return networkId */
+    /**
+     * 功能说明：端口所属网络的ID 约束：必须是存在的网络ID
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -111,10 +113,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：端口IP 例如：\"fixed_ips\": [{\"subnet_id\": \"4dc70db6-cb7f-4200-9790-a6a910776bba\", \"ip_address\":
-     * \"192.169.25.79\"}] 约束：ipv4场景下一个端口只支持一个fixed_ip，且不支持更新
-     * 
-     * @return fixedIps */
+    /**
+     * 功能说明：端口IP 例如：\"fixed_ips\": [{\"subnet_id\": \"4dc70db6-cb7f-4200-9790-a6a910776bba\", \"ip_address\": \"192.169.25.79\"}] 约束：ipv4场景下一个端口只支持一个fixed_ip，且不支持更新
+     * @return fixedIps
+     */
     public List<FixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -128,9 +130,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：端口设备所属 取值范围：目前只支持指定\"\"和\"neutron:VIP_PORT\"；neutron:VIP_PORT表示创建的是VIP
-     * 
-     * @return deviceOwner */
+    /**
+     * 功能说明：端口设备所属 取值范围：目前只支持指定\"\"和\"neutron:VIP_PORT\"；neutron:VIP_PORT表示创建的是VIP
+     * @return deviceOwner
+     */
     public String getDeviceOwner() {
         return deviceOwner;
     }
@@ -160,9 +163,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
-     * 
-     * @return securityGroups */
+    /**
+     * 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
+     * @return securityGroups
+     */
     public List<String> getSecurityGroups() {
         return securityGroups;
     }
@@ -176,9 +180,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：管理状态 取值范围：只支持true，默认为true
-     * 
-     * @return adminStateUp */
+    /**
+     * 功能说明：管理状态 取值范围：只支持true，默认为true
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -208,9 +213,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：IP/Mac对列表 约束：IP地址不允许为 “0.0.0.0/0” 如果配置的地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。
-     * 
-     * @return allowedAddressPairs */
+    /**
+     * 功能说明：IP/Mac对列表 约束：IP地址不允许为 “0.0.0.0/0” 如果配置的地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。
+     * @return allowedAddressPairs
+     */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
         return allowedAddressPairs;
     }
@@ -240,9 +246,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：DHCP的扩展Option(扩展属性)
-     * 
-     * @return extraDhcpOpts */
+    /**
+     * 功能说明：DHCP的扩展Option(扩展属性)
+     * @return extraDhcpOpts
+     */
     public List<ExtraDhcpOpt> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -256,9 +263,10 @@ public class CreatePortOption {
         return this;
     }
 
-    /** 功能说明：端口所属项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 功能说明：端口所属项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -317,7 +325,10 @@ public class CreatePortOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AppQuotaCreate */
+/**
+ * AppQuotaCreate
+ */
 public class AppQuotaCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class AppQuotaCreate {
 
     private Integer callLimits;
 
-    /** 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天 */
+    /**
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     */
     public static final class TimeUnitEnum {
 
-        /** Enum SECOND for value: "SECOND" */
+        /**
+         * Enum SECOND for value: "SECOND"
+         */
         public static final TimeUnitEnum SECOND = new TimeUnitEnum("SECOND");
 
-        /** Enum MINUTE for value: "MINUTE" */
+        /**
+         * Enum MINUTE for value: "MINUTE"
+         */
         public static final TimeUnitEnum MINUTE = new TimeUnitEnum("MINUTE");
 
-        /** Enum HOUR for value: "HOUR" */
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
         public static final TimeUnitEnum HOUR = new TimeUnitEnum("HOUR");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final TimeUnitEnum DAY = new TimeUnitEnum("DAY");
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +139,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头
-     * 
-     * @return name */
+    /**
+     * 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -143,9 +156,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 客户端配额的访问次数限制
-     * 
-     * @return callLimits */
+    /**
+     * 客户端配额的访问次数限制
+     * @return callLimits
+     */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -159,9 +173,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
-     * 
-     * @return timeUnit */
+    /**
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * @return timeUnit
+     */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -175,9 +190,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 流控的限定时间值
-     * 
-     * @return timeInterval */
+    /**
+     * 流控的限定时间值
+     * @return timeInterval
+     */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -191,9 +207,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 首次配额重置时间点，不配置默认为首次调用时间计算
-     * 
-     * @return resetTime */
+    /**
+     * 首次配额重置时间点，不配置默认为首次调用时间计算
+     * @return resetTime
+     */
     public String getResetTime() {
         return resetTime;
     }
@@ -207,9 +224,10 @@ public class AppQuotaCreate {
         return this;
     }
 
-    /** 参数说明和描述。 不支持<，>字符
-     * 
-     * @return remark */
+    /**
+     * 参数说明和描述。  不支持<，>字符
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -254,7 +272,10 @@ public class AppQuotaCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

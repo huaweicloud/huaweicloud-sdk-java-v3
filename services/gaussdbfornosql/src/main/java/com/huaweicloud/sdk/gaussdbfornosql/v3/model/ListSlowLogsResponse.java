@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSlowLogsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListSlowLogsResponse extends SdkResponse {
         return this;
     }
 
-    /** 具体信息。
-     * 
-     * @return slowLogList */
+    /**
+     * 具体信息。
+     * @return slowLogList
+     */
     public List<SlowlogResult> getSlowLogList() {
         return slowLogList;
     }
@@ -59,9 +62,10 @@ public class ListSlowLogsResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库版本总记录数。
-     * 
-     * @return totalRecord */
+    /**
+     * 数据库版本总记录数。
+     * @return totalRecord
+     */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -98,7 +102,10 @@ public class ListSlowLogsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

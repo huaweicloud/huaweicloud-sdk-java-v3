@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ConfigList */
+/**
+ * ConfigList
+ */
 public class ConfigList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 操作ID
-     * 
-     * @return id */
+    /**
+     * 操作ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -80,9 +84,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createAt */
+    /**
+     * 创建时间。
+     * @return createAt
+     */
     public Object getCreateAt() {
         return createAt;
     }
@@ -96,9 +101,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -112,9 +118,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return finishedAt */
+    /**
+     * 结束时间。
+     * @return finishedAt
+     */
     public Object getFinishedAt() {
         return finishedAt;
     }
@@ -128,9 +135,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 修改参数配置记录。
-     * 
-     * @return modifyDeleteReset */
+    /**
+     * 修改参数配置记录。
+     * @return modifyDeleteReset
+     */
     public String getModifyDeleteReset() {
         return modifyDeleteReset;
     }
@@ -144,9 +152,10 @@ public class ConfigList {
         return this;
     }
 
-    /** 返回错误信息。
-     * 
-     * @return failedMsg */
+    /**
+     * 返回错误信息。
+     * @return failedMsg
+     */
     public String getFailedMsg() {
         return failedMsg;
     }
@@ -191,7 +200,10 @@ public class ConfigList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

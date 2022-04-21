@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StartPipelineParameters */
+/**
+ * StartPipelineParameters
+ */
 public class StartPipelineParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class StartPipelineParameters {
         return this;
     }
 
-    /** 启动流水线时的构建参数
-     * 
-     * @return buildParams */
+    /**
+     * 启动流水线时的构建参数
+     * @return buildParams
+     */
     public List<StartPipelineBuildParams> getBuildParams() {
         return buildParams;
     }
@@ -74,7 +77,10 @@ public class StartPipelineParameters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

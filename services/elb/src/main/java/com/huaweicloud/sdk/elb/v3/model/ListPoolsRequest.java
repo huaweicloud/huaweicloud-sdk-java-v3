@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPoolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -122,9 +125,12 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -138,9 +144,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -170,9 +177,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的描述信息。 支持多值查询，查询条件格式：*description=xxx&description=xxx*。
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -186,9 +194,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的管理状态。 不支持该字段，请勿使用。
-     * 
-     * @return adminStateUp */
+    /**
+     * 后端云服务器组的管理状态。  不支持该字段，请勿使用。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -218,9 +227,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组关联的健康检查的ID。 支持多值查询，查询条件格式：*healthmonitor_id=xxx&healthmonitor_id=xxx*。
-     * 
-     * @return healthmonitorId */
+    /**
+     * 后端云服务器组关联的健康检查的ID。  支持多值查询，查询条件格式：*healthmonitor_id=xxx&healthmonitor_id=xxx*。
+     * @return healthmonitorId
+     */
     public List<String> getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -250,9 +260,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。
-     * 
-     * @return id */
+    /**
+     * 后端云服务器组的ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -282,9 +293,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组的名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -314,9 +326,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组绑定的负载均衡器ID。 支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 后端云服务器组绑定的负载均衡器ID。  支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。
+     * @return loadbalancerId
+     */
     public List<String> getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -346,9 +359,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的后端协议。取值：TCP、UDP、HTTP、HTTPS和QUIC。 支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
-     * 
-     * @return protocol */
+    /**
+     * 后端云服务器组的后端协议。取值：TCP、UDP、HTTP、HTTPS和QUIC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
+     * @return protocol
+     */
     public List<String> getProtocol() {
         return protocol;
     }
@@ -378,10 +392,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法。 取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。
-     * 支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。
+     * @return lbAlgorithm
+     */
     public List<String> getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -411,10 +425,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
-     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -444,12 +458,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组支持的IP版本。取值： [- 共享型LB下的pool：固定为v4； -
-     * 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [- dualstack: 当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。 - v4:
-     * 当该pool的协议为HTTP/HTTPS时，ip_version为v4。](tag:hcso_dt) 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
-     * 
-     * @return ipVersion */
+    /**
+     * 后端云服务器组支持的IP版本。取值： [- 共享型LB下的pool：固定为v4； - 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [- dualstack: 当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。 - v4: 当该pool的协议为HTTP/HTTPS时，ip_version为v4。](tag:hcso_dt) 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
+     * @return ipVersion
+     */
     public List<String> getIpVersion() {
         return ipVersion;
     }
@@ -479,9 +491,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
-     * 
-     * @return memberAddress */
+    /**
+     * 后端云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * @return memberAddress
+     */
     public List<String> getMemberAddress() {
         return memberAddress;
     }
@@ -511,9 +524,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
-     * 
-     * @return memberDeviceId */
+    /**
+     * 后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * @return memberDeviceId
+     */
     public List<String> getMemberDeviceId() {
         return memberDeviceId;
     }
@@ -527,9 +541,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 是否开启删除保护，false不开启，true开启，不传查询全部。
-     * 
-     * @return memberDeletionProtectionEnable */
+    /**
+     * 是否开启删除保护，false不开启，true开启，不传查询全部。
+     * @return memberDeletionProtectionEnable
+     */
     public Boolean getMemberDeletionProtectionEnable() {
         return memberDeletionProtectionEnable;
     }
@@ -559,9 +574,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 关联的监听器ID，包括通过l7policy关联的。 支持多值查询，查询条件格式：*listener_id=xxx&listener_id=xxx*。
-     * 
-     * @return listenerId */
+    /**
+     * 关联的监听器ID，包括通过l7policy关联的。  支持多值查询，查询条件格式：*listener_id=xxx&listener_id=xxx*。
+     * @return listenerId
+     */
     public List<String> getListenerId() {
         return listenerId;
     }
@@ -591,9 +607,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
-     * 
-     * @return memberInstanceId */
+    /**
+     * 后端云服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
+     * @return memberInstanceId
+     */
     public List<String> getMemberInstanceId() {
         return memberInstanceId;
     }
@@ -680,7 +697,10 @@ public class ListPoolsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

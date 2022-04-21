@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ImportConnectionReq */
+/**
+ * ImportConnectionReq
+ */
 public class ImportConnectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class ImportConnectionReq {
 
     private List<ConnectionParam> params = null;
 
-    /** Gets or Sets sameNamePolicy */
+    /**
+    * Gets or Sets sameNamePolicy
+    */
     public static final class SameNamePolicyEnum {
 
-        /** Enum SKIP for value: "SKIP" */
+        /**
+         * Enum SKIP for value: "SKIP"
+         */
         public static final SameNamePolicyEnum SKIP = new SameNamePolicyEnum("SKIP");
 
-        /** Enum OVERWRITE for value: "OVERWRITE" */
+        /**
+         * Enum OVERWRITE for value: "OVERWRITE"
+         */
         public static final SameNamePolicyEnum OVERWRITE = new SameNamePolicyEnum("OVERWRITE");
 
         private static final Map<String, SameNamePolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +115,10 @@ public class ImportConnectionReq {
         return this;
     }
 
-    /** Get path
-     * 
-     * @return path */
+    /**
+     * Get path
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -139,9 +148,10 @@ public class ImportConnectionReq {
         return this;
     }
 
-    /** 连接参数
-     * 
-     * @return params */
+    /**
+     * 连接参数
+     * @return params
+     */
     public List<ConnectionParam> getParams() {
         return params;
     }
@@ -155,9 +165,10 @@ public class ImportConnectionReq {
         return this;
     }
 
-    /** Get sameNamePolicy
-     * 
-     * @return sameNamePolicy */
+    /**
+     * Get sameNamePolicy
+     * @return sameNamePolicy
+     */
     public SameNamePolicyEnum getSameNamePolicy() {
         return sameNamePolicy;
     }
@@ -196,7 +207,10 @@ public class ImportConnectionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DownloadBlockchainCertRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class DownloadBlockchainCertRequest {
 
     private String orgName;
 
-    /** 下载证书类别 */
+    /**
+     * 下载证书类别
+     */
     public static final class CertTypeEnum {
 
-        /** Enum ADMIN for value: "admin" */
+        /**
+         * Enum ADMIN for value: "admin"
+         */
         public static final CertTypeEnum ADMIN = new CertTypeEnum("admin");
 
-        /** Enum USER for value: "user" */
+        /**
+         * Enum USER for value: "user"
+         */
         public static final CertTypeEnum USER = new CertTypeEnum("user");
 
-        /** Enum CA for value: "ca" */
+        /**
+         * Enum CA for value: "ca"
+         */
         public static final CertTypeEnum CA = new CertTypeEnum("ca");
 
         private static final Map<String, CertTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class DownloadBlockchainCertRequest {
         return this;
     }
 
-    /** blockchainID
-     * 
-     * @return blockchainId */
+    /**
+     * blockchainID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -124,9 +135,10 @@ public class DownloadBlockchainCertRequest {
         return this;
     }
 
-    /** order或者peer组织名称
-     * 
-     * @return orgName */
+    /**
+     * order或者peer组织名称
+     * @return orgName
+     */
     public String getOrgName() {
         return orgName;
     }
@@ -140,9 +152,10 @@ public class DownloadBlockchainCertRequest {
         return this;
     }
 
-    /** 下载证书类别
-     * 
-     * @return certType */
+    /**
+     * 下载证书类别
+     * @return certType
+     */
     public CertTypeEnum getCertType() {
         return certType;
     }
@@ -181,7 +194,10 @@ public class DownloadBlockchainCertRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

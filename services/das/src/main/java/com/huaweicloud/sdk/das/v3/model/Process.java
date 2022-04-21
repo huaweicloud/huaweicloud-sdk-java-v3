@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Process */
+/**
+ * Process
+ */
 public class Process {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class Process {
         return this;
     }
 
-    /** 会话ID
-     * 
-     * @return id */
+    /**
+     * 会话ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class Process {
         return this;
     }
 
-    /** 用户
-     * 
-     * @return user */
+    /**
+     * 用户
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -90,9 +94,10 @@ public class Process {
         return this;
     }
 
-    /** 主机
-     * 
-     * @return host */
+    /**
+     * 主机
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -106,9 +111,10 @@ public class Process {
         return this;
     }
 
-    /** 数据库
-     * 
-     * @return database */
+    /**
+     * 数据库
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -122,9 +128,10 @@ public class Process {
         return this;
     }
 
-    /** 命令
-     * 
-     * @return command */
+    /**
+     * 命令
+     * @return command
+     */
     public String getCommand() {
         return command;
     }
@@ -138,9 +145,10 @@ public class Process {
         return this;
     }
 
-    /** 会话持续时间
-     * 
-     * @return time */
+    /**
+     * 会话持续时间
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -154,9 +162,10 @@ public class Process {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return state */
+    /**
+     * 状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -170,9 +179,10 @@ public class Process {
         return this;
     }
 
-    /** SQL语句
-     * 
-     * @return sql */
+    /**
+     * SQL语句
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -186,9 +196,10 @@ public class Process {
         return this;
     }
 
-    /** 事务持续时间
-     * 
-     * @return trxExecutedTime */
+    /**
+     * 事务持续时间
+     * @return trxExecutedTime
+     */
     public String getTrxExecutedTime() {
         return trxExecutedTime;
     }
@@ -235,7 +246,10 @@ public class Process {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

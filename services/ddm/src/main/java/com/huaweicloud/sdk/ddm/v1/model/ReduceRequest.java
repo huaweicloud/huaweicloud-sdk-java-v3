@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto request Object */
+/**
+ * This is a auto request Object
+ */
 public class ReduceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ReduceRequest {
         return this;
     }
 
-    /** 需要缩容的节点数量，最大值为实例节点数减1。
-     * 
-     * @return nodeNumber */
+    /**
+     * 需要缩容的节点数量，最大值为实例节点数减1。
+     * @return nodeNumber
+     */
     public Integer getNodeNumber() {
         return nodeNumber;
     }
@@ -39,9 +42,10 @@ public class ReduceRequest {
         return this;
     }
 
-    /** 组id，指定当前进行节点扩容的组。当实例的组>1时，必填。
-     * 
-     * @return groupId */
+    /**
+     * 组id，指定当前进行节点扩容的组。当实例的组>1时，必填。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -78,7 +82,10 @@ public class ReduceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListResWorkspacesRequest {
 
     @Override

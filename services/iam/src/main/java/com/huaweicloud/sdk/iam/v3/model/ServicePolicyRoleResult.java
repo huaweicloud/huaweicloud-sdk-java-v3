@@ -81,9 +81,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略所在目录。
-     * 
-     * @return catalog */
+    /**
+     * 自定义策略所在目录。
+     * @return catalog
+     */
     public String getCatalog() {
         return catalog;
     }
@@ -97,9 +98,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略展示名。
-     * 
-     * @return displayName */
+    /**
+     * 自定义策略展示名。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -113,9 +115,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略的描述信息。
-     * 
-     * @return description */
+    /**
+     * 自定义策略的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -138,9 +141,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -163,9 +167,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public ServicePolicy getPolicy() {
         return policy;
     }
@@ -179,9 +184,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略的中文描述信息。
-     * 
-     * @return descriptionCn */
+    /**
+     * 自定义策略的中文描述信息。
+     * @return descriptionCn
+     */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -195,9 +201,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 自定义策略所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -211,10 +218,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > -
-     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * 
-     * @return type */
+    /**
+     * 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -228,9 +235,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略ID。
-     * 
-     * @return id */
+    /**
+     * 自定义策略ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -244,9 +252,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略名。
-     * 
-     * @return name */
+    /**
+     * 自定义策略名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -260,9 +269,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略更新时间。
-     * 
-     * @return updatedTime */
+    /**
+     * 自定义策略更新时间。
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -276,9 +286,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 自定义策略创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -292,9 +303,10 @@ public class ServicePolicyRoleResult {
         return this;
     }
 
-    /** 自定义策略的引用次数。
-     * 
-     * @return references */
+    /**
+     * 自定义策略的引用次数。
+     * @return references
+     */
     public String getReferences() {
         return references;
     }
@@ -365,7 +377,10 @@ public class ServicePolicyRoleResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

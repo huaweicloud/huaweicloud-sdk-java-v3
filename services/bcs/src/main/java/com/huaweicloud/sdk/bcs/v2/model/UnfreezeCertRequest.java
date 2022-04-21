@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UnfreezeCertRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UnfreezeCertRequest {
         return this;
     }
 
-    /** userName
-     * 
-     * @return userName */
+    /**
+     * userName
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -44,9 +47,10 @@ public class UnfreezeCertRequest {
         return this;
     }
 
-    /** blockchainID
-     * 
-     * @return blockchainId */
+    /**
+     * blockchainID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -60,9 +64,10 @@ public class UnfreezeCertRequest {
         return this;
     }
 
-    /** orgName
-     * 
-     * @return orgName */
+    /**
+     * orgName
+     * @return orgName
+     */
     public String getOrgName() {
         return orgName;
     }
@@ -101,7 +106,10 @@ public class UnfreezeCertRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 支持的磁盘IO类型信息。 */
+/**
+ * 支持的磁盘IO类型信息。
+ */
 public class ListEngineIosEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ListEngineIosEntity {
         return this;
     }
 
-    /** 磁盘IO编码。
-     * 
-     * @return ioSpec */
+    /**
+     * 磁盘IO编码。
+     * @return ioSpec
+     */
     public String getIoSpec() {
         return ioSpec;
     }
@@ -52,9 +55,10 @@ public class ListEngineIosEntity {
         return this;
     }
 
-    /** 磁盘类型。
-     * 
-     * @return type */
+    /**
+     * 磁盘类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -84,9 +88,10 @@ public class ListEngineIosEntity {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return availableZones */
+    /**
+     * 可用区。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -116,9 +121,10 @@ public class ListEngineIosEntity {
         return this;
     }
 
-    /** 不可用区。
-     * 
-     * @return unavailableZones */
+    /**
+     * 不可用区。
+     * @return unavailableZones
+     */
     public List<String> getUnavailableZones() {
         return unavailableZones;
     }
@@ -159,7 +165,10 @@ public class ListEngineIosEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

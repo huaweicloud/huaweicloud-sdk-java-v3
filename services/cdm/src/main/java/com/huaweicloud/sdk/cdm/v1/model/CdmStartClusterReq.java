@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CdmStartClusterReq */
+/**
+ * CdmStartClusterReq
+ */
 public class CdmStartClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CdmStartClusterReq {
         return this;
     }
 
-    /** 集群启动操作，定义集群启动标识，为空对象
-     * 
-     * @return start */
+    /**
+     * 集群启动操作，定义集群启动标识，为空对象
+     * @return start
+     */
     public Object getStart() {
         return start;
     }
@@ -55,7 +58,10 @@ public class CdmStartClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

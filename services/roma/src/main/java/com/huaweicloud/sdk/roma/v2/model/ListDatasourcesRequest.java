@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatasourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,114 +30,184 @@ public class ListDatasourcesRequest {
 
     private Integer offset;
 
-    /** 数据源类型 - DWS - MYSQL - KAFKA - API - OBS - SAP - MRSHBASE - MRSHDFS - MRSHIVE - WEBSOCKET - SQLSERVER - ORACLE -
-     * POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ -
-     * FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS */
+    /**
+     * 数据源类型 - DWS - MYSQL - KAFKA - API - OBS - SAP - MRSHBASE - MRSHDFS - MRSHIVE - WEBSOCKET - SQLSERVER - ORACLE - POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ - FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS
+     */
     public static final class DatasourceTypeEnum {
 
-        /** Enum DWS for value: "DWS" */
+        /**
+         * Enum DWS for value: "DWS"
+         */
         public static final DatasourceTypeEnum DWS = new DatasourceTypeEnum("DWS");
 
-        /** Enum MYSQL for value: "MYSQL" */
+        /**
+         * Enum MYSQL for value: "MYSQL"
+         */
         public static final DatasourceTypeEnum MYSQL = new DatasourceTypeEnum("MYSQL");
 
-        /** Enum KAFKA for value: "KAFKA" */
+        /**
+         * Enum KAFKA for value: "KAFKA"
+         */
         public static final DatasourceTypeEnum KAFKA = new DatasourceTypeEnum("KAFKA");
 
-        /** Enum API for value: "API" */
+        /**
+         * Enum API for value: "API"
+         */
         public static final DatasourceTypeEnum API = new DatasourceTypeEnum("API");
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final DatasourceTypeEnum OBS = new DatasourceTypeEnum("OBS");
 
-        /** Enum SAP for value: "SAP" */
+        /**
+         * Enum SAP for value: "SAP"
+         */
         public static final DatasourceTypeEnum SAP = new DatasourceTypeEnum("SAP");
 
-        /** Enum MRSHBASE for value: "MRSHBASE" */
+        /**
+         * Enum MRSHBASE for value: "MRSHBASE"
+         */
         public static final DatasourceTypeEnum MRSHBASE = new DatasourceTypeEnum("MRSHBASE");
 
-        /** Enum MRSHDFS for value: "MRSHDFS" */
+        /**
+         * Enum MRSHDFS for value: "MRSHDFS"
+         */
         public static final DatasourceTypeEnum MRSHDFS = new DatasourceTypeEnum("MRSHDFS");
 
-        /** Enum MRSHIVE for value: "MRSHIVE" */
+        /**
+         * Enum MRSHIVE for value: "MRSHIVE"
+         */
         public static final DatasourceTypeEnum MRSHIVE = new DatasourceTypeEnum("MRSHIVE");
 
-        /** Enum WEBSOCKET for value: "WEBSOCKET" */
+        /**
+         * Enum WEBSOCKET for value: "WEBSOCKET"
+         */
         public static final DatasourceTypeEnum WEBSOCKET = new DatasourceTypeEnum("WEBSOCKET");
 
-        /** Enum SQLSERVER for value: "SQLSERVER" */
+        /**
+         * Enum SQLSERVER for value: "SQLSERVER"
+         */
         public static final DatasourceTypeEnum SQLSERVER = new DatasourceTypeEnum("SQLSERVER");
 
-        /** Enum ORACLE for value: "ORACLE" */
+        /**
+         * Enum ORACLE for value: "ORACLE"
+         */
         public static final DatasourceTypeEnum ORACLE = new DatasourceTypeEnum("ORACLE");
 
-        /** Enum POSTGRESQL for value: "POSTGRESQL" */
+        /**
+         * Enum POSTGRESQL for value: "POSTGRESQL"
+         */
         public static final DatasourceTypeEnum POSTGRESQL = new DatasourceTypeEnum("POSTGRESQL");
 
-        /** Enum REDIS for value: "REDIS" */
+        /**
+         * Enum REDIS for value: "REDIS"
+         */
         public static final DatasourceTypeEnum REDIS = new DatasourceTypeEnum("REDIS");
 
-        /** Enum MONGODB for value: "MONGODB" */
+        /**
+         * Enum MONGODB for value: "MONGODB"
+         */
         public static final DatasourceTypeEnum MONGODB = new DatasourceTypeEnum("MONGODB");
 
-        /** Enum DIS for value: "DIS" */
+        /**
+         * Enum DIS for value: "DIS"
+         */
         public static final DatasourceTypeEnum DIS = new DatasourceTypeEnum("DIS");
 
-        /** Enum HL7 for value: "HL7" */
+        /**
+         * Enum HL7 for value: "HL7"
+         */
         public static final DatasourceTypeEnum HL7 = new DatasourceTypeEnum("HL7");
 
-        /** Enum RABBITMQ for value: "RABBITMQ" */
+        /**
+         * Enum RABBITMQ for value: "RABBITMQ"
+         */
         public static final DatasourceTypeEnum RABBITMQ = new DatasourceTypeEnum("RABBITMQ");
 
-        /** Enum SNMP for value: "SNMP" */
+        /**
+         * Enum SNMP for value: "SNMP"
+         */
         public static final DatasourceTypeEnum SNMP = new DatasourceTypeEnum("SNMP");
 
-        /** Enum IBMMQ for value: "IBMMQ" */
+        /**
+         * Enum IBMMQ for value: "IBMMQ"
+         */
         public static final DatasourceTypeEnum IBMMQ = new DatasourceTypeEnum("IBMMQ");
 
-        /** Enum CUSTOMIZED for value: "CUSTOMIZED" */
+        /**
+         * Enum CUSTOMIZED for value: "CUSTOMIZED"
+         */
         public static final DatasourceTypeEnum CUSTOMIZED = new DatasourceTypeEnum("CUSTOMIZED");
 
-        /** Enum ACTIVEMQ for value: "ACTIVEMQ" */
+        /**
+         * Enum ACTIVEMQ for value: "ACTIVEMQ"
+         */
         public static final DatasourceTypeEnum ACTIVEMQ = new DatasourceTypeEnum("ACTIVEMQ");
 
-        /** Enum ARTEMISMQ for value: "ARTEMISMQ" */
+        /**
+         * Enum ARTEMISMQ for value: "ARTEMISMQ"
+         */
         public static final DatasourceTypeEnum ARTEMISMQ = new DatasourceTypeEnum("ARTEMISMQ");
 
-        /** Enum FTP for value: "FTP" */
+        /**
+         * Enum FTP for value: "FTP"
+         */
         public static final DatasourceTypeEnum FTP = new DatasourceTypeEnum("FTP");
 
-        /** Enum HIVE for value: "HIVE" */
+        /**
+         * Enum HIVE for value: "HIVE"
+         */
         public static final DatasourceTypeEnum HIVE = new DatasourceTypeEnum("HIVE");
 
-        /** Enum HANA for value: "HANA" */
+        /**
+         * Enum HANA for value: "HANA"
+         */
         public static final DatasourceTypeEnum HANA = new DatasourceTypeEnum("HANA");
 
-        /** Enum FIKAFKA for value: "FIKAFKA" */
+        /**
+         * Enum FIKAFKA for value: "FIKAFKA"
+         */
         public static final DatasourceTypeEnum FIKAFKA = new DatasourceTypeEnum("FIKAFKA");
 
-        /** Enum MRSKAFKA for value: "MRSKAFKA" */
+        /**
+         * Enum MRSKAFKA for value: "MRSKAFKA"
+         */
         public static final DatasourceTypeEnum MRSKAFKA = new DatasourceTypeEnum("MRSKAFKA");
 
-        /** Enum FIHDFS for value: "FIHDFS" */
+        /**
+         * Enum FIHDFS for value: "FIHDFS"
+         */
         public static final DatasourceTypeEnum FIHDFS = new DatasourceTypeEnum("FIHDFS");
 
-        /** Enum FIHIVE for value: "FIHIVE" */
+        /**
+         * Enum FIHIVE for value: "FIHIVE"
+         */
         public static final DatasourceTypeEnum FIHIVE = new DatasourceTypeEnum("FIHIVE");
 
-        /** Enum GAUSS200 for value: "GAUSS200" */
+        /**
+         * Enum GAUSS200 for value: "GAUSS200"
+         */
         public static final DatasourceTypeEnum GAUSS200 = new DatasourceTypeEnum("GAUSS200");
 
-        /** Enum GAUSS100 for value: "GAUSS100" */
+        /**
+         * Enum GAUSS100 for value: "GAUSS100"
+         */
         public static final DatasourceTypeEnum GAUSS100 = new DatasourceTypeEnum("GAUSS100");
 
-        /** Enum LDAP for value: "LDAP" */
+        /**
+         * Enum LDAP for value: "LDAP"
+         */
         public static final DatasourceTypeEnum LDAP = new DatasourceTypeEnum("LDAP");
 
-        /** Enum DB2 for value: "DB2" */
+        /**
+         * Enum DB2 for value: "DB2"
+         */
         public static final DatasourceTypeEnum DB2 = new DatasourceTypeEnum("DB2");
 
-        /** Enum TAURUS for value: "TAURUS" */
+        /**
+         * Enum TAURUS for value: "TAURUS"
+         */
         public static final DatasourceTypeEnum TAURUS = new DatasourceTypeEnum("TAURUS");
 
         private static final Map<String, DatasourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -243,13 +315,19 @@ public class ListDatasourcesRequest {
 
     private String sortField;
 
-    /** 查询数据源排序的类型，增序还是降序，可为空 */
+    /**
+     * 查询数据源排序的类型，增序还是降序，可为空
+     */
     public static final class SortTypeEnum {
 
-        /** Enum ASC for value: "ASC" */
+        /**
+         * Enum ASC for value: "ASC"
+         */
         public static final SortTypeEnum ASC = new SortTypeEnum("ASC");
 
-        /** Enum DESC for value: "DESC" */
+        /**
+         * Enum DESC for value: "DESC"
+         */
         public static final SortTypeEnum DESC = new SortTypeEnum("DESC");
 
         private static final Map<String, SortTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -339,9 +417,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -355,9 +434,12 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -371,9 +453,12 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 分页查询，分页的偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 分页查询，分页的偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -387,11 +472,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 数据源类型 - DWS - MYSQL - KAFKA - API - OBS - SAP - MRSHBASE - MRSHDFS - MRSHIVE - WEBSOCKET - SQLSERVER - ORACLE -
-     * POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ -
-     * FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS
-     * 
-     * @return datasourceType */
+    /**
+     * 数据源类型 - DWS - MYSQL - KAFKA - API - OBS - SAP - MRSHBASE - MRSHDFS - MRSHIVE - WEBSOCKET - SQLSERVER - ORACLE - POSTGRESQL - REDIS - MONGODB - DIS - HL7 - RABBITMQ - SNMP - IBMMQ - CUSTOMIZED (自定义类型) - ACTIVEMQ - ARTEMISMQ - FTP - HIVE - HANA - FIKAFKA - MRSKAFKA - FIHDFS - FIHIVE - GAUSS200 - GAUSS100 - LDAP - DB2 - TAURUS
+     * @return datasourceType
+     */
     public DatasourceTypeEnum getDatasourceType() {
         return datasourceType;
     }
@@ -405,9 +489,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 排序字段（CREATED_DATE）
-     * 
-     * @return sortField */
+    /**
+     * 排序字段（CREATED_DATE）
+     * @return sortField
+     */
     public String getSortField() {
         return sortField;
     }
@@ -421,9 +506,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 查询数据源排序的类型，增序还是降序，可为空
-     * 
-     * @return sortType */
+    /**
+     * 查询数据源排序的类型，增序还是降序，可为空
+     * @return sortType
+     */
     public SortTypeEnum getSortType() {
         return sortType;
     }
@@ -437,9 +523,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 数据源名称,支持模糊匹配
-     * 
-     * @return name */
+    /**
+     * 数据源名称,支持模糊匹配
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -453,9 +540,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 集成应用ID
-     * 
-     * @return appId */
+    /**
+     * 集成应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -469,9 +557,10 @@ public class ListDatasourcesRequest {
         return this;
     }
 
-    /** 连接器ID
-     * 
-     * @return customPluginId */
+    /**
+     * 连接器ID
+     * @return customPluginId
+     */
     public String getCustomPluginId() {
         return customPluginId;
     }
@@ -523,7 +612,10 @@ public class ListDatasourcesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

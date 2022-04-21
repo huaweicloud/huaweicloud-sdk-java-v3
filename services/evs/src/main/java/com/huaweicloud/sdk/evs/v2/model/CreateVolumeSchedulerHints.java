@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建云硬盘的调度参数。 */
+/**
+ * 创建云硬盘的调度参数。
+ */
 public class CreateVolumeSchedulerHints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreateVolumeSchedulerHints {
         return this;
     }
 
-    /** 指定专属存储池ID，表示将云硬盘创建在该ID对应的存储池中。
-     * 
-     * @return dedicatedStorageId */
+    /**
+     * 指定专属存储池ID，表示将云硬盘创建在该ID对应的存储池中。
+     * @return dedicatedStorageId
+     */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -55,7 +58,10 @@ public class CreateVolumeSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

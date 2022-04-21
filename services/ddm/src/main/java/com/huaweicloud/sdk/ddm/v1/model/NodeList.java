@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NodeList */
+/**
+ * NodeList
+ */
 public class NodeList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class NodeList {
         return this;
     }
 
-    /** 端口。
-     * 
-     * @return port */
+    /**
+     * 端口。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -49,9 +52,10 @@ public class NodeList {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return status */
+    /**
+     * 节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -65,9 +69,10 @@ public class NodeList {
         return this;
     }
 
-    /** 节点id。
-     * 
-     * @return nodeId */
+    /**
+     * 节点id。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -81,9 +86,10 @@ public class NodeList {
         return this;
     }
 
-    /** ip
-     * 
-     * @return ip */
+    /**
+     * ip
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -122,7 +128,10 @@ public class NodeList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

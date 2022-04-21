@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepositoryBasicInfo */
+/**
+ * RepositoryBasicInfo
+ */
 public class RepositoryBasicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库uuid
-     * 
-     * @return uuid */
+    /**
+     * 仓库uuid
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -59,9 +62,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库id
-     * 
-     * @return id */
+    /**
+     * 仓库id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,9 +79,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return name */
+    /**
+     * 仓库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +96,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库git的https下载地址
-     * 
-     * @return httpsUrl */
+    /**
+     * 仓库git的https下载地址
+     * @return httpsUrl
+     */
     public String getHttpsUrl() {
         return httpsUrl;
     }
@@ -107,9 +113,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库git的ssh下载地址
-     * 
-     * @return sshUrl */
+    /**
+     * 仓库git的ssh下载地址
+     * @return sshUrl
+     */
     public String getSshUrl() {
         return sshUrl;
     }
@@ -123,9 +130,10 @@ public class RepositoryBasicInfo {
         return this;
     }
 
-    /** 仓库codehub内容浏览页面地址
-     * 
-     * @return webUrl */
+    /**
+     * 仓库codehub内容浏览页面地址
+     * @return webUrl
+     */
     public String getWebUrl() {
         return webUrl;
     }
@@ -169,7 +177,10 @@ public class RepositoryBasicInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

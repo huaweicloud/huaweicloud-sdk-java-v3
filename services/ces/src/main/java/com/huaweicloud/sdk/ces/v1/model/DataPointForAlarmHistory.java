@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 计算出该条告警历史的资源监控数据上报时间和监控数值。 */
+/**
+ * 计算出该条告警历史的资源监控数据上报时间和监控数值。
+ */
 public class DataPointForAlarmHistory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DataPointForAlarmHistory {
         return this;
     }
 
-    /** 计算出该条告警历史的资源监控数据上报时间，UNIX时间戳，单位毫秒，如：1603131028000。
-     * 
-     * @return time */
+    /**
+     * 计算出该条告警历史的资源监控数据上报时间，UNIX时间戳，单位毫秒，如：1603131028000。
+     * @return time
+     */
     public Long getTime() {
         return time;
     }
@@ -39,9 +42,10 @@ public class DataPointForAlarmHistory {
         return this;
     }
 
-    /** 计算出该条告警历史的资源监控数据在该时间点的监控数值，如：7.019。
-     * 
-     * @return value */
+    /**
+     * 计算出该条告警历史的资源监控数据在该时间点的监控数值，如：7.019。
+     * @return value
+     */
     public Double getValue() {
         return value;
     }
@@ -78,7 +82,10 @@ public class DataPointForAlarmHistory {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

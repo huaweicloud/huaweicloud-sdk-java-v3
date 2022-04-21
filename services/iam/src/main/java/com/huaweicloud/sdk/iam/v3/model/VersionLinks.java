@@ -25,9 +25,10 @@ public class VersionLinks {
         return this;
     }
 
-    /** 链接类型。self：自助链接包含了版本链接的资源。bookmark：书签链接提供了一个永久资源的永久链接。alternate：备用链接包含了资源的替换表示形式。
-     * 
-     * @return rel */
+    /**
+     * 链接类型。self：自助链接包含了版本链接的资源。bookmark：书签链接提供了一个永久资源的永久链接。alternate：备用链接包含了资源的替换表示形式。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -41,9 +42,10 @@ public class VersionLinks {
         return this;
     }
 
-    /** 资源链接地址。
-     * 
-     * @return href */
+    /**
+     * 资源链接地址。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -79,7 +81,10 @@ public class VersionLinks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

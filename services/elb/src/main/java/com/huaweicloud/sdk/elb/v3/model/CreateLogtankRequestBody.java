@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建云日志请求体 */
+/**
+ * 创建云日志请求体
+ */
 public class CreateLogtankRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateLogtankRequestBody {
         return this;
     }
 
-    /** Get logtank
-     * 
-     * @return logtank */
+    /**
+     * Get logtank
+     * @return logtank
+     */
     public CreateLogtankOption getLogtank() {
         return logtank;
     }
@@ -65,7 +68,10 @@ public class CreateLogtankRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

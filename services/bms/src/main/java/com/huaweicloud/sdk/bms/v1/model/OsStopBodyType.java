@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 数据结构说明 */
+/**
+ * 数据结构说明
+ */
 public class OsStopBodyType {
 
-    /** 关机类型：SOFT：普通关机（默认）。HARD：强制关机。 */
+    /**
+     * 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+     */
     public static final class TypeEnum {
 
-        /** Enum SOFT for value: "SOFT" */
+        /**
+         * Enum SOFT for value: "SOFT"
+         */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
 
-        /** Enum HARD for value: "HARD" */
+        /**
+         * Enum HARD for value: "HARD"
+         */
         public static final TypeEnum HARD = new TypeEnum("HARD");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class OsStopBodyType {
         return this;
     }
 
-    /** 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
-     * 
-     * @return type */
+    /**
+     * 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -134,9 +143,10 @@ public class OsStopBodyType {
         return this;
     }
 
-    /** 裸金属服务器ID列表，详情请参见表3 servers字段数据结构说明。
-     * 
-     * @return servers */
+    /**
+     * 裸金属服务器ID列表，详情请参见表3 servers字段数据结构说明。
+     * @return servers
+     */
     public List<ServersList> getServers() {
         return servers;
     }
@@ -172,7 +182,10 @@ public class OsStopBodyType {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

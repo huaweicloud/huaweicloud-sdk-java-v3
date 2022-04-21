@@ -88,9 +88,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 文字块识别结果。
-     * 
-     * @return words */
+    /**
+     * 文字块识别结果。 
+     * @return words
+     */
     public String getWords() {
         return words;
     }
@@ -104,9 +105,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -136,9 +138,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 文字块的区域位置信息，列表形式，包含文字区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return location */
+    /**
+     * 文字块的区域位置信息，列表形式，包含文字区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return location
+     */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -152,10 +155,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 提取出的结构化JSON结果，该字典内的key值与入参列表extract_type的值一致，目前仅支持联系人信息提取，亦即key值为\"contact_info\"的字段。
-     * 若入参extract_type为空列表或该字段缺失时，不进行提取，此字段为空。
-     * 
-     * @return extractedData */
+    /**
+     * 提取出的结构化JSON结果，该字典内的key值与入参列表extract_type的值一致，目前仅支持联系人信息提取，亦即key值为\"contact_info\"的字段。 若入参extract_type为空列表或该字段缺失时，不进行提取，此字段为空。 
+     * @return extractedData
+     */
     public Object getExtractedData() {
         return extractedData;
     }
@@ -169,9 +172,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 该字段表示提取的联系人信息，包括：姓名、联系电话、省市区以及详细地址。 若入参extract_type列表中无该字段，则此字段不存在。
-     * 
-     * @return contactInfo */
+    /**
+     * 该字段表示提取的联系人信息，包括：姓名、联系电话、省市区以及详细地址。 若入参extract_type列表中无该字段，则此字段不存在。 
+     * @return contactInfo
+     */
     public Object getContactInfo() {
         return contactInfo;
     }
@@ -185,9 +189,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 该字段表示返回图片宽高信息。 如入参extract_type列表中无该字段，则此字段不存在。
-     * 
-     * @return imageSize */
+    /**
+     * 该字段表示返回图片宽高信息。 如入参extract_type列表中无该字段，则此字段不存在。 
+     * @return imageSize
+     */
     public Object getImageSize() {
         return imageSize;
     }
@@ -201,9 +206,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入image_size时的返回，为图像高度。
-     * 
-     * @return height */
+    /**
+     * 传入image_size时的返回，为图像高度。 
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -217,9 +223,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入image_size时的返回，为图像宽度。
-     * 
-     * @return width */
+    /**
+     * 传入image_size时的返回，为图像宽度。 
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -233,9 +240,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，为姓名。
-     * 
-     * @return name */
+    /**
+     * 传入contact_info时的返回，为姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -249,9 +257,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，联系电话。
-     * 
-     * @return phone */
+    /**
+     * 传入contact_info时的返回，联系电话。 
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -265,9 +274,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，省。
-     * 
-     * @return province */
+    /**
+     * 传入contact_info时的返回，省。 
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -281,9 +291,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，市。
-     * 
-     * @return city */
+    /**
+     * 传入contact_info时的返回，市。 
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -297,9 +308,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，县区。
-     * 
-     * @return district */
+    /**
+     * 传入contact_info时的返回，县区。 
+     * @return district
+     */
     public String getDistrict() {
         return district;
     }
@@ -313,9 +325,10 @@ public class WebImageWordsBlockList {
         return this;
     }
 
-    /** 传入contact_info时的返回，详细地址（不含省市区）。
-     * 
-     * @return detailAddress */
+    /**
+     * 传入contact_info时的返回，详细地址（不含省市区）。 
+     * @return detailAddress
+     */
     public String getDetailAddress() {
         return detailAddress;
     }
@@ -389,7 +402,10 @@ public class WebImageWordsBlockList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

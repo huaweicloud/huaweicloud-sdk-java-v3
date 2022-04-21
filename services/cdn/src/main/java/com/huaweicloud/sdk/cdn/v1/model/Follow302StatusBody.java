@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Follow302StatusBody */
+/**
+ * Follow302StatusBody
+ */
 public class Follow302StatusBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class Follow302StatusBody {
 
     private String domainId;
 
-    /** follow302状态（\"off\"/\"on\"） */
+    /**
+     * follow302状态（\"off\"/\"on\"）
+     */
     public static final class FollowStatusEnum {
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final FollowStatusEnum OFF = new FollowStatusEnum("off");
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final FollowStatusEnum ON = new FollowStatusEnum("on");
 
         private static final Map<String, FollowStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class Follow302StatusBody {
         return this;
     }
 
-    /** 加速域名id。获取方法请参见查询加速域名。
-     * 
-     * @return domainId */
+    /**
+     * 加速域名id。获取方法请参见查询加速域名。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -115,9 +124,10 @@ public class Follow302StatusBody {
         return this;
     }
 
-    /** follow302状态（\"off\"/\"on\"）
-     * 
-     * @return followStatus */
+    /**
+     * follow302状态（\"off\"/\"on\"）
+     * @return followStatus
+     */
     public FollowStatusEnum getFollowStatus() {
         return followStatus;
     }
@@ -154,7 +164,10 @@ public class Follow302StatusBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

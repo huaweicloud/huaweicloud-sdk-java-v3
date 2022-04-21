@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AttachEipRequestBody */
+/**
+ * AttachEipRequestBody
+ */
 public class AttachEipRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AttachEipRequestBody {
         return this;
     }
 
-    /** 公网IP的ID。
-     * 
-     * @return publicIpId */
+    /**
+     * 公网IP的ID。
+     * @return publicIpId
+     */
     public String getPublicIpId() {
         return publicIpId;
     }
@@ -39,9 +42,10 @@ public class AttachEipRequestBody {
         return this;
     }
 
-    /** 公网IP。
-     * 
-     * @return publicIp */
+    /**
+     * 公网IP。
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -78,7 +82,10 @@ public class AttachEipRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

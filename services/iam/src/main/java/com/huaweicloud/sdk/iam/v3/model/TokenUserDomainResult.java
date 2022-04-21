@@ -25,9 +25,10 @@ public class TokenUserDomainResult {
         return this;
     }
 
-    /** IAM用户所属账号名称。
-     * 
-     * @return name */
+    /**
+     * IAM用户所属账号名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -41,9 +42,10 @@ public class TokenUserDomainResult {
         return this;
     }
 
-    /** IAM用户所属账号ID。
-     * 
-     * @return id */
+    /**
+     * IAM用户所属账号ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,7 +82,10 @@ public class TokenUserDomainResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

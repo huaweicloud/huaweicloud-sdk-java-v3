@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 每种状态任务的数量信息 */
+/**
+ * 每种状态任务的数量信息
+ */
 public class TaskStatisticDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class TaskStatisticDetails {
         return this;
     }
 
-    /** 运行任务数量 minimum: 0 maximum: 999999999999
-     * 
-     * @return runningTasksCount */
+    /**
+     * 运行任务数量
+     * minimum: 0
+     * maximum: 999999999999
+     * @return runningTasksCount
+     */
     public Integer getRunningTasksCount() {
         return runningTasksCount;
     }
@@ -49,9 +54,12 @@ public class TaskStatisticDetails {
         return this;
     }
 
-    /** 异常任务数量 minimum: 0 maximum: 999999999999
-     * 
-     * @return abnormalTasksCount */
+    /**
+     * 异常任务数量
+     * minimum: 0
+     * maximum: 999999999999
+     * @return abnormalTasksCount
+     */
     public Integer getAbnormalTasksCount() {
         return abnormalTasksCount;
     }
@@ -65,9 +73,12 @@ public class TaskStatisticDetails {
         return this;
     }
 
-    /** 终止任务数量 minimum: 0 maximum: 999999999999
-     * 
-     * @return terminatedTasksCount */
+    /**
+     * 终止任务数量
+     * minimum: 0
+     * maximum: 999999999999
+     * @return terminatedTasksCount
+     */
     public Integer getTerminatedTasksCount() {
         return terminatedTasksCount;
     }
@@ -81,9 +92,12 @@ public class TaskStatisticDetails {
         return this;
     }
 
-    /** 成功任务数量 minimum: 0 maximum: 999999999999
-     * 
-     * @return completedTasksCount */
+    /**
+     * 成功任务数量
+     * minimum: 0
+     * maximum: 999999999999
+     * @return completedTasksCount
+     */
     public Integer getCompletedTasksCount() {
         return completedTasksCount;
     }
@@ -124,7 +138,10 @@ public class TaskStatisticDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

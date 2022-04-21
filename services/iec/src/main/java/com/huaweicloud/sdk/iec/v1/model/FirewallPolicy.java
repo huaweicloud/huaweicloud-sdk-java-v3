@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 网络ACL策略。 */
+/**
+ * 网络ACL策略。
+ */
 public class FirewallPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class FirewallPolicy {
         return this;
     }
 
-    /** 网络ACL策略ID。
-     * 
-     * @return id */
+    /**
+     * 网络ACL策略ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,9 +60,10 @@ public class FirewallPolicy {
         return this;
     }
 
-    /** 网络ACL策略名称。
-     * 
-     * @return name */
+    /**
+     * 网络ACL策略名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -89,9 +93,10 @@ public class FirewallPolicy {
         return this;
     }
 
-    /** 网络ACL规则列表对象。
-     * 
-     * @return firewallRules */
+    /**
+     * 网络ACL规则列表对象。
+     * @return firewallRules
+     */
     public List<FirewallRule> getFirewallRules() {
         return firewallRules;
     }
@@ -105,9 +110,10 @@ public class FirewallPolicy {
         return this;
     }
 
-    /** ACL规则ID，表示在此ACL规则之后添加ACL规则
-     * 
-     * @return insertAfter */
+    /**
+     * ACL规则ID，表示在此ACL规则之后添加ACL规则
+     * @return insertAfter
+     */
     public String getInsertAfter() {
         return insertAfter;
     }
@@ -121,9 +127,10 @@ public class FirewallPolicy {
         return this;
     }
 
-    /** ACL规则ID，表示在此ACL规则之前添加ACL规则
-     * 
-     * @return insertBefore */
+    /**
+     * ACL规则ID，表示在此ACL规则之前添加ACL规则
+     * @return insertBefore
+     */
     public String getInsertBefore() {
         return insertBefore;
     }
@@ -165,7 +172,10 @@ public class FirewallPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

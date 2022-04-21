@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建保护组请求体结构 */
+/**
+ * 创建保护组请求体结构
+ */
 public class CreateProtectionGroupRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,10 +45,14 @@ public class CreateProtectionGroupRequestParams {
 
     private String sourceVpcId;
 
-    /** 部署模式。默认值为“migration”，migration表示VPC内迁移。 */
+    /**
+     * 部署模式。默认值为“migration”，migration表示VPC内迁移。
+     */
     public static final class DrTypeEnum {
 
-        /** Enum MIGRATION for value: "migration" */
+        /**
+         * Enum MIGRATION for value: "migration"
+         */
         public static final DrTypeEnum MIGRATION = new DrTypeEnum("migration");
 
         private static final Map<String, DrTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -120,9 +126,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 指定保护组的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
-     * 
-     * @return name */
+    /**
+     * 指定保护组的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -136,9 +143,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 指定保护组的描述，最大支持长度为64个字节。不能包含左尖括号（<）或右尖括号（>）。
-     * 
-     * @return description */
+    /**
+     * 指定保护组的描述，最大支持长度为64个字节。不能包含左尖括号（<）或右尖括号（>）。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -152,9 +160,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 指定保护组的生产站点可用区名称。
-     * 
-     * @return sourceAvailabilityZone */
+    /**
+     * 指定保护组的生产站点可用区名称。
+     * @return sourceAvailabilityZone
+     */
     public String getSourceAvailabilityZone() {
         return sourceAvailabilityZone;
     }
@@ -168,9 +177,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 指定保护组的容灾站点可用区名称。
-     * 
-     * @return targetAvailabilityZone */
+    /**
+     * 指定保护组的容灾站点可用区名称。
+     * @return targetAvailabilityZone
+     */
     public String getTargetAvailabilityZone() {
         return targetAvailabilityZone;
     }
@@ -184,9 +194,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 指定双活域的ID。
-     * 
-     * @return domainId */
+    /**
+     * 指定双活域的ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -200,9 +211,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 生产站点虚拟私有云ID。
-     * 
-     * @return sourceVpcId */
+    /**
+     * 生产站点虚拟私有云ID。
+     * @return sourceVpcId
+     */
     public String getSourceVpcId() {
         return sourceVpcId;
     }
@@ -216,9 +228,10 @@ public class CreateProtectionGroupRequestParams {
         return this;
     }
 
-    /** 部署模式。默认值为“migration”，migration表示VPC内迁移。
-     * 
-     * @return drType */
+    /**
+     * 部署模式。默认值为“migration”，migration表示VPC内迁移。
+     * @return drType
+     */
     public DrTypeEnum getDrType() {
         return drType;
     }
@@ -266,7 +279,10 @@ public class CreateProtectionGroupRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

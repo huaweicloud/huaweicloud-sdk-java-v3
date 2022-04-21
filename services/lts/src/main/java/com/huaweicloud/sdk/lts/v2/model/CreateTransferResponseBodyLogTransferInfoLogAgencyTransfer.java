@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 委托转储信息。若转储为委托转储，则会返回该参数 */
+/**
+ * 委托转储信息。若转储为委托转储，则会返回该参数
+ */
 public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 委托方账号ID
-     * 
-     * @return agencyDomainId */
+    /**
+     * 委托方账号ID
+     * @return agencyDomainId
+     */
     public String getAgencyDomainId() {
         return agencyDomainId;
     }
@@ -59,9 +62,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 委托方账号名称
-     * 
-     * @return agencyDomainName */
+    /**
+     * 委托方账号名称
+     * @return agencyDomainName
+     */
     public String getAgencyDomainName() {
         return agencyDomainName;
     }
@@ -75,9 +79,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 委托方配置的委托名称
-     * 
-     * @return agencyName */
+    /**
+     * 委托方配置的委托名称
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -91,9 +96,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 委托方项目ID
-     * 
-     * @return agencyProjectId */
+    /**
+     * 委托方项目ID
+     * @return agencyProjectId
+     */
     public String getAgencyProjectId() {
         return agencyProjectId;
     }
@@ -107,9 +113,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 被委托方账号ID，实际配置转储的账号ID
-     * 
-     * @return beAgencyDomainId */
+    /**
+     * 被委托方账号ID，实际配置转储的账号ID
+     * @return beAgencyDomainId
+     */
     public String getBeAgencyDomainId() {
         return beAgencyDomainId;
     }
@@ -123,9 +130,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return this;
     }
 
-    /** 被委托方项目ID，实际配置转储的账号的项目ID
-     * 
-     * @return beAgencyProjectId */
+    /**
+     * 被委托方项目ID，实际配置转储的账号的项目ID
+     * @return beAgencyProjectId
+     */
     public String getBeAgencyProjectId() {
         return beAgencyProjectId;
     }
@@ -177,7 +185,10 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

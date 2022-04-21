@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备属性 */
+/**
+ * 终端设备属性
+ */
 public class EdgemgrDevicesPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class EdgemgrDevicesPara {
         return this;
     }
 
-    /** 终端设备描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 终端设备描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -58,9 +61,10 @@ public class EdgemgrDevicesPara {
         return this;
     }
 
-    /** Get attributes
-     * 
-     * @return attributes */
+    /**
+     * Get attributes
+     * @return attributes
+     */
     public Map<String, ValueInAttributes> getAttributes() {
         return attributes;
     }
@@ -97,7 +101,10 @@ public class EdgemgrDevicesPara {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class ResetPasswordRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ResetPasswordRequestBody {
         return this;
     }
 
-    /** DWS集群管理员新密码
-     * 
-     * @return newPassword */
+    /**
+     * GaussDB(DWS) 集群管理员新密码。 新密码复杂度要求如下：  - 密码字符长度为8~32位。 - 不能与用户名或倒序的用户名相同。 - 至少包含以下4种类型的3种：    - 小写字母   - 大写字母   - 数字   - 特殊字符（~!?,.:;-_'\"(){}[]/<>@#%^&*+|\\=）。 - 不能与历史密码相同。 - 不能为弱密码。
+     * @return newPassword
+     */
     public String getNewPassword() {
         return newPassword;
     }
@@ -55,7 +58,10 @@ public class ResetPasswordRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

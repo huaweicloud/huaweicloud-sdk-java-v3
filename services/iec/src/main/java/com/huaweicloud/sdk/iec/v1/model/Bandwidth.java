@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 带宽对象 */
+/**
+ * 带宽对象
+ */
 public class Bandwidth {
 
-    /** 带宽类型。 取值范围： share：共享类型 */
+    /**
+     * 带宽类型。 取值范围： share：共享类型
+     */
     public static final class BandwidthTypeEnum {
 
-        /** Enum SHARE for value: "share" */
+        /**
+         * Enum SHARE for value: "share"
+         */
         public static final BandwidthTypeEnum SHARE = new BandwidthTypeEnum("share");
 
         private static final Map<String, BandwidthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -88,10 +94,14 @@ public class Bandwidth {
 
     private BandwidthTypeEnum bandwidthType;
 
-    /** 计费模式，当前只支持峰值95计费。 取值范围： - 95peak_plus：峰值95计费 */
+    /**
+     * 计费模式，当前只支持峰值95计费。  取值范围：  - 95peak_plus：峰值95计费
+     */
     public static final class ChargeModeEnum {
 
-        /** Enum _95PEAK_PLUS for value: "95peak_plus" */
+        /**
+         * Enum _95PEAK_PLUS for value: "95peak_plus"
+         */
         public static final ChargeModeEnum _95PEAK_PLUS = new ChargeModeEnum("95peak_plus");
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -185,10 +195,14 @@ public class Bandwidth {
 
     private List<PublicipInfo> publicipInfo = null;
 
-    /** 共享带宽类型，标识是否是共享带宽。 取值范围： - WHOLE：共享带宽 */
+    /**
+    * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
+    */
     public static final class ShareTypeEnum {
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
 
         private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -272,13 +286,19 @@ public class Bandwidth {
 
     private Integer size;
 
-    /** 带宽的状态。 取值范围： - FREEZED：冻结 - NORMAL：正常 */
+    /**
+     * 带宽的状态。  取值范围：  - FREEZED：冻结  - NORMAL：正常
+     */
     public static final class StatusEnum {
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final StatusEnum FREEZED = new StatusEnum("FREEZED");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -363,9 +383,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 带宽类型。 取值范围： share：共享类型
-     * 
-     * @return bandwidthType */
+    /**
+     * 带宽类型。 取值范围： share：共享类型
+     * @return bandwidthType
+     */
     public BandwidthTypeEnum getBandwidthType() {
         return bandwidthType;
     }
@@ -379,9 +400,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 计费模式，当前只支持峰值95计费。 取值范围： - 95peak_plus：峰值95计费
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式，当前只支持峰值95计费。  取值范围：  - 95peak_plus：峰值95计费
+     * @return chargeMode
+     */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -395,9 +417,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -411,9 +434,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 带宽ID。
-     * 
-     * @return id */
+    /**
+     * 带宽ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -427,9 +451,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 带宽名称。
-     * 
-     * @return name */
+    /**
+     * 带宽名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -452,9 +477,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** Get operator
-     * 
-     * @return operator */
+    /**
+     * Get operator
+     * @return operator
+     */
     public Operator getOperator() {
         return operator;
     }
@@ -484,9 +510,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 弹性公网IP信息。
-     * 
-     * @return publicipInfo */
+    /**
+     * 弹性公网IP信息。
+     * @return publicipInfo
+     */
     public List<PublicipInfo> getPublicipInfo() {
         return publicipInfo;
     }
@@ -500,9 +527,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 共享带宽类型，标识是否是共享带宽。 取值范围： - WHOLE：共享带宽
-     * 
-     * @return shareType */
+    /**
+     * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
+     * @return shareType
+     */
     public ShareTypeEnum getShareType() {
         return shareType;
     }
@@ -516,9 +544,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 边缘站点ID。
-     * 
-     * @return siteId */
+    /**
+     * 边缘站点ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -532,9 +561,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 站点信息。
-     * 
-     * @return siteInfo */
+    /**
+     * 站点信息。
+     * @return siteInfo
+     */
     public String getSiteInfo() {
         return siteInfo;
     }
@@ -548,9 +578,12 @@ public class Bandwidth {
         return this;
     }
 
-    /** 带宽大小。 minimum: 300 maximum: 2000
-     * 
-     * @return size */
+    /**
+     * 带宽大小。
+     * minimum: 300
+     * maximum: 2000
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -564,9 +597,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 带宽的状态。 取值范围： - FREEZED：冻结 - NORMAL：正常
-     * 
-     * @return status */
+    /**
+     * 带宽的状态。  取值范围：  - FREEZED：冻结  - NORMAL：正常
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -580,9 +614,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -596,9 +631,10 @@ public class Bandwidth {
         return this;
     }
 
-    /** 线路ID。
-     * 
-     * @return poolId */
+    /**
+     * 线路ID。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -667,7 +703,10 @@ public class Bandwidth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

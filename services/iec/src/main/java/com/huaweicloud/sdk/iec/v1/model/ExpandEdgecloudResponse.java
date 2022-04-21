@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ExpandEdgecloudResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务ID。
-     * 
-     * @return id */
+    /**
+     * 边缘业务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,9 +58,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署计划名称。
-     * 
-     * @return name */
+    /**
+     * 部署计划名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -71,9 +75,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署计划ID。
-     * 
-     * @return deploymentId */
+    /**
+     * 部署计划ID。
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -87,9 +92,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
-     * 
-     * @return status */
+    /**
+     * 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -103,9 +109,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -148,7 +155,10 @@ public class ExpandEdgecloudResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

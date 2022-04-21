@@ -28,16 +28,24 @@ public class Version {
 
     private List<Link> links = null;
 
-    /** 版本状态。 取值“CURRENT”，表示该版本为主推版本。 取值\"SUPPORTED\"，表示支持该版本。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。 */
+    /**
+    * 版本状态。  取值“CURRENT”，表示该版本为主推版本。  取值\"SUPPORTED\"，表示支持该版本。  取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
+    */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
-        /** Enum SUPPORTED for value: "SUPPORTED" */
+        /**
+         * Enum SUPPORTED for value: "SUPPORTED"
+         */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +126,10 @@ public class Version {
         return this;
     }
 
-    /** 版本号，例如v1。
-     * 
-     * @return id */
+    /**
+     * 版本号，例如v1。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -150,9 +159,10 @@ public class Version {
         return this;
     }
 
-    /** 链接地址信息。
-     * 
-     * @return links */
+    /**
+     * 链接地址信息。
+     * @return links
+     */
     public List<Link> getLinks() {
         return links;
     }
@@ -166,9 +176,10 @@ public class Version {
         return this;
     }
 
-    /** 版本状态。 取值“CURRENT”，表示该版本为主推版本。 取值\"SUPPORTED\"，表示支持该版本。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态。  取值“CURRENT”，表示该版本为主推版本。  取值\"SUPPORTED\"，表示支持该版本。  取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -182,9 +193,10 @@ public class Version {
         return this;
     }
 
-    /** 版本更新时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指UTC时间。
-     * 
-     * @return updated */
+    /**
+     * 版本更新时间。  格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指UTC时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -223,7 +235,10 @@ public class Version {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

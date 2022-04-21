@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LogObject */
+/**
+ * LogObject
+ */
 public class LogObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class LogObject {
         return this;
     }
 
-    /** 域名名称。
-     * 
-     * @return domainName */
+    /**
+     * 域名名称。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -59,9 +62,10 @@ public class LogObject {
         return this;
     }
 
-    /** 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -75,9 +79,10 @@ public class LogObject {
         return this;
     }
 
-    /** 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -91,9 +96,10 @@ public class LogObject {
         return this;
     }
 
-    /** 日志文件名字。
-     * 
-     * @return name */
+    /**
+     * 日志文件名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class LogObject {
         return this;
     }
 
-    /** 文件大小(Byte)。
-     * 
-     * @return size */
+    /**
+     * 文件大小(Byte)。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -123,9 +130,10 @@ public class LogObject {
         return this;
     }
 
-    /** 下载链接。
-     * 
-     * @return link */
+    /**
+     * 下载链接。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -168,7 +176,10 @@ public class LogObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

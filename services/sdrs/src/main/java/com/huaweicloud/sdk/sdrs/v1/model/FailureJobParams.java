@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 失败任务数据结构 */
+/**
+ * 失败任务数据结构
+ */
 public class FailureJobParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,14 @@ public class FailureJobParams {
 
     private String jobType;
 
-    /** 任务状态。当前仅支持“FAIL”。FAIL：表示任务失败。 */
+    /**
+     * 任务状态。当前仅支持“FAIL”。FAIL：表示任务失败。
+     */
     public static final class JobStatusEnum {
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final JobStatusEnum FAIL = new JobStatusEnum("FAIL");
 
         private static final Map<String, JobStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -100,41 +106,64 @@ public class FailureJobParams {
 
     private String jobId;
 
-    /** 失败任务状态。createFail：表示创建失败。deleteFail：表示删除失败。attachFail：表示挂载失败。detachFail：表示卸载失败。expandFail：表示扩容失败。resizeFail：表示变更规格失败。startFail：表示开启保护失败。stopFail：表示停止保护失败。reverseFail：表示切换失败。failoverFail：表示故障切换失败。reprotectFail
-     * : 表示重保护失败。 */
+    /**
+     * 失败任务状态。createFail：表示创建失败。deleteFail：表示删除失败。attachFail：表示挂载失败。detachFail：表示卸载失败。expandFail：表示扩容失败。resizeFail：表示变更规格失败。startFail：表示开启保护失败。stopFail：表示停止保护失败。reverseFail：表示切换失败。failoverFail：表示故障切换失败。reprotectFail : 表示重保护失败。
+     */
     public static final class FailureStatusEnum {
 
-        /** Enum CREATEFAIL for value: "createFail" */
+        /**
+         * Enum CREATEFAIL for value: "createFail"
+         */
         public static final FailureStatusEnum CREATEFAIL = new FailureStatusEnum("createFail");
 
-        /** Enum DELETEFAIL for value: "deleteFail" */
+        /**
+         * Enum DELETEFAIL for value: "deleteFail"
+         */
         public static final FailureStatusEnum DELETEFAIL = new FailureStatusEnum("deleteFail");
 
-        /** Enum ATTACHFAIL for value: "attachFail" */
+        /**
+         * Enum ATTACHFAIL for value: "attachFail"
+         */
         public static final FailureStatusEnum ATTACHFAIL = new FailureStatusEnum("attachFail");
 
-        /** Enum DETACHFAIL for value: "detachFail" */
+        /**
+         * Enum DETACHFAIL for value: "detachFail"
+         */
         public static final FailureStatusEnum DETACHFAIL = new FailureStatusEnum("detachFail");
 
-        /** Enum EXPANDFAIL for value: "expandFail" */
+        /**
+         * Enum EXPANDFAIL for value: "expandFail"
+         */
         public static final FailureStatusEnum EXPANDFAIL = new FailureStatusEnum("expandFail");
 
-        /** Enum RESIZEFAIL for value: "resizeFail" */
+        /**
+         * Enum RESIZEFAIL for value: "resizeFail"
+         */
         public static final FailureStatusEnum RESIZEFAIL = new FailureStatusEnum("resizeFail");
 
-        /** Enum STARTFAIL for value: "startFail" */
+        /**
+         * Enum STARTFAIL for value: "startFail"
+         */
         public static final FailureStatusEnum STARTFAIL = new FailureStatusEnum("startFail");
 
-        /** Enum STOPFAIL for value: "stopFail" */
+        /**
+         * Enum STOPFAIL for value: "stopFail"
+         */
         public static final FailureStatusEnum STOPFAIL = new FailureStatusEnum("stopFail");
 
-        /** Enum REVERSEFAIL for value: "reverseFail" */
+        /**
+         * Enum REVERSEFAIL for value: "reverseFail"
+         */
         public static final FailureStatusEnum REVERSEFAIL = new FailureStatusEnum("reverseFail");
 
-        /** Enum FAILOVERFAIL for value: "failoverFail" */
+        /**
+         * Enum FAILOVERFAIL for value: "failoverFail"
+         */
         public static final FailureStatusEnum FAILOVERFAIL = new FailureStatusEnum("failoverFail");
 
-        /** Enum REPROTECTFAIL for value: "reprotectFail" */
+        /**
+         * Enum REPROTECTFAIL for value: "reprotectFail"
+         */
         public static final FailureStatusEnum REPROTECTFAIL = new FailureStatusEnum("reprotectFail");
 
         private static final Map<String, FailureStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -233,19 +262,29 @@ public class FailureJobParams {
 
     private String failReason;
 
-    /** 资源类型。 server_groups：表示保护组。 protected_instances：表示保护实例。 replications：表示复制对。 disaster_recovery_drills：表示容灾演练。 */
+    /**
+     * 资源类型。 server_groups：表示保护组。 protected_instances：表示保护实例。 replications：表示复制对。 disaster_recovery_drills：表示容灾演练。
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum SERVER_GROUPS for value: "server_groups" */
+        /**
+         * Enum SERVER_GROUPS for value: "server_groups"
+         */
         public static final ResourceTypeEnum SERVER_GROUPS = new ResourceTypeEnum("server_groups");
 
-        /** Enum PROTECTED_INSTANCES for value: "protected_instances" */
+        /**
+         * Enum PROTECTED_INSTANCES for value: "protected_instances"
+         */
         public static final ResourceTypeEnum PROTECTED_INSTANCES = new ResourceTypeEnum("protected_instances");
 
-        /** Enum REPLICATIONS for value: "replications" */
+        /**
+         * Enum REPLICATIONS for value: "replications"
+         */
         public static final ResourceTypeEnum REPLICATIONS = new ResourceTypeEnum("replications");
 
-        /** Enum DISASTER_RECOVERY_DRILLS for value: "disaster_recovery_drills" */
+        /**
+         * Enum DISASTER_RECOVERY_DRILLS for value: "disaster_recovery_drills"
+         */
         public static final ResourceTypeEnum DISASTER_RECOVERY_DRILLS =
             new ResourceTypeEnum("disaster_recovery_drills");
 
@@ -323,9 +362,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务名称。
-     * 
-     * @return jobType */
+    /**
+     * 任务名称。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -339,9 +379,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务状态。当前仅支持“FAIL”。FAIL：表示任务失败。
-     * 
-     * @return jobStatus */
+    /**
+     * 任务状态。当前仅支持“FAIL”。FAIL：表示任务失败。
+     * @return jobStatus
+     */
     public JobStatusEnum getJobStatus() {
         return jobStatus;
     }
@@ -355,9 +396,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务操作时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
-     * 
-     * @return beginTime */
+    /**
+     * 任务操作时间。默认格式为：\"yyyy-MM-ddTHH:mm:ss.SSSZ\"，例：\"2019-04-01T12:00:00.000Z\"。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -371,9 +413,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务id。执行异步API命令下发成功的返回参数。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。执行异步API命令下发成功的返回参数。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -387,10 +430,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 失败任务状态。createFail：表示创建失败。deleteFail：表示删除失败。attachFail：表示挂载失败。detachFail：表示卸载失败。expandFail：表示扩容失败。resizeFail：表示变更规格失败。startFail：表示开启保护失败。stopFail：表示停止保护失败。reverseFail：表示切换失败。failoverFail：表示故障切换失败。reprotectFail
-     * : 表示重保护失败。
-     * 
-     * @return failureStatus */
+    /**
+     * 失败任务状态。createFail：表示创建失败。deleteFail：表示删除失败。attachFail：表示挂载失败。detachFail：表示卸载失败。expandFail：表示扩容失败。resizeFail：表示变更规格失败。startFail：表示开启保护失败。stopFail：表示停止保护失败。reverseFail：表示切换失败。failoverFail：表示故障切换失败。reprotectFail : 表示重保护失败。
+     * @return failureStatus
+     */
     public FailureStatusEnum getFailureStatus() {
         return failureStatus;
     }
@@ -404,9 +447,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -420,9 +464,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -436,9 +481,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务失败错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 任务失败错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -452,9 +498,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 任务失败原因。
-     * 
-     * @return failReason */
+    /**
+     * 任务失败原因。
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -468,9 +515,10 @@ public class FailureJobParams {
         return this;
     }
 
-    /** 资源类型。 server_groups：表示保护组。 protected_instances：表示保护实例。 replications：表示复制对。 disaster_recovery_drills：表示容灾演练。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型。 server_groups：表示保护组。 protected_instances：表示保护实例。 replications：表示复制对。 disaster_recovery_drills：表示容灾演练。
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -532,7 +580,10 @@ public class FailureJobParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

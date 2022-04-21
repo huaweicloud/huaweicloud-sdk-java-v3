@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 会议与会者发送/接收QoS数据。当qosType &#x3D; audio/video/screen 时有效。 */
+/**
+ * 会议与会者发送/接收QoS数据。当qosType &#x3D; audio/video/screen 时有效。
+ */
 public class QosSendReceiveInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 码率, 单位kbps，不含阈值告警。当qosType = audio/video/screen 时有效。
-     * 
-     * @return bitrate */
+    /**
+     * 码率, 单位kbps，不含阈值告警。当qosType = audio/video/screen 时有效。
+     * @return bitrate
+     */
     public List<QosDataNoThrElement> getBitrate() {
         return bitrate;
     }
@@ -94,9 +97,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 时延，单位毫秒, 含阈值告警。当qosType = audio/video/screen 时有效。
-     * 
-     * @return latency */
+    /**
+     * 时延，单位毫秒, 含阈值告警。当qosType = audio/video/screen 时有效。
+     * @return latency
+     */
     public List<QosDataElement> getLatency() {
         return latency;
     }
@@ -126,9 +130,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 抖动, 单位毫秒，含阈值告警。当qosType = audio/video/screen 时有效。
-     * 
-     * @return jitter */
+    /**
+     * 抖动, 单位毫秒，含阈值告警。当qosType = audio/video/screen 时有效。
+     * @return jitter
+     */
     public List<QosDataElement> getJitter() {
         return jitter;
     }
@@ -158,9 +163,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 最大丢包率, 单位百分比 含阈值告警。当qosType = audio/video/screen 时有效。
-     * 
-     * @return packetLossMax */
+    /**
+     * 最大丢包率, 单位百分比 含阈值告警。当qosType = audio/video/screen 时有效。
+     * @return packetLossMax
+     */
     public List<QosDataElement> getPacketLossMax() {
         return packetLossMax;
     }
@@ -190,9 +196,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 分辨率, 不含阈值告警。当qosType = video/screen 时有效。
-     * 
-     * @return resolution */
+    /**
+     * 分辨率, 不含阈值告警。当qosType = video/screen 时有效。
+     * @return resolution
+     */
     public List<QosDataNoThrElement> getResolution() {
         return resolution;
     }
@@ -222,9 +229,10 @@ public class QosSendReceiveInfo {
         return this;
     }
 
-    /** 帧率, 单位fps，不含阈值告警。当qosType = video/screen 时有效。
-     * 
-     * @return frame */
+    /**
+     * 帧率, 单位fps，不含阈值告警。当qosType = video/screen 时有效。
+     * @return frame
+     */
     public List<QosDataNoThrElement> getFrame() {
         return frame;
     }
@@ -269,7 +277,10 @@ public class QosSendReceiveInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

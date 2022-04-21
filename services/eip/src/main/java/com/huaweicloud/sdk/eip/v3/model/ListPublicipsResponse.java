@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPublicipsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ListPublicipsResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次请求的编号
-     * 
-     * @return requestId */
+    /**
+     * 本次请求的编号
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -69,9 +72,10 @@ public class ListPublicipsResponse extends SdkResponse {
         return this;
     }
 
-    /** 功能说明：弹性公网IP对象
-     * 
-     * @return publicips */
+    /**
+     * 功能说明：弹性公网IP对象
+     * @return publicips
+     */
     public List<PublicipSingleShowResp> getPublicips() {
         return publicips;
     }
@@ -94,9 +98,10 @@ public class ListPublicipsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pageInfo
-     * 
-     * @return pageInfo */
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
     public PageInfoOption getPageInfo() {
         return pageInfo;
     }
@@ -110,9 +115,12 @@ public class ListPublicipsResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网IP总条目数 minimum: 0 maximum: 999999
-     * 
-     * @return totalCount */
+    /**
+     * 公网IP总条目数
+     * minimum: 0
+     * maximum: 999999
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -153,7 +161,10 @@ public class ListPublicipsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

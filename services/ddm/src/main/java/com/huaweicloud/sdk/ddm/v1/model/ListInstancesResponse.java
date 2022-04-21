@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListInstancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例的信息。
-     * 
-     * @return instances */
+    /**
+     * DDM实例的信息。
+     * @return instances
+     */
     public List<ShowInstanceBeanResponse> getInstances() {
         return instances;
     }
@@ -79,9 +82,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户下的DDM实例个数
-     * 
-     * @return instanceNum */
+    /**
+     * 租户下的DDM实例个数
+     * @return instanceNum
+     */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -95,9 +99,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前页码
-     * 
-     * @return pageNo */
+    /**
+     * 当前页码
+     * @return pageNo
+     */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -111,9 +116,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前页码的数据条数
-     * 
-     * @return pageSize */
+    /**
+     * 当前页码的数据条数
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -127,9 +133,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数
-     * 
-     * @return totalRecord */
+    /**
+     * 总条数
+     * @return totalRecord
+     */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -143,9 +150,10 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总页数
-     * 
-     * @return totalPage */
+    /**
+     * 总页数
+     * @return totalPage
+     */
     public Integer getTotalPage() {
         return totalPage;
     }
@@ -190,7 +198,10 @@ public class ListInstancesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

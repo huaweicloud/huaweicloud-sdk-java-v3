@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RPO和RTO信息体 */
+/**
+ * RPO和RTO信息体
+ */
 public class QueryRpoAndRtoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class QueryRpoAndRtoResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -64,9 +67,10 @@ public class QueryRpoAndRtoResp {
         return this;
     }
 
-    /** Get rpoInfo
-     * 
-     * @return rpoInfo */
+    /**
+     * Get rpoInfo
+     * @return rpoInfo
+     */
     public RpoAndRtoInfo getRpoInfo() {
         return rpoInfo;
     }
@@ -89,9 +93,10 @@ public class QueryRpoAndRtoResp {
         return this;
     }
 
-    /** Get rtoInfo
-     * 
-     * @return rtoInfo */
+    /**
+     * Get rtoInfo
+     * @return rtoInfo
+     */
     public RpoAndRtoInfo getRtoInfo() {
         return rtoInfo;
     }
@@ -105,9 +110,10 @@ public class QueryRpoAndRtoResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -121,9 +127,10 @@ public class QueryRpoAndRtoResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -166,7 +173,10 @@ public class QueryRpoAndRtoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ModDeptDTO */
+/**
+ * ModDeptDTO
+ */
 public class ModDeptDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,20 +33,29 @@ public class ModDeptDTO {
 
     private String note;
 
-    /** 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） -
-     * DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现） */
+    /**
+     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） - DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
+     */
     public static final class InPermissionEnum {
 
-        /** Enum UNLIMITED for value: "UNLIMITED" */
+        /**
+         * Enum UNLIMITED for value: "UNLIMITED"
+         */
         public static final InPermissionEnum UNLIMITED = new InPermissionEnum("UNLIMITED");
 
-        /** Enum OPEN for value: "OPEN" */
+        /**
+         * Enum OPEN for value: "OPEN"
+         */
         public static final InPermissionEnum OPEN = new InPermissionEnum("OPEN");
 
-        /** Enum CLOSE for value: "CLOSE" */
+        /**
+         * Enum CLOSE for value: "CLOSE"
+         */
         public static final InPermissionEnum CLOSE = new InPermissionEnum("CLOSE");
 
-        /** Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT" */
+        /**
+         * Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT"
+         */
         public static final InPermissionEnum DESIGNATED_DEPARTMENT = new InPermissionEnum("DESIGNATED_DEPARTMENT");
 
         private static final Map<String, InPermissionEnum> STATIC_FIELDS = createStaticFields();
@@ -116,21 +127,30 @@ public class ModDeptDTO {
 
     private InPermissionEnum inPermission;
 
-    /** 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 -
-     * DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录 */
+    /**
+     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     */
     public static final class OutPermissionEnum {
 
-        /** Enum UNLIMITED for value: "UNLIMITED" */
+        /**
+         * Enum UNLIMITED for value: "UNLIMITED"
+         */
         public static final OutPermissionEnum UNLIMITED = new OutPermissionEnum("UNLIMITED");
 
-        /** Enum ONLY_SELF for value: "ONLY_SELF" */
+        /**
+         * Enum ONLY_SELF for value: "ONLY_SELF"
+         */
         public static final OutPermissionEnum ONLY_SELF = new OutPermissionEnum("ONLY_SELF");
 
-        /** Enum SELF_AND_CHILD_DEPARTMENT for value: "SELF_AND_CHILD_DEPARTMENT" */
+        /**
+         * Enum SELF_AND_CHILD_DEPARTMENT for value: "SELF_AND_CHILD_DEPARTMENT"
+         */
         public static final OutPermissionEnum SELF_AND_CHILD_DEPARTMENT =
             new OutPermissionEnum("SELF_AND_CHILD_DEPARTMENT");
 
-        /** Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT" */
+        /**
+         * Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT"
+         */
         public static final OutPermissionEnum DESIGNATED_DEPARTMENT = new OutPermissionEnum("DESIGNATED_DEPARTMENT");
 
         private static final Map<String, OutPermissionEnum> STATIC_FIELDS = createStaticFields();
@@ -217,9 +237,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 部门名称 maxLength：128 minLength：1
-     * 
-     * @return deptName */
+    /**
+     * 部门名称 maxLength：128 minLength：1
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -233,9 +254,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 父部门编码 maxLength：32
-     * 
-     * @return parentDeptCode */
+    /**
+     * 父部门编码 maxLength：32
+     * @return parentDeptCode
+     */
     public String getParentDeptCode() {
         return parentDeptCode;
     }
@@ -249,9 +271,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 备注 maxLength：96 minLength：0
-     * 
-     * @return note */
+    /**
+     * 备注 maxLength：96 minLength：0
+     * @return note
+     */
     public String getNote() {
         return note;
     }
@@ -265,10 +288,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） -
-     * DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
-     * 
-     * @return inPermission */
+    /**
+     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） - DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
+     * @return inPermission
+     */
     public InPermissionEnum getInPermission() {
         return inPermission;
     }
@@ -282,10 +305,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 -
-     * DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
-     * 
-     * @return outPermission */
+    /**
+     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * @return outPermission
+     */
     public OutPermissionEnum getOutPermission() {
         return outPermission;
     }
@@ -315,9 +338,10 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
-     * 
-     * @return designatedOutDeptCodes */
+    /**
+     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
+     * @return designatedOutDeptCodes
+     */
     public List<String> getDesignatedOutDeptCodes() {
         return designatedOutDeptCodes;
     }
@@ -331,9 +355,12 @@ public class ModDeptDTO {
         return this;
     }
 
-    /** 部门排序号，序号越小,部门排序越靠前 minimum: 1 maximum: 10000 minimum: 1 maximum: 10000
-     * 
-     * @return sortLevel */
+    /**
+     * 部门排序号，序号越小,部门排序越靠前 minimum: 1 maximum: 10000
+     * minimum: 1
+     * maximum: 10000
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -380,7 +407,10 @@ public class ModDeptDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议推送参数配置请求体 */
+/**
+ * 会议推送参数配置请求体
+ */
 public class WebHookConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** 企业ID，与spId二者必填一个
-     * 
-     * @return corpId */
+    /**
+     * 企业ID，与spId二者必填一个
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -54,9 +57,10 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** sp管理员ID，与corpId二者必填一个
-     * 
-     * @return spId */
+    /**
+     * sp管理员ID，与corpId二者必填一个
+     * @return spId
+     */
     public String getSpId() {
         return spId;
     }
@@ -70,9 +74,10 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** 订阅者ID
-     * 
-     * @return subscriberId */
+    /**
+     * 订阅者ID
+     * @return subscriberId
+     */
     public String getSubscriberId() {
         return subscriberId;
     }
@@ -86,9 +91,10 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** 订阅者秘钥
-     * 
-     * @return subscriberKey */
+    /**
+     * 订阅者秘钥
+     * @return subscriberKey
+     */
     public String getSubscriberKey() {
         return subscriberKey;
     }
@@ -102,9 +108,10 @@ public class WebHookConfigRequest {
         return this;
     }
 
-    /** 订阅url，建议使用HTTPS
-     * 
-     * @return url */
+    /**
+     * 订阅url，建议使用HTTPS
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -147,7 +154,10 @@ public class WebHookConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

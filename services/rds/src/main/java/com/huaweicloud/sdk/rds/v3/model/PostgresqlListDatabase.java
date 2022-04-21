@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class PostgresqlListDatabase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class PostgresqlListDatabase {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return name */
+    /**
+     * 数据库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class PostgresqlListDatabase {
         return this;
     }
 
-    /** 数据库所属用户。
-     * 
-     * @return owner */
+    /**
+     * 数据库所属用户。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -70,9 +74,10 @@ public class PostgresqlListDatabase {
         return this;
     }
 
-    /** 数据库使用的字符集，例如UTF8。
-     * 
-     * @return characterSet */
+    /**
+     * 数据库使用的字符集，例如UTF8。
+     * @return characterSet
+     */
     public String getCharacterSet() {
         return characterSet;
     }
@@ -86,9 +91,10 @@ public class PostgresqlListDatabase {
         return this;
     }
 
-    /** 数据库排序集，例如en_US.UTF-8等。
-     * 
-     * @return collateSet */
+    /**
+     * 数据库排序集，例如en_US.UTF-8等。
+     * @return collateSet
+     */
     public String getCollateSet() {
         return collateSet;
     }
@@ -102,9 +108,10 @@ public class PostgresqlListDatabase {
         return this;
     }
 
-    /** 数据库大小（单位：字节）。
-     * 
-     * @return size */
+    /**
+     * 数据库大小（单位：字节）。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -147,7 +154,10 @@ public class PostgresqlListDatabase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTableRequestBody */
+/**
+ * CreateTableRequestBody
+ */
 public class CreateTableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 标签。只能包含数字、英文字母、中文字符、下划线、中划线、逗号以及斜杠。长度为0~128。
-     * 
-     * @return tags */
+    /**
+     * 标签。只能包含数字、英文字母、中文字符、下划线、中划线、逗号以及斜杠。长度为0~128。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -102,9 +105,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 新增表名称。
-     * 
-     * @return tableName */
+    /**
+     * 新增表名称。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -118,9 +122,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 新增表别名。只能包含数字、英文字母、中文字符、下划线以及中划线。长度为0~32。
-     * 
-     * @return tableAlias */
+    /**
+     * 新增表别名。只能包含数字、英文字母、中文字符、下划线以及中划线。长度为0~32。
+     * @return tableAlias
+     */
     public String getTableAlias() {
         return tableAlias;
     }
@@ -134,9 +139,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 新增表的描述信息。
-     * 
-     * @return description */
+    /**
+     * 新增表的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -166,9 +172,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 新增表的描述信息。
-     * 
-     * @return columns */
+    /**
+     * 新增表的描述信息。
+     * @return columns
+     */
     public List<Column> getColumns() {
         return columns;
     }
@@ -182,9 +189,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 新增表的数据类型，目前支持：Parquet、CSV格式。
-     * 
-     * @return dataType */
+    /**
+     * 新增表的数据类型，目前支持：Parquet、CSV格式。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -198,9 +206,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 数据来源。来源类型有：pipeline, default. 默认为default.
-     * 
-     * @return dataSource */
+    /**
+     * 数据来源。来源类型有：pipeline, default. 默认为default.
+     * @return dataSource
+     */
     public String getDataSource() {
         return dataSource;
     }
@@ -214,9 +223,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 仅当数据来源为pipeline时使用。数据的Data Store ID.
-     * 
-     * @return dataStoreId */
+    /**
+     * 仅当数据来源为pipeline时使用。数据的Data Store ID.
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -230,9 +240,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 表数据是否包含表头。只有CSV类型数据具有该属性。
-     * 
-     * @return withColumnHeader */
+    /**
+     * 表数据是否包含表头。只有CSV类型数据具有该属性。
+     * @return withColumnHeader
+     */
     public Boolean getWithColumnHeader() {
         return withColumnHeader;
     }
@@ -246,9 +257,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 用户自定义数据分隔符。只有CSV类型数据具有该属性。
-     * 
-     * @return delimiter */
+    /**
+     * 用户自定义数据分隔符。只有CSV类型数据具有该属性。
+     * @return delimiter
+     */
     public String getDelimiter() {
         return delimiter;
     }
@@ -262,9 +274,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 用户自定义引用字符，默认为双引号（即“\"”）。只有CSV类型数据具有该属性。
-     * 
-     * @return quoteChar */
+    /**
+     * 用户自定义引用字符，默认为双引号（即“\"”）。只有CSV类型数据具有该属性。
+     * @return quoteChar
+     */
     public String getQuoteChar() {
         return quoteChar;
     }
@@ -278,9 +291,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 用户自定义转义字符，默认为反斜杠（即\\）。只有CSV类型数据具有该属性。
-     * 
-     * @return escapeChar */
+    /**
+     * 用户自定义转义字符，默认为反斜杠（即\\）。只有CSV类型数据具有该属性。
+     * @return escapeChar
+     */
     public String getEscapeChar() {
         return escapeChar;
     }
@@ -294,9 +308,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 用户自定义日期类型，默认格式为“yyyy-MM-dd”。日期格式字符定义详见表3。只有CSV和JSON类型数据具有该属性。
-     * 
-     * @return dateFormat */
+    /**
+     * 用户自定义日期类型，默认格式为“yyyy-MM-dd”。日期格式字符定义详见表3。只有CSV和JSON类型数据具有该属性。
+     * @return dateFormat
+     */
     public String getDateFormat() {
         return dateFormat;
     }
@@ -310,9 +325,10 @@ public class CreateTableRequestBody {
         return this;
     }
 
-    /** 用户自定义时间类型。默认格式为“yyyy-MM-dd HH:mm:ss”。时间戳格式字符定义详见表3。只有CSV和JSON类型数据具有该属性。
-     * 
-     * @return timestampFormat */
+    /**
+     * 用户自定义时间类型。默认格式为“yyyy-MM-dd HH:mm:ss”。时间戳格式字符定义详见表3。只有CSV和JSON类型数据具有该属性。
+     * @return timestampFormat
+     */
     public String getTimestampFormat() {
         return timestampFormat;
     }
@@ -386,7 +402,10 @@ public class CreateTableRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

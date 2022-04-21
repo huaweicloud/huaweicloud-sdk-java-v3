@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 
+ * 集群的内网连接信息。
  */
 public class Endpoints {
 
@@ -25,9 +25,10 @@ public class Endpoints {
         return this;
     }
 
-    /** 内网连接信息。
-     * 
-     * @return connectInfo */
+    /**
+     * 内网连接信息。
+     * @return connectInfo
+     */
     public String getConnectInfo() {
         return connectInfo;
     }
@@ -41,9 +42,10 @@ public class Endpoints {
         return this;
     }
 
-    /** 内网JDBC URL，默认格式如下： jdbc:postgresql://< connect_info>/<YOUR_DATABASE_NAME>
-     * 
-     * @return jdbcUrl */
+    /**
+     * 内网JDBC URL，默认格式如下： jdbc:postgresql://<connect_info>/<YOUR_DATABASE_NAME>
+     * @return jdbcUrl
+     */
     public String getJdbcUrl() {
         return jdbcUrl;
     }
@@ -80,7 +82,10 @@ public class Endpoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

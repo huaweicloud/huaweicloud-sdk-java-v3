@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckNeedVerifyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,12 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否需要验证 minimum: 0 maximum: 1
-     * 
-     * @return needVerifyCode */
+    /**
+     * 是否需要验证
+     * minimum: 0
+     * maximum: 1
+     * @return needVerifyCode
+     */
     public Integer getNeedVerifyCode() {
         return needVerifyCode;
     }
@@ -41,9 +46,10 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         return this;
     }
 
-    /** 过期时间
-     * 
-     * @return expireTime */
+    /**
+     * 过期时间
+     * @return expireTime
+     */
     public OffsetDateTime getExpireTime() {
         return expireTime;
     }
@@ -80,7 +86,10 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

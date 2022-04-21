@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询云服务器指定磁盘挂载信息响应信息 */
+/**
+ * 查询云服务器指定磁盘挂载信息响应信息
+ */
 public class ServerBlockDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 云硬盘启动顺序。 - 0为系统盘。 - 非0为数据盘
-     * 
-     * @return bootIndex */
+    /**
+     * 云硬盘启动顺序。  - 0为系统盘。  - 非0为数据盘
+     * @return bootIndex
+     */
     public Integer getBootIndex() {
         return bootIndex;
     }
@@ -69,9 +72,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** pci地址。
-     * 
-     * @return pciAddress */
+    /**
+     * pci地址。
+     * @return pciAddress
+     */
     public String getPciAddress() {
         return pciAddress;
     }
@@ -85,9 +89,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 云硬盘ID，UUID格式。
-     * 
-     * @return volumeId */
+    /**
+     * 云硬盘ID，UUID格式。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -101,9 +106,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 云硬盘挂载盘符，即磁盘挂载点。
-     * 
-     * @return device */
+    /**
+     * 云硬盘挂载盘符，即磁盘挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -117,9 +123,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 弹性云服务器ID，UUID格式。
-     * 
-     * @return serverId */
+    /**
+     * 弹性云服务器ID，UUID格式。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -133,9 +140,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 挂载ID，与云硬盘ID相同。UUID格式。
-     * 
-     * @return id */
+    /**
+     * 挂载ID，与云硬盘ID相同。UUID格式。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -149,9 +157,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 云硬盘大小，单位GB。
-     * 
-     * @return size */
+    /**
+     * 云硬盘大小，单位GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -165,9 +174,10 @@ public class ServerBlockDevice {
         return this;
     }
 
-    /** 磁盘总线类型 。 取值范围：virtio、scsi
-     * 
-     * @return bus */
+    /**
+     * 磁盘总线类型 。  取值范围：virtio、scsi
+     * @return bus
+     */
     public String getBus() {
         return bus;
     }
@@ -215,7 +225,10 @@ public class ServerBlockDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

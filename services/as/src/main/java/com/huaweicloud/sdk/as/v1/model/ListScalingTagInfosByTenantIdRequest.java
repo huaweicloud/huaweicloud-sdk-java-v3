@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingTagInfosByTenantIdRequest {
 
-    /** 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。 */
+    /**
+     * 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum SCALING_GROUP_TAG for value: "scaling_group_tag" */
+        /**
+         * Enum SCALING_GROUP_TAG for value: "scaling_group_tag"
+         */
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class ListScalingTagInfosByTenantIdRequest {
         return this;
     }
 
-    /** 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -128,7 +135,10 @@ public class ListScalingTagInfosByTenantIdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

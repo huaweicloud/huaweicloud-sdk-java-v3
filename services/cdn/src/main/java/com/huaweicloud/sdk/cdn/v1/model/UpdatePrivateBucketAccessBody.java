@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改私有桶开启关闭状态 */
+/**
+ * 修改私有桶开启关闭状态
+ */
 public class UpdatePrivateBucketAccessBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdatePrivateBucketAccessBody {
         return this;
     }
 
-    /** 桶开启关闭状态（true：开启；false：关闭）
-     * 
-     * @return status */
+    /**
+     * 桶开启关闭状态（true：开启；false：关闭）
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -55,7 +58,10 @@ public class UpdatePrivateBucketAccessBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

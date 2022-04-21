@@ -15,22 +15,34 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateDocWatermarkRequestBody */
+/**
+ * CreateDocWatermarkRequestBody
+ */
 public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
 
-    /** 要嵌入水印的文档类型 */
+    /**
+     * 要嵌入水印的文档类型
+     */
     public static final class DocTypeEnum {
 
-        /** Enum WORD for value: "WORD" */
+        /**
+         * Enum WORD for value: "WORD"
+         */
         public static final DocTypeEnum WORD = new DocTypeEnum("WORD");
 
-        /** Enum EXCEL for value: "EXCEL" */
+        /**
+         * Enum EXCEL for value: "EXCEL"
+         */
         public static final DocTypeEnum EXCEL = new DocTypeEnum("EXCEL");
 
-        /** Enum PDF for value: "PDF" */
+        /**
+         * Enum PDF for value: "PDF"
+         */
         public static final DocTypeEnum PDF = new DocTypeEnum("PDF");
 
-        /** Enum PPT for value: "PPT" */
+        /**
+         * Enum PPT for value: "PPT"
+         */
         public static final DocTypeEnum PPT = new DocTypeEnum("PPT");
 
         private static final Map<String, DocTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -150,14 +162,19 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
 
     private FormDataFilePart imageMark;
 
-    /** 该字段为空时，默认为**TEXT**类型。 当该字段为**IMAGE**时: - 请求的表单中必须包含名为“image”的图像文件，图像格式必须为“png”或“jpg”，否则返回参数错误； - 图像文件大小不超过1MB； -
-     * “visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。 */
+    /**
+     * 该字段为空时，默认为**TEXT**类型。  当该字段为**IMAGE**时: - 请求的表单中必须包含名为“image”的图像文件，图像格式必须为“png”或“jpg”，否则返回参数错误； - 图像文件大小不超过1MB； - “visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
+     */
     public static final class VisibleTypeEnum {
 
-        /** Enum TEXT for value: "TEXT" */
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
         public static final VisibleTypeEnum TEXT = new VisibleTypeEnum("TEXT");
 
-        /** Enum IMAGE for value: "IMAGE" */
+        /**
+         * Enum IMAGE for value: "IMAGE"
+         */
         public static final VisibleTypeEnum IMAGE = new VisibleTypeEnum("IMAGE");
 
         private static final Map<String, VisibleTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -232,9 +249,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 要嵌入水印的文档类型
-     * 
-     * @return docType */
+    /**
+     * 要嵌入水印的文档类型
+     * @return docType
+     */
     public DocTypeEnum getDocType() {
         return docType;
     }
@@ -248,9 +266,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 输入文件有密码时，读取文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
-     * 
-     * @return filePassword */
+    /**
+     * 输入文件有密码时，读取文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
+     * @return filePassword
+     */
     public String getFilePassword() {
         return filePassword;
     }
@@ -264,9 +283,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 添加水印后给文件设置密码， 最大支持长度256。默认不加文档密码。
-     * 
-     * @return markedFilePassword */
+    /**
+     * 添加水印后给文件设置密码， 最大支持长度256。默认不加文档密码。
+     * @return markedFilePassword
+     */
     public String getMarkedFilePassword() {
         return markedFilePassword;
     }
@@ -280,9 +300,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 添加水印后给文件设置只读密码， 最大支持长度256。默认不加只读密码。
-     * 
-     * @return readonlyPassword */
+    /**
+     * 添加水印后给文件设置只读密码， 最大支持长度256。默认不加只读密码。
+     * @return readonlyPassword
+     */
     public String getReadonlyPassword() {
         return readonlyPassword;
     }
@@ -296,9 +317,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 明水印内容，与“blind_watermark”字段至少有一个不为空
-     * 
-     * @return visibleWatermark */
+    /**
+     * 明水印内容，与“blind_watermark”字段至少有一个不为空
+     * @return visibleWatermark
+     */
     public String getVisibleWatermark() {
         return visibleWatermark;
     }
@@ -312,9 +334,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 明水印字体大小，取值为[1,100]，默认值50
-     * 
-     * @return fontSize */
+    /**
+     * 明水印字体大小，取值为[1,100]，默认值50
+     * @return fontSize
+     */
     public String getFontSize() {
         return fontSize;
     }
@@ -328,9 +351,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 明水印旋转角度，逆时针方向，取值为[0,90]，默认值45
-     * 
-     * @return rotation */
+    /**
+     * 明水印旋转角度，逆时针方向，取值为[0,90]，默认值45
+     * @return rotation
+     */
     public String getRotation() {
         return rotation;
     }
@@ -344,9 +368,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 明水印的透明度，取值[0,1]，默认值为0.3；
-     * 
-     * @return opacity */
+    /**
+     * 明水印的透明度，取值[0,1]，默认值为0.3；
+     * @return opacity
+     */
     public String getOpacity() {
         return opacity;
     }
@@ -360,9 +385,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 暗水印内容，与“visible_watermark”字段至少有一个不为空
-     * 
-     * @return blindWatermark */
+    /**
+     * 暗水印内容，与“visible_watermark”字段至少有一个不为空
+     * @return blindWatermark
+     */
     public String getBlindWatermark() {
         return blindWatermark;
     }
@@ -376,9 +402,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 要添加水印的文档
-     * 
-     * @return file */
+    /**
+     * 要添加水印的文档
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -392,9 +419,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 图形水印的字节流。图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB；在分段的请求体“Content-Disposition”部分，参数“name”的值必须为“image_mark”。
-     * 
-     * @return imageMark */
+    /**
+     * 图形水印的字节流。图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB；在分段的请求体“Content-Disposition”部分，参数“name”的值必须为“image_mark”。
+     * @return imageMark
+     */
     public FormDataFilePart getImageMark() {
         return imageMark;
     }
@@ -408,10 +436,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 该字段为空时，默认为**TEXT**类型。 当该字段为**IMAGE**时: - 请求的表单中必须包含名为“image”的图像文件，图像格式必须为“png”或“jpg”，否则返回参数错误； - 图像文件大小不超过1MB； -
-     * “visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
-     * 
-     * @return visibleType */
+    /**
+     * 该字段为空时，默认为**TEXT**类型。  当该字段为**IMAGE**时: - 请求的表单中必须包含名为“image”的图像文件，图像格式必须为“png”或“jpg”，否则返回参数错误； - 图像文件大小不超过1MB； - “visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
+     * @return visibleType
+     */
     public VisibleTypeEnum getVisibleType() {
         return visibleType;
     }
@@ -552,7 +580,10 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class PublishRootAssetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class PublishRootAssetRequest {
         return this;
     }
 
-    /** 根资产ID
-     * 
-     * @return rootAssetId */
+    /**
+     * 根资产ID
+     * @return rootAssetId
+     */
     public String getRootAssetId() {
         return rootAssetId;
     }
@@ -55,7 +58,10 @@ public class PublishRootAssetRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

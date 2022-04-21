@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BranchList */
+/**
+ * BranchList
+ */
 public class BranchList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BranchList {
         return this;
     }
 
-    /** 指定仓库的分支列表
-     * 
-     * @return branches */
+    /**
+     * 指定仓库的分支列表
+     * @return branches
+     */
     public List<Branch> getBranches() {
         return branches;
     }
@@ -58,9 +61,10 @@ public class BranchList {
         return this;
     }
 
-    /** 指定仓库的分支总数
-     * 
-     * @return total */
+    /**
+     * 指定仓库的分支总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -96,7 +100,10 @@ public class BranchList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MultiTaskResetBody */
+/**
+ * MultiTaskResetBody
+ */
 public class MultiTaskResetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class MultiTaskResetBody {
         return this;
     }
 
-    /** 任务重置开始时间，UTC时间戳，允许为空 minimum: 1 maximum: -8446744073709551617
-     * 
-     * @return dateFrom */
+    /**
+     * 任务重置开始时间，UTC时间戳，允许为空
+     * minimum: 1
+     * maximum: -8446744073709551617
+     * @return dateFrom
+     */
     public Long getDateFrom() {
         return dateFrom;
     }
@@ -55,7 +60,10 @@ public class MultiTaskResetBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

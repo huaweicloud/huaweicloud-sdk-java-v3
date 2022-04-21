@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VaultBackup */
+/**
+ * VaultBackup
+ */
 public class VaultBackup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class VaultBackup {
         return this;
     }
 
-    /** Get parameters
-     * 
-     * @return parameters */
+    /**
+     * Get parameters
+     * @return parameters
+     */
     public CheckpointParam getParameters() {
         return parameters;
     }
@@ -49,9 +52,10 @@ public class VaultBackup {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -88,7 +92,10 @@ public class VaultBackup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchAddSharedTagsRequestBody */
+/**
+ * BatchAddSharedTagsRequestBody
+ */
 public class BatchAddSharedTagsRequestBody {
 
-    /** 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。 */
+    /**
+     * 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
+     */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +109,10 @@ public class BatchAddSharedTagsRequestBody {
         return this;
     }
 
-    /** 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
-     * 
-     * @return action */
+    /**
+     * 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -135,9 +142,10 @@ public class BatchAddSharedTagsRequestBody {
         return this;
     }
 
-    /** 标签列表。 用户权限时该字段必选，op_service权限时和sys_tags二选一。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。 用户权限时该字段必选，op_service权限时和sys_tags二选一。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -167,9 +175,10 @@ public class BatchAddSharedTagsRequestBody {
         return this;
     }
 
-    /** 系统标签列表。 op_service权限可以访问，和tags二选一。目前TMS调用时只包含一个resource_tag结构体，key固定为：_sys_enterprise_project_id。
-     * 
-     * @return sysTags */
+    /**
+     * 系统标签列表。 op_service权限可以访问，和tags二选一。目前TMS调用时只包含一个resource_tag结构体，key固定为：_sys_enterprise_project_id。
+     * @return sysTags
+     */
     public List<ResourceTag> getSysTags() {
         return sysTags;
     }
@@ -208,7 +217,10 @@ public class BatchAddSharedTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

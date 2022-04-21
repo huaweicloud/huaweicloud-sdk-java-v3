@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** PipelineDeleteStatus */
+/**
+ * PipelineDeleteStatus
+ */
 public class PipelineDeleteStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class PipelineDeleteStatus {
 
     private String name;
 
-    /** 流水线删除状态,deleted:删除成功,failed:删除失败,going:正在删除中 */
+    /**
+     * 流水线删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
+     */
     public static final class StatusEnum {
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
-        /** Enum GOING for value: "going" */
+        /**
+         * Enum GOING for value: "going"
+         */
         public static final StatusEnum GOING = new StatusEnum("going");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +113,10 @@ public class PipelineDeleteStatus {
         return this;
     }
 
-    /** 流水线名称
-     * 
-     * @return name */
+    /**
+     * 流水线名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -119,9 +130,10 @@ public class PipelineDeleteStatus {
         return this;
     }
 
-    /** 流水线删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
-     * 
-     * @return status */
+    /**
+     * 流水线删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,7 +170,10 @@ public class PipelineDeleteStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

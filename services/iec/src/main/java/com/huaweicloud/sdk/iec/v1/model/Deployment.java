@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 部署计划对象 */
+/**
+ * 部署计划对象
+ */
 public class Deployment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Deployment {
         return this;
     }
 
-    /** 部署计划ID。
-     * 
-     * @return id */
+    /**
+     * 部署计划ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -63,9 +66,10 @@ public class Deployment {
         return this;
     }
 
-    /** 部署位置信息列表
-     * 
-     * @return distribution */
+    /**
+     * 部署位置信息列表
+     * @return distribution
+     */
     public List<Distribution> getDistribution() {
         return distribution;
     }
@@ -88,9 +92,10 @@ public class Deployment {
         return this;
     }
 
-    /** Get edgecloud
-     * 
-     * @return edgecloud */
+    /**
+     * Get edgecloud
+     * @return edgecloud
+     */
     public DeploymentEdgecloud getEdgecloud() {
         return edgecloud;
     }
@@ -128,7 +133,10 @@ public class Deployment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

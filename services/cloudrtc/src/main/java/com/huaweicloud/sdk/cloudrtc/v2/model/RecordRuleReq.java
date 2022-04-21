@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改录制规则 */
+/**
+ * 修改录制规则
+ */
 public class RecordRuleReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class RecordRuleReq {
 
     private RecordObsFileAddr obsAddr;
 
-    /** Gets or Sets recordFormats */
+    /**
+     * Gets or Sets recordFormats
+     */
     public static final class RecordFormatsEnum {
 
-        /** Enum HLS for value: "HLS" */
+        /**
+         * Enum HLS for value: "HLS"
+         */
         public static final RecordFormatsEnum HLS = new RecordFormatsEnum("HLS");
 
-        /** Enum MP4 for value: "MP4" */
+        /**
+         * Enum MP4 for value: "MP4"
+         */
         public static final RecordFormatsEnum MP4 = new RecordFormatsEnum("MP4");
 
         private static final Map<String, RecordFormatsEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +129,10 @@ public class RecordRuleReq {
         return this;
     }
 
-    /** Get obsAddr
-     * 
-     * @return obsAddr */
+    /**
+     * Get obsAddr
+     * @return obsAddr
+     */
     public RecordObsFileAddr getObsAddr() {
         return obsAddr;
     }
@@ -153,9 +162,10 @@ public class RecordRuleReq {
         return this;
     }
 
-    /** 录制格式：支持HLS格式和MP4格式（HLS和MP4为大写）。 - 若配置HLS则必须携带HLSRecordConfig参数 - 若配置MP4则需要携带MP4RecordConfig
-     * 
-     * @return recordFormats */
+    /**
+     *  录制格式：支持HLS格式和MP4格式（HLS和MP4为大写）。   - 若配置HLS则必须携带HLSRecordConfig参数  - 若配置MP4则需要携带MP4RecordConfig 
+     * @return recordFormats
+     */
     public List<RecordFormatsEnum> getRecordFormats() {
         return recordFormats;
     }
@@ -178,9 +188,10 @@ public class RecordRuleReq {
         return this;
     }
 
-    /** Get hlsConfig
-     * 
-     * @return hlsConfig */
+    /**
+     * Get hlsConfig
+     * @return hlsConfig
+     */
     public HLSRecordConfig getHlsConfig() {
         return hlsConfig;
     }
@@ -203,9 +214,10 @@ public class RecordRuleReq {
         return this;
     }
 
-    /** Get mp4Config
-     * 
-     * @return mp4Config */
+    /**
+     * Get mp4Config
+     * @return mp4Config
+     */
     public MP4RecordConfig getMp4Config() {
         return mp4Config;
     }
@@ -246,7 +258,10 @@ public class RecordRuleReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

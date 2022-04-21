@@ -7,7 +7,9 @@ import java.net.URI;
 import java.util.Objects;
 import java.util.UUID;
 
-/** 输入数据的配置信息 */
+/**
+ * 输入数据的配置信息
+ */
 public class TaskInputData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,9 +72,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** VIS的视频流名称，当输入为vis类型时必填。
-     * 
-     * @return streamName */
+    /**
+     * VIS的视频流名称，当输入为vis类型时必填。
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -86,9 +89,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** OBS桶名，当输入为obs类型时必填。
-     * 
-     * @return bucket */
+    /**
+     * OBS桶名，当输入为obs类型时必填。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -102,9 +106,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** OBS的路径，当输入为obs类型时必填。
-     * 
-     * @return path */
+    /**
+     * OBS的路径，当输入为obs类型时必填。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -118,9 +123,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** url输入源的地址或者获取视频流地址的restful请求地址，当输入为url类型或者edgerestful类型时必填。长度不超过1000。
-     * 
-     * @return url */
+    /**
+     * url输入源的地址或者获取视频流地址的restful请求地址，当输入为url类型或者edgerestful类型时必填。长度不超过1000。
+     * @return url
+     */
     public URI getUrl() {
         return url;
     }
@@ -134,9 +140,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** 获取视频流地址的restful请求携带的请求头，当输入为edgerestful类型时可选。整体呈json格式，以键值对的形式表示请求头和取值，最多允许10组。
-     * 
-     * @return headers */
+    /**
+     * 获取视频流地址的restful请求携带的请求头，当输入为edgerestful类型时可选。整体呈json格式，以键值对的形式表示请求头和取值，最多允许10组。
+     * @return headers
+     */
     public Object getHeaders() {
         return headers;
     }
@@ -150,9 +157,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** 是否需要对https请求进行证书校验，当输入为edgerestful类型时必填。取值为true或者false。
-     * 
-     * @return certificateCheck */
+    /**
+     * 是否需要对https请求进行证书校验，当输入为edgerestful类型时必填。取值为true或者false。
+     * @return certificateCheck
+     */
     public Boolean getCertificateCheck() {
         return certificateCheck;
     }
@@ -166,9 +174,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** restful请求返回的body中，视频流地址的路径，当输入为edgerestful类型时必填。长度不超过1024。
-     * 
-     * @return rtspPathInResponse */
+    /**
+     * restful请求返回的body中，视频流地址的路径，当输入为edgerestful类型时必填。长度不超过1024。
+     * @return rtspPathInResponse
+     */
     public String getRtspPathInResponse() {
         return rtspPathInResponse;
     }
@@ -182,9 +191,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** IEF节点的ID，仅部分服务在输入类型为edgerestful或vcn时需填且必填。
-     * 
-     * @return nodeId */
+    /**
+     * IEF节点的ID，仅部分服务在输入类型为edgerestful或vcn时需填且必填。
+     * @return nodeId
+     */
     public UUID getNodeId() {
         return nodeId;
     }
@@ -198,9 +208,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** VCN设备ID，当输入为vcn类型时必填。
-     * 
-     * @return deviceId */
+    /**
+     * VCN设备ID，当输入为vcn类型时必填。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -214,9 +225,12 @@ public class TaskInputData {
         return this;
     }
 
-    /** 准备进行分析的码流，当输入为vcn类型时选填。取值范围为1~3，其中1代表主码流，2代表子码流1,3代表子码流2。 minimum: 1 maximum: 3
-     * 
-     * @return streamType */
+    /**
+     * 准备进行分析的码流，当输入为vcn类型时选填。取值范围为1~3，其中1代表主码流，2代表子码流1,3代表子码流2。
+     * minimum: 1
+     * maximum: 3
+     * @return streamType
+     */
     public Integer getStreamType() {
         return streamType;
     }
@@ -230,9 +244,10 @@ public class TaskInputData {
         return this;
     }
 
-    /** IEF挂载的边缘设备的ID，当输入为edgecamera类型时必填。
-     * 
-     * @return id */
+    /**
+     * IEF挂载的边缘设备的ID，当输入为edgecamera类型时必填。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -294,7 +309,10 @@ public class TaskInputData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

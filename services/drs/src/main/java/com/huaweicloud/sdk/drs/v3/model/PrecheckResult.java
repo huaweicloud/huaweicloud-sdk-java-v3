@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 预检查结果信息体 */
+/**
+ * 预检查结果信息体
+ */
 public class PrecheckResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,16 +23,24 @@ public class PrecheckResult {
 
     private String item;
 
-    /** 检查结果 */
+    /**
+     * 检查结果
+     */
     public static final class ResultEnum {
 
-        /** Enum PASSED for value: "PASSED" */
+        /**
+         * Enum PASSED for value: "PASSED"
+         */
         public static final ResultEnum PASSED = new ResultEnum("PASSED");
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ResultEnum ALARM = new ResultEnum("ALARM");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final ResultEnum FAILED = new ResultEnum("FAILED");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -131,9 +141,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 检查项。
-     * 
-     * @return item */
+    /**
+     * 检查项。
+     * @return item
+     */
     public String getItem() {
         return item;
     }
@@ -147,9 +158,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 检查结果
-     * 
-     * @return result */
+    /**
+     * 检查结果
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -163,9 +175,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 失败原因。
-     * 
-     * @return failedReason */
+    /**
+     * 失败原因。
+     * @return failedReason
+     */
     public String getFailedReason() {
         return failedReason;
     }
@@ -179,9 +192,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 加密的数据。
-     * 
-     * @return data */
+    /**
+     * 加密的数据。
+     * @return data
+     */
     public String getData() {
         return data;
     }
@@ -195,9 +209,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 行错误信息。
-     * 
-     * @return rawErrorMsg */
+    /**
+     * 行错误信息。
+     * @return rawErrorMsg
+     */
     public String getRawErrorMsg() {
         return rawErrorMsg;
     }
@@ -211,9 +226,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 检查项分组
-     * 
-     * @return group */
+    /**
+     * 检查项分组
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -243,9 +259,10 @@ public class PrecheckResult {
         return this;
     }
 
-    /** 失败的子任务信息。
-     * 
-     * @return failedSubJobs */
+    /**
+     * 失败的子任务信息。
+     * @return failedSubJobs
+     */
     public List<PrecheckFailSubJobVO> getFailedSubJobs() {
         return failedSubJobs;
     }
@@ -291,7 +308,10 @@ public class PrecheckResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

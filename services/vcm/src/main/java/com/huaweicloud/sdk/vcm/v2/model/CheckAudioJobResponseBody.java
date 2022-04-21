@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 返回数据 */
+/**
+ * 返回数据
+ */
 public class CheckAudioJobResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 作业ID.
-     * 
-     * @return id */
+    /**
+     * 作业ID.
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,9 +83,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 作业描述
-     * 
-     * @return description */
+    /**
+     * 作业描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -96,10 +100,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 作业状态： - PENDING_CREATE：等待中 - SCHEDULING：调度中 - CREATE_FAIL：创建失败 - STARTING：启动中 - RUNNING：运行中 - SUCCEEDED：运行成功 -
-     * FAILED：运行失败 - PENDING_DELETE：删除中 - DELETE_FAIL：删除失败 - ABNORMAL：运行异常
-     * 
-     * @return state */
+    /**
+     * 作业状态：   - PENDING_CREATE：等待中   - SCHEDULING：调度中   - CREATE_FAIL：创建失败   - STARTING：启动中   - RUNNING：运行中   - SUCCEEDED：运行成功   - FAILED：运行失败   - PENDING_DELETE：删除中   - DELETE_FAIL：删除失败   - ABNORMAL：运行异常
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -113,9 +117,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 作业名称.
-     * 
-     * @return name */
+    /**
+     * 作业名称.
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -138,9 +143,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public AudioServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -163,9 +169,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public CheckAudioJobResponseBodyInput getInput() {
         return input;
     }
@@ -188,9 +195,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public AudioResponseOutput getOutput() {
         return output;
     }
@@ -204,9 +212,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 服务版本
-     * 
-     * @return serviceVersion */
+    /**
+     * 服务版本
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -220,9 +229,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -236,9 +246,10 @@ public class CheckAudioJobResponseBody {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updatedAt */
+    /**
+     * 修改时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -292,7 +303,10 @@ public class CheckAudioJobResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

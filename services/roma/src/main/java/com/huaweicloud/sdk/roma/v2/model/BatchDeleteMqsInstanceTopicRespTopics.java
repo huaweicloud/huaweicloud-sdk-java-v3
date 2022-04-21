@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BatchDeleteMqsInstanceTopicRespTopics */
+/**
+ * BatchDeleteMqsInstanceTopicRespTopics
+ */
 public class BatchDeleteMqsInstanceTopicRespTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BatchDeleteMqsInstanceTopicRespTopics {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return id */
+    /**
+     * topic名称。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class BatchDeleteMqsInstanceTopicRespTopics {
         return this;
     }
 
-    /** 是否删除成功。
-     * 
-     * @return success */
+    /**
+     * 是否删除成功。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -79,7 +83,10 @@ public class BatchDeleteMqsInstanceTopicRespTopics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

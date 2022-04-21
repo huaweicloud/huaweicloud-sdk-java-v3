@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NvlCostAnalysedBillDetail */
+/**
+ * NvlCostAnalysedBillDetail
+ */
 public class NvlCostAnalysedBillDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -198,14 +200,45 @@ public class NvlCostAnalysedBillDetail {
 
     private Double amortizedBonusAmount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_code")
+
+    private String subServiceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_name")
+
+    private String subServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_code")
+
+    private String subResourceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_name")
+
+    private String subResourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_id")
+
+    private String subResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_name")
+
+    private String subResourceName;
+
     public NvlCostAnalysedBillDetail withSharedMonth(String sharedMonth) {
         this.sharedMonth = sharedMonth;
         return this;
     }
 
-    /** 查询分摊成本的月份。 格式为YYYY-MM，按照东八区截取。
-     * 
-     * @return sharedMonth */
+    /**
+     * 查询分摊成本的月份。 格式为YYYY-MM，按照东八区截取。
+     * @return sharedMonth
+     */
     public String getSharedMonth() {
         return sharedMonth;
     }
@@ -219,9 +252,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 账期。 格式：YYYY-MM。按照东八区截取。
-     * 
-     * @return billCycle */
+    /**
+     * 账期。 格式：YYYY-MM。按照东八区截取。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -235,9 +269,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -251,10 +286,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 消费的客户账号ID。
-     * 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID。如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 消费的客户账号ID。 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID。如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -268,9 +303,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -284,9 +320,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
-     * 
-     * @return regionName */
+    /**
+     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -300,9 +337,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -316,9 +354,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -332,9 +371,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -348,9 +388,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -364,9 +405,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
-     * 
-     * @return effectiveTime */
+    /**
+     * 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -380,9 +422,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
-     * 
-     * @return expireTime */
+    /**
+     * 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -396,9 +439,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -412,9 +456,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -428,9 +473,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return resourceTag */
+    /**
+     * 资源标签。
+     * @return resourceTag
+     */
     public String getResourceTag() {
         return resourceTag;
     }
@@ -444,9 +490,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 产品的规格描述。
-     * 
-     * @return productSpecDesc */
+    /**
+     * 产品的规格描述。
+     * @return productSpecDesc
+     */
     public String getProductSpecDesc() {
         return productSpecDesc;
     }
@@ -460,9 +507,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -476,9 +524,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 企业项目的名称。
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 企业项目的名称。
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -492,9 +541,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 计费模式。 1：包年/包月3：按需10：预留实例
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式。 1：包年/包月3：按需10：预留实例
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -508,9 +558,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 订单ID。 说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。  说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -524,9 +575,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 周期类型。 19：年20：月24：天25：小时5：一次性
-     * 
-     * @return periodType */
+    /**
+     * 周期类型。 19：年20：月24：天25：小时5：一次性
+     * @return periodType
+     */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -540,9 +592,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
-     * 
-     * @return usageType */
+    /**
+     * 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
+     * @return usageType
+     */
     public String getUsageType() {
         return usageType;
     }
@@ -556,9 +609,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源的使用量。
-     * 
-     * @return usage */
+    /**
+     * 资源的使用量。
+     * @return usage
+     */
     public Double getUsage() {
         return usage;
     }
@@ -572,9 +626,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return usageMeasureId */
+    /**
+     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return usageMeasureId
+     */
     public Integer getUsageMeasureId() {
         return usageMeasureId;
     }
@@ -588,9 +643,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 套餐内使用量。
-     * 
-     * @return freeResourceUsage */
+    /**
+     * 套餐内使用量。
+     * @return freeResourceUsage
+     */
     public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
@@ -604,9 +660,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * 
-     * @return freeResourceMeasureId */
+    /**
+     * 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * @return freeResourceMeasureId
+     */
     public Integer getFreeResourceMeasureId() {
         return freeResourceMeasureId;
     }
@@ -620,9 +677,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 预留实例使用量。
-     * 
-     * @return riUsage */
+    /**
+     * 预留实例使用量。
+     * @return riUsage
+     */
     public Double getRiUsage() {
         return riUsage;
     }
@@ -636,9 +694,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 预留实例使用量单位。
-     * 
-     * @return riUsageMeasureId */
+    /**
+     * 预留实例使用量单位。
+     * @return riUsageMeasureId
+     */
     public Integer getRiUsageMeasureId() {
         return riUsageMeasureId;
     }
@@ -652,9 +711,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 消费金额（应付金额）。 消费金额=期初已分摊金额+当月分摊金额+期末未分摊金额
-     * 
-     * @return consumeAmount */
+    /**
+     * 消费金额（应付金额）。 消费金额=期初已分摊金额+当月分摊金额+期末未分摊金额
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -668,9 +728,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 期初已分摊金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
-     * 
-     * @return pastMonthsAmortizedAmount */
+    /**
+     * 期初已分摊金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
+     * @return pastMonthsAmortizedAmount
+     */
     public Double getPastMonthsAmortizedAmount() {
         return pastMonthsAmortizedAmount;
     }
@@ -684,9 +745,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 当月分摊金额。 当月分摊金额=现金分摊金额+信用额度分摊金额+代金券分摊金额+现金券分摊金额+储值卡分摊金额+奖励金分摊金额
-     * 
-     * @return currentMonthAmortizedAmount */
+    /**
+     * 当月分摊金额。 当月分摊金额=现金分摊金额+信用额度分摊金额+代金券分摊金额+现金券分摊金额+储值卡分摊金额+奖励金分摊金额
+     * @return currentMonthAmortizedAmount
+     */
     public Double getCurrentMonthAmortizedAmount() {
         return currentMonthAmortizedAmount;
     }
@@ -700,9 +762,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
-     * 
-     * @return futureMonthsAmortizedAmount */
+    /**
+     * 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
+     * @return futureMonthsAmortizedAmount
+     */
     public Double getFutureMonthsAmortizedAmount() {
         return futureMonthsAmortizedAmount;
     }
@@ -716,9 +779,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的现金金额。
-     * 
-     * @return amortizedCashAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的现金金额。
+     * @return amortizedCashAmount
+     */
     public Double getAmortizedCashAmount() {
         return amortizedCashAmount;
     }
@@ -732,9 +796,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的信用额度分摊金额。
-     * 
-     * @return amortizedCreditAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的信用额度分摊金额。
+     * @return amortizedCreditAmount
+     */
     public Double getAmortizedCreditAmount() {
         return amortizedCreditAmount;
     }
@@ -748,9 +813,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的代金券分摊金额。
-     * 
-     * @return amortizedCouponAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的代金券分摊金额。
+     * @return amortizedCouponAmount
+     */
     public Double getAmortizedCouponAmount() {
         return amortizedCouponAmount;
     }
@@ -764,9 +830,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的现金券分摊金额。
-     * 
-     * @return amortizedFlexipurchaseCouponAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的现金券分摊金额。
+     * @return amortizedFlexipurchaseCouponAmount
+     */
     public Double getAmortizedFlexipurchaseCouponAmount() {
         return amortizedFlexipurchaseCouponAmount;
     }
@@ -780,9 +847,10 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的储值卡分摊金额。
-     * 
-     * @return amortizedStoredValueCardAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的储值卡分摊金额。
+     * @return amortizedStoredValueCardAmount
+     */
     public Double getAmortizedStoredValueCardAmount() {
         return amortizedStoredValueCardAmount;
     }
@@ -796,15 +864,118 @@ public class NvlCostAnalysedBillDetail {
         return this;
     }
 
-    /** 月度成本分摊时，当月已分摊金额中包含的奖励金分摊金额（用于现网未清干净的奖励金）。
-     * 
-     * @return amortizedBonusAmount */
+    /**
+     * 月度成本分摊时，当月已分摊金额中包含的奖励金分摊金额（用于现网未清干净的奖励金）。
+     * @return amortizedBonusAmount
+     */
     public Double getAmortizedBonusAmount() {
         return amortizedBonusAmount;
     }
 
     public void setAmortizedBonusAmount(Double amortizedBonusAmount) {
         this.amortizedBonusAmount = amortizedBonusAmount;
+    }
+
+    public NvlCostAnalysedBillDetail withSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段
+     * @return subServiceTypeCode
+     */
+    public String getSubServiceTypeCode() {
+        return subServiceTypeCode;
+    }
+
+    public void setSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+    }
+
+    public NvlCostAnalysedBillDetail withSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段
+     * @return subServiceTypeName
+     */
+    public String getSubServiceTypeName() {
+        return subServiceTypeName;
+    }
+
+    public void setSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+    }
+
+    public NvlCostAnalysedBillDetail withSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段
+     * @return subResourceTypeCode
+     */
+    public String getSubResourceTypeCode() {
+        return subResourceTypeCode;
+    }
+
+    public void setSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+    }
+
+    public NvlCostAnalysedBillDetail withSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceTypeName
+     */
+    public String getSubResourceTypeName() {
+        return subResourceTypeName;
+    }
+
+    public void setSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+    }
+
+    public NvlCostAnalysedBillDetail withSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceId
+     */
+    public String getSubResourceId() {
+        return subResourceId;
+    }
+
+    public void setSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+    }
+
+    public NvlCostAnalysedBillDetail withSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceName
+     */
+    public String getSubResourceName() {
+        return subResourceName;
+    }
+
+    public void setSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
     }
 
     @Override
@@ -855,7 +1026,13 @@ public class NvlCostAnalysedBillDetail {
                 nvlCostAnalysedBillDetail.amortizedFlexipurchaseCouponAmount)
             && Objects.equals(this.amortizedStoredValueCardAmount,
                 nvlCostAnalysedBillDetail.amortizedStoredValueCardAmount)
-            && Objects.equals(this.amortizedBonusAmount, nvlCostAnalysedBillDetail.amortizedBonusAmount);
+            && Objects.equals(this.amortizedBonusAmount, nvlCostAnalysedBillDetail.amortizedBonusAmount)
+            && Objects.equals(this.subServiceTypeCode, nvlCostAnalysedBillDetail.subServiceTypeCode)
+            && Objects.equals(this.subServiceTypeName, nvlCostAnalysedBillDetail.subServiceTypeName)
+            && Objects.equals(this.subResourceTypeCode, nvlCostAnalysedBillDetail.subResourceTypeCode)
+            && Objects.equals(this.subResourceTypeName, nvlCostAnalysedBillDetail.subResourceTypeName)
+            && Objects.equals(this.subResourceId, nvlCostAnalysedBillDetail.subResourceId)
+            && Objects.equals(this.subResourceName, nvlCostAnalysedBillDetail.subResourceName);
     }
 
     @Override
@@ -897,7 +1074,13 @@ public class NvlCostAnalysedBillDetail {
             amortizedCouponAmount,
             amortizedFlexipurchaseCouponAmount,
             amortizedStoredValueCardAmount,
-            amortizedBonusAmount);
+            amortizedBonusAmount,
+            subServiceTypeCode,
+            subServiceTypeName,
+            subResourceTypeCode,
+            subResourceTypeName,
+            subResourceId,
+            subResourceName);
     }
 
     @Override
@@ -950,11 +1133,20 @@ public class NvlCostAnalysedBillDetail {
             .append(toIndentedString(amortizedStoredValueCardAmount))
             .append("\n");
         sb.append("    amortizedBonusAmount: ").append(toIndentedString(amortizedBonusAmount)).append("\n");
+        sb.append("    subServiceTypeCode: ").append(toIndentedString(subServiceTypeCode)).append("\n");
+        sb.append("    subServiceTypeName: ").append(toIndentedString(subServiceTypeName)).append("\n");
+        sb.append("    subResourceTypeCode: ").append(toIndentedString(subResourceTypeCode)).append("\n");
+        sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
+        sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
+        sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

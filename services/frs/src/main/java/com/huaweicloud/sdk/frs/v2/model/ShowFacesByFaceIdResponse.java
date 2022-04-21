@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowFacesByFaceIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库ID，随机生成的包含八个字符的字符串。 调用失败时无此字段。
-     * 
-     * @return faceSetId */
+    /**
+     * 人脸库ID，随机生成的包含八个字符的字符串。 调用失败时无此字段。
+     * @return faceSetId
+     */
     public String getFaceSetId() {
         return faceSetId;
     }
@@ -48,9 +51,10 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库名称。 调用失败时无此字段。
-     * 
-     * @return faceSetName */
+    /**
+     * 人脸库名称。 调用失败时无此字段。
+     * @return faceSetName
+     */
     public String getFaceSetName() {
         return faceSetName;
     }
@@ -80,9 +84,10 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/api-face/face_02_0018.html)。 调用失败时无此字段。
-     * 
-     * @return faces */
+    /**
+     * 人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/api-face/face_02_0018.html)。 调用失败时无此字段。
+     * @return faces
+     */
     public List<FaceSetFace> getFaces() {
         return faces;
     }
@@ -121,7 +126,10 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

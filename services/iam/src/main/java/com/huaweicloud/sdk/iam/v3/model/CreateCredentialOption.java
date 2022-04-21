@@ -25,9 +25,10 @@ public class CreateCredentialOption {
         return this;
     }
 
-    /** 待创建访问秘钥（AK/SK）的IAM用户ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return userId */
+    /**
+     * 待创建访问秘钥（AK/SK）的IAM用户ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -41,9 +42,10 @@ public class CreateCredentialOption {
         return this;
     }
 
-    /** 访问密钥描述信息。
-     * 
-     * @return description */
+    /**
+     * 访问密钥描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,7 +82,10 @@ public class CreateCredentialOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

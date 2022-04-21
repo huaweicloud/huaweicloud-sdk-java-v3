@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDate;
 import java.util.Objects;
 
-/** ak-sk数据模型 */
+/**
+ * ak-sk数据模型
+ */
 public class AccessAkskVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** ak-sk的id
-     * 
-     * @return id */
+    /**
+     * ak-sk的id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** ak-sk的生成时间
-     * 
-     * @return gmtCreate */
+    /**
+     * ak-sk的生成时间
+     * @return gmtCreate
+     */
     public LocalDate getGmtCreate() {
         return gmtCreate;
     }
@@ -86,9 +90,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** ak-sk的修改时间
-     * 
-     * @return gmtModify */
+    /**
+     * ak-sk的修改时间
+     * @return gmtModify
+     */
     public LocalDate getGmtModify() {
         return gmtModify;
     }
@@ -102,9 +107,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** 内部租户id
-     * 
-     * @return innerDomainId */
+    /**
+     * 内部租户id
+     * @return innerDomainId
+     */
     public Integer getInnerDomainId() {
         return innerDomainId;
     }
@@ -118,9 +124,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** 生成的ak
-     * 
-     * @return ak */
+    /**
+     * 生成的ak
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -134,9 +141,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** 生成的sk
-     * 
-     * @return sk */
+    /**
+     * 生成的sk
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -150,9 +158,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** ak-sk的状态
-     * 
-     * @return status */
+    /**
+     * ak-sk的状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -166,9 +175,10 @@ public class AccessAkskVO {
         return this;
     }
 
-    /** ak-sk的描述信息
-     * 
-     * @return descp */
+    /**
+     * ak-sk的描述信息
+     * @return descp
+     */
     public String getDescp() {
         return descp;
     }
@@ -214,7 +224,10 @@ public class AccessAkskVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

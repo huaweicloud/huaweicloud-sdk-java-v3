@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteIkThesaurusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteIkThesaurusRequest {
         return this;
     }
 
-    /** 指定要删除自定义词库的集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 指定要删除自定义词库的集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -55,7 +58,10 @@ public class DeleteIkThesaurusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

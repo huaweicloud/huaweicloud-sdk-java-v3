@@ -10,10 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 录制视频混流参数。 用法如下： 如果某窗格需要展示某个固定用户的视频： 例如:{ \&quot;id\&quot;: 1, \&quot;user_id\&quot;: \&quot;user001\&quot;,
- * \&quot;video_type\&quot;: \&quot;CAMERASTREAM\&quot; } 如果某窗格需要展示某个固定用户的共享屏幕： 例如:{ \&quot;id\&quot;: 1,
- * \&quot;user_id\&quot;: \&quot;user001\&quot;, \&quot;video_type\&quot;: \&quot;SCREENSTREAM\&quot; }
- * 如果某窗格需要展示共享桌面，不特定用户： 例如:{ \&quot;id\&quot;: 1, \&quot;video_type\&quot;: \&quot;SCREENSTREAM\&quot;} */
+/**
+ * 录制视频混流参数。  用法如下：  如果某窗格需要展示某个固定用户的视频：  例如:{ \&quot;id\&quot;: 1, \&quot;user_id\&quot;: \&quot;user001\&quot;, \&quot;video_type\&quot;: \&quot;CAMERASTREAM\&quot; }  如果某窗格需要展示某个固定用户的共享屏幕：  例如:{ \&quot;id\&quot;: 1, \&quot;user_id\&quot;: \&quot;user001\&quot;, \&quot;video_type\&quot;: \&quot;SCREENSTREAM\&quot; }  如果某窗格需要展示共享桌面，不特定用户：  例如:{ \&quot;id\&quot;: 1,  \&quot;video_type\&quot;: \&quot;SCREENSTREAM\&quot;} 
+ */
 public class MixLayoutPane {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +25,19 @@ public class MixLayoutPane {
 
     private String userId;
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。 */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     */
     public static final class VideoTypeEnum {
 
-        /** Enum CAMERASTREAM for value: "CAMERASTREAM" */
+        /**
+         * Enum CAMERASTREAM for value: "CAMERASTREAM"
+         */
         public static final VideoTypeEnum CAMERASTREAM = new VideoTypeEnum("CAMERASTREAM");
 
-        /** Enum SCREENSTREAM for value: "SCREENSTREAM" */
+        /**
+         * Enum SCREENSTREAM for value: "SCREENSTREAM"
+         */
         public static final VideoTypeEnum SCREENSTREAM = new VideoTypeEnum("SCREENSTREAM");
 
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,13 +132,19 @@ public class MixLayoutPane {
 
     private Integer zorder;
 
-    /** 裁剪模式，自定义布局场景下填写本字段，支持两种模式： - KEEP_RATIO_PADDING ：保持比例留边。 - KEEP_RATIO_CROP ：保持比例裁剪。 */
+    /**
+     * 裁剪模式，自定义布局场景下填写本字段，支持两种模式：   - KEEP_RATIO_PADDING ：保持比例留边。   - KEEP_RATIO_CROP ：保持比例裁剪。 
+     */
     public static final class CropModeEnum {
 
-        /** Enum KEEP_RATIO_PADDING for value: "KEEP_RATIO_PADDING" */
+        /**
+         * Enum KEEP_RATIO_PADDING for value: "KEEP_RATIO_PADDING"
+         */
         public static final CropModeEnum KEEP_RATIO_PADDING = new CropModeEnum("KEEP_RATIO_PADDING");
 
-        /** Enum KEEP_RATIO_CROP for value: "KEEP_RATIO_CROP" */
+        /**
+         * Enum KEEP_RATIO_CROP for value: "KEEP_RATIO_CROP"
+         */
         public static final CropModeEnum KEEP_RATIO_CROP = new CropModeEnum("KEEP_RATIO_CROP");
 
         private static final Map<String, CropModeEnum> STATIC_FIELDS = createStaticFields();
@@ -208,9 +219,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 窗口id，从1开始编号 minimum: 1 maximum: 25
-     * 
-     * @return id */
+    /**
+     * 窗口id，从1开始编号
+     * minimum: 1
+     * maximum: 25
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -224,9 +238,10 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 加入房间的用户id
-     * 
-     * @return userId */
+    /**
+     * 加入房间的用户id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -240,9 +255,10 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。
-     * 
-     * @return videoType */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     * @return videoType
+     */
     public VideoTypeEnum getVideoType() {
         return videoType;
     }
@@ -256,10 +272,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 坐标x，归一化百分比，画布上该画面左上角的横坐标的相对值，范围是 [0.0,1.0]。从左到右布局，0.0在最左端，1.0在最右端，小数取值范围在float内，自定义布局场景下填写本字段。 minimum: 0
+    /**
+     * 坐标x，归一化百分比，画布上该画面左上角的横坐标的相对值，范围是 [0.0,1.0]。从左到右布局，0.0在最左端，1.0在最右端，小数取值范围在float内，自定义布局场景下填写本字段。
+     * minimum: 0
      * maximum: 1
-     * 
-     * @return x */
+     * @return x
+     */
     public Float getX() {
         return x;
     }
@@ -273,10 +291,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 坐标y，归一化百分比，画布上该画面左上角的纵坐标的相对值，范围是 [0.0,1.0]。从上到下布局，0.0在最上端，1.0在最下端，小数取值范围在float内，自定义布局场景下填写本字段。 minimum: 0
+    /**
+     * 坐标y，归一化百分比，画布上该画面左上角的纵坐标的相对值，范围是 [0.0,1.0]。从上到下布局，0.0在最上端，1.0在最下端，小数取值范围在float内，自定义布局场景下填写本字段。
+     * minimum: 0
      * maximum: 1
-     * 
-     * @return y */
+     * @return y
+     */
     public Float getY() {
         return y;
     }
@@ -290,9 +310,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 窗格宽，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。 minimum: 0 maximum: 1
-     * 
-     * @return width */
+    /**
+     * 窗格宽，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。
+     * minimum: 0
+     * maximum: 1
+     * @return width
+     */
     public Float getWidth() {
         return width;
     }
@@ -306,9 +329,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 窗格宽，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。 minimum: 0 maximum: 1
-     * 
-     * @return height */
+    /**
+     * 窗格宽，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。
+     * minimum: 0
+     * maximum: 1
+     * @return height
+     */
     public Float getHeight() {
         return height;
     }
@@ -322,9 +348,12 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 叠放顺序，0为最底层，1层在0层之上，以此类推，最大支持25层，自定义布局场景下填写本字段。 minimum: 0 maximum: 24
-     * 
-     * @return zorder */
+    /**
+     * 叠放顺序，0为最底层，1层在0层之上，以此类推，最大支持25层，自定义布局场景下填写本字段。
+     * minimum: 0
+     * maximum: 24
+     * @return zorder
+     */
     public Integer getZorder() {
         return zorder;
     }
@@ -338,9 +367,10 @@ public class MixLayoutPane {
         return this;
     }
 
-    /** 裁剪模式，自定义布局场景下填写本字段，支持两种模式： - KEEP_RATIO_PADDING ：保持比例留边。 - KEEP_RATIO_CROP ：保持比例裁剪。
-     * 
-     * @return cropMode */
+    /**
+     * 裁剪模式，自定义布局场景下填写本字段，支持两种模式：   - KEEP_RATIO_PADDING ：保持比例留边。   - KEEP_RATIO_CROP ：保持比例裁剪。 
+     * @return cropMode
+     */
     public CropModeEnum getCropMode() {
         return cropMode;
     }
@@ -387,7 +417,10 @@ public class MixLayoutPane {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

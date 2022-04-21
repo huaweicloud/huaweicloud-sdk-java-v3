@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新专属主机属性消息体。 */
+/**
+ * 更新专属主机属性消息体。
+ */
 public class ReqUpdateDeh {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ReqUpdateDeh {
         return this;
     }
 
-    /** Get dedicatedHost
-     * 
-     * @return dedicatedHost */
+    /**
+     * Get dedicatedHost
+     * @return dedicatedHost
+     */
     public ReqUpdateDehMessage getDedicatedHost() {
         return dedicatedHost;
     }
@@ -65,7 +68,10 @@ public class ReqUpdateDeh {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

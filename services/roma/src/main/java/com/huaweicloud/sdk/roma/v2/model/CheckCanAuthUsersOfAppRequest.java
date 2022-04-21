@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CheckCanAuthUsersOfAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CheckCanAuthUsersOfAppRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -44,9 +47,10 @@ public class CheckCanAuthUsersOfAppRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -60,9 +64,10 @@ public class CheckCanAuthUsersOfAppRequest {
         return this;
     }
 
-    /** 过滤条件 - 过滤条件，未提供时返回包括应用成员在内的所有候选用户列表 - 取值members时，过滤掉当前应用成员，适合增量添加应用成员时使用
-     * 
-     * @return filter */
+    /**
+     * 过滤条件 - 过滤条件，未提供时返回包括应用成员在内的所有候选用户列表 - 取值members时，过滤掉当前应用成员，适合增量添加应用成员时使用
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -101,7 +106,10 @@ public class CheckCanAuthUsersOfAppRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

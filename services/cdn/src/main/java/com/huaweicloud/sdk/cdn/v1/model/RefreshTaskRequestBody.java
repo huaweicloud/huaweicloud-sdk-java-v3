@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RefreshTaskRequestBody */
+/**
+ * RefreshTaskRequestBody
+ */
 public class RefreshTaskRequestBody {
 
-    /** 刷新的类型，其值可以为file 或directory，默认为file */
+    /**
+     * 刷新的类型，其值可以为file 或directory，默认为file
+     */
     public static final class TypeEnum {
 
-        /** Enum FILE for value: "file" */
+        /**
+         * Enum FILE for value: "file"
+         */
         public static final TypeEnum FILE = new TypeEnum("file");
 
-        /** Enum DIRECTORY for value: "directory" */
+        /**
+         * Enum DIRECTORY for value: "directory"
+         */
         public static final TypeEnum DIRECTORY = new TypeEnum("directory");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class RefreshTaskRequestBody {
         return this;
     }
 
-    /** 刷新的类型，其值可以为file 或directory，默认为file
-     * 
-     * @return type */
+    /**
+     * 刷新的类型，其值可以为file 或directory，默认为file
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -134,9 +143,10 @@ public class RefreshTaskRequestBody {
         return this;
     }
 
-    /** 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。
-     * 
-     * @return urls */
+    /**
+     * 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。
+     * @return urls
+     */
     public List<String> getUrls() {
         return urls;
     }
@@ -173,7 +183,10 @@ public class RefreshTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

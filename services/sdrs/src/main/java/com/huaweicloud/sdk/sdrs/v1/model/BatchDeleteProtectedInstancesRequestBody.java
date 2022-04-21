@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除请求体 */
+/**
+ * 批量删除请求体
+ */
 public class BatchDeleteProtectedInstancesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class BatchDeleteProtectedInstancesRequestBody {
         return this;
     }
 
-    /** 所需要删除的保护实例列表。
-     * 
-     * @return protectedInstances */
+    /**
+     * 所需要删除的保护实例列表。
+     * @return protectedInstances
+     */
     public List<ResourceId> getProtectedInstances() {
         return protectedInstances;
     }
@@ -64,9 +67,10 @@ public class BatchDeleteProtectedInstancesRequestBody {
         return this;
     }
 
-    /** 是否删除容灾站点服务器，默认值为false。
-     * 
-     * @return deleteTargetServer */
+    /**
+     * 是否删除容灾站点服务器，默认值为false。
+     * @return deleteTargetServer
+     */
     public Boolean getDeleteTargetServer() {
         return deleteTargetServer;
     }
@@ -80,9 +84,10 @@ public class BatchDeleteProtectedInstancesRequestBody {
         return this;
     }
 
-    /** 是否删除容灾站点弹性IP，默认值为false。
-     * 
-     * @return deleteTargetEip */
+    /**
+     * 是否删除容灾站点弹性IP，默认值为false。
+     * @return deleteTargetEip
+     */
     public Boolean getDeleteTargetEip() {
         return deleteTargetEip;
     }
@@ -122,7 +127,10 @@ public class BatchDeleteProtectedInstancesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ApplyCertificateToHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书id
-     * 
-     * @return id */
+    /**
+     * 证书id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -58,9 +61,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名
-     * 
-     * @return name */
+    /**
+     * 证书名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -74,9 +78,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -90,9 +95,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 过期时间
-     * 
-     * @return expireTime */
+    /**
+     * 过期时间
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -122,9 +128,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return this;
     }
 
-    /** 绑定域名列表
-     * 
-     * @return bindHost */
+    /**
+     * 绑定域名列表
+     * @return bindHost
+     */
     public List<CertificateBundingHostBody> getBindHost() {
         return bindHost;
     }
@@ -167,7 +174,10 @@ public class ApplyCertificateToHostResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

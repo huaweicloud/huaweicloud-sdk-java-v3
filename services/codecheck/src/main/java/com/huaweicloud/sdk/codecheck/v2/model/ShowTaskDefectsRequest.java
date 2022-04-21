@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTaskDefectsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowTaskDefectsRequest {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -54,9 +57,11 @@ public class ShowTaskDefectsRequest {
         return this;
     }
 
-    /** 分页索引，偏移量 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -70,9 +75,12 @@ public class ShowTaskDefectsRequest {
         return this;
     }
 
-    /** 每页显示的数量,每页最多显示100条 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量,每页最多显示100条
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,9 +94,10 @@ public class ShowTaskDefectsRequest {
         return this;
     }
 
-    /** 问题状态筛选
-     * 
-     * @return statusIds */
+    /**
+     * 问题状态筛选
+     * @return statusIds
+     */
     public String getStatusIds() {
         return statusIds;
     }
@@ -102,9 +111,10 @@ public class ShowTaskDefectsRequest {
         return this;
     }
 
-    /** 严重级别，0致命，1严重，2一般，3提示
-     * 
-     * @return severity */
+    /**
+     * 严重级别，0致命，1严重，2一般，3提示
+     * @return severity
+     */
     public String getSeverity() {
         return severity;
     }
@@ -147,7 +157,10 @@ public class ShowTaskDefectsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

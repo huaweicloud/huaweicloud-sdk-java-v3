@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SysTags */
+/**
+ * SysTags
+ */
 public class SysTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SysTags {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return value */
+    /**
+     * 企业项目ID
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -39,9 +42,10 @@ public class SysTags {
         return this;
     }
 
-    /** 该值目前固定为“_sys_enterprise_project_id”
-     * 
-     * @return key */
+    /**
+     * 该值目前固定为“_sys_enterprise_project_id”
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -77,7 +81,10 @@ public class SysTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

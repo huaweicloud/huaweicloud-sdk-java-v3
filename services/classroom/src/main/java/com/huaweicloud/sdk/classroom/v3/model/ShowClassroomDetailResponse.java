@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowClassroomDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,9 +102,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂名称
-     * 
-     * @return name */
+    /**
+     * 课堂名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -116,9 +119,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂描述
-     * 
-     * @return description */
+    /**
+     * 课堂描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -132,9 +136,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂公告
-     * 
-     * @return announcement */
+    /**
+     * 课堂公告
+     * @return announcement
+     */
     public String getAnnouncement() {
         return announcement;
     }
@@ -148,9 +153,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂公告创建时间，日期格式：yyyy-MM-dd
-     * 
-     * @return announcementTime */
+    /**
+     * 课堂公告创建时间，日期格式：yyyy-MM-dd
+     * @return announcementTime
+     */
     public String getAnnouncementTime() {
         return announcementTime;
     }
@@ -164,9 +170,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂创建时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return createTime */
+    /**
+     * 课堂创建时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -180,9 +187,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂最新更新时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return updateTime */
+    /**
+     * 课堂最新更新时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -196,9 +204,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前课堂的授课人
-     * 
-     * @return teacher */
+    /**
+     * 当前课堂的授课人
+     * @return teacher
+     */
     public String getTeacher() {
         return teacher;
     }
@@ -212,9 +221,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂学分
-     * 
-     * @return credit */
+    /**
+     * 课堂学分
+     * @return credit
+     */
     public BigDecimal getCredit() {
         return credit;
     }
@@ -228,9 +238,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂开始时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return startTime */
+    /**
+     * 课堂开始时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -244,9 +255,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂结束时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return endTime */
+    /**
+     * 课堂结束时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -260,9 +272,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前用户在课堂下角色，取值范围：teacher：老师，student：学生
-     * 
-     * @return role */
+    /**
+     * 当前用户在课堂下角色，取值范围：teacher：老师，student：学生
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -276,9 +289,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 授课学校
-     * 
-     * @return school */
+    /**
+     * 授课学校
+     * @return school
+     */
     public String getSchool() {
         return school;
     }
@@ -292,9 +306,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂下目录数量
-     * 
-     * @return contentCount */
+    /**
+     * 课堂下目录数量
+     * @return contentCount
+     */
     public Integer getContentCount() {
         return contentCount;
     }
@@ -308,9 +323,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂下课件数量
-     * 
-     * @return coursewareCount */
+    /**
+     * 课堂下课件数量
+     * @return coursewareCount
+     */
     public Integer getCoursewareCount() {
         return coursewareCount;
     }
@@ -324,9 +340,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂下作业数量
-     * 
-     * @return jobCount */
+    /**
+     * 课堂下作业数量
+     * @return jobCount
+     */
     public Integer getJobCount() {
         return jobCount;
     }
@@ -340,9 +357,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂下成员数量
-     * 
-     * @return memberCount */
+    /**
+     * 课堂下成员数量
+     * @return memberCount
+     */
     public Integer getMemberCount() {
         return memberCount;
     }
@@ -356,9 +374,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
-     * 
-     * @return status */
+    /**
+     * 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -441,7 +460,10 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Attributes */
+/**
+ * Attributes
+ */
 public class Attributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Attributes {
         return this;
     }
 
-    /** cpu限制
-     * 
-     * @return cpuLimit */
+    /**
+     * cpu限制
+     * @return cpuLimit
+     */
     public String getCpuLimit() {
         return cpuLimit;
     }
@@ -44,9 +47,10 @@ public class Attributes {
         return this;
     }
 
-    /** 内存限制
-     * 
-     * @return memoryLimitBytes */
+    /**
+     * 内存限制
+     * @return memoryLimitBytes
+     */
     public String getMemoryLimitBytes() {
         return memoryLimitBytes;
     }
@@ -60,9 +64,10 @@ public class Attributes {
         return this;
     }
 
-    /** pvc规格
-     * 
-     * @return pvcQuantity */
+    /**
+     * pvc规格
+     * @return pvcQuantity
+     */
     public String getPvcQuantity() {
         return pvcQuantity;
     }
@@ -101,7 +106,10 @@ public class Attributes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

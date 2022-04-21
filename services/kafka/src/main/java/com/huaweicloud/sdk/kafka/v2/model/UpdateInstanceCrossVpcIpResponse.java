@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改跨VPC访问结果。
-     * 
-     * @return success */
+    /**
+     * 修改跨VPC访问结果。
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -60,9 +63,10 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改broker跨VPC访问的结果列表。
-     * 
-     * @return results */
+    /**
+     * 修改broker跨VPC访问的结果列表。
+     * @return results
+     */
     public List<UpdateInstanceCrossVpcIpRespResults> getResults() {
         return results;
     }
@@ -99,7 +103,10 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

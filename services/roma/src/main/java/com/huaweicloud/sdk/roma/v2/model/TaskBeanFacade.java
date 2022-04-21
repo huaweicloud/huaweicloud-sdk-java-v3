@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 任务执行详情 */
+/**
+ * 任务执行详情
+ */
 public class TaskBeanFacade {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TaskBeanFacade {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -49,9 +52,10 @@ public class TaskBeanFacade {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -65,9 +69,10 @@ public class TaskBeanFacade {
         return this;
     }
 
-    /** 失败的错误码
-     * 
-     * @return errorCode */
+    /**
+     * 失败的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class TaskBeanFacade {
         return this;
     }
 
-    /** 错误详情
-     * 
-     * @return errorMsg */
+    /**
+     * 错误详情
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -124,7 +130,10 @@ public class TaskBeanFacade {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

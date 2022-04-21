@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMasterAddressResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowMasterAddressResponse extends SdkResponse {
         return this;
     }
 
-    /** region的id，英文名称，
-     * 
-     * @return regionName */
+    /**
+     * region的id，英文名称，
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -40,9 +43,10 @@ public class ShowMasterAddressResponse extends SdkResponse {
         return this;
     }
 
-    /** APMmaster服务对对外暴露的地址，提供服务注册和心跳上报
-     * 
-     * @return masterAddress */
+    /**
+     * APMmaster服务对对外暴露的地址，提供服务注册和心跳上报
+     * @return masterAddress
+     */
     public String getMasterAddress() {
         return masterAddress;
     }
@@ -79,7 +83,10 @@ public class ShowMasterAddressResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

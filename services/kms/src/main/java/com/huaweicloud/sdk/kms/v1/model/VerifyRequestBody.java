@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** VerifyRequestBody */
+/**
+ * VerifyRequestBody
+ */
 public class VerifyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,42 +30,62 @@ public class VerifyRequestBody {
 
     private String signature;
 
-    /** 签名算法，枚举如下： - RSASSA_PSS_SHA_256 - RSASSA_PSS_SHA_384 - RSASSA_PSS_SHA_512 - RSASSA_PKCS1_V1_5_SHA_256 -
-     * RSASSA_PKCS1_V1_5_SHA_384 - RSASSA_PKCS1_V1_5_SHA_512 - ECDSA_SHA_256 - ECDSA_SHA_384 - ECDSA_SHA_512 -
-     * SM2DSA_SM3 */
+    /**
+     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+     */
     public static final class SigningAlgorithmEnum {
 
-        /** Enum RSASSA_PSS_SHA_256 for value: "RSASSA_PSS_SHA_256" */
+        /**
+         * Enum RSASSA_PSS_SHA_256 for value: "RSASSA_PSS_SHA_256"
+         */
         public static final SigningAlgorithmEnum RSASSA_PSS_SHA_256 = new SigningAlgorithmEnum("RSASSA_PSS_SHA_256");
 
-        /** Enum RSASSA_PSS_SHA_384 for value: "RSASSA_PSS_SHA_384" */
+        /**
+         * Enum RSASSA_PSS_SHA_384 for value: "RSASSA_PSS_SHA_384"
+         */
         public static final SigningAlgorithmEnum RSASSA_PSS_SHA_384 = new SigningAlgorithmEnum("RSASSA_PSS_SHA_384");
 
-        /** Enum RSASSA_PSS_SHA_512 for value: "RSASSA_PSS_SHA_512" */
+        /**
+         * Enum RSASSA_PSS_SHA_512 for value: "RSASSA_PSS_SHA_512"
+         */
         public static final SigningAlgorithmEnum RSASSA_PSS_SHA_512 = new SigningAlgorithmEnum("RSASSA_PSS_SHA_512");
 
-        /** Enum RSASSA_PKCS1_V1_5_SHA_256 for value: "RSASSA_PKCS1_V1_5_SHA_256" */
+        /**
+         * Enum RSASSA_PKCS1_V1_5_SHA_256 for value: "RSASSA_PKCS1_V1_5_SHA_256"
+         */
         public static final SigningAlgorithmEnum RSASSA_PKCS1_V1_5_SHA_256 =
             new SigningAlgorithmEnum("RSASSA_PKCS1_V1_5_SHA_256");
 
-        /** Enum RSASSA_PKCS1_V1_5_SHA_384 for value: "RSASSA_PKCS1_V1_5_SHA_384" */
+        /**
+         * Enum RSASSA_PKCS1_V1_5_SHA_384 for value: "RSASSA_PKCS1_V1_5_SHA_384"
+         */
         public static final SigningAlgorithmEnum RSASSA_PKCS1_V1_5_SHA_384 =
             new SigningAlgorithmEnum("RSASSA_PKCS1_V1_5_SHA_384");
 
-        /** Enum RSASSA_PKCS1_V1_5_SHA_512 for value: "RSASSA_PKCS1_V1_5_SHA_512" */
+        /**
+         * Enum RSASSA_PKCS1_V1_5_SHA_512 for value: "RSASSA_PKCS1_V1_5_SHA_512"
+         */
         public static final SigningAlgorithmEnum RSASSA_PKCS1_V1_5_SHA_512 =
             new SigningAlgorithmEnum("RSASSA_PKCS1_V1_5_SHA_512");
 
-        /** Enum ECDSA_SHA_256 for value: "ECDSA_SHA_256" */
+        /**
+         * Enum ECDSA_SHA_256 for value: "ECDSA_SHA_256"
+         */
         public static final SigningAlgorithmEnum ECDSA_SHA_256 = new SigningAlgorithmEnum("ECDSA_SHA_256");
 
-        /** Enum ECDSA_SHA_384 for value: "ECDSA_SHA_384" */
+        /**
+         * Enum ECDSA_SHA_384 for value: "ECDSA_SHA_384"
+         */
         public static final SigningAlgorithmEnum ECDSA_SHA_384 = new SigningAlgorithmEnum("ECDSA_SHA_384");
 
-        /** Enum ECDSA_SHA_512 for value: "ECDSA_SHA_512" */
+        /**
+         * Enum ECDSA_SHA_512 for value: "ECDSA_SHA_512"
+         */
         public static final SigningAlgorithmEnum ECDSA_SHA_512 = new SigningAlgorithmEnum("ECDSA_SHA_512");
 
-        /** Enum SM2DSA_SM3 for value: "SM2DSA_SM3" */
+        /**
+         * Enum SM2DSA_SM3 for value: "SM2DSA_SM3"
+         */
         public static final SigningAlgorithmEnum SM2DSA_SM3 = new SigningAlgorithmEnum("SM2DSA_SM3");
 
         private static final Map<String, SigningAlgorithmEnum> STATIC_FIELDS = createStaticFields();
@@ -141,13 +163,19 @@ public class VerifyRequestBody {
 
     private SigningAlgorithmEnum signingAlgorithm;
 
-    /** 消息类型，默认为“DIGEST”，枚举如下： - DIGEST 表示消息摘要 - RAW 表示消息原文 */
+    /**
+     * 消息类型，默认为“DIGEST”，枚举如下：  - DIGEST 表示消息摘要  - RAW 表示消息原文
+     */
     public static final class MessageTypeEnum {
 
-        /** Enum DIGEST for value: "DIGEST" */
+        /**
+         * Enum DIGEST for value: "DIGEST"
+         */
         public static final MessageTypeEnum DIGEST = new MessageTypeEnum("DIGEST");
 
-        /** Enum RAW for value: "RAW" */
+        /**
+         * Enum RAW for value: "RAW"
+         */
         public static final MessageTypeEnum RAW = new MessageTypeEnum("RAW");
 
         private static final Map<String, MessageTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -227,10 +255,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -244,9 +272,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 待签名的消息摘要或者消息，消息长度要求小于4096字节，使用Base64编码。
-     * 
-     * @return message */
+    /**
+     * 待签名的消息摘要或者消息，消息长度要求小于4096字节，使用Base64编码。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -260,9 +289,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 待验证的签名值，使用Base64编码。
-     * 
-     * @return signature */
+    /**
+     * 待验证的签名值，使用Base64编码。
+     * @return signature
+     */
     public String getSignature() {
         return signature;
     }
@@ -276,11 +306,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 签名算法，枚举如下： - RSASSA_PSS_SHA_256 - RSASSA_PSS_SHA_384 - RSASSA_PSS_SHA_512 - RSASSA_PKCS1_V1_5_SHA_256 -
-     * RSASSA_PKCS1_V1_5_SHA_384 - RSASSA_PKCS1_V1_5_SHA_512 - ECDSA_SHA_256 - ECDSA_SHA_384 - ECDSA_SHA_512 -
-     * SM2DSA_SM3
-     * 
-     * @return signingAlgorithm */
+    /**
+     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+     * @return signingAlgorithm
+     */
     public SigningAlgorithmEnum getSigningAlgorithm() {
         return signingAlgorithm;
     }
@@ -294,9 +323,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 消息类型，默认为“DIGEST”，枚举如下： - DIGEST 表示消息摘要 - RAW 表示消息原文
-     * 
-     * @return messageType */
+    /**
+     * 消息类型，默认为“DIGEST”，枚举如下：  - DIGEST 表示消息摘要  - RAW 表示消息原文
+     * @return messageType
+     */
     public MessageTypeEnum getMessageType() {
         return messageType;
     }
@@ -310,9 +340,10 @@ public class VerifyRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff。
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff。
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -357,7 +388,10 @@ public class VerifyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

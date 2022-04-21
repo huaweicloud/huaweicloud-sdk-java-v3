@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单机转主备时必填。 */
+/**
+ * 单机转主备时必填。
+ */
 public class Single2HaObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class Single2HaObject {
         return this;
     }
 
-    /** 实例节点可用区码（AZ）。
-     * 
-     * @return azCodeNewNode */
+    /**
+     * 实例节点可用区码（AZ）。
+     * @return azCodeNewNode
+     */
     public String getAzCodeNewNode() {
         return azCodeNewNode;
     }
@@ -50,9 +53,10 @@ public class Single2HaObject {
         return this;
     }
 
-    /** Dec用户专属存储ID，每个az配置的专属存储不同，实例节点所在专属存储ID，仅支持DEC用户创建时使用。
-     * 
-     * @return dsspoolId */
+    /**
+     * Dec用户专属存储ID，每个az配置的专属存储不同，实例节点所在专属存储ID，仅支持DEC用户创建时使用。
+     * @return dsspoolId
+     */
     public String getDsspoolId() {
         return dsspoolId;
     }
@@ -66,9 +70,10 @@ public class Single2HaObject {
         return this;
     }
 
-    /** 仅包周期实例进行单机转主备时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
-     * 
-     * @return isAutoPay */
+    /**
+     * 仅包周期实例进行单机转主备时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
+     * @return isAutoPay
+     */
     public Boolean getIsAutoPay() {
         return isAutoPay;
     }
@@ -91,9 +96,10 @@ public class Single2HaObject {
         return this;
     }
 
-    /** Get adDomainInfo
-     * 
-     * @return adDomainInfo */
+    /**
+     * Get adDomainInfo
+     * @return adDomainInfo
+     */
     public ADDomainInfo getAdDomainInfo() {
         return adDomainInfo;
     }
@@ -134,7 +140,10 @@ public class Single2HaObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

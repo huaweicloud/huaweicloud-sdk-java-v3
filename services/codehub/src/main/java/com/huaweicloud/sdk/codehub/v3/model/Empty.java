@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import java.util.Objects;
 
-/** Empty */
+/**
+ * Empty
+ */
 public class Empty {
 
     @Override

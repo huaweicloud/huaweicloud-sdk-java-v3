@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListLiveDataQuotaV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    /** 数据源配额
-     * 
-     * @return datasource */
+    /**
+     * 数据源配额
+     * @return datasource
+     */
     public String getDatasource() {
         return datasource;
     }
@@ -55,9 +58,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    /** 后端api配额
-     * 
-     * @return api */
+    /**
+     * 后端api配额
+     * @return api
+     */
     public String getApi() {
         return api;
     }
@@ -71,9 +75,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    /** 脚本配额
-     * 
-     * @return scripts */
+    /**
+     * 脚本配额
+     * @return scripts
+     */
     public String getScripts() {
         return scripts;
     }
@@ -87,9 +92,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    /** 已使用的数据源数量
-     * 
-     * @return datasourceUsed */
+    /**
+     * 已使用的数据源数量
+     * @return datasourceUsed
+     */
     public String getDatasourceUsed() {
         return datasourceUsed;
     }
@@ -103,9 +109,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    /** 已使用的后端api数量
-     * 
-     * @return apiUsed */
+    /**
+     * 已使用的后端api数量
+     * @return apiUsed
+     */
     public String getApiUsed() {
         return apiUsed;
     }
@@ -148,7 +155,10 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源标签列表结构体。 */
+/**
+ * 资源标签列表结构体。
+ */
 public class ResourceTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ResourceTags {
         return this;
     }
 
-    /** 键。 - 最大长度127个unicode字符。 - key不能为空。
-     * 
-     * @return key */
+    /**
+     * 键。  - 最大长度127个unicode字符。  - key不能为空。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,9 +61,10 @@ public class ResourceTags {
         return this;
     }
 
-    /** 值列表。 - 最多10个value。 - value不允许重复。 - 每个值最大长度255个unicode字符。 - 如果values为空则表示any_value。 - value之间为或的关系。
-     * 
-     * @return values */
+    /**
+     * 值列表。  - 最多10个value。  - value不允许重复。  - 每个值最大长度255个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class ResourceTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

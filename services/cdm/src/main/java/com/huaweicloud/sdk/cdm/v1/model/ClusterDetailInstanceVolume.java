@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点的磁盘信息，请参见volume参数说明（查询集群列表时返回值为null）。 */
+/**
+ * 节点的磁盘信息，请参见volume参数说明（查询集群列表时返回值为null）。
+ */
 public class ClusterDetailInstanceVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ClusterDetailInstanceVolume {
         return this;
     }
 
-    /** 节点的磁盘类型，只支持本地磁盘
-     * 
-     * @return type */
+    /**
+     * 节点的磁盘类型，只支持本地磁盘
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class ClusterDetailInstanceVolume {
         return this;
     }
 
-    /** 节点磁盘大小，单位G。
-     * 
-     * @return size */
+    /**
+     * 节点磁盘大小，单位G。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -78,7 +82,10 @@ public class ClusterDetailInstanceVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

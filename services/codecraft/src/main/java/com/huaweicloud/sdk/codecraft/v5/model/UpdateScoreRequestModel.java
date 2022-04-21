@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateScoreRequestModel */
+/**
+ * UpdateScoreRequestModel
+ */
 public class UpdateScoreRequestModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class UpdateScoreRequestModel {
 
     private Double score;
 
-    /** 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来 */
+    /**
+     * 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -109,10 +117,12 @@ public class UpdateScoreRequestModel {
         return this;
     }
 
-    /** 作品ID，大赛平台提供，可以通过接口[ListCompetitionWorks](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CodeCraft&api=ListCompetitionWorks)查询作品ID
-     * minimum: 1 maximum: 2147483647
-     * 
-     * @return worksId */
+    /**
+     * 作品ID，大赛平台提供，可以通过接口[ListCompetitionWorks](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CodeCraft&api=ListCompetitionWorks)查询作品ID
+     * minimum: 1
+     * maximum: 2147483647
+     * @return worksId
+     */
     public Integer getWorksId() {
         return worksId;
     }
@@ -126,9 +136,12 @@ public class UpdateScoreRequestModel {
         return this;
     }
 
-    /** 作品分数，作品状态为failed时传-1，计算长度时包括小数点，小数点后面最多保留四位 minimum: -1 maximum: 99999999999
-     * 
-     * @return score */
+    /**
+     * 作品分数，作品状态为failed时传-1，计算长度时包括小数点，小数点后面最多保留四位
+     * minimum: -1
+     * maximum: 99999999999
+     * @return score
+     */
     public Double getScore() {
         return score;
     }
@@ -142,9 +155,10 @@ public class UpdateScoreRequestModel {
         return this;
     }
 
-    /** 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
-     * 
-     * @return status */
+    /**
+     * 作品状态success|failed。判题时，需要对上传作品进行检查，当作品不符合要求时，应该返回failed，并将提示信息通过 message显示出来
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,9 +172,10 @@ public class UpdateScoreRequestModel {
         return this;
     }
 
-    /** 作品描述信息
-     * 
-     * @return message */
+    /**
+     * 作品描述信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -201,7 +216,10 @@ public class UpdateScoreRequestModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

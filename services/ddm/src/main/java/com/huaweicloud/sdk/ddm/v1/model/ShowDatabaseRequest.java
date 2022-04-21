@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowDatabaseRequest {
         return this;
     }
 
-    /** DDM实例ID
-     * 
-     * @return instanceId */
+    /**
+     * DDM实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -39,9 +42,10 @@ public class ShowDatabaseRequest {
         return this;
     }
 
-    /** 需要查询的逻辑库名称，不区分大小写。
-     * 
-     * @return ddmDbname */
+    /**
+     * 需要查询的逻辑库名称，不区分大小写。
+     * @return ddmDbname
+     */
     public String getDdmDbname() {
         return ddmDbname;
     }
@@ -78,7 +82,10 @@ public class ShowDatabaseRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExerciseCard */
+/**
+ * ExerciseCard
+ */
 public class ExerciseCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ExerciseCard {
         return this;
     }
 
-    /** 习题名称
-     * 
-     * @return name */
+    /**
+     * 习题名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class ExerciseCard {
         return this;
     }
 
-    /** 习题ID
-     * 
-     * @return exerciseId */
+    /**
+     * 习题ID
+     * @return exerciseId
+     */
     public String getExerciseId() {
         return exerciseId;
     }
@@ -70,9 +74,10 @@ public class ExerciseCard {
         return this;
     }
 
-    /** 习题描述
-     * 
-     * @return description */
+    /**
+     * 习题描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,10 +91,10 @@ public class ExerciseCard {
         return this;
     }
 
-    /** 习题子类型 1：函数c 2：函数c++ 3：函数Java 4：函数Python 5：单人项目java 6：单人项目Hadoop 7：通用 8：企业级软件项目 10：web习题 11：AI习题 12：单选题 13：多选题
-     * 14：填空题 15：单人项目C 16：单人项目C++
-     * 
-     * @return resourceSubType */
+    /**
+     * 习题子类型 1：函数c 2：函数c++ 3：函数Java 4：函数Python 5：单人项目java 6：单人项目Hadoop 7：通用 8：企业级软件项目 10：web习题 11：AI习题 12：单选题 13：多选题 14：填空题 15：单人项目C 16：单人项目C++
+     * @return resourceSubType
+     */
     public Integer getResourceSubType() {
         return resourceSubType;
     }
@@ -103,9 +108,10 @@ public class ExerciseCard {
         return this;
     }
 
-    /** 习题分值
-     * 
-     * @return targetScore */
+    /**
+     * 习题分值
+     * @return targetScore
+     */
     public Integer getTargetScore() {
         return targetScore;
     }
@@ -147,7 +153,10 @@ public class ExerciseCard {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

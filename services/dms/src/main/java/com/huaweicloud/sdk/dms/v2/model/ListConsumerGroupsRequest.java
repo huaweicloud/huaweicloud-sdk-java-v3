@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListConsumerGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListConsumerGroupsRequest {
         return this;
     }
 
-    /** 指定的队列ID
-     * 
-     * @return queueId */
+    /**
+     * 指定的队列ID
+     * @return queueId
+     */
     public String getQueueId() {
         return queueId;
     }
@@ -54,9 +57,10 @@ public class ListConsumerGroupsRequest {
         return this;
     }
 
-    /** 是否包含死信信息。默认值为：false
-     * 
-     * @return includeDeadletter */
+    /**
+     * 是否包含死信信息。默认值为：false
+     * @return includeDeadletter
+     */
     public Boolean getIncludeDeadletter() {
         return includeDeadletter;
     }
@@ -70,9 +74,10 @@ public class ListConsumerGroupsRequest {
         return this;
     }
 
-    /** 是否查询消费组的详情，默认值为true。 配置为false时，查询的消费组列表不包含消费详情，接口响应速度快。
-     * 
-     * @return includeMessagesNum */
+    /**
+     * 是否查询消费组的详情，默认值为true。  配置为false时，查询的消费组列表不包含消费详情，接口响应速度快。
+     * @return includeMessagesNum
+     */
     public Boolean getIncludeMessagesNum() {
         return includeMessagesNum;
     }
@@ -86,9 +91,10 @@ public class ListConsumerGroupsRequest {
         return this;
     }
 
-    /** 设置每页显示的消费组数量。 page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
-     * 
-     * @return pageSize */
+    /**
+     * 设置每页显示的消费组数量。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -102,9 +108,10 @@ public class ListConsumerGroupsRequest {
         return this;
     }
 
-    /** 设置查询消费组的页码。 page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
-     * 
-     * @return currentPage */
+    /**
+     * 设置查询消费组的页码。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
+     * @return currentPage
+     */
     public Integer getCurrentPage() {
         return currentPage;
     }
@@ -147,7 +154,10 @@ public class ListConsumerGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

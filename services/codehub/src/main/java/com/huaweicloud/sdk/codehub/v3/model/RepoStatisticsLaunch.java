@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepoStatisticsLaunch */
+/**
+ * RepoStatisticsLaunch
+ */
 public class RepoStatisticsLaunch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RepoStatisticsLaunch {
         return this;
     }
 
-    /** 仓库是否可以统计
-     * 
-     * @return canStatistics */
+    /**
+     * 仓库是否可以统计
+     * @return canStatistics
+     */
     public Boolean getCanStatistics() {
         return canStatistics;
     }
@@ -44,9 +47,10 @@ public class RepoStatisticsLaunch {
         return this;
     }
 
-    /** sidekiq任务的 id
-     * 
-     * @return joinId */
+    /**
+     * sidekiq任务的 id
+     * @return joinId
+     */
     public String getJoinId() {
         return joinId;
     }
@@ -60,9 +64,10 @@ public class RepoStatisticsLaunch {
         return this;
     }
 
-    /** 启动仓库统计返回的信息
-     * 
-     * @return message */
+    /**
+     * 启动仓库统计返回的信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -101,7 +106,10 @@ public class RepoStatisticsLaunch {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

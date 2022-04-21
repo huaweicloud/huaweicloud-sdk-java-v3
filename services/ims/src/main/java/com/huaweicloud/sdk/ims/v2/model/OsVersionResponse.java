@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询版本响应体 */
+/**
+ * 查询版本响应体
+ */
 public class OsVersionResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class OsVersionResponse {
         return this;
     }
 
-    /** 接口状态。
-     * 
-     * @return status */
+    /**
+     * 接口状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -47,9 +50,10 @@ public class OsVersionResponse {
         return this;
     }
 
-    /** 接口ID。
-     * 
-     * @return id */
+    /**
+     * 接口ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +83,10 @@ public class OsVersionResponse {
         return this;
     }
 
-    /** 自描述信息。
-     * 
-     * @return links */
+    /**
+     * 自描述信息。
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -119,7 +124,10 @@ public class OsVersionResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

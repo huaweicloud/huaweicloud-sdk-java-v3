@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 流水线信息 */
+/**
+ * 流水线信息
+ */
 public class SpecificCommitInfoLastPipeline {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class SpecificCommitInfoLastPipeline {
         return this;
     }
 
-    /** 流水线id
-     * 
-     * @return id */
+    /**
+     * 流水线id
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class SpecificCommitInfoLastPipeline {
         return this;
     }
 
-    /** 提交对应的SHA id
-     * 
-     * @return sha */
+    /**
+     * 提交对应的SHA id
+     * @return sha
+     */
     public String getSha() {
         return sha;
     }
@@ -70,9 +74,10 @@ public class SpecificCommitInfoLastPipeline {
         return this;
     }
 
-    /** 分支名
-     * 
-     * @return ref */
+    /**
+     * 分支名
+     * @return ref
+     */
     public String getRef() {
         return ref;
     }
@@ -86,9 +91,10 @@ public class SpecificCommitInfoLastPipeline {
         return this;
     }
 
-    /** 流水线状态
-     * 
-     * @return status */
+    /**
+     * 流水线状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -102,9 +108,10 @@ public class SpecificCommitInfoLastPipeline {
         return this;
     }
 
-    /** 流水线url
-     * 
-     * @return webUrl */
+    /**
+     * 流水线url
+     * @return webUrl
+     */
     public String getWebUrl() {
         return webUrl;
     }
@@ -147,7 +154,10 @@ public class SpecificCommitInfoLastPipeline {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

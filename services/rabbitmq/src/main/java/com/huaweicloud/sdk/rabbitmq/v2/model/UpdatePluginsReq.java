@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdatePluginsReq */
+/**
+ * UpdatePluginsReq
+ */
 public class UpdatePluginsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdatePluginsReq {
         return this;
     }
 
-    /** 是否开启改插件。
-     * 
-     * @return enable */
+    /**
+     * 是否开启改插件。
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -39,9 +42,10 @@ public class UpdatePluginsReq {
         return this;
     }
 
-    /** 插件列表，多个插件中间用“,”隔开。
-     * 
-     * @return plugins */
+    /**
+     * 插件列表，多个插件中间用“,”隔开。
+     * @return plugins
+     */
     public String getPlugins() {
         return plugins;
     }
@@ -78,7 +82,10 @@ public class UpdatePluginsReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

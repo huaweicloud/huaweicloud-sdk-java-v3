@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateTopicRequestBody */
+/**
+ * CreateTopicRequestBody
+ */
 public class CreateTopicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateTopicRequestBody {
         return this;
     }
 
-    /** 创建topic的名字。Topic名称只能包含大写字母、小写字母、数字、-和_，且必须由大写字母、小写字母或数字开头，长度为1到255个字符。
-     * 
-     * @return name */
+    /**
+     * 创建topic的名字。Topic名称只能包含大写字母、小写字母、数字、-和_，且必须由大写字母、小写字母或数字开头，长度为1到255个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class CreateTopicRequestBody {
         return this;
     }
 
-    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。默认值为空。
-     * 
-     * @return displayName */
+    /**
+     * Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。默认值为空。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -60,9 +64,10 @@ public class CreateTopicRequestBody {
         return this;
     }
 
-    /** 企业项目ID。非必选参数，当企业项目开关打开时需要传入该参数。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。非必选参数，当企业项目开关打开时需要传入该参数。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -101,7 +106,10 @@ public class CreateTopicRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

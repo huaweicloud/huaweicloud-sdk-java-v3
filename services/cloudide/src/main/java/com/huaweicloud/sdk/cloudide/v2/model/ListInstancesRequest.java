@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,12 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 10/15/30 minimum: 10 maximum: 30
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量 10/15/30
+     * minimum: 10
+     * maximum: 30
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -64,9 +69,12 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询 minimum: 0 maximum: 999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询
+     * minimum: 0
+     * maximum: 999
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -80,9 +88,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 是否页面显示（以标签配置为准）
-     * 
-     * @return isTemporary */
+    /**
+     * 是否页面显示（以标签配置为准）
+     * @return isTemporary
+     */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -96,9 +105,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 标签
-     * 
-     * @return label */
+    /**
+     * 标签
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -112,9 +122,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 关键字查询(根据实例名，描述模糊查询)
-     * 
-     * @return search */
+    /**
+     * 关键字查询(根据实例名，描述模糊查询)
+     * @return search
+     */
     public String getSearch() {
         return search;
     }
@@ -128,9 +139,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 排序方式 asc/desc
-     * 
-     * @return sortDir */
+    /**
+     * 排序方式 asc/desc
+     * @return sortDir
+     */
     public String getSortDir() {
         return sortDir;
     }
@@ -144,9 +156,10 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 排序字段。 display_name 实例名、status状态、pvc_quantity 存储容量、created_time 创建时间、stack_id 技术栈
-     * 
-     * @return sortKey */
+    /**
+     * 排序字段。 display_name 实例名、status状态、pvc_quantity 存储容量、created_time 创建时间、stack_id 技术栈
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -193,7 +206,10 @@ public class ListInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

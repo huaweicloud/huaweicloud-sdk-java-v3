@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateConfTokenResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class CreateConfTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** Get data
-     * 
-     * @return data */
+    /**
+     * Get data
+     * @return data
+     */
     public TokenInfo getData() {
         return data;
     }
@@ -55,9 +58,10 @@ public class CreateConfTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** 地址本查询临时Token。
-     * 
-     * @return addressToken */
+    /**
+     * 地址本查询临时Token。
+     * @return addressToken
+     */
     public String getAddressToken() {
         return addressToken;
     }
@@ -71,9 +75,10 @@ public class CreateConfTokenResponse extends SdkResponse {
         return this;
     }
 
-    /** global外网IP。
-     * 
-     * @return gloablPublicIP */
+    /**
+     * global外网IP。
+     * @return gloablPublicIP
+     */
     public String getGloablPublicIP() {
         return gloablPublicIP;
     }
@@ -112,7 +117,10 @@ public class CreateConfTokenResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

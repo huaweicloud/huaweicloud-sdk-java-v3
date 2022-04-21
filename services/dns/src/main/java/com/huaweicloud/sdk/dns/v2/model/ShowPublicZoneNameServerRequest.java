@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowPublicZoneNameServerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ShowPublicZoneNameServerRequest {
         return this;
     }
 
-    /** 待查询zone的ID。 可以通过查询公网Zone列表获取。
-     * 
-     * @return zoneId */
+    /**
+     * 待查询zone的ID。  可以通过查询公网Zone列表获取。
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -55,7 +58,10 @@ public class ShowPublicZoneNameServerRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

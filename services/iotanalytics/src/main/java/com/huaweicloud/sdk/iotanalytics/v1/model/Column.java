@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Column */
+/**
+ * Column
+ */
 public class Column {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Column {
         return this;
     }
 
-    /** 列名称。
-     * 
-     * @return columnName */
+    /**
+     * 列名称。
+     * @return columnName
+     */
     public String getColumnName() {
         return columnName;
     }
@@ -49,9 +52,10 @@ public class Column {
         return this;
     }
 
-    /** 列描述。
-     * 
-     * @return description */
+    /**
+     * 列描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -65,9 +69,10 @@ public class Column {
         return this;
     }
 
-    /** 列类型。
-     * 
-     * @return type */
+    /**
+     * 列类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -81,9 +86,10 @@ public class Column {
         return this;
     }
 
-    /** 是否分区列。
-     * 
-     * @return isPartitionColumn */
+    /**
+     * 是否分区列。
+     * @return isPartitionColumn
+     */
     public Boolean getIsPartitionColumn() {
         return isPartitionColumn;
     }
@@ -123,7 +129,10 @@ public class Column {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

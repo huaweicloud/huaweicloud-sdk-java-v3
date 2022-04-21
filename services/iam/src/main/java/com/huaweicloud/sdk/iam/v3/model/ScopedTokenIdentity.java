@@ -44,9 +44,10 @@ public class ScopedTokenIdentity {
         return this;
     }
 
-    /** 认证方法，该字段内容为“token”。
-     * 
-     * @return methods */
+    /**
+     * 认证方法，该字段内容为“token”。
+     * @return methods
+     */
     public List<String> getMethods() {
         return methods;
     }
@@ -69,9 +70,10 @@ public class ScopedTokenIdentity {
         return this;
     }
 
-    /** Get token
-     * 
-     * @return token */
+    /**
+     * Get token
+     * @return token
+     */
     public ScopedToken getToken() {
         return token;
     }
@@ -108,7 +110,10 @@ public class ScopedTokenIdentity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

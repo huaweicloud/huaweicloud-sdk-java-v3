@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VideoJobResponse */
+/**
+ * VideoJobResponse
+ */
 public class VideoJobResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业ID。
-     * 
-     * @return id */
+    /**
+     * 作业ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -85,9 +88,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业名称。
-     * 
-     * @return name */
+    /**
+     * 作业名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,9 +105,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业描述信息，默认值为空。
-     * 
-     * @return description */
+    /**
+     * 作业描述信息，默认值为空。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -117,11 +122,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业状态： - PENDING：等待中 - RECOVERING ：恢复中 - STARTING：启动中 - UPGRADING ：更新中 - CREATE_FAILED：创建失败 - START_FAILED：启动失败 -
-     * RUNNING：运行中 - STOPPING：停止中 - STOPPED：已停止 - ABNORMAL：运行异常 - SUCCEEDED：运行成功 - FAILED：运行失败 - DELETING：删除中 - FREEZING
-     * ：冻结中 - FROZEN ：已冻结
-     * 
-     * @return state */
+    /**
+     * 作业状态： - PENDING：等待中 - RECOVERING ：恢复中 - STARTING：启动中 - UPGRADING ：更新中 - CREATE_FAILED：创建失败 - START_FAILED：启动失败 - RUNNING：运行中 - STOPPING：停止中 - STOPPED：已停止 - ABNORMAL：运行异常 - SUCCEEDED：运行成功 - FAILED：运行失败 - DELETING：删除中 - FREEZING ：冻结中 - FROZEN ：已冻结
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -135,9 +139,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return createdAt */
+    /**
+     * 作业创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -151,9 +156,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业更新时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return updatedAt */
+    /**
+     * 作业更新时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -167,9 +173,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 数据输入列表，默认值为[]。
-     * 
-     * @return input */
+    /**
+     * 数据输入列表，默认值为[]。
+     * @return input
+     */
     public Object getInput() {
         return input;
     }
@@ -183,9 +190,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 服务算法配置，字段结构跟服务相关。
-     * 
-     * @return serviceConfig */
+    /**
+     * 服务算法配置，字段结构跟服务相关。
+     * @return serviceConfig
+     */
     public Object getServiceConfig() {
         return serviceConfig;
     }
@@ -199,9 +207,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 数据输出列表，默认值为[]
-     * 
-     * @return output */
+    /**
+     * 数据输出列表，默认值为[]
+     * @return output
+     */
     public Object getOutput() {
         return output;
     }
@@ -224,9 +233,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** Get hostingResult
-     * 
-     * @return hostingResult */
+    /**
+     * Get hostingResult
+     * @return hostingResult
+     */
     public VideoJobResponseHostingResult getHostingResult() {
         return hostingResult;
     }
@@ -240,9 +250,10 @@ public class VideoJobResponse {
         return this;
     }
 
-    /** 作业对应的服务版本。
-     * 
-     * @return serviceVersion */
+    /**
+     * 作业对应的服务版本。
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -306,7 +317,10 @@ public class VideoJobResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

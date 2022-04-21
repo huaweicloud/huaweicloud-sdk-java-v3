@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** authenticatingProxy模式相关配置。认证模式为authenticating_proxy时必选 */
+/**
+ * authenticatingProxy模式相关配置。认证模式为authenticating_proxy时必选
+ */
 public class AuthenticatingProxy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AuthenticatingProxy {
         return this;
     }
 
-    /** authenticating_proxy模式配置的x509格式CA证书(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。 最大长度：1M
-     * 
-     * @return ca */
+    /**
+     * authenticating_proxy模式配置的x509格式CA证书(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。  最大长度：1M
+     * @return ca
+     */
     public String getCa() {
         return ca;
     }
@@ -44,9 +47,10 @@ public class AuthenticatingProxy {
         return this;
     }
 
-    /** authenticating_proxy模式配置的x509格式CA证书签发的客户端证书，用于kube-apiserver到扩展apiserver的认证。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
-     * 
-     * @return cert */
+    /**
+     * authenticating_proxy模式配置的x509格式CA证书签发的客户端证书，用于kube-apiserver到扩展apiserver的认证。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
+     * @return cert
+     */
     public String getCert() {
         return cert;
     }
@@ -60,9 +64,10 @@ public class AuthenticatingProxy {
         return this;
     }
 
-    /** authenticating_proxy模式配置的x509格式CA证书签发的客户端证书时对应的私钥，用于kube-apiserver到扩展apiserver的认证。Kubernetes集群使用的私钥尚不支持密码加密，请使用未加密的私钥。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
-     * 
-     * @return privateKey */
+    /**
+     * authenticating_proxy模式配置的x509格式CA证书签发的客户端证书时对应的私钥，用于kube-apiserver到扩展apiserver的认证。Kubernetes集群使用的私钥尚不支持密码加密，请使用未加密的私钥。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -100,7 +105,10 @@ public class AuthenticatingProxy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

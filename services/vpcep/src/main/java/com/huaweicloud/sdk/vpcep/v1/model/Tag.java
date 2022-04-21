@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Tag */
+/**
+ * Tag
+ */
 public class Tag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Tag {
         return this;
     }
 
-    /** 键。最大长度127个unicode字符。key不能为空。(搜索时不对此参数做字符集校验)，key不能为空或者空字符串，不能为空格，校验和使用之前先trim前后半角空格。
-     * 
-     * @return key */
+    /**
+     * 键。最大长度127个unicode字符。key不能为空。(搜索时不对此参数做字符集校验)，key不能为空或者空字符串，不能为空格，校验和使用之前先trim前后半角空格。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -58,10 +61,10 @@ public class Tag {
         return this;
     }
 
-    /** 值列表。每个值最大长度255个unicode字符，校验和使用之前先trim前后半角空格。 value可为空数组但不可缺省。 如果values为空列表，则表示any_value（查询任意value）。value之间为或的关系。
-     * (搜索时不对此参数做字符集校验，只做长度校验)
-     * 
-     * @return value */
+    /**
+     * 值列表。每个值最大长度255个unicode字符，校验和使用之前先trim前后半角空格。  value可为空数组但不可缺省。  如果values为空列表，则表示any_value（查询任意value）。value之间为或的关系。  (搜索时不对此参数做字符集校验，只做长度校验)
+     * @return value
+     */
     public List<String> getValue() {
         return value;
     }
@@ -97,7 +100,10 @@ public class Tag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

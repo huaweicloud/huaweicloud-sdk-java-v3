@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiConcatInfo */
+/**
+ * MultiConcatInfo
+ */
 public class MultiConcatInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class MultiConcatInfo {
         return this;
     }
 
-    /** 拼接任务输入源地址。
-     * 
-     * @return inputs */
+    /**
+     * 拼接任务输入源地址。
+     * @return inputs
+     */
     public List<ObsObjInfo> getInputs() {
         return inputs;
     }
@@ -89,9 +92,10 @@ public class MultiConcatInfo {
         return this;
     }
 
-    /** 拼接完成后转码对应的转码模板ID
-     * 
-     * @return transTemplateIds */
+    /**
+     * 拼接完成后转码对应的转码模板ID 
+     * @return transTemplateIds
+     */
     public List<Integer> getTransTemplateIds() {
         return transTemplateIds;
     }
@@ -121,9 +125,10 @@ public class MultiConcatInfo {
         return this;
     }
 
-    /** 转码参数。 设置“trans_template_id”和此参数，则优先使用此参数进行转码。
-     * 
-     * @return avParameters */
+    /**
+     * 转码参数。 设置“trans_template_id”和此参数，则优先使用此参数进行转码。 
+     * @return avParameters
+     */
     public List<AvParameters> getAvParameters() {
         return avParameters;
     }
@@ -146,9 +151,10 @@ public class MultiConcatInfo {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -179,9 +185,10 @@ public class MultiConcatInfo {
         return this;
     }
 
-    /** 水印信息。
-     * 
-     * @return imageWatermarkSettings */
+    /**
+     * 水印信息。
+     * @return imageWatermarkSettings
+     */
     public List<ImageWatermarkSetting> getImageWatermarkSettings() {
         return imageWatermarkSettings;
     }
@@ -224,7 +231,10 @@ public class MultiConcatInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

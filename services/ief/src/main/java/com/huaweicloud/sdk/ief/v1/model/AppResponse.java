@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用模板配置 */
+/**
+ * 应用模板配置
+ */
 public class AppResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 应用模板ID
-     * 
-     * @return id */
+    /**
+     * 应用模板ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +80,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 应用模板名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾 Name为必填字段，且本租户中唯一
-     * 
-     * @return name */
+    /**
+     * 应用模板名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾 Name为必填字段，且本租户中唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -93,9 +97,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 应用模板别名，中文英文字母、数字、中划线、下划线，最大64字符
-     * 
-     * @return alias */
+    /**
+     * 应用模板别名，中文英文字母、数字、中划线、下划线，最大64字符
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -109,9 +114,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 应用模板描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 应用模板描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -125,9 +131,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 应用图标存储url地址，最大长度2083
-     * 
-     * @return iconUrl */
+    /**
+     * 应用图标存储url地址，最大长度2083
+     * @return iconUrl
+     */
     public String getIconUrl() {
         return iconUrl;
     }
@@ -141,9 +148,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -157,9 +165,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -173,9 +182,10 @@ public class AppResponse {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return visibility */
+    /**
+     * 模板类型
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -205,9 +215,10 @@ public class AppResponse {
         return this;
     }
 
-    /** app详情
-     * 
-     * @return appVersions */
+    /**
+     * app详情
+     * @return appVersions
+     */
     public List<AppVersionDetail> getAppVersions() {
         return appVersions;
     }
@@ -257,7 +268,10 @@ public class AppResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

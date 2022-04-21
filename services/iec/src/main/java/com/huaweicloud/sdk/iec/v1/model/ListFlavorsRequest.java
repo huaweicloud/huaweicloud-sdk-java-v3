@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 页码。 当前页面数，默认为1。 取值大于等于0，取值为0时返回第1页。
-     * 
-     * @return offset */
+    /**
+     * 页码。 当前页面数，默认为1。 取值大于等于0，取值为0时返回第1页。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -74,9 +77,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 查询返回边缘实例规格列表当前页面的数量 。 取值范围：0~1000。
-     * 
-     * @return limit */
+    /**
+     * 查询返回边缘实例规格列表当前页面的数量 。 取值范围：0~1000。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -90,9 +94,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 查询条件，规格的名称。
-     * 
-     * @return name */
+    /**
+     * 查询条件，规格的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -106,9 +111,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 边缘规格所在大区。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return area */
+    /**
+     * 边缘规格所在大区。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -122,9 +128,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 边缘规格所在省份。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return province */
+    /**
+     * 边缘规格所在省份。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -138,9 +145,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 边缘规格所在城市。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return city */
+    /**
+     * 边缘规格所在城市。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -154,9 +162,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 边缘规格支持运营商。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * 
-     * @return operator */
+    /**
+     * 边缘规格支持运营商。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -170,9 +179,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 查询条件，规格的ID。
-     * 
-     * @return id */
+    /**
+     * 查询条件，规格的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -186,9 +196,10 @@ public class ListFlavorsRequest {
         return this;
     }
 
-    /** 查询条件，边缘规格站点列表，站点之间用“,”分隔。
-     * 
-     * @return siteIds */
+    /**
+     * 查询条件，边缘规格站点列表，站点之间用“,”分隔。
+     * @return siteIds
+     */
     public String getSiteIds() {
         return siteIds;
     }
@@ -238,7 +249,10 @@ public class ListFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateConfTokenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateConfTokenRequest {
         return this;
     }
 
-    /** 会议ID。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -54,9 +57,10 @@ public class CreateConfTokenRequest {
         return this;
     }
 
-    /** 如果携带该值，则表示是保活消息，如果会话已过期并且请求中携带了密码，则进行重新鉴权并回复新的会话标识。 该头域统一为BASE64编码。
-     * 
-     * @return xConferenceAuthorization */
+    /**
+     * 如果携带该值，则表示是保活消息，如果会话已过期并且请求中携带了密码，则进行重新鉴权并回复新的会话标识。 该头域统一为BASE64编码。
+     * @return xConferenceAuthorization
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Conference-Authorization")
     public String getXConferenceAuthorization() {
@@ -72,9 +76,10 @@ public class CreateConfTokenRequest {
         return this;
     }
 
-    /** 会议的主持人密码。 从创建会议的返回响应参数获取。 对于会控Token保活场景，可以不携带会议密码。
-     * 
-     * @return xPassword */
+    /**
+     * 会议的主持人密码。 从创建会议的返回响应参数获取。 对于会控Token保活场景，可以不携带会议密码。
+     * @return xPassword
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Password")
     public String getXPassword() {
@@ -90,9 +95,10 @@ public class CreateConfTokenRequest {
         return this;
     }
 
-    /** 请求类型。 - 1: 业务固定为1。
-     * 
-     * @return xLoginType */
+    /**
+     * 请求类型。 - 1: 业务固定为1。
+     * @return xLoginType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Login-Type")
     public Integer getXLoginType() {
@@ -108,9 +114,10 @@ public class CreateConfTokenRequest {
         return this;
     }
 
-    /** 用户临时nonce token。
-     * 
-     * @return xNonce */
+    /**
+     * 用户临时nonce token。
+     * @return xNonce
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Nonce")
     public String getXNonce() {
@@ -155,7 +162,10 @@ public class CreateConfTokenRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

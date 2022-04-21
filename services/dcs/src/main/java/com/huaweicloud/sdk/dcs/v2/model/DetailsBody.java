@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 详细信息结构体 */
+/**
+ * 详细信息结构体
+ */
 public class DetailsBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 变更前的容量，仅在变更规格时有值
-     * 
-     * @return oldCapacity */
+    /**
+     * 变更前的容量，仅在变更规格时有值
+     * @return oldCapacity
+     */
     public String getOldCapacity() {
         return oldCapacity;
     }
@@ -69,9 +72,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 变更后的容量，仅在变更规格时有值
-     * 
-     * @return newCapacity */
+    /**
+     * 变更后的容量，仅在变更规格时有值
+     * @return newCapacity
+     */
     public String getNewCapacity() {
         return newCapacity;
     }
@@ -85,9 +89,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 是否开启公网访问，仅在开启公网访问时有值
-     * 
-     * @return enablePublicIp */
+    /**
+     * 是否开启公网访问，仅在开启公网访问时有值
+     * @return enablePublicIp
+     */
     public Boolean getEnablePublicIp() {
         return enablePublicIp;
     }
@@ -101,9 +106,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 公网IP的ID，仅在开启公网访问时有值
-     * 
-     * @return publicIpId */
+    /**
+     * 公网IP的ID，仅在开启公网访问时有值
+     * @return publicIpId
+     */
     public String getPublicIpId() {
         return publicIpId;
     }
@@ -117,9 +123,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 公网IP地址，仅在开启公网访问时有值
-     * 
-     * @return publicIpAddress */
+    /**
+     * 公网IP地址，仅在开启公网访问时有值
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -133,9 +140,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 是否开启ssl，仅在开启ssl时有值
-     * 
-     * @return enableSsl */
+    /**
+     * 是否开启ssl，仅在开启ssl时有值
+     * @return enableSsl
+     */
     public Boolean getEnableSsl() {
         return enableSsl;
     }
@@ -149,9 +157,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 变更前的缓存类型，仅在变更规格时有值
-     * 
-     * @return oldCacheMode */
+    /**
+     * 变更前的缓存类型，仅在变更规格时有值
+     * @return oldCacheMode
+     */
     public String getOldCacheMode() {
         return oldCacheMode;
     }
@@ -165,9 +174,10 @@ public class DetailsBody {
         return this;
     }
 
-    /** 变更后的缓存类型，仅在变更规格时有值
-     * 
-     * @return newCacheMode */
+    /**
+     * 变更后的缓存类型，仅在变更规格时有值
+     * @return newCacheMode
+     */
     public String getNewCacheMode() {
         return newCacheMode;
     }
@@ -223,7 +233,10 @@ public class DetailsBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

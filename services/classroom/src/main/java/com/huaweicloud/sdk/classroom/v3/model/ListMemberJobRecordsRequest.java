@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMemberJobRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListMemberJobRecordsRequest {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -54,9 +57,10 @@ public class ListMemberJobRecordsRequest {
         return this;
     }
 
-    /** 习题ID
-     * 
-     * @return exerciseId */
+    /**
+     * 习题ID
+     * @return exerciseId
+     */
     public String getExerciseId() {
         return exerciseId;
     }
@@ -70,9 +74,10 @@ public class ListMemberJobRecordsRequest {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return memberId */
+    /**
+     * 用户ID
+     * @return memberId
+     */
     public String getMemberId() {
         return memberId;
     }
@@ -86,9 +91,12 @@ public class ListMemberJobRecordsRequest {
         return this;
     }
 
-    /** 信息记录的起始编号 minimum: 1 maximum: 1000
-     * 
-     * @return offset */
+    /**
+     * 信息记录的起始编号
+     * minimum: 1
+     * maximum: 1000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +110,12 @@ public class ListMemberJobRecordsRequest {
         return this;
     }
 
-    /** 每页包含的信息记录数 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页包含的信息记录数
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +158,10 @@ public class ListMemberJobRecordsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

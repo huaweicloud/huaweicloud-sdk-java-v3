@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 媒资存储参数信息。 */
+/**
+ * 媒资存储参数信息。
+ */
 public class FileAddr {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class FileAddr {
         return this;
     }
 
-    /** OBS的bucket名称。
-     * 
-     * @return bucket */
+    /**
+     * OBS的bucket名称。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -44,9 +47,10 @@ public class FileAddr {
         return this;
     }
 
-    /** 桶所在的区域名， 如“华北-北京四”的区域名为“cn-north-4”，创建的桶所在区域必须和点播服务所在区域保持一致。
-     * 
-     * @return location */
+    /**
+     * 桶所在的区域名， 如“华北-北京四”的区域名为“cn-north-4”，创建的桶所在区域必须和点播服务所在区域保持一致。
+     * @return location
+     */
     public String getLocation() {
         return location;
     }
@@ -60,9 +64,10 @@ public class FileAddr {
         return this;
     }
 
-    /** 文件的存储路径。
-     * 
-     * @return _object */
+    /**
+     * 文件的存储路径。
+     * @return _object
+     */
     public String getObject() {
         return _object;
     }
@@ -100,7 +105,10 @@ public class FileAddr {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

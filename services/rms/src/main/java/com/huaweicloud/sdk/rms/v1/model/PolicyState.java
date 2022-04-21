@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 合规状态 */
+/**
+ * 合规状态
+ */
 public class PolicyState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属用户ID
-     * 
-     * @return domainId */
+    /**
+     * 合规状态所属用户ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -84,9 +87,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属资源区域ID
-     * 
-     * @return regionId */
+    /**
+     * 合规状态所属资源区域ID
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -100,9 +104,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 合规状态所属资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -116,9 +121,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属资源名字
-     * 
-     * @return resourceName */
+    /**
+     * 合规状态所属资源名字
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -132,9 +138,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属资源provider
-     * 
-     * @return resourceProvider */
+    /**
+     * 合规状态所属资源provider
+     * @return resourceProvider
+     */
     public String getResourceProvider() {
         return resourceProvider;
     }
@@ -148,9 +155,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 合规状态所属资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -164,9 +172,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态
-     * 
-     * @return complianceState */
+    /**
+     * 合规状态
+     * @return complianceState
+     */
     public String getComplianceState() {
         return complianceState;
     }
@@ -180,9 +189,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属规则ID
-     * 
-     * @return policyAssignmentId */
+    /**
+     * 合规状态所属规则ID
+     * @return policyAssignmentId
+     */
     public String getPolicyAssignmentId() {
         return policyAssignmentId;
     }
@@ -196,9 +206,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属规则名字
-     * 
-     * @return policyAssignmentName */
+    /**
+     * 合规状态所属规则名字
+     * @return policyAssignmentName
+     */
     public String getPolicyAssignmentName() {
         return policyAssignmentName;
     }
@@ -212,9 +223,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态所属策略ID
-     * 
-     * @return policyDefinitionId */
+    /**
+     * 合规状态所属策略ID
+     * @return policyDefinitionId
+     */
     public String getPolicyDefinitionId() {
         return policyDefinitionId;
     }
@@ -228,9 +240,10 @@ public class PolicyState {
         return this;
     }
 
-    /** 合规状态评估时间
-     * 
-     * @return evaluationTime */
+    /**
+     * 合规状态评估时间
+     * @return evaluationTime
+     */
     public String getEvaluationTime() {
         return evaluationTime;
     }
@@ -295,7 +308,10 @@ public class PolicyState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 复制对扩容请求数据结构 */
+/**
+ * 复制对扩容请求数据结构
+ */
 public class ExtendReplicationRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ExtendReplicationRequestParams {
         return this;
     }
 
-    /** 复制对内的磁盘扩容后的最终容量。单位：GB 说明:该参数的取值为小数时，系统默认取小数点前的整数值。
-     * 
-     * @return newSize */
+    /**
+     * 复制对内的磁盘扩容后的最终容量。单位：GB 说明:该参数的取值为小数时，系统默认取小数点前的整数值。
+     * @return newSize
+     */
     public Integer getNewSize() {
         return newSize;
     }
@@ -55,7 +58,10 @@ public class ExtendReplicationRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

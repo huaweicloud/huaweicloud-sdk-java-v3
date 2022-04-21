@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群信息 */
+/**
+ * 集群信息
+ */
 public class CreateClusterRolesBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,10 +36,10 @@ public class CreateClusterRolesBody {
         return this;
     }
 
-    /** 实例规格名称。例如， - ess.spec-2u16g规格对应的取值范围为40GB～1280GB。 - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 -
-     * ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
-     * 
-     * @return flavorRef */
+    /**
+     * 实例规格名称。例如，  - ess.spec-2u16g规格对应的取值范围为40GB～1280GB。 - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 - ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -60,9 +62,10 @@ public class CreateClusterRolesBody {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public CreateClusterInstanceVolumeBody getVolume() {
         return volume;
     }
@@ -76,9 +79,10 @@ public class CreateClusterRolesBody {
         return this;
     }
 
-    /** 实例类型。例如， - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。
-     * 
-     * @return type */
+    /**
+     * 实例类型。例如，  - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -92,9 +96,10 @@ public class CreateClusterRolesBody {
         return this;
     }
 
-    /** 实例个数。
-     * 
-     * @return instanceNum */
+    /**
+     * 实例个数。
+     * @return instanceNum
+     */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -135,7 +140,10 @@ public class CreateClusterRolesBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

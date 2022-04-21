@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 不含阈值告警的QoS数据元素，包括时间，QoS取值。 */
+/**
+ * 不含阈值告警的QoS数据元素，包括时间，QoS取值。
+ */
 public class QosDataNoThrElement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class QosDataNoThrElement {
         return this;
     }
 
-    /** Qos时间点, UTC时间，格式：yyyy-MM-ddTHH:mm:ss.SSSZ。
-     * 
-     * @return time */
+    /**
+     * Qos时间点, UTC时间，格式：yyyy-MM-ddTHH:mm:ss.SSSZ。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -39,9 +42,10 @@ public class QosDataNoThrElement {
         return this;
     }
 
-    /** QoS值。
-     * 
-     * @return value */
+    /**
+     * QoS值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -78,7 +82,10 @@ public class QosDataNoThrElement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

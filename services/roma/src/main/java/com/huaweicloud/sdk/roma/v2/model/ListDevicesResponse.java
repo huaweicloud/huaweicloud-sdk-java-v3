@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDevicesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,12 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 总数 minimum: 1 maximum: 99999
-     * 
-     * @return total */
+    /**
+     * 总数
+     * minimum: 1
+     * maximum: 99999
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -68,9 +73,12 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 本次返回数量 minimum: 1 maximum: 1000
-     * 
-     * @return size */
+    /**
+     * 本次返回数量
+     * minimum: 1
+     * maximum: 1000
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -84,9 +92,10 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入地址
-     * 
-     * @return connectAddress */
+    /**
+     * 设备接入地址
+     * @return connectAddress
+     */
     public String getConnectAddress() {
         return connectAddress;
     }
@@ -100,9 +109,10 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入SSL地址
-     * 
-     * @return sslConnectAddress */
+    /**
+     * 设备接入SSL地址
+     * @return sslConnectAddress
+     */
     public String getSslConnectAddress() {
         return sslConnectAddress;
     }
@@ -116,9 +126,10 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入IPV6地址
-     * 
-     * @return ipv6ConnectAddress */
+    /**
+     * 设备接入IPV6地址
+     * @return ipv6ConnectAddress
+     */
     public String getIpv6ConnectAddress() {
         return ipv6ConnectAddress;
     }
@@ -132,9 +143,10 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备接入IPV6 SSL地址
-     * 
-     * @return ipv6SslConnectAddress */
+    /**
+     * 设备接入IPV6 SSL地址
+     * @return ipv6SslConnectAddress
+     */
     public String getIpv6SslConnectAddress() {
         return ipv6SslConnectAddress;
     }
@@ -164,9 +176,10 @@ public class ListDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID列表
-     * 
-     * @return items */
+    /**
+     * 设备ID列表
+     * @return items
+     */
     public List<Device> getItems() {
         return items;
     }
@@ -214,7 +227,10 @@ public class ListDevicesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

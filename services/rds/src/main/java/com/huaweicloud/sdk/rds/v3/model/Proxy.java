@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Proxy */
+/**
+ * Proxy
+ */
 public class Proxy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy实例ID。
-     * 
-     * @return poolId */
+    /**
+     * Proxy实例ID。
+     * @return poolId
+     */
     public String getPoolId() {
         return poolId;
     }
@@ -97,10 +100,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy实例开启状态，取值范围如下。 - open：打开。 - closed：关闭。 - frozen：已冻结。 - opening：打开中。 - closing：关闭中。 - freezing：冻结中。 -
-     * unfreezing：解冻中。
-     * 
-     * @return status */
+    /**
+     * Proxy实例开启状态，取值范围如下。 - open：打开。 - closed：关闭。 - frozen：已冻结。 - opening：打开中。 - closing：关闭中。 - freezing：冻结中。 - unfreezing：解冻中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -114,9 +117,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy读写分离地址。
-     * 
-     * @return address */
+    /**
+     * Proxy读写分离地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -130,9 +134,10 @@ public class Proxy {
         return this;
     }
 
-    /** elb模式的虚拟IP信息。
-     * 
-     * @return elbVip */
+    /**
+     * elb模式的虚拟IP信息。
+     * @return elbVip
+     */
     public String getElbVip() {
         return elbVip;
     }
@@ -146,9 +151,10 @@ public class Proxy {
         return this;
     }
 
-    /** 弹性公网IP信息。
-     * 
-     * @return eip */
+    /**
+     * 弹性公网IP信息。
+     * @return eip
+     */
     public String getEip() {
         return eip;
     }
@@ -162,9 +168,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy端口信息。
-     * 
-     * @return port */
+    /**
+     * Proxy端口信息。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -178,9 +185,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy实例状态。 - abnormal：异常。 - normal：正常。 - creating：创建中。 - deleted：已删除。
-     * 
-     * @return poolStatus */
+    /**
+     * Proxy实例状态。 - abnormal：异常。 - normal：正常。 - creating：创建中。 - deleted：已删除。
+     * @return poolStatus
+     */
     public String getPoolStatus() {
         return poolStatus;
     }
@@ -194,9 +202,10 @@ public class Proxy {
         return this;
     }
 
-    /** 延时阈值（单位：KB）。
-     * 
-     * @return delayThresholdInKilobytes */
+    /**
+     * 延时阈值（单位：KB）。
+     * @return delayThresholdInKilobytes
+     */
     public Integer getDelayThresholdInKilobytes() {
         return delayThresholdInKilobytes;
     }
@@ -210,9 +219,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy实例规格的CPU数量。
-     * 
-     * @return cpu */
+    /**
+     * Proxy实例规格的CPU数量。
+     * @return cpu
+     */
     public String getCpu() {
         return cpu;
     }
@@ -226,9 +236,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy实例规格的内存数量。
-     * 
-     * @return mem */
+    /**
+     * Proxy实例规格的内存数量。
+     * @return mem
+     */
     public String getMem() {
         return mem;
     }
@@ -242,9 +253,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy节点个数。
-     * 
-     * @return nodeNum */
+    /**
+     * Proxy节点个数。
+     * @return nodeNum
+     */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -274,9 +286,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy节点信息。
-     * 
-     * @return nodes */
+    /**
+     * Proxy节点信息。
+     * @return nodes
+     */
     public List<ProxyNode> getNodes() {
         return nodes;
     }
@@ -290,9 +303,10 @@ public class Proxy {
         return this;
     }
 
-    /** Proxy主备模式，取值范围：Ha。
-     * 
-     * @return mode */
+    /**
+     * Proxy主备模式，取值范围：Ha。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -358,7 +372,10 @@ public class Proxy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

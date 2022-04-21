@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowFacesByLimitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowFacesByLimitRequest {
         return this;
     }
 
-    /** 人脸库名称。
-     * 
-     * @return faceSetName */
+    /**
+     * 人脸库名称。
+     * @return faceSetName
+     */
     public String getFaceSetName() {
         return faceSetName;
     }
@@ -44,9 +47,10 @@ public class ShowFacesByLimitRequest {
         return this;
     }
 
-    /** 从第几条数据读起，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 从第几条数据读起，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -60,9 +64,10 @@ public class ShowFacesByLimitRequest {
         return this;
     }
 
-    /** 读取多少条，默认为5。
-     * 
-     * @return limit */
+    /**
+     * 读取多少条，默认为5。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,7 +106,10 @@ public class ShowFacesByLimitRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

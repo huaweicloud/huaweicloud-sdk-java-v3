@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 复制集群相关参数 */
+/**
+ * 复制集群相关参数
+ */
 public class ReplicationClusterParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ReplicationClusterParams {
         return this;
     }
 
-    /** 可用区名称。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区名称。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -55,7 +58,10 @@ public class ReplicationClusterParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

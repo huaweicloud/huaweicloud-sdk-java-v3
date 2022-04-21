@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HandleNotificationInvitee */
+/**
+ * HandleNotificationInvitee
+ */
 public class HandleNotificationInvitee {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class HandleNotificationInvitee {
         return this;
     }
 
-    /** 被邀请方服务实例id
-     * 
-     * @return inviteeBcsId */
+    /**
+     * 被邀请方服务实例id
+     * @return inviteeBcsId
+     */
     public String getInviteeBcsId() {
         return inviteeBcsId;
     }
@@ -49,9 +52,10 @@ public class HandleNotificationInvitee {
         return this;
     }
 
-    /** 被邀请方服务实例名称，同意联盟邀请时必填
-     * 
-     * @return inviteeBcsName */
+    /**
+     * 被邀请方服务实例名称，同意联盟邀请时必填
+     * @return inviteeBcsName
+     */
     public String getInviteeBcsName() {
         return inviteeBcsName;
     }
@@ -65,9 +69,10 @@ public class HandleNotificationInvitee {
         return this;
     }
 
-    /** 被邀请方project id
-     * 
-     * @return inviteeProjectId */
+    /**
+     * 被邀请方project id
+     * @return inviteeProjectId
+     */
     public String getInviteeProjectId() {
         return inviteeProjectId;
     }
@@ -81,9 +86,10 @@ public class HandleNotificationInvitee {
         return this;
     }
 
-    /** 被邀请方租户id
-     * 
-     * @return inviteeUserId */
+    /**
+     * 被邀请方租户id
+     * @return inviteeUserId
+     */
     public String getInviteeUserId() {
         return inviteeUserId;
     }
@@ -124,7 +130,10 @@ public class HandleNotificationInvitee {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

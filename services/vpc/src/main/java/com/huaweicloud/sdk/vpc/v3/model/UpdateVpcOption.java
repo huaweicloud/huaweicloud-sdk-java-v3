@@ -25,9 +25,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：虚拟私有云名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：与description至少选填一个
-     * 
-     * @return name */
+    /**
+     * 功能说明：虚拟私有云名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：与description至少选填一个 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -41,9 +42,10 @@ public class UpdateVpcOption {
         return this;
     }
 
-    /** 功能说明：虚拟私有云描述 取值范围：0-255个字符，不能包含“<”和“>”。 约束：与name至少选填一个
-     * 
-     * @return description */
+    /**
+     * 功能说明：虚拟私有云描述 取值范围：0-255个字符，不能包含“<”和“>”。 约束：与name至少选填一个
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,7 +82,10 @@ public class UpdateVpcOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

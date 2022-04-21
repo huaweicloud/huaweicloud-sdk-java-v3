@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListResourceGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListResourceGroupRequest {
         return this;
     }
 
-    /** 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
-     * 
-     * @return groupName */
+    /**
+     * 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -54,9 +57,10 @@ public class ListResourceGroupRequest {
         return this;
     }
 
-    /** 资源分组的ID，长度为1-128，只能包含0-9/a-z/A-Z；如：rg16063743652226ew93e64p。
-     * 
-     * @return groupId */
+    /**
+     * 资源分组的ID，长度为1-128，只能包含0-9/a-z/A-Z；如：rg16063743652226ew93e64p。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -70,9 +74,10 @@ public class ListResourceGroupRequest {
         return this;
     }
 
-    /** 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
-     * 
-     * @return status */
+    /**
+     * 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -86,9 +91,10 @@ public class ListResourceGroupRequest {
         return this;
     }
 
-    /** 分页起始值，类型为integer，默认值为0。
-     * 
-     * @return start */
+    /**
+     * 分页起始值，类型为integer，默认值为0。
+     * @return start
+     */
     public Integer getStart() {
         return start;
     }
@@ -102,9 +108,10 @@ public class ListResourceGroupRequest {
         return this;
     }
 
-    /** 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
-     * 
-     * @return limit */
+    /**
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +154,10 @@ public class ListResourceGroupRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

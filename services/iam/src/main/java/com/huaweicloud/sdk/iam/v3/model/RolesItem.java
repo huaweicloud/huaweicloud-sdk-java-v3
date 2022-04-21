@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RolesItem */
+/**
+ * RolesItem
+ */
 public class RolesItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限所在目录。
-     * 
-     * @return catalog */
+    /**
+     * 权限所在目录。
+     * @return catalog
+     */
     public String getCatalog() {
         return catalog;
     }
@@ -80,9 +83,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限展示名称。
-     * 
-     * @return displayName */
+    /**
+     * 权限展示名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -96,9 +100,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限的英文描述。
-     * 
-     * @return description */
+    /**
+     * 权限的英文描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -112,9 +117,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限的中文描述信息。
-     * 
-     * @return descriptionCn */
+    /**
+     * 权限的中文描述信息。
+     * @return descriptionCn
+     */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -128,9 +134,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 权限所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -144,9 +151,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 该参数值为fine_grained时，标识此权限为系统内置的策略。
-     * 
-     * @return flag */
+    /**
+     * 该参数值为fine_grained时，标识此权限为系统内置的策略。
+     * @return flag
+     */
     public String getFlag() {
         return flag;
     }
@@ -160,9 +168,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限Id。
-     * 
-     * @return id */
+    /**
+     * 权限Id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -176,9 +185,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限名称。
-     * 
-     * @return name */
+    /**
+     * 权限名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -201,9 +211,10 @@ public class RolesItem {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public RolePolicy getPolicy() {
         return policy;
     }
@@ -217,10 +228,10 @@ public class RolesItem {
         return this;
     }
 
-    /** 权限的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - AA表示在domain和project层均显示。 > - XX表示在domain和project层均不显示。 > -
-     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * 
-     * @return type */
+    /**
+     * 权限的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - AA表示在domain和project层均显示。 > - XX表示在domain和project层均不显示。 > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -270,7 +281,10 @@ public class RolesItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

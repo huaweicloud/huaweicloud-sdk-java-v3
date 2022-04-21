@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转发策略对象，用于状态树 */
+/**
+ * 转发策略对象，用于状态树
+ */
 public class L7policiesInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,13 +33,19 @@ public class L7policiesInStatusResp {
 
     private List<L7rulesInStatusResp> rules = null;
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器 */
+    /**
+    * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+    */
     public static final class ActionEnum {
 
-        /** Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL" */
+        /**
+         * Enum REDIRECT_TO_POOL for value: "REDIRECT_TO_POOL"
+         */
         public static final ActionEnum REDIRECT_TO_POOL = new ActionEnum("REDIRECT_TO_POOL");
 
-        /** Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER" */
+        /**
+         * Enum REDIRECT_TO_LISTENER for value: "REDIRECT_TO_LISTENER"
+         */
         public static final ActionEnum REDIRECT_TO_LISTENER = new ActionEnum("REDIRECT_TO_LISTENER");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +125,10 @@ public class L7policiesInStatusResp {
         return this;
     }
 
-    /** 转发策略ID
-     * 
-     * @return id */
+    /**
+     * 转发策略ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -133,9 +142,10 @@ public class L7policiesInStatusResp {
         return this;
     }
 
-    /** 转发策略名称
-     * 
-     * @return name */
+    /**
+     * 转发策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -165,9 +175,10 @@ public class L7policiesInStatusResp {
         return this;
     }
 
-    /** 转发策略关联的转发规则列表
-     * 
-     * @return rules */
+    /**
+     * 转发策略关联的转发规则列表
+     * @return rules
+     */
     public List<L7rulesInStatusResp> getRules() {
         return rules;
     }
@@ -181,9 +192,10 @@ public class L7policiesInStatusResp {
         return this;
     }
 
-    /** 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
-     * 
-     * @return action */
+    /**
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -197,9 +209,10 @@ public class L7policiesInStatusResp {
         return this;
     }
 
-    /** 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -242,7 +255,10 @@ public class L7policiesInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

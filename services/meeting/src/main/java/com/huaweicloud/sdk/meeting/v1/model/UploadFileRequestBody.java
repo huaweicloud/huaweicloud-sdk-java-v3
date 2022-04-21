@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UploadFileRequestBody */
+/**
+ * UploadFileRequestBody
+ */
 public class UploadFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
@@ -22,9 +24,10 @@ public class UploadFileRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 需要上传的文件
-     * 
-     * @return file */
+    /**
+     * 需要上传的文件
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -84,7 +87,10 @@ public class UploadFileRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

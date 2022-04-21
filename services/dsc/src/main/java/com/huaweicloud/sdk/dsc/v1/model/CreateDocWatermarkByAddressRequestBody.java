@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** OBS文档嵌入水印请求体 */
+/**
+ * OBS文档嵌入水印请求体
+ */
 public class CreateDocWatermarkByAddressRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class CreateDocWatermarkByAddressRequestBody {
 
     private String srcFile;
 
-    /** 待嵌入水印的文档类型。 */
+    /**
+     * 待嵌入水印的文档类型。
+     */
     public static final class DocTypeEnum {
 
-        /** Enum WORD for value: "WORD" */
+        /**
+         * Enum WORD for value: "WORD"
+         */
         public static final DocTypeEnum WORD = new DocTypeEnum("WORD");
 
-        /** Enum EXCEL for value: "EXCEL" */
+        /**
+         * Enum EXCEL for value: "EXCEL"
+         */
         public static final DocTypeEnum EXCEL = new DocTypeEnum("EXCEL");
 
-        /** Enum PDF for value: "PDF" */
+        /**
+         * Enum PDF for value: "PDF"
+         */
         public static final DocTypeEnum PDF = new DocTypeEnum("PDF");
 
-        /** Enum PPT for value: "PPT" */
+        /**
+         * Enum PPT for value: "PPT"
+         */
         public static final DocTypeEnum PPT = new DocTypeEnum("PPT");
 
         private static final Map<String, DocTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,14 +139,19 @@ public class CreateDocWatermarkByAddressRequestBody {
 
     private String imageMark;
 
-    /** 该字段控制明水印嵌入文字还是图片。默认为**TEXT**类型，需填写visible_watermark字段设置明文字水印； 当该字段为**IMAGE**时，需填写image_watermark字段设置水印图片地址此时
-     * ，“visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。 */
+    /**
+     * 该字段控制明水印嵌入文字还是图片。默认为**TEXT**类型，需填写visible_watermark字段设置明文字水印； 当该字段为**IMAGE**时，需填写image_watermark字段设置水印图片地址此时 ，“visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
+     */
     public static final class VisibleTypeEnum {
 
-        /** Enum TEXT for value: "TEXT" */
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
         public static final VisibleTypeEnum TEXT = new VisibleTypeEnum("TEXT");
 
-        /** Enum IMAGE for value: "IMAGE" */
+        /**
+         * Enum IMAGE for value: "IMAGE"
+         */
         public static final VisibleTypeEnum IMAGE = new VisibleTypeEnum("IMAGE");
 
         private static final Map<String, VisibleTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -239,9 +256,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 项目所在region的id，如北京一为：cn-north-1。
-     * 
-     * @return regionId */
+    /**
+     * 项目所在region的id，如北京一为：cn-north-1。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -255,10 +273,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待添加水印的文档地址，当前只支持华为云OBS对象，格式为 **obs://bucket/object**
-     * ，其中bucket为和当前项目处于同一区域的OBS桶名称，object为对象全路径名。例如：**obs://hwbucket/hwinfo/hw.png**，其中obs://表示OBS存储，hwbucket为桶名，hwinfo/hw.png为对象全路径名。
-     * 
-     * @return srcFile */
+    /**
+     * 待添加水印的文档地址，当前只支持华为云OBS对象，格式为 **obs://bucket/object** ，其中bucket为和当前项目处于同一区域的OBS桶名称，object为对象全路径名。例如：**obs://hwbucket/hwinfo/hw.png**，其中obs://表示OBS存储，hwbucket为桶名，hwinfo/hw.png为对象全路径名。
+     * @return srcFile
+     */
     public String getSrcFile() {
         return srcFile;
     }
@@ -272,9 +290,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待嵌入水印的文档类型。
-     * 
-     * @return docType */
+    /**
+     * 待嵌入水印的文档类型。
+     * @return docType
+     */
     public DocTypeEnum getDocType() {
         return docType;
     }
@@ -288,9 +307,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 添加水印后的文档存放地址，格式和要求同src_file字段，不设置时，默认取src_file的值，即添加水印后覆盖原文件。
-     * 
-     * @return dstFile */
+    /**
+     * 添加水印后的文档存放地址，格式和要求同src_file字段，不设置时，默认取src_file的值，即添加水印后覆盖原文件。
+     * @return dstFile
+     */
     public String getDstFile() {
         return dstFile;
     }
@@ -304,9 +324,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 暗文字水印内容，与“visible_watermark”字段至少有一个不为空
-     * 
-     * @return blindWatermark */
+    /**
+     * 暗文字水印内容，与“visible_watermark”字段至少有一个不为空
+     * @return blindWatermark
+     */
     public String getBlindWatermark() {
         return blindWatermark;
     }
@@ -320,9 +341,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 明文字水印内容，与暗水印“blind_watermark”字段至少有一个不为空。
-     * 
-     * @return visibleWatermark */
+    /**
+     * 明文字水印内容，与暗水印“blind_watermark”字段至少有一个不为空。
+     * @return visibleWatermark
+     */
     public String getVisibleWatermark() {
         return visibleWatermark;
     }
@@ -336,9 +358,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待嵌入的图形明水印文件的地址, 字段格式要求同src_file字段，图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB
-     * 
-     * @return imageMark */
+    /**
+     * 待嵌入的图形明水印文件的地址, 字段格式要求同src_file字段，图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB
+     * @return imageMark
+     */
     public String getImageMark() {
         return imageMark;
     }
@@ -352,10 +375,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 该字段控制明水印嵌入文字还是图片。默认为**TEXT**类型，需填写visible_watermark字段设置明文字水印； 当该字段为**IMAGE**时，需填写image_watermark字段设置水印图片地址此时
-     * ，“visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
-     * 
-     * @return visibleType */
+    /**
+     * 该字段控制明水印嵌入文字还是图片。默认为**TEXT**类型，需填写visible_watermark字段设置明文字水印； 当该字段为**IMAGE**时，需填写image_watermark字段设置水印图片地址此时 ，“visible_watermark”，“font_size”，“rotation”和“opacity”字段无效。
+     * @return visibleType
+     */
     public VisibleTypeEnum getVisibleType() {
         return visibleType;
     }
@@ -369,9 +392,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待加水印文件有密码时，读取文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
-     * 
-     * @return filePassword */
+    /**
+     * 待加水印文件有密码时，读取文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
+     * @return filePassword
+     */
     public String getFilePassword() {
         return filePassword;
     }
@@ -385,9 +409,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 添加水印后给文件设置密码， 最大支持长度256。默认不加文档密码。
-     * 
-     * @return markedFilePassword */
+    /**
+     * 添加水印后给文件设置密码， 最大支持长度256。默认不加文档密码。
+     * @return markedFilePassword
+     */
     public String getMarkedFilePassword() {
         return markedFilePassword;
     }
@@ -401,9 +426,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 添加水印后给文件设置只读密码， 最大支持长度256。默认不加只读密码。
-     * 
-     * @return readonlyPassword */
+    /**
+     * 添加水印后给文件设置只读密码， 最大支持长度256。默认不加只读密码。
+     * @return readonlyPassword
+     */
     public String getReadonlyPassword() {
         return readonlyPassword;
     }
@@ -417,9 +443,12 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 明水印字体大小，取值为[1,100]，默认值50 minimum: 1 maximum: 100
-     * 
-     * @return front */
+    /**
+     * 明水印字体大小，取值为[1,100]，默认值50
+     * minimum: 1
+     * maximum: 100
+     * @return front
+     */
     public Integer getFront() {
         return front;
     }
@@ -433,9 +462,12 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 明水印旋转角度，逆时针方向，取值为[0,90]，默认值45。 minimum: 0 maximum: 90
-     * 
-     * @return rotation */
+    /**
+     * 明水印旋转角度，逆时针方向，取值为[0,90]，默认值45。
+     * minimum: 0
+     * maximum: 90
+     * @return rotation
+     */
     public Integer getRotation() {
         return rotation;
     }
@@ -449,9 +481,12 @@ public class CreateDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 明水印的透明度，取值[0,1]，默认值为0.3； minimum: 0 maximum: 1
-     * 
-     * @return opacity */
+    /**
+     * 明水印的透明度，取值[0,1]，默认值为0.3；
+     * minimum: 0
+     * maximum: 1
+     * @return opacity
+     */
     public Float getOpacity() {
         return opacity;
     }
@@ -526,7 +561,10 @@ public class CreateDocWatermarkByAddressRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

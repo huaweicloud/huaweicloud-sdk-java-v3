@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAppsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListAppsResponse extends SdkResponse {
         return this;
     }
 
-    /** app的总数 minimum: 0 maximum: 64
-     * 
-     * @return count */
+    /**
+     * app的总数
+     * minimum: 0
+     * maximum: 64
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -64,9 +69,10 @@ public class ListAppsResponse extends SdkResponse {
         return this;
     }
 
-    /** app的列表
-     * 
-     * @return apps */
+    /**
+     * app的列表
+     * @return apps
+     */
     public List<App> getApps() {
         return apps;
     }
@@ -80,9 +86,10 @@ public class ListAppsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
     public String getXRequestId() {
@@ -122,7 +129,10 @@ public class ListAppsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

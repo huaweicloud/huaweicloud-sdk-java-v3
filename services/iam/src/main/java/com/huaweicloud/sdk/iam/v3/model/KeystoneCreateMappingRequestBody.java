@@ -30,9 +30,10 @@ public class KeystoneCreateMappingRequestBody {
         return this;
     }
 
-    /** Get mapping
-     * 
-     * @return mapping */
+    /**
+     * Get mapping
+     * @return mapping
+     */
     public MappingOption getMapping() {
         return mapping;
     }
@@ -67,7 +68,10 @@ public class KeystoneCreateMappingRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

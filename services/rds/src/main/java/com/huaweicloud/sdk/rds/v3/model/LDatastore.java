@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库版本信息。 */
+/**
+ * 数据库版本信息。
+ */
 public class LDatastore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LDatastore {
         return this;
     }
 
-    /** 数据库版本ID。
-     * 
-     * @return id */
+    /**
+     * 数据库版本ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,10 +42,10 @@ public class LDatastore {
         return this;
     }
 
-    /** 数据库版本号。 - 对于MySQL引擎可以返回小版本号，例如MySQL 5.6.51版本，将返回5.6.51。 - 对于PostgreSQL和SQL Server引擎，只返回两位数的大版本号，例如PostgreSQL
-     * 9.6.X版本，仅返回9.6。
-     * 
-     * @return name */
+    /**
+     * 数据库版本号。 - 对于MySQL引擎可以返回小版本号，例如MySQL 5.6.51版本，将返回5.6.51。 - 对于PostgreSQL和SQL Server引擎，只返回两位数的大版本号，例如PostgreSQL 9.6.X版本，仅返回9.6。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +81,10 @@ public class LDatastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

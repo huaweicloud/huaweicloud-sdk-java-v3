@@ -30,9 +30,10 @@ public class FailedObjectRecordDto {
         return this;
     }
 
-    /** 是否支持失败对象重传。
-     * 
-     * @return result */
+    /**
+     * 是否支持失败对象重传。
+     * @return result
+     */
     public Boolean getResult() {
         return result;
     }
@@ -46,9 +47,10 @@ public class FailedObjectRecordDto {
         return this;
     }
 
-    /** 失败对象列表文件路径。
-     * 
-     * @return listFileKey */
+    /**
+     * 失败对象列表文件路径。
+     * @return listFileKey
+     */
     public String getListFileKey() {
         return listFileKey;
     }
@@ -62,9 +64,10 @@ public class FailedObjectRecordDto {
         return this;
     }
 
-    /** 失败对象列表上传失败的错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 失败对象列表上传失败的错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -103,7 +106,10 @@ public class FailedObjectRecordDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新弹性公网IP参数 */
+/**
+ * 更新弹性公网IP参数
+ */
 public class UpdatePublicIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdatePublicIpOption {
         return this;
     }
 
-    /** vip对应的port的ID可为空。当为空的时候，代表解绑原有eip的关系。不为空时，代表绑定eip和vip。
-     * 
-     * @return portId */
+    /**
+     * vip对应的port的ID可为空。当为空的时候，代表解绑原有eip的关系。不为空时，代表绑定eip和vip。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -55,7 +58,10 @@ public class UpdatePublicIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

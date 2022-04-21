@@ -30,9 +30,10 @@ public class KeystoneCreateGroupOption {
         return this;
     }
 
-    /** 用户组描述信息，长度小于等于255字节。
-     * 
-     * @return description */
+    /**
+     * 用户组描述信息，长度小于等于255字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -46,9 +47,10 @@ public class KeystoneCreateGroupOption {
         return this;
     }
 
-    /** 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return domainId */
+    /**
+     * 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -62,9 +64,10 @@ public class KeystoneCreateGroupOption {
         return this;
     }
 
-    /** 用户组名，长度小于等于64字节。
-     * 
-     * @return name */
+    /**
+     * 用户组名，长度小于等于64字节。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -103,7 +106,10 @@ public class KeystoneCreateGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

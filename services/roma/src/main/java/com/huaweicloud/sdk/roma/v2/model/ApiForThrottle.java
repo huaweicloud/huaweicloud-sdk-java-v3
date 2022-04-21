@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** ApiForThrottle */
+/**
+ * ApiForThrottle
+ */
 public class ApiForThrottle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,9 +86,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API的认证方式
-     * 
-     * @return authType */
+    /**
+     * API的认证方式
+     * @return authType
+     */
     public String getAuthType() {
         return authType;
     }
@@ -100,9 +103,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 发布的环境名
-     * 
-     * @return runEnvName */
+    /**
+     * 发布的环境名
+     * @return runEnvName
+     */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -116,9 +120,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -132,9 +137,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 发布记录的编号
-     * 
-     * @return publishId */
+    /**
+     * 发布记录的编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -148,9 +154,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API所属分组的编号
-     * 
-     * @return groupId */
+    /**
+     * API所属分组的编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -164,9 +171,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return name */
+    /**
+     * API名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -180,9 +188,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return remark */
+    /**
+     * API描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -196,9 +205,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 发布的环境id
-     * 
-     * @return runEnvId */
+    /**
+     * 发布的环境id
+     * @return runEnvId
+     */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -212,9 +222,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return id */
+    /**
+     * API编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -228,9 +239,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API的请求地址
-     * 
-     * @return reqUri */
+    /**
+     * API的请求地址
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -244,9 +256,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** API类型
-     * 
-     * @return type */
+    /**
+     * API类型
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -260,9 +273,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 与流控策略的绑定关系编号
-     * 
-     * @return throttleApplyId */
+    /**
+     * 与流控策略的绑定关系编号
+     * @return throttleApplyId
+     */
     public String getThrottleApplyId() {
         return throttleApplyId;
     }
@@ -276,9 +290,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 绑定的流控策略名称
-     * 
-     * @return throttleName */
+    /**
+     * 绑定的流控策略名称
+     * @return throttleName
+     */
     public String getThrottleName() {
         return throttleName;
     }
@@ -292,9 +307,10 @@ public class ApiForThrottle {
         return this;
     }
 
-    /** 已绑定的流控策略的绑定时间
-     * 
-     * @return applyTime */
+    /**
+     * 已绑定的流控策略的绑定时间
+     * @return applyTime
+     */
     public OffsetDateTime getApplyTime() {
         return applyTime;
     }
@@ -365,7 +381,10 @@ public class ApiForThrottle {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

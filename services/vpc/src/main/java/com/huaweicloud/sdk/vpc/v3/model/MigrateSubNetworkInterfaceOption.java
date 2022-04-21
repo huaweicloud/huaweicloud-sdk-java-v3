@@ -29,9 +29,10 @@ public class MigrateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 目的宿主网卡ID
-     * 
-     * @return parentId */
+    /**
+     * 目的宿主网卡ID
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -62,9 +63,10 @@ public class MigrateSubNetworkInterfaceOption {
         return this;
     }
 
-    /** 待迁移辅助弹性网卡列表
-     * 
-     * @return subNetworkInterfaces */
+    /**
+     * 待迁移辅助弹性网卡列表
+     * @return subNetworkInterfaces
+     */
     public List<Map<String, String>> getSubNetworkInterfaces() {
         return subNetworkInterfaces;
     }
@@ -101,7 +103,10 @@ public class MigrateSubNetworkInterfaceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

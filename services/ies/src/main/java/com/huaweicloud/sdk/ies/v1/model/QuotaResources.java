@@ -1,0 +1,91 @@
+package com.huaweicloud.sdk.ies.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * 资源配额详情列表
+ */
+public class QuotaResources {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources")
+
+    private List<QuotaDetail> resources = null;
+
+    public QuotaResources withResources(List<QuotaDetail> resources) {
+        this.resources = resources;
+        return this;
+    }
+
+    public QuotaResources addResourcesItem(QuotaDetail resourcesItem) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        this.resources.add(resourcesItem);
+        return this;
+    }
+
+    public QuotaResources withResources(Consumer<List<QuotaDetail>> resourcesSetter) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
+
+    /**
+     * 资源配额列表
+     * @return resources
+     */
+    public List<QuotaDetail> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<QuotaDetail> resources) {
+        this.resources = resources;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        QuotaResources quotaResources = (QuotaResources) o;
+        return Objects.equals(this.resources, quotaResources.resources);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(resources);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class QuotaResources {\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

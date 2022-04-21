@@ -45,9 +45,10 @@ public class MappingRules {
         return this;
     }
 
-    /** 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。
-     * 
-     * @return local */
+    /**
+     * 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。 
+     * @return local
+     */
     public List<Map<String, RulesLocalAdditional>> getLocal() {
         return local;
     }
@@ -77,9 +78,10 @@ public class MappingRules {
         return this;
     }
 
-    /** 表示联邦用户在IdP中的用户信息。由断言属性及运算符组成的表达式，取值由断言决定。
-     * 
-     * @return remote */
+    /**
+     * 表示联邦用户在IdP中的用户信息。由断言属性及运算符组成的表达式，取值由断言决定。
+     * @return remote
+     */
     public List<RulesRemote> getRemote() {
         return remote;
     }
@@ -115,7 +117,10 @@ public class MappingRules {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

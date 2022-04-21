@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例数量统计信息。 */
+/**
+ * 实例数量统计信息。
+ */
 public class StatusStatistic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 支付中的实例数。
-     * 
-     * @return payingCount */
+    /**
+     * 支付中的实例数。
+     * @return payingCount
+     */
     public Integer getPayingCount() {
         return payingCount;
     }
@@ -94,9 +97,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 冻结中的实例数。
-     * 
-     * @return freezingCount */
+    /**
+     * 冻结中的实例数。
+     * @return freezingCount
+     */
     public Integer getFreezingCount() {
         return freezingCount;
     }
@@ -110,9 +114,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 迁移中的实例数。
-     * 
-     * @return migratingCount */
+    /**
+     * 迁移中的实例数。
+     * @return migratingCount
+     */
     public Integer getMigratingCount() {
         return migratingCount;
     }
@@ -126,9 +131,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 清空中的实例数。
-     * 
-     * @return flushingCount */
+    /**
+     * 清空中的实例数。
+     * @return flushingCount
+     */
     public Integer getFlushingCount() {
         return flushingCount;
     }
@@ -142,9 +148,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 升级中的实例数。
-     * 
-     * @return upgradingCount */
+    /**
+     * 升级中的实例数。
+     * @return upgradingCount
+     */
     public Integer getUpgradingCount() {
         return upgradingCount;
     }
@@ -158,9 +165,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 恢复中的实例数。
-     * 
-     * @return restoringCount */
+    /**
+     * 恢复中的实例数。
+     * @return restoringCount
+     */
     public Integer getRestoringCount() {
         return restoringCount;
     }
@@ -174,9 +182,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 扩容中的实例数。
-     * 
-     * @return extendingCount */
+    /**
+     * 扩容中的实例数。
+     * @return extendingCount
+     */
     public Integer getExtendingCount() {
         return extendingCount;
     }
@@ -190,9 +199,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 正在创建的实例数。
-     * 
-     * @return creatingCount */
+    /**
+     * 正在创建的实例数。
+     * @return creatingCount
+     */
     public Integer getCreatingCount() {
         return creatingCount;
     }
@@ -206,9 +216,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 正在运行的实例数。
-     * 
-     * @return runningCount */
+    /**
+     * 正在运行的实例数。
+     * @return runningCount
+     */
     public Integer getRunningCount() {
         return runningCount;
     }
@@ -222,9 +233,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 异常的实例数。
-     * 
-     * @return errorCount */
+    /**
+     * 异常的实例数。
+     * @return errorCount
+     */
     public Integer getErrorCount() {
         return errorCount;
     }
@@ -238,9 +250,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 已冻结的实例数。
-     * 
-     * @return frozenCount */
+    /**
+     * 已冻结的实例数。
+     * @return frozenCount
+     */
     public Integer getFrozenCount() {
         return frozenCount;
     }
@@ -254,9 +267,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 创建失败的实例数。
-     * 
-     * @return createfailedCount */
+    /**
+     * 创建失败的实例数。
+     * @return createfailedCount
+     */
     public Integer getCreatefailedCount() {
         return createfailedCount;
     }
@@ -270,9 +284,10 @@ public class StatusStatistic {
         return this;
     }
 
-    /** 正在重启的实例数。
-     * 
-     * @return restartingCount */
+    /**
+     * 正在重启的实例数。
+     * @return restartingCount
+     */
     public Integer getRestartingCount() {
         return restartingCount;
     }
@@ -343,7 +358,10 @@ public class StatusStatistic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -41,9 +41,10 @@ public class AgencyPolicyRoleOption {
         return this;
     }
 
-    /** 自定义策略展示名。
-     * 
-     * @return displayName */
+    /**
+     * 自定义策略展示名。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,10 +58,10 @@ public class AgencyPolicyRoleOption {
         return this;
     }
 
-    /** 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > -
-     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * 
-     * @return type */
+    /**
+     * 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -74,9 +75,10 @@ public class AgencyPolicyRoleOption {
         return this;
     }
 
-    /** 自定义策略的描述信息。
-     * 
-     * @return description */
+    /**
+     * 自定义策略的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -90,9 +92,10 @@ public class AgencyPolicyRoleOption {
         return this;
     }
 
-    /** 自定义策略的中文描述信息。
-     * 
-     * @return descriptionCn */
+    /**
+     * 自定义策略的中文描述信息。
+     * @return descriptionCn
+     */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -115,9 +118,10 @@ public class AgencyPolicyRoleOption {
         return this;
     }
 
-    /** Get policy
-     * 
-     * @return policy */
+    /**
+     * Get policy
+     * @return policy
+     */
     public AgencyPolicy getPolicy() {
         return policy;
     }
@@ -160,7 +164,10 @@ public class AgencyPolicyRoleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

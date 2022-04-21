@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 删除主机组请求体 */
+/**
+ * 删除主机组请求体
+ */
 public class DeleteHostGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组ID列表
-     * 
-     * @return hostGroupIdList */
+    /**
+     * 主机组ID列表
+     * @return hostGroupIdList
+     */
     public List<String> getHostGroupIdList() {
         return hostGroupIdList;
     }
@@ -74,7 +77,10 @@ public class DeleteHostGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

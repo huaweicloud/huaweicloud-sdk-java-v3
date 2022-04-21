@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 自动创建虚拟机模板 */
+/**
+ * 自动创建虚拟机模板
+ */
 public class TemplateResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,16 +53,24 @@ public class TemplateResponseBody {
 
     private String availabilityZone;
 
-    /** 磁盘类型 */
+    /**
+     * 磁盘类型
+     */
     public static final class VolumetypeEnum {
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -161,16 +171,24 @@ public class TemplateResponseBody {
 
     private List<TemplateDisk> disk = null;
 
-    /** 数据盘磁盘类型 */
+    /**
+    * 数据盘磁盘类型
+    */
     public static final class DataVolumeTypeEnum {
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final DataVolumeTypeEnum SAS = new DataVolumeTypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final DataVolumeTypeEnum SATA = new DataVolumeTypeEnum("SATA");
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -251,9 +269,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 模板ID
-     * 
-     * @return id */
+    /**
+     * 模板ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -267,9 +286,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return name */
+    /**
+     * 模板名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -283,9 +303,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 是否是通用模板，如果模板关联一个任务，则不算通用模板
-     * 
-     * @return isTemplate */
+    /**
+     * 是否是通用模板，如果模板关联一个任务，则不算通用模板
+     * @return isTemplate
+     */
     public String getIsTemplate() {
         return isTemplate;
     }
@@ -299,9 +320,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** Region信息
-     * 
-     * @return region */
+    /**
+     * Region信息
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -315,9 +337,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectid */
+    /**
+     * 项目ID
+     * @return projectid
+     */
     public String getProjectid() {
         return projectid;
     }
@@ -331,9 +354,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 目标端服务器名称
-     * 
-     * @return targetServerName */
+    /**
+     * 目标端服务器名称
+     * @return targetServerName
+     */
     public String getTargetServerName() {
         return targetServerName;
     }
@@ -347,9 +371,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 可用区
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -363,9 +388,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 磁盘类型
-     * 
-     * @return volumetype */
+    /**
+     * 磁盘类型
+     * @return volumetype
+     */
     public VolumetypeEnum getVolumetype() {
         return volumetype;
     }
@@ -379,9 +405,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 虚拟机规格
-     * 
-     * @return flavor */
+    /**
+     * 虚拟机规格
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -404,9 +431,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** Get vpc
-     * 
-     * @return vpc */
+    /**
+     * Get vpc
+     * @return vpc
+     */
     public VpcObject getVpc() {
         return vpc;
     }
@@ -436,9 +464,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 网卡信息，支持多个网卡，如果是自动创建，只填一个，id使用“autoCreate”
-     * 
-     * @return nics */
+    /**
+     * 网卡信息，支持多个网卡，如果是自动创建，只填一个，id使用“autoCreate”
+     * @return nics
+     */
     public List<Nics> getNics() {
         return nics;
     }
@@ -468,9 +497,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 安全组，支持多个安全组，如果是自动创建，只填一个，id使用“autoCreate”
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组，支持多个安全组，如果是自动创建，只填一个，id使用“autoCreate”
+     * @return securityGroups
+     */
     public List<SgObject> getSecurityGroups() {
         return securityGroups;
     }
@@ -493,9 +523,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** Get publicip
-     * 
-     * @return publicip */
+    /**
+     * Get publicip
+     * @return publicip
+     */
     public PublicIp getPublicip() {
         return publicip;
     }
@@ -525,9 +556,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 磁盘信息
-     * 
-     * @return disk */
+    /**
+     * 磁盘信息
+     * @return disk
+     */
     public List<TemplateDisk> getDisk() {
         return disk;
     }
@@ -541,9 +573,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 数据盘磁盘类型
-     * 
-     * @return dataVolumeType */
+    /**
+     * 数据盘磁盘类型
+     * @return dataVolumeType
+     */
     public DataVolumeTypeEnum getDataVolumeType() {
         return dataVolumeType;
     }
@@ -557,9 +590,10 @@ public class TemplateResponseBody {
         return this;
     }
 
-    /** 目的端密码
-     * 
-     * @return targetPassword */
+    /**
+     * 目的端密码
+     * @return targetPassword
+     */
     public String getTargetPassword() {
         return targetPassword;
     }
@@ -638,7 +672,10 @@ public class TemplateResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

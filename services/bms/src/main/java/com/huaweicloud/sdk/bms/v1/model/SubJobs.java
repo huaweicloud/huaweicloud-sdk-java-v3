@@ -12,22 +12,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** sub_jobs字段数据结构说明 */
+/**
+ * sub_jobs字段数据结构说明
+ */
 public class SubJobs {
 
-    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化 */
+    /**
+     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FAIL for value: "FAIL" */
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +161,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
-     * 
-     * @return status */
+    /**
+     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -174,9 +187,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Get entities
-     * 
-     * @return entities */
+    /**
+     * Get entities
+     * @return entities
+     */
     public Entitie getEntities() {
         return entities;
     }
@@ -190,9 +204,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Job ID
-     * 
-     * @return jobId */
+    /**
+     * Job ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -206,9 +221,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Job的类型，包含以下类型：baremetalSingleCreate：创建单个裸金属服务器；baremetalSingleOperate：修改单个裸金属服务器电源状态；baremetalAttachSingleVolume：挂载单个共享磁盘
-     * 
-     * @return jobType */
+    /**
+     * Job的类型，包含以下类型：baremetalSingleCreate：创建单个裸金属服务器；baremetalSingleOperate：修改单个裸金属服务器电源状态；baremetalAttachSingleVolume：挂载单个共享磁盘
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -222,9 +238,10 @@ public class SubJobs {
         return this;
     }
 
-    /** 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
-     * 
-     * @return beginTime */
+    /**
+     * 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
+     * @return beginTime
+     */
     public OffsetDateTime getBeginTime() {
         return beginTime;
     }
@@ -238,9 +255,10 @@ public class SubJobs {
         return this;
     }
 
-    /** 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -254,9 +272,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Job执行失败时的错误码
-     * 
-     * @return errorCode */
+    /**
+     * Job执行失败时的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -270,9 +289,10 @@ public class SubJobs {
         return this;
     }
 
-    /** Job执行失败时的错误原因
-     * 
-     * @return failReason */
+    /**
+     * Job执行失败时的错误原因
+     * @return failReason
+     */
     public String getFailReason() {
         return failReason;
     }
@@ -286,9 +306,10 @@ public class SubJobs {
         return this;
     }
 
-    /** 出现错误时，返回的错误消息
-     * 
-     * @return message */
+    /**
+     * 出现错误时，返回的错误消息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -302,9 +323,10 @@ public class SubJobs {
         return this;
     }
 
-    /** 出现错误时，返回的错误码
-     * 
-     * @return code */
+    /**
+     * 出现错误时，返回的错误码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -352,7 +374,10 @@ public class SubJobs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

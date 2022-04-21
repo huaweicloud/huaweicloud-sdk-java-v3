@@ -10,46 +10,74 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServersRequest {
 
-    /** 源端服务器状态 */
+    /**
+     * 源端服务器状态
+     */
     public static final class StateEnum {
 
-        /** Enum UNAVAILABLE for value: "unavailable" */
+        /**
+         * Enum UNAVAILABLE for value: "unavailable"
+         */
         public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StateEnum WAITING = new StateEnum("waiting");
 
-        /** Enum INITIALIZE for value: "initialize" */
+        /**
+         * Enum INITIALIZE for value: "initialize"
+         */
         public static final StateEnum INITIALIZE = new StateEnum("initialize");
 
-        /** Enum REPLICATE for value: "replicate" */
+        /**
+         * Enum REPLICATE for value: "replicate"
+         */
         public static final StateEnum REPLICATE = new StateEnum("replicate");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final StateEnum SYNCING = new StateEnum("syncing");
 
-        /** Enum STOPPING for value: "stopping" */
+        /**
+         * Enum STOPPING for value: "stopping"
+         */
         public static final StateEnum STOPPING = new StateEnum("stopping");
 
-        /** Enum STOPPED for value: "stopped" */
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StateEnum DELETING = new StateEnum("deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StateEnum ERROR = new StateEnum("error");
 
-        /** Enum CLONING for value: "cloning" */
+        /**
+         * Enum CLONING for value: "cloning"
+         */
         public static final StateEnum CLONING = new StateEnum("cloning");
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final StateEnum CUTOVERING = new StateEnum("cutovering");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -159,25 +187,39 @@ public class ListServersRequest {
 
     private Integer offset;
 
-    /** 根据迁移周期查询 */
+    /**
+     * 根据迁移周期查询
+     */
     public static final class MigrationCycleEnum {
 
-        /** Enum CHECKING for value: "checking" */
+        /**
+         * Enum CHECKING for value: "checking"
+         */
         public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
 
-        /** Enum SETTING for value: "setting" */
+        /**
+         * Enum SETTING for value: "setting"
+         */
         public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
 
-        /** Enum REPLICATING for value: "replicating" */
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
         public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
 
-        /** Enum CUTOVERED for value: "cutovered" */
+        /**
+         * Enum CUTOVERED for value: "cutovered"
+         */
         public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
 
         private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
@@ -266,9 +308,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 源端服务器状态
-     * 
-     * @return state */
+    /**
+     * 源端服务器状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -282,9 +325,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 源端服务器名称
-     * 
-     * @return name */
+    /**
+     * 源端服务器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -298,9 +342,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 源端服务器ID
-     * 
-     * @return id */
+    /**
+     * 源端服务器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -314,9 +359,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 源端服务器IP地址
-     * 
-     * @return ip */
+    /**
+     * 源端服务器IP地址
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -330,9 +376,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 迁移项目id，填写该参数将查询迁移项目下的所有虚拟机
-     * 
-     * @return migproject */
+    /**
+     * 迁移项目id，填写该参数将查询迁移项目下的所有虚拟机
+     * @return migproject
+     */
     public String getMigproject() {
         return migproject;
     }
@@ -346,9 +393,12 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 每一页记录的源端服务器数量，0表示用默认值 200 minimum: 0 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 每一页记录的源端服务器数量，0表示用默认值 200
+     * minimum: 0
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -362,9 +412,12 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 偏移量，默认值0 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 偏移量，默认值0
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -378,9 +431,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 根据迁移周期查询
-     * 
-     * @return migrationCycle */
+    /**
+     * 根据迁移周期查询
+     * @return migrationCycle
+     */
     public MigrationCycleEnum getMigrationCycle() {
         return migrationCycle;
     }
@@ -394,9 +448,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 查询失去连接的源端
-     * 
-     * @return connected */
+    /**
+     * 查询失去连接的源端
+     * @return connected
+     */
     public Boolean getConnected() {
         return connected;
     }
@@ -410,9 +465,10 @@ public class ListServersRequest {
         return this;
     }
 
-    /** 需要查询的企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 需要查询的企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -465,7 +521,10 @@ public class ListServersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

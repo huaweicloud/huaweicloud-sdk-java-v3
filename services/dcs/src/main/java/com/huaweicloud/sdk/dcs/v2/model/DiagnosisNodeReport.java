@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点诊断报告 */
+/**
+ * 节点诊断报告
+ */
 public class DiagnosisNodeReport {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,13 +43,19 @@ public class DiagnosisNodeReport {
 
     private Integer failedSum;
 
-    /** 节点角色 */
+    /**
+     * 节点角色
+     */
     public static final class RoleEnum {
 
-        /** Enum MASTER for value: "master" */
+        /**
+         * Enum MASTER for value: "master"
+         */
         public static final RoleEnum MASTER = new RoleEnum("master");
 
-        /** Enum SLAVE for value: "slave" */
+        /**
+         * Enum SLAVE for value: "slave"
+         */
         public static final RoleEnum SLAVE = new RoleEnum("slave");
 
         private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
@@ -132,9 +140,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 节点IP。例如：192.168.0.234:6379
-     * 
-     * @return nodeIp */
+    /**
+     * 节点IP。例如：192.168.0.234:6379
+     * @return nodeIp
+     */
     public String getNodeIp() {
         return nodeIp;
     }
@@ -148,9 +157,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 节点所在可用区Code
-     * 
-     * @return azCode */
+    /**
+     * 节点所在可用区Code
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -164,9 +174,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 节点所在分片的名称
-     * 
-     * @return groupName */
+    /**
+     * 节点所在分片的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -180,9 +191,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 诊断结果为异常的诊断项总数
-     * 
-     * @return abnormalSum */
+    /**
+     * 诊断结果为异常的诊断项总数
+     * @return abnormalSum
+     */
     public Integer getAbnormalSum() {
         return abnormalSum;
     }
@@ -196,9 +208,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 诊断失败的诊断项总数
-     * 
-     * @return failedSum */
+    /**
+     * 诊断失败的诊断项总数
+     * @return failedSum
+     */
     public Integer getFailedSum() {
         return failedSum;
     }
@@ -212,9 +225,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 节点角色
-     * 
-     * @return role */
+    /**
+     * 节点角色
+     * @return role
+     */
     public RoleEnum getRole() {
         return role;
     }
@@ -245,9 +259,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** 诊断维度列表
-     * 
-     * @return diagnosisDimensionList */
+    /**
+     * 诊断维度列表
+     * @return diagnosisDimensionList
+     */
     public List<DiagnosisDimension> getDiagnosisDimensionList() {
         return diagnosisDimensionList;
     }
@@ -270,9 +285,10 @@ public class DiagnosisNodeReport {
         return this;
     }
 
-    /** Get commandTimeTakenList
-     * 
-     * @return commandTimeTakenList */
+    /**
+     * Get commandTimeTakenList
+     * @return commandTimeTakenList
+     */
     public CommandTimeTakenList getCommandTimeTakenList() {
         return commandTimeTakenList;
     }
@@ -328,7 +344,10 @@ public class DiagnosisNodeReport {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

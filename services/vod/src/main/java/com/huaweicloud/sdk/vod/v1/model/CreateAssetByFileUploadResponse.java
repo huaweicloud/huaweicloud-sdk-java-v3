@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateAssetByFileUploadResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒体ID
-     * 
-     * @return assetId */
+    /**
+     * 媒体ID 
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -58,9 +61,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return this;
     }
 
-    /** 视频上传URL
-     * 
-     * @return videoUploadUrl */
+    /**
+     * 视频上传URL 
+     * @return videoUploadUrl
+     */
     public String getVideoUploadUrl() {
         return videoUploadUrl;
     }
@@ -74,9 +78,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return this;
     }
 
-    /** 封面上传地址
-     * 
-     * @return coverUploadUrl */
+    /**
+     * 封面上传地址 
+     * @return coverUploadUrl
+     */
     public String getCoverUploadUrl() {
         return coverUploadUrl;
     }
@@ -106,9 +111,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return this;
     }
 
-    /** 字幕文件上传url数组
-     * 
-     * @return subtitleUploadUrls */
+    /**
+     * 字幕文件上传url数组 
+     * @return subtitleUploadUrls
+     */
     public List<String> getSubtitleUploadUrls() {
         return subtitleUploadUrls;
     }
@@ -131,9 +137,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return this;
     }
 
-    /** Get target
-     * 
-     * @return target */
+    /**
+     * Get target
+     * @return target
+     */
     public FileAddr getTarget() {
         return target;
     }
@@ -176,7 +183,10 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PeerAddress */
+/**
+ * PeerAddress
+ */
 public class PeerAddress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PeerAddress {
         return this;
     }
 
-    /** 域名地址
-     * 
-     * @return domainPort */
+    /**
+     * 域名地址
+     * @return domainPort
+     */
     public String getDomainPort() {
         return domainPort;
     }
@@ -39,9 +42,10 @@ public class PeerAddress {
         return this;
     }
 
-    /** IP地址
-     * 
-     * @return ipPort */
+    /**
+     * IP地址
+     * @return ipPort
+     */
     public String getIpPort() {
         return ipPort;
     }
@@ -78,7 +82,10 @@ public class PeerAddress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

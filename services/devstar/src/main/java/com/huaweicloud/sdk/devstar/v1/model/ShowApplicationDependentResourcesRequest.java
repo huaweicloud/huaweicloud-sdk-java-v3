@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowApplicationDependentResourcesRequest {
 
-    /** 语言类型 中文:zh-cn 英文:en-us */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ShowApplicationDependentResourcesRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -127,9 +136,10 @@ public class ShowApplicationDependentResourcesRequest {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return applicationId */
+    /**
+     * 应用id
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -143,9 +153,12 @@ public class ShowApplicationDependentResourcesRequest {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -159,9 +172,12 @@ public class ShowApplicationDependentResourcesRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询 minimum: 0 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询
+     * minimum: 0
+     * maximum: 1000000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -203,7 +219,10 @@ public class ShowApplicationDependentResourcesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -15,7 +15,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,14 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
 
     private String name;
 
-    /** 状态 - 1： 有效 */
+    /**
+     * 状态   - 1： 有效
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -175,9 +181,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -191,9 +198,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** API分组名称
-     * 
-     * @return name */
+    /**
+     * API分组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -207,9 +215,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * 状态   - 1： 有效
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -223,9 +232,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 系统默认分配的子域名
-     * 
-     * @return slDomain */
+    /**
+     * 系统默认分配的子域名
+     * @return slDomain
+     */
     public String getSlDomain() {
         return slDomain;
     }
@@ -239,9 +249,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return registerTime */
+    /**
+     * 创建时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -255,9 +266,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 最近修改时间
-     * 
-     * @return updateTime */
+    /**
+     * 最近修改时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -271,9 +283,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
-     * 
-     * @return onSellStatus */
+    /**
+     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
+     * @return onSellStatus
+     */
     public Integer getOnSellStatus() {
         return onSellStatus;
     }
@@ -303,9 +316,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组上绑定的独立域名列表
-     * 
-     * @return urlDomains */
+    /**
+     * 分组上绑定的独立域名列表
+     * @return urlDomains
+     */
     public List<UrlDomain> getUrlDomains() {
         return urlDomains;
     }
@@ -335,9 +349,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 系统默认分配的子域名列表
-     * 
-     * @return slDomains */
+    /**
+     * 系统默认分配的子域名列表
+     * @return slDomains
+     */
     public List<String> getSlDomains() {
         return slDomains;
     }
@@ -351,9 +366,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return remark */
+    /**
+     * 描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -367,9 +383,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流控时长内分组下的API的总访问次数限制，默认不限，请根据服务的负载能力自行设置 暂不支持
-     * 
-     * @return callLimits */
+    /**
+     * 流控时长内分组下的API的总访问次数限制，默认不限，请根据服务的负载能力自行设置  暂不支持
+     * @return callLimits
+     */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -383,9 +400,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流控时长 暂不支持
-     * 
-     * @return timeInterval */
+    /**
+     * 流控时长  暂不支持
+     * @return timeInterval
+     */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -399,9 +417,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 流控的时间单位 暂不支持
-     * 
-     * @return timeUnit */
+    /**
+     * 流控的时间单位  暂不支持
+     * @return timeUnit
+     */
     public String getTimeUnit() {
         return timeUnit;
     }
@@ -415,9 +434,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否为默认分组
-     * 
-     * @return isDefault */
+    /**
+     * 是否为默认分组
+     * @return isDefault
+     */
     public Integer getIsDefault() {
         return isDefault;
     }
@@ -431,9 +451,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组版本 - V1：全局分组 - V2：应用级分组 暂不支持，默认为V1
-     * 
-     * @return version */
+    /**
+     * 分组版本  - V1：全局分组 - V2：应用级分组  暂不支持，默认为V1
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -447,9 +468,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组归属的集成应用编号。 分组版本V2时必填。 暂不支持
-     * 
-     * @return romaAppId */
+    /**
+     * 分组归属的集成应用编号。  分组版本V2时必填。  暂不支持
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -463,9 +485,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    /** 分组归属的集成应用名称 暂不支持
-     * 
-     * @return romaAppName */
+    /**
+     * 分组归属的集成应用名称  暂不支持
+     * @return romaAppName
+     */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -548,7 +571,10 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

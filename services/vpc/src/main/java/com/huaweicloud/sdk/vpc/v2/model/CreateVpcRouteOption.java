@@ -25,10 +25,14 @@ public class CreateVpcRouteOption {
 
     private String nexthop;
 
-    /** 功能说明：路由类型 取值范围：peering */
+    /**
+     * 功能说明：路由类型  取值范围：peering
+     */
     public static final class TypeEnum {
 
-        /** Enum PEERING for value: "peering" */
+        /**
+         * Enum PEERING for value: "peering"
+         */
         public static final TypeEnum PEERING = new TypeEnum("peering");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +111,10 @@ public class CreateVpcRouteOption {
         return this;
     }
 
-    /** 路由目的地址CIDR，如192.168.200.0/24。
-     * 
-     * @return destination */
+    /**
+     * 路由目的地址CIDR，如192.168.200.0/24。
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -123,9 +128,10 @@ public class CreateVpcRouteOption {
         return this;
     }
 
-    /** 功能说明：路由下一跳 取值范围：如果type为peering类型，则nexthop为peering的ID
-     * 
-     * @return nexthop */
+    /**
+     * 功能说明：路由下一跳  取值范围：如果type为peering类型，则nexthop为peering的ID
+     * @return nexthop
+     */
     public String getNexthop() {
         return nexthop;
     }
@@ -139,9 +145,10 @@ public class CreateVpcRouteOption {
         return this;
     }
 
-    /** 功能说明：路由类型 取值范围：peering
-     * 
-     * @return type */
+    /**
+     * 功能说明：路由类型  取值范围：peering
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -155,9 +162,10 @@ public class CreateVpcRouteOption {
         return this;
     }
 
-    /** 请求添加路由的VPC ID
-     * 
-     * @return vpcId */
+    /**
+     * 请求添加路由的VPC ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -198,7 +206,10 @@ public class CreateVpcRouteOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

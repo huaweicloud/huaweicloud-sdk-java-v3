@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VatInvoiceResult */
+/**
+ * VatInvoiceResult
+ */
 public class VatInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -176,9 +178,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 增值税发票类型，可选值包括： - special: 增值税专用发票 - normal: 增值税普通发票 - electronic: 增值税电子普通发票 - roll：增值税普通发票（卷票）
-     * 
-     * @return type */
+    /**
+     * 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - roll：增值税普通发票（卷票） 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -192,9 +195,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票联次。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return serialNumber */
+    /**
+     * 发票联次。 当“advanced_mode”设置为“true”时才返回。 
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -208,9 +212,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票归属地。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return attribution */
+    /**
+     * 发票归属地。 当“advanced_mode”设置为“true”时才返回。 
+     * @return attribution
+     */
     public String getAttribution() {
         return attribution;
     }
@@ -240,9 +245,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票监制章。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return supervisionSeal */
+    /**
+     * 发票监制章。 当“advanced_mode”设置为“true”时才返回。 
+     * @return supervisionSeal
+     */
     public List<String> getSupervisionSeal() {
         return supervisionSeal;
     }
@@ -256,9 +262,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票代码。
-     * 
-     * @return code */
+    /**
+     * 发票代码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -272,9 +279,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。
-     * 
-     * @return printCode */
+    /**
+     * 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+     * @return printCode
+     */
     public String getPrintCode() {
         return printCode;
     }
@@ -288,9 +296,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 机器编号。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return machineNumber */
+    /**
+     * 机器编号。 当“advanced_mode”设置为“true”时才返回。 
+     * @return machineNumber
+     */
     public String getMachineNumber() {
         return machineNumber;
     }
@@ -304,9 +313,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 机打号码。 当“advanced_mode”设置为“true”时才返回
-     * 
-     * @return printNumber */
+    /**
+     * 机打号码。 当“advanced_mode”设置为“true”时才返回 
+     * @return printNumber
+     */
     public String getPrintNumber() {
         return printNumber;
     }
@@ -320,9 +330,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票校验码，特定类型增值税发票内不存在该信息时返回空字符串。
-     * 
-     * @return checkCode */
+    /**
+     * 发票校验码，特定类型增值税发票内不存在该信息时返回空字符串。 
+     * @return checkCode
+     */
     public String getCheckCode() {
         return checkCode;
     }
@@ -336,9 +347,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return number */
+    /**
+     * 发票号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -352,9 +364,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 开票日期。
-     * 
-     * @return issueDate */
+    /**
+     * 开票日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -368,9 +381,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 密码区。
-     * 
-     * @return encryptionBlock */
+    /**
+     * 密码区。 
+     * @return encryptionBlock
+     */
     public String getEncryptionBlock() {
         return encryptionBlock;
     }
@@ -384,9 +398,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 购买方名称。
-     * 
-     * @return buyerName */
+    /**
+     * 购买方名称。 
+     * @return buyerName
+     */
     public String getBuyerName() {
         return buyerName;
     }
@@ -400,9 +415,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 购买方纳税人识别号。
-     * 
-     * @return buyerId */
+    /**
+     * 购买方纳税人识别号。 
+     * @return buyerId
+     */
     public String getBuyerId() {
         return buyerId;
     }
@@ -416,9 +432,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 购买方地址、电话。
-     * 
-     * @return buyerAddress */
+    /**
+     * 购买方地址、电话。 
+     * @return buyerAddress
+     */
     public String getBuyerAddress() {
         return buyerAddress;
     }
@@ -432,9 +449,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 购买方开户行及帐号。
-     * 
-     * @return buyerBank */
+    /**
+     * 购买方开户行及帐号。 
+     * @return buyerBank
+     */
     public String getBuyerBank() {
         return buyerBank;
     }
@@ -448,9 +466,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 销售方名称。
-     * 
-     * @return sellerName */
+    /**
+     * 销售方名称。 
+     * @return sellerName
+     */
     public String getSellerName() {
         return sellerName;
     }
@@ -464,9 +483,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 销售方纳税人识别号。
-     * 
-     * @return sellerId */
+    /**
+     * 销售方纳税人识别号。 
+     * @return sellerId
+     */
     public String getSellerId() {
         return sellerId;
     }
@@ -480,9 +500,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 销售方地址、电话。
-     * 
-     * @return sellerAddress */
+    /**
+     * 销售方地址、电话。 
+     * @return sellerAddress
+     */
     public String getSellerAddress() {
         return sellerAddress;
     }
@@ -496,9 +517,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 销售方开户行及帐号。
-     * 
-     * @return sellerBank */
+    /**
+     * 销售方开户行及帐号。 
+     * @return sellerBank
+     */
     public String getSellerBank() {
         return sellerBank;
     }
@@ -512,9 +534,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 合计金额。
-     * 
-     * @return subtotalAmount */
+    /**
+     * 合计金额。 
+     * @return subtotalAmount
+     */
     public String getSubtotalAmount() {
         return subtotalAmount;
     }
@@ -528,9 +551,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 合计税额。
-     * 
-     * @return subtotalTax */
+    /**
+     * 合计税额。 
+     * @return subtotalTax
+     */
     public String getSubtotalTax() {
         return subtotalTax;
     }
@@ -544,9 +568,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 价税合计。
-     * 
-     * @return total */
+    /**
+     * 价税合计。 
+     * @return total
+     */
     public String getTotal() {
         return total;
     }
@@ -560,9 +585,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 价税合计（大写）。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return totalInWords */
+    /**
+     * 价税合计（大写）。 当“advanced_mode”设置为“true”时才返回。 
+     * @return totalInWords
+     */
     public String getTotalInWords() {
         return totalInWords;
     }
@@ -576,9 +602,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 备注。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return remarks */
+    /**
+     * 备注。 当“advanced_mode”设置为“true”时才返回。 
+     * @return remarks
+     */
     public String getRemarks() {
         return remarks;
     }
@@ -592,9 +619,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 收款人。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return receiver */
+    /**
+     * 收款人。 当“advanced_mode”设置为“true”时才返回。 
+     * @return receiver
+     */
     public String getReceiver() {
         return receiver;
     }
@@ -608,9 +636,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 复核。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return reviewer */
+    /**
+     * 复核。 当“advanced_mode”设置为“true”时才返回。 
+     * @return reviewer
+     */
     public String getReviewer() {
         return reviewer;
     }
@@ -624,9 +653,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 开票人。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return issuer */
+    /**
+     * 开票人。 当“advanced_mode”设置为“true”时才返回。 
+     * @return issuer
+     */
     public String getIssuer() {
         return issuer;
     }
@@ -656,9 +686,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 销售方发票专用章。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return sellerSeal */
+    /**
+     * 销售方发票专用章。 当“advanced_mode”设置为“true”时才返回。 
+     * @return sellerSeal
+     */
     public List<String> getSellerSeal() {
         return sellerSeal;
     }
@@ -688,9 +719,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 货物或应税劳务列表。
-     * 
-     * @return itemList */
+    /**
+     * 货物或应税劳务列表。 
+     * @return itemList
+     */
     public List<ItemList> getItemList() {
         return itemList;
     }
@@ -704,9 +736,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。
-     * 
-     * @return confidence */
+    /**
+     * 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -720,9 +753,10 @@ public class VatInvoiceResult {
         return this;
     }
 
-    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
-     * 
-     * @return textLocation */
+    /**
+     * 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -850,7 +884,10 @@ public class VatInvoiceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

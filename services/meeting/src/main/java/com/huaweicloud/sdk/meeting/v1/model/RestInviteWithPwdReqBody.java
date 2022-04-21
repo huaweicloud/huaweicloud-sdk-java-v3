@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 登录响应 */
+/**
+ * 登录响应
+ */
 public class RestInviteWithPwdReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 被邀请的会议人号码。
-     * 
-     * @return callNum */
+    /**
+     * 被邀请的会议人号码。
+     * @return callNum
+     */
     public String getCallNum() {
         return callNum;
     }
@@ -59,9 +62,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 被邀请的会议人所属企业ID。
-     * 
-     * @return orgID */
+    /**
+     * 被邀请的会议人所属企业ID。
+     * @return orgID
+     */
     public String getOrgID() {
         return orgID;
     }
@@ -75,9 +79,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 当前会议ID。
-     * 
-     * @return confID */
+    /**
+     * 当前会议ID。
+     * @return confID
+     */
     public String getConfID() {
         return confID;
     }
@@ -91,9 +96,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 当前会议的密码。
-     * 
-     * @return pwd */
+    /**
+     * 当前会议的密码。
+     * @return pwd
+     */
     public String getPwd() {
         return pwd;
     }
@@ -107,9 +113,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 号码类型0是本局号码，1是中继号码。
-     * 
-     * @return numBelongsType */
+    /**
+     * 号码类型0是本局号码，1是中继号码。
+     * @return numBelongsType
+     */
     public Integer getNumBelongsType() {
         return numBelongsType;
     }
@@ -123,9 +130,10 @@ public class RestInviteWithPwdReqBody {
         return this;
     }
 
-    /** 是否不叠加会场名。
-     * 
-     * @return isNotOverlayPidName */
+    /**
+     * 是否不叠加会场名。
+     * @return isNotOverlayPidName
+     */
     public Boolean getIsNotOverlayPidName() {
         return isNotOverlayPidName;
     }
@@ -170,7 +178,10 @@ public class RestInviteWithPwdReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

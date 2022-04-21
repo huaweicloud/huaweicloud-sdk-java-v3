@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DriverLicenseResult */
+/**
+ * DriverLicenseResult
+ */
 public class DriverLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,9 +113,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证
-     * 
-     * @return type */
+    /**
+     * 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -127,9 +130,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 驾驶证号。
-     * 
-     * @return number */
+    /**
+     * 驾驶证号。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -143,9 +147,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 姓名。
-     * 
-     * @return name */
+    /**
+     * 姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -159,9 +164,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 性别。
-     * 
-     * @return sex */
+    /**
+     * 性别。 
+     * @return sex
+     */
     public String getSex() {
         return sex;
     }
@@ -175,9 +181,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 国籍。
-     * 
-     * @return nationality */
+    /**
+     * 国籍。 
+     * @return nationality
+     */
     public String getNationality() {
         return nationality;
     }
@@ -191,9 +198,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 住址。
-     * 
-     * @return address */
+    /**
+     * 住址。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -207,9 +215,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 出生日期。
-     * 
-     * @return birth */
+    /**
+     * 出生日期。 
+     * @return birth
+     */
     public String getBirth() {
         return birth;
     }
@@ -223,9 +232,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 初次领证日期。
-     * 
-     * @return issueDate */
+    /**
+     * 初次领证日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -239,9 +249,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 准驾类型。
-     * 
-     * @return propertyClass */
+    /**
+     * 准驾类型。 
+     * @return propertyClass
+     */
     public String getPropertyClass() {
         return propertyClass;
     }
@@ -255,9 +266,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 有效起始日期。
-     * 
-     * @return validFrom */
+    /**
+     * 有效起始日期。 
+     * @return validFrom
+     */
     public String getValidFrom() {
         return validFrom;
     }
@@ -271,9 +283,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 有效结束日期。
-     * 
-     * @return validTo */
+    /**
+     * 有效结束日期。 
+     * @return validTo
+     */
     public String getValidTo() {
         return validTo;
     }
@@ -287,9 +300,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 发证机关。
-     * 
-     * @return issuingAuthority */
+    /**
+     * 发证机关。 
+     * @return issuingAuthority
+     */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -303,9 +317,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 档案编号。
-     * 
-     * @return fileNumber */
+    /**
+     * 档案编号。 
+     * @return fileNumber
+     */
     public String getFileNumber() {
         return fileNumber;
     }
@@ -319,9 +334,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 记录。
-     * 
-     * @return record */
+    /**
+     * 记录。 
+     * @return record
+     */
     public String getRecord() {
         return record;
     }
@@ -335,9 +351,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 累积记分。
-     * 
-     * @return accumulatedScores */
+    /**
+     * 累积记分。 
+     * @return accumulatedScores
+     */
     public String getAccumulatedScores() {
         return accumulatedScores;
     }
@@ -367,9 +384,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public List<DriverLicenseResultStatus> getStatus() {
         return status;
     }
@@ -383,9 +401,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 生成时间。
-     * 
-     * @return generationDate */
+    /**
+     * 生成时间。 
+     * @return generationDate
+     */
     public String getGenerationDate() {
         return generationDate;
     }
@@ -399,9 +418,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 当前时间。
-     * 
-     * @return currentTime */
+    /**
+     * 当前时间。 
+     * @return currentTime
+     */
     public String getCurrentTime() {
         return currentTime;
     }
@@ -415,9 +435,10 @@ public class DriverLicenseResult {
         return this;
     }
 
-    /** 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
-     * 
-     * @return textLocation */
+    /**
+     * 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -505,7 +526,10 @@ public class DriverLicenseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

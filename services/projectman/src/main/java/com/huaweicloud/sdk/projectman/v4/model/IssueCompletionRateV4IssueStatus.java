@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 工作项不同状态下的数量 */
+/**
+ * 工作项不同状态下的数量
+ */
 public class IssueCompletionRateV4IssueStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 已关闭的工作项
-     * 
-     * @return closedNum */
+    /**
+     * 已关闭的工作项
+     * @return closedNum
+     */
     public Integer getClosedNum() {
         return closedNum;
     }
@@ -59,9 +62,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 新建的工作项
-     * 
-     * @return newNum */
+    /**
+     * 新建的工作项
+     * @return newNum
+     */
     public Integer getNewNum() {
         return newNum;
     }
@@ -75,9 +79,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 进行中的工作项数目
-     * 
-     * @return processNum */
+    /**
+     * 进行中的工作项数目
+     * @return processNum
+     */
     public Integer getProcessNum() {
         return processNum;
     }
@@ -91,9 +96,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 已经拒绝的工作项
-     * 
-     * @return rejectedNum */
+    /**
+     * 已经拒绝的工作项
+     * @return rejectedNum
+     */
     public Integer getRejectedNum() {
         return rejectedNum;
     }
@@ -107,9 +113,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 已经解决的工作项
-     * 
-     * @return solvedNum */
+    /**
+     * 已经解决的工作项
+     * @return solvedNum
+     */
     public Integer getSolvedNum() {
         return solvedNum;
     }
@@ -123,9 +130,10 @@ public class IssueCompletionRateV4IssueStatus {
         return this;
     }
 
-    /** 测试中的工作项
-     * 
-     * @return testNum */
+    /**
+     * 测试中的工作项
+     * @return testNum
+     */
     public Integer getTestNum() {
         return testNum;
     }
@@ -170,7 +178,10 @@ public class IssueCompletionRateV4IssueStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 自定义属性 */
+/**
+ * 自定义属性
+ */
 public class CustomField {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CustomField {
         return this;
     }
 
-    /** 自定义属性名
-     * 
-     * @return name */
+    /**
+     * 自定义属性名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class CustomField {
         return this;
     }
 
-    /** 自定义属性对应的值
-     * 
-     * @return value */
+    /**
+     * 自定义属性对应的值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class CustomField {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

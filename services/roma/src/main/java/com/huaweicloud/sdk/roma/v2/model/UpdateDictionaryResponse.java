@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateDictionaryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典ID
-     * 
-     * @return id */
+    /**
+     * 字典ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -80,9 +83,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +100,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典描述
-     * 
-     * @return remark */
+    /**
+     * 字典描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -112,9 +117,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * 
-     * @return code */
+    /**
+     * 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -128,9 +134,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
-     * 
-     * @return extendOne */
+    /**
+     * 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
+     * @return extendOne
+     */
     public String getExtendOne() {
         return extendOne;
     }
@@ -144,9 +151,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
-     * 
-     * @return extendTwo */
+    /**
+     * 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
+     * @return extendTwo
+     */
     public String getExtendTwo() {
         return extendTwo;
     }
@@ -160,9 +168,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 父字典编码,为空时代表自身就是最顶级字典
-     * 
-     * @return parentCode */
+    /**
+     * 父字典编码,为空时代表自身就是最顶级字典
+     * @return parentCode
+     */
     public String getParentCode() {
         return parentCode;
     }
@@ -176,9 +185,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public DictionaryType getType() {
         return type;
     }
@@ -192,9 +202,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -208,9 +219,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -263,7 +275,10 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

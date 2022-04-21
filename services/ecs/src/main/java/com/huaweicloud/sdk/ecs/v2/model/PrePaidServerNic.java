@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 待创建云服务器的网卡信息。 */
+/**
+ * 待创建云服务器的网卡信息。
+ */
 public class PrePaidServerNic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,11 +36,10 @@ public class PrePaidServerNic {
         return this;
     }
 
-    /** 待创建云服务器所在的子网信息，需要指定vpcid对应VPC下的子网ID，UUID格式。 可以通过VPC服务
-     * [查询子网](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=VPC&api=ListSubnets)
-     * 接口查询，该接口支持通过创建云服务器填写的vpcid进行过滤查询。
-     * 
-     * @return subnetId */
+    /**
+     * 待创建云服务器所在的子网信息，需要指定vpcid对应VPC下的子网ID，UUID格式。  可以通过VPC服务 [查询子网](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=VPC&api=ListSubnets) 接口查询，该接口支持通过创建云服务器填写的vpcid进行过滤查询。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -52,10 +53,10 @@ public class PrePaidServerNic {
         return this;
     }
 
-    /** 待创建云服务器网卡的IP地址，IPv4格式。 约束： - 不填或空字符串，默认在子网（subnet）中自动分配一个未使用的IP作网卡的IP地址。 -
-     * 若指定IP地址，该IP地址必须在子网（subnet）对应的网段内，且未被使用。
-     * 
-     * @return ipAddress */
+    /**
+     * 待创建云服务器网卡的IP地址，IPv4格式。  约束：  - 不填或空字符串，默认在子网（subnet）中自动分配一个未使用的IP作网卡的IP地址。 - 若指定IP地址，该IP地址必须在子网（subnet）对应的网段内，且未被使用。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -69,9 +70,10 @@ public class PrePaidServerNic {
         return this;
     }
 
-    /** 是否支持ipv6。 取值为true时，标识此网卡支持ipv6。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 是否支持ipv6。  取值为true时，标识此网卡支持ipv6。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -94,9 +96,10 @@ public class PrePaidServerNic {
         return this;
     }
 
-    /** Get ipv6Bandwidth
-     * 
-     * @return ipv6Bandwidth */
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
     public PrePaidServerIpv6Bandwidth getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -137,7 +140,10 @@ public class PrePaidServerNic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

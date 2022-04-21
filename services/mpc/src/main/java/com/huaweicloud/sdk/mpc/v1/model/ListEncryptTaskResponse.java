@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEncryptTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListEncryptTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务列表
-     * 
-     * @return taskArray */
+    /**
+     * 任务列表
+     * @return taskArray
+     */
     public List<EachEncryptRsp> getTaskArray() {
         return taskArray;
     }
@@ -64,9 +67,12 @@ public class ListEncryptTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否截断 minimum: 0 maximum: 2147483647
-     * 
-     * @return isTruncated */
+    /**
+     * 是否截断
+     * minimum: 0
+     * maximum: 2147483647
+     * @return isTruncated
+     */
     public Integer getIsTruncated() {
         return isTruncated;
     }
@@ -80,9 +86,12 @@ public class ListEncryptTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询结果数量 minimum: 0 maximum: 2147483647
-     * 
-     * @return total */
+    /**
+     * 查询结果数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -121,7 +130,10 @@ public class ListEncryptTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

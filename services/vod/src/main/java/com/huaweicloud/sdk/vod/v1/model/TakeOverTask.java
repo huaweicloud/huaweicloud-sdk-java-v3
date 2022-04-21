@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TakeOverTask */
+/**
+ * TakeOverTask
+ */
 public class TakeOverTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,16 +68,24 @@ public class TakeOverTask {
 
     private String endTime;
 
-    /** 任务状态。 */
+    /**
+     * 任务状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum PROCESSING for value: "PROCESSING" */
+        /**
+         * Enum PROCESSING for value: "PROCESSING"
+         */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
 
-        /** Enum SUCCEED for value: "SUCCEED" */
+        /**
+         * Enum SUCCEED for value: "SUCCEED"
+         */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -156,9 +166,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 桶名。
-     * 
-     * @return bucket */
+    /**
+     * 桶名。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -172,9 +183,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 目录/文件名。
-     * 
-     * @return _object */
+    /**
+     * 目录/文件名。
+     * @return _object
+     */
     public String getObject() {
         return _object;
     }
@@ -188,9 +200,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 托管类型。 取值如下： - 0：表示存储到点播桶 - 1：表示存储在租户桶 - 2：表示存储到租户OBS桶中，且输出目录与源文件的存储目录相同。
-     * 
-     * @return hostType */
+    /**
+     * 托管类型。  取值如下： - 0：表示存储到点播桶 - 1：表示存储在租户桶 - 2：表示存储到租户OBS桶中，且输出目录与源文件的存储目录相同。
+     * @return hostType
+     */
     public Integer getHostType() {
         return hostType;
     }
@@ -204,9 +217,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 输出桶 。
-     * 
-     * @return outputBucket */
+    /**
+     * 输出桶 。
+     * @return outputBucket
+     */
     public String getOutputBucket() {
         return outputBucket;
     }
@@ -220,9 +234,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 输出路径 。
-     * 
-     * @return outputPath */
+    /**
+     * 输出路径 。
+     * @return outputPath
+     */
     public String getOutputPath() {
         return outputPath;
     }
@@ -236,9 +251,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -268,9 +284,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 托管文件类型。
-     * 
-     * @return suffix */
+    /**
+     * 托管文件类型。
+     * @return suffix
+     */
     public List<String> getSuffix() {
         return suffix;
     }
@@ -284,9 +301,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 转码模板组 。
-     * 
-     * @return templateGroupName */
+    /**
+     * 转码模板组 。
+     * @return templateGroupName
+     */
     public String getTemplateGroupName() {
         return templateGroupName;
     }
@@ -300,9 +318,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -316,9 +335,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -332,9 +352,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return status */
+    /**
+     * 任务状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -348,9 +369,10 @@ public class TakeOverTask {
         return this;
     }
 
-    /** 媒资的任务执行描述汇总。
-     * 
-     * @return execDesc */
+    /**
+     * 媒资的任务执行描述汇总。
+     * @return execDesc
+     */
     public String getExecDesc() {
         return execDesc;
     }
@@ -415,7 +437,10 @@ public class TakeOverTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

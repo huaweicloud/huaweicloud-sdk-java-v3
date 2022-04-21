@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源类型详情 */
+/**
+ * 资源类型详情
+ */
 public class ResourceTypeResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** 资源类型名称
-     * 
-     * @return name */
+    /**
+     * 资源类型名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** 资源类型显示名称，可以通过请求中 'X-Language'设置语言
-     * 
-     * @return displayName */
+    /**
+     * 资源类型显示名称，可以通过请求中 'X-Language'设置语言
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -83,9 +87,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** 是否是全局类型的资源
-     * 
-     * @return global */
+    /**
+     * 是否是全局类型的资源
+     * @return global
+     */
     public Boolean getGlobal() {
         return global;
     }
@@ -115,9 +120,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** 支持的region列表
-     * 
-     * @return regions */
+    /**
+     * 支持的region列表
+     * @return regions
+     */
     public List<String> getRegions() {
         return regions;
     }
@@ -131,9 +137,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** console终端id
-     * 
-     * @return consoleEndpointId */
+    /**
+     * console终端id
+     * @return consoleEndpointId
+     */
     public String getConsoleEndpointId() {
         return consoleEndpointId;
     }
@@ -147,9 +154,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** console列表页地址
-     * 
-     * @return consoleListUrl */
+    /**
+     * console列表页地址
+     * @return consoleListUrl
+     */
     public String getConsoleListUrl() {
         return consoleListUrl;
     }
@@ -163,9 +171,10 @@ public class ResourceTypeResponse {
         return this;
     }
 
-    /** console详情页地址
-     * 
-     * @return consoleDetailUrl */
+    /**
+     * console详情页地址
+     * @return consoleDetailUrl
+     */
     public String getConsoleDetailUrl() {
         return consoleDetailUrl;
     }
@@ -212,7 +221,10 @@ public class ResourceTypeResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

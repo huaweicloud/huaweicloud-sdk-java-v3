@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 音频数据的输入列表 */
+/**
+ * 音频数据的输入列表
+ */
 public class CreateAudioJobRequestBodyInput {
 
-    /** 视频数据的输入类型： - obs：表示从华为云 OBS 中读取视频数据。 - url：表示从指定的 URL 地址中读取视频数据。 */
+    /**
+     * 视频数据的输入类型： - obs：表示从华为云 OBS 中读取视频数据。 - url：表示从指定的 URL 地址中读取视频数据。 
+     */
     public static final class TypeEnum {
 
-        /** Enum OBS for value: "obs" */
+        /**
+         * Enum OBS for value: "obs"
+         */
         public static final TypeEnum OBS = new TypeEnum("obs");
 
-        /** Enum URL for value: "url" */
+        /**
+         * Enum URL for value: "url"
+         */
         public static final TypeEnum URL = new TypeEnum("url");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class CreateAudioJobRequestBodyInput {
         return this;
     }
 
-    /** 视频数据的输入类型： - obs：表示从华为云 OBS 中读取视频数据。 - url：表示从指定的 URL 地址中读取视频数据。
-     * 
-     * @return type */
+    /**
+     * 视频数据的输入类型： - obs：表示从华为云 OBS 中读取视频数据。 - url：表示从指定的 URL 地址中读取视频数据。 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -134,9 +143,10 @@ public class CreateAudioJobRequestBodyInput {
         return this;
     }
 
-    /** 数据输入内容
-     * 
-     * @return data */
+    /**
+     * 数据输入内容
+     * @return data
+     */
     public List<AudioInputData> getData() {
         return data;
     }
@@ -173,7 +183,10 @@ public class CreateAudioJobRequestBodyInput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ChangeSqlSwitchBody */
+/**
+ * ChangeSqlSwitchBody
+ */
 public class ChangeSqlSwitchBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ChangeSqlSwitchBody {
         return this;
     }
 
-    /** 开关类型。取值DAS SQL Explorer和DAS Slow Query Log，分别表示DAS收集全量SQL开关和DAS收集慢SQL开关。
-     * 
-     * @return type */
+    /**
+     * 开关类型。取值DAS SQL Explorer和DAS Slow Query Log，分别表示DAS收集全量SQL开关和DAS收集慢SQL开关。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -49,9 +52,10 @@ public class ChangeSqlSwitchBody {
         return this;
     }
 
-    /** 开关状态，取值0和1，分别代表要关闭和开启。
-     * 
-     * @return status */
+    /**
+     * 开关状态，取值0和1，分别代表要关闭和开启。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -65,9 +69,10 @@ public class ChangeSqlSwitchBody {
         return this;
     }
 
-    /** 数据库类型。当前全量SQL支持的数据库类型包括MySQL和GaussDB(for MySQL)，慢SQL支持的类型：MySQL、GaussDB(for MySQL)、PostgreSQL。
-     * 
-     * @return datastoreType */
+    /**
+     * 数据库类型。当前全量SQL支持的数据库类型包括MySQL和GaussDB(for MySQL)，慢SQL支持的类型：MySQL、GaussDB(for MySQL)、PostgreSQL。
+     * @return datastoreType
+     */
     public String getDatastoreType() {
         return datastoreType;
     }
@@ -81,9 +86,10 @@ public class ChangeSqlSwitchBody {
         return this;
     }
 
-    /** SQL数据保存时长（天）。默认为7天，最长可保留30天，到期后数据自动删除。如果要保留30天以上，请到DAS页面进行操作。
-     * 
-     * @return retentionDays */
+    /**
+     * SQL数据保存时长（天）。默认为7天，最长可保留30天，到期后数据自动删除。如果要保留30天以上，请到DAS页面进行操作。
+     * @return retentionDays
+     */
     public Long getRetentionDays() {
         return retentionDays;
     }
@@ -124,7 +130,10 @@ public class ChangeSqlSwitchBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建公网IP请求参数 */
+/**
+ * 创建公网IP请求参数
+ */
 public class CreatePublicIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreatePublicIpOption {
         return this;
     }
 
-    /** 边缘站点的ID。
-     * 
-     * @return siteId */
+    /**
+     * 边缘站点的ID。
+     * @return siteId
+     */
     public String getSiteId() {
         return siteId;
     }
@@ -44,9 +47,10 @@ public class CreatePublicIpOption {
         return this;
     }
 
-    /** 弹性公网IP的版本。目前IEC服务只支持4，即ipv4。
-     * 
-     * @return ipVersion */
+    /**
+     * 弹性公网IP的版本。目前IEC服务只支持4，即ipv4。
+     * @return ipVersion
+     */
     public String getIpVersion() {
         return ipVersion;
     }
@@ -60,9 +64,10 @@ public class CreatePublicIpOption {
         return this;
     }
 
-    /** 线路ID。 不传时默认取当前站点第一条线路
-     * 
-     * @return type */
+    /**
+     * 线路ID。 不传时默认取当前站点第一条线路
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -101,7 +106,10 @@ public class CreatePublicIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

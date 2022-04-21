@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryDeptResultDTO */
+/**
+ * QueryDeptResultDTO
+ */
 public class QueryDeptResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门编码，企业内唯一
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码，企业内唯一
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -97,9 +100,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门层级
-     * 
-     * @return deptLevel */
+    /**
+     * 部门层级
+     * @return deptLevel
+     */
     public Integer getDeptLevel() {
         return deptLevel;
     }
@@ -113,9 +117,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门名称
-     * 
-     * @return deptName */
+    /**
+     * 部门名称
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -129,9 +134,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门名路径
-     * 
-     * @return deptNamePath */
+    /**
+     * 部门名路径
+     * @return deptNamePath
+     */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -145,9 +151,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 是否叶子
-     * 
-     * @return isLeafNode */
+    /**
+     * 是否叶子
+     * @return isLeafNode
+     */
     public Boolean getIsLeafNode() {
         return isLeafNode;
     }
@@ -161,9 +168,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 父部门编号
-     * 
-     * @return parentDeptCode */
+    /**
+     * 父部门编号
+     * @return parentDeptCode
+     */
     public String getParentDeptCode() {
         return parentDeptCode;
     }
@@ -177,9 +185,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门编码路径
-     * 
-     * @return deptCodePath */
+    /**
+     * 部门编码路径
+     * @return deptCodePath
+     */
     public String getDeptCodePath() {
         return deptCodePath;
     }
@@ -193,9 +202,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return note */
+    /**
+     * 备注
+     * @return note
+     */
     public String getNote() {
         return note;
     }
@@ -209,9 +219,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -225,9 +236,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 其他用户对该部门下用户的访问权限
-     * 
-     * @return inPermission */
+    /**
+     * 其他用户对该部门下用户的访问权限
+     * @return inPermission
+     */
     public String getInPermission() {
         return inPermission;
     }
@@ -241,9 +253,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 该部门下用户访问权限控制
-     * 
-     * @return outPermission */
+    /**
+     * 该部门下用户访问权限控制
+     * @return outPermission
+     */
     public String getOutPermission() {
         return outPermission;
     }
@@ -273,9 +286,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 允许访问的部门列表，id为部门编码。
-     * 
-     * @return designatedOutDeptCodes */
+    /**
+     * 允许访问的部门列表，id为部门编码。
+     * @return designatedOutDeptCodes
+     */
     public List<IdMarkDTO> getDesignatedOutDeptCodes() {
         return designatedOutDeptCodes;
     }
@@ -289,9 +303,10 @@ public class QueryDeptResultDTO {
         return this;
     }
 
-    /** 部门排序号
-     * 
-     * @return sortLevel */
+    /**
+     * 部门排序号
+     * @return sortLevel
+     */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -362,7 +377,10 @@ public class QueryDeptResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

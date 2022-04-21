@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 条件中设备数据类型的信息，自定义结构。 */
+/**
+ * 条件中设备数据类型的信息，自定义结构。
+ */
 public class DeviceDataCondition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,10 +33,10 @@ public class DeviceDataCondition {
         return this;
     }
 
-    /** **参数说明**：设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。当rule_type为DEVICE_LINKAGE时，该参数值和product_id不能同时为空。如果该参数和product_id同时存在时，以该参数值对应的设备进行条件过滤。
-     * **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return deviceId */
+    /**
+     * **参数说明**：设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。当rule_type为DEVICE_LINKAGE时，该参数值和product_id不能同时为空。如果该参数和product_id同时存在时，以该参数值对应的设备进行条件过滤。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -48,10 +50,10 @@ public class DeviceDataCondition {
         return this;
     }
 
-    /** **参数说明**：设备关联的产品ID，用于唯一标识一个产品模型，创建产品后获得。方法请参见
-     * [创建产品](https://support.huaweicloud.com/api-iothub/iot_06_v5_0050.html)。当rule_type为DEVICE_LINKAGE时，该参数值和device_id不能同时为空。如果该参数和device_id同时存在时，以device_id参数值对应的设备进行条件过滤。
-     * 
-     * @return productId */
+    /**
+     * **参数说明**：设备关联的产品ID，用于唯一标识一个产品模型，创建产品后获得。方法请参见 [创建产品](https://support.huaweicloud.com/api-iothub/iot_06_v5_0050.html)。当rule_type为DEVICE_LINKAGE时，该参数值和device_id不能同时为空。如果该参数和device_id同时存在时，以device_id参数值对应的设备进行条件过滤。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -81,9 +83,10 @@ public class DeviceDataCondition {
         return this;
     }
 
-    /** 数据过滤条件
-     * 
-     * @return filters */
+    /**
+     * 数据过滤条件
+     * @return filters
+     */
     public List<PropertyFilter> getFilters() {
         return filters;
     }
@@ -122,7 +125,10 @@ public class DeviceDataCondition {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

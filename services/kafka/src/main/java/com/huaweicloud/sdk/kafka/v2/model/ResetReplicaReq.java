@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 期望调整的分区副本分配情况。 */
+/**
+ * 期望调整的分区副本分配情况。
+ */
 public class ResetReplicaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ResetReplicaReq {
         return this;
     }
 
-    /** 期望调整的分区副本分配情况。
-     * 
-     * @return partitions */
+    /**
+     * 期望调整的分区副本分配情况。
+     * @return partitions
+     */
     public List<ResetReplicaReqPartitions> getPartitions() {
         return partitions;
     }
@@ -74,7 +77,10 @@ public class ResetReplicaReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

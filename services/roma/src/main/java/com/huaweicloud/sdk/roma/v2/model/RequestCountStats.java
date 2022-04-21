@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RequestCountStats */
+/**
+ * RequestCountStats
+ */
 public class RequestCountStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class RequestCountStats {
         return this;
     }
 
-    /** 请求总次数
-     * 
-     * @return reqCount */
+    /**
+     * 请求总次数
+     * @return reqCount
+     */
     public Integer getReqCount() {
         return reqCount;
     }
@@ -54,9 +57,10 @@ public class RequestCountStats {
         return this;
     }
 
-    /** 2xx响应码总次数
-     * 
-     * @return reqCount2xx */
+    /**
+     * 2xx响应码总次数
+     * @return reqCount2xx
+     */
     public Integer getReqCount2xx() {
         return reqCount2xx;
     }
@@ -70,9 +74,10 @@ public class RequestCountStats {
         return this;
     }
 
-    /** 4xx响应码总次数
-     * 
-     * @return reqCount4xx */
+    /**
+     * 4xx响应码总次数
+     * @return reqCount4xx
+     */
     public Integer getReqCount4xx() {
         return reqCount4xx;
     }
@@ -86,9 +91,10 @@ public class RequestCountStats {
         return this;
     }
 
-    /** 5xx响应码总次数
-     * 
-     * @return reqCount5xx */
+    /**
+     * 5xx响应码总次数
+     * @return reqCount5xx
+     */
     public Integer getReqCount5xx() {
         return reqCount5xx;
     }
@@ -102,9 +108,10 @@ public class RequestCountStats {
         return this;
     }
 
-    /** 错误次数
-     * 
-     * @return reqCountError */
+    /**
+     * 错误次数
+     * @return reqCountError
+     */
     public Integer getReqCountError() {
         return reqCountError;
     }
@@ -147,7 +154,10 @@ public class RequestCountStats {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

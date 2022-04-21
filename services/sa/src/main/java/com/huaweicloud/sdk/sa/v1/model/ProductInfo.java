@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProductInfo */
+/**
+ * ProductInfo
+ */
 public class ProductInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ProductInfo {
         return this;
     }
 
-    /** 数据源产品所属账号的ID。
-     * 
-     * @return domainId */
+    /**
+     * 数据源产品所属账号的ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -54,9 +57,10 @@ public class ProductInfo {
         return this;
     }
 
-    /** 数据源产品所属项目的ID。
-     * 
-     * @return projectId */
+    /**
+     * 数据源产品所属项目的ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -70,9 +74,10 @@ public class ProductInfo {
         return this;
     }
 
-    /** 数据源产品所在区域。
-     * 
-     * @return region */
+    /**
+     * 数据源产品所在区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -86,9 +91,10 @@ public class ProductInfo {
         return this;
     }
 
-    /** 数据源产品所属公司的名称。
-     * 
-     * @return companyName */
+    /**
+     * 数据源产品所属公司的名称。
+     * @return companyName
+     */
     public String getCompanyName() {
         return companyName;
     }
@@ -102,9 +108,10 @@ public class ProductInfo {
         return this;
     }
 
-    /** 数据源产品的名称。
-     * 
-     * @return productName */
+    /**
+     * 数据源产品的名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -146,7 +153,10 @@ public class ProductInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

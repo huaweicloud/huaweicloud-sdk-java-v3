@@ -45,9 +45,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -61,9 +62,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** 查询的AK。
-     * 
-     * @return access */
+    /**
+     * 查询的AK。
+     * @return access
+     */
     public String getAccess() {
         return access;
     }
@@ -77,9 +79,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** 访问密钥状态。
-     * 
-     * @return status */
+    /**
+     * 访问密钥状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -93,9 +96,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** 访问密钥创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 访问密钥创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -109,9 +113,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** 访问密钥的上次使用时间。
-     * 
-     * @return lastUseTime */
+    /**
+     * 访问密钥的上次使用时间。
+     * @return lastUseTime
+     */
     public String getLastUseTime() {
         return lastUseTime;
     }
@@ -125,9 +130,10 @@ public class ShowCredential {
         return this;
     }
 
-    /** 访问密钥描述信息。
-     * 
-     * @return description */
+    /**
+     * 访问密钥描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -171,7 +177,10 @@ public class ShowCredential {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

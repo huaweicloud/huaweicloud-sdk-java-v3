@@ -11,37 +11,59 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class BatchListStructDetailRequest {
 
-    /** 数据库支持迁移对象类型 */
+    /**
+     * 数据库支持迁移对象类型
+     */
     public static final class TypeEnum {
 
-        /** Enum DATABASE for value: "database" */
+        /**
+         * Enum DATABASE for value: "database"
+         */
         public static final TypeEnum DATABASE = new TypeEnum("database");
 
-        /** Enum SCHEMA for value: "schema" */
+        /**
+         * Enum SCHEMA for value: "schema"
+         */
         public static final TypeEnum SCHEMA = new TypeEnum("schema");
 
-        /** Enum TABLE for value: "table" */
+        /**
+         * Enum TABLE for value: "table"
+         */
         public static final TypeEnum TABLE = new TypeEnum("table");
 
-        /** Enum VIEW for value: "view" */
+        /**
+         * Enum VIEW for value: "view"
+         */
         public static final TypeEnum VIEW = new TypeEnum("view");
 
-        /** Enum PROCEDURE for value: "procedure" */
+        /**
+         * Enum PROCEDURE for value: "procedure"
+         */
         public static final TypeEnum PROCEDURE = new TypeEnum("procedure");
 
-        /** Enum TRIGGER for value: "trigger" */
+        /**
+         * Enum TRIGGER for value: "trigger"
+         */
         public static final TypeEnum TRIGGER = new TypeEnum("trigger");
 
-        /** Enum INDEX for value: "index" */
+        /**
+         * Enum INDEX for value: "index"
+         */
         public static final TypeEnum INDEX = new TypeEnum("index");
 
-        /** Enum TABLE_INDEXS for value: "table_indexs" */
+        /**
+         * Enum TABLE_INDEXS for value: "table_indexs"
+         */
         public static final TypeEnum TABLE_INDEXS = new TypeEnum("table_indexs");
 
-        /** Enum TABLE_STRUCTURE for value: "table_structure" */
+        /**
+         * Enum TABLE_STRUCTURE for value: "table_structure"
+         */
         public static final TypeEnum TABLE_STRUCTURE = new TypeEnum("table_structure");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,13 +140,19 @@ public class BatchListStructDetailRequest {
 
     private TypeEnum type;
 
-    /** 请求语言类型 */
+    /**
+     * 请求语言类型
+     */
     public static final class XLanguageEnum {
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -204,9 +232,10 @@ public class BatchListStructDetailRequest {
         return this;
     }
 
-    /** 数据库支持迁移对象类型
-     * 
-     * @return type */
+    /**
+     * 数据库支持迁移对象类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -220,9 +249,10 @@ public class BatchListStructDetailRequest {
         return this;
     }
 
-    /** 请求语言类型
-     * 
-     * @return xLanguage */
+    /**
+     * 请求语言类型
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -247,9 +277,10 @@ public class BatchListStructDetailRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public BatchQueryJobReqPage getBody() {
         return body;
     }
@@ -288,7 +319,10 @@ public class BatchListStructDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

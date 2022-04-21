@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SimpleAccessoryV2 */
+/**
+ * SimpleAccessoryV2
+ */
 public class SimpleAccessoryV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SimpleAccessoryV2 {
         return this;
     }
 
-    /** 附件id
-     * 
-     * @return accessoryId */
+    /**
+     * 附件id
+     * @return accessoryId
+     */
     public String getAccessoryId() {
         return accessoryId;
     }
@@ -39,9 +42,10 @@ public class SimpleAccessoryV2 {
         return this;
     }
 
-    /** 附件实际名称
-     * 
-     * @return fileActualName */
+    /**
+     * 附件实际名称
+     * @return fileActualName
+     */
     public String getFileActualName() {
         return fileActualName;
     }
@@ -78,7 +82,10 @@ public class SimpleAccessoryV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

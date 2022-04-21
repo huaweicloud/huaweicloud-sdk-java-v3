@@ -35,16 +35,24 @@ public class EventItemDetail {
 
     private String resourceName;
 
-    /** 事件状态。 枚举类型：normal\\warning\\incident */
+    /**
+     * 事件状态。  枚举类型：normal\\warning\\incident
+     */
     public static final class EventStateEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final EventStateEnum NORMAL = new EventStateEnum("normal");
 
-        /** Enum WARNING for value: "warning" */
+        /**
+         * Enum WARNING for value: "warning"
+         */
         public static final EventStateEnum WARNING = new EventStateEnum("warning");
 
-        /** Enum INCIDENT for value: "incident" */
+        /**
+         * Enum INCIDENT for value: "incident"
+         */
         public static final EventStateEnum INCIDENT = new EventStateEnum("incident");
 
         private static final Map<String, EventStateEnum> STATIC_FIELDS = createStaticFields();
@@ -115,19 +123,29 @@ public class EventItemDetail {
 
     private EventStateEnum eventState;
 
-    /** 事件级别。 枚举类型：Critical, Major, Minor, Info */
+    /**
+     * 事件级别。  枚举类型：Critical, Major, Minor, Info
+     */
     public static final class EventLevelEnum {
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final EventLevelEnum CRITICAL = new EventLevelEnum("Critical");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final EventLevelEnum MAJOR = new EventLevelEnum("Major");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final EventLevelEnum MINOR = new EventLevelEnum("Minor");
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final EventLevelEnum INFO = new EventLevelEnum("Info");
 
         private static final Map<String, EventLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -209,9 +227,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 事件内容，最大长度4096。
-     * 
-     * @return content */
+    /**
+     * 事件内容，最大长度4096。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -225,9 +244,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 所属分组。 资源分组对应的ID，必须传存在的分组ID。
-     * 
-     * @return groupId */
+    /**
+     * 所属分组。  资源分组对应的ID，必须传存在的分组ID。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -241,9 +261,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 资源ID，支持字母、数字_ -：，最大长度128。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID，支持字母、数字_ -：，最大长度128。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -257,9 +278,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 资源名称，支持字母 中文 数字_ -. ，最大长度128。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称，支持字母 中文 数字_ -. ，最大长度128。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -273,9 +295,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 事件状态。 枚举类型：normal\\warning\\incident
-     * 
-     * @return eventState */
+    /**
+     * 事件状态。  枚举类型：normal\\warning\\incident
+     * @return eventState
+     */
     public EventStateEnum getEventState() {
         return eventState;
     }
@@ -289,9 +312,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 事件级别。 枚举类型：Critical, Major, Minor, Info
-     * 
-     * @return eventLevel */
+    /**
+     * 事件级别。  枚举类型：Critical, Major, Minor, Info
+     * @return eventLevel
+     */
     public EventLevelEnum getEventLevel() {
         return eventLevel;
     }
@@ -305,9 +329,10 @@ public class EventItemDetail {
         return this;
     }
 
-    /** 事件用户。 支持字母 数字_ -/空格 ，最大长度64。
-     * 
-     * @return eventUser */
+    /**
+     * 事件用户。  支持字母 数字_ -/空格 ，最大长度64。
+     * @return eventUser
+     */
     public String getEventUser() {
         return eventUser;
     }
@@ -354,7 +379,10 @@ public class EventItemDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

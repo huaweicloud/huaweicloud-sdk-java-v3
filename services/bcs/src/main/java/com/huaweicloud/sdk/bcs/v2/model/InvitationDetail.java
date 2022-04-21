@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 被邀请列表 */
+/**
+ * 被邀请列表
+ */
 public class InvitationDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class InvitationDetail {
 
     private String invitedUser;
 
-    /** 邀请状态，可选：已退出（quit），等待中（waiting），已拒绝（reject），已解散（released），其他状态不允许删除 */
+    /**
+     * 邀请状态，可选：已退出（quit），等待中（waiting），已拒绝（reject），已解散（released），其他状态不允许删除
+     */
     public static final class StatusEnum {
 
-        /** Enum QUIT for value: "quit" */
+        /**
+         * Enum QUIT for value: "quit"
+         */
         public static final StatusEnum QUIT = new StatusEnum("quit");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum REJECT for value: "reject" */
+        /**
+         * Enum REJECT for value: "reject"
+         */
         public static final StatusEnum REJECT = new StatusEnum("reject");
 
-        /** Enum RELEASED for value: "released" */
+        /**
+         * Enum RELEASED for value: "released"
+         */
         public static final StatusEnum RELEASED = new StatusEnum("released");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +124,10 @@ public class InvitationDetail {
         return this;
     }
 
-    /** 被邀请方租户名，IAM用户名
-     * 
-     * @return invitedUser */
+    /**
+     * 被邀请方租户名，IAM用户名
+     * @return invitedUser
+     */
     public String getInvitedUser() {
         return invitedUser;
     }
@@ -128,9 +141,10 @@ public class InvitationDetail {
         return this;
     }
 
-    /** 邀请状态，可选：已退出（quit），等待中（waiting），已拒绝（reject），已解散（released），其他状态不允许删除
-     * 
-     * @return status */
+    /**
+     * 邀请状态，可选：已退出（quit），等待中（waiting），已拒绝（reject），已解散（released），其他状态不允许删除
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -144,9 +158,10 @@ public class InvitationDetail {
         return this;
     }
 
-    /** 被邀请方bcs实例id
-     * 
-     * @return invitedBcsId */
+    /**
+     * 被邀请方bcs实例id
+     * @return invitedBcsId
+     */
     public String getInvitedBcsId() {
         return invitedBcsId;
     }
@@ -185,7 +200,10 @@ public class InvitationDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

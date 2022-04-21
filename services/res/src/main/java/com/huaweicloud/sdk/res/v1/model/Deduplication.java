@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 属性去重复，只能选择整型和字符串类型属性 */
+/**
+ * 属性去重复，只能选择整型和字符串类型属性
+ */
 public class Deduplication {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Deduplication {
         return this;
     }
 
-    /** 属性。
-     * 
-     * @return attributes */
+    /**
+     * 属性。
+     * @return attributes
+     */
     public List<String> getAttributes() {
         return attributes;
     }
@@ -74,7 +77,10 @@ public class Deduplication {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

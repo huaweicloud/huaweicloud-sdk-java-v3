@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateAppReq */
+/**
+ * UpdateAppReq
+ */
 public class UpdateAppReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateAppReq {
         return this;
     }
 
-    /** 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class UpdateAppReq {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return remark */
+    /**
+     * 应用描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -60,9 +64,10 @@ public class UpdateAppReq {
         return this;
     }
 
-    /** 是否收藏应用，收藏的应用会在列表里优先显示
-     * 
-     * @return favorite */
+    /**
+     * 是否收藏应用，收藏的应用会在列表里优先显示
+     * @return favorite
+     */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -100,7 +105,10 @@ public class UpdateAppReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

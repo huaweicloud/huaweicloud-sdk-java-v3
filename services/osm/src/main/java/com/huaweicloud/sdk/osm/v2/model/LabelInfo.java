@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LabelInfo */
+/**
+ * LabelInfo
+ */
 public class LabelInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class LabelInfo {
         return this;
     }
 
-    /** 标签id minimum: 0 maximum: 65535
-     * 
-     * @return labelId */
+    /**
+     * 标签id
+     * minimum: 0
+     * maximum: 65535
+     * @return labelId
+     */
     public Integer getLabelId() {
         return labelId;
     }
@@ -44,9 +49,10 @@ public class LabelInfo {
         return this;
     }
 
-    /** 标签描述
-     * 
-     * @return name */
+    /**
+     * 标签描述
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +66,10 @@ public class LabelInfo {
         return this;
     }
 
-    /** 颜色id
-     * 
-     * @return color */
+    /**
+     * 颜色id
+     * @return color
+     */
     public String getColor() {
         return color;
     }
@@ -100,7 +107,10 @@ public class LabelInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

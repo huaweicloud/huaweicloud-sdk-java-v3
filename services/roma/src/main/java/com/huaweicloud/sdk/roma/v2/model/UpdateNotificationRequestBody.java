@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateNotificationRequestBody */
+/**
+ * UpdateNotificationRequestBody
+ */
 public class UpdateNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class UpdateNotificationRequestBody {
 
     private String topic;
 
-    /** 启停状态 0-启用 1-停用 */
+    /**
+     * 启停状态 0-启用 1-停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 通知发送的主题名，该主题需要在MQS存在
-     * 
-     * @return topic */
+    /**
+     * 通知发送的主题名，该主题需要在MQS存在
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -115,9 +124,12 @@ public class UpdateNotificationRequestBody {
         return this;
     }
 
-    /** 启停状态 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 启停状态 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -154,7 +166,10 @@ public class UpdateNotificationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** fault字段数据结构说明 */
+/**
+ * fault字段数据结构说明
+ */
 public class Fault {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class Fault {
         return this;
     }
 
-    /** 故障信息
-     * 
-     * @return message */
+    /**
+     * 故障信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -50,9 +53,10 @@ public class Fault {
         return this;
     }
 
-    /** 故障code
-     * 
-     * @return code */
+    /**
+     * 故障code
+     * @return code
+     */
     public Integer getCode() {
         return code;
     }
@@ -66,9 +70,10 @@ public class Fault {
         return this;
     }
 
-    /** 故障详情
-     * 
-     * @return details */
+    /**
+     * 故障详情
+     * @return details
+     */
     public String getDetails() {
         return details;
     }
@@ -82,9 +87,10 @@ public class Fault {
         return this;
     }
 
-    /** 故障时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
-     * 
-     * @return created */
+    /**
+     * 故障时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
+     * @return created
+     */
     public OffsetDateTime getCreated() {
         return created;
     }
@@ -123,7 +129,10 @@ public class Fault {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

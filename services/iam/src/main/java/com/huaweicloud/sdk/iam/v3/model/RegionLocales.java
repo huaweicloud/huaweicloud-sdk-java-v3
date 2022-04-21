@@ -40,9 +40,10 @@ public class RegionLocales {
         return this;
     }
 
-    /** 区域的中文名称。
-     * 
-     * @return zhCn */
+    /**
+     * 区域的中文名称。
+     * @return zhCn
+     */
     public String getZhCn() {
         return zhCn;
     }
@@ -56,9 +57,10 @@ public class RegionLocales {
         return this;
     }
 
-    /** 区域的英文名称。
-     * 
-     * @return enUs */
+    /**
+     * 区域的英文名称。
+     * @return enUs
+     */
     public String getEnUs() {
         return enUs;
     }
@@ -72,9 +74,10 @@ public class RegionLocales {
         return this;
     }
 
-    /** 区域的葡萄牙语名称。
-     * 
-     * @return ptBr */
+    /**
+     * 区域的葡萄牙语名称。
+     * @return ptBr
+     */
     public String getPtBr() {
         return ptBr;
     }
@@ -88,9 +91,10 @@ public class RegionLocales {
         return this;
     }
 
-    /** 区域的美国西班牙语名称。
-     * 
-     * @return esUs */
+    /**
+     * 区域的美国西班牙语名称。
+     * @return esUs
+     */
     public String getEsUs() {
         return esUs;
     }
@@ -104,9 +108,10 @@ public class RegionLocales {
         return this;
     }
 
-    /** 区域的西班牙语名称。
-     * 
-     * @return esEs */
+    /**
+     * 区域的西班牙语名称。
+     * @return esEs
+     */
     public String getEsEs() {
         return esEs;
     }
@@ -147,7 +152,10 @@ public class RegionLocales {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

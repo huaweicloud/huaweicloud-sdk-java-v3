@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** kerberos认证需要的信息 */
+/**
+ * kerberos认证需要的信息
+ */
 public class KerberosVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class KerberosVO {
         return this;
     }
 
-    /** krb5配置文件
-     * 
-     * @return krb5ConfFile */
+    /**
+     * krb5配置文件
+     * @return krb5ConfFile
+     */
     public String getKrb5ConfFile() {
         return krb5ConfFile;
     }
@@ -49,9 +52,10 @@ public class KerberosVO {
         return this;
     }
 
-    /** key文件
-     * 
-     * @return keyTabFile */
+    /**
+     * key文件
+     * @return keyTabFile
+     */
     public String getKeyTabFile() {
         return keyTabFile;
     }
@@ -65,9 +69,10 @@ public class KerberosVO {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -81,9 +86,10 @@ public class KerberosVO {
         return this;
     }
 
-    /** Kerberos用户对象
-     * 
-     * @return userPrincipal */
+    /**
+     * Kerberos用户对象
+     * @return userPrincipal
+     */
     public String getUserPrincipal() {
         return userPrincipal;
     }
@@ -124,7 +130,10 @@ public class KerberosVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

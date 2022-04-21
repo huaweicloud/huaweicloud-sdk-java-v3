@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例磁盘类型信息。 */
+/**
+ * 实例磁盘类型信息。
+ */
 public class Storage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class Storage {
         return this;
     }
 
-    /** 磁盘类型名称，可能取值如下： - ULTRAHIGH，表示SSD。
-     * 
-     * @return name */
+    /**
+     * 磁盘类型名称，可能取值如下： - ULTRAHIGH，表示SSD。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class Storage {
         return this;
     }
 
-    /** 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
-     * 
-     * @return azStatus */
+    /**
+     * 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
+     * @return azStatus
+     */
     public Map<String, String> getAzStatus() {
         return azStatus;
     }
@@ -96,7 +100,10 @@ public class Storage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

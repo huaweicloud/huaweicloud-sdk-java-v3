@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateTaskRulesetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class UpdateTaskRulesetRequest {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -58,9 +61,10 @@ public class UpdateTaskRulesetRequest {
         return this;
     }
 
-    /** 修改任务规则集
-     * 
-     * @return body */
+    /**
+     * 修改任务规则集
+     * @return body
+     */
     public List<UpdateTaskRulesetItem> getBody() {
         return body;
     }
@@ -97,7 +101,10 @@ public class UpdateTaskRulesetRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AgencyV2 */
+/**
+ * AgencyV2
+ */
 public class AgencyV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 委托id
-     * 
-     * @return id */
+    /**
+     * 委托id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 委托名称
-     * 
-     * @return name */
+    /**
+     * 委托名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 委托的期限
-     * 
-     * @return duration */
+    /**
+     * 委托的期限
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -96,9 +101,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 委托的账号名称
-     * 
-     * @return trustDomainName */
+    /**
+     * 委托的账号名称
+     * @return trustDomainName
+     */
     public String getTrustDomainName() {
         return trustDomainName;
     }
@@ -112,9 +118,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 委托的账号id
-     * 
-     * @return trustDomainId */
+    /**
+     * 委托的账号id
+     * @return trustDomainId
+     */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -128,9 +135,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -144,9 +152,10 @@ public class AgencyV2 {
         return this;
     }
 
-    /** 超期时间
-     * 
-     * @return expireTime */
+    /**
+     * 超期时间
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -192,7 +201,10 @@ public class AgencyV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

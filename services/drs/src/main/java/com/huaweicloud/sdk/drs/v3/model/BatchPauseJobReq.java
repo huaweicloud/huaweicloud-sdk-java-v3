@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量暂停任务请求体 */
+/**
+ * 批量暂停任务请求体
+ */
 public class BatchPauseJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchPauseJobReq {
         return this;
     }
 
-    /** 不能包含空对象。 集合中的job_id取值严格匹配UUID规则。
-     * 
-     * @return jobs */
+    /**
+     * 不能包含空对象。 集合中的job_id取值严格匹配UUID规则。
+     * @return jobs
+     */
     public List<PauseInfo> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class BatchPauseJobReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

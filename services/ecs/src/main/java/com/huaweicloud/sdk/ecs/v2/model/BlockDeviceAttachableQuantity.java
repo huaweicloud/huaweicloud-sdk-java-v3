@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云服务器可挂载磁盘数量。 */
+/**
+ * 云服务器可挂载磁盘数量。
+ */
 public class BlockDeviceAttachableQuantity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BlockDeviceAttachableQuantity {
         return this;
     }
 
-    /** 云服务器可挂载scsi类型磁盘数量。
-     * 
-     * @return freeScsi */
+    /**
+     * 云服务器可挂载scsi类型磁盘数量。
+     * @return freeScsi
+     */
     public Integer getFreeScsi() {
         return freeScsi;
     }
@@ -44,9 +47,10 @@ public class BlockDeviceAttachableQuantity {
         return this;
     }
 
-    /** 云服务器可挂载virtio_blk类型磁盘数量。
-     * 
-     * @return freeBlk */
+    /**
+     * 云服务器可挂载virtio_blk类型磁盘数量。
+     * @return freeBlk
+     */
     public Integer getFreeBlk() {
         return freeBlk;
     }
@@ -60,9 +64,10 @@ public class BlockDeviceAttachableQuantity {
         return this;
     }
 
-    /** 云服务器可挂载磁盘总数。
-     * 
-     * @return freeDisk */
+    /**
+     * 云服务器可挂载磁盘总数。
+     * @return freeDisk
+     */
     public Integer getFreeDisk() {
         return freeDisk;
     }
@@ -101,7 +106,10 @@ public class BlockDeviceAttachableQuantity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

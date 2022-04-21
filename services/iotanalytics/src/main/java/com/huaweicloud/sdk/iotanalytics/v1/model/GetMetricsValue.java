@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** GetMetricsValue */
+/**
+ * GetMetricsValue
+ */
 public class GetMetricsValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class GetMetricsValue {
         return this;
     }
 
-    /** 查询类型，经过转换计算的序列值（transform）、经过聚合计算的序列值（aggregate）
-     * 
-     * @return type */
+    /**
+     * 查询类型，经过转换计算的序列值（transform）、经过聚合计算的序列值（aggregate）
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -54,9 +57,10 @@ public class GetMetricsValue {
         return this;
     }
 
-    /** Get transform
-     * 
-     * @return transform */
+    /**
+     * Get transform
+     * @return transform
+     */
     public TransformMetricsRequest getTransform() {
         return transform;
     }
@@ -79,9 +83,10 @@ public class GetMetricsValue {
         return this;
     }
 
-    /** Get aggregate
-     * 
-     * @return aggregate */
+    /**
+     * Get aggregate
+     * @return aggregate
+     */
     public AggregateMetricsRequest getAggregate() {
         return aggregate;
     }
@@ -120,7 +125,10 @@ public class GetMetricsValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

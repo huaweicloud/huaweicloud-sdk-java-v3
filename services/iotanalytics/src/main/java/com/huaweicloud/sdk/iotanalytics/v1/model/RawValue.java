@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RawValue */
+/**
+ * RawValue
+ */
 public class RawValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class RawValue {
         return this;
     }
 
-    /** 属性名称
-     * 
-     * @return propertyName */
+    /**
+     * 属性名称
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -58,9 +61,10 @@ public class RawValue {
         return this;
     }
 
-    /** 资产属性的历史值序列，示例：[1,2]
-     * 
-     * @return values */
+    /**
+     * 资产属性的历史值序列，示例：[1,2]
+     * @return values
+     */
     public List<Object> getValues() {
         return values;
     }
@@ -96,7 +100,10 @@ public class RawValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

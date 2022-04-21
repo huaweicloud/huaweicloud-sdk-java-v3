@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SetRecordSetsStatusReq */
+/**
+ * SetRecordSetsStatusReq
+ */
 public class SetRecordSetsStatusReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class SetRecordSetsStatusReq {
         return this;
     }
 
-    /** 解析记录状态。 取值范围： ENABLE：启用解析 DISABLE：暂停解析
-     * 
-     * @return status */
+    /**
+     * 解析记录状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -55,7 +58,10 @@ public class SetRecordSetsStatusReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

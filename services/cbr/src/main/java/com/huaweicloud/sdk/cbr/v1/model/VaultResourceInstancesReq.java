@@ -68,13 +68,19 @@ public class VaultResourceInstancesReq {
 
     private List<Match> matches = null;
 
-    /** 云类型 */
+    /**
+    * 云类型
+    */
     public static final class CloudTypeEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
-        /** Enum _HYBRID for value: " hybrid" */
+        /**
+         * Enum _HYBRID for value: " hybrid"
+         */
         public static final CloudTypeEnum _HYBRID = new CloudTypeEnum(" hybrid");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,13 +150,19 @@ public class VaultResourceInstancesReq {
 
     private CloudTypeEnum cloudType;
 
-    /** 资源类型 */
+    /**
+     * 资源类型
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final ObjectTypeEnum SERVER = new ObjectTypeEnum("server");
 
-        /** Enum DISK for value: "disk" */
+        /**
+         * Enum DISK for value: "disk"
+         */
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -225,9 +237,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段。
-     * 
-     * @return withoutAnyTag */
+    /**
+     * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段。
+     * @return withoutAnyTag
+     */
     public Boolean getWithoutAnyTag() {
         return withoutAnyTag;
     }
@@ -257,10 +270,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 包含标签。 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。 tags中多个key之间是“与”的关系。
-     * 结果返回包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。 无过滤条件时返回全量数据。
-     * 
-     * @return tags */
+    /**
+     * 包含标签。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。  tags中多个key之间是“与”的关系。  结果返回包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。  无过滤条件时返回全量数据。
+     * @return tags
+     */
     public List<TagsReq> getTags() {
         return tags;
     }
@@ -290,10 +303,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 包含任一标签。 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。 结果返回包含任一标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。
-     * 无过滤条件时返回全量数据。
-     * 
-     * @return tagsAny */
+    /**
+     * 包含任一标签。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。  结果返回包含任一标签的资源列表，key之间是或的关系，key-value结构中value是或的关系。  无过滤条件时返回全量数据。
+     * @return tagsAny
+     */
     public List<TagsReq> getTagsAny() {
         return tagsAny;
     }
@@ -323,10 +336,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 不包含标签。 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。 结果返回不包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。
-     * 无过滤条件时返回全量数据。
-     * 
-     * @return notTags */
+    /**
+     * 不包含标签。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。  结果返回不包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。  无过滤条件时返回全量数据。
+     * @return notTags
+     */
     public List<TagsReq> getNotTags() {
         return notTags;
     }
@@ -356,10 +369,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 不包含任一标签。 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。 结果返回不包含任一标签的资源列表，key之间是或的关系，key-value结构张value是或的关系。
-     * 无过滤条件时返回全量数据。
-     * 
-     * @return notTagsAny */
+    /**
+     * 不包含任一标签。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。  结果返回不包含任一标签的资源列表，key之间是或的关系，key-value结构张value是或的关系。  无过滤条件时返回全量数据。
+     * @return notTagsAny
+     */
     public List<TagsReq> getNotTagsAny() {
         return notTagsAny;
     }
@@ -389,11 +402,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 仅op_service权限可以使用此字段做资源实例过滤条件。 目前TMS调用时只包含一个tag结构体。 * key： _sys_enterprise_project_id * values：企业项目id列表
-     * 目前TMS调用时，key下面只包含一个value，0表示默认企业项目。 sys_tags和租户标签过滤条件（tags、tags_any、not_tags、not_tags_any）不能同时使用。
-     * 无sys_tags时按照tag接口处理，无tag过滤条件时返回全量数据。 sys_tags不能为空列表
-     * 
-     * @return sysTags */
+    /**
+     * 仅op_service权限可以使用此字段做资源实例过滤条件。  目前TMS调用时只包含一个tag结构体。  * key： _sys_enterprise_project_id  * values：企业项目id列表  目前TMS调用时，key下面只包含一个value，0表示默认企业项目。  sys_tags和租户标签过滤条件（tags、tags_any、not_tags、not_tags_any）不能同时使用。  无sys_tags时按照tag接口处理，无tag过滤条件时返回全量数据。  sys_tags不能为空列表
+     * @return sysTags
+     */
     public List<SysTags> getSysTags() {
         return sysTags;
     }
@@ -407,9 +419,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 查询记录数（action为count时无此参数）如果action为filter时，默认为1000，limit最小值为1，limit最大值为1000, 不在范围内报错。返回的结果中记录数不超过limit。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数（action为count时无此参数）如果action为filter时，默认为1000，limit最小值为1，limit最大值为1000, 不在范围内报错。返回的结果中记录数不超过limit。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -423,9 +436,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 索引位置（action为count时无此参数）如果action为filter时，默认为0，offset最小值为0。返回的结果中第一条记录为符合查询条件的第offset+1条记录。
-     * 
-     * @return offset */
+    /**
+     * 索引位置（action为count时无此参数）如果action为filter时，默认为0，offset最小值为0。返回的结果中第一条记录为符合查询条件的第offset+1条记录。
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -439,9 +453,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 操作标识取值范围为：\"filter\", \"count\"。如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可
-     * 
-     * @return action */
+    /**
+     * 操作标识取值范围为：\"filter\", \"count\"。如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -471,9 +486,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 资源本身支持的查询条件。 matches不允许为空列表。 matches中key不允许重复。
-     * 
-     * @return matches */
+    /**
+     * 资源本身支持的查询条件。  matches不允许为空列表。  matches中key不允许重复。
+     * @return matches
+     */
     public List<Match> getMatches() {
         return matches;
     }
@@ -487,9 +503,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 云类型
-     * 
-     * @return cloudType */
+    /**
+     * 云类型
+     * @return cloudType
+     */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -503,9 +520,10 @@ public class VaultResourceInstancesReq {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return objectType */
+    /**
+     * 资源类型
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -573,7 +591,10 @@ public class VaultResourceInstancesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

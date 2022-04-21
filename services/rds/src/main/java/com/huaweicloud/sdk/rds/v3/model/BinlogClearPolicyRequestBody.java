@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BinlogClearPolicyRequestBody */
+/**
+ * BinlogClearPolicyRequestBody
+ */
 public class BinlogClearPolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class BinlogClearPolicyRequestBody {
         return this;
     }
 
-    /** 取值范围0-7*24
-     * 
-     * @return binlogRetentionHours */
+    /**
+     * 取值范围0-7*24
+     * @return binlogRetentionHours
+     */
     public Long getBinlogRetentionHours() {
         return binlogRetentionHours;
     }
@@ -55,7 +58,10 @@ public class BinlogClearPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

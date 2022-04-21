@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RestoreInstanceFromCollectionRequestBodyCollections */
+/**
+ * RestoreInstanceFromCollectionRequestBodyCollections
+ */
 public class RestoreInstanceFromCollectionRequestBodyCollections {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
         return this;
     }
 
-    /** 恢复前表名。
-     * 
-     * @return oldName */
+    /**
+     * 恢复前表名。
+     * @return oldName
+     */
     public String getOldName() {
         return oldName;
     }
@@ -44,9 +47,10 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
         return this;
     }
 
-    /** 恢复后表名。
-     * 
-     * @return newName */
+    /**
+     * 恢复后表名。
+     * @return newName
+     */
     public String getNewName() {
         return newName;
     }
@@ -60,9 +64,10 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
         return this;
     }
 
-    /** 数据库集合恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
-     * 
-     * @return restoreCollectionTime */
+    /**
+     * 数据库集合恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
+     * @return restoreCollectionTime
+     */
     public String getRestoreCollectionTime() {
         return restoreCollectionTime;
     }
@@ -103,7 +108,10 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

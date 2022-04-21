@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteDeploymentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteDeploymentRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -44,9 +47,10 @@ public class DeleteDeploymentRequest {
         return this;
     }
 
-    /** 应用部署ID
-     * 
-     * @return deploymentId */
+    /**
+     * 应用部署ID
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -60,9 +64,10 @@ public class DeleteDeploymentRequest {
         return this;
     }
 
-    /** 是否强制删除；默认为false。
-     * 
-     * @return forceDelete */
+    /**
+     * 是否强制删除；默认为false。
+     * @return forceDelete
+     */
     public String getForceDelete() {
         return forceDelete;
     }
@@ -101,7 +106,10 @@ public class DeleteDeploymentRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateApiAclBindingV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateApiAclBindingV2Response extends SdkResponse {
         return this;
     }
 
-    /** API与ACL的绑定关系列表
-     * 
-     * @return aclBindings */
+    /**
+     * API与ACL的绑定关系列表
+     * @return aclBindings
+     */
     public List<AclApiBindingInfo> getAclBindings() {
         return aclBindings;
     }
@@ -75,7 +78,10 @@ public class CreateApiAclBindingV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

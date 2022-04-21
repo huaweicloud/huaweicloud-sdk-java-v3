@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSharedTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListSharedTagsResponse extends SdkResponse {
         return this;
     }
 
-    /** tag标签的列表
-     * 
-     * @return tags */
+    /**
+     * tag标签的列表
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -75,7 +78,10 @@ public class ListSharedTagsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

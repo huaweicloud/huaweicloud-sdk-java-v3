@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 标签列表 */
+/**
+ * 标签列表
+ */
 public class DeleteTagsOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,10 +23,14 @@ public class DeleteTagsOption {
 
     private List<TagsSingleValue> tags = null;
 
-    /** 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。 */
+    /**
+    * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+    */
     public static final class ActionEnum {
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final ActionEnum DELETE = new ActionEnum("delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +120,10 @@ public class DeleteTagsOption {
         return this;
     }
 
-    /** 标签列表。action为delete时，tags结构体不能缺失，key不能为空，或者空字符串。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。action为delete时，tags结构体不能缺失，key不能为空，或者空字符串。
+     * @return tags
+     */
     public List<TagsSingleValue> getTags() {
         return tags;
     }
@@ -130,9 +137,10 @@ public class DeleteTagsOption {
         return this;
     }
 
-    /** 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
-     * 
-     * @return action */
+    /**
+     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -168,7 +176,10 @@ public class DeleteTagsOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

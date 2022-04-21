@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 企业的基本信息 */
+/**
+ * 企业的基本信息
+ */
 public class CorpBasicDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,13 +60,19 @@ public class CorpBasicDTO {
 
     private String spId;
 
-    /** 企业提示音语言设置,zh-CN或en-US */
+    /**
+     * 企业提示音语言设置,zh-CN或en-US
+     */
     public static final class LanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-CN" */
+        /**
+         * Enum ZH_CN for value: "zh-CN"
+         */
         public static final LanguageEnum ZH_CN = new LanguageEnum("zh-CN");
 
-        /** Enum EN_US for value: "en-US" */
+        /**
+         * Enum EN_US for value: "en-US"
+         */
         public static final LanguageEnum EN_US = new LanguageEnum("en-US");
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +152,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 企业名称，格式必须满足^[^#%&'+;<>=\"'？?\\\\……/]*$
-     * 
-     * @return name */
+    /**
+     * 企业名称，格式必须满足^[^#%&'+;<>=\"'？?\\\\……/]*$
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -160,9 +169,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 企业域名
-     * 
-     * @return domain */
+    /**
+     * 企业域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -176,9 +186,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时， “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
-     * 
-     * @return phone */
+    /**
+     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时， “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -192,10 +203,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR
-     * 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html
-     * 
-     * @return country */
+    /**
+     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -209,9 +220,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 传真号码,格式必须满足(^$|^[+]?[0-9]+$)
-     * 
-     * @return fax */
+    /**
+     * 传真号码,格式必须满足(^$|^[+]?[0-9]+$)
+     * @return fax
+     */
     public String getFax() {
         return fax;
     }
@@ -225,9 +237,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 邮箱地址,格式必须满足(^$|^[\\w-+]+(\\.[\\w-+]+)*@[\\w-]+(\\.[\\w-]+)*(\\.[\\w-]{1,})$)
-     * 
-     * @return email */
+    /**
+     * 邮箱地址,格式必须满足(^$|^[\\w-+]+(\\.[\\w-+]+)*@[\\w-]+(\\.[\\w-]+)*(\\.[\\w-]{1,})$)
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -241,9 +254,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 地址
-     * 
-     * @return address */
+    /**
+     * 地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -257,9 +271,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return description */
+    /**
+     * 备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -273,9 +288,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 仅在查询时返回
-     * 
-     * @return spId */
+    /**
+     * 仅在查询时返回
+     * @return spId
+     */
     public String getSpId() {
         return spId;
     }
@@ -289,9 +305,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 企业提示音语言设置,zh-CN或en-US
-     * 
-     * @return language */
+    /**
+     * 企业提示音语言设置,zh-CN或en-US
+     * @return language
+     */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -305,9 +322,10 @@ public class CorpBasicDTO {
         return this;
     }
 
-    /** 时区Id设置,例如北京东8区timeZoneId值为56,时区Id和时区的对应关系请参考: https://support.huaweicloud.com/api-meeting/meeting_21_0110.html
-     * 
-     * @return timeZoneId */
+    /**
+     * 时区Id设置,例如北京东8区timeZoneId值为56,时区Id和时区的对应关系请参考: https://support.huaweicloud.com/api-meeting/meeting_21_0110.html
+     * @return timeZoneId
+     */
     public String getTimeZoneId() {
         return timeZoneId;
     }
@@ -358,7 +376,10 @@ public class CorpBasicDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRecordSetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Record Set的ID。
-     * 
-     * @return id */
+    /**
+     * Record Set的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -103,9 +106,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Record Set的名称。
-     * 
-     * @return name */
+    /**
+     * Record Set的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -119,9 +123,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Record Set的描述信息。
-     * 
-     * @return description */
+    /**
+     * Record Set的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -135,9 +140,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 托管该记录的zone_id。
-     * 
-     * @return zoneId */
+    /**
+     * 托管该记录的zone_id。
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -151,9 +157,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 托管该记录的zone_name。
-     * 
-     * @return zoneName */
+    /**
+     * 托管该记录的zone_name。
+     * @return zoneName
+     */
     public String getZoneName() {
         return zoneName;
     }
@@ -167,9 +174,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 记录类型。
-     * 
-     * @return type */
+    /**
+     * 记录类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -183,9 +191,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -215,9 +224,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名解析后的值。
-     * 
-     * @return records */
+    /**
+     * 域名解析后的值。
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -231,9 +241,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createAt */
+    /**
+     * 创建时间。
+     * @return createAt
+     */
     public String getCreateAt() {
         return createAt;
     }
@@ -247,9 +258,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间。
-     * 
-     * @return updateAt */
+    /**
+     * 更新时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -263,9 +275,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -279,9 +292,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
-     * 
-     * @return _default */
+    /**
+     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -295,9 +309,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** 该Record Set所属的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 该Record Set所属的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -320,9 +335,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -396,7 +412,10 @@ public class ShowRecordSetResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

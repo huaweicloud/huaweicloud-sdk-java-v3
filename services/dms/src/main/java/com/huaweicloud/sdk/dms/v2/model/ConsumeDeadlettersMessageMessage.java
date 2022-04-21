@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 消息的内容。 */
+/**
+ * 消息的内容。
+ */
 public class ConsumeDeadlettersMessageMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ConsumeDeadlettersMessageMessage {
         return this;
     }
 
-    /** 消息体的内容。
-     * 
-     * @return body */
+    /**
+     * 消息体的内容。
+     * @return body
+     */
     public Object getBody() {
         return body;
     }
@@ -39,9 +42,10 @@ public class ConsumeDeadlettersMessageMessage {
         return this;
     }
 
-    /** 属性的列表。
-     * 
-     * @return attributes */
+    /**
+     * 属性的列表。
+     * @return attributes
+     */
     public Object getAttributes() {
         return attributes;
     }
@@ -78,7 +82,10 @@ public class ConsumeDeadlettersMessageMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

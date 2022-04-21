@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServersDedicatedHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ListServersDedicatedHostRequest {
         return this;
     }
 
-    /** 专属主机ID。 可以从专属主机控制台查询，或者通过调用查询专属主机列表API获取。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机ID。  可以从专属主机控制台查询，或者通过调用查询专属主机列表API获取。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -44,9 +47,10 @@ public class ListServersDedicatedHostRequest {
         return this;
     }
 
-    /** 每个页面上显示的条目数。
-     * 
-     * @return limit */
+    /**
+     * 每个页面上显示的条目数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class ListServersDedicatedHostRequest {
         return this;
     }
 
-    /** 该值是上一页最后一条记录的ID。 如果“marker”取值无效，将会返回“400”错误码。
-     * 
-     * @return marker */
+    /**
+     * 该值是上一页最后一条记录的ID。  如果“marker”取值无效，将会返回“400”错误码。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -101,7 +106,10 @@ public class ListServersDedicatedHostRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCustomerAccountBalancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 账户余额列表。 具体请参见表1。
-     * 
-     * @return accountBalances */
+    /**
+     * 账户余额列表。 具体请参见表1。
+     * @return accountBalances
+     */
     public List<AccountBalanceV3> getAccountBalances() {
         return accountBalances;
     }
@@ -70,9 +73,10 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 欠款总金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠款总金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -86,9 +90,10 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 度量单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 度量单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -102,9 +107,10 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 币种。 USD：美元。
-     * 
-     * @return currency */
+    /**
+     * 币种。 USD：美元。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -146,7 +152,10 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

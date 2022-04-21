@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteEdgeNodeCertsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteEdgeNodeCertsRequest {
         return this;
     }
 
-    /** 边缘节点ID
-     * 
-     * @return nodeId */
+    /**
+     * 边缘节点ID
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -44,9 +47,10 @@ public class DeleteEdgeNodeCertsRequest {
         return this;
     }
 
-    /** 证书id
-     * 
-     * @return certId */
+    /**
+     * 证书id
+     * @return certId
+     */
     public String getCertId() {
         return certId;
     }
@@ -60,9 +64,10 @@ public class DeleteEdgeNodeCertsRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -101,7 +106,10 @@ public class DeleteEdgeNodeCertsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

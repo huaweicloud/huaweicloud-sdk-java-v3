@@ -30,9 +30,10 @@ public class CompareTableInfoWithToken {
         return this;
     }
 
-    /** 表名。
-     * 
-     * @return tableName */
+    /**
+     * 表名。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -46,9 +47,10 @@ public class CompareTableInfoWithToken {
         return this;
     }
 
-    /** 该表的min token。
-     * 
-     * @return minToken */
+    /**
+     * 该表的min token。
+     * @return minToken
+     */
     public String getMinToken() {
         return minToken;
     }
@@ -62,9 +64,10 @@ public class CompareTableInfoWithToken {
         return this;
     }
 
-    /** 该表的max token。
-     * 
-     * @return maxToken */
+    /**
+     * 该表的max token。
+     * @return maxToken
+     */
     public String getMaxToken() {
         return maxToken;
     }
@@ -103,7 +106,10 @@ public class CompareTableInfoWithToken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

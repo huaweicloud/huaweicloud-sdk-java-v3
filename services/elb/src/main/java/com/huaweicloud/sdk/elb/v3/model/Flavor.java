@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器规格信息。 */
+/**
+ * 负载均衡器规格信息。
+ */
 public class Flavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class Flavor {
         return this;
     }
 
-    /** 规格ID。
-     * 
-     * @return id */
+    /**
+     * 规格ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class Flavor {
         return this;
     }
 
-    /** Get info
-     * 
-     * @return info */
+    /**
+     * Get info
+     * @return info
+     */
     public FlavorInfo getInfo() {
         return info;
     }
@@ -90,9 +94,10 @@ public class Flavor {
         return this;
     }
 
-    /** 规格名称。
-     * 
-     * @return name */
+    /**
+     * 规格名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -106,9 +111,10 @@ public class Flavor {
         return this;
     }
 
-    /** 共享。
-     * 
-     * @return shared */
+    /**
+     * 共享。
+     * @return shared
+     */
     public Boolean getShared() {
         return shared;
     }
@@ -122,9 +128,10 @@ public class Flavor {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -138,9 +145,10 @@ public class Flavor {
         return this;
     }
 
-    /** L4和L7 分别表示四层和七层flavor。查询支持按type过滤。
-     * 
-     * @return type */
+    /**
+     * L4和L7 分别表示四层和七层flavor。查询支持按type过滤。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -154,9 +162,10 @@ public class Flavor {
         return this;
     }
 
-    /** 是否售罄。
-     * 
-     * @return flavorSoldOut */
+    /**
+     * 是否售罄。
+     * @return flavorSoldOut
+     */
     public Boolean getFlavorSoldOut() {
         return flavorSoldOut;
     }
@@ -200,7 +209,10 @@ public class Flavor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

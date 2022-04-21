@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,9 +124,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书id。
-     * 
-     * @return id */
+    /**
+     * 证书id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -138,11 +141,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书状态。取值如下： - PAID：证书已支付，待申请证书。 - ISSUED：证书已签发。 - CHECKING：证书申请审核中。 - CANCELCHECKING：取消证书申请审核中。 -
-     * UNPASSED：证书申请未通过。 - EXPIRED：证书已过期。 - REVOKING：证书吊销申请审核中。 - REVOKED：证书已吊销。 - UPLOAD：证书托管中。 -
-     * SUPPLEMENTCHECKING：多域名证书新增附加域名审核中。 - CANCELSUPPLEMENTING：取消新增附加域名审核中。
-     * 
-     * @return status */
+    /**
+     * 证书状态。取值如下： - PAID：证书已支付，待申请证书。 - ISSUED：证书已签发。 - CHECKING：证书申请审核中。 - CANCELCHECKING：取消证书申请审核中。 - UNPASSED：证书申请未通过。 - EXPIRED：证书已过期。 - REVOKING：证书吊销申请审核中。 - REVOKED：证书已吊销。 - UPLOAD：证书托管中。 - SUPPLEMENTCHECKING：多域名证书新增附加域名审核中。 - CANCELSUPPLEMENTING：取消新增附加域名审核中。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -156,9 +158,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单id。
-     * 
-     * @return orderId */
+    /**
+     * 订单id。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -172,9 +175,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名称。
-     * 
-     * @return name */
+    /**
+     * 证书名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -188,9 +192,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书类型。取值如下： DV_SSL_CERT、DV_SSL_CERT_BASIC、EV_SSL_CERT、 EV_SSL_CERT_PRO、OV_SSL_CERT、OV_SSL_CERT_PRO。
-     * 
-     * @return type */
+    /**
+     * 证书类型。取值如下： DV_SSL_CERT、DV_SSL_CERT_BASIC、EV_SSL_CERT、 EV_SSL_CERT_PRO、OV_SSL_CERT、OV_SSL_CERT_PRO。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -204,9 +209,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书品牌。取值如下： GLOBALSIGN、SYMANTEC、GEOTRUST、CFCA。
-     * 
-     * @return brand */
+    /**
+     * 证书品牌。取值如下： GLOBALSIGN、SYMANTEC、GEOTRUST、CFCA。
+     * @return brand
+     */
     public String getBrand() {
         return brand;
     }
@@ -220,9 +226,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书是否支持推送。
-     * 
-     * @return pushSupport */
+    /**
+     * 证书是否支持推送。
+     * @return pushSupport
+     */
     public String getPushSupport() {
         return pushSupport;
     }
@@ -236,9 +243,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书吊销原因。
-     * 
-     * @return revokeReason */
+    /**
+     * 证书吊销原因。
+     * @return revokeReason
+     */
     public String getRevokeReason() {
         return revokeReason;
     }
@@ -252,9 +260,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 签名算法。
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名算法。
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -268,9 +277,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书签发时间，没有获取到有效值时为空。
-     * 
-     * @return issueTime */
+    /**
+     * 证书签发时间，没有获取到有效值时为空。
+     * @return issueTime
+     */
     public String getIssueTime() {
         return issueTime;
     }
@@ -284,9 +294,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书生效时间，没有获取到有效值时为空。
-     * 
-     * @return notBefore */
+    /**
+     * 证书生效时间，没有获取到有效值时为空。
+     * @return notBefore
+     */
     public String getNotBefore() {
         return notBefore;
     }
@@ -300,9 +311,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书失效时间，没有获取到有效值时为空。
-     * 
-     * @return notAfter */
+    /**
+     * 证书失效时间，没有获取到有效值时为空。
+     * @return notAfter
+     */
     public String getNotAfter() {
         return notAfter;
     }
@@ -316,9 +328,12 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书有效期，按月为单位。 minimum: 12 maximum: 12
-     * 
-     * @return validityPeriod */
+    /**
+     * 证书有效期，按月为单位。
+     * minimum: 12
+     * maximum: 12
+     * @return validityPeriod
+     */
     public Integer getValidityPeriod() {
         return validityPeriod;
     }
@@ -332,9 +347,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名认证方式，取值如下：DNS、FILE、EMAIL。
-     * 
-     * @return validationMethod */
+    /**
+     * 域名认证方式，取值如下：DNS、FILE、EMAIL。
+     * @return validationMethod
+     */
     public String getValidationMethod() {
         return validationMethod;
     }
@@ -348,9 +364,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名类型，取值如下： - SINGLE_DOMAIN：单域名 - WILDCARD：通配符 - MULTI_DOMAIN：多域名
-     * 
-     * @return domainType */
+    /**
+     * 域名类型，取值如下： - SINGLE_DOMAIN：单域名 - WILDCARD：通配符 - MULTI_DOMAIN：多域名
+     * @return domainType
+     */
     public String getDomainType() {
         return domainType;
     }
@@ -364,9 +381,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书绑定域名。
-     * 
-     * @return domain */
+    /**
+     * 证书绑定域名。
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -380,9 +398,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书绑定的附加域名信息。
-     * 
-     * @return sans */
+    /**
+     * 证书绑定的附加域名信息。
+     * @return sans
+     */
     public String getSans() {
         return sans;
     }
@@ -396,9 +415,12 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书可绑定域名个数。 minimum: 1 maximum: 100
-     * 
-     * @return domainCount */
+    /**
+     * 证书可绑定域名个数。
+     * minimum: 1
+     * maximum: 100
+     * @return domainCount
+     */
     public Integer getDomainCount() {
         return domainCount;
     }
@@ -412,9 +434,12 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书可绑定附加域名个数。 minimum: 0 maximum: 99
-     * 
-     * @return wildcardCount */
+    /**
+     * 证书可绑定附加域名个数。
+     * minimum: 0
+     * maximum: 99
+     * @return wildcardCount
+     */
     public Integer getWildcardCount() {
         return wildcardCount;
     }
@@ -428,9 +453,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -460,9 +486,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 域名所有权认证信息，详情请参见Authentification字段数据结构说明。
-     * 
-     * @return authentification */
+    /**
+     * 域名所有权认证信息，详情请参见Authentification字段数据结构说明。
+     * @return authentification
+     */
     public List<Authentification> getAuthentification() {
         return authentification;
     }
@@ -557,7 +584,10 @@ public class ShowCertificateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

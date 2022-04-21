@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepoInfo */
+/**
+ * RepoInfo
+ */
 public class RepoInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createAt */
+    /**
+     * 创建时间
+     * @return createAt
+     */
     public String getCreateAt() {
         return createAt;
     }
@@ -84,9 +87,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 仓库组名
-     * 
-     * @return groupName */
+    /**
+     * 仓库组名
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -100,9 +104,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** https url
-     * 
-     * @return httpUrl */
+    /**
+     * https url
+     * @return httpUrl
+     */
     public String getHttpUrl() {
         return httpUrl;
     }
@@ -116,9 +121,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 仓库uuid
-     * 
-     * @return id */
+    /**
+     * 仓库uuid
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -132,9 +138,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 仓库名
-     * 
-     * @return name */
+    /**
+     * 仓库名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -148,9 +155,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 项目的uuid
-     * 
-     * @return projectId */
+    /**
+     * 项目的uuid
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -164,9 +172,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 项目是否被删除
-     * 
-     * @return projectIsDelete */
+    /**
+     * 项目是否被删除
+     * @return projectIsDelete
+     */
     public String getProjectIsDelete() {
         return projectIsDelete;
     }
@@ -180,9 +189,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 仓库主键id
-     * 
-     * @return repoId */
+    /**
+     * 仓库主键id
+     * @return repoId
+     */
     public String getRepoId() {
         return repoId;
     }
@@ -196,9 +206,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** ssh url
-     * 
-     * @return sshUrl */
+    /**
+     * ssh url
+     * @return sshUrl
+     */
     public String getSshUrl() {
         return sshUrl;
     }
@@ -212,9 +223,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** 是否可见：0私有仓库，20公有仓库
-     * 
-     * @return visibilityLevel */
+    /**
+     * 是否可见：0私有仓库，20公有仓库
+     * @return visibilityLevel
+     */
     public Integer getVisibilityLevel() {
         return visibilityLevel;
     }
@@ -228,9 +240,10 @@ public class RepoInfo {
         return this;
     }
 
-    /** web url 访问路径
-     * 
-     * @return webUrl */
+    /**
+     * web url 访问路径
+     * @return webUrl
+     */
     public String getWebUrl() {
         return webUrl;
     }
@@ -291,7 +304,10 @@ public class RepoInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

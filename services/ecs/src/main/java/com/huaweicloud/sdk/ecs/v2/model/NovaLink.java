@@ -20,19 +20,29 @@ public class NovaLink {
 
     private String href;
 
-    /** 有三种取值。self：自助链接包含版本链接的资源。立即链接后使用这些链接。bookmark：书签链接提供了一个永久资源的永久链接，该链接适合于长期存储。alternate：备用链接可以包含资源的替换表示形式。例如，OpenStack计算映像可能在OpenStack映像服务中有一个替代表示。 */
+    /**
+     * 有三种取值。self：自助链接包含版本链接的资源。立即链接后使用这些链接。bookmark：书签链接提供了一个永久资源的永久链接，该链接适合于长期存储。alternate：备用链接可以包含资源的替换表示形式。例如，OpenStack计算映像可能在OpenStack映像服务中有一个替代表示。
+     */
     public static final class RelEnum {
 
-        /** Enum SELF for value: "self" */
+        /**
+         * Enum SELF for value: "self"
+         */
         public static final RelEnum SELF = new RelEnum("self");
 
-        /** Enum BOOKMARK for value: "bookmark" */
+        /**
+         * Enum BOOKMARK for value: "bookmark"
+         */
         public static final RelEnum BOOKMARK = new RelEnum("bookmark");
 
-        /** Enum ALTERNATE for value: "alternate" */
+        /**
+         * Enum ALTERNATE for value: "alternate"
+         */
         public static final RelEnum ALTERNATE = new RelEnum("alternate");
 
-        /** Enum DESCRIBEDBY for value: "describedby" */
+        /**
+         * Enum DESCRIBEDBY for value: "describedby"
+         */
         public static final RelEnum DESCRIBEDBY = new RelEnum("describedby");
 
         private static final Map<String, RelEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +119,10 @@ public class NovaLink {
         return this;
     }
 
-    /** 相应资源的链接。
-     * 
-     * @return href */
+    /**
+     * 相应资源的链接。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -125,9 +136,10 @@ public class NovaLink {
         return this;
     }
 
-    /** 有三种取值。self：自助链接包含版本链接的资源。立即链接后使用这些链接。bookmark：书签链接提供了一个永久资源的永久链接，该链接适合于长期存储。alternate：备用链接可以包含资源的替换表示形式。例如，OpenStack计算映像可能在OpenStack映像服务中有一个替代表示。
-     * 
-     * @return rel */
+    /**
+     * 有三种取值。self：自助链接包含版本链接的资源。立即链接后使用这些链接。bookmark：书签链接提供了一个永久资源的永久链接，该链接适合于长期存储。alternate：备用链接可以包含资源的替换表示形式。例如，OpenStack计算映像可能在OpenStack映像服务中有一个替代表示。
+     * @return rel
+     */
     public RelEnum getRel() {
         return rel;
     }
@@ -163,7 +175,10 @@ public class NovaLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

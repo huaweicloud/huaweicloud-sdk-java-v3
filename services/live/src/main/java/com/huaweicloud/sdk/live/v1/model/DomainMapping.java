@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DomainMapping */
+/**
+ * DomainMapping
+ */
 public class DomainMapping {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DomainMapping {
         return this;
     }
 
-    /** 直播播放域名
-     * 
-     * @return pullDomain */
+    /**
+     * 直播播放域名
+     * @return pullDomain
+     */
     public String getPullDomain() {
         return pullDomain;
     }
@@ -39,9 +42,10 @@ public class DomainMapping {
         return this;
     }
 
-    /** 直播播放域名关联的推流域名
-     * 
-     * @return pushDomain */
+    /**
+     * 直播播放域名关联的推流域名
+     * @return pushDomain
+     */
     public String getPushDomain() {
         return pushDomain;
     }
@@ -78,7 +82,10 @@ public class DomainMapping {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -113,9 +113,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 印刷序号。
-     * 
-     * @return serialNumber */
+    /**
+     * 印刷序号。 
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -129,9 +130,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 旅客姓名。
-     * 
-     * @return passengerName */
+    /**
+     * 旅客姓名。 
+     * @return passengerName
+     */
     public String getPassengerName() {
         return passengerName;
     }
@@ -145,9 +147,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 有效身份证件号码。
-     * 
-     * @return idNumber */
+    /**
+     * 有效身份证件号码。 
+     * @return idNumber
+     */
     public String getIdNumber() {
         return idNumber;
     }
@@ -161,9 +164,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 备注。
-     * 
-     * @return endorsementsRestrictions */
+    /**
+     * 备注。 
+     * @return endorsementsRestrictions
+     */
     public String getEndorsementsRestrictions() {
         return endorsementsRestrictions;
     }
@@ -177,9 +181,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 订单号。
-     * 
-     * @return orderNumber */
+    /**
+     * 订单号。 
+     * @return orderNumber
+     */
     public String getOrderNumber() {
         return orderNumber;
     }
@@ -193,9 +198,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 票价。
-     * 
-     * @return fare */
+    /**
+     * 票价。 
+     * @return fare
+     */
     public String getFare() {
         return fare;
     }
@@ -209,9 +215,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 民航（CAAC)发展基金。
-     * 
-     * @return caacDevelopmentFund */
+    /**
+     * 民航（CAAC)发展基金。 
+     * @return caacDevelopmentFund
+     */
     public String getCaacDevelopmentFund() {
         return caacDevelopmentFund;
     }
@@ -225,9 +232,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 燃油附加费。
-     * 
-     * @return fuelSurcharge */
+    /**
+     * 燃油附加费。 
+     * @return fuelSurcharge
+     */
     public String getFuelSurcharge() {
         return fuelSurcharge;
     }
@@ -241,9 +249,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 其他税费。
-     * 
-     * @return otherTaxes */
+    /**
+     * 其他税费。 
+     * @return otherTaxes
+     */
     public String getOtherTaxes() {
         return otherTaxes;
     }
@@ -257,9 +266,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 合计。
-     * 
-     * @return total */
+    /**
+     * 合计。 
+     * @return total
+     */
     public String getTotal() {
         return total;
     }
@@ -273,9 +283,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 电子客票号码。
-     * 
-     * @return eTicketNumber */
+    /**
+     * 电子客票号码。 
+     * @return eTicketNumber
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "e_ticket_number")
     public String getETicketNumber() {
@@ -291,9 +302,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 验证码。
-     * 
-     * @return checkCode */
+    /**
+     * 验证码。 
+     * @return checkCode
+     */
     public String getCheckCode() {
         return checkCode;
     }
@@ -307,9 +319,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 提示信息。
-     * 
-     * @return referenceInformation */
+    /**
+     * 提示信息。 
+     * @return referenceInformation
+     */
     public String getReferenceInformation() {
         return referenceInformation;
     }
@@ -323,9 +336,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 保险费。
-     * 
-     * @return insurance */
+    /**
+     * 保险费。 
+     * @return insurance
+     */
     public String getInsurance() {
         return insurance;
     }
@@ -339,9 +353,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 销售单位代号。
-     * 
-     * @return agentCode */
+    /**
+     * 销售单位代号。 
+     * @return agentCode
+     */
     public String getAgentCode() {
         return agentCode;
     }
@@ -355,9 +370,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 填开单位。
-     * 
-     * @return issueOrganization */
+    /**
+     * 填开单位。 
+     * @return issueOrganization
+     */
     public String getIssueOrganization() {
         return issueOrganization;
     }
@@ -371,9 +387,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 填开日期。
-     * 
-     * @return issueDate */
+    /**
+     * 填开日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -403,9 +420,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 机票行程列表。
-     * 
-     * @return itineraryList */
+    /**
+     * 机票行程列表。 
+     * @return itineraryList
+     */
     public List<ItineraryList> getItineraryList() {
         return itineraryList;
     }
@@ -419,10 +437,10 @@ public class FlightItineraryResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，取值范围0~1。 置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 > 说明： -
-     * （1）置信度中的相关字段均与返回值中的相关字段一一对应； - （2）置信度中的itinerary_list的顺序与返回值中的itinerary_list的顺序是一致的。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，取值范围0~1。  置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。  置信度由算法给出，不直接等价于对应字段的准确率。  > 说明：  - （1）置信度中的相关字段均与返回值中的相关字段一一对应；  - （2）置信度中的itinerary_list的顺序与返回值中的itinerary_list的顺序是一致的。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -511,7 +529,10 @@ public class FlightItineraryResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

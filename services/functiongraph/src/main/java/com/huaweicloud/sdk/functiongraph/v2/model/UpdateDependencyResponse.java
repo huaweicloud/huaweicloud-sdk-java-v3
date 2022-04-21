@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateDependencyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包ID。
-     * 
-     * @return id */
+    /**
+     * 依赖包ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,9 +78,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包拥有者。
-     * 
-     * @return owner */
+    /**
+     * 依赖包拥有者。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -91,9 +95,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包在obs的存储地址。
-     * 
-     * @return link */
+    /**
+     * 依赖包在obs的存储地址。
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -107,9 +112,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 运行时语言。
-     * 
-     * @return runtime */
+    /**
+     * 运行时语言。
+     * @return runtime
+     */
     public String getRuntime() {
         return runtime;
     }
@@ -123,9 +129,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包唯一标志。
-     * 
-     * @return etag */
+    /**
+     * 依赖包唯一标志。
+     * @return etag
+     */
     public String getEtag() {
         return etag;
     }
@@ -139,9 +146,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包大小。
-     * 
-     * @return size */
+    /**
+     * 依赖包大小。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -155,9 +163,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包名。
-     * 
-     * @return name */
+    /**
+     * 依赖包名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -171,9 +180,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包描述。
-     * 
-     * @return description */
+    /**
+     * 依赖包描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -187,9 +197,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    /** 依赖包文件名。
-     * 
-     * @return fileName */
+    /**
+     * 依赖包文件名。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -240,7 +251,10 @@ public class UpdateDependencyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

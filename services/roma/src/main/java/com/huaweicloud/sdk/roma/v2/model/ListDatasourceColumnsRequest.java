@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDatasourceColumnsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ListDatasourceColumnsRequest {
 
     private String datasourceId;
 
-    /** 数据源所在任务位置 - SOURCE 数据源处于任务源端 - TARGET 数据源处于任务目标端 */
+    /**
+     * 数据源所在任务位置 - SOURCE 数据源处于任务源端 - TARGET 数据源处于任务目标端
+     */
     public static final class PositionEnum {
 
-        /** Enum SOURCE for value: "SOURCE" */
+        /**
+         * Enum SOURCE for value: "SOURCE"
+         */
         public static final PositionEnum SOURCE = new PositionEnum("SOURCE");
 
-        /** Enum TARGET for value: "TARGET" */
+        /**
+         * Enum TARGET for value: "TARGET"
+         */
         public static final PositionEnum TARGET = new PositionEnum("TARGET");
 
         private static final Map<String, PositionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class ListDatasourceColumnsRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -130,9 +139,10 @@ public class ListDatasourceColumnsRequest {
         return this;
     }
 
-    /** 数据源ID
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源ID
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -146,9 +156,10 @@ public class ListDatasourceColumnsRequest {
         return this;
     }
 
-    /** 数据源所在任务位置 - SOURCE 数据源处于任务源端 - TARGET 数据源处于任务目标端
-     * 
-     * @return position */
+    /**
+     * 数据源所在任务位置 - SOURCE 数据源处于任务源端 - TARGET 数据源处于任务目标端
+     * @return position
+     */
     public PositionEnum getPosition() {
         return position;
     }
@@ -162,9 +173,10 @@ public class ListDatasourceColumnsRequest {
         return this;
     }
 
-    /** 数据库名称，只支持MRSHIVE，FIHIVE类型的数据源
-     * 
-     * @return dbName */
+    /**
+     * 数据库名称，只支持MRSHIVE，FIHIVE类型的数据源
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -178,9 +190,10 @@ public class ListDatasourceColumnsRequest {
         return this;
     }
 
-    /** 字段所在的表名
-     * 
-     * @return tableName */
+    /**
+     * 字段所在的表名
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -223,7 +236,10 @@ public class ListDatasourceColumnsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

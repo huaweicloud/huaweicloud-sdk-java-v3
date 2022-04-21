@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateAndDeletePrivilegeReq */
+/**
+ * CreateAndDeletePrivilegeReq
+ */
 public class CreateAndDeletePrivilegeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateAndDeletePrivilegeReq {
         return this;
     }
 
-    /** 执行的操作(create|delete)
-     * 
-     * @return operation */
+    /**
+     * 执行的操作(create|delete)
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -39,9 +42,10 @@ public class CreateAndDeletePrivilegeReq {
         return this;
     }
 
-    /** 权限标识
-     * 
-     * @return privilege */
+    /**
+     * 权限标识
+     * @return privilege
+     */
     public String getPrivilege() {
         return privilege;
     }
@@ -78,7 +82,10 @@ public class CreateAndDeletePrivilegeReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

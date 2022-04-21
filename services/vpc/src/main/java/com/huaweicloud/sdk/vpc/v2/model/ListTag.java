@@ -28,9 +28,10 @@ public class ListTag {
         return this;
     }
 
-    /** 功能说明：标签键 约束：key不能为空
-     * 
-     * @return key */
+    /**
+     * 功能说明：标签键 约束：key不能为空
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -60,9 +61,10 @@ public class ListTag {
         return this;
     }
 
-    /** 功能描述：标签值列表。 如果values为空列表，则表示any_value。value之间为或的关系。
-     * 
-     * @return values */
+    /**
+     * 功能描述：标签值列表。 如果values为空列表，则表示any_value。value之间为或的关系。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -98,7 +100,10 @@ public class ListTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

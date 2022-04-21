@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Task */
+/**
+ * Task
+ */
 public class Task {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务ID，创建批量任务时由物联网平台分配获得。
-     * 
-     * @return taskId */
+    /**
+     * 批量任务ID，创建批量任务时由物联网平台分配获得。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -89,9 +92,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 批量任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -105,12 +109,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务类型，取值范围：firmwareUpgrade，softwareUpgrade，createDevices，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows。
-     * - softwareUpgrade: 软件升级任务 - firmwareUpgrade: 固件升级任务 - createDevices: 批量创建设备任务 - deleteDevices: 批量删除设备任务 -
-     * freezeDevices: 批量冻结设备任务 - unfreezeDevices: 批量解冻设备任务 - createCommands: 批量创建同步命令任务 - createAsyncCommands:
-     * 批量创建异步命令任务 - createMessages: 批量创建消息任务 - updateDeviceShadows: 批量配置设备影子任务
-     * 
-     * @return taskType */
+    /**
+     * 批量任务类型，取值范围：firmwareUpgrade，softwareUpgrade，createDevices，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows。 - softwareUpgrade: 软件升级任务 - firmwareUpgrade: 固件升级任务 - createDevices: 批量创建设备任务 - deleteDevices: 批量删除设备任务 - freezeDevices: 批量冻结设备任务 - unfreezeDevices: 批量解冻设备任务 - createCommands: 批量创建同步命令任务 - createAsyncCommands: 批量创建异步命令任务 - createMessages: 批量创建消息任务 - updateDeviceShadows: 批量配置设备影子任务 
+     * @return taskType
+     */
     public String getTaskType() {
         return taskType;
     }
@@ -140,9 +142,10 @@ public class Task {
         return this;
     }
 
-    /** 执行批量任务的目标，当task_type为firmwareUpgrade，softwareUpgrade，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows，此处填写device_id列表。
-     * 
-     * @return targets */
+    /**
+     * 执行批量任务的目标，当task_type为firmwareUpgrade，softwareUpgrade，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows，此处填写device_id列表。
+     * @return targets
+     */
     public List<String> getTargets() {
         return targets;
     }
@@ -172,9 +175,10 @@ public class Task {
         return this;
     }
 
-    /** 任务目标筛选参数。Json格式，里面是一个个键值对，（K,V）格式标识筛选targets需要的参数，目前支持的K有group_ids（V填写group_id数组，eg:[\"e495cf17-ff79-4294-8f64-4d367919d665\"]，任务则会筛选出来符合该群组条件的设备作为目标）
-     * 
-     * @return targetsFilter */
+    /**
+     * 任务目标筛选参数。Json格式，里面是一个个键值对，（K,V）格式标识筛选targets需要的参数，目前支持的K有group_ids（V填写group_id数组，eg:[\"e495cf17-ff79-4294-8f64-4d367919d665\"]，任务则会筛选出来符合该群组条件的设备作为目标）
+     * @return targetsFilter
+     */
     public Map<String, Object> getTargetsFilter() {
         return targetsFilter;
     }
@@ -188,11 +192,10 @@ public class Task {
         return this;
     }
 
-    /** 执行任务数据文档，Json格式。(当task_type为softwareUpgrade|firmwareUpgrade，也就是软固件升级任务时，Json里面是(K,V)键值对，需要填写key为package_id，value为在平台上传的软固件附件id，id由portal软件库包管理上传并查询获得。当task_type为createCommands，也就是批量创建同步命令任务时，Json里面是命令相关参数，eg：{\"service_id\":\"water\",\"command_name\":\"ON_OFF\",\"paras\":{\"value\":\"ON\"}}，参考[设备同步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0038.html))。当task_type为createAsyncCommands，也就是批量创建异步命令任务时，Json里面是命令相关参数，eg：{\"service_id\":\"water\",\"command_name\":\"ON_OFF\",\"paras\":{\"value\":\"ON\"},\"expire_time\":0,\"send_strategy\":\"immediately\"}，参考[设备异步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0040.html))。当task_type为updateDeviceShadows，也就是批量配置设备影子任务时，Json里面是命令相关参数，eg：{\"shadow\":
-     * [{\"service_id\": \"WaterMeter\",\"desired\": {\"temperature\":
-     * \"60\"}}]}，参考[配置设备影子预期数据](https://support.huaweicloud.com/api-iothub/iot_06_v5_0072.html))。
-     * 
-     * @return document */
+    /**
+     * 执行任务数据文档，Json格式。(当task_type为softwareUpgrade|firmwareUpgrade，也就是软固件升级任务时，Json里面是(K,V)键值对，需要填写key为package_id，value为在平台上传的软固件附件id，id由portal软件库包管理上传并查询获得。当task_type为createCommands，也就是批量创建同步命令任务时，Json里面是命令相关参数，eg：{\"service_id\":\"water\",\"command_name\":\"ON_OFF\",\"paras\":{\"value\":\"ON\"}}，参考[设备同步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0038.html))。当task_type为createAsyncCommands，也就是批量创建异步命令任务时，Json里面是命令相关参数，eg：{\"service_id\":\"water\",\"command_name\":\"ON_OFF\",\"paras\":{\"value\":\"ON\"},\"expire_time\":0,\"send_strategy\":\"immediately\"}，参考[设备异步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0040.html))。当task_type为updateDeviceShadows，也就是批量配置设备影子任务时，Json里面是命令相关参数，eg：{\"shadow\": [{\"service_id\": \"WaterMeter\",\"desired\": {\"temperature\": \"60\"}}]}，参考[配置设备影子预期数据](https://support.huaweicloud.com/api-iothub/iot_06_v5_0072.html))。
+     * @return document
+     */
     public Object getDocument() {
         return document;
     }
@@ -215,9 +218,10 @@ public class Task {
         return this;
     }
 
-    /** Get taskPolicy
-     * 
-     * @return taskPolicy */
+    /**
+     * Get taskPolicy
+     * @return taskPolicy
+     */
     public TaskPolicy getTaskPolicy() {
         return taskPolicy;
     }
@@ -231,10 +235,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务的状态，可选参数，取值范围：Success|Fail|Processing|PartialSuccess|Stopped|Waitting|Initializing。 - Initializing: 初始化中。 -
-     * Waitting: 等待中。 - Processing: 执行中。 - Success: 成功。 - Fail: 失败。 - PartialSuccess: 部分成功。 - Stopped: 停止。
-     * 
-     * @return status */
+    /**
+     * 批量任务的状态，可选参数，取值范围：Success|Fail|Processing|PartialSuccess|Stopped|Waitting|Initializing。 - Initializing: 初始化中。 - Waitting: 等待中。 - Processing: 执行中。 - Success: 成功。 - Fail: 失败。 - PartialSuccess: 部分成功。 - Stopped: 停止。 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -248,9 +252,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务状态描述(包含主任务失败错误信息)
-     * 
-     * @return statusDesc */
+    /**
+     * 批量任务状态描述(包含主任务失败错误信息)
+     * @return statusDesc
+     */
     public String getStatusDesc() {
         return statusDesc;
     }
@@ -273,9 +278,10 @@ public class Task {
         return this;
     }
 
-    /** Get taskProgress
-     * 
-     * @return taskProgress */
+    /**
+     * Get taskProgress
+     * @return taskProgress
+     */
     public TaskProgress getTaskProgress() {
         return taskProgress;
     }
@@ -289,9 +295,10 @@ public class Task {
         return this;
     }
 
-    /** 批量任务的创建时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createTime */
+    /**
+     * 批量任务的创建时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -351,7 +358,10 @@ public class Task {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

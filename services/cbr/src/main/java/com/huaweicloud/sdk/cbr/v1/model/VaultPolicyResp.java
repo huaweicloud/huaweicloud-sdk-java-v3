@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 绑定策略返回体 */
+/**
+ * 绑定策略返回体
+ */
 public class VaultPolicyResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class VaultPolicyResp {
         return this;
     }
 
-    /** 目标region的vault ID，仅设置复制策略时有。
-     * 
-     * @return destinationVaultId */
+    /**
+     * 目标region的vault ID，仅设置复制策略时有。
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -44,9 +47,10 @@ public class VaultPolicyResp {
         return this;
     }
 
-    /** 设置的策略ID
-     * 
-     * @return policyId */
+    /**
+     * 设置的策略ID
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -60,9 +64,10 @@ public class VaultPolicyResp {
         return this;
     }
 
-    /** 设置策略的vault ID
-     * 
-     * @return vaultId */
+    /**
+     * 设置策略的vault ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -101,7 +106,10 @@ public class VaultPolicyResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

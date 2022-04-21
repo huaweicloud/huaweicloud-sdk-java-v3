@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建通道的配置 */
+/**
+ * 创建通道的配置
+ */
 public class BatchCreateChannelsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchCreateChannelsRequestBody {
         return this;
     }
 
-    /** 通道列表
-     * 
-     * @return channels */
+    /**
+     * 通道列表
+     * @return channels
+     */
     public List<ChannelCreateInfo> getChannels() {
         return channels;
     }
@@ -74,7 +77,10 @@ public class BatchCreateChannelsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

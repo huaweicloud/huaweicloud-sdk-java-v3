@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** VideoProcess */
+/**
+ * VideoProcess
+ */
 public class VideoProcess {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class VideoProcess {
 
     private Integer rotate;
 
-    /** 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 */
+    /**
+     * 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 
+     */
     public static final class AdaptationEnum {
 
-        /** Enum SHORT for value: "SHORT" */
+        /**
+         * Enum SHORT for value: "SHORT"
+         */
         public static final AdaptationEnum SHORT = new AdaptationEnum("SHORT");
 
-        /** Enum LONG for value: "LONG" */
+        /**
+         * Enum LONG for value: "LONG"
+         */
         public static final AdaptationEnum LONG = new AdaptationEnum("LONG");
 
-        /** Enum NONE for value: "NONE" */
+        /**
+         * Enum NONE for value: "NONE"
+         */
         public static final AdaptationEnum NONE = new AdaptationEnum("NONE");
 
         private static final Map<String, AdaptationEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,12 @@ public class VideoProcess {
         return this;
     }
 
-    /** 需要单独设置时长的HLS起始分片数量。与hls_init_interval配合使用，设置前面hls_init_count个HLS分片时长。 为0表示不单独配置时长。 minimum: 0 maximum: 10
-     * 
-     * @return hlsInitCount */
+    /**
+     * 需要单独设置时长的HLS起始分片数量。与hls_init_interval配合使用，设置前面hls_init_count个HLS分片时长。 为0表示不单独配置时长。 
+     * minimum: 0
+     * maximum: 10
+     * @return hlsInitCount
+     */
     public Integer getHlsInitCount() {
         return hlsInitCount;
     }
@@ -134,9 +147,12 @@ public class VideoProcess {
         return this;
     }
 
-    /** 表示前面hls_init_count个HLS分片的时长,hls_init_count不为0时，该字段才起作用。 minimum: 2 maximum: 10
-     * 
-     * @return hlsInitInterval */
+    /**
+     * 表示前面hls_init_count个HLS分片的时长,hls_init_count不为0时，该字段才起作用。 
+     * minimum: 2
+     * maximum: 10
+     * @return hlsInitInterval
+     */
     public Integer getHlsInitInterval() {
         return hlsInitInterval;
     }
@@ -150,9 +166,12 @@ public class VideoProcess {
         return this;
     }
 
-    /** 视频顺时针旋转角度。 - 0：表示不旋转 - 1：表示顺时针旋转90度 - 2：表示顺时针旋转180度 - 3：表示顺时针旋转270度 minimum: 0 maximum: 4
-     * 
-     * @return rotate */
+    /**
+     * 视频顺时针旋转角度。  - 0：表示不旋转 - 1：表示顺时针旋转90度 - 2：表示顺时针旋转180度 - 3：表示顺时针旋转270度 
+     * minimum: 0
+     * maximum: 4
+     * @return rotate
+     */
     public Integer getRotate() {
         return rotate;
     }
@@ -166,9 +185,10 @@ public class VideoProcess {
         return this;
     }
 
-    /** 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应
-     * 
-     * @return adaptation */
+    /**
+     * 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 
+     * @return adaptation
+     */
     public AdaptationEnum getAdaptation() {
         return adaptation;
     }
@@ -182,9 +202,12 @@ public class VideoProcess {
         return this;
     }
 
-    /** 是否开启上采样，如支持从480P的片源转为720P，可取值为: - 0：表示上采样关闭， - 1：表示上采样开启. minimum: 0 maximum: 1
-     * 
-     * @return upsample */
+    /**
+     * 是否开启上采样，如支持从480P的片源转为720P，可取值为:  - 0：表示上采样关闭， - 1：表示上采样开启. 
+     * minimum: 0
+     * maximum: 1
+     * @return upsample
+     */
     public Integer getUpsample() {
         return upsample;
     }
@@ -227,7 +250,10 @@ public class VideoProcess {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

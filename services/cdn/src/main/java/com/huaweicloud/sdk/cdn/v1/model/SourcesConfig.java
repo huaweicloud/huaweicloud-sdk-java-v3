@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 源站配置。 */
+/**
+ * 源站配置。
+ */
 public class SourcesConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** 源站IP或者域名。
-     * 
-     * @return originAddr */
+    /**
+     * 源站IP或者域名。
+     * @return originAddr
+     */
     public String getOriginAddr() {
         return originAddr;
     }
@@ -64,9 +67,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** 源站类型（\"ipaddr\"：\"IP源站\"，\"domain\"：\"域名源站\"，\"obs_bucket\"：\"OBS Bucket源站\"）。
-     * 
-     * @return originType */
+    /**
+     * 源站类型（\"ipaddr\"：\"IP源站\"，\"domain\"：\"域名源站\"，\"obs_bucket\"：\"OBS Bucket源站\"）。
+     * @return originType
+     */
     public String getOriginType() {
         return originType;
     }
@@ -80,9 +84,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** 源站优先级（70：主，30：备）。
-     * 
-     * @return priority */
+    /**
+     * 源站优先级（70：主，30：备）。
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -96,9 +101,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** 是否开启Obs静态网站托管，源站类型为obs_bucket时传递(off：关闭，on：开启)。
-     * 
-     * @return obsWebHostingStatus */
+    /**
+     * 是否开启Obs静态网站托管，源站类型为obs_bucket时传递(off：关闭，on：开启)。
+     * @return obsWebHostingStatus
+     */
     public String getObsWebHostingStatus() {
         return obsWebHostingStatus;
     }
@@ -112,9 +118,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** HTTP端口，默认80。
-     * 
-     * @return httpPort */
+    /**
+     * HTTP端口，默认80。
+     * @return httpPort
+     */
     public Integer getHttpPort() {
         return httpPort;
     }
@@ -128,9 +135,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** HTTPS端口，默认443。
-     * 
-     * @return httpsPort */
+    /**
+     * HTTPS端口，默认443。
+     * @return httpsPort
+     */
     public Integer getHttpsPort() {
         return httpsPort;
     }
@@ -144,9 +152,10 @@ public class SourcesConfig {
         return this;
     }
 
-    /** 回源HOST，默认加速域名。
-     * 
-     * @return hostName */
+    /**
+     * 回源HOST，默认加速域名。
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -193,7 +202,10 @@ public class SourcesConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

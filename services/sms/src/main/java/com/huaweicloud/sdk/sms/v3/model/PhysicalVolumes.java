@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 使用大小 */
+/**
+ * 使用大小
+ */
 public class PhysicalVolumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 分区类型，普通分区，启动分区，系统分区
-     * 
-     * @return deviceUse */
+    /**
+     * 分区类型，普通分区，启动分区，系统分区
+     * @return deviceUse
+     */
     public String getDeviceUse() {
         return deviceUse;
     }
@@ -69,9 +72,10 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 文件系统类型
-     * 
-     * @return fileSystem */
+    /**
+     * 文件系统类型
+     * @return fileSystem
+     */
     public String getFileSystem() {
         return fileSystem;
     }
@@ -85,9 +89,12 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 顺序 minimum: 0 maximum: 2147483647
-     * 
-     * @return index */
+    /**
+     * 顺序
+     * minimum: 0
+     * maximum: 2147483647
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -101,9 +108,10 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 挂载点
-     * 
-     * @return mountPoint */
+    /**
+     * 挂载点
+     * @return mountPoint
+     */
     public String getMountPoint() {
         return mountPoint;
     }
@@ -117,9 +125,10 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 名称，windows表示盘符，Linux表示设备号
-     * 
-     * @return name */
+    /**
+     * 名称，windows表示盘符，Linux表示设备号
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -133,9 +142,12 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -149,9 +161,12 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** 使用大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return usedSize */
+    /**
+     * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -165,9 +180,10 @@ public class PhysicalVolumes {
         return this;
     }
 
-    /** GUID，可从源端查询
-     * 
-     * @return uuid */
+    /**
+     * GUID，可从源端查询
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -215,7 +231,10 @@ public class PhysicalVolumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

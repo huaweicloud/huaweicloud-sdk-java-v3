@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建实例请求体。 */
+/**
+ * 创建实例请求体。
+ */
 public class CreatePostPaidInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,10 +28,14 @@ public class CreatePostPaidInstanceReq {
 
     private String description;
 
-    /** 消息引擎。取值填写为：kafka。 */
+    /**
+     * 消息引擎。取值填写为：kafka。
+     */
     public static final class EngineEnum {
 
-        /** Enum KAFKA for value: "kafka" */
+        /**
+         * Enum KAFKA for value: "kafka"
+         */
         public static final EngineEnum KAFKA = new EngineEnum("kafka");
 
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
@@ -98,13 +104,19 @@ public class CreatePostPaidInstanceReq {
 
     private EngineEnum engine;
 
-    /** 消息引擎的版本。取值填写为：1.1.0和2.3.0。 */
+    /**
+     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+     */
     public static final class EngineVersionEnum {
 
-        /** Enum _1_1_0 for value: "1.1.0" */
+        /**
+         * Enum _1_1_0 for value: "1.1.0"
+         */
         public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
 
-        /** Enum _2_3_0 for value: "2.3.0" */
+        /**
+         * Enum _2_3_0 for value: "2.3.0"
+         */
         public static final EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
 
         private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -174,19 +186,29 @@ public class CreatePostPaidInstanceReq {
 
     private EngineVersionEnum engineVersion;
 
-    /** Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围： - 100MB - 300MB - 600MB - 1200MB */
+    /**
+     * Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     */
     public static final class SpecificationEnum {
 
-        /** Enum _100MB for value: "100MB" */
+        /**
+         * Enum _100MB for value: "100MB"
+         */
         public static final SpecificationEnum _100MB = new SpecificationEnum("100MB");
 
-        /** Enum _300MB for value: "300MB" */
+        /**
+         * Enum _300MB for value: "300MB"
+         */
         public static final SpecificationEnum _300MB = new SpecificationEnum("300MB");
 
-        /** Enum _600MB for value: "600MB" */
+        /**
+         * Enum _600MB for value: "600MB"
+         */
         public static final SpecificationEnum _600MB = new SpecificationEnum("600MB");
 
-        /** Enum _1200MB for value: "1200MB" */
+        /**
+         * Enum _1200MB for value: "1200MB"
+         */
         public static final SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
 
         private static final Map<String, SpecificationEnum> STATIC_FIELDS = createStaticFields();
@@ -263,17 +285,24 @@ public class CreatePostPaidInstanceReq {
 
     private Integer storageSpace;
 
-    /** Kafka实例的最大分区数量。 - 参数specification为100MB时，取值300 - 参数specification为300MB时，取值900 - 参数specification为600MB时，取值1800 -
-     * 参数specification为1200MB时，取值1800 */
+    /**
+     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
+     */
     public static final class PartitionNumEnum {
 
-        /** Enum NUMBER_300 for value: 300 */
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
         public static final PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
 
-        /** Enum NUMBER_900 for value: 900 */
+        /**
+         * Enum NUMBER_900 for value: 900
+         */
         public static final PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
 
-        /** Enum NUMBER_1800 for value: 1800 */
+        /**
+         * Enum NUMBER_1800 for value: 1800
+         */
         public static final PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
 
         private static final Map<Integer, PartitionNumEnum> STATIC_FIELDS = createStaticFields();
@@ -419,13 +448,19 @@ public class CreatePostPaidInstanceReq {
 
     private Boolean sslEnable;
 
-    /** 磁盘的容量到达容量阈值后，对于消息的处理策略。 取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。 */
+    /**
+     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     */
     public static final class RetentionPolicyEnum {
 
-        /** Enum TIME_BASE for value: "time_base" */
+        /**
+         * Enum TIME_BASE for value: "time_base"
+         */
         public static final RetentionPolicyEnum TIME_BASE = new RetentionPolicyEnum("time_base");
 
-        /** Enum PRODUCE_REJECT for value: "produce_reject" */
+        /**
+         * Enum PRODUCE_REJECT for value: "produce_reject"
+         */
         public static final RetentionPolicyEnum PRODUCE_REJECT = new RetentionPolicyEnum("produce_reject");
 
         private static final Map<String, RetentionPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -505,21 +540,26 @@ public class CreatePostPaidInstanceReq {
 
     private Boolean enableAutoTopic;
 
-    /** 存储IO规格。 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
-     * 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
-     * 参数specification为600MB时，取值dms.physical.storage.ultra -
-     * 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。 */
+    /**
+     * 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     */
     public static final class StorageSpecCodeEnum {
 
-        /** Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_NORMAL =
             new StorageSpecCodeEnum("dms.physical.storage.normal");
 
-        /** Enum DMS_PHYSICAL_STORAGE_HIGH for value: "dms.physical.storage.high" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_HIGH for value: "dms.physical.storage.high"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH =
             new StorageSpecCodeEnum("dms.physical.storage.high");
 
-        /** Enum DMS_PHYSICAL_STORAGE_ULTRA for value: "dms.physical.storage.ultra" */
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_ULTRA for value: "dms.physical.storage.ultra"
+         */
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA =
             new StorageSpecCodeEnum("dms.physical.storage.ultra");
 
@@ -606,9 +646,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 实例名称。 由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
-     * 
-     * @return name */
+    /**
+     * 实例名称。  由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -622,9 +663,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 实例的描述信息。 长度不超过1024的字符串。 > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
-     * 
-     * @return description */
+    /**
+     * 实例的描述信息。  长度不超过1024的字符串。  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -638,9 +680,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 消息引擎。取值填写为：kafka。
-     * 
-     * @return engine */
+    /**
+     * 消息引擎。取值填写为：kafka。
+     * @return engine
+     */
     public EngineEnum getEngine() {
         return engine;
     }
@@ -654,9 +697,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 消息引擎的版本。取值填写为：1.1.0和2.3.0。
-     * 
-     * @return engineVersion */
+    /**
+     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+     * @return engineVersion
+     */
     public EngineVersionEnum getEngineVersion() {
         return engineVersion;
     }
@@ -670,9 +714,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围： - 100MB - 300MB - 600MB - 1200MB
-     * 
-     * @return specification */
+    /**
+     * Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     * @return specification
+     */
     public SpecificationEnum getSpecification() {
         return specification;
     }
@@ -686,10 +731,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 消息存储空间，单位GB。 - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。 - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。 -
-     * Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。 - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB。
-     * 
-     * @return storageSpace */
+    /**
+     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB。
+     * @return storageSpace
+     */
     public Integer getStorageSpace() {
         return storageSpace;
     }
@@ -703,10 +748,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** Kafka实例的最大分区数量。 - 参数specification为100MB时，取值300 - 参数specification为300MB时，取值900 - 参数specification为600MB时，取值1800 -
-     * 参数specification为1200MB时，取值1800
-     * 
-     * @return partitionNum */
+    /**
+     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
+     * @return partitionNum
+     */
     public PartitionNumEnum getPartitionNum() {
         return partitionNum;
     }
@@ -720,9 +765,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
-     * 
-     * @return accessUser */
+    /**
+     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * @return accessUser
+     */
     public String getAccessUser() {
         return accessUser;
     }
@@ -736,10 +782,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。 实例的认证密码。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合： - 小写字母 -
-     * 大写字母 - 数字 - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
-     * 
-     * @return password */
+    /**
+     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  实例的认证密码。  复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -753,9 +799,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 虚拟私有云ID。 获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -769,9 +816,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 指定实例所属的安全组。 获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 指定实例所属的安全组。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -785,9 +833,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 子网信息。 获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网信息。  获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -817,9 +866,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
-     * 
-     * @return availableZones */
+    /**
+     * 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -833,9 +883,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 产品标识。
-     * 
-     * @return productId */
+    /**
+     * 产品标识。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -849,9 +900,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。
-     * 
-     * @return kafkaManagerUser */
+    /**
+     * 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * @return kafkaManagerUser
+     */
     public String getKafkaManagerUser() {
         return kafkaManagerUser;
     }
@@ -865,10 +917,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 表示登录Kafka Manager的密码。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合： - 小写字母 - 大写字母 - 数字 -
-     * 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
-     * 
-     * @return kafkaManagerPassword */
+    /**
+     * 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的两种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * @return kafkaManagerPassword
+     */
     public String getKafkaManagerPassword() {
         return kafkaManagerPassword;
     }
@@ -882,10 +934,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 -
-     * 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
-     * 
-     * @return maintainBegin */
+    /**
+     * 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -899,10 +951,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 -
-     * 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
-     * 
-     * @return maintainEnd */
+    /**
+     * 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -916,9 +968,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 是否开启公网访问功能。默认不开启公网。 - true：开启 - false：不开启
-     * 
-     * @return enablePublicip */
+    /**
+     * 是否开启公网访问功能。默认不开启公网。 - true：开启 - false：不开启
+     * @return enablePublicip
+     */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -932,11 +985,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 表示公网带宽，单位是Mbit/s。 取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 -
-     * Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 -
-     * Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。
-     * 
-     * @return publicBandwidth */
+    /**
+     * 表示公网带宽，单位是Mbit/s。 取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。
+     * @return publicBandwidth
+     */
     public Integer getPublicBandwidth() {
         return publicBandwidth;
     }
@@ -950,9 +1002,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
-     * 
-     * @return publicipId */
+    /**
+     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -966,9 +1019,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
-     * 
-     * @return sslEnable */
+    /**
+     * 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
+     * @return sslEnable
+     */
     public Boolean getSslEnable() {
         return sslEnable;
     }
@@ -982,9 +1036,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 磁盘的容量到达容量阈值后，对于消息的处理策略。 取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
-     * 
-     * @return retentionPolicy */
+    /**
+     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     * @return retentionPolicy
+     */
     public RetentionPolicyEnum getRetentionPolicy() {
         return retentionPolicy;
     }
@@ -998,9 +1053,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 是否开启消息转储功能。 默认不开启消息转储。
-     * 
-     * @return connectorEnable */
+    /**
+     * 是否开启消息转储功能。  默认不开启消息转储。
+     * @return connectorEnable
+     */
     public Boolean getConnectorEnable() {
         return connectorEnable;
     }
@@ -1014,9 +1070,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭 当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。
-     * 
-     * @return enableAutoTopic */
+    /**
+     * 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。
+     * @return enableAutoTopic
+     */
     public Boolean getEnableAutoTopic() {
         return enableAutoTopic;
     }
@@ -1030,12 +1087,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 存储IO规格。 取值范围： - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
-     * 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra -
-     * 参数specification为600MB时，取值dms.physical.storage.ultra -
-     * 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
-     * 
-     * @return storageSpecCode */
+    /**
+     * 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * @return storageSpecCode
+     */
     public StorageSpecCodeEnum getStorageSpecCode() {
         return storageSpecCode;
     }
@@ -1049,9 +1104,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 企业项目ID。若为企业项目帐号，该参数必填。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。若为企业项目帐号，该参数必填。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1081,9 +1137,10 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<TagEntity> getTags() {
         return tags;
     }
@@ -1199,7 +1256,10 @@ public class CreatePostPaidInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

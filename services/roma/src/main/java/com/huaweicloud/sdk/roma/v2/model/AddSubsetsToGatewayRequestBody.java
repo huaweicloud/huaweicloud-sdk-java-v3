@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AddSubsetsToGatewayRequestBody */
+/**
+ * AddSubsetsToGatewayRequestBody
+ */
 public class AddSubsetsToGatewayRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AddSubsetsToGatewayRequestBody {
         return this;
     }
 
-    /** 待添加子设备ID列表，且设备需是普通设备，自动向下取整
-     * 
-     * @return resources */
+    /**
+     * 待添加子设备ID列表，且设备需是普通设备，自动向下取整
+     * @return resources
+     */
     public List<Integer> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class AddSubsetsToGatewayRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

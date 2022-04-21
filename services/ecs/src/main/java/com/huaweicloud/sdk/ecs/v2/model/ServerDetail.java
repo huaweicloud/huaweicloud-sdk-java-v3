@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 云服务器详情。 */
+/**
+ * 云服务器详情。
+ */
 public class ServerDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,11 +255,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器状态。 取值范围：
-     * ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
-     * 弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
-     * 
-     * @return status */
+    /**
+     * 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -271,9 +272,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器更新时间。 时间格式例如：2019-05-22T03:30:52Z
-     * 
-     * @return updated */
+    /**
+     * 弹性云服务器更新时间。  时间格式例如：2019-05-22T03:30:52Z
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -287,9 +289,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器自动释放时间。 时间格式例如：2020-01-19T03:30:52Z
-     * 
-     * @return autoTerminateTime */
+    /**
+     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * @return autoTerminateTime
+     */
     public String getAutoTerminateTime() {
         return autoTerminateTime;
     }
@@ -303,9 +306,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器所在主机的主机ID。
-     * 
-     * @return hostId */
+    /**
+     * 弹性云服务器所在主机的主机ID。
+     * @return hostId
+     */
     public String getHostId() {
         return hostId;
     }
@@ -319,9 +323,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器所在主机的主机名称。
-     * 
-     * @return osEXTSRVATTRHost */
+    /**
+     * 弹性云服务器所在主机的主机名称。
+     * @return osEXTSRVATTRHost
+     */
     public String getOsEXTSRVATTRHost() {
         return osEXTSRVATTRHost;
     }
@@ -351,9 +356,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器的网络属性。
-     * 
-     * @return addresses */
+    /**
+     * 弹性云服务器的网络属性。
+     * @return addresses
+     */
     public Map<String, List<ServerAddress>> getAddresses() {
         return addresses;
     }
@@ -367,9 +373,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器使用的密钥对名称。
-     * 
-     * @return keyName */
+    /**
+     * 弹性云服务器使用的密钥对名称。
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -392,9 +399,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get image
-     * 
-     * @return image */
+    /**
+     * Get image
+     * @return image
+     */
     public ServerImage getImage() {
         return image;
     }
@@ -408,9 +416,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器当前任务的状态。 取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
-     * 
-     * @return osEXTSTSTaskState */
+    /**
+     * 扩展属性，弹性云服务器当前任务的状态。  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
+     * @return osEXTSTSTaskState
+     */
     public String getOsEXTSTSTaskState() {
         return osEXTSTSTaskState;
     }
@@ -424,9 +433,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器当前状态。 云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
-     * 
-     * @return osEXTSTSVmState */
+    /**
+     * 扩展属性，弹性云服务器当前状态。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
+     * @return osEXTSTSVmState
+     */
     public String getOsEXTSTSVmState() {
         return osEXTSTSVmState;
     }
@@ -440,9 +450,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器别名。
-     * 
-     * @return osEXTSRVATTRInstanceName */
+    /**
+     * 扩展属性，弹性云服务器别名。
+     * @return osEXTSRVATTRInstanceName
+     */
     public String getOsEXTSRVATTRInstanceName() {
         return osEXTSRVATTRInstanceName;
     }
@@ -456,9 +467,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器所在虚拟化主机名。
-     * 
-     * @return osEXTSRVATTRHypervisorHostname */
+    /**
+     * 扩展属性，弹性云服务器所在虚拟化主机名。
+     * @return osEXTSRVATTRHypervisorHostname
+     */
     public String getOsEXTSRVATTRHypervisorHostname() {
         return osEXTSRVATTRHypervisorHostname;
     }
@@ -481,9 +493,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public ServerFlavor getFlavor() {
         return flavor;
     }
@@ -497,9 +510,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 弹性云服务器ID，格式为UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -529,9 +543,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器所属安全组列表。
-     * 
-     * @return securityGroups */
+    /**
+     * 弹性云服务器所属安全组列表。
+     * @return securityGroups
+     */
     public List<ServerSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -545,9 +560,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器所在可用区名称。
-     * 
-     * @return osEXTAZAvailabilityZone */
+    /**
+     * 扩展属性，弹性云服务器所在可用区名称。
+     * @return osEXTAZAvailabilityZone
+     */
     public String getOsEXTAZAvailabilityZone() {
         return osEXTAZAvailabilityZone;
     }
@@ -561,9 +577,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 创建弹性云服务器的用户ID，格式为UUID。
-     * 
-     * @return userId */
+    /**
+     * 创建弹性云服务器的用户ID，格式为UUID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -577,9 +594,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 弹性云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -593,9 +611,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器创建时间。 时间格式例如：2019-05-22T03:19:19Z
-     * 
-     * @return created */
+    /**
+     * 弹性云服务器创建时间。  时间格式例如：2019-05-22T03:19:19Z
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -609,9 +628,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器所属租户ID，即项目id，和project_id表示相同的概念，格式为UUID。
-     * 
-     * @return tenantId */
+    /**
+     * 弹性云服务器所属租户ID，即项目id，和project_id表示相同的概念，格式为UUID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -625,9 +645,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性， diskConfig的类型。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     * 
-     * @return osDCFDiskConfig */
+    /**
+     * 扩展属性， diskConfig的类型。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     * @return osDCFDiskConfig
+     */
     public String getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -641,9 +662,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv4 */
+    /**
+     * 预留属性。
+     * @return accessIPv4
+     */
     public String getAccessIPv4() {
         return accessIPv4;
     }
@@ -657,9 +679,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return accessIPv6 */
+    /**
+     * 预留属性。
+     * @return accessIPv6
+     */
     public String getAccessIPv6() {
         return accessIPv6;
     }
@@ -682,9 +705,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get fault
-     * 
-     * @return fault */
+    /**
+     * Get fault
+     * @return fault
+     */
     public ServerFault getFault() {
         return fault;
     }
@@ -698,9 +722,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器进度。
-     * 
-     * @return progress */
+    /**
+     * 弹性云服务器进度。
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -714,9 +739,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 扩展属性，弹性云服务器电源状态。
-     * 
-     * @return osEXTSTSPowerState */
+    /**
+     * 扩展属性，弹性云服务器电源状态。
+     * @return osEXTSTSPowerState
+     */
     public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
@@ -730,9 +756,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** config drive信息。
-     * 
-     * @return configDrive */
+    /**
+     * config drive信息。
+     * @return configDrive
+     */
     public String getConfigDrive() {
         return configDrive;
     }
@@ -762,22 +789,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器元数据。 > 说明： > > 元数据包含系统默认添加字段和用户设置的字段。 系统默认添加字段 1. charging_mode 云服务器的计费类型。 - “0”：按需计费（即postPaid-后付费方式）。 -
-     * “1”：按包年包月计费（即prePaid-预付费方式）。\"2\"：竞价实例计费 2. metering.order_id 按“包年/包月”计费的云服务器对应的订单ID。 3. metering.product_id
-     * 按“包年/包月”计费的云服务器对应的产品ID。 4. vpc_id 云服务器所属的虚拟私有云ID。 5. EcmResStatus 云服务器的冻结状态。 - normal：云服务器正常状态（未被冻结）。 -
-     * freeze：云服务器被冻结。 > 当云服务器被冻结或者解冻后，系统默认添加该字段，且该字段必选。 6. metering.image_id 云服务器操作系统对应的镜像ID 7. metering.imagetype
-     * 镜像类型，目前支持： - 公共镜像（gold） - 私有镜像（private） - 共享镜像（shared） 8. metering.resourcespeccode 云服务器对应的资源规格。 9. image_name
-     * 云服务器操作系统对应的镜像名称。 10. os_bit 操作系统位数，一般取值为“32”或者“64”。 11. lockCheckEndpoint 回调URL，用于检查弹性云服务器的加锁是否有效。 -
-     * 如果有效，则云服务器保持锁定状态。 - 如果无效，解除锁定状态，删除失效的锁。 12. lockSource 弹性云服务器来自哪个服务。订单加锁（ORDER） 13. lockSourceId
-     * 弹性云服务器的加锁来自哪个ID。lockSource为“ORDER”时，lockSourceId为订单ID。 14. lockScene 弹性云服务器的加锁类型。 - 按需转包周期（TO_PERIOD_LOCK） 15.
-     * virtual_env_type - IOS镜像创建虚拟机，\"virtual_env_type\": \"IsoImage\" 属性； -
-     * 非IOS镜像创建虚拟机，在19.5.0版本以后创建的虚拟机将不会添加virtual_env_type 属性，而在此之前的版本创建的虚拟机可能会返回\"virtual_env_type\":
-     * \"FusionCompute\"属性 。 > virtual_env_type属性不允许用户增加、删除和修改。 16. metering.resourcetype 云服务器对应的资源类型。 17. os_type
-     * 操作系统类型，取值为：Linux、Windows。 18. cascaded.instance_extrainfo 系统内部虚拟机扩展信息。 19. __support_agent_list
-     * 云服务器是否支持企业主机安全、主机监控。 - “hss”：企业主机安全 - “ces”：主机监控 20. agency_name 委托的名称。 委托是由租户管理员在统一身份认证服务（Identity and Access
-     * Management，IAM）上创建的，可以为弹性云服务器提供访问云服务的临时凭证。
-     * 
-     * @return metadata */
+    /**
+     * 弹性云服务器元数据。  > 说明： >  > 元数据包含系统默认添加字段和用户设置的字段。  系统默认添加字段  1. charging_mode 云服务器的计费类型。  - “0”：按需计费（即postPaid-后付费方式）。 - “1”：按包年包月计费（即prePaid-预付费方式）。\"2\"：竞价实例计费  2. metering.order_id 按“包年/包月”计费的云服务器对应的订单ID。  3. metering.product_id 按“包年/包月”计费的云服务器对应的产品ID。  4. vpc_id 云服务器所属的虚拟私有云ID。  5. EcmResStatus 云服务器的冻结状态。  - normal：云服务器正常状态（未被冻结）。 - freeze：云服务器被冻结。  > 当云服务器被冻结或者解冻后，系统默认添加该字段，且该字段必选。  6. metering.image_id 云服务器操作系统对应的镜像ID  7.  metering.imagetype 镜像类型，目前支持：  - 公共镜像（gold） - 私有镜像（private） - 共享镜像（shared）  8. metering.resourcespeccode 云服务器对应的资源规格。  9. image_name 云服务器操作系统对应的镜像名称。  10. os_bit 操作系统位数，一般取值为“32”或者“64”。  11. lockCheckEndpoint 回调URL，用于检查弹性云服务器的加锁是否有效。  - 如果有效，则云服务器保持锁定状态。 - 如果无效，解除锁定状态，删除失效的锁。  12. lockSource 弹性云服务器来自哪个服务。订单加锁（ORDER）  13. lockSourceId 弹性云服务器的加锁来自哪个ID。lockSource为“ORDER”时，lockSourceId为订单ID。  14. lockScene 弹性云服务器的加锁类型。  - 按需转包周期（TO_PERIOD_LOCK）  15. virtual_env_type  - IOS镜像创建虚拟机，\"virtual_env_type\": \"IsoImage\" 属性； - 非IOS镜像创建虚拟机，在19.5.0版本以后创建的虚拟机将不会添加virtual_env_type 属性，而在此之前的版本创建的虚拟机可能会返回\"virtual_env_type\": \"FusionCompute\"属性 。  > virtual_env_type属性不允许用户增加、删除和修改。  16. metering.resourcetype 云服务器对应的资源类型。  17. os_type 操作系统类型，取值为：Linux、Windows。  18. cascaded.instance_extrainfo 系统内部虚拟机扩展信息。  19. __support_agent_list 云服务器是否支持企业主机安全、主机监控。  - “hss”：企业主机安全 -  “ces”：主机监控  20. agency_name 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为弹性云服务器提供访问云服务的临时凭证。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -791,9 +806,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器启动时间。时间格式例如：2019-05-22T03:23:59.000000
-     * 
-     * @return osSRVUSGLaunchedAt */
+    /**
+     * 弹性云服务器启动时间。时间格式例如：2019-05-22T03:23:59.000000
+     * @return osSRVUSGLaunchedAt
+     */
     public String getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
@@ -807,9 +823,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器删除时间。 时间格式例如：2019-05-22T03:23:59.000000
-     * 
-     * @return osSRVUSGTerminatedAt */
+    /**
+     * 弹性云服务器删除时间。  时间格式例如：2019-05-22T03:23:59.000000
+     * @return osSRVUSGTerminatedAt
+     */
     public String getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
@@ -842,9 +859,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 挂载到弹性云服务器上的磁盘。
-     * 
-     * @return osExtendedVolumesVolumesAttached */
+    /**
+     * 挂载到弹性云服务器上的磁盘。
+     * @return osExtendedVolumesVolumesAttached
+     */
     public List<ServerExtendVolumeAttachment> getOsExtendedVolumesVolumesAttached() {
         return osExtendedVolumesVolumesAttached;
     }
@@ -859,9 +877,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器的描述信息。
-     * 
-     * @return description */
+    /**
+     * 弹性云服务器的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -875,9 +894,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** nova-compute状态。 - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
-     * 
-     * @return hostStatus */
+    /**
+     * nova-compute状态。  - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
+     * @return hostStatus
+     */
     public String getHostStatus() {
         return hostStatus;
     }
@@ -891,9 +911,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器的主机名。
-     * 
-     * @return osEXTSRVATTRHostname */
+    /**
+     * 弹性云服务器的主机名。
+     * @return osEXTSRVATTRHostname
+     */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -907,9 +928,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 批量创建场景，弹性云服务器的预留ID。
-     * 
-     * @return osEXTSRVATTRReservationId */
+    /**
+     * 批量创建场景，弹性云服务器的预留ID。
+     * @return osEXTSRVATTRReservationId
+     */
     public String getOsEXTSRVATTRReservationId() {
         return osEXTSRVATTRReservationId;
     }
@@ -923,9 +945,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 批量创建场景，弹性云服务器的启动顺序。
-     * 
-     * @return osEXTSRVATTRLaunchIndex */
+    /**
+     * 批量创建场景，弹性云服务器的启动顺序。
+     * @return osEXTSRVATTRLaunchIndex
+     */
     public Integer getOsEXTSRVATTRLaunchIndex() {
         return osEXTSRVATTRLaunchIndex;
     }
@@ -939,9 +962,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。
-     * 
-     * @return osEXTSRVATTRKernelId */
+    /**
+     * 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。
+     * @return osEXTSRVATTRKernelId
+     */
     public String getOsEXTSRVATTRKernelId() {
         return osEXTSRVATTRKernelId;
     }
@@ -955,9 +979,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
-     * 
-     * @return osEXTSRVATTRRamdiskId */
+    /**
+     * 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
+     * @return osEXTSRVATTRRamdiskId
+     */
     public String getOsEXTSRVATTRRamdiskId() {
         return osEXTSRVATTRRamdiskId;
     }
@@ -971,9 +996,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器系统盘的设备名称。
-     * 
-     * @return osEXTSRVATTRRootDeviceName */
+    /**
+     * 弹性云服务器系统盘的设备名称。
+     * @return osEXTSRVATTRRootDeviceName
+     */
     public String getOsEXTSRVATTRRootDeviceName() {
         return osEXTSRVATTRRootDeviceName;
     }
@@ -987,9 +1013,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 创建弹性云服务器时指定的user_data。
-     * 
-     * @return osEXTSRVATTRUserData */
+    /**
+     * 创建弹性云服务器时指定的user_data。
+     * @return osEXTSRVATTRUserData
+     */
     public String getOsEXTSRVATTRUserData() {
         return osEXTSRVATTRUserData;
     }
@@ -1003,9 +1030,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器是否为锁定状态。 - true：锁定 - false：未锁定
-     * 
-     * @return locked */
+    /**
+     * 弹性云服务器是否为锁定状态。  - true：锁定 - false：未锁定
+     * @return locked
+     */
     public Boolean getLocked() {
         return locked;
     }
@@ -1035,9 +1063,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器标签。
-     * 
-     * @return tags */
+    /**
+     * 弹性云服务器标签。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -1060,9 +1089,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get osSchedulerHints
-     * 
-     * @return osSchedulerHints */
+    /**
+     * Get osSchedulerHints
+     * @return osSchedulerHints
+     */
     public ServerSchedulerHints getOsSchedulerHints() {
         return osSchedulerHints;
     }
@@ -1076,9 +1106,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器所属的企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 弹性云服务器所属的企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1108,9 +1139,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** 弹性云服务器系统标签。
-     * 
-     * @return sysTags */
+    /**
+     * 弹性云服务器系统标签。
+     * @return sysTags
+     */
     public List<ServerSystemTag> getSysTags() {
         return sysTags;
     }
@@ -1133,9 +1165,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get cpuOptions
-     * 
-     * @return cpuOptions */
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
     public CpuOptions getCpuOptions() {
         return cpuOptions;
     }
@@ -1158,9 +1191,10 @@ public class ServerDetail {
         return this;
     }
 
-    /** Get hypervisor
-     * 
-     * @return hypervisor */
+    /**
+     * Get hypervisor
+     * @return hypervisor
+     */
     public Hypervisor getHypervisor() {
         return hypervisor;
     }
@@ -1331,7 +1365,10 @@ public class ServerDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

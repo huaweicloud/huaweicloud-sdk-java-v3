@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 告警历史详细信息 */
+/**
+ * 告警历史详细信息
+ */
 public class AlarmHistoryItemV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +94,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警历史ID
-     * 
-     * @return recordId */
+    /**
+     * 告警历史ID
+     * @return recordId
+     */
     public String getRecordId() {
         return recordId;
     }
@@ -108,9 +111,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警规则的ID，如：al1603131199286dzxpqK3Ez。
-     * 
-     * @return alarmId */
+    /**
+     * 告警规则的ID，如：al1603131199286dzxpqK3Ez。
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -124,9 +128,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警规则的名称，如：alarm-test01。
-     * 
-     * @return name */
+    /**
+     * 告警规则的名称，如：alarm-test01。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -140,9 +145,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data数据不足。
-     * 
-     * @return status */
+    /**
+     * 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data数据不足。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -156,9 +162,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
-     * 
-     * @return level */
+    /**
+     * 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     * @return level
+     */
     public Integer getLevel() {
         return level;
     }
@@ -172,9 +179,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
-     * 
-     * @return type */
+    /**
+     * 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -188,9 +196,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 是否发送通知，值为true或者false。
-     * 
-     * @return actionEnabled */
+    /**
+     * 是否发送通知，值为true或者false。
+     * @return actionEnabled
+     */
     public Boolean getActionEnabled() {
         return actionEnabled;
     }
@@ -204,9 +213,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 产生时间,UTC时间
-     * 
-     * @return beginTime */
+    /**
+     * 产生时间,UTC时间
+     * @return beginTime
+     */
     public OffsetDateTime getBeginTime() {
         return beginTime;
     }
@@ -220,9 +230,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 结束时间，UTC时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，UTC时间
+     * @return endTime
+     */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -245,9 +256,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** Get metric
-     * 
-     * @return metric */
+    /**
+     * Get metric
+     * @return metric
+     */
     public Metric getMetric() {
         return metric;
     }
@@ -270,9 +282,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** Get condition
-     * 
-     * @return condition */
+    /**
+     * Get condition
+     * @return condition
+     */
     public AlarmCondition getCondition() {
         return condition;
     }
@@ -295,9 +308,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** Get additionalInfo
-     * 
-     * @return additionalInfo */
+    /**
+     * Get additionalInfo
+     * @return additionalInfo
+     */
     public AdditionalInfo getAdditionalInfo() {
         return additionalInfo;
     }
@@ -327,11 +341,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警触发的动作。 结构如下： { \"type\": \"notification\", \"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
-     * notificationList：告警状态发生变化时，被通知对象的列表。
-     * 
-     * @return alarmActions */
+    /**
+     * 告警触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notificationList：告警状态发生变化时，被通知对象的列表。
+     * @return alarmActions
+     */
     public List<SMNAction> getAlarmActions() {
         return alarmActions;
     }
@@ -361,11 +374,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 告警恢复触发的动作。 结构如下： { \"type\": \"notification\", \"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。
-     * notificationList：告警状态发生变化时，被通知对象的列表。
-     * 
-     * @return okActions */
+    /**
+     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+     * @return okActions
+     */
     public List<SMNAction> getOkActions() {
         return okActions;
     }
@@ -395,9 +407,10 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    /** 计算出该条告警历史的资源监控数据上报时间和监控数值。
-     * 
-     * @return dataPoints */
+    /**
+     * 计算出该条告警历史的资源监控数据上报时间和监控数值。
+     * @return dataPoints
+     */
     public List<Object> getDataPoints() {
         return dataPoints;
     }
@@ -474,7 +487,10 @@ public class AlarmHistoryItemV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

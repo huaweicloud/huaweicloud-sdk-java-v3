@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 文件上传信息 */
+/**
+ * 文件上传信息
+ */
 public class OpenUploadFileInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class OpenUploadFileInfo {
         return this;
     }
 
-    /** 文件Id
-     * 
-     * @return fileId */
+    /**
+     * 文件Id
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -49,9 +52,10 @@ public class OpenUploadFileInfo {
         return this;
     }
 
-    /** Get imageModeration
-     * 
-     * @return imageModeration */
+    /**
+     * Get imageModeration
+     * @return imageModeration
+     */
     public ImageModerationResult getImageModeration() {
         return imageModeration;
     }
@@ -88,7 +92,10 @@ public class OpenUploadFileInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

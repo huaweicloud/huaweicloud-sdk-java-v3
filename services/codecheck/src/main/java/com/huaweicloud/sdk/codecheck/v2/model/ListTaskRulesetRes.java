@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListTaskRulesetRes */
+/**
+ * ListTaskRulesetRes
+ */
 public class ListTaskRulesetRes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListTaskRulesetRes {
         return this;
     }
 
-    /** 规则集id
-     * 
-     * @return templateId */
+    /**
+     * 规则集id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -54,9 +57,10 @@ public class ListTaskRulesetRes {
         return this;
     }
 
-    /** 规则集语言
-     * 
-     * @return language */
+    /**
+     * 规则集语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -70,9 +74,10 @@ public class ListTaskRulesetRes {
         return this;
     }
 
-    /** 规则集名称
-     * 
-     * @return templateName */
+    /**
+     * 规则集名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -86,9 +91,10 @@ public class ListTaskRulesetRes {
         return this;
     }
 
-    /** 规则集状态optional：可选，selected：已选
-     * 
-     * @return type */
+    /**
+     * 规则集状态optional：可选，selected：已选
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -102,9 +108,10 @@ public class ListTaskRulesetRes {
         return this;
     }
 
-    /** 规则集属性0 是默认用户规则集,1 是系统默认规则集
-     * 
-     * @return status */
+    /**
+     * 规则集属性0 是默认用户规则集,1 是系统默认规则集
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -147,7 +154,10 @@ public class ListTaskRulesetRes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

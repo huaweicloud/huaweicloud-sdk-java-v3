@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 密钥对详细信息 */
+/**
+ * 密钥对详细信息
+ */
 public class KeypairDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class KeypairDetail {
 
     private Long id;
 
-    /** SSH密钥对的类型 */
+    /**
+     * SSH密钥对的类型
+     */
     public static final class TypeEnum {
 
-        /** Enum SSH for value: "ssh" */
+        /**
+         * Enum SSH for value: "ssh"
+         */
         public static final TypeEnum SSH = new TypeEnum("ssh");
 
-        /** Enum X509 for value: "x509" */
+        /**
+         * Enum X509 for value: "x509"
+         */
         public static final TypeEnum X509 = new TypeEnum("x509");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class KeypairDetail {
 
     private TypeEnum type;
 
-    /** 租户级或者用户级 */
+    /**
+     * 租户级或者用户级
+     */
     public static final class ScopeEnum {
 
-        /** Enum DOMAIN for value: "domain" */
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
         public static final ScopeEnum DOMAIN = new ScopeEnum("domain");
 
-        /** Enum USER for value: "user" */
+        /**
+         * Enum USER for value: "user"
+         */
         public static final ScopeEnum USER = new ScopeEnum("user");
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
@@ -230,9 +244,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对的名称
-     * 
-     * @return name */
+    /**
+     * SSH密钥对的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -246,9 +261,12 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对的ID minimum: 0 maximum: 1000000000
-     * 
-     * @return id */
+    /**
+     * SSH密钥对的ID
+     * minimum: 0
+     * maximum: 1000000000
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -262,9 +280,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对的类型
-     * 
-     * @return type */
+    /**
+     * SSH密钥对的类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -278,9 +297,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** 租户级或者用户级
-     * 
-     * @return scope */
+    /**
+     * 租户级或者用户级
+     * @return scope
+     */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -294,9 +314,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对对应的publicKey信息
-     * 
-     * @return publicKey */
+    /**
+     * SSH密钥对对应的publicKey信息
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -310,9 +331,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对应指纹信息
-     * 
-     * @return fingerprint */
+    /**
+     * SSH密钥对应指纹信息
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -326,9 +348,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** 是否托管密钥
-     * 
-     * @return isKeyProtection */
+    /**
+     * 是否托管密钥
+     * @return isKeyProtection
+     */
     public Boolean getIsKeyProtection() {
         return isKeyProtection;
     }
@@ -342,9 +365,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对删除的标记
-     * 
-     * @return deleted */
+    /**
+     * SSH密钥对删除的标记
+     * @return deleted
+     */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -358,9 +382,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对的描述信息
-     * 
-     * @return description */
+    /**
+     * SSH密钥对的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -374,9 +399,10 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对所属的用户信息
-     * 
-     * @return userId */
+    /**
+     * SSH密钥对所属的用户信息
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -390,9 +416,12 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对创建的时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
-     * 
-     * @return createTime */
+    /**
+     * SSH密钥对创建的时间，时间戳，即从1970年1月1日至该时间的总秒数
+     * minimum: 0
+     * maximum: 10000000000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -406,9 +435,12 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对删除的时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
-     * 
-     * @return deleteTime */
+    /**
+     * SSH密钥对删除的时间，时间戳，即从1970年1月1日至该时间的总秒数
+     * minimum: 0
+     * maximum: 10000000000000
+     * @return deleteTime
+     */
     public Long getDeleteTime() {
         return deleteTime;
     }
@@ -422,9 +454,12 @@ public class KeypairDetail {
         return this;
     }
 
-    /** SSH密钥对的更新时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
-     * 
-     * @return updateTime */
+    /**
+     * SSH密钥对的更新时间，时间戳，即从1970年1月1日至该时间的总秒数
+     * minimum: 0
+     * maximum: 10000000000000
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -438,10 +473,12 @@ public class KeypairDetail {
         return this;
     }
 
-    /** 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 -
-     * 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结 minimum: 0 maximum: 64
-     * 
-     * @return frozenState */
+    /**
+     * 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 - 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结
+     * minimum: 0
+     * maximum: 64
+     * @return frozenState
+     */
     public Integer getFrozenState() {
         return frozenState;
     }
@@ -513,7 +550,10 @@ public class KeypairDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

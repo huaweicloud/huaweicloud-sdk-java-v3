@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CertForm */
+/**
+ * CertForm
+ */
 public class CertForm {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CertForm {
         return this;
     }
 
-    /** 证书内容
-     * 
-     * @return certContent */
+    /**
+     * 证书内容
+     * @return certContent
+     */
     public String getCertContent() {
         return certContent;
     }
@@ -44,9 +47,10 @@ public class CertForm {
         return this;
     }
 
-    /** 证书名称。长度为4 ~ 50位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。
-     * 
-     * @return name */
+    /**
+     * 证书名称。长度为4 ~ 50位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class CertForm {
         return this;
     }
 
-    /** 私钥内容
-     * 
-     * @return privateKey */
+    /**
+     * 私钥内容
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -100,7 +105,10 @@ public class CertForm {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

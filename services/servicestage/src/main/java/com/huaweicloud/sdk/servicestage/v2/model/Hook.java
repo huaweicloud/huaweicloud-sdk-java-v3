@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Hook */
+/**
+ * Hook
+ */
 public class Hook {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Hook {
         return this;
     }
 
-    /** hook ID。
-     * 
-     * @return id */
+    /**
+     * hook ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class Hook {
         return this;
     }
 
-    /** hook类型。
-     * 
-     * @return type */
+    /**
+     * hook类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -60,9 +64,10 @@ public class Hook {
         return this;
     }
 
-    /** 回滚URL。
-     * 
-     * @return callbackUrl */
+    /**
+     * 回滚URL。
+     * @return callbackUrl
+     */
     public String getCallbackUrl() {
         return callbackUrl;
     }
@@ -100,7 +105,10 @@ public class Hook {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

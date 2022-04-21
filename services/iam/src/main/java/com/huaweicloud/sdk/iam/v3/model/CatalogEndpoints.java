@@ -40,9 +40,10 @@ public class CatalogEndpoints {
         return this;
     }
 
-    /** 终端节点ID。
-     * 
-     * @return id */
+    /**
+     * 终端节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -56,9 +57,10 @@ public class CatalogEndpoints {
         return this;
     }
 
-    /** 终端节点平面，public表示为公开。
-     * 
-     * @return _interface */
+    /**
+     * 终端节点平面，public表示为公开。
+     * @return _interface
+     */
     public String getInterface() {
         return _interface;
     }
@@ -72,9 +74,10 @@ public class CatalogEndpoints {
         return this;
     }
 
-    /** 终端节点所属区域。
-     * 
-     * @return region */
+    /**
+     * 终端节点所属区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -88,9 +91,10 @@ public class CatalogEndpoints {
         return this;
     }
 
-    /** 终端节点所属区域的ID。
-     * 
-     * @return regionId */
+    /**
+     * 终端节点所属区域的ID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -104,9 +108,10 @@ public class CatalogEndpoints {
         return this;
     }
 
-    /** 终端节点的地址。
-     * 
-     * @return url */
+    /**
+     * 终端节点的地址。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -149,7 +154,10 @@ public class CatalogEndpoints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

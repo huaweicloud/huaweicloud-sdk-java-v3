@@ -30,9 +30,10 @@ public class IdentityproviderOption {
         return this;
     }
 
-    /** 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种，缺省配置默认为virtual_user_sso类型。
-     * 
-     * @return ssoType */
+    /**
+     * 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种，缺省配置默认为virtual_user_sso类型。
+     * @return ssoType
+     */
     public String getSsoType() {
         return ssoType;
     }
@@ -46,9 +47,10 @@ public class IdentityproviderOption {
         return this;
     }
 
-    /** 身份提供商描述信息。
-     * 
-     * @return description */
+    /**
+     * 身份提供商描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -62,9 +64,10 @@ public class IdentityproviderOption {
         return this;
     }
 
-    /** 身份提供商是否启用，true为启用，false为停用，默认为false。
-     * 
-     * @return enabled */
+    /**
+     * 身份提供商是否启用，true为启用，false为停用，默认为false。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -103,7 +106,10 @@ public class IdentityproviderOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

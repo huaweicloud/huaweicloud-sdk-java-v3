@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InterfaceAttachment */
+/**
+ * InterfaceAttachment
+ */
 public class InterfaceAttachment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡私网IP信息列表。
-     * 
-     * @return fixedIps */
+    /**
+     * 网卡私网IP信息列表。
+     * @return fixedIps
+     */
     public List<ServerInterfaceFixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -98,9 +101,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡Mac地址信息。
-     * 
-     * @return macAddr */
+    /**
+     * 网卡Mac地址信息。
+     * @return macAddr
+     */
     public String getMacAddr() {
         return macAddr;
     }
@@ -114,9 +118,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡端口所属网络ID。
-     * 
-     * @return netId */
+    /**
+     * 网卡端口所属网络ID。
+     * @return netId
+     */
     public String getNetId() {
         return netId;
     }
@@ -130,9 +135,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡端口ID。
-     * 
-     * @return portId */
+    /**
+     * 网卡端口ID。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -146,9 +152,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡端口状态。
-     * 
-     * @return portState */
+    /**
+     * 网卡端口状态。
+     * @return portState
+     */
     public String getPortState() {
         return portState;
     }
@@ -162,9 +169,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 卸载网卡时，是否删除网卡。
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 卸载网卡时，是否删除网卡。
+     * @return deleteOnTermination
+     */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -178,9 +186,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 从guest os中，网卡的驱动类型。可选值为virtio和hinic，默认为virtio
-     * 
-     * @return driverMode */
+    /**
+     * 从guest os中，网卡的驱动类型。可选值为virtio和hinic，默认为virtio
+     * @return driverMode
+     */
     public String getDriverMode() {
         return driverMode;
     }
@@ -194,9 +203,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡带宽下限。
-     * 
-     * @return minRate */
+    /**
+     * 网卡带宽下限。
+     * @return minRate
+     */
     public Integer getMinRate() {
         return minRate;
     }
@@ -210,9 +220,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 网卡多队列个数。
-     * 
-     * @return multiqueueNum */
+    /**
+     * 网卡多队列个数。
+     * @return multiqueueNum
+     */
     public Integer getMultiqueueNum() {
         return multiqueueNum;
     }
@@ -226,9 +237,10 @@ public class InterfaceAttachment {
         return this;
     }
 
-    /** 弹性网卡在Linux GuestOS里的BDF号
-     * 
-     * @return pciAddress */
+    /**
+     * 弹性网卡在Linux GuestOS里的BDF号
+     * @return pciAddress
+     */
     public String getPciAddress() {
         return pciAddress;
     }
@@ -290,7 +302,10 @@ public class InterfaceAttachment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

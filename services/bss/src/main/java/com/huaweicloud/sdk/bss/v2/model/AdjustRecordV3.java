@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AdjustRecordV3 */
+/**
+ * AdjustRecordV3
+ */
 public class AdjustRecordV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -74,9 +77,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 客户名称。
-     * 
-     * @return customerName */
+    /**
+     * 客户名称。
+     * @return customerName
+     */
     public String getCustomerName() {
         return customerName;
     }
@@ -90,9 +94,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 调账类型。 SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收
-     * 
-     * @return operationType */
+    /**
+     * 调账类型。 SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收
+     * @return operationType
+     */
     public String getOperationType() {
         return operationType;
     }
@@ -106,9 +111,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 调账的总金额。
-     * 
-     * @return amount */
+    /**
+     * 调账的总金额。
+     * @return amount
+     */
     public String getAmount() {
         return amount;
     }
@@ -122,9 +128,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 币种。 CNY：人民币
-     * 
-     * @return currency */
+    /**
+     * 币种。 CNY：人民币
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -138,9 +145,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 使用场景。
-     * 
-     * @return applyScene */
+    /**
+     * 使用场景。
+     * @return applyScene
+     */
     public String getApplyScene() {
         return applyScene;
     }
@@ -154,9 +162,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 调账操作的时间。 UTC时间，格式为：2016-03-28T14:45:38Z
-     * 
-     * @return operationTime */
+    /**
+     * 调账操作的时间。 UTC时间，格式为：2016-03-28T14:45:38Z
+     * @return operationTime
+     */
     public String getOperationTime() {
         return operationTime;
     }
@@ -170,9 +179,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 调账单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 调账单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -186,9 +196,10 @@ public class AdjustRecordV3 {
         return this;
     }
 
-    /** 事务ID。
-     * 
-     * @return transId */
+    /**
+     * 事务ID。
+     * @return transId
+     */
     public String getTransId() {
         return transId;
     }
@@ -247,7 +258,10 @@ public class AdjustRecordV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

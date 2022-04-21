@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListAvailableRdsListResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListAvailableRdsListResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取创建逻辑库可用数据库实例信息列表的集合。
-     * 
-     * @return instances */
+    /**
+     * 获取创建逻辑库可用数据库实例信息列表的集合。
+     * @return instances
+     */
     public List<QueryAvailableRdsList> getInstances() {
         return instances;
     }
@@ -69,9 +72,10 @@ public class ListAvailableRdsListResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数: 起始值。
-     * 
-     * @return offset */
+    /**
+     * 分页参数: 起始值。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -85,9 +89,10 @@ public class ListAvailableRdsListResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页参数：每页多少条。
-     * 
-     * @return limit */
+    /**
+     * 分页参数：每页多少条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,9 +106,10 @@ public class ListAvailableRdsListResponse extends SdkResponse {
         return this;
     }
 
-    /** 集合总数
-     * 
-     * @return total */
+    /**
+     * 集合总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -144,7 +150,10 @@ public class ListAvailableRdsListResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

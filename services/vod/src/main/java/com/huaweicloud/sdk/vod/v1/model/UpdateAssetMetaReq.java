@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateAssetMetaReq */
+/**
+ * UpdateAssetMetaReq
+ */
 public class UpdateAssetMetaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateAssetMetaReq {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -54,9 +57,10 @@ public class UpdateAssetMetaReq {
         return this;
     }
 
-    /** 媒资标题，长度不超过128个字节，UTF-8编码。
-     * 
-     * @return title */
+    /**
+     * 媒资标题，长度不超过128个字节，UTF-8编码。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -70,9 +74,10 @@ public class UpdateAssetMetaReq {
         return this;
     }
 
-    /** 媒资描述，长度不超过1024个字节。
-     * 
-     * @return description */
+    /**
+     * 媒资描述，长度不超过1024个字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +91,10 @@ public class UpdateAssetMetaReq {
         return this;
     }
 
-    /** 媒资分类id。
-     * 
-     * @return categoryId */
+    /**
+     * 媒资分类id。
+     * @return categoryId
+     */
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -102,9 +108,10 @@ public class UpdateAssetMetaReq {
         return this;
     }
 
-    /** 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF-8编码。
-     * 
-     * @return tags */
+    /**
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF-8编码。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -147,7 +154,10 @@ public class UpdateAssetMetaReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

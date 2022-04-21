@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateMessageV2Req */
+/**
+ * CreateMessageV2Req
+ */
 public class CreateMessageV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateMessageV2Req {
         return this;
     }
 
-    /** Get message
-     * 
-     * @return message */
+    /**
+     * Get message
+     * @return message
+     */
     public CreateMessageDoV2 getMessage() {
         return message;
     }
@@ -49,9 +52,10 @@ public class CreateMessageV2Req {
         return this;
     }
 
-    /** 组id
-     * 
-     * @return groupId */
+    /**
+     * 组id
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -88,7 +92,10 @@ public class CreateMessageV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

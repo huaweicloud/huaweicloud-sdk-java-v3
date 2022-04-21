@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SingleResponse */
+/**
+ * SingleResponse
+ */
 public class SingleResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SingleResponse {
         return this;
     }
 
-    /** 操作的ID
-     * 
-     * @return id */
+    /**
+     * 操作的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,9 +42,10 @@ public class SingleResponse {
         return this;
     }
 
-    /** 操作结果 枚举值successful-成功 error-失败
-     * 
-     * @return retStatus */
+    /**
+     * 操作结果 枚举值successful-成功 error-失败
+     * @return retStatus
+     */
     public String getRetStatus() {
         return retStatus;
     }
@@ -77,7 +81,10 @@ public class SingleResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

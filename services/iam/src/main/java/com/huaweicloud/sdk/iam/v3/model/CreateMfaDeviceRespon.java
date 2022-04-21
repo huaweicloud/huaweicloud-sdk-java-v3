@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MFA设备密钥。 */
+/**
+ * MFA设备密钥。
+ */
 public class CreateMfaDeviceRespon {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateMfaDeviceRespon {
         return this;
     }
 
-    /** MFA设备序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * MFA设备序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -39,9 +42,10 @@ public class CreateMfaDeviceRespon {
         return this;
     }
 
-    /** 密钥信息，用于第三方生成图片验证码。
-     * 
-     * @return base32StringSeed */
+    /**
+     * 密钥信息，用于第三方生成图片验证码。
+     * @return base32StringSeed
+     */
     public String getBase32StringSeed() {
         return base32StringSeed;
     }
@@ -78,7 +82,10 @@ public class CreateMfaDeviceRespon {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

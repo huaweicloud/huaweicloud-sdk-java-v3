@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建文件系统参数body */
+/**
+ * 创建文件系统参数body
+ */
 public class Share {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,9 +76,10 @@ public class Share {
         return this;
     }
 
-    /** 文件系统所在可用区(az)的编码
-     * 
-     * @return availabilityZone */
+    /**
+     * 文件系统所在可用区(az)的编码
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -90,9 +93,10 @@ public class Share {
         return this;
     }
 
-    /** 文件系统描述信息，长度为0~255。当前不支持。
-     * 
-     * @return description */
+    /**
+     * 文件系统描述信息，长度为0~255。当前不支持。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -106,9 +110,10 @@ public class Share {
         return this;
     }
 
-    /** 创建文件系统时，给文件系统绑定的企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 创建文件系统时，给文件系统绑定的企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -131,9 +136,10 @@ public class Share {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public Metadata getMetadata() {
         return metadata;
     }
@@ -147,9 +153,10 @@ public class Share {
         return this;
     }
 
-    /** SFS Turbo文件系统的名称。长度为4~64位，必须以字母开头，可以包含字母、数字、中划线、下划线，不能包含其他的特殊字符，不区分大小写。
-     * 
-     * @return name */
+    /**
+     * SFS Turbo文件系统的名称。长度为4~64位，必须以字母开头，可以包含字母、数字、中划线、下划线，不能包含其他的特殊字符，不区分大小写。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -163,9 +170,10 @@ public class Share {
         return this;
     }
 
-    /** 用户在某一区域下的安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 用户在某一区域下的安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -179,9 +187,10 @@ public class Share {
         return this;
     }
 
-    /** 文件系统共享协议，有效值为NFS。NFS（Network File System），即网络文件系统。一种使用于分散式文件系统的协议，通过网络让不同的机器、不同的操作系统能够彼此分享数据。
-     * 
-     * @return shareProto */
+    /**
+     * 文件系统共享协议，有效值为NFS。NFS（Network File System），即网络文件系统。一种使用于分散式文件系统的协议，通过网络让不同的机器、不同的操作系统能够彼此分享数据。
+     * @return shareProto
+     */
     public String getShareProto() {
         return shareProto;
     }
@@ -195,9 +204,10 @@ public class Share {
         return this;
     }
 
-    /** 文件系统类型，有效值为STANDARD或者PERFORMANCE。
-     * 
-     * @return shareType */
+    /**
+     * 文件系统类型，有效值为STANDARD或者PERFORMANCE。
+     * @return shareType
+     */
     public String getShareType() {
         return shareType;
     }
@@ -211,10 +221,12 @@ public class Share {
         return this;
     }
 
-    /** 普通文件系统容量，单位GB，取值范围500~32768。 增强型文件系统，即在“metadata”字段中设置了expand_type字段，则容量范围是10240~327680 minimum: 500 maximum:
-     * 327680
-     * 
-     * @return size */
+    /**
+     * 普通文件系统容量，单位GB，取值范围500~32768。 增强型文件系统，即在“metadata”字段中设置了expand_type字段，则容量范围是10240~327680
+     * minimum: 500
+     * maximum: 327680
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -228,9 +240,10 @@ public class Share {
         return this;
     }
 
-    /** 用户在VPC下面的子网的网络ID。
-     * 
-     * @return subnetId */
+    /**
+     * 用户在VPC下面的子网的网络ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -244,9 +257,10 @@ public class Share {
         return this;
     }
 
-    /** 用户在某一区域下的VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 用户在某一区域下的VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -260,9 +274,10 @@ public class Share {
         return this;
     }
 
-    /** 备份ID，从备份创建文件系统时为必选。
-     * 
-     * @return backupId */
+    /**
+     * 备份ID，从备份创建文件系统时为必选。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -326,7 +341,10 @@ public class Share {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

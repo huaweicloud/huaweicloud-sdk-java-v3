@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DemandProductInfo */
+/**
+ * DemandProductInfo
+ */
 public class DemandProductInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** ID标识，同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
-     * 
-     * @return id */
+    /**
+     * ID标识，同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -89,9 +92,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -105,10 +109,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。 ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -122,12 +126,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 云服务类型的资源规格，部分云服务类型和资源规格举例如下：
-     * 弹性云服务器：根据操作系统类型在云服务器规格的ID后添加“.win”或“.linux”，例如“s2.small.1.linux”。云服务器规格的ID字段，您可以调用查询规格详情和规格扩展信息列表接口获取。
-     * 带宽：12_bgp：动态BGP按流量计费带宽12_sbgp：静态BGP按流量计费带宽19_bgp：动态BGP按带宽计费带宽19_sbgp：静态BGP按带宽计费带宽19_share：按带宽计费共享带宽
-     * IP：5_bgp：动态BGP公网IP5_sbgp：静态BGP公网IP 云硬盘：SATA：普通IO云硬盘SAS：高IO云硬盘GPSSD：通用型SSD云硬盘SSD：超高IO云硬盘
-     * 
-     * @return resourceSpec */
+    /**
+     * 云服务类型的资源规格，部分云服务类型和资源规格举例如下： 弹性云服务器：根据操作系统类型在云服务器规格的ID后添加“.win”或“.linux”，例如“s2.small.1.linux”。云服务器规格的ID字段，您可以调用查询规格详情和规格扩展信息列表接口获取。 带宽：12_bgp：动态BGP按流量计费带宽12_sbgp：静态BGP按流量计费带宽19_bgp：动态BGP按带宽计费带宽19_sbgp：静态BGP按带宽计费带宽19_share：按带宽计费共享带宽 IP：5_bgp：动态BGP公网IP5_sbgp：静态BGP公网IP 云硬盘：SATA：普通IO云硬盘SAS：高IO云硬盘GPSSD：通用型SSD云硬盘SSD：超高IO云硬盘
+     * @return resourceSpec
+     */
     public String getResourceSpec() {
         return resourceSpec;
     }
@@ -141,9 +143,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return region */
+    /**
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -157,9 +160,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 可用区标识。
-     * 
-     * @return availableZone */
+    /**
+     * 可用区标识。
+     * @return availableZone
+     */
     public String getAvailableZone() {
         return availableZone;
     }
@@ -173,10 +177,12 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 资源容量大小，例如购买的卷大小或带宽大小。 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。 minimum: 1 maximum:
-     * 214783647
-     * 
-     * @return resourceSize */
+    /**
+     * 资源容量大小，例如购买的卷大小或带宽大小。 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
+     * minimum: 1
+     * maximum: 214783647
+     * @return resourceSize
+     */
     public Integer getResourceSize() {
         return resourceSize;
     }
@@ -190,10 +196,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 资源容量度量标识，枚举值如下： 15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个（次）
-     * 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
-     * 
-     * @return sizeMeasureId */
+    /**
+     * 资源容量度量标识，枚举值如下： 15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个（次） 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
+     * @return sizeMeasureId
+     */
     public Integer getSizeMeasureId() {
         return sizeMeasureId;
     }
@@ -207,10 +213,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 使用量因子编码，取值和话单中的使用量因子一致，云服务和使用量因子对应关系举例如下： 云服务器：Duration云硬盘：Duration弹性IP：Duration带宽：Duration或upflow市场镜像：Duration
-     * 您可以调用查询使用量类型列表接口获取响应参数表3中参数code的取值，即每种云服务对应的计费因子。
-     * 
-     * @return usageFactor */
+    /**
+     * 使用量因子编码，取值和话单中的使用量因子一致，云服务和使用量因子对应关系举例如下： 云服务器：Duration云硬盘：Duration弹性IP：Duration带宽：Duration或upflow市场镜像：Duration 您可以调用查询使用量类型列表接口获取响应参数表3中参数code的取值，即每种云服务对应的计费因子。
+     * @return usageFactor
+     */
     public String getUsageFactor() {
         return usageFactor;
     }
@@ -224,9 +230,10 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 使用量值。 例如按小时询价，使用量值为1，使用量单位为小时。
-     * 
-     * @return usageValue */
+    /**
+     * 使用量值。 例如按小时询价，使用量值为1，使用量单位为小时。
+     * @return usageValue
+     */
     public Double getUsageValue() {
         return usageValue;
     }
@@ -240,9 +247,12 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 使用量度量单位，您可以调用查询度量单位列表接口获取。 例如按小时询价，使用量值为1，使用量单位为小时。 minimum: 0 maximum: 100
-     * 
-     * @return usageMeasureId */
+    /**
+     * 使用量度量单位，您可以调用查询度量单位列表接口获取。 例如按小时询价，使用量值为1，使用量单位为小时。
+     * minimum: 0
+     * maximum: 100
+     * @return usageMeasureId
+     */
     public Integer getUsageMeasureId() {
         return usageMeasureId;
     }
@@ -256,9 +266,12 @@ public class DemandProductInfo {
         return this;
     }
 
-    /** 订购数量。 minimum: 1 maximum: 10000
-     * 
-     * @return subscriptionNum */
+    /**
+     * 订购数量。
+     * minimum: 1
+     * maximum: 10000
+     * @return subscriptionNum
+     */
     public Integer getSubscriptionNum() {
         return subscriptionNum;
     }
@@ -326,7 +339,10 @@ public class DemandProductInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

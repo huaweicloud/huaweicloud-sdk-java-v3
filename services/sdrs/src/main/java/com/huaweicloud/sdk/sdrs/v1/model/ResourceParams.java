@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 资源参数数据结构 */
+/**
+ * 资源参数数据结构
+ */
 public class ResourceParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class ResourceParams {
         return this;
     }
 
-    /** 保护实例ID。
-     * 
-     * @return resourceId */
+    /**
+     * 保护实例ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -61,9 +64,10 @@ public class ResourceParams {
         return this;
     }
 
-    /** Get resourceDetail
-     * 
-     * @return resourceDetail */
+    /**
+     * Get resourceDetail
+     * @return resourceDetail
+     */
     public ShowProtectedInstanceParams getResourceDetail() {
         return resourceDetail;
     }
@@ -93,9 +97,10 @@ public class ResourceParams {
         return this;
     }
 
-    /** 标签列表，没有标签默认为空数组。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，没有标签默认为空数组。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -109,9 +114,10 @@ public class ResourceParams {
         return this;
     }
 
-    /** 保护实例名称，没有名称时默认为空字符串。
-     * 
-     * @return resourceName */
+    /**
+     * 保护实例名称，没有名称时默认为空字符串。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -152,7 +158,10 @@ public class ResourceParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

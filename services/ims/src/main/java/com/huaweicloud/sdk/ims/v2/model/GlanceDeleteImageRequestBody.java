@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 请求参数 */
+/**
+ * 请求参数
+ */
 public class GlanceDeleteImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class GlanceDeleteImageRequestBody {
         return this;
     }
 
-    /** 取值为：true和false true：表示删除整机镜像时，同时删除其关联的云服务器备份。 false：表示只删除整机镜像，不删除其关联的云服务器备份。
-     * 
-     * @return deleteBackup */
+    /**
+     * 取值为：true和false true：表示删除整机镜像时，同时删除其关联的云服务器备份。 false：表示只删除整机镜像，不删除其关联的云服务器备份。
+     * @return deleteBackup
+     */
     public Boolean getDeleteBackup() {
         return deleteBackup;
     }
@@ -55,7 +58,10 @@ public class GlanceDeleteImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 作业运行时指定的算法配置参数，部分服务需填且必填。 */
+/**
+ * 作业运行时指定的算法配置参数，部分服务需填且必填。
+ */
 public class TaskServiceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class TaskServiceConfig {
         return this;
     }
 
-    /** 作业运行时指定的具体的算法配置项，部分服务需填且必填。整体呈json格式，具体配置项参见相应算法服务的说明。
-     * 
-     * @return common */
+    /**
+     * 作业运行时指定的具体的算法配置项，部分服务需填且必填。整体呈json格式，具体配置项参见相应算法服务的说明。
+     * @return common
+     */
     public Object getCommon() {
         return common;
     }
@@ -55,7 +58,10 @@ public class TaskServiceConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

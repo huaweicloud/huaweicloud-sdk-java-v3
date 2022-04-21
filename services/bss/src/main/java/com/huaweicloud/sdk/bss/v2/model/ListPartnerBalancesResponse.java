@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPartnerBalancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListPartnerBalancesResponse extends SdkResponse {
         return this;
     }
 
-    /** 账户余额列表。 具体请参见表2
-     * 
-     * @return accountBalances */
+    /**
+     * 账户余额列表。 具体请参见表2
+     * @return accountBalances
+     */
     public List<AccountBalanceV2> getAccountBalances() {
         return accountBalances;
     }
@@ -75,7 +78,10 @@ public class ListPartnerBalancesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

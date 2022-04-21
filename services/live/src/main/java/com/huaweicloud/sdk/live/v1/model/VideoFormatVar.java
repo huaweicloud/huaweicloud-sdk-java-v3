@@ -7,16 +7,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Gets or Sets VideoFormatVar */
+/**
+ * Gets or Sets VideoFormatVar
+ */
 public class VideoFormatVar {
 
-    /** Enum FLV for value: "FLV" */
+    /**
+     * Enum FLV for value: "FLV"
+     */
     public static final VideoFormatVar FLV = new VideoFormatVar("FLV");
 
-    /** Enum HLS for value: "HLS" */
+    /**
+     * Enum HLS for value: "HLS"
+     */
     public static final VideoFormatVar HLS = new VideoFormatVar("HLS");
 
-    /** Enum MP4 for value: "MP4" */
+    /**
+     * Enum MP4 for value: "MP4"
+     */
     public static final VideoFormatVar MP4 = new VideoFormatVar("MP4");
 
     private static final Map<String, VideoFormatVar> STATIC_FIELDS = createStaticFields();

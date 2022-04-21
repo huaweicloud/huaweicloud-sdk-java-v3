@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListInnodbLocksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListInnodbLocksResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前持有或等待锁的事务信息
-     * 
-     * @return innodbTrx */
+    /**
+     * 当前持有或等待锁的事务信息
+     * @return innodbTrx
+     */
     public List<InnodbTrx> getInnodbTrx() {
         return innodbTrx;
     }
@@ -80,9 +83,10 @@ public class ListInnodbLocksResponse extends SdkResponse {
         return this;
     }
 
-    /** 每个事务请求的锁以及阻塞该请求的锁的对应关系
-     * 
-     * @return innodbLockWaits */
+    /**
+     * 每个事务请求的锁以及阻塞该请求的锁的对应关系
+     * @return innodbLockWaits
+     */
     public List<InnodbLockWaits> getInnodbLockWaits() {
         return innodbLockWaits;
     }
@@ -96,9 +100,10 @@ public class ListInnodbLocksResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前持有或等待锁的事务数量
-     * 
-     * @return count */
+    /**
+     * 当前持有或等待锁的事务数量
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -137,7 +142,10 @@ public class ListInnodbLocksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BCS组织监控数据列表查询请求结构 */
+/**
+ * BCS组织监控数据列表查询请求结构
+ */
 public class ListEntityMetricRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListEntityMetricRequestBody {
         return this;
     }
 
-    /** 实体类型，[可选值如下 org # 节点组织 plugin # 插件](tag:online) 默认为org
-     * 
-     * @return type */
+    /**
+     * 实体类型，[可选值如下 org     # 节点组织 plugin  # 插件](tag:online) 默认为org 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class ListEntityMetricRequestBody {
         return this;
     }
 
-    /** 具体实体的名称
-     * 
-     * @return entityName */
+    /**
+     * 具体实体的名称
+     * @return entityName
+     */
     public String getEntityName() {
         return entityName;
     }
@@ -78,7 +82,10 @@ public class ListEntityMetricRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

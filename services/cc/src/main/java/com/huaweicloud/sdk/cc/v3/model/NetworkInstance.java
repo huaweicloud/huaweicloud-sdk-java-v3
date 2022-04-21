@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 网络实例。 */
+/**
+ * 网络实例。
+ */
 public class NetworkInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,10 +39,14 @@ public class NetworkInstance {
 
     private String domainId;
 
-    /** 网络实例的状态。ACTIVE：表示状态可用。 */
+    /**
+     * 网络实例的状态。ACTIVE：表示状态可用。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -119,16 +125,24 @@ public class NetworkInstance {
 
     private OffsetDateTime updatedAt;
 
-    /** 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。 */
+    /**
+     * 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     */
     public static final class TypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final TypeEnum VPC = new TypeEnum("vpc");
 
-        /** Enum VGW for value: "vgw" */
+        /**
+         * Enum VGW for value: "vgw"
+         */
         public static final TypeEnum VGW = new TypeEnum("vgw");
 
-        /** Enum ER for value: "er" */
+        /**
+         * Enum ER for value: "er"
+         */
         public static final TypeEnum ER = new TypeEnum("er");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +248,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的ID。
-     * 
-     * @return id */
+    /**
+     * 网络实例的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -250,9 +265,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的名字。
-     * 
-     * @return name */
+    /**
+     * 网络实例的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -266,9 +282,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的描述。
-     * 
-     * @return description */
+    /**
+     * 网络实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -282,9 +299,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 帐号ID。
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -298,9 +316,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的状态。ACTIVE：表示状态可用。
-     * 
-     * @return status */
+    /**
+     * 网络实例的状态。ACTIVE：表示状态可用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -314,9 +333,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 网络实例的创建时间。
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -330,9 +350,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 网络实例的更新时间。
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -346,9 +367,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
-     * 
-     * @return type */
+    /**
+     * 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -362,9 +384,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** 云连接实例ID。
-     * 
-     * @return cloudConnectionId */
+    /**
+     * 云连接实例ID。
+     * @return cloudConnectionId
+     */
     public String getCloudConnectionId() {
         return cloudConnectionId;
     }
@@ -378,9 +401,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW的ID。
-     * 
-     * @return instanceId */
+    /**
+     * VPC或者VGW的ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -394,9 +418,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW所属账户ID。
-     * 
-     * @return instanceDomainId */
+    /**
+     * VPC或者VGW所属账户ID。
+     * @return instanceDomainId
+     */
     public String getInstanceDomainId() {
         return instanceDomainId;
     }
@@ -410,9 +435,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW所在Region的ID。
-     * 
-     * @return regionId */
+    /**
+     * VPC或者VGW所在Region的ID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -426,9 +452,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW所在租户的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * VPC或者VGW所在租户的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -458,9 +485,10 @@ public class NetworkInstance {
         return this;
     }
 
-    /** VPC或者VGW发布的网段路由列表。
-     * 
-     * @return cidrs */
+    /**
+     * VPC或者VGW发布的网段路由列表。
+     * @return cidrs
+     */
     public List<String> getCidrs() {
         return cidrs;
     }
@@ -533,7 +561,10 @@ public class NetworkInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

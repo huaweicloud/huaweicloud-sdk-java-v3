@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TimeDoubleValueData */
+/**
+ * TimeDoubleValueData
+ */
 public class TimeDoubleValueData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class TimeDoubleValueData {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DDThh:mm:ssZ
-     * 
-     * @return time */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DDThh:mm:ssZ
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -39,9 +42,12 @@ public class TimeDoubleValueData {
         return this;
     }
 
-    /** 当前时间返回参数取值 minimum: 0 maximum: 18446744073709551615
-     * 
-     * @return value */
+    /**
+     * 当前时间返回参数取值
+     * minimum: 0
+     * maximum: 18446744073709551615
+     * @return value
+     */
     public Double getValue() {
         return value;
     }
@@ -78,7 +84,10 @@ public class TimeDoubleValueData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规则请求结构体 */
+/**
+ * 规则请求结构体
+ */
 public class Rule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：规则名称。
-     * 
-     * @return name */
+    /**
+     * **参数说明**：规则名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：规则的描述信息。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：规则的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -92,9 +96,10 @@ public class Rule {
         return this;
     }
 
-    /** Get conditionGroup
-     * 
-     * @return conditionGroup */
+    /**
+     * Get conditionGroup
+     * @return conditionGroup
+     */
     public ConditionGroup getConditionGroup() {
         return conditionGroup;
     }
@@ -124,9 +129,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：规则的动作列表，单个规则最多支持设置10个动作。
-     * 
-     * @return actions */
+    /**
+     * **参数说明**：规则的动作列表，单个规则最多支持设置10个动作。
+     * @return actions
+     */
     public List<RuleAction> getActions() {
         return actions;
     }
@@ -140,9 +146,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。
-     * 
-     * @return ruleType */
+    /**
+     * **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。
+     * @return ruleType
+     */
     public String getRuleType() {
         return ruleType;
     }
@@ -156,9 +163,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：规则的状态，默认值：active。 **取值范围**： - active：激活。 - inactive：未激活。
-     * 
-     * @return status */
+    /**
+     * **参数说明**：规则的状态，默认值：active。 **取值范围**： - active：激活。 - inactive：未激活。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -172,10 +180,10 @@ public class Rule {
         return this;
     }
 
-    /** **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
-     * **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return appId */
+    /**
+     * **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -219,7 +227,10 @@ public class Rule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

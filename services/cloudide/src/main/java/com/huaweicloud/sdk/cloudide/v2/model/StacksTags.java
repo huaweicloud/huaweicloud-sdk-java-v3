@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StacksTags */
+/**
+ * StacksTags
+ */
 public class StacksTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class StacksTags {
         return this;
     }
 
-    /** 技术栈列表
-     * 
-     * @return stackList */
+    /**
+     * 技术栈列表
+     * @return stackList
+     */
     public List<StackInfo> getStackList() {
         return stackList;
     }
@@ -74,9 +77,10 @@ public class StacksTags {
         return this;
     }
 
-    /** 技术栈tag集合
-     * 
-     * @return tags */
+    /**
+     * 技术栈tag集合
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -112,7 +116,10 @@ public class StacksTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowUserDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowUserDetailRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -51,9 +54,10 @@ public class ShowUserDetailRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -67,9 +71,10 @@ public class ShowUserDetailRequest {
         return this;
     }
 
-    /** 企业用户帐号。
-     * 
-     * @return account */
+    /**
+     * 企业用户帐号。
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -83,9 +88,12 @@ public class ShowUserDetailRequest {
         return this;
     }
 
-    /** 账号类型 * 0：会议账号； * 1：第三方账号，默认0。 minimum: 0 maximum: 1
-     * 
-     * @return accountType */
+    /**
+     * 账号类型 * 0：会议账号； * 1：第三方账号，默认0。 
+     * minimum: 0
+     * maximum: 1
+     * @return accountType
+     */
     public Integer getAccountType() {
         return accountType;
     }
@@ -126,7 +134,10 @@ public class ShowUserDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

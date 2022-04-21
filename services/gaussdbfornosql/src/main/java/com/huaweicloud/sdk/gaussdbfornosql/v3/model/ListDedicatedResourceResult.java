@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 专属资源信息列表。 */
+/**
+ * 专属资源信息列表。
+ */
 public class ListDedicatedResourceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 专属资源ID。
-     * 
-     * @return id */
+    /**
+     * 专属资源ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -65,9 +68,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 专属资源的名称。
-     * 
-     * @return resourceName */
+    /**
+     * 专属资源的名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -81,9 +85,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 引擎名称。
-     * 
-     * @return engineName */
+    /**
+     * 引擎名称。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -97,9 +102,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 可用区信息。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区信息。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -113,9 +119,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 专属资源的计算架构。
-     * 
-     * @return architecture */
+    /**
+     * 专属资源的计算架构。
+     * @return architecture
+     */
     public String getArchitecture() {
         return architecture;
     }
@@ -138,9 +145,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** Get capacity
-     * 
-     * @return capacity */
+    /**
+     * Get capacity
+     * @return capacity
+     */
     public DedicatedResourceCapacity getCapacity() {
         return capacity;
     }
@@ -154,9 +162,10 @@ public class ListDedicatedResourceResult {
         return this;
     }
 
-    /** 专属资源的状态信息。
-     * 
-     * @return status */
+    /**
+     * 专属资源的状态信息。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -203,7 +212,10 @@ public class ListDedicatedResourceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

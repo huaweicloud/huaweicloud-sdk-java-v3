@@ -15,7 +15,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BackupDetail */
+/**
+ * BackupDetail
+ */
 public class BackupDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,13 +50,19 @@ public class BackupDetail {
 
     private String id;
 
-    /** 备份类型 */
+    /**
+     * 备份类型
+     */
     public static final class ImageTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final ImageTypeEnum BACKUP = new ImageTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ImageTypeEnum REPLICATION = new ImageTypeEnum("replication");
 
         private static final Map<String, ImageTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -164,13 +172,19 @@ public class BackupDetail {
 
     private Integer resourceSize;
 
-    /** 资源类型 */
+    /**
+     * 资源类型
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum OS_NOVA_SERVER for value: "OS::Nova::Server" */
+        /**
+         * Enum OS_NOVA_SERVER for value: "OS::Nova::Server"
+         */
         public static final ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
 
-        /** Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume" */
+        /**
+         * Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume"
+         */
         public static final ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -240,31 +254,49 @@ public class BackupDetail {
 
     private ResourceTypeEnum resourceType;
 
-    /** 备份状态 */
+    /**
+     * 备份状态
+     */
     public static final class StatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum PROTECTING for value: "protecting" */
+        /**
+         * Enum PROTECTING for value: "protecting"
+         */
         public static final StatusEnum PROTECTING = new StatusEnum("protecting");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
-        /** Enum RESTORING for value: "restoring" */
+        /**
+         * Enum RESTORING for value: "restoring"
+         */
         public static final StatusEnum RESTORING = new StatusEnum("restoring");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StatusEnum ERROR = new StatusEnum("error");
 
-        /** Enum WAITING_PROTECT for value: "waiting_protect" */
+        /**
+         * Enum WAITING_PROTECT for value: "waiting_protect"
+         */
         public static final StatusEnum WAITING_PROTECT = new StatusEnum("waiting_protect");
 
-        /** Enum WAITING_DELETE for value: "waiting_delete" */
+        /**
+         * Enum WAITING_DELETE for value: "waiting_delete"
+         */
         public static final StatusEnum WAITING_DELETE = new StatusEnum("waiting_delete");
 
-        /** Enum WAITING_RESTORE for value: "waiting_restore" */
+        /**
+         * Enum WAITING_RESTORE for value: "waiting_restore"
+         */
         public static final StatusEnum WAITING_RESTORE = new StatusEnum("waiting_restore");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -375,9 +407,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 还原点ID
-     * 
-     * @return checkpointId */
+    /**
+     * 还原点ID
+     * @return checkpointId
+     */
     public String getCheckpointId() {
         return checkpointId;
     }
@@ -391,9 +424,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 创建时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -407,9 +441,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份描述
-     * 
-     * @return description */
+    /**
+     * 备份描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -423,9 +458,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 过期时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return expiredAt */
+    /**
+     * 过期时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return expiredAt
+     */
     public OffsetDateTime getExpiredAt() {
         return expiredAt;
     }
@@ -448,9 +484,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** Get extendInfo
-     * 
-     * @return extendInfo */
+    /**
+     * Get extendInfo
+     * @return extendInfo
+     */
     public BackupExtendInfo getExtendInfo() {
         return extendInfo;
     }
@@ -464,9 +501,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份ID
-     * 
-     * @return id */
+    /**
+     * 备份ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -480,9 +518,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份类型
-     * 
-     * @return imageType */
+    /**
+     * 备份类型
+     * @return imageType
+     */
     public ImageTypeEnum getImageType() {
         return imageType;
     }
@@ -496,9 +535,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return name */
+    /**
+     * 备份名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -512,9 +552,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 父备份ID
-     * 
-     * @return parentId */
+    /**
+     * 父备份ID
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -528,9 +569,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -544,9 +586,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份时间
-     * 
-     * @return protectedAt */
+    /**
+     * 备份时间
+     * @return protectedAt
+     */
     public LocalDate getProtectedAt() {
         return protectedAt;
     }
@@ -560,9 +603,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 资源可用区
-     * 
-     * @return resourceAz */
+    /**
+     * 资源可用区
+     * @return resourceAz
+     */
     public String getResourceAz() {
         return resourceAz;
     }
@@ -576,9 +620,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -592,9 +637,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -608,9 +654,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 资源大小，单位为GB
-     * 
-     * @return resourceSize */
+    /**
+     * 资源大小，单位为GB
+     * @return resourceSize
+     */
     public Integer getResourceSize() {
         return resourceSize;
     }
@@ -624,9 +671,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -640,9 +688,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份状态
-     * 
-     * @return status */
+    /**
+     * 备份状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -656,9 +705,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 更新时间，例如:\"2020-02-05T10:38:34.209782\"
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间，例如:\"2020-02-05T10:38:34.209782\"
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -672,9 +722,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 存储库ID
-     * 
-     * @return vaultId */
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -704,9 +755,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 复制记录
-     * 
-     * @return replicationRecords */
+    /**
+     * 复制记录
+     * @return replicationRecords
+     */
     public List<ReplicationRecordGet> getReplicationRecords() {
         return replicationRecords;
     }
@@ -720,9 +772,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 企业项目id,默认为‘0’。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id,默认为‘0’。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -736,11 +789,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** 备份提供商ID，用于区分备份对象。当前取值包含
-     * 0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，
-     * 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
-     * 
-     * @return providerId */
+    /**
+     * 备份提供商ID，用于区分备份对象。当前取值包含  0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+     * @return providerId
+     */
     public String getProviderId() {
         return providerId;
     }
@@ -770,7 +822,10 @@ public class BackupDetail {
         return this;
     }
 
-    /** @return children */
+    /**
+     * 
+     * @return children
+     */
     public List<BackupResp> getChildren() {
         return children;
     }
@@ -869,7 +924,10 @@ public class BackupDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

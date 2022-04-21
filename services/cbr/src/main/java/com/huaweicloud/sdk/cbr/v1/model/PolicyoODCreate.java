@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PolicyoODCreate */
+/**
+ * PolicyoODCreate
+ */
 public class PolicyoODCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,12 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 保留日备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
-     * 
-     * @return dayBackups */
+    /**
+     * 保留日备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
+     * minimum: 0
+     * maximum: 100
+     * @return dayBackups
+     */
     public Integer getDayBackups() {
         return dayBackups;
     }
@@ -79,9 +84,10 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 复制的目标项目ID，仅在跨区域复制时才会使用并且必须指定。
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID，仅在跨区域复制时才会使用并且必须指定。
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -95,9 +101,10 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 复制的目标区域，仅在跨区域复制时才会使用并且必须指定。长度限制：0- 255，只能由字母、数字、“_”、“-”组成
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域，仅在跨区域复制时才会使用并且必须指定。长度限制：0- 255，只能由字母、数字、“_”、“-”组成
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -111,9 +118,10 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 跨区域复制时，是否启用加速从而缩减复制的时间，如果不指定，默认不启用加速。
-     * 
-     * @return enableAcceleration */
+    /**
+     * 跨区域复制时，是否启用加速从而缩减复制的时间，如果不指定，默认不启用加速。
+     * @return enableAcceleration
+     */
     public Boolean getEnableAcceleration() {
         return enableAcceleration;
     }
@@ -127,9 +135,12 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 单个备份对象自动备份的最大备份数。取值为-1或0-99999。-1代表不按备份数清理。若该字段和retention_duration_days字段同时为空，备份会永久保留。 minimum: 1 maximum: 99999
-     * 
-     * @return maxBackups */
+    /**
+     * 单个备份对象自动备份的最大备份数。取值为-1或0-99999。-1代表不按备份数清理。若该字段和retention_duration_days字段同时为空，备份会永久保留。
+     * minimum: 1
+     * maximum: 99999
+     * @return maxBackups
+     */
     public Integer getMaxBackups() {
         return maxBackups;
     }
@@ -143,9 +154,12 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 保留月备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
-     * 
-     * @return monthBackups */
+    /**
+     * 保留月备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
+     * minimum: 0
+     * maximum: 100
+     * @return monthBackups
+     */
     public Integer getMonthBackups() {
         return monthBackups;
     }
@@ -159,9 +173,12 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 备份保留时长，单位天。最长支持99999天。-1代表不按时间清理。若该字段和max_backups 参数同时为空，备份会永久保留。 minimum: 1 maximum: 99999
-     * 
-     * @return retentionDurationDays */
+    /**
+     * 备份保留时长，单位天。最长支持99999天。-1代表不按时间清理。若该字段和max_backups 参数同时为空，备份会永久保留。
+     * minimum: 1
+     * maximum: 99999
+     * @return retentionDurationDays
+     */
     public Integer getRetentionDurationDays() {
         return retentionDurationDays;
     }
@@ -175,9 +192,10 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 用户所在时区,格式形如UTC+08:00, 若选择年备，月备，周备，日备中任一参数，则该参数不能为空。
-     * 
-     * @return timezone */
+    /**
+     * 用户所在时区,格式形如UTC+08:00, 若选择年备，月备，周备，日备中任一参数，则该参数不能为空。
+     * @return timezone
+     */
     public String getTimezone() {
         return timezone;
     }
@@ -191,9 +209,10 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 保留周备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
-     * 
-     * @return weekBackups */
+    /**
+     * 保留周备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
+     * @return weekBackups
+     */
     public Integer getWeekBackups() {
         return weekBackups;
     }
@@ -207,9 +226,12 @@ public class PolicyoODCreate {
         return this;
     }
 
-    /** 保留年备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
-     * 
-     * @return yearBackups */
+    /**
+     * 保留年备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
+     * minimum: 0
+     * maximum: 100
+     * @return yearBackups
+     */
     public Integer getYearBackups() {
         return yearBackups;
     }
@@ -271,7 +293,10 @@ public class PolicyoODCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

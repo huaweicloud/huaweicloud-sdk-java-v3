@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AnimatedGraphicsOutputParam */
+/**
+ * AnimatedGraphicsOutputParam
+ */
 public class AnimatedGraphicsOutputParam {
 
-    /** 动图格式，目前仅支持取值 gif */
+    /**
+     * 动图格式，目前仅支持取值 gif 
+     */
     public static final class FormatEnum {
 
-        /** Enum GIF for value: "gif" */
+        /**
+         * Enum GIF for value: "gif"
+         */
         public static final FormatEnum GIF = new FormatEnum("gif");
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +121,10 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 动图格式，目前仅支持取值 gif
-     * 
-     * @return format */
+    /**
+     * 动图格式，目前仅支持取值 gif 
+     * @return format
+     */
     public FormatEnum getFormat() {
         return format;
     }
@@ -131,10 +138,12 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 输出动图的宽。 取值范围：0，-1或[32,3840]之间2的倍数。 >- 若设置为-1， 则宽根据高来自适应，此时“height”不能取-1或0。 >- 若设置为0，则取原始视频的宽，此时“height”只能取0。
-     * minimum: -1 maximum: 3840
-     * 
-     * @return width */
+    /**
+     * 输出动图的宽。  取值范围：0，-1或[32,3840]之间2的倍数。  >- 若设置为-1， 则宽根据高来自适应，此时“height”不能取-1或0。 >- 若设置为0，则取原始视频的宽，此时“height”只能取0。 
+     * minimum: -1
+     * maximum: 3840
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -148,10 +157,12 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 输出动图的高。 取值范围：0，-1或[32,2160]之间2的倍数。 >- 若设置为-1， 则高根据宽来自适应，此时“width”不能取-1或0。 >- 若设置为0，则取原始视频的高，此时“width”只能取0。
-     * minimum: -1 maximum: 2160
-     * 
-     * @return height */
+    /**
+     * 输出动图的高。  取值范围：0，-1或[32,2160]之间2的倍数。  >- 若设置为-1， 则高根据宽来自适应，此时“width”不能取-1或0。 >- 若设置为0，则取原始视频的高，此时“width”只能取0。 
+     * minimum: -1
+     * maximum: 2160
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -165,9 +176,12 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 起始时间，单位：毫秒 minimum: 0 maximum: 2147483647
-     * 
-     * @return start */
+    /**
+     * 起始时间，单位：毫秒 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return start
+     */
     public Integer getStart() {
         return start;
     }
@@ -181,9 +195,12 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 结束时间。 单位：毫秒。 end、start差值最多60秒。 minimum: 0 maximum: 2147483647
-     * 
-     * @return end */
+    /**
+     * 结束时间。  单位：毫秒。  end、start差值最多60秒。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return end
+     */
     public Integer getEnd() {
         return end;
     }
@@ -197,9 +214,12 @@ public class AnimatedGraphicsOutputParam {
         return this;
     }
 
-    /** 动图帧率。 取值范围：[1,75] minimum: 0 maximum: 76
-     * 
-     * @return frameRate */
+    /**
+     * 动图帧率。  取值范围：[1,75] 
+     * minimum: 0
+     * maximum: 76
+     * @return frameRate
+     */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -244,7 +264,10 @@ public class AnimatedGraphicsOutputParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

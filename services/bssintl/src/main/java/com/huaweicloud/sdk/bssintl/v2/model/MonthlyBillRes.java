@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MonthlyBillRes */
+/**
+ * MonthlyBillRes
+ */
 public class MonthlyBillRes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -163,9 +165,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源详单数据所在账期，格式为YYYY-MM。 例如2020-01。
-     * 
-     * @return cycle */
+    /**
+     * 资源详单数据所在账期，格式为YYYY-MM。 例如2020-01。
+     * @return cycle
+     */
     public String getCycle() {
         return cycle;
     }
@@ -179,9 +182,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 消费日期，格式为YYYY-MM-DD。 说明： 当statistic_type=2时该字段才有值，否则返回null。
-     * 
-     * @return billDate */
+    /**
+     * 消费日期，格式为YYYY-MM-DD。  说明： 当statistic_type=2时该字段才有值，否则返回null。
+     * @return billDate
+     */
     public String getBillDate() {
         return billDate;
     }
@@ -195,10 +199,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明：
-     * 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。 20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明： 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。 20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -212,10 +216,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 消费的客户账号ID。
-     * 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 消费的客户账号ID。 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -229,9 +233,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return region */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -245,9 +250,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 云服务区名称，例如：“中国-香港”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
-     * 
-     * @return regionName */
+    /**
+     * 云服务区名称，例如：“中国-香港”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -261,9 +267,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -277,9 +284,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -293,9 +301,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return cloudServiceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return cloudServiceTypeName
+     */
     public String getCloudServiceTypeName() {
         return cloudServiceTypeName;
     }
@@ -309,9 +318,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -325,9 +335,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源实例ID。
-     * 
-     * @return resInstanceId */
+    /**
+     * 资源实例ID。
+     * @return resInstanceId
+     */
     public String getResInstanceId() {
         return resInstanceId;
     }
@@ -341,9 +352,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源名称。客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -357,9 +369,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 资源标签。客户在管理资源的时候，可以设置资源标签。
-     * 
-     * @return resourceTag */
+    /**
+     * 资源标签。客户在管理资源的时候，可以设置资源标签。
+     * @return resourceTag
+     */
     public String getResourceTag() {
         return resourceTag;
     }
@@ -373,9 +386,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** SKU编码，在账单中唯一标识一个资源的规格。
-     * 
-     * @return skuCode */
+    /**
+     * SKU编码，在账单中唯一标识一个资源的规格。
+     * @return skuCode
+     */
     public String getSkuCode() {
         return skuCode;
     }
@@ -389,9 +403,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -405,9 +420,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 企业项目名称。
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 企业项目名称。
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -421,9 +437,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 计费模式。 1 : 包年/包月3：按需10：预留实例
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。 1 : 包年/包月3：按需10：预留实例
+     * @return chargeMode
+     */
     public Integer getChargeMode() {
         return chargeMode;
     }
@@ -437,10 +454,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 客户购买云服务类型的消费金额，包含代金券、现金券，精确到小数点后8位。 说明：
-     * consume_amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
-     * 
-     * @return consumeAmount */
+    /**
+     * 客户购买云服务类型的消费金额，包含代金券、现金券，精确到小数点后8位。  说明： consume_amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -454,9 +471,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 现金支付金额。
-     * 
-     * @return cashAmount */
+    /**
+     * 现金支付金额。
+     * @return cashAmount
+     */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -470,9 +488,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 信用额度支付金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用额度支付金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -486,9 +505,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 代金券支付金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券支付金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -502,9 +522,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 现金券支付金额。
-     * 
-     * @return flexipurchaseCouponAmount */
+    /**
+     * 现金券支付金额。
+     * @return flexipurchaseCouponAmount
+     */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -518,9 +539,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 储值卡支付金额。
-     * 
-     * @return storedCardAmount */
+    /**
+     * 储值卡支付金额。
+     * @return storedCardAmount
+     */
     public Double getStoredCardAmount() {
         return storedCardAmount;
     }
@@ -534,9 +556,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 奖励金支付金额（用于现网客户未使用完的奖励金）。
-     * 
-     * @return bonusAmount */
+    /**
+     * 奖励金支付金额（用于现网客户未使用完的奖励金）。
+     * @return bonusAmount
+     */
     public Double getBonusAmount() {
         return bonusAmount;
     }
@@ -550,9 +573,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 欠费金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠费金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -566,9 +590,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 欠费核销金额。
-     * 
-     * @return adjustmentAmount */
+    /**
+     * 欠费核销金额。
+     * @return adjustmentAmount
+     */
     public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
@@ -582,9 +607,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 官网价。
-     * 
-     * @return officialAmount */
+    /**
+     * 官网价。
+     * @return officialAmount
+     */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -598,9 +624,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 对应官网价折扣金额。
-     * 
-     * @return discountAmount */
+    /**
+     * 对应官网价折扣金额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -614,9 +641,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -630,9 +658,10 @@ public class MonthlyBillRes {
         return this;
     }
 
-    /** 周期类型： 19：年20：月24：天25：小时5：一次性
-     * 
-     * @return periodType */
+    /**
+     * 周期类型： 19：年20：月24：天25：小时5：一次性
+     * @return periodType
+     */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -754,7 +783,10 @@ public class MonthlyBillRes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

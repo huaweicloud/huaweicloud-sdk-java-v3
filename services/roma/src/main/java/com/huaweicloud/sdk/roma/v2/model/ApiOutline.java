@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiOutline */
+/**
+ * ApiOutline
+ */
 public class ApiOutline {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API的认证方式
-     * 
-     * @return authType */
+    /**
+     * API的认证方式
+     * @return authType
+     */
     public String getAuthType() {
         return authType;
     }
@@ -79,9 +82,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** 发布的环境名
-     * 
-     * @return runEnvName */
+    /**
+     * 发布的环境名
+     * @return runEnvName
+     */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -95,9 +99,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API所属分组的名称
-     * 
-     * @return groupName */
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -111,9 +116,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** 发布记录的编号
-     * 
-     * @return publishId */
+    /**
+     * 发布记录的编号
+     * @return publishId
+     */
     public String getPublishId() {
         return publishId;
     }
@@ -127,9 +133,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API所属分组的编号
-     * 
-     * @return groupId */
+    /**
+     * API所属分组的编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -143,9 +150,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API名称
-     * 
-     * @return name */
+    /**
+     * API名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -159,9 +167,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API描述
-     * 
-     * @return remark */
+    /**
+     * API描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -175,9 +184,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** 发布的环境id
-     * 
-     * @return runEnvId */
+    /**
+     * 发布的环境id
+     * @return runEnvId
+     */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -191,9 +201,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return id */
+    /**
+     * API编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -207,9 +218,10 @@ public class ApiOutline {
         return this;
     }
 
-    /** API的请求地址
-     * 
-     * @return reqUri */
+    /**
+     * API的请求地址
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -259,7 +271,10 @@ public class ApiOutline {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchResourceOpRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -96,9 +99,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -112,9 +116,11 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -128,9 +134,12 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -144,9 +153,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 搜索条件
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -160,9 +170,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return corpId */
+    /**
+     * 企业id
+     * @return corpId
+     */
     public String getCorpId() {
         return corpId;
     }
@@ -176,9 +187,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之后的订单操作记录
-     * 
-     * @return startExpireDate */
+    /**
+     * 查询过期时间在该时间戳之后的订单操作记录
+     * @return startExpireDate
+     */
     public Long getStartExpireDate() {
         return startExpireDate;
     }
@@ -192,9 +204,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询过期时间在该时间戳之前的订单操作记录
-     * 
-     * @return endExpireDate */
+    /**
+     * 查询过期时间在该时间戳之前的订单操作记录
+     * @return endExpireDate
+     */
     public Long getEndExpireDate() {
         return endExpireDate;
     }
@@ -208,9 +221,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询操作时间在该时间戳之后的订单操作记录
-     * 
-     * @return startOperateDate */
+    /**
+     * 查询操作时间在该时间戳之后的订单操作记录
+     * @return startOperateDate
+     */
     public Long getStartOperateDate() {
         return startOperateDate;
     }
@@ -224,9 +238,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 查询操作时间在该时间戳之前的订单操作记录
-     * 
-     * @return endOperateDate */
+    /**
+     * 查询操作时间在该时间戳之前的订单操作记录
+     * @return endOperateDate
+     */
     public Long getEndOperateDate() {
         return endOperateDate;
     }
@@ -240,9 +255,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 订单资源类型
-     * 
-     * @return type */
+    /**
+     * 订单资源类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -256,9 +272,10 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 当前仅当资源类型为vmr时生效
-     * 
-     * @return typeId */
+    /**
+     * 当前仅当资源类型为vmr时生效
+     * @return typeId
+     */
     public String getTypeId() {
         return typeId;
     }
@@ -272,9 +289,12 @@ public class SearchResourceOpRecordRequest {
         return this;
     }
 
-    /** 操作类型 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用 minimum: 0 maximum: 4
-     * 
-     * @return operateType */
+    /**
+     * 操作类型 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用
+     * minimum: 0
+     * maximum: 4
+     * @return operateType
+     */
     public Integer getOperateType() {
         return operateType;
     }
@@ -345,7 +365,10 @@ public class SearchResourceOpRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

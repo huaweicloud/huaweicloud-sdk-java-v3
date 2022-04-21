@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Router */
+/**
+ * Router
+ */
 public class Router {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Router {
         return this;
     }
 
-    /** Router(VPC)所属VPC的ID。
-     * 
-     * @return routerId */
+    /**
+     * Router(VPC)所属VPC的ID。
+     * @return routerId
+     */
     public String getRouterId() {
         return routerId;
     }
@@ -39,9 +42,10 @@ public class Router {
         return this;
     }
 
-    /** Router(VPC)所在的region。
-     * 
-     * @return routerRegion */
+    /**
+     * Router(VPC)所在的region。
+     * @return routerRegion
+     */
     public String getRouterRegion() {
         return routerRegion;
     }
@@ -77,7 +81,10 @@ public class Router {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

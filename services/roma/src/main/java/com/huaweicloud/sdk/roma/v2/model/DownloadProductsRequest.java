@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DownloadProductsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class DownloadProductsRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -58,9 +61,10 @@ public class DownloadProductsRequest {
         return this;
     }
 
-    /** 待导出产品ID列表
-     * 
-     * @return productIds */
+    /**
+     * 待导出产品ID列表
+     * @return productIds
+     */
     public List<Integer> getProductIds() {
         return productIds;
     }
@@ -97,7 +101,10 @@ public class DownloadProductsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

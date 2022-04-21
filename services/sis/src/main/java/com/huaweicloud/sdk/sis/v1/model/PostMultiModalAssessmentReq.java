@@ -40,9 +40,10 @@ public class PostMultiModalAssessmentReq {
         return this;
     }
 
-    /** Get config
-     * 
-     * @return config */
+    /**
+     * Get config
+     * @return config
+     */
     public MultiModalConfig getConfig() {
         return config;
     }
@@ -56,9 +57,10 @@ public class PostMultiModalAssessmentReq {
         return this;
     }
 
-    /** 视频数据，Base64编码，要求Base64编码后大小不超过10M。 注意评测接口使用次数定义为：每8秒的视频作为一次，不足8秒按一次计算。例如传入4秒或8秒的视频，都算作使用一次，传入9秒的视频则视为调用2次。
-     * 
-     * @return videoData */
+    /**
+     * 视频数据，Base64编码，要求Base64编码后大小不超过10M。  注意评测接口使用次数定义为：每8秒的视频作为一次，不足8秒按一次计算。例如传入4秒或8秒的视频，都算作使用一次，传入9秒的视频则视为调用2次。
+     * @return videoData
+     */
     public String getVideoData() {
         return videoData;
     }
@@ -72,9 +74,10 @@ public class PostMultiModalAssessmentReq {
         return this;
     }
 
-    /** 被评估视频和语音数据对应的试题文本，长度不可超过256字节。
-     * 
-     * @return refText */
+    /**
+     * 被评估视频和语音数据对应的试题文本，长度不可超过256字节。
+     * @return refText
+     */
     public String getRefText() {
         return refText;
     }
@@ -113,7 +116,10 @@ public class PostMultiModalAssessmentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

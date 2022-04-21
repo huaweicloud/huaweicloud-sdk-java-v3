@@ -39,9 +39,10 @@ public class BatchLimitSpeedReq {
         return this;
     }
 
-    /** 灾备限速设置信息
-     * 
-     * @return speedLimits */
+    /**
+     * 灾备限速设置信息
+     * @return speedLimits
+     */
     public List<LimitSpeedReq> getSpeedLimits() {
         return speedLimits;
     }
@@ -76,7 +77,10 @@ public class BatchLimitSpeedReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MQTT配置。 */
+/**
+ * MQTT配置。
+ */
 public class EdgeNodeMqttConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class EdgeNodeMqttConfig {
         return this;
     }
 
-    /** 是否启用MQTT
-     * 
-     * @return enableMqtt */
+    /**
+     * 是否启用MQTT
+     * @return enableMqtt
+     */
     public Boolean getEnableMqtt() {
         return enableMqtt;
     }
@@ -58,9 +61,10 @@ public class EdgeNodeMqttConfig {
         return this;
     }
 
-    /** MQTT配置 当enable_mqtt取值为false时，mqtts需要为空数组
-     * 
-     * @return mqtts */
+    /**
+     * MQTT配置 当enable_mqtt取值为false时，mqtts需要为空数组
+     * @return mqtts
+     */
     public List<Mqtt> getMqtts() {
         return mqtts;
     }
@@ -97,7 +101,10 @@ public class EdgeNodeMqttConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

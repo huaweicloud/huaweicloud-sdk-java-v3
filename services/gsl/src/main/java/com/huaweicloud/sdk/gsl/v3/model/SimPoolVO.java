@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** SimPoolVO */
+/**
+ * SimPoolVO
+ */
 public class SimPoolVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,9 +96,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 流量池标识
-     * 
-     * @return id */
+    /**
+     * 流量池标识
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -110,9 +113,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 流量池名称
-     * 
-     * @return poolName */
+    /**
+     * 流量池名称
+     * @return poolName
+     */
     public String getPoolName() {
         return poolName;
     }
@@ -126,9 +130,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 套餐名称
-     * 
-     * @return pricePlanName */
+    /**
+     * 套餐名称
+     * @return pricePlanName
+     */
     public String getPricePlanName() {
         return pricePlanName;
     }
@@ -142,9 +147,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 套餐标识
-     * 
-     * @return pricePlanId */
+    /**
+     * 套餐标识
+     * @return pricePlanId
+     */
     public String getPricePlanId() {
         return pricePlanId;
     }
@@ -158,9 +164,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 生效时间
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间
+     * @return effectiveTime
+     */
     public OffsetDateTime getEffectiveTime() {
         return effectiveTime;
     }
@@ -174,9 +181,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 失效时间
-     * 
-     * @return expiredTime */
+    /**
+     * 失效时间
+     * @return expiredTime
+     */
     public OffsetDateTime getExpiredTime() {
         return expiredTime;
     }
@@ -190,9 +198,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 账期
-     * 
-     * @return billingCycle */
+    /**
+     * 账期
+     * @return billingCycle
+     */
     public String getBillingCycle() {
         return billingCycle;
     }
@@ -206,9 +215,11 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 可用流量(查询账期所在月份)，单位MB minimum: 0
-     * 
-     * @return flowTotal */
+    /**
+     * 可用流量(查询账期所在月份)，单位MB
+     * minimum: 0
+     * @return flowTotal
+     */
     public Double getFlowTotal() {
         return flowTotal;
     }
@@ -222,9 +233,11 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 已用流量(查询账期所在月份), 单位MB minimum: 0
-     * 
-     * @return flowUsed */
+    /**
+     * 已用流量(查询账期所在月份), 单位MB
+     * minimum: 0
+     * @return flowUsed
+     */
     public Double getFlowUsed() {
         return flowUsed;
     }
@@ -238,9 +251,11 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 剩余流量(查询账期所在月份), 单位MB minimum: 0
-     * 
-     * @return flowLeft */
+    /**
+     * 剩余流量(查询账期所在月份), 单位MB
+     * minimum: 0
+     * @return flowLeft
+     */
     public Double getFlowLeft() {
         return flowLeft;
     }
@@ -254,9 +269,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 流量池成员数量
-     * 
-     * @return quantity */
+    /**
+     * 流量池成员数量
+     * @return quantity
+     */
     public Integer getQuantity() {
         return quantity;
     }
@@ -270,9 +286,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return modifyTime */
+    /**
+     * 更新时间
+     * @return modifyTime
+     */
     public OffsetDateTime getModifyTime() {
         return modifyTime;
     }
@@ -286,9 +303,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 已激活成员数量
-     * 
-     * @return activatedSimQuantity */
+    /**
+     * 已激活成员数量
+     * @return activatedSimQuantity
+     */
     public Integer getActivatedSimQuantity() {
         return activatedSimQuantity;
     }
@@ -302,9 +320,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 未激活成员数量
-     * 
-     * @return inactiveSimQuantity */
+    /**
+     * 未激活成员数量
+     * @return inactiveSimQuantity
+     */
     public Integer getInactiveSimQuantity() {
         return inactiveSimQuantity;
     }
@@ -318,9 +337,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 已拆机成员数量
-     * 
-     * @return disassembledSimQuantity */
+    /**
+     * 已拆机成员数量
+     * @return disassembledSimQuantity
+     */
     public Integer getDisassembledSimQuantity() {
         return disassembledSimQuantity;
     }
@@ -334,9 +354,10 @@ public class SimPoolVO {
         return this;
     }
 
-    /** 组成流量池的批次号列表
-     * 
-     * @return orderIds */
+    /**
+     * 组成流量池的批次号列表
+     * @return orderIds
+     */
     public String getOrderIds() {
         return orderIds;
     }
@@ -413,7 +434,10 @@ public class SimPoolVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

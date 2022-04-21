@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 锁定会场视频源请求体 */
+/**
+ * 锁定会场视频源请求体
+ */
 public class RestLockSiteViewReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RestLockSiteViewReqBody {
         return this;
     }
 
-    /** - 0: 取消锁定。 - 1: 锁定。
-     * 
-     * @return status */
+    /**
+     * - 0: 取消锁定。 - 1: 锁定。
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -39,9 +42,10 @@ public class RestLockSiteViewReqBody {
         return this;
     }
 
-    /** 被锁定视频源的与会者标识。
-     * 
-     * @return participantID */
+    /**
+     * 被锁定视频源的与会者标识。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -78,7 +82,10 @@ public class RestLockSiteViewReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

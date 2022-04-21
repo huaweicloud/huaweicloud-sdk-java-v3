@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** FreeResourcePackageV3 */
+/**
+ * FreeResourcePackageV3
+ */
 public class FreeResourcePackageV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +98,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 订购资源包产品后，系统生成的ID，是这个资源包列表的标识字段。
-     * 
-     * @return orderInstanceId */
+    /**
+     * 订购资源包产品后，系统生成的ID，是这个资源包列表的标识字段。
+     * @return orderInstanceId
+     */
     public String getOrderInstanceId() {
         return orderInstanceId;
     }
@@ -112,9 +115,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 订单ID，如果source_type为“1：软开云赠送”，该字段为空。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID，如果source_type为“1：软开云赠送”，该字段为空。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -128,9 +132,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 产品ID，即资源包ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID，即资源包ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -144,9 +149,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 产品名称，即资源包名称。
-     * 
-     * @return productName */
+    /**
+     * 产品名称，即资源包名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -160,9 +166,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -176,9 +183,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 企业项目应用范围： 0：应用所有1：应用到具体企业项目
-     * 
-     * @return enterpriseProjectScope */
+    /**
+     * 企业项目应用范围： 0：应用所有1：应用到具体企业项目
+     * @return enterpriseProjectScope
+     */
     public Integer getEnterpriseProjectScope() {
         return enterpriseProjectScope;
     }
@@ -192,9 +200,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 生效时间，购买资源包的时间，格式UTC。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间，购买资源包的时间，格式UTC。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -208,9 +217,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 失效时间，资源包到期时间，格式UTC。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间，资源包到期时间，格式UTC。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -224,9 +234,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
-     * 
-     * @return status */
+    /**
+     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -240,9 +251,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -256,9 +268,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -272,9 +285,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -288,9 +302,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 资源包的来源类型： 0：订单1：软开云赠送
-     * 
-     * @return sourceType */
+    /**
+     * 资源包的来源类型： 0：订单1：软开云赠送
+     * @return sourceType
+     */
     public Integer getSourceType() {
         return sourceType;
     }
@@ -304,9 +319,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 套餐绑定类型： ATOMIC_PKG：原子套餐BUNDLE_PKG：组合套餐
-     * 
-     * @return bundleType */
+    /**
+     * 套餐绑定类型： ATOMIC_PKG：原子套餐BUNDLE_PKG：组合套餐
+     * @return bundleType
+     */
     public String getBundleType() {
         return bundleType;
     }
@@ -320,10 +336,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 使用模式。 1：可重置表示购买的资源包能够按照一定的周期恢复使用量。例如购买一个1年的按需资源包，使用量是40G，可重置，重置周期为1个月，表示1年内每个月会给予40G的使用量。
-     * 2：不可重置表示购买的资源包的使用量不会恢复。例如购买一个1年的按需资源包，使用量是40G，不可重置，表示1年内一共给予40G的使用量。
-     * 
-     * @return quotaReuseMode */
+    /**
+     * 使用模式。 1：可重置表示购买的资源包能够按照一定的周期恢复使用量。例如购买一个1年的按需资源包，使用量是40G，可重置，重置周期为1个月，表示1年内每个月会给予40G的使用量。 2：不可重置表示购买的资源包的使用量不会恢复。例如购买一个1年的按需资源包，使用量是40G，不可重置，表示1年内一共给予40G的使用量。
+     * @return quotaReuseMode
+     */
     public Integer getQuotaReuseMode() {
         return quotaReuseMode;
     }
@@ -353,9 +369,10 @@ public class FreeResourcePackageV3 {
         return this;
     }
 
-    /** 资源套餐内的资源项信息（资源项ID级的详情），具体参见表3。
-     * 
-     * @return freeResources */
+    /**
+     * 资源套餐内的资源项信息（资源项ID级的详情），具体参见表3。
+     * @return freeResources
+     */
     public List<FreeResourceV3> getFreeResources() {
         return freeResources;
     }
@@ -435,7 +452,10 @@ public class FreeResourcePackageV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AccessoryJsonFormatReq */
+/**
+ * AccessoryJsonFormatReq
+ */
 public class AccessoryJsonFormatReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AccessoryJsonFormatReq {
         return this;
     }
 
-    /** 文件名称
-     * 
-     * @return accessoryName */
+    /**
+     * 文件名称
+     * @return accessoryName
+     */
     public String getAccessoryName() {
         return accessoryName;
     }
@@ -49,9 +52,10 @@ public class AccessoryJsonFormatReq {
         return this;
     }
 
-    /** 文件来源
-     * 
-     * @return accessoryFrom */
+    /**
+     * 文件来源
+     * @return accessoryFrom
+     */
     public String getAccessoryFrom() {
         return accessoryFrom;
     }
@@ -65,9 +69,12 @@ public class AccessoryJsonFormatReq {
         return this;
     }
 
-    /** 上传类型 minimum: 0 maximum: 1
-     * 
-     * @return uploadType */
+    /**
+     * 上传类型
+     * minimum: 0
+     * maximum: 1
+     * @return uploadType
+     */
     public Integer getUploadType() {
         return uploadType;
     }
@@ -81,9 +88,10 @@ public class AccessoryJsonFormatReq {
         return this;
     }
 
-    /** 文件内容，Base64格式
-     * 
-     * @return accessoryData */
+    /**
+     * 文件内容，Base64格式
+     * @return accessoryData
+     */
     public String getAccessoryData() {
         return accessoryData;
     }
@@ -124,7 +132,10 @@ public class AccessoryJsonFormatReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

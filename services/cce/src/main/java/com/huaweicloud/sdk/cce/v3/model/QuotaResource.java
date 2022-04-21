@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuotaResource */
+/**
+ * QuotaResource
+ */
 public class QuotaResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return quotaKey */
+    /**
+     * 资源类型
+     * @return quotaKey
+     */
     public String getQuotaKey() {
         return quotaKey;
     }
@@ -59,9 +62,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 配额值
-     * 
-     * @return quotaLimit */
+    /**
+     * 配额值
+     * @return quotaLimit
+     */
     public Integer getQuotaLimit() {
         return quotaLimit;
     }
@@ -75,9 +79,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 已创建的资源个数
-     * 
-     * @return used */
+    /**
+     * 已创建的资源个数
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -91,9 +96,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 单位
-     * 
-     * @return unit */
+    /**
+     * 单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -107,9 +113,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 局点ID。若资源不涉及此参数，则不返回该参数。
-     * 
-     * @return regionId */
+    /**
+     * 局点ID。若资源不涉及此参数，则不返回该参数。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -123,9 +130,10 @@ public class QuotaResource {
         return this;
     }
 
-    /** 可用区ID。若资源不涉及此参数，则不返回该参数。
-     * 
-     * @return availabilityZoneId */
+    /**
+     * 可用区ID。若资源不涉及此参数，则不返回该参数。
+     * @return availabilityZoneId
+     */
     public String getAvailabilityZoneId() {
         return availabilityZoneId;
     }
@@ -169,7 +177,10 @@ public class QuotaResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

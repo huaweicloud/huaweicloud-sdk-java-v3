@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateTriggerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,37 +21,59 @@ public class UpdateTriggerRequest {
 
     private String functionUrn;
 
-    /** 触发器类型代码。 */
+    /**
+     * 触发器类型代码。
+     */
     public static final class TriggerTypeCodeEnum {
 
-        /** Enum TIMER for value: "TIMER" */
+        /**
+         * Enum TIMER for value: "TIMER"
+         */
         public static final TriggerTypeCodeEnum TIMER = new TriggerTypeCodeEnum("TIMER");
 
-        /** Enum APIG for value: "APIG" */
+        /**
+         * Enum APIG for value: "APIG"
+         */
         public static final TriggerTypeCodeEnum APIG = new TriggerTypeCodeEnum("APIG");
 
-        /** Enum CTS for value: "CTS" */
+        /**
+         * Enum CTS for value: "CTS"
+         */
         public static final TriggerTypeCodeEnum CTS = new TriggerTypeCodeEnum("CTS");
 
-        /** Enum DDS for value: "DDS" */
+        /**
+         * Enum DDS for value: "DDS"
+         */
         public static final TriggerTypeCodeEnum DDS = new TriggerTypeCodeEnum("DDS");
 
-        /** Enum DMS for value: "DMS" */
+        /**
+         * Enum DMS for value: "DMS"
+         */
         public static final TriggerTypeCodeEnum DMS = new TriggerTypeCodeEnum("DMS");
 
-        /** Enum DIS for value: "DIS" */
+        /**
+         * Enum DIS for value: "DIS"
+         */
         public static final TriggerTypeCodeEnum DIS = new TriggerTypeCodeEnum("DIS");
 
-        /** Enum LTS for value: "LTS" */
+        /**
+         * Enum LTS for value: "LTS"
+         */
         public static final TriggerTypeCodeEnum LTS = new TriggerTypeCodeEnum("LTS");
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
 
-        /** Enum SMN for value: "SMN" */
+        /**
+         * Enum SMN for value: "SMN"
+         */
         public static final TriggerTypeCodeEnum SMN = new TriggerTypeCodeEnum("SMN");
 
-        /** Enum KAFKA for value: "KAFKA" */
+        /**
+         * Enum KAFKA for value: "KAFKA"
+         */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
@@ -142,9 +166,10 @@ public class UpdateTriggerRequest {
         return this;
     }
 
-    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * 
-     * @return functionUrn */
+    /**
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * @return functionUrn
+     */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -158,9 +183,10 @@ public class UpdateTriggerRequest {
         return this;
     }
 
-    /** 触发器类型代码。
-     * 
-     * @return triggerTypeCode */
+    /**
+     * 触发器类型代码。
+     * @return triggerTypeCode
+     */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
         return triggerTypeCode;
     }
@@ -174,9 +200,10 @@ public class UpdateTriggerRequest {
         return this;
     }
 
-    /** 触发器编码。
-     * 
-     * @return triggerId */
+    /**
+     * 触发器编码。
+     * @return triggerId
+     */
     public String getTriggerId() {
         return triggerId;
     }
@@ -199,9 +226,10 @@ public class UpdateTriggerRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public UpdateTriggerRequestBody getBody() {
         return body;
     }
@@ -242,7 +270,10 @@ public class UpdateTriggerRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

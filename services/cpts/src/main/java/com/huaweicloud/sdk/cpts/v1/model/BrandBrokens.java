@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BrandBrokens */
+/**
+ * BrandBrokens
+ */
 public class BrandBrokens {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BrandBrokens {
         return this;
     }
 
-    /** 接收字节数
-     * 
-     * @return recBytes */
+    /**
+     * 接收字节数
+     * @return recBytes
+     */
     public List<Double> getRecBytes() {
         return recBytes;
     }
@@ -74,9 +77,10 @@ public class BrandBrokens {
         return this;
     }
 
-    /** 发送字节数
-     * 
-     * @return sentBytes */
+    /**
+     * 发送字节数
+     * @return sentBytes
+     */
     public List<Double> getSentBytes() {
         return sentBytes;
     }
@@ -113,7 +117,10 @@ public class BrandBrokens {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCloudConnectionRoutesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class ShowCloudConnectionRoutesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get cloudConnectionRoute
-     * 
-     * @return cloudConnectionRoute */
+    /**
+     * Get cloudConnectionRoute
+     * @return cloudConnectionRoute
+     */
     public CloudConnectionRoute getCloudConnectionRoute() {
         return cloudConnectionRoute;
     }
@@ -51,9 +54,10 @@ public class ShowCloudConnectionRoutesResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -90,7 +94,10 @@ public class ShowCloudConnectionRoutesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

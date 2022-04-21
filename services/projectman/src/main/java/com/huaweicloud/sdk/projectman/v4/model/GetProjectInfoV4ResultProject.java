@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目信息 */
+/**
+ * 项目信息
+ */
 public class GetProjectInfoV4ResultProject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目numId
-     * 
-     * @return projectNumId */
+    /**
+     * 项目numId
+     * @return projectNumId
+     */
     public Integer getProjectNumId() {
         return projectNumId;
     }
@@ -80,9 +83,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目uuid
-     * 
-     * @return projectId */
+    /**
+     * 项目uuid
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -96,9 +100,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return name */
+    /**
+     * 项目名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -112,9 +117,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目创建时间
-     * 
-     * @return createdOn */
+    /**
+     * 项目创建时间
+     * @return createdOn
+     */
     public Long getCreatedOn() {
         return createdOn;
     }
@@ -128,9 +134,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目更新时间
-     * 
-     * @return updatedOn */
+    /**
+     * 项目更新时间
+     * @return updatedOn
+     */
     public Long getUpdatedOn() {
         return updatedOn;
     }
@@ -144,9 +151,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目类型
-     * 
-     * @return projectType */
+    /**
+     * 项目类型
+     * @return projectType
+     */
     public String getProjectType() {
         return projectType;
     }
@@ -160,9 +168,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 是否归档
-     * 
-     * @return archive */
+    /**
+     * 是否归档
+     * @return archive
+     */
     public Integer getArchive() {
         return archive;
     }
@@ -176,9 +185,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseId */
+    /**
+     * 企业项目id
+     * @return enterpriseId
+     */
     public String getEnterpriseId() {
         return enterpriseId;
     }
@@ -192,9 +202,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** 项目代号
-     * 
-     * @return projectCode */
+    /**
+     * 项目代号
+     * @return projectCode
+     */
     public String getProjectCode() {
         return projectCode;
     }
@@ -217,9 +228,10 @@ public class GetProjectInfoV4ResultProject {
         return this;
     }
 
-    /** Get creator
-     * 
-     * @return creator */
+    /**
+     * Get creator
+     * @return creator
+     */
     public GetProjectInfoV4ResultProjectCreator getCreator() {
         return creator;
     }
@@ -281,7 +293,10 @@ public class GetProjectInfoV4ResultProject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** StreamTranscodingTemplate */
+/**
+ * StreamTranscodingTemplate
+ */
 public class StreamTranscodingTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class StreamTranscodingTemplate {
         return this;
     }
 
-    /** 推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -47,9 +50,10 @@ public class StreamTranscodingTemplate {
         return this;
     }
 
-    /** 应用名称。 默认为“live”，若您需要自定义应用名称，请先提交工单申请。
-     * 
-     * @return appName */
+    /**
+     * 应用名称。 默认为“live”，若您需要自定义应用名称，请先提交工单申请。 
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -79,9 +83,10 @@ public class StreamTranscodingTemplate {
         return this;
     }
 
-    /** 视频质量信息
-     * 
-     * @return qualityInfo */
+    /**
+     * 视频质量信息
+     * @return qualityInfo
+     */
     public List<QualityInfo> getQualityInfo() {
         return qualityInfo;
     }
@@ -120,7 +125,10 @@ public class StreamTranscodingTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** volume信息。当flavorRef选择的是本地盘规格时不需要填写，本地盘规格可以通过获取实例规格列表接口获取。目前支持的本地盘规格有： - ess.spec-i3small - ess.spec-i3medium -
- * ess.spec-i3.8xlarge.8 - ess.spec-ds.xlarge.8 - ess.spec-ds.2xlarge.8 - ess.spec-ds.4xlarge.8 */
+/**
+ * volume信息。当flavorRef选择的是本地盘规格时不需要填写，本地盘规格可以通过获取实例规格列表接口获取。目前支持的本地盘规格有： - ess.spec-i3small - ess.spec-i3medium - ess.spec-i3.8xlarge.8 - ess.spec-ds.xlarge.8 - ess.spec-ds.2xlarge.8 - ess.spec-ds.4xlarge.8
+ */
 public class CreateClusterInstanceVolumeBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +25,10 @@ public class CreateClusterInstanceVolumeBody {
         return this;
     }
 
-    /** 卷类型。 - COMMON：普通I/O。 - HIGH：高I/O。 - ULTRAHIGH：超高I/O。
-     * 
-     * @return volumeType */
+    /**
+     * 卷类型。  - COMMON：普通I/O。 - HIGH：高I/O。 - ULTRAHIGH：超高I/O。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -40,9 +42,10 @@ public class CreateClusterInstanceVolumeBody {
         return this;
     }
 
-    /** 卷大小，必须为4和10的倍数。 单位：GB。
-     * 
-     * @return size */
+    /**
+     * 卷大小，必须为4和10的倍数。 单位：GB。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -79,7 +82,10 @@ public class CreateClusterInstanceVolumeBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

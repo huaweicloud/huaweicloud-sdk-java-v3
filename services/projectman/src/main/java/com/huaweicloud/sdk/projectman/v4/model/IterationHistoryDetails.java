@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 操作详情 */
+/**
+ * 操作详情
+ */
 public class IterationHistoryDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class IterationHistoryDetails {
         return this;
     }
 
-    /** 变更的字段
-     * 
-     * @return operateFieldName */
+    /**
+     * 变更的字段
+     * @return operateFieldName
+     */
     public String getOperateFieldName() {
         return operateFieldName;
     }
@@ -44,9 +47,10 @@ public class IterationHistoryDetails {
         return this;
     }
 
-    /** 操作后的值
-     * 
-     * @return newValue */
+    /**
+     * 操作后的值
+     * @return newValue
+     */
     public String getNewValue() {
         return newValue;
     }
@@ -60,9 +64,10 @@ public class IterationHistoryDetails {
         return this;
     }
 
-    /** 操作前的值
-     * 
-     * @return oldValue */
+    /**
+     * 操作前的值
+     * @return oldValue
+     */
     public String getOldValue() {
         return oldValue;
     }
@@ -101,7 +106,10 @@ public class IterationHistoryDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

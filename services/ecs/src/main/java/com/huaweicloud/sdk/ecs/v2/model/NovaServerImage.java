@@ -28,9 +28,10 @@ public class NovaServerImage {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return id */
+    /**
+     * 镜像ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +61,10 @@ public class NovaServerImage {
         return this;
     }
 
-    /** 云服务器类型相关标记快捷链接信息。
-     * 
-     * @return links */
+    /**
+     * 云服务器类型相关标记快捷链接信息。
+     * @return links
+     */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -98,7 +100,10 @@ public class NovaServerImage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

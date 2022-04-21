@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** VariableDetail */
+/**
+ * VariableDetail
+ */
 public class VariableDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,12 @@ public class VariableDetail {
         return this;
     }
 
-    /** file_size minimum: 0 maximum: 2147483647
-     * 
-     * @return fileSize */
+    /**
+     * file_size
+     * minimum: 0
+     * maximum: 2147483647
+     * @return fileSize
+     */
     public Integer getFileSize() {
         return fileSize;
     }
@@ -62,9 +67,12 @@ public class VariableDetail {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -78,9 +86,10 @@ public class VariableDetail {
         return this;
     }
 
-    /** 是否被引用
-     * 
-     * @return isQuoted */
+    /**
+     * 是否被引用
+     * @return isQuoted
+     */
     public Boolean getIsQuoted() {
         return isQuoted;
     }
@@ -94,9 +103,10 @@ public class VariableDetail {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -126,9 +136,10 @@ public class VariableDetail {
         return this;
     }
 
-    /** variable
-     * 
-     * @return variable */
+    /**
+     * variable
+     * @return variable
+     */
     public List<Object> getVariable() {
         return variable;
     }
@@ -142,9 +153,12 @@ public class VariableDetail {
         return this;
     }
 
-    /** variable_type minimum: 0 maximum: 2147483647
-     * 
-     * @return variableType */
+    /**
+     * variable_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return variableType
+     */
     public Integer getVariableType() {
         return variableType;
     }
@@ -187,7 +201,10 @@ public class VariableDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

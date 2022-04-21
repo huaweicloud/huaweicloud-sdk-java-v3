@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设备模板 */
+/**
+ * 设备模板
+ */
 public class DeviceTemplateUpdateDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** 设备模板描述,最大长度255
-     * 
-     * @return description */
+    /**
+     * 设备模板描述,最大长度255
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,9 +81,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** 终端设备静态属性，最多64个键值。
-     * 
-     * @return attributes */
+    /**
+     * 终端设备静态属性，最多64个键值。
+     * @return attributes
+     */
     public Map<String, ValueInAttributes> getAttributes() {
         return attributes;
     }
@@ -110,9 +114,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** 终端设备动态属性
-     * 
-     * @return twin */
+    /**
+     * 终端设备动态属性
+     * @return twin
+     */
     public Map<String, ValueInTwin> getTwin() {
         return twin;
     }
@@ -135,9 +140,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** Get tags
-     * 
-     * @return tags */
+    /**
+     * Get tags
+     * @return tags
+     */
     public DeviceTemplateUpdateDetailTags getTags() {
         return tags;
     }
@@ -151,9 +157,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议
-     * 
-     * @return accessProtocol */
+    /**
+     * - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议
+     * @return accessProtocol
+     */
     public String getAccessProtocol() {
         return accessProtocol;
     }
@@ -185,9 +192,10 @@ public class DeviceTemplateUpdateDetail {
         return this;
     }
 
-    /** 孪生属性配置，与access_protocol关联。
-     * 
-     * @return propertyVisitors */
+    /**
+     * 孪生属性配置，与access_protocol关联。
+     * @return propertyVisitors
+     */
     public Map<String, ValueInPropertyVisitors> getPropertyVisitors() {
         return propertyVisitors;
     }
@@ -232,7 +240,10 @@ public class DeviceTemplateUpdateDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

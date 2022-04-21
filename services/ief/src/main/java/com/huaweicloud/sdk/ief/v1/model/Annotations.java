@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 应用扩展功能配置选项 */
+/**
+ * 应用扩展功能配置选项
+ */
 public class Annotations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Annotations {
         return this;
     }
 
-    /** 生成ranktablefile。 该参数目前只支持赋值\"ascend-1980\"，指昇腾D910。
-     * 
-     * @return ringController */
+    /**
+     * 生成ranktablefile。 该参数目前只支持赋值\"ascend-1980\"，指昇腾D910。
+     * @return ringController
+     */
     public String getRingController() {
         return ringController;
     }
@@ -39,9 +42,10 @@ public class Annotations {
         return this;
     }
 
-    /** 离线自愈功能配置字段，须填写调度的节点组id
-     * 
-     * @return autonomyEdgeSelector */
+    /**
+     * 离线自愈功能配置字段，须填写调度的节点组id
+     * @return autonomyEdgeSelector
+     */
     public String getAutonomyEdgeSelector() {
         return autonomyEdgeSelector;
     }
@@ -78,7 +82,10 @@ public class Annotations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

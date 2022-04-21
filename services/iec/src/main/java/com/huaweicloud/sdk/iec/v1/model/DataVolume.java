@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据盘参数 */
+/**
+ * 数据盘参数
+ */
 public class DataVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class DataVolume {
         return this;
     }
 
-    /** 数据盘大小，容量单位为GB，输入大小范围为[1,500]。 minimum: 1 maximum: 500
-     * 
-     * @return size */
+    /**
+     * 数据盘大小，容量单位为GB，输入大小范围为[1,500]。
+     * minimum: 1
+     * maximum: 500
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -39,9 +44,10 @@ public class DataVolume {
         return this;
     }
 
-    /** 边缘实例数据盘对应的磁盘类型，需要与站点所提供的磁盘类型相匹配。
-     * 
-     * @return volumeType */
+    /**
+     * 边缘实例数据盘对应的磁盘类型，需要与站点所提供的磁盘类型相匹配。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -77,7 +83,10 @@ public class DataVolume {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

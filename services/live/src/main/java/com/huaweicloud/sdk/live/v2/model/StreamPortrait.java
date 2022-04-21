@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StreamPortrait */
+/**
+ * StreamPortrait
+ */
 public class StreamPortrait {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 统计日期，日期格式按照ISO8601表示法，格式：YYYYMMDD，如20200904。统计该统计日期00:00-23:59时段的播放画像信息。
-     * 
-     * @return time */
+    /**
+     * 统计日期，日期格式按照ISO8601表示法，格式：YYYYMMDD，如20200904。统计该统计日期00:00-23:59时段的播放画像信息。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -69,9 +72,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 累计流量，单位为byte。 minimum: 0 maximum: -1
-     * 
-     * @return flow */
+    /**
+     * 累计流量，单位为byte。
+     * minimum: 0
+     * maximum: -1
+     * @return flow
+     */
     public Long getFlow() {
         return flow;
     }
@@ -85,9 +91,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 累计播放时长,单位为秒。 minimum: 0 maximum: -1
-     * 
-     * @return playDuration */
+    /**
+     * 累计播放时长,单位为秒。
+     * minimum: 0
+     * maximum: -1
+     * @return playDuration
+     */
     public Long getPlayDuration() {
         return playDuration;
     }
@@ -101,9 +110,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 累计请求次数。 minimum: 0 maximum: -1
-     * 
-     * @return requestCount */
+    /**
+     * 累计请求次数。
+     * minimum: 0
+     * maximum: -1
+     * @return requestCount
+     */
     public Long getRequestCount() {
         return requestCount;
     }
@@ -117,9 +129,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 累计观看人数,根据IP去重。 minimum: 0 maximum: -1
-     * 
-     * @return userCount */
+    /**
+     * 累计观看人数,根据IP去重。
+     * minimum: 0
+     * maximum: -1
+     * @return userCount
+     */
     public Long getUserCount() {
         return userCount;
     }
@@ -133,9 +148,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 峰值观看人数,flv/rtmp协议是统计Session会话ID，其它协议统计IP,1分钟的采样数据。 minimum: 0 maximum: -1
-     * 
-     * @return peakUserCount */
+    /**
+     * 峰值观看人数,flv/rtmp协议是统计Session会话ID，其它协议统计IP,1分钟的采样数据。
+     * minimum: 0
+     * maximum: -1
+     * @return peakUserCount
+     */
     public Long getPeakUserCount() {
         return peakUserCount;
     }
@@ -149,9 +167,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 峰值带宽，单位bps,5分钟的采样数据。 minimum: 0 maximum: -1
-     * 
-     * @return peakBandwidth */
+    /**
+     * 峰值带宽，单位bps,5分钟的采样数据。
+     * minimum: 0
+     * maximum: -1
+     * @return peakBandwidth
+     */
     public Long getPeakBandwidth() {
         return peakBandwidth;
     }
@@ -165,9 +186,12 @@ public class StreamPortrait {
         return this;
     }
 
-    /** 累计直播(推流)时长,单位为秒。 minimum: 0 maximum: -1
-     * 
-     * @return pushDuration */
+    /**
+     * 累计直播(推流)时长,单位为秒。
+     * minimum: 0
+     * maximum: -1
+     * @return pushDuration
+     */
     public Long getPushDuration() {
         return pushDuration;
     }
@@ -216,7 +240,10 @@ public class StreamPortrait {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

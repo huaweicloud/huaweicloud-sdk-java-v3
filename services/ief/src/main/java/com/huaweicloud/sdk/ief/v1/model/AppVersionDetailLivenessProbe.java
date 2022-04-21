@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 工作负载存活探针 */
+/**
+ * 工作负载存活探针
+ */
 public class AppVersionDetailLivenessProbe {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class AppVersionDetailLivenessProbe {
         return this;
     }
 
-    /** 执行探测的命令行命令，长度1-10240内的字符串
-     * 
-     * @return execCommand */
+    /**
+     * 执行探测的命令行命令，长度1-10240内的字符串
+     * @return execCommand
+     */
     public String getExecCommand() {
         return execCommand;
     }
@@ -59,9 +62,10 @@ public class AppVersionDetailLivenessProbe {
         return this;
     }
 
-    /** Get httpGet
-     * 
-     * @return httpGet */
+    /**
+     * Get httpGet
+     * @return httpGet
+     */
     public InstancesLivenessProbeHttpGet getHttpGet() {
         return httpGet;
     }
@@ -75,9 +79,10 @@ public class AppVersionDetailLivenessProbe {
         return this;
     }
 
-    /** 表示从工作负载启动后从多久开始探测，大于0且不大于3600的整数，默认为10
-     * 
-     * @return initialDelaySeconds */
+    /**
+     * 表示从工作负载启动后从多久开始探测，大于0且不大于3600的整数，默认为10
+     * @return initialDelaySeconds
+     */
     public Integer getInitialDelaySeconds() {
         return initialDelaySeconds;
     }
@@ -91,9 +96,10 @@ public class AppVersionDetailLivenessProbe {
         return this;
     }
 
-    /** 表示探测超时时间，大于0且不大于3600的整数，默认为1
-     * 
-     * @return timeoutSeconds */
+    /**
+     * 表示探测超时时间，大于0且不大于3600的整数，默认为1
+     * @return timeoutSeconds
+     */
     public Integer getTimeoutSeconds() {
         return timeoutSeconds;
     }
@@ -134,7 +140,10 @@ public class AppVersionDetailLivenessProbe {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

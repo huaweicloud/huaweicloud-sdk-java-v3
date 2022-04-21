@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowMessagesRespMessages */
+/**
+ * ShowMessagesRespMessages
+ */
 public class ShowMessagesRespMessages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowMessagesRespMessages {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -54,9 +57,10 @@ public class ShowMessagesRespMessages {
         return this;
     }
 
-    /** 分区编号。
-     * 
-     * @return partition */
+    /**
+     * 分区编号。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -70,9 +74,10 @@ public class ShowMessagesRespMessages {
         return this;
     }
 
-    /** 消息编号。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息编号。
+     * @return messageOffset
+     */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -86,9 +91,10 @@ public class ShowMessagesRespMessages {
         return this;
     }
 
-    /** 消息大小，单位字节。
-     * 
-     * @return size */
+    /**
+     * 消息大小，单位字节。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -102,9 +108,10 @@ public class ShowMessagesRespMessages {
         return this;
     }
 
-    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
-     * 
-     * @return timestamp */
+    /**
+     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -147,7 +154,10 @@ public class ShowMessagesRespMessages {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

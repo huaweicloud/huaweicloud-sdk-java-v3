@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBugDensityV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 指标分子数值
-     * 
-     * @return dividendValue */
+    /**
+     * 指标分子数值
+     * @return dividendValue
+     */
     public String getDividendValue() {
         return dividendValue;
     }
@@ -60,9 +63,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 指标分母数值
-     * 
-     * @return divisorValue */
+    /**
+     * 指标分母数值
+     * @return divisorValue
+     */
     public String getDivisorValue() {
         return divisorValue;
     }
@@ -76,9 +80,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 指标名称
-     * 
-     * @return metricName */
+    /**
+     * 指标名称
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -92,9 +97,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 指标数值
-     * 
-     * @return metricValue */
+    /**
+     * 指标数值
+     * @return metricValue
+     */
     public String getMetricValue() {
         return metricValue;
     }
@@ -108,9 +114,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -124,9 +131,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -171,7 +179,10 @@ public class ShowBugDensityV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

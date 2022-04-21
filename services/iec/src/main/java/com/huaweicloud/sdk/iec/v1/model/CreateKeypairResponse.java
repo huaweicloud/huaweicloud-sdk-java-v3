@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateKeypairResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥对名称。
-     * 
-     * @return name */
+    /**
+     * 密钥对名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -55,9 +58,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 公钥。
-     * 
-     * @return publicKey */
+    /**
+     * 公钥。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -71,9 +75,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 私钥。
-     * 
-     * @return privateKey */
+    /**
+     * 私钥。
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -87,9 +92,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -103,9 +109,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    /** 指纹。
-     * 
-     * @return fingerprint */
+    /**
+     * 指纹。
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -148,7 +155,10 @@ public class CreateKeypairResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBareMetalServerDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListBareMetalServerDetailsRequest {
         return this;
     }
 
-    /** 裸金属服务器ID
-     * 
-     * @return serverId */
+    /**
+     * 裸金属服务器ID
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -55,7 +58,10 @@ public class ListBareMetalServerDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

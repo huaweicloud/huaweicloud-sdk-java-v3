@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListInstanceTopicsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** topic总数。
-     * 
-     * @return total */
+    /**
+     * topic总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -58,9 +61,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分页查询的大小。
-     * 
-     * @return size */
+    /**
+     * 分页查询的大小。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -74,9 +78,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 剩余分区数。
-     * 
-     * @return remainPartitions */
+    /**
+     * 剩余分区数。
+     * @return remainPartitions
+     */
     public Integer getRemainPartitions() {
         return remainPartitions;
     }
@@ -90,9 +95,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分区总数。
-     * 
-     * @return maxPartitions */
+    /**
+     * 分区总数。
+     * @return maxPartitions
+     */
     public Integer getMaxPartitions() {
         return maxPartitions;
     }
@@ -122,9 +128,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** topic列表。
-     * 
-     * @return topics */
+    /**
+     * topic列表。
+     * @return topics
+     */
     public List<TopicEntity> getTopics() {
         return topics;
     }
@@ -167,7 +174,10 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

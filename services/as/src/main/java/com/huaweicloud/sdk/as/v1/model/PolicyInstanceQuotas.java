@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配额列表 */
+/**
+ * 配额列表
+ */
 public class PolicyInstanceQuotas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class PolicyInstanceQuotas {
         return this;
     }
 
-    /** 配额资源详情。
-     * 
-     * @return resources */
+    /**
+     * 配额资源详情。
+     * @return resources
+     */
     public List<PolicyInstanceResources> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class PolicyInstanceQuotas {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

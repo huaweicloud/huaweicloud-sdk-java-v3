@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** used_rds 返回参数 */
+/**
+ * used_rds 返回参数
+ */
 public class GetDatabaseUsedRds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class GetDatabaseUsedRds {
         return this;
     }
 
-    /** 关联RDS节点ID。
-     * 
-     * @return id */
+    /**
+     * 关联RDS节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class GetDatabaseUsedRds {
         return this;
     }
 
-    /** 关联RDS名称
-     * 
-     * @return name */
+    /**
+     * 关联RDS名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class GetDatabaseUsedRds {
         return this;
     }
 
-    /** 关联RDS状态。
-     * 
-     * @return status */
+    /**
+     * 关联RDS状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -81,9 +86,10 @@ public class GetDatabaseUsedRds {
         return this;
     }
 
-    /** 响应信息，若无异常信息则不返回该参数。
-     * 
-     * @return errorMsg */
+    /**
+     * 响应信息，若无异常信息则不返回该参数。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -123,7 +129,10 @@ public class GetDatabaseUsedRds {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 属性过滤器 */
+/**
+ * 属性过滤器
+ */
 public class PropertyFilter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PropertyFilter {
         return this;
     }
 
-    /** 过滤属性名称，正则：\"^[a-zA-Z0-9_]{1,64}$\"
-     * 
-     * @return propertyName */
+    /**
+     * 过滤属性名称，正则：\"^[a-zA-Z0-9_]{1,64}$\"
+     * @return propertyName
+     */
     public String getPropertyName() {
         return propertyName;
     }
@@ -44,9 +47,10 @@ public class PropertyFilter {
         return this;
     }
 
-    /** 过滤操作方式,当前仅支持“=”
-     * 
-     * @return operator */
+    /**
+     * 过滤操作方式,当前仅支持“=”
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -60,9 +64,10 @@ public class PropertyFilter {
         return this;
     }
 
-    /** 过滤属性值
-     * 
-     * @return value */
+    /**
+     * 过滤属性值
+     * @return value
+     */
     public Object getValue() {
         return value;
     }
@@ -101,7 +106,10 @@ public class PropertyFilter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

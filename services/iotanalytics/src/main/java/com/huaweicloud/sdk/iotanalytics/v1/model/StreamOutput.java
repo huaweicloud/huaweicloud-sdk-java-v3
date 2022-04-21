@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 流计算输出映射 */
+/**
+ * 流计算输出映射
+ */
 public class StreamOutput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StreamOutput {
         return this;
     }
 
-    /** 输出参数名称，必须是接收数据类型为资产数据的实时分析作业中已定义的
-     * 
-     * @return name */
+    /**
+     * 输出参数名称，必须是接收数据类型为资产数据的实时分析作业中已定义的
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class StreamOutput {
         return this;
     }
 
-    /** 输出属性名，必须是本模型分析任务类别的属性的属性名
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名，必须是本模型分析任务类别的属性的属性名
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -78,7 +82,10 @@ public class StreamOutput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

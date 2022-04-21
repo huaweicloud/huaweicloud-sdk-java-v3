@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点对象。 */
+/**
+ * 节点对象。
+ */
 public class ClusterDetailInstances {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 状态。 - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
-     * 
-     * @return status */
+    /**
+     * 状态。  - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -59,9 +62,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 支持类型：ess（Elasticsearch节点）。
-     * 
-     * @return type */
+    /**
+     * 支持类型：ess（Elasticsearch节点）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -75,9 +79,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -91,9 +96,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 实例名字。
-     * 
-     * @return name */
+    /**
+     * 实例名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 节点规格名称。
-     * 
-     * @return specCode */
+    /**
+     * 节点规格名称。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -123,9 +130,10 @@ public class ClusterDetailInstances {
         return this;
     }
 
-    /** 节点所属AZ信息。
-     * 
-     * @return azCode */
+    /**
+     * 节点所属AZ信息。
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -170,7 +178,10 @@ public class ClusterDetailInstances {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

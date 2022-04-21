@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowInstanceExtendProductInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class ShowInstanceExtendProductInfoRequest {
 
     private String instanceId;
 
-    /** 产品的类型。 - advanced：专享版 - platinum：铂金版 - dec：专属云版 - exp：体验版 */
+    /**
+     * 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
+     */
     public static final class TypeEnum {
 
-        /** Enum ADVANCED for value: "advanced" */
+        /**
+         * Enum ADVANCED for value: "advanced"
+         */
         public static final TypeEnum ADVANCED = new TypeEnum("advanced");
 
-        /** Enum PLATINUM for value: "platinum" */
+        /**
+         * Enum PLATINUM for value: "platinum"
+         */
         public static final TypeEnum PLATINUM = new TypeEnum("platinum");
 
-        /** Enum DEC for value: "dec" */
+        /**
+         * Enum DEC for value: "dec"
+         */
         public static final TypeEnum DEC = new TypeEnum("dec");
 
-        /** Enum EXP for value: "exp" */
+        /**
+         * Enum EXP for value: "exp"
+         */
         public static final TypeEnum EXP = new TypeEnum("exp");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +124,10 @@ public class ShowInstanceExtendProductInfoRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -128,9 +141,10 @@ public class ShowInstanceExtendProductInfoRequest {
         return this;
     }
 
-    /** 产品的类型。 - advanced：专享版 - platinum：铂金版 - dec：专属云版 - exp：体验版
-     * 
-     * @return type */
+    /**
+     * 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -144,9 +158,10 @@ public class ShowInstanceExtendProductInfoRequest {
         return this;
     }
 
-    /** 消息引擎的类型。支持的类型为rabbitmq。
-     * 
-     * @return engine */
+    /**
+     * 消息引擎的类型。支持的类型为rabbitmq。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -186,7 +201,10 @@ public class ShowInstanceExtendProductInfoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

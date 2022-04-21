@@ -113,9 +113,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 身份证号（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return idNumber */
+    /**
+     * 身份证号（非必有，依赖对应从业资格证板式）。 
+     * @return idNumber
+     */
     public String getIdNumber() {
         return idNumber;
     }
@@ -129,9 +130,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 考核时间（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return assessmentDate */
+    /**
+     * 考核时间（非必有，依赖对应从业资格证板式）。 
+     * @return assessmentDate
+     */
     public String getAssessmentDate() {
         return assessmentDate;
     }
@@ -145,9 +147,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 从业资格证号。
-     * 
-     * @return certificateNumber */
+    /**
+     * 从业资格证号。 
+     * @return certificateNumber
+     */
     public String getCertificateNumber() {
         return certificateNumber;
     }
@@ -161,9 +164,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 档案号（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return fileNumber */
+    /**
+     * 档案号（非必有，依赖对应从业资格证板式）。 
+     * @return fileNumber
+     */
     public String getFileNumber() {
         return fileNumber;
     }
@@ -177,9 +181,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 福路通号（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return unionCardNumber */
+    /**
+     * 福路通号（非必有，依赖对应从业资格证板式）。 
+     * @return unionCardNumber
+     */
     public String getUnionCardNumber() {
         return unionCardNumber;
     }
@@ -193,9 +198,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 继续教育信息（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return continuingEducationInfo */
+    /**
+     * 继续教育信息（非必有，依赖对应从业资格证板式）。 
+     * @return continuingEducationInfo
+     */
     public String getContinuingEducationInfo() {
         return continuingEducationInfo;
     }
@@ -209,9 +215,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 性别（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return sex */
+    /**
+     * 性别（非必有，依赖对应从业资格证板式）。 
+     * @return sex
+     */
     public String getSex() {
         return sex;
     }
@@ -225,9 +232,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 联系电话（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return phoneNumber */
+    /**
+     * 联系电话（非必有，依赖对应从业资格证板式）。 
+     * @return phoneNumber
+     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -241,9 +249,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 登记时间（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return registrationDate */
+    /**
+     * 登记时间（非必有，依赖对应从业资格证板式）。 
+     * @return registrationDate
+     */
     public String getRegistrationDate() {
         return registrationDate;
     }
@@ -257,9 +266,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 单位（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return workUnit */
+    /**
+     * 单位（非必有，依赖对应从业资格证板式）。 
+     * @return workUnit
+     */
     public String getWorkUnit() {
         return workUnit;
     }
@@ -273,9 +283,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 诚信考核信息（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return integrityAssessmentInfo */
+    /**
+     * 诚信考核信息（非必有，依赖对应从业资格证板式）。 
+     * @return integrityAssessmentInfo
+     */
     public String getIntegrityAssessmentInfo() {
         return integrityAssessmentInfo;
     }
@@ -289,9 +300,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 国籍（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return nationality */
+    /**
+     * 国籍（非必有，依赖对应从业资格证板式）。 
+     * @return nationality
+     */
     public String getNationality() {
         return nationality;
     }
@@ -305,9 +317,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 姓名。
-     * 
-     * @return name */
+    /**
+     * 姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -321,9 +334,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 住址。
-     * 
-     * @return address */
+    /**
+     * 住址。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -337,9 +351,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 准驾车型（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return drivingClass */
+    /**
+     * 准驾车型（非必有，依赖对应从业资格证板式）。 
+     * @return drivingClass
+     */
     public String getDrivingClass() {
         return drivingClass;
     }
@@ -353,9 +368,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 发证机关（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return issuingAuthority */
+    /**
+     * 发证机关（非必有，依赖对应从业资格证板式）。 
+     * @return issuingAuthority
+     */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -369,9 +385,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 出生日期（非必有，依赖对应从业资格证板式）。
-     * 
-     * @return birthDate */
+    /**
+     * 出生日期（非必有，依赖对应从业资格证板式）。 
+     * @return birthDate
+     */
     public String getBirthDate() {
         return birthDate;
     }
@@ -404,9 +421,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** 从业资格列表。
-     * 
-     * @return qualificationCategoryList */
+    /**
+     * 从业资格列表。 
+     * @return qualificationCategoryList
+     */
     public List<QualificationCategory> getQualificationCategoryList() {
         return qualificationCategoryList;
     }
@@ -429,9 +447,10 @@ public class QualificationCertificateResult {
         return this;
     }
 
-    /** Get confidence
-     * 
-     * @return confidence */
+    /**
+     * Get confidence
+     * @return confidence
+     */
     public QualificationConfidence getConfidence() {
         return confidence;
     }
@@ -520,7 +539,10 @@ public class QualificationCertificateResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

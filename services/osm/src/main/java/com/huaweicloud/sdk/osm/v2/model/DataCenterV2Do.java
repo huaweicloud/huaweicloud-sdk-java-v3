@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DataCenterV2Do */
+/**
+ * DataCenterV2Do
+ */
 public class DataCenterV2Do {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class DataCenterV2Do {
         return this;
     }
 
-    /** 区域类型0大陆 1国际 minimum: 0 maximum: 10
-     * 
-     * @return type */
+    /**
+     * 区域类型0大陆 1国际
+     * minimum: 0
+     * maximum: 10
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -49,9 +54,10 @@ public class DataCenterV2Do {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -65,9 +71,10 @@ public class DataCenterV2Do {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return regionName */
+    /**
+     * 区域名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -81,9 +88,12 @@ public class DataCenterV2Do {
         return this;
     }
 
-    /** 是否敏感 minimum: 0 maximum: 1
-     * 
-     * @return isSensitive */
+    /**
+     * 是否敏感
+     * minimum: 0
+     * maximum: 1
+     * @return isSensitive
+     */
     public Integer getIsSensitive() {
         return isSensitive;
     }
@@ -123,7 +133,10 @@ public class DataCenterV2Do {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

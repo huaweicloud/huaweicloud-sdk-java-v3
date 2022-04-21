@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 配额 */
+/**
+ * 配额
+ */
 public class TagQuota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TagQuota {
         return this;
     }
 
-    /** 配额键
-     * 
-     * @return quotaKey */
+    /**
+     * 配额键
+     * @return quotaKey
+     */
     public String getQuotaKey() {
         return quotaKey;
     }
@@ -49,9 +52,10 @@ public class TagQuota {
         return this;
     }
 
-    /** 配额值
-     * 
-     * @return quotaLimit */
+    /**
+     * 配额值
+     * @return quotaLimit
+     */
     public Integer getQuotaLimit() {
         return quotaLimit;
     }
@@ -65,9 +69,10 @@ public class TagQuota {
         return this;
     }
 
-    /** 已使用
-     * 
-     * @return used */
+    /**
+     * 已使用
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -81,9 +86,10 @@ public class TagQuota {
         return this;
     }
 
-    /** 单位
-     * 
-     * @return unit */
+    /**
+     * 单位
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -122,7 +128,10 @@ public class TagQuota {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

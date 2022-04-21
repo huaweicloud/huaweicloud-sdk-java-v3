@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 铂金版实例ID，专业版实例为空值
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -49,9 +52,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 规则名称
-     * 
-     * @return name */
+    /**
+     * 规则名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 查询返回记录的数量限制
-     * 
-     * @return limit */
+    /**
+     * 查询返回记录的数量限制
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -81,9 +86,10 @@ public class ListRulesRequest {
         return this;
     }
 
-    /** 偏移量，表示查询该偏移量后面的记录
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示查询该偏移量后面的记录
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -123,7 +129,10 @@ public class ListRulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPublicipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,29 +38,44 @@ public class ListPublicipsRequest {
 
     private List<String> fields = null;
 
-    /** 排序，形式为\"sort_key=id\"
-     * 支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group */
+    /**
+    * 排序，形式为\"sort_key=id\"  支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group
+    */
     public static final class SortKeyEnum {
 
-        /** Enum ID for value: "id" */
+        /**
+         * Enum ID for value: "id"
+         */
         public static final SortKeyEnum ID = new SortKeyEnum("id");
 
-        /** Enum PUBLIC_IP_ADDRESS for value: "public_ip_address" */
+        /**
+         * Enum PUBLIC_IP_ADDRESS for value: "public_ip_address"
+         */
         public static final SortKeyEnum PUBLIC_IP_ADDRESS = new SortKeyEnum("public_ip_address");
 
-        /** Enum PUBLIC_IPV6_ADDRESS for value: "public_ipv6_address" */
+        /**
+         * Enum PUBLIC_IPV6_ADDRESS for value: "public_ipv6_address"
+         */
         public static final SortKeyEnum PUBLIC_IPV6_ADDRESS = new SortKeyEnum("public_ipv6_address");
 
-        /** Enum IP_VERSION for value: "ip_version" */
+        /**
+         * Enum IP_VERSION for value: "ip_version"
+         */
         public static final SortKeyEnum IP_VERSION = new SortKeyEnum("ip_version");
 
-        /** Enum CREATED_AT for value: "created_at" */
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
 
-        /** Enum UPDATED_AT for value: "updated_at" */
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
 
-        /** Enum PUBLIC_BORDER_GROUP for value: "public_border_group" */
+        /**
+         * Enum PUBLIC_BORDER_GROUP for value: "public_border_group"
+         */
         public static final SortKeyEnum PUBLIC_BORDER_GROUP = new SortKeyEnum("public_border_group");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -133,13 +150,19 @@ public class ListPublicipsRequest {
 
     private SortKeyEnum sortKey;
 
-    /** 排序方向 取值范围：asc、desc */
+    /**
+     * 排序方向  取值范围：asc、desc
+     */
     public static final class SortDirEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -214,13 +237,19 @@ public class ListPublicipsRequest {
 
     private List<String> id = null;
 
-    /** Gets or Sets ipVersion */
+    /**
+    * Gets or Sets ipVersion
+    */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -310,16 +339,24 @@ public class ListPublicipsRequest {
 
     private String publicIpv6AddressLike;
 
-    /** Gets or Sets type */
+    /**
+     * Gets or Sets type
+     */
     public static final class TypeEnum {
 
-        /** Enum EIP for value: "EIP" */
+        /**
+         * Enum EIP for value: "EIP"
+         */
         public static final TypeEnum EIP = new TypeEnum("EIP");
 
-        /** Enum DUALSTACK for value: "DUALSTACK" */
+        /**
+         * Enum DUALSTACK for value: "DUALSTACK"
+         */
         public static final TypeEnum DUALSTACK = new TypeEnum("DUALSTACK");
 
-        /** Enum DUALSTACK_SUBNET for value: "DUALSTACK_SUBNET" */
+        /**
+         * Enum DUALSTACK_SUBNET for value: "DUALSTACK_SUBNET"
+         */
         public static final TypeEnum DUALSTACK_SUBNET = new TypeEnum("DUALSTACK_SUBNET");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -390,25 +427,39 @@ public class ListPublicipsRequest {
 
     private List<TypeEnum> type = null;
 
-    /** Gets or Sets networkType */
+    /**
+    * Gets or Sets networkType
+    */
     public static final class NetworkTypeEnum {
 
-        /** Enum _5_TELCOM for value: "5_telcom" */
+        /**
+         * Enum _5_TELCOM for value: "5_telcom"
+         */
         public static final NetworkTypeEnum _5_TELCOM = new NetworkTypeEnum("5_telcom");
 
-        /** Enum _5_UNION for value: "5_union" */
+        /**
+         * Enum _5_UNION for value: "5_union"
+         */
         public static final NetworkTypeEnum _5_UNION = new NetworkTypeEnum("5_union");
 
-        /** Enum _5_BGP for value: "5_bgp" */
+        /**
+         * Enum _5_BGP for value: "5_bgp"
+         */
         public static final NetworkTypeEnum _5_BGP = new NetworkTypeEnum("5_bgp");
 
-        /** Enum _5_SBGP for value: "5_sbgp" */
+        /**
+         * Enum _5_SBGP for value: "5_sbgp"
+         */
         public static final NetworkTypeEnum _5_SBGP = new NetworkTypeEnum("5_sbgp");
 
-        /** Enum _5_IPV6 for value: "5_ipv6" */
+        /**
+         * Enum _5_IPV6 for value: "5_ipv6"
+         */
         public static final NetworkTypeEnum _5_IPV6 = new NetworkTypeEnum("5_ipv6");
 
-        /** Enum _5_GRAYBGP for value: "5_graybgp" */
+        /**
+         * Enum _5_GRAYBGP for value: "5_graybgp"
+         */
         public static final NetworkTypeEnum _5_GRAYBGP = new NetworkTypeEnum("5_graybgp");
 
         private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -487,19 +538,29 @@ public class ListPublicipsRequest {
 
     private List<String> publicipPoolName = null;
 
-    /** Gets or Sets status */
+    /**
+    * Gets or Sets status
+    */
     public static final class StatusEnum {
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final StatusEnum FREEZED = new StatusEnum("FREEZED");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -651,13 +712,19 @@ public class ListPublicipsRequest {
 
     private List<Integer> bandwidthSize = null;
 
-    /** Gets or Sets bandwidthShareType */
+    /**
+    * Gets or Sets bandwidthShareType
+    */
     public static final class BandwidthShareTypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final BandwidthShareTypeEnum PER = new BandwidthShareTypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final BandwidthShareTypeEnum WHOLE = new BandwidthShareTypeEnum("WHOLE");
 
         private static final Map<String, BandwidthShareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -727,16 +794,24 @@ public class ListPublicipsRequest {
 
     private List<BandwidthShareTypeEnum> bandwidthShareType = null;
 
-    /** Gets or Sets bandwidthChargeMode */
+    /**
+    * Gets or Sets bandwidthChargeMode
+    */
     public static final class BandwidthChargeModeEnum {
 
-        /** Enum BANDWIDTH for value: "bandwidth" */
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
         public static final BandwidthChargeModeEnum BANDWIDTH = new BandwidthChargeModeEnum("bandwidth");
 
-        /** Enum TRAFFIC for value: "traffic" */
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
         public static final BandwidthChargeModeEnum TRAFFIC = new BandwidthChargeModeEnum("traffic");
 
-        /** Enum _95PEAK_PLUS for value: "95peak_plus" */
+        /**
+         * Enum _95PEAK_PLUS for value: "95peak_plus"
+         */
         public static final BandwidthChargeModeEnum _95PEAK_PLUS = new BandwidthChargeModeEnum("95peak_plus");
 
         private static final Map<String, BandwidthChargeModeEnum> STATIC_FIELDS = createStaticFields();
@@ -812,13 +887,19 @@ public class ListPublicipsRequest {
 
     private List<String> billingInfo = null;
 
-    /** 根据订单模式过滤, 取值范围：YEARLY_MONTHLY、PAY_PER_USE */
+    /**
+    * 根据订单模式过滤,   取值范围：YEARLY_MONTHLY、PAY_PER_USE
+    */
     public static final class BillingModeEnum {
 
-        /** Enum YEARLY_MONTHLY for value: "YEARLY_MONTHLY" */
+        /**
+         * Enum YEARLY_MONTHLY for value: "YEARLY_MONTHLY"
+         */
         public static final BillingModeEnum YEARLY_MONTHLY = new BillingModeEnum("YEARLY_MONTHLY");
 
-        /** Enum PAY_PER_USE for value: "PAY_PER_USE" */
+        /**
+         * Enum PAY_PER_USE for value: "PAY_PER_USE"
+         */
         public static final BillingModeEnum PAY_PER_USE = new BillingModeEnum("PAY_PER_USE");
 
         private static final Map<String, BillingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -888,22 +969,34 @@ public class ListPublicipsRequest {
 
     private BillingModeEnum billingMode;
 
-    /** Gets or Sets associateInstanceType */
+    /**
+     * Gets or Sets associateInstanceType
+     */
     public static final class AssociateInstanceTypeEnum {
 
-        /** Enum PORT for value: "PORT" */
+        /**
+         * Enum PORT for value: "PORT"
+         */
         public static final AssociateInstanceTypeEnum PORT = new AssociateInstanceTypeEnum("PORT");
 
-        /** Enum NATGW for value: "NATGW" */
+        /**
+         * Enum NATGW for value: "NATGW"
+         */
         public static final AssociateInstanceTypeEnum NATGW = new AssociateInstanceTypeEnum("NATGW");
 
-        /** Enum ELB for value: "ELB" */
+        /**
+         * Enum ELB for value: "ELB"
+         */
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
-        /** Enum VPN for value: "VPN" */
+        /**
+         * Enum VPN for value: "VPN"
+         */
         public static final AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
-        /** Enum ELBV1 for value: "ELBV1" */
+        /**
+         * Enum ELBV1 for value: "ELBV1"
+         */
         public static final AssociateInstanceTypeEnum ELBV1 = new AssociateInstanceTypeEnum("ELBV1");
 
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1001,9 +1094,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时为查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -1017,9 +1111,12 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源序号 minimum: 0 maximum: 99999
-     * 
-     * @return offset */
+    /**
+     * 分页查询起始的资源序号
+     * minimum: 0
+     * maximum: 99999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -1033,9 +1130,12 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -1065,10 +1165,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 显示，形式为\"fields=id&fields=owner&...\"
-     * 支持字段：id/project_id/ip_version/type/public_ip_address/public_ipv6_address/network_type/status/description/created_at/updated_at/vnic/bandwidth/associate_instance_type/associate_instance_id/lock_status/billing_info/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group/alias/publicip_pool_name/publicip_pool_id
-     * 
-     * @return fields */
+    /**
+     * 显示，形式为\"fields=id&fields=owner&...\"  支持字段：id/project_id/ip_version/type/public_ip_address/public_ipv6_address/network_type/status/description/created_at/updated_at/vnic/bandwidth/associate_instance_type/associate_instance_id/lock_status/billing_info/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group/alias/publicip_pool_name/publicip_pool_id
+     * @return fields
+     */
     public List<String> getFields() {
         return fields;
     }
@@ -1082,10 +1182,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 排序，形式为\"sort_key=id\"
-     * 支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group
-     * 
-     * @return sortKey */
+    /**
+     * 排序，形式为\"sort_key=id\"  支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group
+     * @return sortKey
+     */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -1099,9 +1199,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 排序方向 取值范围：asc、desc
-     * 
-     * @return sortDir */
+    /**
+     * 排序方向  取值范围：asc、desc
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -1131,9 +1232,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据id过滤
-     * 
-     * @return id */
+    /**
+     * 根据id过滤
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -1163,9 +1265,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据ip_version过滤 取值范围：4、6
-     * 
-     * @return ipVersion */
+    /**
+     * 根据ip_version过滤  取值范围：4、6
+     * @return ipVersion
+     */
     public List<IpVersionEnum> getIpVersion() {
         return ipVersion;
     }
@@ -1195,9 +1298,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据public_ip_address过滤
-     * 
-     * @return publicIpAddress */
+    /**
+     * 根据public_ip_address过滤
+     * @return publicIpAddress
+     */
     public List<String> getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -1211,9 +1315,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据public_ip_address过滤，模糊搜索
-     * 
-     * @return publicIpAddressLike */
+    /**
+     * 根据public_ip_address过滤，模糊搜索
+     * @return publicIpAddressLike
+     */
     public String getPublicIpAddressLike() {
         return publicIpAddressLike;
     }
@@ -1243,9 +1348,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据public_ipv6_address过滤
-     * 
-     * @return publicIpv6Address */
+    /**
+     * 根据public_ipv6_address过滤
+     * @return publicIpv6Address
+     */
     public List<String> getPublicIpv6Address() {
         return publicIpv6Address;
     }
@@ -1259,9 +1365,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据public_ipv6_address过滤，模糊搜索
-     * 
-     * @return publicIpv6AddressLike */
+    /**
+     * 根据public_ipv6_address过滤，模糊搜索
+     * @return publicIpv6AddressLike
+     */
     public String getPublicIpv6AddressLike() {
         return publicIpv6AddressLike;
     }
@@ -1291,9 +1398,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据type过滤 取值范围：EIP、DUALSTACK、DUALSTACK_SUBNET EIP: 弹性公网IP DUALSTACK: 双栈IPV6 DUALSTACK_SUBNET: 双栈子网
-     * 
-     * @return type */
+    /**
+     * 根据type过滤  取值范围：EIP、DUALSTACK、DUALSTACK_SUBNET  EIP: 弹性公网IP   DUALSTACK: 双栈IPV6   DUALSTACK_SUBNET: 双栈子网
+     * @return type
+     */
     public List<TypeEnum> getType() {
         return type;
     }
@@ -1323,9 +1431,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据network_type过滤 取值范围：5_telcom、5_union、5_bgp、5_sbgp、5_ipv6、5_graybgp
-     * 
-     * @return networkType */
+    /**
+     * 根据network_type过滤  取值范围：5_telcom、5_union、5_bgp、5_sbgp、5_ipv6、5_graybgp
+     * @return networkType
+     */
     public List<NetworkTypeEnum> getNetworkType() {
         return networkType;
     }
@@ -1355,9 +1464,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据publicip_pool_name过滤 取值范围：5_telcom、5_union、5_bgp、5_sbgp、5_ipv6、5_graybgp、专属池名称等
-     * 
-     * @return publicipPoolName */
+    /**
+     * 根据publicip_pool_name过滤  取值范围：5_telcom、5_union、5_bgp、5_sbgp、5_ipv6、5_graybgp、专属池名称等
+     * @return publicipPoolName
+     */
     public List<String> getPublicipPoolName() {
         return publicipPoolName;
     }
@@ -1387,9 +1497,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据status过滤 取值范围：FREEZED、DOWN、ACTIVE、ERROR
-     * 
-     * @return status */
+    /**
+     * 根据status过滤  取值范围：FREEZED、DOWN、ACTIVE、ERROR
+     * @return status
+     */
     public List<StatusEnum> getStatus() {
         return status;
     }
@@ -1403,9 +1514,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据alias模糊搜索
-     * 
-     * @return aliasLike */
+    /**
+     * 根据alias模糊搜索
+     * @return aliasLike
+     */
     public String getAliasLike() {
         return aliasLike;
     }
@@ -1435,9 +1547,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据alias过滤
-     * 
-     * @return alias */
+    /**
+     * 根据alias过滤
+     * @return alias
+     */
     public List<String> getAlias() {
         return alias;
     }
@@ -1467,9 +1580,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据description过滤
-     * 
-     * @return description */
+    /**
+     * 根据description过滤
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -1499,9 +1613,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据private_ip_address过滤
-     * 
-     * @return vnicPrivateIpAddress */
+    /**
+     * 根据private_ip_address过滤
+     * @return vnicPrivateIpAddress
+     */
     public List<String> getVnicPrivateIpAddress() {
         return vnicPrivateIpAddress;
     }
@@ -1515,9 +1630,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据private_ip_address模糊搜索
-     * 
-     * @return vnicPrivateIpAddressLike */
+    /**
+     * 根据private_ip_address模糊搜索
+     * @return vnicPrivateIpAddressLike
+     */
     public String getVnicPrivateIpAddressLike() {
         return vnicPrivateIpAddressLike;
     }
@@ -1547,9 +1663,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据device_id过滤
-     * 
-     * @return vnicDeviceId */
+    /**
+     * 根据device_id过滤
+     * @return vnicDeviceId
+     */
     public List<String> getVnicDeviceId() {
         return vnicDeviceId;
     }
@@ -1579,9 +1696,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据device_owner过滤
-     * 
-     * @return vnicDeviceOwner */
+    /**
+     * 根据device_owner过滤
+     * @return vnicDeviceOwner
+     */
     public List<String> getVnicDeviceOwner() {
         return vnicDeviceOwner;
     }
@@ -1611,9 +1729,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据vpc_id过滤
-     * 
-     * @return vnicVpcId */
+    /**
+     * 根据vpc_id过滤
+     * @return vnicVpcId
+     */
     public List<String> getVnicVpcId() {
         return vnicVpcId;
     }
@@ -1643,9 +1762,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据port_id过滤
-     * 
-     * @return vnicPortId */
+    /**
+     * 根据port_id过滤
+     * @return vnicPortId
+     */
     public List<String> getVnicPortId() {
         return vnicPortId;
     }
@@ -1659,9 +1779,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据device_owner_prefixlike模糊搜索
-     * 
-     * @return vnicDeviceOwnerPrefixlike */
+    /**
+     * 根据device_owner_prefixlike模糊搜索
+     * @return vnicDeviceOwnerPrefixlike
+     */
     public String getVnicDeviceOwnerPrefixlike() {
         return vnicDeviceOwnerPrefixlike;
     }
@@ -1691,9 +1812,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据instance_type过滤
-     * 
-     * @return vnicInstanceType */
+    /**
+     * 根据instance_type过滤
+     * @return vnicInstanceType
+     */
     public List<String> getVnicInstanceType() {
         return vnicInstanceType;
     }
@@ -1723,9 +1845,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据instance_id过滤
-     * 
-     * @return vnicInstanceId */
+    /**
+     * 根据instance_id过滤
+     * @return vnicInstanceId
+     */
     public List<String> getVnicInstanceId() {
         return vnicInstanceId;
     }
@@ -1755,9 +1878,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据id过滤
-     * 
-     * @return bandwidthId */
+    /**
+     * 根据id过滤
+     * @return bandwidthId
+     */
     public List<String> getBandwidthId() {
         return bandwidthId;
     }
@@ -1787,9 +1911,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据name过滤
-     * 
-     * @return bandwidthName */
+    /**
+     * 根据name过滤
+     * @return bandwidthName
+     */
     public List<String> getBandwidthName() {
         return bandwidthName;
     }
@@ -1819,9 +1944,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据name模糊过滤
-     * 
-     * @return bandwidthNameLike */
+    /**
+     * 根据name模糊过滤
+     * @return bandwidthNameLike
+     */
     public List<String> getBandwidthNameLike() {
         return bandwidthNameLike;
     }
@@ -1851,9 +1977,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据size过滤
-     * 
-     * @return bandwidthSize */
+    /**
+     * 根据size过滤
+     * @return bandwidthSize
+     */
     public List<Integer> getBandwidthSize() {
         return bandwidthSize;
     }
@@ -1884,9 +2011,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据share_type过滤
-     * 
-     * @return bandwidthShareType */
+    /**
+     * 根据share_type过滤
+     * @return bandwidthShareType
+     */
     public List<BandwidthShareTypeEnum> getBandwidthShareType() {
         return bandwidthShareType;
     }
@@ -1917,9 +2045,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据charge_mode过滤
-     * 
-     * @return bandwidthChargeMode */
+    /**
+     * 根据charge_mode过滤
+     * @return bandwidthChargeMode
+     */
     public List<BandwidthChargeModeEnum> getBandwidthChargeMode() {
         return bandwidthChargeMode;
     }
@@ -1949,9 +2078,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据billing_info过滤
-     * 
-     * @return billingInfo */
+    /**
+     * 根据billing_info过滤
+     * @return billingInfo
+     */
     public List<String> getBillingInfo() {
         return billingInfo;
     }
@@ -1965,9 +2095,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据订单模式过滤, 取值范围：YEARLY_MONTHLY、PAY_PER_USE
-     * 
-     * @return billingMode */
+    /**
+     * 根据订单模式过滤,   取值范围：YEARLY_MONTHLY、PAY_PER_USE
+     * @return billingMode
+     */
     public BillingModeEnum getBillingMode() {
         return billingMode;
     }
@@ -1998,9 +2129,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据associate_instance_type过滤 取值范围：PORT、NATGW、ELB、VPN、ELBV1
-     * 
-     * @return associateInstanceType */
+    /**
+     * 根据associate_instance_type过滤  取值范围：PORT、NATGW、ELB、VPN、ELBV1
+     * @return associateInstanceType
+     */
     public List<AssociateInstanceTypeEnum> getAssociateInstanceType() {
         return associateInstanceType;
     }
@@ -2030,9 +2162,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据associate_instance_id过滤
-     * 
-     * @return associateInstanceId */
+    /**
+     * 根据associate_instance_id过滤
+     * @return associateInstanceId
+     */
     public List<String> getAssociateInstanceId() {
         return associateInstanceId;
     }
@@ -2062,9 +2195,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据enterprise_project_id过滤
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 根据enterprise_project_id过滤
+     * @return enterpriseProjectId
+     */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -2094,9 +2228,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 根据public_border_group过滤
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 根据public_border_group过滤
+     * @return publicBorderGroup
+     */
     public List<String> getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -2127,9 +2262,10 @@ public class ListPublicipsRequest {
         return this;
     }
 
-    /** 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
-     * 
-     * @return allowShareBandwidthTypeAny */
+    /**
+     * 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
+     * @return allowShareBandwidthTypeAny
+     */
     public List<String> getAllowShareBandwidthTypeAny() {
         return allowShareBandwidthTypeAny;
     }
@@ -2284,7 +2420,10 @@ public class ListPublicipsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建负载均衡器参数。 */
+/**
+ * 创建负载均衡器参数。
+ */
 public class CreateLoadBalancerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -136,9 +138,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -152,9 +155,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的描述。
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -168,11 +172,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。 使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 -
-     * 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 -
-     * 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address=null。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。  使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 - 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 - 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address=null。
+     * @return vipAddress
+     */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -186,11 +189,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets
-     * 响应参数中的neutron_subnet_id得到。 使用说明： - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 -
-     * 若同时传入vpc_id和vip_subnet_cidr_id，则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
-     * 
-     * @return vipSubnetCidrId */
+    /**
+     * 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_subnet_id得到。 使用说明：   - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 若同时传入vpc_id和vip_subnet_cidr_id，则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
+     * @return vipSubnetCidrId
+     */
     public String getVipSubnetCidrId() {
         return vipSubnetCidrId;
     }
@@ -204,11 +206,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
-     * vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。
-     * [不支持IPv6，请勿使用](tag:dt,dt_test)
-     * 
-     * @return ipv6VipVirsubnetId */
+    /**
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。  [不支持IPv6，请勿使用](tag:dt,dt_test)
+     * @return ipv6VipVirsubnetId
+     */
     public String getIpv6VipVirsubnetId() {
         return ipv6VipVirsubnetId;
     }
@@ -222,9 +223,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的生产者名称。固定为vlb。
-     * 
-     * @return provider */
+    /**
+     * 负载均衡器的生产者名称。固定为vlb。
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -238,10 +240,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 四层Flavor ID。[只支持设置为l4_flavor.elb.shared。](tag:hcso_dt) [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
-     * 注意：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor。
-     * 
-     * @return l4FlavorId */
+    /**
+     * 四层Flavor ID。[只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)  注意：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor。
+     * @return l4FlavorId
+     */
     public String getL4FlavorId() {
         return l4FlavorId;
     }
@@ -255,9 +257,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 负载均衡器所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -271,9 +274,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 是否独享型负载均衡器。取值： - true：独享型。 - false：共享型。 当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
-     * 
-     * @return guaranteed */
+    /**
+     * 是否独享型负载均衡器。取值： - true：独享型。 - false：共享型。  当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
+     * @return guaranteed
+     */
     public Boolean getGuaranteed() {
         return guaranteed;
     }
@@ -287,10 +291,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器所在的VPC ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。 使用说明： -
-     * vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-     * 
-     * @return vpcId */
+    /**
+     * 负载均衡器所在的VPC ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -320,10 +324,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 可用区列表。可通过GET
-     * https://{ELB_Endpoint}/v3/{project_id}/elb/availability-zones接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
-     * 
-     * @return availabilityZoneList */
+    /**
+     * 可用区列表。可通过GET https://{ELB_Endpoint}/v3/{project_id}/elb/availability-zones接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
+     * @return availabilityZoneList
+     */
     public List<String> getAvailabilityZoneList() {
         return availabilityZoneList;
     }
@@ -337,9 +341,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器所属的企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 负载均衡器所属的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -369,9 +374,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡的标签列表。示例：\"tags\":[{\"key\":\"my_tag\",\"value\":\"my_tag_value\"}]
-     * 
-     * @return tags */
+    /**
+     * 负载均衡的标签列表。示例：\"tags\":[{\"key\":\"my_tag\",\"value\":\"my_tag_value\"}]
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -385,9 +391,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器的管理状态。只能设置为true。默认：true。 [不支持该字段，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -401,9 +408,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 七层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor。
-     * 
-     * @return l7FlavorId */
+    /**
+     * 七层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor。
+     * @return l7FlavorId
+     */
     public String getL7FlavorId() {
         return l7FlavorId;
     }
@@ -417,11 +425,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 资源账单信息。 [取值： - 空：按需计费。 - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：
-     * CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
-     * [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return billingInfo */
+    /**
+     * 资源账单信息。 [取值： - 空：按需计费。  - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如： CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * @return billingInfo
+     */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -444,9 +451,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** Get ipv6Bandwidth
-     * 
-     * @return ipv6Bandwidth */
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
     public BandwidthRef getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -476,9 +484,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 负载均衡器绑定的公网IP ID。只支持绑定数组中的第一个EIP，其他将被忽略。
-     * 
-     * @return publicipIds */
+    /**
+     * 负载均衡器绑定的公网IP ID。只支持绑定数组中的第一个EIP，其他将被忽略。
+     * @return publicipIds
+     */
     public List<String> getPublicipIds() {
         return publicipIds;
     }
@@ -501,9 +510,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** Get publicip
-     * 
-     * @return publicip */
+    /**
+     * Get publicip
+     * @return publicip
+     */
     public CreateLoadBalancerPublicIpOption getPublicip() {
         return publicip;
     }
@@ -533,10 +543,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
-     * 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。 - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 - 下联面子网必须属于该LB所在的VPC。 - 不支持边缘云子网。
-     * 
-     * @return elbVirsubnetIds */
+    /**
+     * 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。  - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。  - 下联面子网必须属于该LB所在的VPC。  - 不支持边缘云子网。
+     * @return elbVirsubnetIds
+     */
     public List<String> getElbVirsubnetIds() {
         return elbVirsubnetIds;
     }
@@ -550,11 +560,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。
-     * [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [不支持该字段，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipTargetEnable */
+    /**
+     * 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。 [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * @return ipTargetEnable
+     */
     public Boolean getIpTargetEnable() {
         return ipTargetEnable;
     }
@@ -568,9 +577,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。 [不支持该字段，请勿使用](tag:dt,dt_test)
-     * 
-     * @return deletionProtectionEnable */
+    /**
+     * 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用](tag:dt,dt_test)
+     * @return deletionProtectionEnable
+     */
     public Boolean getDeletionProtectionEnable() {
         return deletionProtectionEnable;
     }
@@ -593,9 +603,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** Get prepaidOptions
-     * 
-     * @return prepaidOptions */
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
     public PrepaidCreateOption getPrepaidOptions() {
         return prepaidOptions;
     }
@@ -618,9 +629,10 @@ public class CreateLoadBalancerOption {
         return this;
     }
 
-    /** Get autoscaling
-     * 
-     * @return autoscaling */
+    /**
+     * Get autoscaling
+     * @return autoscaling
+     */
     public CreateLoadbalancerAutoscalingOption getAutoscaling() {
         return autoscaling;
     }
@@ -724,7 +736,10 @@ public class CreateLoadBalancerOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

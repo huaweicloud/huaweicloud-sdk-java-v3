@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 密码信息 */
+/**
+ * 密码信息
+ */
 public class PasswordEntry {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PasswordEntry {
         return this;
     }
 
-    /** 会议角色。 - chair: 会议主持人。 - general: 普通与会者。
-     * 
-     * @return conferenceRole */
+    /**
+     * 会议角色。 - chair: 会议主持人。 - general: 普通与会者。
+     * @return conferenceRole
+     */
     public String getConferenceRole() {
         return conferenceRole;
     }
@@ -39,9 +42,10 @@ public class PasswordEntry {
         return this;
     }
 
-    /** 会议中角色的密码（明文）。
-     * 
-     * @return password */
+    /**
+     * 会议中角色的密码（明文）。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -78,7 +82,10 @@ public class PasswordEntry {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

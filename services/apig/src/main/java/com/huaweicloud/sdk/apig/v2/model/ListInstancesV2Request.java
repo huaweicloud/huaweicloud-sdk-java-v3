@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListInstancesV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,115 +35,179 @@ public class ListInstancesV2Request {
 
     private String instanceName;
 
-    /** 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 -
-     * InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 -
-     * UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 -
-     * DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 -
-     * RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 -
-     * UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 -
-     * Unhealthy：实例异常 - RestartTimeout：重启超时 */
+    /**
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "Creating" */
+        /**
+         * Enum CREATING for value: "Creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("Creating");
 
-        /** Enum CREATESUCCESS for value: "CreateSuccess" */
+        /**
+         * Enum CREATESUCCESS for value: "CreateSuccess"
+         */
         public static final StatusEnum CREATESUCCESS = new StatusEnum("CreateSuccess");
 
-        /** Enum CREATEFAIL for value: "CreateFail" */
+        /**
+         * Enum CREATEFAIL for value: "CreateFail"
+         */
         public static final StatusEnum CREATEFAIL = new StatusEnum("CreateFail");
 
-        /** Enum INITING for value: "Initing" */
+        /**
+         * Enum INITING for value: "Initing"
+         */
         public static final StatusEnum INITING = new StatusEnum("Initing");
 
-        /** Enum REGISTERING for value: "Registering" */
+        /**
+         * Enum REGISTERING for value: "Registering"
+         */
         public static final StatusEnum REGISTERING = new StatusEnum("Registering");
 
-        /** Enum RUNNING for value: "Running" */
+        /**
+         * Enum RUNNING for value: "Running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
 
-        /** Enum INITINGFAILED for value: "InitingFailed" */
+        /**
+         * Enum INITINGFAILED for value: "InitingFailed"
+         */
         public static final StatusEnum INITINGFAILED = new StatusEnum("InitingFailed");
 
-        /** Enum REGISTERFAILED for value: "RegisterFailed" */
+        /**
+         * Enum REGISTERFAILED for value: "RegisterFailed"
+         */
         public static final StatusEnum REGISTERFAILED = new StatusEnum("RegisterFailed");
 
-        /** Enum INSTALLING for value: "Installing" */
+        /**
+         * Enum INSTALLING for value: "Installing"
+         */
         public static final StatusEnum INSTALLING = new StatusEnum("Installing");
 
-        /** Enum INSTALLFAILED for value: "InstallFailed" */
+        /**
+         * Enum INSTALLFAILED for value: "InstallFailed"
+         */
         public static final StatusEnum INSTALLFAILED = new StatusEnum("InstallFailed");
 
-        /** Enum UPDATING for value: "Updating" */
+        /**
+         * Enum UPDATING for value: "Updating"
+         */
         public static final StatusEnum UPDATING = new StatusEnum("Updating");
 
-        /** Enum UPDATEFAILED for value: "UpdateFailed" */
+        /**
+         * Enum UPDATEFAILED for value: "UpdateFailed"
+         */
         public static final StatusEnum UPDATEFAILED = new StatusEnum("UpdateFailed");
 
-        /** Enum ROLLBACKING for value: "Rollbacking" */
+        /**
+         * Enum ROLLBACKING for value: "Rollbacking"
+         */
         public static final StatusEnum ROLLBACKING = new StatusEnum("Rollbacking");
 
-        /** Enum ROLLBACKSUCCESS for value: "RollbackSuccess" */
+        /**
+         * Enum ROLLBACKSUCCESS for value: "RollbackSuccess"
+         */
         public static final StatusEnum ROLLBACKSUCCESS = new StatusEnum("RollbackSuccess");
 
-        /** Enum ROLLBACKFAILED for value: "RollbackFailed" */
+        /**
+         * Enum ROLLBACKFAILED for value: "RollbackFailed"
+         */
         public static final StatusEnum ROLLBACKFAILED = new StatusEnum("RollbackFailed");
 
-        /** Enum DELETING for value: "Deleting" */
+        /**
+         * Enum DELETING for value: "Deleting"
+         */
         public static final StatusEnum DELETING = new StatusEnum("Deleting");
 
-        /** Enum DELETEFAILED for value: "DeleteFailed" */
+        /**
+         * Enum DELETEFAILED for value: "DeleteFailed"
+         */
         public static final StatusEnum DELETEFAILED = new StatusEnum("DeleteFailed");
 
-        /** Enum UNREGISTERING for value: "Unregistering" */
+        /**
+         * Enum UNREGISTERING for value: "Unregistering"
+         */
         public static final StatusEnum UNREGISTERING = new StatusEnum("Unregistering");
 
-        /** Enum UNREGISTERFAILED for value: "UnRegisterFailed" */
+        /**
+         * Enum UNREGISTERFAILED for value: "UnRegisterFailed"
+         */
         public static final StatusEnum UNREGISTERFAILED = new StatusEnum("UnRegisterFailed");
 
-        /** Enum CREATETIMEOUT for value: "CreateTimeout" */
+        /**
+         * Enum CREATETIMEOUT for value: "CreateTimeout"
+         */
         public static final StatusEnum CREATETIMEOUT = new StatusEnum("CreateTimeout");
 
-        /** Enum INITTIMEOUT for value: "InitTimeout" */
+        /**
+         * Enum INITTIMEOUT for value: "InitTimeout"
+         */
         public static final StatusEnum INITTIMEOUT = new StatusEnum("InitTimeout");
 
-        /** Enum REGISTERTIMEOUT for value: "RegisterTimeout" */
+        /**
+         * Enum REGISTERTIMEOUT for value: "RegisterTimeout"
+         */
         public static final StatusEnum REGISTERTIMEOUT = new StatusEnum("RegisterTimeout");
 
-        /** Enum INSTALLTIMEOUT for value: "InstallTimeout" */
+        /**
+         * Enum INSTALLTIMEOUT for value: "InstallTimeout"
+         */
         public static final StatusEnum INSTALLTIMEOUT = new StatusEnum("InstallTimeout");
 
-        /** Enum UPDATETIMEOUT for value: "UpdateTimeout" */
+        /**
+         * Enum UPDATETIMEOUT for value: "UpdateTimeout"
+         */
         public static final StatusEnum UPDATETIMEOUT = new StatusEnum("UpdateTimeout");
 
-        /** Enum ROLLBACKTIMEOUT for value: "RollbackTimeout" */
+        /**
+         * Enum ROLLBACKTIMEOUT for value: "RollbackTimeout"
+         */
         public static final StatusEnum ROLLBACKTIMEOUT = new StatusEnum("RollbackTimeout");
 
-        /** Enum DELETETIMEOUT for value: "DeleteTimeout" */
+        /**
+         * Enum DELETETIMEOUT for value: "DeleteTimeout"
+         */
         public static final StatusEnum DELETETIMEOUT = new StatusEnum("DeleteTimeout");
 
-        /** Enum UNREGISTERTIMEOUT for value: "UnregisterTimeout" */
+        /**
+         * Enum UNREGISTERTIMEOUT for value: "UnregisterTimeout"
+         */
         public static final StatusEnum UNREGISTERTIMEOUT = new StatusEnum("UnregisterTimeout");
 
-        /** Enum STARTING for value: "Starting" */
+        /**
+         * Enum STARTING for value: "Starting"
+         */
         public static final StatusEnum STARTING = new StatusEnum("Starting");
 
-        /** Enum FREEZING for value: "Freezing" */
+        /**
+         * Enum FREEZING for value: "Freezing"
+         */
         public static final StatusEnum FREEZING = new StatusEnum("Freezing");
 
-        /** Enum FROZEN for value: "Frozen" */
+        /**
+         * Enum FROZEN for value: "Frozen"
+         */
         public static final StatusEnum FROZEN = new StatusEnum("Frozen");
 
-        /** Enum RESTARTING for value: "Restarting" */
+        /**
+         * Enum RESTARTING for value: "Restarting"
+         */
         public static final StatusEnum RESTARTING = new StatusEnum("Restarting");
 
-        /** Enum RESTARTFAIL for value: "RestartFail" */
+        /**
+         * Enum RESTARTFAIL for value: "RestartFail"
+         */
         public static final StatusEnum RESTARTFAIL = new StatusEnum("RestartFail");
 
-        /** Enum UNHEALTHY for value: "Unhealthy" */
+        /**
+         * Enum UNHEALTHY for value: "Unhealthy"
+         */
         public static final StatusEnum UNHEALTHY = new StatusEnum("Unhealthy");
 
-        /** Enum RESTARTTIMEOUT for value: "RestartTimeout" */
+        /**
+         * Enum RESTARTTIMEOUT for value: "RestartTimeout"
+         */
         public static final StatusEnum RESTARTTIMEOUT = new StatusEnum("RestartTimeout");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -248,9 +314,10 @@ public class ListInstancesV2Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -264,9 +331,12 @@ public class ListInstancesV2Request {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -280,9 +350,10 @@ public class ListInstancesV2Request {
         return this;
     }
 
-    /** 实例编号
-     * 
-     * @return instanceId */
+    /**
+     * 实例编号
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -296,9 +367,10 @@ public class ListInstancesV2Request {
         return this;
     }
 
-    /** 实例名称
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -312,15 +384,10 @@ public class ListInstancesV2Request {
         return this;
     }
 
-    /** 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 -
-     * InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 -
-     * UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 -
-     * DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 -
-     * RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 -
-     * UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 -
-     * Unhealthy：实例异常 - RestartTimeout：重启超时
-     * 
-     * @return status */
+    /**
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -363,7 +430,10 @@ public class ListInstancesV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

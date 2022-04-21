@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 产品 */
+/**
+ * 产品
+ */
 public class ProductReferer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,22 +35,34 @@ public class ProductReferer {
 
     private String model;
 
-    /** 产品的协议类型：0-mqtt，1-coap，2-modbus，3-http, 4-opcua */
+    /**
+     * 产品的协议类型：0-mqtt，1-coap，2-modbus，3-http, 4-opcua
+     */
     public static final class ProtocolTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ProtocolTypeEnum NUMBER_1 = new ProtocolTypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final ProtocolTypeEnum NUMBER_3 = new ProtocolTypeEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
 
         private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -121,13 +135,19 @@ public class ProductReferer {
 
     private ProtocolTypeEnum protocolType;
 
-    /** 产品类型：0-普通产品 1-网关产品 */
+    /**
+     * 产品类型：0-普通产品 1-网关产品
+     */
     public static final class ProductTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
 
         private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -202,9 +222,12 @@ public class ProductReferer {
         return this;
     }
 
-    /** 产品ID，未填写厂商ID+型号时产品ID必填 minimum: 1 maximum: 999999999999999999
-     * 
-     * @return productId */
+    /**
+     * 产品ID，未填写厂商ID+型号时产品ID必填
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -218,9 +241,10 @@ public class ProductReferer {
         return this;
     }
 
-    /** 产品名称
-     * 
-     * @return productName */
+    /**
+     * 产品名称
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -234,9 +258,10 @@ public class ProductReferer {
         return this;
     }
 
-    /** 厂商ID，未填写产品ID时厂商ID和型号必填
-     * 
-     * @return manufacturerId */
+    /**
+     * 厂商ID，未填写产品ID时厂商ID和型号必填
+     * @return manufacturerId
+     */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -250,9 +275,10 @@ public class ProductReferer {
         return this;
     }
 
-    /** 型号，未填写产品ID时厂商ID和型号必填
-     * 
-     * @return model */
+    /**
+     * 型号，未填写产品ID时厂商ID和型号必填
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -266,9 +292,12 @@ public class ProductReferer {
         return this;
     }
 
-    /** 产品的协议类型：0-mqtt，1-coap，2-modbus，3-http, 4-opcua minimum: 0 maximum: 10
-     * 
-     * @return protocolType */
+    /**
+     * 产品的协议类型：0-mqtt，1-coap，2-modbus，3-http, 4-opcua
+     * minimum: 0
+     * maximum: 10
+     * @return protocolType
+     */
     public ProtocolTypeEnum getProtocolType() {
         return protocolType;
     }
@@ -282,9 +311,12 @@ public class ProductReferer {
         return this;
     }
 
-    /** 产品类型：0-普通产品 1-网关产品 minimum: 0 maximum: 10
-     * 
-     * @return productType */
+    /**
+     * 产品类型：0-普通产品 1-网关产品
+     * minimum: 0
+     * maximum: 10
+     * @return productType
+     */
     public ProductTypeEnum getProductType() {
         return productType;
     }
@@ -329,7 +361,10 @@ public class ProductReferer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

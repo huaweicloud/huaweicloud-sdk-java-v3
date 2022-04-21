@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 此参数在请求实体中，采用json字符串格式 */
+/**
+ * 此参数在请求实体中，采用json字符串格式
+ */
 public class QueryLtsStructLogParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class QueryLtsStructLogParams {
         return this;
     }
 
-    /** 搜索起始时间（UTC时间，毫秒级）。
-     * 
-     * @return startTime */
+    /**
+     * 搜索起始时间（UTC时间，毫秒级）。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -49,9 +52,10 @@ public class QueryLtsStructLogParams {
         return this;
     }
 
-    /** 搜索结束时间（UTC时间，毫秒级）。
-     * 
-     * @return endTime */
+    /**
+     * 搜索结束时间（UTC时间，毫秒级）。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -65,9 +69,10 @@ public class QueryLtsStructLogParams {
         return this;
     }
 
-    /** 支持SQL语句搜索， 目前支持\"GROUP BY\", \"LIKE\"和\"WHERE\"。
-     * 
-     * @return sqlExpression */
+    /**
+     * 支持SQL语句搜索， 目前支持\"GROUP BY\", \"LIKE\"和\"WHERE\"。
+     * @return sqlExpression
+     */
     public String getSqlExpression() {
         return sqlExpression;
     }
@@ -81,9 +86,10 @@ public class QueryLtsStructLogParams {
         return this;
     }
 
-    /** 返回内容中是否包含原始日志， 默认为false。
-     * 
-     * @return originalContent */
+    /**
+     * 返回内容中是否包含原始日志， 默认为false。
+     * @return originalContent
+     */
     public Boolean getOriginalContent() {
         return originalContent;
     }
@@ -124,7 +130,10 @@ public class QueryLtsStructLogParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

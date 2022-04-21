@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchCreateMembersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchCreateMembersRequestBody {
         return this;
     }
 
-    /** 后端服务器对象。
-     * 
-     * @return members */
+    /**
+     * 后端服务器对象。
+     * @return members
+     */
     public List<BatchCreateMembersOption> getMembers() {
         return members;
     }
@@ -74,7 +77,10 @@ public class BatchCreateMembersRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

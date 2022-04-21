@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowVodStatisticsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowVodStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 统计起始时间。
-     * 
-     * @return startTime */
+    /**
+     * 统计起始时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -48,9 +51,10 @@ public class ShowVodStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 统计间隔。
-     * 
-     * @return interval */
+    /**
+     * 统计间隔。
+     * @return interval
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -80,9 +84,10 @@ public class ShowVodStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    /** 采样数据数组。从start_time开始，每个间隔对应一个采样数据。
-     * 
-     * @return sampleData */
+    /**
+     * 采样数据数组。从start_time开始，每个间隔对应一个采样数据。
+     * @return sampleData
+     */
     public List<VodSampleData> getSampleData() {
         return sampleData;
     }
@@ -121,7 +126,10 @@ public class ShowVodStatisticsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

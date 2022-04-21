@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateEndpointRoutetableResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
         return this;
     }
 
-    /** 路由表ID列表。节点的白名单。 此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白 名单更新为取值所示内容。 ● 当取值为空时，表示删除所 有白名单。 默认为空列表。
-     * 
-     * @return routetables */
+    /**
+     * 路由表ID列表。节点的白名单。 此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白 名单更新为取值所示内容。 ● 当取值为空时，表示删除所 有白名单。 默认为空列表。
+     * @return routetables
+     */
     public List<String> getRoutetables() {
         return routetables;
     }
@@ -75,9 +78,10 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
         return this;
     }
 
-    /** 当修改终端节点子网路由表失败 时，返回错误提示信息
-     * 
-     * @return error */
+    /**
+     * 当修改终端节点子网路由表失败 时，返回错误提示信息
+     * @return error
+     */
     public List<RoutetableInfoError> getError() {
         return error;
     }
@@ -114,7 +118,10 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

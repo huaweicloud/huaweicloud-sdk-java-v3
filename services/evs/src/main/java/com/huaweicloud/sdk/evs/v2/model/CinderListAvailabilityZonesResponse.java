@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CinderListAvailabilityZonesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,10 +41,10 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询请求返回的可用分区列表，请参见•
-     * [availabilityZoneInfo参数说明](https://support.huaweicloud.com/api-evs/evs_04_2081.html#evs_04_2081__li19751007201910)。
-     * 
-     * @return availabilityZoneInfo */
+    /**
+     * 查询请求返回的可用分区列表，请参见• [availabilityZoneInfo参数说明](https://support.huaweicloud.com/api-evs/evs_04_2081.html#evs_04_2081__li19751007201910)。
+     * @return availabilityZoneInfo
+     */
     public List<AzInfo> getAvailabilityZoneInfo() {
         return availabilityZoneInfo;
     }
@@ -78,7 +80,10 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

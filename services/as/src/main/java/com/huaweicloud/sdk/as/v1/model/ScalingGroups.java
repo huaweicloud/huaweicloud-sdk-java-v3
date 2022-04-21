@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 伸缩组详情 */
+/**
+ * 伸缩组详情
+ */
 public class ScalingGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,22 +29,34 @@ public class ScalingGroups {
 
     private String scalingGroupId;
 
-    /** 伸缩组状态。 */
+    /**
+     * 伸缩组状态。
+     */
     public static final class ScalingGroupStatusEnum {
 
-        /** Enum INSERVICE for value: "INSERVICE" */
+        /**
+         * Enum INSERVICE for value: "INSERVICE"
+         */
         public static final ScalingGroupStatusEnum INSERVICE = new ScalingGroupStatusEnum("INSERVICE");
 
-        /** Enum PAUSED for value: "PAUSED" */
+        /**
+         * Enum PAUSED for value: "PAUSED"
+         */
         public static final ScalingGroupStatusEnum PAUSED = new ScalingGroupStatusEnum("PAUSED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ScalingGroupStatusEnum ERROR = new ScalingGroupStatusEnum("ERROR");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final ScalingGroupStatusEnum FREEZED = new ScalingGroupStatusEnum("FREEZED");
 
         private static final Map<String, ScalingGroupStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -195,13 +209,19 @@ public class ScalingGroups {
 
     private Boolean isScaling;
 
-    /** 健康检查方式。 */
+    /**
+     * 健康检查方式。
+     */
     public static final class HealthPeriodicAuditMethodEnum {
 
-        /** Enum ELB_AUDIT for value: "ELB_AUDIT" */
+        /**
+         * Enum ELB_AUDIT for value: "ELB_AUDIT"
+         */
         public static final HealthPeriodicAuditMethodEnum ELB_AUDIT = new HealthPeriodicAuditMethodEnum("ELB_AUDIT");
 
-        /** Enum NOVA_AUDIT for value: "NOVA_AUDIT" */
+        /**
+         * Enum NOVA_AUDIT for value: "NOVA_AUDIT"
+         */
         public static final HealthPeriodicAuditMethodEnum NOVA_AUDIT = new HealthPeriodicAuditMethodEnum("NOVA_AUDIT");
 
         private static final Map<String, HealthPeriodicAuditMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -281,21 +301,31 @@ public class ScalingGroups {
 
     private Integer healthPeriodicAuditGracePeriod;
 
-    /** 移除策略。 */
+    /**
+     * 移除策略。
+     */
     public static final class InstanceTerminatePolicyEnum {
 
-        /** Enum OLD_CONFIG_OLD_INSTANCE for value: "OLD_CONFIG_OLD_INSTANCE" */
+        /**
+         * Enum OLD_CONFIG_OLD_INSTANCE for value: "OLD_CONFIG_OLD_INSTANCE"
+         */
         public static final InstanceTerminatePolicyEnum OLD_CONFIG_OLD_INSTANCE =
             new InstanceTerminatePolicyEnum("OLD_CONFIG_OLD_INSTANCE");
 
-        /** Enum OLD_CONFIG_NEW_INSTANCE for value: "OLD_CONFIG_NEW_INSTANCE" */
+        /**
+         * Enum OLD_CONFIG_NEW_INSTANCE for value: "OLD_CONFIG_NEW_INSTANCE"
+         */
         public static final InstanceTerminatePolicyEnum OLD_CONFIG_NEW_INSTANCE =
             new InstanceTerminatePolicyEnum("OLD_CONFIG_NEW_INSTANCE");
 
-        /** Enum OLD_INSTANCE for value: "OLD_INSTANCE" */
+        /**
+         * Enum OLD_INSTANCE for value: "OLD_INSTANCE"
+         */
         public static final InstanceTerminatePolicyEnum OLD_INSTANCE = new InstanceTerminatePolicyEnum("OLD_INSTANCE");
 
-        /** Enum NEW_INSTANCE for value: "NEW_INSTANCE" */
+        /**
+         * Enum NEW_INSTANCE for value: "NEW_INSTANCE"
+         */
         public static final InstanceTerminatePolicyEnum NEW_INSTANCE = new InstanceTerminatePolicyEnum("NEW_INSTANCE");
 
         private static final Map<String, InstanceTerminatePolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -403,6 +433,11 @@ public class ScalingGroups {
     private String multiAzPriorityPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iam_agency_name")
+
+    private String iamAgencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -412,9 +447,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组名称。
-     * 
-     * @return scalingGroupName */
+    /**
+     * 伸缩组名称。
+     * @return scalingGroupName
+     */
     public String getScalingGroupName() {
         return scalingGroupName;
     }
@@ -428,9 +464,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -444,9 +481,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组状态。
-     * 
-     * @return scalingGroupStatus */
+    /**
+     * 伸缩组状态。
+     * @return scalingGroupStatus
+     */
     public ScalingGroupStatusEnum getScalingGroupStatus() {
         return scalingGroupStatus;
     }
@@ -460,9 +498,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩配置ID。
-     * 
-     * @return scalingConfigurationId */
+    /**
+     * 伸缩配置ID。
+     * @return scalingConfigurationId
+     */
     public String getScalingConfigurationId() {
         return scalingConfigurationId;
     }
@@ -476,9 +515,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩配置名称。
-     * 
-     * @return scalingConfigurationName */
+    /**
+     * 伸缩配置名称。
+     * @return scalingConfigurationName
+     */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -492,9 +532,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组中当前实例数。
-     * 
-     * @return currentInstanceNumber */
+    /**
+     * 伸缩组中当前实例数。
+     * @return currentInstanceNumber
+     */
     public Integer getCurrentInstanceNumber() {
         return currentInstanceNumber;
     }
@@ -508,9 +549,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组期望实例数。
-     * 
-     * @return desireInstanceNumber */
+    /**
+     * 伸缩组期望实例数。
+     * @return desireInstanceNumber
+     */
     public Integer getDesireInstanceNumber() {
         return desireInstanceNumber;
     }
@@ -524,9 +566,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组最小实例数。
-     * 
-     * @return minInstanceNumber */
+    /**
+     * 伸缩组最小实例数。
+     * @return minInstanceNumber
+     */
     public Integer getMinInstanceNumber() {
         return minInstanceNumber;
     }
@@ -540,9 +583,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组最大实例数
-     * 
-     * @return maxInstanceNumber */
+    /**
+     * 伸缩组最大实例数
+     * @return maxInstanceNumber
+     */
     public Integer getMaxInstanceNumber() {
         return maxInstanceNumber;
     }
@@ -556,9 +600,11 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 冷却时间，单位是秒。 maximum: 86400
-     * 
-     * @return coolDownTime */
+    /**
+     * 冷却时间，单位是秒。
+     * maximum: 86400
+     * @return coolDownTime
+     */
     public Integer getCoolDownTime() {
         return coolDownTime;
     }
@@ -572,9 +618,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 经典型负载均衡监听器ID，多个负载均衡监听器ID以逗号分隔。
-     * 
-     * @return lbListenerId */
+    /**
+     * 经典型负载均衡监听器ID，多个负载均衡监听器ID以逗号分隔。
+     * @return lbListenerId
+     */
     public String getLbListenerId() {
         return lbListenerId;
     }
@@ -604,9 +651,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 增强型负载均衡器信息，该参数为预留字段。
-     * 
-     * @return lbaasListeners */
+    /**
+     * 增强型负载均衡器信息，该参数为预留字段。
+     * @return lbaasListeners
+     */
     public List<LbaasListenersResult> getLbaasListeners() {
         return lbaasListeners;
     }
@@ -636,9 +684,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 可用分区信息
-     * 
-     * @return availableZones */
+    /**
+     * 可用分区信息
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -668,9 +717,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 网络信息
-     * 
-     * @return networks */
+    /**
+     * 网络信息
+     * @return networks
+     */
     public List<NetworksResult> getNetworks() {
         return networks;
     }
@@ -700,9 +750,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 安全组信息
-     * 
-     * @return securityGroups */
+    /**
+     * 安全组信息
+     * @return securityGroups
+     */
     public List<SecurityGroupsResult> getSecurityGroups() {
         return securityGroups;
     }
@@ -716,9 +767,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 创建伸缩组时间，遵循UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建伸缩组时间，遵循UTC时间。
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -732,9 +784,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组所在的VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 伸缩组所在的VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -748,9 +801,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组详情。
-     * 
-     * @return detail */
+    /**
+     * 伸缩组详情。
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -764,9 +818,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组伸缩标志。
-     * 
-     * @return isScaling */
+    /**
+     * 伸缩组伸缩标志。
+     * @return isScaling
+     */
     public Boolean getIsScaling() {
         return isScaling;
     }
@@ -780,9 +835,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 健康检查方式。
-     * 
-     * @return healthPeriodicAuditMethod */
+    /**
+     * 健康检查方式。
+     * @return healthPeriodicAuditMethod
+     */
     public HealthPeriodicAuditMethodEnum getHealthPeriodicAuditMethod() {
         return healthPeriodicAuditMethod;
     }
@@ -796,9 +852,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 健康检查的间隔时间。
-     * 
-     * @return healthPeriodicAuditTime */
+    /**
+     * 健康检查的间隔时间。
+     * @return healthPeriodicAuditTime
+     */
     public Integer getHealthPeriodicAuditTime() {
         return healthPeriodicAuditTime;
     }
@@ -812,9 +869,11 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 健康状况检查宽限期。 maximum: 86400
-     * 
-     * @return healthPeriodicAuditGracePeriod */
+    /**
+     * 健康状况检查宽限期。
+     * maximum: 86400
+     * @return healthPeriodicAuditGracePeriod
+     */
     public Integer getHealthPeriodicAuditGracePeriod() {
         return healthPeriodicAuditGracePeriod;
     }
@@ -828,9 +887,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 移除策略。
-     * 
-     * @return instanceTerminatePolicy */
+    /**
+     * 移除策略。
+     * @return instanceTerminatePolicy
+     */
     public InstanceTerminatePolicyEnum getInstanceTerminatePolicy() {
         return instanceTerminatePolicy;
     }
@@ -860,9 +920,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 通知方式： EMAIL为发送邮件通知。 该通知方式已经被废除，建议给弹性伸缩组配置通知功能。请参考[通知](https://support.huaweicloud.com/api-as/as_06_0800.html)。
-     * 
-     * @return notifications */
+    /**
+     * 通知方式：  EMAIL为发送邮件通知。  该通知方式已经被废除，建议给弹性伸缩组配置通知功能。请参考[通知](https://support.huaweicloud.com/api-as/as_06_0800.html)。
+     * @return notifications
+     */
     public List<String> getNotifications() {
         return notifications;
     }
@@ -876,9 +937,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 删除云服务器是否删除云服务器绑定的弹性IP。
-     * 
-     * @return deletePublicip */
+    /**
+     * 删除云服务器是否删除云服务器绑定的弹性IP。
+     * @return deletePublicip
+     */
     public Boolean getDeletePublicip() {
         return deletePublicip;
     }
@@ -892,9 +954,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 删除云服务器是否删除云服务器绑定的数据盘
-     * 
-     * @return deleteVolume */
+    /**
+     * 删除云服务器是否删除云服务器绑定的数据盘
+     * @return deleteVolume
+     */
     public Boolean getDeleteVolume() {
         return deleteVolume;
     }
@@ -908,9 +971,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 该参数为预留字段
-     * 
-     * @return cloudLocationId */
+    /**
+     * 该参数为预留字段
+     * @return cloudLocationId
+     */
     public String getCloudLocationId() {
         return cloudLocationId;
     }
@@ -924,9 +988,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -940,9 +1005,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组活动类型
-     * 
-     * @return activityType */
+    /**
+     * 伸缩组活动类型
+     * @return activityType
+     */
     public String getActivityType() {
         return activityType;
     }
@@ -956,9 +1022,10 @@ public class ScalingGroups {
         return this;
     }
 
-    /** 伸缩组扩缩容时目标AZ选择的优先级策略
-     * 
-     * @return multiAzPriorityPolicy */
+    /**
+     * 伸缩组扩缩容时目标AZ选择的优先级策略
+     * @return multiAzPriorityPolicy
+     */
     public String getMultiAzPriorityPolicy() {
         return multiAzPriorityPolicy;
     }
@@ -967,14 +1034,32 @@ public class ScalingGroups {
         this.multiAzPriorityPolicy = multiAzPriorityPolicy;
     }
 
+    public ScalingGroups withIamAgencyName(String iamAgencyName) {
+        this.iamAgencyName = iamAgencyName;
+        return this;
+    }
+
+    /**
+     * 委托的名称委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为弹性云服务器提供访问云服务的临时凭证。
+     * @return iamAgencyName
+     */
+    public String getIamAgencyName() {
+        return iamAgencyName;
+    }
+
+    public void setIamAgencyName(String iamAgencyName) {
+        this.iamAgencyName = iamAgencyName;
+    }
+
     public ScalingGroups withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    /** 伸缩组描述信息
-     * 
-     * @return description */
+    /**
+     * 伸缩组描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -1021,6 +1106,7 @@ public class ScalingGroups {
             && Objects.equals(this.enterpriseProjectId, scalingGroups.enterpriseProjectId)
             && Objects.equals(this.activityType, scalingGroups.activityType)
             && Objects.equals(this.multiAzPriorityPolicy, scalingGroups.multiAzPriorityPolicy)
+            && Objects.equals(this.iamAgencyName, scalingGroups.iamAgencyName)
             && Objects.equals(this.description, scalingGroups.description);
     }
 
@@ -1056,6 +1142,7 @@ public class ScalingGroups {
             enterpriseProjectId,
             activityType,
             multiAzPriorityPolicy,
+            iamAgencyName,
             description);
     }
 
@@ -1095,12 +1182,16 @@ public class ScalingGroups {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    activityType: ").append(toIndentedString(activityType)).append("\n");
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
+        sb.append("    iamAgencyName: ").append(toIndentedString(iamAgencyName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CinderListVolumeTypesRequest {
 
     @Override

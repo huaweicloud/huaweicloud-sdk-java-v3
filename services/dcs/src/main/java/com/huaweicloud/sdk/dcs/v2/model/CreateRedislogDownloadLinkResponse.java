@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateRedislogDownloadLinkResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志id
-     * 
-     * @return id */
+    /**
+     * 日志id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -40,9 +43,10 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志下载链接，默认有效时间为24小时
-     * 
-     * @return link */
+    /**
+     * 日志下载链接，默认有效时间为24小时
+     * @return link
+     */
     public String getLink() {
         return link;
     }
@@ -79,7 +83,10 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

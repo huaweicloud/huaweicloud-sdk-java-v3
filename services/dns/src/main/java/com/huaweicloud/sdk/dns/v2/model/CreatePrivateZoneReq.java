@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreatePrivateZoneReq */
+/**
+ * CreatePrivateZoneReq
+ */
 public class CreatePrivateZoneReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 待创建的域名。
-     * 
-     * @return name */
+    /**
+     * 待创建的域名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -72,9 +75,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 域名的描述信息。
-     * 
-     * @return description */
+    /**
+     * 域名的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -88,9 +92,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 域名类型。取值：private。
-     * 
-     * @return zoneType */
+    /**
+     * 域名类型。取值：private。
+     * @return zoneType
+     */
     public String getZoneType() {
         return zoneType;
     }
@@ -104,9 +109,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 管理该zone的管理员邮箱。
-     * 
-     * @return email */
+    /**
+     * 管理该zone的管理员邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -120,9 +126,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -145,9 +152,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** Get router
-     * 
-     * @return router */
+    /**
+     * Get router
+     * @return router
+     */
     public Router getRouter() {
         return router;
     }
@@ -177,9 +185,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -193,9 +202,10 @@ public class CreatePrivateZoneReq {
         return this;
     }
 
-    /** 域名关联的企业项目ID，长度不超过36个字符。 默认值为0。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -244,7 +254,10 @@ public class CreatePrivateZoneReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

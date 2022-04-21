@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,13 +63,19 @@ public class SearchUsersRequest {
 
     private Boolean enableSubDept;
 
-    /** 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。 */
+    /**
+     * 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。 
+     */
     public static final class AdminTypeEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final AdminTypeEnum NUMBER_1 = new AdminTypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final AdminTypeEnum NUMBER_2 = new AdminTypeEnum(2);
 
         private static final Map<Integer, AdminTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -162,9 +170,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * 
-     * @return xRequestId */
+    /**
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
@@ -180,9 +189,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 语言参数，默认为中文zh-CN, 英文为en-US
-     * 
-     * @return acceptLanguage */
+    /**
+     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * @return acceptLanguage
+     */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -196,9 +206,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 查询偏移量,若超过最大数量，则返回最后一页
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量,若超过最大数量，则返回最后一页
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -212,9 +223,12 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 查询数量 默认值：0 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 查询数量 默认值：0 
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -228,9 +242,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 搜索条件，支持姓名、手机、邮箱、账号、第三方账号模糊搜索。
-     * 
-     * @return searchKey */
+    /**
+     * 搜索条件，支持姓名、手机、邮箱、账号、第三方账号模糊搜索。
+     * @return searchKey
+     */
     public String getSearchKey() {
         return searchKey;
     }
@@ -244,9 +259,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 排序字段名称 约束 - 长度范围为0到64个字符 支持的取值 - userType - adminType - ldapAccount - deptCode - status - sortLevel
-     * 
-     * @return sortField */
+    /**
+     * 排序字段名称  约束 - 长度范围为0到64个字符  支持的取值 - userType - adminType - ldapAccount - deptCode - status - sortLevel
+     * @return sortField
+     */
     public String getSortField() {
         return sortField;
     }
@@ -260,9 +276,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 是否按升序排序
-     * 
-     * @return isAsc */
+    /**
+     * 是否按升序排序
+     * @return isAsc
+     */
     public Boolean getIsAsc() {
         return isAsc;
     }
@@ -276,9 +293,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 部门编码，不带则查询所有。
-     * 
-     * @return deptCode */
+    /**
+     * 部门编码，不带则查询所有。
+     * @return deptCode
+     */
     public String getDeptCode() {
         return deptCode;
     }
@@ -292,9 +310,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 是否查询子部门 默认值: true
-     * 
-     * @return enableSubDept */
+    /**
+     * 是否查询子部门 默认值: true 
+     * @return enableSubDept
+     */
     public Boolean getEnableSubDept() {
         return enableSubDept;
     }
@@ -308,9 +327,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。
-     * 
-     * @return adminType */
+    /**
+     * 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。 
+     * @return adminType
+     */
     public AdminTypeEnum getAdminType() {
         return adminType;
     }
@@ -324,9 +344,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 是否开启智能协同白板功能功能位，不带则搜索所有。
-     * 
-     * @return enableRoom */
+    /**
+     * 是否开启智能协同白板功能功能位，不带则搜索所有。
+     * @return enableRoom
+     */
     public Boolean getEnableRoom() {
         return enableRoom;
     }
@@ -356,9 +377,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 用户类型 * 2：普通用户； * 12：智慧屏用户； * 13：ideaHub用户； * 若不携带，则默认查询普通用户。
-     * 
-     * @return userType */
+    /**
+     * 用户类型 * 2：普通用户； * 12：智慧屏用户； * 13：ideaHub用户； * 若不携带，则默认查询普通用户。 
+     * @return userType
+     */
     public List<Integer> getUserType() {
         return userType;
     }
@@ -372,9 +394,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 用户状态 * 0：正常； * 1：停用。不带则查询所有
-     * 
-     * @return status */
+    /**
+     * 用户状态 * 0：正常； * 1：停用。不带则查询所有 
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -388,9 +411,10 @@ public class SearchUsersRequest {
         return this;
     }
 
-    /** 是否查询未激活的终端 默认值: false
-     * 
-     * @return containsUnActive */
+    /**
+     * 是否查询未激活的终端 默认值: false 
+     * @return containsUnActive
+     */
     public Boolean getContainsUnActive() {
         return containsUnActive;
     }
@@ -464,7 +488,10 @@ public class SearchUsersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MyanmarIdcardResult */
+/**
+ * MyanmarIdcardResult
+ */
 public class MyanmarIdcardResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,9 +108,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 标示正面还是反面，取值为front或back。
-     * 
-     * @return side */
+    /**
+     * 标示正面还是反面，取值为front或back。 
+     * @return side
+     */
     public String getSide() {
         return side;
     }
@@ -122,9 +125,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 身份证类型。取值如下所示： - new_version：新版身份证 - old_version：旧版
-     * 
-     * @return propertyClass */
+    /**
+     * 身份证类型。取值如下所示： - new_version：新版身份证 - old_version：旧版 
+     * @return propertyClass
+     */
     public String getPropertyClass() {
         return propertyClass;
     }
@@ -138,9 +142,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 身份证号码。
-     * 
-     * @return nrcId */
+    /**
+     * 身份证号码。 
+     * @return nrcId
+     */
     public String getNrcId() {
         return nrcId;
     }
@@ -154,9 +159,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 签发日期。
-     * 
-     * @return issueDate */
+    /**
+     * 签发日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -170,9 +176,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 姓名。
-     * 
-     * @return name */
+    /**
+     * 姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -186,9 +193,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 父亲名字。
-     * 
-     * @return fatherName */
+    /**
+     * 父亲名字。 
+     * @return fatherName
+     */
     public String getFatherName() {
         return fatherName;
     }
@@ -202,9 +210,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 出生日期。
-     * 
-     * @return birth */
+    /**
+     * 出生日期。 
+     * @return birth
+     */
     public String getBirth() {
         return birth;
     }
@@ -218,9 +227,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 族群或宗教。
-     * 
-     * @return bloodlinesReligion */
+    /**
+     * 族群或宗教。 
+     * @return bloodlinesReligion
+     */
     public String getBloodlinesReligion() {
         return bloodlinesReligion;
     }
@@ -234,9 +244,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 身高。
-     * 
-     * @return height */
+    /**
+     * 身高。 
+     * @return height
+     */
     public String getHeight() {
         return height;
     }
@@ -250,9 +261,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 血型。
-     * 
-     * @return bloodGroup */
+    /**
+     * 血型。 
+     * @return bloodGroup
+     */
     public String getBloodGroup() {
         return bloodGroup;
     }
@@ -266,9 +278,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 身份证的卡号（背面）。
-     * 
-     * @return cardId */
+    /**
+     * 身份证的卡号（背面）。 
+     * @return cardId
+     */
     public String getCardId() {
         return cardId;
     }
@@ -282,9 +295,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 背面的身份证号码。
-     * 
-     * @return nrcIdBack */
+    /**
+     * 背面的身份证号码。 
+     * @return nrcIdBack
+     */
     public String getNrcIdBack() {
         return nrcIdBack;
     }
@@ -298,9 +312,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 职业。
-     * 
-     * @return profession */
+    /**
+     * 职业。 
+     * @return profession
+     */
     public String getProfession() {
         return profession;
     }
@@ -314,9 +329,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 地址。
-     * 
-     * @return address */
+    /**
+     * 地址。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -339,9 +355,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** Get confidence
-     * 
-     * @return confidence */
+    /**
+     * Get confidence
+     * @return confidence
+     */
     public MyanmarIdcardConfidence getConfidence() {
         return confidence;
     }
@@ -355,9 +372,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 头像的base64编码。 当输入参数“return_portrait_image”为“true”时，才返回该参数。
-     * 
-     * @return portraitImage */
+    /**
+     * 头像的base64编码。 当输入参数“return_portrait_image”为“true”时，才返回该参数。 
+     * @return portraitImage
+     */
     public String getPortraitImage() {
         return portraitImage;
     }
@@ -387,10 +405,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 头像在原图上的位置。
-     * 当输入参数“return_portrait_location”为“true”时，才返回该参数。以列表形式显示，包含头像区域四个顶点的二维坐标（x,y），坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向
-     * 
-     * @return portraitLocation */
+    /**
+     * 头像在原图上的位置。 当输入参数“return_portrait_location”为“true”时，才返回该参数。以列表形式显示，包含头像区域四个顶点的二维坐标（x,y），坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向 
+     * @return portraitLocation
+     */
     public List<List<Integer>> getPortraitLocation() {
         return portraitLocation;
     }
@@ -404,9 +422,10 @@ public class MyanmarIdcardResult {
         return this;
     }
 
-    /** 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。
-     * 
-     * @return idcardType */
+    /**
+     * 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
+     * @return idcardType
+     */
     public String getIdcardType() {
         return idcardType;
     }
@@ -492,7 +511,10 @@ public class MyanmarIdcardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 流水线参数 */
+/**
+ * 流水线参数
+ */
 public class PipelineParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 流水线参数名字
-     * 
-     * @return name */
+    /**
+     * 流水线参数名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -59,9 +62,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 流水线参数值
-     * 
-     * @return value */
+    /**
+     * 流水线参数值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -75,9 +79,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 流水线参数描述
-     * 
-     * @return description */
+    /**
+     * 流水线参数描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -91,9 +96,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 流水线参数类型
-     * 
-     * @return paramType */
+    /**
+     * 流水线参数类型
+     * @return paramType
+     */
     public String getParamType() {
         return paramType;
     }
@@ -107,9 +113,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 是否静态参数
-     * 
-     * @return isStatic */
+    /**
+     * 是否静态参数
+     * @return isStatic
+     */
     public Boolean getIsStatic() {
         return isStatic;
     }
@@ -123,9 +130,10 @@ public class PipelineParam {
         return this;
     }
 
-    /** 是否默认参数
-     * 
-     * @return isDefault */
+    /**
+     * 是否默认参数
+     * @return isDefault
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -169,7 +177,10 @@ public class PipelineParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

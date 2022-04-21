@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListServerGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListServerGroupsRequest {
         return this;
     }
 
-    /** 查询返回server group数量限制。
-     * 
-     * @return limit */
+    /**
+     * 查询返回server group数量限制。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -39,9 +42,10 @@ public class ListServerGroupsRequest {
         return this;
     }
 
-    /** 从marker指定的server group的下一条数据开始查询。
-     * 
-     * @return marker */
+    /**
+     * 从marker指定的server group的下一条数据开始查询。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -78,7 +82,10 @@ public class ListServerGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

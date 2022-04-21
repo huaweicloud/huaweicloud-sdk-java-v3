@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRoutingRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,9 +62,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则触发条件ID，用于唯一标识一个规则触发条件，在创建规则条件时由物联网平台分配获得。
-     * 
-     * @return ruleId */
+    /**
+     * 规则触发条件ID，用于唯一标识一个规则触发条件，在创建规则条件时由物联网平台分配获得。
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -76,9 +79,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户自定义的规则名称。
-     * 
-     * @return ruleName */
+    /**
+     * 用户自定义的规则名称。
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -92,9 +96,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户自定义的规则描述。
-     * 
-     * @return description */
+    /**
+     * 用户自定义的规则描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -117,9 +122,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get subject
-     * 
-     * @return subject */
+    /**
+     * Get subject
+     * @return subject
+     */
     public RoutingRuleSubject getSubject() {
         return subject;
     }
@@ -133,9 +139,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户规则的生效范围，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。
-     * 
-     * @return appType */
+    /**
+     * 租户规则的生效范围，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。 
+     * @return appType
+     */
     public String getAppType() {
         return appType;
     }
@@ -149,9 +156,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间ID
-     * 
-     * @return appId */
+    /**
+     * 资源空间ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -165,9 +173,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户自定义sql select语句，最大长度500，该参数仅供标准版和企业版用户使用。
-     * 
-     * @return select */
+    /**
+     * 用户自定义sql select语句，最大长度500，该参数仅供标准版和企业版用户使用。
+     * @return select
+     */
     public String getSelect() {
         return select;
     }
@@ -181,9 +190,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户自定义sql where语句，最大长度500，该参数仅供标准版和企业版用户使用。
-     * 
-     * @return where */
+    /**
+     * 用户自定义sql where语句，最大长度500，该参数仅供标准版和企业版用户使用。
+     * @return where
+     */
     public String getWhere() {
         return where;
     }
@@ -197,9 +207,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则条件的状态是否为激活。
-     * 
-     * @return active */
+    /**
+     * 规则条件的状态是否为激活。
+     * @return active
+     */
     public Boolean getActive() {
         return active;
     }
@@ -250,7 +261,10 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

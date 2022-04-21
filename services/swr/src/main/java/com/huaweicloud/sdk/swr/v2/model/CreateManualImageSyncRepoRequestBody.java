@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 手动同步镜像需要的参数 */
+/**
+ * 手动同步镜像需要的参数
+ */
 public class CreateManualImageSyncRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class CreateManualImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 版本列表
-     * 
-     * @return imageTag */
+    /**
+     * 版本列表
+     * @return imageTag
+     */
     public List<String> getImageTag() {
         return imageTag;
     }
@@ -68,9 +71,10 @@ public class CreateManualImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 是否覆盖，默认为false
-     * 
-     * @return override */
+    /**
+     * 是否覆盖，默认为false
+     * @return override
+     */
     public Boolean getOverride() {
         return override;
     }
@@ -84,9 +88,10 @@ public class CreateManualImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标组织
-     * 
-     * @return remoteNamespace */
+    /**
+     * 目标组织
+     * @return remoteNamespace
+     */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -100,9 +105,10 @@ public class CreateManualImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标region ID。
-     * 
-     * @return remoteRegionId */
+    /**
+     * 目标region ID。
+     * @return remoteRegionId
+     */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -144,7 +150,10 @@ public class CreateManualImageSyncRepoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

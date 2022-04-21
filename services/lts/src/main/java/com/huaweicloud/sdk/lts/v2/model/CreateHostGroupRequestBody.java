@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建主机组请求体 */
+/**
+ * 创建主机组请求体
+ */
 public class CreateHostGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class CreateHostGroupRequestBody {
 
     private String hostGroupName;
 
-    /** 主机组类型。windows：windows类型，linux：linux类型 */
+    /**
+     * 主机组类型。windows：windows类型，linux：linux类型
+     */
     public static final class HostGroupTypeEnum {
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final HostGroupTypeEnum LINUX = new HostGroupTypeEnum("linux");
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final HostGroupTypeEnum WINDOWS = new HostGroupTypeEnum("windows");
 
         private static final Map<String, HostGroupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +120,10 @@ public class CreateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组名称
-     * 
-     * @return hostGroupName */
+    /**
+     * 主机组名称
+     * @return hostGroupName
+     */
     public String getHostGroupName() {
         return hostGroupName;
     }
@@ -128,9 +137,10 @@ public class CreateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组类型。windows：windows类型，linux：linux类型
-     * 
-     * @return hostGroupType */
+    /**
+     * 主机组类型。windows：windows类型，linux：linux类型
+     * @return hostGroupType
+     */
     public HostGroupTypeEnum getHostGroupType() {
         return hostGroupType;
     }
@@ -160,9 +170,10 @@ public class CreateHostGroupRequestBody {
         return this;
     }
 
-    /** 主机组ID列表。主机类型必须与主机组类型一致
-     * 
-     * @return hostIdList */
+    /**
+     * 主机组ID列表。主机类型必须与主机组类型一致
+     * @return hostIdList
+     */
     public List<String> getHostIdList() {
         return hostIdList;
     }
@@ -192,9 +203,10 @@ public class CreateHostGroupRequestBody {
         return this;
     }
 
-    /** 标签信息。KEY不能重复
-     * 
-     * @return hostGroupTag */
+    /**
+     * 标签信息。KEY不能重复
+     * @return hostGroupTag
+     */
     public List<HostGroupTag> getHostGroupTag() {
         return hostGroupTag;
     }
@@ -235,7 +247,10 @@ public class CreateHostGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

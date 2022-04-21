@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单个子任务详情结构体 */
+/**
+ * 单个子任务详情结构体
+ */
 public class TaskDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class TaskDetail {
         return this;
     }
 
-    /** 执行批量任务的目标。
-     * 
-     * @return target */
+    /**
+     * 执行批量任务的目标。
+     * @return target
+     */
     public String getTarget() {
         return target;
     }
@@ -50,10 +53,10 @@ public class TaskDetail {
         return this;
     }
 
-    /** 子任务的执行状态，结果范围：Processing，Success，Fail，Waitting，FailWaitRetry，Stopped。 - Waitting: 等待执行。 - Processing: 执行中。 -
-     * Success: 成功。 - Fail: 失败。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。
-     * 
-     * @return status */
+    /**
+     * 子任务的执行状态，结果范围：Processing，Success，Fail，Waitting，FailWaitRetry，Stopped。 - Waitting: 等待执行。 - Processing: 执行中。 - Success: 成功。 - Fail: 失败。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -67,9 +70,10 @@ public class TaskDetail {
         return this;
     }
 
-    /** 子任务执行的输出信息。
-     * 
-     * @return output */
+    /**
+     * 子任务执行的输出信息。
+     * @return output
+     */
     public String getOutput() {
         return output;
     }
@@ -92,9 +96,10 @@ public class TaskDetail {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public ErrorInfo getError() {
         return error;
     }
@@ -133,7 +138,10 @@ public class TaskDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

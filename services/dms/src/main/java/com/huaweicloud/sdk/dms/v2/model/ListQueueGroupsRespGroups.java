@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 消费组信息 */
+/**
+ * 消费组信息
+ */
 public class ListQueueGroupsRespGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 队列的名称。
-     * 
-     * @return id */
+    /**
+     * 队列的名称。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 队列的名称。
-     * 
-     * @return name */
+    /**
+     * 队列的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,9 +84,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 队列的消息总数，不包含过期删除的消息数。
-     * 
-     * @return producedMessages */
+    /**
+     * 队列的消息总数，不包含过期删除的消息数。
+     * @return producedMessages
+     */
     public Integer getProducedMessages() {
         return producedMessages;
     }
@@ -96,9 +101,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 已正常消费的消息总数。
-     * 
-     * @return consumedMessages */
+    /**
+     * 已正常消费的消息总数。
+     * @return consumedMessages
+     */
     public Integer getConsumedMessages() {
         return consumedMessages;
     }
@@ -112,9 +118,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 该消费组可以消费的普通消息数。
-     * 
-     * @return availableMessages */
+    /**
+     * 该消费组可以消费的普通消息数。
+     * @return availableMessages
+     */
     public Integer getAvailableMessages() {
         return availableMessages;
     }
@@ -128,9 +135,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 该消费组产生的死信息消息总数。仅当include_deadletter为true时，才有该响应参数。
-     * 
-     * @return producedDeadletters */
+    /**
+     * 该消费组产生的死信息消息总数。仅当include_deadletter为true时，才有该响应参数。
+     * @return producedDeadletters
+     */
     public Integer getProducedDeadletters() {
         return producedDeadletters;
     }
@@ -144,9 +152,10 @@ public class ListQueueGroupsRespGroups {
         return this;
     }
 
-    /** 该消费组未消费的死信消息数。仅当include_deadletter为true时，才有该响应参数。
-     * 
-     * @return availableDeadletters */
+    /**
+     * 该消费组未消费的死信消息数。仅当include_deadletter为true时，才有该响应参数。
+     * @return availableDeadletters
+     */
     public Integer getAvailableDeadletters() {
         return availableDeadletters;
     }
@@ -199,7 +208,10 @@ public class ListQueueGroupsRespGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

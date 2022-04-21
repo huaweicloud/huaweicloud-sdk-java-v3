@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** cdm信息 */
+/**
+ * cdm信息
+ */
 public class Datastore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Datastore {
         return this;
     }
 
-    /** 类型，一般为cdm。
-     * 
-     * @return type */
+    /**
+     * 类型，一般为cdm。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class Datastore {
         return this;
     }
 
-    /** 集群版本。
-     * 
-     * @return version */
+    /**
+     * 集群版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -77,7 +81,10 @@ public class Datastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

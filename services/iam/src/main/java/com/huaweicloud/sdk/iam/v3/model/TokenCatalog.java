@@ -38,9 +38,10 @@ public class TokenCatalog {
         return this;
     }
 
-    /** 该接口所属服务。
-     * 
-     * @return type */
+    /**
+     * 该接口所属服务。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -54,9 +55,10 @@ public class TokenCatalog {
         return this;
     }
 
-    /** 服务ID。
-     * 
-     * @return id */
+    /**
+     * 服务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +72,10 @@ public class TokenCatalog {
         return this;
     }
 
-    /** 服务名称。
-     * 
-     * @return name */
+    /**
+     * 服务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +105,10 @@ public class TokenCatalog {
         return this;
     }
 
-    /** 终端节点。
-     * 
-     * @return endpoints */
+    /**
+     * 终端节点。
+     * @return endpoints
+     */
     public List<TokenCatalogEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -143,7 +147,10 @@ public class TokenCatalog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

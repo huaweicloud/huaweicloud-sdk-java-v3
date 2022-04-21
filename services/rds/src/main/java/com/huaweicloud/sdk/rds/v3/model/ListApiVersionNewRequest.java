@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListApiVersionNewRequest {
 
     @Override

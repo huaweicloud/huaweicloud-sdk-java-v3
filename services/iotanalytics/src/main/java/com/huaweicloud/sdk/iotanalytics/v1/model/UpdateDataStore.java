@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateDataStore */
+/**
+ * UpdateDataStore
+ */
 public class UpdateDataStore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateDataStore {
         return this;
     }
 
-    /** 存储名称
-     * 
-     * @return name */
+    /**
+     * 存储名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +71,10 @@ public class UpdateDataStore {
         return this;
     }
 
-    /** 标签，更新存储时标签只可新增，不可修改或删除原有标签
-     * 
-     * @return tags */
+    /**
+     * 标签，更新存储时标签只可新增，不可修改或删除原有标签
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -100,9 +104,10 @@ public class UpdateDataStore {
         return this;
     }
 
-    /** 指标
-     * 
-     * @return metrics */
+    /**
+     * 指标
+     * @return metrics
+     */
     public List<Metric> getMetrics() {
         return metrics;
     }
@@ -132,9 +137,10 @@ public class UpdateDataStore {
         return this;
     }
 
-    /** 属性，更新存储时属性只可新增，不可修改或删除原有属性
-     * 
-     * @return properties */
+    /**
+     * 属性，更新存储时属性只可新增，不可修改或删除原有属性
+     * @return properties
+     */
     public List<Property> getProperties() {
         return properties;
     }
@@ -174,7 +180,10 @@ public class UpdateDataStore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

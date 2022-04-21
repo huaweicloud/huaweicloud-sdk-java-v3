@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateTableResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表ID。
-     * 
-     * @return tableId */
+    /**
+     * 表ID。
+     * @return tableId
+     */
     public String getTableId() {
         return tableId;
     }
@@ -98,9 +101,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表名称。
-     * 
-     * @return tableName */
+    /**
+     * 表名称。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -114,9 +118,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表别名。
-     * 
-     * @return tableAlias */
+    /**
+     * 表别名。
+     * @return tableAlias
+     */
     public String getTableAlias() {
         return tableAlias;
     }
@@ -130,9 +135,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 表创建时间。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -146,9 +152,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表更新时间。
-     * 
-     * @return modifiedTime */
+    /**
+     * 表更新时间。
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -162,9 +169,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据存储位置，分为IoTA和VIEW
-     * 
-     * @return dataLocation */
+    /**
+     * 数据存储位置，分为IoTA和VIEW
+     * @return dataLocation
+     */
     public String getDataLocation() {
         return dataLocation;
     }
@@ -178,9 +186,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据类型，包括“csv”，“parquet”。
-     * 
-     * @return dataType */
+    /**
+     * 数据类型，包括“csv”，“parquet”。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -194,9 +203,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据来源。来源类型有：pipeline, default. 默认为default.
-     * 
-     * @return dataSource */
+    /**
+     * 数据来源。来源类型有：pipeline, default. 默认为default.
+     * @return dataSource
+     */
     public String getDataSource() {
         return dataSource;
     }
@@ -210,9 +220,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表类型:IoTA表为MANAGED, View为VIEW
-     * 
-     * @return tableType */
+    /**
+     * 表类型:IoTA表为MANAGED, View为VIEW
+     * @return tableType
+     */
     public String getTableType() {
         return tableType;
     }
@@ -226,9 +237,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 表的描述信息。
-     * 
-     * @return description */
+    /**
+     * 表的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -258,9 +270,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 分区字段。只有OBS分区表有该参数，其他表没有该参数。
-     * 
-     * @return partitionColumns */
+    /**
+     * 分区字段。只有OBS分区表有该参数，其他表没有该参数。
+     * @return partitionColumns
+     */
     public List<String> getPartitionColumns() {
         return partitionColumns;
     }
@@ -274,9 +287,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅当数据来源为pipeline时返回。Data Store ID.
-     * 
-     * @return dataStoreId */
+    /**
+     * 仅当数据来源为pipeline时返回。Data Store ID.
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -290,9 +304,10 @@ public class CreateTableResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签。
-     * 
-     * @return tags */
+    /**
+     * 标签。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -363,7 +378,10 @@ public class CreateTableResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

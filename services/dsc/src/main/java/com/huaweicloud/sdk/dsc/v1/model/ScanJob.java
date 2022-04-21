@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ScanJob */
+/**
+ * ScanJob
+ */
 public class ScanJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,19 +23,29 @@ public class ScanJob {
 
     private Long createTime;
 
-    /** 任务执行方式 */
+    /**
+     * 任务执行方式
+     */
     public static final class CycleEnum {
 
-        /** Enum ONCE for value: "ONCE" */
+        /**
+         * Enum ONCE for value: "ONCE"
+         */
         public static final CycleEnum ONCE = new CycleEnum("ONCE");
 
-        /** Enum DAY for value: "DAY" */
+        /**
+         * Enum DAY for value: "DAY"
+         */
         public static final CycleEnum DAY = new CycleEnum("DAY");
 
-        /** Enum WEEK for value: "WEEK" */
+        /**
+         * Enum WEEK for value: "WEEK"
+         */
         public static final CycleEnum WEEK = new CycleEnum("WEEK");
 
-        /** Enum MONTH for value: "MONTH" */
+        /**
+         * Enum MONTH for value: "MONTH"
+         */
         public static final CycleEnum MONTH = new CycleEnum("MONTH");
 
         private static final Map<String, CycleEnum> STATIC_FIELDS = createStaticFields();
@@ -135,28 +147,44 @@ public class ScanJob {
 
     private List<String> ruleGroups = null;
 
-    /** 任务当前状态 */
+    /**
+    * 任务当前状态
+    */
     public static final class StatusEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StatusEnum INIT = new StatusEnum("INIT");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
-        /** Enum FINISHED for value: "FINISHED" */
+        /**
+         * Enum FINISHED for value: "FINISHED"
+         */
         public static final StatusEnum FINISHED = new StatusEnum("FINISHED");
 
-        /** Enum TERMINATED for value: "TERMINATED" */
+        /**
+         * Enum TERMINATED for value: "TERMINATED"
+         */
         public static final StatusEnum TERMINATED = new StatusEnum("TERMINATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -251,9 +279,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务创建时间
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -267,9 +296,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务执行方式
-     * 
-     * @return cycle */
+    /**
+     * 任务执行方式
+     * @return cycle
+     */
     public CycleEnum getCycle() {
         return cycle;
     }
@@ -283,9 +313,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -299,9 +330,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务上一次执行时间
-     * 
-     * @return lastRunTime */
+    /**
+     * 任务上一次执行时间
+     * @return lastRunTime
+     */
     public Long getLastRunTime() {
         return lastRunTime;
     }
@@ -315,9 +347,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务上一次扫描风险等级结果
-     * 
-     * @return lastScanRisk */
+    /**
+     * 任务上一次扫描风险等级结果
+     * @return lastScanRisk
+     */
     public String getLastScanRisk() {
         return lastScanRisk;
     }
@@ -331,9 +364,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -347,9 +381,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务开启状态
-     * 
-     * @return open */
+    /**
+     * 任务开启状态
+     * @return open
+     */
     public Boolean getOpen() {
         return open;
     }
@@ -379,9 +414,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务使用的规则组
-     * 
-     * @return ruleGroups */
+    /**
+     * 任务使用的规则组
+     * @return ruleGroups
+     */
     public List<String> getRuleGroups() {
         return ruleGroups;
     }
@@ -395,9 +431,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务当前状态
-     * 
-     * @return status */
+    /**
+     * 任务当前状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -411,9 +448,10 @@ public class ScanJob {
         return this;
     }
 
-    /** SMN服务通知主题
-     * 
-     * @return topicUrn */
+    /**
+     * SMN服务通知主题
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -427,9 +465,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 是否使用了NLP进行扫描
-     * 
-     * @return useNlp */
+    /**
+     * 是否使用了NLP进行扫描
+     * @return useNlp
+     */
     public Boolean getUseNlp() {
         return useNlp;
     }
@@ -443,9 +482,10 @@ public class ScanJob {
         return this;
     }
 
-    /** 任务启动时间
-     * 
-     * @return startTime */
+    /**
+     * 任务启动时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -507,7 +547,10 @@ public class ScanJob {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

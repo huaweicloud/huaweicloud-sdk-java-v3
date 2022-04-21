@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 证书配置查询响应体 */
+/**
+ * 证书配置查询响应体
+ */
 public class HttpGetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class HttpGetBody {
         return this;
     }
 
-    /** HTTPS证书是否启用。（on：开启，off：关闭）
-     * 
-     * @return httpsStatus */
+    /**
+     * HTTPS证书是否启用。（on：开启，off：关闭）
+     * @return httpsStatus
+     */
     public String getHttpsStatus() {
         return httpsStatus;
     }
@@ -54,9 +57,10 @@ public class HttpGetBody {
         return this;
     }
 
-    /** 证书名字。（长度限制为3-32字符）。当证书开启时必返回该字段。
-     * 
-     * @return certificateName */
+    /**
+     * 证书名字。（长度限制为3-32字符）。当证书开启时必返回该字段。
+     * @return certificateName
+     */
     public String getCertificateName() {
         return certificateName;
     }
@@ -70,9 +74,10 @@ public class HttpGetBody {
         return this;
     }
 
-    /** HTTPS协议使用的证书内容，当证书开启时必返回该字段。取值范围：PEM编码格式。
-     * 
-     * @return certificateValue */
+    /**
+     * HTTPS协议使用的证书内容，当证书开启时必返回该字段。取值范围：PEM编码格式。
+     * @return certificateValue
+     */
     public String getCertificateValue() {
         return certificateValue;
     }
@@ -86,9 +91,10 @@ public class HttpGetBody {
         return this;
     }
 
-    /** 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
-     * 
-     * @return certificateSource */
+    /**
+     * 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
+     * @return certificateSource
+     */
     public Integer getCertificateSource() {
         return certificateSource;
     }
@@ -102,9 +108,10 @@ public class HttpGetBody {
         return this;
     }
 
-    /** 是否使用HTTP2.0。（on：是，off：否）
-     * 
-     * @return http2Status */
+    /**
+     * 是否使用HTTP2.0。（on：是，off：否）
+     * @return http2Status
+     */
     public String getHttp2Status() {
         return http2Status;
     }
@@ -147,7 +154,10 @@ public class HttpGetBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

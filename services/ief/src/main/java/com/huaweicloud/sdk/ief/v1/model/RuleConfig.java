@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规则配置 */
+/**
+ * 规则配置
+ */
 public class RuleConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 规则描述，最大长度255，不允许^~#$%&*<>()[]{}'\"\\
-     * 
-     * @return description */
+    /**
+     * 规则描述，最大长度255，不允许^~#$%&*<>()[]{}'\"\\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -72,9 +75,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 铂金版实例ID，如果为空则表示是专业版实例。
-     * 
-     * @return iefInstanceId */
+    /**
+     * 铂金版实例ID，如果为空则表示是专业版实例。
+     * @return iefInstanceId
+     */
     public String getIefInstanceId() {
         return iefInstanceId;
     }
@@ -88,9 +92,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 是否启用规则，默认为true(启用)
-     * 
-     * @return inUsing */
+    /**
+     * 是否启用规则，默认为true(启用)
+     * @return inUsing
+     */
     public Boolean getInUsing() {
         return inUsing;
     }
@@ -104,9 +109,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 规则名称，只允许中文字符、英文字符、数字、下划线、中划线，最大长度64 同一个帐号中创建的规则名唯一
-     * 
-     * @return name */
+    /**
+     * 规则名称，只允许中文字符、英文字符、数字、下划线、中划线，最大长度64 同一个帐号中创建的规则名唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -120,9 +126,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 源端点ID
-     * 
-     * @return source */
+    /**
+     * 源端点ID
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -152,10 +159,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 源端点资源。 示例： - rest: path取值需要为标准URI格式。 {\"path\":\"/a/b/c\"} - eventbus: {\"topic\": \"<project id>/nodes/<node
-     * id>/user/<租户自定义且满足eventbus topic要求的字符串>\",\"node_id\":\"<node id>\"}
-     * 
-     * @return sourceResource */
+    /**
+     * 源端点资源。 示例： - rest: path取值需要为标准URI格式。 {\"path\":\"/a/b/c\"} - eventbus: {\"topic\": \"<project id>/nodes/<node id>/user/<租户自定义且满足eventbus topic要求的字符串>\",\"node_id\":\"<node id>\"}
+     * @return sourceResource
+     */
     public Map<String, String> getSourceResource() {
         return sourceResource;
     }
@@ -169,9 +176,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 目的端点ID
-     * 
-     * @return target */
+    /**
+     * 目的端点ID
+     * @return target
+     */
     public String getTarget() {
         return target;
     }
@@ -201,10 +209,10 @@ public class RuleConfig {
         return this;
     }
 
-    /** 目的端点资源，示例： - dis: {\"channel\": \"dis channel name\"} - servicebus: {\"path\": \"/request path\"} - apigw:
-     * {\"resource\": \"http://ssss.com\"} - eventbus: {\"topic\": \"/xxxx\"}
-     * 
-     * @return targetResource */
+    /**
+     * 目的端点资源，示例： - dis: {\"channel\": \"dis channel name\"} - servicebus: {\"path\": \"/request path\"} - apigw: {\"resource\": \"http://ssss.com\"} - eventbus: {\"topic\": \"/xxxx\"}
+     * @return targetResource
+     */
     public Map<String, String> getTargetResource() {
         return targetResource;
     }
@@ -252,7 +260,10 @@ public class RuleConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

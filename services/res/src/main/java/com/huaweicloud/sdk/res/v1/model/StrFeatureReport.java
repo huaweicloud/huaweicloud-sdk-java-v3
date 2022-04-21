@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 物品离散值类型特征统计 */
+/**
+ * 物品离散值类型特征统计
+ */
 public class StrFeatureReport {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class StrFeatureReport {
         return this;
     }
 
-    /** 特征名。
-     * 
-     * @return name */
+    /**
+     * 特征名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class StrFeatureReport {
         return this;
     }
 
-    /** 特征类型。
-     * 
-     * @return dataType */
+    /**
+     * 特征类型。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -79,9 +83,10 @@ public class StrFeatureReport {
         return this;
     }
 
-    /** 离散类型特征出现次数统计。
-     * 
-     * @return strCount */
+    /**
+     * 离散类型特征出现次数统计。
+     * @return strCount
+     */
     public Map<String, Integer> getStrCount() {
         return strCount;
     }
@@ -120,7 +125,10 @@ public class StrFeatureReport {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

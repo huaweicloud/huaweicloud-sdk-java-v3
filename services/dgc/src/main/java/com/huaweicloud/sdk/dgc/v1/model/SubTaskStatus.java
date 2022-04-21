@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SubTaskStatus */
+/**
+ * SubTaskStatus
+ */
 public class SubTaskStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,16 +40,24 @@ public class SubTaskStatus {
 
     private String lastUpdate;
 
-    /** Gets or Sets status */
+    /**
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
-        /** Enum SUCCESSFUL for value: "SUCCESSFUL" */
+        /**
+         * Enum SUCCESSFUL for value: "SUCCESSFUL"
+         */
         public static final StatusEnum SUCCESSFUL = new StatusEnum("SUCCESSFUL");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get id
-     * 
-     * @return id */
+    /**
+     * Get id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -139,9 +150,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -155,9 +167,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get startTime
-     * 
-     * @return startTime */
+    /**
+     * Get startTime
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -171,9 +184,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get endTime
-     * 
-     * @return endTime */
+    /**
+     * Get endTime
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -187,9 +201,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get lastUpdate
-     * 
-     * @return lastUpdate */
+    /**
+     * Get lastUpdate
+     * @return lastUpdate
+     */
     public String getLastUpdate() {
         return lastUpdate;
     }
@@ -203,9 +218,10 @@ public class SubTaskStatus {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -249,7 +265,10 @@ public class SubTaskStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

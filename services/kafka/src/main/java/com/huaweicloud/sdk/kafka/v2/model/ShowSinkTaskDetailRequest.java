@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowSinkTaskDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ShowSinkTaskDetailRequest {
 
     private String taskId;
 
-    /** 是否包含topic信息。默认是false。 */
+    /**
+     * 是否包含topic信息。默认是false。
+     */
     public static final class TopicInfoEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final TopicInfoEnum TRUE = new TopicInfoEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final TopicInfoEnum FALSE = new TopicInfoEnum("false");
 
         private static final Map<String, TopicInfoEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class ShowSinkTaskDetailRequest {
         return this;
     }
 
-    /** 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
-     * 
-     * @return connectorId */
+    /**
+     * 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
+     * @return connectorId
+     */
     public String getConnectorId() {
         return connectorId;
     }
@@ -120,9 +129,10 @@ public class ShowSinkTaskDetailRequest {
         return this;
     }
 
-    /** 转储任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 转储任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -136,9 +146,10 @@ public class ShowSinkTaskDetailRequest {
         return this;
     }
 
-    /** 是否包含topic信息。默认是false。
-     * 
-     * @return topicInfo */
+    /**
+     * 是否包含topic信息。默认是false。
+     * @return topicInfo
+     */
     public TopicInfoEnum getTopicInfo() {
         return topicInfo;
     }
@@ -177,7 +188,10 @@ public class ShowSinkTaskDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

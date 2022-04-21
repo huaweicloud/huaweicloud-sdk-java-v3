@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 登录主机鉴权，使用密码登录则填写密码即可，使用密钥则填写密钥，二选一即可 */
+/**
+ * 登录主机鉴权，使用密码登录则填写密码即可，使用密钥则填写密钥，二选一即可。
+ */
 public class DeploymentHostAuthorizationBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class DeploymentHostAuthorizationBody {
 
     private String privateKey;
 
-    /** 认证类型，0表示使用密码认证，1表示使用密钥认证 */
+    /**
+     * 认证类型，0表示使用密码认证，1表示使用密钥认证
+     */
     public static final class TrustedTypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final TrustedTypeEnum NUMBER_0 = new TrustedTypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TrustedTypeEnum NUMBER_1 = new TrustedTypeEnum(1);
 
         private static final Map<Integer, TrustedTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class DeploymentHostAuthorizationBody {
         return this;
     }
 
-    /** 用户名，可输入中英文，数字和符号(-_.)。
-     * 
-     * @return username */
+    /**
+     * 用户名，可输入中英文，数字和符号(-_.)。
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -125,9 +134,10 @@ public class DeploymentHostAuthorizationBody {
         return this;
     }
 
-    /** 密码，认证类型为0时，密码必填。
-     * 
-     * @return password */
+    /**
+     * 密码，认证类型为0时，密码必填。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -141,9 +151,10 @@ public class DeploymentHostAuthorizationBody {
         return this;
     }
 
-    /** 密钥，认证类型为1时，密钥必填
-     * 
-     * @return privateKey */
+    /**
+     * 密钥，认证类型为1时，密钥必填
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -157,9 +168,10 @@ public class DeploymentHostAuthorizationBody {
         return this;
     }
 
-    /** 认证类型，0表示使用密码认证，1表示使用密钥认证
-     * 
-     * @return trustedType */
+    /**
+     * 认证类型，0表示使用密码认证，1表示使用密钥认证
+     * @return trustedType
+     */
     public TrustedTypeEnum getTrustedType() {
         return trustedType;
     }
@@ -200,7 +212,10 @@ public class DeploymentHostAuthorizationBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

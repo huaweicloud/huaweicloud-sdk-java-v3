@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Attributes */
+/**
+ * Attributes
+ */
 public class Attributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class Attributes {
         return this;
     }
 
-    /** Get dress
-     * 
-     * @return dress */
+    /**
+     * Get dress
+     * @return dress
+     */
     public Dress getDress() {
         return dress;
     }
@@ -94,9 +97,10 @@ public class Attributes {
         return this;
     }
 
-    /** 是否带眼镜： • yes：带眼镜 • dark：带墨镜 • none：未戴眼镜 • unknown：未知
-     * 
-     * @return glass */
+    /**
+     * 是否带眼镜： • yes：带眼镜 • dark：带墨镜 • none：未戴眼镜 • unknown：未知
+     * @return glass
+     */
     public String getGlass() {
         return glass;
     }
@@ -110,9 +114,10 @@ public class Attributes {
         return this;
     }
 
-    /** 是否戴帽子： • yes：戴帽子 • none：未戴帽子 • unknown：未知
-     * 
-     * @return hat */
+    /**
+     * 是否戴帽子： • yes：戴帽子 • none：未戴帽子 • unknown：未知
+     * @return hat
+     */
     public String getHat() {
         return hat;
     }
@@ -126,9 +131,10 @@ public class Attributes {
         return this;
     }
 
-    /** 年龄。
-     * 
-     * @return age */
+    /**
+     * 年龄。
+     * @return age
+     */
     public Integer getAge() {
         return age;
     }
@@ -142,9 +148,10 @@ public class Attributes {
         return this;
     }
 
-    /** 是否戴口罩： • yes：戴口罩 • none：未戴口罩 • unknown：未知
-     * 
-     * @return mask */
+    /**
+     * 是否戴口罩： • yes：戴口罩 • none：未戴口罩 • unknown：未知
+     * @return mask
+     */
     public String getMask() {
         return mask;
     }
@@ -158,9 +165,10 @@ public class Attributes {
         return this;
     }
 
-    /** 胡须： • yes：有胡须 • none：无胡须 • unknown：未知
-     * 
-     * @return beard */
+    /**
+     * 胡须： • yes：有胡须 • none：无胡须 • unknown：未知
+     * @return beard
+     */
     public String getBeard() {
         return beard;
     }
@@ -174,9 +182,10 @@ public class Attributes {
         return this;
     }
 
-    /** 图片类型： • idcard：证件照 • monitor：摄像头监控 • internet photo：网络图片
-     * 
-     * @return phototype */
+    /**
+     * 图片类型： • idcard：证件照 • monitor：摄像头监控 • internet photo：网络图片
+     * @return phototype
+     */
     public String getPhototype() {
         return phototype;
     }
@@ -199,9 +208,10 @@ public class Attributes {
         return this;
     }
 
-    /** Get quality
-     * 
-     * @return quality */
+    /**
+     * Get quality
+     * @return quality
+     */
     public FaceQuality getQuality() {
         return quality;
     }
@@ -215,9 +225,10 @@ public class Attributes {
         return this;
     }
 
-    /** 发型： • long：长发 • short：短发 • unknown：未知
-     * 
-     * @return hair */
+    /**
+     * 发型： • long：长发 • short：短发 • unknown：未知
+     * @return hair
+     */
     public String getHair() {
         return hair;
     }
@@ -240,9 +251,10 @@ public class Attributes {
         return this;
     }
 
-    /** Get expression
-     * 
-     * @return expression */
+    /**
+     * Get expression
+     * @return expression
+     */
     public AttributesExpression getExpression() {
         return expression;
     }
@@ -256,9 +268,10 @@ public class Attributes {
         return this;
     }
 
-    /** 人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转。
-     * 
-     * @return faceAngle */
+    /**
+     * 人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转。
+     * @return faceAngle
+     */
     public Integer getFaceAngle() {
         return faceAngle;
     }
@@ -308,7 +321,10 @@ public class Attributes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

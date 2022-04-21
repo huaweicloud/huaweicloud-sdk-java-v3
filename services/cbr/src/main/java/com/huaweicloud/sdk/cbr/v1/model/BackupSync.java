@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BackupSync */
+/**
+ * BackupSync
+ */
 public class BackupSync {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份副本ID
-     * 
-     * @return backupId */
+    /**
+     * 备份副本ID
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -69,9 +72,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return backupName */
+    /**
+     * 备份名称
+     * @return backupName
+     */
     public String getBackupName() {
         return backupName;
     }
@@ -85,9 +89,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 桶名
-     * 
-     * @return bucketName */
+    /**
+     * 桶名
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -101,9 +106,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份链在存储单元上的路径
-     * 
-     * @return imagePath */
+    /**
+     * 备份链在存储单元上的路径
+     * @return imagePath
+     */
     public String getImagePath() {
         return imagePath;
     }
@@ -117,9 +123,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份对象ID
-     * 
-     * @return resourceId */
+    /**
+     * 备份对象ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -133,9 +140,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份对象名称
-     * 
-     * @return resourceName */
+    /**
+     * 备份对象名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -149,9 +157,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份对象资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 备份对象资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -165,9 +174,10 @@ public class BackupSync {
         return this;
     }
 
-    /** 备份时间戳，例如1548898428
-     * 
-     * @return createdAt */
+    /**
+     * 备份时间戳，例如1548898428
+     * @return createdAt
+     */
     public Integer getCreatedAt() {
         return createdAt;
     }
@@ -217,7 +227,10 @@ public class BackupSync {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

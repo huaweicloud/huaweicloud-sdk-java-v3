@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 涉政场景中的人物面部信息。 */
+/**
+ * 涉政场景中的人物面部信息。
+ */
 public class ImageDetectionResultDetailFaceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ImageDetectionResultDetailFaceDetail {
         return this;
     }
 
-    /** 人脸区域高度。
-     * 
-     * @return h */
+    /**
+     * 人脸区域高度。
+     * @return h
+     */
     public Integer getH() {
         return h;
     }
@@ -49,9 +52,10 @@ public class ImageDetectionResultDetailFaceDetail {
         return this;
     }
 
-    /** 人脸区域宽度。
-     * 
-     * @return w */
+    /**
+     * 人脸区域宽度。
+     * @return w
+     */
     public Integer getW() {
         return w;
     }
@@ -65,9 +69,10 @@ public class ImageDetectionResultDetailFaceDetail {
         return this;
     }
 
-    /** 人脸区域左上角到y轴距离。
-     * 
-     * @return x */
+    /**
+     * 人脸区域左上角到y轴距离。
+     * @return x
+     */
     public Integer getX() {
         return x;
     }
@@ -81,9 +86,10 @@ public class ImageDetectionResultDetailFaceDetail {
         return this;
     }
 
-    /** 人脸区域左上角到x轴距离。
-     * 
-     * @return y */
+    /**
+     * 人脸区域左上角到x轴距离。
+     * @return y
+     */
     public Integer getY() {
         return y;
     }
@@ -125,7 +131,10 @@ public class ImageDetectionResultDetailFaceDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

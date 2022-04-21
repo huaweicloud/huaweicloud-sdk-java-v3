@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListBaremetalFlavorDetailExtendsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListBaremetalFlavorDetailExtendsResponse extends SdkResponse {
         return this;
     }
 
-    /** 裸金属服务器规格列表，详情请参见表2 flavors数据结构说明。
-     * 
-     * @return flavors */
+    /**
+     * 裸金属服务器规格列表，详情请参见表2 flavors数据结构说明。
+     * @return flavors
+     */
     public List<FlavorsResp> getFlavors() {
         return flavors;
     }
@@ -76,7 +79,10 @@ public class ListBaremetalFlavorDetailExtendsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

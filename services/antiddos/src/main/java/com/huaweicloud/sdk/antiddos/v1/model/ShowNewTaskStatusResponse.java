@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowNewTaskStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态，有以下几种： - success - failed - waiting - running - preprocess - ready
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态，有以下几种： - success - failed - waiting - running - preprocess - ready
+     * @return taskStatus
+     */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -40,9 +43,10 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务的附加信息
-     * 
-     * @return taskMsg */
+    /**
+     * 任务的附加信息
+     * @return taskMsg
+     */
     public String getTaskMsg() {
         return taskMsg;
     }
@@ -79,7 +83,10 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

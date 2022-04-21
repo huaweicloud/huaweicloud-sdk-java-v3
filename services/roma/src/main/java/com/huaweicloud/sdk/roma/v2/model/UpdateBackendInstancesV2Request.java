@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateBackendInstancesV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class UpdateBackendInstancesV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -45,9 +48,10 @@ public class UpdateBackendInstancesV2Request {
         return this;
     }
 
-    /** VPC通道的编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道的编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -70,9 +74,10 @@ public class UpdateBackendInstancesV2Request {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public VpcMemberModify getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class UpdateBackendInstancesV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

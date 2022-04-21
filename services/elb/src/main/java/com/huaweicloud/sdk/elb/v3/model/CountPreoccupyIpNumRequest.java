@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CountPreoccupyIpNumRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。 适用场景：创建LB，变更LB规格。
-     * 
-     * @return l7FlavorId */
+    /**
+     * 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。  适用场景：创建LB，变更LB规格。
+     * @return l7FlavorId
+     */
     public String getL7FlavorId() {
         return l7FlavorId;
     }
@@ -57,9 +60,10 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 是否开启跨VPC转发。 取值true表示计算创建或变更为开启跨VPC转发的LB的预占IP。 取值false表示计算创建或变更为不开启跨VPC转发的LB的预占IP。不传等价false。 适用场景：创建LB，变更LB规格。
-     * 
-     * @return ipTargetEnable */
+    /**
+     * 是否开启跨VPC转发。  取值true表示计算创建或变更为开启跨VPC转发的LB的预占IP。  取值false表示计算创建或变更为不开启跨VPC转发的LB的预占IP。不传等价false。  适用场景：创建LB，变更LB规格。
+     * @return ipTargetEnable
+     */
     public Boolean getIpTargetEnable() {
         return ipTargetEnable;
     }
@@ -73,10 +77,10 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 负载均衡器IP地址类型，取值4，6 。 取值4表示计算创建支持IPv4地址的LB的预占IP。 取值6表示计算创建支持IPv6地址的LB的预占IP。 适用场景：创建LB。
-     * [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
-     * 
-     * @return ipVersion */
+    /**
+     * 负载均衡器IP地址类型，取值4，6 。  取值4表示计算创建支持IPv4地址的LB的预占IP。  取值6表示计算创建支持IPv6地址的LB的预占IP。  适用场景：创建LB。   [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -90,9 +94,10 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 负载均衡器ID。计算LB规格变更或创建LB中的第一个七层监听器的预占IP。 适用场景：变更LB规格，创建LB中的第一个七层监听器。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 负载均衡器ID。计算LB规格变更或创建LB中的第一个七层监听器的预占IP。  适用场景：变更LB规格，创建LB中的第一个七层监听器。
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -122,9 +127,10 @@ public class CountPreoccupyIpNumRequest {
         return this;
     }
 
-    /** 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。 适用场景：创建LB。 使用说明： - 传入loadbalancer_id时，该参数无效。
-     * 
-     * @return availabilityZoneId */
+    /**
+     * 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。  适用场景：创建LB。  使用说明： - 传入loadbalancer_id时，该参数无效。
+     * @return availabilityZoneId
+     */
     public List<String> getAvailabilityZoneId() {
         return availabilityZoneId;
     }
@@ -167,7 +173,10 @@ public class CountPreoccupyIpNumRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

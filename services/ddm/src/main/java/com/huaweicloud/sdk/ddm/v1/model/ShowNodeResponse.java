@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowNodeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +66,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return status */
+    /**
+     * 节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -80,9 +83,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return name */
+    /**
+     * 节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +100,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点id。
-     * 
-     * @return nodeId */
+    /**
+     * 节点id。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -112,9 +117,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点私有ip。
-     * 
-     * @return privateIp */
+    /**
+     * 节点私有ip。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -128,9 +134,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点浮动ip。
-     * 
-     * @return floatingIp */
+    /**
+     * 节点浮动ip。
+     * @return floatingIp
+     */
     public String getFloatingIp() {
         return floatingIp;
     }
@@ -144,9 +151,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚机id。
-     * 
-     * @return serverId */
+    /**
+     * 虚机id。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -160,9 +168,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网名称。
-     * 
-     * @return subnetName */
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
     public String getSubnetName() {
         return subnetName;
     }
@@ -176,9 +185,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据盘id。
-     * 
-     * @return datavolumeId */
+    /**
+     * 数据盘id。
+     * @return datavolumeId
+     */
     public String getDatavolumeId() {
         return datavolumeId;
     }
@@ -192,9 +202,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源子网ip。
-     * 
-     * @return resSubnetIp */
+    /**
+     * 资源子网ip。
+     * @return resSubnetIp
+     */
     public String getResSubnetIp() {
         return resSubnetIp;
     }
@@ -208,9 +219,10 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统盘id。
-     * 
-     * @return systemvolumeId */
+    /**
+     * 系统盘id。
+     * @return systemvolumeId
+     */
     public String getSystemvolumeId() {
         return systemvolumeId;
     }
@@ -271,7 +283,10 @@ public class ShowNodeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

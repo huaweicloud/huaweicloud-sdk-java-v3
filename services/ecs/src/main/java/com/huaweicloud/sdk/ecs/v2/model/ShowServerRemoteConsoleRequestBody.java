@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class ShowServerRemoteConsoleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ShowServerRemoteConsoleRequestBody {
         return this;
     }
 
-    /** Get remoteConsole
-     * 
-     * @return remoteConsole */
+    /**
+     * Get remoteConsole
+     * @return remoteConsole
+     */
     public GetServerRemoteConsoleOption getRemoteConsole() {
         return remoteConsole;
     }
@@ -66,7 +69,10 @@ public class ShowServerRemoteConsoleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

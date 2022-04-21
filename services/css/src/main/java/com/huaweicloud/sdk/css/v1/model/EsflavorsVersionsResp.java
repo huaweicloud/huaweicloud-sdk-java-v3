@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 引擎列表。 */
+/**
+ * 引擎列表。
+ */
 public class EsflavorsVersionsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class EsflavorsVersionsResp {
         return this;
     }
 
-    /** 引擎版本，支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2、7.9.3。
-     * 
-     * @return version */
+    /**
+     * 引擎版本，支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2、7.9.3。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -58,9 +61,10 @@ public class EsflavorsVersionsResp {
         return this;
     }
 
-    /** 规格列表。
-     * 
-     * @return flavors */
+    /**
+     * 规格列表。
+     * @return flavors
+     */
     public List<EsflavorsVersionsFlavorsResp> getFlavors() {
         return flavors;
     }
@@ -97,7 +101,10 @@ public class EsflavorsVersionsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

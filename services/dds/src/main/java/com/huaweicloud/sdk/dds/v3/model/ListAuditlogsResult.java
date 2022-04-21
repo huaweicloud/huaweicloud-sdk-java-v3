@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListAuditlogsResult */
+/**
+ * ListAuditlogsResult
+ */
 public class ListAuditlogsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 节点ID。
-     * 
-     * @return nodeId */
+    /**
+     * 节点ID。
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -59,9 +62,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 审计日志ID。
-     * 
-     * @return id */
+    /**
+     * 审计日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,9 +79,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 审计日志文件名。
-     * 
-     * @return name */
+    /**
+     * 审计日志文件名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +96,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 审计日志大小，单位：byte。
-     * 
-     * @return size */
+    /**
+     * 审计日志大小，单位：byte。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -107,9 +113,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return startTime */
+    /**
+     * 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -123,9 +130,10 @@ public class ListAuditlogsResult {
         return this;
     }
 
-    /** 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return endTime */
+    /**
+     * 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -169,7 +177,10 @@ public class ListAuditlogsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 转发规则对象，用于状态树中 */
+/**
+ * 转发规则对象，用于状态树中
+ */
 public class L7rulesInStatusResp {
 
-    /** 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名 */
+    /**
+     * 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
+     */
     public static final class TypeEnum {
 
-        /** Enum PATH for value: "PATH" */
+        /**
+         * Enum PATH for value: "PATH"
+         */
         public static final TypeEnum PATH = new TypeEnum("PATH");
 
-        /** Enum HOST_NAME for value: "HOST_NAME" */
+        /**
+         * Enum HOST_NAME for value: "HOST_NAME"
+         */
         public static final TypeEnum HOST_NAME = new TypeEnum("HOST_NAME");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class L7rulesInStatusResp {
         return this;
     }
 
-    /** 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
-     * 
-     * @return type */
+    /**
+     * 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -120,9 +129,10 @@ public class L7rulesInStatusResp {
         return this;
     }
 
-    /** 转发规则ID
-     * 
-     * @return id */
+    /**
+     * 转发规则ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -136,9 +146,10 @@ public class L7rulesInStatusResp {
         return this;
     }
 
-    /** 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -176,7 +187,10 @@ public class L7rulesInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

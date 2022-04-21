@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAssetDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -65,9 +68,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get baseInfo
-     * 
-     * @return baseInfo */
+    /**
+     * Get baseInfo
+     * @return baseInfo
+     */
     public BaseInfo getBaseInfo() {
         return baseInfo;
     }
@@ -90,9 +94,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get transcodeInfo
-     * 
-     * @return transcodeInfo */
+    /**
+     * Get transcodeInfo
+     * @return transcodeInfo
+     */
     public TranscodeInfo getTranscodeInfo() {
         return transcodeInfo;
     }
@@ -115,9 +120,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get thumbnailInfo
-     * 
-     * @return thumbnailInfo */
+    /**
+     * Get thumbnailInfo
+     * @return thumbnailInfo
+     */
     public ThumbnailInfo getThumbnailInfo() {
         return thumbnailInfo;
     }
@@ -140,9 +146,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get reviewInfo
-     * 
-     * @return reviewInfo */
+    /**
+     * Get reviewInfo
+     * @return reviewInfo
+     */
     public ReviewInfo getReviewInfo() {
         return reviewInfo;
     }
@@ -185,7 +192,10 @@ public class ShowAssetDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

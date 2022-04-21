@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateApplicationRequestBody */
+/**
+ * CreateApplicationRequestBody
+ */
 public class CreateApplicationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateApplicationRequestBody {
         return this;
     }
 
-    /** 应用名。 最大支持64个字符，只能包含英文字母、下划线和数字。
-     * 
-     * @return name */
+    /**
+     * 应用名。  最大支持64个字符，只能包含英文字母、下划线和数字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class CreateApplicationRequestBody {
         return this;
     }
 
-    /** 应用平台。 目前仅支持HMS、APNS、APNS_SANDBOX。 HMS是为开发者提供的消息推送平台。 APNS和APNS_SANDBOX是用于推送iOS消息的服务平台。
-     * 
-     * @return platform */
+    /**
+     * 应用平台。  目前仅支持HMS、APNS、APNS_SANDBOX。  HMS是为开发者提供的消息推送平台。  APNS和APNS_SANDBOX是用于推送iOS消息的服务平台。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -65,9 +69,10 @@ public class CreateApplicationRequestBody {
         return this;
     }
 
-    /** 对于HMS平台是APP ID，只能包含英文字母和数字，最大20个字符。 对于苹果APNS、APNS_SandBox平台是推送证书，大小不超过8K，且是Base64编码。
-     * 
-     * @return platformPrincipal */
+    /**
+     * 对于HMS平台是APP ID，只能包含英文字母和数字，最大20个字符。 对于苹果APNS、APNS_SandBox平台是推送证书，大小不超过8K，且是Base64编码。
+     * @return platformPrincipal
+     */
     public String getPlatformPrincipal() {
         return platformPrincipal;
     }
@@ -81,9 +86,10 @@ public class CreateApplicationRequestBody {
         return this;
     }
 
-    /** 对于HMS平台是APP SECRET， 只能包含英文字母和数字，32到64个字符。 对于苹果APNS、APNS_SandBox平台是推送证书的私钥（private key）， 大小不超过8K，且是Base64编码。
-     * 
-     * @return platformCredential */
+    /**
+     * 对于HMS平台是APP SECRET， 只能包含英文字母和数字，32到64个字符。  对于苹果APNS、APNS_SandBox平台是推送证书的私钥（private key）， 大小不超过8K，且是Base64编码。
+     * @return platformCredential
+     */
     public String getPlatformCredential() {
         return platformCredential;
     }
@@ -124,7 +130,10 @@ public class CreateApplicationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

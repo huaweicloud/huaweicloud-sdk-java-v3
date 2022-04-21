@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TopicEntity */
+/**
+ * TopicEntity
+ */
 public class TopicEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 是否为默认策略。
-     * 
-     * @return policiesOnly */
+    /**
+     * 是否为默认策略。
+     * @return policiesOnly
+     */
     public Boolean getPoliciesOnly() {
         return policiesOnly;
     }
@@ -74,9 +77,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return name */
+    /**
+     * topic名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -90,9 +94,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 副本数，配置数据的可靠性。
-     * 
-     * @return replication */
+    /**
+     * 副本数，配置数据的可靠性。
+     * @return replication
+     */
     public Integer getReplication() {
         return replication;
     }
@@ -106,9 +111,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。
-     * 
-     * @return partition */
+    /**
+     * topic分区数，设置消费的并发数。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -122,9 +128,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 消息老化时间。
-     * 
-     * @return retentionTime */
+    /**
+     * 消息老化时间。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -138,9 +145,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -154,9 +162,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -170,9 +179,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** 扩展配置。
-     * 
-     * @return externalConfigs */
+    /**
+     * 扩展配置。
+     * @return externalConfigs
+     */
     public Object getExternalConfigs() {
         return externalConfigs;
     }
@@ -186,9 +196,10 @@ public class TopicEntity {
         return this;
     }
 
-    /** topic类型。
-     * 
-     * @return topicType */
+    /**
+     * topic类型。
+     * @return topicType
+     */
     public Integer getTopicType() {
         return topicType;
     }
@@ -246,7 +257,10 @@ public class TopicEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

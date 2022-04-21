@@ -15,7 +15,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** server字段数据结构说明 */
+/**
+ * server字段数据结构说明
+ */
 public class ChangeBaremetalNameResponsesServers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,32 +30,49 @@ public class ChangeBaremetalNameResponsesServers {
 
     private UUID id;
 
-    /** 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
-     * SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结 */
+    /**
+     * 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum BUILD for value: "BUILD" */
+        /**
+         * Enum BUILD for value: "BUILD"
+         */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
 
-        /** Enum DELETED for value: "DELETED" */
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum HARD_REBOOT for value: "HARD_REBOOT" */
+        /**
+         * Enum HARD_REBOOT for value: "HARD_REBOOT"
+         */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
 
-        /** Enum REBOOT for value: "REBOOT" */
+        /**
+         * Enum REBOOT for value: "REBOOT"
+         */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
 
-        /** Enum REBUILD for value: "REBUILD" */
+        /**
+         * Enum REBUILD for value: "REBUILD"
+         */
         public static final StatusEnum REBUILD = new StatusEnum("REBUILD");
 
-        /** Enum SHUTOFF for value: "SHUTOFF" */
+        /**
+         * Enum SHUTOFF for value: "SHUTOFF"
+         */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -189,13 +208,19 @@ public class ChangeBaremetalNameResponsesServers {
 
     private List<Links> links = null;
 
-    /** 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。 */
+    /**
+    * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
+    */
     public static final class OsDCFDiskConfigEnum {
 
-        /** Enum MANUAL for value: "MANUAL" */
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
 
-        /** Enum AUTO for value: "AUTO" */
+        /**
+         * Enum AUTO for value: "AUTO"
+         */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
 
         private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
@@ -290,32 +315,50 @@ public class ChangeBaremetalNameResponsesServers {
 
     private Integer osEXTSTSPowerState;
 
-    /** 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中 */
+    /**
+     * 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
+     */
     public static final class OsEXTSTSTaskStateEnum {
 
-        /** Enum REBOOTING for value: "rebooting" */
+        /**
+         * Enum REBOOTING for value: "rebooting"
+         */
         public static final OsEXTSTSTaskStateEnum REBOOTING = new OsEXTSTSTaskStateEnum("rebooting");
 
-        /** Enum REBOOT_STARTED for value: "reboot_started" */
+        /**
+         * Enum REBOOT_STARTED for value: "reboot_started"
+         */
         public static final OsEXTSTSTaskStateEnum REBOOT_STARTED = new OsEXTSTSTaskStateEnum("reboot_started");
 
-        /** Enum REBOOT_STARTED_HARD for value: "reboot_started_hard" */
+        /**
+         * Enum REBOOT_STARTED_HARD for value: "reboot_started_hard"
+         */
         public static final OsEXTSTSTaskStateEnum REBOOT_STARTED_HARD =
             new OsEXTSTSTaskStateEnum("reboot_started_hard");
 
-        /** Enum POWERING_OFF for value: "powering-off" */
+        /**
+         * Enum POWERING_OFF for value: "powering-off"
+         */
         public static final OsEXTSTSTaskStateEnum POWERING_OFF = new OsEXTSTSTaskStateEnum("powering-off");
 
-        /** Enum POWERING_ON for value: "powering-on" */
+        /**
+         * Enum POWERING_ON for value: "powering-on"
+         */
         public static final OsEXTSTSTaskStateEnum POWERING_ON = new OsEXTSTSTaskStateEnum("powering-on");
 
-        /** Enum REBUILDING for value: "rebuilding" */
+        /**
+         * Enum REBUILDING for value: "rebuilding"
+         */
         public static final OsEXTSTSTaskStateEnum REBUILDING = new OsEXTSTSTaskStateEnum("rebuilding");
 
-        /** Enum SCHEDULING for value: "scheduling" */
+        /**
+         * Enum SCHEDULING for value: "scheduling"
+         */
         public static final OsEXTSTSTaskStateEnum SCHEDULING = new OsEXTSTSTaskStateEnum("scheduling");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final OsEXTSTSTaskStateEnum DELETING = new OsEXTSTSTaskStateEnum("deleting");
 
         private static final Map<String, OsEXTSTSTaskStateEnum> STATIC_FIELDS = createStaticFields();
@@ -391,19 +434,29 @@ public class ChangeBaremetalNameResponsesServers {
 
     private OsEXTSTSTaskStateEnum osEXTSTSTaskState;
 
-    /** 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启 */
+    /**
+     * 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
+     */
     public static final class OsEXTSTSVmStateEnum {
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final OsEXTSTSVmStateEnum RUNNING = new OsEXTSTSVmStateEnum("RUNNING");
 
-        /** Enum SHUTOFF for value: "SHUTOFF" */
+        /**
+         * Enum SHUTOFF for value: "SHUTOFF"
+         */
         public static final OsEXTSTSVmStateEnum SHUTOFF = new OsEXTSTSVmStateEnum("SHUTOFF");
 
-        /** Enum SUSPENDED for value: "SUSPENDED" */
+        /**
+         * Enum SUSPENDED for value: "SUSPENDED"
+         */
         public static final OsEXTSTSVmStateEnum SUSPENDED = new OsEXTSTSVmStateEnum("SUSPENDED");
 
-        /** Enum REBOOT for value: "REBOOT" */
+        /**
+         * Enum REBOOT for value: "REBOOT"
+         */
         public static final OsEXTSTSVmStateEnum REBOOT = new OsEXTSTSVmStateEnum("REBOOT");
 
         private static final Map<String, OsEXTSTSVmStateEnum> STATIC_FIELDS = createStaticFields();
@@ -520,19 +573,29 @@ public class ChangeBaremetalNameResponsesServers {
 
     private String description;
 
-    /** 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息 */
+    /**
+     * 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
+     */
     public static final class HostStatusEnum {
 
-        /** Enum UP for value: "UP" */
+        /**
+         * Enum UP for value: "UP"
+         */
         public static final HostStatusEnum UP = new HostStatusEnum("UP");
 
-        /** Enum UNKNOWN for value: "UNKNOWN" */
+        /**
+         * Enum UNKNOWN for value: "UNKNOWN"
+         */
         public static final HostStatusEnum UNKNOWN = new HostStatusEnum("UNKNOWN");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final HostStatusEnum DOWN = new HostStatusEnum("DOWN");
 
-        /** Enum MAINTENANCE for value: "MAINTENANCE" */
+        /**
+         * Enum MAINTENANCE for value: "MAINTENANCE"
+         */
         public static final HostStatusEnum MAINTENANCE = new HostStatusEnum("MAINTENANCE");
 
         private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -669,9 +732,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器名称
-     * 
-     * @return name */
+    /**
+     * 裸金属服务器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -685,9 +749,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器唯一标识ID
-     * 
-     * @return id */
+    /**
+     * 裸金属服务器唯一标识ID
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
@@ -701,10 +766,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
-     * SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
-     * 
-     * @return status */
+    /**
+     * 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -718,9 +783,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器创建时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
-     * 
-     * @return created */
+    /**
+     * 裸金属服务器创建时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
+     * @return created
+     */
     public OffsetDateTime getCreated() {
         return created;
     }
@@ -734,9 +800,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器上一次更新时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T04:30:52Z
-     * 
-     * @return updated */
+    /**
+     * 裸金属服务器上一次更新时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T04:30:52Z
+     * @return updated
+     */
     public OffsetDateTime getUpdated() {
         return updated;
     }
@@ -759,9 +826,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public FlavorInfo getFlavor() {
         return flavor;
     }
@@ -784,9 +852,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get image
-     * 
-     * @return image */
+    /**
+     * Get image
+     * @return image
+     */
     public Image getImage() {
         return image;
     }
@@ -800,9 +869,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器所属租户ID，格式为UUID。该参数和project_id表示相同的概念。
-     * 
-     * @return tenantId */
+    /**
+     * 裸金属服务器所属租户ID，格式为UUID。该参数和project_id表示相同的概念。
+     * @return tenantId
+     */
     public UUID getTenantId() {
         return tenantId;
     }
@@ -816,9 +886,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** SSH密钥名称
-     * 
-     * @return keyName */
+    /**
+     * SSH密钥名称
+     * @return keyName
+     */
     public String getKeyName() {
         return keyName;
     }
@@ -832,9 +903,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器所属用户ID。
-     * 
-     * @return userId */
+    /**
+     * 裸金属服务器所属用户ID。
+     * @return userId
+     */
     public UUID getUserId() {
         return userId;
     }
@@ -857,9 +929,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public MetadataInfos getMetadata() {
         return metadata;
     }
@@ -873,9 +946,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器的主机ID
-     * 
-     * @return hostId */
+    /**
+     * 裸金属服务器的主机ID
+     * @return hostId
+     */
     public UUID getHostId() {
         return hostId;
     }
@@ -898,9 +972,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get addresses
-     * 
-     * @return addresses */
+    /**
+     * Get addresses
+     * @return addresses
+     */
     public Addresses getAddresses() {
         return addresses;
     }
@@ -930,9 +1005,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器所属安全组列表。
-     * 
-     * @return securityGroups */
+    /**
+     * 裸金属服务器所属安全组列表。
+     * @return securityGroups
+     */
     public List<SecurityGroups> getSecurityGroups() {
         return securityGroups;
     }
@@ -962,9 +1038,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器相关信息快捷链接
-     * 
-     * @return links */
+    /**
+     * 裸金属服务器相关信息快捷链接
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -978,9 +1055,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
-     * 
-     * @return osDCFDiskConfig */
+    /**
+     * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
+     * @return osDCFDiskConfig
+     */
     public OsDCFDiskConfigEnum getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -994,9 +1072,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，可用分区编码。
-     * 
-     * @return osEXTAZAvailabilityZone */
+    /**
+     * 扩展属性，可用分区编码。
+     * @return osEXTAZAvailabilityZone
+     */
     public String getOsEXTAZAvailabilityZone() {
         return osEXTAZAvailabilityZone;
     }
@@ -1010,9 +1089,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器宿主名称
-     * 
-     * @return osEXTSRVATTRHost */
+    /**
+     * 扩展属性，裸金属服务器宿主名称
+     * @return osEXTSRVATTRHost
+     */
     public String getOsEXTSRVATTRHost() {
         return osEXTSRVATTRHost;
     }
@@ -1027,9 +1107,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，hypervisor主机名称，由Nova virt驱动提供
-     * 
-     * @return osEXTSRVATTRHypervisorHostname */
+    /**
+     * 扩展属性，hypervisor主机名称，由Nova virt驱动提供
+     * @return osEXTSRVATTRHypervisorHostname
+     */
     public String getOsEXTSRVATTRHypervisorHostname() {
         return osEXTSRVATTRHypervisorHostname;
     }
@@ -1043,9 +1124,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器实例ID
-     * 
-     * @return osEXTSRVATTRInstanceName */
+    /**
+     * 扩展属性，裸金属服务器实例ID
+     * @return osEXTSRVATTRInstanceName
+     */
     public String getOsEXTSRVATTRInstanceName() {
         return osEXTSRVATTRInstanceName;
     }
@@ -1059,9 +1141,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
-     * 
-     * @return osEXTSTSPowerState */
+    /**
+     * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
+     * @return osEXTSTSPowerState
+     */
     public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
@@ -1075,9 +1158,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
-     * 
-     * @return osEXTSTSTaskState */
+    /**
+     * 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
+     * @return osEXTSTSTaskState
+     */
     public OsEXTSTSTaskStateEnum getOsEXTSTSTaskState() {
         return osEXTSTSTaskState;
     }
@@ -1091,9 +1175,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
-     * 
-     * @return osEXTSTSVmState */
+    /**
+     * 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
+     * @return osEXTSTSVmState
+     */
     public OsEXTSTSVmStateEnum getOsEXTSTSVmState() {
         return osEXTSTSVmState;
     }
@@ -1107,9 +1192,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-25T03:40:25.000000
-     * 
-     * @return osSRVUSGLaunchedAt */
+    /**
+     * 扩展属性，裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-25T03:40:25.000000
+     * @return osSRVUSGLaunchedAt
+     */
     public OffsetDateTime getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
@@ -1123,9 +1209,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 扩展属性，裸金属服务器关闭时间。时间戳格式为ISO 8601，例如：2019-06-25T03:40:25.000000
-     * 
-     * @return osSRVUSGTerminatedAt */
+    /**
+     * 扩展属性，裸金属服务器关闭时间。时间戳格式为ISO 8601，例如：2019-06-25T03:40:25.000000
+     * @return osSRVUSGTerminatedAt
+     */
     public OffsetDateTime getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
@@ -1158,9 +1245,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器挂载的云硬盘信息。详情请参见表 os-extended-volumes:volumes_attached字段数据结构说明。
-     * 
-     * @return osExtendedVolumesVolumesAttached */
+    /**
+     * 裸金属服务器挂载的云硬盘信息。详情请参见表 os-extended-volumes:volumes_attached字段数据结构说明。
+     * @return osExtendedVolumesVolumesAttached
+     */
     public List<OsExtendedVolumes> getOsExtendedVolumesVolumesAttached() {
         return osExtendedVolumesVolumesAttached;
     }
@@ -1174,9 +1262,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 预留属性
-     * 
-     * @return accessIPv4 */
+    /**
+     * 预留属性
+     * @return accessIPv4
+     */
     public String getAccessIPv4() {
         return accessIPv4;
     }
@@ -1190,9 +1279,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 预留属性
-     * 
-     * @return accessIPv6 */
+    /**
+     * 预留属性
+     * @return accessIPv6
+     */
     public String getAccessIPv6() {
         return accessIPv6;
     }
@@ -1215,9 +1305,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get fault
-     * 
-     * @return fault */
+    /**
+     * Get fault
+     * @return fault
+     */
     public Fault getFault() {
         return fault;
     }
@@ -1231,9 +1322,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** config drive信息
-     * 
-     * @return configDrive */
+    /**
+     * config drive信息
+     * @return configDrive
+     */
     public String getConfigDrive() {
         return configDrive;
     }
@@ -1247,9 +1339,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 预留属性
-     * 
-     * @return progress */
+    /**
+     * 预留属性
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -1263,9 +1356,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器的描述信息。
-     * 
-     * @return description */
+    /**
+     * 裸金属服务器的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -1279,9 +1373,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
-     * 
-     * @return hostStatus */
+    /**
+     * 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
+     * @return hostStatus
+     */
     public HostStatusEnum getHostStatus() {
         return hostStatus;
     }
@@ -1295,9 +1390,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器的主机名
-     * 
-     * @return osEXTSRVATTRHostname */
+    /**
+     * 裸金属服务器的主机名
+     * @return osEXTSRVATTRHostname
+     */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -1311,9 +1407,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 批量创建场景，裸金属服务器的预留ID。当批量创建裸金属服务器时，这些服务器将拥有相同的reservation_id。您可以使用6.3.3-查询裸金属服务器详情列表API并指定reservation_id来过滤查询同一批创建的所有裸金属服务器。
-     * 
-     * @return osEXTSRVATTRReservationId */
+    /**
+     * 批量创建场景，裸金属服务器的预留ID。当批量创建裸金属服务器时，这些服务器将拥有相同的reservation_id。您可以使用6.3.3-查询裸金属服务器详情列表API并指定reservation_id来过滤查询同一批创建的所有裸金属服务器。
+     * @return osEXTSRVATTRReservationId
+     */
     public UUID getOsEXTSRVATTRReservationId() {
         return osEXTSRVATTRReservationId;
     }
@@ -1327,9 +1424,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 批量创建场景，裸金属服务器的启动顺序
-     * 
-     * @return osEXTSRVATTRLaunchIndex */
+    /**
+     * 批量创建场景，裸金属服务器的启动顺序
+     * @return osEXTSRVATTRLaunchIndex
+     */
     public Integer getOsEXTSRVATTRLaunchIndex() {
         return osEXTSRVATTRLaunchIndex;
     }
@@ -1343,9 +1441,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空
-     * 
-     * @return osEXTSRVATTRKernelId */
+    /**
+     * 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空
+     * @return osEXTSRVATTRKernelId
+     */
     public UUID getOsEXTSRVATTRKernelId() {
         return osEXTSRVATTRKernelId;
     }
@@ -1359,9 +1458,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
-     * 
-     * @return osEXTSRVATTRRamdiskId */
+    /**
+     * 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
+     * @return osEXTSRVATTRRamdiskId
+     */
     public UUID getOsEXTSRVATTRRamdiskId() {
         return osEXTSRVATTRRamdiskId;
     }
@@ -1375,9 +1475,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器系统盘的设备名称，例如“/dev/sdb”。
-     * 
-     * @return osEXTSRVATTRRootDeviceName */
+    /**
+     * 裸金属服务器系统盘的设备名称，例如“/dev/sdb”。
+     * @return osEXTSRVATTRRootDeviceName
+     */
     public String getOsEXTSRVATTRRootDeviceName() {
         return osEXTSRVATTRRootDeviceName;
     }
@@ -1391,9 +1492,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 创建裸金属服务器时指定的user_data。取值为base64编码后的结果或空字符串。
-     * 
-     * @return osEXTSRVATTRUserData */
+    /**
+     * 创建裸金属服务器时指定的user_data。取值为base64编码后的结果或空字符串。
+     * @return osEXTSRVATTRUserData
+     */
     public String getOsEXTSRVATTRUserData() {
         return osEXTSRVATTRUserData;
     }
@@ -1407,9 +1509,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器实例是否为锁定状态。true：锁定false：未锁定
-     * 
-     * @return locked */
+    /**
+     * 裸金属服务器实例是否为锁定状态。true：锁定false：未锁定
+     * @return locked
+     */
     public Boolean getLocked() {
         return locked;
     }
@@ -1439,9 +1542,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器标签
-     * 
-     * @return tags */
+    /**
+     * 裸金属服务器标签
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -1471,9 +1575,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** 裸金属服务器的系统标签
-     * 
-     * @return sysTags */
+    /**
+     * 裸金属服务器的系统标签
+     * @return sysTags
+     */
     public List<SystemTags> getSysTags() {
         return sysTags;
     }
@@ -1487,9 +1592,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** enterprise_project_id。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * enterprise_project_id。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1513,9 +1619,10 @@ public class ChangeBaremetalNameResponsesServers {
         return this;
     }
 
-    /** Get osSchedulerHints
-     * 
-     * @return osSchedulerHints */
+    /**
+     * Get osSchedulerHints
+     * @return osSchedulerHints
+     */
     public ServerOsSchedulerHints getOsSchedulerHints() {
         return osSchedulerHints;
     }
@@ -1692,7 +1799,10 @@ public class ChangeBaremetalNameResponsesServers {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

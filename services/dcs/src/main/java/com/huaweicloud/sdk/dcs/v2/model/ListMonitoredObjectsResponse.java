@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListMonitoredObjectsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前查询维度路由。如果是主维度，则数组中是自身ID。
-     * 
-     * @return router */
+    /**
+     * 当前查询维度路由。如果是主维度，则数组中是自身ID。
+     * @return router
+     */
     public List<String> getRouter() {
         return router;
     }
@@ -85,10 +88,10 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前查询维度子维度对象列表。当前只有维度为dcs_instance_id时才有值。 - Proxy集群有两个子维度，分别为dcs_cluster_redis_node和dcs_cluster_proxy_node。 -
-     * Cluster集群有一个子维度 dcs_cluster_proxy_node。
-     * 
-     * @return children */
+    /**
+     * 当前查询维度子维度对象列表。当前只有维度为dcs_instance_id时才有值。 - Proxy集群有两个子维度，分别为dcs_cluster_redis_node和dcs_cluster_proxy_node。 - Cluster集群有一个子维度 dcs_cluster_proxy_node。 
+     * @return children
+     */
     public List<DimChild> getChildren() {
         return children;
     }
@@ -118,9 +121,10 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前查询维度监控对象列表。
-     * 
-     * @return instances */
+    /**
+     * 当前查询维度监控对象列表。
+     * @return instances
+     */
     public List<InstancesMonitoredObject> getInstances() {
         return instances;
     }
@@ -134,9 +138,10 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         return this;
     }
 
-    /** 主维度监控对象的总数。
-     * 
-     * @return total */
+    /**
+     * 主维度监控对象的总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -177,7 +182,10 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

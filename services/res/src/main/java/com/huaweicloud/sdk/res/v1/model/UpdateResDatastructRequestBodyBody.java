@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateResDatastructRequestBodyBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class UpdateResDatastructRequestBodyBody {
         return this;
     }
 
-    /** 物品特征信息。
-     * 
-     * @return itemAttrs */
+    /**
+     * 物品特征信息。
+     * @return itemAttrs
+     */
     public List<ItemAttrs> getItemAttrs() {
         return itemAttrs;
     }
@@ -79,9 +82,10 @@ public class UpdateResDatastructRequestBodyBody {
         return this;
     }
 
-    /** 用户特征信息。
-     * 
-     * @return userAttrs */
+    /**
+     * 用户特征信息。
+     * @return userAttrs
+     */
     public List<UserAttrs> getUserAttrs() {
         return userAttrs;
     }
@@ -104,9 +108,10 @@ public class UpdateResDatastructRequestBodyBody {
         return this;
     }
 
-    /** Get behaviors
-     * 
-     * @return behaviors */
+    /**
+     * Get behaviors
+     * @return behaviors
+     */
     public BehaviorsConfig getBehaviors() {
         return behaviors;
     }
@@ -145,7 +150,10 @@ public class UpdateResDatastructRequestBodyBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

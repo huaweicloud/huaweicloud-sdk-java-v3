@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpExtendInfoVaultDelete */
+/**
+ * OpExtendInfoVaultDelete
+ */
 public class OpExtendInfoVaultDelete {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OpExtendInfoVaultDelete {
         return this;
     }
 
-    /** 本次任务删除失败的资源数量
-     * 
-     * @return failCount */
+    /**
+     * 本次任务删除失败的资源数量
+     * @return failCount
+     */
     public Integer getFailCount() {
         return failCount;
     }
@@ -39,9 +42,10 @@ public class OpExtendInfoVaultDelete {
         return this;
     }
 
-    /** 本次任务删除的备份总数
-     * 
-     * @return totalCount */
+    /**
+     * 本次任务删除的备份总数
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -78,7 +82,10 @@ public class OpExtendInfoVaultDelete {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

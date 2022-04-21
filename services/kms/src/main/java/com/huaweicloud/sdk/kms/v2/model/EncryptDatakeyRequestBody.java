@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EncryptDatakeyRequestBody */
+/**
+ * EncryptDatakeyRequestBody
+ */
 public class EncryptDatakeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class EncryptDatakeyRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -50,9 +52,10 @@ public class EncryptDatakeyRequestBody {
         return this;
     }
 
-    /** CMK为AES时，DEK明文和DEK明文的SHA256（32字节）；CMK为SM4时，DEK明文和DEK明文的SM3（32字节），均为16进制字符串表示。
-     * 
-     * @return plainText */
+    /**
+     * CMK为AES时，DEK明文和DEK明文的SHA256（32字节）；CMK为SM4时，DEK明文和DEK明文的SM3（32字节），均为16进制字符串表示。
+     * @return plainText
+     */
     public String getPlainText() {
         return plainText;
     }
@@ -66,9 +69,10 @@ public class EncryptDatakeyRequestBody {
         return this;
     }
 
-    /** DEK明文字节长度，取值范围为1~1024。 DEK明文字节长度，取值为“64”。
-     * 
-     * @return datakeyPlainLength */
+    /**
+     * DEK明文字节长度，取值范围为1~1024。 DEK明文字节长度，取值为“64”。
+     * @return datakeyPlainLength
+     */
     public String getDatakeyPlainLength() {
         return datakeyPlainLength;
     }
@@ -82,9 +86,10 @@ public class EncryptDatakeyRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -125,7 +130,10 @@ public class EncryptDatakeyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

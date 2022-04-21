@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InputRequest */
+/**
+ * InputRequest
+ */
 public class InputRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class InputRequest {
         return this;
     }
 
-    /** 参数名，正则： \"^[A-Za-z][A-Za-z_]{0,31}$\"
-     * 
-     * @return name */
+    /**
+     * 参数名，正则： \"^[A-Za-z][A-Za-z_]{0,31}$\"
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class InputRequest {
         return this;
     }
 
-    /** Get propertyReference
-     * 
-     * @return propertyReference */
+    /**
+     * Get propertyReference
+     * @return propertyReference
+     */
     public PropertyReferenceReq getPropertyReference() {
         return propertyReference;
     }
@@ -88,7 +92,10 @@ public class InputRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

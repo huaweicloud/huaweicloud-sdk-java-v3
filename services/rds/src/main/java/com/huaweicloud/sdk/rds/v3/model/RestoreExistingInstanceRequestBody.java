@@ -6,42 +6,45 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RestoreExistingInstanceRequestBody */
+/**
+ * RestoreExistingInstanceRequestBody
+ */
 public class RestoreExistingInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private RestoreToExistingInstanceRequestBodySource source;
+    private RestoreExistingInstanceRequestBodySource source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
 
     private RestoreToExistingInstanceRequestBodyTarget target;
 
-    public RestoreExistingInstanceRequestBody withSource(RestoreToExistingInstanceRequestBodySource source) {
+    public RestoreExistingInstanceRequestBody withSource(RestoreExistingInstanceRequestBodySource source) {
         this.source = source;
         return this;
     }
 
     public RestoreExistingInstanceRequestBody withSource(
-        Consumer<RestoreToExistingInstanceRequestBodySource> sourceSetter) {
+        Consumer<RestoreExistingInstanceRequestBodySource> sourceSetter) {
         if (this.source == null) {
-            this.source = new RestoreToExistingInstanceRequestBodySource();
+            this.source = new RestoreExistingInstanceRequestBodySource();
             sourceSetter.accept(this.source);
         }
 
         return this;
     }
 
-    /** Get source
-     * 
-     * @return source */
-    public RestoreToExistingInstanceRequestBodySource getSource() {
+    /**
+     * Get source
+     * @return source
+     */
+    public RestoreExistingInstanceRequestBodySource getSource() {
         return source;
     }
 
-    public void setSource(RestoreToExistingInstanceRequestBodySource source) {
+    public void setSource(RestoreExistingInstanceRequestBodySource source) {
         this.source = source;
     }
 
@@ -60,9 +63,10 @@ public class RestoreExistingInstanceRequestBody {
         return this;
     }
 
-    /** Get target
-     * 
-     * @return target */
+    /**
+     * Get target
+     * @return target
+     */
     public RestoreToExistingInstanceRequestBodyTarget getTarget() {
         return target;
     }
@@ -99,7 +103,10 @@ public class RestoreExistingInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

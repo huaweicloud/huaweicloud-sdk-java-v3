@@ -25,9 +25,10 @@ public class UpdateWhitelistReq {
         return this;
     }
 
-    /** 是否开启白名单访问控制开关。true：开启；false：关闭
-     * 
-     * @return enableWhitelist */
+    /**
+     * 是否开启白名单访问控制开关。true：开启；false：关闭
+     * @return enableWhitelist
+     */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -41,9 +42,10 @@ public class UpdateWhitelistReq {
         return this;
     }
 
-    /** 白名单IP列表。可以是ip，例如192.168.10.123；也可以是一个网段，例如192.168.10.1/24；不同的值之间用逗号分隔
-     * 
-     * @return whitelist */
+    /**
+     * 白名单IP列表。可以是ip，例如192.168.10.123；也可以是一个网段，例如192.168.10.1/24；不同的值之间用逗号分隔
+     * @return whitelist
+     */
     public String getWhitelist() {
         return whitelist;
     }
@@ -80,7 +82,10 @@ public class UpdateWhitelistReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

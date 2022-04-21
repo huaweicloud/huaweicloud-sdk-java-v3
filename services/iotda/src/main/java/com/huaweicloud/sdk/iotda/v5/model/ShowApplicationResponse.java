@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowApplicationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间ID，唯一标识一个资源空间，由物联网平台在创建资源空间时分配。资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。
-     * 
-     * @return appId */
+    /**
+     * 资源空间ID，唯一标识一个资源空间，由物联网平台在创建资源空间时分配。资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -50,9 +53,10 @@ public class ShowApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间名称。
-     * 
-     * @return appName */
+    /**
+     * 资源空间名称。
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -66,9 +70,10 @@ public class ShowApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源空间创建时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createTime */
+    /**
+     * 资源空间创建时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -82,9 +87,10 @@ public class ShowApplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否为默认资源空间
-     * 
-     * @return defaultApp */
+    /**
+     * 是否为默认资源空间
+     * @return defaultApp
+     */
     public Boolean getDefaultApp() {
         return defaultApp;
     }
@@ -125,7 +131,10 @@ public class ShowApplicationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

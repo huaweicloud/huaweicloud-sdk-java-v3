@@ -33,9 +33,10 @@ public class MappingResult {
         return this;
     }
 
-    /** 映射ID。
-     * 
-     * @return id */
+    /**
+     * 映射ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -58,9 +59,10 @@ public class MappingResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -90,9 +92,10 @@ public class MappingResult {
         return this;
     }
 
-    /** 将联邦用户映射为本地用户的规则列表。
-     * 
-     * @return rules */
+    /**
+     * 将联邦用户映射为本地用户的规则列表。
+     * @return rules
+     */
     public List<MappingRules> getRules() {
         return rules;
     }
@@ -130,7 +133,10 @@ public class MappingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class AgencyTokenAssumerole {
         return this;
     }
 
-    /** 委托方A的账号ID。“domain_id”与“domain_name”至少填写一个。
-     * 
-     * @return domainId */
+    /**
+     * 委托方A的账号ID。“domain_id”与“domain_name”至少填写一个。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -46,9 +47,10 @@ public class AgencyTokenAssumerole {
         return this;
     }
 
-    /** 委托方A的账号名称。“domain_id”与“domain_name”至少填写一个。
-     * 
-     * @return domainName */
+    /**
+     * 委托方A的账号名称。“domain_id”与“domain_name”至少填写一个。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -62,9 +64,10 @@ public class AgencyTokenAssumerole {
         return this;
     }
 
-    /** 委托方A创建的委托的名称。
-     * 
-     * @return agencyName */
+    /**
+     * 委托方A创建的委托的名称。
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -103,7 +106,10 @@ public class AgencyTokenAssumerole {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowInstanceUsersEntity */
+/**
+ * ShowInstanceUsersEntity
+ */
 public class ShowInstanceUsersEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowInstanceUsersEntity {
         return this;
     }
 
-    /** 用户名称。
-     * 
-     * @return userName */
+    /**
+     * 用户名称。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -49,9 +52,10 @@ public class ShowInstanceUsersEntity {
         return this;
     }
 
-    /** 用户角色。
-     * 
-     * @return role */
+    /**
+     * 用户角色。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -65,9 +69,10 @@ public class ShowInstanceUsersEntity {
         return this;
     }
 
-    /** 是否为默认应用。
-     * 
-     * @return defaultApp */
+    /**
+     * 是否为默认应用。
+     * @return defaultApp
+     */
     public Boolean getDefaultApp() {
         return defaultApp;
     }
@@ -81,9 +86,10 @@ public class ShowInstanceUsersEntity {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间。
+     * @return createdTime
+     */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -124,7 +130,10 @@ public class ShowInstanceUsersEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

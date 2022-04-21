@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 弹性云服务器系统标签。 */
+/**
+ * 弹性云服务器系统标签。
+ */
 public class ServerSystemTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ServerSystemTag {
         return this;
     }
 
-    /** 系统标签的Key值。
-     * 
-     * @return key */
+    /**
+     * 系统标签的Key值。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ServerSystemTag {
         return this;
     }
 
-    /** 系统标签的value值。
-     * 
-     * @return value */
+    /**
+     * 系统标签的value值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ServerSystemTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

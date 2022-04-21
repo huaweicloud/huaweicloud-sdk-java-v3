@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowApiVersionRequest {
 
-    /** 需要查询的API的版本号 */
+    /**
+     * 需要查询的API的版本号
+     */
     public static final class ApiVersionEnum {
 
-        /** Enum V1 for value: "v1" */
+        /**
+         * Enum V1 for value: "v1"
+         */
         public static final ApiVersionEnum V1 = new ApiVersionEnum("v1");
 
         private static final Map<String, ApiVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class ShowApiVersionRequest {
         return this;
     }
 
-    /** 需要查询的API的版本号
-     * 
-     * @return apiVersion */
+    /**
+     * 需要查询的API的版本号
+     * @return apiVersion
+     */
     public ApiVersionEnum getApiVersion() {
         return apiVersion;
     }
@@ -127,7 +134,10 @@ public class ShowApiVersionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

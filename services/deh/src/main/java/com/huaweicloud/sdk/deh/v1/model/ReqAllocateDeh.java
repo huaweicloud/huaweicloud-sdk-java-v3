@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建专属主机消息体。 */
+/**
+ * 创建专属主机消息体。
+ */
 public class ReqAllocateDeh {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class ReqAllocateDeh {
 
     private String name;
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。 默认值：“on”。 */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。 默认值：“on”。
+     */
     public static final class AutoPlacementEnum {
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final AutoPlacementEnum OFF = new AutoPlacementEnum("off");
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final AutoPlacementEnum ON = new AutoPlacementEnum("on");
 
         private static final Map<String, AutoPlacementEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +130,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 专属主机名称。
-     * 
-     * @return name */
+    /**
+     * 专属主机名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -138,9 +147,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。 默认值：“on”。
-     * 
-     * @return autoPlacement */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。 默认值：“on”。
+     * @return autoPlacement
+     */
     public AutoPlacementEnum getAutoPlacement() {
         return autoPlacement;
     }
@@ -154,9 +164,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 专属主机所属AZ。
-     * 
-     * @return availabilityZone */
+    /**
+     * 专属主机所属AZ。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -170,9 +181,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 专属主机类型。
-     * 
-     * @return hostType */
+    /**
+     * 专属主机类型。
+     * @return hostType
+     */
     public String getHostType() {
         return hostType;
     }
@@ -186,9 +198,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 待分配的专属主机数量。
-     * 
-     * @return quantity */
+    /**
+     * 待分配的专属主机数量。
+     * @return quantity
+     */
     public Integer getQuantity() {
         return quantity;
     }
@@ -218,9 +231,10 @@ public class ReqAllocateDeh {
         return this;
     }
 
-    /** 专属主机标签列表。
-     * 
-     * @return tags */
+    /**
+     * 专属主机标签列表。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -264,7 +278,10 @@ public class ReqAllocateDeh {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 节点属性 */
+/**
+ * 节点属性
+ */
 public class Attributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Attributes {
         return this;
     }
 
-    /** 节点属性的key值，长度取值范围为1~128， 仅允许大小写英文字母、数字、下划线、中划线
-     * 
-     * @return key */
+    /**
+     * 节点属性的key值，长度取值范围为1~128， 仅允许大小写英文字母、数字、下划线、中划线
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class Attributes {
         return this;
     }
 
-    /** 节点属性的value值，长度取值范围为1~256， 仅允许大小写英文字母、数字、下划线、中划线
-     * 
-     * @return value */
+    /**
+     * 节点属性的value值，长度取值范围为1~256， 仅允许大小写英文字母、数字、下划线、中划线
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class Attributes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

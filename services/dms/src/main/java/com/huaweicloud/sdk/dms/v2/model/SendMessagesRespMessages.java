@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SendMessagesRespMessages */
+/**
+ * SendMessagesRespMessages
+ */
 public class SendMessagesRespMessages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SendMessagesRespMessages {
         return this;
     }
 
-    /** 错误描述信息。
-     * 
-     * @return error */
+    /**
+     * 错误描述信息。
+     * @return error
+     */
     public String getError() {
         return error;
     }
@@ -49,9 +52,10 @@ public class SendMessagesRespMessages {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public Integer getErrorCode() {
         return errorCode;
     }
@@ -65,9 +69,10 @@ public class SendMessagesRespMessages {
         return this;
     }
 
-    /** 发送消息的状态。 0：表示发送成功。 1：表示发送失败，失败原因参考对应的error和error_code。
-     * 
-     * @return state */
+    /**
+     * 发送消息的状态。 0：表示发送成功。 1：表示发送失败，失败原因参考对应的error和error_code。 
+     * @return state
+     */
     public Integer getState() {
         return state;
     }
@@ -81,9 +86,10 @@ public class SendMessagesRespMessages {
         return this;
     }
 
-    /** 消息ID。
-     * 
-     * @return id */
+    /**
+     * 消息ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -124,7 +130,10 @@ public class SendMessagesRespMessages {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

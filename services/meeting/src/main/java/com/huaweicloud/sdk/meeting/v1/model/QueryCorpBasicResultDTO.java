@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 企业基本信息 */
+/**
+ * 企业基本信息
+ */
 public class QueryCorpBasicResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 企业名称
-     * 
-     * @return name */
+    /**
+     * 企业名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 联系号码
-     * 
-     * @return phone */
+    /**
+     * 联系号码
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -85,9 +89,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 联系号码所属的国家
-     * 
-     * @return country */
+    /**
+     * 联系号码所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -101,9 +106,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 传真号码
-     * 
-     * @return fax */
+    /**
+     * 传真号码
+     * @return fax
+     */
     public String getFax() {
         return fax;
     }
@@ -117,9 +123,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 邮箱地址
-     * 
-     * @return email */
+    /**
+     * 邮箱地址
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -133,9 +140,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 地址
-     * 
-     * @return address */
+    /**
+     * 地址
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -149,9 +157,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 备注
-     * 
-     * @return description */
+    /**
+     * 备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -165,9 +174,10 @@ public class QueryCorpBasicResultDTO {
         return this;
     }
 
-    /** 企业所属spId
-     * 
-     * @return spId */
+    /**
+     * 企业所属spId
+     * @return spId
+     */
     public String getSpId() {
         return spId;
     }
@@ -216,7 +226,10 @@ public class QueryCorpBasicResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

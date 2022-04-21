@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 监控对象结构 */
+/**
+ * 监控对象结构
+ */
 public class ClusterRedisNodeMonitoredObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ClusterRedisNodeMonitoredObject {
         return this;
     }
 
-    /** 测量对象ID，即节点的ID。
-     * 
-     * @return dcsInstanceId */
+    /**
+     * 测量对象ID，即节点的ID。
+     * @return dcsInstanceId
+     */
     public String getDcsInstanceId() {
         return dcsInstanceId;
     }
@@ -49,9 +52,10 @@ public class ClusterRedisNodeMonitoredObject {
         return this;
     }
 
-    /** 测量对象名称，即节点IP。
-     * 
-     * @return name */
+    /**
+     * 测量对象名称，即节点IP。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class ClusterRedisNodeMonitoredObject {
         return this;
     }
 
-    /** 维度dcs_cluster_redis_node的测量对象的ID。
-     * 
-     * @return dcsClusterRedisNode */
+    /**
+     * 维度dcs_cluster_redis_node的测量对象的ID。
+     * @return dcsClusterRedisNode
+     */
     public String getDcsClusterRedisNode() {
         return dcsClusterRedisNode;
     }
@@ -81,9 +86,10 @@ public class ClusterRedisNodeMonitoredObject {
         return this;
     }
 
-    /** 测量对象状态，即节点状态。
-     * 
-     * @return status */
+    /**
+     * 测量对象状态，即节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -124,7 +130,10 @@ public class ClusterRedisNodeMonitoredObject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

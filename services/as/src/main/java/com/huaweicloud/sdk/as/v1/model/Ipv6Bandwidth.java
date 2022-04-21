@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IPv6信息 */
+/**
+ * IPv6信息
+ */
 public class Ipv6Bandwidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class Ipv6Bandwidth {
         return this;
     }
 
-    /** IPv6共享带宽的ID。
-     * 
-     * @return id */
+    /**
+     * IPv6共享带宽的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,7 +58,10 @@ public class Ipv6Bandwidth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

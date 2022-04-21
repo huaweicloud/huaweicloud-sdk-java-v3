@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStorageTypeRequest {
 
-    /** 数据库版本类型： - 取值为“DDS-Community”。 */
+    /**
+     * 数据库版本类型： - 取值为“DDS-Community”。
+     */
     public static final class EngineNameEnum {
 
-        /** Enum DDS_COMMUNITY for value: "DDS-Community" */
+        /**
+         * Enum DDS_COMMUNITY for value: "DDS-Community"
+         */
         public static final EngineNameEnum DDS_COMMUNITY = new EngineNameEnum("DDS-Community");
 
-        /** Enum DDS_ENHANCED for value: "DDS-Enhanced" */
+        /**
+         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
+         */
         public static final EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
 
         private static final Map<String, EngineNameEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class ListStorageTypeRequest {
         return this;
     }
 
-    /** 数据库版本类型： - 取值为“DDS-Community”。
-     * 
-     * @return engineName */
+    /**
+     * 数据库版本类型： - 取值为“DDS-Community”。
+     * @return engineName
+     */
     public EngineNameEnum getEngineName() {
         return engineName;
     }
@@ -131,7 +140,10 @@ public class ListStorageTypeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

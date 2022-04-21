@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建云连接实例的详细信息。 */
+/**
+ * 创建云连接实例的详细信息。
+ */
 public class CreateCloudConnection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class CreateCloudConnection {
 
     private String enterpriseProjectId;
 
-    /** 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。 */
+    /**
+     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     */
     public static final class UsedSceneEnum {
 
-        /** Enum ER for value: "er" */
+        /**
+         * Enum ER for value: "er"
+         */
         public static final UsedSceneEnum ER = new UsedSceneEnum("er");
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final UsedSceneEnum VPC = new UsedSceneEnum("vpc");
 
         private static final Map<String, UsedSceneEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class CreateCloudConnection {
         return this;
     }
 
-    /** 云连接实例的名字。
-     * 
-     * @return name */
+    /**
+     * 云连接实例的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -125,9 +134,10 @@ public class CreateCloudConnection {
         return this;
     }
 
-    /** 云连接实例的描述。
-     * 
-     * @return description */
+    /**
+     * 云连接实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -141,9 +151,10 @@ public class CreateCloudConnection {
         return this;
     }
 
-    /** 云连接实例所属的企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 云连接实例所属的企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -157,9 +168,10 @@ public class CreateCloudConnection {
         return this;
     }
 
-    /** 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
-     * 
-     * @return usedScene */
+    /**
+     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * @return usedScene
+     */
     public UsedSceneEnum getUsedScene() {
         return usedScene;
     }
@@ -200,7 +212,10 @@ public class CreateCloudConnection {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

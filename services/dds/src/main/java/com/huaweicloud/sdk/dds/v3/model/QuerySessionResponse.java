@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会话详细信息列表。 */
+/**
+ * 会话详细信息列表。
+ */
 public class QuerySessionResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 会话ID。
-     * 
-     * @return id */
+    /**
+     * 会话ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 当前会话是否活跃。 取值为“true”，表示活跃。 取值为“false”，表示不活跃。
-     * 
-     * @return active */
+    /**
+     * 当前会话是否活跃。 取值为“true”，表示活跃。 取值为“false”，表示不活跃。
+     * @return active
+     */
     public Boolean getActive() {
         return active;
     }
@@ -95,9 +99,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 操作。
-     * 
-     * @return operation */
+    /**
+     * 操作。
+     * @return operation
+     */
     public String getOperation() {
         return operation;
     }
@@ -111,9 +116,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 操作类型。
-     * 
-     * @return type */
+    /**
+     * 操作类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -127,9 +133,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 运行时间，单位为 ms。
-     * 
-     * @return costTime */
+    /**
+     * 运行时间，单位为 ms。
+     * @return costTime
+     */
     public String getCostTime() {
         return costTime;
     }
@@ -143,9 +150,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 执行计划描述。
-     * 
-     * @return planSummary */
+    /**
+     * 执行计划描述。
+     * @return planSummary
+     */
     public String getPlanSummary() {
         return planSummary;
     }
@@ -159,9 +167,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 主机。
-     * 
-     * @return host */
+    /**
+     * 主机。
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -175,9 +184,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 客户端地址。
-     * 
-     * @return client */
+    /**
+     * 客户端地址。
+     * @return client
+     */
     public String getClient() {
         return client;
     }
@@ -191,9 +201,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 连接描述。
-     * 
-     * @return description */
+    /**
+     * 连接描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -207,9 +218,10 @@ public class QuerySessionResponse {
         return this;
     }
 
-    /** 命名空间。
-     * 
-     * @return namespace */
+    /**
+     * 命名空间。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -262,7 +274,10 @@ public class QuerySessionResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

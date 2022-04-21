@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CutNetReq */
+/**
+ * CutNetReq
+ */
 public class CutNetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CutNetReq {
         return this;
     }
 
-    /** 操作类型(ADD：断网，DEL:取消断网)
-     * 
-     * @return action */
+    /**
+     * 操作类型(ADD：断网，DEL:取消断网)
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -55,7 +58,10 @@ public class CutNetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

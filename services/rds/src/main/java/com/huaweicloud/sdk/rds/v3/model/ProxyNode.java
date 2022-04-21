@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProxyNode */
+/**
+ * ProxyNode
+ */
 public class ProxyNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** Proxy节点ID。
-     * 
-     * @return id */
+    /**
+     * Proxy节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** Proxy节点名称。
-     * 
-     * @return name */
+    /**
+     * Proxy节点名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** Proxy节点角色。 - master：主节点。 - slave：备节点。
-     * 
-     * @return role */
+    /**
+     * Proxy节点角色。 - master：主节点。 - slave：备节点。
+     * @return role
+     */
     public String getRole() {
         return role;
     }
@@ -91,9 +96,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** 可用区。
-     * 
-     * @return azCode */
+    /**
+     * 可用区。
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -107,9 +113,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** Proxy节点状态。 - normal：正常。 - abnormal：异常。 - creating：创建中。 - deleted：已删除。
-     * 
-     * @return status */
+    /**
+     * Proxy节点状态。 - normal：正常。 - abnormal：异常。 - creating：创建中。 - deleted：已删除。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -123,9 +130,10 @@ public class ProxyNode {
         return this;
     }
 
-    /** Proxy节点是否被冻结。 - 0：未冻结。 - 1：冻结。 - 2：冻结删除。
-     * 
-     * @return frozenFlag */
+    /**
+     * Proxy节点是否被冻结。 - 0：未冻结。 - 1：冻结。 - 2：冻结删除。
+     * @return frozenFlag
+     */
     public Integer getFrozenFlag() {
         return frozenFlag;
     }
@@ -167,7 +175,10 @@ public class ProxyNode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

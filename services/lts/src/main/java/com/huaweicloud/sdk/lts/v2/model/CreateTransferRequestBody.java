@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建OBS转储，DIS转储，DMS转储 */
+/**
+ * 创建OBS转储，DIS转储，DMS转储
+ */
 public class CreateTransferRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CreateTransferRequestBody {
         return this;
     }
 
-    /** 日志组ID
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -64,9 +67,10 @@ public class CreateTransferRequestBody {
         return this;
     }
 
-    /** 日志流ID集合
-     * 
-     * @return logStreams */
+    /**
+     * 日志流ID集合
+     * @return logStreams
+     */
     public List<CreateTransferRequestBodyLogStreams> getLogStreams() {
         return logStreams;
     }
@@ -90,9 +94,10 @@ public class CreateTransferRequestBody {
         return this;
     }
 
-    /** Get logTransferInfo
-     * 
-     * @return logTransferInfo */
+    /**
+     * Get logTransferInfo
+     * @return logTransferInfo
+     */
     public CreateTransferRequestBodyLogTransferInfo getLogTransferInfo() {
         return logTransferInfo;
     }
@@ -131,7 +136,10 @@ public class CreateTransferRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

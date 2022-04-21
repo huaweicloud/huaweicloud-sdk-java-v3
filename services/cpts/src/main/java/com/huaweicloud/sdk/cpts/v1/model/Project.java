@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Project */
+/**
+ * Project
+ */
 public class Project {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Project {
         return this;
     }
 
-    /** create_time
-     * 
-     * @return createTime */
+    /**
+     * create_time
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -64,9 +67,10 @@ public class Project {
         return this;
     }
 
-    /** description
-     * 
-     * @return description */
+    /**
+     * description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,9 +84,10 @@ public class Project {
         return this;
     }
 
-    /** group
-     * 
-     * @return group */
+    /**
+     * group
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -96,9 +101,12 @@ public class Project {
         return this;
     }
 
-    /** id minimum: 0 maximum: 2147483647
-     * 
-     * @return id */
+    /**
+     * id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -112,9 +120,10 @@ public class Project {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -128,9 +137,12 @@ public class Project {
         return this;
     }
 
-    /** source minimum: 0 maximum: 2147483647
-     * 
-     * @return source */
+    /**
+     * source
+     * minimum: 0
+     * maximum: 2147483647
+     * @return source
+     */
     public Integer getSource() {
         return source;
     }
@@ -144,9 +156,10 @@ public class Project {
         return this;
     }
 
-    /** update_time
-     * 
-     * @return updateTime */
+    /**
+     * update_time
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -190,7 +203,10 @@ public class Project {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

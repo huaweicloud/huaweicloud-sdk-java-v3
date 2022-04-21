@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSharesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class ListSharesRequest {
         return this;
     }
 
-    /** 返回的文件系统个数，最大值为200。 minimum: 0 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 返回的文件系统个数，最大值为200。
+     * minimum: 0
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -39,9 +44,12 @@ public class ListSharesRequest {
         return this;
     }
 
-    /** 文件系统查询个数的偏移量。 minimum: 0 maximum: 200
-     * 
-     * @return offset */
+    /**
+     * 文件系统查询个数的偏移量。
+     * minimum: 0
+     * maximum: 200
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -78,7 +86,10 @@ public class ListSharesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

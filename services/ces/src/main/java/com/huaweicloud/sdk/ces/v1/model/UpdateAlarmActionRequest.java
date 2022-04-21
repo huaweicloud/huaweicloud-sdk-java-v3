@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateAlarmActionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdateAlarmActionRequest {
         return this;
     }
 
-    /** 告警规则的ID。
-     * 
-     * @return alarmId */
+    /**
+     * 告警规则的ID。
+     * @return alarmId
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -49,9 +52,10 @@ public class UpdateAlarmActionRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public ModifyAlarmActionReq getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class UpdateAlarmActionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

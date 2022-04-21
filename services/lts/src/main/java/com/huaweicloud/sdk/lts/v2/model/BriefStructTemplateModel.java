@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 结构化模板简略对象 */
+/**
+ * 结构化模板简略对象
+ */
 public class BriefStructTemplateModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,19 +30,29 @@ public class BriefStructTemplateModel {
 
     private String templateName;
 
-    /** 结构化类型，当前支持regex,json,split,nginx */
+    /**
+     * 结构化类型，当前支持regex,json,split,nginx
+     */
     public static final class TemplateTypeEnum {
 
-        /** Enum REGEX for value: "regex" */
+        /**
+         * Enum REGEX for value: "regex"
+         */
         public static final TemplateTypeEnum REGEX = new TemplateTypeEnum("regex");
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final TemplateTypeEnum JSON = new TemplateTypeEnum("json");
 
-        /** Enum SPLIT for value: "split" */
+        /**
+         * Enum SPLIT for value: "split"
+         */
         public static final TemplateTypeEnum SPLIT = new TemplateTypeEnum("split");
 
-        /** Enum NGINX for value: "nginx" */
+        /**
+         * Enum NGINX for value: "nginx"
+         */
         public static final TemplateTypeEnum NGINX = new TemplateTypeEnum("nginx");
 
         private static final Map<String, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +134,12 @@ public class BriefStructTemplateModel {
         return this;
     }
 
-    /** 模板创建/更新时间 minimum: 0 maximum: 20000000000000
-     * 
-     * @return createTime */
+    /**
+     * 模板创建/更新时间
+     * minimum: 0
+     * maximum: 20000000000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -138,9 +153,10 @@ public class BriefStructTemplateModel {
         return this;
     }
 
-    /** 模板id
-     * 
-     * @return id */
+    /**
+     * 模板id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -154,9 +170,10 @@ public class BriefStructTemplateModel {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return templateName */
+    /**
+     * 模板名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -170,9 +187,10 @@ public class BriefStructTemplateModel {
         return this;
     }
 
-    /** 结构化类型，当前支持regex,json,split,nginx
-     * 
-     * @return templateType */
+    /**
+     * 结构化类型，当前支持regex,json,split,nginx
+     * @return templateType
+     */
     public TemplateTypeEnum getTemplateType() {
         return templateType;
     }
@@ -186,9 +204,10 @@ public class BriefStructTemplateModel {
         return this;
     }
 
-    /** 项目ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -231,7 +250,10 @@ public class BriefStructTemplateModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

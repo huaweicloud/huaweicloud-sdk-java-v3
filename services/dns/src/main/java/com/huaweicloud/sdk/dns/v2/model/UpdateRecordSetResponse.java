@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateRecordSetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,9 +89,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get id
-     * 
-     * @return id */
+    /**
+     * Get id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -103,9 +106,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -119,9 +123,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get description
-     * 
-     * @return description */
+    /**
+     * Get description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -135,9 +140,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get zoneId
-     * 
-     * @return zoneId */
+    /**
+     * Get zoneId
+     * @return zoneId
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -151,9 +157,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get zoneName
-     * 
-     * @return zoneName */
+    /**
+     * Get zoneName
+     * @return zoneName
+     */
     public String getZoneName() {
         return zoneName;
     }
@@ -167,9 +174,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -183,9 +191,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get ttl
-     * 
-     * @return ttl */
+    /**
+     * Get ttl
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -215,9 +224,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get records
-     * 
-     * @return records */
+    /**
+     * Get records
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -231,9 +241,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get createAt
-     * 
-     * @return createAt */
+    /**
+     * Get createAt
+     * @return createAt
+     */
     public String getCreateAt() {
         return createAt;
     }
@@ -247,9 +258,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get updateAt
-     * 
-     * @return updateAt */
+    /**
+     * Get updateAt
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -263,9 +275,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -279,9 +292,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get _default
-     * 
-     * @return _default */
+    /**
+     * Get _default
+     * @return _default
+     */
     public Boolean getDefault() {
         return _default;
     }
@@ -295,9 +309,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get projectId
-     * 
-     * @return projectId */
+    /**
+     * Get projectId
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -320,9 +335,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public PageLink getLinks() {
         return links;
     }
@@ -396,7 +412,10 @@ public class UpdateRecordSetResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

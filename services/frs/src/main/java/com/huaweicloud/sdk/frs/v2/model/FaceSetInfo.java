@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FaceSetInfo */
+/**
+ * FaceSetInfo
+ */
 public class FaceSetInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 人脸库当中的人脸数量。
-     * 
-     * @return faceNumber */
+    /**
+     * 人脸库当中的人脸数量。
+     * @return faceNumber
+     */
     public Integer getFaceNumber() {
         return faceNumber;
     }
@@ -59,9 +62,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 用户的自定义字段。
-     * 
-     * @return externalFields */
+    /**
+     * 用户的自定义字段。
+     * @return externalFields
+     */
     public Object getExternalFields() {
         return externalFields;
     }
@@ -75,9 +79,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 人脸库ID，随机生成的包含八个字符的字符串。
-     * 
-     * @return faceSetId */
+    /**
+     * 人脸库ID，随机生成的包含八个字符的字符串。
+     * @return faceSetId
+     */
     public String getFaceSetId() {
         return faceSetId;
     }
@@ -91,9 +96,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 人脸库名称。
-     * 
-     * @return faceSetName */
+    /**
+     * 人脸库名称。
+     * @return faceSetName
+     */
     public String getFaceSetName() {
         return faceSetName;
     }
@@ -107,9 +113,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createDate */
+    /**
+     * 创建时间。
+     * @return createDate
+     */
     public String getCreateDate() {
         return createDate;
     }
@@ -123,9 +130,10 @@ public class FaceSetInfo {
         return this;
     }
 
-    /** 人脸库最大的容量。
-     * 
-     * @return faceSetCapacity */
+    /**
+     * 人脸库最大的容量。
+     * @return faceSetCapacity
+     */
     public Integer getFaceSetCapacity() {
         return faceSetCapacity;
     }
@@ -170,7 +178,10 @@ public class FaceSetInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

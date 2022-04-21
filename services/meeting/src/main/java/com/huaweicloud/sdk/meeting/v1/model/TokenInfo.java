@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端状态信息 */
+/**
+ * 终端状态信息
+ */
 public class TokenInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会控鉴权Token。
-     * 
-     * @return token */
+    /**
+     * 会控鉴权Token。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -87,9 +90,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** websocket建链鉴权Token，成功时必带。
-     * 
-     * @return tmpWsToken */
+    /**
+     * websocket建链鉴权Token，成功时必带。
+     * @return tmpWsToken
+     */
     public String getTmpWsToken() {
         return tmpWsToken;
     }
@@ -103,9 +107,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** websocket建链URL。
-     * 
-     * @return wsURL */
+    /**
+     * websocket建链URL。
+     * @return wsURL
+     */
     public String getWsURL() {
         return wsURL;
     }
@@ -119,9 +124,12 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会议中的角色 1：会议主席 0：普通与会者 minimum: 0 maximum: 1
-     * 
-     * @return role */
+    /**
+     * 会议中的角色 1：会议主席 0：普通与会者
+     * minimum: 0
+     * maximum: 1
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -135,9 +143,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会话过期时间。UTC时间毫秒数。
-     * 
-     * @return expireTime */
+    /**
+     * 会话过期时间。UTC时间毫秒数。
+     * @return expireTime
+     */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -151,9 +160,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会议预定人ID。
-     * 
-     * @return userID */
+    /**
+     * 会议预定人ID。
+     * @return userID
+     */
     public String getUserID() {
         return userID;
     }
@@ -167,9 +177,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会议所属企业ID。
-     * 
-     * @return orgID */
+    /**
+     * 会议所属企业ID。
+     * @return orgID
+     */
     public String getOrgID() {
         return orgID;
     }
@@ -183,9 +194,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 终端请求时，返回终端入会后会场ID。
-     * 
-     * @return participantID */
+    /**
+     * 终端请求时，返回终端入会后会场ID。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -199,9 +211,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 会控token失效的时间。（单位秒）
-     * 
-     * @return confTokenExpireTime */
+    /**
+     * 会控token失效的时间。（单位秒）
+     * @return confTokenExpireTime
+     */
     public Integer getConfTokenExpireTime() {
         return confTokenExpireTime;
     }
@@ -215,9 +228,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** 云会议室会议的当前会议ID。
-     * 
-     * @return vmrCurrentConfID */
+    /**
+     * 云会议室会议的当前会议ID。
+     * @return vmrCurrentConfID
+     */
     public String getVmrCurrentConfID() {
         return vmrCurrentConfID;
     }
@@ -247,9 +261,10 @@ public class TokenInfo {
         return this;
     }
 
-    /** websocket消息推送支持类型。
-     * 
-     * @return supportNotifyType */
+    /**
+     * websocket消息推送支持类型。
+     * @return supportNotifyType
+     */
     public List<String> getSupportNotifyType() {
         return supportNotifyType;
     }
@@ -311,7 +326,10 @@ public class TokenInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

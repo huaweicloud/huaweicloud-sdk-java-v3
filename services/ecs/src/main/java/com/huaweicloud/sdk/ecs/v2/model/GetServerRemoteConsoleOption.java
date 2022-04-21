@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** GetServerRemoteConsoleOption */
+/**
+ * GetServerRemoteConsoleOption
+ */
 public class GetServerRemoteConsoleOption {
 
-    /** 远程登录协议，请将protocol配置为“vnc”。 */
+    /**
+     * 远程登录协议，请将protocol配置为“vnc”。
+     */
     public static final class ProtocolEnum {
 
-        /** Enum VNC for value: "vnc" */
+        /**
+         * Enum VNC for value: "vnc"
+         */
         public static final ProtocolEnum VNC = new ProtocolEnum("vnc");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -85,10 +91,14 @@ public class GetServerRemoteConsoleOption {
 
     private ProtocolEnum protocol;
 
-    /** 远程登录的类型，请将type配置为“novnc”。 */
+    /**
+     * 远程登录的类型，请将type配置为“novnc”。
+     */
     public static final class TypeEnum {
 
-        /** Enum NOVNC for value: "novnc" */
+        /**
+         * Enum NOVNC for value: "novnc"
+         */
         public static final TypeEnum NOVNC = new TypeEnum("novnc");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -162,9 +172,10 @@ public class GetServerRemoteConsoleOption {
         return this;
     }
 
-    /** 远程登录协议，请将protocol配置为“vnc”。
-     * 
-     * @return protocol */
+    /**
+     * 远程登录协议，请将protocol配置为“vnc”。
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -178,9 +189,10 @@ public class GetServerRemoteConsoleOption {
         return this;
     }
 
-    /** 远程登录的类型，请将type配置为“novnc”。
-     * 
-     * @return type */
+    /**
+     * 远程登录的类型，请将type配置为“novnc”。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -217,7 +229,10 @@ public class GetServerRemoteConsoleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

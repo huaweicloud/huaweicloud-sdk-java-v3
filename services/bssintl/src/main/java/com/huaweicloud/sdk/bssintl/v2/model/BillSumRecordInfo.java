@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BillSumRecordInfo */
+/**
+ * BillSumRecordInfo
+ */
 public class BillSumRecordInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,9 +88,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -102,9 +105,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。 说明： 当请求消息中不传递“cloud_service_type_code”参数时，此值返回“null”。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。  说明： 当请求消息中不传递“cloud_service_type_code”参数时，此值返回“null”。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -118,9 +122,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 云服务区，该字段预留，先不使用。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区，该字段预留，先不使用。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -134,9 +139,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
-     * 
-     * @return cloudServiceTypeCode */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
+     * @return cloudServiceTypeCode
+     */
     public String getCloudServiceTypeCode() {
         return cloudServiceTypeCode;
     }
@@ -150,9 +156,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 消费统计的时期。 格式为YYYY-MM。 示例：2018-05
-     * 
-     * @return consumeTime */
+    /**
+     * 消费统计的时期。 格式为YYYY-MM。 示例：2018-05
+     * @return consumeTime
+     */
     public String getConsumeTime() {
         return consumeTime;
     }
@@ -166,10 +173,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 消费类型。
-     * 当请求消息中不传递“cloud_service_type_code”参数时，如果此值返回“0”表示此服务类型下所有的资源类型都是包年/包月计费模式，如果此值返回空字符串表示此服务类型下有资源类型为按需计费模式。当请求消息中传递“cloud_service_type_code”参数时，如果此值返回“0”表示此资源类型是包年/包月计费模式，如果此值返回“1”表示此资源类型为按需计费模式。
-     * 
-     * @return payMethod */
+    /**
+     * 消费类型。 当请求消息中不传递“cloud_service_type_code”参数时，如果此值返回“0”表示此服务类型下所有的资源类型都是包年/包月计费模式，如果此值返回空字符串表示此服务类型下有资源类型为按需计费模式。当请求消息中传递“cloud_service_type_code”参数时，如果此值返回“0”表示此资源类型是包年/包月计费模式，如果此值返回“1”表示此资源类型为按需计费模式。
+     * @return payMethod
+     */
     public String getPayMethod() {
         return payMethod;
     }
@@ -183,9 +190,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 消费的金额，即从客户账户实际扣除的金额。包含代金券支付的金额。
-     * 
-     * @return consumeAmount */
+    /**
+     * 消费的金额，即从客户账户实际扣除的金额。包含代金券支付的金额。
+     * @return consumeAmount
+     */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -199,9 +207,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 欠费金额，即从客户账户扣费的时候，客户账户金额不足，欠费的金额。
-     * 
-     * @return debt */
+    /**
+     * 欠费金额，即从客户账户扣费的时候，客户账户金额不足，欠费的金额。
+     * @return debt
+     */
     public Double getDebt() {
         return debt;
     }
@@ -215,9 +224,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 折扣金额。
-     * 
-     * @return discount */
+    /**
+     * 折扣金额。
+     * @return discount
+     */
     public Double getDiscount() {
         return discount;
     }
@@ -231,9 +241,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 金额单位。 1：元3：分 默认值为3。
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元3：分 默认值为3。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -247,9 +258,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 账单类型。 0：消费1：退订
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 0：消费1：退订
+     * @return billType
+     */
     public Integer getBillType() {
         return billType;
     }
@@ -279,9 +291,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 按不同账户消费类型和付费方式区分的支付总金额。 具体请参见表4。
-     * 
-     * @return accountDetails */
+    /**
+     * 按不同账户消费类型和付费方式区分的支付总金额。 具体请参见表4。
+     * @return accountDetails
+     */
     public List<BalanceTypePay> getAccountDetails() {
         return accountDetails;
     }
@@ -311,9 +324,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 折扣金额详情。 具体请参见表5。 当bill_type为1时，不返回此参数。
-     * 
-     * @return discountDetailInfos */
+    /**
+     * 折扣金额详情。 具体请参见表5。 当bill_type为1时，不返回此参数。
+     * @return discountDetailInfos
+     */
     public List<DiscountDetailInfo> getDiscountDetailInfos() {
         return discountDetailInfos;
     }
@@ -327,9 +341,10 @@ public class BillSumRecordInfo {
         return this;
     }
 
-    /** 企业项目ID。 当请求参数中传递了“enterpriseProjectId”，响应参数“bill_sums”返回以企业项目ID为维度的账单记录。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。 当请求参数中传递了“enterpriseProjectId”，响应参数“bill_sums”返回以企业项目ID为维度的账单记录。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -403,7 +418,10 @@ public class BillSumRecordInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

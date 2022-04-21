@@ -7,19 +7,29 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 代码仓类型，支持GitHub、GitLab、Gitee、Bitbucket。 */
+/**
+ * 代码仓类型，支持GitHub、GitLab、Gitee、Bitbucket。
+ */
 public class SourceRepoType {
 
-    /** Enum GITHUB for value: "GitHub" */
+    /**
+     * Enum GITHUB for value: "GitHub"
+     */
     public static final SourceRepoType GITHUB = new SourceRepoType("GitHub");
 
-    /** Enum GITLAB for value: "GitLab" */
+    /**
+     * Enum GITLAB for value: "GitLab"
+     */
     public static final SourceRepoType GITLAB = new SourceRepoType("GitLab");
 
-    /** Enum GITEE for value: "Gitee" */
+    /**
+     * Enum GITEE for value: "Gitee"
+     */
     public static final SourceRepoType GITEE = new SourceRepoType("Gitee");
 
-    /** Enum BITBUCKET for value: "Bitbucket" */
+    /**
+     * Enum BITBUCKET for value: "Bitbucket"
+     */
     public static final SourceRepoType BITBUCKET = new SourceRepoType("Bitbucket");
 
     private static final Map<String, SourceRepoType> STATIC_FIELDS = createStaticFields();

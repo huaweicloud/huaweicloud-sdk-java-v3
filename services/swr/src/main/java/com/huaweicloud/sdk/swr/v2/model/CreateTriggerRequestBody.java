@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 需要创建触发器的信息 */
+/**
+ * 需要创建触发器的信息
+ */
 public class CreateTriggerRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,9 +75,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 触发动作，update
-     * 
-     * @return action */
+    /**
+     * 触发动作，update
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -89,9 +92,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 应用类型，deployments、statefulsets
-     * 
-     * @return appType */
+    /**
+     * 应用类型，deployments、statefulsets
+     * @return appType
+     */
     public String getAppType() {
         return appType;
     }
@@ -105,9 +109,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return application */
+    /**
+     * 应用名
+     * @return application
+     */
     public String getApplication() {
         return application;
     }
@@ -121,9 +126,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 集群ID（trigger_mode设置为cci时为空)
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID（trigger_mode设置为cci时为空)
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -137,9 +143,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 集群名（trigger_mode设置为cci时为空）
-     * 
-     * @return clusterName */
+    /**
+     * 集群名（trigger_mode设置为cci时为空）
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -153,9 +160,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 应用名所在的namespace
-     * 
-     * @return clusterNs */
+    /**
+     * 应用名所在的namespace
+     * @return clusterNs
+     */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -169,9 +177,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * 
-     * @return condition */
+    /**
+     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * @return condition
+     */
     public String getCondition() {
         return condition;
     }
@@ -185,9 +194,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 需更新的container名，默认为所有container
-     * 
-     * @return container */
+    /**
+     * 需更新的container名，默认为所有container
+     * @return container
+     */
     public String getContainer() {
         return container;
     }
@@ -201,9 +211,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 是否生效
-     * 
-     * @return enable */
+    /**
+     * 是否生效
+     * @return enable
+     */
     public String getEnable() {
         return enable;
     }
@@ -217,9 +228,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 触发器名
-     * 
-     * @return name */
+    /**
+     * 触发器名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -233,9 +245,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 触发器类型，cce、cci，默认为cce
-     * 
-     * @return triggerMode */
+    /**
+     * 触发器类型，cce、cci，默认为cce
+     * @return triggerMode
+     */
     public String getTriggerMode() {
         return triggerMode;
     }
@@ -249,9 +262,10 @@ public class CreateTriggerRequestBody {
         return this;
     }
 
-    /** 触发条件，all、tag、regular
-     * 
-     * @return triggerType */
+    /**
+     * 触发条件，all、tag、regular
+     * @return triggerType
+     */
     public String getTriggerType() {
         return triggerType;
     }
@@ -319,7 +333,10 @@ public class CreateTriggerRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListIssueRequestV4 */
+/**
+ * ListIssueRequestV4
+ */
 public class ListIssueRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,9 +119,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 处理人id
-     * 
-     * @return assignedIds */
+    /**
+     * 处理人id
+     * @return assignedIds
+     */
     public List<Integer> getAssignedIds() {
         return assignedIds;
     }
@@ -149,9 +152,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 创建者id
-     * 
-     * @return creatorIds */
+    /**
+     * 创建者id
+     * @return creatorIds
+     */
     public List<Integer> getCreatorIds() {
         return creatorIds;
     }
@@ -181,9 +185,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 开发人id,对应用户信息的数字id
-     * 
-     * @return developerIds */
+    /**
+     * 开发人id,对应用户信息的数字id
+     * @return developerIds
+     */
     public List<Integer> getDeveloperIds() {
         return developerIds;
     }
@@ -213,9 +218,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** id, 领域, 14 '性能', 15 '功能', 16 '可靠性', 17 '网络安全', 18 '可维护性', 19 '其他DFX', 20 '可用性',
-     * 
-     * @return domainIds */
+    /**
+     * id, 领域, 14 '性能', 15 '功能', 16 '可靠性', 17 '网络安全', 18 '可维护性', 19 '其他DFX', 20 '可用性',
+     * @return domainIds
+     */
     public List<Integer> getDomainIds() {
         return domainIds;
     }
@@ -245,9 +251,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 完成度
-     * 
-     * @return doneRatios */
+    /**
+     * 完成度
+     * @return doneRatios
+     */
     public List<Integer> getDoneRatios() {
         return doneRatios;
     }
@@ -277,9 +284,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 迭代id
-     * 
-     * @return iterationIds */
+    /**
+     * 迭代id
+     * @return iterationIds
+     */
     public List<Integer> getIterationIds() {
         return iterationIds;
     }
@@ -293,9 +301,12 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 每页显示数量 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示数量
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -309,9 +320,11 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 分页索引，偏移量，offset是limit的整数倍数，limit=10,offset=0,10,20... minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量，offset是limit的整数倍数，limit=10,offset=0,10,20...
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -341,9 +354,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 模块id
-     * 
-     * @return moduleIds */
+    /**
+     * 模块id
+     * @return moduleIds
+     */
     public List<Integer> getModuleIds() {
         return moduleIds;
     }
@@ -373,9 +387,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 优先级
-     * 
-     * @return priorityIds */
+    /**
+     * 优先级
+     * @return priorityIds
+     */
     public List<Integer> getPriorityIds() {
         return priorityIds;
     }
@@ -389,9 +404,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 查询类型 backlog feature epic
-     * 
-     * @return queryType */
+    /**
+     * 查询类型 backlog feature epic
+     * @return queryType
+     */
     public String getQueryType() {
         return queryType;
     }
@@ -421,9 +437,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 查询类型
-     * 
-     * @return severityIds */
+    /**
+     * 查询类型
+     * @return severityIds
+     */
     public List<Integer> getSeverityIds() {
         return severityIds;
     }
@@ -453,9 +470,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 状态 id, 开始 1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
-     * 
-     * @return statusIds */
+    /**
+     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
+     * @return statusIds
+     */
     public List<Integer> getStatusIds() {
         return statusIds;
     }
@@ -485,9 +503,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 故事点id
-     * 
-     * @return storyPointIds */
+    /**
+     * 故事点id
+     * @return storyPointIds
+     */
     public List<Integer> getStoryPointIds() {
         return storyPointIds;
     }
@@ -517,9 +536,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
-     * 
-     * @return trackerIds */
+    /**
+     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * @return trackerIds
+     */
     public List<Integer> getTrackerIds() {
         return trackerIds;
     }
@@ -533,9 +553,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** true 查询的工作项包含已经逻辑删除的，false 查询的工作项不包含已经删除的
-     * 
-     * @return includeDeleted */
+    /**
+     * true 查询的工作项包含已经逻辑删除的，false 查询的工作项不包含已经删除的
+     * @return includeDeleted
+     */
     public Boolean getIncludeDeleted() {
         return includeDeleted;
     }
@@ -549,9 +570,10 @@ public class ListIssueRequestV4 {
         return this;
     }
 
-    /** 根据工作项的更新时间查询工作项，(查询的起始时间,查询的结束时间)
-     * 
-     * @return updatedTimeInterval */
+    /**
+     * 根据工作项的更新时间查询工作项，(查询的起始时间,查询的结束时间)
+     * @return updatedTimeInterval
+     */
     public String getUpdatedTimeInterval() {
         return updatedTimeInterval;
     }
@@ -634,7 +656,10 @@ public class ListIssueRequestV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

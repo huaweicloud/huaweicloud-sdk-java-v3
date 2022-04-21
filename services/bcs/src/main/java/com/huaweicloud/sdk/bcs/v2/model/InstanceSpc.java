@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** InstanceSpc */
+/**
+ * InstanceSpc
+ */
 public class InstanceSpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class InstanceSpc {
         return this;
     }
 
-    /** 单个组织支持的最大peer节点数量
-     * 
-     * @return orgPeerMaxNum */
+    /**
+     * 单个组织支持的最大peer节点数量
+     * @return orgPeerMaxNum
+     */
     public Long getOrgPeerMaxNum() {
         return orgPeerMaxNum;
     }
@@ -44,9 +47,10 @@ public class InstanceSpc {
         return this;
     }
 
-    /** 单个联盟链支持的最大order节点数量
-     * 
-     * @return ordererMaxNum */
+    /**
+     * 单个联盟链支持的最大order节点数量
+     * @return ordererMaxNum
+     */
     public Long getOrdererMaxNum() {
         return ordererMaxNum;
     }
@@ -60,9 +64,10 @@ public class InstanceSpc {
         return this;
     }
 
-    /** 单个联盟链支持的最大租户数量
-     * 
-     * @return memberMaxNum */
+    /**
+     * 单个联盟链支持的最大租户数量
+     * @return memberMaxNum
+     */
     public Integer getMemberMaxNum() {
         return memberMaxNum;
     }
@@ -101,7 +106,10 @@ public class InstanceSpc {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResourceCreate */
+/**
+ * ResourceCreate
+ */
 public class ResourceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ResourceCreate {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public ResourceExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -59,9 +62,10 @@ public class ResourceCreate {
         return this;
     }
 
-    /** 待备份资源id
-     * 
-     * @return id */
+    /**
+     * 待备份资源id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,10 +79,10 @@ public class ResourceCreate {
         return this;
     }
 
-    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
-     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * 
-     * @return type */
+    /**
+     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -92,9 +96,10 @@ public class ResourceCreate {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -133,7 +138,10 @@ public class ResourceCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

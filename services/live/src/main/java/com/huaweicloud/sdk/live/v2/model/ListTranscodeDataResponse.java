@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTranscodeDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListTranscodeDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 采样数据列表。
-     * 
-     * @return transcodeDataList */
+    /**
+     * 采样数据列表。
+     * @return transcodeDataList
+     */
     public List<TranscodeData> getTranscodeDataList() {
         return transcodeDataList;
     }
@@ -80,9 +83,10 @@ public class ListTranscodeDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定时间区间内各转码规格转码时长总和。
-     * 
-     * @return summaryList */
+    /**
+     * 指定时间区间内各转码规格转码时长总和。
+     * @return summaryList
+     */
     public List<TranscodeSummary> getSummaryList() {
         return summaryList;
     }
@@ -96,9 +100,10 @@ public class ListTranscodeDataResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -139,7 +144,10 @@ public class ListTranscodeDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class JobMetadata {
         return this;
     }
 
-    /** 任务的ID。
-     * 
-     * @return uid */
+    /**
+     * 任务的ID。
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -46,9 +47,10 @@ public class JobMetadata {
         return this;
     }
 
-    /** 任务的创建时间。
-     * 
-     * @return creationTimestamp */
+    /**
+     * 任务的创建时间。
+     * @return creationTimestamp
+     */
     public String getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -62,9 +64,10 @@ public class JobMetadata {
         return this;
     }
 
-    /** 任务的更新时间。
-     * 
-     * @return updateTimestamp */
+    /**
+     * 任务的更新时间。
+     * @return updateTimestamp
+     */
     public String getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -103,7 +106,10 @@ public class JobMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

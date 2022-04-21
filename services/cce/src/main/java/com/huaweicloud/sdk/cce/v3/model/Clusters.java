@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Clusters */
+/**
+ * Clusters
+ */
 public class Clusters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,10 +26,10 @@ public class Clusters {
         return this;
     }
 
-    /** 集群名字。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internalCluster”。 -
-     * 若存在publicIp，则集群列表的集群数量大于1，所有扩展的cluster的name的值为“externalCluster”。
-     * 
-     * @return name */
+    /**
+     * 集群名字。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internalCluster”。 - 若存在publicIp，则集群列表的集群数量大于1，所有扩展的cluster的name的值为“externalCluster”。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -50,9 +52,10 @@ public class Clusters {
         return this;
     }
 
-    /** Get cluster
-     * 
-     * @return cluster */
+    /**
+     * Get cluster
+     * @return cluster
+     */
     public ClusterCert getCluster() {
         return cluster;
     }
@@ -88,7 +91,10 @@ public class Clusters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

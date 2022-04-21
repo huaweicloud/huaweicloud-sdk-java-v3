@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 调用成功时为图片标签内容。 调用失败时无此字段。 */
+/**
+ * 调用成功时为图片标签内容。  调用失败时无此字段。
+ */
 public class ImageTaggingResponseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ImageTaggingResponseResult {
         return this;
     }
 
-    /** 标签列表集合。
-     * 
-     * @return tags */
+    /**
+     * 标签列表集合。
+     * @return tags
+     */
     public List<ImageTaggingItemBody> getTags() {
         return tags;
     }
@@ -74,7 +77,10 @@ public class ImageTaggingResponseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

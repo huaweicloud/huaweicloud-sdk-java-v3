@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 操作系统详情 */
+/**
+ * 操作系统详情
+ */
 public class OsVersionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class OsVersionInfo {
         return this;
     }
 
-    /** 操作系统的平台值
-     * 
-     * @return platform */
+    /**
+     * 操作系统的平台值
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -54,9 +57,10 @@ public class OsVersionInfo {
         return this;
     }
 
-    /** os_version的key值，和os_version值相同
-     * 
-     * @return osVersionKey */
+    /**
+     * os_version的key值，和os_version值相同
+     * @return osVersionKey
+     */
     public String getOsVersionKey() {
         return osVersionKey;
     }
@@ -70,9 +74,10 @@ public class OsVersionInfo {
         return this;
     }
 
-    /** 操作系统的版本
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统的版本
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -86,9 +91,10 @@ public class OsVersionInfo {
         return this;
     }
 
-    /** 操作系统的位数
-     * 
-     * @return osBit */
+    /**
+     * 操作系统的位数
+     * @return osBit
+     */
     public Integer getOsBit() {
         return osBit;
     }
@@ -102,9 +108,10 @@ public class OsVersionInfo {
         return this;
     }
 
-    /** 操作系统的类型，Linux或Windows
-     * 
-     * @return osType */
+    /**
+     * 操作系统的类型，Linux或Windows
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -146,7 +153,10 @@ public class OsVersionInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

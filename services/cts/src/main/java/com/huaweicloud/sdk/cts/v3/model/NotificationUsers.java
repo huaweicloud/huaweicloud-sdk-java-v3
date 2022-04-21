@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 通知用户列表。 */
+/**
+ * 通知用户列表。
+ */
 public class NotificationUsers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class NotificationUsers {
         return this;
     }
 
-    /** IAM用户组。
-     * 
-     * @return userGroup */
+    /**
+     * IAM用户组。
+     * @return userGroup
+     */
     public String getUserGroup() {
         return userGroup;
     }
@@ -58,9 +61,10 @@ public class NotificationUsers {
         return this;
     }
 
-    /** IAM用户。
-     * 
-     * @return userList */
+    /**
+     * IAM用户。
+     * @return userList
+     */
     public List<String> getUserList() {
         return userList;
     }
@@ -97,7 +101,10 @@ public class NotificationUsers {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

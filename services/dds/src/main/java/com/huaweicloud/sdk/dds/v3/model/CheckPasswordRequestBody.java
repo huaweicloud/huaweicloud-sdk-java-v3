@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CheckPasswordRequestBody */
+/**
+ * CheckPasswordRequestBody
+ */
 public class CheckPasswordRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CheckPasswordRequestBody {
         return this;
     }
 
-    /** 数据库密码。取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。
-     * 
-     * @return userPwd */
+    /**
+     * 数据库密码。取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。
+     * @return userPwd
+     */
     public String getUserPwd() {
         return userPwd;
     }
@@ -44,9 +47,10 @@ public class CheckPasswordRequestBody {
         return this;
     }
 
-    /** 数据库用户名称，默认为“rwuser”。取值范围：长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
-     * 
-     * @return userName */
+    /**
+     * 数据库用户名称，默认为“rwuser”。取值范围：长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -60,9 +64,10 @@ public class CheckPasswordRequestBody {
         return this;
     }
 
-    /** 用户所在的数据库，默认为“admin”。取值范围：长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
-     * 
-     * @return dbName */
+    /**
+     * 用户所在的数据库，默认为“admin”。取值范围：长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -101,7 +106,10 @@ public class CheckPasswordRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

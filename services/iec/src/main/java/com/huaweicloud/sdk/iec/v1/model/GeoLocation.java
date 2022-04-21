@@ -60,9 +60,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 地理位置信息ID。
-     * 
-     * @return id */
+    /**
+     * 地理位置信息ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -76,9 +77,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 所在大区。
-     * 
-     * @return area */
+    /**
+     * 所在大区。
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -92,9 +94,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 所在城市。
-     * 
-     * @return city */
+    /**
+     * 所在城市。
+     * @return city
+     */
     public String getCity() {
         return city;
     }
@@ -108,9 +111,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 所在的国家。
-     * 
-     * @return country */
+    /**
+     * 所在的国家。
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -124,9 +128,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 区域的国际化名称。
-     * 
-     * @return i18nArea */
+    /**
+     * 区域的国际化名称。
+     * @return i18nArea
+     */
     public String getI18nArea() {
         return i18nArea;
     }
@@ -140,9 +145,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 城市的国际化名称。
-     * 
-     * @return i18nCity */
+    /**
+     * 城市的国际化名称。
+     * @return i18nCity
+     */
     public String getI18nCity() {
         return i18nCity;
     }
@@ -156,9 +162,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 国家的国际化名称。
-     * 
-     * @return i18nCountry */
+    /**
+     * 国家的国际化名称。
+     * @return i18nCountry
+     */
     public String getI18nCountry() {
         return i18nCountry;
     }
@@ -172,9 +179,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 省份的国际化名称。
-     * 
-     * @return i18nProvince */
+    /**
+     * 省份的国际化名称。
+     * @return i18nProvince
+     */
     public String getI18nProvince() {
         return i18nProvince;
     }
@@ -188,9 +196,10 @@ public class GeoLocation {
         return this;
     }
 
-    /** 所在省份。
-     * 
-     * @return province */
+    /**
+     * 所在省份。
+     * @return province
+     */
     public String getProvince() {
         return province;
     }
@@ -239,7 +248,10 @@ public class GeoLocation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

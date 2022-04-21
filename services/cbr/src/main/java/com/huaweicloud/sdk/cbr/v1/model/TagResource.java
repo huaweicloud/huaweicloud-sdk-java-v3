@@ -43,9 +43,10 @@ public class TagResource {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -75,9 +76,10 @@ public class TagResource {
         return this;
     }
 
-    /** 资源详情
-     * 
-     * @return resourceDetail */
+    /**
+     * 资源详情
+     * @return resourceDetail
+     */
     public List<Vault> getResourceDetail() {
         return resourceDetail;
     }
@@ -107,9 +109,10 @@ public class TagResource {
         return this;
     }
 
-    /** 标签列表 没有标签默认为空数字。
-     * 
-     * @return tags */
+    /**
+     * 标签列表 没有标签默认为空数字。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -123,9 +126,10 @@ public class TagResource {
         return this;
     }
 
-    /** 资源名称
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -155,10 +159,10 @@ public class TagResource {
         return this;
     }
 
-    /** 仅op_service权限才可以获取此字段： 目前只包含一个resource_tag 结构体。 key：_sys_enterprise_project_id value：企业项目id，0表示默认企业项目
-     * 非op_service场景不能返回此字段。
-     * 
-     * @return sysTags */
+    /**
+     * 仅op_service权限才可以获取此字段：  目前只包含一个resource_tag 结构体。  key：_sys_enterprise_project_id  value：企业项目id，0表示默认企业项目  非op_service场景不能返回此字段。
+     * @return sysTags
+     */
     public List<SysTag> getSysTags() {
         return sysTags;
     }
@@ -201,7 +205,10 @@ public class TagResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

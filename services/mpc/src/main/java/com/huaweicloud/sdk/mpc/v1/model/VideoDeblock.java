@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VideoDeblock */
+/**
+ * VideoDeblock
+ */
 public class VideoDeblock {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class VideoDeblock {
         return this;
     }
 
-    /** 去块算法名称\"hw-deblock\"。
-     * 
-     * @return name */
+    /**
+     * 去块算法名称\"hw-deblock\"。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,12 @@ public class VideoDeblock {
         return this;
     }
 
-    /** 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 minimum: 0 maximum: 2147483647
-     * 
-     * @return executionOrder */
+    /**
+     * 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return executionOrder
+     */
     public Integer getExecutionOrder() {
         return executionOrder;
     }
@@ -78,7 +84,10 @@ public class VideoDeblock {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

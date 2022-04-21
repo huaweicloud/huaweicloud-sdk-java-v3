@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQpsTimelineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询企业项目ID
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询通过企业项目管理服务的查询企业项目列表接口ListEnterpriseProject查询企业项目ID
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -59,9 +62,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 起始时间（13位毫秒时间戳），需要和to同时使用
-     * 
-     * @return from */
+    /**
+     * 起始时间（13位毫秒时间戳），需要和to同时使用
+     * @return from
+     */
     public Long getFrom() {
         return from;
     }
@@ -75,9 +79,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 结束时间（13位毫秒时间戳），需要和from同时使用
-     * 
-     * @return to */
+    /**
+     * 结束时间（13位毫秒时间戳），需要和from同时使用
+     * @return to
+     */
     public Long getTo() {
         return to;
     }
@@ -91,9 +96,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 域名id（通过ListHost接口查询）
-     * 
-     * @return hosts */
+    /**
+     * 域名id（通过ListHost接口查询）
+     * @return hosts
+     */
     public String getHosts() {
         return hosts;
     }
@@ -107,9 +113,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 独享实例实例id（仅实例化模式涉及）
-     * 
-     * @return instances */
+    /**
+     * 独享实例实例id（仅实例化模式涉及）
+     * @return instances
+     */
     public String getInstances() {
         return instances;
     }
@@ -123,9 +130,10 @@ public class ListQpsTimelineRequest {
         return this;
     }
 
-    /** 展示维度，需要按天展示时传\"DAY\"
-     * 
-     * @return groupBy */
+    /**
+     * 展示维度，需要按天展示时传\"DAY\"
+     * @return groupBy
+     */
     public String getGroupBy() {
         return groupBy;
     }
@@ -170,7 +178,10 @@ public class ListQpsTimelineRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

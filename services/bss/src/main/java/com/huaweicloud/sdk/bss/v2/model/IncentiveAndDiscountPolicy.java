@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncentiveAndDiscountPolicy */
+/**
+ * IncentiveAndDiscountPolicy
+ */
 public class IncentiveAndDiscountPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class IncentiveAndDiscountPolicy {
         return this;
     }
 
-    /** 云服务类型列表。
-     * 
-     * @return serviceTypeCode */
+    /**
+     * 云服务类型列表。
+     * @return serviceTypeCode
+     */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -49,9 +52,10 @@ public class IncentiveAndDiscountPolicy {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return serviceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return serviceTypeName
+     */
     public String getServiceTypeName() {
         return serviceTypeName;
     }
@@ -65,9 +69,10 @@ public class IncentiveAndDiscountPolicy {
         return this;
     }
 
-    /** 激励策略。 0：非特定产品1：特定产品2：无业绩无返点13：有业绩无返点
-     * 
-     * @return incentivePolicy */
+    /**
+     * 激励策略。 0：非特定产品1：特定产品2：无业绩无返点13：有业绩无返点
+     * @return incentivePolicy
+     */
     public String getIncentivePolicy() {
         return incentivePolicy;
     }
@@ -81,9 +86,10 @@ public class IncentiveAndDiscountPolicy {
         return this;
     }
 
-    /** 是否允许应用伙伴授予折扣。 YES：允许应用NO：不许应用
-     * 
-     * @return allowDiscount */
+    /**
+     * 是否允许应用伙伴授予折扣。 YES：允许应用NO：不许应用
+     * @return allowDiscount
+     */
     public String getAllowDiscount() {
         return allowDiscount;
     }
@@ -124,7 +130,10 @@ public class IncentiveAndDiscountPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

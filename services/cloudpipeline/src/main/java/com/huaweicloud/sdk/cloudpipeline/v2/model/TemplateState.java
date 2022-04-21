@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 子任务参数 */
+/**
+ * 子任务参数
+ */
 public class TemplateState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务类型
-     * 
-     * @return type */
+    /**
+     * 任务类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -107,9 +110,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务名字
-     * 
-     * @return name */
+    /**
+     * 任务名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -123,9 +127,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 模板任务ID
-     * 
-     * @return moduleOrTemplateId */
+    /**
+     * 模板任务ID
+     * @return moduleOrTemplateId
+     */
     public String getModuleOrTemplateId() {
         return moduleOrTemplateId;
     }
@@ -139,9 +144,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 模板任务名字
-     * 
-     * @return moduleOrTemplateName */
+    /**
+     * 模板任务名字
+     * @return moduleOrTemplateName
+     */
     public String getModuleOrTemplateName() {
         return moduleOrTemplateName;
     }
@@ -155,9 +161,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务在流水线页面展示名字
-     * 
-     * @return displayName */
+    /**
+     * 任务在流水线页面展示名字
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -171,9 +178,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 流水线可挂载任务类型
-     * 
-     * @return dslMethod */
+    /**
+     * 流水线可挂载任务类型
+     * @return dslMethod
+     */
     public String getDslMethod() {
         return dslMethod;
     }
@@ -203,9 +211,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务参数,map类型数据
-     * 
-     * @return parameters */
+    /**
+     * 任务参数,map类型数据
+     * @return parameters
+     */
     public Map<String, Object> getParameters() {
         return parameters;
     }
@@ -219,9 +228,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 是否手动执行
-     * 
-     * @return isManualExecution */
+    /**
+     * 是否手动执行
+     * @return isManualExecution
+     */
     public Boolean getIsManualExecution() {
         return isManualExecution;
     }
@@ -235,9 +245,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务参数是否校验
-     * 
-     * @return jobParameterValidate */
+    /**
+     * 任务参数是否校验
+     * @return jobParameterValidate
+     */
     public Boolean getJobParameterValidate() {
         return jobParameterValidate;
     }
@@ -251,9 +262,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 是否显示代码仓URL
-     * 
-     * @return isShowCodehubUrl */
+    /**
+     * 是否显示代码仓URL
+     * @return isShowCodehubUrl
+     */
     public Boolean getIsShowCodehubUrl() {
         return isShowCodehubUrl;
     }
@@ -267,9 +279,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 是否执行
-     * 
-     * @return isExecute */
+    /**
+     * 是否执行
+     * @return isExecute
+     */
     public Boolean getIsExecute() {
         return isExecute;
     }
@@ -283,9 +296,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 执行任务ID
-     * 
-     * @return jobId */
+    /**
+     * 执行任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -299,9 +313,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 执行任务名字
-     * 
-     * @return jobName */
+    /**
+     * 执行任务名字
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -315,9 +330,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 任务所属项目ID
-     * 
-     * @return projectId */
+    /**
+     * 任务所属项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -331,9 +347,10 @@ public class TemplateState {
         return this;
     }
 
-    /** 控制阶段下任务的串并行（type是task的execution_mode值为null，type是stage的execution_mode可选parallel（并行）或者serial（串行））
-     * 
-     * @return executionMode */
+    /**
+     * 控制阶段下任务的串并行（type是task的execution_mode值为null，type是stage的execution_mode可选parallel（并行）或者serial（串行））
+     * @return executionMode
+     */
     public String getExecutionMode() {
         return executionMode;
     }
@@ -408,7 +425,10 @@ public class TemplateState {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

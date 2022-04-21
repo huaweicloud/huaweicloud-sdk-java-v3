@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateAppReq */
+/**
+ * CreateAppReq
+ */
 public class CreateAppReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateAppReq {
         return this;
     }
 
-    /** 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
-     * 
-     * @return name */
+    /**
+     * 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class CreateAppReq {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return remark */
+    /**
+     * 应用描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -70,9 +74,10 @@ public class CreateAppReq {
         return this;
     }
 
-    /** 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
-     * 
-     * @return key */
+    /**
+     * 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -86,9 +91,10 @@ public class CreateAppReq {
         return this;
     }
 
-    /** 应用认证访问SECRET,未提供（字段不存在或值为null）时随机生成 - 字符集：英文字母、数字、！、@、#、$、%、+、=、点、中划线、斜线/ - 复杂度：满足大小写字母、数字、特殊字符的复杂度组合，考虑兼容性暂时可不做
-     * 
-     * @return secret */
+    /**
+     * 应用认证访问SECRET,未提供（字段不存在或值为null）时随机生成 - 字符集：英文字母、数字、！、@、#、$、%、+、=、点、中划线、斜线/ - 复杂度：满足大小写字母、数字、特殊字符的复杂度组合，考虑兼容性暂时可不做
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -102,9 +108,10 @@ public class CreateAppReq {
         return this;
     }
 
-    /** 是否收藏应用，收藏的应用会在列表里优先显示
-     * 
-     * @return favorite */
+    /**
+     * 是否收藏应用，收藏的应用会在列表里优先显示
+     * @return favorite
+     */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -145,7 +152,10 @@ public class CreateAppReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

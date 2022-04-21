@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建测试事件请求体。 */
+/**
+ * 创建测试事件请求体。
+ */
 public class CreateEventRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateEventRequestBody {
         return this;
     }
 
-    /** 测试事件名称。只能由字母、数字、中划线和下划线组成，且必须以大写或小写字母开头。
-     * 
-     * @return name */
+    /**
+     * 测试事件名称。只能由字母、数字、中划线和下划线组成，且必须以大写或小写字母开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class CreateEventRequestBody {
         return this;
     }
 
-    /** 测试事件content。
-     * 
-     * @return content */
+    /**
+     * 测试事件content。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -78,7 +82,10 @@ public class CreateEventRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

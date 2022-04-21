@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DownloadBackupFilesReq */
+/**
+ * DownloadBackupFilesReq
+ */
 public class DownloadBackupFilesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DownloadBackupFilesReq {
         return this;
     }
 
-    /** 设置URL的有效期，必须在5分钟和24小时之内，单位为秒。
-     * 
-     * @return expiration */
+    /**
+     * 设置URL的有效期，必须在5分钟和24小时之内，单位为秒。
+     * @return expiration
+     */
     public Integer getExpiration() {
         return expiration;
     }
@@ -55,7 +58,10 @@ public class DownloadBackupFilesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

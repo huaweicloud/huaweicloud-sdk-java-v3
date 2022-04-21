@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExtentionReqDataByNameAndId */
+/**
+ * ExtentionReqDataByNameAndId
+ */
 public class ExtentionReqDataByNameAndId {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ExtentionReqDataByNameAndId {
         return this;
     }
 
-    /** 被验证人的姓名。
-     * 
-     * @return verificationName */
+    /**
+     * 被验证人的姓名。
+     * @return verificationName
+     */
     public String getVerificationName() {
         return verificationName;
     }
@@ -39,9 +42,10 @@ public class ExtentionReqDataByNameAndId {
         return this;
     }
 
-    /** 被验证人的身份证号码。
-     * 
-     * @return verificationId */
+    /**
+     * 被验证人的身份证号码。
+     * @return verificationId
+     */
     public String getVerificationId() {
         return verificationId;
     }
@@ -78,7 +82,10 @@ public class ExtentionReqDataByNameAndId {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

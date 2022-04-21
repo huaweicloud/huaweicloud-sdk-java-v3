@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 转换计算 */
+/**
+ * 转换计算
+ */
 public class TransformResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class TransformResponse {
         return this;
     }
 
-    /** 输入参数
-     * 
-     * @return inputs */
+    /**
+     * 输入参数
+     * @return inputs
+     */
     public List<InputResponse> getInputs() {
         return inputs;
     }
@@ -77,9 +80,10 @@ public class TransformResponse {
         return this;
     }
 
-    /** Get expression
-     * 
-     * @return expression */
+    /**
+     * Get expression
+     * @return expression
+     */
     public Formula getExpression() {
         return expression;
     }
@@ -93,9 +97,10 @@ public class TransformResponse {
         return this;
     }
 
-    /** 输出属性名(不推荐使用，待废弃，使用outputs替代)
-     * 
-     * @return outputProperty */
+    /**
+     * 输出属性名(不推荐使用，待废弃，使用outputs替代)
+     * @return outputProperty
+     */
     public String getOutputProperty() {
         return outputProperty;
     }
@@ -125,9 +130,10 @@ public class TransformResponse {
         return this;
     }
 
-    /** Get outputs
-     * 
-     * @return outputs */
+    /**
+     * Get outputs
+     * @return outputs
+     */
     public List<OutputResponse> getOutputs() {
         return outputs;
     }
@@ -168,7 +174,10 @@ public class TransformResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NpuInfo */
+/**
+ * NpuInfo
+ */
 public class NpuInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class NpuInfo {
         return this;
     }
 
-    /** NPU名称
-     * 
-     * @return name */
+    /**
+     * NPU名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class NpuInfo {
         return this;
     }
 
-    /** NPU类型
-     * 
-     * @return type */
+    /**
+     * NPU类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -65,9 +69,10 @@ public class NpuInfo {
         return this;
     }
 
-    /** NPU memory大小
-     * 
-     * @return capacity */
+    /**
+     * NPU memory大小
+     * @return capacity
+     */
     public String getCapacity() {
         return capacity;
     }
@@ -81,9 +86,10 @@ public class NpuInfo {
         return this;
     }
 
-    /** NPU驱动版本
-     * 
-     * @return driverVersion */
+    /**
+     * NPU驱动版本
+     * @return driverVersion
+     */
     public String getDriverVersion() {
         return driverVersion;
     }
@@ -123,7 +129,10 @@ public class NpuInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowOrgResResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 已用录制存储空间(单位G)
-     * 
-     * @return usedRecStorage */
+    /**
+     * 已用录制存储空间(单位G)
+     * @return usedRecStorage
+     */
     public Double getUsedRecStorage() {
         return usedRecStorage;
     }
@@ -65,9 +68,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 已用的企业并发数
-     * 
-     * @return usedAccountsCount */
+    /**
+     * 已用的企业并发数
+     * @return usedAccountsCount
+     */
     public Integer getUsedAccountsCount() {
         return usedAccountsCount;
     }
@@ -81,9 +85,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 已用的直播推流资源
-     * 
-     * @return usedLiveCount */
+    /**
+     * 已用的直播推流资源
+     * @return usedLiveCount
+     */
     public Integer getUsedLiveCount() {
         return usedLiveCount;
     }
@@ -97,9 +102,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议总次数
-     * 
-     * @return confCount */
+    /**
+     * 会议总次数
+     * @return confCount
+     */
     public Integer getConfCount() {
         return confCount;
     }
@@ -113,9 +119,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议总时长
-     * 
-     * @return confLength */
+    /**
+     * 会议总时长
+     * @return confLength
+     */
     public Long getConfLength() {
         return confLength;
     }
@@ -129,9 +136,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 活跃用户数
-     * 
-     * @return activeAttendeeCount */
+    /**
+     * 活跃用户数
+     * @return activeAttendeeCount
+     */
     public Integer getActiveAttendeeCount() {
         return activeAttendeeCount;
     }
@@ -145,9 +153,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return this;
     }
 
-    /** 总与会人数
-     * 
-     * @return totalAttendeeCount */
+    /**
+     * 总与会人数
+     * @return totalAttendeeCount
+     */
     public Integer getTotalAttendeeCount() {
         return totalAttendeeCount;
     }
@@ -200,7 +209,10 @@ public class ShowOrgResResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class NeutronPageLink {
         return this;
     }
 
-    /** API链接
-     * 
-     * @return href */
+    /**
+     * API链接
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -41,9 +42,10 @@ public class NeutronPageLink {
         return this;
     }
 
-    /** API链接与该API版本的关系
-     * 
-     * @return rel */
+    /**
+     * API链接与该API版本的关系
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -79,7 +81,10 @@ public class NeutronPageLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

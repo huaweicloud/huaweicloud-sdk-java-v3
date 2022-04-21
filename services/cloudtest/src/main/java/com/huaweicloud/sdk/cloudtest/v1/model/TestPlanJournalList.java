@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 项目下某个测试计划操作历史列表 */
+/**
+ * 项目下某个测试计划操作历史列表
+ */
 public class TestPlanJournalList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class TestPlanJournalList {
         return this;
     }
 
-    /** DevCloud项目id，项目唯一标识，固定长度32位字符
-     * 
-     * @return projectId */
+    /**
+     * DevCloud项目id，项目唯一标识，固定长度32位字符
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -58,9 +61,10 @@ public class TestPlanJournalList {
         return this;
     }
 
-    /** 测试计划id
-     * 
-     * @return planId */
+    /**
+     * 测试计划id
+     * @return planId
+     */
     public String getPlanId() {
         return planId;
     }
@@ -74,9 +78,10 @@ public class TestPlanJournalList {
         return this;
     }
 
-    /** 变更时间
-     * 
-     * @return operateTime */
+    /**
+     * 变更时间
+     * @return operateTime
+     */
     public LocalDate getOperateTime() {
         return operateTime;
     }
@@ -99,9 +104,10 @@ public class TestPlanJournalList {
         return this;
     }
 
-    /** Get operator
-     * 
-     * @return operator */
+    /**
+     * Get operator
+     * @return operator
+     */
     public NameAndId getOperator() {
         return operator;
     }
@@ -131,9 +137,10 @@ public class TestPlanJournalList {
         return this;
     }
 
-    /** 历史记录详情
-     * 
-     * @return detail */
+    /**
+     * 历史记录详情
+     * @return detail
+     */
     public List<TestPlanJournalDetail> getDetail() {
         return detail;
     }
@@ -176,7 +183,10 @@ public class TestPlanJournalList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

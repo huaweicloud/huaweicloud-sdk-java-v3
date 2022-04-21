@@ -7,7 +7,9 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 伸缩配置详情 */
+/**
+ * 伸缩配置详情
+ */
 public class ScalingConfiguration {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +47,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** 伸缩配置ID，全局唯一。
-     * 
-     * @return scalingConfigurationId */
+    /**
+     * 伸缩配置ID，全局唯一。
+     * @return scalingConfigurationId
+     */
     public String getScalingConfigurationId() {
         return scalingConfigurationId;
     }
@@ -61,9 +64,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** 租户ID。
-     * 
-     * @return tenant */
+    /**
+     * 租户ID。
+     * @return tenant
+     */
     public String getTenant() {
         return tenant;
     }
@@ -77,9 +81,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** 伸缩配置名称。
-     * 
-     * @return scalingConfigurationName */
+    /**
+     * 伸缩配置名称。
+     * @return scalingConfigurationName
+     */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -102,9 +107,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** Get instanceConfig
-     * 
-     * @return instanceConfig */
+    /**
+     * Get instanceConfig
+     * @return instanceConfig
+     */
     public InstanceConfigResult getInstanceConfig() {
         return instanceConfig;
     }
@@ -118,9 +124,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** 创建伸缩配置的时间，遵循UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建伸缩配置的时间，遵循UTC时间。
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -134,9 +141,10 @@ public class ScalingConfiguration {
         return this;
     }
 
-    /** 绑定该伸缩配置的伸缩组ID
-     * 
-     * @return scalingGroupId */
+    /**
+     * 绑定该伸缩配置的伸缩组ID
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -182,7 +190,10 @@ public class ScalingConfiguration {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

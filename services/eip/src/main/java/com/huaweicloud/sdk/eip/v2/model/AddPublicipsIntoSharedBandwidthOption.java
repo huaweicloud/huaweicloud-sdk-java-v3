@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 带宽对象 */
+/**
+ * 带宽对象
+ */
 public class AddPublicipsIntoSharedBandwidthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class AddPublicipsIntoSharedBandwidthOption {
         return this;
     }
 
-    /** 功能说明：要插入共享带宽的弹性公网IP或者IPv6端口信息 约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
-     * 
-     * @return publicipInfo */
+    /**
+     * 功能说明：要插入共享带宽的弹性公网IP或者IPv6端口信息  约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
+     * @return publicipInfo
+     */
     public List<InsertPublicipInfo> getPublicipInfo() {
         return publicipInfo;
     }
@@ -76,7 +79,10 @@ public class AddPublicipsIntoSharedBandwidthOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

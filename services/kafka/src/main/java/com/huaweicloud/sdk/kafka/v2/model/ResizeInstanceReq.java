@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResizeInstanceReq */
+/**
+ * ResizeInstanceReq
+ */
 public class ResizeInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的规格ID。 若只扩展磁盘大小，则规格ID保持和原实例不变。
-     * 
-     * @return newSpecCode */
+    /**
+     * 规格变更后的规格ID。 若只扩展磁盘大小，则规格ID保持和原实例不变。
+     * @return newSpecCode
+     */
     public String getNewSpecCode() {
         return newSpecCode;
     }
@@ -39,9 +42,10 @@ public class ResizeInstanceReq {
         return this;
     }
 
-    /** 规格变更后的消息存储空间，单位：GB。 若扩展实例基准带宽，则new_storage_space不能低于基准带宽规定的最小磁盘大小。
-     * 
-     * @return newStorageSpace */
+    /**
+     * 规格变更后的消息存储空间，单位：GB。 若扩展实例基准带宽，则new_storage_space不能低于基准带宽规定的最小磁盘大小。
+     * @return newStorageSpace
+     */
     public Integer getNewStorageSpace() {
         return newStorageSpace;
     }
@@ -78,7 +82,10 @@ public class ResizeInstanceReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

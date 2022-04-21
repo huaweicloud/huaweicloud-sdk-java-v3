@@ -54,9 +54,10 @@ public class Catalog {
         return this;
     }
 
-    /** 终端节点信息。
-     * 
-     * @return endpoints */
+    /**
+     * 终端节点信息。
+     * @return endpoints
+     */
     public List<CatalogEndpoints> getEndpoints() {
         return endpoints;
     }
@@ -70,9 +71,10 @@ public class Catalog {
         return this;
     }
 
-    /** 服务ID。
-     * 
-     * @return id */
+    /**
+     * 服务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -86,9 +88,10 @@ public class Catalog {
         return this;
     }
 
-    /** 服务名。
-     * 
-     * @return name */
+    /**
+     * 服务名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +105,10 @@ public class Catalog {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return type */
+    /**
+     * 服务类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -143,7 +147,10 @@ public class Catalog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

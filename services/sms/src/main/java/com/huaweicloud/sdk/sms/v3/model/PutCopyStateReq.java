@@ -10,43 +10,69 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 源端复制状态 */
+/**
+ * 源端复制状态
+ */
 public class PutCopyStateReq {
 
-    /** 源端服务器状 */
+    /**
+     * 源端服务器状
+     */
     public static final class CopystateEnum {
 
-        /** Enum UNAVAILABLE for value: "UNAVAILABLE" */
+        /**
+         * Enum UNAVAILABLE for value: "UNAVAILABLE"
+         */
         public static final CopystateEnum UNAVAILABLE = new CopystateEnum("UNAVAILABLE");
 
-        /** Enum WAITING for value: "WAITING" */
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
         public static final CopystateEnum WAITING = new CopystateEnum("WAITING");
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final CopystateEnum INIT = new CopystateEnum("INIT");
 
-        /** Enum REPLICATE for value: "REPLICATE" */
+        /**
+         * Enum REPLICATE for value: "REPLICATE"
+         */
         public static final CopystateEnum REPLICATE = new CopystateEnum("REPLICATE");
 
-        /** Enum SYNCING for value: "SYNCING" */
+        /**
+         * Enum SYNCING for value: "SYNCING"
+         */
         public static final CopystateEnum SYNCING = new CopystateEnum("SYNCING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final CopystateEnum STOPPING = new CopystateEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final CopystateEnum STOPPED = new CopystateEnum("STOPPED");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final CopystateEnum DELETING = new CopystateEnum("DELETING");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final CopystateEnum ERROR = new CopystateEnum("ERROR");
 
-        /** Enum CLONING for value: "CLONING" */
+        /**
+         * Enum CLONING for value: "CLONING"
+         */
         public static final CopystateEnum CLONING = new CopystateEnum("CLONING");
 
-        /** Enum CUTOVERING for value: "CUTOVERING" */
+        /**
+         * Enum CUTOVERING for value: "CUTOVERING"
+         */
         public static final CopystateEnum CUTOVERING = new CopystateEnum("CUTOVERING");
 
         private static final Map<String, CopystateEnum> STATIC_FIELDS = createStaticFields();
@@ -125,25 +151,39 @@ public class PutCopyStateReq {
 
     private CopystateEnum copystate;
 
-    /** 迁移周期 */
+    /**
+     * 迁移周期
+     */
     public static final class MigrationcycleEnum {
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final MigrationcycleEnum CUTOVERING = new MigrationcycleEnum("cutovering");
 
-        /** Enum CUTOVERED for value: "cutovered" */
+        /**
+         * Enum CUTOVERED for value: "cutovered"
+         */
         public static final MigrationcycleEnum CUTOVERED = new MigrationcycleEnum("cutovered");
 
-        /** Enum CHECKING for value: "checking" */
+        /**
+         * Enum CHECKING for value: "checking"
+         */
         public static final MigrationcycleEnum CHECKING = new MigrationcycleEnum("checking");
 
-        /** Enum SETTING for value: "setting" */
+        /**
+         * Enum SETTING for value: "setting"
+         */
         public static final MigrationcycleEnum SETTING = new MigrationcycleEnum("setting");
 
-        /** Enum REPLICATING for value: "replicating" */
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
         public static final MigrationcycleEnum REPLICATING = new MigrationcycleEnum("replicating");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final MigrationcycleEnum SYNCING = new MigrationcycleEnum("syncing");
 
         private static final Map<String, MigrationcycleEnum> STATIC_FIELDS = createStaticFields();
@@ -222,9 +262,10 @@ public class PutCopyStateReq {
         return this;
     }
 
-    /** 源端服务器状
-     * 
-     * @return copystate */
+    /**
+     * 源端服务器状
+     * @return copystate
+     */
     public CopystateEnum getCopystate() {
         return copystate;
     }
@@ -238,9 +279,10 @@ public class PutCopyStateReq {
         return this;
     }
 
-    /** 迁移周期
-     * 
-     * @return migrationcycle */
+    /**
+     * 迁移周期
+     * @return migrationcycle
+     */
     public MigrationcycleEnum getMigrationcycle() {
         return migrationcycle;
     }
@@ -277,7 +319,10 @@ public class PutCopyStateReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

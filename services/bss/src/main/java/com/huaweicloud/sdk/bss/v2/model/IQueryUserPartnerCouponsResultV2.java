@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IQueryUserPartnerCouponsResultV2 */
+/**
+ * IQueryUserPartnerCouponsResultV2
+ */
 public class IQueryUserPartnerCouponsResultV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -126,9 +128,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券ID。
-     * 
-     * @return couponId */
+    /**
+     * 优惠券ID。
+     * @return couponId
+     */
     public String getCouponId() {
         return couponId;
     }
@@ -142,9 +145,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券状态： 1：未激活2：可使用3：已使用4：已过期5：已回收
-     * 
-     * @return status */
+    /**
+     * 优惠券状态： 1：未激活2：可使用3：已使用4：已过期5：已回收
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -158,9 +162,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -174,9 +179,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券类别： 1：代金券4：现金券
-     * 
-     * @return couponType */
+    /**
+     * 优惠券类别： 1：代金券4：现金券
+     * @return couponType
+     */
     public Integer getCouponType() {
         return couponType;
     }
@@ -190,9 +196,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券面额单位。 1：元。
-     * 
-     * @return measureId */
+    /**
+     * 优惠券面额单位。 1：元。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -206,9 +213,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券面值。
-     * 
-     * @return faceValue */
+    /**
+     * 优惠券面值。
+     * @return faceValue
+     */
     public Double getFaceValue() {
         return faceValue;
     }
@@ -222,9 +230,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -238,9 +247,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -254,9 +264,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -270,9 +281,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 促销计划ID。
-     * 
-     * @return promotionPlanId */
+    /**
+     * 促销计划ID。
+     * @return promotionPlanId
+     */
     public String getPromotionPlanId() {
         return promotionPlanId;
     }
@@ -286,9 +298,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 促销计划名称。
-     * 
-     * @return promotionPlanName */
+    /**
+     * 促销计划名称。
+     * @return promotionPlanName
+     */
     public String getPromotionPlanName() {
         return promotionPlanName;
     }
@@ -302,9 +315,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 促销计划描述。
-     * 
-     * @return promotionPlanDesc */
+    /**
+     * 促销计划描述。
+     * @return promotionPlanDesc
+     */
     public String getPromotionPlanDesc() {
         return promotionPlanDesc;
     }
@@ -318,9 +332,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 介质类型。 1：电子券2：纸质券
-     * 
-     * @return mediaType */
+    /**
+     * 介质类型。 1：电子券2：纸质券
+     * @return mediaType
+     */
     public Integer getMediaType() {
         return mediaType;
     }
@@ -334,9 +349,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 获取方式。 1：线上领取2：线上兑换3：线上发放4：线下获取5：事件赠送
-     * 
-     * @return fetchMethod */
+    /**
+     * 获取方式。 1：线上领取2：线上兑换3：线上发放4：线下获取5：事件赠送
+     * @return fetchMethod
+     */
     public Integer getFetchMethod() {
         return fetchMethod;
     }
@@ -366,9 +382,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券限制。 具体请参见表3。
-     * 
-     * @return useLimits */
+    /**
+     * 优惠券限制。 具体请参见表3。
+     * @return useLimits
+     */
     public List<ICouponUseLimitInfoV2> getUseLimits() {
         return useLimits;
     }
@@ -382,9 +399,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券的激活时间。
-     * 
-     * @return activeTime */
+    /**
+     * 优惠券的激活时间。
+     * @return activeTime
+     */
     public String getActiveTime() {
         return activeTime;
     }
@@ -398,9 +416,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券的使用时间。
-     * 
-     * @return lastUsedTime */
+    /**
+     * 优惠券的使用时间。
+     * @return lastUsedTime
+     */
     public String getLastUsedTime() {
         return lastUsedTime;
     }
@@ -414,9 +433,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 促销活动ID。
-     * 
-     * @return promotionId */
+    /**
+     * 促销活动ID。
+     * @return promotionId
+     */
     public String getPromotionId() {
         return promotionId;
     }
@@ -430,9 +450,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券的创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 优惠券的创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -446,9 +467,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券余额。
-     * 
-     * @return balance */
+    /**
+     * 优惠券余额。
+     * @return balance
+     */
     public Double getBalance() {
         return balance;
     }
@@ -462,9 +484,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 锁定优惠券的订单ID。 如果为老版本优惠券，该值为空。
-     * 
-     * @return lockOrderId */
+    /**
+     * 锁定优惠券的订单ID。 如果为老版本优惠券，该值为空。
+     * @return lockOrderId
+     */
     public String getLockOrderId() {
         return lockOrderId;
     }
@@ -478,9 +501,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return this;
     }
 
-    /** 优惠券是否冻结。 0：否1：是 可用优惠券接口返回时不包括冻结状态的优惠券。
-     * 
-     * @return isFrozen */
+    /**
+     * 优惠券是否冻结。 0：否1：是 可用优惠券接口返回时不包括冻结状态的优惠券。
+     * @return isFrozen
+     */
     public String getIsFrozen() {
         return isFrozen;
     }
@@ -578,7 +602,10 @@ public class IQueryUserPartnerCouponsResultV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

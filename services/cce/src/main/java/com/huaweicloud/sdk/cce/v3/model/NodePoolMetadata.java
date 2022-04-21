@@ -43,9 +43,10 @@ public class NodePoolMetadata {
         return this;
     }
 
-    /** 节点名池名称。 > 命名规则： > > - 以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-50位，且不能以中划线(-)结尾。 > > - 不允许创建名为 DefaultPool 的节点池。
-     * 
-     * @return name */
+    /**
+     * 节点名池名称。  > 命名规则： > >  - 以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-50位，且不能以中划线(-)结尾。 > >  - 不允许创建名为 DefaultPool 的节点池。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -59,9 +60,10 @@ public class NodePoolMetadata {
         return this;
     }
 
-    /** 节点池的uid。创建成功后自动生成，填写无效
-     * 
-     * @return uid */
+    /**
+     * 节点池的uid。创建成功后自动生成，填写无效
+     * @return uid
+     */
     public String getUid() {
         return uid;
     }
@@ -91,9 +93,10 @@ public class NodePoolMetadata {
         return this;
     }
 
-    /** 节点池的注解，以key value对表示。
-     * 
-     * @return annotations */
+    /**
+     * 节点池的注解，以key value对表示。 
+     * @return annotations
+     */
     public Map<String, String> getAnnotations() {
         return annotations;
     }
@@ -107,9 +110,10 @@ public class NodePoolMetadata {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTimestamp */
+    /**
+     * 更新时间
+     * @return updateTimestamp
+     */
     public String getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -123,9 +127,10 @@ public class NodePoolMetadata {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return creationTimestamp */
+    /**
+     * 创建时间
+     * @return creationTimestamp
+     */
     public String getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -167,7 +172,10 @@ public class NodePoolMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

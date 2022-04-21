@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVariablesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class ListVariablesRequest {
         return this;
     }
 
-    /** 变量类型 minimum: 0 maximum: 2147483647
-     * 
-     * @return variableType */
+    /**
+     * 变量类型
+     * minimum: 0
+     * maximum: 2147483647
+     * @return variableType
+     */
     public Integer getVariableType() {
         return variableType;
     }
@@ -39,9 +44,12 @@ public class ListVariablesRequest {
         return this;
     }
 
-    /** 测试工程id minimum: 0 maximum: 2147483647
-     * 
-     * @return testSuiteId */
+    /**
+     * 测试工程id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return testSuiteId
+     */
     public Integer getTestSuiteId() {
         return testSuiteId;
     }
@@ -78,7 +86,10 @@ public class ListVariablesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

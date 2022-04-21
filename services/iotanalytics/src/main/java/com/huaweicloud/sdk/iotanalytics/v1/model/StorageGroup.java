@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 存储组信息 */
+/**
+ * 存储组信息
+ */
 public class StorageGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StorageGroup {
         return this;
     }
 
-    /** 存储组名称
-     * 
-     * @return name */
+    /**
+     * 存储组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class StorageGroup {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -65,9 +69,10 @@ public class StorageGroup {
         return this;
     }
 
-    /** 温数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
-     * 
-     * @return warmDataRetentionPolicy */
+    /**
+     * 温数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
+     * @return warmDataRetentionPolicy
+     */
     public String getWarmDataRetentionPolicy() {
         return warmDataRetentionPolicy;
     }
@@ -81,9 +86,10 @@ public class StorageGroup {
         return this;
     }
 
-    /** 冷数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
-     * 
-     * @return coldDataRetentionPolicy */
+    /**
+     * 冷数据老化策略，单位只支持d（天），且只支持整数，如365天则可配置为“365d”，如“365h”或“360.5d”等均不被支持
+     * @return coldDataRetentionPolicy
+     */
     public String getColdDataRetentionPolicy() {
         return coldDataRetentionPolicy;
     }
@@ -124,7 +130,10 @@ public class StorageGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SetAuditlogPolicyRequestBody */
+/**
+ * SetAuditlogPolicyRequestBody
+ */
 public class SetAuditlogPolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
-     * 
-     * @return keepDays */
+    /**
+     * 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -39,9 +42,10 @@ public class SetAuditlogPolicyRequestBody {
         return this;
     }
 
-    /** 仅关闭审计日志策略时有效。 - true（默认），表示关闭审计日志策略的同时，保留历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
-     * 
-     * @return reserveAuditlogs */
+    /**
+     * 仅关闭审计日志策略时有效。  - true（默认），表示关闭审计日志策略的同时，保留历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
+     * @return reserveAuditlogs
+     */
     public Boolean getReserveAuditlogs() {
         return reserveAuditlogs;
     }
@@ -78,7 +82,10 @@ public class SetAuditlogPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

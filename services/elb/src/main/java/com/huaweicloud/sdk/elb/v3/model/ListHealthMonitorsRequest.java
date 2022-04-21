@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHealthMonitorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,9 +103,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * 
-     * @return marker */
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -117,9 +120,12 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 每页返回的个数。 minimum: 0 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数。
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -133,9 +139,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -165,9 +172,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx****。
-     * 
-     * @return id */
+    /**
+     * 健康检查ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx****。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -197,9 +205,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查端口号。 支持多值查询，查询条件格式：***monitor_port=xxx&monitor_port=xxx***。
-     * 
-     * @return monitorPort */
+    /**
+     * 健康检查端口号。  支持多值查询，查询条件格式：***monitor_port=xxx&monitor_port=xxx***。
+     * @return monitorPort
+     */
     public List<Integer> getMonitorPort() {
         return monitorPort;
     }
@@ -229,9 +238,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 发送健康检查请求的域名。 取值：以数字或字母开头，只能包含数字、字母、'-'、'.'。 支持多值查询，查询条件格式：**domain_name=xxx&domain_name=xxx**。
-     * 
-     * @return domainName */
+    /**
+     * 发送健康检查请求的域名。  取值：以数字或字母开头，只能包含数字、字母、'-'、'.'。  支持多值查询，查询条件格式：**domain_name=xxx&domain_name=xxx**。
+     * @return domainName
+     */
     public List<String> getDomainName() {
         return domainName;
     }
@@ -261,9 +271,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。
-     * 
-     * @return name */
+    /**
+     * 健康检查名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -293,9 +304,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查间隔。取值：1-50s。 支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。
-     * 
-     * @return delay */
+    /**
+     * 健康检查间隔。取值：1-50s。  支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。
+     * @return delay
+     */
     public List<Integer> getDelay() {
         return delay;
     }
@@ -325,10 +337,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查连续成功多少次后，将后端服务器的健康检查状态由OFFLINE判定为ONLINE。取值范围：1-10。
-     * 支持多值查询，查询条件格式：*******max_retries=xxx&max_retries=xxx*******。
-     * 
-     * @return maxRetries */
+    /**
+     * 健康检查连续成功多少次后，将后端服务器的健康检查状态由OFFLINE判定为ONLINE。取值范围：1-10。  支持多值查询，查询条件格式：*******max_retries=xxx&max_retries=xxx*******。
+     * @return maxRetries
+     */
     public List<Integer> getMaxRetries() {
         return maxRetries;
     }
@@ -342,9 +354,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查的管理状态。取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
-     * 
-     * @return adminStateUp */
+    /**
+     * 健康检查的管理状态。取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -374,10 +387,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。取值范围：1-10。
-     * 支持多值查询，查询条件格式：******max_retries_down=xxx&max_retries_down=xxx******。
-     * 
-     * @return maxRetriesDown */
+    /**
+     * 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。取值范围：1-10。  支持多值查询，查询条件格式：******max_retries_down=xxx&max_retries_down=xxx******。
+     * @return maxRetriesDown
+     */
     public List<Integer> getMaxRetriesDown() {
         return maxRetriesDown;
     }
@@ -391,9 +404,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 一次健康检查请求的超时时间。
-     * 
-     * @return timeout */
+    /**
+     * 一次健康检查请求的超时时间。
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -423,9 +437,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查请求协议。 取值：TCP、UDP_CONNECT、HTTP、HTTPS。 支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
-     * 
-     * @return type */
+    /**
+     * 健康检查请求协议。 取值：TCP、UDP_CONNECT、HTTP、HTTPS。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
+     * @return type
+     */
     public List<String> getType() {
         return type;
     }
@@ -455,10 +470,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 期望响应状态码。支持多种取值格式： 单值：单个返回码，例如200。 列表：多个特定返回码，例如200，202。 区间：一个返回码区间，例如200-204。 仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
-     * 支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
-     * 
-     * @return expectedCodes */
+    /**
+     * 期望响应状态码。支持多种取值格式：   单值：单个返回码，例如200。   列表：多个特定返回码，例如200，202。   区间：一个返回码区间，例如200-204。 仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。 支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
+     * @return expectedCodes
+     */
     public List<String> getExpectedCodes() {
         return expectedCodes;
     }
@@ -488,10 +503,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 健康检查测试member健康时发送的http请求路径。默认为\"/\"。 使用说明： - 以\"/\"开头。仅当type为HTTP时生效。
-     * 支持多值查询，查询条件格式：***url_path=xxx&url_path=xxx***。
-     * 
-     * @return urlPath */
+    /**
+     * 健康检查测试member健康时发送的http请求路径。默认为\"/\"。  使用说明： - 以\"/\"开头。仅当type为HTTP时生效。  支持多值查询，查询条件格式：***url_path=xxx&url_path=xxx***。
+     * @return urlPath
+     */
     public List<String> getUrlPath() {
         return urlPath;
     }
@@ -521,10 +536,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。
-     * 支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。 不支持该字段，请勿使用。
-     * 
-     * @return httpMethod */
+    /**
+     * HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。  不支持该字段，请勿使用。
+     * @return httpMethod
+     */
     public List<String> getHttpMethod() {
         return httpMethod;
     }
@@ -554,10 +569,10 @@ public class ListHealthMonitorsRequest {
         return this;
     }
 
-    /** 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。
-     * [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -640,7 +655,10 @@ public class ListHealthMonitorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

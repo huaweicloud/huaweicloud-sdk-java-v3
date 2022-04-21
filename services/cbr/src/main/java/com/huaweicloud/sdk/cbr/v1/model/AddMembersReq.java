@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 备份共享目标用户的项目id。 */
+/**
+ * 备份共享目标用户的项目id。
+ */
 public class AddMembersReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AddMembersReq {
         return this;
     }
 
-    /** 列表，待添加备份共享成员的project_id。
-     * 
-     * @return members */
+    /**
+     * 列表，待添加备份共享成员的project_id。
+     * @return members
+     */
     public List<String> getMembers() {
         return members;
     }
@@ -74,7 +77,10 @@ public class AddMembersReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

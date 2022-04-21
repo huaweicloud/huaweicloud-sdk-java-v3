@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 快照对象。 */
+/**
+ * 快照对象。
+ */
 public class ListSnapshotBackupsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -124,9 +126,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照创建时间。
-     * 
-     * @return created */
+    /**
+     * 快照创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -149,9 +152,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public ListSnapshotBackupsDatastoreResp getDatastore() {
         return datastore;
     }
@@ -165,9 +169,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照描述信息。
-     * 
-     * @return description */
+    /**
+     * 快照描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -181,9 +186,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照ID。
-     * 
-     * @return id */
+    /**
+     * 快照ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -197,9 +203,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -213,9 +220,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 集群名字。
-     * 
-     * @return clusterName */
+    /**
+     * 集群名字。
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -229,9 +237,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照名称。
-     * 
-     * @return name */
+    /**
+     * 快照名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -245,9 +254,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照状态。
-     * 
-     * @return status */
+    /**
+     * 快照状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -261,9 +271,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照状态是否更新。
-     * 
-     * @return updated */
+    /**
+     * 快照状态是否更新。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -277,9 +288,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** “0”表示自动创建，“1”表示手动创建。
-     * 
-     * @return backupType */
+    /**
+     * “0”表示自动创建，“1”表示手动创建。
+     * @return backupType
+     */
     public String getBackupType() {
         return backupType;
     }
@@ -293,9 +305,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 创建快照方式。
-     * 
-     * @return backupMethod */
+    /**
+     * 创建快照方式。
+     * @return backupMethod
+     */
     public String getBackupMethod() {
         return backupMethod;
     }
@@ -309,9 +322,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照开始执行时间。
-     * 
-     * @return backupExpectedStartTime */
+    /**
+     * 快照开始执行时间。
+     * @return backupExpectedStartTime
+     */
     public String getBackupExpectedStartTime() {
         return backupExpectedStartTime;
     }
@@ -325,9 +339,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照保留时间。
-     * 
-     * @return backupKeepDay */
+    /**
+     * 快照保留时间。
+     * @return backupKeepDay
+     */
     public Integer getBackupKeepDay() {
         return backupKeepDay;
     }
@@ -341,9 +356,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照每天执行的时间点。
-     * 
-     * @return backupPeriod */
+    /**
+     * 快照每天执行的时间点。
+     * @return backupPeriod
+     */
     public String getBackupPeriod() {
         return backupPeriod;
     }
@@ -357,9 +373,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 要备份的索引。
-     * 
-     * @return indices */
+    /**
+     * 要备份的索引。
+     * @return indices
+     */
     public String getIndices() {
         return indices;
     }
@@ -373,9 +390,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 要备份的索引的总shard数。
-     * 
-     * @return totalShards */
+    /**
+     * 要备份的索引的总shard数。
+     * @return totalShards
+     */
     public Integer getTotalShards() {
         return totalShards;
     }
@@ -389,9 +407,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 备份失败的shard数。
-     * 
-     * @return failedShards */
+    /**
+     * 备份失败的shard数。
+     * @return failedShards
+     */
     public Integer getFailedShards() {
         return failedShards;
     }
@@ -405,9 +424,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照的版本。
-     * 
-     * @return version */
+    /**
+     * 快照的版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -421,9 +441,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照恢复的状态。
-     * 
-     * @return restoreStatus */
+    /**
+     * 快照恢复的状态。
+     * @return restoreStatus
+     */
     public String getRestoreStatus() {
         return restoreStatus;
     }
@@ -437,9 +458,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照开始执行的时间戳。
-     * 
-     * @return startTime */
+    /**
+     * 快照开始执行的时间戳。
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -453,9 +475,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 快照执行结束的时间戳。
-     * 
-     * @return endTime */
+    /**
+     * 快照执行结束的时间戳。
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -469,9 +492,10 @@ public class ListSnapshotBackupsResp {
         return this;
     }
 
-    /** 保存快照数据的桶。
-     * 
-     * @return bucketName */
+    /**
+     * 保存快照数据的桶。
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -569,7 +593,10 @@ public class ListSnapshotBackupsResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

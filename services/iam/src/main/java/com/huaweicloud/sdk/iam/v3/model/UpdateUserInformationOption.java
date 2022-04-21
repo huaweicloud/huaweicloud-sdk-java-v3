@@ -25,9 +25,10 @@ public class UpdateUserInformationOption {
         return this;
     }
 
-    /** IAM用户的新邮箱，符合邮箱格式，长度小于等于255字符。
-     * 
-     * @return email */
+    /**
+     * IAM用户的新邮箱，符合邮箱格式，长度小于等于255字符。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -41,9 +42,10 @@ public class UpdateUserInformationOption {
         return this;
     }
 
-    /** IAM用户的国家码+新手机号，手机号为纯数字，长度小于等于32字符。
-     * 
-     * @return mobile */
+    /**
+     * IAM用户的国家码+新手机号，手机号为纯数字，长度小于等于32字符。
+     * @return mobile
+     */
     public String getMobile() {
         return mobile;
     }
@@ -80,7 +82,10 @@ public class UpdateUserInformationOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

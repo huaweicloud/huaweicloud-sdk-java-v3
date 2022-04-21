@@ -28,9 +28,10 @@ public class LimitSpeedReq {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -60,9 +61,10 @@ public class LimitSpeedReq {
         return this;
     }
 
-    /** 限速信息请求体
-     * 
-     * @return speedLimit */
+    /**
+     * 限速信息请求体
+     * @return speedLimit
+     */
     public List<SpeedLimitInfo> getSpeedLimit() {
         return speedLimit;
     }
@@ -99,7 +101,10 @@ public class LimitSpeedReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

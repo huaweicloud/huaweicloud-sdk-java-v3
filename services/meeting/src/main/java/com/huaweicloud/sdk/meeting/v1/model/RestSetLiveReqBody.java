@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 启停直播消息体。 */
+/**
+ * 启停直播消息体。
+ */
 public class RestSetLiveReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestSetLiveReqBody {
         return this;
     }
 
-    /** 默认值为0。 - 0: 停止会议直播。 - 1: 启动会议直播。
-     * 
-     * @return isLive */
+    /**
+     * 默认值为0。 - 0: 停止会议直播。 - 1: 启动会议直播。
+     * @return isLive
+     */
     public Integer getIsLive() {
         return isLive;
     }
@@ -55,7 +58,10 @@ public class RestSetLiveReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

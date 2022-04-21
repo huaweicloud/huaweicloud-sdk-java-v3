@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListReadWriteRatioRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListReadWriteRatioRequest {
         return this;
     }
 
-    /** DDM实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * DDM实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -54,9 +57,10 @@ public class ListReadWriteRatioRequest {
         return this;
     }
 
-    /** 分页参数：起始值 [大于等于0] 。
-     * 
-     * @return curPage */
+    /**
+     * 分页参数：起始值 [大于等于0] 。
+     * @return curPage
+     */
     public String getCurPage() {
         return curPage;
     }
@@ -70,9 +74,10 @@ public class ListReadWriteRatioRequest {
         return this;
     }
 
-    /** 分页参数：每页多少条。
-     * 
-     * @return perPage */
+    /**
+     * 分页参数：每页多少条。
+     * @return perPage
+     */
     public String getPerPage() {
         return perPage;
     }
@@ -86,9 +91,10 @@ public class ListReadWriteRatioRequest {
         return this;
     }
 
-    /** 开始时间，UTC time，精确到毫秒。
-     * 
-     * @return startDate */
+    /**
+     * 开始时间，UTC time，精确到毫秒。
+     * @return startDate
+     */
     public String getStartDate() {
         return startDate;
     }
@@ -102,9 +108,10 @@ public class ListReadWriteRatioRequest {
         return this;
     }
 
-    /** 结束时间，UTC time，精确到毫秒。结束时间与开始时间，间隔不能超过1个月。
-     * 
-     * @return endDate */
+    /**
+     * 结束时间，UTC time，精确到毫秒。结束时间与开始时间，间隔不能超过1个月。
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -147,7 +154,10 @@ public class ListReadWriteRatioRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

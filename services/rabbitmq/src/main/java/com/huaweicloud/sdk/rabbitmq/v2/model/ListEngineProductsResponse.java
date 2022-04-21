@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEngineProductsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListEngineProductsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分布式消息服务的产品类型。
-     * 
-     * @return engine */
+    /**
+     * 分布式消息服务的产品类型。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -64,9 +67,10 @@ public class ListEngineProductsResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持的产品版本类型。
-     * 
-     * @return versions */
+    /**
+     * 支持的产品版本类型。
+     * @return versions
+     */
     public List<String> getVersions() {
         return versions;
     }
@@ -96,9 +100,10 @@ public class ListEngineProductsResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品规格的详细信息。
-     * 
-     * @return products */
+    /**
+     * 产品规格的详细信息。
+     * @return products
+     */
     public List<ListEngineProductsEntity> getProducts() {
         return products;
     }
@@ -137,7 +142,10 @@ public class ListEngineProductsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

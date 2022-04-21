@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DomainItemLocationDetails */
+/**
+ * DomainItemLocationDetails
+ */
 public class DomainItemLocationDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 数据起始时间戳，可能与请求时间不一致
-     * 
-     * @return startTime */
+    /**
+     * 数据起始时间戳，可能与请求时间不一致
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -52,9 +55,10 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 数据结束时间戳，可能与请求时间不一致
-     * 
-     * @return endTime */
+    /**
+     * 数据结束时间戳，可能与请求时间不一致
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -68,9 +72,10 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 指标类型
-     * 
-     * @return statType */
+    /**
+     * 指标类型
+     * @return statType
+     */
     public String getStatType() {
         return statType;
     }
@@ -100,9 +105,10 @@ public class DomainItemLocationDetails {
         return this;
     }
 
-    /** 域名详情数据列表
-     * 
-     * @return domains */
+    /**
+     * 域名详情数据列表
+     * @return domains
+     */
     public List<DomainRegion> getDomains() {
         return domains;
     }
@@ -143,7 +149,10 @@ public class DomainItemLocationDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

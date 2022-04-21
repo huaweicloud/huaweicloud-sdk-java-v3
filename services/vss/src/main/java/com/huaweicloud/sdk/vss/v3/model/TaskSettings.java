@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TaskSettings */
+/**
+ * TaskSettings
+ */
 public class TaskSettings {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,19 +26,29 @@ public class TaskSettings {
 
     private String triggerTime;
 
-    /** 监测任务的定时触发周期: * everyday - 每日 * threedays - 每三天 * everyweek - 每星期 * everymonth - 每月 */
+    /**
+     * 监测任务的定时触发周期:   * everyday - 每日   * threedays - 每三天   * everyweek - 每星期   * everymonth - 每月 
+     */
     public static final class TaskPeriodEnum {
 
-        /** Enum EVERYDAY for value: "everyday" */
+        /**
+         * Enum EVERYDAY for value: "everyday"
+         */
         public static final TaskPeriodEnum EVERYDAY = new TaskPeriodEnum("everyday");
 
-        /** Enum THREEDAYS for value: "threedays" */
+        /**
+         * Enum THREEDAYS for value: "threedays"
+         */
         public static final TaskPeriodEnum THREEDAYS = new TaskPeriodEnum("threedays");
 
-        /** Enum EVERYWEEK for value: "everyweek" */
+        /**
+         * Enum EVERYWEEK for value: "everyweek"
+         */
         public static final TaskPeriodEnum EVERYWEEK = new TaskPeriodEnum("everyweek");
 
-        /** Enum EVERYMONTH for value: "everymonth" */
+        /**
+         * Enum EVERYMONTH for value: "everymonth"
+         */
         public static final TaskPeriodEnum EVERYMONTH = new TaskPeriodEnum("everymonth");
 
         private static final Map<String, TaskPeriodEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +130,10 @@ public class TaskSettings {
         return this;
     }
 
-    /** 普通任务的定时启动时间
-     * 
-     * @return timer */
+    /**
+     * 普通任务的定时启动时间
+     * @return timer
+     */
     public String getTimer() {
         return timer;
     }
@@ -134,9 +147,10 @@ public class TaskSettings {
         return this;
     }
 
-    /** 监测任务的定时触发时间
-     * 
-     * @return triggerTime */
+    /**
+     * 监测任务的定时触发时间
+     * @return triggerTime
+     */
     public String getTriggerTime() {
         return triggerTime;
     }
@@ -150,9 +164,10 @@ public class TaskSettings {
         return this;
     }
 
-    /** 监测任务的定时触发周期: * everyday - 每日 * threedays - 每三天 * everyweek - 每星期 * everymonth - 每月
-     * 
-     * @return taskPeriod */
+    /**
+     * 监测任务的定时触发周期:   * everyday - 每日   * threedays - 每三天   * everyweek - 每星期   * everymonth - 每月 
+     * @return taskPeriod
+     */
     public TaskPeriodEnum getTaskPeriod() {
         return taskPeriod;
     }
@@ -175,9 +190,10 @@ public class TaskSettings {
         return this;
     }
 
-    /** Get taskConfig
-     * 
-     * @return taskConfig */
+    /**
+     * Get taskConfig
+     * @return taskConfig
+     */
     public TaskSettingsTaskConfig getTaskConfig() {
         return taskConfig;
     }
@@ -218,7 +234,10 @@ public class TaskSettings {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

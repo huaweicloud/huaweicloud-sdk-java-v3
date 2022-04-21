@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设备组信息结构体，创建、查询、修改设备组时返回 */
+/**
+ * 设备组信息结构体，创建、查询、修改设备组时返回
+ */
 public class DeviceGroupResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DeviceGroupResponseDTO {
         return this;
     }
 
-    /** 设备组ID，用于唯一标识一个设备组，在创建设备组时由物联网平台分配。
-     * 
-     * @return groupId */
+    /**
+     * 设备组ID，用于唯一标识一个设备组，在创建设备组时由物联网平台分配。
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -49,9 +52,10 @@ public class DeviceGroupResponseDTO {
         return this;
     }
 
-    /** 设备组名称，单个资源空间下不可重复。
-     * 
-     * @return name */
+    /**
+     * 设备组名称，单个资源空间下不可重复。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class DeviceGroupResponseDTO {
         return this;
     }
 
-    /** 设备组描述。
-     * 
-     * @return description */
+    /**
+     * 设备组描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -81,9 +86,10 @@ public class DeviceGroupResponseDTO {
         return this;
     }
 
-    /** 父设备组ID，该设备组的父设备组ID。
-     * 
-     * @return superGroupId */
+    /**
+     * 父设备组ID，该设备组的父设备组ID。
+     * @return superGroupId
+     */
     public String getSuperGroupId() {
         return superGroupId;
     }
@@ -124,7 +130,10 @@ public class DeviceGroupResponseDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

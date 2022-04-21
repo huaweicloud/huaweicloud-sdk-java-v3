@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RunDetail */
+/**
+ * RunDetail
+ */
 public class RunDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class RunDetail {
         return this;
     }
 
-    /** 作业运行详情ID。
-     * 
-     * @return detailId */
+    /**
+     * 作业运行详情ID。
+     * @return detailId
+     */
     public String getDetailId() {
         return detailId;
     }
@@ -45,9 +48,10 @@ public class RunDetail {
         return this;
     }
 
-    /** 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
-     * 
-     * @return status */
+    /**
+     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -70,9 +74,10 @@ public class RunDetail {
         return this;
     }
 
-    /** Get sqlJob
-     * 
-     * @return sqlJob */
+    /**
+     * Get sqlJob
+     * @return sqlJob
+     */
     public SqlJobRunDetail getSqlJob() {
         return sqlJob;
     }
@@ -110,7 +115,10 @@ public class RunDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

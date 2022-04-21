@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例规格信息列表。 */
+/**
+ * 实例规格信息列表。
+ */
 public class ListFlavorsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** 引擎名称。
-     * 
-     * @return engineName */
+    /**
+     * 引擎名称。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -67,9 +70,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** 引擎版本。
-     * 
-     * @return engineVersion */
+    /**
+     * 引擎版本。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -83,9 +87,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * CPU核数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -99,9 +104,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** 内存大小，单位为兆字节。
-     * 
-     * @return ram */
+    /**
+     * 内存大小，单位为兆字节。
+     * @return ram
+     */
     public String getRam() {
         return ram;
     }
@@ -115,10 +121,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** 资源规格编码。例如：geminidb.cassandra.8xlarge.4 - “geminidb.cassandra”表示云数据库GaussDB NoSQL的Cassandra数据库产品。 -
-     * “8xlarge.4”表示节点性能规格。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。例如：geminidb.cassandra.8xlarge.4   - “geminidb.cassandra”表示云数据库GaussDB NoSQL的Cassandra数据库产品。   - “8xlarge.4”表示节点性能规格。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -148,9 +154,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** Get availabilityZone
-     * 
-     * @return availabilityZone */
+    /**
+     * Get availabilityZone
+     * @return availabilityZone
+     */
     public List<String> getAvailabilityZone() {
         return availabilityZone;
     }
@@ -164,9 +171,10 @@ public class ListFlavorsResult {
         return this;
     }
 
-    /** 规格在可用区内的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
-     * 
-     * @return azStatus */
+    /**
+     * 规格在可用区内的状态，包含以下状态：   - normal，在售。   - unsupported，暂不支持该规格。   - sellout，售罄。
+     * @return azStatus
+     */
     public Object getAzStatus() {
         return azStatus;
     }
@@ -212,7 +220,10 @@ public class ListFlavorsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

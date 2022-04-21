@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ChartConfig */
+/**
+ * ChartConfig
+ */
 public class ChartConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ChartConfig {
         return this;
     }
 
-    /** 是否开启排序
-     * 
-     * @return canSort */
+    /**
+     * 是否开启排序
+     * @return canSort
+     */
     public Boolean getCanSort() {
         return canSort;
     }
@@ -44,9 +47,10 @@ public class ChartConfig {
         return this;
     }
 
-    /** 是否开启搜索
-     * 
-     * @return canSearch */
+    /**
+     * 是否开启搜索
+     * @return canSearch
+     */
     public Boolean getCanSearch() {
         return canSearch;
     }
@@ -60,9 +64,12 @@ public class ChartConfig {
         return this;
     }
 
-    /** 每页显示数量 minimum: 0 maximum: 100
-     * 
-     * @return pageSize */
+    /**
+     * 每页显示数量
+     * minimum: 0
+     * maximum: 100
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -101,7 +108,10 @@ public class ChartConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

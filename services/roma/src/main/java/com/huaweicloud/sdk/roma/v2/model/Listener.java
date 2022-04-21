@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 监听器 */
+/**
+ * 监听器
+ */
 public class Listener {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,13 +31,19 @@ public class Listener {
 
     private Backend backend;
 
-    /** 创建负载均衡器的IP协议类型 */
+    /**
+     * 创建负载均衡器的IP协议类型
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class Listener {
         return this;
     }
 
-    /** 监听器名称
-     * 
-     * @return name */
+    /**
+     * 监听器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -126,9 +135,10 @@ public class Listener {
         return this;
     }
 
-    /** 监听器对外提供服务端口
-     * 
-     * @return port */
+    /**
+     * 监听器对外提供服务端口
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -151,9 +161,10 @@ public class Listener {
         return this;
     }
 
-    /** Get backend
-     * 
-     * @return backend */
+    /**
+     * Get backend
+     * @return backend
+     */
     public Backend getBackend() {
         return backend;
     }
@@ -167,9 +178,10 @@ public class Listener {
         return this;
     }
 
-    /** 创建负载均衡器的IP协议类型
-     * 
-     * @return ipVersion */
+    /**
+     * 创建负载均衡器的IP协议类型
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -208,7 +220,10 @@ public class Listener {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

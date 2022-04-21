@@ -45,9 +45,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -61,9 +62,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 请求查询结果的对象级对比任务id。
-     * 
-     * @return objectLevelCompareId */
+    /**
+     * 请求查询结果的对象级对比任务id。
+     * @return objectLevelCompareId
+     */
     public String getObjectLevelCompareId() {
         return objectLevelCompareId;
     }
@@ -77,9 +79,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 请求查询结果的行对比任务id。
-     * 
-     * @return lineCompareId */
+    /**
+     * 请求查询结果的行对比任务id。
+     * @return lineCompareId
+     */
     public String getLineCompareId() {
         return lineCompareId;
     }
@@ -93,9 +96,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 请求查询结果的内容对比任务id。
-     * 
-     * @return contentCompareId */
+    /**
+     * 请求查询结果的内容对比任务id。
+     * @return contentCompareId
+     */
     public String getContentCompareId() {
         return contentCompareId;
     }
@@ -109,9 +113,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 分页查询的当前页码，对查询对比任务的结果生效。
-     * 
-     * @return currentPage */
+    /**
+     * 分页查询的当前页码，对查询对比任务的结果生效。
+     * @return currentPage
+     */
     public Integer getCurrentPage() {
         return currentPage;
     }
@@ -125,9 +130,10 @@ public class QueryCompareResultReq {
         return this;
     }
 
-    /** 分页查询的每页个数，对查询对比任务的结果生效。
-     * 
-     * @return perPage */
+    /**
+     * 分页查询的每页个数，对查询对比任务的结果生效。
+     * @return perPage
+     */
     public Integer getPerPage() {
         return perPage;
     }
@@ -172,7 +178,10 @@ public class QueryCompareResultReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

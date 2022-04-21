@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryCustomersBalancesReq */
+/**
+ * QueryCustomersBalancesReq
+ */
 public class QueryCustomersBalancesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class QueryCustomersBalancesReq {
         return this;
     }
 
-    /** 客户信息列表。 具体请参见表1。
-     * 
-     * @return customerInfos */
+    /**
+     * 客户信息列表。 具体请参见表1。
+     * @return customerInfos
+     */
     public List<CustomerInfoV2> getCustomerInfos() {
         return customerInfos;
     }
@@ -58,9 +61,10 @@ public class QueryCustomersBalancesReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -97,7 +101,10 @@ public class QueryCustomersBalancesReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

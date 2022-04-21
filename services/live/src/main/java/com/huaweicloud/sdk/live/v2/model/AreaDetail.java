@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AreaDetail */
+/**
+ * AreaDetail
+ */
 public class AreaDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class AreaDetail {
         return this;
     }
 
-    /** 各个计费大区名称，例如CN
-     * 
-     * @return area */
+    /**
+     * 各个计费大区名称，例如CN
+     * @return area
+     */
     public String getArea() {
         return area;
     }
@@ -63,9 +66,10 @@ public class AreaDetail {
         return this;
     }
 
-    /** 时间戳及相应时间的指标数值
-     * 
-     * @return summary */
+    /**
+     * 时间戳及相应时间的指标数值
+     * @return summary
+     */
     public List<TimeValue> getSummary() {
         return summary;
     }
@@ -95,9 +99,10 @@ public class AreaDetail {
         return this;
     }
 
-    /** 各个大区下的具体省份、区域、国家的时间戳及相应时间的指标数值
-     * 
-     * @return detail */
+    /**
+     * 各个大区下的具体省份、区域、国家的时间戳及相应时间的指标数值
+     * @return detail
+     */
     public List<AreaTimeValue> getDetail() {
         return detail;
     }
@@ -135,7 +140,10 @@ public class AreaDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RuleSetV2 */
+/**
+ * RuleSetV2
+ */
 public class RuleSetV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RuleSetV2 {
         return this;
     }
 
-    /** 规则集id，需要从web界面获取
-     * 
-     * @return rulesetId */
+    /**
+     * 规则集id，需要从web界面获取
+     * @return rulesetId
+     */
     public String getRulesetId() {
         return rulesetId;
     }
@@ -39,9 +42,10 @@ public class RuleSetV2 {
         return this;
     }
 
-    /** 检查语言，支持cpp,java,js,python,php,css,html,go,typescript
-     * 
-     * @return language */
+    /**
+     * 检查语言，支持cpp,java,js,python,php,css,html,go,typescript
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -77,7 +81,10 @@ public class RuleSetV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

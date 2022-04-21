@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** IssueCertificateAuthorityCertificateRequestBody */
+/**
+ * IssueCertificateAuthorityCertificateRequestBody
+ */
 public class IssueCertificateAuthorityCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 父CA证书ID。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -50,9 +53,12 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 路径长度。 minimum: 0 maximum: 6
-     * 
-     * @return pathLength */
+    /**
+     * 路径长度。
+     * minimum: 0
+     * maximum: 6
+     * @return pathLength
+     */
     public Integer getPathLength() {
         return pathLength;
     }
@@ -66,9 +72,10 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** 签名哈希算法，可选值如下： - **SHA256** - **SHA384** - **SHA512**
-     * 
-     * @return signatureAlgorithm */
+    /**
+     * 签名哈希算法，可选值如下：   - **SHA256**   - **SHA384**   - **SHA512**
+     * @return signatureAlgorithm
+     */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -91,9 +98,10 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return this;
     }
 
-    /** Get validity
-     * 
-     * @return validity */
+    /**
+     * Get validity
+     * @return validity
+     */
     public Validity getValidity() {
         return validity;
     }
@@ -136,7 +144,10 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

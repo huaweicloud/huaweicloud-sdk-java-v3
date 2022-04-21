@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateQueueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列ID。
-     * 
-     * @return id */
+    /**
+     * 队列ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -45,9 +48,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列的名称。
-     * 
-     * @return name */
+    /**
+     * 队列的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -61,9 +65,10 @@ public class CreateQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅Kafka队列才有该响应参数。 使用Kafka SDK时的Kafka topic的ID。
-     * 
-     * @return kafkaTopic */
+    /**
+     * 仅Kafka队列才有该响应参数。  使用Kafka SDK时的Kafka topic的ID。
+     * @return kafkaTopic
+     */
     public String getKafkaTopic() {
         return kafkaTopic;
     }
@@ -101,7 +106,10 @@ public class CreateQueueResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

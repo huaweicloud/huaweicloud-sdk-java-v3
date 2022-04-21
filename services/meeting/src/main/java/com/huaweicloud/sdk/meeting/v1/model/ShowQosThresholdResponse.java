@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowQosThresholdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get latency
-     * 
-     * @return latency */
+    /**
+     * Get latency
+     * @return latency
+     */
     public ThresholdData getLatency() {
         return latency;
     }
@@ -74,9 +77,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get jitter
-     * 
-     * @return jitter */
+    /**
+     * Get jitter
+     * @return jitter
+     */
     public ThresholdData getJitter() {
         return jitter;
     }
@@ -99,9 +103,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get packetLoss
-     * 
-     * @return packetLoss */
+    /**
+     * Get packetLoss
+     * @return packetLoss
+     */
     public PacketThresholdData getPacketLoss() {
         return packetLoss;
     }
@@ -124,9 +129,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get clientCpuMax
-     * 
-     * @return clientCpuMax */
+    /**
+     * Get clientCpuMax
+     * @return clientCpuMax
+     */
     public CPUThresholdData getClientCpuMax() {
         return clientCpuMax;
     }
@@ -149,9 +155,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get systemCpuMax
-     * 
-     * @return systemCpuMax */
+    /**
+     * Get systemCpuMax
+     * @return systemCpuMax
+     */
     public CPUThresholdData getSystemCpuMax() {
         return systemCpuMax;
     }
@@ -194,7 +201,10 @@ public class ShowQosThresholdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

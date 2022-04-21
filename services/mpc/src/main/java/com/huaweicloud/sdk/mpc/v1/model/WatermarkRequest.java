@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** WatermarkRequest */
+/**
+ * WatermarkRequest
+ */
 public class WatermarkRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class WatermarkRequest {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -64,9 +67,10 @@ public class WatermarkRequest {
         return this;
     }
 
-    /** 水印模板。可通过新建水印模板接口创建水印模板。
-     * 
-     * @return templateId */
+    /**
+     * 水印模板。可通过新建水印模板接口创建水印模板。
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -80,9 +84,10 @@ public class WatermarkRequest {
         return this;
     }
 
-    /** 文字水印内容，内容需做Base64编码，若类型为文字水印 (type字段为Text)，则此配置项不能为空 示例：若想添加文字水印“测试文字水印”，那么Content的值为：5rWL6K+V5paH5a2X5rC05Y2w
-     * 
-     * @return textContext */
+    /**
+     * 文字水印内容，内容需做Base64编码，若类型为文字水印 (type字段为Text)，则此配置项不能为空  示例：若想添加文字水印“测试文字水印”，那么Content的值为：5rWL6K+V5paH5a2X5rC05Y2w 
+     * @return textContext
+     */
     public String getTextContext() {
         return textContext;
     }
@@ -105,9 +110,10 @@ public class WatermarkRequest {
         return this;
     }
 
-    /** Get imageWatermark
-     * 
-     * @return imageWatermark */
+    /**
+     * Get imageWatermark
+     * @return imageWatermark
+     */
     public ImageWatermark getImageWatermark() {
         return imageWatermark;
     }
@@ -130,9 +136,10 @@ public class WatermarkRequest {
         return this;
     }
 
-    /** Get textWatermark
-     * 
-     * @return textWatermark */
+    /**
+     * Get textWatermark
+     * @return textWatermark
+     */
     public TextWatermark getTextWatermark() {
         return textWatermark;
     }
@@ -175,7 +182,10 @@ public class WatermarkRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

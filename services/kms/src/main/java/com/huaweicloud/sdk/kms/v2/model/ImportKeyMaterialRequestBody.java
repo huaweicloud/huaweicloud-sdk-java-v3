@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ImportKeyMaterialRequestBody */
+/**
+ * ImportKeyMaterialRequestBody
+ */
 public class ImportKeyMaterialRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,10 +45,10 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -60,9 +62,10 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 密钥导入令牌，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{200,6144}$”。
-     * 
-     * @return importToken */
+    /**
+     * 密钥导入令牌，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{200,6144}$”。
+     * @return importToken
+     */
     public String getImportToken() {
         return importToken;
     }
@@ -76,9 +79,10 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 加密后的对称密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{344,360}$”。若导入非对称密钥，则该参数为用于加密私钥的临时中间密钥。
-     * 
-     * @return encryptedKeyMaterial */
+    /**
+     * 加密后的对称密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{344,360}$”。若导入非对称密钥，则该参数为用于加密私钥的临时中间密钥。
+     * @return encryptedKeyMaterial
+     */
     public String getEncryptedKeyMaterial() {
         return encryptedKeyMaterial;
     }
@@ -92,9 +96,10 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 使用临时中间密钥加密后的私钥，导入非对称密钥需要该参数，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{200,6144}$”。
-     * 
-     * @return encryptedPrivatekey */
+    /**
+     * 使用临时中间密钥加密后的私钥，导入非对称密钥需要该参数，base64格式，满足正则匹配“^[0-9a-zA-Z+/=]{200,6144}$”。
+     * @return encryptedPrivatekey
+     */
     public String getEncryptedPrivatekey() {
         return encryptedPrivatekey;
     }
@@ -108,9 +113,12 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 密钥材料到期时间，时间戳，即从1970年1月1日至该时间的总秒数，KMS会在该时间的24小时内删除密钥材料。 例如：1550291833 minimum: 0 maximum: 10000000000
-     * 
-     * @return expirationTime */
+    /**
+     * 密钥材料到期时间，时间戳，即从1970年1月1日至该时间的总秒数，KMS会在该时间的24小时内删除密钥材料。 例如：1550291833
+     * minimum: 0
+     * maximum: 10000000000
+     * @return expirationTime
+     */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -124,9 +132,10 @@ public class ImportKeyMaterialRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -171,7 +180,10 @@ public class ImportKeyMaterialRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

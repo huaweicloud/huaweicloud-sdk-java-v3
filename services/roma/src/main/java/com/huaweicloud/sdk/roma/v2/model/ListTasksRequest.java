@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class ListTasksRequest {
 
     private String name;
 
-    /** 任务状态，可为空 - 0 （停止/未启动） - 1 （运行中） */
+    /**
+     * 任务状态，可为空 - 0 （停止/未启动） - 1 （运行中）
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -114,13 +122,19 @@ public class ListTasksRequest {
 
     private StatusEnum status;
 
-    /** 任务类型 - realtime (实时) - timing (定时) */
+    /**
+     * 任务类型 - realtime (实时) - timing (定时)
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum REALTIME for value: "realtime" */
+        /**
+         * Enum REALTIME for value: "realtime"
+         */
         public static final TaskTypeEnum REALTIME = new TaskTypeEnum("realtime");
 
-        /** Enum TIMING for value: "timing" */
+        /**
+         * Enum TIMING for value: "timing"
+         */
         public static final TaskTypeEnum TIMING = new TaskTypeEnum("timing");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -200,13 +214,19 @@ public class ListTasksRequest {
 
     private String targetDatasourceId;
 
-    /** 查询排序的条件 */
+    /**
+     * 查询排序的条件
+     */
     public static final class SortFieldEnum {
 
-        /** Enum CREATED_DATE for value: "CREATED_DATE" */
+        /**
+         * Enum CREATED_DATE for value: "CREATED_DATE"
+         */
         public static final SortFieldEnum CREATED_DATE = new SortFieldEnum("CREATED_DATE");
 
-        /** Enum STATUS for value: "STATUS" */
+        /**
+         * Enum STATUS for value: "STATUS"
+         */
         public static final SortFieldEnum STATUS = new SortFieldEnum("STATUS");
 
         private static final Map<String, SortFieldEnum> STATIC_FIELDS = createStaticFields();
@@ -276,13 +296,19 @@ public class ListTasksRequest {
 
     private SortFieldEnum sortField;
 
-    /** 排序类型，可为空 - ASC (升序) - DESC (降序) */
+    /**
+     * 排序类型，可为空 - ASC (升序) - DESC (降序)
+     */
     public static final class SortTypeEnum {
 
-        /** Enum ASC for value: "ASC" */
+        /**
+         * Enum ASC for value: "ASC"
+         */
         public static final SortTypeEnum ASC = new SortTypeEnum("ASC");
 
-        /** Enum DESC for value: "DESC" */
+        /**
+         * Enum DESC for value: "DESC"
+         */
         public static final SortTypeEnum DESC = new SortTypeEnum("DESC");
 
         private static final Map<String, SortTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -377,9 +403,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -393,9 +420,12 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
-     * 
-     * @return limit */
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -409,9 +439,12 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 分页查询，分页的偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 分页查询，分页的偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -425,9 +458,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务ID，可为空
-     * 
-     * @return taskId */
+    /**
+     * 任务ID，可为空
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -441,9 +475,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 模糊匹配任务名称，可为空
-     * 
-     * @return name */
+    /**
+     * 模糊匹配任务名称，可为空
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -457,9 +492,12 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务状态，可为空 - 0 （停止/未启动） - 1 （运行中） minimum: 0 maximum: 1
-     * 
-     * @return status */
+    /**
+     * 任务状态，可为空 - 0 （停止/未启动） - 1 （运行中）
+     * minimum: 0
+     * maximum: 1
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -473,9 +511,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务类型 - realtime (实时) - timing (定时)
-     * 
-     * @return taskType */
+    /**
+     * 任务类型 - realtime (实时) - timing (定时)
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -489,9 +528,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 源端数据源ID，可为空
-     * 
-     * @return sourceDatasourceId */
+    /**
+     * 源端数据源ID，可为空
+     * @return sourceDatasourceId
+     */
     public String getSourceDatasourceId() {
         return sourceDatasourceId;
     }
@@ -505,9 +545,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 目标端数据源ID，可为空
-     * 
-     * @return targetDatasourceId */
+    /**
+     * 目标端数据源ID，可为空
+     * @return targetDatasourceId
+     */
     public String getTargetDatasourceId() {
         return targetDatasourceId;
     }
@@ -521,9 +562,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 查询排序的条件
-     * 
-     * @return sortField */
+    /**
+     * 查询排序的条件
+     * @return sortField
+     */
     public SortFieldEnum getSortField() {
         return sortField;
     }
@@ -537,9 +579,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 排序类型，可为空 - ASC (升序) - DESC (降序)
-     * 
-     * @return sortType */
+    /**
+     * 排序类型，可为空 - ASC (升序) - DESC (降序)
+     * @return sortType
+     */
     public SortTypeEnum getSortType() {
         return sortType;
     }
@@ -553,9 +596,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 执行状态，可为空 - UNSTARTED (未启动) - WAITING (等待执行) - RUNNING (执行中) - SUCCESS (执行成功) - CANCELLED (任务取消) - ERROR (执行异常)
-     * 
-     * @return executeStatus */
+    /**
+     * 执行状态，可为空 - UNSTARTED (未启动) - WAITING (等待执行) - RUNNING (执行中) - SUCCESS (执行成功) - CANCELLED (任务取消) - ERROR (执行异常)
+     * @return executeStatus
+     */
     public String getExecuteStatus() {
         return executeStatus;
     }
@@ -569,9 +613,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 源端数据源所属集成应用ID，可为空
-     * 
-     * @return sourceAppId */
+    /**
+     * 源端数据源所属集成应用ID，可为空
+     * @return sourceAppId
+     */
     public String getSourceAppId() {
         return sourceAppId;
     }
@@ -585,9 +630,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 目标端数据源所属集成应用ID，可为空
-     * 
-     * @return targetAppId */
+    /**
+     * 目标端数据源所属集成应用ID，可为空
+     * @return targetAppId
+     */
     public String getTargetAppId() {
         return targetAppId;
     }
@@ -601,9 +647,10 @@ public class ListTasksRequest {
         return this;
     }
 
-    /** 任务标签，可为空
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签，可为空
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -679,7 +726,10 @@ public class ListTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QoS数据。 */
+/**
+ * QoS数据。
+ */
 public class QosInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class QosInfo {
         return this;
     }
 
-    /** Qos类型 - aduio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
-     * 
-     * @return type */
+    /**
+     * Qos类型 - aduio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -59,9 +62,10 @@ public class QosInfo {
         return this;
     }
 
-    /** Get send
-     * 
-     * @return send */
+    /**
+     * Get send
+     * @return send
+     */
     public QosSendReceiveInfo getSend() {
         return send;
     }
@@ -84,9 +88,10 @@ public class QosInfo {
         return this;
     }
 
-    /** Get receive
-     * 
-     * @return receive */
+    /**
+     * Get receive
+     * @return receive
+     */
     public QosSendReceiveInfo getReceive() {
         return receive;
     }
@@ -109,9 +114,10 @@ public class QosInfo {
         return this;
     }
 
-    /** Get cpu
-     * 
-     * @return cpu */
+    /**
+     * Get cpu
+     * @return cpu
+     */
     public QosCpuInfo getCpu() {
         return cpu;
     }
@@ -150,7 +156,10 @@ public class QosInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

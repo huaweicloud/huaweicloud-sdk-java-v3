@@ -28,9 +28,10 @@ public class WebImageResult {
         return this;
     }
 
-    /** 代表检测识别出来的文字块数目。
-     * 
-     * @return wordsBlockCount */
+    /**
+     * 代表检测识别出来的文字块数目。 
+     * @return wordsBlockCount
+     */
     public Integer getWordsBlockCount() {
         return wordsBlockCount;
     }
@@ -60,9 +61,10 @@ public class WebImageResult {
         return this;
     }
 
-    /** 识别文字块列表，输出顺序从左到右，从上到下。
-     * 
-     * @return wordsBlockList */
+    /**
+     * 识别文字块列表，输出顺序从左到右，从上到下。 
+     * @return wordsBlockList
+     */
     public List<WebImageWordsBlockList> getWordsBlockList() {
         return wordsBlockList;
     }
@@ -99,7 +101,10 @@ public class WebImageResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

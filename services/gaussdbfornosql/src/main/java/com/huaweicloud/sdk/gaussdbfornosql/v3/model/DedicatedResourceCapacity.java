@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 专属资源信息容量信息。 */
+/**
+ * 专属资源信息容量信息。
+ */
 public class DedicatedResourceCapacity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DedicatedResourceCapacity {
         return this;
     }
 
-    /** CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * CPU核数。
+     * @return vcpus
+     */
     public Integer getVcpus() {
         return vcpus;
     }
@@ -44,9 +47,10 @@ public class DedicatedResourceCapacity {
         return this;
     }
 
-    /** 内存大小，单位GB。
-     * 
-     * @return ram */
+    /**
+     * 内存大小，单位GB。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -60,9 +64,10 @@ public class DedicatedResourceCapacity {
         return this;
     }
 
-    /** 存储大小，单位GB
-     * 
-     * @return volume */
+    /**
+     * 存储大小，单位GB
+     * @return volume
+     */
     public Integer getVolume() {
         return volume;
     }
@@ -101,7 +106,10 @@ public class DedicatedResourceCapacity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class AgencyTokenScopeProject {
         return this;
     }
 
-    /** 委托方A项目的ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return id */
+    /**
+     * 委托方A项目的ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -41,9 +42,10 @@ public class AgencyTokenScopeProject {
         return this;
     }
 
-    /** 委托方A项目的名称，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * 
-     * @return name */
+    /**
+     * 委托方A项目的名称，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,7 +82,10 @@ public class AgencyTokenScopeProject {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

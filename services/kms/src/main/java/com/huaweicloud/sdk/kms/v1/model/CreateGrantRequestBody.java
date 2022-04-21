@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateGrantRequestBody */
+/**
+ * CreateGrantRequestBody
+ */
 public class CreateGrantRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,13 +43,19 @@ public class CreateGrantRequestBody {
 
     private String retiringPrincipal;
 
-    /** 授权类型。有效值：“user”，“domain”。默认值为“user”。 */
+    /**
+     * 授权类型。有效值：“user”，“domain”。默认值为“user”。
+     */
     public static final class GranteePrincipalTypeEnum {
 
-        /** Enum USER for value: "user" */
+        /**
+         * Enum USER for value: "user"
+         */
         public static final GranteePrincipalTypeEnum USER = new GranteePrincipalTypeEnum("user");
 
-        /** Enum DOMAIN for value: "domain" */
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
         public static final GranteePrincipalTypeEnum DOMAIN = new GranteePrincipalTypeEnum("domain");
 
         private static final Map<String, GranteePrincipalTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,10 +135,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -144,9 +152,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * 
-     * @return granteePrincipal */
+    /**
+     * 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * @return granteePrincipal
+     */
     public String getGranteePrincipal() {
         return granteePrincipal;
     }
@@ -176,11 +185,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 授权允许的操作列表。
-     * 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。
-     * 有效值不能仅为“create-grant”。
-     * 
-     * @return operations */
+    /**
+     * 授权允许的操作列表。 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。 有效值不能仅为“create-grant”。
+     * @return operations
+     */
     public List<String> getOperations() {
         return operations;
     }
@@ -194,9 +202,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 授权名称，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
-     * 
-     * @return name */
+    /**
+     * 授权名称，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -210,9 +219,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * 
-     * @return retiringPrincipal */
+    /**
+     * 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * @return retiringPrincipal
+     */
     public String getRetiringPrincipal() {
         return retiringPrincipal;
     }
@@ -226,9 +236,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 授权类型。有效值：“user”，“domain”。默认值为“user”。
-     * 
-     * @return granteePrincipalType */
+    /**
+     * 授权类型。有效值：“user”，“domain”。默认值为“user”。
+     * @return granteePrincipalType
+     */
     public GranteePrincipalTypeEnum getGranteePrincipalType() {
         return granteePrincipalType;
     }
@@ -242,9 +253,10 @@ public class CreateGrantRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -292,7 +304,10 @@ public class CreateGrantRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CommitList */
+/**
+ * CommitList
+ */
 public class CommitList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CommitList {
         return this;
     }
 
-    /** 提交列表
-     * 
-     * @return commits */
+    /**
+     * 提交列表
+     * @return commits
+     */
     public List<Commit> getCommits() {
         return commits;
     }
@@ -58,9 +61,10 @@ public class CommitList {
         return this;
     }
 
-    /** 提交总数
-     * 
-     * @return total */
+    /**
+     * 提交总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -96,7 +100,10 @@ public class CommitList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 任务关联的源端信息 */
+/**
+ * 任务关联的源端信息
+ */
 public class SourceServerAssociatedWithTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class SourceServerAssociatedWithTask {
 
     private String name;
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选 */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -114,43 +122,69 @@ public class SourceServerAssociatedWithTask {
 
     private Boolean oemSystem;
 
-    /** 当前源端服务器状态 */
+    /**
+     * 当前源端服务器状态
+     */
     public static final class StateEnum {
 
-        /** Enum UNAVAILABLE for value: "unavailable" */
+        /**
+         * Enum UNAVAILABLE for value: "unavailable"
+         */
         public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StateEnum WAITING = new StateEnum("waiting");
 
-        /** Enum INITIALIZE for value: "initialize" */
+        /**
+         * Enum INITIALIZE for value: "initialize"
+         */
         public static final StateEnum INITIALIZE = new StateEnum("initialize");
 
-        /** Enum REPLICATE for value: "replicate" */
+        /**
+         * Enum REPLICATE for value: "replicate"
+         */
         public static final StateEnum REPLICATE = new StateEnum("replicate");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final StateEnum SYNCING = new StateEnum("syncing");
 
-        /** Enum STOPPING for value: "stopping" */
+        /**
+         * Enum STOPPING for value: "stopping"
+         */
         public static final StateEnum STOPPING = new StateEnum("stopping");
 
-        /** Enum STOPPED for value: "stopped" */
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StateEnum DELETING = new StateEnum("deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StateEnum ERROR = new StateEnum("error");
 
-        /** Enum CLONING for value: "cloning" */
+        /**
+         * Enum CLONING for value: "cloning"
+         */
         public static final StateEnum CLONING = new StateEnum("cloning");
 
-        /** Enum TESTING for value: "testing" */
+        /**
+         * Enum TESTING for value: "testing"
+         */
         public static final StateEnum TESTING = new StateEnum("testing");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -235,9 +269,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 源端在SMS数据库中的ID
-     * 
-     * @return id */
+    /**
+     * 源端在SMS数据库中的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -251,9 +286,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 源端服务器ip，注册源端时必选，更新非必选
-     * 
-     * @return ip */
+    /**
+     * 源端服务器ip，注册源端时必选，更新非必选
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -267,9 +303,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 用来区分不同源端服务器的名称
-     * 
-     * @return name */
+    /**
+     * 用来区分不同源端服务器的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -283,9 +320,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * 
-     * @return osType */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -299,9 +337,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 操作系统版本，注册必选，更新非必选
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本，注册必选，更新非必选
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -315,9 +354,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 是否是OEM操作系统(Windows)
-     * 
-     * @return oemSystem */
+    /**
+     * 是否是OEM操作系统(Windows)
+     * @return oemSystem
+     */
     public Boolean getOemSystem() {
         return oemSystem;
     }
@@ -331,9 +371,10 @@ public class SourceServerAssociatedWithTask {
         return this;
     }
 
-    /** 当前源端服务器状态
-     * 
-     * @return state */
+    /**
+     * 当前源端服务器状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -380,7 +421,10 @@ public class SourceServerAssociatedWithTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

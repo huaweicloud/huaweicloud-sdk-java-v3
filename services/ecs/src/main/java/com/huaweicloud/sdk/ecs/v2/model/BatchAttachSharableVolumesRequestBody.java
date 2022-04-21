@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchAttachSharableVolumesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BatchAttachSharableVolumesRequestBody {
         return this;
     }
 
-    /** 共享磁盘需要挂载的弹性云服务器列表。
-     * 
-     * @return serverinfo */
+    /**
+     * 共享磁盘需要挂载的弹性云服务器列表。
+     * @return serverinfo
+     */
     public List<BatchAttachSharableVolumesOption> getServerinfo() {
         return serverinfo;
     }
@@ -76,7 +79,10 @@ public class BatchAttachSharableVolumesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

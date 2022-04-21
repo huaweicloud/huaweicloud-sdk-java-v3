@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RepositoryMember */
+/**
+ * RepositoryMember
+ */
 public class RepositoryMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 仓库成员描述
-     * 
-     * @return description */
+    /**
+     * 仓库成员描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -69,9 +72,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 租户id
-     * 
-     * @return domainId */
+    /**
+     * 租户id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -85,9 +89,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 租户名
-     * 
-     * @return domainName */
+    /**
+     * 租户名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -101,9 +106,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 邮箱地址
-     * 
-     * @return email */
+    /**
+     * 邮箱地址
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -117,9 +123,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 成员是否可用
-     * 
-     * @return enabled */
+    /**
+     * 成员是否可用
+     * @return enabled
+     */
     public String getEnabled() {
         return enabled;
     }
@@ -133,9 +140,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return name */
+    /**
+     * 用户名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -149,9 +157,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 仓库用户权限，取值范围：30->普通成员，40->管理员
-     * 
-     * @return role */
+    /**
+     * 仓库用户权限，取值范围：30->普通成员，40->管理员
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -165,9 +174,10 @@ public class RepositoryMember {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return userId */
+    /**
+     * 用户id
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -215,7 +225,10 @@ public class RepositoryMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

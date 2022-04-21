@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateTopicRequestBody */
+/**
+ * UpdateTopicRequestBody
+ */
 public class UpdateTopicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateTopicRequestBody {
         return this;
     }
 
-    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。
-     * 
-     * @return displayName */
+    /**
+     * Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -55,7 +58,10 @@ public class UpdateTopicRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

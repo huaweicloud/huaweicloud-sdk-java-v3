@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateDbPortRequest */
+/**
+ * UpdateDbPortRequest
+ */
 public class UpdateDbPortRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateDbPortRequest {
         return this;
     }
 
-    /** MySQL端口号范围：大于等于1024，小于等于65535，不包含12017和33071。
-     * 
-     * @return port */
+    /**
+     * MySQL端口号范围：大于等于1024，小于等于65535，不包含12017和33071。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -55,7 +58,10 @@ public class UpdateDbPortRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

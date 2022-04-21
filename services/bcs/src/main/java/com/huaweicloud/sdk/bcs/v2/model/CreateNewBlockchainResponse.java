@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateNewBlockchainResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务实例ID
-     * 
-     * @return blockchainId */
+    /**
+     * 服务实例ID
+     * @return blockchainId
+     */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -45,9 +48,10 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务实例名
-     * 
-     * @return blockchainName */
+    /**
+     * 服务实例名
+     * @return blockchainName
+     */
     public String getBlockchainName() {
         return blockchainName;
     }
@@ -61,9 +65,10 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作ID
-     * 
-     * @return operationId */
+    /**
+     * 操作ID
+     * @return operationId
+     */
     public String getOperationId() {
         return operationId;
     }
@@ -102,7 +107,10 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

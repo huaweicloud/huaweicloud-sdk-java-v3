@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例参数。 */
+/**
+ * 实例参数。
+ */
 public class InstanceListView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用组件实例ID。
-     * 
-     * @return id */
+    /**
+     * 应用组件实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -114,9 +117,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return applicationId */
+    /**
+     * 应用ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -130,9 +134,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return applicationName */
+    /**
+     * 应用名称。
+     * @return applicationName
+     */
     public String getApplicationName() {
         return applicationName;
     }
@@ -146,9 +151,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 组件ID。
-     * 
-     * @return componentId */
+    /**
+     * 组件ID。
+     * @return componentId
+     */
     public String getComponentId() {
         return componentId;
     }
@@ -162,9 +168,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 组件名称。
-     * 
-     * @return componentName */
+    /**
+     * 组件名称。
+     * @return componentName
+     */
     public String getComponentName() {
         return componentName;
     }
@@ -178,9 +185,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用组件实例名称。
-     * 
-     * @return name */
+    /**
+     * 应用组件实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -194,9 +202,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用组件环境ID。
-     * 
-     * @return environmentId */
+    /**
+     * 应用组件环境ID。
+     * @return environmentId
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -210,9 +219,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 环境名称。
-     * 
-     * @return environmentName */
+    /**
+     * 环境名称。
+     * @return environmentName
+     */
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -226,9 +236,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。
-     * 
-     * @return platformType */
+    /**
+     * 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 
+     * @return platformType
+     */
     public String getPlatformType() {
         return platformType;
     }
@@ -242,9 +253,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 应用组件版本号。
-     * 
-     * @return version */
+    /**
+     * 应用组件版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -274,9 +286,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 访问方式。
-     * 
-     * @return externalAccesses */
+    /**
+     * 访问方式。
+     * @return externalAccesses
+     */
     public List<ExternalAccesses> getExternalAccesses() {
         return externalAccesses;
     }
@@ -306,9 +319,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * 
-     * @return artifacts */
+    /**
+     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * @return artifacts
+     */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -322,9 +336,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 创建人。
-     * 
-     * @return creator */
+    /**
+     * 创建人。
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -338,9 +353,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -354,9 +370,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间。
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -379,9 +396,10 @@ public class InstanceListView {
         return this;
     }
 
-    /** Get statusDetail
-     * 
-     * @return statusDetail */
+    /**
+     * Get statusDetail
+     * @return statusDetail
+     */
     public InstanceStatusView getStatusDetail() {
         return statusDetail;
     }
@@ -461,7 +479,10 @@ public class InstanceListView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

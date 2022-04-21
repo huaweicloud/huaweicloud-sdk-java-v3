@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求正常 */
+/**
+ * 请求正常
+ */
 public class QueryTagsOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,13 +48,19 @@ public class QueryTagsOption {
 
     private String marker;
 
-    /** 操作标识（仅限filter，count）：filter（过滤）：即分页查询。count（查询总条数）：按照条件将总条数返回即可。 */
+    /**
+     * 操作标识（仅限filter，count）：filter（过滤）：即分页查询。count（查询总条数）：按照条件将总条数返回即可。
+     */
     public static final class ActionEnum {
 
-        /** Enum FILTER for value: "filter" */
+        /**
+         * Enum FILTER for value: "filter"
+         */
         public static final ActionEnum FILTER = new ActionEnum("filter");
 
-        /** Enum COUNT for value: "count" */
+        /**
+         * Enum COUNT for value: "count"
+         */
         public static final ActionEnum COUNT = new ActionEnum("count");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -153,9 +161,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 过滤条件，包含标签，最多包含10个Tag，结构体不能缺失。
-     * 
-     * @return tags */
+    /**
+     * 过滤条件，包含标签，最多包含10个Tag，结构体不能缺失。
+     * @return tags
+     */
     public List<TagsMultiValue> getTags() {
         return tags;
     }
@@ -185,9 +194,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 过滤条件，包含任意标签，最多包含10个Tag。
-     * 
-     * @return tagsAny */
+    /**
+     * 过滤条件，包含任意标签，最多包含10个Tag。
+     * @return tagsAny
+     */
     public List<TagsMultiValue> getTagsAny() {
         return tagsAny;
     }
@@ -217,9 +227,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 过滤条件，不包含标签，最多包含10个Tag。
-     * 
-     * @return notTags */
+    /**
+     * 过滤条件，不包含标签，最多包含10个Tag。
+     * @return notTags
+     */
     public List<TagsMultiValue> getNotTags() {
         return notTags;
     }
@@ -249,9 +260,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 过滤条件，不包含任意标签，最多包含10个Tag。
-     * 
-     * @return notTagsAny */
+    /**
+     * 过滤条件，不包含任意标签，最多包含10个Tag。
+     * @return notTagsAny
+     */
     public List<TagsMultiValue> getNotTagsAny() {
         return notTagsAny;
     }
@@ -265,9 +277,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000，不能为负数，最小值为1。
-     * 
-     * @return limit */
+    /**
+     * 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000，不能为负数，最小值为1。
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -281,9 +294,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 分页位置标识（资源ID或索引位置）。
-     * 
-     * @return marker */
+    /**
+     * 分页位置标识（资源ID或索引位置）。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -297,9 +311,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 操作标识（仅限filter，count）：filter（过滤）：即分页查询。count（查询总条数）：按照条件将总条数返回即可。
-     * 
-     * @return action */
+    /**
+     * 操作标识（仅限filter，count）：filter（过滤）：即分页查询。count（查询总条数）：按照条件将总条数返回即可。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -313,9 +328,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** （索引位置），从offset指定的下一条数据开始查询。查询第一页数据时，不需要传入此参数。查询后续页码数据时，将查询前一页数据时，不需要传入此参数。查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。必须为数字，不能为负数。action：count时，无此参数。action：filter时，默认为0
-     * 
-     * @return offset */
+    /**
+     * （索引位置），从offset指定的下一条数据开始查询。查询第一页数据时，不需要传入此参数。查询后续页码数据时，将查询前一页数据时，不需要传入此参数。查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。必须为数字，不能为负数。action：count时，无此参数。action：filter时，默认为0
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -345,9 +361,10 @@ public class QueryTagsOption {
         return this;
     }
 
-    /** 模糊搜索字段。
-     * 
-     * @return matches */
+    /**
+     * 模糊搜索字段。
+     * @return matches
+     */
     public List<Matches> getMatches() {
         return matches;
     }
@@ -396,7 +413,10 @@ public class QueryTagsOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

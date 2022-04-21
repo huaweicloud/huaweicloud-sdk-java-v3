@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSnapshotDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListSnapshotDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 采样数据列表。
-     * 
-     * @return snapshotList */
+    /**
+     * 采样数据列表。 
+     * @return snapshotList
+     */
     public List<SnapshotData> getSnapshotList() {
         return snapshotList;
     }
@@ -64,9 +67,12 @@ public class ListSnapshotDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定时间区间内截图数量总和。 minimum: 0 maximum: -1
-     * 
-     * @return total */
+    /**
+     * 指定时间区间内截图数量总和。
+     * minimum: 0
+     * maximum: -1
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -80,9 +86,10 @@ public class ListSnapshotDataResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
@@ -123,7 +130,10 @@ public class ListSnapshotDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

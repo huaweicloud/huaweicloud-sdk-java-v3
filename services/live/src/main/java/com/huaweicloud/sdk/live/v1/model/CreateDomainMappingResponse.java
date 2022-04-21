@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateDomainMappingResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateDomainMappingResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播播放域名
-     * 
-     * @return pullDomain */
+    /**
+     * 直播播放域名
+     * @return pullDomain
+     */
     public String getPullDomain() {
         return pullDomain;
     }
@@ -40,9 +43,10 @@ public class CreateDomainMappingResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播播放域名关联的推流域名
-     * 
-     * @return pushDomain */
+    /**
+     * 直播播放域名关联的推流域名
+     * @return pushDomain
+     */
     public String getPushDomain() {
         return pushDomain;
     }
@@ -79,7 +83,10 @@ public class CreateDomainMappingResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

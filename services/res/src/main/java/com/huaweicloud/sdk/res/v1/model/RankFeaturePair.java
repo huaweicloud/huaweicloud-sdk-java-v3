@@ -30,9 +30,10 @@ public class RankFeaturePair {
         return this;
     }
 
-    /** 待推荐对象的属性。
-     * 
-     * @return featureNameA */
+    /**
+     * 待推荐对象的属性。
+     * @return featureNameA
+     */
     public String getFeatureNameA() {
         return featureNameA;
     }
@@ -46,9 +47,10 @@ public class RankFeaturePair {
         return this;
     }
 
-    /** 被推荐对象的属性。
-     * 
-     * @return featureNameB */
+    /**
+     * 被推荐对象的属性。
+     * @return featureNameB
+     */
     public String getFeatureNameB() {
         return featureNameB;
     }
@@ -62,9 +64,12 @@ public class RankFeaturePair {
         return this;
     }
 
-    /** 权重。 minimum: 0.01 maximum: 1
-     * 
-     * @return weight */
+    /**
+     * 权重。
+     * minimum: 0.01
+     * maximum: 1
+     * @return weight
+     */
     public Float getWeight() {
         return weight;
     }
@@ -103,7 +108,10 @@ public class RankFeaturePair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

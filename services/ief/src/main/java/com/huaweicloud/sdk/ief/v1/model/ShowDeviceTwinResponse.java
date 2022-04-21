@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeviceTwinResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowDeviceTwinResponse extends SdkResponse {
         return this;
     }
 
-    /** Get propertyVisitors
-     * 
-     * @return propertyVisitors */
+    /**
+     * Get propertyVisitors
+     * @return propertyVisitors
+     */
     public ValueInPropertyVisitors getPropertyVisitors() {
         return propertyVisitors;
     }
@@ -64,9 +67,10 @@ public class ShowDeviceTwinResponse extends SdkResponse {
         return this;
     }
 
-    /** Get twin
-     * 
-     * @return twin */
+    /**
+     * Get twin
+     * @return twin
+     */
     public ValueInTwinResponse getTwin() {
         return twin;
     }
@@ -80,9 +84,10 @@ public class ShowDeviceTwinResponse extends SdkResponse {
         return this;
     }
 
-    /** 访问协议，有如下选项： - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议
-     * 
-     * @return accessProtocol */
+    /**
+     * 访问协议，有如下选项： - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议
+     * @return accessProtocol
+     */
     public String getAccessProtocol() {
         return accessProtocol;
     }
@@ -121,7 +126,10 @@ public class ShowDeviceTwinResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

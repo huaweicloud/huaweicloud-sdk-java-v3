@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端服务器列表信息 */
+/**
+ * 源端服务器列表信息
+ */
 public class SourceServersResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,13 +43,19 @@ public class SourceServersResponseBody {
 
     private Long addDate;
 
-    /** 操作系统类型，OS_TYPE (WINDOWS/LINUX) */
+    /**
+     * 操作系统类型，OS_TYPE (WINDOWS/LINUX)
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,43 +135,69 @@ public class SourceServersResponseBody {
 
     private Boolean oemSystem;
 
-    /** 源端服务器状态 */
+    /**
+     * 源端服务器状态
+     */
     public static final class StateEnum {
 
-        /** Enum UNAVAILABLE for value: "unavailable" */
+        /**
+         * Enum UNAVAILABLE for value: "unavailable"
+         */
         public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StateEnum WAITING = new StateEnum("waiting");
 
-        /** Enum INITIALIZE for value: "initialize" */
+        /**
+         * Enum INITIALIZE for value: "initialize"
+         */
         public static final StateEnum INITIALIZE = new StateEnum("initialize");
 
-        /** Enum REPLICATE for value: "replicate" */
+        /**
+         * Enum REPLICATE for value: "replicate"
+         */
         public static final StateEnum REPLICATE = new StateEnum("replicate");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final StateEnum SYNCING = new StateEnum("syncing");
 
-        /** Enum STOPPING for value: "stopping" */
+        /**
+         * Enum STOPPING for value: "stopping"
+         */
         public static final StateEnum STOPPING = new StateEnum("stopping");
 
-        /** Enum STOPPED for value: "stopped" */
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
-        /** Enum DELETING for value: "deleting" */
+        /**
+         * Enum DELETING for value: "deleting"
+         */
         public static final StateEnum DELETING = new StateEnum("deleting");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final StateEnum ERROR = new StateEnum("error");
 
-        /** Enum CLONING for value: "cloning" */
+        /**
+         * Enum CLONING for value: "cloning"
+         */
         public static final StateEnum CLONING = new StateEnum("cloning");
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final StateEnum CUTOVERING = new StateEnum("cutovering");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -293,25 +327,39 @@ public class SourceServersResponseBody {
 
     private Long lastVisitTime;
 
-    /** 迁移周期 */
+    /**
+     * 迁移周期
+     */
     public static final class MigrationCycleEnum {
 
-        /** Enum CUTOVERING for value: "cutovering" */
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
         public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
 
-        /** Enum CUTOVERED for value: "cutovered" */
+        /**
+         * Enum CUTOVERED for value: "cutovered"
+         */
         public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
 
-        /** Enum CHECKING for value: "checking" */
+        /**
+         * Enum CHECKING for value: "checking"
+         */
         public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
 
-        /** Enum SETTING for value: "setting" */
+        /**
+         * Enum SETTING for value: "setting"
+         */
         public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
 
-        /** Enum REPLICATING for value: "replicating" */
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
         public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
 
-        /** Enum SYNCING for value: "syncing" */
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
         public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
 
         private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
@@ -395,9 +443,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器id
-     * 
-     * @return id */
+    /**
+     * 源端服务器id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -411,9 +460,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器的ip地址
-     * 
-     * @return ip */
+    /**
+     * 源端服务器的ip地址
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -427,9 +477,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器名称
-     * 
-     * @return name */
+    /**
+     * 源端服务器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -443,9 +494,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 企业项目id
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -459,9 +511,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器的注册时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return addDate */
+    /**
+     * 源端服务器的注册时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return addDate
+     */
     public Long getAddDate() {
         return addDate;
     }
@@ -475,9 +530,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 操作系统类型，OS_TYPE (WINDOWS/LINUX)
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型，OS_TYPE (WINDOWS/LINUX)
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -491,9 +547,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 系统详细版本号，如CENTOS7.6等
-     * 
-     * @return osVersion */
+    /**
+     * 系统详细版本号，如CENTOS7.6等
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -507,9 +564,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 是否是OEM操作系统(Windows)
-     * 
-     * @return oemSystem */
+    /**
+     * 是否是OEM操作系统(Windows)
+     * @return oemSystem
+     */
     public Boolean getOemSystem() {
         return oemSystem;
     }
@@ -523,9 +581,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器状态
-     * 
-     * @return state */
+    /**
+     * 源端服务器状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -539,9 +598,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端服务器与主机迁移服务端是否连接
-     * 
-     * @return connected */
+    /**
+     * 源端服务器与主机迁移服务端是否连接
+     * @return connected
+     */
     public Boolean getConnected() {
         return connected;
     }
@@ -555,9 +615,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端CPU核心数 minimum: 0 maximum: 2147483647
-     * 
-     * @return cpuQuantity */
+    /**
+     * 源端CPU核心数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return cpuQuantity
+     */
     public Integer getCpuQuantity() {
         return cpuQuantity;
     }
@@ -571,9 +634,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端物理内存大小（单位：字节） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return memory */
+    /**
+     * 源端物理内存大小（单位：字节）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return memory
+     */
     public Long getMemory() {
         return memory;
     }
@@ -596,9 +662,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** Get currentTask
-     * 
-     * @return currentTask */
+    /**
+     * Get currentTask
+     * @return currentTask
+     */
     public TaskByServerSources getCurrentTask() {
         return currentTask;
     }
@@ -628,9 +695,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端校验检查项列表
-     * 
-     * @return checks */
+    /**
+     * 源端校验检查项列表
+     * @return checks
+     */
     public List<EnvironmentCheck> getChecks() {
         return checks;
     }
@@ -653,9 +721,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** Get initTargetServer
-     * 
-     * @return initTargetServer */
+    /**
+     * Get initTargetServer
+     * @return initTargetServer
+     */
     public InitTargetServer getInitTargetServer() {
         return initTargetServer;
     }
@@ -669,9 +738,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 已复制的大小（单位：字节） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return replicatesize */
+    /**
+     * 已复制的大小（单位：字节）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return replicatesize
+     */
     public Long getReplicatesize() {
         return replicatesize;
     }
@@ -685,9 +757,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 迁移周期（migration_cycle）上一次变化的时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return stageActionTime */
+    /**
+     * 迁移周期（migration_cycle）上一次变化的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return stageActionTime
+     */
     public Long getStageActionTime() {
         return stageActionTime;
     }
@@ -701,9 +776,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 需要迁移的数据量总大小（单位：字节） minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return totalsize */
+    /**
+     * 需要迁移的数据量总大小（单位：字节）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return totalsize
+     */
     public Long getTotalsize() {
         return totalsize;
     }
@@ -717,9 +795,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** Agent上一次连接状态发生变化的时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return lastVisitTime */
+    /**
+     * Agent上一次连接状态发生变化的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return lastVisitTime
+     */
     public Long getLastVisitTime() {
         return lastVisitTime;
     }
@@ -733,9 +814,10 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 迁移周期
-     * 
-     * @return migrationCycle */
+    /**
+     * 迁移周期
+     * @return migrationCycle
+     */
     public MigrationCycleEnum getMigrationCycle() {
         return migrationCycle;
     }
@@ -749,9 +831,12 @@ public class SourceServersResponseBody {
         return this;
     }
 
-    /** 源端状态（state）上次发生变化的时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return stateActionTime */
+    /**
+     * 源端状态（state）上次发生变化的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return stateActionTime
+     */
     public Long getStateActionTime() {
         return stateActionTime;
     }
@@ -846,7 +931,10 @@ public class SourceServersResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

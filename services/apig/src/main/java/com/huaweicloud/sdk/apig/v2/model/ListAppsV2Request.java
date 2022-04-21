@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAppsV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -74,9 +77,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -90,9 +94,12 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 每页显示的条目数量 minimum: 1 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -106,9 +113,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** APP编号
-     * 
-     * @return id */
+    /**
+     * APP编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -122,9 +130,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** APP名称
-     * 
-     * @return name */
+    /**
+     * APP名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -138,9 +147,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** APP状态
-     * 
-     * @return status */
+    /**
+     * APP状态
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -154,9 +164,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** APP的KEY
-     * 
-     * @return appKey */
+    /**
+     * APP的KEY
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -170,9 +181,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** APP的创建者。 - USER：用户自行创建 - MARKET：云市场分配
-     * 
-     * @return creator */
+    /**
+     * APP的创建者。 - USER：用户自行创建 - MARKET：云市场分配
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -186,9 +198,10 @@ public class ListAppsV2Request {
         return this;
     }
 
-    /** 指定需要精确匹配查找的参数名称，目前仅支持name
-     * 
-     * @return preciseSearch */
+    /**
+     * 指定需要精确匹配查找的参数名称，目前仅支持name
+     * @return preciseSearch
+     */
     public String getPreciseSearch() {
         return preciseSearch;
     }
@@ -238,7 +251,10 @@ public class ListAppsV2Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 集群对象。 */
+/**
+ * 集群对象。
+ */
 public class ClusterList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -120,9 +122,10 @@ public class ClusterList {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public ClusterListDatastore getDatastore() {
         return datastore;
     }
@@ -152,9 +155,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 节点对象列表。
-     * 
-     * @return instances */
+    /**
+     * 节点对象列表。
+     * @return instances
+     */
     public List<ClusterListInstances> getInstances() {
         return instances;
     }
@@ -168,9 +172,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
-     * 
-     * @return updated */
+    /**
+     * 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -184,9 +189,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群名称。
-     * 
-     * @return name */
+    /**
+     * 集群名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -200,9 +206,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。 说明：返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
-     * 
-     * @return created */
+    /**
+     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。     说明：返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -216,9 +223,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return id */
+    /**
+     * 集群ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -232,9 +240,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 查询返回值。 - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
-     * 
-     * @return status */
+    /**
+     * 查询返回值。  - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -248,9 +257,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 用户VPC访问IP地址和端口号。
-     * 
-     * @return endpoint */
+    /**
+     * 用户VPC访问IP地址和端口号。
+     * @return endpoint
+     */
     public String getEndpoint() {
         return endpoint;
     }
@@ -273,9 +283,10 @@ public class ClusterList {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ClusterListActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -305,9 +316,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群当前行为，REBOOTING表示重启，GROWING表示扩容，RESTORING表示恢复集群，SNAPSHOTTING表示创建快照。
-     * 
-     * @return actions */
+    /**
+     * 集群当前行为，REBOOTING表示重启，GROWING表示扩容，RESTORING表示恢复集群，SNAPSHOTTING表示创建快照。
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -330,9 +342,10 @@ public class ClusterList {
         return this;
     }
 
-    /** Get failedReasons
-     * 
-     * @return failedReasons */
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
     public ClusterListFailedReasons getFailedReasons() {
         return failedReasons;
     }
@@ -346,9 +359,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
-     * 
-     * @return authorityEnable */
+    /**
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * @return authorityEnable
+     */
     public Boolean getAuthorityEnable() {
         return authorityEnable;
     }
@@ -362,9 +376,10 @@ public class ClusterList {
         return this;
     }
 
-    /** VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -378,9 +393,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -394,9 +410,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -410,9 +427,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群所属的企业项目ID。 如果集群所属用户没有开通企业项目，则不会返回该参数。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 集群所属的企业项目ID。  如果集群所属用户没有开通企业项目，则不会返回该参数。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -426,9 +444,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 是为包周期集群。
-     * 
-     * @return period */
+    /**
+     * 是为包周期集群。
+     * @return period
+     */
     public Boolean getPeriod() {
         return period;
     }
@@ -442,9 +461,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 是否开启https访问。
-     * 
-     * @return httpsEnable */
+    /**
+     * 是否开启https访问。
+     * @return httpsEnable
+     */
     public Boolean getHttpsEnable() {
         return httpsEnable;
     }
@@ -474,9 +494,10 @@ public class ClusterList {
         return this;
     }
 
-    /** 集群标签。
-     * 
-     * @return tags */
+    /**
+     * 集群标签。
+     * @return tags
+     */
     public List<ClusterListTags> getTags() {
         return tags;
     }
@@ -560,7 +581,10 @@ public class ClusterList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

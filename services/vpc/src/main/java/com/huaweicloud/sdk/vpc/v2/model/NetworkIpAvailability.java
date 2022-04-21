@@ -48,9 +48,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 网络ID
-     * 
-     * @return networkId */
+    /**
+     * 网络ID
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -64,9 +65,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 网络名称
-     * 
-     * @return networkName */
+    /**
+     * 网络名称
+     * @return networkName
+     */
     public String getNetworkName() {
         return networkName;
     }
@@ -80,9 +82,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -96,9 +99,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 网络中IP总数（不包含系统预留地址）
-     * 
-     * @return totalIps */
+    /**
+     * 网络中IP总数（不包含系统预留地址）
+     * @return totalIps
+     */
     public Integer getTotalIps() {
         return totalIps;
     }
@@ -112,9 +116,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 网络中已经使用的IP数目（不包含系统预留地址）
-     * 
-     * @return usedIps */
+    /**
+     * 网络中已经使用的IP数目（不包含系统预留地址）
+     * @return usedIps
+     */
     public Integer getUsedIps() {
         return usedIps;
     }
@@ -145,9 +150,10 @@ public class NetworkIpAvailability {
         return this;
     }
 
-    /** 子网IP使用情况的对象
-     * 
-     * @return subnetIpAvailability */
+    /**
+     * 子网IP使用情况的对象
+     * @return subnetIpAvailability
+     */
     public List<SubnetIpAvailability> getSubnetIpAvailability() {
         return subnetIpAvailability;
     }
@@ -192,7 +198,10 @@ public class NetworkIpAvailability {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

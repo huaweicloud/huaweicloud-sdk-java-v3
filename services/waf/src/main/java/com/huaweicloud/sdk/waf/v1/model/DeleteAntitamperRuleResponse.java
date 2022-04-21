@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteAntitamperRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -50,9 +53,10 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -66,9 +70,10 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 防篡改的url
-     * 
-     * @return url */
+    /**
+     * 防篡改的url
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -82,9 +87,10 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建规则的时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 创建规则的时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -125,7 +131,10 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

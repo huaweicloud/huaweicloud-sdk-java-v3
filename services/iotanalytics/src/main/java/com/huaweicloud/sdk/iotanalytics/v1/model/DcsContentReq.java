@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DCS数据源配置内容 */
+/**
+ * DCS数据源配置内容
+ */
 public class DcsContentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DcsContentReq {
         return this;
     }
 
-    /** VPC-EP服务端id
-     * 
-     * @return endpointServiceId */
+    /**
+     * VPC-EP服务端id
+     * @return endpointServiceId
+     */
     public String getEndpointServiceId() {
         return endpointServiceId;
     }
@@ -54,9 +57,10 @@ public class DcsContentReq {
         return this;
     }
 
-    /** VPC-EP服务端名称
-     * 
-     * @return endpointServiceName */
+    /**
+     * VPC-EP服务端名称
+     * @return endpointServiceName
+     */
     public String getEndpointServiceName() {
         return endpointServiceName;
     }
@@ -70,9 +74,12 @@ public class DcsContentReq {
         return this;
     }
 
-    /** VPC-EP客户端Port minimum: 0 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * VPC-EP客户端Port
+     * minimum: 0
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -86,9 +93,10 @@ public class DcsContentReq {
         return this;
     }
 
-    /** redis实例类型
-     * 
-     * @return dcsType */
+    /**
+     * redis实例类型
+     * @return dcsType
+     */
     public String getDcsType() {
         return dcsType;
     }
@@ -102,9 +110,10 @@ public class DcsContentReq {
         return this;
     }
 
-    /** redis访问密码
-     * 
-     * @return password */
+    /**
+     * redis访问密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -146,7 +155,10 @@ public class DcsContentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

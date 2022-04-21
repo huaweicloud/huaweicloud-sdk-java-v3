@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ThreatIntelProperties */
+/**
+ * ThreatIntelProperties
+ */
 public class ThreatIntelProperties {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,9 +105,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 恶意软件Md5。
-     * 
-     * @return fileMd5 */
+    /**
+     * 恶意软件Md5。
+     * @return fileMd5
+     */
     public String getFileMd5() {
         return fileMd5;
     }
@@ -119,9 +122,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 恶意软件Sha1。
-     * 
-     * @return fileSha1 */
+    /**
+     * 恶意软件Sha1。
+     * @return fileSha1
+     */
     public String getFileSha1() {
         return fileSha1;
     }
@@ -135,9 +139,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 恶意软件Sha256值。
-     * 
-     * @return fileSha256 */
+    /**
+     * 恶意软件Sha256值。
+     * @return fileSha256
+     */
     public String getFileSha256() {
         return fileSha256;
     }
@@ -151,9 +156,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 文件名称。
-     * 
-     * @return fileName */
+    /**
+     * 文件名称。
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -167,9 +173,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 编译时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * 
-     * @return createTime */
+    /**
+     * 编译时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -183,9 +190,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 文件类别，TEXT|XCODE。
-     * 
-     * @return fileClass */
+    /**
+     * 文件类别，TEXT|XCODE。
+     * @return fileClass
+     */
     public String getFileClass() {
         return fileClass;
     }
@@ -199,9 +207,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 家族，例如：wannacry（勒索软件）。
-     * 
-     * @return fileFamily */
+    /**
+     * 家族，例如：wannacry（勒索软件）。
+     * @return fileFamily
+     */
     public String getFileFamily() {
         return fileFamily;
     }
@@ -215,9 +224,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 类别，例如：trojan（特洛伊）。
-     * 
-     * @return fileMaltype */
+    /**
+     * 类别，例如：trojan（特洛伊）。
+     * @return fileMaltype
+     */
     public String getFileMaltype() {
         return fileMaltype;
     }
@@ -231,9 +241,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** mac地址。
-     * 
-     * @return ipResolvesToRefs */
+    /**
+     * mac地址。
+     * @return ipResolvesToRefs
+     */
     public String getIpResolvesToRefs() {
         return ipResolvesToRefs;
     }
@@ -247,9 +258,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** IP AS 自治系统。
-     * 
-     * @return belongsToRefs */
+    /**
+     * IP AS 自治系统。
+     * @return belongsToRefs
+     */
     public String getBelongsToRefs() {
         return belongsToRefs;
     }
@@ -263,9 +275,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 地区 格式：country/provice/city/lngwgs/latwgs。
-     * 
-     * @return ipLocation */
+    /**
+     * 地区 格式：country/provice/city/lngwgs/latwgs。
+     * @return ipLocation
+     */
     public String getIpLocation() {
         return ipLocation;
     }
@@ -279,9 +292,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 例如：banjori|iodine。
-     * 
-     * @return domainFamily */
+    /**
+     * 例如：banjori|iodine。
+     * @return domainFamily
+     */
     public String getDomainFamily() {
         return domainFamily;
     }
@@ -295,9 +309,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 解析的IP地址。
-     * 
-     * @return domainResolvesToRefs */
+    /**
+     * 解析的IP地址。
+     * @return domainResolvesToRefs
+     */
     public String getDomainResolvesToRefs() {
         return domainResolvesToRefs;
     }
@@ -311,9 +326,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** DNS类别。A|NS|CNAME|TXT。
-     * 
-     * @return domainDnsType */
+    /**
+     * DNS类别。A|NS|CNAME|TXT。
+     * @return domainDnsType
+     */
     public String getDomainDnsType() {
         return domainDnsType;
     }
@@ -327,9 +343,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 例：3ms.huawei.com。
-     * 
-     * @return urlHost */
+    /**
+     * 例：3ms.huawei.com。
+     * @return urlHost
+     */
     public String getUrlHost() {
         return urlHost;
     }
@@ -343,9 +360,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** IP地址。
-     * 
-     * @return urlResolvesToRefs */
+    /**
+     * IP地址。
+     * @return urlResolvesToRefs
+     */
     public String getUrlResolvesToRefs() {
         return urlResolvesToRefs;
     }
@@ -359,9 +377,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 显示名称。
-     * 
-     * @return displayName */
+    /**
+     * 显示名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -375,9 +394,10 @@ public class ThreatIntelProperties {
         return this;
     }
 
-    /** 邮箱账户，@之前部分。
-     * 
-     * @return urlBelongsToRef */
+    /**
+     * 邮箱账户，@之前部分。
+     * @return urlBelongsToRef
+     */
     public String getUrlBelongsToRef() {
         return urlBelongsToRef;
     }
@@ -463,7 +483,10 @@ public class ThreatIntelProperties {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

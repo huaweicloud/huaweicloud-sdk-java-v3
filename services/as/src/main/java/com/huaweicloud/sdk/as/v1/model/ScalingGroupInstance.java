@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 伸缩组实例详情 */
+/**
+ * 伸缩组实例详情
+ */
 public class ScalingGroupInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,23 +36,34 @@ public class ScalingGroupInstance {
 
     private String scalingGroupName;
 
-    /** 实例在伸缩组中的生命周期状态： - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 -
-     * REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态 */
+    /**
+     * 实例在伸缩组中的生命周期状态：  - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 - REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态
+     */
     public static final class LifeCycleStateEnum {
 
-        /** Enum INSERVICE for value: "INSERVICE" */
+        /**
+         * Enum INSERVICE for value: "INSERVICE"
+         */
         public static final LifeCycleStateEnum INSERVICE = new LifeCycleStateEnum("INSERVICE");
 
-        /** Enum PENDING for value: "PENDING" */
+        /**
+         * Enum PENDING for value: "PENDING"
+         */
         public static final LifeCycleStateEnum PENDING = new LifeCycleStateEnum("PENDING");
 
-        /** Enum REMOVING for value: "REMOVING" */
+        /**
+         * Enum REMOVING for value: "REMOVING"
+         */
         public static final LifeCycleStateEnum REMOVING = new LifeCycleStateEnum("REMOVING");
 
-        /** Enum PENDING_WAIT for value: "PENDING_WAIT" */
+        /**
+         * Enum PENDING_WAIT for value: "PENDING_WAIT"
+         */
         public static final LifeCycleStateEnum PENDING_WAIT = new LifeCycleStateEnum("PENDING_WAIT");
 
-        /** Enum REMOVING_WAIT for value: "REMOVING_WAIT" */
+        /**
+         * Enum REMOVING_WAIT for value: "REMOVING_WAIT"
+         */
         public static final LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
 
         private static final Map<String, LifeCycleStateEnum> STATIC_FIELDS = createStaticFields();
@@ -123,16 +136,24 @@ public class ScalingGroupInstance {
 
     private LifeCycleStateEnum lifeCycleState;
 
-    /** 实例健康状态:INITAILIZING:初始化；NORMAL：正常；ERROR：错误。 */
+    /**
+     * 实例健康状态:INITAILIZING:初始化；NORMAL：正常；ERROR：错误。
+     */
     public static final class HealthStatusEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final HealthStatusEnum NORMAL = new HealthStatusEnum("NORMAL");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
 
-        /** Enum INITAILIZING for value: "INITAILIZING" */
+        /**
+         * Enum INITAILIZING for value: "INITAILIZING"
+         */
         public static final HealthStatusEnum INITAILIZING = new HealthStatusEnum("INITAILIZING");
 
         private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -228,9 +249,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -244,9 +266,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return instanceName */
+    /**
+     * 实例名称。
+     * @return instanceName
+     */
     public String getInstanceName() {
         return instanceName;
     }
@@ -260,9 +283,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例所在伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 实例所在伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -276,9 +300,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例所在伸缩组名称。
-     * 
-     * @return scalingGroupName */
+    /**
+     * 实例所在伸缩组名称。
+     * @return scalingGroupName
+     */
     public String getScalingGroupName() {
         return scalingGroupName;
     }
@@ -292,10 +317,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例在伸缩组中的生命周期状态： - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 -
-     * REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态
-     * 
-     * @return lifeCycleState */
+    /**
+     * 实例在伸缩组中的生命周期状态：  - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 - REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态
+     * @return lifeCycleState
+     */
     public LifeCycleStateEnum getLifeCycleState() {
         return lifeCycleState;
     }
@@ -309,9 +334,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例健康状态:INITAILIZING:初始化；NORMAL：正常；ERROR：错误。
-     * 
-     * @return healthStatus */
+    /**
+     * 实例健康状态:INITAILIZING:初始化；NORMAL：正常；ERROR：错误。
+     * @return healthStatus
+     */
     public HealthStatusEnum getHealthStatus() {
         return healthStatus;
     }
@@ -325,9 +351,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 伸缩配置名称。如果返回为空，表示伸缩配置已经被删除。如果返回MANNUAL_ADD，表示实例为手动加入。
-     * 
-     * @return scalingConfigurationName */
+    /**
+     * 伸缩配置名称。如果返回为空，表示伸缩配置已经被删除。如果返回MANNUAL_ADD，表示实例为手动加入。
+     * @return scalingConfigurationName
+     */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -341,9 +368,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 伸缩配置ID。
-     * 
-     * @return scalingConfigurationId */
+    /**
+     * 伸缩配置ID。
+     * @return scalingConfigurationId
+     */
     public String getScalingConfigurationId() {
         return scalingConfigurationId;
     }
@@ -357,9 +385,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例加入伸缩组的时间，遵循UTC时间。
-     * 
-     * @return createTime */
+    /**
+     * 实例加入伸缩组的时间，遵循UTC时间。
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -373,9 +402,10 @@ public class ScalingGroupInstance {
         return this;
     }
 
-    /** 实例的实例保护属性。
-     * 
-     * @return protectFromScalingDown */
+    /**
+     * 实例的实例保护属性。
+     * @return protectFromScalingDown
+     */
     public Boolean getProtectFromScalingDown() {
         return protectFromScalingDown;
     }
@@ -437,7 +467,10 @@ public class ScalingGroupInstance {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

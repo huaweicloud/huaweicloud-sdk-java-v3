@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ModifyDnsNameRequestBody */
+/**
+ * ModifyDnsNameRequestBody
+ */
 public class ModifyDnsNameRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ModifyDnsNameRequestBody {
         return this;
     }
 
-    /** 新域名的前缀，校验规则是^[0-9a-zA-Z]{8,64}$
-     * 
-     * @return dnsName */
+    /**
+     * 新域名的前缀，校验规则是^[0-9a-zA-Z]{8,64}$
+     * @return dnsName
+     */
     public String getDnsName() {
         return dnsName;
     }
@@ -55,7 +58,10 @@ public class ModifyDnsNameRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

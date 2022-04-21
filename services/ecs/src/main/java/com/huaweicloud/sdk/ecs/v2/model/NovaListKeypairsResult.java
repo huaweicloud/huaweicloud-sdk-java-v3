@@ -30,9 +30,10 @@ public class NovaListKeypairsResult {
         return this;
     }
 
-    /** Get keypair
-     * 
-     * @return keypair */
+    /**
+     * Get keypair
+     * @return keypair
+     */
     public NovaSimpleKeypair getKeypair() {
         return keypair;
     }
@@ -67,7 +68,10 @@ public class NovaListKeypairsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PeriodProductRatingResult */
+/**
+ * PeriodProductRatingResult
+ */
 public class PeriodProductRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** ID标识，来源于请求中的ID。
-     * 
-     * @return id */
+    /**
+     * ID标识，来源于请求中的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的ID。
-     * 
-     * @return productId */
+    /**
+     * 包年/包月产品的ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -95,9 +99,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
-     * 
-     * @return amount */
+    /**
+     * 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -111,9 +116,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 包年/包月产品的官网价。
-     * 
-     * @return officialWebsiteAmount */
+    /**
+     * 包年/包月产品的官网价。
+     * @return officialWebsiteAmount
+     */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -127,9 +133,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
-     * 
-     * @return discountAmount */
+    /**
+     * 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -143,9 +150,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 价格度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 价格度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -159,9 +167,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 分期金额的官网价。 说明： 暂只支持IES产品。
-     * 
-     * @return installmentOfficialWebsiteAmount */
+    /**
+     * 分期金额的官网价。  说明： 暂只支持IES产品。
+     * @return installmentOfficialWebsiteAmount
+     */
     public String getInstallmentOfficialWebsiteAmount() {
         return installmentOfficialWebsiteAmount;
     }
@@ -175,9 +184,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 分期金额的折扣价。 说明： 暂只支持IES产品。
-     * 
-     * @return installmentOfficialDiscountAmount */
+    /**
+     * 分期金额的折扣价。  说明： 暂只支持IES产品。
+     * @return installmentOfficialDiscountAmount
+     */
     public String getInstallmentOfficialDiscountAmount() {
         return installmentOfficialDiscountAmount;
     }
@@ -191,9 +201,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 分期金额的成交价。 说明： 分期金额的成交价=分期金额的官网价-分期金额的折扣价。暂只支持IES产品。
-     * 
-     * @return installmentAmount */
+    /**
+     * 分期金额的成交价。  说明： 分期金额的成交价=分期金额的官网价-分期金额的折扣价。暂只支持IES产品。
+     * @return installmentAmount
+     */
     public String getInstallmentAmount() {
         return installmentAmount;
     }
@@ -207,9 +218,10 @@ public class PeriodProductRatingResult {
         return this;
     }
 
-    /** 分期付款的周期类型。 2：月 说明： 暂只支持IES产品。
-     * 
-     * @return installmentPeriodType */
+    /**
+     * 分期付款的周期类型。 2：月  说明： 暂只支持IES产品。
+     * @return installmentPeriodType
+     */
     public Integer getInstallmentPeriodType() {
         return installmentPeriodType;
     }
@@ -277,7 +289,10 @@ public class PeriodProductRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

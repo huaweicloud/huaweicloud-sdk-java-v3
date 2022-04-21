@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Papers */
+/**
+ * Papers
+ */
 public class Papers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Papers {
         return this;
     }
 
-    /** 问卷ID
-     * 
-     * @return paperIds */
+    /**
+     * 问卷ID
+     * @return paperIds
+     */
     public List<String> getPaperIds() {
         return paperIds;
     }
@@ -74,7 +77,10 @@ public class Papers {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

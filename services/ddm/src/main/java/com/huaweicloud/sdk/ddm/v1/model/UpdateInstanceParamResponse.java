@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateInstanceParamResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点列表。
-     * 
-     * @return nodeList */
+    /**
+     * 节点列表。
+     * @return nodeList
+     */
     public String getNodeList() {
         return nodeList;
     }
@@ -55,9 +58,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否需要重启实例。
-     * 
-     * @return needRestart */
+    /**
+     * 是否需要重启实例。
+     * @return needRestart
+     */
     public Boolean getNeedRestart() {
         return needRestart;
     }
@@ -71,9 +75,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -87,9 +92,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组id。
-     * 
-     * @return configId */
+    /**
+     * 参数组id。
+     * @return configId
+     */
     public String getConfigId() {
         return configId;
     }
@@ -103,9 +109,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数组名称。
-     * 
-     * @return configName */
+    /**
+     * 参数组名称。
+     * @return configName
+     */
     public String getConfigName() {
         return configName;
     }
@@ -148,7 +155,10 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

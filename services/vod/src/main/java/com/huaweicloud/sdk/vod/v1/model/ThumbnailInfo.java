@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 截图信息。 &gt; 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。 */
+/**
+ * 截图信息。  &gt; 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。
+ */
 public class ThumbnailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class ThumbnailInfo {
         return this;
     }
 
-    /** 视频截图信息。
-     * 
-     * @return sample */
+    /**
+     * 视频截图信息。
+     * @return sample
+     */
     public List<ThumbnailRsp> getSample() {
         return sample;
     }
@@ -84,9 +87,10 @@ public class ThumbnailInfo {
         return this;
     }
 
-    /** Get dots
-     * 
-     * @return dots */
+    /**
+     * Get dots
+     * @return dots
+     */
     public List<ThumbnailRsp> getDots() {
         return dots;
     }
@@ -100,9 +104,10 @@ public class ThumbnailInfo {
         return this;
     }
 
-    /** 执行情况描述。
-     * 
-     * @return execDesc */
+    /**
+     * 执行情况描述。
+     * @return execDesc
+     */
     public String getExecDesc() {
         return execDesc;
     }
@@ -116,9 +121,10 @@ public class ThumbnailInfo {
         return this;
     }
 
-    /** 截图状态。 取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
-     * 
-     * @return thumbnailStatus */
+    /**
+     * 截图状态。  取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
+     * @return thumbnailStatus
+     */
     public String getThumbnailStatus() {
         return thumbnailStatus;
     }
@@ -158,7 +164,10 @@ public class ThumbnailInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

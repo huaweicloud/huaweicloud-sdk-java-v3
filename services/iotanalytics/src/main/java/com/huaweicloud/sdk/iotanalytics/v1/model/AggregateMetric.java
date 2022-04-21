@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询指标 */
+/**
+ * 查询指标
+ */
 public class AggregateMetric {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class AggregateMetric {
         return this;
     }
 
-    /** 声明属性作为表达式参数
-     * 
-     * @return inputs */
+    /**
+     * 声明属性作为表达式参数
+     * @return inputs
+     */
     public List<InputParam> getInputs() {
         return inputs;
     }
@@ -63,9 +66,10 @@ public class AggregateMetric {
         return this;
     }
 
-    /** 指标名称
-     * 
-     * @return metricName */
+    /**
+     * 指标名称
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -79,9 +83,10 @@ public class AggregateMetric {
         return this;
     }
 
-    /** 表达式
-     * 
-     * @return expression */
+    /**
+     * 表达式
+     * @return expression
+     */
     public String getExpression() {
         return expression;
     }
@@ -120,7 +125,10 @@ public class AggregateMetric {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

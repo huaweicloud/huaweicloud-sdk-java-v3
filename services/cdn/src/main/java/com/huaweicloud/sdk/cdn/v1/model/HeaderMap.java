@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 设置HTTP头参数。取值：\&quot;Content-Disposition\&quot;, \&quot;Content-Language\&quot;,
- * \&quot;Access-Control-Allow-Origin\&quot;,\&quot;Access-Control-Allow-Methods\&quot;,
- * \&quot;Access-Control-Max-Age\&quot;, \&quot;Access-Control-Expose-Headers\&quot;。 */
+/**
+ * 设置HTTP头参数。取值：\&quot;Content-Disposition\&quot;, \&quot;Content-Language\&quot;, \&quot;Access-Control-Allow-Origin\&quot;,\&quot;Access-Control-Allow-Methods\&quot;, \&quot;Access-Control-Max-Age\&quot;, \&quot;Access-Control-Expose-Headers\&quot;。
+ */
 public class HeaderMap {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,9 +45,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** 指示回复的内容该以何种形式展示
-     * 
-     * @return contentDisposition */
+    /**
+     * 指示回复的内容该以何种形式展示
+     * @return contentDisposition
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -61,9 +62,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** 说明访问者希望采用的语言或语言组合
-     * 
-     * @return contentLanguage */
+    /**
+     * 说明访问者希望采用的语言或语言组合
+     * @return contentLanguage
+     */
     public String getContentLanguage() {
         return contentLanguage;
     }
@@ -77,9 +79,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** 指定了该响应的资源是否被允许与给定的origin共享
-     * 
-     * @return accessControlAllowOrigin */
+    /**
+     * 指定了该响应的资源是否被允许与给定的origin共享
+     * @return accessControlAllowOrigin
+     */
     public String getAccessControlAllowOrigin() {
         return accessControlAllowOrigin;
     }
@@ -93,9 +96,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** 明确了客户端所要访问的资源允许使用的方法或方法列表
-     * 
-     * @return accessControlAllowMethods */
+    /**
+     * 明确了客户端所要访问的资源允许使用的方法或方法列表
+     * @return accessControlAllowMethods
+     */
     public String getAccessControlAllowMethods() {
         return accessControlAllowMethods;
     }
@@ -109,9 +113,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** Access-Control-Allow-Methods 和Access-Control-Allow-Headers 提供的信息可以被缓存多久
-     * 
-     * @return accessControlMaxAge */
+    /**
+     * Access-Control-Allow-Methods 和Access-Control-Allow-Headers 提供的信息可以被缓存多久
+     * @return accessControlMaxAge
+     */
     public String getAccessControlMaxAge() {
         return accessControlMaxAge;
     }
@@ -125,9 +130,10 @@ public class HeaderMap {
         return this;
     }
 
-    /** 列出了哪些首部可以作为响应的一部分暴露给外部
-     * 
-     * @return accessControlExposeHeaders */
+    /**
+     * 列出了哪些首部可以作为响应的一部分暴露给外部
+     * @return accessControlExposeHeaders
+     */
     public String getAccessControlExposeHeaders() {
         return accessControlExposeHeaders;
     }
@@ -177,7 +183,10 @@ public class HeaderMap {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

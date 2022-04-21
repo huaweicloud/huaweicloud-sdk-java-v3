@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateTaskStatusResult */
+/**
+ * UpdateTaskStatusResult
+ */
 public class UpdateTaskStatusResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class UpdateTaskStatusResult {
         return this;
     }
 
-    /** task_run_id minimum: 0 maximum: 2147483647
-     * 
-     * @return taskRunId */
+    /**
+     * task_run_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return taskRunId
+     */
     public Integer getTaskRunId() {
         return taskRunId;
     }
@@ -55,7 +60,10 @@ public class UpdateTaskStatusResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PoolMemVO */
+/**
+ * PoolMemVO
+ */
 public class PoolMemVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class PoolMemVO {
         return this;
     }
 
-    /** 流量池标识
-     * 
-     * @return id */
+    /**
+     * 流量池标识
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class PoolMemVO {
         return this;
     }
 
-    /** 容器ID
-     * 
-     * @return cid */
+    /**
+     * 容器ID
+     * @return cid
+     */
     public String getCid() {
         return cid;
     }
@@ -65,9 +69,10 @@ public class PoolMemVO {
         return this;
     }
 
-    /** 套餐订购实例ID
-     * 
-     * @return simPricePlanId */
+    /**
+     * 套餐订购实例ID
+     * @return simPricePlanId
+     */
     public Long getSimPricePlanId() {
         return simPricePlanId;
     }
@@ -81,9 +86,11 @@ public class PoolMemVO {
         return this;
     }
 
-    /** 已用流量(查询账期所在月份), 单位MB minimum: 0
-     * 
-     * @return flowUsed */
+    /**
+     * 已用流量(查询账期所在月份), 单位MB
+     * minimum: 0
+     * @return flowUsed
+     */
     public Double getFlowUsed() {
         return flowUsed;
     }
@@ -123,7 +130,10 @@ public class PoolMemVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

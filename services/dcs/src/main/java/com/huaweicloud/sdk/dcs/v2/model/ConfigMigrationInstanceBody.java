@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 迁移任务实例信息 */
+/**
+ * 迁移任务实例信息
+ */
 public class ConfigMigrationInstanceBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ConfigMigrationInstanceBody {
         return this;
     }
 
-    /** Redis实例ID。（Redis类型为云服务Redis时必须填写）
-     * 
-     * @return id */
+    /**
+     * Redis实例ID。（Redis类型为云服务Redis时必须填写）
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class ConfigMigrationInstanceBody {
         return this;
     }
 
-    /** Redis实例地址。（Redis类型为自建Redis时必须填写）。
-     * 
-     * @return addrs */
+    /**
+     * Redis实例地址。（Redis类型为自建Redis时必须填写）。
+     * @return addrs
+     */
     public String getAddrs() {
         return addrs;
     }
@@ -60,9 +64,10 @@ public class ConfigMigrationInstanceBody {
         return this;
     }
 
-    /** Redis密码，如果设置了密码，则必须填写。
-     * 
-     * @return password */
+    /**
+     * Redis密码，如果设置了密码，则必须填写。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -101,7 +106,10 @@ public class ConfigMigrationInstanceBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

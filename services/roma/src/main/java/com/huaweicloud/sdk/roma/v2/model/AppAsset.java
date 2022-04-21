@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** AppAsset */
+/**
+ * AppAsset
+ */
 public class AppAsset {
 
     @Override

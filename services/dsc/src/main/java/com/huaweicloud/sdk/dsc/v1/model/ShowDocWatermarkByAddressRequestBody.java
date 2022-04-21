@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ShowDocWatermarkByAddressRequestBody */
+/**
+ * ShowDocWatermarkByAddressRequestBody
+ */
 public class ShowDocWatermarkByAddressRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class ShowDocWatermarkByAddressRequestBody {
 
     private String regionId;
 
-    /** 待提取水印的文档类型 */
+    /**
+     * 待提取水印的文档类型
+     */
     public static final class DocTypeEnum {
 
-        /** Enum WORD for value: "WORD" */
+        /**
+         * Enum WORD for value: "WORD"
+         */
         public static final DocTypeEnum WORD = new DocTypeEnum("WORD");
 
-        /** Enum EXCEL for value: "EXCEL" */
+        /**
+         * Enum EXCEL for value: "EXCEL"
+         */
         public static final DocTypeEnum EXCEL = new DocTypeEnum("EXCEL");
 
-        /** Enum PDF for value: "PDF" */
+        /**
+         * Enum PDF for value: "PDF"
+         */
         public static final DocTypeEnum PDF = new DocTypeEnum("PDF");
 
-        /** Enum PPT for value: "PPT" */
+        /**
+         * Enum PPT for value: "PPT"
+         */
         public static final DocTypeEnum PPT = new DocTypeEnum("PPT");
 
         private static final Map<String, DocTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +129,10 @@ public class ShowDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 项目所在region的id，如北京一为：cn-north-1。
-     * 
-     * @return regionId */
+    /**
+     * 项目所在region的id，如北京一为：cn-north-1。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -133,9 +146,10 @@ public class ShowDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待提取水印的文档类型
-     * 
-     * @return docType */
+    /**
+     * 待提取水印的文档类型
+     * @return docType
+     */
     public DocTypeEnum getDocType() {
         return docType;
     }
@@ -149,10 +163,10 @@ public class ShowDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 待提取文字暗水印的文档的地址，当前只支持华为云OBS对象，格式为 **obs://bucket/object**
-     * ，其中bucket为和当前项目处于同一区域的OBS桶名称，object为对象全路径名。例如：**obs://hwbucket/hwinfo/hw.doc**，其中obs://表示OBS存储，hwbucket为桶名，hwinfo/hw.doc为对象全路径名。
-     * 
-     * @return srcFile */
+    /**
+     * 待提取文字暗水印的文档的地址，当前只支持华为云OBS对象，格式为 **obs://bucket/object** ，其中bucket为和当前项目处于同一区域的OBS桶名称，object为对象全路径名。例如：**obs://hwbucket/hwinfo/hw.doc**，其中obs://表示OBS存储，hwbucket为桶名，hwinfo/hw.doc为对象全路径名。
+     * @return srcFile
+     */
     public String getSrcFile() {
         return srcFile;
     }
@@ -166,9 +180,10 @@ public class ShowDocWatermarkByAddressRequestBody {
         return this;
     }
 
-    /** 解密文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
-     * 
-     * @return filePassword */
+    /**
+     * 解密文件的密码， 最大支持长度256。如果Office文档有读密码或域控的权限密码，请输入读密码，或者有读权限的域控密码。
+     * @return filePassword
+     */
     public String getFilePassword() {
         return filePassword;
     }
@@ -210,7 +225,10 @@ public class ShowDocWatermarkByAddressRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

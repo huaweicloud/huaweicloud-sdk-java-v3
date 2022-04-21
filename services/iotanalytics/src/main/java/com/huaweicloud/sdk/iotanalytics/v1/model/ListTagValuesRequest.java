@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTagValuesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListTagValuesRequest {
         return this;
     }
 
-    /** 存储ID
-     * 
-     * @return dataStoreId */
+    /**
+     * 存储ID
+     * @return dataStoreId
+     */
     public String getDataStoreId() {
         return dataStoreId;
     }
@@ -54,9 +57,10 @@ public class ListTagValuesRequest {
         return this;
     }
 
-    /** tag 名称
-     * 
-     * @return tagName */
+    /**
+     * tag 名称
+     * @return tagName
+     */
     public String getTagName() {
         return tagName;
     }
@@ -70,9 +74,10 @@ public class ListTagValuesRequest {
         return this;
     }
 
-    /** 查询标签的值的过滤条件，例如: {\"deviceCategory\": \"class1\"}，注意特殊字符需要 urlencode
-     * 
-     * @return filters */
+    /**
+     * 查询标签的值的过滤条件，例如: {\"deviceCategory\": \"class1\"}，注意特殊字符需要 urlencode
+     * @return filters
+     */
     public String getFilters() {
         return filters;
     }
@@ -86,9 +91,12 @@ public class ListTagValuesRequest {
         return this;
     }
 
-    /** 查询起始元素的偏移 minimum: 0 maximum: 2000
-     * 
-     * @return offset */
+    /**
+     * 查询起始元素的偏移
+     * minimum: 0
+     * maximum: 2000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -102,9 +110,12 @@ public class ListTagValuesRequest {
         return this;
     }
 
-    /** 返回的元素列表大小限制,默认为 100 minimum: 1 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 返回的元素列表大小限制,默认为 100
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -147,7 +158,10 @@ public class ListTagValuesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

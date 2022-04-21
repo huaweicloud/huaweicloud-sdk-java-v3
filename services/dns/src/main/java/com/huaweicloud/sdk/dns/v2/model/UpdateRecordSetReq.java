@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateRecordSetReq */
+/**
+ * UpdateRecordSetReq
+ */
 public class UpdateRecordSetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class UpdateRecordSetReq {
         return this;
     }
 
-    /** 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
-     * 
-     * @return name */
+    /**
+     * 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,9 +60,10 @@ public class UpdateRecordSetReq {
         return this;
     }
 
-    /** 可选配置，对域名的描述。
-     * 
-     * @return description */
+    /**
+     * 可选配置，对域名的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -73,9 +77,10 @@ public class UpdateRecordSetReq {
         return this;
     }
 
-    /** Record Set的类型。
-     * 
-     * @return type */
+    /**
+     * Record Set的类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -89,9 +94,10 @@ public class UpdateRecordSetReq {
         return this;
     }
 
-    /** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * 
-     * @return ttl */
+    /**
+     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -121,9 +127,10 @@ public class UpdateRecordSetReq {
         return this;
     }
 
-    /** 解析记录的值。不同类型解析记录对应的值的规则不同。
-     * 
-     * @return records */
+    /**
+     * 解析记录的值。不同类型解析记录对应的值的规则不同。
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -165,7 +172,10 @@ public class UpdateRecordSetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

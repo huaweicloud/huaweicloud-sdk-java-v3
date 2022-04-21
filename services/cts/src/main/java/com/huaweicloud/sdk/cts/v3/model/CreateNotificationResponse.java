@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateNotificationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,13 +24,19 @@ public class CreateNotificationResponse extends SdkResponse {
 
     private String notificationName;
 
-    /** 操作类型，完整和自定义。 */
+    /**
+     * 操作类型，完整和自定义。
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum CUSTOMIZED for value: "customized" */
+        /**
+         * Enum CUSTOMIZED for value: "customized"
+         */
         public static final OperationTypeEnum CUSTOMIZED = new OperationTypeEnum("customized");
 
-        /** Enum COMPLETE for value: "complete" */
+        /**
+         * Enum COMPLETE for value: "complete"
+         */
         public static final OperationTypeEnum COMPLETE = new OperationTypeEnum("complete");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,13 +116,19 @@ public class CreateNotificationResponse extends SdkResponse {
 
     private List<NotificationUsers> notifyUserList = null;
 
-    /** 通知状态，启用和停用。 */
+    /**
+    * 通知状态，启用和停用。
+    */
     public static final class StatusEnum {
 
-        /** Enum ENABLED for value: "enabled" */
+        /**
+         * Enum ENABLED for value: "enabled"
+         */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
 
-        /** Enum DISABLED for value: "disabled" */
+        /**
+         * Enum DISABLED for value: "disabled"
+         */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -194,13 +208,19 @@ public class CreateNotificationResponse extends SdkResponse {
 
     private String notificationId;
 
-    /** 通知类型，消息通知，函数触发器。 */
+    /**
+     * 通知类型，消息通知，函数触发器。
+     */
     public static final class NotificationTypeEnum {
 
-        /** Enum SMN for value: "smn" */
+        /**
+         * Enum SMN for value: "smn"
+         */
         public static final NotificationTypeEnum SMN = new NotificationTypeEnum("smn");
 
-        /** Enum FUN for value: "fun" */
+        /**
+         * Enum FUN for value: "fun"
+         */
         public static final NotificationTypeEnum FUN = new NotificationTypeEnum("fun");
 
         private static final Map<String, NotificationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -285,9 +305,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知名称。
-     * 
-     * @return notificationName */
+    /**
+     * 通知名称。
+     * @return notificationName
+     */
     public String getNotificationName() {
         return notificationName;
     }
@@ -301,9 +322,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作类型，完整和自定义。
-     * 
-     * @return operationType */
+    /**
+     * 操作类型，完整和自定义。
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -333,9 +355,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 操作事件列表。
-     * 
-     * @return operations */
+    /**
+     * 操作事件列表。
+     * @return operations
+     */
     public List<Operations> getOperations() {
         return operations;
     }
@@ -365,9 +388,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
-     * 
-     * @return notifyUserList */
+    /**
+     * 通知用户列表，目前最多支持对10个用户组和50个用户发起的操作进行配置。
+     * @return notifyUserList
+     */
     public List<NotificationUsers> getNotifyUserList() {
         return notifyUserList;
     }
@@ -381,9 +405,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知状态，启用和停用。
-     * 
-     * @return status */
+    /**
+     * 通知状态，启用和停用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -397,9 +422,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息通知服务(SMN)主题的唯一的资源标识，可通过查询主题列表获取该标识。
-     * 
-     * @return topicId */
+    /**
+     * 消息通知服务(SMN)主题的唯一的资源标识，可通过查询主题列表获取该标识。
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -413,9 +439,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知的唯一标识ID。
-     * 
-     * @return notificationId */
+    /**
+     * 通知的唯一标识ID。
+     * @return notificationId
+     */
     public String getNotificationId() {
         return notificationId;
     }
@@ -429,9 +456,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知类型，消息通知，函数触发器。
-     * 
-     * @return notificationType */
+    /**
+     * 通知类型，消息通知，函数触发器。
+     * @return notificationType
+     */
     public NotificationTypeEnum getNotificationType() {
         return notificationType;
     }
@@ -445,9 +473,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -461,9 +490,12 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知规则创建时间。 minimum: 946656000000 maximum: 4102416000000
-     * 
-     * @return createTime */
+    /**
+     * 通知规则创建时间。
+     * minimum: 946656000000
+     * maximum: 4102416000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -525,7 +557,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

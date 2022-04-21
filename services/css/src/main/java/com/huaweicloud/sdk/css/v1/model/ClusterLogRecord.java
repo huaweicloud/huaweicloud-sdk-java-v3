@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群日志记录实体对象。 */
+/**
+ * 集群日志记录实体对象。
+ */
 public class ClusterLogRecord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 日志任务ID，通过系统uuid生成。
-     * 
-     * @return id */
+    /**
+     * 日志任务ID，通过系统uuid生成。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -74,9 +77,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -90,9 +94,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createAt */
+    /**
+     * 创建时间。
+     * @return createAt
+     */
     public String getCreateAt() {
         return createAt;
     }
@@ -106,9 +111,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 备份路径。
-     * 
-     * @return logPath */
+    /**
+     * 备份路径。
+     * @return logPath
+     */
     public String getLogPath() {
         return logPath;
     }
@@ -122,9 +128,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return status */
+    /**
+     * 任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -138,9 +145,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 结束时间。
-     * 
-     * @return finishedAt */
+    /**
+     * 结束时间。
+     * @return finishedAt
+     */
     public Long getFinishedAt() {
         return finishedAt;
     }
@@ -154,9 +162,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 任务类型。
-     * 
-     * @return jobTypes */
+    /**
+     * 任务类型。
+     * @return jobTypes
+     */
     public String getJobTypes() {
         return jobTypes;
     }
@@ -170,9 +179,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return failedMsg */
+    /**
+     * 错误信息。
+     * @return failedMsg
+     */
     public String getFailedMsg() {
         return failedMsg;
     }
@@ -186,9 +196,10 @@ public class ClusterLogRecord {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return jobId */
+    /**
+     * 任务ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -239,7 +250,10 @@ public class ClusterLogRecord {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

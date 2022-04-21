@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CustomizedExtension */
+/**
+ * CustomizedExtension
+ */
 public class CustomizedExtension {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CustomizedExtension {
         return this;
     }
 
-    /** 对象标识符。 > 本参数需要满足ASN1规范的点分十进制符号格式的字符串，如1.3.6.1.4.1.2011.4.99。
-     * 
-     * @return objectIdentifier */
+    /**
+     * 对象标识符。 > 本参数需要满足ASN1规范的点分十进制符号格式的字符串，如1.3.6.1.4.1.2011.4.99。
+     * @return objectIdentifier
+     */
     public String getObjectIdentifier() {
         return objectIdentifier;
     }
@@ -39,9 +42,10 @@ public class CustomizedExtension {
         return this;
     }
 
-    /** 自定义属性内容。
-     * 
-     * @return value */
+    /**
+     * 自定义属性内容。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -78,7 +82,10 @@ public class CustomizedExtension {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

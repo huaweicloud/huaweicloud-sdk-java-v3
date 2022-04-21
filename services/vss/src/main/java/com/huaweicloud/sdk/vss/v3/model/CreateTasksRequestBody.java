@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTasksRequestBody */
+/**
+ * CreateTasksRequestBody
+ */
 public class CreateTasksRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class CreateTasksRequestBody {
 
     private String url;
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务 */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final TaskTypeEnum NORMAL = new TaskTypeEnum("normal");
 
-        /** Enum MONITOR for value: "monitor" */
+        /**
+         * Enum MONITOR for value: "monitor"
+         */
         public static final TaskTypeEnum MONITOR = new TaskTypeEnum("monitor");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,19 +118,29 @@ public class CreateTasksRequestBody {
 
     private String triggerTime;
 
-    /** 监测任务的定时触发周期: * everyday - 每日 * threedays - 每三天 * everyweek - 每星期 * everymonth - 每月 */
+    /**
+     * 监测任务的定时触发周期:   * everyday - 每日   * threedays - 每三天   * everyweek - 每星期   * everymonth - 每月 
+     */
     public static final class TaskPeriodEnum {
 
-        /** Enum EVERYDAY for value: "everyday" */
+        /**
+         * Enum EVERYDAY for value: "everyday"
+         */
         public static final TaskPeriodEnum EVERYDAY = new TaskPeriodEnum("everyday");
 
-        /** Enum THREEDAYS for value: "threedays" */
+        /**
+         * Enum THREEDAYS for value: "threedays"
+         */
         public static final TaskPeriodEnum THREEDAYS = new TaskPeriodEnum("threedays");
 
-        /** Enum EVERYWEEK for value: "everyweek" */
+        /**
+         * Enum EVERYWEEK for value: "everyweek"
+         */
         public static final TaskPeriodEnum EVERYWEEK = new TaskPeriodEnum("everyweek");
 
-        /** Enum EVERYMONTH for value: "everymonth" */
+        /**
+         * Enum EVERYMONTH for value: "everymonth"
+         */
         public static final TaskPeriodEnum EVERYMONTH = new TaskPeriodEnum("everymonth");
 
         private static final Map<String, TaskPeriodEnum> STATIC_FIELDS = createStaticFields();
@@ -204,9 +222,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return taskName */
+    /**
+     * 任务名称
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -220,9 +239,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 待扫描的目标网址
-     * 
-     * @return url */
+    /**
+     * 待扫描的目标网址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -236,9 +256,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 扫描任务类型: * normal - 普通任务 * monitor - 监测任务
-     * 
-     * @return taskType */
+    /**
+     * 扫描任务类型:   * normal - 普通任务   * monitor - 监测任务 
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -252,9 +273,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 普通任务的定时启动时间
-     * 
-     * @return timer */
+    /**
+     * 普通任务的定时启动时间
+     * @return timer
+     */
     public String getTimer() {
         return timer;
     }
@@ -268,9 +290,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 监测任务的定时触发时间
-     * 
-     * @return triggerTime */
+    /**
+     * 监测任务的定时触发时间
+     * @return triggerTime
+     */
     public String getTriggerTime() {
         return triggerTime;
     }
@@ -284,9 +307,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** 监测任务的定时触发周期: * everyday - 每日 * threedays - 每三天 * everyweek - 每星期 * everymonth - 每月
-     * 
-     * @return taskPeriod */
+    /**
+     * 监测任务的定时触发周期:   * everyday - 每日   * threedays - 每三天   * everyweek - 每星期   * everymonth - 每月 
+     * @return taskPeriod
+     */
     public TaskPeriodEnum getTaskPeriod() {
         return taskPeriod;
     }
@@ -309,9 +333,10 @@ public class CreateTasksRequestBody {
         return this;
     }
 
-    /** Get taskConfig
-     * 
-     * @return taskConfig */
+    /**
+     * Get taskConfig
+     * @return taskConfig
+     */
     public TaskSettingsTaskConfig getTaskConfig() {
         return taskConfig;
     }
@@ -358,7 +383,10 @@ public class CreateTasksRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

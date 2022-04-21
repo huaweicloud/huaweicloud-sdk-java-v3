@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 黑白名单规则id
-     * 
-     * @return id */
+    /**
+     * 黑白名单规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -70,9 +73,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -86,9 +90,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 黑白名单规则名称
-     * 
-     * @return name */
+    /**
+     * 黑白名单规则名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,9 +107,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 删除规则时间，13位毫秒时间戳
-     * 
-     * @return timestamp */
+    /**
+     * 删除规则时间，13位毫秒时间戳
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -118,9 +124,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -134,9 +141,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则状态，0：关闭，1：开启
-     * 
-     * @return status */
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -150,9 +158,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 黑白名单ip地址，标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16
-     * 
-     * @return addr */
+    /**
+     * 黑白名单ip地址，标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -166,9 +175,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 防护动作： - 0 拦截 - 1 放行 - 2 仅记录
-     * 
-     * @return white */
+    /**
+     * 防护动作：  - 0 拦截  - 1 放行  - 2 仅记录
+     * @return white
+     */
     public Integer getWhite() {
         return white;
     }
@@ -217,7 +227,10 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

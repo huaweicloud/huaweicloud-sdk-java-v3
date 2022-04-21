@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MemberGroupCreateBatch */
+/**
+ * MemberGroupCreateBatch
+ */
 public class MemberGroupCreateBatch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class MemberGroupCreateBatch {
         return this;
     }
 
-    /** 后端服务器组列表
-     * 
-     * @return memberGroups */
+    /**
+     * 后端服务器组列表
+     * @return memberGroups
+     */
     public List<MemberGroupCreate> getMemberGroups() {
         return memberGroups;
     }
@@ -74,7 +77,10 @@ public class MemberGroupCreateBatch {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

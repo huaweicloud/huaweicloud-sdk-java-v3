@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListUserMfaDevicesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListUserMfaDevicesResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟MFA设备信息列表。
-     * 
-     * @return virtualMfaDevices */
+    /**
+     * 虚拟MFA设备信息列表。
+     * @return virtualMfaDevices
+     */
     public List<MfaDeviceResult> getVirtualMfaDevices() {
         return virtualMfaDevices;
     }
@@ -75,7 +78,10 @@ public class ListUserMfaDevicesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 音素的流利度打分 */
+/**
+ *  音素的流利度打分
+ */
 public class PhonemeFluency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,7 +25,10 @@ public class PhonemeFluency {
         return this;
     }
 
-    /** @return score */
+    /**
+     * 
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -37,7 +42,10 @@ public class PhonemeFluency {
         return this;
     }
 
-    /** @return rhythm */
+    /**
+     * 
+     * @return rhythm
+     */
     public Float getRhythm() {
         return rhythm;
     }
@@ -73,7 +81,10 @@ public class PhonemeFluency {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

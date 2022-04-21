@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 复制对扩容请求体 */
+/**
+ * 复制对扩容请求体
+ */
 public class ExtendReplicationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ExtendReplicationRequestBody {
         return this;
     }
 
-    /** Get extendReplication
-     * 
-     * @return extendReplication */
+    /**
+     * Get extendReplication
+     * @return extendReplication
+     */
     public ExtendReplicationRequestParams getExtendReplication() {
         return extendReplication;
     }
@@ -66,7 +69,10 @@ public class ExtendReplicationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

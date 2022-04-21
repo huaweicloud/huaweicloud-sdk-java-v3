@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AccessToken */
+/**
+ * AccessToken
+ */
 public class AccessToken {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AccessToken {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return name */
+    /**
+     * 授权名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class AccessToken {
         return this;
     }
 
-    /** git仓库设置中创建的私有token。
-     * 
-     * @return token */
+    /**
+     * git仓库设置中创建的私有token。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -60,9 +64,10 @@ public class AccessToken {
         return this;
     }
 
-    /** git仓库的主机地址，如https://192.168.1.1:8080/gitlab，默认为官方主机。
-     * 
-     * @return host */
+    /**
+     * git仓库的主机地址，如https://192.168.1.1:8080/gitlab，默认为官方主机。
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -100,7 +105,10 @@ public class AccessToken {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

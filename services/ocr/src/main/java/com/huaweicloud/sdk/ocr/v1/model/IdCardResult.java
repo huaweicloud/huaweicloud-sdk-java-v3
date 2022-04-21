@@ -71,9 +71,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 姓名。
-     * 
-     * @return name */
+    /**
+     * 姓名。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -87,9 +88,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 性别。
-     * 
-     * @return sex */
+    /**
+     * 性别。 
+     * @return sex
+     */
     public String getSex() {
         return sex;
     }
@@ -103,9 +105,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 出生日期。
-     * 
-     * @return birth */
+    /**
+     * 出生日期。 
+     * @return birth
+     */
     public String getBirth() {
         return birth;
     }
@@ -119,9 +122,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 民族。
-     * 
-     * @return ethnicity */
+    /**
+     * 民族。 
+     * @return ethnicity
+     */
     public String getEthnicity() {
         return ethnicity;
     }
@@ -135,9 +139,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 地址。
-     * 
-     * @return address */
+    /**
+     * 地址。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -151,9 +156,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 身份证号。
-     * 
-     * @return number */
+    /**
+     * 身份证号。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -167,9 +173,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 发证机关。
-     * 
-     * @return issue */
+    /**
+     * 发证机关。 
+     * @return issue
+     */
     public String getIssue() {
         return issue;
     }
@@ -183,9 +190,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 有效起始日期。
-     * 
-     * @return validFrom */
+    /**
+     * 有效起始日期。 
+     * @return validFrom
+     */
     public String getValidFrom() {
         return validFrom;
     }
@@ -199,9 +207,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 有效结束日期。 > 说明： - 身份证识别支持中华人民共和国居民身份证识别。
-     * 
-     * @return validTo */
+    /**
+     * 有效结束日期。   > 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
+     * @return validTo
+     */
     public String getValidTo() {
         return validTo;
     }
@@ -224,9 +233,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** Get verificationResult
-     * 
-     * @return verificationResult */
+    /**
+     * Get verificationResult
+     * @return verificationResult
+     */
     public IdcardVerificationResult getVerificationResult() {
         return verificationResult;
     }
@@ -240,9 +250,10 @@ public class IdCardResult {
         return this;
     }
 
-    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。
-     * 
-     * @return textLocation */
+    /**
+     * 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -303,7 +314,10 @@ public class IdCardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

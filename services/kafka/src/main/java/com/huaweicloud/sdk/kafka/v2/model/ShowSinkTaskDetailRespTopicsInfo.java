@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ShowSinkTaskDetailRespTopicsInfo */
+/**
+ * ShowSinkTaskDetailRespTopicsInfo
+ */
 public class ShowSinkTaskDetailRespTopicsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class ShowSinkTaskDetailRespTopicsInfo {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -59,9 +62,10 @@ public class ShowSinkTaskDetailRespTopicsInfo {
         return this;
     }
 
-    /** 分区列表。
-     * 
-     * @return partitions */
+    /**
+     * 分区列表。
+     * @return partitions
+     */
     public List<ShowSinkTaskDetailRespPartitions> getPartitions() {
         return partitions;
     }
@@ -98,7 +102,10 @@ public class ShowSinkTaskDetailRespTopicsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RemuxOutputParam */
+/**
+ * RemuxOutputParam
+ */
 public class RemuxOutputParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RemuxOutputParam {
         return this;
     }
 
-    /** 输出格式。取值范围： - HLS - MP4
-     * 
-     * @return format */
+    /**
+     * 输出格式。取值范围： - HLS - MP4 
+     * @return format
+     */
     public String getFormat() {
         return format;
     }
@@ -44,9 +47,12 @@ public class RemuxOutputParam {
         return this;
     }
 
-    /** 分片时长，仅当“format”为“HLS”时有效。 取值范围：[2，10]。 默认值： 5。 单位：秒。 minimum: 0 maximum: 20
-     * 
-     * @return segmentDuration */
+    /**
+     * 分片时长，仅当“format”为“HLS”时有效。  取值范围：[2，10]。  默认值： 5。  单位：秒。 
+     * minimum: 0
+     * maximum: 20
+     * @return segmentDuration
+     */
     public Integer getSegmentDuration() {
         return segmentDuration;
     }
@@ -60,9 +66,10 @@ public class RemuxOutputParam {
         return this;
     }
 
-    /** 输出媒体是否去除片源的中metadata自定义信息。默认值：false
-     * 
-     * @return removeMeta */
+    /**
+     * 输出媒体是否去除片源的中metadata自定义信息。默认值：false 
+     * @return removeMeta
+     */
     public Boolean getRemoveMeta() {
         return removeMeta;
     }
@@ -101,7 +108,10 @@ public class RemuxOutputParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

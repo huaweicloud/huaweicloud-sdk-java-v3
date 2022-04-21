@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据库对象空间信息，数据来源于information_schema.tables系统表。已用空间包含数据空间、索引空间和碎片空间。 */
+/**
+ * 数据库对象空间信息，数据来源于information_schema.tables系统表。已用空间包含数据空间、索引空间和碎片空间。
+ */
 public class DbObjectSpaceInfo {
 
-    /** 对象类型，如果是table，同时需要传database_id */
+    /**
+     * 对象类型，如果是table，同时需要传database_id
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum DATABASE for value: "database" */
+        /**
+         * Enum DATABASE for value: "database"
+         */
         public static final ObjectTypeEnum DATABASE = new ObjectTypeEnum("database");
 
-        /** Enum TABLE for value: "table" */
+        /**
+         * Enum TABLE for value: "table"
+         */
         public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("table");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 对象类型，如果是table，同时需要传database_id
-     * 
-     * @return objectType */
+    /**
+     * 对象类型，如果是table，同时需要传database_id
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -140,9 +149,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 对象名称
-     * 
-     * @return objectName */
+    /**
+     * 对象名称
+     * @return objectName
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -156,9 +166,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 对象ID
-     * 
-     * @return objectId */
+    /**
+     * 对象ID
+     * @return objectId
+     */
     public String getObjectId() {
         return objectId;
     }
@@ -172,9 +183,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 已使用空间，以字节为单位
-     * 
-     * @return usedSize */
+    /**
+     * 已使用空间，以字节为单位
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -188,9 +200,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 数据空间，以字节为单位
-     * 
-     * @return dataSize */
+    /**
+     * 数据空间，以字节为单位
+     * @return dataSize
+     */
     public Long getDataSize() {
         return dataSize;
     }
@@ -204,9 +217,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 索引空间，以字节为单位
-     * 
-     * @return indexSize */
+    /**
+     * 索引空间，以字节为单位
+     * @return indexSize
+     */
     public Long getIndexSize() {
         return indexSize;
     }
@@ -220,9 +234,10 @@ public class DbObjectSpaceInfo {
         return this;
     }
 
-    /** 估算值行数，以字节为单位
-     * 
-     * @return estimatedRows */
+    /**
+     * 估算值行数，以字节为单位
+     * @return estimatedRows
+     */
     public Long getEstimatedRows() {
         return estimatedRows;
     }
@@ -269,7 +284,10 @@ public class DbObjectSpaceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto update body Object */
+/**
+ * This is a auto update body Object
+ */
 public class ModifyInstanceSecurityGroupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ModifyInstanceSecurityGroupReq {
         return this;
     }
 
-    /** 安全组ID，默认值为原安全组ID，可根据需要判断是否修改安全组ID
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID，默认值为原安全组ID，可根据需要判断是否修改安全组ID
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -55,7 +58,10 @@ public class ModifyInstanceSecurityGroupReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

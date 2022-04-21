@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器响应体 */
+/**
+ * 负载均衡器响应体
+ */
 public class LoadbalancerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,22 +68,34 @@ public class LoadbalancerResp {
 
     private String provider;
 
-    /** 负载均衡器的操作状态 */
+    /**
+     * 负载均衡器的操作状态
+     */
     public static final class OperatingStatusEnum {
 
-        /** Enum ONLINE for value: "ONLINE" */
+        /**
+         * Enum ONLINE for value: "ONLINE"
+         */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
 
-        /** Enum OFFLINE for value: "OFFLINE" */
+        /**
+         * Enum OFFLINE for value: "OFFLINE"
+         */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
 
-        /** Enum DEGRADED for value: "DEGRADED" */
+        /**
+         * Enum DEGRADED for value: "DEGRADED"
+         */
         public static final OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
 
-        /** Enum DISABLED for value: "DISABLED" */
+        /**
+         * Enum DISABLED for value: "DISABLED"
+         */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
 
-        /** Enum NO_MONITOR for value: "NO_MONITOR" */
+        /**
+         * Enum NO_MONITOR for value: "NO_MONITOR"
+         */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -154,16 +168,24 @@ public class LoadbalancerResp {
 
     private OperatingStatusEnum operatingStatus;
 
-    /** 负载均衡器的配置状态 */
+    /**
+     * 负载均衡器的配置状态
+     */
     public static final class ProvisioningStatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final ProvisioningStatusEnum ACTIVE = new ProvisioningStatusEnum("ACTIVE");
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final ProvisioningStatusEnum PENDING_CREATE = new ProvisioningStatusEnum("PENDING_CREATE");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final ProvisioningStatusEnum ERROR = new ProvisioningStatusEnum("ERROR");
 
         private static final Map<String, ProvisioningStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -269,9 +291,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器ID
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -285,9 +308,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 负载均衡器所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -301,9 +325,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -317,9 +342,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的描述信息
-     * 
-     * @return description */
+    /**
+     * 负载均衡器的描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -333,9 +359,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器所在的子网ID。仅支持内网类型。
-     * 
-     * @return vipSubnetId */
+    /**
+     * 负载均衡器所在的子网ID。仅支持内网类型。
+     * @return vipSubnetId
+     */
     public String getVipSubnetId() {
         return vipSubnetId;
     }
@@ -349,9 +376,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器虚拟IP对应的端口ID
-     * 
-     * @return vipPortId */
+    /**
+     * 负载均衡器虚拟IP对应的端口ID
+     * @return vipPortId
+     */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -365,9 +393,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的虚拟IP。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的虚拟IP。
+     * @return vipAddress
+     */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -397,9 +426,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器关联的监听器ID的列表
-     * 
-     * @return listeners */
+    /**
+     * 负载均衡器关联的监听器ID的列表
+     * @return listeners
+     */
     public List<ResourceList> getListeners() {
         return listeners;
     }
@@ -429,9 +459,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器关联的后端云服务器组ID的列表。
-     * 
-     * @return pools */
+    /**
+     * 负载均衡器关联的后端云服务器组ID的列表。
+     * @return pools
+     */
     public List<ResourceList> getPools() {
         return pools;
     }
@@ -445,9 +476,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的供应者名称。只支持vlb
-     * 
-     * @return provider */
+    /**
+     * 负载均衡器的供应者名称。只支持vlb
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -461,9 +493,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的操作状态
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态
+     * @return operatingStatus
+     */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -477,9 +510,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的配置状态
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态
+     * @return provisioningStatus
+     */
     public ProvisioningStatusEnum getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -493,9 +527,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -509,9 +544,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 负载均衡器的创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -525,9 +561,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 负载均衡器的更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -541,9 +578,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 负载均衡器的企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -557,9 +595,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器所在的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 负载均衡器所在的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -589,9 +628,10 @@ public class LoadbalancerResp {
         return this;
     }
 
-    /** 负载均衡器的标签列表
-     * 
-     * @return tags */
+    /**
+     * 负载均衡器的标签列表
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -676,7 +716,10 @@ public class LoadbalancerResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

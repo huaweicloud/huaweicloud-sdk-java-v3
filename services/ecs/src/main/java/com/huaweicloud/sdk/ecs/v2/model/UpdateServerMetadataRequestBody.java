@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateServerMetadataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,10 +39,10 @@ public class UpdateServerMetadataRequestBody {
         return this;
     }
 
-    /** 用户自定义metadata键值对。 结构体允许为空，取值为空时不更新数据。
-     * 键。最大长度255个Unicode字符，不能为空。可以为大写字母（A-Z）、小写字母（a-z）、数字（0-9）、中划线（-）、下划线（_）、冒号（:）和小数点（.）。 值。最大长度为255个Unicode字符。
-     * 
-     * @return metadata */
+    /**
+     * 用户自定义metadata键值对。  结构体允许为空，取值为空时不更新数据。  键。最大长度255个Unicode字符，不能为空。可以为大写字母（A-Z）、小写字母（a-z）、数字（0-9）、中划线（-）、下划线（_）、冒号（:）和小数点（.）。  值。最大长度为255个Unicode字符。
+     * @return metadata
+     */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -75,7 +77,10 @@ public class UpdateServerMetadataRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

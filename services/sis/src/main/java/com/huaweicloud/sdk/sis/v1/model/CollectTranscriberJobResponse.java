@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CollectTranscriberJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前识别状态。具体状态如下所示： WAITING 等待识别。 FINISHED 识别已经完成。 ERROR 识别过程中发生错误。
-     * 
-     * @return status */
+    /**
+     * 当前识别状态。具体状态如下所示：  WAITING 等待识别。 FINISHED 识别已经完成。 ERROR 识别过程中发生错误。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -58,9 +61,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务创建时间, 遵循 RFC 3339格式。 格式示例：2018-12-04T13:10:29.310Z。
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间, 遵循 RFC 3339格式。 格式示例：2018-12-04T13:10:29.310Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -74,9 +78,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 开始识别时间, 遵循 RFC 3339格式。 当status为FINISHED或ERROR时存在。 格式示例：2018-12-04T13:10:29.310Z。
-     * 
-     * @return startTime */
+    /**
+     * 开始识别时间, 遵循 RFC 3339格式。 当status为FINISHED或ERROR时存在。 格式示例：2018-12-04T13:10:29.310Z。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -90,9 +95,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 识别完成时间, 遵循 RFC 3339格式。 当status为FINISHED或ERROR时存在。 格式示例：2018-12-04T13:10:29.310Z。
-     * 
-     * @return finishTime */
+    /**
+     * 识别完成时间, 遵循 RFC 3339格式。 当status为FINISHED或ERROR时存在。 格式示例：2018-12-04T13:10:29.310Z。 
+     * @return finishTime
+     */
     public String getFinishTime() {
         return finishTime;
     }
@@ -122,9 +128,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 转写结果, 多句结果的数组。
-     * 
-     * @return segments */
+    /**
+     * 转写结果, 多句结果的数组。 
+     * @return segments
+     */
     public List<Segment> getSegments() {
         return segments;
     }
@@ -167,7 +174,10 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

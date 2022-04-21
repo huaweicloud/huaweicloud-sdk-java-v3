@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Single2Ha */
+/**
+ * Single2Ha
+ */
 public class Single2Ha {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Single2Ha {
         return this;
     }
 
-    /** Get singleToHa
-     * 
-     * @return singleToHa */
+    /**
+     * Get singleToHa
+     * @return singleToHa
+     */
     public Single2HaObject getSingleToHa() {
         return singleToHa;
     }
@@ -65,7 +68,10 @@ public class Single2Ha {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

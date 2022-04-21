@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 镜像信息响应体 */
+/**
+ * 镜像信息响应体
+ */
 public class GlanceShowImageResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,13 +38,19 @@ public class GlanceShowImageResponseBody {
 
     private String imageSize;
 
-    /** 镜像后端存储类型，目前只支持uds */
+    /**
+     * 镜像后端存储类型，目前只支持uds
+     */
     public static final class ImageSourceTypeEnum {
 
-        /** Enum UDS for value: "uds" */
+        /**
+         * Enum UDS for value: "uds"
+         */
         public static final ImageSourceTypeEnum UDS = new ImageSourceTypeEnum("uds");
 
-        /** Enum SWIFT for value: "swift" */
+        /**
+         * Enum SWIFT for value: "swift"
+         */
         public static final ImageSourceTypeEnum SWIFT = new ImageSourceTypeEnum("swift");
 
         private static final Map<String, ImageSourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,16 +120,24 @@ public class GlanceShowImageResponseBody {
 
     private ImageSourceTypeEnum imageSourceType;
 
-    /** 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared */
+    /**
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     */
     public static final class ImagetypeEnum {
 
-        /** Enum GOLD for value: "gold" */
+        /**
+         * Enum GOLD for value: "gold"
+         */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final ImagetypeEnum PRIVATE = new ImagetypeEnum("private");
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
         private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -192,13 +208,19 @@ public class GlanceShowImageResponseBody {
 
     private ImagetypeEnum imagetype;
 
-    /** 是否是注册过的镜像，取值为“true”或者“false”。 */
+    /**
+     * 是否是注册过的镜像，取值为“true”或者“false”。
+     */
     public static final class IsregisteredEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IsregisteredEnum TRUE = new IsregisteredEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final IsregisteredEnum FALSE = new IsregisteredEnum("false");
 
         private static final Map<String, IsregisteredEnum> STATIC_FIELDS = createStaticFields();
@@ -273,13 +295,19 @@ public class GlanceShowImageResponseBody {
 
     private String originalimagename;
 
-    /** 操作系统位数，一般取值为“32”或者“64”。 */
+    /**
+     * 操作系统位数，一般取值为“32”或者“64”。
+     */
     public static final class OsBitEnum {
 
-        /** Enum _32 for value: "32" */
+        /**
+         * Enum _32 for value: "32"
+         */
         public static final OsBitEnum _32 = new OsBitEnum("32");
 
-        /** Enum _64 for value: "64" */
+        /**
+         * Enum _64 for value: "64"
+         */
         public static final OsBitEnum _64 = new OsBitEnum("64");
 
         private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
@@ -349,16 +377,24 @@ public class GlanceShowImageResponseBody {
 
     private OsBitEnum osBit;
 
-    /** 操作系统类型，目前取值Linux， Windows，Other。 */
+    /**
+     * 操作系统类型，目前取值Linux， Windows，Other。
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum OTHER for value: "Other" */
+        /**
+         * Enum OTHER for value: "Other"
+         */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -434,43 +470,69 @@ public class GlanceShowImageResponseBody {
 
     private String osVersion;
 
-    /** 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS。 */
+    /**
+     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS。
+     */
     public static final class PlatformEnum {
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final PlatformEnum WINDOWS = new PlatformEnum("Windows");
 
-        /** Enum UBUNTU for value: "Ubuntu" */
+        /**
+         * Enum UBUNTU for value: "Ubuntu"
+         */
         public static final PlatformEnum UBUNTU = new PlatformEnum("Ubuntu");
 
-        /** Enum REDHAT for value: "RedHat" */
+        /**
+         * Enum REDHAT for value: "RedHat"
+         */
         public static final PlatformEnum REDHAT = new PlatformEnum("RedHat");
 
-        /** Enum SUSE for value: "SUSE" */
+        /**
+         * Enum SUSE for value: "SUSE"
+         */
         public static final PlatformEnum SUSE = new PlatformEnum("SUSE");
 
-        /** Enum CENTOS for value: "CentOS" */
+        /**
+         * Enum CENTOS for value: "CentOS"
+         */
         public static final PlatformEnum CENTOS = new PlatformEnum("CentOS");
 
-        /** Enum DEBIAN for value: "Debian" */
+        /**
+         * Enum DEBIAN for value: "Debian"
+         */
         public static final PlatformEnum DEBIAN = new PlatformEnum("Debian");
 
-        /** Enum OPENSUSE for value: "OpenSUSE" */
+        /**
+         * Enum OPENSUSE for value: "OpenSUSE"
+         */
         public static final PlatformEnum OPENSUSE = new PlatformEnum("OpenSUSE");
 
-        /** Enum ORACLELINUX for value: "OracleLinux" */
+        /**
+         * Enum ORACLELINUX for value: "OracleLinux"
+         */
         public static final PlatformEnum ORACLELINUX = new PlatformEnum("OracleLinux");
 
-        /** Enum FEDORA for value: "Fedora" */
+        /**
+         * Enum FEDORA for value: "Fedora"
+         */
         public static final PlatformEnum FEDORA = new PlatformEnum("Fedora");
 
-        /** Enum OTHER for value: "Other" */
+        /**
+         * Enum OTHER for value: "Other"
+         */
         public static final PlatformEnum OTHER = new PlatformEnum("Other");
 
-        /** Enum COREOS for value: "CoreOS" */
+        /**
+         * Enum COREOS for value: "CoreOS"
+         */
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
 
-        /** Enum EULEROS for value: "EulerOS" */
+        /**
+         * Enum EULEROS for value: "EulerOS"
+         */
         public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
 
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
@@ -615,22 +677,34 @@ public class GlanceShowImageResponseBody {
 
     private String createdAt;
 
-    /** 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。 */
+    /**
+     * 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
+     */
     public static final class DiskFormatEnum {
 
-        /** Enum VHD for value: "vhd" */
+        /**
+         * Enum VHD for value: "vhd"
+         */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
 
-        /** Enum ZVHD for value: "zvhd" */
+        /**
+         * Enum ZVHD for value: "zvhd"
+         */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
 
-        /** Enum RAW for value: "raw" */
+        /**
+         * Enum RAW for value: "raw"
+         */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
 
-        /** Enum QCOW2 for value: "qcow2" */
+        /**
+         * Enum QCOW2 for value: "qcow2"
+         */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
-        /** Enum ZVHD2 for value: "zvhd2" */
+        /**
+         * Enum ZVHD2 for value: "zvhd2"
+         */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -753,22 +827,34 @@ public class GlanceShowImageResponseBody {
 
     private Long size;
 
-    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。 */
+    /**
+     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
+     */
     public static final class StatusEnum {
 
-        /** Enum QUEUED for value: "queued" */
+        /**
+         * Enum QUEUED for value: "queued"
+         */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
 
-        /** Enum SAVING for value: "saving" */
+        /**
+         * Enum SAVING for value: "saving"
+         */
         public static final StatusEnum SAVING = new StatusEnum("saving");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum KILLED for value: "killed" */
+        /**
+         * Enum KILLED for value: "killed"
+         */
         public static final StatusEnum KILLED = new StatusEnum("killed");
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -851,16 +937,24 @@ public class GlanceShowImageResponseBody {
 
     private String updatedAt;
 
-    /** 镜像使用环境类型：FusionCompute，Ironic，DataImage。 */
+    /**
+     * 镜像使用环境类型：FusionCompute，Ironic，DataImage。
+     */
     public static final class VirtualEnvTypeEnum {
 
-        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
+        /**
+         * Enum FUSIONCOMPUTE for value: "FusionCompute"
+         */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
 
-        /** Enum IRONIC for value: "Ironic" */
+        /**
+         * Enum IRONIC for value: "Ironic"
+         */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
 
-        /** Enum DATAIMAGE for value: "DataImage" */
+        /**
+         * Enum DATAIMAGE for value: "DataImage"
+         */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
 
         private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -936,16 +1030,24 @@ public class GlanceShowImageResponseBody {
 
     private Integer virtualSize;
 
-    /** 是否被其他租户可见，取值如下：private：私有镜像public：公共镜像shared：共享镜像 */
+    /**
+     * 是否被其他租户可见，取值如下：private：私有镜像public：公共镜像shared：共享镜像
+     */
     public static final class VisibilityEnum {
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final VisibilityEnum PRIVATE = new VisibilityEnum("private");
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final VisibilityEnum PUBLIC = new VisibilityEnum("public");
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final VisibilityEnum SHARED = new VisibilityEnum("shared");
 
         private static final Map<String, VisibilityEnum> STATIC_FIELDS = createStaticFields();
@@ -1016,13 +1118,19 @@ public class GlanceShowImageResponseBody {
 
     private VisibilityEnum visibility;
 
-    /** 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。 */
+    /**
+     * 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
+     */
     public static final class SupportFcInjectEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final SupportFcInjectEnum TRUE = new SupportFcInjectEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final SupportFcInjectEnum FALSE = new SupportFcInjectEnum("false");
 
         private static final Map<String, SupportFcInjectEnum> STATIC_FIELDS = createStaticFields();
@@ -1097,13 +1205,19 @@ public class GlanceShowImageResponseBody {
 
     private String enterpriseProjectId;
 
-    /** 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。 */
+    /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     */
     public static final class HwFirmwareTypeEnum {
 
-        /** Enum BIOS for value: "bios" */
+        /**
+         * Enum BIOS for value: "bios"
+         */
         public static final HwFirmwareTypeEnum BIOS = new HwFirmwareTypeEnum("bios");
 
-        /** Enum UEFI for value: "uefi" */
+        /**
+         * Enum UEFI for value: "uefi"
+         */
         public static final HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
 
         private static final Map<String, HwFirmwareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -1173,13 +1287,19 @@ public class GlanceShowImageResponseBody {
 
     private HwFirmwareTypeEnum hwFirmwareType;
 
-    /** 是否为ARM架构类型的镜像，取值为“true”或者“false”。 */
+    /**
+     * 是否为ARM架构类型的镜像，取值为“true”或者“false”。
+     */
     public static final class SupportArmEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final SupportArmEnum TRUE = new SupportArmEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final SupportArmEnum FALSE = new SupportArmEnum("false");
 
         private static final Map<String, SupportArmEnum> STATIC_FIELDS = createStaticFields();
@@ -1249,13 +1369,19 @@ public class GlanceShowImageResponseBody {
 
     private SupportArmEnum supportArm;
 
-    /** 表示当前市场镜像是否下架。 true：已下架 false：未下架 */
+    /**
+     * 表示当前市场镜像是否下架。 true：已下架 false：未下架
+     */
     public static final class IsOffshelvedEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final IsOffshelvedEnum TRUE = new IsOffshelvedEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final IsOffshelvedEnum FALSE = new IsOffshelvedEnum("false");
 
         private static final Map<String, IsOffshelvedEnum> STATIC_FIELDS = createStaticFields();
@@ -1395,9 +1521,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 备份ID。如果是备份创建的镜像，则填写为备份的ID，否则为空。
-     * 
-     * @return backupId */
+    /**
+     * 备份ID。如果是备份创建的镜像，则填写为备份的ID，否则为空。
+     * @return backupId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__backup_id")
     public String getBackupId() {
@@ -1413,9 +1540,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像来源。公共镜像为空。
-     * 
-     * @return dataOrigin */
+    /**
+     * 镜像来源。公共镜像为空。
+     * @return dataOrigin
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__data_origin")
     public String getDataOrigin() {
@@ -1431,9 +1559,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像描述信息。
-     * 
-     * @return description */
+    /**
+     * 镜像描述信息。
+     * @return description
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__description")
     public String getDescription() {
@@ -1449,9 +1578,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像文件的大小，单位为字节。目前取值为大于0的字符串。
-     * 
-     * @return imageSize */
+    /**
+     * 镜像文件的大小，单位为字节。目前取值为大于0的字符串。
+     * @return imageSize
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_size")
     public String getImageSize() {
@@ -1467,9 +1597,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像后端存储类型，目前只支持uds
-     * 
-     * @return imageSourceType */
+    /**
+     * 镜像后端存储类型，目前只支持uds
+     * @return imageSourceType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_source_type")
     public ImageSourceTypeEnum getImageSourceType() {
@@ -1485,9 +1616,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
-     * 
-     * @return imagetype */
+    /**
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     * @return imagetype
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
     public ImagetypeEnum getImagetype() {
@@ -1503,9 +1635,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否是注册过的镜像，取值为“true”或者“false”。
-     * 
-     * @return isregistered */
+    /**
+     * 是否是注册过的镜像，取值为“true”或者“false”。
+     * @return isregistered
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
     public IsregisteredEnum getIsregistered() {
@@ -1521,9 +1654,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 父镜像ID。公共镜像或通过文件创建的私有镜像，取值为空。
-     * 
-     * @return originalimagename */
+    /**
+     * 父镜像ID。公共镜像或通过文件创建的私有镜像，取值为空。
+     * @return originalimagename
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__originalimagename")
     public String getOriginalimagename() {
@@ -1539,9 +1673,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 操作系统位数，一般取值为“32”或者“64”。
-     * 
-     * @return osBit */
+    /**
+     * 操作系统位数，一般取值为“32”或者“64”。
+     * @return osBit
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_bit")
     public OsBitEnum getOsBit() {
@@ -1557,9 +1692,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 操作系统类型，目前取值Linux， Windows，Other。
-     * 
-     * @return osType */
+    /**
+     * 操作系统类型，目前取值Linux， Windows，Other。
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
@@ -1575,9 +1711,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 操作系统具体版本。
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统具体版本。
+     * @return osVersion
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
     public String getOsVersion() {
@@ -1593,9 +1730,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS。
-     * 
-     * @return platform */
+    /**
+     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS。
+     * @return platform
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
     public PlatformEnum getPlatform() {
@@ -1611,9 +1749,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 市场镜像的产品ID。
-     * 
-     * @return productcode */
+    /**
+     * 市场镜像的产品ID。
+     * @return productcode
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__productcode")
     public String getProductcode() {
@@ -1629,9 +1768,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示该镜像支持密集存储。如果镜像支持密集存储性能，则值为true，否则无需增加该属性。
-     * 
-     * @return supportDiskintensive */
+    /**
+     * 表示该镜像支持密集存储。如果镜像支持密集存储性能，则值为true，否则无需增加该属性。
+     * @return supportDiskintensive
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_diskintensive")
     public String getSupportDiskintensive() {
@@ -1647,9 +1787,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示该镜像支持高计算性能。如果镜像支持高计算性能，则值为true，否则无需增加该属性。
-     * 
-     * @return supportHighperformance */
+    /**
+     * 表示该镜像支持高计算性能。如果镜像支持高计算性能，则值为true，否则无需增加该属性。
+     * @return supportHighperformance
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_highperformance")
     public String getSupportHighperformance() {
@@ -1665,9 +1806,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 如果镜像支持KVM，取值为true，否则无需增加该属性。
-     * 
-     * @return supportKvm */
+    /**
+     * 如果镜像支持KVM，取值为true，否则无需增加该属性。
+     * @return supportKvm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm")
     public String getSupportKvm() {
@@ -1683,9 +1825,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示该镜像是支持KVM虚拟化平台下的GPU类型，如果不支持KVM虚拟机下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
-     * 
-     * @return supportKvmGpuType */
+    /**
+     * 表示该镜像是支持KVM虚拟化平台下的GPU类型，如果不支持KVM虚拟机下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
+     * @return supportKvmGpuType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
@@ -1701,9 +1844,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 如果镜像支持KVM虚拟化下Infiniband网卡类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”属性不共存。
-     * 
-     * @return supportKvmInfiniband */
+    /**
+     * 如果镜像支持KVM虚拟化下Infiniband网卡类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”属性不共存。
+     * @return supportKvmInfiniband
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_infiniband")
     public String getSupportKvmInfiniband() {
@@ -1719,9 +1863,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示该镜像支持超大内存。如果镜像支持超大内存，取值为true，否则无需增加该属性
-     * 
-     * @return supportLargememory */
+    /**
+     * 表示该镜像支持超大内存。如果镜像支持超大内存，取值为true，否则无需增加该属性
+     * @return supportLargememory
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_largememory")
     public String getSupportLargememory() {
@@ -1737,9 +1882,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 如果镜像支持XEN，取值为true，否则无需增加该属性。
-     * 
-     * @return supportXen */
+    /**
+     * 如果镜像支持XEN，取值为true，否则无需增加该属性。
+     * @return supportXen
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_xen")
     public String getSupportXen() {
@@ -1755,10 +1901,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示该镜像是支持XEN虚拟化平台下的GPU优化类型，取值参考8.10-表 镜像支持的GPU类型说明。镜像操作系统类型请参考8.10-表
-     * 镜像类型。如果不支持XEN虚拟化下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
-     * 
-     * @return supportXenGpuType */
+    /**
+     * 表示该镜像是支持XEN虚拟化平台下的GPU优化类型，取值参考8.10-表 镜像支持的GPU类型说明。镜像操作系统类型请参考8.10-表 镜像类型。如果不支持XEN虚拟化下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
+     * @return supportXenGpuType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_xen_gpu_type")
     public String getSupportXenGpuType() {
@@ -1774,9 +1920,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 如果镜像支持XEN虚拟化下HANA类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
-     * 
-     * @return supportXenHana */
+    /**
+     * 如果镜像支持XEN虚拟化下HANA类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
+     * @return supportXenHana
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_xen_hana")
     public String getSupportXenHana() {
@@ -1792,9 +1939,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 目前暂时不使用。
-     * 
-     * @return checksum */
+    /**
+     * 目前暂时不使用。
+     * @return checksum
+     */
     public String getChecksum() {
         return checksum;
     }
@@ -1808,9 +1956,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 容器类型。
-     * 
-     * @return containerFormat */
+    /**
+     * 容器类型。
+     * @return containerFormat
+     */
     public String getContainerFormat() {
         return containerFormat;
     }
@@ -1824,9 +1973,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 创建时间。格式为UTC时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。格式为UTC时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -1840,9 +1990,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
-     * 
-     * @return diskFormat */
+    /**
+     * 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
+     * @return diskFormat
+     */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -1856,9 +2007,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像文件下载和上传链接。
-     * 
-     * @return file */
+    /**
+     * 镜像文件下载和上传链接。
+     * @return file
+     */
     public String getFile() {
         return file;
     }
@@ -1872,9 +2024,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return id */
+    /**
+     * 镜像ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -1888,9 +2041,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像运行需要的最小磁盘容量，单位为GB
-     * 
-     * @return minDisk */
+    /**
+     * 镜像运行需要的最小磁盘容量，单位为GB 
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -1904,9 +2058,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像运行最小内存，单位为MB。
-     * 
-     * @return minRam */
+    /**
+     * 镜像运行最小内存，单位为MB。
+     * @return minRam
+     */
     public Integer getMinRam() {
         return minRam;
     }
@@ -1920,9 +2075,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像名称。
-     * 
-     * @return name */
+    /**
+     * 镜像名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -1936,9 +2092,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像属于哪个租户。
-     * 
-     * @return owner */
+    /**
+     * 镜像属于哪个租户。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -1952,9 +2109,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否是受保护的，受保护的镜像不允许删除。取值为true或false。
-     * 
-     * @return _protected */
+    /**
+     * 是否是受保护的，受保护的镜像不允许删除。取值为true或false。
+     * @return _protected
+     */
     public Boolean getProtected() {
         return _protected;
     }
@@ -1968,9 +2126,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像视图。
-     * 
-     * @return schema */
+    /**
+     * 镜像视图。
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -1984,9 +2143,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像链接信息。
-     * 
-     * @return self */
+    /**
+     * 镜像链接信息。
+     * @return self
+     */
     public String getSelf() {
         return self;
     }
@@ -2000,9 +2160,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 目前暂时不使用。
-     * 
-     * @return size */
+    /**
+     * 目前暂时不使用。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -2016,9 +2177,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
-     * 
-     * @return status */
+    /**
+     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -2048,9 +2210,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像标签列表，提供用户可以自定义管理私有镜像的能力。用户可以通过镜像标签接口为每个镜像增加不同的标签，在查询接口中可以根据标签进行过滤。
-     * 
-     * @return tags */
+    /**
+     * 镜像标签列表，提供用户可以自定义管理私有镜像的能力。用户可以通过镜像标签接口为每个镜像增加不同的标签，在查询接口中可以根据标签进行过滤。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -2064,9 +2227,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 更新时间。格式为UTC时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。格式为UTC时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -2080,9 +2244,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像使用环境类型：FusionCompute，Ironic，DataImage。
-     * 
-     * @return virtualEnvType */
+    /**
+     * 镜像使用环境类型：FusionCompute，Ironic，DataImage。
+     * @return virtualEnvType
+     */
     public VirtualEnvTypeEnum getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -2096,9 +2261,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 目前暂时不使用。
-     * 
-     * @return virtualSize */
+    /**
+     * 目前暂时不使用。
+     * @return virtualSize
+     */
     public Integer getVirtualSize() {
         return virtualSize;
     }
@@ -2112,9 +2278,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否被其他租户可见，取值如下：private：私有镜像public：公共镜像shared：共享镜像
-     * 
-     * @return visibility */
+    /**
+     * 是否被其他租户可见，取值如下：private：私有镜像public：公共镜像shared：共享镜像
+     * @return visibility
+     */
     public VisibilityEnum getVisibility() {
         return visibility;
     }
@@ -2128,9 +2295,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
-     * 
-     * @return supportFcInject */
+    /**
+     * 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
+     * @return supportFcInject
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_fc_inject")
     public SupportFcInjectEnum getSupportFcInject() {
@@ -2146,9 +2314,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -2162,9 +2331,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
-     * 
-     * @return hwFirmwareType */
+    /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     * @return hwFirmwareType
+     */
     public HwFirmwareTypeEnum getHwFirmwareType() {
         return hwFirmwareType;
     }
@@ -2178,9 +2348,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否为ARM架构类型的镜像，取值为“true”或者“false”。
-     * 
-     * @return supportArm */
+    /**
+     * 是否为ARM架构类型的镜像，取值为“true”或者“false”。
+     * @return supportArm
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_arm")
     public SupportArmEnum getSupportArm() {
@@ -2196,9 +2367,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示当前市场镜像是否下架。 true：已下架 false：未下架
-     * 
-     * @return isOffshelved */
+    /**
+     * 表示当前市场镜像是否下架。 true：已下架 false：未下架
+     * @return isOffshelved
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__is_offshelved")
     public IsOffshelvedEnum getIsOffshelved() {
@@ -2214,9 +2386,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像是否支持延迟加载。取值为True或False。
-     * 
-     * @return lazyloading */
+    /**
+     * 镜像是否支持延迟加载。取值为True或False。
+     * @return lazyloading
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__lazyloading")
     public String getLazyloading() {
@@ -2232,9 +2405,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
-     * 
-     * @return osFeatureList */
+    /**
+     * 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+     * @return osFeatureList
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_feature_list")
     public String getOsFeatureList() {
@@ -2250,9 +2424,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 表示当前镜像来源是从外部导入。取值：file。
-     * 
-     * @return rootOrigin */
+    /**
+     * 表示当前镜像来源是从外部导入。取值：file。
+     * @return rootOrigin
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__root_origin")
     public String getRootOrigin() {
@@ -2268,9 +2443,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 目前暂时不用
-     * 
-     * @return sequenceNum */
+    /**
+     * 目前暂时不用
+     * @return sequenceNum
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__sequence_num")
     public String getSequenceNum() {
@@ -2286,9 +2462,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
-     * 
-     * @return supportAgentList */
+    /**
+     * 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+     * @return supportAgentList
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_agent_list")
     public String getSupportAgentList() {
@@ -2304,9 +2481,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 加密镜像所使用的密钥ID。
-     * 
-     * @return systemCmkid */
+    /**
+     * 加密镜像所使用的密钥ID。
+     * @return systemCmkid
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__cmkid")
     public String getSystemCmkid() {
@@ -2322,9 +2500,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像状态变为正常的时间。
-     * 
-     * @return activeAt */
+    /**
+     * 镜像状态变为正常的时间。
+     * @return activeAt
+     */
     public String getActiveAt() {
         return activeAt;
     }
@@ -2338,9 +2517,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像是否支持网卡多队列。取值为true或者false。
-     * 
-     * @return hwVifMultiqueueEnabled */
+    /**
+     * 镜像是否支持网卡多队列。取值为true或者false。
+     * @return hwVifMultiqueueEnabled
+     */
     public String getHwVifMultiqueueEnabled() {
         return hwVifMultiqueueEnabled;
     }
@@ -2354,9 +2534,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
-     * 
-     * @return maxRam */
+    /**
+     * 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+     * @return maxRam
+     */
     public String getMaxRam() {
         return maxRam;
     }
@@ -2370,9 +2551,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 镜像的存储位置。
-     * 
-     * @return imageLocation */
+    /**
+     * 镜像的存储位置。
+     * @return imageLocation
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_location")
     public String getImageLocation() {
@@ -2388,9 +2570,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否完成了初始化配置。取值为true或false
-     * 
-     * @return isConfigInit */
+    /**
+     * 是否完成了初始化配置。取值为true或false
+     * @return isConfigInit
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__is_config_init")
     public String getIsConfigInit() {
@@ -2406,9 +2589,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 收费镜像标识。
-     * 
-     * @return accountCode */
+    /**
+     * 收费镜像标识。
+     * @return accountCode
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__account_code")
     public String getAccountCode() {
@@ -2424,9 +2608,10 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    /** 是否是AMD架构类型的镜像。取值为“true”或者“false”。
-     * 
-     * @return supportAmd */
+    /**
+     * 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * @return supportAmd
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_amd")
     public String getSupportAmd() {
@@ -2640,7 +2825,10 @@ public class GlanceShowImageResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

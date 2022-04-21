@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 白名单信息。 */
+/**
+ * 白名单信息。
+ */
 public class CreateClusterPublicKibanaElbWhiteList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateClusterPublicKibanaElbWhiteList {
         return this;
     }
 
-    /** 白名单。
-     * 
-     * @return whiteList */
+    /**
+     * 白名单。
+     * @return whiteList
+     */
     public String getWhiteList() {
         return whiteList;
     }
@@ -39,9 +42,10 @@ public class CreateClusterPublicKibanaElbWhiteList {
         return this;
     }
 
-    /** 是否开启访问控制。
-     * 
-     * @return enableWhiteList */
+    /**
+     * 是否开启访问控制。
+     * @return enableWhiteList
+     */
     public Boolean getEnableWhiteList() {
         return enableWhiteList;
     }
@@ -79,7 +83,10 @@ public class CreateClusterPublicKibanaElbWhiteList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

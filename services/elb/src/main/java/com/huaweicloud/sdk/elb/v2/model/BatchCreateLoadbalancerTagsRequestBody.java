@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchCreateLoadbalancerTagsRequestBody {
 
-    /** 操作类型。 取值范围：create - 创建标签。 */
+    /**
+     * 操作类型。 取值范围：create - 创建标签。
+     */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -98,9 +104,10 @@ public class BatchCreateLoadbalancerTagsRequestBody {
         return this;
     }
 
-    /** 操作类型。 取值范围：create - 创建标签。
-     * 
-     * @return action */
+    /**
+     * 操作类型。 取值范围：create - 创建标签。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -130,9 +137,10 @@ public class BatchCreateLoadbalancerTagsRequestBody {
         return this;
     }
 
-    /** 标签对象列表。
-     * 
-     * @return tags */
+    /**
+     * 标签对象列表。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -170,7 +178,10 @@ public class BatchCreateLoadbalancerTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

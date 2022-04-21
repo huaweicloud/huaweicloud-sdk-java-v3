@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ImportFileReq */
+/**
+ * ImportFileReq
+ */
 public class ImportFileReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ImportFileReq {
 
     private Object params;
 
-    /** Gets or Sets sameNamePolicy */
+    /**
+     * Gets or Sets sameNamePolicy
+     */
     public static final class SameNamePolicyEnum {
 
-        /** Enum SKIP for value: "SKIP" */
+        /**
+         * Enum SKIP for value: "SKIP"
+         */
         public static final SameNamePolicyEnum SKIP = new SameNamePolicyEnum("SKIP");
 
-        /** Enum OVERWRITE for value: "OVERWRITE" */
+        /**
+         * Enum OVERWRITE for value: "OVERWRITE"
+         */
         public static final SameNamePolicyEnum OVERWRITE = new SameNamePolicyEnum("OVERWRITE");
 
         private static final Map<String, SameNamePolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class ImportFileReq {
         return this;
     }
 
-    /** Get path
-     * 
-     * @return path */
+    /**
+     * Get path
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -130,9 +139,10 @@ public class ImportFileReq {
         return this;
     }
 
-    /** 公共作业参数
-     * 
-     * @return params */
+    /**
+     * 公共作业参数
+     * @return params
+     */
     public Object getParams() {
         return params;
     }
@@ -146,9 +156,10 @@ public class ImportFileReq {
         return this;
     }
 
-    /** Get sameNamePolicy
-     * 
-     * @return sameNamePolicy */
+    /**
+     * Get sameNamePolicy
+     * @return sameNamePolicy
+     */
     public SameNamePolicyEnum getSameNamePolicy() {
         return sameNamePolicy;
     }
@@ -162,9 +173,10 @@ public class ImportFileReq {
         return this;
     }
 
-    /** 指定作业参数
-     * 
-     * @return jobsParam */
+    /**
+     * 指定作业参数
+     * @return jobsParam
+     */
     public Object getJobsParam() {
         return jobsParam;
     }
@@ -178,9 +190,10 @@ public class ImportFileReq {
         return this;
     }
 
-    /** Get executeUser
-     * 
-     * @return executeUser */
+    /**
+     * Get executeUser
+     * @return executeUser
+     */
     public String getExecuteUser() {
         return executeUser;
     }
@@ -222,7 +235,10 @@ public class ImportFileReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

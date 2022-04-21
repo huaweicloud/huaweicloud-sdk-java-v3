@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PeerChannelInfo */
+/**
+ * PeerChannelInfo
+ */
 public class PeerChannelInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class PeerChannelInfo {
         return this;
     }
 
-    /** peer加入的通道名称
-     * 
-     * @return channelName */
+    /**
+     * peer加入的通道名称
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -58,9 +61,10 @@ public class PeerChannelInfo {
         return this;
     }
 
-    /** 加入通道peer名称和数量，key为组织名称，value为peer数量
-     * 
-     * @return peers */
+    /**
+     * 加入通道peer名称和数量，key为组织名称，value为peer数量
+     * @return peers
+     */
     public Map<String, Long> getPeers() {
         return peers;
     }
@@ -97,7 +101,10 @@ public class PeerChannelInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

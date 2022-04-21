@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建容器时使用的资源 */
+/**
+ * 创建容器时使用的资源
+ */
 public class DeploymentResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class DeploymentResources {
         return this;
     }
 
-    /** 允许容器使用的最大资源
-     * 
-     * @return limits */
+    /**
+     * 允许容器使用的最大资源
+     * @return limits
+     */
     public Map<String, String> getLimits() {
         return limits;
     }
@@ -74,9 +77,10 @@ public class DeploymentResources {
         return this;
     }
 
-    /** 容器需要使用的最小资源
-     * 
-     * @return requests */
+    /**
+     * 容器需要使用的最小资源
+     * @return requests
+     */
     public Map<String, String> getRequests() {
         return requests;
     }
@@ -113,7 +117,10 @@ public class DeploymentResources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

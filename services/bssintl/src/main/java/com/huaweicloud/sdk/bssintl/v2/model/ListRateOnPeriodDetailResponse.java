@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListRateOnPeriodDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get officialWebsiteRatingResult
-     * 
-     * @return officialWebsiteRatingResult */
+    /**
+     * Get officialWebsiteRatingResult
+     * @return officialWebsiteRatingResult
+     */
     public OfficialWebsiteRatingResult getOfficialWebsiteRatingResult() {
         return officialWebsiteRatingResult;
     }
@@ -78,9 +81,10 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表4。
-     * 
-     * @return optionalDiscountRatingResults */
+    /**
+     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表4。
+     * @return optionalDiscountRatingResults
+     */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {
         return optionalDiscountRatingResults;
     }
@@ -94,9 +98,10 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 币种。 USD：美元。 值为空代表美元。
-     * 
-     * @return currency */
+    /**
+     * 币种。 USD：美元。 值为空代表美元。
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -141,7 +146,10 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

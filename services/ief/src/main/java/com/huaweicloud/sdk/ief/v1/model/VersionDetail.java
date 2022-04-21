@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用模板版本配置 */
+/**
+ * 应用模板版本配置
+ */
 public class VersionDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 应用版本号
-     * 
-     * @return version */
+    /**
+     * 应用版本号
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -92,9 +95,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 镜像存储地址
-     * 
-     * @return imageUrl */
+    /**
+     * 镜像存储地址
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -124,9 +128,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 环境变量
-     * 
-     * @return envs */
+    /**
+     * 环境变量
+     * @return envs
+     */
     public List<Env> getEnvs() {
         return envs;
     }
@@ -156,9 +161,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 卷配置
-     * 
-     * @return volumes */
+    /**
+     * 卷配置
+     * @return volumes
+     */
     public List<Volumes> getVolumes() {
         return volumes;
     }
@@ -181,9 +187,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** Get configs
-     * 
-     * @return configs */
+    /**
+     * Get configs
+     * @return configs
+     */
     public VersionDetailConfigs getConfigs() {
         return configs;
     }
@@ -206,9 +213,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** Get resources
-     * 
-     * @return resources */
+    /**
+     * Get resources
+     * @return resources
+     */
     public VersionDetailResources getResources() {
         return resources;
     }
@@ -222,9 +230,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 架构
-     * 
-     * @return arch */
+    /**
+     * 架构
+     * @return arch
+     */
     public String getArch() {
         return arch;
     }
@@ -254,9 +263,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 启动命令
-     * 
-     * @return command */
+    /**
+     * 启动命令
+     * @return command
+     */
     public List<String> getCommand() {
         return command;
     }
@@ -286,9 +296,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** 参数
-     * 
-     * @return args */
+    /**
+     * 参数
+     * @return args
+     */
     public List<String> getArgs() {
         return args;
     }
@@ -311,9 +322,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** Get livenessProbe
-     * 
-     * @return livenessProbe */
+    /**
+     * Get livenessProbe
+     * @return livenessProbe
+     */
     public AppVersionDetailLivenessProbe getLivenessProbe() {
         return livenessProbe;
     }
@@ -336,9 +348,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** Get readinessProbe
-     * 
-     * @return readinessProbe */
+    /**
+     * Get readinessProbe
+     * @return readinessProbe
+     */
     public AppVersionDetailReadinessProbe getReadinessProbe() {
         return readinessProbe;
     }
@@ -352,9 +365,10 @@ public class VersionDetail {
         return this;
     }
 
-    /** npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
-     * 
-     * @return npuType */
+    /**
+     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * @return npuType
+     */
     public String getNpuType() {
         return npuType;
     }
@@ -419,7 +433,10 @@ public class VersionDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

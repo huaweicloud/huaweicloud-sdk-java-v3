@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateProjectV4Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目数字id
-     * 
-     * @return projectNumId */
+    /**
+     * 项目数字id
+     * @return projectNumId
+     */
     public Integer getProjectNumId() {
         return projectNumId;
     }
@@ -60,9 +63,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -76,9 +80,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目名
-     * 
-     * @return projectName */
+    /**
+     * 项目名
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -92,9 +97,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目描述
-     * 
-     * @return description */
+    /**
+     * 项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -108,9 +114,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 项目类型
-     * 
-     * @return projectType */
+    /**
+     * 项目类型
+     * @return projectType
+     */
     public String getProjectType() {
         return projectType;
     }
@@ -124,9 +131,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return this;
     }
 
-    /** 创建者的数字id
-     * 
-     * @return userNumId */
+    /**
+     * 创建者的数字id
+     * @return userNumId
+     */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -171,7 +179,10 @@ public class CreateProjectV4Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

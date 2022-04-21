@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListListenersByTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListListenersByTagsResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录数。当resources为空时，表示名称为matches字段中指定的value的资源个数；resources不为空时，表示和tags字段匹配的资源的个数。
-     * 
-     * @return totalCount */
+    /**
+     * 总记录数。当resources为空时，表示名称为matches字段中指定的value的资源个数；resources不为空时，表示和tags字段匹配的资源的个数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -59,9 +62,10 @@ public class ListListenersByTagsResponse extends SdkResponse {
         return this;
     }
 
-    /** 根据tag查询出的资源对象。 当请求中的action为filters，返回体中有该字段。 当请求中的action为count时，返回体中无该字段。
-     * 
-     * @return resources */
+    /**
+     * 根据tag查询出的资源对象。 当请求中的action为filters，返回体中有该字段。 当请求中的action为count时，返回体中无该字段。
+     * @return resources
+     */
     public List<ResourcesByTag> getResources() {
         return resources;
     }
@@ -98,7 +102,10 @@ public class ListListenersByTagsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

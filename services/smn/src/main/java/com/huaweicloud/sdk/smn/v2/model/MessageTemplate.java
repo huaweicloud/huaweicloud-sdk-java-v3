@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MessageTemplate */
+/**
+ * MessageTemplate
+ */
 public class MessageTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板ID。
-     * 
-     * @return messageTemplateId */
+    /**
+     * 模板ID。
+     * @return messageTemplateId
+     */
     public String getMessageTemplateId() {
         return messageTemplateId;
     }
@@ -62,9 +65,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板名称。
-     * 
-     * @return messageTemplateName */
+    /**
+     * 模板名称。
+     * @return messageTemplateName
+     */
     public String getMessageTemplateName() {
         return messageTemplateName;
     }
@@ -78,10 +82,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板协议类型。 目前支持的协议包括： “email”：邮件传输协议。 “sms”：短信传输协议。 “functionstage”：FunctionGraph（函数）传输协议。 “dms”：DMS传输协议。
-     * “http”、“https”：HTTP/HTTPS传输协议。
-     * 
-     * @return protocol */
+    /**
+     * 模板协议类型。  目前支持的协议包括：  “email”：邮件传输协议。  “sms”：短信传输协议。  “functionstage”：FunctionGraph（函数）传输协议。  “dms”：DMS传输协议。  “http”、“https”：HTTP/HTTPS传输协议。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -111,9 +115,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板tag列表
-     * 
-     * @return tagNames */
+    /**
+     * 模板tag列表
+     * @return tagNames
+     */
     public List<String> getTagNames() {
         return tagNames;
     }
@@ -127,9 +132,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板创建时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return createTime */
+    /**
+     * 模板创建时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -143,9 +149,10 @@ public class MessageTemplate {
         return this;
     }
 
-    /** 模板最后更新时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return updateTime */
+    /**
+     * 模板最后更新时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -190,7 +197,10 @@ public class MessageTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

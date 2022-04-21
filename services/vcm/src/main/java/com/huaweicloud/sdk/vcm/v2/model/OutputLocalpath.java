@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LOCALPATH输出类型。 */
+/**
+ * LOCALPATH输出类型。
+ */
 public class OutputLocalpath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OutputLocalpath {
         return this;
     }
 
-    /** 挂载源路径，存放作业运行结果的路径，必须为linux路径，且最大长度为255，例如“/home”。
-     * 
-     * @return mountSourcePath */
+    /**
+     * 挂载源路径，存放作业运行结果的路径，必须为linux路径，且最大长度为255，例如“/home”。
+     * @return mountSourcePath
+     */
     public String getMountSourcePath() {
         return mountSourcePath;
     }
@@ -39,10 +42,10 @@ public class OutputLocalpath {
         return this;
     }
 
-    /** 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 -
-     * OriginImage：表示发送原始图。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 - OriginImage：表示发送原始图。
+     * @return dataCategory
+     */
     public String getDataCategory() {
         return dataCategory;
     }
@@ -79,7 +82,10 @@ public class OutputLocalpath {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

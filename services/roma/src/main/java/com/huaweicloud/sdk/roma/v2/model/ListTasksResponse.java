@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,12 @@ public class ListTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询任务列表任务总个数 minimum: 0 maximum: 1000000
-     * 
-     * @return total */
+    /**
+     * 查询任务列表任务总个数
+     * minimum: 0
+     * maximum: 1000000
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -48,9 +53,12 @@ public class ListTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询任务列表返回的当前页的任务个数 minimum: 0 maximum: 1000
-     * 
-     * @return size */
+    /**
+     * 查询任务列表返回的当前页的任务个数
+     * minimum: 0
+     * maximum: 1000
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -80,9 +88,10 @@ public class ListTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询任务列表返回的对象
-     * 
-     * @return entities */
+    /**
+     * 查询任务列表返回的对象
+     * @return entities
+     */
     public List<BriefTaskRespBean> getEntities() {
         return entities;
     }
@@ -120,7 +129,10 @@ public class ListTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

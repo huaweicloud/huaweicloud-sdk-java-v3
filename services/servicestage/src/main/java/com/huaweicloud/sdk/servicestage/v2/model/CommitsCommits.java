@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CommitsCommits */
+/**
+ * CommitsCommits
+ */
 public class CommitsCommits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CommitsCommits {
         return this;
     }
 
-    /** 提交记录sha值。
-     * 
-     * @return sha */
+    /**
+     * 提交记录sha值。
+     * @return sha
+     */
     public String getSha() {
         return sha;
     }
@@ -44,9 +47,10 @@ public class CommitsCommits {
         return this;
     }
 
-    /** 提交记录描述。
-     * 
-     * @return message */
+    /**
+     * 提交记录描述。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -60,9 +64,10 @@ public class CommitsCommits {
         return this;
     }
 
-    /** 合入时间。
-     * 
-     * @return authoredDate */
+    /**
+     * 合入时间。
+     * @return authoredDate
+     */
     public String getAuthoredDate() {
         return authoredDate;
     }
@@ -100,7 +105,10 @@ public class CommitsCommits {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

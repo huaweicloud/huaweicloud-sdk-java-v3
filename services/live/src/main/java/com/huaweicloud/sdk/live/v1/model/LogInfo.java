@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LogInfo */
+/**
+ * LogInfo
+ */
 public class LogInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志文件名，打包文件名格式：{Domain}_{logStartTimeStamp}.log.gz
-     * 
-     * @return name */
+    /**
+     * 日志文件名，打包文件名格式：{Domain}_{logStartTimeStamp}.log.gz
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志下载链接
-     * 
-     * @return url */
+    /**
+     * 日志下载链接
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -70,9 +74,11 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志文件大小 minimum: 0
-     * 
-     * @return size */
+    /**
+     * 日志文件大小
+     * minimum: 0
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -86,9 +92,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志文件中日志开始时间，北京时间
-     * 
-     * @return startTime */
+    /**
+     * 日志文件中日志开始时间，北京时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -102,9 +109,10 @@ public class LogInfo {
         return this;
     }
 
-    /** 日志文件中日志结束时间，北京时间
-     * 
-     * @return endTime */
+    /**
+     * 日志文件中日志结束时间，北京时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -145,7 +153,10 @@ public class LogInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

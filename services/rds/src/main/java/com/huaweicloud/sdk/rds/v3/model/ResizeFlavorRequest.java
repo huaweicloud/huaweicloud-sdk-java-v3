@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 变更实例规格时必填。 */
+/**
+ * 变更实例规格时必填。
+ */
 public class ResizeFlavorRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ResizeFlavorRequest {
         return this;
     }
 
-    /** Get resizeFlavor
-     * 
-     * @return resizeFlavor */
+    /**
+     * Get resizeFlavor
+     * @return resizeFlavor
+     */
     public ResizeFlavorObject getResizeFlavor() {
         return resizeFlavor;
     }
@@ -65,7 +68,10 @@ public class ResizeFlavorRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

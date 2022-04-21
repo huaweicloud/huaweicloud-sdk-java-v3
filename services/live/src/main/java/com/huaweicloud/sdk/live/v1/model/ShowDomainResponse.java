@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDomainResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询结果的总数量
-     * 
-     * @return total */
+    /**
+     * 查询结果的总数量
+     * @return total
+     */
     public BigDecimal getTotal() {
         return total;
     }
@@ -60,9 +63,10 @@ public class ShowDomainResponse extends SdkResponse {
         return this;
     }
 
-    /** 直播域名列表
-     * 
-     * @return domainInfo */
+    /**
+     * 直播域名列表
+     * @return domainInfo
+     */
     public List<DecoupledLiveDomainInfo> getDomainInfo() {
         return domainInfo;
     }
@@ -99,7 +103,10 @@ public class ShowDomainResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

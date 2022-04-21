@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Content */
+/**
+ * Content
+ */
 public class Content {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,12 @@ public class Content {
         return this;
     }
 
-    /** content_type minimum: 0 maximum: 2147483647
-     * 
-     * @return contentType */
+    /**
+     * content_type
+     * minimum: 0
+     * maximum: 2147483647
+     * @return contentType
+     */
     public Integer getContentType() {
         return contentType;
     }
@@ -49,9 +54,10 @@ public class Content {
         return this;
     }
 
-    /** Get content
-     * 
-     * @return content */
+    /**
+     * Get content
+     * @return content
+     */
     public ContentInfo getContent() {
         return content;
     }
@@ -87,7 +93,10 @@ public class Content {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

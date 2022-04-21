@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NsRecords */
+/**
+ * NsRecords
+ */
 public class NsRecords {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class NsRecords {
         return this;
     }
 
-    /** 主机名。 当为内网名称服务器时，此值为空。
-     * 
-     * @return hostname */
+    /**
+     * 主机名。  当为内网名称服务器时，此值为空。
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -44,9 +47,10 @@ public class NsRecords {
         return this;
     }
 
-    /** 名称服务器地址。 当为公网名称服务器时，此值为空。
-     * 
-     * @return address */
+    /**
+     * 名称服务器地址。  当为公网名称服务器时，此值为空。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -60,9 +64,10 @@ public class NsRecords {
         return this;
     }
 
-    /** 优先级。 示例： 如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
-     * 
-     * @return priority */
+    /**
+     * 优先级。  示例：  如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -100,7 +105,10 @@ public class NsRecords {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

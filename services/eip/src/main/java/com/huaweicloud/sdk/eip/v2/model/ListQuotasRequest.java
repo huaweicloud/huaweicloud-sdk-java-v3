@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,10 +20,10 @@ public class ListQuotasRequest {
         return this;
     }
 
-    /** 功能说明：根据type过滤查询指定类型的配额
-     * 取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener
-     * 
-     * @return type */
+    /**
+     * 功能说明：根据type过滤查询指定类型的配额 取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -56,7 +58,10 @@ public class ListQuotasRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

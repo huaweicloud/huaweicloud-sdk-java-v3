@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListVpcsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 查询返回虚拟私有云列表数量。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 查询返回虚拟私有云列表数量。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,9 +54,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 查询的偏移量。
-     * 
-     * @return offset */
+    /**
+     * 查询的偏移量。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -65,9 +71,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 通过ID查询
-     * 
-     * @return id */
+    /**
+     * 通过ID查询
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -81,9 +88,10 @@ public class ListVpcsRequest {
         return this;
     }
 
-    /** 通过name查询
-     * 
-     * @return name */
+    /**
+     * 通过name查询
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -122,7 +130,10 @@ public class ListVpcsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

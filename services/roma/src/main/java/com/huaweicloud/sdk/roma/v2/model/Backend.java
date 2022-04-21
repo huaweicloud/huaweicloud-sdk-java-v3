@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 后端服务定义 */
+/**
+ * 后端服务定义
+ */
 public class Backend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class Backend {
         return this;
     }
 
-    /** 后端主机地址列表
-     * 
-     * @return ip */
+    /**
+     * 后端主机地址列表
+     * @return ip
+     */
     public List<String> getIp() {
         return ip;
     }
@@ -63,9 +66,10 @@ public class Backend {
         return this;
     }
 
-    /** 后端服务端口，不存在时使用监听器端口
-     * 
-     * @return port */
+    /**
+     * 后端服务端口，不存在时使用监听器端口
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -88,9 +92,10 @@ public class Backend {
         return this;
     }
 
-    /** Get healthCheck
-     * 
-     * @return healthCheck */
+    /**
+     * Get healthCheck
+     * @return healthCheck
+     */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
@@ -128,7 +133,10 @@ public class Backend {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

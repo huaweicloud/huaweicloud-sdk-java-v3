@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DbMatchInfo */
+/**
+ * DbMatchInfo
+ */
 public class DbMatchInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class DbMatchInfo {
         return this;
     }
 
-    /** 列名
-     * 
-     * @return columnName */
+    /**
+     * 列名
+     * @return columnName
+     */
     public String getColumnName() {
         return columnName;
     }
@@ -57,9 +60,10 @@ public class DbMatchInfo {
         return this;
     }
 
-    /** 匹配的规则名
-     * 
-     * @return ruleName */
+    /**
+     * 匹配的规则名
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -73,9 +77,10 @@ public class DbMatchInfo {
         return this;
     }
 
-    /** 匹配的规则ID
-     * 
-     * @return ruleId */
+    /**
+     * 匹配的规则ID
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -89,9 +94,10 @@ public class DbMatchInfo {
         return this;
     }
 
-    /** 匹配规则风险等级
-     * 
-     * @return ruleRiskLevel */
+    /**
+     * 匹配规则风险等级
+     * @return ruleRiskLevel
+     */
     public Integer getRuleRiskLevel() {
         return ruleRiskLevel;
     }
@@ -121,9 +127,10 @@ public class DbMatchInfo {
         return this;
     }
 
-    /** 风险数据行
-     * 
-     * @return columnLine */
+    /**
+     * 风险数据行
+     * @return columnLine
+     */
     public List<Long> getColumnLine() {
         return columnLine;
     }
@@ -165,7 +172,10 @@ public class DbMatchInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

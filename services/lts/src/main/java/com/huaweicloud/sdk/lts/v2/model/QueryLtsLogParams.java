@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 此参数在请求实体中，采用json字符串格式 */
+/**
+ * 此参数在请求实体中，采用json字符串格式
+ */
 public class QueryLtsLogParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,13 +51,19 @@ public class QueryLtsLogParams {
 
     private Boolean isDesc;
 
-    /** 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。 */
+    /**
+     * 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
+     */
     public static final class SearchTypeEnum {
 
-        /** Enum FORWARDS for value: "forwards" */
+        /**
+         * Enum FORWARDS for value: "forwards"
+         */
         public static final SearchTypeEnum FORWARDS = new SearchTypeEnum("forwards");
 
-        /** Enum BACKWARDS for value: "backwards" */
+        /**
+         * Enum BACKWARDS for value: "backwards"
+         */
         public static final SearchTypeEnum BACKWARDS = new SearchTypeEnum("backwards");
 
         private static final Map<String, SearchTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -140,9 +148,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 搜索起始时间（UTC时间，毫秒级）。
-     * 
-     * @return startTime */
+    /**
+     * 搜索起始时间（UTC时间，毫秒级）。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -156,9 +165,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 搜索结束时间（UTC时间，毫秒级）。
-     * 
-     * @return endTime */
+    /**
+     * 搜索结束时间（UTC时间，毫秒级）。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -188,9 +198,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 日志过滤条件集合，不同日志来源所需字段不同。
-     * 
-     * @return labels */
+    /**
+     * 日志过滤条件集合，不同日志来源所需字段不同。
+     * @return labels
+     */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -204,9 +215,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 日志条数统计。默认为false(不统计)，true为统计日志条数。
-     * 
-     * @return isCount */
+    /**
+     * 日志条数统计。默认为false(不统计)，true为统计日志条数。
+     * @return isCount
+     */
     public Boolean getIsCount() {
         return isCount;
     }
@@ -220,9 +232,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 支持关键词精确搜索。关键词指相邻两个分词符之间的单词,例：error
-     * 
-     * @return keywords */
+    /**
+     * 支持关键词精确搜索。关键词指相邻两个分词符之间的单词,例：error
+     * @return keywords
+     */
     public String getKeywords() {
         return keywords;
     }
@@ -236,9 +249,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 日志单行序列号，第一次查询时不需要此参数，后续分页查询时需要使用，可从上次查询的返回信息中获取。line_num应在start_time 和 end_time 之间。
-     * 
-     * @return lineNum */
+    /**
+     * 日志单行序列号，第一次查询时不需要此参数，后续分页查询时需要使用，可从上次查询的返回信息中获取。line_num应在start_time 和 end_time 之间。
+     * @return lineNum
+     */
     public String getLineNum() {
         return lineNum;
     }
@@ -252,9 +266,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 顺序或者倒序查询, 默认为false(顺序查询)
-     * 
-     * @return isDesc */
+    /**
+     * 顺序或者倒序查询, 默认为false(顺序查询)
+     * @return isDesc
+     */
     public Boolean getIsDesc() {
         return isDesc;
     }
@@ -268,9 +283,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
-     * 
-     * @return searchType */
+    /**
+     * 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
+     * @return searchType
+     */
     public SearchTypeEnum getSearchType() {
         return searchType;
     }
@@ -284,9 +300,12 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 表示每次查询的日志条数，不填时默认为50，建议您设置为100。 minimum: 1 maximum: 5000
-     * 
-     * @return limit */
+    /**
+     * 表示每次查询的日志条数，不填时默认为50，建议您设置为100。
+     * minimum: 1
+     * maximum: 5000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -300,9 +319,10 @@ public class QueryLtsLogParams {
         return this;
     }
 
-    /** 日志关键词高亮显示，默认为true（高亮显示），false为取消高亮显示。
-     * 
-     * @return highlight */
+    /**
+     * 日志关键词高亮显示，默认为true（高亮显示），false为取消高亮显示。
+     * @return highlight
+     */
     public Boolean getHighlight() {
         return highlight;
     }
@@ -356,7 +376,10 @@ public class QueryLtsLogParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

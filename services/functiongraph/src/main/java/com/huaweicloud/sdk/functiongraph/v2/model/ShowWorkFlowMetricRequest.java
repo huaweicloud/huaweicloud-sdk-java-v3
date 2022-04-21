@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowWorkFlowMetricRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,10 +25,10 @@ public class ShowWorkFlowMetricRequest {
         return this;
     }
 
-    /** 函数工作流URN, 格式为： urn:fss:<region_id>:<project_id>:workflow:\\<package\\>:<workflow_name>:\\<version\\> 注意：
-     * package当前只支持default version当前只支持latest
-     * 
-     * @return workflowUrn */
+    /**
+     * 函数工作流URN, 格式为： urn:fss:<region_id>:<project_id>:workflow:\\<package\\>:<workflow_name>:\\<version\\> 注意： package当前只支持default version当前只支持latest
+     * @return workflowUrn
+     */
     public String getWorkflowUrn() {
         return workflowUrn;
     }
@@ -40,9 +42,10 @@ public class ShowWorkFlowMetricRequest {
         return this;
     }
 
-    /** 时间段，单位为分钟
-     * 
-     * @return period */
+    /**
+     * 时间段，单位为分钟
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -79,7 +82,10 @@ public class ShowWorkFlowMetricRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

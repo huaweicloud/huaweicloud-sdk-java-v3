@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 参数集 */
+/**
+ * 参数集
+ */
 public class LogContents {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class LogContents {
         return this;
     }
 
-    /** 日志原数据。
-     * 
-     * @return content */
+    /**
+     * 日志原数据。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -47,9 +50,10 @@ public class LogContents {
         return this;
     }
 
-    /** 日志单行序列号。
-     * 
-     * @return lineNum */
+    /**
+     * 日志单行序列号。
+     * @return lineNum
+     */
     public String getLineNum() {
         return lineNum;
     }
@@ -79,9 +83,10 @@ public class LogContents {
         return this;
     }
 
-    /** 该条日志包含的 labels。
-     * 
-     * @return labels */
+    /**
+     * 该条日志包含的 labels。
+     * @return labels
+     */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -119,7 +124,10 @@ public class LogContents {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

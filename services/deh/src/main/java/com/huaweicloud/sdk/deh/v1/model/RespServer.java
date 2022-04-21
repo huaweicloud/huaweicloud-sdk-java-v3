@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** server字段数据结构说明。 */
+/**
+ * server字段数据结构说明。
+ */
 public class RespServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class RespServer {
         return this;
     }
 
-    /** Get addresses
-     * 
-     * @return addresses */
+    /**
+     * Get addresses
+     * @return addresses
+     */
     public RespAddresses getAddresses() {
         return addresses;
     }
@@ -99,9 +102,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器创建时间。
-     * 
-     * @return created */
+    /**
+     * 弹性云服务器创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -124,9 +128,10 @@ public class RespServer {
         return this;
     }
 
-    /** Get flavor
-     * 
-     * @return flavor */
+    /**
+     * Get flavor
+     * @return flavor
+     */
     public RespFlavor getFlavor() {
         return flavor;
     }
@@ -140,9 +145,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器ID，格式为UUID。
-     * 
-     * @return id */
+    /**
+     * 弹性云服务器ID，格式为UUID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -156,9 +162,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器名称。
-     * 
-     * @return name */
+    /**
+     * 弹性云服务器名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -172,10 +179,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器状态。
-     * 取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PASSWORD、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
-     * 
-     * @return status */
+    /**
+     * 弹性云服务器状态。  取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PASSWORD、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -189,9 +196,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器所属租户ID，格式为UUID。
-     * 
-     * @return tenantId */
+    /**
+     * 弹性云服务器所属租户ID，格式为UUID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -205,9 +213,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器更新时间。
-     * 
-     * @return updated */
+    /**
+     * 弹性云服务器更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -221,9 +230,10 @@ public class RespServer {
         return this;
     }
 
-    /** 创建弹性云服务器的用户ID，格式为UUID。
-     * 
-     * @return userId */
+    /**
+     * 创建弹性云服务器的用户ID，格式为UUID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -237,9 +247,10 @@ public class RespServer {
         return this;
     }
 
-    /** 弹性云服务器当前任务的状态。
-     * 
-     * @return taskState */
+    /**
+     * 弹性云服务器当前任务的状态。
+     * @return taskState
+     */
     public String getTaskState() {
         return taskState;
     }
@@ -262,9 +273,10 @@ public class RespServer {
         return this;
     }
 
-    /** Get image
-     * 
-     * @return image */
+    /**
+     * Get image
+     * @return image
+     */
     public RespImage getImage() {
         return image;
     }
@@ -287,9 +299,10 @@ public class RespServer {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public RespMetadata getMetadata() {
         return metadata;
     }
@@ -341,7 +354,10 @@ public class RespServer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

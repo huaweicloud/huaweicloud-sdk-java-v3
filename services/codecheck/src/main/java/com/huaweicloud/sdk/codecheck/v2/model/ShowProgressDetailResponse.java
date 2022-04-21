@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowProgressDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class ShowProgressDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
-     * 
-     * @return taskStatus */
+    /**
+     * 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
+     * @return taskStatus
+     */
     public Integer getTaskStatus() {
         return taskStatus;
     }
@@ -50,9 +53,10 @@ public class ShowProgressDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get progress
-     * 
-     * @return progress */
+    /**
+     * Get progress
+     * @return progress
+     */
     public ProgressDetailV2 getProgress() {
         return progress;
     }
@@ -89,7 +93,10 @@ public class ShowProgressDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

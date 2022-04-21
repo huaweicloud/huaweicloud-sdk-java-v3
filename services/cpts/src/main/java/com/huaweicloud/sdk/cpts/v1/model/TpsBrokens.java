@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TpsBrokens */
+/**
+ * TpsBrokens
+ */
 public class TpsBrokens {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class TpsBrokens {
         return this;
     }
 
-    /** 平均响应时间
-     * 
-     * @return average */
+    /**
+     * 平均响应时间
+     * @return average
+     */
     public List<Double> getAverage() {
         return average;
     }
@@ -74,9 +77,10 @@ public class TpsBrokens {
         return this;
     }
 
-    /** tps
-     * 
-     * @return tps */
+    /**
+     * tps
+     * @return tps
+     */
     public List<Double> getTps() {
         return tps;
     }
@@ -112,7 +116,10 @@ public class TpsBrokens {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

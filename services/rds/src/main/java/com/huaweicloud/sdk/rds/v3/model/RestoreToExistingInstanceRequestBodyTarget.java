@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 恢复目标对象。 */
+/**
+ * 恢复目标对象。
+ */
 public class RestoreToExistingInstanceRequestBodyTarget {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestoreToExistingInstanceRequestBodyTarget {
         return this;
     }
 
-    /** 恢复目标实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 恢复目标实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,7 +59,10 @@ public class RestoreToExistingInstanceRequestBodyTarget {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

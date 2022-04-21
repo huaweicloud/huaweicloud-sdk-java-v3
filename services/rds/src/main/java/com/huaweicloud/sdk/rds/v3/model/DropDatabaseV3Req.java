@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DropDatabaseV3Req */
+/**
+ * DropDatabaseV3Req
+ */
 public class DropDatabaseV3Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DropDatabaseV3Req {
         return this;
     }
 
-    /** 是否强制删除数据库，默认是false。
-     * 
-     * @return isForceDelete */
+    /**
+     * 是否强制删除数据库，默认是false。
+     * @return isForceDelete
+     */
     public Boolean getIsForceDelete() {
         return isForceDelete;
     }
@@ -55,7 +58,10 @@ public class DropDatabaseV3Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

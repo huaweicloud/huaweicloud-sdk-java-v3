@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DatasourceRestDTO */
+/**
+ * DatasourceRestDTO
+ */
 public class DatasourceRestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** 数据源id
-     * 
-     * @return id */
+    /**
+     * 数据源id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** 数据源名称
-     * 
-     * @return name */
+    /**
+     * 数据源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -76,9 +80,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** 数据源类型, 包括：IOTDA、API[、OBS、DIS、SMN、FUNCTION_GRAPH、MODEL_ARTS、DCS、KAFKA](tag:IoTA-Cloud-Only)、NODE。数据源不支持修改类型。
-     * 
-     * @return type */
+    /**
+     * 数据源类型, 包括：IOTDA、API[、OBS、DIS、SMN、FUNCTION_GRAPH、MODEL_ARTS、DCS、KAFKA](tag:IoTA-Cloud-Only)、NODE。数据源不支持修改类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -101,9 +106,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** Get content
-     * 
-     * @return content */
+    /**
+     * Get content
+     * @return content
+     */
     public ContentDetailRsp getContent() {
         return content;
     }
@@ -117,9 +123,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** 创建时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -133,9 +140,10 @@ public class DatasourceRestDTO {
         return this;
     }
 
-    /** 修改时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -179,7 +187,10 @@ public class DatasourceRestDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

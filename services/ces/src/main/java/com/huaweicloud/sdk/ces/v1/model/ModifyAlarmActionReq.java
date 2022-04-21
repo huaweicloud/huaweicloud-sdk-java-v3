@@ -20,9 +20,10 @@ public class ModifyAlarmActionReq {
         return this;
     }
 
-    /** 告警是否启用。true：启动。false：停止
-     * 
-     * @return alarmEnabled */
+    /**
+     * 告警是否启用。true：启动。false：停止
+     * @return alarmEnabled
+     */
     public Boolean getAlarmEnabled() {
         return alarmEnabled;
     }
@@ -57,7 +58,10 @@ public class ModifyAlarmActionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

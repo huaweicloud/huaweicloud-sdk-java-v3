@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 添加一条或多条自定义指标监控数据，请求参数。 */
+/**
+ * 添加一条或多条自定义指标监控数据，请求参数。
+ */
 public class MetricDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class MetricDataItem {
         return this;
     }
 
-    /** Get metric
-     * 
-     * @return metric */
+    /**
+     * Get metric
+     * @return metric
+     */
     public MetricInfo getMetric() {
         return metric;
     }
@@ -69,9 +72,12 @@ public class MetricDataItem {
         return this;
     }
 
-    /** 数据的有效期，超出该有效期则自动删除该数据，单位秒，最大值604800。 minimum: 1 maximum: 604800
-     * 
-     * @return ttl */
+    /**
+     * 数据的有效期，超出该有效期则自动删除该数据，单位秒，最大值604800。
+     * minimum: 1
+     * maximum: 604800
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -85,9 +91,10 @@ public class MetricDataItem {
         return this;
     }
 
-    /** 数据收集时间 UNIX时间戳，单位毫秒。 说明： 因为客户端到服务器端有延时，因此插入数据的时间戳应该在[当前时间-3天+20秒，当前时间+10分钟-20秒]区间内，保证到达服务器时不会因为传输时延造成数据不能插入数据库。
-     * 
-     * @return collectTime */
+    /**
+     * 数据收集时间  UNIX时间戳，单位毫秒。  说明： 因为客户端到服务器端有延时，因此插入数据的时间戳应该在[当前时间-3天+20秒，当前时间+10分钟-20秒]区间内，保证到达服务器时不会因为传输时延造成数据不能插入数据库。
+     * @return collectTime
+     */
     public Long getCollectTime() {
         return collectTime;
     }
@@ -101,9 +108,10 @@ public class MetricDataItem {
         return this;
     }
 
-    /** 指标数据的值。
-     * 
-     * @return value */
+    /**
+     * 指标数据的值。
+     * @return value
+     */
     public Double getValue() {
         return value;
     }
@@ -117,9 +125,10 @@ public class MetricDataItem {
         return this;
     }
 
-    /** 数据的单位。
-     * 
-     * @return unit */
+    /**
+     * 数据的单位。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -133,9 +142,10 @@ public class MetricDataItem {
         return this;
     }
 
-    /** 数据的类型，只能是\"int\"或\"float\"
-     * 
-     * @return type */
+    /**
+     * 数据的类型，只能是\"int\"或\"float\"
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -178,7 +188,10 @@ public class MetricDataItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

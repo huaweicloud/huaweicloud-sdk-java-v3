@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 聚合指标列表 */
+/**
+ * 聚合指标列表
+ */
 public class DTAggregateMetrics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class DTAggregateMetrics {
         return this;
     }
 
-    /** 定义指标计算查询的输入资产属性列表
-     * 
-     * @return inputs */
+    /**
+     * 定义指标计算查询的输入资产属性列表
+     * @return inputs
+     */
     public List<MetricInput> getInputs() {
         return inputs;
     }
@@ -63,9 +66,10 @@ public class DTAggregateMetrics {
         return this;
     }
 
-    /** 指标表达式,最多64个字符
-     * 
-     * @return expression */
+    /**
+     * 指标表达式,最多64个字符
+     * @return expression
+     */
     public String getExpression() {
         return expression;
     }
@@ -79,9 +83,10 @@ public class DTAggregateMetrics {
         return this;
     }
 
-    /** 指标名，指标计算查询的输出指标名称
-     * 
-     * @return metricName */
+    /**
+     * 指标名，指标计算查询的输出指标名称
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -120,7 +125,10 @@ public class DTAggregateMetrics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

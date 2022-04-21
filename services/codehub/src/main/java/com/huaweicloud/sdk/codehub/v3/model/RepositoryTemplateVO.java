@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RepositoryTemplateVO */
+/**
+ * RepositoryTemplateVO
+ */
 public class RepositoryTemplateVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return templateType */
+    /**
+     * 模板类型
+     * @return templateType
+     */
     public String getTemplateType() {
         return templateType;
     }
@@ -67,9 +70,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 代码模板名称
-     * 
-     * @return codeTitle */
+    /**
+     * 代码模板名称
+     * @return codeTitle
+     */
     public String getCodeTitle() {
         return codeTitle;
     }
@@ -83,9 +87,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 创建者名称
-     * 
-     * @return creatorName */
+    /**
+     * 创建者名称
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -99,9 +104,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 代码模板描述
-     * 
-     * @return codeDescription */
+    /**
+     * 代码模板描述
+     * @return codeDescription
+     */
     public String getCodeDescription() {
         return codeDescription;
     }
@@ -131,9 +137,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 模板语言
-     * 
-     * @return languages */
+    /**
+     * 模板语言
+     * @return languages
+     */
     public List<String> getLanguages() {
         return languages;
     }
@@ -163,9 +170,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 模板平台
-     * 
-     * @return plateform */
+    /**
+     * 模板平台
+     * @return plateform
+     */
     public List<String> getPlateform() {
         return plateform;
     }
@@ -195,9 +203,10 @@ public class RepositoryTemplateVO {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return entertype */
+    /**
+     * 模板类型
+     * @return entertype
+     */
     public List<String> getEntertype() {
         return entertype;
     }
@@ -244,7 +253,10 @@ public class RepositoryTemplateVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

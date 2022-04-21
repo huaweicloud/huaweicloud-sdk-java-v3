@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** token详细信息。 */
+/**
+ * token详细信息。
+ */
 public class UnscopedTokenInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** 过期时间。
-     * 
-     * @return expiresAt */
+    /**
+     * 过期时间。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -78,9 +81,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** token获取方式，联邦认证默认为mapped。
-     * 
-     * @return methods */
+    /**
+     * token获取方式，联邦认证默认为mapped。
+     * @return methods
+     */
     public List<String> getMethods() {
         return methods;
     }
@@ -94,9 +98,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** 生成时间。
-     * 
-     * @return issuedAt */
+    /**
+     * 生成时间。
+     * @return issuedAt
+     */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -119,9 +124,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public FederationUserBody getUser() {
         return user;
     }
@@ -151,9 +157,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** roles信息。
-     * 
-     * @return roles */
+    /**
+     * roles信息。
+     * @return roles
+     */
     public List<UnscopedTokenInfoRoles> getRoles() {
         return roles;
     }
@@ -183,9 +190,10 @@ public class UnscopedTokenInfo {
         return this;
     }
 
-    /** catalog信息。
-     * 
-     * @return catalog */
+    /**
+     * catalog信息。
+     * @return catalog
+     */
     public List<UnscopedTokenInfoCatalog> getCatalog() {
         return catalog;
     }
@@ -229,7 +237,10 @@ public class UnscopedTokenInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

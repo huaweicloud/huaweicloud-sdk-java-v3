@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateDatakeyRequestBody */
+/**
+ * CreateDatakeyRequestBody
+ */
 public class CreateDatakeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,15 +20,19 @@ public class CreateDatakeyRequestBody {
 
     private String keyId;
 
-    /** 指定生成的密钥bit位长度。有效值：AES_256、AES_128。 - AES_256：表示256比特的对称密钥。 - AES_128：表示128比特的对称密钥。 说明：
-     * datakey_length和key_spec二选一。 - 若datakey_length和key_spec都为空，默认生成256bit的密钥。 -
-     * 若datakey_length和key_spec都指定了值，仅datakey_length生效。 */
+    /**
+     * 指定生成的密钥bit位长度。有效值：AES_256、AES_128。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
+     */
     public static final class KeySpecEnum {
 
-        /** Enum AES_256 for value: "AES_256" */
+        /**
+         * Enum AES_256 for value: "AES_256"
+         */
         public static final KeySpecEnum AES_256 = new KeySpecEnum("AES_256");
 
-        /** Enum AES_128 for value: "AES_128" */
+        /**
+         * Enum AES_128 for value: "AES_128"
+         */
         public static final KeySpecEnum AES_128 = new KeySpecEnum("AES_128");
 
         private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
@@ -111,10 +117,10 @@ public class CreateDatakeyRequestBody {
         return this;
     }
 
-    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
-     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * 
-     * @return keyId */
+    /**
+     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * @return keyId
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -128,11 +134,10 @@ public class CreateDatakeyRequestBody {
         return this;
     }
 
-    /** 指定生成的密钥bit位长度。有效值：AES_256、AES_128。 - AES_256：表示256比特的对称密钥。 - AES_128：表示128比特的对称密钥。 说明：
-     * datakey_length和key_spec二选一。 - 若datakey_length和key_spec都为空，默认生成256bit的密钥。 -
-     * 若datakey_length和key_spec都指定了值，仅datakey_length生效。
-     * 
-     * @return keySpec */
+    /**
+     * 指定生成的密钥bit位长度。有效值：AES_256、AES_128。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
+     * @return keySpec
+     */
     public KeySpecEnum getKeySpec() {
         return keySpec;
     }
@@ -146,10 +151,10 @@ public class CreateDatakeyRequestBody {
         return this;
     }
 
-    /** 密钥bit位长度。取值为8的倍数，取值范围为8~8192。 说明： datakey_length和key_spec二选一。 - 若datakey_length和key_spec都为空，默认生成256bit的密钥。 -
-     * 若datakey_length和key_spec都指定了值，仅datakey_length生效。
-     * 
-     * @return datakeyLength */
+    /**
+     * 密钥bit位长度。取值为8的倍数，取值范围为8~8192。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
+     * @return datakeyLength
+     */
     public String getDatakeyLength() {
         return datakeyLength;
     }
@@ -163,9 +168,10 @@ public class CreateDatakeyRequestBody {
         return this;
     }
 
-    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * 
-     * @return sequence */
+    /**
+     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * @return sequence
+     */
     public String getSequence() {
         return sequence;
     }
@@ -206,7 +212,10 @@ public class CreateDatakeyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

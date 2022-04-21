@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PeerInfo */
+/**
+ * PeerInfo
+ */
 public class PeerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** 组织名称
-     * 
-     * @return name */
+    /**
+     * 组织名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +65,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** 节点数量
-     * 
-     * @return nodeCnt */
+    /**
+     * 节点数量
+     * @return nodeCnt
+     */
     public Long getNodeCnt() {
         return nodeCnt;
     }
@@ -78,9 +82,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** 节点状态，分为创建中（IsCreating），升级中（IsUpgrading），扩缩容中（Adding/IsScaling），删除中（Isdeleting），正常（Normal），异常（AbNormal），未知（其余值）
-     * 
-     * @return status */
+    /**
+     * 节点状态，分为创建中（IsCreating），升级中（IsUpgrading），扩缩容中（Adding/IsScaling），删除中（Isdeleting），正常（Normal），异常（AbNormal），未知（其余值）
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -94,9 +99,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** 节点状态，形式如：1/1，分母是该组织下节点总数，分子是正常节点个数
-     * 
-     * @return statusDetail */
+    /**
+     * 节点状态，形式如：1/1，分母是该组织下节点总数，分子是正常节点个数
+     * @return statusDetail
+     */
     public String getStatusDetail() {
         return statusDetail;
     }
@@ -110,9 +116,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** 节点对应pvc名称
-     * 
-     * @return pvcName */
+    /**
+     * 节点对应pvc名称
+     * @return pvcName
+     */
     public String getPvcName() {
         return pvcName;
     }
@@ -142,9 +149,10 @@ public class PeerInfo {
         return this;
     }
 
-    /** Peer节点域名/IP地址
-     * 
-     * @return address */
+    /**
+     * Peer节点域名/IP地址
+     * @return address
+     */
     public List<PeerAddress> getAddress() {
         return address;
     }
@@ -186,7 +194,10 @@ public class PeerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

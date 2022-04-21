@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateInstanceConfigurationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class UpdateInstanceConfigurationResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例是否需要重启。 - “true”需要重启。 - “false”不需要重启。
-     * 
-     * @return restartRequired */
+    /**
+     * 实例是否需要重启。  - “true”需要重启。 - “false”不需要重启。
+     * @return restartRequired
+     */
     public Boolean getRestartRequired() {
         return restartRequired;
     }
@@ -57,7 +60,10 @@ public class UpdateInstanceConfigurationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

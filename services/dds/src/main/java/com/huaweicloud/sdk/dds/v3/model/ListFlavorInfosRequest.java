@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorInfosRequest {
 
-    /** 数据库版本类型。取值为“DDS-Community”。 */
+    /**
+     * 数据库版本类型。取值为“DDS-Community”。
+     */
     public static final class EngineNameEnum {
 
-        /** Enum DDS_COMMUNITY for value: "DDS-Community" */
+        /**
+         * Enum DDS_COMMUNITY for value: "DDS-Community"
+         */
         public static final EngineNameEnum DDS_COMMUNITY = new EngineNameEnum("DDS-Community");
 
-        /** Enum DDS_ENHANCED for value: "DDS-Enhanced" */
+        /**
+         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
+         */
         public static final EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
 
         private static final Map<String, EngineNameEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 数据库版本类型。取值为“DDS-Community”。
-     * 
-     * @return engineName */
+    /**
+     * 数据库版本类型。取值为“DDS-Community”。
+     * @return engineName
+     */
     public EngineNameEnum getEngineName() {
         return engineName;
     }
@@ -125,9 +134,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 数据库版本号。
-     * 
-     * @return engineVersion */
+    /**
+     * 数据库版本号。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -141,9 +151,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。 - 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 - 取值必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。   - 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。   - 取值必须为数字，不能为负数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -157,9 +168,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 查询规格信息上限值。 - 取值范围: 1~100。 - 不传该参数时，默认查询前100条规格信息。
-     * 
-     * @return limit */
+    /**
+     * 查询规格信息上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条规格信息。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -200,7 +212,10 @@ public class ListFlavorInfosRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

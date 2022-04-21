@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowProjectDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowProjectDetailRequest {
         return this;
     }
 
-    /** 授权名称。
-     * 
-     * @return xRepoAuth */
+    /**
+     * 授权名称。
+     * @return xRepoAuth
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
@@ -41,9 +44,10 @@ public class ShowProjectDetailRequest {
         return this;
     }
 
-    /** 仓库克隆URL。
-     * 
-     * @return cloneUrl */
+    /**
+     * 仓库克隆URL。
+     * @return cloneUrl
+     */
     public String getCloneUrl() {
         return cloneUrl;
     }
@@ -80,7 +84,10 @@ public class ShowProjectDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

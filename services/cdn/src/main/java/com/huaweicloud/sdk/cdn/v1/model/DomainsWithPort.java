@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 域名信息 */
+/**
+ * 域名信息
+ */
 public class DomainsWithPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,16 +88,24 @@ public class DomainsWithPort {
 
     private Integer autoRefreshPreheat;
 
-    /** 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。 */
+    /**
+     * 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
+     */
     public static final class ServiceAreaEnum {
 
-        /** Enum MAINLAND_CHINA for value: "mainland_china" */
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
 
-        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /** Enum GLOBAL for value: "global" */
+        /**
+         * Enum GLOBAL for value: "global"
+         */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
@@ -201,9 +211,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 加速域名ID。
-     * 
-     * @return id */
+    /**
+     * 加速域名ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -217,9 +228,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 加速域名。
-     * 
-     * @return domainName */
+    /**
+     * 加速域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -233,9 +245,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名业务类型，若为web，则表示类型为网站加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示类型为全站加速。
-     * 
-     * @return businessType */
+    /**
+     * 域名业务类型，若为web，则表示类型为网站加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示类型为全站加速。
+     * @return businessType
+     */
     public String getBusinessType() {
         return businessType;
     }
@@ -249,9 +262,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名所属用户的domain_id。
-     * 
-     * @return userDomainId */
+    /**
+     * 域名所属用户的domain_id。
+     * @return userDomainId
+     */
     public String getUserDomainId() {
         return userDomainId;
     }
@@ -265,10 +279,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中”
-     * - check_failed表示“审核未通过” - deleting表示“删除中”
-     * 
-     * @return domainStatus */
+    /**
+     * 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中” - check_failed表示“审核未通过” - deleting表示“删除中”
+     * @return domainStatus
+     */
     public String getDomainStatus() {
         return domainStatus;
     }
@@ -282,9 +296,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 加速域名对应的CNAME。
-     * 
-     * @return cname */
+    /**
+     * 加速域名对应的CNAME。
+     * @return cname
+     */
     public String getCname() {
         return cname;
     }
@@ -314,9 +329,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
-     * 
-     * @return sources */
+    /**
+     * 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+     * @return sources
+     */
     public List<SourceWithPort> getSources() {
         return sources;
     }
@@ -339,9 +355,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** Get domainOriginHost
-     * 
-     * @return domainOriginHost */
+    /**
+     * Get domainOriginHost
+     * @return domainOriginHost
+     */
     public DomainOriginHost getDomainOriginHost() {
         return domainOriginHost;
     }
@@ -355,9 +372,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 是否开启HTTPS加速。
-     * 
-     * @return httpsStatus */
+    /**
+     * 是否开启HTTPS加速。
+     * @return httpsStatus
+     */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -371,9 +389,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return createTime */
+    /**
+     * 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -387,9 +406,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * 
-     * @return modifyTime */
+    /**
+     * 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * @return modifyTime
+     */
     public Long getModifyTime() {
         return modifyTime;
     }
@@ -403,9 +423,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 封禁状态（0代表未禁用；1代表禁用）。
-     * 
-     * @return disabled */
+    /**
+     * 封禁状态（0代表未禁用；1代表禁用）。
+     * @return disabled
+     */
     public Integer getDisabled() {
         return disabled;
     }
@@ -419,9 +440,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 锁定状态（0代表未锁定；1代表锁定）。
-     * 
-     * @return locked */
+    /**
+     * 锁定状态（0代表未锁定；1代表锁定）。
+     * @return locked
+     */
     public Integer getLocked() {
         return locked;
     }
@@ -435,9 +457,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 自动刷新预热（0代表关闭；1代表打开）
-     * 
-     * @return autoRefreshPreheat */
+    /**
+     * 自动刷新预热（0代表关闭；1代表打开）
+     * @return autoRefreshPreheat
+     */
     public Integer getAutoRefreshPreheat() {
         return autoRefreshPreheat;
     }
@@ -451,9 +474,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
-     * 
-     * @return serviceArea */
+    /**
+     * 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
+     * @return serviceArea
+     */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -467,9 +491,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** Range回源状态。
-     * 
-     * @return rangeStatus */
+    /**
+     * Range回源状态。
+     * @return rangeStatus
+     */
     public String getRangeStatus() {
         return rangeStatus;
     }
@@ -483,9 +508,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 回源跟随状态。
-     * 
-     * @return followStatus */
+    /**
+     * 回源跟随状态。
+     * @return followStatus
+     */
     public String getFollowStatus() {
         return followStatus;
     }
@@ -499,9 +525,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 是否暂停源站回源。
-     * 
-     * @return originStatus */
+    /**
+     * 是否暂停源站回源。
+     * @return originStatus
+     */
     public String getOriginStatus() {
         return originStatus;
     }
@@ -515,9 +542,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名禁用原因
-     * 
-     * @return bannedReason */
+    /**
+     * 域名禁用原因
+     * @return bannedReason
+     */
     public String getBannedReason() {
         return bannedReason;
     }
@@ -531,9 +559,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 域名锁定原因
-     * 
-     * @return lockedReason */
+    /**
+     * 域名锁定原因
+     * @return lockedReason
+     */
     public String getLockedReason() {
         return lockedReason;
     }
@@ -547,9 +576,10 @@ public class DomainsWithPort {
         return this;
     }
 
-    /** 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -644,7 +674,10 @@ public class DomainsWithPort {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

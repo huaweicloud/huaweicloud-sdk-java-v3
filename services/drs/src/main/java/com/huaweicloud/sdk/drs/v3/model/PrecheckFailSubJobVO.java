@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 预检查失败子任务信息体 */
+/**
+ * 预检查失败子任务信息体
+ */
 public class PrecheckFailSubJobVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PrecheckFailSubJobVO {
         return this;
     }
 
-    /** 预检查失败子任务id。
-     * 
-     * @return id */
+    /**
+     * 预检查失败子任务id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class PrecheckFailSubJobVO {
         return this;
     }
 
-    /** 预检查失败子任务名称。
-     * 
-     * @return name */
+    /**
+     * 预检查失败子任务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +64,10 @@ public class PrecheckFailSubJobVO {
         return this;
     }
 
-    /** 检查结果。
-     * 
-     * @return checkResult */
+    /**
+     * 检查结果。
+     * @return checkResult
+     */
     public String getCheckResult() {
         return checkResult;
     }
@@ -100,7 +105,10 @@ public class PrecheckFailSubJobVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

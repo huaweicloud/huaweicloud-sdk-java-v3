@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建SNAT规则的请求体。 */
+/**
+ * 创建SNAT规则的请求体。
+ */
 public class CreateNatGatewaySnatRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 公网NAT网关实例的ID。
-     * 
-     * @return natGatewayId */
+    /**
+     * 公网NAT网关实例的ID。
+     * @return natGatewayId
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -59,9 +62,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** cidr，可以是网段或者主机格式，与network_id参数二选一。 Source_type=0时，cidr必须是vpc 子网网段的子集(不能相等）; Source_type=1时，cidr必须指定专线侧网段。
-     * 
-     * @return cidr */
+    /**
+     * cidr，可以是网段或者主机格式，与network_id参数二选一。 Source_type=0时，cidr必须是vpc 子网网段的子集(不能相等）; Source_type=1时，cidr必须指定专线侧网段。 
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -75,9 +79,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 规则使用的网络id。与cidr参数二选一。
-     * 
-     * @return networkId */
+    /**
+     * 规则使用的网络id。与cidr参数二选一。
+     * @return networkId
+     */
     public String getNetworkId() {
         return networkId;
     }
@@ -91,9 +96,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** SNAT规则的描述，长度限制为255。
-     * 
-     * @return description */
+    /**
+     * SNAT规则的描述，长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -107,9 +113,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
-     * 
-     * @return sourceType */
+    /**
+     * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC） 
+     * @return sourceType
+     */
     public Integer getSourceType() {
         return sourceType;
     }
@@ -123,9 +130,10 @@ public class CreateNatGatewaySnatRuleOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。 约束：弹性公网IP的id个数不能超过20个。
-     * 
-     * @return floatingIpId */
+    /**
+     * 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。 约束：弹性公网IP的id个数不能超过20个。 
+     * @return floatingIpId
+     */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -170,7 +178,10 @@ public class CreateNatGatewaySnatRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

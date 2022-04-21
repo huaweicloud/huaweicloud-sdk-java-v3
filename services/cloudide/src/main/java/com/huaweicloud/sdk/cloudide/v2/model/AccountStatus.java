@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AccountStatus */
+/**
+ * AccountStatus
+ */
 public class AccountStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AccountStatus {
         return this;
     }
 
-    /** 是否有创建实例权限
-     * 
-     * @return curOrgCreateRole */
+    /**
+     * 是否有创建实例权限
+     * @return curOrgCreateRole
+     */
     public Boolean getCurOrgCreateRole() {
         return curOrgCreateRole;
     }
@@ -49,9 +52,10 @@ public class AccountStatus {
         return this;
     }
 
-    /** 帐号所属租户是否开通服务
-     * 
-     * @return curOrgOpen */
+    /**
+     * 帐号所属租户是否开通服务
+     * @return curOrgOpen
+     */
     public Boolean getCurOrgOpen() {
         return curOrgOpen;
     }
@@ -65,9 +69,10 @@ public class AccountStatus {
         return this;
     }
 
-    /** 免费试用
-     * 
-     * @return hasFreeTrial */
+    /**
+     * 免费试用
+     * @return hasFreeTrial
+     */
     public Boolean getHasFreeTrial() {
         return hasFreeTrial;
     }
@@ -81,9 +86,10 @@ public class AccountStatus {
         return this;
     }
 
-    /** 是否有管理入口的权限
-     * 
-     * @return showManage */
+    /**
+     * 是否有管理入口的权限
+     * @return showManage
+     */
     public Boolean getShowManage() {
         return showManage;
     }
@@ -124,7 +130,10 @@ public class AccountStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -51,9 +51,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能描述：安全组对应的唯一标识 取值范围：带“-”的标准UUID格式
-     * 
-     * @return id */
+    /**
+     * 功能描述：安全组对应的唯一标识 取值范围：带“-”的标准UUID格式
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -67,9 +68,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return name */
+    /**
+     * 功能说明：安全组名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -83,9 +85,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -99,9 +102,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组所属的项目ID
-     * 
-     * @return projectId */
+    /**
+     * 功能说明：安全组所属的项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -115,9 +119,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return createdAt */
+    /**
+     * 功能说明：安全组创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -131,9 +136,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组更新时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
-     * 
-     * @return updatedAt */
+    /**
+     * 功能说明：安全组更新时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -147,9 +153,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：安全组所属的企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：安全组所属的企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -195,7 +202,10 @@ public class SecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

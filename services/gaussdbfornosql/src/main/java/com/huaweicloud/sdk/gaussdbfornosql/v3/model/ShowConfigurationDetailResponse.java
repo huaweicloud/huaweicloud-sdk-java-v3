@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowConfigurationDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数模板ID。
-     * 
-     * @return id */
+    /**
+     * 参数模板ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -73,9 +76,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数模板名称。
-     * 
-     * @return name */
+    /**
+     * 参数模板名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -89,9 +93,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数模板描述。
-     * 
-     * @return description */
+    /**
+     * 参数模板描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -105,9 +110,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库版本名称。
-     * 
-     * @return datastoreVersionName */
+    /**
+     * 数据库版本名称。
+     * @return datastoreVersionName
+     */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -121,9 +127,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return datastoreName */
+    /**
+     * 数据库名称。
+     * @return datastoreName
+     */
     public String getDatastoreName() {
         return datastoreName;
     }
@@ -137,9 +144,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return created */
+    /**
+     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -153,9 +161,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * 
-     * @return updated */
+    /**
+     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -188,9 +197,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 参数对象，用户基于默认参数模板自定义的参数配置。
-     * 
-     * @return configurationParameters */
+    /**
+     * 参数对象，用户基于默认参数模板自定义的参数配置。
+     * @return configurationParameters
+     */
     public List<ConfigurationParameterResult> getConfigurationParameters() {
         return configurationParameters;
     }
@@ -246,7 +256,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

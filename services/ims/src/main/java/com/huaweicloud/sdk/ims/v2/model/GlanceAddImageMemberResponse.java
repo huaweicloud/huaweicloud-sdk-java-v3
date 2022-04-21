@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceAddImageMemberResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 共享状态
-     * 
-     * @return status */
+    /**
+     * 共享状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -60,9 +63,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 共享时间，格式为UTC时间
-     * 
-     * @return createdAt */
+    /**
+     * 共享时间，格式为UTC时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -76,9 +80,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，格式为UTC时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间，格式为UTC时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -92,9 +97,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像ID
-     * 
-     * @return imageId */
+    /**
+     * 镜像ID
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -108,9 +114,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 成员ID
-     * 
-     * @return memberId */
+    /**
+     * 成员ID
+     * @return memberId
+     */
     public String getMemberId() {
         return memberId;
     }
@@ -124,9 +131,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return this;
     }
 
-    /** 共享视图
-     * 
-     * @return schema */
+    /**
+     * 共享视图
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -171,7 +179,10 @@ public class GlanceAddImageMemberResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

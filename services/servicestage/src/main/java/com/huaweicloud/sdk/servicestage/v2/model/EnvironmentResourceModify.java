@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EnvironmentResourceModify */
+/**
+ * EnvironmentResourceModify
+ */
 public class EnvironmentResourceModify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class EnvironmentResourceModify {
         return this;
     }
 
-    /** 添加基础资源。
-     * 
-     * @return addBaseResources */
+    /**
+     * 添加基础资源。
+     * @return addBaseResources
+     */
     public List<Resource> getAddBaseResources() {
         return addBaseResources;
     }
@@ -79,9 +82,10 @@ public class EnvironmentResourceModify {
         return this;
     }
 
-    /** 添加其他资源。
-     * 
-     * @return addOptionalResources */
+    /**
+     * 添加其他资源。
+     * @return addOptionalResources
+     */
     public List<Resource> getAddOptionalResources() {
         return addOptionalResources;
     }
@@ -111,9 +115,10 @@ public class EnvironmentResourceModify {
         return this;
     }
 
-    /** 移除资源。
-     * 
-     * @return removeResources */
+    /**
+     * 移除资源。
+     * @return removeResources
+     */
     public List<Resource> getRemoveResources() {
         return removeResources;
     }
@@ -152,7 +157,10 @@ public class EnvironmentResourceModify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

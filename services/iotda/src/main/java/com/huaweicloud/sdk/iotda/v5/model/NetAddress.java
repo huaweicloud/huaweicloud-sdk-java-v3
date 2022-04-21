@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 网络地址信息。 */
+/**
+ * 网络地址信息。
+ */
 public class NetAddress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class NetAddress {
         return this;
     }
 
-    /** **参数说明**：服务的对应IP
-     * 
-     * @return ip */
+    /**
+     * **参数说明**：服务的对应IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -44,9 +47,11 @@ public class NetAddress {
         return this;
     }
 
-    /** **参数说明**：服务对应端口 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * **参数说明**：服务对应端口
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -60,9 +65,10 @@ public class NetAddress {
         return this;
     }
 
-    /** **参数说明**：服务对应的域名
-     * 
-     * @return domain */
+    /**
+     * **参数说明**：服务对应的域名
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -100,7 +106,10 @@ public class NetAddress {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

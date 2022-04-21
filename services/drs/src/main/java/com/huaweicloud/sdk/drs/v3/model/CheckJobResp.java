@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 响应体 */
+/**
+ * 响应体
+ */
 public class CheckJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class CheckJobResp {
 
     private String id;
 
-    /** 测试结果 */
+    /**
+     * 测试结果
+     */
     public static final class StatusEnum {
 
-        /** Enum TRUE_ for value: "true表示成功" */
+        /**
+         * Enum TRUE_ for value: "true表示成功"
+         */
         public static final StatusEnum TRUE_ = new StatusEnum("true表示成功");
 
-        /** Enum FALSE_ for value: "false表示失败" */
+        /**
+         * Enum FALSE_ for value: "false表示失败"
+         */
         public static final StatusEnum FALSE_ = new StatusEnum("false表示失败");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class CheckJobResp {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return id */
+    /**
+     * 任务id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -130,9 +139,10 @@ public class CheckJobResp {
         return this;
     }
 
-    /** 测试结果
-     * 
-     * @return status */
+    /**
+     * 测试结果
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -146,9 +156,10 @@ public class CheckJobResp {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -162,9 +173,10 @@ public class CheckJobResp {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -178,9 +190,10 @@ public class CheckJobResp {
         return this;
     }
 
-    /** 是否成功
-     * 
-     * @return success */
+    /**
+     * 是否成功
+     * @return success
+     */
     public Boolean getSuccess() {
         return success;
     }
@@ -222,7 +235,10 @@ public class CheckJobResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

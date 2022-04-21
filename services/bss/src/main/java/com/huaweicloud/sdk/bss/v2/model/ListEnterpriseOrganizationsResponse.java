@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListEnterpriseOrganizationsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 根节点ID，如果请求有parent_id，则该参数无值。
-     * 
-     * @return rootId */
+    /**
+     * 根节点ID，如果请求有parent_id，则该参数无值。
+     * @return rootId
+     */
     public String getRootId() {
         return rootId;
     }
@@ -48,9 +51,10 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 根节点名称，如果请求有parent_id，则该参数无值。 说明： 组织根节点没有设置组织名称时，可能为空。
-     * 
-     * @return rootName */
+    /**
+     * 根节点名称，如果请求有parent_id，则该参数无值。  说明： 组织根节点没有设置组织名称时，可能为空。
+     * @return rootName
+     */
     public String getRootName() {
         return rootName;
     }
@@ -80,9 +84,10 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 子节点列表。
-     * 
-     * @return childNodes */
+    /**
+     * 子节点列表。
+     * @return childNodes
+     */
     public List<EmChildNodeV2> getChildNodes() {
         return childNodes;
     }
@@ -122,7 +127,10 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

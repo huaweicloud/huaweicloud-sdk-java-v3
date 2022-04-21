@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 连接参数配置，请参见link-config-values参数说明 */
+/**
+ * 连接参数配置，请参见link-config-values参数说明
+ */
 public class LinksLinkconfigvalues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class LinksLinkconfigvalues {
         return this;
     }
 
-    /** 连接配置参数数据结构，请参见configs参数说明。
-     * 
-     * @return configs */
+    /**
+     * 连接配置参数数据结构，请参见configs参数说明。
+     * @return configs
+     */
     public List<Configs> getConfigs() {
         return configs;
     }
@@ -73,9 +76,10 @@ public class LinksLinkconfigvalues {
         return this;
     }
 
-    /** Get extendedConfigs
-     * 
-     * @return extendedConfigs */
+    /**
+     * Get extendedConfigs
+     * @return extendedConfigs
+     */
     public LinksLinkconfigvaluesExtendedconfigs getExtendedConfigs() {
         return extendedConfigs;
     }
@@ -105,9 +109,10 @@ public class LinksLinkconfigvalues {
         return this;
     }
 
-    /** 校验器
-     * 
-     * @return validators */
+    /**
+     * 校验器
+     * @return validators
+     */
     public List<String> getValidators() {
         return validators;
     }
@@ -146,7 +151,10 @@ public class LinksLinkconfigvalues {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExtendsParamV2 */
+/**
+ * ExtendsParamV2
+ */
 public class ExtendsParamV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 提示
-     * 
-     * @return tips */
+    /**
+     * 提示
+     * @return tips
+     */
     public String getTips() {
         return tips;
     }
@@ -99,9 +102,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 是否必填 minimum: 0 maximum: 1
-     * 
-     * @return required */
+    /**
+     * 是否必填
+     * minimum: 0
+     * maximum: 1
+     * @return required
+     */
     public Integer getRequired() {
         return required;
     }
@@ -115,9 +121,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 限制长度 minimum: 0 maximum: 65535
-     * 
-     * @return length */
+    /**
+     * 限制长度
+     * minimum: 0
+     * maximum: 65535
+     * @return length
+     */
     public Integer getLength() {
         return length;
     }
@@ -131,9 +140,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return language */
+    /**
+     * 语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -147,9 +157,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 参数标识
-     * 
-     * @return paramKey */
+    /**
+     * 参数标识
+     * @return paramKey
+     */
     public String getParamKey() {
         return paramKey;
     }
@@ -163,9 +174,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 参数名称
-     * 
-     * @return paramName */
+    /**
+     * 参数名称
+     * @return paramName
+     */
     public String getParamName() {
         return paramName;
     }
@@ -179,9 +191,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 参数类型 minimum: 0 maximum: 10
-     * 
-     * @return paramType */
+    /**
+     * 参数类型
+     * minimum: 0
+     * maximum: 10
+     * @return paramType
+     */
     public Integer getParamType() {
         return paramType;
     }
@@ -195,9 +210,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 参数描述
-     * 
-     * @return paramDesc */
+    /**
+     * 参数描述
+     * @return paramDesc
+     */
     public String getParamDesc() {
         return paramDesc;
     }
@@ -211,9 +227,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 默认值
-     * 
-     * @return defaultValue */
+    /**
+     * 默认值
+     * @return defaultValue
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -227,9 +244,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 最大值 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return maxValue */
+    /**
+     * 最大值
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return maxValue
+     */
     public Long getMaxValue() {
         return maxValue;
     }
@@ -243,9 +263,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 最小值 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return minValue */
+    /**
+     * 最小值
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return minValue
+     */
     public Long getMinValue() {
         return minValue;
     }
@@ -259,9 +282,10 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 选项值
-     * 
-     * @return selectItem */
+    /**
+     * 选项值
+     * @return selectItem
+     */
     public String getSelectItem() {
         return selectItem;
     }
@@ -275,9 +299,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 是否展示 minimum: 0 maximum: 1
-     * 
-     * @return isShow */
+    /**
+     * 是否展示
+     * minimum: 0
+     * maximum: 1
+     * @return isShow
+     */
     public Integer getIsShow() {
         return isShow;
     }
@@ -291,9 +318,12 @@ public class ExtendsParamV2 {
         return this;
     }
 
-    /** 是否敏感 minimum: 0 maximum: 1
-     * 
-     * @return isSensitive */
+    /**
+     * 是否敏感
+     * minimum: 0
+     * maximum: 1
+     * @return isSensitive
+     */
     public Integer getIsSensitive() {
         return isSensitive;
     }
@@ -366,7 +396,10 @@ public class ExtendsParamV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

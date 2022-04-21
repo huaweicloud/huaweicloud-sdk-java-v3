@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ExpandShareResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ExpandShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统ID。
-     * 
-     * @return id */
+    /**
+     * SFS Turbo文件系统ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -40,9 +43,10 @@ public class ExpandShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统名称。
-     * 
-     * @return name */
+    /**
+     * SFS Turbo文件系统名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,7 +82,10 @@ public class ExpandShareResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 鉴权配置 */
+/**
+ * 鉴权配置
+ */
 public class AppAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AppAuth {
         return this;
     }
 
-    /** 开启或关闭URL鉴权
-     * 
-     * @return enable */
+    /**
+     * 开启或关闭URL鉴权
+     * @return enable
+     */
     public Boolean getEnable() {
         return enable;
     }
@@ -49,9 +52,12 @@ public class AppAuth {
         return this;
     }
 
-    /** 接入RTC建链认证时的signature的有效期。单位：秒。默认300秒。signature由app_key生成 minimum: 60 maximum: 2592000
-     * 
-     * @return expire */
+    /**
+     * 接入RTC建链认证时的signature的有效期。单位：秒。默认300秒。signature由app_key生成 
+     * minimum: 60
+     * maximum: 2592000
+     * @return expire
+     */
     public Integer getExpire() {
         return expire;
     }
@@ -65,9 +71,10 @@ public class AppAuth {
         return this;
     }
 
-    /** app鉴权秘钥
-     * 
-     * @return appKey */
+    /**
+     * app鉴权秘钥
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -81,9 +88,10 @@ public class AppAuth {
         return this;
     }
 
-    /** app鉴权的更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return updateTime */
+    /**
+     * app鉴权的更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -122,7 +130,10 @@ public class AppAuth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

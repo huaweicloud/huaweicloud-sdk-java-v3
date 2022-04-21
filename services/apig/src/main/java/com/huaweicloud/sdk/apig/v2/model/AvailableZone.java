@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AvailableZone */
+/**
+ * AvailableZone
+ */
 public class AvailableZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** 可用区名称。
-     * 
-     * @return name */
+    /**
+     * 可用区名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +65,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** 实例创建失败错误信息
-     * 
-     * @return id */
+    /**
+     * 实例创建失败错误信息
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,9 +82,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** 可用区编码。
-     * 
-     * @return code */
+    /**
+     * 可用区编码。
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -94,9 +99,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** 可用区端口号。
-     * 
-     * @return port */
+    /**
+     * 可用区端口号。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -119,9 +125,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** Get localName
-     * 
-     * @return localName */
+    /**
+     * Get localName
+     * @return localName
+     */
     public LocalName getLocalName() {
         return localName;
     }
@@ -151,9 +158,10 @@ public class AvailableZone {
         return this;
     }
 
-    /** 可用区支持的实例规格。
-     * 
-     * @return specs */
+    /**
+     * 可用区支持的实例规格。
+     * @return specs
+     */
     public Map<String, Boolean> getSpecs() {
         return specs;
     }
@@ -196,7 +204,10 @@ public class AvailableZone {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

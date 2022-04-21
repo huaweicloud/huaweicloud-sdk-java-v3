@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据库信息体 */
+/**
+ * 数据库信息体
+ */
 public class Endpoint {
 
-    /** 数据库类型 */
+    /**
+     * 数据库类型
+     */
     public static final class DbTypeEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final DbTypeEnum MYSQL = new DbTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final DbTypeEnum MONGODB = new DbTypeEnum("mongodb");
 
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -194,10 +202,14 @@ public class Endpoint {
 
     private String topic;
 
-    /** MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。 */
+    /**
+     * MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
+     */
     public static final class ClusterModeEnum {
 
-        /** Enum SHARDING4_0_ for value: "Sharding4.0+" */
+        /**
+         * Enum SHARDING4_0_ for value: "Sharding4.0+"
+         */
         public static final ClusterModeEnum SHARDING4_0_ = new ClusterModeEnum("Sharding4.0+");
 
         private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
@@ -271,9 +283,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库类型
-     * 
-     * @return dbType */
+    /**
+     * 数据库类型
+     * @return dbType
+     */
     public DbTypeEnum getDbType() {
         return dbType;
     }
@@ -287,9 +300,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库所在可用区azCode
-     * 
-     * @return azCode */
+    /**
+     * 数据库所在可用区azCode
+     * @return azCode
+     */
     public String getAzCode() {
         return azCode;
     }
@@ -303,9 +317,10 @@ public class Endpoint {
         return this;
     }
 
-    /** RDS实例所在Region，数据库为RDS实例时必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
-     * 
-     * @return region */
+    /**
+     * RDS实例所在Region，数据库为RDS实例时必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -319,9 +334,10 @@ public class Endpoint {
         return this;
     }
 
-    /** RDS实例ID，数据库为RDS实例必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
-     * 
-     * @return instId */
+    /**
+     * RDS实例ID，数据库为RDS实例必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
+     * @return instId
+     */
     public String getInstId() {
         return instId;
     }
@@ -335,9 +351,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库所在的虚拟私有云id
-     * 
-     * @return vpcId */
+    /**
+     * 数据库所在的虚拟私有云id
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -351,9 +368,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库所在的子网id
-     * 
-     * @return subnetId */
+    /**
+     * 数据库所在的子网id
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -367,9 +385,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库所在的安全组id。
-     * 
-     * @return securityGroupId */
+    /**
+     * 数据库所在的安全组id。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -383,9 +402,10 @@ public class Endpoint {
         return this;
     }
 
-    /** RDS实例projectId
-     * 
-     * @return projectId */
+    /**
+     * RDS实例projectId
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -399,9 +419,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 服务名serviceName，源库为oracle场景时必填。约束：不能超过128位，不能包含!<>&'\"\\特殊字符。待还原数据库名称是指备份文件中包含的数据库名称，当您选择部分数据库恢复时，需要选择恢复一个或者多个数据库。
-     * 
-     * @return dbName */
+    /**
+     * 服务名serviceName，源库为oracle场景时必填。约束：不能超过128位，不能包含!<>&'\"\\特殊字符。待还原数据库名称是指备份文件中包含的数据库名称，当您选择部分数据库恢复时，需要选择恢复一个或者多个数据库。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -415,9 +436,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库密码。
-     * 
-     * @return dbPassword */
+    /**
+     * 数据库密码。
+     * @return dbPassword
+     */
     public String getDbPassword() {
         return dbPassword;
     }
@@ -431,9 +453,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库端口。约束：输入范围为1-65535之间的整数。
-     * 
-     * @return dbPort */
+    /**
+     * 数据库端口。约束：输入范围为1-65535之间的整数。
+     * @return dbPort
+     */
     public Integer getDbPort() {
         return dbPort;
     }
@@ -447,9 +470,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库用户。
-     * 
-     * @return dbUser */
+    /**
+     * 数据库用户。
+     * @return dbUser
+     */
     public String getDbUser() {
         return dbUser;
     }
@@ -463,9 +487,10 @@ public class Endpoint {
         return this;
     }
 
-    /** RDS实例名称。
-     * 
-     * @return instName */
+    /**
+     * RDS实例名称。
+     * @return instName
+     */
     public String getInstName() {
         return instName;
     }
@@ -479,9 +504,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 数据库ip
-     * 
-     * @return ip */
+    /**
+     * 数据库ip
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -495,9 +521,10 @@ public class Endpoint {
         return this;
     }
 
-    /** mongo ha模式。
-     * 
-     * @return mongoHaMode */
+    /**
+     * mongo ha模式。
+     * @return mongoHaMode
+     */
     public String getMongoHaMode() {
         return mongoHaMode;
     }
@@ -511,9 +538,10 @@ public class Endpoint {
         return this;
     }
 
-    /** MRS集群运行模式，取值： - 0普通集群 - 1安全集群
-     * 
-     * @return safeMode */
+    /**
+     * MRS集群运行模式，取值： - 0普通集群 - 1安全集群
+     * @return safeMode
+     */
     public Integer getSafeMode() {
         return safeMode;
     }
@@ -527,9 +555,10 @@ public class Endpoint {
         return this;
     }
 
-    /** SSL证书密码，证书文件后缀为.p12
-     * 
-     * @return sslCertPassword */
+    /**
+     * SSL证书密码，证书文件后缀为.p12
+     * @return sslCertPassword
+     */
     public String getSslCertPassword() {
         return sslCertPassword;
     }
@@ -543,9 +572,10 @@ public class Endpoint {
         return this;
     }
 
-    /** SSL证书内容checksum值，后端校验，源库安全连接必选。
-     * 
-     * @return sslCertCheckSum */
+    /**
+     * SSL证书内容checksum值，后端校验，源库安全连接必选。
+     * @return sslCertCheckSum
+     */
     public String getSslCertCheckSum() {
         return sslCertCheckSum;
     }
@@ -559,9 +589,10 @@ public class Endpoint {
         return this;
     }
 
-    /** SSL证书内容，用base64加密
-     * 
-     * @return sslCertKey */
+    /**
+     * SSL证书内容，用base64加密
+     * @return sslCertKey
+     */
     public String getSslCertKey() {
         return sslCertKey;
     }
@@ -575,9 +606,10 @@ public class Endpoint {
         return this;
     }
 
-    /** SSL证书名字
-     * 
-     * @return sslCertName */
+    /**
+     * SSL证书名字
+     * @return sslCertName
+     */
     public String getSslCertName() {
         return sslCertName;
     }
@@ -591,9 +623,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 是否SSL安全连接。
-     * 
-     * @return sslLink */
+    /**
+     * 是否SSL安全连接。
+     * @return sslLink
+     */
     public Boolean getSslLink() {
         return sslLink;
     }
@@ -607,9 +640,10 @@ public class Endpoint {
         return this;
     }
 
-    /** kafka topic名称
-     * 
-     * @return topic */
+    /**
+     * kafka topic名称
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -623,9 +657,10 @@ public class Endpoint {
         return this;
     }
 
-    /** MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
-     * 
-     * @return clusterMode */
+    /**
+     * MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
+     * @return clusterMode
+     */
     public ClusterModeEnum getClusterMode() {
         return clusterMode;
     }
@@ -717,7 +752,10 @@ public class Endpoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

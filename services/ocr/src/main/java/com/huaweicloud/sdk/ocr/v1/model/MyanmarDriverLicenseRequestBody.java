@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MyanmarDriverLicenseRequestBody */
+/**
+ * MyanmarDriverLicenseRequestBody
+ */
 public class MyanmarDriverLicenseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class MyanmarDriverLicenseRequestBody {
         return this;
     }
 
-    /** 与url二选一 图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px，支持JPEG、JPG、PNG、BMP、TIFF格式。
-     * 
-     * @return image */
+    /**
+     * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px，支持JPEG、JPG、PNG、BMP、TIFF格式。
+     * @return image
+     */
     public String getImage() {
         return image;
     }
@@ -44,11 +47,10 @@ public class MyanmarDriverLicenseRequestBody {
         return this;
     }
 
-    /** 与image二选一 图片的URL路径，目前支持： - 公网http/https url -
-     * OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/intl/zh-cn/api-ocr/ocr_03_0132.html)。
-     * > 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。
-     * 
-     * @return url */
+    /**
+     * 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/intl/zh-cn/api-ocr/ocr_03_0132.html)。 > 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -62,9 +64,10 @@ public class MyanmarDriverLicenseRequestBody {
         return this;
     }
 
-    /** - true：输出为unicode格式 - false：输出为zawgyi格式 如果参数值为空或无该参数，默认输出为zawgyi格式。
-     * 
-     * @return convertUnicode */
+    /**
+     * - true：输出为unicode格式 - false：输出为zawgyi格式 如果参数值为空或无该参数，默认输出为zawgyi格式。 
+     * @return convertUnicode
+     */
     public Boolean getConvertUnicode() {
         return convertUnicode;
     }
@@ -103,7 +106,10 @@ public class MyanmarDriverLicenseRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

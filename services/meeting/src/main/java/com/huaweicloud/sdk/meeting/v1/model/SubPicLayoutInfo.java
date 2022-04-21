@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubPicLayoutInfo */
+/**
+ * SubPicLayoutInfo
+ */
 public class SubPicLayoutInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,11 @@ public class SubPicLayoutInfo {
         return this;
     }
 
-    /** 画面索引号 minimum: 1
-     * 
-     * @return id */
+    /**
+     * 画面索引号
+     * minimum: 1
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -54,9 +58,11 @@ public class SubPicLayoutInfo {
         return this;
     }
 
-    /** 画面从左到右的坐标点 minimum: 1
-     * 
-     * @return left */
+    /**
+     * 画面从左到右的坐标点
+     * minimum: 1
+     * @return left
+     */
     public Integer getLeft() {
         return left;
     }
@@ -70,9 +76,11 @@ public class SubPicLayoutInfo {
         return this;
     }
 
-    /** 画面从上到下的坐标点 minimum: 1
-     * 
-     * @return top */
+    /**
+     * 画面从上到下的坐标点
+     * minimum: 1
+     * @return top
+     */
     public Integer getTop() {
         return top;
     }
@@ -86,9 +94,11 @@ public class SubPicLayoutInfo {
         return this;
     }
 
-    /** 小画面的宽度 minimum: 1
-     * 
-     * @return xSize */
+    /**
+     * 小画面的宽度
+     * minimum: 1
+     * @return xSize
+     */
     public Integer getXSize() {
         return xSize;
     }
@@ -102,9 +112,11 @@ public class SubPicLayoutInfo {
         return this;
     }
 
-    /** 小画面的高度 minimum: 1
-     * 
-     * @return ySize */
+    /**
+     * 小画面的高度
+     * minimum: 1
+     * @return ySize
+     */
     public Integer getYSize() {
         return ySize;
     }
@@ -145,7 +157,10 @@ public class SubPicLayoutInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

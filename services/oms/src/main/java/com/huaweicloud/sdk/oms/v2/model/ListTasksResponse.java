@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询的任务详情
-     * 
-     * @return tasks */
+    /**
+     * 查询的任务详情
+     * @return tasks
+     */
     public List<TaskResp> getTasks() {
         return tasks;
     }
@@ -59,9 +62,12 @@ public class ListTasksResponse extends SdkResponse {
         return this;
     }
 
-    /** 满足查询条件的任务总数 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return count */
+    /**
+     * 满足查询条件的任务总数
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -98,7 +104,10 @@ public class ListTasksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

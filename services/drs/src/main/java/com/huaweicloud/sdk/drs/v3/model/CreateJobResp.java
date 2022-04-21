@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建任务响应体 */
+/**
+ * 创建任务响应体
+ */
 public class CreateJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -67,9 +70,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -83,9 +87,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -99,9 +104,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 创建时间，时间戳
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，时间戳
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -115,9 +121,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -131,9 +138,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -163,9 +171,10 @@ public class CreateJobResp {
         return this;
     }
 
-    /** 子任务ID，有子任务时返回该字段。
-     * 
-     * @return childIds */
+    /**
+     * 子任务ID，有子任务时返回该字段。
+     * @return childIds
+     */
     public List<String> getChildIds() {
         return childIds;
     }
@@ -211,7 +220,10 @@ public class CreateJobResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

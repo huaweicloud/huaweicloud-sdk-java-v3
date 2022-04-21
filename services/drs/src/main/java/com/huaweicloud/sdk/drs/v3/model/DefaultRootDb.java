@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 目标实例根节点库信息体 */
+/**
+ * 目标实例根节点库信息体
+ */
 public class DefaultRootDb {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DefaultRootDb {
         return this;
     }
 
-    /** 库名。
-     * 
-     * @return dbName */
+    /**
+     * 库名。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -39,9 +42,10 @@ public class DefaultRootDb {
         return this;
     }
 
-    /** 编码格式。
-     * 
-     * @return dbEncoding */
+    /**
+     * 编码格式。
+     * @return dbEncoding
+     */
     public String getDbEncoding() {
         return dbEncoding;
     }
@@ -78,7 +82,10 @@ public class DefaultRootDb {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

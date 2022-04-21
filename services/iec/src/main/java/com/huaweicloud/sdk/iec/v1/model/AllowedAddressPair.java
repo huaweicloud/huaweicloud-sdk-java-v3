@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IP/Mac对象 */
+/**
+ * IP/Mac对象
+ */
 public class AllowedAddressPair {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AllowedAddressPair {
         return this;
     }
 
-    /** IP地址 约束：不支持0.0.0.0/0 建议：如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。
-     * 
-     * @return ipAddress */
+    /**
+     * IP地址  约束：不支持0.0.0.0/0  建议：如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -39,9 +42,10 @@ public class AllowedAddressPair {
         return this;
     }
 
-    /** MAC地址
-     * 
-     * @return macAddress */
+    /**
+     * MAC地址
+     * @return macAddress
+     */
     public String getMacAddress() {
         return macAddress;
     }
@@ -78,7 +82,10 @@ public class AllowedAddressPair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

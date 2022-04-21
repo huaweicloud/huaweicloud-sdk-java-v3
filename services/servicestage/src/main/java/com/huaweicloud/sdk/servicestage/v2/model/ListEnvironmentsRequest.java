@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEnvironmentsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListEnvironmentsRequest {
 
     private String orderBy;
 
-    /** desc/asc，默认desc。 */
+    /**
+     * desc/asc，默认desc。
+     */
     public static final class OrderEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,12 @@ public class ListEnvironmentsRequest {
         return this;
     }
 
-    /** 指定个数，明确指定的时候用于分页，取值[0, 100]。不指定的时候表示不分页，最多查询1000条记录。 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 指定个数，明确指定的时候用于分页，取值[0, 100]。不指定的时候表示不分页，最多查询1000条记录。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -125,9 +136,10 @@ public class ListEnvironmentsRequest {
         return this;
     }
 
-    /** 指定查询偏移量，默认偏移量为0.
-     * 
-     * @return offset */
+    /**
+     * 指定查询偏移量，默认偏移量为0.
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -141,9 +153,10 @@ public class ListEnvironmentsRequest {
         return this;
     }
 
-    /** 排序字段，默认按创建时间排序。 排序字段支持枚举值：create_time、name、update_time。
-     * 
-     * @return orderBy */
+    /**
+     * 排序字段，默认按创建时间排序。  排序字段支持枚举值：create_time、name、update_time。 
+     * @return orderBy
+     */
     public String getOrderBy() {
         return orderBy;
     }
@@ -157,9 +170,10 @@ public class ListEnvironmentsRequest {
         return this;
     }
 
-    /** desc/asc，默认desc。
-     * 
-     * @return order */
+    /**
+     * desc/asc，默认desc。
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -200,7 +214,10 @@ public class ListEnvironmentsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

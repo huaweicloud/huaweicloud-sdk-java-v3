@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListApplicationsV6Request {
 
-    /** 语言类型 中文:zh-cn 英文:en-us */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -122,16 +130,24 @@ public class ListApplicationsV6Request {
 
     private Boolean isCreatedBySelf;
 
-    /** Gets or Sets sortKey */
+    /**
+     * Gets or Sets sortKey
+     */
     public static final class SortKeyEnum {
 
-        /** Enum NAME for value: "name" */
+        /**
+         * Enum NAME for value: "name"
+         */
         public static final SortKeyEnum NAME = new SortKeyEnum("name");
 
-        /** Enum CREATED_AT for value: "created_at" */
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
 
-        /** Enum UPDATED_AT for value: "updated_at" */
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
@@ -202,13 +218,19 @@ public class ListApplicationsV6Request {
 
     private List<SortKeyEnum> sortKey = null;
 
-    /** Gets or Sets sortDir */
+    /**
+    * Gets or Sets sortDir
+    */
     public static final class SortDirEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -293,9 +315,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -311,9 +334,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 是否查询我关注的应用
-     * 
-     * @return attention */
+    /**
+     * 是否查询我关注的应用
+     * @return attention
+     */
     public Boolean getAttention() {
         return attention;
     }
@@ -327,9 +351,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 区域id，从控制台获取方法请参见: [获取区域ID](https://console.huaweicloud.com/iam/?region=cn-north-1&locale=zh-cn#/iam/projects)
-     * 
-     * @return regionId */
+    /**
+     * 区域id，从控制台获取方法请参见: [获取区域ID](https://console.huaweicloud.com/iam/?region=cn-north-1&locale=zh-cn#/iam/projects)
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -343,9 +368,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 搜索关键字,支持按名称和描述搜索，默认null
-     * 
-     * @return keyword */
+    /**
+     * 搜索关键字,支持按名称和描述搜索，默认null
+     * @return keyword
+     */
     public String getKeyword() {
         return keyword;
     }
@@ -359,10 +385,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 所属DevCloud项目id，从
-     * [项目列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=DevStar&api=ListProjectsV4) 查询。
-     * 
-     * @return projectId */
+    /**
+     * 所属DevCloud项目id，从 [项目列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=DevStar&api=ListProjectsV4) 查询。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -376,9 +402,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 主题id,场景或者部署方式分类id
-     * 
-     * @return topicId */
+    /**
+     * 主题id,场景或者部署方式分类id
+     * @return topicId
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -392,9 +419,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 是否查询由我创建
-     * 
-     * @return isCreatedBySelf */
+    /**
+     * 是否查询由我创建
+     * @return isCreatedBySelf
+     */
     public Boolean getIsCreatedBySelf() {
         return isCreatedBySelf;
     }
@@ -424,9 +452,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 排序字段, name：应用名称,created_at:创建时间,updated_at:更新时间
-     * 
-     * @return sortKey */
+    /**
+     * 排序字段, name：应用名称,created_at:创建时间,updated_at:更新时间
+     * @return sortKey
+     */
     public List<SortKeyEnum> getSortKey() {
         return sortKey;
     }
@@ -456,9 +485,10 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 排序方式, desc:降序, asc:升序
-     * 
-     * @return sortDir */
+    /**
+     * 排序方式, desc:降序, asc:升序
+     * @return sortDir
+     */
     public List<SortDirEnum> getSortDir() {
         return sortDir;
     }
@@ -472,9 +502,12 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 每页显示的条目数量,默认10 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量,默认10
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -488,9 +521,12 @@ public class ListApplicationsV6Request {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询,默认0 minimum: 0 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询,默认0
+     * minimum: 0
+     * maximum: 1000000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -555,7 +591,10 @@ public class ListApplicationsV6Request {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -53,16 +53,24 @@ public class CreateAlarmRequestBody {
 
     private Integer alarmLevel;
 
-    /** 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。 */
+    /**
+     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+     */
     public static final class AlarmTypeEnum {
 
-        /** Enum EVENT_SYS for value: "EVENT.SYS" */
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
         public static final AlarmTypeEnum EVENT_SYS = new AlarmTypeEnum("EVENT.SYS");
 
-        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
 
-        /** Enum RESOURCE_GROUP for value: "RESOURCE_GROUP" */
+        /**
+         * Enum RESOURCE_GROUP for value: "RESOURCE_GROUP"
+         */
         public static final AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
 
         private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -158,9 +166,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
-     * 
-     * @return alarmName */
+    /**
+     * 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+     * @return alarmName
+     */
     public String getAlarmName() {
         return alarmName;
     }
@@ -174,9 +183,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警描述，长度0-256。
-     * 
-     * @return alarmDescription */
+    /**
+     * 告警描述，长度0-256。
+     * @return alarmDescription
+     */
     public String getAlarmDescription() {
         return alarmDescription;
     }
@@ -199,9 +209,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** Get metric
-     * 
-     * @return metric */
+    /**
+     * Get metric
+     * @return metric
+     */
     public MetricForAlarm getMetric() {
         return metric;
     }
@@ -224,9 +235,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** Get condition
-     * 
-     * @return condition */
+    /**
+     * Get condition
+     * @return condition
+     */
     public Condition getCondition() {
         return condition;
     }
@@ -240,9 +252,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 是否启用该条告警，默认为true。
-     * 
-     * @return alarmEnabled */
+    /**
+     * 是否启用该条告警，默认为true。
+     * @return alarmEnabled
+     */
     public Boolean getAlarmEnabled() {
         return alarmEnabled;
     }
@@ -256,9 +269,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
-     * 
-     * @return alarmActionEnabled */
+    /**
+     * 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
+     * @return alarmActionEnabled
+     */
     public Boolean getAlarmActionEnabled() {
         return alarmActionEnabled;
     }
@@ -272,9 +286,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
-     * 
-     * @return alarmLevel */
+    /**
+     * 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+     * @return alarmLevel
+     */
     public Integer getAlarmLevel() {
         return alarmLevel;
     }
@@ -288,9 +303,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
-     * 
-     * @return alarmType */
+    /**
+     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+     * @return alarmType
+     */
     public AlarmTypeEnum getAlarmType() {
         return alarmType;
     }
@@ -320,10 +336,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\":
-     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
-     * 
-     * @return alarmActions */
+    /**
+     * 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
+     * @return alarmActions
+     */
     public List<AlarmActions> getAlarmActions() {
         return alarmActions;
     }
@@ -354,9 +370,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 数据不足触发的动作（该参数已废弃，建议无需配置）。
-     * 
-     * @return insufficientdataActions */
+    /**
+     * 数据不足触发的动作（该参数已废弃，建议无需配置）。
+     * @return insufficientdataActions
+     */
     public List<AlarmActions> getInsufficientdataActions() {
         return insufficientdataActions;
     }
@@ -386,9 +403,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 告警恢复触发的动作
-     * 
-     * @return okActions */
+    /**
+     * 告警恢复触发的动作
+     * @return okActions
+     */
     public List<AlarmActions> getOkActions() {
         return okActions;
     }
@@ -402,9 +420,10 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    /** 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -472,7 +491,10 @@ public class CreateAlarmRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

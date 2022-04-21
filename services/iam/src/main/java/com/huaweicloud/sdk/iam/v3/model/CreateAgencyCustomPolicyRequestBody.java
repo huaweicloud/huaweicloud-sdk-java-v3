@@ -30,9 +30,10 @@ public class CreateAgencyCustomPolicyRequestBody {
         return this;
     }
 
-    /** Get role
-     * 
-     * @return role */
+    /**
+     * Get role
+     * @return role
+     */
     public AgencyPolicyRoleOption getRole() {
         return role;
     }
@@ -68,7 +69,10 @@ public class CreateAgencyCustomPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

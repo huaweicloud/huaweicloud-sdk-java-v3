@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateEnvironmentV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -51,9 +54,10 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
         return this;
     }
 
-    /** 环境名称
-     * 
-     * @return name */
+    /**
+     * 环境名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +71,10 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return remark */
+    /**
+     * 描述信息
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -83,9 +88,10 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
         return this;
     }
 
-    /** 环境编号
-     * 
-     * @return id */
+    /**
+     * 环境编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -126,7 +132,10 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

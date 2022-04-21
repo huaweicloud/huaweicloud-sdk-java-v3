@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowScanJobResultsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,16 +30,24 @@ public class ShowScanJobResultsRequest {
 
     private Integer limit;
 
-    /** 资产类型 */
+    /**
+     * 资产类型
+     */
     public static final class TypeEnum {
 
-        /** Enum DATABASE for value: "DATABASE" */
+        /**
+         * Enum DATABASE for value: "DATABASE"
+         */
         public static final TypeEnum DATABASE = new TypeEnum("DATABASE");
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final TypeEnum OBS = new TypeEnum("OBS");
 
-        /** Enum BIGDATA for value: "BIGDATA" */
+        /**
+         * Enum BIGDATA for value: "BIGDATA"
+         */
         public static final TypeEnum BIGDATA = new TypeEnum("BIGDATA");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -139,9 +150,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 页码
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -155,9 +167,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 分页大小
-     * 
-     * @return limit */
+    /**
+     * 分页大小
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,9 +184,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 资产类型
-     * 
-     * @return type */
+    /**
+     * 资产类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -187,9 +201,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 预留，待启用
-     * 
-     * @return startTime */
+    /**
+     * 预留，待启用
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -203,9 +218,10 @@ public class ShowScanJobResultsRequest {
         return this;
     }
 
-    /** 预留，待启用
-     * 
-     * @return endTime */
+    /**
+     * 预留，待启用
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -250,7 +266,10 @@ public class ShowScanJobResultsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

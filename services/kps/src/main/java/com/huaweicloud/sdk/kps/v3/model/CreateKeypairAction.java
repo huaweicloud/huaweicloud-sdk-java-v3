@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建密钥对请求体请求参数 */
+/**
+ * 创建密钥对请求体请求参数
+ */
 public class CreateKeypairAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class CreateKeypairAction {
 
     private String name;
 
-    /** SSH密钥对的类型 */
+    /**
+     * SSH密钥对的类型
+     */
     public static final class TypeEnum {
 
-        /** Enum SSH for value: "ssh" */
+        /**
+         * Enum SSH for value: "ssh"
+         */
         public static final TypeEnum SSH = new TypeEnum("ssh");
 
-        /** Enum X509 for value: "x509" */
+        /**
+         * Enum X509 for value: "x509"
+         */
         public static final TypeEnum X509 = new TypeEnum("x509");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,13 +108,19 @@ public class CreateKeypairAction {
 
     private String publicKey;
 
-    /** 租户级或者用户级 */
+    /**
+     * 租户级或者用户级
+     */
     public static final class ScopeEnum {
 
-        /** Enum DOMAIN for value: "domain" */
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
         public static final ScopeEnum DOMAIN = new ScopeEnum("domain");
 
-        /** Enum USER for value: "user" */
+        /**
+         * Enum USER for value: "user"
+         */
         public static final ScopeEnum USER = new ScopeEnum("user");
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
@@ -191,9 +205,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** SSH密钥对的名称。 - 新创建的密钥对名称不能和已有密钥对的名称相同。 - SSH密钥对名称由英文字母、数字、下划线、中划线组成，长度不能超过64个字节
-     * 
-     * @return name */
+    /**
+     * SSH密钥对的名称。 - 新创建的密钥对名称不能和已有密钥对的名称相同。 - SSH密钥对名称由英文字母、数字、下划线、中划线组成，长度不能超过64个字节
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -207,9 +222,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** SSH密钥对的类型
-     * 
-     * @return type */
+    /**
+     * SSH密钥对的类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -223,9 +239,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** 导入公钥的字符串信息。
-     * 
-     * @return publicKey */
+    /**
+     * 导入公钥的字符串信息。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -239,9 +256,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** 租户级或者用户级
-     * 
-     * @return scope */
+    /**
+     * 租户级或者用户级
+     * @return scope
+     */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -255,9 +273,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** SSH密钥对所属的用户信息
-     * 
-     * @return userId */
+    /**
+     * SSH密钥对所属的用户信息
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -280,9 +299,10 @@ public class CreateKeypairAction {
         return this;
     }
 
-    /** Get keyProtection
-     * 
-     * @return keyProtection */
+    /**
+     * Get keyProtection
+     * @return keyProtection
+     */
     public KeyProtection getKeyProtection() {
         return keyProtection;
     }
@@ -327,7 +347,10 @@ public class CreateKeypairAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

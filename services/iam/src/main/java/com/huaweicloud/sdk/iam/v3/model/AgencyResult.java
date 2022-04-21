@@ -60,9 +60,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 委托创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -76,9 +77,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托描述信息。
-     * 
-     * @return description */
+    /**
+     * 委托描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -92,9 +94,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托方账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 委托方账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -108,9 +111,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托的期限。取值为\"FOREVER\"或“null”表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。
-     * 
-     * @return duration */
+    /**
+     * 委托的期限。取值为\"FOREVER\"或“null”表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -124,9 +128,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托过期时间。“null”表示不过期。
-     * 
-     * @return expireTime */
+    /**
+     * 委托过期时间。“null”表示不过期。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -140,9 +145,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托ID。
-     * 
-     * @return id */
+    /**
+     * 委托ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -156,9 +162,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 委托名。
-     * 
-     * @return name */
+    /**
+     * 委托名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -172,9 +179,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 被委托方账号ID。
-     * 
-     * @return trustDomainId */
+    /**
+     * 被委托方账号ID。
+     * @return trustDomainId
+     */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -188,9 +196,10 @@ public class AgencyResult {
         return this;
     }
 
-    /** 被委托方账号名。
-     * 
-     * @return trustDomainName */
+    /**
+     * 被委托方账号名。
+     * @return trustDomainName
+     */
     public String getTrustDomainName() {
         return trustDomainName;
     }
@@ -241,7 +250,10 @@ public class AgencyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

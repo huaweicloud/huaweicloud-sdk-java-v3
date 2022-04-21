@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 已录入SMN信息体 */
+/**
+ * 已录入SMN信息体
+ */
 public class QuerySmnInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** SMN信息
-     * 
-     * @return subscriptions */
+    /**
+     * SMN信息
+     * @return subscriptions
+     */
     public List<SubscriptionInfo> getSubscriptions() {
         return subscriptions;
     }
@@ -78,9 +81,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** 主题名称
-     * 
-     * @return topicName */
+    /**
+     * 主题名称
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -94,9 +98,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** 订阅延迟时间
-     * 
-     * @return delayTime */
+    /**
+     * 订阅延迟时间
+     * @return delayTime
+     */
     public Long getDelayTime() {
         return delayTime;
     }
@@ -110,9 +115,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** rto延迟时间
-     * 
-     * @return rtoDelay */
+    /**
+     * rto延迟时间
+     * @return rtoDelay
+     */
     public Long getRtoDelay() {
         return rtoDelay;
     }
@@ -126,9 +132,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** rpo延迟时间
-     * 
-     * @return rpoDelay */
+    /**
+     * rpo延迟时间
+     * @return rpoDelay
+     */
     public Long getRpoDelay() {
         return rpoDelay;
     }
@@ -142,9 +149,10 @@ public class QuerySmnInfoResp {
         return this;
     }
 
-    /** 异常告警是否通知用户
-     * 
-     * @return alarmToUser */
+    /**
+     * 异常告警是否通知用户
+     * @return alarmToUser
+     */
     public Boolean getAlarmToUser() {
         return alarmToUser;
     }
@@ -189,7 +197,10 @@ public class QuerySmnInfoResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

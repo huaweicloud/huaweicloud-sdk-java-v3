@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MyanmarIdcardConfidence */
+/**
+ * MyanmarIdcardConfidence
+ */
 public class MyanmarIdcardConfidence {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 身份证号码置信度。
-     * 
-     * @return nrcId */
+    /**
+     * 身份证号码置信度。 
+     * @return nrcId
+     */
     public Float getNrcId() {
         return nrcId;
     }
@@ -84,9 +87,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 签发日期置信度。
-     * 
-     * @return issueDate */
+    /**
+     * 签发日期置信度。 
+     * @return issueDate
+     */
     public Float getIssueDate() {
         return issueDate;
     }
@@ -100,9 +104,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 姓名置信度。
-     * 
-     * @return name */
+    /**
+     * 姓名置信度。 
+     * @return name
+     */
     public Float getName() {
         return name;
     }
@@ -116,9 +121,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 出生日期置信度。
-     * 
-     * @return birth */
+    /**
+     * 出生日期置信度。 
+     * @return birth
+     */
     public Float getBirth() {
         return birth;
     }
@@ -132,9 +138,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 族群或宗教置信度。
-     * 
-     * @return bloodlinesReligion */
+    /**
+     * 族群或宗教置信度。 
+     * @return bloodlinesReligion
+     */
     public Float getBloodlinesReligion() {
         return bloodlinesReligion;
     }
@@ -148,9 +155,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 身高置信度。
-     * 
-     * @return height */
+    /**
+     * 身高置信度。 
+     * @return height
+     */
     public Float getHeight() {
         return height;
     }
@@ -164,9 +172,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 血型置信度。
-     * 
-     * @return bloodGroup */
+    /**
+     * 血型置信度。 
+     * @return bloodGroup
+     */
     public Float getBloodGroup() {
         return bloodGroup;
     }
@@ -180,9 +189,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 身份证的卡号（背面）置信度。
-     * 
-     * @return cardId */
+    /**
+     * 身份证的卡号（背面）置信度。 
+     * @return cardId
+     */
     public Float getCardId() {
         return cardId;
     }
@@ -196,9 +206,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 背面的身份证号码。
-     * 
-     * @return nrcIdBack */
+    /**
+     * 背面的身份证号码。 
+     * @return nrcIdBack
+     */
     public Float getNrcIdBack() {
         return nrcIdBack;
     }
@@ -212,9 +223,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 职业置信度。
-     * 
-     * @return profession */
+    /**
+     * 职业置信度。 
+     * @return profession
+     */
     public Float getProfession() {
         return profession;
     }
@@ -228,9 +240,10 @@ public class MyanmarIdcardConfidence {
         return this;
     }
 
-    /** 地址置信度。
-     * 
-     * @return address */
+    /**
+     * 地址置信度。 
+     * @return address
+     */
     public Float getAddress() {
         return address;
     }
@@ -295,7 +308,10 @@ public class MyanmarIdcardConfidence {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备属性 */
+/**
+ * 终端设备属性
+ */
 public class EdgemgrDevices {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class EdgemgrDevices {
         return this;
     }
 
-    /** Get device
-     * 
-     * @return device */
+    /**
+     * Get device
+     * @return device
+     */
     public EdgemgrDevicesDetail getDevice() {
         return device;
     }
@@ -65,7 +68,10 @@ public class EdgemgrDevices {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

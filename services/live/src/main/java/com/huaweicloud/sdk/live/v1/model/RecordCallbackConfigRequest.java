@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RecordCallbackConfigRequest */
+/**
+ * RecordCallbackConfigRequest
+ */
 public class RecordCallbackConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,21 +33,31 @@ public class RecordCallbackConfigRequest {
 
     private String notifyCallbackUrl;
 
-    /** Gets or Sets notifyEventSubscription */
+    /**
+     * Gets or Sets notifyEventSubscription
+     */
     public static final class NotifyEventSubscriptionEnum {
 
-        /** Enum RECORD_NEW_FILE_START for value: "RECORD_NEW_FILE_START" */
+        /**
+         * Enum RECORD_NEW_FILE_START for value: "RECORD_NEW_FILE_START"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_NEW_FILE_START =
             new NotifyEventSubscriptionEnum("RECORD_NEW_FILE_START");
 
-        /** Enum RECORD_FILE_COMPLETE for value: "RECORD_FILE_COMPLETE" */
+        /**
+         * Enum RECORD_FILE_COMPLETE for value: "RECORD_FILE_COMPLETE"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_FILE_COMPLETE =
             new NotifyEventSubscriptionEnum("RECORD_FILE_COMPLETE");
 
-        /** Enum RECORD_OVER for value: "RECORD_OVER" */
+        /**
+         * Enum RECORD_OVER for value: "RECORD_OVER"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_OVER = new NotifyEventSubscriptionEnum("RECORD_OVER");
 
-        /** Enum RECORD_FAILED for value: "RECORD_FAILED" */
+        /**
+         * Enum RECORD_FAILED for value: "RECORD_FAILED"
+         */
         public static final NotifyEventSubscriptionEnum RECORD_FAILED =
             new NotifyEventSubscriptionEnum("RECORD_FAILED");
 
@@ -118,13 +130,19 @@ public class RecordCallbackConfigRequest {
 
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
-    /** 加密类型 */
+    /**
+    * 加密类型
+    */
     public static final class SignTypeEnum {
 
-        /** Enum MD5 for value: "MD5" */
+        /**
+         * Enum MD5 for value: "MD5"
+         */
         public static final SignTypeEnum MD5 = new SignTypeEnum("MD5");
 
-        /** Enum HMACSHA256 for value: "HMACSHA256" */
+        /**
+         * Enum HMACSHA256 for value: "HMACSHA256"
+         */
         public static final SignTypeEnum HMACSHA256 = new SignTypeEnum("HMACSHA256");
 
         private static final Map<String, SignTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +217,10 @@ public class RecordCallbackConfigRequest {
         return this;
     }
 
-    /** 直播推流域名
-     * 
-     * @return publishDomain */
+    /**
+     * 直播推流域名
+     * @return publishDomain
+     */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -215,9 +234,10 @@ public class RecordCallbackConfigRequest {
         return this;
     }
 
-    /** app名称。如果需要匹配任意应用则需填写*。录制规则匹配的时候，优先精确app匹配，如果匹配不到，则匹配*
-     * 
-     * @return app */
+    /**
+     * app名称。如果需要匹配任意应用则需填写*。录制规则匹配的时候，优先精确app匹配，如果匹配不到，则匹配*
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -231,9 +251,10 @@ public class RecordCallbackConfigRequest {
         return this;
     }
 
-    /** 录制回调通知url地址
-     * 
-     * @return notifyCallbackUrl */
+    /**
+     * 录制回调通知url地址
+     * @return notifyCallbackUrl
+     */
     public String getNotifyCallbackUrl() {
         return notifyCallbackUrl;
     }
@@ -266,9 +287,10 @@ public class RecordCallbackConfigRequest {
         return this;
     }
 
-    /** 订阅录制通知消息。消息类型。RECORD_NEW_FILE_START开始创建新的录制文件。RECORD_FILE_COMPLETE录制文件生成完成。RECORD_OVER录制结束。RECORD_FAILED表示录制失败。如果不填写,默认订阅RECORD_FILE_COMPLETE
-     * 
-     * @return notifyEventSubscription */
+    /**
+     * 订阅录制通知消息。消息类型。RECORD_NEW_FILE_START开始创建新的录制文件。RECORD_FILE_COMPLETE录制文件生成完成。RECORD_OVER录制结束。RECORD_FAILED表示录制失败。如果不填写,默认订阅RECORD_FILE_COMPLETE
+     * @return notifyEventSubscription
+     */
     public List<NotifyEventSubscriptionEnum> getNotifyEventSubscription() {
         return notifyEventSubscription;
     }
@@ -282,9 +304,10 @@ public class RecordCallbackConfigRequest {
         return this;
     }
 
-    /** 加密类型
-     * 
-     * @return signType */
+    /**
+     * 加密类型
+     * @return signType
+     */
     public SignTypeEnum getSignType() {
         return signType;
     }
@@ -327,7 +350,10 @@ public class RecordCallbackConfigRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 环境变量 */
+/**
+ * 环境变量
+ */
 public class EnvPods {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class EnvPods {
         return this;
     }
 
-    /** 环境变量的key，由大小写字母或下划线开头，由数字、大小写字母、下划线组成，最大长度2048个字符，不允许重复
-     * 
-     * @return name */
+    /**
+     * 环境变量的key，由大小写字母或下划线开头，由数字、大小写字母、下划线组成，最大长度2048个字符，不允许重复
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class EnvPods {
         return this;
     }
 
-    /** 环境变量的value，最大长度20480个字符。value、value_from和field_path必须三选一使用。
-     * 
-     * @return value */
+    /**
+     * 环境变量的value，最大长度20480个字符。value、value_from和field_path必须三选一使用。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class EnvPods {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

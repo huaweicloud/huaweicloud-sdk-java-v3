@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 使用已有CCE集群信息，说明：Fabric1.4版本服务仅支持1.15及以下版本集群 */
+/**
+ * 使用已有CCE集群信息，说明：Fabric1.4版本服务仅支持1.15及以下版本集群
+ */
 public class CCEClusterInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CCEClusterInfo {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -39,9 +42,10 @@ public class CCEClusterInfo {
         return this;
     }
 
-    /** 集群名称
-     * 
-     * @return clusterName */
+    /**
+     * 集群名称
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -78,7 +82,10 @@ public class CCEClusterInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

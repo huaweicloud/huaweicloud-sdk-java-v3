@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云日志服务配置 */
+/**
+ * 云日志服务配置
+ */
 public class Lts {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Lts {
         return this;
     }
 
-    /** 是否启用日志服务检索功能。
-     * 
-     * @return isLtsEnabled */
+    /**
+     * 是否启用日志服务检索功能。
+     * @return isLtsEnabled
+     */
     public Boolean getIsLtsEnabled() {
         return isLtsEnabled;
     }
@@ -44,9 +47,10 @@ public class Lts {
         return this;
     }
 
-    /** 云审计服务在日志服务中创建的日志组名称。
-     * 
-     * @return logGroupName */
+    /**
+     * 云审计服务在日志服务中创建的日志组名称。
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -60,9 +64,10 @@ public class Lts {
         return this;
     }
 
-    /** 云审计服务在日志服务中创建的日志主题名称。
-     * 
-     * @return logTopicName */
+    /**
+     * 云审计服务在日志服务中创建的日志主题名称。
+     * @return logTopicName
+     */
     public String getLogTopicName() {
         return logTopicName;
     }
@@ -101,7 +106,10 @@ public class Lts {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

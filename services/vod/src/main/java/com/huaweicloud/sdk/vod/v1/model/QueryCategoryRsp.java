@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QueryCategoryRsp */
+/**
+ * QueryCategoryRsp
+ */
 public class QueryCategoryRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class QueryCategoryRsp {
         return this;
     }
 
-    /** 分类ID。
-     * 
-     * @return id */
+    /**
+     * 分类ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -47,9 +50,10 @@ public class QueryCategoryRsp {
         return this;
     }
 
-    /** 分类名称。
-     * 
-     * @return name */
+    /**
+     * 分类名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class QueryCategoryRsp {
         return this;
     }
 
-    /** 子分类列表。
-     * 
-     * @return children */
+    /**
+     * 子分类列表。
+     * @return children
+     */
     public List<QueryCategoryRsp> getChildren() {
         return children;
     }
@@ -119,7 +124,10 @@ public class QueryCategoryRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowPartitionMessageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowPartitionMessageRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ShowPartitionMessageRequest {
         return this;
     }
 
-    /** Topic名称。
-     * 
-     * @return topic */
+    /**
+     * Topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -65,9 +69,10 @@ public class ShowPartitionMessageRequest {
         return this;
     }
 
-    /** 分区编号。
-     * 
-     * @return partition */
+    /**
+     * 分区编号。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -81,9 +86,10 @@ public class ShowPartitionMessageRequest {
         return this;
     }
 
-    /** 消息位置。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息位置。
+     * @return messageOffset
+     */
     public String getMessageOffset() {
         return messageOffset;
     }
@@ -124,7 +130,10 @@ public class ShowPartitionMessageRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

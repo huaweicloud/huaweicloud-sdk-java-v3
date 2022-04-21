@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页基本信息 */
+/**
+ * 分页基本信息
+ */
 public class BasePage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BasePage {
         return this;
     }
 
-    /** 本次返回的列表长度
-     * 
-     * @return size */
+    /**
+     * 本次返回的列表长度
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -39,9 +42,10 @@ public class BasePage {
         return this;
     }
 
-    /** 满足条件的记录数
-     * 
-     * @return total */
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
     public Long getTotal() {
         return total;
     }
@@ -77,7 +81,10 @@ public class BasePage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

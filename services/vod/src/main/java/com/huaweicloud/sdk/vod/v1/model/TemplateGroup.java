@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplateGroup */
+/**
+ * TemplateGroup
+ */
 public class TemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组id<br/>
-     * 
-     * @return groupId */
+    /**
+     * 模板组id<br/> 
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -77,9 +80,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组名称<br/>
-     * 
-     * @return name */
+    /**
+     * 模板组名称<br/> 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -93,9 +97,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 是否默认<br/>
-     * 
-     * @return status */
+    /**
+     * 是否默认<br/> 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -109,9 +114,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板组类型<br/>
-     * 
-     * @return type */
+    /**
+     * 模板组类型<br/> 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -125,9 +131,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
-     * 
-     * @return autoEncrypt */
+    /**
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
+     * @return autoEncrypt
+     */
     public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
@@ -157,9 +164,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 画质配置信息列表<br/>
-     * 
-     * @return qualityInfoList */
+    /**
+     * 画质配置信息列表<br/> 
+     * @return qualityInfoList
+     */
     public List<QualityInfo> getQualityInfoList() {
         return qualityInfoList;
     }
@@ -189,9 +197,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 绑定的水印模板组ID数组<br/>
-     * 
-     * @return watermarkTemplateIds */
+    /**
+     * 绑定的水印模板组ID数组<br/> 
+     * @return watermarkTemplateIds
+     */
     public List<String> getWatermarkTemplateIds() {
         return watermarkTemplateIds;
     }
@@ -205,9 +214,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** 模板介绍<br/>
-     * 
-     * @return description */
+    /**
+     * 模板介绍<br/> 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -230,9 +240,10 @@ public class TemplateGroup {
         return this;
     }
 
-    /** Get common
-     * 
-     * @return common */
+    /**
+     * Get common
+     * @return common
+     */
     public Common getCommon() {
         return common;
     }
@@ -282,7 +293,10 @@ public class TemplateGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

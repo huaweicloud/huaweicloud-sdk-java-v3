@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建复制对请求体数据结构 */
+/**
+ * 创建复制对请求体数据结构
+ */
 public class CreateReplicationRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateReplicationRequestParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -54,9 +57,10 @@ public class CreateReplicationRequestParams {
         return this;
     }
 
-    /** 生产站点卷的ID。
-     * 
-     * @return volumeId */
+    /**
+     * 生产站点卷的ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -70,9 +74,10 @@ public class CreateReplicationRequestParams {
         return this;
     }
 
-    /** 指定复制对的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
-     * 
-     * @return name */
+    /**
+     * 指定复制对的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -86,9 +91,10 @@ public class CreateReplicationRequestParams {
         return this;
     }
 
-    /** 指定复制对的描述，最大支持长度为64个字节，不能包含左尖括号（<）或右尖括号（>）。
-     * 
-     * @return description */
+    /**
+     * 指定复制对的描述，最大支持长度为64个字节，不能包含左尖括号（<）或右尖括号（>）。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -102,9 +108,10 @@ public class CreateReplicationRequestParams {
         return this;
     }
 
-    /** 专属分布式存储池ID。
-     * 
-     * @return clusterId */
+    /**
+     * 专属分布式存储池ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -147,7 +154,10 @@ public class CreateReplicationRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

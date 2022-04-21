@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 自定义安全策略信息 */
+/**
+ * 自定义安全策略信息
+ */
 public class SecurityPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全安全策略的id。
-     * 
-     * @return id */
+    /**
+     * 自定义安全安全策略的id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +80,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的项目id。
-     * 
-     * @return projectId */
+    /**
+     * 自定义安全策略的项目id。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -93,9 +97,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的名称
-     * 
-     * @return name */
+    /**
+     * 自定义安全策略的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -109,9 +114,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的描述。
-     * 
-     * @return description */
+    /**
+     * 自定义安全策略的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -134,9 +140,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** Get listeners
-     * 
-     * @return listeners */
+    /**
+     * Get listeners
+     * @return listeners
+     */
     public ListenerRef getListeners() {
         return listeners;
     }
@@ -166,9 +173,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的TLS协议列表。
-     * 
-     * @return protocols */
+    /**
+     * 自定义安全策略的TLS协议列表。
+     * @return protocols
+     */
     public List<String> getProtocols() {
         return protocols;
     }
@@ -198,9 +206,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的加密套件列表。
-     * 
-     * @return ciphers */
+    /**
+     * 自定义安全策略的加密套件列表。
+     * @return ciphers
+     */
     public List<String> getCiphers() {
         return ciphers;
     }
@@ -214,9 +223,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 自定义安全策略的创建时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -230,9 +240,10 @@ public class SecurityPolicy {
         return this;
     }
 
-    /** 自定义安全策略的更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 自定义安全策略的更新时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -282,7 +293,10 @@ public class SecurityPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

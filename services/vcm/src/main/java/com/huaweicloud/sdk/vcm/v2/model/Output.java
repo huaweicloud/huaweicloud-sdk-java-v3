@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 结果数据的输出列表 */
+/**
+ * 结果数据的输出列表
+ */
 public class Output {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Output {
         return this;
     }
 
-    /** Get obs
-     * 
-     * @return obs */
+    /**
+     * Get obs
+     * @return obs
+     */
     public OutputObs getObs() {
         return obs;
     }
@@ -73,9 +76,10 @@ public class Output {
         return this;
     }
 
-    /** Get hosting
-     * 
-     * @return hosting */
+    /**
+     * Get hosting
+     * @return hosting
+     */
     public OutputHosting getHosting() {
         return hosting;
     }
@@ -98,9 +102,10 @@ public class Output {
         return this;
     }
 
-    /** Get dis
-     * 
-     * @return dis */
+    /**
+     * Get dis
+     * @return dis
+     */
     public OutputDis getDis() {
         return dis;
     }
@@ -123,9 +128,10 @@ public class Output {
         return this;
     }
 
-    /** Get webhook
-     * 
-     * @return webhook */
+    /**
+     * Get webhook
+     * @return webhook
+     */
     public OutputWebhook getWebhook() {
         return webhook;
     }
@@ -148,9 +154,10 @@ public class Output {
         return this;
     }
 
-    /** Get localpath
-     * 
-     * @return localpath */
+    /**
+     * Get localpath
+     * @return localpath
+     */
     public OutputLocalpath getLocalpath() {
         return localpath;
     }
@@ -191,7 +198,10 @@ public class Output {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

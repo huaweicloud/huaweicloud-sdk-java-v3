@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 维度对象结构体 */
+/**
+ * 维度对象结构体
+ */
 public class DimChild {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DimChild {
         return this;
     }
 
-    /** 维度名称，当前支持维度有dcs_instance_id、dcs_cluster_redis_node、 dcs_cluster_proxy_node和dcs_memcached_instance_id。
-     * 
-     * @return dimName */
+    /**
+     * 维度名称，当前支持维度有dcs_instance_id、dcs_cluster_redis_node、 dcs_cluster_proxy_node和dcs_memcached_instance_id。
+     * @return dimName
+     */
     public String getDimName() {
         return dimName;
     }
@@ -39,9 +42,10 @@ public class DimChild {
         return this;
     }
 
-    /** 维度的路由，结构为主维度名称,当前维度名称，比如： dim_name字段为dcs_cluster_redis_node时，这个字段的值为dcs_instance_id,dcs_cluster_redis_node。
-     * 
-     * @return dimRoute */
+    /**
+     * 维度的路由，结构为主维度名称,当前维度名称，比如： dim_name字段为dcs_cluster_redis_node时，这个字段的值为dcs_instance_id,dcs_cluster_redis_node。
+     * @return dimRoute
+     */
     public String getDimRoute() {
         return dimRoute;
     }
@@ -77,7 +81,10 @@ public class DimChild {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

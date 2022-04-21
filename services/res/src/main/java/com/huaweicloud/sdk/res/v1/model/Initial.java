@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 初始化参数 */
+/**
+ * 初始化参数
+ */
 public class Initial {
 
-    /** 初始化方法。 */
+    /**
+     * 初始化方法。
+     */
     public static final class InitialMethodEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final InitialMethodEnum NORMAL = new InitialMethodEnum("normal");
 
-        /** Enum UNIFORM for value: "uniform" */
+        /**
+         * Enum UNIFORM for value: "uniform"
+         */
         public static final InitialMethodEnum UNIFORM = new InitialMethodEnum("uniform");
 
-        /** Enum XAVIER for value: "xavier" */
+        /**
+         * Enum XAVIER for value: "xavier"
+         */
         public static final InitialMethodEnum XAVIER = new InitialMethodEnum("xavier");
 
         private static final Map<String, InitialMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class Initial {
         return this;
     }
 
-    /** 初始化方法。
-     * 
-     * @return initialMethod */
+    /**
+     * 初始化方法。
+     * @return initialMethod
+     */
     public InitialMethodEnum getInitialMethod() {
         return initialMethod;
     }
@@ -134,9 +145,12 @@ public class Initial {
         return this;
     }
 
-    /** 平均值。 minimum: -1 maximum: 1
-     * 
-     * @return meanValue */
+    /**
+     * 平均值。
+     * minimum: -1
+     * maximum: 1
+     * @return meanValue
+     */
     public Double getMeanValue() {
         return meanValue;
     }
@@ -150,9 +164,12 @@ public class Initial {
         return this;
     }
 
-    /** 标准差。 minimum: 0 maximum: 1
-     * 
-     * @return standardDeviation */
+    /**
+     * 标准差。
+     * minimum: 0
+     * maximum: 1
+     * @return standardDeviation
+     */
     public Double getStandardDeviation() {
         return standardDeviation;
     }
@@ -166,9 +183,12 @@ public class Initial {
         return this;
     }
 
-    /** 最小值。 minimum: -1 maximum: 0
-     * 
-     * @return minValue */
+    /**
+     * 最小值。
+     * minimum: -1
+     * maximum: 0
+     * @return minValue
+     */
     public Double getMinValue() {
         return minValue;
     }
@@ -182,9 +202,12 @@ public class Initial {
         return this;
     }
 
-    /** 最大值。 minimum: 0 maximum: 1
-     * 
-     * @return maxValue */
+    /**
+     * 最大值。
+     * minimum: 0
+     * maximum: 1
+     * @return maxValue
+     */
     public Double getMaxValue() {
         return maxValue;
     }
@@ -226,7 +249,10 @@ public class Initial {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

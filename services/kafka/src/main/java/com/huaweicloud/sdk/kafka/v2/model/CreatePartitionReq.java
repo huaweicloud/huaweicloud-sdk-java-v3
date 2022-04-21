@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreatePartitionReq */
+/**
+ * CreatePartitionReq
+ */
 public class CreatePartitionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class CreatePartitionReq {
         return this;
     }
 
-    /** 期望调整分区后的数量，必须大于当前分区数量，小于等于100。
-     * 
-     * @return partition */
+    /**
+     * 期望调整分区后的数量，必须大于当前分区数量，小于等于100。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -55,7 +58,10 @@ public class CreatePartitionReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

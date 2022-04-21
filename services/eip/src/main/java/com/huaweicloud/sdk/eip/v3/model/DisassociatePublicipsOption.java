@@ -10,23 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DisassociatePublicipsOption */
+/**
+ * DisassociatePublicipsOption
+ */
 public class DisassociatePublicipsOption {
 
-    /** 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例；
-     * associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例 */
+    /**
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     */
     public static final class AssociateInstanceTypeEnum {
 
-        /** Enum PORT for value: "PORT" */
+        /**
+         * Enum PORT for value: "PORT"
+         */
         public static final AssociateInstanceTypeEnum PORT = new AssociateInstanceTypeEnum("PORT");
 
-        /** Enum NATGW for value: "NATGW" */
+        /**
+         * Enum NATGW for value: "NATGW"
+         */
         public static final AssociateInstanceTypeEnum NATGW = new AssociateInstanceTypeEnum("NATGW");
 
-        /** Enum ELB for value: "ELB" */
+        /**
+         * Enum ELB for value: "ELB"
+         */
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
-        /** Enum EMPTY for value: "" */
+        /**
+         * Enum EMPTY for value: ""
+         */
         public static final AssociateInstanceTypeEnum EMPTY = new AssociateInstanceTypeEnum("");
 
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,10 +119,10 @@ public class DisassociatePublicipsOption {
         return this;
     }
 
-    /** 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例；
-     * associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
-     * 
-     * @return associateInstanceType */
+    /**
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * @return associateInstanceType
+     */
     public AssociateInstanceTypeEnum getAssociateInstanceType() {
         return associateInstanceType;
     }
@@ -125,10 +136,10 @@ public class DisassociatePublicipsOption {
         return this;
     }
 
-    /** 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例；
-     * associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
-     * 
-     * @return associateInstanceId */
+    /**
+     * 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * @return associateInstanceId
+     */
     public String getAssociateInstanceId() {
         return associateInstanceId;
     }
@@ -165,7 +176,10 @@ public class DisassociatePublicipsOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

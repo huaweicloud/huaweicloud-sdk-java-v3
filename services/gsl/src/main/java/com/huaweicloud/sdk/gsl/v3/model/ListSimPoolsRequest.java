@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSimPoolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListSimPoolsRequest {
         return this;
     }
 
-    /** 流量池名称
-     * 
-     * @return poolName */
+    /**
+     * 流量池名称
+     * @return poolName
+     */
     public String getPoolName() {
         return poolName;
     }
@@ -49,9 +52,12 @@ public class ListSimPoolsRequest {
         return this;
     }
 
-    /** 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数 minimum: 10 maximum: 500
-     * 
-     * @return limit */
+    /**
+     * 分页查询时每页显示的记录数，默认值为10，取值范围为10-500的整数
+     * minimum: 10
+     * maximum: 500
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -65,9 +71,12 @@ public class ListSimPoolsRequest {
         return this;
     }
 
-    /** 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数 minimum: 1 maximum: 1000000
-     * 
-     * @return offset */
+    /**
+     * 分页查询时的页码数，默认值为1，取值范围为1-1000000的整数
+     * minimum: 1
+     * maximum: 1000000
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -81,9 +90,10 @@ public class ListSimPoolsRequest {
         return this;
     }
 
-    /** 账期，例如：2021-04
-     * 
-     * @return billingCycle */
+    /**
+     * 账期，例如：2021-04
+     * @return billingCycle
+     */
     public String getBillingCycle() {
         return billingCycle;
     }
@@ -124,7 +134,10 @@ public class ListSimPoolsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateResSceneRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** 场景类型： - customize，自定义推荐
-     * 
-     * @return category */
+    /**
+     * 场景类型： - customize，自定义推荐
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -65,9 +68,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** 数据源id。
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源id。
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -90,9 +94,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** Get dsConfig
-     * 
-     * @return dsConfig */
+    /**
+     * Get dsConfig
+     * @return dsConfig
+     */
     public DsConfig getDsConfig() {
         return dsConfig;
     }
@@ -106,9 +111,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** 场景名称，1-64位的字母、数字、下划线、中划线组合。
-     * 
-     * @return sceneName */
+    /**
+     * 场景名称，1-64位的字母、数字、下划线、中划线组合。
+     * @return sceneName
+     */
     public String getSceneName() {
         return sceneName;
     }
@@ -131,9 +137,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** Get specsConfig
-     * 
-     * @return specsConfig */
+    /**
+     * Get specsConfig
+     * @return specsConfig
+     */
     public SpecsConfig getSpecsConfig() {
         return specsConfig;
     }
@@ -147,9 +154,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** 场景类型： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
-     * 
-     * @return type */
+    /**
+     * 场景类型： - UI，基于用户推荐物品 - UU，基于用户推荐用户 - II，基于物品推荐物品 - IU，基于物品推荐用户
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -163,9 +171,10 @@ public class CreateResSceneRequestBody {
         return this;
     }
 
-    /** 服务类型： - rank，排序服务 - rec，推荐服务
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型： - rank，排序服务 - rec，推荐服务
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -212,7 +221,10 @@ public class CreateResSceneRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

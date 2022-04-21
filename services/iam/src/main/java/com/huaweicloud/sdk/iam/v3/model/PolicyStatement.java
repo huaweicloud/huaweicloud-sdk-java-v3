@@ -23,13 +23,19 @@ public class PolicyStatement {
 
     private List<String> action = null;
 
-    /** 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。 */
+    /**
+    * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
+    */
     public static final class EffectEnum {
 
-        /** Enum ALLOW for value: "Allow" */
+        /**
+         * Enum ALLOW for value: "Allow"
+         */
         public static final EffectEnum ALLOW = new EffectEnum("Allow");
 
-        /** Enum DENY for value: "Deny" */
+        /**
+         * Enum DENY for value: "Deny"
+         */
         public static final EffectEnum DENY = new EffectEnum("Deny");
 
         private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
@@ -130,10 +136,10 @@ public class PolicyStatement {
         return this;
     }
 
-    /** 授权项，指对资源的具体操作权限，不超过100个。 > - 格式为：服务名:资源类型:操作，例：vpc:ports:create。 > - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。
-     * 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。 > - 当自定义策略为委托自定义策略时，该字段值为：``` \"Action\": [\"iam:agencies:assume\"]```。
-     * 
-     * @return action */
+    /**
+     * 授权项，指对资源的具体操作权限，不超过100个。 > - 格式为：服务名:资源类型:操作，例：vpc:ports:create。 > - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。 > - 当自定义策略为委托自定义策略时，该字段值为：``` \"Action\": [\"iam:agencies:assume\"]```。
+     * @return action
+     */
     public List<String> getAction() {
         return action;
     }
@@ -147,9 +153,10 @@ public class PolicyStatement {
         return this;
     }
 
-    /** 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
-     * 
-     * @return effect */
+    /**
+     * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
+     * @return effect
+     */
     public EffectEnum getEffect() {
         return effect;
     }
@@ -163,9 +170,10 @@ public class PolicyStatement {
         return this;
     }
 
-    /** 限制条件。不超过10个。
-     * 
-     * @return condition */
+    /**
+     * 限制条件。不超过10个。
+     * @return condition
+     */
     public Object getCondition() {
         return condition;
     }
@@ -195,12 +203,10 @@ public class PolicyStatement {
         return this;
     }
 
-    /** 资源。数组长度不超过10，每个字符串长度不超过128，规则如下： > - 可填 *
-     * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > -
-     * region字段为*或用户可访问的region。service必须存在且resource属于对应service。 > - 当该自定义策略为委托自定义策略时，该字段类型为Object，值为：```\"Resource\":
-     * {\"uri\": [\"/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\"]}```。
-     * 
-     * @return resource */
+    /**
+     * 资源。数组长度不超过10，每个字符串长度不超过128，规则如下： > - 可填 * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > - region字段为*或用户可访问的region。service必须存在且resource属于对应service。 > - 当该自定义策略为委托自定义策略时，该字段类型为Object，值为：```\"Resource\": {\"uri\": [\"/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\"]}```。
+     * @return resource
+     */
     public List<String> getResource() {
         return resource;
     }
@@ -241,7 +247,10 @@ public class PolicyStatement {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

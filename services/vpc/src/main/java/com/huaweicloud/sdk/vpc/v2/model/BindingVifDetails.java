@@ -20,9 +20,10 @@ public class BindingVifDetails {
         return this;
     }
 
-    /** 功能说明：取值为true，表示是虚拟机的主网卡。
-     * 
-     * @return primaryInterface */
+    /**
+     * 功能说明：取值为true，表示是虚拟机的主网卡。
+     * @return primaryInterface
+     */
     public Boolean getPrimaryInterface() {
         return primaryInterface;
     }
@@ -57,7 +58,10 @@ public class BindingVifDetails {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

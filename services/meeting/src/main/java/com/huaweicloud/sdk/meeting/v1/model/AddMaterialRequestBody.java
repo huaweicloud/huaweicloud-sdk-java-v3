@@ -10,7 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** AddMaterialRequestBody */
+/**
+ * AddMaterialRequestBody
+ */
 public class AddMaterialRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
@@ -22,9 +24,10 @@ public class AddMaterialRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 素材文件 - 只能上传jpg/jpeg/png格式文件，分辨率比率16:9，最大分辨率为3840*2160（推荐） - 请先命名完图片名称再上传
-     * 
-     * @return file */
+    /**
+     * 素材文件 - 只能上传jpg/jpeg/png格式文件，分辨率比率16:9，最大分辨率为3840*2160（推荐） - 请先命名完图片名称再上传
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -84,7 +87,10 @@ public class AddMaterialRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

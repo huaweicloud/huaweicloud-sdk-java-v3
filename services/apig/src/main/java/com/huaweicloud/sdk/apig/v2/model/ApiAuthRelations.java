@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiAuthRelations */
+/**
+ * ApiAuthRelations
+ */
 public class ApiAuthRelations {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,13 +44,19 @@ public class ApiAuthRelations {
 
     private String appId;
 
-    /** 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权 */
+    /**
+     * 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
+     */
     public static final class AuthRoleEnum {
 
-        /** Enum PROVIDER for value: "PROVIDER" */
+        /**
+         * Enum PROVIDER for value: "PROVIDER"
+         */
         public static final AuthRoleEnum PROVIDER = new AuthRoleEnum("PROVIDER");
 
-        /** Enum CONSUMER for value: "CONSUMER" */
+        /**
+         * Enum CONSUMER for value: "CONSUMER"
+         */
         public static final AuthRoleEnum CONSUMER = new AuthRoleEnum("CONSUMER");
 
         private static final Map<String, AuthRoleEnum> STATIC_FIELDS = createStaticFields();
@@ -118,13 +126,19 @@ public class ApiAuthRelations {
 
     private AuthRoleEnum authRole;
 
-    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道 暂不支持，默认NORMAL */
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
+     */
     public static final class AuthTunnelEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final AuthTunnelEnum NORMAL = new AuthTunnelEnum("NORMAL");
 
-        /** Enum GREEN for value: "GREEN" */
+        /**
+         * Enum GREEN for value: "GREEN"
+         */
         public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
 
         private static final Map<String, AuthTunnelEnum> STATIC_FIELDS = createStaticFields();
@@ -214,9 +228,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -239,9 +254,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** Get authResult
-     * 
-     * @return authResult */
+    /**
+     * Get authResult
+     * @return authResult
+     */
     public AuthResult getAuthResult() {
         return authResult;
     }
@@ -255,9 +271,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权时间
-     * 
-     * @return authTime */
+    /**
+     * 授权时间
+     * @return authTime
+     */
     public OffsetDateTime getAuthTime() {
         return authTime;
     }
@@ -271,9 +288,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权关系编号
-     * 
-     * @return id */
+    /**
+     * 授权关系编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -287,9 +305,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** APP编号
-     * 
-     * @return appId */
+    /**
+     * APP编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -303,9 +322,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
-     * 
-     * @return authRole */
+    /**
+     * 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
+     * @return authRole
+     */
     public AuthRoleEnum getAuthRole() {
         return authRole;
     }
@@ -319,9 +339,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道 暂不支持，默认NORMAL
-     * 
-     * @return authTunnel */
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
+     * @return authTunnel
+     */
     public AuthTunnelEnum getAuthTunnel() {
         return authTunnel;
     }
@@ -351,9 +372,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 绿色通道的白名单配置
-     * 
-     * @return authWhitelist */
+    /**
+     * 绿色通道的白名单配置
+     * @return authWhitelist
+     */
     public List<String> getAuthWhitelist() {
         return authWhitelist;
     }
@@ -383,9 +405,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 绿色通道的黑名单配置
-     * 
-     * @return authBlacklist */
+    /**
+     * 绿色通道的黑名单配置
+     * @return authBlacklist
+     */
     public List<String> getAuthBlacklist() {
         return authBlacklist;
     }
@@ -399,9 +422,10 @@ public class ApiAuthRelations {
         return this;
     }
 
-    /** 访问参数。
-     * 
-     * @return visitParams */
+    /**
+     * 访问参数。
+     * @return visitParams
+     */
     public String getVisitParams() {
         return visitParams;
     }
@@ -462,7 +486,10 @@ public class ApiAuthRelations {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

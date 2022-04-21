@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建floatingip对象 */
+/**
+ * 创建floatingip对象
+ */
 public class CreateFloatingIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateFloatingIpOption {
         return this;
     }
 
-    /** 浮动IP地址。
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 浮动IP地址。
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -49,10 +52,10 @@ public class CreateFloatingIpOption {
         return this;
     }
 
-    /** 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET
-     * /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
-     * 
-     * @return floatingNetworkId */
+    /**
+     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
+     * @return floatingNetworkId
+     */
     public String getFloatingNetworkId() {
         return floatingNetworkId;
     }
@@ -66,9 +69,10 @@ public class CreateFloatingIpOption {
         return this;
     }
 
-    /** 端口id
-     * 
-     * @return portId */
+    /**
+     * 端口id
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -82,9 +86,10 @@ public class CreateFloatingIpOption {
         return this;
     }
 
-    /** 关联端口的私有IP地址。
-     * 
-     * @return fixedIpAddress */
+    /**
+     * 关联端口的私有IP地址。
+     * @return fixedIpAddress
+     */
     public String getFixedIpAddress() {
         return fixedIpAddress;
     }
@@ -125,7 +130,10 @@ public class CreateFloatingIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

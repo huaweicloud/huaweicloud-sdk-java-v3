@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 子任务信息体 */
+/**
+ * 子任务信息体
+ */
 public class ChildrenJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class ChildrenJobInfo {
 
     private String createTime;
 
-    /** 复制场景 */
+    /**
+     * 复制场景
+     */
     public static final class DbUseTypeEnum {
 
-        /** Enum MIGRATION_ for value: "migration:实时迁移" */
+        /**
+         * Enum MIGRATION_ for value: "migration:实时迁移"
+         */
         public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration:实时迁移");
 
-        /** Enum SYNC_ for value: "sync:实时同步" */
+        /**
+         * Enum SYNC_ for value: "sync:实时同步"
+         */
         public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync:实时同步");
 
-        /** Enum CLOUDDATAGUARD_ for value: "cloudDataGuard:实时灾备" */
+        /**
+         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard:实时灾备"
+         */
         public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard:实时灾备");
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,23 +118,35 @@ public class ChildrenJobInfo {
 
     private String description;
 
-    /** 引擎类型 */
+    /**
+     * 引擎类型
+     */
     public static final class EngineTypeEnum {
 
-        /** Enum CLOUDDATAGUARD_CASSANDRA for value: "cloudDataGuard-cassandra" */
+        /**
+         * Enum CLOUDDATAGUARD_CASSANDRA for value: "cloudDataGuard-cassandra"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_CASSANDRA = new EngineTypeEnum("cloudDataGuard-cassandra");
 
-        /** Enum CLOUDDATAGUARD_DDM for value: "cloudDataGuard-ddm" */
+        /**
+         * Enum CLOUDDATAGUARD_DDM for value: "cloudDataGuard-ddm"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_DDM = new EngineTypeEnum("cloudDataGuard-ddm");
 
-        /** Enum CLOUDDATAGUARD_TAURUS_TO_MYSQL for value: "cloudDataGuard-taurus-to-mysql" */
+        /**
+         * Enum CLOUDDATAGUARD_TAURUS_TO_MYSQL for value: "cloudDataGuard-taurus-to-mysql"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_TAURUS_TO_MYSQL =
             new EngineTypeEnum("cloudDataGuard-taurus-to-mysql");
 
-        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
+        /**
+         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
-        /** Enum CLOUDDATAGUARD_MYSQL_TO_TAURUS for value: "cloudDataGuard-mysql-to-taurus" */
+        /**
+         * Enum CLOUDDATAGUARD_MYSQL_TO_TAURUS for value: "cloudDataGuard-mysql-to-taurus"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL_TO_TAURUS =
             new EngineTypeEnum("cloudDataGuard-mysql-to-taurus");
 
@@ -208,16 +230,24 @@ public class ChildrenJobInfo {
 
     private String id;
 
-    /** 迁移方向 */
+    /**
+     * 迁移方向
+     */
     public static final class JobDirectionEnum {
 
-        /** Enum UP for value: "up" */
+        /**
+         * Enum UP for value: "up"
+         */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
 
-        /** Enum DOWN for value: "down" */
+        /**
+         * Enum DOWN for value: "down"
+         */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
-        /** Enum NO_DBS for value: "no-dbs" */
+        /**
+         * Enum NO_DBS for value: "no-dbs"
+         */
         public static final JobDirectionEnum NO_DBS = new JobDirectionEnum("no-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
@@ -293,16 +323,24 @@ public class ChildrenJobInfo {
 
     private String name;
 
-    /** 网络类型 */
+    /**
+     * 网络类型
+     */
     public static final class NetTypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
 
-        /** Enum EIP for value: "eip" */
+        /**
+         * Enum EIP for value: "eip"
+         */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -383,16 +421,24 @@ public class ChildrenJobInfo {
 
     private String status;
 
-    /** 迁移模式 */
+    /**
+     * 迁移模式
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum FULL_TRANS_ for value: "FULL_TRANS 全量" */
+        /**
+         * Enum FULL_TRANS_ for value: "FULL_TRANS 全量"
+         */
         public static final TaskTypeEnum FULL_TRANS_ = new TaskTypeEnum("FULL_TRANS 全量");
 
-        /** Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS 全量+增量" */
+        /**
+         * Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS 全量+增量"
+         */
         public static final TaskTypeEnum FULL_INCR_TRANS_ = new TaskTypeEnum("FULL_INCR_TRANS 全量+增量");
 
-        /** Enum INCR_TRANS_ for value: "INCR_TRANS 增量" */
+        /**
+         * Enum INCR_TRANS_ for value: "INCR_TRANS 增量"
+         */
         public static final TaskTypeEnum INCR_TRANS_ = new TaskTypeEnum("INCR_TRANS 增量");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -468,9 +514,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 计费字段
-     * 
-     * @return billingTag */
+    /**
+     * 计费字段
+     * @return billingTag
+     */
     public Boolean getBillingTag() {
         return billingTag;
     }
@@ -484,9 +531,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务创建时间
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -500,9 +548,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 复制场景
-     * 
-     * @return dbUseType */
+    /**
+     * 复制场景
+     * @return dbUseType
+     */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -516,9 +565,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务描述
-     * 
-     * @return description */
+    /**
+     * 任务描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -532,9 +582,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 引擎类型
-     * 
-     * @return engineType */
+    /**
+     * 引擎类型
+     * @return engineType
+     */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -548,9 +599,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务失败原因
-     * 
-     * @return errorMsg */
+    /**
+     * 任务失败原因
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -564,9 +616,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return id */
+    /**
+     * 任务id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -580,9 +633,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 迁移方向
-     * 
-     * @return jobDirection */
+    /**
+     * 迁移方向
+     * @return jobDirection
+     */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -596,9 +650,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务名称
-     * 
-     * @return name */
+    /**
+     * 任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -612,9 +667,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 网络类型
-     * 
-     * @return netType */
+    /**
+     * 网络类型
+     * @return netType
+     */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -628,9 +684,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 新框架
-     * 
-     * @return nodeNewFramework */
+    /**
+     * 新框架
+     * @return nodeNewFramework
+     */
     public Boolean getNodeNewFramework() {
         return nodeNewFramework;
     }
@@ -644,9 +701,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -660,9 +718,10 @@ public class ChildrenJobInfo {
         return this;
     }
 
-    /** 迁移模式
-     * 
-     * @return taskType */
+    /**
+     * 迁移模式
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -731,7 +790,10 @@ public class ChildrenJobInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

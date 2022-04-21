@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBareMetalServersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 裸金属服务器规格ID
-     * 
-     * @return flavor */
+    /**
+     * 裸金属服务器规格ID
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -74,9 +77,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 裸金属服务器名称
-     * 
-     * @return name */
+    /**
+     * 裸金属服务器名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -90,9 +94,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
-     * 
-     * @return status */
+    /**
+     * 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -106,9 +111,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 每页返回裸金属服务器的条数，默认值是25，最大值为1000。limit为每页返回裸金属服务器详情的条数
-     * 
-     * @return limit */
+    /**
+     * 每页返回裸金属服务器的条数，默认值是25，最大值为1000。limit为每页返回裸金属服务器详情的条数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -122,10 +128,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 此接口为分页查询接口:不传offset参数，返回结果是符合条件的裸金属服务器总条数,servers列表为空。传offset参数，offset为查询页码，起始页码为1，每页查询的条数为limit值。此接口为分页查询接口，offset为查询页码（起始页码为1），返回值包括总条数和裸金属详情列表传入offset：按limit值分页（limit默认为1000），返回第offset页裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。不传入offset传入limit
-     * ：返回裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。。不传入limit：按25条分页，返回第1页裸金属服务器详情列表，总条数最大值为25，不足按实际情况返回。
-     * 
-     * @return offset */
+    /**
+     * 此接口为分页查询接口:不传offset参数，返回结果是符合条件的裸金属服务器总条数,servers列表为空。传offset参数，offset为查询页码，起始页码为1，每页查询的条数为limit值。此接口为分页查询接口，offset为查询页码（起始页码为1），返回值包括总条数和裸金属详情列表传入offset：按limit值分页（limit默认为1000），返回第offset页裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。不传入offset传入limit ：返回裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。。不传入limit：按25条分页，返回第1页裸金属服务器详情列表，总条数最大值为25，不足按实际情况返回。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -139,9 +145,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 裸金属服务器标签：__type_baremetal
-     * 
-     * @return tags */
+    /**
+     * 裸金属服务器标签：__type_baremetal
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -155,9 +162,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 批量创建裸金属服务器时，指定返回的ID，用于查询本次批量创建的裸金属服务器
-     * 
-     * @return reservationId */
+    /**
+     * 批量创建裸金属服务器时，指定返回的ID，用于查询本次批量创建的裸金属服务器
+     * @return reservationId
+     */
     public String getReservationId() {
         return reservationId;
     }
@@ -171,9 +179,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
-     * 
-     * @return detail */
+    /**
+     * 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -187,9 +196,10 @@ public class ListBareMetalServersRequest {
         return this;
     }
 
-    /** 查询绑定某个企业项目的裸金属服务器
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 查询绑定某个企业项目的裸金属服务器
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -240,7 +250,10 @@ public class ListBareMetalServersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

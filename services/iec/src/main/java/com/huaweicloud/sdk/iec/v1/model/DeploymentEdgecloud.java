@@ -41,9 +41,10 @@ public class DeploymentEdgecloud {
         return this;
     }
 
-    /** 边缘业务ID。
-     * 
-     * @return id */
+    /**
+     * 边缘业务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,9 +58,10 @@ public class DeploymentEdgecloud {
         return this;
     }
 
-    /** 边缘业务名称。
-     * 
-     * @return name */
+    /**
+     * 边缘业务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -82,9 +84,10 @@ public class DeploymentEdgecloud {
         return this;
     }
 
-    /** Get stacks
-     * 
-     * @return stacks */
+    /**
+     * Get stacks
+     * @return stacks
+     */
     public Stack getStacks() {
         return stacks;
     }
@@ -98,9 +101,10 @@ public class DeploymentEdgecloud {
         return this;
     }
 
-    /** 边缘业务描述，最大支持255字节。
-     * 
-     * @return description */
+    /**
+     * 边缘业务描述，最大支持255字节。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +127,10 @@ public class DeploymentEdgecloud {
         return this;
     }
 
-    /** Get coverage
-     * 
-     * @return coverage */
+    /**
+     * Get coverage
+     * @return coverage
+     */
     public Coverage getCoverage() {
         return coverage;
     }
@@ -167,7 +172,10 @@ public class DeploymentEdgecloud {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

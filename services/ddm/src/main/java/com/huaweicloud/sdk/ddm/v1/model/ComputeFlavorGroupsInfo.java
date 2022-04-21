@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ComputeFlavorGroupsInfo */
+/**
+ * ComputeFlavorGroupsInfo
+ */
 public class ComputeFlavorGroupsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ComputeFlavorGroupsInfo {
         return this;
     }
 
-    /** 计算资源架构类型，目前分X86和ARM两种。
-     * 
-     * @return groupType */
+    /**
+     * 计算资源架构类型，目前分X86和ARM两种。
+     * @return groupType
+     */
     public String getGroupType() {
         return groupType;
     }
@@ -73,9 +76,10 @@ public class ComputeFlavorGroupsInfo {
         return this;
     }
 
-    /** 计算类型规格详情。
-     * 
-     * @return computeFlavors */
+    /**
+     * 计算类型规格详情。
+     * @return computeFlavors
+     */
     public List<ComputeFlavors> getComputeFlavors() {
         return computeFlavors;
     }
@@ -89,9 +93,10 @@ public class ComputeFlavorGroupsInfo {
         return this;
     }
 
-    /** 分页参数: 起始值。
-     * 
-     * @return offset */
+    /**
+     * 分页参数: 起始值。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -105,9 +110,10 @@ public class ComputeFlavorGroupsInfo {
         return this;
     }
 
-    /** 分页参数：每页多少条。
-     * 
-     * @return limit */
+    /**
+     * 分页参数：每页多少条。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -121,9 +127,10 @@ public class ComputeFlavorGroupsInfo {
         return this;
     }
 
-    /** 计算类型规格总数。
-     * 
-     * @return total */
+    /**
+     * 计算类型规格总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -166,7 +173,10 @@ public class ComputeFlavorGroupsInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

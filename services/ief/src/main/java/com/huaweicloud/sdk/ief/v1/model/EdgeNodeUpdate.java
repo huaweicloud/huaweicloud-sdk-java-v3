@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘节点参数 */
+/**
+ * 边缘节点参数
+ */
 public class EdgeNodeUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class EdgeNodeUpdate {
         return this;
     }
 
-    /** 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -68,9 +71,10 @@ public class EdgeNodeUpdate {
         return this;
     }
 
-    /** 边缘节点日志配置
-     * 
-     * @return logConfigs */
+    /**
+     * 边缘节点日志配置
+     * @return logConfigs
+     */
     public List<LogConfigs> getLogConfigs() {
         return logConfigs;
     }
@@ -100,9 +104,10 @@ public class EdgeNodeUpdate {
         return this;
     }
 
-    /** ntp服务器地址，每个节点最多仅能配置两个  D310表示D310类型。  D910表示D910类型。  不填表示为D310类型。
-     * 
-     * @return ntpServers */
+    /**
+     * ntp服务器地址，每个节点最多仅能配置两个  D310表示D310类型。  D910表示D910类型。  不填表示为D310类型。
+     * @return ntpServers
+     */
     public List<String> getNtpServers() {
         return ntpServers;
     }
@@ -132,9 +137,10 @@ public class EdgeNodeUpdate {
         return this;
     }
 
-    /** 边缘节点属性，关联属性个数最多为32个
-     * 
-     * @return attributes */
+    /**
+     * 边缘节点属性，关联属性个数最多为32个
+     * @return attributes
+     */
     public List<Attributes> getAttributes() {
         return attributes;
     }
@@ -175,7 +181,10 @@ public class EdgeNodeUpdate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

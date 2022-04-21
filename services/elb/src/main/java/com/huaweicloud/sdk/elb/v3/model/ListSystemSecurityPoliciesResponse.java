@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSystemSecurityPoliciesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统安全策略列表。
-     * 
-     * @return systemSecurityPolicies */
+    /**
+     * 系统安全策略列表。
+     * @return systemSecurityPolicies
+     */
     public List<SystemSecurityPolicy> getSystemSecurityPolicies() {
         return systemSecurityPolicies;
     }
@@ -62,9 +65,10 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求ID。 注：自动生成 。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。  注：自动生成 。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -101,7 +105,10 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,10 +25,10 @@ public class JobStatus {
         return this;
     }
 
-    /** 任务的状态，有如下四种状态： - JobPhaseInitializing JobPhase = \"Initializing\" - JobPhaseRunning JobPhase = \"Running\" -
-     * JobPhaseFailed JobPhase = \"Failed\" - JobPhaseSuccess JobPhase = \"Success\"
-     * 
-     * @return phase */
+    /**
+     * 任务的状态，有如下四种状态：  - JobPhaseInitializing JobPhase = \"Initializing\" - JobPhaseRunning JobPhase = \"Running\" - JobPhaseFailed JobPhase = \"Failed\" - JobPhaseSuccess JobPhase = \"Success\"
+     * @return phase
+     */
     public String getPhase() {
         return phase;
     }
@@ -42,9 +42,10 @@ public class JobStatus {
         return this;
     }
 
-    /** 任务变为当前状态的原因
-     * 
-     * @return reason */
+    /**
+     * 任务变为当前状态的原因
+     * @return reason
+     */
     public String getReason() {
         return reason;
     }
@@ -80,7 +81,10 @@ public class JobStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

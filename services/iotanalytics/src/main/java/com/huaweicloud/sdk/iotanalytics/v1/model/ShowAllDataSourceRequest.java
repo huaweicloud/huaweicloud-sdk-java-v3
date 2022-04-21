@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowAllDataSourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowAllDataSourceRequest {
         return this;
     }
 
-    /** filter
-     * 
-     * @return name */
+    /**
+     * filter
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -49,9 +52,10 @@ public class ShowAllDataSourceRequest {
         return this;
     }
 
-    /** 数据源类型, 包括：OBS、DIS、IOTDA、SMN、FUNCTION_GRAPH、MODEL_ARTS、DCS、KAFKA、API
-     * 
-     * @return type */
+    /**
+     * 数据源类型, 包括：OBS、DIS、IOTDA、SMN、FUNCTION_GRAPH、MODEL_ARTS、DCS、KAFKA、API
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -65,9 +69,12 @@ public class ShowAllDataSourceRequest {
         return this;
     }
 
-    /** 每次查询返回元素的上限 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询返回元素的上限
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -81,9 +88,12 @@ public class ShowAllDataSourceRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 65535
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * maximum: 65535
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -124,7 +134,10 @@ public class ShowAllDataSourceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

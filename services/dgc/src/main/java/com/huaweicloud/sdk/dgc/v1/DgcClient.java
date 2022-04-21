@@ -17,718 +17,1092 @@ public class DgcClient {
         return new ClientBuilder<>(DgcClient::new);
     }
 
-    /** 停止脚本实例的执行
+    /**
+     * 停止脚本实例的执行
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CancelScriptRequest 请求对象
-     * @return CancelScriptResponse */
+     * @return CancelScriptResponse
+     */
     public CancelScriptResponse cancelScript(CancelScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.cancelScript);
     }
 
-    /** 停止脚本实例的执行
+    /**
+     * 停止脚本实例的执行
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CancelScriptRequest 请求对象
-     * @return SyncInvoker<CancelScriptRequest, CancelScriptResponse> */
+     * @return SyncInvoker<CancelScriptRequest, CancelScriptResponse>
+     */
     public SyncInvoker<CancelScriptRequest, CancelScriptResponse> cancelScriptInvoker(CancelScriptRequest request) {
         return new SyncInvoker<CancelScriptRequest, CancelScriptResponse>(request, DgcMeta.cancelScript, hcClient);
     }
 
-    /** 创建连接
+    /**
+     * 创建连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
-     * @return CreateConnectionResponse */
+     * @return CreateConnectionResponse
+     */
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.createConnection);
     }
 
-    /** 创建连接
+    /**
+     * 创建连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
-     * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> */
+     * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
+     */
     public SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionInvoker(
         CreateConnectionRequest request) {
         return new SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, DgcMeta.createConnection,
             hcClient);
     }
 
-    /** 创建作业
+    /**
+     * 创建作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
-     * @return CreateJobResponse */
+     * @return CreateJobResponse
+     */
     public CreateJobResponse createJob(CreateJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.createJob);
     }
 
-    /** 创建作业
+    /**
+     * 创建作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
-     * @return SyncInvoker<CreateJobRequest, CreateJobResponse> */
+     * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
+     */
     public SyncInvoker<CreateJobRequest, CreateJobResponse> createJobInvoker(CreateJobRequest request) {
         return new SyncInvoker<CreateJobRequest, CreateJobResponse>(request, DgcMeta.createJob, hcClient);
     }
 
-    /** 创建资源
+    /**
+     * 创建资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateResourceRequest 请求对象
-     * @return CreateResourceResponse */
+     * @return CreateResourceResponse
+     */
     public CreateResourceResponse createResource(CreateResourceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.createResource);
     }
 
-    /** 创建资源
+    /**
+     * 创建资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateResourceRequest 请求对象
-     * @return SyncInvoker<CreateResourceRequest, CreateResourceResponse> */
+     * @return SyncInvoker<CreateResourceRequest, CreateResourceResponse>
+     */
     public SyncInvoker<CreateResourceRequest, CreateResourceResponse> createResourceInvoker(
         CreateResourceRequest request) {
         return new SyncInvoker<CreateResourceRequest, CreateResourceResponse>(request, DgcMeta.createResource,
             hcClient);
     }
 
-    /** 创建脚本
+    /**
+     * 创建脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateScriptRequest 请求对象
-     * @return CreateScriptResponse */
+     * @return CreateScriptResponse
+     */
     public CreateScriptResponse createScript(CreateScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.createScript);
     }
 
-    /** 创建脚本
+    /**
+     * 创建脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateScriptRequest 请求对象
-     * @return SyncInvoker<CreateScriptRequest, CreateScriptResponse> */
+     * @return SyncInvoker<CreateScriptRequest, CreateScriptResponse>
+     */
     public SyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptInvoker(CreateScriptRequest request) {
         return new SyncInvoker<CreateScriptRequest, CreateScriptResponse>(request, DgcMeta.createScript, hcClient);
     }
 
-    /** 删除连接
+    /**
+     * 删除连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteConnctionRequest 请求对象
-     * @return DeleteConnctionResponse */
+     * @return DeleteConnctionResponse
+     */
     public DeleteConnctionResponse deleteConnction(DeleteConnctionRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.deleteConnction);
     }
 
-    /** 删除连接
+    /**
+     * 删除连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteConnctionRequest 请求对象
-     * @return SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> */
+     * @return SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
+     */
     public SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnctionInvoker(
         DeleteConnctionRequest request) {
         return new SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>(request, DgcMeta.deleteConnction,
             hcClient);
     }
 
-    /** 删除作业
+    /**
+     * 删除作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
-     * @return DeleteJobResponse */
+     * @return DeleteJobResponse
+     */
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.deleteJob);
     }
 
-    /** 删除作业
+    /**
+     * 删除作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
-     * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse> */
+     * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
+     */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
         return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, DgcMeta.deleteJob, hcClient);
     }
 
-    /** 删除资源
+    /**
+     * 删除资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
-     * @return DeleteResourceResponse */
+     * @return DeleteResourceResponse
+     */
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.deleteResource);
     }
 
-    /** 删除资源
+    /**
+     * 删除资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
-     * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> */
+     * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
+     */
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(
         DeleteResourceRequest request) {
         return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DgcMeta.deleteResource,
             hcClient);
     }
 
-    /** 删除脚本
+    /**
+     * 删除脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteScriptRequest 请求对象
-     * @return DeleteScriptResponse */
+     * @return DeleteScriptResponse
+     */
     public DeleteScriptResponse deleteScript(DeleteScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.deleteScript);
     }
 
-    /** 删除脚本
+    /**
+     * 删除脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteScriptRequest 请求对象
-     * @return SyncInvoker<DeleteScriptRequest, DeleteScriptResponse> */
+     * @return SyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
+     */
     public SyncInvoker<DeleteScriptRequest, DeleteScriptResponse> deleteScriptInvoker(DeleteScriptRequest request) {
         return new SyncInvoker<DeleteScriptRequest, DeleteScriptResponse>(request, DgcMeta.deleteScript, hcClient);
     }
 
-    /** 执行脚本
+    /**
+     * 执行脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExecuteScriptRequest 请求对象
-     * @return ExecuteScriptResponse */
+     * @return ExecuteScriptResponse
+     */
     public ExecuteScriptResponse executeScript(ExecuteScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.executeScript);
     }
 
-    /** 执行脚本
+    /**
+     * 执行脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExecuteScriptRequest 请求对象
-     * @return SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse> */
+     * @return SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>
+     */
     public SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse> executeScriptInvoker(ExecuteScriptRequest request) {
         return new SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>(request, DgcMeta.executeScript, hcClient);
     }
 
-    /** 导出连接
+    /**
+     * 导出连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportConnectionsRequest 请求对象
-     * @return ExportConnectionsResponse */
+     * @return ExportConnectionsResponse
+     */
     public ExportConnectionsResponse exportConnections(ExportConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.exportConnections);
     }
 
-    /** 导出连接
+    /**
+     * 导出连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportConnectionsRequest 请求对象
-     * @return SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> */
+     * @return SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
+     */
     public SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> exportConnectionsInvoker(
         ExportConnectionsRequest request) {
         return new SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>(request, DgcMeta.exportConnections,
             hcClient);
     }
 
-    /** 导出作业
+    /**
+     * 导出作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportJobRequest 请求对象
-     * @return ExportJobResponse */
+     * @return ExportJobResponse
+     */
     public ExportJobResponse exportJob(ExportJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.exportJob);
     }
 
-    /** 导出作业
+    /**
+     * 导出作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportJobRequest 请求对象
-     * @return SyncInvoker<ExportJobRequest, ExportJobResponse> */
+     * @return SyncInvoker<ExportJobRequest, ExportJobResponse>
+     */
     public SyncInvoker<ExportJobRequest, ExportJobResponse> exportJobInvoker(ExportJobRequest request) {
         return new SyncInvoker<ExportJobRequest, ExportJobResponse>(request, DgcMeta.exportJob, hcClient);
     }
 
-    /** 批量导出作业
+    /**
+     * 批量导出作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportJobListRequest 请求对象
-     * @return ExportJobListResponse */
+     * @return ExportJobListResponse
+     */
     public ExportJobListResponse exportJobList(ExportJobListRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.exportJobList);
     }
 
-    /** 批量导出作业
+    /**
+     * 批量导出作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ExportJobListRequest 请求对象
-     * @return SyncInvoker<ExportJobListRequest, ExportJobListResponse> */
+     * @return SyncInvoker<ExportJobListRequest, ExportJobListResponse>
+     */
     public SyncInvoker<ExportJobListRequest, ExportJobListResponse> exportJobListInvoker(ExportJobListRequest request) {
         return new SyncInvoker<ExportJobListRequest, ExportJobListResponse>(request, DgcMeta.exportJobList, hcClient);
     }
 
-    /** 导入连接
+    /**
+     * 导入连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportConnectionsRequest 请求对象
-     * @return ImportConnectionsResponse */
+     * @return ImportConnectionsResponse
+     */
     public ImportConnectionsResponse importConnections(ImportConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.importConnections);
     }
 
-    /** 导入连接
+    /**
+     * 导入连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportConnectionsRequest 请求对象
-     * @return SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> */
+     * @return SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
+     */
     public SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> importConnectionsInvoker(
         ImportConnectionsRequest request) {
         return new SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>(request, DgcMeta.importConnections,
             hcClient);
     }
 
-    /** 导入作业
+    /**
+     * 导入作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportJobRequest 请求对象
-     * @return ImportJobResponse */
+     * @return ImportJobResponse
+     */
     public ImportJobResponse importJob(ImportJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.importJob);
     }
 
-    /** 导入作业
+    /**
+     * 导入作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ImportJobRequest 请求对象
-     * @return SyncInvoker<ImportJobRequest, ImportJobResponse> */
+     * @return SyncInvoker<ImportJobRequest, ImportJobResponse>
+     */
     public SyncInvoker<ImportJobRequest, ImportJobResponse> importJobInvoker(ImportJobRequest request) {
         return new SyncInvoker<ImportJobRequest, ImportJobResponse>(request, DgcMeta.importJob, hcClient);
     }
 
-    /** 查询连接列表
+    /**
+     * 查询连接列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
-     * @return ListConnectionsResponse */
+     * @return ListConnectionsResponse
+     */
     public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listConnections);
     }
 
-    /** 查询连接列表
+    /**
+     * 查询连接列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
-     * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> */
+     * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
+     */
     public SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsInvoker(
         ListConnectionsRequest request) {
         return new SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, DgcMeta.listConnections,
             hcClient);
     }
 
-    /** 查询作业实例列表
+    /**
+     * 查询作业实例列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInstancesRequest 请求对象
-     * @return ListJobInstancesResponse */
+     * @return ListJobInstancesResponse
+     */
     public ListJobInstancesResponse listJobInstances(ListJobInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listJobInstances);
     }
 
-    /** 查询作业实例列表
+    /**
+     * 查询作业实例列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobInstancesRequest 请求对象
-     * @return SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse> */
+     * @return SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>
+     */
     public SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstancesInvoker(
         ListJobInstancesRequest request) {
         return new SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>(request, DgcMeta.listJobInstances,
             hcClient);
     }
 
-    /** 查询作业列表
+    /**
+     * 查询作业列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
-     * @return ListJobsResponse */
+     * @return ListJobsResponse
+     */
     public ListJobsResponse listJobs(ListJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listJobs);
     }
 
-    /** 查询作业列表
+    /**
+     * 查询作业列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
-     * @return SyncInvoker<ListJobsRequest, ListJobsResponse> */
+     * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
         return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, DgcMeta.listJobs, hcClient);
     }
 
-    /** 查询资源列表
-     * 
+    /**
+     * 查询资源列表
+     *
      *
      * @param ListResourcesRequest 请求对象
-     * @return ListResourcesResponse */
+     * @return ListResourcesResponse
+     */
     public ListResourcesResponse listResources(ListResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listResources);
     }
 
-    /** 查询资源列表
-     * 
+    /**
+     * 查询资源列表
+     *
      *
      * @param ListResourcesRequest 请求对象
-     * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse> */
+     * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
+     */
     public SyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesInvoker(ListResourcesRequest request) {
         return new SyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DgcMeta.listResources, hcClient);
     }
 
-    /** 查询脚本实例执行结果
+    /**
+     * 查询脚本实例执行结果
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListScriptResultsRequest 请求对象
-     * @return ListScriptResultsResponse */
+     * @return ListScriptResultsResponse
+     */
     public ListScriptResultsResponse listScriptResults(ListScriptResultsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listScriptResults);
     }
 
-    /** 查询脚本实例执行结果
+    /**
+     * 查询脚本实例执行结果
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListScriptResultsRequest 请求对象
-     * @return SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse> */
+     * @return SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>
+     */
     public SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResultsInvoker(
         ListScriptResultsRequest request) {
         return new SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>(request, DgcMeta.listScriptResults,
             hcClient);
     }
 
-    /** 查询脚本列表
+    /**
+     * 查询脚本列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListScriptsRequest 请求对象
-     * @return ListScriptsResponse */
+     * @return ListScriptsResponse
+     */
     public ListScriptsResponse listScripts(ListScriptsRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listScripts);
     }
 
-    /** 查询脚本列表
+    /**
+     * 查询脚本列表
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListScriptsRequest 请求对象
-     * @return SyncInvoker<ListScriptsRequest, ListScriptsResponse> */
+     * @return SyncInvoker<ListScriptsRequest, ListScriptsResponse>
+     */
     public SyncInvoker<ListScriptsRequest, ListScriptsResponse> listScriptsInvoker(ListScriptsRequest request) {
         return new SyncInvoker<ListScriptsRequest, ListScriptsResponse>(request, DgcMeta.listScripts, hcClient);
     }
 
-    /** 查询系统任务详情
+    /**
+     * 查询系统任务详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSystemTasksRequest 请求对象
-     * @return ListSystemTasksResponse */
+     * @return ListSystemTasksResponse
+     */
     public ListSystemTasksResponse listSystemTasks(ListSystemTasksRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.listSystemTasks);
     }
 
-    /** 查询系统任务详情
+    /**
+     * 查询系统任务详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListSystemTasksRequest 请求对象
-     * @return SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse> */
+     * @return SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>
+     */
     public SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasksInvoker(
         ListSystemTasksRequest request) {
         return new SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>(request, DgcMeta.listSystemTasks,
             hcClient);
     }
 
-    /** 重跑作业实例
+    /**
+     * 重跑作业实例
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreJobInstanceRequest 请求对象
-     * @return RestoreJobInstanceResponse */
+     * @return RestoreJobInstanceResponse
+     */
     public RestoreJobInstanceResponse restoreJobInstance(RestoreJobInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.restoreJobInstance);
     }
 
-    /** 重跑作业实例
+    /**
+     * 重跑作业实例
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RestoreJobInstanceRequest 请求对象
-     * @return SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse> */
+     * @return SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>
+     */
     public SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstanceInvoker(
         RestoreJobInstanceRequest request) {
         return new SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>(request,
             DgcMeta.restoreJobInstance, hcClient);
     }
 
-    /** 单次执行作业
+    /**
+     * 单次执行作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunOnceRequest 请求对象
-     * @return RunOnceResponse */
+     * @return RunOnceResponse
+     */
     public RunOnceResponse runOnce(RunOnceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.runOnce);
     }
 
-    /** 单次执行作业
+    /**
+     * 单次执行作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RunOnceRequest 请求对象
-     * @return SyncInvoker<RunOnceRequest, RunOnceResponse> */
+     * @return SyncInvoker<RunOnceRequest, RunOnceResponse>
+     */
     public SyncInvoker<RunOnceRequest, RunOnceResponse> runOnceInvoker(RunOnceRequest request) {
         return new SyncInvoker<RunOnceRequest, RunOnceResponse>(request, DgcMeta.runOnce, hcClient);
     }
 
-    /** 查询连接详情
+    /**
+     * 查询连接详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowConnectionRequest 请求对象
-     * @return ShowConnectionResponse */
+     * @return ShowConnectionResponse
+     */
     public ShowConnectionResponse showConnection(ShowConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showConnection);
     }
 
-    /** 查询连接详情
+    /**
+     * 查询连接详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowConnectionRequest 请求对象
-     * @return SyncInvoker<ShowConnectionRequest, ShowConnectionResponse> */
+     * @return SyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
+     */
     public SyncInvoker<ShowConnectionRequest, ShowConnectionResponse> showConnectionInvoker(
         ShowConnectionRequest request) {
         return new SyncInvoker<ShowConnectionRequest, ShowConnectionResponse>(request, DgcMeta.showConnection,
             hcClient);
     }
 
-    /** 检查导入作业文件中的作业和脚本
+    /**
+     * 检查导入作业文件中的作业和脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowFileInfoRequest 请求对象
-     * @return ShowFileInfoResponse */
+     * @return ShowFileInfoResponse
+     */
     public ShowFileInfoResponse showFileInfo(ShowFileInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showFileInfo);
     }
 
-    /** 检查导入作业文件中的作业和脚本
+    /**
+     * 检查导入作业文件中的作业和脚本
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowFileInfoRequest 请求对象
-     * @return SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse> */
+     * @return SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>
+     */
     public SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfoInvoker(ShowFileInfoRequest request) {
         return new SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>(request, DgcMeta.showFileInfo, hcClient);
     }
 
-    /** 查询作业详情
+    /**
+     * 查询作业详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
-     * @return ShowJobResponse */
+     * @return ShowJobResponse
+     */
     public ShowJobResponse showJob(ShowJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showJob);
     }
 
-    /** 查询作业详情
+    /**
+     * 查询作业详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
-     * @return SyncInvoker<ShowJobRequest, ShowJobResponse> */
+     * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
+     */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
         return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, DgcMeta.showJob, hcClient);
     }
 
-    /** 查询作业实例详情
+    /**
+     * 查询作业实例详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobInstanceRequest 请求对象
-     * @return ShowJobInstanceResponse */
+     * @return ShowJobInstanceResponse
+     */
     public ShowJobInstanceResponse showJobInstance(ShowJobInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showJobInstance);
     }
 
-    /** 查询作业实例详情
+    /**
+     * 查询作业实例详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobInstanceRequest 请求对象
-     * @return SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse> */
+     * @return SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>
+     */
     public SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstanceInvoker(
         ShowJobInstanceRequest request) {
         return new SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>(request, DgcMeta.showJobInstance,
             hcClient);
     }
 
-    /** 查询实时作业的运行状态
+    /**
+     * 查询实时作业的运行状态
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
-     * @return ShowJobStatusResponse */
+     * @return ShowJobStatusResponse
+     */
     public ShowJobStatusResponse showJobStatus(ShowJobStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showJobStatus);
     }
 
-    /** 查询实时作业的运行状态
+    /**
+     * 查询实时作业的运行状态
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
-     * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> */
+     * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
+     */
     public SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatusInvoker(ShowJobStatusRequest request) {
         return new SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>(request, DgcMeta.showJobStatus, hcClient);
     }
 
-    /** 查询资源详情
+    /**
+     * 查询资源详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowResourceRequest 请求对象
-     * @return ShowResourceResponse */
+     * @return ShowResourceResponse
+     */
     public ShowResourceResponse showResource(ShowResourceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showResource);
     }
 
-    /** 查询资源详情
+    /**
+     * 查询资源详情
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowResourceRequest 请求对象
-     * @return SyncInvoker<ShowResourceRequest, ShowResourceResponse> */
+     * @return SyncInvoker<ShowResourceRequest, ShowResourceResponse>
+     */
     public SyncInvoker<ShowResourceRequest, ShowResourceResponse> showResourceInvoker(ShowResourceRequest request) {
         return new SyncInvoker<ShowResourceRequest, ShowResourceResponse>(request, DgcMeta.showResource, hcClient);
     }
 
-    /** 查询脚本信息
+    /**
+     * 查询脚本信息
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowScriptRequest 请求对象
-     * @return ShowScriptResponse */
+     * @return ShowScriptResponse
+     */
     public ShowScriptResponse showScript(ShowScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.showScript);
     }
 
-    /** 查询脚本信息
+    /**
+     * 查询脚本信息
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowScriptRequest 请求对象
-     * @return SyncInvoker<ShowScriptRequest, ShowScriptResponse> */
+     * @return SyncInvoker<ShowScriptRequest, ShowScriptResponse>
+     */
     public SyncInvoker<ShowScriptRequest, ShowScriptResponse> showScriptInvoker(ShowScriptRequest request) {
         return new SyncInvoker<ShowScriptRequest, ShowScriptResponse>(request, DgcMeta.showScript, hcClient);
     }
 
-    /** 启动作业
+    /**
+     * 启动作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
-     * @return StartJobResponse */
+     * @return StartJobResponse
+     */
     public StartJobResponse startJob(StartJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.startJob);
     }
 
-    /** 启动作业
+    /**
+     * 启动作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
-     * @return SyncInvoker<StartJobRequest, StartJobResponse> */
+     * @return SyncInvoker<StartJobRequest, StartJobResponse>
+     */
     public SyncInvoker<StartJobRequest, StartJobResponse> startJobInvoker(StartJobRequest request) {
         return new SyncInvoker<StartJobRequest, StartJobResponse>(request, DgcMeta.startJob, hcClient);
     }
 
-    /** 停止作业
+    /**
+     * 停止作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
-     * @return StopJobResponse */
+     * @return StopJobResponse
+     */
     public StopJobResponse stopJob(StopJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.stopJob);
     }
 
-    /** 停止作业
+    /**
+     * 停止作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
-     * @return SyncInvoker<StopJobRequest, StopJobResponse> */
+     * @return SyncInvoker<StopJobRequest, StopJobResponse>
+     */
     public SyncInvoker<StopJobRequest, StopJobResponse> stopJobInvoker(StopJobRequest request) {
         return new SyncInvoker<StopJobRequest, StopJobResponse>(request, DgcMeta.stopJob, hcClient);
     }
 
-    /** 停止作业实例
+    /**
+     * 停止作业实例
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopJobInstanceRequest 请求对象
-     * @return StopJobInstanceResponse */
+     * @return StopJobInstanceResponse
+     */
     public StopJobInstanceResponse stopJobInstance(StopJobInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.stopJobInstance);
     }
 
-    /** 停止作业实例
+    /**
+     * 停止作业实例
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param StopJobInstanceRequest 请求对象
-     * @return SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> */
+     * @return SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>
+     */
     public SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstanceInvoker(
         StopJobInstanceRequest request) {
         return new SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>(request, DgcMeta.stopJobInstance,
             hcClient);
     }
 
-    /** 修改连接
+    /**
+     * 修改连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
-     * @return UpdateConnectionResponse */
+     * @return UpdateConnectionResponse
+     */
     public UpdateConnectionResponse updateConnection(UpdateConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.updateConnection);
     }
 
-    /** 修改连接
+    /**
+     * 修改连接
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
-     * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> */
+     * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
+     */
     public SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionInvoker(
         UpdateConnectionRequest request) {
         return new SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DgcMeta.updateConnection,
             hcClient);
     }
 
-    /** 修改作业
+    /**
+     * 修改作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
-     * @return UpdateJobResponse */
+     * @return UpdateJobResponse
+     */
     public UpdateJobResponse updateJob(UpdateJobRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.updateJob);
     }
 
-    /** 修改作业
+    /**
+     * 修改作业
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
-     * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse> */
+     * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
+     */
     public SyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobInvoker(UpdateJobRequest request) {
         return new SyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DgcMeta.updateJob, hcClient);
     }
 
-    /** 修改资源
+    /**
+     * 修改资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
-     * @return UpdateResourceResponse */
+     * @return UpdateResourceResponse
+     */
     public UpdateResourceResponse updateResource(UpdateResourceRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.updateResource);
     }
 
-    /** 修改资源
+    /**
+     * 修改资源
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
-     * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> */
+     * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
+     */
     public SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceInvoker(
         UpdateResourceRequest request) {
         return new SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, DgcMeta.updateResource,
             hcClient);
     }
 
-    /** 修改脚本内容
+    /**
+     * 修改脚本内容
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateScriptRequest 请求对象
-     * @return UpdateScriptResponse */
+     * @return UpdateScriptResponse
+     */
     public UpdateScriptResponse updateScript(UpdateScriptRequest request) {
         return hcClient.syncInvokeHttp(request, DgcMeta.updateScript);
     }
 
-    /** 修改脚本内容
+    /**
+     * 修改脚本内容
+     *
      * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateScriptRequest 请求对象
-     * @return SyncInvoker<UpdateScriptRequest, UpdateScriptResponse> */
+     * @return SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
+     */
     public SyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptInvoker(UpdateScriptRequest request) {
         return new SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>(request, DgcMeta.updateScript, hcClient);
     }

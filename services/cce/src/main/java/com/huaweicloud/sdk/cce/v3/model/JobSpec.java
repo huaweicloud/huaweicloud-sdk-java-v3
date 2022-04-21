@@ -50,9 +50,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 任务的类型，例：“CreateCluster”- 创建集群。
-     * 
-     * @return type */
+    /**
+     * 任务的类型，例：“CreateCluster”- 创建集群。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -66,9 +67,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 任务所在的集群的ID。
-     * 
-     * @return clusterUID */
+    /**
+     * 任务所在的集群的ID。
+     * @return clusterUID
+     */
     public String getClusterUID() {
         return clusterUID;
     }
@@ -82,9 +84,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 任务操作的资源ID。
-     * 
-     * @return resourceID */
+    /**
+     * 任务操作的资源ID。
+     * @return resourceID
+     */
     public String getResourceID() {
         return resourceID;
     }
@@ -98,9 +101,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 任务操作的资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 任务操作的资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -130,9 +134,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 扩展参数。
-     * 
-     * @return extendParam */
+    /**
+     * 扩展参数。
+     * @return extendParam
+     */
     public Map<String, String> getExtendParam() {
         return extendParam;
     }
@@ -162,9 +167,10 @@ public class JobSpec {
         return this;
     }
 
-    /** 子任务的列表。 - 包含了所有子任务的详细信息 - 在创建集群、节点等场景下，通常会由多个子任务共同组成创建任务，在子任务都完成后，任务才会完成
-     * 
-     * @return subJobs */
+    /**
+     * 子任务的列表。  - 包含了所有子任务的详细信息 - 在创建集群、节点等场景下，通常会由多个子任务共同组成创建任务，在子任务都完成后，任务才会完成 
+     * @return subJobs
+     */
     public List<Job> getSubJobs() {
         return subJobs;
     }
@@ -207,7 +213,10 @@ public class JobSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 在IoTDA实例中的规则ID及其配套的推送数据动作ID */
+/**
+ * 在IoTDA实例中的规则ID及其配套的推送数据动作ID
+ */
 public class IotdaRuleAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class IotdaRuleAction {
         return this;
     }
 
-    /** IoTDA中的规则Id
-     * 
-     * @return ruleId */
+    /**
+     * IoTDA中的规则Id
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -39,9 +42,10 @@ public class IotdaRuleAction {
         return this;
     }
 
-    /** IoTDA中推送数据动作ID
-     * 
-     * @return actionId */
+    /**
+     * IoTDA中推送数据动作ID
+     * @return actionId
+     */
     public String getActionId() {
         return actionId;
     }
@@ -78,7 +82,10 @@ public class IotdaRuleAction {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

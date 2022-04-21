@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowStreamPortraitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowStreamPortraitRequest {
         return this;
     }
 
-    /** 播放域名。
-     * 
-     * @return playDomain */
+    /**
+     * 播放域名。 
+     * @return playDomain
+     */
     public String getPlayDomain() {
         return playDomain;
     }
@@ -44,9 +47,10 @@ public class ShowStreamPortraitRequest {
         return this;
     }
 
-    /** 流名。
-     * 
-     * @return stream */
+    /**
+     * 流名。 
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -60,9 +64,10 @@ public class ShowStreamPortraitRequest {
         return this;
     }
 
-    /** 统计日期，日期格式按照ISO8601表示法，格式：YYYYMMDD，如20200904。可以查询过去31天的数据（不含当天）。
-     * 
-     * @return time */
+    /**
+     * 统计日期，日期格式按照ISO8601表示法，格式：YYYYMMDD，如20200904。可以查询过去31天的数据（不含当天）。 
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -101,7 +106,10 @@ public class ShowStreamPortraitRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

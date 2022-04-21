@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class StartJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class StartJobRequest {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -49,9 +52,12 @@ public class StartJobRequest {
         return this;
     }
 
-    /** 运行作业的并发度 minimum: 0 maximum: 1000
-     * 
-     * @return parallel */
+    /**
+     * 运行作业的并发度
+     * minimum: 0
+     * maximum: 1000
+     * @return parallel
+     */
     public Integer getParallel() {
         return parallel;
     }
@@ -65,9 +71,12 @@ public class StartJobRequest {
         return this;
     }
 
-    /** 运行作业的RTU个数 minimum: 0 maximum: 1000
-     * 
-     * @return rtu */
+    /**
+     * 运行作业的RTU个数
+     * minimum: 0
+     * maximum: 1000
+     * @return rtu
+     */
     public Integer getRtu() {
         return rtu;
     }
@@ -81,9 +90,10 @@ public class StartJobRequest {
         return this;
     }
 
-    /** 运行作业使用历史缓存数据
-     * 
-     * @return resumeSavepoint */
+    /**
+     * 运行作业使用历史缓存数据
+     * @return resumeSavepoint
+     */
     public Boolean getResumeSavepoint() {
         return resumeSavepoint;
     }
@@ -123,7 +133,10 @@ public class StartJobRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

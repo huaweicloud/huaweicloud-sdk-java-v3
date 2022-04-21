@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NetworkInfo */
+/**
+ * NetworkInfo
+ */
 public class NetworkInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class NetworkInfo {
         return this;
     }
 
-    /** network_type
-     * 
-     * @return networkType */
+    /**
+     * network_type
+     * @return networkType
+     */
     public String getNetworkType() {
         return networkType;
     }
@@ -55,7 +58,10 @@ public class NetworkInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

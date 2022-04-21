@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowVocabulariesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ShowVocabulariesResponse extends SdkResponse {
         return this;
     }
 
-    /** 热词表数。
-     * 
-     * @return count */
+    /**
+     * 热词表数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ShowVocabulariesResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用成功返回热词表列表，调用失败时无此字段。
-     * 
-     * @return result */
+    /**
+     * 调用成功返回热词表列表，调用失败时无此字段。
+     * @return result
+     */
     public List<VocabInfo> getResult() {
         return result;
     }
@@ -98,7 +102,10 @@ public class ShowVocabulariesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSubscriptionsByTopicResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListSubscriptionsByTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的唯一标识ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -48,9 +51,10 @@ public class ListSubscriptionsByTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅者个数。
-     * 
-     * @return subscriptionCount */
+    /**
+     * 订阅者个数。
+     * @return subscriptionCount
+     */
     public Integer getSubscriptionCount() {
         return subscriptionCount;
     }
@@ -81,9 +85,10 @@ public class ListSubscriptionsByTopicResponse extends SdkResponse {
         return this;
     }
 
-    /** Subscription结构体。
-     * 
-     * @return subscriptions */
+    /**
+     * Subscription结构体。
+     * @return subscriptions
+     */
     public List<ListSubscriptionsItem> getSubscriptions() {
         return subscriptions;
     }
@@ -122,7 +127,10 @@ public class ListSubscriptionsByTopicResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

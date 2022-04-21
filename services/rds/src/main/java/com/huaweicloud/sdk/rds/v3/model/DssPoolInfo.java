@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例专属存储信息。 */
+/**
+ * 实例专属存储信息。
+ */
 public class DssPoolInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DssPoolInfo {
         return this;
     }
 
-    /** 专属存储池所在az
-     * 
-     * @return azName */
+    /**
+     * 专属存储池所在az
+     * @return azName
+     */
     public String getAzName() {
         return azName;
     }
@@ -54,9 +57,10 @@ public class DssPoolInfo {
         return this;
     }
 
-    /** 专属存储池免费空间大小，单位GB
-     * 
-     * @return freeCapacityGb */
+    /**
+     * 专属存储池免费空间大小，单位GB
+     * @return freeCapacityGb
+     */
     public String getFreeCapacityGb() {
         return freeCapacityGb;
     }
@@ -70,10 +74,10 @@ public class DssPoolInfo {
         return this;
     }
 
-    /** 专属存储池磁盘类型名称，可能取值如下： - ULTRAHIGH，表示SSD。 - LOCALSSD：表示本地SSD。 - CLOUDSSD：表示SSD云盘，仅支持通用型和独享型规格实例。 -
-     * ESSD：表示极速型SSD，仅支持独享型规格实例。
-     * 
-     * @return dsspoolVolumeType */
+    /**
+     * 专属存储池磁盘类型名称，可能取值如下：  - ULTRAHIGH，表示SSD。  - LOCALSSD：表示本地SSD。  - CLOUDSSD：表示SSD云盘，仅支持通用型和独享型规格实例。  - ESSD：表示极速型SSD，仅支持独享型规格实例。
+     * @return dsspoolVolumeType
+     */
     public String getDsspoolVolumeType() {
         return dsspoolVolumeType;
     }
@@ -87,9 +91,10 @@ public class DssPoolInfo {
         return this;
     }
 
-    /** 专属存储池ID
-     * 
-     * @return dsspoolId */
+    /**
+     * 专属存储池ID
+     * @return dsspoolId
+     */
     public String getDsspoolId() {
         return dsspoolId;
     }
@@ -103,9 +108,10 @@ public class DssPoolInfo {
         return this;
     }
 
-    /** 专属存储池当前状态，可能取值如下： - available，表示可用。 - deploying，表示正在部署。 - enlarging，表示正在扩容。 - frozen，表示冻结。 - sellout，表示售罄。
-     * 
-     * @return dsspoolStatus */
+    /**
+     * 专属存储池当前状态，可能取值如下： - available，表示可用。 - deploying，表示正在部署。 - enlarging，表示正在扩容。 - frozen，表示冻结。 - sellout，表示售罄。
+     * @return dsspoolStatus
+     */
     public String getDsspoolStatus() {
         return dsspoolStatus;
     }
@@ -148,7 +154,10 @@ public class DssPoolInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

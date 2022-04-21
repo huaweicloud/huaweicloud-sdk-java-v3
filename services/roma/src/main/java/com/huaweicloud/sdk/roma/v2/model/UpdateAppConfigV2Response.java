@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateAppConfigV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置编号
-     * 
-     * @return id */
+    /**
+     * 应用配置编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -66,9 +69,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用编号
-     * 
-     * @return appId */
+    /**
+     * 应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -82,9 +86,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置类型
-     * 
-     * @return configType */
+    /**
+     * 应用配置类型
+     * @return configType
+     */
     public String getConfigType() {
         return configType;
     }
@@ -98,9 +103,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置名称
-     * 
-     * @return configName */
+    /**
+     * 应用配置名称
+     * @return configName
+     */
     public String getConfigName() {
         return configName;
     }
@@ -114,9 +120,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置值
-     * 
-     * @return configValue */
+    /**
+     * 应用配置值
+     * @return configValue
+     */
     public String getConfigValue() {
         return configValue;
     }
@@ -130,9 +137,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 应用配置更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -146,9 +154,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return this;
     }
 
-    /** 应用配置描述
-     * 
-     * @return description */
+    /**
+     * 应用配置描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -195,7 +204,10 @@ public class UpdateAppConfigV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

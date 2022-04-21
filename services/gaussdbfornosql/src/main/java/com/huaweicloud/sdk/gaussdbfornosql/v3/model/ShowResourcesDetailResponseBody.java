@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowResourcesDetailResponseBody */
+/**
+ * ShowResourcesDetailResponseBody
+ */
 public class ShowResourcesDetailResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowResourcesDetailResponseBody {
         return this;
     }
 
-    /** 配额资源类型，当前配额类型仅支持实例类型（instance）。
-     * 
-     * @return type */
+    /**
+     * 配额资源类型，当前配额类型仅支持实例类型（instance）。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -44,9 +47,10 @@ public class ShowResourcesDetailResponseBody {
         return this;
     }
 
-    /** 当前配额值。
-     * 
-     * @return quota */
+    /**
+     * 当前配额值。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -60,9 +64,10 @@ public class ShowResourcesDetailResponseBody {
         return this;
     }
 
-    /** 已使用的资源数。
-     * 
-     * @return used */
+    /**
+     * 已使用的资源数。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -101,7 +106,10 @@ public class ShowResourcesDetailResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

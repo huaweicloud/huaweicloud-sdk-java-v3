@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新终端节点路由表请求结构体 */
+/**
+ * 更新终端节点路由表请求结构体
+ */
 public class UpdateEndpointRoutetableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class UpdateEndpointRoutetableRequestBody {
         return this;
     }
 
-    /** 路由表ID列表。
-     * 
-     * @return routetables */
+    /**
+     * 路由表ID列表。
+     * @return routetables
+     */
     public List<String> getRoutetables() {
         return routetables;
     }
@@ -75,7 +78,10 @@ public class UpdateEndpointRoutetableRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

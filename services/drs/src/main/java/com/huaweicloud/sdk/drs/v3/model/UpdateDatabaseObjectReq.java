@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新对象选择信息体 */
+/**
+ * 更新对象选择信息体
+ */
 public class UpdateDatabaseObjectReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateDatabaseObjectReq {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -52,9 +55,10 @@ public class UpdateDatabaseObjectReq {
         return this;
     }
 
-    /** 是否进行对象选择，是：自定义迁移对象，否：全部迁移，不填默认为否。
-     * 
-     * @return selected */
+    /**
+     * 是否进行对象选择，是：自定义迁移对象，否：全部迁移，不填默认为否。
+     * @return selected
+     */
     public Boolean getSelected() {
         return selected;
     }
@@ -68,9 +72,10 @@ public class UpdateDatabaseObjectReq {
         return this;
     }
 
-    /** 是否库级同步
-     * 
-     * @return syncDatabase */
+    /**
+     * 是否库级同步
+     * @return syncDatabase
+     */
     public Boolean getSyncDatabase() {
         return syncDatabase;
     }
@@ -100,9 +105,10 @@ public class UpdateDatabaseObjectReq {
         return this;
     }
 
-    /** 数据对象选择信息，selected为true时必填。
-     * 
-     * @return job */
+    /**
+     * 数据对象选择信息，selected为true时必填。
+     * @return job
+     */
     public List<DatabaseInfo> getJob() {
         return job;
     }
@@ -143,7 +149,10 @@ public class UpdateDatabaseObjectReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

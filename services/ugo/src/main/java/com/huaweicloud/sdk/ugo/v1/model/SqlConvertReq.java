@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SQL翻译请求 */
+/**
+ * SQL翻译请求
+ */
 public class SqlConvertReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class SqlConvertReq {
 
     private String sourceDb;
 
-    /** 源数据库版本 */
+    /**
+     * 源数据库版本
+     */
     public static final class SourceDbVersionEnum {
 
-        /** Enum _11G for value: "11g" */
+        /**
+         * Enum _11G for value: "11g"
+         */
         public static final SourceDbVersionEnum _11G = new SourceDbVersionEnum("11g");
 
-        /** Enum _12C for value: "12c" */
+        /**
+         * Enum _12C for value: "12c"
+         */
         public static final SourceDbVersionEnum _12C = new SourceDbVersionEnum("12c");
 
-        /** Enum _18C for value: "18c" */
+        /**
+         * Enum _18C for value: "18c"
+         */
         public static final SourceDbVersionEnum _18C = new SourceDbVersionEnum("18c");
 
-        /** Enum _19C for value: "19c" */
+        /**
+         * Enum _19C for value: "19c"
+         */
         public static final SourceDbVersionEnum _19C = new SourceDbVersionEnum("19c");
 
         private static final Map<String, SourceDbVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -102,19 +114,29 @@ public class SqlConvertReq {
 
     private SourceDbVersionEnum sourceDbVersion;
 
-    /** 目标数据库类型 */
+    /**
+     * 目标数据库类型
+     */
     public static final class TargetDbEnum {
 
-        /** Enum RDS_FOR_MYSQL for value: "RDS for MySQL" */
+        /**
+         * Enum RDS_FOR_MYSQL for value: "RDS for MySQL"
+         */
         public static final TargetDbEnum RDS_FOR_MYSQL = new TargetDbEnum("RDS for MySQL");
 
-        /** Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)" */
+        /**
+         * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
+         */
         public static final TargetDbEnum GAUSSDB_FOR_OPENGAUSS_ = new TargetDbEnum("GaussDB(for openGauss)");
 
-        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
+        /**
+         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
+         */
         public static final TargetDbEnum GAUSSDB_FOR_MYSQL_ = new TargetDbEnum("GaussDB(for MySQL)");
 
-        /** Enum RDS_FOR_POSTGRESQL for value: "RDS for PostgreSQL" */
+        /**
+         * Enum RDS_FOR_POSTGRESQL for value: "RDS for PostgreSQL"
+         */
         public static final TargetDbEnum RDS_FOR_POSTGRESQL = new TargetDbEnum("RDS for PostgreSQL");
 
         private static final Map<String, TargetDbEnum> STATIC_FIELDS = createStaticFields();
@@ -186,22 +208,34 @@ public class SqlConvertReq {
 
     private TargetDbEnum targetDb;
 
-    /** 目标数据库版本 */
+    /**
+     * 目标数据库版本
+     */
     public static final class TargetDbVersionEnum {
 
-        /** Enum _5_7 for value: "5.7" */
+        /**
+         * Enum _5_7 for value: "5.7"
+         */
         public static final TargetDbVersionEnum _5_7 = new TargetDbVersionEnum("5.7");
 
-        /** Enum _8_0 for value: "8.0" */
+        /**
+         * Enum _8_0 for value: "8.0"
+         */
         public static final TargetDbVersionEnum _8_0 = new TargetDbVersionEnum("8.0");
 
-        /** Enum _11 for value: "11" */
+        /**
+         * Enum _11 for value: "11"
+         */
         public static final TargetDbVersionEnum _11 = new TargetDbVersionEnum("11");
 
-        /** Enum _2020 for value: "2020" */
+        /**
+         * Enum _2020 for value: "2020"
+         */
         public static final TargetDbVersionEnum _2020 = new TargetDbVersionEnum("2020");
 
-        /** Enum ENHANCED_EDITION for value: "Enhanced Edition" */
+        /**
+         * Enum ENHANCED_EDITION for value: "Enhanced Edition"
+         */
         public static final TargetDbVersionEnum ENHANCED_EDITION = new TargetDbVersionEnum("Enhanced Edition");
 
         private static final Map<String, TargetDbVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -284,9 +318,10 @@ public class SqlConvertReq {
         return this;
     }
 
-    /** 源数据库类型
-     * 
-     * @return sourceDb */
+    /**
+     * 源数据库类型
+     * @return sourceDb
+     */
     public String getSourceDb() {
         return sourceDb;
     }
@@ -300,9 +335,10 @@ public class SqlConvertReq {
         return this;
     }
 
-    /** 源数据库版本
-     * 
-     * @return sourceDbVersion */
+    /**
+     * 源数据库版本
+     * @return sourceDbVersion
+     */
     public SourceDbVersionEnum getSourceDbVersion() {
         return sourceDbVersion;
     }
@@ -316,9 +352,10 @@ public class SqlConvertReq {
         return this;
     }
 
-    /** 目标数据库类型
-     * 
-     * @return targetDb */
+    /**
+     * 目标数据库类型
+     * @return targetDb
+     */
     public TargetDbEnum getTargetDb() {
         return targetDb;
     }
@@ -332,9 +369,10 @@ public class SqlConvertReq {
         return this;
     }
 
-    /** 目标数据库版本
-     * 
-     * @return targetDbVersion */
+    /**
+     * 目标数据库版本
+     * @return targetDbVersion
+     */
     public TargetDbVersionEnum getTargetDbVersion() {
         return targetDbVersion;
     }
@@ -348,9 +386,10 @@ public class SqlConvertReq {
         return this;
     }
 
-    /** 需要转换的SQL语句
-     * 
-     * @return statement */
+    /**
+     * 需要转换的SQL语句
+     * @return statement
+     */
     public String getStatement() {
         return statement;
     }
@@ -393,7 +432,10 @@ public class SqlConvertReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

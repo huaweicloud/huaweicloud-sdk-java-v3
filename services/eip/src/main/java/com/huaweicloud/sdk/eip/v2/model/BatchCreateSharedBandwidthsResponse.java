@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class BatchCreateSharedBandwidthsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class BatchCreateSharedBandwidthsResponse extends SdkResponse {
         return this;
     }
 
-    /** 批创的带宽对象的列表
-     * 
-     * @return bandwidths */
+    /**
+     * 批创的带宽对象的列表
+     * @return bandwidths
+     */
     public List<BatchBandwidthResp> getBandwidths() {
         return bandwidths;
     }
@@ -76,7 +79,10 @@ public class BatchCreateSharedBandwidthsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

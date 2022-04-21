@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowDatasetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowDatasetRequest {
         return this;
     }
 
-    /** 作业ID。
-     * 
-     * @return jobId */
+    /**
+     * 作业ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -49,9 +52,10 @@ public class ShowDatasetRequest {
         return this;
     }
 
-    /** 作业运行ID。
-     * 
-     * @return runId */
+    /**
+     * 作业运行ID。
+     * @return runId
+     */
     public String getRunId() {
         return runId;
     }
@@ -65,9 +69,11 @@ public class ShowDatasetRequest {
         return this;
     }
 
-    /** 当前偏移量，默认为0。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 当前偏移量，默认为0。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -81,9 +87,12 @@ public class ShowDatasetRequest {
         return this;
     }
 
-    /** 每页显示的最大作业个数，范围: [1, 100]。默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的最大作业个数，范围: [1, 100]。默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +133,10 @@ public class ShowDatasetRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 功能说明：标签键 约束：同一资源的key值不能重复。
-     * 
-     * @return key */
+    /**
+     * 功能说明：标签键 约束：同一资源的key值不能重复。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 功能说明：标签值
-     * 
-     * @return value */
+    /**
+     * 功能说明：标签值
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

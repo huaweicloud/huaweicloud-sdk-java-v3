@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateLinkRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateLinkRequest {
         return this;
     }
 
-    /** 集群ID
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -45,9 +48,10 @@ public class CreateLinkRequest {
         return this;
     }
 
-    /** 为“true”时，此API仅校验参数是否正确，不创建连接
-     * 
-     * @return validate */
+    /**
+     * 为“true”时，此API仅校验参数是否正确，不创建连接
+     * @return validate
+     */
     public String getValidate() {
         return validate;
     }
@@ -70,9 +74,10 @@ public class CreateLinkRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public CdmCreateAndUpdateLinkReq getBody() {
         return body;
     }
@@ -111,7 +116,10 @@ public class CreateLinkRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

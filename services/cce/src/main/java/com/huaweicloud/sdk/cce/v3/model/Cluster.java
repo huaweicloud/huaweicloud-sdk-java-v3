@@ -41,9 +41,10 @@ public class Cluster {
         return this;
     }
 
-    /** API类型，固定值“Cluster”或“cluster”，该值不可修改。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“Cluster”或“cluster”，该值不可修改。  
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -57,9 +58,10 @@ public class Cluster {
         return this;
     }
 
-    /** API版本，固定值“v3”，该值不可修改。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”，该值不可修改。  
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -82,9 +84,10 @@ public class Cluster {
         return this;
     }
 
-    /** Get metadata
-     * 
-     * @return metadata */
+    /**
+     * Get metadata
+     * @return metadata
+     */
     public ClusterMetadata getMetadata() {
         return metadata;
     }
@@ -107,9 +110,10 @@ public class Cluster {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public ClusterSpec getSpec() {
         return spec;
     }
@@ -132,9 +136,10 @@ public class Cluster {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public ClusterStatus getStatus() {
         return status;
     }
@@ -175,7 +180,10 @@ public class Cluster {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

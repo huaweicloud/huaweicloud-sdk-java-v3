@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CommonQueryTaskRsp */
+/**
+ * CommonQueryTaskRsp
+ */
 public class CommonQueryTaskRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class CommonQueryTaskRsp {
         return this;
     }
 
-    /** 任务总数 minimum: 0 maximum: 2147483647
-     * 
-     * @return total */
+    /**
+     * 任务总数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -55,7 +60,10 @@ public class CommonQueryTaskRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListProductsRespIo */
+/**
+ * ListProductsRespIo
+ */
 public class ListProductsRespIo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class ListProductsRespIo {
         return this;
     }
 
-    /** IO类型。
-     * 
-     * @return ioType */
+    /**
+     * IO类型。
+     * @return ioType
+     */
     public String getIoType() {
         return ioType;
     }
@@ -57,9 +60,10 @@ public class ListProductsRespIo {
         return this;
     }
 
-    /** IO规格。
-     * 
-     * @return storageSpecCode */
+    /**
+     * IO规格。
+     * @return storageSpecCode
+     */
     public String getStorageSpecCode() {
         return storageSpecCode;
     }
@@ -89,9 +93,10 @@ public class ListProductsRespIo {
         return this;
     }
 
-    /** IO未售罄的可用区列表。
-     * 
-     * @return availableZones */
+    /**
+     * IO未售罄的可用区列表。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -121,9 +126,10 @@ public class ListProductsRespIo {
         return this;
     }
 
-    /** IO已售罄的不可用区列表。
-     * 
-     * @return unavailableZones */
+    /**
+     * IO已售罄的不可用区列表。
+     * @return unavailableZones
+     */
     public List<String> getUnavailableZones() {
         return unavailableZones;
     }
@@ -137,9 +143,10 @@ public class ListProductsRespIo {
         return this;
     }
 
-    /** 磁盘类型。
-     * 
-     * @return volumeType */
+    /**
+     * 磁盘类型。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -182,7 +189,10 @@ public class ListProductsRespIo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

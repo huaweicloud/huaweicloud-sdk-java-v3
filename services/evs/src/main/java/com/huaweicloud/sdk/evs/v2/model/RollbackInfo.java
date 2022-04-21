@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RollbackInfo */
+/**
+ * RollbackInfo
+ */
 public class RollbackInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RollbackInfo {
         return this;
     }
 
-    /** 回滚的目标云硬盘UUID。
-     * 
-     * @return volumeId */
+    /**
+     * 回滚的目标云硬盘UUID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -55,7 +58,10 @@ public class RollbackInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

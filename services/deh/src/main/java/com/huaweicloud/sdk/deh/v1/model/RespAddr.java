@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云服务器的vpc信息。 */
+/**
+ * 云服务器的vpc信息。
+ */
 public class RespAddr {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RespAddr {
         return this;
     }
 
-    /** 云服务器的vpc ip。
-     * 
-     * @return addr */
+    /**
+     * 云服务器的vpc ip。
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -39,9 +42,10 @@ public class RespAddr {
         return this;
     }
 
-    /** 云服务器的vpc版本。
-     * 
-     * @return version */
+    /**
+     * 云服务器的vpc版本。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -77,7 +81,10 @@ public class RespAddr {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

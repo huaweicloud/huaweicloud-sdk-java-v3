@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AssetModelModRequest */
+/**
+ * AssetModelModRequest
+ */
 public class AssetModelModRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class AssetModelModRequest {
         return this;
     }
 
-    /** 模型显示名称，正则：\"^[\\\\u4E00-\\\\u9FA5A-Za-z0-9_@#.-]{1,64}$\"
-     * 
-     * @return displayName */
+    /**
+     * 模型显示名称，正则：\"^[\\\\u4E00-\\\\u9FA5A-Za-z0-9_@#.-]{1,64}$\"
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -63,9 +66,10 @@ public class AssetModelModRequest {
         return this;
     }
 
-    /** 属性集，最多200个
-     * 
-     * @return properties */
+    /**
+     * 属性集，最多200个
+     * @return properties
+     */
     public List<PropertyModelRequest> getProperties() {
         return properties;
     }
@@ -95,9 +99,10 @@ public class AssetModelModRequest {
         return this;
     }
 
-    /** 分析任务集，最多50个
-     * 
-     * @return analyses */
+    /**
+     * 分析任务集，最多50个
+     * @return analyses
+     */
     public List<AnalysisModelRequest> getAnalyses() {
         return analyses;
     }
@@ -136,7 +141,10 @@ public class AssetModelModRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

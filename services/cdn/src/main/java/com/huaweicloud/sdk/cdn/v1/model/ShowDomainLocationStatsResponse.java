@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDomainLocationStatsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ShowDomainLocationStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据分组方式
-     * 
-     * @return groupBy */
+    /**
+     * 数据分组方式
+     * @return groupBy
+     */
     public String getGroupBy() {
         return groupBy;
     }
@@ -59,9 +62,10 @@ public class ShowDomainLocationStatsResponse extends SdkResponse {
         return this;
     }
 
-    /** 按指定的分组方式组织的数据
-     * 
-     * @return result */
+    /**
+     * 按指定的分组方式组织的数据
+     * @return result
+     */
     public Map<String, Object> getResult() {
         return result;
     }
@@ -98,7 +102,10 @@ public class ShowDomainLocationStatsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

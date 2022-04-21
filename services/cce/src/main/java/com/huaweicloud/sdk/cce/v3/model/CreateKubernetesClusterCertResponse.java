@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** API类型，固定值“Config”，该值不可修改。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“Config”，该值不可修改。 
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -73,9 +76,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本，固定值“v1”。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v1”。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -89,9 +93,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前未使用该字段，当前默认为空。
-     * 
-     * @return preferences */
+    /**
+     * 当前未使用该字段，当前默认为空。
+     * @return preferences
+     */
     public Object getPreferences() {
         return preferences;
     }
@@ -121,9 +126,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群列表。
-     * 
-     * @return clusters */
+    /**
+     * 集群列表。
+     * @return clusters
+     */
     public List<Clusters> getClusters() {
         return clusters;
     }
@@ -153,9 +159,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** 存放了指定用户的一些证书信息和ClientKey信息。
-     * 
-     * @return users */
+    /**
+     * 存放了指定用户的一些证书信息和ClientKey信息。
+     * @return users
+     */
     public List<Users> getUsers() {
         return users;
     }
@@ -185,9 +192,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** 上下文列表。
-     * 
-     * @return contexts */
+    /**
+     * 上下文列表。
+     * @return contexts
+     */
     public List<Contexts> getContexts() {
         return contexts;
     }
@@ -201,9 +209,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前上下文，若存在publicIp（虚拟机弹性IP）时为 external; 若不存在publicIp为 internal。
-     * 
-     * @return currentContext */
+    /**
+     * 当前上下文，若存在publicIp（虚拟机弹性IP）时为 external; 若不存在publicIp为 internal。
+     * @return currentContext
+     */
     public String getCurrentContext() {
         return currentContext;
     }
@@ -217,9 +226,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return this;
     }
 
-    /** Get portID
-     * 
-     * @return portID */
+    /**
+     * Get portID
+     * @return portID
+     */
     public String getPortID() {
         return portID;
     }
@@ -269,7 +279,10 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

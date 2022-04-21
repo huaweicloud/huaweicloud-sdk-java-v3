@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建容灾演练请求数据结构 */
+/**
+ * 创建容灾演练请求数据结构
+ */
 public class CreateDisasterRecoveryDrillRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateDisasterRecoveryDrillRequestParams {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -44,9 +47,10 @@ public class CreateDisasterRecoveryDrillRequestParams {
         return this;
     }
 
-    /** 演练虚拟私有云ID，不指定时系统会自动创建演练VPC。
-     * 
-     * @return drillVpcId */
+    /**
+     * 演练虚拟私有云ID，不指定时系统会自动创建演练VPC。
+     * @return drillVpcId
+     */
     public String getDrillVpcId() {
         return drillVpcId;
     }
@@ -60,9 +64,10 @@ public class CreateDisasterRecoveryDrillRequestParams {
         return this;
     }
 
-    /** 指定容灾演练的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
-     * 
-     * @return name */
+    /**
+     * 指定容灾演练的名称，最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,7 +107,10 @@ public class CreateDisasterRecoveryDrillRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

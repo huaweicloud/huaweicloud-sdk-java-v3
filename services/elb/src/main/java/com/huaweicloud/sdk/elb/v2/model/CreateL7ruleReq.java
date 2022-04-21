@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 创建转发规则的请求体 */
+/**
+ * 创建转发规则的请求体
+ */
 public class CreateL7ruleReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CreateL7ruleReq {
 
     private Boolean adminStateUp;
 
-    /** 转发规则的匹配内容 */
+    /**
+     * 转发规则的匹配内容
+     */
     public static final class TypeEnum {
 
-        /** Enum HOST_NAME for value: "HOST_NAME" */
+        /**
+         * Enum HOST_NAME for value: "HOST_NAME"
+         */
         public static final TypeEnum HOST_NAME = new TypeEnum("HOST_NAME");
 
-        /** Enum PATH for value: "PATH" */
+        /**
+         * Enum PATH for value: "PATH"
+         */
         public static final TypeEnum PATH = new TypeEnum("PATH");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 转发规则所在的项目ID。
-     * 
-     * @return tenantId */
+    /**
+     * 转发规则所在的项目ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -140,9 +149,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -156,9 +166,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 转发规则的匹配内容
-     * 
-     * @return type */
+    /**
+     * 转发规则的匹配内容
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -172,9 +183,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
-     * 
-     * @return compareType */
+    /**
+     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
+     * @return compareType
+     */
     public String getCompareType() {
         return compareType;
     }
@@ -188,9 +200,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
-     * 
-     * @return key */
+    /**
+     * 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -204,10 +217,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|
-     * /()[]{}，且必须以\"/\"开头。
-     * 
-     * @return value */
+    /**
+     * 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -221,9 +234,10 @@ public class CreateL7ruleReq {
         return this;
     }
 
-    /** 是否反向匹配； 取值范围：true/false。默认值：false； 该字段为预留字段，暂未启用。
-     * 
-     * @return invert */
+    /**
+     * 是否反向匹配； 取值范围：true/false。默认值：false； 该字段为预留字段，暂未启用。
+     * @return invert
+     */
     public Boolean getInvert() {
         return invert;
     }
@@ -269,7 +283,10 @@ public class CreateL7ruleReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

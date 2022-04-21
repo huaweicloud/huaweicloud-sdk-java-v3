@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteSharedBandwidthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteSharedBandwidthRequest {
         return this;
     }
 
-    /** 带宽唯一标识 约束： 当前仅支持删除共享带宽
-     * 
-     * @return bandwidthId */
+    /**
+     * 带宽唯一标识  约束： 当前仅支持删除共享带宽
+     * @return bandwidthId
+     */
     public String getBandwidthId() {
         return bandwidthId;
     }
@@ -55,7 +58,10 @@ public class DeleteSharedBandwidthRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例组信息。 */
+/**
+ * 实例组信息。
+ */
 public class GroupResponseItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 节点类型。 取值： - shard - config - mongos - replica - single
-     * 
-     * @return type */
+    /**
+     * 节点类型。 取值： - shard - config - mongos - replica - single
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -62,9 +65,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 组ID。节点类型为shard和config时，该参数有效。
-     * 
-     * @return id */
+    /**
+     * 组ID。节点类型为shard和config时，该参数有效。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,9 +82,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 组名称。节点类型为shard和config时，该参数有效。
-     * 
-     * @return name */
+    /**
+     * 组名称。节点类型为shard和config时，该参数有效。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +99,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 组状态。节点类型为shard和config时，该参数有效。
-     * 
-     * @return status */
+    /**
+     * 组状态。节点类型为shard和config时，该参数有效。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -119,9 +125,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public Volume getVolume() {
         return volume;
     }
@@ -151,9 +158,10 @@ public class GroupResponseItem {
         return this;
     }
 
-    /** 节点信息。
-     * 
-     * @return nodes */
+    /**
+     * 节点信息。
+     * @return nodes
+     */
     public List<NodeItem> getNodes() {
         return nodes;
     }
@@ -197,7 +205,10 @@ public class GroupResponseItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

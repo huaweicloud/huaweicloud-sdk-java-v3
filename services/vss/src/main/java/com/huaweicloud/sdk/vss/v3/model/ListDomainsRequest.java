@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDomainsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class ListDomainsRequest {
 
     private String domainId;
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证 */
+    /**
+     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     */
     public static final class AuthStatusEnum {
 
-        /** Enum UNAUTH for value: "unauth" */
+        /**
+         * Enum UNAUTH for value: "unauth"
+         */
         public static final AuthStatusEnum UNAUTH = new AuthStatusEnum("unauth");
 
-        /** Enum AUTH for value: "auth" */
+        /**
+         * Enum AUTH for value: "auth"
+         */
         public static final AuthStatusEnum AUTH = new AuthStatusEnum("auth");
 
-        /** Enum INVALID for value: "invalid" */
+        /**
+         * Enum INVALID for value: "invalid"
+         */
         public static final AuthStatusEnum INVALID = new AuthStatusEnum("invalid");
 
-        /** Enum MANUAL for value: "manual" */
+        /**
+         * Enum MANUAL for value: "manual"
+         */
         public static final AuthStatusEnum MANUAL = new AuthStatusEnum("manual");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final AuthStatusEnum SKIP = new AuthStatusEnum("skip");
 
         private static final Map<String, AuthStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +135,10 @@ public class ListDomainsRequest {
         return this;
     }
 
-    /** 域名ID
-     * 
-     * @return domainId */
+    /**
+     * 域名ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -137,9 +152,10 @@ public class ListDomainsRequest {
         return this;
     }
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证
-     * 
-     * @return authStatus */
+    /**
+     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * @return authStatus
+     */
     public AuthStatusEnum getAuthStatus() {
         return authStatus;
     }
@@ -153,9 +169,12 @@ public class ListDomainsRequest {
         return this;
     }
 
-    /** 分页查询，偏移量，表示从此偏移量开始查询 minimum: 0 maximum: 10000
-     * 
-     * @return offset */
+    /**
+     * 分页查询，偏移量，表示从此偏移量开始查询
+     * minimum: 0
+     * maximum: 10000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -169,9 +188,12 @@ public class ListDomainsRequest {
         return this;
     }
 
-    /** 分页查询，每页显示的条目数量 minimum: 1 maximum: 10000
-     * 
-     * @return limit */
+    /**
+     * 分页查询，每页显示的条目数量
+     * minimum: 1
+     * maximum: 10000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -212,7 +234,10 @@ public class ListDomainsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

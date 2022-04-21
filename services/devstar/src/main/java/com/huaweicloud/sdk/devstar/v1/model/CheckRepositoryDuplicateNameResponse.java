@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckRepositoryDuplicateNameResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class CheckRepositoryDuplicateNameResponse extends SdkResponse {
         return this;
     }
 
-    /** 重名校验是否通过,true:校验通过不重名,false:校验不通过重名
-     * 
-     * @return result */
+    /**
+     * 重名校验是否通过,true:校验通过不重名,false:校验不通过重名
+     * @return result
+     */
     public Boolean getResult() {
         return result;
     }
@@ -57,7 +60,10 @@ public class CheckRepositoryDuplicateNameResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

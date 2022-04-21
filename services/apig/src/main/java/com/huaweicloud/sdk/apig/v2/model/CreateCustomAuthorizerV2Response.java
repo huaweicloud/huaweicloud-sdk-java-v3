@@ -15,7 +15,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
     private String name;
 
-    /** 自定义认证类型 - FRONTEND：前端 - BACKEND：后端 不支持修改 */
+    /**
+     * 自定义认证类型  - FRONTEND：前端 - BACKEND：后端  不支持修改
+     */
     public static final class TypeEnum {
 
-        /** Enum FRONTEND for value: "FRONTEND" */
+        /**
+         * Enum FRONTEND for value: "FRONTEND"
+         */
         public static final TypeEnum FRONTEND = new TypeEnum("FRONTEND");
 
-        /** Enum BACKEND for value: "BACKEND" */
+        /**
+         * Enum BACKEND for value: "BACKEND"
+         */
         public static final TypeEnum BACKEND = new TypeEnum("BACKEND");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,10 +107,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
     private TypeEnum type;
 
-    /** 只能为：FUNC */
+    /**
+     * 只能为：FUNC
+     */
     public static final class AuthorizerTypeEnum {
 
-        /** Enum FUNC for value: "FUNC" */
+        /**
+         * Enum FUNC for value: "FUNC"
+         */
         public static final AuthorizerTypeEnum FUNC = new AuthorizerTypeEnum("FUNC");
 
         private static final Map<String, AuthorizerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -226,9 +238,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义认证的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、“_”组成，且只能以英文或中文开头。
-     * 
-     * @return name */
+    /**
+     * 自定义认证的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、“_”组成，且只能以英文或中文开头。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -242,9 +255,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义认证类型 - FRONTEND：前端 - BACKEND：后端 不支持修改
-     * 
-     * @return type */
+    /**
+     * 自定义认证类型  - FRONTEND：前端 - BACKEND：后端  不支持修改
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -258,9 +272,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 只能为：FUNC
-     * 
-     * @return authorizerType */
+    /**
+     * 只能为：FUNC
+     * @return authorizerType
+     */
     public AuthorizerTypeEnum getAuthorizerType() {
         return authorizerType;
     }
@@ -274,9 +289,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 函数地址。
-     * 
-     * @return authorizerUri */
+    /**
+     * 函数地址。
+     * @return authorizerUri
+     */
     public String getAuthorizerUri() {
         return authorizerUri;
     }
@@ -306,9 +322,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 认证来源
-     * 
-     * @return identities */
+    /**
+     * 认证来源
+     * @return identities
+     */
     public List<Identity> getIdentities() {
         return identities;
     }
@@ -322,9 +339,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 缓存时间
-     * 
-     * @return ttl */
+    /**
+     * 缓存时间
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -338,9 +356,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 用户数据
-     * 
-     * @return userData */
+    /**
+     * 用户数据
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -354,9 +373,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义后端服务ID。 暂不支持
-     * 
-     * @return ldApiId */
+    /**
+     * 自定义后端服务ID。  暂不支持
+     * @return ldApiId
+     */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -370,9 +390,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 是否发送body
-     * 
-     * @return needBody */
+    /**
+     * 是否发送body
+     * @return needBody
+     */
     public Boolean getNeedBody() {
         return needBody;
     }
@@ -386,9 +407,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义认证编号
-     * 
-     * @return id */
+    /**
+     * 自定义认证编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -402,9 +424,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -418,9 +441,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义认证所属应用编号 暂不支持
-     * 
-     * @return romaAppId */
+    /**
+     * 自定义认证所属应用编号  暂不支持
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -434,9 +458,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    /** 自定义认证所属应用名称 暂不支持
-     * 
-     * @return romaAppName */
+    /**
+     * 自定义认证所属应用名称  暂不支持
+     * @return romaAppName
+     */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -507,7 +532,10 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

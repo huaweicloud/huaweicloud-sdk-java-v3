@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 灾备初始化对象详情信息体 */
+/**
+ * 灾备初始化对象详情信息体
+ */
 public class StructDetailVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class StructDetailVO {
         return this;
     }
 
-    /** 进度
-     * 
-     * @return progress */
+    /**
+     * 进度
+     * @return progress
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -54,9 +57,10 @@ public class StructDetailVO {
         return this;
     }
 
-    /** 源数据库名称
-     * 
-     * @return srcDB */
+    /**
+     * 源数据库名称
+     * @return srcDB
+     */
     public String getSrcDB() {
         return srcDB;
     }
@@ -70,9 +74,10 @@ public class StructDetailVO {
         return this;
     }
 
-    /** 源对象名称
-     * 
-     * @return srcTB */
+    /**
+     * 源对象名称
+     * @return srcTB
+     */
     public String getSrcTB() {
         return srcTB;
     }
@@ -86,9 +91,10 @@ public class StructDetailVO {
         return this;
     }
 
-    /** 目标数据库名称
-     * 
-     * @return dstDB */
+    /**
+     * 目标数据库名称
+     * @return dstDB
+     */
     public String getDstDB() {
         return dstDB;
     }
@@ -102,9 +108,10 @@ public class StructDetailVO {
         return this;
     }
 
-    /** 目标对象名称
-     * 
-     * @return dstTB */
+    /**
+     * 目标对象名称
+     * @return dstTB
+     */
     public String getDstTB() {
         return dstTB;
     }
@@ -145,7 +152,10 @@ public class StructDetailVO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

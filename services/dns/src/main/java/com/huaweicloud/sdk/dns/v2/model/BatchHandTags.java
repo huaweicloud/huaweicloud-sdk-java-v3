@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchHandTags */
+/**
+ * BatchHandTags
+ */
 public class BatchHandTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchHandTags {
         return this;
     }
 
-    /** 标签列表。删除时tags结构体不能缺失。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。删除时tags结构体不能缺失。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -58,9 +61,10 @@ public class BatchHandTags {
         return this;
     }
 
-    /** 操作标识（区分大小写）：create（创建）、delete（删除）。
-     * 
-     * @return action */
+    /**
+     * 操作标识（区分大小写）：create（创建）、delete（删除）。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -96,7 +100,10 @@ public class BatchHandTags {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

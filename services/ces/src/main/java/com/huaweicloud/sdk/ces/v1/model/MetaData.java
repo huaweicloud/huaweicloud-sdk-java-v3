@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 查询结果元数据信息，包括分页信息等。 */
+/**
+ * 查询结果元数据信息，包括分页信息等。
+ */
 public class MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class MetaData {
         return this;
     }
 
-    /** 当前返回结果条数。
-     * 
-     * @return count */
+    /**
+     * 当前返回结果条数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -44,9 +47,10 @@ public class MetaData {
         return this;
     }
 
-    /** 总条数。
-     * 
-     * @return total */
+    /**
+     * 总条数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -60,9 +64,10 @@ public class MetaData {
         return this;
     }
 
-    /** 下一个开始的标记，用于分页。
-     * 
-     * @return marker */
+    /**
+     * 下一个开始的标记，用于分页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -100,7 +105,10 @@ public class MetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

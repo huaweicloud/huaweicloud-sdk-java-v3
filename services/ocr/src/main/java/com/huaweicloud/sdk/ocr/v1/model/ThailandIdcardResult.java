@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ThailandIdcardResult */
+/**
+ * ThailandIdcardResult
+ */
 public class ThailandIdcardResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,9 +118,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 标示正面还是反面，取值为front或back。
-     * 
-     * @return side */
+    /**
+     * 标示正面还是反面，取值为front或back。 
+     * @return side
+     */
     public String getSide() {
         return side;
     }
@@ -132,9 +135,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 身份证号。
-     * 
-     * @return idNumber */
+    /**
+     * 身份证号。 
+     * @return idNumber
+     */
     public String getIdNumber() {
         return idNumber;
     }
@@ -148,9 +152,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 泰文名字。
-     * 
-     * @return nameTh */
+    /**
+     * 泰文名字。 
+     * @return nameTh
+     */
     public String getNameTh() {
         return nameTh;
     }
@@ -164,9 +169,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 英文名字。
-     * 
-     * @return firstNameEn */
+    /**
+     * 英文名字。 
+     * @return firstNameEn
+     */
     public String getFirstNameEn() {
         return firstNameEn;
     }
@@ -180,9 +186,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 英文姓氏。
-     * 
-     * @return lastNameEn */
+    /**
+     * 英文姓氏。 
+     * @return lastNameEn
+     */
     public String getLastNameEn() {
         return lastNameEn;
     }
@@ -196,9 +203,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 泰文出生日期。
-     * 
-     * @return dateOfBirthTh */
+    /**
+     * 泰文出生日期。 
+     * @return dateOfBirthTh
+     */
     public String getDateOfBirthTh() {
         return dateOfBirthTh;
     }
@@ -212,9 +220,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 英文出生日期。
-     * 
-     * @return dateOfBirthEn */
+    /**
+     * 英文出生日期。 
+     * @return dateOfBirthEn
+     */
     public String getDateOfBirthEn() {
         return dateOfBirthEn;
     }
@@ -228,9 +237,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 宗教。
-     * 
-     * @return religionTh */
+    /**
+     * 宗教。 
+     * @return religionTh
+     */
     public String getReligionTh() {
         return religionTh;
     }
@@ -244,9 +254,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 地址。
-     * 
-     * @return addressTh */
+    /**
+     * 地址。 
+     * @return addressTh
+     */
     public String getAddressTh() {
         return addressTh;
     }
@@ -260,9 +271,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 泰文签发日期。
-     * 
-     * @return dateOfIssueTh */
+    /**
+     * 泰文签发日期。 
+     * @return dateOfIssueTh
+     */
     public String getDateOfIssueTh() {
         return dateOfIssueTh;
     }
@@ -276,9 +288,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 英文签发日期。
-     * 
-     * @return dateOfIssueEn */
+    /**
+     * 英文签发日期。 
+     * @return dateOfIssueEn
+     */
     public String getDateOfIssueEn() {
         return dateOfIssueEn;
     }
@@ -292,9 +305,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 泰文有效期。
-     * 
-     * @return dateOfExpiryTh */
+    /**
+     * 泰文有效期。 
+     * @return dateOfExpiryTh
+     */
     public String getDateOfExpiryTh() {
         return dateOfExpiryTh;
     }
@@ -308,9 +322,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 英文有效期。
-     * 
-     * @return dateOfExpiryEn */
+    /**
+     * 英文有效期。 
+     * @return dateOfExpiryEn
+     */
     public String getDateOfExpiryEn() {
         return dateOfExpiryEn;
     }
@@ -324,9 +339,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * 序列号。 
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -340,9 +356,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 身份证反面卡号。
-     * 
-     * @return cardNumber */
+    /**
+     * 身份证反面卡号。 
+     * @return cardNumber
+     */
     public String getCardNumber() {
         return cardNumber;
     }
@@ -356,9 +373,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 激光码。
-     * 
-     * @return laserNumber */
+    /**
+     * 激光码。 
+     * @return laserNumber
+     */
     public String getLaserNumber() {
         return laserNumber;
     }
@@ -381,9 +399,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** Get confidence
-     * 
-     * @return confidence */
+    /**
+     * Get confidence
+     * @return confidence
+     */
     public ThailandIdcardConfidence getConfidence() {
         return confidence;
     }
@@ -397,9 +416,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 头像的base64编码。 当输入参数“return_portrait_image”为“true”时，才返回该参数。
-     * 
-     * @return portraitImage */
+    /**
+     * 头像的base64编码。 当输入参数“return_portrait_image”为“true”时，才返回该参数。 
+     * @return portraitImage
+     */
     public String getPortraitImage() {
         return portraitImage;
     }
@@ -429,10 +449,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 头像在原图上的位置。
-     * 当输入参数“return_portrait_location”为“true”时，才返回该参数。以列表形式显示，包含头像区域四个顶点的二维坐标（x,y），坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向
-     * 
-     * @return portraitLocation */
+    /**
+     * 头像在原图上的位置。 当输入参数“return_portrait_location”为“true”时，才返回该参数。以列表形式显示，包含头像区域四个顶点的二维坐标（x,y），坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向 
+     * @return portraitLocation
+     */
     public List<List<Integer>> getPortraitLocation() {
         return portraitLocation;
     }
@@ -446,9 +466,10 @@ public class ThailandIdcardResult {
         return this;
     }
 
-    /** 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。
-     * 
-     * @return idcardType */
+    /**
+     * 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
+     * @return idcardType
+     */
     public String getIdcardType() {
         return idcardType;
     }
@@ -540,7 +561,10 @@ public class ThailandIdcardResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

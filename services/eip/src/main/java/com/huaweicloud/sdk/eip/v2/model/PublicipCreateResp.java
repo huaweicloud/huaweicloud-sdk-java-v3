@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 弹性公网IP对象 */
+/**
+ * 弹性公网IP对象
+ */
 public class PublicipCreateResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,47 +36,74 @@ public class PublicipCreateResp {
 
     private String publicIpAddress;
 
-    /** 功能说明：弹性公网IP的状态 取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE，
-     * 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。 */
+    /**
+     * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
+     */
     public static final class StatusEnum {
 
-        /** Enum FREEZED for value: "FREEZED" */
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
         public static final StatusEnum FREEZED = new StatusEnum("FREEZED");
 
-        /** Enum BIND_ERROR for value: "BIND_ERROR" */
+        /**
+         * Enum BIND_ERROR for value: "BIND_ERROR"
+         */
         public static final StatusEnum BIND_ERROR = new StatusEnum("BIND_ERROR");
 
-        /** Enum BINDING for value: "BINDING" */
+        /**
+         * Enum BINDING for value: "BINDING"
+         */
         public static final StatusEnum BINDING = new StatusEnum("BINDING");
 
-        /** Enum PENDING_DELETE for value: "PENDING_DELETE" */
+        /**
+         * Enum PENDING_DELETE for value: "PENDING_DELETE"
+         */
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
 
-        /** Enum NOTIFYING for value: "NOTIFYING" */
+        /**
+         * Enum NOTIFYING for value: "NOTIFYING"
+         */
         public static final StatusEnum NOTIFYING = new StatusEnum("NOTIFYING");
 
-        /** Enum NOTIFY_DELETE for value: "NOTIFY_DELETE" */
+        /**
+         * Enum NOTIFY_DELETE for value: "NOTIFY_DELETE"
+         */
         public static final StatusEnum NOTIFY_DELETE = new StatusEnum("NOTIFY_DELETE");
 
-        /** Enum PENDING_UPDATE for value: "PENDING_UPDATE" */
+        /**
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
+         */
         public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
 
-        /** Enum DOWN for value: "DOWN" */
+        /**
+         * Enum DOWN for value: "DOWN"
+         */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum ELB for value: "ELB" */
+        /**
+         * Enum ELB for value: "ELB"
+         */
         public static final StatusEnum ELB = new StatusEnum("ELB");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
-        /** Enum VPN for value: "VPN" */
+        /**
+         * Enum VPN for value: "VPN"
+         */
         public static final StatusEnum VPN = new StatusEnum("VPN");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -170,13 +199,19 @@ public class PublicipCreateResp {
 
     private String publicIpv6Address;
 
-    /** IP版本信息，取值范围是4和6 */
+    /**
+     * IP版本信息，取值范围是4和6
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -261,9 +296,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 带宽大小，单位为Mbit/s。
-     * 
-     * @return bandwidthSize */
+    /**
+     * 带宽大小，单位为Mbit/s。
+     * @return bandwidthSize
+     */
     public Integer getBandwidthSize() {
         return bandwidthSize;
     }
@@ -277,9 +313,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 弹性公网IP申请时间（UTC时间）
-     * 
-     * @return createTime */
+    /**
+     * 弹性公网IP申请时间（UTC时间）
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -293,9 +330,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 弹性公网IP唯一标识
-     * 
-     * @return id */
+    /**
+     * 弹性公网IP唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -309,9 +347,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
-     * 
-     * @return publicIpAddress */
+    /**
+     * IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
+     * @return publicIpAddress
+     */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -325,10 +364,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP的状态 取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE，
-     * 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
-     * 
-     * @return status */
+    /**
+     * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -342,9 +381,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -358,12 +398,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 功能说明：弹性IP弹性公网IP的类型 取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6 东北-大连：5_telcom、5_union
-     * 华南-广州：5_bgp、5_sbgp 华东-上海二：5_bgp、5_sbgp 华北-北京一：5_bgp、5_sbgp、5_ipv6 亚太-香港：5_bgp 亚太-曼谷：5_bgp 亚太-新加坡：5_bgp
-     * 非洲-约翰内斯堡：5_bgp 西南-贵阳一：5_bgp、5_sbgp 华北-北京四：5_bgp、5_sbgp
-     * 约束：必须是系统具体支持的类型publicip_id为IPv4端口，所以\"publicip_type\"字段未给定时，默认为5_bgp。
-     * 
-     * @return type */
+    /**
+     * 功能说明：弹性IP弹性公网IP的类型  取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6  东北-大连：5_telcom、5_union  华南-广州：5_bgp、5_sbgp  华东-上海二：5_bgp、5_sbgp  华北-北京一：5_bgp、5_sbgp、5_ipv6  亚太-香港：5_bgp  亚太-曼谷：5_bgp  亚太-新加坡：5_bgp  非洲-约翰内斯堡：5_bgp  西南-贵阳一：5_bgp、5_sbgp  华北-北京四：5_bgp、5_sbgp  约束：必须是系统具体支持的类型publicip_id为IPv4端口，所以\"publicip_type\"字段未给定时，默认为5_bgp。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -377,9 +415,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
-     * 
-     * @return publicIpv6Address */
+    /**
+     * IPv4时无此字段，IPv6时为申请到的弹性公网IP地址
+     * @return publicIpv6Address
+     */
     public String getPublicIpv6Address() {
         return publicIpv6Address;
     }
@@ -393,9 +432,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** IP版本信息，取值范围是4和6
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本信息，取值范围是4和6
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -409,9 +449,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 创建弹性公网IP时，给弹性公网IP绑定企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。  创建弹性公网IP时，给弹性公网IP绑定企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -425,9 +466,10 @@ public class PublicipCreateResp {
         return this;
     }
 
-    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return alias */
+    /**
+     * 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -492,7 +534,10 @@ public class PublicipCreateResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

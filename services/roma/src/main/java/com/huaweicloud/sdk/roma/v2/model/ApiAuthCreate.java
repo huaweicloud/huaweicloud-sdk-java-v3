@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiAuthCreate */
+/**
+ * ApiAuthCreate
+ */
 public class ApiAuthCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 需要授权的环境编号
-     * 
-     * @return envId */
+    /**
+     * 需要授权的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -83,9 +86,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** APP的编号列表
-     * 
-     * @return appIds */
+    /**
+     * APP的编号列表
+     * @return appIds
+     */
     public List<String> getAppIds() {
         return appIds;
     }
@@ -115,9 +119,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** API的编号列表。
-     * 
-     * @return apiIds */
+    /**
+     * API的编号列表。
+     * @return apiIds
+     */
     public List<String> getApiIds() {
         return apiIds;
     }
@@ -131,9 +136,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 授权通道类型： - GREEN：绿色通道 - NORMAL：非绿色通道 实例开启green_tunnel特性时可以开启绿色通道，此字段不填默认为不使用绿色通道
-     * 
-     * @return authTunnel */
+    /**
+     * 授权通道类型： - GREEN：绿色通道 - NORMAL：非绿色通道  实例开启green_tunnel特性时可以开启绿色通道，此字段不填默认为不使用绿色通道
+     * @return authTunnel
+     */
     public String getAuthTunnel() {
         return authTunnel;
     }
@@ -163,9 +169,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 绿色通道授权白名单。 允许白名单中的IP不使用认证信息访问，auth_tunnel = GREEN时生效
-     * 
-     * @return authWhitelist */
+    /**
+     * 绿色通道授权白名单。  允许白名单中的IP不使用认证信息访问，auth_tunnel = GREEN时生效
+     * @return authWhitelist
+     */
     public List<String> getAuthWhitelist() {
         return authWhitelist;
     }
@@ -195,9 +202,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 绿色通道授权黑名单。 auth_tunnel = GREEN时生效
-     * 
-     * @return authBlacklist */
+    /**
+     * 绿色通道授权黑名单。  auth_tunnel = GREEN时生效
+     * @return authBlacklist
+     */
     public List<String> getAuthBlacklist() {
         return authBlacklist;
     }
@@ -227,9 +235,10 @@ public class ApiAuthCreate {
         return this;
     }
 
-    /** 访问参数列表。
-     * 
-     * @return visitParams */
+    /**
+     * 访问参数列表。
+     * @return visitParams
+     */
     public List<ApiAuthVisitParam> getVisitParams() {
         return visitParams;
     }
@@ -275,7 +284,10 @@ public class ApiAuthCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

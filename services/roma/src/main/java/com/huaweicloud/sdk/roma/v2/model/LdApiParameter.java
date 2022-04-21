@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 后端API请求参数 */
+/**
+ * 后端API请求参数
+ */
 public class LdApiParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class LdApiParameter {
 
     private String name;
 
-    /** 该参数在调用API时候所放的位置： - Headers ：放于请求头 - Parameters ：放于请求参数 - Body：放于请求体 */
+    /**
+     * 该参数在调用API时候所放的位置： - Headers ：放于请求头 - Parameters ：放于请求参数 - Body：放于请求体
+     */
     public static final class InEnum {
 
-        /** Enum HEADERS for value: "Headers" */
+        /**
+         * Enum HEADERS for value: "Headers"
+         */
         public static final InEnum HEADERS = new InEnum("Headers");
 
-        /** Enum PARAMETERS for value: "Parameters" */
+        /**
+         * Enum PARAMETERS for value: "Parameters"
+         */
         public static final InEnum PARAMETERS = new InEnum("Parameters");
 
-        /** Enum BODY for value: "Body" */
+        /**
+         * Enum BODY for value: "Body"
+         */
         public static final InEnum BODY = new InEnum("Body");
 
         private static final Map<String, InEnum> STATIC_FIELDS = createStaticFields();
@@ -118,11 +128,10 @@ public class LdApiParameter {
         return this;
     }
 
-    /** 参数名称： - 参数位于Headers、 Parameters时，用户自行定义，支持英文、数字、点、中划线、下划线，且需要英文开头，不区分大小写。 -
-     * 参数位于Body时候，参数以application/json、application/xml、application/text为名，但实际是以请求body里的键值对作为参数名和参数值，比如请求消息样例，参数名为application/json，参数值为{\\\"table\\\":\\\"apic01\\\",\\\"id\\\":\\\"1\\\"}，后端取table：apic01，id：1这两个键值对作为入参。
-     * - 注意：定义参数不要重名，否则会覆盖掉，当Headers、Parameters重复时候，Parameters会被覆盖，当Parameters和Body里的键值对重复时候，Parameters会被覆盖。
-     * 
-     * @return name */
+    /**
+     * 参数名称： - 参数位于Headers、 Parameters时，用户自行定义，支持英文、数字、点、中划线、下划线，且需要英文开头，不区分大小写。 - 参数位于Body时候，参数以application/json、application/xml、application/text为名，但实际是以请求body里的键值对作为参数名和参数值，比如请求消息样例，参数名为application/json，参数值为{\\\"table\\\":\\\"apic01\\\",\\\"id\\\":\\\"1\\\"}，后端取table：apic01，id：1这两个键值对作为入参。 - 注意：定义参数不要重名，否则会覆盖掉，当Headers、Parameters重复时候，Parameters会被覆盖，当Parameters和Body里的键值对重复时候，Parameters会被覆盖。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -136,9 +145,10 @@ public class LdApiParameter {
         return this;
     }
 
-    /** 该参数在调用API时候所放的位置： - Headers ：放于请求头 - Parameters ：放于请求参数 - Body：放于请求体
-     * 
-     * @return in */
+    /**
+     * 该参数在调用API时候所放的位置： - Headers ：放于请求头 - Parameters ：放于请求参数 - Body：放于请求体
+     * @return in
+     */
     public InEnum getIn() {
         return in;
     }
@@ -152,9 +162,10 @@ public class LdApiParameter {
         return this;
     }
 
-    /** 参数默认值
-     * 
-     * @return _default */
+    /**
+     * 参数默认值
+     * @return _default
+     */
     public String getDefault() {
         return _default;
     }
@@ -168,9 +179,10 @@ public class LdApiParameter {
         return this;
     }
 
-    /** 参数描述 不支持<，>字符
-     * 
-     * @return description */
+    /**
+     * 参数描述  不支持<，>字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -184,9 +196,10 @@ public class LdApiParameter {
         return this;
     }
 
-    /** 参数是否必须。true：必须，false：不必须
-     * 
-     * @return required */
+    /**
+     * 参数是否必须。true：必须，false：不必须
+     * @return required
+     */
     public Boolean getRequired() {
         return required;
     }
@@ -228,7 +241,10 @@ public class LdApiParameter {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

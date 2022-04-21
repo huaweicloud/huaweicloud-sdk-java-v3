@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 状态详情。 */
+/**
+ * 状态详情。
+ */
 public class InstanceStatusView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public InstanceStatusType getStatus() {
         return status;
     }
@@ -59,9 +62,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** 正常实例副本数。
-     * 
-     * @return availableReplica */
+    /**
+     * 正常实例副本数。
+     * @return availableReplica
+     */
     public Integer getAvailableReplica() {
         return availableReplica;
     }
@@ -75,9 +79,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** 实例副本数。
-     * 
-     * @return replica */
+    /**
+     * 实例副本数。
+     * @return replica
+     */
     public Integer getReplica() {
         return replica;
     }
@@ -91,9 +96,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** Get failDetail
-     * 
-     * @return failDetail */
+    /**
+     * Get failDetail
+     * @return failDetail
+     */
     public InstanceFailDetail getFailDetail() {
         return failDetail;
     }
@@ -107,9 +113,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** 最近Job ID。
-     * 
-     * @return lastJobId */
+    /**
+     * 最近Job ID。
+     * @return lastJobId
+     */
     public String getLastJobId() {
         return lastJobId;
     }
@@ -123,9 +130,10 @@ public class InstanceStatusView {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -170,7 +178,10 @@ public class InstanceStatusView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

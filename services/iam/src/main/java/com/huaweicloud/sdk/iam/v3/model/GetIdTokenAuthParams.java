@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** auth信息 */
+/**
+ * auth信息
+ */
 public class GetIdTokenAuthParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class GetIdTokenAuthParams {
         return this;
     }
 
-    /** Get idToken
-     * 
-     * @return idToken */
+    /**
+     * Get idToken
+     * @return idToken
+     */
     public GetIdTokenIdTokenBody getIdToken() {
         return idToken;
     }
@@ -58,9 +61,10 @@ public class GetIdTokenAuthParams {
         return this;
     }
 
-    /** Get scope
-     * 
-     * @return scope */
+    /**
+     * Get scope
+     * @return scope
+     */
     public GetIdTokenIdScopeBody getScope() {
         return scope;
     }
@@ -97,7 +101,10 @@ public class GetIdTokenAuthParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

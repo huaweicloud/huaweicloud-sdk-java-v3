@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端服务器 */
+/**
+ * 源端服务器
+ */
 public class Server {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,13 +38,19 @@ public class Server {
 
     private String hostname;
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选 */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "WINDOWS" */
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
 
-        /** Enum LINUX for value: "LINUX" */
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -117,13 +125,19 @@ public class Server {
 
     private String osVersion;
 
-    /** 源端服务器启动类型，如BIOS或者UEFI */
+    /**
+     * 源端服务器启动类型，如BIOS或者UEFI
+     */
     public static final class FirmwareEnum {
 
-        /** Enum BIOS for value: "BIOS" */
+        /**
+         * Enum BIOS for value: "BIOS"
+         */
         public static final FirmwareEnum BIOS = new FirmwareEnum("BIOS");
 
-        /** Enum UEFI for value: "UEFI" */
+        /**
+         * Enum UEFI for value: "UEFI"
+         */
         public static final FirmwareEnum UEFI = new FirmwareEnum("UEFI");
 
         private static final Map<String, FirmwareEnum> STATIC_FIELDS = createStaticFields();
@@ -253,13 +267,19 @@ public class Server {
 
     private Boolean accountRights;
 
-    /** Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO) */
+    /**
+     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
+     */
     public static final class BootLoaderEnum {
 
-        /** Enum GRUB for value: "GRUB" */
+        /**
+         * Enum GRUB for value: "GRUB"
+         */
         public static final BootLoaderEnum GRUB = new BootLoaderEnum("GRUB");
 
-        /** Enum LILO for value: "LILO" */
+        /**
+         * Enum LILO for value: "LILO"
+         */
         public static final BootLoaderEnum LILO = new BootLoaderEnum("LILO");
 
         private static final Map<String, BootLoaderEnum> STATIC_FIELDS = createStaticFields();
@@ -344,9 +364,10 @@ public class Server {
         return this;
     }
 
-    /** 源端在SMS数据库中的ID
-     * 
-     * @return id */
+    /**
+     * 源端在SMS数据库中的ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -360,9 +381,10 @@ public class Server {
         return this;
     }
 
-    /** 源端服务器ip，注册源端时必选，更新非必选
-     * 
-     * @return ip */
+    /**
+     * 源端服务器ip，注册源端时必选，更新非必选
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -376,9 +398,10 @@ public class Server {
         return this;
     }
 
-    /** 用来区分不同源端服务器的名称
-     * 
-     * @return name */
+    /**
+     * 用来区分不同源端服务器的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -392,9 +415,10 @@ public class Server {
         return this;
     }
 
-    /** 源端主机名，注册源端必选，更新非必选
-     * 
-     * @return hostname */
+    /**
+     * 源端主机名，注册源端必选，更新非必选
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -408,9 +432,10 @@ public class Server {
         return this;
     }
 
-    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * 
-     * @return osType */
+    /**
+     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * @return osType
+     */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -424,9 +449,10 @@ public class Server {
         return this;
     }
 
-    /** 操作系统版本，注册必选，更新非必选
-     * 
-     * @return osVersion */
+    /**
+     * 操作系统版本，注册必选，更新非必选
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -440,9 +466,10 @@ public class Server {
         return this;
     }
 
-    /** 源端服务器启动类型，如BIOS或者UEFI
-     * 
-     * @return firmware */
+    /**
+     * 源端服务器启动类型，如BIOS或者UEFI
+     * @return firmware
+     */
     public FirmwareEnum getFirmware() {
         return firmware;
     }
@@ -456,9 +483,12 @@ public class Server {
         return this;
     }
 
-    /** CPU个数，单位vCPU minimum: 0 maximum: 65535
-     * 
-     * @return cpuQuantity */
+    /**
+     * CPU个数，单位vCPU
+     * minimum: 0
+     * maximum: 65535
+     * @return cpuQuantity
+     */
     public Integer getCpuQuantity() {
         return cpuQuantity;
     }
@@ -472,9 +502,12 @@ public class Server {
         return this;
     }
 
-    /** 内存大小，单位MB minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return memory */
+    /**
+     * 内存大小，单位MB
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return memory
+     */
     public Long getMemory() {
         return memory;
     }
@@ -504,9 +537,10 @@ public class Server {
         return this;
     }
 
-    /** 源端服务器的磁盘信息
-     * 
-     * @return disks */
+    /**
+     * 源端服务器的磁盘信息
+     * @return disks
+     */
     public List<Disk> getDisks() {
         return disks;
     }
@@ -536,9 +570,10 @@ public class Server {
         return this;
     }
 
-    /** Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
-     * 
-     * @return btrfsList */
+    /**
+     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * @return btrfsList
+     */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -568,9 +603,10 @@ public class Server {
         return this;
     }
 
-    /** 源端服务器的网卡信息
-     * 
-     * @return networks */
+    /**
+     * 源端服务器的网卡信息
+     * @return networks
+     */
     public List<NetWork> getNetworks() {
         return networks;
     }
@@ -584,9 +620,10 @@ public class Server {
         return this;
     }
 
-    /** 租户的domainId
-     * 
-     * @return domainId */
+    /**
+     * 租户的domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -600,9 +637,10 @@ public class Server {
         return this;
     }
 
-    /** 是否安装rsync组件，Linux系统此参数为必选
-     * 
-     * @return hasRsync */
+    /**
+     * 是否安装rsync组件，Linux系统此参数为必选
+     * @return hasRsync
+     */
     public Boolean getHasRsync() {
         return hasRsync;
     }
@@ -616,9 +654,10 @@ public class Server {
         return this;
     }
 
-    /** Linux场景必选，源端是否是半虚拟化
-     * 
-     * @return paravirtualization */
+    /**
+     * Linux场景必选，源端是否是半虚拟化
+     * @return paravirtualization
+     */
     public Boolean getParavirtualization() {
         return paravirtualization;
     }
@@ -632,9 +671,10 @@ public class Server {
         return this;
     }
 
-    /** Linux必选，裸设备列表
-     * 
-     * @return rawDevices */
+    /**
+     * Linux必选，裸设备列表
+     * @return rawDevices
+     */
     public String getRawDevices() {
         return rawDevices;
     }
@@ -648,9 +688,10 @@ public class Server {
         return this;
     }
 
-    /** Windows 必选，是否缺少驱动文件
-     * 
-     * @return driverFiles */
+    /**
+     * Windows 必选，是否缺少驱动文件
+     * @return driverFiles
+     */
     public Boolean getDriverFiles() {
         return driverFiles;
     }
@@ -664,9 +705,10 @@ public class Server {
         return this;
     }
 
-    /** Windows必选，是否存在不正常服务
-     * 
-     * @return systemServices */
+    /**
+     * Windows必选，是否存在不正常服务
+     * @return systemServices
+     */
     public Boolean getSystemServices() {
         return systemServices;
     }
@@ -680,9 +722,10 @@ public class Server {
         return this;
     }
 
-    /** Windows必选，权限是否满足要求
-     * 
-     * @return accountRights */
+    /**
+     * Windows必选，权限是否满足要求
+     * @return accountRights
+     */
     public Boolean getAccountRights() {
         return accountRights;
     }
@@ -696,9 +739,10 @@ public class Server {
         return this;
     }
 
-    /** Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
-     * 
-     * @return bootLoader */
+    /**
+     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
+     * @return bootLoader
+     */
     public BootLoaderEnum getBootLoader() {
         return bootLoader;
     }
@@ -712,9 +756,10 @@ public class Server {
         return this;
     }
 
-    /** Windows必选，系统目录
-     * 
-     * @return systemDir */
+    /**
+     * Windows必选，系统目录
+     * @return systemDir
+     */
     public String getSystemDir() {
         return systemDir;
     }
@@ -744,9 +789,10 @@ public class Server {
         return this;
     }
 
-    /** Linux必选，如果没有卷组，输入[]
-     * 
-     * @return volumeGroups */
+    /**
+     * Linux必选，如果没有卷组，输入[]
+     * @return volumeGroups
+     */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -836,7 +882,10 @@ public class Server {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

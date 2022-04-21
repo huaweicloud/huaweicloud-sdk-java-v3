@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DiscountInfoV3 */
+/**
+ * DiscountInfoV3
+ */
 public class DiscountInfoV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class DiscountInfoV3 {
         return this;
     }
 
-    /** 订单的可用折扣ID。 支付订单时，输入该参数的值，即可使用折扣。
-     * 
-     * @return discountId */
+    /**
+     * 订单的可用折扣ID。 支付订单时，输入该参数的值，即可使用折扣。
+     * @return discountId
+     */
     public String getDiscountId() {
         return discountId;
     }
@@ -52,9 +55,10 @@ public class DiscountInfoV3 {
         return this;
     }
 
-    /** 折扣率或者满减值，如果折扣模式是一口价，这个值为空。
-     * 
-     * @return discountValue */
+    /**
+     * 折扣率或者满减值，如果折扣模式是一口价，这个值为空。
+     * @return discountValue
+     */
     public String getDiscountValue() {
         return discountValue;
     }
@@ -68,9 +72,10 @@ public class DiscountInfoV3 {
         return this;
     }
 
-    /** 折扣类型，取值为 0：促销折扣1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣
-     * 
-     * @return discountType */
+    /**
+     * 折扣类型，取值为 0：促销折扣1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣
+     * @return discountType
+     */
     public Integer getDiscountType() {
         return discountType;
     }
@@ -100,9 +105,10 @@ public class DiscountInfoV3 {
         return this;
     }
 
-    /** 可使用折扣的订单列表。 具体请参见表3。
-     * 
-     * @return orders */
+    /**
+     * 可使用折扣的订单列表。 具体请参见表3。
+     * @return orders
+     */
     public List<OrderV3> getOrders() {
         return orders;
     }
@@ -143,7 +149,10 @@ public class DiscountInfoV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

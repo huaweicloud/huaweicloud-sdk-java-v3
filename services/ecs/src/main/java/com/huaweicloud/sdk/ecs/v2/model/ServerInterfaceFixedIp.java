@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ServerInterfaceFixedIp */
+/**
+ * ServerInterfaceFixedIp
+ */
 public class ServerInterfaceFixedIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ServerInterfaceFixedIp {
         return this;
     }
 
-    /** 网卡私网IP信息。
-     * 
-     * @return ipAddress */
+    /**
+     * 网卡私网IP信息。
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -39,9 +42,10 @@ public class ServerInterfaceFixedIp {
         return this;
     }
 
-    /** 网卡私网IP对应子网信息。
-     * 
-     * @return subnetId */
+    /**
+     * 网卡私网IP对应子网信息。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -78,7 +82,10 @@ public class ServerInterfaceFixedIp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

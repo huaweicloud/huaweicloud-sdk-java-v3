@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Links */
+/**
+ * Links
+ */
 public class Links {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class Links {
         return this;
     }
 
-    /** Get linkConfigValues
-     * 
-     * @return linkConfigValues */
+    /**
+     * Get linkConfigValues
+     * @return linkConfigValues
+     */
     public LinksLinkconfigvalues getLinkConfigValues() {
         return linkConfigValues;
     }
@@ -84,9 +87,10 @@ public class Links {
         return this;
     }
 
-    /** 创建连接的用户
-     * 
-     * @return creationUser */
+    /**
+     * 创建连接的用户
+     * @return creationUser
+     */
     public String getCreationUser() {
         return creationUser;
     }
@@ -100,9 +104,10 @@ public class Links {
         return this;
     }
 
-    /** 连接名称
-     * 
-     * @return name */
+    /**
+     * 连接名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -116,9 +121,10 @@ public class Links {
         return this;
     }
 
-    /** 连接ID
-     * 
-     * @return id */
+    /**
+     * 连接ID
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -132,9 +138,10 @@ public class Links {
         return this;
     }
 
-    /** 创建连接的时间
-     * 
-     * @return creationDate */
+    /**
+     * 创建连接的时间
+     * @return creationDate
+     */
     public Long getCreationDate() {
         return creationDate;
     }
@@ -148,11 +155,10 @@ public class Links {
         return this;
     }
 
-    /** 连接器名称，对应的连接参数如下：generic-jdbc-connector：关系数据库连接。obs-connector：OBS连接、阿里云OSS连接。hdfs-connector：HDFS连接。hbase-connector：HBase连接、CloudTable连接。hive-connector：Hive连接。ftp-connector/sftp-connector：FTP/SFTP连接。mongodb-connector：MongoDB连接。redis-connector：Redis/DCS连接。nas-connector：NAS/SFS连接。kafka-connector：Kafka连接。dis-connector：DIS连接。elasticsearch-connector：Elasticsearch/云搜索服务连接。dli-connector：DLI连接。opentsdb-connector：CloudTable
-     * OpenTSDB连接。http-connector：HTTP/HTTPS连接，该连接暂无连接参数。thirdparty-obs-connector：七牛云KODO/腾讯云COS连接、亚马逊对象存储连接。dms-kafka-connector：DMS
-     * Kafka连接
-     * 
-     * @return connectorName */
+    /**
+     * 连接器名称，对应的连接参数如下：generic-jdbc-connector：关系数据库连接。obs-connector：OBS连接、阿里云OSS连接。hdfs-connector：HDFS连接。hbase-connector：HBase连接、CloudTable连接。hive-connector：Hive连接。ftp-connector/sftp-connector：FTP/SFTP连接。mongodb-connector：MongoDB连接。redis-connector：Redis/DCS连接。nas-connector：NAS/SFS连接。kafka-connector：Kafka连接。dis-connector：DIS连接。elasticsearch-connector：Elasticsearch/云搜索服务连接。dli-connector：DLI连接。opentsdb-connector：CloudTable OpenTSDB连接。http-connector：HTTP/HTTPS连接，该连接暂无连接参数。thirdparty-obs-connector：七牛云KODO/腾讯云COS连接、亚马逊对象存储连接。dms-kafka-connector：DMS Kafka连接
+     * @return connectorName
+     */
     public String getConnectorName() {
         return connectorName;
     }
@@ -166,9 +172,10 @@ public class Links {
         return this;
     }
 
-    /** 更新连接的时间
-     * 
-     * @return updateDate */
+    /**
+     * 更新连接的时间
+     * @return updateDate
+     */
     public Long getUpdateDate() {
         return updateDate;
     }
@@ -182,9 +189,10 @@ public class Links {
         return this;
     }
 
-    /** 是否激活连接，默认为“true”
-     * 
-     * @return enabled */
+    /**
+     * 是否激活连接，默认为“true”
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -198,9 +206,10 @@ public class Links {
         return this;
     }
 
-    /** 更新连接的用户
-     * 
-     * @return updateUser */
+    /**
+     * 更新连接的用户
+     * @return updateUser
+     */
     public String getUpdateUser() {
         return updateUser;
     }
@@ -256,7 +265,10 @@ public class Links {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

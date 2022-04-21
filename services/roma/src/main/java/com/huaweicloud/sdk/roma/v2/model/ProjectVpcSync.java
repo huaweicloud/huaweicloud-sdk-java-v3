@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProjectVpcSync */
+/**
+ * ProjectVpcSync
+ */
 public class ProjectVpcSync {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ProjectVpcSync {
         return this;
     }
 
-    /** VPC通道编号
-     * 
-     * @return vpcChannelId */
+    /**
+     * VPC通道编号
+     * @return vpcChannelId
+     */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -63,9 +66,10 @@ public class ProjectVpcSync {
         return this;
     }
 
-    /** 新增关联的实例列表
-     * 
-     * @return instanceIds */
+    /**
+     * 新增关联的实例列表
+     * @return instanceIds
+     */
     public List<String> getInstanceIds() {
         return instanceIds;
     }
@@ -79,9 +83,10 @@ public class ProjectVpcSync {
         return this;
     }
 
-    /** 是否强制同步，默认不强制同步
-     * 
-     * @return forceSync */
+    /**
+     * 是否强制同步，默认不强制同步
+     * @return forceSync
+     */
     public Boolean getForceSync() {
         return forceSync;
     }
@@ -120,7 +125,10 @@ public class ProjectVpcSync {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

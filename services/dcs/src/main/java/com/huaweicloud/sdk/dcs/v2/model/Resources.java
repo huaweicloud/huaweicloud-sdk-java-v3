@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Resources */
+/**
+ * Resources
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源的计数单位。 - 当type为instance时，无单位。 - 当type为ram时，单位为GB。
-     * 
-     * @return unit */
+    /**
+     * 资源的计数单位。 - 当type为instance时，无单位。 - 当type为ram时，单位为GB。 
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -59,9 +62,10 @@ public class Resources {
         return this;
     }
 
-    /** - 当type为instance时，表示可申请实例配额的最小值。 - 当type为ram时，表示可申请内存配额的最小值。
-     * 
-     * @return min */
+    /**
+     * - 当type为instance时，表示可申请实例配额的最小值。 - 当type为ram时，表示可申请内存配额的最小值。 
+     * @return min
+     */
     public Integer getMin() {
         return min;
     }
@@ -75,9 +79,10 @@ public class Resources {
         return this;
     }
 
-    /** - 当type为instance时，表示可申请实例配额的最大值。 - 当type为ram时，表示可申请内存配额的最大值。
-     * 
-     * @return max */
+    /**
+     * - 当type为instance时，表示可申请实例配额的最大值。 - 当type为ram时，表示可申请内存配额的最大值。 
+     * @return max
+     */
     public Integer getMax() {
         return max;
     }
@@ -91,9 +96,10 @@ public class Resources {
         return this;
     }
 
-    /** 可以创建的实例最大数和总内存的配额限制。
-     * 
-     * @return quota */
+    /**
+     * 可以创建的实例最大数和总内存的配额限制。
+     * @return quota
+     */
     public Integer getQuota() {
         return quota;
     }
@@ -107,9 +113,10 @@ public class Resources {
         return this;
     }
 
-    /** 已创建的实例个数和已使用的内存配额。
-     * 
-     * @return used */
+    /**
+     * 已创建的实例个数和已使用的内存配额。
+     * @return used
+     */
     public Integer getUsed() {
         return used;
     }
@@ -123,9 +130,10 @@ public class Resources {
         return this;
     }
 
-    /** 支持instance、ram两种。 - instance表示实例配额。 - ram表示内存配额。
-     * 
-     * @return type */
+    /**
+     * 支持instance、ram两种。 - instance表示实例配额。 - ram表示内存配额。 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -167,7 +175,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

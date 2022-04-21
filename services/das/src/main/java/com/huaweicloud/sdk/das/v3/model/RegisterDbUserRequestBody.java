@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 注册数据库用户请求 */
+/**
+ * 注册数据库用户请求
+ */
 public class RegisterDbUserRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RegisterDbUserRequestBody {
         return this;
     }
 
-    /** 数据库用户名称
-     * 
-     * @return dbUsername */
+    /**
+     * 数据库用户名称
+     * @return dbUsername
+     */
     public String getDbUsername() {
         return dbUsername;
     }
@@ -44,9 +47,10 @@ public class RegisterDbUserRequestBody {
         return this;
     }
 
-    /** 数据库用户密码
-     * 
-     * @return dbUserPassword */
+    /**
+     * 数据库用户密码
+     * @return dbUserPassword
+     */
     public String getDbUserPassword() {
         return dbUserPassword;
     }
@@ -60,9 +64,10 @@ public class RegisterDbUserRequestBody {
         return this;
     }
 
-    /** 数据库类型，取值为MySQL
-     * 
-     * @return datastoreType */
+    /**
+     * 数据库类型，取值为MySQL
+     * @return datastoreType
+     */
     public String getDatastoreType() {
         return datastoreType;
     }
@@ -101,7 +106,10 @@ public class RegisterDbUserRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDDosStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,10 +35,10 @@ public class ListDDosStatusRequest {
         return this;
     }
 
-    /** 可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
-     * 不带此参数默认所有列表，以neutron查询到的顺序为准。
-     * 
-     * @return status */
+    /**
+     * 可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞  不带此参数默认所有列表，以neutron查询到的顺序为准。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -50,9 +52,10 @@ public class ListDDosStatusRequest {
         return this;
     }
 
-    /** 返回结果个数限制，取值范围：1~100
-     * 
-     * @return limit */
+    /**
+     * 返回结果个数限制，取值范围：1~100
+     * @return limit
+     */
     public String getLimit() {
         return limit;
     }
@@ -66,9 +69,10 @@ public class ListDDosStatusRequest {
         return this;
     }
 
-    /** 偏移量，取值范围：0~2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，取值范围：0~2147483647
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -82,9 +86,10 @@ public class ListDDosStatusRequest {
         return this;
     }
 
-    /** IP地址，支持IPv4格式和IPv6格式输入，支持部分查询。例如“？ip=192.168”，会返回192.168.111.1和10.192.168.8所对应的EIP防护状态。
-     * 
-     * @return ip */
+    /**
+     * IP地址，支持IPv4格式和IPv6格式输入，支持部分查询。例如“？ip=192.168”，会返回192.168.111.1和10.192.168.8所对应的EIP防护状态。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -125,7 +130,10 @@ public class ListDDosStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

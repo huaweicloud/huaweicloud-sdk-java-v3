@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DetectFaceByBase64Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DetectFaceByBase64Response extends SdkResponse {
         return this;
     }
 
-    /** 检测到的人脸。 调用失败时无此字段。
-     * 
-     * @return faces */
+    /**
+     * 检测到的人脸。 调用失败时无此字段。
+     * @return faces
+     */
     public List<DetectFace> getFaces() {
         return faces;
     }
@@ -75,7 +78,10 @@ public class DetectFaceByBase64Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

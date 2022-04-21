@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ddos状态响应体 */
+/**
+ * ddos状态响应体
+ */
 public class DDosStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** EIP的ID
-     * 
-     * @return floatingIpId */
+    /**
+     * EIP的ID
+     * @return floatingIpId
+     */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -69,9 +72,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** 浮动IP地址
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 浮动IP地址
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -85,9 +89,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** EIP所属类型，可选范围： - EIP：未绑定到ECS的EIP或绑定到ECS的EIP - ELB：绑定到ELB的EIP
-     * 
-     * @return networkType */
+    /**
+     * EIP所属类型，可选范围： - EIP：未绑定到ECS的EIP或绑定到ECS的EIP - ELB：绑定到ELB的EIP
+     * @return networkType
+     */
     public String getNetworkType() {
         return networkType;
     }
@@ -101,9 +106,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** 防护状态，可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
-     * 
-     * @return status */
+    /**
+     * 防护状态，可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -117,9 +123,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** 黑洞结束时间
-     * 
-     * @return blackholeEndtime */
+    /**
+     * 黑洞结束时间
+     * @return blackholeEndtime
+     */
     public Long getBlackholeEndtime() {
         return blackholeEndtime;
     }
@@ -133,9 +140,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** 防护类型
-     * 
-     * @return protectType */
+    /**
+     * 防护类型
+     * @return protectType
+     */
     public String getProtectType() {
         return protectType;
     }
@@ -149,9 +157,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** 流量阈值
-     * 
-     * @return trafficThreshold */
+    /**
+     * 流量阈值
+     * @return trafficThreshold
+     */
     public Long getTrafficThreshold() {
         return trafficThreshold;
     }
@@ -165,9 +174,10 @@ public class DDosStatus {
         return this;
     }
 
-    /** http流量阈值
-     * 
-     * @return httpThreshold */
+    /**
+     * http流量阈值
+     * @return httpThreshold
+     */
     public Long getHttpThreshold() {
         return httpThreshold;
     }
@@ -223,7 +233,10 @@ public class DDosStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

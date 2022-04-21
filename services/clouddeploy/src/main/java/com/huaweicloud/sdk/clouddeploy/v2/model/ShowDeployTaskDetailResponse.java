@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDeployTaskDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,13 +54,19 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
 
     private String updateTime;
 
-    /** 部署任务状态，Draft表示草稿状态，Available表示可用状态 */
+    /**
+     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
+     */
     public static final class StateEnum {
 
-        /** Enum AVAILABLE for value: "Available" */
+        /**
+         * Enum AVAILABLE for value: "Available"
+         */
         public static final StateEnum AVAILABLE = new StateEnum("Available");
 
-        /** Enum DRAFT for value: "Draft" */
+        /**
+         * Enum DRAFT for value: "Draft"
+         */
         public static final StateEnum DRAFT = new StateEnum("Draft");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -228,9 +236,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务id
-     * 
-     * @return taskId */
+    /**
+     * 部署任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -244,9 +253,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务名称
-     * 
-     * @return name */
+    /**
+     * 部署任务名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -260,9 +270,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** devcloud项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -276,9 +287,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** devcloud项目名称
-     * 
-     * @return projectName */
+    /**
+     * devcloud项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -292,9 +304,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署类型模式，包括deployTemplate，ansible，shell
-     * 
-     * @return deploySystem */
+    /**
+     * 部署类型模式，包括deployTemplate，ansible，shell
+     * @return deploySystem
+     */
     public String getDeploySystem() {
         return deploySystem;
     }
@@ -308,9 +321,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -324,9 +338,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return updateTime */
+    /**
+     * 修改时间
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -340,9 +355,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务状态，Draft表示草稿状态，Available表示可用状态
-     * 
-     * @return state */
+    /**
+     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -356,9 +372,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 最后一次执行时间
-     * 
-     * @return executionTime */
+    /**
+     * 最后一次执行时间
+     * @return executionTime
+     */
     public String getExecutionTime() {
         return executionTime;
     }
@@ -372,9 +389,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -388,9 +406,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否使用默认权限矩阵
-     * 
-     * @return isDefautPermission */
+    /**
+     * 是否使用默认权限矩阵
+     * @return isDefautPermission
+     */
     public Boolean getIsDefautPermission() {
         return isDefautPermission;
     }
@@ -404,9 +423,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板id
-     * 
-     * @return templateId */
+    /**
+     * 模板id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -420,9 +440,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务创建者用户名
-     * 
-     * @return owner */
+    /**
+     * 部署任务创建者用户名
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -436,9 +457,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务创建者昵称
-     * 
-     * @return nickName */
+    /**
+     * 部署任务创建者昵称
+     * @return nickName
+     */
     public String getNickName() {
         return nickName;
     }
@@ -452,9 +474,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务创建者用户ID
-     * 
-     * @return ownerId */
+    /**
+     * 部署任务创建者用户ID
+     * @return ownerId
+     */
     public String getOwnerId() {
         return ownerId;
     }
@@ -468,9 +491,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务创建者租户ID
-     * 
-     * @return tenantId */
+    /**
+     * 部署任务创建者租户ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -484,9 +508,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务创建者租户名
-     * 
-     * @return tenantName */
+    /**
+     * 部署任务创建者租户名
+     * @return tenantName
+     */
     public String getTenantName() {
         return tenantName;
     }
@@ -500,9 +525,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
-     * 
-     * @return slaveClusterId */
+    /**
+     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * @return slaveClusterId
+     */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -516,9 +542,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前用户是否已收藏
-     * 
-     * @return isCare */
+    /**
+     * 当前用户是否已收藏
+     * @return isCare
+     */
     public Boolean getIsCare() {
         return isCare;
     }
@@ -532,9 +559,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有编辑权限
-     * 
-     * @return canModify */
+    /**
+     * 是否有编辑权限
+     * @return canModify
+     */
     public Boolean getCanModify() {
         return canModify;
     }
@@ -548,9 +576,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有删除的权限
-     * 
-     * @return canDelete */
+    /**
+     * 是否有删除的权限
+     * @return canDelete
+     */
     public Boolean getCanDelete() {
         return canDelete;
     }
@@ -564,9 +593,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有查看权限
-     * 
-     * @return canView */
+    /**
+     * 是否有查看权限
+     * @return canView
+     */
     public Boolean getCanView() {
         return canView;
     }
@@ -580,9 +610,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有执行权限
-     * 
-     * @return canExecute */
+    /**
+     * 是否有执行权限
+     * @return canExecute
+     */
     public Boolean getCanExecute() {
         return canExecute;
     }
@@ -596,9 +627,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有复制权限
-     * 
-     * @return canCopy */
+    /**
+     * 是否有复制权限
+     * @return canCopy
+     */
     public Boolean getCanCopy() {
         return canCopy;
     }
@@ -612,9 +644,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否有管理权限，包含增删改查执行以及权限修改
-     * 
-     * @return canManage */
+    /**
+     * 是否有管理权限，包含增删改查执行以及权限修改
+     * @return canManage
+     */
     public Boolean getCanManage() {
         return canManage;
     }
@@ -644,9 +677,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 部署任务和应用组件对应关系
-     * 
-     * @return appComponentList */
+    /**
+     * 部署任务和应用组件对应关系
+     * @return appComponentList
+     */
     public List<AppComponentDao> getAppComponentList() {
         return appComponentList;
     }
@@ -660,9 +694,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 角色ID,0：部署任务创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
-     * 
-     * @return roleId */
+    /**
+     * 角色ID,0：部署任务创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
+     * @return roleId
+     */
     public Integer getRoleId() {
         return roleId;
     }
@@ -775,7 +810,10 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

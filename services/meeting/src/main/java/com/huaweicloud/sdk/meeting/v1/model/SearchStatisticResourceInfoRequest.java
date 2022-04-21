@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SearchStatisticResourceInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class SearchStatisticResourceInfoRequest {
 
     private Integer limit;
 
-    /** 查询时间维度，取值： * D: 按日查询 * M: 按月查询。 */
+    /**
+     * 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
+     */
     public static final class TimeUnitEnum {
 
-        /** Enum D for value: "D" */
+        /**
+         * Enum D for value: "D"
+         */
         public static final TimeUnitEnum D = new TimeUnitEnum("D");
 
-        /** Enum M for value: "M" */
+        /**
+         * Enum M for value: "M"
+         */
         public static final TimeUnitEnum M = new TimeUnitEnum("M");
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
@@ -109,20 +117,29 @@ public class SearchStatisticResourceInfoRequest {
 
     private String endTime;
 
-    /** 查询分类，取值： * used_vmr_info: 已购VMR资源使用统计数据 * used_live_info: 已购直播端口资源使用统计数据 * used_record_info: 已购录播资源使用统计数据 *
-     * used_pstn_info: 已购电话外呼资源使用统计数据 */
+    /**
+     * 查询分类，取值： * used_vmr_info: 已购VMR资源使用统计数据 * used_live_info: 已购直播端口资源使用统计数据 * used_record_info: 已购录播资源使用统计数据 * used_pstn_info: 已购电话外呼资源使用统计数据
+     */
     public static final class CategoryEnum {
 
-        /** Enum USED_VMR_INFO for value: "used_vmr_info" */
+        /**
+         * Enum USED_VMR_INFO for value: "used_vmr_info"
+         */
         public static final CategoryEnum USED_VMR_INFO = new CategoryEnum("used_vmr_info");
 
-        /** Enum USED_LIVE_INFO for value: "used_live_info" */
+        /**
+         * Enum USED_LIVE_INFO for value: "used_live_info"
+         */
         public static final CategoryEnum USED_LIVE_INFO = new CategoryEnum("used_live_info");
 
-        /** Enum USED_RECORD_INFO for value: "used_record_info" */
+        /**
+         * Enum USED_RECORD_INFO for value: "used_record_info"
+         */
         public static final CategoryEnum USED_RECORD_INFO = new CategoryEnum("used_record_info");
 
-        /** Enum USED_PSTN_INFO for value: "used_pstn_info" */
+        /**
+         * Enum USED_PSTN_INFO for value: "used_pstn_info"
+         */
         public static final CategoryEnum USED_PSTN_INFO = new CategoryEnum("used_pstn_info");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
@@ -199,9 +216,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页数据，页数根据总条目数和limit计算得出。
-     * 
-     * @return offset */
+    /**
+     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页数据，页数根据总条目数和limit计算得出。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -215,9 +233,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
-     * 
-     * @return limit */
+    /**
+     * 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -231,9 +250,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
-     * 
-     * @return timeUnit */
+    /**
+     * 查询时间维度，取值： * D: 按日查询 * M: 按月查询。
+     * @return timeUnit
+     */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -247,10 +267,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询时间范围的开始时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit =
-     * M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
-     * 
-     * @return startTime */
+    /**
+     * 查询时间范围的开始时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit = M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -264,10 +284,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询时间范围的结束时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit =
-     * M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
-     * 
-     * @return endTime */
+    /**
+     * 查询时间范围的结束时间，格式根据timeUnit的取值而定。 * timeUnit = D，格式：yyyy-MM-dd，此情况下startTime与endTime间隔最多31日。 * timeUnit = M，格式：yyyy-MM，此情况下startTime与endTime间隔最多12个月。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -281,10 +301,10 @@ public class SearchStatisticResourceInfoRequest {
         return this;
     }
 
-    /** 查询分类，取值： * used_vmr_info: 已购VMR资源使用统计数据 * used_live_info: 已购直播端口资源使用统计数据 * used_record_info: 已购录播资源使用统计数据 *
-     * used_pstn_info: 已购电话外呼资源使用统计数据
-     * 
-     * @return category */
+    /**
+     * 查询分类，取值： * used_vmr_info: 已购VMR资源使用统计数据 * used_live_info: 已购直播端口资源使用统计数据 * used_record_info: 已购录播资源使用统计数据 * used_pstn_info: 已购电话外呼资源使用统计数据
+     * @return category
+     */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -329,7 +349,10 @@ public class SearchStatisticResourceInfoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

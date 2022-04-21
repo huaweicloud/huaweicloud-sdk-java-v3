@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListNotificationsRequest {
 
-    /** 通知类型。 */
+    /**
+     * 通知类型。
+     */
     public static final class NotificationTypeEnum {
 
-        /** Enum SMN for value: "smn" */
+        /**
+         * Enum SMN for value: "smn"
+         */
         public static final NotificationTypeEnum SMN = new NotificationTypeEnum("smn");
 
-        /** Enum FUN for value: "fun" */
+        /**
+         * Enum FUN for value: "fun"
+         */
         public static final NotificationTypeEnum FUN = new NotificationTypeEnum("fun");
 
         private static final Map<String, NotificationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ListNotificationsRequest {
         return this;
     }
 
-    /** 通知类型。
-     * 
-     * @return notificationType */
+    /**
+     * 通知类型。
+     * @return notificationType
+     */
     public NotificationTypeEnum getNotificationType() {
         return notificationType;
     }
@@ -115,9 +124,10 @@ public class ListNotificationsRequest {
         return this;
     }
 
-    /** 标识关键操作通知名称。 在不传入该字段的情况下，将查询当前租户所有的关键操作通知。
-     * 
-     * @return notificationName */
+    /**
+     * 标识关键操作通知名称。 在不传入该字段的情况下，将查询当前租户所有的关键操作通知。
+     * @return notificationName
+     */
     public String getNotificationName() {
         return notificationName;
     }
@@ -154,7 +164,10 @@ public class ListNotificationsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

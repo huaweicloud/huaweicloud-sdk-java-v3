@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AreaTimeValue */
+/**
+ * AreaTimeValue
+ */
 public class AreaTimeValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class AreaTimeValue {
         return this;
     }
 
-    /** 各个大区下的具体省份、区域、国家的名称。 具体取值请参考[国家名称缩写](vod_08_0172.xml)和[省份名称缩写](live_03_0043.xml)。
-     * 
-     * @return name */
+    /**
+     * 各个大区下的具体省份、区域、国家的名称。  具体取值请参考[国家名称缩写](vod_08_0172.xml)和[省份名称缩写](live_03_0043.xml)。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -58,9 +61,10 @@ public class AreaTimeValue {
         return this;
     }
 
-    /** 当前时间返回指定指标的值
-     * 
-     * @return data */
+    /**
+     * 当前时间返回指定指标的值
+     * @return data
+     */
     public List<TimeValue> getData() {
         return data;
     }
@@ -96,7 +100,10 @@ public class AreaTimeValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

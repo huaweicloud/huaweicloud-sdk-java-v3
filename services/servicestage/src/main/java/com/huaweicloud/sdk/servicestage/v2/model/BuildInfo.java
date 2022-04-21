@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 构建工程。 */
+/**
+ * 构建工程。
+ */
 public class BuildInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class BuildInfo {
         return this;
     }
 
-    /** 构建ID，查看构建列表获取。
-     * 
-     * @return id */
+    /**
+     * 构建ID，查看构建列表获取。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class BuildInfo {
         return this;
     }
 
-    /** Get parameters
-     * 
-     * @return parameters */
+    /**
+     * Get parameters
+     * @return parameters
+     */
     public BuildInfoParameters getParameters() {
         return parameters;
     }
@@ -87,7 +91,10 @@ public class BuildInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

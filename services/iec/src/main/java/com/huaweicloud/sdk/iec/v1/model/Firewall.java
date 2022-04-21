@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 防火墙对象 */
+/**
+ * 防火墙对象
+ */
 public class Firewall {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +31,14 @@ public class Firewall {
 
     private Boolean adminStateUp;
 
-    /** 网络ACL状态。 取值范围：INACTIVE */
+    /**
+     * 网络ACL状态。  取值范围：INACTIVE
+     */
     public static final class StatusEnum {
 
-        /** Enum INACTIVE for value: "INACTIVE" */
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +142,10 @@ public class Firewall {
         return this;
     }
 
-    /** 网络ACL ID
-     * 
-     * @return id */
+    /**
+     * 网络ACL ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -152,9 +159,10 @@ public class Firewall {
         return this;
     }
 
-    /** 网络ACL名称。
-     * 
-     * @return name */
+    /**
+     * 网络ACL名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -168,9 +176,10 @@ public class Firewall {
         return this;
     }
 
-    /** 网络ACL使能开关。 取值范围：true（开启），false（关闭）。默认为true
-     * 
-     * @return adminStateUp */
+    /**
+     * 网络ACL使能开关。  取值范围：true（开启），false（关闭）。默认为true
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -184,9 +193,10 @@ public class Firewall {
         return this;
     }
 
-    /** 网络ACL状态。 取值范围：INACTIVE
-     * 
-     * @return status */
+    /**
+     * 网络ACL状态。  取值范围：INACTIVE
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -200,9 +210,10 @@ public class Firewall {
         return this;
     }
 
-    /** 网络ACL描述。
-     * 
-     * @return description */
+    /**
+     * 网络ACL描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -216,9 +227,10 @@ public class Firewall {
         return this;
     }
 
-    /** 租户domainID
-     * 
-     * @return domainId */
+    /**
+     * 租户domainID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -241,9 +253,10 @@ public class Firewall {
         return this;
     }
 
-    /** Get egressFirewallPolicy
-     * 
-     * @return egressFirewallPolicy */
+    /**
+     * Get egressFirewallPolicy
+     * @return egressFirewallPolicy
+     */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -257,9 +270,10 @@ public class Firewall {
         return this;
     }
 
-    /** 出方向网络ACL规则个数。
-     * 
-     * @return egressFirewallRuleCount */
+    /**
+     * 出方向网络ACL规则个数。
+     * @return egressFirewallRuleCount
+     */
     public Integer getEgressFirewallRuleCount() {
         return egressFirewallRuleCount;
     }
@@ -282,9 +296,10 @@ public class Firewall {
         return this;
     }
 
-    /** Get ingressFirewallPolicy
-     * 
-     * @return ingressFirewallPolicy */
+    /**
+     * Get ingressFirewallPolicy
+     * @return ingressFirewallPolicy
+     */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -298,9 +313,10 @@ public class Firewall {
         return this;
     }
 
-    /** 入方向网络ACL规则个数。
-     * 
-     * @return ingressFirewallRuleCount */
+    /**
+     * 入方向网络ACL规则个数。
+     * @return ingressFirewallRuleCount
+     */
     public Integer getIngressFirewallRuleCount() {
         return ingressFirewallRuleCount;
     }
@@ -360,7 +376,10 @@ public class Firewall {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UrlCountItem */
+/**
+ * UrlCountItem
+ */
 public class UrlCountItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UrlCountItem {
         return this;
     }
 
-    /** 攻击类型
-     * 
-     * @return key */
+    /**
+     * 攻击类型
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -44,9 +47,10 @@ public class UrlCountItem {
         return this;
     }
 
-    /** 数量
-     * 
-     * @return num */
+    /**
+     * 数量
+     * @return num
+     */
     public Integer getNum() {
         return num;
     }
@@ -60,9 +64,10 @@ public class UrlCountItem {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return host */
+    /**
+     * 域名
+     * @return host
+     */
     public String getHost() {
         return host;
     }
@@ -100,7 +105,10 @@ public class UrlCountItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ConditionResp */
+/**
+ * ConditionResp
+ */
 public class ConditionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ConditionResp {
 
     private String reqParamName;
 
-    /** 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET */
+    /**
+     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     */
     public static final class SysParamNameEnum {
 
-        /** Enum REQ_PATH for value: "req_path" */
+        /**
+         * Enum REQ_PATH for value: "req_path"
+         */
         public static final SysParamNameEnum REQ_PATH = new SysParamNameEnum("req_path");
 
-        /** Enum REQ_METHOD for value: "req_method" */
+        /**
+         * Enum REQ_METHOD for value: "req_method"
+         */
         public static final SysParamNameEnum REQ_METHOD = new SysParamNameEnum("req_method");
 
         private static final Map<String, SysParamNameEnum> STATIC_FIELDS = createStaticFields();
@@ -94,16 +102,24 @@ public class ConditionResp {
 
     private SysParamNameEnum sysParamName;
 
-    /** 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则 策略类型为param时必选 */
+    /**
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
+     */
     public static final class ConditionTypeEnum {
 
-        /** Enum EXACT for value: "exact" */
+        /**
+         * Enum EXACT for value: "exact"
+         */
         public static final ConditionTypeEnum EXACT = new ConditionTypeEnum("exact");
 
-        /** Enum ENUM for value: "enum" */
+        /**
+         * Enum ENUM for value: "enum"
+         */
         public static final ConditionTypeEnum ENUM = new ConditionTypeEnum("enum");
 
-        /** Enum PATTERN for value: "pattern" */
+        /**
+         * Enum PATTERN for value: "pattern"
+         */
         public static final ConditionTypeEnum PATTERN = new ConditionTypeEnum("pattern");
 
         private static final Map<String, ConditionTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -174,13 +190,19 @@ public class ConditionResp {
 
     private ConditionTypeEnum conditionType;
 
-    /** 策略类型 - param：参数 - source：源IP - system：系统参数 */
+    /**
+     * 策略类型 - param：参数 - source：源IP - system：系统参数
+     */
     public static final class ConditionOriginEnum {
 
-        /** Enum PARAM for value: "param" */
+        /**
+         * Enum PARAM for value: "param"
+         */
         public static final ConditionOriginEnum PARAM = new ConditionOriginEnum("param");
 
-        /** Enum SOURCE for value: "source" */
+        /**
+         * Enum SOURCE for value: "source"
+         */
         public static final ConditionOriginEnum SOURCE = new ConditionOriginEnum("source");
 
         private static final Map<String, ConditionOriginEnum> STATIC_FIELDS = createStaticFields();
@@ -275,9 +297,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 关联的请求参数对象名称。策略类型为param时必选
-     * 
-     * @return reqParamName */
+    /**
+     * 关联的请求参数对象名称。策略类型为param时必选
+     * @return reqParamName
+     */
     public String getReqParamName() {
         return reqParamName;
     }
@@ -291,9 +314,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET
-     * 
-     * @return sysParamName */
+    /**
+     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     * @return sysParamName
+     */
     public SysParamNameEnum getSysParamName() {
         return sysParamName;
     }
@@ -307,9 +331,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则 策略类型为param时必选
-     * 
-     * @return conditionType */
+    /**
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
+     * @return conditionType
+     */
     public ConditionTypeEnum getConditionType() {
         return conditionType;
     }
@@ -323,9 +348,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 策略类型 - param：参数 - source：源IP - system：系统参数
-     * 
-     * @return conditionOrigin */
+    /**
+     * 策略类型 - param：参数 - source：源IP - system：系统参数
+     * @return conditionOrigin
+     */
     public ConditionOriginEnum getConditionOrigin() {
         return conditionOrigin;
     }
@@ -339,9 +365,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 策略值
-     * 
-     * @return conditionValue */
+    /**
+     * 策略值
+     * @return conditionValue
+     */
     public String getConditionValue() {
         return conditionValue;
     }
@@ -355,9 +382,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -371,9 +399,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 关联的请求参数对象编号
-     * 
-     * @return reqParamId */
+    /**
+     * 关联的请求参数对象编号
+     * @return reqParamId
+     */
     public String getReqParamId() {
         return reqParamId;
     }
@@ -387,9 +416,10 @@ public class ConditionResp {
         return this;
     }
 
-    /** 关联的请求参数对象位置
-     * 
-     * @return reqParamLocation */
+    /**
+     * 关联的请求参数对象位置
+     * @return reqParamLocation
+     */
     public String getReqParamLocation() {
         return reqParamLocation;
     }
@@ -444,7 +474,10 @@ public class ConditionResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

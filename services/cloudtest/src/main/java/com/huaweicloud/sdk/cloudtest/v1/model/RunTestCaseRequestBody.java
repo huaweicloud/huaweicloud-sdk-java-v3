@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 执行测试用例请求体 */
+/**
+ * 执行测试用例请求体
+ */
 public class RunTestCaseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class RunTestCaseRequestBody {
         return this;
     }
 
-    /** 注册测试类型服务接口返回的服务id
-     * 
-     * @return serviceId */
+    /**
+     * 注册测试类型服务接口返回的服务id
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -47,9 +50,10 @@ public class RunTestCaseRequestBody {
         return this;
     }
 
-    /** 测试计划id
-     * 
-     * @return planId */
+    /**
+     * 测试计划id
+     * @return planId
+     */
     public String getPlanId() {
         return planId;
     }
@@ -79,9 +83,10 @@ public class RunTestCaseRequestBody {
         return this;
     }
 
-    /** 测试用例执行信息，数组长度小于等于50
-     * 
-     * @return executeList */
+    /**
+     * 测试用例执行信息，数组长度小于等于50
+     * @return executeList
+     */
     public List<TestCaseExecuteBean> getExecuteList() {
         return executeList;
     }
@@ -120,7 +125,10 @@ public class RunTestCaseRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新云日志请求参数。 */
+/**
+ * 更新云日志请求参数。
+ */
 public class UpdateLogtankOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateLogtankOption {
         return this;
     }
 
-    /** 日志组别id，其他（非ELB）服务提供
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组别id，其他（非ELB）服务提供
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -39,9 +42,10 @@ public class UpdateLogtankOption {
         return this;
     }
 
-    /** 日志订阅主题id，其他（非ELB）服务提供
-     * 
-     * @return logTopicId */
+    /**
+     * 日志订阅主题id，其他（非ELB）服务提供
+     * @return logTopicId
+     */
     public String getLogTopicId() {
         return logTopicId;
     }
@@ -78,7 +82,10 @@ public class UpdateLogtankOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

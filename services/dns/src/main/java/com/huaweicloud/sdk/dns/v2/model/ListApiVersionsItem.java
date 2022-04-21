@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListApiVersionsItem */
+/**
+ * ListApiVersionsItem
+ */
 public class ListApiVersionsItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ListApiVersionsItem {
         return this;
     }
 
-    /** 版本状态，包含： CURRENT：表示该版本为主推版本。 SUPPORTED：表示为老版本，但是现在还在继续支持。 DEPRECATED：表示为废弃版本，存在后续删除的可能。
-     * 
-     * @return status */
+    /**
+     * 版本状态，包含：  CURRENT：表示该版本为主推版本。 SUPPORTED：表示为老版本，但是现在还在继续支持。 DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -47,9 +50,10 @@ public class ListApiVersionsItem {
         return this;
     }
 
-    /** 版本号。
-     * 
-     * @return id */
+    /**
+     * 版本号。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +83,10 @@ public class ListApiVersionsItem {
         return this;
     }
 
-    /** 指向当前版本的url。
-     * 
-     * @return links */
+    /**
+     * 指向当前版本的url。
+     * @return links
+     */
     public List<LinksItem> getLinks() {
         return links;
     }
@@ -119,7 +124,10 @@ public class ListApiVersionsItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

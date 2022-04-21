@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改路由body */
+/**
+ * 修改路由body
+ */
 public class RouteBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class RouteBody {
         return this;
     }
 
-    /** cname后缀
-     * 
-     * @return cname */
+    /**
+     * cname后缀
+     * @return cname
+     */
     public String getCname() {
         return cname;
     }
@@ -47,9 +50,10 @@ public class RouteBody {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +83,10 @@ public class RouteBody {
         return this;
     }
 
-    /** 路由信息
-     * 
-     * @return servers */
+    /**
+     * 路由信息
+     * @return servers
+     */
     public List<RouteServerBody> getServers() {
         return servers;
     }
@@ -119,7 +124,10 @@ public class RouteBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

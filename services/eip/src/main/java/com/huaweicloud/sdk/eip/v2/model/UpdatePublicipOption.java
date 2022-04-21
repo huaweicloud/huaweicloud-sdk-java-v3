@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 弹性公网IP对象 */
+/**
+ * 弹性公网IP对象
+ */
 public class UpdatePublicipOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class UpdatePublicipOption {
 
     private String portId;
 
-    /** 功能说明：IP版本信息 取值范围：4和6 4：IPv4 6：IPv6 约束：必须是系统支持的IP版本类型，和port_id互斥，不能同时更新。 */
+    /**
+     * 功能说明：IP版本信息  取值范围：4和6  4：IPv4  6：IPv6  约束：必须是系统支持的IP版本类型，和port_id互斥，不能同时更新。
+     */
     public static final class IpVersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
 
         private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class UpdatePublicipOption {
         return this;
     }
 
-    /** 功能说明：端口id 约束：必须是存在的端口id，如果不带该参数或者值为空时为解除绑定弹性公网IP，如果该端口不存在或端口已绑定弹性公网IP则会提示出错。 和ip_version字段互斥，不能同时更新。
-     * 
-     * @return portId */
+    /**
+     * 功能说明：端口id  约束：必须是存在的端口id，如果不带该参数或者值为空时为解除绑定弹性公网IP，如果该端口不存在或端口已绑定弹性公网IP则会提示出错。  和ip_version字段互斥，不能同时更新。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -120,9 +129,10 @@ public class UpdatePublicipOption {
         return this;
     }
 
-    /** 功能说明：IP版本信息 取值范围：4和6 4：IPv4 6：IPv6 约束：必须是系统支持的IP版本类型，和port_id互斥，不能同时更新。
-     * 
-     * @return ipVersion */
+    /**
+     * 功能说明：IP版本信息  取值范围：4和6  4：IPv4  6：IPv6  约束：必须是系统支持的IP版本类型，和port_id互斥，不能同时更新。
+     * @return ipVersion
+     */
     public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
@@ -136,9 +146,10 @@ public class UpdatePublicipOption {
         return this;
     }
 
-    /** 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * 
-     * @return alias */
+    /**
+     * 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -177,7 +188,10 @@ public class UpdatePublicipOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

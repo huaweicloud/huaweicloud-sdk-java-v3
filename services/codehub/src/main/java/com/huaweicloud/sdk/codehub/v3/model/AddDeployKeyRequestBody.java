@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AddDeployKeyRequestBody */
+/**
+ * AddDeployKeyRequestBody
+ */
 public class AddDeployKeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AddDeployKeyRequestBody {
         return this;
     }
 
-    /** 部署key的来源
-     * 
-     * @return application */
+    /**
+     * 部署key的来源
+     * @return application
+     */
     public String getApplication() {
         return application;
     }
@@ -49,9 +52,10 @@ public class AddDeployKeyRequestBody {
         return this;
     }
 
-    /** 部署key是否可以推送代码
-     * 
-     * @return canPush */
+    /**
+     * 部署key是否可以推送代码
+     * @return canPush
+     */
     public Boolean getCanPush() {
         return canPush;
     }
@@ -65,9 +69,10 @@ public class AddDeployKeyRequestBody {
         return this;
     }
 
-    /** 部署key
-     * 
-     * @return key */
+    /**
+     * 部署key
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -81,9 +86,10 @@ public class AddDeployKeyRequestBody {
         return this;
     }
 
-    /** 部署key名称
-     * 
-     * @return keyTitle */
+    /**
+     * 部署key名称
+     * @return keyTitle
+     */
     public String getKeyTitle() {
         return keyTitle;
     }
@@ -124,7 +130,10 @@ public class AddDeployKeyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

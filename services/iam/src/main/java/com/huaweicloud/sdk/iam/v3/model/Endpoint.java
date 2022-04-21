@@ -56,9 +56,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点所属服务的ID。
-     * 
-     * @return serviceId */
+    /**
+     * 终端节点所属服务的ID。
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -72,9 +73,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点所属区域的ID。
-     * 
-     * @return regionId */
+    /**
+     * 终端节点所属区域的ID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -97,9 +99,10 @@ public class Endpoint {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public Links getLinks() {
         return links;
     }
@@ -113,9 +116,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点ID。
-     * 
-     * @return id */
+    /**
+     * 终端节点ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -129,9 +133,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点平面。
-     * 
-     * @return _interface */
+    /**
+     * 终端节点平面。
+     * @return _interface
+     */
     public String getInterface() {
         return _interface;
     }
@@ -145,9 +150,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点所属区域。
-     * 
-     * @return region */
+    /**
+     * 终端节点所属区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -161,9 +167,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点的地址。
-     * 
-     * @return url */
+    /**
+     * 终端节点的地址。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -177,9 +184,10 @@ public class Endpoint {
         return this;
     }
 
-    /** 终端节点是否可用。
-     * 
-     * @return enabled */
+    /**
+     * 终端节点是否可用。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -224,7 +232,10 @@ public class Endpoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

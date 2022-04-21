@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** 获取测试事件响应返回体。 */
+/**
+ * 获取测试事件响应返回体。
+ */
 public class ListEventsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class ListEventsResult {
         return this;
     }
 
-    /** 测试事件ID。
-     * 
-     * @return id */
+    /**
+     * 测试事件ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -45,9 +48,10 @@ public class ListEventsResult {
         return this;
     }
 
-    /** 上次修改的时间。
-     * 
-     * @return lastModified */
+    /**
+     * 上次修改的时间。
+     * @return lastModified
+     */
     public BigDecimal getLastModified() {
         return lastModified;
     }
@@ -61,9 +65,10 @@ public class ListEventsResult {
         return this;
     }
 
-    /** 测试事件名称。
-     * 
-     * @return name */
+    /**
+     * 测试事件名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -102,7 +107,10 @@ public class ListEventsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 单个大key分析历史记录 */
+/**
+ * 单个大key分析历史记录
+ */
 public class RecordsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,19 +20,29 @@ public class RecordsResponse {
 
     private String id;
 
-    /** 分析任务状态 */
+    /**
+     * 分析任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -102,13 +114,19 @@ public class RecordsResponse {
 
     private StatusEnum status;
 
-    /** 分析方式 */
+    /**
+     * 分析方式
+     */
     public static final class ScanTypeEnum {
 
-        /** Enum MANUAL for value: "manual" */
+        /**
+         * Enum MANUAL for value: "manual"
+         */
         public static final ScanTypeEnum MANUAL = new ScanTypeEnum("manual");
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final ScanTypeEnum AUTO = new ScanTypeEnum("auto");
 
         private static final Map<String, ScanTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -198,9 +216,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 大key分析记录ID
-     * 
-     * @return id */
+    /**
+     * 大key分析记录ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -214,9 +233,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 分析任务状态
-     * 
-     * @return status */
+    /**
+     * 分析任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -230,9 +250,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 分析方式
-     * 
-     * @return scanType */
+    /**
+     * 分析方式
+     * @return scanType
+     */
     public ScanTypeEnum getScanType() {
         return scanType;
     }
@@ -246,9 +267,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * 
-     * @return createdAt */
+    /**
+     * 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -262,9 +284,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * 
-     * @return startedAt */
+    /**
+     * 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * @return startedAt
+     */
     public String getStartedAt() {
         return startedAt;
     }
@@ -278,9 +301,10 @@ public class RecordsResponse {
         return this;
     }
 
-    /** 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * 
-     * @return finishedAt */
+    /**
+     * 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * @return finishedAt
+     */
     public String getFinishedAt() {
         return finishedAt;
     }
@@ -324,7 +348,10 @@ public class RecordsResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

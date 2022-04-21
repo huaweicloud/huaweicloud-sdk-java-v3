@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** TemplateRepository */
+/**
+ * TemplateRepository
+ */
 public class TemplateRepository {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板唯一标识
-     * 
-     * @return id */
+    /**
+     * 模板唯一标识
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -97,9 +100,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return name */
+    /**
+     * 模板名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -113,9 +117,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板关联仓库名称
-     * 
-     * @return templateName */
+    /**
+     * 模板关联仓库名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -145,9 +150,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板标签
-     * 
-     * @return tags */
+    /**
+     * 模板标签
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -161,9 +167,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板描述
-     * 
-     * @return description */
+    /**
+     * 模板描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -177,9 +184,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板简介
-     * 
-     * @return briefIntroduction */
+    /**
+     * 模板简介
+     * @return briefIntroduction
+     */
     public String getBriefIntroduction() {
         return briefIntroduction;
     }
@@ -193,9 +201,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 是否自动创建流水线
-     * 
-     * @return autoPendingPipelines */
+    /**
+     * 是否自动创建流水线
+     * @return autoPendingPipelines
+     */
     public Integer getAutoPendingPipelines() {
         return autoPendingPipelines;
     }
@@ -209,9 +218,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板语言分类
-     * 
-     * @return language */
+    /**
+     * 模板语言分类
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -225,9 +235,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 模板创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -241,9 +252,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板引用次数
-     * 
-     * @return usedTimes */
+    /**
+     * 模板引用次数
+     * @return usedTimes
+     */
     public Integer getUsedTimes() {
         return usedTimes;
     }
@@ -257,9 +269,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板被点赞次数
-     * 
-     * @return likedTimes */
+    /**
+     * 模板被点赞次数
+     * @return likedTimes
+     */
     public Integer getLikedTimes() {
         return likedTimes;
     }
@@ -273,9 +286,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板创建人
-     * 
-     * @return creatorName */
+    /**
+     * 模板创建人
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -289,9 +303,10 @@ public class TemplateRepository {
         return this;
     }
 
-    /** 模板https链接
-     * 
-     * @return httpsUrl */
+    /**
+     * 模板https链接
+     * @return httpsUrl
+     */
     public String getHttpsUrl() {
         return httpsUrl;
     }
@@ -361,7 +376,10 @@ public class TemplateRepository {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

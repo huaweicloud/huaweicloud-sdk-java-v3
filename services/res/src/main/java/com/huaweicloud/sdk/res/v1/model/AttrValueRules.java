@@ -44,9 +44,10 @@ public class AttrValueRules {
         return this;
     }
 
-    /** 被推荐对象的属性-值配置。
-     * 
-     * @return attrValuesA */
+    /**
+     * 被推荐对象的属性-值配置。
+     * @return attrValuesA
+     */
     public List<AttrValue> getAttrValuesA() {
         return attrValuesA;
     }
@@ -76,9 +77,10 @@ public class AttrValueRules {
         return this;
     }
 
-    /** 待推荐对象的属性-值配置。
-     * 
-     * @return attrValuesB */
+    /**
+     * 待推荐对象的属性-值配置。
+     * @return attrValuesB
+     */
     public List<AttrValue> getAttrValuesB() {
         return attrValuesB;
     }
@@ -115,7 +117,10 @@ public class AttrValueRules {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

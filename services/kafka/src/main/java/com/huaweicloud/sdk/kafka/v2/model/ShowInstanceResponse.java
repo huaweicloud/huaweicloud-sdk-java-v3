@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -157,13 +159,19 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private Boolean enableAutoTopic;
 
-    /** 实例类型：集群，cluster。 */
+    /**
+     * 实例类型：集群，cluster。
+     */
     public static final class TypeEnum {
 
-        /** Enum SINGLE for value: "single" */
+        /**
+         * Enum SINGLE for value: "single"
+         */
         public static final TypeEnum SINGLE = new TypeEnum("single");
 
-        /** Enum CLUSTER for value: "cluster" */
+        /**
+         * Enum CLUSTER for value: "cluster"
+         */
         public static final TypeEnum CLUSTER = new TypeEnum("cluster");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -288,13 +296,19 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String storageType;
 
-    /** 消息老化策略。 */
+    /**
+     * 消息老化策略。
+     */
     public static final class RetentionPolicyEnum {
 
-        /** Enum TIME_BASE for value: "time_base" */
+        /**
+         * Enum TIME_BASE for value: "time_base"
+         */
         public static final RetentionPolicyEnum TIME_BASE = new RetentionPolicyEnum("time_base");
 
-        /** Enum PRODUCE_REJECT for value: "produce_reject" */
+        /**
+         * Enum PRODUCE_REJECT for value: "produce_reject"
+         */
         public static final RetentionPolicyEnum PRODUCE_REJECT = new RetentionPolicyEnum("produce_reject");
 
         private static final Map<String, RetentionPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -474,9 +488,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -490,9 +505,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎。
-     * 
-     * @return engine */
+    /**
+     * 引擎。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -506,9 +522,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 版本。
-     * 
-     * @return engineVersion */
+    /**
+     * 版本。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -522,9 +539,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例规格。
-     * 
-     * @return specification */
+    /**
+     * 实例规格。
+     * @return specification
+     */
     public String getSpecification() {
         return specification;
     }
@@ -538,9 +556,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息存储空间，单位：GB。
-     * 
-     * @return storageSpace */
+    /**
+     * 消息存储空间，单位：GB。
+     * @return storageSpace
+     */
     public Integer getStorageSpace() {
         return storageSpace;
     }
@@ -554,9 +573,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka实例的分区数量。
-     * 
-     * @return partitionNum */
+    /**
+     * Kafka实例的分区数量。
+     * @return partitionNum
+     */
     public String getPartitionNum() {
         return partitionNum;
     }
@@ -570,9 +590,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 已使用的消息存储空间，单位：GB。
-     * 
-     * @return usedStorageSpace */
+    /**
+     * 已使用的消息存储空间，单位：GB。
+     * @return usedStorageSpace
+     */
     public Integer getUsedStorageSpace() {
         return usedStorageSpace;
     }
@@ -586,9 +607,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例连接IP地址。
-     * 
-     * @return connectAddress */
+    /**
+     * 实例连接IP地址。
+     * @return connectAddress
+     */
     public String getConnectAddress() {
         return connectAddress;
     }
@@ -602,9 +624,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例连接端口。
-     * 
-     * @return port */
+    /**
+     * 实例连接端口。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -618,9 +641,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例的状态。
-     * 
-     * @return status */
+    /**
+     * 实例的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -634,9 +658,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -650,12 +675,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源规格标识。 - dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 -
-     * dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 -
-     * dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 -
-     * dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。
-     * 
-     * @return resourceSpecCode */
+    /**
+     * 资源规格标识。   - dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。
+     * @return resourceSpecCode
+     */
     public String getResourceSpecCode() {
         return resourceSpecCode;
     }
@@ -669,9 +692,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 付费模式，1表示按需计费，0表示包年/包月计费。
-     * 
-     * @return chargingMode */
+    /**
+     * 付费模式，1表示按需计费，0表示包年/包月计费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -685,9 +709,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -701,9 +726,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC的名称。
-     * 
-     * @return vpcName */
+    /**
+     * VPC的名称。
+     * @return vpcName
+     */
     public String getVpcName() {
         return vpcName;
     }
@@ -717,9 +743,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 完成创建时间。 格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
-     * 
-     * @return createdAt */
+    /**
+     * 完成创建时间。  格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -733,9 +760,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -749,9 +777,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -765,9 +794,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -781,9 +811,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 维护时间窗开始时间，格式为HH:mm:ss。
-     * 
-     * @return maintainBegin */
+    /**
+     * 维护时间窗开始时间，格式为HH:mm:ss。
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -797,9 +828,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 维护时间窗结束时间，格式为HH:mm:ss。
-     * 
-     * @return maintainEnd */
+    /**
+     * 维护时间窗结束时间，格式为HH:mm:ss。
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -813,9 +845,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例是否开启公网访问功能。 - true：开启 - false：未开启
-     * 
-     * @return enablePublicip */
+    /**
+     * 实例是否开启公网访问功能。 - true：开启 - false：未开启
+     * @return enablePublicip
+     */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -829,9 +862,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka实例的KafkaManager连接地址。
-     * 
-     * @return managementConnectAddress */
+    /**
+     * Kafka实例的KafkaManager连接地址。
+     * @return managementConnectAddress
+     */
     public String getManagementConnectAddress() {
         return managementConnectAddress;
     }
@@ -845,9 +879,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启安全认证。 - true：开启 - false：未开启
-     * 
-     * @return sslEnable */
+    /**
+     * 是否开启安全认证。 - true：开启 - false：未开启
+     * @return sslEnable
+     */
     public Boolean getSslEnable() {
         return sslEnable;
     }
@@ -861,9 +896,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -877,9 +913,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例扩容时用于区分老实例与新实例。 - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例
-     * 
-     * @return isLogicalVolume */
+    /**
+     * 实例扩容时用于区分老实例与新实例。 - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例
+     * @return isLogicalVolume
+     */
     public Boolean getIsLogicalVolume() {
         return isLogicalVolume;
     }
@@ -893,9 +930,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。
-     * 
-     * @return extendTimes */
+    /**
+     * 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。
+     * @return extendTimes
+     */
     public Integer getExtendTimes() {
         return extendTimes;
     }
@@ -909,9 +947,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭
-     * 
-     * @return enableAutoTopic */
+    /**
+     * 是否打开kafka自动创建topic功能。   - true：开启   - false：关闭
+     * @return enableAutoTopic
+     */
     public Boolean getEnableAutoTopic() {
         return enableAutoTopic;
     }
@@ -925,9 +964,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例类型：集群，cluster。
-     * 
-     * @return type */
+    /**
+     * 实例类型：集群，cluster。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -941,9 +981,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品标识。
-     * 
-     * @return productId */
+    /**
+     * 产品标识。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -957,9 +998,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -973,9 +1015,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户安全组名称。
-     * 
-     * @return securityGroupName */
+    /**
+     * 租户安全组名称。
+     * @return securityGroupName
+     */
     public String getSecurityGroupName() {
         return securityGroupName;
     }
@@ -989,9 +1032,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -1021,9 +1065,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例节点所在的可用区，返回“可用区ID”。
-     * 
-     * @return availableZones */
+    /**
+     * 实例节点所在的可用区，返回“可用区ID”。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -1037,9 +1082,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 总共消息存储空间，单位：GB。
-     * 
-     * @return totalStorageSpace */
+    /**
+     * 总共消息存储空间，单位：GB。
+     * @return totalStorageSpace
+     */
     public Integer getTotalStorageSpace() {
         return totalStorageSpace;
     }
@@ -1053,9 +1099,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例公网连接IP地址。当实例开启了公网访问，实例才包含该参数。
-     * 
-     * @return publicConnectAddress */
+    /**
+     * 实例公网连接IP地址。当实例开启了公网访问，实例才包含该参数。
+     * @return publicConnectAddress
+     */
     public String getPublicConnectAddress() {
         return publicConnectAddress;
     }
@@ -1069,9 +1116,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储资源ID。
-     * 
-     * @return storageResourceId */
+    /**
+     * 存储资源ID。
+     * @return storageResourceId
+     */
     public String getStorageResourceId() {
         return storageResourceId;
     }
@@ -1085,9 +1133,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** IO规格。
-     * 
-     * @return storageSpecCode */
+    /**
+     * IO规格。
+     * @return storageSpecCode
+     */
     public String getStorageSpecCode() {
         return storageSpecCode;
     }
@@ -1101,9 +1150,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 服务类型。
-     * 
-     * @return serviceType */
+    /**
+     * 服务类型。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -1117,9 +1167,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 存储类型。
-     * 
-     * @return storageType */
+    /**
+     * 存储类型。
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -1133,9 +1184,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息老化策略。
-     * 
-     * @return retentionPolicy */
+    /**
+     * 消息老化策略。
+     * @return retentionPolicy
+     */
     public RetentionPolicyEnum getRetentionPolicy() {
         return retentionPolicy;
     }
@@ -1149,9 +1201,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka公网开启状态。
-     * 
-     * @return kafkaPublicStatus */
+    /**
+     * Kafka公网开启状态。
+     * @return kafkaPublicStatus
+     */
     public String getKafkaPublicStatus() {
         return kafkaPublicStatus;
     }
@@ -1165,9 +1218,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网带宽。
-     * 
-     * @return publicBandwidth */
+    /**
+     * 公网带宽。
+     * @return publicBandwidth
+     */
     public Integer getPublicBandwidth() {
         return publicBandwidth;
     }
@@ -1181,9 +1235,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 登录Kafka Manager的用户名。
-     * 
-     * @return kafkaManagerUser */
+    /**
+     * 登录Kafka Manager的用户名。
+     * @return kafkaManagerUser
+     */
     public String getKafkaManagerUser() {
         return kafkaManagerUser;
     }
@@ -1197,9 +1252,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启消息收集功能。
-     * 
-     * @return enableLogCollection */
+    /**
+     * 是否开启消息收集功能。
+     * @return enableLogCollection
+     */
     public Boolean getEnableLogCollection() {
         return enableLogCollection;
     }
@@ -1213,9 +1269,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 跨VPC访问信息。
-     * 
-     * @return crossVpcInfo */
+    /**
+     * 跨VPC访问信息。
+     * @return crossVpcInfo
+     */
     public String getCrossVpcInfo() {
         return crossVpcInfo;
     }
@@ -1229,9 +1286,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启ipv6。
-     * 
-     * @return ipv6Enable */
+    /**
+     * 是否开启ipv6。
+     * @return ipv6Enable
+     */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -1261,9 +1319,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** IPv6的连接地址。
-     * 
-     * @return ipv6ConnectAddresses */
+    /**
+     * IPv6的连接地址。
+     * @return ipv6ConnectAddresses
+     */
     public List<String> getIpv6ConnectAddresses() {
         return ipv6ConnectAddresses;
     }
@@ -1277,9 +1336,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启转储。
-     * 
-     * @return connectorEnable */
+    /**
+     * 是否开启转储。
+     * @return connectorEnable
+     */
     public Boolean getConnectorEnable() {
         return connectorEnable;
     }
@@ -1293,9 +1353,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 转储任务ID。
-     * 
-     * @return connectorId */
+    /**
+     * 转储任务ID。
+     * @return connectorId
+     */
     public String getConnectorId() {
         return connectorId;
     }
@@ -1309,9 +1370,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启Kafka rest功能。
-     * 
-     * @return restEnable */
+    /**
+     * 是否开启Kafka rest功能。
+     * @return restEnable
+     */
     public Boolean getRestEnable() {
         return restEnable;
     }
@@ -1325,9 +1387,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka rest连接地址。
-     * 
-     * @return restConnectAddress */
+    /**
+     * Kafka rest连接地址。
+     * @return restConnectAddress
+     */
     public String getRestConnectAddress() {
         return restConnectAddress;
     }
@@ -1341,9 +1404,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启消息查询功能。
-     * 
-     * @return messageQueryInstEnable */
+    /**
+     * 是否开启消息查询功能。
+     * @return messageQueryInstEnable
+     */
     public Boolean getMessageQueryInstEnable() {
         return messageQueryInstEnable;
     }
@@ -1357,9 +1421,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启VPC明文访问。
-     * 
-     * @return vpcClientPlain */
+    /**
+     * 是否开启VPC明文访问。
+     * @return vpcClientPlain
+     */
     public Boolean getVpcClientPlain() {
         return vpcClientPlain;
     }
@@ -1373,9 +1438,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka实例支持的特性功能。
-     * 
-     * @return supportFeatures */
+    /**
+     * Kafka实例支持的特性功能。
+     * @return supportFeatures
+     */
     public String getSupportFeatures() {
         return supportFeatures;
     }
@@ -1389,9 +1455,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启消息轨迹功能。
-     * 
-     * @return traceEnable */
+    /**
+     * 是否开启消息轨迹功能。
+     * @return traceEnable
+     */
     public Boolean getTraceEnable() {
         return traceEnable;
     }
@@ -1405,9 +1472,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户侧连接地址。
-     * 
-     * @return podConnectAddress */
+    /**
+     * 租户侧连接地址。
+     * @return podConnectAddress
+     */
     public String getPodConnectAddress() {
         return podConnectAddress;
     }
@@ -1421,9 +1489,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启磁盘加密。
-     * 
-     * @return diskEncrypted */
+    /**
+     * 是否开启磁盘加密。
+     * @return diskEncrypted
+     */
     public Boolean getDiskEncrypted() {
         return diskEncrypted;
     }
@@ -1437,9 +1506,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Kafka实例私有连接地址。
-     * 
-     * @return kafkaPrivateConnectAddress */
+    /**
+     * Kafka实例私有连接地址。
+     * @return kafkaPrivateConnectAddress
+     */
     public String getKafkaPrivateConnectAddress() {
         return kafkaPrivateConnectAddress;
     }
@@ -1453,9 +1523,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 云监控版本。
-     * 
-     * @return cesVersion */
+    /**
+     * 云监控版本。
+     * @return cesVersion
+     */
     public String getCesVersion() {
         return cesVersion;
     }
@@ -1485,9 +1556,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<TagEntity> getTags() {
         return tags;
     }
@@ -1501,9 +1573,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否为容灾实例。
-     * 
-     * @return drEnable */
+    /**
+     * 是否为容灾实例。
+     * @return drEnable
+     */
     public Boolean getDrEnable() {
         return drEnable;
     }
@@ -1721,7 +1794,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

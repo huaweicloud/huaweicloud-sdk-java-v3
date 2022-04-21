@@ -35,9 +35,10 @@ public class MatchFeaturePair {
         return this;
     }
 
-    /** 用户特征。
-     * 
-     * @return userFeatureName */
+    /**
+     * 用户特征。
+     * @return userFeatureName
+     */
     public String getUserFeatureName() {
         return userFeatureName;
     }
@@ -51,9 +52,10 @@ public class MatchFeaturePair {
         return this;
     }
 
-    /** 物品特征。
-     * 
-     * @return itemFeatureName */
+    /**
+     * 物品特征。
+     * @return itemFeatureName
+     */
     public String getItemFeatureName() {
         return itemFeatureName;
     }
@@ -67,9 +69,10 @@ public class MatchFeaturePair {
         return this;
     }
 
-    /** 权重。
-     * 
-     * @return weight */
+    /**
+     * 权重。
+     * @return weight
+     */
     public Double getWeight() {
         return weight;
     }
@@ -83,9 +86,10 @@ public class MatchFeaturePair {
         return this;
     }
 
-    /** 匹配个数度量。
-     * 
-     * @return matchCount */
+    /**
+     * 匹配个数度量。
+     * @return matchCount
+     */
     public Boolean getMatchCount() {
         return matchCount;
     }
@@ -126,7 +130,10 @@ public class MatchFeaturePair {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

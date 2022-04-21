@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResetPwdReqDTOV1 */
+/**
+ * ResetPwdReqDTOV1
+ */
 public class ResetPwdReqDTOV1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ResetPwdReqDTOV1 {
         return this;
     }
 
-    /** 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1
-     * 
-     * @return user */
+    /**
+     * 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1 
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -44,9 +47,10 @@ public class ResetPwdReqDTOV1 {
         return this;
     }
 
-    /** 用户新的登录密码 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 不能包含3个以上重复字符 * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写）
-     * 
-     * @return newPwd */
+    /**
+     * 用户新的登录密码 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 不能包含3个以上重复字符 * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写） 
+     * @return newPwd
+     */
     public String getNewPwd() {
         return newPwd;
     }
@@ -60,9 +64,10 @@ public class ResetPwdReqDTOV1 {
         return this;
     }
 
-    /** * 1:临时密码，重置完密码后登录Web Portal根据配置可能需要强制修改密码 * 非1：正式密码，重置完密码后登录Web Portal不需要强制修改密码。
-     * 
-     * @return passWordType */
+    /**
+     * * 1:临时密码，重置完密码后登录Web Portal根据配置可能需要强制修改密码 * 非1：正式密码，重置完密码后登录Web Portal不需要强制修改密码。 
+     * @return passWordType
+     */
     public Integer getPassWordType() {
         return passWordType;
     }
@@ -100,7 +105,10 @@ public class ResetPwdReqDTOV1 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExtentionReqDataByIdCardImage */
+/**
+ * ExtentionReqDataByIdCardImage
+ */
 public class ExtentionReqDataByIdCardImage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ExtentionReqDataByIdCardImage {
         return this;
     }
 
-    /** 身份证人像面图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
-     * 
-     * @return idcardImage1 */
+    /**
+     * 身份证人像面图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
+     * @return idcardImage1
+     */
     public String getIdcardImage1() {
         return idcardImage1;
     }
@@ -39,9 +42,10 @@ public class ExtentionReqDataByIdCardImage {
         return this;
     }
 
-    /** 身份证国徽面图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
-     * 
-     * @return idcardImage2 */
+    /**
+     * 身份证国徽面图像数据，使用base64编码，要求base64编码后大小不超过4M。图像各边的像素大小在300到4000之间，支持JPG格式。
+     * @return idcardImage2
+     */
     public String getIdcardImage2() {
         return idcardImage2;
     }
@@ -78,7 +82,10 @@ public class ExtentionReqDataByIdCardImage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

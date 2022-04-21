@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowJobSuccessRatioRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,10 @@ public class ShowJobSuccessRatioRequest {
         return this;
     }
 
-    /** 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)；
-     * 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
-     * 
-     * @return jobId */
+    /**
+     * 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)； 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -45,9 +47,10 @@ public class ShowJobSuccessRatioRequest {
         return this;
     }
 
-    /** 区间开始时间，格式yyyy-MM-dd。
-     * 
-     * @return startTime */
+    /**
+     * 区间开始时间，格式yyyy-MM-dd。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -61,9 +64,10 @@ public class ShowJobSuccessRatioRequest {
         return this;
     }
 
-    /** 区间结束时间，格式yyyy-MM-dd。
-     * 
-     * @return endTime */
+    /**
+     * 区间结束时间，格式yyyy-MM-dd。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -102,7 +106,10 @@ public class ShowJobSuccessRatioRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

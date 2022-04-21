@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FlavorView */
+/**
+ * FlavorView
+ */
 public class FlavorView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class FlavorView {
         return this;
     }
 
-    /** Get flavorId
-     * 
-     * @return flavorId */
+    /**
+     * Get flavorId
+     * @return flavorId
+     */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -64,9 +67,10 @@ public class FlavorView {
         return this;
     }
 
-    /** 存储大小。
-     * 
-     * @return storageSize */
+    /**
+     * 存储大小。
+     * @return storageSize
+     */
     public String getStorageSize() {
         return storageSize;
     }
@@ -80,9 +84,10 @@ public class FlavorView {
         return this;
     }
 
-    /** CPU限制。
-     * 
-     * @return numCpu */
+    /**
+     * CPU限制。
+     * @return numCpu
+     */
     public String getNumCpu() {
         return numCpu;
     }
@@ -96,9 +101,10 @@ public class FlavorView {
         return this;
     }
 
-    /** CPU初始。
-     * 
-     * @return numCpuInit */
+    /**
+     * CPU初始。
+     * @return numCpuInit
+     */
     public String getNumCpuInit() {
         return numCpuInit;
     }
@@ -112,9 +118,10 @@ public class FlavorView {
         return this;
     }
 
-    /** 内存限制。
-     * 
-     * @return memorySize */
+    /**
+     * 内存限制。
+     * @return memorySize
+     */
     public String getMemorySize() {
         return memorySize;
     }
@@ -128,9 +135,10 @@ public class FlavorView {
         return this;
     }
 
-    /** 内存初始。
-     * 
-     * @return memorySizeInit */
+    /**
+     * 内存初始。
+     * @return memorySizeInit
+     */
     public String getMemorySizeInit() {
         return memorySizeInit;
     }
@@ -144,9 +152,10 @@ public class FlavorView {
         return this;
     }
 
-    /** 展示标签。
-     * 
-     * @return label */
+    /**
+     * 展示标签。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -192,7 +201,10 @@ public class FlavorView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

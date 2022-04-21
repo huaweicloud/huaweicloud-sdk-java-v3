@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowClusterDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -168,9 +170,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群当前状态列表： - 创建中 - 扩容中 - 重启中 - 开启opentsdb - 扩容失败 - 重启失败 - 开启opentsdb失败
-     * 
-     * @return actions */
+    /**
+     * 集群当前状态列表： - 创建中 - 扩容中 - 重启中 - 开启opentsdb - 扩容失败 - 重启失败 - 开启opentsdb失败
+     * @return actions
+     */
     public List<String> getActions() {
         return actions;
     }
@@ -193,9 +196,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -209,9 +213,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否打开openTSDB特性。 - false：不开启 - true：开启
-     * 
-     * @return enableOpenTSDB */
+    /**
+     * 是否打开openTSDB特性。 - false：不开启 - true：开启
+     * @return enableOpenTSDB
+     */
     public Boolean getEnableOpenTSDB() {
         return enableOpenTSDB;
     }
@@ -225,9 +230,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否打开SQL查询特性。 - false：不开启 - true：开启
-     * 
-     * @return enableLemon */
+    /**
+     * 是否打开SQL查询特性。 - false：不开启 - true：开启
+     * @return enableLemon
+     */
     public Boolean getEnableLemon() {
         return enableLemon;
     }
@@ -241,9 +247,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群名称。
-     * 
-     * @return clusterName */
+    /**
+     * 集群名称。
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -257,9 +264,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** RegionServer个数。
-     * 
-     * @return cuNum */
+    /**
+     * RegionServer个数。
+     * @return cuNum
+     */
     public String getCuNum() {
         return cuNum;
     }
@@ -273,9 +281,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** TSD节点个数。
-     * 
-     * @return tsdNum */
+    /**
+     * TSD节点个数。
+     * @return tsdNum
+     */
     public String getTsdNum() {
         return tsdNum;
     }
@@ -289,9 +298,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Lemon节点个数。
-     * 
-     * @return lemonNum */
+    /**
+     * Lemon节点个数。
+     * @return lemonNum
+     */
     public String getLemonNum() {
         return lemonNum;
     }
@@ -305,9 +315,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群底层存储类型： - OBS - HDFS
-     * 
-     * @return storageType */
+    /**
+     * 集群底层存储类型： - OBS - HDFS
+     * @return storageType
+     */
     public String getStorageType() {
         return storageType;
     }
@@ -321,9 +332,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群存储配额。
-     * 
-     * @return storageQuota */
+    /**
+     * 集群存储配额。
+     * @return storageQuota
+     */
     public String getStorageQuota() {
         return storageQuota;
     }
@@ -337,9 +349,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前使用存储空间。
-     * 
-     * @return usedStorageSize */
+    /**
+     * 当前使用存储空间。
+     * @return usedStorageSize
+     */
     public String getUsedStorageSize() {
         return usedStorageSize;
     }
@@ -353,9 +366,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否打开IAM认证。 - false：不开启 - true：开启
-     * 
-     * @return authMode */
+    /**
+     * 是否打开IAM认证。 - false：不开启 - true：开启
+     * @return authMode
+     */
     public Boolean getAuthMode() {
         return authMode;
     }
@@ -369,9 +383,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否打开dfv
-     * 
-     * @return enableDfv */
+    /**
+     * 是否打开dfv
+     * @return enableDfv
+     */
     public Boolean getEnableDfv() {
         return enableDfv;
     }
@@ -385,9 +400,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群更新时间。
-     * 
-     * @return updated */
+    /**
+     * 集群更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -401,9 +417,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群创建时间。
-     * 
-     * @return created */
+    /**
+     * 集群创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -417,9 +434,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群唯一标识，集群ID。
-     * 
-     * @return clusterId */
+    /**
+     * 集群唯一标识，集群ID。
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -433,9 +451,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群当前状态： - 200：集群正常 - 300：集群异常 - 400：集群已删除 - 303：集群创建失败
-     * 
-     * @return status */
+    /**
+     * 集群当前状态： - 200：集群正常 - 300：集群异常 - 400：集群已删除 - 303：集群创建失败
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -449,9 +468,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 内网OpenTSDB连接访问地址。
-     * 
-     * @return openTSDBLink */
+    /**
+     * 内网OpenTSDB连接访问地址。
+     * @return openTSDBLink
+     */
     public String getOpenTSDBLink() {
         return openTSDBLink;
     }
@@ -465,9 +485,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** OpenTSDB公网endpoint地址
-     * 
-     * @return tsdPublicEndpoint */
+    /**
+     * OpenTSDB公网endpoint地址
+     * @return tsdPublicEndpoint
+     */
     public String getTsdPublicEndpoint() {
         return tsdPublicEndpoint;
     }
@@ -481,9 +502,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 内网Lemon连接访问地址。
-     * 
-     * @return lemonLink */
+    /**
+     * 内网Lemon连接访问地址。
+     * @return lemonLink
+     */
     public String getLemonLink() {
         return lemonLink;
     }
@@ -497,9 +519,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 内网ZooKeeper连接访问地址。
-     * 
-     * @return zookeeperLink */
+    /**
+     * 内网ZooKeeper连接访问地址。
+     * @return zookeeperLink
+     */
     public String getZookeeperLink() {
         return zookeeperLink;
     }
@@ -513,9 +536,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 公网HBase连接访问地址。
-     * 
-     * @return hbasePublicEndpoint */
+    /**
+     * 公网HBase连接访问地址。
+     * @return hbasePublicEndpoint
+     */
     public String getHbasePublicEndpoint() {
         return hbasePublicEndpoint;
     }
@@ -529,9 +553,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群是否被冻结。 - false：不冻结 - true：冻结
-     * 
-     * @return isFrozen */
+    /**
+     * 集群是否被冻结。 - false：不冻结 - true：冻结
+     * @return isFrozen
+     */
     public String getIsFrozen() {
         return isFrozen;
     }
@@ -545,9 +570,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC ID，创建集群节点所在的虚拟私有ID。
-     * 
-     * @return vpcId */
+    /**
+     * VPC ID，创建集群节点所在的虚拟私有ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -561,9 +587,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID，创建集群所在子网段。
-     * 
-     * @return subNetId */
+    /**
+     * 子网ID，创建集群所在子网段。
+     * @return subNetId
+     */
     public String getSubNetId() {
         return subNetId;
     }
@@ -577,9 +604,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 安全组对应的ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组对应的ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -593,9 +621,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群所属的可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 集群所属的可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -708,7 +737,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

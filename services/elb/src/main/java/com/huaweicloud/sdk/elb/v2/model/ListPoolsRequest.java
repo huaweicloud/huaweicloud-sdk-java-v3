@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPoolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,12 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 分页查询中每页的监听器个数 minimum: 0 maximum: 2147483647
-     * 
-     * @return limit */
+    /**
+     * 分页查询中每页的监听器个数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -94,9 +99,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
-     * 
-     * @return marker */
+    /**
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -110,9 +116,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
-     * 
-     * @return pageReverse */
+    /**
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
+     * @return pageReverse
+     */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -126,9 +133,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组ID。
-     * 
-     * @return id */
+    /**
+     * 后端云服务器组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -142,9 +150,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组名称。
-     * 
-     * @return name */
+    /**
+     * 后端云服务器组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -158,9 +167,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的描述信息。
-     * 
-     * @return description */
+    /**
+     * 后端云服务器组的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -174,9 +184,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组关联的健康检查的ID。
-     * 
-     * @return healthmonitorId */
+    /**
+     * 后端云服务器组关联的健康检查的ID。
+     * @return healthmonitorId
+     */
     public String getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -190,9 +201,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组关联的负载均衡器ID。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 后端云服务器组关联的负载均衡器ID。
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -206,9 +218,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的后端协议。支持TCP、UDP和HTTP。
-     * 
-     * @return protocol */
+    /**
+     * 后端云服务器组的后端协议。支持TCP、UDP和HTTP。
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -222,9 +235,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组的负载均衡算法。取值范围：ROUND_ROBIN：加权轮询算法。LEAST_CONNECTIONS：加权最少连接算法。SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     * 
-     * @return lbAlgorithm */
+    /**
+     * 后端云服务器组的负载均衡算法。取值范围：ROUND_ROBIN：加权轮询算法。LEAST_CONNECTIONS：加权最少连接算法。SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     * @return lbAlgorithm
+     */
     public String getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -238,9 +252,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组关联的后端云服务器IP。
-     * 
-     * @return memberAddress */
+    /**
+     * 后端云服务器组关联的后端云服务器IP。
+     * @return memberAddress
+     */
     public String getMemberAddress() {
         return memberAddress;
     }
@@ -254,9 +269,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 后端云服务器组关联的后端云服务器对应的弹性云服务器的ID。
-     * 
-     * @return memberDeviceId */
+    /**
+     * 后端云服务器组关联的后端云服务器对应的弹性云服务器的ID。
+     * @return memberDeviceId
+     */
     public String getMemberDeviceId() {
         return memberDeviceId;
     }
@@ -270,9 +286,10 @@ public class ListPoolsRequest {
         return this;
     }
 
-    /** 企业项目ID，仅用于基于企业项目的细粒度鉴权使用；如果参数中传递了loadbalancer_id，则用该负载均衡器对应企业项目ID鉴权；如果参数中没有传递loadbalancer_id，而传递了healthmonitor_id，则使用健康检查器对应的企业项目id鉴权。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID，仅用于基于企业项目的细粒度鉴权使用；如果参数中传递了loadbalancer_id，则用该负载均衡器对应企业项目ID鉴权；如果参数中没有传递loadbalancer_id，而传递了healthmonitor_id，则使用健康检查器对应的企业项目id鉴权。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -342,7 +359,10 @@ public class ListPoolsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

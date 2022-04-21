@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class CreateResOnlineInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 作业名称，1-64位的字母、数字、下划线、中划线组合。
-     * 
-     * @return jobName */
+    /**
+     * 作业名称，1-64位的字母、数字、下划线、中划线组合。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -60,9 +63,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -76,9 +80,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 类别: - SERVICE，在线服务
-     * 
-     * @return category */
+    /**
+     * 类别: - SERVICE，在线服务
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -92,9 +97,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 作业类型： - infer，推理服务
-     * 
-     * @return jobType */
+    /**
+     * 作业类型： - infer，推理服务
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -117,9 +123,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** Get jobConfig
-     * 
-     * @return jobConfig */
+    /**
+     * Get jobConfig
+     * @return jobConfig
+     */
     public JobConfig getJobConfig() {
         return jobConfig;
     }
@@ -133,9 +140,10 @@ public class CreateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 通知消息配置。
-     * 
-     * @return topicUrn */
+    /**
+     * 通知消息配置。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -180,7 +188,10 @@ public class CreateResOnlineInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

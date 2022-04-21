@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListResOnlineServiceDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 是否成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -60,9 +63,10 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get jobs
-     * 
-     * @return jobs */
+    /**
+     * Get jobs
+     * @return jobs
+     */
     public Jobs getJobs() {
         return jobs;
     }
@@ -76,9 +80,10 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回消息（请求成功时，不返回此字段）。
-     * 
-     * @return message */
+    /**
+     * 返回消息（请求成功时，不返回此字段）。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -92,9 +97,10 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码（请求成功时，不返回此字段）。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码（请求成功时，不返回此字段）。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -136,7 +142,10 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

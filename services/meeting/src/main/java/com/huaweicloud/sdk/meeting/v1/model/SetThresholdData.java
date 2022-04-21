@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 阈值阈值设置请求体 */
+/**
+ * 阈值阈值设置请求体
+ */
 public class SetThresholdData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class SetThresholdData {
         return this;
     }
 
-    /** 接收方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000 minimum: 0 maximum: 10000
-     * 
-     * @return receiving */
+    /**
+     * 接收方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000
+     * minimum: 0
+     * maximum: 10000
+     * @return receiving
+     */
     public Integer getReceiving() {
         return receiving;
     }
@@ -39,9 +44,12 @@ public class SetThresholdData {
         return this;
     }
 
-    /** 发送方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000 minimum: 0 maximum: 10000
-     * 
-     * @return sending */
+    /**
+     * 发送方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000
+     * minimum: 0
+     * maximum: 10000
+     * @return sending
+     */
     public Integer getSending() {
         return sending;
     }
@@ -78,7 +86,10 @@ public class SetThresholdData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 需要删除镜像自动同步任务的信息 */
+/**
+ * 需要删除镜像自动同步任务的信息
+ */
 public class DeleteImageSyncRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标region ID。
-     * 
-     * @return remoteRegionId */
+    /**
+     * 目标region ID。
+     * @return remoteRegionId
+     */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -39,9 +42,10 @@ public class DeleteImageSyncRepoRequestBody {
         return this;
     }
 
-    /** 目标组织
-     * 
-     * @return remoteNamespace */
+    /**
+     * 目标组织
+     * @return remoteNamespace
+     */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -78,7 +82,10 @@ public class DeleteImageSyncRepoRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

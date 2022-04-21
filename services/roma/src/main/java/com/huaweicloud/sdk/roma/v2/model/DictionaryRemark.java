@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 字典描述 */
+/**
+ * 字典描述
+ */
 public class DictionaryRemark {
 
     @Override

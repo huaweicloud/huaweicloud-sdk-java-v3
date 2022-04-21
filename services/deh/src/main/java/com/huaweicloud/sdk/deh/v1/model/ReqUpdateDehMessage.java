@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 更新专属主机属性消息体。 */
+/**
+ * 更新专属主机属性消息体。
+ */
 public class ReqUpdateDehMessage {
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。 */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。  取值范围：“on”或“off”。
+     */
     public static final class AutoPlacementEnum {
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final AutoPlacementEnum ON = new AutoPlacementEnum("on");
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final AutoPlacementEnum OFF = new AutoPlacementEnum("off");
 
         private static final Map<String, AutoPlacementEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class ReqUpdateDehMessage {
         return this;
     }
 
-    /** 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。 取值范围：“on”或“off”。
-     * 
-     * @return autoPlacement */
+    /**
+     * 在创建云服务器时（未指定专属主机ID），是否允许云服务器自动分配在一台可用的专属主机上。  取值范围：“on”或“off”。
+     * @return autoPlacement
+     */
     public AutoPlacementEnum getAutoPlacement() {
         return autoPlacement;
     }
@@ -115,9 +124,10 @@ public class ReqUpdateDehMessage {
         return this;
     }
 
-    /** 专属主机名称。
-     * 
-     * @return name */
+    /**
+     * 专属主机名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -154,7 +164,10 @@ public class ReqUpdateDehMessage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

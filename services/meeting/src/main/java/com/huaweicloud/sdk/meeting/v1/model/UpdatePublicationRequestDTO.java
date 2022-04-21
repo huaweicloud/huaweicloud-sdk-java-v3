@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新发布信息请求 */
+/**
+ * 更新发布信息请求
+ */
 public class UpdatePublicationRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 发布名称
-     * 
-     * @return publishName */
+    /**
+     * 发布名称
+     * @return publishName
+     */
     public String getPublishName() {
         return publishName;
     }
@@ -62,9 +65,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public Long getStartTime() {
         return startTime;
     }
@@ -78,9 +82,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Long getEndTime() {
         return endTime;
     }
@@ -110,9 +115,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 发布到部门编码列表
-     * 
-     * @return deptList */
+    /**
+     * 发布到部门编码列表
+     * @return deptList
+     */
     public List<String> getDeptList() {
         return deptList;
     }
@@ -142,9 +148,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 发布到设备用户ID列表
-     * 
-     * @return deviceList */
+    /**
+     * 发布到设备用户ID列表
+     * @return deviceList
+     */
     public List<String> getDeviceList() {
         return deviceList;
     }
@@ -174,9 +181,10 @@ public class UpdatePublicationRequestDTO {
         return this;
     }
 
-    /** 发布节目ID列表
-     * 
-     * @return programList */
+    /**
+     * 发布节目ID列表
+     * @return programList
+     */
     public List<String> getProgramList() {
         return programList;
     }
@@ -221,7 +229,10 @@ public class UpdatePublicationRequestDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

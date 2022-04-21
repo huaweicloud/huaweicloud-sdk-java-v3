@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 集群扩容请求详细描述。 */
+/**
+ * 集群扩容请求详细描述。
+ */
 public class RoleExtendGrowReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RoleExtendGrowReq {
         return this;
     }
 
-    /** 扩容实例类型。取值为ess、ess-master或ess-client，请至少选择一个。 ess-master、ess-client节点只支持扩容实例个数。
-     * 
-     * @return type */
+    /**
+     * 扩容实例类型。取值为ess、ess-master或ess-client，请至少选择一个。  ess-master、ess-client节点只支持扩容实例个数。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -44,9 +47,10 @@ public class RoleExtendGrowReq {
         return this;
     }
 
-    /** 扩容实例个数。集群已有实例个数和扩容实例个数总和不能超过32。
-     * 
-     * @return nodesize */
+    /**
+     * 扩容实例个数。集群已有实例个数和扩容实例个数总和不能超过32。
+     * @return nodesize
+     */
     public Integer getNodesize() {
         return nodesize;
     }
@@ -60,9 +64,10 @@ public class RoleExtendGrowReq {
         return this;
     }
 
-    /** 扩容实例存储容量。集群原实例存储容量和扩容实例存储容量之和不能超过创建集群时对应的实例存储容量上限，且同一个集群实例存储容量扩容不能超过6次。 单位：GB。
-     * 
-     * @return disksize */
+    /**
+     * 扩容实例存储容量。集群原实例存储容量和扩容实例存储容量之和不能超过创建集群时对应的实例存储容量上限，且同一个集群实例存储容量扩容不能超过6次。 单位：GB。
+     * @return disksize
+     */
     public Integer getDisksize() {
         return disksize;
     }
@@ -101,7 +106,10 @@ public class RoleExtendGrowReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

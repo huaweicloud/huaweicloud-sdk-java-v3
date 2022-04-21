@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchDeleteInstanceUsersReq */
+/**
+ * BatchDeleteInstanceUsersReq
+ */
 public class BatchDeleteInstanceUsersReq {
 
-    /** 删除类型。当前只支持delete。 */
+    /**
+     * 删除类型。当前只支持delete。
+     */
     public static final class ActionEnum {
 
-        /** Enum DELETE for value: "delete" */
+        /**
+         * Enum DELETE for value: "delete"
+         */
         public static final ActionEnum DELETE = new ActionEnum("delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -98,9 +104,10 @@ public class BatchDeleteInstanceUsersReq {
         return this;
     }
 
-    /** 删除类型。当前只支持delete。
-     * 
-     * @return action */
+    /**
+     * 删除类型。当前只支持delete。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -130,9 +137,10 @@ public class BatchDeleteInstanceUsersReq {
         return this;
     }
 
-    /** 用户列表。
-     * 
-     * @return users */
+    /**
+     * 用户列表。
+     * @return users
+     */
     public List<String> getUsers() {
         return users;
     }
@@ -169,7 +177,10 @@ public class BatchDeleteInstanceUsersReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

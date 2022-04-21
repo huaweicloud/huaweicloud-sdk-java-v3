@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Kafka数据源请求内容 */
+/**
+ * Kafka数据源请求内容
+ */
 public class KafkaContentRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class KafkaContentRsp {
         return this;
     }
 
-    /** KAFKA连接类型
-     * 
-     * @return connectionType */
+    /**
+     * KAFKA连接类型
+     * @return connectionType
+     */
     public String getConnectionType() {
         return connectionType;
     }
@@ -57,9 +60,10 @@ public class KafkaContentRsp {
         return this;
     }
 
-    /** Kafka实例ID
-     * 
-     * @return instanceId */
+    /**
+     * Kafka实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -89,9 +93,10 @@ public class KafkaContentRsp {
         return this;
     }
 
-    /** Kafka的VPCEP信息包括service_id,service_name,client_port
-     * 
-     * @return vpcepInfos */
+    /**
+     * Kafka的VPCEP信息包括service_id,service_name,client_port
+     * @return vpcepInfos
+     */
     public List<VpcepInfoRsp> getVpcepInfos() {
         return vpcepInfos;
     }
@@ -121,9 +126,10 @@ public class KafkaContentRsp {
         return this;
     }
 
-    /** Kafka的broker信息包括broker_ip, broker_port
-     * 
-     * @return brokerInfos */
+    /**
+     * Kafka的broker信息包括broker_ip, broker_port
+     * @return brokerInfos
+     */
     public List<KafkaBrokerInfo> getBrokerInfos() {
         return brokerInfos;
     }
@@ -146,9 +152,10 @@ public class KafkaContentRsp {
         return this;
     }
 
-    /** Get authInfo
-     * 
-     * @return authInfo */
+    /**
+     * Get authInfo
+     * @return authInfo
+     */
     public KafkaAuthInfo getAuthInfo() {
         return authInfo;
     }
@@ -191,7 +198,10 @@ public class KafkaContentRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** WaybillElectronicResult */
+/**
+ * WaybillElectronicResult
+ */
 public class WaybillElectronicResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 三段码。
-     * 
-     * @return code */
+    /**
+     * 三段码。 
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -74,9 +77,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 收件人姓名。
-     * 
-     * @return receiverName */
+    /**
+     * 收件人姓名。 
+     * @return receiverName
+     */
     public String getReceiverName() {
         return receiverName;
     }
@@ -90,9 +94,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 收件人电话。
-     * 
-     * @return receiverPhone */
+    /**
+     * 收件人电话。 
+     * @return receiverPhone
+     */
     public String getReceiverPhone() {
         return receiverPhone;
     }
@@ -106,9 +111,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 收件人地址。
-     * 
-     * @return receiverAddress */
+    /**
+     * 收件人地址。 
+     * @return receiverAddress
+     */
     public String getReceiverAddress() {
         return receiverAddress;
     }
@@ -122,9 +128,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 寄件人姓名。
-     * 
-     * @return senderName */
+    /**
+     * 寄件人姓名。 
+     * @return senderName
+     */
     public String getSenderName() {
         return senderName;
     }
@@ -138,9 +145,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 寄件人电话。
-     * 
-     * @return senderPhone */
+    /**
+     * 寄件人电话。 
+     * @return senderPhone
+     */
     public String getSenderPhone() {
         return senderPhone;
     }
@@ -154,9 +162,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 寄件人地址。
-     * 
-     * @return senderAddress */
+    /**
+     * 寄件人地址。 
+     * @return senderAddress
+     */
     public String getSenderAddress() {
         return senderAddress;
     }
@@ -170,9 +179,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 条形码运单号。
-     * 
-     * @return waybillNumber */
+    /**
+     * 条形码运单号。 
+     * @return waybillNumber
+     */
     public String getWaybillNumber() {
         return waybillNumber;
     }
@@ -186,9 +196,10 @@ public class WaybillElectronicResult {
         return this;
     }
 
-    /** 相关字段的置信度信息，取值范围0~1。 置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * 
-     * @return confidence */
+    /**
+     * 相关字段的置信度信息，取值范围0~1。 置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+     * @return confidence
+     */
     public Object getConfidence() {
         return confidence;
     }
@@ -247,7 +258,10 @@ public class WaybillElectronicResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

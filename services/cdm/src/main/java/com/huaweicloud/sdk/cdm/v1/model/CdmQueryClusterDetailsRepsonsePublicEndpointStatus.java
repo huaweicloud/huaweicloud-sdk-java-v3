@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** EIP状态信息 */
+/**
+ * EIP状态信息
+ */
 public class CdmQueryClusterDetailsRepsonsePublicEndpointStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CdmQueryClusterDetailsRepsonsePublicEndpointStatus {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -39,9 +42,10 @@ public class CdmQueryClusterDetailsRepsonsePublicEndpointStatus {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMessage */
+    /**
+     * 错误信息
+     * @return errorMessage
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -79,7 +83,10 @@ public class CdmQueryClusterDetailsRepsonsePublicEndpointStatus {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** 客户端应用与客户端配额绑定信息 */
+/**
+ * 客户端应用与客户端配额绑定信息
+ */
 public class AppQuotaAppBinding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class AppQuotaAppBinding {
         return this;
     }
 
-    /** 客户端配额编号
-     * 
-     * @return appQuotaId */
+    /**
+     * 客户端配额编号
+     * @return appQuotaId
+     */
     public String getAppQuotaId() {
         return appQuotaId;
     }
@@ -45,9 +48,10 @@ public class AppQuotaAppBinding {
         return this;
     }
 
-    /** 客户端应用编号
-     * 
-     * @return appId */
+    /**
+     * 客户端应用编号
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -61,9 +65,10 @@ public class AppQuotaAppBinding {
         return this;
     }
 
-    /** 绑定时间
-     * 
-     * @return boundTime */
+    /**
+     * 绑定时间
+     * @return boundTime
+     */
     public OffsetDateTime getBoundTime() {
         return boundTime;
     }
@@ -102,7 +107,10 @@ public class AppQuotaAppBinding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

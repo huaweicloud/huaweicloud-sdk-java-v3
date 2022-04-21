@@ -13,22 +13,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 日志接入采集Windows事件日志 */
+/**
+ * 日志接入采集Windows事件日志
+ */
 public class AccessConfigWindowsLogInfoCreate {
 
-    /** Gets or Sets categorys */
+    /**
+     * Gets or Sets categorys
+     */
     public static final class CategorysEnum {
 
-        /** Enum APPLICATION for value: "Application" */
+        /**
+         * Enum APPLICATION for value: "Application"
+         */
         public static final CategorysEnum APPLICATION = new CategorysEnum("Application");
 
-        /** Enum SYSTEM for value: "System" */
+        /**
+         * Enum SYSTEM for value: "System"
+         */
         public static final CategorysEnum SYSTEM = new CategorysEnum("System");
 
-        /** Enum SECURITY for value: "Security" */
+        /**
+         * Enum SECURITY for value: "Security"
+         */
         public static final CategorysEnum SECURITY = new CategorysEnum("Security");
 
-        /** Enum SETUP for value: "Setup" */
+        /**
+         * Enum SETUP for value: "Setup"
+         */
         public static final CategorysEnum SETUP = new CategorysEnum("Setup");
 
         private static final Map<String, CategorysEnum> STATIC_FIELDS = createStaticFields();
@@ -105,22 +117,34 @@ public class AccessConfigWindowsLogInfoCreate {
 
     private AccessConfigTimeOffsetCreate timeOffset;
 
-    /** Gets or Sets eventLevel */
+    /**
+     * Gets or Sets eventLevel
+     */
     public static final class EventLevelEnum {
 
-        /** Enum INFORMATION for value: "information" */
+        /**
+         * Enum INFORMATION for value: "information"
+         */
         public static final EventLevelEnum INFORMATION = new EventLevelEnum("information");
 
-        /** Enum WARNING for value: "warning" */
+        /**
+         * Enum WARNING for value: "warning"
+         */
         public static final EventLevelEnum WARNING = new EventLevelEnum("warning");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final EventLevelEnum ERROR = new EventLevelEnum("error");
 
-        /** Enum CRITICAL for value: "critical" */
+        /**
+         * Enum CRITICAL for value: "critical"
+         */
         public static final EventLevelEnum CRITICAL = new EventLevelEnum("critical");
 
-        /** Enum VERBOSE for value: "verbose" */
+        /**
+         * Enum VERBOSE for value: "verbose"
+         */
         public static final EventLevelEnum VERBOSE = new EventLevelEnum("verbose");
 
         private static final Map<String, EventLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -214,9 +238,10 @@ public class AccessConfigWindowsLogInfoCreate {
         return this;
     }
 
-    /** 采集Windows事件日志类型。Application：应用系统，System：系统，Security：安全，Setup：启动
-     * 
-     * @return categorys */
+    /**
+     * 采集Windows事件日志类型。Application：应用系统，System：系统，Security：安全，Setup：启动
+     * @return categorys
+     */
     public List<CategorysEnum> getCategorys() {
         return categorys;
     }
@@ -239,9 +264,10 @@ public class AccessConfigWindowsLogInfoCreate {
         return this;
     }
 
-    /** Get timeOffset
-     * 
-     * @return timeOffset */
+    /**
+     * Get timeOffset
+     * @return timeOffset
+     */
     public AccessConfigTimeOffsetCreate getTimeOffset() {
         return timeOffset;
     }
@@ -271,9 +297,10 @@ public class AccessConfigWindowsLogInfoCreate {
         return this;
     }
 
-    /** 事件等级。information：info，warning：告警，error：错误，critical：关键，verbose：冗长
-     * 
-     * @return eventLevel */
+    /**
+     * 事件等级。information：info，warning：告警，error：错误，critical：关键，verbose：冗长
+     * @return eventLevel
+     */
     public List<EventLevelEnum> getEventLevel() {
         return eventLevel;
     }
@@ -312,7 +339,10 @@ public class AccessConfigWindowsLogInfoCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

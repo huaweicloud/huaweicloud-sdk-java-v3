@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量启动边缘实例对象 */
+/**
+ * 批量启动边缘实例对象
+ */
 public class BatchStart {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchStart {
         return this;
     }
 
-    /** 待启动的边缘实例列表。
-     * 
-     * @return servers */
+    /**
+     * 待启动的边缘实例列表。
+     * @return servers
+     */
     public List<BaseId> getServers() {
         return servers;
     }
@@ -74,7 +77,10 @@ public class BatchStart {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

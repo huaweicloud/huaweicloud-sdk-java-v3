@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListJobInfoDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListJobInfoDetailRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -51,9 +54,10 @@ public class ListJobInfoDetailRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -67,9 +71,10 @@ public class ListJobInfoDetailRequest {
         return this;
     }
 
-    /** 开始时间，格式为UTC时间戳。
-     * 
-     * @return startTime */
+    /**
+     * 开始时间，格式为UTC时间戳。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -83,9 +88,10 @@ public class ListJobInfoDetailRequest {
         return this;
     }
 
-    /** 结束时间，格式为UTC时间戳。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间，格式为UTC时间戳。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -126,7 +132,10 @@ public class ListJobInfoDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

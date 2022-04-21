@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowGroupsRespGroupGroupMessageOffsets */
+/**
+ * ShowGroupsRespGroupGroupMessageOffsets
+ */
 public class ShowGroupsRespGroupGroupMessageOffsets {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return this;
     }
 
-    /** 分区编号。
-     * 
-     * @return partition */
+    /**
+     * 分区编号。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -54,9 +57,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return this;
     }
 
-    /** 剩余可消费消息数，即消息堆积数。
-     * 
-     * @return lag */
+    /**
+     * 剩余可消费消息数，即消息堆积数。
+     * @return lag
+     */
     public Integer getLag() {
         return lag;
     }
@@ -70,9 +74,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -86,9 +91,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return this;
     }
 
-    /** 当前消费进度。
-     * 
-     * @return messageCurrentOffset */
+    /**
+     * 当前消费进度。
+     * @return messageCurrentOffset
+     */
     public Integer getMessageCurrentOffset() {
         return messageCurrentOffset;
     }
@@ -102,9 +108,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return this;
     }
 
-    /** 最大消息位置（LEO）。
-     * 
-     * @return messageLogEndOffset */
+    /**
+     * 最大消息位置（LEO）。
+     * @return messageLogEndOffset
+     */
     public Integer getMessageLogEndOffset() {
         return messageLogEndOffset;
     }
@@ -148,7 +155,10 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

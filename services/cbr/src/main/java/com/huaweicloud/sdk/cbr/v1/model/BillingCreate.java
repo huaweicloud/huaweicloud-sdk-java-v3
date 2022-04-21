@@ -11,16 +11,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建参数 */
+/**
+ * 创建参数
+ */
 public class BillingCreate {
 
-    /** 云平台，公有云或者混合云 */
+    /**
+     * 云平台，公有云或者混合云
+     */
     public static final class CloudTypeEnum {
 
-        /** Enum PUBLIC for value: "public" */
+        /**
+         * Enum PUBLIC for value: "public"
+         */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
-        /** Enum HYBRID for value: "hybrid" */
+        /**
+         * Enum HYBRID for value: "hybrid"
+         */
         public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -90,13 +98,19 @@ public class BillingCreate {
 
     private CloudTypeEnum cloudType;
 
-    /** 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent） */
+    /**
+     * 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     */
     public static final class ConsistentLevelEnum {
 
-        /** Enum APP_CONSISTENT for value: "app_consistent" */
+        /**
+         * Enum APP_CONSISTENT for value: "app_consistent"
+         */
         public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
 
-        /** Enum CRASH_CONSISTENT for value: "crash_consistent" */
+        /**
+         * Enum CRASH_CONSISTENT for value: "crash_consistent"
+         */
         public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
 
         private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -166,16 +180,24 @@ public class BillingCreate {
 
     private ConsistentLevelEnum consistentLevel;
 
-    /** 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。 */
+    /**
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final ObjectTypeEnum SERVER = new ObjectTypeEnum("server");
 
-        /** Enum DISK for value: "disk" */
+        /**
+         * Enum DISK for value: "disk"
+         */
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
-        /** Enum TURBO for value: "turbo" */
+        /**
+         * Enum TURBO for value: "turbo"
+         */
         public static final ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -246,13 +268,19 @@ public class BillingCreate {
 
     private ObjectTypeEnum objectType;
 
-    /** 保护类型：备份（backup）、复制(replication) */
+    /**
+     * 保护类型：备份（backup）、复制(replication)
+     */
     public static final class ProtectTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final ProtectTypeEnum BACKUP = new ProtectTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ProtectTypeEnum REPLICATION = new ProtectTypeEnum("replication");
 
         private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -327,13 +355,19 @@ public class BillingCreate {
 
     private Integer size;
 
-    /** 创建模式，按需：post_paid，包周期：pre_paid，默认为post_paid */
+    /**
+     * 创建模式，按需：post_paid，包周期：pre_paid，默认为post_paid
+     */
     public static final class ChargingModeEnum {
 
-        /** Enum POST_PAID for value: "post_paid" */
+        /**
+         * Enum POST_PAID for value: "post_paid"
+         */
         public static final ChargingModeEnum POST_PAID = new ChargingModeEnum("post_paid");
 
-        /** Enum PRE_PAID for value: "pre_paid" */
+        /**
+         * Enum PRE_PAID for value: "pre_paid"
+         */
         public static final ChargingModeEnum PRE_PAID = new ChargingModeEnum("pre_paid");
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
@@ -403,13 +437,19 @@ public class BillingCreate {
 
     private ChargingModeEnum chargingMode;
 
-    /** 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month) */
+    /**
+     * 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)
+     */
     public static final class PeriodTypeEnum {
 
-        /** Enum YEAR for value: "year" */
+        /**
+         * Enum YEAR for value: "year"
+         */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
 
-        /** Enum MONTH for value: "month" */
+        /**
+         * Enum MONTH for value: "month"
+         */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
 
         private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -514,9 +554,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 云平台，公有云或者混合云
-     * 
-     * @return cloudType */
+    /**
+     * 云平台，公有云或者混合云
+     * @return cloudType
+     */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -530,9 +571,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
-     * 
-     * @return consistentLevel */
+    /**
+     * 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     * @return consistentLevel
+     */
     public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
@@ -546,9 +588,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
-     * 
-     * @return objectType */
+    /**
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -562,9 +605,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 保护类型：备份（backup）、复制(replication)
-     * 
-     * @return protectType */
+    /**
+     * 保护类型：备份（backup）、复制(replication)
+     * @return protectType
+     */
     public ProtectTypeEnum getProtectType() {
         return protectType;
     }
@@ -578,9 +622,12 @@ public class BillingCreate {
         return this;
     }
 
-    /** 容量，单位GB minimum: 1 maximum: 10485760
-     * 
-     * @return size */
+    /**
+     * 容量，单位GB
+     * minimum: 1
+     * maximum: 10485760
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -594,9 +641,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 创建模式，按需：post_paid，包周期：pre_paid，默认为post_paid
-     * 
-     * @return chargingMode */
+    /**
+     * 创建模式，按需：post_paid，包周期：pre_paid，默认为post_paid
+     * @return chargingMode
+     */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -610,9 +658,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)
-     * 
-     * @return periodType */
+    /**
+     * 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)
+     * @return periodType
+     */
     public PeriodTypeEnum getPeriodType() {
         return periodType;
     }
@@ -626,9 +675,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 创建类型的数量，charging_mode为pre_paid必填
-     * 
-     * @return periodNum */
+    /**
+     * 创建类型的数量，charging_mode为pre_paid必填
+     * @return periodNum
+     */
     public Integer getPeriodNum() {
         return periodNum;
     }
@@ -642,9 +692,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 到期后是否自动续期，默认不续期
-     * 
-     * @return isAutoRenew */
+    /**
+     * 到期后是否自动续期，默认不续期
+     * @return isAutoRenew
+     */
     public Boolean getIsAutoRenew() {
         return isAutoRenew;
     }
@@ -658,9 +709,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 是否自动付费，默认为不自动付费
-     * 
-     * @return isAutoPay */
+    /**
+     * 是否自动付费，默认为不自动付费
+     * @return isAutoPay
+     */
     public Boolean getIsAutoPay() {
         return isAutoPay;
     }
@@ -674,9 +726,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 跳转URL
-     * 
-     * @return consoleUrl */
+    /**
+     * 跳转URL
+     * @return consoleUrl
+     */
     public String getConsoleUrl() {
         return consoleUrl;
     }
@@ -699,9 +752,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** Get extraInfo
-     * 
-     * @return extraInfo */
+    /**
+     * Get extraInfo
+     * @return extraInfo
+     */
     public BillbingCreateExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -715,9 +769,10 @@ public class BillingCreate {
         return this;
     }
 
-    /** 存储库多az属性，默认为false
-     * 
-     * @return isMultiAz */
+    /**
+     * 存储库多az属性，默认为false
+     * @return isMultiAz
+     */
     public Boolean getIsMultiAz() {
         return isMultiAz;
     }
@@ -788,7 +843,10 @@ public class BillingCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

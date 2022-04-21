@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateEdgeNodeCertsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,9 +71,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书id
-     * 
-     * @return id */
+    /**
+     * 证书id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -85,9 +88,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书名称
-     * 
-     * @return name */
+    /**
+     * 证书名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,9 +105,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书的描述
-     * 
-     * @return description */
+    /**
+     * 证书的描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -117,9 +122,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书的创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 证书的创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -133,9 +139,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点id
-     * 
-     * @return nodeId */
+    /**
+     * 节点id
+     * @return nodeId
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -149,9 +156,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书类型，包含： - system：创建节点时会默认创建一套系统证书； - application：应用证书； - device：设备证书；
-     * 
-     * @return type */
+    /**
+     * 证书类型，包含： - system：创建节点时会默认创建一套系统证书； - application：应用证书； - device：设备证书；
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -165,9 +173,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书序列号
-     * 
-     * @return serialNum */
+    /**
+     * 证书序列号
+     * @return serialNum
+     */
     public String getSerialNum() {
         return serialNum;
     }
@@ -181,9 +190,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 根证书
-     * 
-     * @return ca */
+    /**
+     * 根证书
+     * @return ca
+     */
     public String getCa() {
         return ca;
     }
@@ -197,9 +207,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 证书
-     * 
-     * @return certificate */
+    /**
+     * 证书
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -213,9 +224,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 私钥
-     * 
-     * @return privateKey */
+    /**
+     * 私钥
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -229,9 +241,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return this;
     }
 
-    /** 将证书文件certificate/ca/private_key打成.tar.gz包后用base64编码的字符串。 使用时请使用base64解码成.tar.gz包。
-     * 
-     * @return _package */
+    /**
+     * 将证书文件certificate/ca/private_key打成.tar.gz包后用base64编码的字符串。 使用时请使用base64解码成.tar.gz包。
+     * @return _package
+     */
     public String getPackage() {
         return _package;
     }
@@ -287,7 +300,10 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

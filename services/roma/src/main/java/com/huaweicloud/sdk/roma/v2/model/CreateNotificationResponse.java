@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateNotificationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,22 +21,34 @@ public class CreateNotificationResponse extends SdkResponse {
 
     private Long notificationId;
 
-    /** 订阅类型, 0:设备上线通知类型, 1:设备下线通知类型, 2:设备添加通知类型, 3:设备删除通知类型, 4:设备变更通知类型 */
+    /**
+     * 订阅类型, 0:设备上线通知类型, 1:设备下线通知类型, 2:设备添加通知类型, 3:设备删除通知类型, 4:设备变更通知类型
+     */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final TypeEnum NUMBER_0 = new TypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final TypeEnum NUMBER_3 = new TypeEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final TypeEnum NUMBER_4 = new TypeEnum(4);
 
         private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,13 +121,19 @@ public class CreateNotificationResponse extends SdkResponse {
 
     private TypeEnum type;
 
-    /** 订阅管理状态，0：启用，1：停用 */
+    /**
+     * 订阅管理状态，0：启用，1：停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -203,9 +223,12 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅ID minimum: 0 maximum: 100
-     * 
-     * @return notificationId */
+    /**
+     * 订阅ID
+     * minimum: 0
+     * maximum: 100
+     * @return notificationId
+     */
     public Long getNotificationId() {
         return notificationId;
     }
@@ -219,9 +242,12 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅类型, 0:设备上线通知类型, 1:设备下线通知类型, 2:设备添加通知类型, 3:设备删除通知类型, 4:设备变更通知类型 minimum: 0 maximum: 4
-     * 
-     * @return type */
+    /**
+     * 订阅类型, 0:设备上线通知类型, 1:设备下线通知类型, 2:设备添加通知类型, 3:设备删除通知类型, 4:设备变更通知类型
+     * minimum: 0
+     * maximum: 4
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -235,9 +261,12 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅管理状态，0：启用，1：停用 minimum: 0 maximum: 1
-     * 
-     * @return status */
+    /**
+     * 订阅管理状态，0：启用，1：停用
+     * minimum: 0
+     * maximum: 1
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -251,9 +280,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 订阅的topic名称
-     * 
-     * @return topic */
+    /**
+     * 订阅的topic名称
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -267,9 +297,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -283,9 +314,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return appId */
+    /**
+     * 应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -330,7 +362,10 @@ public class CreateNotificationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

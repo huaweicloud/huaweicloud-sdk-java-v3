@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProtectableRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +35,19 @@ public class ListProtectableRequest {
 
     private Integer offset;
 
-    /** 对象类型 */
+    /**
+     * 对象类型
+     */
     public static final class ProtectableTypeEnum {
 
-        /** Enum SERVER for value: "server" */
+        /**
+         * Enum SERVER for value: "server"
+         */
         public static final ProtectableTypeEnum SERVER = new ProtectableTypeEnum("server");
 
-        /** Enum DISK for value: "disk" */
+        /**
+         * Enum DISK for value: "disk"
+         */
         public static final ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
         private static final Map<String, ProtectableTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，每页最多支持50条
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，每页最多支持50条
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -145,9 +154,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 上一次查询最后一条的ID
-     * 
-     * @return marker */
+    /**
+     * 上一次查询最后一条的ID
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -161,9 +171,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 按名称过滤
-     * 
-     * @return name */
+    /**
+     * 按名称过滤
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -177,9 +188,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 偏移值
-     * 
-     * @return offset */
+    /**
+     * 偏移值
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -193,9 +205,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 对象类型
-     * 
-     * @return protectableType */
+    /**
+     * 对象类型
+     * @return protectableType
+     */
     public ProtectableTypeEnum getProtectableType() {
         return protectableType;
     }
@@ -209,9 +222,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 资源的状态，如available，error 等
-     * 
-     * @return status */
+    /**
+     * 资源的状态，如available，error 等
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -225,9 +239,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 根据资源id过滤
-     * 
-     * @return id */
+    /**
+     * 根据资源id过滤
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -241,9 +256,10 @@ public class ListProtectableRequest {
         return this;
     }
 
-    /** 根据该id过滤属于该服务器的所有磁盘，支持企业多项目的用户才能传入此参数
-     * 
-     * @return serverId */
+    /**
+     * 根据该id过滤属于该服务器的所有磁盘，支持企业多项目的用户才能传入此参数
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -292,7 +308,10 @@ public class ListProtectableRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

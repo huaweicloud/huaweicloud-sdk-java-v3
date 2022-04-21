@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateRepoDomainsRequestBody */
+/**
+ * CreateRepoDomainsRequestBody
+ */
 public class CreateRepoDomainsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 共享租户名称
-     * 
-     * @return accessDomain */
+    /**
+     * 共享租户名称
+     * @return accessDomain
+     */
     public String getAccessDomain() {
         return accessDomain;
     }
@@ -49,9 +52,10 @@ public class CreateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 当前只支持read权限
-     * 
-     * @return permit */
+    /**
+     * 当前只支持read权限
+     * @return permit
+     */
     public String getPermit() {
         return permit;
     }
@@ -65,9 +69,10 @@ public class CreateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 截止时间，UTC时间格式。永久有效为forever
-     * 
-     * @return deadline */
+    /**
+     * 截止时间，UTC时间格式。永久有效为forever
+     * @return deadline
+     */
     public String getDeadline() {
         return deadline;
     }
@@ -81,9 +86,10 @@ public class CreateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -124,7 +130,10 @@ public class CreateRepoDomainsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

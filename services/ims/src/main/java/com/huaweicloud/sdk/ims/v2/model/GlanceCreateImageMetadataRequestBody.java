@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建镜像请求体 */
+/**
+ * 创建镜像请求体
+ */
 public class GlanceCreateImageMetadataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,22 +28,34 @@ public class GlanceCreateImageMetadataRequestBody {
 
     private String containerFormat;
 
-    /** 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd */
+    /**
+     * 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd
+     */
     public static final class DiskFormatEnum {
 
-        /** Enum VHD for value: "vhd" */
+        /**
+         * Enum VHD for value: "vhd"
+         */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
 
-        /** Enum ZVHD for value: "zvhd" */
+        /**
+         * Enum ZVHD for value: "zvhd"
+         */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
 
-        /** Enum ZVHD2 for value: "zvhd2" */
+        /**
+         * Enum ZVHD2 for value: "zvhd2"
+         */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
 
-        /** Enum RAW for value: "raw" */
+        /**
+         * Enum RAW for value: "raw"
+         */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
 
-        /** Enum QCOW2 for value: "qcow2" */
+        /**
+         * Enum QCOW2 for value: "qcow2"
+         */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -149,9 +163,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像的操作系统具体版本,如果未指定__os_version，则默认设置为Other Linux(64 bit)，不保证该镜像能成功创建虚拟机以及通过该镜像创建的虚拟机能够正常使用。
-     * 
-     * @return osVersion */
+    /**
+     * 镜像的操作系统具体版本,如果未指定__os_version，则默认设置为Other Linux(64 bit)，不保证该镜像能成功创建虚拟机以及通过该镜像创建的虚拟机能够正常使用。
+     * @return osVersion
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
     public String getOsVersion() {
@@ -167,9 +182,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 容器格式。默认取值为bare。
-     * 
-     * @return containerFormat */
+    /**
+     * 容器格式。默认取值为bare。
+     * @return containerFormat
+     */
     public String getContainerFormat() {
         return containerFormat;
     }
@@ -183,9 +199,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd
-     * 
-     * @return diskFormat */
+    /**
+     * 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd
+     * @return diskFormat
+     */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -199,9 +216,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像运行需要的最小磁盘，单位为GB 。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。
-     * 
-     * @return minDisk */
+    /**
+     * 镜像运行需要的最小磁盘，单位为GB 。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -215,9 +233,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像运行需要的最小内存，单位为MB。参数取值依据云主机云服务器的规格限制。默认取值为0。
-     * 
-     * @return minRam */
+    /**
+     * 镜像运行需要的最小内存，单位为MB。参数取值依据云主机云服务器的规格限制。默认取值为0。
+     * @return minRam
+     */
     public Integer getMinRam() {
         return minRam;
     }
@@ -231,9 +250,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1-255位。
-     * 
-     * @return name */
+    /**
+     * 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1-255位。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -247,9 +267,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像是否被保护，保护后的镜像不可删除。默认取值为false。
-     * 
-     * @return _protected */
+    /**
+     * 镜像是否被保护，保护后的镜像不可删除。默认取值为false。
+     * @return _protected
+     */
     public Boolean getProtected() {
         return _protected;
     }
@@ -279,9 +300,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 镜像标签列表。长度为1-255位。默认为空。
-     * 
-     * @return tags */
+    /**
+     * 镜像标签列表。长度为1-255位。默认为空。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -295,9 +317,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return this;
     }
 
-    /** 其他租户是否可见。默认取值为private。创建镜像元数据时，visibility取值只能为private。
-     * 
-     * @return visibility */
+    /**
+     * 其他租户是否可见。默认取值为private。创建镜像元数据时，visibility取值只能为private。
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -350,7 +373,10 @@ public class GlanceCreateImageMetadataRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

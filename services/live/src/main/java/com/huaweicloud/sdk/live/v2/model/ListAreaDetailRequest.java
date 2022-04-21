@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAreaDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,17 +43,24 @@ public class ListAreaDetailRequest {
 
     private String stream;
 
-    /** 查询数据的时间粒度。支持300（默认值）、3600和86400秒。若参数为空，则默认为300秒。
-     * 注意，若metric的值为player（观众数），则interval填入的值不起效果，查询粒度interval默认为60秒。 */
+    /**
+     * 查询数据的时间粒度。支持300（默认值）、3600和86400秒。若参数为空，则默认为300秒。  注意，若metric的值为player（观众数），则interval填入的值不起效果，查询粒度interval默认为60秒。 
+     */
     public static final class IntervalEnum {
 
-        /** Enum NUMBER_300 for value: 300 */
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
         public static final IntervalEnum NUMBER_300 = new IntervalEnum(300);
 
-        /** Enum NUMBER_3600 for value: 3600 */
+        /**
+         * Enum NUMBER_3600 for value: 3600
+         */
         public static final IntervalEnum NUMBER_3600 = new IntervalEnum(3600);
 
-        /** Enum NUMBER_86400 for value: 86400 */
+        /**
+         * Enum NUMBER_86400 for value: 86400
+         */
         public static final IntervalEnum NUMBER_86400 = new IntervalEnum(86400);
 
         private static final Map<Integer, IntervalEnum> STATIC_FIELDS = createStaticFields();
@@ -147,9 +156,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 查询起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -163,9 +173,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 查询结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -195,9 +206,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 需查询的播放域名列表，最多支持查询10个域名。
-     * 
-     * @return playDomains */
+    /**
+     * 需查询的播放域名列表，最多支持查询10个域名。 
+     * @return playDomains
+     */
     public List<String> getPlayDomains() {
         return playDomains;
     }
@@ -211,9 +223,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 需查询的app。
-     * 
-     * @return app */
+    /**
+     * 需查询的app。 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -227,9 +240,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 流名称。
-     * 
-     * @return stream */
+    /**
+     * 流名称。
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -243,10 +257,12 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 查询数据的时间粒度。支持300（默认值）、3600和86400秒。若参数为空，则默认为300秒。 注意，若metric的值为player（观众数），则interval填入的值不起效果，查询粒度interval默认为60秒。
-     * minimum: 300 maximum: 86400
-     * 
-     * @return interval */
+    /**
+     * 查询数据的时间粒度。支持300（默认值）、3600和86400秒。若参数为空，则默认为300秒。  注意，若metric的值为player（观众数），则interval填入的值不起效果，查询粒度interval默认为60秒。 
+     * minimum: 300
+     * maximum: 86400
+     * @return interval
+     */
     public IntervalEnum getInterval() {
         return interval;
     }
@@ -276,9 +292,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - CMCC：移动 - CTCC：电信 - CUCC：联通 - OTHER：其他 若参数为空，则查询所有运营商。
-     * 
-     * @return isp */
+    /**
+     * 运营商列表，取值如下： - CMCC：移动 - CTCC：电信 - CUCC：联通 - OTHER：其他  若参数为空，则查询所有运营商。 
+     * @return isp
+     */
     public List<String> getIsp() {
         return isp;
     }
@@ -308,9 +325,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 需查询的计费大区，取值如下： - CN - AP1 - AP2 - AP3 - EU - MEAA - NA - SA
-     * 
-     * @return area */
+    /**
+     * 需查询的计费大区，取值如下： - CN - AP1 - AP2 - AP3 - EU - MEAA - NA - SA 
+     * @return area
+     */
     public List<String> getArea() {
         return area;
     }
@@ -324,9 +342,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 指标，取值如下： - bandwidth：带宽 - traffic：流量 - player：观众数
-     * 
-     * @return metric */
+    /**
+     * 指标，取值如下： - bandwidth：带宽 - traffic：流量 - player：观众数 
+     * @return metric
+     */
     public String getMetric() {
         return metric;
     }
@@ -340,9 +359,10 @@ public class ListAreaDetailRequest {
         return this;
     }
 
-    /** 请求协议，取值如下： - flv - hls
-     * 
-     * @return protocol */
+    /**
+     * 请求协议，取值如下： - flv - hls 
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -395,7 +415,10 @@ public class ListAreaDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

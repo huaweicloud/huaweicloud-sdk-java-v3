@@ -7,7 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-/** 纳管节点参数。集群内已有节点支持通过重置进行重新安装并接入集群。 */
+/**
+ * 纳管节点参数。集群内已有节点支持通过重置进行重新安装并接入集群。
+ */
 public class AddNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class AddNode {
         return this;
     }
 
-    /** 服务器ID，获取方式请参见ECS/BMS相关资料。
-     * 
-     * @return serverID */
+    /**
+     * 服务器ID，获取方式请参见ECS/BMS相关资料。
+     * @return serverID
+     */
     public UUID getServerID() {
         return serverID;
     }
@@ -50,9 +53,10 @@ public class AddNode {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public ReinstallNodeSpec getSpec() {
         return spec;
     }
@@ -88,7 +92,10 @@ public class AddNode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

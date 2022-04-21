@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TenantConfigV2 */
+/**
+ * TenantConfigV2
+ */
 public class TenantConfigV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class TenantConfigV2 {
         return this;
     }
 
-    /** 抄送邮箱最大个数 minimum: 0 maximum: 65535
-     * 
-     * @return createCaseCcemailMaxCount */
+    /**
+     * 抄送邮箱最大个数
+     * minimum: 0
+     * maximum: 65535
+     * @return createCaseCcemailMaxCount
+     */
     public Integer getCreateCaseCcemailMaxCount() {
         return createCaseCcemailMaxCount;
     }
@@ -55,7 +60,10 @@ public class TenantConfigV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

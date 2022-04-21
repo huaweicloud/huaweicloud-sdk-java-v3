@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议总体数据的单个时间点数据。 */
+/**
+ * 会议总体数据的单个时间点数据。
+ */
 public class StatisticConferenceDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** * 日期/月份，category = conference_info时有效。 * 小时，category = conference_hourly_info时有效。
-     * 
-     * @return time */
+    /**
+     * * 日期/月份，category = conference_info时有效。 * 小时，category = conference_hourly_info时有效。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -64,9 +67,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 会议数(含VMR)。 category = conference_info时有效。
-     * 
-     * @return confCount */
+    /**
+     * 会议数(含VMR)。 category = conference_info时有效。
+     * @return confCount
+     */
     public String getConfCount() {
         return confCount;
     }
@@ -80,9 +84,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 会议时长(秒)(含VMR)。 category = conference_info时有效。
-     * 
-     * @return confDuration */
+    /**
+     * 会议时长(秒)(含VMR)。 category = conference_info时有效。
+     * @return confDuration
+     */
     public String getConfDuration() {
         return confDuration;
     }
@@ -96,9 +101,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 与会人次(含VMR)。 category = conference_info时有效。
-     * 
-     * @return attendeeCount */
+    /**
+     * 与会人次(含VMR)。 category = conference_info时有效。
+     * @return attendeeCount
+     */
     public String getAttendeeCount() {
         return attendeeCount;
     }
@@ -112,9 +118,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 并发会议使用数。 category = conference_info时有效。
-     * 
-     * @return confConcurrentUsedCount */
+    /**
+     * 并发会议使用数。 category = conference_info时有效。
+     * @return confConcurrentUsedCount
+     */
     public String getConfConcurrentUsedCount() {
         return confConcurrentUsedCount;
     }
@@ -128,9 +135,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 小时单位会议数(含VMR)。 category = conference_hourly_info时有效。
-     * 
-     * @return conf24hCount */
+    /**
+     * 小时单位会议数(含VMR)。 category = conference_hourly_info时有效。
+     * @return conf24hCount
+     */
     public String getConf24hCount() {
         return conf24hCount;
     }
@@ -144,9 +152,10 @@ public class StatisticConferenceDataItem {
         return this;
     }
 
-    /** 小时单位与会人次(含VMR)。 category = conference_hourly_info时有效。
-     * 
-     * @return conf24hAttendeeCount */
+    /**
+     * 小时单位与会人次(含VMR)。 category = conference_hourly_info时有效。
+     * @return conf24hAttendeeCount
+     */
     public String getConf24hAttendeeCount() {
         return conf24hAttendeeCount;
     }
@@ -199,7 +208,10 @@ public class StatisticConferenceDataItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

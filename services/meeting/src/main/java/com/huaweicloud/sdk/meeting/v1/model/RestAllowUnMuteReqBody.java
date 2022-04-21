@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 允许来宾自己解除静音请求体。 */
+/**
+ * 允许来宾自己解除静音请求体。
+ */
 public class RestAllowUnMuteReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RestAllowUnMuteReqBody {
         return this;
     }
 
-    /** 是否允许自己解除静音（仅静音时有效），默认为允许。 - 0: 不允许。 - 1: 允许。
-     * 
-     * @return allowUnmuteByOneself */
+    /**
+     * 是否允许自己解除静音（仅静音时有效），默认为允许。 - 0: 不允许。 - 1: 允许。
+     * @return allowUnmuteByOneself
+     */
     public Integer getAllowUnmuteByOneself() {
         return allowUnmuteByOneself;
     }
@@ -55,7 +58,10 @@ public class RestAllowUnMuteReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

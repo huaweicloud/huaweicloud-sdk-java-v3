@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Nameserver */
+/**
+ * Nameserver
+ */
 public class Nameserver {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Nameserver {
         return this;
     }
 
-    /** 主机名。
-     * 
-     * @return hostname */
+    /**
+     * 主机名。
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -39,9 +42,10 @@ public class Nameserver {
         return this;
     }
 
-    /** 优先级。
-     * 
-     * @return priority */
+    /**
+     * 优先级。
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -77,7 +81,10 @@ public class Nameserver {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

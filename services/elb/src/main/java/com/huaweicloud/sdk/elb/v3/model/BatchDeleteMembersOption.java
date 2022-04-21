@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 批量删除member请求参数。 */
+/**
+ * 批量删除member请求参数。
+ */
 public class BatchDeleteMembersOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BatchDeleteMembersOption {
         return this;
     }
 
-    /** 需要删除的后端服务器ID。 使用说明： - 若传入id则不能传其他参数，否则报错。
-     * 
-     * @return id */
+    /**
+     * 需要删除的后端服务器ID。  使用说明： - 若传入id则不能传其他参数，否则报错。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class BatchDeleteMembersOption {
         return this;
     }
 
-    /** 后端服务器IP地址。 使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段
-     * 
-     * @return address */
+    /**
+     * 后端服务器IP地址。  使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -60,9 +64,10 @@ public class BatchDeleteMembersOption {
         return this;
     }
 
-    /** 后端服务器端口。 使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段
-     * 
-     * @return protocolPort */
+    /**
+     * 后端服务器端口。  使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -101,7 +106,10 @@ public class BatchDeleteMembersOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** EditSetting */
+/**
+ * EditSetting
+ */
 public class EditSetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class EditSetting {
         return this;
     }
 
-    /** input指定源文件开始截取的时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点
-     * 
-     * @return timelineStart */
+    /**
+     * input指定源文件开始截取的时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点 
+     * @return timelineStart
+     */
     public String getTimelineStart() {
         return timelineStart;
     }
@@ -77,9 +80,10 @@ public class EditSetting {
         return this;
     }
 
-    /** input指定源文件接受截取的时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。
-     * 
-     * @return timelineEnd */
+    /**
+     * input指定源文件接受截取的时间，单位：秒。可以有正数或者负数，正数表示从开始往后的时间点，负数表示从结尾往前的时间点。 
+     * @return timelineEnd
+     */
     public String getTimelineEnd() {
         return timelineEnd;
     }
@@ -93,9 +97,10 @@ public class EditSetting {
         return this;
     }
 
-    /** 转码模板id
-     * 
-     * @return transTemplateId */
+    /**
+     * 转码模板id
+     * @return transTemplateId
+     */
     public Integer getTransTemplateId() {
         return transTemplateId;
     }
@@ -118,9 +123,10 @@ public class EditSetting {
         return this;
     }
 
-    /** Get avParameter
-     * 
-     * @return avParameter */
+    /**
+     * Get avParameter
+     * @return avParameter
+     */
     public AvParameters getAvParameter() {
         return avParameter;
     }
@@ -150,9 +156,10 @@ public class EditSetting {
         return this;
     }
 
-    /** 马赛克（模糊处理）配置，会对input指定的源文件进行马赛克处理，马赛克基于视频左上角为参考位置
-     * 
-     * @return mosaics */
+    /**
+     * 马赛克（模糊处理）配置，会对input指定的源文件进行马赛克处理，马赛克基于视频左上角为参考位置 
+     * @return mosaics
+     */
     public List<MosaicInfo> getMosaics() {
         return mosaics;
     }
@@ -182,9 +189,10 @@ public class EditSetting {
         return this;
     }
 
-    /** 图片水印配置，会对input指定的源文件进行马赛克处理。水印设置参数里面的overlay_input字段不填
-     * 
-     * @return imageWatermarks */
+    /**
+     * 图片水印配置，会对input指定的源文件进行马赛克处理。水印设置参数里面的overlay_input字段不填 
+     * @return imageWatermarks
+     */
     public List<ImageWatermarkSetting> getImageWatermarks() {
         return imageWatermarks;
     }
@@ -214,9 +222,10 @@ public class EditSetting {
         return this;
     }
 
-    /** 头部文件列表，需要指定文件名。列表内文件会按照顺序拼接在input指定文件的前面
-     * 
-     * @return heads */
+    /**
+     * 头部文件列表，需要指定文件名。列表内文件会按照顺序拼接在input指定文件的前面 
+     * @return heads
+     */
     public List<ObsObjInfo> getHeads() {
         return heads;
     }
@@ -246,9 +255,10 @@ public class EditSetting {
         return this;
     }
 
-    /** 尾部文件列表，需要指定文件名。列表内文件会按照顺序拼接在input指定文件的后面
-     * 
-     * @return tails */
+    /**
+     * 尾部文件列表，需要指定文件名。列表内文件会按照顺序拼接在input指定文件的后面 
+     * @return tails
+     */
     public List<ObsObjInfo> getTails() {
         return tails;
     }
@@ -271,9 +281,10 @@ public class EditSetting {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -331,7 +342,10 @@ public class EditSetting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

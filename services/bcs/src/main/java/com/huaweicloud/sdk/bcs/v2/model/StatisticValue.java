@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 统计结果 */
+/**
+ * 统计结果
+ */
 public class StatisticValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class StatisticValue {
         return this;
     }
 
-    /** 统计方式。
-     * 
-     * @return statistic */
+    /**
+     * 统计方式。
+     * @return statistic
+     */
     public String getStatistic() {
         return statistic;
     }
@@ -39,9 +42,10 @@ public class StatisticValue {
         return this;
     }
 
-    /** 统计结果。
-     * 
-     * @return value */
+    /**
+     * 统计结果。
+     * @return value
+     */
     public Double getValue() {
         return value;
     }
@@ -78,7 +82,10 @@ public class StatisticValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

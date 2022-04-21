@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流计算 */
+/**
+ * 流计算
+ */
 public class StreamModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class StreamModel {
         return this;
     }
 
-    /** 输入参数，最多支持10个；流计算的输入参数名需要在接收数据类型为资产数据的实时分析作业中定义，模型中必须与其保持一致
-     * 
-     * @return inputs */
+    /**
+     * 输入参数，最多支持10个；流计算的输入参数名需要在接收数据类型为资产数据的实时分析作业中定义，模型中必须与其保持一致
+     * @return inputs
+     */
     public List<InputModel> getInputs() {
         return inputs;
     }
@@ -63,9 +66,10 @@ public class StreamModel {
         return this;
     }
 
-    /** 实时分析作业ID
-     * 
-     * @return jobId */
+    /**
+     * 实时分析作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -95,9 +99,10 @@ public class StreamModel {
         return this;
     }
 
-    /** 输出属性，最多支持10个
-     * 
-     * @return outputs */
+    /**
+     * 输出属性，最多支持10个
+     * @return outputs
+     */
     public List<StreamOutput> getOutputs() {
         return outputs;
     }
@@ -135,7 +140,10 @@ public class StreamModel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

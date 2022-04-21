@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 容器端口映射值 */
+/**
+ * 容器端口映射值
+ */
 public class AppVersionPorts {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AppVersionPorts {
         return this;
     }
 
-    /** 构成一堆映射的容器端口
-     * 
-     * @return containerPort */
+    /**
+     * 构成一堆映射的容器端口
+     * @return containerPort
+     */
     public Integer getContainerPort() {
         return containerPort;
     }
@@ -39,9 +42,10 @@ public class AppVersionPorts {
         return this;
     }
 
-    /** 构成一对映射的物理机对应网卡端口
-     * 
-     * @return hostPort */
+    /**
+     * 构成一对映射的物理机对应网卡端口
+     * @return hostPort
+     */
     public Integer getHostPort() {
         return hostPort;
     }
@@ -78,7 +82,10 @@ public class AppVersionPorts {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

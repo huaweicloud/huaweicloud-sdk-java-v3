@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListDomainLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
-     * 
-     * @return authorization */
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -59,9 +62,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 使用AK/SK方式认证时必选，请求的发生时间。
-     * 
-     * @return xSdkDate */
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
@@ -77,9 +81,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 加速域名，参考格式：www.test1.com。
-     * 
-     * @return domainName */
+    /**
+     * 加速域名，参考格式：www.test1.com。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -93,9 +98,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
-     * 
-     * @return queryDate */
+    /**
+     * 查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
+     * @return queryDate
+     */
     public String getQueryDate() {
         return queryDate;
     }
@@ -109,9 +115,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 每页显示日志数量。
-     * 
-     * @return pageSize */
+    /**
+     * 每页显示日志数量。 
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -125,9 +132,10 @@ public class ListDomainLogsRequest {
         return this;
     }
 
-    /** 当前页数。
-     * 
-     * @return pageNumber */
+    /**
+     * 当前页数。 
+     * @return pageNumber
+     */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -172,7 +180,10 @@ public class ListDomainLogsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

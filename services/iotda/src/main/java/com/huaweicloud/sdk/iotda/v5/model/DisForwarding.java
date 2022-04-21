@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DIS服务配置信息 */
+/**
+ * DIS服务配置信息
+ */
 public class DisForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DisForwarding {
         return this;
     }
 
-    /** **参数说明**：DIS服务对应的region区域
-     * 
-     * @return regionName */
+    /**
+     * **参数说明**：DIS服务对应的region区域
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -49,9 +52,10 @@ public class DisForwarding {
         return this;
     }
 
-    /** **参数说明**：DIS服务对应的projectId信息
-     * 
-     * @return projectId */
+    /**
+     * **参数说明**：DIS服务对应的projectId信息
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -65,9 +69,10 @@ public class DisForwarding {
         return this;
     }
 
-    /** **参数说明**：DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
-     * 
-     * @return streamName */
+    /**
+     * **参数说明**：DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -81,9 +86,10 @@ public class DisForwarding {
         return this;
     }
 
-    /** **参数说明**：DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
-     * 
-     * @return streamId */
+    /**
+     * **参数说明**：DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+     * @return streamId
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -124,7 +130,10 @@ public class DisForwarding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

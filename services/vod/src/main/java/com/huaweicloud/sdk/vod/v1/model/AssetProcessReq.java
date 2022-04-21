@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AssetProcessReq */
+/**
+ * AssetProcessReq
+ */
 public class AssetProcessReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class AssetProcessReq {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -57,10 +60,10 @@ public class AssetProcessReq {
         return this;
     }
 
-    /** 转码模板组名称。
-     * 若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
-     * 
-     * @return templateGroupName */
+    /**
+     * 转码模板组名称。   若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
+     * @return templateGroupName
+     */
     public String getTemplateGroupName() {
         return templateGroupName;
     }
@@ -74,9 +77,10 @@ public class AssetProcessReq {
         return this;
     }
 
-    /** 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
-     * 
-     * @return autoEncrypt */
+    /**
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
+     * @return autoEncrypt
+     */
     public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
@@ -99,9 +103,10 @@ public class AssetProcessReq {
         return this;
     }
 
-    /** Get thumbnail
-     * 
-     * @return thumbnail */
+    /**
+     * Get thumbnail
+     * @return thumbnail
+     */
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
@@ -131,9 +136,10 @@ public class AssetProcessReq {
         return this;
     }
 
-    /** 字幕文件ID。 > 仅在[创建媒资](https://support.huaweicloud.com/api-vod/vod_04_0196.html)时，请求参数设置了“**subtitles**”时，该参数设置才生效。
-     * 
-     * @return subtitleId */
+    /**
+     * 字幕文件ID。  > 仅在[创建媒资](https://support.huaweicloud.com/api-vod/vod_04_0196.html)时，请求参数设置了“**subtitles**”时，该参数设置才生效。
+     * @return subtitleId
+     */
     public List<Integer> getSubtitleId() {
         return subtitleId;
     }
@@ -176,7 +182,10 @@ public class AssetProcessReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

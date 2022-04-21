@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 会话持久性对象。 */
+/**
+ * 会话持久性对象。
+ */
 public class UpdatePoolSessionPersistenceOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,17 +20,24 @@ public class UpdatePoolSessionPersistenceOption {
 
     private String cookieName;
 
-    /** 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； -
-     * 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。 */
+    /**
+     * 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+     */
     public static final class TypeEnum {
 
-        /** Enum SOURCE_IP for value: "SOURCE_IP" */
+        /**
+         * Enum SOURCE_IP for value: "SOURCE_IP"
+         */
         public static final TypeEnum SOURCE_IP = new TypeEnum("SOURCE_IP");
 
-        /** Enum HTTP_COOKIE for value: "HTTP_COOKIE" */
+        /**
+         * Enum HTTP_COOKIE for value: "HTTP_COOKIE"
+         */
         public static final TypeEnum HTTP_COOKIE = new TypeEnum("HTTP_COOKIE");
 
-        /** Enum APP_COOKIE for value: "APP_COOKIE" */
+        /**
+         * Enum APP_COOKIE for value: "APP_COOKIE"
+         */
         public static final TypeEnum APP_COOKIE = new TypeEnum("APP_COOKIE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -109,11 +118,10 @@ public class UpdatePoolSessionPersistenceOption {
         return this;
     }
 
-    /** cookie名称。 [格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。 使用说明： -
-     * 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [不支持该字段，请勿使用。](tag:hcso_dt)
-     * 
-     * @return cookieName */
+    /**
+     * cookie名称。  [格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:hcso_dt)
+     * @return cookieName
+     */
     public String getCookieName() {
         return cookieName;
     }
@@ -127,10 +135,10 @@ public class UpdatePoolSessionPersistenceOption {
         return this;
     }
 
-    /** 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； -
-     * 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
-     * 
-     * @return type */
+    /**
+     * 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -144,10 +152,10 @@ public class UpdatePoolSessionPersistenceOption {
         return this;
     }
 
-    /** 会话保持的时间。当type为APP_COOKIE时不生效。
-     * 适用范围：如果pool的protocol为TCP、UDP和QUIC则范围为[1,60]（分钟），默认值1；如果pool的protocol为HTTP和HTTPS则范围为[1,1440]（分钟），默认值1440。
-     * 
-     * @return persistenceTimeout */
+    /**
+     * 会话保持的时间。当type为APP_COOKIE时不生效。  适用范围：如果pool的protocol为TCP、UDP和QUIC则范围为[1,60]（分钟），默认值1；如果pool的protocol为HTTP和HTTPS则范围为[1,1440]（分钟），默认值1440。
+     * @return persistenceTimeout
+     */
     public Integer getPersistenceTimeout() {
         return persistenceTimeout;
     }
@@ -186,7 +194,10 @@ public class UpdatePoolSessionPersistenceOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowClusterDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,9 +103,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public ClusterDetailDatastore getDatastore() {
         return datastore;
     }
@@ -133,9 +136,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点对象列表。
-     * 
-     * @return instances */
+    /**
+     * 节点对象列表。
+     * @return instances
+     */
     public List<ClusterDetailInstances> getInstances() {
         return instances;
     }
@@ -149,9 +153,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
-     * 
-     * @return updated */
+    /**
+     * 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -165,9 +170,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群名称。
-     * 
-     * @return name */
+    /**
+     * 集群名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -181,9 +187,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
-     * 
-     * @return created */
+    /**
+     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -197,9 +204,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群ID。
-     * 
-     * @return id */
+    /**
+     * 集群ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -213,9 +221,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询返回值。 - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
-     * 
-     * @return status */
+    /**
+     * 查询返回值。  - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -229,9 +238,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户VPC访问IP地址和端口号。
-     * 
-     * @return endpoint */
+    /**
+     * 用户VPC访问IP地址和端口号。
+     * @return endpoint
+     */
     public String getEndpoint() {
         return endpoint;
     }
@@ -254,9 +264,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ClusterDetailActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -286,9 +297,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群当前行为集合。
-     * 
-     * @return actions */
+    /**
+     * 集群当前行为集合。
+     * @return actions
+     */
     public List<ActionReq> getActions() {
         return actions;
     }
@@ -311,9 +323,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get failedReasons
-     * 
-     * @return failedReasons */
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
     public ClusterDetailFailedReasons getFailedReasons() {
         return failedReasons;
     }
@@ -327,9 +340,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
-     * 
-     * @return authorityEnable */
+    /**
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * @return authorityEnable
+     */
     public Boolean getAuthorityEnable() {
         return authorityEnable;
     }
@@ -343,9 +357,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get httpsEnable
-     * 
-     * @return httpsEnable */
+    /**
+     * Get httpsEnable
+     * @return httpsEnable
+     */
     public Boolean getHttpsEnable() {
         return httpsEnable;
     }
@@ -359,9 +374,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群所属的企业项目ID。 如果集群所属用户没有开通企业项目，则不会返回该参数。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 集群所属的企业项目ID。  如果集群所属用户没有开通企业项目，则不会返回该参数。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -391,9 +407,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群标签。
-     * 
-     * @return tags */
+    /**
+     * 集群标签。
+     * @return tags
+     */
     public List<ClusterDetailTags> getTags() {
         return tags;
     }
@@ -470,7 +487,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

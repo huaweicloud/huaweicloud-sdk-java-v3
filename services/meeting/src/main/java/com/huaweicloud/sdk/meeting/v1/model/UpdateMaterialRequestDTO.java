@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新素材信息请求（只能修改素材名称） */
+/**
+ * 更新素材信息请求（只能修改素材名称）
+ */
 public class UpdateMaterialRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateMaterialRequestDTO {
         return this;
     }
 
-    /** 素材名称
-     * 
-     * @return materialName */
+    /**
+     * 素材名称
+     * @return materialName
+     */
     public String getMaterialName() {
         return materialName;
     }
@@ -55,7 +58,10 @@ public class UpdateMaterialRequestDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

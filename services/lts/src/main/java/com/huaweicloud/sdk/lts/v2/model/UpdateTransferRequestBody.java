@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTransferRequestBody */
+/**
+ * UpdateTransferRequestBody
+ */
 public class UpdateTransferRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdateTransferRequestBody {
         return this;
     }
 
-    /** 日志转储ID
-     * 
-     * @return logTransferId */
+    /**
+     * 日志转储ID
+     * @return logTransferId
+     */
     public String getLogTransferId() {
         return logTransferId;
     }
@@ -50,9 +53,10 @@ public class UpdateTransferRequestBody {
         return this;
     }
 
-    /** Get logTransferInfo
-     * 
-     * @return logTransferInfo */
+    /**
+     * Get logTransferInfo
+     * @return logTransferInfo
+     */
     public UpdateTransferRequestBodyLogTransferInfo getLogTransferInfo() {
         return logTransferInfo;
     }
@@ -89,7 +93,10 @@ public class UpdateTransferRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

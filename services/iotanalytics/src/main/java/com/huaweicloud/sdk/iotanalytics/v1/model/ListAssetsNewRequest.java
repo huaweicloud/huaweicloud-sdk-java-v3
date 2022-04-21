@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListAssetsNewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class ListAssetsNewRequest {
         return this;
     }
 
-    /** 每页记录数 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页记录数
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,9 +54,11 @@ public class ListAssetsNewRequest {
         return this;
     }
 
-    /** 页码 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 页码
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -65,14 +72,10 @@ public class ListAssetsNewRequest {
         return this;
     }
 
-    /** 查询过滤器 示例： {\"key\":\"xxx\"} {\"key1\":\"xxx\",\"key2\":\"xxx\"} {\"key\":{\"eq|like\":\"xxx\"}}
-     * {\"key\":{\"in\":[\"xxx\",\"xxx\"]}}
-     * {\"or\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}}
-     * {\"and\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} 支持的key：
-     * asset_model_id，asset_id，parent，name，display_name，root，state，job_id 注意： job_id只在RELEASE态下生效，只支持contain过滤
-     * {\"job_id\":{\"contain\":\"xxx\"}}
-     * 
-     * @return filter */
+    /**
+     * 查询过滤器 示例： {\"key\":\"xxx\"} {\"key1\":\"xxx\",\"key2\":\"xxx\"} {\"key\":{\"eq|like\":\"xxx\"}} {\"key\":{\"in\":[\"xxx\",\"xxx\"]}} {\"or\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} {\"and\":{\"key1\":\"xxx\",\"key2\":{\"eq|like\":\"xxx\"},\"key3\":{\"in\":[\"xxx\",\"xxx\"]}}} 支持的key： asset_model_id，asset_id，parent，name，display_name，root，state，job_id 注意： job_id只在RELEASE态下生效，只支持contain过滤 {\"job_id\":{\"contain\":\"xxx\"}}
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -86,9 +89,10 @@ public class ListAssetsNewRequest {
         return this;
     }
 
-    /** SKETCH：草稿态；RELEASE：发布态
-     * 
-     * @return type */
+    /**
+     * SKETCH：草稿态；RELEASE：发布态
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -129,7 +133,10 @@ public class ListAssetsNewRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

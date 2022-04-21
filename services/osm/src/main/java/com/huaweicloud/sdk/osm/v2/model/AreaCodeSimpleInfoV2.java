@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AreaCodeSimpleInfoV2 */
+/**
+ * AreaCodeSimpleInfoV2
+ */
 public class AreaCodeSimpleInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class AreaCodeSimpleInfoV2 {
         return this;
     }
 
-    /** 唯一id minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 唯一id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -44,9 +49,10 @@ public class AreaCodeSimpleInfoV2 {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -60,9 +66,10 @@ public class AreaCodeSimpleInfoV2 {
         return this;
     }
 
-    /** 国家名称
-     * 
-     * @return areaName */
+    /**
+     * 国家名称
+     * @return areaName
+     */
     public String getAreaName() {
         return areaName;
     }
@@ -101,7 +108,10 @@ public class AreaCodeSimpleInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘节点参数 */
+/**
+ * 边缘节点参数
+ */
 public class EdgeNodeResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -271,9 +273,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点ID
-     * 
-     * @return id */
+    /**
+     * 边缘节点ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -287,9 +290,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64 Name为必填字段，且本帐号中唯一。
-     * 
-     * @return name */
+    /**
+     * 边缘节点名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64 Name为必填字段，且本帐号中唯一。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -303,9 +307,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 边缘节点描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -319,9 +324,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -335,9 +341,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -351,9 +358,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -367,9 +375,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 私钥
-     * 
-     * @return privateKey */
+    /**
+     * 私钥
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -383,9 +392,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 证书
-     * 
-     * @return certificate */
+    /**
+     * 证书
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -399,9 +409,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 根证书
-     * 
-     * @return ca */
+    /**
+     * 根证书
+     * @return ca
+     */
     public String getCa() {
         return ca;
     }
@@ -415,9 +426,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点状态 - UNCONNECTED（未注册） - RUNNING（运行中） - FAIL（故障） - STOPPED（停用） - UPGRADING（升级中） - FREEZE（冻结）
-     * 
-     * @return state */
+    /**
+     * 边缘节点状态 - UNCONNECTED（未注册） - RUNNING（运行中） - FAIL（故障） - STOPPED（停用） - UPGRADING（升级中） - FREEZE（冻结）
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -431,9 +443,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 将证书文件certificate/ca/private_key打成.tar.gz包后用base64编码的字符串。 使用时请使用base64解码成.tar.gz包。
-     * 
-     * @return _package */
+    /**
+     * 将证书文件certificate/ca/private_key打成.tar.gz包后用base64编码的字符串。 使用时请使用base64解码成.tar.gz包。
+     * @return _package
+     */
     public String getPackage() {
         return _package;
     }
@@ -447,9 +460,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 云端服务URL
-     * 
-     * @return masterAddr */
+    /**
+     * 云端服务URL
+     * @return masterAddr
+     */
     public String getMasterAddr() {
         return masterAddr;
     }
@@ -463,9 +477,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点CPU核心数
-     * 
-     * @return cpu */
+    /**
+     * 边缘节点CPU核心数
+     * @return cpu
+     */
     public Integer getCpu() {
         return cpu;
     }
@@ -479,9 +494,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点内存大小，单位M
-     * 
-     * @return memory */
+    /**
+     * 边缘节点内存大小，单位M
+     * @return memory
+     */
     public Integer getMemory() {
         return memory;
     }
@@ -495,9 +511,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点操作系统名称
-     * 
-     * @return osName */
+    /**
+     * 边缘节点操作系统名称
+     * @return osName
+     */
     public String getOsName() {
         return osName;
     }
@@ -511,9 +528,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点操作系统版本
-     * 
-     * @return osVersion */
+    /**
+     * 边缘节点操作系统版本
+     * @return osVersion
+     */
     public String getOsVersion() {
         return osVersion;
     }
@@ -527,9 +545,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** pause容器镜像URL
-     * 
-     * @return pauseDockerImage */
+    /**
+     * pause容器镜像URL
+     * @return pauseDockerImage
+     */
     public String getPauseDockerImage() {
         return pauseDockerImage;
     }
@@ -543,9 +562,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点架构
-     * 
-     * @return arch */
+    /**
+     * 边缘节点架构
+     * @return arch
+     */
     public String getArch() {
         return arch;
     }
@@ -559,9 +579,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点操作系统类型
-     * 
-     * @return osType */
+    /**
+     * 边缘节点操作系统类型
+     * @return osType
+     */
     public String getOsType() {
         return osType;
     }
@@ -575,9 +596,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 部署在该边缘节点上的应用实例个数
-     * 
-     * @return deploymentNum */
+    /**
+     * 部署在该边缘节点上的应用实例个数
+     * @return deploymentNum
+     */
     public Integer getDeploymentNum() {
         return deploymentNum;
     }
@@ -591,9 +613,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点是否开启GPU，默认为false
-     * 
-     * @return enableGpu */
+    /**
+     * 边缘节点是否开启GPU，默认为false
+     * @return enableGpu
+     */
     public Boolean getEnableGpu() {
         return enableGpu;
     }
@@ -623,9 +646,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点日志配置
-     * 
-     * @return logConfigs */
+    /**
+     * 边缘节点日志配置
+     * @return logConfigs
+     */
     public List<LogConfigs> getLogConfigs() {
         return logConfigs;
     }
@@ -655,9 +679,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 关联设备信息
-     * 
-     * @return deviceInfos */
+    /**
+     * 关联设备信息
+     * @return deviceInfos
+     */
     public List<DeviceInfos> getDeviceInfos() {
         return deviceInfos;
     }
@@ -671,9 +696,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** edged版本
-     * 
-     * @return edgedVersion */
+    /**
+     * edged版本
+     * @return edgedVersion
+     */
     public String getEdgedVersion() {
         return edgedVersion;
     }
@@ -687,9 +713,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** gpu个数
-     * 
-     * @return gpuNum */
+    /**
+     * gpu个数
+     * @return gpuNum
+     */
     public Integer getGpuNum() {
         return gpuNum;
     }
@@ -719,9 +746,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 主机IP，默认返回eth0网卡的IP。
-     * 
-     * @return hostIps */
+    /**
+     * 主机IP，默认返回eth0网卡的IP。
+     * @return hostIps
+     */
     public List<String> getHostIps() {
         return hostIps;
     }
@@ -735,9 +763,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 与device绑定关系名称（通过device id查询node时有值）
-     * 
-     * @return relation */
+    /**
+     * 与device绑定关系名称（通过device id查询node时有值）
+     * @return relation
+     */
     public String getRelation() {
         return relation;
     }
@@ -751,9 +780,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 与device绑定关系描述（通过device id查询node时有值）
-     * 
-     * @return comment */
+    /**
+     * 与device绑定关系描述（通过device id查询node时有值）
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -783,9 +813,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** gpu型号和gpu memory大小
-     * 
-     * @return gpuInfo */
+    /**
+     * gpu型号和gpu memory大小
+     * @return gpuInfo
+     */
     public List<GpuInfo> getGpuInfo() {
         return gpuInfo;
     }
@@ -799,9 +830,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 关联设备数量
-     * 
-     * @return deviceNum */
+    /**
+     * 关联设备数量
+     * @return deviceNum
+     */
     public Integer getDeviceNum() {
         return deviceNum;
     }
@@ -815,9 +847,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点是否开启NPU，true表示开启，false表示不开启，默认为false
-     * 
-     * @return enableNpu */
+    /**
+     * 边缘节点是否开启NPU，true表示开启，false表示不开启，默认为false
+     * @return enableNpu
+     */
     public Boolean getEnableNpu() {
         return enableNpu;
     }
@@ -831,9 +864,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
-     * 
-     * @return npuType */
+    /**
+     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * @return npuType
+     */
     public String getNpuType() {
         return npuType;
     }
@@ -863,9 +897,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点网卡和对应IP地址信息
-     * 
-     * @return nics */
+    /**
+     * 节点网卡和对应IP地址信息
+     * @return nics
+     */
     public List<Nics> getNics() {
         return nics;
     }
@@ -879,9 +914,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点主机名
-     * 
-     * @return hostName */
+    /**
+     * 边缘节点主机名
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -895,9 +931,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点版本
-     * 
-     * @return iefNodeVersion */
+    /**
+     * 边缘节点版本
+     * @return iefNodeVersion
+     */
     public String getIefNodeVersion() {
         return iefNodeVersion;
     }
@@ -911,9 +948,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 是否能升级的标志 - true：需要升级 - false：不需要升级
-     * 
-     * @return upgradeFlag */
+    /**
+     * 是否能升级的标志 - true：需要升级 - false：不需要升级
+     * @return upgradeFlag
+     */
     public Boolean getUpgradeFlag() {
         return upgradeFlag;
     }
@@ -927,9 +965,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 产品ID（通过产品证书方式纳管）
-     * 
-     * @return productId */
+    /**
+     * 产品ID（通过产品证书方式纳管）
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -959,9 +998,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点组ID（一个节点属于多个节点组）
-     * 
-     * @return groupIds */
+    /**
+     * 节点组ID（一个节点属于多个节点组）
+     * @return groupIds
+     */
     public List<String> getGroupIds() {
         return groupIds;
     }
@@ -991,9 +1031,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点安装或升级记录
-     * 
-     * @return upgradeHistory */
+    /**
+     * 节点安装或升级记录
+     * @return upgradeHistory
+     */
     public List<UpgradeHistory> getUpgradeHistory() {
         return upgradeHistory;
     }
@@ -1023,9 +1064,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点属性，关联属性个数最多为32个
-     * 
-     * @return attributes */
+    /**
+     * 边缘节点属性，关联属性个数最多为32个
+     * @return attributes
+     */
     public List<Attributes> getAttributes() {
         return attributes;
     }
@@ -1039,9 +1081,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点是否开启Docker
-     * 
-     * @return dockerEnable */
+    /**
+     * 节点是否开启Docker
+     * @return dockerEnable
+     */
     public Boolean getDockerEnable() {
         return dockerEnable;
     }
@@ -1055,9 +1098,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** mqtt集成模式 - internal：edgecore内置mqtt - external：外置开源mqtt
-     * 
-     * @return mqttMode */
+    /**
+     * mqtt集成模式 - internal：edgecore内置mqtt - external：外置开源mqtt
+     * @return mqttMode
+     */
     public String getMqttMode() {
         return mqttMode;
     }
@@ -1071,9 +1115,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 外置开源mqtt地址
-     * 
-     * @return mqttExternal */
+    /**
+     * 外置开源mqtt地址
+     * @return mqttExternal
+     */
     public String getMqttExternal() {
         return mqttExternal;
     }
@@ -1087,9 +1132,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** edgecore内置的mqtt地址
-     * 
-     * @return mqttInternal */
+    /**
+     * edgecore内置的mqtt地址
+     * @return mqttInternal
+     */
     public String getMqttInternal() {
         return mqttInternal;
     }
@@ -1103,9 +1149,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点类型，默认为空，非空时为小站节点
-     * 
-     * @return nodeType */
+    /**
+     * 节点类型，默认为空，非空时为小站节点
+     * @return nodeType
+     */
     public String getNodeType() {
         return nodeType;
     }
@@ -1128,9 +1175,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** Get ntpConfigs
-     * 
-     * @return ntpConfigs */
+    /**
+     * Get ntpConfigs
+     * @return ntpConfigs
+     */
     public NtpConfigs getNtpConfigs() {
         return ntpConfigs;
     }
@@ -1144,9 +1192,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 节点故障原因
-     * 
-     * @return errorReason */
+    /**
+     * 节点故障原因
+     * @return errorReason
+     */
     public String getErrorReason() {
         return errorReason;
     }
@@ -1176,9 +1225,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 边缘节点标签，标签个数最多为20个
-     * 
-     * @return tags */
+    /**
+     * 边缘节点标签，标签个数最多为20个
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -1192,9 +1242,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** NPU数量
-     * 
-     * @return npuNum */
+    /**
+     * NPU数量
+     * @return npuNum
+     */
     public Integer getNpuNum() {
         return npuNum;
     }
@@ -1224,9 +1275,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** NPU型号和NPU Memory大小
-     * 
-     * @return npuInfo */
+    /**
+     * NPU型号和NPU Memory大小
+     * @return npuInfo
+     */
     public List<NpuInfo> getNpuInfo() {
         return npuInfo;
     }
@@ -1240,9 +1292,10 @@ public class EdgeNodeResp {
         return this;
     }
 
-    /** 容器运行时版本
-     * 
-     * @return containerRuntimeVersion */
+    /**
+     * 容器运行时版本
+     * @return containerRuntimeVersion
+     */
     public String getContainerRuntimeVersion() {
         return containerRuntimeVersion;
     }
@@ -1417,7 +1470,10 @@ public class EdgeNodeResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

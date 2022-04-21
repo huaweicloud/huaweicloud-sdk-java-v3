@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SetBalancerSwitchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class SetBalancerSwitchRequest {
 
     private String instanceId;
 
-    /** 开启或关闭集群均衡。 */
+    /**
+     * 开启或关闭集群均衡。
+     */
     public static final class ActionEnum {
 
-        /** Enum START for value: "start" */
+        /**
+         * Enum START for value: "start"
+         */
         public static final ActionEnum START = new ActionEnum("start");
 
-        /** Enum STOP for value: "stop" */
+        /**
+         * Enum STOP for value: "stop"
+         */
         public static final ActionEnum STOP = new ActionEnum("stop");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class SetBalancerSwitchRequest {
         return this;
     }
 
-    /** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -115,9 +124,10 @@ public class SetBalancerSwitchRequest {
         return this;
     }
 
-    /** 开启或关闭集群均衡。
-     * 
-     * @return action */
+    /**
+     * 开启或关闭集群均衡。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -154,7 +164,10 @@ public class SetBalancerSwitchRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

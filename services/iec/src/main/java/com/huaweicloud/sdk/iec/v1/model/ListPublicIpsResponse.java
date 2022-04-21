@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPublicIpsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListPublicIpsResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP数目。
-     * 
-     * @return count */
+    /**
+     * 弹性公网IP数目。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListPublicIpsResponse extends SdkResponse {
         return this;
     }
 
-    /** 弹性公网IP数组对象。
-     * 
-     * @return publicips */
+    /**
+     * 弹性公网IP数组对象。
+     * @return publicips
+     */
     public List<PublicIp> getPublicips() {
         return publicips;
     }
@@ -98,7 +102,10 @@ public class ListPublicIpsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MyanmarDriverLicenseResult */
+/**
+ * MyanmarDriverLicenseResult
+ */
 public class MyanmarDriverLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,9 +81,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文驾驶证号。
-     * 
-     * @return cardNumber */
+    /**
+     * 缅文驾驶证号。 
+     * @return cardNumber
+     */
     public String getCardNumber() {
         return cardNumber;
     }
@@ -95,9 +98,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文驾驶证号。
-     * 
-     * @return cardNumberEn */
+    /**
+     * 英文驾驶证号。 
+     * @return cardNumberEn
+     */
     public String getCardNumberEn() {
         return cardNumberEn;
     }
@@ -111,9 +115,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文名字。
-     * 
-     * @return name */
+    /**
+     * 缅文名字。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -127,9 +132,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文名字。
-     * 
-     * @return nameEn */
+    /**
+     * 英文名字。 
+     * @return nameEn
+     */
     public String getNameEn() {
         return nameEn;
     }
@@ -143,9 +149,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文nrc号码。
-     * 
-     * @return nrcId */
+    /**
+     * 缅文nrc号码。 
+     * @return nrcId
+     */
     public String getNrcId() {
         return nrcId;
     }
@@ -159,9 +166,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文nrc号码。
-     * 
-     * @return nrcIdEn */
+    /**
+     * 英文nrc号码。 
+     * @return nrcIdEn
+     */
     public String getNrcIdEn() {
         return nrcIdEn;
     }
@@ -175,9 +183,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文出生日期。
-     * 
-     * @return birth */
+    /**
+     * 缅文出生日期。 
+     * @return birth
+     */
     public String getBirth() {
         return birth;
     }
@@ -191,9 +200,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文出生日期。
-     * 
-     * @return birthEn */
+    /**
+     * 英文出生日期。 
+     * @return birthEn
+     */
     public String getBirthEn() {
         return birthEn;
     }
@@ -207,9 +217,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文血型。
-     * 
-     * @return bloodGroup */
+    /**
+     * 缅文血型。 
+     * @return bloodGroup
+     */
     public String getBloodGroup() {
         return bloodGroup;
     }
@@ -223,9 +234,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文血型。
-     * 
-     * @return bloodGroupEn */
+    /**
+     * 英文血型。 
+     * @return bloodGroupEn
+     */
     public String getBloodGroupEn() {
         return bloodGroupEn;
     }
@@ -239,9 +251,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 缅文有效期。
-     * 
-     * @return expiriedDate */
+    /**
+     * 缅文有效期。 
+     * @return expiriedDate
+     */
     public String getExpiriedDate() {
         return expiriedDate;
     }
@@ -255,9 +268,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** 英文有效期。
-     * 
-     * @return expiriedDateEn */
+    /**
+     * 英文有效期。 
+     * @return expiriedDateEn
+     */
     public String getExpiriedDateEn() {
         return expiriedDateEn;
     }
@@ -280,9 +294,10 @@ public class MyanmarDriverLicenseResult {
         return this;
     }
 
-    /** Get confidence
-     * 
-     * @return confidence */
+    /**
+     * Get confidence
+     * @return confidence
+     */
     public MyanmarDriverLicenseConfidence getConfidence() {
         return confidence;
     }
@@ -353,7 +368,10 @@ public class MyanmarDriverLicenseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

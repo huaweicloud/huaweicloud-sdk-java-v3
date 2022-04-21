@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListReposDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListReposDetailsRequest {
         return this;
     }
 
-    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * 
-     * @return namespace */
+    /**
+     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -49,9 +52,10 @@ public class ListReposDetailsRequest {
         return this;
     }
 
-    /** 镜像仓库名称
-     * 
-     * @return name */
+    /**
+     * 镜像仓库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class ListReposDetailsRequest {
         return this;
     }
 
-    /** 镜像仓库分类，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。
-     * 
-     * @return category */
+    /**
+     * 镜像仓库分类，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -81,11 +86,10 @@ public class ListReposDetailsRequest {
         return this;
     }
 
-    /** 应填写 center::{center}|limit::{limit}|offset::{offset}|order_column::{order_column}|order_type::{order_type} ,
-     * 其中{center}为self或thirdparty，自己的镜像或第三方镜像，默认值为self,{limit}为返回条数,{offset}为起始索引,
-     * {order_column}为按列排序，可设置为name、updated_time、tag_count,{order_type}为排序类型，可设置为desc（降序）、asc（升序）
-     * 
-     * @return filter */
+    /**
+     * 应填写 center::{center}|limit::{limit}|offset::{offset}|order_column::{order_column}|order_type::{order_type} , 其中{center}为self或thirdparty，自己的镜像或第三方镜像，默认值为self,{limit}为返回条数,{offset}为起始索引, {order_column}为按列排序，可设置为name、updated_time、tag_count,{order_type}为排序类型，可设置为desc（降序）、asc（升序）
+     * @return filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -126,7 +130,10 @@ public class ListReposDetailsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

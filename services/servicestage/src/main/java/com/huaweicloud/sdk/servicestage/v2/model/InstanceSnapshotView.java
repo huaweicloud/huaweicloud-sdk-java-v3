@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 快照参数。 */
+/**
+ * 快照参数。
+ */
 public class InstanceSnapshotView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class InstanceSnapshotView {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -49,9 +52,10 @@ public class InstanceSnapshotView {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -65,9 +69,10 @@ public class InstanceSnapshotView {
         return this;
     }
 
-    /** 应用组件实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 应用组件实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -81,9 +86,10 @@ public class InstanceSnapshotView {
         return this;
     }
 
-    /** 版本号。
-     * 
-     * @return version */
+    /**
+     * 版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -124,7 +130,10 @@ public class InstanceSnapshotView {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

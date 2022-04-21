@@ -25,9 +25,10 @@ public class LoginTokenDomain {
         return this;
     }
 
-    /** 被委托方用户所属账号名称。
-     * 
-     * @return name */
+    /**
+     * 被委托方用户所属账号名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -41,9 +42,10 @@ public class LoginTokenDomain {
         return this;
     }
 
-    /** 被委托方用户所属账号ID。
-     * 
-     * @return id */
+    /**
+     * 被委托方用户所属账号ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,7 +81,10 @@ public class LoginTokenDomain {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

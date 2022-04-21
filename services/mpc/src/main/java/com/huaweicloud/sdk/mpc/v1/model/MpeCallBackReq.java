@@ -11,34 +11,54 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MpeCallBackReq */
+/**
+ * MpeCallBackReq
+ */
 public class MpeCallBackReq {
 
-    /** 任务类型 */
+    /**
+     * 任务类型
+     */
     public static final class TaskTypeEnum {
 
-        /** Enum CONCAT for value: "CONCAT" */
+        /**
+         * Enum CONCAT for value: "CONCAT"
+         */
         public static final TaskTypeEnum CONCAT = new TaskTypeEnum("CONCAT");
 
-        /** Enum AUDIO for value: "AUDIO" */
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
         public static final TaskTypeEnum AUDIO = new TaskTypeEnum("AUDIO");
 
-        /** Enum CUT for value: "CUT" */
+        /**
+         * Enum CUT for value: "CUT"
+         */
         public static final TaskTypeEnum CUT = new TaskTypeEnum("CUT");
 
-        /** Enum PARSE for value: "PARSE" */
+        /**
+         * Enum PARSE for value: "PARSE"
+         */
         public static final TaskTypeEnum PARSE = new TaskTypeEnum("PARSE");
 
-        /** Enum MD5 for value: "MD5" */
+        /**
+         * Enum MD5 for value: "MD5"
+         */
         public static final TaskTypeEnum MD5 = new TaskTypeEnum("MD5");
 
-        /** Enum SNAPSHOT for value: "SNAPSHOT" */
+        /**
+         * Enum SNAPSHOT for value: "SNAPSHOT"
+         */
         public static final TaskTypeEnum SNAPSHOT = new TaskTypeEnum("SNAPSHOT");
 
-        /** Enum REMUX for value: "REMUX" */
+        /**
+         * Enum REMUX for value: "REMUX"
+         */
         public static final TaskTypeEnum REMUX = new TaskTypeEnum("REMUX");
 
-        /** Enum ANIMATION for value: "ANIMATION" */
+        /**
+         * Enum ANIMATION for value: "ANIMATION"
+         */
         public static final TaskTypeEnum ANIMATION = new TaskTypeEnum("ANIMATION");
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +164,10 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** 任务类型
-     * 
-     * @return taskType */
+    /**
+     * 任务类型
+     * @return taskType
+     */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -160,9 +181,10 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -176,9 +198,10 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** 任务状态。
-     * 
-     * @return status */
+    /**
+     * 任务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -192,9 +215,12 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** 任务完成进度百分比值。 minimum: 0 maximum: 100
-     * 
-     * @return completeRatio */
+    /**
+     * 任务完成进度百分比值。 
+     * minimum: 0
+     * maximum: 100
+     * @return completeRatio
+     */
     public Integer getCompleteRatio() {
         return completeRatio;
     }
@@ -208,9 +234,10 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** 任务执行描述。
-     * 
-     * @return description */
+    /**
+     * 任务执行描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -233,9 +260,10 @@ public class MpeCallBackReq {
         return this;
     }
 
-    /** Get metaData
-     * 
-     * @return metaData */
+    /**
+     * Get metaData
+     * @return metaData
+     */
     public MpeMetaData getMetaData() {
         return metaData;
     }
@@ -279,7 +307,10 @@ public class MpeCallBackReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** rpo超标记录 */
+/**
+ * rpo超标记录
+ */
 public class RpoStattisticsParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,10 +30,14 @@ public class RpoStattisticsParams {
 
     private Integer resourceNum;
 
-    /** RPO超标的资源类型。replication：表示查询复制对的RPO超标趋势记录。 */
+    /**
+     * RPO超标的资源类型。replication：表示查询复制对的RPO超标趋势记录。
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final ResourceTypeEnum REPLICATION = new ResourceTypeEnum("replication");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +121,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** 资源的RPO超标趋势记录id。
-     * 
-     * @return id */
+    /**
+     * 资源的RPO超标趋势记录id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -131,9 +138,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** 资源的RPO超标趋势记录打点时间。默认格式为：\"yyyy-MM-dd HH:mm\"。
-     * 
-     * @return pointTime */
+    /**
+     * 资源的RPO超标趋势记录打点时间。默认格式为：\"yyyy-MM-dd HH:mm\"。
+     * @return pointTime
+     */
     public String getPointTime() {
         return pointTime;
     }
@@ -147,9 +155,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** RPO超标的资源个数。
-     * 
-     * @return resourceNum */
+    /**
+     * RPO超标的资源个数。
+     * @return resourceNum
+     */
     public Integer getResourceNum() {
         return resourceNum;
     }
@@ -163,9 +172,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** RPO超标的资源类型。replication：表示查询复制对的RPO超标趋势记录。
-     * 
-     * @return resourceType */
+    /**
+     * RPO超标的资源类型。replication：表示查询复制对的RPO超标趋势记录。
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -179,9 +189,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -195,9 +206,10 @@ public class RpoStattisticsParams {
         return this;
     }
 
-    /** 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。默认格式为：\"yyyy-MM-dd HH:mm:ss.SSS\"，例：\"2019-04-01 12:00:00.000\"。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -242,7 +254,10 @@ public class RpoStattisticsParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

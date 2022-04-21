@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DomainItem */
+/**
+ * DomainItem
+ */
 public class DomainItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,22 +60,34 @@ public class DomainItem {
 
     private String createTime;
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证 */
+    /**
+     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     */
     public static final class AuthStatusEnum {
 
-        /** Enum UNAUTH for value: "unauth" */
+        /**
+         * Enum UNAUTH for value: "unauth"
+         */
         public static final AuthStatusEnum UNAUTH = new AuthStatusEnum("unauth");
 
-        /** Enum AUTH for value: "auth" */
+        /**
+         * Enum AUTH for value: "auth"
+         */
         public static final AuthStatusEnum AUTH = new AuthStatusEnum("auth");
 
-        /** Enum INVALID for value: "invalid" */
+        /**
+         * Enum INVALID for value: "invalid"
+         */
         public static final AuthStatusEnum INVALID = new AuthStatusEnum("invalid");
 
-        /** Enum MANUAL for value: "manual" */
+        /**
+         * Enum MANUAL for value: "manual"
+         */
         public static final AuthStatusEnum MANUAL = new AuthStatusEnum("manual");
 
-        /** Enum SKIP for value: "skip" */
+        /**
+         * Enum SKIP for value: "skip"
+         */
         public static final AuthStatusEnum SKIP = new AuthStatusEnum("skip");
 
         private static final Map<String, AuthStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -146,13 +160,19 @@ public class DomainItem {
 
     private AuthStatusEnum authStatus;
 
-    /** 协议类型: * http:// - HTTP * https:// - HTTPS */
+    /**
+     * 协议类型:   * http:// - HTTP   * https:// - HTTPS 
+     */
     public static final class ProtocolTypeEnum {
 
-        /** Enum HTTP_ for value: "http://" */
+        /**
+         * Enum HTTP_ for value: "http://"
+         */
         public static final ProtocolTypeEnum HTTP_ = new ProtocolTypeEnum("http://");
 
-        /** Enum HTTPS_ for value: "https://" */
+        /**
+         * Enum HTTPS_ for value: "https://"
+         */
         public static final ProtocolTypeEnum HTTPS_ = new ProtocolTypeEnum("https://");
 
         private static final Map<String, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -227,9 +247,12 @@ public class DomainItem {
         return this;
     }
 
-    /** 高危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return high */
+    /**
+     * 高危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return high
+     */
     public Integer getHigh() {
         return high;
     }
@@ -243,9 +266,12 @@ public class DomainItem {
         return this;
     }
 
-    /** 中危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return middle */
+    /**
+     * 中危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return middle
+     */
     public Integer getMiddle() {
         return middle;
     }
@@ -259,9 +285,12 @@ public class DomainItem {
         return this;
     }
 
-    /** 低危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return low */
+    /**
+     * 低危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return low
+     */
     public Integer getLow() {
         return low;
     }
@@ -275,9 +304,12 @@ public class DomainItem {
         return this;
     }
 
-    /** 提示危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return hint */
+    /**
+     * 提示危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return hint
+     */
     public Integer getHint() {
         return hint;
     }
@@ -291,9 +323,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return domainId */
+    /**
+     * 域名id
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -307,9 +340,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 一级域名id
-     * 
-     * @return topLevelDomainId */
+    /**
+     * 一级域名id
+     * @return topLevelDomainId
+     */
     public String getTopLevelDomainId() {
         return topLevelDomainId;
     }
@@ -323,9 +357,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -339,9 +374,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 域名的别名
-     * 
-     * @return alias */
+    /**
+     * 域名的别名
+     * @return alias
+     */
     public String getAlias() {
         return alias;
     }
@@ -355,9 +391,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 创建域名资产的时间
-     * 
-     * @return createTime */
+    /**
+     * 创建域名资产的时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -371,9 +408,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 域名的认证状态: * unauth - 未认证 * auth - 已认证 * invalid - 认证文件无效 * manual - 人工认证 * skip - 免认证
-     * 
-     * @return authStatus */
+    /**
+     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * @return authStatus
+     */
     public AuthStatusEnum getAuthStatus() {
         return authStatus;
     }
@@ -387,9 +425,10 @@ public class DomainItem {
         return this;
     }
 
-    /** 协议类型: * http:// - HTTP * https:// - HTTPS
-     * 
-     * @return protocolType */
+    /**
+     * 协议类型:   * http:// - HTTP   * https:// - HTTPS 
+     * @return protocolType
+     */
     public ProtocolTypeEnum getProtocolType() {
         return protocolType;
     }
@@ -451,7 +490,10 @@ public class DomainItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Topic */
+/**
+ * Topic
+ */
 public class Topic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class Topic {
 
     private String description;
 
-    /** TOPIC权限, 主题权限 0-发布 1-订阅 */
+    /**
+     * TOPIC权限, 主题权限 0-发布 1-订阅
+     */
     public static final class PermissionEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final PermissionEnum NUMBER_0 = new PermissionEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PermissionEnum NUMBER_1 = new PermissionEnum(1);
 
         private static final Map<Integer, PermissionEnum> STATIC_FIELDS = createStaticFields();
@@ -104,13 +112,19 @@ public class Topic {
 
     private PermissionEnum permission;
 
-    /** TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC */
+    /**
+     * TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC
+     */
     public static final class IsPrivateEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final IsPrivateEnum NUMBER_0 = new IsPrivateEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final IsPrivateEnum NUMBER_1 = new IsPrivateEnum(1);
 
         private static final Map<Integer, IsPrivateEnum> STATIC_FIELDS = createStaticFields();
@@ -185,9 +199,12 @@ public class Topic {
         return this;
     }
 
-    /** TOPIC的ID minimum: 1 maximum: 999999999999999999
-     * 
-     * @return id */
+    /**
+     * TOPIC的ID
+     * minimum: 1
+     * maximum: 999999999999999999
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -201,9 +218,10 @@ public class Topic {
         return this;
     }
 
-    /** TOPIC的名称
-     * 
-     * @return name */
+    /**
+     * TOPIC的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -217,9 +235,10 @@ public class Topic {
         return this;
     }
 
-    /** TOPIC描述
-     * 
-     * @return description */
+    /**
+     * TOPIC描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -233,9 +252,12 @@ public class Topic {
         return this;
     }
 
-    /** TOPIC权限, 主题权限 0-发布 1-订阅 minimum: 0 maximum: 10
-     * 
-     * @return permission */
+    /**
+     * TOPIC权限, 主题权限 0-发布 1-订阅
+     * minimum: 0
+     * maximum: 10
+     * @return permission
+     */
     public PermissionEnum getPermission() {
         return permission;
     }
@@ -249,9 +271,12 @@ public class Topic {
         return this;
     }
 
-    /** TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC minimum: 0 maximum: 10
-     * 
-     * @return isPrivate */
+    /**
+     * TOPIC类型 0-基础TOPIC 1-用户自定义TOPIC
+     * minimum: 0
+     * maximum: 10
+     * @return isPrivate
+     */
     public IsPrivateEnum getIsPrivate() {
         return isPrivate;
     }
@@ -292,7 +317,10 @@ public class Topic {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

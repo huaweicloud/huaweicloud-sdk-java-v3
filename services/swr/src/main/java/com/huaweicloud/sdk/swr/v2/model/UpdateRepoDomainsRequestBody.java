@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateRepoDomainsRequestBody */
+/**
+ * UpdateRepoDomainsRequestBody
+ */
 public class UpdateRepoDomainsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 当前只支持read权限
-     * 
-     * @return permit */
+    /**
+     * 当前只支持read权限
+     * @return permit
+     */
     public String getPermit() {
         return permit;
     }
@@ -44,9 +47,10 @@ public class UpdateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 截止时间，UTC时间格式。永久有效为forever
-     * 
-     * @return deadline */
+    /**
+     * 截止时间，UTC时间格式。永久有效为forever
+     * @return deadline
+     */
     public String getDeadline() {
         return deadline;
     }
@@ -60,9 +64,10 @@ public class UpdateRepoDomainsRequestBody {
         return this;
     }
 
-    /** 描述。默认值为空字符串
-     * 
-     * @return description */
+    /**
+     * 描述。默认值为空字符串
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class UpdateRepoDomainsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

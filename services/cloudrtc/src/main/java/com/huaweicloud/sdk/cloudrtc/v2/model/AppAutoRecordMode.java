@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** app自动录制模式 */
+/**
+ * app自动录制模式
+ */
 public class AppAutoRecordMode {
 
-    /** 录制模式。 - AUTO_RECORD_OFF：关闭自动录制。 - AUTO_INDIVIDUAL_RECORD：开启单流自动录制，此时record_rule_id必须非空。 */
+    /**
+     * 录制模式。 - AUTO_RECORD_OFF：关闭自动录制。 - AUTO_INDIVIDUAL_RECORD：开启单流自动录制，此时record_rule_id必须非空。 
+     */
     public static final class ModeEnum {
 
-        /** Enum AUTO_RECORD_OFF for value: "AUTO_RECORD_OFF" */
+        /**
+         * Enum AUTO_RECORD_OFF for value: "AUTO_RECORD_OFF"
+         */
         public static final ModeEnum AUTO_RECORD_OFF = new ModeEnum("AUTO_RECORD_OFF");
 
-        /** Enum AUTO_INDIVIDUAL_RECORD for value: "AUTO_INDIVIDUAL_RECORD" */
+        /**
+         * Enum AUTO_INDIVIDUAL_RECORD for value: "AUTO_INDIVIDUAL_RECORD"
+         */
         public static final ModeEnum AUTO_INDIVIDUAL_RECORD = new ModeEnum("AUTO_INDIVIDUAL_RECORD");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class AppAutoRecordMode {
         return this;
     }
 
-    /** 录制模式。 - AUTO_RECORD_OFF：关闭自动录制。 - AUTO_INDIVIDUAL_RECORD：开启单流自动录制，此时record_rule_id必须非空。
-     * 
-     * @return mode */
+    /**
+     * 录制模式。 - AUTO_RECORD_OFF：关闭自动录制。 - AUTO_INDIVIDUAL_RECORD：开启单流自动录制，此时record_rule_id必须非空。 
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -120,9 +129,10 @@ public class AppAutoRecordMode {
         return this;
     }
 
-    /** 录制规则id。
-     * 
-     * @return recordRuleId */
+    /**
+     * 录制规则id。
+     * @return recordRuleId
+     */
     public String getRecordRuleId() {
         return recordRuleId;
     }
@@ -136,9 +146,10 @@ public class AppAutoRecordMode {
         return this;
     }
 
-    /** 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC。
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC。 
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -177,7 +188,10 @@ public class AppAutoRecordMode {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

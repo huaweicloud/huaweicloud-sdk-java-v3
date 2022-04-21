@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ExtractAudioTaskReq */
+/**
+ * ExtractAudioTaskReq
+ */
 public class ExtractAudioTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ExtractAudioTaskReq {
         return this;
     }
 
-    /** 媒资ID。
-     * 
-     * @return assetId */
+    /**
+     * 媒资ID。
+     * @return assetId
+     */
     public String getAssetId() {
         return assetId;
     }
@@ -49,9 +52,10 @@ public class ExtractAudioTaskReq {
         return this;
     }
 
-    /** Get parameter
-     * 
-     * @return parameter */
+    /**
+     * Get parameter
+     * @return parameter
+     */
     public Parameter getParameter() {
         return parameter;
     }
@@ -88,7 +92,10 @@ public class ExtractAudioTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

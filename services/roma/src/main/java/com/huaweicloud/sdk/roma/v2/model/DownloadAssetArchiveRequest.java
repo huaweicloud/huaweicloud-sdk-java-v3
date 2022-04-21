@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DownloadAssetArchiveRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DownloadAssetArchiveRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -39,9 +42,10 @@ public class DownloadAssetArchiveRequest {
         return this;
     }
 
-    /** 作业执行成功后，查询作业进度返回的entities.archive_id字段
-     * 
-     * @return archiveId */
+    /**
+     * 作业执行成功后，查询作业进度返回的entities.archive_id字段
+     * @return archiveId
+     */
     public String getArchiveId() {
         return archiveId;
     }
@@ -78,7 +82,10 @@ public class DownloadAssetArchiveRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

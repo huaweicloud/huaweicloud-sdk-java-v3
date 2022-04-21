@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowNotificationTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,13 +39,19 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
 
     private String source;
 
-    /** 语言，必填，目前可填zh-cn和en-us */
+    /**
+     * 语言，必填，目前可填zh-cn和en-us
+     */
     public static final class LocaleEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final LocaleEnum ZH_CN = new LocaleEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final LocaleEnum EN_US = new LocaleEnum("en-us");
 
         private static final Map<String, LocaleEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +146,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 通知规则名称，必填，只含有汉字、数字、字母、下划线、中划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100，创建后不可修改
-     * 
-     * @return name */
+    /**
+     * 通知规则名称，必填，只含有汉字、数字、字母、下划线、中划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100，创建后不可修改
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -170,9 +179,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 保留字段，非必填，只支持sms（短信），dingding（钉钉），wechat（企业微信），email（邮件）和webhook（网络钩子）
-     * 
-     * @return type */
+    /**
+     * 保留字段，非必填，只支持sms（短信），dingding（钉钉），wechat（企业微信），email（邮件）和webhook（网络钩子）
+     * @return type
+     */
     public List<String> getType() {
         return type;
     }
@@ -186,9 +196,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板描述，必填，只含有汉字、数字、字母、下划线不能以下划线开头和结尾，长度为0--1024
-     * 
-     * @return desc */
+    /**
+     * 模板描述，必填，只含有汉字、数字、字母、下划线不能以下划线开头和结尾，长度为0--1024
+     * @return desc
+     */
     public String getDesc() {
         return desc;
     }
@@ -202,9 +213,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板来源，目前必填为LTS，否则会筛选不出来
-     * 
-     * @return source */
+    /**
+     * 模板来源，目前必填为LTS，否则会筛选不出来
+     * @return source
+     */
     public String getSource() {
         return source;
     }
@@ -218,9 +230,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 语言，必填，目前可填zh-cn和en-us
-     * 
-     * @return locale */
+    /**
+     * 语言，必填，目前可填zh-cn和en-us
+     * @return locale
+     */
     public LocaleEnum getLocale() {
         return locale;
     }
@@ -250,9 +263,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板正文，为一个数组
-     * 
-     * @return templates */
+    /**
+     * 模板正文，为一个数组
+     * @return templates
+     */
     public List<SubTemplate> getTemplates() {
         return templates;
     }
@@ -266,9 +280,12 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，为毫秒时间戳 minimum: 0 maximum: 1700000000000
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，为毫秒时间戳
+     * minimum: 0
+     * maximum: 1700000000000
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -282,9 +299,12 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，为毫秒时间戳 minimum: 0 maximum: 1700000000000
-     * 
-     * @return modifyTime */
+    /**
+     * 更新时间，为毫秒时间戳
+     * minimum: 0
+     * maximum: 1700000000000
+     * @return modifyTime
+     */
     public Long getModifyTime() {
         return modifyTime;
     }
@@ -298,9 +318,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -351,7 +372,10 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

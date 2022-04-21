@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListNetworkInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,10 +43,14 @@ public class ListNetworkInstancesRequest {
 
     private List<String> description = null;
 
-    /** Gets or Sets status */
+    /**
+    * Gets or Sets status
+    */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -138,9 +144,12 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 分页查询时，每页返回的个数。 minimum: 1 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 分页查询时，每页返回的个数。
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -154,9 +163,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
-     * 
-     * @return marker */
+    /**
+     * 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -186,9 +196,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据ID过滤网络实例列表。
-     * 
-     * @return id */
+    /**
+     * 根据ID过滤网络实例列表。
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -218,9 +229,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据名称过滤网络实例列表。
-     * 
-     * @return name */
+    /**
+     * 根据名称过滤网络实例列表。
+     * @return name
+     */
     public List<String> getName() {
         return name;
     }
@@ -250,9 +262,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据描述过滤网络实例列表。
-     * 
-     * @return description */
+    /**
+     * 根据描述过滤网络实例列表。
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -282,9 +295,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据状态过滤网络实例列表。ACTIVE：表示状态可用。
-     * 
-     * @return status */
+    /**
+     * 根据状态过滤网络实例列表。ACTIVE：表示状态可用。
+     * @return status
+     */
     public List<StatusEnum> getStatus() {
         return status;
     }
@@ -314,9 +328,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据类型过滤网络实例列表。
-     * 
-     * @return type */
+    /**
+     * 根据类型过滤网络实例列表。
+     * @return type
+     */
     public List<String> getType() {
         return type;
     }
@@ -346,9 +361,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据云连接实例ID过滤网络实例列表。
-     * 
-     * @return cloudConnectionId */
+    /**
+     * 根据云连接实例ID过滤网络实例列表。
+     * @return cloudConnectionId
+     */
     public List<String> getCloudConnectionId() {
         return cloudConnectionId;
     }
@@ -378,9 +394,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据VPC或者VGW的ID过滤网络实例列表。
-     * 
-     * @return instanceId */
+    /**
+     * 根据VPC或者VGW的ID过滤网络实例列表。
+     * @return instanceId
+     */
     public List<String> getInstanceId() {
         return instanceId;
     }
@@ -410,9 +427,10 @@ public class ListNetworkInstancesRequest {
         return this;
     }
 
-    /** 根据VPC或者VGW所在的Region过滤网络实例列表。
-     * 
-     * @return regionId */
+    /**
+     * 根据VPC或者VGW所在的Region过滤网络实例列表。
+     * @return regionId
+     */
     public List<String> getRegionId() {
         return regionId;
     }
@@ -466,7 +484,10 @@ public class ListNetworkInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

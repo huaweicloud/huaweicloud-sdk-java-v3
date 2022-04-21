@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 单个任务结构体 */
+/**
+ * 单个任务结构体
+ */
 public class SingleBackgroundTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 后台任务ID
-     * 
-     * @return id */
+    /**
+     * 后台任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,10 +78,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 后台任务名，目前支持以下取值： ChangeInstanceSpec：变更规格 BindEip：开启公网访问 UnBindEip：关闭公网访问 AddReplica：添加副本 DelReplica：删除副本
-     * AddWhitelist：设置IP白名单 UpdatePort：修改端口 RemoveIpFromDns：域名摘除IP
-     * 
-     * @return name */
+    /**
+     * 后台任务名，目前支持以下取值：  ChangeInstanceSpec：变更规格  BindEip：开启公网访问  UnBindEip：关闭公网访问  AddReplica：添加副本  DelReplica：删除副本  AddWhitelist：设置IP白名单  UpdatePort：修改端口  RemoveIpFromDns：域名摘除IP 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -101,9 +104,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** Get details
-     * 
-     * @return details */
+    /**
+     * Get details
+     * @return details
+     */
     public DetailsBody getDetails() {
         return details;
     }
@@ -117,9 +121,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return userName */
+    /**
+     * 用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -133,9 +138,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -149,9 +155,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 任务相关参数
-     * 
-     * @return params */
+    /**
+     * 任务相关参数
+     * @return params
+     */
     public String getParams() {
         return params;
     }
@@ -165,9 +172,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -181,9 +189,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 任务启动时间，格式为2020-06-17T07:38:42.503Z
-     * 
-     * @return createdAt */
+    /**
+     * 任务启动时间，格式为2020-06-17T07:38:42.503Z
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -197,9 +206,10 @@ public class SingleBackgroundTask {
         return this;
     }
 
-    /** 任务结束时间，格式为2020-06-17T07:38:42.503Z
-     * 
-     * @return updatedAt */
+    /**
+     * 任务结束时间，格式为2020-06-17T07:38:42.503Z
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -249,7 +259,10 @@ public class SingleBackgroundTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

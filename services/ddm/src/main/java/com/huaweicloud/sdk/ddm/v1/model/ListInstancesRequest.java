@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,11 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 分页参数：起始值 [大于等于0] 。默认值是0。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页参数：起始值 [大于等于0] 。默认值是0。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -39,9 +43,12 @@ public class ListInstancesRequest {
         return this;
     }
 
-    /** 分页参数：每页多少条 [大于0且小于等于128]。默认值是10。 minimum: 1 maximum: 128
-     * 
-     * @return limit */
+    /**
+     * 分页参数：每页多少条 [大于0且小于等于128]。默认值是10。
+     * minimum: 1
+     * maximum: 128
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -78,7 +85,10 @@ public class ListInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

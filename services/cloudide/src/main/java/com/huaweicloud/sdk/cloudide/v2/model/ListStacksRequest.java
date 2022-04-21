@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStacksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListStacksRequest {
         return this;
     }
 
-    /** 技术栈标签。默认为空值，查询全部。 例如：Java,CPP,GO,Python;可查询多个标签
-     * 
-     * @return tags */
+    /**
+     * 技术栈标签。默认为空值，查询全部。 例如：Java,CPP,GO,Python;可查询多个标签
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -55,7 +58,10 @@ public class ListStacksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

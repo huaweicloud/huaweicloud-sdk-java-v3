@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 测试计划执行阶段信息 */
+/**
+ * 测试计划执行阶段信息
+ */
 public class TestPlanDetailExecuteStage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TestPlanDetailExecuteStage {
         return this;
     }
 
-    /** 缺陷个数
-     * 
-     * @return defectCount */
+    /**
+     * 缺陷个数
+     * @return defectCount
+     */
     public Integer getDefectCount() {
         return defectCount;
     }
@@ -49,9 +52,10 @@ public class TestPlanDetailExecuteStage {
         return this;
     }
 
-    /** 已完成缺陷个数
-     * 
-     * @return completedDefectCount */
+    /**
+     * 已完成缺陷个数
+     * @return completedDefectCount
+     */
     public Integer getCompletedDefectCount() {
         return completedDefectCount;
     }
@@ -65,9 +69,10 @@ public class TestPlanDetailExecuteStage {
         return this;
     }
 
-    /** 用例通过率,按用例结果计算
-     * 
-     * @return casePassRate */
+    /**
+     * 用例通过率,按用例结果计算
+     * @return casePassRate
+     */
     public String getCasePassRate() {
         return casePassRate;
     }
@@ -81,9 +86,10 @@ public class TestPlanDetailExecuteStage {
         return this;
     }
 
-    /** 已执行用例数, 按用例状态统计
-     * 
-     * @return executedCaseCount */
+    /**
+     * 已执行用例数, 按用例状态统计
+     * @return executedCaseCount
+     */
     public Integer getExecutedCaseCount() {
         return executedCaseCount;
     }
@@ -124,7 +130,10 @@ public class TestPlanDetailExecuteStage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

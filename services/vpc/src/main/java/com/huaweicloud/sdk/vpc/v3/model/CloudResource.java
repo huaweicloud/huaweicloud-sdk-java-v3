@@ -25,9 +25,10 @@ public class CloudResource {
         return this;
     }
 
-    /** 功能描述：资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 功能描述：资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -41,9 +42,10 @@ public class CloudResource {
         return this;
     }
 
-    /** 功能说明：资源数量
-     * 
-     * @return resourceCount */
+    /**
+     * 功能说明：资源数量
+     * @return resourceCount
+     */
     public Integer getResourceCount() {
         return resourceCount;
     }
@@ -80,7 +82,10 @@ public class CloudResource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

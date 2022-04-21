@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** databases参数说明 */
+/**
+ * databases参数说明
+ */
 public class CreateDatabaseDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class CreateDatabaseDetail {
 
     private String name;
 
-    /** 逻辑库的拆分模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。 */
+    /**
+     * 逻辑库的拆分模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
+     */
     public static final class ShardModeEnum {
 
-        /** Enum CLUSTER for value: "cluster" */
+        /**
+         * Enum CLUSTER for value: "cluster"
+         */
         public static final ShardModeEnum CLUSTER = new ShardModeEnum("cluster");
 
-        /** Enum SINGLE for value: "single" */
+        /**
+         * Enum SINGLE for value: "single"
+         */
         public static final ShardModeEnum SINGLE = new ShardModeEnum("single");
 
         private static final Map<String, ShardModeEnum> STATIC_FIELDS = createStaticFields();
@@ -117,10 +125,10 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 逻辑库名称，需要满足以下条件： - 长度为2-48个字符。 - 必须以字母开头，且不区分大小写。 - 可以包含字母、数字、下划线，不能包含其它特殊字符。 - 禁用关键字：
-     * \"information_schema\"、\"mysql\"、\"performance_schema\"、\"sys\"。
-     * 
-     * @return name */
+    /**
+     * 逻辑库名称，需要满足以下条件：  - 长度为2-48个字符。 - 必须以字母开头，且不区分大小写。 - 可以包含字母、数字、下划线，不能包含其它特殊字符。 - 禁用关键字：  \"information_schema\"、\"mysql\"、\"performance_schema\"、\"sys\"。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -134,9 +142,10 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 逻辑库的拆分模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
-     * 
-     * @return shardMode */
+    /**
+     * 逻辑库的拆分模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
+     * @return shardMode
+     */
     public ShardModeEnum getShardMode() {
         return shardMode;
     }
@@ -150,9 +159,10 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 同一种工作模式下逻辑库分片的数量。 - shard_unit不为空， shard_unit与关联rds数量的乘积 - shard_unit为空，大于关联的RDS数量，小于等于关联rds数量*64。
-     * 
-     * @return shardNumber */
+    /**
+     * 同一种工作模式下逻辑库分片的数量。 - shard_unit不为空， shard_unit与关联rds数量的乘积 - shard_unit为空，大于关联的RDS数量，小于等于关联rds数量*64。
+     * @return shardNumber
+     */
     public Integer getShardNumber() {
         return shardNumber;
     }
@@ -166,9 +176,12 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 单个RDS上的逻辑库分片数。非必选 - 非拆分逻辑库，固定为1。 - 拆分逻辑库，大于等于1，小于等于64。 minimum: 1 maximum: 64
-     * 
-     * @return shardUnit */
+    /**
+     * 单个RDS上的逻辑库分片数。非必选  - 非拆分逻辑库，固定为1。 - 拆分逻辑库，大于等于1，小于等于64。
+     * minimum: 1
+     * maximum: 64
+     * @return shardUnit
+     */
     public Integer getShardUnit() {
         return shardUnit;
     }
@@ -198,9 +211,10 @@ public class CreateDatabaseDetail {
         return this;
     }
 
-    /** 逻辑库关联的RDS。
-     * 
-     * @return usedRds */
+    /**
+     * 逻辑库关联的RDS。
+     * @return usedRds
+     */
     public List<DatabaseInstabcesParam> getUsedRds() {
         return usedRds;
     }
@@ -243,7 +257,10 @@ public class CreateDatabaseDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

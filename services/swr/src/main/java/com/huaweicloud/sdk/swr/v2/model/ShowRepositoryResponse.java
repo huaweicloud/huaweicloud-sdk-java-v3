@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRepositoryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -104,9 +106,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库编号
-     * 
-     * @return id */
+    /**
+     * 仓库编号
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -120,9 +123,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 命名空间编号
-     * 
-     * @return nsId */
+    /**
+     * 命名空间编号
+     * @return nsId
+     */
     public Long getNsId() {
         return nsId;
     }
@@ -136,9 +140,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return name */
+    /**
+     * 仓库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -152,9 +157,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库类型（计划改造，每个镜像会有多个lable标示）
-     * 
-     * @return category */
+    /**
+     * 仓库类型（计划改造，每个镜像会有多个lable标示）
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -168,9 +174,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库描述信息
-     * 
-     * @return description */
+    /**
+     * 仓库描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -184,9 +191,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库创建者id
-     * 
-     * @return creatorId */
+    /**
+     * 仓库创建者id
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -200,9 +208,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库创建者
-     * 
-     * @return creatorName */
+    /**
+     * 仓库创建者
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -216,9 +225,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库大小
-     * 
-     * @return size */
+    /**
+     * 仓库大小 
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -232,9 +242,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库是否为公共仓库，值为true或false
-     * 
-     * @return isPublic */
+    /**
+     * 仓库是否为公共仓库，值为true或false
+     * @return isPublic
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -248,9 +259,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库中镜像个数，0 ~ 9223372036854775807
-     * 
-     * @return numImages */
+    /**
+     * 仓库中镜像个数，0 ~ 9223372036854775807
+     * @return numImages
+     */
     public Long getNumImages() {
         return numImages;
     }
@@ -264,9 +276,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库下载次数
-     * 
-     * @return numDownload */
+    /**
+     * 仓库下载次数
+     * @return numDownload
+     */
     public Long getNumDownload() {
         return numDownload;
     }
@@ -280,9 +293,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库logo图片的URL，URL格式。（暂时未用）
-     * 
-     * @return url */
+    /**
+     * 仓库logo图片的URL，URL格式。（暂时未用）
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -296,9 +310,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
-     * 
-     * @return path */
+    /**
+     * 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -312,9 +327,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
-     * 
-     * @return internalPath */
+    /**
+     * 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
+     * @return internalPath
+     */
     public String getInternalPath() {
         return internalPath;
     }
@@ -328,9 +344,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return created */
+    /**
+     * 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -344,9 +361,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return updated */
+    /**
+     * 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -360,9 +378,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 帐号ID
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -376,9 +395,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像排序优先级
-     * 
-     * @return priority */
+    /**
+     * 镜像排序优先级
+     * @return priority
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -464,7 +484,10 @@ public class ShowRepositoryResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

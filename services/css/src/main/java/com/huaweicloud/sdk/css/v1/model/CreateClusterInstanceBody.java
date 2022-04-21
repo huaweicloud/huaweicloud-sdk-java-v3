@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例对象。 */
+/**
+ * 实例对象。
+ */
 public class CreateClusterInstanceBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,10 +36,10 @@ public class CreateClusterInstanceBody {
         return this;
     }
 
-    /** 实例规格名称。例如乌兰察布三中， - ess.spec-2u16g规格对应的取值范围为40GB～1280GB。 - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 -
-     * ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
-     * 
-     * @return flavorRef */
+    /**
+     * 实例规格名称。例如乌兰察布三中，  - ess.spec-2u16g规格对应的取值范围为40GB～1280GB。 - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 - ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
+     * @return flavorRef
+     */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -60,9 +62,10 @@ public class CreateClusterInstanceBody {
         return this;
     }
 
-    /** Get volume
-     * 
-     * @return volume */
+    /**
+     * Get volume
+     * @return volume
+     */
     public CreateClusterInstanceVolumeBody getVolume() {
         return volume;
     }
@@ -85,9 +88,10 @@ public class CreateClusterInstanceBody {
         return this;
     }
 
-    /** Get nics
-     * 
-     * @return nics */
+    /**
+     * Get nics
+     * @return nics
+     */
     public CreateClusterInstanceNicsBody getNics() {
         return nics;
     }
@@ -101,10 +105,10 @@ public class CreateClusterInstanceBody {
         return this;
     }
 
-    /** 可用区。不填时默认创建单AZ。 如果需要创建多AZ，各个AZ之间使用英文逗号分隔，比如az1,az2 ，az不能重复输入，并且要求节点个数大于等于AZ个数。
-     * 如果节点个数为AZ个数的倍数，节点将会均匀的分布到各个AZ。如果节点个数不为AZ个数的倍数时，各个AZ分布的节点个数之和的绝对值之差小于等于1。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区。不填时默认创建单AZ。  如果需要创建多AZ，各个AZ之间使用英文逗号分隔，比如az1,az2 ，az不能重复输入，并且要求节点个数大于等于AZ个数。  如果节点个数为AZ个数的倍数，节点将会均匀的分布到各个AZ。如果节点个数不为AZ个数的倍数时，各个AZ分布的节点个数之和的绝对值之差小于等于1。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -145,7 +149,10 @@ public class CreateClusterInstanceBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

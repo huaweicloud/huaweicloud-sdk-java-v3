@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateTaskRequestBody */
+/**
+ * CreateTaskRequestBody
+ */
 public class CreateTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class CreateTaskRequestBody {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -57,9 +60,12 @@ public class CreateTaskRequestBody {
         return this;
     }
 
-    /** project_id minimum: 0 maximum: 2147483647
-     * 
-     * @return projectId */
+    /**
+     * project_id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return projectId
+     */
     public Integer getProjectId() {
         return projectId;
     }
@@ -89,9 +95,10 @@ public class CreateTaskRequestBody {
         return this;
     }
 
-    /** temps
-     * 
-     * @return temps */
+    /**
+     * temps
+     * @return temps
+     */
     public List<String> getTemps() {
         return temps;
     }
@@ -105,9 +112,12 @@ public class CreateTaskRequestBody {
         return this;
     }
 
-    /** operate_mode minimum: 0 maximum: 2147483647
-     * 
-     * @return operateMode */
+    /**
+     * operate_mode
+     * minimum: 0
+     * maximum: 2147483647
+     * @return operateMode
+     */
     public Integer getOperateMode() {
         return operateMode;
     }
@@ -121,9 +131,12 @@ public class CreateTaskRequestBody {
         return this;
     }
 
-    /** bench_concurrent minimum: 0 maximum: 2147483647
-     * 
-     * @return benchConcurrent */
+    /**
+     * bench_concurrent
+     * minimum: 0
+     * maximum: 2147483647
+     * @return benchConcurrent
+     */
     public Integer getBenchConcurrent() {
         return benchConcurrent;
     }
@@ -166,7 +179,10 @@ public class CreateTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IP地址组中的包含的IP信息。 */
+/**
+ * IP地址组中的包含的IP信息。
+ */
 public class CreateIpGroupIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateIpGroupIpOption {
         return this;
     }
 
-    /** IP地址。支持IPv4、IPv6。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
-     * 
-     * @return ip */
+    /**
+     * IP地址。支持IPv4、IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -39,9 +42,10 @@ public class CreateIpGroupIpOption {
         return this;
     }
 
-    /** 备注信息。
-     * 
-     * @return description */
+    /**
+     * 备注信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -78,7 +82,10 @@ public class CreateIpGroupIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

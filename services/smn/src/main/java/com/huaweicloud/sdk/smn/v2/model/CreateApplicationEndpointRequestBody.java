@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateApplicationEndpointRequestBody */
+/**
+ * CreateApplicationEndpointRequestBody
+ */
 public class CreateApplicationEndpointRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateApplicationEndpointRequestBody {
         return this;
     }
 
-    /** 移动应用设备token，最大长度512个字节。
-     * 
-     * @return token */
+    /**
+     * 移动应用设备token，最大长度512个字节。
+     * @return token
+     */
     public String getToken() {
         return token;
     }
@@ -39,9 +42,10 @@ public class CreateApplicationEndpointRequestBody {
         return this;
     }
 
-    /** 用户自定义数据，最大长度支持UTF-8编码后2048字节。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据，最大长度支持UTF-8编码后2048字节。
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -79,7 +83,10 @@ public class CreateApplicationEndpointRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

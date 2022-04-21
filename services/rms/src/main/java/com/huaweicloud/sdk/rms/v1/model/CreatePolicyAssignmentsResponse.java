@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreatePolicyAssignmentsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +64,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则ID
-     * 
-     * @return id */
+    /**
+     * 规则ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,9 +81,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则名字
-     * 
-     * @return name */
+    /**
+     * 规则名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +98,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return description */
+    /**
+     * 规则描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -119,9 +124,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get policyFilter
-     * 
-     * @return policyFilter */
+    /**
+     * Get policyFilter
+     * @return policyFilter
+     */
     public PolicyFilterDefinition getPolicyFilter() {
         return policyFilter;
     }
@@ -135,9 +141,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则状态
-     * 
-     * @return state */
+    /**
+     * 规则状态
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -151,9 +158,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则创建时间
-     * 
-     * @return created */
+    /**
+     * 规则创建时间
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -167,9 +175,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则更新时间
-     * 
-     * @return updated */
+    /**
+     * 规则更新时间
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -183,9 +192,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则的策略ID
-     * 
-     * @return policyDefinitionId */
+    /**
+     * 规则的策略ID
+     * @return policyDefinitionId
+     */
     public String getPolicyDefinitionId() {
         return policyDefinitionId;
     }
@@ -216,9 +226,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则参数
-     * 
-     * @return parameters */
+    /**
+     * 规则参数
+     * @return parameters
+     */
     public Map<String, PolicyParameterValue> getParameters() {
         return parameters;
     }
@@ -270,7 +281,10 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

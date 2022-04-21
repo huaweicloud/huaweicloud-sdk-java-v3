@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AddFacesUrlReq */
+/**
+ * AddFacesUrlReq
+ */
 public class AddFacesUrlReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AddFacesUrlReq {
         return this;
     }
 
-    /** 图片的URL路径，目前仅支持华为云上OBS的URL，且人脸识别服务有权限读取该OBS桶的数据。 开通读取权限的操作请参见服务授权。
-     * 
-     * @return imageUrl */
+    /**
+     * 图片的URL路径，目前仅支持华为云上OBS的URL，且人脸识别服务有权限读取该OBS桶的数据。 开通读取权限的操作请参见服务授权。
+     * @return imageUrl
+     */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -49,9 +52,10 @@ public class AddFacesUrlReq {
         return this;
     }
 
-    /** 根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考自定义字段。
-     * 
-     * @return externalFields */
+    /**
+     * 根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考自定义字段。
+     * @return externalFields
+     */
     public Object getExternalFields() {
         return externalFields;
     }
@@ -65,9 +69,10 @@ public class AddFacesUrlReq {
         return this;
     }
 
-    /** 用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。
-     * 
-     * @return externalImageId */
+    /**
+     * 用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。
+     * @return externalImageId
+     */
     public String getExternalImageId() {
         return externalImageId;
     }
@@ -81,10 +86,10 @@ public class AddFacesUrlReq {
         return this;
     }
 
-    /** 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false:
-     * 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
-     * 
-     * @return single */
+    /**
+     * 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false: 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+     * @return single
+     */
     public Boolean getSingle() {
         return single;
     }
@@ -125,7 +130,10 @@ public class AddFacesUrlReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

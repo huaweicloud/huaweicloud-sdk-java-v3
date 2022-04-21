@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询双活域响应体结构 */
+/**
+ * 查询双活域响应体结构
+ */
 public class ShowActiveActiveDomainParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** 双活域ID。
-     * 
-     * @return id */
+    /**
+     * 双活域ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** 双活域名称。
-     * 
-     * @return name */
+    /**
+     * 双活域名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -76,9 +80,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** 双活域描述。
-     * 
-     * @return description */
+    /**
+     * 双活域描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -92,9 +97,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** 表示该双活域下的资源是否售罄。
-     * 
-     * @return soldOut */
+    /**
+     * 表示该双活域下的资源是否售罄。
+     * @return soldOut
+     */
     public Boolean getSoldOut() {
         return soldOut;
     }
@@ -118,9 +124,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** Get localReplicationCluster
-     * 
-     * @return localReplicationCluster */
+    /**
+     * Get localReplicationCluster
+     * @return localReplicationCluster
+     */
     public ReplicationClusterParams getLocalReplicationCluster() {
         return localReplicationCluster;
     }
@@ -145,9 +152,10 @@ public class ShowActiveActiveDomainParams {
         return this;
     }
 
-    /** Get remoteReplicationCluster
-     * 
-     * @return remoteReplicationCluster */
+    /**
+     * Get remoteReplicationCluster
+     * @return remoteReplicationCluster
+     */
     public ReplicationClusterParams getRemoteReplicationCluster() {
         return remoteReplicationCluster;
     }
@@ -192,7 +200,10 @@ public class ShowActiveActiveDomainParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListConfigurationsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,16 +34,24 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     private List<QueryRedisConfig> redisConfig = null;
 
-    /** 实例修改状态 - UPDATING - FAILURE - SUCCESS */
+    /**
+    * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
+    */
     public static final class ConfigStatusEnum {
 
-        /** Enum UPDATING for value: "UPDATING" */
+        /**
+         * Enum UPDATING for value: "UPDATING"
+         */
         public static final ConfigStatusEnum UPDATING = new ConfigStatusEnum("UPDATING");
 
-        /** Enum FAILURE for value: "FAILURE" */
+        /**
+         * Enum FAILURE for value: "FAILURE"
+         */
         public static final ConfigStatusEnum FAILURE = new ConfigStatusEnum("FAILURE");
 
-        /** Enum SUCCESS for value: "SUCCESS" */
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
         public static final ConfigStatusEnum SUCCESS = new ConfigStatusEnum("SUCCESS");
 
         private static final Map<String, ConfigStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -122,9 +132,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例操作时间。格式为：2017-03-31T12:24:46.297Z
-     * 
-     * @return configTime */
+    /**
+     * 实例操作时间。格式为：2017-03-31T12:24:46.297Z
+     * @return configTime
+     */
     public String getConfigTime() {
         return configTime;
     }
@@ -138,9 +149,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -170,9 +182,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例配置项数组。
-     * 
-     * @return redisConfig */
+    /**
+     * 实例配置项数组。
+     * @return redisConfig
+     */
     public List<QueryRedisConfig> getRedisConfig() {
         return redisConfig;
     }
@@ -186,9 +199,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例修改状态 - UPDATING - FAILURE - SUCCESS
-     * 
-     * @return configStatus */
+    /**
+     * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
+     * @return configStatus
+     */
     public ConfigStatusEnum getConfigStatus() {
         return configStatus;
     }
@@ -202,9 +216,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例运行状态。
-     * 
-     * @return status */
+    /**
+     * 实例运行状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -247,7 +262,10 @@ public class ListConfigurationsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

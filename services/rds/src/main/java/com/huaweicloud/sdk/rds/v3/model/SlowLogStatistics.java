@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 慢日志信息。 */
+/**
+ * 慢日志信息。
+ */
 public class SlowLogStatistics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 执行次数。
-     * 
-     * @return count */
+    /**
+     * 执行次数。
+     * @return count
+     */
     public String getCount() {
         return count;
     }
@@ -79,9 +82,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 平均执行时间。
-     * 
-     * @return time */
+    /**
+     * 平均执行时间。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -95,9 +99,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 平均等待锁时间。
-     * 
-     * @return lockTime */
+    /**
+     * 平均等待锁时间。
+     * @return lockTime
+     */
     public String getLockTime() {
         return lockTime;
     }
@@ -111,9 +116,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 平均结果行数量。
-     * 
-     * @return rowsSent */
+    /**
+     * 平均结果行数量。
+     * @return rowsSent
+     */
     public Long getRowsSent() {
         return rowsSent;
     }
@@ -127,9 +133,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 平均扫描的行数量。
-     * 
-     * @return rowsExamined */
+    /**
+     * 平均扫描的行数量。
+     * @return rowsExamined
+     */
     public Long getRowsExamined() {
         return rowsExamined;
     }
@@ -143,9 +150,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 所属数据库。
-     * 
-     * @return database */
+    /**
+     * 所属数据库。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -159,9 +167,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 帐号。
-     * 
-     * @return users */
+    /**
+     * 帐号。
+     * @return users
+     */
     public String getUsers() {
         return users;
     }
@@ -175,9 +184,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 执行语法。
-     * 
-     * @return querySample */
+    /**
+     * 执行语法。
+     * @return querySample
+     */
     public String getQuerySample() {
         return querySample;
     }
@@ -191,9 +201,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** 语句类型。
-     * 
-     * @return type */
+    /**
+     * 语句类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -207,9 +218,10 @@ public class SlowLogStatistics {
         return this;
     }
 
-    /** IP地址。
-     * 
-     * @return clientIP */
+    /**
+     * IP地址。
+     * @return clientIP
+     */
     public String getClientIP() {
         return clientIP;
     }
@@ -262,7 +274,10 @@ public class SlowLogStatistics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

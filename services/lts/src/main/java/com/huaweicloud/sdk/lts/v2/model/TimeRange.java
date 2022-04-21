@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 此参数在请求实体中，采用json字符串格式。 */
+/**
+ * 此参数在请求实体中，采用json字符串格式。
+ */
 public class TimeRange {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class TimeRange {
         return this;
     }
 
-    /** 时区信息，默认为“UTC”。
-     * 
-     * @return sqlTimeZone */
+    /**
+     * 时区信息，默认为“UTC”。
+     * @return sqlTimeZone
+     */
     public String getSqlTimeZone() {
         return sqlTimeZone;
     }
@@ -54,9 +57,10 @@ public class TimeRange {
         return this;
     }
 
-    /** 搜索起始时间（UTC时间，毫秒级）。
-     * 
-     * @return startTime */
+    /**
+     * 搜索起始时间（UTC时间，毫秒级）。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -70,9 +74,10 @@ public class TimeRange {
         return this;
     }
 
-    /** 搜索起始时间（UTC时间，毫秒级）。
-     * 
-     * @return endTime */
+    /**
+     * 搜索起始时间（UTC时间，毫秒级）。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -86,9 +91,10 @@ public class TimeRange {
         return this;
     }
 
-    /** 搜索是否包含起始时间点，默认为false。
-     * 
-     * @return startTimeGt */
+    /**
+     * 搜索是否包含起始时间点，默认为false。
+     * @return startTimeGt
+     */
     public Boolean getStartTimeGt() {
         return startTimeGt;
     }
@@ -102,9 +108,10 @@ public class TimeRange {
         return this;
     }
 
-    /** 搜索是否包含结束时间点，默认为false。
-     * 
-     * @return endTimeLt */
+    /**
+     * 搜索是否包含结束时间点，默认为false。
+     * @return endTimeLt
+     */
     public Boolean getEndTimeLt() {
         return endTimeLt;
     }
@@ -146,7 +153,10 @@ public class TimeRange {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

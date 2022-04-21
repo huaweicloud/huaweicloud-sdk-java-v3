@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除测试用例请求体 */
+/**
+ * 批量删除测试用例请求体
+ */
 public class BatchDeleteTestCaseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,9 +28,10 @@ public class BatchDeleteTestCaseRequestBody {
         return this;
     }
 
-    /** 注册测试类型服务接口返回的服务id，取值范围为10-9999
-     * 
-     * @return serviceId */
+    /**
+     * 注册测试类型服务接口返回的服务id，取值范围为10-9999
+     * @return serviceId
+     */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -58,9 +61,10 @@ public class BatchDeleteTestCaseRequestBody {
         return this;
     }
 
-    /** 测试用例唯一标识，数组长度小于50个
-     * 
-     * @return testcaseIdList */
+    /**
+     * 测试用例唯一标识，数组长度小于50个
+     * @return testcaseIdList
+     */
     public List<String> getTestcaseIdList() {
         return testcaseIdList;
     }
@@ -97,7 +101,10 @@ public class BatchDeleteTestCaseRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

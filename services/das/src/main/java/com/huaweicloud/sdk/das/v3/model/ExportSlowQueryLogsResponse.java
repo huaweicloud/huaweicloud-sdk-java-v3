@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ExportSlowQueryLogsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
         return this;
     }
 
-    /** 慢SQL集合。当集合为空时，说明慢SQL已全部导出。
-     * 
-     * @return slowLogs */
+    /**
+     * 慢SQL集合。当集合为空时，说明慢SQL已全部导出。
+     * @return slowLogs
+     */
     public List<SlowLog> getSlowLogs() {
         return slowLogs;
     }
@@ -59,9 +62,10 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取下一页所需的标识符。marker仅在3分钟内有效。
-     * 
-     * @return nextMarker */
+    /**
+     * 获取下一页所需的标识符。marker仅在3分钟内有效。
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -98,7 +102,10 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

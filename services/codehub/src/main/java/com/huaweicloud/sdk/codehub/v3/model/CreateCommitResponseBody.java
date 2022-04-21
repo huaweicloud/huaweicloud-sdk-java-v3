@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCommitResponseBody */
+/**
+ * CreateCommitResponseBody
+ */
 public class CreateCommitResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交对应的SHA id
-     * 
-     * @return id */
+    /**
+     * 提交对应的SHA id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -98,9 +101,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交对应的短SHA id
-     * 
-     * @return shortId */
+    /**
+     * 提交对应的短SHA id
+     * @return shortId
+     */
     public String getShortId() {
         return shortId;
     }
@@ -114,9 +118,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交标题
-     * 
-     * @return title */
+    /**
+     * 提交标题
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -130,9 +135,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 作者
-     * 
-     * @return authorName */
+    /**
+     * 作者
+     * @return authorName
+     */
     public String getAuthorName() {
         return authorName;
     }
@@ -146,9 +152,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 作者邮箱
-     * 
-     * @return authorEmail */
+    /**
+     * 作者邮箱
+     * @return authorEmail
+     */
     public String getAuthorEmail() {
         return authorEmail;
     }
@@ -162,9 +169,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交作者
-     * 
-     * @return committerName */
+    /**
+     * 提交作者
+     * @return committerName
+     */
     public String getCommitterName() {
         return committerName;
     }
@@ -178,9 +186,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交作者邮箱
-     * 
-     * @return committerEmail */
+    /**
+     * 提交作者邮箱
+     * @return committerEmail
+     */
     public String getCommitterEmail() {
         return committerEmail;
     }
@@ -194,9 +203,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -210,9 +220,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交信息
-     * 
-     * @return message */
+    /**
+     * 提交信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -242,9 +253,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 父提交id
-     * 
-     * @return parentIds */
+    /**
+     * 父提交id
+     * @return parentIds
+     */
     public List<String> getParentIds() {
         return parentIds;
     }
@@ -258,9 +270,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 提交时间
-     * 
-     * @return committedDate */
+    /**
+     * 提交时间
+     * @return committedDate
+     */
     public OffsetDateTime getCommittedDate() {
         return committedDate;
     }
@@ -274,9 +287,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** 作者提交时间
-     * 
-     * @return authoredDate */
+    /**
+     * 作者提交时间
+     * @return authoredDate
+     */
     public OffsetDateTime getAuthoredDate() {
         return authoredDate;
     }
@@ -299,9 +313,10 @@ public class CreateCommitResponseBody {
         return this;
     }
 
-    /** Get stats
-     * 
-     * @return stats */
+    /**
+     * Get stats
+     * @return stats
+     */
     public CreateCommitResponseBodyStats getStats() {
         return stats;
     }
@@ -372,7 +387,10 @@ public class CreateCommitResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

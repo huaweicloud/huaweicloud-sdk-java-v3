@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class SqlserverDatabaseForDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class SqlserverDatabaseForDetail {
         return this;
     }
 
-    /** 数据库名称。
-     * 
-     * @return name */
+    /**
+     * 数据库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class SqlserverDatabaseForDetail {
         return this;
     }
 
-    /** 数据库使用的字符集，例如Chinese_PRC_CI_AS等。
-     * 
-     * @return characterSet */
+    /**
+     * 数据库使用的字符集，例如Chinese_PRC_CI_AS等。
+     * @return characterSet
+     */
     public String getCharacterSet() {
         return characterSet;
     }
@@ -60,9 +64,10 @@ public class SqlserverDatabaseForDetail {
         return this;
     }
 
-    /** 数据库状态。取值如下: Creating:表示创建中。 Running:表示使用中。 Deleting:表示删除中。 NotExists:表示不存在。
-     * 
-     * @return state */
+    /**
+     * 数据库状态。取值如下:  Creating:表示创建中。 Running:表示使用中。 Deleting:表示删除中。 NotExists:表示不存在。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -101,7 +106,10 @@ public class SqlserverDatabaseForDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -30,9 +30,10 @@ public class WordInfo {
         return this;
     }
 
-    /** 起始时间
-     * 
-     * @return startTime */
+    /**
+     * 起始时间
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -46,9 +47,10 @@ public class WordInfo {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -62,9 +64,10 @@ public class WordInfo {
         return this;
     }
 
-    /** 分词
-     * 
-     * @return word */
+    /**
+     * 分词
+     * @return word
+     */
     public String getWord() {
         return word;
     }
@@ -102,7 +105,10 @@ public class WordInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

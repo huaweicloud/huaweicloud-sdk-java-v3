@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MultiTaskUpdateBody */
+/**
+ * MultiTaskUpdateBody
+ */
 public class MultiTaskUpdateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,16 +28,24 @@ public class MultiTaskUpdateBody {
 
     private String taskTag;
 
-    /** Gets or Sets operationTypes */
+    /**
+     * Gets or Sets operationTypes
+     */
     public static final class OperationTypesEnum {
 
-        /** Enum INSERT for value: "INSERT" */
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
         public static final OperationTypesEnum INSERT = new OperationTypesEnum("INSERT");
 
-        /** Enum UPDATE for value: "UPDATE" */
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
         public static final OperationTypesEnum UPDATE = new OperationTypesEnum("UPDATE");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final OperationTypesEnum DELETE = new OperationTypesEnum("DELETE");
 
         private static final Map<String, OperationTypesEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +126,10 @@ public class MultiTaskUpdateBody {
         return this;
     }
 
-    /** 描述信息
-     * 
-     * @return description */
+    /**
+     * 描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -132,9 +143,10 @@ public class MultiTaskUpdateBody {
         return this;
     }
 
-    /** 任务标签,只能包含字母、数字、中划线、下划线
-     * 
-     * @return taskTag */
+    /**
+     * 任务标签,只能包含字母、数字、中划线、下划线
+     * @return taskTag
+     */
     public String getTaskTag() {
         return taskTag;
     }
@@ -164,9 +176,10 @@ public class MultiTaskUpdateBody {
         return this;
     }
 
-    /** 需要支持的操作类型，支持多选，至少需要选择以下一种： - INSERT - UPDATE - DELETE
-     * 
-     * @return operationTypes */
+    /**
+     * 需要支持的操作类型，支持多选，至少需要选择以下一种： - INSERT - UPDATE - DELETE
+     * @return operationTypes
+     */
     public List<OperationTypesEnum> getOperationTypes() {
         return operationTypes;
     }
@@ -180,9 +193,10 @@ public class MultiTaskUpdateBody {
         return this;
     }
 
-    /** 是否同步已有数据，仅在编辑任务时生效
-     * 
-     * @return repullingSnapshot */
+    /**
+     * 是否同步已有数据，仅在编辑任务时生效
+     * @return repullingSnapshot
+     */
     public Boolean getRepullingSnapshot() {
         return repullingSnapshot;
     }
@@ -223,7 +237,10 @@ public class MultiTaskUpdateBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

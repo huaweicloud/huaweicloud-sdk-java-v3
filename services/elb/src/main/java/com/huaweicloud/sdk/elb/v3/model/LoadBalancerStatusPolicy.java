@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LB状态树的转发策略状态信息 */
+/**
+ * LB状态树的转发策略状态信息
+ */
 public class LoadBalancerStatusPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 匹配后动作。取值： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
-     * 
-     * @return action */
+    /**
+     * 匹配后动作。取值： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -57,9 +60,10 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 转发策略ID。
-     * 
-     * @return id */
+    /**
+     * 转发策略ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -73,9 +77,10 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 转发策略的配置状态。取值： - ACTIVE：使用中，默认值。 - ERROR：表示当前策略与同一监听器下的其他策略存在相同的规则配置。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 转发策略的配置状态。取值： - ACTIVE：使用中，默认值。 - ERROR：表示当前策略与同一监听器下的其他策略存在相同的规则配置。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -89,9 +94,10 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 转发策略名称。
-     * 
-     * @return name */
+    /**
+     * 转发策略名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +127,10 @@ public class LoadBalancerStatusPolicy {
         return this;
     }
 
-    /** 转发规则状态信息。
-     * 
-     * @return rules */
+    /**
+     * 转发规则状态信息。
+     * @return rules
+     */
     public List<LoadBalancerStatusL7Rule> getRules() {
         return rules;
     }
@@ -166,7 +173,10 @@ public class LoadBalancerStatusPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会议用户统计数据的单个时间点数据。 */
+/**
+ * 会议用户统计数据的单个时间点数据。
+ */
 public class StatisticUserDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 日期/月份。
-     * 
-     * @return time */
+    /**
+     * 日期/月份。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -64,9 +67,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 登录用户数。 category = user_login_info时有效。
-     * 
-     * @return userLoginCount */
+    /**
+     * 登录用户数。 category = user_login_info时有效。
+     * @return userLoginCount
+     */
     public String getUserLoginCount() {
         return userLoginCount;
     }
@@ -80,9 +84,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** PC端登录用户数。 category = user_login_info时有效。
-     * 
-     * @return userPCLoginCount */
+    /**
+     * PC端登录用户数。 category = user_login_info时有效。
+     * @return userPCLoginCount
+     */
     public String getUserPCLoginCount() {
         return userPCLoginCount;
     }
@@ -96,9 +101,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 移动端登录用户数。 category = user_login_info时有效。
-     * 
-     * @return userMobileLoginCount */
+    /**
+     * 移动端登录用户数。 category = user_login_info时有效。
+     * @return userMobileLoginCount
+     */
     public String getUserMobileLoginCount() {
         return userMobileLoginCount;
     }
@@ -112,9 +118,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 激活用户数。 category = user_activate_info时有效。
-     * 
-     * @return userActivatedCount */
+    /**
+     * 激活用户数。 category = user_activate_info时有效。
+     * @return userActivatedCount
+     */
     public String getUserActivatedCount() {
         return userActivatedCount;
     }
@@ -128,9 +135,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 用户登录设备名称。 category = user_login_device_info时有效。
-     * 
-     * @return userLoginDevicesName */
+    /**
+     * 用户登录设备名称。 category = user_login_device_info时有效。
+     * @return userLoginDevicesName
+     */
     public String getUserLoginDevicesName() {
         return userLoginDevicesName;
     }
@@ -144,9 +152,10 @@ public class StatisticUserDataItem {
         return this;
     }
 
-    /** 用户登录设备数。 category = user_login_device_info时有效。
-     * 
-     * @return userLoginDevicesCount */
+    /**
+     * 用户登录设备数。 category = user_login_device_info时有效。
+     * @return userLoginDevicesCount
+     */
     public String getUserLoginDevicesCount() {
         return userLoginDevicesCount;
     }
@@ -199,7 +208,10 @@ public class StatisticUserDataItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

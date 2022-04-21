@@ -14,19 +14,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowApplicationResDeleteStatusResponse extends SdkResponse {
 
-    /** 代码仓删除状态,deleted:删除成功,failed:删除失败,going:正在删除中 */
+    /**
+     * 代码仓删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
+     */
     public static final class RepoStatusEnum {
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final RepoStatusEnum DELETED = new RepoStatusEnum("deleted");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final RepoStatusEnum FAILED = new RepoStatusEnum("failed");
 
-        /** Enum GOING for value: "going" */
+        /**
+         * Enum GOING for value: "going"
+         */
         public static final RepoStatusEnum GOING = new RepoStatusEnum("going");
 
         private static final Map<String, RepoStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +117,10 @@ public class ShowApplicationResDeleteStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
-     * 
-     * @return repoStatus */
+    /**
+     * 代码仓删除状态,deleted:删除成功,failed:删除失败,going:正在删除中
+     * @return repoStatus
+     */
     public RepoStatusEnum getRepoStatus() {
         return repoStatus;
     }
@@ -140,9 +151,10 @@ public class ShowApplicationResDeleteStatusResponse extends SdkResponse {
         return this;
     }
 
-    /** 流水线删除状态
-     * 
-     * @return pipelineStatus */
+    /**
+     * 流水线删除状态
+     * @return pipelineStatus
+     */
     public List<PipelineDeleteStatus> getPipelineStatus() {
         return pipelineStatus;
     }
@@ -180,7 +192,10 @@ public class ShowApplicationResDeleteStatusResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

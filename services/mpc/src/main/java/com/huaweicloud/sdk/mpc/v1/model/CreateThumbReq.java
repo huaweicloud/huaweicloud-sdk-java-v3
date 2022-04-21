@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateThumbReq */
+/**
+ * CreateThumbReq
+ */
 public class CreateThumbReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -83,9 +86,10 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -99,9 +103,10 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** 用户自定义数据。
-     * 
-     * @return userData */
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
     public String getUserData() {
         return userData;
     }
@@ -124,9 +129,10 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** Get thumbnailPara
-     * 
-     * @return thumbnailPara */
+    /**
+     * Get thumbnailPara
+     * @return thumbnailPara
+     */
     public ThumbnailPara getThumbnailPara() {
         return thumbnailPara;
     }
@@ -140,9 +146,12 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** 是否压缩抽帧图片生成tar包。 取值如下： - 0：压缩。 - 1：不压缩 默认值：1 minimum: 0 maximum: 1
-     * 
-     * @return tar */
+    /**
+     * 是否压缩抽帧图片生成tar包。  取值如下： - 0：压缩。 - 1：不压缩 默认值：1 
+     * minimum: 0
+     * maximum: 1
+     * @return tar
+     */
     public Integer getTar() {
         return tar;
     }
@@ -156,9 +165,12 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** 是否同步处理，同步处理是指不下载全部文件，快速定位到截图位置进行截图。 取值如下： - 0：排队处理。 - 1：同步处理，暂只支持按时间点截单张图。 默认值：0 minimum: 0 maximum: 1
-     * 
-     * @return sync */
+    /**
+     * 是否同步处理，同步处理是指不下载全部文件，快速定位到截图位置进行截图。  取值如下： - 0：排队处理。 - 1：同步处理，暂只支持按时间点截单张图。 默认值：0 
+     * minimum: 0
+     * maximum: 1
+     * @return sync
+     */
     public Integer getSync() {
         return sync;
     }
@@ -172,9 +184,12 @@ public class CreateThumbReq {
         return this;
     }
 
-    /** 是否使用原始输出目录。 取值如下： - 0：不使用原始输出目录，下发的输出目录后面追加随机目录，防止截图文件outputUri相同被覆盖。 - 1：使用原始输出目录。 默认值：0 minimum: 0 maximum: 1
-     * 
-     * @return originalDir */
+    /**
+     * 是否使用原始输出目录。  取值如下： - 0：不使用原始输出目录，下发的输出目录后面追加随机目录，防止截图文件outputUri相同被覆盖。 - 1：使用原始输出目录。 默认值：0 
+     * minimum: 0
+     * maximum: 1
+     * @return originalDir
+     */
     public Integer getOriginalDir() {
         return originalDir;
     }
@@ -219,7 +234,10 @@ public class CreateThumbReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

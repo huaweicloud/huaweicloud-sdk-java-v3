@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 测试用例其他扩展信息 */
+/**
+ * 测试用例其他扩展信息
+ */
 public class ExternalServiceBizCase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 测试用例描述信息，长度为[0-500]位字符
-     * 
-     * @return description */
+    /**
+     * 测试用例描述信息，长度为[0-500]位字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -87,9 +90,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 执行该测试用例时需要满足的前置条件，长度为[0-500]位字符
-     * 
-     * @return preparation */
+    /**
+     * 执行该测试用例时需要满足的前置条件，长度为[0-500]位字符
+     * @return preparation
+     */
     public String getPreparation() {
         return preparation;
     }
@@ -119,9 +123,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 测试步骤，数组长度小于10
-     * 
-     * @return steps */
+    /**
+     * 测试步骤，数组长度小于10
+     * @return steps
+     */
     public List<ExternalServiceCaseStep> getSteps() {
         return steps;
     }
@@ -151,9 +156,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 标签名称列表，数组长度小于25
-     * 
-     * @return labelList */
+    /**
+     * 标签名称列表，数组长度小于25
+     * @return labelList
+     */
     public List<String> getLabelList() {
         return labelList;
     }
@@ -167,9 +173,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 模块号，长度为[0-32]位字符
-     * 
-     * @return moduleId */
+    /**
+     * 模块号，长度为[0-32]位字符
+     * @return moduleId
+     */
     public String getModuleId() {
         return moduleId;
     }
@@ -183,9 +190,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 测试版本号，长度为[0-10]位字符
-     * 
-     * @return testVersionId */
+    /**
+     * 测试版本号，长度为[0-10]位字符
+     * @return testVersionId
+     */
     public String getTestVersionId() {
         return testVersionId;
     }
@@ -199,9 +207,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 迭代号，长度为[0-32]位字符
-     * 
-     * @return fixVersionId */
+    /**
+     * 迭代号，长度为[0-32]位字符
+     * @return fixVersionId
+     */
     public String getFixVersionId() {
         return fixVersionId;
     }
@@ -215,9 +224,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 处理者id信息，固定长度32位字符
-     * 
-     * @return assignedId */
+    /**
+     * 处理者id信息，固定长度32位字符
+     * @return assignedId
+     */
     public String getAssignedId() {
         return assignedId;
     }
@@ -231,9 +241,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 用例关联的需求id信息，长度为[0-32]位字符
-     * 
-     * @return issueId */
+    /**
+     * 用例关联的需求id信息，长度为[0-32]位字符
+     * @return issueId
+     */
     public String getIssueId() {
         return issueId;
     }
@@ -247,9 +258,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 测试用例状态信息，（0-新建，5-设计中，6-测试中，7-完成）
-     * 
-     * @return statusId */
+    /**
+     * 测试用例状态信息，（0-新建，5-设计中，6-测试中，7-完成）
+     * @return statusId
+     */
     public String getStatusId() {
         return statusId;
     }
@@ -279,9 +291,10 @@ public class ExternalServiceBizCase {
         return this;
     }
 
-    /** 缺陷id信息，数组长度小于50个
-     * 
-     * @return defectIdList */
+    /**
+     * 缺陷id信息，数组长度小于50个
+     * @return defectIdList
+     */
     public List<String> getDefectIdList() {
         return defectIdList;
     }
@@ -346,7 +359,10 @@ public class ExternalServiceBizCase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

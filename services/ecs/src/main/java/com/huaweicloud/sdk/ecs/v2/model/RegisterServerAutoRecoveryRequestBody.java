@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class RegisterServerAutoRecoveryRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class RegisterServerAutoRecoveryRequestBody {
         return this;
     }
 
-    /** 云服务器是否配置了自动恢复动作。 - true：表示配置自动恢复。 - false：表示删除自动恢复。
-     * 
-     * @return supportAutoRecovery */
+    /**
+     * 云服务器是否配置了自动恢复动作。  - true：表示配置自动恢复。 - false：表示删除自动恢复。
+     * @return supportAutoRecovery
+     */
     public String getSupportAutoRecovery() {
         return supportAutoRecovery;
     }
@@ -56,7 +59,10 @@ public class RegisterServerAutoRecoveryRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ProjectTemplates */
+/**
+ * ProjectTemplates
+ */
 public class ProjectTemplates {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -82,9 +85,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 显示名
-     * 
-     * @return displayName */
+    /**
+     * 显示名
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -98,9 +102,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 图标
-     * 
-     * @return logo */
+    /**
+     * 图标
+     * @return logo
+     */
     public String getLogo() {
         return logo;
     }
@@ -114,9 +119,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 模板名
-     * 
-     * @return name */
+    /**
+     * 模板名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -130,9 +136,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 路径
-     * 
-     * @return path */
+    /**
+     * 路径
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -146,9 +153,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 项目类型
-     * 
-     * @return projectType */
+    /**
+     * 项目类型
+     * @return projectType
+     */
     public String getProjectType() {
         return projectType;
     }
@@ -162,9 +170,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 区域
-     * 
-     * @return region */
+    /**
+     * 区域
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -187,9 +196,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** Get source
-     * 
-     * @return source */
+    /**
+     * Get source
+     * @return source
+     */
     public SourceStorage getSource() {
         return source;
     }
@@ -219,9 +229,10 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** tags
-     * 
-     * @return tags */
+    /**
+     * tags
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -235,9 +246,12 @@ public class ProjectTemplates {
         return this;
     }
 
-    /** 模板id minimum: 1 maximum: -9223372036854775616
-     * 
-     * @return templateId */
+    /**
+     * 模板id
+     * minimum: 1
+     * maximum: -9223372036854775616
+     * @return templateId
+     */
     public Long getTemplateId() {
         return templateId;
     }
@@ -288,7 +302,10 @@ public class ProjectTemplates {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

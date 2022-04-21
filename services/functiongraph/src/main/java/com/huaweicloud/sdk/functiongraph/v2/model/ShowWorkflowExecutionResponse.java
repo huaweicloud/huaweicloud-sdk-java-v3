@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowWorkflowExecutionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,22 +34,34 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
 
     private String executionId;
 
-    /** 流程实例执行状态 */
+    /**
+     * 流程实例执行状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAIL for value: "fail" */
+        /**
+         * Enum FAIL for value: "fail"
+         */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum TIMEOUT for value: "timeout" */
+        /**
+         * Enum TIMEOUT for value: "timeout"
+         */
         public static final StatusEnum TIMEOUT = new StatusEnum("timeout");
 
-        /** Enum CANCEL for value: "cancel" */
+        /**
+         * Enum CANCEL for value: "cancel"
+         */
         public static final StatusEnum CANCEL = new StatusEnum("cancel");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -165,9 +179,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程定义ID
-     * 
-     * @return workflowId */
+    /**
+     * 流程定义ID
+     * @return workflowId
+     */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -181,9 +196,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 唯一标识ID，流程URN
-     * 
-     * @return workflowUrn */
+    /**
+     * 唯一标识ID，流程URN
+     * @return workflowUrn
+     */
     public String getWorkflowUrn() {
         return workflowUrn;
     }
@@ -197,9 +213,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程执行实例ID
-     * 
-     * @return executionId */
+    /**
+     * 流程执行实例ID
+     * @return executionId
+     */
     public String getExecutionId() {
         return executionId;
     }
@@ -213,9 +230,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程实例执行状态
-     * 
-     * @return status */
+    /**
+     * 流程实例执行状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -229,9 +247,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 函数执行时需要的Header
-     * 
-     * @return headers */
+    /**
+     * 函数执行时需要的Header
+     * @return headers
+     */
     public Object getHeaders() {
         return headers;
     }
@@ -245,9 +264,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 函数执行时的入参
-     * 
-     * @return input */
+    /**
+     * 函数执行时的入参
+     * @return input
+     */
     public Object getInput() {
         return input;
     }
@@ -261,9 +281,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 函数执行结果
-     * 
-     * @return output */
+    /**
+     * 函数执行结果
+     * @return output
+     */
     public Object getOutput() {
         return output;
     }
@@ -277,9 +298,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程实例创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return beginTime */
+    /**
+     * 流程实例创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -293,9 +315,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程实例结束时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return endTime */
+    /**
+     * 流程实例结束时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -309,9 +332,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程实例上次更新时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return lastUpdateTime */
+    /**
+     * 流程实例上次更新时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return lastUpdateTime
+     */
     public String getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -325,9 +349,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 流程实例创建者
-     * 
-     * @return createdBy */
+    /**
+     * 流程实例创建者
+     * @return createdBy
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -358,9 +383,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点执行信息
-     * 
-     * @return nodeExecutionDetails */
+    /**
+     * 节点执行信息
+     * @return nodeExecutionDetails
+     */
     public List<NodeExecutionDetail> getNodeExecutionDetails() {
         return nodeExecutionDetails;
     }
@@ -428,7 +454,10 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListProductsRespValues */
+/**
+ * ListProductsRespValues
+ */
 public class ListProductsRespValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class ListProductsRespValues {
         return this;
     }
 
-    /** 规格详情。
-     * 
-     * @return detail */
+    /**
+     * 规格详情。
+     * @return detail
+     */
     public List<ListProductsRespDetail> getDetail() {
         return detail;
     }
@@ -68,9 +71,10 @@ public class ListProductsRespValues {
         return this;
     }
 
-    /** 实例类型。
-     * 
-     * @return name */
+    /**
+     * 实例类型。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -100,9 +104,10 @@ public class ListProductsRespValues {
         return this;
     }
 
-    /** 资源售罄的可用区列表。
-     * 
-     * @return unavailableZones */
+    /**
+     * 资源售罄的可用区列表。
+     * @return unavailableZones
+     */
     public List<String> getUnavailableZones() {
         return unavailableZones;
     }
@@ -132,9 +137,10 @@ public class ListProductsRespValues {
         return this;
     }
 
-    /** 有可用资源的可用区列表。
-     * 
-     * @return availableZones */
+    /**
+     * 有可用资源的可用区列表。
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -175,7 +181,10 @@ public class ListProductsRespValues {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

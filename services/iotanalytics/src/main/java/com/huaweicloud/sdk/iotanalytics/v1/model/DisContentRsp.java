@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DIS数据源配置内容 */
+/**
+ * DIS数据源配置内容
+ */
 public class DisContentRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DisContentRsp {
         return this;
     }
 
-    /** 通道名称
-     * 
-     * @return streamName */
+    /**
+     * 通道名称
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -49,9 +52,10 @@ public class DisContentRsp {
         return this;
     }
 
-    /** 租户的AK
-     * 
-     * @return ak */
+    /**
+     * 租户的AK
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -65,9 +69,10 @@ public class DisContentRsp {
         return this;
     }
 
-    /** 租户的SK
-     * 
-     * @return sk */
+    /**
+     * 租户的SK
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -81,9 +86,10 @@ public class DisContentRsp {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -122,7 +128,10 @@ public class DisContentRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

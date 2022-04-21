@@ -45,9 +45,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 复制的描述
-     * 
-     * @return description */
+    /**
+     * 复制的描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -61,9 +62,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 复制的目标项目ID
-     * 
-     * @return destinationProjectId */
+    /**
+     * 复制的目标项目ID
+     * @return destinationProjectId
+     */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -77,9 +79,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 复制的目标区域
-     * 
-     * @return destinationRegion */
+    /**
+     * 复制的目标区域
+     * @return destinationRegion
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -93,9 +96,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 复制的目标区域的存储库ID
-     * 
-     * @return destinationVaultId */
+    /**
+     * 复制的目标区域的存储库ID
+     * @return destinationVaultId
+     */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -109,9 +113,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 跨区域复制时，是否启用加速从而缩短复制的时间，如果不指定，默认不启用加速。
-     * 
-     * @return enableAcceleration */
+    /**
+     * 跨区域复制时，是否启用加速从而缩短复制的时间，如果不指定，默认不启用加速。
+     * @return enableAcceleration
+     */
     public Boolean getEnableAcceleration() {
         return enableAcceleration;
     }
@@ -125,9 +130,10 @@ public class BackupReplicateReqBody {
         return this;
     }
 
-    /** 复制名称
-     * 
-     * @return name */
+    /**
+     * 复制名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -173,7 +179,10 @@ public class BackupReplicateReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

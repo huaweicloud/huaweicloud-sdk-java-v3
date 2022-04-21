@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowRepoDomainsResponse */
+/**
+ * ShowRepoDomainsResponse
+ */
 public class ShowRepoDomainsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespace */
+    /**
+     * 命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -84,9 +87,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 镜像仓库
-     * 
-     * @return repository */
+    /**
+     * 镜像仓库
+     * @return repository
+     */
     public String getRepository() {
         return repository;
     }
@@ -100,9 +104,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 共享租户名
-     * 
-     * @return accessDomain */
+    /**
+     * 共享租户名
+     * @return accessDomain
+     */
     public String getAccessDomain() {
         return accessDomain;
     }
@@ -116,9 +121,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return permit */
+    /**
+     * 权限
+     * @return permit
+     */
     public String getPermit() {
         return permit;
     }
@@ -132,9 +138,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 截止时间
-     * 
-     * @return deadline */
+    /**
+     * 截止时间
+     * @return deadline
+     */
     public String getDeadline() {
         return deadline;
     }
@@ -148,9 +155,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -164,9 +172,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 创建者ID
-     * 
-     * @return creatorId */
+    /**
+     * 创建者ID
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -180,9 +189,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 创建者名称
-     * 
-     * @return creatorName */
+    /**
+     * 创建者名称
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -196,9 +206,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 镜像创建时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return created */
+    /**
+     * 镜像创建时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -212,9 +223,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 镜像更新时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * 
-     * @return updated */
+    /**
+     * 镜像更新时间，UTC时间格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -228,9 +240,10 @@ public class ShowRepoDomainsResponse {
         return this;
     }
 
-    /** 是否过期：true:有效；false:过期
-     * 
-     * @return status */
+    /**
+     * 是否过期：true:有效；false:过期
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -295,7 +308,10 @@ public class ShowRepoDomainsResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -48,9 +48,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组名称
-     * 
-     * @return name */
+    /**
+     * 安全组名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +65,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组描述
-     * 
-     * @return description */
+    /**
+     * 安全组描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -80,9 +82,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组唯一标识
-     * 
-     * @return id */
+    /**
+     * 安全组唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -96,9 +99,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组所在的vpc的资源标识
-     * 
-     * @return vpcId */
+    /**
+     * 安全组所在的vpc的资源标识
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -112,9 +116,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -144,9 +149,10 @@ public class SecurityGroup {
         return this;
     }
 
-    /** 安全组规则
-     * 
-     * @return securityGroupRules */
+    /**
+     * 安全组规则
+     * @return securityGroupRules
+     */
     public List<SecurityGroupRule> getSecurityGroupRules() {
         return securityGroupRules;
     }
@@ -190,7 +196,10 @@ public class SecurityGroup {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

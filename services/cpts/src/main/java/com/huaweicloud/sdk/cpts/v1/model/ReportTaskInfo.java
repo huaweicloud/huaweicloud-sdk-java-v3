@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 报告任务信息 */
+/**
+ * 报告任务信息
+ */
 public class ReportTaskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ReportTaskInfo {
         return this;
     }
 
-    /** 分钟*并发数
-     * 
-     * @return vum */
+    /**
+     * 分钟*并发数
+     * @return vum
+     */
     public Double getVum() {
         return vum;
     }
@@ -55,7 +58,10 @@ public class ReportTaskInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateInstanceBy3rdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateInstanceBy3rdRequest {
         return this;
     }
 
-    /** 实例标签（不同的第三方需要和CloudIDE服务共同设定标签）。不传默认为classroom
-     * 
-     * @return instanceLabel */
+    /**
+     * 实例标签（不同的第三方需要和CloudIDE服务共同设定标签）。不传默认为classroom
+     * @return instanceLabel
+     */
     public String getInstanceLabel() {
         return instanceLabel;
     }
@@ -49,9 +52,10 @@ public class CreateInstanceBy3rdRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public InstanceEdgeParam getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class CreateInstanceBy3rdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

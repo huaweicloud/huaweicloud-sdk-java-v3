@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Counters */
+/**
+ * Counters
+ */
 public class Counters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Counters {
         return this;
     }
 
-    /** Get orgApacheSqoopSubmissionCounterSqoopCounters
-     * 
-     * @return orgApacheSqoopSubmissionCounterSqoopCounters */
+    /**
+     * Get orgApacheSqoopSubmissionCounterSqoopCounters
+     * @return orgApacheSqoopSubmissionCounterSqoopCounters
+     */
     public Counter getOrgApacheSqoopSubmissionCounterSqoopCounters() {
         return orgApacheSqoopSubmissionCounterSqoopCounters;
     }
@@ -71,7 +74,10 @@ public class Counters {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

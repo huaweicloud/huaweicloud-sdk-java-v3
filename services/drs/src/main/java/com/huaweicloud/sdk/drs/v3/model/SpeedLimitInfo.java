@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 限制迁移速度请求体 */
+/**
+ * 限制迁移速度请求体
+ */
 public class SpeedLimitInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SpeedLimitInfo {
         return this;
     }
 
-    /** 开始限速时间, 此时间为UTC时间，开始时间为整时，若有分钟，则会忽略，格式为hh:mm，小时数为两位，例如：01:00。
-     * 
-     * @return begin */
+    /**
+     * 开始限速时间, 此时间为UTC时间，开始时间为整时，若有分钟，则会忽略，格式为hh:mm，小时数为两位，例如：01:00。
+     * @return begin
+     */
     public String getBegin() {
         return begin;
     }
@@ -49,9 +52,10 @@ public class SpeedLimitInfo {
         return this;
     }
 
-    /** 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
-     * 
-     * @return end */
+    /**
+     * 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
+     * @return end
+     */
     public String getEnd() {
         return end;
     }
@@ -65,9 +69,10 @@ public class SpeedLimitInfo {
         return this;
     }
 
-    /** 限速，取值范围为1~9999 ,单位为MB/s
-     * 
-     * @return speed */
+    /**
+     * 限速，取值范围为1~9999 ,单位为MB/s
+     * @return speed
+     */
     public String getSpeed() {
         return speed;
     }
@@ -81,9 +86,10 @@ public class SpeedLimitInfo {
         return this;
     }
 
-    /** 是否为UTC时间
-     * 
-     * @return isUtc */
+    /**
+     * 是否为UTC时间
+     * @return isUtc
+     */
     public Boolean getIsUtc() {
         return isUtc;
     }
@@ -122,7 +128,10 @@ public class SpeedLimitInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ApiActionInfo */
+/**
+ * ApiActionInfo
+ */
 public class ApiActionInfo {
 
-    /** 需要进行的操作。 - online：发布 - offline：下线 */
+    /**
+     * 需要进行的操作。 - online：发布 - offline：下线
+     */
     public static final class ActionEnum {
 
-        /** Enum ONLINE for value: "online" */
+        /**
+         * Enum ONLINE for value: "online"
+         */
         public static final ActionEnum ONLINE = new ActionEnum("online");
 
-        /** Enum OFFLINE for value: "offline" */
+        /**
+         * Enum OFFLINE for value: "offline"
+         */
         public static final ActionEnum OFFLINE = new ActionEnum("offline");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -109,9 +117,10 @@ public class ApiActionInfo {
         return this;
     }
 
-    /** 需要进行的操作。 - online：发布 - offline：下线
-     * 
-     * @return action */
+    /**
+     * 需要进行的操作。 - online：发布 - offline：下线
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -125,9 +134,10 @@ public class ApiActionInfo {
         return this;
     }
 
-    /** 环境的编号，即：API需要发布到哪个环境
-     * 
-     * @return envId */
+    /**
+     * 环境的编号，即：API需要发布到哪个环境
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -141,9 +151,10 @@ public class ApiActionInfo {
         return this;
     }
 
-    /** API的编号，即：需要进行发布或下线的API的编号
-     * 
-     * @return apiId */
+    /**
+     * API的编号，即：需要进行发布或下线的API的编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -157,9 +168,10 @@ public class ApiActionInfo {
         return this;
     }
 
-    /** 对发布动作的简述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 对发布动作的简述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -198,7 +210,10 @@ public class ApiActionInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return id */
+    /**
+     * 策略id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -75,9 +78,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略名字
-     * 
-     * @return name */
+    /**
+     * 策略名字
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +95,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略类型
-     * 
-     * @return policyType */
+    /**
+     * 策略类型
+     * @return policyType
+     */
     public String getPolicyType() {
         return policyType;
     }
@@ -107,9 +112,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略描述
-     * 
-     * @return description */
+    /**
+     * 策略描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +129,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略语法类型
-     * 
-     * @return policyRuleType */
+    /**
+     * 策略语法类型
+     * @return policyRuleType
+     */
     public String getPolicyRuleType() {
         return policyRuleType;
     }
@@ -139,9 +146,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略规则
-     * 
-     * @return policyRule */
+    /**
+     * 策略规则
+     * @return policyRule
+     */
     public Object getPolicyRule() {
         return policyRule;
     }
@@ -171,9 +179,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词列表
-     * 
-     * @return keywords */
+    /**
+     * 关键词列表
+     * @return keywords
+     */
     public List<String> getKeywords() {
         return keywords;
     }
@@ -204,9 +213,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略参数
-     * 
-     * @return parameters */
+    /**
+     * 策略参数
+     * @return parameters
+     */
     public Map<String, PolicyParameterDefinition> getParameters() {
         return parameters;
     }
@@ -256,7 +266,10 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

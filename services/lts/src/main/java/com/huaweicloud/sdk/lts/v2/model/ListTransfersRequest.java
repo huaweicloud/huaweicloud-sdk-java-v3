@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTransfersRequest {
 
-    /** 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储 */
+    /**
+     * 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储
+     */
     public static final class LogTransferTypeEnum {
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final LogTransferTypeEnum OBS = new LogTransferTypeEnum("OBS");
 
-        /** Enum DIS for value: "DIS" */
+        /**
+         * Enum DIS for value: "DIS"
+         */
         public static final LogTransferTypeEnum DIS = new LogTransferTypeEnum("DIS");
 
-        /** Enum DMS for value: "DMS" */
+        /**
+         * Enum DMS for value: "DMS"
+         */
         public static final LogTransferTypeEnum DMS = new LogTransferTypeEnum("DMS");
 
         private static final Map<String, LogTransferTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class ListTransfersRequest {
         return this;
     }
 
-    /** 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储
-     * 
-     * @return logTransferType */
+    /**
+     * 日志转储类型。OBS指OBS日志转储，DIS指DIS日志转储，DMS指DMS日志转储
+     * @return logTransferType
+     */
     public LogTransferTypeEnum getLogTransferType() {
         return logTransferType;
     }
@@ -134,9 +145,10 @@ public class ListTransfersRequest {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -150,9 +162,10 @@ public class ListTransfersRequest {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -166,9 +179,12 @@ public class ListTransfersRequest {
         return this;
     }
 
-    /** 查询游标，初始传入0，后续从上一次的返回值中获取 minimum: 0 maximum: 1024
-     * 
-     * @return offset */
+    /**
+     * 查询游标，初始传入0，后续从上一次的返回值中获取
+     * minimum: 0
+     * maximum: 1024
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -182,9 +198,12 @@ public class ListTransfersRequest {
         return this;
     }
 
-    /** 每页数据量，最大值为100 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页数据量，最大值为100
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -227,7 +246,10 @@ public class ListTransfersRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExpandInstanceNodeRequestBody */
+/**
+ * ExpandInstanceNodeRequestBody
+ */
 public class ExpandInstanceNodeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ExpandInstanceNodeRequestBody {
         return this;
     }
 
-    /** 新增加的节点数量。
-     * 
-     * @return num */
+    /**
+     * 新增加的节点数量。
+     * @return num
+     */
     public Integer getNum() {
         return num;
     }
@@ -39,9 +42,10 @@ public class ExpandInstanceNodeRequestBody {
         return this;
     }
 
-    /** 创建包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
-     * 
-     * @return isAutoPay */
+    /**
+     * 创建包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
     public String getIsAutoPay() {
         return isAutoPay;
     }
@@ -78,7 +82,10 @@ public class ExpandInstanceNodeRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InvoiceRequestInfoIntl */
+/**
+ * InvoiceRequestInfoIntl
+ */
 public class InvoiceRequestInfoIntl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -126,9 +128,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 请求ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -142,9 +145,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 驳回原因。
-     * 
-     * @return cancelReason */
+    /**
+     * 驳回原因。
+     * @return cancelReason
+     */
     public String getCancelReason() {
         return cancelReason;
     }
@@ -158,9 +162,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 开票类型。 0：个人1：企业
-     * 
-     * @return titleType */
+    /**
+     * 开票类型。 0：个人1：企业
+     * @return titleType
+     */
     public Integer getTitleType() {
         return titleType;
     }
@@ -174,9 +179,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 渠道类型。 0：华为云
-     * 
-     * @return channelType */
+    /**
+     * 渠道类型。 0：华为云
+     * @return channelType
+     */
     public Integer getChannelType() {
         return channelType;
     }
@@ -190,9 +196,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票种类。 0：增值税专用发票1：增值税普通发票
-     * 
-     * @return invoiceType */
+    /**
+     * 发票种类。 0：增值税专用发票1：增值税普通发票
+     * @return invoiceType
+     */
     public Integer getInvoiceType() {
         return invoiceType;
     }
@@ -206,9 +213,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票抬头。
-     * 
-     * @return invoiceTitle */
+    /**
+     * 发票抬头。
+     * @return invoiceTitle
+     */
     public String getInvoiceTitle() {
         return invoiceTitle;
     }
@@ -222,9 +230,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 已开票金额（美元） 。
-     * 
-     * @return invoiceAmount */
+    /**
+     * 已开票金额（美元） 。
+     * @return invoiceAmount
+     */
     public Double getInvoiceAmount() {
         return invoiceAmount;
     }
@@ -238,9 +247,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 开票方式。 0：账期1：到账2：订单
-     * 
-     * @return invoiceMethod */
+    /**
+     * 开票方式。 0：账期1：到账2：订单
+     * @return invoiceMethod
+     */
     public Integer getInvoiceMethod() {
         return invoiceMethod;
     }
@@ -254,9 +264,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票类别。 0：税票1：商票
-     * 
-     * @return invoiceClass */
+    /**
+     * 发票类别。 0：税票1：商票
+     * @return invoiceClass
+     */
     public Integer getInvoiceClass() {
         return invoiceClass;
     }
@@ -270,9 +281,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 开票状态。 0：草稿1：待审核4：等待导出发票文件5：等待发票文件回填6：等待邮寄确认7：等待回执确认8：完成9：已退票11：等待驳回审核13：退票待审核14：待退票状态回填15：退票失败
-     * 
-     * @return invoiceState */
+    /**
+     * 开票状态。 0：草稿1：待审核4：等待导出发票文件5：等待发票文件回填6：等待邮寄确认7：等待回执确认8：完成9：已退票11：等待驳回审核13：退票待审核14：待退票状态回填15：退票失败
+     * @return invoiceState
+     */
     public Integer getInvoiceState() {
         return invoiceState;
     }
@@ -286,9 +298,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票申请人员。
-     * 
-     * @return applyOpera */
+    /**
+     * 发票申请人员。
+     * @return applyOpera
+     */
     public String getApplyOpera() {
         return applyOpera;
     }
@@ -311,9 +324,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** Get addressInfo
-     * 
-     * @return addressInfo */
+    /**
+     * Get addressInfo
+     * @return addressInfo
+     */
     public PostAddressInfoIntl getAddressInfo() {
         return addressInfo;
     }
@@ -327,9 +341,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 申请时间（UTC时间）。
-     * 
-     * @return applyTime */
+    /**
+     * 申请时间（UTC时间）。
+     * @return applyTime
+     */
     public String getApplyTime() {
         return applyTime;
     }
@@ -343,9 +358,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票类型。 0：纸质票
-     * 
-     * @return invoiceMode */
+    /**
+     * 发票类型。 0：纸质票
+     * @return invoiceMode
+     */
     public String getInvoiceMode() {
         return invoiceMode;
     }
@@ -359,9 +375,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 电子发票寄送地。
-     * 
-     * @return email */
+    /**
+     * 电子发票寄送地。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -375,9 +392,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 申请类型。 0：开票申请1：退票申请2：正向开票已退票
-     * 
-     * @return requestMode */
+    /**
+     * 申请类型。 0：开票申请1：退票申请2：正向开票已退票
+     * @return requestMode
+     */
     public String getRequestMode() {
         return requestMode;
     }
@@ -391,9 +409,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 退票时的原申请ID。
-     * 
-     * @return srcRequestId */
+    /**
+     * 退票时的原申请ID。
+     * @return srcRequestId
+     */
     public String getSrcRequestId() {
         return srcRequestId;
     }
@@ -407,9 +426,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 签约主体ID。
-     * 
-     * @return salesId */
+    /**
+     * 签约主体ID。
+     * @return salesId
+     */
     public String getSalesId() {
         return salesId;
     }
@@ -423,9 +443,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票号码。
-     * 
-     * @return invoiceNo */
+    /**
+     * 发票号码。
+     * @return invoiceNo
+     */
     public String getInvoiceNo() {
         return invoiceNo;
     }
@@ -439,9 +460,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 交易类型。 3：结算信用卡扣减4：结算未结清开票5：先开票后到款6：BP月结开票7：充值开票8：包年/包月在线支付开票10：普通提现开票
-     * 
-     * @return tradeType */
+    /**
+     * 交易类型。 3：结算信用卡扣减4：结算未结清开票5：先开票后到款6：BP月结开票7：充值开票8：包年/包月在线支付开票10：普通提现开票
+     * @return tradeType
+     */
     public Integer getTradeType() {
         return tradeType;
     }
@@ -455,9 +477,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 发票账期。
-     * 
-     * @return billCycle */
+    /**
+     * 发票账期。
+     * @return billCycle
+     */
     public String getBillCycle() {
         return billCycle;
     }
@@ -487,9 +510,10 @@ public class InvoiceRequestInfoIntl {
         return this;
     }
 
-    /** 税务信息列表，参见表4。
-     * 
-     * @return taxList */
+    /**
+     * 税务信息列表，参见表4。
+     * @return taxList
+     */
     public List<TaxInfo> getTaxList() {
         return taxList;
     }
@@ -587,7 +611,10 @@ public class InvoiceRequestInfoIntl {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

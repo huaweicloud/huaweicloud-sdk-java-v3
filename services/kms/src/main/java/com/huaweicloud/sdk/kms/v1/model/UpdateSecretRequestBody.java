@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新凭据对象的元数据信息请求体 */
+/**
+ * 更新凭据对象的元数据信息请求体
+ */
 public class UpdateSecretRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdateSecretRequestBody {
         return this;
     }
 
-    /** 凭据名称。 约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。
-     * 
-     * @return name */
+    /**
+     * 凭据名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class UpdateSecretRequestBody {
         return this;
     }
 
-    /** 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。
-     * 
-     * @return kmsKeyId */
+    /**
+     * 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。 
+     * @return kmsKeyId
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -60,9 +64,10 @@ public class UpdateSecretRequestBody {
         return this;
     }
 
-    /** 凭据的描述信息。 约束：2048字节。
-     * 
-     * @return description */
+    /**
+     * 凭据的描述信息。  约束：2048字节。 
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -101,7 +106,10 @@ public class UpdateSecretRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

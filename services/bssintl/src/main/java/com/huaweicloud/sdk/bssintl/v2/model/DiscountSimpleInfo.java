@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DiscountSimpleInfo */
+/**
+ * DiscountSimpleInfo
+ */
 public class DiscountSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DiscountSimpleInfo {
         return this;
     }
 
-    /** 折扣ID。
-     * 
-     * @return id */
+    /**
+     * 折扣ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -39,10 +42,12 @@ public class DiscountSimpleInfo {
         return this;
     }
 
-    /** 折扣类型： 0：促销折扣 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。 minimum: 0 maximum:
-     * 609
-     * 
-     * @return type */
+    /**
+     * 折扣类型： 0：促销折扣 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。
+     * minimum: 0
+     * maximum: 609
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -78,7 +83,10 @@ public class DiscountSimpleInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

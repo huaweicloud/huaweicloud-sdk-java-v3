@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListServiceDescribeDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,11 +26,14 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
 
     private String serviceName;
 
-    /** 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和
-     * 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。 */
+    /**
+     * 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     */
     public static final class ServiceTypeEnum {
 
-        /** Enum INTERFACE for value: "interface" */
+        /**
+         * Enum INTERFACE for value: "interface"
+         */
         public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
 
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -112,9 +117,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点服务的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -128,9 +134,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务的名称。
-     * 
-     * @return serviceName */
+    /**
+     * 终端节点服务的名称。
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -144,10 +151,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和
-     * 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
-     * 
-     * @return serviceType */
+    /**
+     * 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     * @return serviceType
+     */
     public ServiceTypeEnum getServiceType() {
         return serviceType;
     }
@@ -161,9 +168,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -177,9 +185,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
-     * 
-     * @return isCharge */
+    /**
+     * 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
+     * @return isCharge
+     */
     public Boolean getIsCharge() {
         return isCharge;
     }
@@ -222,7 +231,10 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

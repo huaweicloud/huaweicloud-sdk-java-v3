@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCesHierarchyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    /** 监控维度。
-     * 
-     * @return dimensions */
+    /**
+     * 监控维度。
+     * @return dimensions
+     */
     public List<ShowCeshierarchyRespDimensions> getDimensions() {
         return dimensions;
     }
@@ -90,9 +93,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例信息。
-     * 
-     * @return instanceIds */
+    /**
+     * 实例信息。
+     * @return instanceIds
+     */
     public List<ShowCeshierarchyRespInstanceIds> getInstanceIds() {
         return instanceIds;
     }
@@ -122,9 +126,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点信息。
-     * 
-     * @return nodes */
+    /**
+     * 节点信息。
+     * @return nodes
+     */
     public List<ShowCeshierarchyRespNodes> getNodes() {
         return nodes;
     }
@@ -154,9 +159,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列信息。
-     * 
-     * @return queues */
+    /**
+     * 队列信息。
+     * @return queues
+     */
     public List<ShowCeshierarchyRespQueues> getQueues() {
         return queues;
     }
@@ -186,9 +192,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    /** 消费组信息。
-     * 
-     * @return groups */
+    /**
+     * 消费组信息。
+     * @return groups
+     */
     public List<ShowCeshierarchyRespGroups> getGroups() {
         return groups;
     }
@@ -231,7 +238,10 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

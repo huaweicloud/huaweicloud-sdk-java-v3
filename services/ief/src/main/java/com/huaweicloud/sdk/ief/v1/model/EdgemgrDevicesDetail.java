@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 终端设备属性 */
+/**
+ * 终端设备属性
+ */
 public class EdgemgrDevicesDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 终端设备ID，只允许英文字母、数字、下划线、中划线，必须以英文字母和数字开头，长度限制为24~64之间
-     * 
-     * @return id */
+    /**
+     * 终端设备ID，只允许英文字母、数字、下划线、中划线，必须以英文字母和数字开头，长度限制为24~64之间
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -77,9 +80,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 终端设备名称，只允许中文字符、英文字母、数字、下划线、中划线，长度限制为1~64
-     * 
-     * @return name */
+    /**
+     * 终端设备名称，只允许中文字符、英文字母、数字、下划线、中划线，长度限制为1~64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -93,9 +97,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 终端设备描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
-     * 
-     * @return description */
+    /**
+     * 终端设备描述，最大长度255，不允许^ ~ # $ % & * < > ( ) [ ] { } ' \" \\
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -125,9 +130,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** Get attributes
-     * 
-     * @return attributes */
+    /**
+     * Get attributes
+     * @return attributes
+     */
     public Map<String, ValueInAttributes> getAttributes() {
         return attributes;
     }
@@ -141,9 +147,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 连接类型，默认为edge
-     * 
-     * @return connectionType */
+    /**
+     * 连接类型，默认为edge
+     * @return connectionType
+     */
     public String getConnectionType() {
         return connectionType;
     }
@@ -157,9 +164,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 访问协议，有如下选项： - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议 默认为userdefine
-     * 
-     * @return accessProtocol */
+    /**
+     * 访问协议，有如下选项： - userdefine：自定义协议 - modbus：modbus协议 - opc-ua：opc-ua协议 默认为userdefine
+     * @return accessProtocol
+     */
     public String getAccessProtocol() {
         return accessProtocol;
     }
@@ -189,9 +197,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 终端设备动态属性
-     * 
-     * @return twin */
+    /**
+     * 终端设备动态属性
+     * @return twin
+     */
     public Map<String, ValueInTwin> getTwin() {
         return twin;
     }
@@ -214,9 +223,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** Get accessConfig
-     * 
-     * @return accessConfig */
+    /**
+     * Get accessConfig
+     * @return accessConfig
+     */
     public AccessConfig getAccessConfig() {
         return accessConfig;
     }
@@ -247,9 +257,10 @@ public class EdgemgrDevicesDetail {
         return this;
     }
 
-    /** 孪生属性配置
-     * 
-     * @return propertyVisitors */
+    /**
+     * 孪生属性配置
+     * @return propertyVisitors
+     */
     public Map<String, ValueInPropertyVisitors> getPropertyVisitors() {
         return propertyVisitors;
     }
@@ -307,7 +318,10 @@ public class EdgemgrDevicesDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

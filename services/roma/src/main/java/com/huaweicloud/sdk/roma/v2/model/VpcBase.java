@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** VpcBase */
+/**
+ * VpcBase
+ */
 public class VpcBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class VpcBase {
 
     private Integer port;
 
-    /** 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri） */
+    /**
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
+     */
     public static final class BalanceStrategyEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4);
 
         private static final Map<Integer, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
@@ -107,13 +119,19 @@ public class VpcBase {
 
     private BalanceStrategyEnum balanceStrategy;
 
-    /** VPC通道的成员类型。[site场景必须修改成IP类型](tag:Site) - ip - ecs */
+    /**
+     * VPC通道的成员类型。[site场景必须修改成IP类型](tag:Site) - ip - ecs
+     */
     public static final class MemberTypeEnum {
 
-        /** Enum IP for value: "ip" */
+        /**
+         * Enum IP for value: "ip"
+         */
         public static final MemberTypeEnum IP = new MemberTypeEnum("ip");
 
-        /** Enum ECS for value: "ecs" */
+        /**
+         * Enum ECS for value: "ecs"
+         */
         public static final MemberTypeEnum ECS = new MemberTypeEnum("ecs");
 
         private static final Map<String, MemberTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -193,9 +211,10 @@ public class VpcBase {
         return this;
     }
 
-    /** VPC通道的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、中划线、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return name */
+    /**
+     * VPC通道的名称。  长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、中划线、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -209,9 +228,10 @@ public class VpcBase {
         return this;
     }
 
-    /** VPC通道中主机的端口号。 取值范围1 ~ 65535。
-     * 
-     * @return port */
+    /**
+     * VPC通道中主机的端口号。  取值范围1 ~ 65535。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -225,9 +245,10 @@ public class VpcBase {
         return this;
     }
 
-    /** 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
-     * 
-     * @return balanceStrategy */
+    /**
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
+     * @return balanceStrategy
+     */
     public BalanceStrategyEnum getBalanceStrategy() {
         return balanceStrategy;
     }
@@ -241,9 +262,10 @@ public class VpcBase {
         return this;
     }
 
-    /** VPC通道的成员类型。[site场景必须修改成IP类型](tag:Site) - ip - ecs
-     * 
-     * @return memberType */
+    /**
+     * VPC通道的成员类型。[site场景必须修改成IP类型](tag:Site) - ip - ecs
+     * @return memberType
+     */
     public MemberTypeEnum getMemberType() {
         return memberType;
     }
@@ -257,9 +279,10 @@ public class VpcBase {
         return this;
     }
 
-    /** VPC通道的字典编码 支持英文，数字，特殊字符（-_.） 暂不支持
-     * 
-     * @return dictCode */
+    /**
+     * VPC通道的字典编码  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
     public String getDictCode() {
         return dictCode;
     }
@@ -300,7 +323,10 @@ public class VpcBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

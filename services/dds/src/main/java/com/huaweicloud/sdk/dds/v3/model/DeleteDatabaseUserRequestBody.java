@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DeleteDatabaseUserRequestBody */
+/**
+ * DeleteDatabaseUserRequestBody
+ */
 public class DeleteDatabaseUserRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteDatabaseUserRequestBody {
         return this;
     }
 
-    /** 数据库用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
-     * 
-     * @return userName */
+    /**
+     * 数据库用户名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -39,9 +42,10 @@ public class DeleteDatabaseUserRequestBody {
         return this;
     }
 
-    /** 用户所在的数据库。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
-     * 
-     * @return dbName */
+    /**
+     * 用户所在的数据库。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
+     * @return dbName
+     */
     public String getDbName() {
         return dbName;
     }
@@ -78,7 +82,10 @@ public class DeleteDatabaseUserRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

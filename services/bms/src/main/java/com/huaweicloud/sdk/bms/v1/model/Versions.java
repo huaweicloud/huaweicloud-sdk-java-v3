@@ -14,13 +14,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 描述裸金属服务器API版本信息列表 */
+/**
+ * 描述裸金属服务器API版本信息列表
+ */
 public class Versions {
 
-    /** API版本ID */
+    /**
+     * API版本ID
+     */
     public static final class IdEnum {
 
-        /** Enum V1 for value: "v1" */
+        /**
+         * Enum V1 for value: "v1"
+         */
         public static final IdEnum V1 = new IdEnum("v1");
 
         private static final Map<String, IdEnum> STATIC_FIELDS = createStaticFields();
@@ -99,16 +105,24 @@ public class Versions {
 
     private String minVersion;
 
-    /** 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除 */
+    /**
+     * 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
+     */
     public static final class StatusEnum {
 
-        /** Enum CURRENT for value: "CURRENT" */
+        /**
+         * Enum CURRENT for value: "CURRENT"
+         */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
 
-        /** Enum SUPPORTED for value: "SUPPORTED" */
+        /**
+         * Enum SUPPORTED for value: "SUPPORTED"
+         */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
 
-        /** Enum DEPRECATED for value: "DEPRECATED" */
+        /**
+         * Enum DEPRECATED for value: "DEPRECATED"
+         */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -194,9 +208,10 @@ public class Versions {
         return this;
     }
 
-    /** API版本ID
-     * 
-     * @return id */
+    /**
+     * API版本ID
+     * @return id
+     */
     public IdEnum getId() {
         return id;
     }
@@ -226,9 +241,10 @@ public class Versions {
         return this;
     }
 
-    /** API的url地址
-     * 
-     * @return links */
+    /**
+     * API的url地址
+     * @return links
+     */
     public List<VersionLinks> getLinks() {
         return links;
     }
@@ -242,9 +258,10 @@ public class Versions {
         return this;
     }
 
-    /** API支持的最小微版本号
-     * 
-     * @return minVersion */
+    /**
+     * API支持的最小微版本号
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -258,9 +275,10 @@ public class Versions {
         return this;
     }
 
-    /** 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
-     * 
-     * @return status */
+    /**
+     * 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -274,9 +292,10 @@ public class Versions {
         return this;
     }
 
-    /** API支持的最大微版本号
-     * 
-     * @return version */
+    /**
+     * API支持的最大微版本号
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -290,9 +309,10 @@ public class Versions {
         return this;
     }
 
-    /** API版本发布时间
-     * 
-     * @return updated */
+    /**
+     * API版本发布时间
+     * @return updated
+     */
     public OffsetDateTime getUpdated() {
         return updated;
     }
@@ -334,7 +354,10 @@ public class Versions {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

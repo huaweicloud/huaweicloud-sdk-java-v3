@@ -7,22 +7,34 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 操作，支持start, stop, restart, scale, rollback。 */
+/**
+ * 操作，支持start, stop, restart, scale, rollback。
+ */
 public class InstanceActionType {
 
-    /** Enum START for value: "start" */
+    /**
+     * Enum START for value: "start"
+     */
     public static final InstanceActionType START = new InstanceActionType("start");
 
-    /** Enum STOP for value: "stop" */
+    /**
+     * Enum STOP for value: "stop"
+     */
     public static final InstanceActionType STOP = new InstanceActionType("stop");
 
-    /** Enum RESTART for value: "restart" */
+    /**
+     * Enum RESTART for value: "restart"
+     */
     public static final InstanceActionType RESTART = new InstanceActionType("restart");
 
-    /** Enum SCALE for value: "scale" */
+    /**
+     * Enum SCALE for value: "scale"
+     */
     public static final InstanceActionType SCALE = new InstanceActionType("scale");
 
-    /** Enum ROLLBACK for value: "rollback" */
+    /**
+     * Enum ROLLBACK for value: "rollback"
+     */
     public static final InstanceActionType ROLLBACK = new InstanceActionType("rollback");
 
     private static final Map<String, InstanceActionType> STATIC_FIELDS = createStaticFields();

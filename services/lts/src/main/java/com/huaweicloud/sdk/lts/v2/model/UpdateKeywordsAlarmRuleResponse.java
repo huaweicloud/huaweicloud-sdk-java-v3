@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,19 +44,29 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
 
     private Frequency frequency;
 
-    /** 告警级别 */
+    /**
+     * 告警级别
+     */
     public static final class KeywordsAlarmLevelEnum {
 
-        /** Enum INFO for value: "Info" */
+        /**
+         * Enum INFO for value: "Info"
+         */
         public static final KeywordsAlarmLevelEnum INFO = new KeywordsAlarmLevelEnum("Info");
 
-        /** Enum MINOR for value: "Minor" */
+        /**
+         * Enum MINOR for value: "Minor"
+         */
         public static final KeywordsAlarmLevelEnum MINOR = new KeywordsAlarmLevelEnum("Minor");
 
-        /** Enum MAJOR for value: "Major" */
+        /**
+         * Enum MAJOR for value: "Major"
+         */
         public static final KeywordsAlarmLevelEnum MAJOR = new KeywordsAlarmLevelEnum("Major");
 
-        /** Enum CRITICAL for value: "Critical" */
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
         public static final KeywordsAlarmLevelEnum CRITICAL = new KeywordsAlarmLevelEnum("Critical");
 
         private static final Map<String, KeywordsAlarmLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -176,9 +188,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词告警id
-     * 
-     * @return keywordsAlarmRuleId */
+    /**
+     * 关键词告警id
+     * @return keywordsAlarmRuleId
+     */
     public String getKeywordsAlarmRuleId() {
         return keywordsAlarmRuleId;
     }
@@ -192,9 +205,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词告警名称
-     * 
-     * @return keywordsAlarmRuleName */
+    /**
+     * 关键词告警名称
+     * @return keywordsAlarmRuleName
+     */
     public String getKeywordsAlarmRuleName() {
         return keywordsAlarmRuleName;
     }
@@ -208,9 +222,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词告警信息描述
-     * 
-     * @return keywordsAlarmRuleDescription */
+    /**
+     * 关键词告警信息描述
+     * @return keywordsAlarmRuleDescription
+     */
     public String getKeywordsAlarmRuleDescription() {
         return keywordsAlarmRuleDescription;
     }
@@ -241,9 +256,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 关键词详细信息
-     * 
-     * @return keywordsRequests */
+    /**
+     * 关键词详细信息
+     * @return keywordsRequests
+     */
     public List<KeywordsRequest> getKeywordsRequests() {
         return keywordsRequests;
     }
@@ -266,9 +282,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** Get frequency
-     * 
-     * @return frequency */
+    /**
+     * Get frequency
+     * @return frequency
+     */
     public Frequency getFrequency() {
         return frequency;
     }
@@ -282,9 +299,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 告警级别
-     * 
-     * @return keywordsAlarmLevel */
+    /**
+     * 告警级别
+     * @return keywordsAlarmLevel
+     */
     public KeywordsAlarmLevelEnum getKeywordsAlarmLevel() {
         return keywordsAlarmLevel;
     }
@@ -298,9 +316,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否发送
-     * 
-     * @return keywordsAlarmSend */
+    /**
+     * 是否发送
+     * @return keywordsAlarmSend
+     */
     public Boolean getKeywordsAlarmSend() {
         return keywordsAlarmSend;
     }
@@ -314,9 +333,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** domainId
-     * 
-     * @return domainId */
+    /**
+     * domainId
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -330,9 +350,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间(毫秒时间戳)
-     * 
-     * @return createTime */
+    /**
+     * 创建时间(毫秒时间戳)
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -346,9 +367,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间(毫秒时间戳)
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间(毫秒时间戳)
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -362,9 +384,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return language */
+    /**
+     * 语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -378,9 +401,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -410,9 +434,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 主题信息
-     * 
-     * @return topics */
+    /**
+     * 主题信息
+     * @return topics
+     */
     public List<Topics> getTopics() {
         return topics;
     }
@@ -426,9 +451,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 暂无
-     * 
-     * @return conditionExpression */
+    /**
+     * 暂无
+     * @return conditionExpression
+     */
     public String getConditionExpression() {
         return conditionExpression;
     }
@@ -442,9 +468,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 暂无
-     * 
-     * @return indexId */
+    /**
+     * 暂无
+     * @return indexId
+     */
     public String getIndexId() {
         return indexId;
     }
@@ -524,7 +551,10 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

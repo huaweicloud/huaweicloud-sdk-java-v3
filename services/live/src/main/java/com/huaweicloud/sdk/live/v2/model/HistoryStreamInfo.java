@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** HistoryStreamInfo */
+/**
+ * HistoryStreamInfo
+ */
 public class HistoryStreamInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 推流域名。 - type为0表主播推流域名。 - type为1表示第三方推流域名
-     * 
-     * @return domain */
+    /**
+     * 推流域名。  - type为0表主播推流域名。  - type为1表示第三方推流域名 
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -74,9 +77,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return app */
+    /**
+     * 应用名称。
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -90,9 +94,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 流名。
-     * 
-     * @return stream */
+    /**
+     * 流名。
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -106,9 +111,12 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 推流类型，取值如下： - 0：表示主播推流 - 1：表示第三方推流 minimum: 0 maximum: 1
-     * 
-     * @return type */
+    /**
+     * 推流类型，取值如下：  - 0：表示主播推流  - 1：表示第三方推流 
+     * minimum: 0
+     * maximum: 1
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -122,9 +130,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 视频编码格式。
-     * 
-     * @return videoCodec */
+    /**
+     * 视频编码格式。
+     * @return videoCodec
+     */
     public String getVideoCodec() {
         return videoCodec;
     }
@@ -138,9 +147,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 音频编码格式。
-     * 
-     * @return audioCodec */
+    /**
+     * 音频编码格式。
+     * @return audioCodec
+     */
     public String getAudioCodec() {
         return audioCodec;
     }
@@ -154,9 +164,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 主播ip。
-     * 
-     * @return clientIp */
+    /**
+     * 主播ip。
+     * @return clientIp
+     */
     public String getClientIp() {
         return clientIp;
     }
@@ -170,9 +181,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return startTime */
+    /**
+     * 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -186,9 +198,10 @@ public class HistoryStreamInfo {
         return this;
     }
 
-    /** 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * 
-     * @return endTime */
+    /**
+     * 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -238,7 +251,10 @@ public class HistoryStreamInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,7 +102,7 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_backup_policy")
 
-    private BackupPolicy instanceBackupPolicy;
+    private InstanceBackupPolicy instanceBackupPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_codes")
@@ -217,14 +219,20 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String backendAddrs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_name_info")
+
+    private DomainNameInfo domainNameInfo;
+
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
         return this;
     }
 
-    /** VPC的名称。
-     * 
-     * @return vpcName */
+    /**
+     * VPC的名称。
+     * @return vpcName
+     */
     public String getVpcName() {
         return vpcName;
     }
@@ -238,9 +246,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 付费模式，0表示按需计费，1表示包年/包月计费。
-     * 
-     * @return chargingMode */
+    /**
+     * 付费模式，0表示按需计费，1表示包年/包月计费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -254,9 +263,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** VPC ID
-     * 
-     * @return vpcId */
+    /**
+     * VPC ID
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -270,9 +280,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -286,9 +297,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 完成创建时间。格式为：2017-03-31T12:24:46.297Z
-     * 
-     * @return createdAt */
+    /**
+     * 完成创建时间。格式为：2017-03-31T12:24:46.297Z
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -302,9 +314,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例描述。
-     * 
-     * @return description */
+    /**
+     * 实例描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -318,9 +331,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -334,9 +348,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 租户安全组名称。
-     * 
-     * @return securityGroupName */
+    /**
+     * 租户安全组名称。
+     * @return securityGroupName
+     */
     public String getSecurityGroupName() {
         return securityGroupName;
     }
@@ -350,9 +365,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 总内存，单位：MB。
-     * 
-     * @return maxMemory */
+    /**
+     * 总内存，单位：MB。
+     * @return maxMemory
+     */
     public Integer getMaxMemory() {
         return maxMemory;
     }
@@ -366,9 +382,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 已使用的内存，单位：MB。
-     * 
-     * @return usedMemory */
+    /**
+     * 已使用的内存，单位：MB。
+     * @return usedMemory
+     */
     public Integer getUsedMemory() {
         return usedMemory;
     }
@@ -382,9 +399,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 缓存实例的容量（G Byte）。
-     * 
-     * @return capacity */
+    /**
+     * 缓存实例的容量（G Byte）。
+     * @return capacity
+     */
     public Integer getCapacity() {
         return capacity;
     }
@@ -398,9 +416,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 单机小规格的缓存容量。
-     * 
-     * @return capacityMinor */
+    /**
+     * 单机小规格的缓存容量。
+     * @return capacityMinor
+     */
     public String getCapacityMinor() {
         return capacityMinor;
     }
@@ -414,9 +433,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
-     * 
-     * @return maintainBegin */
+    /**
+     * 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -430,9 +450,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
-     * 
-     * @return maintainEnd */
+    /**
+     * 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -446,9 +467,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 缓存实例的引擎类型。
-     * 
-     * @return engine */
+    /**
+     * 缓存实例的引擎类型。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -462,9 +484,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。
-     * 
-     * @return noPasswordAccess */
+    /**
+     * 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。 
+     * @return noPasswordAccess
+     */
     public String getNoPasswordAccess() {
         return noPasswordAccess;
     }
@@ -478,9 +501,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
-     * 
-     * @return ip */
+    /**
+     * 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -489,28 +513,29 @@ public class ShowInstanceResponse extends SdkResponse {
         this.ip = ip;
     }
 
-    public ShowInstanceResponse withInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
+    public ShowInstanceResponse withInstanceBackupPolicy(InstanceBackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
         return this;
     }
 
-    public ShowInstanceResponse withInstanceBackupPolicy(Consumer<BackupPolicy> instanceBackupPolicySetter) {
+    public ShowInstanceResponse withInstanceBackupPolicy(Consumer<InstanceBackupPolicy> instanceBackupPolicySetter) {
         if (this.instanceBackupPolicy == null) {
-            this.instanceBackupPolicy = new BackupPolicy();
+            this.instanceBackupPolicy = new InstanceBackupPolicy();
             instanceBackupPolicySetter.accept(this.instanceBackupPolicy);
         }
 
         return this;
     }
 
-    /** Get instanceBackupPolicy
-     * 
-     * @return instanceBackupPolicy */
-    public BackupPolicy getInstanceBackupPolicy() {
+    /**
+     * Get instanceBackupPolicy
+     * @return instanceBackupPolicy
+     */
+    public InstanceBackupPolicy getInstanceBackupPolicy() {
         return instanceBackupPolicy;
     }
 
-    public void setInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
+    public void setInstanceBackupPolicy(InstanceBackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
 
@@ -535,9 +560,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例所在的可用区。返回“可用区Code”
-     * 
-     * @return azCodes */
+    /**
+     * 实例所在的可用区。返回“可用区Code”
+     * @return azCodes
+     */
     public List<String> getAzCodes() {
         return azCodes;
     }
@@ -551,9 +577,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 通过密码认证访问缓存实例的认证用户名。
-     * 
-     * @return accessUser */
+    /**
+     * 通过密码认证访问缓存实例的认证用户名。
+     * @return accessUser
+     */
     public String getAccessUser() {
         return accessUser;
     }
@@ -567,9 +594,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -583,9 +611,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 缓存的端口。
-     * 
-     * @return port */
+    /**
+     * 缓存的端口。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -599,9 +628,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户id。
-     * 
-     * @return userId */
+    /**
+     * 用户id。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -615,9 +645,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -631,9 +662,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 产品规格编码
-     * 
-     * @return specCode */
+    /**
+     * 产品规格编码
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -647,9 +679,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -663,9 +696,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网名称。
-     * 
-     * @return subnetName */
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
     public String getSubnetName() {
         return subnetName;
     }
@@ -679,9 +713,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网网段。
-     * 
-     * @return subnetCidr */
+    /**
+     * 子网网段。
+     * @return subnetCidr
+     */
     public String getSubnetCidr() {
         return subnetCidr;
     }
@@ -695,9 +730,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 缓存版本。
-     * 
-     * @return engineVersion */
+    /**
+     * 缓存版本。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -711,9 +747,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -727,9 +764,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 缓存实例的状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
-     * 
-     * @return status */
+    /**
+     * 缓存实例的状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -743,9 +781,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例的域名。
-     * 
-     * @return domainName */
+    /**
+     * 实例的域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -759,9 +798,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例的只读域名，只有主备实例有该字段。
-     * 
-     * @return readonlyDomainName */
+    /**
+     * 实例的只读域名，只有主备实例有该字段。
+     * @return readonlyDomainName
+     */
     public String getReadonlyDomainName() {
         return readonlyDomainName;
     }
@@ -775,9 +815,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启
-     * 
-     * @return enablePublicip */
+    /**
+     * Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启 
+     * @return enablePublicip
+     */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -791,9 +832,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。
-     * 
-     * @return publicipId */
+    /**
+     * Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。 
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -807,9 +849,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。
-     * 
-     * @return publicipAddress */
+    /**
+     * Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。 
+     * @return publicipAddress
+     */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -823,9 +866,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启
-     * 
-     * @return enableSsl */
+    /**
+     * Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启 
+     * @return enableSsl
+     */
     public Boolean getEnableSsl() {
         return enableSsl;
     }
@@ -839,9 +883,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例是否存在升级任务。 - true：存在 - false：不存在
-     * 
-     * @return serviceUpgrade */
+    /**
+     * 实例是否存在升级任务。 - true：存在 - false：不存在 
+     * @return serviceUpgrade
+     */
     public Boolean getServiceUpgrade() {
         return serviceUpgrade;
     }
@@ -855,9 +900,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。
-     * 
-     * @return serviceTaskId */
+    /**
+     * 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。 
+     * @return serviceTaskId
+     */
     public String getServiceTaskId() {
         return serviceTaskId;
     }
@@ -871,9 +917,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -887,15 +934,42 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群实例的后端服务地址。
-     * 
-     * @return backendAddrs */
+    /**
+     * 集群实例的后端服务地址。
+     * @return backendAddrs
+     */
     public String getBackendAddrs() {
         return backendAddrs;
     }
 
     public void setBackendAddrs(String backendAddrs) {
         this.backendAddrs = backendAddrs;
+    }
+
+    public ShowInstanceResponse withDomainNameInfo(DomainNameInfo domainNameInfo) {
+        this.domainNameInfo = domainNameInfo;
+        return this;
+    }
+
+    public ShowInstanceResponse withDomainNameInfo(Consumer<DomainNameInfo> domainNameInfoSetter) {
+        if (this.domainNameInfo == null) {
+            this.domainNameInfo = new DomainNameInfo();
+            domainNameInfoSetter.accept(this.domainNameInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get domainNameInfo
+     * @return domainNameInfo
+     */
+    public DomainNameInfo getDomainNameInfo() {
+        return domainNameInfo;
+    }
+
+    public void setDomainNameInfo(DomainNameInfo domainNameInfo) {
+        this.domainNameInfo = domainNameInfo;
     }
 
     @Override
@@ -947,7 +1021,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.serviceUpgrade, showInstanceResponse.serviceUpgrade)
             && Objects.equals(this.serviceTaskId, showInstanceResponse.serviceTaskId)
             && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs);
+            && Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs)
+            && Objects.equals(this.domainNameInfo, showInstanceResponse.domainNameInfo);
     }
 
     @Override
@@ -992,7 +1067,8 @@ public class ShowInstanceResponse extends SdkResponse {
             serviceUpgrade,
             serviceTaskId,
             enterpriseProjectId,
-            backendAddrs);
+            backendAddrs,
+            domainNameInfo);
     }
 
     @Override
@@ -1040,11 +1116,15 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    serviceTaskId: ").append(toIndentedString(serviceTaskId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    backendAddrs: ").append(toIndentedString(backendAddrs)).append("\n");
+        sb.append("    domainNameInfo: ").append(toIndentedString(domainNameInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

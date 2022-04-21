@@ -13,13 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class BatchCreateVpcTagsRequestBody {
 
-    /** 功能说明：操作标识 取值范围：create */
+    /**
+     * 功能说明：操作标识 取值范围：create
+     */
     public static final class ActionEnum {
 
-        /** Enum CREATE for value: "create" */
+        /**
+         * Enum CREATE for value: "create"
+         */
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -98,9 +104,10 @@ public class BatchCreateVpcTagsRequestBody {
         return this;
     }
 
-    /** 功能说明：操作标识 取值范围：create
-     * 
-     * @return action */
+    /**
+     * 功能说明：操作标识 取值范围：create
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -130,9 +137,10 @@ public class BatchCreateVpcTagsRequestBody {
         return this;
     }
 
-    /** 功能说明：标签列表
-     * 
-     * @return tags */
+    /**
+     * 功能说明：标签列表
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -169,7 +177,10 @@ public class BatchCreateVpcTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

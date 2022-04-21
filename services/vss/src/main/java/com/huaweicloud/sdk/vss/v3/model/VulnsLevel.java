@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VulnsLevel */
+/**
+ * VulnsLevel
+ */
 public class VulnsLevel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class VulnsLevel {
         return this;
     }
 
-    /** 高危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return high */
+    /**
+     * 高危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return high
+     */
     public Integer getHigh() {
         return high;
     }
@@ -49,9 +54,12 @@ public class VulnsLevel {
         return this;
     }
 
-    /** 中危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return middle */
+    /**
+     * 中危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return middle
+     */
     public Integer getMiddle() {
         return middle;
     }
@@ -65,9 +73,12 @@ public class VulnsLevel {
         return this;
     }
 
-    /** 低危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return low */
+    /**
+     * 低危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return low
+     */
     public Integer getLow() {
         return low;
     }
@@ -81,9 +92,12 @@ public class VulnsLevel {
         return this;
     }
 
-    /** 提示危漏洞数 minimum: 0 maximum: 1000
-     * 
-     * @return hint */
+    /**
+     * 提示危漏洞数
+     * minimum: 0
+     * maximum: 1000
+     * @return hint
+     */
     public Integer getHint() {
         return hint;
     }
@@ -122,7 +136,10 @@ public class VulnsLevel {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

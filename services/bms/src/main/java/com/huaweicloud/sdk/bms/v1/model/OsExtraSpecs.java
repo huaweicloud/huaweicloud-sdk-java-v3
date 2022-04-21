@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** os_extra_specs数据结构说明 */
+/**
+ * os_extra_specs数据结构说明
+ */
 public class OsExtraSpecs {
 
-    /** 识该规格对应的资源类型，取值范围为“ironic”。 */
+    /**
+     * 识该规格对应的资源类型，取值范围为“ironic”。
+     */
     public static final class ResourceTypeEnum {
 
-        /** Enum IRONIC for value: "ironic" */
+        /**
+         * Enum IRONIC for value: "ironic"
+         */
         public static final ResourceTypeEnum IRONIC = new ResourceTypeEnum("ironic");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -85,13 +91,19 @@ public class OsExtraSpecs {
 
     private ResourceTypeEnum resourceType;
 
-    /** 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型） */
+    /**
+     * 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
+     */
     public static final class CapabilitiesCpuArchEnum {
 
-        /** Enum X86_64 for value: "x86_64" */
+        /**
+         * Enum X86_64 for value: "x86_64"
+         */
         public static final CapabilitiesCpuArchEnum X86_64 = new CapabilitiesCpuArchEnum("x86_64");
 
-        /** Enum AARCH64 for value: "aarch64" */
+        /**
+         * Enum AARCH64 for value: "aarch64"
+         */
         public static final CapabilitiesCpuArchEnum AARCH64 = new CapabilitiesCpuArchEnum("aarch64");
 
         private static final Map<String, CapabilitiesCpuArchEnum> STATIC_FIELDS = createStaticFields();
@@ -176,13 +188,19 @@ public class OsExtraSpecs {
 
     private String baremetalSupportEvs;
 
-    /** 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放） */
+    /**
+     * 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
+     */
     public static final class BaremetalExtBootTypeEnum {
 
-        /** Enum LOCALDISK for value: "LocalDisk" */
+        /**
+         * Enum LOCALDISK for value: "LocalDisk"
+         */
         public static final BaremetalExtBootTypeEnum LOCALDISK = new BaremetalExtBootTypeEnum("LocalDisk");
 
-        /** Enum VOLUME for value: "Volume" */
+        /**
+         * Enum VOLUME for value: "Volume"
+         */
         public static final BaremetalExtBootTypeEnum VOLUME = new BaremetalExtBootTypeEnum("Volume");
 
         private static final Map<String, BaremetalExtBootTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -277,22 +295,34 @@ public class OsExtraSpecs {
 
     private String baremetalMemoryDetail;
 
-    /** 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用） */
+    /**
+     * 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
+     */
     public static final class CondOperationStatusEnum {
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final CondOperationStatusEnum NORMAL = new CondOperationStatusEnum("normal");
 
-        /** Enum ABANDON for value: "abandon" */
+        /**
+         * Enum ABANDON for value: "abandon"
+         */
         public static final CondOperationStatusEnum ABANDON = new CondOperationStatusEnum("abandon");
 
-        /** Enum SELLOUT for value: "sellout" */
+        /**
+         * Enum SELLOUT for value: "sellout"
+         */
         public static final CondOperationStatusEnum SELLOUT = new CondOperationStatusEnum("sellout");
 
-        /** Enum OBT for value: "obt" */
+        /**
+         * Enum OBT for value: "obt"
+         */
         public static final CondOperationStatusEnum OBT = new CondOperationStatusEnum("obt");
 
-        /** Enum PROMOTION for value: "promotion" */
+        /**
+         * Enum PROMOTION for value: "promotion"
+         */
         public static final CondOperationStatusEnum PROMOTION = new CondOperationStatusEnum("promotion");
 
         private static final Map<String, CondOperationStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -375,9 +405,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 识该规格对应的资源类型，取值范围为“ironic”。
-     * 
-     * @return resourceType */
+    /**
+     * 识该规格对应的资源类型，取值范围为“ironic”。
+     * @return resourceType
+     */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -391,9 +422,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
-     * 
-     * @return capabilitiesCpuArch */
+    /**
+     * 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
+     * @return capabilitiesCpuArch
+     */
     public CapabilitiesCpuArchEnum getCapabilitiesCpuArch() {
         return capabilitiesCpuArch;
     }
@@ -407,9 +439,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 磁盘物理规格描述信息。
-     * 
-     * @return baremetalDiskDetail */
+    /**
+     * 磁盘物理规格描述信息。
+     * @return baremetalDiskDetail
+     */
     public String getBaremetalDiskDetail() {
         return baremetalDiskDetail;
     }
@@ -423,9 +456,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 标示ironic类型的规格。
-     * 
-     * @return capabilitiesHypervisorType */
+    /**
+     * 标示ironic类型的规格。
+     * @return capabilitiesHypervisorType
+     */
     public String getCapabilitiesHypervisorType() {
         return capabilitiesHypervisorType;
     }
@@ -439,9 +473,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 标识当前的规格是否支持挂载EVS卷。truefalse
-     * 
-     * @return baremetalSupportEvs */
+    /**
+     * 标识当前的规格是否支持挂载EVS卷。truefalse
+     * @return baremetalSupportEvs
+     */
     public String getBaremetalSupportEvs() {
         return baremetalSupportEvs;
     }
@@ -455,9 +490,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
-     * 
-     * @return baremetalExtBootType */
+    /**
+     * 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
+     * @return baremetalExtBootType
+     */
     public BaremetalExtBootTypeEnum getBaremetalExtBootType() {
         return baremetalExtBootType;
     }
@@ -471,9 +507,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 裸金属服务器的规格类型。格式为规格的缩写，例如规格名称为“physical.o2.medium”，则规格类型为“o2m”。
-     * 
-     * @return capabilitiesBoardType */
+    /**
+     * 裸金属服务器的规格类型。格式为规格的缩写，例如规格名称为“physical.o2.medium”，则规格类型为“o2m”。
+     * @return capabilitiesBoardType
+     */
     public String getCapabilitiesBoardType() {
         return capabilitiesBoardType;
     }
@@ -487,9 +524,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 实际可挂载网络数量。
-     * 
-     * @return baremetalNetNum */
+    /**
+     * 实际可挂载网络数量。
+     * @return baremetalNetNum
+     */
     public String getBaremetalNetNum() {
         return baremetalNetNum;
     }
@@ -503,9 +541,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 网卡物理规格描述信息。
-     * 
-     * @return baremetalNetcardDetail */
+    /**
+     * 网卡物理规格描述信息。
+     * @return baremetalNetcardDetail
+     */
     public String getBaremetalNetcardDetail() {
         return baremetalNetcardDetail;
     }
@@ -519,9 +558,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** CPU物理规格描述信息。
-     * 
-     * @return baremetalCpuDetail */
+    /**
+     * CPU物理规格描述信息。
+     * @return baremetalCpuDetail
+     */
     public String getBaremetalCpuDetail() {
         return baremetalCpuDetail;
     }
@@ -535,9 +575,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 内存物理规格描述信息
-     * 
-     * @return baremetalMemoryDetail */
+    /**
+     * 内存物理规格描述信息
+     * @return baremetalMemoryDetail
+     */
     public String getBaremetalMemoryDetail() {
         return baremetalMemoryDetail;
     }
@@ -551,9 +592,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
-     * 
-     * @return condOperationStatus */
+    /**
+     * 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
+     * @return condOperationStatus
+     */
     public CondOperationStatusEnum getCondOperationStatus() {
         return condOperationStatus;
     }
@@ -567,10 +609,10 @@ public class OsExtraSpecs {
         return this;
     }
 
-    /** 在某个AZ的裸金属服务器规格状态。此参数是AZ级配置，某个AZ没有在此参数中配置时默认使用cond:operation:status参数的取值。格式：az(xx)。()内为某个AZ下的裸金属服务器规格状态，()内必须填写状态，不填为无效配置。例如：规格在某个区域的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为：“cond:operation:status”设置为“abandon”“cond:operation:az”设置为“az0(normal),
-     * az1(sellout), az2(obt), az3(promotion)” 说明：如果规格在某个AZ下的状态与cond:operation:status配置状态不同，必须配置该参数。
-     * 
-     * @return condOperationAz */
+    /**
+     * 在某个AZ的裸金属服务器规格状态。此参数是AZ级配置，某个AZ没有在此参数中配置时默认使用cond:operation:status参数的取值。格式：az(xx)。()内为某个AZ下的裸金属服务器规格状态，()内必须填写状态，不填为无效配置。例如：规格在某个区域的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为：“cond:operation:status”设置为“abandon”“cond:operation:az”设置为“az0(normal), az1(sellout), az2(obt), az3(promotion)” 说明：如果规格在某个AZ下的状态与cond:operation:status配置状态不同，必须配置该参数。
+     * @return condOperationAz
+     */
     public String getCondOperationAz() {
         return condOperationAz;
     }
@@ -641,7 +683,10 @@ public class OsExtraSpecs {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

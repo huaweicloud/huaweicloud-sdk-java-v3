@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SimpleTaskInfoV2 */
+/**
+ * SimpleTaskInfoV2
+ */
 public class SimpleTaskInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return taskId */
+    /**
+     * 任务id
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -64,9 +67,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 任务名字
-     * 
-     * @return taskName */
+    /**
+     * 任务名字
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -80,9 +84,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 创建者id
-     * 
-     * @return creatorId */
+    /**
+     * 创建者id
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -96,9 +101,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 代码仓地址
-     * 
-     * @return gitUrl */
+    /**
+     * 代码仓地址
+     * @return gitUrl
+     */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -112,9 +118,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 代码仓分支,如果是MR模式，为源分支
-     * 
-     * @return gitBranch */
+    /**
+     * 代码仓分支,如果是MR模式，为源分支
+     * @return gitBranch
+     */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -128,9 +135,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -144,9 +152,10 @@ public class SimpleTaskInfoV2 {
         return this;
     }
 
-    /** 上一次检查时间
-     * 
-     * @return lastCheckTime */
+    /**
+     * 上一次检查时间
+     * @return lastCheckTime
+     */
     public String getLastCheckTime() {
         return lastCheckTime;
     }
@@ -193,7 +202,10 @@ public class SimpleTaskInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

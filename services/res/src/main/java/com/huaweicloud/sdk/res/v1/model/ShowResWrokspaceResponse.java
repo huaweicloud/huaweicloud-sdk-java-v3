@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowResWrokspaceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ShowResWrokspaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 是否成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -69,9 +72,10 @@ public class ShowResWrokspaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 工作空间详情。
-     * 
-     * @return workspaces */
+    /**
+     * 工作空间详情。
+     * @return workspaces
+     */
     public List<Workspaces> getWorkspaces() {
         return workspaces;
     }
@@ -85,9 +89,10 @@ public class ShowResWrokspaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回消息（请求成功时，不返回此字段）。
-     * 
-     * @return message */
+    /**
+     * 返回消息（请求成功时，不返回此字段）。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -101,9 +106,10 @@ public class ShowResWrokspaceResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码（请求成功时，不返回此字段）。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码（请求成功时，不返回此字段）。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -144,7 +150,10 @@ public class ShowResWrokspaceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** UpdateRuleRequestBody */
+/**
+ * UpdateRuleRequestBody
+ */
 public class UpdateRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class UpdateRuleRequestBody {
 
     private String description;
 
-    /** 规则状态 0-启用 1-停用，不填写时默认为0-启用 */
+    /**
+     * 规则状态 0-启用 1-停用，不填写时默认为0-启用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class UpdateRuleRequestBody {
 
     private StatusEnum status;
 
-    /** 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用 */
+    /**
+     * 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用
+     */
     public static final class DataParsingStatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final DataParsingStatusEnum NUMBER_0 = new DataParsingStatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final DataParsingStatusEnum NUMBER_1 = new DataParsingStatusEnum(1);
 
         private static final Map<Integer, DataParsingStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -190,9 +204,10 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
-     * 
-     * @return name */
+    /**
+     * 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -206,9 +221,10 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** 描述，长度0-200
-     * 
-     * @return description */
+    /**
+     * 描述，长度0-200
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -222,9 +238,12 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** 规则状态 0-启用 1-停用，不填写时默认为0-启用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 规则状态 0-启用 1-停用，不填写时默认为0-启用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -238,9 +257,12 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用 minimum: 0 maximum: 10
-     * 
-     * @return dataParsingStatus */
+    /**
+     * 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用
+     * minimum: 0
+     * maximum: 10
+     * @return dataParsingStatus
+     */
     public DataParsingStatusEnum getDataParsingStatus() {
         return dataParsingStatus;
     }
@@ -254,9 +276,10 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** SQL查询字段
-     * 
-     * @return sqlField */
+    /**
+     * SQL查询字段
+     * @return sqlField
+     */
     public String getSqlField() {
         return sqlField;
     }
@@ -270,9 +293,10 @@ public class UpdateRuleRequestBody {
         return this;
     }
 
-    /** SQL查询条件
-     * 
-     * @return sqlWhere */
+    /**
+     * SQL查询条件
+     * @return sqlWhere
+     */
     public String getSqlWhere() {
         return sqlWhere;
     }
@@ -317,7 +341,10 @@ public class UpdateRuleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

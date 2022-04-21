@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 删除日志接入请求体 */
+/**
+ * 删除日志接入请求体
+ */
 public class DeleteAccessConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteAccessConfigRequestBody {
         return this;
     }
 
-    /** 日志接入ID列表
-     * 
-     * @return accessConfigIdList */
+    /**
+     * 日志接入ID列表
+     * @return accessConfigIdList
+     */
     public List<String> getAccessConfigIdList() {
         return accessConfigIdList;
     }
@@ -74,7 +77,10 @@ public class DeleteAccessConfigRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

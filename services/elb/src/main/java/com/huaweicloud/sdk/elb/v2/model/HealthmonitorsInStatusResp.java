@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 健康检查对象，用于状态树中 */
+/**
+ * 健康检查对象，用于状态树中
+ */
 public class HealthmonitorsInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class HealthmonitorsInStatusResp {
 
     private String name;
 
-    /** 健康检查类型 */
+    /**
+     * 健康检查类型
+     */
     public static final class TypeEnum {
 
-        /** Enum UDP_CONNECT for value: "UDP_CONNECT" */
+        /**
+         * Enum UDP_CONNECT for value: "UDP_CONNECT"
+         */
         public static final TypeEnum UDP_CONNECT = new TypeEnum("UDP_CONNECT");
 
-        /** Enum TCP for value: "TCP" */
+        /**
+         * Enum TCP for value: "TCP"
+         */
         public static final TypeEnum TCP = new TypeEnum("TCP");
 
-        /** Enum HTTP for value: "HTTP" */
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
         public static final TypeEnum HTTP = new TypeEnum("HTTP");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +123,10 @@ public class HealthmonitorsInStatusResp {
         return this;
     }
 
-    /** 健康检查ID
-     * 
-     * @return id */
+    /**
+     * 健康检查ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -129,9 +140,10 @@ public class HealthmonitorsInStatusResp {
         return this;
     }
 
-    /** 健康检查名称
-     * 
-     * @return name */
+    /**
+     * 健康检查名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -145,9 +157,10 @@ public class HealthmonitorsInStatusResp {
         return this;
     }
 
-    /** 健康检查类型
-     * 
-     * @return type */
+    /**
+     * 健康检查类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -161,9 +174,10 @@ public class HealthmonitorsInStatusResp {
         return this;
     }
 
-    /** 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -204,7 +218,10 @@ public class HealthmonitorsInStatusResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

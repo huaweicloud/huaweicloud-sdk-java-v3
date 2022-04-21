@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBaremetalFlavorDetailExtendsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListBaremetalFlavorDetailExtendsRequest {
         return this;
     }
 
-    /** 可用区，需要指定可用区（AZ）的名称。请参考地区和终端节点获取。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区，需要指定可用区（AZ）的名称。请参考地区和终端节点获取。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -56,7 +59,10 @@ public class ListBaremetalFlavorDetailExtendsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

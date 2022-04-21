@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 聚合计算定义 */
+/**
+ * 聚合计算定义
+ */
 public class AggregateMetrics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** Get timeSpan
-     * 
-     * @return timeSpan */
+    /**
+     * Get timeSpan
+     * @return timeSpan
+     */
     public TimeSpan getTimeSpan() {
         return timeSpan;
     }
@@ -73,9 +76,10 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** 聚合时间间隔, 示例：\"1d|1h|10m|10s\"
-     * 
-     * @return interval */
+    /**
+     * 聚合时间间隔, 示例：\"1d|1h|10m|10s\"
+     * @return interval
+     */
     public String getInterval() {
         return interval;
     }
@@ -89,9 +93,10 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** 聚合时间偏移量, 需要小于interval, 示例： \"1h|10m|10s\"
-     * 
-     * @return offset */
+    /**
+     * 聚合时间偏移量, 需要小于interval, 示例： \"1h|10m|10s\"
+     * @return offset
+     */
     public String getOffset() {
         return offset;
     }
@@ -121,9 +126,10 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
-     * 
-     * @return tags */
+    /**
+     * 对property按指定tags标签进行过滤查询，填入设备标签与标签值，不可为空，例如 {\"deviceId\": \"id0001\"}
+     * @return tags
+     */
     public Map<String, String> getTags() {
         return tags;
     }
@@ -153,9 +159,10 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** 查询的测量指标列表
-     * 
-     * @return metrics */
+    /**
+     * 查询的测量指标列表
+     * @return metrics
+     */
     public List<AggregateMetric> getMetrics() {
         return metrics;
     }
@@ -169,9 +176,12 @@ public class AggregateMetrics {
         return this;
     }
 
-    /** 返回值个数限制 minimum: 1 maximum: 2000
-     * 
-     * @return limit */
+    /**
+     * 返回值个数限制
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -215,7 +225,10 @@ public class AggregateMetrics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

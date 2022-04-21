@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateIndividualStreamJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,16 +47,24 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
 
     private Boolean isRecordAudio;
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。 */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     */
     public static final class VideoTypeEnum {
 
-        /** Enum CAMERASTREAM for value: "CAMERASTREAM" */
+        /**
+         * Enum CAMERASTREAM for value: "CAMERASTREAM"
+         */
         public static final VideoTypeEnum CAMERASTREAM = new VideoTypeEnum("CAMERASTREAM");
 
-        /** Enum SCREENSTREAM for value: "SCREENSTREAM" */
+        /**
+         * Enum SCREENSTREAM for value: "SCREENSTREAM"
+         */
         public static final VideoTypeEnum SCREENSTREAM = new VideoTypeEnum("SCREENSTREAM");
 
-        /** Enum EMPTY for value: "" */
+        /**
+         * Enum EMPTY for value: ""
+         */
         public static final VideoTypeEnum EMPTY = new VideoTypeEnum("");
 
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -125,19 +135,29 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
 
     private VideoTypeEnum videoType;
 
-    /** 指定窗口拉取的分辨率档位。 - LD - SD - HD - FHD 缺省为FHD。 */
+    /**
+     * 指定窗口拉取的分辨率档位。  - LD - SD - HD - FHD  缺省为FHD。 
+     */
     public static final class SelectStreamTypeEnum {
 
-        /** Enum LD for value: "LD" */
+        /**
+         * Enum LD for value: "LD"
+         */
         public static final SelectStreamTypeEnum LD = new SelectStreamTypeEnum("LD");
 
-        /** Enum SD for value: "SD" */
+        /**
+         * Enum SD for value: "SD"
+         */
         public static final SelectStreamTypeEnum SD = new SelectStreamTypeEnum("SD");
 
-        /** Enum HD for value: "HD" */
+        /**
+         * Enum HD for value: "HD"
+         */
         public static final SelectStreamTypeEnum HD = new SelectStreamTypeEnum("HD");
 
-        /** Enum FHD for value: "FHD" */
+        /**
+         * Enum FHD for value: "FHD"
+         */
         public static final SelectStreamTypeEnum FHD = new SelectStreamTypeEnum("FHD");
 
         private static final Map<String, SelectStreamTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -229,16 +249,24 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
 
     private String updateTime;
 
-    /** 任务状态。 - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 */
+    /**
+     * 任务状态。  - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 
+     */
     public static final class StateEnum {
 
-        /** Enum INIT for value: "INIT" */
+        /**
+         * Enum INIT for value: "INIT"
+         */
         public static final StateEnum INIT = new StateEnum("INIT");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StateEnum STOPPED = new StateEnum("STOPPED");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -309,16 +337,24 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
 
     private StateEnum state;
 
-    /** 任务结束原因 */
+    /**
+     * 任务结束原因
+     */
     public static final class StopReasonEnum {
 
-        /** Enum TENANT_STOP for value: "TENANT_STOP" */
+        /**
+         * Enum TENANT_STOP for value: "TENANT_STOP"
+         */
         public static final StopReasonEnum TENANT_STOP = new StopReasonEnum("TENANT_STOP");
 
-        /** Enum EXCEED_MAX_IDLE_TIME for value: "EXCEED_MAX_IDLE_TIME" */
+        /**
+         * Enum EXCEED_MAX_IDLE_TIME for value: "EXCEED_MAX_IDLE_TIME"
+         */
         public static final StopReasonEnum EXCEED_MAX_IDLE_TIME = new StopReasonEnum("EXCEED_MAX_IDLE_TIME");
 
-        /** Enum INTERNAL_ERROR for value: "INTERNAL_ERROR" */
+        /**
+         * Enum INTERNAL_ERROR for value: "INTERNAL_ERROR"
+         */
         public static final StopReasonEnum INTERNAL_ERROR = new StopReasonEnum("INTERNAL_ERROR");
 
         private static final Map<String, StopReasonEnum> STATIC_FIELDS = createStaticFields();
@@ -414,9 +450,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务编号
-     * 
-     * @return jobId */
+    /**
+     * 任务编号
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -430,9 +467,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 流名
-     * 
-     * @return streamName */
+    /**
+     * 流名
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -446,9 +484,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return appId */
+    /**
+     * 应用id
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -462,9 +501,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 房间id
-     * 
-     * @return roomId */
+    /**
+     * 房间id
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -478,9 +518,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 选看的用户id，单个录制任务内保证唯一
-     * 
-     * @return userId */
+    /**
+     * 选看的用户id，单个录制任务内保证唯一
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -494,9 +535,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否录制音频。 - true：录制音频 - false：不录制音频 缺省为true。
-     * 
-     * @return isRecordAudio */
+    /**
+     *  是否录制音频。  - true：录制音频 - false：不录制音频  缺省为true。 
+     * @return isRecordAudio
+     */
     public Boolean getIsRecordAudio() {
         return isRecordAudio;
     }
@@ -510,9 +552,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。 - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流 默认为CAMERASTREAM。
-     * 
-     * @return videoType */
+    /**
+     * 标识视频流的类型，可选摄像头流或者屏幕分享流，未填写表示不录制视频。  - CAMERASTREAM：摄像头视频流 - SCREENSTREAM：屏幕分享视频流  默认为CAMERASTREAM。 
+     * @return videoType
+     */
     public VideoTypeEnum getVideoType() {
         return videoType;
     }
@@ -526,9 +569,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定窗口拉取的分辨率档位。 - LD - SD - HD - FHD 缺省为FHD。
-     * 
-     * @return selectStreamType */
+    /**
+     * 指定窗口拉取的分辨率档位。  - LD - SD - HD - FHD  缺省为FHD。 
+     * @return selectStreamType
+     */
     public SelectStreamTypeEnum getSelectStreamType() {
         return selectStreamType;
     }
@@ -542,10 +586,12 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 最长空闲频道时间。 取值范围：[5，43200]，默认值为30。 单位：秒。 如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。
-     * 连麦方指：joiner或者publisher的用户。 minimum: 5 maximum: 43200
-     * 
-     * @return maxIdleTime */
+    /**
+     * 最长空闲频道时间。  取值范围：[5，43200]，默认值为30。  单位：秒。  如果频道内无连麦方的状态持续超过该时间，录制程序会自动退出。退出后，再次调用start请求，会产生新的录制任务。  连麦方指：joiner或者publisher的用户。 
+     * minimum: 5
+     * maximum: 43200
+     * @return maxIdleTime
+     */
     public Integer getMaxIdleTime() {
         return maxIdleTime;
     }
@@ -568,9 +614,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get recordParam
-     * 
-     * @return recordParam */
+    /**
+     * Get recordParam
+     * @return recordParam
+     */
     public RecordParam getRecordParam() {
         return recordParam;
     }
@@ -584,9 +631,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return createTime */
+    /**
+     * 创建时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -600,9 +648,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -616,9 +665,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态。 - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止
-     * 
-     * @return state */
+    /**
+     * 任务状态。  - INIT：任务正在初始化 - RUNNING：任务正在运行 - STOPPED：任务已停止 
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -632,9 +682,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结束原因
-     * 
-     * @return stopReason */
+    /**
+     * 任务结束原因
+     * @return stopReason
+     */
     public StopReasonEnum getStopReason() {
         return stopReason;
     }
@@ -648,9 +699,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 针对任务状态的详细信息描述
-     * 
-     * @return description */
+    /**
+     * 针对任务状态的详细信息描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -664,9 +716,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务开始时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return startTime */
+    /**
+     * 任务开始时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -680,9 +733,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务完成时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
-     * 
-     * @return stopTime */
+    /**
+     * 任务完成时间，形如“2006-01-02T15:04:05.075Z”，时区为：UTC
+     * @return stopTime
+     */
     public String getStopTime() {
         return stopTime;
     }
@@ -696,9 +750,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get xRequestId
-     * 
-     * @return xRequestId */
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
     public String getXRequestId() {
@@ -786,7 +841,10 @@ public class CreateIndividualStreamJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

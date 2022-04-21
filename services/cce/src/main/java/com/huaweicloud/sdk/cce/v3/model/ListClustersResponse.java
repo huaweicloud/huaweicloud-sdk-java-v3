@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListClustersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    /** Api type
-     * 
-     * @return kind */
+    /**
+     * Api type
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -48,9 +51,10 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    /** API version
-     * 
-     * @return apiVersion */
+    /**
+     * API version
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -80,9 +84,10 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    /** 集群对象列表，包含了当前项目下所有集群的详细信息。您可通过items.metadata.name下的值来找到对应的集群。
-     * 
-     * @return items */
+    /**
+     * 集群对象列表，包含了当前项目下所有集群的详细信息。您可通过items.metadata.name下的值来找到对应的集群。
+     * @return items
+     */
     public List<Cluster> getItems() {
         return items;
     }
@@ -121,7 +126,10 @@ public class ListClustersResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

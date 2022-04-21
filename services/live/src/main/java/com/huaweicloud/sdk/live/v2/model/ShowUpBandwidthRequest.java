@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowUpBandwidthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,16 +43,24 @@ public class ShowUpBandwidthRequest {
 
     private List<String> isp = null;
 
-    /** 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 */
+    /**
+    * 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 
+    */
     public static final class IntervalEnum {
 
-        /** Enum NUMBER_300 for value: 300 */
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
         public static final IntervalEnum NUMBER_300 = new IntervalEnum(300);
 
-        /** Enum NUMBER_3600 for value: 3600 */
+        /**
+         * Enum NUMBER_3600 for value: 3600
+         */
         public static final IntervalEnum NUMBER_3600 = new IntervalEnum(3600);
 
-        /** Enum NUMBER_86400 for value: 86400 */
+        /**
+         * Enum NUMBER_86400 for value: 86400
+         */
         public static final IntervalEnum NUMBER_86400 = new IntervalEnum(86400);
 
         private static final Map<Integer, IntervalEnum> STATIC_FIELDS = createStaticFields();
@@ -152,9 +162,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。
-     * 
-     * @return publishDomains */
+    /**
+     * 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。 
+     * @return publishDomains
+     */
     public List<String> getPublishDomains() {
         return publishDomains;
     }
@@ -168,9 +179,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return app */
+    /**
+     * 应用名称。 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -184,9 +196,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 流名。
-     * 
-     * @return stream */
+    /**
+     * 流名。 
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -216,9 +229,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。
-     * 
-     * @return region */
+    /**
+     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
+     * @return region
+     */
     public List<String> getRegion() {
         return region;
     }
@@ -248,9 +262,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他 不填写查询所有运营商。
-     * 
-     * @return isp */
+    /**
+     * 运营商列表，取值如下： - CMCC ：移动 - CTCC ： 电信 - CUCC ：联通 - OTHER ：其他  不填写查询所有运营商。 
+     * @return isp
+     */
     public List<String> getIsp() {
         return isp;
     }
@@ -264,9 +279,12 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 minimum: 300 maximum: 86400
-     * 
-     * @return interval */
+    /**
+     * 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 
+     * minimum: 300
+     * maximum: 86400
+     * @return interval
+     */
     public IntervalEnum getInterval() {
         return interval;
     }
@@ -280,9 +298,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 最大查询跨度31天，最大查询周期1年。 若参数为空，默认查询7天数据。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。 最大查询跨度31天，最大查询周期1年。  若参数为空，默认查询7天数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -296,9 +315,10 @@ public class ShowUpBandwidthRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间，最大查询跨度31天，最大查询周期1年。结束时间需大于起始时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间，最大查询跨度31天，最大查询周期1年。结束时间需大于起始时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -347,7 +367,10 @@ public class ShowUpBandwidthRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -66,9 +66,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥对应publicKey信息。
-     * 
-     * @return publicKey */
+    /**
+     * 密钥对应publicKey信息。
+     * @return publicKey
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -82,9 +83,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥名称。
-     * 
-     * @return name */
+    /**
+     * 密钥名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -98,9 +100,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥对应指纹信息。
-     * 
-     * @return fingerprint */
+    /**
+     * 密钥对应指纹信息。
+     * @return fingerprint
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -114,9 +117,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 密钥创建时间。
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -130,9 +134,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥删除标记。 - true，表示密钥已被删除。 - false，表示密钥未被删除。
-     * 
-     * @return deleted */
+    /**
+     * 密钥删除标记。   - true，表示密钥已被删除。   - false，表示密钥未被删除。
+     * @return deleted
+     */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -146,9 +151,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥删除时间。
-     * 
-     * @return deletedAt */
+    /**
+     * 密钥删除时间。
+     * @return deletedAt
+     */
     public OffsetDateTime getDeletedAt() {
         return deletedAt;
     }
@@ -162,9 +168,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥ID。
-     * 
-     * @return id */
+    /**
+     * 密钥ID。
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -178,9 +185,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 密钥更新时间。
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -194,9 +202,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥所属用户信息。
-     * 
-     * @return userId */
+    /**
+     * 密钥所属用户信息。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -210,9 +219,10 @@ public class NovaKeypairDetail {
         return this;
     }
 
-    /** 密钥类型，默认“ssh” 微版本2.2以上支持
-     * 
-     * @return type */
+    /**
+     * 密钥类型，默认“ssh”  微版本2.2以上支持
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -265,7 +275,10 @@ public class NovaKeypairDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

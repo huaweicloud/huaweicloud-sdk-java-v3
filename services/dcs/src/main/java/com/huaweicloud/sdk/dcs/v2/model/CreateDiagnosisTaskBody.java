@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 发起实例诊断请求体 */
+/**
+ * 发起实例诊断请求体
+ */
 public class CreateDiagnosisTaskBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class CreateDiagnosisTaskBody {
         return this;
     }
 
-    /** 诊断开始时间。UNIX时间戳，单位毫秒。
-     * 
-     * @return beginTime */
+    /**
+     * 诊断开始时间。UNIX时间戳，单位毫秒。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -47,9 +50,10 @@ public class CreateDiagnosisTaskBody {
         return this;
     }
 
-    /** 诊断结束时间。UNIX时间戳，单位毫秒。
-     * 
-     * @return endTime */
+    /**
+     * 诊断结束时间。UNIX时间戳，单位毫秒。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -79,12 +83,10 @@ public class CreateDiagnosisTaskBody {
         return this;
     }
 
-    /** 诊断节点IP列表。默认诊断所有节点。 非读写分离实例查询方法如下： -
-     * 方法一：参考[查看实例信息](https://support.huaweicloud.com/usermanual-dcs/dcs-ug-0312016.html)。 -
-     * 方法二：调用[查询指定实例](https://support.huaweicloud.com/api-dcs/ShowInstance.html)查询。
-     * 读写分离实例查询方法：调用[查询分片信息](https://support.huaweicloud.com/api-dcs/ListGroupReplicationInfo.html#ListGroupReplicationInfo__response_InstanceReplicationListInfo)。
-     * 
-     * @return nodeIpList */
+    /**
+     * 诊断节点IP列表。默认诊断所有节点。 非读写分离实例查询方法如下：   - 方法一：参考[查看实例信息](https://support.huaweicloud.com/usermanual-dcs/dcs-ug-0312016.html)。   - 方法二：调用[查询指定实例](https://support.huaweicloud.com/api-dcs/ShowInstance.html)查询。  读写分离实例查询方法：调用[查询分片信息](https://support.huaweicloud.com/api-dcs/ListGroupReplicationInfo.html#ListGroupReplicationInfo__response_InstanceReplicationListInfo)。 
+     * @return nodeIpList
+     */
     public List<String> getNodeIpList() {
         return nodeIpList;
     }
@@ -123,7 +125,10 @@ public class CreateDiagnosisTaskBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

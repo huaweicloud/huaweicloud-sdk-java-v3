@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MultiTaskColumnInfo */
+/**
+ * MultiTaskColumnInfo
+ */
 public class MultiTaskColumnInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class MultiTaskColumnInfo {
         return this;
     }
 
-    /** 字段名
-     * 
-     * @return fieldName */
+    /**
+     * 字段名
+     * @return fieldName
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -44,9 +47,10 @@ public class MultiTaskColumnInfo {
         return this;
     }
 
-    /** 字段类型
-     * 
-     * @return fieldType */
+    /**
+     * 字段类型
+     * @return fieldType
+     */
     public String getFieldType() {
         return fieldType;
     }
@@ -60,9 +64,10 @@ public class MultiTaskColumnInfo {
         return this;
     }
 
-    /** 字段长度
-     * 
-     * @return fieldLength */
+    /**
+     * 字段长度
+     * @return fieldLength
+     */
     public String getFieldLength() {
         return fieldLength;
     }
@@ -101,7 +106,10 @@ public class MultiTaskColumnInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class GlanceDeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class GlanceDeleteTagRequest {
         return this;
     }
 
-    /** 镜像id
-     * 
-     * @return imageId */
+    /**
+     * 镜像id
+     * @return imageId
+     */
     public String getImageId() {
         return imageId;
     }
@@ -39,9 +42,10 @@ public class GlanceDeleteTagRequest {
         return this;
     }
 
-    /** 新增的tag。字符串中不能包含“=”和“.”。
-     * 
-     * @return tag */
+    /**
+     * 新增的tag。字符串中不能包含“=”和“.”。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -78,7 +82,10 @@ public class GlanceDeleteTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

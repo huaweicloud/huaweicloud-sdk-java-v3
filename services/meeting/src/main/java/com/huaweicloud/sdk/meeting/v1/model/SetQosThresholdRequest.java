@@ -11,22 +11,34 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class SetQosThresholdRequest {
 
-    /** 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。 */
+    /**
+     * 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。
+     */
     public static final class ThresholdTypeEnum {
 
-        /** Enum AUDIO for value: "AUDIO" */
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
         public static final ThresholdTypeEnum AUDIO = new ThresholdTypeEnum("AUDIO");
 
-        /** Enum VIDEO for value: "VIDEO" */
+        /**
+         * Enum VIDEO for value: "VIDEO"
+         */
         public static final ThresholdTypeEnum VIDEO = new ThresholdTypeEnum("VIDEO");
 
-        /** Enum SCREEN for value: "SCREEN" */
+        /**
+         * Enum SCREEN for value: "SCREEN"
+         */
         public static final ThresholdTypeEnum SCREEN = new ThresholdTypeEnum("SCREEN");
 
-        /** Enum CPU for value: "CPU" */
+        /**
+         * Enum CPU for value: "CPU"
+         */
         public static final ThresholdTypeEnum CPU = new ThresholdTypeEnum("CPU");
 
         private static final Map<String, ThresholdTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +120,10 @@ public class SetQosThresholdRequest {
         return this;
     }
 
-    /** 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。
-     * 
-     * @return thresholdType */
+    /**
+     * 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。
+     * @return thresholdType
+     */
     public ThresholdTypeEnum getThresholdType() {
         return thresholdType;
     }
@@ -133,9 +146,10 @@ public class SetQosThresholdRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public SetQosThresholdReq getBody() {
         return body;
     }
@@ -172,7 +186,10 @@ public class SetQosThresholdRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

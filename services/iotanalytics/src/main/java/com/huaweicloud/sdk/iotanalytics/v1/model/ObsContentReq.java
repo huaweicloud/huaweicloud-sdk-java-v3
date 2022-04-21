@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OBS数据源配置内容 */
+/**
+ * OBS数据源配置内容
+ */
 public class ObsContentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ObsContentReq {
         return this;
     }
 
-    /** 桶名称
-     * 
-     * @return bucketName */
+    /**
+     * 桶名称
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -44,9 +47,10 @@ public class ObsContentReq {
         return this;
     }
 
-    /** 租户的AK
-     * 
-     * @return ak */
+    /**
+     * 租户的AK
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -60,9 +64,10 @@ public class ObsContentReq {
         return this;
     }
 
-    /** 租户的SK
-     * 
-     * @return sk */
+    /**
+     * 租户的SK
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -100,7 +105,10 @@ public class ObsContentReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

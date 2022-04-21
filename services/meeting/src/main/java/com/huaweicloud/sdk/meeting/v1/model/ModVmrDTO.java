@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户修改vmr信息 */
+/**
+ * 用户修改vmr信息
+ */
 public class ModVmrDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ModVmrDTO {
         return this;
     }
 
-    /** 云会议室名称 maxLength：128 minLength：1
-     * 
-     * @return vmrName */
+    /**
+     * 云会议室名称 maxLength：128 minLength：1 
+     * @return vmrName
+     */
     public String getVmrName() {
         return vmrName;
     }
@@ -54,9 +57,10 @@ public class ModVmrDTO {
         return this;
     }
 
-    /** 来宾密码，“”代表不设置来宾密码 4~16位的数字
-     * 
-     * @return gustPwd */
+    /**
+     * 来宾密码，“”代表不设置来宾密码 4~16位的数字 
+     * @return gustPwd
+     */
     public String getGustPwd() {
         return gustPwd;
     }
@@ -70,9 +74,10 @@ public class ModVmrDTO {
         return this;
     }
 
-    /** 主席密码 4~16位的数字
-     * 
-     * @return chairPwd */
+    /**
+     * 主席密码 4~16位的数字 
+     * @return chairPwd
+     */
     public String getChairPwd() {
         return chairPwd;
     }
@@ -86,9 +91,10 @@ public class ModVmrDTO {
         return this;
     }
 
-    /** 是否允许来宾先入会。
-     * 
-     * @return allowGustFirst */
+    /**
+     * 是否允许来宾先入会。
+     * @return allowGustFirst
+     */
     public Boolean getAllowGustFirst() {
         return allowGustFirst;
     }
@@ -102,9 +108,10 @@ public class ModVmrDTO {
         return this;
     }
 
-    /** 云会议室被使用后是否通知会议室所有者。
-     * 
-     * @return gustFirstNotice */
+    /**
+     * 云会议室被使用后是否通知会议室所有者。
+     * @return gustFirstNotice
+     */
     public Boolean getGustFirstNotice() {
         return gustFirstNotice;
     }
@@ -146,7 +153,10 @@ public class ModVmrDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** database 返回参数 */
+/**
+ * database 返回参数
+ */
 public class GetDatabaseResponseBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 逻辑库名称。
-     * 
-     * @return name */
+    /**
+     * 逻辑库名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -82,9 +85,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 逻辑库的创建时间。
-     * 
-     * @return created */
+    /**
+     * 逻辑库的创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -98,9 +102,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -114,9 +119,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** DDM实例最后更新时间。
-     * 
-     * @return updated */
+    /**
+     * DDM实例最后更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -146,9 +152,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 逻辑库分片的详细信息。
-     * 
-     * @return databases */
+    /**
+     * 逻辑库分片的详细信息。
+     * @return databases
+     */
     public List<GetDatabases> getDatabases() {
         return databases;
     }
@@ -162,9 +169,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 逻辑库的工作模式。 - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
-     * 
-     * @return shardMode */
+    /**
+     * 逻辑库的工作模式。  - cluster表示逻辑库是拆分模式。 - single表示逻辑库是非拆分模式。
+     * @return shardMode
+     */
     public String getShardMode() {
         return shardMode;
     }
@@ -178,9 +186,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 同一种工作模式下逻辑库分片的数量。
-     * 
-     * @return shardNumber */
+    /**
+     * 同一种工作模式下逻辑库分片的数量。
+     * @return shardNumber
+     */
     public Integer getShardNumber() {
         return shardNumber;
     }
@@ -194,9 +203,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 单个RDS上的逻辑库分片数。
-     * 
-     * @return shardUnit */
+    /**
+     * 单个RDS上的逻辑库分片数。
+     * @return shardUnit
+     */
     public Integer getShardUnit() {
         return shardUnit;
     }
@@ -226,9 +236,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 连接逻辑库使用的IP:端口。
-     * 
-     * @return dataVips */
+    /**
+     * 连接逻辑库使用的IP:端口。
+     * @return dataVips
+     */
     public List<String> getDataVips() {
         return dataVips;
     }
@@ -258,9 +269,10 @@ public class GetDatabaseResponseBean {
         return this;
     }
 
-    /** 关联RDS
-     * 
-     * @return usedRds */
+    /**
+     * 关联RDS
+     * @return usedRds
+     */
     public List<GetDatabaseUsedRds> getUsedRds() {
         return usedRds;
     }
@@ -314,7 +326,10 @@ public class GetDatabaseResponseBean {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

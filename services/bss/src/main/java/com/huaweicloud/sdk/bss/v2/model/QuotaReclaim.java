@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QuotaReclaim */
+/**
+ * QuotaReclaim
+ */
 public class QuotaReclaim {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class QuotaReclaim {
         return this;
     }
 
-    /** 被回收的精英服务商的代金券额度ID。
-     * 
-     * @return quotaId */
+    /**
+     * 被回收的精英服务商的代金券额度ID。
+     * @return quotaId
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -39,9 +42,10 @@ public class QuotaReclaim {
         return this;
     }
 
-    /** 被回收额度后的代金券额度余额。单位：元。
-     * 
-     * @return quotaBalance */
+    /**
+     * 被回收额度后的代金券额度余额。单位：元。
+     * @return quotaBalance
+     */
     public Double getQuotaBalance() {
         return quotaBalance;
     }
@@ -78,7 +82,10 @@ public class QuotaReclaim {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

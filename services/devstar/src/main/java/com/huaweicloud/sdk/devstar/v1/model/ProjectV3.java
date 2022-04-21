@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProjectV3 */
+/**
+ * ProjectV3
+ */
 public class ProjectV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -59,9 +62,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 项目名
-     * 
-     * @return name */
+    /**
+     * 项目名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -75,9 +79,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 区域编码
-     * 
-     * @return regionId */
+    /**
+     * 区域编码
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -91,9 +96,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return regionName */
+    /**
+     * 区域名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -107,9 +113,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 管理权限
-     * 
-     * @return managementPermission */
+    /**
+     * 管理权限
+     * @return managementPermission
+     */
     public Boolean getManagementPermission() {
         return managementPermission;
     }
@@ -123,9 +130,10 @@ public class ProjectV3 {
         return this;
     }
 
-    /** 是否是存量项目
-     * 
-     * @return isStock */
+    /**
+     * 是否是存量项目
+     * @return isStock
+     */
     public Boolean getIsStock() {
         return isStock;
     }
@@ -169,7 +177,10 @@ public class ProjectV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

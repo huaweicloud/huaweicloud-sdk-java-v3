@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 广告检测详情 */
+/**
+ * 广告检测详情
+ */
 public class ImageDetectionResultAdDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ImageDetectionResultAdDetail {
         return this;
     }
 
-    /** 置信度，取值范围 0-1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围 0-1。
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -47,10 +50,10 @@ public class ImageDetectionResultAdDetail {
         return this;
     }
 
-    /** ad：label为对应的广告识别结果信息 - 广告场景当前支持label列表如下： - normal：正常 - ad：广告 - 图文审核场景当前支持label列表如下： - normal：正常 - qr_code：二维 -
-     * politics：涉政 - porn：涉黄 - ad：广告 - abuse：辱骂 - contraband：违禁品 - 其他自定义黑库名称
-     * 
-     * @return label */
+    /**
+     * ad：label为对应的广告识别结果信息 - 广告场景当前支持label列表如下：   - normal：正常   - ad：广告 - 图文审核场景当前支持label列表如下：   - normal：正常   - qr_code：二维   - politics：涉政   - porn：涉黄   - ad：广告   - abuse：辱骂   - contraband：违禁品   - 其他自定义黑库名称 
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -80,9 +83,10 @@ public class ImageDetectionResultAdDetail {
         return this;
     }
 
-    /** 图文审核场景命中的文本列表。
-     * 
-     * @return hitContexts */
+    /**
+     * 图文审核场景命中的文本列表。
+     * @return hitContexts
+     */
     public List<String> getHitContexts() {
         return hitContexts;
     }
@@ -121,7 +125,10 @@ public class ImageDetectionResultAdDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

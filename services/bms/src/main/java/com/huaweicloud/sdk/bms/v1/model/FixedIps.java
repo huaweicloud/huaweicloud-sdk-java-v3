@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** fixed_ips字段数据结构说明 */
+/**
+ * fixed_ips字段数据结构说明
+ */
 public class FixedIps {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class FixedIps {
         return this;
     }
 
-    /** 网卡私网IP对应子网的子网ID（subnet_id）。
-     * 
-     * @return subnetId */
+    /**
+     * 网卡私网IP对应子网的子网ID（subnet_id）。
+     * @return subnetId
+     */
     public UUID getSubnetId() {
         return subnetId;
     }
@@ -40,9 +43,10 @@ public class FixedIps {
         return this;
     }
 
-    /** 网卡私网IP信息
-     * 
-     * @return ipAddress */
+    /**
+     * 网卡私网IP信息
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -78,7 +82,10 @@ public class FixedIps {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

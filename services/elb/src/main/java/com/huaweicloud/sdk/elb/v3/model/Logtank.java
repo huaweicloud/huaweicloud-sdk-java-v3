@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云日志信息。 */
+/**
+ * 云日志信息。
+ */
 public class Logtank {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Logtank {
         return this;
     }
 
-    /** 云日志ID。
-     * 
-     * @return id */
+    /**
+     * 云日志ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class Logtank {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -70,9 +74,10 @@ public class Logtank {
         return this;
     }
 
-    /** 负载均衡器ID。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 负载均衡器ID。
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -86,9 +91,10 @@ public class Logtank {
         return this;
     }
 
-    /** 云日志分组ID。
-     * 
-     * @return logGroupId */
+    /**
+     * 云日志分组ID。
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -102,9 +108,10 @@ public class Logtank {
         return this;
     }
 
-    /** 云日志主题ID。
-     * 
-     * @return logTopicId */
+    /**
+     * 云日志主题ID。
+     * @return logTopicId
+     */
     public String getLogTopicId() {
         return logTopicId;
     }
@@ -146,7 +153,10 @@ public class Logtank {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

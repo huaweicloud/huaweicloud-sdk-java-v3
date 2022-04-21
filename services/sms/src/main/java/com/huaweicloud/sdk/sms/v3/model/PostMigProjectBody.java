@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** SMS迁移项目信息 */
+/**
+ * SMS迁移项目信息
+ */
 public class PostMigProjectBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,13 +55,19 @@ public class PostMigProjectBody {
 
     private Boolean existServer;
 
-    /** 迁移项目类型 */
+    /**
+     * 迁移项目类型
+     */
     public static final class TypeEnum {
 
-        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
 
-        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +152,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 迁移项目名称
-     * 
-     * @return name */
+    /**
+     * 迁移项目名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -160,9 +169,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 迁移项目描述
-     * 
-     * @return description */
+    /**
+     * 迁移项目描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -176,9 +186,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 是否为默认模板
-     * 
-     * @return isdefault */
+    /**
+     * 是否为默认模板
+     * @return isdefault
+     */
     public Boolean getIsdefault() {
         return isdefault;
     }
@@ -192,9 +203,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return region */
+    /**
+     * 区域名称
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -208,9 +220,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 迁移后是否启动目的端虚拟机
-     * 
-     * @return startTargetServer */
+    /**
+     * 迁移后是否启动目的端虚拟机
+     * @return startTargetServer
+     */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -224,9 +237,12 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 限制迁移速率，单位：Mbps minimum: 0 maximum: 10000
-     * 
-     * @return speedLimit */
+    /**
+     * 限制迁移速率，单位：Mbps
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
+     */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -240,9 +256,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 是否使用公网IP迁移
-     * 
-     * @return usePublicIp */
+    /**
+     * 是否使用公网IP迁移
+     * @return usePublicIp
+     */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -256,9 +273,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 是否是已经存在的服务器
-     * 
-     * @return existServer */
+    /**
+     * 是否是已经存在的服务器
+     * @return existServer
+     */
     public Boolean getExistServer() {
         return existServer;
     }
@@ -272,9 +290,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 迁移项目类型
-     * 
-     * @return type */
+    /**
+     * 迁移项目类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -288,9 +307,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 企业项目名称
-     * 
-     * @return enterpriseProject */
+    /**
+     * 企业项目名称
+     * @return enterpriseProject
+     */
     public String getEnterpriseProject() {
         return enterpriseProject;
     }
@@ -304,9 +324,10 @@ public class PostMigProjectBody {
         return this;
     }
 
-    /** 首次复制或者同步后 是否继续持续同步
-     * 
-     * @return syncing */
+    /**
+     * 首次复制或者同步后 是否继续持续同步
+     * @return syncing
+     */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -371,7 +392,10 @@ public class PostMigProjectBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

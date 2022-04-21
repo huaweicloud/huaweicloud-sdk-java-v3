@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DataSource */
+/**
+ * DataSource
+ */
 public class DataSource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,12 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品 minimum: 1 maximum: 3
-     * 
-     * @return type */
+    /**
+     * 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品
+     * minimum: 1
+     * maximum: 3
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -64,9 +69,10 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源产品所属管理账号的ID，最大36个字符。
-     * 
-     * @return domainId */
+    /**
+     * 数据源产品所属管理账号的ID，最大36个字符。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -80,9 +86,10 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源产品所属项目的ID，最大36个字符。
-     * 
-     * @return projectId */
+    /**
+     * 数据源产品所属项目的ID，最大36个字符。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -96,9 +103,10 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
-     * 
-     * @return regionId */
+    /**
+     * 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -112,9 +120,10 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源产品所属公司的名称。
-     * 
-     * @return companyName */
+    /**
+     * 数据源产品所属公司的名称。
+     * @return companyName
+     */
     public String getCompanyName() {
         return companyName;
     }
@@ -128,9 +137,10 @@ public class DataSource {
         return this;
     }
 
-    /** 数据源产品的名称。
-     * 
-     * @return productName */
+    /**
+     * 数据源产品的名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -144,9 +154,10 @@ public class DataSource {
         return this;
     }
 
-    /** 产品功能特性名称，用来指明检测到当前事件的产品的功能特性。
-     * 
-     * @return productFeature */
+    /**
+     * 产品功能特性名称，用来指明检测到当前事件的产品的功能特性。
+     * @return productFeature
+     */
     public String getProductFeature() {
         return productFeature;
     }
@@ -192,7 +203,10 @@ public class DataSource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

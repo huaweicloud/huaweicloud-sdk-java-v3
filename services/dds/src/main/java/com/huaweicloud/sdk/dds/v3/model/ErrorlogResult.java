@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ErrorlogResult */
+/**
+ * ErrorlogResult
+ */
 public class ErrorlogResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ErrorlogResult {
         return this;
     }
 
-    /** 节点名称。
-     * 
-     * @return nodeName */
+    /**
+     * 节点名称。
+     * @return nodeName
+     */
     public String getNodeName() {
         return nodeName;
     }
@@ -49,9 +52,10 @@ public class ErrorlogResult {
         return this;
     }
 
-    /** 日志级别。
-     * 
-     * @return level */
+    /**
+     * 日志级别。
+     * @return level
+     */
     public String getLevel() {
         return level;
     }
@@ -65,9 +69,10 @@ public class ErrorlogResult {
         return this;
     }
 
-    /** 发生时间，UTC时间。
-     * 
-     * @return time */
+    /**
+     * 发生时间，UTC时间。
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -81,9 +86,10 @@ public class ErrorlogResult {
         return this;
     }
 
-    /** 日志内容。
-     * 
-     * @return content */
+    /**
+     * 日志内容。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -123,7 +129,10 @@ public class ErrorlogResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

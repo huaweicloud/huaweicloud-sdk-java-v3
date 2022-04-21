@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** 服务器重装云硬盘配置 */
+/**
+ * 服务器重装云硬盘配置
+ */
 public class ReinstallVolumeSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ReinstallVolumeSpec {
         return this;
     }
 
-    /** 用户自定义镜像ID
-     * 
-     * @return imageID */
+    /**
+     * 用户自定义镜像ID
+     * @return imageID
+     */
     public UUID getImageID() {
         return imageID;
     }
@@ -40,9 +43,10 @@ public class ReinstallVolumeSpec {
         return this;
     }
 
-    /** 用户主密钥ID。默认为空时，表示云硬盘不加密。
-     * 
-     * @return cmkID */
+    /**
+     * 用户主密钥ID。默认为空时，表示云硬盘不加密。
+     * @return cmkID
+     */
     public String getCmkID() {
         return cmkID;
     }
@@ -79,7 +83,10 @@ public class ReinstallVolumeSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

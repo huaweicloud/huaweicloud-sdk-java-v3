@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowEdgeCloudResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,9 +79,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务ID。
-     * 
-     * @return id */
+    /**
+     * 边缘业务ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -93,9 +96,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务名称。
-     * 
-     * @return name */
+    /**
+     * 边缘业务名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -125,9 +129,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务资源组。
-     * 
-     * @return stacks */
+    /**
+     * 边缘业务资源组。
+     * @return stacks
+     */
     public List<Stack> getStacks() {
         return stacks;
     }
@@ -150,9 +155,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** Get coverage
-     * 
-     * @return coverage */
+    /**
+     * Get coverage
+     * @return coverage
+     */
     public CoverageResp getCoverage() {
         return coverage;
     }
@@ -166,9 +172,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务成功创建的虚拟机数量。
-     * 
-     * @return successNum */
+    /**
+     * 边缘业务成功创建的虚拟机数量。
+     * @return successNum
+     */
     public Integer getSuccessNum() {
         return successNum;
     }
@@ -182,9 +189,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务创建失败的虚拟机数量。
-     * 
-     * @return failedNum */
+    /**
+     * 边缘业务创建失败的虚拟机数量。
+     * @return failedNum
+     */
     public Integer getFailedNum() {
         return failedNum;
     }
@@ -198,9 +206,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务状态。
-     * 
-     * @return status */
+    /**
+     * 边缘业务状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -223,9 +232,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** Get failReason
-     * 
-     * @return failReason */
+    /**
+     * Get failReason
+     * @return failReason
+     */
     public FailReason getFailReason() {
         return failReason;
     }
@@ -239,9 +249,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 边缘业务支持的边缘区域数目，等同于边缘业务下所有实例的区域数目总和
-     * 
-     * @return edgeRegions */
+    /**
+     * 边缘业务支持的边缘区域数目，等同于边缘业务下所有实例的区域数目总和
+     * @return edgeRegions
+     */
     public Integer getEdgeRegions() {
         return edgeRegions;
     }
@@ -255,9 +266,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -271,9 +283,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createAt */
+    /**
+     * 创建时间。
+     * @return createAt
+     */
     public String getCreateAt() {
         return createAt;
     }
@@ -287,9 +300,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return this;
     }
 
-    /** 修改时间。
-     * 
-     * @return updateAt */
+    /**
+     * 修改时间。
+     * @return updateAt
+     */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -357,7 +371,10 @@ public class ShowEdgeCloudResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

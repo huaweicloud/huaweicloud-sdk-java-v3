@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DomainRegion */
+/**
+ * DomainRegion
+ */
 public class DomainRegion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class DomainRegion {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return domainName */
+    /**
+     * 域名
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -59,9 +62,10 @@ public class DomainRegion {
         return this;
     }
 
-    /** 指标统计数据列表，如果该时间段内无值，则为空数组[]
-     * 
-     * @return regionIspDetails */
+    /**
+     * 指标统计数据列表，如果该时间段内无值，则为空数组[]
+     * @return regionIspDetails
+     */
     public List<Map<String, Object>> getRegionIspDetails() {
         return regionIspDetails;
     }
@@ -98,7 +102,10 @@ public class DomainRegion {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

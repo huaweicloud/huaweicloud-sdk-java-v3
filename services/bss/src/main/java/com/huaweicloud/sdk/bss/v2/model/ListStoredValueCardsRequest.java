@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListStoredValueCardsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class ListStoredValueCardsRequest {
         return this;
     }
 
-    /** 状态：1：可使用2：已用完 minimum: 1 maximum: 2
-     * 
-     * @return status */
+    /**
+     * 状态：1：可使用2：已用完
+     * minimum: 1
+     * maximum: 2
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -49,9 +54,10 @@ public class ListStoredValueCardsRequest {
         return this;
     }
 
-    /** 储值卡ID
-     * 
-     * @return cardId */
+    /**
+     * 储值卡ID。
+     * @return cardId
+     */
     public String getCardId() {
         return cardId;
     }
@@ -65,11 +71,12 @@ public class ListStoredValueCardsRequest {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset =
-     * 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -83,9 +90,12 @@ public class ListStoredValueCardsRequest {
         return this;
     }
 
-    /** 查询的优惠券数量，默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询的优惠券数量，默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -126,7 +136,10 @@ public class ListStoredValueCardsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -46,9 +46,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** 用户组描述信息。
-     * 
-     * @return description */
+    /**
+     * 用户组描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -62,9 +63,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** 用户组ID。
-     * 
-     * @return id */
+    /**
+     * 用户组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,9 +80,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** 用户组所属账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 用户组所属账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -94,9 +97,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** 用户组名称。
-     * 
-     * @return name */
+    /**
+     * 用户组名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -119,9 +123,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -135,9 +140,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return this;
     }
 
-    /** 用户组创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 用户组创建时间。
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -182,7 +188,10 @@ public class KeystoneGroupResultWithLinksSelf {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

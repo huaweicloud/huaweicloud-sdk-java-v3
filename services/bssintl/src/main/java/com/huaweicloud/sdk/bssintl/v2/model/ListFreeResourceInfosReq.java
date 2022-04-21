@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListFreeResourceInfosReq */
+/**
+ * ListFreeResourceInfosReq
+ */
 public class ListFreeResourceInfosReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * 
-     * @return regionCode */
+    /**
+     * 云服务区编码，例如：“ap-southeast-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * @return regionCode
+     */
     public String getRegionCode() {
         return regionCode;
     }
@@ -69,9 +72,10 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 订单ID。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -85,9 +89,10 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 产品ID，即资源包ID。
-     * 
-     * @return productId */
+    /**
+     * 产品ID，即资源包ID。
+     * @return productId
+     */
     public String getProductId() {
         return productId;
     }
@@ -101,9 +106,10 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 产品名称，即资源包名称。
-     * 
-     * @return productName */
+    /**
+     * 产品名称，即资源包名称。
+     * @return productName
+     */
     public String getProductName() {
         return productName;
     }
@@ -117,9 +123,10 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -133,9 +140,12 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订 minimum: 0 maximum: 4
-     * 
-     * @return status */
+    /**
+     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
+     * minimum: 0
+     * maximum: 4
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -149,10 +159,12 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 偏移量，从0开始，默认为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
-     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 999999
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始，默认为0。  说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -166,9 +178,12 @@ public class ListFreeResourceInfosReq {
         return this;
     }
 
-    /** 每次查询的记录数，默认为10。 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次查询的记录数，默认为10。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -217,7 +232,10 @@ public class ListFreeResourceInfosReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class UpdateMigprojectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class UpdateMigprojectRequest {
         return this;
     }
 
-    /** 迁移项目id
-     * 
-     * @return migProjectId */
+    /**
+     * 迁移项目id
+     * @return migProjectId
+     */
     public String getMigProjectId() {
         return migProjectId;
     }
@@ -49,9 +52,10 @@ public class UpdateMigprojectRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public MigProject getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class UpdateMigprojectRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

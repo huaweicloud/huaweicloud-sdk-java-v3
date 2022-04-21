@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/** ClassroomMember */
+/**
+ * ClassroomMember
+ */
 public class ClassroomMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员ID
-     * 
-     * @return memberId */
+    /**
+     * 成员ID
+     * @return memberId
+     */
     public String getMemberId() {
         return memberId;
     }
@@ -75,9 +78,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员名称
-     * 
-     * @return name */
+    /**
+     * 成员名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +95,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员学号/工号
-     * 
-     * @return number */
+    /**
+     * 成员学号/工号
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -107,9 +112,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员所在班级的名字
-     * 
-     * @return className */
+    /**
+     * 成员所在班级的名字
+     * @return className
+     */
     public String getClassName() {
         return className;
     }
@@ -123,9 +129,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员用户名
-     * 
-     * @return userName */
+    /**
+     * 成员用户名
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -139,9 +146,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 成员加入课堂时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return joinTime */
+    /**
+     * 成员加入课堂时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * @return joinTime
+     */
     public String getJoinTime() {
         return joinTime;
     }
@@ -155,9 +163,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 该成员已接收到的作业数量
-     * 
-     * @return jobReceivedCount */
+    /**
+     * 该成员已接收到的作业数量
+     * @return jobReceivedCount
+     */
     public Integer getJobReceivedCount() {
         return jobReceivedCount;
     }
@@ -171,9 +180,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 该成员已完成的作业数量
-     * 
-     * @return jobFinishedCount */
+    /**
+     * 该成员已完成的作业数量
+     * @return jobFinishedCount
+     */
     public Integer getJobFinishedCount() {
         return jobFinishedCount;
     }
@@ -187,9 +197,10 @@ public class ClassroomMember {
         return this;
     }
 
-    /** 该成员作业完成率
-     * 
-     * @return jobFinishedRate */
+    /**
+     * 该成员作业完成率
+     * @return jobFinishedRate
+     */
     public BigDecimal getJobFinishedRate() {
         return jobFinishedRate;
     }
@@ -247,7 +258,10 @@ public class ClassroomMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 删除保护实例请求体 */
+/**
+ * 删除保护实例请求体
+ */
 public class DeleteProtectedInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteProtectedInstanceRequestBody {
         return this;
     }
 
-    /** 是否删除容灾站点服务器，默认值为false。
-     * 
-     * @return deleteTargetServer */
+    /**
+     * 是否删除容灾站点服务器，默认值为false。
+     * @return deleteTargetServer
+     */
     public Boolean getDeleteTargetServer() {
         return deleteTargetServer;
     }
@@ -39,9 +42,10 @@ public class DeleteProtectedInstanceRequestBody {
         return this;
     }
 
-    /** 是否删除容灾站点弹性IP，默认值为false。
-     * 
-     * @return deleteTargetEip */
+    /**
+     * 是否删除容灾站点弹性IP，默认值为false。
+     * @return deleteTargetEip
+     */
     public Boolean getDeleteTargetEip() {
         return deleteTargetEip;
     }
@@ -78,7 +82,10 @@ public class DeleteProtectedInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

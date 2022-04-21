@@ -74,9 +74,10 @@ public class TokenResult {
         return this;
     }
 
-    /** 服务目录信息。
-     * 
-     * @return catalog */
+    /**
+     * 服务目录信息。
+     * @return catalog
+     */
     public List<TokenCatalog> getCatalog() {
         return catalog;
     }
@@ -99,9 +100,10 @@ public class TokenResult {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public TokenDomainResult getDomain() {
         return domain;
     }
@@ -115,9 +117,10 @@ public class TokenResult {
         return this;
     }
 
-    /** token过期时间。
-     * 
-     * @return expiresAt */
+    /**
+     * token过期时间。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -131,9 +134,10 @@ public class TokenResult {
         return this;
     }
 
-    /** token下发时间。
-     * 
-     * @return issuedAt */
+    /**
+     * token下发时间。
+     * @return issuedAt
+     */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -163,9 +167,10 @@ public class TokenResult {
         return this;
     }
 
-    /** 获取token的方式。
-     * 
-     * @return methods */
+    /**
+     * 获取token的方式。
+     * @return methods
+     */
     public List<String> getMethods() {
         return methods;
     }
@@ -188,9 +193,10 @@ public class TokenResult {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public TokenProjectResult getProject() {
         return project;
     }
@@ -220,9 +226,10 @@ public class TokenResult {
         return this;
     }
 
-    /** token的权限信息。
-     * 
-     * @return roles */
+    /**
+     * token的权限信息。
+     * @return roles
+     */
     public List<TokenRole> getRoles() {
         return roles;
     }
@@ -245,9 +252,10 @@ public class TokenResult {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public TokenUserResult getUser() {
         return user;
     }
@@ -293,7 +301,10 @@ public class TokenResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

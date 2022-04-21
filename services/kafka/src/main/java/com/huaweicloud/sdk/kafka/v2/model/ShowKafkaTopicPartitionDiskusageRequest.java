@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowKafkaTopicPartitionDiskusageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,9 +52,10 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
         return this;
     }
 
-    /** 占用磁盘大小，默认值1G (1K ,1M , 1G)。
-     * 
-     * @return minSize */
+    /**
+     * 占用磁盘大小，默认值1G (1K ,1M , 1G)。
+     * @return minSize
+     */
     public String getMinSize() {
         return minSize;
     }
@@ -65,9 +69,10 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
         return this;
     }
 
-    /** 占用磁盘大小，查询top N。
-     * 
-     * @return top */
+    /**
+     * 占用磁盘大小，查询top N。
+     * @return top
+     */
     public String getTop() {
         return top;
     }
@@ -81,9 +86,10 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
         return this;
     }
 
-    /** 占用磁盘大小，查询大于占比的分区。
-     * 
-     * @return percentage */
+    /**
+     * 占用磁盘大小，查询大于占比的分区。
+     * @return percentage
+     */
     public String getPercentage() {
         return percentage;
     }
@@ -125,7 +131,10 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 配置伸缩组通知 */
+/**
+ * 配置伸缩组通知
+ */
 public class CreateNotificationOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,22 +23,34 @@ public class CreateNotificationOption {
 
     private String topicUrn;
 
-    /** Gets or Sets topicScene */
+    /**
+     * Gets or Sets topicScene
+     */
     public static final class TopicSceneEnum {
 
-        /** Enum _SCALING_UP for value: "[SCALING_UP" */
+        /**
+         * Enum _SCALING_UP for value: "[SCALING_UP"
+         */
         public static final TopicSceneEnum _SCALING_UP = new TopicSceneEnum("[SCALING_UP");
 
-        /** Enum SCALING_UP_FAIL for value: "SCALING_UP_FAIL" */
+        /**
+         * Enum SCALING_UP_FAIL for value: "SCALING_UP_FAIL"
+         */
         public static final TopicSceneEnum SCALING_UP_FAIL = new TopicSceneEnum("SCALING_UP_FAIL");
 
-        /** Enum SCALING_DOWN for value: "SCALING_DOWN" */
+        /**
+         * Enum SCALING_DOWN for value: "SCALING_DOWN"
+         */
         public static final TopicSceneEnum SCALING_DOWN = new TopicSceneEnum("SCALING_DOWN");
 
-        /** Enum SCALING_DOWN_FAIL for value: "SCALING_DOWN_FAIL" */
+        /**
+         * Enum SCALING_DOWN_FAIL for value: "SCALING_DOWN_FAIL"
+         */
         public static final TopicSceneEnum SCALING_DOWN_FAIL = new TopicSceneEnum("SCALING_DOWN_FAIL");
 
-        /** Enum SCALING_GROUP_ABNORMAL_ for value: "SCALING_GROUP_ABNORMAL]" */
+        /**
+         * Enum SCALING_GROUP_ABNORMAL_ for value: "SCALING_GROUP_ABNORMAL]"
+         */
         public static final TopicSceneEnum SCALING_GROUP_ABNORMAL_ = new TopicSceneEnum("SCALING_GROUP_ABNORMAL]");
 
         private static final Map<String, TopicSceneEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +128,10 @@ public class CreateNotificationOption {
         return this;
     }
 
-    /** SMN服务中Topic的唯一的资源标识。
-     * 
-     * @return topicUrn */
+    /**
+     * SMN服务中Topic的唯一的资源标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -146,9 +161,10 @@ public class CreateNotificationOption {
         return this;
     }
 
-    /** 通知场景，有以下五种类型。SCALING_UP：扩容成功。SCALING_UP_FAIL：扩容失败。SCALING_DOWN：减容成功。SCALING_DOWN_FAIL：减容失败。SCALING_GROUP_ABNORMAL：伸缩组发生异常
-     * 
-     * @return topicScene */
+    /**
+     * 通知场景，有以下五种类型。SCALING_UP：扩容成功。SCALING_UP_FAIL：扩容失败。SCALING_DOWN：减容成功。SCALING_DOWN_FAIL：减容失败。SCALING_GROUP_ABNORMAL：伸缩组发生异常
+     * @return topicScene
+     */
     public List<TopicSceneEnum> getTopicScene() {
         return topicScene;
     }
@@ -185,7 +201,10 @@ public class CreateNotificationOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

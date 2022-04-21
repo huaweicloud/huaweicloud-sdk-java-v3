@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** DNAT规则的响应体。 */
+/**
+ * DNAT规则的响应体。
+ */
 public class NatGatewayDnatRuleResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,25 +66,39 @@ public class NatGatewayDnatRuleResponseBody {
 
     private Integer externalServicePort;
 
-    /** 功能说明：DNAT规则的状态。 */
+    /**
+     * 功能说明：DNAT规则的状态。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
-        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
         public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
 
-        /** Enum PENDING_UPDATE for value: "PENDING_UPDATE" */
+        /**
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
+         */
         public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
 
-        /** Enum PENDING_DELETE for value: "PENDING_DELETE" */
+        /**
+         * Enum PENDING_DELETE for value: "PENDING_DELETE"
+         */
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
-        /** Enum EIP_FREEZED for value: "EIP_FREEZED" */
+        /**
+         * Enum EIP_FREEZED for value: "EIP_FREEZED"
+         */
         public static final StatusEnum EIP_FREEZED = new StatusEnum("EIP_FREEZED");
 
-        /** Enum INACTIVE for value: "INACTIVE" */
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -171,16 +187,24 @@ public class NatGatewayDnatRuleResponseBody {
 
     private String externalServicePortRange;
 
-    /** 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。 */
+    /**
+     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。 
+     */
     public static final class ProtocolEnum {
 
-        /** Enum TCP for value: "tcp" */
+        /**
+         * Enum TCP for value: "tcp"
+         */
         public static final ProtocolEnum TCP = new ProtocolEnum("tcp");
 
-        /** Enum UDP for value: "udp" */
+        /**
+         * Enum UDP for value: "udp"
+         */
         public static final ProtocolEnum UDP = new ProtocolEnum("udp");
 
-        /** Enum ANY for value: "any" */
+        /**
+         * Enum ANY for value: "any"
+         */
         public static final ProtocolEnum ANY = new ProtocolEnum("any");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -261,9 +285,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** DNAT规则的ID。
-     * 
-     * @return id */
+    /**
+     * DNAT规则的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -277,9 +302,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 项目的ID。
-     * 
-     * @return tenantId */
+    /**
+     * 项目的ID。
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -293,9 +319,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** DNAT规则的描述。长度限制为255。
-     * 
-     * @return description */
+    /**
+     * DNAT规则的描述。长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -309,9 +336,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
-     * 
-     * @return portId */
+    /**
+     * 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -325,9 +353,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
-     * 
-     * @return privateIp */
+    /**
+     * 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
+     * @return privateIp
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -341,9 +370,12 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。 minimum: 0 maximum: 65535
-     * 
-     * @return internalServicePort */
+    /**
+     * 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
+     * minimum: 0
+     * maximum: 65535
+     * @return internalServicePort
+     */
     public Integer getInternalServicePort() {
         return internalServicePort;
     }
@@ -357,9 +389,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 公网NAT网关实例的ID。
-     * 
-     * @return natGatewayId */
+    /**
+     * 公网NAT网关实例的ID。
+     * @return natGatewayId
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -373,9 +406,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 弹性公网IP的id。
-     * 
-     * @return floatingIpId */
+    /**
+     * 弹性公网IP的id。
+     * @return floatingIpId
+     */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -389,9 +423,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 弹性公网IP的IP地址。
-     * 
-     * @return floatingIpAddress */
+    /**
+     * 弹性公网IP的IP地址。 
+     * @return floatingIpAddress
+     */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -405,9 +440,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** Floatingip对外提供服务的端口号。 取值范围：0~65535。
-     * 
-     * @return externalServicePort */
+    /**
+     * Floatingip对外提供服务的端口号。 取值范围：0~65535。
+     * @return externalServicePort
+     */
     public Integer getExternalServicePort() {
         return externalServicePort;
     }
@@ -421,9 +457,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 功能说明：DNAT规则的状态。
-     * 
-     * @return status */
+    /**
+     * 功能说明：DNAT规则的状态。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -437,9 +474,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 解冻/冻结状态。 取值范围： − “true”： 解冻 − “false”： 冻结
-     * 
-     * @return adminStateUp */
+    /**
+     * 解冻/冻结状态。 取值范围： − “true”： 解冻 − “false”： 冻结 
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -453,9 +491,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
-     * 
-     * @return internalServicePortRange */
+    /**
+     * 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。 
+     * @return internalServicePortRange
+     */
     public String getInternalServicePortRange() {
         return internalServicePortRange;
     }
@@ -469,9 +508,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围
-     * 
-     * @return externalServicePortRange */
+    /**
+     * Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围 
+     * @return externalServicePortRange
+     */
     public String getExternalServicePortRange() {
         return externalServicePortRange;
     }
@@ -485,9 +525,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
-     * 
-     * @return protocol */
+    /**
+     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。 
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -501,9 +542,10 @@ public class NatGatewayDnatRuleResponseBody {
         return this;
     }
 
-    /** DNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
-     * 
-     * @return createdAt */
+    /**
+     * DNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -583,7 +625,10 @@ public class NatGatewayDnatRuleResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

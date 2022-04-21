@@ -43,9 +43,10 @@ public class CheckResultResultBody {
         return this;
     }
 
-    /** 任务标识。
-     * 
-     * @return jobId */
+    /**
+     * 任务标识。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -59,9 +60,10 @@ public class CheckResultResultBody {
         return this;
     }
 
-    /** 任务状态。 created：已创建 running：正在处理 finish：已完成 failed：处理失败
-     * 
-     * @return status */
+    /**
+     * 任务状态。  created：已创建  running：正在处理  finish：已完成  failed：处理失败 
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -75,9 +77,10 @@ public class CheckResultResultBody {
         return this;
     }
 
-    /** 任务创建的时间。例如：2018-01-02T15:03:04Z
-     * 
-     * @return createTime */
+    /**
+     * 任务创建的时间。例如：2018-01-02T15:03:04Z
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -91,9 +94,10 @@ public class CheckResultResultBody {
         return this;
     }
 
-    /** 任务最近更新的时间。例如：2018-01-02T15:03:04Z
-     * 
-     * @return updateTime */
+    /**
+     * 任务最近更新的时间。例如：2018-01-02T15:03:04Z
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -123,9 +127,10 @@ public class CheckResultResultBody {
         return this;
     }
 
-    /** 图片内容检测的结果列表。
-     * 
-     * @return items */
+    /**
+     * 图片内容检测的结果列表。
+     * @return items
+     */
     public List<CheckResultItemsBody> getItems() {
         return items;
     }
@@ -168,7 +173,10 @@ public class CheckResultResultBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

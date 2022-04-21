@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 边缘节点的终端设备信息 */
+/**
+ * 边缘节点的终端设备信息
+ */
 public class NodeUpdateByDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class NodeUpdateByDevice {
         return this;
     }
 
-    /** Get added
-     * 
-     * @return added */
+    /**
+     * Get added
+     * @return added
+     */
     public EdgeNodeAdded getAdded() {
         return added;
     }
@@ -67,9 +70,10 @@ public class NodeUpdateByDevice {
         return this;
     }
 
-    /** 要解绑的终端设备ID
-     * 
-     * @return removed */
+    /**
+     * 要解绑的终端设备ID
+     * @return removed
+     */
     public List<String> getRemoved() {
         return removed;
     }
@@ -106,7 +110,10 @@ public class NodeUpdateByDevice {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

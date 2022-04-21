@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 输出为hosting类型时的配置信息 */
+/**
+ * 输出为hosting类型时的配置信息
+ */
 public class TaskOutputHosting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class TaskOutputHosting {
         return this;
     }
 
-    /** 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
+     * @return dataCategory
+     */
     public List<String> getDataCategory() {
         return dataCategory;
     }
@@ -74,7 +77,10 @@ public class TaskOutputHosting {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

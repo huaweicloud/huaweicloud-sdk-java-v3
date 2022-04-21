@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateCustomfieldV1Req */
+/**
+ * CreateCustomfieldV1Req
+ */
 public class CreateCustomfieldV1Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CreateCustomfieldV1Req {
         return this;
     }
 
-    /** 字段名称
-     * 
-     * @return name */
+    /**
+     * 字段名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class CreateCustomfieldV1Req {
         return this;
     }
 
-    /** 自定义字段类型 可选类型 textArea|select|radio|text|checkbox|date|time_date|number
-     * 
-     * @return type */
+    /**
+     * 自定义字段类型 可选类型  textArea|select|radio|text|checkbox|date|time_date|number
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -70,9 +74,10 @@ public class CreateCustomfieldV1Req {
         return this;
     }
 
-    /** 字段选项
-     * 
-     * @return options */
+    /**
+     * 字段选项
+     * @return options
+     */
     public String getOptions() {
         return options;
     }
@@ -86,9 +91,10 @@ public class CreateCustomfieldV1Req {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return memo */
+    /**
+     * 描述
+     * @return memo
+     */
     public String getMemo() {
         return memo;
     }
@@ -102,9 +108,10 @@ public class CreateCustomfieldV1Req {
         return this;
     }
 
-    /** 工作项类型
-     * 
-     * @return scrumType */
+    /**
+     * 工作项类型
+     * @return scrumType
+     */
     public String getScrumType() {
         return scrumType;
     }
@@ -147,7 +154,10 @@ public class CreateCustomfieldV1Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

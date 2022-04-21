@@ -20,9 +20,10 @@ public class SecurityGroupOption {
         return this;
     }
 
-    /** 边缘实例的安全组，会对边缘实例中配置的网卡生效。需要指定已有安全组的ID。不填写时选择默认安全组
-     * 
-     * @return id */
+    /**
+     * 边缘实例的安全组，会对边缘实例中配置的网卡生效。需要指定已有安全组的ID。不填写时选择默认安全组
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -57,7 +58,10 @@ public class SecurityGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

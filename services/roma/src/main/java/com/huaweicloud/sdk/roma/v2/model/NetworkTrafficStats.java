@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** NetworkTrafficStats */
+/**
+ * NetworkTrafficStats
+ */
 public class NetworkTrafficStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class NetworkTrafficStats {
         return this;
     }
 
-    /** 下行吞吐量（byte）
-     * 
-     * @return outputThroughput */
+    /**
+     * 下行吞吐量（byte）
+     * @return outputThroughput
+     */
     public Long getOutputThroughput() {
         return outputThroughput;
     }
@@ -39,9 +42,10 @@ public class NetworkTrafficStats {
         return this;
     }
 
-    /** 上行吞吐量（byte）
-     * 
-     * @return inputThroughput */
+    /**
+     * 上行吞吐量（byte）
+     * @return inputThroughput
+     */
     public Long getInputThroughput() {
         return inputThroughput;
     }
@@ -78,7 +82,10 @@ public class NetworkTrafficStats {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

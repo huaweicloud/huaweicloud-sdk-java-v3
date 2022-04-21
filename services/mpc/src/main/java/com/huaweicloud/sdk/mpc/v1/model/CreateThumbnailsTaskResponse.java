@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateThumbnailsTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务ID。
-     * 
-     * @return taskId */
+    /**
+     * 任务ID。
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -66,9 +69,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务状态
-     * 
-     * @return status */
+    /**
+     * 任务状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -82,9 +86,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务创建时间
-     * 
-     * @return createTime */
+    /**
+     * 任务创建时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -107,9 +112,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -123,9 +129,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 截图文件名称
-     * 
-     * @return outputFileName */
+    /**
+     * 截图文件名称
+     * @return outputFileName
+     */
     public String getOutputFileName() {
         return outputFileName;
     }
@@ -139,9 +146,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 指定的截图时间点
-     * 
-     * @return thumbnailTime */
+    /**
+     * 指定的截图时间点
+     * @return thumbnailTime
+     */
     public String getThumbnailTime() {
         return thumbnailTime;
     }
@@ -155,9 +163,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 截图任务描述，当截图出现异常时，此字段为异常的原因
-     * 
-     * @return description */
+    /**
+     * 截图任务描述，当截图出现异常时，此字段为异常的原因
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -204,7 +213,10 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

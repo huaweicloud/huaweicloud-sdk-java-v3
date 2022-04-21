@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowStatisticCommitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowStatisticCommitRequest {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库短id
+     * @return repositoryId
+     */
     public Integer getRepositoryId() {
         return repositoryId;
     }
@@ -49,9 +52,10 @@ public class ShowStatisticCommitRequest {
         return this;
     }
 
-    /** 分支名称
-     * 
-     * @return refName */
+    /**
+     * 分支名称
+     * @return refName
+     */
     public String getRefName() {
         return refName;
     }
@@ -65,9 +69,10 @@ public class ShowStatisticCommitRequest {
         return this;
     }
 
-    /** 起始提交日期,格式为yyyy-MM-dd
-     * 
-     * @return beginDate */
+    /**
+     * 起始提交日期,格式为yyyy-MM-dd
+     * @return beginDate
+     */
     public String getBeginDate() {
         return beginDate;
     }
@@ -81,9 +86,10 @@ public class ShowStatisticCommitRequest {
         return this;
     }
 
-    /** 终止提交日期,格式为yyyy-MM-dd（begin_date和end_date时间间隔不超过60天）
-     * 
-     * @return endDate */
+    /**
+     * 终止提交日期,格式为yyyy-MM-dd（begin_date和end_date时间间隔不超过60天）
+     * @return endDate
+     */
     public String getEndDate() {
         return endDate;
     }
@@ -124,7 +130,10 @@ public class ShowStatisticCommitRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Subtitle */
+/**
+ * Subtitle
+ */
 public class Subtitle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,9 +42,10 @@ public class Subtitle {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -72,9 +75,10 @@ public class Subtitle {
         return this;
     }
 
-    /** 多字幕文件地址。
-     * 
-     * @return inputs */
+    /**
+     * 多字幕文件地址。 
+     * @return inputs
+     */
     public List<MulInputFileInfo> getInputs() {
         return inputs;
     }
@@ -88,9 +92,12 @@ public class Subtitle {
         return this;
     }
 
-    /** 字幕类型。取值如下： - 0，表示不输出字幕 - 1，表示外部字幕文件嵌入视频流 - 2，表示输出WebVTT格式字幕 minimum: 0 maximum: 3
-     * 
-     * @return subtitleType */
+    /**
+     * 字幕类型。取值如下：  - 0，表示不输出字幕 - 1，表示外部字幕文件嵌入视频流 - 2，表示输出WebVTT格式字幕 
+     * minimum: 0
+     * maximum: 3
+     * @return subtitleType
+     */
     public Integer getSubtitleType() {
         return subtitleType;
     }
@@ -128,7 +135,10 @@ public class Subtitle {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

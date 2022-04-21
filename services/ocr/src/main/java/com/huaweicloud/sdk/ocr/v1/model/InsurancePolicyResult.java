@@ -78,9 +78,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** 发卡行。
-     * 
-     * @return bankName */
+    /**
+     * 发卡行。 
+     * @return bankName
+     */
     public String getBankName() {
         return bankName;
     }
@@ -103,9 +104,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get billNumber
-     * 
-     * @return billNumber */
+    /**
+     * Get billNumber
+     * @return billNumber
+     */
     public InsurancePolicyDetail getBillNumber() {
         return billNumber;
     }
@@ -128,9 +130,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get company
-     * 
-     * @return company */
+    /**
+     * Get company
+     * @return company
+     */
     public InsurancePolicyDetail getCompany() {
         return company;
     }
@@ -153,9 +156,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get effectiveDate
-     * 
-     * @return effectiveDate */
+    /**
+     * Get effectiveDate
+     * @return effectiveDate
+     */
     public InsurancePolicyDetail getEffectiveDate() {
         return effectiveDate;
     }
@@ -178,9 +182,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get applicantName
-     * 
-     * @return applicantName */
+    /**
+     * Get applicantName
+     * @return applicantName
+     */
     public InsurancePolicyDetail getApplicantName() {
         return applicantName;
     }
@@ -203,9 +208,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get applicantSex
-     * 
-     * @return applicantSex */
+    /**
+     * Get applicantSex
+     * @return applicantSex
+     */
     public InsurancePolicyDetail getApplicantSex() {
         return applicantSex;
     }
@@ -228,9 +234,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get applicantBirthday
-     * 
-     * @return applicantBirthday */
+    /**
+     * Get applicantBirthday
+     * @return applicantBirthday
+     */
     public InsurancePolicyDetail getApplicantBirthday() {
         return applicantBirthday;
     }
@@ -253,9 +260,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get applicantIdType
-     * 
-     * @return applicantIdType */
+    /**
+     * Get applicantIdType
+     * @return applicantIdType
+     */
     public InsurancePolicyDetail getApplicantIdType() {
         return applicantIdType;
     }
@@ -278,9 +286,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** Get applicantIdNumber
-     * 
-     * @return applicantIdNumber */
+    /**
+     * Get applicantIdNumber
+     * @return applicantIdNumber
+     */
     public InsurancePolicyDetail getApplicantIdNumber() {
         return applicantIdNumber;
     }
@@ -310,9 +319,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** 被保人列表（第一个默认为主被保人）。
-     * 
-     * @return insurantList */
+    /**
+     * 被保人列表（第一个默认为主被保人）。 
+     * @return insurantList
+     */
     public List<InsurantItem> getInsurantList() {
         return insurantList;
     }
@@ -342,9 +352,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** 受益人列表。
-     * 
-     * @return beneficiaryList */
+    /**
+     * 受益人列表。 
+     * @return beneficiaryList
+     */
     public List<BeneficiaryItem> getBeneficiaryList() {
         return beneficiaryList;
     }
@@ -374,9 +385,10 @@ public class InsurancePolicyResult {
         return this;
     }
 
-    /** 保险项目信息列表。
-     * 
-     * @return insuranceList */
+    /**
+     * 保险项目信息列表。 
+     * @return insuranceList
+     */
     public List<InsuranceItem> getInsuranceList() {
         return insuranceList;
     }
@@ -444,7 +456,10 @@ public class InsurancePolicyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

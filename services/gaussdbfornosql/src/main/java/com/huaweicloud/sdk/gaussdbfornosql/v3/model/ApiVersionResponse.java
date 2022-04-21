@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** API版本详细信息列表。 */
+/**
+ * API版本详细信息列表。
+ */
 public class ApiVersionResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** API版本号。
-     * 
-     * @return id */
+    /**
+     * API版本号。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -78,9 +81,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** 对应API的链接信息,v3版本该字段为[]。
-     * 
-     * @return links */
+    /**
+     * 对应API的链接信息,v3版本该字段为[]。
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -94,9 +98,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** 版本状态。 取值为“CURRENT”，表示该版本目前已对外公布。
-     * 
-     * @return status */
+    /**
+     * 版本状态。 取值为“CURRENT”，表示该版本目前已对外公布。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -110,9 +115,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** API版本的子版本信息。
-     * 
-     * @return version */
+    /**
+     * API版本的子版本信息。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -126,9 +132,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** API版本的最小版本号。
-     * 
-     * @return minVersion */
+    /**
+     * API版本的最小版本号。
+     * @return minVersion
+     */
     public String getMinVersion() {
         return minVersion;
     }
@@ -142,9 +149,10 @@ public class ApiVersionResponse {
         return this;
     }
 
-    /** 版本更新时间。格式为“yyyy-mm-dd Thh:mm:ssZ”。其中，T指某个时间的开始，Z指UTC时间。
-     * 
-     * @return updated */
+    /**
+     * 版本更新时间。格式为“yyyy-mm-dd Thh:mm:ssZ”。其中，T指某个时间的开始，Z指UTC时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -188,7 +196,10 @@ public class ApiVersionResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

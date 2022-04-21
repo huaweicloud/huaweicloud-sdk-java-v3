@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 工业终端设备预留字段
-     * 
-     * @return deleteConnector */
+    /**
+     * 工业终端设备预留字段
+     * @return deleteConnector
+     */
     public Boolean getDeleteConnector() {
         return deleteConnector;
     }
@@ -51,9 +54,10 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 工业终端设备预留字段
-     * 
-     * @return deployConnector */
+    /**
+     * 工业终端设备预留字段
+     * @return deployConnector
+     */
     public Boolean getDeployConnector() {
         return deployConnector;
     }
@@ -67,9 +71,10 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** 工业终端设备预留字段
-     * 
-     * @return deploymentId */
+    /**
+     * 工业终端设备预留字段
+     * @return deploymentId
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -92,9 +97,10 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get updateDevices
-     * 
-     * @return updateDevices */
+    /**
+     * Get updateDevices
+     * @return updateDevices
+     */
     public NodeDevice getUpdateDevices() {
         return updateDevices;
     }
@@ -135,7 +141,10 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Common */
+/**
+ * Common
+ */
 public class Common {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Common {
         return this;
     }
 
-    /** 是否开启高清低码功能。 取值如下： - false：关闭。 - true：开启。
-     * 
-     * @return pvc */
+    /**
+     * 是否开启高清低码功能。  取值如下： - false：关闭。 - true：开启。 
+     * @return pvc
+     */
     public Boolean getPvc() {
         return pvc;
     }
@@ -49,9 +52,12 @@ public class Common {
         return this;
     }
 
-    /** HLS分片间隔，仅封装类型“pack_type”取值为1或3时，该参数生效。 取值范围：[2，10]。 单位：秒。 minimum: 2 maximum: 10
-     * 
-     * @return hlsInterval */
+    /**
+     * HLS分片间隔，仅封装类型“pack_type”取值为1或3时，该参数生效。  取值范围：[2，10]。  单位：秒。 
+     * minimum: 2
+     * maximum: 10
+     * @return hlsInterval
+     */
     public Integer getHlsInterval() {
         return hlsInterval;
     }
@@ -65,9 +71,12 @@ public class Common {
         return this;
     }
 
-    /** DASH间隔，仅封装类型“pack_type”取值为2或3时，该参数生效。 取值范围：[2，10]。 单位：秒。 minimum: 2 maximum: 10
-     * 
-     * @return dashInterval */
+    /**
+     * DASH间隔，仅封装类型“pack_type”取值为2或3时，该参数生效。  取值范围：[2，10]。  单位：秒。 
+     * minimum: 2
+     * maximum: 10
+     * @return dashInterval
+     */
     public Integer getDashInterval() {
         return dashInterval;
     }
@@ -81,10 +90,12 @@ public class Common {
         return this;
     }
 
-    /** 封装类型。 取值如下： - 1：HLS - 2：DASH - 3：HLS+DASH - 4：MP4 - 5：MP3 - 6：ADTS > pack_type设置为5和6时，不能设置视频参数。 minimum: 1
+    /**
+     * 封装类型。  取值如下： - 1：HLS - 2：DASH - 3：HLS+DASH - 4：MP4 - 5：MP3 - 6：ADTS  > pack_type设置为5和6时，不能设置视频参数。 
+     * minimum: 1
      * maximum: 6
-     * 
-     * @return packType */
+     * @return packType
+     */
     public Integer getPackType() {
         return packType;
     }
@@ -123,7 +134,10 @@ public class Common {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

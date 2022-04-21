@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 告警配置信息。 */
+/**
+ * 告警配置信息。
+ */
 public class UpdateAlertConfigRequestBodyWarnConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** DDoS攻击
-     * 
-     * @return antiDDoS */
+    /**
+     * DDoS攻击
+     * @return antiDDoS
+     */
     public Boolean getAntiDDoS() {
         return antiDDoS;
     }
@@ -69,9 +72,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 网页后门
-     * 
-     * @return backDoors */
+    /**
+     * 网页后门
+     * @return backDoors
+     */
     public Boolean getBackDoors() {
         return backDoors;
     }
@@ -85,9 +89,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 暴力破解（系统登录，FTP，DB）
-     * 
-     * @return bruceForce */
+    /**
+     * 暴力破解（系统登录，FTP，DB）
+     * @return bruceForce
+     */
     public Boolean getBruceForce() {
         return bruceForce;
     }
@@ -101,9 +106,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 数据库进程权限过高
-     * 
-     * @return highPrivilege */
+    /**
+     * 数据库进程权限过高
+     * @return highPrivilege
+     */
     public Boolean getHighPrivilege() {
         return highPrivilege;
     }
@@ -117,9 +123,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 异地登录提醒
-     * 
-     * @return remoteLogin */
+    /**
+     * 异地登录提醒
+     * @return remoteLogin
+     */
     public Boolean getRemoteLogin() {
         return remoteLogin;
     }
@@ -133,9 +140,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 取值范围： - 0：表示每天一次 - 1：表示半小时一次 对于HID必选。
-     * 
-     * @return sendFrequency */
+    /**
+     * 取值范围： - 0：表示每天一次 - 1：表示半小时一次  对于HID必选。
+     * @return sendFrequency
+     */
     public Integer getSendFrequency() {
         return sendFrequency;
     }
@@ -149,9 +157,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 保留字段
-     * 
-     * @return waf */
+    /**
+     * 保留字段
+     * @return waf
+     */
     public Boolean getWaf() {
         return waf;
     }
@@ -165,9 +174,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return this;
     }
 
-    /** 弱口令（系统，数据库）
-     * 
-     * @return weakPassword */
+    /**
+     * 弱口令（系统，数据库）
+     * @return weakPassword
+     */
     public Boolean getWeakPassword() {
         return weakPassword;
     }
@@ -218,7 +228,10 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

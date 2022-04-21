@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 修改数据库密码返回体 */
+/**
+ * 修改数据库密码返回体
+ */
 public class ModifyDbPwdResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ModifyDbPwdResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class ModifyDbPwdResp {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -70,9 +74,10 @@ public class ModifyDbPwdResp {
         return this;
     }
 
-    /** 源库：so，目标库：ta
-     * 
-     * @return endPointType */
+    /**
+     * 源库：so，目标库：ta
+     * @return endPointType
+     */
     public String getEndPointType() {
         return endPointType;
     }
@@ -86,9 +91,10 @@ public class ModifyDbPwdResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -102,9 +108,10 @@ public class ModifyDbPwdResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -146,7 +153,10 @@ public class ModifyDbPwdResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

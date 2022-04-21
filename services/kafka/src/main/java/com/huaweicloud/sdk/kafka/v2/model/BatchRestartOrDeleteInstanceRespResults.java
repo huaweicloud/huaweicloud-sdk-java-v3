@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** BatchRestartOrDeleteInstanceRespResults */
+/**
+ * BatchRestartOrDeleteInstanceRespResults
+ */
 public class BatchRestartOrDeleteInstanceRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BatchRestartOrDeleteInstanceRespResults {
         return this;
     }
 
-    /** 操作结果。 - 'success: 操作成功' - 'failed: 操作失败'
-     * 
-     * @return result */
+    /**
+     * 操作结果。 - 'success: 操作成功' - 'failed: 操作失败' 
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -39,9 +42,10 @@ public class BatchRestartOrDeleteInstanceRespResults {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instance */
+    /**
+     * 实例ID。
+     * @return instance
+     */
     public String getInstance() {
         return instance;
     }
@@ -79,7 +83,10 @@ public class BatchRestartOrDeleteInstanceRespResults {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

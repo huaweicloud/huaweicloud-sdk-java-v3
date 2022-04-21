@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 强制使用定义的规则调度，且不会影响已经在节点上运行的Pod。即强制选择调度到满足规则的节点，不会调度到不满足规则的节点。 */
+/**
+ * 强制使用定义的规则调度，且不会影响已经在节点上运行的Pod。即强制选择调度到满足规则的节点，不会调度到不满足规则的节点。
+ */
 public class RequiredDuringScheduling {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class RequiredDuringScheduling {
         return this;
     }
 
-    /** 节点选择规则
-     * 
-     * @return nodeSelectorTerms */
+    /**
+     * 节点选择规则
+     * @return nodeSelectorTerms
+     */
     public List<MatchExpressions> getNodeSelectorTerms() {
         return nodeSelectorTerms;
     }
@@ -74,7 +77,10 @@ public class RequiredDuringScheduling {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

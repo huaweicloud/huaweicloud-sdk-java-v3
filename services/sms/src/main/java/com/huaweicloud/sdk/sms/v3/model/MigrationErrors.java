@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 迁移错误信息 */
+/**
+ * 迁移错误信息
+ */
 public class MigrationErrors {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 保存错误信息的json字符串
-     * 
-     * @return errorJson */
+    /**
+     * 保存错误信息的json字符串
+     * @return errorJson
+     */
     public String getErrorJson() {
         return errorJson;
     }
@@ -59,9 +62,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 主机名称（从用户系统获取，可能为空）
-     * 
-     * @return hostName */
+    /**
+     * 主机名称（从用户系统获取，可能为空）
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -75,9 +79,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 源端在主机迁移服务中的名称
-     * 
-     * @return name */
+    /**
+     * 源端在主机迁移服务中的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +96,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 源端服务器id
-     * 
-     * @return sourceId */
+    /**
+     * 源端服务器id
+     * @return sourceId
+     */
     public String getSourceId() {
         return sourceId;
     }
@@ -107,9 +113,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 源端服务器的ip
-     * 
-     * @return sourceIp */
+    /**
+     * 源端服务器的ip
+     * @return sourceIp
+     */
     public String getSourceIp() {
         return sourceIp;
     }
@@ -123,9 +130,10 @@ public class MigrationErrors {
         return this;
     }
 
-    /** 目的端服务器的ip
-     * 
-     * @return targetIp */
+    /**
+     * 目的端服务器的ip 
+     * @return targetIp
+     */
     public String getTargetIp() {
         return targetIp;
     }
@@ -170,7 +178,10 @@ public class MigrationErrors {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

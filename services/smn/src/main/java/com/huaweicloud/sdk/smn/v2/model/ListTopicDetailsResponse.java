@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTopicDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return updateTime
+     */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -70,9 +73,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息推送的策略。0表示发送失败，保留到失败队列，1表示直接丢弃发送失败的消息。
-     * 
-     * @return pushPolicy */
+    /**
+     * 消息推送的策略。0表示发送失败，保留到失败队列，1表示直接丢弃发送失败的消息。
+     * @return pushPolicy
+     */
     public Integer getPushPolicy() {
         return pushPolicy;
     }
@@ -86,9 +90,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return createTime */
+    /**
+     * 创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -102,9 +107,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建Topic的名字。
-     * 
-     * @return name */
+    /**
+     * 创建Topic的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -118,9 +124,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Topic的唯一的资源标识。可以通过[查看主题列表获](https://support.huaweicloud.com/api-smn/smn_api_51004.html)取该标识。
-     * 
-     * @return topicUrn */
+    /**
+     * Topic的唯一的资源标识。可以通过[查看主题列表获](https://support.huaweicloud.com/api-smn/smn_api_51004.html)取该标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -134,9 +141,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示。
-     * 
-     * @return displayName */
+    /**
+     * Topic的显示名，推送邮件消息时，作为邮件发件人显示。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -150,9 +158,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求的唯一标识ID。
-     * 
-     * @return requestId */
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -166,9 +175,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -218,7 +228,10 @@ public class ListTopicDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

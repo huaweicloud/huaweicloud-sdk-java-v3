@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowConsoleConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -104,9 +106,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持EPS
-     * 
-     * @return eps */
+    /**
+     * 支持EPS
+     * @return eps
+     */
     public Boolean getEps() {
         return eps;
     }
@@ -120,9 +123,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
-     * 
-     * @return tls */
+    /**
+     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+     * @return tls
+     */
     public Boolean getTls() {
         return tls;
     }
@@ -136,9 +140,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持IPV6
-     * 
-     * @return ipv6 */
+    /**
+     * 支持IPV6
+     * @return ipv6
+     */
     public Boolean getIpv6() {
         return ipv6;
     }
@@ -152,9 +157,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持告警
-     * 
-     * @return alert */
+    /**
+     * 支持告警
+     * @return alert
+     */
     public Boolean getAlert() {
         return alert;
     }
@@ -168,9 +174,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持精准防护
-     * 
-     * @return custom */
+    /**
+     * 支持精准防护
+     * @return custom
+     */
     public Boolean getCustom() {
         return custom;
     }
@@ -184,9 +191,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持ELB模式
-     * 
-     * @return elbMode */
+    /**
+     * 支持ELB模式
+     * @return elbMode
+     */
     public Boolean getElbMode() {
         return elbMode;
     }
@@ -200,9 +208,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持LTS全量日志
-     * 
-     * @return eventLts */
+    /**
+     * 支持LTS全量日志
+     * @return eventLts
+     */
     public Boolean getEventLts() {
         return eventLts;
     }
@@ -216,9 +225,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持多DNS解析
-     * 
-     * @return multiDns */
+    /**
+     * 支持多DNS解析
+     * @return multiDns
+     */
     public Boolean getMultiDns() {
         return multiDns;
     }
@@ -232,9 +242,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持搜索IP
-     * 
-     * @return searchIp */
+    /**
+     * 支持搜索IP
+     * @return searchIp
+     */
     public Boolean getSearchIp() {
         return searchIp;
     }
@@ -248,9 +259,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持CC增强
-     * 
-     * @return ccEnhance */
+    /**
+     * 支持CC增强
+     * @return ccEnhance
+     */
     public Boolean getCcEnhance() {
         return ccEnhance;
     }
@@ -264,9 +276,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持cname切换
-     * 
-     * @return cnameSwitch */
+    /**
+     * 支持cname切换
+     * @return cnameSwitch
+     */
     public Boolean getCnameSwitch() {
         return cnameSwitch;
     }
@@ -280,9 +293,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持精准拦截
-     * 
-     * @return customBlock */
+    /**
+     * 支持精准拦截
+     * @return customBlock
+     */
     public Boolean getCustomBlock() {
         return customBlock;
     }
@@ -296,9 +310,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持误报屏蔽
-     * 
-     * @return advancedIgnore */
+    /**
+     * 支持误报屏蔽
+     * @return advancedIgnore
+     */
     public Boolean getAdvancedIgnore() {
         return advancedIgnore;
     }
@@ -312,9 +327,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持js反爬虫
-     * 
-     * @return jsCrawlerEnable */
+    /**
+     * 支持js反爬虫
+     * @return jsCrawlerEnable
+     */
     public Boolean getJsCrawlerEnable() {
         return jsCrawlerEnable;
     }
@@ -328,9 +344,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持深度解析
-     * 
-     * @return deepDecodeEnable */
+    /**
+     * 支持深度解析
+     * @return deepDecodeEnable
+     */
     public Boolean getDeepDecodeEnable() {
         return deepDecodeEnable;
     }
@@ -344,9 +361,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持安全总览带宽统计
-     * 
-     * @return overviewBandwidth */
+    /**
+     * 支持安全总览带宽统计
+     * @return overviewBandwidth
+     */
     public Boolean getOverviewBandwidth() {
         return overviewBandwidth;
     }
@@ -360,9 +378,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持使用旧cname解析
-     * 
-     * @return proxyUseOldcname */
+    /**
+     * 支持使用旧cname解析
+     * @return proxyUseOldcname
+     */
     public Boolean getProxyUseOldcname() {
         return proxyUseOldcname;
     }
@@ -376,9 +395,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** 支持检查所有的header
-     * 
-     * @return checkAllHeadersEnable */
+    /**
+     * 支持检查所有的header
+     * @return checkAllHeadersEnable
+     */
     public Boolean getCheckAllHeadersEnable() {
         return checkAllHeadersEnable;
     }
@@ -464,7 +484,10 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

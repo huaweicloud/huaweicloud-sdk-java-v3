@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云服务器可挂载网卡和卷数。 */
+/**
+ * 云服务器可挂载网卡和卷数。
+ */
 public class ServerAttachableQuantity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ServerAttachableQuantity {
         return this;
     }
 
-    /** 可挂载scsi卷数。
-     * 
-     * @return freeScsi */
+    /**
+     * 可挂载scsi卷数。
+     * @return freeScsi
+     */
     public Integer getFreeScsi() {
         return freeScsi;
     }
@@ -49,9 +52,10 @@ public class ServerAttachableQuantity {
         return this;
     }
 
-    /** 可挂载vbd卷数。
-     * 
-     * @return freeBlk */
+    /**
+     * 可挂载vbd卷数。
+     * @return freeBlk
+     */
     public Integer getFreeBlk() {
         return freeBlk;
     }
@@ -65,9 +69,10 @@ public class ServerAttachableQuantity {
         return this;
     }
 
-    /** 可挂载卷数。
-     * 
-     * @return freeDisk */
+    /**
+     * 可挂载卷数。
+     * @return freeDisk
+     */
     public Integer getFreeDisk() {
         return freeDisk;
     }
@@ -81,9 +86,10 @@ public class ServerAttachableQuantity {
         return this;
     }
 
-    /** 可挂载网卡数。
-     * 
-     * @return freeNic */
+    /**
+     * 可挂载网卡数。
+     * @return freeNic
+     */
     public Integer getFreeNic() {
         return freeNic;
     }
@@ -124,7 +130,10 @@ public class ServerAttachableQuantity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ApiVersionResp */
+/**
+ * ApiVersionResp
+ */
 public class ApiVersionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,13 +51,19 @@ public class ApiVersionResp {
 
     private OffsetDateTime publishTime;
 
-    /** 版本状态 - 1：当前生效中的版本 - 2：未生效的版本 */
+    /**
+     * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -130,9 +138,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** API历史版本的ID
-     * 
-     * @return versionId */
+    /**
+     * API历史版本的ID
+     * @return versionId
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -146,9 +155,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** API的版本号
-     * 
-     * @return versionNo */
+    /**
+     * API的版本号
+     * @return versionNo
+     */
     public String getVersionNo() {
         return versionNo;
     }
@@ -162,9 +172,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** API编号
-     * 
-     * @return apiId */
+    /**
+     * API编号
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -178,9 +189,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** 发布的环境编号
-     * 
-     * @return envId */
+    /**
+     * 发布的环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -194,9 +206,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** 发布的环境名称
-     * 
-     * @return envName */
+    /**
+     * 发布的环境名称
+     * @return envName
+     */
     public String getEnvName() {
         return envName;
     }
@@ -210,9 +223,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** 发布描述
-     * 
-     * @return remark */
+    /**
+     * 发布描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -226,9 +240,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** 发布时间
-     * 
-     * @return publishTime */
+    /**
+     * 发布时间
+     * @return publishTime
+     */
     public OffsetDateTime getPublishTime() {
         return publishTime;
     }
@@ -242,9 +257,10 @@ public class ApiVersionResp {
         return this;
     }
 
-    /** 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
-     * 
-     * @return status */
+    /**
+     * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -292,7 +308,10 @@ public class ApiVersionResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

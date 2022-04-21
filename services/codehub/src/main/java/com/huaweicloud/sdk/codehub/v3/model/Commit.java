@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Commit */
+/**
+ * Commit
+ */
 public class Commit {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class Commit {
         return this;
     }
 
-    /** 作者邮箱
-     * 
-     * @return authorEmail */
+    /**
+     * 作者邮箱
+     * @return authorEmail
+     */
     public String getAuthorEmail() {
         return authorEmail;
     }
@@ -83,9 +86,10 @@ public class Commit {
         return this;
     }
 
-    /** 作者
-     * 
-     * @return authorName */
+    /**
+     * 作者
+     * @return authorName
+     */
     public String getAuthorName() {
         return authorName;
     }
@@ -99,9 +103,10 @@ public class Commit {
         return this;
     }
 
-    /** 作者提交时间
-     * 
-     * @return authoredDate */
+    /**
+     * 作者提交时间
+     * @return authoredDate
+     */
     public OffsetDateTime getAuthoredDate() {
         return authoredDate;
     }
@@ -115,9 +120,10 @@ public class Commit {
         return this;
     }
 
-    /** 提交时间
-     * 
-     * @return committedDate */
+    /**
+     * 提交时间
+     * @return committedDate
+     */
     public OffsetDateTime getCommittedDate() {
         return committedDate;
     }
@@ -131,9 +137,10 @@ public class Commit {
         return this;
     }
 
-    /** 提交作者邮箱
-     * 
-     * @return committerEmail */
+    /**
+     * 提交作者邮箱
+     * @return committerEmail
+     */
     public String getCommitterEmail() {
         return committerEmail;
     }
@@ -147,9 +154,10 @@ public class Commit {
         return this;
     }
 
-    /** 提交作者
-     * 
-     * @return committerName */
+    /**
+     * 提交作者
+     * @return committerName
+     */
     public String getCommitterName() {
         return committerName;
     }
@@ -163,9 +171,10 @@ public class Commit {
         return this;
     }
 
-    /** 文件变更的详情信息，其格式由请求查询参数 stat_format 决定
-     * 
-     * @return format */
+    /**
+     * 文件变更的详情信息，其格式由请求查询参数 stat_format 决定
+     * @return format
+     */
     public Object getFormat() {
         return format;
     }
@@ -179,9 +188,10 @@ public class Commit {
         return this;
     }
 
-    /** 提交对应的SHA id
-     * 
-     * @return id */
+    /**
+     * 提交对应的SHA id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -195,9 +205,10 @@ public class Commit {
         return this;
     }
 
-    /** 提交的信息
-     * 
-     * @return message */
+    /**
+     * 提交的信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -227,9 +238,10 @@ public class Commit {
         return this;
     }
 
-    /** 父提交id
-     * 
-     * @return parentIds */
+    /**
+     * 父提交id
+     * @return parentIds
+     */
     public List<String> getParentIds() {
         return parentIds;
     }
@@ -289,7 +301,10 @@ public class Commit {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

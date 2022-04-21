@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateDefectRequestBody */
+/**
+ * UpdateDefectRequestBody
+ */
 public class UpdateDefectRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UpdateDefectRequestBody {
         return this;
     }
 
-    /** 问题id,多个时英文逗号分隔
-     * 
-     * @return defectId */
+    /**
+     * 问题id,多个时英文逗号分隔
+     * @return defectId
+     */
     public String getDefectId() {
         return defectId;
     }
@@ -39,9 +42,10 @@ public class UpdateDefectRequestBody {
         return this;
     }
 
-    /** 状态2：已忽略 1：已解决 0：未解决
-     * 
-     * @return defectStatus */
+    /**
+     * 状态2：已忽略 1：已解决 0：未解决
+     * @return defectStatus
+     */
     public String getDefectStatus() {
         return defectStatus;
     }
@@ -78,7 +82,10 @@ public class UpdateDefectRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

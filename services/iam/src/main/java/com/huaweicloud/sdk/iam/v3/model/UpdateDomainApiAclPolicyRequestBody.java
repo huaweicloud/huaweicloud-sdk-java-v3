@@ -30,9 +30,10 @@ public class UpdateDomainApiAclPolicyRequestBody {
         return this;
     }
 
-    /** Get apiAclPolicy
-     * 
-     * @return apiAclPolicy */
+    /**
+     * Get apiAclPolicy
+     * @return apiAclPolicy
+     */
     public AclPolicyOption getApiAclPolicy() {
         return apiAclPolicy;
     }
@@ -68,7 +69,10 @@ public class UpdateDomainApiAclPolicyRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

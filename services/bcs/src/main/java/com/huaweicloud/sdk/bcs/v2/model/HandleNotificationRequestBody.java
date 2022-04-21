@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 处理联盟邀请body数据 */
+/**
+ * 处理联盟邀请body数据
+ */
 public class HandleNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class HandleNotificationRequestBody {
 
     private String channelName;
 
-    /** 处理邀请 */
+    /**
+     * 处理邀请
+     */
     public static final class StatusEnum {
 
-        /** Enum AGREED for value: "agreed" */
+        /**
+         * Enum AGREED for value: "agreed"
+         */
         public static final StatusEnum AGREED = new StatusEnum("agreed");
 
-        /** Enum REJECT for value: "reject" */
+        /**
+         * Enum REJECT for value: "reject"
+         */
         public static final StatusEnum REJECT = new StatusEnum("reject");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +125,10 @@ public class HandleNotificationRequestBody {
         return this;
     }
 
-    /** 邀请目标通道
-     * 
-     * @return channelName */
+    /**
+     * 邀请目标通道
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -133,9 +142,10 @@ public class HandleNotificationRequestBody {
         return this;
     }
 
-    /** 处理邀请
-     * 
-     * @return status */
+    /**
+     * 处理邀请
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,9 +168,10 @@ public class HandleNotificationRequestBody {
         return this;
     }
 
-    /** Get invitorInfo
-     * 
-     * @return invitorInfo */
+    /**
+     * Get invitorInfo
+     * @return invitorInfo
+     */
     public HandleNotificationInvitor getInvitorInfo() {
         return invitorInfo;
     }
@@ -183,9 +194,10 @@ public class HandleNotificationRequestBody {
         return this;
     }
 
-    /** Get inviteeInfo
-     * 
-     * @return inviteeInfo */
+    /**
+     * Get inviteeInfo
+     * @return inviteeInfo
+     */
     public HandleNotificationInvitee getInviteeInfo() {
         return inviteeInfo;
     }
@@ -215,9 +227,10 @@ public class HandleNotificationRequestBody {
         return this;
     }
 
-    /** 加入联盟的组织，同意加入时必填
-     * 
-     * @return invitedOrgs */
+    /**
+     * 加入联盟的组织，同意加入时必填
+     * @return invitedOrgs
+     */
     public List<HandleNotificationOrg> getInvitedOrgs() {
         return invitedOrgs;
     }
@@ -260,7 +273,10 @@ public class HandleNotificationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

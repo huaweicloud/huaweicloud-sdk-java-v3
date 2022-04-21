@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CdmStopClusterReq */
+/**
+ * CdmStopClusterReq
+ */
 public class CdmStopClusterReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CdmStopClusterReq {
         return this;
     }
 
-    /** Get stop
-     * 
-     * @return stop */
+    /**
+     * Get stop
+     * @return stop
+     */
     public CdmStopClusterReqStop getStop() {
         return stop;
     }
@@ -65,7 +68,10 @@ public class CdmStopClusterReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VCN服务器信息，只有输入为vcn时才可以且必须使用 */
+/**
+ * VCN服务器信息，只有输入为vcn时才可以且必须使用
+ */
 public class TaskInputVcn {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TaskInputVcn {
         return this;
     }
 
-    /** VCN服务器的IP地址
-     * 
-     * @return ip */
+    /**
+     * VCN服务器的IP地址
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -49,9 +52,12 @@ public class TaskInputVcn {
         return this;
     }
 
-    /** VCN服务器的端口号 minimum: 0 maximum: 65535
-     * 
-     * @return port */
+    /**
+     * VCN服务器的端口号
+     * minimum: 0
+     * maximum: 65535
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -65,9 +71,10 @@ public class TaskInputVcn {
         return this;
     }
 
-    /** VCN服务器的账号名
-     * 
-     * @return username */
+    /**
+     * VCN服务器的账号名
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
@@ -81,9 +88,10 @@ public class TaskInputVcn {
         return this;
     }
 
-    /** VCN服务器的与账号对应的密码
-     * 
-     * @return password */
+    /**
+     * VCN服务器的与账号对应的密码
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -123,7 +131,10 @@ public class TaskInputVcn {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

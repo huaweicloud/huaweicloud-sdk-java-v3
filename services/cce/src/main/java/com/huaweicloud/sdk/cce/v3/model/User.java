@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** User */
+/**
+ * User
+ */
 public class User {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class User {
         return this;
     }
 
-    /** 客户端证书。
-     * 
-     * @return clientCertificateData */
+    /**
+     * 客户端证书。 
+     * @return clientCertificateData
+     */
     public String getClientCertificateData() {
         return clientCertificateData;
     }
@@ -39,9 +42,10 @@ public class User {
         return this;
     }
 
-    /** 包含来自TLS客户端密钥文件的PEM编码数据。
-     * 
-     * @return clientKeyData */
+    /**
+     * 包含来自TLS客户端密钥文件的PEM编码数据。 
+     * @return clientKeyData
+     */
     public String getClientKeyData() {
         return clientKeyData;
     }
@@ -78,7 +82,10 @@ public class User {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

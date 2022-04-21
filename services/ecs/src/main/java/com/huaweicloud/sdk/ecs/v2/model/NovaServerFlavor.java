@@ -65,9 +65,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 云服务器类型ID。 微版本2.47后不支持。
-     * 
-     * @return id */
+    /**
+     * 云服务器类型ID。  微版本2.47后不支持。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -97,9 +98,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 云服务器类型相关标记快捷链接信息。 微版本2.47后不支持。
-     * 
-     * @return links */
+    /**
+     * 云服务器类型相关标记快捷链接信息。  微版本2.47后不支持。
+     * @return links
+     */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -113,9 +115,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 该云服务器规格对应的CPU核数。 在微版本2.47后支持。
-     * 
-     * @return vcpus */
+    /**
+     * 该云服务器规格对应的CPU核数。  在微版本2.47后支持。
+     * @return vcpus
+     */
     public Integer getVcpus() {
         return vcpus;
     }
@@ -129,9 +132,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 该云服务器规格对应的内存大小，单位为MB。 在微版本2.47后支持。
-     * 
-     * @return ram */
+    /**
+     * 该云服务器规格对应的内存大小，单位为MB。  在微版本2.47后支持。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -145,9 +149,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 该云服务器规格对应要求系统盘大小，0为不限制。 在微版本2.47后支持。
-     * 
-     * @return disk */
+    /**
+     * 该云服务器规格对应要求系统盘大小，0为不限制。  在微版本2.47后支持。
+     * @return disk
+     */
     public Integer getDisk() {
         return disk;
     }
@@ -161,9 +166,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 未使用。 在微版本2.47后支持。
-     * 
-     * @return ephemeral */
+    /**
+     * 未使用。  在微版本2.47后支持。
+     * @return ephemeral
+     */
     public Integer getEphemeral() {
         return ephemeral;
     }
@@ -177,9 +183,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 未使用。 在微版本2.47后支持。
-     * 
-     * @return swap */
+    /**
+     * 未使用。  在微版本2.47后支持。
+     * @return swap
+     */
     public Integer getSwap() {
         return swap;
     }
@@ -193,9 +200,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** 云服务器规格名称。 在微版本2.47后支持。
-     * 
-     * @return originalName */
+    /**
+     * 云服务器规格名称。  在微版本2.47后支持。
+     * @return originalName
+     */
     public String getOriginalName() {
         return originalName;
     }
@@ -225,9 +233,10 @@ public class NovaServerFlavor {
         return this;
     }
 
-    /** flavor扩展字段。 在微版本2.47后支持。
-     * 
-     * @return extraSpecs */
+    /**
+     * flavor扩展字段。  在微版本2.47后支持。
+     * @return extraSpecs
+     */
     public Map<String, String> getExtraSpecs() {
         return extraSpecs;
     }
@@ -276,7 +285,10 @@ public class NovaServerFlavor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

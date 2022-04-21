@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceCreate */
+/**
+ * InstanceCreate
+ */
 public class InstanceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 应用组件实例名称。
-     * 
-     * @return name */
+    /**
+     * 应用组件实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -84,9 +87,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 环境ID。
-     * 
-     * @return environmentId */
+    /**
+     * 环境ID。
+     * @return environmentId
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -100,9 +104,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** Get flavorId
-     * 
-     * @return flavorId */
+    /**
+     * Get flavorId
+     * @return flavorId
+     */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -116,9 +121,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 实例副本数。
-     * 
-     * @return replica */
+    /**
+     * 实例副本数。
+     * @return replica
+     */
     public Integer getReplica() {
         return replica;
     }
@@ -148,9 +154,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * 
-     * @return artifacts */
+    /**
+     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * @return artifacts
+     */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -164,9 +171,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 应用组件版本号，满足版本语义，如1.0.0。。
-     * 
-     * @return version */
+    /**
+     * 应用组件版本号，满足版本语义，如1.0.0。。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -180,9 +188,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 应用配置，环境变量等，如{“env”: [{“name”: “log-level”: “warn”}]}, 默认空。
-     * 
-     * @return _configuration */
+    /**
+     * 应用配置，环境变量等，如{“env”: [{“name”: “log-level”: “warn”}]}, 默认空。
+     * @return _configuration
+     */
     public Object getConfiguration() {
         return _configuration;
     }
@@ -196,9 +205,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -228,9 +238,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 访问方式。
-     * 
-     * @return externalAccesses */
+    /**
+     * 访问方式。
+     * @return externalAccesses
+     */
     public List<ExternalAccessesCreate> getExternalAccesses() {
         return externalAccesses;
     }
@@ -260,9 +271,10 @@ public class InstanceCreate {
         return this;
     }
 
-    /** 部署资源。
-     * 
-     * @return referResources */
+    /**
+     * 部署资源。
+     * @return referResources
+     */
     public List<ReferResourceCreate> getReferResources() {
         return referResources;
     }
@@ -324,7 +336,10 @@ public class InstanceCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

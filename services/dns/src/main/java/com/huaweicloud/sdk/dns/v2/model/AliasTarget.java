@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AliasTarget */
+/**
+ * AliasTarget
+ */
 public class AliasTarget {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class AliasTarget {
         return this;
     }
 
-    /** 资源服务类型，支持别名记录的服务。取值： cloudsite：云速建站 waf：Web应用防火墙
-     * 
-     * @return resourceType */
+    /**
+     * 资源服务类型，支持别名记录的服务。取值：  cloudsite：云速建站 waf：Web应用防火墙
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -39,9 +42,10 @@ public class AliasTarget {
         return this;
     }
 
-    /** 对应服务下的域名，由各服务提供。
-     * 
-     * @return resourceDomainName */
+    /**
+     * 对应服务下的域名，由各服务提供。
+     * @return resourceDomainName
+     */
     public String getResourceDomainName() {
         return resourceDomainName;
     }
@@ -78,7 +82,10 @@ public class AliasTarget {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class MigrateNodeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class MigrateNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** API版本，固定值“v3”。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -51,9 +54,10 @@ public class MigrateNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** API类型，固定值“MigrateNodesTask”。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“MigrateNodesTask”。
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -76,9 +80,10 @@ public class MigrateNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** Get spec
-     * 
-     * @return spec */
+    /**
+     * Get spec
+     * @return spec
+     */
     public MigrateNodesSpec getSpec() {
         return spec;
     }
@@ -101,9 +106,10 @@ public class MigrateNodeResponse extends SdkResponse {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public TaskStatus getStatus() {
         return status;
     }
@@ -144,7 +150,10 @@ public class MigrateNodeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

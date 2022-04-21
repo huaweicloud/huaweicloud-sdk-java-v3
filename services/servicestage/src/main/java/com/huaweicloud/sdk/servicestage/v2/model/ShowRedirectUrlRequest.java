@@ -10,22 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRedirectUrlRequest {
 
-    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。 */
+    /**
+     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
+     */
     public static final class RepoTypeEnum {
 
-        /** Enum GITHUB for value: "github" */
+        /**
+         * Enum GITHUB for value: "github"
+         */
         public static final RepoTypeEnum GITHUB = new RepoTypeEnum("github");
 
-        /** Enum GITLAB for value: "gitlab" */
+        /**
+         * Enum GITLAB for value: "gitlab"
+         */
         public static final RepoTypeEnum GITLAB = new RepoTypeEnum("gitlab");
 
-        /** Enum GITEE for value: "gitee" */
+        /**
+         * Enum GITEE for value: "gitee"
+         */
         public static final RepoTypeEnum GITEE = new RepoTypeEnum("gitee");
 
-        /** Enum BITBUCKET for value: "bitbucket" */
+        /**
+         * Enum BITBUCKET for value: "bitbucket"
+         */
         public static final RepoTypeEnum BITBUCKET = new RepoTypeEnum("bitbucket");
 
         private static final Map<String, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -107,9 +119,10 @@ public class ShowRedirectUrlRequest {
         return this;
     }
 
-    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
-     * 
-     * @return repoType */
+    /**
+     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
+     * @return repoType
+     */
     public RepoTypeEnum getRepoType() {
         return repoType;
     }
@@ -123,9 +136,10 @@ public class ShowRedirectUrlRequest {
         return this;
     }
 
-    /** 站点标签。 比如国际站的，?tag=intl。 默认为空。
-     * 
-     * @return tag */
+    /**
+     * 站点标签。 比如国际站的，?tag=intl。 默认为空。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -162,7 +176,10 @@ public class ShowRedirectUrlRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

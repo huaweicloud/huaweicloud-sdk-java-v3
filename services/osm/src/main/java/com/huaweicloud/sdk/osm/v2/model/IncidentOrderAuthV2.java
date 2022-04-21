@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** IncidentOrderAuthV2 */
+/**
+ * IncidentOrderAuthV2
+ */
 public class IncidentOrderAuthV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,9 +81,12 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权id minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return id */
+    /**
+     * 授权id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
     public Long getId() {
         return id;
     }
@@ -95,9 +100,12 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权状态 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 授权状态
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -111,9 +119,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 工单id
-     * 
-     * @return incidentId */
+    /**
+     * 工单id
+     * @return incidentId
+     */
     public String getIncidentId() {
         return incidentId;
     }
@@ -127,9 +136,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 简要描述
-     * 
-     * @return simpleDescription */
+    /**
+     * 简要描述
+     * @return simpleDescription
+     */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -143,9 +153,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权资源类型名称
-     * 
-     * @return resourceTypeName */
+    /**
+     * 授权资源类型名称
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -159,9 +170,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权访问类型名称
-     * 
-     * @return visitTypeName */
+    /**
+     * 授权访问类型名称
+     * @return visitTypeName
+     */
     public String getVisitTypeName() {
         return visitTypeName;
     }
@@ -175,9 +187,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * @return createTime
+     */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -191,9 +204,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权生效时间
-     * 
-     * @return authEffectiveTime */
+    /**
+     * 授权生效时间
+     * @return authEffectiveTime
+     */
     public OffsetDateTime getAuthEffectiveTime() {
         return authEffectiveTime;
     }
@@ -207,9 +221,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 授权到期时间
-     * 
-     * @return authExpireTime */
+    /**
+     * 授权到期时间
+     * @return authExpireTime
+     */
     public OffsetDateTime getAuthExpireTime() {
         return authExpireTime;
     }
@@ -223,9 +238,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 拒绝原因
-     * 
-     * @return rejectReason */
+    /**
+     * 拒绝原因
+     * @return rejectReason
+     */
     public String getRejectReason() {
         return rejectReason;
     }
@@ -239,9 +255,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 主账号id
-     * 
-     * @return customerId */
+    /**
+     * 主账号id
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -255,9 +272,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 子用户id
-     * 
-     * @return xCustomerId */
+    /**
+     * 子用户id
+     * @return xCustomerId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_id")
     public String getXCustomerId() {
@@ -273,9 +291,10 @@ public class IncidentOrderAuthV2 {
         return this;
     }
 
-    /** 子用户名称
-     * 
-     * @return xCustomerName */
+    /**
+     * 子用户名称
+     * @return xCustomerName
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_name")
     public String getXCustomerName() {
@@ -348,7 +367,10 @@ public class IncidentOrderAuthV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

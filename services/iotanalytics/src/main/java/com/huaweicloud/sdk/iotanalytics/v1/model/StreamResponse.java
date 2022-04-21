@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 流计算 */
+/**
+ * 流计算
+ */
 public class StreamResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class StreamResponse {
         return this;
     }
 
-    /** 输入参数
-     * 
-     * @return inputs */
+    /**
+     * 输入参数
+     * @return inputs
+     */
     public List<InputResponse> getInputs() {
         return inputs;
     }
@@ -63,9 +66,10 @@ public class StreamResponse {
         return this;
     }
 
-    /** 流计算任务ID
-     * 
-     * @return jobId */
+    /**
+     * 流计算任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -95,9 +99,10 @@ public class StreamResponse {
         return this;
     }
 
-    /** 输出属性，最多支持10个
-     * 
-     * @return outputs */
+    /**
+     * 输出属性，最多支持10个
+     * @return outputs
+     */
     public List<StreamOutput> getOutputs() {
         return outputs;
     }
@@ -135,7 +140,10 @@ public class StreamResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

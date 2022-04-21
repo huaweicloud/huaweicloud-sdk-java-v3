@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class DebugApiV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class DebugApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 调试请求报文内容
-     * 
-     * @return request */
+    /**
+     * 调试请求报文内容
+     * @return request
+     */
     public String getRequest() {
         return request;
     }
@@ -50,9 +53,10 @@ public class DebugApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 调试响应报文内容，响应消息体最大支持2097152字节，超过部分会被截断 > 响应消息体超过限制长度时，超过部分会被截断，并追加\"[TRUNCATED]\"信息。
-     * 
-     * @return response */
+    /**
+     * 调试响应报文内容，响应消息体最大支持2097152字节，超过部分会被截断 > 响应消息体超过限制长度时，超过部分会被截断，并追加\"[TRUNCATED]\"信息。
+     * @return response
+     */
     public String getResponse() {
         return response;
     }
@@ -66,9 +70,10 @@ public class DebugApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 调试耗时，单位：毫秒
-     * 
-     * @return latency */
+    /**
+     * 调试耗时，单位：毫秒
+     * @return latency
+     */
     public Integer getLatency() {
         return latency;
     }
@@ -82,9 +87,10 @@ public class DebugApiV2Response extends SdkResponse {
         return this;
     }
 
-    /** 调试过程日志
-     * 
-     * @return log */
+    /**
+     * 调试过程日志
+     * @return log
+     */
     public String getLog() {
         return log;
     }
@@ -125,7 +131,10 @@ public class DebugApiV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

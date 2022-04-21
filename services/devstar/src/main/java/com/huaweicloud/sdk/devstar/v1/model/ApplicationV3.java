@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 应用详细信息 */
+/**
+ * 应用详细信息
+ */
 public class ApplicationV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,20 +83,29 @@ public class ApplicationV3 {
 
     private String templateDeployment;
 
-    /** 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage
-     * Docker容器部署 */
+    /**
+     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署
+     */
     public static final class DeployTypeEnum {
 
-        /** Enum FUNCTION for value: "function" */
+        /**
+         * Enum FUNCTION for value: "function"
+         */
         public static final DeployTypeEnum FUNCTION = new DeployTypeEnum("function");
 
-        /** Enum CCI for value: "cci" */
+        /**
+         * Enum CCI for value: "cci"
+         */
         public static final DeployTypeEnum CCI = new DeployTypeEnum("cci");
 
-        /** Enum SERVICESTAGE_JAR_ for value: "ServiceStage(Jar)" */
+        /**
+         * Enum SERVICESTAGE_JAR_ for value: "ServiceStage(Jar)"
+         */
         public static final DeployTypeEnum SERVICESTAGE_JAR_ = new DeployTypeEnum("ServiceStage(Jar)");
 
-        /** Enum SERVICESTAGE_DOCKER_ for value: "ServiceStage(Docker)" */
+        /**
+         * Enum SERVICESTAGE_DOCKER_ for value: "ServiceStage(Docker)"
+         */
         public static final DeployTypeEnum SERVICESTAGE_DOCKER_ = new DeployTypeEnum("ServiceStage(Docker)");
 
         private static final Map<String, DeployTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -191,9 +202,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 应用id
-     * 
-     * @return id */
+    /**
+     * 应用id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -207,9 +219,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 应用名称
-     * 
-     * @return name */
+    /**
+     * 应用名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -223,9 +236,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 应用描述
-     * 
-     * @return description */
+    /**
+     * 应用描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -239,9 +253,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -255,9 +270,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 区域名称
-     * 
-     * @return regionName */
+    /**
+     * 区域名称
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -271,9 +287,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 所属项目id
-     * 
-     * @return projectId */
+    /**
+     * 所属项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -287,9 +304,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 项目名称
-     * 
-     * @return projectName */
+    /**
+     * 项目名称
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -303,9 +321,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 应用图标
-     * 
-     * @return icon */
+    /**
+     * 应用图标
+     * @return icon
+     */
     public String getIcon() {
         return icon;
     }
@@ -336,9 +355,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 流水线列表
-     * 
-     * @return pipelineCreationResult */
+    /**
+     * 流水线列表
+     * @return pipelineCreationResult
+     */
     public List<PipelineCreationResult> getPipelineCreationResult() {
         return pipelineCreationResult;
     }
@@ -362,9 +382,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** Get repositoryCreationResult
-     * 
-     * @return repositoryCreationResult */
+    /**
+     * Get repositoryCreationResult
+     * @return repositoryCreationResult
+     */
     public RepositoryCreationResult getRepositoryCreationResult() {
         return repositoryCreationResult;
     }
@@ -394,9 +415,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 环境信息
-     * 
-     * @return environmentCreationResult */
+    /**
+     * 环境信息
+     * @return environmentCreationResult
+     */
     public List<String> getEnvironmentCreationResult() {
         return environmentCreationResult;
     }
@@ -426,9 +448,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 模板类型
-     * 
-     * @return templateTypes */
+    /**
+     * 模板类型
+     * @return templateTypes
+     */
     public List<TemplateType> getTemplateTypes() {
         return templateTypes;
     }
@@ -442,9 +465,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 模板部署信息
-     * 
-     * @return templateDeployment */
+    /**
+     * 模板部署信息
+     * @return templateDeployment
+     */
     public String getTemplateDeployment() {
         return templateDeployment;
     }
@@ -458,10 +482,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage
-     * Docker容器部署
-     * 
-     * @return deployType */
+    /**
+     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署
+     * @return deployType
+     */
     public DeployTypeEnum getDeployType() {
         return deployType;
     }
@@ -475,9 +499,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 创建者名称
-     * 
-     * @return creatorName */
+    /**
+     * 创建者名称
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -491,9 +516,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -507,9 +533,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -523,9 +550,10 @@ public class ApplicationV3 {
         return this;
     }
 
-    /** 应用版本号
-     * 
-     * @return version */
+    /**
+     * 应用版本号
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -610,7 +638,10 @@ public class ApplicationV3 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

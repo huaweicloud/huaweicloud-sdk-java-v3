@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ListProductsRespHourly */
+/**
+ * ListProductsRespHourly
+ */
 public class ListProductsRespHourly {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class ListProductsRespHourly {
         return this;
     }
 
-    /** 消息引擎的名称，该字段显示为rabbitmq。
-     * 
-     * @return name */
+    /**
+     * 消息引擎的名称，该字段显示为rabbitmq。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -47,9 +50,10 @@ public class ListProductsRespHourly {
         return this;
     }
 
-    /** 消息引擎的版本，当前仅支持3.7.17。
-     * 
-     * @return version */
+    /**
+     * 消息引擎的版本，当前仅支持3.7.17。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -79,9 +83,10 @@ public class ListProductsRespHourly {
         return this;
     }
 
-    /** 产品规格列表。
-     * 
-     * @return values */
+    /**
+     * 产品规格列表。
+     * @return values
+     */
     public List<ListProductsRespValues> getValues() {
         return values;
     }
@@ -120,7 +125,10 @@ public class ListProductsRespHourly {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

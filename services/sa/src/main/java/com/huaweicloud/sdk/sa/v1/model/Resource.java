@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Resource */
+/**
+ * Resource
+ */
 public class Resource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return id */
+    /**
+     * 资源ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源名称；最大长度255个字符。
-     * 
-     * @return name */
+    /**
+     * 资源名称；最大长度255个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -95,9 +99,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源类型。
-     * 
-     * @return type */
+    /**
+     * 资源类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -111,9 +116,10 @@ public class Resource {
         return this;
     }
 
-    /** 云服务名称。
-     * 
-     * @return provider */
+    /**
+     * 云服务名称。
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -127,9 +133,10 @@ public class Resource {
         return this;
     }
 
-    /** 区域。
-     * 
-     * @return regionId */
+    /**
+     * 区域。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -143,9 +150,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源所属租户账号ID。
-     * 
-     * @return domainId */
+    /**
+     * 资源所属租户账号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -159,9 +167,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源所属项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 资源所属项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -175,9 +184,10 @@ public class Resource {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return epId */
+    /**
+     * 企业项目ID。
+     * @return epId
+     */
     public String getEpId() {
         return epId;
     }
@@ -191,9 +201,10 @@ public class Resource {
         return this;
     }
 
-    /** 企业项目名称。
-     * 
-     * @return epName */
+    /**
+     * 企业项目名称。
+     * @return epName
+     */
     public String getEpName() {
         return epName;
     }
@@ -207,9 +218,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源标签 1、最多50个key/values对。 2、values：最大255字符。 3、取值范围：字母数字、空格、“+”、“-”、“=”、“.”、“_”、“:”、“/”、“@”。
-     * 
-     * @return tags */
+    /**
+     * 资源标签 1、最多50个key/values对。 2、values：最大255字符。 3、取值范围：字母数字、空格、“+”、“-”、“=”、“.”、“_”、“:”、“/”、“@”。
+     * @return tags
+     */
     public Object getTags() {
         return tags;
     }
@@ -257,7 +269,10 @@ public class Resource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

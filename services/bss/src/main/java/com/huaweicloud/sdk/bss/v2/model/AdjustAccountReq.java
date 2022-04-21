@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AdjustAccountReq */
+/**
+ * AdjustAccountReq
+ */
 public class AdjustAccountReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class AdjustAccountReq {
         return this;
     }
 
-    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -44,10 +47,12 @@ public class AdjustAccountReq {
         return this;
     }
 
-    /** 拨款金额。 单位：元。取值大于0且精确到小数点后2位。 注意该值不能大于“查询伙伴账户余额”接口响应消息表2中参数amount - designated_amount的值。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return amount */
+    /**
+     * 拨款金额。 单位：元。取值大于0且精确到小数点后2位。 注意该值不能大于“查询伙伴账户余额”接口响应消息表2中参数amount - designated_amount的值。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -61,10 +66,10 @@ public class AdjustAccountReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商（二级经销商）给子客户拨款时，需携带该参数。 说明：
-     * 该参数存在的情况下，如果结果返回余额不足，表示对应的二级经销商的余额不足，如果该参数不存在，则余额不足表示调用的伙伴自身账号的余额不足。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商（二级经销商）给子客户拨款时，需携带该参数。  说明： 该参数存在的情况下，如果结果返回余额不足，表示对应的二级经销商的余额不足，如果该参数不存在，则余额不足表示调用的伙伴自身账号的余额不足。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -103,7 +108,10 @@ public class AdjustAccountReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

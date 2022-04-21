@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带宽支持类型对象 */
+/**
+ * 带宽支持类型对象
+ */
 public class ShareBandwidthTypeShowResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 支持带宽类型的id
-     * 
-     * @return id */
+    /**
+     * 支持带宽类型的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -69,9 +72,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 带宽类型
-     * 
-     * @return bandwidthType */
+    /**
+     * 带宽类型
+     * @return bandwidthType
+     */
     public String getBandwidthType() {
         return bandwidthType;
     }
@@ -85,9 +89,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 中心站点or边缘站点，默认展示
-     * 
-     * @return publicBorderGroup */
+    /**
+     * 中心站点or边缘站点，默认展示
+     * @return publicBorderGroup
+     */
     public String getPublicBorderGroup() {
         return publicBorderGroup;
     }
@@ -101,9 +106,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -117,9 +123,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -133,9 +140,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 带宽类型的英文表述
-     * 
-     * @return nameEn */
+    /**
+     * 带宽类型的英文表述
+     * @return nameEn
+     */
     public String getNameEn() {
         return nameEn;
     }
@@ -149,9 +157,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 带宽类型的中文表述
-     * 
-     * @return nameZh */
+    /**
+     * 带宽类型的中文表述
+     * @return nameZh
+     */
     public String getNameZh() {
         return nameZh;
     }
@@ -165,9 +174,10 @@ public class ShareBandwidthTypeShowResp {
         return this;
     }
 
-    /** 带宽类型描述信息
-     * 
-     * @return description */
+    /**
+     * 带宽类型描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -216,7 +226,10 @@ public class ShareBandwidthTypeShowResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

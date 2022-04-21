@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    /** API与流控策略的绑定关系列表
-     * 
-     * @return throttleApplys */
+    /**
+     * API与流控策略的绑定关系列表
+     * @return throttleApplys
+     */
     public List<ThrottleApiBinding> getThrottleApplys() {
         return throttleApplys;
     }
@@ -77,7 +80,10 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

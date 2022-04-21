@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ReqParamBase */
+/**
+ * ReqParamBase
+ */
 public class ReqParamBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,13 +20,19 @@ public class ReqParamBase {
 
     private String name;
 
-    /** 参数类型 */
+    /**
+     * 参数类型
+     */
     public static final class TypeEnum {
 
-        /** Enum STRING for value: "STRING" */
+        /**
+         * Enum STRING for value: "STRING"
+         */
         public static final TypeEnum STRING = new TypeEnum("STRING");
 
-        /** Enum NUMBER for value: "NUMBER" */
+        /**
+         * Enum NUMBER for value: "NUMBER"
+         */
         public static final TypeEnum NUMBER = new TypeEnum("NUMBER");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -94,16 +102,24 @@ public class ReqParamBase {
 
     private TypeEnum type;
 
-    /** 参数位置 */
+    /**
+     * 参数位置
+     */
     public static final class LocationEnum {
 
-        /** Enum PATH for value: "PATH" */
+        /**
+         * Enum PATH for value: "PATH"
+         */
         public static final LocationEnum PATH = new LocationEnum("PATH");
 
-        /** Enum QUERY for value: "QUERY" */
+        /**
+         * Enum QUERY for value: "QUERY"
+         */
         public static final LocationEnum QUERY = new LocationEnum("QUERY");
 
-        /** Enum HEADER for value: "HEADER" */
+        /**
+         * Enum HEADER for value: "HEADER"
+         */
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
 
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
@@ -184,13 +200,19 @@ public class ReqParamBase {
 
     private String sampleValue;
 
-    /** 是否必须 - 1：是 - 2：否 location为PATH时，required默认为1，其他场景required默认为2 */
+    /**
+     * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
+     */
     public static final class RequiredEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final RequiredEnum NUMBER_2 = new RequiredEnum(2);
 
         private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
@@ -260,13 +282,19 @@ public class ReqParamBase {
 
     private RequiredEnum required;
 
-    /** 是否开启校验 - 1：开启校验 - 2：不开启校验 */
+    /**
+     * 是否开启校验 - 1：开启校验 - 2：不开启校验
+     */
     public static final class ValidEnableEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final ValidEnableEnum NUMBER_1 = new ValidEnableEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final ValidEnableEnum NUMBER_2 = new ValidEnableEnum(2);
 
         private static final Map<Integer, ValidEnableEnum> STATIC_FIELDS = createStaticFields();
@@ -376,13 +404,19 @@ public class ReqParamBase {
 
     private String jsonSchema;
 
-    /** 是否透传 - 1：是 - 2：否 */
+    /**
+     * 是否透传 - 1：是 - 2：否
+     */
     public static final class PassThroughEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final PassThroughEnum NUMBER_1 = new PassThroughEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final PassThroughEnum NUMBER_2 = new PassThroughEnum(2);
 
         private static final Map<Integer, PassThroughEnum> STATIC_FIELDS = createStaticFields();
@@ -457,9 +491,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数名称。 长度为1 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。
-     * 
-     * @return name */
+    /**
+     * 参数名称。 长度为1 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -473,9 +508,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数类型
-     * 
-     * @return type */
+    /**
+     * 参数类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -489,9 +525,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数位置
-     * 
-     * @return location */
+    /**
+     * 参数位置
+     * @return location
+     */
     public LocationEnum getLocation() {
         return location;
     }
@@ -505,9 +542,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数默认值
-     * 
-     * @return defaultValue */
+    /**
+     * 参数默认值
+     * @return defaultValue
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -521,9 +559,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数示例值
-     * 
-     * @return sampleValue */
+    /**
+     * 参数示例值
+     * @return sampleValue
+     */
     public String getSampleValue() {
         return sampleValue;
     }
@@ -537,9 +576,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 是否必须 - 1：是 - 2：否 location为PATH时，required默认为1，其他场景required默认为2
-     * 
-     * @return required */
+    /**
+     * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
+     * @return required
+     */
     public RequiredEnum getRequired() {
         return required;
     }
@@ -553,9 +593,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 是否开启校验 - 1：开启校验 - 2：不开启校验
-     * 
-     * @return validEnable */
+    /**
+     * 是否开启校验 - 1：开启校验 - 2：不开启校验
+     * @return validEnable
+     */
     public ValidEnableEnum getValidEnable() {
         return validEnable;
     }
@@ -569,9 +610,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -585,9 +627,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数枚举值
-     * 
-     * @return enumerations */
+    /**
+     * 参数枚举值
+     * @return enumerations
+     */
     public String getEnumerations() {
         return enumerations;
     }
@@ -601,9 +644,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数最小值 参数类型为NUMBER时有效
-     * 
-     * @return minNum */
+    /**
+     * 参数最小值  参数类型为NUMBER时有效
+     * @return minNum
+     */
     public Integer getMinNum() {
         return minNum;
     }
@@ -617,9 +661,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数最大值 参数类型为NUMBER时有效
-     * 
-     * @return maxNum */
+    /**
+     * 参数最大值  参数类型为NUMBER时有效
+     * @return maxNum
+     */
     public Integer getMaxNum() {
         return maxNum;
     }
@@ -633,9 +678,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数最小长度 参数类型为STRING时有效
-     * 
-     * @return minSize */
+    /**
+     * 参数最小长度  参数类型为STRING时有效
+     * @return minSize
+     */
     public Integer getMinSize() {
         return minSize;
     }
@@ -649,9 +695,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 参数最大长度 参数类型为STRING时有效
-     * 
-     * @return maxSize */
+    /**
+     * 参数最大长度  参数类型为STRING时有效
+     * @return maxSize
+     */
     public Integer getMaxSize() {
         return maxSize;
     }
@@ -665,9 +712,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 正则校验规则 暂不支持
-     * 
-     * @return regular */
+    /**
+     * 正则校验规则  暂不支持
+     * @return regular
+     */
     public String getRegular() {
         return regular;
     }
@@ -681,9 +729,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** JSON校验规则 暂不支持
-     * 
-     * @return jsonSchema */
+    /**
+     * JSON校验规则  暂不支持
+     * @return jsonSchema
+     */
     public String getJsonSchema() {
         return jsonSchema;
     }
@@ -697,9 +746,10 @@ public class ReqParamBase {
         return this;
     }
 
-    /** 是否透传 - 1：是 - 2：否
-     * 
-     * @return passThrough */
+    /**
+     * 是否透传 - 1：是 - 2：否
+     * @return passThrough
+     */
     public PassThroughEnum getPassThrough() {
         return passThrough;
     }
@@ -776,7 +826,10 @@ public class ReqParamBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CheckMd5DuplicationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否重复。 取值如下： - 0：表示不重复。 - 1：表示重复。
-     * 
-     * @return isDuplicated */
+    /**
+     * 是否重复。  取值如下： - 0：表示不重复。 - 1：表示重复。
+     * @return isDuplicated
+     */
     public Integer getIsDuplicated() {
         return isDuplicated;
     }
@@ -59,9 +62,10 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
         return this;
     }
 
-    /** 重复的媒资ID
-     * 
-     * @return assetIds */
+    /**
+     * 重复的媒资ID
+     * @return assetIds
+     */
     public List<String> getAssetIds() {
         return assetIds;
     }
@@ -98,7 +102,10 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

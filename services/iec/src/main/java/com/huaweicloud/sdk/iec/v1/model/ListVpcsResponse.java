@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListVpcsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListVpcsResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云的总数。
-     * 
-     * @return count */
+    /**
+     * 虚拟私有云的总数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -59,9 +62,10 @@ public class ListVpcsResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云数组对象。
-     * 
-     * @return vpcs */
+    /**
+     * 虚拟私有云数组对象。
+     * @return vpcs
+     */
     public List<Vpc> getVpcs() {
         return vpcs;
     }
@@ -97,7 +101,10 @@ public class ListVpcsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

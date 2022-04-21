@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 逻辑卷组信息 */
+/**
+ * 逻辑卷组信息
+ */
 public class VolumeGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,9 +43,10 @@ public class VolumeGroups {
         return this;
     }
 
-    /** Pv信息
-     * 
-     * @return components */
+    /**
+     * Pv信息
+     * @return components
+     */
     public String getComponents() {
         return components;
     }
@@ -57,9 +60,12 @@ public class VolumeGroups {
         return this;
     }
 
-    /** 剩余空间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return freeSize */
+    /**
+     * 剩余空间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return freeSize
+     */
     public Long getFreeSize() {
         return freeSize;
     }
@@ -89,9 +95,10 @@ public class VolumeGroups {
         return this;
     }
 
-    /** lv信息
-     * 
-     * @return logicalVolumes */
+    /**
+     * lv信息
+     * @return logicalVolumes
+     */
     public List<LogicalVolumes> getLogicalVolumes() {
         return logicalVolumes;
     }
@@ -105,9 +112,10 @@ public class VolumeGroups {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +129,12 @@ public class VolumeGroups {
         return this;
     }
 
-    /** 大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -165,7 +176,10 @@ public class VolumeGroups {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

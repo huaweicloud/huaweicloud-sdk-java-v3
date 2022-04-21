@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteTranscodingTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class DeleteTranscodingTaskRequest {
         return this;
     }
 
-    /** 创建转码任务成功时返回的任务ID minimum: 0 maximum: 2147483647
-     * 
-     * @return taskId */
+    /**
+     * 创建转码任务成功时返回的任务ID 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return taskId
+     */
     public Integer getTaskId() {
         return taskId;
     }
@@ -55,7 +60,10 @@ public class DeleteTranscodingTaskRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteMfaDeviceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteMfaDeviceRequest {
         return this;
     }
 
-    /** 绑定MFA设备的IAM 用户ID。
-     * 
-     * @return userId */
+    /**
+     * 绑定MFA设备的IAM 用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -39,9 +42,10 @@ public class DeleteMfaDeviceRequest {
         return this;
     }
 
-    /** MFA设备序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * MFA设备序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -78,7 +82,10 @@ public class DeleteMfaDeviceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

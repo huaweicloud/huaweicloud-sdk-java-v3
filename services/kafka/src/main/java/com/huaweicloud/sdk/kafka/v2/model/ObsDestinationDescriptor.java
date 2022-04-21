@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 转存目标的描述。 */
+/**
+ * 转存目标的描述。
+ */
 public class ObsDestinationDescriptor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ObsDestinationDescriptor {
 
     private String topicsRegex;
 
-    /** 转储启动偏移量： - latest: 从Topic最后端开始消费。 - earliest: 从Topic最前端消息开始消费。 默认是latest。 */
+    /**
+     * 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
+     */
     public static final class ConsumerStrategyEnum {
 
-        /** Enum LATEST for value: "latest" */
+        /**
+         * Enum LATEST for value: "latest"
+         */
         public static final ConsumerStrategyEnum LATEST = new ConsumerStrategyEnum("latest");
 
-        /** Enum EARLIEST for value: "earliest" */
+        /**
+         * Enum EARLIEST for value: "earliest"
+         */
         public static final ConsumerStrategyEnum EARLIEST = new ConsumerStrategyEnum("earliest");
 
         private static final Map<String, ConsumerStrategyEnum> STATIC_FIELDS = createStaticFields();
@@ -99,10 +107,14 @@ public class ObsDestinationDescriptor {
 
     private ConsumerStrategyEnum consumerStrategy;
 
-    /** 转储文件格式。当前只支持text。 */
+    /**
+     * 转储文件格式。当前只支持text。 
+     */
     public static final class DestinationFileTypeEnum {
 
-        /** Enum TEXT for value: "TEXT" */
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
         public static final DestinationFileTypeEnum TEXT = new DestinationFileTypeEnum("TEXT");
 
         private static final Map<String, DestinationFileTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -211,9 +223,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 转存的topic列表名称，支持多个topic同时放置，以逗号“,”分隔。同时支持正则表达式。 例如topic1,topic2。
-     * 
-     * @return topics */
+    /**
+     * 转存的topic列表名称，支持多个topic同时放置，以逗号“,”分隔。同时支持正则表达式。 例如topic1,topic2。 
+     * @return topics
+     */
     public String getTopics() {
         return topics;
     }
@@ -227,9 +240,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。
-     * 
-     * @return topicsRegex */
+    /**
+     * 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。 
+     * @return topicsRegex
+     */
     public String getTopicsRegex() {
         return topicsRegex;
     }
@@ -243,9 +257,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 转储启动偏移量： - latest: 从Topic最后端开始消费。 - earliest: 从Topic最前端消息开始消费。 默认是latest。
-     * 
-     * @return consumerStrategy */
+    /**
+     * 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
+     * @return consumerStrategy
+     */
     public ConsumerStrategyEnum getConsumerStrategy() {
         return consumerStrategy;
     }
@@ -259,9 +274,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 转储文件格式。当前只支持text。
-     * 
-     * @return destinationFileType */
+    /**
+     * 转储文件格式。当前只支持text。 
+     * @return destinationFileType
+     */
     public DestinationFileTypeEnum getDestinationFileType() {
         return destinationFileType;
     }
@@ -275,9 +291,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 访问密钥AK。
-     * 
-     * @return accessKey */
+    /**
+     * 访问密钥AK。 
+     * @return accessKey
+     */
     public String getAccessKey() {
         return accessKey;
     }
@@ -291,9 +308,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 访问密钥SK。
-     * 
-     * @return secretKey */
+    /**
+     * 访问密钥SK。 
+     * @return secretKey
+     */
     public String getSecretKey() {
         return secretKey;
     }
@@ -307,9 +325,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 存储该通道数据的OBS桶名称。
-     * 
-     * @return obsBucketName */
+    /**
+     * 存储该通道数据的OBS桶名称。 
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -323,9 +342,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线和斜杠，最大长度为50个字符。 默认配置为空。
-     * 
-     * @return obsPath */
+    /**
+     * 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线和斜杠，最大长度为50个字符。 默认配置为空。 
+     * @return obsPath
+     */
     public String getObsPath() {
         return obsPath;
     }
@@ -339,11 +359,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。 - N/A：置空，不使用日期时间目录。 - yyyy：年 - yyyy/MM：年/月
-     * - yyyy/MM/dd：年/月/日 - yyyy/MM/dd/HH：年/月/日/时 - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10
-     * > 14 > 49”，“2017”表示最外层文件夹。 默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间
-     * 
-     * @return partitionFormat */
+    /**
+     * 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。   - N/A：置空，不使用日期时间目录。   - yyyy：年   - yyyy/MM：年/月   - yyyy/MM/dd：年/月/日   - yyyy/MM/dd/HH：年/月/日/时   - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+     * @return partitionFormat
+     */
     public String getPartitionFormat() {
         return partitionFormat;
     }
@@ -357,9 +376,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围： - 逗号“,” - 分号“;” - 竖线“|” - 换行符“\\n” - NULL 默认值：换行符“\\n”。
-     * 
-     * @return recordDelimiter */
+    /**
+     * 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
+     * @return recordDelimiter
+     */
     public String getRecordDelimiter() {
         return recordDelimiter;
     }
@@ -373,9 +393,10 @@ public class ObsDestinationDescriptor {
         return this;
     }
 
-    /** 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。
-     * 
-     * @return deliverTimeInterval */
+    /**
+     * 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。 
+     * @return deliverTimeInterval
+     */
     public Integer getDeliverTimeInterval() {
         return deliverTimeInterval;
     }
@@ -440,7 +461,10 @@ public class ObsDestinationDescriptor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

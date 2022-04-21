@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateEnvironmentVariableV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return this;
     }
 
-    /** 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
-     * 
-     * @return variableValue */
+    /**
+     * 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
+     * @return variableValue
+     */
     public String getVariableValue() {
         return variableValue;
     }
@@ -55,9 +58,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return this;
     }
 
-    /** 环境编号
-     * 
-     * @return envId */
+    /**
+     * 环境编号
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -71,9 +75,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return this;
     }
 
-    /** API分组编号
-     * 
-     * @return groupId */
+    /**
+     * API分组编号
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -87,10 +92,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return this;
     }
 
-    /** 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头，3~32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 >
-     * 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return variableName */
+    /**
+     * 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头，3~32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return variableName
+     */
     public String getVariableName() {
         return variableName;
     }
@@ -104,9 +109,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return this;
     }
 
-    /** 环境变量编号
-     * 
-     * @return id */
+    /**
+     * 环境变量编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -150,7 +156,10 @@ public class UpdateEnvironmentVariableV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

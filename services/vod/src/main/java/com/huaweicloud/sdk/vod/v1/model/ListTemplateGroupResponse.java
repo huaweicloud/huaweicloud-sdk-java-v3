@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListTemplateGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListTemplateGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 模板组信息<br/>
-     * 
-     * @return templateGroupList */
+    /**
+     * 模板组信息<br/> 
+     * @return templateGroupList
+     */
     public List<TemplateGroup> getTemplateGroupList() {
         return templateGroupList;
     }
@@ -69,9 +72,10 @@ public class ListTemplateGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 总记录条数<br/>
-     * 
-     * @return total */
+    /**
+     * 总记录条数<br/> 
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -85,9 +89,10 @@ public class ListTemplateGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码<br/>
-     * 
-     * @return errorCode */
+    /**
+     * 错误码<br/> 
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -101,9 +106,10 @@ public class ListTemplateGroupResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误描述<br/>
-     * 
-     * @return errorMsg */
+    /**
+     * 错误描述<br/> 
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -144,7 +150,10 @@ public class ListTemplateGroupResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

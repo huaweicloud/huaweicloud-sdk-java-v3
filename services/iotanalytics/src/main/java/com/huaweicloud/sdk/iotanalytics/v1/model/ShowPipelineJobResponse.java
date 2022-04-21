@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowPipelineJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowPipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** 管道作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：数据管道算子配置指南。
-     * 
-     * @return pipelineConfig */
+    /**
+     * 管道作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：数据管道算子配置指南。
+     * @return pipelineConfig
+     */
     public Map<String, Object> getPipelineConfig() {
         return pipelineConfig;
     }
@@ -68,9 +71,10 @@ public class ShowPipelineJobResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pipelineInfo
-     * 
-     * @return pipelineInfo */
+    /**
+     * Get pipelineInfo
+     * @return pipelineInfo
+     */
     public PipelineJobInfoDto getPipelineInfo() {
         return pipelineInfo;
     }
@@ -107,7 +111,10 @@ public class ShowPipelineJobResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

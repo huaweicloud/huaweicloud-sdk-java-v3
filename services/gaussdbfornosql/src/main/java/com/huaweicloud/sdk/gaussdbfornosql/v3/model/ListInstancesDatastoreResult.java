@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 数据库信息。 */
+/**
+ * 数据库信息。
+ */
 public class ListInstancesDatastoreResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListInstancesDatastoreResult {
         return this;
     }
 
-    /** 数据库引擎。
-     * 
-     * @return type */
+    /**
+     * 数据库引擎。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class ListInstancesDatastoreResult {
         return this;
     }
 
-    /** 数据库版本号。
-     * 
-     * @return version */
+    /**
+     * 数据库版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -78,7 +82,10 @@ public class ListInstancesDatastoreResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

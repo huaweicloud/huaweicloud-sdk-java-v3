@@ -13,30 +13,44 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 视频数据的输入列表，目前只支持以下输入类型，且只支持一路输入，不支持多个OBS文件或URL： - obs：从华为云OBS中读取视频数据。 - url：从指定的URL地址中读取视频数据。 -
- * edgecamera：表示从指定的边缘摄像头读取数据。 - vis：从视频接入服务中读取视频数据。 - edgerestful：表示从客户自定义的流媒体服务器读取数据。 - vcn ：表示从华为云VCN中读取视频数据。 */
+/**
+ * 视频数据的输入列表，目前只支持以下输入类型，且只支持一路输入，不支持多个OBS文件或URL： - obs：从华为云OBS中读取视频数据。 - url：从指定的URL地址中读取视频数据。 - edgecamera：表示从指定的边缘摄像头读取数据。 - vis：从视频接入服务中读取视频数据。 - edgerestful：表示从客户自定义的流媒体服务器读取数据。 - vcn ：表示从华为云VCN中读取视频数据。 
+ */
 public class CreateVideoJobReqInput {
 
-    /** 视频数据的输入类型： obs：表示从华为云OBS中读取视频数据。 url：表示从指定的URL地址中读取视频数据。 edgecamera：表示从指定的边缘摄像头读取数据。 vis：从视频接入服务中读取视频数据。
-     * edgerestful：表示从客户自定义的流媒体服务器读取数据。 vcn ：表示从华为云VCN中读取视频数据。 */
+    /**
+     * 视频数据的输入类型：  obs：表示从华为云OBS中读取视频数据。 url：表示从指定的URL地址中读取视频数据。 edgecamera：表示从指定的边缘摄像头读取数据。 vis：从视频接入服务中读取视频数据。 edgerestful：表示从客户自定义的流媒体服务器读取数据。 vcn ：表示从华为云VCN中读取视频数据。 
+     */
     public static final class TypeEnum {
 
-        /** Enum OBS for value: "obs" */
+        /**
+         * Enum OBS for value: "obs"
+         */
         public static final TypeEnum OBS = new TypeEnum("obs");
 
-        /** Enum URL for value: "url" */
+        /**
+         * Enum URL for value: "url"
+         */
         public static final TypeEnum URL = new TypeEnum("url");
 
-        /** Enum EDGECAMERA for value: "edgecamera" */
+        /**
+         * Enum EDGECAMERA for value: "edgecamera"
+         */
         public static final TypeEnum EDGECAMERA = new TypeEnum("edgecamera");
 
-        /** Enum VIS for value: "vis" */
+        /**
+         * Enum VIS for value: "vis"
+         */
         public static final TypeEnum VIS = new TypeEnum("vis");
 
-        /** Enum EDGERESTFUL for value: "edgerestful" */
+        /**
+         * Enum EDGERESTFUL for value: "edgerestful"
+         */
         public static final TypeEnum EDGERESTFUL = new TypeEnum("edgerestful");
 
-        /** Enum VCN for value: "vcn" */
+        /**
+         * Enum VCN for value: "vcn"
+         */
         public static final TypeEnum VCN = new TypeEnum("vcn");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -125,10 +139,10 @@ public class CreateVideoJobReqInput {
         return this;
     }
 
-    /** 视频数据的输入类型： obs：表示从华为云OBS中读取视频数据。 url：表示从指定的URL地址中读取视频数据。 edgecamera：表示从指定的边缘摄像头读取数据。 vis：从视频接入服务中读取视频数据。
-     * edgerestful：表示从客户自定义的流媒体服务器读取数据。 vcn ：表示从华为云VCN中读取视频数据。
-     * 
-     * @return type */
+    /**
+     * 视频数据的输入类型：  obs：表示从华为云OBS中读取视频数据。 url：表示从指定的URL地址中读取视频数据。 edgecamera：表示从指定的边缘摄像头读取数据。 vis：从视频接入服务中读取视频数据。 edgerestful：表示从客户自定义的流媒体服务器读取数据。 vcn ：表示从华为云VCN中读取视频数据。 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -158,9 +172,10 @@ public class CreateVideoJobReqInput {
         return this;
     }
 
-    /** 数据输入内容
-     * 
-     * @return data */
+    /**
+     * 数据输入内容
+     * @return data
+     */
     public List<InputData> getData() {
         return data;
     }
@@ -183,9 +198,10 @@ public class CreateVideoJobReqInput {
         return this;
     }
 
-    /** Get vcn
-     * 
-     * @return vcn */
+    /**
+     * Get vcn
+     * @return vcn
+     */
     public InputVcn getVcn() {
         return vcn;
     }
@@ -224,7 +240,10 @@ public class CreateVideoJobReqInput {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

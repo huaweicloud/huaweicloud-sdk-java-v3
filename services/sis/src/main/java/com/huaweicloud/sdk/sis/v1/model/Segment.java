@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Segment */
+/**
+ * Segment
+ */
 public class Segment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class Segment {
         return this;
     }
 
-    /** 一句的起始时间戳，单位ms。
-     * 
-     * @return startTime */
+    /**
+     * 一句的起始时间戳，单位ms。
+     * @return startTime
+     */
     public Integer getStartTime() {
         return startTime;
     }
@@ -45,9 +48,10 @@ public class Segment {
         return this;
     }
 
-    /** 一句的结束时间戳，单位ms。
-     * 
-     * @return endTime */
+    /**
+     * 一句的结束时间戳，单位ms。
+     * @return endTime
+     */
     public Integer getEndTime() {
         return endTime;
     }
@@ -70,9 +74,10 @@ public class Segment {
         return this;
     }
 
-    /** Get result
-     * 
-     * @return result */
+    /**
+     * Get result
+     * @return result
+     */
     public TranscriberResult getResult() {
         return result;
     }
@@ -110,7 +115,10 @@ public class Segment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

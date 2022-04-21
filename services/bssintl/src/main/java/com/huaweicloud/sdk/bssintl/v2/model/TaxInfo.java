@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TaxInfo */
+/**
+ * TaxInfo
+ */
 public class TaxInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class TaxInfo {
         return this;
     }
 
-    /** 税种。 VATISSWHTGST
-     * 
-     * @return taxClass */
+    /**
+     * 税种。 VATISSWHTGST
+     * @return taxClass
+     */
     public String getTaxClass() {
         return taxClass;
     }
@@ -49,9 +52,10 @@ public class TaxInfo {
         return this;
     }
 
-    /** 税率。
-     * 
-     * @return taxRate */
+    /**
+     * 税率。
+     * @return taxRate
+     */
     public String getTaxRate() {
         return taxRate;
     }
@@ -65,9 +69,10 @@ public class TaxInfo {
         return this;
     }
 
-    /** 税种子类。 PISCOFINSCGSTSGSTIGSTISSWHTVAT
-     * 
-     * @return subTaxClass */
+    /**
+     * 税种子类。 PISCOFINSCGSTSGSTIGSTISSWHTVAT
+     * @return subTaxClass
+     */
     public String getSubTaxClass() {
         return subTaxClass;
     }
@@ -81,9 +86,10 @@ public class TaxInfo {
         return this;
     }
 
-    /** 税金金额。 单位：美元
-     * 
-     * @return taxAmount */
+    /**
+     * 税金金额。 单位：美元
+     * @return taxAmount
+     */
     public Double getTaxAmount() {
         return taxAmount;
     }
@@ -123,7 +129,10 @@ public class TaxInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,16 +13,24 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主机组标签信息 */
+/**
+ * 主机组标签信息
+ */
 public class GetHostGroupListTag {
 
-    /** 标签类型。AND：标签过滤的逻辑为与，OR：标签过滤的逻辑为或 */
+    /**
+     * 标签类型。AND：标签过滤的逻辑为与，OR：标签过滤的逻辑为或
+     */
     public static final class TagTypeEnum {
 
-        /** Enum AND for value: "AND" */
+        /**
+         * Enum AND for value: "AND"
+         */
         public static final TagTypeEnum AND = new TagTypeEnum("AND");
 
-        /** Enum OR for value: "OR" */
+        /**
+         * Enum OR for value: "OR"
+         */
         public static final TagTypeEnum OR = new TagTypeEnum("OR");
 
         private static final Map<String, TagTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -102,9 +110,10 @@ public class GetHostGroupListTag {
         return this;
     }
 
-    /** 标签类型。AND：标签过滤的逻辑为与，OR：标签过滤的逻辑为或
-     * 
-     * @return tagType */
+    /**
+     * 标签类型。AND：标签过滤的逻辑为与，OR：标签过滤的逻辑为或
+     * @return tagType
+     */
     public TagTypeEnum getTagType() {
         return tagType;
     }
@@ -134,9 +143,10 @@ public class GetHostGroupListTag {
         return this;
     }
 
-    /** 主机组标签
-     * 
-     * @return tagList */
+    /**
+     * 主机组标签
+     * @return tagList
+     */
     public List<HostGroupTag> getTagList() {
         return tagList;
     }
@@ -173,7 +183,10 @@ public class GetHostGroupListTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -58,9 +58,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 审计标记。
-     * 
-     * @return audited */
+    /**
+     * 审计标记。
+     * @return audited
+     */
     public Boolean getAudited() {
         return audited;
     }
@@ -74,9 +75,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 网络ACL防火墙策略描述。
-     * 
-     * @return description */
+    /**
+     * 网络ACL防火墙策略描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -106,9 +108,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 策略引用的网络ACL防火墙规则链。
-     * 
-     * @return firewallRules */
+    /**
+     * 策略引用的网络ACL防火墙规则链。
+     * @return firewallRules
+     */
     public List<String> getFirewallRules() {
         return firewallRules;
     }
@@ -122,9 +125,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 网络ACL防火墙策略uuid标识。
-     * 
-     * @return id */
+    /**
+     * 网络ACL防火墙策略uuid标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -138,9 +142,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 网络ACL防火墙策略名称。
-     * 
-     * @return name */
+    /**
+     * 网络ACL防火墙策略名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -154,9 +159,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 是否支持跨租户共享。
-     * 
-     * @return _public */
+    /**
+     * 是否支持跨租户共享。
+     * @return _public
+     */
     public Boolean getPublic() {
         return _public;
     }
@@ -170,9 +176,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return tenantId */
+    /**
+     * 项目ID
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -186,9 +193,10 @@ public class NeutronFirewallPolicy {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -237,7 +245,10 @@ public class NeutronFirewallPolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

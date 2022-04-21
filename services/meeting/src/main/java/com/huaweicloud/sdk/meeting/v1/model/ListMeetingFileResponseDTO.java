@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IdeaHub、终端“查看会议纪要列表”响应 */
+/**
+ * IdeaHub、终端“查看会议纪要列表”响应
+ */
 public class ListMeetingFileResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 会议纪要文件码
-     * 
-     * @return fileCode */
+    /**
+     * 会议纪要文件码
+     * @return fileCode
+     */
     public String getFileCode() {
         return fileCode;
     }
@@ -94,9 +97,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 文件主题
-     * 
-     * @return topic */
+    /**
+     * 文件主题
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -110,9 +114,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 文件Id
-     * 
-     * @return fileId */
+    /**
+     * 文件Id
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -126,9 +131,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -142,9 +148,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 文件大小，单位字节
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小，单位字节
+     * @return fileSize
+     */
     public Long getFileSize() {
         return fileSize;
     }
@@ -158,9 +165,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 缩略图文件Id
-     * 
-     * @return thumbnailFileId */
+    /**
+     * 缩略图文件Id
+     * @return thumbnailFileId
+     */
     public String getThumbnailFileId() {
         return thumbnailFileId;
     }
@@ -174,9 +182,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 缩略图文件名
-     * 
-     * @return thumbnailFileName */
+    /**
+     * 缩略图文件名
+     * @return thumbnailFileName
+     */
     public String getThumbnailFileName() {
         return thumbnailFileName;
     }
@@ -190,9 +199,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 缩略图文件大小，单位字节
-     * 
-     * @return thumbnailFileSize */
+    /**
+     * 缩略图文件大小，单位字节
+     * @return thumbnailFileSize
+     */
     public Long getThumbnailFileSize() {
         return thumbnailFileSize;
     }
@@ -206,9 +216,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** pdf文件Id
-     * 
-     * @return pdfFileId */
+    /**
+     * pdf文件Id
+     * @return pdfFileId
+     */
     public String getPdfFileId() {
         return pdfFileId;
     }
@@ -222,9 +233,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** pdf文件名
-     * 
-     * @return pdfFileName */
+    /**
+     * pdf文件名
+     * @return pdfFileName
+     */
     public String getPdfFileName() {
         return pdfFileName;
     }
@@ -238,9 +250,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** pdf文件大小，单位字节
-     * 
-     * @return pdfFileSize */
+    /**
+     * pdf文件大小，单位字节
+     * @return pdfFileSize
+     */
     public Long getPdfFileSize() {
         return pdfFileSize;
     }
@@ -254,9 +267,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -270,9 +284,10 @@ public class ListMeetingFileResponseDTO {
         return this;
     }
 
-    /** 文件创建时间戳
-     * 
-     * @return creationTimestamp */
+    /**
+     * 文件创建时间戳
+     * @return creationTimestamp
+     */
     public Long getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -343,7 +358,10 @@ public class ListMeetingFileResponseDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

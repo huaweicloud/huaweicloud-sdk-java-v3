@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListDeviceMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListDeviceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -59,9 +62,10 @@ public class ListDeviceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备消息列表。
-     * 
-     * @return messages */
+    /**
+     * 设备消息列表。
+     * @return messages
+     */
     public List<DeviceMessage> getMessages() {
         return messages;
     }
@@ -98,7 +102,10 @@ public class ListDeviceMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

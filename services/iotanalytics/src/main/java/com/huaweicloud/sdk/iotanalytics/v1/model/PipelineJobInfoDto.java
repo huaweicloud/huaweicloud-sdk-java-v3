@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 管道作业基础信息，包括：管道ID、管道名称、管道类型等。 */
+/**
+ * 管道作业基础信息，包括：管道ID、管道名称、管道类型等。
+ */
 public class PipelineJobInfoDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 管道ID
-     * 
-     * @return pipelineId */
+    /**
+     * 管道ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -97,9 +100,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 管道名称
-     * 
-     * @return pipelineName */
+    /**
+     * 管道名称
+     * @return pipelineName
+     */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -113,9 +117,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 数据源ID
-     * 
-     * @return dataSourceId */
+    /**
+     * 数据源ID
+     * @return dataSourceId
+     */
     public String getDataSourceId() {
         return dataSourceId;
     }
@@ -145,9 +150,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 存储列表
-     * 
-     * @return dataStoreList */
+    /**
+     * 存储列表
+     * @return dataStoreList
+     */
     public List<DataStoreDto> getDataStoreList() {
         return dataStoreList;
     }
@@ -161,9 +167,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 管道描述
-     * 
-     * @return pipelineDescription */
+    /**
+     * 管道描述
+     * @return pipelineDescription
+     */
     public String getPipelineDescription() {
         return pipelineDescription;
     }
@@ -193,9 +200,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 存储列表
-     * 
-     * @return tagList */
+    /**
+     * 存储列表
+     * @return tagList
+     */
     public List<TagInfoDto> getTagList() {
         return tagList;
     }
@@ -209,9 +217,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 管道状态
-     * 
-     * @return pipelineState */
+    /**
+     * 管道状态
+     * @return pipelineState
+     */
     public String getPipelineState() {
         return pipelineState;
     }
@@ -225,9 +234,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 操作状态
-     * 
-     * @return status */
+    /**
+     * 操作状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -241,9 +251,12 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 运行管道的RTU个数 minimum: 0 maximum: 1000
-     * 
-     * @return rtu */
+    /**
+     * 运行管道的RTU个数
+     * minimum: 0
+     * maximum: 1000
+     * @return rtu
+     */
     public Integer getRtu() {
         return rtu;
     }
@@ -257,9 +270,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdTime */
+    /**
+     * 创建时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -273,9 +287,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 修改时间
-     * 
-     * @return modifiedTime */
+    /**
+     * 修改时间
+     * @return modifiedTime
+     */
     public String getModifiedTime() {
         return modifiedTime;
     }
@@ -289,9 +304,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 用户ID
-     * 
-     * @return userId */
+    /**
+     * 用户ID
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -305,9 +321,10 @@ public class PipelineJobInfoDto {
         return this;
     }
 
-    /** 已停止的管道作业是否有历史缓存数据
-     * 
-     * @return hasSavepoint */
+    /**
+     * 已停止的管道作业是否有历史缓存数据
+     * @return hasSavepoint
+     */
     public Boolean getHasSavepoint() {
         return hasSavepoint;
     }
@@ -378,7 +395,10 @@ public class PipelineJobInfoDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

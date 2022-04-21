@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会场信息 */
+/**
+ * 会场信息
+ */
 public class ParticipantInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +100,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 与会者的号码。
-     * 
-     * @return participantID */
+    /**
+     * 与会者的号码。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -114,9 +117,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 与会者的名称（昵称）。
-     * 
-     * @return name */
+    /**
+     * 与会者的名称（昵称）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -130,9 +134,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 与会者的号码（预留字段）。
-     * 
-     * @return subscriberID */
+    /**
+     * 与会者的号码（预留字段）。
+     * @return subscriberID
+     */
     public String getSubscriberID() {
         return subscriberID;
     }
@@ -146,9 +151,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 会议中的角色。 - 1: 会议主持人。 - 0: 普通与会者。
-     * 
-     * @return role */
+    /**
+     * 会议中的角色。 - 1: 会议主持人。 - 0: 普通与会者。
+     * @return role
+     */
     public Integer getRole() {
         return role;
     }
@@ -162,9 +168,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 用户状态。目前固定返回MEETTING。
-     * 
-     * @return state */
+    /**
+     * 用户状态。目前固定返回MEETTING。
+     * @return state
+     */
     public String getState() {
         return state;
     }
@@ -178,9 +185,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 终端所在会议室信息。（预留字段）
-     * 
-     * @return address */
+    /**
+     * 终端所在会议室信息。（预留字段）
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -194,10 +202,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 -
-     * telephone: 用户固定电话。（预留字段）
-     * 
-     * @return attendeeType */
+    /**
+     * - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 用户固定电话。（预留字段）
+     * @return attendeeType
+     */
     public String getAttendeeType() {
         return attendeeType;
     }
@@ -211,9 +219,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 预订者的账号ID。
-     * 
-     * @return accountId */
+    /**
+     * 预订者的账号ID。
+     * @return accountId
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -227,9 +236,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写左屏号码。（预留字段）
-     * 
-     * @return phone2 */
+    /**
+     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写左屏号码。（预留字段）
+     * @return phone2
+     */
     public String getPhone2() {
         return phone2;
     }
@@ -243,9 +253,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写右屏号码。（预留字段）
-     * 
-     * @return phone3 */
+    /**
+     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写右屏号码。（预留字段）
+     * @return phone3
+     */
     public String getPhone3() {
         return phone3;
     }
@@ -259,9 +270,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 邮件地址。最大不超过255个字符。
-     * 
-     * @return email */
+    /**
+     * 邮件地址。最大不超过255个字符。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -275,9 +287,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 短信通知的手机号码。最大不超过127个字符。
-     * 
-     * @return sms */
+    /**
+     * 短信通知的手机号码。最大不超过127个字符。
+     * @return sms
+     */
     public String getSms() {
         return sms;
     }
@@ -291,9 +304,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 部门名称。最大不超过96个字符。
-     * 
-     * @return deptName */
+    /**
+     * 部门名称。最大不超过96个字符。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -307,9 +321,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 预订者的用户UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 预订者的用户UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -323,9 +338,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 第三方应用ID。
-     * 
-     * @return appId */
+    /**
+     * 第三方应用ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -339,9 +355,12 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 会议开始时是否自动邀请该与会者。 minimum: 0 maximum: 1
-     * 
-     * @return isAutoInvite */
+    /**
+     * 会议开始时是否自动邀请该与会者。
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoInvite
+     */
     public Integer getIsAutoInvite() {
         return isAutoInvite;
     }
@@ -355,9 +374,10 @@ public class ParticipantInfo {
         return this;
     }
 
-    /** 是否不叠加会场名。
-     * 
-     * @return isNotOverlayPidName */
+    /**
+     * 是否不叠加会场名。
+     * @return isNotOverlayPidName
+     */
     public Boolean getIsNotOverlayPidName() {
         return isNotOverlayPidName;
     }
@@ -437,7 +457,10 @@ public class ParticipantInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

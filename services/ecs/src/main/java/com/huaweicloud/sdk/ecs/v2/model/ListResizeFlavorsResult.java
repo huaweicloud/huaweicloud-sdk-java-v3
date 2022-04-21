@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 云服务器规格。 */
+/**
+ * 云服务器规格。
+ */
 public class ListResizeFlavorsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,9 +93,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格的ID。
-     * 
-     * @return id */
+    /**
+     * 云服务器规格的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -107,9 +110,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格的名称。
-     * 
-     * @return name */
+    /**
+     * 云服务器规格的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -123,9 +127,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格对应的CPU核数。
-     * 
-     * @return vcpus */
+    /**
+     * 云服务器规格对应的CPU核数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -139,9 +144,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格对应的内存大小，单位为MB。
-     * 
-     * @return ram */
+    /**
+     * 云服务器规格对应的内存大小，单位为MB。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -155,9 +161,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格对应要求的系统盘大小。 当前未使用该参数，缺省值为0。
-     * 
-     * @return disk */
+    /**
+     * 云服务器规格对应要求的系统盘大小。  当前未使用该参数，缺省值为0。
+     * @return disk
+     */
     public String getDisk() {
         return disk;
     }
@@ -171,9 +178,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器规格对应要求的交换分区大小。 当前未使用该参数，缺省值为\"\"。
-     * 
-     * @return swap */
+    /**
+     * 云服务器规格对应要求的交换分区大小。  当前未使用该参数，缺省值为\"\"。
+     * @return swap
+     */
     public String getSwap() {
         return swap;
     }
@@ -187,9 +195,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 扩展属性，临时盘大小。 当前未使用该参数，缺省值为0
-     * 
-     * @return osFLVEXTDATAEphemeral */
+    /**
+     * 扩展属性，临时盘大小。  当前未使用该参数，缺省值为0
+     * @return osFLVEXTDATAEphemeral
+     */
     public Integer getOsFLVEXTDATAEphemeral() {
         return osFLVEXTDATAEphemeral;
     }
@@ -203,9 +212,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 扩展属性，该云服务器规格是否禁用。 当前未使用该参数，缺省值为false。
-     * 
-     * @return osFLVDISABLEDDisabled */
+    /**
+     * 扩展属性，该云服务器规格是否禁用。  当前未使用该参数，缺省值为false。
+     * @return osFLVDISABLEDDisabled
+     */
     public Boolean getOsFLVDISABLEDDisabled() {
         return osFLVDISABLEDDisabled;
     }
@@ -219,9 +229,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器可使用网络带宽与网络硬件带宽的比例。 当前未使用该参数，缺省值为1.0。
-     * 
-     * @return rxtxFactor */
+    /**
+     * 云服务器可使用网络带宽与网络硬件带宽的比例。  当前未使用该参数，缺省值为1.0。
+     * @return rxtxFactor
+     */
     public Float getRxtxFactor() {
         return rxtxFactor;
     }
@@ -235,9 +246,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器可使用网络带宽的软限制。 当前未使用该参数，缺省值为null。
-     * 
-     * @return rxtxQuota */
+    /**
+     * 云服务器可使用网络带宽的软限制。  当前未使用该参数，缺省值为null。
+     * @return rxtxQuota
+     */
     public String getRxtxQuota() {
         return rxtxQuota;
     }
@@ -251,9 +263,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 云服务器可使用网络带宽的硬限制。 当前未使用该参数，缺省值为null。
-     * 
-     * @return rxtxCap */
+    /**
+     *   云服务器可使用网络带宽的硬限制。  当前未使用该参数，缺省值为null。
+     * @return rxtxCap
+     */
     public String getRxtxCap() {
         return rxtxCap;
     }
@@ -267,9 +280,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 扩展属性，flavor是否给所有租户使用。 - true：表示给所有租户使用。 - false：表示给指定租户使用。 缺省值为true。
-     * 
-     * @return osFlavorAccessIsPublic */
+    /**
+     * 扩展属性，flavor是否给所有租户使用。  - true：表示给所有租户使用。 - false：表示给指定租户使用。  缺省值为true。
+     * @return osFlavorAccessIsPublic
+     */
     public Boolean getOsFlavorAccessIsPublic() {
         return osFlavorAccessIsPublic;
     }
@@ -299,9 +313,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 规格相关快捷链接地址。
-     * 
-     * @return links */
+    /**
+     * 规格相关快捷链接地址。
+     * @return links
+     */
     public List<FlavorLink> getLinks() {
         return links;
     }
@@ -324,9 +339,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** Get extraSpecs
-     * 
-     * @return extraSpecs */
+    /**
+     * Get extraSpecs
+     * @return extraSpecs
+     */
     public FlavorExtraSpec getExtraSpecs() {
         return extraSpecs;
     }
@@ -340,9 +356,10 @@ public class ListResizeFlavorsResult {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return instanceQuota */
+    /**
+     * 预留属性。
+     * @return instanceQuota
+     */
     public Object getInstanceQuota() {
         return instanceQuota;
     }
@@ -419,7 +436,10 @@ public class ListResizeFlavorsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

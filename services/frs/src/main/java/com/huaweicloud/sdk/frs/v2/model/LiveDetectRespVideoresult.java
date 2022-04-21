@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。
- * 调用失败时无此字段。 */
+/**
+ * 活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。
+ */
 public class LiveDetectRespVideoresult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +33,10 @@ public class LiveDetectRespVideoresult {
         return this;
     }
 
-    /** 是否是活体。
-     * 
-     * @return alive */
+    /**
+     * 是否是活体。
+     * @return alive
+     */
     public Boolean getAlive() {
         return alive;
     }
@@ -64,9 +66,10 @@ public class LiveDetectRespVideoresult {
         return this;
     }
 
-    /** 动作列表。
-     * 
-     * @return actions */
+    /**
+     * 动作列表。
+     * @return actions
+     */
     public List<ActionsList> getActions() {
         return actions;
     }
@@ -80,9 +83,10 @@ public class LiveDetectRespVideoresult {
         return this;
     }
 
-    /** 检测出最大人脸的图片base64。
-     * 
-     * @return picture */
+    /**
+     * 检测出最大人脸的图片base64。
+     * @return picture
+     */
     public String getPicture() {
         return picture;
     }
@@ -121,7 +125,10 @@ public class LiveDetectRespVideoresult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

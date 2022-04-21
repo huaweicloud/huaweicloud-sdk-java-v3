@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMetricDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowMetricDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
-     * 
-     * @return datapoints */
+    /**
+     * 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+     * @return datapoints
+     */
     public List<Datapoint> getDatapoints() {
         return datapoints;
     }
@@ -59,9 +62,10 @@ public class ShowMetricDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 指标名称，例如弹性云服务器监控指标中的cpu_util。
-     * 
-     * @return metricName */
+    /**
+     * 指标名称，例如弹性云服务器监控指标中的cpu_util。
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -98,7 +102,10 @@ public class ShowMetricDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

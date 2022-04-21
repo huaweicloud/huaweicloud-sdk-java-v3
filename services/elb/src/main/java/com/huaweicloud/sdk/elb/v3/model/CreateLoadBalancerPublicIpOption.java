@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建ELB时，新建公网IP请求参数 */
+/**
+ * 创建ELB时，新建公网IP请求参数
+ */
 public class CreateLoadBalancerPublicIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** IP版本。取值：4表示IPv4，6表示IPv6。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
-     * 
-     * @return ipVersion */
+    /**
+     * IP版本。取值：4表示IPv4，6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -55,10 +58,10 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。 [> 德国Region只支持5_gray.](tag:dt,dt_test) [> hcso_dt
-     * Cloud只支持5_gray.](tag:hcso_dt)
-     * 
-     * @return networkType */
+    /**
+     * 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。  [> 德国Region只支持5_gray.](tag:dt,dt_test) [> hcso_dt Cloud只支持5_gray.](tag:hcso_dt)
+     * @return networkType
+     */
     public String getNetworkType() {
         return networkType;
     }
@@ -72,9 +75,10 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。 [不支持该字段，请勿使用](tag:dt,dt_test)
-     * 
-     * @return billingInfo */
+    /**
+     * 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。  [不支持该字段，请勿使用](tag:dt,dt_test)
+     * @return billingInfo
+     */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -88,9 +92,10 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** 弹性公网IP的描述信息，不支持特殊字符
-     * 
-     * @return description */
+    /**
+     * 弹性公网IP的描述信息，不支持特殊字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -113,9 +118,10 @@ public class CreateLoadBalancerPublicIpOption {
         return this;
     }
 
-    /** Get bandwidth
-     * 
-     * @return bandwidth */
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
     public CreateLoadBalancerBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -158,7 +164,10 @@ public class CreateLoadBalancerPublicIpOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

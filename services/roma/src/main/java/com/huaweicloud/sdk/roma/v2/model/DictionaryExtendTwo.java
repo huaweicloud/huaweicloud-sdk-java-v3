@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Objects;
 
-/** 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格 */
+/**
+ * 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
+ */
 public class DictionaryExtendTwo {
 
     @Override

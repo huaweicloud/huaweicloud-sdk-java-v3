@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** UpdateTaskRequestBody */
+/**
+ * UpdateTaskRequestBody
+ */
 public class UpdateTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** 作业的名称，必填。仅能包含汉字、字母、数字、中划线和下划线，长度介于1~100之间。
-     * 
-     * @return name */
+    /**
+     * 作业的名称，必填。仅能包含汉字、字母、数字、中划线和下划线，长度介于1~100之间。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -60,9 +63,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** 作业的描述，选填。长度不超过500。
-     * 
-     * @return description */
+    /**
+     * 作业的描述，选填。长度不超过500。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -85,9 +89,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** Get timing
-     * 
-     * @return timing */
+    /**
+     * Get timing
+     * @return timing
+     */
     public TaskTiming getTiming() {
         return timing;
     }
@@ -110,9 +115,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public TaskInput getInput() {
         return input;
     }
@@ -135,9 +141,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public TaskOutput getOutput() {
         return output;
     }
@@ -160,9 +167,10 @@ public class UpdateTaskRequestBody {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public TaskServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -207,7 +215,10 @@ public class UpdateTaskRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

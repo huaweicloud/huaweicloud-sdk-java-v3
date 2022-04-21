@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AudioInfo */
+/**
+ * AudioInfo
+ */
 public class AudioInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class AudioInfo {
         return this;
     }
 
-    /** 音频编码格式
-     * 
-     * @return codec */
+    /**
+     * 音频编码格式
+     * @return codec
+     */
     public String getCodec() {
         return codec;
     }
@@ -54,9 +57,12 @@ public class AudioInfo {
         return this;
     }
 
-    /** 音频采样率 minimum: 0 maximum: 2147483647
-     * 
-     * @return sample */
+    /**
+     * 音频采样率
+     * minimum: 0
+     * maximum: 2147483647
+     * @return sample
+     */
     public Integer getSample() {
         return sample;
     }
@@ -70,9 +76,12 @@ public class AudioInfo {
         return this;
     }
 
-    /** 音频信道 minimum: 0 maximum: 2147483647
-     * 
-     * @return channels */
+    /**
+     * 音频信道
+     * minimum: 0
+     * maximum: 2147483647
+     * @return channels
+     */
     public Integer getChannels() {
         return channels;
     }
@@ -86,9 +95,12 @@ public class AudioInfo {
         return this;
     }
 
-    /** 音频码率，单位: kbit/s minimum: 0 maximum: 2147483647
-     * 
-     * @return bitrate */
+    /**
+     * 音频码率，单位: kbit/s 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return bitrate
+     */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -102,9 +114,12 @@ public class AudioInfo {
         return this;
     }
 
-    /** 音频码率，单位: bit/s minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return bitrateBps */
+    /**
+     * 音频码率，单位: bit/s 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return bitrateBps
+     */
     public Long getBitrateBps() {
         return bitrateBps;
     }
@@ -145,7 +160,10 @@ public class AudioInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

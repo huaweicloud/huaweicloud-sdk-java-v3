@@ -15,13 +15,19 @@ import java.util.Objects;
  */
 public class NeutronUpdateFirewallRuleOption {
 
-    /** 对通过网络ACL防火墙的流量执行的操作。 */
+    /**
+     * 对通过网络ACL防火墙的流量执行的操作。
+     */
     public static final class ActionEnum {
 
-        /** Enum DENY for value: "DENY" */
+        /**
+         * Enum DENY for value: "DENY"
+         */
         public static final ActionEnum DENY = new ActionEnum("DENY");
 
-        /** Enum ALLOW for value: "ALLOW" */
+        /**
+         * Enum ALLOW for value: "ALLOW"
+         */
         public static final ActionEnum ALLOW = new ActionEnum("ALLOW");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +147,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 对通过网络ACL防火墙的流量执行的操作。
-     * 
-     * @return action */
+    /**
+     * 对通过网络ACL防火墙的流量执行的操作。
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -157,9 +164,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 网络ACL防火墙规则描述。
-     * 
-     * @return description */
+    /**
+     * 网络ACL防火墙规则描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -173,9 +181,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 目的地址或者CIDR。
-     * 
-     * @return destinationIpAddress */
+    /**
+     * 目的地址或者CIDR。
+     * @return destinationIpAddress
+     */
     public String getDestinationIpAddress() {
         return destinationIpAddress;
     }
@@ -189,9 +198,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 目的端口号或者一段端口范围。
-     * 
-     * @return destinationPort */
+    /**
+     * 目的端口号或者一段端口范围。
+     * @return destinationPort
+     */
     public String getDestinationPort() {
         return destinationPort;
     }
@@ -205,9 +215,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 是否使能网络ACL防火墙规则。
-     * 
-     * @return enabled */
+    /**
+     * 是否使能网络ACL防火墙规则。
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -221,9 +232,12 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** IP协议版本。 minimum: 4 maximum: 6
-     * 
-     * @return ipVersion */
+    /**
+     * IP协议版本。
+     * minimum: 4
+     * maximum: 6
+     * @return ipVersion
+     */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -237,9 +251,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 网络ACL防火墙规则名称。
-     * 
-     * @return name */
+    /**
+     * 网络ACL防火墙规则名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -253,9 +268,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** IP协议，支持TCP,UDP,ICMP, ICMPV6或者IP协议号（0-255）
-     * 
-     * @return protocol */
+    /**
+     * IP协议，支持TCP,UDP,ICMP, ICMPV6或者IP协议号（0-255）
+     * @return protocol
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -269,9 +285,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 源地址或者CIDR。
-     * 
-     * @return sourceIpAddress */
+    /**
+     * 源地址或者CIDR。
+     * @return sourceIpAddress
+     */
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
@@ -285,9 +302,10 @@ public class NeutronUpdateFirewallRuleOption {
         return this;
     }
 
-    /** 源端口号或者一段端口范围。
-     * 
-     * @return sourcePort */
+    /**
+     * 源端口号或者一段端口范围。
+     * @return sourcePort
+     */
     public String getSourcePort() {
         return sourcePort;
     }
@@ -349,7 +367,10 @@ public class NeutronUpdateFirewallRuleOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

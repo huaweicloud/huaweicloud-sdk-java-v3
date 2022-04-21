@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新弹性公网IP的请求体 */
+/**
+ * 更新弹性公网IP的请求体
+ */
 public class UpdatePublicipsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class UpdatePublicipsRequestBody {
         return this;
     }
 
-    /** Get publicip
-     * 
-     * @return publicip */
+    /**
+     * Get publicip
+     * @return publicip
+     */
     public UpdatePublicipOption getPublicip() {
         return publicip;
     }
@@ -65,7 +68,10 @@ public class UpdatePublicipsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

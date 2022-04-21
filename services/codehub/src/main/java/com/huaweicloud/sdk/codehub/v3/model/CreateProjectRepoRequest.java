@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateProjectRepoRequest */
+/**
+ * CreateProjectRepoRequest
+ */
 public class CreateProjectRepoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** 是否导入项目成员，取值范围：0->不导入项目成员，1->导入项目成员
-     * 
-     * @return importMembers */
+    /**
+     * 是否导入项目成员，取值范围：0->不导入项目成员，1->导入项目成员
+     * @return importMembers
+     */
     public Integer getImportMembers() {
         return importMembers;
     }
@@ -60,9 +63,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** 项目名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
-     * 
-     * @return projectName */
+    /**
+     * 项目名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
+     * @return projectName
+     */
     public String getProjectName() {
         return projectName;
     }
@@ -76,9 +80,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** 仓库名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
-     * 
-     * @return repoName */
+    /**
+     * 仓库名称，取值范围：可以输入英文大小写字母、数字、连字符、下划线，且必须以字母开头
+     * @return repoName
+     */
     public String getRepoName() {
         return repoName;
     }
@@ -92,9 +97,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** 项目类型，normal|scrum
-     * 
-     * @return type */
+    /**
+     * 项目类型，normal|scrum
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -108,9 +114,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** 是否是公仓
-     * 
-     * @return visibilityLevel */
+    /**
+     * 是否是公仓
+     * @return visibilityLevel
+     */
     public Integer getVisibilityLevel() {
         return visibilityLevel;
     }
@@ -133,9 +140,10 @@ public class CreateProjectRepoRequest {
         return this;
     }
 
-    /** Get externalProjectInfo
-     * 
-     * @return externalProjectInfo */
+    /**
+     * Get externalProjectInfo
+     * @return externalProjectInfo
+     */
     public ExternalKeyMessage getExternalProjectInfo() {
         return externalProjectInfo;
     }
@@ -180,7 +188,10 @@ public class CreateProjectRepoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

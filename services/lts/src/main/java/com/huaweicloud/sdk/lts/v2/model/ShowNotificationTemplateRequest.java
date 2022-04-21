@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowNotificationTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowNotificationTemplateRequest {
         return this;
     }
 
-    /** 账号id，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * 
-     * @return domainId */
+    /**
+     * 账号id，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -39,9 +42,10 @@ public class ShowNotificationTemplateRequest {
         return this;
     }
 
-    /** template_name
-     * 
-     * @return templateName */
+    /**
+     * template_name
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -78,7 +82,10 @@ public class ShowNotificationTemplateRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

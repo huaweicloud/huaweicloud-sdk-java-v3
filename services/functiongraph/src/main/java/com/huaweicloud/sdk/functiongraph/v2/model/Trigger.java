@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 触发器结构体 */
+/**
+ * 触发器结构体
+ */
 public class Trigger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class Trigger {
 
     private String triggerName;
 
-    /** 触发器类型 */
+    /**
+     * 触发器类型
+     */
     public static final class TriggerTypeEnum {
 
-        /** Enum FLOWTIMER for value: "FLOWTIMER" */
+        /**
+         * Enum FLOWTIMER for value: "FLOWTIMER"
+         */
         public static final TriggerTypeEnum FLOWTIMER = new TriggerTypeEnum("FLOWTIMER");
 
-        /** Enum OBS for value: "OBS" */
+        /**
+         * Enum OBS for value: "OBS"
+         */
         public static final TriggerTypeEnum OBS = new TriggerTypeEnum("OBS");
 
         private static final Map<String, TriggerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发器名称
-     * 
-     * @return triggerName */
+    /**
+     * 触发器名称
+     * @return triggerName
+     */
     public String getTriggerName() {
         return triggerName;
     }
@@ -126,9 +135,10 @@ public class Trigger {
         return this;
     }
 
-    /** 触发器类型
-     * 
-     * @return triggerType */
+    /**
+     * 触发器类型
+     * @return triggerType
+     */
     public TriggerTypeEnum getTriggerType() {
         return triggerType;
     }
@@ -142,9 +152,10 @@ public class Trigger {
         return this;
     }
 
-    /** 是否启用
-     * 
-     * @return enabled */
+    /**
+     * 是否启用
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -167,9 +178,10 @@ public class Trigger {
         return this;
     }
 
-    /** Get triggerConfig
-     * 
-     * @return triggerConfig */
+    /**
+     * Get triggerConfig
+     * @return triggerConfig
+     */
     public OBSTriggerConfig getTriggerConfig() {
         return triggerConfig;
     }
@@ -209,7 +221,10 @@ public class Trigger {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 邀请会场请求消息体。 */
+/**
+ * 邀请会场请求消息体。
+ */
 public class RestInviteReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class RestInviteReqBody {
         return this;
     }
 
-    /** 邀请的与会者列表。
-     * 
-     * @return attendees */
+    /**
+     * 邀请的与会者列表。
+     * @return attendees
+     */
     public List<Attendee> getAttendees() {
         return attendees;
     }
@@ -74,7 +77,10 @@ public class RestInviteReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,24 +10,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 扩展属性，指定弹性云服务器存储设备的v2接口。是存储资源的新版本接口，指定卷场景不能批创弹性云服务器。 裸金属服务器场景不支持。 */
+/**
+ *  扩展属性，指定弹性云服务器存储设备的v2接口。是存储资源的新版本接口，指定卷场景不能批创弹性云服务器。  裸金属服务器场景不支持。
+ */
 public class NovaServerBlockDeviceMapping {
 
-    /** 卷设备的源头类型，当前只支持volume、image、snapshot、blank类型。
-     * 当使用卷创建云服务器时，source_type设置为volume；当使用镜像创建云服务器时，source_type设置为image；当使用快照创建云服务器时，source_type设置为snapshot；当创建空数据卷时，source_type设置为blank。
-     * - 说明： - - 当卷设备的源头类型为snapshot时，且boot_index为0，则该快照对应的云硬盘必须为系统盘。 */
+    /**
+     * 卷设备的源头类型，当前只支持volume、image、snapshot、blank类型。  当使用卷创建云服务器时，source_type设置为volume；当使用镜像创建云服务器时，source_type设置为image；当使用快照创建云服务器时，source_type设置为snapshot；当创建空数据卷时，source_type设置为blank。  - 说明： -  - 当卷设备的源头类型为snapshot时，且boot_index为0，则该快照对应的云硬盘必须为系统盘。
+     */
     public static final class SourceTypeEnum {
 
-        /** Enum BLANK for value: "blank" */
+        /**
+         * Enum BLANK for value: "blank"
+         */
         public static final SourceTypeEnum BLANK = new SourceTypeEnum("blank");
 
-        /** Enum SNAPSHOT for value: "snapshot" */
+        /**
+         * Enum SNAPSHOT for value: "snapshot"
+         */
         public static final SourceTypeEnum SNAPSHOT = new SourceTypeEnum("snapshot");
 
-        /** Enum VOLUME for value: "volume" */
+        /**
+         * Enum VOLUME for value: "volume"
+         */
         public static final SourceTypeEnum VOLUME = new SourceTypeEnum("volume");
 
-        /** Enum IMAGE for value: "image" */
+        /**
+         * Enum IMAGE for value: "image"
+         */
         public static final SourceTypeEnum IMAGE = new SourceTypeEnum("image");
 
         private static final Map<String, SourceTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,10 +109,14 @@ public class NovaServerBlockDeviceMapping {
 
     private SourceTypeEnum sourceType;
 
-    /** 卷设备的目标类型，当前仅支持volume类型。 - volume：卷。 - local：本地文件，当前不支持该类型。 */
+    /**
+     * 卷设备的目标类型，当前仅支持volume类型。  - volume：卷。 - local：本地文件，当前不支持该类型。
+     */
     public static final class DestinationTypeEnum {
 
-        /** Enum VOLUME for value: "volume" */
+        /**
+         * Enum VOLUME for value: "volume"
+         */
         public static final DestinationTypeEnum VOLUME = new DestinationTypeEnum("volume");
 
         private static final Map<String, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -211,11 +225,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 卷设备的源头类型，当前只支持volume、image、snapshot、blank类型。
-     * 当使用卷创建云服务器时，source_type设置为volume；当使用镜像创建云服务器时，source_type设置为image；当使用快照创建云服务器时，source_type设置为snapshot；当创建空数据卷时，source_type设置为blank。
-     * - 说明： - - 当卷设备的源头类型为snapshot时，且boot_index为0，则该快照对应的云硬盘必须为系统盘。
-     * 
-     * @return sourceType */
+    /**
+     * 卷设备的源头类型，当前只支持volume、image、snapshot、blank类型。  当使用卷创建云服务器时，source_type设置为volume；当使用镜像创建云服务器时，source_type设置为image；当使用快照创建云服务器时，source_type设置为snapshot；当创建空数据卷时，source_type设置为blank。  - 说明： -  - 当卷设备的源头类型为snapshot时，且boot_index为0，则该快照对应的云硬盘必须为系统盘。
+     * @return sourceType
+     */
     public SourceTypeEnum getSourceType() {
         return sourceType;
     }
@@ -229,9 +242,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 卷设备的目标类型，当前仅支持volume类型。 - volume：卷。 - local：本地文件，当前不支持该类型。
-     * 
-     * @return destinationType */
+    /**
+     * 卷设备的目标类型，当前仅支持volume类型。  - volume：卷。 - local：本地文件，当前不支持该类型。
+     * @return destinationType
+     */
     public DestinationTypeEnum getDestinationType() {
         return destinationType;
     }
@@ -245,9 +259,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** local文件系统格式，例如：swap, ext4。 当前不支持该功能。
-     * 
-     * @return guestFormat */
+    /**
+     * local文件系统格式，例如：swap, ext4。  当前不支持该功能。
+     * @return guestFormat
+     */
     public String getGuestFormat() {
         return guestFormat;
     }
@@ -261,9 +276,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 卷设备名称。 > 说明： > > 该字段已经废弃。 > > 用户指定的device_name不会生效，系统会默认生成一个device_name。
-     * 
-     * @return deviceName */
+    /**
+     * 卷设备名称。  > 说明： >  > 该字段已经废弃。 >  > 用户指定的device_name不会生效，系统会默认生成一个device_name。
+     * @return deviceName
+     */
     public String getDeviceName() {
         return deviceName;
     }
@@ -277,9 +293,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 删除弹性云服务器时，是否删除卷，默认值false。 true：删除弹性云服务器时，删除卷 false：删除弹性云服务器时，不删除卷
-     * 
-     * @return deleteOnTermination */
+    /**
+     * 删除弹性云服务器时，是否删除卷，默认值false。  true：删除弹性云服务器时，删除卷  false：删除弹性云服务器时，不删除卷
+     * @return deleteOnTermination
+     */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -293,9 +310,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 启动标识，“0”代表启动盘，“-1“代表非启动盘。 > 说明： > > 当卷设备的源头类型全为volume时，boot_index的值有一个为0。
-     * 
-     * @return bootIndex */
+    /**
+     * 启动标识，“0”代表启动盘，“-1“代表非启动盘。  > 说明： >  > 当卷设备的源头类型全为volume时，boot_index的值有一个为0。
+     * @return bootIndex
+     */
     public String getBootIndex() {
         return bootIndex;
     }
@@ -309,9 +327,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 当source_type值是volume时，uuid为卷的uuid； 当source_type值是snapshot时，uuid为快照的uuid； 当source_type值是image时，uuid为镜像的uuid；
-     * 
-     * @return uuid */
+    /**
+     * 当source_type值是volume时，uuid为卷的uuid；  当source_type值是snapshot时，uuid为快照的uuid；  当source_type值是image时，uuid为镜像的uuid；
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -325,9 +344,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 卷大小，整数，在source_type是image或blank，destination_type是volume的时候必选。 单位为GB。
-     * 
-     * @return volumeSize */
+    /**
+     * 卷大小，整数，在source_type是image或blank，destination_type是volume的时候必选。  单位为GB。
+     * @return volumeSize
+     */
     public Integer getVolumeSize() {
         return volumeSize;
     }
@@ -341,10 +361,10 @@ public class NovaServerBlockDeviceMapping {
         return this;
     }
 
-    /** 卷类型，在source_type是image，destination_type是volume时建议填写。 卷类型取值范围请参考 EVS 服务
-     * [磁盘类型介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
-     * 
-     * @return volumeType */
+    /**
+     * 卷类型，在source_type是image，destination_type是volume时建议填写。  卷类型取值范围请参考 EVS 服务 [磁盘类型介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * @return volumeType
+     */
     public String getVolumeType() {
         return volumeType;
     }
@@ -403,7 +423,10 @@ public class NovaServerBlockDeviceMapping {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

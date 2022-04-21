@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MpeMetaData */
+/**
+ * MpeMetaData
+ */
 public class MpeMetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 封装类型。
-     * 
-     * @return packType */
+    /**
+     * 封装类型。
+     * @return packType
+     */
     public String getPackType() {
         return packType;
     }
@@ -94,9 +97,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 视频时长。 minimum: 0 maximum: 2147483647
-     * 
-     * @return duration */
+    /**
+     * 视频时长。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
     public Double getDuration() {
         return duration;
     }
@@ -110,9 +116,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 视频大小。 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return videoSize */
+    /**
+     * 视频大小。
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return videoSize
+     */
     public Long getVideoSize() {
         return videoSize;
     }
@@ -126,9 +135,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 视频宽度。 minimum: 0 maximum: 2147483647
-     * 
-     * @return width */
+    /**
+     * 视频宽度。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return width
+     */
     public Integer getWidth() {
         return width;
     }
@@ -142,9 +154,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 视频高度。 minimum: 0 maximum: 2147483647
-     * 
-     * @return height */
+    /**
+     * 视频高度。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return height
+     */
     public Integer getHeight() {
         return height;
     }
@@ -158,9 +173,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 码率。 minimum: 0 maximum: 2147483647
-     * 
-     * @return bitRate */
+    /**
+     * 码率。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return bitRate
+     */
     public Integer getBitRate() {
         return bitRate;
     }
@@ -174,9 +192,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 音频码率。 minimum: 0 maximum: 2147483647
-     * 
-     * @return audioBitRate */
+    /**
+     * 音频码率。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return audioBitRate
+     */
     public Integer getAudioBitRate() {
         return audioBitRate;
     }
@@ -190,10 +211,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 帧率。 取值范围：0或[5,60]，0表示自适应。 单位：帧每秒。 > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 minimum: 0 maximum:
-     * 2147483647
-     * 
-     * @return frameRate */
+    /**
+     * 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return frameRate
+     */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -207,9 +230,10 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 编码类型名称。
-     * 
-     * @return codecName */
+    /**
+     * 编码类型名称。
+     * @return codecName
+     */
     public String getCodecName() {
         return codecName;
     }
@@ -223,9 +247,10 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 音频编码类型。
-     * 
-     * @return audioCodecName */
+    /**
+     * 音频编码类型。
+     * @return audioCodecName
+     */
     public String getAudioCodecName() {
         return audioCodecName;
     }
@@ -239,9 +264,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 声道数。 minimum: 0 maximum: 2147483647
-     * 
-     * @return channels */
+    /**
+     * 声道数。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return channels
+     */
     public Integer getChannels() {
         return channels;
     }
@@ -255,9 +283,12 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 采样率。 minimum: 0 maximum: 2147483647
-     * 
-     * @return sample */
+    /**
+     * 采样率。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return sample
+     */
     public Integer getSample() {
         return sample;
     }
@@ -271,9 +302,10 @@ public class MpeMetaData {
         return this;
     }
 
-    /** 是否音频。
-     * 
-     * @return isAudio */
+    /**
+     * 是否音频。
+     * @return isAudio
+     */
     public Boolean getIsAudio() {
         return isAudio;
     }
@@ -341,7 +373,10 @@ public class MpeMetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

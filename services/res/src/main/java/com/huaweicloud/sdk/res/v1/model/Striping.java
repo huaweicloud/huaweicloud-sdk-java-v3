@@ -30,9 +30,10 @@ public class Striping {
         return this;
     }
 
-    /** 最近领域个数。
-     * 
-     * @return nearestNeighborhood */
+    /**
+     * 最近领域个数。
+     * @return nearestNeighborhood
+     */
     public Integer getNearestNeighborhood() {
         return nearestNeighborhood;
     }
@@ -46,9 +47,12 @@ public class Striping {
         return this;
     }
 
-    /** 相似程度。 minimum: 1 maximum: 20
-     * 
-     * @return band */
+    /**
+     * 相似程度。
+     * minimum: 1
+     * maximum: 20
+     * @return band
+     */
     public Integer getBand() {
         return band;
     }
@@ -62,9 +66,12 @@ public class Striping {
         return this;
     }
 
-    /** 相似距离。 minimum: 1 maximum: 10
-     * 
-     * @return row */
+    /**
+     * 相似距离。
+     * minimum: 1
+     * maximum: 10
+     * @return row
+     */
     public Integer getRow() {
         return row;
     }
@@ -102,7 +109,10 @@ public class Striping {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

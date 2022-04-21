@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import java.util.Objects;
 
-/** 版本 */
+/**
+ * 版本
+ */
 public class ImageTag {
 
     @Override

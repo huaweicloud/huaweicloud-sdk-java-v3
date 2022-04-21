@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTenantMetricRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ShowTenantMetricRequest {
         return this;
     }
 
-    /** 时间段，单位为分钟
-     * 
-     * @return period */
+    /**
+     * 时间段，单位为分钟
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -55,7 +58,10 @@ public class ShowTenantMetricRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

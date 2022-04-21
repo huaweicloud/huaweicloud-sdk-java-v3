@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ES扫描结果信息 */
+/**
+ * ES扫描结果信息
+ */
 public class EsScanResultInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -67,9 +70,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 索引名
-     * 
-     * @return indexName */
+    /**
+     * 索引名
+     * @return indexName
+     */
     public String getIndexName() {
         return indexName;
     }
@@ -83,9 +87,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 类型ID
-     * 
-     * @return typeId */
+    /**
+     * 类型ID
+     * @return typeId
+     */
     public String getTypeId() {
         return typeId;
     }
@@ -99,9 +104,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 类型名
-     * 
-     * @return typeName */
+    /**
+     * 类型名
+     * @return typeName
+     */
     public String getTypeName() {
         return typeName;
     }
@@ -115,9 +121,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 风险等级
-     * 
-     * @return riskLevel */
+    /**
+     * 风险等级
+     * @return riskLevel
+     */
     public Integer getRiskLevel() {
         return riskLevel;
     }
@@ -147,9 +154,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 敏感数据类型
-     * 
-     * @return sensitiveDataType */
+    /**
+     * 敏感数据类型
+     * @return sensitiveDataType
+     */
     public List<String> getSensitiveDataType() {
         return sensitiveDataType;
     }
@@ -179,9 +187,10 @@ public class EsScanResultInfo {
         return this;
     }
 
-    /** 规则匹配具体信息
-     * 
-     * @return matchInfo */
+    /**
+     * 规则匹配具体信息
+     * @return matchInfo
+     */
     public List<EsMatchInfo> getMatchInfo() {
         return matchInfo;
     }
@@ -228,7 +237,10 @@ public class EsScanResultInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

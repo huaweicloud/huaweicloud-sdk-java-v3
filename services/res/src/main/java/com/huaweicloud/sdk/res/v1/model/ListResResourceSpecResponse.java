@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListResResourceSpecResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 离线计算规格。
-     * 
-     * @return offlineSpec */
+    /**
+     * 离线计算规格。
+     * @return offlineSpec
+     */
     public List<String> getOfflineSpec() {
         return offlineSpec;
     }
@@ -95,9 +98,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 实时计算规格。
-     * 
-     * @return nearlineSpec */
+    /**
+     * 实时计算规格。
+     * @return nearlineSpec
+     */
     public List<String> getNearlineSpec() {
         return nearlineSpec;
     }
@@ -127,9 +131,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 排序模型计算规格。
-     * 
-     * @return deepLearningSpec */
+    /**
+     * 排序模型计算规格。
+     * @return deepLearningSpec
+     */
     public List<String> getDeepLearningSpec() {
         return deepLearningSpec;
     }
@@ -143,9 +148,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求是否成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 请求是否成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -159,9 +165,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回消息（请求成功时，不返回此字段）。
-     * 
-     * @return message */
+    /**
+     * 返回消息（请求成功时，不返回此字段）。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -175,9 +182,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误码（请求成功时，不返回此字段）。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码（请求成功时，不返回此字段）。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -222,7 +230,10 @@ public class ListResResourceSpecResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

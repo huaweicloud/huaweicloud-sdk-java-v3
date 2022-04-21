@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建保护实例请求体 */
+/**
+ * 创建保护实例请求体
+ */
 public class CreateProtectedInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,9 +32,10 @@ public class CreateProtectedInstanceRequestBody {
         return this;
     }
 
-    /** Get protectedInstance
-     * 
-     * @return protectedInstance */
+    /**
+     * Get protectedInstance
+     * @return protectedInstance
+     */
     public CreateProtectedInstanceRequestParams getProtectedInstance() {
         return protectedInstance;
     }
@@ -67,7 +70,10 @@ public class CreateProtectedInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

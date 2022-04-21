@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListMonitoredObjectsOfInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ListMonitoredObjectsOfInstanceRequest {
         return this;
     }
 
-    /** 主维度对象ID，与DCS实例列表中实例ID相同。
-     * 
-     * @return instanceId */
+    /**
+     * 主维度对象ID，与DCS实例列表中实例ID相同。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -39,9 +42,10 @@ public class ListMonitoredObjectsOfInstanceRequest {
         return this;
     }
 
-    /** 主维度ID，当前支持子维度的主维度ID的有dcs_instance_id。
-     * 
-     * @return dimName */
+    /**
+     * 主维度ID，当前支持子维度的主维度ID的有dcs_instance_id。
+     * @return dimName
+     */
     public String getDimName() {
         return dimName;
     }
@@ -79,7 +83,10 @@ public class ListMonitoredObjectsOfInstanceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

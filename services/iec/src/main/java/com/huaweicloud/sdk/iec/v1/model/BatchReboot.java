@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量重启边缘实例对象 */
+/**
+ * 批量重启边缘实例对象
+ */
 public class BatchReboot {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class BatchReboot {
 
     private List<BaseId> servers = null;
 
-    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。 > 重启必须指定重启类型。 */
+    /**
+    * 重启类型：   - SOFT：普通重启。  - HARD：强制重启。  > 重启必须指定重启类型。
+    */
     public static final class TypeEnum {
 
-        /** Enum SOFT for value: "SOFT" */
+        /**
+         * Enum SOFT for value: "SOFT"
+         */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
 
-        /** Enum HARD for value: "HARD" */
+        /**
+         * Enum HARD for value: "HARD"
+         */
         public static final TypeEnum HARD = new TypeEnum("HARD");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +126,10 @@ public class BatchReboot {
         return this;
     }
 
-    /** 待重启的边缘实例列表。
-     * 
-     * @return servers */
+    /**
+     * 待重启的边缘实例列表。
+     * @return servers
+     */
     public List<BaseId> getServers() {
         return servers;
     }
@@ -134,9 +143,10 @@ public class BatchReboot {
         return this;
     }
 
-    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。 > 重启必须指定重启类型。
-     * 
-     * @return type */
+    /**
+     * 重启类型：   - SOFT：普通重启。  - HARD：强制重启。  > 重启必须指定重启类型。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -172,7 +182,10 @@ public class BatchReboot {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

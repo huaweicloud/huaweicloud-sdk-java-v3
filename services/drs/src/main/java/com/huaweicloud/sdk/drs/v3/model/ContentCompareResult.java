@@ -53,9 +53,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 内容对比的任务id。
-     * 
-     * @return compareTaskId */
+    /**
+     * 内容对比的任务id。
+     * @return compareTaskId
+     */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -86,9 +87,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 内容对比结果概览。
-     * 
-     * @return contentCompareOverview */
+    /**
+     * 内容对比结果概览。
+     * @return contentCompareOverview
+     */
     public List<ContentCompareResultOverview> getContentCompareOverview() {
         return contentCompareOverview;
     }
@@ -102,9 +104,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 内容对比结果概览总数。
-     * 
-     * @return contentCompareOverviewCount */
+    /**
+     * 内容对比结果概览总数。
+     * @return contentCompareOverviewCount
+     */
     public Integer getContentCompareOverviewCount() {
         return contentCompareOverviewCount;
     }
@@ -135,9 +138,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 内容对比结果详情。
-     * 
-     * @return contentCompareDetails */
+    /**
+     * 内容对比结果详情。
+     * @return contentCompareDetails
+     */
     public List<ContentCompareResultDetails> getContentCompareDetails() {
         return contentCompareDetails;
     }
@@ -168,9 +172,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 内容对比结果差异。
-     * 
-     * @return contentCompareDiffs */
+    /**
+     * 内容对比结果差异。
+     * @return contentCompareDiffs
+     */
     public List<ContentCompareResultDiffs> getContentCompareDiffs() {
         return contentCompareDiffs;
     }
@@ -184,9 +189,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -200,9 +206,10 @@ public class ContentCompareResult {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -257,7 +264,10 @@ public class ContentCompareResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

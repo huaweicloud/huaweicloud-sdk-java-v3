@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowResourceHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class ShowResourceHistoryRequest {
 
     private Long laterTime;
 
-    /** 指定返回数据的时间顺序，默认为倒序 */
+    /**
+     * 指定返回数据的时间顺序，默认为倒序
+     */
     public static final class ChronologicalOrderEnum {
 
-        /** Enum FORWARD for value: "Forward" */
+        /**
+         * Enum FORWARD for value: "Forward"
+         */
         public static final ChronologicalOrderEnum FORWARD = new ChronologicalOrderEnum("Forward");
 
-        /** Enum REVERSE for value: "Reverse" */
+        /**
+         * Enum REVERSE for value: "Reverse"
+         */
         public static final ChronologicalOrderEnum REVERSE = new ChronologicalOrderEnum("Reverse");
 
         private static final Map<String, ChronologicalOrderEnum> STATIC_FIELDS = createStaticFields();
@@ -119,9 +127,10 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -135,9 +144,10 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * 
-     * @return marker */
+    /**
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -151,9 +161,12 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 最大的返回数量 minimum: 1 maximum: 200
-     * 
-     * @return limit */
+    /**
+     * 最大的返回数量
+     * minimum: 1
+     * maximum: 200
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -167,9 +180,10 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 指定查询范围的起始时间点，如果不设置此参数，默认为最早的时间
-     * 
-     * @return earlierTime */
+    /**
+     * 指定查询范围的起始时间点，如果不设置此参数，默认为最早的时间
+     * @return earlierTime
+     */
     public Long getEarlierTime() {
         return earlierTime;
     }
@@ -183,9 +197,10 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 指定查询范围的结束时间点，如果不设置此参数，默认为当前时间
-     * 
-     * @return laterTime */
+    /**
+     * 指定查询范围的结束时间点，如果不设置此参数，默认为当前时间
+     * @return laterTime
+     */
     public Long getLaterTime() {
         return laterTime;
     }
@@ -199,9 +214,10 @@ public class ShowResourceHistoryRequest {
         return this;
     }
 
-    /** 指定返回数据的时间顺序，默认为倒序
-     * 
-     * @return chronologicalOrder */
+    /**
+     * 指定返回数据的时间顺序，默认为倒序
+     * @return chronologicalOrder
+     */
     public ChronologicalOrderEnum getChronologicalOrder() {
         return chronologicalOrder;
     }
@@ -246,7 +262,10 @@ public class ShowResourceHistoryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

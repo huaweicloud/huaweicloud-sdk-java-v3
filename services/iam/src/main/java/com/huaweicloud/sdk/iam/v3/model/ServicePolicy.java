@@ -28,10 +28,10 @@ public class ServicePolicy {
         return this;
     }
 
-    /** 权限版本号，创建自定义策略时，该字段值填为“1.1”。 > - 1.0：系统预置的角色。以服务为粒度，提供有限的服务相关角色用于授权。 > -
-     * 1.1：策略。IAM最新提供的一种细粒度授权的能力，可以精确到具体服务的操作、资源以及请求条件等。
-     * 
-     * @return version */
+    /**
+     * 权限版本号，创建自定义策略时，该字段值填为“1.1”。 > - 1.0：系统预置的角色。以服务为粒度，提供有限的服务相关角色用于授权。 > - 1.1：策略。IAM最新提供的一种细粒度授权的能力，可以精确到具体服务的操作、资源以及请求条件等。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -61,9 +61,10 @@ public class ServicePolicy {
         return this;
     }
 
-    /** 授权语句，描述自定义策略的具体内容，不超过8个。
-     * 
-     * @return statement */
+    /**
+     * 授权语句，描述自定义策略的具体内容，不超过8个。
+     * @return statement
+     */
     public List<ServiceStatement> getStatement() {
         return statement;
     }
@@ -100,7 +101,10 @@ public class ServicePolicy {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

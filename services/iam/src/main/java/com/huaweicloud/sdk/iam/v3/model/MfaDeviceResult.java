@@ -25,9 +25,10 @@ public class MfaDeviceResult {
         return this;
     }
 
-    /** 虚拟MFA的设备序列号。
-     * 
-     * @return serialNumber */
+    /**
+     * 虚拟MFA的设备序列号。
+     * @return serialNumber
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -41,9 +42,10 @@ public class MfaDeviceResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -80,7 +82,10 @@ public class MfaDeviceResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

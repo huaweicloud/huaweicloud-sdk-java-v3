@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 发送给SMN消息结构 */
+/**
+ * 发送给SMN消息结构
+ */
 public class ActionSmnForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：SMN服务对应的region区域。
-     * 
-     * @return regionName */
+    /**
+     * **参数说明**：SMN服务对应的region区域。
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -59,9 +62,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：SMN服务对应的projectId信息。
-     * 
-     * @return projectId */
+    /**
+     * **参数说明**：SMN服务对应的projectId信息。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -75,9 +79,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：SMN服务对应的主题名称。
-     * 
-     * @return themeName */
+    /**
+     * **参数说明**：SMN服务对应的主题名称。
+     * @return themeName
+     */
     public String getThemeName() {
         return themeName;
     }
@@ -91,9 +96,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：SMN服务对应的topic的主题URN。
-     * 
-     * @return topicUrn */
+    /**
+     * **参数说明**：SMN服务对应的topic的主题URN。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -107,9 +113,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：短信或邮件的内容。。
-     * 
-     * @return messageContent */
+    /**
+     * **参数说明**：短信或邮件的内容。。
+     * @return messageContent
+     */
     public String getMessageContent() {
         return messageContent;
     }
@@ -123,9 +130,10 @@ public class ActionSmnForwarding {
         return this;
     }
 
-    /** **参数说明**：短信或邮件的主题。。
-     * 
-     * @return messageTitle */
+    /**
+     * **参数说明**：短信或邮件的主题。。
+     * @return messageTitle
+     */
     public String getMessageTitle() {
         return messageTitle;
     }
@@ -170,7 +178,10 @@ public class ActionSmnForwarding {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

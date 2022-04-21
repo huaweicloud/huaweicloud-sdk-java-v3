@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 会议信息 */
+/**
+ * 会议信息
+ */
 public class ConferenceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,16 +203,24 @@ public class ConferenceInfo {
 
     private String vmrID;
 
-    /** 会议角色 */
+    /**
+     * 会议角色
+     */
     public static final class RoleEnum {
 
-        /** Enum CHAIR for value: "chair" */
+        /**
+         * Enum CHAIR for value: "chair"
+         */
         public static final RoleEnum CHAIR = new RoleEnum("chair");
 
-        /** Enum GENERAL for value: "general" */
+        /**
+         * Enum GENERAL for value: "general"
+         */
         public static final RoleEnum GENERAL = new RoleEnum("general");
 
-        /** Enum AUDIENCE for value: "audience" */
+        /**
+         * Enum AUDIENCE for value: "audience"
+         */
         public static final RoleEnum AUDIENCE = new RoleEnum("audience");
 
         private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
@@ -291,13 +301,19 @@ public class ConferenceInfo {
 
     private Integer multiStreamFlag;
 
-    /** 会议类型 */
+    /**
+     * 会议类型
+     */
     public static final class ConfModeEnum {
 
-        /** Enum COMMON for value: "COMMON" */
+        /**
+         * Enum COMMON for value: "COMMON"
+         */
         public static final ConfModeEnum COMMON = new ConfModeEnum("COMMON");
 
-        /** Enum RTC for value: "RTC" */
+        /**
+         * Enum RTC for value: "RTC"
+         */
         public static final ConfModeEnum RTC = new ConfModeEnum("RTC");
 
         private static final Map<String, ConfModeEnum> STATIC_FIELDS = createStaticFields();
@@ -397,9 +413,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议ID。长度限制为32个字符。
-     * 
-     * @return conferenceID */
+    /**
+     * 会议ID。长度限制为32个字符。
+     * @return conferenceID
+     */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -413,9 +430,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议主题。长度限制为128个字符。
-     * 
-     * @return subject */
+    /**
+     * 会议主题。长度限制为128个字符。
+     * @return subject
+     */
     public String getSubject() {
         return subject;
     }
@@ -429,9 +447,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议方数。
-     * 
-     * @return size */
+    /**
+     * 会议方数。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -445,9 +464,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 时区参考。
-     * 
-     * @return timeZoneID */
+    /**
+     * 时区参考。
+     * @return timeZoneID
+     */
     public String getTimeZoneID() {
         return timeZoneID;
     }
@@ -461,9 +481,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议起始时间 (YYYY-MM-DD HH:MM )。
-     * 
-     * @return startTime */
+    /**
+     * 会议起始时间 (YYYY-MM-DD HH:MM )。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -477,9 +498,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议结束时间 (YYYY-MM-DD HH:MM )。
-     * 
-     * @return endTime */
+    /**
+     * 会议结束时间 (YYYY-MM-DD HH:MM )。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -493,11 +515,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔。 - Voice: 语音。 - Video: 标清视频。 - HDVideo:
-     * 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video）。 - Telepresence:
-     * 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体。
-     * 
-     * @return mediaTypes */
+    /**
+     * 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔。 - Voice: 语音。 - Video: 标清视频。 - HDVideo: 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video）。 - Telepresence: 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体。
+     * @return mediaTypes
+     */
     public String getMediaTypes() {
         return mediaTypes;
     }
@@ -511,10 +532,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 目前只会返回Created和Schedule状态， 如果会议已经召开返回Created状态，否则返回Schedule状态。 - Schedule: 预定状态。 - Creating: 正在创建状态。 - Created:
-     * 会议已经被创建，并正在召开。 - Destroyed: 会议已经关闭。
-     * 
-     * @return conferenceState */
+    /**
+     * 目前只会返回Created和Schedule状态， 如果会议已经召开返回Created状态，否则返回Schedule状态。 - Schedule: 预定状态。 - Creating: 正在创建状态。 - Created: 会议已经被创建，并正在召开。 - Destroyed: 会议已经关闭。
+     * @return conferenceState
+     */
     public String getConferenceState() {
         return conferenceState;
     }
@@ -528,9 +549,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议语言。
-     * 
-     * @return language */
+    /**
+     * 会议语言。
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -544,9 +566,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议接入码。
-     * 
-     * @return accessNumber */
+    /**
+     * 会议接入码。
+     * @return accessNumber
+     */
     public String getAccessNumber() {
         return accessNumber;
     }
@@ -576,9 +599,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议密码条目。预订者返回主持人密码和来宾密码。 - 主持人查询时返回主持人密码。 - 来宾查询时返回来宾密码。
-     * 
-     * @return passwordEntry */
+    /**
+     * 会议密码条目。预订者返回主持人密码和来宾密码。 - 主持人查询时返回主持人密码。 - 来宾查询时返回来宾密码。
+     * @return passwordEntry
+     */
     public List<PasswordEntry> getPasswordEntry() {
         return passwordEntry;
     }
@@ -592,9 +616,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议预订者UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 会议预订者UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -608,9 +633,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议预订者帐号名称。长度最大限制为96个字符。
-     * 
-     * @return scheduserName */
+    /**
+     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * @return scheduserName
+     */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -624,9 +650,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** - 0: 普通会议。 - 2: 周期性会议。
-     * 
-     * @return conferenceType */
+    /**
+     * - 0: 普通会议。 - 2: 周期性会议。
+     * @return conferenceType
+     */
     public Integer getConferenceType() {
         return conferenceType;
     }
@@ -640,9 +667,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议类型。 - FUTURE - IMMEDIATELY - CYCLE
-     * 
-     * @return confType */
+    /**
+     * 会议类型。 - FUTURE - IMMEDIATELY - CYCLE
+     * @return confType
+     */
     public String getConfType() {
         return confType;
     }
@@ -665,9 +693,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** Get cycleParams
-     * 
-     * @return cycleParams */
+    /**
+     * Get cycleParams
+     * @return cycleParams
+     */
     public CycleParams getCycleParams() {
         return cycleParams;
     }
@@ -681,9 +710,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 是否入会自动静音。 - 0: 不自动静音 - 1: 自动静音
-     * 
-     * @return isAutoMute */
+    /**
+     * 是否入会自动静音。 - 0: 不自动静音 - 1: 自动静音
+     * @return isAutoMute
+     */
     public Integer getIsAutoMute() {
         return isAutoMute;
     }
@@ -697,9 +727,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 是否自动开启录音。 - 0: 不自动启动。 - 1: 自动启动。
-     * 
-     * @return isAutoRecord */
+    /**
+     * 是否自动开启录音。 - 0: 不自动启动。 - 1: 自动启动。
+     * @return isAutoRecord
+     */
     public Integer getIsAutoRecord() {
         return isAutoRecord;
     }
@@ -713,9 +744,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 主持人会议链接地址。
-     * 
-     * @return chairJoinUri */
+    /**
+     * 主持人会议链接地址。
+     * @return chairJoinUri
+     */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -729,9 +761,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 普通与会者会议链接地址。最大长度1024。
-     * 
-     * @return guestJoinUri */
+    /**
+     * 普通与会者会议链接地址。最大长度1024。
+     * @return guestJoinUri
+     */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -745,9 +778,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 旁听者会议链接地址。最大长度1024。（预留字段）
-     * 
-     * @return audienceJoinUri */
+    /**
+     * 旁听者会议链接地址。最大长度1024。（预留字段）
+     * @return audienceJoinUri
+     */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -761,9 +795,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 录播类型。 - 0: 禁用 。 - 1: 直播 。 - 2: 录播 。 - 3: 直播+录播。
-     * 
-     * @return recordType */
+    /**
+     * 录播类型。 - 0: 禁用 。 - 1: 直播 。 - 2: 录播 。 - 3: 直播+录播。
+     * @return recordType
+     */
     public Integer getRecordType() {
         return recordType;
     }
@@ -777,9 +812,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 辅流直播地址。
-     * 
-     * @return auxAddress */
+    /**
+     * 辅流直播地址。
+     * @return auxAddress
+     */
     public String getAuxAddress() {
         return auxAddress;
     }
@@ -793,9 +829,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 主流直播地址。
-     * 
-     * @return liveAddress */
+    /**
+     * 主流直播地址。
+     * @return liveAddress
+     */
     public String getLiveAddress() {
         return liveAddress;
     }
@@ -809,9 +846,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 是否录制辅流。 - 0: 否。 - 1: 是。
-     * 
-     * @return recordAuxStream */
+    /**
+     * 是否录制辅流。  - 0: 否。  - 1: 是。
+     * @return recordAuxStream
+     */
     public Integer getRecordAuxStream() {
         return recordAuxStream;
     }
@@ -825,9 +863,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 录播鉴权方式。录播类型为:录播、直播+录播时有效。 - 0: 老的鉴权方式，url中携带token鉴权。 - 1: 企业内会议用户鉴权。 - 2: 会议内会议用户鉴权。
-     * 
-     * @return recordAuthType */
+    /**
+     * 录播鉴权方式。录播类型为:录播、直播+录播时有效。  - 0: 老的鉴权方式，url中携带token鉴权。  - 1: 企业内会议用户鉴权。  - 2: 会议内会议用户鉴权。
+     * @return recordAuthType
+     */
     public Integer getRecordAuthType() {
         return recordAuthType;
     }
@@ -841,9 +880,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 直播地址。（配置直播房间时会返回）
-     * 
-     * @return liveUrl */
+    /**
+     * 直播地址。（配置直播房间时会返回）
+     * @return liveUrl
+     */
     public String getLiveUrl() {
         return liveUrl;
     }
@@ -866,9 +906,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** Get confConfigInfo
-     * 
-     * @return confConfigInfo */
+    /**
+     * Get confConfigInfo
+     * @return confConfigInfo
+     */
     public RestConfConfigDTO getConfConfigInfo() {
         return confConfigInfo;
     }
@@ -882,10 +923,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 是否使用云会议室召开预约会议。 - 0: 不使用云会议室; - 1: 使用云会议室。
-     * 界面显示会议ID需要使用vmrConferenceID作为会议ID；查询会议详情、登录会控、一键入会等会议业务操作依然使用conferenceID字段。
-     * 
-     * @return vmrFlag */
+    /**
+     * 是否使用云会议室召开预约会议。 - 0: 不使用云会议室; - 1: 使用云会议室。 界面显示会议ID需要使用vmrConferenceID作为会议ID；查询会议详情、登录会控、一键入会等会议业务操作依然使用conferenceID字段。
+     * @return vmrFlag
+     */
     public Integer getVmrFlag() {
         return vmrFlag;
     }
@@ -899,9 +940,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 仅历史会议返回值有效。默认没有录制文件。 - True: 有录制文件。 - False: 没有录制文件。
-     * 
-     * @return isHasRecordFile */
+    /**
+     * 仅历史会议返回值有效。默认没有录制文件。 - True: 有录制文件。 - False: 没有录制文件。
+     * @return isHasRecordFile
+     */
     public Boolean getIsHasRecordFile() {
         return isHasRecordFile;
     }
@@ -915,9 +957,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 云会议室id，如果vmrFlag为1，则该字段不为空。
-     * 
-     * @return vmrConferenceID */
+    /**
+     * 云会议室id，如果vmrFlag为1，则该字段不为空。
+     * @return vmrConferenceID
+     */
     public String getVmrConferenceID() {
         return vmrConferenceID;
     }
@@ -931,9 +974,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议的UUID。
-     * 
-     * @return confUUID */
+    /**
+     * 会议的UUID。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -963,9 +1007,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 与会方信息。硬件终端/与会人最多各显示20条记录。
-     * 
-     * @return partAttendeeInfo */
+    /**
+     * 与会方信息。硬件终端/与会人最多各显示20条记录。
+     * @return partAttendeeInfo
+     */
     public List<PartAttendee> getPartAttendeeInfo() {
         return partAttendeeInfo;
     }
@@ -979,9 +1024,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 硬终端个数。
-     * 
-     * @return terminlCount */
+    /**
+     * 硬终端个数。
+     * @return terminlCount
+     */
     public Integer getTerminlCount() {
         return terminlCount;
     }
@@ -995,9 +1041,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 普通终端个数。
-     * 
-     * @return normalCount */
+    /**
+     * 普通终端个数。
+     * @return normalCount
+     */
     public Integer getNormalCount() {
         return normalCount;
     }
@@ -1011,9 +1058,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议预定者的企业名称。最大长度96。
-     * 
-     * @return deptName */
+    /**
+     * 会议预定者的企业名称。最大长度96。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -1027,9 +1075,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 云会议室的ID。
-     * 
-     * @return vmrID */
+    /**
+     * 云会议室的ID。
+     * @return vmrID
+     */
     public String getVmrID() {
         return vmrID;
     }
@@ -1043,9 +1092,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议角色
-     * 
-     * @return role */
+    /**
+     * 会议角色
+     * @return role
+     */
     public RoleEnum getRole() {
         return role;
     }
@@ -1059,9 +1109,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 是否网络研讨会
-     * 
-     * @return webinar */
+    /**
+     * 是否网络研讨会
+     * @return webinar
+     */
     public Boolean getWebinar() {
         return webinar;
     }
@@ -1075,9 +1126,12 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 标识是否为多流视频会议。 枚举值如下 1：多流会议 minimum: 1 maximum: 1
-     * 
-     * @return multiStreamFlag */
+    /**
+     * 标识是否为多流视频会议。 枚举值如下 1：多流会议
+     * minimum: 1
+     * maximum: 1
+     * @return multiStreamFlag
+     */
     public Integer getMultiStreamFlag() {
         return multiStreamFlag;
     }
@@ -1091,9 +1145,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议类型
-     * 
-     * @return confMode */
+    /**
+     * 会议类型
+     * @return confMode
+     */
     public ConfModeEnum getConfMode() {
         return confMode;
     }
@@ -1107,9 +1162,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** True: VMR预约记录（如果为true则该记录不支持根据会议ID查询会议详情） False：普通会议
-     * 
-     * @return scheduleVmr */
+    /**
+     * True: VMR预约记录（如果为true则该记录不支持根据会议ID查询会议详情） False：普通会议
+     * @return scheduleVmr
+     */
     public Boolean getScheduleVmr() {
         return scheduleVmr;
     }
@@ -1123,9 +1179,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 会议方数，会议最大与会人数限制
-     * 
-     * @return concurrentParticipants */
+    /**
+     * 会议方数，会议最大与会人数限制
+     * @return concurrentParticipants
+     */
     public Integer getConcurrentParticipants() {
         return concurrentParticipants;
     }
@@ -1148,9 +1205,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** Get picDisplay
-     * 
-     * @return picDisplay */
+    /**
+     * Get picDisplay
+     * @return picDisplay
+     */
     public MultiPicDisplayDO getPicDisplay() {
         return picDisplay;
     }
@@ -1180,9 +1238,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 周期子会议列表
-     * 
-     * @return subConfs */
+    /**
+     * 周期子会议列表
+     * @return subConfs
+     */
     public List<CycleSubConf> getSubConfs() {
         return subConfs;
     }
@@ -1196,9 +1255,10 @@ public class ConferenceInfo {
         return this;
     }
 
-    /** 周期子会议UUID, 用于查询在线会议和历史会议详情时标识
-     * 
-     * @return cycleSubConfID */
+    /**
+     * 周期子会议UUID, 用于查询在线会议和历史会议详情时标识
+     * @return cycleSubConfID
+     */
     public String getCycleSubConfID() {
         return cycleSubConfID;
     }
@@ -1366,7 +1426,10 @@ public class ConferenceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

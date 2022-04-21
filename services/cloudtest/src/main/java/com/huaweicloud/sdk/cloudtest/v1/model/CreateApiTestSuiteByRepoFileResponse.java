@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateApiTestSuiteByRepoFileResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class CreateApiTestSuiteByRepoFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 生成的测试套的id
-     * 
-     * @return testsuiteId */
+    /**
+     * 生成的测试套的id
+     * @return testsuiteId
+     */
     public String getTestsuiteId() {
         return testsuiteId;
     }
@@ -59,9 +62,10 @@ public class CreateApiTestSuiteByRepoFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 生成的测试用例id列表
-     * 
-     * @return testcaseIds */
+    /**
+     * 生成的测试用例id列表
+     * @return testcaseIds
+     */
     public List<String> getTestcaseIds() {
         return testcaseIds;
     }
@@ -99,7 +103,10 @@ public class CreateApiTestSuiteByRepoFileResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRtcAbnormalEventDimensionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ListRtcAbnormalEventDimensionRequest {
 
     private String roomId;
 
-    /** 分组类型，支持同时指定两种类型 - abnormal_type：异常类型 - abnormal_factor：异常因素 */
+    /**
+     * 分组类型，支持同时指定两种类型 - abnormal_type：异常类型 - abnormal_factor：异常因素 
+     */
     public static final class DimensionEnum {
 
-        /** Enum ABNORMAL_TYPE for value: "abnormal_type" */
+        /**
+         * Enum ABNORMAL_TYPE for value: "abnormal_type"
+         */
         public static final DimensionEnum ABNORMAL_TYPE = new DimensionEnum("abnormal_type");
 
-        /** Enum ABNORMAL_FACTOR for value: "abnormal_factor" */
+        /**
+         * Enum ABNORMAL_FACTOR for value: "abnormal_factor"
+         */
         public static final DimensionEnum ABNORMAL_FACTOR = new DimensionEnum("abnormal_factor");
 
         private static final Map<String, DimensionEnum> STATIC_FIELDS = createStaticFields();
@@ -114,9 +122,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return this;
     }
 
-    /** 应用ID
-     * 
-     * @return app */
+    /**
+     * 应用ID 
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -130,9 +139,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return this;
     }
 
-    /** 房间ID
-     * 
-     * @return roomId */
+    /**
+     * 房间ID 
+     * @return roomId
+     */
     public String getRoomId() {
         return roomId;
     }
@@ -146,9 +156,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return this;
     }
 
-    /** 分组类型，支持同时指定两种类型 - abnormal_type：异常类型 - abnormal_factor：异常因素
-     * 
-     * @return dimension */
+    /**
+     * 分组类型，支持同时指定两种类型 - abnormal_type：异常类型 - abnormal_factor：异常因素 
+     * @return dimension
+     */
     public DimensionEnum getDimension() {
         return dimension;
     }
@@ -162,9 +173,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return this;
     }
 
-    /** 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不填写则默认读取过去1小时数据数据。
-     * 
-     * @return startTime */
+    /**
+     * 查询起始时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T06:00:00Z，不填写则默认读取过去1小时数据数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -178,9 +190,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return this;
     }
 
-    /** 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不填写则默认为当前时间。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间。UTC时间，格式：YYYY-MM-DDThh:mm:ssZ，如2020-04-23T07:00:00Z，不填写则默认为当前时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -224,7 +237,10 @@ public class ListRtcAbnormalEventDimensionRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 需要绑定密钥对的虚拟机信息。 */
+/**
+ * 需要绑定密钥对的虚拟机信息。
+ */
 public class EcsServerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class EcsServerInfo {
         return this;
     }
 
-    /** 需要绑定(替换或重置)SSH密钥对的虚拟机id
-     * 
-     * @return id */
+    /**
+     * 需要绑定(替换或重置)SSH密钥对的虚拟机id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class EcsServerInfo {
         return this;
     }
 
-    /** Get auth
-     * 
-     * @return auth */
+    /**
+     * Get auth
+     * @return auth
+     */
     public Auth getAuth() {
         return auth;
     }
@@ -70,9 +74,10 @@ public class EcsServerInfo {
         return this;
     }
 
-    /** - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
-     * 
-     * @return disablePassword */
+    /**
+     * - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
+     * @return disablePassword
+     */
     public Boolean getDisablePassword() {
         return disablePassword;
     }
@@ -110,7 +115,10 @@ public class EcsServerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

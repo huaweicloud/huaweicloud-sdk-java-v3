@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ReadonlyInstances */
+/**
+ * ReadonlyInstances
+ */
 public class ReadonlyInstances {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 只读实例ID。
-     * 
-     * @return id */
+    /**
+     * 只读实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -62,9 +65,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 只读实例状态。
-     * 
-     * @return status */
+    /**
+     * 只读实例状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -78,9 +82,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 只读实例名称。
-     * 
-     * @return name */
+    /**
+     * 只读实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +99,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 只读实例读写分离权重。
-     * 
-     * @return weight */
+    /**
+     * 只读实例读写分离权重。
+     * @return weight
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -126,9 +132,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 可用区信息。
-     * 
-     * @return availableZones */
+    /**
+     * 可用区信息。
+     * @return availableZones
+     */
     public List<AvailableZone> getAvailableZones() {
         return availableZones;
     }
@@ -142,9 +149,10 @@ public class ReadonlyInstances {
         return this;
     }
 
-    /** 只读实例CPU个数。
-     * 
-     * @return cpuNum */
+    /**
+     * 只读实例CPU个数。
+     * @return cpuNum
+     */
     public Integer getCpuNum() {
         return cpuNum;
     }
@@ -188,7 +196,10 @@ public class ReadonlyInstances {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 组件创建信息 */
+/**
+ * 组件创建信息
+ */
 public class Detail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class Detail {
 
     private String endTime;
 
-    /** 状态 */
+    /**
+     * 状态
+     */
     public static final class StatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum DEPLOYING for value: "deploying" */
+        /**
+         * Enum DEPLOYING for value: "deploying"
+         */
         public static final StatusEnum DEPLOYING = new StatusEnum("deploying");
 
-        /** Enum FINISHED for value: "finished" */
+        /**
+         * Enum FINISHED for value: "finished"
+         */
         public static final StatusEnum FINISHED = new StatusEnum("finished");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +129,10 @@ public class Detail {
         return this;
     }
 
-    /** 开始时间
-     * 
-     * @return startTime */
+    /**
+     * 开始时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -133,9 +146,10 @@ public class Detail {
         return this;
     }
 
-    /** 结束时间
-     * 
-     * @return endTime */
+    /**
+     * 结束时间
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -149,9 +163,10 @@ public class Detail {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -165,9 +180,10 @@ public class Detail {
         return this;
     }
 
-    /** 细节描述
-     * 
-     * @return detail */
+    /**
+     * 细节描述
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -206,7 +222,10 @@ public class Detail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

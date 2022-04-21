@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改产品信息结构体。 */
+/**
+ * 修改产品信息结构体。
+ */
 public class UpdateProduct {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,10 +63,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数，指定要修改的产品属于哪个资源空间；若不携带，则优先修改默认资源空间下产品，如默认资源空间下无对应产品，则按照产品创建时间修改最早创建产品。如果用户存在多资源空间，同时又不想携带该参数，可以联系华为技术支持对用户数据做资源空间合并。
-     * **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * 
-     * @return appId */
+    /**
+     * **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数，指定要修改的产品属于哪个资源空间；若不携带，则优先修改默认资源空间下产品，如默认资源空间下无对应产品，则按照产品创建时间修改最早创建产品。如果用户存在多资源空间，同时又不想携带该参数，可以联系华为技术支持对用户数据做资源空间合并。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -78,9 +80,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：产品名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return name */
+    /**
+     * **参数说明**：产品名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -94,9 +97,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：设备类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return deviceType */
+    /**
+     * **参数说明**：设备类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -110,9 +114,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：设备使用的协议类型。注：禁止其他协议类型修改为CoAP。 **取值范围**：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF，OPC-UA，OPC-DA，Other。
-     * 
-     * @return protocolType */
+    /**
+     * **参数说明**：设备使用的协议类型。注：禁止其他协议类型修改为CoAP。 **取值范围**：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF，OPC-UA，OPC-DA，Other。
+     * @return protocolType
+     */
     public String getProtocolType() {
         return protocolType;
     }
@@ -126,9 +131,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：设备上报数据的格式。 **取值范围**： - json：JSON格式 - binary：二进制码流格式
-     * 
-     * @return dataFormat */
+    /**
+     * **参数说明**：设备上报数据的格式。 **取值范围**： - json：JSON格式 - binary：二进制码流格式
+     * @return dataFormat
+     */
     public String getDataFormat() {
         return dataFormat;
     }
@@ -158,9 +164,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：设备的服务能力列表。
-     * 
-     * @return serviceCapabilities */
+    /**
+     * **参数说明**：设备的服务能力列表。
+     * @return serviceCapabilities
+     */
     public List<ServiceCapability> getServiceCapabilities() {
         return serviceCapabilities;
     }
@@ -174,9 +181,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：厂商名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return manufacturerName */
+    /**
+     * **参数说明**：厂商名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return manufacturerName
+     */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -190,9 +198,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：设备所属行业。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * 
-     * @return industry */
+    /**
+     * **参数说明**：设备所属行业。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return industry
+     */
     public String getIndustry() {
         return industry;
     }
@@ -206,9 +215,10 @@ public class UpdateProduct {
         return this;
     }
 
-    /** **参数说明**：产品的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
-     * 
-     * @return description */
+    /**
+     * **参数说明**：产品的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -266,7 +276,10 @@ public class UpdateProduct {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

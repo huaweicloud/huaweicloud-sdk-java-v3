@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VehicleLicenseResult */
+/**
+ * VehicleLicenseResult
+ */
 public class VehicleLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,9 +125,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 号牌号码。
-     * 
-     * @return number */
+    /**
+     * 号牌号码。 
+     * @return number
+     */
     public String getNumber() {
         return number;
     }
@@ -139,9 +142,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 车辆类型。
-     * 
-     * @return vehicleType */
+    /**
+     * 车辆类型。 
+     * @return vehicleType
+     */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -155,9 +159,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 所有人。
-     * 
-     * @return name */
+    /**
+     * 所有人。 
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -171,9 +176,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 住址。
-     * 
-     * @return address */
+    /**
+     * 住址。 
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -187,9 +193,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 使用性质。
-     * 
-     * @return useCharacter */
+    /**
+     * 使用性质。 
+     * @return useCharacter
+     */
     public String getUseCharacter() {
         return useCharacter;
     }
@@ -203,9 +210,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 品牌型号。
-     * 
-     * @return model */
+    /**
+     * 品牌型号。 
+     * @return model
+     */
     public String getModel() {
         return model;
     }
@@ -219,9 +227,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 发动机号码。
-     * 
-     * @return engineNo */
+    /**
+     * 发动机号码。 
+     * @return engineNo
+     */
     public String getEngineNo() {
         return engineNo;
     }
@@ -235,9 +244,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 车辆识别代号。
-     * 
-     * @return vin */
+    /**
+     * 车辆识别代号。 
+     * @return vin
+     */
     public String getVin() {
         return vin;
     }
@@ -251,9 +261,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 注册日期。
-     * 
-     * @return registerDate */
+    /**
+     * 注册日期。 
+     * @return registerDate
+     */
     public String getRegisterDate() {
         return registerDate;
     }
@@ -267,9 +278,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 发证日期。
-     * 
-     * @return issueDate */
+    /**
+     * 发证日期。 
+     * @return issueDate
+     */
     public String getIssueDate() {
         return issueDate;
     }
@@ -283,9 +295,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 发证机关。
-     * 
-     * @return issuingAuthority */
+    /**
+     * 发证机关。 
+     * @return issuingAuthority
+     */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -299,9 +312,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 档案编码。
-     * 
-     * @return fileNo */
+    /**
+     * 档案编码。 
+     * @return fileNo
+     */
     public String getFileNo() {
         return fileNo;
     }
@@ -315,9 +329,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 核定载人数。
-     * 
-     * @return approvedPassengers */
+    /**
+     * 核定载人数。 
+     * @return approvedPassengers
+     */
     public String getApprovedPassengers() {
         return approvedPassengers;
     }
@@ -331,9 +346,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 总质量。
-     * 
-     * @return grossMass */
+    /**
+     * 总质量。 
+     * @return grossMass
+     */
     public String getGrossMass() {
         return grossMass;
     }
@@ -347,9 +363,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 整备质量。
-     * 
-     * @return unladenMass */
+    /**
+     * 整备质量。 
+     * @return unladenMass
+     */
     public String getUnladenMass() {
         return unladenMass;
     }
@@ -363,9 +380,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 核定载质量。
-     * 
-     * @return approvedLoad */
+    /**
+     * 核定载质量。 
+     * @return approvedLoad
+     */
     public String getApprovedLoad() {
         return approvedLoad;
     }
@@ -379,9 +397,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 外廓尺寸。
-     * 
-     * @return dimension */
+    /**
+     * 外廓尺寸。 
+     * @return dimension
+     */
     public String getDimension() {
         return dimension;
     }
@@ -395,9 +414,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 准牵引总质量。
-     * 
-     * @return tractionMass */
+    /**
+     * 准牵引总质量。 
+     * @return tractionMass
+     */
     public String getTractionMass() {
         return tractionMass;
     }
@@ -411,9 +431,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 备注。
-     * 
-     * @return remarks */
+    /**
+     * 备注。 
+     * @return remarks
+     */
     public String getRemarks() {
         return remarks;
     }
@@ -427,9 +448,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 检验记录。
-     * 
-     * @return inspectionRecord */
+    /**
+     * 检验记录。 
+     * @return inspectionRecord
+     */
     public String getInspectionRecord() {
         return inspectionRecord;
     }
@@ -443,9 +465,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 条码号。
-     * 
-     * @return codeNumber */
+    /**
+     * 条码号。 
+     * @return codeNumber
+     */
     public String getCodeNumber() {
         return codeNumber;
     }
@@ -459,9 +482,10 @@ public class VehicleLicenseResult {
         return this;
     }
 
-    /** 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。 当“return_text_location”设置为“true”时才返回。
-     * 
-     * @return textLocation */
+    /**
+     * 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。  当“return_text_location”设置为“true”时才返回。 
+     * @return textLocation
+     */
     public Object getTextLocation() {
         return textLocation;
     }
@@ -559,7 +583,10 @@ public class VehicleLicenseResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

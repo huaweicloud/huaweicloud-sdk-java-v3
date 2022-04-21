@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResourceTag */
+/**
+ * ResourceTag
+ */
 public class ResourceTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签键 - 不能为空。 - 对于同一资源键值唯一。 - 长度不超过36个字符。 - 标签的键必须唯一且输入不能为空。
-     * 
-     * @return key */
+    /**
+     * 标签键 - 不能为空。 - 对于同一资源键值唯一。 - 长度不超过36个字符。 - 标签的键必须唯一且输入不能为空。 
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -39,9 +42,10 @@ public class ResourceTag {
         return this;
     }
 
-    /** 标签值 - action为create时必选。action为delete时非必选。 - 长度不超过43个字符。
-     * 
-     * @return value */
+    /**
+     * 标签值 - action为create时必选。action为delete时非必选。 - 长度不超过43个字符。 
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -77,7 +81,10 @@ public class ResourceTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

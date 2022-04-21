@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceListImagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class GlanceListImagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询首页的URL。
-     * 
-     * @return first */
+    /**
+     * 查询首页的URL。
+     * @return first
+     */
     public String getFirst() {
         return first;
     }
@@ -69,9 +72,10 @@ public class GlanceListImagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 资源类型。
-     * 
-     * @return images */
+    /**
+     * 资源类型。
+     * @return images
+     */
     public List<GlanceShowImageResponseBody> getImages() {
         return images;
     }
@@ -85,9 +89,10 @@ public class GlanceListImagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 描述镜像列表模式的URL。
-     * 
-     * @return schema */
+    /**
+     * 描述镜像列表模式的URL。
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -101,9 +106,10 @@ public class GlanceListImagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询下一页的URL。当查询镜像列表最后一页时，不存在next。
-     * 
-     * @return next */
+    /**
+     * 查询下一页的URL。当查询镜像列表最后一页时，不存在next。
+     * @return next
+     */
     public String getNext() {
         return next;
     }
@@ -144,7 +150,10 @@ public class GlanceListImagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProtectionGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,20 +35,29 @@ public class ListProtectionGroupsRequest {
 
     private String name;
 
-    /** 查询场景类型。 status_abnormal：表示查询异常状态的保护组列表。 stop_protected：表示查询停止保护的保护组列表。
-     * period_no_dr_drill：表示查询一段时间未做容灾演练的保护组，默认为三个月。 general或空时：该参数不生效。 */
+    /**
+     * 查询场景类型。 status_abnormal：表示查询异常状态的保护组列表。 stop_protected：表示查询停止保护的保护组列表。 period_no_dr_drill：表示查询一段时间未做容灾演练的保护组，默认为三个月。 general或空时：该参数不生效。
+     */
     public static final class QueryTypeEnum {
 
-        /** Enum STATUS_ABNORMAL for value: "status_abnormal" */
+        /**
+         * Enum STATUS_ABNORMAL for value: "status_abnormal"
+         */
         public static final QueryTypeEnum STATUS_ABNORMAL = new QueryTypeEnum("status_abnormal");
 
-        /** Enum _STOP_PROTECTED for value: " stop_protected" */
+        /**
+         * Enum _STOP_PROTECTED for value: " stop_protected"
+         */
         public static final QueryTypeEnum _STOP_PROTECTED = new QueryTypeEnum(" stop_protected");
 
-        /** Enum PERIOD_NO_DR_DRILL for value: "period_no_dr_drill" */
+        /**
+         * Enum PERIOD_NO_DR_DRILL for value: "period_no_dr_drill"
+         */
         public static final QueryTypeEnum PERIOD_NO_DR_DRILL = new QueryTypeEnum("period_no_dr_drill");
 
-        /** Enum GENERAL for value: "general" */
+        /**
+         * Enum GENERAL for value: "general"
+         */
         public static final QueryTypeEnum GENERAL = new QueryTypeEnum("general");
 
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -128,9 +139,12 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -144,9 +158,11 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -160,9 +176,10 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 保护组状态。
-     * 
-     * @return status */
+    /**
+     * 保护组状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -176,9 +193,10 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 保护组的名称。支持模糊查询。
-     * 
-     * @return name */
+    /**
+     * 保护组的名称。支持模糊查询。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -192,10 +210,10 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 查询场景类型。 status_abnormal：表示查询异常状态的保护组列表。 stop_protected：表示查询停止保护的保护组列表。
-     * period_no_dr_drill：表示查询一段时间未做容灾演练的保护组，默认为三个月。 general或空时：该参数不生效。
-     * 
-     * @return queryType */
+    /**
+     * 查询场景类型。 status_abnormal：表示查询异常状态的保护组列表。 stop_protected：表示查询停止保护的保护组列表。 period_no_dr_drill：表示查询一段时间未做容灾演练的保护组，默认为三个月。 general或空时：该参数不生效。
+     * @return queryType
+     */
     public QueryTypeEnum getQueryType() {
         return queryType;
     }
@@ -209,9 +227,10 @@ public class ListProtectionGroupsRequest {
         return this;
     }
 
-    /** 保护组的当前生产站点可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 保护组的当前生产站点可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -256,7 +275,10 @@ public class ListProtectionGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

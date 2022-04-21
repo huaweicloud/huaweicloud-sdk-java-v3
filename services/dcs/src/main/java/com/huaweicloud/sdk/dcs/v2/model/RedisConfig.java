@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RedisConfig */
+/**
+ * RedisConfig
+ */
 public class RedisConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class RedisConfig {
         return this;
     }
 
-    /** 实例配置项的值。
-     * 
-     * @return paramValue */
+    /**
+     * 实例配置项的值。
+     * @return paramValue
+     */
     public String getParamValue() {
         return paramValue;
     }
@@ -44,9 +47,10 @@ public class RedisConfig {
         return this;
     }
 
-    /** 实例配置项名。
-     * 
-     * @return paramName */
+    /**
+     * 实例配置项名。
+     * @return paramName
+     */
     public String getParamName() {
         return paramName;
     }
@@ -60,9 +64,10 @@ public class RedisConfig {
         return this;
     }
 
-    /** 实例配置项ID。
-     * 
-     * @return paramId */
+    /**
+     * 实例配置项ID。
+     * @return paramId
+     */
     public String getParamId() {
         return paramId;
     }
@@ -101,7 +106,10 @@ public class RedisConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

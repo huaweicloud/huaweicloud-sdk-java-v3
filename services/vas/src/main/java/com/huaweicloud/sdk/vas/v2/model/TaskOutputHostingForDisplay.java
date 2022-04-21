@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 输出为hosting类型时的配置和展示信息 */
+/**
+ * 输出为hosting类型时的配置和展示信息
+ */
 public class TaskOutputHostingForDisplay {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class TaskOutputHostingForDisplay {
         return this;
     }
 
-    /** 作业所有结果文件所在的OBS桶和路径
-     * 
-     * @return obs */
+    /**
+     * 作业所有结果文件所在的OBS桶和路径
+     * @return obs
+     */
     public List<TaskOutputHostingForDisplayObs> getObs() {
         return obs;
     }
@@ -63,9 +66,12 @@ public class TaskOutputHostingForDisplay {
         return this;
     }
 
-    /** 作业结果文件的过期时间 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return resultJsonOverdueAt */
+    /**
+     * 作业结果文件的过期时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return resultJsonOverdueAt
+     */
     public Long getResultJsonOverdueAt() {
         return resultJsonOverdueAt;
     }
@@ -95,9 +101,10 @@ public class TaskOutputHostingForDisplay {
         return this;
     }
 
-    /** 作业输出数据类别的列表，当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据，部分服务需要
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据，部分服务需要
+     * @return dataCategory
+     */
     public List<String> getDataCategory() {
         return dataCategory;
     }
@@ -136,7 +143,10 @@ public class TaskOutputHostingForDisplay {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

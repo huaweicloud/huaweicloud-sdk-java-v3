@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowSingleCommitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowSingleCommitRequest {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return repoId */
+    /**
+     * 仓库短id
+     * @return repoId
+     */
     public Integer getRepoId() {
         return repoId;
     }
@@ -44,9 +47,10 @@ public class ShowSingleCommitRequest {
         return this;
     }
 
-    /** commit id，仓库的branch名或tag名
-     * 
-     * @return sha */
+    /**
+     * commit id，仓库的branch名或tag名
+     * @return sha
+     */
     public String getSha() {
         return sha;
     }
@@ -60,9 +64,10 @@ public class ShowSingleCommitRequest {
         return this;
     }
 
-    /** 包括提交统计信息。默认值为true
-     * 
-     * @return stats */
+    /**
+     * 包括提交统计信息。默认值为true
+     * @return stats
+     */
     public Boolean getStats() {
         return stats;
     }
@@ -101,7 +106,10 @@ public class ShowSingleCommitRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

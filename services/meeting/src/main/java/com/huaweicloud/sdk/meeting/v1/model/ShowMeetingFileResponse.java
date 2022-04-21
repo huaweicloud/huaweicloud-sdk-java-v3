@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMeetingFileResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,9 +91,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 会议纪要文件码
-     * 
-     * @return fileCode */
+    /**
+     * 会议纪要文件码
+     * @return fileCode
+     */
     public String getFileCode() {
         return fileCode;
     }
@@ -105,9 +108,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件主题
-     * 
-     * @return topic */
+    /**
+     * 文件主题
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -121,9 +125,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件Id
-     * 
-     * @return fileId */
+    /**
+     * 文件Id
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -137,9 +142,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -153,9 +159,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件大小，单位字节
-     * 
-     * @return fileSize */
+    /**
+     * 文件大小，单位字节
+     * @return fileSize
+     */
     public Long getFileSize() {
         return fileSize;
     }
@@ -169,9 +176,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 缩略图文件Id
-     * 
-     * @return thumbnailFileId */
+    /**
+     * 缩略图文件Id
+     * @return thumbnailFileId
+     */
     public String getThumbnailFileId() {
         return thumbnailFileId;
     }
@@ -185,9 +193,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 缩略图文件名
-     * 
-     * @return thumbnailFileName */
+    /**
+     * 缩略图文件名
+     * @return thumbnailFileName
+     */
     public String getThumbnailFileName() {
         return thumbnailFileName;
     }
@@ -201,9 +210,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 缩略图文件大小，单位字节
-     * 
-     * @return thumbnailFileSize */
+    /**
+     * 缩略图文件大小，单位字节
+     * @return thumbnailFileSize
+     */
     public Long getThumbnailFileSize() {
         return thumbnailFileSize;
     }
@@ -217,9 +227,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** pdf文件Id
-     * 
-     * @return pdfFileId */
+    /**
+     * pdf文件Id
+     * @return pdfFileId
+     */
     public String getPdfFileId() {
         return pdfFileId;
     }
@@ -233,9 +244,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** pdf文件名
-     * 
-     * @return pdfFileName */
+    /**
+     * pdf文件名
+     * @return pdfFileName
+     */
     public String getPdfFileName() {
         return pdfFileName;
     }
@@ -249,9 +261,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** pdf文件大小，单位字节
-     * 
-     * @return pdfFileSize */
+    /**
+     * pdf文件大小，单位字节
+     * @return pdfFileSize
+     */
     public Long getPdfFileSize() {
         return pdfFileSize;
     }
@@ -265,9 +278,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件url
-     * 
-     * @return fileUrl */
+    /**
+     * 文件url
+     * @return fileUrl
+     */
     public String getFileUrl() {
         return fileUrl;
     }
@@ -281,9 +295,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 缩略图文件url
-     * 
-     * @return thumbnailUrl */
+    /**
+     * 缩略图文件url
+     * @return thumbnailUrl
+     */
     public String getThumbnailUrl() {
         return thumbnailUrl;
     }
@@ -297,9 +312,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** pdf文件url
-     * 
-     * @return pdfUrl */
+    /**
+     * pdf文件url
+     * @return pdfUrl
+     */
     public String getPdfUrl() {
         return pdfUrl;
     }
@@ -313,9 +329,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return this;
     }
 
-    /** 文件创建时间戳
-     * 
-     * @return creationTimestamp */
+    /**
+     * 文件创建时间戳
+     * @return creationTimestamp
+     */
     public Long getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -392,7 +409,10 @@ public class ShowMeetingFileResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

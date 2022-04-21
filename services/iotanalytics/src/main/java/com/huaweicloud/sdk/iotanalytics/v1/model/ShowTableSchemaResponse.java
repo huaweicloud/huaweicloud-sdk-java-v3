@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTableSchemaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表ID。
-     * 
-     * @return tableId */
+    /**
+     * 表ID。
+     * @return tableId
+     */
     public String getTableId() {
         return tableId;
     }
@@ -83,9 +86,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表名。
-     * 
-     * @return tableName */
+    /**
+     * 表名。
+     * @return tableName
+     */
     public String getTableName() {
         return tableName;
     }
@@ -99,9 +103,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表别名。
-     * 
-     * @return tableAlias */
+    /**
+     * 表别名。
+     * @return tableAlias
+     */
     public String getTableAlias() {
         return tableAlias;
     }
@@ -115,9 +120,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 标签。
-     * 
-     * @return tags */
+    /**
+     * 标签。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -131,9 +137,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表的总列数。
-     * 
-     * @return columnCount */
+    /**
+     * 表的总列数。
+     * @return columnCount
+     */
     public Integer getColumnCount() {
         return columnCount;
     }
@@ -163,9 +170,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表的列信息，包含列名称、类型和描述信息。
-     * 
-     * @return columns */
+    /**
+     * 表的列信息，包含列名称、类型和描述信息。
+     * @return columns
+     */
     public List<Column> getColumns() {
         return columns;
     }
@@ -179,9 +187,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 表类型，包括“MANAGED”，“EXTERNAL”和“VIEW”。
-     * 
-     * @return tableType */
+    /**
+     * 表类型，包括“MANAGED”，“EXTERNAL”和“VIEW”。
+     * @return tableType
+     */
     public String getTableType() {
         return tableType;
     }
@@ -195,9 +204,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据类型，包括“csv”，“parquet”。
-     * 
-     * @return dataType */
+    /**
+     * 数据类型，包括“csv”，“parquet”。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -211,9 +221,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据存储的路径，以“s3a”开头。
-     * 
-     * @return dataLocation */
+    /**
+     * 数据存储的路径，以“s3a”开头。
+     * @return dataLocation
+     */
     public String getDataLocation() {
         return dataLocation;
     }
@@ -243,9 +254,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return this;
     }
 
-    /** Get storageProperties
-     * 
-     * @return storageProperties */
+    /**
+     * Get storageProperties
+     * @return storageProperties
+     */
     public List<KeyValue> getStorageProperties() {
         return storageProperties;
     }
@@ -307,7 +319,10 @@ public class ShowTableSchemaResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Type */
+/**
+ * Type
+ */
 public class Type {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,10 +41,10 @@ public class Type {
         return this;
     }
 
-    /** 事件所属业务领域标签，可选类别如下： attack – 攻击 vulnerability – 漏洞 compliance check – 合规检查 risk - 风险 public opinion - 舆情
-     * illegal&violation - 违法违规 security bulletin - 公告
-     * 
-     * @return business */
+    /**
+     * 事件所属业务领域标签，可选类别如下： attack – 攻击 vulnerability – 漏洞 compliance check – 合规检查 risk - 风险 public opinion - 舆情 illegal&violation - 违法违规 security bulletin - 公告
+     * @return business
+     */
     public String getBusiness() {
         return business;
     }
@@ -56,9 +58,10 @@ public class Type {
         return this;
     }
 
-    /** 类别，推荐使用预定义的类型分类。
-     * 
-     * @return category */
+    /**
+     * 类别，推荐使用预定义的类型分类。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -72,9 +75,10 @@ public class Type {
         return this;
     }
 
-    /** 分类器，推荐使用预定义的分类器。 如果指定了分类器，则必须指定类别。
-     * 
-     * @return classifier */
+    /**
+     * 分类器，推荐使用预定义的分类器。 如果指定了分类器，则必须指定类别。
+     * @return classifier
+     */
     public String getClassifier() {
         return classifier;
     }
@@ -88,9 +92,10 @@ public class Type {
         return this;
     }
 
-    /** 技术领域标签： OS：主机 APP：应用 NET：网络 OPS：运维 CS：云服务 CSP：平台云服务
-     * 
-     * @return techDomain */
+    /**
+     * 技术领域标签： OS：主机 APP：应用 NET：网络 OPS：运维 CS：云服务 CSP：平台云服务
+     * @return techDomain
+     */
     public String getTechDomain() {
         return techDomain;
     }
@@ -113,9 +118,10 @@ public class Type {
         return this;
     }
 
-    /** Get properties
-     * 
-     * @return properties */
+    /**
+     * Get properties
+     * @return properties
+     */
     public TypeProperties getProperties() {
         return properties;
     }
@@ -156,7 +162,10 @@ public class Type {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

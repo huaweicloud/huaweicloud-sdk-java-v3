@@ -11,7 +11,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateImageWatermarkRequestBody */
+/**
+ * CreateImageWatermarkRequestBody
+ */
 public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
@@ -32,9 +34,10 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 要添加水印的图片文件，添加的图片短边尺寸需要超过512像素。
-     * 
-     * @return file */
+    /**
+     * 要添加水印的图片文件，添加的图片短边尺寸需要超过512像素。
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -48,9 +51,10 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 待嵌入的文字暗水印内容，长度不超过32个字符。当前仅支持数字及英文大小写。与图片暗水印image_watermark二选一填充。
-     * 
-     * @return blindWatermark */
+    /**
+     * 待嵌入的文字暗水印内容，长度不超过32个字符。当前仅支持数字及英文大小写。与图片暗水印image_watermark二选一填充。
+     * @return blindWatermark
+     */
     public String getBlindWatermark() {
         return blindWatermark;
     }
@@ -64,9 +68,10 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 待嵌入的图片暗水印文件，与文字暗水印 blind_watermark 二选一填充。
-     * 
-     * @return imageWatermark */
+    /**
+     * 待嵌入的图片暗水印文件，与文字暗水印 blind_watermark 二选一填充。
+     * @return imageWatermark
+     */
     public FormDataFilePart getImageWatermark() {
         return imageWatermark;
     }
@@ -154,7 +159,10 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

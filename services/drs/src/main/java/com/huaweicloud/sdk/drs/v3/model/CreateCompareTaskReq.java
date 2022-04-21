@@ -21,10 +21,14 @@ public class CreateCompareTaskReq {
 
     private String jobId;
 
-    /** 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。 */
+    /**
+     * 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
+     */
     public static final class ObjectLevelCompareTypeEnum {
 
-        /** Enum OBJECTS for value: "objects" */
+        /**
+         * Enum OBJECTS for value: "objects"
+         */
         public static final ObjectLevelCompareTypeEnum OBJECTS = new ObjectLevelCompareTypeEnum("objects");
 
         private static final Map<String, ObjectLevelCompareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -103,9 +107,10 @@ public class CreateCompareTaskReq {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return jobId */
+    /**
+     * 任务id。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -119,9 +124,10 @@ public class CreateCompareTaskReq {
         return this;
     }
 
-    /** 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
-     * 
-     * @return objectLevelCompareType */
+    /**
+     * 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
+     * @return objectLevelCompareType
+     */
     public ObjectLevelCompareTypeEnum getObjectLevelCompareType() {
         return objectLevelCompareType;
     }
@@ -145,9 +151,10 @@ public class CreateCompareTaskReq {
         return this;
     }
 
-    /** Get dataLevelCompareInfo
-     * 
-     * @return dataLevelCompareInfo */
+    /**
+     * Get dataLevelCompareInfo
+     * @return dataLevelCompareInfo
+     */
     public CreateDataLevelCompareReq getDataLevelCompareInfo() {
         return dataLevelCompareInfo;
     }
@@ -186,7 +193,10 @@ public class CreateCompareTaskReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class VersionMediatypes {
         return this;
     }
 
-    /** 媒体类型。
-     * 
-     * @return type */
+    /**
+     * 媒体类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -41,9 +42,10 @@ public class VersionMediatypes {
         return this;
     }
 
-    /** 基础类型。
-     * 
-     * @return base */
+    /**
+     * 基础类型。
+     * @return base
+     */
     public String getBase() {
         return base;
     }
@@ -79,7 +81,10 @@ public class VersionMediatypes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

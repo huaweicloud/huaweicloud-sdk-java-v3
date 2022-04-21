@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建日志流参数。 */
+/**
+ * 创建日志流参数。
+ */
 public class CreateLogStreamParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CreateLogStreamParams {
         return this;
     }
 
-    /** 需要创建的日志流名称。
-     * 
-     * @return logStreamName */
+    /**
+     * 需要创建的日志流名称。
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -39,9 +42,10 @@ public class CreateLogStreamParams {
         return this;
     }
 
-    /** 企业项目名称。
-     * 
-     * @return enterpriseProjectName */
+    /**
+     * 企业项目名称。
+     * @return enterpriseProjectName
+     */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -78,7 +82,10 @@ public class CreateLogStreamParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

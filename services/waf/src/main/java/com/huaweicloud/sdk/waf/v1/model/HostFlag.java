@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 域名配置 */
+/**
+ * 域名配置
+ */
 public class HostFlag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class HostFlag {
         return this;
     }
 
-    /** true/false
-     * 
-     * @return pciDss */
+    /**
+     * true/false
+     * @return pciDss
+     */
     public String getPciDss() {
         return pciDss;
     }
@@ -54,9 +57,10 @@ public class HostFlag {
         return this;
     }
 
-    /** true/false
-     * 
-     * @return pci3ds */
+    /**
+     * true/false
+     * @return pci3ds
+     */
     public String getPci3ds() {
         return pci3ds;
     }
@@ -70,9 +74,10 @@ public class HostFlag {
         return this;
     }
 
-    /** old/new
-     * 
-     * @return cname */
+    /**
+     * old/new
+     * @return cname
+     */
     public String getCname() {
         return cname;
     }
@@ -86,9 +91,10 @@ public class HostFlag {
         return this;
     }
 
-    /** true/false
-     * 
-     * @return isDualAz */
+    /**
+     * true/false
+     * @return isDualAz
+     */
     public String getIsDualAz() {
         return isDualAz;
     }
@@ -102,9 +108,10 @@ public class HostFlag {
         return this;
     }
 
-    /** true/false
-     * 
-     * @return ipv6 */
+    /**
+     * true/false
+     * @return ipv6
+     */
     public String getIpv6() {
         return ipv6;
     }
@@ -145,7 +152,10 @@ public class HostFlag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改预定义标签 */
+/**
+ * 修改预定义标签
+ */
 public class ModifyPrefineTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ModifyPrefineTag {
         return this;
     }
 
-    /** Get newTag
-     * 
-     * @return newTag */
+    /**
+     * Get newTag
+     * @return newTag
+     */
     public PredefineTagRequest getNewTag() {
         return newTag;
     }
@@ -58,9 +61,10 @@ public class ModifyPrefineTag {
         return this;
     }
 
-    /** Get oldTag
-     * 
-     * @return oldTag */
+    /**
+     * Get oldTag
+     * @return oldTag
+     */
     public PredefineTagRequest getOldTag() {
         return oldTag;
     }
@@ -97,7 +101,10 @@ public class ModifyPrefineTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

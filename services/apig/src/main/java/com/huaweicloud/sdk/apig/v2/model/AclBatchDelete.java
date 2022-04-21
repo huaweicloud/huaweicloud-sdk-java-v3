@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AclBatchDelete */
+/**
+ * AclBatchDelete
+ */
 public class AclBatchDelete {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AclBatchDelete {
         return this;
     }
 
-    /** 需要删除的ACL策略ID列表
-     * 
-     * @return acls */
+    /**
+     * 需要删除的ACL策略ID列表
+     * @return acls
+     */
     public List<String> getAcls() {
         return acls;
     }
@@ -74,7 +77,10 @@ public class AclBatchDelete {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

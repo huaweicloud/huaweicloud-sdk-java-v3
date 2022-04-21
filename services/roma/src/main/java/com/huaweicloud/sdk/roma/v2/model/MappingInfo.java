@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MappingInfo */
+/**
+ * MappingInfo
+ */
 public class MappingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 源端字段
-     * 
-     * @return sourceColumn */
+    /**
+     * 源端字段
+     * @return sourceColumn
+     */
     public String getSourceColumn() {
         return sourceColumn;
     }
@@ -59,9 +62,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 源端字段类型
-     * 
-     * @return sourceColumnType */
+    /**
+     * 源端字段类型
+     * @return sourceColumnType
+     */
     public String getSourceColumnType() {
         return sourceColumnType;
     }
@@ -75,9 +79,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 源端字段长度
-     * 
-     * @return sourceColumnLength */
+    /**
+     * 源端字段长度
+     * @return sourceColumnLength
+     */
     public String getSourceColumnLength() {
         return sourceColumnLength;
     }
@@ -91,9 +96,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 目标端字段
-     * 
-     * @return targetColumn */
+    /**
+     * 目标端字段
+     * @return targetColumn
+     */
     public String getTargetColumn() {
         return targetColumn;
     }
@@ -107,9 +113,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 目标端字段类型
-     * 
-     * @return targetColumnType */
+    /**
+     * 目标端字段类型
+     * @return targetColumnType
+     */
     public String getTargetColumnType() {
         return targetColumnType;
     }
@@ -123,9 +130,10 @@ public class MappingInfo {
         return this;
     }
 
-    /** 目标端字段长度
-     * 
-     * @return targetColumnLength */
+    /**
+     * 目标端字段长度
+     * @return targetColumnLength
+     */
     public String getTargetColumnLength() {
         return targetColumnLength;
     }
@@ -175,7 +183,10 @@ public class MappingInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

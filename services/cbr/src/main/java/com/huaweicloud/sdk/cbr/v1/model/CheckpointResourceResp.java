@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CheckpointResourceResp */
+/**
+ * CheckpointResourceResp
+ */
 public class CheckpointResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,22 +30,34 @@ public class CheckpointResourceResp {
 
     private String name;
 
-    /** 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。 */
+    /**
+     * 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
+     */
     public static final class ProtectStatusEnum {
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final ProtectStatusEnum AVAILABLE = new ProtectStatusEnum("available");
 
-        /** Enum ERROR for value: "error" */
+        /**
+         * Enum ERROR for value: "error"
+         */
         public static final ProtectStatusEnum ERROR = new ProtectStatusEnum("error");
 
-        /** Enum PROTECTING for value: "protecting" */
+        /**
+         * Enum PROTECTING for value: "protecting"
+         */
         public static final ProtectStatusEnum PROTECTING = new ProtectStatusEnum("protecting");
 
-        /** Enum RESTORING for value: "restoring" */
+        /**
+         * Enum RESTORING for value: "restoring"
+         */
         public static final ProtectStatusEnum RESTORING = new ProtectStatusEnum("restoring");
 
-        /** Enum REMOVING for value: "removing" */
+        /**
+         * Enum REMOVING for value: "removing"
+         */
         public static final ProtectStatusEnum REMOVING = new ProtectStatusEnum("removing");
 
         private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -141,9 +155,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 资源附加信息
-     * 
-     * @return extraInfo */
+    /**
+     * 资源附加信息
+     * @return extraInfo
+     */
     public String getExtraInfo() {
         return extraInfo;
     }
@@ -157,9 +172,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 待备份资源id
-     * 
-     * @return id */
+    /**
+     * 待备份资源id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -173,9 +189,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 待备份资源名称
-     * 
-     * @return name */
+    /**
+     * 待备份资源名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -189,9 +206,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
-     * 
-     * @return protectStatus */
+    /**
+     * 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
+     * @return protectStatus
+     */
     public ProtectStatusEnum getProtectStatus() {
         return protectStatus;
     }
@@ -205,9 +223,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 资源已分配容量,单位为GB
-     * 
-     * @return resourceSize */
+    /**
+     * 资源已分配容量,单位为GB
+     * @return resourceSize
+     */
     public String getResourceSize() {
         return resourceSize;
     }
@@ -221,9 +240,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 待备份资源的类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo
-     * 
-     * @return type */
+    /**
+     * 待备份资源的类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -237,9 +257,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 副本大小
-     * 
-     * @return backupSize */
+    /**
+     * 副本大小
+     * @return backupSize
+     */
     public String getBackupSize() {
         return backupSize;
     }
@@ -253,9 +274,10 @@ public class CheckpointResourceResp {
         return this;
     }
 
-    /** 副本数量
-     * 
-     * @return backupCount */
+    /**
+     * 副本数量
+     * @return backupCount
+     */
     public String getBackupCount() {
         return backupCount;
     }
@@ -304,7 +326,10 @@ public class CheckpointResourceResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会者记录 */
+/**
+ * 与会者记录
+ */
 public class ConfAttendeeRecordInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 名称。
-     * 
-     * @return displayName */
+    /**
+     * 名称。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -64,9 +67,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 号码。
-     * 
-     * @return callNumber */
+    /**
+     * 号码。
+     * @return callNumber
+     */
     public String getCallNumber() {
         return callNumber;
     }
@@ -80,9 +84,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 设备类型。
-     * 
-     * @return deviceType */
+    /**
+     * 设备类型。
+     * @return deviceType
+     */
     public String getDeviceType() {
         return deviceType;
     }
@@ -96,9 +101,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 入会时间（UTC时间，单位毫秒）。
-     * 
-     * @return joinTime */
+    /**
+     * 入会时间（UTC时间，单位毫秒）。
+     * @return joinTime
+     */
     public Long getJoinTime() {
         return joinTime;
     }
@@ -112,9 +118,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 离会时间（UTC时间，单位毫秒）。
-     * 
-     * @return leftTime */
+    /**
+     * 离会时间（UTC时间，单位毫秒）。
+     * @return leftTime
+     */
     public Long getLeftTime() {
         return leftTime;
     }
@@ -128,9 +135,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 媒体类型。
-     * 
-     * @return mediaType */
+    /**
+     * 媒体类型。
+     * @return mediaType
+     */
     public String getMediaType() {
         return mediaType;
     }
@@ -144,9 +152,10 @@ public class ConfAttendeeRecordInfo {
         return this;
     }
 
-    /** 部门名称。
-     * 
-     * @return deptName */
+    /**
+     * 部门名称。
+     * @return deptName
+     */
     public String getDeptName() {
         return deptName;
     }
@@ -193,7 +202,10 @@ public class ConfAttendeeRecordInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

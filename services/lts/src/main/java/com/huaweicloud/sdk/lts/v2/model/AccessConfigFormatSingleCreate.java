@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 日志接入格式单行日志 */
+/**
+ * 日志接入格式单行日志
+ */
 public class AccessConfigFormatSingleCreate {
 
-    /** 单行日志。system：系统时间，wildcard：时间通配符。 */
+    /**
+     * 单行日志。system：系统时间，wildcard：时间通配符。
+     */
     public static final class ModeEnum {
 
-        /** Enum SYSTEM for value: "system" */
+        /**
+         * Enum SYSTEM for value: "system"
+         */
         public static final ModeEnum SYSTEM = new ModeEnum("system");
 
-        /** Enum WILDCARD for value: "wildcard" */
+        /**
+         * Enum WILDCARD for value: "wildcard"
+         */
         public static final ModeEnum WILDCARD = new ModeEnum("wildcard");
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
@@ -99,9 +107,10 @@ public class AccessConfigFormatSingleCreate {
         return this;
     }
 
-    /** 单行日志。system：系统时间，wildcard：时间通配符。
-     * 
-     * @return mode */
+    /**
+     * 单行日志。system：系统时间，wildcard：时间通配符。
+     * @return mode
+     */
     public ModeEnum getMode() {
         return mode;
     }
@@ -115,11 +124,10 @@ public class AccessConfigFormatSingleCreate {
         return this;
     }
 
-    /** 日志时间。 当mode为”system”，则填入当前时间戳。
-     * 当mode为\"wildcard\"，则时间通配符：用日志打印时间来标识一条日志数据，通过时间通配符来匹配日志，每条日志的行首显示日志的打印时间；如果日志中的时间格式为：2019-01-01
-     * 23:59:59，时间通配符应该填写为：YYYY-MM-DD hh:mm:ss；如果日志中的时间格式为：19-1-1 23:59:59，时间通配符应该填写为：YY-M-D hh:mm:ss
-     * 
-     * @return value */
+    /**
+     * 日志时间。 当mode为”system”，则填入当前时间戳。 当mode为\"wildcard\"，则时间通配符：用日志打印时间来标识一条日志数据，通过时间通配符来匹配日志，每条日志的行首显示日志的打印时间；如果日志中的时间格式为：2019-01-01 23:59:59，时间通配符应该填写为：YYYY-MM-DD hh:mm:ss；如果日志中的时间格式为：19-1-1 23:59:59，时间通配符应该填写为：YY-M-D hh:mm:ss
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -156,7 +164,10 @@ public class AccessConfigFormatSingleCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

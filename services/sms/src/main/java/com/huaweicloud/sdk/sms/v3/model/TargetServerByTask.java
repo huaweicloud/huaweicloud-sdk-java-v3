@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 目的端虚拟机信息 */
+/**
+ * 目的端虚拟机信息
+ */
 public class TargetServerByTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +59,10 @@ public class TargetServerByTask {
         return this;
     }
 
-    /** btrfs信息，数据从源端获取
-     * 
-     * @return btrfsList */
+    /**
+     * btrfs信息，数据从源端获取
+     * @return btrfsList
+     */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -89,9 +92,10 @@ public class TargetServerByTask {
         return this;
     }
 
-    /** 磁盘信息
-     * 
-     * @return disks */
+    /**
+     * 磁盘信息
+     * @return disks
+     */
     public List<TargetDisks> getDisks() {
         return disks;
     }
@@ -105,9 +109,10 @@ public class TargetServerByTask {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -121,9 +126,10 @@ public class TargetServerByTask {
         return this;
     }
 
-    /** 虚拟机id
-     * 
-     * @return vmId */
+    /**
+     * 虚拟机id
+     * @return vmId
+     */
     public String getVmId() {
         return vmId;
     }
@@ -153,9 +159,10 @@ public class TargetServerByTask {
         return this;
     }
 
-    /** 卷组，数据从源端获取
-     * 
-     * @return volumeGroups */
+    /**
+     * 卷组，数据从源端获取
+     * @return volumeGroups
+     */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -197,7 +204,10 @@ public class TargetServerByTask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

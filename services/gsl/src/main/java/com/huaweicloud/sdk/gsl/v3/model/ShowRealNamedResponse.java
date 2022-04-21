@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRealNamedResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class ShowRealNamedResponse extends SdkResponse {
         return this;
     }
 
-    /** ICCID
-     * 
-     * @return iccid */
+    /**
+     * ICCID
+     * @return iccid
+     */
     public String getIccid() {
         return iccid;
     }
@@ -40,9 +43,10 @@ public class ShowRealNamedResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否已实名认证: true表示是，false表示否。
-     * 
-     * @return realNamed */
+    /**
+     * 是否已实名认证: true表示是，false表示否。
+     * @return realNamed
+     */
     public Boolean getRealNamed() {
         return realNamed;
     }
@@ -79,7 +83,10 @@ public class ShowRealNamedResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

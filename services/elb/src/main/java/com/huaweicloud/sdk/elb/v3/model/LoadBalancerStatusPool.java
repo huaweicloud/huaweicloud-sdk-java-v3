@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LB状态树的后端服务器组状态信息。 */
+/**
+ * LB状态树的后端服务器组状态信息。
+ */
 public class LoadBalancerStatusPool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器组的配置状态。取值： - ACTIVE：使用中。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 后端服务器组的配置状态。取值： - ACTIVE：使用中。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -62,9 +65,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器组名。
-     * 
-     * @return name */
+    /**
+     * 后端服务器组名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -87,9 +91,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** Get healthmonitor
-     * 
-     * @return healthmonitor */
+    /**
+     * Get healthmonitor
+     * @return healthmonitor
+     */
     public LoadBalancerStatusHealthMonitor getHealthmonitor() {
         return healthmonitor;
     }
@@ -119,9 +124,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器状态信息。
-     * 
-     * @return members */
+    /**
+     * 后端服务器状态信息。
+     * @return members
+     */
     public List<LoadBalancerStatusMember> getMembers() {
         return members;
     }
@@ -135,9 +141,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器组ID。
-     * 
-     * @return id */
+    /**
+     * 后端服务器组ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -151,11 +158,10 @@ public class LoadBalancerStatusPool {
         return this;
     }
 
-    /** 后端服务器组的操作状态。取值： - ONLINE：创建时默认状态，表后端服务器组正常。 - DEGRADED：该后端服务器组下存在member为的operating_status=OFFLINE。 -
-     * DISABLED：负载均衡器或后端服务器组的admin_state_up=false。 使用说明： -
-     * DEGRADED和DISABLED仅在当前接口返回，查询后端服务器组详情等其他接口返回的operating_status字段不存在这两个状态值。
-     * 
-     * @return operatingStatus */
+    /**
+     * 后端服务器组的操作状态。取值： - ONLINE：创建时默认状态，表后端服务器组正常。  - DEGRADED：该后端服务器组下存在member为的operating_status=OFFLINE。  - DISABLED：负载均衡器或后端服务器组的admin_state_up=false。 使用说明：  - DEGRADED和DISABLED仅在当前接口返回，查询后端服务器组详情等其他接口返回的operating_status字段不存在这两个状态值。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -200,7 +206,10 @@ public class LoadBalancerStatusPool {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

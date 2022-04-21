@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceModify */
+/**
+ * InstanceModify
+ */
 public class InstanceModify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 应用组件版本号，满足版本语义，如1.0.1。
-     * 
-     * @return version */
+    /**
+     * 应用组件版本号，满足版本语义，如1.0.1。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -69,9 +72,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** Get flavorId
-     * 
-     * @return flavorId */
+    /**
+     * Get flavorId
+     * @return flavorId
+     */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -101,9 +105,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * 
-     * @return artifacts */
+    /**
+     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * @return artifacts
+     */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -133,9 +138,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 应用配置，如环境变量。
-     * 
-     * @return _configuration */
+    /**
+     * 应用配置，如环境变量。
+     * @return _configuration
+     */
     public Map<String, Object> getConfiguration() {
         return _configuration;
     }
@@ -149,9 +155,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -181,9 +188,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 访问方式列表。
-     * 
-     * @return externalAccesses */
+    /**
+     * 访问方式列表。
+     * @return externalAccesses
+     */
     public List<ExternalAccesses> getExternalAccesses() {
         return externalAccesses;
     }
@@ -213,9 +221,10 @@ public class InstanceModify {
         return this;
     }
 
-    /** 部署资源列表。
-     * 
-     * @return referResources */
+    /**
+     * 部署资源列表。
+     * @return referResources
+     */
     public List<ReferResourceCreate> getReferResources() {
         return referResources;
     }
@@ -263,7 +272,10 @@ public class InstanceModify {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

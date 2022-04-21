@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListNumberOfInstancesInDifferentStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListNumberOfInstancesInDifferentStatusRequest {
         return this;
     }
 
-    /** 是否返回创建失败的实例数。 - 当参数值为“true”时，返回的统计包括创建失败的实例数。 - 参数值为“false”或者其他值，返回的统计不包括创建失败的实例数。
-     * 
-     * @return includeFailure */
+    /**
+     * 是否返回创建失败的实例数。   - 当参数值为“true”时，返回的统计包括创建失败的实例数。   - 参数值为“false”或者其他值，返回的统计不包括创建失败的实例数。 
+     * @return includeFailure
+     */
     public String getIncludeFailure() {
         return includeFailure;
     }
@@ -56,7 +59,10 @@ public class ListNumberOfInstancesInDifferentStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

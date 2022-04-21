@@ -18,13 +18,19 @@ import java.util.function.Consumer;
  */
 public class CreateDataLevelCompareReq {
 
-    /** 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。 */
+    /**
+     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。
+     */
     public static final class ConflictPolicyEnum {
 
-        /** Enum CANCEL for value: "cancel" */
+        /**
+         * Enum CANCEL for value: "cancel"
+         */
         public static final ConflictPolicyEnum CANCEL = new ConflictPolicyEnum("cancel");
 
-        /** Enum KEEP for value: "keep" */
+        /**
+         * Enum KEEP for value: "keep"
+         */
         public static final ConflictPolicyEnum KEEP = new ConflictPolicyEnum("keep");
 
         private static final Map<String, ConflictPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +100,19 @@ public class CreateDataLevelCompareReq {
 
     private ConflictPolicyEnum conflictPolicy;
 
-    /** 数据级对比类型，lines-行对比,contents-内容对比。 */
+    /**
+     * 数据级对比类型，lines-行对比,contents-内容对比。
+     */
     public static final class CompareTypeEnum {
 
-        /** Enum LINES for value: "lines" */
+        /**
+         * Enum LINES for value: "lines"
+         */
         public static final CompareTypeEnum LINES = new CompareTypeEnum("lines");
 
-        /** Enum CONTENTS for value: "contents" */
+        /**
+         * Enum CONTENTS for value: "contents"
+         */
         public static final CompareTypeEnum CONTENTS = new CompareTypeEnum("contents");
 
         private static final Map<String, CompareTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -170,10 +182,14 @@ public class CreateDataLevelCompareReq {
 
     private CompareTypeEnum compareType;
 
-    /** 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。 */
+    /**
+     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。
+     */
     public static final class CompareModeEnum {
 
-        /** Enum QUICK_COMPARISON for value: "quick_comparison" */
+        /**
+         * Enum QUICK_COMPARISON for value: "quick_comparison"
+         */
         public static final CompareModeEnum QUICK_COMPARISON = new CompareModeEnum("quick_comparison");
 
         private static final Map<String, CompareModeEnum> STATIC_FIELDS = createStaticFields();
@@ -262,9 +278,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。
-     * 
-     * @return conflictPolicy */
+    /**
+     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。
+     * @return conflictPolicy
+     */
     public ConflictPolicyEnum getConflictPolicy() {
         return conflictPolicy;
     }
@@ -278,9 +295,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 数据级对比类型，lines-行对比,contents-内容对比。
-     * 
-     * @return compareType */
+    /**
+     * 数据级对比类型，lines-行对比,contents-内容对比。
+     * @return compareType
+     */
     public CompareTypeEnum getCompareType() {
         return compareType;
     }
@@ -294,9 +312,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。
-     * 
-     * @return compareMode */
+    /**
+     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。
+     * @return compareMode
+     */
     public CompareModeEnum getCompareMode() {
         return compareMode;
     }
@@ -310,9 +329,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 对比任务启动时间，取值为空代表立即启动。
-     * 
-     * @return startTime */
+    /**
+     * 对比任务启动时间，取值为空代表立即启动。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -343,9 +363,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 数据级对比的对象。非“快速对比”模式时，compare_object_infos和compare_object_infos_with_token根据链路二选一传值，不允许都为空。
-     * 
-     * @return compareObjectInfos */
+    /**
+     * 数据级对比的对象。非“快速对比”模式时，compare_object_infos和compare_object_infos_with_token根据链路二选一传值，不允许都为空。
+     * @return compareObjectInfos
+     */
     public List<CompareObjectInfo> getCompareObjectInfos() {
         return compareObjectInfos;
     }
@@ -378,9 +399,10 @@ public class CreateDataLevelCompareReq {
         return this;
     }
 
-    /** 数据级对比的对象（Cassandra灾备专用，带token信息）。非“快速对比”模式时，compare_object_infos和compare_object_infos_with_token根据链路二选一传值，不允许都为空。
-     * 
-     * @return compareObjectInfosWithToken */
+    /**
+     * 数据级对比的对象（Cassandra灾备专用，带token信息）。非“快速对比”模式时，compare_object_infos和compare_object_infos_with_token根据链路二选一传值，不允许都为空。
+     * @return compareObjectInfosWithToken
+     */
     public List<CompareObjectInfoWithToken> getCompareObjectInfosWithToken() {
         return compareObjectInfosWithToken;
     }
@@ -428,7 +450,10 @@ public class CreateDataLevelCompareReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

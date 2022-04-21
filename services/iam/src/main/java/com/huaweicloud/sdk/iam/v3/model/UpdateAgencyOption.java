@@ -30,13 +30,19 @@ public class UpdateAgencyOption {
 
     private String description;
 
-    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。 */
+    /**
+     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
+     */
     public static final class DurationEnum {
 
-        /** Enum FOREVER for value: "FOREVER" */
+        /**
+         * Enum FOREVER for value: "FOREVER"
+         */
         public static final DurationEnum FOREVER = new DurationEnum("FOREVER");
 
-        /** Enum ONEDAY for value: "ONEDAY" */
+        /**
+         * Enum ONEDAY for value: "ONEDAY"
+         */
         public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
 
         private static final Map<String, DurationEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +117,10 @@ public class UpdateAgencyOption {
         return this;
     }
 
-    /** 被委托方账号ID。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
-     * 
-     * @return trustDomainId */
+    /**
+     * 被委托方账号ID。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
+     * @return trustDomainId
+     */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -127,9 +134,10 @@ public class UpdateAgencyOption {
         return this;
     }
 
-    /** 被委托方账号名。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
-     * 
-     * @return trustDomainName */
+    /**
+     * 被委托方账号名。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
+     * @return trustDomainName
+     */
     public String getTrustDomainName() {
         return trustDomainName;
     }
@@ -143,9 +151,10 @@ public class UpdateAgencyOption {
         return this;
     }
 
-    /** 委托描述信息，长度不大于255位。四个参数至少填写一个。
-     * 
-     * @return description */
+    /**
+     * 委托描述信息，长度不大于255位。四个参数至少填写一个。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -159,9 +168,10 @@ public class UpdateAgencyOption {
         return this;
     }
 
-    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
-     * 
-     * @return duration */
+    /**
+     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
+     * @return duration
+     */
     public DurationEnum getDuration() {
         return duration;
     }
@@ -202,7 +212,10 @@ public class UpdateAgencyOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

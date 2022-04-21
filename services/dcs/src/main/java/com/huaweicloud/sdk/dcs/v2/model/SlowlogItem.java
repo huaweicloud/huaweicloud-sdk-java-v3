@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 慢日志单个条目 */
+/**
+ * 慢日志单个条目
+ */
 public class SlowlogItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class SlowlogItem {
         return this;
     }
 
-    /** 慢日志的唯一标识
-     * 
-     * @return id */
+    /**
+     * 慢日志的唯一标识
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -54,9 +57,10 @@ public class SlowlogItem {
         return this;
     }
 
-    /** 慢命令
-     * 
-     * @return command */
+    /**
+     * 慢命令
+     * @return command
+     */
     public String getCommand() {
         return command;
     }
@@ -70,9 +74,10 @@ public class SlowlogItem {
         return this;
     }
 
-    /** 执行开始时间,格式为“2020-06-19T07:06:07Z”
-     * 
-     * @return startTime */
+    /**
+     * 执行开始时间,格式为“2020-06-19T07:06:07Z”
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -86,9 +91,10 @@ public class SlowlogItem {
         return this;
     }
 
-    /** 持续时间，单位是ms
-     * 
-     * @return duration */
+    /**
+     * 持续时间，单位是ms
+     * @return duration
+     */
     public String getDuration() {
         return duration;
     }
@@ -102,9 +108,10 @@ public class SlowlogItem {
         return this;
     }
 
-    /** 慢命令所在的分片名称，仅在实例类型为集群时支持
-     * 
-     * @return shardName */
+    /**
+     * 慢命令所在的分片名称，仅在实例类型为集群时支持
+     * @return shardName
+     */
     public String getShardName() {
         return shardName;
     }
@@ -146,7 +153,10 @@ public class SlowlogItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListPartnerCouponsRecordResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,9 +29,10 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
         return this;
     }
 
-    /** 查询记录总数。
-     * 
-     * @return totalCount */
+    /**
+     * 查询记录总数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -59,9 +62,10 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志记录列表。 具体请参见表2。
-     * 
-     * @return records */
+    /**
+     * 日志记录列表。 具体请参见表2。
+     * @return records
+     */
     public List<CouponRecordV2> getRecords() {
         return records;
     }
@@ -98,7 +102,10 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

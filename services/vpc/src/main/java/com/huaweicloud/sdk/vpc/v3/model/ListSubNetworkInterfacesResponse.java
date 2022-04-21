@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSubNetworkInterfacesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
         return this;
     }
 
-    /** 1、功能说明：请求ID 2、取值范围：标准UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
-     * 
-     * @return requestId */
+    /**
+     * 1、功能说明：请求ID 2、取值范围：标准UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -65,9 +68,10 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
         return this;
     }
 
-    /** 1、功能说明：辅助弹性网卡查询对象 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
-     * 
-     * @return subNetworkInterfaces */
+    /**
+     * 1、功能说明：辅助弹性网卡查询对象 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * @return subNetworkInterfaces
+     */
     public List<SubNetworkInterface> getSubNetworkInterfaces() {
         return subNetworkInterfaces;
     }
@@ -90,9 +94,10 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
         return this;
     }
 
-    /** Get pageInfo
-     * 
-     * @return pageInfo */
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -131,7 +136,10 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

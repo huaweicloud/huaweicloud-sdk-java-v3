@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** nodes参数说明。 */
+/**
+ * nodes参数说明。
+ */
 public class GetDetailfNodesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class GetDetailfNodesInfo {
         return this;
     }
 
-    /** DDM实例节点状态。
-     * 
-     * @return status */
+    /**
+     * DDM实例节点状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -44,9 +47,10 @@ public class GetDetailfNodesInfo {
         return this;
     }
 
-    /** DDM实例节点port。
-     * 
-     * @return port */
+    /**
+     * DDM实例节点port。
+     * @return port
+     */
     public String getPort() {
         return port;
     }
@@ -60,9 +64,10 @@ public class GetDetailfNodesInfo {
         return this;
     }
 
-    /** DDM实例节点IP。
-     * 
-     * @return ip */
+    /**
+     * DDM实例节点IP。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -100,7 +105,10 @@ public class GetDetailfNodesInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListOffSiteBackupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,13 +30,19 @@ public class ListOffSiteBackupsRequest {
 
     private String backupId;
 
-    /** 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份 */
+    /**
+     * 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
+     */
     public static final class BackupTypeEnum {
 
-        /** Enum AUTO for value: "auto" */
+        /**
+         * Enum AUTO for value: "auto"
+         */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
 
-        /** Enum INCREMENTAL for value: "incremental" */
+        /**
+         * Enum INCREMENTAL for value: "incremental"
+         */
         public static final BackupTypeEnum INCREMENTAL = new BackupTypeEnum("incremental");
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -147,9 +156,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -163,9 +173,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 备份ID。
-     * 
-     * @return backupId */
+    /**
+     * 备份ID。
+     * @return backupId
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -179,9 +190,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
-     * 
-     * @return backupType */
+    /**
+     * 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
+     * @return backupType
+     */
     public BackupTypeEnum getBackupType() {
         return backupType;
     }
@@ -195,9 +207,11 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -211,9 +225,12 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -227,9 +244,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与end_time必须同时使用。
-     * 
-     * @return beginTime */
+    /**
+     * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与end_time必须同时使用。
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -243,9 +261,10 @@ public class ListOffSiteBackupsRequest {
         return this;
     }
 
-    /** 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与begin_time必须同时使用。
-     * 
-     * @return endTime */
+    /**
+     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与begin_time必须同时使用。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -294,7 +313,10 @@ public class ListOffSiteBackupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

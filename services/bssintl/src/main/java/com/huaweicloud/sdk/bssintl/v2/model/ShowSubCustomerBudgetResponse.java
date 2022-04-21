@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowSubCustomerBudgetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** 初始预算金额。
-     * 
-     * @return budgetAmount */
+    /**
+     * 初始预算金额。
+     * @return budgetAmount
+     */
     public Double getBudgetAmount() {
         return budgetAmount;
     }
@@ -50,9 +53,10 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** 已经使用的预算。该预算存在一定的时延和误差。
-     * 
-     * @return usedAmount */
+    /**
+     * 已经使用的预算。该预算存在一定的时延和误差。
+     * @return usedAmount
+     */
     public Double getUsedAmount() {
         return usedAmount;
     }
@@ -66,9 +70,10 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -82,9 +87,10 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return this;
     }
 
-    /** 币种。 USD：美金
-     * 
-     * @return currency */
+    /**
+     * 币种。 USD：美金
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -125,7 +131,10 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

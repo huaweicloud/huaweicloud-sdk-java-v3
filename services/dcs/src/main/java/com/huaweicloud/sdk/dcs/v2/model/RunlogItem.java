@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 运行日志单个条目 */
+/**
+ * 运行日志单个条目
+ */
 public class RunlogItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 日志的唯一标识
-     * 
-     * @return id */
+    /**
+     * 日志的唯一标识
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 运行日志文件名
-     * 
-     * @return fileName */
+    /**
+     * 运行日志文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -75,9 +79,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 分片名称
-     * 
-     * @return groupName */
+    /**
+     * 分片名称
+     * @return groupName
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -91,9 +96,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 采集运行日志所在副本的IP
-     * 
-     * @return replicationIp */
+    /**
+     * 采集运行日志所在副本的IP
+     * @return replicationIp
+     */
     public String getReplicationIp() {
         return replicationIp;
     }
@@ -107,9 +113,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 获取运行日志状态
-     * 
-     * @return status */
+    /**
+     * 获取运行日志状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -123,9 +130,10 @@ public class RunlogItem {
         return this;
     }
 
-    /** 运行日志采集的日期，格式为\"yyyy-MM-dd\"
-     * 
-     * @return time */
+    /**
+     * 运行日志采集的日期，格式为\"yyyy-MM-dd\"
+     * @return time
+     */
     public String getTime() {
         return time;
     }
@@ -168,7 +176,10 @@ public class RunlogItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

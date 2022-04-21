@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateTriggerRequestBody */
+/**
+ * UpdateTriggerRequestBody
+ */
 public class UpdateTriggerRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateTriggerRequestBody {
         return this;
     }
 
-    /** 是否生效,true启用，false不启用
-     * 
-     * @return enable */
+    /**
+     * 是否生效,true启用，false不启用
+     * @return enable
+     */
     public String getEnable() {
         return enable;
     }
@@ -55,7 +58,10 @@ public class UpdateTriggerRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

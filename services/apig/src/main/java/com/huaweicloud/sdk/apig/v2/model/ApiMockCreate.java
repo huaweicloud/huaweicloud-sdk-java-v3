@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** mock后端详情 */
+/**
+ * mock后端详情
+ */
 public class ApiMockCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ApiMockCreate {
         return this;
     }
 
-    /** 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -49,9 +52,10 @@ public class ApiMockCreate {
         return this;
     }
 
-    /** 返回结果
-     * 
-     * @return resultContent */
+    /**
+     * 返回结果
+     * @return resultContent
+     */
     public String getResultContent() {
         return resultContent;
     }
@@ -65,9 +69,10 @@ public class ApiMockCreate {
         return this;
     }
 
-    /** 版本。字符长度不超过64
-     * 
-     * @return version */
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -81,9 +86,10 @@ public class ApiMockCreate {
         return this;
     }
 
-    /** 后端自定义认证ID
-     * 
-     * @return authorizerId */
+    /**
+     * 后端自定义认证ID
+     * @return authorizerId
+     */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -124,7 +130,10 @@ public class ApiMockCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

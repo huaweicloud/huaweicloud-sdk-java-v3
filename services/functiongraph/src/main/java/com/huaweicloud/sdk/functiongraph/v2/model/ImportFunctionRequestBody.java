@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 导入函数请求结构体 */
+/**
+ * 导入函数请求结构体
+ */
 public class ImportFunctionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ImportFunctionRequestBody {
         return this;
     }
 
-    /** 函数名
-     * 
-     * @return funcName */
+    /**
+     * 函数名
+     * @return funcName
+     */
     public String getFuncName() {
         return funcName;
     }
@@ -49,9 +52,10 @@ public class ImportFunctionRequestBody {
         return this;
     }
 
-    /** 文件名
-     * 
-     * @return fileName */
+    /**
+     * 文件名
+     * @return fileName
+     */
     public String getFileName() {
         return fileName;
     }
@@ -65,9 +69,10 @@ public class ImportFunctionRequestBody {
         return this;
     }
 
-    /** 文件类型
-     * 
-     * @return fileType */
+    /**
+     * 文件类型
+     * @return fileType
+     */
     public String getFileType() {
         return fileType;
     }
@@ -81,9 +86,10 @@ public class ImportFunctionRequestBody {
         return this;
     }
 
-    /** 函数代码。代码必须要进行base64编码
-     * 
-     * @return fileCode */
+    /**
+     * 函数代码。代码必须要进行base64编码
+     * @return fileCode
+     */
     public String getFileCode() {
         return fileCode;
     }
@@ -124,7 +130,10 @@ public class ImportFunctionRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

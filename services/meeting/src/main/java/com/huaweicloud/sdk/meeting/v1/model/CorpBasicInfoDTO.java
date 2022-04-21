@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 企业注册信息 */
+/**
+ * 企业注册信息
+ */
 public class CorpBasicInfoDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业id
-     * 
-     * @return id */
+    /**
+     * 企业id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -94,9 +97,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业名称
-     * 
-     * @return name */
+    /**
+     * 企业名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -110,9 +114,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业所在地
-     * 
-     * @return address */
+    /**
+     * 企业所在地
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -126,9 +131,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 管理员名称
-     * 
-     * @return adminName */
+    /**
+     * 管理员名称
+     * @return adminName
+     */
     public String getAdminName() {
         return adminName;
     }
@@ -142,9 +148,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 管理员账号
-     * 
-     * @return account */
+    /**
+     * 管理员账号
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -158,9 +165,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 管理员手机
-     * 
-     * @return phone */
+    /**
+     * 管理员手机
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -174,9 +182,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 管理员手机所属的国家
-     * 
-     * @return country */
+    /**
+     * 管理员手机所属的国家
+     * @return country
+     */
     public String getCountry() {
         return country;
     }
@@ -190,9 +199,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 管理员邮箱
-     * 
-     * @return email */
+    /**
+     * 管理员邮箱
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -206,9 +216,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 是否发送短信
-     * 
-     * @return enableSMS */
+    /**
+     * 是否发送短信
+     * @return enableSMS
+     */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -222,9 +233,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 是否开启云盘
-     * 
-     * @return enableCloudDisk */
+    /**
+     * 是否开启云盘
+     * @return enableCloudDisk
+     */
     public Boolean getEnableCloudDisk() {
         return enableCloudDisk;
     }
@@ -238,9 +250,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 是否具有pstn功能
-     * 
-     * @return enablePstn */
+    /**
+     * 是否具有pstn功能
+     * @return enablePstn
+     */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -254,9 +267,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 是否支持自动开户
-     * 
-     * @return autoUserCreate */
+    /**
+     * 是否支持自动开户
+     * @return autoUserCreate
+     */
     public Boolean getAutoUserCreate() {
         return autoUserCreate;
     }
@@ -270,9 +284,10 @@ public class CorpBasicInfoDTO {
         return this;
     }
 
-    /** 企业类型
-     * 
-     * @return corpType */
+    /**
+     * 企业类型
+     * @return corpType
+     */
     public Integer getCorpType() {
         return corpType;
     }
@@ -342,7 +357,10 @@ public class CorpBasicInfoDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

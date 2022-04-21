@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ResizeInstanceBody */
+/**
+ * ResizeInstanceBody
+ */
 public class ResizeInstanceBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,13 +38,19 @@ public class ResizeInstanceBody {
 
     private List<String> reservedIp = null;
 
-    /** 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 */
+    /**
+    * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+    */
     public static final class ChangeTypeEnum {
 
-        /** Enum CREATEREPLICATION for value: "createReplication" */
+        /**
+         * Enum CREATEREPLICATION for value: "createReplication"
+         */
         public static final ChangeTypeEnum CREATEREPLICATION = new ChangeTypeEnum("createReplication");
 
-        /** Enum DELETEREPLICATION for value: "deleteReplication" */
+        /**
+         * Enum DELETEREPLICATION for value: "deleteReplication"
+         */
         public static final ChangeTypeEnum DELETEREPLICATION = new ChangeTypeEnum("deleteReplication");
 
         private static final Map<String, ChangeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,11 +135,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** 产品规格编码。具体查询方法如下： - 方法一：查询产品介绍中的[实例规格](https://support.huaweicloud.com/productdesc-dcs/dcs-pd-0522002.html) -
-     * 方法二：登录分布式缓存的控制台界面，点击购买缓存实例，查找对应的实例规格名称 -
-     * 方法三：调用[查询产品规格](https://support.huaweicloud.com/api-dcs/ListFlavors.html)接口查询。
-     * 
-     * @return specCode */
+    /**
+     * 产品规格编码。具体查询方法如下：  - 方法一：查询产品介绍中的[实例规格](https://support.huaweicloud.com/productdesc-dcs/dcs-pd-0522002.html) - 方法二：登录分布式缓存的控制台界面，点击购买缓存实例，查找对应的实例规格名称 - 方法三：调用[查询产品规格](https://support.huaweicloud.com/api-dcs/ListFlavors.html)接口查询。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -145,9 +152,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** 新的缓存实例规格，新的规格必须大于扩容前的规格，单位：GB。 取值包括：4，8，16，32，64 取值必须是当前产品支持的实例规格，请以实际为准。
-     * 
-     * @return newCapacity */
+    /**
+     * 新的缓存实例规格，新的规格必须大于扩容前的规格，单位：GB。 取值包括：4，8，16，32，64 取值必须是当前产品支持的实例规格，请以实际为准。 
+     * @return newCapacity
+     */
     public Integer getNewCapacity() {
         return newCapacity;
     }
@@ -170,9 +178,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** Get bssParam
-     * 
-     * @return bssParam */
+    /**
+     * Get bssParam
+     * @return bssParam
+     */
     public BssParamEntity getBssParam() {
         return bssParam;
     }
@@ -202,9 +211,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** 需要保留的节点ip。cluster集群缩容时需要填写，不填写时系统将随机删除多余的分片
-     * 
-     * @return reservedIp */
+    /**
+     * 需要保留的节点ip。cluster集群缩容时需要填写，不填写时系统将随机删除多余的分片
+     * @return reservedIp
+     */
     public List<String> getReservedIp() {
         return reservedIp;
     }
@@ -218,9 +228,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本
-     * 
-     * @return changeType */
+    /**
+     * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+     * @return changeType
+     */
     public ChangeTypeEnum getChangeType() {
         return changeType;
     }
@@ -250,10 +261,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** Redis 4.0或者5.0主备实例进行添加副本时必选，指定每个副本所在的可用区Code，使用前需要先确认该可用区资源是否售罄。
-     * 具体查询方法，请参考[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html)
-     * 
-     * @return availableZones */
+    /**
+     * Redis 4.0或者5.0主备实例进行添加副本时必选，指定每个副本所在的可用区Code，使用前需要先确认该可用区资源是否售罄。  具体查询方法，请参考[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html) 
+     * @return availableZones
+     */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -283,10 +294,10 @@ public class ResizeInstanceBody {
         return this;
     }
 
-    /** Redis 4.0或者5.0主备实例进行删除副本时必选，指定需要删除的节点ID，目前仅支持一次删除一个副本。
-     * 节点ID查询方法，请参考[查询分片信息](https://support.huaweicloud.com/api-dcs/ListGroupReplicationInfo.html)
-     * 
-     * @return nodeList */
+    /**
+     * Redis 4.0或者5.0主备实例进行删除副本时必选，指定需要删除的节点ID，目前仅支持一次删除一个副本。  节点ID查询方法，请参考[查询分片信息](https://support.huaweicloud.com/api-dcs/ListGroupReplicationInfo.html) 
+     * @return nodeList
+     */
     public List<String> getNodeList() {
         return nodeList;
     }
@@ -333,7 +344,10 @@ public class ResizeInstanceBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

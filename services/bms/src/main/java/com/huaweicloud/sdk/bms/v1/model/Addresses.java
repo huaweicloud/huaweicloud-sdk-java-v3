@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** addresses字段数据结构说明 */
+/**
+ * addresses字段数据结构说明
+ */
 public class Addresses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Addresses {
         return this;
     }
 
-    /** 裸金属服务器所属网络信息。key表示裸金属服务器使用的虚拟私有云的ID。value为网络详细信息
-     * 
-     * @return vpcId */
+    /**
+     * 裸金属服务器所属网络信息。key表示裸金属服务器使用的虚拟私有云的ID。value为网络详细信息
+     * @return vpcId
+     */
     public List<Address> getVpcId() {
         return vpcId;
     }
@@ -74,7 +77,10 @@ public class Addresses {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

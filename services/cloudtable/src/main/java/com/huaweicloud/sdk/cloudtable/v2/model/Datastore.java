@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 创建集群数据库参数。 */
+/**
+ * 创建集群数据库参数。
+ */
 public class Datastore {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Datastore {
         return this;
     }
 
-    /** controller版本号，默认1.0.6
-     * 
-     * @return version */
+    /**
+     * controller版本号，默认1.0.6
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -39,9 +42,10 @@ public class Datastore {
         return this;
     }
 
-    /** 集群数据库类型
-     * 
-     * @return type */
+    /**
+     * 集群数据库类型
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -77,7 +81,10 @@ public class Datastore {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

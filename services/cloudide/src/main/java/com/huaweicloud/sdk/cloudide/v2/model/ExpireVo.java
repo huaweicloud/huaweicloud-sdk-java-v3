@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ExpireVo */
+/**
+ * ExpireVo
+ */
 public class ExpireVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class ExpireVo {
         return this;
     }
 
-    /** 过期时间。UNIX时间戳，单位毫秒。eg:1635905480465 minimum: -1 maximum: 9999999999999
-     * 
-     * @return expiration */
+    /**
+     * 过期时间。UNIX时间戳，单位毫秒。eg:1635905480465
+     * minimum: -1
+     * maximum: 9999999999999
+     * @return expiration
+     */
     public Long getExpiration() {
         return expiration;
     }
@@ -44,9 +49,10 @@ public class ExpireVo {
         return this;
     }
 
-    /** CloudIDE实例id
-     * 
-     * @return instanceId */
+    /**
+     * CloudIDE实例id
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -60,9 +66,12 @@ public class ExpireVo {
         return this;
     }
 
-    /** CloudIDE实例自动休眠时长，单位‘分钟’ minimum: -1 maximum: 1440
-     * 
-     * @return interval */
+    /**
+     * CloudIDE实例自动休眠时长，单位‘分钟’
+     * minimum: -1
+     * maximum: 1440
+     * @return interval
+     */
     public Long getInterval() {
         return interval;
     }
@@ -100,7 +109,10 @@ public class ExpireVo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

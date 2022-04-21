@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IncidentDetailExtInfoV2 */
+/**
+ * IncidentDetailExtInfoV2
+ */
 public class IncidentDetailExtInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 国家码
-     * 
-     * @return areaCode */
+    /**
+     * 国家码
+     * @return areaCode
+     */
     public String getAreaCode() {
         return areaCode;
     }
@@ -64,9 +67,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 提醒手机
-     * 
-     * @return remindMobile */
+    /**
+     * 提醒手机
+     * @return remindMobile
+     */
     public String getRemindMobile() {
         return remindMobile;
     }
@@ -80,9 +84,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 提醒邮箱
-     * 
-     * @return remindMail */
+    /**
+     * 提醒邮箱
+     * @return remindMail
+     */
     public String getRemindMail() {
         return remindMail;
     }
@@ -96,9 +101,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 联系方式类型
-     * 
-     * @return contactType */
+    /**
+     * 联系方式类型
+     * @return contactType
+     */
     public String getContactType() {
         return contactType;
     }
@@ -112,9 +118,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 提醒时间
-     * 
-     * @return remindTime */
+    /**
+     * 提醒时间
+     * @return remindTime
+     */
     public String getRemindTime() {
         return remindTime;
     }
@@ -128,9 +135,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** 抄送邮箱
-     * 
-     * @return ccEmail */
+    /**
+     * 抄送邮箱
+     * @return ccEmail
+     */
     public String getCcEmail() {
         return ccEmail;
     }
@@ -144,9 +152,10 @@ public class IncidentDetailExtInfoV2 {
         return this;
     }
 
-    /** ISV商品id
-     * 
-     * @return commodityId */
+    /**
+     * ISV商品id
+     * @return commodityId
+     */
     public String getCommodityId() {
         return commodityId;
     }
@@ -193,7 +202,10 @@ public class IncidentDetailExtInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

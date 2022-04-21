@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FullSql */
+/**
+ * FullSql
+ */
 public class FullSql {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,9 +85,10 @@ public class FullSql {
         return this;
     }
 
-    /** SQL语句。
-     * 
-     * @return sql */
+    /**
+     * SQL语句。
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -99,9 +102,10 @@ public class FullSql {
         return this;
     }
 
-    /** 操作类型。
-     * 
-     * @return operateType */
+    /**
+     * 操作类型。
+     * @return operateType
+     */
     public String getOperateType() {
         return operateType;
     }
@@ -115,9 +119,10 @@ public class FullSql {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -131,9 +136,10 @@ public class FullSql {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorNo */
+    /**
+     * 错误码。
+     * @return errorNo
+     */
     public String getErrorNo() {
         return errorNo;
     }
@@ -147,9 +153,10 @@ public class FullSql {
         return this;
     }
 
-    /** 数据库名。
-     * 
-     * @return database */
+    /**
+     * 数据库名。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -163,9 +170,10 @@ public class FullSql {
         return this;
     }
 
-    /** 客户端。
-     * 
-     * @return client */
+    /**
+     * 客户端。
+     * @return client
+     */
     public String getClient() {
         return client;
     }
@@ -179,9 +187,10 @@ public class FullSql {
         return this;
     }
 
-    /** 线程ID。
-     * 
-     * @return threadId */
+    /**
+     * 线程ID。
+     * @return threadId
+     */
     public String getThreadId() {
         return threadId;
     }
@@ -195,9 +204,10 @@ public class FullSql {
         return this;
     }
 
-    /** 用户。
-     * 
-     * @return user */
+    /**
+     * 用户。
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -211,9 +221,10 @@ public class FullSql {
         return this;
     }
 
-    /** 执行开始时间（Unix timestamp），单位：毫秒。
-     * 
-     * @return executeAt */
+    /**
+     * 执行开始时间（Unix timestamp），单位：毫秒。
+     * @return executeAt
+     */
     public Long getExecuteAt() {
         return executeAt;
     }
@@ -227,9 +238,10 @@ public class FullSql {
         return this;
     }
 
-    /** 执行耗时（毫秒）。
-     * 
-     * @return queryTime */
+    /**
+     * 执行耗时（毫秒）。
+     * @return queryTime
+     */
     public Double getQueryTime() {
         return queryTime;
     }
@@ -243,9 +255,10 @@ public class FullSql {
         return this;
     }
 
-    /** 锁等待耗时（毫秒）。
-     * 
-     * @return lockTime */
+    /**
+     * 锁等待耗时（毫秒）。
+     * @return lockTime
+     */
     public Double getLockTime() {
         return lockTime;
     }
@@ -259,9 +272,10 @@ public class FullSql {
         return this;
     }
 
-    /** 扫描行数。
-     * 
-     * @return rowsExamined */
+    /**
+     * 扫描行数。
+     * @return rowsExamined
+     */
     public Long getRowsExamined() {
         return rowsExamined;
     }
@@ -275,9 +289,10 @@ public class FullSql {
         return this;
     }
 
-    /** 返回行数。
-     * 
-     * @return rowsSent */
+    /**
+     * 返回行数。
+     * @return rowsSent
+     */
     public Long getRowsSent() {
         return rowsSent;
     }
@@ -291,9 +306,10 @@ public class FullSql {
         return this;
     }
 
-    /** 更新行数。
-     * 
-     * @return rowsAffected */
+    /**
+     * 更新行数。
+     * @return rowsAffected
+     */
     public Long getRowsAffected() {
         return rowsAffected;
     }
@@ -362,7 +378,10 @@ public class FullSql {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

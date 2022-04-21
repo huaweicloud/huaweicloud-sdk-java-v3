@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 企业的资源信息 */
+/**
+ * 企业的资源信息
+ */
 public class AddCorpResDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class AddCorpResDTO {
         return this;
     }
 
-    /** 企业待添加的资源列表
-     * 
-     * @return resource */
+    /**
+     * 企业待添加的资源列表
+     * @return resource
+     */
     public List<ResourceDTO> getResource() {
         return resource;
     }
@@ -74,7 +77,10 @@ public class AddCorpResDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

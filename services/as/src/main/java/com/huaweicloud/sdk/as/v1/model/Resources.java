@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Resources */
+/**
+ * Resources
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源详情ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源详情ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -52,9 +55,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源详情。
-     * 
-     * @return resourceDetail */
+    /**
+     * 资源详情。
+     * @return resourceDetail
+     */
     public String getResourceDetail() {
         return resourceDetail;
     }
@@ -84,9 +88,10 @@ public class Resources {
         return this;
     }
 
-    /** 标签列表，没有标签默认为空数组。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，没有标签默认为空数组。
+     * @return tags
+     */
     public List<ResourceTags> getTags() {
         return tags;
     }
@@ -100,9 +105,10 @@ public class Resources {
         return this;
     }
 
-    /** 资源名称，没有默认为空字符串。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称，没有默认为空字符串。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -142,7 +148,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

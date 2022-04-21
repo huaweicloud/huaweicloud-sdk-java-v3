@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** MP4RecordConfig */
+/**
+ * MP4RecordConfig
+ */
 public class MP4RecordConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 周期录制时长。 取值范围：[60，10800]。 单位：秒。 minimum: 60 maximum: 10800
-     * 
-     * @return recordCycle */
+    /**
+     *  周期录制时长。  取值范围：[60，10800]。  单位：秒。 
+     * minimum: 60
+     * maximum: 10800
+     * @return recordCycle
+     */
     public Integer getRecordCycle() {
         return recordCycle;
     }
@@ -44,10 +49,10 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 录制文件含路径和文件名的前缀。 默认{app_id}/{record_format}/{stream}\\_{file_start_time}/{stream}\\_{file_start_time} 上述特殊变量含义： -
-     * {app_id}：应用id - {record_format}：录制格式 - {stream}：流名 - {file_start_time}：文件生成时间
-     * 
-     * @return recordPrefix */
+    /**
+     * 录制文件含路径和文件名的前缀。  默认{app_id}/{record_format}/{stream}\\_{file_start_time}/{stream}\\_{file_start_time}  上述特殊变量含义： - {app_id}：应用id - {record_format}：录制格式 - {stream}：流名 - {file_start_time}：文件生成时间 
+     * @return recordPrefix
+     */
     public String getRecordPrefix() {
         return recordPrefix;
     }
@@ -61,9 +66,12 @@ public class MP4RecordConfig {
         return this;
     }
 
-    /** 录制MP4拼接时长，如果流中断超过该时间，则生成新文件。 取值范围：[0，300]，缺省为0。 单位：秒。 如果为0表示流中断就生成新文件。 minimum: 0 maximum: 300
-     * 
-     * @return recordMaxDurationToMergeFile */
+    /**
+     * 录制MP4拼接时长，如果流中断超过该时间，则生成新文件。  取值范围：[0，300]，缺省为0。  单位：秒。  如果为0表示流中断就生成新文件。 
+     * minimum: 0
+     * maximum: 300
+     * @return recordMaxDurationToMergeFile
+     */
     public Integer getRecordMaxDurationToMergeFile() {
         return recordMaxDurationToMergeFile;
     }
@@ -104,7 +112,10 @@ public class MP4RecordConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

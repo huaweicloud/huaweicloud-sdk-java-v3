@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class ListTagsRequest {
 
     private Integer page;
 
-    /** 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared */
+    /**
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     */
     public static final class ImagetypeEnum {
 
-        /** Enum GOLD for value: "gold" */
+        /**
+         * Enum GOLD for value: "gold"
+         */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
 
-        /** Enum PRIVATE for value: "private" */
+        /**
+         * Enum PRIVATE for value: "private"
+         */
         public static final ImagetypeEnum PRIVATE = new ImagetypeEnum("private");
 
-        /** Enum SHARED for value: "shared" */
+        /**
+         * Enum SHARED for value: "shared"
+         */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
         private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -108,23 +118,34 @@ public class ListTagsRequest {
 
     private String id;
 
-    /** 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。
-     * active：表示镜像可以正常使用。 */
+    /**
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
+     */
     public static final class StatusEnum {
 
-        /** Enum QUEUED for value: "queued" */
+        /**
+         * Enum QUEUED for value: "queued"
+         */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
 
-        /** Enum SAVING for value: "saving" */
+        /**
+         * Enum SAVING for value: "saving"
+         */
         public static final StatusEnum SAVING = new StatusEnum("saving");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum KILLED for value: "killed" */
+        /**
+         * Enum KILLED for value: "killed"
+         */
         public static final StatusEnum KILLED = new StatusEnum("killed");
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -212,16 +233,24 @@ public class ListTagsRequest {
 
     private String platform;
 
-    /** 镜像系统类型，取值如下：Linux,Windows,Other */
+    /**
+     * 镜像系统类型，取值如下：Linux,Windows,Other
+     */
     public static final class OsTypeEnum {
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum OTHER for value: "Other" */
+        /**
+         * Enum OTHER for value: "Other"
+         */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -292,16 +321,24 @@ public class ListTagsRequest {
 
     private OsTypeEnum osType;
 
-    /** 成员状态。目前取值有accepted、rejected、pending。 */
+    /**
+     * 成员状态。目前取值有accepted、rejected、pending。
+     */
     public static final class MemberStatusEnum {
 
-        /** Enum ACCEPTED for value: "accepted" */
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
         public static final MemberStatusEnum ACCEPTED = new MemberStatusEnum("accepted");
 
-        /** Enum REJECTED for value: "rejected" */
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
         public static final MemberStatusEnum REJECTED = new MemberStatusEnum("rejected");
 
-        /** Enum PENDING for value: "pending" */
+        /**
+         * Enum PENDING for value: "pending"
+         */
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
 
         private static final Map<String, MemberStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -372,16 +409,24 @@ public class ListTagsRequest {
 
     private MemberStatusEnum memberStatus;
 
-    /** 镜像使用环境类型：FusionCompute、Ironic、DataImage。 */
+    /**
+     * 镜像使用环境类型：FusionCompute、Ironic、DataImage。
+     */
     public static final class VirtualEnvTypeEnum {
 
-        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
+        /**
+         * Enum FUSIONCOMPUTE for value: "FusionCompute"
+         */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
 
-        /** Enum IRONIC for value: "Ironic" */
+        /**
+         * Enum IRONIC for value: "Ironic"
+         */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
 
-        /** Enum DATAIMAGE for value: "DataImage" */
+        /**
+         * Enum DATAIMAGE for value: "DataImage"
+         */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
 
         private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -457,13 +502,19 @@ public class ListTagsRequest {
 
     private String enterpriseProjectId;
 
-    /** 镜像架构类型。取值包括：x86，arm */
+    /**
+     * 镜像架构类型。取值包括：x86，arm
+     */
     public static final class ArchitectureEnum {
 
-        /** Enum X86 for value: "x86" */
+        /**
+         * Enum X86 for value: "x86"
+         */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
 
-        /** Enum ARM for value: "arm" */
+        /**
+         * Enum ARM for value: "arm"
+         */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
 
         private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
@@ -548,9 +599,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 用于分页，表示查询几条记录，取值为整数，默认为所有。
-     * 
-     * @return limit */
+    /**
+     * 用于分页，表示查询几条记录，取值为整数，默认为所有。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -564,9 +616,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 页码，表示需要查询第几页的数据。默认值为1。
-     * 
-     * @return page */
+    /**
+     * 页码，表示需要查询第几页的数据。默认值为1。
+     * @return page
+     */
     public Integer getPage() {
         return page;
     }
@@ -580,9 +633,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
-     * 
-     * @return imagetype */
+    /**
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     * @return imagetype
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
     public ImagetypeEnum getImagetype() {
@@ -598,9 +652,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像ID。
-     * 
-     * @return id */
+    /**
+     * 镜像ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -614,10 +669,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。
-     * active：表示镜像可以正常使用。
-     * 
-     * @return status */
+    /**
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -631,9 +686,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像名称。
-     * 
-     * @return name */
+    /**
+     * 镜像名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -647,9 +703,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像运行需要的最小磁盘，单位为GB 。
-     * 
-     * @return minDisk */
+    /**
+     * 镜像运行需要的最小磁盘，单位为GB 。
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -663,9 +720,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像平台分类。
-     * 
-     * @return platform */
+    /**
+     * 镜像平台分类。
+     * @return platform
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
     public String getPlatform() {
@@ -681,9 +739,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像系统类型，取值如下：Linux,Windows,Other
-     * 
-     * @return osType */
+    /**
+     * 镜像系统类型，取值如下：Linux,Windows,Other
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
@@ -699,9 +758,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 成员状态。目前取值有accepted、rejected、pending。
-     * 
-     * @return memberStatus */
+    /**
+     * 成员状态。目前取值有accepted、rejected、pending。
+     * @return memberStatus
+     */
     public MemberStatusEnum getMemberStatus() {
         return memberStatus;
     }
@@ -715,9 +775,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像使用环境类型：FusionCompute、Ironic、DataImage。
-     * 
-     * @return virtualEnvType */
+    /**
+     * 镜像使用环境类型：FusionCompute、Ironic、DataImage。
+     * @return virtualEnvType
+     */
     public VirtualEnvTypeEnum getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -731,9 +792,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 表示查询某个企业项目下的镜像。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 表示查询某个企业项目下的镜像。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -747,9 +809,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像架构类型。取值包括：x86，arm
-     * 
-     * @return architecture */
+    /**
+     * 镜像架构类型。取值包括：x86，arm
+     * @return architecture
+     */
     public ArchitectureEnum getArchitecture() {
         return architecture;
     }
@@ -763,11 +826,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于
-     * 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤：
-     * created_at=gt:2018-10-28T10:00:00Z
-     * 
-     * @return createdAt */
+    /**
+     * 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at=gt:2018-10-28T10:00:00Z
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -781,11 +843,10 @@ public class ListTagsRequest {
         return this;
     }
 
-    /** 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于
-     * 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤：
-     * updated_at=gt:2018-10-28T10:00:00Z
-     * 
-     * @return updatedAt */
+    /**
+     * 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at=gt:2018-10-28T10:00:00Z
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -859,7 +920,10 @@ public class ListTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

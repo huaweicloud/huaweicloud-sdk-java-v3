@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新容灾演练名称数据结构 */
+/**
+ * 更新容灾演练名称数据结构
+ */
 public class UpdateDisasterRecoveryDrillNameRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateDisasterRecoveryDrillNameRequestParams {
         return this;
     }
 
-    /** 容灾演练的名称。最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
-     * 
-     * @return name */
+    /**
+     * 容灾演练的名称。最大支持长度为64个字节。只包含中文字符、英文字母（a～ｚ、Ａ～Ｚ）、数字（０~９）、小数点（．）、下划线（_）、中划线（-）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -56,7 +59,10 @@ public class UpdateDisasterRecoveryDrillNameRequestParams {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

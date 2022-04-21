@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 数据库对象选择信息 */
+/**
+ * 数据库对象选择信息
+ */
 public class DatabaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,19 +25,29 @@ public class DatabaseInfo {
 
     private String parentId;
 
-    /** 类型 */
+    /**
+     * 类型
+     */
     public static final class ObjectTypeEnum {
 
-        /** Enum DATABASE for value: "database" */
+        /**
+         * Enum DATABASE for value: "database"
+         */
         public static final ObjectTypeEnum DATABASE = new ObjectTypeEnum("database");
 
-        /** Enum TABLE for value: "table" */
+        /**
+         * Enum TABLE for value: "table"
+         */
         public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("table");
 
-        /** Enum SCHEMA for value: "schema" */
+        /**
+         * Enum SCHEMA for value: "schema"
+         */
         public static final ObjectTypeEnum SCHEMA = new ObjectTypeEnum("schema");
 
-        /** Enum VIEW for value: "view" */
+        /**
+         * Enum VIEW for value: "view"
+         */
         public static final ObjectTypeEnum VIEW = new ObjectTypeEnum("view");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +139,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** object_type为database时，为库名；object_type为table或者view时，字段值参考示例。
-     * 
-     * @return id */
+    /**
+     * object_type为database时，为库名；object_type为table或者view时，字段值参考示例。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -143,9 +156,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** object_type为table或view时需要填写，为库名
-     * 
-     * @return parentId */
+    /**
+     * object_type为table或view时需要填写，为库名
+     * @return parentId
+     */
     public String getParentId() {
         return parentId;
     }
@@ -159,9 +173,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** 类型
-     * 
-     * @return objectType */
+    /**
+     * 类型
+     * @return objectType
+     */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -175,9 +190,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** 数据库对象名称，库名、表名、视图名
-     * 
-     * @return objectName */
+    /**
+     * 数据库对象名称，库名、表名、视图名
+     * @return objectName
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -191,9 +207,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** 别名，映射的新名称。
-     * 
-     * @return objectAliasName */
+    /**
+     * 别名，映射的新名称。
+     * @return objectAliasName
+     */
     public String getObjectAliasName() {
         return objectAliasName;
     }
@@ -207,9 +224,10 @@ public class DatabaseInfo {
         return this;
     }
 
-    /** 是否选中，值为true会进行迁移，false该数据库对象不会迁移，partial为迁移库下面的部分表，不填默认为false
-     * 
-     * @return select */
+    /**
+     * 是否选中，值为true会进行迁移，false该数据库对象不会迁移，partial为迁移库下面的部分表，不填默认为false
+     * @return select
+     */
     public String getSelect() {
         return select;
     }
@@ -253,7 +271,10 @@ public class DatabaseInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

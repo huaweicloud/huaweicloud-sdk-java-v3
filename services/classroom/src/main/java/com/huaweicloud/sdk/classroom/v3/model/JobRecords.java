@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** JobRecords */
+/**
+ * JobRecords
+ */
 public class JobRecords {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 第XX次提交
-     * 
-     * @return name */
+    /**
+     * 第XX次提交
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -69,9 +72,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题判题得分
-     * 
-     * @return autoScore */
+    /**
+     * 习题判题得分
+     * @return autoScore
+     */
     public Integer getAutoScore() {
         return autoScore;
     }
@@ -85,9 +89,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题用例通过数
-     * 
-     * @return casePassCount */
+    /**
+     * 习题用例通过数
+     * @return casePassCount
+     */
     public Integer getCasePassCount() {
         return casePassCount;
     }
@@ -101,9 +106,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题用例总数
-     * 
-     * @return exeCaseCount */
+    /**
+     * 习题用例总数
+     * @return exeCaseCount
+     */
     public Integer getExeCaseCount() {
         return exeCaseCount;
     }
@@ -117,9 +123,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 代码行数
-     * 
-     * @return codeLine */
+    /**
+     * 代码行数
+     * @return codeLine
+     */
     public Integer getCodeLine() {
         return codeLine;
     }
@@ -133,9 +140,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return commitTime */
+    /**
+     * 习题提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return commitTime
+     */
     public String getCommitTime() {
         return commitTime;
     }
@@ -149,9 +157,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题圈复杂度
-     * 
-     * @return complexityFileAvg */
+    /**
+     * 习题圈复杂度
+     * @return complexityFileAvg
+     */
     public String getComplexityFileAvg() {
         return complexityFileAvg;
     }
@@ -165,9 +174,10 @@ public class JobRecords {
         return this;
     }
 
-    /** 习题判题耗时(毫秒)
-     * 
-     * @return autoScoreUsingTime */
+    /**
+     * 习题判题耗时(毫秒)
+     * @return autoScoreUsingTime
+     */
     public Integer getAutoScoreUsingTime() {
         return autoScoreUsingTime;
     }
@@ -222,7 +232,10 @@ public class JobRecords {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

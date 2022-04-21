@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 云连接路由实例。 */
+/**
+ * 云连接路由实例。
+ */
 public class CloudConnectionRoute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,13 +40,19 @@ public class CloudConnectionRoute {
 
     private String instanceId;
 
-    /** 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。 */
+    /**
+     * 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。
+     */
     public static final class TypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final TypeEnum VPC = new TypeEnum("vpc");
 
-        /** Enum VGW for value: "vgw" */
+        /**
+         * Enum VGW for value: "vgw"
+         */
         public static final TypeEnum VGW = new TypeEnum("vgw");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -129,9 +137,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 云连接实例路由的ID。
-     * 
-     * @return id */
+    /**
+     * 云连接实例路由的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -145,9 +154,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 云连接实例的ID。
-     * 
-     * @return cloudConnectionId */
+    /**
+     * 云连接实例的ID。
+     * @return cloudConnectionId
+     */
     public String getCloudConnectionId() {
         return cloudConnectionId;
     }
@@ -161,9 +171,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 帐号ID。
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -177,9 +188,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 网络实例的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 网络实例的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -193,9 +205,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 路由条目下一跳指向的网络实例的ID。
-     * 
-     * @return instanceId */
+    /**
+     * 路由条目下一跳指向的网络实例的ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -209,9 +222,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。
-     * 
-     * @return type */
+    /**
+     * 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -225,9 +239,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** Region的ID。
-     * 
-     * @return regionId */
+    /**
+     * Region的ID。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -241,9 +256,10 @@ public class CloudConnectionRoute {
         return this;
     }
 
-    /** 目的地址。
-     * 
-     * @return destination */
+    /**
+     * 目的地址。
+     * @return destination
+     */
     public String getDestination() {
         return destination;
     }
@@ -292,7 +308,10 @@ public class CloudConnectionRoute {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

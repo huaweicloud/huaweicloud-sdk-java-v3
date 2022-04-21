@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数流批量删除Body体 */
+/**
+ * 函数流批量删除Body体
+ */
 public class BatchDeleteWorkflowsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchDeleteWorkflowsRequestBody {
         return this;
     }
 
-    /** 流程URN列表
-     * 
-     * @return workflowUrns */
+    /**
+     * 流程URN列表
+     * @return workflowUrns
+     */
     public List<String> getWorkflowUrns() {
         return workflowUrns;
     }
@@ -74,7 +77,10 @@ public class BatchDeleteWorkflowsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

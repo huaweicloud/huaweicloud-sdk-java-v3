@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListSharesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ListSharesResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的列表。
-     * 
-     * @return shares */
+    /**
+     * SFS Turbo文件系统的列表。
+     * @return shares
+     */
     public List<Shares> getShares() {
         return shares;
     }
@@ -59,9 +62,10 @@ public class ListSharesResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的数量。
-     * 
-     * @return count */
+    /**
+     * SFS Turbo文件系统的数量。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -98,7 +102,10 @@ public class ListSharesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

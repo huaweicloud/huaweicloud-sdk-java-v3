@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,16 +25,24 @@ public class ListScalingPoliciesRequest {
 
     private String scalingPolicyName;
 
-    /** 策略类型。 */
+    /**
+     * 策略类型。
+     */
     public static final class ScalingPolicyTypeEnum {
 
-        /** Enum ALARM for value: "ALARM" */
+        /**
+         * Enum ALARM for value: "ALARM"
+         */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
 
-        /** Enum SCHEDULED for value: "SCHEDULED" */
+        /**
+         * Enum SCHEDULED for value: "SCHEDULED"
+         */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
 
-        /** Enum RECURRENCE for value: "RECURRENCE" */
+        /**
+         * Enum RECURRENCE for value: "RECURRENCE"
+         */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -123,9 +133,10 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -139,9 +150,10 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略名称。
-     * 
-     * @return scalingPolicyName */
+    /**
+     * 伸缩策略名称。
+     * @return scalingPolicyName
+     */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -155,9 +167,10 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 策略类型。
-     * 
-     * @return scalingPolicyType */
+    /**
+     * 策略类型。
+     * @return scalingPolicyType
+     */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -171,9 +184,10 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 伸缩策略ID。
-     * 
-     * @return scalingPolicyId */
+    /**
+     * 伸缩策略ID。
+     * @return scalingPolicyId
+     */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -187,9 +201,10 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -203,9 +218,12 @@ public class ListScalingPoliciesRequest {
         return this;
     }
 
-    /** 查询记录数，默认20，最大100。 minimum: 0 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 查询记录数，默认20，最大100。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -250,7 +268,10 @@ public class ListScalingPoliciesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

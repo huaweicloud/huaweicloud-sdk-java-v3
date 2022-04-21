@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用API总次数
-     * 
-     * @return total */
+    /**
+     * 调用API总次数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -58,9 +61,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用API成功次数
-     * 
-     * @return succeed */
+    /**
+     * 调用API成功次数
+     * @return succeed
+     */
     public Integer getSucceed() {
         return succeed;
     }
@@ -74,9 +78,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** 调用API失败次数
-     * 
-     * @return failed */
+    /**
+     * 调用API失败次数
+     * @return failed
+     */
     public Integer getFailed() {
         return failed;
     }
@@ -107,9 +112,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** API调用记录列表
-     * 
-     * @return openapiCalledRecords */
+    /**
+     * API调用记录列表
+     * @return openapiCalledRecords
+     */
     public List<OpenApiCalledRecord> getOpenapiCalledRecords() {
         return openapiCalledRecords;
     }
@@ -123,9 +129,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取下一页所需的标识符。
-     * 
-     * @return nextMarker */
+    /**
+     * 获取下一页所需的标识符。
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -168,7 +175,10 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

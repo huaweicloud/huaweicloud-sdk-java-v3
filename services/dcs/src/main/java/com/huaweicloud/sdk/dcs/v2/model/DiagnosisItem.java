@@ -13,37 +13,59 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 诊断项 */
+/**
+ * 诊断项
+ */
 public class DiagnosisItem {
 
-    /** 诊断项名称 */
+    /**
+     * 诊断项名称
+     */
     public static final class NameEnum {
 
-        /** Enum CONNECTION_NUM for value: "connection_num" */
+        /**
+         * Enum CONNECTION_NUM for value: "connection_num"
+         */
         public static final NameEnum CONNECTION_NUM = new NameEnum("connection_num");
 
-        /** Enum RX_CONTROLLED for value: "rx_controlled" */
+        /**
+         * Enum RX_CONTROLLED for value: "rx_controlled"
+         */
         public static final NameEnum RX_CONTROLLED = new NameEnum("rx_controlled");
 
-        /** Enum PERSISTENCE for value: "persistence" */
+        /**
+         * Enum PERSISTENCE for value: "persistence"
+         */
         public static final NameEnum PERSISTENCE = new NameEnum("persistence");
 
-        /** Enum CENTRALIZED_EXPIRATION for value: "centralized_expiration" */
+        /**
+         * Enum CENTRALIZED_EXPIRATION for value: "centralized_expiration"
+         */
         public static final NameEnum CENTRALIZED_EXPIRATION = new NameEnum("centralized_expiration");
 
-        /** Enum INNER_MEMORY_FRAGMENTATION for value: "inner_memory_fragmentation" */
+        /**
+         * Enum INNER_MEMORY_FRAGMENTATION for value: "inner_memory_fragmentation"
+         */
         public static final NameEnum INNER_MEMORY_FRAGMENTATION = new NameEnum("inner_memory_fragmentation");
 
-        /** Enum TIME_CONSUMING_COMMANDS for value: "time_consuming_commands" */
+        /**
+         * Enum TIME_CONSUMING_COMMANDS for value: "time_consuming_commands"
+         */
         public static final NameEnum TIME_CONSUMING_COMMANDS = new NameEnum("time_consuming_commands");
 
-        /** Enum HIT_RATIO for value: "hit_ratio" */
+        /**
+         * Enum HIT_RATIO for value: "hit_ratio"
+         */
         public static final NameEnum HIT_RATIO = new NameEnum("hit_ratio");
 
-        /** Enum MEMORY_USAGE for value: "memory_usage" */
+        /**
+         * Enum MEMORY_USAGE for value: "memory_usage"
+         */
         public static final NameEnum MEMORY_USAGE = new NameEnum("memory_usage");
 
-        /** Enum CPU_USAGE for value: "cpu_usage" */
+        /**
+         * Enum CPU_USAGE for value: "cpu_usage"
+         */
         public static final NameEnum CPU_USAGE = new NameEnum("cpu_usage");
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
@@ -135,16 +157,24 @@ public class DiagnosisItem {
 
     private List<ConclusionItem> adviceIds = null;
 
-    /** 诊断结果 */
+    /**
+    * 诊断结果
+    */
     public static final class ResultEnum {
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final ResultEnum FAILED = new ResultEnum("failed");
 
-        /** Enum ABNORMAL for value: "abnormal" */
+        /**
+         * Enum ABNORMAL for value: "abnormal"
+         */
         public static final ResultEnum ABNORMAL = new ResultEnum("abnormal");
 
-        /** Enum NORMAL for value: "normal" */
+        /**
+         * Enum NORMAL for value: "normal"
+         */
         public static final ResultEnum NORMAL = new ResultEnum("normal");
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
@@ -220,9 +250,10 @@ public class DiagnosisItem {
         return this;
     }
 
-    /** 诊断项名称
-     * 
-     * @return name */
+    /**
+     * 诊断项名称
+     * @return name
+     */
     public NameEnum getName() {
         return name;
     }
@@ -252,9 +283,10 @@ public class DiagnosisItem {
         return this;
     }
 
-    /** 原因ID列表
-     * 
-     * @return causeIds */
+    /**
+     * 原因ID列表
+     * @return causeIds
+     */
     public List<ConclusionItem> getCauseIds() {
         return causeIds;
     }
@@ -284,9 +316,10 @@ public class DiagnosisItem {
         return this;
     }
 
-    /** 影响ID列表
-     * 
-     * @return impactIds */
+    /**
+     * 影响ID列表
+     * @return impactIds
+     */
     public List<ConclusionItem> getImpactIds() {
         return impactIds;
     }
@@ -316,9 +349,10 @@ public class DiagnosisItem {
         return this;
     }
 
-    /** 建议ID列表
-     * 
-     * @return adviceIds */
+    /**
+     * 建议ID列表
+     * @return adviceIds
+     */
     public List<ConclusionItem> getAdviceIds() {
         return adviceIds;
     }
@@ -332,9 +366,10 @@ public class DiagnosisItem {
         return this;
     }
 
-    /** 诊断结果
-     * 
-     * @return result */
+    /**
+     * 诊断结果
+     * @return result
+     */
     public ResultEnum getResult() {
         return result;
     }
@@ -376,7 +411,10 @@ public class DiagnosisItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

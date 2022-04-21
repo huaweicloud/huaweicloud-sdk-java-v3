@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 函数异步配置请求体。 */
+/**
+ * 函数异步配置请求体。
+ */
 public class UpdateFunctionAsyncInvokeConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,12 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         return this;
     }
 
-    /** 消息最大存活时长，取值范围[1，86400]，单位：秒，默认值为3600。 minimum: 1 maximum: 86400
-     * 
-     * @return maxAsyncEventAgeInSeconds */
+    /**
+     * 消息最大存活时长，取值范围[1，86400]，单位：秒，默认值为3600。
+     * minimum: 1
+     * maximum: 86400
+     * @return maxAsyncEventAgeInSeconds
+     */
     public Integer getMaxAsyncEventAgeInSeconds() {
         return maxAsyncEventAgeInSeconds;
     }
@@ -45,9 +50,12 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         return this;
     }
 
-    /** 异步调用失败后的最大重试次数，默认值为1。取值范围[0，3]。 minimum: 0 maximum: 3
-     * 
-     * @return maxAsyncRetryAttempts */
+    /**
+     * 异步调用失败后的最大重试次数，默认值为1。取值范围[0，3]。
+     * minimum: 0
+     * maximum: 3
+     * @return maxAsyncRetryAttempts
+     */
     public Integer getMaxAsyncRetryAttempts() {
         return maxAsyncRetryAttempts;
     }
@@ -72,9 +80,10 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         return this;
     }
 
-    /** Get destinationConfig
-     * 
-     * @return destinationConfig */
+    /**
+     * Get destinationConfig
+     * @return destinationConfig
+     */
     public FuncAsyncDestinationConfig getDestinationConfig() {
         return destinationConfig;
     }
@@ -116,7 +125,10 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

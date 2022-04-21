@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ResourceRelation */
+/**
+ * ResourceRelation
+ */
 public class ResourceRelation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ResourceRelation {
         return this;
     }
 
-    /** 关系类型
-     * 
-     * @return relationType */
+    /**
+     * 关系类型
+     * @return relationType
+     */
     public String getRelationType() {
         return relationType;
     }
@@ -54,9 +57,10 @@ public class ResourceRelation {
         return this;
     }
 
-    /** 源资源类型
-     * 
-     * @return fromResourceType */
+    /**
+     * 源资源类型
+     * @return fromResourceType
+     */
     public String getFromResourceType() {
         return fromResourceType;
     }
@@ -70,9 +74,10 @@ public class ResourceRelation {
         return this;
     }
 
-    /** 目的资源类型
-     * 
-     * @return toResourceType */
+    /**
+     * 目的资源类型
+     * @return toResourceType
+     */
     public String getToResourceType() {
         return toResourceType;
     }
@@ -86,9 +91,10 @@ public class ResourceRelation {
         return this;
     }
 
-    /** 源资源ID
-     * 
-     * @return fromResourceId */
+    /**
+     * 源资源ID
+     * @return fromResourceId
+     */
     public String getFromResourceId() {
         return fromResourceId;
     }
@@ -102,9 +108,10 @@ public class ResourceRelation {
         return this;
     }
 
-    /** 目的资源ID
-     * 
-     * @return toResourceId */
+    /**
+     * 目的资源ID
+     * @return toResourceId
+     */
     public String getToResourceId() {
         return toResourceId;
     }
@@ -147,7 +154,10 @@ public class ResourceRelation {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

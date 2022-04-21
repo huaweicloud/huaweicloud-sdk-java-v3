@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateCertificateByCsrRequestBody */
+/**
+ * CreateCertificateByCsrRequestBody
+ */
 public class CreateCertificateByCsrRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** 父CA证书ID。
-     * 
-     * @return issuerId */
+    /**
+     * 父CA证书ID。
+     * @return issuerId
+     */
     public String getIssuerId() {
         return issuerId;
     }
@@ -62,9 +65,10 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
-     * 
-     * @return csr */
+    /**
+     * 证书签名请求。请使用“\\r\\n”或“\\n”替代证书签名请求中的换行符，若通过console端请求此接口，则无需做符号转换。
+     * @return csr
+     */
     public String getCsr() {
         return csr;
     }
@@ -87,9 +91,10 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** Get validity
-     * 
-     * @return validity */
+    /**
+     * Get validity
+     * @return validity
+     */
     public Validity getValidity() {
         return validity;
     }
@@ -103,9 +108,10 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** 证书类型，用于区分从属CA与私有证书。 - **ENTITY_CERT** : 签发私有证书，为缺省值； - **INTERMEDIATE_CA** : 签发从属CA。
-     * 
-     * @return type */
+    /**
+     * 证书类型，用于区分从属CA与私有证书。   - **ENTITY_CERT** : 签发私有证书，为缺省值；   - **INTERMEDIATE_CA** : 签发从属CA。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -119,9 +125,12 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** 路径长度，仅当签发从属CA时有效。 minimum: 0 maximum: 6
-     * 
-     * @return pathLength */
+    /**
+     * 路径长度，仅当签发从属CA时有效。
+     * minimum: 0
+     * maximum: 6
+     * @return pathLength
+     */
     public Integer getPathLength() {
         return pathLength;
     }
@@ -154,9 +163,10 @@ public class CreateCertificateByCsrRequestBody {
         return this;
     }
 
-    /** 主体备用名称(本接口预留参数，当前在后端被忽略)，详情请参见**SubjectAlternativeName**字段数据结构说明。
-     * 
-     * @return subjectAlternativeNames */
+    /**
+     * 主体备用名称(本接口预留参数，当前在后端被忽略)，详情请参见**SubjectAlternativeName**字段数据结构说明。
+     * @return subjectAlternativeNames
+     */
     public List<SubjectAlternativeName> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -201,7 +211,10 @@ public class CreateCertificateByCsrRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

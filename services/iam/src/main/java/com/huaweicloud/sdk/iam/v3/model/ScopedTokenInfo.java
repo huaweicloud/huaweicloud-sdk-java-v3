@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** token详细信息。 */
+/**
+ * token详细信息。
+ */
 public class ScopedTokenInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 过期时间。
-     * 
-     * @return expiresAt */
+    /**
+     * 过期时间。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -88,9 +91,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 获取token的方式，联邦用户默认为mapped。
-     * 
-     * @return methods */
+    /**
+     * 获取token的方式，联邦用户默认为mapped。
+     * @return methods
+     */
     public List<String> getMethods() {
         return methods;
     }
@@ -104,9 +108,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** 生成时间。
-     * 
-     * @return issuedAt */
+    /**
+     * 生成时间。
+     * @return issuedAt
+     */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -129,9 +134,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public FederationUserBody getUser() {
         return user;
     }
@@ -154,9 +160,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public DomainInfo getDomain() {
         return domain;
     }
@@ -179,9 +186,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public ProjectInfo getProject() {
         return project;
     }
@@ -211,9 +219,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** roles信息。
-     * 
-     * @return roles */
+    /**
+     * roles信息。
+     * @return roles
+     */
     public List<ScopedTokenInfoRoles> getRoles() {
         return roles;
     }
@@ -243,9 +252,10 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    /** catalog信息
-     * 
-     * @return catalog */
+    /**
+     * catalog信息
+     * @return catalog
+     */
     public List<UnscopedTokenInfoCatalog> getCatalog() {
         return catalog;
     }
@@ -293,7 +303,10 @@ public class ScopedTokenInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

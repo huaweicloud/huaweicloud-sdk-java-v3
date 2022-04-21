@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowTemplateFileRequest {
 
-    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文 */
+    /**
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -99,13 +107,19 @@ public class ShowTemplateFileRequest {
 
     private String filePath;
 
-    /** 读取文件来源，缺省值为“source-pachage”。 枚举值： - source-package: 源文件压缩包 - introduction: 说明文件 */
+    /**
+     * 读取文件来源，缺省值为“source-pachage”。  枚举值： - source-package: 源文件压缩包 - introduction: 说明文件 
+     */
     public static final class TypeEnum {
 
-        /** Enum SOURCE_PACKAGE for value: "source-package" */
+        /**
+         * Enum SOURCE_PACKAGE for value: "source-package"
+         */
         public static final TypeEnum SOURCE_PACKAGE = new TypeEnum("source-package");
 
-        /** Enum INTRODUCTION for value: "introduction" */
+        /**
+         * Enum INTRODUCTION for value: "introduction"
+         */
         public static final TypeEnum INTRODUCTION = new TypeEnum("introduction");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -180,9 +194,10 @@ public class ShowTemplateFileRequest {
         return this;
     }
 
-    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -198,9 +213,10 @@ public class ShowTemplateFileRequest {
         return this;
     }
 
-    /** 模板ID，通过查询模板列表接口可获取相应的模板ID。
-     * 
-     * @return templateId */
+    /**
+     * 模板ID，通过查询模板列表接口可获取相应的模板ID。
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -214,9 +230,10 @@ public class ShowTemplateFileRequest {
         return this;
     }
 
-    /** 文件相对路径，基于当前根目录的相对文件路径，例如获取HELP.md文件内容，则文件相对路径为“template-resources/file/HELP.md”。
-     * 
-     * @return filePath */
+    /**
+     * 文件相对路径，基于当前根目录的相对文件路径，例如获取HELP.md文件内容，则文件相对路径为“template-resources/file/HELP.md”。
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -230,9 +247,10 @@ public class ShowTemplateFileRequest {
         return this;
     }
 
-    /** 读取文件来源，缺省值为“source-pachage”。 枚举值： - source-package: 源文件压缩包 - introduction: 说明文件
-     * 
-     * @return type */
+    /**
+     * 读取文件来源，缺省值为“source-pachage”。  枚举值： - source-package: 源文件压缩包 - introduction: 说明文件 
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -273,7 +291,10 @@ public class ShowTemplateFileRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

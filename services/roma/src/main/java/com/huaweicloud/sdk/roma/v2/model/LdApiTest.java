@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LdApiTest */
+/**
+ * LdApiTest
+ */
 public class LdApiTest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class LdApiTest {
         return this;
     }
 
-    /** 后端API请求参数
-     * 
-     * @return parameters */
+    /**
+     * 后端API请求参数
+     * @return parameters
+     */
     public List<LdApiParameter> getParameters() {
         return parameters;
     }
@@ -74,7 +77,10 @@ public class LdApiTest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

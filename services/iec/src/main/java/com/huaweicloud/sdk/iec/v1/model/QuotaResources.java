@@ -39,9 +39,10 @@ public class QuotaResources {
         return this;
     }
 
-    /** 配额信息列表。
-     * 
-     * @return resources */
+    /**
+     * 配额信息列表。
+     * @return resources
+     */
     public List<QuotaResource> getResources() {
         return resources;
     }
@@ -76,7 +77,10 @@ public class QuotaResources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

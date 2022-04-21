@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 录入、修改收件方式与信息请求体。 */
+/**
+ * 录入、修改收件方式与信息请求体。
+ */
 public class BatchImportSmnInfoReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchImportSmnInfoReq {
         return this;
     }
 
-    /** 任务信息
-     * 
-     * @return jobs */
+    /**
+     * 任务信息
+     * @return jobs
+     */
     public List<SelectedSetAlarmTaskReq> getJobs() {
         return jobs;
     }
@@ -67,9 +70,10 @@ public class BatchImportSmnInfoReq {
         return this;
     }
 
-    /** Get alarmNotifyInfo
-     * 
-     * @return alarmNotifyInfo */
+    /**
+     * Get alarmNotifyInfo
+     * @return alarmNotifyInfo
+     */
     public BatchSetAlarmNotifyInfo getAlarmNotifyInfo() {
         return alarmNotifyInfo;
     }
@@ -106,7 +110,10 @@ public class BatchImportSmnInfoReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

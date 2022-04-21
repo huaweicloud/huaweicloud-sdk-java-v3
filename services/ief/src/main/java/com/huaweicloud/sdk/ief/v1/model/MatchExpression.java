@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 匹配规则表达式 */
+/**
+ * 匹配规则表达式
+ */
 public class MatchExpression {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class MatchExpression {
         return this;
     }
 
-    /** 规则的标签
-     * 
-     * @return key */
+    /**
+     * 规则的标签
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -47,10 +50,10 @@ public class MatchExpression {
         return this;
     }
 
-    /** 操作符，取值如下。 In：标签值需要在values的列表中 NotIn：标签的值不在某个列表中 Exists：某个标签存在 DoesNotExist：某个标签不存在 Gt：标签的值大于某个值（字符串比较）
-     * Lt：标签的值小于某个值（字符串比较）
-     * 
-     * @return operator */
+    /**
+     * 操作符，取值如下。 In：标签值需要在values的列表中 NotIn：标签的值不在某个列表中 Exists：某个标签存在 DoesNotExist：某个标签不存在 Gt：标签的值大于某个值（字符串比较） Lt：标签的值小于某个值（字符串比较）
+     * @return operator
+     */
     public String getOperator() {
         return operator;
     }
@@ -80,9 +83,10 @@ public class MatchExpression {
         return this;
     }
 
-    /** 一组标签值。 如果运算符为In或NotIn，则值数组必须非空。 如果运算符为Exists 或DoesNotExist，则值数组必须为空。 如果运算符是Gt或Lt，则值数组必须具有单个元素，该元素将被解释为整数。
-     * 
-     * @return values */
+    /**
+     * 一组标签值。 如果运算符为In或NotIn，则值数组必须非空。 如果运算符为Exists 或DoesNotExist，则值数组必须为空。 如果运算符是Gt或Lt，则值数组必须具有单个元素，该元素将被解释为整数。
+     * @return values
+     */
     public List<String> getValues() {
         return values;
     }
@@ -120,7 +124,10 @@ public class MatchExpression {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

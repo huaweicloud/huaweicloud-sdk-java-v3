@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,9 +114,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return id */
+    /**
+     * 实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -137,9 +140,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get datastore
-     * 
-     * @return datastore */
+    /**
+     * Get datastore
+     * @return datastore
+     */
     public DatastoreResult getDatastore() {
         return datastore;
     }
@@ -153,9 +157,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例名称，与请求参数相同。
-     * 
-     * @return name */
+    /**
+     * 实例名称，与请求参数相同。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -169,9 +174,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间为本地时间，格式为“yyyy-mm-dd hh:mm:ss”。
-     * 
-     * @return created */
+    /**
+     * 创建时间为本地时间，格式为“yyyy-mm-dd hh:mm:ss”。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -185,9 +191,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例状态，取值为“creating”。
-     * 
-     * @return status */
+    /**
+     * 实例状态，取值为“creating”。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -201,9 +208,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 区域ID，与请求参数相同。
-     * 
-     * @return region */
+    /**
+     * 区域ID，与请求参数相同。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -217,9 +225,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 可用区ID，与请求参数相同。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区ID，与请求参数相同。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -233,9 +242,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云ID，与请求参数相同。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID，与请求参数相同。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -249,9 +259,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID，与请求参数相同。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID，与请求参数相同。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -265,9 +276,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例所属的安全组ID，与请求参数相同。
-     * 
-     * @return securityGroupId */
+    /**
+     * 实例所属的安全组ID，与请求参数相同。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -281,9 +293,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例类型，与请求参数相同。
-     * 
-     * @return mode */
+    /**
+     * 实例类型，与请求参数相同。
+     * @return mode
+     */
     public String getMode() {
         return mode;
     }
@@ -313,9 +326,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 实例规格详情，与请求参数相同。
-     * 
-     * @return flavor */
+    /**
+     * 实例规格详情，与请求参数相同。
+     * @return flavor
+     */
     public List<CreateInstanceFlavorResult> getFlavor() {
         return flavor;
     }
@@ -338,9 +352,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategyResult getBackupStrategy() {
         return backupStrategy;
     }
@@ -354,9 +369,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。取值为“0”，表示为default企业项目。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。取值为“0”，表示为default企业项目。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -370,9 +386,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 专属资源ID，只有创建在专属资源上的实例才会返回该字段。
-     * 
-     * @return dedicatedResourceId */
+    /**
+     * 专属资源ID，只有创建在专属资源上的实例才会返回该字段。
+     * @return dedicatedResourceId
+     */
     public String getDedicatedResourceId() {
         return dedicatedResourceId;
     }
@@ -386,9 +403,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** SSL开关选项，与请求参数相同。
-     * 
-     * @return sslOption */
+    /**
+     * SSL开关选项，与请求参数相同。
+     * @return sslOption
+     */
     public String getSslOption() {
         return sslOption;
     }
@@ -402,9 +420,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建实例的工作流ID, 仅创建按需实例时会返回该参数。
-     * 
-     * @return jobId */
+    /**
+     * 创建实例的工作流ID, 仅创建按需实例时会返回该参数。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -418,9 +437,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建实例的订单ID，仅创建包年包月时返回该参数。
-     * 
-     * @return orderId */
+    /**
+     * 创建实例的订单ID，仅创建包年包月时返回该参数。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -443,9 +463,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** Get chargeInfo
-     * 
-     * @return chargeInfo */
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
     public ChargeInfoResult getChargeInfo() {
         return chargeInfo;
     }
@@ -534,7 +555,10 @@ public class CreateInstanceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

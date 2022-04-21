@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** AclBatchFailure */
+/**
+ * AclBatchFailure
+ */
 public class AclBatchFailure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AclBatchFailure {
         return this;
     }
 
-    /** 删除失败的ACL策略ID
-     * 
-     * @return aclId */
+    /**
+     * 删除失败的ACL策略ID
+     * @return aclId
+     */
     public String getAclId() {
         return aclId;
     }
@@ -49,9 +52,10 @@ public class AclBatchFailure {
         return this;
     }
 
-    /** 删除失败的ACL策略名称
-     * 
-     * @return aclName */
+    /**
+     * 删除失败的ACL策略名称
+     * @return aclName
+     */
     public String getAclName() {
         return aclName;
     }
@@ -65,9 +69,10 @@ public class AclBatchFailure {
         return this;
     }
 
-    /** 删除失败的错误码
-     * 
-     * @return errorCode */
+    /**
+     * 删除失败的错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -81,9 +86,10 @@ public class AclBatchFailure {
         return this;
     }
 
-    /** 删除失败的错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 删除失败的错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -124,7 +130,10 @@ public class AclBatchFailure {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

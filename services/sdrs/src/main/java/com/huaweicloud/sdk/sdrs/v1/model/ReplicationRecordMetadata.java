@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 复制对元数据 */
+/**
+ * 复制对元数据
+ */
 public class ReplicationRecordMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,22 +30,34 @@ public class ReplicationRecordMetadata {
 
     private Integer volumeSize;
 
-    /** 复制对中的云硬盘类型。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-p1：高IO（性能优化I型）uh-l1：超高IO（时延优化）其中co-p1和uh-l1两种云硬盘只能使用在HANA云服务器、HL1型云服务器、HL2型云服务器上。 */
+    /**
+     * 复制对中的云硬盘类型。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-p1：高IO（性能优化I型）uh-l1：超高IO（时延优化）其中co-p1和uh-l1两种云硬盘只能使用在HANA云服务器、HL1型云服务器、HL2型云服务器上。
+     */
     public static final class VolumeTypeEnum {
 
-        /** Enum SATA for value: "SATA" */
+        /**
+         * Enum SATA for value: "SATA"
+         */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
-        /** Enum SAS for value: "SAS" */
+        /**
+         * Enum SAS for value: "SAS"
+         */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
 
-        /** Enum SSD for value: "SSD" */
+        /**
+         * Enum SSD for value: "SSD"
+         */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
 
-        /** Enum CO_P1 for value: "co-p1" */
+        /**
+         * Enum CO_P1 for value: "co-p1"
+         */
         public static final VolumeTypeEnum CO_P1 = new VolumeTypeEnum("co-p1");
 
-        /** Enum UH_L1 for value: "uh-l1" */
+        /**
+         * Enum UH_L1 for value: "uh-l1"
+         */
         public static final VolumeTypeEnum UH_L1 = new VolumeTypeEnum("uh-l1");
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -121,9 +135,10 @@ public class ReplicationRecordMetadata {
         return this;
     }
 
-    /** 复制对中的云硬盘是否为共享云硬盘。
-     * 
-     * @return multiattach */
+    /**
+     * 复制对中的云硬盘是否为共享云硬盘。
+     * @return multiattach
+     */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -137,9 +152,10 @@ public class ReplicationRecordMetadata {
         return this;
     }
 
-    /** 复制对中的云硬盘是否为系统盘。
-     * 
-     * @return bootable */
+    /**
+     * 复制对中的云硬盘是否为系统盘。
+     * @return bootable
+     */
     public Boolean getBootable() {
         return bootable;
     }
@@ -153,9 +169,10 @@ public class ReplicationRecordMetadata {
         return this;
     }
 
-    /** 复制对中的云硬盘容量。单位：GB
-     * 
-     * @return volumeSize */
+    /**
+     * 复制对中的云硬盘容量。单位：GB
+     * @return volumeSize
+     */
     public Integer getVolumeSize() {
         return volumeSize;
     }
@@ -169,9 +186,10 @@ public class ReplicationRecordMetadata {
         return this;
     }
 
-    /** 复制对中的云硬盘类型。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-p1：高IO（性能优化I型）uh-l1：超高IO（时延优化）其中co-p1和uh-l1两种云硬盘只能使用在HANA云服务器、HL1型云服务器、HL2型云服务器上。
-     * 
-     * @return volumeType */
+    /**
+     * 复制对中的云硬盘类型。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-p1：高IO（性能优化I型）uh-l1：超高IO（时延优化）其中co-p1和uh-l1两种云硬盘只能使用在HANA云服务器、HL1型云服务器、HL2型云服务器上。
+     * @return volumeType
+     */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -212,7 +230,10 @@ public class ReplicationRecordMetadata {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

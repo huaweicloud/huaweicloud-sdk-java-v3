@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 函数流详情 */
+/**
+ * 函数流详情
+ */
 public class ListWorkflowsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 唯一标识ID，流程定义ID
-     * 
-     * @return id */
+    /**
+     * 唯一标识ID，流程定义ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -64,9 +67,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 唯一标识ID，流程URN
-     * 
-     * @return workflowUrn */
+    /**
+     * 唯一标识ID，流程URN
+     * @return workflowUrn
+     */
     public String getWorkflowUrn() {
         return workflowUrn;
     }
@@ -80,9 +84,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 流程定义名称
-     * 
-     * @return name */
+    /**
+     * 流程定义名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -96,9 +101,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 流程定义描述
-     * 
-     * @return description */
+    /**
+     * 流程定义描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -112,9 +118,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 流程创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return createdTime */
+    /**
+     * 流程创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -128,9 +135,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 流程修改时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
-     * 
-     * @return updatedTime */
+    /**
+     * 流程修改时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * @return updatedTime
+     */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -144,9 +152,10 @@ public class ListWorkflowsResult {
         return this;
     }
 
-    /** 流程创建者
-     * 
-     * @return createdBy */
+    /**
+     * 流程创建者
+     * @return createdBy
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -193,7 +202,10 @@ public class ListWorkflowsResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListBuiltInPolicyDefinitionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ListBuiltInPolicyDefinitionsRequest {
         return this;
     }
 
-    /** 选择接口返回的信息的语言，默认为\"zh-cn\"中文
-     * 
-     * @return xLanguage */
+    /**
+     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -58,7 +61,10 @@ public class ListBuiltInPolicyDefinitionsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowDatasetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,9 +37,10 @@ public class ShowDatasetResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业结果总个数。
-     * 
-     * @return count */
+    /**
+     * 作业结果总个数。
+     * @return count
+     */
     public Long getCount() {
         return count;
     }
@@ -51,9 +54,10 @@ public class ShowDatasetResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业运行ID。
-     * 
-     * @return runId */
+    /**
+     * 作业运行ID。
+     * @return runId
+     */
     public String getRunId() {
         return runId;
     }
@@ -67,9 +71,10 @@ public class ShowDatasetResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -92,9 +97,10 @@ public class ShowDatasetResponse extends SdkResponse {
         return this;
     }
 
-    /** Get sqlJob
-     * 
-     * @return sqlJob */
+    /**
+     * Get sqlJob
+     * @return sqlJob
+     */
     public SqlJobQueryDataset getSqlJob() {
         return sqlJob;
     }
@@ -135,7 +141,10 @@ public class ShowDatasetResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

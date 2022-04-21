@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteLoadbalancerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteLoadbalancerTagsRequest {
         return this;
     }
 
-    /** 负载均衡器ID。
-     * 
-     * @return loadbalancerId */
+    /**
+     * 负载均衡器ID。
+     * @return loadbalancerId
+     */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -39,9 +42,10 @@ public class DeleteLoadbalancerTagsRequest {
         return this;
     }
 
-    /** 待删除标签的key值
-     * 
-     * @return key */
+    /**
+     * 待删除标签的key值
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -78,7 +82,10 @@ public class DeleteLoadbalancerTagsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

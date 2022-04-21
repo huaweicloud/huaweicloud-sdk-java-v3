@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规则过滤器 */
+/**
+ * 规则过滤器
+ */
 public class PolicyFilterDefinition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 区域ID
-     * 
-     * @return regionId */
+    /**
+     * 区域ID
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -59,9 +62,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 资源服务
-     * 
-     * @return resourceProvider */
+    /**
+     * 资源服务
+     * @return resourceProvider
+     */
     public String getResourceProvider() {
         return resourceProvider;
     }
@@ -75,9 +79,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 资源类型
-     * 
-     * @return resourceType */
+    /**
+     * 资源类型
+     * @return resourceType
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -91,9 +96,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 资源ID
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -107,9 +113,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 标签键
-     * 
-     * @return tagKey */
+    /**
+     * 标签键
+     * @return tagKey
+     */
     public String getTagKey() {
         return tagKey;
     }
@@ -123,9 +130,10 @@ public class PolicyFilterDefinition {
         return this;
     }
 
-    /** 标签值
-     * 
-     * @return tagValue */
+    /**
+     * 标签值
+     * @return tagValue
+     */
     public String getTagValue() {
         return tagValue;
     }
@@ -170,7 +178,10 @@ public class PolicyFilterDefinition {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

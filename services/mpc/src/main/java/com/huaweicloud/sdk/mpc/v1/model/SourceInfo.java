@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SourceInfo */
+/**
+ * SourceInfo
+ */
 public class SourceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,12 @@ public class SourceInfo {
         return this;
     }
 
-    /** 片源时长，单位：秒 minimum: 0 maximum: 2147483647
-     * 
-     * @return duration */
+    /**
+     * 片源时长，单位：秒
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -62,9 +67,12 @@ public class SourceInfo {
         return this;
     }
 
-    /** 片源时长，单位：毫秒 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return durationMs */
+    /**
+     * 片源时长，单位：毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return durationMs
+     */
     public Long getDurationMs() {
         return durationMs;
     }
@@ -78,9 +86,10 @@ public class SourceInfo {
         return this;
     }
 
-    /** 片源格式
-     * 
-     * @return format */
+    /**
+     * 片源格式
+     * @return format
+     */
     public String getFormat() {
         return format;
     }
@@ -94,9 +103,12 @@ public class SourceInfo {
         return this;
     }
 
-    /** 片源大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 片源大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -119,9 +131,10 @@ public class SourceInfo {
         return this;
     }
 
-    /** Get videoInfo
-     * 
-     * @return videoInfo */
+    /**
+     * Get videoInfo
+     * @return videoInfo
+     */
     public VideoInfo getVideoInfo() {
         return videoInfo;
     }
@@ -151,9 +164,10 @@ public class SourceInfo {
         return this;
     }
 
-    /** 音频信息
-     * 
-     * @return audioInfo */
+    /**
+     * 音频信息
+     * @return audioInfo
+     */
     public List<AudioInfo> getAudioInfo() {
         return audioInfo;
     }
@@ -196,7 +210,10 @@ public class SourceInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

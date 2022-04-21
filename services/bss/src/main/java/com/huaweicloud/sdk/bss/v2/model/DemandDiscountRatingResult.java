@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DemandDiscountRatingResult */
+/**
+ * DemandDiscountRatingResult
+ */
 public class DemandDiscountRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class DemandDiscountRatingResult {
         return this;
     }
 
-    /** 优惠标识ID。
-     * 
-     * @return discountId */
+    /**
+     * 优惠标识ID。
+     * @return discountId
+     */
     public String getDiscountId() {
         return discountId;
     }
@@ -54,9 +57,10 @@ public class DemandDiscountRatingResult {
         return this;
     }
 
-    /** 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
-     * 
-     * @return discountType */
+    /**
+     * 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
+     * @return discountType
+     */
     public Integer getDiscountType() {
         return discountType;
     }
@@ -70,9 +74,10 @@ public class DemandDiscountRatingResult {
         return this;
     }
 
-    /** 折扣的金额。
-     * 
-     * @return amount */
+    /**
+     * 折扣的金额。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -86,9 +91,10 @@ public class DemandDiscountRatingResult {
         return this;
     }
 
-    /** 度量单位标识。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 度量单位标识。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -102,9 +108,10 @@ public class DemandDiscountRatingResult {
         return this;
     }
 
-    /** 折扣名称。
-     * 
-     * @return discountName */
+    /**
+     * 折扣名称。
+     * @return discountName
+     */
     public String getDiscountName() {
         return discountName;
     }
@@ -147,7 +154,10 @@ public class DemandDiscountRatingResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

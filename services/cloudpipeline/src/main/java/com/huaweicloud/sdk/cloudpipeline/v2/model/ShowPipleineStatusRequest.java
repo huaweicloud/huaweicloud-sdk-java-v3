@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowPipleineStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowPipleineStatusRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -46,9 +49,10 @@ public class ShowPipleineStatusRequest {
         return this;
     }
 
-    /** 要获取状态的流水线ID
-     * 
-     * @return pipelineId */
+    /**
+     * 要获取状态的流水线ID
+     * @return pipelineId
+     */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -62,9 +66,10 @@ public class ShowPipleineStatusRequest {
         return this;
     }
 
-    /** 要获取状态的执行ID
-     * 
-     * @return buildId */
+    /**
+     * 要获取状态的执行ID
+     * @return buildId
+     */
     public String getBuildId() {
         return buildId;
     }
@@ -103,7 +108,10 @@ public class ShowPipleineStatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

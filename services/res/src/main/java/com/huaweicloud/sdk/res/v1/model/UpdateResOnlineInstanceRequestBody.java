@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class UpdateResOnlineInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 类别。
-     * 
-     * @return category */
+    /**
+     * 类别。
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -60,9 +63,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 描述。
-     * 
-     * @return description */
+    /**
+     * 描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -85,9 +89,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** Get jobConfig
-     * 
-     * @return jobConfig */
+    /**
+     * Get jobConfig
+     * @return jobConfig
+     */
     public JobConfig getJobConfig() {
         return jobConfig;
     }
@@ -101,9 +106,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 作业名称。
-     * 
-     * @return jobName */
+    /**
+     * 作业名称。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -117,9 +123,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -133,9 +140,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return this;
     }
 
-    /** 调度参数。
-     * 
-     * @return schedule */
+    /**
+     * 调度参数。
+     * @return schedule
+     */
     public String getSchedule() {
         return schedule;
     }
@@ -180,7 +188,10 @@ public class UpdateResOnlineInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

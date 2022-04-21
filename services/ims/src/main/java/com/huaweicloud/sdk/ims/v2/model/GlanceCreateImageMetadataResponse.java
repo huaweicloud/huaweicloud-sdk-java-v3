@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,19 +39,29 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     private String containerFormat;
 
-    /** 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。 */
+    /**
+     * 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
+     */
     public static final class DiskFormatEnum {
 
-        /** Enum VHD for value: "vhd" */
+        /**
+         * Enum VHD for value: "vhd"
+         */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
 
-        /** Enum ZVHD for value: "zvhd" */
+        /**
+         * Enum ZVHD for value: "zvhd"
+         */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
 
-        /** Enum RAW for value: "raw" */
+        /**
+         * Enum RAW for value: "raw"
+         */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
 
-        /** Enum QCOW2 for value: "qcow2" */
+        /**
+         * Enum QCOW2 for value: "qcow2"
+         */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
@@ -136,22 +148,34 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     private Integer minDisk;
 
-    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。 */
+    /**
+     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
+     */
     public static final class StatusEnum {
 
-        /** Enum QUEUED for value: "queued" */
+        /**
+         * Enum QUEUED for value: "queued"
+         */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
 
-        /** Enum SAVING for value: "saving" */
+        /**
+         * Enum SAVING for value: "saving"
+         */
         public static final StatusEnum SAVING = new StatusEnum("saving");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
-        /** Enum KILLED for value: "killed" */
+        /**
+         * Enum KILLED for value: "killed"
+         */
         public static final StatusEnum KILLED = new StatusEnum("killed");
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -274,16 +298,24 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     private String osVersion;
 
-    /** 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。 */
+    /**
+     * 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
+     */
     public static final class OsTypeEnum {
 
-        /** Enum WINDOWS for value: "Windows" */
+        /**
+         * Enum WINDOWS for value: "Windows"
+         */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-        /** Enum LINUX for value: "Linux" */
+        /**
+         * Enum LINUX for value: "Linux"
+         */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-        /** Enum OTHER for value: "other" */
+        /**
+         * Enum OTHER for value: "other"
+         */
         public static final OsTypeEnum OTHER = new OsTypeEnum("other");
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -359,13 +391,19 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     private String platform;
 
-    /** 表示操作系统位数。取值由__os_version确定，取值为32或64。 */
+    /**
+     * 表示操作系统位数。取值由__os_version确定，取值为32或64。
+     */
     public static final class OsBitEnum {
 
-        /** Enum _32 for value: "32" */
+        /**
+         * Enum _32 for value: "32"
+         */
         public static final OsBitEnum _32 = new OsBitEnum("32");
 
-        /** Enum _64 for value: "64" */
+        /**
+         * Enum _64 for value: "64"
+         */
         public static final OsBitEnum _64 = new OsBitEnum("64");
 
         private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
@@ -440,16 +478,24 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     private String imagetype;
 
-    /** 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。 */
+    /**
+     * 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
+     */
     public static final class VirtualEnvTypeEnum {
 
-        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
+        /**
+         * Enum FUSIONCOMPUTE for value: "FusionCompute"
+         */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
 
-        /** Enum IRONIC for value: "Ironic" */
+        /**
+         * Enum IRONIC for value: "Ironic"
+         */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
 
-        /** Enum DATAIMAGE for value: "DataImage" */
+        /**
+         * Enum DATAIMAGE for value: "DataImage"
+         */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
 
         private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -555,9 +601,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 其他租户是否可见。取值为private。
-     * 
-     * @return visibility */
+    /**
+     * 其他租户是否可见。取值为private。
+     * @return visibility
+     */
     public String getVisibility() {
         return visibility;
     }
@@ -571,9 +618,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1～128位。
-     * 
-     * @return name */
+    /**
+     * 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1～128位。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -587,9 +635,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像是否被保护，保护后的镜像不可删除。取值为false
-     * 
-     * @return _protected */
+    /**
+     * 镜像是否被保护，保护后的镜像不可删除。取值为false
+     * @return _protected
+     */
     public Boolean getProtected() {
         return _protected;
     }
@@ -603,9 +652,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 容器格式。取值为bare。
-     * 
-     * @return containerFormat */
+    /**
+     * 容器格式。取值为bare。
+     * @return containerFormat
+     */
     public String getContainerFormat() {
         return containerFormat;
     }
@@ -619,9 +669,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
-     * 
-     * @return diskFormat */
+    /**
+     * 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
+     * @return diskFormat
+     */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -651,9 +702,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像标签列表。长度为1～255位。
-     * 
-     * @return tags */
+    /**
+     * 镜像标签列表。长度为1～255位。
+     * @return tags
+     */
     public List<String> getTags() {
         return tags;
     }
@@ -667,9 +719,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像运行最小内存，单位为MB。取值参考ECS规格限制，一般设置为0。云服务器的规格限制，请参见规格清单。
-     * 
-     * @return minRam */
+    /**
+     * 镜像运行最小内存，单位为MB。取值参考ECS规格限制，一般设置为0。云服务器的规格限制，请参见规格清单。
+     * @return minRam
+     */
     public Integer getMinRam() {
         return minRam;
     }
@@ -683,9 +736,12 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像运行需要的最小磁盘容量，单位为GB 。取值为40～1024GB。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。 minimum: 40 maximum: 1024
-     * 
-     * @return minDisk */
+    /**
+     * 镜像运行需要的最小磁盘容量，单位为GB 。取值为40～1024GB。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。
+     * minimum: 40
+     * maximum: 1024
+     * @return minDisk
+     */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -699,9 +755,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
-     * 
-     * @return status */
+    /**
+     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -715,9 +772,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。格式为UTC时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。格式为UTC时间。
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -731,9 +789,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 更新时间。格式为UTC时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 更新时间。格式为UTC时间。
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -747,9 +806,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 本镜像链接。
-     * 
-     * @return self */
+    /**
+     * 本镜像链接。
+     * @return self
+     */
     public String getSelf() {
         return self;
     }
@@ -763,9 +823,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像ID，用户调用创建镜像接口后，需保存该镜像的ID，用来调用上传镜像接口完成镜像上传。
-     * 
-     * @return id */
+    /**
+     * 镜像ID，用户调用创建镜像接口后，需保存该镜像的ID，用来调用上传镜像接口完成镜像上传。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -779,9 +840,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 上传下载镜像文件的地址链接。
-     * 
-     * @return file */
+    /**
+     * 上传下载镜像文件的地址链接。
+     * @return file
+     */
     public String getFile() {
         return file;
     }
@@ -795,9 +857,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 视图链接。
-     * 
-     * @return schema */
+    /**
+     * 视图链接。
+     * @return schema
+     */
     public String getSchema() {
         return schema;
     }
@@ -811,9 +874,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像后端存储类型，目前支持uds。
-     * 
-     * @return imageSourceType */
+    /**
+     * 镜像后端存储类型，目前支持uds。
+     * @return imageSourceType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_source_type")
     public String getImageSourceType() {
@@ -829,9 +893,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像大小。单位为字节。
-     * 
-     * @return imageSize */
+    /**
+     * 镜像大小。单位为字节。
+     * @return imageSize
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_size")
     public String getImageSize() {
@@ -847,9 +912,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像是否注册。只有已注册的镜像才能在Portal界面上查询到。取值为true。
-     * 
-     * @return isregistered */
+    /**
+     * 镜像是否注册。只有已注册的镜像才能在Portal界面上查询到。取值为true。
+     * @return isregistered
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
     public String getIsregistered() {
@@ -865,9 +931,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像的操作系统具体版本。
-     * 
-     * @return osVersion */
+    /**
+     * 镜像的操作系统具体版本。
+     * @return osVersion
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
     public String getOsVersion() {
@@ -883,9 +950,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
-     * 
-     * @return osType */
+    /**
+     * 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
+     * @return osType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
@@ -901,9 +969,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 表示镜像支持的操作系统平台。取值由__os_version确定
-     * 
-     * @return platform */
+    /**
+     * 表示镜像支持的操作系统平台。取值由__os_version确定
+     * @return platform
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
     public String getPlatform() {
@@ -919,9 +988,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 表示操作系统位数。取值由__os_version确定，取值为32或64。
-     * 
-     * @return osBit */
+    /**
+     * 表示操作系统位数。取值由__os_version确定，取值为32或64。
+     * @return osBit
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_bit")
     public OsBitEnum getOsBit() {
@@ -937,9 +1007,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像类型。取值为private，表示私有镜像。
-     * 
-     * @return imagetype */
+    /**
+     * 镜像类型。取值为private，表示私有镜像。
+     * @return imagetype
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
     public String getImagetype() {
@@ -955,9 +1026,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
-     * 
-     * @return virtualEnvType */
+    /**
+     * 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
+     * @return virtualEnvType
+     */
     public VirtualEnvTypeEnum getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -971,9 +1043,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像所属项目ID。
-     * 
-     * @return owner */
+    /**
+     * 镜像所属项目ID。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -987,9 +1060,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像虚拟大小。单位为字节。
-     * 
-     * @return virtualSize */
+    /**
+     * 镜像虚拟大小。单位为字节。
+     * @return virtualSize
+     */
     public Integer getVirtualSize() {
         return virtualSize;
     }
@@ -1003,9 +1077,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像属性的集合，不表示具体的镜像属性
-     * 
-     * @return properties */
+    /**
+     * 镜像属性的集合，不表示具体的镜像属性
+     * @return properties
+     */
     public Object getProperties() {
         return properties;
     }
@@ -1019,9 +1094,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 表示当前镜像来源是从外部导入。取值：file
-     * 
-     * @return rootOrigin */
+    /**
+     * 表示当前镜像来源是从外部导入。取值：file
+     * @return rootOrigin
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__root_origin")
     public String getRootOrigin() {
@@ -1037,9 +1113,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 镜像文件md5值。
-     * 
-     * @return checksum */
+    /**
+     * 镜像文件md5值。
+     * @return checksum
+     */
     public String getChecksum() {
         return checksum;
     }
@@ -1053,9 +1130,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    /** 目前暂时不使用。
-     * 
-     * @return size */
+    /**
+     * 目前暂时不使用。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -1177,7 +1255,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

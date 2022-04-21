@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListChartsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,22 +32,34 @@ public class ListChartsResponse extends SdkResponse {
 
     private String title;
 
-    /** 图表类型 */
+    /**
+     * 图表类型
+     */
     public static final class TypeEnum {
 
-        /** Enum TABLE for value: "table" */
+        /**
+         * Enum TABLE for value: "table"
+         */
         public static final TypeEnum TABLE = new TypeEnum("table");
 
-        /** Enum BAR for value: "bar" */
+        /**
+         * Enum BAR for value: "bar"
+         */
         public static final TypeEnum BAR = new TypeEnum("bar");
 
-        /** Enum LINE for value: "line" */
+        /**
+         * Enum LINE for value: "line"
+         */
         public static final TypeEnum LINE = new TypeEnum("line");
 
-        /** Enum PIE for value: "pie" */
+        /**
+         * Enum PIE for value: "pie"
+         */
         public static final TypeEnum PIE = new TypeEnum("pie");
 
-        /** Enum NUMBER for value: "number" */
+        /**
+         * Enum NUMBER for value: "number"
+         */
         public static final TypeEnum NUMBER = new TypeEnum("number");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -148,9 +162,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** id
-     * 
-     * @return id */
+    /**
+     * id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -164,9 +179,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** sql语句
-     * 
-     * @return sql */
+    /**
+     * sql语句
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -180,9 +196,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 图表名称
-     * 
-     * @return title */
+    /**
+     * 图表名称
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -196,9 +213,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 图表类型
-     * 
-     * @return type */
+    /**
+     * 图表类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -212,9 +230,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组id
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -228,9 +247,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组名称
-     * 
-     * @return logGroupName */
+    /**
+     * 日志组名称
+     * @return logGroupName
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -244,9 +264,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志组id
-     * 
-     * @return logStreamId */
+    /**
+     * 日志组id
+     * @return logStreamId
+     */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -260,9 +281,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 日志流名称
-     * 
-     * @return logStreamName */
+    /**
+     * 日志流名称
+     * @return logStreamName
+     */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -285,9 +307,10 @@ public class ListChartsResponse extends SdkResponse {
         return this;
     }
 
-    /** 图表配置详情
-     * 
-     * @return config */
+    /**
+     * 图表配置详情
+     * @return config
+     */
     public ChartConfig getConfig() {
         return config;
     }
@@ -337,7 +360,10 @@ public class ListChartsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

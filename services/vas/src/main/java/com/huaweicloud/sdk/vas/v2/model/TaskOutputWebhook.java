@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 输出为webhook类型时的配置信息 */
+/**
+ * 输出为webhook类型时的配置信息
+ */
 public class TaskOutputWebhook {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class TaskOutputWebhook {
         return this;
     }
 
-    /** 结果回调地址，选用webhook类型输出时必填。
-     * 
-     * @return url */
+    /**
+     * 结果回调地址，选用webhook类型输出时必填。
+     * @return url
+     */
     public URI getUrl() {
         return url;
     }
@@ -48,9 +51,10 @@ public class TaskOutputWebhook {
         return this;
     }
 
-    /** 结果回调时需要携带的请求头，选用webhook类型输出时必填。整体呈json格式，以键值对的形式表示请求头和取值，至少1组，至多10组。
-     * 
-     * @return headers */
+    /**
+     * 结果回调时需要携带的请求头，选用webhook类型输出时必填。整体呈json格式，以键值对的形式表示请求头和取值，至少1组，至多10组。
+     * @return headers
+     */
     public Object getHeaders() {
         return headers;
     }
@@ -80,9 +84,10 @@ public class TaskOutputWebhook {
         return this;
     }
 
-    /** 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，选填，仅部分服务需要。当输出类型下有这个列表时，表示希望这个输出类型下存放dataCategory列表内的数据。
+     * @return dataCategory
+     */
     public List<String> getDataCategory() {
         return dataCategory;
     }
@@ -121,7 +126,10 @@ public class TaskOutputWebhook {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** QualityEnhanceTemplate */
+/**
+ * QualityEnhanceTemplate
+ */
 public class QualityEnhanceTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class QualityEnhanceTemplate {
         return this;
     }
 
-    /** 模板名称。
-     * 
-     * @return templateName */
+    /**
+     * 模板名称。 
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -45,9 +48,10 @@ public class QualityEnhanceTemplate {
         return this;
     }
 
-    /** 模板描述，查询预置模板时才会返回。
-     * 
-     * @return templateDescription */
+    /**
+     * 模板描述，查询预置模板时才会返回。 
+     * @return templateDescription
+     */
     public String getTemplateDescription() {
         return templateDescription;
     }
@@ -70,9 +74,10 @@ public class QualityEnhanceTemplate {
         return this;
     }
 
-    /** Get video
-     * 
-     * @return video */
+    /**
+     * Get video
+     * @return video
+     */
     public QualityEnhanceVideo getVideo() {
         return video;
     }
@@ -111,7 +116,10 @@ public class QualityEnhanceTemplate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

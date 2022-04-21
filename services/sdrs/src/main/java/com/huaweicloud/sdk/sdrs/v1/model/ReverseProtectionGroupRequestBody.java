@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 保护组切换请求体 */
+/**
+ * 保护组切换请求体
+ */
 public class ReverseProtectionGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,9 +32,10 @@ public class ReverseProtectionGroupRequestBody {
         return this;
     }
 
-    /** Get reverseServerGroup
-     * 
-     * @return reverseServerGroup */
+    /**
+     * Get reverseServerGroup
+     * @return reverseServerGroup
+     */
     public ReverseProtectionGroupRequestParams getReverseServerGroup() {
         return reverseServerGroup;
     }
@@ -67,7 +70,10 @@ public class ReverseProtectionGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

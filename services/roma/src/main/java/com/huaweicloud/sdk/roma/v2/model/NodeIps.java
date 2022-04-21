@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 节点内部ip信息 */
+/**
+ * 节点内部ip信息
+ */
 public class NodeIps {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class NodeIps {
         return this;
     }
 
-    /** 自定义后端服务livedta组件节点ip列表
-     * 
-     * @return livedata */
+    /**
+     * 自定义后端服务livedta组件节点ip列表
+     * @return livedata
+     */
     public List<String> getLivedata() {
         return livedata;
     }
@@ -74,9 +77,10 @@ public class NodeIps {
         return this;
     }
 
-    /** API网关shubao组件节点ip列表
-     * 
-     * @return shubao */
+    /**
+     * API网关shubao组件节点ip列表
+     * @return shubao
+     */
     public List<String> getShubao() {
         return shubao;
     }
@@ -112,7 +116,10 @@ public class NodeIps {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

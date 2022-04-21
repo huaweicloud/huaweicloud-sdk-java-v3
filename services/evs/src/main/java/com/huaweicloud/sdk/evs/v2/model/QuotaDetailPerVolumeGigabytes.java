@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 每个云硬盘的容量配额限制。键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。 */
+/**
+ * 每个云硬盘的容量配额限制。键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
+ */
 public class QuotaDetailPerVolumeGigabytes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class QuotaDetailPerVolumeGigabytes {
         return this;
     }
 
-    /** 已使用的数量。
-     * 
-     * @return inUse */
+    /**
+     * 已使用的数量。
+     * @return inUse
+     */
     public Integer getInUse() {
         return inUse;
     }
@@ -44,9 +47,10 @@ public class QuotaDetailPerVolumeGigabytes {
         return this;
     }
 
-    /** 最大的数量。
-     * 
-     * @return limit */
+    /**
+     * 最大的数量。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class QuotaDetailPerVolumeGigabytes {
         return this;
     }
 
-    /** 预留属性。
-     * 
-     * @return reserved */
+    /**
+     * 预留属性。
+     * @return reserved
+     */
     public Integer getReserved() {
         return reserved;
     }
@@ -101,7 +106,10 @@ public class QuotaDetailPerVolumeGigabytes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

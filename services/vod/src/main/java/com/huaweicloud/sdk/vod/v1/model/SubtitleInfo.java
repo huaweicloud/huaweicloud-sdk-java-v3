@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubtitleInfo */
+/**
+ * SubtitleInfo
+ */
 public class SubtitleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class SubtitleInfo {
         return this;
     }
 
-    /** 字幕文件的下载地址
-     * 
-     * @return url */
+    /**
+     * 字幕文件的下载地址 
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -49,9 +52,10 @@ public class SubtitleInfo {
         return this;
     }
 
-    /** 字幕文件id
-     * 
-     * @return id */
+    /**
+     * 字幕文件id 
+     * @return id
+     */
     public Integer getId() {
         return id;
     }
@@ -65,9 +69,10 @@ public class SubtitleInfo {
         return this;
     }
 
-    /** 字幕文件类型
-     * 
-     * @return type */
+    /**
+     * 字幕文件类型 
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -81,9 +86,10 @@ public class SubtitleInfo {
         return this;
     }
 
-    /** 字幕文件语言种类
-     * 
-     * @return language */
+    /**
+     * 字幕文件语言种类 
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -122,7 +128,10 @@ public class SubtitleInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

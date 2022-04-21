@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 健康检查配置 */
+/**
+ * 健康检查配置
+ */
 public class HealthCheck {
 
-    /** 当前LVS只支持TCP_CHECK */
+    /**
+     * 当前LVS只支持TCP_CHECK
+     */
     public static final class ProtocolEnum {
 
-        /** Enum TCP_CHECK for value: "TCP_CHECK" */
+        /**
+         * Enum TCP_CHECK for value: "TCP_CHECK"
+         */
         public static final ProtocolEnum TCP_CHECK = new ProtocolEnum("TCP_CHECK");
 
-        /** Enum HTTP_GET for value: "HTTP_GET" */
+        /**
+         * Enum HTTP_GET for value: "HTTP_GET"
+         */
         public static final ProtocolEnum HTTP_GET = new ProtocolEnum("HTTP_GET");
 
-        /** Enum SSL_GET for value: "SSL_GET" */
+        /**
+         * Enum SSL_GET for value: "SSL_GET"
+         */
         public static final ProtocolEnum SSL_GET = new ProtocolEnum("SSL_GET");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +128,10 @@ public class HealthCheck {
         return this;
     }
 
-    /** 当前LVS只支持TCP_CHECK
-     * 
-     * @return protocol */
+    /**
+     * 当前LVS只支持TCP_CHECK
+     * @return protocol
+     */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -134,9 +145,10 @@ public class HealthCheck {
         return this;
     }
 
-    /** 健康检查端口
-     * 
-     * @return port */
+    /**
+     * 健康检查端口
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -150,9 +162,10 @@ public class HealthCheck {
         return this;
     }
 
-    /** 判定后端不健康的阈值，连续探测失败次数
-     * 
-     * @return unhealthy */
+    /**
+     * 判定后端不健康的阈值，连续探测失败次数
+     * @return unhealthy
+     */
     public Integer getUnhealthy() {
         return unhealthy;
     }
@@ -166,9 +179,10 @@ public class HealthCheck {
         return this;
     }
 
-    /** 探测后端的超时时间，单位秒
-     * 
-     * @return timeout */
+    /**
+     * 探测后端的超时时间，单位秒
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -182,9 +196,10 @@ public class HealthCheck {
         return this;
     }
 
-    /** 探测后端的间隔时间，单位秒
-     * 
-     * @return interval */
+    /**
+     * 探测后端的间隔时间，单位秒
+     * @return interval
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -225,7 +240,10 @@ public class HealthCheck {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SendVerificationCodeV2Req */
+/**
+ * SendVerificationCodeV2Req
+ */
 public class SendVerificationCodeV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 发送验证码的类型： 2：发送邮件验证码 minimum: 1 maximum: 2
-     * 
-     * @return receiverType */
+    /**
+     * 发送验证码的类型： 2：发送邮件验证码
+     * minimum: 1
+     * maximum: 2
+     * @return receiverType
+     */
     public Integer getReceiverType() {
         return receiverType;
     }
@@ -49,9 +54,12 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟 minimum: 1 maximum: 2147483647
-     * 
-     * @return timeout */
+    /**
+     * 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟
+     * minimum: 1
+     * maximum: 2147483647
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -65,9 +73,10 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 指定发送验证码的邮箱地址。
-     * 
-     * @return email */
+    /**
+     * 指定发送验证码的邮箱地址。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -81,9 +90,10 @@ public class SendVerificationCodeV2Req {
         return this;
     }
 
-    /** 根据该参数的取值选择发送邮件验证码的语言。 zh-cn：中文en-us：英文
-     * 
-     * @return lang */
+    /**
+     * 根据该参数的取值选择发送邮件验证码的语言。 zh-cn：中文en-us：英文
+     * @return lang
+     */
     public String getLang() {
         return lang;
     }
@@ -124,7 +134,10 @@ public class SendVerificationCodeV2Req {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天
-     * 
-     * @return beginTime */
+    /**
+     * 查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天
+     * @return beginTime
+     */
     public String getBeginTime() {
         return beginTime;
     }
@@ -67,9 +70,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天
-     * 
-     * @return endTime */
+    /**
+     * 查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -83,9 +87,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 云主机名称
-     * 
-     * @return hostName */
+    /**
+     * 云主机名称
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -115,12 +120,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 事件类型，包含如下: - Abnormal Login : 账户异常登录 - Invalid System Account : 风险账号 - Brute Force Cracking : 账号暴力破解 - System
-     * Start Script Change : 自启动检测 - Process Abnormal Activity : 进程异常行为 - Process Privilege Escalation : 进程提权操作 - File
-     * Privilege Escalation : 文件提权操作 - General Malware : 恶意程序（云查杀） - Abnormal Shell : 异常shell - Reverse Shell : 反弹Shell
-     * - High-Risk Command Execution : 高危命令执行 - Key File Change : 关键文件变更 - Webshell : 网站后门
-     * 
-     * @return eventTypes */
+    /**
+     * 事件类型，包含如下:   - Abnormal Login : 账户异常登录   - Invalid System Account : 风险账号   - Brute Force Cracking : 账号暴力破解   - System Start Script Change : 自启动检测   - Process Abnormal Activity : 进程异常行为   - Process Privilege Escalation : 进程提权操作   - File Privilege Escalation : 文件提权操作   - General Malware : 恶意程序（云查杀）   - Abnormal Shell : 异常shell   - Reverse Shell : 反弹Shell   - High-Risk Command Execution : 高危命令执行   - Key File Change : 关键文件变更   - Webshell : 网站后门
+     * @return eventTypes
+     */
     public List<String> getEventTypes() {
         return eventTypes;
     }
@@ -134,9 +137,10 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 是否已处理，包含如下类型： - \"unhandled\" ： 未处理 - \"handled\" ： 已处理
-     * 
-     * @return handleStatus */
+    /**
+     * 是否已处理，包含如下类型：   - \"unhandled\" ： 未处理   - \"handled\" ： 已处理
+     * @return handleStatus
+     */
     public String getHandleStatus() {
         return handleStatus;
     }
@@ -150,9 +154,12 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 默认10 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 默认10
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -166,9 +173,12 @@ public class ListEventsRequest {
         return this;
     }
 
-    /** 默认0 minimum: 0 maximum: 100000
-     * 
-     * @return offset */
+    /**
+     * 默认0
+     * minimum: 0
+     * maximum: 100000
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -215,7 +225,10 @@ public class ListEventsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

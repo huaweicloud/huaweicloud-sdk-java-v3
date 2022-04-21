@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 网卡资源 */
+/**
+ * 网卡资源
+ */
 public class Nics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Nics {
         return this;
     }
 
-    /** 子网ID，如果是自动创建，使用\"autoCreate\"
-     * 
-     * @return id */
+    /**
+     * 子网ID，如果是自动创建，使用\"autoCreate\"
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class Nics {
         return this;
     }
 
-    /** 子网名称
-     * 
-     * @return name */
+    /**
+     * 子网名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +69,10 @@ public class Nics {
         return this;
     }
 
-    /** 子网网关/掩码
-     * 
-     * @return cidr */
+    /**
+     * 子网网关/掩码
+     * @return cidr
+     */
     public String getCidr() {
         return cidr;
     }
@@ -81,9 +86,10 @@ public class Nics {
         return this;
     }
 
-    /** 虚拟机IP地址，如果没有这个字段，自动分配IP
-     * 
-     * @return ip */
+    /**
+     * 虚拟机IP地址，如果没有这个字段，自动分配IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -122,7 +128,10 @@ public class Nics {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

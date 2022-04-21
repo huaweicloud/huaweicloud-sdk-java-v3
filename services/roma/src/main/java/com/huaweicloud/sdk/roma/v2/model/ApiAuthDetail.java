@@ -10,44 +10,69 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** api鉴权字段 */
+/**
+ * api鉴权字段
+ */
 public class ApiAuthDetail {
 
-    /** 访问API服务的认证方式 - none - basicauth - oauth2.0 - hmac - secret - md5 - apiGateway - keyTop - hikVision -
-     * huaweiNetworkManagement - liHe */
+    /**
+     * 访问API服务的认证方式 - none - basicauth - oauth2.0 - hmac - secret - md5 - apiGateway - keyTop - hikVision - huaweiNetworkManagement - liHe
+     */
     public static final class AuthMethodEnum {
 
-        /** Enum NONE for value: "none" */
+        /**
+         * Enum NONE for value: "none"
+         */
         public static final AuthMethodEnum NONE = new AuthMethodEnum("none");
 
-        /** Enum BASICAUTH for value: "basicauth" */
+        /**
+         * Enum BASICAUTH for value: "basicauth"
+         */
         public static final AuthMethodEnum BASICAUTH = new AuthMethodEnum("basicauth");
 
-        /** Enum OAUTH2_0 for value: "oauth2.0" */
+        /**
+         * Enum OAUTH2_0 for value: "oauth2.0"
+         */
         public static final AuthMethodEnum OAUTH2_0 = new AuthMethodEnum("oauth2.0");
 
-        /** Enum HMAC for value: "hmac" */
+        /**
+         * Enum HMAC for value: "hmac"
+         */
         public static final AuthMethodEnum HMAC = new AuthMethodEnum("hmac");
 
-        /** Enum SECRET for value: "secret" */
+        /**
+         * Enum SECRET for value: "secret"
+         */
         public static final AuthMethodEnum SECRET = new AuthMethodEnum("secret");
 
-        /** Enum MD5 for value: "md5" */
+        /**
+         * Enum MD5 for value: "md5"
+         */
         public static final AuthMethodEnum MD5 = new AuthMethodEnum("md5");
 
-        /** Enum APIGATEWAY for value: "apiGateway" */
+        /**
+         * Enum APIGATEWAY for value: "apiGateway"
+         */
         public static final AuthMethodEnum APIGATEWAY = new AuthMethodEnum("apiGateway");
 
-        /** Enum KEYTOP for value: "keyTop" */
+        /**
+         * Enum KEYTOP for value: "keyTop"
+         */
         public static final AuthMethodEnum KEYTOP = new AuthMethodEnum("keyTop");
 
-        /** Enum HIKVISION for value: "hikVision" */
+        /**
+         * Enum HIKVISION for value: "hikVision"
+         */
         public static final AuthMethodEnum HIKVISION = new AuthMethodEnum("hikVision");
 
-        /** Enum HUAWEINETWORKMANAGEMENT for value: "huaweiNetworkManagement" */
+        /**
+         * Enum HUAWEINETWORKMANAGEMENT for value: "huaweiNetworkManagement"
+         */
         public static final AuthMethodEnum HUAWEINETWORKMANAGEMENT = new AuthMethodEnum("huaweiNetworkManagement");
 
-        /** Enum LIHE for value: "liHe" */
+        /**
+         * Enum LIHE for value: "liHe"
+         */
         public static final AuthMethodEnum LIHE = new AuthMethodEnum("liHe");
 
         private static final Map<String, AuthMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -126,16 +151,24 @@ public class ApiAuthDetail {
 
     private AuthMethodEnum authMethod;
 
-    /** 访问API服务的APP认证方式，认证方式为（apiGateway）时填写 - default - secret - jwt */
+    /**
+     * 访问API服务的APP认证方式，认证方式为（apiGateway）时填写 - default - secret - jwt
+     */
     public static final class AppAuthTypeEnum {
 
-        /** Enum DEFAULT for value: "default" */
+        /**
+         * Enum DEFAULT for value: "default"
+         */
         public static final AppAuthTypeEnum DEFAULT = new AppAuthTypeEnum("default");
 
-        /** Enum SECRET for value: "secret" */
+        /**
+         * Enum SECRET for value: "secret"
+         */
         public static final AppAuthTypeEnum SECRET = new AppAuthTypeEnum("secret");
 
-        /** Enum JWT for value: "jwt" */
+        /**
+         * Enum JWT for value: "jwt"
+         */
         public static final AppAuthTypeEnum JWT = new AppAuthTypeEnum("jwt");
 
         private static final Map<String, AppAuthTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -271,10 +304,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的认证方式 - none - basicauth - oauth2.0 - hmac - secret - md5 - apiGateway - keyTop - hikVision -
-     * huaweiNetworkManagement - liHe
-     * 
-     * @return authMethod */
+    /**
+     * 访问API服务的认证方式 - none - basicauth - oauth2.0 - hmac - secret - md5 - apiGateway - keyTop - hikVision - huaweiNetworkManagement - liHe
+     * @return authMethod
+     */
     public AuthMethodEnum getAuthMethod() {
         return authMethod;
     }
@@ -288,9 +321,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的APP认证方式，认证方式为（apiGateway）时填写 - default - secret - jwt
-     * 
-     * @return appAuthType */
+    /**
+     * 访问API服务的APP认证方式，认证方式为（apiGateway）时填写 - default - secret - jwt
+     * @return appAuthType
+     */
     public AppAuthTypeEnum getAppAuthType() {
         return appAuthType;
     }
@@ -304,9 +338,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的用户名 - 认证方式为（lihe、huaweiNetworkManagement、basicauth）时填写
-     * 
-     * @return userName */
+    /**
+     * 访问API服务的用户名 - 认证方式为（lihe、huaweiNetworkManagement、basicauth）时填写
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -320,9 +355,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的密码 - 认证方式为（lihe、huaweiNetworkManagement、basicauth、secret、md5、hmac）时填写
-     * 
-     * @return password */
+    /**
+     * 访问API服务的密码 - 认证方式为（lihe、huaweiNetworkManagement、basicauth、secret、md5、hmac）时填写
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -336,9 +372,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的AppKey - 认证方式为（apiGateway、oauth2.0）时填写
-     * 
-     * @return appKey */
+    /**
+     * 访问API服务的AppKey - 认证方式为（apiGateway、oauth2.0）时填写
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -352,9 +389,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的AppSecret - 认证方式为（apiGateway、oauth2.0）时填写
-     * 
-     * @return appSecret */
+    /**
+     * 访问API服务的AppSecret - 认证方式为（apiGateway、oauth2.0）时填写
+     * @return appSecret
+     */
     public String getAppSecret() {
         return appSecret;
     }
@@ -368,9 +406,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的Secret - 认证方式为（KeyTop、HikVision、Secret、HMAC、MD5）时填写
-     * 
-     * @return secret */
+    /**
+     * 访问API服务的Secret - 认证方式为（KeyTop、HikVision、Secret、HMAC、MD5）时填写
+     * @return secret
+     */
     public String getSecret() {
         return secret;
     }
@@ -384,9 +423,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的备用IP - 认证方式为（HuaweiNetworkManagement）时填写
-     * 
-     * @return altIp */
+    /**
+     * 访问API服务的备用IP - 认证方式为（HuaweiNetworkManagement）时填写
+     * @return altIp
+     */
     public String getAltIp() {
         return altIp;
     }
@@ -400,9 +440,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的AccessTokenUrl - 认证方式为（liHe、oauth2.0 huaweiNetworkManagement）时填写
-     * 
-     * @return accessTokenUrl */
+    /**
+     * 访问API服务的AccessTokenUrl - 认证方式为（liHe、oauth2.0 huaweiNetworkManagement）时填写
+     * @return accessTokenUrl
+     */
     public String getAccessTokenUrl() {
         return accessTokenUrl;
     }
@@ -416,9 +457,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的客户端标识 - 认证方式为Oauth2时填写
-     * 
-     * @return clientId */
+    /**
+     * 访问API服务的客户端标识 - 认证方式为Oauth2时填写
+     * @return clientId
+     */
     public String getClientId() {
         return clientId;
     }
@@ -432,9 +474,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的客户端密钥 - 认证方式为Oauth2时填写
-     * 
-     * @return clientSecret */
+    /**
+     * 访问API服务的客户端密钥 - 认证方式为Oauth2时填写
+     * @return clientSecret
+     */
     public String getClientSecret() {
         return clientSecret;
     }
@@ -448,9 +491,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的Scope - 认证方式为（LiHe、Oauth2）时填写
-     * 
-     * @return scope */
+    /**
+     * 访问API服务的Scope - 认证方式为（LiHe、Oauth2）时填写
+     * @return scope
+     */
     public String getScope() {
         return scope;
     }
@@ -464,9 +508,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的Authorization - 认证方式为（LiHe）时填写
-     * 
-     * @return authorization */
+    /**
+     * 访问API服务的Authorization - 认证方式为（LiHe）时填写
+     * @return authorization
+     */
     public String getAuthorization() {
         return authorization;
     }
@@ -480,9 +525,10 @@ public class ApiAuthDetail {
         return this;
     }
 
-    /** 访问API服务的授权类型 - 认证方式为（LiHe、Oauth2）时填写 - client_credentials （oauth2.0使用）
-     * 
-     * @return grantType */
+    /**
+     * 访问API服务的授权类型 - 认证方式为（LiHe、Oauth2）时填写 - client_credentials （oauth2.0使用）
+     * @return grantType
+     */
     public String getGrantType() {
         return grantType;
     }
@@ -555,7 +601,10 @@ public class ApiAuthDetail {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

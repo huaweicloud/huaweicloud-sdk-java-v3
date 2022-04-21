@@ -38,9 +38,10 @@ public class ContentCompareDiff {
         return this;
     }
 
-    /** 查询目标库的SQL。
-     * 
-     * @return targetSelectSql */
+    /**
+     * 查询目标库的SQL。
+     * @return targetSelectSql
+     */
     public String getTargetSelectSql() {
         return targetSelectSql;
     }
@@ -54,9 +55,10 @@ public class ContentCompareDiff {
         return this;
     }
 
-    /** 查询源库的SQL。
-     * 
-     * @return sourceSelectSql */
+    /**
+     * 查询源库的SQL。
+     * @return sourceSelectSql
+     */
     public String getSourceSelectSql() {
         return sourceSelectSql;
     }
@@ -86,9 +88,10 @@ public class ContentCompareDiff {
         return this;
     }
 
-    /** 源库KEY值列表。
-     * 
-     * @return sourceKeyValue */
+    /**
+     * 源库KEY值列表。
+     * @return sourceKeyValue
+     */
     public List<String> getSourceKeyValue() {
         return sourceKeyValue;
     }
@@ -118,9 +121,10 @@ public class ContentCompareDiff {
         return this;
     }
 
-    /** 目标库KEY值列表。
-     * 
-     * @return targetKeyValue */
+    /**
+     * 目标库KEY值列表。
+     * @return targetKeyValue
+     */
     public List<String> getTargetKeyValue() {
         return targetKeyValue;
     }
@@ -161,7 +165,10 @@ public class ContentCompareDiff {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SlowLog */
+/**
+ * SlowLog
+ */
 public class SlowLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class SlowLog {
         return this;
     }
 
-    /** SQL语句。
-     * 
-     * @return sql */
+    /**
+     * SQL语句。
+     * @return sql
+     */
     public String getSql() {
         return sql;
     }
@@ -74,9 +77,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 数据库名。
-     * 
-     * @return database */
+    /**
+     * 数据库名。
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -90,9 +94,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 客户端。
-     * 
-     * @return client */
+    /**
+     * 客户端。
+     * @return client
+     */
     public String getClient() {
         return client;
     }
@@ -106,9 +111,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 用户。
-     * 
-     * @return user */
+    /**
+     * 用户。
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -122,9 +128,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 执行开始时间（Unix timestamp），单位：毫秒。
-     * 
-     * @return executeAt */
+    /**
+     * 执行开始时间（Unix timestamp），单位：毫秒。
+     * @return executeAt
+     */
     public Long getExecuteAt() {
         return executeAt;
     }
@@ -138,9 +145,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 执行耗时（秒）。
-     * 
-     * @return queryTime */
+    /**
+     * 执行耗时（秒）。
+     * @return queryTime
+     */
     public Double getQueryTime() {
         return queryTime;
     }
@@ -154,9 +162,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 锁等待耗时（秒）。
-     * 
-     * @return lockTime */
+    /**
+     * 锁等待耗时（秒）。
+     * @return lockTime
+     */
     public Double getLockTime() {
         return lockTime;
     }
@@ -170,9 +179,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 扫描行数。
-     * 
-     * @return rowsExamined */
+    /**
+     * 扫描行数。
+     * @return rowsExamined
+     */
     public Long getRowsExamined() {
         return rowsExamined;
     }
@@ -186,9 +196,10 @@ public class SlowLog {
         return this;
     }
 
-    /** 返回行数。
-     * 
-     * @return rowsSent */
+    /**
+     * 返回行数。
+     * @return rowsSent
+     */
     public Long getRowsSent() {
         return rowsSent;
     }
@@ -236,7 +247,10 @@ public class SlowLog {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

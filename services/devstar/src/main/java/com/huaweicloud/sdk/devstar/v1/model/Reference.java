@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Reference */
+/**
+ * Reference
+ */
 public class Reference {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class Reference {
         return this;
     }
 
-    /** 标题名称。
-     * 
-     * @return title */
+    /**
+     * 标题名称。
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
@@ -54,9 +57,10 @@ public class Reference {
         return this;
     }
 
-    /** 链接地址。
-     * 
-     * @return url */
+    /**
+     * 链接地址。
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -70,9 +74,12 @@ public class Reference {
         return this;
     }
 
-    /** 关联类型。 minimum: 0 maximum: 10
-     * 
-     * @return type */
+    /**
+     * 关联类型。
+     * minimum: 0
+     * maximum: 10
+     * @return type
+     */
     public Integer getType() {
         return type;
     }
@@ -86,9 +93,10 @@ public class Reference {
         return this;
     }
 
-    /** 产品短名。
-     * 
-     * @return productshort */
+    /**
+     * 产品短名。
+     * @return productshort
+     */
     public String getProductshort() {
         return productshort;
     }
@@ -102,9 +110,10 @@ public class Reference {
         return this;
     }
 
-    /** 是否有效
-     * 
-     * @return isValid */
+    /**
+     * 是否有效
+     * @return isValid
+     */
     public Boolean getIsValid() {
         return isValid;
     }
@@ -145,7 +154,10 @@ public class Reference {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

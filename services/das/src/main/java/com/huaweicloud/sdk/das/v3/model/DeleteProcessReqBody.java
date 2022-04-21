@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DeleteProcessReqBody */
+/**
+ * DeleteProcessReqBody
+ */
 public class DeleteProcessReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class DeleteProcessReqBody {
         return this;
     }
 
-    /** 数据库用户ID
-     * 
-     * @return dbUserId */
+    /**
+     * 数据库用户ID
+     * @return dbUserId
+     */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -68,9 +71,10 @@ public class DeleteProcessReqBody {
         return this;
     }
 
-    /** 会话ID列表。process_ids、user、database至少指定一个参数。
-     * 
-     * @return processIds */
+    /**
+     * 会话ID列表。process_ids、user、database至少指定一个参数。
+     * @return processIds
+     */
     public List<String> getProcessIds() {
         return processIds;
     }
@@ -84,9 +88,10 @@ public class DeleteProcessReqBody {
         return this;
     }
 
-    /** 用户
-     * 
-     * @return user */
+    /**
+     * 用户
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -100,9 +105,10 @@ public class DeleteProcessReqBody {
         return this;
     }
 
-    /** 数据库名称
-     * 
-     * @return database */
+    /**
+     * 数据库名称
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -143,7 +149,10 @@ public class DeleteProcessReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListLiveStreamsOnlineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条页数
-     * 
-     * @return totalPage */
+    /**
+     * 总条页数
+     * @return totalPage
+     */
     public Long getTotalPage() {
         return totalPage;
     }
@@ -63,9 +66,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条目数
-     * 
-     * @return totalNum */
+    /**
+     * 总条目数
+     * @return totalNum
+     */
     public Long getTotalNum() {
         return totalNum;
     }
@@ -79,9 +83,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 偏移量
-     * 
-     * @return offset */
+    /**
+     * 偏移量
+     * @return offset
+     */
     public Long getOffset() {
         return offset;
     }
@@ -95,9 +100,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 每页条目数
-     * 
-     * @return limit */
+    /**
+     * 每页条目数
+     * @return limit
+     */
     public Long getLimit() {
         return limit;
     }
@@ -111,9 +117,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求唯一标识
-     * 
-     * @return requestId */
+    /**
+     * 请求唯一标识
+     * @return requestId
+     */
     public String getRequestId() {
         return requestId;
     }
@@ -143,9 +150,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return this;
     }
 
-    /** 推流统计
-     * 
-     * @return streams */
+    /**
+     * 推流统计
+     * @return streams
+     */
     public List<OnlineInfo> getStreams() {
         return streams;
     }
@@ -190,7 +198,10 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

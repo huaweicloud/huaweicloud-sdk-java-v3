@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 保护实例变更规格请求体 */
+/**
+ * 保护实例变更规格请求体
+ */
 public class ResizeProtectedInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ResizeProtectedInstanceRequestBody {
         return this;
     }
 
-    /** Get resize
-     * 
-     * @return resize */
+    /**
+     * Get resize
+     * @return resize
+     */
     public ResizeProtectedInstanceRequestParams getResize() {
         return resize;
     }
@@ -65,7 +68,10 @@ public class ResizeProtectedInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

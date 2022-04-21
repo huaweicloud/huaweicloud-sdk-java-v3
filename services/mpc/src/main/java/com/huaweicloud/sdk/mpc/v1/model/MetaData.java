@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** MetaData */
+/**
+ * MetaData
+ */
 public class MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,12 @@ public class MetaData {
         return this;
     }
 
-    /** 文件大小。 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 文件大小。 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -67,9 +72,12 @@ public class MetaData {
         return this;
     }
 
-    /** 视频时长，带小数位显示。单位：秒。 minimum: 0 maximum: 2147483647
-     * 
-     * @return durationMs */
+    /**
+     * 视频时长，带小数位显示。单位：秒。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return durationMs
+     */
     public Double getDurationMs() {
         return durationMs;
     }
@@ -83,9 +91,12 @@ public class MetaData {
         return this;
     }
 
-    /** 视频时长。单位：秒。 minimum: 0 maximum: 2147483647
-     * 
-     * @return duration */
+    /**
+     * 视频时长。单位：秒。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
     public Long getDuration() {
         return duration;
     }
@@ -99,9 +110,10 @@ public class MetaData {
         return this;
     }
 
-    /** 文件封装格式。
-     * 
-     * @return format */
+    /**
+     * 文件封装格式。 
+     * @return format
+     */
     public String getFormat() {
         return format;
     }
@@ -115,9 +127,12 @@ public class MetaData {
         return this;
     }
 
-    /** 总码率。单位：bit/秒 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return bitrate */
+    /**
+     * 总码率。单位：bit/秒 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return bitrate
+     */
     public Long getBitrate() {
         return bitrate;
     }
@@ -147,9 +162,10 @@ public class MetaData {
         return this;
     }
 
-    /** 视频流元数据。
-     * 
-     * @return video */
+    /**
+     * 视频流元数据。 
+     * @return video
+     */
     public List<VideoInfo> getVideo() {
         return video;
     }
@@ -179,9 +195,10 @@ public class MetaData {
         return this;
     }
 
-    /** 音频流元数据。
-     * 
-     * @return audio */
+    /**
+     * 音频流元数据。 
+     * @return audio
+     */
     public List<AudioInfo> getAudio() {
         return audio;
     }
@@ -225,7 +242,10 @@ public class MetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

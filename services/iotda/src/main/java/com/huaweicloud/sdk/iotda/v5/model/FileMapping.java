@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** OBS文件中的列和流转数据的对应关系。 */
+/**
+ * OBS文件中的列和流转数据的对应关系。
+ */
 public class FileMapping {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class FileMapping {
         return this;
     }
 
-    /** **参数说明**：csv文件格式转换列表。当file_type为csv时，必填。
-     * 
-     * @return csvMappings */
+    /**
+     * **参数说明**：csv文件格式转换列表。当file_type为csv时，必填。
+     * @return csvMappings
+     */
     public List<CsvMappings> getCsvMappings() {
         return csvMappings;
     }
@@ -74,7 +77,10 @@ public class FileMapping {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

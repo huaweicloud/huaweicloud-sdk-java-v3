@@ -40,9 +40,10 @@ public class Datasource {
         return this;
     }
 
-    /** 数据源名称。
-     * 
-     * @return datasourceName */
+    /**
+     * 数据源名称。
+     * @return datasourceName
+     */
     public String getDatasourceName() {
         return datasourceName;
     }
@@ -56,9 +57,10 @@ public class Datasource {
         return this;
     }
 
-    /** 工作空间id。
-     * 
-     * @return workspaceId */
+    /**
+     * 工作空间id。
+     * @return workspaceId
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -72,9 +74,10 @@ public class Datasource {
         return this;
     }
 
-    /** 数据源id。
-     * 
-     * @return datasourceId */
+    /**
+     * 数据源id。
+     * @return datasourceId
+     */
     public String getDatasourceId() {
         return datasourceId;
     }
@@ -88,9 +91,10 @@ public class Datasource {
         return this;
     }
 
-    /** 状态。
-     * 
-     * @return status */
+    /**
+     * 状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -104,9 +108,10 @@ public class Datasource {
         return this;
     }
 
-    /** 创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
     public Long getCreatedAt() {
         return createdAt;
     }
@@ -148,7 +153,10 @@ public class Datasource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

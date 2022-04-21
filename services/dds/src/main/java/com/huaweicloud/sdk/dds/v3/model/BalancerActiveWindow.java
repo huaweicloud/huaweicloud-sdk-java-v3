@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 活动时间窗设置。 */
+/**
+ * 活动时间窗设置。
+ */
 public class BalancerActiveWindow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class BalancerActiveWindow {
         return this;
     }
 
-    /** 活动时间窗开始时间。
-     * 
-     * @return startTime */
+    /**
+     * 活动时间窗开始时间。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -39,9 +42,10 @@ public class BalancerActiveWindow {
         return this;
     }
 
-    /** 活动时间窗结束时间。
-     * 
-     * @return stopTime */
+    /**
+     * 活动时间窗结束时间。
+     * @return stopTime
+     */
     public String getStopTime() {
         return stopTime;
     }
@@ -78,7 +82,10 @@ public class BalancerActiveWindow {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowShareResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,13 +73,19 @@ public class ShowShareResponse extends SdkResponse {
 
     private String name;
 
-    /** SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。 */
+    /**
+     * SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。
+     */
     public static final class PayModelEnum {
 
-        /** Enum _0 for value: "0" */
+        /**
+         * Enum _0 for value: "0"
+         */
         public static final PayModelEnum _0 = new PayModelEnum("0");
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final PayModelEnum _1 = new PayModelEnum("1");
 
         private static final Map<String, PayModelEnum> STATIC_FIELDS = createStaticFields();
@@ -206,9 +214,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** Get actionProgress
-     * 
-     * @return actionProgress */
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
     public ActionProgress getActionProgress() {
         return actionProgress;
     }
@@ -222,9 +231,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的版本号。
-     * 
-     * @return version */
+    /**
+     * SFS Turbo文件系统的版本号。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -238,9 +248,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统可用容量，单位GB。
-     * 
-     * @return availCapacity */
+    /**
+     * SFS Turbo文件系统可用容量，单位GB。
+     * @return availCapacity
+     */
     public String getAvailCapacity() {
         return availCapacity;
     }
@@ -254,9 +265,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统所在可用区编码。
-     * 
-     * @return availabilityZone */
+    /**
+     * SFS Turbo文件系统所在可用区编码。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -270,9 +282,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统所在可用区名称。
-     * 
-     * @return azName */
+    /**
+     * SFS Turbo文件系统所在可用区名称。
+     * @return azName
+     */
     public String getAzName() {
         return azName;
     }
@@ -286,9 +299,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时间。UTC时间，例如：2018-11-19T04:02:03
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。UTC时间，例如：2018-11-19T04:02:03
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -302,9 +316,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户指定的加密密钥ID，非加密盘时不返回。
-     * 
-     * @return cryptKeyId */
+    /**
+     * 用户指定的加密密钥ID，非加密盘时不返回。
+     * @return cryptKeyId
+     */
     public String getCryptKeyId() {
         return cryptKeyId;
     }
@@ -318,9 +333,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 如果是增强型文件系统，该字段返回bandwidth，否则不返回。
-     * 
-     * @return expandType */
+    /**
+     * 如果是增强型文件系统，该字段返回bandwidth，否则不返回。
+     * @return expandType
+     */
     public String getExpandType() {
         return expandType;
     }
@@ -334,9 +350,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的挂载端点。
-     * 
-     * @return exportLocation */
+    /**
+     * SFS Turbo文件系统的挂载端点。
+     * @return exportLocation
+     */
     public String getExportLocation() {
         return exportLocation;
     }
@@ -350,9 +367,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo的文件系统ID。
-     * 
-     * @return id */
+    /**
+     * SFS Turbo的文件系统ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -366,9 +384,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建时指定的SFS Turbo文件系统名称。
-     * 
-     * @return name */
+    /**
+     * 创建时指定的SFS Turbo文件系统名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -382,9 +401,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。
-     * 
-     * @return payModel */
+    /**
+     * SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。
+     * @return payModel
+     */
     public PayModelEnum getPayModel() {
         return payModel;
     }
@@ -398,9 +418,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统所在区域。
-     * 
-     * @return region */
+    /**
+     * SFS Turbo文件系统所在区域。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -414,9 +435,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户指定的安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 用户指定的安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -430,9 +452,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的协议类型，当前为NFS
-     * 
-     * @return shareProto */
+    /**
+     * SFS Turbo文件系统的协议类型，当前为NFS
+     * @return shareProto
+     */
     public String getShareProto() {
         return shareProto;
     }
@@ -446,9 +469,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统性能类型，包括“STANDARD”标准型和“PERFORMANCE”性能型。
-     * 
-     * @return shareType */
+    /**
+     * SFS Turbo文件系统性能类型，包括“STANDARD”标准型和“PERFORMANCE”性能型。
+     * @return shareType
+     */
     public String getShareType() {
         return shareType;
     }
@@ -462,9 +486,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统总容量，单位GB。
-     * 
-     * @return size */
+    /**
+     * SFS Turbo文件系统总容量，单位GB。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -478,9 +503,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的状态
-     * 
-     * @return status */
+    /**
+     * SFS Turbo文件系统的状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -494,9 +520,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** SFS Turbo文件系统的子状态
-     * 
-     * @return subStatus */
+    /**
+     * SFS Turbo文件系统的子状态
+     * @return subStatus
+     */
     public String getSubStatus() {
         return subStatus;
     }
@@ -510,9 +537,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户指定的子网的网络ID。
-     * 
-     * @return subnetId */
+    /**
+     * 用户指定的子网的网络ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -526,9 +554,10 @@ public class ShowShareResponse extends SdkResponse {
         return this;
     }
 
-    /** 用户指定的VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 用户指定的VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -622,7 +651,10 @@ public class ShowShareResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

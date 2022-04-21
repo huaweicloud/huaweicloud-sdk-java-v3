@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 灾备初始化对象详情信息 */
+/**
+ * 灾备初始化对象详情信息
+ */
 public class QueryFlowCompareDataResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class QueryFlowCompareDataResp {
         return this;
     }
 
-    /** 任务总数
-     * 
-     * @return totalRecord */
+    /**
+     * 任务总数
+     * @return totalRecord
+     */
     public Long getTotalRecord() {
         return totalRecord;
     }
@@ -47,9 +50,10 @@ public class QueryFlowCompareDataResp {
         return this;
     }
 
-    /** 数据生成时间
-     * 
-     * @return createTime */
+    /**
+     * 数据生成时间
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -79,9 +83,10 @@ public class QueryFlowCompareDataResp {
         return this;
     }
 
-    /** 对比结果
-     * 
-     * @return list */
+    /**
+     * 对比结果
+     * @return list
+     */
     public List<StructDetailVO> getList() {
         return list;
     }
@@ -120,7 +125,10 @@ public class QueryFlowCompareDataResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

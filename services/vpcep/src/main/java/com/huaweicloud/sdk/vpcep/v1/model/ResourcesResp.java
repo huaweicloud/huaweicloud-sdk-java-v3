@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 查询配额接口响应结构体 */
+/**
+ * 查询配额接口响应结构体
+ */
 public class ResourcesResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class ResourcesResp {
         return this;
     }
 
-    /** 资源列表
-     * 
-     * @return resources */
+    /**
+     * 资源列表
+     * @return resources
+     */
     public List<Quotas> getResources() {
         return resources;
     }
@@ -74,7 +77,10 @@ public class ResourcesResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowMqsInstanceMessagesRespMessages */
+/**
+ * ShowMqsInstanceMessagesRespMessages
+ */
 public class ShowMqsInstanceMessagesRespMessages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topic */
+    /**
+     * topic名称。
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -84,9 +87,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息所在的分区。
-     * 
-     * @return partition */
+    /**
+     * 消息所在的分区。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -100,9 +104,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息key。
-     * 
-     * @return key */
+    /**
+     * 消息key。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -116,9 +121,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息内容。
-     * 
-     * @return value */
+    /**
+     * 消息内容。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -132,9 +138,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息大小。
-     * 
-     * @return size */
+    /**
+     * 消息大小。
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -148,9 +155,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return timestamp */
+    /**
+     * topic名称。
+     * @return timestamp
+     */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -164,9 +172,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 大数据标识。
-     * 
-     * @return hugeMessage */
+    /**
+     * 大数据标识。
+     * @return hugeMessage
+     */
     public Boolean getHugeMessage() {
         return hugeMessage;
     }
@@ -180,9 +189,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息偏移量。
-     * 
-     * @return messageOffset */
+    /**
+     * 消息偏移量。
+     * @return messageOffset
+     */
     public Long getMessageOffset() {
         return messageOffset;
     }
@@ -196,9 +206,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息ID。
-     * 
-     * @return messageId */
+    /**
+     * 消息ID。
+     * @return messageId
+     */
     public String getMessageId() {
         return messageId;
     }
@@ -212,9 +223,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 应用ID。
-     * 
-     * @return appId */
+    /**
+     * 应用ID。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -228,9 +240,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return this;
     }
 
-    /** 消息标签。
-     * 
-     * @return tag */
+    /**
+     * 消息标签。
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -287,7 +300,10 @@ public class ShowMqsInstanceMessagesRespMessages {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get errorCount
-     * 
-     * @return errorCount */
+    /**
+     * Get errorCount
+     * @return errorCount
+     */
     public ErrorCount getErrorCount() {
         return errorCount;
     }
@@ -96,9 +99,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get dataStruct
-     * 
-     * @return dataStruct */
+    /**
+     * Get dataStruct
+     * @return dataStruct
+     */
     public DataStruct getDataStruct() {
         return dataStruct;
     }
@@ -128,9 +132,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 错误样例(请求类型为DATA_INSPECTION时返回)。
-     * 
-     * @return errorSamples */
+    /**
+     * 错误样例(请求类型为DATA_INSPECTION时返回)。
+     * @return errorSamples
+     */
     public List<ErrorSample> getErrorSamples() {
         return errorSamples;
     }
@@ -160,9 +165,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 数据检测结果(请求类型为DATA_INSPECTION时返回)。
-     * 
-     * @return inspectResult */
+    /**
+     * 数据检测结果(请求类型为DATA_INSPECTION时返回)。
+     * @return inspectResult
+     */
     public List<InspectResult> getInspectResult() {
         return inspectResult;
     }
@@ -176,9 +182,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 是否成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -192,9 +199,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回消息。
-     * 
-     * @return message */
+    /**
+     * 返回消息。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -208,9 +216,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 合法率(请求类型为DATA_INSPECTION时返回)。
-     * 
-     * @return legalRate */
+    /**
+     * 合法率(请求类型为DATA_INSPECTION时返回)。
+     * @return legalRate
+     */
     public Double getLegalRate() {
         return legalRate;
     }
@@ -224,9 +233,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 检测结果生成时间(请求类型为DATA_INSPECTION时返回)。
-     * 
-     * @return inspectRstGeneratedTime */
+    /**
+     * 检测结果生成时间(请求类型为DATA_INSPECTION时返回)。
+     * @return inspectRstGeneratedTime
+     */
     public String getInspectRstGeneratedTime() {
         return inspectRstGeneratedTime;
     }
@@ -249,9 +259,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** Get finalReport
-     * 
-     * @return finalReport */
+    /**
+     * Get finalReport
+     * @return finalReport
+     */
     public FinalReport getFinalReport() {
         return finalReport;
     }
@@ -311,7 +322,10 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

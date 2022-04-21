@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** HttpInfoResponseBody */
+/**
+ * HttpInfoResponseBody
+ */
 public class HttpInfoResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +61,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源；3：启用HTTPS加速并HTTPS回源，开启时需要传递证书及私钥
-     * 
-     * @return httpsStatus */
+    /**
+     * HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源；3：启用HTTPS加速并HTTPS回源，开启时需要传递证书及私钥
+     * @return httpsStatus
+     */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -75,9 +78,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 证书名称。（长度限制为3-32字符）。
-     * 
-     * @return certName */
+    /**
+     * 证书名称。（长度限制为3-32字符）。
+     * @return certName
+     */
     public String getCertName() {
         return certName;
     }
@@ -91,9 +95,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 证书内容。
-     * 
-     * @return certificate */
+    /**
+     * 证书内容。
+     * @return certificate
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -107,9 +112,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。（为了客户信息安全，接口返回私钥为空）
-     * 
-     * @return privateKey */
+    /**
+     * 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。（为了客户信息安全，接口返回私钥为空）
+     * @return privateKey
+     */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -123,9 +129,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 证书类型。1：代表华为云托管证书；0：表示自有证书。
-     * 
-     * @return certificateType */
+    /**
+     * 证书类型。1：代表华为云托管证书；0：表示自有证书。
+     * @return certificateType
+     */
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -139,9 +146,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
-     * 
-     * @return forceRedirectHttps */
+    /**
+     * 客户端请求是否强制重定向。1是，0否。（如果为2，表示强制跳转HTTP）
+     * @return forceRedirectHttps
+     */
     public Integer getForceRedirectHttps() {
         return forceRedirectHttps;
     }
@@ -164,9 +172,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** Get forceRedirectConfig
-     * 
-     * @return forceRedirectConfig */
+    /**
+     * Get forceRedirectConfig
+     * @return forceRedirectConfig
+     */
     public ForceRedirect getForceRedirectConfig() {
         return forceRedirectConfig;
     }
@@ -180,9 +189,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 是否使用HTTP2.0。（1是，0否。）
-     * 
-     * @return http2 */
+    /**
+     * 是否使用HTTP2.0。（1是，0否。）
+     * @return http2
+     */
     public Integer getHttp2() {
         return http2;
     }
@@ -196,9 +206,10 @@ public class HttpInfoResponseBody {
         return this;
     }
 
-    /** 证书过期时间
-     * 
-     * @return expirationTime */
+    /**
+     * 证书过期时间
+     * @return expirationTime
+     */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -257,7 +268,10 @@ public class HttpInfoResponseBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

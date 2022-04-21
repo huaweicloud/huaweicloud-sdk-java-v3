@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StatUsageSummaryInfo */
+/**
+ * StatUsageSummaryInfo
+ */
 public class StatUsageSummaryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -59,10 +62,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 有效天数，精度最高返回小数点后20位。 说明：
-     * 计算方式为上报的点数/288所得出的值。其中288为一天的点数，5分钟为一个点数单位。计算95费用时，因95费用是按月定价，若实际不足月，则是使用官网价*折扣*actual_days/当月天数，来计算费用明细。
-     * 
-     * @return actualDays */
+    /**
+     * 有效天数，精度最高返回小数点后20位。  说明： 计算方式为上报的点数/288所得出的值。其中288为一天的点数，5分钟为一个点数单位。计算95费用时，因95费用是按月定价，若实际不足月，则是使用官网价*折扣*actual_days/当月天数，来计算费用明细。
+     * @return actualDays
+     */
     public String getActualDays() {
         return actualDays;
     }
@@ -76,9 +79,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 计费带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。
-     * 
-     * @return bandWidth */
+    /**
+     * 计费带宽的按月汇总。  说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。
+     * @return bandWidth
+     */
     public String getBandWidth() {
         return bandWidth;
     }
@@ -92,9 +96,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 月保底带宽的按月汇总。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
-     * 
-     * @return monthlyGuaranteedBandWidth */
+    /**
+     * 月保底带宽的按月汇总。  说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
+     * @return monthlyGuaranteedBandWidth
+     */
     public String getMonthlyGuaranteedBandWidth() {
         return monthlyGuaranteedBandWidth;
     }
@@ -108,9 +113,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 月峰值带宽。 说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
-     * 
-     * @return monthlyPeakBandWidth */
+    /**
+     * 月峰值带宽。  说明： 每月2日20点后可查询上月数据；若查询当月数据，则为空。该字段为预留值，当前始终为空；当场景为95增强时才返回数值。
+     * @return monthlyPeakBandWidth
+     */
     public String getMonthlyPeakBandWidth() {
         return monthlyPeakBandWidth;
     }
@@ -124,9 +130,10 @@ public class StatUsageSummaryInfo {
         return this;
     }
 
-    /** 带宽单位，您可以调用查询度量单位列表接口获取。若所有带宽为空，则该字段为空。
-     * 
-     * @return bandWidthMeasureId */
+    /**
+     * 带宽单位，您可以调用查询度量单位列表接口获取。若所有带宽为空，则该字段为空。
+     * @return bandWidthMeasureId
+     */
     public Integer getBandWidthMeasureId() {
         return bandWidthMeasureId;
     }
@@ -176,7 +183,10 @@ public class StatUsageSummaryInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

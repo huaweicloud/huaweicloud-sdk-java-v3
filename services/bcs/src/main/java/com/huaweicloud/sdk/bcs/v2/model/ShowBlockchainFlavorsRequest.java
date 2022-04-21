@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowBlockchainFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowBlockchainFlavorsRequest {
         return this;
     }
 
-    /** 取值范围(0,1000]，默认值为1000。用于限制本次返回的结果数据条数。
-     * 
-     * @return limit */
+    /**
+     * 取值范围(0,1000]，默认值为1000。用于限制本次返回的结果数据条数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -39,9 +42,10 @@ public class ShowBlockchainFlavorsRequest {
         return this;
     }
 
-    /** 分页查询起始位置，为非负整数。
-     * 
-     * @return offset */
+    /**
+     * 分页查询起始位置，为非负整数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -78,7 +82,10 @@ public class ShowBlockchainFlavorsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

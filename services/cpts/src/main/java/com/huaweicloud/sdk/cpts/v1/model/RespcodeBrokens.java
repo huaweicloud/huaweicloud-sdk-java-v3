@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** RespcodeBrokens */
+/**
+ * RespcodeBrokens
+ */
 public class RespcodeBrokens {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +69,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 校验失败
-     * 
-     * @return checkPointFailed */
+    /**
+     * 校验失败
+     * @return checkPointFailed
+     */
     public List<Double> getCheckPointFailed() {
         return checkPointFailed;
     }
@@ -99,9 +102,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 异常请求
-     * 
-     * @return error */
+    /**
+     * 异常请求
+     * @return error
+     */
     public List<Double> getError() {
         return error;
     }
@@ -131,9 +135,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 其他失败
-     * 
-     * @return othersFailed */
+    /**
+     * 其他失败
+     * @return othersFailed
+     */
     public List<Double> getOthersFailed() {
         return othersFailed;
     }
@@ -163,9 +168,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 解析失败
-     * 
-     * @return parsedFailed */
+    /**
+     * 解析失败
+     * @return parsedFailed
+     */
     public List<Double> getParsedFailed() {
         return parsedFailed;
     }
@@ -195,9 +201,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 连接被拒
-     * 
-     * @return refusedFailed */
+    /**
+     * 连接被拒
+     * @return refusedFailed
+     */
     public List<Double> getRefusedFailed() {
         return refusedFailed;
     }
@@ -227,9 +234,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 成功请求
-     * 
-     * @return success */
+    /**
+     * 成功请求
+     * @return success
+     */
     public List<Double> getSuccess() {
         return success;
     }
@@ -259,9 +267,10 @@ public class RespcodeBrokens {
         return this;
     }
 
-    /** 超时失败
-     * 
-     * @return timeout */
+    /**
+     * 超时失败
+     * @return timeout
+     */
     public List<Double> getTimeout() {
         return timeout;
     }
@@ -308,7 +317,10 @@ public class RespcodeBrokens {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

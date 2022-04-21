@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** AssetExportRequest */
+/**
+ * AssetExportRequest
+ */
 public class AssetExportRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class AssetExportRequest {
         return this;
     }
 
-    /** 应用列表
-     * 
-     * @return apps */
+    /**
+     * 应用列表
+     * @return apps
+     */
     public List<AssetExportRequestApps> getApps() {
         return apps;
     }
@@ -74,9 +77,10 @@ public class AssetExportRequest {
         return this;
     }
 
-    /** 任务列表
-     * 
-     * @return tasks */
+    /**
+     * 任务列表
+     * @return tasks
+     */
     public List<AssetExportRequestTasks> getTasks() {
         return tasks;
     }
@@ -113,7 +117,10 @@ public class AssetExportRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

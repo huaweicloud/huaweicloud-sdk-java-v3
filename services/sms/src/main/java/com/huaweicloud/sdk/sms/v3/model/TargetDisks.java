@@ -13,19 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 目的端磁盘信息 */
+/**
+ * 目的端磁盘信息
+ */
 public class TargetDisks {
 
-    /** 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 */
+    /**
+     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
+     */
     public static final class DeviceUseEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
 
-        /** Enum OS for value: "OS" */
+        /**
+         * Enum OS for value: "OS"
+         */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
 
-        /** Enum BOOT for value: "BOOT" */
+        /**
+         * Enum BOOT for value: "BOOT"
+         */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
@@ -126,9 +136,10 @@ public class TargetDisks {
         return this;
     }
 
-    /** 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
-     * 
-     * @return deviceUse */
+    /**
+     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
+     * @return deviceUse
+     */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -142,9 +153,10 @@ public class TargetDisks {
         return this;
     }
 
-    /** 磁盘id,自动创建虚拟机不用设置
-     * 
-     * @return diskId */
+    /**
+     * 磁盘id,自动创建虚拟机不用设置
+     * @return diskId
+     */
     public String getDiskId() {
         return diskId;
     }
@@ -158,9 +170,10 @@ public class TargetDisks {
         return this;
     }
 
-    /** 名称，根据磁盘顺序设置为disk X
-     * 
-     * @return name */
+    /**
+     * 名称，根据磁盘顺序设置为disk X
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -190,9 +203,10 @@ public class TargetDisks {
         return this;
     }
 
-    /** 物理卷信息
-     * 
-     * @return physicalVolumes */
+    /**
+     * 物理卷信息
+     * @return physicalVolumes
+     */
     public List<PhysicalVolumes> getPhysicalVolumes() {
         return physicalVolumes;
     }
@@ -206,9 +220,12 @@ public class TargetDisks {
         return this;
     }
 
-    /** 大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -222,9 +239,12 @@ public class TargetDisks {
         return this;
     }
 
-    /** 使用大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return usedSize */
+    /**
+     * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -267,7 +287,10 @@ public class TargetDisks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

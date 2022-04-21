@@ -10,13 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 启停伸缩组请求 */
+/**
+ * 启停伸缩组请求
+ */
 public class ResumeScalingGroupOption {
 
-    /** 启用或停止伸缩组操作的标识。启用：resume 停止：pause */
+    /**
+     * 启用或停止伸缩组操作的标识。启用：resume 停止：pause
+     */
     public static final class ActionEnum {
 
-        /** Enum RESUME for value: "resume" */
+        /**
+         * Enum RESUME for value: "resume"
+         */
         public static final ActionEnum RESUME = new ActionEnum("resume");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
@@ -90,9 +96,10 @@ public class ResumeScalingGroupOption {
         return this;
     }
 
-    /** 启用或停止伸缩组操作的标识。启用：resume 停止：pause
-     * 
-     * @return action */
+    /**
+     * 启用或停止伸缩组操作的标识。启用：resume 停止：pause
+     * @return action
+     */
     public ActionEnum getAction() {
         return action;
     }
@@ -127,7 +134,10 @@ public class ResumeScalingGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

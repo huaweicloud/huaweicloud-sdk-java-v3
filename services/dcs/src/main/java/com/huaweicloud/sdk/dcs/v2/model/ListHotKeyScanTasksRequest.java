@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHotKeyScanTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,19 +30,29 @@ public class ListHotKeyScanTasksRequest {
 
     private Integer limit;
 
-    /** 分析任务状态 */
+    /**
+     * 分析任务状态
+     */
     public static final class StatusEnum {
 
-        /** Enum WAITING for value: "waiting" */
+        /**
+         * Enum WAITING for value: "waiting"
+         */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
 
-        /** Enum RUNNING for value: "running" */
+        /**
+         * Enum RUNNING for value: "running"
+         */
         public static final StatusEnum RUNNING = new StatusEnum("running");
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -117,9 +129,10 @@ public class ListHotKeyScanTasksRequest {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -133,9 +146,10 @@ public class ListHotKeyScanTasksRequest {
         return this;
     }
 
-    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * 
-     * @return offset */
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -149,9 +163,10 @@ public class ListHotKeyScanTasksRequest {
         return this;
     }
 
-    /** 每页显示的条目数量。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -165,9 +180,10 @@ public class ListHotKeyScanTasksRequest {
         return this;
     }
 
-    /** 分析任务状态
-     * 
-     * @return status */
+    /**
+     * 分析任务状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -208,7 +224,10 @@ public class ListHotKeyScanTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

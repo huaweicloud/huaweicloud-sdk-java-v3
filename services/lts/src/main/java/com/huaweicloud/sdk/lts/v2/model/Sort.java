@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Sort */
+/**
+ * Sort
+ */
 public class Sort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class Sort {
 
     private List<String> orderBy = null;
 
-    /** 排序顺序 */
+    /**
+    * 排序顺序
+    */
     public static final class OrderEnum {
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -118,9 +126,10 @@ public class Sort {
         return this;
     }
 
-    /** 排序字段
-     * 
-     * @return orderBy */
+    /**
+     * 排序字段
+     * @return orderBy
+     */
     public List<String> getOrderBy() {
         return orderBy;
     }
@@ -134,9 +143,10 @@ public class Sort {
         return this;
     }
 
-    /** 排序顺序
-     * 
-     * @return order */
+    /**
+     * 排序顺序
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -172,7 +182,10 @@ public class Sort {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

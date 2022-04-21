@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云硬盘挂载信息。 */
+/**
+ * 云硬盘挂载信息。
+ */
 public class Attachment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载的时间信息。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * 
-     * @return attachedAt */
+    /**
+     * 挂载的时间信息。  时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * @return attachedAt
+     */
     public String getAttachedAt() {
         return attachedAt;
     }
@@ -64,9 +67,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载信息对应的ID。
-     * 
-     * @return attachmentId */
+    /**
+     * 挂载信息对应的ID。
+     * @return attachmentId
+     */
     public String getAttachmentId() {
         return attachmentId;
     }
@@ -80,9 +84,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载点。
-     * 
-     * @return device */
+    /**
+     * 挂载点。
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -96,9 +101,10 @@ public class Attachment {
         return this;
     }
 
-    /** 云硬盘挂载到的云服务器对应的物理主机的名称。
-     * 
-     * @return hostName */
+    /**
+     * 云硬盘挂载到的云服务器对应的物理主机的名称。
+     * @return hostName
+     */
     public String getHostName() {
         return hostName;
     }
@@ -112,9 +118,10 @@ public class Attachment {
         return this;
     }
 
-    /** 挂载的资源ID。
-     * 
-     * @return id */
+    /**
+     * 挂载的资源ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -128,9 +135,10 @@ public class Attachment {
         return this;
     }
 
-    /** 云硬盘挂载到的云服务器的 ID。
-     * 
-     * @return serverId */
+    /**
+     * 云硬盘挂载到的云服务器的 ID。
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -144,9 +152,10 @@ public class Attachment {
         return this;
     }
 
-    /** 云硬盘ID。
-     * 
-     * @return volumeId */
+    /**
+     * 云硬盘ID。
+     * @return volumeId
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -191,7 +200,10 @@ public class Attachment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

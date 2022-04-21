@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CodeMessageResq */
+/**
+ * CodeMessageResq
+ */
 public class CodeMessageResq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class CodeMessageResq {
         return this;
     }
 
-    /** code
-     * 
-     * @return code */
+    /**
+     * code
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -39,9 +42,10 @@ public class CodeMessageResq {
         return this;
     }
 
-    /** message
-     * 
-     * @return message */
+    /**
+     * message
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -77,7 +81,10 @@ public class CodeMessageResq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

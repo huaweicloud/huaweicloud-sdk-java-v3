@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 添加镜像成员请求参数 */
+/**
+ * 添加镜像成员请求参数
+ */
 public class GlanceAddImageMemberRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class GlanceAddImageMemberRequestBody {
         return this;
     }
 
-    /** 镜像成员。取值为目标用户的项目ID。
-     * 
-     * @return member */
+    /**
+     * 镜像成员。取值为目标用户的项目ID。
+     * @return member
+     */
     public String getMember() {
         return member;
     }
@@ -55,7 +58,10 @@ public class GlanceAddImageMemberRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class SetQosThresholdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class SetQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回码
-     * 
-     * @return code */
+    /**
+     * 返回码
+     * @return code
+     */
     public String getCode() {
         return code;
     }
@@ -40,9 +43,10 @@ public class SetQosThresholdResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回信息
-     * 
-     * @return message */
+    /**
+     * 返回信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -79,7 +83,10 @@ public class SetQosThresholdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

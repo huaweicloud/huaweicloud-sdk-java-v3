@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateRecordSetReq */
+/**
+ * CreateRecordSetReq
+ */
 public class CreateRecordSetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
-     * 
-     * @return name */
+    /**
+     * 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -67,9 +70,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** Get description
-     * 
-     * @return description */
+    /**
+     * Get description
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -83,9 +87,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** Record Set的类型。 取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
-     * 
-     * @return type */
+    /**
+     * Record Set的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -99,9 +104,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** Get status
-     * 
-     * @return status */
+    /**
+     * Get status
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -115,9 +121,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** Get ttl
-     * 
-     * @return ttl */
+    /**
+     * Get ttl
+     * @return ttl
+     */
     public Integer getTtl() {
         return ttl;
     }
@@ -147,9 +154,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** 解析记录的值。不同类型解析记录对应的值的规则不同。
-     * 
-     * @return records */
+    /**
+     * 解析记录的值。不同类型解析记录对应的值的规则不同。
+     * @return records
+     */
     public List<String> getRecords() {
         return records;
     }
@@ -179,9 +187,10 @@ public class CreateRecordSetReq {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -228,7 +237,10 @@ public class CreateRecordSetReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

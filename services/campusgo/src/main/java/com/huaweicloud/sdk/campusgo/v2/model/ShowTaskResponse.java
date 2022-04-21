@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,52 +78,84 @@ public class ShowTaskResponse extends SdkResponse {
 
     private OffsetDateTime updatedAt;
 
-    /** 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结） */
+    /**
+     * 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
+     */
     public static final class StateEnum {
 
-        /** Enum PENDING for value: "PENDING" */
+        /**
+         * Enum PENDING for value: "PENDING"
+         */
         public static final StateEnum PENDING = new StateEnum("PENDING");
 
-        /** Enum RECOVERING for value: "RECOVERING" */
+        /**
+         * Enum RECOVERING for value: "RECOVERING"
+         */
         public static final StateEnum RECOVERING = new StateEnum("RECOVERING");
 
-        /** Enum STARTING for value: "STARTING" */
+        /**
+         * Enum STARTING for value: "STARTING"
+         */
         public static final StateEnum STARTING = new StateEnum("STARTING");
 
-        /** Enum UPGRADING for value: "UPGRADING" */
+        /**
+         * Enum UPGRADING for value: "UPGRADING"
+         */
         public static final StateEnum UPGRADING = new StateEnum("UPGRADING");
 
-        /** Enum CREATE_FAILED for value: "CREATE_FAILED" */
+        /**
+         * Enum CREATE_FAILED for value: "CREATE_FAILED"
+         */
         public static final StateEnum CREATE_FAILED = new StateEnum("CREATE_FAILED");
 
-        /** Enum START_FAILED for value: "START_FAILED" */
+        /**
+         * Enum START_FAILED for value: "START_FAILED"
+         */
         public static final StateEnum START_FAILED = new StateEnum("START_FAILED");
 
-        /** Enum RUNNING for value: "RUNNING" */
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
-        /** Enum STOPPING for value: "STOPPING" */
+        /**
+         * Enum STOPPING for value: "STOPPING"
+         */
         public static final StateEnum STOPPING = new StateEnum("STOPPING");
 
-        /** Enum STOPPED for value: "STOPPED" */
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
         public static final StateEnum STOPPED = new StateEnum("STOPPED");
 
-        /** Enum ABNORMAL for value: "ABNORMAL" */
+        /**
+         * Enum ABNORMAL for value: "ABNORMAL"
+         */
         public static final StateEnum ABNORMAL = new StateEnum("ABNORMAL");
 
-        /** Enum SUCCEEDED for value: "SUCCEEDED" */
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
         public static final StateEnum SUCCEEDED = new StateEnum("SUCCEEDED");
 
-        /** Enum FAILED for value: "FAILED" */
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
         public static final StateEnum FAILED = new StateEnum("FAILED");
 
-        /** Enum DELETING for value: "DELETING" */
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
         public static final StateEnum DELETING = new StateEnum("DELETING");
 
-        /** Enum FREEZING for value: "FREEZING" */
+        /**
+         * Enum FREEZING for value: "FREEZING"
+         */
         public static final StateEnum FREEZING = new StateEnum("FREEZING");
 
-        /** Enum FROZEN for value: "FROZEN" */
+        /**
+         * Enum FROZEN for value: "FROZEN"
+         */
         public static final StateEnum FROZEN = new StateEnum("FROZEN");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
@@ -234,9 +268,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return id */
+    /**
+     * 作业ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -250,9 +285,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业的名称
-     * 
-     * @return name */
+    /**
+     * 作业的名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -266,9 +302,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业创建者的用户名
-     * 
-     * @return creator */
+    /**
+     * 作业创建者的用户名
+     * @return creator
+     */
     public String getCreator() {
         return creator;
     }
@@ -282,9 +319,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业创建者的项目ID
-     * 
-     * @return projectId */
+    /**
+     * 作业创建者的项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -298,9 +336,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业的描述
-     * 
-     * @return description */
+    /**
+     * 作业的描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -314,9 +353,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业对应服务的名称
-     * 
-     * @return serviceName */
+    /**
+     * 作业对应服务的名称
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -330,9 +370,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业对应服务的版本号
-     * 
-     * @return serviceVersion */
+    /**
+     * 作业对应服务的版本号
+     * @return serviceVersion
+     */
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -355,9 +396,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get serviceTitle
-     * 
-     * @return serviceTitle */
+    /**
+     * Get serviceTitle
+     * @return serviceTitle
+     */
     public TaskDetailsServiceTitle getServiceTitle() {
         return serviceTitle;
     }
@@ -371,9 +413,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 仅边缘作业会出现，作业运行所在的边缘运行池ID
-     * 
-     * @return edgePoolId */
+    /**
+     * 仅边缘作业会出现，作业运行所在的边缘运行池ID
+     * @return edgePoolId
+     */
     public String getEdgePoolId() {
         return edgePoolId;
     }
@@ -387,9 +430,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业指定的算法能力包包周期订单ID
-     * 
-     * @return resourceOrderId */
+    /**
+     * 作业指定的算法能力包包周期订单ID
+     * @return resourceOrderId
+     */
     public String getResourceOrderId() {
         return resourceOrderId;
     }
@@ -403,9 +447,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业创建的时间
-     * 
-     * @return createdAt */
+    /**
+     * 作业创建的时间
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -419,9 +464,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业最近一次状态更新的时间
-     * 
-     * @return updatedAt */
+    /**
+     * 作业最近一次状态更新的时间
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -435,9 +481,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
-     * 
-     * @return state */
+    /**
+     * 作业当前的状态，分别为PENDING（等待中），RECOVERING（恢复中），STARTING（启动中），UPGRADING（升级中），CREATE_FAILED（创建失败），START_FAILED（启动失败），RUNNING（运行中），STOPPING（停止中），STOPPED（已停止），ABNORMAL（异常），SUCCEEDED（运行成功），FAILED（运行失败），DELETING（删除中），FREEZING（冻结中），FROZEN（已冻结）
+     * @return state
+     */
     public StateEnum getState() {
         return state;
     }
@@ -451,9 +498,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** 作业状态的详情信息，仅部分状态会有详情信息
-     * 
-     * @return status */
+    /**
+     * 作业状态的详情信息，仅部分状态会有详情信息
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -476,9 +524,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get error
-     * 
-     * @return error */
+    /**
+     * Get error
+     * @return error
+     */
     public TaskDetailsError getError() {
         return error;
     }
@@ -501,9 +550,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get input
-     * 
-     * @return input */
+    /**
+     * Get input
+     * @return input
+     */
     public TaskInput getInput() {
         return input;
     }
@@ -526,9 +576,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get output
-     * 
-     * @return output */
+    /**
+     * Get output
+     * @return output
+     */
     public TaskOutputForDisplay getOutput() {
         return output;
     }
@@ -551,9 +602,10 @@ public class ShowTaskResponse extends SdkResponse {
         return this;
     }
 
-    /** Get serviceConfig
-     * 
-     * @return serviceConfig */
+    /**
+     * Get serviceConfig
+     * @return serviceConfig
+     */
     public TaskServiceConfig getServiceConfig() {
         return serviceConfig;
     }
@@ -637,7 +689,10 @@ public class ShowTaskResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

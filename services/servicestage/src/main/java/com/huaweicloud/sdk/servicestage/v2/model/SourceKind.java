@@ -7,13 +7,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 来源类型。支持源码code和artifact软件包。 */
+/**
+ * 来源类型。支持源码code和artifact软件包。
+ */
 public class SourceKind {
 
-    /** Enum CODE for value: "code" */
+    /**
+     * Enum CODE for value: "code"
+     */
     public static final SourceKind CODE = new SourceKind("code");
 
-    /** Enum ARTIFACT for value: "artifact" */
+    /**
+     * Enum ARTIFACT for value: "artifact"
+     */
     public static final SourceKind ARTIFACT = new SourceKind("artifact");
 
     private static final Map<String, SourceKind> STATIC_FIELDS = createStaticFields();

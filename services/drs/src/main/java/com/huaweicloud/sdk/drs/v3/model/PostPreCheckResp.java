@@ -25,13 +25,19 @@ public class PostPreCheckResp {
 
     private String precheckId;
 
-    /** 成功或失败的状态 */
+    /**
+     * 成功或失败的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS for value: "success" */
+        /**
+         * Enum SUCCESS for value: "success"
+         */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -116,9 +122,10 @@ public class PostPreCheckResp {
         return this;
     }
 
-    /** 任务id。
-     * 
-     * @return id */
+    /**
+     * 任务id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -132,9 +139,10 @@ public class PostPreCheckResp {
         return this;
     }
 
-    /** 预检查id。
-     * 
-     * @return precheckId */
+    /**
+     * 预检查id。
+     * @return precheckId
+     */
     public String getPrecheckId() {
         return precheckId;
     }
@@ -148,9 +156,10 @@ public class PostPreCheckResp {
         return this;
     }
 
-    /** 成功或失败的状态
-     * 
-     * @return status */
+    /**
+     * 成功或失败的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -164,9 +173,10 @@ public class PostPreCheckResp {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -180,9 +190,10 @@ public class PostPreCheckResp {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -225,7 +236,10 @@ public class PostPreCheckResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

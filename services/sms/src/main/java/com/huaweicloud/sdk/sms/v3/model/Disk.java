@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 磁盘信息 */
+/**
+ * 磁盘信息
+ */
 public class Disk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,13 +23,19 @@ public class Disk {
 
     private String name;
 
-    /** 磁盘的分区类型，添加源端时源端磁盘必选 */
+    /**
+     * 磁盘的分区类型，添加源端时源端磁盘必选
+     */
     public static final class PartitionStyleEnum {
 
-        /** Enum MBR for value: "MBR" */
+        /**
+         * Enum MBR for value: "MBR"
+         */
         public static final PartitionStyleEnum MBR = new PartitionStyleEnum("MBR");
 
-        /** Enum GPT for value: "GPT" */
+        /**
+         * Enum GPT for value: "GPT"
+         */
         public static final PartitionStyleEnum GPT = new PartitionStyleEnum("GPT");
 
         private static final Map<String, PartitionStyleEnum> STATIC_FIELDS = createStaticFields();
@@ -97,13 +105,19 @@ public class Disk {
 
     private PartitionStyleEnum partitionStyle;
 
-    /** 磁盘类型 */
+    /**
+     * 磁盘类型
+     */
     public static final class DeviceUseEnum {
 
-        /** Enum BOOT for value: "BOOT" */
+        /**
+         * Enum BOOT for value: "BOOT"
+         */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
 
-        /** Enum OS for value: "OS" */
+        /**
+         * Enum OS for value: "OS"
+         */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
@@ -208,9 +222,10 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘名称
-     * 
-     * @return name */
+    /**
+     * 磁盘名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -224,9 +239,10 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘的分区类型，添加源端时源端磁盘必选
-     * 
-     * @return partitionStyle */
+    /**
+     * 磁盘的分区类型，添加源端时源端磁盘必选
+     * @return partitionStyle
+     */
     public PartitionStyleEnum getPartitionStyle() {
         return partitionStyle;
     }
@@ -240,9 +256,10 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘类型
-     * 
-     * @return deviceUse */
+    /**
+     * 磁盘类型
+     * @return deviceUse
+     */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -256,9 +273,12 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘总大小，以字节为单位 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 磁盘总大小，以字节为单位
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -272,9 +292,12 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘已使用大小，以字节为单位 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return usedSize */
+    /**
+     * 磁盘已使用大小，以字节为单位
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -304,9 +327,10 @@ public class Disk {
         return this;
     }
 
-    /** 磁盘上的物理分区信息
-     * 
-     * @return physicalVolumes */
+    /**
+     * 磁盘上的物理分区信息
+     * @return physicalVolumes
+     */
     public List<PhysicalVolumes> getPhysicalVolumes() {
         return physicalVolumes;
     }
@@ -320,9 +344,10 @@ public class Disk {
         return this;
     }
 
-    /** 创建任务时，如果选择已有虚拟机，此参数必选
-     * 
-     * @return diskId */
+    /**
+     * 创建任务时，如果选择已有虚拟机，此参数必选
+     * @return diskId
+     */
     public String getDiskId() {
         return diskId;
     }
@@ -336,9 +361,10 @@ public class Disk {
         return this;
     }
 
-    /** 是否为系统盘
-     * 
-     * @return osDisk */
+    /**
+     * 是否为系统盘
+     * @return osDisk
+     */
     public Boolean getOsDisk() {
         return osDisk;
     }
@@ -352,9 +378,10 @@ public class Disk {
         return this;
     }
 
-    /** Linux系统 目的端ECS中与源端关联的磁盘名称
-     * 
-     * @return relationName */
+    /**
+     * Linux系统 目的端ECS中与源端关联的磁盘名称
+     * @return relationName
+     */
     public String getRelationName() {
         return relationName;
     }
@@ -402,7 +429,10 @@ public class Disk {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

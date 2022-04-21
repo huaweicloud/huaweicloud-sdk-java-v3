@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** DynamicDataMask */
+/**
+ * DynamicDataMask
+ */
 public class DynamicDataMask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class DynamicDataMask {
         return this;
     }
 
-    /** 脱敏策略列表，每一个策略对应一个字段，脱敏策略数最多100个。
-     * 
-     * @return maskStrategies */
+    /**
+     * 脱敏策略列表，每一个策略对应一个字段，脱敏策略数最多100个。
+     * @return maskStrategies
+     */
     public List<MaskStrategies> getMaskStrategies() {
         return maskStrategies;
     }
@@ -75,9 +78,10 @@ public class DynamicDataMask {
         return this;
     }
 
-    /** 数据列表。
-     * 
-     * @return data */
+    /**
+     * 数据列表。
+     * @return data
+     */
     public List<Map<String, Object>> getData() {
         return data;
     }
@@ -114,7 +118,10 @@ public class DynamicDataMask {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

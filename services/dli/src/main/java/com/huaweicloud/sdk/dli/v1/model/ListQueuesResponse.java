@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListQueuesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListQueuesResponse extends SdkResponse {
         return this;
     }
 
-    /** 请求执行是否成功。“true”表示请求执行成功。
-     * 
-     * @return isSuccess */
+    /**
+     * 请求执行是否成功。“true”表示请求执行成功。
+     * @return isSuccess
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -48,9 +51,10 @@ public class ListQueuesResponse extends SdkResponse {
         return this;
     }
 
-    /** 系统提示信息，执行成功时，信息可能为空。
-     * 
-     * @return message */
+    /**
+     * 系统提示信息，执行成功时，信息可能为空。
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -80,9 +84,10 @@ public class ListQueuesResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列信息。
-     * 
-     * @return queues */
+    /**
+     * 队列信息。
+     * @return queues
+     */
     public List<ListQueuesRespQueues> getQueues() {
         return queues;
     }
@@ -121,7 +126,10 @@ public class ListQueuesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

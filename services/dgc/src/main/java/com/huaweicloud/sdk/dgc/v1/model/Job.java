@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Job */
+/**
+ * Job
+ */
 public class Job {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Job {
         return this;
     }
 
-    /** Get name
-     * 
-     * @return name */
+    /**
+     * Get name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class Job {
         return this;
     }
 
-    /** Get path
-     * 
-     * @return path */
+    /**
+     * Get path
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -60,9 +64,10 @@ public class Job {
         return this;
     }
 
-    /** Get params
-     * 
-     * @return params */
+    /**
+     * Get params
+     * @return params
+     */
     public Object getParams() {
         return params;
     }
@@ -100,7 +105,10 @@ public class Job {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

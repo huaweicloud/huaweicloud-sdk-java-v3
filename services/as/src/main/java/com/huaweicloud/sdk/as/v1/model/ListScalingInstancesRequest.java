@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListScalingInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,29 +20,44 @@ public class ListScalingInstancesRequest {
 
     private String scalingGroupId;
 
-    /** 实例在伸缩组中的生命周期状态：INSERVICE：
-     * 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。 */
+    /**
+     * 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
+     */
     public static final class LifeCycleStateEnum {
 
-        /** Enum INSERVICE for value: "INSERVICE" */
+        /**
+         * Enum INSERVICE for value: "INSERVICE"
+         */
         public static final LifeCycleStateEnum INSERVICE = new LifeCycleStateEnum("INSERVICE");
 
-        /** Enum PENDING for value: "PENDING" */
+        /**
+         * Enum PENDING for value: "PENDING"
+         */
         public static final LifeCycleStateEnum PENDING = new LifeCycleStateEnum("PENDING");
 
-        /** Enum REMOVING for value: "REMOVING" */
+        /**
+         * Enum REMOVING for value: "REMOVING"
+         */
         public static final LifeCycleStateEnum REMOVING = new LifeCycleStateEnum("REMOVING");
 
-        /** Enum PENDING_WAIT for value: "PENDING_WAIT" */
+        /**
+         * Enum PENDING_WAIT for value: "PENDING_WAIT"
+         */
         public static final LifeCycleStateEnum PENDING_WAIT = new LifeCycleStateEnum("PENDING_WAIT");
 
-        /** Enum REMOVING_WAIT for value: "REMOVING_WAIT" */
+        /**
+         * Enum REMOVING_WAIT for value: "REMOVING_WAIT"
+         */
         public static final LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
 
-        /** Enum STANDBY for value: "STANDBY" */
+        /**
+         * Enum STANDBY for value: "STANDBY"
+         */
         public static final LifeCycleStateEnum STANDBY = new LifeCycleStateEnum("STANDBY");
 
-        /** Enum ENTERING_STANDBY for value: "ENTERING_STANDBY" */
+        /**
+         * Enum ENTERING_STANDBY for value: "ENTERING_STANDBY"
+         */
         public static final LifeCycleStateEnum ENTERING_STANDBY = new LifeCycleStateEnum("ENTERING_STANDBY");
 
         private static final Map<String, LifeCycleStateEnum> STATIC_FIELDS = createStaticFields();
@@ -115,16 +132,24 @@ public class ListScalingInstancesRequest {
 
     private LifeCycleStateEnum lifeCycleState;
 
-    /** 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常 */
+    /**
+     * 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
+     */
     public static final class HealthStatusEnum {
 
-        /** Enum INITIALIZING for value: "INITIALIZING" */
+        /**
+         * Enum INITIALIZING for value: "INITIALIZING"
+         */
         public static final HealthStatusEnum INITIALIZING = new HealthStatusEnum("INITIALIZING");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final HealthStatusEnum NORMAL = new HealthStatusEnum("NORMAL");
 
-        /** Enum ERROR for value: "ERROR" */
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
         public static final HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
 
         private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -195,13 +220,19 @@ public class ListScalingInstancesRequest {
 
     private HealthStatusEnum healthStatus;
 
-    /** 实例保护状态：true：已设置实例保护。false：未设置实例保护。 */
+    /**
+     * 实例保护状态：true：已设置实例保护。false：未设置实例保护。
+     */
     public static final class ProtectFromScalingDownEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final ProtectFromScalingDownEnum TRUE = new ProtectFromScalingDownEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final ProtectFromScalingDownEnum FALSE = new ProtectFromScalingDownEnum("false");
 
         private static final Map<String, ProtectFromScalingDownEnum> STATIC_FIELDS = createStaticFields();
@@ -286,9 +317,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 伸缩组ID。
-     * 
-     * @return scalingGroupId */
+    /**
+     * 伸缩组ID。
+     * @return scalingGroupId
+     */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -302,10 +334,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 实例在伸缩组中的生命周期状态：INSERVICE：
-     * 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
-     * 
-     * @return lifeCycleState */
+    /**
+     * 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
+     * @return lifeCycleState
+     */
     public LifeCycleStateEnum getLifeCycleState() {
         return lifeCycleState;
     }
@@ -319,9 +351,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
-     * 
-     * @return healthStatus */
+    /**
+     * 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
+     * @return healthStatus
+     */
     public HealthStatusEnum getHealthStatus() {
         return healthStatus;
     }
@@ -335,9 +368,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 实例保护状态：true：已设置实例保护。false：未设置实例保护。
-     * 
-     * @return protectFromScalingDown */
+    /**
+     * 实例保护状态：true：已设置实例保护。false：未设置实例保护。
+     * @return protectFromScalingDown
+     */
     public ProtectFromScalingDownEnum getProtectFromScalingDown() {
         return protectFromScalingDown;
     }
@@ -351,9 +385,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 查询的起始行号，默认为0。
-     * 
-     * @return startNumber */
+    /**
+     * 查询的起始行号，默认为0。
+     * @return startNumber
+     */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -367,9 +402,10 @@ public class ListScalingInstancesRequest {
         return this;
     }
 
-    /** 查询的记录条数，默认为20。
-     * 
-     * @return limit */
+    /**
+     * 查询的记录条数，默认为20。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -414,7 +450,10 @@ public class ListScalingInstancesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

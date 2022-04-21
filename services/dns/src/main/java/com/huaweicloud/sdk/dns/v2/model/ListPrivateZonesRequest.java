@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListPrivateZonesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 待查询的zone的类型。 取值范围：private。
-     * 
-     * @return type */
+    /**
+     * 待查询的zone的类型。  取值范围：private。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -69,9 +72,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 每页返回的资源个数，取值范围：0~500
-     * 
-     * @return limit */
+    /**
+     * 每页返回的资源个数，取值范围：0~500
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -85,9 +89,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时为查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时为查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -101,9 +106,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询
-     * 
-     * @return offset */
+    /**
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -117,9 +123,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 资源标签。
-     * 
-     * @return tags */
+    /**
+     * 资源标签。
+     * @return tags
+     */
     public String getTags() {
         return tags;
     }
@@ -133,9 +140,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** zone名称。
-     * 
-     * @return name */
+    /**
+     * zone名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -149,9 +157,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 资源状态。
-     * 
-     * @return status */
+    /**
+     * 资源状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -165,9 +174,10 @@ public class ListPrivateZonesRequest {
         return this;
     }
 
-    /** 域名关联的企业项目ID，长度不超过36个字符。 默认值为0。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -216,7 +226,10 @@ public class ListPrivateZonesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateTasksRequest {
         return this;
     }
 
-    /** 服务API,具体API名称见园区智能体提供的API参考列表中URI描述[API列表](https://support.huaweicloud.com/api-campusgo/campusgo_03_0013.html)
-     * 
-     * @return serviceName */
+    /**
+     * 服务API,具体API名称见园区智能体提供的API参考列表中URI描述[API列表](https://support.huaweicloud.com/api-campusgo/campusgo_03_0013.html)
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -49,9 +52,10 @@ public class CreateTasksRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public CreateTasksRequestBody getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class CreateTasksRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

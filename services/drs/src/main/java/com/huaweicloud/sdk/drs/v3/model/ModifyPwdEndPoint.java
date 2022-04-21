@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量修改数据库密码请求列表 */
+/**
+ * 批量修改数据库密码请求列表
+ */
 public class ModifyPwdEndPoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +21,19 @@ public class ModifyPwdEndPoint {
 
     private String dbPassword;
 
-    /** 类型，so：源库；ta：目标库。 */
+    /**
+     * 类型，so：源库；ta：目标库。
+     */
     public static final class EndPointTypeEnum {
 
-        /** Enum SO for value: "so" */
+        /**
+         * Enum SO for value: "so"
+         */
         public static final EndPointTypeEnum SO = new EndPointTypeEnum("so");
 
-        /** Enum TA for value: "ta" */
+        /**
+         * Enum TA for value: "ta"
+         */
         public static final EndPointTypeEnum TA = new EndPointTypeEnum("ta");
 
         private static final Map<String, EndPointTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -110,9 +118,10 @@ public class ModifyPwdEndPoint {
         return this;
     }
 
-    /** 数据库密码
-     * 
-     * @return dbPassword */
+    /**
+     * 数据库密码
+     * @return dbPassword
+     */
     public String getDbPassword() {
         return dbPassword;
     }
@@ -126,9 +135,10 @@ public class ModifyPwdEndPoint {
         return this;
     }
 
-    /** 类型，so：源库；ta：目标库。
-     * 
-     * @return endPointType */
+    /**
+     * 类型，so：源库；ta：目标库。
+     * @return endPointType
+     */
     public EndPointTypeEnum getEndPointType() {
         return endPointType;
     }
@@ -142,9 +152,10 @@ public class ModifyPwdEndPoint {
         return this;
     }
 
-    /** 任务id
-     * 
-     * @return jobId */
+    /**
+     * 任务id
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -167,9 +178,10 @@ public class ModifyPwdEndPoint {
         return this;
     }
 
-    /** Get kerberos
-     * 
-     * @return kerberos */
+    /**
+     * Get kerberos
+     * @return kerberos
+     */
     public KerberosVO getKerberos() {
         return kerberos;
     }
@@ -210,7 +222,10 @@ public class ModifyPwdEndPoint {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

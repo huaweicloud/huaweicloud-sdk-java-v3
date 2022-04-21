@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Webhook地址配置。 */
+/**
+ * Webhook地址配置。
+ */
 public class OutputWebhook {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OutputWebhook {
         return this;
     }
 
-    /** URL地址
-     * 
-     * @return url */
+    /**
+     * URL地址
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -44,9 +47,10 @@ public class OutputWebhook {
         return this;
     }
 
-    /** header参数设置（键值均为用户设置）。
-     * 
-     * @return headers */
+    /**
+     * header参数设置（键值均为用户设置）。
+     * @return headers
+     */
     public String getHeaders() {
         return headers;
     }
@@ -60,10 +64,10 @@ public class OutputWebhook {
         return this;
     }
 
-    /** 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 -
-     * OriginImage：表示发送原始图。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 - OriginImage：表示发送原始图。
+     * @return dataCategory
+     */
     public String getDataCategory() {
         return dataCategory;
     }
@@ -101,7 +105,10 @@ public class OutputWebhook {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

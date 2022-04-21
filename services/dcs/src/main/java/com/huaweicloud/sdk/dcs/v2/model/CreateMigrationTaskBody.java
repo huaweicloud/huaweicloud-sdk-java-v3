@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建数据迁移任务结构体 */
+/**
+ * 创建数据迁移任务结构体
+ */
 public class CreateMigrationTaskBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,13 +26,19 @@ public class CreateMigrationTaskBody {
 
     private String description;
 
-    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。 取值范围： - backupfile_import：表示备份文件导入 - online_migration：表示在线迁移。 */
+    /**
+     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。 取值范围： - backupfile_import：表示备份文件导入 - online_migration：表示在线迁移。 
+     */
     public static final class MigrationTypeEnum {
 
-        /** Enum BACKUPFILE_IMPORT for value: "backupfile_import" */
+        /**
+         * Enum BACKUPFILE_IMPORT for value: "backupfile_import"
+         */
         public static final MigrationTypeEnum BACKUPFILE_IMPORT = new MigrationTypeEnum("backupfile_import");
 
-        /** Enum ONLINE_MIGRATION for value: "online_migration" */
+        /**
+         * Enum ONLINE_MIGRATION for value: "online_migration"
+         */
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
 
         private static final Map<String, MigrationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -100,14 +108,20 @@ public class CreateMigrationTaskBody {
 
     private MigrationTypeEnum migrationType;
 
-    /** 迁移方式，包括全量迁移和增量迁移两种类型。 取值范围： - full_amount_migration：表示全量迁移。 - incremental_migration：表示增量迁移。 */
+    /**
+     * 迁移方式，包括全量迁移和增量迁移两种类型。 取值范围： - full_amount_migration：表示全量迁移。 - incremental_migration：表示增量迁移。 
+     */
     public static final class MigrationMethodEnum {
 
-        /** Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration" */
+        /**
+         * Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration"
+         */
         public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION =
             new MigrationMethodEnum("full_amount_migration");
 
-        /** Enum INCREMENTAL_MIGRATION for value: "incremental_migration" */
+        /**
+         * Enum INCREMENTAL_MIGRATION for value: "incremental_migration"
+         */
         public static final MigrationMethodEnum INCREMENTAL_MIGRATION =
             new MigrationMethodEnum("incremental_migration");
 
@@ -183,13 +197,19 @@ public class CreateMigrationTaskBody {
 
     private BackupFilesBody backupFiles;
 
-    /** 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 */
+    /**
+     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
+     */
     public static final class NetworkTypeEnum {
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final NetworkTypeEnum VPC = new NetworkTypeEnum("vpc");
 
-        /** Enum VPN for value: "vpn" */
+        /**
+         * Enum VPN for value: "vpn"
+         */
         public static final NetworkTypeEnum VPN = new NetworkTypeEnum("vpn");
 
         private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -274,9 +294,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** 迁移任务名称。
-     * 
-     * @return taskName */
+    /**
+     * 迁移任务名称。
+     * @return taskName
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -290,9 +311,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** 迁移任务描述。
-     * 
-     * @return description */
+    /**
+     * 迁移任务描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -306,9 +328,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。 取值范围： - backupfile_import：表示备份文件导入 - online_migration：表示在线迁移。
-     * 
-     * @return migrationType */
+    /**
+     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。 取值范围： - backupfile_import：表示备份文件导入 - online_migration：表示在线迁移。 
+     * @return migrationType
+     */
     public MigrationTypeEnum getMigrationType() {
         return migrationType;
     }
@@ -322,9 +345,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** 迁移方式，包括全量迁移和增量迁移两种类型。 取值范围： - full_amount_migration：表示全量迁移。 - incremental_migration：表示增量迁移。
-     * 
-     * @return migrationMethod */
+    /**
+     * 迁移方式，包括全量迁移和增量迁移两种类型。 取值范围： - full_amount_migration：表示全量迁移。 - incremental_migration：表示增量迁移。 
+     * @return migrationMethod
+     */
     public MigrationMethodEnum getMigrationMethod() {
         return migrationMethod;
     }
@@ -347,9 +371,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** Get backupFiles
-     * 
-     * @return backupFiles */
+    /**
+     * Get backupFiles
+     * @return backupFiles
+     */
     public BackupFilesBody getBackupFiles() {
         return backupFiles;
     }
@@ -363,9 +388,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。
-     * 
-     * @return networkType */
+    /**
+     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
+     * @return networkType
+     */
     public NetworkTypeEnum getNetworkType() {
         return networkType;
     }
@@ -388,9 +414,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** Get sourceInstance
-     * 
-     * @return sourceInstance */
+    /**
+     * Get sourceInstance
+     * @return sourceInstance
+     */
     public SourceInstanceBody getSourceInstance() {
         return sourceInstance;
     }
@@ -413,9 +440,10 @@ public class CreateMigrationTaskBody {
         return this;
     }
 
-    /** Get targetInstance
-     * 
-     * @return targetInstance */
+    /**
+     * Get targetInstance
+     * @return targetInstance
+     */
     public TargetInstanceBody getTargetInstance() {
         return targetInstance;
     }
@@ -471,7 +499,10 @@ public class CreateMigrationTaskBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

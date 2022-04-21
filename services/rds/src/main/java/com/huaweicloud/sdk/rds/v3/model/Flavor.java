@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 规格信息。 */
+/**
+ * 规格信息。
+ */
 public class Flavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class Flavor {
         return this;
     }
 
-    /** 规格id
-     * 
-     * @return id */
+    /**
+     * 规格id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,9 +82,10 @@ public class Flavor {
         return this;
     }
 
-    /** CPU个数。
-     * 
-     * @return vcpus */
+    /**
+     * CPU个数。
+     * @return vcpus
+     */
     public String getVcpus() {
         return vcpus;
     }
@@ -95,9 +99,10 @@ public class Flavor {
         return this;
     }
 
-    /** 内存大小，单位为GB。
-     * 
-     * @return ram */
+    /**
+     * 内存大小，单位为GB。
+     * @return ram
+     */
     public Integer getRam() {
         return ram;
     }
@@ -111,10 +116,10 @@ public class Flavor {
         return this;
     }
 
-    /** 资源规格编码。例如：rds.mysql.m1.xlarge.rr。 其中形如“xxx.xxx.mcs.i3.xxx.xxx.xxx”是超高性能型（尊享版），需要申请一定权限才可使用，更多规格说明请参考数据库实例规格。 -
-     * “rds”代表RDS产品。 - “mysql”代表数据库引擎。 - “m1.xlarge”代表性能规格，为高内存类型。
-     * 
-     * @return specCode */
+    /**
+     * 资源规格编码。例如：rds.mysql.m1.xlarge.rr。  其中形如“xxx.xxx.mcs.i3.xxx.xxx.xxx”是超高性能型（尊享版），需要申请一定权限才可使用，更多规格说明请参考数据库实例规格。 - “rds”代表RDS产品。 - “mysql”代表数据库引擎。 - “m1.xlarge”代表性能规格，为高内存类型。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -128,9 +133,10 @@ public class Flavor {
         return this;
     }
 
-    /** 实例模型，包括如下类型： - ha，主备实例。 - replica，只读实例。 - single，单实例。
-     * 
-     * @return instanceMode */
+    /**
+     * 实例模型，包括如下类型： - ha，主备实例。 - replica，只读实例。 - single，单实例。
+     * @return instanceMode
+     */
     public String getInstanceMode() {
         return instanceMode;
     }
@@ -160,9 +166,10 @@ public class Flavor {
         return this;
     }
 
-    /** 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
-     * 
-     * @return azStatus */
+    /**
+     * 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
+     * @return azStatus
+     */
     public Map<String, String> getAzStatus() {
         return azStatus;
     }
@@ -192,9 +199,10 @@ public class Flavor {
         return this;
     }
 
-    /** 规格所在az的描述。
-     * 
-     * @return azDesc */
+    /**
+     * 规格所在az的描述。
+     * @return azDesc
+     */
     public Map<String, String> getAzDesc() {
         return azDesc;
     }
@@ -224,9 +232,10 @@ public class Flavor {
         return this;
     }
 
-    /** 数组形式版本号
-     * 
-     * @return versionName */
+    /**
+     * 数组形式版本号
+     * @return versionName
+     */
     public List<String> getVersionName() {
         return versionName;
     }
@@ -240,11 +249,10 @@ public class Flavor {
         return this;
     }
 
-    /** 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 -
-     * armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。 -
-     * bigmen：超大内存型。
-     * 
-     * @return groupType */
+    /**
+     * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。 - bigmen：超大内存型。
+     * @return groupType
+     */
     public String getGroupType() {
         return groupType;
     }
@@ -291,7 +299,10 @@ public class Flavor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

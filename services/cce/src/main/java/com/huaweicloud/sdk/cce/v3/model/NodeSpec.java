@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** NodeSpec */
+/**
+ * NodeSpec
+ */
 public class NodeSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,9 +110,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的规格，CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。
-     * 
-     * @return flavor */
+    /**
+     * 节点的规格，CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 
+     * @return flavor
+     */
     public String getFlavor() {
         return flavor;
     }
@@ -124,10 +127,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 待创建节点所在的可用区，需要指定可用区（AZ）的名称。 [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws)
-     * [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)
-     * 
-     * @return az */
+    /**
+     * 待创建节点所在的可用区，需要指定可用区（AZ）的名称。 [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk) 
+     * @return az
+     */
     public String getAz() {
         return az;
     }
@@ -141,11 +144,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的操作系统类型。 - 对于虚拟机节点，可以配置为“EulerOS”、“CentOS”、“Debian”、“Ubuntu”。默认为\"EulerOS\"。 >
-     * 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 - 对于自动付费包周期的裸金属节点，只支持EulerOS 2.3、EulerOS 2.5、EulerOS 2.8。 -
-     * 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。
-     * 
-     * @return os */
+    /**
+     * 节点的操作系统类型。  - 对于虚拟机节点，可以配置为“EulerOS”、“CentOS”、“Debian”、“Ubuntu”。默认为\"EulerOS\"。  > 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。  - 对于自动付费包周期的裸金属节点，只支持EulerOS 2.3、EulerOS 2.5、EulerOS 2.8。  - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。
+     * @return os
+     */
     public String getOs() {
         return os;
     }
@@ -168,9 +170,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get login
-     * 
-     * @return login */
+    /**
+     * Get login
+     * @return login
+     */
     public Login getLogin() {
         return login;
     }
@@ -193,9 +196,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get rootVolume
-     * 
-     * @return rootVolume */
+    /**
+     * Get rootVolume
+     * @return rootVolume
+     */
     public Volume getRootVolume() {
         return rootVolume;
     }
@@ -225,9 +229,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的数据盘参数（目前已支持通过控制台为CCE节点添加第二块数据盘）。 针对专属云节点，参数解释与rootVolume一致
-     * 
-     * @return dataVolumes */
+    /**
+     * 节点的数据盘参数（目前已支持通过控制台为CCE节点添加第二块数据盘）。  针对专属云节点，参数解释与rootVolume一致
+     * @return dataVolumes
+     */
     public List<Volume> getDataVolumes() {
         return dataVolumes;
     }
@@ -250,9 +255,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get storage
-     * 
-     * @return storage */
+    /**
+     * Get storage
+     * @return storage
+     */
     public Storage getStorage() {
         return storage;
     }
@@ -275,9 +281,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get publicIP
-     * 
-     * @return publicIP */
+    /**
+     * Get publicIP
+     * @return publicIP
+     */
     public NodePublicIP getPublicIP() {
         return publicIP;
     }
@@ -300,9 +307,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get nodeNicSpec
-     * 
-     * @return nodeNicSpec */
+    /**
+     * Get nodeNicSpec
+     * @return nodeNicSpec
+     */
     public NodeNicSpec getNodeNicSpec() {
         return nodeNicSpec;
     }
@@ -316,9 +324,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
-     * 
-     * @return count */
+    /**
+     * 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -332,9 +341,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（已废弃：自动付费包周期）
-     * 
-     * @return billingMode */
+    /**
+     * 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（已废弃：自动付费包周期）
+     * @return billingMode
+     */
     public Integer getBillingMode() {
         return billingMode;
     }
@@ -364,13 +374,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 支持给创建出来的节点加Taints来设置反亲和性，taints配置不超过20条。每条Taints包含以下3个参数： -
-     * Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 -
-     * Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 示例： ``` \"taints\": [{ \"key\": \"status\", \"value\":
-     * \"unavailable\", \"effect\": \"NoSchedule\" }, { \"key\": \"looks\", \"value\": \"bad\", \"effect\":
-     * \"NoSchedule\" }] ```
-     * 
-     * @return taints */
+    /**
+     * 支持给创建出来的节点加Taints来设置反亲和性，taints配置不超过20条。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。  示例：  ``` \"taints\": [{   \"key\": \"status\",   \"value\": \"unavailable\",   \"effect\": \"NoSchedule\" }, {   \"key\": \"looks\",   \"value\": \"bad\",   \"effect\": \"NoSchedule\" }] ``` 
+     * @return taints
+     */
     public List<Taint> getTaints() {
         return taints;
     }
@@ -400,11 +407,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 格式为key/value键值对。键值对个数不超过20条。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，
-     * DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 示例： ``` \"k8sTags\": { \"key\":
-     * \"value\" } ```
-     * 
-     * @return k8sTags */
+    /**
+     * 格式为key/value键值对。键值对个数不超过20条。  - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。  示例：  ``` \"k8sTags\": {   \"key\": \"value\" } ``` 
+     * @return k8sTags
+     */
     public Map<String, String> getK8sTags() {
         return k8sTags;
     }
@@ -418,9 +424,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 云服务器组ID，若指定，将节点创建在该云服务器组下
-     * 
-     * @return ecsGroupId */
+    /**
+     * 云服务器组ID，若指定，将节点创建在该云服务器组下
+     * @return ecsGroupId
+     */
     public String getEcsGroupId() {
         return ecsGroupId;
     }
@@ -434,9 +441,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 指定DeH主机的ID，将节点调度到自己的DeH上。\\n>创建节点池添加节点时不支持该参数。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 指定DeH主机的ID，将节点调度到自己的DeH上。\\n>创建节点池添加节点时不支持该参数。 
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -466,9 +474,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
-     * 
-     * @return userTags */
+    /**
+     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
+     * @return userTags
+     */
     public List<UserTag> getUserTags() {
         return userTags;
     }
@@ -491,9 +500,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get runtime
-     * 
-     * @return runtime */
+    /**
+     * Get runtime
+     * @return runtime
+     */
     public Runtime getRuntime() {
         return runtime;
     }
@@ -516,9 +526,10 @@ public class NodeSpec {
         return this;
     }
 
-    /** Get extendParam
-     * 
-     * @return extendParam */
+    /**
+     * Get extendParam
+     * @return extendParam
+     */
     public NodeExtendParam getExtendParam() {
         return extendParam;
     }
@@ -597,7 +608,10 @@ public class NodeSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

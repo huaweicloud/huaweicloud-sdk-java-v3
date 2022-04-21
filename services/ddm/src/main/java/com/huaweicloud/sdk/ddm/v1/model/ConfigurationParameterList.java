@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ConfigurationParameterList */
+/**
+ * ConfigurationParameterList
+ */
 public class ConfigurationParameterList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数名称。
-     * 
-     * @return name */
+    /**
+     * 参数名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数值。
-     * 
-     * @return value */
+    /**
+     * 参数值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -80,9 +84,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 是否需要重启实例。
-     * 
-     * @return needRestart */
+    /**
+     * 是否需要重启实例。
+     * @return needRestart
+     */
     public String getNeedRestart() {
         return needRestart;
     }
@@ -96,9 +101,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数是否只读。
-     * 
-     * @return readOnly */
+    /**
+     * 参数是否只读。
+     * @return readOnly
+     */
     public String getReadOnly() {
         return readOnly;
     }
@@ -112,9 +118,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数取值范围。
-     * 
-     * @return valueRange */
+    /**
+     * 参数取值范围。
+     * @return valueRange
+     */
     public String getValueRange() {
         return valueRange;
     }
@@ -128,9 +135,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数类型。
-     * 
-     * @return dataType */
+    /**
+     * 参数类型。
+     * @return dataType
+     */
     public String getDataType() {
         return dataType;
     }
@@ -144,9 +152,10 @@ public class ConfigurationParameterList {
         return this;
     }
 
-    /** 参数描述。
-     * 
-     * @return description */
+    /**
+     * 参数描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -193,7 +202,10 @@ public class ConfigurationParameterList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRunsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,13 +60,19 @@ public class ListRunsRequest {
 
     private String orderBy;
 
-    /** 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。 */
+    /**
+     * 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。
+     */
     public static final class OrderEnum {
 
-        /** Enum ASC for value: "asc" */
+        /**
+         * Enum ASC for value: "asc"
+         */
         public static final OrderEnum ASC = new OrderEnum("asc");
 
-        /** Enum DESC for value: "desc" */
+        /**
+         * Enum DESC for value: "desc"
+         */
         public static final OrderEnum DESC = new OrderEnum("desc");
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
@@ -144,9 +152,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 当前偏移量，默认为0。
-     * 
-     * @return offset */
+    /**
+     * 当前偏移量，默认为0。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -160,9 +169,12 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 每页显示的最大作业个数，范围: [1, 100]。默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页显示的最大作业个数，范围: [1, 100]。默认值：10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -176,9 +188,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 用于查询开始时间在该时间点之后的作业。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss.SSS。
-     * 
-     * @return startTime */
+    /**
+     * 用于查询开始时间在该时间点之后的作业。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -192,9 +205,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 用于查询开始时间在该时间点之前的作业。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss.SSS。
-     * 
-     * @return endTime */
+    /**
+     * 用于查询开始时间在该时间点之前的作业。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -208,9 +222,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 仅当作业类型为SqlJob时可用。指定sql片段作为作业过滤条件，不区分大小写。
-     * 
-     * @return sqlPattern */
+    /**
+     * 仅当作业类型为SqlJob时可用。指定sql片段作为作业过滤条件，不区分大小写。
+     * @return sqlPattern
+     */
     public String getSqlPattern() {
         return sqlPattern;
     }
@@ -224,10 +239,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 仅当作业类型为SqlJob时可用。SQL作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT, SELECT, DATA_MIGRATION, ANALYZE, OBS_SELECT,
-     * COMPLEX
-     * 
-     * @return sqlType */
+    /**
+     * 仅当作业类型为SqlJob时可用。SQL作业类型。DDL, DCL, IMPORT, EXPORT, QUERY, INSERT, SELECT, DATA_MIGRATION, ANALYZE, OBS_SELECT, COMPLEX
+     * @return sqlType
+     */
     public String getSqlType() {
         return sqlType;
     }
@@ -241,9 +256,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 作业类型。目前仅支持SqlJob
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。目前仅支持SqlJob
+     * @return jobType
+     */
     public String getJobType() {
         return jobType;
     }
@@ -257,9 +273,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）
-     * 
-     * @return status */
+    /**
+     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -273,9 +290,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 指定作业排序字段，默认为从created_time（作业提交时间），支持duration（作业运行时长）、created_time（作业提交时间） 、job_name（作业名称）三种排序字段。
-     * 
-     * @return orderBy */
+    /**
+     * 指定作业排序字段，默认为从created_time（作业提交时间），支持duration（作业运行时长）、created_time（作业提交时间） 、job_name（作业名称）三种排序字段。
+     * @return orderBy
+     */
     public String getOrderBy() {
         return orderBy;
     }
@@ -289,9 +307,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。
-     * 
-     * @return order */
+    /**
+     * 指定作业排序的升降序，默认为desc（降序），支持asc（升序）、desc（降序）两种排序方式。
+     * @return order
+     */
     public OrderEnum getOrder() {
         return order;
     }
@@ -305,9 +324,10 @@ public class ListRunsRequest {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return jobName */
+    /**
+     * 作业名称
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -362,7 +382,10 @@ public class ListRunsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

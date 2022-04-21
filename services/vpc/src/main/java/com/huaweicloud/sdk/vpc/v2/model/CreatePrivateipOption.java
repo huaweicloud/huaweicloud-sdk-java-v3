@@ -25,9 +25,10 @@ public class CreatePrivateipOption {
         return this;
     }
 
-    /** 分配IP的子网标识
-     * 
-     * @return subnetId */
+    /**
+     * 分配IP的子网标识
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -41,9 +42,10 @@ public class CreatePrivateipOption {
         return this;
     }
 
-    /** 功能说明：指定IP地址申请 取值范围：子网段中的可以使用且未分配的IP地址，不指定时由系统自动分配
-     * 
-     * @return ipAddress */
+    /**
+     * 功能说明：指定IP地址申请 取值范围：子网段中的可以使用且未分配的IP地址，不指定时由系统自动分配
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -80,7 +82,10 @@ public class CreatePrivateipOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

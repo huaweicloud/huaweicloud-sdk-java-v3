@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 扩展更新镜像接口请求体 */
+/**
+ * 扩展更新镜像接口请求体
+ */
 public class UpdateImageRequestBody {
 
-    /** 操作类型，目前取值为add，replace和remove。 */
+    /**
+     * 操作类型，目前取值为add，replace和remove。
+     */
     public static final class OpEnum {
 
-        /** Enum ADD for value: "add" */
+        /**
+         * Enum ADD for value: "add"
+         */
         public static final OpEnum ADD = new OpEnum("add");
 
-        /** Enum REPLACE for value: "replace" */
+        /**
+         * Enum REPLACE for value: "replace"
+         */
         public static final OpEnum REPLACE = new OpEnum("replace");
 
-        /** Enum REMOVE for value: "remove" */
+        /**
+         * Enum REMOVE for value: "remove"
+         */
         public static final OpEnum REMOVE = new OpEnum("remove");
 
         private static final Map<String, OpEnum> STATIC_FIELDS = createStaticFields();
@@ -108,9 +118,10 @@ public class UpdateImageRequestBody {
         return this;
     }
 
-    /** 操作类型，目前取值为add，replace和remove。
-     * 
-     * @return op */
+    /**
+     * 操作类型，目前取值为add，replace和remove。
+     * @return op
+     */
     public OpEnum getOp() {
         return op;
     }
@@ -124,9 +135,10 @@ public class UpdateImageRequestBody {
         return this;
     }
 
-    /** 需要更新的属性名称，需要在属性名称前加“/”。
-     * 
-     * @return path */
+    /**
+     * 需要更新的属性名称，需要在属性名称前加“/”。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -140,9 +152,10 @@ public class UpdateImageRequestBody {
         return this;
     }
 
-    /** 需要更新属性的值。
-     * 
-     * @return value */
+    /**
+     * 需要更新属性的值。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -181,7 +194,10 @@ public class UpdateImageRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

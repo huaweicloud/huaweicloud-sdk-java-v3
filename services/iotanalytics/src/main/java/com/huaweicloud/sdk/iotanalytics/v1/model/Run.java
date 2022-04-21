@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Run */
+/**
+ * Run
+ */
 public class Run {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +31,14 @@ public class Run {
 
     private String jobName;
 
-    /** 作业类型。 */
+    /**
+     * 作业类型。
+     */
     public static final class JobTypeEnum {
 
-        /** Enum SQLJOB for value: "SqlJob" */
+        /**
+         * Enum SQLJOB for value: "SqlJob"
+         */
         public static final JobTypeEnum SQLJOB = new JobTypeEnum("SqlJob");
 
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -136,9 +142,10 @@ public class Run {
         return this;
     }
 
-    /** 作业运行ID。
-     * 
-     * @return runId */
+    /**
+     * 作业运行ID。
+     * @return runId
+     */
     public String getRunId() {
         return runId;
     }
@@ -152,9 +159,10 @@ public class Run {
         return this;
     }
 
-    /** 作业ID。
-     * 
-     * @return jobId */
+    /**
+     * 作业ID。
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -168,9 +176,10 @@ public class Run {
         return this;
     }
 
-    /** 作业名称。
-     * 
-     * @return jobName */
+    /**
+     * 作业名称。
+     * @return jobName
+     */
     public String getJobName() {
         return jobName;
     }
@@ -184,9 +193,10 @@ public class Run {
         return this;
     }
 
-    /** 作业类型。
-     * 
-     * @return jobType */
+    /**
+     * 作业类型。
+     * @return jobType
+     */
     public JobTypeEnum getJobType() {
         return jobType;
     }
@@ -200,9 +210,10 @@ public class Run {
         return this;
     }
 
-    /** 作业开始的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return startTime */
+    /**
+     * 作业开始的时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -216,9 +227,10 @@ public class Run {
         return this;
     }
 
-    /** 作业运行时长，单位毫秒。
-     * 
-     * @return duration */
+    /**
+     * 作业运行时长，单位毫秒。
+     * @return duration
+     */
     public Long getDuration() {
         return duration;
     }
@@ -232,9 +244,10 @@ public class Run {
         return this;
     }
 
-    /** 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
-     * 
-     * @return status */
+    /**
+     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -248,9 +261,10 @@ public class Run {
         return this;
     }
 
-    /** 是否定时作业。
-     * 
-     * @return isScheduleJob */
+    /**
+     * 是否定时作业。
+     * @return isScheduleJob
+     */
     public Boolean getIsScheduleJob() {
         return isScheduleJob;
     }
@@ -264,9 +278,10 @@ public class Run {
         return this;
     }
 
-    /** 计算资源名称。
-     * 
-     * @return computingResourceName */
+    /**
+     * 计算资源名称。
+     * @return computingResourceName
+     */
     public String getComputingResourceName() {
         return computingResourceName;
     }
@@ -289,9 +304,10 @@ public class Run {
         return this;
     }
 
-    /** Get sqlJob
-     * 
-     * @return sqlJob */
+    /**
+     * Get sqlJob
+     * @return sqlJob
+     */
     public SqlJobRun getSqlJob() {
         return sqlJob;
     }
@@ -349,7 +365,10 @@ public class Run {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 创建自定义告警模板添加的告警规则。 */
+/**
+ * 创建自定义告警模板添加的告警规则。
+ */
 public class TemplateItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class TemplateItem {
         return this;
     }
 
-    /** 告警模板添加的监控指标，如弹性云服务器可添加的监控指标为cpu_util等；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return metricName */
+    /**
+     * 告警模板添加的监控指标，如弹性云服务器可添加的监控指标为cpu_util等；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -54,9 +57,10 @@ public class TemplateItem {
         return this;
     }
 
-    /** Get condition
-     * 
-     * @return condition */
+    /**
+     * Get condition
+     * @return condition
+     */
     public AlarmTemplateCondition getCondition() {
         return condition;
     }
@@ -70,9 +74,10 @@ public class TemplateItem {
         return this;
     }
 
-    /** 设置告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
-     * 
-     * @return alarmLevel */
+    /**
+     * 设置告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     * @return alarmLevel
+     */
     public Integer getAlarmLevel() {
         return alarmLevel;
     }
@@ -111,7 +116,10 @@ public class TemplateItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

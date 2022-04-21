@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 云服务器组添加、删除成员列表 */
+/**
+ * 云服务器组添加、删除成员列表
+ */
 public class ServerGroupMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ServerGroupMember {
         return this;
     }
 
-    /** 云服务器UUID。
-     * 
-     * @return instanceUuid */
+    /**
+     * 云服务器UUID。
+     * @return instanceUuid
+     */
     public String getInstanceUuid() {
         return instanceUuid;
     }
@@ -55,7 +58,10 @@ public class ServerGroupMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 需要修改的DDM实例参数的集合。 */
+/**
+ * 需要修改的DDM实例参数的集合。
+ */
 public class UpdateParametersReqValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,16 +20,24 @@ public class UpdateParametersReqValues {
 
     private String bindTable;
 
-    /** DDM服务端字符集，如果需要存储emoji表情符号，请选择utf8mb4,并设置RDS字符集也为utf8mb4。修改DDM服务端字符集时，DDM服务端字符序必须同步修改为对应类型的值。 */
+    /**
+     * DDM服务端字符集，如果需要存储emoji表情符号，请选择utf8mb4,并设置RDS字符集也为utf8mb4。修改DDM服务端字符集时，DDM服务端字符序必须同步修改为对应类型的值。
+     */
     public static final class CharacterSetServerEnum {
 
-        /** Enum GBK for value: "gbk" */
+        /**
+         * Enum GBK for value: "gbk"
+         */
         public static final CharacterSetServerEnum GBK = new CharacterSetServerEnum("gbk");
 
-        /** Enum UTF8 for value: "utf8" */
+        /**
+         * Enum UTF8 for value: "utf8"
+         */
         public static final CharacterSetServerEnum UTF8 = new CharacterSetServerEnum("utf8");
 
-        /** Enum UTF8MB4 for value: "utf8mb4" */
+        /**
+         * Enum UTF8MB4 for value: "utf8mb4"
+         */
         public static final CharacterSetServerEnum UTF8MB4 = new CharacterSetServerEnum("utf8mb4");
 
         private static final Map<String, CharacterSetServerEnum> STATIC_FIELDS = createStaticFields();
@@ -98,25 +108,39 @@ public class UpdateParametersReqValues {
 
     private CharacterSetServerEnum characterSetServer;
 
-    /** DDM服务端字符序。修改DDM服务端字符序时，DDM服务端字符集必须同步修改为对应类型的值。 */
+    /**
+     * DDM服务端字符序。修改DDM服务端字符序时，DDM服务端字符集必须同步修改为对应类型的值。
+     */
     public static final class CollationServerEnum {
 
-        /** Enum UTF8_UNICODE_CI for value: "utf8_unicode_ci" */
+        /**
+         * Enum UTF8_UNICODE_CI for value: "utf8_unicode_ci"
+         */
         public static final CollationServerEnum UTF8_UNICODE_CI = new CollationServerEnum("utf8_unicode_ci");
 
-        /** Enum UTF8_BIN for value: "utf8_bin" */
+        /**
+         * Enum UTF8_BIN for value: "utf8_bin"
+         */
         public static final CollationServerEnum UTF8_BIN = new CollationServerEnum("utf8_bin");
 
-        /** Enum GBK_CHINESE_CI for value: "gbk_chinese_ci" */
+        /**
+         * Enum GBK_CHINESE_CI for value: "gbk_chinese_ci"
+         */
         public static final CollationServerEnum GBK_CHINESE_CI = new CollationServerEnum("gbk_chinese_ci");
 
-        /** Enum GBK_BIN for value: "gbk_bin" */
+        /**
+         * Enum GBK_BIN for value: "gbk_bin"
+         */
         public static final CollationServerEnum GBK_BIN = new CollationServerEnum("gbk_bin");
 
-        /** Enum UTF8MB4_UNICODE_CI for value: "utf8mb4_unicode_ci" */
+        /**
+         * Enum UTF8MB4_UNICODE_CI for value: "utf8mb4_unicode_ci"
+         */
         public static final CollationServerEnum UTF8MB4_UNICODE_CI = new CollationServerEnum("utf8mb4_unicode_ci");
 
-        /** Enum UTF8MB4_BIN for value: "utf8mb4_bin" */
+        /**
+         * Enum UTF8MB4_BIN for value: "utf8mb4_bin"
+         */
         public static final CollationServerEnum UTF8MB4_BIN = new CollationServerEnum("utf8mb4_bin");
 
         private static final Map<String, CollationServerEnum> STATIC_FIELDS = createStaticFields();
@@ -190,18 +214,25 @@ public class UpdateParametersReqValues {
 
     private CollationServerEnum collationServer;
 
-    /** 逻辑表扫描时的分片并发执行级别: DATA_NODE: 分库间并行扫描，同一分库内各分片串行扫描;RDS_INSTANCE: RDS实例间并行扫描，同一RDS实例内各分片串行扫描;PHY_TABLE:
-     * 各物理分片全部并行扫描。 */
+    /**
+     * 逻辑表扫描时的分片并发执行级别: DATA_NODE: 分库间并行扫描，同一分库内各分片串行扫描;RDS_INSTANCE: RDS实例间并行扫描，同一RDS实例内各分片串行扫描;PHY_TABLE: 各物理分片全部并行扫描。
+     */
     public static final class ConcurrentExecutionLevelEnum {
 
-        /** Enum RDS_INSTANCE for value: "RDS_INSTANCE" */
+        /**
+         * Enum RDS_INSTANCE for value: "RDS_INSTANCE"
+         */
         public static final ConcurrentExecutionLevelEnum RDS_INSTANCE =
             new ConcurrentExecutionLevelEnum("RDS_INSTANCE");
 
-        /** Enum DATA_NODE for value: "DATA_NODE" */
+        /**
+         * Enum DATA_NODE for value: "DATA_NODE"
+         */
         public static final ConcurrentExecutionLevelEnum DATA_NODE = new ConcurrentExecutionLevelEnum("DATA_NODE");
 
-        /** Enum PHY_TABLE for value: "PHY_TABLE" */
+        /**
+         * Enum PHY_TABLE for value: "PHY_TABLE"
+         */
         public static final ConcurrentExecutionLevelEnum PHY_TABLE = new ConcurrentExecutionLevelEnum("PHY_TABLE");
 
         private static final Map<String, ConcurrentExecutionLevelEnum> STATIC_FIELDS = createStaticFields();
@@ -277,13 +308,19 @@ public class UpdateParametersReqValues {
 
     private String connectionIdleTimeout;
 
-    /** 是否开启表回收站。 */
+    /**
+     * 是否开启表回收站。
+     */
     public static final class EnableTableRecycleEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final EnableTableRecycleEnum OFF = new EnableTableRecycleEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final EnableTableRecycleEnum ON = new EnableTableRecycleEnum("ON");
 
         private static final Map<String, EnableTableRecycleEnum> STATIC_FIELDS = createStaticFields();
@@ -353,13 +390,19 @@ public class UpdateParametersReqValues {
 
     private EnableTableRecycleEnum enableTableRecycle;
 
-    /** insert 常量值使用load data执行。 */
+    /**
+     * insert 常量值使用load data执行。
+     */
     public static final class InsertToLoadDataEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final InsertToLoadDataEnum OFF = new InsertToLoadDataEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final InsertToLoadDataEnum ON = new InsertToLoadDataEnum("ON");
 
         private static final Map<String, InsertToLoadDataEnum> STATIC_FIELDS = createStaticFields();
@@ -459,13 +502,19 @@ public class UpdateParametersReqValues {
 
     private String minBackendConnections;
 
-    /** 是否强制下推查询语句中不含from的语句。 */
+    /**
+     * 是否强制下推查询语句中不含from的语句。
+     */
     public static final class NotFromPushdownEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final NotFromPushdownEnum OFF = new NotFromPushdownEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final NotFromPushdownEnum ON = new NotFromPushdownEnum("ON");
 
         private static final Map<String, NotFromPushdownEnum> STATIC_FIELDS = createStaticFields();
@@ -540,13 +589,19 @@ public class UpdateParametersReqValues {
 
     private String secondsBehindMaster;
 
-    /** 开启或关闭SQL审计。 */
+    /**
+     * 开启或关闭SQL审计。
+     */
     public static final class SqlAuditEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final SqlAuditEnum OFF = new SqlAuditEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final SqlAuditEnum ON = new SqlAuditEnum("ON");
 
         private static final Map<String, SqlAuditEnum> STATIC_FIELDS = createStaticFields();
@@ -621,13 +676,19 @@ public class UpdateParametersReqValues {
 
     private String sqlExecuteTimeout;
 
-    /** DDL语句添加binlog hint。 */
+    /**
+     * DDL语句添加binlog hint。
+     */
     public static final class SupportDdlBinlogHintEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final SupportDdlBinlogHintEnum OFF = new SupportDdlBinlogHintEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final SupportDdlBinlogHintEnum ON = new SupportDdlBinlogHintEnum("ON");
 
         private static final Map<String, SupportDdlBinlogHintEnum> STATIC_FIELDS = createStaticFields();
@@ -697,16 +758,24 @@ public class UpdateParametersReqValues {
 
     private SupportDdlBinlogHintEnum supportDdlBinlogHint;
 
-    /** XA：XA 事务，保证原子性，保证可见性；FREE：允许多写，不保证原子性，无性能损耗；NO_DTX：单分片事务。 */
+    /**
+     * XA：XA 事务，保证原子性，保证可见性；FREE：允许多写，不保证原子性，无性能损耗；NO_DTX：单分片事务。
+     */
     public static final class TransactionPolicyEnum {
 
-        /** Enum XA for value: "XA" */
+        /**
+         * Enum XA for value: "XA"
+         */
         public static final TransactionPolicyEnum XA = new TransactionPolicyEnum("XA");
 
-        /** Enum FREE for value: "FREE" */
+        /**
+         * Enum FREE for value: "FREE"
+         */
         public static final TransactionPolicyEnum FREE = new TransactionPolicyEnum("FREE");
 
-        /** Enum NO_DTX for value: "NO_DTX" */
+        /**
+         * Enum NO_DTX for value: "NO_DTX"
+         */
         public static final TransactionPolicyEnum NO_DTX = new TransactionPolicyEnum("NO_DTX");
 
         private static final Map<String, TransactionPolicyEnum> STATIC_FIELDS = createStaticFields();
@@ -777,13 +846,19 @@ public class UpdateParametersReqValues {
 
     private TransactionPolicyEnum transactionPolicy;
 
-    /** 开启或关闭优化器中的极致下推优化功能。 */
+    /**
+     * 开启或关闭优化器中的极致下推优化功能。
+     */
     public static final class UltimateOptimizeEnum {
 
-        /** Enum OFF for value: "OFF" */
+        /**
+         * Enum OFF for value: "OFF"
+         */
         public static final UltimateOptimizeEnum OFF = new UltimateOptimizeEnum("OFF");
 
-        /** Enum ON for value: "ON" */
+        /**
+         * Enum ON for value: "ON"
+         */
         public static final UltimateOptimizeEnum ON = new UltimateOptimizeEnum("ON");
 
         private static final Map<String, UltimateOptimizeEnum> STATIC_FIELDS = createStaticFields();
@@ -858,9 +933,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 用于描述多个拆分表的内在数据关联性，用于告知优化器在处理join时，把join下推到MySQL层执行。格式为:[{tb.col1,tb2.col2},{tb.col2,tb3.col1},...]。
-     * 
-     * @return bindTable */
+    /**
+     * 用于描述多个拆分表的内在数据关联性，用于告知优化器在处理join时，把join下推到MySQL层执行。格式为:[{tb.col1,tb2.col2},{tb.col2,tb3.col1},...]。
+     * @return bindTable
+     */
     public String getBindTable() {
         return bindTable;
     }
@@ -874,9 +950,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** DDM服务端字符集，如果需要存储emoji表情符号，请选择utf8mb4,并设置RDS字符集也为utf8mb4。修改DDM服务端字符集时，DDM服务端字符序必须同步修改为对应类型的值。
-     * 
-     * @return characterSetServer */
+    /**
+     * DDM服务端字符集，如果需要存储emoji表情符号，请选择utf8mb4,并设置RDS字符集也为utf8mb4。修改DDM服务端字符集时，DDM服务端字符序必须同步修改为对应类型的值。
+     * @return characterSetServer
+     */
     public CharacterSetServerEnum getCharacterSetServer() {
         return characterSetServer;
     }
@@ -890,9 +967,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** DDM服务端字符序。修改DDM服务端字符序时，DDM服务端字符集必须同步修改为对应类型的值。
-     * 
-     * @return collationServer */
+    /**
+     * DDM服务端字符序。修改DDM服务端字符序时，DDM服务端字符集必须同步修改为对应类型的值。
+     * @return collationServer
+     */
     public CollationServerEnum getCollationServer() {
         return collationServer;
     }
@@ -907,10 +985,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 逻辑表扫描时的分片并发执行级别: DATA_NODE: 分库间并行扫描，同一分库内各分片串行扫描;RDS_INSTANCE: RDS实例间并行扫描，同一RDS实例内各分片串行扫描;PHY_TABLE:
-     * 各物理分片全部并行扫描。
-     * 
-     * @return concurrentExecutionLevel */
+    /**
+     * 逻辑表扫描时的分片并发执行级别: DATA_NODE: 分库间并行扫描，同一分库内各分片串行扫描;RDS_INSTANCE: RDS实例间并行扫描，同一RDS实例内各分片串行扫描;PHY_TABLE: 各物理分片全部并行扫描。
+     * @return concurrentExecutionLevel
+     */
     public ConcurrentExecutionLevelEnum getConcurrentExecutionLevel() {
         return concurrentExecutionLevel;
     }
@@ -924,9 +1002,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 服务器关闭连接之前等待连接活动的秒数，以秒为单位，取值范围为60-28800，默认值28800，表示服务器关闭连接之前等待28800秒后，关闭连接。
-     * 
-     * @return connectionIdleTimeout */
+    /**
+     * 服务器关闭连接之前等待连接活动的秒数，以秒为单位，取值范围为60-28800，默认值28800，表示服务器关闭连接之前等待28800秒后，关闭连接。
+     * @return connectionIdleTimeout
+     */
     public String getConnectionIdleTimeout() {
         return connectionIdleTimeout;
     }
@@ -940,9 +1019,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 是否开启表回收站。
-     * 
-     * @return enableTableRecycle */
+    /**
+     * 是否开启表回收站。
+     * @return enableTableRecycle
+     */
     public EnableTableRecycleEnum getEnableTableRecycle() {
         return enableTableRecycle;
     }
@@ -956,9 +1036,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** insert 常量值使用load data执行。
-     * 
-     * @return insertToLoadData */
+    /**
+     * insert 常量值使用load data执行。
+     * @return insertToLoadData
+     */
     public InsertToLoadDataEnum getInsertToLoadData() {
         return insertToLoadData;
     }
@@ -972,9 +1053,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 在途事务等待时间窗口，以秒为单位，取值范围为0-100，默认值为1，表示服务器关闭前端连接之前等待1秒后关闭连接。
-     * 
-     * @return liveTransactionTimeoutOnShutdown */
+    /**
+     * 在途事务等待时间窗口，以秒为单位，取值范围为0-100，默认值为1，表示服务器关闭前端连接之前等待1秒后关闭连接。
+     * @return liveTransactionTimeoutOnShutdown
+     */
     public String getLiveTransactionTimeoutOnShutdown() {
         return liveTransactionTimeoutOnShutdown;
     }
@@ -988,9 +1070,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 记录慢查询的最小秒数,以秒为单位，取值范围为0.01-10，默认值为1，表示如果sql执行大于等于1秒就定义为慢sql。
-     * 
-     * @return longQueryTime */
+    /**
+     * 记录慢查询的最小秒数,以秒为单位，取值范围为0.01-10，默认值为1，表示如果sql执行大于等于1秒就定义为慢sql。
+     * @return longQueryTime
+     */
     public String getLongQueryTime() {
         return longQueryTime;
     }
@@ -1004,9 +1087,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 包或任何生成的中间字符串的最大值。包缓冲区初始化为net_buffer_length字节，但需要时可以增长到max_allowed_packet字节。该值默认很小，以捕获大的（可能是错误的）数据包。该值必须设置为1024的倍数。取值范围为1024~1073741824，默认值为16777216。
-     * 
-     * @return maxAllowedPacket */
+    /**
+     * 包或任何生成的中间字符串的最大值。包缓冲区初始化为net_buffer_length字节，但需要时可以增长到max_allowed_packet字节。该值默认很小，以捕获大的（可能是错误的）数据包。该值必须设置为1024的倍数。取值范围为1024~1073741824，默认值为16777216。
+     * @return maxAllowedPacket
+     */
     public String getMaxAllowedPacket() {
         return maxAllowedPacket;
     }
@@ -1020,9 +1104,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 允许每个DDM节点同时连接RDS的最大客户端总数。0为默认值标识符,实际值等于(RDS的最大连接数-20)/DDM节点数。取值范围为0-10000000。
-     * 
-     * @return maxBackendConnections */
+    /**
+     * 允许每个DDM节点同时连接RDS的最大客户端总数。0为默认值标识符,实际值等于(RDS的最大连接数-20)/DDM节点数。取值范围为0-10000000。
+     * @return maxBackendConnections
+     */
     public String getMaxBackendConnections() {
         return maxBackendConnections;
     }
@@ -1036,9 +1121,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 允许同时连接的客户端总数。与后端RDS规格及数量有关。以个数为单位，取值范围为10-40000，默认值为20000，表示允许同时连接的客户端总数不能超过40000。
-     * 
-     * @return maxConnections */
+    /**
+     * 允许同时连接的客户端总数。与后端RDS规格及数量有关。以个数为单位，取值范围为10-40000，默认值为20000，表示允许同时连接的客户端总数不能超过40000。
+     * @return maxConnections
+     */
     public String getMaxConnections() {
         return maxConnections;
     }
@@ -1052,9 +1138,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 允许每个DDM节点同时连接RDS的最小客户端总数。默认值为10。取值范围为0-10000000。
-     * 
-     * @return minBackendConnections */
+    /**
+     * 允许每个DDM节点同时连接RDS的最小客户端总数。默认值为10。取值范围为0-10000000。
+     * @return minBackendConnections
+     */
     public String getMinBackendConnections() {
         return minBackendConnections;
     }
@@ -1068,9 +1155,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 是否强制下推查询语句中不含from的语句。
-     * 
-     * @return notFromPushdown */
+    /**
+     * 是否强制下推查询语句中不含from的语句。
+     * @return notFromPushdown
+     */
     public NotFromPushdownEnum getNotFromPushdown() {
         return notFromPushdown;
     }
@@ -1084,9 +1172,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 主从rds节点延迟时间阈值，以秒为单位，取值范围为0-7200，默认值为30，表示主rds与从rds之间的数据同步时间值不能超过30秒，如果超过30s，读数据指令就不走当前读节点。
-     * 
-     * @return secondsBehindMaster */
+    /**
+     * 主从rds节点延迟时间阈值，以秒为单位，取值范围为0-7200，默认值为30，表示主rds与从rds之间的数据同步时间值不能超过30秒，如果超过30s，读数据指令就不走当前读节点。
+     * @return secondsBehindMaster
+     */
     public String getSecondsBehindMaster() {
         return secondsBehindMaster;
     }
@@ -1100,9 +1189,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 开启或关闭SQL审计。
-     * 
-     * @return sqlAudit */
+    /**
+     * 开启或关闭SQL审计。
+     * @return sqlAudit
+     */
     public SqlAuditEnum getSqlAudit() {
         return sqlAudit;
     }
@@ -1116,9 +1206,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** SQL执行超时秒数，以秒为单位，取值范围为100-28800，默认值28800，表示sql执行大于等于28800秒超时。
-     * 
-     * @return sqlExecuteTimeout */
+    /**
+     * SQL执行超时秒数，以秒为单位，取值范围为100-28800，默认值28800，表示sql执行大于等于28800秒超时。
+     * @return sqlExecuteTimeout
+     */
     public String getSqlExecuteTimeout() {
         return sqlExecuteTimeout;
     }
@@ -1132,9 +1223,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** DDL语句添加binlog hint。
-     * 
-     * @return supportDdlBinlogHint */
+    /**
+     * DDL语句添加binlog hint。
+     * @return supportDdlBinlogHint
+     */
     public SupportDdlBinlogHintEnum getSupportDdlBinlogHint() {
         return supportDdlBinlogHint;
     }
@@ -1148,9 +1240,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** XA：XA 事务，保证原子性，保证可见性；FREE：允许多写，不保证原子性，无性能损耗；NO_DTX：单分片事务。
-     * 
-     * @return transactionPolicy */
+    /**
+     * XA：XA 事务，保证原子性，保证可见性；FREE：允许多写，不保证原子性，无性能损耗；NO_DTX：单分片事务。
+     * @return transactionPolicy
+     */
     public TransactionPolicyEnum getTransactionPolicy() {
         return transactionPolicy;
     }
@@ -1164,9 +1257,10 @@ public class UpdateParametersReqValues {
         return this;
     }
 
-    /** 开启或关闭优化器中的极致下推优化功能。
-     * 
-     * @return ultimateOptimize */
+    /**
+     * 开启或关闭优化器中的极致下推优化功能。
+     * @return ultimateOptimize
+     */
     public UltimateOptimizeEnum getUltimateOptimize() {
         return ultimateOptimize;
     }
@@ -1261,7 +1355,10 @@ public class UpdateParametersReqValues {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

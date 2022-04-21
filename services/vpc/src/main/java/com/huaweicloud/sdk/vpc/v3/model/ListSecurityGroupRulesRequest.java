@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListSecurityGroupRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,9 +63,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：每页返回个数 取值范围：0-2000
-     * 
-     * @return limit */
+    /**
+     * 功能说明：每页返回个数 取值范围：0-2000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -77,9 +80,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -109,9 +113,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则ID，支持多个ID过滤
-     * 
-     * @return id */
+    /**
+     * 功能说明：安全组规则ID，支持多个ID过滤
+     * @return id
+     */
     public List<String> getId() {
         return id;
     }
@@ -141,9 +146,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则所属安全组ID，支持多个ID过滤
-     * 
-     * @return securityGroupId */
+    /**
+     * 功能说明：安全组规则所属安全组ID，支持多个ID过滤
+     * @return securityGroupId
+     */
     public List<String> getSecurityGroupId() {
         return securityGroupId;
     }
@@ -173,9 +179,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则协议，支持多条过滤
-     * 
-     * @return protocol */
+    /**
+     * 功能说明：安全组规则协议，支持多条过滤
+     * @return protocol
+     */
     public List<String> getProtocol() {
         return protocol;
     }
@@ -205,9 +212,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则的描述，支持多个描述同时过滤
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组规则的描述，支持多个描述同时过滤
+     * @return description
+     */
     public List<String> getDescription() {
         return description;
     }
@@ -237,9 +245,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：远端安全组ID，支持多ID过滤
-     * 
-     * @return remoteGroupId */
+    /**
+     * 功能说明：远端安全组ID，支持多ID过滤
+     * @return remoteGroupId
+     */
     public List<String> getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -253,9 +262,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则方向
-     * 
-     * @return direction */
+    /**
+     * 功能说明：安全组规则方向
+     * @return direction
+     */
     public String getDirection() {
         return direction;
     }
@@ -269,9 +279,10 @@ public class ListSecurityGroupRulesRequest {
         return this;
     }
 
-    /** 功能说明：安全组规则生效策略
-     * 
-     * @return action */
+    /**
+     * 功能说明：安全组规则生效策略
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -323,7 +334,10 @@ public class ListSecurityGroupRulesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobByIdResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowJobByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** 实时分析作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：实时分析算子配置指南。
-     * 
-     * @return jobConfig */
+    /**
+     * 实时分析作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：实时分析算子配置指南。
+     * @return jobConfig
+     */
     public Map<String, Object> getJobConfig() {
         return jobConfig;
     }
@@ -68,9 +71,10 @@ public class ShowJobByIdResponse extends SdkResponse {
         return this;
     }
 
-    /** Get jobInfo
-     * 
-     * @return jobInfo */
+    /**
+     * Get jobInfo
+     * @return jobInfo
+     */
     public StreamingJobInfoDto getJobInfo() {
         return jobInfo;
     }
@@ -107,7 +111,10 @@ public class ShowJobByIdResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

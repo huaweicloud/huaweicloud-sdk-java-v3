@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 磁盘模板 */
+/**
+ * 磁盘模板
+ */
 public class TemplateDisk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,12 @@ public class TemplateDisk {
         return this;
     }
 
-    /** 磁盘序号，从0开始 minimum: 0 maximum: 2147483647
-     * 
-     * @return index */
+    /**
+     * 磁盘序号，从0开始
+     * minimum: 0
+     * maximum: 2147483647
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -49,9 +54,10 @@ public class TemplateDisk {
         return this;
     }
 
-    /** 磁盘名称
-     * 
-     * @return name */
+    /**
+     * 磁盘名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -65,9 +71,10 @@ public class TemplateDisk {
         return this;
     }
 
-    /** 磁盘类型，同volumetype字段
-     * 
-     * @return disktype */
+    /**
+     * 磁盘类型，同volumetype字段
+     * @return disktype
+     */
     public String getDisktype() {
         return disktype;
     }
@@ -81,9 +88,12 @@ public class TemplateDisk {
         return this;
     }
 
-    /** 磁盘大小，单位：GB minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 磁盘大小，单位：GB
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -122,7 +132,10 @@ public class TemplateDisk {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** CreateNotificationRequestBody */
+/**
+ * CreateNotificationRequestBody
+ */
 public class CreateNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class CreateNotificationRequestBody {
 
     private String appId;
 
-    /** 通知类型 0-设备上线通知 1-设备下线通知 2-设备添加通知 3-设备删除通知 4-设备变更通知 */
+    /**
+     * 通知类型 0-设备上线通知 1-设备下线通知 2-设备添加通知 3-设备删除通知 4-设备变更通知
+     */
     public static final class TypeEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final TypeEnum NUMBER_0 = new TypeEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final TypeEnum NUMBER_1 = new TypeEnum(1);
 
-        /** Enum NUMBER_2 for value: 2 */
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
 
-        /** Enum NUMBER_3 for value: 3 */
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
         public static final TypeEnum NUMBER_3 = new TypeEnum(3);
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final TypeEnum NUMBER_4 = new TypeEnum(4);
 
         private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,13 +125,19 @@ public class CreateNotificationRequestBody {
 
     private String topic;
 
-    /** 启停状态 0-启用 1-停用 */
+    /**
+     * 启停状态 0-启用 1-停用
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_0 for value: 0 */
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -192,9 +212,10 @@ public class CreateNotificationRequestBody {
         return this;
     }
 
-    /** 通知归属的应用ID
-     * 
-     * @return appId */
+    /**
+     * 通知归属的应用ID
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -208,9 +229,12 @@ public class CreateNotificationRequestBody {
         return this;
     }
 
-    /** 通知类型 0-设备上线通知 1-设备下线通知 2-设备添加通知 3-设备删除通知 4-设备变更通知 minimum: 0 maximum: 10
-     * 
-     * @return type */
+    /**
+     * 通知类型 0-设备上线通知 1-设备下线通知 2-设备添加通知 3-设备删除通知 4-设备变更通知
+     * minimum: 0
+     * maximum: 10
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -224,9 +248,10 @@ public class CreateNotificationRequestBody {
         return this;
     }
 
-    /** 通知发送的主题名，该主题需要在MQS存在
-     * 
-     * @return topic */
+    /**
+     * 通知发送的主题名，该主题需要在MQS存在
+     * @return topic
+     */
     public String getTopic() {
         return topic;
     }
@@ -240,9 +265,12 @@ public class CreateNotificationRequestBody {
         return this;
     }
 
-    /** 启停状态 0-启用 1-停用 minimum: 0 maximum: 10
-     * 
-     * @return status */
+    /**
+     * 启停状态 0-启用 1-停用
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -283,7 +311,10 @@ public class CreateNotificationRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

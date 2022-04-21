@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowCertificatesHttpsInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return this;
     }
 
-    /** 每页的数量，取值范围1-10000，不设值时默认值为30。
-     * 
-     * @return pageSize */
+    /**
+     * 每页的数量，取值范围1-10000，不设值时默认值为30。
+     * @return pageSize
+     */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -54,9 +57,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return this;
     }
 
-    /** 查询的页码。取值范围1-65535，不设值时默认值为1。
-     * 
-     * @return pageNumber */
+    /**
+     * 查询的页码。取值范围1-65535，不设值时默认值为1。
+     * @return pageNumber
+     */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -70,9 +74,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return this;
     }
 
-    /** 加速域名。
-     * 
-     * @return domainName */
+    /**
+     * 加速域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -86,9 +91,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return this;
     }
 
-    /** 域名所属用户的domain_id。
-     * 
-     * @return userDomainId */
+    /**
+     * 域名所属用户的domain_id。
+     * @return userDomainId
+     */
     public String getUserDomainId() {
         return userDomainId;
     }
@@ -102,9 +108,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return this;
     }
 
-    /** 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。\"ALL\"表示查询所有该用户已授权项目的资源。注意：当使用子账号调用接口时，该参数必传。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。\"ALL\"表示查询所有该用户已授权项目的资源。注意：当使用子账号调用接口时，该参数必传。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -147,7 +154,10 @@ public class ShowCertificatesHttpsInfoRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

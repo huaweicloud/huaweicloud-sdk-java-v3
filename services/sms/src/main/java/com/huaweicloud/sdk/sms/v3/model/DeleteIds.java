@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除参数 */
+/**
+ * 批量删除参数
+ */
 public class DeleteIds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteIds {
         return this;
     }
 
-    /** 所有删除对象id的集合
-     * 
-     * @return ids */
+    /**
+     * 所有删除对象id的集合
+     * @return ids
+     */
     public List<String> getIds() {
         return ids;
     }
@@ -74,7 +77,10 @@ public class DeleteIds {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

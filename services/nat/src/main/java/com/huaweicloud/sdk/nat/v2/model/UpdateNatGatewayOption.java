@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 更新公网NAT网关实例的请求体。 */
+/**
+ * 更新公网NAT网关实例的请求体。
+ */
 public class UpdateNatGatewayOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,20 +25,29 @@ public class UpdateNatGatewayOption {
 
     private String description;
 
-    /** 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000
-     * \"4\"：超大型，SNAT最大连接数1000000 */
+    /**
+     * 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
+     */
     public static final class SpecEnum {
 
-        /** Enum _1 for value: "1" */
+        /**
+         * Enum _1 for value: "1"
+         */
         public static final SpecEnum _1 = new SpecEnum("1");
 
-        /** Enum _2 for value: "2" */
+        /**
+         * Enum _2 for value: "2"
+         */
         public static final SpecEnum _2 = new SpecEnum("2");
 
-        /** Enum _3 for value: "3" */
+        /**
+         * Enum _3 for value: "3"
+         */
         public static final SpecEnum _3 = new SpecEnum("3");
 
-        /** Enum _4 for value: "4" */
+        /**
+         * Enum _4 for value: "4"
+         */
         public static final SpecEnum _4 = new SpecEnum("4");
 
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
@@ -113,9 +124,10 @@ public class UpdateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。
-     * 
-     * @return name */
+    /**
+     * 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -129,9 +141,10 @@ public class UpdateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关的描述，长度限制为255。
-     * 
-     * @return description */
+    /**
+     * 公网NAT网关的描述，长度限制为255。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -145,10 +158,10 @@ public class UpdateNatGatewayOption {
         return this;
     }
 
-    /** 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000
-     * \"4\"：超大型，SNAT最大连接数1000000
-     * 
-     * @return spec */
+    /**
+     * 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
+     * @return spec
+     */
     public SpecEnum getSpec() {
         return spec;
     }
@@ -187,7 +200,10 @@ public class UpdateNatGatewayOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

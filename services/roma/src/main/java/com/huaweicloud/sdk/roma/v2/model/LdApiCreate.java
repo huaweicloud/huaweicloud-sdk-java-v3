@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** LdApiCreate */
+/**
+ * LdApiCreate
+ */
 public class LdApiCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,19 +28,29 @@ public class LdApiCreate {
 
     private String path;
 
-    /** 后端API请求方法。 支持GET、PUT、POST、DELETE */
+    /**
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE
+     */
     public static final class MethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final MethodEnum GET = new MethodEnum("GET");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final MethodEnum PUT = new MethodEnum("PUT");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final MethodEnum POST = new MethodEnum("POST");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final MethodEnum DELETE = new MethodEnum("DELETE");
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
@@ -120,16 +132,24 @@ public class LdApiCreate {
 
     private String version;
 
-    /** 后端API返回类型 */
+    /**
+     * 后端API返回类型
+     */
     public static final class ContentTypeEnum {
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final ContentTypeEnum JSON = new ContentTypeEnum("json");
 
-        /** Enum XML for value: "xml" */
+        /**
+         * Enum XML for value: "xml"
+         */
         public static final ContentTypeEnum XML = new ContentTypeEnum("xml");
 
-        /** Enum STREAM for value: "stream" */
+        /**
+         * Enum STREAM for value: "stream"
+         */
         public static final ContentTypeEnum STREAM = new ContentTypeEnum("stream");
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -225,9 +245,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
-     * 
-     * @return name */
+    /**
+     * 后端API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -241,9 +262,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API请求路径。 支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
-     * 
-     * @return path */
+    /**
+     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -257,9 +279,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API请求方法。 支持GET、PUT、POST、DELETE
-     * 
-     * @return method */
+    /**
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE
+     * @return method
+     */
     public MethodEnum getMethod() {
         return method;
     }
@@ -273,9 +296,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API描述。 不支持<，>字符
-     * 
-     * @return description */
+    /**
+     * 后端API描述。  不支持<，>字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -289,9 +313,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API版本 支持英文，数字，下划线，中划线，点。
-     * 
-     * @return version */
+    /**
+     * 后端API版本  支持英文，数字，下划线，中划线，点。
+     * @return version
+     */
     public String getVersion() {
         return version;
     }
@@ -305,9 +330,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API返回类型
-     * 
-     * @return contentType */
+    /**
+     * 后端API返回类型
+     * @return contentType
+     */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -321,9 +347,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API为签名认证时绑定的签名密钥编号
-     * 
-     * @return apiSignatureId */
+    /**
+     * 后端API为签名认证时绑定的签名密钥编号
+     * @return apiSignatureId
+     */
     public String getApiSignatureId() {
         return apiSignatureId;
     }
@@ -337,9 +364,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API归属的集成应用编号
-     * 
-     * @return romaAppId */
+    /**
+     * 后端API归属的集成应用编号
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -353,9 +381,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** API响应信息是否格式化 true： 对响应信息进行格式化 false：对响应信息格式化不进行格式化
-     * 
-     * @return returnFormat */
+    /**
+     * API响应信息是否格式化  true： 对响应信息进行格式化  false：对响应信息格式化不进行格式化 
+     * @return returnFormat
+     */
     public Boolean getReturnFormat() {
         return returnFormat;
     }
@@ -385,9 +414,10 @@ public class LdApiCreate {
         return this;
     }
 
-    /** 后端API的请求参数列表
-     * 
-     * @return parameters */
+    /**
+     * 后端API的请求参数列表
+     * @return parameters
+     */
     public List<LdApiParameter> getParameters() {
         return parameters;
     }
@@ -448,7 +478,10 @@ public class LdApiCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

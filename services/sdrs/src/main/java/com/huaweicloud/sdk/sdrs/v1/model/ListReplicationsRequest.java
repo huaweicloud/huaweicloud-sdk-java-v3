@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListReplicationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,13 +55,19 @@ public class ListReplicationsRequest {
 
     private Integer offset;
 
-    /** 查询场景类型。如需查询异常状态的复制对列表，query_type的值为“status_abnormal”。否则，query_type取值为空或“general”。 */
+    /**
+     * 查询场景类型。如需查询异常状态的复制对列表，query_type的值为“status_abnormal”。否则，query_type取值为空或“general”。
+     */
     public static final class QueryTypeEnum {
 
-        /** Enum STATUS_ABNORMAL for value: "status_abnormal" */
+        /**
+         * Enum STATUS_ABNORMAL for value: "status_abnormal"
+         */
         public static final QueryTypeEnum STATUS_ABNORMAL = new QueryTypeEnum("status_abnormal");
 
-        /** Enum GENERAL for value: "general" */
+        /**
+         * Enum GENERAL for value: "general"
+         */
         public static final QueryTypeEnum GENERAL = new QueryTypeEnum("general");
 
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -139,9 +147,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 保护组的ID。
-     * 
-     * @return serverGroupId */
+    /**
+     * 保护组的ID。
+     * @return serverGroupId
+     */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -155,9 +164,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 保护组的ID列表，格式为server_group_ids=['server_group_id1','server_group_id2',...,'server_group_idx']，请使用URL编码进行转换。返回“server_group_ids”中有效server_group_id的复制对列表，无效的server_group_id会被忽略。支持查询最多30个server_group_id对应的复制对列表。如果“server_group_id”和“server_group_ids”查询参数同时存在，“server_group_id”会被忽略。
-     * 
-     * @return serverGroupIds */
+    /**
+     * 保护组的ID列表，格式为server_group_ids=['server_group_id1','server_group_id2',...,'server_group_idx']，请使用URL编码进行转换。返回“server_group_ids”中有效server_group_id的复制对列表，无效的server_group_id会被忽略。支持查询最多30个server_group_id对应的复制对列表。如果“server_group_id”和“server_group_ids”查询参数同时存在，“server_group_id”会被忽略。
+     * @return serverGroupIds
+     */
     public String getServerGroupIds() {
         return serverGroupIds;
     }
@@ -171,9 +181,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 保护实例的ID。
-     * 
-     * @return protectedInstanceId */
+    /**
+     * 保护实例的ID。
+     * @return protectedInstanceId
+     */
     public String getProtectedInstanceId() {
         return protectedInstanceId;
     }
@@ -187,9 +198,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 保护实例的ID列表，格式为protected_instance_ids=['protected_instance_id1','protected_instance_id2',...,'protected_instance_idx']，请使用URL编码进行转换。返回“protected_instance_ids”中有效protected_instance_id的复制对列表，无效的protected_instance_id会被忽略。支持查询最多30个protected_instance_id对应的复制对列表。如果“protected_instance_id”和“protected_instance_ids”查询参数同时存在，“protected_instance_id”会被忽略。
-     * 
-     * @return protectedInstanceIds */
+    /**
+     * 保护实例的ID列表，格式为protected_instance_ids=['protected_instance_id1','protected_instance_id2',...,'protected_instance_idx']，请使用URL编码进行转换。返回“protected_instance_ids”中有效protected_instance_id的复制对列表，无效的protected_instance_id会被忽略。支持查询最多30个protected_instance_id对应的复制对列表。如果“protected_instance_id”和“protected_instance_ids”查询参数同时存在，“protected_instance_id”会被忽略。
+     * @return protectedInstanceIds
+     */
     public String getProtectedInstanceIds() {
         return protectedInstanceIds;
     }
@@ -203,9 +215,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 复制对的名称。支持模糊查询。
-     * 
-     * @return name */
+    /**
+     * 复制对的名称。支持模糊查询。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -219,9 +232,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 复制对的状态。
-     * 
-     * @return status */
+    /**
+     * 复制对的状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -235,9 +249,12 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。 minimum: 0 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每次请求返回结果个数限制，取值范围为[0,1000]的正整数，默认值为1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -251,9 +268,11 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 每次请求开始的下标，即偏移量，默认值为0。offset必须为数字，不能为负数。
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -267,9 +286,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 查询场景类型。如需查询异常状态的复制对列表，query_type的值为“status_abnormal”。否则，query_type取值为空或“general”。
-     * 
-     * @return queryType */
+    /**
+     * 查询场景类型。如需查询异常状态的复制对列表，query_type的值为“status_abnormal”。否则，query_type取值为空或“general”。
+     * @return queryType
+     */
     public QueryTypeEnum getQueryType() {
         return queryType;
     }
@@ -283,9 +303,10 @@ public class ListReplicationsRequest {
         return this;
     }
 
-    /** 复制对所在的保护组的当前生产站点可用区。
-     * 
-     * @return availabilityZone */
+    /**
+     * 复制对所在的保护组的当前生产站点可用区。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -347,7 +368,10 @@ public class ListReplicationsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

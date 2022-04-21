@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateInstanceTopicReq */
+/**
+ * CreateInstanceTopicReq
+ */
 public class CreateInstanceTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
-     * 
-     * @return id */
+    /**
+     * topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -59,9 +62,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** 副本数，配置数据的可靠性。 取值范围：1-3。
-     * 
-     * @return replication */
+    /**
+     * 副本数，配置数据的可靠性。 取值范围：1-3。
+     * @return replication
+     */
     public Integer getReplication() {
         return replication;
     }
@@ -75,9 +79,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * 
-     * @return syncMessageFlush */
+    /**
+     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * @return syncMessageFlush
+     */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -91,9 +96,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** topic分区数，设置消费的并发数。 取值范围：1-100。
-     * 
-     * @return partition */
+    /**
+     * topic分区数，设置消费的并发数。 取值范围：1-100。
+     * @return partition
+     */
     public Integer getPartition() {
         return partition;
     }
@@ -107,9 +113,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
-     * 
-     * @return syncReplication */
+    /**
+     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
+     * @return syncReplication
+     */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -123,9 +130,10 @@ public class CreateInstanceTopicReq {
         return this;
     }
 
-    /** 消息老化时间。默认值为72。取值范围1~168，单位小时。
-     * 
-     * @return retentionTime */
+    /**
+     * 消息老化时间。默认值为72。取值范围1~168，单位小时。
+     * @return retentionTime
+     */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -170,7 +178,10 @@ public class CreateInstanceTopicReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

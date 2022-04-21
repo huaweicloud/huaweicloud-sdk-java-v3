@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateAntiTamperRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,9 +46,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return id */
+    /**
+     * 规则id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -60,9 +63,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 策略id
-     * 
-     * @return policyid */
+    /**
+     * 策略id
+     * @return policyid
+     */
     public String getPolicyid() {
         return policyid;
     }
@@ -76,9 +80,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 防篡改的域名
-     * 
-     * @return hostname */
+    /**
+     * 防篡改的域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -92,9 +97,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 防篡改的url，
-     * 
-     * @return url */
+    /**
+     * 防篡改的url，
+     * @return url
+     */
     public String getUrl() {
         return url;
     }
@@ -108,9 +114,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建规则的时间戳
-     * 
-     * @return description */
+    /**
+     * 创建规则的时间戳
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -124,9 +131,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    /** 规则状态，0：关闭，1：开启
-     * 
-     * @return status */
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -171,7 +179,10 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

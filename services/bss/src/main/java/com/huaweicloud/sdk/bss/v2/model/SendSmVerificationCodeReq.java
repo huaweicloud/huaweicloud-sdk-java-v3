@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** SendSmVerificationCodeReq */
+/**
+ * SendSmVerificationCodeReq
+ */
 public class SendSmVerificationCodeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class SendSmVerificationCodeReq {
         return this;
     }
 
-    /** 接受短信验证码的手机号码。
-     * 
-     * @return mobilePhone */
+    /**
+     * 接受短信验证码的手机号码。
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -52,9 +55,12 @@ public class SendSmVerificationCodeReq {
         return this;
     }
 
-    /** 超时时间，不指定时默认为10分钟。 单位：分钟 minimum: 0 maximum: 100
-     * 
-     * @return timeout */
+    /**
+     * 超时时间，不指定时默认为10分钟。 单位：分钟
+     * minimum: 0
+     * maximum: 100
+     * @return timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
@@ -68,9 +74,10 @@ public class SendSmVerificationCodeReq {
         return this;
     }
 
-    /** 发送的短信的语言。 zh-cn: 中文en-us: 英语 不设置默认为偏好设置的默认语言。
-     * 
-     * @return language */
+    /**
+     * 发送的短信的语言。 zh-cn: 中文en-us: 英语 不设置默认为偏好设置的默认语言。
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -100,9 +107,10 @@ public class SendSmVerificationCodeReq {
         return this;
     }
 
-    /** 短信发送模板中的变量，具体参见表1。
-     * 
-     * @return smTemplateArgs */
+    /**
+     * 短信发送模板中的变量，具体参见表1。
+     * @return smTemplateArgs
+     */
     public List<TemplateArgs> getSmTemplateArgs() {
         return smTemplateArgs;
     }
@@ -143,7 +151,10 @@ public class SendSmVerificationCodeReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

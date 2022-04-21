@@ -20,13 +20,19 @@ public class PrePaidServerEipBandwidth {
 
     private Integer size;
 
-    /** 带宽的共享类型。 共享类型枚举：PER，表示独享。WHOLE，表示共享。 */
+    /**
+     * 带宽的共享类型。  共享类型枚举：PER，表示独享。WHOLE，表示共享。
+     */
     public static final class SharetypeEnum {
 
-        /** Enum PER for value: "PER" */
+        /**
+         * Enum PER for value: "PER"
+         */
         public static final SharetypeEnum PER = new SharetypeEnum("PER");
 
-        /** Enum WHOLE for value: "WHOLE" */
+        /**
+         * Enum WHOLE for value: "WHOLE"
+         */
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
 
         private static final Map<String, SharetypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,11 +117,12 @@ public class PrePaidServerEipBandwidth {
         return this;
     }
 
-    /** 功能说明：带宽大小 带宽（Mbit/s），取值范围为[1,2000]。 调整带宽时的最小单位会根据带宽范围不同存在差异。 - 小于等于300Mbit/s：默认最小单位为1Mbit/s。 -
-     * 300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。 - 大于1000Mbit/s：默认最小单位为500Mbit/s。 > 说明： > >
-     * 如果share_type是PER，该参数必选项；如果share_type是WHOLE并且id有值，该参数会忽略。 minimum: 1 maximum: 2000
-     * 
-     * @return size */
+    /**
+     * 功能说明：带宽大小  带宽（Mbit/s），取值范围为[1,2000]。  调整带宽时的最小单位会根据带宽范围不同存在差异。  - 小于等于300Mbit/s：默认最小单位为1Mbit/s。 - 300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。 - 大于1000Mbit/s：默认最小单位为500Mbit/s。  > 说明： >  > 如果share_type是PER，该参数必选项；如果share_type是WHOLE并且id有值，该参数会忽略。
+     * minimum: 1
+     * maximum: 2000
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -129,9 +136,10 @@ public class PrePaidServerEipBandwidth {
         return this;
     }
 
-    /** 带宽的共享类型。 共享类型枚举：PER，表示独享。WHOLE，表示共享。
-     * 
-     * @return sharetype */
+    /**
+     * 带宽的共享类型。  共享类型枚举：PER，表示独享。WHOLE，表示共享。
+     * @return sharetype
+     */
     public SharetypeEnum getSharetype() {
         return sharetype;
     }
@@ -145,10 +153,10 @@ public class PrePaidServerEipBandwidth {
         return this;
     }
 
-    /** 带宽的计费类型。 - 未传该字段，表示按带宽计费。 - 字段值为空，表示按带宽计费。 - 字段值为“traffic”，表示按流量计费。 - 字段为其它值，会导致创建云服务器失败。 > 说明： > >
-     * 如果share_type是WHOLE并且id有值，该参数会忽略。
-     * 
-     * @return chargemode */
+    /**
+     * 带宽的计费类型。  - 未传该字段，表示按带宽计费。 - 字段值为空，表示按带宽计费。 - 字段值为“traffic”，表示按流量计费。 - 字段为其它值，会导致创建云服务器失败。  > 说明： >  > 如果share_type是WHOLE并且id有值，该参数会忽略。
+     * @return chargemode
+     */
     public String getChargemode() {
         return chargemode;
     }
@@ -162,9 +170,10 @@ public class PrePaidServerEipBandwidth {
         return this;
     }
 
-    /** 带宽ID，创建WHOLE类型带宽的弹性IP时可以指定之前的共享带宽创建。 取值范围：WHOLE类型的带宽ID。 > 说明： > > 当创建WHOLE类型的带宽时，该字段必选。
-     * 
-     * @return id */
+    /**
+     * 带宽ID，创建WHOLE类型带宽的弹性IP时可以指定之前的共享带宽创建。  取值范围：WHOLE类型的带宽ID。  > 说明： >  > 当创建WHOLE类型的带宽时，该字段必选。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -205,7 +214,10 @@ public class PrePaidServerEipBandwidth {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

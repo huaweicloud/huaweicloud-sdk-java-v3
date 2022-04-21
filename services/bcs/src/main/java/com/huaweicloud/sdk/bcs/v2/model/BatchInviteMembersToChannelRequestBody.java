@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 邀请联盟成员 */
+/**
+ * 邀请联盟成员
+ */
 public class BatchInviteMembersToChannelRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class BatchInviteMembersToChannelRequestBody {
         return this;
     }
 
-    /** 邀请实例id
-     * 
-     * @return bcsId */
+    /**
+     * 邀请实例id
+     * @return bcsId
+     */
     public String getBcsId() {
         return bcsId;
     }
@@ -52,9 +55,10 @@ public class BatchInviteMembersToChannelRequestBody {
         return this;
     }
 
-    /** 邀请加入的通道名
-     * 
-     * @return channelName */
+    /**
+     * 邀请加入的通道名
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -68,9 +72,10 @@ public class BatchInviteMembersToChannelRequestBody {
         return this;
     }
 
-    /** 发出邀请的租户名
-     * 
-     * @return invitorUsername */
+    /**
+     * 发出邀请的租户名
+     * @return invitorUsername
+     */
     public String getInvitorUsername() {
         return invitorUsername;
     }
@@ -101,9 +106,10 @@ public class BatchInviteMembersToChannelRequestBody {
         return this;
     }
 
-    /** 被邀请的用户列表
-     * 
-     * @return invitedUserinfo */
+    /**
+     * 被邀请的用户列表
+     * @return invitedUserinfo
+     */
     public List<InvitedDomain> getInvitedUserinfo() {
         return invitedUserinfo;
     }
@@ -145,7 +151,10 @@ public class BatchInviteMembersToChannelRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

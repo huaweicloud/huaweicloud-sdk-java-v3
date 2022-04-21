@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApiPolicyMockBase */
+/**
+ * ApiPolicyMockBase
+ */
 public class ApiPolicyMockBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class ApiPolicyMockBase {
         return this;
     }
 
-    /** 返回结果
-     * 
-     * @return resultContent */
+    /**
+     * 返回结果
+     * @return resultContent
+     */
     public String getResultContent() {
         return resultContent;
     }
@@ -55,7 +58,10 @@ public class ApiPolicyMockBase {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

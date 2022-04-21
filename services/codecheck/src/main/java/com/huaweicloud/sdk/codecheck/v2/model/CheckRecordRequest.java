@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CheckRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -59,9 +62,10 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return taskId */
+    /**
+     * 任务ID
+     * @return taskId
+     */
     public String getTaskId() {
         return taskId;
     }
@@ -75,9 +79,11 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 分页索引，偏移量 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -91,9 +97,12 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 每页显示的数量,每页最多显示1000条 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量,每页最多显示1000条
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -107,9 +116,10 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 过滤开始时间,根据任务检查开始时间过滤
-     * 
-     * @return startTime */
+    /**
+     * 过滤开始时间,根据任务检查开始时间过滤
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -123,9 +133,10 @@ public class CheckRecordRequest {
         return this;
     }
 
-    /** 过滤结束时间,根据任务检查开始时间过滤
-     * 
-     * @return endTime */
+    /**
+     * 过滤结束时间,根据任务检查开始时间过滤
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -170,7 +181,10 @@ public class CheckRecordRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

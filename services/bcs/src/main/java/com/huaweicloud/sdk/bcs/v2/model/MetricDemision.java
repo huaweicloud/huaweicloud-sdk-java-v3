@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 指标描述信息 */
+/**
+ * 指标描述信息
+ */
 public class MetricDemision {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class MetricDemision {
         return this;
     }
 
-    /** 命名空间
-     * 
-     * @return namespace */
+    /**
+     * 命名空间
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -47,9 +50,10 @@ public class MetricDemision {
         return this;
     }
 
-    /** 指标名称
-     * 
-     * @return metricName */
+    /**
+     * 指标名称
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -79,9 +83,10 @@ public class MetricDemision {
         return this;
     }
 
-    /** 维度列表
-     * 
-     * @return dimensions */
+    /**
+     * 维度列表
+     * @return dimensions
+     */
     public List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -120,7 +125,10 @@ public class MetricDemision {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

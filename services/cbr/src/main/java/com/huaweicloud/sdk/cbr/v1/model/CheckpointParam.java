@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CheckpointParam */
+/**
+ * CheckpointParam
+ */
 public class CheckpointParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 是否自动触发,true:自动触发，false：非自动触发。
-     * 
-     * @return autoTrigger */
+    /**
+     * 是否自动触发,true:自动触发，false：非自动触发。
+     * @return autoTrigger
+     */
     public Boolean getAutoTrigger() {
         return autoTrigger;
     }
@@ -67,9 +70,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 备份描述
-     * 
-     * @return description */
+    /**
+     * 备份描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -83,9 +87,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 是否增量备份，true:增量备份，false：非增量备份。
-     * 
-     * @return incremental */
+    /**
+     * 是否增量备份，true:增量备份，false：非增量备份。
+     * @return incremental
+     */
     public Boolean getIncremental() {
         return incremental;
     }
@@ -99,9 +104,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 备份名称
-     * 
-     * @return name */
+    /**
+     * 备份名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -131,9 +137,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 待备份的资源id列表:uuid
-     * 
-     * @return resources */
+    /**
+     * 待备份的资源id列表:uuid
+     * @return resources
+     */
     public List<String> getResources() {
         return resources;
     }
@@ -163,9 +170,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 资源详情
-     * 
-     * @return resourceDetails */
+    /**
+     * 资源详情
+     * @return resourceDetails
+     */
     public List<Resource> getResourceDetails() {
         return resourceDetails;
     }
@@ -179,9 +187,10 @@ public class CheckpointParam {
         return this;
     }
 
-    /** 自动备份时的策略id
-     * 
-     * @return policyId */
+    /**
+     * 自动备份时的策略id
+     * @return policyId
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -228,7 +237,10 @@ public class CheckpointParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 检测场景 */
+/**
+ * 检测场景
+ */
 public class AudioServiceConfigCommon {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class AudioServiceConfigCommon {
         return this;
     }
 
-    /** 检测场景。 - politics：政治人物的检测。 - porn：涉黄内容元素的检测。 可通过配置上述场景，来完成对应场景元素的检测。
-     * 
-     * @return categories */
+    /**
+     * 检测场景。 - politics：政治人物的检测。 - porn：涉黄内容元素的检测。 可通过配置上述场景，来完成对应场景元素的检测。 
+     * @return categories
+     */
     public String getCategories() {
         return categories;
     }
@@ -55,7 +58,10 @@ public class AudioServiceConfigCommon {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

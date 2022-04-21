@@ -46,9 +46,10 @@ public class Region {
         return this;
     }
 
-    /** 区域描述信息。
-     * 
-     * @return description */
+    /**
+     * 区域描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -62,9 +63,10 @@ public class Region {
         return this;
     }
 
-    /** null.
-     * 
-     * @return parentRegionId */
+    /**
+     * null.
+     * @return parentRegionId
+     */
     public String getParentRegionId() {
         return parentRegionId;
     }
@@ -87,9 +89,10 @@ public class Region {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public LinksSelf getLinks() {
         return links;
     }
@@ -112,9 +115,10 @@ public class Region {
         return this;
     }
 
-    /** Get locales
-     * 
-     * @return locales */
+    /**
+     * Get locales
+     * @return locales
+     */
     public RegionLocales getLocales() {
         return locales;
     }
@@ -128,9 +132,10 @@ public class Region {
         return this;
     }
 
-    /** 区域ID。
-     * 
-     * @return id */
+    /**
+     * 区域ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -144,9 +149,10 @@ public class Region {
         return this;
     }
 
-    /** 区域类型。
-     * 
-     * @return type */
+    /**
+     * 区域类型。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -189,7 +195,10 @@ public class Region {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

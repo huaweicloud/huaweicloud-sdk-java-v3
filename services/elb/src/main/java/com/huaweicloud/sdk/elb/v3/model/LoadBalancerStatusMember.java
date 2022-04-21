@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LB状态树的后端服务器组的后端服务器状态信息 */
+/**
+ * LB状态树的后端服务器组的后端服务器状态信息
+ */
 public class LoadBalancerStatusMember {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器配置状态。取值：ACTIVE表示使用中。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 后端服务器配置状态。取值：ACTIVE表示使用中。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -54,9 +57,10 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器的IP地址。
-     * 
-     * @return address */
+    /**
+     * 后端服务器的IP地址。
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
@@ -70,9 +74,10 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器的端口号。取值范围[1, 65535]。
-     * 
-     * @return protocolPort */
+    /**
+     * 后端服务器的端口号。取值范围[1, 65535]。
+     * @return protocolPort
+     */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -86,9 +91,10 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器ID。
-     * 
-     * @return id */
+    /**
+     * 后端服务器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -102,10 +108,10 @@ public class LoadBalancerStatusMember {
         return this;
     }
 
-    /** 后端服务器的操作状态。取值： - ONLINE：后端服务器正常运行。 - NO_MONITOR：后端服务器健康检查未开启。 -
-     * DISABLED：后端服务器不可用。所属负载均衡器或后端服务器组或该后端服务器的admin_state_up=false时，会出现该状态。注意该状态仅在当前接口中返回。 - OFFLINE：关联ECS已下线。
-     * 
-     * @return operatingStatus */
+    /**
+     * 后端服务器的操作状态。取值：  - ONLINE：后端服务器正常运行。  - NO_MONITOR：后端服务器健康检查未开启。  - DISABLED：后端服务器不可用。所属负载均衡器或后端服务器组或该后端服务器的admin_state_up=false时，会出现该状态。注意该状态仅在当前接口中返回。  - OFFLINE：关联ECS已下线。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -148,7 +154,10 @@ public class LoadBalancerStatusMember {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 需求概览信息 */
+/**
+ * 需求概览信息
+ */
 public class DemandStatisticResponseV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 已关闭数量
-     * 
-     * @return closedNum */
+    /**
+     * 已关闭数量
+     * @return closedNum
+     */
     public Integer getClosedNum() {
         return closedNum;
     }
@@ -69,9 +72,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 模块
-     * 
-     * @return module */
+    /**
+     * 模块
+     * @return module
+     */
     public String getModule() {
         return module;
     }
@@ -85,9 +89,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 新建的数量
-     * 
-     * @return newNum */
+    /**
+     * 新建的数量
+     * @return newNum
+     */
     public Integer getNewNum() {
         return newNum;
     }
@@ -101,9 +106,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 开发中的数量
-     * 
-     * @return processNum */
+    /**
+     * 开发中的数量
+     * @return processNum
+     */
     public Integer getProcessNum() {
         return processNum;
     }
@@ -117,9 +123,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 已拒绝数量
-     * 
-     * @return rejectedNum */
+    /**
+     * 已拒绝数量
+     * @return rejectedNum
+     */
     public Integer getRejectedNum() {
         return rejectedNum;
     }
@@ -133,9 +140,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 已解决数量
-     * 
-     * @return solvedNum */
+    /**
+     * 已解决数量
+     * @return solvedNum
+     */
     public Integer getSolvedNum() {
         return solvedNum;
     }
@@ -149,9 +157,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 测试中的数量
-     * 
-     * @return testNum */
+    /**
+     * 测试中的数量
+     * @return testNum
+     */
     public Integer getTestNum() {
         return testNum;
     }
@@ -165,9 +174,10 @@ public class DemandStatisticResponseV4 {
         return this;
     }
 
-    /** 总数
-     * 
-     * @return total */
+    /**
+     * 总数
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -216,7 +226,10 @@ public class DemandStatisticResponseV4 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

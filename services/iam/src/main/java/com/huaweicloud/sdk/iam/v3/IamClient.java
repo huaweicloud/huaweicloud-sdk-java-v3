@@ -17,3013 +17,5274 @@ public class IamClient {
         return new ClientBuilder<>(IamClient::new, "GlobalCredentials,BasicCredentials,IAMCredentials");
     }
 
-    /** 为委托授予所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予所有项目服务权限。
+    /**
+     * 为委托授予所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
-     * @return AssociateAgencyWithAllProjectsPermissionResponse */
+     * @return AssociateAgencyWithAllProjectsPermissionResponse
+     */
     public AssociateAgencyWithAllProjectsPermissionResponse associateAgencyWithAllProjectsPermission(
         AssociateAgencyWithAllProjectsPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithAllProjectsPermission);
     }
 
-    /** 为委托授予所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予所有项目服务权限。
+    /**
+     * 为委托授予所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
-     * @return SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest,
-     *         AssociateAgencyWithAllProjectsPermissionResponse> */
+     * @return SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse>
+     */
     public SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> associateAgencyWithAllProjectsPermissionInvoker(
         AssociateAgencyWithAllProjectsPermissionRequest request) {
         return new SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse>(
             request, IamMeta.associateAgencyWithAllProjectsPermission, hcClient);
     }
 
-    /** 为委托授予全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予全局服务权限。
+    /**
+     * 为委托授予全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithDomainPermissionRequest 请求对象
-     * @return AssociateAgencyWithDomainPermissionResponse */
+     * @return AssociateAgencyWithDomainPermissionResponse
+     */
     public AssociateAgencyWithDomainPermissionResponse associateAgencyWithDomainPermission(
         AssociateAgencyWithDomainPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithDomainPermission);
     }
 
-    /** 为委托授予全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予全局服务权限。
+    /**
+     * 为委托授予全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithDomainPermissionRequest 请求对象
-     * @return SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> */
+     * @return SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse>
+     */
     public SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> associateAgencyWithDomainPermissionInvoker(
         AssociateAgencyWithDomainPermissionRequest request) {
         return new SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse>(
             request, IamMeta.associateAgencyWithDomainPermission, hcClient);
     }
 
-    /** 为委托授予项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予项目服务权限。
+    /**
+     * 为委托授予项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithProjectPermissionRequest 请求对象
-     * @return AssociateAgencyWithProjectPermissionResponse */
+     * @return AssociateAgencyWithProjectPermissionResponse
+     */
     public AssociateAgencyWithProjectPermissionResponse associateAgencyWithProjectPermission(
         AssociateAgencyWithProjectPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithProjectPermission);
     }
 
-    /** 为委托授予项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予项目服务权限。
+    /**
+     * 为委托授予项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为委托授予项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateAgencyWithProjectPermissionRequest 请求对象
-     * @return SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> */
+     * @return SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>
+     */
     public SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> associateAgencyWithProjectPermissionInvoker(
         AssociateAgencyWithProjectPermissionRequest request) {
         return new SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>(
             request, IamMeta.associateAgencyWithProjectPermission, hcClient);
     }
 
-    /** 基于用户组为企业项目授权 该接口用于基于用户组为企业项目授权。
+    /**
+     * 基于用户组为企业项目授权
+     *
+     * 该接口用于基于用户组为企业项目授权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
-     * @return AssociateRoleToGroupOnEnterpriseProjectResponse */
+     * @return AssociateRoleToGroupOnEnterpriseProjectResponse
+     */
     public AssociateRoleToGroupOnEnterpriseProjectResponse associateRoleToGroupOnEnterpriseProject(
         AssociateRoleToGroupOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateRoleToGroupOnEnterpriseProject);
     }
 
-    /** 基于用户组为企业项目授权 该接口用于基于用户组为企业项目授权。
+    /**
+     * 基于用户组为企业项目授权
+     *
+     * 该接口用于基于用户组为企业项目授权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest,
-     *         AssociateRoleToGroupOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProjectInvoker(
         AssociateRoleToGroupOnEnterpriseProjectRequest request) {
         return new SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>(
             request, IamMeta.associateRoleToGroupOnEnterpriseProject, hcClient);
     }
 
-    /** 基于用户为企业项目授权 基于用户为企业项目授权。
+    /**
+     * 基于用户为企业项目授权
+     *
+     * 基于用户为企业项目授权。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
-     * @return AssociateRoleToUserOnEnterpriseProjectResponse */
+     * @return AssociateRoleToUserOnEnterpriseProjectResponse
+     */
     public AssociateRoleToUserOnEnterpriseProjectResponse associateRoleToUserOnEnterpriseProject(
         AssociateRoleToUserOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateRoleToUserOnEnterpriseProject);
     }
 
-    /** 基于用户为企业项目授权 基于用户为企业项目授权。
+    /**
+     * 基于用户为企业项目授权
+     *
+     * 基于用户为企业项目授权。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest,
-     *         AssociateRoleToUserOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProjectInvoker(
         AssociateRoleToUserOnEnterpriseProjectRequest request) {
         return new SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>(
             request, IamMeta.associateRoleToUserOnEnterpriseProject, hcClient);
     }
 
-    /** 检查委托下是否具有所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)检查委托是否具有所有项目服务权限。
+    /**
+     * 检查委托下是否具有所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)检查委托是否具有所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
-     * @return CheckAllProjectsPermissionForAgencyResponse */
+     * @return CheckAllProjectsPermissionForAgencyResponse
+     */
     public CheckAllProjectsPermissionForAgencyResponse checkAllProjectsPermissionForAgency(
         CheckAllProjectsPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkAllProjectsPermissionForAgency);
     }
 
-    /** 检查委托下是否具有所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)检查委托是否具有所有项目服务权限。
+    /**
+     * 检查委托下是否具有所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)检查委托是否具有所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
-     * @return SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> */
+     * @return SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse>
+     */
     public SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgencyInvoker(
         CheckAllProjectsPermissionForAgencyRequest request) {
         return new SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse>(
             request, IamMeta.checkAllProjectsPermissionForAgency, hcClient);
     }
 
-    /** 查询委托是否拥有全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有全局服务权限。
+    /**
+     * 查询委托是否拥有全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckDomainPermissionForAgencyRequest 请求对象
-     * @return CheckDomainPermissionForAgencyResponse */
+     * @return CheckDomainPermissionForAgencyResponse
+     */
     public CheckDomainPermissionForAgencyResponse checkDomainPermissionForAgency(
         CheckDomainPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkDomainPermissionForAgency);
     }
 
-    /** 查询委托是否拥有全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有全局服务权限。
+    /**
+     * 查询委托是否拥有全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckDomainPermissionForAgencyRequest 请求对象
-     * @return SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> */
+     * @return SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse>
+     */
     public SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgencyInvoker(
         CheckDomainPermissionForAgencyRequest request) {
         return new SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse>(request,
             IamMeta.checkDomainPermissionForAgency, hcClient);
     }
 
-    /** 查询委托是否拥有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有项目服务权限。
+    /**
+     * 查询委托是否拥有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckProjectPermissionForAgencyRequest 请求对象
-     * @return CheckProjectPermissionForAgencyResponse */
+     * @return CheckProjectPermissionForAgencyResponse
+     */
     public CheckProjectPermissionForAgencyResponse checkProjectPermissionForAgency(
         CheckProjectPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkProjectPermissionForAgency);
     }
 
-    /** 查询委托是否拥有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有项目服务权限。
+    /**
+     * 查询委托是否拥有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托是否拥有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CheckProjectPermissionForAgencyRequest 请求对象
-     * @return SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> */
+     * @return SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse>
+     */
     public SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> checkProjectPermissionForAgencyInvoker(
         CheckProjectPermissionForAgencyRequest request) {
         return new SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse>(request,
             IamMeta.checkProjectPermissionForAgency, hcClient);
     }
 
-    /** 创建委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托。
+    /**
+     * 创建委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
-     * @return CreateAgencyResponse */
+     * @return CreateAgencyResponse
+     */
     public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createAgency);
     }
 
-    /** 创建委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托。
+    /**
+     * 创建委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
-     * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> */
+     * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
     public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
         return new SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>(request, IamMeta.createAgency, hcClient);
     }
 
-    /** 创建委托自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托自定义策略。
+    /**
+     * 创建委托自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateAgencyCustomPolicyRequest 请求对象
-     * @return CreateAgencyCustomPolicyResponse */
+     * @return CreateAgencyCustomPolicyResponse
+     */
     public CreateAgencyCustomPolicyResponse createAgencyCustomPolicy(CreateAgencyCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createAgencyCustomPolicy);
     }
 
-    /** 创建委托自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托自定义策略。
+    /**
+     * 创建委托自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建委托自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateAgencyCustomPolicyRequest 请求对象
-     * @return SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> */
+     * @return SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse>
+     */
     public SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> createAgencyCustomPolicyInvoker(
         CreateAgencyCustomPolicyRequest request) {
         return new SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse>(request,
             IamMeta.createAgencyCustomPolicy, hcClient);
     }
 
-    /** 创建云服务自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
+    /**
+     * 创建云服务自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateCloudServiceCustomPolicyRequest 请求对象
-     * @return CreateCloudServiceCustomPolicyResponse */
+     * @return CreateCloudServiceCustomPolicyResponse
+     */
     public CreateCloudServiceCustomPolicyResponse createCloudServiceCustomPolicy(
         CreateCloudServiceCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createCloudServiceCustomPolicy);
     }
 
-    /** 创建云服务自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
+    /**
+     * 创建云服务自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateCloudServiceCustomPolicyRequest 请求对象
-     * @return SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> */
+     * @return SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse>
+     */
     public SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> createCloudServiceCustomPolicyInvoker(
         CreateCloudServiceCustomPolicyRequest request) {
         return new SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse>(request,
             IamMeta.createCloudServiceCustomPolicy, hcClient);
     }
 
-    /** 获取自定义代理登录票据
+    /**
+     * 获取自定义代理登录票据
+     *
      * 该接口用于用于获取自定义代理登录票据logintoken。logintoken是系统颁发给自定义代理用户的登录票据，承载用户的身份、session等信息。调用自定义代理URL登录云服务控制台时，可以使用本接口获取的logintoken进行认证。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
      * &gt; - logintoken的有效期为10分钟。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateLoginTokenRequest 请求对象
-     * @return CreateLoginTokenResponse */
+     * @return CreateLoginTokenResponse
+     */
     public CreateLoginTokenResponse createLoginToken(CreateLoginTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createLoginToken);
     }
 
-    /** 获取自定义代理登录票据
+    /**
+     * 获取自定义代理登录票据
+     *
      * 该接口用于用于获取自定义代理登录票据logintoken。logintoken是系统颁发给自定义代理用户的登录票据，承载用户的身份、session等信息。调用自定义代理URL登录云服务控制台时，可以使用本接口获取的logintoken进行认证。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
      * &gt; - logintoken的有效期为10分钟。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateLoginTokenRequest 请求对象
-     * @return SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse> */
+     * @return SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse>
+     */
     public SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse> createLoginTokenInvoker(
         CreateLoginTokenRequest request) {
         return new SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse>(request, IamMeta.createLoginToken,
             hcClient);
     }
 
-    /** 导入Metadata文件 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)导入Metadata文件。
+    /**
+     * 导入Metadata文件
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)导入Metadata文件。
+     * 
      * 账号在使用联邦认证功能前，需要先将Metadata文件导入到IAM中。Metadata文件是SAML 2.0协议约定的接口文件，包含访问接口地址和证书信息，请找企业管理员获取企业IdP的Metadata文件。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
-     * @return CreateMetadataResponse */
+     * @return CreateMetadataResponse
+     */
     public CreateMetadataResponse createMetadata(CreateMetadataRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createMetadata);
     }
 
-    /** 导入Metadata文件 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)导入Metadata文件。
+    /**
+     * 导入Metadata文件
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)导入Metadata文件。
+     * 
      * 账号在使用联邦认证功能前，需要先将Metadata文件导入到IAM中。Metadata文件是SAML 2.0协议约定的接口文件，包含访问接口地址和证书信息，请找企业管理员获取企业IdP的Metadata文件。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
-     * @return SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> */
+     * @return SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
+     */
     public SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataInvoker(
         CreateMetadataRequest request) {
         return new SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>(request, IamMeta.createMetadata,
             hcClient);
     }
 
-    /** 创建OpenId Connect身份提供商配置 创建OpenId Connect身份提供商配置
+    /**
+     * 创建OpenId Connect身份提供商配置
+     *
+     * 创建OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateOpenIdConnectConfigRequest 请求对象
-     * @return CreateOpenIdConnectConfigResponse */
+     * @return CreateOpenIdConnectConfigResponse
+     */
     public CreateOpenIdConnectConfigResponse createOpenIdConnectConfig(CreateOpenIdConnectConfigRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createOpenIdConnectConfig);
     }
 
-    /** 创建OpenId Connect身份提供商配置 创建OpenId Connect身份提供商配置
+    /**
+     * 创建OpenId Connect身份提供商配置
+     *
+     * 创建OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateOpenIdConnectConfigRequest 请求对象
-     * @return SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> */
+     * @return SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>
+     */
     public SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> createOpenIdConnectConfigInvoker(
         CreateOpenIdConnectConfigRequest request) {
         return new SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>(request,
             IamMeta.createOpenIdConnectConfig, hcClient);
     }
 
-    /** 获取联邦认证token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)
+    /**
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     *
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTokenWithIdTokenRequest 请求对象
-     * @return CreateTokenWithIdTokenResponse */
+     * @return CreateTokenWithIdTokenResponse
+     */
     public CreateTokenWithIdTokenResponse createTokenWithIdToken(CreateTokenWithIdTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createTokenWithIdToken);
     }
 
-    /** 获取联邦认证token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)
+    /**
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     *
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTokenWithIdTokenRequest 请求对象
-     * @return SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> */
+     * @return SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>
+     */
     public SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdTokenInvoker(
         CreateTokenWithIdTokenRequest request) {
         return new SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>(request,
             IamMeta.createTokenWithIdToken, hcClient);
     }
 
-    /** 获取联邦认证unscoped token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)。
+    /**
+     * 获取联邦认证unscoped token(OpenId Connect Id token方式)
+     *
+     * 获取联邦认证token(OpenId Connect Id token方式)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
-     * @return CreateUnscopedTokenWithIdTokenResponse */
+     * @return CreateUnscopedTokenWithIdTokenResponse
+     */
     public CreateUnscopedTokenWithIdTokenResponse createUnscopedTokenWithIdToken(
         CreateUnscopedTokenWithIdTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createUnscopedTokenWithIdToken);
     }
 
-    /** 获取联邦认证unscoped token(OpenId Connect Id token方式) 获取联邦认证token(OpenId Connect Id token方式)。
+    /**
+     * 获取联邦认证unscoped token(OpenId Connect Id token方式)
+     *
+     * 获取联邦认证token(OpenId Connect Id token方式)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
-     * @return SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> */
+     * @return SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>
+     */
     public SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdTokenInvoker(
         CreateUnscopedTokenWithIdTokenRequest request) {
         return new SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>(request,
             IamMeta.createUnscopedTokenWithIdToken, hcClient);
     }
 
-    /** 删除委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。
+    /**
+     * 删除委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAgencyRequest 请求对象
-     * @return DeleteAgencyResponse */
+     * @return DeleteAgencyResponse
+     */
     public DeleteAgencyResponse deleteAgency(DeleteAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteAgency);
     }
 
-    /** 删除委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。
+    /**
+     * 删除委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteAgencyRequest 请求对象
-     * @return SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> */
+     * @return SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>
+     */
     public SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgencyInvoker(DeleteAgencyRequest request) {
         return new SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>(request, IamMeta.deleteAgency, hcClient);
     }
 
-    /** 删除自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
+    /**
+     * 删除自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteCustomPolicyRequest 请求对象
-     * @return DeleteCustomPolicyResponse */
+     * @return DeleteCustomPolicyResponse
+     */
     public DeleteCustomPolicyResponse deleteCustomPolicy(DeleteCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteCustomPolicy);
     }
 
-    /** 删除自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
+    /**
+     * 删除自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteCustomPolicyRequest 请求对象
-     * @return SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> */
+     * @return SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse>
+     */
     public SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> deleteCustomPolicyInvoker(
         DeleteCustomPolicyRequest request) {
         return new SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse>(request,
             IamMeta.deleteCustomPolicy, hcClient);
     }
 
-    /** 移除用户组的所有项目服务权限 该接口可以用于移除用户组的所有项目服务权限。
+    /**
+     * 移除用户组的所有项目服务权限
+     *
+     * 该接口可以用于移除用户组的所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDomainGroupInheritedRoleRequest 请求对象
-     * @return DeleteDomainGroupInheritedRoleResponse */
+     * @return DeleteDomainGroupInheritedRoleResponse
+     */
     public DeleteDomainGroupInheritedRoleResponse deleteDomainGroupInheritedRole(
         DeleteDomainGroupInheritedRoleRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteDomainGroupInheritedRole);
     }
 
-    /** 移除用户组的所有项目服务权限 该接口可以用于移除用户组的所有项目服务权限。
+    /**
+     * 移除用户组的所有项目服务权限
+     *
+     * 该接口可以用于移除用户组的所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteDomainGroupInheritedRoleRequest 请求对象
-     * @return SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> */
+     * @return SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse>
+     */
     public SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRoleInvoker(
         DeleteDomainGroupInheritedRoleRequest request) {
         return new SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse>(request,
             IamMeta.deleteDomainGroupInheritedRole, hcClient);
     }
 
-    /** 添加IAM用户到用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。
+    /**
+     * 添加IAM用户到用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAddUserToGroupRequest 请求对象
-     * @return KeystoneAddUserToGroupResponse */
+     * @return KeystoneAddUserToGroupResponse
+     */
     public KeystoneAddUserToGroupResponse keystoneAddUserToGroup(KeystoneAddUserToGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAddUserToGroup);
     }
 
-    /** 添加IAM用户到用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。
+    /**
+     * 添加IAM用户到用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAddUserToGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> */
+     * @return SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse>
+     */
     public SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> keystoneAddUserToGroupInvoker(
         KeystoneAddUserToGroupRequest request) {
         return new SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse>(request,
             IamMeta.keystoneAddUserToGroup, hcClient);
     }
 
-    /** 为用户组授予全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予全局服务权限。
+    /**
+     * 为用户组授予全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
-     * @return KeystoneAssociateGroupWithDomainPermissionResponse */
+     * @return KeystoneAssociateGroupWithDomainPermissionResponse
+     */
     public KeystoneAssociateGroupWithDomainPermissionResponse keystoneAssociateGroupWithDomainPermission(
         KeystoneAssociateGroupWithDomainPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithDomainPermission);
     }
 
-    /** 为用户组授予全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予全局服务权限。
+    /**
+     * 为用户组授予全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
-     * @return SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest,
-     *         KeystoneAssociateGroupWithDomainPermissionResponse> */
+     * @return SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse>
+     */
     public SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> keystoneAssociateGroupWithDomainPermissionInvoker(
         KeystoneAssociateGroupWithDomainPermissionRequest request) {
         return new SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse>(
             request, IamMeta.keystoneAssociateGroupWithDomainPermission, hcClient);
     }
 
-    /** 为用户组授予项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予项目服务权限。
+    /**
+     * 为用户组授予项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
-     * @return KeystoneAssociateGroupWithProjectPermissionResponse */
+     * @return KeystoneAssociateGroupWithProjectPermissionResponse
+     */
     public KeystoneAssociateGroupWithProjectPermissionResponse keystoneAssociateGroupWithProjectPermission(
         KeystoneAssociateGroupWithProjectPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithProjectPermission);
     }
 
-    /** 为用户组授予项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予项目服务权限。
+    /**
+     * 为用户组授予项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
-     * @return SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest,
-     *         KeystoneAssociateGroupWithProjectPermissionResponse> */
+     * @return SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse>
+     */
     public SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> keystoneAssociateGroupWithProjectPermissionInvoker(
         KeystoneAssociateGroupWithProjectPermissionRequest request) {
         return new SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse>(
             request, IamMeta.keystoneAssociateGroupWithProjectPermission, hcClient);
     }
 
-    /** 查询用户组是否拥有全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有全局服务权限。
+    /**
+     * 查询用户组是否拥有全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
-     * @return KeystoneCheckDomainPermissionForGroupResponse */
+     * @return KeystoneCheckDomainPermissionForGroupResponse
+     */
     public KeystoneCheckDomainPermissionForGroupResponse keystoneCheckDomainPermissionForGroup(
         KeystoneCheckDomainPermissionForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckDomainPermissionForGroup);
     }
 
-    /** 查询用户组是否拥有全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有全局服务权限。
+    /**
+     * 查询用户组是否拥有全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest,
-     *         KeystoneCheckDomainPermissionForGroupResponse> */
+     * @return SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse>
+     */
     public SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> keystoneCheckDomainPermissionForGroupInvoker(
         KeystoneCheckDomainPermissionForGroupRequest request) {
         return new SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse>(
             request, IamMeta.keystoneCheckDomainPermissionForGroup, hcClient);
     }
 
-    /** 查询用户组是否拥有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有项目服务权限。
+    /**
+     * 查询用户组是否拥有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
-     * @return KeystoneCheckProjectPermissionForGroupResponse */
+     * @return KeystoneCheckProjectPermissionForGroupResponse
+     */
     public KeystoneCheckProjectPermissionForGroupResponse keystoneCheckProjectPermissionForGroup(
         KeystoneCheckProjectPermissionForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckProjectPermissionForGroup);
     }
 
-    /** 查询用户组是否拥有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有项目服务权限。
+    /**
+     * 查询用户组是否拥有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest,
-     *         KeystoneCheckProjectPermissionForGroupResponse> */
+     * @return SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse>
+     */
     public SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> keystoneCheckProjectPermissionForGroupInvoker(
         KeystoneCheckProjectPermissionForGroupRequest request) {
         return new SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse>(
             request, IamMeta.keystoneCheckProjectPermissionForGroup, hcClient);
     }
 
-    /** 查询IAM用户是否在用户组中 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户是否在用户组中。
+    /**
+     * 查询IAM用户是否在用户组中
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户是否在用户组中。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckUserInGroupRequest 请求对象
-     * @return KeystoneCheckUserInGroupResponse */
+     * @return KeystoneCheckUserInGroupResponse
+     */
     public KeystoneCheckUserInGroupResponse keystoneCheckUserInGroup(KeystoneCheckUserInGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckUserInGroup);
     }
 
-    /** 查询IAM用户是否在用户组中 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户是否在用户组中。
+    /**
+     * 查询IAM用户是否在用户组中
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户是否在用户组中。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckUserInGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> */
+     * @return SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse>
+     */
     public SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> keystoneCheckUserInGroupInvoker(
         KeystoneCheckUserInGroupRequest request) {
         return new SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse>(request,
             IamMeta.keystoneCheckUserInGroup, hcClient);
     }
 
-    /** 查询用户组是否拥有所有项目指定权限
+    /**
+     * 查询用户组是否拥有所有项目指定权限
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有所有项目指定权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckroleForGroupRequest 请求对象
-     * @return KeystoneCheckroleForGroupResponse */
+     * @return KeystoneCheckroleForGroupResponse
+     */
     public KeystoneCheckroleForGroupResponse keystoneCheckroleForGroup(KeystoneCheckroleForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckroleForGroup);
     }
 
-    /** 查询用户组是否拥有所有项目指定权限
+    /**
+     * 查询用户组是否拥有所有项目指定权限
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有所有项目指定权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCheckroleForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> */
+     * @return SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse>
+     */
     public SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> keystoneCheckroleForGroupInvoker(
         KeystoneCheckroleForGroupRequest request) {
         return new SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse>(request,
             IamMeta.keystoneCheckroleForGroup, hcClient);
     }
 
-    /** 创建用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建用户组。
+    /**
+     * 创建用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateGroupRequest 请求对象
-     * @return KeystoneCreateGroupResponse */
+     * @return KeystoneCreateGroupResponse
+     */
     public KeystoneCreateGroupResponse keystoneCreateGroup(KeystoneCreateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateGroup);
     }
 
-    /** 创建用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建用户组。
+    /**
+     * 创建用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> */
+     * @return SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse>
+     */
     public SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> keystoneCreateGroupInvoker(
         KeystoneCreateGroupRequest request) {
         return new SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse>(request,
             IamMeta.keystoneCreateGroup, hcClient);
     }
 
-    /** 注册身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册身份提供商。
+    /**
+     * 注册身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateIdentityProviderRequest 请求对象
-     * @return KeystoneCreateIdentityProviderResponse */
+     * @return KeystoneCreateIdentityProviderResponse
+     */
     public KeystoneCreateIdentityProviderResponse keystoneCreateIdentityProvider(
         KeystoneCreateIdentityProviderRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateIdentityProvider);
     }
 
-    /** 注册身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册身份提供商。
+    /**
+     * 注册身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateIdentityProviderRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> */
+     * @return SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse>
+     */
     public SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> keystoneCreateIdentityProviderInvoker(
         KeystoneCreateIdentityProviderRequest request) {
         return new SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse>(request,
             IamMeta.keystoneCreateIdentityProvider, hcClient);
     }
 
-    /** 注册映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册映射。
+    /**
+     * 注册映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateMappingRequest 请求对象
-     * @return KeystoneCreateMappingResponse */
+     * @return KeystoneCreateMappingResponse
+     */
     public KeystoneCreateMappingResponse keystoneCreateMapping(KeystoneCreateMappingRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateMapping);
     }
 
-    /** 注册映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册映射。
+    /**
+     * 注册映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateMappingRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> */
+     * @return SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse>
+     */
     public SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> keystoneCreateMappingInvoker(
         KeystoneCreateMappingRequest request) {
         return new SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse>(request,
             IamMeta.keystoneCreateMapping, hcClient);
     }
 
-    /** 创建项目 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建项目。
+    /**
+     * 创建项目
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateProjectRequest 请求对象
-     * @return KeystoneCreateProjectResponse */
+     * @return KeystoneCreateProjectResponse
+     */
     public KeystoneCreateProjectResponse keystoneCreateProject(KeystoneCreateProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateProject);
     }
 
-    /** 创建项目 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建项目。
+    /**
+     * 创建项目
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateProjectRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> */
+     * @return SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
+     */
     public SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> keystoneCreateProjectInvoker(
         KeystoneCreateProjectRequest request) {
         return new SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>(request,
             IamMeta.keystoneCreateProject, hcClient);
     }
 
-    /** 注册协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册协议（将协议关联到某一身份提供商）。
+    /**
+     * 注册协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册协议（将协议关联到某一身份提供商）。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateProtocolRequest 请求对象
-     * @return KeystoneCreateProtocolResponse */
+     * @return KeystoneCreateProtocolResponse
+     */
     public KeystoneCreateProtocolResponse keystoneCreateProtocol(KeystoneCreateProtocolRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateProtocol);
     }
 
-    /** 注册协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册协议（将协议关联到某一身份提供商）。
+    /**
+     * 注册协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册协议（将协议关联到某一身份提供商）。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateProtocolRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> */
+     * @return SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse>
+     */
     public SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> keystoneCreateProtocolInvoker(
         KeystoneCreateProtocolRequest request) {
         return new SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse>(request,
             IamMeta.keystoneCreateProtocol, hcClient);
     }
 
-    /** 获取联邦认证scoped token 该接口可以用于通过联邦认证方式获取scoped token。
+    /**
+     * 获取联邦认证scoped token
+     *
+     * 该接口可以用于通过联邦认证方式获取scoped token。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateScopedTokenRequest 请求对象
-     * @return KeystoneCreateScopedTokenResponse */
+     * @return KeystoneCreateScopedTokenResponse
+     */
     public KeystoneCreateScopedTokenResponse keystoneCreateScopedToken(KeystoneCreateScopedTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateScopedToken);
     }
 
-    /** 获取联邦认证scoped token 该接口可以用于通过联邦认证方式获取scoped token。
+    /**
+     * 获取联邦认证scoped token
+     *
+     * 该接口可以用于通过联邦认证方式获取scoped token。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateScopedTokenRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> */
+     * @return SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse>
+     */
     public SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> keystoneCreateScopedTokenInvoker(
         KeystoneCreateScopedTokenRequest request) {
         return new SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse>(request,
             IamMeta.keystoneCreateScopedToken, hcClient);
     }
 
-    /** 删除用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除用户组。
+    /**
+     * 删除用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteGroupRequest 请求对象
-     * @return KeystoneDeleteGroupResponse */
+     * @return KeystoneDeleteGroupResponse
+     */
     public KeystoneDeleteGroupResponse keystoneDeleteGroup(KeystoneDeleteGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteGroup);
     }
 
-    /** 删除用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除用户组。
+    /**
+     * 删除用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> */
+     * @return SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse>
+     */
     public SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> keystoneDeleteGroupInvoker(
         KeystoneDeleteGroupRequest request) {
         return new SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse>(request,
             IamMeta.keystoneDeleteGroup, hcClient);
     }
 
-    /** 删除身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html) 删除身份提供商。
+    /**
+     * 删除身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html) 删除身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteIdentityProviderRequest 请求对象
-     * @return KeystoneDeleteIdentityProviderResponse */
+     * @return KeystoneDeleteIdentityProviderResponse
+     */
     public KeystoneDeleteIdentityProviderResponse keystoneDeleteIdentityProvider(
         KeystoneDeleteIdentityProviderRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteIdentityProvider);
     }
 
-    /** 删除身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html) 删除身份提供商。
+    /**
+     * 删除身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html) 删除身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteIdentityProviderRequest 请求对象
-     * @return SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> */
+     * @return SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse>
+     */
     public SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> keystoneDeleteIdentityProviderInvoker(
         KeystoneDeleteIdentityProviderRequest request) {
         return new SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse>(request,
             IamMeta.keystoneDeleteIdentityProvider, hcClient);
     }
 
-    /** 删除映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除映射。
+    /**
+     * 删除映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteMappingRequest 请求对象
-     * @return KeystoneDeleteMappingResponse */
+     * @return KeystoneDeleteMappingResponse
+     */
     public KeystoneDeleteMappingResponse keystoneDeleteMapping(KeystoneDeleteMappingRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteMapping);
     }
 
-    /** 删除映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除映射。
+    /**
+     * 删除映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteMappingRequest 请求对象
-     * @return SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> */
+     * @return SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse>
+     */
     public SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> keystoneDeleteMappingInvoker(
         KeystoneDeleteMappingRequest request) {
         return new SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse>(request,
             IamMeta.keystoneDeleteMapping, hcClient);
     }
 
-    /** 删除协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除协议。
+    /**
+     * 删除协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除协议。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteProtocolRequest 请求对象
-     * @return KeystoneDeleteProtocolResponse */
+     * @return KeystoneDeleteProtocolResponse
+     */
     public KeystoneDeleteProtocolResponse keystoneDeleteProtocol(KeystoneDeleteProtocolRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteProtocol);
     }
 
-    /** 删除协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除协议。
+    /**
+     * 删除协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除协议。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteProtocolRequest 请求对象
-     * @return SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> */
+     * @return SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse>
+     */
     public SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> keystoneDeleteProtocolInvoker(
         KeystoneDeleteProtocolRequest request) {
         return new SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse>(request,
             IamMeta.keystoneDeleteProtocol, hcClient);
     }
 
-    /** 查询用户组的所有项目权限列表 该接口可以用于管理员查询用户组所有项目服务权限列表。
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+    /**
+     * 查询用户组的所有项目权限列表
+     *
+     * 该接口可以用于管理员查询用户组所有项目服务权限列表。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
-     * @return KeystoneListAllProjectPermissionsForGroupResponse */
+     * @return KeystoneListAllProjectPermissionsForGroupResponse
+     */
     public KeystoneListAllProjectPermissionsForGroupResponse keystoneListAllProjectPermissionsForGroup(
         KeystoneListAllProjectPermissionsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAllProjectPermissionsForGroup);
     }
 
-    /** 查询用户组的所有项目权限列表 该接口可以用于管理员查询用户组所有项目服务权限列表。
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+    /**
+     * 查询用户组的所有项目权限列表
+     *
+     * 该接口可以用于管理员查询用户组所有项目服务权限列表。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest,
-     *         KeystoneListAllProjectPermissionsForGroupResponse> */
+     * @return SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse>
+     */
     public SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> keystoneListAllProjectPermissionsForGroupInvoker(
         KeystoneListAllProjectPermissionsForGroupRequest request) {
         return new SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse>(
             request, IamMeta.keystoneListAllProjectPermissionsForGroup, hcClient);
     }
 
-    /** 查询IAM用户可以访问的账号详情 该接口可以用于查询IAM用户可以用访问的账号详情。
+    /**
+     * 查询IAM用户可以访问的账号详情
+     *
+     * 该接口可以用于查询IAM用户可以用访问的账号详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAuthDomainsRequest 请求对象
-     * @return KeystoneListAuthDomainsResponse */
+     * @return KeystoneListAuthDomainsResponse
+     */
     public KeystoneListAuthDomainsResponse keystoneListAuthDomains(KeystoneListAuthDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAuthDomains);
     }
 
-    /** 查询IAM用户可以访问的账号详情 该接口可以用于查询IAM用户可以用访问的账号详情。
+    /**
+     * 查询IAM用户可以访问的账号详情
+     *
+     * 该接口可以用于查询IAM用户可以用访问的账号详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAuthDomainsRequest 请求对象
-     * @return SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> */
+     * @return SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
+     */
     public SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> keystoneListAuthDomainsInvoker(
         KeystoneListAuthDomainsRequest request) {
         return new SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>(request,
             IamMeta.keystoneListAuthDomains, hcClient);
     }
 
-    /** 查询IAM用户可以访问的项目列表 该接口可以用于查询IAM用户可以访问的项目列表。
+    /**
+     * 查询IAM用户可以访问的项目列表
+     *
+     * 该接口可以用于查询IAM用户可以访问的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAuthProjectsRequest 请求对象
-     * @return KeystoneListAuthProjectsResponse */
+     * @return KeystoneListAuthProjectsResponse
+     */
     public KeystoneListAuthProjectsResponse keystoneListAuthProjects(KeystoneListAuthProjectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAuthProjects);
     }
 
-    /** 查询IAM用户可以访问的项目列表 该接口可以用于查询IAM用户可以访问的项目列表。
+    /**
+     * 查询IAM用户可以访问的项目列表
+     *
+     * 该接口可以用于查询IAM用户可以访问的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListAuthProjectsRequest 请求对象
-     * @return SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> */
+     * @return SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse>
+     */
     public SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> keystoneListAuthProjectsInvoker(
         KeystoneListAuthProjectsRequest request) {
         return new SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse>(request,
             IamMeta.keystoneListAuthProjects, hcClient);
     }
 
-    /** 查询全局服务中的用户组权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的用户组权限。
+    /**
+     * 查询全局服务中的用户组权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的用户组权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
-     * @return KeystoneListDomainPermissionsForGroupResponse */
+     * @return KeystoneListDomainPermissionsForGroupResponse
+     */
     public KeystoneListDomainPermissionsForGroupResponse keystoneListDomainPermissionsForGroup(
         KeystoneListDomainPermissionsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListDomainPermissionsForGroup);
     }
 
-    /** 查询全局服务中的用户组权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的用户组权限。
+    /**
+     * 查询全局服务中的用户组权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的用户组权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneListDomainPermissionsForGroupRequest,
-     *         KeystoneListDomainPermissionsForGroupResponse> */
+     * @return SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse>
+     */
     public SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> keystoneListDomainPermissionsForGroupInvoker(
         KeystoneListDomainPermissionsForGroupRequest request) {
         return new SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse>(
             request, IamMeta.keystoneListDomainPermissionsForGroup, hcClient);
     }
 
-    /** 查询终端节点列表 该接口可以用于查询终端节点列表。终端节点用来提供服务访问入口。
+    /**
+     * 查询终端节点列表
+     *
+     * 该接口可以用于查询终端节点列表。终端节点用来提供服务访问入口。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListEndpointsRequest 请求对象
-     * @return KeystoneListEndpointsResponse */
+     * @return KeystoneListEndpointsResponse
+     */
     public KeystoneListEndpointsResponse keystoneListEndpoints(KeystoneListEndpointsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListEndpoints);
     }
 
-    /** 查询终端节点列表 该接口可以用于查询终端节点列表。终端节点用来提供服务访问入口。
+    /**
+     * 查询终端节点列表
+     *
+     * 该接口可以用于查询终端节点列表。终端节点用来提供服务访问入口。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListEndpointsRequest 请求对象
-     * @return SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> */
+     * @return SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>
+     */
     public SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> keystoneListEndpointsInvoker(
         KeystoneListEndpointsRequest request) {
         return new SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>(request,
             IamMeta.keystoneListEndpoints, hcClient);
     }
 
-    /** 查询联邦用户可以访问的账号列表 该接口用于查询联邦用户可以访问的账号列表。
+    /**
+     * 查询联邦用户可以访问的账号列表
+     *
+     * 该接口用于查询联邦用户可以访问的账号列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; -
-     * 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     * &gt; - 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListFederationDomainsRequest 请求对象
-     * @return KeystoneListFederationDomainsResponse */
+     * @return KeystoneListFederationDomainsResponse
+     */
     public KeystoneListFederationDomainsResponse keystoneListFederationDomains(
         KeystoneListFederationDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListFederationDomains);
     }
 
-    /** 查询联邦用户可以访问的账号列表 该接口用于查询联邦用户可以访问的账号列表。
+    /**
+     * 查询联邦用户可以访问的账号列表
+     *
+     * 该接口用于查询联邦用户可以访问的账号列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; -
-     * 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     * &gt; - 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListFederationDomainsRequest 请求对象
-     * @return SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> */
+     * @return SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>
+     */
     public SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomainsInvoker(
         KeystoneListFederationDomainsRequest request) {
         return new SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>(request,
             IamMeta.keystoneListFederationDomains, hcClient);
     }
 
-    /** 查询用户组列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。
+    /**
+     * 查询用户组列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListGroupsRequest 请求对象
-     * @return KeystoneListGroupsResponse */
+     * @return KeystoneListGroupsResponse
+     */
     public KeystoneListGroupsResponse keystoneListGroups(KeystoneListGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListGroups);
     }
 
-    /** 查询用户组列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。
+    /**
+     * 查询用户组列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListGroupsRequest 请求对象
-     * @return SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse> */
+     * @return SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse>
+     */
     public SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse> keystoneListGroupsInvoker(
         KeystoneListGroupsRequest request) {
         return new SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse>(request,
             IamMeta.keystoneListGroups, hcClient);
     }
 
-    /** 查询身份提供商列表 该接口可以用于查询身份提供商列表。
+    /**
+     * 查询身份提供商列表
+     *
+     * 该接口可以用于查询身份提供商列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListIdentityProvidersRequest 请求对象
-     * @return KeystoneListIdentityProvidersResponse */
+     * @return KeystoneListIdentityProvidersResponse
+     */
     public KeystoneListIdentityProvidersResponse keystoneListIdentityProviders(
         KeystoneListIdentityProvidersRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListIdentityProviders);
     }
 
-    /** 查询身份提供商列表 该接口可以用于查询身份提供商列表。
+    /**
+     * 查询身份提供商列表
+     *
+     * 该接口可以用于查询身份提供商列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListIdentityProvidersRequest 请求对象
-     * @return SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> */
+     * @return SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse>
+     */
     public SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> keystoneListIdentityProvidersInvoker(
         KeystoneListIdentityProvidersRequest request) {
         return new SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse>(request,
             IamMeta.keystoneListIdentityProviders, hcClient);
     }
 
-    /** 查询映射列表 该接口可以用于查询映射列表。
+    /**
+     * 查询映射列表
+     *
+     * 该接口可以用于查询映射列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListMappingsRequest 请求对象
-     * @return KeystoneListMappingsResponse */
+     * @return KeystoneListMappingsResponse
+     */
     public KeystoneListMappingsResponse keystoneListMappings(KeystoneListMappingsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListMappings);
     }
 
-    /** 查询映射列表 该接口可以用于查询映射列表。
+    /**
+     * 查询映射列表
+     *
+     * 该接口可以用于查询映射列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListMappingsRequest 请求对象
-     * @return SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse> */
+     * @return SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse>
+     */
     public SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse> keystoneListMappingsInvoker(
         KeystoneListMappingsRequest request) {
         return new SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse>(request,
             IamMeta.keystoneListMappings, hcClient);
     }
 
-    /** 查询权限列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限列表。
+    /**
+     * 查询权限列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListPermissionsRequest 请求对象
-     * @return KeystoneListPermissionsResponse */
+     * @return KeystoneListPermissionsResponse
+     */
     public KeystoneListPermissionsResponse keystoneListPermissions(KeystoneListPermissionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListPermissions);
     }
 
-    /** 查询权限列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限列表。
+    /**
+     * 查询权限列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListPermissionsRequest 请求对象
-     * @return SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> */
+     * @return SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse>
+     */
     public SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> keystoneListPermissionsInvoker(
         KeystoneListPermissionsRequest request) {
         return new SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse>(request,
             IamMeta.keystoneListPermissions, hcClient);
     }
 
-    /** 查询项目服务中的用户组权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的用户组权限。
+    /**
+     * 查询项目服务中的用户组权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的用户组权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
-     * @return KeystoneListProjectPermissionsForGroupResponse */
+     * @return KeystoneListProjectPermissionsForGroupResponse
+     */
     public KeystoneListProjectPermissionsForGroupResponse keystoneListProjectPermissionsForGroup(
         KeystoneListProjectPermissionsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjectPermissionsForGroup);
     }
 
-    /** 查询项目服务中的用户组权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的用户组权限。
+    /**
+     * 查询项目服务中的用户组权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的用户组权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneListProjectPermissionsForGroupRequest,
-     *         KeystoneListProjectPermissionsForGroupResponse> */
+     * @return SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse>
+     */
     public SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> keystoneListProjectPermissionsForGroupInvoker(
         KeystoneListProjectPermissionsForGroupRequest request) {
         return new SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse>(
             request, IamMeta.keystoneListProjectPermissionsForGroup, hcClient);
     }
 
-    /** 查询指定条件下的项目列表 该接口可以用于查询指定条件下的项目列表。
+    /**
+     * 查询指定条件下的项目列表
+     *
+     * 该接口可以用于查询指定条件下的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectsRequest 请求对象
-     * @return KeystoneListProjectsResponse */
+     * @return KeystoneListProjectsResponse
+     */
     public KeystoneListProjectsResponse keystoneListProjects(KeystoneListProjectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjects);
     }
 
-    /** 查询指定条件下的项目列表 该接口可以用于查询指定条件下的项目列表。
+    /**
+     * 查询指定条件下的项目列表
+     *
+     * 该接口可以用于查询指定条件下的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectsRequest 请求对象
-     * @return SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse> */
+     * @return SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse>
+     */
     public SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse> keystoneListProjectsInvoker(
         KeystoneListProjectsRequest request) {
         return new SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse>(request,
             IamMeta.keystoneListProjects, hcClient);
     }
 
-    /** 查询指定IAM用户的项目列表
+    /**
+     * 查询指定IAM用户的项目列表
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的项目列表，或IAM用户查询自己的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectsForUserRequest 请求对象
-     * @return KeystoneListProjectsForUserResponse */
+     * @return KeystoneListProjectsForUserResponse
+     */
     public KeystoneListProjectsForUserResponse keystoneListProjectsForUser(KeystoneListProjectsForUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjectsForUser);
     }
 
-    /** 查询指定IAM用户的项目列表
+    /**
+     * 查询指定IAM用户的项目列表
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的项目列表，或IAM用户查询自己的项目列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProjectsForUserRequest 请求对象
-     * @return SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> */
+     * @return SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse>
+     */
     public SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> keystoneListProjectsForUserInvoker(
         KeystoneListProjectsForUserRequest request) {
         return new SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse>(request,
             IamMeta.keystoneListProjectsForUser, hcClient);
     }
 
-    /** 查询协议列表 该接口可以用于查询协议列表。
+    /**
+     * 查询协议列表
+     *
+     * 该接口可以用于查询协议列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProtocolsRequest 请求对象
-     * @return KeystoneListProtocolsResponse */
+     * @return KeystoneListProtocolsResponse
+     */
     public KeystoneListProtocolsResponse keystoneListProtocols(KeystoneListProtocolsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProtocols);
     }
 
-    /** 查询协议列表 该接口可以用于查询协议列表。
+    /**
+     * 查询协议列表
+     *
+     * 该接口可以用于查询协议列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListProtocolsRequest 请求对象
-     * @return SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> */
+     * @return SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse>
+     */
     public SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> keystoneListProtocolsInvoker(
         KeystoneListProtocolsRequest request) {
         return new SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse>(request,
             IamMeta.keystoneListProtocols, hcClient);
     }
 
-    /** 查询区域列表 该接口可以用于查询区域列表。
+    /**
+     * 查询区域列表
+     *
+     * 该接口可以用于查询区域列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListRegionsRequest 请求对象
-     * @return KeystoneListRegionsResponse */
+     * @return KeystoneListRegionsResponse
+     */
     public KeystoneListRegionsResponse keystoneListRegions(KeystoneListRegionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListRegions);
     }
 
-    /** 查询区域列表 该接口可以用于查询区域列表。
+    /**
+     * 查询区域列表
+     *
+     * 该接口可以用于查询区域列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListRegionsRequest 请求对象
-     * @return SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse> */
+     * @return SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse>
+     */
     public SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse> keystoneListRegionsInvoker(
         KeystoneListRegionsRequest request) {
         return new SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse>(request,
             IamMeta.keystoneListRegions, hcClient);
     }
 
-    /** 查询服务列表 该接口可以用于查询服务列表。
+    /**
+     * 查询服务列表
+     *
+     * 该接口可以用于查询服务列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListServicesRequest 请求对象
-     * @return KeystoneListServicesResponse */
+     * @return KeystoneListServicesResponse
+     */
     public KeystoneListServicesResponse keystoneListServices(KeystoneListServicesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListServices);
     }
 
-    /** 查询服务列表 该接口可以用于查询服务列表。
+    /**
+     * 查询服务列表
+     *
+     * 该接口可以用于查询服务列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListServicesRequest 请求对象
-     * @return SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse> */
+     * @return SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse>
+     */
     public SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse> keystoneListServicesInvoker(
         KeystoneListServicesRequest request) {
         return new SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse>(request,
             IamMeta.keystoneListServices, hcClient);
     }
 
-    /** 管理员查询用户组所包含的IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return KeystoneListUsersForGroupByAdminResponse */
+     * @return KeystoneListUsersForGroupByAdminResponse
+     */
     public KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdmin(
         KeystoneListUsersForGroupByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
     }
 
-    /** 管理员查询用户组所包含的IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> */
+     * @return SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
+     */
     public SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminInvoker(
         KeystoneListUsersForGroupByAdminRequest request) {
         return new SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>(
             request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
     }
 
-    /** 查询版本信息列表 该接口用于查询Keystone API的版本信息。
+    /**
+     * 查询版本信息列表
+     *
+     * 该接口用于查询Keystone API的版本信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListVersionsRequest 请求对象
-     * @return KeystoneListVersionsResponse */
+     * @return KeystoneListVersionsResponse
+     */
     public KeystoneListVersionsResponse keystoneListVersions(KeystoneListVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListVersions);
     }
 
-    /** 查询版本信息列表 该接口用于查询Keystone API的版本信息。
+    /**
+     * 查询版本信息列表
+     *
+     * 该接口用于查询Keystone API的版本信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListVersionsRequest 请求对象
-     * @return SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse> */
+     * @return SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse>
+     */
     public SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse> keystoneListVersionsInvoker(
         KeystoneListVersionsRequest request) {
         return new SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse>(request,
             IamMeta.keystoneListVersions, hcClient);
     }
 
-    /** 移除用户组的全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的全局服务权限。
+    /**
+     * 移除用户组的全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
-     * @return KeystoneRemoveDomainPermissionFromGroupResponse */
+     * @return KeystoneRemoveDomainPermissionFromGroupResponse
+     */
     public KeystoneRemoveDomainPermissionFromGroupResponse keystoneRemoveDomainPermissionFromGroup(
         KeystoneRemoveDomainPermissionFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveDomainPermissionFromGroup);
     }
 
-    /** 移除用户组的全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的全局服务权限。
+    /**
+     * 移除用户组的全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest,
-     *         KeystoneRemoveDomainPermissionFromGroupResponse> */
+     * @return SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse>
+     */
     public SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> keystoneRemoveDomainPermissionFromGroupInvoker(
         KeystoneRemoveDomainPermissionFromGroupRequest request) {
         return new SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse>(
             request, IamMeta.keystoneRemoveDomainPermissionFromGroup, hcClient);
     }
 
-    /** 移除用户组的项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的项目服务权限。
+    /**
+     * 移除用户组的项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
-     * @return KeystoneRemoveProjectPermissionFromGroupResponse */
+     * @return KeystoneRemoveProjectPermissionFromGroupResponse
+     */
     public KeystoneRemoveProjectPermissionFromGroupResponse keystoneRemoveProjectPermissionFromGroup(
         KeystoneRemoveProjectPermissionFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveProjectPermissionFromGroup);
     }
 
-    /** 移除用户组的项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的项目服务权限。
+    /**
+     * 移除用户组的项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组的项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest,
-     *         KeystoneRemoveProjectPermissionFromGroupResponse> */
+     * @return SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse>
+     */
     public SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> keystoneRemoveProjectPermissionFromGroupInvoker(
         KeystoneRemoveProjectPermissionFromGroupRequest request) {
         return new SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse>(
             request, IamMeta.keystoneRemoveProjectPermissionFromGroup, hcClient);
     }
 
-    /** 移除用户组中的IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组中的IAM用户。
+    /**
+     * 移除用户组中的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组中的IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveUserFromGroupRequest 请求对象
-     * @return KeystoneRemoveUserFromGroupResponse */
+     * @return KeystoneRemoveUserFromGroupResponse
+     */
     public KeystoneRemoveUserFromGroupResponse keystoneRemoveUserFromGroup(KeystoneRemoveUserFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveUserFromGroup);
     }
 
-    /** 移除用户组中的IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组中的IAM用户。
+    /**
+     * 移除用户组中的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除用户组中的IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneRemoveUserFromGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> */
+     * @return SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse>
+     */
     public SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> keystoneRemoveUserFromGroupInvoker(
         KeystoneRemoveUserFromGroupRequest request) {
         return new SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse>(request,
             IamMeta.keystoneRemoveUserFromGroup, hcClient);
     }
 
-    /** 查询服务目录 该接口可以用于查询请求头中X-Auth-Token对应的服务目录。
+    /**
+     * 查询服务目录
+     *
+     * 该接口可以用于查询请求头中X-Auth-Token对应的服务目录。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowCatalogRequest 请求对象
-     * @return KeystoneShowCatalogResponse */
+     * @return KeystoneShowCatalogResponse
+     */
     public KeystoneShowCatalogResponse keystoneShowCatalog(KeystoneShowCatalogRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowCatalog);
     }
 
-    /** 查询服务目录 该接口可以用于查询请求头中X-Auth-Token对应的服务目录。
+    /**
+     * 查询服务目录
+     *
+     * 该接口可以用于查询请求头中X-Auth-Token对应的服务目录。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowCatalogRequest 请求对象
-     * @return SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> */
+     * @return SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse>
+     */
     public SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> keystoneShowCatalogInvoker(
         KeystoneShowCatalogRequest request) {
         return new SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse>(request,
             IamMeta.keystoneShowCatalog, hcClient);
     }
 
-    /** 查询终端节点详情 该接口可以用于查询终端节点详情。终端节点用来提供服务访问入口。
+    /**
+     * 查询终端节点详情
+     *
+     * 该接口可以用于查询终端节点详情。终端节点用来提供服务访问入口。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowEndpointRequest 请求对象
-     * @return KeystoneShowEndpointResponse */
+     * @return KeystoneShowEndpointResponse
+     */
     public KeystoneShowEndpointResponse keystoneShowEndpoint(KeystoneShowEndpointRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowEndpoint);
     }
 
-    /** 查询终端节点详情 该接口可以用于查询终端节点详情。终端节点用来提供服务访问入口。
+    /**
+     * 查询终端节点详情
+     *
+     * 该接口可以用于查询终端节点详情。终端节点用来提供服务访问入口。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowEndpointRequest 请求对象
-     * @return SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> */
+     * @return SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse>
+     */
     public SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> keystoneShowEndpointInvoker(
         KeystoneShowEndpointRequest request) {
         return new SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse>(request,
             IamMeta.keystoneShowEndpoint, hcClient);
     }
 
-    /** 查询用户组详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组详情。
+    /**
+     * 查询用户组详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowGroupRequest 请求对象
-     * @return KeystoneShowGroupResponse */
+     * @return KeystoneShowGroupResponse
+     */
     public KeystoneShowGroupResponse keystoneShowGroup(KeystoneShowGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowGroup);
     }
 
-    /** 查询用户组详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组详情。
+    /**
+     * 查询用户组详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse> */
+     * @return SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse>
+     */
     public SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse> keystoneShowGroupInvoker(
         KeystoneShowGroupRequest request) {
         return new SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse>(request, IamMeta.keystoneShowGroup,
             hcClient);
     }
 
-    /** 查询身份提供商详情 该接口可以用于查询身份提供商详情。
+    /**
+     * 查询身份提供商详情
+     *
+     * 该接口可以用于查询身份提供商详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowIdentityProviderRequest 请求对象
-     * @return KeystoneShowIdentityProviderResponse */
+     * @return KeystoneShowIdentityProviderResponse
+     */
     public KeystoneShowIdentityProviderResponse keystoneShowIdentityProvider(
         KeystoneShowIdentityProviderRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowIdentityProvider);
     }
 
-    /** 查询身份提供商详情 该接口可以用于查询身份提供商详情。
+    /**
+     * 查询身份提供商详情
+     *
+     * 该接口可以用于查询身份提供商详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowIdentityProviderRequest 请求对象
-     * @return SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> */
+     * @return SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse>
+     */
     public SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> keystoneShowIdentityProviderInvoker(
         KeystoneShowIdentityProviderRequest request) {
         return new SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse>(request,
             IamMeta.keystoneShowIdentityProvider, hcClient);
     }
 
-    /** 查询映射详情 该接口可以用于查询映射详情。
+    /**
+     * 查询映射详情
+     *
+     * 该接口可以用于查询映射详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowMappingRequest 请求对象
-     * @return KeystoneShowMappingResponse */
+     * @return KeystoneShowMappingResponse
+     */
     public KeystoneShowMappingResponse keystoneShowMapping(KeystoneShowMappingRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowMapping);
     }
 
-    /** 查询映射详情 该接口可以用于查询映射详情。
+    /**
+     * 查询映射详情
+     *
+     * 该接口可以用于查询映射详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowMappingRequest 请求对象
-     * @return SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse> */
+     * @return SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse>
+     */
     public SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse> keystoneShowMappingInvoker(
         KeystoneShowMappingRequest request) {
         return new SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse>(request,
             IamMeta.keystoneShowMapping, hcClient);
     }
 
-    /** 查询权限详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限详情。
+    /**
+     * 查询权限详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowPermissionRequest 请求对象
-     * @return KeystoneShowPermissionResponse */
+     * @return KeystoneShowPermissionResponse
+     */
     public KeystoneShowPermissionResponse keystoneShowPermission(KeystoneShowPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowPermission);
     }
 
-    /** 查询权限详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限详情。
+    /**
+     * 查询权限详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowPermissionRequest 请求对象
-     * @return SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> */
+     * @return SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse>
+     */
     public SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> keystoneShowPermissionInvoker(
         KeystoneShowPermissionRequest request) {
         return new SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse>(request,
             IamMeta.keystoneShowPermission, hcClient);
     }
 
-    /** 查询项目详情 该接口可以用于查询项目详情。
+    /**
+     * 查询项目详情
+     *
+     * 该接口可以用于查询项目详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowProjectRequest 请求对象
-     * @return KeystoneShowProjectResponse */
+     * @return KeystoneShowProjectResponse
+     */
     public KeystoneShowProjectResponse keystoneShowProject(KeystoneShowProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowProject);
     }
 
-    /** 查询项目详情 该接口可以用于查询项目详情。
+    /**
+     * 查询项目详情
+     *
+     * 该接口可以用于查询项目详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowProjectRequest 请求对象
-     * @return SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse> */
+     * @return SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse>
+     */
     public SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse> keystoneShowProjectInvoker(
         KeystoneShowProjectRequest request) {
         return new SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse>(request,
             IamMeta.keystoneShowProject, hcClient);
     }
 
-    /** 查询协议详情 该接口可以用于查询协议详情。
+    /**
+     * 查询协议详情
+     *
+     * 该接口可以用于查询协议详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowProtocolRequest 请求对象
-     * @return KeystoneShowProtocolResponse */
+     * @return KeystoneShowProtocolResponse
+     */
     public KeystoneShowProtocolResponse keystoneShowProtocol(KeystoneShowProtocolRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowProtocol);
     }
 
-    /** 查询协议详情 该接口可以用于查询协议详情。
+    /**
+     * 查询协议详情
+     *
+     * 该接口可以用于查询协议详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowProtocolRequest 请求对象
-     * @return SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> */
+     * @return SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse>
+     */
     public SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> keystoneShowProtocolInvoker(
         KeystoneShowProtocolRequest request) {
         return new SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse>(request,
             IamMeta.keystoneShowProtocol, hcClient);
     }
 
-    /** 查询区域详情 该接口可以用于查询区域详情。
+    /**
+     * 查询区域详情
+     *
+     * 该接口可以用于查询区域详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowRegionRequest 请求对象
-     * @return KeystoneShowRegionResponse */
+     * @return KeystoneShowRegionResponse
+     */
     public KeystoneShowRegionResponse keystoneShowRegion(KeystoneShowRegionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowRegion);
     }
 
-    /** 查询区域详情 该接口可以用于查询区域详情。
+    /**
+     * 查询区域详情
+     *
+     * 该接口可以用于查询区域详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowRegionRequest 请求对象
-     * @return SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse> */
+     * @return SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse>
+     */
     public SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse> keystoneShowRegionInvoker(
         KeystoneShowRegionRequest request) {
         return new SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse>(request,
             IamMeta.keystoneShowRegion, hcClient);
     }
 
-    /** 查询账号密码强度策略 该接口可以用于查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+    /**
+     * 查询账号密码强度策略
+     *
+     * 该接口可以用于查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceRequest 请求对象
-     * @return KeystoneShowSecurityComplianceResponse */
+     * @return KeystoneShowSecurityComplianceResponse
+     */
     public KeystoneShowSecurityComplianceResponse keystoneShowSecurityCompliance(
         KeystoneShowSecurityComplianceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowSecurityCompliance);
     }
 
-    /** 查询账号密码强度策略 该接口可以用于查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+    /**
+     * 查询账号密码强度策略
+     *
+     * 该接口可以用于查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceRequest 请求对象
-     * @return SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> */
+     * @return SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse>
+     */
     public SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> keystoneShowSecurityComplianceInvoker(
         KeystoneShowSecurityComplianceRequest request) {
         return new SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse>(request,
             IamMeta.keystoneShowSecurityCompliance, hcClient);
     }
 
-    /** 按条件查询账号密码强度策略 该接口可以用于按条件查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+    /**
+     * 按条件查询账号密码强度策略
+     *
+     * 该接口可以用于按条件查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
-     * @return KeystoneShowSecurityComplianceByOptionResponse */
+     * @return KeystoneShowSecurityComplianceByOptionResponse
+     */
     public KeystoneShowSecurityComplianceByOptionResponse keystoneShowSecurityComplianceByOption(
         KeystoneShowSecurityComplianceByOptionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowSecurityComplianceByOption);
     }
 
-    /** 按条件查询账号密码强度策略 该接口可以用于按条件查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+    /**
+     * 按条件查询账号密码强度策略
+     *
+     * 该接口可以用于按条件查询账号密码强度策略，查询结果包括密码强度策略的正则表达式及其描述。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
-     * @return SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest,
-     *         KeystoneShowSecurityComplianceByOptionResponse> */
+     * @return SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse>
+     */
     public SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> keystoneShowSecurityComplianceByOptionInvoker(
         KeystoneShowSecurityComplianceByOptionRequest request) {
         return new SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse>(
             request, IamMeta.keystoneShowSecurityComplianceByOption, hcClient);
     }
 
-    /** 查询服务详情 该接口可以用于查询服务详情。
+    /**
+     * 查询服务详情
+     *
+     * 该接口可以用于查询服务详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowServiceRequest 请求对象
-     * @return KeystoneShowServiceResponse */
+     * @return KeystoneShowServiceResponse
+     */
     public KeystoneShowServiceResponse keystoneShowService(KeystoneShowServiceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowService);
     }
 
-    /** 查询服务详情 该接口可以用于查询服务详情。
+    /**
+     * 查询服务详情
+     *
+     * 该接口可以用于查询服务详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowServiceRequest 请求对象
-     * @return SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse> */
+     * @return SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse>
+     */
     public SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse> keystoneShowServiceInvoker(
         KeystoneShowServiceRequest request) {
         return new SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse>(request,
             IamMeta.keystoneShowService, hcClient);
     }
 
-    /** 查询版本信息 该接口用于查询Keystone API的3.0版本的信息。
+    /**
+     * 查询版本信息
+     *
+     * 该接口用于查询Keystone API的3.0版本的信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowVersionRequest 请求对象
-     * @return KeystoneShowVersionResponse */
+     * @return KeystoneShowVersionResponse
+     */
     public KeystoneShowVersionResponse keystoneShowVersion(KeystoneShowVersionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowVersion);
     }
 
-    /** 查询版本信息 该接口用于查询Keystone API的3.0版本的信息。
+    /**
+     * 查询版本信息
+     *
+     * 该接口用于查询Keystone API的3.0版本的信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowVersionRequest 请求对象
-     * @return SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse> */
+     * @return SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse>
+     */
     public SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse> keystoneShowVersionInvoker(
         KeystoneShowVersionRequest request) {
         return new SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse>(request,
             IamMeta.keystoneShowVersion, hcClient);
     }
 
-    /** 更新用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新用户组信息。
+    /**
+     * 更新用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新用户组信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateGroupRequest 请求对象
-     * @return KeystoneUpdateGroupResponse */
+     * @return KeystoneUpdateGroupResponse
+     */
     public KeystoneUpdateGroupResponse keystoneUpdateGroup(KeystoneUpdateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateGroup);
     }
 
-    /** 更新用户组 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新用户组信息。
+    /**
+     * 更新用户组
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新用户组信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateGroupRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> */
+     * @return SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse>
+     */
     public SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> keystoneUpdateGroupInvoker(
         KeystoneUpdateGroupRequest request) {
         return new SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse>(request,
             IamMeta.keystoneUpdateGroup, hcClient);
     }
 
-    /** 更新身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新身份提供商。
+    /**
+     * 更新身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateIdentityProviderRequest 请求对象
-     * @return KeystoneUpdateIdentityProviderResponse */
+     * @return KeystoneUpdateIdentityProviderResponse
+     */
     public KeystoneUpdateIdentityProviderResponse keystoneUpdateIdentityProvider(
         KeystoneUpdateIdentityProviderRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateIdentityProvider);
     }
 
-    /** 更新身份提供商 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新身份提供商。
+    /**
+     * 更新身份提供商
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新身份提供商。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateIdentityProviderRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> */
+     * @return SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse>
+     */
     public SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> keystoneUpdateIdentityProviderInvoker(
         KeystoneUpdateIdentityProviderRequest request) {
         return new SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse>(request,
             IamMeta.keystoneUpdateIdentityProvider, hcClient);
     }
 
-    /** 更新映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新映射。
+    /**
+     * 更新映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateMappingRequest 请求对象
-     * @return KeystoneUpdateMappingResponse */
+     * @return KeystoneUpdateMappingResponse
+     */
     public KeystoneUpdateMappingResponse keystoneUpdateMapping(KeystoneUpdateMappingRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateMapping);
     }
 
-    /** 更新映射 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新映射。
+    /**
+     * 更新映射
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新映射。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateMappingRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> */
+     * @return SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse>
+     */
     public SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> keystoneUpdateMappingInvoker(
         KeystoneUpdateMappingRequest request) {
         return new SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse>(request,
             IamMeta.keystoneUpdateMapping, hcClient);
     }
 
-    /** 修改项目信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改项目信息。
+    /**
+     * 修改项目信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改项目信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateProjectRequest 请求对象
-     * @return KeystoneUpdateProjectResponse */
+     * @return KeystoneUpdateProjectResponse
+     */
     public KeystoneUpdateProjectResponse keystoneUpdateProject(KeystoneUpdateProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateProject);
     }
 
-    /** 修改项目信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改项目信息。
+    /**
+     * 修改项目信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改项目信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateProjectRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> */
+     * @return SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse>
+     */
     public SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> keystoneUpdateProjectInvoker(
         KeystoneUpdateProjectRequest request) {
         return new SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse>(request,
             IamMeta.keystoneUpdateProject, hcClient);
     }
 
-    /** 更新协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新协议。
+    /**
+     * 更新协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新协议。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateProtocolRequest 请求对象
-     * @return KeystoneUpdateProtocolResponse */
+     * @return KeystoneUpdateProtocolResponse
+     */
     public KeystoneUpdateProtocolResponse keystoneUpdateProtocol(KeystoneUpdateProtocolRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateProtocol);
     }
 
-    /** 更新协议 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新协议。
+    /**
+     * 更新协议
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新协议。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateProtocolRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> */
+     * @return SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse>
+     */
     public SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> keystoneUpdateProtocolInvoker(
         KeystoneUpdateProtocolRequest request) {
         return new SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse>(request,
             IamMeta.keystoneUpdateProtocol, hcClient);
     }
 
-    /** 查询指定条件下的委托列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定条件下的委托列表。
+    /**
+     * 查询指定条件下的委托列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定条件下的委托列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
-     * @return ListAgenciesResponse */
+     * @return ListAgenciesResponse
+     */
     public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listAgencies);
     }
 
-    /** 查询指定条件下的委托列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定条件下的委托列表。
+    /**
+     * 查询指定条件下的委托列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定条件下的委托列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
-     * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse> */
+     * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
+     */
     public SyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesInvoker(ListAgenciesRequest request) {
         return new SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, IamMeta.listAgencies, hcClient);
     }
 
-    /** 查询委托下的所有项目服务权限列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托所有项目服务权限列表。
+    /**
+     * 查询委托下的所有项目服务权限列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托所有项目服务权限列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
-     * @return ListAllProjectsPermissionsForAgencyResponse */
+     * @return ListAllProjectsPermissionsForAgencyResponse
+     */
     public ListAllProjectsPermissionsForAgencyResponse listAllProjectsPermissionsForAgency(
         ListAllProjectsPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listAllProjectsPermissionsForAgency);
     }
 
-    /** 查询委托下的所有项目服务权限列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托所有项目服务权限列表。
+    /**
+     * 查询委托下的所有项目服务权限列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托所有项目服务权限列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
-     * @return SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> */
+     * @return SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse>
+     */
     public SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> listAllProjectsPermissionsForAgencyInvoker(
         ListAllProjectsPermissionsForAgencyRequest request) {
         return new SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse>(
             request, IamMeta.listAllProjectsPermissionsForAgency, hcClient);
     }
 
-    /** 查询自定义策略列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略列表。
+    /**
+     * 查询自定义策略列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCustomPoliciesRequest 请求对象
-     * @return ListCustomPoliciesResponse */
+     * @return ListCustomPoliciesResponse
+     */
     public ListCustomPoliciesResponse listCustomPolicies(ListCustomPoliciesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listCustomPolicies);
     }
 
-    /** 查询自定义策略列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略列表。
+    /**
+     * 查询自定义策略列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListCustomPoliciesRequest 请求对象
-     * @return SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse> */
+     * @return SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse>
+     */
     public SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse> listCustomPoliciesInvoker(
         ListCustomPoliciesRequest request) {
         return new SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse>(request,
             IamMeta.listCustomPolicies, hcClient);
     }
 
-    /** 查询全局服务中的委托权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的委托权限。
+    /**
+     * 查询全局服务中的委托权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的委托权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDomainPermissionsForAgencyRequest 请求对象
-     * @return ListDomainPermissionsForAgencyResponse */
+     * @return ListDomainPermissionsForAgencyResponse
+     */
     public ListDomainPermissionsForAgencyResponse listDomainPermissionsForAgency(
         ListDomainPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listDomainPermissionsForAgency);
     }
 
-    /** 查询全局服务中的委托权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的委托权限。
+    /**
+     * 查询全局服务中的委托权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询全局服务中的委托权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListDomainPermissionsForAgencyRequest 请求对象
-     * @return SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> */
+     * @return SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse>
+     */
     public SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> listDomainPermissionsForAgencyInvoker(
         ListDomainPermissionsForAgencyRequest request) {
         return new SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse>(request,
             IamMeta.listDomainPermissionsForAgency, hcClient);
     }
 
-    /** 查询用户组关联的企业项目 该接口可用于查询用户组所关联的企业项目。
+    /**
+     * 查询用户组关联的企业项目
+     *
+     * 该接口可用于查询用户组所关联的企业项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForGroupRequest 请求对象
-     * @return ListEnterpriseProjectsForGroupResponse */
+     * @return ListEnterpriseProjectsForGroupResponse
+     */
     public ListEnterpriseProjectsForGroupResponse listEnterpriseProjectsForGroup(
         ListEnterpriseProjectsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listEnterpriseProjectsForGroup);
     }
 
-    /** 查询用户组关联的企业项目 该接口可用于查询用户组所关联的企业项目。
+    /**
+     * 查询用户组关联的企业项目
+     *
+     * 该接口可用于查询用户组所关联的企业项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForGroupRequest 请求对象
-     * @return SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> */
+     * @return SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>
+     */
     public SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroupInvoker(
         ListEnterpriseProjectsForGroupRequest request) {
         return new SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>(request,
             IamMeta.listEnterpriseProjectsForGroup, hcClient);
     }
 
-    /** 查询用户关联的企业项目 该接口可用于查询用户所关联的企业项目。
+    /**
+     * 查询用户关联的企业项目
+     *
+     * 该接口可用于查询用户所关联的企业项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForUserRequest 请求对象
-     * @return ListEnterpriseProjectsForUserResponse */
+     * @return ListEnterpriseProjectsForUserResponse
+     */
     public ListEnterpriseProjectsForUserResponse listEnterpriseProjectsForUser(
         ListEnterpriseProjectsForUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listEnterpriseProjectsForUser);
     }
 
-    /** 查询用户关联的企业项目 该接口可用于查询用户所关联的企业项目。
+    /**
+     * 查询用户关联的企业项目
+     *
+     * 该接口可用于查询用户所关联的企业项目。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForUserRequest 请求对象
-     * @return SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> */
+     * @return SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>
+     */
     public SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUserInvoker(
         ListEnterpriseProjectsForUserRequest request) {
         return new SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>(request,
             IamMeta.listEnterpriseProjectsForUser, hcClient);
     }
 
-    /** 查询企业项目关联的用户组 该接口可用于查询企业项目关联的用户组。
+    /**
+     * 查询企业项目关联的用户组
+     *
+     * 该接口可用于查询企业项目关联的用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGroupsForEnterpriseProjectRequest 请求对象
-     * @return ListGroupsForEnterpriseProjectResponse */
+     * @return ListGroupsForEnterpriseProjectResponse
+     */
     public ListGroupsForEnterpriseProjectResponse listGroupsForEnterpriseProject(
         ListGroupsForEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listGroupsForEnterpriseProject);
     }
 
-    /** 查询企业项目关联的用户组 该接口可用于查询企业项目关联的用户组。
+    /**
+     * 查询企业项目关联的用户组
+     *
+     * 该接口可用于查询企业项目关联的用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListGroupsForEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> */
+     * @return SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>
+     */
     public SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProjectInvoker(
         ListGroupsForEnterpriseProjectRequest request) {
         return new SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>(request,
             IamMeta.listGroupsForEnterpriseProject, hcClient);
     }
 
-    /** 查询项目服务中的委托权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的委托权限。
+    /**
+     * 查询项目服务中的委托权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的委托权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectPermissionsForAgencyRequest 请求对象
-     * @return ListProjectPermissionsForAgencyResponse */
+     * @return ListProjectPermissionsForAgencyResponse
+     */
     public ListProjectPermissionsForAgencyResponse listProjectPermissionsForAgency(
         ListProjectPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listProjectPermissionsForAgency);
     }
 
-    /** 查询项目服务中的委托权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的委托权限。
+    /**
+     * 查询项目服务中的委托权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目服务中的委托权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListProjectPermissionsForAgencyRequest 请求对象
-     * @return SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> */
+     * @return SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>
+     */
     public SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgencyInvoker(
         ListProjectPermissionsForAgencyRequest request) {
         return new SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>(request,
             IamMeta.listProjectPermissionsForAgency, hcClient);
     }
 
-    /** 查询企业项目已关联用户组的权限 该接口可用于查询企业项目已关联用户组的权限。
+    /**
+     * 查询企业项目已关联用户组的权限
+     *
+     * 该接口可用于查询企业项目已关联用户组的权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
-     * @return ListRolesForGroupOnEnterpriseProjectResponse */
+     * @return ListRolesForGroupOnEnterpriseProjectResponse
+     */
     public ListRolesForGroupOnEnterpriseProjectResponse listRolesForGroupOnEnterpriseProject(
         ListRolesForGroupOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listRolesForGroupOnEnterpriseProject);
     }
 
-    /** 查询企业项目已关联用户组的权限 该接口可用于查询企业项目已关联用户组的权限。
+    /**
+     * 查询企业项目已关联用户组的权限
+     *
+     * 该接口可用于查询企业项目已关联用户组的权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProjectInvoker(
         ListRolesForGroupOnEnterpriseProjectRequest request) {
         return new SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>(
             request, IamMeta.listRolesForGroupOnEnterpriseProject, hcClient);
     }
 
-    /** 查询企业项目直接关联用户的权限 该接口可用于查询企业项目直接关联用户的权限。
+    /**
+     * 查询企业项目直接关联用户的权限
+     *
+     * 该接口可用于查询企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
-     * @return ListRolesForUserOnEnterpriseProjectResponse */
+     * @return ListRolesForUserOnEnterpriseProjectResponse
+     */
     public ListRolesForUserOnEnterpriseProjectResponse listRolesForUserOnEnterpriseProject(
         ListRolesForUserOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listRolesForUserOnEnterpriseProject);
     }
 
-    /** 查询企业项目直接关联用户的权限 该接口可用于查询企业项目直接关联用户的权限。
+    /**
+     * 查询企业项目直接关联用户的权限
+     *
+     * 该接口可用于查询企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProjectInvoker(
         ListRolesForUserOnEnterpriseProjectRequest request) {
         return new SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>(
             request, IamMeta.listRolesForUserOnEnterpriseProject, hcClient);
     }
 
-    /** 查询企业项目直接关联用户 该接口可用于查询企业项目直接关联的用户。
+    /**
+     * 查询企业项目直接关联用户
+     *
+     * 该接口可用于查询企业项目直接关联的用户。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUsersForEnterpriseProjectRequest 请求对象
-     * @return ListUsersForEnterpriseProjectResponse */
+     * @return ListUsersForEnterpriseProjectResponse
+     */
     public ListUsersForEnterpriseProjectResponse listUsersForEnterpriseProject(
         ListUsersForEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listUsersForEnterpriseProject);
     }
 
-    /** 查询企业项目直接关联用户 该接口可用于查询企业项目直接关联的用户。
+    /**
+     * 查询企业项目直接关联用户
+     *
+     * 该接口可用于查询企业项目直接关联的用户。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUsersForEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> */
+     * @return SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>
+     */
     public SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProjectInvoker(
         ListUsersForEnterpriseProjectRequest request) {
         return new SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>(request,
             IamMeta.listUsersForEnterpriseProject, hcClient);
     }
 
-    /** 移除委托下的所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的所有项目服务权限。
+    /**
+     * 移除委托下的所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
-     * @return RemoveAllProjectsPermissionFromAgencyResponse */
+     * @return RemoveAllProjectsPermissionFromAgencyResponse
+     */
     public RemoveAllProjectsPermissionFromAgencyResponse removeAllProjectsPermissionFromAgency(
         RemoveAllProjectsPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeAllProjectsPermissionFromAgency);
     }
 
-    /** 移除委托下的所有项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的所有项目服务权限。
+    /**
+     * 移除委托下的所有项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
-     * @return SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest,
-     *         RemoveAllProjectsPermissionFromAgencyResponse> */
+     * @return SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse>
+     */
     public SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> removeAllProjectsPermissionFromAgencyInvoker(
         RemoveAllProjectsPermissionFromAgencyRequest request) {
         return new SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse>(
             request, IamMeta.removeAllProjectsPermissionFromAgency, hcClient);
     }
 
-    /** 移除委托的全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的全局服务权限。
+    /**
+     * 移除委托的全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveDomainPermissionFromAgencyRequest 请求对象
-     * @return RemoveDomainPermissionFromAgencyResponse */
+     * @return RemoveDomainPermissionFromAgencyResponse
+     */
     public RemoveDomainPermissionFromAgencyResponse removeDomainPermissionFromAgency(
         RemoveDomainPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeDomainPermissionFromAgency);
     }
 
-    /** 移除委托的全局服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的全局服务权限。
+    /**
+     * 移除委托的全局服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的全局服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveDomainPermissionFromAgencyRequest 请求对象
-     * @return SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> */
+     * @return SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse>
+     */
     public SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgencyInvoker(
         RemoveDomainPermissionFromAgencyRequest request) {
         return new SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse>(
             request, IamMeta.removeDomainPermissionFromAgency, hcClient);
     }
 
-    /** 移除委托的项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的项目服务权限。
+    /**
+     * 移除委托的项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveProjectPermissionFromAgencyRequest 请求对象
-     * @return RemoveProjectPermissionFromAgencyResponse */
+     * @return RemoveProjectPermissionFromAgencyResponse
+     */
     public RemoveProjectPermissionFromAgencyResponse removeProjectPermissionFromAgency(
         RemoveProjectPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeProjectPermissionFromAgency);
     }
 
-    /** 移除委托的项目服务权限 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的项目服务权限。
+    /**
+     * 移除委托的项目服务权限
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)移除委托的项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RemoveProjectPermissionFromAgencyRequest 请求对象
-     * @return SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> */
+     * @return SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>
+     */
     public SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> removeProjectPermissionFromAgencyInvoker(
         RemoveProjectPermissionFromAgencyRequest request) {
         return new SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>(
             request, IamMeta.removeProjectPermissionFromAgency, hcClient);
     }
 
-    /** 删除企业项目关联用户组的权限 该接口用于删除企业项目关联用户组的权限。
+    /**
+     * 删除企业项目关联用户组的权限
+     *
+     * 该接口用于删除企业项目关联用户组的权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
-     * @return RevokeRoleFromGroupOnEnterpriseProjectResponse */
+     * @return RevokeRoleFromGroupOnEnterpriseProjectResponse
+     */
     public RevokeRoleFromGroupOnEnterpriseProjectResponse revokeRoleFromGroupOnEnterpriseProject(
         RevokeRoleFromGroupOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.revokeRoleFromGroupOnEnterpriseProject);
     }
 
-    /** 删除企业项目关联用户组的权限 该接口用于删除企业项目关联用户组的权限。
+    /**
+     * 删除企业项目关联用户组的权限
+     *
+     * 该接口用于删除企业项目关联用户组的权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest,
-     *         RevokeRoleFromGroupOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProjectInvoker(
         RevokeRoleFromGroupOnEnterpriseProjectRequest request) {
         return new SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>(
             request, IamMeta.revokeRoleFromGroupOnEnterpriseProject, hcClient);
     }
 
-    /** 删除企业项目直接关联用户的权限 删除企业项目直接关联用户的权限。
+    /**
+     * 删除企业项目直接关联用户的权限
+     *
+     * 删除企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
-     * @return RevokeRoleFromUserOnEnterpriseProjectResponse */
+     * @return RevokeRoleFromUserOnEnterpriseProjectResponse
+     */
     public RevokeRoleFromUserOnEnterpriseProjectResponse revokeRoleFromUserOnEnterpriseProject(
         RevokeRoleFromUserOnEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.revokeRoleFromUserOnEnterpriseProject);
     }
 
-    /** 删除企业项目直接关联用户的权限 删除企业项目直接关联用户的权限。
+    /**
+     * 删除企业项目直接关联用户的权限
+     *
+     * 删除企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest,
-     *         RevokeRoleFromUserOnEnterpriseProjectResponse> */
+     * @return SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>
+     */
     public SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProjectInvoker(
         RevokeRoleFromUserOnEnterpriseProjectRequest request) {
         return new SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>(
             request, IamMeta.revokeRoleFromUserOnEnterpriseProject, hcClient);
     }
 
-    /** 查询委托详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托详情。
+    /**
+     * 查询委托详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
-     * @return ShowAgencyResponse */
+     * @return ShowAgencyResponse
+     */
     public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showAgency);
     }
 
-    /** 查询委托详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托详情。
+    /**
+     * 查询委托详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询委托详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
-     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> */
+     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
     public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
         return new SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>(request, IamMeta.showAgency, hcClient);
     }
 
-    /** 查询自定义策略详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略详情。
+    /**
+     * 查询自定义策略详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowCustomPolicyRequest 请求对象
-     * @return ShowCustomPolicyResponse */
+     * @return ShowCustomPolicyResponse
+     */
     public ShowCustomPolicyResponse showCustomPolicy(ShowCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showCustomPolicy);
     }
 
-    /** 查询自定义策略详情 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略详情。
+    /**
+     * 查询自定义策略详情
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询自定义策略详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowCustomPolicyRequest 请求对象
-     * @return SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse> */
+     * @return SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse>
+     */
     public SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse> showCustomPolicyInvoker(
         ShowCustomPolicyRequest request) {
         return new SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse>(request, IamMeta.showCustomPolicy,
             hcClient);
     }
 
-    /** 查询账号接口访问策略 该接口可以用于查询账号接口访问控制策略。
+    /**
+     * 查询账号接口访问策略
+     *
+     * 该接口可以用于查询账号接口访问控制策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainApiAclPolicyRequest 请求对象
-     * @return ShowDomainApiAclPolicyResponse */
+     * @return ShowDomainApiAclPolicyResponse
+     */
     public ShowDomainApiAclPolicyResponse showDomainApiAclPolicy(ShowDomainApiAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainApiAclPolicy);
     }
 
-    /** 查询账号接口访问策略 该接口可以用于查询账号接口访问控制策略。
+    /**
+     * 查询账号接口访问策略
+     *
+     * 该接口可以用于查询账号接口访问控制策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainApiAclPolicyRequest 请求对象
-     * @return SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> */
+     * @return SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse>
+     */
     public SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> showDomainApiAclPolicyInvoker(
         ShowDomainApiAclPolicyRequest request) {
         return new SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse>(request,
             IamMeta.showDomainApiAclPolicy, hcClient);
     }
 
-    /** 查询账号控制台访问策略 该接口可以用于查询账号控制台访问控制策略。
+    /**
+     * 查询账号控制台访问策略
+     *
+     * 该接口可以用于查询账号控制台访问控制策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainConsoleAclPolicyRequest 请求对象
-     * @return ShowDomainConsoleAclPolicyResponse */
+     * @return ShowDomainConsoleAclPolicyResponse
+     */
     public ShowDomainConsoleAclPolicyResponse showDomainConsoleAclPolicy(ShowDomainConsoleAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainConsoleAclPolicy);
     }
 
-    /** 查询账号控制台访问策略 该接口可以用于查询账号控制台访问控制策略。
+    /**
+     * 查询账号控制台访问策略
+     *
+     * 该接口可以用于查询账号控制台访问控制策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainConsoleAclPolicyRequest 请求对象
-     * @return SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> */
+     * @return SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse>
+     */
     public SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> showDomainConsoleAclPolicyInvoker(
         ShowDomainConsoleAclPolicyRequest request) {
         return new SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse>(request,
             IamMeta.showDomainConsoleAclPolicy, hcClient);
     }
 
-    /** 查询账号登录策略 该接口可以用于查询账号登录策略。
+    /**
+     * 查询账号登录策略
+     *
+     * 该接口可以用于查询账号登录策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainLoginPolicyRequest 请求对象
-     * @return ShowDomainLoginPolicyResponse */
+     * @return ShowDomainLoginPolicyResponse
+     */
     public ShowDomainLoginPolicyResponse showDomainLoginPolicy(ShowDomainLoginPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainLoginPolicy);
     }
 
-    /** 查询账号登录策略 该接口可以用于查询账号登录策略。
+    /**
+     * 查询账号登录策略
+     *
+     * 该接口可以用于查询账号登录策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainLoginPolicyRequest 请求对象
-     * @return SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> */
+     * @return SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse>
+     */
     public SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> showDomainLoginPolicyInvoker(
         ShowDomainLoginPolicyRequest request) {
         return new SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse>(request,
             IamMeta.showDomainLoginPolicy, hcClient);
     }
 
-    /** 查询账号密码策略 该接口可以用于查询账号密码策略。
+    /**
+     * 查询账号密码策略
+     *
+     * 该接口可以用于查询账号密码策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainPasswordPolicyRequest 请求对象
-     * @return ShowDomainPasswordPolicyResponse */
+     * @return ShowDomainPasswordPolicyResponse
+     */
     public ShowDomainPasswordPolicyResponse showDomainPasswordPolicy(ShowDomainPasswordPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainPasswordPolicy);
     }
 
-    /** 查询账号密码策略 该接口可以用于查询账号密码策略。
+    /**
+     * 查询账号密码策略
+     *
+     * 该接口可以用于查询账号密码策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainPasswordPolicyRequest 请求对象
-     * @return SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> */
+     * @return SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse>
+     */
     public SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> showDomainPasswordPolicyInvoker(
         ShowDomainPasswordPolicyRequest request) {
         return new SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse>(request,
             IamMeta.showDomainPasswordPolicy, hcClient);
     }
 
-    /** 查询账号操作保护策略 该接口可以用于查询账号操作保护策略。
+    /**
+     * 查询账号操作保护策略
+     *
+     * 该接口可以用于查询账号操作保护策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainProtectPolicyRequest 请求对象
-     * @return ShowDomainProtectPolicyResponse */
+     * @return ShowDomainProtectPolicyResponse
+     */
     public ShowDomainProtectPolicyResponse showDomainProtectPolicy(ShowDomainProtectPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainProtectPolicy);
     }
 
-    /** 查询账号操作保护策略 该接口可以用于查询账号操作保护策略。
+    /**
+     * 查询账号操作保护策略
+     *
+     * 该接口可以用于查询账号操作保护策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainProtectPolicyRequest 请求对象
-     * @return SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> */
+     * @return SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse>
+     */
     public SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> showDomainProtectPolicyInvoker(
         ShowDomainProtectPolicyRequest request) {
         return new SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse>(request,
             IamMeta.showDomainProtectPolicy, hcClient);
     }
 
-    /** 查询账号配额 该接口可以用于查询账号配额。
+    /**
+     * 查询账号配额
+     *
+     * 该接口可以用于查询账号配额。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
-     * @return ShowDomainQuotaResponse */
+     * @return ShowDomainQuotaResponse
+     */
     public ShowDomainQuotaResponse showDomainQuota(ShowDomainQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainQuota);
     }
 
-    /** 查询账号配额 该接口可以用于查询账号配额。
+    /**
+     * 查询账号配额
+     *
+     * 该接口可以用于查询账号配额。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
-     * @return SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> */
+     * @return SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
+     */
     public SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuotaInvoker(
         ShowDomainQuotaRequest request) {
         return new SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>(request, IamMeta.showDomainQuota,
             hcClient);
     }
 
-    /** 查询Metadata文件
+    /**
+     * 查询Metadata文件
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询身份提供商导入到IAM中的Metadata文件。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMetadataRequest 请求对象
-     * @return ShowMetadataResponse */
+     * @return ShowMetadataResponse
+     */
     public ShowMetadataResponse showMetadata(ShowMetadataRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showMetadata);
     }
 
-    /** 查询Metadata文件
+    /**
+     * 查询Metadata文件
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询身份提供商导入到IAM中的Metadata文件。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowMetadataRequest 请求对象
-     * @return SyncInvoker<ShowMetadataRequest, ShowMetadataResponse> */
+     * @return SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>
+     */
     public SyncInvoker<ShowMetadataRequest, ShowMetadataResponse> showMetadataInvoker(ShowMetadataRequest request) {
         return new SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>(request, IamMeta.showMetadata, hcClient);
     }
 
-    /** 查询OpenId Connect身份提供商配置 查询OpenId Connect身份提供商配置
+    /**
+     * 查询OpenId Connect身份提供商配置
+     *
+     * 查询OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOpenIdConnectConfigRequest 请求对象
-     * @return ShowOpenIdConnectConfigResponse */
+     * @return ShowOpenIdConnectConfigResponse
+     */
     public ShowOpenIdConnectConfigResponse showOpenIdConnectConfig(ShowOpenIdConnectConfigRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showOpenIdConnectConfig);
     }
 
-    /** 查询OpenId Connect身份提供商配置 查询OpenId Connect身份提供商配置
+    /**
+     * 查询OpenId Connect身份提供商配置
+     *
+     * 查询OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowOpenIdConnectConfigRequest 请求对象
-     * @return SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> */
+     * @return SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>
+     */
     public SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> showOpenIdConnectConfigInvoker(
         ShowOpenIdConnectConfigRequest request) {
         return new SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>(request,
             IamMeta.showOpenIdConnectConfig, hcClient);
     }
 
-    /** 查询项目详情与状态 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目详情与状态。
+    /**
+     * 查询项目详情与状态
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目详情与状态。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProjectDetailsAndStatusRequest 请求对象
-     * @return ShowProjectDetailsAndStatusResponse */
+     * @return ShowProjectDetailsAndStatusResponse
+     */
     public ShowProjectDetailsAndStatusResponse showProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showProjectDetailsAndStatus);
     }
 
-    /** 查询项目详情与状态 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目详情与状态。
+    /**
+     * 查询项目详情与状态
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目详情与状态。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProjectDetailsAndStatusRequest 请求对象
-     * @return SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> */
+     * @return SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse>
+     */
     public SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatusInvoker(
         ShowProjectDetailsAndStatusRequest request) {
         return new SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse>(request,
             IamMeta.showProjectDetailsAndStatus, hcClient);
     }
 
-    /** 查询项目配额 该接口可以用于查询项目配额。
+    /**
+     * 查询项目配额
+     *
+     * 该接口可以用于查询项目配额。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProjectQuotaRequest 请求对象
-     * @return ShowProjectQuotaResponse */
+     * @return ShowProjectQuotaResponse
+     */
     public ShowProjectQuotaResponse showProjectQuota(ShowProjectQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showProjectQuota);
     }
 
-    /** 查询项目配额 该接口可以用于查询项目配额。
+    /**
+     * 查询项目配额
+     *
+     * 该接口可以用于查询项目配额。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowProjectQuotaRequest 请求对象
-     * @return SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse> */
+     * @return SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse>
+     */
     public SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse> showProjectQuotaInvoker(
         ShowProjectQuotaRequest request) {
         return new SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse>(request, IamMeta.showProjectQuota,
             hcClient);
     }
 
-    /** 修改委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托。
+    /**
+     * 修改委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAgencyRequest 请求对象
-     * @return UpdateAgencyResponse */
+     * @return UpdateAgencyResponse
+     */
     public UpdateAgencyResponse updateAgency(UpdateAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateAgency);
     }
 
-    /** 修改委托 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托。
+    /**
+     * 修改委托
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAgencyRequest 请求对象
-     * @return SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse> */
+     * @return SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>
+     */
     public SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse> updateAgencyInvoker(UpdateAgencyRequest request) {
         return new SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>(request, IamMeta.updateAgency, hcClient);
     }
 
-    /** 修改委托自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托自定义策略。
+    /**
+     * 修改委托自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAgencyCustomPolicyRequest 请求对象
-     * @return UpdateAgencyCustomPolicyResponse */
+     * @return UpdateAgencyCustomPolicyResponse
+     */
     public UpdateAgencyCustomPolicyResponse updateAgencyCustomPolicy(UpdateAgencyCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateAgencyCustomPolicy);
     }
 
-    /** 修改委托自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托自定义策略。
+    /**
+     * 修改委托自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改委托自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateAgencyCustomPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> */
+     * @return SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse>
+     */
     public SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> updateAgencyCustomPolicyInvoker(
         UpdateAgencyCustomPolicyRequest request) {
         return new SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse>(request,
             IamMeta.updateAgencyCustomPolicy, hcClient);
     }
 
-    /** 修改云服务自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改云服务自定义策略。
+    /**
+     * 修改云服务自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改云服务自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCloudServiceCustomPolicyRequest 请求对象
-     * @return UpdateCloudServiceCustomPolicyResponse */
+     * @return UpdateCloudServiceCustomPolicyResponse
+     */
     public UpdateCloudServiceCustomPolicyResponse updateCloudServiceCustomPolicy(
         UpdateCloudServiceCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateCloudServiceCustomPolicy);
     }
 
-    /** 修改云服务自定义策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改云服务自定义策略。
+    /**
+     * 修改云服务自定义策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改云服务自定义策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateCloudServiceCustomPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> */
+     * @return SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse>
+     */
     public SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> updateCloudServiceCustomPolicyInvoker(
         UpdateCloudServiceCustomPolicyRequest request) {
         return new SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse>(request,
             IamMeta.updateCloudServiceCustomPolicy, hcClient);
     }
 
-    /** 修改账号接口访问策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号接口访问策略。
+    /**
+     * 修改账号接口访问策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号接口访问策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainApiAclPolicyRequest 请求对象
-     * @return UpdateDomainApiAclPolicyResponse */
+     * @return UpdateDomainApiAclPolicyResponse
+     */
     public UpdateDomainApiAclPolicyResponse updateDomainApiAclPolicy(UpdateDomainApiAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainApiAclPolicy);
     }
 
-    /** 修改账号接口访问策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号接口访问策略。
+    /**
+     * 修改账号接口访问策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号接口访问策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainApiAclPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> */
+     * @return SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse>
+     */
     public SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> updateDomainApiAclPolicyInvoker(
         UpdateDomainApiAclPolicyRequest request) {
         return new SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse>(request,
             IamMeta.updateDomainApiAclPolicy, hcClient);
     }
 
-    /** 修改账号控制台访问策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号控制台访问策略。
+    /**
+     * 修改账号控制台访问策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号控制台访问策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainConsoleAclPolicyRequest 请求对象
-     * @return UpdateDomainConsoleAclPolicyResponse */
+     * @return UpdateDomainConsoleAclPolicyResponse
+     */
     public UpdateDomainConsoleAclPolicyResponse updateDomainConsoleAclPolicy(
         UpdateDomainConsoleAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainConsoleAclPolicy);
     }
 
-    /** 修改账号控制台访问策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号控制台访问策略。
+    /**
+     * 修改账号控制台访问策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号控制台访问策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainConsoleAclPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> */
+     * @return SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse>
+     */
     public SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> updateDomainConsoleAclPolicyInvoker(
         UpdateDomainConsoleAclPolicyRequest request) {
         return new SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse>(request,
             IamMeta.updateDomainConsoleAclPolicy, hcClient);
     }
 
-    /** 为用户组授予所有项目服务权限
+    /**
+     * 为用户组授予所有项目服务权限
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/zh-cn_topic_0079496985.html)为用户组授予所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainGroupInheritRoleRequest 请求对象
-     * @return UpdateDomainGroupInheritRoleResponse */
+     * @return UpdateDomainGroupInheritRoleResponse
+     */
     public UpdateDomainGroupInheritRoleResponse updateDomainGroupInheritRole(
         UpdateDomainGroupInheritRoleRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainGroupInheritRole);
     }
 
-    /** 为用户组授予所有项目服务权限
+    /**
+     * 为用户组授予所有项目服务权限
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/zh-cn_topic_0079496985.html)为用户组授予所有项目服务权限。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainGroupInheritRoleRequest 请求对象
-     * @return SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> */
+     * @return SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse>
+     */
     public SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> updateDomainGroupInheritRoleInvoker(
         UpdateDomainGroupInheritRoleRequest request) {
         return new SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse>(request,
             IamMeta.updateDomainGroupInheritRole, hcClient);
     }
 
-    /** 修改账号登录策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。
+    /**
+     * 修改账号登录策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainLoginPolicyRequest 请求对象
-     * @return UpdateDomainLoginPolicyResponse */
+     * @return UpdateDomainLoginPolicyResponse
+     */
     public UpdateDomainLoginPolicyResponse updateDomainLoginPolicy(UpdateDomainLoginPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainLoginPolicy);
     }
 
-    /** 修改账号登录策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。
+    /**
+     * 修改账号登录策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainLoginPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> */
+     * @return SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse>
+     */
     public SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> updateDomainLoginPolicyInvoker(
         UpdateDomainLoginPolicyRequest request) {
         return new SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse>(request,
             IamMeta.updateDomainLoginPolicy, hcClient);
     }
 
-    /** 修改账号密码策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号密码策略。
+    /**
+     * 修改账号密码策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号密码策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainPasswordPolicyRequest 请求对象
-     * @return UpdateDomainPasswordPolicyResponse */
+     * @return UpdateDomainPasswordPolicyResponse
+     */
     public UpdateDomainPasswordPolicyResponse updateDomainPasswordPolicy(UpdateDomainPasswordPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainPasswordPolicy);
     }
 
-    /** 修改账号密码策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号密码策略。
+    /**
+     * 修改账号密码策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号密码策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainPasswordPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> */
+     * @return SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse>
+     */
     public SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> updateDomainPasswordPolicyInvoker(
         UpdateDomainPasswordPolicyRequest request) {
         return new SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse>(request,
             IamMeta.updateDomainPasswordPolicy, hcClient);
     }
 
-    /** 修改账号操作保护策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护策略。
+    /**
+     * 修改账号操作保护策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainProtectPolicyRequest 请求对象
-     * @return UpdateDomainProtectPolicyResponse */
+     * @return UpdateDomainProtectPolicyResponse
+     */
     public UpdateDomainProtectPolicyResponse updateDomainProtectPolicy(UpdateDomainProtectPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainProtectPolicy);
     }
 
-    /** 修改账号操作保护策略 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护策略。
+    /**
+     * 修改账号操作保护策略
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护策略。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateDomainProtectPolicyRequest 请求对象
-     * @return SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> */
+     * @return SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>
+     */
     public SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> updateDomainProtectPolicyInvoker(
         UpdateDomainProtectPolicyRequest request) {
         return new SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>(request,
             IamMeta.updateDomainProtectPolicy, hcClient);
     }
 
-    /** 修改OpenId Connect身份提供商配置 修改OpenId Connect身份提供商配置
+    /**
+     * 修改OpenId Connect身份提供商配置
+     *
+     * 修改OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateOpenIdConnectConfigRequest 请求对象
-     * @return UpdateOpenIdConnectConfigResponse */
+     * @return UpdateOpenIdConnectConfigResponse
+     */
     public UpdateOpenIdConnectConfigResponse updateOpenIdConnectConfig(UpdateOpenIdConnectConfigRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateOpenIdConnectConfig);
     }
 
-    /** 修改OpenId Connect身份提供商配置 修改OpenId Connect身份提供商配置
+    /**
+     * 修改OpenId Connect身份提供商配置
+     *
+     * 修改OpenId Connect身份提供商配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateOpenIdConnectConfigRequest 请求对象
-     * @return SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> */
+     * @return SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>
+     */
     public SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfigInvoker(
         UpdateOpenIdConnectConfigRequest request) {
         return new SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>(request,
             IamMeta.updateOpenIdConnectConfig, hcClient);
     }
 
-    /** 设置项目状态 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)设置项目状态。项目状态包括：正常、冻结。
+    /**
+     * 设置项目状态
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)设置项目状态。项目状态包括：正常、冻结。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateProjectStatusRequest 请求对象
-     * @return UpdateProjectStatusResponse */
+     * @return UpdateProjectStatusResponse
+     */
     public UpdateProjectStatusResponse updateProjectStatus(UpdateProjectStatusRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateProjectStatus);
     }
 
-    /** 设置项目状态 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)设置项目状态。项目状态包括：正常、冻结。
+    /**
+     * 设置项目状态
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)设置项目状态。项目状态包括：正常、冻结。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateProjectStatusRequest 请求对象
-     * @return SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse> */
+     * @return SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse>
+     */
     public SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse> updateProjectStatusInvoker(
         UpdateProjectStatusRequest request) {
         return new SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse>(request,
             IamMeta.updateProjectStatus, hcClient);
     }
 
-    /** 创建永久访问密钥
+    /**
+     * 创建永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)给IAM用户创建永久访问密钥，或IAM用户给自己创建永久访问密钥。
-     * 访问密钥（Access Key ID/Secret Access
-     * Key，简称AK/SK），是您通过开发工具（API、CLI、SDK）访问华为云时的身份凭证，不用于登录控制台。系统通过AK识别访问用户的身份，通过SK进行签名验证，通过加密签名验证可以确保请求的机密性、完整性和请求者身份的正确性。在控制台创建访问密钥的方式请参见：[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html)
-     * 。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 访问密钥（Access Key ID/Secret Access Key，简称AK/SK），是您通过开发工具（API、CLI、SDK）访问华为云时的身份凭证，不用于登录控制台。系统通过AK识别访问用户的身份，通过SK进行签名验证，通过加密签名验证可以确保请求的机密性、完整性和请求者身份的正确性。在控制台创建访问密钥的方式请参见：[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html) 。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePermanentAccessKeyRequest 请求对象
-     * @return CreatePermanentAccessKeyResponse */
+     * @return CreatePermanentAccessKeyResponse
+     */
     public CreatePermanentAccessKeyResponse createPermanentAccessKey(CreatePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createPermanentAccessKey);
     }
 
-    /** 创建永久访问密钥
+    /**
+     * 创建永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)给IAM用户创建永久访问密钥，或IAM用户给自己创建永久访问密钥。
-     * 访问密钥（Access Key ID/Secret Access
-     * Key，简称AK/SK），是您通过开发工具（API、CLI、SDK）访问华为云时的身份凭证，不用于登录控制台。系统通过AK识别访问用户的身份，通过SK进行签名验证，通过加密签名验证可以确保请求的机密性、完整性和请求者身份的正确性。在控制台创建访问密钥的方式请参见：[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html)
-     * 。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 访问密钥（Access Key ID/Secret Access Key，简称AK/SK），是您通过开发工具（API、CLI、SDK）访问华为云时的身份凭证，不用于登录控制台。系统通过AK识别访问用户的身份，通过SK进行签名验证，通过加密签名验证可以确保请求的机密性、完整性和请求者身份的正确性。在控制台创建访问密钥的方式请参见：[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html) 。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreatePermanentAccessKeyRequest 请求对象
-     * @return SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> */
+     * @return SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse>
+     */
     public SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> createPermanentAccessKeyInvoker(
         CreatePermanentAccessKeyRequest request) {
         return new SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse>(request,
             IamMeta.createPermanentAccessKey, hcClient);
     }
 
-    /** 通过委托获取临时访问密钥 该接口可以用于通过委托来获取临时访问密钥（临时AK/SK）和securitytoken。
-     * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)
-     * 。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+    /**
+     * 通过委托获取临时访问密钥
+     *
+     * 该接口可以用于通过委托来获取临时访问密钥（临时AK/SK）和securitytoken。
+     * 
+     * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html) 。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
-     * @return CreateTemporaryAccessKeyByAgencyResponse */
+     * @return CreateTemporaryAccessKeyByAgencyResponse
+     */
     public CreateTemporaryAccessKeyByAgencyResponse createTemporaryAccessKeyByAgency(
         CreateTemporaryAccessKeyByAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createTemporaryAccessKeyByAgency);
     }
 
-    /** 通过委托获取临时访问密钥 该接口可以用于通过委托来获取临时访问密钥（临时AK/SK）和securitytoken。
-     * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)
-     * 。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+    /**
+     * 通过委托获取临时访问密钥
+     *
+     * 该接口可以用于通过委托来获取临时访问密钥（临时AK/SK）和securitytoken。
+     * 
+     * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html) 。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
-     * @return SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> */
+     * @return SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse>
+     */
     public SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> createTemporaryAccessKeyByAgencyInvoker(
         CreateTemporaryAccessKeyByAgencyRequest request) {
         return new SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse>(
             request, IamMeta.createTemporaryAccessKeyByAgency, hcClient);
     }
 
-    /** 通过token获取临时访问密钥 该接口可以用于通过token来获取临时AK/SK和securitytoken。
+    /**
+     * 通过token获取临时访问密钥
+     *
+     * 该接口可以用于通过token来获取临时AK/SK和securitytoken。
+     * 
      * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
-     * @return CreateTemporaryAccessKeyByTokenResponse */
+     * @return CreateTemporaryAccessKeyByTokenResponse
+     */
     public CreateTemporaryAccessKeyByTokenResponse createTemporaryAccessKeyByToken(
         CreateTemporaryAccessKeyByTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createTemporaryAccessKeyByToken);
     }
 
-    /** 通过token获取临时访问密钥 该接口可以用于通过token来获取临时AK/SK和securitytoken。
+    /**
+     * 通过token获取临时访问密钥
+     *
+     * 该接口可以用于通过token来获取临时AK/SK和securitytoken。
+     * 
      * 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期为15分钟至24小时，过期后需要重新获取。临时AK/SK和securitytoken遵循权限最小化原则。鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-security-token”字段，使用方法详情请参考：[API签名参考](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
-     * @return SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> */
+     * @return SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse>
+     */
     public SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> createTemporaryAccessKeyByTokenInvoker(
         CreateTemporaryAccessKeyByTokenRequest request) {
         return new SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse>(request,
             IamMeta.createTemporaryAccessKeyByToken, hcClient);
     }
 
-    /** 删除指定永久访问密钥
+    /**
+     * 删除指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除IAM用户的指定永久访问密钥，或IAM用户删除自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeletePermanentAccessKeyRequest 请求对象
-     * @return DeletePermanentAccessKeyResponse */
+     * @return DeletePermanentAccessKeyResponse
+     */
     public DeletePermanentAccessKeyResponse deletePermanentAccessKey(DeletePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deletePermanentAccessKey);
     }
 
-    /** 删除指定永久访问密钥
+    /**
+     * 删除指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除IAM用户的指定永久访问密钥，或IAM用户删除自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeletePermanentAccessKeyRequest 请求对象
-     * @return SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> */
+     * @return SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse>
+     */
     public SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> deletePermanentAccessKeyInvoker(
         DeletePermanentAccessKeyRequest request) {
         return new SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse>(request,
             IamMeta.deletePermanentAccessKey, hcClient);
     }
 
-    /** 查询所有永久访问密钥
+    /**
+     * 查询所有永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的所有永久访问密钥，或IAM用户查询自己的所有永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPermanentAccessKeysRequest 请求对象
-     * @return ListPermanentAccessKeysResponse */
+     * @return ListPermanentAccessKeysResponse
+     */
     public ListPermanentAccessKeysResponse listPermanentAccessKeys(ListPermanentAccessKeysRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listPermanentAccessKeys);
     }
 
-    /** 查询所有永久访问密钥
+    /**
+     * 查询所有永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的所有永久访问密钥，或IAM用户查询自己的所有永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListPermanentAccessKeysRequest 请求对象
-     * @return SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> */
+     * @return SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse>
+     */
     public SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> listPermanentAccessKeysInvoker(
         ListPermanentAccessKeysRequest request) {
         return new SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse>(request,
             IamMeta.listPermanentAccessKeys, hcClient);
     }
 
-    /** 查询指定永久访问密钥
+    /**
+     * 查询指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的指定永久访问密钥，或IAM用户查询自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowPermanentAccessKeyRequest 请求对象
-     * @return ShowPermanentAccessKeyResponse */
+     * @return ShowPermanentAccessKeyResponse
+     */
     public ShowPermanentAccessKeyResponse showPermanentAccessKey(ShowPermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showPermanentAccessKey);
     }
 
-    /** 查询指定永久访问密钥
+    /**
+     * 查询指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的指定永久访问密钥，或IAM用户查询自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowPermanentAccessKeyRequest 请求对象
-     * @return SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> */
+     * @return SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse>
+     */
     public SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> showPermanentAccessKeyInvoker(
         ShowPermanentAccessKeyRequest request) {
         return new SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse>(request,
             IamMeta.showPermanentAccessKey, hcClient);
     }
 
-    /** 修改指定永久访问密钥
+    /**
+     * 修改指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户的指定永久访问密钥，或IAM用户修改自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePermanentAccessKeyRequest 请求对象
-     * @return UpdatePermanentAccessKeyResponse */
+     * @return UpdatePermanentAccessKeyResponse
+     */
     public UpdatePermanentAccessKeyResponse updatePermanentAccessKey(UpdatePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updatePermanentAccessKey);
     }
 
-    /** 修改指定永久访问密钥
+    /**
+     * 修改指定永久访问密钥
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户的指定永久访问密钥，或IAM用户修改自己的指定永久访问密钥。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdatePermanentAccessKeyRequest 请求对象
-     * @return SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> */
+     * @return SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse>
+     */
     public SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> updatePermanentAccessKeyInvoker(
         UpdatePermanentAccessKeyRequest request) {
         return new SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse>(request,
             IamMeta.updatePermanentAccessKey, hcClient);
     }
 
-    /** 绑定MFA设备 该接口可以用于绑定MFA设备。
+    /**
+     * 绑定MFA设备
+     *
+     * 该接口可以用于绑定MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateBindingDeviceRequest 请求对象
-     * @return CreateBindingDeviceResponse */
+     * @return CreateBindingDeviceResponse
+     */
     public CreateBindingDeviceResponse createBindingDevice(CreateBindingDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createBindingDevice);
     }
 
-    /** 绑定MFA设备 该接口可以用于绑定MFA设备。
+    /**
+     * 绑定MFA设备
+     *
+     * 该接口可以用于绑定MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateBindingDeviceRequest 请求对象
-     * @return SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse> */
+     * @return SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>
+     */
     public SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDeviceInvoker(
         CreateBindingDeviceRequest request) {
         return new SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>(request,
             IamMeta.createBindingDevice, hcClient);
     }
 
-    /** 创建MFA设备 该接口可以用于创建MFA设备。
+    /**
+     * 创建MFA设备
+     *
+     * 该接口可以用于创建MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMfaDeviceRequest 请求对象
-     * @return CreateMfaDeviceResponse */
+     * @return CreateMfaDeviceResponse
+     */
     public CreateMfaDeviceResponse createMfaDevice(CreateMfaDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createMfaDevice);
     }
 
-    /** 创建MFA设备 该接口可以用于创建MFA设备。
+    /**
+     * 创建MFA设备
+     *
+     * 该接口可以用于创建MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateMfaDeviceRequest 请求对象
-     * @return SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse> */
+     * @return SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>
+     */
     public SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDeviceInvoker(
         CreateMfaDeviceRequest request) {
         return new SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>(request, IamMeta.createMfaDevice,
             hcClient);
     }
 
-    /** 管理员创建IAM用户（推荐） 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
+    /**
+     * 管理员创建IAM用户（推荐）
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
-     * @return CreateUserResponse */
+     * @return CreateUserResponse
+     */
     public CreateUserResponse createUser(CreateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createUser);
     }
 
-    /** 管理员创建IAM用户（推荐） 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
+    /**
+     * 管理员创建IAM用户（推荐）
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
-     * @return SyncInvoker<CreateUserRequest, CreateUserResponse> */
+     * @return SyncInvoker<CreateUserRequest, CreateUserResponse>
+     */
     public SyncInvoker<CreateUserRequest, CreateUserResponse> createUserInvoker(CreateUserRequest request) {
         return new SyncInvoker<CreateUserRequest, CreateUserResponse>(request, IamMeta.createUser, hcClient);
     }
 
-    /** 解绑MFA设备 该接口可以用于解绑MFA设备
+    /**
+     * 解绑MFA设备
+     *
+     * 该接口可以用于解绑MFA设备
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteBindingDeviceRequest 请求对象
-     * @return DeleteBindingDeviceResponse */
+     * @return DeleteBindingDeviceResponse
+     */
     public DeleteBindingDeviceResponse deleteBindingDevice(DeleteBindingDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteBindingDevice);
     }
 
-    /** 解绑MFA设备 该接口可以用于解绑MFA设备
+    /**
+     * 解绑MFA设备
+     *
+     * 该接口可以用于解绑MFA设备
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteBindingDeviceRequest 请求对象
-     * @return SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> */
+     * @return SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>
+     */
     public SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDeviceInvoker(
         DeleteBindingDeviceRequest request) {
         return new SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>(request,
             IamMeta.deleteBindingDevice, hcClient);
     }
 
-    /** 删除MFA设备 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+    /**
+     * 删除MFA设备
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteMfaDeviceRequest 请求对象
-     * @return DeleteMfaDeviceResponse */
+     * @return DeleteMfaDeviceResponse
+     */
     public DeleteMfaDeviceResponse deleteMfaDevice(DeleteMfaDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteMfaDevice);
     }
 
-    /** 删除MFA设备 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+    /**
+     * 删除MFA设备
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param DeleteMfaDeviceRequest 请求对象
-     * @return SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> */
+     * @return SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>
+     */
     public SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDeviceInvoker(
         DeleteMfaDeviceRequest request) {
         return new SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>(request, IamMeta.deleteMfaDevice,
             hcClient);
     }
 
-    /** 管理员创建IAM用户
+    /**
+     * 管理员创建IAM用户
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。IAM用户首次登录时需要修改密码。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserRequest 请求对象
-     * @return KeystoneCreateUserResponse */
+     * @return KeystoneCreateUserResponse
+     */
     public KeystoneCreateUserResponse keystoneCreateUser(KeystoneCreateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateUser);
     }
 
-    /** 管理员创建IAM用户
+    /**
+     * 管理员创建IAM用户
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。IAM用户首次登录时需要修改密码。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse> */
+     * @return SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse>
+     */
     public SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse> keystoneCreateUserInvoker(
         KeystoneCreateUserRequest request) {
         return new SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse>(request,
             IamMeta.keystoneCreateUser, hcClient);
     }
 
-    /** 管理员删除IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除指定IAM用户。
+    /**
+     * 管理员删除IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除指定IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteUserRequest 请求对象
-     * @return KeystoneDeleteUserResponse */
+     * @return KeystoneDeleteUserResponse
+     */
     public KeystoneDeleteUserResponse keystoneDeleteUser(KeystoneDeleteUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteUser);
     }
 
-    /** 管理员删除IAM用户 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除指定IAM用户。
+    /**
+     * 管理员删除IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除指定IAM用户。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneDeleteUserRequest 请求对象
-     * @return SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> */
+     * @return SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse>
+     */
     public SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> keystoneDeleteUserInvoker(
         KeystoneDeleteUserRequest request) {
         return new SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse>(request,
             IamMeta.keystoneDeleteUser, hcClient);
     }
 
-    /** 查询IAM用户所属用户组
+    /**
+     * 查询IAM用户所属用户组
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户所属用户组，或IAM用户查询自己所属用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListGroupsForUserRequest 请求对象
-     * @return KeystoneListGroupsForUserResponse */
+     * @return KeystoneListGroupsForUserResponse
+     */
     public KeystoneListGroupsForUserResponse keystoneListGroupsForUser(KeystoneListGroupsForUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListGroupsForUser);
     }
 
-    /** 查询IAM用户所属用户组
+    /**
+     * 查询IAM用户所属用户组
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户所属用户组，或IAM用户查询自己所属用户组。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListGroupsForUserRequest 请求对象
-     * @return SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> */
+     * @return SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse>
+     */
     public SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> keystoneListGroupsForUserInvoker(
         KeystoneListGroupsForUserRequest request) {
         return new SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse>(request,
             IamMeta.keystoneListGroupsForUser, hcClient);
     }
 
-    /** 管理员查询IAM用户列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户列表。
+    /**
+     * 管理员查询IAM用户列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListUsersRequest 请求对象
-     * @return KeystoneListUsersResponse */
+     * @return KeystoneListUsersResponse
+     */
     public KeystoneListUsersResponse keystoneListUsers(KeystoneListUsersRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsers);
     }
 
-    /** 管理员查询IAM用户列表 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户列表。
+    /**
+     * 管理员查询IAM用户列表
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneListUsersRequest 请求对象
-     * @return SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse> */
+     * @return SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse>
+     */
     public SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsersInvoker(
         KeystoneListUsersRequest request) {
         return new SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse>(request, IamMeta.keystoneListUsers,
             hcClient);
     }
 
-    /** 查询IAM用户详情
+    /**
+     * 查询IAM用户详情
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户详情，或IAM用户查询自己的用户详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowUserRequest 请求对象
-     * @return KeystoneShowUserResponse */
+     * @return KeystoneShowUserResponse
+     */
     public KeystoneShowUserResponse keystoneShowUser(KeystoneShowUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowUser);
     }
 
-    /** 查询IAM用户详情
+    /**
+     * 查询IAM用户详情
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户详情，或IAM用户查询自己的用户详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneShowUserRequest 请求对象
-     * @return SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse> */
+     * @return SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse>
+     */
     public SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse> keystoneShowUserInvoker(
         KeystoneShowUserRequest request) {
         return new SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse>(request, IamMeta.keystoneShowUser,
             hcClient);
     }
 
-    /** 管理员修改IAM用户信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息。
+    /**
+     * 管理员修改IAM用户信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserByAdminRequest 请求对象
-     * @return KeystoneUpdateUserByAdminResponse */
+     * @return KeystoneUpdateUserByAdminResponse
+     */
     public KeystoneUpdateUserByAdminResponse keystoneUpdateUserByAdmin(KeystoneUpdateUserByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateUserByAdmin);
     }
 
-    /** 管理员修改IAM用户信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息。
+    /**
+     * 管理员修改IAM用户信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserByAdminRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> */
+     * @return SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse>
+     */
     public SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> keystoneUpdateUserByAdminInvoker(
         KeystoneUpdateUserByAdminRequest request) {
         return new SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse>(request,
             IamMeta.keystoneUpdateUserByAdmin, hcClient);
     }
 
-    /** 修改IAM用户密码 该接口可以用于IAM用户修改自己的密码。
+    /**
+     * 修改IAM用户密码
+     *
+     * 该接口可以用于IAM用户修改自己的密码。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserPasswordRequest 请求对象
-     * @return KeystoneUpdateUserPasswordResponse */
+     * @return KeystoneUpdateUserPasswordResponse
+     */
     public KeystoneUpdateUserPasswordResponse keystoneUpdateUserPassword(KeystoneUpdateUserPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateUserPassword);
     }
 
-    /** 修改IAM用户密码 该接口可以用于IAM用户修改自己的密码。
+    /**
+     * 修改IAM用户密码
+     *
+     * 该接口可以用于IAM用户修改自己的密码。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserPasswordRequest 请求对象
-     * @return SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> */
+     * @return SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse>
+     */
     public SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> keystoneUpdateUserPasswordInvoker(
         KeystoneUpdateUserPasswordRequest request) {
         return new SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse>(request,
             IamMeta.keystoneUpdateUserPassword, hcClient);
     }
 
-    /** 查询IAM用户的登录保护状态信息列表
+    /**
+     * 查询IAM用户的登录保护状态信息列表
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的登录保护状态列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUserLoginProtectsRequest 请求对象
-     * @return ListUserLoginProtectsResponse */
+     * @return ListUserLoginProtectsResponse
+     */
     public ListUserLoginProtectsResponse listUserLoginProtects(ListUserLoginProtectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listUserLoginProtects);
     }
 
-    /** 查询IAM用户的登录保护状态信息列表
+    /**
+     * 查询IAM用户的登录保护状态信息列表
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的登录保护状态列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUserLoginProtectsRequest 请求对象
-     * @return SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> */
+     * @return SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse>
+     */
     public SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> listUserLoginProtectsInvoker(
         ListUserLoginProtectsRequest request) {
         return new SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse>(request,
             IamMeta.listUserLoginProtects, hcClient);
     }
 
-    /** 该接口可以用于获取MFA设备。 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
+    /**
+     * 该接口可以用于获取MFA设备。
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUserMfaDevicesRequest 请求对象
-     * @return ListUserMfaDevicesResponse */
+     * @return ListUserMfaDevicesResponse
+     */
     public ListUserMfaDevicesResponse listUserMfaDevices(ListUserMfaDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listUserMfaDevices);
     }
 
-    /** 该接口可以用于获取MFA设备。 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
+    /**
+     * 该接口可以用于获取MFA设备。
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ListUserMfaDevicesRequest 请求对象
-     * @return SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> */
+     * @return SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse>
+     */
     public SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> listUserMfaDevicesInvoker(
         ListUserMfaDevicesRequest request) {
         return new SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse>(request,
             IamMeta.listUserMfaDevices, hcClient);
     }
 
-    /** 查询IAM用户详情（推荐）
+    /**
+     * 查询IAM用户详情（推荐）
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户详情，或IAM用户查询自己的详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
-     * @return ShowUserResponse */
+     * @return ShowUserResponse
+     */
     public ShowUserResponse showUser(ShowUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUser);
     }
 
-    /** 查询IAM用户详情（推荐）
+    /**
+     * 查询IAM用户详情（推荐）
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户详情，或IAM用户查询自己的详情。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
-     * @return SyncInvoker<ShowUserRequest, ShowUserResponse> */
+     * @return SyncInvoker<ShowUserRequest, ShowUserResponse>
+     */
     public SyncInvoker<ShowUserRequest, ShowUserResponse> showUserInvoker(ShowUserRequest request) {
         return new SyncInvoker<ShowUserRequest, ShowUserResponse>(request, IamMeta.showUser, hcClient);
     }
 
-    /** 查询指定IAM用户的登录保护状态信息
+    /**
+     * 查询指定IAM用户的登录保护状态信息
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的登录保护状态信息，或IAM用户查询自己的登录保护状态信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserLoginProtectRequest 请求对象
-     * @return ShowUserLoginProtectResponse */
+     * @return ShowUserLoginProtectResponse
+     */
     public ShowUserLoginProtectResponse showUserLoginProtect(ShowUserLoginProtectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUserLoginProtect);
     }
 
-    /** 查询指定IAM用户的登录保护状态信息
+    /**
+     * 查询指定IAM用户的登录保护状态信息
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的登录保护状态信息，或IAM用户查询自己的登录保护状态信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserLoginProtectRequest 请求对象
-     * @return SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> */
+     * @return SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse>
+     */
     public SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> showUserLoginProtectInvoker(
         ShowUserLoginProtectRequest request) {
         return new SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse>(request,
             IamMeta.showUserLoginProtect, hcClient);
     }
 
-    /** 查询指定IAM用户的MFA绑定信息
+    /**
+     * 查询指定IAM用户的MFA绑定信息
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的MFA绑定信息，或IAM用户查询自己的MFA绑定信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserMfaDeviceRequest 请求对象
-     * @return ShowUserMfaDeviceResponse */
+     * @return ShowUserMfaDeviceResponse
+     */
     public ShowUserMfaDeviceResponse showUserMfaDevice(ShowUserMfaDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUserMfaDevice);
     }
 
-    /** 查询指定IAM用户的MFA绑定信息
+    /**
+     * 查询指定IAM用户的MFA绑定信息
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询指定IAM用户的MFA绑定信息，或IAM用户查询自己的MFA绑定信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param ShowUserMfaDeviceRequest 请求对象
-     * @return SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> */
+     * @return SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse>
+     */
     public SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> showUserMfaDeviceInvoker(
         ShowUserMfaDeviceRequest request) {
         return new SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse>(request, IamMeta.showUserMfaDevice,
             hcClient);
     }
 
-    /** 修改IAM用户登录保护状态信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。
+    /**
+     * 修改IAM用户登录保护状态信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateLoginProtectRequest 请求对象
-     * @return UpdateLoginProtectResponse */
+     * @return UpdateLoginProtectResponse
+     */
     public UpdateLoginProtectResponse updateLoginProtect(UpdateLoginProtectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateLoginProtect);
     }
 
-    /** 修改IAM用户登录保护状态信息 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。
+    /**
+     * 修改IAM用户登录保护状态信息
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateLoginProtectRequest 请求对象
-     * @return SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse> */
+     * @return SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse>
+     */
     public SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse> updateLoginProtectInvoker(
         UpdateLoginProtectRequest request) {
         return new SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse>(request,
             IamMeta.updateLoginProtect, hcClient);
     }
 
-    /** 管理员修改IAM用户信息（推荐） 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息 。
+    /**
+     * 管理员修改IAM用户信息（推荐）
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息 。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
-     * @return UpdateUserResponse */
+     * @return UpdateUserResponse
+     */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateUser);
     }
 
-    /** 管理员修改IAM用户信息（推荐） 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息 。
+    /**
+     * 管理员修改IAM用户信息（推荐）
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改IAM用户信息 。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
-     * @return SyncInvoker<UpdateUserRequest, UpdateUserResponse> */
+     * @return SyncInvoker<UpdateUserRequest, UpdateUserResponse>
+     */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
         return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, IamMeta.updateUser, hcClient);
     }
 
-    /** 修改IAM用户信息（推荐） 该接口可以用于IAM用户修改自己的用户信息。
+    /**
+     * 修改IAM用户信息（推荐）
+     *
+     * 该接口可以用于IAM用户修改自己的用户信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateUserInformationRequest 请求对象
-     * @return UpdateUserInformationResponse */
+     * @return UpdateUserInformationResponse
+     */
     public UpdateUserInformationResponse updateUserInformation(UpdateUserInformationRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateUserInformation);
     }
 
-    /** 修改IAM用户信息（推荐） 该接口可以用于IAM用户修改自己的用户信息。
+    /**
+     * 修改IAM用户信息（推荐）
+     *
+     * 该接口可以用于IAM用户修改自己的用户信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param UpdateUserInformationRequest 请求对象
-     * @return SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse> */
+     * @return SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse>
+     */
     public SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse> updateUserInformationInvoker(
         UpdateUserInformationRequest request) {
         return new SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse>(request,
             IamMeta.updateUserInformation, hcClient);
     }
 
-    /** 获取委托Token 该接口可以用于获取委托方的token。
+    /**
+     * 获取委托Token
+     *
+     * 该接口可以用于获取委托方的token。
+     * 
      * 例如：A账号希望B账号管理自己的某些资源，所以A账号创建了委托给B账号，则A账号为委托方，B账号为被委托方。那么B账号可以通过该接口获取委托token。B账号仅能使用该token管理A账号的委托资源，不能管理自己账号中的资源。如果B账号需要管理自己账号中的资源，则需要获取自己的用户token。
+     * 
      * token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
      * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateAgencyTokenRequest 请求对象
-     * @return KeystoneCreateAgencyTokenResponse */
+     * @return KeystoneCreateAgencyTokenResponse
+     */
     public KeystoneCreateAgencyTokenResponse keystoneCreateAgencyToken(KeystoneCreateAgencyTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateAgencyToken);
     }
 
-    /** 获取委托Token 该接口可以用于获取委托方的token。
+    /**
+     * 获取委托Token
+     *
+     * 该接口可以用于获取委托方的token。
+     * 
      * 例如：A账号希望B账号管理自己的某些资源，所以A账号创建了委托给B账号，则A账号为委托方，B账号为被委托方。那么B账号可以通过该接口获取委托token。B账号仅能使用该token管理A账号的委托资源，不能管理自己账号中的资源。如果B账号需要管理自己账号中的资源，则需要获取自己的用户token。
+     * 
      * token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
      * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateAgencyTokenRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> */
+     * @return SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse>
+     */
     public SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> keystoneCreateAgencyTokenInvoker(
         KeystoneCreateAgencyTokenRequest request) {
         return new SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse>(request,
             IamMeta.keystoneCreateAgencyToken, hcClient);
     }
 
-    /** 获取IAM用户Token（使用密码） 该接口可以用于通过用户名/密码的方式进行认证来获取IAM用户token。
+    /**
+     * 获取IAM用户Token（使用密码）
+     *
+     * 该接口可以用于通过用户名/密码的方式进行认证来获取IAM用户token。
+     * 
      * token是系统颁发给IAM用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的IAM用户token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。 &gt; -
-     * 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。 &gt; -
-     * 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
+     * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
-     * @return KeystoneCreateUserTokenByPasswordResponse */
+     * @return KeystoneCreateUserTokenByPasswordResponse
+     */
     public KeystoneCreateUserTokenByPasswordResponse keystoneCreateUserTokenByPassword(
         KeystoneCreateUserTokenByPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateUserTokenByPassword);
     }
 
-    /** 获取IAM用户Token（使用密码） 该接口可以用于通过用户名/密码的方式进行认证来获取IAM用户token。
+    /**
+     * 获取IAM用户Token（使用密码）
+     *
+     * 该接口可以用于通过用户名/密码的方式进行认证来获取IAM用户token。
+     * 
      * token是系统颁发给IAM用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的IAM用户token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。 &gt; -
-     * 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。 &gt; -
-     * 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
+     * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> */
+     * @return SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse>
+     */
     public SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> keystoneCreateUserTokenByPasswordInvoker(
         KeystoneCreateUserTokenByPasswordRequest request) {
         return new SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse>(
             request, IamMeta.keystoneCreateUserTokenByPassword, hcClient);
     }
 
-    /** 获取IAM用户Token（使用密码+虚拟MFA） 该接口可以用于通过用户名/密码+虚拟MFA的方式进行认证，在IAM用户开启了的登录保护功能，并选择通过虚拟MFA验证时获取IAM用户token。
+    /**
+     * 获取IAM用户Token（使用密码+虚拟MFA）
+     *
+     * 该接口可以用于通过用户名/密码+虚拟MFA的方式进行认证，在IAM用户开启了的登录保护功能，并选择通过虚拟MFA验证时获取IAM用户token。
+     * 
      * token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。 &gt; -
-     * 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。 &gt; -
-     * 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
+     * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
-     * @return KeystoneCreateUserTokenByPasswordAndMfaResponse */
+     * @return KeystoneCreateUserTokenByPasswordAndMfaResponse
+     */
     public KeystoneCreateUserTokenByPasswordAndMfaResponse keystoneCreateUserTokenByPasswordAndMfa(
         KeystoneCreateUserTokenByPasswordAndMfaRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateUserTokenByPasswordAndMfa);
     }
 
-    /** 获取IAM用户Token（使用密码+虚拟MFA） 该接口可以用于通过用户名/密码+虚拟MFA的方式进行认证，在IAM用户开启了的登录保护功能，并选择通过虚拟MFA验证时获取IAM用户token。
+    /**
+     * 获取IAM用户Token（使用密码+虚拟MFA）
+     *
+     * 该接口可以用于通过用户名/密码+虚拟MFA的方式进行认证，在IAM用户开启了的登录保护功能，并选择通过虚拟MFA验证时获取IAM用户token。
+     * 
      * token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。 &gt; -
-     * 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。 &gt; -
-     * 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
+     * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
-     * @return SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest,
-     *         KeystoneCreateUserTokenByPasswordAndMfaResponse> */
+     * @return SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse>
+     */
     public SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> keystoneCreateUserTokenByPasswordAndMfaInvoker(
         KeystoneCreateUserTokenByPasswordAndMfaRequest request) {
         return new SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse>(
             request, IamMeta.keystoneCreateUserTokenByPasswordAndMfa, hcClient);
     }
 
-    /** 校验Token的有效性
+    /**
+     * 校验Token的有效性
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)校验本账号中IAM用户token的有效性，或IAM用户校验自己token的有效性。管理员仅能校验本账号中IAM用户token的有效性，不能校验其他账号中IAM用户token的有效性。如果被校验的token有效，则返回该token的详细信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneValidateTokenRequest 请求对象
-     * @return KeystoneValidateTokenResponse */
+     * @return KeystoneValidateTokenResponse
+     */
     public KeystoneValidateTokenResponse keystoneValidateToken(KeystoneValidateTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneValidateToken);
     }
 
-    /** 校验Token的有效性
+    /**
+     * 校验Token的有效性
+     *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)校验本账号中IAM用户token的有效性，或IAM用户校验自己token的有效性。管理员仅能校验本账号中IAM用户token的有效性，不能校验其他账号中IAM用户token的有效性。如果被校验的token有效，则返回该token的详细信息。
+     * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
      *
      * @param KeystoneValidateTokenRequest 请求对象
-     * @return SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> */
+     * @return SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse>
+     */
     public SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> keystoneValidateTokenInvoker(
         KeystoneValidateTokenRequest request) {
         return new SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse>(request,

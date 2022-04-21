@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateManualBackupRequestBody */
+/**
+ * CreateManualBackupRequestBody
+ */
 public class CreateManualBackupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class CreateManualBackupRequestBody {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -52,9 +55,10 @@ public class CreateManualBackupRequestBody {
         return this;
     }
 
-    /** 备份名称，4~64个字符，必须以英文字母开头，区分大小写，可以包含英文字母、数字、中划线或者下划线，不能包含其他特殊字符。
-     * 
-     * @return name */
+    /**
+     * 备份名称，4~64个字符，必须以英文字母开头，区分大小写，可以包含英文字母、数字、中划线或者下划线，不能包含其他特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -68,9 +72,10 @@ public class CreateManualBackupRequestBody {
         return this;
     }
 
-    /** 备份描述，不能包含>!<\"&'=特殊字符，不大于256个字符。
-     * 
-     * @return description */
+    /**
+     * 备份描述，不能包含>!<\"&'=特殊字符，不大于256个字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,9 +105,10 @@ public class CreateManualBackupRequestBody {
         return this;
     }
 
-    /** 只支持Microsoft SQL Server，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
-     * 
-     * @return databases */
+    /**
+     * 只支持Microsoft SQL Server，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
+     * @return databases
+     */
     public List<BackupDatabase> getDatabases() {
         return databases;
     }
@@ -143,7 +149,10 @@ public class CreateManualBackupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 会场选看请求体 */
+/**
+ * 会场选看请求体
+ */
 public class RestParticipantViewReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RestParticipantViewReqBody {
         return this;
     }
 
-    /** 选看类型。 - 2: 选看会场。
-     * 
-     * @return viewType */
+    /**
+     * 选看类型。 - 2: 选看会场。
+     * @return viewType
+     */
     public Integer getViewType() {
         return viewType;
     }
@@ -39,9 +42,10 @@ public class RestParticipantViewReqBody {
         return this;
     }
 
-    /** 被选看的与会者标识。
-     * 
-     * @return participantID */
+    /**
+     * 被选看的与会者标识。
+     * @return participantID
+     */
     public String getParticipantID() {
         return participantID;
     }
@@ -78,7 +82,10 @@ public class RestParticipantViewReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

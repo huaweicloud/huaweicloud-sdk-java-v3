@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** TriggerHistories */
+/**
+ * TriggerHistories
+ */
 public class TriggerHistories {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,9 +80,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 触发动作，update
-     * 
-     * @return action */
+    /**
+     * 触发动作，update
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -94,9 +97,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 应用类型，deployments、statefulsets
-     * 
-     * @return appType */
+    /**
+     * 应用类型，deployments、statefulsets
+     * @return appType
+     */
     public String getAppType() {
         return appType;
     }
@@ -110,9 +114,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 应用名
-     * 
-     * @return application */
+    /**
+     * 应用名
+     * @return application
+     */
     public String getApplication() {
         return application;
     }
@@ -126,9 +131,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 集群ID（cci时为空）
-     * 
-     * @return clusterId */
+    /**
+     * 集群ID（cci时为空）
+     * @return clusterId
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -142,9 +148,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 集群名（cci时为空）
-     * 
-     * @return clusterName */
+    /**
+     * 集群名（cci时为空）
+     * @return clusterName
+     */
     public String getClusterName() {
         return clusterName;
     }
@@ -158,9 +165,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 应用名所在的namespace
-     * 
-     * @return clusterNs */
+    /**
+     * 应用名所在的namespace
+     * @return clusterNs
+     */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -174,9 +182,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * 
-     * @return condition */
+    /**
+     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * @return condition
+     */
     public String getCondition() {
         return condition;
     }
@@ -190,9 +199,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 需更新的container名，默认为所有container
-     * 
-     * @return container */
+    /**
+     * 需更新的container名，默认为所有container
+     * @return container
+     */
     public String getContainer() {
         return container;
     }
@@ -206,9 +216,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 创建时间
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -222,9 +233,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 创建人
-     * 
-     * @return creatorName */
+    /**
+     * 创建人
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -238,9 +250,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 详情
-     * 
-     * @return detail */
+    /**
+     * 详情
+     * @return detail
+     */
     public String getDetail() {
         return detail;
     }
@@ -254,9 +267,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 更新结果，success、failed
-     * 
-     * @return result */
+    /**
+     * 更新结果，success、failed
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -270,9 +284,10 @@ public class TriggerHistories {
         return this;
     }
 
-    /** 触发的版本号
-     * 
-     * @return tag */
+    /**
+     * 触发的版本号
+     * @return tag
+     */
     public String getTag() {
         return tag;
     }
@@ -342,7 +357,10 @@ public class TriggerHistories {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

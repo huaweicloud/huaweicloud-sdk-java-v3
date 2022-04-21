@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BillSumInfoV2 */
+/**
+ * BillSumInfoV2
+ */
 public class BillSumInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,9 +83,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 客户账号ID。
-     * 
-     * @return customerId */
+    /**
+     * 客户账号ID。
+     * @return customerId
+     */
     public String getCustomerId() {
         return customerId;
     }
@@ -97,9 +100,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
-     * 
-     * @return cloudServiceType */
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * @return cloudServiceType
+     */
     public String getCloudServiceType() {
         return cloudServiceType;
     }
@@ -113,9 +117,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
-     * 
-     * @return cloudServiceTypeName */
+    /**
+     * 云服务类型名称。例如ECS的云服务类型名称为“弹性云服务器”。
+     * @return cloudServiceTypeName
+     */
     public String getCloudServiceTypeName() {
         return cloudServiceTypeName;
     }
@@ -129,9 +134,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 账单类型。 0：正常1：退订2：华为核销
-     * 
-     * @return billType */
+    /**
+     * 账单类型。 0：正常1：退订2：华为核销
+     * @return billType
+     */
     public String getBillType() {
         return billType;
     }
@@ -145,9 +151,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 计费模式。 1：包年/包月3: 按需
-     * 
-     * @return chargeMode */
+    /**
+     * 计费模式。 1：包年/包月3: 按需
+     * @return chargeMode
+     */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -161,9 +168,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 金额。 对于billType=1或者2的账单，该金额为负值。
-     * 
-     * @return amount */
+    /**
+     * 金额。 对于billType=1或者2的账单，该金额为负值。
+     * @return amount
+     */
     public Double getAmount() {
         return amount;
     }
@@ -177,9 +185,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。
-     * 
-     * @return debtAmount */
+    /**
+     * 欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -193,9 +202,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 核销欠款，华为核销或者退订的时候没有该字段。
-     * 
-     * @return adjustmentAmount */
+    /**
+     * 核销欠款，华为核销或者退订的时候没有该字段。
+     * @return adjustmentAmount
+     */
     public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
@@ -209,9 +219,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 折扣金额，华为核销或者退订的时候没有该字段。
-     * 
-     * @return discountAmount */
+    /**
+     * 折扣金额，华为核销或者退订的时候没有该字段。
+     * @return discountAmount
+     */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -225,9 +236,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 金额单位。 1：元
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -257,9 +269,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 按不同账户消费类型和付费方式区分的支付总金额。 具体请参见表3。
-     * 
-     * @return accountDetails */
+    /**
+     * 按不同账户消费类型和付费方式区分的支付总金额。 具体请参见表3。
+     * @return accountDetails
+     */
     public List<BalanceTypeDeductSumV2> getAccountDetails() {
         return accountDetails;
     }
@@ -273,9 +286,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。
-     * 
-     * @return resourceTypeCode */
+    /**
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。
+     * @return resourceTypeCode
+     */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -289,9 +303,10 @@ public class BillSumInfoV2 {
         return this;
     }
 
-    /** 资源类型名称。例如ECS的资源类型名称为“云主机”。
-     * 
-     * @return resourceTypeName */
+    /**
+     * 资源类型名称。例如ECS的资源类型名称为“云主机”。
+     * @return resourceTypeName
+     */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -362,7 +377,10 @@ public class BillSumInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

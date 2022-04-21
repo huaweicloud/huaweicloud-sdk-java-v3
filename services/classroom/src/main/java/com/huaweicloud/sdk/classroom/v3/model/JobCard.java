@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** JobCard */
+/**
+ * JobCard
+ */
 public class JobCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业名称
-     * 
-     * @return name */
+    /**
+     * 作业名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -79,9 +82,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业ID
-     * 
-     * @return jobId */
+    /**
+     * 作业ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -95,9 +99,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业下发状态(unsend:作业未下发, send:作业已下发)
-     * 
-     * @return isSend */
+    /**
+     * 作业下发状态(unsend:作业未下发, send:作业已下发)
+     * @return isSend
+     */
     public String getIsSend() {
         return isSend;
     }
@@ -111,9 +116,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return endTime */
+    /**
+     * 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -127,9 +133,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业均分
-     * 
-     * @return averageScore */
+    /**
+     * 作业均分
+     * @return averageScore
+     */
     public String getAverageScore() {
         return averageScore;
     }
@@ -143,9 +150,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业提交人数
-     * 
-     * @return submitJobNum */
+    /**
+     * 作业提交人数
+     * @return submitJobNum
+     */
     public Integer getSubmitJobNum() {
         return submitJobNum;
     }
@@ -159,9 +167,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业创建状态(yes:作业可以下发, no:作业不能下发)
-     * 
-     * @return createStatus */
+    /**
+     * 作业创建状态(yes:作业可以下发, no:作业不能下发)
+     * @return createStatus
+     */
     public String getCreateStatus() {
         return createStatus;
     }
@@ -175,9 +184,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业下发类型(specific:指定成员下发, all:下发课堂全员)
-     * 
-     * @return sendType */
+    /**
+     * 作业下发类型(specific:指定成员下发, all:下发课堂全员)
+     * @return sendType
+     */
     public String getSendType() {
         return sendType;
     }
@@ -191,9 +201,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
-     * 
-     * @return isScoreVisibility */
+    /**
+     * 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
+     * @return isScoreVisibility
+     */
     public String getIsScoreVisibility() {
         return isScoreVisibility;
     }
@@ -207,9 +218,10 @@ public class JobCard {
         return this;
     }
 
-    /** 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * 
-     * @return sendTime */
+    /**
+     * 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * @return sendTime
+     */
     public String getSendTime() {
         return sendTime;
     }
@@ -269,7 +281,10 @@ public class JobCard {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

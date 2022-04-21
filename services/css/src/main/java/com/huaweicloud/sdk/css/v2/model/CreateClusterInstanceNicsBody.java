@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 子网信息。 */
+/**
+ * 子网信息。
+ */
 public class CreateClusterInstanceNicsBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateClusterInstanceNicsBody {
         return this;
     }
 
-    /** 指定虚拟私有云ID，用于集群网络配置。
-     * 
-     * @return vpcId */
+    /**
+     * 指定虚拟私有云ID，用于集群网络配置。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -44,9 +47,10 @@ public class CreateClusterInstanceNicsBody {
         return this;
     }
 
-    /** 子网ID(网络ID)，其中一个搜索集群所有实例的子网和安全组必须相同。
-     * 
-     * @return netId */
+    /**
+     * 子网ID(网络ID)，其中一个搜索集群所有实例的子网和安全组必须相同。
+     * @return netId
+     */
     public String getNetId() {
         return netId;
     }
@@ -60,9 +64,10 @@ public class CreateClusterInstanceNicsBody {
         return this;
     }
 
-    /** 安全组ID，其中一个搜索集群所有实例的子网和安全组必须相同。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID，其中一个搜索集群所有实例的子网和安全组必须相同。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -101,7 +106,10 @@ public class CreateClusterInstanceNicsBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

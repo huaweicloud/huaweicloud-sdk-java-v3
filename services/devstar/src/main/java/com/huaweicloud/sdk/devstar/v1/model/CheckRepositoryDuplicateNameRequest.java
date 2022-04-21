@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CheckRepositoryDuplicateNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CheckRepositoryDuplicateNameRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public String getXLanguage() {
@@ -51,9 +54,10 @@ public class CheckRepositoryDuplicateNameRequest {
         return this;
     }
 
-    /** 项目id
-     * 
-     * @return projectId */
+    /**
+     * 项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -67,9 +71,10 @@ public class CheckRepositoryDuplicateNameRequest {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return name */
+    /**
+     * 仓库名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -83,9 +88,10 @@ public class CheckRepositoryDuplicateNameRequest {
         return this;
     }
 
-    /** 区域id
-     * 
-     * @return regionId */
+    /**
+     * 区域id
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -127,7 +133,10 @@ public class CheckRepositoryDuplicateNameRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

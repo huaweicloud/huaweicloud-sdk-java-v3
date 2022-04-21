@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** SubjectAlternativeName */
+/**
+ * SubjectAlternativeName
+ */
 public class SubjectAlternativeName {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class SubjectAlternativeName {
         return this;
     }
 
-    /** 备用名称类型，当前仅支持DNS与IP。 - **DNS** - **IP**
-     * 
-     * @return type */
+    /**
+     * 备用名称类型，当前仅支持DNS与IP。 - **DNS** - **IP**
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -39,9 +42,10 @@ public class SubjectAlternativeName {
         return this;
     }
 
-    /** 对应备用名称类型的值。 - DNS类型，长度为0~253； - IP类型，长度为0~39。
-     * 
-     * @return value */
+    /**
+     * 对应备用名称类型的值。   - DNS类型，长度为0~253；   - IP类型，长度为0~39。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -78,7 +82,10 @@ public class SubjectAlternativeName {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

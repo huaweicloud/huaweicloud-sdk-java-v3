@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** LinksInfoResponse */
+/**
+ * LinksInfoResponse
+ */
 public class LinksInfoResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class LinksInfoResponse {
         return this;
     }
 
-    /** 对应该API的URL
-     * 
-     * @return href */
+    /**
+     * 对应该API的URL
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -39,9 +42,10 @@ public class LinksInfoResponse {
         return this;
     }
 
-    /** 取值为“self”，表示href为本地链接。
-     * 
-     * @return rel */
+    /**
+     * 取值为“self”，表示href为本地链接。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -77,7 +81,10 @@ public class LinksInfoResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

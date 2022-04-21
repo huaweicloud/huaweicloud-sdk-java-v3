@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 触发器结构体 */
+/**
+ * 触发器结构体
+ */
 public class OBSTriggerConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class OBSTriggerConfig {
         return this;
     }
 
-    /** OBS桶名（trigger_type为OBS时配置）
-     * 
-     * @return bucket */
+    /**
+     * OBS桶名（trigger_type为OBS时配置）
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -68,9 +71,10 @@ public class OBSTriggerConfig {
         return this;
     }
 
-    /** OBS事件列表（trigger_type为OBS时配置）
-     * 
-     * @return events */
+    /**
+     * OBS事件列表（trigger_type为OBS时配置）
+     * @return events
+     */
     public List<String> getEvents() {
         return events;
     }
@@ -84,9 +88,10 @@ public class OBSTriggerConfig {
         return this;
     }
 
-    /** 对象名前缀（trigger_type为OBS时配置）
-     * 
-     * @return prefix */
+    /**
+     * 对象名前缀（trigger_type为OBS时配置）
+     * @return prefix
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -100,9 +105,10 @@ public class OBSTriggerConfig {
         return this;
     }
 
-    /** 对象名后缀（trigger_type为OBS时配置）
-     * 
-     * @return suffix */
+    /**
+     * 对象名后缀（trigger_type为OBS时配置）
+     * @return suffix
+     */
     public String getSuffix() {
         return suffix;
     }
@@ -143,7 +149,10 @@ public class OBSTriggerConfig {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

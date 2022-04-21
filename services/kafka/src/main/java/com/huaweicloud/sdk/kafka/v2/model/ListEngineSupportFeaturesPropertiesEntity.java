@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 实例支持的功能属性描述。 */
+/**
+ * 实例支持的功能属性描述。
+ */
 public class ListEngineSupportFeaturesPropertiesEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListEngineSupportFeaturesPropertiesEntity {
         return this;
     }
 
-    /** 转储功能的最大任务数。
-     * 
-     * @return maxTask */
+    /**
+     * 转储功能的最大任务数。
+     * @return maxTask
+     */
     public String getMaxTask() {
         return maxTask;
     }
@@ -49,9 +52,10 @@ public class ListEngineSupportFeaturesPropertiesEntity {
         return this;
     }
 
-    /** 转储功能的最小任务数。
-     * 
-     * @return minTask */
+    /**
+     * 转储功能的最小任务数。
+     * @return minTask
+     */
     public String getMinTask() {
         return minTask;
     }
@@ -65,9 +69,10 @@ public class ListEngineSupportFeaturesPropertiesEntity {
         return this;
     }
 
-    /** 转储功能的最大节点数。
-     * 
-     * @return maxNode */
+    /**
+     * 转储功能的最大节点数。
+     * @return maxNode
+     */
     public String getMaxNode() {
         return maxNode;
     }
@@ -81,9 +86,10 @@ public class ListEngineSupportFeaturesPropertiesEntity {
         return this;
     }
 
-    /** 转储功能的最小节点数。
-     * 
-     * @return minNode */
+    /**
+     * 转储功能的最小节点数。
+     * @return minNode
+     */
     public String getMinNode() {
         return minNode;
     }
@@ -125,7 +131,10 @@ public class ListEngineSupportFeaturesPropertiesEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

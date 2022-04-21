@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CdnIps */
+/**
+ * CdnIps
+ */
 public class CdnIps {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class CdnIps {
         return this;
     }
 
-    /** 需查询的IP地址。
-     * 
-     * @return ip */
+    /**
+     * 需查询的IP地址。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -54,9 +57,10 @@ public class CdnIps {
         return this;
     }
 
-    /** 是否是华为云CDN节点。（true:是华为云CDN节点，false:不是华为云CDN节点）
-     * 
-     * @return belongs */
+    /**
+     * 是否是华为云CDN节点。（true:是华为云CDN节点，false:不是华为云CDN节点）
+     * @return belongs
+     */
     public Boolean getBelongs() {
         return belongs;
     }
@@ -70,9 +74,10 @@ public class CdnIps {
         return this;
     }
 
-    /** IP归属地省份。（Unknown:表示未知归属地）
-     * 
-     * @return region */
+    /**
+     * IP归属地省份。（Unknown:表示未知归属地）
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -86,9 +91,10 @@ public class CdnIps {
         return this;
     }
 
-    /** 运营商名称。如果IP归属地未知，该字段返回null。
-     * 
-     * @return isp */
+    /**
+     * 运营商名称。如果IP归属地未知，该字段返回null。
+     * @return isp
+     */
     public String getIsp() {
         return isp;
     }
@@ -102,9 +108,10 @@ public class CdnIps {
         return this;
     }
 
-    /** 平台。如果IP归属地未知，该字段返回null。
-     * 
-     * @return platform */
+    /**
+     * 平台。如果IP归属地未知，该字段返回null。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -145,7 +152,10 @@ public class CdnIps {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

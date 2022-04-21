@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ProPricePlanVo */
+/**
+ * ProPricePlanVo
+ */
 public class ProPricePlanVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,9 +95,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐ID
-     * 
-     * @return pricePlanId */
+    /**
+     * 套餐ID
+     * @return pricePlanId
+     */
     public String getPricePlanId() {
         return pricePlanId;
     }
@@ -109,9 +112,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐名称
-     * 
-     * @return pricePlanName */
+    /**
+     * 套餐名称
+     * @return pricePlanName
+     */
     public String getPricePlanName() {
         return pricePlanName;
     }
@@ -125,9 +129,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return description */
+    /**
+     * 描述
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -141,9 +146,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 流量总量(MB)
-     * 
-     * @return flowTotal */
+    /**
+     * 流量总量(MB)
+     * @return flowTotal
+     */
     public Long getFlowTotal() {
         return flowTotal;
     }
@@ -157,9 +163,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐类型 1基础套餐;2叠加包套餐;如果是国际漫游不区分基础套餐包和叠加包
-     * 
-     * @return packageType */
+    /**
+     * 套餐类型 1基础套餐;2叠加包套餐;如果是国际漫游不区分基础套餐包和叠加包
+     * @return packageType
+     */
     public Integer getPackageType() {
         return packageType;
     }
@@ -173,9 +180,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐周期
-     * 
-     * @return period */
+    /**
+     * 套餐周期
+     * @return period
+     */
     public Integer getPeriod() {
         return period;
     }
@@ -189,9 +197,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐周期类型 10:日;20:月;30:季;40:半年;50:年
-     * 
-     * @return periodType */
+    /**
+     * 套餐周期类型 10:日;20:月;30:季;40:半年;50:年
+     * @return periodType
+     */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -205,9 +214,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐生效类型 1.订购后激活使用时生效 2.订购即时生效 3.订购下个月开始生效
-     * 
-     * @return effectType */
+    /**
+     * 套餐生效类型 1.订购后激活使用时生效 2.订购即时生效 3.订购下个月开始生效
+     * @return effectType
+     */
     public Integer getEffectType() {
         return effectType;
     }
@@ -221,9 +231,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 沉默期
-     * 
-     * @return silentPeriodDay */
+    /**
+     * 沉默期
+     * @return silentPeriodDay
+     */
     public Integer getSilentPeriodDay() {
         return silentPeriodDay;
     }
@@ -237,9 +248,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 沉默期单位 1.年 2.月 3.日
-     * 
-     * @return silentPeriodUnit */
+    /**
+     * 沉默期单位 1.年 2.月 3.日
+     * @return silentPeriodUnit
+     */
     public Integer getSilentPeriodUnit() {
         return silentPeriodUnit;
     }
@@ -253,9 +265,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 是否自动续订
-     * 
-     * @return autoRenew */
+    /**
+     * 是否自动续订
+     * @return autoRenew
+     */
     public Boolean getAutoRenew() {
         return autoRenew;
     }
@@ -269,9 +282,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 套餐适用区域
-     * 
-     * @return locationDesc */
+    /**
+     * 套餐适用区域
+     * @return locationDesc
+     */
     public String getLocationDesc() {
         return locationDesc;
     }
@@ -285,9 +299,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 区域 1.中国 2.欧洲 3.大洋洲 4.非洲 5.亚太
-     * 
-     * @return locationType */
+    /**
+     * 区域 1.中国 2.欧洲 3.大洋洲 4.非洲 5.亚太
+     * @return locationType
+     */
     public Integer getLocationType() {
         return locationType;
     }
@@ -301,9 +316,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** SIM卡类型 1.vSIM 2.eSIM 3.实体卡
-     * 
-     * @return simType */
+    /**
+     * SIM卡类型 1.vSIM 2.eSIM 3.实体卡
+     * @return simType
+     */
     public Integer getSimType() {
         return simType;
     }
@@ -317,10 +333,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 运营商 101/1 中国移动/中国移动（实体卡） 102/2中国电信/中国电信（实体卡） 3中国联通（实体卡） 201.欧洲 501.中国香港 502.中国澳门 503.泰国 504.日本 505.柬埔寨 506.印度尼西亚
-     * 507.马来西亚 508.新加坡 509.斯里兰卡 510.中国台湾 511.孟加拉
-     * 
-     * @return carrierType */
+    /**
+     * 运营商 101/1 中国移动/中国移动（实体卡） 102/2中国电信/中国电信（实体卡） 3中国联通（实体卡） 201.欧洲 501.中国香港 502.中国澳门 503.泰国 504.日本 505.柬埔寨 506.印度尼西亚 507.马来西亚 508.新加坡 509.斯里兰卡 510.中国台湾 511.孟加拉 
+     * @return carrierType
+     */
     public Integer getCarrierType() {
         return carrierType;
     }
@@ -334,9 +350,10 @@ public class ProPricePlanVo {
         return this;
     }
 
-    /** 价格(分)
-     * 
-     * @return price */
+    /**
+     * 价格(分)
+     * @return price
+     */
     public Integer getPrice() {
         return price;
     }
@@ -416,7 +433,10 @@ public class ProPricePlanVo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -25,9 +25,10 @@ public class NeutronCreateSecurityGroupOption {
         return this;
     }
 
-    /** 功能说明：安全组描述 取值范围：0-255个字符
-     * 
-     * @return description */
+    /**
+     * 功能说明：安全组描述 取值范围：0-255个字符
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -41,9 +42,10 @@ public class NeutronCreateSecurityGroupOption {
         return this;
     }
 
-    /** 功能说明：安全组名称 取值范围：0-255个字符 约束：不允许为“default”
-     * 
-     * @return name */
+    /**
+     * 功能说明：安全组名称 取值范围：0-255个字符 约束：不允许为“default”
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -80,7 +82,10 @@ public class NeutronCreateSecurityGroupOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

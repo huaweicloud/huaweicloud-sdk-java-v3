@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowStatisticalDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库名称
-     * 
-     * @return repoName */
+    /**
+     * 仓库名称
+     * @return repoName
+     */
     public String getRepoName() {
         return repoName;
     }
@@ -65,9 +68,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 提交次数
-     * 
-     * @return commitCount */
+    /**
+     * 提交次数
+     * @return commitCount
+     */
     public Integer getCommitCount() {
         return commitCount;
     }
@@ -81,9 +85,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 仓库容量
-     * 
-     * @return repoSize */
+    /**
+     * 仓库容量
+     * @return repoSize
+     */
     public String getRepoSize() {
         return repoSize;
     }
@@ -97,9 +102,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 最近一次提交时间
-     * 
-     * @return lastCommitTime */
+    /**
+     * 最近一次提交时间
+     * @return lastCommitTime
+     */
     public String getLastCommitTime() {
         return lastCommitTime;
     }
@@ -113,9 +119,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码行数
-     * 
-     * @return codeLines */
+    /**
+     * 代码行数
+     * @return codeLines
+     */
     public Integer getCodeLines() {
         return codeLines;
     }
@@ -129,9 +136,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 分支数量
-     * 
-     * @return branchCount */
+    /**
+     * 分支数量
+     * @return branchCount
+     */
     public Integer getBranchCount() {
         return branchCount;
     }
@@ -145,9 +153,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return this;
     }
 
-    /** 代码仓下载地址
-     * 
-     * @return archiveUrl */
+    /**
+     * 代码仓下载地址
+     * @return archiveUrl
+     */
     public String getArchiveUrl() {
         return archiveUrl;
     }
@@ -194,7 +203,10 @@ public class ShowStatisticalDataResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

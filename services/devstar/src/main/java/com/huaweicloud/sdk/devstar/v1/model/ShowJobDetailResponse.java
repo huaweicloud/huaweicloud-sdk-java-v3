@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowJobDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务的id。
-     * 
-     * @return id */
+    /**
+     * 任务的id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -55,9 +58,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务的名称。
-     * 
-     * @return name */
+    /**
+     * 任务的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -71,9 +75,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务的状态。
-     * 
-     * @return jobStatus */
+    /**
+     * 任务的状态。
+     * @return jobStatus
+     */
     public Object getJobStatus() {
         return jobStatus;
     }
@@ -87,9 +92,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务结果信息。
-     * 
-     * @return jobResult */
+    /**
+     * 任务结果信息。
+     * @return jobResult
+     */
     public String getJobResult() {
         return jobResult;
     }
@@ -103,9 +109,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    /** 任务显示类型，页面显示使用字段
-     * 
-     * @return showType */
+    /**
+     * 任务显示类型，页面显示使用字段
+     * @return showType
+     */
     public String getShowType() {
         return showType;
     }
@@ -148,7 +155,10 @@ public class ShowJobDetailResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

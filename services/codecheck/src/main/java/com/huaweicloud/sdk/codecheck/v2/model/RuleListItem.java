@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RuleListItem */
+/**
+ * RuleListItem
+ */
 public class RuleListItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则集规范分类
-     * 
-     * @return ruleSet */
+    /**
+     * 规则集规范分类
+     * @return ruleSet
+     */
     public String getRuleSet() {
         return ruleSet;
     }
@@ -79,9 +82,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则id
-     * 
-     * @return ruleId */
+    /**
+     * 规则id
+     * @return ruleId
+     */
     public String getRuleId() {
         return ruleId;
     }
@@ -95,9 +99,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则所属语言
-     * 
-     * @return ruleLanguage */
+    /**
+     * 规则所属语言
+     * @return ruleLanguage
+     */
     public String getRuleLanguage() {
         return ruleLanguage;
     }
@@ -111,9 +116,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则名称
-     * 
-     * @return ruleName */
+    /**
+     * 规则名称
+     * @return ruleName
+     */
     public String getRuleName() {
         return ruleName;
     }
@@ -127,9 +133,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则问题级别
-     * 
-     * @return ruleSeverity */
+    /**
+     * 规则问题级别
+     * @return ruleSeverity
+     */
     public String getRuleSeverity() {
         return ruleSeverity;
     }
@@ -143,9 +150,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则标签
-     * 
-     * @return ruleTages */
+    /**
+     * 规则标签
+     * @return ruleTages
+     */
     public String getRuleTages() {
         return ruleTages;
     }
@@ -159,9 +167,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 正确示例
-     * 
-     * @return rightExample */
+    /**
+     * 正确示例
+     * @return rightExample
+     */
     public String getRightExample() {
         return rightExample;
     }
@@ -175,9 +184,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 错误示例
-     * 
-     * @return errorExample */
+    /**
+     * 错误示例
+     * @return errorExample
+     */
     public String getErrorExample() {
         return errorExample;
     }
@@ -191,9 +201,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 修改建议
-     * 
-     * @return reviseOpinion */
+    /**
+     * 修改建议
+     * @return reviseOpinion
+     */
     public String getReviseOpinion() {
         return reviseOpinion;
     }
@@ -207,9 +218,10 @@ public class RuleListItem {
         return this;
     }
 
-    /** 规则描述
-     * 
-     * @return ruleDesc */
+    /**
+     * 规则描述
+     * @return ruleDesc
+     */
     public String getRuleDesc() {
         return ruleDesc;
     }
@@ -270,7 +282,10 @@ public class RuleListItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

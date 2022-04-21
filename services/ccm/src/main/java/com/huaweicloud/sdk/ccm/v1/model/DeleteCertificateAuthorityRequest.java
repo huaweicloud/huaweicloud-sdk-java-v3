@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteCertificateAuthorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeleteCertificateAuthorityRequest {
         return this;
     }
 
-    /** 所要计划删除的CA证书ID。
-     * 
-     * @return caId */
+    /**
+     * 所要计划删除的CA证书ID。
+     * @return caId
+     */
     public String getCaId() {
         return caId;
     }
@@ -39,9 +42,10 @@ public class DeleteCertificateAuthorityRequest {
         return this;
     }
 
-    /** 延迟删除时间，单位为”天“。
-     * 
-     * @return pendingDays */
+    /**
+     * 延迟删除时间，单位为”天“。
+     * @return pendingDays
+     */
     public String getPendingDays() {
         return pendingDays;
     }
@@ -78,7 +82,10 @@ public class DeleteCertificateAuthorityRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

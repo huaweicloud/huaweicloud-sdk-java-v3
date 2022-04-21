@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRepositoryByCloudIdeRequest {
 
-    /** 语言类型 中文:zh-cn 英文:en-us */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 语言类型 中文:zh-cn 英文:en-us
-     * 
-     * @return xLanguage */
+    /**
+     * 语言类型 中文:zh-cn 英文:en-us
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -142,9 +151,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 仓库id。
-     * 
-     * @return repositoryId */
+    /**
+     * 仓库id。
+     * @return repositoryId
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -158,9 +168,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 仓库下载地址。
-     * 
-     * @return repositorySshUrl */
+    /**
+     * 仓库下载地址。
+     * @return repositorySshUrl
+     */
     public String getRepositorySshUrl() {
         return repositorySshUrl;
     }
@@ -174,9 +185,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 区域ID，目前仅支持北京四：cn-north-4及北京一：cn-north-1。
-     * 
-     * @return regionId */
+    /**
+     * 区域ID，目前仅支持北京四：cn-north-4及北京一：cn-north-1。
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -190,9 +202,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 工作空间名称前缀，仅在is_open_last为false时生效，由用户自定义，支持大小写字母、中文、_、-，长度1-256。
-     * 
-     * @return spacePrefix */
+    /**
+     * 工作空间名称前缀，仅在is_open_last为false时生效，由用户自定义，支持大小写字母、中文、_、-，长度1-256。
+     * @return spacePrefix
+     */
     public String getSpacePrefix() {
         return spacePrefix;
     }
@@ -206,9 +219,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 是否打开上一次的工作空间，true表示打开上一次工作空间，如果没有上一次工作空间会返回空，false代表打开一个全新的工作空间。
-     * 
-     * @return isOpenLast */
+    /**
+     * 是否打开上一次的工作空间，true表示打开上一次工作空间，如果没有上一次工作空间会返回空，false代表打开一个全新的工作空间。
+     * @return isOpenLast
+     */
     public Boolean getIsOpenLast() {
         return isOpenLast;
     }
@@ -222,9 +236,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return this;
     }
 
-    /** 是否创建 CloudIDE 免费实例链接，true表示创建一个 CloudIDE 免费实例链接，false表示创建一个 CloudIDE 收费实例链接。
-     * 
-     * @return isFree */
+    /**
+     * 是否创建 CloudIDE 免费实例链接，true表示创建一个 CloudIDE 免费实例链接，false表示创建一个 CloudIDE 收费实例链接。
+     * @return isFree
+     */
     public Boolean getIsFree() {
         return isFree;
     }
@@ -271,7 +286,10 @@ public class ShowRepositoryByCloudIdeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

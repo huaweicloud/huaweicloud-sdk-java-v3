@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowLinkResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ShowLinkResponse extends SdkResponse {
         return this;
     }
 
-    /** 连接列表，请参见links数据结构说明
-     * 
-     * @return links */
+    /**
+     * 连接列表，请参见links数据结构说明
+     * @return links
+     */
     public List<Links> getLinks() {
         return links;
     }
@@ -64,9 +67,10 @@ public class ShowLinkResponse extends SdkResponse {
         return this;
     }
 
-    /** 表/文件迁移不支持哪些数据源迁移到哪些数据源
-     * 
-     * @return fromToUnMapping */
+    /**
+     * 表/文件迁移不支持哪些数据源迁移到哪些数据源
+     * @return fromToUnMapping
+     */
     public String getFromToUnMapping() {
         return fromToUnMapping;
     }
@@ -80,9 +84,10 @@ public class ShowLinkResponse extends SdkResponse {
         return this;
     }
 
-    /** 整库迁移支持哪些数据源迁移到哪些数据源
-     * 
-     * @return batchFromToMapping */
+    /**
+     * 整库迁移支持哪些数据源迁移到哪些数据源
+     * @return batchFromToMapping
+     */
     public String getBatchFromToMapping() {
         return batchFromToMapping;
     }
@@ -121,7 +126,10 @@ public class ShowLinkResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

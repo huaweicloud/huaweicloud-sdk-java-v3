@@ -31,9 +31,10 @@ public class ProtocolResult {
         return this;
     }
 
-    /** 协议ID。
-     * 
-     * @return id */
+    /**
+     * 协议ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -47,9 +48,10 @@ public class ProtocolResult {
         return this;
     }
 
-    /** 映射ID。
-     * 
-     * @return mappingId */
+    /**
+     * 映射ID。
+     * @return mappingId
+     */
     public String getMappingId() {
         return mappingId;
     }
@@ -72,9 +74,10 @@ public class ProtocolResult {
         return this;
     }
 
-    /** Get links
-     * 
-     * @return links */
+    /**
+     * Get links
+     * @return links
+     */
     public ProtocolLinks getLinks() {
         return links;
     }
@@ -112,7 +115,10 @@ public class ProtocolResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

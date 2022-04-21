@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CreateConsumerGroupReq */
+/**
+ * CreateConsumerGroupReq
+ */
 public class CreateConsumerGroupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class CreateConsumerGroupReq {
         return this;
     }
 
-    /** 消费组信息。 每个队列最多能创建3个消费组，如果请求中的消费组个数超过3个，请求校验不通过，无法创建消费组。
-     * 
-     * @return groups */
+    /**
+     * 消费组信息。  每个队列最多能创建3个消费组，如果请求中的消费组个数超过3个，请求校验不通过，无法创建消费组。
+     * @return groups
+     */
     public List<GroupEntity> getGroups() {
         return groups;
     }
@@ -74,7 +77,10 @@ public class CreateConsumerGroupReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

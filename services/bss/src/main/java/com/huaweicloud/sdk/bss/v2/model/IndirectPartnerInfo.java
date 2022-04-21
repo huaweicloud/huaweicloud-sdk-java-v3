@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** IndirectPartnerInfo */
+/**
+ * IndirectPartnerInfo
+ */
 public class IndirectPartnerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商ID。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -69,9 +72,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商的手机号码。
-     * 
-     * @return mobilePhone */
+    /**
+     * 精英服务商的手机号码。
+     * @return mobilePhone
+     */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -85,9 +89,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商的邮箱。
-     * 
-     * @return email */
+    /**
+     * 精英服务商的邮箱。
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
@@ -101,9 +106,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商的账户名。
-     * 
-     * @return accountName */
+    /**
+     * 精英服务商的账户名。
+     * @return accountName
+     */
     public String getAccountName() {
         return accountName;
     }
@@ -117,9 +123,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商的名称。
-     * 
-     * @return name */
+    /**
+     * 精英服务商的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -133,9 +140,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 精英服务商关联华为云伙伴能力中心的时间。 UTC时间（包括时区），例如2016-03-28T00:00:00Z。
-     * 
-     * @return associatedOn */
+    /**
+     * 精英服务商关联华为云伙伴能力中心的时间。 UTC时间（包括时区），例如2016-03-28T00:00:00Z。
+     * @return associatedOn
+     */
     public String getAssociatedOn() {
         return associatedOn;
     }
@@ -149,9 +157,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 客户经理登录账户名。
-     * 
-     * @return accountManagerId */
+    /**
+     * 客户经理登录账户名。
+     * @return accountManagerId
+     */
     public String getAccountManagerId() {
         return accountManagerId;
     }
@@ -165,9 +174,10 @@ public class IndirectPartnerInfo {
         return this;
     }
 
-    /** 客户经理的名称。
-     * 
-     * @return accountManagerName */
+    /**
+     * 客户经理的名称。
+     * @return accountManagerName
+     */
     public String getAccountManagerName() {
         return accountManagerName;
     }
@@ -223,7 +233,10 @@ public class IndirectPartnerInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

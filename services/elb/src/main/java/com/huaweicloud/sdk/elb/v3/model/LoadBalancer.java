@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 负载均衡器的详细信息。 */
+/**
+ * 负载均衡器的详细信息。
+ */
 public class LoadBalancer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -166,13 +168,19 @@ public class LoadBalancer {
 
     private List<String> elbVirsubnetIds = null;
 
-    /** 下联面子网类型 - ipv4：ipv4 - dualstack：双栈 */
+    /**
+    * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
+    */
     public static final class ElbVirsubnetTypeEnum {
 
-        /** Enum IPV4 for value: "ipv4" */
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
         public static final ElbVirsubnetTypeEnum IPV4 = new ElbVirsubnetTypeEnum("ipv4");
 
-        /** Enum DUALSTACK for value: "dualstack" */
+        /**
+         * Enum DUALSTACK for value: "dualstack"
+         */
         public static final ElbVirsubnetTypeEnum DUALSTACK = new ElbVirsubnetTypeEnum("dualstack");
 
         private static final Map<String, ElbVirsubnetTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -272,9 +280,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器ID。
-     * 
-     * @return id */
+    /**
+     * 负载均衡器ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -288,9 +297,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器描述信息。
-     * 
-     * @return description */
+    /**
+     * 负载均衡器描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -304,9 +314,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
-     * 
-     * @return provisioningStatus */
+    /**
+     * 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+     * @return provisioningStatus
+     */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -320,9 +331,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的管理状态。固定为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 负载均衡器的管理状态。固定为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -336,9 +348,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的生产者名称。固定为vlb。
-     * 
-     * @return provider */
+    /**
+     * 负载均衡器的生产者名称。固定为vlb。
+     * @return provider
+     */
     public String getProvider() {
         return provider;
     }
@@ -368,9 +381,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器直接关联的后端云服务器组的ID列表。
-     * 
-     * @return pools */
+    /**
+     * 负载均衡器直接关联的后端云服务器组的ID列表。
+     * @return pools
+     */
     public List<PoolRef> getPools() {
         return pools;
     }
@@ -400,9 +414,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器关联的监听器的ID列表。
-     * 
-     * @return listeners */
+    /**
+     * 负载均衡器关联的监听器的ID列表。
+     * @return listeners
+     */
     public List<ListenerRef> getListeners() {
         return listeners;
     }
@@ -416,9 +431,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的操作状态。取值： - ONLINE：在线。
-     * 
-     * @return operatingStatus */
+    /**
+     * 负载均衡器的操作状态。取值： - ONLINE：在线。
+     * @return operatingStatus
+     */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -432,9 +448,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的名称。
-     * 
-     * @return name */
+    /**
+     * 负载均衡器的名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -448,9 +465,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器所属的项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 负载均衡器所属的项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -464,9 +482,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器所在子网的IPv4子网ID。
-     * 
-     * @return vipSubnetCidrId */
+    /**
+     * 负载均衡器所在子网的IPv4子网ID。
+     * @return vipSubnetCidrId
+     */
     public String getVipSubnetCidrId() {
         return vipSubnetCidrId;
     }
@@ -480,9 +499,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的IPv4虚拟IP地址。
-     * 
-     * @return vipAddress */
+    /**
+     * 负载均衡器的IPv4虚拟IP地址。
+     * @return vipAddress
+     */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -496,9 +516,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的IPv4对应的port ID。[创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return vipPortId */
+    /**
+     * 负载均衡器的IPv4对应的port ID。[创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
+     * @return vipPortId
+     */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -528,9 +549,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡的标签列表。
-     * 
-     * @return tags */
+    /**
+     * 负载均衡的标签列表。
+     * @return tags
+     */
     public List<Tag> getTags() {
         return tags;
     }
@@ -544,9 +566,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return createdAt */
+    /**
+     * 负载均衡器的创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -560,9 +583,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
-     * 
-     * @return updatedAt */
+    /**
+     * 负载均衡器的更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -576,9 +600,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否独享型LB，取值： - false：共享型。 - true：独享型。
-     * 
-     * @return guaranteed */
+    /**
+     * 是否独享型LB，取值： - false：共享型。 - true：独享型。
+     * @return guaranteed
+     */
     public Boolean getGuaranteed() {
         return guaranteed;
     }
@@ -592,9 +617,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器所在VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * 负载均衡器所在VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -624,9 +650,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器绑定的EIP。只支持绑定一个EIP。 注：该字段与publicips一致。
-     * 
-     * @return eips */
+    /**
+     * 负载均衡器绑定的EIP。只支持绑定一个EIP。  注：该字段与publicips一致。
+     * @return eips
+     */
     public List<EipInfo> getEips() {
         return eips;
     }
@@ -640,9 +667,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 双栈类型负载均衡器的IPv6地址。 [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipAddress */
+    /**
+     * 双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipAddress
+     */
     public String getIpv6VipAddress() {
         return ipv6VipAddress;
     }
@@ -656,9 +684,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 双栈类型负载均衡器所在子网的IPv6网络ID。 [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipVirsubnetId */
+    /**
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipVirsubnetId
+     */
     public String getIpv6VipVirsubnetId() {
         return ipv6VipVirsubnetId;
     }
@@ -672,9 +701,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 双栈类型负载均衡器的IPv6对应的port ID。 [不支持IPv6，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipv6VipPortId */
+    /**
+     * 双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * @return ipv6VipPortId
+     */
     public String getIpv6VipPortId() {
         return ipv6VipPortId;
     }
@@ -704,9 +734,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器所在的可用区列表。
-     * 
-     * @return availabilityZoneList */
+    /**
+     * 负载均衡器所在的可用区列表。
+     * @return availabilityZoneList
+     */
     public List<String> getAvailabilityZoneList() {
         return availabilityZoneList;
     }
@@ -720,9 +751,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 企业项目ID。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -736,9 +768,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 四层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
-     * 
-     * @return l4FlavorId */
+    /**
+     * 四层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+     * @return l4FlavorId
+     */
     public String getL4FlavorId() {
         return l4FlavorId;
     }
@@ -752,9 +785,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 四层弹性Flavor ID。 不支持该字段，请勿使用。
-     * 
-     * @return l4ScaleFlavorId */
+    /**
+     * 四层弹性Flavor ID。  不支持该字段，请勿使用。
+     * @return l4ScaleFlavorId
+     */
     public String getL4ScaleFlavorId() {
         return l4ScaleFlavorId;
     }
@@ -768,9 +802,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 七层Flavor ID。 [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
-     * 
-     * @return l7FlavorId */
+    /**
+     * 七层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+     * @return l7FlavorId
+     */
     public String getL7FlavorId() {
         return l7FlavorId;
     }
@@ -784,9 +819,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 七层弹性Flavor ID。 不支持该字段，请勿使用。
-     * 
-     * @return l7ScaleFlavorId */
+    /**
+     * 七层弹性Flavor ID。  不支持该字段，请勿使用。
+     * @return l7ScaleFlavorId
+     */
     public String getL7ScaleFlavorId() {
         return l7ScaleFlavorId;
     }
@@ -816,9 +852,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器绑定的公网IP。只支持绑定一个公网IP。 注：该字段与eips一致。
-     * 
-     * @return publicips */
+    /**
+     * 负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
+     * @return publicips
+     */
     public List<PublicIpInfo> getPublicips() {
         return publicips;
     }
@@ -848,10 +885,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： -
-     * 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。 - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 - 下联面子网必须属于该LB所在的VPC。 - 不支持边缘云子网。
-     * 
-     * @return elbVirsubnetIds */
+    /**
+     * 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。  - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。  - 下联面子网必须属于该LB所在的VPC。  - 不支持边缘云子网。
+     * @return elbVirsubnetIds
+     */
     public List<String> getElbVirsubnetIds() {
         return elbVirsubnetIds;
     }
@@ -865,9 +902,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
-     * 
-     * @return elbVirsubnetType */
+    /**
+     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
+     * @return elbVirsubnetType
+     */
     public ElbVirsubnetTypeEnum getElbVirsubnetType() {
         return elbVirsubnetType;
     }
@@ -881,11 +919,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。
-     * [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)
-     * [不支持该字段，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return ipTargetEnable */
+    /**
+     * 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。 [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * @return ipTargetEnable
+     */
     public Boolean getIpTargetEnable() {
         return ipTargetEnable;
     }
@@ -899,10 +936,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 -
-     * RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。 [不支持该字段，请勿使用。](tag:dt,dt_test)
-     * 
-     * @return frozenScene */
+    /**
+     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * @return frozenScene
+     */
     public String getFrozenScene() {
         return frozenScene;
     }
@@ -925,9 +962,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** Get ipv6Bandwidth
-     * 
-     * @return ipv6Bandwidth */
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
     public BandwidthRef getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -941,9 +979,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** 是否开启删除保护，取值： - false：不开启。 - true：开启。 仅当前局点启用删除保护特性后才会返回该字段。 >退场时需要先关闭所有资源的删除保护开关。
-     * 
-     * @return deletionProtectionEnable */
+    /**
+     * 是否开启删除保护，取值： - false：不开启。 - true：开启。  仅当前局点启用删除保护特性后才会返回该字段。  >退场时需要先关闭所有资源的删除保护开关。
+     * @return deletionProtectionEnable
+     */
     public Boolean getDeletionProtectionEnable() {
         return deletionProtectionEnable;
     }
@@ -966,9 +1005,10 @@ public class LoadBalancer {
         return this;
     }
 
-    /** Get autoscaling
-     * 
-     * @return autoscaling */
+    /**
+     * Get autoscaling
+     * @return autoscaling
+     */
     public AutoscalingRef getAutoscaling() {
         return autoscaling;
     }
@@ -1103,7 +1143,10 @@ public class LoadBalancer {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

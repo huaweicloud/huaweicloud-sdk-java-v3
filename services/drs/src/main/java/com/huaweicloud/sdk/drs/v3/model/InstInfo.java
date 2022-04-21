@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 迁移实例信息体 */
+/**
+ * 迁移实例信息体
+ */
 public class InstInfo {
 
-    /** 引擎类型 */
+    /**
+     * 引擎类型
+     */
     public static final class EngineTypeEnum {
 
-        /** Enum MYSQL for value: "mysql" */
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
 
-        /** Enum MONGODB for value: "mongodb" */
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
 
-        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
+        /**
+         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
+         */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -93,10 +103,14 @@ public class InstInfo {
 
     private EngineTypeEnum engineType;
 
-    /** 实例类型 */
+    /**
+     * 实例类型
+     */
     public static final class InstTypeEnum {
 
-        /** Enum HIGH for value: "high" */
+        /**
+         * Enum HIGH for value: "high"
+         */
         public static final InstTypeEnum HIGH = new InstTypeEnum("high");
 
         private static final Map<String, InstTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -180,13 +194,19 @@ public class InstInfo {
 
     private String startTime;
 
-    /** 迁移实例的状态 */
+    /**
+     * 迁移实例的状态
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "active" */
+        /**
+         * Enum ACTIVE for value: "active"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
 
-        /** Enum DELETED for value: "deleted" */
+        /**
+         * Enum DELETED for value: "deleted"
+         */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -266,9 +286,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 引擎类型
-     * 
-     * @return engineType */
+    /**
+     * 引擎类型
+     * @return engineType
+     */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -282,9 +303,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 实例类型
-     * 
-     * @return instType */
+    /**
+     * 实例类型
+     * @return instType
+     */
     public InstTypeEnum getInstType() {
         return instType;
     }
@@ -298,9 +320,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 迁移实例所在的私有IP
-     * 
-     * @return ip */
+    /**
+     * 迁移实例所在的私有IP
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -314,9 +337,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 迁移实例所在的公网IP
-     * 
-     * @return publicIp */
+    /**
+     * 迁移实例所在的公网IP
+     * @return publicIp
+     */
     public String getPublicIp() {
         return publicIp;
     }
@@ -330,9 +354,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 迁移实例任务定时启动时间
-     * 
-     * @return startTime */
+    /**
+     * 迁移实例任务定时启动时间
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -346,9 +371,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 迁移实例的状态
-     * 
-     * @return status */
+    /**
+     * 迁移实例的状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -362,9 +388,10 @@ public class InstInfo {
         return this;
     }
 
-    /** 迁移实例的磁盘大小
-     * 
-     * @return volumeSize */
+    /**
+     * 迁移实例的磁盘大小
+     * @return volumeSize
+     */
     public Integer getVolumeSize() {
         return volumeSize;
     }
@@ -408,7 +435,10 @@ public class InstInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

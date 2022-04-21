@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** This is a auto create Body Object */
+/**
+ * This is a auto create Body Object
+ */
 public class Follow302StatusRequest {
 
-    /** follow302状态（\"off\"/\"on\"） */
+    /**
+     * follow302状态（\"off\"/\"on\"）
+     */
     public static final class Follow302StatusEnum {
 
-        /** Enum OFF for value: "off" */
+        /**
+         * Enum OFF for value: "off"
+         */
         public static final Follow302StatusEnum OFF = new Follow302StatusEnum("off");
 
-        /** Enum ON for value: "on" */
+        /**
+         * Enum ON for value: "on"
+         */
         public static final Follow302StatusEnum ON = new Follow302StatusEnum("on");
 
         private static final Map<String, Follow302StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -94,9 +102,10 @@ public class Follow302StatusRequest {
         return this;
     }
 
-    /** follow302状态（\"off\"/\"on\"）
-     * 
-     * @return follow302Status */
+    /**
+     * follow302状态（\"off\"/\"on\"）
+     * @return follow302Status
+     */
     public Follow302StatusEnum getFollow302Status() {
         return follow302Status;
     }
@@ -131,7 +140,10 @@ public class Follow302StatusRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 重置节点参数。集群内已有节点，支持通过重置节点方式进行重新安装并接入集群，纳管过程将清理节点上系统盘、数据盘数据，并作为新节点接入Kuberntes集群，请提前备份迁移关键数据。 */
+/**
+ * 重置节点参数。集群内已有节点，支持通过重置节点方式进行重新安装并接入集群，纳管过程将清理节点上系统盘、数据盘数据，并作为新节点接入Kuberntes集群，请提前备份迁移关键数据。
+ */
 public class AddNodeList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class AddNodeList {
         return this;
     }
 
-    /** API版本，固定值“v3”。
-     * 
-     * @return apiVersion */
+    /**
+     * API版本，固定值“v3”。
+     * @return apiVersion
+     */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -47,9 +50,10 @@ public class AddNodeList {
         return this;
     }
 
-    /** API类型，固定值“List”。
-     * 
-     * @return kind */
+    /**
+     * API类型，固定值“List”。
+     * @return kind
+     */
     public String getKind() {
         return kind;
     }
@@ -79,9 +83,10 @@ public class AddNodeList {
         return this;
     }
 
-    /** 纳管节点列表
-     * 
-     * @return nodeList */
+    /**
+     * 纳管节点列表
+     * @return nodeList
+     */
     public List<AddNode> getNodeList() {
         return nodeList;
     }
@@ -119,7 +124,10 @@ public class AddNodeList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

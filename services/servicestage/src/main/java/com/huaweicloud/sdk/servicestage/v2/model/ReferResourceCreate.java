@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 部署资源。 */
+/**
+ * 部署资源。
+ */
 public class ReferResourceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ReferResourceCreate {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return id */
+    /**
+     * 资源ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class ReferResourceCreate {
         return this;
     }
 
-    /** Get type
-     * 
-     * @return type */
+    /**
+     * Get type
+     * @return type
+     */
     public ResourceType getType() {
         return type;
     }
@@ -65,10 +69,10 @@ public class ReferResourceCreate {
         return this;
     }
 
-    /** 应用别名，dcs时才提供，支持“distributed_session”、“distributed_cache”、“distributed_session, distributed_cache”，
-     * 默认值是“distributed_session, distributed_cache”。
-     * 
-     * @return referAlias */
+    /**
+     * 应用别名，dcs时才提供，支持“distributed_session”、“distributed_cache”、“distributed_session, distributed_cache”，  默认值是“distributed_session, distributed_cache”。 
+     * @return referAlias
+     */
     public String getReferAlias() {
         return referAlias;
     }
@@ -82,9 +86,10 @@ public class ReferResourceCreate {
         return this;
     }
 
-    /** 引用资源参数。
-     * 
-     * @return parameters */
+    /**
+     * 引用资源参数。
+     * @return parameters
+     */
     public Object getParameters() {
         return parameters;
     }
@@ -124,7 +129,10 @@ public class ReferResourceCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页查询的公共属性 */
+/**
+ * 分页查询的公共属性
+ */
 public class Pages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class Pages {
         return this;
     }
 
-    /** 页面起始页，从0开始
-     * 
-     * @return offset */
+    /**
+     * 页面起始页，从0开始
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -44,9 +47,10 @@ public class Pages {
         return this;
     }
 
-    /** 每页显示的条目数量。 默认值：10。
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量。 默认值：10。 
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,9 +64,10 @@ public class Pages {
         return this;
     }
 
-    /** 总数量。
-     * 
-     * @return count */
+    /**
+     * 总数量。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -100,7 +105,10 @@ public class Pages {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

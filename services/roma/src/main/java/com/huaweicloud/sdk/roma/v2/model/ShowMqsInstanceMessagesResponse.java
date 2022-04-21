@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowMqsInstanceMessagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +52,10 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息列表。
-     * 
-     * @return messages */
+    /**
+     * 消息列表。
+     * @return messages
+     */
     public List<ShowMqsInstanceMessagesRespMessages> getMessages() {
         return messages;
     }
@@ -66,9 +69,10 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 消息总数。
-     * 
-     * @return total */
+    /**
+     * 消息总数。
+     * @return total
+     */
     public BigDecimal getTotal() {
         return total;
     }
@@ -82,9 +86,10 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回总条数。
-     * 
-     * @return size */
+    /**
+     * 返回总条数。
+     * @return size
+     */
     public BigDecimal getSize() {
         return size;
     }
@@ -123,7 +128,10 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

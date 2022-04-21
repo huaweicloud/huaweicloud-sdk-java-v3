@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
         return this;
     }
 
-    /** 此参数在请求实体中，采用json字符串格式。
-     * 
-     * @return body */
+    /**
+     * 此参数在请求实体中，采用json字符串格式。
+     * @return body
+     */
     public Map<String, List<Object>> getBody() {
         return body;
     }
@@ -77,7 +80,10 @@ public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

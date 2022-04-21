@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 容器使用的资源 */
+/**
+ * 容器使用的资源
+ */
 public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class Resources {
         return this;
     }
 
-    /** Get limits
-     * 
-     * @return limits */
+    /**
+     * Get limits
+     * @return limits
+     */
     public ResourcesLimits getLimits() {
         return limits;
     }
@@ -58,9 +61,10 @@ public class Resources {
         return this;
     }
 
-    /** Get requests
-     * 
-     * @return requests */
+    /**
+     * Get requests
+     * @return requests
+     */
     public ResourcesRequests getRequests() {
         return requests;
     }
@@ -96,7 +100,10 @@ public class Resources {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

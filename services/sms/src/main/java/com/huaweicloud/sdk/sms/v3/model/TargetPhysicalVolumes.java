@@ -10,19 +10,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 物理分区 */
+/**
+ * 物理分区
+ */
 public class TargetPhysicalVolumes {
 
-    /** 分区类型 */
+    /**
+     * 分区类型
+     */
     public static final class DeviceUseEnum {
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
 
-        /** Enum OS for value: "OS" */
+        /**
+         * Enum OS for value: "OS"
+         */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
 
-        /** Enum BOOT for value: "BOOT" */
+        /**
+         * Enum BOOT for value: "BOOT"
+         */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
@@ -133,9 +143,10 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 分区类型
-     * 
-     * @return deviceUse */
+    /**
+     * 分区类型
+     * @return deviceUse
+     */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -149,9 +160,10 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 文件系统
-     * 
-     * @return fileSystem */
+    /**
+     * 文件系统
+     * @return fileSystem
+     */
     public String getFileSystem() {
         return fileSystem;
     }
@@ -165,9 +177,12 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 编号 minimum: 0 maximum: 2147483647
-     * 
-     * @return index */
+    /**
+     * 编号
+     * minimum: 0
+     * maximum: 2147483647
+     * @return index
+     */
     public Integer getIndex() {
         return index;
     }
@@ -181,9 +196,10 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 挂载点
-     * 
-     * @return mountPoint */
+    /**
+     * 挂载点
+     * @return mountPoint
+     */
     public String getMountPoint() {
         return mountPoint;
     }
@@ -197,9 +213,10 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -213,9 +230,12 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -229,9 +249,12 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** 使用大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return usedSize */
+    /**
+     * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -245,9 +268,10 @@ public class TargetPhysicalVolumes {
         return this;
     }
 
-    /** uuid
-     * 
-     * @return uuid */
+    /**
+     * uuid
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -296,7 +320,10 @@ public class TargetPhysicalVolumes {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 通道信息 */
+/**
+ * 通道信息
+ */
 public class ChannelCreateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ChannelCreateInfo {
         return this;
     }
 
-    /** 通道名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
-     * 
-     * @return channelName */
+    /**
+     * 通道名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
+     * @return channelName
+     */
     public String getChannelName() {
         return channelName;
     }
@@ -39,9 +42,10 @@ public class ChannelCreateInfo {
         return this;
     }
 
-    /** 通道描述
-     * 
-     * @return channelDescription */
+    /**
+     * 通道描述
+     * @return channelDescription
+     */
     public String getChannelDescription() {
         return channelDescription;
     }
@@ -78,7 +82,10 @@ public class ChannelCreateInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** used_rds参数说明 */
+/**
+ * used_rds参数说明
+ */
 public class DatabaseInstabcesParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DatabaseInstabcesParam {
         return this;
     }
 
-    /** 逻辑库关联的RDS的id
-     * 
-     * @return id */
+    /**
+     * 逻辑库关联的RDS的id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -44,9 +47,10 @@ public class DatabaseInstabcesParam {
         return this;
     }
 
-    /** 关联RDS实例的用户。
-     * 
-     * @return adminUser */
+    /**
+     * 关联RDS实例的用户。
+     * @return adminUser
+     */
     public String getAdminUser() {
         return adminUser;
     }
@@ -60,9 +64,10 @@ public class DatabaseInstabcesParam {
         return this;
     }
 
-    /** 关联RDS实例的密码。
-     * 
-     * @return adminPassword */
+    /**
+     * 关联RDS实例的密码。
+     * @return adminPassword
+     */
     public String getAdminPassword() {
         return adminPassword;
     }
@@ -101,7 +106,10 @@ public class DatabaseInstabcesParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class AddCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,9 +56,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
-     * 
-     * @return certificateId */
+    /**
+     * 设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
+     * @return certificateId
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -70,9 +73,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书CN名称。
-     * 
-     * @return cnName */
+    /**
+     * CA证书CN名称。
+     * @return cnName
+     */
     public String getCnName() {
         return cnName;
     }
@@ -86,9 +90,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书所有者。
-     * 
-     * @return owner */
+    /**
+     * CA证书所有者。
+     * @return owner
+     */
     public String getOwner() {
         return owner;
     }
@@ -102,9 +107,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书验证状态。true代表证书已通过验证，可进行设备证书认证接入。false代表证书未通过验证。
-     * 
-     * @return status */
+    /**
+     * CA证书验证状态。true代表证书已通过验证，可进行设备证书认证接入。false代表证书未通过验证。
+     * @return status
+     */
     public Boolean getStatus() {
         return status;
     }
@@ -118,9 +124,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书验证码。
-     * 
-     * @return verifyCode */
+    /**
+     * CA证书验证码。
+     * @return verifyCode
+     */
     public String getVerifyCode() {
         return verifyCode;
     }
@@ -134,9 +141,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建证书日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createDate */
+    /**
+     * 创建证书日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createDate
+     */
     public String getCreateDate() {
         return createDate;
     }
@@ -150,9 +158,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书生效日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return effectiveDate */
+    /**
+     * CA证书生效日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return effectiveDate
+     */
     public String getEffectiveDate() {
         return effectiveDate;
     }
@@ -166,9 +175,10 @@ public class AddCertificateResponse extends SdkResponse {
         return this;
     }
 
-    /** CA证书失效日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return expiryDate */
+    /**
+     * CA证书失效日期。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return expiryDate
+     */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -217,7 +227,10 @@ public class AddCertificateResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

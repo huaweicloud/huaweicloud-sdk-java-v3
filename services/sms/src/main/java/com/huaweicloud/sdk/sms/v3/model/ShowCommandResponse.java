@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCommandResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,9 +27,10 @@ public class ShowCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** 命令名称，分为：START、STOP、DELETE、SYNC
-     * 
-     * @return commandName */
+    /**
+     * 命令名称，分为：START、STOP、DELETE、SYNC
+     * @return commandName
+     */
     public String getCommandName() {
         return commandName;
     }
@@ -50,9 +53,10 @@ public class ShowCommandResponse extends SdkResponse {
         return this;
     }
 
-    /** Get commandParam
-     * 
-     * @return commandParam */
+    /**
+     * Get commandParam
+     * @return commandParam
+     */
     public ComandParam getCommandParam() {
         return commandParam;
     }
@@ -89,7 +93,10 @@ public class ShowCommandResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

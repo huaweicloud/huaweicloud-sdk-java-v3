@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 与会者列表 */
+/**
+ * 与会者列表
+ */
 public class PageParticipant {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +54,10 @@ public class PageParticipant {
         return this;
     }
 
-    /** 与会者信息。
-     * 
-     * @return data */
+    /**
+     * 与会者信息。
+     * @return data
+     */
     public List<ParticipantInfo> getData() {
         return data;
     }
@@ -68,9 +71,10 @@ public class PageParticipant {
         return this;
     }
 
-    /** 记录数偏移，这一页之前共有多少条。
-     * 
-     * @return offset */
+    /**
+     * 记录数偏移，这一页之前共有多少条。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -84,9 +88,10 @@ public class PageParticipant {
         return this;
     }
 
-    /** 每页的记录数。
-     * 
-     * @return limit */
+    /**
+     * 每页的记录数。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -100,9 +105,10 @@ public class PageParticipant {
         return this;
     }
 
-    /** 总记录数。
-     * 
-     * @return count */
+    /**
+     * 总记录数。
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -141,7 +147,10 @@ public class PageParticipant {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

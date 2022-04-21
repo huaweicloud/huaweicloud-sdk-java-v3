@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StartPublicWhitelistReq */
+/**
+ * StartPublicWhitelistReq
+ */
 public class StartPublicWhitelistReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class StartPublicWhitelistReq {
         return this;
     }
 
-    /** 开启白名单的用户IP。
-     * 
-     * @return whiteList */
+    /**
+     * 开启白名单的用户IP。
+     * @return whiteList
+     */
     public String getWhiteList() {
         return whiteList;
     }
@@ -55,7 +58,10 @@ public class StartPublicWhitelistReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RtcHistoryScaleTimeValue */
+/**
+ * RtcHistoryScaleTimeValue
+ */
 public class RtcHistoryScaleTimeValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,9 +60,10 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
-     * 
-     * @return date */
+    /**
+     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为YYYY-MM-DD
+     * @return date
+     */
     public String getDate() {
         return date;
     }
@@ -74,9 +77,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 通话人数，指总的uid个数 minimum: 0 maximum: 1844674407
-     * 
-     * @return userCount */
+    /**
+     * 通话人数，指总的uid个数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return userCount
+     */
     public Long getUserCount() {
         return userCount;
     }
@@ -90,9 +96,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 通话人次，指总的session个数 minimum: 0 maximum: 1844674407
-     * 
-     * @return sessionCount */
+    /**
+     * 通话人次，指总的session个数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return sessionCount
+     */
     public Long getSessionCount() {
         return sessionCount;
     }
@@ -106,9 +115,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 房间数 minimum: 0 maximum: 1844674407
-     * 
-     * @return roomCount */
+    /**
+     * 房间数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return roomCount
+     */
     public Long getRoomCount() {
         return roomCount;
     }
@@ -122,9 +134,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 最大同时在线人数 minimum: 0 maximum: 1844674407
-     * 
-     * @return maxOnlineUserCount */
+    /**
+     * 最大同时在线人数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return maxOnlineUserCount
+     */
     public Long getMaxOnlineUserCount() {
         return maxOnlineUserCount;
     }
@@ -138,9 +153,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 最大同时在线房间数 minimum: 0 maximum: 1844674407
-     * 
-     * @return maxOnlineRoomCount */
+    /**
+     * 最大同时在线房间数
+     * minimum: 0
+     * maximum: 1844674407
+     * @return maxOnlineRoomCount
+     */
     public Long getMaxOnlineRoomCount() {
         return maxOnlineRoomCount;
     }
@@ -154,9 +172,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 音视频通话总时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return communicationDuration */
+    /**
+     * 音视频通话总时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return communicationDuration
+     */
     public Long getCommunicationDuration() {
         return communicationDuration;
     }
@@ -170,9 +191,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 视频通话总时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return videoCommunicationDuration */
+    /**
+     * 视频通话总时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return videoCommunicationDuration
+     */
     public Long getVideoCommunicationDuration() {
         return videoCommunicationDuration;
     }
@@ -186,9 +210,12 @@ public class RtcHistoryScaleTimeValue {
         return this;
     }
 
-    /** 音频通话总时长，单位秒 minimum: 0 maximum: 1844674407
-     * 
-     * @return audioCommunicationDuration */
+    /**
+     * 音频通话总时长，单位秒
+     * minimum: 0
+     * maximum: 1844674407
+     * @return audioCommunicationDuration
+     */
     public Long getAudioCommunicationDuration() {
         return audioCommunicationDuration;
     }
@@ -247,7 +274,10 @@ public class RtcHistoryScaleTimeValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

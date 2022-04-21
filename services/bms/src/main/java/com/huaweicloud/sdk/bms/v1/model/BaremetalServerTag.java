@@ -25,9 +25,10 @@ public class BaremetalServerTag {
         return this;
     }
 
-    /** 键。 - 最大长度127个unicode字符。 - key不能为空。
-     * 
-     * @return key */
+    /**
+     * 键。  - 最大长度127个unicode字符。  - key不能为空。
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -41,9 +42,10 @@ public class BaremetalServerTag {
         return this;
     }
 
-    /** 值列表。 - 最多10个value。 - value不允许重复。 - 每个值最大长度255个unicode字符。 - 如果values为空则表示any_value。 - value之间为或的关系。
-     * 
-     * @return value */
+    /**
+     * 值列表。  - 最多10个value。  - value不允许重复。  - 每个值最大长度255个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
+     * @return value
+     */
     public String getValue() {
         return value;
     }
@@ -79,7 +81,10 @@ public class BaremetalServerTag {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

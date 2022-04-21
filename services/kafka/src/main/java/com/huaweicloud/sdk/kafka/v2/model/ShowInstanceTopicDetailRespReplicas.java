@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ShowInstanceTopicDetailRespReplicas */
+/**
+ * ShowInstanceTopicDetailRespReplicas
+ */
 public class ShowInstanceTopicDetailRespReplicas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 副本所在的节点ID。
-     * 
-     * @return broker */
+    /**
+     * 副本所在的节点ID。
+     * @return broker
+     */
     public Integer getBroker() {
         return broker;
     }
@@ -54,9 +57,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 该副本是否为leader。
-     * 
-     * @return leader */
+    /**
+     * 该副本是否为leader。
+     * @return leader
+     */
     public Boolean getLeader() {
         return leader;
     }
@@ -70,9 +74,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 该副本是否在ISR副本中。
-     * 
-     * @return inSync */
+    /**
+     * 该副本是否在ISR副本中。
+     * @return inSync
+     */
     public Boolean getInSync() {
         return inSync;
     }
@@ -86,9 +91,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 该副本当前日志大小。单位：Byte。
-     * 
-     * @return size */
+    /**
+     * 该副本当前日志大小。单位：Byte。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -102,9 +108,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return this;
     }
 
-    /** 该副本当前落后hw的消息数。
-     * 
-     * @return lag */
+    /**
+     * 该副本当前落后hw的消息数。
+     * @return lag
+     */
     public Integer getLag() {
         return lag;
     }
@@ -148,7 +155,10 @@ public class ShowInstanceTopicDetailRespReplicas {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

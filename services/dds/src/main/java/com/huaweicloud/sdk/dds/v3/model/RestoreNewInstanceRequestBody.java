@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 实例信息。 */
+/**
+ * 实例信息。
+ */
 public class RestoreNewInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,10 +88,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 实例名称。用于表示实例的名称，用于表示实例的名称，允许和已有名称重复。
-     * 取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
-     * 
-     * @return name */
+    /**
+     * 实例名称。用于表示实例的名称，用于表示实例的名称，允许和已有名称重复。 取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -103,9 +105,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 可用区ID，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
-     * 
-     * @return availabilityZone */
+    /**
+     * 可用区ID，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+     * @return availabilityZone
+     */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -119,9 +122,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 虚拟私有云ID。获取方法请参见《虚拟私有云API参考》中“VPC”的内容。 取值：非空，字符长度校验，严格UUID正则校验。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云ID。获取方法请参见《虚拟私有云API参考》中“VPC”的内容。 取值：非空，字符长度校验，严格UUID正则校验。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -135,9 +139,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 子网ID。获取方法请参见《虚拟私有云API参考》中“子网”的内容。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。获取方法请参见《虚拟私有云API参考》中“子网”的内容。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -151,9 +156,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 指定实例所属的安全组ID。 获取方法请参见《虚拟私有云API参考》中“安全组”的内容。
-     * 
-     * @return securityGroupId */
+    /**
+     * 指定实例所属的安全组ID。 获取方法请参见《虚拟私有云API参考》中“安全组”的内容。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -167,9 +173,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
-     * 
-     * @return password */
+    /**
+     * 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -183,9 +190,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
-     * 
-     * @return diskEncryptionId */
+    /**
+     * 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
+     * @return diskEncryptionId
+     */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -215,9 +223,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 实例规格详情。
-     * 
-     * @return flavor */
+    /**
+     * 实例规格详情。
+     * @return flavor
+     */
     public List<RestoreNewInstanceFlavorOption> getFlavor() {
         return flavor;
     }
@@ -240,9 +249,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** Get backupStrategy
-     * 
-     * @return backupStrategy */
+    /**
+     * Get backupStrategy
+     * @return backupStrategy
+     */
     public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
@@ -256,9 +266,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -272,9 +283,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认启用SSL连接。
-     * 
-     * @return sslOption */
+    /**
+     * SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认启用SSL连接。
+     * @return sslOption
+     */
     public String getSslOption() {
         return sslOption;
     }
@@ -288,9 +300,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
-     * 
-     * @return dssPoolId */
+    /**
+     * 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
+     * @return dssPoolId
+     */
     public String getDssPoolId() {
         return dssPoolId;
     }
@@ -320,10 +333,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值 -
-     * 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
-     * 
-     * @return serverGroupPolicies */
+    /**
+     * 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值    - 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
+     * @return serverGroupPolicies
+     */
     public List<String> getServerGroupPolicies() {
         return serverGroupPolicies;
     }
@@ -346,9 +359,10 @@ public class RestoreNewInstanceRequestBody {
         return this;
     }
 
-    /** Get restorePoint
-     * 
-     * @return restorePoint */
+    /**
+     * Get restorePoint
+     * @return restorePoint
+     */
     public RestorePoint getRestorePoint() {
         return restorePoint;
     }
@@ -422,7 +436,10 @@ public class RestoreNewInstanceRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

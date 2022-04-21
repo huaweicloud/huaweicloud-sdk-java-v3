@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QueryResourceResultDTO */
+/**
+ * QueryResourceResultDTO
+ */
 public class QueryResourceResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,9 +65,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 唯一标识若携带则以携带为准，企业内保证唯一，否则后台自动生成UUID
-     * 
-     * @return id */
+    /**
+     * 唯一标识若携带则以携带为准，企业内保证唯一，否则后台自动生成UUID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -79,11 +82,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源类型，前台通过查询接口返回该sp支持售卖的资源在界面上做相应屏蔽，当前为枚举类型. - VMR - 云会议室 - CONF_CALL - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P
-     * - 720P硬终端 - SOFT - 软终端用户数 - ROOM - 大屏软终端 - LIVE - 直播推流 - RECORD - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 -
-     * HUAWEI_VISION -智慧屏 - IDEA_HUB - ideahub
-     * 
-     * @return type */
+    /**
+     * 资源类型，前台通过查询接口返回该sp支持售卖的资源在界面上做相应屏蔽，当前为枚举类型. - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 - HUAWEI_VISION -智慧屏 - IDEA_HUB   - ideahub
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -97,9 +99,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源标识，比如资源类型为vmrpkg，则该参数为vmrPkgId
-     * 
-     * @return typeId */
+    /**
+     * 资源标识，比如资源类型为vmrpkg，则该参数为vmrPkgId
+     * @return typeId
+     */
     public String getTypeId() {
         return typeId;
     }
@@ -113,9 +116,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源标识对应的回显描述,比如资源类型为vmrpkg，则该参数为vmrPkgName
-     * 
-     * @return typeDesc */
+    /**
+     * 资源标识对应的回显描述,比如资源类型为vmrpkg，则该参数为vmrPkgName
+     * @return typeDesc
+     */
     public String getTypeDesc() {
         return typeDesc;
     }
@@ -129,9 +133,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** VMR模式. 0：个人会议ID 1：云会议室 2：网络研讨会
-     * 
-     * @return vmrMode */
+    /**
+     * VMR模式. 0：个人会议ID 1：云会议室 2：网络研讨会
+     * @return vmrMode
+     */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -145,9 +150,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源数量
-     * 
-     * @return count */
+    /**
+     * 资源数量
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -161,9 +167,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 到期时间,utc时间戳
-     * 
-     * @return expireDate */
+    /**
+     * 到期时间,utc时间戳
+     * @return expireDate
+     */
     public Long getExpireDate() {
         return expireDate;
     }
@@ -177,9 +184,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源对应的订单id
-     * 
-     * @return orderId */
+    /**
+     * 资源对应的订单id
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -193,9 +201,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 资源状态: - 0：正常 - 1：到期 - 2：停用
-     * 
-     * @return status */
+    /**
+     * 资源状态: - 0：正常 - 1：到期 - 2：停用
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -209,9 +218,10 @@ public class QueryResourceResultDTO {
         return this;
     }
 
-    /** 标识资源是否可以编辑或删除
-     * 
-     * @return editable */
+    /**
+     * 标识资源是否可以编辑或删除
+     * @return editable
+     */
     public Boolean getEditable() {
         return editable;
     }
@@ -264,7 +274,10 @@ public class QueryResourceResultDTO {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

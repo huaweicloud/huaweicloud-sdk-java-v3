@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** spark自定义计算规格 */
+/**
+ * spark自定义计算规格
+ */
 public class SparkCalcSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class SparkCalcSpec {
         return this;
     }
 
-    /** driver内存
-     * 
-     * @return driverMemory */
+    /**
+     * driver内存
+     * @return driverMemory
+     */
     public String getDriverMemory() {
         return driverMemory;
     }
@@ -54,9 +57,10 @@ public class SparkCalcSpec {
         return this;
     }
 
-    /** driver核数
-     * 
-     * @return driverCores */
+    /**
+     * driver核数
+     * @return driverCores
+     */
     public Integer getDriverCores() {
         return driverCores;
     }
@@ -70,9 +74,10 @@ public class SparkCalcSpec {
         return this;
     }
 
-    /** executor内存
-     * 
-     * @return executorMemory */
+    /**
+     * executor内存
+     * @return executorMemory
+     */
     public String getExecutorMemory() {
         return executorMemory;
     }
@@ -86,9 +91,10 @@ public class SparkCalcSpec {
         return this;
     }
 
-    /** executor核数
-     * 
-     * @return executorCores */
+    /**
+     * executor核数
+     * @return executorCores
+     */
     public Integer getExecutorCores() {
         return executorCores;
     }
@@ -102,9 +108,10 @@ public class SparkCalcSpec {
         return this;
     }
 
-    /** executor个数
-     * 
-     * @return numExecutors */
+    /**
+     * executor个数
+     * @return numExecutors
+     */
     public Integer getNumExecutors() {
         return numExecutors;
     }
@@ -147,7 +154,10 @@ public class SparkCalcSpec {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

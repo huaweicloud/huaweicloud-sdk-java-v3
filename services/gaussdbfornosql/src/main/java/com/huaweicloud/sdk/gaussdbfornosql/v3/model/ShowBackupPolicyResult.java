@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 备份策略对象，包括备份保留的天数和备份开始时间。 */
+/**
+ * 备份策略对象，包括备份保留的天数和备份开始时间。
+ */
 public class ShowBackupPolicyResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class ShowBackupPolicyResult {
         return this;
     }
 
-    /** 备份文件可以保存的天数。
-     * 
-     * @return keepDays */
+    /**
+     * 备份文件可以保存的天数。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -44,9 +47,10 @@ public class ShowBackupPolicyResult {
         return this;
     }
 
-    /** 备份时间段。自动备份将在该时间段内触发。
-     * 
-     * @return startTime */
+    /**
+     * 备份时间段。自动备份将在该时间段内触发。
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -60,9 +64,10 @@ public class ShowBackupPolicyResult {
         return this;
     }
 
-    /** 备份周期配置。自动备份将在每星期指定的天进行。
-     * 
-     * @return period */
+    /**
+     * 备份周期配置。自动备份将在每星期指定的天进行。
+     * @return period
+     */
     public String getPeriod() {
         return period;
     }
@@ -101,7 +106,10 @@ public class ShowBackupPolicyResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

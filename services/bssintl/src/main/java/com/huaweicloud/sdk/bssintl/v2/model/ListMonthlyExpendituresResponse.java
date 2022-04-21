@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListMonthlyExpendituresResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,9 +84,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回码
-     * 
-     * @return errorCode */
+    /**
+     * 返回码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -98,9 +101,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 返回码描述
-     * 
-     * @return errorMsg */
+    /**
+     * 返回码描述
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -114,9 +118,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 货币单位代码 USD：美元
-     * 
-     * @return currency */
+    /**
+     * 货币单位代码 USD：美元
+     * @return currency
+     */
     public String getCurrency() {
         return currency;
     }
@@ -130,9 +135,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 总条数
-     * 
-     * @return totalCount */
+    /**
+     * 总条数
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -146,9 +152,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 总金额（包含退订）。
-     * 
-     * @return totalAmount */
+    /**
+     * 总金额（包含退订）。
+     * @return totalAmount
+     */
     public Double getTotalAmount() {
         return totalAmount;
     }
@@ -162,9 +169,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 总欠费金额。
-     * 
-     * @return debtAmount */
+    /**
+     * 总欠费金额。
+     * @return debtAmount
+     */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -178,9 +186,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 代金券金额。
-     * 
-     * @return couponAmount */
+    /**
+     * 代金券金额。
+     * @return couponAmount
+     */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -194,9 +203,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 现金券金额，预留。
-     * 
-     * @return cashcouponAmount */
+    /**
+     * 现金券金额，预留。
+     * @return cashcouponAmount
+     */
     public Double getCashcouponAmount() {
         return cashcouponAmount;
     }
@@ -210,9 +220,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 储值卡金额，预留。
-     * 
-     * @return storedcardAmount */
+    /**
+     * 储值卡金额，预留。
+     * @return storedcardAmount
+     */
     public Double getStoredcardAmount() {
         return storedcardAmount;
     }
@@ -226,9 +237,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 现金账户金额。
-     * 
-     * @return debitAmount */
+    /**
+     * 现金账户金额。
+     * @return debitAmount
+     */
     public Double getDebitAmount() {
         return debitAmount;
     }
@@ -242,9 +254,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 信用账户金额。
-     * 
-     * @return creditAmount */
+    /**
+     * 信用账户金额。
+     * @return creditAmount
+     */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -258,9 +271,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 金额单位。 1：元3：分 默认值为3。
-     * 
-     * @return measureId */
+    /**
+     * 金额单位。 1：元3：分 默认值为3。
+     * @return measureId
+     */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -290,9 +304,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return this;
     }
 
-    /** 账单记录，具体参考表3。
-     * 
-     * @return billSums */
+    /**
+     * 账单记录，具体参考表3。
+     * @return billSums
+     */
     public List<BillSumRecordInfo> getBillSums() {
         return billSums;
     }
@@ -363,7 +378,10 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 重力衰减因子 */
+/**
+ * 重力衰减因子
+ */
 public class BehaviorGravity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,12 @@ public class BehaviorGravity {
         return this;
     }
 
-    /** 衰减因子。 minimum: 0.1 maximum: 5
-     * 
-     * @return weakenFactor */
+    /**
+     * 衰减因子。
+     * minimum: 0.1
+     * maximum: 5
+     * @return weakenFactor
+     */
     public Double getWeakenFactor() {
         return weakenFactor;
     }
@@ -44,9 +49,10 @@ public class BehaviorGravity {
         return this;
     }
 
-    /** 行为次数统计方法： - pv，访问量 - uv，独立访客
-     * 
-     * @return viewType */
+    /**
+     * 行为次数统计方法： - pv，访问量 - uv，独立访客
+     * @return viewType
+     */
     public String getViewType() {
         return viewType;
     }
@@ -60,9 +66,10 @@ public class BehaviorGravity {
         return this;
     }
 
-    /** 算法类型: - normal，通用 - time，时间
-     * 
-     * @return algoType */
+    /**
+     * 算法类型: - normal，通用 - time，时间
+     * @return algoType
+     */
     public String getAlgoType() {
         return algoType;
     }
@@ -101,7 +108,10 @@ public class BehaviorGravity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

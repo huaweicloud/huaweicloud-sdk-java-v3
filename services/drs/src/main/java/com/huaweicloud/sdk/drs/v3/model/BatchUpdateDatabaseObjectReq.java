@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量更新数据库对象选择消息体 */
+/**
+ * 批量更新数据库对象选择消息体
+ */
 public class BatchUpdateDatabaseObjectReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class BatchUpdateDatabaseObjectReq {
         return this;
     }
 
-    /** 批量更新数据库对象请求任务ID列表
-     * 
-     * @return jobs */
+    /**
+     * 批量更新数据库对象请求任务ID列表
+     * @return jobs
+     */
     public List<UpdateDatabaseObjectReq> getJobs() {
         return jobs;
     }
@@ -74,7 +77,10 @@ public class BatchUpdateDatabaseObjectReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 分页请求体 */
+/**
+ * 分页请求体
+ */
 public class PageReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PageReq {
         return this;
     }
 
-    /** 当前页, 不能超过item除每页任务数量的最大页
-     * 
-     * @return curPage */
+    /**
+     * 当前页, 不能超过item除每页任务数量的最大页 
+     * @return curPage
+     */
     public Integer getCurPage() {
         return curPage;
     }
@@ -39,9 +42,12 @@ public class PageReq {
         return this;
     }
 
-    /** 每页item数量，填0获取全部item minimum: 0 maximum: 100
-     * 
-     * @return perPage */
+    /**
+     * 每页item数量，填0获取全部item
+     * minimum: 0
+     * maximum: 100
+     * @return perPage
+     */
     public Integer getPerPage() {
         return perPage;
     }
@@ -77,7 +83,10 @@ public class PageReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

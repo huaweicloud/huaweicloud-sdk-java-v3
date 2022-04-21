@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InstanceListInfo */
+/**
+ * InstanceListInfo
+ */
 public class InstanceListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -206,9 +208,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。
-     * 
-     * @return publicipId */
+    /**
+     * Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。 
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -222,9 +225,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** VPC的名称。
-     * 
-     * @return vpcName */
+    /**
+     * VPC的名称。
+     * @return vpcName
+     */
     public String getVpcName() {
         return vpcName;
     }
@@ -238,9 +242,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 计费模式，0表示按需计费，1表示包年/包月计费。
-     * 
-     * @return chargingMode */
+    /**
+     * 计费模式，0表示按需计费，1表示包年/包月计费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -254,9 +259,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** VPC ID。
-     * 
-     * @return vpcId */
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -270,9 +276,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -286,9 +293,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -302,9 +310,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 创建时间。格式为：2017-03-31T12:24:46.297Z
-     * 
-     * @return createdAt */
+    /**
+     * 创建时间。格式为：2017-03-31T12:24:46.297Z
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -318,9 +327,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启
-     * 
-     * @return enableSsl */
+    /**
+     * Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启 
+     * @return enableSsl
+     */
     public Boolean getEnableSsl() {
         return enableSsl;
     }
@@ -334,9 +344,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 总内存，单位：MB。
-     * 
-     * @return maxMemory */
+    /**
+     * 总内存，单位：MB。
+     * @return maxMemory
+     */
     public Integer getMaxMemory() {
         return maxMemory;
     }
@@ -350,9 +361,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 已使用的内存，单位：MB。
-     * 
-     * @return usedMemory */
+    /**
+     * 已使用的内存，单位：MB。
+     * @return usedMemory
+     */
     public Integer getUsedMemory() {
         return usedMemory;
     }
@@ -366,9 +378,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。
-     * 
-     * @return publicipAddress */
+    /**
+     * Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。 
+     * @return publicipAddress
+     */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -382,9 +395,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 缓存容量（G Byte）。
-     * 
-     * @return capacity */
+    /**
+     * 缓存容量（G Byte）。
+     * @return capacity
+     */
     public Integer getCapacity() {
         return capacity;
     }
@@ -398,9 +412,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 小规格缓存容量（G Byte）。
-     * 
-     * @return capacityMinor */
+    /**
+     * 小规格缓存容量（G Byte）。
+     * @return capacityMinor
+     */
     public String getCapacityMinor() {
         return capacityMinor;
     }
@@ -414,9 +429,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 订单ID，仅在创建包周期实例时返回。按需实例时此值为null
-     * 
-     * @return orderId */
+    /**
+     * 订单ID，仅在创建包周期实例时返回。按需实例时此值为null
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -430,9 +446,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。
-     * 
-     * @return maintainBegin */
+    /**
+     * 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。
+     * @return maintainBegin
+     */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -446,9 +463,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss。
-     * 
-     * @return maintainEnd */
+    /**
+     * 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss。
+     * @return maintainEnd
+     */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -462,9 +480,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 缓存引擎。
-     * 
-     * @return engine */
+    /**
+     * 缓存引擎。
+     * @return engine
+     */
     public String getEngine() {
         return engine;
     }
@@ -478,9 +497,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 缓存版本。
-     * 
-     * @return engineVersion */
+    /**
+     * 缓存版本。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -494,9 +514,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例是否存在升级任务。 - true：存在 - false：不存在
-     * 
-     * @return serviceUpgrade */
+    /**
+     * 实例是否存在升级任务。 - true：存在 - false：不存在 
+     * @return serviceUpgrade
+     */
     public Boolean getServiceUpgrade() {
         return serviceUpgrade;
     }
@@ -510,9 +531,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。
-     * 
-     * @return noPasswordAccess */
+    /**
+     * 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。 
+     * @return noPasswordAccess
+     */
     public String getNoPasswordAccess() {
         return noPasswordAccess;
     }
@@ -526,9 +548,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。
-     * 
-     * @return serviceTaskId */
+    /**
+     * 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。 
+     * @return serviceTaskId
+     */
     public String getServiceTaskId() {
         return serviceTaskId;
     }
@@ -542,9 +565,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
-     * 
-     * @return ip */
+    /**
+     * 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
+     * @return ip
+     */
     public String getIp() {
         return ip;
     }
@@ -558,9 +582,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 通过密码认证访问缓存实例的认证用户名。
-     * 
-     * @return accessUser */
+    /**
+     * 通过密码认证访问缓存实例的认证用户名。 
+     * @return accessUser
+     */
     public String getAccessUser() {
         return accessUser;
     }
@@ -574,9 +599,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例ID。
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -590,9 +616,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启
-     * 
-     * @return enablePublicip */
+    /**
+     * Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启 
+     * @return enablePublicip
+     */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -606,9 +633,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 缓存的端口。
-     * 
-     * @return port */
+    /**
+     * 缓存的端口。
+     * @return port
+     */
     public Integer getPort() {
         return port;
     }
@@ -622,9 +650,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 用户id。
-     * 
-     * @return userId */
+    /**
+     * 用户id。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -638,9 +667,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return userName */
+    /**
+     * 用户名。
+     * @return userName
+     */
     public String getUserName() {
         return userName;
     }
@@ -654,9 +684,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例的域名。
-     * 
-     * @return domainName */
+    /**
+     * 实例的域名。
+     * @return domainName
+     */
     public String getDomainName() {
         return domainName;
     }
@@ -670,9 +701,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例的只读域名，只有主备实例有该字段。
-     * 
-     * @return readonlyDomainName */
+    /**
+     * 实例的只读域名，只有主备实例有该字段。
+     * @return readonlyDomainName
+     */
     public String getReadonlyDomainName() {
         return readonlyDomainName;
     }
@@ -686,9 +718,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例名称。
-     * 
-     * @return name */
+    /**
+     * 实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -702,9 +735,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 产品规格编码。
-     * 
-     * @return specCode */
+    /**
+     * 产品规格编码。
+     * @return specCode
+     */
     public String getSpecCode() {
         return specCode;
     }
@@ -718,9 +752,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)。
-     * 
-     * @return status */
+    /**
+     * 实例状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -750,9 +785,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例标签键值。
-     * 
-     * @return tags */
+    /**
+     * 实例标签键值。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -766,9 +802,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -782,9 +819,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例描述备注
-     * 
-     * @return description */
+    /**
+     * 实例描述备注
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -798,9 +836,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 实例CPU类型，通常为x86_64或aarch64
-     * 
-     * @return cpuType */
+    /**
+     * 实例CPU类型，通常为x86_64或aarch64
+     * @return cpuType
+     */
     public String getCpuType() {
         return cpuType;
     }
@@ -830,9 +869,10 @@ public class InstanceListInfo {
         return this;
     }
 
-    /** 有资源的可用区编码。
-     * 
-     * @return azCodes */
+    /**
+     * 有资源的可用区编码。
+     * @return azCodes
+     */
     public List<String> getAzCodes() {
         return azCodes;
     }
@@ -976,7 +1016,10 @@ public class InstanceListInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

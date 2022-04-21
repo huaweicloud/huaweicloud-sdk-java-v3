@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class CreateComputingResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 新增计算资源ID。
-     * 
-     * @return computingResourceId */
+    /**
+     * 新增计算资源ID。
+     * @return computingResourceId
+     */
     public String getComputingResourceId() {
         return computingResourceId;
     }
@@ -65,9 +68,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 新增计算资源名称。
-     * 
-     * @return computingResourceName */
+    /**
+     * 新增计算资源名称。
+     * @return computingResourceName
+     */
     public String getComputingResourceName() {
         return computingResourceName;
     }
@@ -81,9 +85,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 计算资源的类型。目前支持：sql。如果不指定，默认为sql。
-     * 
-     * @return computingResourceType */
+    /**
+     * 计算资源的类型。目前支持：sql。如果不指定，默认为sql。
+     * @return computingResourceType
+     */
     public String getComputingResourceType() {
         return computingResourceType;
     }
@@ -97,9 +102,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 计算资源的描述信息。
-     * 
-     * @return description */
+    /**
+     * 计算资源的描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -113,9 +119,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 与计算资源绑定的最小计算单元个数。设置值当前只支持16，64，256。
-     * 
-     * @return cuCount */
+    /**
+     * 与计算资源绑定的最小计算单元个数。设置值当前只支持16，64，256。
+     * @return cuCount
+     */
     public Integer getCuCount() {
         return cuCount;
     }
@@ -129,9 +136,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 计算资源的收费模式。只能设置为“1”，表示按照CU时收费。
-     * 
-     * @return chargingMode */
+    /**
+     * 计算资源的收费模式。只能设置为“1”，表示按照CU时收费。
+     * @return chargingMode
+     */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -145,9 +153,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return this;
     }
 
-    /** 创建计算资源时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'。
-     * 
-     * @return createdTime */
+    /**
+     * 创建计算资源时间。时间格式为ISO日期时间格式yyyy-MM-dd'T'HH:mm:ss'Z'。
+     * @return createdTime
+     */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -200,7 +209,10 @@ public class CreateComputingResourceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

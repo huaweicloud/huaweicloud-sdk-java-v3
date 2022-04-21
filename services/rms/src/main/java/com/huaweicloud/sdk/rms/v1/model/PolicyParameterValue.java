@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规则参数值 */
+/**
+ * 规则参数值
+ */
 public class PolicyParameterValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class PolicyParameterValue {
         return this;
     }
 
-    /** 规则参数值
-     * 
-     * @return value */
+    /**
+     * 规则参数值
+     * @return value
+     */
     public Object getValue() {
         return value;
     }
@@ -55,7 +58,10 @@ public class PolicyParameterValue {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

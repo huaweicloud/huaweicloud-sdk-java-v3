@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DiskusageTopicEntity */
+/**
+ * DiskusageTopicEntity
+ */
 public class DiskusageTopicEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class DiskusageTopicEntity {
         return this;
     }
 
-    /** 磁盘使用量。
-     * 
-     * @return size */
+    /**
+     * 磁盘使用量。
+     * @return size
+     */
     public String getSize() {
         return size;
     }
@@ -49,9 +52,10 @@ public class DiskusageTopicEntity {
         return this;
     }
 
-    /** topic名称。
-     * 
-     * @return topicName */
+    /**
+     * topic名称。
+     * @return topicName
+     */
     public String getTopicName() {
         return topicName;
     }
@@ -65,9 +69,10 @@ public class DiskusageTopicEntity {
         return this;
     }
 
-    /** 分区。
-     * 
-     * @return topicPartition */
+    /**
+     * 分区。
+     * @return topicPartition
+     */
     public String getTopicPartition() {
         return topicPartition;
     }
@@ -81,9 +86,10 @@ public class DiskusageTopicEntity {
         return this;
     }
 
-    /** 磁盘使用量的占比。
-     * 
-     * @return percentage */
+    /**
+     * 磁盘使用量的占比。
+     * @return percentage
+     */
     public Double getPercentage() {
         return percentage;
     }
@@ -124,7 +130,10 @@ public class DiskusageTopicEntity {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

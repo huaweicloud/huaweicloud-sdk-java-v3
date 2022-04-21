@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListRulesetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ListRulesetsRequest {
         return this;
     }
 
-    /** 项目ID
-     * 
-     * @return projectId */
+    /**
+     * 项目ID
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -49,9 +52,10 @@ public class ListRulesetsRequest {
         return this;
     }
 
-    /** 规则集类别 '0只查询系统规则集，1只查询当前用户自定义规则集，2只查询其他用户自定义规则集，'0,1,2'或''查所有'
-     * 
-     * @return category */
+    /**
+     * 规则集类别  '0只查询系统规则集，1只查询当前用户自定义规则集，2只查询其他用户自定义规则集，'0,1,2'或''查所有'
+     * @return category
+     */
     public String getCategory() {
         return category;
     }
@@ -65,9 +69,11 @@ public class ListRulesetsRequest {
         return this;
     }
 
-    /** 分页索引，偏移量 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 分页索引，偏移量
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -81,9 +87,12 @@ public class ListRulesetsRequest {
         return this;
     }
 
-    /** 每页显示的数量 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的数量
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,7 +133,10 @@ public class ListRulesetsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

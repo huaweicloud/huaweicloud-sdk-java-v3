@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteIpAddressGroupForceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class DeleteIpAddressGroupForceRequest {
         return this;
     }
 
-    /** IP地址组的唯一标识，要删除的IP地址组ID
-     * 
-     * @return addressGroupId */
+    /**
+     * IP地址组的唯一标识，要删除的IP地址组ID
+     * @return addressGroupId
+     */
     public String getAddressGroupId() {
         return addressGroupId;
     }
@@ -55,7 +58,10 @@ public class DeleteIpAddressGroupForceRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

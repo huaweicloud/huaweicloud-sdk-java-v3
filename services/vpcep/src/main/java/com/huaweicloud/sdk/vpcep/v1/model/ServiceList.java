@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ServiceList */
+/**
+ * ServiceList
+ */
 public class ServiceList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,16 +53,24 @@ public class ServiceList {
 
     private Boolean approvalEnabled;
 
-    /** 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中 */
+    /**
+     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     */
     public static final class StatusEnum {
 
-        /** Enum CREATING for value: "creating" */
+        /**
+         * Enum CREATING for value: "creating"
+         */
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
-        /** Enum AVAILABLE for value: "available" */
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
 
-        /** Enum FAILED for value: "failed" */
+        /**
+         * Enum FAILED for value: "failed"
+         */
         public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -131,18 +141,24 @@ public class ServiceList {
 
     private StatusEnum status;
 
-    /** 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ●
-     * interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和
-     * Interface类型终端节点服务的终端节点。 */
+    /**
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     */
     public static final class ServerTypeEnum {
 
-        /** Enum VM for value: "VM" */
+        /**
+         * Enum VM for value: "VM"
+         */
         public static final ServerTypeEnum VM = new ServerTypeEnum("VM");
 
-        /** Enum VIP for value: "VIP" */
+        /**
+         * Enum VIP for value: "VIP"
+         */
         public static final ServerTypeEnum VIP = new ServerTypeEnum("VIP");
 
-        /** Enum LB for value: "LB" */
+        /**
+         * Enum LB for value: "LB"
+         */
         public static final ServerTypeEnum LB = new ServerTypeEnum("LB");
 
         private static final Map<String, ServerTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -248,22 +264,29 @@ public class ServiceList {
 
     private Integer connectionCount;
 
-    /** 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明
-     * 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。
-     * 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ●
-     * open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。 */
+    /**
+     * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+     */
     public static final class TcpProxyEnum {
 
-        /** Enum CLOSE for value: "close" */
+        /**
+         * Enum CLOSE for value: "close"
+         */
         public static final TcpProxyEnum CLOSE = new TcpProxyEnum("close");
 
-        /** Enum TOA_OPEN for value: "toa_open" */
+        /**
+         * Enum TOA_OPEN for value: "toa_open"
+         */
         public static final TcpProxyEnum TOA_OPEN = new TcpProxyEnum("toa_open");
 
-        /** Enum PROXY_OPEN for value: "proxy_open" */
+        /**
+         * Enum PROXY_OPEN for value: "proxy_open"
+         */
         public static final TcpProxyEnum PROXY_OPEN = new TcpProxyEnum("proxy_open");
 
-        /** Enum OPEN for value: "open" */
+        /**
+         * Enum OPEN for value: "open"
+         */
         public static final TcpProxyEnum OPEN = new TcpProxyEnum("open");
 
         private static final Map<String, TcpProxyEnum> STATIC_FIELDS = createStaticFields();
@@ -345,9 +368,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务的ID，唯一标识。
-     * 
-     * @return id */
+    /**
+     * 终端节点服务的ID，唯一标识。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -361,10 +385,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 标识终端节点服务后端资源的ID，格式为通用 唯一识别码（Universally Unique Identifier， 下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端 口ID。 ●
-     * VM类型：弹性云服务器IP地址对应的网卡 ID。 ● VIP类型：虚拟资源所在物理服务器对应的 网卡ID。
-     * 
-     * @return portId */
+    /**
+     * 标识终端节点服务后端资源的ID，格式为通用 唯一识别码（Universally Unique Identifier， 下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端 口ID。 ● VM类型：弹性云服务器IP地址对应的网卡 ID。 ● VIP类型：虚拟资源所在物理服务器对应的 网卡ID。
+     * @return portId
+     */
     public String getPortId() {
         return portId;
     }
@@ -378,9 +402,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参 数。
-     * 
-     * @return vipPortId */
+    /**
+     * 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参 数。
+     * @return vipPortId
+     */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -394,9 +419,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务的名称。
-     * 
-     * @return serviceName */
+    /**
+     * 终端节点服务的名称。
+     * @return serviceName
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -410,9 +436,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
-     * 
-     * @return serviceType */
+    /**
+     * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
+     * @return serviceType
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -426,9 +453,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务对应后端资源所在的VPC的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 终端节点服务对应后端资源所在的VPC的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -442,9 +470,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 是否需要审批。 ● false：不需要审批，创建的终端节点连接直 接为accepted状态。 ● true：需要审批，创建的终端节点连接为 pendingAcceptance状态，需要终端节点服 务所属用户审核后方可使用。
-     * 
-     * @return approvalEnabled */
+    /**
+     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直 接为accepted状态。 ● true：需要审批，创建的终端节点连接为 pendingAcceptance状态，需要终端节点服 务所属用户审核后方可使用。
+     * @return approvalEnabled
+     */
     public Boolean getApprovalEnabled() {
         return approvalEnabled;
     }
@@ -458,9 +487,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
-     * 
-     * @return status */
+    /**
+     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -474,10 +504,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ●
-     * interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
-     * 
-     * @return serverType */
+    /**
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     * @return serverType
+     */
     public ServerTypeEnum getServerType() {
         return serverType;
     }
@@ -491,9 +521,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return createdAt */
+    /**
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return createdAt
+     */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -507,9 +538,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
-     * 
-     * @return updatedAt */
+    /**
+     * 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * @return updatedAt
+     */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -523,9 +555,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 项目ID，获取方法请参见获取项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID，获取方法请参见获取项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -539,9 +572,10 @@ public class ServiceList {
         return this;
     }
 
-    /** Domain ID
-     * 
-     * @return domainId */
+    /**
+     * Domain ID
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -571,10 +605,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 服务开放的端口映射列表，详细内容请参见表 4-17 同一个终端节点服务下，不允许重复的端口映 射。若多个终端节点服务共用一个port_id，则 终端节点服务之间的所有端口映射的
-     * server_port和protocol的组合不能重复。
-     * 
-     * @return ports */
+    /**
+     * 服务开放的端口映射列表，详细内容请参见表 4-17 同一个终端节点服务下，不允许重复的端口映 射。若多个终端节点服务共用一个port_id，则 终端节点服务之间的所有端口映射的 server_port和protocol的组合不能重复。
+     * @return ports
+     */
     public List<PortList> getPorts() {
         return ports;
     }
@@ -604,9 +638,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 资源标签列表
-     * 
-     * @return tags */
+    /**
+     * 资源标签列表
+     * @return tags
+     */
     public List<TagList> getTags() {
         return tags;
     }
@@ -620,9 +655,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 终端节点服务下连接的状态为“创建中”或“已接受”的终端节点的个数。
-     * 
-     * @return connectionCount */
+    /**
+     * 终端节点服务下连接的状态为“创建中”或“已接受”的终端节点的个数。
+     * @return connectionCount
+     */
     public Integer getConnectionCount() {
         return connectionCount;
     }
@@ -636,12 +672,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明
-     * 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。
-     * 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ●
-     * open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
-     * 
-     * @return tcpProxy */
+    /**
+     * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+     * @return tcpProxy
+     */
     public TcpProxyEnum getTcpProxy() {
         return tcpProxy;
     }
@@ -671,9 +705,10 @@ public class ServiceList {
         return this;
     }
 
-    /** 提交任务异常时返回的异常信息
-     * 
-     * @return error */
+    /**
+     * 提交任务异常时返回的异常信息
+     * @return error
+     */
     public List<Error> getError() {
         return error;
     }
@@ -756,7 +791,10 @@ public class ServiceList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

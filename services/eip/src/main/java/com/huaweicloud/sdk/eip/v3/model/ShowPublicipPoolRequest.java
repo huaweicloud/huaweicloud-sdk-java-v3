@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowPublicipPoolRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowPublicipPoolRequest {
         return this;
     }
 
-    /** 公网IP池ID唯一标识
-     * 
-     * @return publicipPoolId */
+    /**
+     * 公网IP池ID唯一标识
+     * @return publicipPoolId
+     */
     public String getPublicipPoolId() {
         return publicipPoolId;
     }
@@ -39,10 +42,10 @@ public class ShowPublicipPoolRequest {
         return this;
     }
 
-    /** 显示，形式为\"fields=id&fields=name&...\"
-     * 支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
-     * 
-     * @return fields */
+    /**
+     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
+     * @return fields
+     */
     public String getFields() {
         return fields;
     }
@@ -79,7 +82,10 @@ public class ShowPublicipPoolRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

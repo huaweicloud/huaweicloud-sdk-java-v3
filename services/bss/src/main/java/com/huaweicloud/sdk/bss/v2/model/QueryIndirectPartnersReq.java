@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** QueryIndirectPartnersReq */
+/**
+ * QueryIndirectPartnersReq
+ */
 public class QueryIndirectPartnersReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 精英服务商伙伴的账号名。
-     * 
-     * @return accountName */
+    /**
+     * 精英服务商伙伴的账号名。
+     * @return accountName
+     */
     public String getAccountName() {
         return accountName;
     }
@@ -59,9 +62,10 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 精英服务商关联华为云伙伴能力中心的开始时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
-     * 
-     * @return associatedOnBegin */
+    /**
+     * 精英服务商关联华为云伙伴能力中心的开始时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
+     * @return associatedOnBegin
+     */
     public String getAssociatedOnBegin() {
         return associatedOnBegin;
     }
@@ -75,9 +79,10 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 精英服务商关联华为云伙伴能力中心的结束时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
-     * 
-     * @return associatedOnEnd */
+    /**
+     * 精英服务商关联华为云伙伴能力中心的结束时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
+     * @return associatedOnEnd
+     */
     public String getAssociatedOnEnd() {
         return associatedOnEnd;
     }
@@ -91,10 +96,12 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。
-     * 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 偏移量，从0开始。默认值为0。  说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -108,9 +115,12 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 每次查询的数量限制。默认值为10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每次查询的数量限制。默认值为10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,9 +134,10 @@ public class QueryIndirectPartnersReq {
         return this;
     }
 
-    /** 精英服务商ID。获取方法请参见查询精英服务商列表。
-     * 
-     * @return indirectPartnerId */
+    /**
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * @return indirectPartnerId
+     */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -171,7 +182,10 @@ public class QueryIndirectPartnersReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新网络ACL参数。 */
+/**
+ * 更新网络ACL参数。
+ */
 public class UpdateFirewallOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class UpdateFirewallOption {
         return this;
     }
 
-    /** 网络ACL名称。更新时name不能为空。 中文字符、字母、数字、中划线和下划线组成，长度为1~64个字符
-     * 
-     * @return name */
+    /**
+     * 网络ACL名称。更新时name不能为空。  中文字符、字母、数字、中划线和下划线组成，长度为1~64个字符
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -52,9 +55,10 @@ public class UpdateFirewallOption {
         return this;
     }
 
-    /** 网络ACL的使能开关。 取值范围：true（开启），false（关闭）
-     * 
-     * @return adminStateUp */
+    /**
+     * 网络ACL的使能开关。  取值范围：true（开启），false（关闭） 
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -68,9 +72,10 @@ public class UpdateFirewallOption {
         return this;
     }
 
-    /** 网络ACL描述。
-     * 
-     * @return description */
+    /**
+     * 网络ACL描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -100,9 +105,10 @@ public class UpdateFirewallOption {
         return this;
     }
 
-    /** 关联子网列表。
-     * 
-     * @return subnets */
+    /**
+     * 关联子网列表。
+     * @return subnets
+     */
     public List<FirewallSubnetOption> getSubnets() {
         return subnets;
     }
@@ -143,7 +149,10 @@ public class UpdateFirewallOption {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

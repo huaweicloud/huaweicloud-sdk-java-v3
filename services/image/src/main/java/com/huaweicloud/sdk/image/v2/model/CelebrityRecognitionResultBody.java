@@ -30,9 +30,10 @@ public class CelebrityRecognitionResultBody {
         return this;
     }
 
-    /** 置信度，取值范围 0-1。
-     * 
-     * @return confidence */
+    /**
+     * 置信度，取值范围 0-1。
+     * @return confidence
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -46,9 +47,10 @@ public class CelebrityRecognitionResultBody {
         return this;
     }
 
-    /** 名人的面部信息，包括4个值： h：人脸区域高度 w：人脸区域宽度 x：人脸区域左上角到y轴距离 y：人脸区域左上角到x轴距离
-     * 
-     * @return faceDetail */
+    /**
+     * 名人的面部信息，包括4个值：  h：人脸区域高度  w：人脸区域宽度  x：人脸区域左上角到y轴距离  y：人脸区域左上角到x轴距离 
+     * @return faceDetail
+     */
     public Object getFaceDetail() {
         return faceDetail;
     }
@@ -62,9 +64,10 @@ public class CelebrityRecognitionResultBody {
         return this;
     }
 
-    /** label为对应的名人信息。
-     * 
-     * @return label */
+    /**
+     * label为对应的名人信息。
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -103,7 +106,10 @@ public class CelebrityRecognitionResultBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

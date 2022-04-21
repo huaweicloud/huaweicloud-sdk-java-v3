@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowLastHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class ShowLastHistoryRequest {
         return this;
     }
 
-    /** DevCloud项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
-     * 
-     * @return projectId */
+    /**
+     * DevCloud项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -39,9 +42,10 @@ public class ShowLastHistoryRequest {
         return this;
     }
 
-    /** 代码仓库名，不支持中文
-     * 
-     * @return repositoryName */
+    /**
+     * 代码仓库名，不支持中文
+     * @return repositoryName
+     */
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -78,7 +82,10 @@ public class ShowLastHistoryRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

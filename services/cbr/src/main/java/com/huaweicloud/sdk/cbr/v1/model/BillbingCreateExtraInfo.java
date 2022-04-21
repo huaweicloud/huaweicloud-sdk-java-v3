@@ -25,9 +25,10 @@ public class BillbingCreateExtraInfo {
         return this;
     }
 
-    /** 组合创建ID，组合创建时必传。
-     * 
-     * @return combinedOrderId */
+    /**
+     * 组合创建ID，组合创建时必传。
+     * @return combinedOrderId
+     */
     public String getCombinedOrderId() {
         return combinedOrderId;
     }
@@ -41,9 +42,10 @@ public class BillbingCreateExtraInfo {
         return this;
     }
 
-    /** 组合创建数量，组合创建时必填。
-     * 
-     * @return combinedOrderEcsNum */
+    /**
+     * 组合创建数量，组合创建时必填。
+     * @return combinedOrderEcsNum
+     */
     public Integer getCombinedOrderEcsNum() {
         return combinedOrderEcsNum;
     }
@@ -80,7 +82,10 @@ public class BillbingCreateExtraInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

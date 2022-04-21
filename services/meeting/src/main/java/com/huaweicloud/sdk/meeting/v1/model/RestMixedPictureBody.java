@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设置多画面消息体。 */
+/**
+ * 设置多画面消息体。
+ */
 public class RestMixedPictureBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,9 +38,10 @@ public class RestMixedPictureBody {
         return this;
     }
 
-    /** 是否为手工设置多画面。 - 0: 系统自动多画面。 - 1: 手工设置多画面。
-     * 
-     * @return manualSet */
+    /**
+     * 是否为手工设置多画面。 - 0: 系统自动多画面。 - 1: 手工设置多画面。
+     * @return manualSet
+     */
     public Integer getManualSet() {
         return manualSet;
     }
@@ -52,10 +55,10 @@ public class RestMixedPictureBody {
         return this;
     }
 
-    /** 多画面数目。手工设置多画面时有效。 - Single: 单画面。 - Two: 二画面。 - Three: 三画面。 - Four: 四画面。 - Six: 六画面。 - Nine: 九画面。 - Sixteen:
-     * 十六画面。
-     * 
-     * @return imageType */
+    /**
+     * 多画面数目。手工设置多画面时有效。 - Single: 单画面。 - Two: 二画面。 - Three: 三画面。 - Four: 四画面。 - Six: 六画面。 - Nine: 九画面。 - Sixteen: 十六画面。
+     * @return imageType
+     */
     public String getImageType() {
         return imageType;
     }
@@ -85,9 +88,10 @@ public class RestMixedPictureBody {
         return this;
     }
 
-    /** 子画面列表（手工设置多画面时必填）。
-     * 
-     * @return subscriberInPics */
+    /**
+     * 子画面列表（手工设置多画面时必填）。
+     * @return subscriberInPics
+     */
     public List<SubscriberInPic> getSubscriberInPics() {
         return subscriberInPics;
     }
@@ -101,9 +105,10 @@ public class RestMixedPictureBody {
         return this;
     }
 
-    /** 表示轮询间隔。单位：秒。 当同一个子画面中包含有多个与会者时，此参数有效。
-     * 
-     * @return switchTime */
+    /**
+     * 表示轮询间隔。单位：秒。 当同一个子画面中包含有多个与会者时，此参数有效。
+     * @return switchTime
+     */
     public Integer getSwitchTime() {
         return switchTime;
     }
@@ -144,7 +149,10 @@ public class RestMixedPictureBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

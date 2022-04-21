@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 绑定域名列表 */
+/**
+ * 绑定域名列表
+ */
 public class CertificateBundingHostBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class CertificateBundingHostBody {
 
     private String hostname;
 
-    /** waf模式（分为云模式：cloud,独享模式：premium） */
+    /**
+     * waf模式（分为云模式：cloud,独享模式：premium）
+     */
     public static final class WafTypeEnum {
 
-        /** Enum CLOUD for value: "cloud" */
+        /**
+         * Enum CLOUD for value: "cloud"
+         */
         public static final WafTypeEnum CLOUD = new WafTypeEnum("cloud");
 
-        /** Enum PREMIUM for value: "premium" */
+        /**
+         * Enum PREMIUM for value: "premium"
+         */
         public static final WafTypeEnum PREMIUM = new WafTypeEnum("premium");
 
         private static final Map<String, WafTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -104,9 +112,10 @@ public class CertificateBundingHostBody {
         return this;
     }
 
-    /** 域名id
-     * 
-     * @return id */
+    /**
+     * 域名id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -120,9 +129,10 @@ public class CertificateBundingHostBody {
         return this;
     }
 
-    /** 域名
-     * 
-     * @return hostname */
+    /**
+     * 域名
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -136,9 +146,10 @@ public class CertificateBundingHostBody {
         return this;
     }
 
-    /** waf模式（分为云模式：cloud,独享模式：premium）
-     * 
-     * @return wafType */
+    /**
+     * waf模式（分为云模式：cloud,独享模式：premium）
+     * @return wafType
+     */
     public WafTypeEnum getWafType() {
         return wafType;
     }
@@ -177,7 +188,10 @@ public class CertificateBundingHostBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

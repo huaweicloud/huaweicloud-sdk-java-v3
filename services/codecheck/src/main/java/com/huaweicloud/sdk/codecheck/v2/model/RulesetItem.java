@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** RulesetItem */
+/**
+ * RulesetItem
+ */
 public class RulesetItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +70,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 规则集id
-     * 
-     * @return templateId */
+    /**
+     * 规则集id
+     * @return templateId
+     */
     public String getTemplateId() {
         return templateId;
     }
@@ -84,9 +87,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 规则集语言
-     * 
-     * @return language */
+    /**
+     * 规则集语言
+     * @return language
+     */
     public String getLanguage() {
         return language;
     }
@@ -100,9 +104,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 规则集名称
-     * 
-     * @return templateName */
+    /**
+     * 规则集名称
+     * @return templateName
+     */
     public String getTemplateName() {
         return templateName;
     }
@@ -116,9 +121,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 创建人ID
-     * 
-     * @return creatorId */
+    /**
+     * 创建人ID
+     * @return creatorId
+     */
     public String getCreatorId() {
         return creatorId;
     }
@@ -132,9 +138,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 创建人名称
-     * 
-     * @return creatorName */
+    /**
+     * 创建人名称
+     * @return creatorName
+     */
     public String getCreatorName() {
         return creatorName;
     }
@@ -148,9 +155,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 创建人时间
-     * 
-     * @return templateCreateTime */
+    /**
+     * 创建人时间
+     * @return templateCreateTime
+     */
     public String getTemplateCreateTime() {
         return templateCreateTime;
     }
@@ -164,9 +172,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 使用状态1使用中，0空闲中
-     * 
-     * @return isUsed */
+    /**
+     * 使用状态1使用中，0空闲中
+     * @return isUsed
+     */
     public String getIsUsed() {
         return isUsed;
     }
@@ -180,9 +189,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 规则集包含的规则id
-     * 
-     * @return ruleIds */
+    /**
+     * 规则集包含的规则id
+     * @return ruleIds
+     */
     public String getRuleIds() {
         return ruleIds;
     }
@@ -196,9 +206,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 是否该语言默认规则集，0不是，1是
-     * 
-     * @return isDefault */
+    /**
+     * 是否该语言默认规则集，0不是，1是
+     * @return isDefault
+     */
     public String getIsDefault() {
         return isDefault;
     }
@@ -212,9 +223,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 是否是项目下语言默认规则集，0不是，1是
-     * 
-     * @return isDevcloudProjectDefault */
+    /**
+     * 是否是项目下语言默认规则集，0不是，1是
+     * @return isDevcloudProjectDefault
+     */
     public String getIsDevcloudProjectDefault() {
         return isDevcloudProjectDefault;
     }
@@ -228,9 +240,10 @@ public class RulesetItem {
         return this;
     }
 
-    /** 是否是系统规则集，0不是，1是
-     * 
-     * @return isDefaultTemplate */
+    /**
+     * 是否是系统规则集，0不是，1是
+     * @return isDefaultTemplate
+     */
     public String getIsDefaultTemplate() {
         return isDefaultTemplate;
     }
@@ -294,7 +307,10 @@ public class RulesetItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,9 +124,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例ID。
-     * 
-     * @return id */
+    /**
+     * DDM实例ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -138,9 +141,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例状态。
-     * 
-     * @return status */
+    /**
+     * DDM实例状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -154,9 +158,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例名称。
-     * 
-     * @return name */
+    /**
+     * DDM实例名称。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -170,9 +175,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例创建时间。
-     * 
-     * @return created */
+    /**
+     * DDM实例创建时间。
+     * @return created
+     */
     public String getCreated() {
         return created;
     }
@@ -186,9 +192,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例最后更新时间。
-     * 
-     * @return updated */
+    /**
+     * DDM实例最后更新时间。
+     * @return updated
+     */
     public String getUpdated() {
         return updated;
     }
@@ -202,9 +209,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例可用区名称。
-     * 
-     * @return availableZone */
+    /**
+     * DDM实例可用区名称。
+     * @return availableZone
+     */
     public String getAvailableZone() {
         return availableZone;
     }
@@ -218,9 +226,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 虚拟私有云的ID。
-     * 
-     * @return vpcId */
+    /**
+     * 虚拟私有云的ID。
+     * @return vpcId
+     */
     public String getVpcId() {
         return vpcId;
     }
@@ -234,9 +243,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 子网ID。
-     * 
-     * @return subnetId */
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -250,9 +260,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 安全组ID。
-     * 
-     * @return securityGroupId */
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -266,9 +277,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点数量。
-     * 
-     * @return nodeCount */
+    /**
+     * 节点数量。
+     * @return nodeCount
+     */
     public Integer getNodeCount() {
         return nodeCount;
     }
@@ -282,9 +294,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例访问地址。
-     * 
-     * @return accessIp */
+    /**
+     * DDM实例访问地址。
+     * @return accessIp
+     */
     public String getAccessIp() {
         return accessIp;
     }
@@ -298,9 +311,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** DDM实例访问端口。
-     * 
-     * @return accessPort */
+    /**
+     * DDM实例访问端口。
+     * @return accessPort
+     */
     public String getAccessPort() {
         return accessPort;
     }
@@ -314,9 +328,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点状态。
-     * 
-     * @return nodeStatus */
+    /**
+     * 节点状态。
+     * @return nodeStatus
+     */
     public String getNodeStatus() {
         return nodeStatus;
     }
@@ -330,9 +345,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** cpu个数。
-     * 
-     * @return coreCount */
+    /**
+     * cpu个数。
+     * @return coreCount
+     */
     public String getCoreCount() {
         return coreCount;
     }
@@ -346,9 +362,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 内存大小，单位为G。
-     * 
-     * @return ramCapacity */
+    /**
+     * 内存大小，单位为G。
+     * @return ramCapacity
+     */
     public String getRamCapacity() {
         return ramCapacity;
     }
@@ -362,9 +379,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 响应信息，若无异常信息则不返回该参数。
-     * 
-     * @return errorMsg */
+    /**
+     * 响应信息，若无异常信息则不返回该参数。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -378,9 +396,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 项目ID。
-     * 
-     * @return projectId */
+    /**
+     * 项目ID。
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -394,9 +413,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单ID。包周期实例的订单ID，按需实例为空。
-     * 
-     * @return orderId */
+    /**
+     * 订单ID。包周期实例的订单ID，按需实例为空。
+     * @return orderId
+     */
     public String getOrderId() {
         return orderId;
     }
@@ -410,9 +430,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -426,9 +447,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 引擎版本号（Core实例版本号）。
-     * 
-     * @return engineVersion */
+    /**
+     * 引擎版本号（Core实例版本号）。
+     * @return engineVersion
+     */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -458,9 +480,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    /** 节点信息。
-     * 
-     * @return nodes */
+    /**
+     * 节点信息。
+     * @return nodes
+     */
     public List<GetDetailfNodesInfo> getNodes() {
         return nodes;
     }
@@ -555,7 +578,10 @@ public class ShowInstanceResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

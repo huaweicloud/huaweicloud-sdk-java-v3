@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** PropertyRequest */
+/**
+ * PropertyRequest
+ */
 public class PropertyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class PropertyRequest {
         return this;
     }
 
-    /** 属性名称，必须是模型中已存在的
-     * 
-     * @return name */
+    /**
+     * 属性名称，必须是模型中已存在的
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class PropertyRequest {
         return this;
     }
 
-    /** 值，只有static型属性可以填写
-     * 
-     * @return value */
+    /**
+     * 值，只有static型属性可以填写
+     * @return value
+     */
     public Object getValue() {
         return value;
     }
@@ -60,9 +64,10 @@ public class PropertyRequest {
         return this;
     }
 
-    /** 设备ID，只有measurement型属性可以填写
-     * 
-     * @return deviceId */
+    /**
+     * 设备ID，只有measurement型属性可以填写
+     * @return deviceId
+     */
     public String getDeviceId() {
         return deviceId;
     }
@@ -100,7 +105,10 @@ public class PropertyRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

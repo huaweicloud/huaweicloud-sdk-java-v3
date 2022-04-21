@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowRecordingDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class ShowRecordingDetailRequest {
         return this;
     }
 
-    /** 会议的ConfUUID(通过查询录制列表获取)。
-     * 
-     * @return confUUID */
+    /**
+     * 会议的ConfUUID(通过查询录制列表获取)。
+     * @return confUUID
+     */
     public String getConfUUID() {
         return confUUID;
     }
@@ -49,9 +52,10 @@ public class ShowRecordingDetailRequest {
         return this;
     }
 
-    /** 用户的UUID（已在USG注册过的）。
-     * 
-     * @return userUUID */
+    /**
+     * 用户的UUID（已在USG注册过的）。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -65,9 +69,10 @@ public class ShowRecordingDetailRequest {
         return this;
     }
 
-    /** 标识是否为第三方portal过来的请求。
-     * 
-     * @return xAuthorizationType */
+    /**
+     * 标识是否为第三方portal过来的请求。
+     * @return xAuthorizationType
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
@@ -83,9 +88,10 @@ public class ShowRecordingDetailRequest {
         return this;
     }
 
-    /** 用于区分到哪个HCSO站点鉴权。
-     * 
-     * @return xSiteId */
+    /**
+     * 用于区分到哪个HCSO站点鉴权。
+     * @return xSiteId
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
@@ -128,7 +134,10 @@ public class ShowRecordingDetailRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

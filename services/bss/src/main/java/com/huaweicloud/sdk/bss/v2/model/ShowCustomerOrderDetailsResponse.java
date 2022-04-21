@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowCustomerOrderDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单项个数。
-     * 
-     * @return totalCount */
+    /**
+     * 订单项个数。
+     * @return totalCount
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -57,9 +60,10 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** Get orderInfo
-     * 
-     * @return orderInfo */
+    /**
+     * Get orderInfo
+     * @return orderInfo
+     */
     public CustomerOrderV3 getOrderInfo() {
         return orderInfo;
     }
@@ -90,9 +94,10 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return this;
     }
 
-    /** 订单对应的订单项。 具体请参见表5。
-     * 
-     * @return orderLineItems */
+    /**
+     * 订单对应的订单项。 具体请参见表5。
+     * @return orderLineItems
+     */
     public List<OrderLineItemEntityV2> getOrderLineItems() {
         return orderLineItems;
     }
@@ -131,7 +136,10 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

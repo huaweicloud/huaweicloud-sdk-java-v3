@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 修改云模式域名的请求体 */
+/**
+ * 修改云模式域名的请求体
+ */
 public class UpdateHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,19 +38,29 @@ public class UpdateHostRequestBody {
 
     private List<UpdateCloudWafServer> server = null;
 
-    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本 */
+    /**
+    * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+    */
     public static final class TlsEnum {
 
-        /** Enum TLS_V1_0 for value: "TLS v1.0" */
+        /**
+         * Enum TLS_V1_0 for value: "TLS v1.0"
+         */
         public static final TlsEnum TLS_V1_0 = new TlsEnum("TLS v1.0");
 
-        /** Enum TLS_V1_1 for value: "TLS v1.1" */
+        /**
+         * Enum TLS_V1_1 for value: "TLS v1.1"
+         */
         public static final TlsEnum TLS_V1_1 = new TlsEnum("TLS v1.1");
 
-        /** Enum TLS_V1_2 for value: "TLS v1.2" */
+        /**
+         * Enum TLS_V1_2 for value: "TLS v1.2"
+         */
         public static final TlsEnum TLS_V1_2 = new TlsEnum("TLS v1.2");
 
-        /** Enum TLS_V1_3 for value: "TLS v1.3" */
+        /**
+         * Enum TLS_V1_3 for value: "TLS v1.3"
+         */
         public static final TlsEnum TLS_V1_3 = new TlsEnum("TLS v1.3");
 
         private static final Map<String, TlsEnum> STATIC_FIELDS = createStaticFields();
@@ -120,27 +132,34 @@ public class UpdateHostRequestBody {
 
     private TlsEnum tls;
 
-    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
-     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
-     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
-     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
-     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
-     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM */
+    /**
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     */
     public static final class CipherEnum {
 
-        /** Enum CIPHER_1 for value: "cipher_1" */
+        /**
+         * Enum CIPHER_1 for value: "cipher_1"
+         */
         public static final CipherEnum CIPHER_1 = new CipherEnum("cipher_1");
 
-        /** Enum CIPHER_2 for value: "cipher_2" */
+        /**
+         * Enum CIPHER_2 for value: "cipher_2"
+         */
         public static final CipherEnum CIPHER_2 = new CipherEnum("cipher_2");
 
-        /** Enum CIPHER_3 for value: "cipher_3" */
+        /**
+         * Enum CIPHER_3 for value: "cipher_3"
+         */
         public static final CipherEnum CIPHER_3 = new CipherEnum("cipher_3");
 
-        /** Enum CIPHER_4 for value: "cipher_4" */
+        /**
+         * Enum CIPHER_4 for value: "cipher_4"
+         */
         public static final CipherEnum CIPHER_4 = new CipherEnum("cipher_4");
 
-        /** Enum CIPHER_DEFAULT for value: "cipher_default" */
+        /**
+         * Enum CIPHER_DEFAULT for value: "cipher_default"
+         */
         public static final CipherEnum CIPHER_DEFAULT = new CipherEnum("cipher_default");
 
         private static final Map<String, CipherEnum> STATIC_FIELDS = createStaticFields();
@@ -218,9 +237,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 是否使用代理
-     * 
-     * @return proxy */
+    /**
+     * 是否使用代理
+     * @return proxy
+     */
     public Boolean getProxy() {
         return proxy;
     }
@@ -234,9 +254,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 证书id,在对外协议为https的场景下可以使用，可以通过查询证书列表（ListCertificates）接口查询证书id
-     * 
-     * @return certificateid */
+    /**
+     * 证书id,在对外协议为https的场景下可以使用，可以通过查询证书列表（ListCertificates）接口查询证书id
+     * @return certificateid
+     */
     public String getCertificateid() {
         return certificateid;
     }
@@ -250,9 +271,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 证书名称,在对外协议为https的场景下可以使用，可以在页面上获取的证书名称，或通过查询证书列表（ListCertificates）接口获取证书名称
-     * 
-     * @return certificatename */
+    /**
+     * 证书名称,在对外协议为https的场景下可以使用，可以在页面上获取的证书名称，或通过查询证书列表（ListCertificates）接口获取证书名称
+     * @return certificatename
+     */
     public String getCertificatename() {
         return certificatename;
     }
@@ -282,9 +304,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 服务器配置
-     * 
-     * @return server */
+    /**
+     * 服务器配置
+     * @return server
+     */
     public List<UpdateCloudWafServer> getServer() {
         return server;
     }
@@ -298,9 +321,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
-     * 
-     * @return tls */
+    /**
+     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+     * @return tls
+     */
     public TlsEnum getTls() {
         return tls;
     }
@@ -314,14 +338,10 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    /** 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）： cipher_1：
-     * 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH
-     * cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM
-     * cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH
-     * cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH
-     * cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
-     * 
-     * @return cipher */
+    /**
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * @return cipher
+     */
     public CipherEnum getCipher() {
         return cipher;
     }
@@ -366,7 +386,10 @@ public class UpdateHostRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

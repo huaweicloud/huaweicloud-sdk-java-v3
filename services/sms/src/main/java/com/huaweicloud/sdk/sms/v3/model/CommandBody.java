@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 命令参数body */
+/**
+ * 命令参数body
+ */
 public class CommandBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CommandBody {
         return this;
     }
 
-    /** 命令名称，分为：START、STOP、DELETE、SYNC、UPLOAD_LOG、RSET_LOG_ACL
-     * 
-     * @return commandName */
+    /**
+     * 命令名称，分为：START、STOP、DELETE、SYNC、UPLOAD_LOG、RSET_LOG_ACL
+     * @return commandName
+     */
     public String getCommandName() {
         return commandName;
     }
@@ -44,9 +47,10 @@ public class CommandBody {
         return this;
     }
 
-    /** 命令执行结果  success代表执行命令成功  fail代表命令执行失败
-     * 
-     * @return result */
+    /**
+     * 命令执行结果  success代表执行命令成功  fail代表命令执行失败 
+     * @return result
+     */
     public String getResult() {
         return result;
     }
@@ -60,9 +64,10 @@ public class CommandBody {
         return this;
     }
 
-    /** JSON格式的命令执行结果，只用于保存数据库，没有其他作用
-     * 
-     * @return resultDetail */
+    /**
+     * JSON格式的命令执行结果，只用于保存数据库，没有其他作用
+     * @return resultDetail
+     */
     public Object getResultDetail() {
         return resultDetail;
     }
@@ -101,7 +106,10 @@ public class CommandBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

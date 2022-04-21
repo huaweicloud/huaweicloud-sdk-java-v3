@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateRepoMemberResult */
+/**
+ * CreateRepoMemberResult
+ */
 public class CreateRepoMemberResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class CreateRepoMemberResult {
         return this;
     }
 
-    /** 用户id
-     * 
-     * @return id */
+    /**
+     * 用户id
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -49,9 +52,10 @@ public class CreateRepoMemberResult {
         return this;
     }
 
-    /** 创建仓库成员信息
-     * 
-     * @return message */
+    /**
+     * 创建仓库成员信息
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
@@ -65,9 +69,10 @@ public class CreateRepoMemberResult {
         return this;
     }
 
-    /** 用户名
-     * 
-     * @return name */
+    /**
+     * 用户名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -81,9 +86,10 @@ public class CreateRepoMemberResult {
         return this;
     }
 
-    /** 创建仓库成员状态
-     * 
-     * @return status */
+    /**
+     * 创建仓库成员状态
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -124,7 +130,10 @@ public class CreateRepoMemberResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

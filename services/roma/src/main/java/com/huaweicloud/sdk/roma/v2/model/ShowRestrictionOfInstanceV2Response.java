@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowRestrictionOfInstanceV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class ShowRestrictionOfInstanceV2Response extends SdkResponse {
         return this;
     }
 
-    /** 受限的IP网段的CIDR列表。
-     * 
-     * @return restrictCidrs */
+    /**
+     * 受限的IP网段的CIDR列表。
+     * @return restrictCidrs
+     */
     public List<String> getRestrictCidrs() {
         return restrictCidrs;
     }
@@ -59,9 +62,10 @@ public class ShowRestrictionOfInstanceV2Response extends SdkResponse {
         return this;
     }
 
-    /** 资源租户的IP网段的CIDR。
-     * 
-     * @return resourceSubnetCidr */
+    /**
+     * 资源租户的IP网段的CIDR。
+     * @return resourceSubnetCidr
+     */
     public String getResourceSubnetCidr() {
         return resourceSubnetCidr;
     }
@@ -99,7 +103,10 @@ public class ShowRestrictionOfInstanceV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

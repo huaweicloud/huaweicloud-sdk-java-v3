@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 标识为扩展字段，包括count（当前响应中事件记录的个数）和marker（本次查询返回事件列表最后一个事件ID）。 */
+/**
+ * 标识为扩展字段，包括count（当前响应中事件记录的个数）和marker（本次查询返回事件列表最后一个事件ID）。
+ */
 public class MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,12 @@ public class MetaData {
         return this;
     }
 
-    /** 标识本次查询事件列表返回的事件记录的总条数。 minimum: 0 maximum: 5000
-     * 
-     * @return count */
+    /**
+     * 标识本次查询事件列表返回的事件记录的总条数。
+     * minimum: 0
+     * maximum: 5000
+     * @return count
+     */
     public Integer getCount() {
         return count;
     }
@@ -39,9 +44,10 @@ public class MetaData {
         return this;
     }
 
-    /** 标识本次查询事件列表返回的最后一个事件ID。可以使用这个参数返回值作为分页请求参数next的值，如果marker返回为null，则表示当前请求条件下查询事件列表已经全部返回没有下一页。
-     * 
-     * @return marker */
+    /**
+     * 标识本次查询事件列表返回的最后一个事件ID。可以使用这个参数返回值作为分页请求参数next的值，如果marker返回为null，则表示当前请求条件下查询事件列表已经全部返回没有下一页。
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -77,7 +83,10 @@ public class MetaData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

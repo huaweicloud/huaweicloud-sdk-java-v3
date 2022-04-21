@@ -7,7 +7,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowTrackerConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +41,10 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get channel
-     * 
-     * @return channel */
+    /**
+     * Get channel
+     * @return channel
+     */
     public ChannelConfigBody getChannel() {
         return channel;
     }
@@ -64,9 +67,10 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** Get selector
-     * 
-     * @return selector */
+    /**
+     * Get selector
+     * @return selector
+     */
     public SelectorConfigBody getSelector() {
         return selector;
     }
@@ -80,9 +84,10 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         return this;
     }
 
-    /** IAM委托名称
-     * 
-     * @return agencyName */
+    /**
+     * IAM委托名称
+     * @return agencyName
+     */
     public String getAgencyName() {
         return agencyName;
     }
@@ -121,7 +126,10 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

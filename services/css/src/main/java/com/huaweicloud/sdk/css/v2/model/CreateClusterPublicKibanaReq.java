@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Kibana公网访问信息 */
+/**
+ * Kibana公网访问信息
+ */
 public class CreateClusterPublicKibanaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateClusterPublicKibanaReq {
         return this;
     }
 
-    /** 带宽大小。
-     * 
-     * @return eipSize */
+    /**
+     * 带宽大小。
+     * @return eipSize
+     */
     public Integer getEipSize() {
         return eipSize;
     }
@@ -50,9 +53,10 @@ public class CreateClusterPublicKibanaReq {
         return this;
     }
 
-    /** Get elbWhiteList
-     * 
-     * @return elbWhiteList */
+    /**
+     * Get elbWhiteList
+     * @return elbWhiteList
+     */
     public CreateClusterPublicKibanaElbWhiteList getElbWhiteList() {
         return elbWhiteList;
     }
@@ -89,7 +93,10 @@ public class CreateClusterPublicKibanaReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

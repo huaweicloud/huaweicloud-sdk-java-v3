@@ -10,16 +10,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 虚拟私有云ID字段数据结构说明 */
+/**
+ * 虚拟私有云ID字段数据结构说明
+ */
 public class Address {
 
-    /** IP地址版本。4：代表IPv4。6：代表IPv6。 */
+    /**
+     * IP地址版本。4：代表IPv4。6：代表IPv6。
+     */
     public static final class VersionEnum {
 
-        /** Enum NUMBER_4 for value: 4 */
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
         public static final VersionEnum NUMBER_4 = new VersionEnum(4);
 
-        /** Enum NUMBER_6 for value: 6 */
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
         public static final VersionEnum NUMBER_6 = new VersionEnum(6);
 
         private static final Map<Integer, VersionEnum> STATIC_FIELDS = createStaticFields();
@@ -94,13 +102,19 @@ public class Address {
 
     private String addr;
 
-    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。 */
+    /**
+     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     */
     public static final class OsEXTIPSTypeEnum {
 
-        /** Enum FIXED for value: "fixed" */
+        /**
+         * Enum FIXED for value: "fixed"
+         */
         public static final OsEXTIPSTypeEnum FIXED = new OsEXTIPSTypeEnum("fixed");
 
-        /** Enum FLOATING for value: "floating" */
+        /**
+         * Enum FLOATING for value: "floating"
+         */
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
 
         private static final Map<String, OsEXTIPSTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -185,9 +199,10 @@ public class Address {
         return this;
     }
 
-    /** IP地址版本。4：代表IPv4。6：代表IPv6。
-     * 
-     * @return version */
+    /**
+     * IP地址版本。4：代表IPv4。6：代表IPv6。
+     * @return version
+     */
     public VersionEnum getVersion() {
         return version;
     }
@@ -201,9 +216,10 @@ public class Address {
         return this;
     }
 
-    /** IP地址
-     * 
-     * @return addr */
+    /**
+     * IP地址
+     * @return addr
+     */
     public String getAddr() {
         return addr;
     }
@@ -217,9 +233,10 @@ public class Address {
         return this;
     }
 
-    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     * 
-     * @return osEXTIPSType */
+    /**
+     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     * @return osEXTIPSType
+     */
     public OsEXTIPSTypeEnum getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -233,9 +250,10 @@ public class Address {
         return this;
     }
 
-    /** MAC地址
-     * 
-     * @return osEXTIPSMACMacAddr */
+    /**
+     * MAC地址
+     * @return osEXTIPSMACMacAddr
+     */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -249,9 +267,10 @@ public class Address {
         return this;
     }
 
-    /** IP地址对应的端口ID
-     * 
-     * @return osEXTIPSPortId */
+    /**
+     * IP地址对应的端口ID
+     * @return osEXTIPSPortId
+     */
     public String getOsEXTIPSPortId() {
         return osEXTIPSPortId;
     }
@@ -293,7 +312,10 @@ public class Address {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

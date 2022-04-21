@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** BusinessRiskItem */
+/**
+ * BusinessRiskItem
+ */
 public class BusinessRiskItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,22 +25,34 @@ public class BusinessRiskItem {
 
     private String riskUrl;
 
-    /** 业务风险类型: * text - 不合规文字 * image - 不合规图片 * dead_link - 不合规链接（死链） * dark_link - 不合规链接（暗链） * business_risk - 业务风险 */
+    /**
+     * 业务风险类型:   * text - 不合规文字   * image - 不合规图片   * dead_link - 不合规链接（死链）   * dark_link - 不合规链接（暗链）   * business_risk - 业务风险 
+     */
     public static final class RiskTypeEnum {
 
-        /** Enum TEXT for value: "text" */
+        /**
+         * Enum TEXT for value: "text"
+         */
         public static final RiskTypeEnum TEXT = new RiskTypeEnum("text");
 
-        /** Enum IMAGE for value: "image" */
+        /**
+         * Enum IMAGE for value: "image"
+         */
         public static final RiskTypeEnum IMAGE = new RiskTypeEnum("image");
 
-        /** Enum DEAD_LINK for value: "dead_link" */
+        /**
+         * Enum DEAD_LINK for value: "dead_link"
+         */
         public static final RiskTypeEnum DEAD_LINK = new RiskTypeEnum("dead_link");
 
-        /** Enum DARK_LINK for value: "dark_link" */
+        /**
+         * Enum DARK_LINK for value: "dark_link"
+         */
         public static final RiskTypeEnum DARK_LINK = new RiskTypeEnum("dark_link");
 
-        /** Enum BUSINESS_RISK for value: "business_risk" */
+        /**
+         * Enum BUSINESS_RISK for value: "business_risk"
+         */
         public static final RiskTypeEnum BUSINESS_RISK = new RiskTypeEnum("business_risk");
 
         private static final Map<String, RiskTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -121,16 +135,24 @@ public class BusinessRiskItem {
 
     private String riskContent;
 
-    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略 */
+    /**
+     * 漏洞状态:   * repairing - 未修复   * repaired - 已修复   * false_report - 误报，已忽略 
+     */
     public static final class RiskStatusEnum {
 
-        /** Enum REPAIRING for value: "repairing" */
+        /**
+         * Enum REPAIRING for value: "repairing"
+         */
         public static final RiskStatusEnum REPAIRING = new RiskStatusEnum("repairing");
 
-        /** Enum REPAIRED for value: "repaired" */
+        /**
+         * Enum REPAIRED for value: "repaired"
+         */
         public static final RiskStatusEnum REPAIRED = new RiskStatusEnum("repaired");
 
-        /** Enum FALSE_REPORT for value: "false_report" */
+        /**
+         * Enum FALSE_REPORT for value: "false_report"
+         */
         public static final RiskStatusEnum FALSE_REPORT = new RiskStatusEnum("false_report");
 
         private static final Map<String, RiskStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -206,9 +228,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 业务风险ID
-     * 
-     * @return riskId */
+    /**
+     * 业务风险ID
+     * @return riskId
+     */
     public String getRiskId() {
         return riskId;
     }
@@ -222,9 +245,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 有风险的URL
-     * 
-     * @return riskUrl */
+    /**
+     * 有风险的URL
+     * @return riskUrl
+     */
     public String getRiskUrl() {
         return riskUrl;
     }
@@ -238,9 +262,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 业务风险类型: * text - 不合规文字 * image - 不合规图片 * dead_link - 不合规链接（死链） * dark_link - 不合规链接（暗链） * business_risk - 业务风险
-     * 
-     * @return riskType */
+    /**
+     * 业务风险类型:   * text - 不合规文字   * image - 不合规图片   * dead_link - 不合规链接（死链）   * dark_link - 不合规链接（暗链）   * business_risk - 业务风险 
+     * @return riskType
+     */
     public RiskTypeEnum getRiskType() {
         return riskType;
     }
@@ -254,9 +279,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 业务风险发现时间
-     * 
-     * @return findTime */
+    /**
+     * 业务风险发现时间
+     * @return findTime
+     */
     public String getFindTime() {
         return findTime;
     }
@@ -270,9 +296,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 业务风险内容
-     * 
-     * @return riskContent */
+    /**
+     * 业务风险内容
+     * @return riskContent
+     */
     public String getRiskContent() {
         return riskContent;
     }
@@ -286,9 +313,10 @@ public class BusinessRiskItem {
         return this;
     }
 
-    /** 漏洞状态: * repairing - 未修复 * repaired - 已修复 * false_report - 误报，已忽略
-     * 
-     * @return riskStatus */
+    /**
+     * 漏洞状态:   * repairing - 未修复   * repaired - 已修复   * false_report - 误报，已忽略 
+     * @return riskStatus
+     */
     public RiskStatusEnum getRiskStatus() {
         return riskStatus;
     }
@@ -333,7 +361,10 @@ public class BusinessRiskItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

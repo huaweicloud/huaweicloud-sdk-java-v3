@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UpdateInstanceAutoCreateTopicReq */
+/**
+ * UpdateInstanceAutoCreateTopicReq
+ */
 public class UpdateInstanceAutoCreateTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class UpdateInstanceAutoCreateTopicReq {
         return this;
     }
 
-    /** 是否开启自动创建topic功能。
-     * 
-     * @return enableAutoTopic */
+    /**
+     * 是否开启自动创建topic功能。
+     * @return enableAutoTopic
+     */
     public Boolean getEnableAutoTopic() {
         return enableAutoTopic;
     }
@@ -55,7 +58,10 @@ public class UpdateInstanceAutoCreateTopicReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

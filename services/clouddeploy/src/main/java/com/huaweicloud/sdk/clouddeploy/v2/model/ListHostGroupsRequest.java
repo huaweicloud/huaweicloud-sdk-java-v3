@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHostGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,13 +25,19 @@ public class ListHostGroupsRequest {
 
     private String regionName;
 
-    /** 操作系统：windows|linux */
+    /**
+     * 操作系统：windows|linux
+     */
     public static final class OsEnum {
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final OsEnum WINDOWS = new OsEnum("windows");
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final OsEnum LINUX = new OsEnum("linux");
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
@@ -119,13 +127,19 @@ public class ListHostGroupsRequest {
 
     private String sortKey;
 
-    /** 排序方式：DESC|ASC，默认为DESC */
+    /**
+     * 排序方式：DESC、ASC，默认为DESC
+     */
     public static final class SortDirEnum {
 
-        /** Enum DESC for value: "DESC" */
+        /**
+         * Enum DESC for value: "DESC"
+         */
         public static final SortDirEnum DESC = new SortDirEnum("DESC");
 
-        /** Enum ASC for value: "ASC" */
+        /**
+         * Enum ASC for value: "ASC"
+         */
         public static final SortDirEnum ASC = new SortDirEnum("ASC");
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
@@ -200,9 +214,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** devcloud创建的项目id
-     * 
-     * @return projectId */
+    /**
+     * devcloud创建的项目id
+     * @return projectId
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -216,9 +231,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 局点信息
-     * 
-     * @return regionName */
+    /**
+     * 局点信息
+     * @return regionName
+     */
     public String getRegionName() {
         return regionName;
     }
@@ -232,9 +248,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 操作系统：windows|linux
-     * 
-     * @return os */
+    /**
+     * 操作系统：windows|linux
+     * @return os
+     */
     public OsEnum getOs() {
         return os;
     }
@@ -248,9 +265,11 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0
-     * 
-     * @return offset */
+    /**
+     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * minimum: 0
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -264,9 +283,12 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 每页显示的条目数量，默认为1000 minimum: 1 maximum: 1000
-     * 
-     * @return limit */
+    /**
+     * 每页显示的条目数量，默认为1000
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -280,9 +302,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 主机组名
-     * 
-     * @return name */
+    /**
+     * 主机组名
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -296,9 +319,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 排序字段：nickName|NAME|OWNER_NAME|CREATE_TIME|name|owner_name|create_time，不传使用默认排序
-     * 
-     * @return sortKey */
+    /**
+     * 排序字段：nickName|NAME|OWNER_NAME|CREATE_TIME|name|owner_name|create_time，不传使用默认排序
+     * @return sortKey
+     */
     public String getSortKey() {
         return sortKey;
     }
@@ -312,9 +336,10 @@ public class ListHostGroupsRequest {
         return this;
     }
 
-    /** 排序方式：DESC|ASC，默认为DESC
-     * 
-     * @return sortDir */
+    /**
+     * 排序方式：DESC、ASC，默认为DESC
+     * @return sortDir
+     */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -363,7 +388,10 @@ public class ListHostGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 转存目标的描述。 */
+/**
+ * 转存目标的描述。
+ */
 public class ShowSinkTaskDetailRespObsDestinationDescriptor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +55,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 消费启动策略： - latest：从Topic最后端开始消费。 - earliest: 从Topic最前端消息开始消费。 默认是latest。
-     * 
-     * @return consumerStrategy */
+    /**
+     * 消费启动策略：  - latest：从Topic最后端开始消费。  - earliest: 从Topic最前端消息开始消费。  默认是latest。 
+     * @return consumerStrategy
+     */
     public String getConsumerStrategy() {
         return consumerStrategy;
     }
@@ -69,9 +72,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 转储文件格式。目前只支持text格式。
-     * 
-     * @return destinationFileType */
+    /**
+     * 转储文件格式。目前只支持text格式。 
+     * @return destinationFileType
+     */
     public String getDestinationFileType() {
         return destinationFileType;
     }
@@ -85,9 +89,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 存储该通道数据的OBS桶名称。
-     * 
-     * @return obsBucketName */
+    /**
+     * 存储该通道数据的OBS桶名称。 
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -101,9 +106,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 存储在obs的路径。
-     * 
-     * @return obsPath */
+    /**
+     * 存储在obs的路径。 
+     * @return obsPath
+     */
     public String getObsPath() {
         return obsPath;
     }
@@ -117,11 +123,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。 - N/A：置空，不使用日期时间目录。 - yyyy：年 - yyyy/MM：年/月
-     * - yyyy/MM/dd：年/月/日 - yyyy/MM/dd/HH：年/月/日/时 - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10
-     * > 14 > 49”，“2017”表示最外层文件夹。 默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间
-     * 
-     * @return partitionFormat */
+    /**
+     * 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。   - N/A：置空，不使用日期时间目录。   - yyyy：年   - yyyy/MM：年/月   - yyyy/MM/dd：年/月/日   - yyyy/MM/dd/HH：年/月/日/时   - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+     * @return partitionFormat
+     */
     public String getPartitionFormat() {
         return partitionFormat;
     }
@@ -135,9 +140,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围： - 逗号“,” - 分号“;” - 竖线“|” - 换行符“\\n” - NULL 默认值：换行符“\\n”。
-     * 
-     * @return recordDelimiter */
+    /**
+     * 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
+     * @return recordDelimiter
+     */
     public String getRecordDelimiter() {
         return recordDelimiter;
     }
@@ -151,9 +157,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 缺省值：300 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。
-     * 
-     * @return deliverTimeInterval */
+    /**
+     * 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 缺省值：300 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。 
+     * @return deliverTimeInterval
+     */
     public Integer getDeliverTimeInterval() {
         return deliverTimeInterval;
     }
@@ -167,9 +174,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return this;
     }
 
-    /** 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。
-     * 
-     * @return obsPartSize */
+    /**
+     * 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。 
+     * @return obsPartSize
+     */
     public Long getObsPartSize() {
         return obsPartSize;
     }
@@ -228,7 +236,10 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

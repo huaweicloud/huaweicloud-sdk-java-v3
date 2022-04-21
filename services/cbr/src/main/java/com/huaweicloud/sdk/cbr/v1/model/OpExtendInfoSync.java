@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** OpExtendInfoSync */
+/**
+ * OpExtendInfoSync
+ */
 public class OpExtendInfoSync {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class OpExtendInfoSync {
         return this;
     }
 
-    /** 同步备份副本数
-     * 
-     * @return syncBackupNum */
+    /**
+     * 同步备份副本数
+     * @return syncBackupNum
+     */
     public Integer getSyncBackupNum() {
         return syncBackupNum;
     }
@@ -44,9 +47,10 @@ public class OpExtendInfoSync {
         return this;
     }
 
-    /** 删除的备份副本数
-     * 
-     * @return deleteBackupNum */
+    /**
+     * 删除的备份副本数
+     * @return deleteBackupNum
+     */
     public Integer getDeleteBackupNum() {
         return deleteBackupNum;
     }
@@ -60,9 +64,10 @@ public class OpExtendInfoSync {
         return this;
     }
 
-    /** 同步失败备副本数
-     * 
-     * @return errSyncBackupNum */
+    /**
+     * 同步失败备副本数
+     * @return errSyncBackupNum
+     */
     public Integer getErrSyncBackupNum() {
         return errSyncBackupNum;
     }
@@ -101,7 +106,10 @@ public class OpExtendInfoSync {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

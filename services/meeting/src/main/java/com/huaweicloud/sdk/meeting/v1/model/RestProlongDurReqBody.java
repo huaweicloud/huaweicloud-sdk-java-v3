@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 延长会议消息体。 */
+/**
+ * 延长会议消息体。
+ */
 public class RestProlongDurReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class RestProlongDurReqBody {
         return this;
     }
 
-    /** - 0: 手动延长。 - 1: 自动延长（未携带延长时间时，默认每次延长15分钟）。
-     * 
-     * @return auto */
+    /**
+     * - 0: 手动延长。 - 1: 自动延长（未携带延长时间时，默认每次延长15分钟）。
+     * @return auto
+     */
     public Integer getAuto() {
         return auto;
     }
@@ -39,9 +42,10 @@ public class RestProlongDurReqBody {
         return this;
     }
 
-    /** 延长时间，单位为分钟。 默认值：15
-     * 
-     * @return duration */
+    /**
+     * 延长时间，单位为分钟。 默认值：15
+     * @return duration
+     */
     public Integer getDuration() {
         return duration;
     }
@@ -78,7 +82,10 @@ public class RestProlongDurReqBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

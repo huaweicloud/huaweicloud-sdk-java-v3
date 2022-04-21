@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** btrfs分区类型 */
+/**
+ * btrfs分区类型
+ */
 public class BtrfsFileSystem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +98,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 文件系统名称
-     * 
-     * @return name */
+    /**
+     * 文件系统名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -112,9 +115,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 文件系统标签，若无标签为空字符串
-     * 
-     * @return label */
+    /**
+     * 文件系统标签，若无标签为空字符串
+     * @return label
+     */
     public String getLabel() {
         return label;
     }
@@ -128,9 +132,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 文件系统的uuid
-     * 
-     * @return uuid */
+    /**
+     * 文件系统的uuid
+     * @return uuid
+     */
     public String getUuid() {
         return uuid;
     }
@@ -144,9 +149,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** btrfs包含的设备名称
-     * 
-     * @return device */
+    /**
+     * btrfs包含的设备名称
+     * @return device
+     */
     public String getDevice() {
         return device;
     }
@@ -160,9 +166,12 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 文件系统数据占用大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return size */
+    /**
+     * 文件系统数据占用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return size
+     */
     public Long getSize() {
         return size;
     }
@@ -176,9 +185,12 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** btrfs节点大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return nodesize */
+    /**
+     * btrfs节点大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return nodesize
+     */
     public Long getNodesize() {
         return nodesize;
     }
@@ -192,9 +204,12 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 扇区大小 minimum: 0 maximum: 2147483647
-     * 
-     * @return sectorsize */
+    /**
+     * 扇区大小
+     * minimum: 0
+     * maximum: 2147483647
+     * @return sectorsize
+     */
     public Integer getSectorsize() {
         return sectorsize;
     }
@@ -208,9 +223,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 数据配置（RAD）
-     * 
-     * @return dataProfile */
+    /**
+     * 数据配置（RAD）
+     * @return dataProfile
+     */
     public String getDataProfile() {
         return dataProfile;
     }
@@ -224,9 +240,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 文件系统配置（RAD）
-     * 
-     * @return systemProfile */
+    /**
+     * 文件系统配置（RAD）
+     * @return systemProfile
+     */
     public String getSystemProfile() {
         return systemProfile;
     }
@@ -240,9 +257,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 元数据配置（RAD）
-     * 
-     * @return metadataProfile */
+    /**
+     * 元数据配置（RAD）
+     * @return metadataProfile
+     */
     public String getMetadataProfile() {
         return metadataProfile;
     }
@@ -256,9 +274,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** Btrfs文件系统信息
-     * 
-     * @return globalReserve1 */
+    /**
+     * Btrfs文件系统信息
+     * @return globalReserve1
+     */
     public String getGlobalReserve1() {
         return globalReserve1;
     }
@@ -272,9 +291,12 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** Btrfs卷已使用空间大小 minimum: 0 maximum: 9223372036854775807
-     * 
-     * @return gVolUsedSize */
+    /**
+     * Btrfs卷已使用空间大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return gVolUsedSize
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "g_vol_used_size")
     public Long getGVolUsedSize() {
@@ -290,9 +312,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 默认子卷ID
-     * 
-     * @return defaultSubvolid */
+    /**
+     * 默认子卷ID
+     * @return defaultSubvolid
+     */
     public String getDefaultSubvolid() {
         return defaultSubvolid;
     }
@@ -306,9 +329,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 默认子卷名称
-     * 
-     * @return defaultSubvolName */
+    /**
+     * 默认子卷名称
+     * @return defaultSubvolName
+     */
     public String getDefaultSubvolName() {
         return defaultSubvolName;
     }
@@ -322,9 +346,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 默认子卷挂载路径/BTRFS文件系统的挂载路径
-     * 
-     * @return defaultSubvolMountpath */
+    /**
+     * 默认子卷挂载路径/BTRFS文件系统的挂载路径
+     * @return defaultSubvolMountpath
+     */
     public String getDefaultSubvolMountpath() {
         return defaultSubvolMountpath;
     }
@@ -354,9 +379,10 @@ public class BtrfsFileSystem {
         return this;
     }
 
-    /** 子卷信息
-     * 
-     * @return subvolumn */
+    /**
+     * 子卷信息
+     * @return subvolumn
+     */
     public List<BtrfsSubvolumn> getSubvolumn() {
         return subvolumn;
     }
@@ -434,7 +460,10 @@ public class BtrfsFileSystem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 用户及其权限。 */
+/**
+ * 用户及其权限。
+ */
 public class UserWithPrivilege {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class UserWithPrivilege {
         return this;
     }
 
-    /** 用户名。
-     * 
-     * @return name */
+    /**
+     * 用户名。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -39,9 +42,10 @@ public class UserWithPrivilege {
         return this;
     }
 
-    /** 是否为只读权限。
-     * 
-     * @return readonly */
+    /**
+     * 是否为只读权限。
+     * @return readonly
+     */
     public Boolean getReadonly() {
         return readonly;
     }
@@ -78,7 +82,10 @@ public class UserWithPrivilege {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

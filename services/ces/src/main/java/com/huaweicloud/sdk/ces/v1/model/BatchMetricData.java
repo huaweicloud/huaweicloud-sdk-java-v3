@@ -43,9 +43,10 @@ public class BatchMetricData {
         return this;
     }
 
-    /** 指标单位。
-     * 
-     * @return unit */
+    /**
+     * 指标单位。
+     * @return unit
+     */
     public String getUnit() {
         return unit;
     }
@@ -75,9 +76,10 @@ public class BatchMetricData {
         return this;
     }
 
-    /** 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
-     * 
-     * @return datapoints */
+    /**
+     * 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+     * @return datapoints
+     */
     public List<DatapointForBatchMetric> getDatapoints() {
         return datapoints;
     }
@@ -91,9 +93,10 @@ public class BatchMetricData {
         return this;
     }
 
-    /** 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return namespace */
+    /**
+     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -107,9 +110,10 @@ public class BatchMetricData {
         return this;
     }
 
-    /** 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
-     * 
-     * @return metricName */
+    /**
+     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return metricName
+     */
     public String getMetricName() {
         return metricName;
     }
@@ -139,9 +143,10 @@ public class BatchMetricData {
         return this;
     }
 
-    /** 指标维度列表。
-     * 
-     * @return dimensions */
+    /**
+     * 指标维度列表。
+     * @return dimensions
+     */
     public List<MetricsDimension> getDimensions() {
         return dimensions;
     }
@@ -184,7 +189,10 @@ public class BatchMetricData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

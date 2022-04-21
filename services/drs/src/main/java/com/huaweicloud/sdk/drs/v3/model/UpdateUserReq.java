@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 更新迁移用户请求体 */
+/**
+ * 更新迁移用户请求体
+ */
 public class UpdateUserReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,9 +53,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return jobId */
+    /**
+     * 任务ID
+     * @return jobId
+     */
     public String getJobId() {
         return jobId;
     }
@@ -67,9 +70,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 全局密码。
-     * 
-     * @return password */
+    /**
+     * 全局密码。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -99,9 +103,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 用户迁移信息，迁移用户时必填
-     * 
-     * @return list */
+    /**
+     * 用户迁移信息，迁移用户时必填
+     * @return list
+     */
     public List<UserAccountVO> getList() {
         return list;
     }
@@ -131,9 +136,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 角色迁移信息，迁移用户时必填
-     * 
-     * @return userRoles */
+    /**
+     * 角色迁移信息，迁移用户时必填
+     * @return userRoles
+     */
     public List<UserRoleVO> getUserRoles() {
         return userRoles;
     }
@@ -147,9 +153,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 是否设置密码
-     * 
-     * @return isSetPassword */
+    /**
+     * 是否设置密码
+     * @return isSetPassword
+     */
     public Boolean getIsSetPassword() {
         return isSetPassword;
     }
@@ -163,9 +170,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 是否迁移用户
-     * 
-     * @return isMigrateUser */
+    /**
+     * 是否迁移用户
+     * @return isMigrateUser
+     */
     public Boolean getIsMigrateUser() {
         return isMigrateUser;
     }
@@ -179,9 +187,10 @@ public class UpdateUserReq {
         return this;
     }
 
-    /** 是否同步权限，不填默认为false，PG同步使用。
-     * 
-     * @return isSyncObjectPrivilege */
+    /**
+     * 是否同步权限，不填默认为false，PG同步使用。
+     * @return isSyncObjectPrivilege
+     */
     public Boolean getIsSyncObjectPrivilege() {
         return isSyncObjectPrivilege;
     }
@@ -226,7 +235,10 @@ public class UpdateUserReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

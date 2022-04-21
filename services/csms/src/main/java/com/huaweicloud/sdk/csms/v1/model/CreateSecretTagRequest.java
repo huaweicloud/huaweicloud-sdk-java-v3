@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class CreateSecretTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,9 +26,10 @@ public class CreateSecretTagRequest {
         return this;
     }
 
-    /** 凭据ID
-     * 
-     * @return secretId */
+    /**
+     * 凭据ID
+     * @return secretId
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -49,9 +52,10 @@ public class CreateSecretTagRequest {
         return this;
     }
 
-    /** Get body
-     * 
-     * @return body */
+    /**
+     * Get body
+     * @return body
+     */
     public CreateSecretTagRequestBody getBody() {
         return body;
     }
@@ -88,7 +92,10 @@ public class CreateSecretTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

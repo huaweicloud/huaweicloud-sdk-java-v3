@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ListTopicsItem */
+/**
+ * ListTopicsItem
+ */
 public class ListTopicsItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class ListTopicsItem {
         return this;
     }
 
-    /** Topic的唯一的资源标识。
-     * 
-     * @return topicUrn */
+    /**
+     * Topic的唯一的资源标识。
+     * @return topicUrn
+     */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -54,9 +57,10 @@ public class ListTopicsItem {
         return this;
     }
 
-    /** 创建topic的名字。
-     * 
-     * @return name */
+    /**
+     * 创建topic的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -70,9 +74,10 @@ public class ListTopicsItem {
         return this;
     }
 
-    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示。
-     * 
-     * @return displayName */
+    /**
+     * Topic的显示名，推送邮件消息时，作为邮件发件人显示。
+     * @return displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -86,9 +91,10 @@ public class ListTopicsItem {
         return this;
     }
 
-    /** 消息推送的策略，该属性目前不支持修改，后续将支持修改。0表示发送失败，保留到失败队列，1表示直接丢弃发送失败的消息。
-     * 
-     * @return pushPolicy */
+    /**
+     * 消息推送的策略，该属性目前不支持修改，后续将支持修改。0表示发送失败，保留到失败队列，1表示直接丢弃发送失败的消息。
+     * @return pushPolicy
+     */
     public Integer getPushPolicy() {
         return pushPolicy;
     }
@@ -102,9 +108,10 @@ public class ListTopicsItem {
         return this;
     }
 
-    /** 企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -146,7 +153,10 @@ public class ListTopicsItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

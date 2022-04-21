@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 迁移用户响应体 */
+/**
+ * 迁移用户响应体
+ */
 public class QueryUserDetailResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,9 +73,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 用户账户id。
-     * 
-     * @return id */
+    /**
+     * 用户账户id。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -87,9 +90,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 账户。
-     * 
-     * @return account */
+    /**
+     * 账户。
+     * @return account
+     */
     public String getAccount() {
         return account;
     }
@@ -103,9 +107,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 说明。
-     * 
-     * @return comment */
+    /**
+     * 说明。
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
@@ -119,9 +124,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 是否支持迁移
-     * 
-     * @return isTransfer */
+    /**
+     * 是否支持迁移
+     * @return isTransfer
+     */
     public Boolean getIsTransfer() {
         return isTransfer;
     }
@@ -151,9 +157,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 权限
-     * 
-     * @return privileges */
+    /**
+     * 权限
+     * @return privileges
+     */
     public List<String> getPrivileges() {
         return privileges;
     }
@@ -167,9 +174,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 密码。
-     * 
-     * @return password */
+    /**
+     * 密码。
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
@@ -199,9 +207,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 账号拥有的角色
-     * 
-     * @return roles */
+    /**
+     * 账号拥有的角色
+     * @return roles
+     */
     public List<String> getRoles() {
         return roles;
     }
@@ -215,9 +224,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 是否选择。
-     * 
-     * @return selected */
+    /**
+     * 是否选择。
+     * @return selected
+     */
     public Boolean getSelected() {
         return selected;
     }
@@ -231,9 +241,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 无法同步的用户权限
-     * 
-     * @return noPrivileges */
+    /**
+     * 无法同步的用户权限
+     * @return noPrivileges
+     */
     public String getNoPrivileges() {
         return noPrivileges;
     }
@@ -247,9 +258,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 父用户
-     * 
-     * @return parentAccount */
+    /**
+     * 父用户
+     * @return parentAccount
+     */
     public String getParentAccount() {
         return parentAccount;
     }
@@ -263,9 +275,10 @@ public class QueryUserDetailResp {
         return this;
     }
 
-    /** 无法同步父子关系的父用户
-     * 
-     * @return noParentAccount */
+    /**
+     * 无法同步父子关系的父用户
+     * @return noParentAccount
+     */
     public String getNoParentAccount() {
         return noParentAccount;
     }
@@ -330,7 +343,10 @@ public class QueryUserDetailResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

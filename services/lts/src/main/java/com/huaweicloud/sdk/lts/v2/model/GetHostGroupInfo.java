@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 主机组详细信息 */
+/**
+ * 主机组详细信息
+ */
 public class GetHostGroupInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,13 +28,19 @@ public class GetHostGroupInfo {
 
     private String hostGroupName;
 
-    /** 主机组类型。linux：linux类型，windows：windows类型 */
+    /**
+     * 主机组类型。linux：linux类型，windows：windows类型
+     */
     public static final class HostGroupTypeEnum {
 
-        /** Enum LINUX for value: "linux" */
+        /**
+         * Enum LINUX for value: "linux"
+         */
         public static final HostGroupTypeEnum LINUX = new HostGroupTypeEnum("linux");
 
-        /** Enum WINDOWS for value: "windows" */
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
         public static final HostGroupTypeEnum WINDOWS = new HostGroupTypeEnum("windows");
 
         private static final Map<String, HostGroupTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -127,9 +135,10 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 主机组ID
-     * 
-     * @return hostGroupId */
+    /**
+     * 主机组ID
+     * @return hostGroupId
+     */
     public String getHostGroupId() {
         return hostGroupId;
     }
@@ -143,9 +152,10 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 主机组名称
-     * 
-     * @return hostGroupName */
+    /**
+     * 主机组名称
+     * @return hostGroupName
+     */
     public String getHostGroupName() {
         return hostGroupName;
     }
@@ -159,9 +169,10 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 主机组类型。linux：linux类型，windows：windows类型
-     * 
-     * @return hostGroupType */
+    /**
+     * 主机组类型。linux：linux类型，windows：windows类型
+     * @return hostGroupType
+     */
     public HostGroupTypeEnum getHostGroupType() {
         return hostGroupType;
     }
@@ -191,9 +202,10 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 主机ID列表
-     * 
-     * @return hostIdList */
+    /**
+     * 主机ID列表
+     * @return hostIdList
+     */
     public List<String> getHostIdList() {
         return hostIdList;
     }
@@ -223,9 +235,10 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 标签信息
-     * 
-     * @return hostGroupTag */
+    /**
+     * 标签信息
+     * @return hostGroupTag
+     */
     public List<HostGroupTag> getHostGroupTag() {
         return hostGroupTag;
     }
@@ -239,9 +252,12 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 创建时间 minimum: 0 maximum: 9999999999999
-     * 
-     * @return createTime */
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return createTime
+     */
     public Long getCreateTime() {
         return createTime;
     }
@@ -255,9 +271,12 @@ public class GetHostGroupInfo {
         return this;
     }
 
-    /** 更新时间 minimum: 0 maximum: 9999999999999
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return updateTime
+     */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -305,7 +324,10 @@ public class GetHostGroupInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

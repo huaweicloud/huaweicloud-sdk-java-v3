@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 请求体 */
+/**
+ * 请求体
+ */
 public class CreateOpenIdConnectConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class CreateOpenIdConnectConfigRequestBody {
         return this;
     }
 
-    /** Get openidConnectConfig
-     * 
-     * @return openidConnectConfig */
+    /**
+     * Get openidConnectConfig
+     * @return openidConnectConfig
+     */
     public CreateOpenIdConnectConfig getOpenidConnectConfig() {
         return openidConnectConfig;
     }
@@ -67,7 +70,10 @@ public class CreateOpenIdConnectConfigRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

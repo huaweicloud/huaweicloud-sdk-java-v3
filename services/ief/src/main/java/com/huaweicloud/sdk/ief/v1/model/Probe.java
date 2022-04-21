@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 探针配置 */
+/**
+ * 探针配置
+ */
 public class Probe {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class Probe {
         return this;
     }
 
-    /** Get exec
-     * 
-     * @return exec */
+    /**
+     * Get exec
+     * @return exec
+     */
     public ProbeExec getExec() {
         return exec;
     }
@@ -68,9 +71,10 @@ public class Probe {
         return this;
     }
 
-    /** Get httpGet
-     * 
-     * @return httpGet */
+    /**
+     * Get httpGet
+     * @return httpGet
+     */
     public InstancesLivenessProbeHttpGet getHttpGet() {
         return httpGet;
     }
@@ -84,9 +88,10 @@ public class Probe {
         return this;
     }
 
-    /** 表示从工作负载启动后从多久开始探测，大于0且不大于3600的整数，默认为10
-     * 
-     * @return initialDelaySeconds */
+    /**
+     * 表示从工作负载启动后从多久开始探测，大于0且不大于3600的整数，默认为10
+     * @return initialDelaySeconds
+     */
     public Integer getInitialDelaySeconds() {
         return initialDelaySeconds;
     }
@@ -100,9 +105,10 @@ public class Probe {
         return this;
     }
 
-    /** 表示探测超时时间，大于0且不大于3600的整数，默认为1
-     * 
-     * @return timeoutSeconds */
+    /**
+     * 表示探测超时时间，大于0且不大于3600的整数，默认为1
+     * @return timeoutSeconds
+     */
     public Integer getTimeoutSeconds() {
         return timeoutSeconds;
     }
@@ -142,7 +148,10 @@ public class Probe {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

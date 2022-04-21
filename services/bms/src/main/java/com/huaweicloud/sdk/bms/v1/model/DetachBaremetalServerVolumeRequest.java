@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DetachBaremetalServerVolumeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DetachBaremetalServerVolumeRequest {
         return this;
     }
 
-    /** 裸金属服务器ID
-     * 
-     * @return serverId */
+    /**
+     * 裸金属服务器ID
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -39,9 +42,10 @@ public class DetachBaremetalServerVolumeRequest {
         return this;
     }
 
-    /** 裸金属服务器的云磁盘ID
-     * 
-     * @return attachmentId */
+    /**
+     * 裸金属服务器的云磁盘ID
+     * @return attachmentId
+     */
     public String getAttachmentId() {
         return attachmentId;
     }
@@ -78,7 +82,10 @@ public class DetachBaremetalServerVolumeRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

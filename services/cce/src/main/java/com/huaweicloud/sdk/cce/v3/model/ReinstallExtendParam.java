@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.UUID;
 
-/** 重装拓展参数，已废弃。 */
+/**
+ * 重装拓展参数，已废弃。
+ */
 public class ReinstallExtendParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class ReinstallExtendParam {
         return this;
     }
 
-    /** 指定待切换目标操作系统所使用的用户镜像ID，已废弃。 指定此参数等价于指定ReinstallVolumeSpec中imageID，原取值将被覆盖。
-     * 
-     * @return alphaCceNodeImageID */
+    /**
+     * 指定待切换目标操作系统所使用的用户镜像ID，已废弃。 指定此参数等价于指定ReinstallVolumeSpec中imageID，原取值将被覆盖。 
+     * @return alphaCceNodeImageID
+     */
     public UUID getAlphaCceNodeImageID() {
         return alphaCceNodeImageID;
     }
@@ -56,7 +59,10 @@ public class ReinstallExtendParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

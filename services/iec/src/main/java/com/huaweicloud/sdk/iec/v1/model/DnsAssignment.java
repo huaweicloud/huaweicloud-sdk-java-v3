@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DNS配置 */
+/**
+ * DNS配置
+ */
 public class DnsAssignment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DnsAssignment {
         return this;
     }
 
-    /** 端口内网fqdn
-     * 
-     * @return fqdn */
+    /**
+     * 端口内网fqdn
+     * @return fqdn
+     */
     public String getFqdn() {
         return fqdn;
     }
@@ -44,9 +47,10 @@ public class DnsAssignment {
         return this;
     }
 
-    /** 端口hostname
-     * 
-     * @return hostname */
+    /**
+     * 端口hostname
+     * @return hostname
+     */
     public String getHostname() {
         return hostname;
     }
@@ -60,9 +64,10 @@ public class DnsAssignment {
         return this;
     }
 
-    /** 端口IP地址
-     * 
-     * @return ipAddress */
+    /**
+     * 端口IP地址
+     * @return ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -100,7 +105,10 @@ public class DnsAssignment {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

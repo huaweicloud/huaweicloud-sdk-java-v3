@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 保护组停止保护请求体 */
+/**
+ * 保护组停止保护请求体
+ */
 public class StopProtectionGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,10 @@ public class StopProtectionGroupRequestBody {
         return this;
     }
 
-    /** 标识保护组停止保护操作。该参数目前默认值为空。
-     * 
-     * @return stopServerGroup */
+    /**
+     * 标识保护组停止保护操作。该参数目前默认值为空。
+     * @return stopServerGroup
+     */
     public Object getStopServerGroup() {
         return stopServerGroup;
     }
@@ -55,7 +58,10 @@ public class StopProtectionGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

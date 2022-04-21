@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeletePublicipTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class DeletePublicipTagRequest {
         return this;
     }
 
-    /** 弹性公网IP的id
-     * 
-     * @return publicipId */
+    /**
+     * 弹性公网IP的id
+     * @return publicipId
+     */
     public String getPublicipId() {
         return publicipId;
     }
@@ -39,9 +42,10 @@ public class DeletePublicipTagRequest {
         return this;
     }
 
-    /** 标签的键
-     * 
-     * @return key */
+    /**
+     * 标签的键
+     * @return key
+     */
     public String getKey() {
         return key;
     }
@@ -78,7 +82,10 @@ public class DeletePublicipTagRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

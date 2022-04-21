@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** CreateSnapshotReq */
+/**
+ * CreateSnapshotReq
+ */
 public class CreateSnapshotReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateSnapshotReq {
         return this;
     }
 
-    /** 快照名称，快照名称在4位到64位之间，必须以字母开头，可以包含字母、数字、中划线或者下划线，注意字母不能大写且不能包含其他特殊字符。
-     * 
-     * @return name */
+    /**
+     * 快照名称，快照名称在4位到64位之间，必须以字母开头，可以包含字母、数字、中划线或者下划线，注意字母不能大写且不能包含其他特殊字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -44,9 +47,10 @@ public class CreateSnapshotReq {
         return this;
     }
 
-    /** 快照描述，0～256个字符，不能包含“<>”字符。
-     * 
-     * @return description */
+    /**
+     * 快照描述，0～256个字符，不能包含“<>”字符。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -60,10 +64,10 @@ public class CreateSnapshotReq {
         return this;
     }
 
-    /** 指定要备份的索引名称，多个索引用逗号隔开，默认备份所有索引。支持使用“\\*”匹配多个索引，例如：2018-06\\*，表示备份名称前缀是2018-06的所有索引的数据。
-     * 0～1024个字符，不能包含空格和大写字母，且不能包含\\\"\\\\<|>/?特殊字符。
-     * 
-     * @return indices */
+    /**
+     * 指定要备份的索引名称，多个索引用逗号隔开，默认备份所有索引。支持使用“\\*”匹配多个索引，例如：2018-06\\*，表示备份名称前缀是2018-06的所有索引的数据。  0～1024个字符，不能包含空格和大写字母，且不能包含\\\"\\\\<|>/?特殊字符。
+     * @return indices
+     */
     public String getIndices() {
         return indices;
     }
@@ -102,7 +106,10 @@ public class CreateSnapshotReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

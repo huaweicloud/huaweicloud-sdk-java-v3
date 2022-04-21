@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ApiCheckInfoV2 */
+/**
+ * ApiCheckInfoV2
+ */
 public class ApiCheckInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,31 +20,49 @@ public class ApiCheckInfoV2 {
 
     private String name;
 
-    /** 请求方式。 type = path时必填 */
+    /**
+     * 请求方式。  type = path时必填
+     */
     public static final class ReqMethodEnum {
 
-        /** Enum GET for value: "GET" */
+        /**
+         * Enum GET for value: "GET"
+         */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
 
-        /** Enum POST for value: "POST" */
+        /**
+         * Enum POST for value: "POST"
+         */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
 
-        /** Enum PUT for value: "PUT" */
+        /**
+         * Enum PUT for value: "PUT"
+         */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
 
-        /** Enum DELETE for value: "DELETE" */
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
 
-        /** Enum HEAD for value: "HEAD" */
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
 
-        /** Enum PATCH for value: "PATCH" */
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
 
-        /** Enum OPTIONS for value: "OPTIONS" */
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
 
-        /** Enum ANY for value: "ANY" */
+        /**
+         * Enum ANY for value: "ANY"
+         */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
@@ -123,13 +143,19 @@ public class ApiCheckInfoV2 {
 
     private String reqUri;
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） type = path时必填 */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配）  type = path时必填
+     */
     public static final class MatchModeEnum {
 
-        /** Enum SWA for value: "SWA" */
+        /**
+         * Enum SWA for value: "SWA"
+         */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
 
-        /** Enum NORMAL for value: "NORMAL" */
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
@@ -214,13 +240,19 @@ public class ApiCheckInfoV2 {
 
     private String apiId;
 
-    /** 校验类型： - path：路径类型 - name：名称类型 */
+    /**
+     * 校验类型：   - path：路径类型   - name：名称类型
+     */
     public static final class TypeEnum {
 
-        /** Enum PATH for value: "path" */
+        /**
+         * Enum PATH for value: "path"
+         */
         public static final TypeEnum PATH = new TypeEnum("path");
 
-        /** Enum NAME for value: "name" */
+        /**
+         * Enum NAME for value: "name"
+         */
         public static final TypeEnum NAME = new TypeEnum("name");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -295,9 +327,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** API名称。 type = name时必填
-     * 
-     * @return name */
+    /**
+     * API名称。  type = name时必填
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -311,9 +344,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** 请求方式。 type = path时必填
-     * 
-     * @return reqMethod */
+    /**
+     * 请求方式。  type = path时必填
+     * @return reqMethod
+     */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -327,9 +361,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** API的访问地址。 type = path时必填
-     * 
-     * @return reqUri */
+    /**
+     * API的访问地址。  type = path时必填
+     * @return reqUri
+     */
     public String getReqUri() {
         return reqUri;
     }
@@ -343,9 +378,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） type = path时必填
-     * 
-     * @return matchMode */
+    /**
+     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配）  type = path时必填
+     * @return matchMode
+     */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -359,9 +395,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** 分组ID。 校验分组下API定义是否重复时必填
-     * 
-     * @return groupId */
+    /**
+     * 分组ID。  校验分组下API定义是否重复时必填
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -375,9 +412,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** 集成应用ID。 校验应用下API定义是否重复时必填
-     * 
-     * @return romaAppId */
+    /**
+     * 集成应用ID。  校验应用下API定义是否重复时必填
+     * @return romaAppId
+     */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -391,9 +429,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** 需要对比的API ID
-     * 
-     * @return apiId */
+    /**
+     * 需要对比的API ID
+     * @return apiId
+     */
     public String getApiId() {
         return apiId;
     }
@@ -407,9 +446,10 @@ public class ApiCheckInfoV2 {
         return this;
     }
 
-    /** 校验类型： - path：路径类型 - name：名称类型
-     * 
-     * @return type */
+    /**
+     * 校验类型：   - path：路径类型   - name：名称类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -457,7 +497,10 @@ public class ApiCheckInfoV2 {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

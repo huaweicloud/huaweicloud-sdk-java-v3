@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** CodehubJobInfo */
+/**
+ * CodehubJobInfo
+ */
 public class CodehubJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +58,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return applicationName */
+    /**
+     * 应用名称。
+     * @return applicationName
+     */
     public String getApplicationName() {
         return applicationName;
     }
@@ -72,9 +75,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** 仓库是否私有
-     * 
-     * @return privately */
+    /**
+     * 仓库是否私有
+     * @return privately
+     */
     public Boolean getPrivately() {
         return privately;
     }
@@ -88,9 +92,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** 仓库短id
-     * 
-     * @return shortId */
+    /**
+     * 仓库短id
+     * @return shortId
+     */
     public String getShortId() {
         return shortId;
     }
@@ -104,9 +109,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** 代码存放的ssh地址。
-     * 
-     * @return codeUrl */
+    /**
+     * 代码存放的ssh地址。
+     * @return codeUrl
+     */
     public String getCodeUrl() {
         return codeUrl;
     }
@@ -120,9 +126,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** CodeHub 仓库所在的 Region ID： - 华南-广州：cn-south-1 - 华东-上海二：cn-east-2 - 华北-北京一：cn-north-1 - 华北-北京四：cn-north-4
-     * 
-     * @return regionId */
+    /**
+     * CodeHub 仓库所在的 Region ID： - 华南-广州：cn-south-1 - 华东-上海二：cn-east-2 - 华北-北京一：cn-north-1 - 华北-北京四：cn-north-4 
+     * @return regionId
+     */
     public String getRegionId() {
         return regionId;
     }
@@ -136,10 +143,12 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** - 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。 - 1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包。
-     * minimum: 0 maximum: 1
-     * 
-     * @return repoType */
+    /**
+     * - 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。 - 1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包。 
+     * minimum: 0
+     * maximum: 1
+     * @return repoType
+     */
     public Integer getRepoType() {
         return repoType;
     }
@@ -169,9 +178,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** 可以根据 template-metadata.json 获取动态参数 ID 以及规则。
-     * 
-     * @return properties */
+    /**
+     * 可以根据 template-metadata.json 获取动态参数 ID 以及规则。
+     * @return properties
+     */
     public Map<String, String> getProperties() {
         return properties;
     }
@@ -194,9 +204,10 @@ public class CodehubJobInfo {
         return this;
     }
 
-    /** Get repoInfo
-     * 
-     * @return repoInfo */
+    /**
+     * Get repoInfo
+     * @return repoInfo
+     */
     public RepositoryInfo getRepoInfo() {
         return repoInfo;
     }
@@ -245,7 +256,10 @@ public class CodehubJobInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

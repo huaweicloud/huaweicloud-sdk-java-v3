@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class DeleteProductTopicRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class DeleteProductTopicRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -44,9 +47,12 @@ public class DeleteProductTopicRequest {
         return this;
     }
 
-    /** 产品ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return productId */
+    /**
+     * 产品ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return productId
+     */
     public Integer getProductId() {
         return productId;
     }
@@ -60,9 +66,12 @@ public class DeleteProductTopicRequest {
         return this;
     }
 
-    /** 产品主题ID minimum: 0 maximum: 200376420520689663
-     * 
-     * @return topicId */
+    /**
+     * 产品主题ID
+     * minimum: 0
+     * maximum: 200376420520689663
+     * @return topicId
+     */
     public Integer getTopicId() {
         return topicId;
     }
@@ -101,7 +110,10 @@ public class DeleteProductTopicRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

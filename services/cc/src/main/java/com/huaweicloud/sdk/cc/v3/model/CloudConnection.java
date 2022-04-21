@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 云连接实例。 */
+/**
+ * 云连接实例。
+ */
 public class CloudConnection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,10 +41,14 @@ public class CloudConnection {
 
     private String enterpriseProjectId;
 
-    /** 云连接实例的状态。ACTIVE：表示状态可用。 */
+    /**
+     * 云连接实例的状态。ACTIVE：表示状态可用。
+     */
     public static final class StatusEnum {
 
-        /** Enum ACTIVE for value: "ACTIVE" */
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -126,13 +132,19 @@ public class CloudConnection {
 
     private OffsetDateTime updatedAt;
 
-    /** 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。 */
+    /**
+     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     */
     public static final class UsedSceneEnum {
 
-        /** Enum ER for value: "er" */
+        /**
+         * Enum ER for value: "er"
+         */
         public static final UsedSceneEnum ER = new UsedSceneEnum("er");
 
-        /** Enum VPC for value: "vpc" */
+        /**
+         * Enum VPC for value: "vpc"
+         */
         public static final UsedSceneEnum VPC = new UsedSceneEnum("vpc");
 
         private static final Map<String, UsedSceneEnum> STATIC_FIELDS = createStaticFields();
@@ -222,9 +234,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的ID。
-     * 
-     * @return id */
+    /**
+     * 云连接实例的ID。
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -238,9 +251,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的名字。
-     * 
-     * @return name */
+    /**
+     * 云连接实例的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -254,9 +268,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的描述。
-     * 
-     * @return description */
+    /**
+     * 云连接实例的描述。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -270,9 +285,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 帐号ID。
-     * 
-     * @return domainId */
+    /**
+     * 帐号ID。
+     * @return domainId
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -286,9 +302,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的企业项目ID。
-     * 
-     * @return enterpriseProjectId */
+    /**
+     * 云连接实例的企业项目ID。
+     * @return enterpriseProjectId
+     */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -302,9 +319,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的状态。ACTIVE：表示状态可用。
-     * 
-     * @return status */
+    /**
+     * 云连接实例的状态。ACTIVE：表示状态可用。
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -318,9 +336,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的管理状态。
-     * 
-     * @return adminStateUp */
+    /**
+     * 云连接实例的管理状态。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -334,9 +353,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的创建时间。
-     * 
-     * @return createdAt */
+    /**
+     * 云连接实例的创建时间。
+     * @return createdAt
+     */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -350,9 +370,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例的更新时间。
-     * 
-     * @return updatedAt */
+    /**
+     * 云连接实例的更新时间。
+     * @return updatedAt
+     */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -366,9 +387,10 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
-     * 
-     * @return usedScene */
+    /**
+     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * @return usedScene
+     */
     public UsedSceneEnum getUsedScene() {
         return usedScene;
     }
@@ -382,9 +404,12 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例关联网络实例的个数。 minimum: 0 maximum: 10000
-     * 
-     * @return networkInstanceNumber */
+    /**
+     * 云连接实例关联网络实例的个数。
+     * minimum: 0
+     * maximum: 10000
+     * @return networkInstanceNumber
+     */
     public Integer getNetworkInstanceNumber() {
         return networkInstanceNumber;
     }
@@ -398,9 +423,12 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例关联带宽包的个数。 minimum: 0 maximum: 10000
-     * 
-     * @return bandwidthPackageNumber */
+    /**
+     * 云连接实例关联带宽包的个数。
+     * minimum: 0
+     * maximum: 10000
+     * @return bandwidthPackageNumber
+     */
     public Integer getBandwidthPackageNumber() {
         return bandwidthPackageNumber;
     }
@@ -414,9 +442,12 @@ public class CloudConnection {
         return this;
     }
 
-    /** 云连接实例关联域间带宽的个数。 minimum: 0 maximum: 10000
-     * 
-     * @return interRegionBandwidthNumber */
+    /**
+     * 云连接实例关联域间带宽的个数。
+     * minimum: 0
+     * maximum: 10000
+     * @return interRegionBandwidthNumber
+     */
     public Integer getInterRegionBandwidthNumber() {
         return interRegionBandwidthNumber;
     }
@@ -486,7 +517,10 @@ public class CloudConnection {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListFlavorInfosRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,11 +30,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 数据库类型。 - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。 - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。 -
-     * 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。 - 取值为“redis”，表示查询GaussDB(for Redis)数据库实例支持的规格。 -
-     * 如果不传该参数，默认为“cassandra”。
-     * 
-     * @return engineName */
+    /**
+     * 数据库类型。   - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。   - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。   - 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。   - 取值为“redis”，表示查询GaussDB(for Redis)数据库实例支持的规格。   - 如果不传该参数，默认为“cassandra”。
+     * @return engineName
+     */
     public String getEngineName() {
         return engineName;
     }
@@ -46,9 +47,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 索引位置，偏移量。 - 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 - 取值必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 索引位置，偏移量。   - 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。   - 取值必须为数字，不能为负数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -62,9 +64,10 @@ public class ListFlavorInfosRequest {
         return this;
     }
 
-    /** 查询规格信息上限值。 - 取值范围: 1~100。 - 不传该参数时，默认查询前100条规格信息。
-     * 
-     * @return limit */
+    /**
+     * 查询规格信息上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条规格信息。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -103,7 +106,10 @@ public class ListFlavorInfosRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

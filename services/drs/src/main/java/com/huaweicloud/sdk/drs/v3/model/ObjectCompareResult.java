@@ -45,9 +45,10 @@ public class ObjectCompareResult {
         return this;
     }
 
-    /** 对象级对比任务的id。
-     * 
-     * @return compareTaskId */
+    /**
+     * 对象级对比任务的id。
+     * @return compareTaskId
+     */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -78,9 +79,10 @@ public class ObjectCompareResult {
         return this;
     }
 
-    /** 对象对比结果概览。
-     * 
-     * @return objectCompareOverview */
+    /**
+     * 对象对比结果概览。
+     * @return objectCompareOverview
+     */
     public List<ObjectCompareResultOverview> getObjectCompareOverview() {
         return objectCompareOverview;
     }
@@ -113,9 +115,10 @@ public class ObjectCompareResult {
         return this;
     }
 
-    /** 对象对比结果详情。KEY值为对象对比结果概览中的对象类型。
-     * 
-     * @return objectCompareDetails */
+    /**
+     * 对象对比结果详情。KEY值为对象对比结果概览中的对象类型。
+     * @return objectCompareDetails
+     */
     public Map<String, List<ObjectCompareResultDetails>> getObjectCompareDetails() {
         return objectCompareDetails;
     }
@@ -129,9 +132,10 @@ public class ObjectCompareResult {
         return this;
     }
 
-    /** 错误码。
-     * 
-     * @return errorCode */
+    /**
+     * 错误码。
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -145,9 +149,10 @@ public class ObjectCompareResult {
         return this;
     }
 
-    /** 错误信息。
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息。
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -190,7 +195,10 @@ public class ObjectCompareResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** InnodbTrx */
+/**
+ * InnodbTrx
+ */
 public class InnodbTrx {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +78,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务ID
-     * 
-     * @return trxId */
+    /**
+     * 事务ID
+     * @return trxId
+     */
     public String getTrxId() {
         return trxId;
     }
@@ -92,9 +95,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务状态
-     * 
-     * @return trxState */
+    /**
+     * 事务状态
+     * @return trxState
+     */
     public String getTrxState() {
         return trxState;
     }
@@ -108,9 +112,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务开始时间
-     * 
-     * @return trxStarted */
+    /**
+     * 事务开始时间
+     * @return trxStarted
+     */
     public String getTrxStarted() {
         return trxStarted;
     }
@@ -124,9 +129,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务等待开始时间
-     * 
-     * @return trxWaitStarted */
+    /**
+     * 事务等待开始时间
+     * @return trxWaitStarted
+     */
     public String getTrxWaitStarted() {
         return trxWaitStarted;
     }
@@ -140,9 +146,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 会话ID，同ListProcesses接口返回的id。
-     * 
-     * @return trxMysqlThreadId */
+    /**
+     * 会话ID，同ListProcesses接口返回的id。
+     * @return trxMysqlThreadId
+     */
     public String getTrxMysqlThreadId() {
         return trxMysqlThreadId;
     }
@@ -156,9 +163,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务运行的SQL语句
-     * 
-     * @return trxQuery */
+    /**
+     * 事务运行的SQL语句
+     * @return trxQuery
+     */
     public String getTrxQuery() {
         return trxQuery;
     }
@@ -172,9 +180,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 加行锁的表数量
-     * 
-     * @return trxTablesLocked */
+    /**
+     * 加行锁的表数量
+     * @return trxTablesLocked
+     */
     public String getTrxTablesLocked() {
         return trxTablesLocked;
     }
@@ -188,9 +197,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 锁定的行数量（近似值）
-     * 
-     * @return trxRowsLocked */
+    /**
+     * 锁定的行数量（近似值）
+     * @return trxRowsLocked
+     */
     public String getTrxRowsLocked() {
         return trxRowsLocked;
     }
@@ -204,9 +214,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 事务插入或者修改的行数
-     * 
-     * @return trxRowsModified */
+    /**
+     * 事务插入或者修改的行数
+     * @return trxRowsModified
+     */
     public String getTrxRowsModified() {
         return trxRowsModified;
     }
@@ -220,9 +231,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 隔离级别
-     * 
-     * @return trxIsolationLevel */
+    /**
+     * 隔离级别
+     * @return trxIsolationLevel
+     */
     public String getTrxIsolationLevel() {
         return trxIsolationLevel;
     }
@@ -252,9 +264,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 等待锁信息
-     * 
-     * @return innodbWaitLocks */
+    /**
+     * 等待锁信息
+     * @return innodbWaitLocks
+     */
     public List<InnodbLock> getInnodbWaitLocks() {
         return innodbWaitLocks;
     }
@@ -284,9 +297,10 @@ public class InnodbTrx {
         return this;
     }
 
-    /** 持有锁信息
-     * 
-     * @return innodbHoldLocks */
+    /**
+     * 持有锁信息
+     * @return innodbHoldLocks
+     */
     public List<InnodbLock> getInnodbHoldLocks() {
         return innodbHoldLocks;
     }
@@ -353,7 +367,10 @@ public class InnodbTrx {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -2,7 +2,9 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ShowCurUserInfoRequest {
 
     @Override

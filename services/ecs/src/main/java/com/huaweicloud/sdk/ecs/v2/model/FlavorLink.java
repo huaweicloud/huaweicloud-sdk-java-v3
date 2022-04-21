@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 规格相关快捷链接地址。 */
+/**
+ * 规格相关快捷链接地址。
+ */
 public class FlavorLink {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class FlavorLink {
         return this;
     }
 
-    /** 对应快捷链接。
-     * 
-     * @return href */
+    /**
+     * 对应快捷链接。
+     * @return href
+     */
     public String getHref() {
         return href;
     }
@@ -44,9 +47,10 @@ public class FlavorLink {
         return this;
     }
 
-    /** 快捷链接标记名称。
-     * 
-     * @return rel */
+    /**
+     * 快捷链接标记名称。
+     * @return rel
+     */
     public String getRel() {
         return rel;
     }
@@ -60,9 +64,10 @@ public class FlavorLink {
         return this;
     }
 
-    /** 快捷链接类型，当前接口未使用，缺省值为null。
-     * 
-     * @return type */
+    /**
+     * 快捷链接类型，当前接口未使用，缺省值为null。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -100,7 +105,10 @@ public class FlavorLink {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

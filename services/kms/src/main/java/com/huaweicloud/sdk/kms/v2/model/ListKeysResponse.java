@@ -14,7 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListKeysResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,13 +34,19 @@ public class ListKeysResponse extends SdkResponse {
 
     private String nextMarker;
 
-    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。 */
+    /**
+     * 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
+     */
     public static final class TruncatedEnum {
 
-        /** Enum TRUE for value: "true" */
+        /**
+         * Enum TRUE for value: "true"
+         */
         public static final TruncatedEnum TRUE = new TruncatedEnum("true");
 
-        /** Enum FALSE for value: "false" */
+        /**
+         * Enum FALSE for value: "false"
+         */
         public static final TruncatedEnum FALSE = new TruncatedEnum("false");
 
         private static final Map<String, TruncatedEnum> STATIC_FIELDS = createStaticFields();
@@ -134,9 +142,10 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    /** key_id列表。
-     * 
-     * @return keys */
+    /**
+     * key_id列表。
+     * @return keys
+     */
     public List<String> getKeys() {
         return keys;
     }
@@ -166,9 +175,10 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥详情列表。详情参见KeyDetails
-     * 
-     * @return keyDetails */
+    /**
+     * 密钥详情列表。详情参见KeyDetails
+     * @return keyDetails
+     */
     public List<KeyDetails> getKeyDetails() {
         return keyDetails;
     }
@@ -182,9 +192,10 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    /** 获取下一页所需要传递的“marker”值。当“truncated”为“false”时，“next_marker”为空。
-     * 
-     * @return nextMarker */
+    /**
+     * 获取下一页所需要传递的“marker”值。当“truncated”为“false”时，“next_marker”为空。
+     * @return nextMarker
+     */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -198,9 +209,10 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
-     * 
-     * @return truncated */
+    /**
+     * 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
+     * @return truncated
+     */
     public TruncatedEnum getTruncated() {
         return truncated;
     }
@@ -214,9 +226,12 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    /** 密钥总条数。 minimum: 0 maximum: 1000
-     * 
-     * @return total */
+    /**
+     * 密钥总条数。
+     * minimum: 0
+     * maximum: 1000
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -259,7 +274,10 @@ public class ListKeysResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

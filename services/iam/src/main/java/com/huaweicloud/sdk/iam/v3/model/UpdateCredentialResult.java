@@ -40,9 +40,10 @@ public class UpdateCredentialResult {
         return this;
     }
 
-    /** IAM用户ID。
-     * 
-     * @return userId */
+    /**
+     * IAM用户ID。
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
@@ -56,9 +57,10 @@ public class UpdateCredentialResult {
         return this;
     }
 
-    /** 修改的AK。
-     * 
-     * @return access */
+    /**
+     * 修改的AK。
+     * @return access
+     */
     public String getAccess() {
         return access;
     }
@@ -72,9 +74,10 @@ public class UpdateCredentialResult {
         return this;
     }
 
-    /** 访问密钥状态。
-     * 
-     * @return status */
+    /**
+     * 访问密钥状态。
+     * @return status
+     */
     public String getStatus() {
         return status;
     }
@@ -88,9 +91,10 @@ public class UpdateCredentialResult {
         return this;
     }
 
-    /** 访问密钥创建时间。
-     * 
-     * @return createTime */
+    /**
+     * 访问密钥创建时间。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -104,9 +108,10 @@ public class UpdateCredentialResult {
         return this;
     }
 
-    /** 访问密钥描述信息。
-     * 
-     * @return description */
+    /**
+     * 访问密钥描述信息。
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -149,7 +154,10 @@ public class UpdateCredentialResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

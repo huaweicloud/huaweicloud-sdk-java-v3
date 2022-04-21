@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 区块生成配置信息 */
+/**
+ * 区块生成配置信息
+ */
 public class CreateRequestBodyBlockInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class CreateRequestBodyBlockInfo {
         return this;
     }
 
-    /** 区块产生时间（单位：秒），默认2秒
-     * 
-     * @return batchTimeout */
+    /**
+     * 区块产生时间（单位：秒），默认2秒
+     * @return batchTimeout
+     */
     public Long getBatchTimeout() {
         return batchTimeout;
     }
@@ -44,9 +47,10 @@ public class CreateRequestBodyBlockInfo {
         return this;
     }
 
-    /** 区块包含交易数量，默认500
-     * 
-     * @return maxMessageCount */
+    /**
+     * 区块包含交易数量，默认500
+     * @return maxMessageCount
+     */
     public Long getMaxMessageCount() {
         return maxMessageCount;
     }
@@ -60,9 +64,10 @@ public class CreateRequestBodyBlockInfo {
         return this;
     }
 
-    /** 区块容量（单位：MB），默认2MB
-     * 
-     * @return preferredMaxbytes */
+    /**
+     * 区块容量（单位：MB），默认2MB
+     * @return preferredMaxbytes
+     */
     public Long getPreferredMaxbytes() {
         return preferredMaxbytes;
     }
@@ -101,7 +106,10 @@ public class CreateRequestBodyBlockInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** ApiBatchPublish */
+/**
+ * ApiBatchPublish
+ */
 public class ApiBatchPublish {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ApiBatchPublish {
         return this;
     }
 
-    /** 需要发布或下线的API ID列表，单次更新上限为1000个API
-     * 
-     * @return apis */
+    /**
+     * 需要发布或下线的API ID列表，单次更新上限为1000个API
+     * @return apis
+     */
     public List<String> getApis() {
         return apis;
     }
@@ -63,9 +66,10 @@ public class ApiBatchPublish {
         return this;
     }
 
-    /** 环境ID
-     * 
-     * @return envId */
+    /**
+     * 环境ID
+     * @return envId
+     */
     public String getEnvId() {
         return envId;
     }
@@ -79,9 +83,10 @@ public class ApiBatchPublish {
         return this;
     }
 
-    /** 对本次发布的描述信息 字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
-     * 
-     * @return remark */
+    /**
+     * 对本次发布的描述信息  字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -119,7 +124,10 @@ public class ApiBatchPublish {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

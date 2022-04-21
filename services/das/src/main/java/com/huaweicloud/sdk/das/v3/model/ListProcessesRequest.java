@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListProcessesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,13 +45,19 @@ public class ListProcessesRequest {
 
     private Integer limit;
 
-    /** 语言 */
+    /**
+     * 语言
+     */
     public static final class XLanguageEnum {
 
-        /** Enum ZH_CN for value: "zh-cn" */
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
 
-        /** Enum EN_US for value: "en-us" */
+        /**
+         * Enum EN_US for value: "en-us"
+         */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -124,9 +132,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 实例ID
-     * 
-     * @return instanceId */
+    /**
+     * 实例ID
+     * @return instanceId
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -140,9 +149,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 数据库用户ID
-     * 
-     * @return dbUserId */
+    /**
+     * 数据库用户ID
+     * @return dbUserId
+     */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -156,9 +166,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 用户
-     * 
-     * @return user */
+    /**
+     * 用户
+     * @return user
+     */
     public String getUser() {
         return user;
     }
@@ -172,9 +183,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 数据库
-     * 
-     * @return database */
+    /**
+     * 数据库
+     * @return database
+     */
     public String getDatabase() {
         return database;
     }
@@ -188,9 +200,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * 
-     * @return offset */
+    /**
+     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -204,9 +217,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 每页记录数，默认为20，最大取值100。
-     * 
-     * @return limit */
+    /**
+     * 每页记录数，默认为20，最大取值100。
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -220,9 +234,10 @@ public class ListProcessesRequest {
         return this;
     }
 
-    /** 语言
-     * 
-     * @return xLanguage */
+    /**
+     * 语言
+     * @return xLanguage
+     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
@@ -271,7 +286,10 @@ public class ListProcessesRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

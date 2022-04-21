@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Result */
+/**
+ * Result
+ */
 public class Result {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,9 +33,10 @@ public class Result {
         return this;
     }
 
-    /** 调用成功表示识别出的内容。
-     * 
-     * @return text */
+    /**
+     * 调用成功表示识别出的内容。
+     * @return text
+     */
     public String getText() {
         return text;
     }
@@ -47,9 +50,10 @@ public class Result {
         return this;
     }
 
-    /** 调用成功表示识别出的置信度，取值范围：0~1。
-     * 
-     * @return score */
+    /**
+     * 调用成功表示识别出的置信度，取值范围：0~1。
+     * @return score
+     */
     public Float getScore() {
         return score;
     }
@@ -79,9 +83,10 @@ public class Result {
         return this;
     }
 
-    /** 分词信息列表
-     * 
-     * @return wordInfo */
+    /**
+     * 分词信息列表
+     * @return wordInfo
+     */
     public List<WordInfo> getWordInfo() {
         return wordInfo;
     }
@@ -119,7 +124,10 @@ public class Result {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class NeutronListSecurityGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 每页返回的个数
-     * 
-     * @return limit */
+    /**
+     * 每页返回的个数
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,9 +62,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 分页查询起始的资源ID，为空时查询第一页
-     * 
-     * @return marker */
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
     public String getMarker() {
         return marker;
     }
@@ -75,9 +79,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 按照安全组对应的ID过滤查询
-     * 
-     * @return id */
+    /**
+     * 按照安全组对应的ID过滤查询
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -91,9 +96,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 按照安全组的名称过滤查询
-     * 
-     * @return name */
+    /**
+     * 按照安全组的名称过滤查询
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -107,9 +113,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 按照安全组的描述过滤查询
-     * 
-     * @return description */
+    /**
+     * 按照安全组的描述过滤查询
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -123,9 +130,10 @@ public class NeutronListSecurityGroupsRequest {
         return this;
     }
 
-    /** 按照安全组所属的项目ID过滤查询
-     * 
-     * @return tenantId */
+    /**
+     * 按照安全组所属的项目ID过滤查询
+     * @return tenantId
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -170,7 +178,10 @@ public class NeutronListSecurityGroupsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

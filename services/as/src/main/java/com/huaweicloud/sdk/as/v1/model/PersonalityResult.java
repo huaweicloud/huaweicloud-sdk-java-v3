@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 个人信息 */
+/**
+ * 个人信息
+ */
 public class PersonalityResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class PersonalityResult {
         return this;
     }
 
-    /** 注入文件路径信息。
-     * 
-     * @return path */
+    /**
+     * 注入文件路径信息。
+     * @return path
+     */
     public String getPath() {
         return path;
     }
@@ -39,9 +42,10 @@ public class PersonalityResult {
         return this;
     }
 
-    /** 注入文件内容，base64格式编码。
-     * 
-     * @return content */
+    /**
+     * 注入文件内容，base64格式编码。
+     * @return content
+     */
     public String getContent() {
         return content;
     }
@@ -78,7 +82,10 @@ public class PersonalityResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

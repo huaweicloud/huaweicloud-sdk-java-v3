@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DIS通道配置。 */
+/**
+ * DIS通道配置。
+ */
 public class OutputDis {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class OutputDis {
         return this;
     }
 
-    /** DIS通道名。
-     * 
-     * @return streamName */
+    /**
+     * DIS通道名。
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -39,10 +42,10 @@ public class OutputDis {
         return this;
     }
 
-    /** 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 -
-     * OriginImage：表示发送原始图。
-     * 
-     * @return dataCategory */
+    /**
+     * 作业输出数据类别的列表，默认值为[]。有这个列表时，表示希望这个输出结果中存放dataCategory列表内的数据。 取值范围为[FaceImage,OriginImage]。 - FaceImage：表示发送人脸图。 - OriginImage：表示发送原始图。
+     * @return dataCategory
+     */
     public String getDataCategory() {
         return dataCategory;
     }
@@ -79,7 +82,10 @@ public class OutputDis {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

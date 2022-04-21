@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** VPCEP信息 */
+/**
+ * VPCEP信息
+ */
 public class VpcepInfoRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class VpcepInfoRsp {
         return this;
     }
 
-    /** Kafka的VPCEP的service id
-     * 
-     * @return vpcepServiceId */
+    /**
+     * Kafka的VPCEP的service id
+     * @return vpcepServiceId
+     */
     public String getVpcepServiceId() {
         return vpcepServiceId;
     }
@@ -54,9 +57,10 @@ public class VpcepInfoRsp {
         return this;
     }
 
-    /** Kafka的VPCEP的service name
-     * 
-     * @return vpcepServiceName */
+    /**
+     * Kafka的VPCEP的service name
+     * @return vpcepServiceName
+     */
     public String getVpcepServiceName() {
         return vpcepServiceName;
     }
@@ -70,9 +74,10 @@ public class VpcepInfoRsp {
         return this;
     }
 
-    /** Kafka的VPCEP的client ip
-     * 
-     * @return vpcepClientIp */
+    /**
+     * Kafka的VPCEP的client ip
+     * @return vpcepClientIp
+     */
     public String getVpcepClientIp() {
         return vpcepClientIp;
     }
@@ -86,9 +91,12 @@ public class VpcepInfoRsp {
         return this;
     }
 
-    /** Kafka的VPCEP的client port minimum: 0 maximum: 65536
-     * 
-     * @return vpcepClientPort */
+    /**
+     * Kafka的VPCEP的client port
+     * minimum: 0
+     * maximum: 65536
+     * @return vpcepClientPort
+     */
     public Integer getVpcepClientPort() {
         return vpcepClientPort;
     }
@@ -102,9 +110,10 @@ public class VpcepInfoRsp {
         return this;
     }
 
-    /** Kafka的Broker ip
-     * 
-     * @return kafkaBrokerIp */
+    /**
+     * Kafka的Broker ip
+     * @return kafkaBrokerIp
+     */
     public String getKafkaBrokerIp() {
         return kafkaBrokerIp;
     }
@@ -147,7 +156,10 @@ public class VpcepInfoRsp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

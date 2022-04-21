@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** UserStoredValueCard */
+/**
+ * UserStoredValueCard
+ */
 public class UserStoredValueCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 储值卡ID。
-     * 
-     * @return cardId */
+    /**
+     * 储值卡ID。
+     * @return cardId
+     */
     public String getCardId() {
         return cardId;
     }
@@ -64,9 +67,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 储值卡名称。
-     * 
-     * @return cardName */
+    /**
+     * 储值卡名称。
+     * @return cardName
+     */
     public String getCardName() {
         return cardName;
     }
@@ -80,9 +84,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 状态： 1：可使用 2：已用完
-     * 
-     * @return status */
+    /**
+     * 状态： 1：可使用 2：已用完
+     * @return status
+     */
     public Integer getStatus() {
         return status;
     }
@@ -96,9 +101,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 储值卡面值。
-     * 
-     * @return faceValue */
+    /**
+     * 储值卡面值。
+     * @return faceValue
+     */
     public String getFaceValue() {
         return faceValue;
     }
@@ -112,9 +118,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 储值卡余额。
-     * 
-     * @return balance */
+    /**
+     * 储值卡余额。
+     * @return balance
+     */
     public String getBalance() {
         return balance;
     }
@@ -128,9 +135,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return effectiveTime */
+    /**
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return effectiveTime
+     */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -144,9 +152,10 @@ public class UserStoredValueCard {
         return this;
     }
 
-    /** 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
-     * 
-     * @return expireTime */
+    /**
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * @return expireTime
+     */
     public String getExpireTime() {
         return expireTime;
     }
@@ -193,7 +202,10 @@ public class UserStoredValueCard {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

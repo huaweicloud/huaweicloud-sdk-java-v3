@@ -30,9 +30,10 @@ public class CreateSecurityGroupRequestBody {
         return this;
     }
 
-    /** Get securityGroup
-     * 
-     * @return securityGroup */
+    /**
+     * Get securityGroup
+     * @return securityGroup
+     */
     public CreateSecurityGroupOption getSecurityGroup() {
         return securityGroup;
     }
@@ -67,7 +68,10 @@ public class CreateSecurityGroupRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 失败原因。集群处于正常状态时不返回。 */
+/**
+ * 失败原因。集群处于正常状态时不返回。
+ */
 public class FailedReasons {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class FailedReasons {
         return this;
     }
 
-    /** Get createFailed
-     * 
-     * @return createFailed */
+    /**
+     * Get createFailed
+     * @return createFailed
+     */
     public FailedReasonsCREATEFAILED getCreateFailed() {
         return createFailed;
     }
@@ -65,7 +68,10 @@ public class FailedReasons {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 带宽规则对象 */
+/**
+ * 带宽规则对象
+ */
 public class BandWidthRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 带宽规则ID
-     * 
-     * @return id */
+    /**
+     * 带宽规则ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -62,9 +65,10 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 带宽规则名称
-     * 
-     * @return name */
+    /**
+     * 带宽规则名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -78,9 +82,10 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 配置状态，为False时配置不生效。
-     * 
-     * @return adminStateUp */
+    /**
+     * 配置状态，为False时配置不生效。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -94,9 +99,11 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 出网带宽最大值，单位M bps。取值范围[0,n]，其中n为所属带宽的带宽大小（size字段）。0表示设置为最大带宽。 minimum: 0
-     * 
-     * @return egressSize */
+    /**
+     * 出网带宽最大值，单位M bps。取值范围[0,n]，其中n为所属带宽的带宽大小（size字段）。0表示设置为最大带宽。
+     * minimum: 0
+     * @return egressSize
+     */
     public Integer getEgressSize() {
         return egressSize;
     }
@@ -110,9 +117,11 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 出网保障带宽大小，单位M bps。取值范围[0,x]，其中x为所属带宽剩余的保障额。 minimum: 0
-     * 
-     * @return egressGuarentedSize */
+    /**
+     * 出网保障带宽大小，单位M bps。取值范围[0,x]，其中x为所属带宽剩余的保障额。
+     * minimum: 0
+     * @return egressGuarentedSize
+     */
     public Integer getEgressGuarentedSize() {
         return egressGuarentedSize;
     }
@@ -142,9 +151,10 @@ public class BandWidthRules {
         return this;
     }
 
-    /** 功能说明：带宽对应的弹性公网IP信息 约束：WHOLE类型的带宽支持多个弹性公网IP，PER类型的带宽只能对应一个弹性公网IP
-     * 
-     * @return publicipInfo */
+    /**
+     * 功能说明：带宽对应的弹性公网IP信息  约束：WHOLE类型的带宽支持多个弹性公网IP，PER类型的带宽只能对应一个弹性公网IP
+     * @return publicipInfo
+     */
     public List<PublicipInfoResp> getPublicipInfo() {
         return publicipInfo;
     }
@@ -188,7 +198,10 @@ public class BandWidthRules {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

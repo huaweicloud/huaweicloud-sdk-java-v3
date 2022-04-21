@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 此参数在请求实体中，采用json字符串格式 */
+/**
+ * 此参数在请求实体中，采用json字符串格式
+ */
 public class CreateLogDumpObsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,9 +68,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 日志组id。
-     * 
-     * @return logGroupId */
+    /**
+     * 日志组id。
+     * @return logGroupId
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -98,9 +101,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 日志流id列表, 可以指定一个或多个日志流进行obs周期性转储
-     * 
-     * @return logStreamIds */
+    /**
+     * 日志流id列表, 可以指定一个或多个日志流进行obs周期性转储
+     * @return logStreamIds
+     */
     public List<String> getLogStreamIds() {
         return logStreamIds;
     }
@@ -114,9 +118,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** obs 桶名称。
-     * 
-     * @return obsBucketName */
+    /**
+     * obs 桶名称。
+     * @return obsBucketName
+     */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -130,9 +135,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 周期性转储, 必须填 cycle。
-     * 
-     * @return type */
+    /**
+     * 周期性转储, 必须填 cycle。
+     * @return type
+     */
     public String getType() {
         return type;
     }
@@ -146,9 +152,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 转储格式 RAW/JSON， 默认为 RAW。
-     * 
-     * @return storageFormat */
+    /**
+     * 转储格式 RAW/JSON， 默认为 RAW。
+     * @return storageFormat
+     */
     public String getStorageFormat() {
         return storageFormat;
     }
@@ -162,9 +169,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 是否开启转储 true/false, 默认为 true
-     * 
-     * @return switchOn */
+    /**
+     * 是否开启转储 true/false, 默认为 true
+     * @return switchOn
+     */
     public Boolean getSwitchOn() {
         return switchOn;
     }
@@ -178,9 +186,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 转储至OBS桶中的日志文件前缀。
-     * 
-     * @return prefixName */
+    /**
+     * 转储至OBS桶中的日志文件前缀。
+     * @return prefixName
+     */
     public String getPrefixName() {
         return prefixName;
     }
@@ -194,9 +203,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 自定义文件夹路径。
-     * 
-     * @return dirPrefixName */
+    /**
+     * 自定义文件夹路径。
+     * @return dirPrefixName
+     */
     public String getDirPrefixName() {
         return dirPrefixName;
     }
@@ -210,10 +220,12 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 转储周期的长度， 与 period_unit 拼接后必须在该列表中 [\"2min\",\"5min\",\"30min\",\"1hour\",\"3hour\",\"6hour\",\"12hour\"]。
-     * minimum: 1 maximum: 30
-     * 
-     * @return period */
+    /**
+     * 转储周期的长度， 与 period_unit 拼接后必须在该列表中 [\"2min\",\"5min\",\"30min\",\"1hour\",\"3hour\",\"6hour\",\"12hour\"]。
+     * minimum: 1
+     * maximum: 30
+     * @return period
+     */
     public Integer getPeriod() {
         return period;
     }
@@ -227,9 +239,10 @@ public class CreateLogDumpObsRequestBody {
         return this;
     }
 
-    /** 转储周期的单位， 与 period 拼接后必须在该列表中 [\"2min\",\"5min\",\"30min\",\"1hour\",\"3hour\",\"6hour\",\"12hour\"]。
-     * 
-     * @return periodUnit */
+    /**
+     * 转储周期的单位， 与 period 拼接后必须在该列表中 [\"2min\",\"5min\",\"30min\",\"1hour\",\"3hour\",\"6hour\",\"12hour\"]。
+     * @return periodUnit
+     */
     public String getPeriodUnit() {
         return periodUnit;
     }
@@ -291,7 +304,10 @@ public class CreateLogDumpObsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

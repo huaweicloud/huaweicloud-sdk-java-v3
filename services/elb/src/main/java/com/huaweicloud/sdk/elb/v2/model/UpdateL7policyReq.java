@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 更新转发策略对象请求体 */
+/**
+ * 更新转发策略对象请求体
+ */
 public class UpdateL7policyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +40,10 @@ public class UpdateL7policyReq {
         return this;
     }
 
-    /** 转发策略名称
-     * 
-     * @return name */
+    /**
+     * 转发策略名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -54,9 +57,10 @@ public class UpdateL7policyReq {
         return this;
     }
 
-    /** 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * 
-     * @return adminStateUp */
+    /**
+     * 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -70,9 +74,10 @@ public class UpdateL7policyReq {
         return this;
     }
 
-    /** 转发策略额描述信息
-     * 
-     * @return description */
+    /**
+     * 转发策略额描述信息
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
@@ -86,9 +91,10 @@ public class UpdateL7policyReq {
         return this;
     }
 
-    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选
-     * 
-     * @return redirectListenerId */
+    /**
+     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选
+     * @return redirectListenerId
+     */
     public String getRedirectListenerId() {
         return redirectListenerId;
     }
@@ -102,9 +108,10 @@ public class UpdateL7policyReq {
         return this;
     }
 
-    /** 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：redirect_pool不能是listener的default_pool，不能已经被其他listener的l7policy所使用。当action为REDIRECT_TO_LISTENER时，不可指定。不允许更新为空。
-     * 
-     * @return redirectPoolId */
+    /**
+     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：redirect_pool不能是listener的default_pool，不能已经被其他listener的l7policy所使用。当action为REDIRECT_TO_LISTENER时，不可指定。不允许更新为空。
+     * @return redirectPoolId
+     */
     public String getRedirectPoolId() {
         return redirectPoolId;
     }
@@ -147,7 +154,10 @@ public class UpdateL7policyReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

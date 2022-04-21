@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 批量删除边缘实例请求体 */
+/**
+ * 批量删除边缘实例请求体
+ */
 public class DeleteInstancesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class DeleteInstancesRequestBody {
         return this;
     }
 
-    /** 边缘实例ID列表。 > IEC默认同步删除边缘实例的弹性公网IP和磁盘。
-     * 
-     * @return servers */
+    /**
+     * 边缘实例ID列表。 > IEC默认同步删除边缘实例的弹性公网IP和磁盘。
+     * @return servers
+     */
     public List<BaseId> getServers() {
         return servers;
     }
@@ -74,7 +77,10 @@ public class DeleteInstancesRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

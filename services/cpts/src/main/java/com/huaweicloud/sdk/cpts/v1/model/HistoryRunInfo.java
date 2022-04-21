@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** HistoryRunInfo */
+/**
+ * HistoryRunInfo
+ */
 public class HistoryRunInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +48,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** name
-     * 
-     * @return name */
+    /**
+     * name
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -62,9 +65,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** run_id
-     * 
-     * @return runId */
+    /**
+     * run_id
+     * @return runId
+     */
     public Double getRunId() {
         return runId;
     }
@@ -78,9 +82,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** run_type
-     * 
-     * @return runType */
+    /**
+     * run_type
+     * @return runType
+     */
     public Double getRunType() {
         return runType;
     }
@@ -94,9 +99,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** start_time
-     * 
-     * @return startTime */
+    /**
+     * start_time
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -110,9 +116,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** continue_time
-     * 
-     * @return continueTime */
+    /**
+     * continue_time
+     * @return continueTime
+     */
     public Double getContinueTime() {
         return continueTime;
     }
@@ -142,9 +149,10 @@ public class HistoryRunInfo {
         return this;
     }
 
-    /** temp_names
-     * 
-     * @return tempNames */
+    /**
+     * temp_names
+     * @return tempNames
+     */
     public List<TempName> getTempNames() {
         return tempNames;
     }
@@ -188,7 +196,10 @@ public class HistoryRunInfo {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

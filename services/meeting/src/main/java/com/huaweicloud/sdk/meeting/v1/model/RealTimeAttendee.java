@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 与会者信息 */
+/**
+ * 与会者信息
+ */
 public class RealTimeAttendee {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,9 +45,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 与会者帐号（AAPID用户，代表第三方账号）。
-     * 
-     * @return accountID */
+    /**
+     * 与会者帐号（AAPID用户，代表第三方账号）。
+     * @return accountID
+     */
     public String getAccountID() {
         return accountID;
     }
@@ -59,9 +62,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 与会者的用户UUID。
-     * 
-     * @return userUUID */
+    /**
+     * 与会者的用户UUID。
+     * @return userUUID
+     */
     public String getUserUUID() {
         return userUUID;
     }
@@ -75,9 +79,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 与会者名称或昵称，长度限制为96个字符。
-     * 
-     * @return name */
+    /**
+     * 与会者名称或昵称，长度限制为96个字符。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -91,9 +96,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。 设备为三屏智真时的中屏号码。
-     * 
-     * @return phone */
+    /**
+     * 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。 设备为三屏智真时的中屏号码。
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
@@ -107,9 +113,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 设备为三屏智真时的左屏号码（预留）。
-     * 
-     * @return phoneLeft */
+    /**
+     * 设备为三屏智真时的左屏号码（预留）。
+     * @return phoneLeft
+     */
     public String getPhoneLeft() {
         return phoneLeft;
     }
@@ -123,9 +130,10 @@ public class RealTimeAttendee {
         return this;
     }
 
-    /** 设备为三屏智真时的右屏号码（预留）。
-     * 
-     * @return phoneRight */
+    /**
+     * 设备为三屏智真时的右屏号码（预留）。
+     * @return phoneRight
+     */
     public String getPhoneRight() {
         return phoneRight;
     }
@@ -169,7 +177,10 @@ public class RealTimeAttendee {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

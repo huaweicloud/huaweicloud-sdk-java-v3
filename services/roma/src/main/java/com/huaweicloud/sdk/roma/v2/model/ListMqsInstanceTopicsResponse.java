@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,9 +49,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** topic的总数。
-     * 
-     * @return total */
+    /**
+     * topic的总数。
+     * @return total
+     */
     public Integer getTotal() {
         return total;
     }
@@ -63,9 +66,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 当前查询的topic数量。
-     * 
-     * @return size */
+    /**
+     * 当前查询的topic数量。
+     * @return size
+     */
     public Integer getSize() {
         return size;
     }
@@ -95,9 +99,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 允许操作的权限。
-     * 
-     * @return permissions */
+    /**
+     * 允许操作的权限。
+     * @return permissions
+     */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -127,9 +132,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** Topic列表。
-     * 
-     * @return topics */
+    /**
+     * Topic列表。
+     * @return topics
+     */
     public List<ListInstanceTopicsRespTopics> getTopics() {
         return topics;
     }
@@ -143,9 +149,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 剩余分区数。
-     * 
-     * @return remainPartitions */
+    /**
+     * 剩余分区数。
+     * @return remainPartitions
+     */
     public Integer getRemainPartitions() {
         return remainPartitions;
     }
@@ -159,9 +166,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    /** 分区总数。
-     * 
-     * @return maxPartitions */
+    /**
+     * 分区总数。
+     * @return maxPartitions
+     */
     public Integer getMaxPartitions() {
         return maxPartitions;
     }
@@ -206,7 +214,10 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ListBackupFileLinksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,9 +34,10 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         return this;
     }
 
-    /** OBS桶内文件路径。
-     * 
-     * @return filePath */
+    /**
+     * OBS桶内文件路径。
+     * @return filePath
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -48,9 +51,10 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         return this;
     }
 
-    /** OBS桶名。
-     * 
-     * @return bucketName */
+    /**
+     * OBS桶名。
+     * @return bucketName
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -80,9 +84,10 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         return this;
     }
 
-    /** 备份文件下链接集合，链接数最大为64个。
-     * 
-     * @return links */
+    /**
+     * 备份文件下链接集合，链接数最大为64个。
+     * @return links
+     */
     public List<LinksItem> getLinks() {
         return links;
     }
@@ -121,7 +126,10 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** FGSDeploymentJobsParam */
+/**
+ * FGSDeploymentJobsParam
+ */
 public class FGSDeploymentJobsParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class FGSDeploymentJobsParam {
         return this;
     }
 
-    /** 版本包id,使用历史版本包部署时需要
-     * 
-     * @return fileId */
+    /**
+     * 版本包id,使用历史版本包部署时需要
+     * @return fileId
+     */
     public String getFileId() {
         return fileId;
     }
@@ -39,9 +42,10 @@ public class FGSDeploymentJobsParam {
         return this;
     }
 
-    /** 函数入口
-     * 
-     * @return handler */
+    /**
+     * 函数入口
+     * @return handler
+     */
     public String getHandler() {
         return handler;
     }
@@ -78,7 +82,10 @@ public class FGSDeploymentJobsParam {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

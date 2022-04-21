@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** DeleteSecretForScheduleRequestBody */
+/**
+ * DeleteSecretForScheduleRequestBody
+ */
 public class DeleteSecretForScheduleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,9 +20,12 @@ public class DeleteSecretForScheduleRequestBody {
         return this;
     }
 
-    /** 创建定时删除凭据的任务，且指定可恢复的天数。 约束：7~30。 默认值：30。 minimum: 7 maximum: 30
-     * 
-     * @return recoveryWindowInDays */
+    /**
+     * 创建定时删除凭据的任务，且指定可恢复的天数。  约束：7~30。  默认值：30。 
+     * minimum: 7
+     * maximum: 30
+     * @return recoveryWindowInDays
+     */
     public Integer getRecoveryWindowInDays() {
         return recoveryWindowInDays;
     }
@@ -55,7 +60,10 @@ public class DeleteSecretForScheduleRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

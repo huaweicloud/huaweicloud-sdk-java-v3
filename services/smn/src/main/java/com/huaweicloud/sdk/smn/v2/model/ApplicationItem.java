@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** ApplicationItem */
+/**
+ * ApplicationItem
+ */
 public class ApplicationItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** 创建application的名字。
-     * 
-     * @return name */
+    /**
+     * 创建application的名字。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -64,9 +67,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** 应用平台。
-     * 
-     * @return platform */
+    /**
+     * 应用平台。
+     * @return platform
+     */
     public String getPlatform() {
         return platform;
     }
@@ -80,9 +84,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** 创建application的时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return createTime */
+    /**
+     * 创建application的时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -96,9 +101,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** Application的唯一资源标识。
-     * 
-     * @return applicationUrn */
+    /**
+     * Application的唯一资源标识。
+     * @return applicationUrn
+     */
     public String getApplicationUrn() {
         return applicationUrn;
     }
@@ -112,9 +118,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** Application的唯一标识ID。
-     * 
-     * @return applicationId */
+    /**
+     * Application的唯一标识ID。
+     * @return applicationId
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -128,9 +135,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** 应用平台是否启用。
-     * 
-     * @return enabled */
+    /**
+     * 应用平台是否启用。
+     * @return enabled
+     */
     public String getEnabled() {
         return enabled;
     }
@@ -144,9 +152,10 @@ public class ApplicationItem {
         return this;
     }
 
-    /** 苹果证书过期时间APNS、APNS_SANDBOX平台特有属性时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * 
-     * @return appleCertificateExpirationDate */
+    /**
+     * 苹果证书过期时间APNS、APNS_SANDBOX平台特有属性时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return appleCertificateExpirationDate
+     */
     public String getAppleCertificateExpirationDate() {
         return appleCertificateExpirationDate;
     }
@@ -196,7 +205,10 @@ public class ApplicationItem {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

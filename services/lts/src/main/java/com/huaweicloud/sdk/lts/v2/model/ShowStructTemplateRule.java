@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** 结构化类型。 */
+/**
+ * 结构化类型。
+ */
 public class ShowStructTemplateRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,22 +20,34 @@ public class ShowStructTemplateRule {
 
     private String param;
 
-    /** 结构化类型 */
+    /**
+     * 结构化类型
+     */
     public static final class TypeEnum {
 
-        /** Enum JSON for value: "json" */
+        /**
+         * Enum JSON for value: "json"
+         */
         public static final TypeEnum JSON = new TypeEnum("json");
 
-        /** Enum SPLIT for value: "split" */
+        /**
+         * Enum SPLIT for value: "split"
+         */
         public static final TypeEnum SPLIT = new TypeEnum("split");
 
-        /** Enum NGINX for value: "nginx" */
+        /**
+         * Enum NGINX for value: "nginx"
+         */
         public static final TypeEnum NGINX = new TypeEnum("nginx");
 
-        /** Enum BUILT_IN for value: "built_in" */
+        /**
+         * Enum BUILT_IN for value: "built_in"
+         */
         public static final TypeEnum BUILT_IN = new TypeEnum("built_in");
 
-        /** Enum CUSTOM_REGEX for value: "custom_regex" */
+        /**
+         * Enum CUSTOM_REGEX for value: "custom_regex"
+         */
         public static final TypeEnum CUSTOM_REGEX = new TypeEnum("custom_regex");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +125,10 @@ public class ShowStructTemplateRule {
         return this;
     }
 
-    /** 测试
-     * 
-     * @return param */
+    /**
+     * 测试
+     * @return param
+     */
     public String getParam() {
         return param;
     }
@@ -127,9 +142,10 @@ public class ShowStructTemplateRule {
         return this;
     }
 
-    /** 结构化类型
-     * 
-     * @return type */
+    /**
+     * 结构化类型
+     * @return type
+     */
     public TypeEnum getType() {
         return type;
     }
@@ -166,7 +182,10 @@ public class ShowStructTemplateRule {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

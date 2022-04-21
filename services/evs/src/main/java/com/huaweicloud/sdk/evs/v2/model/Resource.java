@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** Resource */
+/**
+ * Resource
+ */
 public class Resource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +39,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源ID。
-     * 
-     * @return resourceId */
+    /**
+     * 资源ID。
+     * @return resourceId
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -53,9 +56,10 @@ public class Resource {
         return this;
     }
 
-    /** 资源名称。
-     * 
-     * @return resourceName */
+    /**
+     * 资源名称。
+     * @return resourceName
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -78,9 +82,10 @@ public class Resource {
         return this;
     }
 
-    /** Get resourceDetail
-     * 
-     * @return resourceDetail */
+    /**
+     * Get resourceDetail
+     * @return resourceDetail
+     */
     public VolumeDetailForTag getResourceDetail() {
         return resourceDetail;
     }
@@ -110,9 +115,10 @@ public class Resource {
         return this;
     }
 
-    /** 标签列表。
-     * 
-     * @return tags */
+    /**
+     * 标签列表。
+     * @return tags
+     */
     public List<Map<String, String>> getTags() {
         return tags;
     }
@@ -152,7 +158,10 @@ public class Resource {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

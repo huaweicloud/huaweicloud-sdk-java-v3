@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** 带宽限速策略。 */
+/**
+ * 带宽限速策略。
+ */
 public class BandwidthPolicyDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class BandwidthPolicyDto {
         return this;
     }
 
-    /** 流量控制开始时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
-     * 
-     * @return end */
+    /**
+     * 流量控制开始时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
+     * @return end
+     */
     public String getEnd() {
         return end;
     }
@@ -44,10 +47,12 @@ public class BandwidthPolicyDto {
         return this;
     }
 
-    /** 时段内允许的最大流量带宽，单位Byte/s，取值范围为>= 1048576Byte/s（相当于1MB/s）且<=209715200Byte/s（相当于200MB/s）。 minimum: 1048576 maximum:
-     * 209715200
-     * 
-     * @return maxBandwidth */
+    /**
+     * 时段内允许的最大流量带宽，单位Byte/s，取值范围为>= 1048576Byte/s（相当于1MB/s）且<=209715200Byte/s（相当于200MB/s）。
+     * minimum: 1048576
+     * maximum: 209715200
+     * @return maxBandwidth
+     */
     public Long getMaxBandwidth() {
         return maxBandwidth;
     }
@@ -61,9 +66,10 @@ public class BandwidthPolicyDto {
         return this;
     }
 
-    /** 流量控制开始时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
-     * 
-     * @return start */
+    /**
+     * 流量控制开始时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
+     * @return start
+     */
     public String getStart() {
         return start;
     }
@@ -102,7 +108,10 @@ public class BandwidthPolicyDto {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

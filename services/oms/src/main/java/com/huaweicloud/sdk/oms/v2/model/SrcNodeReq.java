@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 源端节点信息。 */
+/**
+ * 源端节点信息。
+ */
 public class SrcNodeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,10 +63,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端云服务提供商，task_type为非url_list时，本参数为URLSource。
-     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
-     * 
-     * @return cloudType */
+    /**
+     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * @return cloudType
+     */
     public String getCloudType() {
         return cloudType;
     }
@@ -78,9 +80,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端桶所处的区域，task_type为非url_list时，本参数为必选。
-     * 
-     * @return region */
+    /**
+     * 源端桶所处的区域，task_type为非url_list时，本参数为必选。
+     * @return region
+     */
     public String getRegion() {
         return region;
     }
@@ -94,9 +97,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端桶的AK（最大长度100个字符），task_type为非url_list时，本参数为必选。
-     * 
-     * @return ak */
+    /**
+     * 源端桶的AK（最大长度100个字符），task_type为非url_list时，本参数为必选。
+     * @return ak
+     */
     public String getAk() {
         return ak;
     }
@@ -110,9 +114,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端桶的SK（最大长度100个字符），task_type为非url_list时，本参数为必选。
-     * 
-     * @return sk */
+    /**
+     * 源端桶的SK（最大长度100个字符），task_type为非url_list时，本参数为必选。
+     * @return sk
+     */
     public String getSk() {
         return sk;
     }
@@ -126,9 +131,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端桶的临时Token（最大长度16384个字符）
-     * 
-     * @return securityToken */
+    /**
+     * 源端桶的临时Token（最大长度16384个字符）
+     * @return securityToken
+     */
     public String getSecurityToken() {
         return securityToken;
     }
@@ -142,9 +148,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 当源端为腾讯云时，需要填写此参数。
-     * 
-     * @return appId */
+    /**
+     * 当源端为腾讯云时，需要填写此参数。
+     * @return appId
+     */
     public String getAppId() {
         return appId;
     }
@@ -158,9 +165,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 源端桶的名称，task_type为非url_list时，本参数为必选。
-     * 
-     * @return bucket */
+    /**
+     * 源端桶的名称，task_type为非url_list时，本参数为必选。
+     * @return bucket
+     */
     public String getBucket() {
         return bucket;
     }
@@ -190,9 +198,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** 任务类型为对象迁移任务时，表示待迁移对象名称（以“/”结尾的字符串代表待迁移的文件夹，非“/”结尾的字符串代表待迁移的文件。）； 任务类型为前缀迁移任务时，表示待迁移前缀。 整桶迁移时，此参数设置为[\"\"]。
-     * 
-     * @return objectKey */
+    /**
+     * 任务类型为对象迁移任务时，表示待迁移对象名称（以“/”结尾的字符串代表待迁移的文件夹，非“/”结尾的字符串代表待迁移的文件。）； 任务类型为前缀迁移任务时，表示待迁移前缀。 整桶迁移时，此参数设置为[\"\"]。
+     * @return objectKey
+     */
     public List<String> getObjectKey() {
         return objectKey;
     }
@@ -215,9 +224,10 @@ public class SrcNodeReq {
         return this;
     }
 
-    /** Get listFile
-     * 
-     * @return listFile */
+    /**
+     * Get listFile
+     * @return listFile
+     */
     public ListFile getListFile() {
         return listFile;
     }
@@ -265,7 +275,10 @@ public class SrcNodeReq {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

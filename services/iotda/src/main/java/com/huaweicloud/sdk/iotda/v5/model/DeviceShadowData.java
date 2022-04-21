@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 设备影子数据结构体。 */
+/**
+ * 设备影子数据结构体。
+ */
 public class DeviceShadowData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class DeviceShadowData {
         return this;
     }
 
-    /** 设备的服务ID，在设备关联的产品模型中定义。
-     * 
-     * @return serviceId */
+    /**
+     * 设备的服务ID，在设备关联的产品模型中定义。
+     * @return serviceId
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -59,9 +62,10 @@ public class DeviceShadowData {
         return this;
     }
 
-    /** Get desired
-     * 
-     * @return desired */
+    /**
+     * Get desired
+     * @return desired
+     */
     public DeviceShadowProperties getDesired() {
         return desired;
     }
@@ -84,9 +88,10 @@ public class DeviceShadowData {
         return this;
     }
 
-    /** Get reported
-     * 
-     * @return reported */
+    /**
+     * Get reported
+     * @return reported
+     */
     public DeviceShadowProperties getReported() {
         return reported;
     }
@@ -100,9 +105,10 @@ public class DeviceShadowData {
         return this;
     }
 
-    /** 设备影子的版本，携带该参数时平台会校验值必须等于当前影子版本，初始从0开始。
-     * 
-     * @return version */
+    /**
+     * 设备影子的版本，携带该参数时平台会校验值必须等于当前影子版本，初始从0开始。
+     * @return version
+     */
     public Long getVersion() {
         return version;
     }
@@ -143,7 +149,10 @@ public class DeviceShadowData {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** PolicyCreate */
+/**
+ * PolicyCreate
+ */
 public class PolicyCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,13 +31,19 @@ public class PolicyCreate {
 
     private PolicyoODCreate operationDefinition;
 
-    /** 策略类型，如备份，复制 Enum:[ backup，replication] */
+    /**
+     * 策略类型，如备份，复制 Enum:[ backup，replication]
+     */
     public static final class OperationTypeEnum {
 
-        /** Enum BACKUP for value: "backup" */
+        /**
+         * Enum BACKUP for value: "backup"
+         */
         public static final OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
 
-        /** Enum REPLICATION for value: "replication" */
+        /**
+         * Enum REPLICATION for value: "replication"
+         */
         public static final OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -115,9 +123,10 @@ public class PolicyCreate {
         return this;
     }
 
-    /** 是否启用策略
-     * 
-     * @return enabled */
+    /**
+     * 是否启用策略
+     * @return enabled
+     */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -131,9 +140,10 @@ public class PolicyCreate {
         return this;
     }
 
-    /** 策略名称，长度限制：1- 64，只能由中文、字母、数字、“_”、“-”组成。
-     * 
-     * @return name */
+    /**
+     * 策略名称，长度限制：1- 64，只能由中文、字母、数字、“_”、“-”组成。
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -156,9 +166,10 @@ public class PolicyCreate {
         return this;
     }
 
-    /** Get operationDefinition
-     * 
-     * @return operationDefinition */
+    /**
+     * Get operationDefinition
+     * @return operationDefinition
+     */
     public PolicyoODCreate getOperationDefinition() {
         return operationDefinition;
     }
@@ -172,9 +183,10 @@ public class PolicyCreate {
         return this;
     }
 
-    /** 策略类型，如备份，复制 Enum:[ backup，replication]
-     * 
-     * @return operationType */
+    /**
+     * 策略类型，如备份，复制 Enum:[ backup，replication]
+     * @return operationType
+     */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -197,9 +209,10 @@ public class PolicyCreate {
         return this;
     }
 
-    /** Get trigger
-     * 
-     * @return trigger */
+    /**
+     * Get trigger
+     * @return trigger
+     */
     public PolicyTriggerReq getTrigger() {
         return trigger;
     }
@@ -241,7 +254,10 @@ public class PolicyCreate {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

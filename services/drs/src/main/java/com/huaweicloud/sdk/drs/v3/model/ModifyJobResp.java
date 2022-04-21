@@ -20,13 +20,19 @@ public class ModifyJobResp {
 
     private String id;
 
-    /** 状态 */
+    /**
+     * 状态
+     */
     public static final class StatusEnum {
 
-        /** Enum SUCCESS_ for value: "success 成功" */
+        /**
+         * Enum SUCCESS_ for value: "success 成功"
+         */
         public static final StatusEnum SUCCESS_ = new StatusEnum("success 成功");
 
-        /** Enum FAILED_ for value: "failed 失败" */
+        /**
+         * Enum FAILED_ for value: "failed 失败"
+         */
         public static final StatusEnum FAILED_ = new StatusEnum("failed 失败");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -111,9 +117,10 @@ public class ModifyJobResp {
         return this;
     }
 
-    /** 任务ID
-     * 
-     * @return id */
+    /**
+     * 任务ID
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -127,9 +134,10 @@ public class ModifyJobResp {
         return this;
     }
 
-    /** 状态
-     * 
-     * @return status */
+    /**
+     * 状态
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -143,9 +151,10 @@ public class ModifyJobResp {
         return this;
     }
 
-    /** 错误码
-     * 
-     * @return errorCode */
+    /**
+     * 错误码
+     * @return errorCode
+     */
     public String getErrorCode() {
         return errorCode;
     }
@@ -159,9 +168,10 @@ public class ModifyJobResp {
         return this;
     }
 
-    /** 错误信息
-     * 
-     * @return errorMsg */
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -201,7 +211,10 @@ public class ModifyJobResp {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

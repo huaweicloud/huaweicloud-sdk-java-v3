@@ -79,9 +79,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** 获取token的方式。
-     * 
-     * @return methods */
+    /**
+     * 获取token的方式。
+     * @return methods
+     */
     public List<String> getMethods() {
         return methods;
     }
@@ -95,9 +96,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** token到期时间。
-     * 
-     * @return expiresAt */
+    /**
+     * token到期时间。
+     * @return expiresAt
+     */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -111,9 +113,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** token下发时间。
-     * 
-     * @return issuedAt */
+    /**
+     * token下发时间。
+     * @return issuedAt
+     */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -136,9 +139,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** Get assumedBy
-     * 
-     * @return assumedBy */
+    /**
+     * Get assumedBy
+     * @return assumedBy
+     */
     public AgencyAssumedby getAssumedBy() {
         return assumedBy;
     }
@@ -168,9 +172,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** 服务目录信息。
-     * 
-     * @return catalog */
+    /**
+     * 服务目录信息。
+     * @return catalog
+     */
     public List<TokenCatalog> getCatalog() {
         return catalog;
     }
@@ -193,9 +198,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** Get domain
-     * 
-     * @return domain */
+    /**
+     * Get domain
+     * @return domain
+     */
     public AgencyTokenDomain getDomain() {
         return domain;
     }
@@ -218,9 +224,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** Get project
-     * 
-     * @return project */
+    /**
+     * Get project
+     * @return project
+     */
     public AgencyTokenProject getProject() {
         return project;
     }
@@ -250,9 +257,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** 委托token的权限信息。
-     * 
-     * @return roles */
+    /**
+     * 委托token的权限信息。
+     * @return roles
+     */
     public List<TokenRole> getRoles() {
         return roles;
     }
@@ -275,9 +283,10 @@ public class AgencyTokenResult {
         return this;
     }
 
-    /** Get user
-     * 
-     * @return user */
+    /**
+     * Get user
+     * @return user
+     */
     public AgencyTokenUser getUser() {
         return user;
     }
@@ -327,7 +336,10 @@ public class AgencyTokenResult {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

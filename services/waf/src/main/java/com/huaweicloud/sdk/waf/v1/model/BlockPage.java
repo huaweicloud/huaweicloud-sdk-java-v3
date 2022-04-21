@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** 告警页面 */
+/**
+ * 告警页面
+ */
 public class BlockPage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +31,10 @@ public class BlockPage {
         return this;
     }
 
-    /** 模板名称
-     * 
-     * @return template */
+    /**
+     * 模板名称
+     * @return template
+     */
     public String getTemplate() {
         return template;
     }
@@ -54,9 +57,10 @@ public class BlockPage {
         return this;
     }
 
-    /** Get customPage
-     * 
-     * @return customPage */
+    /**
+     * Get customPage
+     * @return customPage
+     */
     public CustomPage getCustomPage() {
         return customPage;
     }
@@ -70,9 +74,10 @@ public class BlockPage {
         return this;
     }
 
-    /** 重定向URL
-     * 
-     * @return redirectUrl */
+    /**
+     * 重定向URL
+     * @return redirectUrl
+     */
     public String getRedirectUrl() {
         return redirectUrl;
     }
@@ -111,7 +116,10 @@ public class BlockPage {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

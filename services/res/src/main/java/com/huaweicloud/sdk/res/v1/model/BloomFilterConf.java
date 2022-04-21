@@ -44,9 +44,10 @@ public class BloomFilterConf {
         return this;
     }
 
-    /** 待过滤行为类型。
-     * 
-     * @return behaviors */
+    /**
+     * 待过滤行为类型。
+     * @return behaviors
+     */
     public List<String> getBehaviors() {
         return behaviors;
     }
@@ -60,9 +61,12 @@ public class BloomFilterConf {
         return this;
     }
 
-    /** 过滤时间。 minimum: 1 maximum: 7
-     * 
-     * @return interval */
+    /**
+     * 过滤时间。
+     * minimum: 1
+     * maximum: 7
+     * @return interval
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -99,7 +103,10 @@ public class BloomFilterConf {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

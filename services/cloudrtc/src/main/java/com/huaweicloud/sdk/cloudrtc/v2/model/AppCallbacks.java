@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** app回调配置 */
+/**
+ * app回调配置
+ */
 public class AppCallbacks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,9 +35,10 @@ public class AppCallbacks {
         return this;
     }
 
-    /** Get pushCallback
-     * 
-     * @return pushCallback */
+    /**
+     * Get pushCallback
+     * @return pushCallback
+     */
     public AppCallbackUrl getPushCallback() {
         return pushCallback;
     }
@@ -58,9 +61,10 @@ public class AppCallbacks {
         return this;
     }
 
-    /** Get recordCallback
-     * 
-     * @return recordCallback */
+    /**
+     * Get recordCallback
+     * @return recordCallback
+     */
     public AppCallbackUrl getRecordCallback() {
         return recordCallback;
     }
@@ -97,7 +101,10 @@ public class AppCallbacks {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

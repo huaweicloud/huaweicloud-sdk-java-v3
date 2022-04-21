@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-/** BatchCreateOrDeleteResourceTagsRequestBody */
+/**
+ * BatchCreateOrDeleteResourceTagsRequestBody
+ */
 public class BatchCreateOrDeleteResourceTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,9 +44,10 @@ public class BatchCreateOrDeleteResourceTagsRequestBody {
         return this;
     }
 
-    /** 标签列表，结构体说明请参见表1。删除时tags结构体不能缺失，key不能为空或空字符串，且不针对字符集范围进行校验。
-     * 
-     * @return tags */
+    /**
+     * 标签列表，结构体说明请参见表1。删除时tags结构体不能缺失，key不能为空或空字符串，且不针对字符集范围进行校验。
+     * @return tags
+     */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -58,9 +61,10 @@ public class BatchCreateOrDeleteResourceTagsRequestBody {
         return this;
     }
 
-    /** 操作标识：仅限于create（创建）、delete（删除）。
-     * 
-     * @return action */
+    /**
+     * 操作标识：仅限于create（创建）、delete（删除）。
+     * @return action
+     */
     public String getAction() {
         return action;
     }
@@ -98,7 +102,10 @@ public class BatchCreateOrDeleteResourceTagsRequestBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

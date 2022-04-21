@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowAuditlogPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,9 +21,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return this;
     }
 
-    /** 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
-     * 
-     * @return keepDays */
+    /**
+     * 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+     * @return keepDays
+     */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -56,7 +59,10 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Job操作的对象。根据不同Job类型，显示不同的内容。裸金属服务器相关操作显示server_id；网卡相关操作显示nic_id */
+/**
+ * Job操作的对象。根据不同Job类型，显示不同的内容。裸金属服务器相关操作显示server_id；网卡相关操作显示nic_id
+ */
 public class Entitie {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,9 +25,10 @@ public class Entitie {
         return this;
     }
 
-    /** 裸金属服务器相关操作显示server_id
-     * 
-     * @return serverId */
+    /**
+     * 裸金属服务器相关操作显示server_id
+     * @return serverId
+     */
     public String getServerId() {
         return serverId;
     }
@@ -39,9 +42,10 @@ public class Entitie {
         return this;
     }
 
-    /** 网卡相关操作显示nic_id
-     * 
-     * @return nicId */
+    /**
+     * 网卡相关操作显示nic_id
+     * @return nicId
+     */
     public String getNicId() {
         return nicId;
     }
@@ -77,7 +81,10 @@ public class Entitie {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

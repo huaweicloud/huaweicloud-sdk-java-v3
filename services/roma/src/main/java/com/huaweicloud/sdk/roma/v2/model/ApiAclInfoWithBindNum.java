@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** ApiAclInfoWithBindNum */
+/**
+ * ApiAclInfoWithBindNum
+ */
 public class ApiAclInfoWithBindNum {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +51,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** ACL策略名称
-     * 
-     * @return aclName */
+    /**
+     * ACL策略名称
+     * @return aclName
+     */
     public String getAclName() {
         return aclName;
     }
@@ -65,9 +68,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** 类型 - PERMIT（白名单类型） - DENY（黑名单类型）
-     * 
-     * @return aclType */
+    /**
+     * 类型 - PERMIT（白名单类型） - DENY（黑名单类型）
+     * @return aclType
+     */
     public String getAclType() {
         return aclType;
     }
@@ -81,9 +85,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** ACL策略的值
-     * 
-     * @return aclValue */
+    /**
+     * ACL策略的值
+     * @return aclValue
+     */
     public String getAclValue() {
         return aclValue;
     }
@@ -97,9 +102,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** 绑定的API数量
-     * 
-     * @return bindNum */
+    /**
+     * 绑定的API数量
+     * @return bindNum
+     */
     public Integer getBindNum() {
         return bindNum;
     }
@@ -113,9 +119,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** 对象类型 - IP - DOMAIN
-     * 
-     * @return entityType */
+    /**
+     * 对象类型 - IP - DOMAIN
+     * @return entityType
+     */
     public String getEntityType() {
         return entityType;
     }
@@ -129,9 +136,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** ACL策略编号
-     * 
-     * @return id */
+    /**
+     * ACL策略编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -145,9 +153,10 @@ public class ApiAclInfoWithBindNum {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -194,7 +203,10 @@ public class ApiAclInfoWithBindNum {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

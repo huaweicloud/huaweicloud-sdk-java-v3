@@ -11,7 +11,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** ShowImageWatermarkRequestBody */
+/**
+ * ShowImageWatermarkRequestBody
+ */
 public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
@@ -28,9 +30,10 @@ public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 待提取暗水印的图片文件。
-     * 
-     * @return file */
+    /**
+     * 待提取暗水印的图片文件。
+     * @return file
+     */
     public FormDataFilePart getFile() {
         return file;
     }
@@ -44,9 +47,10 @@ public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
         return this;
     }
 
-    /** 指定待提取水印的长度，mark_len长度大于0，小于32。设置后可以提升水印提取性能
-     * 
-     * @return markLen */
+    /**
+     * 指定待提取水印的长度，mark_len长度大于0，小于32。设置后可以提升水印提取性能
+     * @return markLen
+     */
     public String getMarkLen() {
         return markLen;
     }
@@ -112,7 +116,10 @@ public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

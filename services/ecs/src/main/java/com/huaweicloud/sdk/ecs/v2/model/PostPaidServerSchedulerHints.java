@@ -30,9 +30,10 @@ public class PostPaidServerSchedulerHints {
         return this;
     }
 
-    /** 云服务器组ID，UUID格式。 云服务器组的ID可以从控制台或者参考[查询云服务器组列表](https://support.huaweicloud.com/api-ecs/ecs_03_1402.html)获取。
-     * 
-     * @return group */
+    /**
+     * 云服务器组ID，UUID格式。  云服务器组的ID可以从控制台或者参考[查询云服务器组列表](https://support.huaweicloud.com/api-ecs/ecs_03_1402.html)获取。
+     * @return group
+     */
     public String getGroup() {
         return group;
     }
@@ -46,9 +47,10 @@ public class PostPaidServerSchedulerHints {
         return this;
     }
 
-    /** 专属主机的ID。专属主机的ID仅在tenancy为dedicated时生效。
-     * 
-     * @return dedicatedHostId */
+    /**
+     * 专属主机的ID。专属主机的ID仅在tenancy为dedicated时生效。
+     * @return dedicatedHostId
+     */
     public String getDedicatedHostId() {
         return dedicatedHostId;
     }
@@ -62,9 +64,10 @@ public class PostPaidServerSchedulerHints {
         return this;
     }
 
-    /** 在指定的专属主机或者共享主机上创建弹性云服务器云主机。参数值为shared或者dedicated。
-     * 
-     * @return tenancy */
+    /**
+     * 在指定的专属主机或者共享主机上创建弹性云服务器云主机。参数值为shared或者dedicated。
+     * @return tenancy
+     */
     public String getTenancy() {
         return tenancy;
     }
@@ -103,7 +106,10 @@ public class PostPaidServerSchedulerHints {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** Request Object */
+/**
+ * Request Object
+ */
 public class ListHistoryStreamsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +50,10 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 推流域名。
-     * 
-     * @return domain */
+    /**
+     * 推流域名。 
+     * @return domain
+     */
     public String getDomain() {
         return domain;
     }
@@ -64,9 +67,10 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 应用名称。
-     * 
-     * @return app */
+    /**
+     * 应用名称。
+     * @return app
+     */
     public String getApp() {
         return app;
     }
@@ -80,9 +84,10 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 流名称。
-     * 
-     * @return stream */
+    /**
+     * 流名称。
+     * @return stream
+     */
     public String getStream() {
         return stream;
     }
@@ -96,9 +101,10 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天。 若参数为空，默认查询1天数据。
-     * 
-     * @return startTime */
+    /**
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天。  若参数为空，默认查询1天数据。 
+     * @return startTime
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -112,9 +118,10 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间，最大查询跨度1天。结束时间需大于起始时间。
-     * 
-     * @return endTime */
+    /**
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间，最大查询跨度1天。结束时间需大于起始时间。 
+     * @return endTime
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -128,9 +135,12 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 分页编号，默认为0 minimum: 0 maximum: 2147483647
-     * 
-     * @return offset */
+    /**
+     * 分页编号，默认为0
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -144,9 +154,12 @@ public class ListHistoryStreamsRequest {
         return this;
     }
 
-    /** 每页记录数。 取值范围：[1,100] 默认值：10。 minimum: 1 maximum: 100
-     * 
-     * @return limit */
+    /**
+     * 每页记录数。  取值范围：[1,100]  默认值：10。 
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -193,7 +206,10 @@ public class ListHistoryStreamsRequest {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

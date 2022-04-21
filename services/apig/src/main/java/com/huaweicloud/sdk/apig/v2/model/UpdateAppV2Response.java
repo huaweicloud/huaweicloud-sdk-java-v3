@@ -12,7 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class UpdateAppV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,13 +32,19 @@ public class UpdateAppV2Response extends SdkResponse {
 
     private String remark;
 
-    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET */
+    /**
+     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
+     */
     public static final class CreatorEnum {
 
-        /** Enum USER for value: "USER" */
+        /**
+         * Enum USER for value: "USER"
+         */
         public static final CreatorEnum USER = new CreatorEnum("USER");
 
-        /** Enum MARKET for value: "MARKET" */
+        /**
+         * Enum MARKET for value: "MARKET"
+         */
         public static final CreatorEnum MARKET = new CreatorEnum("MARKET");
 
         private static final Map<String, CreatorEnum> STATIC_FIELDS = createStaticFields();
@@ -126,10 +134,14 @@ public class UpdateAppV2Response extends SdkResponse {
 
     private OffsetDateTime registerTime;
 
-    /** 状态 - 1： 有效 */
+    /**
+     * 状态   - 1： 有效
+     */
     public static final class StatusEnum {
 
-        /** Enum NUMBER_1 for value: 1 */
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
@@ -198,13 +210,19 @@ public class UpdateAppV2Response extends SdkResponse {
 
     private StatusEnum status;
 
-    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 默认apig，暂不支持其他类型 */
+    /**
+     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用  默认apig，暂不支持其他类型
+     */
     public static final class AppTypeEnum {
 
-        /** Enum APIG for value: "apig" */
+        /**
+         * Enum APIG for value: "apig"
+         */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
 
-        /** Enum ROMA for value: "roma" */
+        /**
+         * Enum ROMA for value: "roma"
+         */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
@@ -284,9 +302,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 编号
-     * 
-     * @return id */
+    /**
+     * 编号
+     * @return id
+     */
     public String getId() {
         return id;
     }
@@ -300,9 +319,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 名称
-     * 
-     * @return name */
+    /**
+     * 名称
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -316,9 +336,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 描述
-     * 
-     * @return remark */
+    /**
+     * 描述
+     * @return remark
+     */
     public String getRemark() {
         return remark;
     }
@@ -332,9 +353,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET
-     * 
-     * @return creator */
+    /**
+     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
+     * @return creator
+     */
     public CreatorEnum getCreator() {
         return creator;
     }
@@ -348,9 +370,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 更新时间
-     * 
-     * @return updateTime */
+    /**
+     * 更新时间
+     * @return updateTime
+     */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -364,9 +387,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** APP的key
-     * 
-     * @return appKey */
+    /**
+     * APP的key
+     * @return appKey
+     */
     public String getAppKey() {
         return appKey;
     }
@@ -380,9 +404,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 密钥
-     * 
-     * @return appSecret */
+    /**
+     * 密钥
+     * @return appSecret
+     */
     public String getAppSecret() {
         return appSecret;
     }
@@ -396,9 +421,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 注册时间
-     * 
-     * @return registerTime */
+    /**
+     * 注册时间
+     * @return registerTime
+     */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -412,9 +438,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** 状态 - 1： 有效
-     * 
-     * @return status */
+    /**
+     * 状态   - 1： 有效
+     * @return status
+     */
     public StatusEnum getStatus() {
         return status;
     }
@@ -428,9 +455,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 默认apig，暂不支持其他类型
-     * 
-     * @return appType */
+    /**
+     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用  默认apig，暂不支持其他类型
+     * @return appType
+     */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -444,9 +472,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return this;
     }
 
-    /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用 暂不支持
-     * 
-     * @return romaAppType */
+    /**
+     * ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用  暂不支持
+     * @return romaAppType
+     */
     public String getRomaAppType() {
         return romaAppType;
     }
@@ -501,7 +530,10 @@ public class UpdateAppV2Response extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-/** StreamForbiddenList */
+/**
+ * StreamForbiddenList
+ */
 public class StreamForbiddenList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +30,10 @@ public class StreamForbiddenList {
         return this;
     }
 
-    /** 流应用名称
-     * 
-     * @return appName */
+    /**
+     * 流应用名称
+     * @return appName
+     */
     public String getAppName() {
         return appName;
     }
@@ -44,9 +47,10 @@ public class StreamForbiddenList {
         return this;
     }
 
-    /** 流名称
-     * 
-     * @return streamName */
+    /**
+     * 流名称
+     * @return streamName
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -60,9 +64,10 @@ public class StreamForbiddenList {
         return this;
     }
 
-    /** 恢复流时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间，不指定则默认7天，最大禁推为90天
-     * 
-     * @return resumeTime */
+    /**
+     * 恢复流时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间，不指定则默认7天，最大禁推为90天
+     * @return resumeTime
+     */
     public String getResumeTime() {
         return resumeTime;
     }
@@ -101,7 +106,10 @@ public class StreamForbiddenList {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";

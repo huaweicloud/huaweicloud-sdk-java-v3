@@ -6,7 +6,9 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
-/** Response Object */
+/**
+ * Response Object
+ */
 public class ShowQueueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,9 +36,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列ID，用于唯一标识一个队列。
-     * 
-     * @return queueId */
+    /**
+     * 队列ID，用于唯一标识一个队列。
+     * @return queueId
+     */
     public String getQueueId() {
         return queueId;
     }
@@ -50,9 +53,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 队列名称，同一租户不允许重复。
-     * 
-     * @return queueName */
+    /**
+     * 队列名称，同一租户不允许重复。
+     * @return queueName
+     */
     public String getQueueName() {
         return queueName;
     }
@@ -66,9 +70,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 在物联网平台创建队列的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return createTime */
+    /**
+     * 在物联网平台创建队列的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return createTime
+     */
     public String getCreateTime() {
         return createTime;
     }
@@ -82,9 +87,10 @@ public class ShowQueueResponse extends SdkResponse {
         return this;
     }
 
-    /** 在物联网平台最后修改队列的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * 
-     * @return lastModifyTime */
+    /**
+     * 在物联网平台最后修改队列的时间。格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * @return lastModifyTime
+     */
     public String getLastModifyTime() {
         return lastModifyTime;
     }
@@ -125,7 +131,10 @@ public class ShowQueueResponse extends SdkResponse {
         return sb.toString();
     }
 
-    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
